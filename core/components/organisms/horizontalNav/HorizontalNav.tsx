@@ -3,41 +3,32 @@ import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { VerticalNavProps } from '@/index.type';
 import { extractBaseProps, BaseProps } from '@/utils/types';
-import {
-  getTextAppearance,
-  getIconAppearance,
-  getPillsAppearance,
-  isMenuActive,
-  Menu,
-} from '@/utils/navigationHelper';
+import { getTextAppearance, getIconAppearance, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
 
 export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
 export type Align = 'left' | 'center';
 
 export const HorizontalNav = (props: HorizontalNavProps) => {
-  const {
-    menus,
-    active,
-    onClick,
-    className
-  } = props;
+  const { menus, active, onClick, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    ['HorizontalNav']: true,
-  }, className);
+  const classes = classNames(
+    {
+      ['HorizontalNav']: true,
+    },
+    className
+  );
 
   const onClickHandler = (menu: Menu) => () => {
     if (onClick) onClick(menu);
   };
 
-  const getPillsClass = (disabled?: boolean) => (
+  const getPillsClass = (disabled?: boolean) =>
     classNames({
       ['HorizontalNav-pills']: true,
-      ['HorizontalNav-pills--disabled']: disabled
-    })
-  );
+      ['HorizontalNav-pills--disabled']: disabled,
+    });
 
   const renderIcon = (menu: Menu, isActive: boolean) => {
     if (menu.count !== undefined) {
@@ -74,16 +65,11 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     const menuClasses = classNames({
       'HorizontalNav-menu': true,
       ['HorizontalNav-menu--active']: isActive,
-      ['HorizontalNav-menu--disabled']: menu.disabled
+      ['HorizontalNav-menu--disabled']: menu.disabled,
     });
 
     return (
-      <div
-        data-test="DesignSystem-HorizontalNav"
-        key={index}
-        className={menuClasses}
-        onClick={onClickHandler(menu)}
-      >
+      <div data-test="DesignSystem-HorizontalNav" key={index} className={menuClasses} onClick={onClickHandler(menu)}>
         {renderIcon(menu, isActive)}
         <Text
           appearance={getTextAppearance(isActive, menu.disabled)}
@@ -96,7 +82,11 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     );
   });
 
-  return <div {...baseProps} className={classes}>{list}</div>;
+  return (
+    <div {...baseProps} className={classes}>
+      {list}
+    </div>
+  );
 };
 
 export default HorizontalNav;

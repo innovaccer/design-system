@@ -1,13 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const AlertButton = () => (
-  <Button
-    appearance="alert"
-  >
-    Delete
-  </Button>
-);
+export const AlertButton = () => <Button appearance="alert">Delete</Button>;
 
 export default {
   title: 'Components/Button/Alert Button',
@@ -16,8 +10,8 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Delete button'
-      }
-    }
-  }
+        description: 'Delete button',
+      },
+    },
+  },
 };

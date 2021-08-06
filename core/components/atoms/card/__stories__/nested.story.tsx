@@ -34,19 +34,25 @@ export const CardWithinACard = () => {
                     <Text appearance="disabled" small={true}>
                       Last attr:
                     </Text>
-                    <Text small={true} className="ml-3">04/19</Text>
+                    <Text small={true} className="ml-3">
+                      04/19
+                    </Text>
                   </Column>
                   <Column>
                     <Text appearance="disabled" small={true}>
                       Plan ID:
                     </Text>
-                    <Text small={true} className="ml-3">040</Text>
+                    <Text small={true} className="ml-3">
+                      040
+                    </Text>
                   </Column>
                   <Column>
                     <Text appearance="disabled" small={true}>
                       Payer ID:
                     </Text>
-                    <Text small={true} className="ml-3">001</Text>
+                    <Text small={true} className="ml-3">
+                      001
+                    </Text>
                   </Column>
                 </Row>
               </CardBody>
@@ -54,7 +60,9 @@ export const CardWithinACard = () => {
 
             <Card shadow="none" className="mb-6">
               <CardHeader className="d-flex justify-content-between">
-                <Text weight="strong" appearance="disabled">SECONDARY</Text>
+                <Text weight="strong" appearance="disabled">
+                  SECONDARY
+                </Text>
                 <Badge>INACTIVE</Badge>
               </CardHeader>
               <CardBody>
@@ -76,24 +84,29 @@ export const CardWithinACard = () => {
                     <Text appearance="disabled" small={true}>
                       Last attr:
                     </Text>
-                    <Text small={true} className="ml-3">11/18</Text>
+                    <Text small={true} className="ml-3">
+                      11/18
+                    </Text>
                   </Column>
                   <Column>
                     <Text appearance="disabled" small={true}>
                       Plan ID:
                     </Text>
-                    <Text small={true} className="ml-3">002</Text>
+                    <Text small={true} className="ml-3">
+                      002
+                    </Text>
                   </Column>
                   <Column>
                     <Text appearance="disabled" small={true}>
                       Payer ID:
                     </Text>
-                    <Text small={true} className="ml-3">042</Text>
+                    <Text small={true} className="ml-3">
+                      042
+                    </Text>
                   </Column>
                 </Row>
               </CardBody>
             </Card>
-
           </CardBody>
         </Card>
       </Column>
@@ -103,5 +116,5 @@ export const CardWithinACard = () => {
 
 export default {
   title: 'Components/Card/Card Within A Card',
-  component: Card
+  component: Card,
 };

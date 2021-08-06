@@ -12,15 +12,15 @@ export const PaginationWithJump = () => {
 
   return (
     <div className="d-flex">
-      <div  style={innerStyle}>
+      <div style={innerStyle}>
         <Pagination
           type="jump"
           page={1}
           totalPages={50}
-          onPageChange={pageNo => action(`Page changed: ${pageNo}`)()}
+          onPageChange={(pageNo) => action(`Page changed: ${pageNo}`)()}
         />
       </div>
-     </div>
+    </div>
   );
 };
 
@@ -53,8 +53,8 @@ export default {
       docPage: {
         customCode,
         title: 'Pagination',
-        description:'Pagination with jump'
-      }
-    }
-  }
+        description: 'Pagination with jump',
+      },
+    },
+  },
 };

@@ -24,21 +24,18 @@ export interface CaptionProps extends BaseProps {
 }
 
 export const Caption = (props: CaptionProps) => {
-  const {
-    error,
-    hide,
-    withInput,
-    children,
-    className,
-  } = props;
+  const { error, hide, withInput, children, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    Caption: true,
-    ['Caption--hidden']: hide,
-    ['Caption--withInput']: withInput
-  }, className);
+  const classes = classNames(
+    {
+      Caption: true,
+      ['Caption--hidden']: hide,
+      ['Caption--withInput']: withInput,
+    },
+    className
+  );
 
   const errorIconClass = classNames({
     ['Caption-icon']: true,
@@ -48,7 +45,7 @@ export const Caption = (props: CaptionProps) => {
     <div {...baseProps} className={classes}>
       {error && (
         <div className={errorIconClass}>
-          <Icon size={14} name={'error'} appearance={'alert'}/>
+          <Icon size={14} name={'error'} appearance={'alert'} />
         </div>
       )}
       <Text appearance={error ? 'destructive' : 'subtle'} size="small" weight="medium">{`${children}`}</Text>

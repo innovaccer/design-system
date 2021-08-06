@@ -5,43 +5,34 @@ export const level0WithFilter = () => {
   const tabs = [
     {
       count: 4,
-      label: 'Current'
+      label: 'Current',
     },
     {
       count: 4,
-      label: 'Invited'
+      label: 'Invited',
     },
     {
       count: 4,
-      label: 'Inactive'
-    }
+      label: 'Inactive',
+    },
   ];
 
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const tab = (
-    <Tabs
-      tabs={tabs}
-      activeIndex={activeIndex}
-      onTabChange={setActiveIndex}
-    />
-  );
+  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;
 
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
-      <Button icon="get_app" className="mr-4">Download Records</Button>
+      <Button icon="get_app" className="mr-4">
+        Download Records
+      </Button>
       <Button appearance="primary">Invite users</Button>
     </div>
   );
 
   return (
     <div className="w-100 p-6 bg-secondary-lightest">
-      <PageHeader
-        title="Users"
-        separator={true}
-        tabs={tab}
-        actions={actions}
-      />
+      <PageHeader title="Users" separator={true} tabs={tab} actions={actions} />
     </div>
   );
 };
@@ -97,8 +88,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

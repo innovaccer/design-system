@@ -22,11 +22,7 @@ describe('Pagination component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <Pagination
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<Pagination {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -35,7 +31,6 @@ describe('Pagination component', () => {
 });
 
 describe('Pagination component with props: page and onPageChange', () => {
-
   it('should render currentPage initially', () => {
     const { getByTestId } = render(
       <Pagination totalPages={totalPages} onPageChange={FunctionValue} type="jump" page={pageNumber} />
@@ -69,7 +64,6 @@ describe('Pagination component with props: page and onPageChange', () => {
 
     fireEvent.change(input, { target: { value: totalPages + 1 } });
     expect(getByTestId(inputTestId)).not.toHaveValue(totalPages + 1);
-
   });
 
   it('current page should be incremented on click of next button', () => {
@@ -159,21 +153,15 @@ describe('Pagination component with props: page and onPageChange', () => {
 
     expect(getByTestId(inputTestId)).toHaveValue(pageNumber);
 
-    rerender(
-      <Pagination page={updatedPage} totalPages={totalPages} type="jump" onPageChange={FunctionValue} />
-    );
+    rerender(<Pagination page={updatedPage} totalPages={totalPages} type="jump" onPageChange={FunctionValue} />);
 
     expect(getByTestId(inputTestId)).toHaveValue(updatedPage);
   });
-
 });
 
 describe('Pagination component with prop: type', () => {
-
   it('renders default prop: type', () => {
-    const { getByTestId } = render(
-      <Pagination totalPages={totalPages} onPageChange={FunctionValue} />
-    );
+    const { getByTestId } = render(<Pagination totalPages={totalPages} onPageChange={FunctionValue} />);
 
     expect(getByTestId('DesignSystem-Pagination')).toHaveClass('Pagination--basic');
     expect(getByTestId('DesignSystem-Pagination--PrevButton')).toHaveClass('ml-4 mr-3');
@@ -181,14 +169,11 @@ describe('Pagination component with prop: type', () => {
   });
 
   it('renders default prop: type', () => {
-    const { getByTestId } = render(
-      <Pagination totalPages={totalPages} onPageChange={FunctionValue} type="jump" />
-    );
+    const { getByTestId } = render(<Pagination totalPages={totalPages} onPageChange={FunctionValue} type="jump" />);
 
     expect(getByTestId('DesignSystem-Pagination')).toHaveClass('Pagination--jump');
     expect(getByTestId('DesignSystem-Pagination--NextButton')).toHaveClass('mr-4 ml-3');
   });
-
 });
 
 describe('Pagination Component with overwrite class', () => {
@@ -200,5 +185,4 @@ describe('Pagination Component with overwrite class', () => {
     );
     expect(getByTestId('DesignSystem-Pagination')).toHaveClass(className);
   });
-
 });

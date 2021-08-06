@@ -9,9 +9,7 @@ export interface FileUploaderFormatProps {
 }
 
 export const FileUploaderFormat = (props: FileUploaderFormatProps) => {
-  const {
-    formatLabel
-  } = props;
+  const { formatLabel } = props;
 
   if (formatLabel) {
     return (

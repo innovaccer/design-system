@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as DS from '../../index';
 import { render } from '@testing-library/react';
 
-const noop = () => { };
+const noop = () => {};
 const string = 'Hello World!';
-const dummyComp = (<DS.Text>{string}</DS.Text>);
+const dummyComp = <DS.Text>{string}</DS.Text>;
 
 export const TS = () => {
   return (

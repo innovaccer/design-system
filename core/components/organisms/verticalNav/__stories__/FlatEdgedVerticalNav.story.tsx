@@ -3,7 +3,6 @@ import { VerticalNav, Collapsible } from '@/index';
 import { Menu } from '../../Navigation';
 
 export const flatEdgedVerticalNavigation = () => {
-
   const data = [
     {
       name: 'home',
@@ -17,21 +16,21 @@ export const flatEdgedVerticalNavigation = () => {
       subMenu: [
         {
           name: 'profile.personal',
-          label: 'Personal'
+          label: 'Personal',
         },
         {
           name: 'profile.are_team',
-          label: 'Care Team'
+          label: 'Care Team',
         },
         {
           name: 'profile.goals',
-          label: 'Goals'
+          label: 'Goals',
         },
         {
           name: 'profile.care_plans',
-          label: 'Care Plans'
-        }
-      ]
+          label: 'Care Plans',
+        },
+      ],
     },
     {
       name: 'medical_records',
@@ -40,41 +39,41 @@ export const flatEdgedVerticalNavigation = () => {
       subMenu: [
         {
           name: 'medical_records.allergies',
-          label: 'Allergies'
+          label: 'Allergies',
         },
         {
           name: 'medical_records.conditions',
-          label: 'Conditions'
+          label: 'Conditions',
         },
         {
           name: 'medical_records.immunizations',
-          label: 'Immunizations'
+          label: 'Immunizations',
         },
         {
           name: 'medical_records.lab_results',
-          label: 'Lab Results'
+          label: 'Lab Results',
         },
         {
           name: 'medical_records.medications',
-          label: 'Medications'
+          label: 'Medications',
         },
         {
           name: 'medical_records.procedures',
-          label: 'Procedures'
+          label: 'Procedures',
         },
         {
           name: 'medical_records.vitals',
-          label: 'Vitals'
+          label: 'Vitals',
         },
         {
           name: 'medical_records.smoking_history',
-          label: 'medical_records.Smoking History'
+          label: 'medical_records.Smoking History',
         },
         {
           name: 'devices',
-          label: 'Devices'
-        }
-      ]
+          label: 'Devices',
+        },
+      ],
     },
     {
       name: 'formulary',
@@ -89,12 +88,12 @@ export const flatEdgedVerticalNavigation = () => {
     {
       name: 'claims',
       label: 'Claims',
-      icon: 'receipt'
+      icon: 'receipt',
     },
     {
       name: 'documents',
       label: 'Documents',
-      icon: 'assignment'
+      icon: 'assignment',
     },
     {
       name: 'find_care',
@@ -103,24 +102,24 @@ export const flatEdgedVerticalNavigation = () => {
       subMenu: [
         {
           name: 'find_care.providers',
-          label: 'Providers'
+          label: 'Providers',
         },
         {
           name: 'find_care.pharmacies',
-          label: 'Pharmacies'
+          label: 'Pharmacies',
         },
-      ]
+      ],
     },
     {
       name: 'connected_applications',
       label: 'Connected Applications',
-      icon: 'extension'
+      icon: 'extension',
     },
   ];
 
   const [expanded, setExpanded] = React.useState(true);
   const [active, setActive] = React.useState({
-    name: 'medical_records.allergies'
+    name: 'medical_records.allergies',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -130,12 +129,7 @@ export const flatEdgedVerticalNavigation = () => {
   return (
     <div style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
-        <VerticalNav
-          menus={data}
-          expanded={expanded}
-          active={active}
-          onClick={onClickHandler}
-        />
+        <VerticalNav menus={data} expanded={expanded} active={active} onClick={onClickHandler} />
       </Collapsible>
     </div>
   );
@@ -286,8 +280,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

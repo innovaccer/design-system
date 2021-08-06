@@ -24,15 +24,15 @@ const utilitiesSchema: Schema = [
           />
         </>
       );
-    }
+    },
   },
   {
     name: 'properties',
     displayName: 'Properties',
     width: '50%',
     resizable: true,
-    align: 'left'
-  }
+    align: 'left',
+  },
 ];
 
 export default utilitiesSchema;

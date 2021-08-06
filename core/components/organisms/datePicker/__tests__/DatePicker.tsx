@@ -16,12 +16,7 @@ describe('DatePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DatePicker
-          date={new Date(2020, 2, 1)}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DatePicker date={new Date(2020, 2, 1)} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -38,12 +33,7 @@ describe('DatePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DatePicker
-          date={new Date(2020, 2, 1)}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DatePicker date={new Date(2020, 2, 1)} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -60,13 +50,7 @@ describe('DatePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DatePicker
-          date={new Date(2020, 2, 1)}
-          withInput={true}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DatePicker date={new Date(2020, 2, 1)} withInput={true} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

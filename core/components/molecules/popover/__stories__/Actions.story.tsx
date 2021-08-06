@@ -13,16 +13,10 @@ export const popoverWithAction = () => (
       <div style={{ width: 'var(--spacing-9)' }} className="mx-6 my-6">
         <Text>You have some edits saved in draft state.You can resume editing or discard those changes.</Text>
         <div className="d-flex">
-          <Button
-            className="mt-4"
-            appearance="primary"
-          >
+          <Button className="mt-4" appearance="primary">
             Edit Registry
           </Button>
-          <Button
-            className="mt-4 ml-5"
-            appearance="basic"
-          >
+          <Button className="mt-4 ml-5" appearance="basic">
             Discard Changes
           </Button>
         </div>
@@ -37,8 +31,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

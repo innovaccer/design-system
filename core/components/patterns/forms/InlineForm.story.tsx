@@ -167,8 +167,8 @@ export default {
       docPage: {
         customCode,
         title: 'Inline Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

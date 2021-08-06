@@ -152,8 +152,8 @@ export default {
       docPage: {
         customCode,
         title: 'Date range picker with custom Popover',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

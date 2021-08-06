@@ -2,7 +2,16 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type Appearance = 'primary' | 'secondary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
+export type Appearance =
+  | 'primary'
+  | 'secondary'
+  | 'alert'
+  | 'warning'
+  | 'success'
+  | 'accent1'
+  | 'accent2'
+  | 'accent3'
+  | 'accent4';
 
 export interface BadgeProps extends BaseProps {
   /*
@@ -20,23 +29,21 @@ export interface BadgeProps extends BaseProps {
 }
 
 export const Badge = (props: BadgeProps) => {
-  const {
-    appearance,
-    children,
-    subtle,
-    className,
-  } = props;
+  const { appearance, children, subtle, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    Badge: true,
-    [`Badge--${appearance}`]: appearance && !subtle,
-    [`Badge--subtle-${appearance}`]: subtle
-  }, className);
+  const classes = classNames(
+    {
+      Badge: true,
+      [`Badge--${appearance}`]: appearance && !subtle,
+      [`Badge--subtle-${appearance}`]: subtle,
+    },
+    className
+  );
 
   return (
-    <span data-test="DesignSystem-Badge" {...baseProps} className={classes} >
+    <span data-test="DesignSystem-Badge" {...baseProps} className={classes}>
       {children}
     </span>
   );
@@ -44,7 +51,7 @@ export const Badge = (props: BadgeProps) => {
 
 Badge.displayName = 'Badge';
 Badge.defaultProps = {
-  appearance: 'secondary'
+  appearance: 'secondary',
 };
 
 export default Badge;

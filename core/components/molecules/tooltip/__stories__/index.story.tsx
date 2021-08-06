@@ -17,12 +17,12 @@ export const all = () => {
     tooltip,
     hoverable,
     position,
-    appendToBody
+    appendToBody,
   };
 
   return (
     <div style={{ marginTop: '30px', marginLeft: '150px' }}>
-      <Tooltip {...options} >
+      <Tooltip {...options}>
         <Button>{position}</Button>
       </Tooltip>
     </div>
@@ -31,5 +31,5 @@ export const all = () => {
 
 export default {
   title: 'Components/Tooltip/All',
-  component: Tooltip
+  component: Tooltip,
 };

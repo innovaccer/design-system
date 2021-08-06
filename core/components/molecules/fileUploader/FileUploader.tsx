@@ -5,10 +5,7 @@ import FileUploaderFormat, { FileUploaderFormatProps } from './FileUploaderForma
 import FileUploaderButton, { FileUploaderButtonProps } from './FileUploaderButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export interface FileUploaderProps extends
-  FileUploaderButtonProps,
-  FileUploaderFormatProps,
-  BaseProps {
+export interface FileUploaderProps extends FileUploaderButtonProps, FileUploaderFormatProps, BaseProps {
   /**
    * Describes the heading of `FileUploader`
    */
@@ -41,24 +38,21 @@ export const FileUploader = (props: FileUploaderProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const FileUploaderClass = classNames({
-    ['FileUploader']: true,
-  }, className);
+  const FileUploaderClass = classNames(
+    {
+      ['FileUploader']: true,
+    },
+    className
+  );
 
   return (
     <div {...baseProps} className={FileUploaderClass}>
       <Text weight="medium">{title}</Text>
       <FileUploaderFormat formatLabel={formatLabel} />
-      <Text
-        size="small"
-        appearance="subtle"
-        className={!formatLabel ? 'mt-4' : ''}
-      >
+      <Text size="small" appearance="subtle" className={!formatLabel ? 'mt-4' : ''}>
         {sizeLabel}
       </Text>
-      {sampleFileLink && (
-        <div className="mt-4">{sampleFileLink}</div>
-      )}
+      {sampleFileLink && <div className="mt-4">{sampleFileLink}</div>}
       <FileUploaderButton
         id={id}
         name={name}
@@ -73,13 +67,10 @@ export const FileUploader = (props: FileUploaderProps) => {
   );
 };
 
-FileUploader.defaultProps = Object.assign({},
-  FileUploaderButton.defaultProps,
-  {
-    title: 'Upload files',
-    sizeLabel: 'Maximum size: 25 MB',
-  }
-);
+FileUploader.defaultProps = Object.assign({}, FileUploaderButton.defaultProps, {
+  title: 'Upload files',
+  sizeLabel: 'Maximum size: 25 MB',
+});
 
 FileUploader.displayName = 'FileUploader';
 

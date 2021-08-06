@@ -34,7 +34,9 @@ export const multiSelectWithApplyButton = () => {
 
   return (
     <div className="w-25">
-      <Text weight="strong">{'Options <= 50'}</Text><br /><br />
+      <Text weight="strong">{'Options <= 50'}</Text>
+      <br />
+      <br />
       <Dropdown
         options={dropdownOptions.slice(0, 50)}
         onPopperToggle={onPopperToggle}
@@ -113,9 +115,9 @@ export default {
         title: 'Controlled Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

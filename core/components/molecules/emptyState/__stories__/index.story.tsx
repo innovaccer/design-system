@@ -12,13 +12,10 @@ export const all = () => {
 
   return (
     <div className="h-100" style={{ backgroundColor: 'var(--secondary-lightest)' }}>
-      <EmptyState
-        title={title}
-        description={description}
-        size="large"
-        imageSrc={noContent}
-      >
-        <Button size="large" appearance="primary">Add campaigns</Button>
+      <EmptyState title={title} description={description} size="large" imageSrc={noContent}>
+        <Button size="large" appearance="primary">
+          Add campaigns
+        </Button>
       </EmptyState>
     </div>
   );
@@ -26,5 +23,5 @@ export const all = () => {
 
 export default {
   title: 'Components/EmptyState/All',
-  component: EmptyState
+  component: EmptyState,
 };

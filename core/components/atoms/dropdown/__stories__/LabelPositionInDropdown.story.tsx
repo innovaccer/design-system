@@ -7,7 +7,7 @@ const options = [
   {
     label: 'All',
     value: 'all',
-    selected: true
+    selected: true,
   },
   {
     label: 'Draft',
@@ -32,7 +32,7 @@ const options = [
   {
     label: 'Completely Failed',
     value: 'completely_failed',
-  }
+  },
 ];
 
 // CSF format story
@@ -40,18 +40,9 @@ export const labelPositionInDropdown = () => (
   <div>
     <div className="w-25 mb-9">
       <Label withInput={true}>Status</Label>
-      <Dropdown
-        options={options}
-        className="w-100"
-        withCheckbox={true}
-      />
+      <Dropdown options={options} className="w-100" withCheckbox={true} />
     </div>
-    <Dropdown
-      options={options}
-      className="w-25"
-      inlineLabel="Status"
-      withCheckbox={true}
-    />
+    <Dropdown options={options} className="w-25" inlineLabel="Status" withCheckbox={true} />
   </div>
 );
 
@@ -64,8 +55,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

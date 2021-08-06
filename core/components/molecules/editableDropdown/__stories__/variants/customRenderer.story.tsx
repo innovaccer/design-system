@@ -9,7 +9,7 @@ for (let i = 1; i <= 10; i++) {
     label: `Option ${i}`,
     value: `Option ${i}`,
     group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',
-    selected: i === 2
+    selected: i === 2,
   });
 }
 
@@ -31,21 +31,23 @@ export const customRender = () => {
   };
 
   const customRenderer = (label: string) => {
-    return (
-      <StatusHint appearance="warning">{label}</StatusHint>
-    );
+    return <StatusHint appearance="warning">{label}</StatusHint>;
   };
 
   const optionRenderer = (props: any) => {
     const { label } = props.optionData;
     return (
-      <StatusHint className="px-5 py-4 cursor-pointer" appearance="warning">{label}</StatusHint>
+      <StatusHint className="px-5 py-4 cursor-pointer" appearance="warning">
+        {label}
+      </StatusHint>
     );
   };
 
   return (
     <div className="w-25">
-      <Label withInput={true} className="ml-5">Editable Dropdown</Label>
+      <Label withInput={true} className="ml-5">
+        Editable Dropdown
+      </Label>
       <EditableDropdown
         customTriggerRenderer={customRenderer}
         dropdownOptions={{
@@ -122,8 +124,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

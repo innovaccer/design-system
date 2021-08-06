@@ -35,11 +35,7 @@ export interface PlaceholderParagraphProps extends BaseProps {
 }
 
 export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
-  const {
-    length,
-    size,
-    className
-  } = props;
+  const { length, size, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -49,11 +45,14 @@ export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
     [`PlaceholderParagraph--${size}`]: size,
   });
 
-  const wrapperClass = classNames({
-    'PlaceholderParagraph-wrapper': true,
-    [`PlaceholderParagraph-wrapper--length-${length}`]: length,
-    [`PlaceholderParagraph-wrapper--size-${size}`]: size,
-  }, className);
+  const wrapperClass = classNames(
+    {
+      'PlaceholderParagraph-wrapper': true,
+      [`PlaceholderParagraph-wrapper--length-${length}`]: length,
+      [`PlaceholderParagraph-wrapper--size-${size}`]: size,
+    },
+    className
+  );
 
   return (
     <div {...baseProps} className={wrapperClass}>
@@ -64,7 +63,7 @@ export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {
 
 PlaceholderParagraph.displayName = 'PlaceholderParagraph';
 PlaceholderParagraph.defaultProps = {
-  length: 'medium'
+  length: 'medium',
 };
 
 export default PlaceholderParagraph;

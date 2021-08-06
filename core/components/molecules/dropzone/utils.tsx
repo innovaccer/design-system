@@ -8,14 +8,12 @@ const isEdge = (userAgent: string) => {
 
 export const accepts = (file: File, acceptedFiles?: string | string[]) => {
   if (file && acceptedFiles) {
-    const acceptedFilesArray = Array.isArray(acceptedFiles)
-      ? acceptedFiles
-      : acceptedFiles.split(',');
+    const acceptedFilesArray = Array.isArray(acceptedFiles) ? acceptedFiles : acceptedFiles.split(',');
     const fileName = file.name || '';
     const mimeType = (file.type || '').toLowerCase();
     const baseMimeType = mimeType.replace(/\/.*$/, '');
 
-    return acceptedFilesArray.some(type => {
+    return acceptedFilesArray.some((type) => {
       const validType = type.trim().toLowerCase();
       if (validType.charAt(0) === '.') {
         return fileName.toLowerCase().endsWith(validType);
@@ -46,7 +44,7 @@ export const isEvtWithFiles = (event: any) => {
 
   return Array.prototype.some.call(
     event.dataTransfer.types,
-    type => type === 'Files' || type === 'application/x-moz-file'
+    (type) => type === 'Files' || type === 'application/x-moz-file'
   );
 };
 
@@ -64,7 +62,7 @@ export const isIeOrEdge = (userAgent = window.navigator.userAgent) => {
 
 export const composeEventHandlers = (...fns: any[]) => {
   return (event: any, ...args: any[]) =>
-    fns.some(fn => {
+    fns.some((fn) => {
       if (!isPropagationStopped(event) && fn) {
         fn(event, ...args);
       }
@@ -77,22 +75,22 @@ export const reducer = (state: any, action: any) => {
     case 'focus':
       return {
         ...state,
-        isFocused: true
+        isFocused: true,
       };
     case 'blur':
       return {
         ...state,
-        isFocused: false
+        isFocused: false,
       };
     case 'openDialog':
       return {
         ...state,
-        isFileDialogActive: true
+        isFileDialogActive: true,
       };
     case 'closeDialog':
       return {
         ...state,
-        isFileDialogActive: false
+        isFileDialogActive: false,
       };
     case 'setDraggedFiles':
       /* eslint no-case-declarations: 0 */
@@ -100,13 +98,13 @@ export const reducer = (state: any, action: any) => {
       return {
         ...state,
         draggedFiles,
-        isDragActive
+        isDragActive,
       };
     case 'setFiles':
       return {
         ...state,
         acceptedFiles: action.acceptedFiles,
-        fileRejections: action.fileRejections
+        fileRejections: action.fileRejections,
       };
     case 'reset':
       return {

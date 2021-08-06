@@ -12,10 +12,7 @@ export const all = () => {
   };
 
   return (
-    <Tabs
-      activeIndex={activeIndex}
-      onTabChange={onTabChangeHandler}
-    >
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler}>
       <Tab label="Tab(Recommended)" count={10}>
         <div>Tab(Recommended)</div>
       </Tab>
@@ -61,7 +58,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

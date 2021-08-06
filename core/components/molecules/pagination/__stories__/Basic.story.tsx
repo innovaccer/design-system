@@ -4,12 +4,7 @@ import Pagination from '../Pagination';
 
 export const BasicPagination = () => {
   return (
-    <Pagination
-      type="basic"
-      page={1}
-      totalPages={50}
-      onPageChange={pageNo => action(`Page changed: ${pageNo}`)()}
-    />
+    <Pagination type="basic" page={1} totalPages={50} onPageChange={(pageNo) => action(`Page changed: ${pageNo}`)()} />
   );
 };
 
@@ -32,8 +27,8 @@ export default {
       docPage: {
         customCode,
         title: 'Pagination',
-        description:'Basic pagination'
-      }
-    }
-  }
+        description: 'Basic pagination',
+      },
+    },
+  },
 };

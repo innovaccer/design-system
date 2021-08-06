@@ -4,18 +4,13 @@ import { number, select, boolean } from '@storybook/addon-knobs';
 import { list } from './AvatarList';
 
 export const all = () => {
-
   const position = select(
     'position',
     ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
     'bottom'
   );
 
-  const on = select(
-    'on',
-    ['click', 'hover'],
-    'hover'
-  );
+  const on = select('on', ['click', 'hover'], 'hover');
 
   const dark = boolean('dark', true);
 
@@ -31,14 +26,10 @@ export const all = () => {
     list: list.slice(0, 4),
   };
 
-  return (
-    <AvatarGroup
-      {...options}
-    />
-  );
+  return <AvatarGroup {...options} />;
 };
 
 export default {
   title: 'Components/AvatarGroup/All',
-  component: AvatarGroup
+  component: AvatarGroup,
 };

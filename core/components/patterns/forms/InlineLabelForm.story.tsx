@@ -200,8 +200,8 @@ export default {
       docPage: {
         customCode,
         title: 'Inline Label Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

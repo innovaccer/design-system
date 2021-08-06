@@ -6,14 +6,10 @@ export const required = () => {
   return (
     <div>
       <div className="mr-5 mb-8">
-        <Label optional={true}>
-          Not required
-        </Label>
+        <Label optional={true}>Not required</Label>
       </div>
       <div>
-        <Label required={true}>
-          Required
-        </Label>
+        <Label required={true}>Required</Label>
       </div>
     </div>
   );
@@ -25,8 +21,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Label'
-      }
-    }
-  }
+        title: 'Label',
+      },
+    },
+  },
 };

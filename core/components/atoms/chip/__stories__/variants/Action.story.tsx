@@ -6,34 +6,27 @@ import { action } from '@storybook/addon-actions';
 
 const BooleanValue = [true, false];
 export const Action = () => {
-  const icon = text(
-    'icon', 'assessment'
-  );
-  const label = text(
-    'label',
-    'Action'
-  );
+  const icon = text('icon', 'assessment');
+  const label = text('label', 'Action');
   return (
     <div className="d-flex">
-      {
-        BooleanValue.map((booleanvalue, ind) => {
-          return (
-            <div key={ind} className="mr-9">
-              <Chip
-                icon={icon}
-                label={label}
-                disabled={booleanvalue}
-                onClose={action(`onClose: ${name}`)}
-                onClick={action(`onClick: ${name}`)}
-                type="action"
-                name={'chip'}
-              />
-              <br />
-              <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>
-            </div>
-          );
-        })
-      }
+      {BooleanValue.map((booleanvalue, ind) => {
+        return (
+          <div key={ind} className="mr-9">
+            <Chip
+              icon={icon}
+              label={label}
+              disabled={booleanvalue}
+              onClose={action(`onClose: ${name}`)}
+              onClick={action(`onClick: ${name}`)}
+              type="action"
+              name={'chip'}
+            />
+            <br />
+            <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -43,8 +36,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Chip'
-      }
-    }
-  }
+        title: 'Chip',
+      },
+    },
+  },
 };

@@ -17,10 +17,13 @@ export const ModalHeader = (props: ModalHeaderProps) => {
   const { className, heading, subHeading, onClose, seperator, backIcon, backIconCallback } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    'Modal-header': true,
-    ['Modal-header--withSeperator']: seperator
-  }, className);
+  const classes = classNames(
+    {
+      'Modal-header': true,
+      ['Modal-header--withSeperator']: seperator,
+    },
+    className
+  );
 
   return (
     <div {...baseProps} className={classes}>

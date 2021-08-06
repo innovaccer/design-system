@@ -74,13 +74,13 @@ export const spacing = () => {
             separator={true}
             withHeader={true}
             headerOptions={{
-              withSearch: true
+              withSearch: true,
             }}
             size="tight"
             showMenu={false}
             pageSize={16}
             onSearch={(currData, searchTerm) => {
-              return currData.filter(d => d.pixel.toLowerCase().includes(searchTerm.toLowerCase()));
+              return currData.filter((d) => d.pixel.toLowerCase().includes(searchTerm.toLowerCase()));
             }}
           />
         </Card>
@@ -111,7 +111,7 @@ export default {
     viewMode: 'story',
     docs: {
       page: null,
-      docPage: null
-    }
-  }
+      docPage: null,
+    },
+  },
 };

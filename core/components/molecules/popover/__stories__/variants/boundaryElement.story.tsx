@@ -6,10 +6,7 @@ import { Text, Button, Popover } from '@/index';
 
 // CSF format story
 export const boundaryElement = () => {
-  const open = boolean(
-    'open',
-    false
-  );
+  const open = boolean('open', false);
 
   const position = select(
     'position',
@@ -17,11 +14,7 @@ export const boundaryElement = () => {
     'bottom'
   );
 
-  const on = select(
-    'on',
-    ['click', 'hover'],
-    'click'
-  );
+  const on = select('on', ['click', 'hover'], 'click');
 
   const appendToBody = boolean('appendToBody', true);
   const hoverable = boolean('hoverable', true);
@@ -47,7 +40,7 @@ export const boundaryElement = () => {
     on,
     hoverable,
     open,
-    onToggle
+    onToggle,
   };
   if (on === 'hover') delete options.onToggle;
 
@@ -58,11 +51,7 @@ export const boundaryElement = () => {
       <Popover {...options} boundaryElement={ref}>
         <div style={{ width: 100 }} className="mx-6 my-6">
           <Text>Popup</Text>
-          <Button
-            className="mt-4"
-            appearance="primary"
-            onClick={action('button clicked inside popover')}
-          >
+          <Button className="mt-4" appearance="primary" onClick={action('button clicked inside popover')}>
             Click
           </Button>
         </div>
@@ -104,8 +93,8 @@ export default {
         customCode,
         props: {
           exclude: ['offset'],
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

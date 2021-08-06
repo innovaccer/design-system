@@ -11,120 +11,53 @@ import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRend
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 
 export const all = () => {
-  const async = boolean(
-    'async',
-    false
-  );
+  const async = boolean('async', false);
 
   let loading;
   let error;
   let applyData;
   let applySchema;
-  const applyLoaderSchema = boolean(
-    'applyLoaderSchema',
-    true
-  );
+  const applyLoaderSchema = boolean('applyLoaderSchema', true);
 
   if (!async) {
-    loading = boolean(
-      'loading',
-      false
-    );
+    loading = boolean('loading', false);
 
-    error = boolean(
-      'error',
-      false
-    );
+    error = boolean('error', false);
 
-    applySchema = boolean(
-      'applySchema',
-      true
-    );
+    applySchema = boolean('applySchema', true);
 
-    applyData = boolean(
-      'applyData',
-      true
-    );
+    applyData = boolean('applyData', true);
   }
 
-  const type = select(
-    'type',
-    ['resource', 'data'],
-    'resource'
-  );
+  const type = select('type', ['resource', 'data'], 'resource');
 
-  const size = select(
-    'size',
-    ['comfortable', 'standard', 'compressed', 'tight'],
-    'comfortable'
-  );
+  const size = select('size', ['comfortable', 'standard', 'compressed', 'tight'], 'comfortable');
 
-  const draggable = boolean(
-    'draggable',
-    true
-  );
+  const draggable = boolean('draggable', true);
 
-  const nestedRows = boolean(
-    'nestedRows',
-    false
-  );
+  const nestedRows = boolean('nestedRows', false);
 
-  const withHeader = boolean(
-    'withHeader',
-    true
-  );
+  const withHeader = boolean('withHeader', true);
 
-  const withCheckbox = boolean(
-    'withCheckbox',
-    false
-  );
+  const withCheckbox = boolean('withCheckbox', false);
 
-  const showMenu = boolean(
-    'showMenu',
-    true
-  );
+  const showMenu = boolean('showMenu', true);
 
-  const withPagination = boolean(
-    'withPagination',
-    false
-  );
+  const withPagination = boolean('withPagination', false);
 
-  const page = number(
-    'page',
-    1
-  );
+  const page = number('page', 1);
 
-  const paginationType = select(
-    'paginationType',
-    ['basic', 'jump'],
-    'jump'
-  );
+  const paginationType = select('paginationType', ['basic', 'jump'], 'jump');
 
-  const pageSize = number(
-    'pageSize',
-    12
-  );
+  const pageSize = number('pageSize', 12);
 
-  const multipleSorting = boolean(
-    'multipleSorting',
-    false
-  );
+  const multipleSorting = boolean('multipleSorting', false);
 
-  const headCellTooltip = boolean(
-    'headCellTooltip',
-    false
-  );
+  const headCellTooltip = boolean('headCellTooltip', false);
 
-  const separator = boolean(
-    'separator',
-    false
-  );
+  const separator = boolean('separator', false);
 
-  const filterPosition = select(
-    'filterPosition',
-    ['GRID', 'HEADER'],
-    undefined
-  );
+  const filterPosition = select('filterPosition', ['GRID', 'HEADER'], undefined);
 
   let dataAttr = {};
   if (async) {
@@ -171,19 +104,25 @@ export const all = () => {
           paginationType={paginationType}
           pageSize={pageSize}
           loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
-          onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
-          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
-          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          onRowClick={(rowData, rowIndex) =>
+            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
+          }
+          onSelect={(rowIndex, selected, selectedList, selectAll) =>
+            action(
+              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+                selectedList
+              )} selectAll: ${selectAll}`
+            )()
+          }
+          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
           onSearch={(currData, searchTerm) => {
             action(`on-search:- currData: ${JSON.stringify(currData)}, searchTerm: ${searchTerm}`)();
             return currData;
           }}
           multipleSorting={multipleSorting}
-          sortingList={[
-            { name: 'name', type: 'desc' }
-          ]}
+          sortingList={[{ name: 'name', type: 'desc' }]}
           filterList={{
-            name: ['h-r', 's-z']
+            name: ['h-r', 's-z'],
           }}
           filterPosition={filterPosition}
         />
@@ -203,7 +142,7 @@ export default {
           exclude: ['showHead'],
         },
         noStory: true,
-      }
-    }
-  }
+      },
+    },
+  },
 };

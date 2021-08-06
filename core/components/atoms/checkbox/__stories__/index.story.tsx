@@ -6,31 +6,15 @@ import Checkbox from '../Checkbox';
 
 // CSF format story
 export const all = () => {
-  const size = select(
-    'size',
-    ['regular', 'tiny'],
-    undefined
-  );
+  const size = select('size', ['regular', 'tiny'], undefined);
 
-  const label = text(
-    'label',
-    'Checkbox'
-  );
+  const label = text('label', 'Checkbox');
 
-  const checked = boolean(
-    'checked',
-    false
-  );
+  const checked = boolean('checked', false);
 
-  const indeterminate = boolean(
-    'indeterminate',
-    false
-  );
+  const indeterminate = boolean('indeterminate', false);
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     updateKnob('checked', event.target.checked);
@@ -52,5 +36,5 @@ export const all = () => {
 
 export default {
   title: 'Components/Checkbox/All',
-  component: Checkbox
+  component: Checkbox,
 };

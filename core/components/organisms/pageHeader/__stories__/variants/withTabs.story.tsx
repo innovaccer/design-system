@@ -6,15 +6,9 @@ import { updateKnob } from '@/utils/storybookEventEmitter';
 import { number, text, boolean } from '@storybook/addon-knobs';
 
 export const withTabs = () => {
-  const active = number(
-    'active',
-    1
-  );
+  const active = number('active', 1);
   const separator = boolean('separator', true);
-  const title = text(
-    'title',
-    'Page title'
-  );
+  const title = text('title', 'Page title');
 
   const onTabChangeHandler = (tabIndex: number) => {
     updateKnob('active', tabIndex);
@@ -25,43 +19,40 @@ export const withTabs = () => {
     title,
     separator,
     tabs: (
-      <TabsWrapper
-        active={active}
-        onTabChange={onTabChangeHandler}
-      >
+      <TabsWrapper active={active} onTabChange={onTabChangeHandler}>
         <Tab
-          label={(
+          label={
             <>
               <div className="Tab-count">
                 <Badge appearance="secondary">2</Badge>
               </div>
               <Text appearance={active !== 0 ? 'subtle' : undefined}>Tab 1</Text>
             </>
-          )}
+          }
         >
           {null}
         </Tab>
         <Tab
-          label={(
+          label={
             <>
               <div className="Tab-count">
                 <Badge appearance="secondary">12</Badge>
               </div>
               <Text appearance={active !== 1 ? 'subtle' : undefined}>Tab 2</Text>
             </>
-          )}
+          }
         >
           {null}
         </Tab>
         <Tab
-          label={(
+          label={
             <>
               <div className="Tab-count">
                 <Badge appearance="secondary">5</Badge>
               </div>
               <Text appearance={active !== 2 ? 'subtle' : undefined}>Tab 3</Text>
             </>
-          )}
+          }
         >
           {null}
         </Tab>
@@ -69,10 +60,12 @@ export const withTabs = () => {
     ),
     actions: (
       <div className="d-flex justify-content-end align-items-center">
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
+        <span className="mr-4">
+          <Text appearance="subtle">Meta data</Text>
+        </span>
         <Button appearance="primary">Primary</Button>
       </div>
-    )
+    ),
   };
 
   return (
@@ -157,8 +150,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

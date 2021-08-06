@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import { DropzoneProps } from '@/index.type';
 
 export const disabled = () => {
-
   const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles) => {
     return action(`Accepted Files: ${acceptedFiles}`)();
   };
@@ -18,7 +17,9 @@ export const disabled = () => {
         disabled={true}
         className="mb-3"
       />
-      <Text size="large" weight="strong">Standard</Text>
+      <Text size="large" weight="strong">
+        Standard
+      </Text>
       <Dropzone
         formatLabel="Accepted formats: PDF, jpg"
         sizeLabel="Maximum size: 25 MB"
@@ -27,7 +28,9 @@ export const disabled = () => {
         type="compressed"
         className="mt-6 mb-3"
       />
-      <Text size="large" weight="strong">Compressed</Text>
+      <Text size="large" weight="strong">
+        Compressed
+      </Text>
       <Dropzone
         formatLabel="Accepted formats: PDF, jpg"
         sizeLabel="Maximum size: 25 MB"
@@ -36,7 +39,9 @@ export const disabled = () => {
         type="tight"
         className="mt-6 mb-3"
       />
-      <Text size="large" weight="strong">Tight</Text>
+      <Text size="large" weight="strong">
+        Tight
+      </Text>
     </div>
   );
 };
@@ -84,8 +89,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

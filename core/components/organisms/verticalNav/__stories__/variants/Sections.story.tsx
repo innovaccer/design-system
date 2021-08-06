@@ -5,7 +5,6 @@ import { boolean } from '@storybook/addon-knobs';
 import { Menu } from '../../../Navigation';
 
 export const section = () => {
-
   const autoCollapse = boolean('autoCollapse', true);
 
   const data = [
@@ -14,7 +13,7 @@ export const section = () => {
       label: 'Patient 360',
       icon: 'assignment_ind',
       link: '/patient360',
-      group: 'Section 1'
+      group: 'Section 1',
     },
     {
       name: 'care_management',
@@ -24,20 +23,20 @@ export const section = () => {
       subMenu: [
         {
           name: 'care_management.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
         },
         {
           name: 'care_management.care_plans',
-          label: 'Care Plans'
-        }
-      ]
+          label: 'Care Plans',
+        },
+      ],
     },
     {
       name: 'episodes',
       label: 'Episodes',
       disabled: true,
       group: 'Section 2',
-      icon: 'airline_seat_flat_angled'
+      icon: 'airline_seat_flat_angled',
     },
     {
       name: 'risk',
@@ -47,13 +46,13 @@ export const section = () => {
       subMenu: [
         {
           name: 'risk.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
         },
         {
           name: 'risk.care_plans',
-          label: 'Care Plans'
-        }
-      ]
+          label: 'Care Plans',
+        },
+      ],
     },
     {
       name: 'claims',
@@ -78,11 +77,11 @@ export const section = () => {
       label: 'Documents',
       icon: 'assignment',
       group: 'Section 3',
-    }
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'care_management.timeline'
+    name: 'care_management.timeline',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -93,13 +92,7 @@ export const section = () => {
 
   return (
     <div style={{ height: 'calc(90vh)', background: 'var(--secondary-lightest)' }}>
-      <VerticalNav
-        menus={data}
-        expanded={true}
-        autoCollapse={autoCollapse}
-        active={active}
-        onClick={onClickHandler}
-      />
+      <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />
     </div>
   );
 };
@@ -210,8 +203,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

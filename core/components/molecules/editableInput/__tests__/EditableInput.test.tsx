@@ -28,11 +28,7 @@ describe('EditableInput component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <EditableInput
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<EditableInput {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -41,19 +37,14 @@ describe('EditableInput component', () => {
 });
 
 describe('EditableInput component', () => {
-
   it('renders children', () => {
-    const { getByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} />
-    );
+    const { getByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     expect(getByTestId('DesignSystem-EditableInput').textContent).toMatch(StringValue);
   });
 
   it('renders default div initially', () => {
-    const { getByTestId, queryByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} />
-    );
+    const { getByTestId, queryByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     expect(getByTestId(defaultCompTestId)).toBeInTheDocument();
     expect(queryByTestId(inputCompTestId)).not.toBeInTheDocument();
@@ -61,9 +52,7 @@ describe('EditableInput component', () => {
   });
 
   it('renders input on hover', () => {
-    const { getByTestId, queryByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} />
-    );
+    const { getByTestId, queryByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
     fireEvent.mouseEnter(editableWrapper);
@@ -72,13 +61,10 @@ describe('EditableInput component', () => {
     expect(getByTestId(inputCompTestId)).toBeInTheDocument();
     expect(queryByTestId('DesignSystem-EditableInput--Actions')).not.toBeInTheDocument();
     expect(queryByTestId(inputCompTestId)).toHaveAttribute('placeholder', StringValue);
-
   });
 
   it('renders default div on mouseLeave', () => {
-    const { getByTestId, queryByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} />
-    );
+    const { getByTestId, queryByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
 
@@ -92,10 +78,7 @@ describe('EditableInput component', () => {
   });
 
   it('renders input and button on click', () => {
-
-    const { getByTestId, queryByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} />
-    );
+    const { getByTestId, queryByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
     fireEvent.click(editableWrapper);
@@ -106,25 +89,18 @@ describe('EditableInput component', () => {
 
     const inputComp = queryByTestId(inputCompTestId);
     expect(document.activeElement).toEqual(inputComp);
-
   });
-
 });
 
 describe('EditableInput component with prop: size', () => {
-
   it('renders default size: regular', () => {
-    const { getByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} />
-    );
+    const { getByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     expect(getByTestId(defaultCompTestId)).toHaveClass('EditableInput-default--regular');
   });
 
   it('renders size: tiny', () => {
-    const { getByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} size="tiny" />
-    );
+    const { getByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} size="tiny" />);
 
     expect(getByTestId(defaultCompTestId)).toHaveClass('EditableInput-default--tiny');
 
@@ -132,18 +108,12 @@ describe('EditableInput component with prop: size', () => {
     fireEvent.mouseEnter(editableWrapper);
     expect(getByTestId(inputTestId)).toHaveClass('EditableInput-Input--tiny');
   });
-
 });
 
 describe('EditableInput component with action buttons and props: value and inputOptions', () => {
-
   it('discard changes', () => {
     const { getByTestId, queryByTestId } = render(
-      <EditableInput
-        placeholder={StringValue}
-        onChange={onChange}
-        inputOptions={{ onChange: onInputChange }}
-      />
+      <EditableInput placeholder={StringValue} onChange={onChange} inputOptions={{ onChange: onInputChange }} />
     );
 
     const editableWrapper = getByTestId(editableWrapperTestId);
@@ -166,7 +136,7 @@ describe('EditableInput component with action buttons and props: value and input
     const updatedValue = 'Design System';
 
     const { getByTestId, queryByTestId, rerender } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} value={''}/>
+      <EditableInput placeholder={StringValue} onChange={onChange} value={''} />
     );
 
     const editableWrapper = getByTestId(editableWrapperTestId);
@@ -179,7 +149,7 @@ describe('EditableInput component with action buttons and props: value and input
     fireEvent.click(saveButton);
     expect(onChange).toHaveBeenCalled();
 
-    rerender(<EditableInput placeholder={StringValue} onChange={onChange} value={updatedValue}/>);
+    rerender(<EditableInput placeholder={StringValue} onChange={onChange} value={updatedValue} />);
     expect(queryByTestId(inputCompTestId)).not.toBeInTheDocument();
     expect(getByTestId(defaultCompTestId).textContent).toMatch(updatedValue);
 
@@ -189,7 +159,6 @@ describe('EditableInput component with action buttons and props: value and input
 });
 
 describe('EditableInput component with prop: error and errorMessage', () => {
-
   it('renders error popover on click', () => {
     const { getByTestId, queryByTestId } = render(
       <EditableInput placeholder={StringValue} onChange={onChange} error={true} errorMessage={StringValue} />
@@ -203,7 +172,6 @@ describe('EditableInput component with prop: error and errorMessage', () => {
     fireEvent.mouseEnter(inputWrapper);
     expect(getByTestId('DesignSystem-EditableInput--ErrorPopper')).toBeInTheDocument();
   });
-
 });
 
 describe('EditableInput Component with overwrite class', () => {
@@ -215,5 +183,4 @@ describe('EditableInput Component with overwrite class', () => {
     );
     expect(getByTestId('DesignSystem-EditableInput')).toHaveClass(className);
   });
-
 });

@@ -15,7 +15,7 @@ export type Alignment = 'left' | 'right' | 'center';
 export type Comparator = (a: RowData, b: RowData) => -1 | 0 | 1;
 export type Filter = any[];
 export type GridRef = HTMLDivElement | null;
-export type PageInfo = { page: number, scrollTop: number };
+export type PageInfo = { page: number; scrollTop: number };
 
 export interface FetchDataOptions {
   page?: number;
@@ -26,10 +26,10 @@ export interface FetchDataOptions {
 }
 
 export type fetchDataFunction = (options: FetchDataOptions) => Promise<{
-  searchTerm?: string,
-  count: number,
-  data: Data,
-  schema: Schema
+  searchTerm?: string;
+  count: number;
+  data: Data;
+  schema: Schema;
 }>;
 
 export type updateSortingListFunction = (newSortingList: GridProps['sortingList']) => void;
@@ -48,13 +48,13 @@ export type onRowClickFunction = (data: RowData, rowIndex?: number) => void;
 export type onMenuChangeFn = (name: ColumnSchema['name'], selected: any) => void;
 export type updatePrevPageInfoFunction = (value: PageInfo) => void;
 export type CellType =
-  'DEFAULT' |
-  'WITH_META_LIST' |
-  'AVATAR' |
-  'AVATAR_WITH_TEXT' |
-  'AVATAR_WITH_META_LIST' |
-  'STATUS_HINT' |
-  'ICON';
+  | 'DEFAULT'
+  | 'WITH_META_LIST'
+  | 'AVATAR'
+  | 'AVATAR_WITH_TEXT'
+  | 'AVATAR_WITH_META_LIST'
+  | 'STATUS_HINT'
+  | 'ICON';
 
 export type ColumnSchema = {
   /**
@@ -137,7 +137,7 @@ export type ColumnSchema = {
 };
 
 export type RowData = Record<string, any> & {
-  _selected?: boolean
+  _selected?: boolean;
 };
 
 export type GridSize = 'comfortable' | 'standard' | 'compressed' | 'tight';
@@ -243,8 +243,8 @@ export interface GridProps extends BaseProps {
    * Sorting List
    */
   sortingList: {
-    name: ColumnSchema['name'],
-    type: SortType
+    name: ColumnSchema['name'];
+    type: SortType;
   }[];
   /**
    * update Sorting List Callback
@@ -262,8 +262,8 @@ export interface GridProps extends BaseProps {
    * Select All
    */
   selectAll?: {
-    checked: boolean,
-    indeterminate: boolean
+    checked: boolean;
+    indeterminate: boolean;
   };
   /**
    * Shows tooltip on Head Cell hover
@@ -296,13 +296,13 @@ export class Grid extends React.Component<GridProps, GridState> {
 
     this.state = {
       init: false,
-      prevPageInfo: pageInfo
+      prevPageInfo: pageInfo,
     };
   }
 
   componentDidMount() {
     this.setState({
-      init: true
+      init: true,
     });
     window.addEventListener('resize', this.forceRerender.bind(this));
   }
@@ -370,66 +370,56 @@ export class Grid extends React.Component<GridProps, GridState> {
       }
       this.isBodySyncing = false;
     }
-  }
+  };
 
   updateRenderedSchema = (newSchema: Schema) => {
-    const {
-      updateSchema
-    } = this.props;
+    const { updateSchema } = this.props;
 
     if (updateSchema) {
       updateSchema(newSchema);
     }
-  }
+  };
 
   updateColumnSchema: updateColumnSchemaFunction = (name, schemaUpdate) => {
     const { schema } = this.props;
     const newSchema = [...schema];
 
-    const ind = newSchema.findIndex(s => s.name === name);
+    const ind = newSchema.findIndex((s) => s.name === name);
     newSchema[ind] = {
       ...newSchema[ind],
-      ...schemaUpdate
+      ...schemaUpdate,
     };
 
     this.updateRenderedSchema(newSchema);
-  }
+  };
 
   reorderColumn: reorderColumnFunction = (from, to) => {
-    const {
-      schema
-    } = this.props;
+    const { schema } = this.props;
 
-    const fromInd = schema.findIndex(s => s.name === from);
-    const toInd = schema.findIndex(s => s.name === to);
+    const fromInd = schema.findIndex((s) => s.name === from);
+    const toInd = schema.findIndex((s) => s.name === to);
     const newSchema = moveToIndex(schema, fromInd, toInd);
     this.updateRenderedSchema(newSchema);
-  }
+  };
 
   updateSortingList = (sortingList: GridProps['sortingList']) => {
-    const {
-      updateSortingList
-    } = this.props;
+    const { updateSortingList } = this.props;
 
     if (updateSortingList) {
       updateSortingList(sortingList);
     }
-  }
+  };
 
   updateFilterList = (filterList: GridProps['filterList']) => {
-    const {
-      updateFilterList
-    } = this.props;
+    const { updateFilterList } = this.props;
 
     if (updateFilterList) {
       updateFilterList(filterList);
     }
-  }
+  };
 
   onMenuChange: onMenuChangeFn = (name, selected) => {
-    const {
-      sortingList
-    } = this.props;
+    const { sortingList } = this.props;
     switch (selected) {
       case 'sortAsc':
         sortColumn({ sortingList, updateSortingList: this.updateSortingList }, name, 'asc');
@@ -453,78 +443,64 @@ export class Grid extends React.Component<GridProps, GridState> {
         hideColumn({ updateColumnSchema: this.updateColumnSchema }, name, true);
         break;
     }
-  }
+  };
 
   onFilterChange: onFilterChangeFn = (name, selected) => {
-    const {
-      filterList
-    } = this.props;
+    const { filterList } = this.props;
 
     const newFilterList = {
       ...filterList,
-      [name]: selected
+      [name]: selected,
     };
 
     this.updateFilterList(newFilterList);
-  }
+  };
 
   onSelect: onSelectFn = (rowIndex, selected) => {
-    const {
-      onSelect
-    } = this.props;
+    const { onSelect } = this.props;
 
     if (onSelect) {
       onSelect(rowIndex, selected);
     }
-  }
+  };
 
-  onSelectAll: CheckboxProps['onChange'] = event => {
-    const {
-      onSelectAll,
-    } = this.props;
+  onSelectAll: CheckboxProps['onChange'] = (event) => {
+    const { onSelectAll } = this.props;
 
     if (onSelectAll) {
       onSelectAll(event.target.checked);
     }
-  }
+  };
 
-  updatePrevPageInfo: updatePrevPageInfoFunction = value => {
+  updatePrevPageInfo: updatePrevPageInfoFunction = (value) => {
     this.setState({
-      prevPageInfo: value
+      prevPageInfo: value,
     });
-  }
+  };
 
   render() {
     const baseProps = extractBaseProps(this.props);
 
-    const {
-      init,
-      prevPageInfo
-    } = this.state;
+    const { init, prevPageInfo } = this.state;
 
-    const {
-      type,
-      size,
-      showHead,
-      className,
-      page,
-      loading,
-      loaderSchema
-    } = this.props;
+    const { type, size, showHead, className, page, loading, loaderSchema } = this.props;
 
     const schema = getSchema(this.props.schema, loading, loaderSchema);
 
-    const classes = classNames({
-      Grid: 'true',
-      [`Grid--${type}`]: type,
-      [`Grid--${size}`]: size,
-    }, className);
+    const classes = classNames(
+      {
+        Grid: 'true',
+        [`Grid--${type}`]: type,
+        [`Grid--${size}`]: size,
+      },
+      className
+    );
 
     return (
       <div
         className={classes}
         {...baseProps}
-        ref={el => {
+        ref={(el) => {
           this.gridRef = el;
         }}
       >
@@ -532,7 +508,7 @@ export class Grid extends React.Component<GridProps, GridState> {
           <GridProvider
             value={{
               ...this.props,
-              ref: this.gridRef
+              ref: this.gridRef,
             }}
           >
             {showHead && (

@@ -12,9 +12,12 @@ export const ModalDescription = (props: ModalDescriptionProps) => {
   const { title, description, className } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    'Modal-description': true,
-  }, className);
+  const classes = classNames(
+    {
+      'Modal-description': true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-ModalDescription" {...baseProps} className={classes}>
@@ -24,11 +27,7 @@ export const ModalDescription = (props: ModalDescriptionProps) => {
         </Text>
       )}
       {title && description && <br />}
-      {description && (
-        <Text data-test="DesignSystem-ModalDescription--Description">
-          {description}
-        </Text>
-      )}
+      {description && <Text data-test="DesignSystem-ModalDescription--Description">{description}</Text>}
     </div>
   );
 };

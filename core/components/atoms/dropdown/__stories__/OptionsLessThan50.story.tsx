@@ -6,19 +6,13 @@ const options: any[] = [];
 for (let i = 1; i <= 50; i++) {
   options.push({
     label: `Option ${i}`,
-    value: `Option${i}`
+    value: `Option${i}`,
   });
 }
 
 // CSF format story
 export const dropdownOptionsLessThan50 = () => (
-  <Dropdown
-    options={options}
-    withCheckbox={true}
-    withSearch={true}
-    className="w-25"
-    placeholder="Select"
-  />
+  <Dropdown options={options} withCheckbox={true} withSearch={true} className="w-25" placeholder="Select" />
 );
 
 const customCode = `() => {
@@ -51,8 +45,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

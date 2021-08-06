@@ -41,39 +41,30 @@ export interface FileUploaderListProps extends BaseProps {
 }
 
 export const FileUploaderList = (props: FileUploaderListProps) => {
-  const {
-    fileList,
-    onClick,
-    onDelete,
-    onRetry,
-    className,
-  } = props;
+  const { fileList, onClick, onDelete, onRetry, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const FileListClass = classNames({
-    ['FileUploaderList']: true,
-  }, className);
+  const FileListClass = classNames(
+    {
+      ['FileUploaderList']: true,
+    },
+    className
+  );
 
   if (fileList.length === 0) return null;
 
   return (
     <div {...baseProps} className={FileListClass}>
       {fileList.map((fileName, i) => (
-        <FileUploaderItem
-          key={i}
-          onDelete={onDelete}
-          onRetry={onRetry}
-          onClick={onClick}
-          {...fileName}
-        />
+        <FileUploaderItem key={i} onDelete={onDelete} onRetry={onRetry} onClick={onClick} {...fileName} />
       ))}
     </div>
   );
 };
 
 FileUploaderList.defaultProps = {
-  fileList: []
+  fileList: [],
 };
 
 FileUploaderList.displayName = 'FileUploaderList';

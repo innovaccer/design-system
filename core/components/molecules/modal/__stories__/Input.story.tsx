@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Modal, Button, Paragraph,
-  Navigation, Heading, Label, Dropdown } from '@/index';
+import { Modal, Button, Paragraph, Navigation, Heading, Label, Dropdown } from '@/index';
 
 export const inputModals = () => {
   const [open, setOpen] = React.useState(true);
@@ -19,30 +18,30 @@ export const inputModals = () => {
     {
       label: 'Option2',
       value: 'Option2',
-    }
+    },
   ];
 
   const data = [
     {
       label: 'Medicine',
-      name: 'Tab1'
+      name: 'Tab1',
     },
     {
       label: 'Period',
-      name: 'Tab2'
+      name: 'Tab2',
     },
     {
       label: 'Alias',
-      name: 'Tab3'
+      name: 'Tab3',
     },
     {
       label: 'Priority',
-      name: 'Tab4'
-    }
+      name: 'Tab4',
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'Tab1'
+    name: 'Tab1',
   });
 
   const onClickHandler = (menu: any) => {
@@ -50,13 +49,7 @@ export const inputModals = () => {
   };
 
   const subHeading = (
-    <Navigation
-      align="left"
-      menus={data}
-      active={active}
-      onClick={onClickHandler}
-      className="ml-5 mt-4"
-    />
+    <Navigation align="left" menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />
   );
 
   const header = (
@@ -69,13 +62,14 @@ export const inputModals = () => {
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
       <Modal
         open={open}
@@ -83,39 +77,39 @@ export const inputModals = () => {
         backdropClose={backdropClose}
         onClose={onClose}
         header={header}
-        footer={(
+        footer={
           <>
-            <Button appearance="basic" onClick={action('Cancel button click')}>Discard</Button>
+            <Button appearance="basic" onClick={action('Cancel button click')}>
+              Discard
+            </Button>
             <Button appearance="primary" className="ml-4" onClick={action('Discard button click')}>
-                Create operand
+              Create operand
             </Button>
           </>
-        )}
+        }
         seperator={true}
       >
         <div className="my-5">
-          <Label withInput={true} required={true}>Type</Label>
-          <Dropdown
-              options={options}
-              className="w-50"
-          />
-          <Label withInput={true} className="mt-5">Active Date</Label>
-          <Dropdown
-              options={options}
-              className="w-50"
-          />
+          <Label withInput={true} required={true}>
+            Type
+          </Label>
+          <Dropdown options={options} className="w-50" />
+          <Label withInput={true} className="mt-5">
+            Active Date
+          </Label>
+          <Dropdown options={options} className="w-50" />
           <div className="d-flex pb-4">
             <div className="d-block w-75">
-              <Label withInput={true} required={true} className="mt-5">Diagnosis Diseases</Label>
-              <Dropdown
-                  options={options}
-              />
+              <Label withInput={true} required={true} className="mt-5">
+                Diagnosis Diseases
+              </Label>
+              <Dropdown options={options} />
             </div>
             <div className="ml-5 d-block w-25">
-              <Label withInput={true} required={true} className="mt-5">Version</Label>
-              <Dropdown
-                  options={options}
-              />
+              <Label withInput={true} required={true} className="mt-5">
+                Version
+              </Label>
+              <Dropdown options={options} />
             </div>
           </div>
         </div>
@@ -255,8 +249,8 @@ export default {
       docPage: {
         customCode,
         title: 'Modal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

@@ -22,10 +22,10 @@ export const getUpdatedZIndex = (ele: elementData): number | undefined => {
   const elements = element.querySelectorAll(containerClassName);
   if (elements.length < 1) return;
 
-  const siblings = Array.from(elements).filter(el => el !== elementRef.current);
+  const siblings = Array.from(elements).filter((el) => el !== elementRef.current);
   let zIndex = -1;
 
-  siblings.forEach(element => {
+  siblings.forEach((element) => {
     const prevZIndex = parseInt(window.getComputedStyle(element).zIndex || '0', 10);
     zIndex = Math.max(zIndex, prevZIndex + 10);
   });

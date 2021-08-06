@@ -12,19 +12,19 @@ export const menus = [
     name: 'tab1',
     label: 'Tab #1',
     icon: 'events',
-    link: '/patient360'
+    link: '/patient360',
   },
   {
     name: 'tab2',
     label: 'Tab #2',
     count: 10,
-    link: '/outreach'
+    link: '/outreach',
   },
   {
     name: 'tab3',
     label: 'Tab #3',
     disabled: true,
-    link: '/innote'
+    link: '/innote',
   },
 ];
 
@@ -43,7 +43,7 @@ export const iconMenus = [
     name: 'tab3',
     label: 'Tab #3',
     icon: 'events',
-    disabled: true
+    disabled: true,
   },
 ];
 
@@ -63,7 +63,7 @@ export const countMenus = [
     name: 'tab3',
     label: 'Tab #3',
     count: 100,
-    disabled: true
+    disabled: true,
   },
 ];
 
@@ -72,7 +72,7 @@ const HorizontalNavDataKey = 'DesignSystem-HorizontalNav';
 const mapper = {
   menus: valueHelper(menus, { required: true }),
   active: valueHelper(active, { required: true }),
-  onClick: valueHelper(onClick, { required: true })
+  onClick: valueHelper(onClick, { required: true }),
 };
 
 describe('Horizontal Navigation component', () => {
@@ -80,9 +80,7 @@ describe('Horizontal Navigation component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <HorizontalNav {...attr} />
-      );
+      const { baseElement } = render(<HorizontalNav {...attr} />);
 
       expect(baseElement).toMatchSnapshot();
     });
@@ -138,7 +136,6 @@ describe('Horizontal Navigation component with prop: menus', () => {
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Pills')[disabledIndex];
     expect(disabledMenu).toHaveClass('Badge--subtle-secondary');
   });
-
 });
 
 describe('Horizontal Navigation component active menu', () => {
@@ -163,35 +160,20 @@ describe('Horizontal Navigation component active menu', () => {
   });
 
   it('renders active menu with link', () => {
-    const { getAllByTestId } = render(
-      <HorizontalNav
-        menus={menus}
-        active={{ link: '/patient360' }}
-      />
-    );
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} active={{ link: '/patient360' }} />);
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[activeIndex];
     expect(activeMenu).toHaveClass('Text--link');
   });
-
 });
 
 describe('Horizontal Navigation component prop: onClick', () => {
-
   it('calls onClick callback', () => {
     const stepClicked = 1;
-    const { getAllByTestId } = render(
-      <HorizontalNav
-        menus={menus}
-        active={active}
-        onClick={onClick}
-      />
-    );
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} onClick={onClick} />);
 
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav')[stepClicked];
     fireEvent.click(activeMenu);
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(onClick).toHaveBeenCalledWith(menus[stepClicked]);
-
   });
-
 });

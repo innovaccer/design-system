@@ -6,8 +6,33 @@ import { filterUndefined, testHelper, testMessageHelper, valueHelper } from '@/u
 
 const onClick = jest.fn();
 
-const sizes = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'auto',
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const sizes = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  '11',
+  '12',
+  'auto',
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+];
 
 describe('Column component', () => {
   const mapper: Record<string, any> = {
@@ -19,11 +44,9 @@ describe('Column component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Column
-          {...attr}
-        >
+        <Column {...attr}>
           <div>Masala Design System</div>
-        </Column >
+        </Column>
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -42,11 +65,9 @@ describe('Column component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Column
-          {...attr}
-        >
+        <Column {...attr}>
           <div>Masala Design System</div>
-        </Column >
+        </Column>
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -65,11 +86,9 @@ describe('Column component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Column
-          {...attr}
-        >
+        <Column {...attr}>
           <div>Masala Design System</div>
-        </Column >
+        </Column>
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -88,11 +107,9 @@ describe('Column component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Column
-          {...attr}
-        >
+        <Column {...attr}>
           <div>Masala Design System</div>
-        </Column >
+        </Column>
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -111,11 +128,9 @@ describe('Column component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Column
-          {...attr}
-        >
+        <Column {...attr}>
           <div>Masala Design System</div>
-        </Column >
+        </Column>
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -134,11 +149,9 @@ describe('Column component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Column
-          {...attr}
-        >
+        <Column {...attr}>
           <div>Masala Design System</div>
-        </Column >
+        </Column>
       );
       expect(baseElement).toMatchSnapshot();
     });

@@ -4,7 +4,7 @@ import { Input } from '@/index';
 export const basicInput = () => {
   const [value, setValue] = React.useState('Joy Lawson');
 
-  const onChange = React.useCallback(e => {
+  const onChange = React.useCallback((e) => {
     setValue(e.target.value);
   }, []);
 
@@ -12,15 +12,7 @@ export const basicInput = () => {
     setValue('');
   }, []);
 
-  return (
-    <Input
-      name="input"
-      className="w-25"
-      value={value}
-      onChange={onChange}
-      onClear={onClear}
-    />
-  );
+  return <Input name="input" className="w-25" value={value} onChange={onChange} onClear={onClear} />;
 };
 
 const customCode = `() => {
@@ -54,9 +46,9 @@ export default {
         customCode,
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

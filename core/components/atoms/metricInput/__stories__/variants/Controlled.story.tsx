@@ -9,7 +9,9 @@ export const controlledMetricInput = () => {
     <div style={{ width: 'var(--spacing-6)' }}>
       <MetricInput
         value={value}
-        onChange={e => { setValue(e.target.value); }}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
       />
     </div>
   );
@@ -37,9 +39,9 @@ export default {
         customCode,
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

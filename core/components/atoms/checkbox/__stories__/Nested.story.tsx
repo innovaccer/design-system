@@ -27,7 +27,7 @@ export const NestedCheckboxes = () => {
     const totalCount = labels.length;
     const countT = updateCheck.filter(Boolean).length;
     const status = countT < totalCount;
-    const obj = (countT > 0) ? { checked: !status, indeterminate: status } : { checked: !status, indeterminate: false };
+    const obj = countT > 0 ? { checked: !status, indeterminate: status } : { checked: !status, indeterminate: false };
     setChecked(updateCheck);
     setParentStatus(obj);
   };
@@ -42,20 +42,18 @@ export const NestedCheckboxes = () => {
         value={'Measures'}
       />
       <div style={style}>
-        {
-          labels.map((label, ind) => {
-            return (
-              <Checkbox
-                key={`checkbox-${ind}`}
-                label={label}
-                checked={checked[ind]}
-                value={label}
-                onChange={c => handleChildChange(c, ind)}
-                defaultChecked={ind < 2}
-              />
-            );
-          })
-        }
+        {labels.map((label, ind) => {
+          return (
+            <Checkbox
+              key={`checkbox-${ind}`}
+              label={label}
+              checked={checked[ind]}
+              value={label}
+              onChange={(c) => handleChildChange(c, ind)}
+              defaultChecked={ind < 2}
+            />
+          );
+        })}
       </div>
     </div>
   );
@@ -122,8 +120,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

@@ -5,20 +5,11 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const withSingleInput = () => {
-  const monthsInView = number(
-    'monthsInView',
-    2
-  );
+  const monthsInView = number('monthsInView', 2);
 
-  const startDate = date(
-    'startDate',
-    undefined
-  );
+  const startDate = date('startDate', undefined);
 
-  const endDate = date(
-    'endDate',
-    undefined
-  );
+  const endDate = date('endDate', undefined);
 
   const inputFormat = select(
     'inputFormat',
@@ -32,11 +23,7 @@ export const withSingleInput = () => {
     undefined
   );
 
-  const view = select(
-    'view',
-    ['date', 'month', 'year'],
-    undefined
-  );
+  const view = select('view', ['date', 'month', 'year'], undefined);
 
   const firstDayOfWeek = select(
     'firstDayOfWeek',
@@ -44,30 +31,15 @@ export const withSingleInput = () => {
     undefined
   );
 
-  const disabledBefore = date(
-    'disabledBefore',
-    new Date('Jan 20 2015')
-  );
+  const disabledBefore = date('disabledBefore', new Date('Jan 20 2015'));
 
-  const disabledAfter = date(
-    'disabledAfter',
-    new Date('Jan 20 2028')
-  );
+  const disabledAfter = date('disabledAfter', new Date('Jan 20 2028'));
 
-  const jumpView = boolean(
-    'jumpView',
-    true
-  );
+  const jumpView = boolean('jumpView', true);
 
-  const yearNav = number(
-    'yearNav',
-    -1
-  );
+  const yearNav = number('yearNav', -1);
 
-  const monthNav = number(
-    'monthNav',
-    -1
-  );
+  const monthNav = number('monthNav', -1);
 
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
@@ -85,13 +57,15 @@ export const withSingleInput = () => {
         inputFormat={inputFormat}
         outputFormat={outputFormat}
         jumpView={jumpView}
-        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
+        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) =>
+          action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
+        }
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         monthsInView={monthsInView}
         inputOptions={{
           required: true,
-          label: 'Date'
+          label: 'Date',
         }}
         {...attr}
       />
@@ -102,5 +76,5 @@ export const withSingleInput = () => {
 export default {
   title: 'Components/DateRangePicker/Variants/With Single Input',
   component: DateRangePicker,
-  subcomponents: { InputMask }
+  subcomponents: { InputMask },
 };

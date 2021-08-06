@@ -8,22 +8,22 @@ export const horizontalNavigationWithCount = () => {
     {
       name: 'to-dos',
       label: 'To-dos',
-      count: 15
+      count: 15,
     },
     {
       name: 'activity_received',
       label: 'Activity received',
-      count: 7
+      count: 7,
     },
     {
       name: 'activity_sent',
       label: 'Activity sent',
-      count: 9
+      count: 9,
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'to-dos'
+    name: 'to-dos',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -33,12 +33,7 @@ export const horizontalNavigationWithCount = () => {
 
   return (
     <div className="d-flex align-items-center py-6" style={{ background: 'var(--secondary-lightest)' }}>
-      <HorizontalNav
-        className="w-100 justify-content-center"
-        menus={data}
-        active={active}
-        onClick={onClickHandler}
-      />
+      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
     </div>
   );
 };
@@ -89,8 +84,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

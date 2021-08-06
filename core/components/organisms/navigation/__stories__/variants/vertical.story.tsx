@@ -17,7 +17,7 @@ export const vertical = () => {
       name: 'patient_360',
       label: 'Patient 360',
       icon: 'assignment_ind',
-      link: '/patient360'
+      link: '/patient360',
     },
     {
       name: 'care_management',
@@ -26,19 +26,19 @@ export const vertical = () => {
       subMenu: [
         {
           name: 'care_management.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
         },
         {
           name: 'care_management.care_plans',
-          label: 'Care Plans'
-        }
-      ]
+          label: 'Care Plans',
+        },
+      ],
     },
     {
       name: 'episodes',
       label: 'Episodes',
       disabled: true,
-      icon: 'airline_seat_flat_angled'
+      icon: 'airline_seat_flat_angled',
     },
     {
       name: 'risk',
@@ -47,38 +47,38 @@ export const vertical = () => {
       subMenu: [
         {
           name: 'risk.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
         },
         {
           name: 'risk.care_plans',
-          label: 'Care Plans'
-        }
-      ]
+          label: 'Care Plans',
+        },
+      ],
     },
     {
       name: 'claims',
       label: 'Claims',
-      icon: 'receipt'
+      icon: 'receipt',
     },
     {
       name: 'profile',
       label: 'Profile',
-      icon: 'account_circle'
+      icon: 'account_circle',
     },
     {
       name: 'manula_entry',
       label: 'Manual Entry',
-      icon: 'border_color'
+      icon: 'border_color',
     },
     {
       name: 'documents',
       label: 'Documents',
-      icon: 'assignment'
-    }
+      icon: 'assignment',
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'care_management.timeline'
+    name: 'care_management.timeline',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -200,8 +200,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

@@ -3,7 +3,6 @@ import { VerificationCodeInput, Label } from '@/index';
 
 // CSF format story
 export const WithFourFields = () => {
-
   return (
     <>
       <Label withInput={true}>Verification code</Label>
@@ -18,8 +17,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Input'
-      }
-    }
-  }
+        title: 'Input',
+      },
+    },
+  },
 };

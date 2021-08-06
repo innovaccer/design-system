@@ -4,11 +4,12 @@ import { Button, Text } from '@/index';
 
 // CSF format story
 export const icon = () => {
-
   return (
     <div>
       <div className="mb-7">
-        <Text weight="medium" size="large">Tiny</Text>
+        <Text weight="medium" size="large">
+          Tiny
+        </Text>
         <div className="d-flex align-items-center mt-4">
           <Button
             onClick={action('button-clicked')}
@@ -31,7 +32,9 @@ export const icon = () => {
         </div>
       </div>
       <div className="mb-7">
-        <Text weight="medium" size="large">Regular</Text>
+        <Text weight="medium" size="large">
+          Regular
+        </Text>
         <div className="d-flex align-items-center mt-4">
           <Button
             onClick={action('button-clicked')}
@@ -54,7 +57,9 @@ export const icon = () => {
         </div>
       </div>
       <div className="mb-7">
-        <Text weight="medium" size="large">Large</Text>
+        <Text weight="medium" size="large">
+          Large
+        </Text>
         <div className="d-flex align-items-center mt-4">
           <Button
             onClick={action('button-clicked')}
@@ -86,8 +91,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
-      }
-    }
-  }
+        title: 'Button',
+      },
+    },
+  },
 };

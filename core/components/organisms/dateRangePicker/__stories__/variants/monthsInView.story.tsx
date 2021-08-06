@@ -11,12 +11,9 @@ export const monthsInView = () => {
   return (
     // @ts-ignore
     <div className="d-flex" style={style}>
-      {Array.from([1, 2, 3], x => (
+      {Array.from([1, 2, 3], (x) => (
         <div className="mt-5" style={{ alignSelf: 'flex-start' }}>
-          <Card
-            className="d-inline-flex"
-            shadow="light"
-          >
+          <Card className="d-inline-flex" shadow="light">
             <DateRangePicker
               monthsInView={x}
               startDate={new Date(2019, 11, 3)}
@@ -37,8 +34,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'DateRangePicker'
-      }
-    }
-  }
+        title: 'DateRangePicker',
+      },
+    },
+  },
 };

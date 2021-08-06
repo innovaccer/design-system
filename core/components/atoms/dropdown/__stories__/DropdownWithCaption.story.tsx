@@ -44,19 +44,14 @@ const options = [
   {
     label: 'Connecticut (860)',
     value: 'Connecticut (860)',
-  }
+  },
 ];
 
 // CSF format story
 export const dropdownWithCaption = () => (
   <>
     <Label withInput={true}>Area code</Label>
-    <Dropdown
-      options={options}
-      withSearch={true}
-      className="w-25"
-      placeholder="Select an area code"
-    />
+    <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select an area code" />
     <Caption withInput={true}>If the number with this code is not available, we will use the next best match</Caption>
   </>
 );
@@ -70,8 +65,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

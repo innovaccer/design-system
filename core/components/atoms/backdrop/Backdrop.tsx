@@ -12,10 +12,8 @@ export interface BackdropProps extends BaseProps {
   open: boolean;
 }
 
-export const Backdrop: React.FC<BackdropProps> = props => {
-  const {
-    className,
-  } = props;
+export const Backdrop: React.FC<BackdropProps> = (props) => {
+  const { className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -23,12 +21,15 @@ export const Backdrop: React.FC<BackdropProps> = props => {
   const [open, setOpen] = React.useState<boolean>(props.open);
   const [animate, setAnimate] = React.useState<boolean>(props.open);
 
-  const classes = classNames({
-    Backdrop: true,
-    'Backdrop--open': open,
-    'Backdrop-animation--open': animate,
-    'Backdrop-animation--close': !animate
-  }, className);
+  const classes = classNames(
+    {
+      Backdrop: true,
+      'Backdrop--open': open,
+      'Backdrop-animation--open': animate,
+      'Backdrop-animation--close': !animate,
+    },
+    className
+  );
 
   const disableBodyScroll = () => {
     document.body.style.setProperty('overflow', 'hidden', 'important');
@@ -60,9 +61,7 @@ export const Backdrop: React.FC<BackdropProps> = props => {
   }, [props.open]);
 
   const BackdropElement = ReactDOM.createPortal(
-    (
-      <div data-test="DesignSystem-Backdrop" data-layer={true} {...baseProps} className={classes}  />
-    ),
+    <div data-test="DesignSystem-Backdrop" data-layer={true} {...baseProps} className={classes} />,
     document.body
   );
 

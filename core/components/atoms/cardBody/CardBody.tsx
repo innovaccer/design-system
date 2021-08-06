@@ -13,9 +13,12 @@ export const CardBody = (props: CardBodyProps) => {
   const { className, children } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    'Card-body': true,
-  }, className);
+  const classes = classNames(
+    {
+      'Card-body': true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-CardBody" {...baseProps} className={classes}>

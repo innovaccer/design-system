@@ -1,13 +1,7 @@
 import * as React from 'react';
 import StatusHint from '../StatusHint';
 
-export const inactive = () => (
-  <StatusHint
-    appearance="alert"
-  >
-    {'Inactive'}
-  </StatusHint>
-);
+export const inactive = () => <StatusHint appearance="alert">{'Inactive'}</StatusHint>;
 
 export default {
   title: 'Components/StatusHint/Inactive',
@@ -15,8 +9,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'StatusHint'
-      }
-    }
-  }
+        title: 'StatusHint',
+      },
+    },
+  },
 };

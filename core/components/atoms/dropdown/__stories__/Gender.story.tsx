@@ -7,21 +7,19 @@ const options = [
   {
     label: 'Male',
     value: 'Male',
-    selected: true
+    selected: true,
   },
   {
     label: 'Female',
     value: 'Female',
-  }
+  },
 ];
 
 // CSF format story
 export const gender = () => (
   <div className="mb-10 w-25">
     <Label withInput={true}>Gender</Label>
-    <Dropdown
-      options={options}
-    />
+    <Dropdown options={options} />
   </div>
 );
 
@@ -34,9 +32,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

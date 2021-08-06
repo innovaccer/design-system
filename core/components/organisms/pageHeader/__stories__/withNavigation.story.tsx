@@ -9,19 +9,19 @@ export const level0WithNavigation = () => {
     },
     {
       name: 'menu_2',
-      label: 'Assesments'
-    }
+      label: 'Assesments',
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'menu_1'
+    name: 'menu_1',
   });
 
   const onClickHandler = (menu: Menu) => {
     setActive(menu);
   };
 
-  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active}/>;
+  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
       <Button className="mr-4">Reorganize</Button>
@@ -31,12 +31,7 @@ export const level0WithNavigation = () => {
 
   return (
     <div className="w-100 p-6 bg-secondary-lightest">
-      <PageHeader
-        title="Dashboard"
-        separator={true}
-        navigation={navigation}
-        actions={actions}
-      />
+      <PageHeader title="Dashboard" separator={true} navigation={navigation} actions={actions} />
     </div>
   );
 };
@@ -87,8 +82,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

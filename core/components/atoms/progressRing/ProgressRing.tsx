@@ -20,28 +20,26 @@ export interface ProgressRingProps extends BaseProps {
 }
 
 export const ProgressRing = (props: ProgressRingProps) => {
-  const {
-    size,
-    max,
-    value,
-    className
-  } = props;
+  const { size, max, value, className } = props;
 
   const baseProps = extractBaseProps(props);
 
   const radius = 20;
   const circumference = 2 * Math.PI * radius;
 
-  const ProgressRingClass = classNames({
-    Ring: true,
-    [`Ring--${size}`]: size,
-  }, className);
+  const ProgressRingClass = classNames(
+    {
+      Ring: true,
+      [`Ring--${size}`]: size,
+    },
+    className
+  );
 
   const svgProps = {
-    viewBox: '0 0 50 50'
+    viewBox: '0 0 50 50',
   };
 
-  const updatedValue = value > 0 ? Math.min(value, max) * 100 / max : 0;
+  const updatedValue = value > 0 ? (Math.min(value, max) * 100) / max : 0;
 
   const circleProps = {
     cx: 25,
@@ -49,7 +47,7 @@ export const ProgressRing = (props: ProgressRingProps) => {
     r: radius,
     fill: 'none',
     strokeWidth: '8',
-    strokeDasharray: `${circumference} ${circumference}`
+    strokeDasharray: `${circumference} ${circumference}`,
   };
 
   return (
@@ -57,7 +55,7 @@ export const ProgressRing = (props: ProgressRingProps) => {
       <circle className="Ring-background" {...circleProps} />
       <circle
         className="Ring-indicator"
-        strokeDashoffset={circumference - updatedValue / 100 * circumference}
+        strokeDashoffset={circumference - (updatedValue / 100) * circumference}
         {...circleProps}
         data-test="DesignSystem-ProgressRing--Circle"
       />
@@ -68,7 +66,7 @@ export const ProgressRing = (props: ProgressRingProps) => {
 ProgressRing.displayName = 'ProgressRing';
 ProgressRing.defaultProps = {
   size: 'regular',
-  max: 100
+  max: 100,
 };
 
 export default ProgressRing;

@@ -7,16 +7,14 @@ const BooleanValue = [true, false];
 
 describe('Label component', () => {
   const mapper = {
-    disabled: valueHelper(BooleanValue, { required: true, iterate: true })
+    disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Label>{'Label'}</Label>
-      );
+      const { baseElement } = render(<Label>{'Label'}</Label>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -26,15 +24,13 @@ describe('Label component', () => {
 
 describe('Label component', () => {
   const mapper = {
-    required: valueHelper(BooleanValue, { required: true, iterate: true })
+    required: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Label>{'Label'}</Label>
-      );
+      const { baseElement } = render(<Label>{'Label'}</Label>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -43,7 +39,6 @@ describe('Label component', () => {
 });
 
 describe('Label component', () => {
-
   it('renders children', () => {
     const { getByTestId } = render(<Label>Label</Label>);
     expect(getByTestId('DesignSystem-Label').textContent).toMatch('Label');
@@ -53,16 +48,13 @@ describe('Label component', () => {
     const { getByTestId } = render(<Label>Label</Label>);
     expect(getByTestId('DesignSystem-Label--Text').tagName).toMatch('LABEL');
   });
-
 });
 
 describe('Label Component with overwrite class', () => {
-
   it('overwrite Label class', () => {
     const { getByTestId } = render(<Label className="LabelClass">Label</Label>);
     expect(getByTestId('DesignSystem-Label')).toHaveClass('LabelClass');
   });
-
 });
 
 describe('Label component with prop: withInput', () => {
@@ -73,16 +65,13 @@ describe('Label component with prop: withInput', () => {
 });
 
 describe('Label component with prop: disabled', () => {
-
   it('should be disabled', () => {
     const { getByTestId } = render(<Label disabled={true}>Label</Label>);
     expect(getByTestId('DesignSystem-Label').firstElementChild).toHaveClass('Label--disabled');
   });
-
 });
 
 describe('Label component with prop: required', () => {
-
   it('renders required indicator', () => {
     const { getByTestId } = render(<Label required={true}>Label</Label>);
     expect(getByTestId('DesignSystem-Label--RequiredIndicator')).toBeInTheDocument();
@@ -90,7 +79,6 @@ describe('Label component with prop: required', () => {
 });
 
 describe('Label component with prop: optional', () => {
-
   it('renders optional label', () => {
     const { getByTestId } = render(<Label optional={true}>Label</Label>);
     expect(getByTestId('DesignSystem-Label--OptionalText')).toBeInTheDocument();

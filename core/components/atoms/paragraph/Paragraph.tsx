@@ -18,17 +18,15 @@ export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphEl
 }
 
 export const Paragraph = (props: ParagraphProps) => {
-  const {
-    appearance,
-    children,
-    className,
-    ...rest
-  } = props;
+  const { appearance, children, className, ...rest } = props;
 
-  const classes = classNames({
-    Text: true,
-    [`Text--${appearance}`]: appearance
-  }, className);
+  const classes = classNames(
+    {
+      Text: true,
+      [`Text--${appearance}`]: appearance,
+    },
+    className
+  );
 
   return (
     <GenericText data-test="DesignSystem-Paragraph" {...rest} className={classes} componentType="p">
@@ -39,7 +37,7 @@ export const Paragraph = (props: ParagraphProps) => {
 
 Paragraph.displayName = 'Paragraph';
 Paragraph.defaultProps = {
-  appearance: 'default'
+  appearance: 'default',
 };
 
 export default Paragraph;

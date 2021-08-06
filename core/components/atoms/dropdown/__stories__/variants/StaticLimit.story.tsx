@@ -15,7 +15,7 @@ export const staticLimit = () => {
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -28,20 +28,17 @@ export const staticLimit = () => {
 
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>
-      {
-        BooleanValue.map((value, ind) => {
-          const options = value ? dropdownOptions : dropdownOptions.slice(0, 50);
-          return (
-            <div key={ind} style={{ marginRight: '10%', width: '200px' }}>
-              <Text weight="strong">
-                {value ? 'Options length > staticLimit' : 'Options length <= staticLimit'}
-              </Text>
-              <br /><br />
-              <Dropdown withSearch={true} withCheckbox={true} options={options} {...(value && { fetchOptions })} />
-            </div>
-          );
-        })
-      }
+      {BooleanValue.map((value, ind) => {
+        const options = value ? dropdownOptions : dropdownOptions.slice(0, 50);
+        return (
+          <div key={ind} style={{ marginRight: '10%', width: '200px' }}>
+            <Text weight="strong">{value ? 'Options length > staticLimit' : 'Options length <= staticLimit'}</Text>
+            <br />
+            <br />
+            <Dropdown withSearch={true} withCheckbox={true} options={options} {...(value && { fetchOptions })} />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -106,9 +103,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

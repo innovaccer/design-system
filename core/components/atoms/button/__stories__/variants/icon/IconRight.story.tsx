@@ -13,42 +13,34 @@ export const iconRight = () => {
 
   const size: Size[] = ['tiny', 'regular', 'large'];
 
-  const icon = text(
-    'icon',
-    'refresh'
-  );
-  const children = text(
-    'children',
-    'Button'
-  );
+  const icon = text('icon', 'refresh');
+  const children = text('children', 'Button');
   return (
     <div className="d-flex w-25">
-      {
-        size.map((IconSize, ind) => {
-          return (
-            <div key={ind} className="mr-5">
-              <div className="h-50">
-                <Button
-                  onClick={action('button-clicked')}
-                  onMouseEnter={action('mouse-enter')}
-                  onMouseLeave={action('mouse-leave')}
-                  appearance={'basic'}
-                  size={IconSize}
-                  expanded={expanded}
-                  disabled={disabled}
-                  loading={loading}
-                  icon={icon}
-                  iconAlign={iconAlign}
-                >
-                  {children}
-                </Button>
-              </div>
-              <br />
-              <Text weight="strong">{IconSize.charAt(0).toUpperCase() + IconSize.slice(1)}</Text>
+      {size.map((IconSize, ind) => {
+        return (
+          <div key={ind} className="mr-5">
+            <div className="h-50">
+              <Button
+                onClick={action('button-clicked')}
+                onMouseEnter={action('mouse-enter')}
+                onMouseLeave={action('mouse-leave')}
+                appearance={'basic'}
+                size={IconSize}
+                expanded={expanded}
+                disabled={disabled}
+                loading={loading}
+                icon={icon}
+                iconAlign={iconAlign}
+              >
+                {children}
+              </Button>
             </div>
-          );
-        })
-      }
+            <br />
+            <Text weight="strong">{IconSize.charAt(0).toUpperCase() + IconSize.slice(1)}</Text>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -59,8 +51,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
-      }
-    }
-  }
+        title: 'Button',
+      },
+    },
+  },
 };

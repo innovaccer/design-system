@@ -5,24 +5,24 @@ import { action } from '@storybook/addon-actions';
 const steps = [
   {
     label: 'Enter email',
-    value: 'enter_email'
+    value: 'enter_email',
   },
   {
     label: 'Verify email',
-    value: 'verify_email'
+    value: 'verify_email',
   },
   {
     label: 'Create profile',
-    value: 'create_profile'
+    value: 'create_profile',
   },
   {
     label: 'Setup organization',
-    value: 'setup_organization'
+    value: 'setup_organization',
   },
   {
     label: 'Invite team',
-    value: 'invite_team'
-  }
+    value: 'invite_team',
+  },
 ];
 
 export const standaloneStepper = () => {
@@ -33,14 +33,7 @@ export const standaloneStepper = () => {
     return action(`Active Index: ${index}`)();
   };
 
-  return (
-    <Stepper
-      steps={steps}
-      active={active}
-      completed={-1}
-      onChange={onChange}
-    />
-  );
+  return <Stepper steps={steps} active={active} completed={-1} onChange={onChange} />;
 };
 
 const customCode = `() => {
@@ -89,8 +82,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

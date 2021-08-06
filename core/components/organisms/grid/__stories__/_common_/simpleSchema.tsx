@@ -1,14 +1,14 @@
 import { Schema } from '../../Grid';
 
-const simpleSchema:Schema = [
+const simpleSchema: Schema = [
   {
     name: 'name',
     displayName: 'Name',
     width: 300,
-    translate: a => ({
+    translate: (a) => ({
       title: `${a.firstName} ${a.lastName}`,
       firstName: a.firstName,
-      lastName: a.lastName
+      lastName: a.lastName,
     }),
     cellType: 'AVATAR_WITH_TEXT',
   },

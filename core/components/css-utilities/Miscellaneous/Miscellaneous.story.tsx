@@ -6,35 +6,33 @@ export const miscellaneous = () => {
   const data = [
     {
       className: 'hide-scroll-bar::-webkit-scrollbar',
-      properties: 'height: 0px;\nbackground: transparent;'
+      properties: 'height: 0px;\nbackground: transparent;',
     },
     {
       className: 'hide-scroll-bar',
-      properties: '-ms-overflow-style: none;\nscrollbar-width: none;'
+      properties: '-ms-overflow-style: none;\nscrollbar-width: none;',
     },
     {
       className: 'ellipsis',
-      properties: 'overflow: hidden;\ntext-overflow: ellipsis;'
+      properties: 'overflow: hidden;\ntext-overflow: ellipsis;',
     },
     {
       className: 'ellipsis--noWrap',
-      properties: 'white-space: nowrap;\noverflow: hidden;\ntext-overflow: ellipsis;'
+      properties: 'white-space: nowrap;\noverflow: hidden;\ntext-overflow: ellipsis;',
     },
     {
       className: 'cursor-pointer',
-      properties: 'cursor: pointer;'
-    }
+      properties: 'cursor: pointer;',
+    },
   ];
   return (
-    <div
-      className="mt-8 mb-8"
-    >
+    <div className="mt-8 mb-8">
       <Card className="h-100">
         <Table
           data={data}
           schema={utilitiesSchema}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
           }}
           size={'standard'}
           showMenu={false}
@@ -51,7 +49,7 @@ export default {
     viewMode: 'story',
     docs: {
       page: null,
-      docPage: null
-    }
-  }
+      docPage: null,
+    },
+  },
 };

@@ -79,8 +79,8 @@ export default {
     docs: {
       docPage: {
         customCode,
-        props: { exclude: ['key'] }
-      }
-    }
-  }
+        props: { exclude: ['key'] },
+      },
+    },
+  },
 };

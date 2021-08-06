@@ -3,11 +3,11 @@ import { Text, Button, Popover } from '@/index';
 
 // CSF format story
 export const theme = () => {
-  const trigger = (<Button appearance="basic">Light Theme</Button>);
-  const triggerDark = (<Button appearance="basic">Dark Theme</Button>);
+  const trigger = <Button appearance="basic">Light Theme</Button>;
+  const triggerDark = <Button appearance="basic">Dark Theme</Button>;
 
   const options = {
-    open: true
+    open: true,
   };
 
   return (
@@ -16,7 +16,9 @@ export const theme = () => {
         <Popover trigger={triggerDark} dark={true} {...options}>
           <div style={{ width: 100 }} className="mx-6 my-6">
             <Text appearance={'white'}>Popup</Text>
-            <Button appearance="primary" className="mt-4">Click</Button>
+            <Button appearance="primary" className="mt-4">
+              Click
+            </Button>
           </div>
         </Popover>
       </div>
@@ -24,12 +26,13 @@ export const theme = () => {
         <Popover trigger={trigger} dark={false} {...options}>
           <div style={{ width: 100 }} className="mx-6 my-6">
             <Text>Popup</Text>
-            <Button appearance="primary" className="mt-4">Click</Button>
+            <Button appearance="primary" className="mt-4">
+              Click
+            </Button>
           </div>
         </Popover>
       </div>
     </div>
-
   );
 };
 
@@ -40,8 +43,8 @@ export default {
     docs: {
       docPage: {
         title: 'Popover',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

@@ -21,7 +21,7 @@ const KEY_CODE = {
   down: 'ArrowDown',
   e: 'e',
   E: 'E',
-  space: 'space'
+  space: 'space',
 };
 
 describe('VerificationCodeInput component', () => {
@@ -33,18 +33,14 @@ describe('VerificationCodeInput component', () => {
     autoFocus: valueHelper(autoFocus, { required: false }),
     fields: valueHelper(fields, { required: false }),
     type: valueHelper(type, { required: false }),
-    onComplete: FunctionValue
+    onComplete: FunctionValue,
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <VerificationCodeInput
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<VerificationCodeInput {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -53,44 +49,40 @@ describe('VerificationCodeInput component', () => {
 });
 
 describe('VerificationCodeInput component', () => {
-
   it('renders 4 inputs', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput />
-    );
+    const { getByTestId } = render(<VerificationCodeInput />);
 
     expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
 
-    const inputs = getByTestId('DesignSystem-VerificationCodeInput')
-      .getElementsByClassName('VerificationCodeInput-Input');
+    const inputs = getByTestId('DesignSystem-VerificationCodeInput').getElementsByClassName(
+      'VerificationCodeInput-Input'
+    );
 
     expect(inputs.length).toBe(4);
   });
 
   it('renders 6 inputs', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput fields={6} />
-    );
+    const { getByTestId } = render(<VerificationCodeInput fields={6} />);
 
     expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
 
-    const inputs = getByTestId('DesignSystem-VerificationCodeInput')
-      .getElementsByClassName('VerificationCodeInput-Input');
+    const inputs = getByTestId('DesignSystem-VerificationCodeInput').getElementsByClassName(
+      'VerificationCodeInput-Input'
+    );
 
     expect(inputs.length).toBe(6);
   });
-
 });
 
 describe('VerificationCodeInput component with props disabled and error ', () => {
-
   it('with prop: disabled', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput disabled={true} onComplete={FunctionValue} />
-    );
+    const { getByTestId } = render(<VerificationCodeInput disabled={true} onComplete={FunctionValue} />);
 
-    const inputs = [...getByTestId('DesignSystem-VerificationCodeInput')
-      .getElementsByClassName('VerificationCodeInput-Input') as any];
+    const inputs = [
+      ...(getByTestId('DesignSystem-VerificationCodeInput').getElementsByClassName(
+        'VerificationCodeInput-Input'
+      ) as any),
+    ];
 
     for (const el of inputs) {
       expect(el).toHaveClass('Input--disabled');
@@ -102,16 +94,16 @@ describe('VerificationCodeInput component with props disabled and error ', () =>
     }
 
     expect(FunctionValue).not.toHaveBeenCalled();
-
   });
 
   it('with prop: error', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput error={true} />
-    );
+    const { getByTestId } = render(<VerificationCodeInput error={true} />);
 
-    const inputs = [...getByTestId('DesignSystem-VerificationCodeInput')
-      .getElementsByClassName('VerificationCodeInput-Input') as any];
+    const inputs = [
+      ...(getByTestId('DesignSystem-VerificationCodeInput').getElementsByClassName(
+        'VerificationCodeInput-Input'
+      ) as any),
+    ];
 
     for (const el of inputs) {
       expect(el).toHaveClass('Input--error');
@@ -125,16 +117,16 @@ describe('VerificationCodeInput component with props disabled and error ', () =>
 });
 
 describe('VerificationCodeInput component events', () => {
-
   it('Trigger on change', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput />
-    );
+    const { getByTestId } = render(<VerificationCodeInput />);
 
     expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
 
-    const inputs = [...getByTestId('DesignSystem-VerificationCodeInput')
-      .getElementsByClassName('VerificationCodeInput-Input') as any];
+    const inputs = [
+      ...(getByTestId('DesignSystem-VerificationCodeInput').getElementsByClassName(
+        'VerificationCodeInput-Input'
+      ) as any),
+    ];
 
     for (const el of inputs) {
       if (el) {
@@ -143,21 +135,18 @@ describe('VerificationCodeInput component events', () => {
         expect(input).toHaveValue('2');
         fireEvent.change(input, { target: { value: '' } });
         expect(input).toHaveValue('2');
-
       }
     }
-
   });
 
   it('Trigger keyboard events', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput value="3456" />
-    );
+    const { getByTestId } = render(<VerificationCodeInput value="3456" />);
 
     expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
 
-    const [input0, input1] = [...getByTestId('DesignSystem-VerificationCodeInput')
-      .querySelectorAll('div > input') as any];
+    const [input0, input1] = [
+      ...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any),
+    ];
 
     fireEvent.keyDown(input1, { key: KEY_CODE.backspace });
     fireEvent.keyDown(input1, { key: KEY_CODE.backspace });
@@ -189,22 +178,18 @@ describe('VerificationCodeInput component events', () => {
 
     fireEvent.keyDown(input1, { key: KEY_CODE.space });
     expect(input1).toHaveFocus();
-
   });
-
 });
 
 describe('VerificationCodeInput component callback', () => {
-
   it('Trigger onComplete', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput onComplete={FunctionValue} />
-    );
+    const { getByTestId } = render(<VerificationCodeInput onComplete={FunctionValue} />);
 
     expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
 
-    const [input0, input1, input2, input3] = [...getByTestId('DesignSystem-VerificationCodeInput')
-      .querySelectorAll('div > input') as any];
+    const [input0, input1, input2, input3] = [
+      ...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any),
+    ];
 
     fireEvent.change(input0, { target: { value: '4' } });
     fireEvent.change(input1, { target: { value: '3' } });
@@ -219,14 +204,11 @@ describe('VerificationCodeInput component callback', () => {
   });
 
   it('Trigger onFocus', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput onFocus={FunctionValue} />
-    );
+    const { getByTestId } = render(<VerificationCodeInput onFocus={FunctionValue} />);
 
     expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
 
-    const [input0] = [...getByTestId('DesignSystem-VerificationCodeInput')
-      .querySelectorAll('div > input') as any];
+    const [input0] = [...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any)];
 
     fireEvent.focus(input0);
     expect(input0).toHaveFocus();
@@ -234,17 +216,13 @@ describe('VerificationCodeInput component callback', () => {
   });
 
   it('Trigger onBlur', () => {
-    const { getByTestId } = render(
-      <VerificationCodeInput onBlur={FunctionValue} />
-    );
+    const { getByTestId } = render(<VerificationCodeInput onBlur={FunctionValue} />);
 
     expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
 
-    const [input0] = [...getByTestId('DesignSystem-VerificationCodeInput')
-      .querySelectorAll('div > input') as any];
+    const [input0] = [...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any)];
 
     fireEvent.blur(input0);
     expect(FunctionValue).toHaveBeenCalled();
   });
-
 });

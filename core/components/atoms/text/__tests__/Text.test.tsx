@@ -20,11 +20,7 @@ describe('Text component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Text
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Text {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -42,11 +38,7 @@ describe('Text component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Text
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Text {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -64,11 +56,7 @@ describe('Text component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Text
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Text {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -86,11 +74,7 @@ describe('Text component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = render(
-        <Text
-          {...attr}
-        />
-      );
+      const tree = render(<Text {...attr} />);
       expect(tree).toMatchSnapshot();
     });
   };
@@ -99,7 +83,6 @@ describe('Text component', () => {
 });
 
 describe('Text component', () => {
-
   it('should render the text', () => {
     const { getByTestId } = render(<Text>{'Design System'}</Text>);
     expect(getByTestId('DesignSystem-Text')).toHaveTextContent('Design System');
@@ -118,7 +101,6 @@ describe('Text component', () => {
   });
 
   describe('Text Component with Prop:weight', () => {
-
     it('should have the class Text--strong when weight="strong"', () => {
       const { getByTestId } = render(<Text weight="strong">{'Design System'}</Text>);
       expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--strong');
@@ -128,28 +110,24 @@ describe('Text component', () => {
       const { getByTestId } = render(<Text weight="medium">{'Design System'}</Text>);
       expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--medium');
     });
-
   });
 
   describe('Text Component with Prop:small', () => {
-
     it('should have the class Text--small when small="true"', () => {
       const { getByTestId } = render(<Text small={true}>{'Design System'}</Text>);
       expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--small');
     });
-
   });
 
   describe('Text Component with Prop:appearances', () => {
-
     it('should have the class Text--default when appearances="default"', () => {
       const { getByTestId } = render(<Text appearance="default">{'Design System'}</Text>);
       expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--default');
     });
 
-    appearances.forEach(appearance => {
+    appearances.forEach((appearance) => {
       it(`should have the Text--${appearance} class when appearances=${appearance} `, () => {
-        const { getByTestId } = render(<Text appearance={appearance} >{'Design System'}</Text>);
+        const { getByTestId } = render(<Text appearance={appearance}>{'Design System'}</Text>);
         expect(getByTestId('DesignSystem-Text')).toHaveClass(`Text--${appearance}`);
       });
     });

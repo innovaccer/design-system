@@ -18,7 +18,9 @@ export const multiOptions = () => {
   return (
     <div className="d-flex">
       <div className="mr-9 w-25">
-        <Text weight="strong">{'With Apply Button'}</Text><br /><br />
+        <Text weight="strong">{'With Apply Button'}</Text>
+        <br />
+        <br />
         <Dropdown
           maxHeight={180}
           withCheckbox={true}
@@ -30,7 +32,9 @@ export const multiOptions = () => {
         />
       </div>
       <div className="mr-9 w-25">
-        <Text weight="strong">{'Without Apply Button'}</Text><br /><br />
+        <Text weight="strong">{'Without Apply Button'}</Text>
+        <br />
+        <br />
         <Dropdown
           withCheckbox={true}
           options={storyOptions}
@@ -40,7 +44,9 @@ export const multiOptions = () => {
         />
       </div>
       <div className="mr-9 w-25">
-        <Text weight="strong">{'Without Select All (Options <= 50)'}</Text><br /><br />
+        <Text weight="strong">{'Without Select All (Options <= 50)'}</Text>
+        <br />
+        <br />
         <Dropdown
           withCheckbox={true}
           withSelectAll={false}
@@ -122,9 +128,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

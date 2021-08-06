@@ -5,15 +5,15 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { TooltipProps } from '@/index.type';
 
 export type Appearance =
-  'primary' |
-  'secondary' |
-  'alert' |
-  'warning' |
-  'success' |
-  'accent1' |
-  'accent2' |
-  'accent3' |
-  'accent4';
+  | 'primary'
+  | 'secondary'
+  | 'alert'
+  | 'warning'
+  | 'success'
+  | 'accent1'
+  | 'accent2'
+  | 'accent3'
+  | 'accent4';
 
 export type Size = 'regular' | 'tiny';
 
@@ -51,16 +51,7 @@ export interface AvatarProps extends BaseProps {
 const initialsLength = 2;
 
 export const Avatar = (props: AvatarProps) => {
-  const {
-    withTooltip,
-    tooltipPosition,
-    size,
-    children,
-    firstName,
-    lastName,
-    className,
-    appearance,
-  } = props;
+  const { withTooltip, tooltipPosition, size, children, firstName, lastName, className, appearance } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -71,47 +62,35 @@ export const Avatar = (props: AvatarProps) => {
   const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
   const DefaultAppearance = 'secondary';
 
-  const colors = [
-    'accent4',
-    'primary',
-    'accent3',
-    'alert',
-    'accent2',
-    'warning',
-    'accent1',
-    'success'
-  ];
+  const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
 
   const AvatarAppearance =
-    appearance ||
-    colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] ||
-    DefaultAppearance;
+    appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 
-  const classes = classNames({
-    Avatar: true,
-    [`Avatar--${size}`]: size,
-    [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
-    ['Avatar--disabled']: !initials || !withTooltip,
-  }, className);
+  const classes = classNames(
+    {
+      Avatar: true,
+      [`Avatar--${size}`]: size,
+      [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
+      ['Avatar--disabled']: !initials || !withTooltip,
+    },
+    className
+  );
 
   const ContentClass = classNames({
     [`Avatar-content--${size}`]: size,
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance
+    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
   });
 
   const IconClass = classNames({
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance
+    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
   });
 
   const renderAvatar = () => {
     return (
-      <span data-test="DesignSystem-Avatar" {...baseProps} className={classes} >
+      <span data-test="DesignSystem-Avatar" {...baseProps} className={classes}>
         {initials && (
-          <Text
-            weight="medium"
-            appearance={'white'}
-            className={ContentClass}
-          >
+          <Text weight="medium" appearance={'white'} className={ContentClass}>
             {initials}
           </Text>
         )}
@@ -147,7 +126,7 @@ Avatar.displayName = 'Avatar';
 Avatar.defaultProps = {
   tooltipPosition: 'bottom',
   withTooltip: true,
-  size: 'regular'
+  size: 'regular',
 };
 
 export default Avatar;

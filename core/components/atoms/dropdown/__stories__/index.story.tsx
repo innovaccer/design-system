@@ -7,23 +7,11 @@ import { dropdownOptions } from './Options';
 
 // CSF format story
 export const all = () => {
-  const triggerSize = select(
-    'trigger size',
-    ['regular', 'tiny'],
-    undefined
-  );
+  const triggerSize = select('trigger size', ['regular', 'tiny'], undefined);
 
-  const align = select(
-    'align',
-    ['right', 'left'],
-    undefined
-  );
+  const align = select('align', ['right', 'left'], undefined);
 
-  const optionType = select(
-    'option type',
-    ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'],
-    undefined,
-  );
+  const optionType = select('option type', ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'], undefined);
 
   const error = boolean('error', false);
 
@@ -60,7 +48,7 @@ export const all = () => {
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -112,9 +100,7 @@ export const all = () => {
 
   return (
     <div style={{ width: '170px', marginLeft: '128px' }} key={key}>
-      <Dropdown
-        {...props}
-      />
+      <Dropdown {...props} />
     </div>
   );
 };
@@ -167,9 +153,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

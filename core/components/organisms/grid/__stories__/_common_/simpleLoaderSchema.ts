@@ -7,7 +7,7 @@ const loaderSchema: GridProps['loaderSchema'] = [
     name: 'name',
     displayName: 'Name',
     width: 300,
-    cellType: 'AVATAR_WITH_TEXT'
+    cellType: 'AVATAR_WITH_TEXT',
   },
   {
     name: 'email',

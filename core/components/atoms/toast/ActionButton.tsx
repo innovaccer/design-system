@@ -10,17 +10,13 @@ export interface Props {
 }
 
 const ActionButton = (props: Props) => {
-  const {
-    appearance,
-    label,
-    onClick
-  } = props;
+  const { appearance, label, onClick } = props;
 
   const buttonClass = classNames({
     ['Button']: true,
     ['Button--tiny']: true,
     ['Toast-actionButton']: true,
-    [`Toast-actionButton--${appearance}`]: appearance
+    [`Toast-actionButton--${appearance}`]: appearance,
   });
 
   const onClickHandler = (e: React.MouseEvent) => {
@@ -37,7 +33,7 @@ const ActionButton = (props: Props) => {
 
 ActionButton.displayName = 'ActionButton';
 ActionButton.defaultProps = {
-  appearance: 'default'
+  appearance: 'default',
 };
 
 export default ActionButton;

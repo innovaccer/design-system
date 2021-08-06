@@ -19,8 +19,8 @@ export default {
       docPage: {
         customCode,
         title: 'Blank Template',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

@@ -27,8 +27,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'PlaceholderImage'
-      }
-    }
-  }
+        title: 'PlaceholderImage',
+      },
+    },
+  },
 };

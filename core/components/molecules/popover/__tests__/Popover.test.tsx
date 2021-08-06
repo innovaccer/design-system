@@ -10,9 +10,13 @@ const NumberValue = 10;
 const FunctionValue = jest.fn();
 const Style = {
   width: valueHelper('150px', { required: true }),
-  height: valueHelper('150px', { required: true })
+  height: valueHelper('150px', { required: true }),
 };
-const trigger = <Button appearance="basic" data-test="DesignSystem-PopoverTrigger">Open Popup</Button>;
+const trigger = (
+  <Button appearance="basic" data-test="DesignSystem-PopoverTrigger">
+    Open Popup
+  </Button>
+);
 
 describe('Popover component', () => {
   const mapper = {
@@ -29,13 +33,7 @@ describe('Popover component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <Popover
-          {...attr}
-        >
-          Popover
-        </Popover>
-      );
+      const { asFragment } = render(<Popover {...attr}>Popover</Popover>);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -58,13 +56,7 @@ describe('Popover component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <Popover
-          {...attr}
-        >
-          Popover
-        </Popover>
-      );
+      const { asFragment } = render(<Popover {...attr}>Popover</Popover>);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -73,7 +65,6 @@ describe('Popover component', () => {
 });
 
 describe('renders Popover component', () => {
-
   it('renders children with dark: false', () => {
     const { getByTestId } = render(
       <Popover trigger={trigger} open={true}>
@@ -104,17 +95,11 @@ describe('renders Popover component', () => {
 
     expect(getByTestId('DesignSystem-Popover')).toHaveStyle('height: 100px; width: 100px');
   });
-
 });
 
 describe('renders Popover component with prop: on', () => {
-
   it('renders Popover on trigger click', () => {
-    const { getByTestId } = render(
-      <Popover trigger={trigger}>
-        Popover
-      </Popover>
-    );
+    const { getByTestId } = render(<Popover trigger={trigger}>Popover</Popover>);
 
     const popoverTrigger = getByTestId('DesignSystem-PopoverTrigger');
     fireEvent.click(popoverTrigger);
@@ -134,11 +119,9 @@ describe('renders Popover component with prop: on', () => {
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
   });
-
 });
 
 describe('renders Popover component with prop: closeOnBackdropClick', () => {
-
   it('Popover component with default prop: closeOnBackdropClick', async () => {
     const { queryByTestId, getByTestId } = render(
       <>
@@ -156,7 +139,6 @@ describe('renders Popover component with prop: closeOnBackdropClick', () => {
     fireEvent.click(outsideClick);
     cleanup();
     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
-
   });
 
   it('Popover component with closeOnBackdropClick: false', () => {
@@ -177,11 +159,9 @@ describe('renders Popover component with prop: closeOnBackdropClick', () => {
 
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
   });
-
 });
 
 describe('renders Popover component with prop: open and onToggle', () => {
-
   it('Popover component with open: false', () => {
     const { queryByTestId } = render(
       <Popover trigger={trigger} open={false} onToggle={FunctionValue}>
@@ -206,11 +186,14 @@ describe('renders Popover component with prop: open and onToggle', () => {
     fireEvent.click(popoverTrigger);
     expect(FunctionValue).toHaveBeenCalledWith(!open, 'onClick');
 
-    rerender(<Popover trigger={trigger} open={!open} onToggle={FunctionValue}>Popover</Popover>);
+    rerender(
+      <Popover trigger={trigger} open={!open} onToggle={FunctionValue}>
+        Popover
+      </Popover>
+    );
     cleanup();
     expect(queryByTestId('DesignSystem-Popover')).not.toBeInTheDocument();
   });
-
 });
 
 describe('Popover component with overwrite class', () => {
@@ -224,5 +207,4 @@ describe('Popover component with overwrite class', () => {
     );
     expect(getByTestId('DesignSystem-Popover')).toHaveClass(className);
   });
-
 });

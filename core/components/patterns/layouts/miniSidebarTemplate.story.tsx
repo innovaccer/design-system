@@ -122,8 +122,8 @@ export default {
       docPage: {
         customCode,
         title: 'Mini sidebar Template',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

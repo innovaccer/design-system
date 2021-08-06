@@ -4,33 +4,23 @@ import { translateToDate, translateToString } from '../calendar/utility';
 import { DatePickerProps, DatePickerState } from './DatePicker';
 
 type TriggerProps = {
-  inputFormat: DatePickerProps['inputFormat'],
-  inputOptions: DatePickerProps['inputOptions'],
-  validators: DatePickerProps['validators'],
-  state: DatePickerState,
-  setState: any
+  inputFormat: DatePickerProps['inputFormat'];
+  inputOptions: DatePickerProps['inputOptions'];
+  validators: DatePickerProps['validators'];
+  state: DatePickerState;
+  setState: any;
 };
 
 export const Trigger = (props: TriggerProps) => {
-  const {
-    inputFormat,
-    inputOptions,
-    validators,
-    state,
-    setState
-  } = props;
+  const { inputFormat, inputOptions, validators, state, setState } = props;
 
-  const {
-    init,
-    date,
-    error
-  } = state;
+  const { init, date, error } = state;
 
   const { placeholderChar = '_' } = inputOptions;
 
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     setState({
-      open: true
+      open: true,
     });
 
     if (val && !val.includes(placeholderChar)) {
@@ -41,7 +31,7 @@ export const Trigger = (props: TriggerProps) => {
 
   const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     setState({
-      init: true
+      init: true,
     });
 
     if (!val || val.includes(placeholderChar)) {
@@ -52,7 +42,7 @@ export const Trigger = (props: TriggerProps) => {
   const onClearHandler = () => {
     setState({
       init: true,
-      date: undefined
+      date: undefined,
     });
   };
 
@@ -70,10 +60,12 @@ export const Trigger = (props: TriggerProps) => {
       {...inputOptions}
       error={showError}
       mask={mask}
-      value={date
-        ? translateToString(inputFormat, date)
-        // @ts-ignore
-        : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : ''
+      value={
+        date
+          ? translateToString(inputFormat, date)
+          : init // @ts-ignore
+          ? InputMask.utils.getDefaultValue(mask, placeholderChar)
+          : ''
       }
       onChange={onChangeHandler}
       onBlur={onBlurHandler}

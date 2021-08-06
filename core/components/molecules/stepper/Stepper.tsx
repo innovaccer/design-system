@@ -39,54 +39,36 @@ export interface StepperProps extends BaseProps {
   /**
    * Callback function called when user clicks on a non-disabled step.
    */
-  onChange?: (
-    active: number,
-    completed: number,
-    label?: string,
-    value?: React.ReactText
-  ) => void;
+  onChange?: (active: number, completed: number, label?: string, value?: React.ReactText) => void;
 
-  skipIndexes : number[];
+  skipIndexes: number[];
 }
 
 export const Stepper = (props: StepperProps) => {
-  const {
-    steps,
-    active,
-    completed,
-    onChange,
-    className,
-    skipIndexes,
-  } = props;
+  const { steps, active, completed, onChange, className, skipIndexes } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const onChangeHandler = (
-    index: number,
-    stepLabel: string,
-    stepValue?: React.ReactText
-  ) => {
+  const onChangeHandler = (index: number, stepLabel: string, stepValue?: React.ReactText) => {
     if (onChange) onChange(index, completed, stepLabel, stepValue);
   };
 
-  const StepperClass = classNames({
-    ['Stepper']: true,
-  }, className);
+  const StepperClass = classNames(
+    {
+      ['Stepper']: true,
+    },
+    className
+  );
 
   return (
-    <div
-      data-test="DesignSystem-Stepper"
-      {...baseProps}
-      className={StepperClass}
-    >
+    <div data-test="DesignSystem-Stepper" {...baseProps} className={StepperClass}>
       {steps.map((step, index) => {
-
         const { label, value } = step;
 
         const isSkipped = skipIndexes.includes(index);
         const activeStep = active === index;
         const completedStep = !isSkipped && completed >= index;
-        const disabled = !activeStep && !isSkipped && (completed + 1 < index);
+        const disabled = !activeStep && !isSkipped && completed + 1 < index;
 
         return (
           <Step
@@ -108,7 +90,7 @@ Stepper.displayName = 'Stepper';
 Stepper.defaultProps = {
   completed: -1,
   active: 0,
-  skipIndexes:[],
+  skipIndexes: [],
 };
 
 export default Stepper;

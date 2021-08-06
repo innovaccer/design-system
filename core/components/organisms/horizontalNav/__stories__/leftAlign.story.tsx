@@ -33,7 +33,7 @@ export const leftAlignedNavigationTabs = () => {
 
   const [open, setOpen] = React.useState(true);
   const [active, setActive] = React.useState({
-    name: 'medicine'
+    name: 'medicine',
   });
 
   const onClose = () => {
@@ -48,15 +48,24 @@ export const leftAlignedNavigationTabs = () => {
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
-      <Button appearance="primary" className="mt-3" onClick={() => { setOpen(true); }}>Open</Button>
+      <Button
+        appearance="primary"
+        className="mt-3"
+        onClick={() => {
+          setOpen(true);
+        }}
+      >
+        Open
+      </Button>
       <Modal
         open={open}
         dimension="large"
@@ -64,33 +73,31 @@ export const leftAlignedNavigationTabs = () => {
         headerOptions={{
           heading: 'Medication',
         }}
-        footer={(
+        footer={
           <>
             <Button appearance="basic">Discard</Button>
-            <Button appearance="primary" className="ml-4">Create</Button>
+            <Button appearance="primary" className="ml-4">
+              Create
+            </Button>
           </>
-        )}
+        }
       >
         <div className="pb-4" style={{ borderBottom: 'var(--border)' }}>
-          <HorizontalNav
-            menus={data}
-            active={active}
-            onClick={onClickHandler}
-          />
+          <HorizontalNav menus={data} active={active} onClick={onClickHandler} />
         </div>
         <div className="pt-5 w-50">
-          <Label withInput={true} required={true}>Type</Label>
-          <Dropdown
-            options={options}
-          />
-          <Label withInput={true} className="mt-6">Active Date</Label>
-          <Dropdown
-            options={options}
-          />
-          <Label withInput={true} className="mt-6" required={true}>Diagnosis Diseases</Label>
-          <Dropdown
-            options={options}
-          />
+          <Label withInput={true} required={true}>
+            Type
+          </Label>
+          <Dropdown options={options} />
+          <Label withInput={true} className="mt-6">
+            Active Date
+          </Label>
+          <Dropdown options={options} />
+          <Label withInput={true} className="mt-6" required={true}>
+            Diagnosis Diseases
+          </Label>
+          <Dropdown options={options} />
         </div>
       </Modal>
     </div>
@@ -197,8 +204,8 @@ export default {
     docs: {
       docPage: {
         customCode,
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

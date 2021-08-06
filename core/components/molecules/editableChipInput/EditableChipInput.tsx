@@ -14,9 +14,9 @@ export interface EditableChipInputProps extends BaseProps {
    * The chip labels to display.
    */
   value?: string[];
-   /**
-    * Callback function that is called when the chips change.  Callback function called on save action click
-    */
+  /**
+   * Callback function that is called when the chips change.  Callback function called on save action click
+   */
   onChange?: (chips: string[]) => void;
   /**
    * Determines if save action button is disabled
@@ -25,50 +25,46 @@ export interface EditableChipInputProps extends BaseProps {
   /**
    * Props to be used for `ChipInput`
    */
-  chipInputOptions:  Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
+  chipInputOptions: Omit<ChipInputProps, 'placeholder' | 'value' | 'defaultValue'>;
 }
 
 export const EditableChipInput = (props: EditableChipInputProps) => {
-  const {
-    placeholder,
-    value,
-    onChange,
-    className,
-    disableSaveAction,
-    chipInputOptions,
-  } = props;
+  const { placeholder, value, onChange, className, disableSaveAction, chipInputOptions } = props;
 
-  const { onChange: onChipInputChange, chipOptions= {}, ...rest } = chipInputOptions;
+  const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
 
   const [inputValue, setInputValue] = React.useState(value);
   const [showComponent, setShowComponent] = React.useState(false);
 
   const baseProps = extractBaseProps(props);
-  const isWithChips = (inputValue && inputValue.length);
+  const isWithChips = inputValue && inputValue.length;
 
-  const classes = classNames({
-    ['EditableChipInput']: true,
-  }, className);
+  const classes = classNames(
+    {
+      ['EditableChipInput']: true,
+    },
+    className
+  );
 
   const actionClass = classNames({
     ['EditableChipInput-actions']: true,
   });
 
   const defaultClasses = classNames({
-    ['EditableChipInput-default']:!isWithChips,
-    ['EditableChipInput-defaultWithChips']:isWithChips,
+    ['EditableChipInput-default']: !isWithChips,
+    ['EditableChipInput-defaultWithChips']: isWithChips,
   });
 
   const inputClass = classNames({
-    ['EditableChipInput-chipInput']:true,
+    ['EditableChipInput-chipInput']: true,
   });
 
   React.useEffect(() => {
     setDefaultComponent();
   }, [value]);
 
-  const onChipInputChangeHandler = (val:string[]) => {
+  const onChipInputChangeHandler = (val: string[]) => {
     setInputValue(val);
     if (onChipInputChange) onChipInputChange(val);
   };
@@ -95,9 +91,8 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   };
   const renderDefaultState = () => {
     if (inputValue && inputValue.length) {
-      return(
-      inputValue.map((val, index) => {
-        return(
+      return inputValue.map((val, index) => {
+        return (
           <Chip
             data-test="DesignSystem-EditableChipInput--Chip"
             key={index}
@@ -108,32 +103,29 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             onClick={() => onClick && onClick(val, index)}
           />
         );
-      }));
+      });
     }
     return <Text className="EditableChipInput--Text">{placeholder}</Text>;
   };
 
   const renderChildren = () => {
     if (showComponent) {
-      return(
-        <div data-test="DesignSystem-EditableChipInput--wrapper" >
-            <ChipInput
-              data-test="DesignSystem-EditableChipInput--ChipInput"
-              placeholder={placeholder}
-              onChange={onChipInputChangeHandler}
-              value={inputValue}
-              chipOptions={chipOptions}
-              {...rest}
-              className={inputClass}
-            />
+      return (
+        <div data-test="DesignSystem-EditableChipInput--wrapper">
+          <ChipInput
+            data-test="DesignSystem-EditableChipInput--ChipInput"
+            placeholder={placeholder}
+            onChange={onChipInputChangeHandler}
+            value={inputValue}
+            chipOptions={chipOptions}
+            {...rest}
+            className={inputClass}
+          />
         </div>
       );
     }
     return (
-      <div
-        className={defaultClasses}
-        data-test="DesignSystem-EditableChipInput--Default"
-      >
+      <div className={defaultClasses} data-test="DesignSystem-EditableChipInput--Default">
         {renderDefaultState()}
       </div>
     );
@@ -141,14 +133,11 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   return (
     <div className={classes} data-test="DesignSystem-EditableChipInput" {...baseProps}>
-      <Editable
-        onChange={onChangeHandler}
-        editing={showComponent}
-      >
+      <Editable onChange={onChangeHandler} editing={showComponent}>
         {renderChildren()}
       </Editable>
       {showComponent && (
-        <div  className={actionClass} data-test="DesignSystem-EditableChipInput--Actions" >
+        <div className={actionClass} data-test="DesignSystem-EditableChipInput--Actions">
           <Button
             data-test="DesignSystem-EditableChipInput--DiscardButton"
             icon="clear"
@@ -170,7 +159,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
   );
 };
 EditableChipInput.defaultProps = {
-  placeholder:'',
+  placeholder: '',
   chipInputOptions: {},
 };
 

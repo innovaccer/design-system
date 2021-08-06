@@ -103,10 +103,7 @@ type CellProps = {
 };
 
 const renderTitle = (props: CellProps) => {
-  const {
-    tooltip,
-    cellData
-  } = props;
+  const { tooltip, cellData } = props;
 
   const children = cellData.title;
 
@@ -118,28 +115,24 @@ const renderTitle = (props: CellProps) => {
         </Tooltip>
       );
     }
-    return (
-      <Text className="w-100 ellipsis">{children}</Text>
-    );
+    return <Text className="w-100 ellipsis">{children}</Text>;
   }
 
   return null;
 };
 
 const renderMetaList = (props: CellProps) => {
-  const {
-    cellData
-  } = props;
+  const { cellData } = props;
 
-  const {
-    metaList
-  } = cellData;
+  const { metaList } = cellData;
 
   if (metaList) {
     return (
       <div className="GridCell-metaList">
         {metaList.map((list, index) => (
-          <Text key={index} className="ellipsis" appearance={'subtle'} size="small">{list}</Text>
+          <Text key={index} className="ellipsis" appearance={'subtle'} size="small">
+            {list}
+          </Text>
         ))}
       </div>
     );
@@ -149,61 +142,41 @@ const renderMetaList = (props: CellProps) => {
 };
 
 const renderAvatar = (props: CellProps) => {
-  const {
-    cellData
-  } = props;
+  const { cellData } = props;
 
   const { firstName, lastName, title } = cellData;
 
   if (firstName || lastName) {
-    return (
-      <Avatar className="mr-5" firstName={firstName} lastName={lastName} />
-    );
+    return <Avatar className="mr-5" firstName={firstName} lastName={lastName} />;
   }
   if (title) {
-    return (
-      <Avatar className="mr-5">{title}</Avatar>
-    );
+    return <Avatar className="mr-5">{title}</Avatar>;
   }
 
   return null;
 };
 
 const renderIcon = (props: CellProps) => {
-  const {
-    cellData
-  } = props;
+  const { cellData } = props;
 
   const { title, icon } = cellData;
   const iconName = icon || title;
   if (iconName) {
-    return (
-      <Icon name={iconName} />
-    );
+    return <Icon name={iconName} />;
   }
 
   return null;
 };
 
 const renderStatusHint = (props: CellProps) => {
-  const {
-    cellData
-  } = props;
+  const { cellData } = props;
 
-  const {
-    statusAppearance
-  } = cellData;
+  const { statusAppearance } = cellData;
 
   const children = cellData.title;
 
   if (children) {
-    return (
-      <StatusHint
-        appearance={statusAppearance}
-      >
-        {children}
-      </StatusHint>
-    );
+    return <StatusHint appearance={statusAppearance}>{children}</StatusHint>;
   }
 
   return null;
@@ -219,12 +192,7 @@ export const GridCell = (props: GridCellProps) => {
 
   const data = !loading ? translateData(schema, props.data) : {};
 
-  const {
-    name,
-    cellType = 'DEFAULT',
-    align = 'left',
-    tooltip
-  } = schema;
+  const { name, cellType = 'DEFAULT', align = 'left', tooltip } = schema;
 
   const cellData = data[name];
 
@@ -235,42 +203,34 @@ export const GridCell = (props: GridCellProps) => {
   switch (cellType) {
     case 'DEFAULT':
       return (
-        <div className={`${cellClass} GridCell--align-${align} GridCell--default`} >
-          {loading ? (
-            <PlaceholderParagraph length="medium" />
-          ) : (
-              renderTitle({ tooltip, cellData })
-            )
-          }
+        <div className={`${cellClass} GridCell--align-${align} GridCell--default`}>
+          {loading ? <PlaceholderParagraph length="medium" /> : renderTitle({ tooltip, cellData })}
         </div>
       );
 
     case 'WITH_META_LIST':
       return (
-        <div className={`${cellClass} GridCell--metaList`} >
+        <div className={`${cellClass} GridCell--metaList`}>
           {loading ? (
             <>
               <PlaceholderParagraph length="medium" />
               <PlaceholderParagraph length="large" size="xxs" />
             </>
           ) : (
-              <>
-                {renderTitle({ tooltip, cellData })}
-                {renderMetaList({ cellData })}
-              </>
-            )
-          }
+            <>
+              {renderTitle({ tooltip, cellData })}
+              {renderMetaList({ cellData })}
+            </>
+          )}
         </div>
       );
 
     case 'AVATAR':
       if (loading) {
-        return (
-          <Placeholder className={`GridCell--align-${align}`} imageSize={'medium'} round={true} />
-        );
+        return <Placeholder className={`GridCell--align-${align}`} imageSize={'medium'} round={true} />;
       }
       return (
-        <div className={`${cellClass} GridCell--align-${align} GridCell--avatar`} >
+        <div className={`${cellClass} GridCell--align-${align} GridCell--avatar`}>
           {size !== 'tight' && renderAvatar({ cellData })}
         </div>
       );
@@ -284,7 +244,7 @@ export const GridCell = (props: GridCellProps) => {
         );
       }
       return (
-        <div className={`${cellClass} GridCell--avatarWithText`} >
+        <div className={`${cellClass} GridCell--avatarWithText`}>
           {size !== 'tight' && renderAvatar({ cellData })}
           {renderTitle({ tooltip, cellData })}
         </div>
@@ -300,7 +260,7 @@ export const GridCell = (props: GridCellProps) => {
         );
       }
       return (
-        <div className={`${cellClass} GridCell--avatarWithText`} >
+        <div className={`${cellClass} GridCell--avatarWithText`}>
           {size !== 'tight' && renderAvatar({ cellData })}
           <div className="GridCell-metaListWrapper">
             {renderTitle({ tooltip, cellData })}
@@ -311,27 +271,20 @@ export const GridCell = (props: GridCellProps) => {
 
     case 'ICON':
       if (loading) {
-        return (
-          <Placeholder className={`GridCell--align-${align}`} imageSize={'small'} round={true} />
-        );
+        return <Placeholder className={`GridCell--align-${align}`} imageSize={'small'} round={true} />;
       }
-      return (
-        <div className={`${cellClass} GridCell--align-${align} GridCell--icon`} >
-          {renderIcon({ cellData })}
-        </div>
-      );
+      return <div className={`${cellClass} GridCell--align-${align} GridCell--icon`}>{renderIcon({ cellData })}</div>;
 
     case 'STATUS_HINT':
       return (
-        <div className={`${cellClass} GridCell--align-${align} GridCell--statusHint`} >
+        <div className={`${cellClass} GridCell--align-${align} GridCell--statusHint`}>
           {loading ? (
             <Placeholder className="w-75 flex-grow-0" imageSize={'small'} round={true}>
               <PlaceholderParagraph length="large" />
             </Placeholder>
           ) : (
-              renderStatusHint({ cellData })
-            )
-          }
+            renderStatusHint({ cellData })
+          )}
         </div>
       );
   }

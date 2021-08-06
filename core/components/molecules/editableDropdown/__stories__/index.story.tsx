@@ -10,7 +10,7 @@ for (let i = 1; i <= 100; i++) {
     label: `Option ${i}`,
     value: `Option ${i}`,
     group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',
-    selected: i === 2
+    selected: i === 2,
   });
 }
 
@@ -24,7 +24,7 @@ export const all = () => {
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           options: searchedOptions,
@@ -40,12 +40,14 @@ export const all = () => {
 
   return (
     <div className="w-25">
-      <Label withInput={true} className="ml-5">Editable Dropdown</Label>
+      <Label withInput={true} className="ml-5">
+        Editable Dropdown
+      </Label>
       <EditableDropdown
         placeholder={placeholder}
         dropdownOptions={{
           fetchOptions,
-          onChange
+          onChange,
         }}
       />
     </div>
@@ -104,8 +106,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

@@ -24,15 +24,9 @@ export interface TabProps {
 }
 
 export const Tab = (props: TabProps) => {
-  const {
-    children,
-  } = props;
+  const { children } = props;
 
-  return (
-    <React.Fragment>
-      {children}
-    </React.Fragment>
-  );
+  return <React.Fragment>{children}</React.Fragment>;
 };
 
 Tab.displayName = 'Tab';

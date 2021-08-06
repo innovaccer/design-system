@@ -14,9 +14,7 @@ export const tabsWithIcon = () => {
         <Heading size="s">Diabetes: Hemoglobin A1c Poor Control</Heading>
         <Link className="ml-4">Measure definition</Link>
       </div>
-      <Tabs
-        onTabChange={onTabChangeHandler}
-      >
+      <Tabs onTabChange={onTabChangeHandler}>
         <Tab label="2020" icon="warning">
           <div>2020</div>
         </Tab>
@@ -68,7 +66,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

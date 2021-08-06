@@ -8,26 +8,16 @@ export interface StepProps {
   disabled: boolean;
   active: boolean;
   completed: boolean;
-  onChange?: (
-    label: string,
-    value?: React.ReactText
-  ) => void;
+  onChange?: (label: string, value?: React.ReactText) => void;
 }
 
 export const Step = (props: StepProps) => {
-  const {
-    label,
-    value,
-    disabled,
-    active,
-    completed,
-    onChange,
-  } = props;
+  const { label, value, disabled, active, completed, onChange } = props;
 
   const StepClass = classNames({
     ['Step']: true,
     ['Step--active']: active,
-    ['Step--disabled']: disabled
+    ['Step--disabled']: disabled,
   });
 
   const onClickHandle = () => {
@@ -40,11 +30,7 @@ export const Step = (props: StepProps) => {
   const appearance = active ? 'link' : disabled ? 'disabled' : 'default';
 
   return (
-    <div
-      data-test="DesignSystem-Step"
-      className={StepClass}
-      onClick={onClickHandle}
-    >
+    <div data-test="DesignSystem-Step" className={StepClass} onClick={onClickHandle}>
       <Icon
         data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
@@ -53,10 +39,7 @@ export const Step = (props: StepProps) => {
       />
 
       {label && (
-        <Text
-          weight="medium"
-          appearance={appearance}
-        >
+        <Text weight="medium" appearance={appearance}>
           {label}
         </Text>
       )}

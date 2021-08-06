@@ -15,7 +15,6 @@ export const size = () => {
         <Text size="large">Large</Text>
       </div>
     </div>
-
   );
 };
 
@@ -25,8 +24,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Text'
-      }
-    }
-  }
+        title: 'Text',
+      },
+    },
+  },
 };

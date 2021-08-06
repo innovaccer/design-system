@@ -23,8 +23,8 @@ export default {
       docPage: {
         customCode,
         title: 'Resource Table Template',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

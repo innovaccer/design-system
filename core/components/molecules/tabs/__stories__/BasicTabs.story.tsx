@@ -8,24 +8,24 @@ export const basicTabs = () => {
     {
       label: 'Feb 9, 2019 (recent)',
       value: 'Feb 9, 2019 (recent)',
-      selected: true
+      selected: true,
     },
     {
       label: 'Feb 10, 2019',
-      value: 'Feb 10, 2019'
+      value: 'Feb 10, 2019',
     },
     {
       label: 'Feb 11, 2019',
-      value: 'Feb 11, 2019'
+      value: 'Feb 11, 2019',
     },
     {
       label: 'Feb 12, 2019',
-      value: 'Feb 12, 2019'
+      value: 'Feb 12, 2019',
     },
     {
       label: 'Feb 13, 2019',
-      value: 'Feb 13, 2019'
-    }
+      value: 'Feb 13, 2019',
+    },
   ];
 
   const onTabChangeHandler = (tabIndex: number) => {
@@ -40,30 +40,15 @@ export const basicTabs = () => {
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs
-        onTabChange={onTabChangeHandler}
-      >
-        <Tab
-          label="Clinical Gaps"
-        >
-          <div>
-            Clinical Gaps
-          </div>
+      <Tabs onTabChange={onTabChangeHandler}>
+        <Tab label="Clinical Gaps">
+          <div>Clinical Gaps</div>
         </Tab>
-        <Tab
-          label="Billing Gaps"
-        >
-          <div>
-            Billing Gaps
-          </div>
+        <Tab label="Billing Gaps">
+          <div>Billing Gaps</div>
         </Tab>
-        <Tab
-          label="Claim Gaps"
-          disabled={true}
-        >
-          <div>
-            Claim Gaps
-          </div>
+        <Tab label="Claim Gaps" disabled={true}>
+          <div>Claim Gaps</div>
         </Tab>
       </Tabs>
     </div>
@@ -138,7 +123,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

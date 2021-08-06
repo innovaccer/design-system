@@ -11,14 +11,10 @@ export const all = () => {
   const options = {
     disabled,
     required,
-    optional
+    optional,
   };
 
-  return (
-    <Label {...options} >
-      Label
-    </Label>
-  );
+  return <Label {...options}>Label</Label>;
 };
 
 export default {
@@ -27,8 +23,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Label'
-      }
-    }
-  }
+        title: 'Label',
+      },
+    },
+  },
 };

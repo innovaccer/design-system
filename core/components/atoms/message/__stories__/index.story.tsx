@@ -4,17 +4,9 @@ import { Message, Text } from '@/index';
 
 // CSF format story
 export const all = () => {
+  const appearance = select('appearance', ['default', 'alert', 'info', 'success', 'warning'], undefined);
 
-  const appearance = select(
-    'appearance',
-    ['default', 'alert', 'info', 'success', 'warning'],
-    undefined
-  );
-
-  const title = text(
-    'title',
-    'Design System'
-  );
+  const title = text('title', 'Design System');
 
   const description = text('description', 'Design System is a library of reusable components');
 
@@ -23,17 +15,21 @@ export const all = () => {
       appearance={appearance}
       title={title}
       description={description}
-      actions={(
+      actions={
         <>
-          <Text className="cursor-pointer" appearance="link">Action 1</Text>
-          <Text className="ml-5 cursor-pointer" appearance="link">Action 2</Text>
+          <Text className="cursor-pointer" appearance="link">
+            Action 1
+          </Text>
+          <Text className="ml-5 cursor-pointer" appearance="link">
+            Action 2
+          </Text>
         </>
-      )}
+      }
     />
   );
 };
 
 export default {
   title: 'Components/Message/All',
-  component: Message
+  component: Message,
 };

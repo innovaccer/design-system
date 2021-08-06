@@ -64,10 +64,13 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     return ref.current as HTMLInputElement;
   });
 
-  const RadioClass = classNames({
-    ['Radio']: true,
-    ['Radio--disabled']: disabled,
-  }, className);
+  const RadioClass = classNames(
+    {
+      ['Radio']: true,
+      ['Radio--disabled']: disabled,
+    },
+    className
+  );
 
   const RadioWrapper = classNames({
     ['Radio-wrapper']: true,
@@ -100,10 +103,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
       </div>
       {label && (
         <label className="Radio-label" htmlFor={id}>
-          <Text
-            size={size === 'tiny' ? 'small' : 'regular'}
-            appearance={disabled ? 'disabled' : 'default'}
-          >
+          <Text size={size === 'tiny' ? 'small' : 'regular'} appearance={disabled ? 'disabled' : 'default'}>
             {label}
           </Text>
         </label>

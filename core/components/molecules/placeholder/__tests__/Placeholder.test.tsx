@@ -51,7 +51,6 @@ describe('Placeholder component', () => {
 });
 
 describe('Placeholder component', () => {
-
   it('renders children without image', () => {
     const { getAllByTestId } = render(
       <Placeholder withImage={false}>
@@ -75,7 +74,6 @@ describe('Placeholder component', () => {
     expect(getByTestId('DesignSystem-Placeholder--Image')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Placeholder--Paragraph')).toHaveClass(withImageClass);
   });
-
 });
 
 describe('Placeholder Component with overwrite class', () => {
@@ -89,5 +87,4 @@ describe('Placeholder Component with overwrite class', () => {
     );
     expect(getByTestId('DesignSystem-Placeholder')).toHaveClass(className);
   });
-
 });

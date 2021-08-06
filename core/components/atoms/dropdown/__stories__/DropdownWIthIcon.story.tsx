@@ -198,18 +198,12 @@ const options = [
   {
     label: 'Wyoming',
     value: 'WY',
-  }
+  },
 ];
 
 // CSF format story
 export const dropdownWithIcon = () => (
-  <Dropdown
-    options={options}
-    icon="location_on"
-    className="w-25"
-    placeholder="Select state"
-    staticLimit={100}
-  />
+  <Dropdown options={options} icon="location_on" className="w-25" placeholder="Select state" staticLimit={100} />
 );
 
 export default {
@@ -221,8 +215,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

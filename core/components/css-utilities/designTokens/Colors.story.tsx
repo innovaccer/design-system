@@ -20,16 +20,15 @@ export const colors = () => {
       <Heading size="m">Colors</Heading>
       <br />
       {tokenColors.map((data, idx) => {
-        const heading = idx !== 4 && idx !== 9 ? data[0].token.slice(2)[0].toUpperCase() + data[0].token.slice(3) :
-          idx === 4 ? 'Neutral' : 'Others';
+        const heading =
+          idx !== 4 && idx !== 9
+            ? data[0].token.slice(2)[0].toUpperCase() + data[0].token.slice(3)
+            : idx === 4
+            ? 'Neutral'
+            : 'Others';
         return (
-          <div
-            className="mt-5 mb-5"
-            key={idx}
-          >
-            <Heading size="s">
-              {heading}
-            </Heading>
+          <div className="mt-5 mb-5" key={idx}>
+            <Heading size="s">{heading}</Heading>
             <br />
             <Card className="h-100 overflow-hidden">
               <Table data={data} schema={colorSchema} />
@@ -48,7 +47,7 @@ export default {
     viewMode: 'story',
     docs: {
       page: null,
-      docPage: null
-    }
-  }
+      docPage: null,
+    },
+  },
 };

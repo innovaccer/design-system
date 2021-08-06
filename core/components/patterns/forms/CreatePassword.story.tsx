@@ -166,8 +166,8 @@ export default {
       docPage: {
         customCode,
         title: 'Create Password Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

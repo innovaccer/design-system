@@ -55,21 +55,17 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
 }
 
 export const Link = (props: LinkProps) => {
-  const {
-    children,
-    className,
-    appearance,
-    size,
-    disabled,
-    ...rest
-  } = props;
+  const { children, className, appearance, size, disabled, ...rest } = props;
 
-  const classes = classNames({
-    Link: true,
-    ['Link--disabled']: disabled,
-    [`Link--${size}`]: size,
-    [`Link--${appearance}`]: appearance
-  }, className);
+  const classes = classNames(
+    {
+      Link: true,
+      ['Link--disabled']: disabled,
+      [`Link--${size}`]: size,
+      [`Link--${appearance}`]: appearance,
+    },
+    className
+  );
 
   return (
     <GenericText data-test="DesignSystem-Link" className={classes} componentType="a" {...rest}>
@@ -83,7 +79,7 @@ Link.displayName = 'Link';
 Link.defaultProps = {
   appearance: 'default',
   size: 'regular',
-  disabled: false
+  disabled: false,
 };
 
 export default Link;

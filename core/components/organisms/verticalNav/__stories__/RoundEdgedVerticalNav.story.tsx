@@ -2,12 +2,11 @@ import * as React from 'react';
 import { VerticalNav } from '@/index';
 
 export const roundEdgedVerticalNavigation = () => {
-
   const primaryNavdata = [
     {
       name: 'clinical_data',
       label: 'Clinical Data',
-      icon: 'assignment_ind'
+      icon: 'assignment_ind',
     },
     {
       name: 'care_management',
@@ -17,84 +16,84 @@ export const roundEdgedVerticalNavigation = () => {
         {
           name: 'care_management.timeline',
           label: 'Timeline',
-          icon: 'people'
+          icon: 'people',
         },
         {
           name: 'care_management.care_protocol',
           label: 'Care Protocol',
-          icon: 'fact_check'
+          icon: 'fact_check',
         },
         {
           name: 'care_management.assessments',
           label: 'Assessments',
-          icon: 'assessment'
+          icon: 'assessment',
         },
         {
           name: 'care_management.tasks',
           label: 'Tasks',
-          icon: 'alarm'
+          icon: 'alarm',
         },
         {
           name: 'care_management.goals',
           label: 'Goals',
-          icon: 'golf_course'
+          icon: 'golf_course',
         },
         {
           name: 'care_management.care_plans',
           label: 'Care Plans',
-          icon: 'accessibility_new'
+          icon: 'accessibility_new',
         },
         {
           name: 'care_management.medical_adherence',
           label: 'Medical Adherence',
-          icon: 'local_pharmacy'
+          icon: 'local_pharmacy',
         },
         {
           name: 'care_management.community_resources',
           label: 'Community Resources',
-          icon: 'businesses'
-        }
-      ]
+          icon: 'businesses',
+        },
+      ],
     },
     {
       name: 'episodes',
       label: 'Episodes',
-      icon: 'airline_seat_flat_angled'
+      icon: 'airline_seat_flat_angled',
     },
     {
       name: 'risk',
       label: 'Risk',
-      icon: 'favorite'
+      icon: 'favorite',
     },
     {
       name: 'preventive_health',
       label: 'Preventive Health',
-      icon: 'beenhere'
+      icon: 'beenhere',
     },
     {
       name: 'profile',
       label: 'Profile',
-      icon: 'receipt'
+      icon: 'receipt',
     },
     {
       name: 'claims',
       label: 'Claims',
-      icon: 'account_circle'
+      icon: 'account_circle',
     },
     {
       name: 'manual_entry',
       label: 'Manual Entry',
-      icon: 'edit'
+      icon: 'edit',
     },
     {
       name: 'patient_notes',
       label: 'Patient Notes',
-      icon: 'note_add'
+      icon: 'note_add',
     },
     {
       name: 'documents',
       label: 'Documents',
-      icon: 'assignment'
+      icon: 'assignment',
     },
   ];
 
@@ -122,23 +121,16 @@ export const roundEdgedVerticalNavigation = () => {
   ];
 
   const [primaryActive, setPrimaryActive] = React.useState({
-    name: 'care_management.timeline'
+    name: 'care_management.timeline',
   });
 
   const [secondaryActive, setSecondaryActive] = React.useState({
-    name: '11/12/20'
+    name: '11/12/20',
   });
 
   return (
-    <div
-      className="d-flex"
-      style={{ height: '100vh', background: 'var(--secondary-lightest)' }}
-    >
-      <VerticalNav
-        menus={primaryNavdata}
-        active={primaryActive}
-        onClick={setPrimaryActive}
-      />
+    <div className="d-flex" style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
+      <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
       <VerticalNav
         menus={secondaryNavdata}
         active={secondaryActive}
@@ -305,8 +297,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

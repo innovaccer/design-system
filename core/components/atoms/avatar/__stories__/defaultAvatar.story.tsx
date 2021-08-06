@@ -1,9 +1,7 @@
 import * as React from 'react';
 import Avatar from '../Avatar';
 
-export const defaultAvatar = () => (
-  <Avatar firstName="John" lastName="Doe" appearance="primary" />
-);
+export const defaultAvatar = () => <Avatar firstName="John" lastName="Doe" appearance="primary" />;
 
 export default {
   title: 'Components/Avatar/Default Avatar',
@@ -11,8 +9,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Avatar'
-      }
-    }
-  }
+        title: 'Avatar',
+      },
+    },
+  },
 };

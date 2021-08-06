@@ -1,12 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const iconButton = () => (
-  <Button
-    appearance="basic"
-    icon="keyboard_arrow_right"
-  />
-);
+export const iconButton = () => <Button appearance="basic" icon="keyboard_arrow_right" />;
 
 export default {
   title: 'Components/Button/Icon Button',
@@ -15,8 +10,8 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Secondary button with icon.'
-      }
-    }
-  }
+        description: 'Secondary button with icon.',
+      },
+    },
+  },
 };

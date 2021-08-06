@@ -8,7 +8,7 @@ export const firstDayOfWeek = () => {
   const values: Day[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
   const style = {
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   };
 
   return (
@@ -16,14 +16,8 @@ export const firstDayOfWeek = () => {
     <div className="d-flex" style={style}>
       {values.map((v, index) => (
         <div className="mr-9 mt-5" key={index}>
-          <Card
-            className="d-inline-flex"
-            shadow="light"
-          >
-            <Calendar
-              date={new Date(2020, 2, 1)}
-              firstDayOfWeek={v}
-            />
+          <Card className="d-inline-flex" shadow="light">
+            <Calendar date={new Date(2020, 2, 1)} firstDayOfWeek={v} />
           </Card>
         </div>
       ))}
@@ -37,8 +31,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Calendar'
-      }
-    }
-  }
+        title: 'Calendar',
+      },
+    },
+  },
 };

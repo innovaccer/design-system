@@ -8,10 +8,25 @@ export const cardNumber = () => {
       <Label className="mb-3">Card Number</Label>
       <InputMask
         mask={[
-          /\d/, /\d/, /\d/, /\d/, ' ',
-          /\d/, /\d/, /\d/, /\d/, ' ',
-          /\d/, /\d/, /\d/, /\d/, ' ',
-          /\d/, /\d/, /\d/, /\d/
+          /\d/,
+          /\d/,
+          /\d/,
+          /\d/,
+          ' ',
+          /\d/,
+          /\d/,
+          /\d/,
+          /\d/,
+          ' ',
+          /\d/,
+          /\d/,
+          /\d/,
+          /\d/,
+          ' ',
+          /\d/,
+          /\d/,
+          /\d/,
+          /\d/,
         ]}
         placeholder="____ ____ ____ ____"
         name="card_number"
@@ -23,5 +38,5 @@ export const cardNumber = () => {
 
 export default {
   title: 'Components/InputMask/Card Number',
-  component: InputMask
+  component: InputMask,
 };

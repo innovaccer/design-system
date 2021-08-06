@@ -19,13 +19,19 @@ export const asyncTable = () => {
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
-          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+          onSelect={(rowIndex, selected, selectedList, selectAll) =>
+            action(
+              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+                selectedList
+              )} selectAll: ${selectAll}`
+            )()
+          }
           headerOptions={{
-            withSearch: true
+            withSearch: true,
           }}
           withPagination={true}
           pageSize={5}
-          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
         />
       </Card>
     </div>
@@ -289,7 +295,7 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

@@ -11,16 +11,15 @@ export const size = () => {
 
   return (
     <div className="d-flex">
-      {
-        sizes.map((dropdownSize, ind) => {
-          return (
-            <div key={ind} className="mr-8 w-25">
-              <Text weight="strong">{dropdownSize.charAt(0).toUpperCase() + dropdownSize.slice(1)}</Text> <br /><br />
-              <Dropdown triggerSize={dropdownSize} options={storyOptions} placeholder={'Select'} />
-            </div>
-          );
-        })
-      }
+      {sizes.map((dropdownSize, ind) => {
+        return (
+          <div key={ind} className="mr-8 w-25">
+            <Text weight="strong">{dropdownSize.charAt(0).toUpperCase() + dropdownSize.slice(1)}</Text> <br />
+            <br />
+            <Dropdown triggerSize={dropdownSize} options={storyOptions} placeholder={'Select'} />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -62,9 +61,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

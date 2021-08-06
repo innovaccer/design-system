@@ -18,25 +18,20 @@ export interface BoxBaseProps {
 export type InternalBoxProps = BoxProps & BoxBaseProps & SharedProps;
 
 export const Box = (props: InternalBoxProps) => {
-  const {
-    children,
-    type,
-    isTyping,
-    statusType,
-    withStatus,
-    onClick,
-    className
-  } = props;
+  const { children, type, isTyping, statusType, withStatus, onClick, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const MessageClass = classNames({
-    ['Box']: true,
-    [`Box--${type}`]: type,
-    ['Box--typing']: isTyping,
-    ['Box--urgent']: statusType === 'urgent',
-    [`Box-${type}--withStatus`]: withStatus || isTyping,
-  }, className);
+  const MessageClass = classNames(
+    {
+      ['Box']: true,
+      [`Box--${type}`]: type,
+      ['Box--typing']: isTyping,
+      ['Box--urgent']: statusType === 'urgent',
+      [`Box-${type}--withStatus`]: withStatus || isTyping,
+    },
+    className
+  );
 
   return (
     <div {...baseProps} className={MessageClass} onClick={onClick}>

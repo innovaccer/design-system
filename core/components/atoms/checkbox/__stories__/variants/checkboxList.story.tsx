@@ -27,7 +27,7 @@ export const checkboxList = () => {
     const totalCount = labels.length;
     const countT = updateCheck.filter(Boolean).length;
     const status = countT < totalCount;
-    const obj = (countT > 0) ? { checked: !status, indeterminate: status } : { checked: !status, indeterminate: false };
+    const obj = countT > 0 ? { checked: !status, indeterminate: status } : { checked: !status, indeterminate: false };
     setChecked(updateCheck);
     setParentStatus(obj);
   };
@@ -42,19 +42,17 @@ export const checkboxList = () => {
         value={'Innovaccer'}
       />
       <div style={style}>
-        {
-          labels.map((label, ind) => {
-            return (
-              <Checkbox
-                key={`checkbox-${ind}`}
-                label={label}
-                checked={checked[ind]}
-                value={label}
-                onChange={e => handleChildChange(e, ind)}
-              />
-            );
-          })
-        }
+        {labels.map((label, ind) => {
+          return (
+            <Checkbox
+              key={`checkbox-${ind}`}
+              label={label}
+              checked={checked[ind]}
+              value={label}
+              onChange={(e) => handleChildChange(e, ind)}
+            />
+          );
+        })}
       </div>
     </div>
   );
@@ -120,8 +118,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

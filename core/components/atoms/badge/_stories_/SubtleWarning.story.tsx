@@ -2,13 +2,9 @@ import * as React from 'react';
 import Badge from '../Badge';
 
 export const subtleWarning = () => (
-  <Badge
-    appearance="warning"
-    subtle={true}
-  >
+  <Badge appearance="warning" subtle={true}>
     {'Pending'}
   </Badge>
-
 );
 
 export default {
@@ -17,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Badge'
-      }
-    }
-  }
+        title: 'Badge',
+      },
+    },
+  },
 };

@@ -11,7 +11,7 @@ export const navigationTabs = () => {
     },
     {
       name: 'tab2',
-      label: 'Tab #2'
+      label: 'Tab #2',
     },
     {
       name: 'tab3',
@@ -20,31 +20,20 @@ export const navigationTabs = () => {
     {
       name: 'tab4',
       label: 'Tab #3',
-    }
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'tab1'
+    name: 'tab1',
   });
 
   const onClickHandler = (menu: Menu) => {
     setActive(menu);
   };
 
-  const align = select(
-    'align',
-    ['left', 'center'],
-    'center'
-  );
+  const align = select('align', ['left', 'center'], 'center');
 
-  return (
-    <Navigation
-      align={align}
-      menus={data}
-      active={active}
-      onClick={onClickHandler}
-    />
-  );
+  return <Navigation align={align} menus={data} active={active} onClick={onClickHandler} />;
 };
 
 const customCode = `() => {
@@ -93,8 +82,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

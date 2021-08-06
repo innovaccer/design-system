@@ -22,17 +22,12 @@ const options = [
   {
     label: 'Lack of Understanding',
     value: 'lack_of_understanding',
-  }
+  },
 ];
 
 // CSF format story
 export const searchInDropdown = () => (
-  <Dropdown
-    options={options}
-    withSearch={true}
-    className="w-25"
-    placeholder="Select barriers"
-  />
+  <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select barriers" />
 );
 
 export default {
@@ -44,8 +39,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

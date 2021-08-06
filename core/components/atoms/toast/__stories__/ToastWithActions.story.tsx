@@ -10,17 +10,17 @@ export const toastWithActions = () => (
     actions={[
       {
         label: 'Need Prior Auth',
-        onClick: () => { }
+        onClick: () => {},
       },
       {
         label: 'Go To Worklist',
-        onClick: () => { }
-      }
+        onClick: () => {},
+      },
     ]}
   />
 );
 
 export default {
   title: 'Components/Toast/Toast With Actions',
-  component: Toast
+  component: Toast,
 };

@@ -11,11 +11,7 @@ export const twoSteps = () => {
   const seperator = boolean('seperator', false);
   const stickFooter = boolean('stick bottom', false);
   const backdropClose = boolean('backdropClose', false);
-  const dimension = select(
-    'dimension',
-    ['regular', 'large'],
-    'regular'
-  );
+  const dimension = select('dimension', ['regular', 'large'], 'regular');
 
   const onClose = () => {
     updateKnob('open', false);
@@ -31,7 +27,7 @@ export const twoSteps = () => {
     backIconCallback,
     backIcon: page === 2,
     heading: `Heading ${page}`,
-    subHeading: 'Subheading'
+    subHeading: 'Subheading',
   };
 
   const options = {
@@ -45,57 +41,48 @@ export const twoSteps = () => {
     footer: (
       <>
         {page === 1 && (
-          <Button
-            appearance="primary"
-            className="mr-4"
-            onClick={() => setPage(2)}
-          >
+          <Button appearance="primary" className="mr-4" onClick={() => setPage(2)}>
             Next
           </Button>
         )}
         {page === 2 && (
           <>
-            <Button
-              appearance="primary"
-              className="mr-4"
-            >
+            <Button appearance="primary" className="mr-4">
               Submit
             </Button>
-            <Button
-              appearance="basic"
-              onClick={() => setPage(1)}
-            >
+            <Button appearance="basic" onClick={() => setPage(1)}>
               Back
             </Button>
           </>
         )}
       </>
-    )
+    ),
   };
 
   const modalDescriptionOptions = {
     title: 'Description Title',
     description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true
+    removePadding: true,
   };
 
   const modalDescriptionOptionsWithoutTitle = {
     description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true
+    removePadding: true,
   };
 
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
-      <Sidesheet {...options} >
+      <Sidesheet {...options}>
         <Heading size="s">{`Page ${page}`}</Heading>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
@@ -202,7 +189,7 @@ export default {
         customCode,
         title: 'Modal',
         noHtml: true,
-      }
-    }
-  }
+      },
+    },
+  },
 };

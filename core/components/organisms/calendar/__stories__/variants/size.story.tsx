@@ -15,15 +15,8 @@ export const size = () => {
         <div className="d-flex">
           {view.map((v, index) => (
             <div className="mr-8" key={index}>
-              <Card
-                className="d-inline-flex"
-                shadow="light"
-              >
-                <Calendar
-                  date={new Date(2020, 2, 15)}
-                  size={'small'}
-                  view={v}
-                />
+              <Card className="d-inline-flex" shadow="light">
+                <Calendar date={new Date(2020, 2, 15)} size={'small'} view={v} />
               </Card>
             </div>
           ))}
@@ -35,15 +28,8 @@ export const size = () => {
         <div className="d-flex">
           {view.map((v, index) => (
             <div className="mr-8" key={index}>
-              <Card
-                className="d-inline-flex"
-                shadow="light"
-              >
-                <Calendar
-                  date={new Date(2020, 2, 15)}
-                  size={'large'}
-                  view={v}
-                />
+              <Card className="d-inline-flex" shadow="light">
+                <Calendar date={new Date(2020, 2, 15)} size={'large'} view={v} />
               </Card>
             </div>
           ))}
@@ -59,8 +45,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Calendar'
-      }
-    }
-  }
+        title: 'Calendar',
+      },
+    },
+  },
 };

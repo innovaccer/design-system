@@ -11,7 +11,7 @@ import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'regular' | 'large';
 type FooterOptions = {
-  actions: OverlayFooterProps['actions']
+  actions: OverlayFooterProps['actions'];
 };
 
 export interface SidesheetProps extends BaseProps {
@@ -137,23 +137,26 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         const zIndex = getUpdatedZIndex({
           element: this.element,
           containerClassName: '.Overlay-container--open',
-          elementRef: this.sidesheetRef
+          elementRef: this.sidesheetRef,
         });
         this.setState({
           zIndex,
           open: true,
-          animate: true
+          animate: true,
         });
       } else {
-        this.setState({
-          animate: false,
-        }, () => {
-          window.setTimeout(() => {
-            this.setState({
-              open: false
-            });
-          }, 120);
-        });
+        this.setState(
+          {
+            animate: false,
+          },
+          () => {
+            window.setTimeout(() => {
+              this.setState({
+                open: false,
+              });
+            }, 120);
+          }
+        );
       }
     }
   }
@@ -182,12 +185,15 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       onClose,
     } = this.props;
 
-    const classes = classNames({
-      Sidesheet: true,
-      'Sidesheet--open': open,
-      'Sidesheet-animation--open': animate,
-      'Sidesheet-animation--close': !animate,
-    }, className);
+    const classes = classNames(
+      {
+        Sidesheet: true,
+        'Sidesheet--open': open,
+        'Sidesheet-animation--open': animate,
+        'Sidesheet-animation--close': !animate,
+      },
+      className
+    );
 
     const ContainerClass = classNames({
       ['Overlay-container']: true,
@@ -202,12 +208,12 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const footerClass = classNames({
       ['Sidesheet-footer']: true,
       ['Sidesheet-footer--withSeperator']: seperator,
-      ['Sidesheet-footer--stickToBottom']: stickFooter
+      ['Sidesheet-footer--stickToBottom']: stickFooter,
     });
 
     const bodyClass = classNames({
       ['Sidesheet-body']: true,
-      ['Sidesheet-body--withMargin']: !!footer && stickFooter
+      ['Sidesheet-body--withMargin']: !!footer && stickFooter,
     });
 
     const baseProps = extractBaseProps(this.props);
@@ -220,19 +226,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         style={{ zIndex }}
         ref={this.sidesheetRef}
       >
-        <Column
-          data-test="DesignSystem-Sidesheet"
-          {...baseProps}
-          className={classes}
-          size={sidesheetWidth[dimension]}
-        >
+        <Column data-test="DesignSystem-Sidesheet" {...baseProps} className={classes} size={sidesheetWidth[dimension]}>
           <div className={headerClass}>
             <Column data-test="DesignSystem-Sidesheet--Header">
-              {!header && (
-                <OverlayHeader
-                  {...headerOptions}
-                />
-              )}
+              {!header && <OverlayHeader {...headerOptions} />}
 
               {!!header && header}
             </Column>
@@ -247,10 +244,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
               />
             </Column>
           </div>
-          <OverlayBody
-            data-test="DesignSystem-Sidesheet--OverlayBody"
-            className={bodyClass}
-          >
+          <OverlayBody data-test="DesignSystem-Sidesheet--OverlayBody" className={bodyClass}>
             {this.props.children}
           </OverlayBody>
           {(!!footer || !!footerOptions) && (
@@ -268,18 +262,14 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     );
 
     const SidesheetWrapper = backdropClose ? (
-      <OutsideClick
-        data-test="DesignSystem-Sidesheet--OutsideClick"
-        onOutsideClick={this.onOutsideClickHandler}
-      >
+      <OutsideClick data-test="DesignSystem-Sidesheet--OutsideClick" onOutsideClick={this.onOutsideClickHandler}>
         {SidesheetContainer}
       </OutsideClick>
-    ) : SidesheetContainer;
-
-    const WrapperElement = ReactDOM.createPortal(
-      SidesheetWrapper,
-      this.element
+    ) : (
+      SidesheetContainer
     );
+
+    const WrapperElement = ReactDOM.createPortal(SidesheetWrapper, this.element);
 
     return (
       <>

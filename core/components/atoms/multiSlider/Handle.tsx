@@ -51,7 +51,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
 
   mouseEventClientOffset = (event: MouseEvent | React.MouseEvent<HTMLElement>) => {
     return event.clientX;
-  }
+  };
 
   clientToValue = (clientPixel: number) => {
     const { stepSize, tickSize, value } = this.props;
@@ -69,7 +69,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     }
 
     return value + Math.round(pixelDelta / (tickSize * stepSize)) * stepSize;
-  }
+  };
 
   changeValue = (newValue: number, callback = this.props.onChange) => {
     const updatedValue = clamp(newValue, this.props.min, this.props.max);
@@ -78,7 +78,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       if (callback) callback(updatedValue);
     }
     return updatedValue;
-  }
+  };
 
   endHandleMovement = (event: MouseEvent) => {
     const clientPixel = this.mouseEventClientOffset(event);
@@ -89,7 +89,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
 
     const finalValue = this.changeValue(this.clientToValue(clientPixel));
     if (onRelease) onRelease(finalValue);
-  }
+  };
 
   continueHandleMovement = (event: MouseEvent) => {
     const clientPixel = this.mouseEventClientOffset(event);
@@ -97,7 +97,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       const value = this.clientToValue(clientPixel);
       this.changeValue(value);
     }
-  }
+  };
 
   beginHandleMovement = (event: MouseEvent | React.MouseEvent<HTMLElement>) => {
     if (this.props.disabled) return;
@@ -108,7 +108,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
 
     const value = this.clientToValue(event.clientX);
     this.changeValue(value);
-  }
+  };
 
   handleKeyDown = (event: React.KeyboardEvent<HTMLSpanElement>) => {
     if (this.props.disabled) return;
@@ -123,7 +123,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       this.changeValue(value + stepSize);
       event.preventDefault();
     }
-  }
+  };
 
   handleKeyUp = (event: React.KeyboardEvent<HTMLSpanElement>) => {
     if (this.props.disabled) return;
@@ -132,7 +132,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       const { onRelease } = this.props;
       if (onRelease) onRelease(this.props.value);
     }
-  }
+  };
 
   getHandleMidpointAndOffset = (handleElement: HTMLElement | null, useOppositeDimension = false) => {
     if (handleElement == null) {
@@ -144,27 +144,25 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const handleOffset = handleRect.left;
 
     return { handleOffset, handleMidpoint: handleRect[sizeKey] / 2 };
-  }
+  };
 
   handleMouseOver = () => {
     this.setState({
-      isHandleHovered: true
+      isHandleHovered: true,
     });
-  }
+  };
 
   handleMouseLeave = () => {
     this.setState({
-      isHandleHovered: false
+      isHandleHovered: false,
     });
-  }
+  };
 
   render() {
     const { min, tickSizeRatio, value, disabled, label, isCurrentLabelHovered } = this.props;
     const { isHandleMoving, isHandleHovered } = this.state;
 
-    const showTootlip = isHandleMoving
-      || isHandleHovered
-      || isCurrentLabelHovered;
+    const showTootlip = isHandleMoving || isHandleHovered || isCurrentLabelHovered;
 
     const { handleMidpoint } = this.getHandleMidpointAndOffset(this.handleElement, true);
     const offsetRatio = (value - min) * tickSizeRatio;
@@ -174,13 +172,13 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const className = classNames({
       ['Slider-handle']: true,
       ['Slider-handle--disabled']: disabled,
-      ['Slider-handle--active']: isHandleMoving
+      ['Slider-handle--active']: isHandleMoving,
     });
 
     const TooltipClass = classNames({
       ['Slider-tooltip']: true,
       ['Tooltip']: true,
-      ['d-none']: !(showTootlip)
+      ['d-none']: !showTootlip,
     });
 
     return (
@@ -206,7 +204,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
   removeDocumentEventListeners = () => {
     document.removeEventListener('mousemove', this.continueHandleMovement);
     document.removeEventListener('mouseup', this.endHandleMovement);
-  }
+  };
 }
 
 export default Handle;

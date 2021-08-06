@@ -5,10 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { text, boolean } from '@storybook/addon-knobs';
 
 export const withNavigation = () => {
-  const title = text(
-    'title',
-    'Page title'
-  );
+  const title = text('title', 'Page title');
 
   const navigationData = [
     {
@@ -18,13 +15,13 @@ export const withNavigation = () => {
     },
     {
       name: 'menu_2',
-      label: 'Menu 2'
+      label: 'Menu 2',
     },
     {
       name: 'menu_3',
       label: 'Menu 3',
-      disabled: true
-    }
+      disabled: true,
+    },
   ];
   const separator = boolean('separator', true);
 
@@ -34,10 +31,12 @@ export const withNavigation = () => {
     navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,
     actions: (
       <div className="d-flex justify-content-end align-items-center">
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
+        <span className="mr-4">
+          <Text appearance="subtle">Meta data</Text>
+        </span>
         <Button appearance="primary">Primary</Button>
       </div>
-    )
+    ),
   };
 
   return (
@@ -91,8 +90,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

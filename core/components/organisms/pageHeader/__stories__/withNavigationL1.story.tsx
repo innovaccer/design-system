@@ -11,45 +11,37 @@ export const level1WithNavigation = () => {
     },
     {
       name: 'menu_2',
-      label: 'Recipients'
-    }
+      label: 'Recipients',
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'menu_1'
+    name: 'menu_1',
   });
 
-  const onClickHandler = (menu:Menu) => {
+  const onClickHandler = (menu: Menu) => {
     setActive(menu);
   };
 
-  const navigation = (
-    <Navigation
-      menus={navigationData}
-      onClick={onClickHandler}
-      active={active}
-    />
-  );
-  const actions = (
-    <div className="d-flex justify-content-end align-items-center"/>
-  );
+  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;
+  const actions = <div className="d-flex justify-content-end align-items-center" />;
   const breadcrumbs = (
     <Breadcrumbs
-      list={[{
-        label: 'Outreach',
-        link: '/Outreach'
-      }]}
-      onClick={link => action(`on-click: ${link}`)}
+      list={[
+        {
+          label: 'Outreach',
+          link: '/Outreach',
+        },
+      ]}
+      onClick={(link) => action(`on-click: ${link}`)}
     />
   );
   const badge = (
-    <Badge subtle={true} appearance="success">Sent</Badge>
+    <Badge subtle={true} appearance="success">
+      Sent
+    </Badge>
   );
-  const meta = (
-    <MetaList
-      list={[{ label: 'Text' }, { label: 'Email' }]}
-    />
-  );
+  const meta = <MetaList list={[{ label: 'Text' }, { label: 'Email' }]} />;
   return (
     <div className="w-100 p-5 bg-secondary-lightest">
       <PageHeader
@@ -138,8 +130,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

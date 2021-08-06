@@ -10,7 +10,7 @@ const BooleanValue = [true, false];
 const FunctionValue = jest.fn();
 const chipOptions = {
   clearButton: true,
-  onClick: FunctionValue
+  onClick: FunctionValue,
 };
 
 describe('ChipInput component', () => {
@@ -29,9 +29,7 @@ describe('ChipInput component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <ChipInput {...attr} />
-      );
+      const { baseElement } = render(<ChipInput {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -40,7 +38,6 @@ describe('ChipInput component', () => {
 });
 
 describe('ChipInput component', () => {
-
   it('renders input and chips', () => {
     const { getByTestId, getAllByTestId } = render(<ChipInput value={value} />);
 
@@ -79,12 +76,7 @@ describe('ChipInput component', () => {
   });
 
   it('ChipInput with prop allowDuplicate: false', () => {
-    const { getByTestId, getAllByTestId } = render(
-      <ChipInput
-        defaultValue={value}
-        onChange={FunctionValue}
-      />
-    );
+    const { getByTestId, getAllByTestId } = render(<ChipInput defaultValue={value} onChange={FunctionValue} />);
 
     const inputComponent = getByTestId('DesignSystem-ChipInput--Input');
     fireEvent.change(inputComponent, { target: { value: value[0] } });
@@ -94,11 +86,7 @@ describe('ChipInput component', () => {
 
   it('ChipInput with prop allowDuplicate: true', () => {
     const { getByTestId, getAllByTestId } = render(
-      <ChipInput
-        defaultValue={value}
-        onChange={FunctionValue}
-        allowDuplicates={true}
-      />
+      <ChipInput defaultValue={value} onChange={FunctionValue} allowDuplicates={true} />
     );
 
     const inputComponent = getByTestId('DesignSystem-ChipInput--Input');
@@ -106,19 +94,12 @@ describe('ChipInput component', () => {
     fireEvent.keyDown(inputComponent, { key: 'Enter' });
     expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(value.length + 1);
   });
-
 });
 
 describe('Controlled ChipInput component', () => {
-
   it('Add chip if enter is pressed', () => {
     const newValue = ['1020', '80', '90'];
-    const { rerender, getByTestId, getAllByTestId } = render(
-      <ChipInput
-        value={value}
-        onChange={FunctionValue}
-      />
-    );
+    const { rerender, getByTestId, getAllByTestId } = render(<ChipInput value={value} onChange={FunctionValue} />);
     expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(value.length);
 
     const inputComponent = getByTestId('DesignSystem-ChipInput--Input');
@@ -130,11 +111,9 @@ describe('Controlled ChipInput component', () => {
     expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(newValue.length);
     expect(getAllByTestId('DesignSystem-ChipInput--Chip')[2].textContent).toMatch(newValue[2]);
   });
-
 });
 
 describe('Uncontrolled ChipInput component', () => {
-
   it('Add chip if enter is pressed', () => {
     const newValue = ['1020', '80', '90'];
     const { getByTestId, getAllByTestId } = render(<ChipInput defaultValue={value} onChange={FunctionValue} />);
@@ -165,10 +144,7 @@ describe('Uncontrolled ChipInput component', () => {
   it('Delete all chips if close icon is clicked', () => {
     const newValue: string[] = [];
     const { getByTestId, getAllByTestId, queryAllByTestId } = render(
-      <ChipInput
-        defaultValue={value}
-        onChange={FunctionValue}
-      />
+      <ChipInput defaultValue={value} onChange={FunctionValue} />
     );
     expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(value.length);
 
@@ -178,5 +154,4 @@ describe('Uncontrolled ChipInput component', () => {
     expect(FunctionValue).toHaveBeenCalled();
     expect(queryAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(newValue.length);
   });
-
 });

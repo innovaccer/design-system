@@ -19,5 +19,5 @@ export const smallSizeWithButton = () => {
 
 export default {
   title: 'Components/EmptyState/Variants/Small Size With Button',
-  component: EmptyState
+  component: EmptyState,
 };

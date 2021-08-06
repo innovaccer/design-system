@@ -12,7 +12,6 @@ export const labelWeight = () => {
         <Legend labelWeight={'medium'}>Medium</Legend>
       </div>
     </div>
-
   );
 };
 
@@ -22,8 +21,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Legend'
-      }
-    }
-  }
+        title: 'Legend',
+      },
+    },
+  },
 };

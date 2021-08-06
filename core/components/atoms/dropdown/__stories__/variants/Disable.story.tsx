@@ -10,16 +10,15 @@ export const disabled = () => {
 
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>
-      {
-        disabledStates.map((state, ind) => {
-          return (
-            <div className="w-25" key={ind} style={{ marginRight: '5%' }}>
-              <Text weight="strong">{state ? 'Disabled' : 'Enabled'}</Text> <br /><br />
-              <Dropdown disabled={state} options={storyOptions} placeholder={'Select'} />
-            </div>
-          );
-        })
-      }
+      {disabledStates.map((state, ind) => {
+        return (
+          <div className="w-25" key={ind} style={{ marginRight: '5%' }}>
+            <Text weight="strong">{state ? 'Disabled' : 'Enabled'}</Text> <br />
+            <br />
+            <Dropdown disabled={state} options={storyOptions} placeholder={'Select'} />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -58,10 +57,10 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
+          exclude: ['showHead'],
         },
-        title: 'Dropdown'
-      }
-    }
-  }
+        title: 'Dropdown',
+      },
+    },
+  },
 };

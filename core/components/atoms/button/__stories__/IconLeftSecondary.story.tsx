@@ -2,10 +2,7 @@ import * as React from 'react';
 import Button from '../Button';
 
 export const iconLeftButton = () => (
-  <Button
-    icon="get_app"
-    iconAlign="left"
-  >
+  <Button icon="get_app" iconAlign="left">
     Download
   </Button>
 );
@@ -17,8 +14,8 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Secondary button with left aligned icon.'
-      }
-    }
-  }
+        description: 'Secondary button with left aligned icon.',
+      },
+    },
+  },
 };

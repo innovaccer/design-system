@@ -2,10 +2,7 @@ import * as React from 'react';
 import Pills from '../Pills';
 
 export const info = () => (
-  <Pills
-    appearance="primary"
-    subtle={false}
-  >
+  <Pills appearance="primary" subtle={false}>
     {'Pills'}
   </Pills>
 );
@@ -16,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Pills'
-      }
-    }
-  }
+        title: 'Pills',
+      },
+    },
+  },
 };

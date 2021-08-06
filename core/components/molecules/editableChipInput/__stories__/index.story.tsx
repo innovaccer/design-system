@@ -11,29 +11,27 @@ export const all = () => {
   const onChange = (updatedValue: string[]) => {
     setValue(updatedValue);
   };
-  const onClick = (item: any) =>  action(`onClick: ${item}`);
+  const onClick = (item: any) => action(`onClick: ${item}`);
 
   const placeholder = text('Placeholder', 'Add Value');
-  const chipOptions = { onClick, clearButton:true };
+  const chipOptions = { onClick, clearButton: true };
   const chipInputOptions = {
     chipOptions,
-    allowDuplicates:false,
-    defaultValue:[],
-    autoFocus:true
+    allowDuplicates: false,
+    defaultValue: [],
+    autoFocus: true,
   };
 
   const options = {
     placeholder,
     value,
     onChange,
-    chipInputOptions
+    chipInputOptions,
   };
   return (
-      <div className="w-25">
-        <EditableChipInput
-          {...options}
-        />
-      </div>
+    <div className="w-25">
+      <EditableChipInput {...options} />
+    </div>
   );
 };
 
@@ -76,7 +74,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

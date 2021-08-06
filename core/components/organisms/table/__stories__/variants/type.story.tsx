@@ -23,7 +23,7 @@ export const type = () => {
           key={index}
           style={{
             margin: '20px',
-            width: '45%'
+            width: '45%',
           }}
         >
           <Heading>{v}</Heading>
@@ -32,15 +32,14 @@ export const type = () => {
               height: '350px',
             }}
           >
-            <Card
-              shadow="light"
-              className="h-100"
-            >
+            <Card shadow="light" className="h-100">
               <Table
                 type={v}
                 data={data}
                 schema={schema}
-                onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+                onRowClick={(rowData, rowIndex) =>
+                  action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
+                }
               />
             </Card>
           </div>
@@ -58,9 +57,9 @@ export default {
       docPage: {
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

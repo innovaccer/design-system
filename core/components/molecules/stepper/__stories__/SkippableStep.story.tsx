@@ -5,15 +5,15 @@ import { Stepper, Button } from '@/index';
 const steps = [
   {
     label: 'Application details',
-    value: 'application_details'
+    value: 'application_details',
   },
   {
     label: 'Approval questions',
-    value: 'approval_questions'
+    value: 'approval_questions',
   },
   {
     label: 'Payer information',
-    value: 'payer_information'
+    value: 'payer_information',
   },
 ];
 
@@ -30,7 +30,7 @@ export const skippableStep = () => {
   const onClickHandler = () => {
     if (skipIndexes.includes(active)) {
       const updatedSkip = [...skipIndexes];
-      const index = updatedSkip.findIndex(skippedIndex => skippedIndex === active);
+      const index = updatedSkip.findIndex((skippedIndex) => skippedIndex === active);
       updatedSkip.splice(index, 1);
       setSkip(updatedSkip);
     }
@@ -55,18 +55,16 @@ export const skippableStep = () => {
       style={{ height: '200px' }}
     >
       <div className="d-flex justify-content-center py-5 bg-light w-100">
-        <Stepper
-          steps={steps}
-          active={active}
-          completed={completed}
-          onChange={onChange}
-          skipIndexes={skipIndexes}
-        />
+        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndexes} />
       </div>
       <br />
       <div className="w-25 d-flex justify-content-end">
-        <Button onClick={onSkipHandler} className="mr-4">Skip</Button>
-        <Button onClick={onClickHandler} appearance="primary">Next</Button>
+        <Button onClick={onSkipHandler} className="mr-4">
+          Skip
+        </Button>
+        <Button onClick={onClickHandler} appearance="primary">
+          Next
+        </Button>
       </div>
     </div>
   );
@@ -146,8 +144,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

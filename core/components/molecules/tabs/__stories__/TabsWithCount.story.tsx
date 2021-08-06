@@ -11,7 +11,7 @@ export const tabsWithCount = () => {
     },
     {
       label: 'Decreasing',
-      value: 'Decreasing'
+      value: 'Decreasing',
     },
   ];
 
@@ -25,10 +25,8 @@ export const tabsWithCount = () => {
         <Heading size="m">Strategy</Heading>
         <Button appearance="primary">New Strategy</Button>
       </div>
-      <div className="d-flex align-items-center mt-3" >
-        <Tabs
-          onTabChange={onTabChangeHandler}
-        >
+      <div className="d-flex align-items-center mt-3">
+        <Tabs onTabChange={onTabChangeHandler}>
           <Tab label="All" count={12}>
             <div>All</div>
           </Tab>
@@ -104,7 +102,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

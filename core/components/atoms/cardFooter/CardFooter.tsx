@@ -17,10 +17,13 @@ export const CardFooter = (props: CardFooterProps) => {
   const { className, children, withSeperator } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    'Card-footer': true,
-    ['Card-footer--withSeperator']: withSeperator
-  }, className);
+  const classes = classNames(
+    {
+      'Card-footer': true,
+      ['Card-footer--withSeperator']: withSeperator,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-CardFooter" {...baseProps} className={classes}>
@@ -32,7 +35,7 @@ export const CardFooter = (props: CardFooterProps) => {
 CardFooter.displayName = 'CardFooter';
 
 CardFooter.defaultProps = {
-  withSeperator: true
+  withSeperator: true,
 };
 
 export default CardFooter;

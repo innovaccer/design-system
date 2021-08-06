@@ -16,9 +16,7 @@ describe('CardSubdued component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <CardSubdued
-          {...attr}
-        >
+        <CardSubdued {...attr}>
           <span>Hello</span>
         </CardSubdued>
       );
@@ -30,25 +28,21 @@ describe('CardSubdued component', () => {
 });
 
 describe('CardSubdued component', () => {
-
   it('renders children', () => {
     const { getByTestId } = render(<CardSubdued>CardSubdued Component</CardSubdued>);
     expect(getByTestId('DesignSystem-CardSubdued').textContent).toMatch('CardSubdued Component');
-
   });
 
   it('renders className', () => {
     const { getByTestId } = render(<CardSubdued className="CardSubduedClass">CardSubdued Component</CardSubdued>);
     expect(getByTestId('DesignSystem-CardSubdued')).toHaveClass('CardSubduedClass');
-
   });
 
-  borders.forEach(border => {
+  borders.forEach((border) => {
     it(`renders border-${border}`, () => {
-      const { getByTestId } = render(<CardSubdued border={border} >CardSubdued Component</CardSubdued>);
+      const { getByTestId } = render(<CardSubdued border={border}>CardSubdued Component</CardSubdued>);
       const component = getByTestId('DesignSystem-CardSubdued');
       expect(component).toHaveStyle(`border-${border}: var(--spacing-xs) solid var(--secondary-light)`);
     });
   });
-
 });

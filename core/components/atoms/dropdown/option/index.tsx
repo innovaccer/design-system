@@ -80,17 +80,7 @@ const OptionTypeMapping: { [key: string]: (props: OptionTypeProps) => JSX.Elemen
 };
 
 const Option = (props: OptionProps) => {
-  const {
-    optionData,
-    selected,
-    onClick,
-    updateActiveOption,
-    onChange,
-    active,
-    index,
-    checkboxes,
-    menu
-  } = props;
+  const { optionData, selected, onClick, updateActiveOption, onChange, active, index, checkboxes, menu } = props;
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
   const { disabled } = optionData;
@@ -163,11 +153,7 @@ const Option = (props: OptionProps) => {
     const iconAppearance = selected ? 'white' : 'disabled';
 
     if (typeof subInfo === 'string') {
-      return (
-        <Text appearance={labelAppearance}>
-          {subInfo}
-        </Text>
-      );
+      return <Text appearance={labelAppearance}>{subInfo}</Text>;
     }
 
     const { list = [], seperator } = subInfo;
@@ -186,21 +172,19 @@ const Option = (props: OptionProps) => {
   const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
   const component = OptionTypeMapping[type];
 
-  return component(
-    {
-      selected,
-      index,
-      renderSubInfo,
-      optionData,
-      textClassName,
-      appearance,
-      onClickHandler,
-      onChangeHandler,
-      onUpdateActiveOption,
-      dataTest: `DesignSystem-DropdownOption--${type}`,
-      className: checkboxes ? CheckboxClassName : OptionClassName,
-    }
-  );
+  return component({
+    selected,
+    index,
+    renderSubInfo,
+    optionData,
+    textClassName,
+    appearance,
+    onClickHandler,
+    onChangeHandler,
+    onUpdateActiveOption,
+    dataTest: `DesignSystem-DropdownOption--${type}`,
+    className: checkboxes ? CheckboxClassName : OptionClassName,
+  });
 };
 
 export default Option;

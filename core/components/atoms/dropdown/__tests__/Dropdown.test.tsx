@@ -3,7 +3,13 @@ import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Dropdown } from '@/index';
 import { DropdownProps as Props } from '@/index.type';
-import { storyOptions, storyWrapOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions } from '../__stories__/Options';
+import {
+  storyOptions,
+  storyWrapOptions,
+  iconOptions,
+  subInfoOptions,
+  iconWithSubinfoOptions,
+} from '../__stories__/Options';
 
 const size = ['tiny', 'regular'];
 const options = [storyOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions];
@@ -16,7 +22,7 @@ for (let i = 1; i <= 10; i++) {
   SectionOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
-    group: 'Group'
+    group: 'Group',
   });
 }
 
@@ -32,9 +38,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -52,9 +56,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -72,9 +74,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -91,9 +91,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -112,9 +110,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -131,9 +127,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -152,9 +146,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -172,9 +164,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -193,9 +183,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -214,9 +202,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -234,9 +220,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -255,9 +239,7 @@ describe('Dropdown component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dropdown {...attr} />
-      );
+      const { baseElement } = render(<Dropdown {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

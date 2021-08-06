@@ -28,18 +28,14 @@ const editableWrapperTestId = 'DesignSystem-EditableWrapper';
 describe('EditableDropdown component', () => {
   const mapper = {
     placeholer: valueHelper(placeholder, { required: true }),
-    dropdownOptions: valueHelper(dropdownOptions, { required: true })
+    dropdownOptions: valueHelper(dropdownOptions, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <EditableDropdown
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<EditableDropdown {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -48,29 +44,22 @@ describe('EditableDropdown component', () => {
 });
 
 describe('EditableDropdown component', () => {
-
   it('renders children', () => {
-    const { getByTestId } = render(
-      <EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />
-    );
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
 
     expect(getByTestId('DesignSystem-Editable')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-EditableDropdown').textContent).toMatch(placeholder);
   });
 
   it('renders default div initially', () => {
-    const { getByTestId } = render(
-      <EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />
-    );
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
 
     expect(getByTestId('DesignSystem-EditableDropdown--Default')).not.toHaveClass('d-none');
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).toHaveClass('d-none');
   });
 
   it('renders dropdown on hover', () => {
-    const { getByTestId } = render(
-      <EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />
-    );
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
     fireEvent.mouseEnter(editableWrapper);
@@ -80,9 +69,7 @@ describe('EditableDropdown component', () => {
   });
 
   it('renders default div on mouseLeave', () => {
-    const { getByTestId } = render(
-      <EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />
-    );
+    const { getByTestId } = render(<EditableDropdown placeholder={placeholder} dropdownOptions={dropdownOptions} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
 
@@ -118,7 +105,6 @@ describe('EditableDropdown component', () => {
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown')).not.toHaveClass('d-none');
     expect(getByTestId('DesignSystem-EditableDropdown--Dropdown').textContent).toMatch(label);
   });
-
 });
 
 describe('EditableDropdown Component with overwrite class', () => {
@@ -130,5 +116,4 @@ describe('EditableDropdown Component with overwrite class', () => {
     );
     expect(getByTestId('DesignSystem-EditableDropdown')).toHaveClass(className);
   });
-
 });

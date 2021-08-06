@@ -5,20 +5,20 @@ import Breadcrumbs from '../Breadcrumbs';
 const list = [
   {
     label: 'Level 0',
-    link: '/level0'
+    link: '/level0',
   },
   {
     label: 'Level 1',
-    link: '/level1'
+    link: '/level1',
   },
   {
     label: 'Level 2',
-    link: '/level2'
+    link: '/level2',
   },
   {
     label: 'Level 3',
-    link: '/level3'
-  }
+    link: '/level3',
+  },
 ];
 
 const onClick = jest.fn();
@@ -48,8 +48,8 @@ describe('Breadcrumbs component', () => {
           ...list,
           {
             label: 'Level 4',
-            link: '/level4'
-          }
+            link: '/level4',
+          },
         ]}
         onClick={onClick}
       />

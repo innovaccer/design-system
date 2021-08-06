@@ -10,25 +10,21 @@ const Actions = [
   {
     label: valueHelper('Action 1', { required: true }),
     onClick: valueHelper(FunctionValue, { required: true }),
-  }
+  },
 ];
 
 describe('Toast component', () => {
   const mapper: Record<string, any> = {
     title: valueHelper('Sample Toast', { required: true }),
     appearance: valueHelper(appearance, { required: true, iterate: true }),
-    onClose: valueHelper(FunctionValue, { required: true })
+    onClose: valueHelper(FunctionValue, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Toast
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Toast {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -42,18 +38,14 @@ describe('Toast component', () => {
     message: valueHelper(StringValue, { required: true }),
     appearance: valueHelper(appearance, { required: true, iterate: true }),
     actions: arrayHelper(Actions, { required: true, maxLen: 1, iterate: true }),
-    onClose: valueHelper(FunctionValue, { required: true })
+    onClose: valueHelper(FunctionValue, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Toast
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Toast {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

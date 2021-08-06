@@ -10,19 +10,19 @@ export const level2AndBeyond = () => {
     },
     {
       value: 'configure',
-      label: 'configure'
+      label: 'configure',
     },
   ];
 
   const breadcrumbData = [
     {
       label: 'Care Management',
-      link: '/Care Management'
+      link: '/Care Management',
     },
     {
       label: 'Care Potential',
-      link: '/Care Potential'
-    }
+      link: '/Care Potential',
+    },
   ];
 
   const [active, setActive] = React.useState(0);
@@ -48,25 +48,22 @@ export const level2AndBeyond = () => {
     {
       label: 'Option 3',
       value: 'Option 3',
-    }
+    },
   ];
 
   const stepper = <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
       <div className="mr-4">
-        <Dropdown menu={true} icon="more_horiz" options={options}/>
+        <Dropdown menu={true} icon="more_horiz" options={options} />
       </div>
       <Button className="mr-4">Cancel</Button>
-      <Button className="mr-4" appearance="primary" onClick={onClickHandler}>Next</Button>
+      <Button className="mr-4" appearance="primary" onClick={onClickHandler}>
+        Next
+      </Button>
     </div>
   );
-  const breadcrumbs = (
-    <Breadcrumbs
-      list={breadcrumbData}
-      onClick={link => action(`on-click: ${link}`)}
-    />
-  );
+  const breadcrumbs = <Breadcrumbs list={breadcrumbData} onClick={(link) => action(`on-click: ${link}`)} />;
 
   return (
     <div className="w-100 p-6 bg-secondary-lightest">
@@ -171,8 +168,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

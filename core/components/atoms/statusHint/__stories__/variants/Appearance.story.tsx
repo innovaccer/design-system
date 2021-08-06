@@ -3,29 +3,17 @@ import StatusHint, { Appearance } from '../../StatusHint';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: Appearance[] = [
-    'info',
-    'success',
-    'alert',
-    'warning',
-    'default',
-  ];
+  const appearances: Appearance[] = ['info', 'success', 'alert', 'warning', 'default'];
 
   return (
     <div>
-      {
-        appearances.map((iconAppearance, i) => {
-          return (
-            <div key={i} className="mb-4">
-              <StatusHint
-                appearance={iconAppearance}
-              >
-                {iconAppearance}
-              </StatusHint>
-            </div>
-          );
-        })
-      }
+      {appearances.map((iconAppearance, i) => {
+        return (
+          <div key={i} className="mb-4">
+            <StatusHint appearance={iconAppearance}>{iconAppearance}</StatusHint>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -36,8 +24,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'StatusHint'
-      }
-    }
-  }
+        title: 'StatusHint',
+      },
+    },
+  },
 };

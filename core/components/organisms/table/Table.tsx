@@ -10,7 +10,7 @@ import {
   RowData,
   updateSchemaFunction,
   updateSortingListFunction,
-  updateFilterListFunction
+  updateFilterListFunction,
 } from '../grid';
 import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getTotalPages } from '../grid/utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
@@ -328,7 +328,7 @@ interface SharedTableProps extends BaseProps {
 
 export type SyncTableProps = SharedTableProps & SyncProps;
 export type AsyncTableProps = SharedTableProps & AsyncProps;
-export type TableProps = (AsyncTableProps & SyncTableProps);
+export type TableProps = AsyncTableProps & SyncTableProps;
 
 interface TableState {
   async: boolean;
@@ -351,11 +351,9 @@ const defaultErrorTemplate = (props: ErrorTemplateProps) => {
   const errorMessages: Record<string, string> = {
     FAILED_TO_FETCH: 'Failed to fetch data',
     NO_RECORDS_FOUND: 'No results found',
-    DEFAULT: 'No results found'
+    DEFAULT: 'No results found',
   };
-  return (
-    <Heading>{errorMessages[errorType]}</Heading>
-  );
+  return <Heading>{errorMessages[errorType]}</Heading>;
 };
 
 export const defaultProps = {
@@ -379,7 +377,7 @@ export const defaultProps = {
   filterList: {},
   filterPosition: 'GRID',
   searchDebounceDuration: 750,
-  errorTemplate: defaultErrorTemplate
+  errorTemplate: defaultErrorTemplate,
 };
 
 /**
@@ -416,7 +414,7 @@ export class Table extends React.Component<TableProps, TableState> {
   constructor(props: TableProps) {
     super(props);
 
-    const async = ('fetchData' in this.props);
+    const async = 'fetchData' in this.props;
     const data = props.data || [];
     const schema = props.schema || [];
 
@@ -444,24 +442,23 @@ export class Table extends React.Component<TableProps, TableState> {
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
     if (!this.state.async) {
-      if (prevProps.loading !== this.props.loading
-        || prevProps.error !== this.props.error) {
-        const {
-          data = [],
-          schema = []
-        } = this.props;
-        this.setState({
-          data,
-          schema,
-          loading: this.props.loading || false,
-          error: this.props.error || false,
-          errorType: this.props.errorType,
-          page: 1,
-          totalRecords: data.length || 0,
-          selectAll: getSelectAll([])
-        }, () => {
-          this.updateData();
-        });
+      if (prevProps.loading !== this.props.loading || prevProps.error !== this.props.error) {
+        const { data = [], schema = [] } = this.props;
+        this.setState(
+          {
+            data,
+            schema,
+            loading: this.props.loading || false,
+            error: this.props.error || false,
+            errorType: this.props.errorType,
+            page: 1,
+            totalRecords: data.length || 0,
+            selectAll: getSelectAll([]),
+          },
+          () => {
+            this.updateData();
+          }
+        );
       }
     }
 
@@ -470,10 +467,12 @@ export class Table extends React.Component<TableProps, TableState> {
       if (onPageChange) onPageChange(this.state.page);
     }
 
-    if (prevState.page !== this.state.page
-      || prevState.filterList !== this.state.filterList
-      || prevState.sortingList !== this.state.sortingList
-      || prevState.searchTerm !== this.state.searchTerm) {
+    if (
+      prevState.page !== this.state.page ||
+      prevState.filterList !== this.state.filterList ||
+      prevState.sortingList !== this.state.sortingList ||
+      prevState.searchTerm !== this.state.searchTerm
+    ) {
       if (!this.props.loading) {
         // let errorType = "";
         // let errorCount = 0;
@@ -493,7 +492,7 @@ export class Table extends React.Component<TableProps, TableState> {
   updateData = (searchUpdate?: boolean) => {
     if (this.state.async) {
       this.setState({
-        loading: true
+        loading: true,
       });
     }
 
@@ -502,24 +501,12 @@ export class Table extends React.Component<TableProps, TableState> {
     } else {
       this.updateDataFn();
     }
-  }
+  };
 
   updateDataFn = () => {
-    const {
-      fetchData,
-      pageSize,
-      withPagination,
-      data: dataProp,
-      onSearch
-    } = this.props;
+    const { fetchData, pageSize, withPagination, data: dataProp, onSearch } = this.props;
 
-    const {
-      async,
-      page,
-      sortingList,
-      filterList,
-      searchTerm
-    } = this.state;
+    const { async, page, sortingList, filterList, searchTerm } = this.state;
 
     this.onSelect(-1, false);
 
@@ -550,7 +537,7 @@ export class Table extends React.Component<TableProps, TableState> {
                 totalRecords: res.count,
                 loading: false,
                 error: !data.length,
-                errorType: 'NO_RECORDS_FOUND'
+                errorType: 'NO_RECORDS_FOUND',
               });
             }
           })
@@ -558,19 +545,16 @@ export class Table extends React.Component<TableProps, TableState> {
             this.setState({
               loading: false,
               error: true,
-              errorType: 'FAILED_TO_FETCH'
+              errorType: 'FAILED_TO_FETCH',
             });
           });
       }
     } else {
-      const {
-        schema
-      } = this.state;
+      const { schema } = this.state;
 
       const filteredData = filterData(schema, dataProp, filterList);
-      const searchedData = onSearch && opts.searchTerm !== undefined
-        ? onSearch(filteredData, opts.searchTerm)
-        : filteredData;
+      const searchedData =
+        onSearch && opts.searchTerm !== undefined ? onSearch(filteredData, opts.searchTerm) : filteredData;
       const sortedData = sortData(schema, searchedData, sortingList);
       let renderedData = sortedData;
       const totalRecords = sortedData.length;
@@ -589,96 +573,91 @@ export class Table extends React.Component<TableProps, TableState> {
         data: renderedData,
       });
     }
-  }
+  };
 
   onSelect: onSelectFn = (rowIndexes, selected) => {
-    const {
-      data
-    } = this.state;
+    const { data } = this.state;
 
-    const {
-      onSelect
-    } = this.props;
+    const { onSelect } = this.props;
 
     const indexes = [rowIndexes];
     let newData: Data = data;
     if (rowIndexes >= 0) {
       newData = updateBatchData(data, indexes, {
-        _selected: selected
+        _selected: selected,
       });
 
       this.setState({
         data: newData,
-        selectAll: getSelectAll(newData)
+        selectAll: getSelectAll(newData),
       });
     }
 
     if (onSelect) {
-      onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter(d => d._selected));
+      onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
     }
-  }
+  };
 
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
-    const {
-      onSelect
-    } = this.props;
+    const { onSelect } = this.props;
 
-    const {
-      data
-    } = this.state;
+    const { data } = this.state;
 
     const indexes = Array.from({ length: data.length }, (_, i) => i);
 
     const newData = updateBatchData(data, indexes, {
-      _selected: selected
+      _selected: selected,
     });
 
     if (onSelect) {
-      onSelect(indexes, selected, newData.filter(d => d._selected), selectAll);
+      onSelect(
+        indexes,
+        selected,
+        newData.filter((d) => d._selected),
+        selectAll
+      );
     }
 
     this.setState({
       data: newData,
-      selectAll: getSelectAll(newData)
+      selectAll: getSelectAll(newData),
     });
-  }
+  };
 
-  onPageChange: PaginationProps['onPageChange'] = newPage => {
+  onPageChange: PaginationProps['onPageChange'] = (newPage) => {
     this.setState({
-      page: newPage
+      page: newPage,
     });
-  }
+  };
 
-  updateSchema: updateSchemaFunction = newSchema => {
+  updateSchema: updateSchemaFunction = (newSchema) => {
     this.setState({
-      schema: newSchema
+      schema: newSchema,
     });
-  }
+  };
 
-  updateSortingList: updateSortingListFunction = newSortingList => {
-    const {
-      multipleSorting
-    } = this.props;
+  updateSortingList: updateSortingListFunction = (newSortingList) => {
+    const { multipleSorting } = this.props;
 
     this.setState({
       sortingList: multipleSorting ? [...newSortingList] : newSortingList.slice(-1),
       page: 1,
     });
-  }
+  };
 
-  updateFilterList: updateFilterListFunction = newFilterList => {
+  updateFilterList: updateFilterListFunction = (newFilterList) => {
     this.setState({
       filterList: newFilterList,
       page: 1,
     });
-  }
+  };
 
-  updateSearchTerm: updateSearchTermFunction = newSearchTerm => {
+  updateSearchTerm: updateSearchTermFunction = (newSearchTerm) => {
     this.setState({
       searchTerm: newSearchTerm,
-      page: 1
+      page: 1,
     });
-  }
+  };
 
   render() {
     const {
@@ -701,21 +680,16 @@ export class Table extends React.Component<TableProps, TableState> {
       loaderSchema,
       errorTemplate,
       className,
-      filterPosition
+      filterPosition,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
 
-    const {
-      children: headerChildren,
-      ...headerAttr
-    } = headerOptions as ExternalHeaderProps;
+    const { children: headerChildren, ...headerAttr } = headerOptions as ExternalHeaderProps;
 
     const classes = className ? ` ${className}` : '';
 
-    const {
-      totalRecords,
-    } = this.state;
+    const { totalRecords } = this.state;
     const totalPages = getTotalPages(totalRecords, pageSize);
 
     return (
@@ -768,7 +742,7 @@ export class Table extends React.Component<TableProps, TableState> {
             showFilters={filterPosition === 'GRID'}
           />
         </div>
-        {withPagination && (!this.state.loading && !this.state.error && totalPages > 1) && (
+        {withPagination && !this.state.loading && !this.state.error && totalPages > 1 && (
           <div className="Table-pagination">
             <Pagination
               page={this.state.page}

@@ -5,20 +5,11 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const withInput = boolean(
-    'withInput',
-    false
-  );
+  const withInput = boolean('withInput', false);
 
-  const open = boolean(
-    'open',
-    false
-  );
+  const open = boolean('open', false);
 
-  const monthsInView = number(
-    'monthsInView',
-    withInput ? 2 : 1
-  );
+  const monthsInView = number('monthsInView', withInput ? 2 : 1);
 
   const inputFormat = select(
     'inputFormat',
@@ -32,26 +23,13 @@ export const all = () => {
     undefined
   );
 
-  const startDate = date(
-    'startDate',
-    undefined
-  );
+  const startDate = date('startDate', undefined);
 
-  const endDate = date(
-    'endDate',
-    undefined
-  );
+  const endDate = date('endDate', undefined);
 
-  const view = select(
-    'view',
-    ['date', 'month', 'year'],
-    undefined
-  );
+  const view = select('view', ['date', 'month', 'year'], undefined);
 
-  const rangeLimit = number(
-    'rangeLimit',
-    0
-  );
+  const rangeLimit = number('rangeLimit', 0);
 
   const firstDayOfWeek = select(
     'firstDayOfWeek',
@@ -59,30 +37,15 @@ export const all = () => {
     undefined
   );
 
-  const disabledBefore = date(
-    'disabledBefore',
-    new Date('Jan 20 2015')
-  );
+  const disabledBefore = date('disabledBefore', new Date('Jan 20 2015'));
 
-  const disabledAfter = date(
-    'disabledAfter',
-    new Date('Jan 20 2028')
-  );
+  const disabledAfter = date('disabledAfter', new Date('Jan 20 2028'));
 
-  const jumpView = boolean(
-    'jumpView',
-    true
-  );
+  const jumpView = boolean('jumpView', true);
 
-  const yearNav = number(
-    'yearNav',
-    -1
-  );
+  const yearNav = number('yearNav', -1);
 
-  const monthNav = number(
-    'monthNav',
-    -1
-  );
+  const monthNav = number('monthNav', -1);
 
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
@@ -102,7 +65,9 @@ export const all = () => {
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
+        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) =>
+          action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
+        }
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}
@@ -110,17 +75,16 @@ export const all = () => {
     );
   }
   return (
-    <Card
-      className="d-inline-flex"
-      shadow="light"
-    >
+    <Card className="d-inline-flex" shadow="light">
       <DateRangePicker
         withInput={withInput}
         monthsInView={monthsInView}
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) => action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()}
+        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) =>
+          action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
+        }
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}
@@ -132,5 +96,5 @@ export const all = () => {
 export default {
   title: 'Components/DateRangePicker/All',
   component: DateRangePicker,
-  subcomponents: { InputMask }
+  subcomponents: { InputMask },
 };

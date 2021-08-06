@@ -19,9 +19,7 @@ describe('Tab component', () => {
     it(testMessageHelper(attr), () => {
       const { asFragment } = render(
         <Tab {...attr}>
-          <div>
-            Tab
-          </div>
+          <div>Tab</div>
         </Tab>
       );
       expect(asFragment()).toMatchSnapshot();
@@ -35,9 +33,7 @@ describe('Tab component', () => {
   it('renders children', () => {
     const { getByTestId } = render(
       <Tab label={Label}>
-        <div data-test="DesignSystem-Tab">
-          Tab
-        </div>
+        <div data-test="DesignSystem-Tab">Tab</div>
       </Tab>
     );
 
@@ -45,9 +41,7 @@ describe('Tab component', () => {
   });
 
   it('renders without children', () => {
-    const { asFragment } = render(
-      <Tab label={Label} />
-    );
+    const { asFragment } = render(<Tab label={Label} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

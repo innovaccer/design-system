@@ -22,7 +22,7 @@ export const classSchema: Schema = [
           />
         </>
       );
-    }
+    },
   },
   {
     name: 'paddingClasses',
@@ -41,24 +41,24 @@ export const classSchema: Schema = [
           />
         </>
       );
-    }
+    },
   },
   {
     name: 'pixel',
     displayName: 'Pixel values',
-    width: '33.3%'
-  }
+    width: '33.3%',
+  },
 ];
 
 export const sizeSchema: Schema = [
   {
     name: 'value',
     displayName: 'Value',
-    width: '50%'
+    width: '50%',
   },
   {
     name: 'properties',
     displayName: 'Properties',
-    width: '50%'
-  }
+    width: '50%',
+  },
 ];

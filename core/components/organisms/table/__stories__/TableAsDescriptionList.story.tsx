@@ -11,19 +11,19 @@ export const tableAsDescriptionList = () => {
       firstName: 'John',
       lastName: 'Doe',
       email: 'jonathandoe@gamil.com',
-      owner: true
+      owner: true,
     },
     {
       firstName: 'Katty',
       lastName: 'Perry',
       email: 'kattyperry21@gamil.com',
-      edit: true
+      edit: true,
     },
     {
       firstName: 'Daniel',
       lastName: 'Low',
       email: 'daniellow02@yahoo.com',
-      view: true
+      view: true,
     },
   ];
 
@@ -33,11 +33,11 @@ export const tableAsDescriptionList = () => {
       displayName: 'Info',
       width: '80%',
       cellType: 'AVATAR_WITH_META_LIST',
-      translate: a => ({
+      translate: (a) => ({
         firstName: a.firstName,
         lastName: a.lastName,
         title: `${a.firstName} ${a.lastName}`,
-        metaList: [a.email]
+        metaList: [a.email],
       }),
     },
     {
@@ -47,7 +47,11 @@ export const tableAsDescriptionList = () => {
       cellRenderer: (props: GridCellProps) => {
         const renderRights = () => {
           if (props.data.owner) {
-            return <Text appearance="subtle" className="pr-5">owner</Text>;
+            return (
+              <Text appearance="subtle" className="pr-5">
+                owner
+              </Text>
+            );
           }
 
           if (props.data.edit || props.data.view) {
@@ -57,7 +61,7 @@ export const tableAsDescriptionList = () => {
                 icon="keyboard_arrow_down"
                 iconAlign="right"
                 appearance="transparent"
-                onClick={e => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
               >
                 {`can ${rights}`}
               </Button>
@@ -67,24 +71,22 @@ export const tableAsDescriptionList = () => {
           return null;
         };
 
-        return (
-          <div className="d-flex align-items-center justify-content-end flex-grow-1">
-            {renderRights()}
-          </div>
-        );
-      }
-    }
+        return <div className="d-flex align-items-center justify-content-end flex-grow-1">{renderRights()}</div>;
+      },
+    },
   ];
 
   return (
     <Card className="py-4">
-      <Text size="large" weight="strong" className="ml-5">Sharing Test Manual</Text>
+      <Text size="large" weight="strong" className="ml-5">
+        Sharing Test Manual
+      </Text>
       <List
         type="resource"
         withHeader={true}
         headerOptions={{
           withSearch: true,
-          dynamicColumn: false
+          dynamicColumn: false,
         }}
         separator={false}
         showMenu={false}
@@ -92,9 +94,10 @@ export const tableAsDescriptionList = () => {
         schema={schema}
         withPagination={false}
         onSearch={(currData, searchTerm) => {
-          return currData.filter(d =>
-            d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+          return currData.filter(
+            (d) =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.lastName.toLowerCase().match(searchTerm.toLowerCase())
           );
         }}
         onRowClick={(rowData, rowIndex) =>
@@ -216,7 +219,7 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

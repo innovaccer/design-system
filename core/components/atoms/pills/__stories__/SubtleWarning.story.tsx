@@ -2,13 +2,10 @@ import * as React from 'react';
 import Pills from '../../pills';
 
 export const subtleWarning = () => (
-    <Pills
-      appearance="warning"
-      subtle={true}
-    >
-      {'Pills'}
-    </Pills>
-  );
+  <Pills appearance="warning" subtle={true}>
+    {'Pills'}
+  </Pills>
+);
 
 export default {
   title: 'Components/Pills/Subtle Warning',
@@ -16,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Pills'
-      }
-    }
-  }
+        title: 'Pills',
+      },
+    },
+  },
 };

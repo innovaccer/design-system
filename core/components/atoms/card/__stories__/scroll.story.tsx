@@ -3,7 +3,6 @@ import { Card, Text, List, CardHeader, Heading, Paragraph } from '@/index';
 import { data } from './data';
 
 export const ScrollableContent = () => {
-
   const schema = [
     {
       width: '100%',
@@ -12,20 +11,15 @@ export const ScrollableContent = () => {
       cellRenderer: (props: any) => {
         return (
           <>
-          <Paragraph>
-            <Text weight="strong">
-              {props.data.data.title}
-            </Text>
-            <br />
-            <Text>
-              {props.data.data.subTitle}
-            </Text>
-
-          </Paragraph>
+            <Paragraph>
+              <Text weight="strong">{props.data.data.title}</Text>
+              <br />
+              <Text>{props.data.data.subTitle}</Text>
+            </Paragraph>
           </>
         );
-      }
-    }
+      },
+    },
   ];
 
   return (
@@ -41,7 +35,7 @@ export const ScrollableContent = () => {
             withHeader={true}
             headerOptions={{
               withSearch: true,
-              dynamicColumn: false
+              dynamicColumn: false,
             }}
             withPagination={true}
             pageSize={5}
@@ -113,7 +107,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

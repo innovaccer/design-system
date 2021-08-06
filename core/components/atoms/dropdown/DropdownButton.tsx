@@ -76,7 +76,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
   const textClass = classNames({
     ['Text']: true,
     ['Text--regular']: true,
-    ['DropdownButton-text']: true
+    ['DropdownButton-text']: true,
   });
 
   return (
@@ -97,14 +97,10 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
               {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
             </Text>
           )}
-          {(icon && !inlineLabel) && (
+          {icon && !inlineLabel && (
             <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} />
           )}
-          {value && (
-            <span className={textClass}>
-              {value}
-            </span>
-          )}
+          {value && <span className={textClass}>{value}</span>}
         </div>
       )}
       <Icon appearance={buttonDisabled} name={iconName} />

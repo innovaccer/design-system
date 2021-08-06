@@ -8,26 +8,19 @@ export interface DropzoneActiveProps {
 }
 
 export const DropzoneActive = (props: DropzoneActiveProps) => {
-  const {
-    type
-  } = props;
+  const { type } = props;
 
   const IconClass = classNames({
     ['Dropzone-stateIcon']: true,
-    [`Dropzone-stateIcon--${type}`]: type
+    [`Dropzone-stateIcon--${type}`]: type,
   });
 
   return (
     <React.Fragment>
-      {type !== 'tight' && (
-        <Icon
-          name="archive"
-          size={64}
-          appearance="info"
-          className={IconClass}
-        />
-      )}
-      <Text appearance="link" size="large" weight="strong">Drop your files here</Text>
+      {type !== 'tight' && <Icon name="archive" size={64} appearance="info" className={IconClass} />}
+      <Text appearance="link" size="large" weight="strong">
+        Drop your files here
+      </Text>
     </React.Fragment>
   );
 };

@@ -104,11 +104,7 @@ export const getOutputTimeString = (inputFormat: string, outputFormat: string, t
 };
 
 const translateToString = (format: string, time: TimeObject) => {
-  const {
-    hours,
-    minutes,
-    am_pm
-  } = time;
+  const { hours, minutes, am_pm } = time;
 
   const separator = ':';
   const timeFormat = format.split(' ');

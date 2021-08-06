@@ -5,47 +5,21 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
+  const size = select('size', ['regular', 'large'], undefined);
 
-  const size = select(
-    'size',
-    ['regular', 'large'],
-    undefined
-  );
+  const placeholder = text('placeholder', 'Placeholder');
 
-  const placeholder = text(
-    'placeholder',
-    'Placeholder'
-  );
+  const disabled = boolean('disabled', false);
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const readOnly = boolean('readOnly', false);
 
-  const readOnly = boolean(
-    'readOnly',
-    false
-  );
+  const icon = text('icon', '');
 
-  const icon = text(
-    'icon',
-    ''
-  );
+  const prefix = text('prefix', '');
 
-  const prefix = text(
-    'prefix',
-    ''
-  );
+  const suffix = text('suffix', '');
 
-  const suffix = text(
-    'suffix',
-    ''
-  );
-
-  const error = boolean(
-    'error',
-    false
-  );
+  const error = boolean('error', false);
 
   return (
     <div style={{ width: 'var(--spacing-8)' }}>
@@ -74,9 +48,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

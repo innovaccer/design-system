@@ -110,8 +110,8 @@ export default {
       docPage: {
         customCode,
         title: 'Narrow width content Template',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

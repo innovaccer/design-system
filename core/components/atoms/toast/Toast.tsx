@@ -12,11 +12,11 @@ export type Action = {
   /**
    * Label of `ActionButton`
    */
-  label: string,
+  label: string;
   /**
    * Click Handler
    */
-  onClick: (e: React.MouseEvent) => void
+  onClick: (e: React.MouseEvent) => void;
 };
 
 export interface ToastProps extends BaseProps {
@@ -50,51 +50,48 @@ export interface ToastProps extends BaseProps {
 }
 
 export const Toast = (props: ToastProps) => {
-  const {
-    appearance,
-    title,
-    message,
-    actions,
-    onClose,
-    className
-  } = props;
+  const { appearance, title, message, actions, onClose, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const wrapperClass = classNames({
-    ['Toast']: true,
-    ['Toast--withMessage']: message,
-    [`Toast--${appearance}`]: appearance
-  }, className);
+  const wrapperClass = classNames(
+    {
+      ['Toast']: true,
+      ['Toast--withMessage']: message,
+      [`Toast--${appearance}`]: appearance,
+    },
+    className
+  );
 
   const IconMapping: Record<string, any> = {
     info: 'info',
     success: 'check_circle',
     alert: 'error',
-    warning: 'error'
+    warning: 'error',
   };
 
   const icon = IconMapping[appearance];
 
   const titleClass = classNames({
     ['Toast-title']: true,
-    ['Toast-title--withMessage']: message
+    ['Toast-title--withMessage']: message,
   });
 
-  const iconClass = (align: string) => classNames({
-    ['Toast-icon']: true,
-    [`Toast-icon--${align}`]: align,
-    [`Toast-icon--${appearance}`]: appearance
-  });
+  const iconClass = (align: string) =>
+    classNames({
+      ['Toast-icon']: true,
+      [`Toast-icon--${align}`]: align,
+      [`Toast-icon--${appearance}`]: appearance,
+    });
 
   const textClass = classNames({
     ['Toast-text']: true,
-    [`Toast-text--${appearance}`]: appearance
+    [`Toast-text--${appearance}`]: appearance,
   });
 
   const headingClass = classNames({
     ['Toast-heading']: true,
-    [`Toast-heading--${appearance}`]: appearance
+    [`Toast-heading--${appearance}`]: appearance,
   });
 
   const onCloseHandler = () => {
@@ -103,16 +100,10 @@ export const Toast = (props: ToastProps) => {
 
   return (
     <div {...baseProps} className={wrapperClass}>
-      {icon && (
-        <Icon name={icon} className={iconClass('left')} />
-      )}
+      {icon && <Icon name={icon} className={iconClass('left')} />}
       <div className="Toast-body">
         <div className={titleClass}>
-          <Heading
-            size="s"
-            className={headingClass}
-            appearance={appearance !== 'warning' ? 'white' : 'default'}
-          >
+          <Heading size="s" className={headingClass} appearance={appearance !== 'warning' ? 'white' : 'default'}>
             {title}
           </Heading>
           <Icon
@@ -123,22 +114,14 @@ export const Toast = (props: ToastProps) => {
           />
         </div>
         {message && (
-          <Text
-            appearance={appearance !== 'warning' ? 'white' : 'default'}
-            className={textClass}
-          >
+          <Text appearance={appearance !== 'warning' ? 'white' : 'default'} className={textClass}>
             {message}
           </Text>
         )}
         {!!actions?.length && (
           <div className="Toast-actions">
             {actions.slice(0, 2).map((action, index) => (
-              <ActionButton
-                key={index}
-                label={action!.label}
-                appearance={appearance}
-                onClick={action!.onClick}
-              />
+              <ActionButton key={index} label={action!.label} appearance={appearance} onClick={action!.onClick} />
             ))}
           </div>
         )}
@@ -149,7 +132,7 @@ export const Toast = (props: ToastProps) => {
 
 Toast.displayName = 'Toast';
 Toast.defaultProps = {
-  appearance: 'default'
+  appearance: 'default',
 };
 
 export default Toast;

@@ -11,18 +11,17 @@ export const fileList: FileUploaderListProps['fileList'] = [
     file,
     status: 'uploading',
     progress: 45,
-    id: 1
-
+    id: 1,
   },
   {
     file,
     status: 'completed',
-    id: 2
+    id: 2,
   },
   {
     file,
     status: 'error',
     errorMessage: 'Network failure',
-    id: 3
-  }
+    id: 3,
+  },
 ];

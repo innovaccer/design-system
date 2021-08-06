@@ -11,11 +11,7 @@ export const all = () => {
     undefined
   );
 
-  const iconType = select(
-    'type',
-    ['filled', 'outlined', 'round', 'two-tone', 'sharp'],
-    undefined
-  );
+  const iconType = select('type', ['filled', 'outlined', 'round', 'two-tone', 'sharp'], undefined);
 
   const size = number('size', 50);
 
@@ -23,14 +19,8 @@ export const all = () => {
 
   return (
     <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
-      <Icon
-        appearance={appearance}
-        type={iconType}
-        size={size}
-        name={name}
-        onClick={action('click-event')}
-      />
-    </div >
+      <Icon appearance={appearance} type={iconType} size={size} name={name} onClick={action('click-event')} />
+    </div>
   );
 };
 const customCode = `() => {
@@ -45,8 +35,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

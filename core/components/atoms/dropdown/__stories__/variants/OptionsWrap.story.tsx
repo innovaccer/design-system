@@ -6,15 +6,16 @@ import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const optionsWrap = () => {
-
   return (
     <div style={{ display: 'flex', minHeight: '240px' }}>
       <div style={{ marginRight: '5%', width: '128px' }}>
-        <Text weight="strong">{'Options Trimmed'}</Text> <br /><br />
+        <Text weight="strong">{'Options Trimmed'}</Text> <br />
+        <br />
         <Dropdown options={storyWrapOptions} placeholder={'Select'} />
       </div>
       <div style={{ marginRight: '5%', width: '128px' }}>
-        <Text weight="strong">{'Options Wrapped'}</Text> <br /><br />
+        <Text weight="strong">{'Options Wrapped'}</Text> <br />
+        <br />
         <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} />
       </div>
     </div>
@@ -59,9 +60,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

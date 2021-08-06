@@ -6,12 +6,7 @@ import { InputMaskProps, PopoverProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { Trigger } from './Trigger';
 import { SingleInputTrigger } from './SingleInputTrigger';
-import {
-  getDateInfo,
-  convertToDate,
-  compareDate,
-  translateToString,
-} from '../calendar/utility';
+import { getDateInfo, convertToDate, compareDate, translateToString } from '../calendar/utility';
 import { Popover, Utils } from '@/index';
 import {
   getCurrentWeek,
@@ -20,11 +15,12 @@ import {
   getPrevious90Days,
   getCustomDates,
   getCurrentYear,
-  getCurrentMonth
+  getCurrentMonth,
 } from './utilities';
 
-export type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear'>
-  & { label?: string };
+export type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear'> & {
+  label?: string;
+};
 
 export type DateRangePickerProps = SharedProps & {
   /**
@@ -41,7 +37,7 @@ export type DateRangePickerProps = SharedProps & {
   /**
    * Alignment of `children` Element
    */
-  contentAlign?: 'left' | 'right'
+  contentAlign?: 'left' | 'right';
   /**
    * Start date of `DateRangePicker`
    */
@@ -86,15 +82,15 @@ export type DateRangePickerProps = SharedProps & {
    *
    * **Valid in case of single input**.
    */
-  inputOptions: InputOptions
+  inputOptions: InputOptions;
   /**
    * Props to be used for Start date `InputMask`
    */
-  startInputOptions: InputOptions
+  startInputOptions: InputOptions;
   /**
    * Props to be used for End date `InputMask`
    */
-  endInputOptions: InputOptions
+  endInputOptions: InputOptions;
   /**
    * custom Validator for `DateRangePicker`
    *
@@ -133,24 +129,21 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     outputFormat: 'mm/dd/yyyy',
     validators: [Utils.validators.date],
     inputOptions: {
-      label: 'Date'
+      label: 'Date',
     },
     startInputOptions: {
-      label: 'Start Date'
+      label: 'Start Date',
     },
     endInputOptions: {
-      label: 'End Date'
-    }
+      label: 'End Date',
+    },
   };
   monthsInView: number;
 
   constructor(props: DateRangePickerProps) {
     super(props);
 
-    const {
-      inputFormat,
-      validators
-    } = props;
+    const { inputFormat, validators } = props;
 
     const startDate = convertToDate(props.startDate, inputFormat, validators);
     const endDate = convertToDate(props.endDate, inputFormat, validators);
@@ -176,77 +169,62 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
 
   componentDidUpdate(prevProps: DateRangePickerProps, prevState: DateRangePickerState) {
     if (prevProps.startDate !== this.props.startDate) {
-      const {
-        inputFormat,
-        validators
-      } = this.props;
+      const { inputFormat, validators } = this.props;
 
       const d = convertToDate(this.props.startDate, inputFormat, validators);
       const val = translateToString(inputFormat, d);
       this.setState({
         startDate: d,
-        startValue: val
+        startValue: val,
       });
     }
 
     if (prevProps.endDate !== this.props.endDate) {
-      const {
-        inputFormat,
-        validators
-      } = this.props;
+      const { inputFormat, validators } = this.props;
 
       const d = convertToDate(this.props.endDate, inputFormat, validators);
       const val = translateToString(inputFormat, d);
       this.setState({
         endDate: d,
-        endValue: val
+        endValue: val,
       });
     }
 
     if (prevProps.open !== this.props.open) {
       this.setState({
-        open: this.props.open || false
+        open: this.props.open || false,
       });
     }
 
     if (prevProps.yearNav !== this.props.yearNav) {
       this.setState({
-        yearNav: this.props.yearNav
+        yearNav: this.props.yearNav,
       });
     }
 
     if (prevProps.monthNav !== this.props.monthNav) {
       this.setState({
-        monthNav: this.props.monthNav
+        monthNav: this.props.monthNav,
       });
     }
 
     if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
-      const {
-        onRangeChange,
-        outputFormat
-      } = this.props;
+      const { onRangeChange, outputFormat } = this.props;
 
-      const {
-        startDate,
-        endDate
-      } = this.state;
+      const { startDate, endDate } = this.state;
 
-      const {
-        startError,
-        endError
-      } = this.getErrors(startDate, endDate);
+      const { startError, endError } = this.getErrors(startDate, endDate);
 
       this.setState({
         startError,
-        endError
+        endError,
       });
       if (onRangeChange) {
         const inRangeError = this.getInRangeError();
 
         const sValue = translateToString(outputFormat, startDate);
         const eValue = translateToString(outputFormat, endDate);
-        if (!inRangeError && (!startError && !endError)) {
+        if (!inRangeError && !startError && !endError) {
           onRangeChange(startDate, endDate, sValue, eValue);
         } else {
           if (!startError) onRangeChange(startDate, undefined, sValue, eValue);
@@ -267,70 +245,42 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       startValue: startVal,
       endValue: endVal,
     };
-  }
+  };
 
   getErrors = (startDate?: Date, endDate?: Date) => {
     const isError = (date?: Date) => {
-      const {
-        disabledBefore,
-        disabledAfter
-      } = this.props;
+      const { disabledBefore, disabledAfter } = this.props;
 
-      const {
-        year: dbYear,
-        month: dbMonth,
-        date: dbDate
-      } = getDateInfo(disabledBefore);
+      const { year: dbYear, month: dbMonth, date: dbDate } = getDateInfo(disabledBefore);
 
-      const {
-        year: daYear,
-        month: daMonth,
-        date: daDate
-      } = getDateInfo(disabledAfter);
+      const { year: daYear, month: daMonth, date: daDate } = getDateInfo(disabledAfter);
 
-      return !date ? true
-        : compareDate(date, 'less', dbYear, dbMonth, dbDate)
-        || compareDate(date, 'more', daYear, daMonth, daDate);
+      return !date
+        ? true
+        : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
     };
 
     let startError = isError(startDate);
     let endError = isError(endDate);
 
-    const {
-      year: eYear,
-      month: eMonth,
-      date: eDate
-    } = getDateInfo(endDate);
+    const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
     if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
       startError = true;
       endError = true;
     }
 
     return { startError, endError };
-  }
+  };
 
   getInRangeError = () => {
-    const {
-      rangeLimit
-    } = this.props;
+    const { rangeLimit } = this.props;
 
     if (rangeLimit) {
-      const {
-        startDate,
-        endDate
-      } = this.state;
+      const { startDate, endDate } = this.state;
 
-      const {
-        year: sYear,
-        month: sMonth,
-        date: sDate
-      } = getDateInfo(startDate);
+      const { year: sYear, month: sMonth, date: sDate } = getDateInfo(startDate);
 
-      const {
-        year: eYear,
-        month: eMonth,
-        date: eDate
-      } = getDateInfo(endDate);
+      const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
 
       let limitDate: Date;
       if (startDate) {
@@ -347,7 +297,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       }
     }
     return false;
-  }
+  };
 
   onRangeChangeHandler = (sDate?: Date, eDate?: Date) => {
     this.setState({
@@ -355,21 +305,14 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       startDate: sDate,
       endDate: eDate,
       startValue: sDate ? translateToString(this.props.inputFormat, sDate) : '',
-      endValue: eDate ? translateToString(this.props.inputFormat, eDate) : ''
+      endValue: eDate ? translateToString(this.props.inputFormat, eDate) : '',
     });
-  }
+  };
 
   onToggleHandler = (o: boolean, type?: string) => {
-    const {
-      singleInput,
-      inputOptions,
-      startInputOptions,
-      endInputOptions
-    } = this.props;
+    const { singleInput, inputOptions, startInputOptions, endInputOptions } = this.props;
 
-    const disabled = singleInput ?
-      inputOptions.disabled :
-      startInputOptions.disabled || endInputOptions.disabled;
+    const disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
 
     if (disabled) return;
 
@@ -381,7 +324,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         this.setState({ open: true });
         break;
     }
-  }
+  };
 
   renderCalendar() {
     const {
@@ -404,12 +347,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       ...rest
     } = this.props;
 
-    const {
-      startDate,
-      endDate,
-      yearNav,
-      monthNav
-    } = this.state;
+    const { startDate, endDate, yearNav, monthNav } = this.state;
 
     return (
       <Calendar
@@ -439,16 +377,14 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       validators,
       singleInput,
       contentAlign,
-      children
+      children,
     } = this.props;
 
-    const {
-      open
-    } = this.state;
+    const { open } = this.state;
 
     const RangePickerClass = classNames({
       ['DateRangePicker']: true,
-      [`DateRangePicker--${contentAlign}`]: contentAlign
+      [`DateRangePicker--${contentAlign}`]: contentAlign,
     });
 
     if (withInput) {
@@ -461,15 +397,15 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           setState={this.setState.bind(this)}
         />
       ) : (
-          <Trigger
-            inputFormat={inputFormat}
-            startInputOptions={startInputOptions}
-            endInputOptions={endInputOptions}
-            validators={validators}
-            state={this.state}
-            setState={this.setState.bind(this)}
-          />
-        );
+        <Trigger
+          inputFormat={inputFormat}
+          startInputOptions={startInputOptions}
+          endInputOptions={endInputOptions}
+          validators={validators}
+          state={this.state}
+          setState={this.setState.bind(this)}
+        />
+      );
 
       return (
         <Popover
@@ -498,7 +434,7 @@ DateRangePicker.utils = {
   getPrevious90Days,
   getCustomDates,
   getCurrentYear,
-  getCurrentMonth
+  getCurrentMonth,
 };
 
 export default DateRangePicker;

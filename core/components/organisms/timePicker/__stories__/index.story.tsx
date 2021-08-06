@@ -5,17 +5,9 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const inputFormat = select(
-    'inputFormat',
-    ['hh:mm AM', 'hh:mm'],
-    undefined
-  );
+  const inputFormat = select('inputFormat', ['hh:mm AM', 'hh:mm'], undefined);
 
-  const outputFormat = select(
-    'outputFormat',
-    ['hh:mm AM', 'hh:mm'],
-    undefined
-  );
+  const outputFormat = select('outputFormat', ['hh:mm AM', 'hh:mm'], undefined);
 
   const onTimeChange = (val?: string) => {
     return action(`updated time: ${val}`)();
@@ -52,8 +44,8 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'TimePicker'
-      }
-    }
-  }
+        title: 'TimePicker',
+      },
+    },
+  },
 };

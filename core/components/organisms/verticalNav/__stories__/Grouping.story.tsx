@@ -2,17 +2,16 @@ import * as React from 'react';
 import { VerticalNav } from '@/index';
 
 export const grouping = () => {
-
   const data = [
     {
       name: 'customer_information',
       label: 'Customer Information',
-      group: 'General'
+      group: 'General',
     },
     {
       name: 'organizational_structure',
       label: 'Organizational Structure',
-      group: 'General'
+      group: 'General',
     },
     {
       name: 'contacts',
@@ -31,17 +30,17 @@ export const grouping = () => {
       subMenu: [
         {
           name: 'data_exchange.reports',
-          label: 'Reports'
+          label: 'Reports',
         },
         {
           name: 'data_exchange.destinations',
-          label: 'Destinations'
+          label: 'Destinations',
         },
         {
           name: 'data_exchange.validation',
-          label: 'Validation'
+          label: 'Validation',
         },
-      ]
+      ],
     },
     {
       name: 'import_export_settings',
@@ -56,17 +55,12 @@ export const grouping = () => {
   ];
 
   const [active, setActive] = React.useState({
-    name: 'data_exchange.reports'
+    name: 'data_exchange.reports',
   });
 
   return (
     <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>
-      <VerticalNav
-        menus={data}
-        expanded={true}
-        active={active}
-        onClick={setActive}
-      />
+      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} />
     </div>
   );
 };
@@ -146,8 +140,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };
