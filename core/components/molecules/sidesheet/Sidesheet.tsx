@@ -7,7 +7,8 @@ import { OverlayFooter, OverlayFooterProps } from '@/components/molecules/overla
 import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
+import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
+import OverlayManager from '@/utils/OverlayManager';
 
 export type Dimension = 'regular' | 'large';
 type FooterOptions = {
@@ -131,32 +132,54 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }
 
+  onCloseHandler = (event: KeyboardEvent) => {
+    const isTopOverlay = OverlayManager.isTopOverlay(this.sidesheetRef.current);
+    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler)
+  }
+
+  componentDidMount() {
+    if (this.state.open) {
+      OverlayManager.add(this.sidesheetRef.current);
+    }
+    document.addEventListener('keydown', this.onCloseHandler)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onCloseHandler)
+  }
+
   componentDidUpdate(prevProps: SidesheetProps) {
     if (prevProps.open !== this.props.open) {
+
       if (this.props.open) {
         const zIndex = getUpdatedZIndex({
           element: this.element,
           containerClassName: '.Overlay-container--open',
           elementRef: this.sidesheetRef,
         });
+
         this.setState({
           zIndex,
           open: true,
           animate: true,
         });
+
+        OverlayManager.add(this.sidesheetRef.current);
+
       } else {
-        this.setState(
-          {
-            animate: false,
-          },
-          () => {
-            window.setTimeout(() => {
-              this.setState({
-                open: false,
-              });
-            }, 120);
-          }
-        );
+
+        this.setState({
+          animate: false,
+        }, () => {
+          window.setTimeout(() => {
+            this.setState({
+              open: false
+            });
+          }, 120);
+        });
+
+        OverlayManager.remove(this.sidesheetRef.current);
+
       }
     }
   }
@@ -166,6 +189,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const { open } = this.state;
 
     if (open) {
+      OverlayManager.remove(this.sidesheetRef.current);
       if (onClose) onClose(event, 'OutsideClick');
     }
   }

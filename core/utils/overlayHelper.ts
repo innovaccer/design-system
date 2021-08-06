@@ -32,3 +32,13 @@ export const getUpdatedZIndex = (ele: elementData): number | undefined => {
 
   return zIndex > 0 ? zIndex : undefined;
 };
+
+export const closeOnEscapeKeypress = (event: KeyboardEvent, isTopOverlay: boolean | undefined, onClose: Function) => {
+
+  if (event.key === 'Escape' && isTopOverlay) {
+    onClose(event);
+
+    // prevent browser-specific escape key behavior (Safari exits fullscreen)
+    event.preventDefault();
+  }
+}
