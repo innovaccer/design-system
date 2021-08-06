@@ -7,20 +7,15 @@ export const labelAppearance = () => {
   const appearances: Appearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
   return (
     <div>
-      {
-        appearances.map((appearance, i) => {
-          return (
-            <div key={i} style={{ background: appearance === 'white' ? 'black' : 'transparent' }} className="mb-4 w-25">
-              <Legend
-                labelAppearance={appearance}
-                iconAppearance={appearance === 'white' ? 'secondary' : 'inverse'}
-              >
-                {appearance}
-              </Legend>
-            </div>
-          );
-        })
-      }
+      {appearances.map((appearance, i) => {
+        return (
+          <div key={i} style={{ background: appearance === 'white' ? 'black' : 'transparent' }} className="mb-4 w-25">
+            <Legend labelAppearance={appearance} iconAppearance={appearance === 'white' ? 'secondary' : 'inverse'}>
+              {appearance}
+            </Legend>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -31,8 +26,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Legend'
-      }
-    }
-  }
+        title: 'Legend',
+      },
+    },
+  },
 };

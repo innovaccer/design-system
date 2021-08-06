@@ -30,32 +30,22 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
 }
 
 export const Text = (props: TextProps) => {
-  const {
-    appearance,
-    size,
-    children,
-    weight,
-    small,
-    className,
-    ...rest
-  } = props;
+  const { appearance, size, children, weight, small, className, ...rest } = props;
 
-  const classes = classNames({
-    Text: true,
-    [`Text--${appearance}`]: appearance,
-    [`Text--${weight}`]: weight,
-    [`Text--${size}`]: size,
-    /* SOON_TO_BE_DEPRECATED */
-    ['Text--small']: size === 'small' || small,
-  }, className);
+  const classes = classNames(
+    {
+      Text: true,
+      [`Text--${appearance}`]: appearance,
+      [`Text--${weight}`]: weight,
+      [`Text--${size}`]: size,
+      /* SOON_TO_BE_DEPRECATED */
+      ['Text--small']: size === 'small' || small,
+    },
+    className
+  );
 
   return (
-    <GenericText
-      data-test="DesignSystem-Text"
-      {...rest}
-      className={classes}
-      componentType="span"
-    >
+    <GenericText data-test="DesignSystem-Text" {...rest} className={classes} componentType="span">
       {children}
     </GenericText>
   );
@@ -64,7 +54,7 @@ export const Text = (props: TextProps) => {
 Text.displayName = 'Text';
 Text.defaultProps = {
   appearance: 'default',
-  size: 'regular'
+  size: 'regular',
 };
 
 export default Text;

@@ -12,17 +12,15 @@ export interface CardSubduedProps extends BaseProps, BaseHtmlProps<HTMLDivElemen
 }
 
 export const CardSubdued = React.forwardRef<HTMLDivElement, CardSubduedProps>((props, ref) => {
-  const {
-    border,
-    children,
-    className,
-    ...rest
-  } = props;
+  const { border, children, className, ...rest } = props;
 
-  const classes = classNames({
-    CardSubdued: true,
-    [`CardSubdued--${border}`]: border,
-  }, className);
+  const classes = classNames(
+    {
+      CardSubdued: true,
+      [`CardSubdued--${border}`]: border,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-CardSubdued" ref={ref} {...rest} className={classes}>

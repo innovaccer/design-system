@@ -18,17 +18,13 @@ export const iconAppearance = () => {
 
   return (
     <div>
-      {
-        appearances.map((appearance, i) => {
-          return (
-            <div key={i} className="mb-4">
-              <Legend iconAppearance={appearance}>
-                {appearance}
-              </Legend>
-            </div>
-          );
-        })
-      }
+      {appearances.map((appearance, i) => {
+        return (
+          <div key={i} className="mb-4">
+            <Legend iconAppearance={appearance}>{appearance}</Legend>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -39,8 +35,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Legend'
-      }
-    }
-  }
+        title: 'Legend',
+      },
+    },
+  },
 };

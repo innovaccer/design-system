@@ -8,23 +8,18 @@ export const appearance = () => {
 
   return (
     <div className="d-flex">
-      {
-        appearances.map((appear, ind) => {
-          return (
-            <div key={ind} className="mr-6">
-              <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
-                <Subheading appearance={appear}>
-                  Subheading
-              </Subheading>
-              </div>
-              <br />
-              <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
+      {appearances.map((appear, ind) => {
+        return (
+          <div key={ind} className="mr-6">
+            <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
+              <Subheading appearance={appear}>Subheading</Subheading>
             </div>
-          );
-        })
-      }
+            <br />
+            <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
+          </div>
+        );
+      })}
     </div>
-
   );
 };
 
@@ -34,8 +29,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Subheading'
-      }
-    }
-  }
+        title: 'Subheading',
+      },
+    },
+  },
 };

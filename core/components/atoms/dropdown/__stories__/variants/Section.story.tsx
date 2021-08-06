@@ -12,32 +12,33 @@ export const sections = () => {
     options.push({
       label: `Option ${i}`,
       value: `Option ${i}`,
-      group: 'Group'
+      group: 'Group',
     });
   }
   const BooleanValue = [true, false];
 
   return (
     <div className="d-flex">
-      {
-        BooleanValue.map((value, index) => {
-          return (
-            <div key={index} className="d-flex flex-column align-items-center">
-              <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text><br />
-              <div className="d-flex">
-                <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
-                  <Text weight="strong">{'With Sections'}</Text><br />
-                  <Dropdown options={options} withCheckbox={value} />
-                </div>
-                <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
-                  <Text weight="strong">{'Without Sections'}</Text> <br />
-                  <Dropdown options={storyOptions} withCheckbox={value} />
-                </div>
-              </div> <br />
+      {BooleanValue.map((value, index) => {
+        return (
+          <div key={index} className="d-flex flex-column align-items-center">
+            <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text>
+            <br />
+            <div className="d-flex">
+              <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
+                <Text weight="strong">{'With Sections'}</Text>
+                <br />
+                <Dropdown options={options} withCheckbox={value} />
+              </div>
+              <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
+                <Text weight="strong">{'Without Sections'}</Text> <br />
+                <Dropdown options={storyOptions} withCheckbox={value} />
+              </div>
             </div>
-          );
-        })
-      }
+            <br />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -51,9 +52,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

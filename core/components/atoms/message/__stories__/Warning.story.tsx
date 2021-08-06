@@ -4,15 +4,12 @@ import { Message, Row, Column } from '@/index';
 export const warningMessage = () => (
   <Row>
     <Column size="4">
-      <Message
-        appearance="warning"
-        description="Try to save again. If it continues to fail, please raise a ticket."
-      />
+      <Message appearance="warning" description="Try to save again. If it continues to fail, please raise a ticket." />
     </Column>
   </Row>
 );
 
 export default {
   title: 'Components/Message/Warning Message',
-  component: Message
+  component: Message,
 };

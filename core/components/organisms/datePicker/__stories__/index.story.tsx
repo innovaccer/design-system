@@ -5,20 +5,11 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const withInput = boolean(
-    'withInput',
-    false
-  );
+  const withInput = boolean('withInput', false);
 
-  const open = boolean(
-    'open',
-    false
-  );
+  const open = boolean('open', false);
 
-  const closeOnSelect = boolean(
-    'closeOnSelect',
-    true
-  );
+  const closeOnSelect = boolean('closeOnSelect', true);
 
   const inputFormat = select(
     'inputFormat',
@@ -32,16 +23,9 @@ export const all = () => {
     undefined
   );
 
-  const dateValue = date(
-    'date',
-    undefined
-  );
+  const dateValue = date('date', undefined);
 
-  const view = select(
-    'view',
-    ['date', 'month', 'year'],
-    undefined
-  );
+  const view = select('view', ['date', 'month', 'year'], undefined);
 
   const firstDayOfWeek = select(
     'firstDayOfWeek',
@@ -49,30 +33,15 @@ export const all = () => {
     undefined
   );
 
-  const disabledBefore = date(
-    'disabledBefore',
-    new Date('Jan 20 2015')
-  );
+  const disabledBefore = date('disabledBefore', new Date('Jan 20 2015'));
 
-  const disabledAfter = date(
-    'disabledAfter',
-    new Date('Jan 20 2028')
-  );
+  const disabledAfter = date('disabledAfter', new Date('Jan 20 2028'));
 
-  const jumpView = boolean(
-    'jumpView',
-    true
-  );
+  const jumpView = boolean('jumpView', true);
 
-  const yearNav = number(
-    'yearNav',
-    -1
-  );
+  const yearNav = number('yearNav', -1);
 
-  const monthNav = number(
-    'monthNav',
-    -1
-  );
+  const monthNav = number('monthNav', -1);
 
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
@@ -98,10 +67,7 @@ export const all = () => {
     );
   }
   return (
-    <Card
-      className="d-inline-flex"
-      shadow="light"
-    >
+    <Card className="d-inline-flex" shadow="light">
       <DatePicker
         withInput={withInput}
         inputFormat={inputFormat}
@@ -120,5 +86,5 @@ export const all = () => {
 export default {
   title: 'Components/DatePicker/All',
   component: DatePicker,
-  subcomponents: { InputMask }
+  subcomponents: { InputMask },
 };

@@ -93,14 +93,10 @@ const sizeMapping = {
 };
 
 const capMin = (min: number = -Infinity, value: number) =>
-  isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0)
-    ? value
-    : Math.max(min, value);
+  isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0) ? value : Math.max(min, value);
 
 const capMax = (max: number = +Infinity, value: number) =>
-  isNaN(max) || (!max && max !== 0) || isNaN(value) || (!value && value !== 0)
-    ? value
-    : Math.min(max, value);
+  isNaN(max) || (!max && max !== 0) || isNaN(value) || (!value && value !== 0) ? value : Math.min(max, value);
 
 /**
  * ###### MetricInput has two types:
@@ -152,12 +148,15 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    ['MetricInput']: true,
-    [`MetricInput--${size}`]: size,
-    ['MetricInput--disabled']: disabled || readOnly,
-    ['MetricInput--error']: error
-  }, className);
+  const classes = classNames(
+    {
+      ['MetricInput']: true,
+      [`MetricInput--${size}`]: size,
+      ['MetricInput--disabled']: disabled || readOnly,
+      ['MetricInput--error']: error,
+    },
+    className
+  );
 
   const inputClass = classNames({
     ['MetricInput-input']: true,
@@ -169,13 +168,12 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     [`MetricInput-icon--${size}`]: size,
   });
 
-  const getArrowClass = (direction: string) => (
+  const getArrowClass = (direction: string) =>
     classNames({
       ['MetricInput-arrowIcon']: true,
       [`MetricInput-arrowIcon--${size}`]: size,
       [`MetricInput-arrowIcon--${direction}`]: direction,
-    })
-  );
+    });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (isUncontrolled) {
@@ -227,11 +225,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const iconSize = size === 'regular' ? 12 : 16;
 
   return (
-    <div
-      data-test="DesignSystem-MetricInputWrapper"
-      className={classes}
-      onClick={() => ref.current?.focus()}
-    >
+    <div data-test="DesignSystem-MetricInputWrapper" className={classes} onClick={() => ref.current?.focus()}>
       {icon && (
         <Icon
           data-test="DesignSystem-MetricInput--icon"
@@ -285,14 +279,14 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
           className={getArrowClass('up')}
           size={iconSize}
           name="keyboard_arrow_up"
-          onClick={e => onArrowClick(e, 'up')}
+          onClick={(e) => onArrowClick(e, 'up')}
           data-test="DesignSystem-MetricInput--upIcon"
         />
         <Icon
           className={getArrowClass('down')}
           size={iconSize}
           name="keyboard_arrow_down"
-          onClick={e => onArrowClick(e, 'down')}
+          onClick={(e) => onArrowClick(e, 'down')}
           data-test="DesignSystem-MetricInput--downIcon"
         />
       </div>

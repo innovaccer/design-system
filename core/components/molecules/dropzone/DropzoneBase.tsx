@@ -1,24 +1,6 @@
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useReducer,
-  useRef
-} from 'react';
-import {
-  composeEventHandlers,
-  isEvtWithFiles,
-  isPropagationStopped,
-  onDocumentDragOver,
-  reducer,
-} from './utils';
-import {
-  allFilesAccepted,
-  getFileError,
-  fileAccepted,
-  fileMatchSize,
-  FileErrorTypes
-} from './FileErrors';
+import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
+import { composeEventHandlers, isEvtWithFiles, isPropagationStopped, onDocumentDragOver, reducer } from './utils';
+import { allFilesAccepted, getFileError, fileAccepted, fileMatchSize, FileErrorTypes } from './FileErrors';
 
 import { fromEvent } from './FileSelectorUtils';
 import { BaseProps } from '@/utils/types';
@@ -145,7 +127,7 @@ const initialState = {
   isDragReject: false,
   draggedFiles: [],
   acceptedFiles: [],
-  fileRejections: []
+  fileRejections: [],
 };
 
 export const DropzoneBase = (props: DropzoneBaseProps) => {
@@ -210,7 +192,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
 
   // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
   const onKeyDownCb = useCallback(
-    event => {
+    (event) => {
       // @ts-ignore
       if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
         return;
@@ -259,7 +241,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   }, [rootRef, preventDropOnDocument]);
 
   const onDragEnterCb = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
       event.persist();
 
@@ -267,7 +249,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       dragTargetsRef.current = [...dragTargetsRef.current, event.target];
 
       if (isEvtWithFiles(event)) {
-        Promise.resolve(getFilesFromEvent(event)).then(files => {
+        Promise.resolve(getFilesFromEvent(event)).then((files) => {
           if (isPropagationStopped(event)) {
             return;
           }
@@ -275,7 +257,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
           dispatch({
             draggedFiles: files,
             isDragActive: true,
-            type: 'setDraggedFiles'
+            type: 'setDraggedFiles',
           });
 
           if (onDragEnter) {
@@ -288,14 +270,14 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   );
 
   const onDragOverCb = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
       event.persist();
 
       if (event.dataTransfer) {
         try {
           event.dataTransfer.dropEffect = 'copy';
-        } catch { } /* eslint-disable-line no-empty */
+        } catch {} /* eslint-disable-line no-empty */
       }
 
       if (isEvtWithFiles(event) && onDragOver) {
@@ -308,13 +290,13 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   );
 
   const onDragLeaveCb = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
       event.persist();
 
       const targets = dragTargetsRef.current.filter(
         // @ts-ignore
-        target => rootRef.current && rootRef.current.contains(target)
+        (target) => rootRef.current && rootRef.current.contains(target)
       );
       // @ts-ignore
       const targetIdx = targets.indexOf(event.target);
@@ -329,7 +311,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       dispatch({
         isDragActive: false,
         type: 'setDraggedFiles',
-        draggedFiles: []
+        draggedFiles: [],
       });
 
       if (isEvtWithFiles(event) && onDragLeave) {
@@ -340,7 +322,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   );
 
   const onDropCb = useCallback(
-    event => {
+    (event) => {
       event.preventDefault();
       // Persist here because we need the event later after getFilesFromEvent() is done
       event.persist();
@@ -348,7 +330,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       dragTargetsRef.current = [];
 
       if (isEvtWithFiles(event)) {
-        Promise.resolve(getFilesFromEvent(event)).then(files => {
+        Promise.resolve(getFilesFromEvent(event)).then((files) => {
           if (isPropagationStopped(event)) {
             return;
           }
@@ -370,14 +352,14 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
                 errors = errors.concat(customErrors);
               }
 
-              fileRejections.push({ file, errors: errors.filter(e => e) });
+              fileRejections.push({ file, errors: errors.filter((e) => e) });
             }
           });
 
           dispatch({
             acceptedFiles,
             fileRejections,
-            type: 'setFiles'
+            type: 'setFiles',
           });
 
           if (onDrop) {
@@ -395,16 +377,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       }
       dispatch({ type: 'reset' });
     },
-    [
-      multiple,
-      accept,
-      minSize,
-      maxSize,
-      getFilesFromEvent,
-      onDrop,
-      onDropAccepted,
-      onDropRejected,
-    ]
+    [multiple, accept, minSize, maxSize, getFilesFromEvent, onDrop, onDropAccepted, onDropRejected]
   );
 
   const composeHandler = (fn: any) => {
@@ -420,65 +393,57 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   };
 
   const getRootProps = useMemo(
-    () => ({
-      refKey = 'ref',
-      onKeyDown,
-      onFocus,
-      onBlur,
-      onClick,
-      onDragEnterCallback,
-      onDragOverCallback,
-      onDragLeaveCallback,
-      onDropCallback,
-      ...rest
-    }: any = {}) => ({
-      onKeyDown: composeKeyboardHandler(composeEventHandlers(onKeyDown, onKeyDownCb)),
-      onFocus: composeKeyboardHandler(composeEventHandlers(onFocus, onFocusCb)),
-      onBlur: composeKeyboardHandler(composeEventHandlers(onBlur, onBlurCb)),
-      // onClick: composeHandler(composeEventHandlers(onClick, onClickCb)),
-      onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
-      onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
-      onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
-      onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb)),
-      [refKey]: rootRef,
-      ...rest
-    }),
-    [
-      rootRef,
-      onKeyDownCb,
-      onFocusCb,
-      onBlurCb,
-      onDragEnterCb,
-      onDragOverCb,
-      onDragLeaveCb,
-      onDropCb,
-      disabled
-    ]
+    () =>
+      ({
+        refKey = 'ref',
+        onKeyDown,
+        onFocus,
+        onBlur,
+        onClick,
+        onDragEnterCallback,
+        onDragOverCallback,
+        onDragLeaveCallback,
+        onDropCallback,
+        ...rest
+      }: any = {}) => ({
+        onKeyDown: composeKeyboardHandler(composeEventHandlers(onKeyDown, onKeyDownCb)),
+        onFocus: composeKeyboardHandler(composeEventHandlers(onFocus, onFocusCb)),
+        onBlur: composeKeyboardHandler(composeEventHandlers(onBlur, onBlurCb)),
+        // onClick: composeHandler(composeEventHandlers(onClick, onClickCb)),
+        onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
+        onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
+        onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
+        onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb)),
+        [refKey]: rootRef,
+        ...rest,
+      }),
+    [rootRef, onKeyDownCb, onFocusCb, onBlurCb, onDragEnterCb, onDragOverCb, onDragLeaveCb, onDropCb, disabled]
   );
 
-  const onInputElementClick = useCallback(event => {
+  const onInputElementClick = useCallback((event) => {
     event.stopPropagation();
   }, []);
 
   const getInputProps = useMemo(
-    () => ({ refKey = 'ref', onChange, onClick, ...rest }: any = {}) => {
-      const inputProps = {
-        accept,
-        multiple,
-        type: 'file',
-        style: { display: 'none' },
-        onChange: composeHandler(composeEventHandlers(onChange, onDropCb)),
-        onClick: composeHandler(composeEventHandlers(onClick, onInputElementClick)),
-        autoComplete: 'off',
-        tabIndex: -1,
-        [refKey]: inputRef
-      };
+    () =>
+      ({ refKey = 'ref', onChange, onClick, ...rest }: any = {}) => {
+        const inputProps = {
+          accept,
+          multiple,
+          type: 'file',
+          style: { display: 'none' },
+          onChange: composeHandler(composeEventHandlers(onChange, onDropCb)),
+          onClick: composeHandler(composeEventHandlers(onClick, onInputElementClick)),
+          autoComplete: 'off',
+          tabIndex: -1,
+          [refKey]: inputRef,
+        };
 
-      return {
-        ...inputProps,
-        ...rest
-      };
-    },
+        return {
+          ...inputProps,
+          ...rest,
+        };
+      },
     [inputRef, accept, multiple, onDropCb, disabled]
   );
 
@@ -511,7 +476,7 @@ DropzoneBase.defaultProps = {
   minSize: 0,
   multiple: true,
   preventDropOnDocument: true,
-  validator: () => null
+  validator: () => null,
 };
 
 export default DropzoneBase;

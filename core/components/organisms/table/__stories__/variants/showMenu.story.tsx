@@ -22,7 +22,7 @@ export const showMenu = () => {
           key={index}
           style={{
             margin: '20px',
-            width: '45%'
+            width: '45%',
           }}
         >
           <Heading>{`showMenu: ${v}`}</Heading>
@@ -31,15 +31,8 @@ export const showMenu = () => {
               height: '350px',
             }}
           >
-            <Card
-              shadow="light"
-              className="h-100"
-            >
-              <Table
-                showMenu={v}
-                data={data}
-                schema={schema}
-              />
+            <Card shadow="light" className="h-100">
+              <Table showMenu={v} data={data} schema={schema} />
             </Card>
           </div>
         </div>
@@ -56,9 +49,9 @@ export default {
       docPage: {
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

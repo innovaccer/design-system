@@ -4,19 +4,14 @@ import PlaceholderImage from '../PlaceholderImage';
 
 export const all = () => {
   const round = boolean('round', false);
-  const size = select(
-    'size',
-    ['small', 'medium', 'large'],
-    'small'
-  );
+  const size = select('size', ['small', 'medium', 'large'], 'small');
 
   const options = {
-    round, size
+    round,
+    size,
   };
 
-  return (
-    <PlaceholderImage {...options} />
-  );
+  return <PlaceholderImage {...options} />;
 };
 
 export default {
@@ -25,8 +20,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'PlaceholderImage'
-      }
-    }
-  }
+        title: 'PlaceholderImage',
+      },
+    },
+  },
 };

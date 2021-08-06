@@ -13,9 +13,12 @@ export const CardHeader = (props: CardHeaderProps) => {
   const { className, children } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    'Card-header': true,
-  }, className);
+  const classes = classNames(
+    {
+      'Card-header': true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-CardHeader" {...baseProps} className={classes}>

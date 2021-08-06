@@ -5,15 +5,12 @@ import { Message, Row, Column } from '@/index';
 export const alertMessage = () => (
   <Row>
     <Column size="4">
-      <Message
-        appearance="alert"
-        description="Could not start verification. Please try again later."
-      />
+      <Message appearance="alert" description="Could not start verification. Please try again later." />
     </Column>
   </Row>
 );
 
 export default {
   title: 'Components/Message/Alert Message',
-  component: Message
+  component: Message,
 };

@@ -10,10 +10,7 @@ export const view = () => {
     <div className="d-flex">
       {values.map((v, index) => (
         <div className="mr-9" key={index}>
-          <Card
-            className="d-inline-flex"
-            shadow="light"
-          >
+          <Card className="d-inline-flex" shadow="light">
             <DateRangePicker
               startDate={new Date(2020, 2, 3)}
               endDate={new Date(2020, 2, 11)}
@@ -34,8 +31,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'DateRangePicker'
-      }
-    }
-  }
+        title: 'DateRangePicker',
+      },
+    },
+  },
 };

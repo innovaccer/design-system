@@ -23,7 +23,7 @@ export const all = () => {
     },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
   const sizeXS = optionsKnob(
@@ -44,7 +44,7 @@ export const all = () => {
     },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
   const sizeS = optionsKnob(
@@ -65,7 +65,7 @@ export const all = () => {
     },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
   const sizeM = optionsKnob(
@@ -86,7 +86,7 @@ export const all = () => {
     },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
   const sizeL = optionsKnob(
@@ -107,7 +107,7 @@ export const all = () => {
     },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
   const sizeXL = optionsKnob(
@@ -128,7 +128,7 @@ export const all = () => {
     },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
 
@@ -138,7 +138,7 @@ export const all = () => {
     sizeL,
     sizeM,
     sizeS,
-    sizeXS
+    sizeXS,
   };
   return (
     <Row>
@@ -161,5 +161,5 @@ export const all = () => {
 export default {
   title: 'Others/Layout/All',
   component: Column,
-  subcomponents: { Row }
+  subcomponents: { Row },
 };

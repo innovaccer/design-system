@@ -15,16 +15,14 @@ const options = [
   {
     label: 'French',
     value: 'French',
-  }
+  },
 ];
 
 // CSF format story
 export const languages = () => (
   <div className="mb-11 w-25">
     <Label withInput={true}>Select Language</Label>
-    <Dropdown
-      options={options}
-    />
+    <Dropdown options={options} />
   </div>
 );
 
@@ -37,9 +35,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

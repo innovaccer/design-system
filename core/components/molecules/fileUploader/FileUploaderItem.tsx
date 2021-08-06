@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Caption , Button } from '@/index';
+import { Text, Caption, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
 
@@ -40,33 +40,23 @@ export interface FileUploaderItemProps extends BaseProps, FileItem {
 }
 
 export const FileUploaderItem = (props: FileUploaderItemProps) => {
-  const {
-    file,
-    id,
-    status,
-    errorMessage,
-    progress,
-    onClick,
-    onDelete,
-    onRetry,
-    className,
-  } = props;
+  const { file, id, status, errorMessage, progress, onClick, onDelete, onRetry, className } = props;
 
   const { name } = file;
 
   const baseProps = extractBaseProps(props);
 
-  const FileItemClass = classNames({
-    ['FileUploaderItem']: true,
-  }, className);
+  const FileItemClass = classNames(
+    {
+      ['FileUploaderItem']: true,
+    },
+    className
+  );
 
   return (
     <div {...baseProps} className={FileItemClass} onClick={() => onClick && onClick(file, id)}>
       <div className="FileUploaderItem-file">
-        <Text
-          className="FileUploaderItem-text"
-          appearance={status === 'completed' ? 'default' : 'subtle'}
-        >
+        <Text className="FileUploaderItem-text" appearance={status === 'completed' ? 'default' : 'subtle'}>
           {name}
         </Text>
         <div className="d-flex align-items-center">
@@ -77,17 +67,10 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             progress={progress}
             onRetry={() => onRetry && onRetry(file, id)}
           />
-          <Button
-            appearance="transparent"
-            size="regular"
-            onClick={() => onDelete && onDelete(file, id)}
-            icon="close"
-          />
+          <Button appearance="transparent" size="regular" onClick={() => onDelete && onDelete(file, id)} icon="close" />
         </div>
       </div>
-      {status === 'error' && (
-        <Caption error={true}>{errorMessage}</Caption>
-      )}
+      {status === 'error' && <Caption error={true}>{errorMessage}</Caption>}
     </div>
   );
 };
@@ -95,7 +78,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
 FileUploaderItem.defaultProps = {
   status: 'completed',
   progress: 0,
-  errorMessage: 'Network Error'
+  errorMessage: 'Network Error',
 };
 
 FileUploaderItem.displayName = 'FileUploaderItem';

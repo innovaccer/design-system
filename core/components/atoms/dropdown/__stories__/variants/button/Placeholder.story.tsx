@@ -10,16 +10,15 @@ export const placeholder = () => {
 
   return (
     <div style={{ display: 'flex', minHeight: '270px' }}>
-      {
-        booleanValues.map((menu, ind) => {
-          return (
-            <div style={{ marginRight: '5%' }} key={ind}>
-              <Text weight="strong">{!menu ? 'With Placeholder' : 'Without Placeholder'}</Text> <br /><br />
-              <Dropdown menu={menu} options={storyOptions} />
-            </div>
-          );
-        })
-      }
+      {booleanValues.map((menu, ind) => {
+        return (
+          <div style={{ marginRight: '5%' }} key={ind}>
+            <Text weight="strong">{!menu ? 'With Placeholder' : 'Without Placeholder'}</Text> <br />
+            <br />
+            <Dropdown menu={menu} options={storyOptions} />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -58,9 +57,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

@@ -12,5 +12,5 @@ export const defaultCard = () => {
 
 export default {
   title: 'Components/Card/Default Card',
-  component: Card
+  component: Card,
 };

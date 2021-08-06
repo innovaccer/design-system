@@ -108,8 +108,8 @@ export default {
       docPage: {
         customCode,
         title: 'Sidebar Template',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

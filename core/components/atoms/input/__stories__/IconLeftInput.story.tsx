@@ -3,13 +3,7 @@ import { Input } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 export const iconLeftInput = () => (
-  <Input
-    name="input"
-    placeholder="Search"
-    className="w-25"
-    onChange={action('on-change')}
-    icon={'search'}
-  />
+  <Input name="input" placeholder="Search" className="w-25" onChange={action('on-change')} icon={'search'} />
 );
 
 export default {
@@ -20,9 +14,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

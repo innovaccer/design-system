@@ -3,7 +3,6 @@ import { AvatarGroup, Avatar, Text } from '@/index';
 import { list } from '../AvatarList';
 
 export const customPopper = () => {
-
   const popperRenderer = (names: any) => {
     const AvatarList = names.map((avatar: any, index: number) => {
       const { firstName, lastName, appearance } = avatar;
@@ -29,12 +28,7 @@ export const customPopper = () => {
     );
   };
 
-  return (
-    <AvatarGroup
-      list={list}
-      popoverOptions={{ popperRenderer, dark: false, on: 'click' }}
-    />
-  );
+  return <AvatarGroup list={list} popoverOptions={{ popperRenderer, dark: false, on: 'click' }} />;
 };
 
 const customCode = `() => {
@@ -108,8 +102,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

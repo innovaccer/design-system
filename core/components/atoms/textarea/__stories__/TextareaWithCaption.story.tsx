@@ -11,7 +11,9 @@ export const textareaWithCaption = () => {
         name="Textarea"
         className="w-50"
         value={value}
-        onChange={e => { setValue(e.target.value); }}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
         placeholder="Enter your comments here"
       />
       <Caption withInput={true}>This note will be automatically pinned for export.</Caption>
@@ -44,8 +46,8 @@ export default {
     docs: {
       customCode,
       docPage: {
-        title: 'Textarea'
-      }
-    }
-  }
+        title: 'Textarea',
+      },
+    },
+  },
 };

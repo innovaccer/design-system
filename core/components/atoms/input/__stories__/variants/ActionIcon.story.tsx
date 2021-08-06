@@ -3,16 +3,9 @@ import { Input, Icon } from '@/index';
 import { action } from '@storybook/addon-actions';
 
 export const actionIcon = () => {
-  const customIcon = (
-    <Icon name="events" onClick={action('custom action icon')} />
-  );
+  const customIcon = <Icon name="events" onClick={action('custom action icon')} />;
 
-  return (
-    <Input
-      name="input"
-      actionIcon={customIcon}
-    />
-  );
+  return <Input name="input" actionIcon={customIcon} />;
 };
 
 const customCode = `() => {
@@ -36,9 +29,9 @@ export default {
       docPage: {
         customCode,
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

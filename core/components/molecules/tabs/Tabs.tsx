@@ -56,8 +56,8 @@ const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
 const filterTabs = (children: SingleOrArray<React.ReactElement>) => {
   const childrenArray = getChildrenArray(children);
 
-  const tabs = childrenArray.filter((element: React.ReactElement) =>
-    typeof element.type === 'function' && element.type.name === 'Tab'
+  const tabs = childrenArray.filter(
+    (element: React.ReactElement) => typeof element.type === 'function' && element.type.name === 'Tab'
   );
 
   return tabs;
@@ -66,20 +66,15 @@ const filterTabs = (children: SingleOrArray<React.ReactElement>) => {
 const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
   const childrenArray = getChildrenArray(children);
 
-  const inlineComponent = childrenArray.filter((element: React.ReactElement) =>
-    !(typeof element.type === 'function' && element.type.name === 'Tab')
+  const inlineComponent = childrenArray.filter(
+    (element: React.ReactElement) => !(typeof element.type === 'function' && element.type.name === 'Tab')
   );
 
   return inlineComponent;
 };
 
 export const Tabs = (props: TabsProps) => {
-  const {
-    children,
-    withSeparator,
-    onTabChange,
-    className,
-  } = props;
+  const { children, withSeparator, onTabChange, className } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
@@ -88,9 +83,9 @@ export const Tabs = (props: TabsProps) => {
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
 
-  const [activeIndex, setActiveTab] = React.useState(props.activeIndex && props.activeIndex < totalTabs
-    ? props.activeIndex
-    : 0);
+  const [activeIndex, setActiveTab] = React.useState(
+    props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0
+  );
 
   React.useEffect(() => {
     if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
@@ -98,21 +93,26 @@ export const Tabs = (props: TabsProps) => {
     }
   }, [props.activeIndex]);
 
-  const wrapperClass = classNames({
-    ['TabsWrapper']: true,
-  }, className);
+  const wrapperClass = classNames(
+    {
+      ['TabsWrapper']: true,
+    },
+    className
+  );
 
-  const headerClass = classNames({
-    ['TabsWrapper-header']: true,
-    ['TabsWrapper-header--withSeparator']: withSeparator,
-  }, className);
+  const headerClass = classNames(
+    {
+      ['TabsWrapper-header']: true,
+      ['TabsWrapper-header--withSeparator']: withSeparator,
+    },
+    className
+  );
 
-  const getPillsClass = (disabled?: boolean) => (
+  const getPillsClass = (disabled?: boolean) =>
     classNames({
       ['Tab-pills']: true,
       ['Tab-pills--disabled']: disabled,
-    })
-  );
+    });
 
   const tabClickHandler = (tabIndex: number, isKeyboard?: boolean) => {
     if (props.activeIndex === undefined) {
@@ -153,14 +153,7 @@ export const Tabs = (props: TabsProps) => {
 
     if (icon) {
       const iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
-      return (
-        <Icon
-          data-test="DesignSystem-Tabs--Icon"
-          className="mr-4"
-          name={icon}
-          appearance={iconAppearance}
-        />
-      );
+      return <Icon data-test="DesignSystem-Tabs--Icon" className="mr-4" name={icon} appearance={iconAppearance} />;
     }
 
     return null;
@@ -178,37 +171,37 @@ export const Tabs = (props: TabsProps) => {
     return (
       <>
         {renderInfo(tab, index)}
-        <Text data-test="DesignSystem-Tabs--Text" appearance={textAppearance}>{label}</Text>
+        <Text data-test="DesignSystem-Tabs--Text" appearance={textAppearance}>
+          {label}
+        </Text>
       </>
     );
   };
 
-  const renderTabs = (
-    tabs.map((tab: Tab, index) => {
-      const currentTabProp = children && 'props' in tab ? tab.props : tab;
-      const { disabled } = currentTabProp;
+  const renderTabs = tabs.map((tab: Tab, index) => {
+    const currentTabProp = children && 'props' in tab ? tab.props : tab;
+    const { disabled } = currentTabProp;
 
-      const tabHeaderClass = classNames({
-        ['Tab']: true,
-        ['Tab--disabled']: disabled,
-        ['Tab--active']: !disabled && activeIndex === index,
-      });
+    const tabHeaderClass = classNames({
+      ['Tab']: true,
+      ['Tab--disabled']: disabled,
+      ['Tab--active']: !disabled && activeIndex === index,
+    });
 
-      return (
-        <div
-          ref={element => element && !disabled && tabRefs.push(element)}
-          data-test="DesignSystem-Tabs--Tab"
-          key={index}
-          className={tabHeaderClass}
-          onClick={() => !disabled && tabClickHandler(index)}
-          onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
-          tabIndex={activeIndex === index ? 0 : -1}
-        >
-          {renderTab(currentTabProp, index)}
-        </div>
-      );
-    })
-  );
+    return (
+      <div
+        ref={(element) => element && !disabled && tabRefs.push(element)}
+        data-test="DesignSystem-Tabs--Tab"
+        key={index}
+        className={tabHeaderClass}
+        onClick={() => !disabled && tabClickHandler(index)}
+        onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
+        tabIndex={activeIndex === index ? 0 : -1}
+      >
+        {renderTab(currentTabProp, index)}
+      </div>
+    );
+  });
 
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
@@ -228,7 +221,7 @@ export const Tabs = (props: TabsProps) => {
 Tabs.displayName = 'Tabs';
 Tabs.defaultProps = {
   withSeparator: true,
-  tabs: []
+  tabs: [],
 };
 
 export default Tabs;

@@ -11,18 +11,16 @@ export interface OverlayFooterProps extends BaseProps {
 }
 
 export const OverlayFooter = (props: OverlayFooterProps) => {
-  const {
-    open,
-    className,
-    children,
-    actions
-  } = props;
+  const { open, className, children, actions } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    OverlayFooter: true,
-  }, className);
+  const classes = classNames(
+    {
+      OverlayFooter: true,
+    },
+    className
+  );
 
   const wrapperRef = React.createRef<HTMLDivElement>();
 

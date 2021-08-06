@@ -15,11 +15,7 @@ describe('StatusHint component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <StatusHint {...attr}>
-          {label}
-        </StatusHint>
-      );
+      const { baseElement } = render(<StatusHint {...attr}>{label}</StatusHint>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -28,37 +24,29 @@ describe('StatusHint component', () => {
 });
 
 describe('StatusHint component', () => {
-
   it('renders children', () => {
-
     const { getByTestId } = render(<StatusHint appearance="info">{'Design System'}</StatusHint>);
     expect(getByTestId('DesignSystem-StatusHint--Text').textContent).toMatch('Design System');
-
   });
 
   it('renders children', () => {
-
     const { getByTestId } = render(<StatusHint appearance="info">{'Design System'}</StatusHint>);
     expect(getByTestId('DesignSystem-StatusHint--Icon').tagName).toMatch('SPAN');
-
   });
 
   describe('StatusHint Component with overwrite class', () => {
-
     it('overwrite StatusHint class', () => {
       const { getByTestId } = render(<StatusHint className="StatusHintClass">{'StatusHint'}</StatusHint>);
       expect(getByTestId('DesignSystem-StatusHint')).toHaveClass('StatusHintClass');
     });
-
   });
 
   describe('StatusHint component with prop:appearance', () => {
-    appearances.forEach(appearance => {
+    appearances.forEach((appearance) => {
       it(`should have the StatusHint--${appearance} class when appearance=${appearance} `, () => {
         const { getByTestId } = render(<StatusHint appearance={appearance}>{'Design'}</StatusHint>);
         expect(getByTestId('DesignSystem-StatusHint--Icon')).toHaveClass(`StatusHint--${appearance}`);
       });
     });
   });
-
 });

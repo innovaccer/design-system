@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const timePeriodForm = () =>  <></>;
+export const timePeriodForm = () => <></>;
 
 const customCode = `
 
@@ -92,8 +92,8 @@ export default {
       docPage: {
         customCode,
         title: 'Time Period Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

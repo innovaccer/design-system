@@ -15,17 +15,16 @@ export const ModalFooter = (props: ModalFooterProps) => {
   const { open, children, className, seperator } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    ['Modal-footer']: true,
-    ['Modal-footer--withSeperator']: seperator,
-  }, className);
+  const classes = classNames(
+    {
+      ['Modal-footer']: true,
+      ['Modal-footer--withSeperator']: seperator,
+    },
+    className
+  );
 
   return (
-    <OverlayFooter
-      {...baseProps}
-      open={open}
-      className={classes}
-    >
+    <OverlayFooter {...baseProps} open={open} className={classes}>
       {children}
     </OverlayFooter>
   );

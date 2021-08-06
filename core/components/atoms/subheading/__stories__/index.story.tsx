@@ -9,15 +9,13 @@ export const all = () => {
     { undefined, default: 'default', subtle: 'subtle', disabled: 'disabled', white: 'white' },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
 
   return (
     <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
-      <Subheading
-        appearance={appearance}
-      >
+      <Subheading appearance={appearance}>
         Subheading component have different varients, look for options in knobs tab.
       </Subheading>
     </div>
@@ -30,8 +28,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Subheading'
-      }
-    }
-  }
+        title: 'Subheading',
+      },
+    },
+  },
 };

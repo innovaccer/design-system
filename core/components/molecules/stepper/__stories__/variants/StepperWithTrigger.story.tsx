@@ -25,16 +25,13 @@ export const stepperWithTrigger = () => {
       style={{ height: '200px', background: 'var(--secondary-lightest)' }}
     >
       <div className="d-flex justify-content-center py-5 bg-light w-100">
-        <Stepper
-          steps={steps}
-          active={active}
-          completed={completed}
-          onChange={onChange}
-        />
+        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
       </div>
       <br />
       <div className="w-25 d-flex justify-content-end">
-        <Button onClick={onClickHandler} appearance="primary">Next</Button>
+        <Button onClick={onClickHandler} appearance="primary">
+          Next
+        </Button>
       </div>
     </div>
   );
@@ -95,8 +92,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

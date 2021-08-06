@@ -3,12 +3,7 @@ import { InputMask, Utils } from '@/index';
 import { InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 
-import {
-  translateToTime,
-  getOutputTimeString,
-  placeholders,
-  isPlaceholderPresent
-} from './utils';
+import { translateToTime, getOutputTimeString, placeholders, isPlaceholderPresent } from './utils';
 
 export type AMPMType = 'AM' | 'PM';
 export type TimeFormat = 'hh:mm AM' | 'hh:mm';
@@ -49,14 +44,7 @@ export interface TimePickerProps {
 }
 
 export const TimePicker = (props: TimePickerProps) => {
-  const {
-    validators,
-    inputOptions,
-    inputFormat,
-    outputFormat,
-    onTimeChange,
-    time: timeProp
-  } = props;
+  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, time: timeProp } = props;
 
   const [time, setTime] = React.useState(timeProp);
   const [init, setInit] = React.useState(false);
@@ -64,9 +52,7 @@ export const TimePicker = (props: TimePickerProps) => {
 
   React.useEffect(() => {
     const timeStr = translateToTime(inputFormat, time);
-    const updatedTime = timeProp === undefined && timeStr.includes(placeholderChar)
-      ? time
-      : timeProp;
+    const updatedTime = timeProp === undefined && timeStr.includes(placeholderChar) ? time : timeProp;
 
     setTime(updatedTime);
   }, [timeProp]);
@@ -85,9 +71,10 @@ export const TimePicker = (props: TimePickerProps) => {
     setInit(true);
 
     if (onTimeChange) {
-      const outputTimeStr = updatedTime && !isPlaceholderPresent(placeholderChar, updatedTime)
-        ? getOutputTimeString(inputFormat, outputFormat, updatedTime)
-        : undefined;
+      const outputTimeStr =
+        updatedTime && !isPlaceholderPresent(placeholderChar, updatedTime)
+          ? getOutputTimeString(inputFormat, outputFormat, updatedTime)
+          : undefined;
 
       onTimeChange(outputTimeStr);
     }
@@ -114,10 +101,13 @@ export const TimePicker = (props: TimePickerProps) => {
       placeholderChar={placeholderChar}
       {...inputOptions}
       mask={mask}
-      value={time ?
-        translateToTime(inputFormat, time)
-        // @ts-ignore
-        : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : ''}
+      value={
+        time
+          ? translateToTime(inputFormat, time)
+          : init // @ts-ignore
+          ? InputMask.utils.getDefaultValue(mask, placeholderChar)
+          : ''
+      }
       validators={inputValidator}
       onChange={onChangeHandler}
       onClear={onClearHandler}
@@ -130,7 +120,7 @@ TimePicker.defaultProps = {
   inputFormat: 'hh:mm AM',
   outputFormat: 'hh:mm AM',
   inputOptions: {},
-  validators: [Utils.validators.time]
+  validators: [Utils.validators.time],
 };
 
 TimePicker.displayName = 'TimePicker';

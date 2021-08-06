@@ -10,17 +10,10 @@ export const all = () => {
 
   return (
     <div className="d-flex">
-      <Collapsible
-        expanded={expanded}
-        hoverable={hoverable}
-        height="100vh"
-        onToggle={setExpanded}
-      >
+      <Collapsible expanded={expanded} hoverable={hoverable} height="100vh" onToggle={setExpanded}>
         <div className="d-flex pt-4">
           <Icon name="events" className="d-flex align-items-center px-5" />
-          {expanded && (
-            <Text className="mr-6">Collapsible</Text>
-          )}
+          {expanded && <Text className="mr-6">Collapsible</Text>}
         </div>
       </Collapsible>
       <div>Testing</div>
@@ -55,8 +48,8 @@ export default {
     docs: {
       docPage: {
         customCode,
-        imports: { collapsible: Collapsible }
-      }
-    }
-  }
+        imports: { collapsible: Collapsible },
+      },
+    },
+  },
 };

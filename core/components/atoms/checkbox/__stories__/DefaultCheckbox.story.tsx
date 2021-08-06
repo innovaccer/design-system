@@ -1,12 +1,7 @@
 import * as React from 'react';
 import Checkbox from '../index';
 
-export const defaultCheckbox = () => (
-  <Checkbox
-    label="Emergency contact"
-    defaultChecked={true}
-  />
-);
+export const defaultCheckbox = () => <Checkbox label="Emergency contact" defaultChecked={true} />;
 
 export default {
   title: 'Components/Checkbox/Default Checkbox',
@@ -14,8 +9,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Checkbox'
-      }
-    }
-  }
+        title: 'Checkbox',
+      },
+    },
+  },
 };

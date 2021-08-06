@@ -5,7 +5,6 @@ import { action } from '@storybook/addon-actions';
 import { FileListItemProps } from '../FileListItem';
 
 export const all = () => {
-
   const onClick = (file: FileListItemProps) => {
     return action(`Clicked ${file}`)();
   };
@@ -15,25 +14,25 @@ export const all = () => {
       onClick={onClick}
       fileList={fileList}
       className="mt-4 FileList"
-      actionRenderer={fileItem => {
+      actionRenderer={(fileItem) => {
         if (fileItem.id === 3) {
-          return(
+          return (
             <>
-            <Button
-              appearance="transparent"
-              icon="refresh"
-              size="regular"
-              onClick={() => onClick(fileItem)}
-              className={'cursor-pointer'}
-            />
-            <Button
-              appearance="transparent"
-              icon="close"
-              size="regular"
-              onClick={() => onClick(fileItem)}
-              className={'cursor-pointer ml-2'}
-            />
-          </>
+              <Button
+                appearance="transparent"
+                icon="refresh"
+                size="regular"
+                onClick={() => onClick(fileItem)}
+                className={'cursor-pointer'}
+              />
+              <Button
+                appearance="transparent"
+                icon="close"
+                size="regular"
+                onClick={() => onClick(fileItem)}
+                className={'cursor-pointer ml-2'}
+              />
+            </>
           );
         }
         return (
@@ -45,8 +44,7 @@ export const all = () => {
             className={'cursor-pointer'}
           />
         );
-      }
-      }
+      }}
     />
   );
 };
@@ -153,8 +151,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

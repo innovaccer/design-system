@@ -7,7 +7,7 @@ import {
   getMenu,
   isMenuActive,
   Menu,
-  ActiveMenu
+  ActiveMenu,
 } from '@/utils/navigationHelper';
 
 const { useState } = React;
@@ -73,16 +73,7 @@ export interface VerticalNavigationProps {
 }
 
 export const VerticalNavigation = (props: VerticalNavigationProps) => {
-  const {
-    menus,
-    active,
-    onClick,
-    expanded,
-    rounded,
-    onToggle,
-    footer,
-    autoCollapse,
-  } = props;
+  const { menus, active, onClick, expanded, rounded, onToggle, footer, autoCollapse } = props;
 
   const [menuState, setMenuState] = useState<Record<string, boolean>>({});
 
@@ -141,15 +132,12 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
 
     const menuIconClasses = classNames({
       'Navigation-menuIcon': true,
-      'Navigation-menuIcon--active': activeMenuIcon
+      'Navigation-menuIcon--active': activeMenuIcon,
     });
 
     return (
       <div key={index}>
-        <div
-          className={menuClasses}
-          onClick={() => onClickHandler(menu)}
-        >
+        <div className={menuClasses} onClick={() => onClickHandler(menu)}>
           {menu.icon && (
             <Icon
               className={menuIconClasses}
@@ -181,18 +169,12 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
 
               const subMenuClasses = classNames(menuClasses, {
                 ['Navigation-menu--subMenu']: true,
-                ['Navigation-menu--active']: isActive
+                ['Navigation-menu--active']: isActive,
               });
 
               return (
-                <div
-                  key={ind}
-                  className={subMenuClasses}
-                  onClick={() => onClickHandler(subMenu)}
-                >
-                  <Text appearance={getTextAppearance(isActive, subMenu.disabled)}>
-                    {subMenu.label}
-                  </Text>
+                <div key={ind} className={subMenuClasses} onClick={() => onClickHandler(subMenu)}>
+                  <Text appearance={getTextAppearance(isActive, subMenu.disabled)}>{subMenu.label}</Text>
                 </div>
               );
             })}
@@ -203,14 +185,12 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
 
   const footerClasses = classNames({
     'Navigation-footer': true,
-    ['Navigation-footer--border']: true
+    ['Navigation-footer--border']: true,
   });
 
   return (
     <>
-      <div className="Navigation-body">
-        {list}
-      </div>
+      <div className="Navigation-body">{list}</div>
       {footer && (
         <div className={footerClasses}>
           <Icon
@@ -228,7 +208,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
 VerticalNavigation.defaultProps = {
   expanded: true,
   autoCollapse: true,
-  rounded: false
+  rounded: false,
 };
 
 export default VerticalNavigation;

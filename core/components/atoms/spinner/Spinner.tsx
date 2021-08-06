@@ -17,25 +17,24 @@ export interface SpinnerProps extends BaseProps {
 }
 
 export const Spinner = (props: SpinnerProps) => {
-  const {
-    appearance,
-    size,
-    className
-  } = props;
+  const { appearance, size, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const wrapperClasses = classNames({
-    Spinner: true,
-    [`Spinner--${size}`]: size,
-  }, className);
+  const wrapperClasses = classNames(
+    {
+      Spinner: true,
+      [`Spinner--${size}`]: size,
+    },
+    className
+  );
   const circleClasses = classNames({
     Circle: true,
     [`Circle--${appearance}`]: appearance,
   });
 
   const svgProps = {
-    viewBox: '0 0 50 50'
+    viewBox: '0 0 50 50',
   };
   const circleProps = {
     cx: 25,
@@ -43,7 +42,7 @@ export const Spinner = (props: SpinnerProps) => {
     r: 20,
     fill: 'none',
     strokeMiterlimit: '10',
-    strokeWidth: '4'
+    strokeWidth: '4',
   };
 
   return (
@@ -56,7 +55,7 @@ export const Spinner = (props: SpinnerProps) => {
 Spinner.displayName = 'Spinner';
 Spinner.defaultProps = {
   appearance: 'primary',
-  size: 'medium'
+  size: 'medium',
 };
 
 export default Spinner;

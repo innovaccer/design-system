@@ -5,66 +5,28 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const inputType = select(
-    'type',
-    ['text', 'password', 'number'],
-    undefined
-  );
+  const inputType = select('type', ['text', 'password', 'number'], undefined);
 
-  const value = text(
-    'value',
-    ''
-  );
-  const defaultValue = text(
-    'defaultValue',
-    ''
-  );
+  const value = text('value', '');
+  const defaultValue = text('defaultValue', '');
 
-  const size = select(
-    'size',
-    ['tiny', 'regular', 'large'],
-    undefined
-  );
+  const size = select('size', ['tiny', 'regular', 'large'], undefined);
 
-  const placeholder = text(
-    'placeholder',
-    'mm/dd/yyyy'
-  );
+  const placeholder = text('placeholder', 'mm/dd/yyyy');
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
-  const icon = text(
-    'icon',
-    ''
-  );
+  const icon = text('icon', '');
 
-  const required = boolean(
-    'required',
-    false
-  );
+  const required = boolean('required', false);
 
-  const inlineLabel = text(
-    'inlineLabel',
-    ''
-  );
+  const inlineLabel = text('inlineLabel', '');
 
-  const error = boolean(
-    'error',
-    false
-  );
+  const error = boolean('error', false);
 
-  const caption = text(
-    'caption',
-    ''
-  );
+  const caption = text('caption', '');
 
-  const info = text(
-    'info',
-    'sample info tooltip'
-  );
+  const info = text('info', 'sample info tooltip');
 
   const inputValidator = (val: string) => {
     return Utils.validators.date(val, 'mm/dd/yyyy');
@@ -99,5 +61,5 @@ export const all = () => {
 
 export default {
   title: 'Components/InputMask/All',
-  component: InputMask
+  component: InputMask,
 };

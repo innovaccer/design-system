@@ -23,7 +23,7 @@ export const withPagination = () => {
           key={index}
           style={{
             margin: '20px',
-            width: '45%'
+            width: '45%',
           }}
         >
           <Heading>{`paginationType: ${v}`}</Heading>
@@ -32,16 +32,13 @@ export const withPagination = () => {
               height: '350px',
             }}
           >
-            <Card
-              shadow="light"
-              className="h-100"
-            >
+            <Card shadow="light" className="h-100">
               <Table
                 data={data}
                 schema={schema}
                 withPagination={true}
                 paginationType={v}
-                onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+                onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
               />
             </Card>
           </div>
@@ -59,9 +56,9 @@ export default {
       docPage: {
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

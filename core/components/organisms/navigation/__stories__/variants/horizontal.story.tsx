@@ -14,17 +14,17 @@ export const horizontal = () => {
     {
       name: 'menu_2',
       label: 'Menu 2',
-      count: 10
+      count: 10,
     },
     {
       name: 'menu_3',
       label: 'Menu 3',
-      disabled: true
-    }
+      disabled: true,
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'menu_1'
+    name: 'menu_1',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -33,11 +33,7 @@ export const horizontal = () => {
     setActive(menu);
   };
 
-  const align = select(
-    'align',
-    ['left', 'center'],
-    'center'
-  );
+  const align = select('align', ['left', 'center'], 'center');
 
   return (
     <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
@@ -46,15 +42,10 @@ export const horizontal = () => {
           background: 'white',
           padding: 'var(--spacing-m)',
           borderTop: 'var(--border)',
-          borderBottom: 'var(--border)'
+          borderBottom: 'var(--border)',
         }}
       >
-        <Navigation
-          align={align}
-          menus={data}
-          active={active}
-          onClick={onClickHandler}
-        />
+        <Navigation align={align} menus={data} active={active} onClick={onClickHandler} />
       </div>
     </div>
   );
@@ -117,8 +108,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

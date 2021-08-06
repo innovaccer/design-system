@@ -4,7 +4,7 @@ import { getTimeObjFromStr, isFormat12hour } from '@/components/organisms/timePi
 export const isValid = (validators: Validators, ...value: any[]) => {
   const iterator = Array.isArray(validators) ? validators : [validators];
 
-  return iterator.every(validator => validator(...value));
+  return iterator.every((validator) => validator(...value));
 };
 
 export const date = (val: string, format: string): boolean => {
@@ -12,12 +12,11 @@ export const date = (val: string, format: string): boolean => {
     var monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     // Adjust for leap years
-    if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-      monthLength[1] = 29;
+    if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0)) monthLength[1] = 29;
 
     // Check the range of the day
     return month <= 12 && date <= monthLength[month - 1];
-  }
+  };
 
   switch (format) {
     case 'dd/mm/yyyy':
@@ -65,11 +64,11 @@ export const date = (val: string, format: string): boolean => {
     default:
       return false;
   }
-}
+};
 
 export const time = (val: string, format: string): boolean => {
   const { hours, minutes } = getTimeObjFromStr(format, val);
   const hoursCond = isFormat12hour(format) ? hours <= 12 : hours < 24;
 
   return hoursCond && minutes <= 60;
-}
+};

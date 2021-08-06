@@ -11,19 +11,16 @@ export const align = () => {
 
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>
-      {
-        dropdownAlignments.map((alignment, ind) => {
-          return (
-            <div key={ind} style={{ marginRight: '20%' }}>
-              <Text weight="strong">
-                {`Towards ${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`}
-              </Text>
-              <br /><br />
-              <Dropdown align={alignment} options={storyOptions} menu={true} />
-            </div>
-          );
-        })
-      }
+      {dropdownAlignments.map((alignment, ind) => {
+        return (
+          <div key={ind} style={{ marginRight: '20%' }}>
+            <Text weight="strong">{`Towards ${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`}</Text>
+            <br />
+            <br />
+            <Dropdown align={alignment} options={storyOptions} menu={true} />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -63,9 +60,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

@@ -14,16 +14,15 @@ export const ModalBody = (props: ModalBodyProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    'Modal-body': true,
-  }, className);
+  const classes = classNames(
+    {
+      'Modal-body': true,
+    },
+    className
+  );
 
   return (
-    <OverlayBody
-      {...baseProps}
-      stickFooter={true}
-      className={classes}
-    >
+    <OverlayBody {...baseProps} stickFooter={true} className={classes}>
       {children}
     </OverlayBody>
   );
@@ -31,7 +30,7 @@ export const ModalBody = (props: ModalBodyProps) => {
 
 ModalBody.defaultProps = {
   stickFooter: true,
-  withFooter: true
+  withFooter: true,
 };
 
 ModalBody.displayName = 'ModalBody';

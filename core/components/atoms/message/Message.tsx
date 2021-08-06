@@ -38,19 +38,17 @@ export interface MessageProps extends BaseProps {
 }
 
 export const Message = (props: MessageProps) => {
-  const {
-    appearance,
-    actions,
-    title,
-    className
-  } = props;
+  const { appearance, actions, title, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const MessageClass = classNames({
-    ['Message']: true,
-    [`Message--${appearance}`]: appearance,
-  }, className);
+  const MessageClass = classNames(
+    {
+      ['Message']: true,
+      [`Message--${appearance}`]: appearance,
+    },
+    className
+  );
 
   const IconClass = classNames({
     ['Message-icon']: true,
@@ -60,28 +58,29 @@ export const Message = (props: MessageProps) => {
 
   const TitleClass = classNames({
     ['Message-heading']: true,
-    [`Message-heading--${appearance}`]: appearance
+    [`Message-heading--${appearance}`]: appearance,
   });
 
   const DescriptionClass = classNames({
     ['Message-text']: true,
-    [`Message-text--${appearance}`]: appearance
+    [`Message-text--${appearance}`]: appearance,
   });
 
   const renderDescription = (description: string, children: React.ReactNode) => {
-    if (description || typeof (children) === 'string') {
+    if (description || typeof children === 'string') {
       return (
-        <Text
-          data-test="DesignSystem-Message--Description"
-          className={DescriptionClass}
-        >
-          {description || (typeof (children) === 'string' ? children : '')}
+        <Text data-test="DesignSystem-Message--Description" className={DescriptionClass}>
+          {description || (typeof children === 'string' ? children : '')}
         </Text>
       );
     }
 
     if (children) {
-      return <div data-test="DesignSystem-Message--Description" className="Message-description">{children}</div>;
+      return (
+        <div data-test="DesignSystem-Message--Description" className="Message-description">
+          {children}
+        </div>
+      );
     }
 
     return null;
@@ -99,10 +98,16 @@ export const Message = (props: MessageProps) => {
       )}
       <div>
         {title && (
-          <Heading data-test="DesignSystem-Message--Title" size="s" className={TitleClass}>{title}</Heading>
+          <Heading data-test="DesignSystem-Message--Title" size="s" className={TitleClass}>
+            {title}
+          </Heading>
         )}
         {renderDescription(props.description, props.children)}
-        {actions && <div data-test="DesignSystem-Message--actions" className="Message-actions">{actions}</div>}
+        {actions && (
+          <div data-test="DesignSystem-Message--actions" className="Message-actions">
+            {actions}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -111,7 +116,7 @@ export const Message = (props: MessageProps) => {
 Message.displayName = 'Message';
 Message.defaultProps = {
   appearance: 'default',
-  description: ''
+  description: '',
 };
 
 export default Message;

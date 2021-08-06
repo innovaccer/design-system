@@ -4,14 +4,16 @@ import Card, { CardProps as Props } from '../Card';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const Shadow = ['none', 'default'];
-const Style = [{
-  width: valueHelper('150px', { required: true }),
-  height: valueHelper('150px', { required: true })
-}];
+const Style = [
+  {
+    width: valueHelper('150px', { required: true }),
+    height: valueHelper('150px', { required: true }),
+  },
+];
 
 const Mapper = {
   shadow: valueHelper(Shadow, { required: true, iterate: true }),
-  style: valueHelper(Style, { required: true, iterate: true })
+  style: valueHelper(Style, { required: true, iterate: true }),
 };
 
 describe('Card component', () => {
@@ -20,9 +22,7 @@ describe('Card component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Card
-          {...attr}
-        >
+        <Card {...attr}>
           <span>Hello</span>
         </Card>
       );

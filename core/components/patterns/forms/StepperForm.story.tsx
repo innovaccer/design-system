@@ -206,8 +206,8 @@ export default {
       docPage: {
         customCode,
         title: 'Stepper Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

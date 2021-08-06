@@ -3,7 +3,7 @@ import * as LZString from 'lz-string';
 // https://github.com/codesandbox/codesandbox-importers/blob/master/packages/import-utils/src/api/define.ts
 
 type IPackage = {
-  dependencies: object
+  dependencies: object;
 };
 
 interface IFiles {
@@ -63,17 +63,17 @@ ReactDOM.render(<App />, document.getElementById("root"));
           dependencies: {
             react: '16.12.0',
             'react-dom': '16.12.0',
-            '@innovaccer/design-system': 'latest'
-          }
-        }
+            '@innovaccer/design-system': 'latest',
+          },
+        },
       },
       'index.js': {
-        content: code
+        content: code,
       },
       'index.html': {
-        content: html
-      }
-    }
+        content: html,
+      },
+    },
   });
 
   const url = `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}`;

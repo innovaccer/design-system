@@ -9,11 +9,13 @@ export const MessageWithTitle = () => (
         appearance="warning"
         title="Sender 'Alta Wells' already exists "
         description="Based on the details you've entered, we found that this sender might already be on our platform."
-        actions={(
+        actions={
           <>
-            <Text className="cursor-pointer" appearance="link">Edit details</Text>
+            <Text className="cursor-pointer" appearance="link">
+              Edit details
+            </Text>
           </>
-        )}
+        }
       />
     </Column>
   </Row>
@@ -21,5 +23,5 @@ export const MessageWithTitle = () => (
 
 export default {
   title: 'Components/Message/Message With Title',
-  component: Message
+  component: Message,
 };

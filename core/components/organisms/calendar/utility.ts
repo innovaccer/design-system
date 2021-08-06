@@ -5,11 +5,10 @@ import { isValid } from '@/utils/validators';
 
 type Operator = 'less' | 'more' | 'equal';
 
-const {
-  yearBlockRange
-} = config;
+const { yearBlockRange } = config;
 
-export const getIndexOfDay = (day: Day): number => ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].indexOf(day);
+export const getIndexOfDay = (day: Day): number =>
+  ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].indexOf(day);
 
 export const getYearBlock = (year: number): number => year - (year % yearBlockRange);
 
@@ -35,7 +34,11 @@ export const getDateInfo = (d?: DateType): Record<string, any> => {
   return {};
 };
 
-export const convertToDate = (d?: DateType | DateObject, format?: string, validators?: Validators): Date | undefined => {
+export const convertToDate = (
+  d?: DateType | DateObject,
+  format?: string,
+  validators?: Validators
+): Date | undefined => {
   let dateVal;
 
   if (d) {
@@ -56,9 +59,7 @@ export const convertToDate = (d?: DateType | DateObject, format?: string, valida
 
 export const compareYearBlock = (d: DateType | undefined, operator: Operator, currDecade: number): boolean => {
   if (d) {
-    const {
-      decadeYear: limitDecade
-    } = getDateInfo(d);
+    const { decadeYear: limitDecade } = getDateInfo(d);
 
     switch (operator) {
       case 'less':
@@ -85,11 +86,7 @@ export const compareDate = (
   currDate?: number
 ): boolean => {
   if (d) {
-    const {
-      year: limitYear,
-      month: limitMonth,
-      date: limitDate
-    } = getDateInfo(d);
+    const { year: limitYear, month: limitMonth, date: limitDate } = getDateInfo(d);
 
     switch (operator) {
       case 'less':
@@ -115,11 +112,9 @@ export const compareDate = (
       case 'equal':
         if (currDate !== undefined) {
           if (limitYear === currYear && limitMonth === currMonth && limitDate === currDate) return true;
-        }
-        else if (currMonth !== undefined) {
+        } else if (currMonth !== undefined) {
           if (limitYear === currYear && limitMonth === currMonth) return true;
-        }
-        else if (limitYear === currYear) return true;
+        } else if (limitYear === currYear) return true;
     }
   }
   return false;
@@ -127,11 +122,7 @@ export const compareDate = (
 
 export const translateToString = (format: string, d?: Date): string => {
   if (format && d) {
-    const {
-      year,
-      month,
-      date
-    } = getDateInfo(d);
+    const { year, month, date } = getDateInfo(d);
 
     const separator = format.includes('/') ? '/' : '-';
     const f = format.split(separator);
@@ -154,7 +145,7 @@ export const translateToString = (format: string, d?: Date): string => {
     return val;
   }
   return '';
-}
+};
 
 export const translateToDate = (format: string, val: string, validators: Validators = []): Date | undefined => {
   if (isValid(validators, val, format)) {

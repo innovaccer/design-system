@@ -10,17 +10,17 @@ const BooleanValue = [true, false];
 const tabs = [
   {
     count: 10,
-    label: 'Tab 1'
+    label: 'Tab 1',
   },
   {
     icon: 'call_received',
-    label: 'Tab 2'
+    label: 'Tab 2',
   },
   {
     label: 'Tab 3',
     icon: 'call_received',
     count: 10,
-    disabled: true
+    disabled: true,
   },
 ];
 
@@ -28,19 +28,14 @@ describe('Tabs component', () => {
   const Mapper: Record<string, any> = {
     activeIndex: valueHelper(activeIndex, { required: true }),
     onTabChange: valueHelper(FunctionValue, { required: true }),
-    withSeparator: valueHelper(BooleanValue, { required: true, iterate: true })
+    withSeparator: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <Tabs
-          {...attr}
-          tabs={tabs}
-        />
-      );
+      const { asFragment } = render(<Tabs {...attr} tabs={tabs} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -53,9 +48,7 @@ describe('Tabs component', () => {
     const activeTab = 0;
     const activeTabContent = tabs[activeTab].label;
 
-    const { getAllByTestId } = render(
-      <Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={tabs} />
-    );
+    const { getAllByTestId } = render(<Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={tabs} />);
 
     expect(getAllByTestId('DesignSystem-Tabs--Text')[activeTab].textContent).toMatch(activeTabContent);
   });
@@ -63,9 +56,7 @@ describe('Tabs component', () => {
   it('renders tab with count', () => {
     const countValue = '10';
 
-    const { getAllByTestId } = render(
-      <Tabs tabs={tabs} />
-    );
+    const { getAllByTestId } = render(<Tabs tabs={tabs} />);
 
     expect(getAllByTestId('DesignSystem-Tabs--Pills')[0].textContent).toMatch(countValue);
   });
@@ -73,9 +64,7 @@ describe('Tabs component', () => {
   it('renders tab with icon', () => {
     const iconName = 'call_received';
 
-    const { getByTestId } = render(
-      <Tabs tabs={tabs} />
-    );
+    const { getByTestId } = render(<Tabs tabs={tabs} />);
 
     expect(getByTestId('DesignSystem-Tabs--Icon').textContent).toMatch(iconName);
   });
@@ -83,9 +72,7 @@ describe('Tabs component', () => {
   it('renders count if tab object has both icon and count', () => {
     const count = '10';
 
-    const { getAllByTestId } = render(
-      <Tabs tabs={tabs} />
-    );
+    const { getAllByTestId } = render(<Tabs tabs={tabs} />);
 
     expect(getAllByTestId('DesignSystem-Tabs--Pills')).toHaveLength(2);
     expect(getAllByTestId('DesignSystem-Tabs--Pills')[1].textContent).toMatch(count);
@@ -105,9 +92,7 @@ describe('Tabs component', () => {
   it('renders default tab as 0', () => {
     const defaultTab = 0;
 
-    const { getAllByTestId } = render(
-      <Tabs onTabChange={FunctionValue} tabs={tabs} />
-    );
+    const { getAllByTestId } = render(<Tabs onTabChange={FunctionValue} tabs={tabs} />);
 
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[defaultTab]).toHaveClass('Tab--active');
   });
@@ -116,9 +101,7 @@ describe('Tabs component', () => {
     const activeTab = 3;
     const defaultActiveTab = 0;
 
-    const { getAllByTestId } = render(
-      <Tabs onTabChange={FunctionValue} tabs={tabs} activeIndex={activeTab} />
-    );
+    const { getAllByTestId } = render(<Tabs onTabChange={FunctionValue} tabs={tabs} activeIndex={activeTab} />);
 
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[defaultActiveTab]).toHaveClass('Tab--active');
   });
@@ -127,15 +110,12 @@ describe('Tabs component', () => {
     const activeTab = 2;
     const disabledTab = 2;
 
-    const { getAllByTestId } = render(
-      <Tabs onTabChange={FunctionValue} tabs={tabs} activeIndex={activeTab} />
-    );
+    const { getAllByTestId } = render(<Tabs onTabChange={FunctionValue} tabs={tabs} activeIndex={activeTab} />);
 
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab]).not.toHaveClass('Tab--active');
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[disabledTab]).toHaveClass('Tab--disabled');
     expect(getAllByTestId('DesignSystem-Tabs--Pills')[1]).toHaveClass('Tab-pills--disabled');
   });
-
 });
 
 describe('TabsWrapper component with prop: onTabChange', () => {
@@ -234,5 +214,4 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     expect(secondLabel.tabIndex).toBe(0);
     expect(document.activeElement).toContainElement(firstLabel);
   });
-
 });

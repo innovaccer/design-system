@@ -14,7 +14,7 @@ export const size = () => {
       </div>
       <div className="mr-9  d-flex flex-column">
         <Text weight={weight}>Tiny</Text> <br />
-        <Avatar firstName="John" lastName="Doe" size="tiny"/>
+        <Avatar firstName="John" lastName="Doe" size="tiny" />
       </div>
     </div>
   );
@@ -26,8 +26,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Avatar'
-      }
-    }
-  }
+        title: 'Avatar',
+      },
+    },
+  },
 };

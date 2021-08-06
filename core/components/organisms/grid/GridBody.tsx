@@ -16,31 +16,13 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const {
-    data,
-    ref,
-    size,
-    loading,
-    error,
-    withPagination,
-    page,
-    pageSize,
-    totalRecords,
-    errorTemplate
-  } = context;
+  const { data, ref, size, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate } = context;
 
   if (!loading && error) {
-    return errorTemplate
-      ? typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate
-      : null;
+    return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
   }
 
-  const {
-    schema,
-    prevPageInfo,
-    updatePrevPageInfo,
-    onSelect
-  } = props;
+  const { schema, prevPageInfo, updatePrevPageInfo, onSelect } = props;
 
   React.useEffect(() => {
     const gridBodyEl = ref!.querySelector('.Grid-body');
@@ -63,7 +45,7 @@ export const GridBody = (props: GridBodyProps) => {
     comfortable: 40,
     standard: 40,
     compressed: 32,
-    tight: 24
+    tight: 24,
   };
 
   const totalPages = Math.ceil(totalRecords / pageSize);
@@ -71,20 +53,13 @@ export const GridBody = (props: GridBodyProps) => {
   const dataLength = isLastPage
     ? totalRecords - (page - 1) * pageSize
     : loading
-      ? pageSize
-      : withPagination
-        ? Math.min(totalRecords, pageSize)
-        : totalRecords;
+    ? pageSize
+    : withPagination
+    ? Math.min(totalRecords, pageSize)
+    : totalRecords;
 
   const renderItem = (rowIndex: number) => {
-    return (
-      <GridRow
-        rowIndex={rowIndex}
-        data={data[rowIndex]}
-        schema={schema}
-        onSelect={onSelect}
-      />
-    );
+    return <GridRow rowIndex={rowIndex} data={data[rowIndex]} schema={schema} onSelect={onSelect} />;
   };
 
   return (

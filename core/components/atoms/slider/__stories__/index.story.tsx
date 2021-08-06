@@ -5,12 +5,11 @@ import Slider from '../Slider';
 
 // CSF format story
 export const all = () => {
-
   const min = number('min', 0) || undefined;
-  const max = number('max', 10)  || undefined;
-  const stepSize = number('step size', 0.1)  || undefined;
-  const labelStepSize = number('label step size', 1)  || undefined;
-  const defaultValue = number('default value', 4)  || undefined;
+  const max = number('max', 10) || undefined;
+  const stepSize = number('step size', 0.1) || undefined;
+  const labelStepSize = number('label step size', 1) || undefined;
+  const defaultValue = number('default value', 4) || undefined;
   const label = text('Label', 'Slider Label');
   const disabled = boolean('disabled', false);
 
@@ -26,15 +25,13 @@ export const all = () => {
     label,
     disabled,
     defaultValue,
-    onChange
+    onChange,
   };
 
-  return (
-    <Slider key={defaultValue} className="mt-2" {...options} />
-  );
+  return <Slider key={defaultValue} className="mt-2" {...options} />;
 };
 
 export default {
   title: 'Components/Slider/All',
-  component: Slider
+  component: Slider,
 };

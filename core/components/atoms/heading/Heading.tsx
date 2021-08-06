@@ -30,19 +30,16 @@ const sizeMap = {
 };
 
 export const Heading = (props: HeadingProps) => {
-  const {
-    appearance,
-    size,
-    children,
-    className,
-    ...rest
-  } = props;
+  const { appearance, size, children, className, ...rest } = props;
 
-  const classes = classNames({
-    Heading: true,
-    [`Heading--${size}`]: size,
-    [`Heading--${appearance}`]: appearance
-  }, className);
+  const classes = classNames(
+    {
+      Heading: true,
+      [`Heading--${size}`]: size,
+      [`Heading--${appearance}`]: appearance,
+    },
+    className
+  );
 
   return (
     <GenericText data-test="DesignSystem-Heading" {...rest} className={classes} componentType={sizeMap[size]}>
@@ -54,7 +51,7 @@ export const Heading = (props: HeadingProps) => {
 Heading.displayName = 'Heading';
 Heading.defaultProps = {
   appearance: 'default',
-  size: 'm'
+  size: 'm',
 };
 
 export default Heading;

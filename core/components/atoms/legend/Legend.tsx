@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Text, { Appearance as LabelAppearance, } from '@/components/atoms/text';
+import Text, { Appearance as LabelAppearance } from '@/components/atoms/text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
@@ -48,14 +48,17 @@ export const Legend = (props: LegendProps) => {
     onMouseEnter,
     onMouseLeave,
     onClick,
-    className
+    className,
   } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const legendClass = classNames({
-    ['Legend']: true,
-  }, className);
+  const legendClass = classNames(
+    {
+      ['Legend']: true,
+    },
+    className
+  );
 
   const styles = {
     background: `var(--${iconAppearance})`,
@@ -67,15 +70,12 @@ export const Legend = (props: LegendProps) => {
     <div
       {...baseProps}
       className={legendClass}
-      onClick={e => onClick && onClick(e)}
-      onMouseEnter={e => onMouseEnter && onMouseEnter(e)}
-      onMouseLeave={e => onMouseLeave && onMouseLeave(e)}
+      onClick={(e) => onClick && onClick(e)}
+      onMouseEnter={(e) => onMouseEnter && onMouseEnter(e)}
+      onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
     >
       <span className="Legend-icon" style={styles} />
-      <Text
-        appearance={labelAppearance}
-        weight={labelWeight}
-      >
+      <Text appearance={labelAppearance} weight={labelWeight}>
         {children}
       </Text>
     </div>
@@ -85,7 +85,7 @@ export const Legend = (props: LegendProps) => {
 Legend.displayName = 'Legend';
 Legend.defaultProps = {
   iconAppearance: 'inverse',
-  iconSize: 16
+  iconSize: 16,
 };
 
 export default Legend;

@@ -12,10 +12,7 @@ export const withHeader = () => {
         height: '350px',
       }}
     >
-      <Card
-        shadow="light"
-        className="h-100"
-      >
+      <Card shadow="light" className="h-100">
         <Table
           data={data}
           schema={schema}
@@ -24,11 +21,17 @@ export const withHeader = () => {
           showHead={false}
           draggable={true}
           withPagination={true}
-          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
-          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          onSelect={(rowIndex, selected, selectedList, selectAll) =>
+            action(
+              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+                selectedList
+              )} selectAll: ${selectAll}`
+            )()
+          }
+          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
           withHeader={true}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
           }}
         />
       </Card>
@@ -37,5 +40,5 @@ export const withHeader = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants/With Header'
+  title: 'Components/Table/Variants/With Header',
 };

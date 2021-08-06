@@ -17,7 +17,7 @@ export const multiSelect = () => {
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -35,16 +35,16 @@ export const multiSelect = () => {
   const onSelectLessThan50 = (type: EventType, option?: any) => {
     switch (type) {
       case 'select-all':
-        const selectedDisabledArray = selectedLessThan50.filter(item => item.disabled);
+        const selectedDisabledArray = selectedLessThan50.filter((item) => item.disabled);
         const selectedOptions = [
-          ...dropdownOptions.slice(0, 50).filter(item => !item.disabled),
-          ...selectedDisabledArray
+          ...dropdownOptions.slice(0, 50).filter((item) => !item.disabled),
+          ...selectedDisabledArray,
         ];
 
         setSelectedLessThan50(selectedOptions);
         return;
       case 'deselect-all':
-        const selectedArr = selectedLessThan50.filter(item => item.disabled);
+        const selectedArr = selectedLessThan50.filter((item) => item.disabled);
         setSelectedLessThan50(selectedArr);
         return;
       case 'select-option':
@@ -52,7 +52,7 @@ export const multiSelect = () => {
         return;
       case 'deselect-option':
         const selectedArray = selectedLessThan50.slice();
-        const index = selectedArray.findIndex(item => item.value === option.value);
+        const index = selectedArray.findIndex((item) => item.value === option.value);
         selectedArray.splice(index, 1);
         setSelectedLessThan50(selectedArray);
       default:
@@ -67,12 +67,12 @@ export const multiSelect = () => {
         return;
       case 'deselect-option':
         const selectedArray = selectedMoreThan50.slice();
-        const index = selectedArray.findIndex(item => item.value === option.value);
+        const index = selectedArray.findIndex((item) => item.value === option.value);
         selectedArray.splice(index, 1);
         setSelectedMoreThan50(selectedArray);
         return;
       case 'clear-all':
-        const selectedArr = selectedMoreThan50.filter(item => item.disabled);
+        const selectedArr = selectedMoreThan50.filter((item) => item.disabled);
         setSelectedMoreThan50(selectedArr);
         return;
       default:
@@ -87,7 +87,9 @@ export const multiSelect = () => {
   return (
     <div className="d-flex">
       <div style={{ width: '170px' }}>
-        <Text weight="strong">{'Options > 50'}</Text><br /><br />
+        <Text weight="strong">{'Options > 50'}</Text>
+        <br />
+        <br />
         <Dropdown
           fetchOptions={fetchOptions}
           onUpdate={onSelectMoreThan50}
@@ -97,7 +99,9 @@ export const multiSelect = () => {
         />
       </div>
       <div style={{ width: '170px', marginLeft: '128px' }}>
-        <Text weight="strong">{'Options <= 50'}</Text><br /><br />
+        <Text weight="strong">{'Options <= 50'}</Text>
+        <br />
+        <br />
         <Dropdown
           options={dropdownOptions.slice(0, 50)}
           onUpdate={onSelectLessThan50}
@@ -236,9 +240,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

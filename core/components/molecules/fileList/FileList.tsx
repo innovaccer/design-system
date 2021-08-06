@@ -36,12 +36,7 @@ export interface FileListProps extends BaseProps {
 }
 
 export const FileList = (props: FileListProps) => {
-  const {
-    fileList,
-    onClick,
-    actionRenderer,
-    className
-  } = props;
+  const { fileList, onClick, actionRenderer, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -49,7 +44,7 @@ export const FileList = (props: FileListProps) => {
 
   return (
     <Card {...baseProps} shadow={'none'} className={className}>
-     {fileList.map((fileItem, index) => (
+      {fileList.map((fileItem, index) => (
         <FileListItem
           key={index}
           onClick={onClick}
@@ -63,7 +58,7 @@ export const FileList = (props: FileListProps) => {
 };
 
 FileList.defaultProps = {
-  fileList: []
+  fileList: [],
 };
 
 FileList.displayName = 'FileList';

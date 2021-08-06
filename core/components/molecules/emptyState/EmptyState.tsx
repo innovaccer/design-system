@@ -47,51 +47,34 @@ export const textSize: Record<Size, TextProps['size']> = {
 };
 
 export const EmptyState = (props: EmptyStateProps) => {
-  const {
-    imageSrc,
-    title,
-    description,
-    size,
-    children,
-    className,
-  } = props;
+  const { imageSrc, title, description, size, children, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const WrapperClass = classNames({
-    ['EmptyState']: true,
-  }, className);
+  const WrapperClass = classNames(
+    {
+      ['EmptyState']: true,
+    },
+    className
+  );
 
   const HeadingClass = classNames({
     ['EmptyState-title']: true,
-    [`EmptyState-title--${size}`]: true
+    [`EmptyState-title--${size}`]: true,
   });
 
   const TextClass = classNames({
     ['EmptyState-description']: true,
-    [`EmptyState-description--${size}`]: children !== undefined
+    [`EmptyState-description--${size}`]: children !== undefined,
   });
 
   return (
-    <div data-test="DesignSystem-EmptyState" {...baseProps} className={WrapperClass} >
-      <img
-        src={imageSrc}
-        height={imageHeight[size]}
-        data-test="DesignSystem-EmptyState--Img"
-      />
-      <Heading
-        data-test="DesignSystem-EmptyState--Heading"
-        size={HeadingSize[size]}
-        className={HeadingClass}
-      >
+    <div data-test="DesignSystem-EmptyState" {...baseProps} className={WrapperClass}>
+      <img src={imageSrc} height={imageHeight[size]} data-test="DesignSystem-EmptyState--Img" />
+      <Heading data-test="DesignSystem-EmptyState--Heading" size={HeadingSize[size]} className={HeadingClass}>
         {title}
       </Heading>
-      <Text
-        size={textSize[size]}
-        className={TextClass}
-        appearance="subtle"
-        data-test="DesignSystem-EmptyState--Text"
-      >
+      <Text size={textSize[size]} className={TextClass} appearance="subtle" data-test="DesignSystem-EmptyState--Text">
         {description}
       </Text>
       {children && children}

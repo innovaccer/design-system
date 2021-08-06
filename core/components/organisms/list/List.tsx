@@ -15,13 +15,7 @@ export type AsyncListProps = Omit<AsyncTableProps, ExcludeTypes>;
  * Please refer to stories of Table for examples. Simply replace `Table` with `List` to use it.
  */
 export const List = (props: ListProps) => {
-  return (
-    <Table
-      {...props}
-      showHead={false}
-      filterPosition={'HEADER'}
-    />
-  );
+  return <Table {...props} showHead={false} filterPosition={'HEADER'} />;
 };
 
 List.defaultProps = defaultProps;

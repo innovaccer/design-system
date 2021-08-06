@@ -5,7 +5,6 @@ import { boolean } from '@storybook/addon-knobs';
 import { Menu } from '../../Navigation';
 
 export const all = () => {
-
   const autoCollapse = boolean('autoCollapse', true);
 
   const data = [
@@ -13,7 +12,7 @@ export const all = () => {
       name: 'patient_360',
       label: 'Patient 360',
       icon: 'assignment_ind',
-      link: '/patient360'
+      link: '/patient360',
     },
     {
       name: 'care_management',
@@ -22,19 +21,19 @@ export const all = () => {
       subMenu: [
         {
           name: 'care_management.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
         },
         {
           name: 'care_management.care_plans',
-          label: 'Care Plans'
-        }
-      ]
+          label: 'Care Plans',
+        },
+      ],
     },
     {
       name: 'episodes',
       label: 'Episodes',
       disabled: true,
-      icon: 'airline_seat_flat_angled'
+      icon: 'airline_seat_flat_angled',
     },
     {
       name: 'risk',
@@ -43,38 +42,38 @@ export const all = () => {
       subMenu: [
         {
           name: 'risk.timeline',
-          label: 'Timeline'
+          label: 'Timeline',
         },
         {
           name: 'risk.care_plans',
-          label: 'Care Plans'
-        }
-      ]
+          label: 'Care Plans',
+        },
+      ],
     },
     {
       name: 'claims',
       label: 'Claims',
-      icon: 'receipt'
+      icon: 'receipt',
     },
     {
       name: 'profile',
       label: 'Profile',
-      icon: 'account_circle'
+      icon: 'account_circle',
     },
     {
       name: 'manula_entry',
       label: 'Manual Entry',
-      icon: 'border_color'
+      icon: 'border_color',
     },
     {
       name: 'documents',
       label: 'Documents',
-      icon: 'assignment'
-    }
+      icon: 'assignment',
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'care_management.timeline'
+    name: 'care_management.timeline',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -85,13 +84,7 @@ export const all = () => {
 
   return (
     <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
-      <VerticalNav
-        menus={data}
-        expanded={true}
-        autoCollapse={autoCollapse}
-        active={active}
-        onClick={onClickHandler}
-      />
+      <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />
     </div>
   );
 };
@@ -194,8 +187,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

@@ -8,15 +8,9 @@ import Text from '@/components/atoms/text';
 export const type = () => {
   const paginationTypes: PaginationType[] = ['basic', 'jump'];
 
-  const page = number(
-    'page',
-    1
-  );
+  const page = number('page', 1);
 
-  const totalPages = number(
-    'totalPages',
-    50
-  );
+  const totalPages = number('totalPages', 50);
 
   const innerStyle = {
     display: 'flex',
@@ -26,23 +20,21 @@ export const type = () => {
 
   return (
     <div className="d-flex">
-      {
-        paginationTypes.map((displayType, ind) => {
-          return (
-            <div key={ind} style={innerStyle}>
-              <Text weight="strong">{displayType}</Text><br />
-              <Pagination
-                type={displayType}
-                page={page}
-                totalPages={totalPages}
-                onPageChange={pageNo => action(`No-change-action: ${pageNo}`)()}
-              />
-            </div>
-          );
-        })
-      }
+      {paginationTypes.map((displayType, ind) => {
+        return (
+          <div key={ind} style={innerStyle}>
+            <Text weight="strong">{displayType}</Text>
+            <br />
+            <Pagination
+              type={displayType}
+              page={page}
+              totalPages={totalPages}
+              onPageChange={(pageNo) => action(`No-change-action: ${pageNo}`)()}
+            />
+          </div>
+        );
+      })}
     </div>
-
   );
 };
 
@@ -52,8 +44,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Pagination'
-      }
-    }
-  }
+        title: 'Pagination',
+      },
+    },
+  },
 };

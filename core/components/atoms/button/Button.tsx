@@ -116,12 +116,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     [`Button--${appearance}`]: appearance,
     ['Button--selected']: selected && (appearance === 'basic' || appearance === 'transparent'),
     [`Button--iconAlign-${iconAlign}`]: children && iconAlign,
-    [`${className}`]: className
+    [`${className}`]: className,
   });
 
   const iconClass = classNames({
     ['Button-icon']: true,
-    [`Button-icon--${iconAlign}`]: children && iconAlign
+    [`Button-icon--${iconAlign}`]: children && iconAlign,
   });
 
   return (
@@ -138,13 +138,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         <>
           <Spinner
             size="small"
-            appearance={(appearance === 'basic' || appearance === 'transparent') ? 'secondary' : 'white'}
+            appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
             data-test="DesignSystem-Button--Spinner"
             className="Button-spinner"
           />
-          <Text className="Button-text Button-text--hidden">
-            {children || ''}
-            </Text>
+          <Text className="Button-text Button-text--hidden">{children || ''}</Text>
         </>
       ) : (
         <>
@@ -154,12 +152,18 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
                 data-test="DesignSystem-Button--Icon"
                 name={icon}
                 appearance={
-                  disabled ? 'disabled' : (appearance === 'basic' || appearance === 'transparent') ? selected ? 'info' : 'default' : 'white'}
+                  disabled
+                    ? 'disabled'
+                    : appearance === 'basic' || appearance === 'transparent'
+                    ? selected
+                      ? 'info'
+                      : 'default'
+                    : 'white'
+                }
                 size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
               />
             </div>
-          )
-          }
+          )}
           {children}
         </>
       )}

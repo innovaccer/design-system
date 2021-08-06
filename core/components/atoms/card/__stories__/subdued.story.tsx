@@ -17,8 +17,8 @@ export default {
     docs: {
       docPage: {
         title: 'CardSubdued',
-        description: 'A component to highlight section of a card.'
-      }
-    }
-  }
+        description: 'A component to highlight section of a card.',
+      },
+    },
+  },
 };

@@ -3,10 +3,7 @@ import Pills from '..';
 
 export const subtleAlert = () => {
   return (
-    <Pills
-      appearance="alert"
-      subtle={true}
-    >
+    <Pills appearance="alert" subtle={true}>
       {'Pills'}
     </Pills>
   );
@@ -18,8 +15,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Pills'
-      }
-    }
-  }
+        title: 'Pills',
+      },
+    },
+  },
 };

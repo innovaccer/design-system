@@ -11,7 +11,7 @@ export const inlineContent = () => {
     },
     {
       label: 'Decreasing',
-      value: 'Decreasing'
+      value: 'Decreasing',
     },
   ];
 
@@ -20,9 +20,7 @@ export const inlineContent = () => {
   };
 
   return (
-    <Tabs
-      onTabChange={onTabChangeHandler}
-    >
+    <Tabs onTabChange={onTabChangeHandler}>
       <Tab label="All" count={12}>
         <div>All</div>
       </Tab>
@@ -88,7 +86,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

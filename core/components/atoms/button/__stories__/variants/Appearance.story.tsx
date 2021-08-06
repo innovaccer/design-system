@@ -12,35 +12,30 @@ export const appearance = () => {
 
   const appearances: Appearance[] = ['basic', 'primary', 'success', 'alert', 'transparent'];
 
-  const children = text(
-    'children',
-    'Button'
-  );
+  const children = text('children', 'Button');
 
   return (
     <div className="d-flex">
-      {
-        appearances.map((appear, ind) => {
-          return (
-            <div key={ind} className="mr-9">
-              <Button
-                onClick={action('button-clicked')}
-                onMouseEnter={action('mouse-enter')}
-                onMouseLeave={action('mouse-leave')}
-                appearance={appear}
-                size={'regular'}
-                expanded={expanded}
-                disabled={disabled}
-                loading={loading}
-              >
-                {children}
-              </Button>
-              <br />
-              <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
-            </div>
-          );
-        })
-      }
+      {appearances.map((appear, ind) => {
+        return (
+          <div key={ind} className="mr-9">
+            <Button
+              onClick={action('button-clicked')}
+              onMouseEnter={action('mouse-enter')}
+              onMouseLeave={action('mouse-leave')}
+              appearance={appear}
+              size={'regular'}
+              expanded={expanded}
+              disabled={disabled}
+              loading={loading}
+            >
+              {children}
+            </Button>
+            <br />
+            <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -51,8 +46,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
-      }
-    }
-  }
+        title: 'Button',
+      },
+    },
+  },
 };

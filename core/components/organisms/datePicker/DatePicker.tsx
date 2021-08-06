@@ -74,16 +74,13 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     outputFormat: 'mm/dd/yyyy',
     validators: [Utils.validators.date],
     inputOptions: {},
-    closeOnSelect: true
+    closeOnSelect: true,
   };
 
   constructor(props: DatePickerProps) {
     super(props);
 
-    const {
-      inputFormat,
-      validators
-    } = props;
+    const { inputFormat, validators } = props;
 
     const date = convertToDate(props.date, inputFormat, validators);
     const error = this.getError(date);
@@ -98,32 +95,24 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
   componentDidUpdate(prevProps: DatePickerProps, prevState: DatePickerState) {
     if (prevProps.date !== this.props.date) {
-      const {
-        inputFormat,
-        validators
-      } = this.props;
+      const { inputFormat, validators } = this.props;
 
       const d = convertToDate(this.props.date, inputFormat, validators);
       this.setState({
-        date: d
+        date: d,
       });
     }
 
     if (prevProps.open !== this.props.open) {
       this.setState({
-        open: this.props.open || false
+        open: this.props.open || false,
       });
     }
 
     if (prevState.date !== this.state.date) {
-      const {
-        onDateChange,
-        outputFormat
-      } = this.props;
+      const { onDateChange, outputFormat } = this.props;
 
-      const {
-        date
-      } = this.state;
+      const { date } = this.state;
 
       const newError = this.getError(date);
 
@@ -141,40 +130,27 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   }
 
   getError = (date?: Date) => {
-    const {
-      disabledBefore,
-      disabledAfter
-    } = this.props;
+    const { disabledBefore, disabledAfter } = this.props;
 
-    const {
-      year: dbYear,
-      month: dbMonth,
-      date: dbDate
-    } = getDateInfo(disabledBefore);
+    const { year: dbYear, month: dbMonth, date: dbDate } = getDateInfo(disabledBefore);
 
-    const {
-      year: daYear,
-      month: daMonth,
-      date: daDate
-    } = getDateInfo(disabledAfter);
+    const { year: daYear, month: daMonth, date: daDate } = getDateInfo(disabledAfter);
 
-    return !date ? true
-      : compareDate(date, 'less', dbYear, dbMonth, dbDate)
-      || compareDate(date, 'more', daYear, daMonth, daDate);
-  }
+    return !date
+      ? true
+      : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
+  };
 
   onDateChangeHandler = (d?: Date) => {
     this.setState({
       init: true,
-      date: d
+      date: d,
     });
 
-    const {
-      closeOnSelect
-    } = this.props;
+    const { closeOnSelect } = this.props;
 
     if (closeOnSelect) this.setState({ open: false });
-  }
+  };
 
   onToggleHandler = (o: boolean, type?: string) => {
     const { disabled } = this.props.inputOptions;
@@ -188,7 +164,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
         this.setState({ open: true });
         break;
     }
-  }
+  };
 
   renderCalendar() {
     const {
@@ -207,9 +183,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       ...rest
     } = this.props;
 
-    const {
-      date
-    } = this.state;
+    const { date } = this.state;
 
     return (
       <Calendar
@@ -223,22 +197,14 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   }
 
   render() {
-    const {
-      position,
-      withInput,
-      inputFormat,
-      inputOptions,
-      validators
-    } = this.props;
+    const { position, withInput, inputFormat, inputOptions, validators } = this.props;
 
-    const {
-      open
-    } = this.state;
+    const { open } = this.state;
 
     if (withInput) {
       return (
         <Popover
-          trigger={(
+          trigger={
             <Trigger
               inputFormat={inputFormat}
               inputOptions={inputOptions}
@@ -246,7 +212,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               state={this.state}
               setState={this.setState.bind(this)}
             />
-          )}
+          }
           triggerClass="w-100"
           position={position}
           appendToBody={true}

@@ -12,7 +12,7 @@ const data = [
     lastName: 'Heeran',
     status: 'In Progress',
     lastUpdated: 'June 20, 2020',
-    recipients: 11846
+    recipients: 11846,
   },
   {
     firstName: 'Frazer',
@@ -20,7 +20,7 @@ const data = [
     status: 'Scheduled',
     lastUpdated: 'June 19, 2020',
     name: 'HbA1c Test due',
-    recipients: 12846
+    recipients: 12846,
   },
   {
     firstName: 'Lemmie',
@@ -28,7 +28,7 @@ const data = [
     lastName: 'Ciric',
     status: 'Draft',
     lastUpdated: 'May 19, 2020',
-    recipients: 118467
+    recipients: 118467,
   },
   {
     firstName: 'Randy',
@@ -36,7 +36,7 @@ const data = [
     name: 'Flu Vaccination',
     status: 'Failed',
     lastUpdated: 'March 19, 2020',
-    recipients: 10846
+    recipients: 10846,
   },
   {
     firstName: 'Rolando',
@@ -44,7 +44,7 @@ const data = [
     name: 'Well-child Visit',
     status: 'In Progress',
     lastUpdated: 'April 19, 2020',
-    recipients: 11847
+    recipients: 11847,
   },
   {
     firstName: 'Lem',
@@ -52,7 +52,7 @@ const data = [
     name: 'Annual wellness Visit',
     status: 'In Progress',
     lastUpdated: 'June 16, 2020',
-    recipients: 118100
+    recipients: 118100,
   },
   {
     firstName: 'Sayres',
@@ -60,7 +60,7 @@ const data = [
     name: 'Flu Vaccination',
     status: 'Draft',
     lastUpdated: 'Dec 19, 2020',
-    recipients: 11848
+    recipients: 11848,
   },
   {
     firstName: 'Murray',
@@ -68,8 +68,8 @@ const data = [
     name: 'Well-child Visit',
     status: 'Draft',
     lastUpdated: 'April 19, 2020',
-    recipients: 11890
-  }
+    recipients: 11890,
+  },
 ];
 
 export const resourceTable = () => {
@@ -77,7 +77,7 @@ export const resourceTable = () => {
     'In Progress': 'info',
     Scheduled: 'warning',
     Draft: 'default',
-    Failed: 'alert'
+    Failed: 'alert',
   };
 
   const schema: TableProps['schema'] = [
@@ -86,11 +86,11 @@ export const resourceTable = () => {
       displayName: 'Name',
       width: '30%',
       cellType: 'WITH_META_LIST',
-      translate: a => ({
+      translate: (a) => ({
         title: a.name,
-        metaList: [`${a.recipients} recipients`]
+        metaList: [`${a.recipients} recipients`],
       }),
-      sorting: false
+      sorting: false,
     },
     {
       name: 'status',
@@ -102,7 +102,7 @@ export const resourceTable = () => {
         { label: 'In Progress', value: 'In Progress' },
         { label: 'Scheduled', value: 'Scheduled' },
         { label: 'Draft', value: 'Draft' },
-        { label: 'Failed', value: 'Failed' }
+        { label: 'Failed', value: 'Failed' },
       ],
       onFilterChange: (a, filters) => {
         for (const filter of filters) {
@@ -110,13 +110,13 @@ export const resourceTable = () => {
         }
         return false;
       },
-      translate: a => {
+      translate: (a) => {
         const status = a.status;
-        return ({
+        return {
           title: status,
-          statusAppearance: statusAppearance[status]
-        });
-      }
+          statusAppearance: statusAppearance[status],
+        };
+      },
     },
     {
       name: 'lastUpdated',
@@ -129,27 +129,25 @@ export const resourceTable = () => {
       displayName: '',
       sorting: false,
       width: '20%',
-      cellRenderer: props => (
+      cellRenderer: (props) => (
         <div className="d-flex align-items-center justify-content-end flex-grow-1">
           <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />
           <div style={{ width: 'var(--spacing-3)' }} className="ml-6">
             <Dropdown
               triggerOptions={{
-                customTrigger: (_label: string) => (
-                  <Button icon="more_horiz" appearance="transparent" />
-                )
+                customTrigger: (_label: string) => <Button icon="more_horiz" appearance="transparent" />,
               }}
               menu={true}
               align="left"
               options={[
                 { label: 'Edit', value: 'Edit' },
-                { label: 'Delete', value: 'Delete' }
+                { label: 'Delete', value: 'Delete' },
               ]}
             />
           </div>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   return (
@@ -163,25 +161,30 @@ export const resourceTable = () => {
         withHeader={true}
         filterPosition="HEADER"
         filterList={{
-          status: ['In Progress', 'Scheduled', 'Draft', 'Failed']
+          status: ['In Progress', 'Scheduled', 'Draft', 'Failed'],
         }}
         onSelect={(rowIndex, selected, selectedList, selectAll) =>
-          action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()
+          action(
+            `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+              selectedList
+            )} selectAll: ${selectAll}`
+          )()
         }
         headerOptions={{
-          withSearch: true
+          withSearch: true,
         }}
         onSearch={(currData, searchTerm) => {
-          return currData.filter(d =>
-            d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.name.toLowerCase().match(searchTerm.toLowerCase())
+          return currData.filter(
+            (d) =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.name.toLowerCase().match(searchTerm.toLowerCase())
           );
         }}
         withPagination={true}
         paginationType="basic"
         pageSize={4}
-        onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+        onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
       />
     </Card>
   );
@@ -317,9 +320,9 @@ export default {
         customCode,
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

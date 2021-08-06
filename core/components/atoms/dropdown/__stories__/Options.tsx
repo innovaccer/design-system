@@ -11,7 +11,7 @@ for (let i = 1; i <= 10; i++) {
     label: `Option ${i}`,
     value: `Option ${i}`,
     icon: 'events',
-    subInfo: 'subInfo'
+    subInfo: 'subInfo',
   });
 }
 
@@ -29,7 +29,7 @@ for (let i = 1; i <= 10; i++) {
     value: `Option ${i}`,
     icon: 'events',
     subInfo: 'subInfo',
-    optionType: 'WITH_ICON'
+    optionType: 'WITH_ICON',
   });
 }
 
@@ -39,7 +39,7 @@ for (let i = 1; i <= 10; i++) {
     value: `Option ${i}`,
     icon: 'events',
     subInfo: 'subInfo',
-    optionType: 'WITH_META'
+    optionType: 'WITH_META',
   });
 }
 
@@ -57,7 +57,7 @@ for (let i = 1; i <= 100; i++) {
   preSelectedOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
-    selected: i === 2 || i === 3
+    selected: i === 2 || i === 3,
   });
 }
 
@@ -67,7 +67,7 @@ for (let i = 1; i <= 40; i++) {
     value: `Option ${i}`,
     group: 'Group 1',
     icon: 'events',
-    subInfo: 'subInfo'
+    subInfo: 'subInfo',
   });
 }
 for (let i = 41; i <= 100; i++) {
@@ -76,7 +76,7 @@ for (let i = 41; i <= 100; i++) {
     value: `Option ${i}`,
     group: 'Group 2',
     icon: 'events',
-    subInfo: 'subInfo'
+    subInfo: 'subInfo',
   });
 }
 
@@ -103,7 +103,7 @@ for (let i = 1; i <= 10; i++) {
 export const storyWrapOptions = [
   {
     label: 'Design System Dropdown',
-    value: 'Design System Dropdown'
+    value: 'Design System Dropdown',
   },
   {
     label: 'UI Kit Dropdown',
@@ -111,20 +111,20 @@ export const storyWrapOptions = [
   },
   {
     label: 'Innovaccer Analytics',
-    value: 'Innovaccer Analytics'
-  }
+    value: 'Innovaccer Analytics',
+  },
 ];
 
 export const subInfoItems = [
   {
     label: 'Option 1',
     value: 'Option 1',
-    subInfo: 'subInfo'
+    subInfo: 'subInfo',
   },
   {
     label: 'Option 2',
     value: 'Option 2',
-    subInfo: 'subInfo'
+    subInfo: 'subInfo',
   },
   {
     label: 'Option 3',
@@ -137,7 +137,7 @@ export const iconItems = [
   {
     label: 'Option 1',
     value: 'Option 1',
-    icon: 'events'
+    icon: 'events',
   },
   {
     label: 'Option 2',

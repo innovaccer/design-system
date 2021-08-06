@@ -11,14 +11,7 @@ export const customTrigger = () => {
   };
 
   const customTriggerFunc = (label: string) => {
-    return (
-      <Input
-        type="text"
-        name="input"
-        value={label}
-        onChange={onChange}
-      />
-    );
+    return <Input type="text" name="input" value={label} onChange={onChange} />;
   };
 
   return (
@@ -75,9 +68,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

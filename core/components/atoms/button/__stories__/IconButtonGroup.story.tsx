@@ -3,20 +3,9 @@ import Button from '@/components/atoms/button';
 
 export const iconButtonGroup = () => (
   <div className="d-flex">
-    <Button
-      size="tiny"
-      icon="content_copy"
-      className="mr-2"
-    />
-    <Button
-      size="tiny"
-      icon="content_paste"
-      className="mr-2"
-    />
-    <Button
-      size="tiny"
-      icon="delete"
-    />
+    <Button size="tiny" icon="content_copy" className="mr-2" />
+    <Button size="tiny" icon="content_paste" className="mr-2" />
+    <Button size="tiny" icon="delete" />
   </div>
 );
 
@@ -27,8 +16,8 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'A pattern using tiny icon buttons in a group.'
-      }
-    }
-  }
+        description: 'A pattern using tiny icon buttons in a group.',
+      },
+    },
+  },
 };

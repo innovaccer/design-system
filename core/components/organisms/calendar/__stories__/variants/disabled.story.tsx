@@ -14,15 +14,8 @@ export const disabled = () => {
       <div className="d-flex">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
-            <Card
-              className="d-inline-flex"
-              shadow="light"
-            >
-              <Calendar
-                date={new Date(2020, 2, 15)}
-                disabledBefore={new Date(2020, 2, 10)}
-                view={v}
-              />
+            <Card className="d-inline-flex" shadow="light">
+              <Calendar date={new Date(2020, 2, 15)} disabledBefore={new Date(2020, 2, 10)} view={v} />
             </Card>
           </div>
         ))}
@@ -32,15 +25,8 @@ export const disabled = () => {
       <div className="d-flex">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
-            <Card
-              className="d-inline-flex"
-              shadow="light"
-            >
-              <Calendar
-                date={new Date(2020, 2, 15)}
-                disabledAfter={new Date(2020, 2, 20)}
-                view={v}
-              />
+            <Card className="d-inline-flex" shadow="light">
+              <Calendar date={new Date(2020, 2, 15)} disabledAfter={new Date(2020, 2, 20)} view={v} />
             </Card>
           </div>
         ))}
@@ -50,10 +36,7 @@ export const disabled = () => {
       <div className="d-flex">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
-            <Card
-              className="d-inline-flex"
-              shadow="light"
-            >
+            <Card className="d-inline-flex" shadow="light">
               <Calendar
                 date={new Date(2020, 2, 15)}
                 disabledBefore={new Date(2020, 2, 10)}
@@ -74,8 +57,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Calendar'
-      }
-    }
-  }
+        title: 'Calendar',
+      },
+    },
+  },
 };

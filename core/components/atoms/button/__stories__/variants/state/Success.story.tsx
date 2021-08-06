@@ -10,10 +10,7 @@ export const success = () => {
   const expanded = false;
   const loading = false;
 
-  const children = text(
-    'children',
-    'Button'
-  );
+  const children = text('children', 'Button');
 
   const style = {
     justifyContent: 'space-between',
@@ -95,8 +92,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Button'
-      }
-    }
-  }
+        title: 'Button',
+      },
+    },
+  },
 };

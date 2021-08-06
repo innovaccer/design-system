@@ -3,14 +3,7 @@ import classNames from 'classnames';
 import { PopperWrapper, PopperWrapperProps } from '@/components/atoms/popperWrapper';
 import { BaseProps, filterProps } from '@/utils/types';
 
-type Position = 'top' |
-  'top-start' |
-  'top-end' |
-  'bottom' |
-  'bottom-start' |
-  'bottom-end' |
-  'left' |
-  'right';
+type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'right';
 
 export interface CustomStyle {
   height?: number | string;
@@ -29,7 +22,7 @@ const propsList = [
   'open',
   'closeOnBackdropClick',
   'offset',
-  'closeOnScroll'
+  'closeOnScroll',
 ] as const;
 type PopperProps = typeof propsList[number];
 
@@ -104,7 +97,7 @@ export const Popover = (props: PopoverProps) => {
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
 
-  const defaultOnToggle = React.useCallback(newOpen => {
+  const defaultOnToggle = React.useCallback((newOpen) => {
     setOpen(newOpen);
   }, []);
 
@@ -116,10 +109,13 @@ export const Popover = (props: PopoverProps) => {
     }
   }, [boundaryElement]);
 
-  const classes = classNames({
-    Popover: true,
-    ['Popover--dark']: dark
-  }, className);
+  const classes = classNames(
+    {
+      Popover: true,
+      ['Popover--dark']: dark,
+    },
+    className
+  );
 
   const PopoverWrapper = (
     <div data-test="DesignSystem-Popover" className={classes} data-layer={true}>
@@ -151,15 +147,12 @@ Popover.displayName = 'Popover';
 //   hideOnReferenceEscape: true,
 //   customStyle: {},
 // }
-Popover.defaultProps = Object.assign({},
-  filterProps(PopperWrapper.defaultProps, propsList, true),
-  {
-    offset: 'large',
-    position: 'bottom',
-    hideOnReferenceEscape: true,
-    customStyle: {},
-    boundaryElement: document.body
-  }
-);
+Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
+  offset: 'large',
+  position: 'bottom',
+  hideOnReferenceEscape: true,
+  customStyle: {},
+  boundaryElement: document.body,
+});
 
 export default Popover;

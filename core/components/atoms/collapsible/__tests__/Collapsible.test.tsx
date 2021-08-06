@@ -15,7 +15,7 @@ describe('Collapsible component', () => {
     hoverable: valueHelper(true, { required: true }),
     height: valueHelper(height, { required: true }),
     expandedWidth: valueHelper(width, { required: true }),
-    onToggle: valueHelper(onToggle, { required: true })
+    onToggle: valueHelper(onToggle, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -39,7 +39,7 @@ describe('Collapsible component', () => {
     expanded: valueHelper(BooleanValue, { required: true, iterate: true }),
     hoverable: valueHelper(false, { required: true }),
     height: valueHelper(height, { required: true }),
-    onToggle: valueHelper(onToggle, { required: true })
+    onToggle: valueHelper(onToggle, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -59,7 +59,6 @@ describe('Collapsible component', () => {
 });
 
 describe('Collapsible component with prop: children', () => {
-
   it('renders collapsed state', () => {
     const expanded = false;
 
@@ -68,7 +67,9 @@ describe('Collapsible component with prop: children', () => {
         <div className="d-flex pt-4">
           <Icon name="events" data-test="DesignSystem-Collapsible--Icon" />
           {expanded && (
-            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">Collapsible</Text>
+            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">
+              Collapsible
+            </Text>
           )}
         </div>
       </Collapsible>
@@ -86,7 +87,9 @@ describe('Collapsible component with prop: children', () => {
         <div className="d-flex pt-4">
           <Icon name="events" data-test="DesignSystem-Collapsible--Icon" />
           {expanded && (
-            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">Collapsible</Text>
+            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">
+              Collapsible
+            </Text>
           )}
         </div>
       </Collapsible>
@@ -94,11 +97,9 @@ describe('Collapsible component with prop: children', () => {
     expect(getByTestId('DesignSystem-Collapsible--Text')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Collapsible')).not.toHaveClass('Collapsible--overlay');
   });
-
 });
 
 describe('Collapsible component with dimensions', () => {
-
   it('renders collapsible component with height', () => {
     const panelHeight = '500px';
 
@@ -124,11 +125,9 @@ describe('Collapsible component with dimensions', () => {
     );
     expect(getByTestId('DesignSystem-Collapsible')).toHaveStyle({ width: expandedWidth });
   });
-
 });
 
 describe('Collapsible component with prop: onToggle', () => {
-
   it('calls onToggle callback on click', () => {
     const expanded = false;
 
@@ -137,7 +136,9 @@ describe('Collapsible component with prop: onToggle', () => {
         <div className="d-flex pt-4">
           <Icon name="events" data-test="DesignSystem-Collapsible--Icon" />
           {expanded && (
-            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">Collapsible</Text>
+            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">
+              Collapsible
+            </Text>
           )}
         </div>
       </Collapsible>
@@ -157,7 +158,9 @@ describe('Collapsible component with prop: onToggle', () => {
         <div className="d-flex pt-4">
           <Icon name="events" data-test="DesignSystem-Collapsible--Icon" />
           {expanded && (
-            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">Collapsible</Text>
+            <Text className="mr-6" data-test="DesignSystem-Collapsible--Text">
+              Collapsible
+            </Text>
           )}
         </div>
       </Collapsible>
@@ -172,5 +175,4 @@ describe('Collapsible component with prop: onToggle', () => {
     expect(onToggle).toHaveBeenCalled();
     expect(onToggle).toHaveBeenCalledWith(false);
   });
-
 });

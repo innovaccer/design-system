@@ -6,33 +6,28 @@ const options = [
   {
     label: 'Not yet helped',
     value: 'not_yet_helped',
-    icon: 'more_horiz'
+    icon: 'more_horiz',
   },
   {
     label: 'Eligible',
     value: 'eligible',
-    icon: 'add'
+    icon: 'add',
   },
   {
     label: 'Not Eligible',
     value: 'not_eligible',
-    icon: 'horizontal_rule'
+    icon: 'horizontal_rule',
   },
   {
     label: 'Got help',
     value: 'got_help',
-    icon: 'check'
-  }
+    icon: 'check',
+  },
 ];
 
 // CSF format story
 export const dropdownItemsWithIcon = () => (
-  <Dropdown
-    options={options}
-    optionType="WITH_ICON"
-    className="w-25"
-    placeholder="Select status"
-  />
+  <Dropdown options={options} optionType="WITH_ICON" className="w-25" placeholder="Select status" />
 );
 
 export default {
@@ -44,8 +39,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

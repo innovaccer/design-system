@@ -42,7 +42,7 @@ const options = [
   {
     label: 'Medication regimen',
     value: 'Medication regimen',
-  }
+  },
 ];
 
 // CSF format story
@@ -66,8 +66,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

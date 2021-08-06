@@ -5,15 +5,18 @@ import { Button } from '@/index';
 import { testHelper, filterUndefined, testMessageHelper } from '@/utils/testHelper';
 
 describe('OverlayFooter component', () => {
-
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
       const { asFragment } = render(
         <OverlayFooter>
-          <Button appearance="basic" onClick={() => null}>Basic</Button>
-          <Button appearance="primary" onClick={() => null}>Primary</Button>
+          <Button appearance="basic" onClick={() => null}>
+            Basic
+          </Button>
+          <Button appearance="primary" onClick={() => null}>
+            Primary
+          </Button>
         </OverlayFooter>
       );
       expect(asFragment()).toMatchSnapshot();
@@ -24,12 +27,15 @@ describe('OverlayFooter component', () => {
 });
 
 describe('OverlayFooter component with props: children', () => {
-
   it('renders children', () => {
     const { getAllByTestId } = render(
       <OverlayFooter>
-        <Button appearance="basic" data-test="Modal-Button">Basic</Button>
-        <Button appearance="primary" data-test="Modal-Button">Primary</Button>
+        <Button appearance="basic" data-test="Modal-Button">
+          Basic
+        </Button>
+        <Button appearance="primary" data-test="Modal-Button">
+          Primary
+        </Button>
       </OverlayFooter>
     );
 
@@ -43,12 +49,15 @@ describe('OverlayFooter with overwrite class', () => {
   it('overwrite OverlayFooter class', () => {
     const { getByTestId } = render(
       <OverlayFooter className={className}>
-        <Button appearance="basic" data-test="Modal-Button">Basic</Button>
-        <Button appearance="primary" data-test="Modal-Button">Primary</Button>
+        <Button appearance="basic" data-test="Modal-Button">
+          Basic
+        </Button>
+        <Button appearance="primary" data-test="Modal-Button">
+          Primary
+        </Button>
       </OverlayFooter>
     );
 
     expect(getByTestId('DesignSystem-OverlayFooter')).toHaveClass(className);
   });
-
 });

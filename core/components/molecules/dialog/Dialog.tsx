@@ -80,9 +80,9 @@ const Dialog = (props: DialogProps) => {
       dimension={dimension}
       onClose={onClose}
       headerOptions={{
-        heading
+        heading,
       }}
-      footer={(
+      footer={
         <>
           <Button
             type="button"
@@ -102,7 +102,7 @@ const Dialog = (props: DialogProps) => {
             {primaryButtonLabel}
           </Button>
         </>
-      )}
+      }
     >
       <ModalDescription title={title} description={description} />
     </Modal>
@@ -113,7 +113,7 @@ Dialog.displayName = 'Dialog';
 Dialog.defaultProps = {
   dimension: 'small',
   primaryButtonAppearance: 'primary',
-  secondaryButtonAppearance: 'basic'
+  secondaryButtonAppearance: 'basic',
 };
 
 export default Dialog;

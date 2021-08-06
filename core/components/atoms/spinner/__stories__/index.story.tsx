@@ -4,21 +4,13 @@ import Spinner from '../Spinner';
 
 // CSF format story
 export const all = () => {
-  const appearance = select(
-    'appearance',
-    ['primary', 'secondary', 'white'],
-    undefined
-  );
+  const appearance = select('appearance', ['primary', 'secondary', 'white'], undefined);
 
-  const size = select(
-    'size',
-    ['small', 'medium', 'large'],
-    undefined
-  );
+  const size = select('size', ['small', 'medium', 'large'], undefined);
 
   const options = {
     appearance,
-    size
+    size,
   };
 
   return (
@@ -30,5 +22,5 @@ export const all = () => {
 
 export default {
   title: 'Components/Loaders/Spinner/All',
-  component: Spinner
+  component: Spinner,
 };

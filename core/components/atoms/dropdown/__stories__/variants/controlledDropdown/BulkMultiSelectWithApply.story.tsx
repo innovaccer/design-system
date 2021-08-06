@@ -7,7 +7,6 @@ import { dropdownOptions } from '../../Options';
 
 // CSF format story
 export const bulkMultiSelectWithApplyButton = () => {
-
   const [selected, setSelected] = React.useState([dropdownOptions[3]]);
   const [open, setOpen] = React.useState(false);
 
@@ -18,7 +17,7 @@ export const bulkMultiSelectWithApplyButton = () => {
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -51,7 +50,9 @@ export const bulkMultiSelectWithApplyButton = () => {
 
   return (
     <div className="w-25">
-      <Text weight="strong">{'Options > 50'}</Text><br /><br />
+      <Text weight="strong">{'Options > 50'}</Text>
+      <br />
+      <br />
       <Dropdown
         fetchOptions={fetchOptions}
         onPopperToggle={onPopperToggle}
@@ -152,9 +153,9 @@ export default {
         title: 'Controlled Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

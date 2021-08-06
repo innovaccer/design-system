@@ -7,18 +7,16 @@ import PlaceholderImage from '@/components/atoms/placeholderImage';
 export const all = () => {
   const withImage = boolean('withImage', false);
   const round = boolean('round', false);
-  const imageSize = select(
-    'imageSize',
-    ['small', 'medium', 'large'],
-    undefined
-  );
+  const imageSize = select('imageSize', ['small', 'medium', 'large'], undefined);
 
   const options = {
-    withImage, round, imageSize
+    withImage,
+    round,
+    imageSize,
   };
 
   return (
-    <Placeholder {...options} >
+    <Placeholder {...options}>
       <PlaceholderParagraph length="small" />
       <PlaceholderParagraph length="medium" />
     </Placeholder>
@@ -28,5 +26,5 @@ export const all = () => {
 export default {
   title: 'Components/Loaders/Placeholder/All',
   component: Placeholder,
-  subcomponents: { PlaceholderImage, PlaceholderParagraph }
+  subcomponents: { PlaceholderImage, PlaceholderParagraph },
 };

@@ -7,7 +7,7 @@ import {
   Data,
   onSelectAllFunction,
   GridProps,
-  updateFilterListFunction
+  updateFilterListFunction,
 } from '../grid/Grid';
 import { hasSchema, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
@@ -70,7 +70,7 @@ export const Header = (props: HeaderProps) => {
     updateSearchTerm,
     dynamicColumn,
     allowSelectAll,
-    showFilters
+    showFilters,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -90,7 +90,7 @@ export const Header = (props: HeaderProps) => {
     if (selectAll && !selectAll.checked) setSelectAllRecords(false);
   }, [selectAll]);
 
-  const filterSchema = schema.filter(s => s.filters);
+  const filterSchema = schema.filter((s) => s.filters);
 
   const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -102,7 +102,7 @@ export const Header = (props: HeaderProps) => {
   const onFilterChange = (name: ColumnSchema['name'], filters: any[]) => {
     const newFilterList = {
       ...filterList,
-      [name]: filters
+      [name]: filters,
     };
 
     if (updateFilterList) {
@@ -110,35 +110,38 @@ export const Header = (props: HeaderProps) => {
     }
   };
 
-  const columnOptions = schema.map(s => ({
+  const columnOptions = schema.map((s) => ({
     label: s.displayName,
     value: s.name,
-    selected: !s.hidden
+    selected: !s.hidden,
   }));
 
   const onDynamicColumnUpdate = (options: DropdownProps['options']) => {
-    const newSchema = options.map(option => ({
-      ...schema.find(colSchema => colSchema.name === option.value),
-      hidden: !option.selected
-      /* tslint:disable:no-object-literal-type-assertion */
-    } as ColumnSchema));
+    const newSchema = options.map(
+      (option) =>
+        ({
+          ...schema.find((colSchema) => colSchema.name === option.value),
+          hidden: !option.selected,
+          /* tslint:disable:no-object-literal-type-assertion */
+        } as ColumnSchema)
+    );
     /* tslint:enable:no-object-literal-type-assertion */
 
     if (updateSchema) updateSchema(newSchema);
   };
 
-  const selectedCount = data.filter(d => d._selected).length;
+  const selectedCount = data.filter((d) => d._selected).length;
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
   const label = error
     ? 'Showing 0 items'
     : withCheckbox && selectedCount
-      ? selectAllRecords
-        ? `Selected all ${totalRecords} item${getPluralSuffix(totalRecords)}`
-        : `Selected ${selectedCount} item${getPluralSuffix(totalRecords)} on this page`
-      : withPagination
-        ? `Showing ${startIndex}-${endIndex} of ${totalRecords} item${getPluralSuffix(totalRecords)}`
-        : `Showing ${totalRecords} item${getPluralSuffix(totalRecords)}`;
+    ? selectAllRecords
+      ? `Selected all ${totalRecords} item${getPluralSuffix(totalRecords)}`
+      : `Selected ${selectedCount} item${getPluralSuffix(totalRecords)} on this page`
+    : withPagination
+    ? `Showing ${startIndex}-${endIndex} of ${totalRecords} item${getPluralSuffix(totalRecords)}`
+    : `Showing ${totalRecords} item${getPluralSuffix(totalRecords)}`;
 
   return (
     <div className="Header">
@@ -159,18 +162,14 @@ export const Header = (props: HeaderProps) => {
         {showFilters && filterSchema.length > 0 && (
           <div className="Header-dropdown">
             <div className="Header-filters">
-              {filterSchema.map(s => {
-                const {
-                  name,
-                  displayName,
-                  filters
-                } = s;
+              {filterSchema.map((s) => {
+                const { name, displayName, filters } = s;
 
                 const filterOptions = filters
-                  ? filters.map(f => ({
-                    ...f,
-                    selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
-                  }))
+                  ? filters.map((f) => ({
+                      ...f,
+                      selected: filterList[name] && filterList[name].findIndex((fl) => fl === f.value) !== -1,
+                    }))
                   : [];
 
                 return (
@@ -181,18 +180,14 @@ export const Header = (props: HeaderProps) => {
                     inlineLabel={displayName}
                     icon={'filter_list'}
                     options={filterOptions}
-                    onChange={selected => onFilterChange(name, selected)}
+                    onChange={(selected) => onFilterChange(name, selected)}
                   />
                 );
               })}
             </div>
           </div>
         )}
-        {children && (
-          <div className="Header-actions">
-            {children}
-          </div>
-        )}
+        {children && <div className="Header-actions">{children}</div>}
       </div>
       <div className="Header-content Header-content--bottom">
         <div className="Header-label">
@@ -214,33 +209,22 @@ export const Header = (props: HeaderProps) => {
               {withPagination && selectAll?.checked && allowSelectAll && (
                 <div className="ml-4">
                   {!selectAllRecords ? (
-                    <Button
-                      size="tiny"
-                      onClick={() => setSelectAllRecords(true)}
-                    >
+                    <Button size="tiny" onClick={() => setSelectAllRecords(true)}>
                       {`Select all ${totalRecords} items`}
                     </Button>
                   ) : (
-                    <Button
-                      size="tiny"
-                      onClick={() => setSelectAllRecords(false)}
-                    >
+                    <Button size="tiny" onClick={() => setSelectAllRecords(false)}>
                       Clear Selection
                     </Button>
-                  )
-                  }
+                  )}
                 </div>
               )}
             </>
-          )
-          }
+          )}
         </div>
         {dynamicColumn && (
           <div className="Header-hideColumns">
-            <DraggableDropdown
-              options={columnOptions}
-              onChange={onDynamicColumnUpdate}
-            />
+            <DraggableDropdown options={columnOptions} onChange={onDynamicColumnUpdate} />
           </div>
         )}
       </div>
@@ -253,7 +237,7 @@ Header.defaultProps = {
   data: [],
   searchPlaceholder: 'Search',
   dynamicColumn: true,
-  showFilters: true
+  showFilters: true,
 };
 
 export default Header;

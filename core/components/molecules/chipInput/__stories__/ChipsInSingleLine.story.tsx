@@ -7,12 +7,7 @@ export const chipsInSingleLine = () => {
   return (
     <>
       <Label withInput={true}>Population Focus</Label>
-      <ChipInput
-        value={value}
-        chipOptions={{ clearButton: true }}
-        className="w-50"
-        onChange={setValue}
-      />
+      <ChipInput value={value} chipOptions={{ clearButton: true }} className="w-50" onChange={setValue} />
     </>
   );
 };
@@ -38,8 +33,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

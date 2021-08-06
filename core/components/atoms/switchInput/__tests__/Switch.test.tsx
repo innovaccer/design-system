@@ -15,11 +15,7 @@ describe('Switch component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Switch
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Switch {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -35,11 +31,7 @@ describe('Switch component', () => {
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Switch
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Switch {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

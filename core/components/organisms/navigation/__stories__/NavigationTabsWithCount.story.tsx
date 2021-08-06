@@ -8,48 +8,37 @@ export const navigationTabsWithCount = () => {
     {
       name: 'tab1',
       label: 'Tab #1',
-      count: 1
+      count: 1,
     },
     {
       name: 'tab2',
       label: 'Tab #2',
       count: 2,
-      disabled: true
+      disabled: true,
     },
     {
       name: 'tab3',
       label: 'Tab #3',
-      count: 10
+      count: 10,
     },
     {
       name: 'tab4',
       label: 'Tab #3',
-      count: 100
-    }
+      count: 100,
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'tab1'
+    name: 'tab1',
   });
 
   const onClickHandler = (menu: Menu) => {
     setActive(menu);
   };
 
-  const align = select(
-    'align',
-    ['left', 'center'],
-    'center'
-  );
+  const align = select('align', ['left', 'center'], 'center');
 
-  return (
-    <Navigation
-      align={align}
-      menus={data}
-      active={active}
-      onClick={onClickHandler}
-    />
-  );
+  return <Navigation align={align} menus={data} active={active} onClick={onClickHandler} />;
 };
 
 const customCode = `() => {
@@ -103,8 +92,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

@@ -11,7 +11,9 @@ describe('CardBody component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <CardBody><span>Card Body</span></CardBody>
+        <CardBody>
+          <span>Card Body</span>
+        </CardBody>
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -21,7 +23,6 @@ describe('CardBody component', () => {
 });
 
 describe('CardBody component', () => {
-
   it('renders children', () => {
     const { getByTestId } = render(
       <CardBody>
@@ -29,7 +30,6 @@ describe('CardBody component', () => {
       </CardBody>
     );
     expect(getByTestId('DesignSystem-CardBody--span')).toBeInTheDocument();
-
   });
 
   it('renders className', () => {
@@ -39,7 +39,5 @@ describe('CardBody component', () => {
       </CardBody>
     );
     expect(getByTestId('DesignSystem-CardBody')).toHaveClass('CardBodyClass');
-
   });
-
 });

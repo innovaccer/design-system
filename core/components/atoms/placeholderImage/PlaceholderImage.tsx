@@ -16,29 +16,26 @@ export interface PlaceholderImageProps extends BaseProps {
 }
 
 export const PlaceholderImage = (props: PlaceholderImageProps) => {
-  const {
-    size = 'small',
-    round,
-    className
-  } = props;
+  const { size = 'small', round, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    PlaceholderImage: true,
-    'Placeholder--animation': true,
-    ['PlaceholderImage--round']: round,
-    [`PlaceholderImage--${size}`]: size
-  }, className);
-
-  return (
-    <span {...baseProps} className={classes} />
+  const classes = classNames(
+    {
+      PlaceholderImage: true,
+      'Placeholder--animation': true,
+      ['PlaceholderImage--round']: round,
+      [`PlaceholderImage--${size}`]: size,
+    },
+    className
   );
+
+  return <span {...baseProps} className={classes} />;
 };
 
 PlaceholderImage.displayName = 'PlaceholderImage';
 PlaceholderImage.defaultProps = {
-  size: 'small'
+  size: 'small',
 };
 
 export default PlaceholderImage;

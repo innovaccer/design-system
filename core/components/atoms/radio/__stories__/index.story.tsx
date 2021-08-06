@@ -5,31 +5,15 @@ import Radio from '../Radio';
 
 // CSF format story
 export const all = () => {
-  const size = select(
-    'size',
-    ['regular', 'tiny'],
-    undefined
-  );
+  const size = select('size', ['regular', 'tiny'], undefined);
 
-  const label = text(
-    'label',
-    'Radio'
-  );
+  const label = text('label', 'Radio');
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
-  const defaultChecked = boolean(
-    'defaultChecked',
-    false
-  );
+  const defaultChecked = boolean('defaultChecked', false);
 
-  const checked = boolean(
-    'checked',
-    undefined
-  );
+  const checked = boolean('checked', undefined);
 
   const name = 'gender';
 
@@ -59,8 +43,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        props: { exclude: ['key'] }
-      }
-    }
-  }
+        props: { exclude: ['key'] },
+      },
+    },
+  },
 };

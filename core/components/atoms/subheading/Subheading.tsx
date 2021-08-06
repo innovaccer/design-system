@@ -17,20 +17,18 @@ export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingEle
 }
 
 export const Subheading = (props: SubheadingProps) => {
-  const {
-    appearance,
-    children,
-    className,
-    ...rest
-  } = props;
+  const { appearance, children, className, ...rest } = props;
 
-  const classes = classNames({
-    Subheading: true,
-    [`Subheading--${appearance}`]: appearance
-  }, className);
+  const classes = classNames(
+    {
+      Subheading: true,
+      [`Subheading--${appearance}`]: appearance,
+    },
+    className
+  );
 
   return (
-    <GenericText data-test="DesignSystem-Subheading"{...rest} className={classes} componentType={'h4'}>
+    <GenericText data-test="DesignSystem-Subheading" {...rest} className={classes} componentType={'h4'}>
       {children}
     </GenericText>
   );
@@ -38,7 +36,7 @@ export const Subheading = (props: SubheadingProps) => {
 
 Subheading.displayName = 'Subheading';
 Subheading.defaultProps = {
-  appearance: 'default'
+  appearance: 'default',
 };
 
 export default Subheading;

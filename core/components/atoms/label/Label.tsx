@@ -32,27 +32,22 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
  */
 export const Label = (props: LabelProps) => {
-  const {
-    required,
-    optional,
-    withInput,
-    disabled,
-    children,
-    className,
-    ...rest
-  } = props;
+  const { required, optional, withInput, disabled, children, className, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const LabelClass = classNames({
-    Label: true,
-    ['Label--withInput']: withInput,
-    ['Label--optional']: optional,
-  }, className);
+  const LabelClass = classNames(
+    {
+      Label: true,
+      ['Label--withInput']: withInput,
+      ['Label--optional']: optional,
+    },
+    className
+  );
 
   const classes = classNames({
     'Label-text': true,
-    'Label--disabled': disabled
+    'Label--disabled': disabled,
   });
 
   const renderInfo = (isRequired: boolean = false, isOptional?: boolean) => {
@@ -62,11 +57,7 @@ export const Label = (props: LabelProps) => {
 
     if (isOptional) {
       return (
-        <Text
-          data-test="DesignSystem-Label--OptionalText"
-          appearance="subtle"
-          className="Label-optionalText"
-        >
+        <Text data-test="DesignSystem-Label--OptionalText" appearance="subtle" className="Label-optionalText">
           (optional)
         </Text>
       );

@@ -71,8 +71,8 @@ export default {
       docPage: {
         customCode,
         title: 'Level 1 Header Template',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

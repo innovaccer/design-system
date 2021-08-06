@@ -23,11 +23,7 @@ describe('Textarea component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <Textarea
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<Textarea {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -36,7 +32,6 @@ describe('Textarea component', () => {
 });
 
 describe('Textarea component', () => {
-
   it('renders textarea element', () => {
     const { getByTestId } = render(<Textarea />);
     expect(getByTestId(dataTestId).tagName).toMatch('TEXTAREA');
@@ -56,7 +51,6 @@ describe('Textarea component', () => {
     const { getByTestId } = render(<Textarea placeholder={placeholder} />);
     expect(getByTestId(dataTestId)).toHaveAttribute('placeholder', placeholder);
   });
-
 });
 
 describe('Textarea component with prop: rows', () => {
@@ -72,21 +66,18 @@ describe('Textarea component with prop: rows', () => {
     const { getByTestId } = render(<Textarea />);
     expect(getByTestId(dataTestId)).toHaveAttribute('rows', `${defaultRows}`);
   });
-
 });
 
 describe('Textarea component with prop: resize', () => {
-
   it('resizes textarea', () => {
     const { getByTestId } = render(<Textarea />);
     expect(getByTestId(dataTestId)).toHaveClass('Textarea--resize');
   });
 
   it('does not resize textarea', () => {
-    const { getByTestId } = render(<Textarea resize={false}/>);
+    const { getByTestId } = render(<Textarea resize={false} />);
     expect(getByTestId(dataTestId)).not.toHaveClass('Textarea--resize');
   });
-
 });
 
 describe('Textarea component with prop: onChange', () => {
@@ -111,7 +102,6 @@ describe('Textarea component with prop: onChange', () => {
     expect(getByTestId(dataTestId)).toHaveValue(value);
     fireEvent.change(textarea, { target: { value: newValue } });
     expect(getByTestId(dataTestId)).toHaveValue(value);
-
   });
 
   it('renders textarea as controlled component (with change)', () => {
@@ -126,5 +116,4 @@ describe('Textarea component with prop: onChange', () => {
     rerender(<Textarea value={newValue} onChange={onChange} />);
     expect(getByTestId(dataTestId)).toHaveValue(newValue);
   });
-
 });

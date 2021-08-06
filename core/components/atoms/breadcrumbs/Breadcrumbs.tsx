@@ -30,7 +30,7 @@ export interface BreadcrumbsProps extends BaseProps {
 const renderLink = (item: Breadcrumb, onClick: BreadcrumbsProps['onClick']) => (
   <Link
     href={item.link}
-    onClick={ev => {
+    onClick={(ev) => {
       if (onClick) {
         ev.preventDefault();
         onClick(item.link);
@@ -44,9 +44,9 @@ const renderLink = (item: Breadcrumb, onClick: BreadcrumbsProps['onClick']) => (
 );
 
 const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProps['onClick']) => {
-  const options = list.map(item => ({
+  const options = list.map((item) => ({
     label: item.label,
-    value: item.link
+    value: item.link,
   }));
 
   const customTrigger = () => {
@@ -67,7 +67,7 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
       triggerOptions={{ customTrigger }}
       options={options}
       menu={true}
-      onChange={selected => {
+      onChange={(selected) => {
         if (onClick) {
           onClick(selected);
         }
@@ -77,17 +77,16 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
 };
 
 export const Breadcrumbs = (props: BreadcrumbsProps) => {
-  const {
-    list,
-    onClick,
-    className,
-  } = props;
+  const { list, onClick, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const BreadcrumbClass = classNames({
-    ['Breadcrumbs']: true
-  }, className);
+  const BreadcrumbClass = classNames(
+    {
+      ['Breadcrumbs']: true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-Breadcrumbs" {...baseProps} className={BreadcrumbClass}>
@@ -95,9 +94,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
         list.map((item, index) => {
           return (
             <div key={index} className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-              <span className="Breadcrumbs-link">
-                {renderLink(item, onClick)}
-              </span>
+              <span className="Breadcrumbs-link">{renderLink(item, onClick)}</span>
               <span className="Breadcrumbs-itemSeparator">/</span>
             </div>
           );
@@ -105,9 +102,7 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
       ) : (
         <>
           <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-            <span className="Breadcrumbs-link">
-              {renderLink(list[0], onClick)}
-            </span>
+            <span className="Breadcrumbs-link">{renderLink(list[0], onClick)}</span>
             <span className="Breadcrumbs-itemSeparator">/</span>
           </div>
           <div className="Breadcrumbs-dropdown">
@@ -115,14 +110,11 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
             <span className="Breadcrumbs-itemSeparator">/</span>
           </div>
           <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-            <span className="Breadcrumbs-link">
-              {renderLink(list[list.length - 1], onClick)}
-            </span>
+            <span className="Breadcrumbs-link">{renderLink(list[list.length - 1], onClick)}</span>
             <span className="Breadcrumbs-itemSeparator">/</span>
           </div>
         </>
-      )
-      }
+      )}
     </div>
   );
 };

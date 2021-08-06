@@ -4,52 +4,33 @@ import { compareDate, getDateInfo, translateToDate, translateToString } from '..
 import { DateRangePickerProps, DateRangePickerState } from './DateRangePicker';
 
 type TriggerProps = {
-  inputFormat: DateRangePickerProps['inputFormat'],
-  startInputOptions: DateRangePickerProps['startInputOptions'],
-  endInputOptions: DateRangePickerProps['endInputOptions'],
-  validators: DateRangePickerProps['validators'],
-  state: DateRangePickerState,
-  setState: any
+  inputFormat: DateRangePickerProps['inputFormat'];
+  startInputOptions: DateRangePickerProps['startInputOptions'];
+  endInputOptions: DateRangePickerProps['endInputOptions'];
+  validators: DateRangePickerProps['validators'];
+  state: DateRangePickerState;
+  setState: any;
 };
 
 export const Trigger = (props: TriggerProps) => {
-  const {
-    inputFormat,
-    startInputOptions,
-    endInputOptions,
-    validators,
-    state,
-    setState
-  } = props;
+  const { inputFormat, startInputOptions, endInputOptions, validators, state, setState } = props;
 
-  const {
-    init,
-    startDate,
-    endDate,
-    startError,
-    endError
-  } = state;
+  const { init, startDate, endDate, startError, endError } = state;
 
   const updateNav = (type: string) => {
     if (type === 'start') {
-      const {
-        year,
-        month
-      } = getDateInfo(startDate);
+      const { year, month } = getDateInfo(startDate);
       setState({
         yearNav: year,
-        monthNav: month
+        monthNav: month,
       });
     }
     if (type === 'end') {
-      const {
-        year,
-        month
-      } = getDateInfo(endDate);
+      const { year, month } = getDateInfo(endDate);
 
       setState({
         yearNav: year,
-        monthNav: month
+        monthNav: month,
       });
     }
   };
@@ -64,11 +45,7 @@ export const Trigger = (props: TriggerProps) => {
         if (d) {
           setState({ startDate: d });
           if (endDate) {
-            const {
-              year: eYear,
-              month: eMonth,
-              date: eDate
-            } = getDateInfo(endDate);
+            const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
             if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
               setState({ endDate: undefined });
             }
@@ -87,7 +64,7 @@ export const Trigger = (props: TriggerProps) => {
 
   const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
     setState({
-      init: true
+      init: true,
     });
     if (type === 'start') {
       const { placeholderChar = '_' } = startInputOptions;
@@ -101,17 +78,17 @@ export const Trigger = (props: TriggerProps) => {
 
   const onClearHandler = (type: string) => {
     setState({
-      init: true
+      init: true,
     });
     if (type === 'start') {
       setState({
-        startDate: undefined
+        startDate: undefined,
       });
       updateNav('end');
     }
     if (type === 'end') {
       setState({
-        endDate: undefined
+        endDate: undefined,
       });
       updateNav('start');
     }
@@ -150,10 +127,12 @@ export const Trigger = (props: TriggerProps) => {
           placeholder={inputFormat}
           {...startInputOptions}
           mask={mask}
-          value={startDate
-            ? translateToString(inputFormat, startDate)
-            // @ts-ignore
-            : init ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : ''
+          value={
+            startDate
+              ? translateToString(inputFormat, startDate)
+              : init // @ts-ignore
+              ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar)
+              : ''
           }
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'start');
@@ -180,10 +159,12 @@ export const Trigger = (props: TriggerProps) => {
           placeholder={inputFormat}
           {...endInputOptions}
           mask={mask}
-          value={endDate
-            ? translateToString(inputFormat, endDate)
-            // @ts-ignore
-            : init ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : ''
+          value={
+            endDate
+              ? translateToString(inputFormat, endDate)
+              : init // @ts-ignore
+              ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar)
+              : ''
           }
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'end');

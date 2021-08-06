@@ -26,17 +26,11 @@ const options = [
   {
     label: 'Completely Failed',
     value: 'completely_failed',
-  }
+  },
 ];
 
 // CSF format story
-export const standardDropdown = () => (
-  <Dropdown
-    options={options}
-    className="w-25"
-    placeholder="Status"
-  />
-);
+export const standardDropdown = () => <Dropdown options={options} className="w-25" placeholder="Status" />;
 
 export default {
   title: 'Components/Dropdown/Standard Dropdown',
@@ -47,8 +41,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

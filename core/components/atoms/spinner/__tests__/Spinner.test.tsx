@@ -15,11 +15,7 @@ describe('Spinner component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Spinner
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Spinner {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -36,11 +32,7 @@ describe('Spinner component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Spinner
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Spinner {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

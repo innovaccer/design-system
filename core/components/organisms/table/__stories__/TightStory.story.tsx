@@ -48,36 +48,36 @@ export const tightTable = () => {
       name: 'name',
       displayName: 'Name',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'status',
       displayName: 'Status',
       width: '20%',
-      translate: a => ({
+      translate: (a) => ({
         title: a.status,
-        statusAppearance: (a.status === 'Inactive') ? 'default' : 'success'
+        statusAppearance: a.status === 'Inactive' ? 'default' : 'success',
       }),
       cellType: 'STATUS_HINT',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'measures',
       displayName: 'No. of Measures',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'current_period',
       displayName: 'Current Period',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'added_in',
       displayName: 'Added in',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
   ];
 
@@ -92,12 +92,10 @@ export const tightTable = () => {
         schema={schema}
         withHeader={true}
         headerOptions={{
-          withSearch: true
+          withSearch: true,
         }}
         onSearch={(currData, searchTerm) => {
-          return currData.filter(d =>
-            d.name.toLowerCase().match(searchTerm.toLowerCase())
-          );
+          return currData.filter((d) => d.name.toLowerCase().match(searchTerm.toLowerCase()));
         }}
         withPagination={false}
       />
@@ -216,7 +214,7 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

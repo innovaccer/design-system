@@ -1,12 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const LoaderInButton = () => (
-  <Button
-    appearance="primary"
-    loading={true}
-  />
-);
+export const LoaderInButton = () => <Button appearance="primary" loading={true} />;
 
 export default {
   title: 'Components/Button/Loader In Button',
@@ -15,8 +10,8 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Primary button in loading state.'
-      }
-    }
-  }
+        description: 'Primary button in loading state.',
+      },
+    },
+  },
 };

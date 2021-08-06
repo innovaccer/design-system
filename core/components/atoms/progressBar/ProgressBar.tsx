@@ -14,21 +14,20 @@ export interface ProgressBarProps extends BaseProps {
 }
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const {
-    max,
-    value,
-    className
-  } = props;
+  const { max, value, className } = props;
 
   const baseProps = extractBaseProps(props);
 
   const style = {
-    width: value > 0 ? `${Math.min(value, max) * 100 / max}%` : '0',
+    width: value > 0 ? `${(Math.min(value, max) * 100) / max}%` : '0',
   };
 
-  const ProgressBarClass = classNames({
-    ProgressBar: true,
-  }, className);
+  const ProgressBarClass = classNames(
+    {
+      ProgressBar: true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-ProgressBar" {...baseProps} className={ProgressBarClass}>
@@ -39,7 +38,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
 
 ProgressBar.displayName = 'ProgressBar';
 ProgressBar.defaultProps = {
-  max: 100
+  max: 100,
 };
 
 export default ProgressBar;

@@ -21,8 +21,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Text'
-      }
-    }
-  }
+        title: 'Text',
+      },
+    },
+  },
 };

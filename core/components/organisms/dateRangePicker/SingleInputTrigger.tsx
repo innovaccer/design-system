@@ -4,31 +4,17 @@ import { compareDate, getDateInfo, translateToDate } from '../calendar/utility';
 import { DateRangePickerProps, DateRangePickerState } from './DateRangePicker';
 
 type TriggerProps = {
-  inputFormat: DateRangePickerProps['inputFormat'],
-  inputOptions: DateRangePickerProps['startInputOptions'],
-  validators: DateRangePickerProps['validators'],
-  state: DateRangePickerState,
-  setState: any
+  inputFormat: DateRangePickerProps['inputFormat'];
+  inputOptions: DateRangePickerProps['startInputOptions'];
+  validators: DateRangePickerProps['validators'];
+  state: DateRangePickerState;
+  setState: any;
 };
 
 export const SingleInputTrigger = (props: TriggerProps) => {
-  const {
-    inputFormat,
-    inputOptions,
-    validators,
-    state,
-    setState
-  } = props;
+  const { inputFormat, inputOptions, validators, state, setState } = props;
 
-  const {
-    init,
-    startDate,
-    endDate,
-    startValue,
-    endValue,
-    startError,
-    endError
-  } = state;
+  const { init, startDate, endDate, startValue, endValue, startError, endError } = state;
 
   const mask = Utils.masks.rangeDate[inputFormat];
   const showError = inputOptions.error || (inputOptions.required && (startError || endError) && init);
@@ -42,8 +28,10 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   const inputValidator = (val: string): boolean => {
     const [startVal, endVal] = val.split(' - ');
 
-    return Utils.validators.isValid(validators, startVal, inputFormat)
-      && Utils.validators.isValid(validators, endVal, inputFormat);
+    return (
+      Utils.validators.isValid(validators, startVal, inputFormat) &&
+      Utils.validators.isValid(validators, endVal, inputFormat)
+    );
   };
 
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string) => {
@@ -59,15 +47,11 @@ export const SingleInputTrigger = (props: TriggerProps) => {
 
         setState({
           startDate: startD,
-          endDate: isEndDateValid ? endDate : undefined
+          endDate: isEndDateValid ? endDate : undefined,
         });
 
         if (endDate) {
-          const {
-            year: eYear,
-            month: eMonth,
-            date: eDate
-          } = getDateInfo(endDate);
+          const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
           if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
             setState({ endDate: undefined });
           }
@@ -82,20 +66,20 @@ export const SingleInputTrigger = (props: TriggerProps) => {
       if (endD) {
         setState({
           endDate: endD,
-          startDate: isStartDateValid ? startDate : undefined
+          startDate: isStartDateValid ? startDate : undefined,
         });
       }
     }
 
     setState({
       startValue: startVal,
-      endValue: endVal
+      endValue: endVal,
     });
   };
 
   const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string) => {
     setState({
-      init: true
+      init: true,
     });
 
     const date = val.split(' - ');
@@ -112,7 +96,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
       startDate: undefined,
       endDate: undefined,
       yearNav: undefined,
-      monthNav: undefined
+      monthNav: undefined,
     });
   };
 

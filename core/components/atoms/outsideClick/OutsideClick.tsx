@@ -15,12 +15,7 @@ export interface OutsideClickProps extends BaseHtmlProps<HTMLDivElement>, BasePr
 }
 
 export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>((props, ref) => {
-  const {
-    children,
-    className,
-    onOutsideClick,
-    ...rest
-  } = props;
+  const { children, className, onOutsideClick, ...rest } = props;
 
   const innerRef = React.useRef<HTMLDivElement>(null);
 
@@ -40,18 +35,17 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
       return;
     }
 
-    if (
-      !ReactDOM.findDOMNode(element.current)!.contains(
-        event.target as HTMLElement,
-      )
-    ) {
+    if (!ReactDOM.findDOMNode(element.current)!.contains(event.target as HTMLElement)) {
       onOutsideClick(event);
     }
   }, []);
 
-  const classes = classNames({
-    ['OutsideClick']: true
-  }, className);
+  const classes = classNames(
+    {
+      ['OutsideClick']: true,
+    },
+    className
+  );
 
   return (
     <div ref={innerRef} {...rest} className={classes}>

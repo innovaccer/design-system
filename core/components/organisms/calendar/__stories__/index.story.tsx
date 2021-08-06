@@ -7,41 +7,19 @@ import { convertToDate } from '@/components/organisms/calendar/utility';
 
 // CSF format story
 export const all = () => {
-  const monthsInView = number(
-    'monthsInView',
-    1
-  );
+  const monthsInView = number('monthsInView', 1);
 
-  const dateValue = date(
-    'date',
-    undefined
-  );
+  const dateValue = date('date', undefined);
 
-  const startDate = date(
-    'startDate',
-    undefined
-  );
+  const startDate = date('startDate', undefined);
 
-  const endDate = date(
-    'endDate',
-    undefined
-  );
+  const endDate = date('endDate', undefined);
 
-  const view = select(
-    'view',
-    ['date', 'month', 'year'],
-    undefined
-  );
+  const view = select('view', ['date', 'month', 'year'], undefined);
 
-  const rangePicker = boolean(
-    'rangePicker',
-    false
-  );
+  const rangePicker = boolean('rangePicker', false);
 
-  const rangeLimit = number(
-    'rangeLimit',
-    0
-  );
+  const rangeLimit = number('rangeLimit', 0);
 
   const firstDayOfWeek = select(
     'firstDayOfWeek',
@@ -49,30 +27,15 @@ export const all = () => {
     undefined
   );
 
-  const disabledBefore = date(
-    'disabledBefore',
-    new Date('Jan 20 2015')
-  );
+  const disabledBefore = date('disabledBefore', new Date('Jan 20 2015'));
 
-  const disabledAfter = date(
-    'disabledAfter',
-    new Date('Jan 20 2028')
-  );
+  const disabledAfter = date('disabledAfter', new Date('Jan 20 2028'));
 
-  const jumpView = boolean(
-    'jumpView',
-    true
-  );
+  const jumpView = boolean('jumpView', true);
 
-  const yearNav = number(
-    'yearNav',
-    -1
-  );
+  const yearNav = number('yearNav', -1);
 
-  const monthNav = number(
-    'monthNav',
-    -1
-  );
+  const monthNav = number('monthNav', -1);
 
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
@@ -82,10 +45,7 @@ export const all = () => {
   if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
-    <Card
-      className="d-inline-flex"
-      shadow="light"
-    >
+    <Card className="d-inline-flex" shadow="light">
       <Calendar
         monthsInView={monthsInView}
         rangePicker={rangePicker}
@@ -105,5 +65,5 @@ export const all = () => {
 
 export default {
   title: 'Components/Calendar/All',
-  component: Calendar
+  component: Calendar,
 };

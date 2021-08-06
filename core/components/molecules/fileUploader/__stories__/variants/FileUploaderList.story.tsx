@@ -4,7 +4,6 @@ import { fileList } from '../_common_/fileList';
 import { action } from '@storybook/addon-actions';
 
 export const fileUploaderList = () => {
-
   const onDelete = (file: File, id: any) => {
     return action(`File Deleted: ${file} at index ${id}`)();
   };
@@ -18,13 +17,7 @@ export const fileUploaderList = () => {
   };
 
   return (
-    <FileUploaderList
-      onClick={onClick}
-      onDelete={onDelete}
-      onRetry={onRetry}
-      fileList={fileList}
-      className="mt-4"
-    />
+    <FileUploaderList onClick={onClick} onDelete={onDelete} onRetry={onRetry} fileList={fileList} className="mt-4" />
   );
 };
 
@@ -81,7 +74,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

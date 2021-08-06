@@ -3,9 +3,7 @@ import Checkbox from '../index';
 
 export const OverflowBehavior = () => (
   <div className="w-25">
-    <Checkbox
-      label="Patient with impaired physical mobility and care deficits."
-    />
+    <Checkbox label="Patient with impaired physical mobility and care deficits." />
   </div>
 );
 
@@ -15,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Checkbox'
-      }
-    }
-  }
+        title: 'Checkbox',
+      },
+    },
+  },
 };

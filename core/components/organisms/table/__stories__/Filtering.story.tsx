@@ -4,7 +4,7 @@ import data from '@/components/organisms/grid/__stories__/_common_/data';
 import './_common_/style.css';
 
 export const filtering = () => {
-  return (<></>);
+  return <></>;
 };
 
 const customCode = `/*
@@ -842,8 +842,8 @@ export default {
         props: {
           exclude: ['showHead'],
         },
-        noSandbox: true
-      }
-    }
-  }
+        noSandbox: true,
+      },
+    },
+  },
 };

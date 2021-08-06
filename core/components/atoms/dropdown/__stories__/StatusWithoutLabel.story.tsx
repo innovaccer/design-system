@@ -14,16 +14,13 @@ const options = [
   {
     label: 'Completed',
     value: 'Completed',
-  }
+  },
 ];
 
 // CSF format story
 export const statusWithoutLabel = () => (
   <div className="mb-11 w-25">
-    <Dropdown
-      options={options}
-      placeholder="All Categories"
-    />
+    <Dropdown options={options} placeholder="All Categories" />
   </div>
 );
 
@@ -36,9 +33,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

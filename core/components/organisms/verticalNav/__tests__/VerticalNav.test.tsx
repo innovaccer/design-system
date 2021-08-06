@@ -8,7 +8,7 @@ const onClick = jest.fn();
 const onToggle = jest.fn();
 const BooleanValue = [true, false];
 const active = {
-  name: 'care_management.timeline'
+  name: 'care_management.timeline',
 };
 
 const menus = [
@@ -18,7 +18,7 @@ const menus = [
     icon: 'assignment_ind',
     link: '/patient360',
     count: 10,
-    group: 'Section 1'
+    group: 'Section 1',
   },
   {
     name: 'care_management',
@@ -35,8 +35,8 @@ const menus = [
         name: 'care_management.care_plans',
         label: 'Care Plans',
         icon: 'events',
-      }
-    ]
+      },
+    ],
   },
   {
     name: 'episodes',
@@ -44,7 +44,7 @@ const menus = [
     disabled: true,
     icon: 'airline_seat_flat_angled',
     group: 'Section 2',
-    count: 100
+    count: 100,
   },
   {
     name: 'risk',
@@ -54,13 +54,13 @@ const menus = [
     subMenu: [
       {
         name: 'risk.timeline',
-        label: 'Timeline'
+        label: 'Timeline',
       },
       {
         name: 'risk.care_plans',
-        label: 'Care Plans'
-      }
-    ]
+        label: 'Care Plans',
+      },
+    ],
   },
 ];
 
@@ -71,16 +71,14 @@ describe('Vertical Navigation component', () => {
     menus: valueHelper(menus, { required: true }),
     active: valueHelper(active, { required: true }),
     onClick: valueHelper(onClick, { required: true }),
-    onToggle: valueHelper(onToggle, { required: true })
+    onToggle: valueHelper(onToggle, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <VerticalNav {...attr} />
-      );
+      const { baseElement } = render(<VerticalNav {...attr} />);
 
       expect(baseElement).toMatchSnapshot();
     });
@@ -95,16 +93,14 @@ describe('Vertical Navigation component', () => {
     menus: valueHelper(menus, { required: true }),
     active: valueHelper(active, { required: true }),
     onClick: valueHelper(onClick, { required: true }),
-    onToggle: valueHelper(onToggle, { required: true })
+    onToggle: valueHelper(onToggle, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <VerticalNav {...attr} />
-      );
+      const { baseElement } = render(<VerticalNav {...attr} />);
 
       expect(baseElement).toMatchSnapshot();
     });
@@ -123,13 +119,7 @@ describe('Vertical Navigation component with prop: menus', () => {
 
   it('renders icon of parent items in collapsed state ', () => {
     const currActive = { name: 'patient_360' };
-    const { getAllByTestId } = render(
-      <VerticalNav
-        menus={menus}
-        expanded={false}
-        active={currActive}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav menus={menus} expanded={false} active={currActive} />);
 
     expect(getAllByTestId('DesignSystem-VerticalNav--Icon')).toHaveLength(menus.length);
   });
@@ -137,34 +127,19 @@ describe('Vertical Navigation component with prop: menus', () => {
   it('renders icon of child items in collapsed state if the parent was initially expanded', () => {
     const childIconCount = 2;
 
-    const { getAllByTestId } = render(
-      <VerticalNav
-        menus={menus}
-        active={active}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav menus={menus} active={active} />);
 
     expect(getAllByTestId('DesignSystem-VerticalNav--Icon')).toHaveLength(menus.length + childIconCount);
   });
 
   it('renders menus with count', () => {
-    const { getAllByTestId } = render(
-      <VerticalNav
-        menus={menus}
-        expanded={true}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav menus={menus} expanded={true} />);
     expect(getAllByTestId('DesignSystem-VerticalNav--Pills')[0]).toHaveTextContent('10');
     expect(getAllByTestId('DesignSystem-VerticalNav--Pills')[1]).toHaveTextContent('99+');
   });
 
   it('renders menus with sections', () => {
-    const { getAllByTestId } = render(
-      <VerticalNav
-        menus={menus}
-        expanded={true}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav menus={menus} expanded={true} />);
 
     const sections = getAllByTestId('DesignSystem-VerticalNav--Section');
     expect(sections).toHaveLength(2);
@@ -173,13 +148,7 @@ describe('Vertical Navigation component with prop: menus', () => {
   });
 
   it('renders menus with disabled menu', () => {
-    const { getAllByTestId } = render(
-      <VerticalNav
-        menus={menus}
-        expanded={true}
-        active={{ name: 'patient_360' }}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav menus={menus} expanded={true} active={{ name: 'patient_360' }} />);
     const disabledText = getAllByTestId('DesignSystem-VerticalNav--Text')[disabledIndex];
     expect(disabledText).toHaveClass('Text--disabled');
 
@@ -193,12 +162,7 @@ describe('Vertical Navigation component with prop: menus', () => {
   it('renders child items if parent item is clicked and panel is expanded', () => {
     const menuClicked = 1;
     const { getAllByTestId } = render(
-      <VerticalNav
-        expanded={true}
-        menus={menus}
-        active={{ name: 'patient_360' }}
-        onClick={onClick}
-      />
+      <VerticalNav expanded={true} menus={menus} active={{ name: 'patient_360' }} onClick={onClick} />
     );
 
     const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Item')[menuClicked];
@@ -208,7 +172,6 @@ describe('Vertical Navigation component with prop: menus', () => {
     expect(childItems[2].textContent).toMatch('Timeline');
     expect(childItems[3].textContent).toMatch('Care Plans');
   });
-
 });
 
 describe('Vertical Navigation component active menu', () => {
@@ -216,13 +179,7 @@ describe('Vertical Navigation component active menu', () => {
 
   it('renders menus with active menu', () => {
     const currActive = { name: 'patient_360' };
-    const { getAllByTestId } = render(
-      <VerticalNav
-        expanded={true}
-        menus={menus}
-        active={currActive}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav expanded={true} menus={menus} active={currActive} />);
     const activeText = getAllByTestId('DesignSystem-VerticalNav--Text')[activeIndex];
     expect(activeText).toHaveClass('Text--link');
 
@@ -234,25 +191,13 @@ describe('Vertical Navigation component active menu', () => {
   });
 
   it('renders active menu with link', () => {
-    const { getAllByTestId } = render(
-      <VerticalNav
-        expanded={true}
-        menus={menus}
-        active={{ link: '/patient360' }}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav expanded={true} menus={menus} active={{ link: '/patient360' }} />);
     const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Text')[activeIndex];
     expect(activeMenu).toHaveClass('Text--link');
   });
 
   it('renders menu when parent item is active', () => {
-    const { getAllByTestId } = render(
-      <VerticalNav
-        expanded={true}
-        menus={menus}
-        active={active}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav expanded={true} menus={menus} active={active} />);
 
     const childIndex = 2;
     const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Text')[childIndex];
@@ -261,42 +206,24 @@ describe('Vertical Navigation component active menu', () => {
 
   it('renders menu when active prop is updated', () => {
     const { getAllByTestId, rerender } = render(
-      <VerticalNav
-        expanded={true}
-        menus={menus}
-        active={{ name: 'patient_360' }}
-      />
+      <VerticalNav expanded={true} menus={menus} active={{ name: 'patient_360' }} />
     );
     const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Text')[activeIndex];
     expect(activeMenu).toHaveClass('Text--link');
 
-    rerender(
-      <VerticalNav
-        expanded={true}
-        menus={menus}
-        active={active}
-      />
-    );
+    rerender(<VerticalNav expanded={true} menus={menus} active={active} />);
 
     const updatedActiveIndex = 2;
     const newActiveMenu = getAllByTestId('DesignSystem-VerticalNav--Text');
     expect(newActiveMenu[updatedActiveIndex]).toHaveClass('Text--link');
     expect(newActiveMenu[activeIndex]).not.toHaveClass('Text--link');
   });
-
 });
 
 describe('Vertical Navigation component prop: onClick', () => {
-
   it('calls onClick callback', () => {
     const menuClicked = 0;
-    const { getAllByTestId } = render(
-      <VerticalNav
-        menus={menus}
-        active={active}
-        onClick={onClick}
-      />
-    );
+    const { getAllByTestId } = render(<VerticalNav menus={menus} active={active} onClick={onClick} />);
 
     const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Item')[menuClicked];
     fireEvent.click(activeMenu);
@@ -307,12 +234,7 @@ describe('Vertical Navigation component prop: onClick', () => {
   it('calls onClick callback if parent item is clicked and panel is collapsed', () => {
     const menuClicked = 1;
     const { getAllByTestId } = render(
-      <VerticalNav
-        expanded={false}
-        menus={menus}
-        active={{ name: 'patient_360' }}
-        onClick={onClick}
-      />
+      <VerticalNav expanded={false} menus={menus} active={{ name: 'patient_360' }} onClick={onClick} />
     );
 
     const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Item')[menuClicked];
@@ -321,5 +243,4 @@ describe('Vertical Navigation component prop: onClick', () => {
     // @ts-ignore
     expect(onClick).toHaveBeenCalledWith(menus[menuClicked].subMenu[0]);
   });
-
 });

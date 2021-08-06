@@ -2,7 +2,6 @@ import * as React from 'react';
 import { VerticalNav } from '@/index';
 
 export const nonCollapsibleVerticalNavigation = () => {
-
   const data = [
     {
       name: 'practice',
@@ -27,17 +26,12 @@ export const nonCollapsibleVerticalNavigation = () => {
   ];
 
   const [active, setActive] = React.useState({
-    name: 'users'
+    name: 'users',
   });
 
   return (
     <div style={{ height: '50vh', background: 'var(--secondary-lightest)' }}>
-      <VerticalNav
-        menus={data}
-        active={active}
-        expanded={true}
-        onClick={setActive}
-      />
+      <VerticalNav menus={data} active={active} expanded={true} onClick={setActive} />
     </div>
   );
 };
@@ -88,8 +82,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

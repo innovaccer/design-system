@@ -7,32 +7,29 @@ export const moreThan4Levels = () => {
   const list = [
     {
       label: 'Level 0',
-      link: '/level0'
+      link: '/level0',
     },
     {
       label: 'Level 1',
-      link: '/level1'
+      link: '/level1',
     },
     {
       label: 'Level 2',
-      link: '/level2'
+      link: '/level2',
     },
     {
       label: 'Level 3',
-      link: '/level3'
+      link: '/level3',
     },
     {
       label: 'Level 4',
-      link: '/level4'
+      link: '/level4',
     },
   ];
 
   return (
     <div style={{ background: 'var(--secondary-lightest)' }}>
-      <Breadcrumbs
-        list={list}
-        onClick={link => action(`on-click: ${link}`)()}
-      />
+      <Breadcrumbs list={list} onClick={(link) => action(`on-click: ${link}`)()} />
     </div>
   );
 };
@@ -77,8 +74,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

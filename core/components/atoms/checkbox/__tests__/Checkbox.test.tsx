@@ -23,11 +23,7 @@ describe('Checkbox component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Checkbox
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Checkbox {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -49,11 +45,7 @@ describe('Checkbox component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Checkbox
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Checkbox {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -75,11 +67,7 @@ describe('Checkbox component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Checkbox
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Checkbox {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

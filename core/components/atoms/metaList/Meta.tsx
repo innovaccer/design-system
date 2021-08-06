@@ -10,22 +10,11 @@ export interface MetaProps {
 }
 
 export const Meta = (props: MetaProps) => {
-  const {
-    label,
-    icon,
-    iconAppearance,
-    labelAppearance,
-  } = props;
+  const { label, icon, iconAppearance, labelAppearance } = props;
 
   return (
     <span className={'Meta'}>
-      {icon && (
-        <Icon
-          name={icon}
-          appearance={iconAppearance}
-          className={'Meta-icon'}
-        />
-      )}
+      {icon && <Icon name={icon} appearance={iconAppearance} className={'Meta-icon'} />}
       <Text appearance={labelAppearance}>{label}</Text>
     </span>
   );

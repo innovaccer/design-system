@@ -13,17 +13,17 @@ export const all = () => {
     {
       name: 'menu_2',
       label: 'Menu 2',
-      count: 10
+      count: 10,
     },
     {
       name: 'menu_3',
       label: 'Menu 3',
-      disabled: true
-    }
+      disabled: true,
+    },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'menu_1'
+    name: 'menu_1',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -39,15 +39,10 @@ export const all = () => {
           background: 'white',
           padding: 'var(--spacing-m)',
           borderTop: 'var(--border)',
-          borderBottom: 'var(--border)'
+          borderBottom: 'var(--border)',
         }}
       >
-        <HorizontalNav
-          className="w-100 justify-content-center"
-          menus={data}
-          active={active}
-          onClick={onClickHandler}
-        />
+        <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
       </div>
     </div>
   );
@@ -108,8 +103,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

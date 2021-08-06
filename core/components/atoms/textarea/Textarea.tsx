@@ -79,11 +79,14 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
     ...rest
   } = props;
 
-  const classes = classNames({
-    ['Textarea']: true,
-    ['Textarea--resize']: resize,
-    ['Textarea--error']: error
-  }, className);
+  const classes = classNames(
+    {
+      ['Textarea']: true,
+      ['Textarea--resize']: resize,
+      ['Textarea--error']: error,
+    },
+    className
+  );
 
   return (
     <textarea

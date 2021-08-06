@@ -15,13 +15,7 @@ describe('Heading component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Heading
-          {...attr}
-        >
-          Heading
-        </Heading>
-      );
+      const { baseElement } = render(<Heading {...attr}>Heading</Heading>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -38,13 +32,7 @@ describe('Heading component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Heading
-          {...attr}
-        >
-          Heading
-        </Heading>
-      );
+      const { baseElement } = render(<Heading {...attr}>Heading</Heading>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -67,43 +55,35 @@ describe('Heading component', () => {
   });
 
   describe('Heading Component with overwrite class', () => {
-
     it('overwrite Heading class', () => {
       const { getByTestId } = render(<Heading className="HeadingClass">{'Heading'}</Heading>);
       expect(getByTestId('DesignSystem-Heading')).toHaveClass('HeadingClass');
     });
-
   });
 
   describe('Heading component with prop:appearance', () => {
-
-    appearance.forEach(appear => {
+    appearance.forEach((appear) => {
       it(`should have the Heading--${appear} class when appearance=${appear} `, () => {
         const { getByTestId } = render(<Heading appearance={appear}>{'Heading'}</Heading>);
         expect(getByTestId('DesignSystem-Heading')).toHaveClass(`Heading--${appear}`);
       });
     });
-
   });
 
   describe('Heading component with prop:size', () => {
-
-    sizes.forEach(size => {
+    sizes.forEach((size) => {
       it(`should have the Heading--${size} class when appearance=${size} `, () => {
         const { getByTestId } = render(<Heading size={size}>{'Heading'}</Heading>);
         expect(getByTestId('DesignSystem-Heading')).toHaveClass(`Heading--${size}`);
       });
     });
-
   });
   describe('Heading component attribute componentType', () => {
-
-    sizes.forEach(size => {
+    sizes.forEach((size) => {
       it(`should have the Heading--${size} class when appearance=${size} `, () => {
         const { getByTestId } = render(<Heading size={size}>{'Heading'}</Heading>);
         expect(getByTestId('DesignSystem-Heading').tagName).toEqual(`${sizeMap[size]}`);
       });
     });
   });
-
 });

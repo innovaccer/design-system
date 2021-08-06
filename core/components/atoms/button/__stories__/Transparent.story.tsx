@@ -1,13 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const transparentButton = () => (
-  <Button
-    appearance="transparent"
-  >
-    Re-evaluate
-  </Button>
-);
+export const transparentButton = () => <Button appearance="transparent">Re-evaluate</Button>;
 
 export default {
   title: 'Components/Button/Transparent Button',
@@ -16,8 +10,8 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Transparent button.'
-      }
-    }
-  }
+        description: 'Transparent button.',
+      },
+    },
+  },
 };

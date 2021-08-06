@@ -2,8 +2,32 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 
-type Columns = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | 'auto'
-  | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+type Columns =
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | '10'
+  | '11'
+  | '12'
+  | 'auto'
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12;
 
 export interface ColumnProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
@@ -33,17 +57,7 @@ export interface ColumnProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
 }
 
 export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => {
-  const {
-    size,
-    sizeXS,
-    sizeS,
-    sizeM,
-    sizeL,
-    sizeXL,
-    className,
-    children,
-    ...rest
-  } = props;
+  const { size, sizeXS, sizeS, sizeM, sizeL, sizeXL, className, children, ...rest } = props;
 
   const classes = classNames({
     ['Col']: true,
@@ -53,16 +67,11 @@ export const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref)
     [`Col--m-${sizeM}`]: sizeM,
     [`Col--l-${sizeL}`]: sizeL,
     [`Col--xl-${sizeXL}`]: sizeXL,
-    [`${className}`]: className
+    [`${className}`]: className,
   });
 
   return (
-    <div
-      ref={ref}
-      data-test="DesignSystem-Column"
-      {...rest}
-      className={classes}
-    >
+    <div ref={ref} data-test="DesignSystem-Column" {...rest} className={classes}>
       {children}
     </div>
   );

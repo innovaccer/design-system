@@ -6,7 +6,7 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 const length = ['small', 'medium', 'large'];
 
 const mapper = {
-  length: valueHelper(length, { required: true, iterate: true })
+  length: valueHelper(length, { required: true, iterate: true }),
 };
 
 describe('Image placeholder component', () => {
@@ -14,11 +14,7 @@ describe('Image placeholder component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <PlaceholderParagraph
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<PlaceholderParagraph {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

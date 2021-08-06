@@ -15,11 +15,7 @@ describe('ModalDescription component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <ModalDescription
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<ModalDescription {...attr} />);
 
       expect(asFragment()).toMatchSnapshot();
     });
@@ -29,39 +25,33 @@ describe('ModalDescription component', () => {
 });
 
 describe('ModalDescription component with props', () => {
-
   it('renders default props', () => {
     const { getByTestId, queryByTestId } = render(<ModalDescription />);
 
     expect(getByTestId('DesignSystem-ModalDescription')).toHaveClass('Modal-description');
     expect(queryByTestId('DesignSystem-ModalDescription--Title')).not.toBeInTheDocument();
     expect(queryByTestId('DesignSystem-ModalDescription--Description')).not.toBeInTheDocument();
-
   });
 
   it('ModalDescription with prop: title', () => {
-    const { getByTestId } = render(<ModalDescription title={StringValue}/>);
+    const { getByTestId } = render(<ModalDescription title={StringValue} />);
 
     expect(getByTestId('DesignSystem-ModalDescription--Title').textContent).toMatch(StringValue);
-
   });
 
   it('ModalDescription with prop: description', () => {
-    const { getByTestId } = render(<ModalDescription description={StringValue}/>);
+    const { getByTestId } = render(<ModalDescription description={StringValue} />);
 
     expect(getByTestId('DesignSystem-ModalDescription--Description').textContent).toMatch(StringValue);
-
   });
-
 });
 
 describe('ModalDescription with overwrite class', () => {
   const className = 'DS-ModalDescription';
 
   it('overwrite ModalDescription class', () => {
-    const { getByTestId } = render(<ModalDescription className={className}/>);
+    const { getByTestId } = render(<ModalDescription className={className} />);
 
     expect(getByTestId('DesignSystem-ModalDescription')).toHaveClass(className);
   });
-
 });

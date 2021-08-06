@@ -32,5 +32,5 @@ export const EmptyCard = () => {
 
 export default {
   title: 'Components/Card/Empty Card',
-  component: Card
+  component: Card,
 };

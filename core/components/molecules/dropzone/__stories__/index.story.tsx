@@ -5,10 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { DropzoneProps } from '@/index.type';
 
 export const all = () => {
-  const type = select('type',
-    ['standard', 'compressed', 'tight'],
-    'standard'
-  );
+  const type = select('type', ['standard', 'compressed', 'tight'], 'standard');
 
   const formatLabel = text('formatLabel', 'Accepted formats: PDF, jpg');
   const sizeLabel = text('sizeLabel', 'Maximum size: 25 MB');
@@ -25,7 +22,7 @@ export const all = () => {
       multiple={multiple}
       type={type}
       onDrop={onDrop}
-      sampleFileLink={(
+      sampleFileLink={
         <Link
           href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
           download="Test.pdf"
@@ -33,7 +30,7 @@ export const all = () => {
         >
           Download sample file
         </Link>
-      )}
+      }
     />
   );
 };
@@ -64,8 +61,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

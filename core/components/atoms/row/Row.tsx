@@ -9,15 +9,10 @@ export const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
 
   const classes = classNames({
     Row: true,
-    [`${className}`]: className
+    [`${className}`]: className,
   });
   return (
-    <div
-      data-test="DesignSystem-Row"
-      ref={ref}
-      {...rest}
-      className={classes}
-    >
+    <div data-test="DesignSystem-Row" ref={ref} {...rest} className={classes}>
       {children}
     </div>
   );

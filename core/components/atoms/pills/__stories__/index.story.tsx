@@ -15,10 +15,7 @@ export const all = () => {
   const children = text('children', 'Pill');
 
   return (
-    <Pills
-      appearance={appearance}
-      subtle={subtle}
-    >
+    <Pills appearance={appearance} subtle={subtle}>
       {children}
     </Pills>
   );
@@ -26,5 +23,5 @@ export const all = () => {
 
 export default {
   title: 'Components/Pills/All',
-  component: Pills
+  component: Pills,
 };

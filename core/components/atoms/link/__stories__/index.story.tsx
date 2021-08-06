@@ -16,11 +16,11 @@ export const all = () => {
     target,
     size,
     appearance,
-    disabled
+    disabled,
   };
 
   return (
-    <Link {...options} onClick={action('link click')} >
+    <Link {...options} onClick={action('link click')}>
       Click this link.
     </Link>
   );
@@ -32,8 +32,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Link'
-      }
-    }
-  }
+        title: 'Link',
+      },
+    },
+  },
 };

@@ -4,13 +4,9 @@ import Card from '@/components/atoms/card';
 
 // CSF format story
 export const rangeLimit = () => {
-
   return (
     <div className="d-flex mr-9">
-      <Card
-        className="d-inline-flex"
-        shadow="light"
-      >
+      <Card className="d-inline-flex" shadow="light">
         <DateRangePicker
           startDate={new Date(2020, 2, 3)}
           endDate={new Date(2020, 2, 11)}
@@ -29,8 +25,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'DateRangePicker'
-      }
-    }
-  }
+        title: 'DateRangePicker',
+      },
+    },
+  },
 };

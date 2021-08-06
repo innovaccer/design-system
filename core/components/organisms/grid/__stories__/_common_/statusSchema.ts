@@ -8,10 +8,10 @@ const schema: Schema = [
     displayName: 'Name',
     width: 300,
     resizable: true,
-    translate: a => ({
+    translate: (a) => ({
       title: `${a.firstName} ${a.lastName}`,
       firstName: a.firstName,
-      lastName: a.lastName
+      lastName: a.lastName,
     }),
     cellType: 'AVATAR_WITH_TEXT',
   },
@@ -21,9 +21,9 @@ const schema: Schema = [
     width: 200,
     resizable: true,
     cellType: 'STATUS_HINT',
-    translate: a => ({
+    translate: (a) => ({
       title: a.gender,
-      statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+      statusAppearance: a.gender === 'Female' ? 'alert' : 'success',
     }),
   },
 ];

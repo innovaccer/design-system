@@ -24,15 +24,17 @@ export const ChipGroup = (props: ChipGroupProps) => {
 
   const onClickHandler = (item: ChipProps) => {
     if (onClick) onClick(item);
-
   };
   const onCloseHandler = (item: ChipProps) => {
     if (onClose) onClose(item);
   };
 
-  const ChipGroupClass = classNames({
-    ['ChipGroup']: true,
-  }, className);
+  const ChipGroupClass = classNames(
+    {
+      ['ChipGroup']: true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-ChipGroup" {...baseProps} className={ChipGroupClass}>

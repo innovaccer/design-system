@@ -13,7 +13,7 @@ const data = [
     role: 'Administrator',
     manager: 'Seb Grant',
     last_login: 'May 5',
-    status: 'Active'
+    status: 'Active',
   },
   {
     firstName: 'Frazer',
@@ -22,22 +22,19 @@ const data = [
     role: 'Healthcoaches',
     manager: 'Mike Page',
     last_login: 'May 4',
-    status: 'Active'
+    status: 'Active',
   },
   {
     firstName: 'Lemmie',
     lastName: 'Ciric',
     email: {
       title: 'lciric2@dmoz.org',
-      metaList: [
-        'First',
-        'Second'
-      ]
+      metaList: ['First', 'Second'],
     },
     role: 'Administrator',
     manager: 'Seb Grant',
     last_login: 'April 5',
-    status: 'Inactive'
+    status: 'Inactive',
   },
   {
     firstName: 'Randy',
@@ -46,7 +43,7 @@ const data = [
     role: 'Healthcoaches',
     manager: 'William Estrada',
     last_login: 'March 5',
-    status: 'Active'
+    status: 'Active',
   },
   {
     firstName: 'Rolando',
@@ -55,7 +52,7 @@ const data = [
     role: 'Administrator',
     manager: 'Seb Grant',
     last_login: 'May 10',
-    status: 'Inactive'
+    status: 'Inactive',
   },
   {
     firstName: 'Lem',
@@ -64,7 +61,7 @@ const data = [
     role: 'PCP Staff',
     manager: 'Seb Grant',
     last_login: 'June 5',
-    status: 'Inactive'
+    status: 'Inactive',
   },
   {
     firstName: 'Sayres',
@@ -73,7 +70,7 @@ const data = [
     role: 'Leadership',
     manager: 'William Estrada',
     last_login: 'May 5',
-    status: 'Active'
+    status: 'Active',
   },
   {
     firstName: 'Murray',
@@ -82,7 +79,7 @@ const data = [
     role: 'Healthcoaches',
     manager: 'William Estrada',
     last_login: 'May 9',
-    status: 'Active'
+    status: 'Active',
   },
   {
     firstName: 'Jena',
@@ -91,7 +88,7 @@ const data = [
     role: 'Leadership',
     manager: 'Mike Page',
     last_login: 'Jan 5',
-    status: 'Active'
+    status: 'Active',
   },
   {
     firstName: 'Annabel',
@@ -100,43 +97,42 @@ const data = [
     role: 'Healthcoaches',
     manager: 'Mike Page',
     last_login: 'April 27',
-    status: 'Inactive'
+    status: 'Inactive',
   },
 ];
 
 export const selection = () => {
-
   const schema: TableProps['schema'] = [
     {
       name: 'name',
       displayName: 'Name',
       width: '30%',
       separator: true,
-      translate: a => ({
+      translate: (a) => ({
         title: `${a.lastName}, ${a.firstName}`,
         firstName: a.firstName,
-        lastName: a.lastName
+        lastName: a.lastName,
       }),
       cellType: 'AVATAR_WITH_TEXT',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'role',
       displayName: 'Role',
       width: 250,
-      sorting: false
+      sorting: false,
     },
     {
       name: 'manager',
       displayName: 'Manager',
       width: 180,
-      sorting: false
+      sorting: false,
     },
     {
       name: 'last_login',
       displayName: 'Last Login',
       width: 100,
-      sorting: false
+      sorting: false,
     },
     {
       name: 'status',
@@ -144,9 +140,9 @@ export const selection = () => {
       width: 200,
       cellType: 'STATUS_HINT',
       sorting: false,
-      translate: a => ({
+      translate: (a) => ({
         title: a.status,
-        statusAppearance: (a.status === 'Inactive') ? 'default' : 'success'
+        statusAppearance: a.status === 'Inactive' ? 'default' : 'success',
       }),
     },
   ];
@@ -160,19 +156,26 @@ export const selection = () => {
         showMenu={false}
         withHeader={true}
         withCheckbox={true}
-        onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+        onSelect={(rowIndex, selected, selectedList, selectAll) =>
+          action(
+            `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+              selectedList
+            )} selectAll: ${selectAll}`
+          )()
+        }
         headerOptions={{
-          withSearch: true
+          withSearch: true,
         }}
         onSearch={(currData, searchTerm) => {
-          return currData.filter(d =>
-            d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+          return currData.filter(
+            (d) =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.lastName.toLowerCase().match(searchTerm.toLowerCase())
           );
         }}
         withPagination={true}
         pageSize={5}
-        onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+        onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
       />
     </Card>
   );
@@ -265,9 +268,9 @@ export default {
         customCode,
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

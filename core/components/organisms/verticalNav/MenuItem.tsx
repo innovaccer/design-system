@@ -2,12 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import {
-  getTextAppearance,
-  getIconAppearance,
-  getPillsAppearance,
-  Menu,
-} from '@/utils/navigationHelper';
+import { getTextAppearance, getIconAppearance, getPillsAppearance, Menu } from '@/utils/navigationHelper';
 
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
@@ -21,16 +16,7 @@ export interface MenuItemProps extends BaseProps {
 }
 
 export const MenuItem = (props: MenuItemProps) => {
-  const {
-    menu,
-    isActive,
-    expanded,
-    rounded,
-    hasSubmenu,
-    isChildren,
-    isChildrenVisible,
-    onClick
-  } = props;
+  const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -64,7 +50,7 @@ export const MenuItem = (props: MenuItemProps) => {
       const count = menu.count > 99 ? '99+' : menu.count;
       const PillsClass = classNames({
         ['MenuItem-count']: true,
-        ['MenuItem-count--disabled']: menu.disabled
+        ['MenuItem-count--disabled']: menu.disabled,
       });
 
       return (
@@ -85,11 +71,7 @@ export const MenuItem = (props: MenuItemProps) => {
   if (!expanded && !menu.icon) return null;
 
   return (
-    <div
-      className={ItemClass}
-      {...baseProps}
-      onClick={onClickHandler}
-    >
+    <div className={ItemClass} {...baseProps} onClick={onClickHandler}>
       <div className="d-flex align-items-center overflow-hidden">
         {menu.icon && (
           <Icon
@@ -100,10 +82,7 @@ export const MenuItem = (props: MenuItemProps) => {
           />
         )}
         {expanded && (
-          <Text
-            data-test="DesignSystem-VerticalNav--Text"
-            appearance={getTextAppearance(isActive, menu.disabled)}
-          >
+          <Text data-test="DesignSystem-VerticalNav--Text" appearance={getTextAppearance(isActive, menu.disabled)}>
             {menu.label}
           </Text>
         )}
@@ -114,7 +93,7 @@ export const MenuItem = (props: MenuItemProps) => {
 };
 
 MenuItem.defaultProps = {
-  isActive: false
+  isActive: false,
 };
 
 export default MenuItem;

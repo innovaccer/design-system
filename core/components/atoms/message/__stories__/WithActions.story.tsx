@@ -8,11 +8,13 @@ export const MessageWithActions = () => (
       <Message
         appearance="alert"
         description="Sorry we couldn't subscribe you. Please try again."
-        actions={(
+        actions={
           <>
-            <Text className="cursor-pointer" appearance="link">Try again</Text>
+            <Text className="cursor-pointer" appearance="link">
+              Try again
+            </Text>
           </>
-        )}
+        }
       />
     </Column>
   </Row>
@@ -20,5 +22,5 @@ export const MessageWithActions = () => (
 
 export default {
   title: 'Components/Message/Message With Actions',
-  component: Message
+  component: Message,
 };

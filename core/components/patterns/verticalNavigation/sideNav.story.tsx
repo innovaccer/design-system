@@ -104,8 +104,8 @@ export default {
       docPage: {
         customCode,
         title: 'Side Nav',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

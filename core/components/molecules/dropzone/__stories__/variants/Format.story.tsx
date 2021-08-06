@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import { DropzoneProps } from '@/index.type';
 
 export const format = () => {
-
   const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles, rejectedFiles) => {
     return action(`Accepted Files: ${acceptedFiles}, rejectedFiles: ${rejectedFiles}`)();
   };
@@ -16,7 +15,7 @@ export const format = () => {
       sizeLabel="Maximum size: 25 MB"
       onDrop={onDrop}
       className="mb-3"
-      sampleFileLink={(
+      sampleFileLink={
         <Link
           href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
           download="Test.pdf"
@@ -24,7 +23,7 @@ export const format = () => {
         >
           Download sample file
         </Link>
-      )}
+      }
     />
   );
 };
@@ -60,8 +59,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

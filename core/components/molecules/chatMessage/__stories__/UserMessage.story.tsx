@@ -3,17 +3,9 @@ import { select, text, boolean } from '@storybook/addon-knobs';
 import { ChatMessage } from '@/index';
 // CSF format story
 export const chatMessage = () => {
-  const type = select(
-    'type',
-    ['incoming', 'outgoing'],
-    'incoming'
-  );
+  const type = select('type', ['incoming', 'outgoing'], 'incoming');
 
-  const statusType = select(
-    'statusType',
-    ['sent', 'urgent', 'read', 'sending', 'failed'],
-    'sent'
-  );
+  const statusType = select('statusType', ['sent', 'urgent', 'read', 'sending', 'failed'], 'sent');
 
   const isTyping = boolean('isTyping', false);
 
@@ -29,19 +21,17 @@ export const chatMessage = () => {
     failedMessage,
     sendingMessage,
     text: message,
-    statusOptions: { type: statusType, time: '10:11 AM' }
+    statusOptions: { type: statusType, time: '10:11 AM' },
   };
 
   return (
     <div className="w-25">
-      <ChatMessage
-        {...options}
-      />
+      <ChatMessage {...options} />
     </div>
   );
 };
 
 export default {
   title: 'Components/Chat/Chat Message',
-  component: ChatMessage
+  component: ChatMessage,
 };

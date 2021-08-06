@@ -27,9 +27,7 @@ describe('Dialog component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dialog {...attr} />
-      );
+      const { baseElement } = render(<Dialog {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -55,9 +53,7 @@ describe('Dialog component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dialog {...attr} />
-      );
+      const { baseElement } = render(<Dialog {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -82,9 +78,7 @@ describe('Dialog component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Dialog {...attr} />
-      );
+      const { baseElement } = render(<Dialog {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -93,7 +87,6 @@ describe('Dialog component', () => {
 });
 
 describe('Dialog component with props', () => {
-
   it('renders Modal', () => {
     const { getByTestId } = render(
       <Dialog
@@ -157,7 +150,6 @@ describe('Dialog component with props', () => {
 
     expect(getByTestId('DesignSystem-Dialog--SecondaryButton')).toHaveClass('Button--basic');
   });
-
 });
 
 describe('Dialog Component with overwrite class', () => {
@@ -179,5 +171,4 @@ describe('Dialog Component with overwrite class', () => {
 
     expect(getByTestId('DesignSystem-Dialog')).toHaveClass(className);
   });
-
 });

@@ -39,9 +39,9 @@ export const twoSteps = () => {
           heading: 'This is modal Heading',
           subHeading: 'This is modal subheading',
           backButton: !!page,
-          backButtonCallback: () => setPage(0)
+          backButtonCallback: () => setPage(0),
         }}
-        footer={(
+        footer={
           <>
             {page === 0 && (
               <Button appearance="primary" onClick={() => setPage(1)}>
@@ -50,16 +50,14 @@ export const twoSteps = () => {
             )}
             {page === 1 && (
               <>
-                <Button appearance="primary">
-                  Submit
-                </Button>
+                <Button appearance="primary">Submit</Button>
                 <Button appearance="basic" onClick={() => setPage(0)} className="ml-4">
                   Back
                 </Button>
               </>
             )}
           </>
-        )}
+        }
       >
         {page === 0 && (
           <>
@@ -179,8 +177,8 @@ export default {
       docPage: {
         customCode,
         title: 'FullscreenModal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

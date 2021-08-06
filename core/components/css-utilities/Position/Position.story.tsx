@@ -7,38 +7,37 @@ export const position = () => {
   const data = [
     {
       className: 'position-static',
-      properties: 'position: static ;'
+      properties: 'position: static ;',
     },
     {
       className: 'position-relative',
-      properties: 'position: relative ;'
+      properties: 'position: relative ;',
     },
     {
       className: 'position-absolute',
-      properties: 'position: absolute ;'
+      properties: 'position: absolute ;',
     },
     {
       className: 'position-fixed',
-      properties: 'position: fixed ;'
+      properties: 'position: fixed ;',
     },
     {
       className: 'position-sticky',
-      properties: 'position: -webkit-sticky ;\nposition: sticky ;'
-    }
+      properties: 'position: -webkit-sticky ;\nposition: sticky ;',
+    },
   ];
   return (
     <div>
-      <Heading size="xxl" >Position</Heading>< br />
+      <Heading size="xxl">Position</Heading>
+      <br />
       <Text weight="strong">Use these shorthand utilities for quickly configuring the position of an element.</Text>
-      <div
-        className="mb-8 mt-5"
-      >
+      <div className="mb-8 mt-5">
         <Card className="h-100">
           <Table
             data={data}
             schema={utilitiesSchema}
             headerOptions={{
-              withSearch: true
+              withSearch: true,
             }}
             size={'standard'}
             showMenu={false}
@@ -46,14 +45,20 @@ export const position = () => {
         </Card>
       </div>
       <Heading size="m">Examples</Heading>
-      <Paragraph >Here are some representative examples of these classes:</Paragraph>< br />
+      <Paragraph>Here are some representative examples of these classes:</Paragraph>
+      <br />
       <div className="DocPage-codeBlock w-50">
-        <code >
-          {'<div className="position-static">...</div>'}<br />
-          {'<div className="position-relative">...</div>'}<br />
-          {'<div className="position-absolute">...</div>'}<br />
-          {'<div className="position-fixed">...</div>'}<br />
-          {'<div className="position-sticky">...</div>'}<br />
+        <code>
+          {'<div className="position-static">...</div>'}
+          <br />
+          {'<div className="position-relative">...</div>'}
+          <br />
+          {'<div className="position-absolute">...</div>'}
+          <br />
+          {'<div className="position-fixed">...</div>'}
+          <br />
+          {'<div className="position-sticky">...</div>'}
+          <br />
         </code>
       </div>
     </div>
@@ -67,7 +72,7 @@ export default {
     viewMode: 'story',
     docs: {
       page: null,
-      docPage: null
-    }
-  }
+      docPage: null,
+    },
+  },
 };

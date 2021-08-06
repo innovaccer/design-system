@@ -1,5 +1,12 @@
 import * as React from 'react';
-import { Schema, Pinned, onMenuChangeFn, onFilterChangeFn, updateColumnSchemaFunction, reorderColumnFunction } from './Grid';
+import {
+  Schema,
+  Pinned,
+  onMenuChangeFn,
+  onFilterChangeFn,
+  updateColumnSchemaFunction,
+  reorderColumnFunction,
+} from './Grid';
 import { Checkbox, Placeholder } from '@/index';
 import { Cell } from './Cell';
 import classNames from 'classnames';
@@ -17,39 +24,20 @@ export interface GridHeadProps {
 
 export const GridHead = (props: GridHeadProps) => {
   const context = React.useContext(GridContext);
-  const {
-    schema,
-    onSelectAll,
-    onMenuChange,
-    onFilterChange,
-    updateColumnSchema,
-    reorderColumn,
-  } = props;
+  const { schema, onSelectAll, onMenuChange, onFilterChange, updateColumnSchema, reorderColumn } = props;
 
-  const {
-    withCheckbox,
-    loading,
-    selectAll,
-  } = context;
+  const { withCheckbox, loading, selectAll } = context;
 
-  const pinnedSchema = schema.filter(s => !s.hidden && s.pinned);
-  const leftPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'left');
-  const rightPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'right');
-  const unpinnedSchema = schema.filter(s => !s.hidden && !s.pinned);
+  const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
+  const leftPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'left');
+  const rightPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'right');
+  const unpinnedSchema = schema.filter((s) => !s.hidden && !s.pinned);
 
   const renderCheckbox = (show: boolean) => {
-    if (!show || !(withCheckbox)) return null;
+    if (!show || !withCheckbox) return null;
     return (
       <div className="Grid-cell Grid-cell--head Grid-cell--checkbox">
-        {loading ? (
-          <Placeholder />
-        ) : (
-          <Checkbox
-            {...selectAll}
-            onChange={onSelectAll}
-          />
-        )
-        }
+        {loading ? <Placeholder /> : <Checkbox {...selectAll} onChange={onSelectAll} />}
       </div>
     );
   };
@@ -60,7 +48,7 @@ export const GridHead = (props: GridHeadProps) => {
         'Grid-cellGroup': true,
         'Grid-cellGroup--pinned': pinned,
         [`Grid-cellGroup--pinned-${pinned}`]: pinned,
-        'Grid-cellGroup--main': !pinned
+        'Grid-cellGroup--main': !pinned,
       });
 
       return (

@@ -16,7 +16,7 @@ export const defaultHorizontalNavigation = () => {
   ];
 
   const [active, setActive] = React.useState({
-    name: 'engagements'
+    name: 'engagements',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -26,12 +26,7 @@ export const defaultHorizontalNavigation = () => {
 
   return (
     <div className="d-flex align-items-center py-6" style={{ background: 'var(--secondary-lightest)' }}>
-      <HorizontalNav
-        className="w-100 justify-content-center"
-        menus={data}
-        active={active}
-        onClick={onClickHandler}
-      />
+      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
     </div>
   );
 };
@@ -75,8 +70,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

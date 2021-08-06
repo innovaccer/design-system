@@ -20,8 +20,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Chip'
-      }
-    }
-  }
+        title: 'Chip',
+      },
+    },
+  },
 };

@@ -5,33 +5,23 @@ import Pagination from '../Pagination';
 
 // CSF format story
 export const all = () => {
-  const paginationType = select(
-    'type',
-    ['basic', 'jump'],
-    undefined
-  );
+  const paginationType = select('type', ['basic', 'jump'], undefined);
 
-  const page = number(
-    'page',
-    1
-  );
+  const page = number('page', 1);
 
-  const totalPages = number(
-    'totalPages',
-    50
-  );
+  const totalPages = number('totalPages', 50);
 
   return (
     <Pagination
       type={paginationType}
       page={page}
       totalPages={totalPages}
-      onPageChange={pageNo => action(`No-change-action: ${pageNo}`)()}
+      onPageChange={(pageNo) => action(`No-change-action: ${pageNo}`)()}
     />
   );
 };
 
 export default {
   title: 'Components/Pagination/All',
-  component: Pagination
+  component: Pagination,
 };

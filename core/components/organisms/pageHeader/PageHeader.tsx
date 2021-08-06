@@ -65,18 +65,21 @@ export const PageHeader = (props: PageHeaderProps) => {
     status,
     meta,
     navigationPosition,
-    className
+    className,
   } = props;
   const baseProps = extractBaseProps(props);
 
-  const wrapperClasses = classNames({
-    'PageHeader-wrapper': true,
-    ['PageHeader-wrapper--separator']: separator,
-    ['PageHeader-wrapper--withTabs']: tabs
-  }, className);
+  const wrapperClasses = classNames(
+    {
+      'PageHeader-wrapper': true,
+      ['PageHeader-wrapper--separator']: separator,
+      ['PageHeader-wrapper--withTabs']: tabs,
+    },
+    className
+  );
 
   const classes = classNames({
-    PageHeader: true
+    PageHeader: true,
   });
 
   const renderCenter = () => {
@@ -84,11 +87,7 @@ export const PageHeader = (props: PageHeaderProps) => {
       return null;
     }
 
-    return (
-      <div className="PageHeader-navigationWrapper">
-        {navigation || stepper}
-      </div>
-    );
+    return <div className="PageHeader-navigationWrapper">{navigation || stepper}</div>;
   };
 
   return (
@@ -103,9 +102,7 @@ export const PageHeader = (props: PageHeaderProps) => {
             </div>
           </Column>
           <Column size="4" sizeXL="4" sizeM="4">
-            {(!breadcrumbs || navigationPosition === 'center') && (
-              renderCenter()
-            )}
+            {(!breadcrumbs || navigationPosition === 'center') && renderCenter()}
           </Column>
           <Column size="4" sizeXL="4" sizeM="4">
             {actions}
@@ -118,9 +115,7 @@ export const PageHeader = (props: PageHeaderProps) => {
           {meta}
         </div>
       )}
-      {breadcrumbs && navigationPosition === 'bottom' && (
-        renderCenter()
-      )}
+      {breadcrumbs && navigationPosition === 'bottom' && renderCenter()}
       {tabs && <div>{tabs}</div>}
     </div>
   );
@@ -128,7 +123,7 @@ export const PageHeader = (props: PageHeaderProps) => {
 
 PageHeader.defaultProps = {
   navigationPosition: 'center',
-  separator: true
+  separator: true,
 };
 
 export default PageHeader;

@@ -7,18 +7,12 @@ export const iconLeft = () => {
   const icon = 'search';
   return (
     <div className="Row">
-      <div  className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          onChange={action('on-change')}
-          onClear={action('on-clear')}
-          icon={icon}
-        />
+      <div className="mr-9 mb-8 w-25">
+        <Input name="input" value="Value" onChange={action('on-change')} onClear={action('on-clear')} icon={icon} />
         <br />
         <Text weight="strong">Default</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
+      <div className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value=""
@@ -31,7 +25,7 @@ export const iconLeft = () => {
         <br />
         <Text weight="strong">Placeholder</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
+      <div className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value="Value"
@@ -43,23 +37,13 @@ export const iconLeft = () => {
         <br />
         <Text weight="strong">Error</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          onChange={action('on-change')}
-          disabled={true}
-          icon={icon}
-        />
+      <div className="mr-9 mb-8 w-25">
+        <Input name="input" value="Value" onChange={action('on-change')} disabled={true} icon={icon} />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          icon={icon}
-        />
+      <div className="mr-9 mb-8 w-25">
+        <Input name="input" value="Value" icon={icon} />
         <br />
         <Text weight="strong">Read Only</Text>
       </div>
@@ -75,9 +59,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

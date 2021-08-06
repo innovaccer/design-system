@@ -2,10 +2,7 @@ import * as React from 'react';
 import Badge from '../Badge';
 
 export const solidAlert = () => (
-  <Badge
-    appearance="alert"
-    subtle={false}
-  >
+  <Badge appearance="alert" subtle={false}>
     {'Failed'}
   </Badge>
 );
@@ -16,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Badge'
-      }
-    }
-  }
+        title: 'Badge',
+      },
+    },
+  },
 };

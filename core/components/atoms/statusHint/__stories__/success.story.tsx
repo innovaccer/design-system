@@ -1,13 +1,7 @@
 import * as React from 'react';
 import StatusHint from '../StatusHint';
 
-export const success = () => (
-  <StatusHint
-    appearance="success"
-  >
-    {'Success'}
-  </StatusHint>
-);
+export const success = () => <StatusHint appearance="success">{'Success'}</StatusHint>;
 
 export default {
   title: 'Components/StatusHint/Success',
@@ -15,8 +9,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'StatusHint'
-      }
-    }
-  }
+        title: 'StatusHint',
+      },
+    },
+  },
 };

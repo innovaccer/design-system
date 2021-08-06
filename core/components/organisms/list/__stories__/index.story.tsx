@@ -10,99 +10,45 @@ import { action } from '@storybook/addon-actions';
 import { SyncList, AsyncList } from './_common_/types';
 
 export const all = () => {
-  const async = boolean(
-    'async',
-    true
-  );
+  const async = boolean('async', true);
 
   let loading;
   let error;
   let applyData;
   let applySchema;
-  const applyLoaderSchema = boolean(
-    'applyLoaderSchema',
-    true
-  );
+  const applyLoaderSchema = boolean('applyLoaderSchema', true);
 
   if (!async) {
-    loading = boolean(
-      'loading',
-      false
-    );
+    loading = boolean('loading', false);
 
-    error = boolean(
-      'error',
-      false
-    );
+    error = boolean('error', false);
 
-    applySchema = boolean(
-      'applySchema',
-      true
-    );
+    applySchema = boolean('applySchema', true);
 
-    applyData = boolean(
-      'applyData',
-      true
-    );
+    applyData = boolean('applyData', true);
   }
 
-  const type = select(
-    'type',
-    ['resource', 'data'],
-    'resource'
-  );
+  const type = select('type', ['resource', 'data'], 'resource');
 
-  const size = select(
-    'size',
-    ['comfortable', 'standard', 'compressed', 'tight'],
-    'comfortable'
-  );
+  const size = select('size', ['comfortable', 'standard', 'compressed', 'tight'], 'comfortable');
 
-  const withHeader = boolean(
-    'withHeader',
-    false
-  );
+  const withHeader = boolean('withHeader', false);
 
-  const withCheckbox = boolean(
-    'withCheckbox',
-    false
-  );
+  const withCheckbox = boolean('withCheckbox', false);
 
-  const withPagination = boolean(
-    'withPagination',
-    true
-  );
+  const withPagination = boolean('withPagination', true);
 
-  const page = number(
-    'page',
-    1
-  );
+  const page = number('page', 1);
 
-  const paginationType = select(
-    'paginationType',
-    ['basic', 'jump'],
-    'jump'
-  );
+  const paginationType = select('paginationType', ['basic', 'jump'], 'jump');
 
-  const pageSize = number(
-    'pageSize',
-    12
-  );
+  const pageSize = number('pageSize', 12);
 
-  const multipleSorting = boolean(
-    'multipleSorting',
-    false
-  );
+  const multipleSorting = boolean('multipleSorting', false);
 
-  const headCellTooltip = boolean(
-    'headCellTooltip',
-    false
-  );
+  const headCellTooltip = boolean('headCellTooltip', false);
 
-  const separator = boolean(
-    'separator',
-    false
-  );
+  const separator = boolean('separator', false);
 
   let dataAttr = {};
   if (async) {
@@ -139,15 +85,19 @@ export const all = () => {
           page={page}
           pageSize={pageSize}
           loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
-          onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
-          onSelect={(rowIndex, selected, selectedList) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`)()}
-          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          onRowClick={(rowData, rowIndex) =>
+            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
+          }
+          onSelect={(rowIndex, selected, selectedList) =>
+            action(
+              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`
+            )()
+          }
+          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
           multipleSorting={multipleSorting}
-          sortingList={[
-            { name: 'name', type: 'desc' }
-          ]}
+          sortingList={[{ name: 'name', type: 'desc' }]}
           filterList={{
-            name: ['h-r', 's-z']
+            name: ['h-r', 's-z'],
           }}
         />
       </Card>
@@ -166,7 +116,7 @@ export default {
           components: { AsyncList, SyncList },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

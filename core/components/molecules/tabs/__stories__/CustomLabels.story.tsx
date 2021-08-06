@@ -12,47 +12,38 @@ export const customLabels = () => {
   };
 
   return (
-    <Tabs
-      activeIndex={activeIndex}
-      onTabChange={onTabChangeHandler}
-    >
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler}>
       <Tab
-        label={(
+        label={
           <>
             <div className="Tab-count">
               <Badge appearance={activeIndex === 0 ? 'primary' : 'secondary'}>2</Badge>
             </div>
             <Text appearance={activeIndex !== 0 ? 'subtle' : 'link'}>Tab(Recommended)</Text>
           </>
-        )}
+        }
       >
-        <div>
-          Tab(Recommended)
-        </div>
+        <div>Tab(Recommended)</div>
       </Tab>
       <Tab
-        label={(
+        label={
           <div className="Tab-icon">
             <Icon name="south_west" appearance={activeIndex === 1 ? 'info' : 'subtle'} />
             <Text appearance={activeIndex !== 1 ? 'subtle' : 'link'}>All</Text>
           </div>
-        )}
+        }
       >
-        <div>
-          All
-        </div>
+        <div>All</div>
       </Tab>
       <Tab
-        label={(
+        label={
           <>
             <Text appearance={activeIndex !== 2 ? 'subtle' : undefined}>Extras</Text>
           </>
-        )}
+        }
         disabled={true}
       >
-        <div>
-          Extras
-        </div>
+        <div>Extras</div>
       </Tab>
     </Tabs>
   );
@@ -121,7 +112,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

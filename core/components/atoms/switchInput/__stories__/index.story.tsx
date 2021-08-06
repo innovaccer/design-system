@@ -6,22 +6,11 @@ import Switch from '../index';
 
 // CSF format story
 export const all = () => {
+  const size = select('size', ['regular', 'large', 'tiny'], undefined);
 
-  const size = select(
-    'size',
-    ['regular', 'large', 'tiny'],
-    undefined
-  );
+  const checked = boolean('checked', false);
 
-  const checked = boolean(
-    'checked',
-    false
-  );
-
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
   const onChangeHandler = (_event: any, checkedValue: boolean) => {
     updateKnob('checked', checkedValue);
@@ -30,17 +19,12 @@ export const all = () => {
 
   return (
     <div>
-      <Switch
-        disabled={disabled}
-        checked={checked}
-        size={size}
-        onChange={onChangeHandler}
-      />
+      <Switch disabled={disabled} checked={checked} size={size} onChange={onChangeHandler} />
     </div>
   );
 };
 
 export default {
   title: 'Components/Switch/All',
-  component: Switch
+  component: Switch,
 };

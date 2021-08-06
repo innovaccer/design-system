@@ -4,11 +4,7 @@ import { Textarea, Label } from '@/index';
 export const defaultTextarea = () => (
   <>
     <Label withInput={true}>Comments</Label>
-    <Textarea
-      name="Textarea"
-      className="w-25"
-      placeholder="Enter your comments here"
-    />
+    <Textarea name="Textarea" className="w-25" placeholder="Enter your comments here" />
   </>
 );
 
@@ -18,8 +14,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Textarea'
-      }
-    }
-  }
+        title: 'Textarea',
+      },
+    },
+  },
 };

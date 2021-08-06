@@ -6,28 +6,23 @@ const options = [
   {
     label: 'Lawson, Joy',
     value: 'Lawson_Joy',
-    subInfo: 'Patient'
+    subInfo: 'Patient',
   },
   {
     label: 'West, Sarah',
     value: 'West_Sarah',
-    subInfo: 'Primary Care Physician'
+    subInfo: 'Primary Care Physician',
   },
   {
     label: 'Powell, Lauren',
     value: 'Powell_Lauren',
-    subInfo: 'Care Manager'
+    subInfo: 'Care Manager',
   },
 ];
 
 // CSF format story
 export const dropdownItemsWithSubInfo = () => (
-  <Dropdown
-    options={options}
-    optionType="WITH_META"
-    className="w-25"
-    placeholder="Select Recipient"
-  />
+  <Dropdown options={options} optionType="WITH_META" className="w-25" placeholder="Select Recipient" />
 );
 
 export default {
@@ -39,8 +34,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

@@ -7,9 +7,7 @@ const Loading = (props: any) => {
 
   switch (loadingType) {
     case 'DEFAULT':
-      return (
-        <PlaceholderParagraph length={'large'} />
-      );
+      return <PlaceholderParagraph length={'large'} />;
     case 'WITH_ICON':
       return (
         <Placeholder withImage={true} round={true}>

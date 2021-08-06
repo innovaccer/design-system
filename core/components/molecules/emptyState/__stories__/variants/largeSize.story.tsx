@@ -10,12 +10,14 @@ export const largeSize = () => (
       imageSrc={noContent}
       size="large"
     >
-      <Button size="large" appearance="primary">Reload page</Button>
+      <Button size="large" appearance="primary">
+        Reload page
+      </Button>
     </EmptyState>
   </div>
 );
 
 export default {
   title: 'Components/EmptyState/Variants/Large Size',
-  component: EmptyState
+  component: EmptyState,
 };

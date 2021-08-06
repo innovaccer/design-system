@@ -29,9 +29,9 @@ export const getMenu = (menus: Menu[], active: ActiveMenu): Menu | null => {
       return menu;
     }
     if (menu.subMenu) {
-      const activeMenu = menu.subMenu.find(submenu => (
-        (active.name && submenu.name === active.name) || (active.link && submenu.link === active.link)
-      ));
+      const activeMenu = menu.subMenu.find(
+        (submenu) => (active.name && submenu.name === active.name) || (active.link && submenu.link === active.link)
+      );
       if (activeMenu) return activeMenu;
     }
   }
@@ -41,12 +41,13 @@ export const getMenu = (menus: Menu[], active: ActiveMenu): Menu | null => {
 export const isMenuActive = (menus: Menu[], menu: Menu, active?: ActiveMenu): boolean => {
   if (active) {
     const currActiveMenu = getMenu(menus, active);
-    return !!currActiveMenu
-      && (currActiveMenu === menu
-        || currActiveMenu.name.split('.')[0] === menu.name
-        || currActiveMenu.name === menu.name
-        || (!!currActiveMenu.link && currActiveMenu.link === menu.link)
-      );
+    return (
+      !!currActiveMenu &&
+      (currActiveMenu === menu ||
+        currActiveMenu.name.split('.')[0] === menu.name ||
+        currActiveMenu.name === menu.name ||
+        (!!currActiveMenu.link && currActiveMenu.link === menu.link))
+    );
   }
   return false;
 };

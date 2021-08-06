@@ -29,13 +29,7 @@ export interface RangeSliderProps extends MultiSliderProps {
 }
 
 export const RangeSlider = (props: RangeSliderProps) => {
-  const {
-    value: valueProp,
-    defaultValue,
-    onChange,
-    onRelease,
-    ...rest
-  } = props;
+  const { value: valueProp, defaultValue, onChange, onRelease, ...rest } = props;
 
   const [value, setValue] = React.useState(valueProp === undefined ? defaultValue : valueProp);
 
@@ -53,11 +47,7 @@ export const RangeSlider = (props: RangeSliderProps) => {
   };
 
   return (
-    <MultiSlider
-      onRangeChange={onChangeHandler}
-      onRangeRelease={onRelease}
-      {...rest}
-    >
+    <MultiSlider onRangeChange={onChangeHandler} onRangeRelease={onRelease} {...rest}>
       <MultiSlider.Handle value={value[RangeIndex.START]} fillAfter={true} />
       <MultiSlider.Handle value={value[RangeIndex.END]} />
     </MultiSlider>
@@ -67,7 +57,7 @@ export const RangeSlider = (props: RangeSliderProps) => {
 RangeSlider.displayName = 'RangeSlider';
 RangeSlider.defaultProps = {
   ...MultiSlider.defaultProps,
-  defaultValue: [0, 10]
+  defaultValue: [0, 10],
 };
 
 export default RangeSlider;

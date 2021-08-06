@@ -5,16 +5,9 @@ import { Stepper, Button, Breadcrumbs, Badge, StatusHint, MetaList } from '@/ind
 import { action } from '@storybook/addon-actions';
 
 export const withStepper = () => {
-  const navigationPosition = select(
-    'navigationPosition',
-    ['center', 'bottom'],
-    'center'
-  );
+  const navigationPosition = select('navigationPosition', ['center', 'bottom'], 'center');
   const separator = boolean('separator', true);
-  const title = text(
-    'title',
-    'Page title'
-  );
+  const title = text('title', 'Page title');
 
   const stepperData = [
     {
@@ -23,23 +16,23 @@ export const withStepper = () => {
     },
     {
       value: 'step_2',
-      label: 'Step 2'
+      label: 'Step 2',
     },
     {
       value: 'step_3',
       label: 'Step 3',
-    }
+    },
   ];
 
   const breadcrumbData = [
     {
       label: 'Level 0',
-      link: '/level0'
+      link: '/level0',
     },
     {
       label: 'Level 1',
-      link: '/level1'
-    }
+      link: '/level1',
+    },
   ];
 
   const [active, setActive] = React.useState(0);
@@ -61,27 +54,15 @@ export const withStepper = () => {
     stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
     actions: (
       <div className="d-flex justify-content-end align-items-center">
-        <Button appearance="primary" onClick={onClickHandler}>Next</Button>
+        <Button appearance="primary" onClick={onClickHandler}>
+          Next
+        </Button>
       </div>
     ),
-    breadcrumbs: (
-      <Breadcrumbs
-        list={breadcrumbData}
-        onClick={link => action(`on-click: ${link}`)}
-      />
-    ),
-    badge: (
-      <Badge appearance="secondary">Badge</Badge>
-    ),
-    status: (
-      <StatusHint appearance="alert">Alert</StatusHint>
-    ),
-    meta: (
-      <MetaList
-        list={[{ label: 'Meta data' }]}
-        seperator={true}
-      />
-    )
+    breadcrumbs: <Breadcrumbs list={breadcrumbData} onClick={(link) => action(`on-click: ${link}`)} />,
+    badge: <Badge appearance="secondary">Badge</Badge>,
+    status: <StatusHint appearance="alert">Alert</StatusHint>,
+    meta: <MetaList list={[{ label: 'Meta data' }]} seperator={true} />,
   };
 
   return (
@@ -176,8 +157,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

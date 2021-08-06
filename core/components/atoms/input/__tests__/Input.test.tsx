@@ -22,11 +22,7 @@ describe('Input component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Input
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Input {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -45,11 +41,7 @@ describe('Input component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Input
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Input {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -70,11 +62,7 @@ describe('Input component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Input
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Input {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -95,11 +83,7 @@ describe('Input component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Input
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Input {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -120,11 +104,7 @@ describe('Input component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Input
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Input {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -144,11 +124,7 @@ describe('Input component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Input
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Input {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -169,11 +145,7 @@ describe('Input component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Input
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Input {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

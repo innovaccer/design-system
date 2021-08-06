@@ -48,15 +48,7 @@ export interface ChatMessageBaseProps extends BaseProps {
 export type ChatMessageProps = ChatMessageBaseProps & BoxProps & MessageTextProps;
 
 export const ChatMessage = (props: ChatMessageProps) => {
-  const {
-    type,
-    text,
-    isTyping,
-    typingText,
-    statusOptions,
-    onClick,
-    className,
-  } = props;
+  const { type, text, isTyping, typingText, statusOptions, onClick, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -72,13 +64,7 @@ export const ChatMessage = (props: ChatMessageProps) => {
       statusType={statusType}
       withStatus={statusOptions !== undefined}
     >
-      <MessageText
-        type={type}
-        text={text}
-        typingText={typingText}
-        isTyping={isTyping}
-        statusType={statusType}
-      />
+      <MessageText type={type} text={text} typingText={typingText} isTyping={isTyping} statusType={statusType} />
       {!isTyping && statusOptions && <Status {...statusOptions} />}
     </Box>
   );

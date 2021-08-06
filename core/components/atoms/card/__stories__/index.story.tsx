@@ -35,9 +35,7 @@ export const all = () => {
         <CardBody>
           <div>Card Body</div>
         </CardBody>
-        <CardSubdued border="top">
-          Subdued section.
-        </CardSubdued>
+        <CardSubdued border="top">Subdued section.</CardSubdued>
       </Card>
     </>
   );
@@ -50,9 +48,9 @@ export default {
     docs: {
       docPage: {
         props: {
-          components: { Card, CardHeader, CardBody, CardFooter, CardSubdued }
-        }
-      }
-    }
-  }
+          components: { Card, CardHeader, CardBody, CardFooter, CardSubdued },
+        },
+      },
+    },
+  },
 };

@@ -11,13 +11,7 @@ export const activeStep = () => {
     return action(`Active Index: ${index}`)();
   };
 
-  return (
-    <Stepper
-      steps={steps}
-      active={active}
-      onChange={onChange}
-    />
-  );
+  return <Stepper steps={steps} active={active} onChange={onChange} />;
 };
 
 const customCode = `() => {
@@ -61,8 +55,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

@@ -9,16 +9,16 @@ export const all = () => {
     { white: 'white', destructive: 'destructive', subtle: 'subtle', disabled: 'disabled' },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
   const options = {
-    appearance
+    appearance,
   };
 
   return (
     <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
-      <Paragraph {...options} >
+      <Paragraph {...options}>
         Paragraph <b>component</b> have different varients, look for options in knobs tab.
       </Paragraph>
     </div>
@@ -31,8 +31,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Paragraph'
-      }
-    }
-  }
+        title: 'Paragraph',
+      },
+    },
+  },
 };

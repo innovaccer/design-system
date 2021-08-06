@@ -15,7 +15,7 @@ export const all = () => {
   );
 
   const labelWeight = optionsKnob('weight', { strong: 'strong', medium: 'medium' }, undefined, {
-    display: 'inline-radio'
+    display: 'inline-radio',
   });
 
   const iconSize = number('iconSize', 14);
@@ -28,11 +28,7 @@ export const all = () => {
   };
   return (
     <div style={{ background: labelAppearance === 'white' ? 'black' : 'transparent' }}>
-      <Legend
-        {...options}
-      >
-        {children}
-      </Legend>
+      <Legend {...options}>{children}</Legend>
     </div>
   );
 };
@@ -49,8 +45,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

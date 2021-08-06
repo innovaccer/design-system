@@ -70,11 +70,14 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     if (checkedProp !== undefined) setChecked(checkedProp);
   }, [checkedProp]);
 
-  const SwitchClass = classNames({
-    ['Switch']: true,
-    ['Switch--disabled']: disabled,
-    [`Switch--${size}`]: size,
-  }, className);
+  const SwitchClass = classNames(
+    {
+      ['Switch']: true,
+      ['Switch--disabled']: disabled,
+      [`Switch--${size}`]: size,
+    },
+    className
+  );
 
   const SwitchWrapper = classNames({
     ['Switch-wrapper']: true,

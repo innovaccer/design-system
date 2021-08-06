@@ -29,20 +29,16 @@ export interface StatusHintProps extends BaseProps {
 }
 
 export const StatusHint = (props: StatusHintProps) => {
-  const {
-    appearance,
-    children,
-    onMouseEnter,
-    onMouseLeave,
-    onClick,
-    className
-  } = props;
+  const { appearance, children, onMouseEnter, onMouseLeave, onClick, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const StatusHintClass = classNames({
-    ['StatusHint']: true,
-  }, className);
+  const StatusHintClass = classNames(
+    {
+      ['StatusHint']: true,
+    },
+    className
+  );
 
   const StatusHintIconClass = classNames({
     ['StatusHint-icon']: true,
@@ -54,19 +50,21 @@ export const StatusHint = (props: StatusHintProps) => {
       data-test="DesignSystem-StatusHint"
       {...baseProps}
       className={StatusHintClass}
-      onClick={e => onClick && onClick(e)}
-      onMouseEnter={e => onMouseEnter && onMouseEnter(e)}
-      onMouseLeave={e => onMouseLeave && onMouseLeave(e)}
+      onClick={(e) => onClick && onClick(e)}
+      onMouseEnter={(e) => onMouseEnter && onMouseEnter(e)}
+      onMouseLeave={(e) => onMouseLeave && onMouseLeave(e)}
     >
       <span data-test="DesignSystem-StatusHint--Icon" className={StatusHintIconClass} />
-      <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'}>{children}</Text>
+      <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'}>
+        {children}
+      </Text>
     </div>
   );
 };
 
 StatusHint.displayName = 'StatusHint';
 StatusHint.defaultProps = {
-  appearance: 'default'
+  appearance: 'default',
 };
 
 export default StatusHint;

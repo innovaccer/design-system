@@ -15,10 +15,7 @@ export const all = () => {
   const children = text('children', 'Badge');
 
   return (
-    <Badge
-      appearance={appearance}
-      subtle={subtle}
-    >
+    <Badge appearance={appearance} subtle={subtle}>
       {children}
     </Badge>
   );
@@ -26,5 +23,5 @@ export const all = () => {
 
 export default {
   title: 'Components/Badge/All',
-  component: Badge
+  component: Badge,
 };

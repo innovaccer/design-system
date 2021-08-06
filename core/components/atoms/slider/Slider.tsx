@@ -21,13 +21,7 @@ export interface SliderProps extends MultiSliderProps {
 }
 
 export const Slider = (props: SliderProps) => {
-  const {
-    value: valueProp,
-    defaultValue,
-    onRelease,
-    onChange,
-    ...rest
-  } = props;
+  const { value: valueProp, defaultValue, onRelease, onChange, ...rest } = props;
 
   const [value, setValue] = React.useState(valueProp === undefined ? defaultValue : valueProp);
 
@@ -46,12 +40,7 @@ export const Slider = (props: SliderProps) => {
 
   return (
     <MultiSlider {...rest}>
-      <MultiSlider.Handle
-        value={value}
-        onChange={onChangeHandler}
-        onRelease={onRelease}
-        fillBefore={true}
-      />
+      <MultiSlider.Handle value={value} onChange={onChangeHandler} onRelease={onRelease} fillBefore={true} />
     </MultiSlider>
   );
 };
@@ -59,7 +48,7 @@ export const Slider = (props: SliderProps) => {
 Slider.displayName = 'Slider';
 Slider.defaultProps = {
   ...MultiSlider.defaultProps,
-  defaultValue: 0
+  defaultValue: 0,
 };
 
 export default Slider;

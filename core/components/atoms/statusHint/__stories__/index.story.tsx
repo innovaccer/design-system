@@ -6,11 +6,7 @@ import StatusHint from '../StatusHint';
 export const all = () => {
   const children = text('children', 'Status Hint');
 
-  const appearance = select(
-    'Appearance',
-    ['default', 'alert', 'info', 'warning', 'success'],
-    undefined
-  );
+  const appearance = select('Appearance', ['default', 'alert', 'info', 'warning', 'success'], undefined);
 
   const options = {
     appearance,
@@ -18,16 +14,12 @@ export const all = () => {
 
   return (
     <div>
-      <StatusHint
-        {...options}
-      >
-        {children}
-      </StatusHint>
+      <StatusHint {...options}>{children}</StatusHint>
     </div>
   );
 };
 
 export default {
   title: 'Components/StatusHint/All',
-  component: StatusHint
+  component: StatusHint,
 };

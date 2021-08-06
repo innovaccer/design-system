@@ -2,13 +2,10 @@ import * as React from 'react';
 import Badge from '../Badge';
 
 export const success = () => (
-    <Badge
-      appearance="success"
-      subtle={false}
-    >
-      {'Badge'}
-    </Badge>
-  );
+  <Badge appearance="success" subtle={false}>
+    {'Badge'}
+  </Badge>
+);
 
 export default {
   title: 'Components/Badge/Success',
@@ -16,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Badge'
-      }
-    }
-  }
+        title: 'Badge',
+      },
+    },
+  },
 };

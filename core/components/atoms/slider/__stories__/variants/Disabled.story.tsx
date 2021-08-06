@@ -3,7 +3,6 @@ import { Slider } from '@/index';
 
 // CSF format story
 export const disabled = () => {
-
   return (
     <div>
       <Slider
@@ -14,18 +13,12 @@ export const disabled = () => {
         labelStepSize={1}
         defaultValue={4}
       />
-      <Slider
-        label="Default Slider"
-        stepSize={0.1}
-        labelStepSize={1}
-        defaultValue={4}
-        className="mt-2"
-      />
+      <Slider label="Default Slider" stepSize={0.1} labelStepSize={1} defaultValue={4} className="mt-2" />
     </div>
   );
 };
 
 export default {
   title: 'Components/Slider/Variants/Disabled',
-  component: Slider
+  component: Slider,
 };

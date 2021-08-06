@@ -9,7 +9,7 @@ const IconMapping: { [key: string]: string } = {
   image: 'image',
   video: 'movie',
   application: 'insert_drive_file',
-  others: 'text_snippet'
+  others: 'text_snippet',
 };
 
 export interface FileIconProps {
@@ -19,11 +19,7 @@ export interface FileIconProps {
 }
 
 export const FileIcon = (props: FileIconProps) => {
-  const {
-    progress,
-    status,
-    file
-  } = props;
+  const { progress, status, file } = props;
 
   const [animate, setAnimate] = useState<boolean>(false);
   const type = file.type.split('/')[0] || 'others';
@@ -32,12 +28,12 @@ export const FileIcon = (props: FileIconProps) => {
   const iconClass = classNames({
     ['FileIcon']: true,
     ['FileIcon--animate']: animate,
-    [`FileIcon--${fileType}`]: true
+    [`FileIcon--${fileType}`]: true,
   });
 
   const uploadingIconClass = classNames({
     ['FileIcon']: true,
-    ['FileIcon--uploading']: true
+    ['FileIcon--uploading']: true,
   });
 
   useEffect(() => {
@@ -49,23 +45,16 @@ export const FileIcon = (props: FileIconProps) => {
   }, [status]);
 
   if (status === 'uploading') {
-    return (
-      <ProgressRing size="small" value={progress || 0} className={uploadingIconClass} />
-    );
+    return <ProgressRing size="small" value={progress || 0} className={uploadingIconClass} />;
   }
-  return (
-    <Icon
-      name={IconMapping[fileType]}
-      className={iconClass}
-    />
-  );
+  return <Icon name={IconMapping[fileType]} className={iconClass} />;
 };
 
 FileIcon.displayName = 'FileIcon';
 
 FileIcon.defaultProps = {
   progress: 0,
-  status: 'completed'
+  status: 'completed',
 };
 
 export default FileIcon;

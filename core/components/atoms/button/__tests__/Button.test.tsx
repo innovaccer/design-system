@@ -26,13 +26,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -50,13 +44,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -73,13 +61,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -98,13 +80,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -123,13 +99,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -147,13 +117,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -171,13 +135,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -195,13 +153,7 @@ describe('Button component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        >
-          Button
-        </Button >
-      );
+      const { baseElement } = render(<Button {...attr}>Button</Button>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -219,11 +171,7 @@ describe('Button component with no children', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Button
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Button {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -232,7 +180,6 @@ describe('Button component with no children', () => {
 });
 
 describe('Button component with icon', () => {
-
   it('renders icon and label inside button', () => {
     const { getByTestId } = render(<Button icon="events">Button</Button>);
     expect(getByTestId('DesignSystem-Button--Icon').textContent).toMatch('events');
@@ -240,9 +187,12 @@ describe('Button component with icon', () => {
 
   sizes.forEach((s = 'regular') => {
     it(`renders icon of fontSize = ${sizeMapping[s]} for button size = ${s}`, () => {
-      const { getByTestId } = render(<Button icon="events" size={s}>Button</Button>);
+      const { getByTestId } = render(
+        <Button icon="events" size={s}>
+          Button
+        </Button>
+      );
       expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s]}px`);
-
     });
 
     it(`renders large icon inside button size = ${s}`, () => {
@@ -251,14 +201,18 @@ describe('Button component with icon', () => {
     });
 
     it('does not render large icon when button has label', () => {
-      const { getByTestId } = render(<Button icon="events" size={s} largeIcon={true}>Button</Button>);
+      const { getByTestId } = render(
+        <Button icon="events" size={s} largeIcon={true}>
+          Button
+        </Button>
+      );
       expect(getByTestId('DesignSystem-Button--Icon')).toHaveStyle(`fontSize: ${sizeMapping[s]}px`);
     });
   });
 
   describe('Button with spinner', () => {
     it('Should have Button-spinner and Button--regularSquare class when loading state and no children', () => {
-      const { getByTestId } = render(<Button loading={true}/>);
+      const { getByTestId } = render(<Button loading={true} />);
       expect(getByTestId('DesignSystem-Button')).toHaveClass('Button--regularSquare');
     });
 

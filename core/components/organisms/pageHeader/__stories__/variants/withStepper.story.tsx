@@ -4,10 +4,7 @@ import { Stepper, Button, Text } from '@/index';
 import { text, boolean } from '@storybook/addon-knobs';
 
 export const withStepper = () => {
-  const title = text(
-    'title',
-    'Page title'
-  );
+  const title = text('title', 'Page title');
 
   const stepperData = [
     {
@@ -16,12 +13,12 @@ export const withStepper = () => {
     },
     {
       value: 'step_2',
-      label: 'Step 2'
+      label: 'Step 2',
     },
     {
       value: 'step_3',
       label: 'Step 3',
-    }
+    },
   ];
 
   const separator = boolean('separator', true);
@@ -44,10 +41,14 @@ export const withStepper = () => {
     stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
     actions: (
       <div className="d-flex justify-content-end align-items-center">
-        <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
-        <Button appearance="primary" onClick={onClickHandler}>Next</Button>
+        <span className="mr-4">
+          <Text appearance="subtle">Meta data</Text>
+        </span>
+        <Button appearance="primary" onClick={onClickHandler}>
+          Next
+        </Button>
       </div>
-    )
+    ),
   };
 
   return (
@@ -112,8 +113,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

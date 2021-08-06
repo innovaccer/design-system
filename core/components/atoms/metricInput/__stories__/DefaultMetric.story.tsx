@@ -12,7 +12,9 @@ export const defaultMetric = () => {
         <MetricInput
           size="regular"
           value={value}
-          onChange={e => { setValue(e.target.value); }}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
         />
       </div>
     </div>
@@ -45,9 +47,9 @@ export default {
         customCode,
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

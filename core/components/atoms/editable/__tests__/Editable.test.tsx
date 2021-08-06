@@ -8,7 +8,7 @@ const onChange = jest.fn();
 describe('Editable component', () => {
   const mapper = {
     editing: valueHelper(true, { required: true }),
-    onChange: valueHelper(onChange, { required: true })
+    onChange: valueHelper(onChange, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -16,9 +16,7 @@ describe('Editable component', () => {
 
     it(testMessageHelper(attr), () => {
       const { asFragment } = render(
-        <Editable
-          {...attr}
-        >
+        <Editable {...attr}>
           <div>First Name</div>
         </Editable>
       );
@@ -30,7 +28,6 @@ describe('Editable component', () => {
 });
 
 describe('Editable component', () => {
-
   it('renders children', () => {
     const { getByTestId } = render(
       <Editable onChange={onChange}>
@@ -78,7 +75,6 @@ describe('Editable component', () => {
     fireEvent.mouseLeave(editableWrapper);
     expect(onChange).toHaveBeenCalledWith('default');
   });
-
 });
 
 describe('Editable Component with overwrite class', () => {
@@ -92,5 +88,4 @@ describe('Editable Component with overwrite class', () => {
     );
     expect(getByTestId('DesignSystem-Editable')).toHaveClass(className);
   });
-
 });
