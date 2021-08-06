@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Tabs, Heading, Dropdown, Button, Input } from '@/index';
+import { Tabs, Heading, Dropdown, Button, Input, Tab } from '@/index';
 
 // CSF format story
 export const tabsWithCount = () => {
@@ -15,21 +15,6 @@ export const tabsWithCount = () => {
     },
   ];
 
-  const tabs = [
-    {
-      count: 12,
-      label: 'All'
-    },
-    {
-      count: 3,
-      label: 'Active'
-    },
-    {
-      count: 9,
-      label: 'Inactive'
-    },
-  ];
-
   const onTabChangeHandler = (tabIndex: number) => {
     return action(`tab-change: ${tabIndex}`)();
   };
@@ -40,17 +25,28 @@ export const tabsWithCount = () => {
         <Heading size="m">Strategy</Heading>
         <Button appearance="primary">New Strategy</Button>
       </div>
-      <div className="d-flex align-items-center mt-3" style={{ borderBottom: 'var(--border)' }}>
+      <div className="d-flex align-items-center mt-3" >
         <Tabs
-          tabs={tabs}
           onTabChange={onTabChangeHandler}
-        />
-        <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
-          <Input placeholder="Search by name" icon="search" />
-        </div>
-        <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-          <Dropdown options={options} placeholder="Sort by" />
-        </div>
+        >
+          <Tab label="All" count={12}>
+            <div>All</div>
+          </Tab>
+          <Tab label="Active" count={3}>
+            <div>Active</div>
+          </Tab>
+          <Tab label="Inactive" count={9}>
+            <div>Inactive</div>
+          </Tab>
+          <div className="d-flex align-items-center">
+            <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
+              <Input placeholder="Search by name" icon="search" />
+            </div>
+            <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
+              <Dropdown options={options} placeholder="Sort by" />
+            </div>
+          </div>
+        </Tabs>
       </div>
     </div>
   );
@@ -68,39 +64,34 @@ const customCode = `() => {
     },
   ];
 
-  const tabs = [
-    {
-      count: 12,
-      label: 'All'
-    },
-    {
-      count: 3,
-      label: 'Active'
-    },
-    {
-      count: 9,
-      label: 'Inactive'
-    },
-  ];
-
   return(
     <div>
       <div className="d-flex justify-content-between">
         <Heading size="m">Strategy</Heading>
         <Button appearance="primary">New Strategy</Button>
       </div>
-      <div className="d-flex align-items-center mt-3" style={{ borderBottom: 'var(--border)' }}>
+      <div className="d-flex align-items-center mt-3" >
         <Tabs
-          tabs={tabs}
           onTabChange={console.log}
-          withSeparator={false}
-        />
-        <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
-          <Input placeholder="Search by name" icon="search" />
-        </div>
-        <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-          <Dropdown options={options} placeholder="Sort by" />
-        </div>
+        >
+          <Tab label="All" count={12}>
+            <div>All</div>
+          </Tab>
+          <Tab label="Active" count={3}>
+            <div>Active</div>
+          </Tab>
+          <Tab label="Inactive" count={9}>
+            <div>Inactive</div>
+          </Tab>
+          <div className="d-flex align-items-center">
+            <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
+              <Input placeholder="Search by name" icon="search" />
+            </div>
+            <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
+              <Dropdown options={options} placeholder="Sort by" />
+            </div>
+          </div>
+        </Tabs>
       </div>
     </div>
   );

@@ -4,11 +4,19 @@ export interface TabProps {
   /**
    * Label of the Tab
    */
-  label: React.ReactNode;
+  label: React.ReactNode | string;
   /**
    * Set if disabled
    */
   disabled?: boolean;
+  /**
+   * Icon to be rendered inside Tab
+   */
+  icon?: string;
+  /**
+   * Count of Tab
+   */
+  count?: number;
   /**
    * To be rendered in `Tab` component
    */
