@@ -182,6 +182,28 @@ describe('Controlled MetricInput component', () => {
     rerender(<MetricInput value={newValue} onChange={FunctionValue} />);
     expect(metricInput).toHaveValue(newValue);
   });
+
+  it('decreases value if down arrow key is pressed', () => {
+    const { getByTestId } = render(<MetricInput defaultValue={value} onChange={FunctionValue} />);
+    const metricInput = getByTestId('DesignSystem-MetricInput');
+    expect(metricInput).toHaveValue(value);
+
+    const downArrowIcon = getByTestId('DesignSystem-MetricInput--downIcon');
+    fireEvent.click(downArrowIcon);
+    expect(FunctionValue).toHaveBeenCalled();
+    expect(metricInput).toHaveValue(9);
+
+    fireEvent.keyDown(metricInput, { key: 'ArrowDown' });
+    expect(metricInput).toHaveValue(8);
+  });
+
+  it('decreases value to -1 if input is empty and down arrow key is pressed', () => {
+    const { getByTestId } = render(<MetricInput />);
+    const metricInput = getByTestId('DesignSystem-MetricInput');
+    const downArrowIcon = getByTestId('DesignSystem-MetricInput--downIcon');
+    fireEvent.click(downArrowIcon);
+    expect(metricInput).toHaveValue(-1);
+  });
 });
 
 describe('MetricInput component with props min and max', () => {
