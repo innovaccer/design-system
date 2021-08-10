@@ -15,17 +15,12 @@ export interface CardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
 }
 
 export const Card = React.forwardRef<HTMLDivElement, CardProps>((props, ref) => {
-  const {
-    shadow = 'default',
-    children,
-    className,
-    ...rest
-  } = props;
+  const { shadow = 'default', children, className, ...rest } = props;
 
   const classes = classNames({
     Card: true,
     [`Card--shadow-${shadow}`]: shadow,
-    [`${className}`]: className
+    [`${className}`]: className,
   });
 
   return (

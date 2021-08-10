@@ -11,14 +11,10 @@ export const all = () => {
   const options = {
     error,
     hide,
-    withInput
+    withInput,
   };
 
-  return (
-    <Caption {...options} >
-      {children}
-    </Caption>
-  );
+  return <Caption {...options}>{children}</Caption>;
 };
 
 export default {
@@ -27,8 +23,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Caption'
-      }
-    }
-  }
+        title: 'Caption',
+      },
+    },
+  },
 };

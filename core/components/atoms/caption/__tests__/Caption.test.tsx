@@ -7,15 +7,13 @@ const BooleanValue = [true, false];
 
 describe('Caption component', () => {
   const mapper = {
-    error: valueHelper(BooleanValue, { required: true, iterate: true })
+    error: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Caption>{'Caption'}</Caption>
-      );
+      const { baseElement } = render(<Caption>{'Caption'}</Caption>);
       expect(baseElement).toMatchSnapshot();
     });
   };

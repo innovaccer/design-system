@@ -80,11 +80,12 @@ const Dialog = (props: DialogProps) => {
       dimension={dimension}
       onClose={onClose}
       headerOptions={{
-        heading
+        heading,
       }}
-      footer={(
+      footer={
         <>
           <Button
+            type="button"
             data-test="DesignSystem-Dialog--SecondaryButton"
             appearance={secondaryButtonAppearance}
             onClick={secondaryButtonCallback}
@@ -92,6 +93,7 @@ const Dialog = (props: DialogProps) => {
             {secondaryButtonLabel}
           </Button>
           <Button
+            type="button"
             className="ml-4"
             data-test="DesignSystem-Dialog--PrimaryButton"
             appearance={primaryButtonAppearance}
@@ -100,7 +102,7 @@ const Dialog = (props: DialogProps) => {
             {primaryButtonLabel}
           </Button>
         </>
-      )}
+      }
     >
       <ModalDescription title={title} description={description} />
     </Modal>
@@ -111,7 +113,7 @@ Dialog.displayName = 'Dialog';
 Dialog.defaultProps = {
   dimension: 'small',
   primaryButtonAppearance: 'primary',
-  secondaryButtonAppearance: 'basic'
+  secondaryButtonAppearance: 'basic',
 };
 
 export default Dialog;

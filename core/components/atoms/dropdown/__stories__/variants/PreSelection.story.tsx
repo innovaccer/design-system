@@ -15,7 +15,7 @@ export const preSelection = () => {
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(preSelectedOptions, searchTerm) : preSelectedOptions;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -28,25 +28,18 @@ export const preSelection = () => {
 
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>
-      {
-        BooleanValue.map((value, ind) => {
-          const options = value ? preSelectedOptions : preSelectedOptions.slice(0, 50);
+      {BooleanValue.map((value, ind) => {
+        const options = value ? preSelectedOptions : preSelectedOptions.slice(0, 50);
 
-          return (
-            <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
-              <Text weight="strong">
-                {value ? 'Options > 50 ' : 'Options <= 50'}
-              </Text>
-              <br /><br />
-              <Dropdown
-                withCheckbox={true}
-                options={options}
-                {...(value && { fetchOptions })}
-              />
-            </div>
-          );
-        })
-      }
+        return (
+          <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
+            <Text weight="strong">{value ? 'Options > 50 ' : 'Options <= 50'}</Text>
+            <br />
+            <br />
+            <Dropdown withCheckbox={true} options={options} {...(value && { fetchOptions })} />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -102,9 +95,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

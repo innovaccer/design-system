@@ -1,24 +1,9 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Tabs } from '@/index';
+import { Tabs, Tab } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const tabs = [
-    {
-      count: 10,
-      label: 'Tab(Recommended)'
-    },
-    {
-      icon: 'call_received',
-      label: 'All'
-    },
-    {
-      label: 'Extras',
-      disabled: true
-    },
-  ];
-
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   const onTabChangeHandler = (tabIndex: number) => {
@@ -27,37 +12,42 @@ export const all = () => {
   };
 
   return (
-    <Tabs
-      tabs={tabs}
-      activeIndex={activeIndex}
-      onTabChange={onTabChangeHandler}
-    />
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler}>
+      <Tab label="Tab(Recommended)" count={10}>
+        <div>Tab(Recommended)</div>
+      </Tab>
+      <Tab label="All" icon="call_received">
+        <div>All</div>
+      </Tab>
+      <Tab label="Extras" disabled={true}>
+        <div>Extras</div>
+      </Tab>
+    </Tabs>
   );
 };
 
 const customCode = `() => {
-  const tabs = [
-    {
-      count: 10,
-      label: 'Tab(Recommended)'
-    },
-    {
-      icon: 'call_received',
-      label: 'All'
-    }, {
-      label: 'Extras',
-      disabled: true
-    },
-  ];
-
   const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+  };
 
   return(
     <Tabs
-      tabs={tabs}
       activeIndex={activeIndex}
-      onTabChange={setActiveIndex}
-    />
+      onTabChange={onTabChangeHandler}
+    >
+      <Tab label="Tab(Recommended)" count={10}>
+        <div>Tab(Recommended)</div>
+      </Tab>
+      <Tab label="All" icon="call_received">
+        <div>All</div>
+      </Tab>
+      <Tab label="Extras" disabled={true}>
+        <div>Extras</div>
+      </Tab>
+    </Tabs>
   );
 }`;
 
@@ -68,7 +58,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

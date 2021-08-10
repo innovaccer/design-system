@@ -7,11 +7,7 @@ import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const all = () => {
   const open = boolean('open', true);
-  const dimension = select(
-    'dimension',
-    ['small', 'medium', 'large'],
-    'small'
-  );
+  const dimension = select('dimension', ['small', 'medium', 'large'], 'small');
 
   const primaryButtonAppearance = select(
     'primaryButtonAppearance',
@@ -43,19 +39,20 @@ export const all = () => {
     primaryButtonLabel: 'Primary',
     primaryButtonCallback: action('primary click'),
     secondaryButtonLabel: 'Basic',
-    secondaryButtonCallback: action('basic click')
+    secondaryButtonCallback: action('basic click'),
   };
 
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
       <Dialog {...options} />
     </div>
@@ -102,7 +99,7 @@ export default {
       docPage: {
         customCode,
         noHtml: true,
-      }
-    }
-  }
+      },
+    },
+  },
 };

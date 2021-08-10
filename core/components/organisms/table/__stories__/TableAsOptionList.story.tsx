@@ -28,19 +28,21 @@ export const tableAsOptionList = () => {
       name: 'assessment',
       displayName: 'Assessment',
       cellType: 'DEFAULT',
-      width: '100%'
+      width: '100%',
     },
   ];
 
   return (
     <Card>
-      <Text size="large" weight="strong" className="ml-5">Select Assessment</Text>
+      <Text size="large" weight="strong" className="ml-5">
+        Select Assessment
+      </Text>
       <List
         type="resource"
         withHeader={true}
         headerOptions={{
           withSearch: true,
-          dynamicColumn: false
+          dynamicColumn: false,
         }}
         separator={false}
         showMenu={false}
@@ -48,9 +50,7 @@ export const tableAsOptionList = () => {
         schema={schema}
         withPagination={false}
         onSearch={(currData, searchTerm) => {
-          return currData.filter(d =>
-            d.assessment.toLowerCase().match(searchTerm.toLowerCase())
-          );
+          return currData.filter((d) => d.assessment.toLowerCase().match(searchTerm.toLowerCase()));
         }}
         onRowClick={(rowData, rowIndex) =>
           action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
@@ -127,7 +127,7 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

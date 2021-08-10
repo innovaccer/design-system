@@ -73,10 +73,10 @@ const customCode = `
                 <div className="mr-6 mb-6">
                   <Label withInput={true}>Gender</Label>
                   <div className="d-flex">
-                    <Button type="button" className="mr-3" onClick={() => this.onChange('Male', 'gender')}>Male</Button>
-                    <Button type="button" className="mr-3" onClick={() => this.onChange('Female', 'gender')}>Female</Button>
-                    <Button type="button" className="mr-3" onClick={() => this.onChange('Other', 'gender')}>Other</Button>
-                    <Button type="button" onClick={() => this.onChange('Unknown', 'gender')}>Unknown</Button>
+                    <Button className="mr-3" onClick={() => this.onChange('Male', 'gender')}>Male</Button>
+                    <Button className="mr-3" onClick={() => this.onChange('Female', 'gender')}>Female</Button>
+                    <Button className="mr-3" onClick={() => this.onChange('Other', 'gender')}>Other</Button>
+                    <Button onClick={() => this.onChange('Unknown', 'gender')}>Unknown</Button>
                   </div>
                 </div>
                 <div className="mr-6 mb-6" style={{ width: 'var(--spacing-9)' }}>
@@ -167,8 +167,8 @@ export default {
       docPage: {
         customCode,
         title: 'Inline Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

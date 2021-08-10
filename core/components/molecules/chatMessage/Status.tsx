@@ -14,24 +14,23 @@ export interface StatusProps extends BaseProps {
 }
 
 export const Status = (props: StatusProps) => {
-  const {
-    type,
-    time,
-    className,
-    readText = 'Read',
-    failedText = 'Click to retry',
-    sendingText = 'Sending..',
-  } = props;
+  const { type, time, className, readText = 'Read', failedText = 'Click to retry', sendingText = 'Sending..' } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const StatusClass = classNames({
-    ['d-flex align-items-center mt-3']: true
-  }, className);
+  const StatusClass = classNames(
+    {
+      ['d-flex align-items-center mt-3']: true,
+    },
+    className
+  );
 
-  const TextClass = classNames({
-    ['ChatMessage-status']: true
-  }, className);
+  const TextClass = classNames(
+    {
+      ['ChatMessage-status']: true,
+    },
+    className
+  );
 
   const getTime = (t: string | number) => {
     if (typeof t === 'number') {
@@ -56,10 +55,7 @@ export const Status = (props: StatusProps) => {
           <Text appearance="destructive" size="small" className="ml-1">
             Failed
           </Text>
-          <MetaList
-            list={[{ label: failedText }]}
-            seperator={true}
-          />
+          <MetaList list={[{ label: failedText }]} seperator={true} />
         </div>
       );
 
@@ -70,12 +66,7 @@ export const Status = (props: StatusProps) => {
           <Text appearance="destructive" size="small" className="ml-1">
             Urgent
           </Text>
-          {time && (
-            <MetaList
-              list={[{ label: getTime(time) }]}
-              seperator={true}
-            />
-          )}
+          {time && <MetaList list={[{ label: getTime(time) }]} seperator={true} />}
         </div>
       );
 
@@ -87,10 +78,7 @@ export const Status = (props: StatusProps) => {
               {getTime(time)}
             </Text>
           )}
-          <MetaList
-            list={[{ label: readText }]}
-            seperator={true}
-          />
+          <MetaList list={[{ label: readText }]} seperator={true} />
         </div>
       );
 

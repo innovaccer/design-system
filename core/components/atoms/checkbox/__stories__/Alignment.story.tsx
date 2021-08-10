@@ -7,49 +7,25 @@ export const AlignmentOfCheckboxGroup = () => (
   <div>
     <Row>
       <Column>
-        <Label>
-          Days
-        </Label>
-        {
-          days.map((day, index) => {
-            return (
-              <Checkbox
-                key={index}
-                label={day}
-                defaultChecked={index < 2}
-                className={index !== 0 ? 'mt-4' : ''}
-              />
-            );
-          })
-        }
+        <Label>Days</Label>
+        {days.map((day, index) => {
+          return <Checkbox key={index} label={day} defaultChecked={index < 2} className={index !== 0 ? 'mt-4' : ''} />;
+        })}
         <div className="pt-5">
-          <Text>
-            Vertical Alignment
-          </Text>
+          <Text>Vertical Alignment</Text>
         </div>
       </Column>
       <Column>
-        <Label>
-          Days
-        </Label>
+        <Label>Days</Label>
         <div className="d-flex">
-          {
-            days.map((day, index) => {
-              return (
-                <Checkbox
-                  className={index !== 0 ? 'ml-7' : ''}
-                  key={index}
-                  label={day}
-                  defaultChecked={index < 2}
-                />
-              );
-            })
-          }
+          {days.map((day, index) => {
+            return (
+              <Checkbox className={index !== 0 ? 'ml-7' : ''} key={index} label={day} defaultChecked={index < 2} />
+            );
+          })}
         </div>
         <div className="pt-5">
-          <Text>
-            Horizontal Alignment
-          </Text>
+          <Text>Horizontal Alignment</Text>
         </div>
       </Column>
     </Row>
@@ -62,8 +38,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Checkbox'
-      }
-    }
-  }
+        title: 'Checkbox',
+      },
+    },
+  },
 };

@@ -12,14 +12,7 @@ export const controlledCheckbox = () => {
     }, 2000);
   };
 
-  return (
-      <Checkbox
-        checked={checked}
-        label={'Innovaccer'}
-        onChange={handleParentChange}
-        value={'Innovaccer'}
-      />
-  );
+  return <Checkbox checked={checked} label={'Innovaccer'} onChange={handleParentChange} value={'Innovaccer'} />;
 };
 
 const customCode = `() => {
@@ -48,8 +41,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

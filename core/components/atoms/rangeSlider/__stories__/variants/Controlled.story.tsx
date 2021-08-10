@@ -55,8 +55,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

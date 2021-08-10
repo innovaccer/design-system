@@ -4,20 +4,14 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const basic = () => {
-
   return (
     <div className="Row">
-      <div  className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          onChange={action('on-change')}
-          onClear={action('on-clear')}
-        />
+      <div className="mr-9 mb-8 w-25">
+        <Input name="input" value="Value" onChange={action('on-change')} onClear={action('on-clear')} />
         <br />
         <Text weight="strong">Default</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
+      <div className="mr-9 mb-8 w-25">
         <Input
           name="input"
           value=""
@@ -29,32 +23,18 @@ export const basic = () => {
         <br />
         <Text weight="strong">Placeholder</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          onChange={action('on-change')}
-          onClear={action('on-clear')}
-          error={true}
-        />
+      <div className="mr-9 mb-8 w-25">
+        <Input name="input" value="Value" onChange={action('on-change')} onClear={action('on-clear')} error={true} />
         <br />
         <Text weight="strong">Error</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          onChange={action('on-change')}
-          disabled={true}
-        />
+      <div className="mr-9 mb-8 w-25">
+        <Input name="input" value="Value" onChange={action('on-change')} disabled={true} />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
-      <div  className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-        />
+      <div className="mr-9 mb-8 w-25">
+        <Input name="input" value="Value" />
         <br />
         <Text weight="strong">Read Only</Text>
       </div>
@@ -70,9 +50,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

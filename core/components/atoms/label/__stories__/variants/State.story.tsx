@@ -5,15 +5,11 @@ import Label from '../../index';
 export const state = () => {
   return (
     <div className="d-flex">
-      <div  className="mr-5">
-        <Label>
-          Enabled Label
-        </Label>
+      <div className="mr-5">
+        <Label>Enabled Label</Label>
       </div>
       <div>
-        <Label disabled={true}>
-          Disabled Label
-        </Label>
+        <Label disabled={true}>Disabled Label</Label>
       </div>
     </div>
   );
@@ -25,8 +21,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Label'
-      }
-    }
-  }
+        title: 'Label',
+      },
+    },
+  },
 };

@@ -1,15 +1,7 @@
 // @ts-nocheck
 
 import * as React from 'react';
-import {
-  Title,
-  Subtitle,
-  Subheading,
-  Description,
-  Canvas,
-  PropsProps,
-  ArgsTable
-} from '@storybook/addon-docs/blocks';
+import { Title, Subtitle, Subheading, Description, Canvas, PropsProps, ArgsTable } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import { html as beautifyHTML } from 'js-beautify';
@@ -49,12 +41,12 @@ const beautifyHTMLOptions = {
   break_chained_methods: true,
   keep_array_indentation: true,
   good_stuff: true,
-  indent_empty_lines: true
+  indent_empty_lines: true,
 };
 
 const beautifyJSXOptions = {
   ...beautifyHTMLOptions,
-  e4x: true
+  e4x: true,
 };
 
 const JSXtoStringOptions = {
@@ -65,7 +57,7 @@ const JSXtoStringOptions = {
     return true;
   },
   showFunctions: true,
-  functionValue: _fn => _ => { },
+  functionValue: (_fn) => (_) => {},
   // maxInlineAttributesLineLength: 10,
   showDefaultProps: false,
   useBooleanShorthandSyntax: false,
@@ -73,14 +65,14 @@ const JSXtoStringOptions = {
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
 
-const CopyComp = props => {
+const CopyComp = (props) => {
   const { onClick } = props;
   return (
     <div
       style={{
         position: 'absolute',
         right: '0',
-        zIndex: 10
+        zIndex: 10,
       }}
     >
       <Button
@@ -99,30 +91,25 @@ const buttonStyles = {
   borderRadius: '0',
   borderBottomLeftRadius: '4px',
   width: '100%',
-  background: 'white'
+  background: 'white',
 };
 
 const ShowMoreLessButton = ({ onClick, text = 'More' }) => (
-    <div
-      style={{
-        display: 'grid',
-        placeItems: 'center',
-        position: 'absolute',
-        width: '100%',
-        bottom: '0',
-        zIndex: 10
-      }}
-    >
-      <Button
-        size="tiny"
-        style={buttonStyles}
-        appearance="basic"
-        onClick={onClick}
-      >
-        {`Show ${text}`}
-      </Button>
-    </div>
-  );
+  <div
+    style={{
+      display: 'grid',
+      placeItems: 'center',
+      position: 'absolute',
+      width: '100%',
+      bottom: '0',
+      zIndex: 10,
+    }}
+  >
+    <Button size="tiny" style={buttonStyles} appearance="basic" onClick={onClick}>
+      {`Show ${text}`}
+    </Button>
+  </div>
+);
 
 const getHeight = (shouldShowMore: boolean, showMoreHTML: boolean) => {
   if (shouldShowMore) {
@@ -131,20 +118,19 @@ const getHeight = (shouldShowMore: boolean, showMoreHTML: boolean) => {
   return '100%';
 };
 
-const renderCodeBlock = (val: string) =>
-  (
-    <>
-      <style>
-        {`pre {
+const renderCodeBlock = (val: string) => (
+  <>
+    <style>
+      {`pre {
           margin: 0;
         }`}
-      </style>
-      <CopyComp onClick={() => copyCode(val)} />
-        <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
-          {val}
-        </SyntaxHighlighter>
-    </>
-  );
+    </style>
+    <CopyComp onClick={() => copyCode(val)} />
+    <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
+      {val}
+    </SyntaxHighlighter>
+  </>
+);
 
 const getStory = () => {
   const { storyId } = __STORYBOOK_STORY_STORE__.getSelection();
@@ -167,7 +153,7 @@ ${importString}
   return(
 ${jsx
   .split('\n')
-  .map(l => `    ${l}`)
+  .map((l) => `    ${l}`)
   .join('\n')}
   );
 }
@@ -175,7 +161,7 @@ ${jsx
   return code;
 };
 
-const StoryComp = props => {
+const StoryComp = (props) => {
   const { customCode, noHtml, noStory, noSandbox, isEmbed } = props;
   const { story, storyId } = getStory();
   const sp = story.parameters;
@@ -208,7 +194,7 @@ const StoryComp = props => {
         try {
           const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
           setHtmlCode(htmlValue);
-        } catch (e) { }
+        } catch (e) {}
       }
     }, [currentTab]);
 
@@ -221,33 +207,33 @@ const StoryComp = props => {
     return null;
   });
 
-  const onChangeCode = React.useCallback(updatedCode => {
+  const onChangeCode = React.useCallback((updatedCode) => {
     setJsxCode(updatedCode);
   }, []);
 
   const actions = [
     {
       title: 'Edit in sandbox',
-      onClick: ev => {
+      onClick: (ev) => {
         ev.preventDefault();
         openSandbox(jsxCode);
       },
-      disabled: noSandbox
-    }
+      disabled: noSandbox,
+    },
   ];
 
   if (!isEmbed) {
     actions.push({
       title: `${!isExpanded ? 'Show' : 'Hide'} code`,
-      onClick: ev => {
+      onClick: (ev) => {
         setIsExpanded(!isExpanded);
-      }
+      },
     });
   }
 
   const imports = React.useMemo(() => ({ ...DS, ...importScope }), []);
 
-  const tabChangeHandler = tab => {
+  const tabChangeHandler = (tab) => {
     setActiveTab(tab);
     setShouldShowMore(false);
   };
@@ -275,31 +261,26 @@ const StoryComp = props => {
               style={{
                 position: 'relative',
                 marginBottom: shouldShowMore ? '24px' : '',
-                height: getHeight(shouldShowMore, showMore)
+                height: getHeight(shouldShowMore, showMore),
               }}
               className="DocPage-editorTabs"
             >
               <TabsWrapper activeTab={activeTab} onTabChange={tabChangeHandler}>
                 <Tab label={'React'}>
-                    <CopyComp
-                      onClick={() => {
-                        const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
-                        if (editor) copyCode(editor.value);
-                      }}
-                    />
-                    <LiveEditor  theme={vsDark} onChange={onChangeCode} />
+                  <CopyComp
+                    onClick={() => {
+                      const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
+                      if (editor) copyCode(editor.value);
+                    }}
+                  />
+                  <LiveEditor theme={vsDark} onChange={onChangeCode} />
                 </Tab>
-                  {renderHTMLTab()}
+                {renderHTMLTab()}
               </TabsWrapper>
             </div>
-            {shouldShowMore &&
-              (
-                <ShowMoreLessButton
-                  onClick={() => setShowMore(!showMore)}
-                  text={showMore ? 'Less' : 'More'}
-                />
-              )
-              }
+            {shouldShowMore && (
+              <ShowMoreLessButton onClick={() => setShowMore(!showMore)} text={showMore ? 'Less' : 'More'} />
+            )}
           </>
         )}
       </LiveProvider>
@@ -313,12 +294,21 @@ export const docPage = () => {
   const isEmbed = window.location.search.includes('embed=min');
   const isEmbedWithProp = window.location.search.includes('embed=prop');
 
-  const { title, description, props: propsAttr, customCode, noHtml, noStory, noProps = isEmbed, noSandbox, imports } =
-    sp.docs.docPage || {};
+  const {
+    title,
+    description,
+    props: propsAttr,
+    customCode,
+    noHtml,
+    noStory,
+    noProps = isEmbed,
+    noSandbox,
+    imports,
+  } = sp.docs.docPage || {};
   const { component: { displayName } = {} } = sp;
   const pageClassnames = classNames({
     DocPage: true,
-    'pt-8 pb-8': !(isEmbed || isEmbedWithProp)
+    'pt-8 pb-8': !(isEmbed || isEmbedWithProp),
   });
 
   return (

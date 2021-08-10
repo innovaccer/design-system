@@ -7,7 +7,6 @@ type NumberRange = [number, number];
 
 // CSF format story
 export const all = () => {
-
   const min = number('min', 0) || undefined;
   const max = number('max', 10) || undefined;
   const stepSize = number('step size', 0.1) || undefined;
@@ -27,15 +26,13 @@ export const all = () => {
     label,
     disabled,
     onChange,
-    defaultValue: [2, 4] as NumberRange
+    defaultValue: [2, 4] as NumberRange,
   };
 
-  return (
-    <RangeSlider className="mt-2" {...options} />
-  );
+  return <RangeSlider className="mt-2" {...options} />;
 };
 
 export default {
   title: 'Components/RangeSlider/All',
-  component: RangeSlider
+  component: RangeSlider,
 };

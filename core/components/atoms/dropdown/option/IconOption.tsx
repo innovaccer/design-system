@@ -4,15 +4,7 @@ import { Text, Icon } from '@/index';
 import classNames from 'classnames';
 
 const IconOption = (props: OptionTypeProps) => {
-  const {
-    className,
-    textClassName,
-    onClickHandler,
-    optionData,
-    onUpdateActiveOption,
-    appearance,
-    dataTest,
-  } = props;
+  const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, appearance, dataTest } = props;
 
   const { label, icon, disabled } = optionData;
 
@@ -29,14 +21,9 @@ const IconOption = (props: OptionTypeProps) => {
       data-test={dataTest}
       data-disabled={disabled}
     >
-      {icon && (
-        <Icon className="Option-icon mr-4" name={icon} appearance={appearance} />
-      )}
+      {icon && <Icon className="Option-icon mr-4" name={icon} appearance={appearance} />}
       <div className={'Option-label'}>
-        <Text
-          className={textClassName}
-          appearance={appearance}
-        >
+        <Text className={textClassName} appearance={appearance}>
           {label}
         </Text>
       </div>

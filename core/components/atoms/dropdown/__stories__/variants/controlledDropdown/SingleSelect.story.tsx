@@ -16,7 +16,7 @@ export const singleSelect = () => {
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -132,9 +132,9 @@ export default {
         title: 'Controlled Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

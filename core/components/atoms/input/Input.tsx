@@ -178,12 +178,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    ['Input']: true,
-    [`Input--${size}`]: size,
-    ['Input--disabled']: disabled || readOnly,
-    ['Input--error']: error
-  }, className);
+  const classes = classNames(
+    {
+      ['Input']: true,
+      [`Input--${size}`]: size,
+      ['Input--disabled']: disabled || readOnly,
+      ['Input--error']: error,
+    },
+    className
+  );
 
   const inputClass = classNames({
     ['Input-input']: true,
@@ -193,15 +196,19 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   const leftIconClass = classNames({
     ['Input-icon']: true,
     ['Input-icon--left']: true,
-    ['Input-icon--disabled']: !value
+    ['Input-icon--disabled']: !value,
   });
 
   const rightIconClass = classNames({
     ['Input-icon']: true,
-    ['Input-icon--right']: true
+    ['Input-icon--right']: true,
   });
 
-  const trigger = <div className={rightIconClass}><Icon name={'info'} size={sizeMapping[size]} /></div>;
+  const trigger = (
+    <div className={rightIconClass}>
+      <Icon name={'info'} size={sizeMapping[size]} />
+    </div>
+  );
 
   return (
     <div
@@ -217,10 +224,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       )}
       {size !== 'tiny' && icon && (
         <div className={leftIconClass}>
-          <Icon
-            name={icon}
-            size={sizeMapping[size]}
-          />
+          <Icon name={icon} size={sizeMapping[size]} />
         </div>
       )}
       <input
@@ -242,29 +246,22 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
       />
-      {(!value && !disabled) || (value && disabled) || (defaultValue && disabled)
-        ? (
-          info && (
-            <Tooltip
-              position="top"
-              tooltip={info}
-            >
-              {trigger}
-            </Tooltip>
-          )
-        ) : (
-          actionIcon
-            ? (
-              actionIcon
-            ) : (
-              (onClear && value && !disabled) && (
-                <div className={rightIconClass} onClick={e => onClear(e)}>
-                  <Icon name={'close'} size={sizeMapping[size]} />
-                </div>
-              )
-            )
+      {disabled ? (
+        ''
+      ) : info ? (
+        <Tooltip position="top" tooltip={info}>
+          {trigger}
+        </Tooltip>
+      ) : actionIcon && (value || defaultValue) ? (
+        actionIcon
+      ) : (
+        onClear &&
+        (value || defaultValue) && (
+          <div className={rightIconClass} onClick={(e) => onClear(e)}>
+            <Icon name={'close'} size={sizeMapping[size]} />
+          </div>
         )
-      }
+      )}
     </div>
   );
 });

@@ -6,7 +6,7 @@ export const fileErrorMessages: { [key: string]: string } = {
   FILE_INVALID_TYPE: 'File format not accepted',
   FILE_TOO_LARGE: 'File is too large',
   FILE_TOO_SMALL: 'File is too small',
-  TOO_MANY_FILES: 'Multiple files are not accepted'
+  TOO_MANY_FILES: 'Multiple files are not accepted',
 };
 
 const isDefined = (value: any) => {
@@ -18,21 +18,21 @@ export const getInvalidTypeRejectionErr = (accept?: string | string[]) => {
   const messageSuffix = Array.isArray(updatedAccept) ? `one of ${updatedAccept.join(', ')}` : updatedAccept;
   return {
     type: 'FILE_INVALID_TYPE',
-    message: `File type must be ${messageSuffix}`
+    message: `File type must be ${messageSuffix}`,
   };
 };
 
 export const getTooLargeRejectionErr = (maxSize: number) => {
   return {
     type: 'FILE_TOO_LARGE',
-    message: `File is larger than ${maxSize} bytes`
+    message: `File is larger than ${maxSize} bytes`,
   };
 };
 
 export const getTooSmallRejectionErr = (minSize: number) => {
   return {
     type: 'FILE_TOO_SMALL',
-    message: `File is smaller than ${minSize} bytes`
+    message: `File is smaller than ${minSize} bytes`,
   };
 };
 
@@ -58,7 +58,7 @@ export const fileMatchSize = (file: File, minSize: number, maxSize: number) => {
 export const getFileError = (options: any) => {
   const { files, accept, minSize, maxSize, multiple } = options;
 
-  if ((!multiple && files.length > 1)) {
+  if (!multiple && files.length > 1) {
     return 'TOO_MANY_FILES';
   }
 
@@ -77,7 +77,7 @@ export const getFileError = (options: any) => {
 
 export const allFilesAccepted = (options: any) => {
   const { files, accept, minSize, maxSize, multiple } = options;
-  if ((!multiple && files.length > 1)) {
+  if (!multiple && files.length > 1) {
     return false;
   }
 

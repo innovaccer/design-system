@@ -637,10 +637,22 @@ information on [rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
 #### Before Commit
 
-Before committing, **you must ensure there are no linting errors and all tests pass.**
+Before committing, **you must ensure there are no linting, formatting errors and all tests pass.**
 
 To ensure the above conditions, run:
 
+
+For checking prettier issues:
+
+```bash
+npm run prettier:check
+```
+
+For formating prettier issues:
+
+```bash
+npm run prettier
+```
 For lint:
 
 ```bash

@@ -2,10 +2,7 @@ import * as React from 'react';
 import Pills from '../../pills';
 
 export const defaultpill = () => (
-  <Pills
-    appearance="secondary"
-    subtle={false}
-  >
+  <Pills appearance="secondary" subtle={false}>
     {'1'}
   </Pills>
 );
@@ -16,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Pills'
-      }
-    }
-  }
+        title: 'Pills',
+      },
+    },
+  },
 };

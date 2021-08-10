@@ -13,13 +13,14 @@ export const defaultWidth = () => {
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
       <FullscreenModal
         open={open}
@@ -28,17 +29,21 @@ export const defaultWidth = () => {
         headerOptions={{
           heading: 'New group',
         }}
-        footer={(
+        footer={
           <>
-            <Button  onClick={action('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-4" onClick={action('Next button click')}>Create</Button>
+            <Button onClick={action('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-4" onClick={action('Next button click')}>
+              Create
+            </Button>
           </>
-        )}
+        }
       >
-        <Label withInput={true} required={true}>Name</Label>
-        <Input placeholder="Admin" className="mb-5"/>
+        <Label withInput={true} required={true}>
+          Name
+        </Label>
+        <Input placeholder="Admin" className="mb-5" />
         <Label withInput={true}>Description</Label>
-        <Textarea placeholder="Write a description"/>
+        <Textarea placeholder="Write a description" />
       </FullscreenModal>
     </div>
   );
@@ -95,8 +100,8 @@ export default {
       docPage: {
         customCode,
         title: 'FullscreenModal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

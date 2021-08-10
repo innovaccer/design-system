@@ -92,10 +92,13 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     }
   }, [props.checked]);
 
-  const CheckboxClass = classNames({
-    ['Checkbox']: true,
-    ['Checkbox--disabled']: disabled,
-  }, className);
+  const CheckboxClass = classNames(
+    {
+      ['Checkbox']: true,
+      ['Checkbox--disabled']: disabled,
+    },
+    className
+  );
 
   const CheckboxOuterWrapper = classNames({
     ['Checkbox-outerWrapper']: true,
@@ -109,7 +112,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   const CheckboxInputWrapper = classNames({
     ['Checkbox-input']: true,
     ['Checkbox-input--checked']: checked,
-    ['Checkbox-input--indeterminate']: props.indeterminate
+    ['Checkbox-input--indeterminate']: props.indeterminate,
   });
 
   const CheckboxWrapper = classNames({
@@ -128,8 +131,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     if (onChange) onChange(e);
   };
   const id = `${name}-${label}-${uidGenerator()}`;
-  const IconName = (indeterminate) ? 'remove' : ((checked) ? 'check' : '');
-  const IconSize = (size) === 'tiny' ? 12 : 16;
+  const IconName = indeterminate ? 'remove' : checked ? 'check' : '';
+  const IconSize = size === 'tiny' ? 12 : 16;
 
   return (
     <div className={CheckboxClass}>
@@ -149,15 +152,12 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
           id={id}
         />
         <span className={CheckboxWrapper}>
-          {(IconName) && <Icon name={IconName} size={IconSize} appearance={'white'} />}
+          {IconName && <Icon name={IconName} size={IconSize} appearance={'white'} />}
         </span>
       </div>
       {label && label.trim() && (
         <label htmlFor={id} className={CheckboxTextClass}>
-          <Text
-            size={size === 'tiny' ? 'small' : 'regular'}
-            appearance={disabled ? 'disabled' : 'default'}
-          >
+          <Text size={size === 'tiny' ? 'small' : 'regular'} appearance={disabled ? 'disabled' : 'default'}>
             {label.trim()}
           </Text>
         </label>

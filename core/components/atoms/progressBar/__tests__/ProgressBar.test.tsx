@@ -12,11 +12,7 @@ describe('ProgressBar component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <ProgressBar
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<ProgressBar {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -25,23 +21,19 @@ describe('ProgressBar component', () => {
 });
 
 describe('ProgressBar component', () => {
-
   it('renders style when value>0', () => {
     const { getByTestId } = render(<ProgressBar value={50} max={100} />);
     expect(getByTestId('DesignSystem-ProgressBar').firstChild).toHaveStyle({ width: '50%' });
-
   });
 
   it('renders style when value<0', () => {
     const { getByTestId } = render(<ProgressBar value={-4} max={100} />);
     expect(getByTestId('DesignSystem-ProgressBar').firstChild).toHaveStyle({ width: '0' });
-
   });
 
   it('renders style when value>max', () => {
     const { getByTestId } = render(<ProgressBar value={200} max={100} />);
     expect(getByTestId('DesignSystem-ProgressBar').firstChild).toHaveStyle({ width: '100%' });
-
   });
 
   describe('ProgressBar Component with overwrite class', () => {
@@ -50,5 +42,4 @@ describe('ProgressBar component', () => {
       expect(getByTestId('DesignSystem-ProgressBar')).toHaveClass('ProgressBarClass');
     });
   });
-
 });

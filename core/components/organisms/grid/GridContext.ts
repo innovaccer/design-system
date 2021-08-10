@@ -4,11 +4,11 @@ import { GridRef } from './Grid';
 import defaultProps from './defaultProps';
 
 type ContextProps = GridProps & {
-  ref: GridRef
-}
+  ref: GridRef;
+};
 const context = React.createContext<ContextProps>({
   ...defaultProps,
-  ref: null
+  ref: null,
 });
 
 export const GridProvider = context.Provider;

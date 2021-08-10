@@ -1,13 +1,7 @@
 import * as React from 'react';
 import StatusHint from '../StatusHint';
 
-export const ongoing = () => (
-  <StatusHint
-    appearance="warning"
-  >
-    {'Ongoing'}
-  </StatusHint>
-);
+export const ongoing = () => <StatusHint appearance="warning">{'Ongoing'}</StatusHint>;
 
 export default {
   title: 'Components/StatusHint/Ongoing',
@@ -15,8 +9,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'StatusHint'
-      }
-    }
-  }
+        title: 'StatusHint',
+      },
+    },
+  },
 };

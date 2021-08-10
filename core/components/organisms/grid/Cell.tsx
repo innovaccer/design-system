@@ -25,7 +25,7 @@ type HeaderCellProps = SharedCellProps & {
 type BodyCellProps = SharedCellProps & {
   data: RowData;
   rowIndex: number;
-  expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
+  expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 };
 
 export type CellProps = (HeaderCellProps | BodyCellProps) & {
@@ -35,12 +35,7 @@ export type CellProps = (HeaderCellProps | BodyCellProps) & {
 
 const HeaderCell = (props: HeaderCellProps) => {
   const context = React.useContext(GridContext);
-  const {
-    schema,
-    onMenuChange,
-    onFilterChange,
-    updateColumnSchema
-  } = props;
+  const { schema, onMenuChange, onFilterChange, updateColumnSchema } = props;
 
   const {
     loading,
@@ -50,19 +45,14 @@ const HeaderCell = (props: HeaderCellProps) => {
     filterList,
     headCellTooltip,
     showFilters,
-    schema: schemaProp
+    schema: schemaProp,
   } = context;
 
-  const {
-    sorting = true,
-    name,
-    filters,
-    pinned
-  } = schema;
+  const { sorting = true, name, filters, pinned } = schema;
 
   const isValidSchema = hasSchema(schemaProp);
 
-  const listIndex = sortingList.findIndex(l => l.name === name);
+  const listIndex = sortingList.findIndex((l) => l.name === name);
   const sorted = listIndex !== -1 ? sortingList[listIndex].type : null;
 
   const el = React.createRef<HTMLDivElement>();
@@ -79,55 +69,49 @@ const HeaderCell = (props: HeaderCellProps) => {
   if (pinned === 'left') pinOptions[0] = unpinOption;
   if (pinned === 'right') pinOptions[1] = unpinOption;
 
-  const hideOptions: DropdownProps['options'] = [
-    { label: 'Hide Column', value: 'hide', icon: 'cancel' },
-  ];
+  const hideOptions: DropdownProps['options'] = [{ label: 'Hide Column', value: 'hide', icon: 'cancel' }];
   const unsortOption = { label: 'Unsort', value: 'unsort', icon: 'unfold_more' };
   if (sorted === 'asc') sortOptions[0] = unsortOption;
   if (sorted === 'desc') sortOptions[1] = unsortOption;
 
-  let options: DropdownProps['options'] = [
-    ...pinOptions,
-    ...hideOptions
-  ];
+  let options: DropdownProps['options'] = [...pinOptions, ...hideOptions];
   if (sorting) options = [...sortOptions, ...options];
 
   const classes = classNames({
     'Grid-headCell': true,
-    'Grid-headCell--draggable': draggable
+    'Grid-headCell--draggable': draggable,
   });
 
   const filterOptions = filters
-    ? filters.map(f => ({
-      ...f,
-      selected: filterList[name] && filterList[name].findIndex(fl => fl === f.value) !== -1
-    }))
+    ? filters.map((f) => ({
+        ...f,
+        selected: filterList[name] && filterList[name].findIndex((fl) => fl === f.value) !== -1,
+      }))
     : [];
 
   const renderLabel = () => (
     <>
-      <Text weight="strong" className="ellipsis--noWrap">{schema.displayName}</Text>
+      <Text weight="strong" className="ellipsis--noWrap">
+        {schema.displayName}
+      </Text>
       {sorting && (
         <div className="Grid-sortingIcons">
-          {sorted ? sorted === 'asc' ? (
-            <Icon name="arrow_downward" />
-          ) : (
-            <Icon name="arrow_upward" />
+          {sorted ? (
+            sorted === 'asc' ? (
+              <Icon name="arrow_downward" />
+            ) : (
+              <Icon name="arrow_upward" />
+            )
           ) : (
             <Icon name="unfold_more" />
-          )
-          }
+          )}
         </div>
       )}
     </>
   );
 
   return (
-    <div
-      key={name}
-      className={classes}
-      ref={el}
-    >
+    <div key={name} className={classes} ref={el}>
       <div
         className="Grid-cellContent"
         onClick={() => {
@@ -150,11 +134,9 @@ const HeaderCell = (props: HeaderCellProps) => {
               </Tooltip>
             ) : (
               renderLabel()
-            )
-            }
+            )}
           </>
-        )
-        }
+        )}
       </div>
       {showFilters && filters && (
         <>
@@ -169,12 +151,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 showApplyButton={true}
                 withCheckbox={true}
                 triggerOptions={{
-                  customTrigger: () => (
-                    <Button
-                      icon="filter_list"
-                      appearance="transparent"
-                    />
-                  )
+                  customTrigger: () => <Button icon="filter_list" appearance="transparent" />,
                 }}
                 options={filterOptions}
                 align={'left'}
@@ -182,8 +159,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 minWidth={176}
               />
             </div>
-          )
-          }
+          )}
         </>
       )}
       {showMenu && (
@@ -199,12 +175,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 menu={true}
                 optionType="WITH_ICON"
                 triggerOptions={{
-                  customTrigger: () => (
-                    <Button
-                      icon="more_vert_filled"
-                      appearance="transparent"
-                    />
-                  )
+                  customTrigger: () => <Button icon="more_vert_filled" appearance="transparent" />,
                 }}
                 options={options}
                 align={'left'}
@@ -212,8 +183,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 minWidth={176}
               />
             </div>
-          )
-          }
+          )}
         </>
       )}
       {schema.resizable && (
@@ -230,19 +200,9 @@ const HeaderCell = (props: HeaderCellProps) => {
 
 const BodyCell = (props: BodyCellProps) => {
   const context = React.useContext(GridContext);
-  const {
-    data,
-    schema,
-    expandedState,
-    rowIndex,
-    colIndex
-  } = props;
+  const { data, schema, expandedState, rowIndex, colIndex } = props;
 
-  const {
-    size,
-    loading,
-    nestedRows
-  } = context;
+  const { size, loading, nestedRows } = context;
 
   const [expanded, setExpanded] = expandedState;
 
@@ -253,7 +213,7 @@ const BodyCell = (props: BodyCellProps) => {
     schema,
     data,
     loading,
-    expanded
+    expanded,
   };
 
   const nestedProps = {
@@ -273,7 +233,7 @@ const BodyCell = (props: BodyCellProps) => {
               name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
               size={20}
               appearance={'default'}
-              onClick={e => {
+              onClick={(e) => {
                 if (!isNestedRowDisabled) {
                   e.stopPropagation();
                   setExpanded(!expanded);
@@ -285,14 +245,11 @@ const BodyCell = (props: BodyCellProps) => {
           )}
         </>
       )}
-      {schema.cellRenderer ?
+      {schema.cellRenderer ? (
         schema.cellRenderer(cellProps)
-        : (
-          <GridCell
-            key={`${rowIndex}-${colIndex}`}
-            {...cellProps}
-          />
-        )}
+      ) : (
+        <GridCell key={`${rowIndex}-${colIndex}`} {...cellProps} />
+      )}
     </div>
   );
 };
@@ -319,36 +276,21 @@ export const Cell = (props: CellProps) => {
     // @ts-ignore
     updateColumnSchema,
     // @ts-ignore
-    reorderColumn
+    reorderColumn,
   } = props;
 
-  const {
-    draggable,
-    separator,
-    nestedRows,
-    ref,
-    withCheckbox
-  } = context;
+  const { draggable, separator, nestedRows, ref, withCheckbox } = context;
 
-  const {
-    name,
-    hidden,
-    pinned,
-    cellType = 'DEFAULT'
-  } = schema;
+  const { name, hidden, pinned, cellType = 'DEFAULT' } = schema;
 
-  const {
-    width,
-    minWidth = 96,
-    maxWidth = 800
-  } = getCellSize(cellType);
+  const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
   const cellClass = classNames({
     'Grid-cell': true,
     'Grid-cell--head': isHead,
     'Grid-cell--body': !isHead,
     'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
-    'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows
+    'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows,
   });
 
   if (hidden) return null;
@@ -358,22 +300,22 @@ export const Cell = (props: CellProps) => {
       key={`${rowIndex}-${colIndex}`}
       className={cellClass}
       draggable={isHead && draggable}
-      onDragStart={e => {
+      onDragStart={(e) => {
         if (draggable) {
           e.dataTransfer.setData('name', name);
           if (pinned) e.dataTransfer.setData('type', pinned);
         }
       }}
-      onDragOver={e => e.preventDefault()}
-      onDrop={e => {
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => {
         if (draggable) {
           const from = {
             name: e.dataTransfer.getData('name'),
-            type: e.dataTransfer.getData('type')
+            type: e.dataTransfer.getData('type'),
           };
           const to = {
             name,
-            type: pinned || ''
+            type: pinned || '',
           };
 
           if (from.type === to.type) reorderColumn(from.name, to.name);
@@ -382,7 +324,7 @@ export const Cell = (props: CellProps) => {
       style={{
         width: getWidth({ ref, withCheckbox }, schema.width || width),
         minWidth: getWidth({ ref, withCheckbox }, schema.minWidth || minWidth),
-        maxWidth: getWidth({ ref, withCheckbox }, schema.maxWidth || maxWidth)
+        maxWidth: getWidth({ ref, withCheckbox }, schema.maxWidth || maxWidth),
       }}
     >
       {isHead ? (
@@ -396,13 +338,7 @@ export const Cell = (props: CellProps) => {
           reorderColumn={reorderColumn}
         />
       ) : (
-        <BodyCell
-          rowIndex={rowIndex}
-          colIndex={colIndex}
-          data={data}
-          schema={schema}
-          expandedState={expandedState}
-        />
+        <BodyCell rowIndex={rowIndex} colIndex={colIndex} data={data} schema={schema} expandedState={expandedState} />
       )}
     </div>
   );

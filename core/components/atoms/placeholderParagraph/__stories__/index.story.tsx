@@ -3,24 +3,11 @@ import { select } from '@storybook/addon-knobs';
 import PlaceholderParagraph from '../PlaceholderParagraph';
 
 export const all = () => {
-  const length = select(
-    'length',
-    ['small', 'medium', 'large'],
-    undefined
-  );
+  const length = select('length', ['small', 'medium', 'large'], undefined);
 
-  const size = select(
-    'size',
-    ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'],
-    undefined
-  );
+  const size = select('size', ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'], undefined);
 
-  return (
-    <PlaceholderParagraph
-      size={size}
-      length={length}
-    />
-  );
+  return <PlaceholderParagraph size={size} length={length} />;
 };
 
 export default {
@@ -29,8 +16,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'PlaceholderParagraph'
-      }
-    }
-  }
+        title: 'PlaceholderParagraph',
+      },
+    },
+  },
 };

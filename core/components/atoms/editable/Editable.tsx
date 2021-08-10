@@ -9,18 +9,16 @@ export interface EditableProps extends BaseProps {
 }
 
 export const Editable = (props: EditableProps) => {
-  const {
-    className,
-    onChange,
-    editing,
-    children,
-  } = props;
+  const { className, onChange, editing, children } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const EditableClass = classNames({
-    ['Editable']: true,
-  }, className);
+  const EditableClass = classNames(
+    {
+      ['Editable']: true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-Editable" {...baseProps} className={EditableClass}>

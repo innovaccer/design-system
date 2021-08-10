@@ -6,14 +6,10 @@ export const error = () => {
   return (
     <div>
       <div className="mb-8">
-        <Caption>
-          Without Error
-        </Caption>
+        <Caption>Without Error</Caption>
       </div>
       <div>
-        <Caption error={true}>
-          With Error
-        </Caption>
+        <Caption error={true}>With Error</Caption>
       </div>
     </div>
   );
@@ -25,8 +21,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Caption'
-      }
-    }
-  }
+        title: 'Caption',
+      },
+    },
+  },
 };

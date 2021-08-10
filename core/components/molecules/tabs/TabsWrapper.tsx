@@ -18,65 +18,54 @@ export interface TabsWrapperProps extends BaseProps {
 }
 
 export const TabsWrapper = (props: TabsWrapperProps) => {
-  const {
-    children,
-    onTabChange,
-    className,
-  } = props;
+  const { children, onTabChange, className } = props;
 
   const baseProps = extractBaseProps(props);
   const tabs = Array.isArray(children) ? children : [children];
   const totalTabs = tabs.length;
 
-  const [active, setActiveTab] = React.useState(props.active && props.active < totalTabs
-    ? props.active
-    : 0);
+  const [active, setActiveTab] = React.useState(props.active && props.active < totalTabs ? props.active : 0);
 
   React.useEffect(() => {
-    setActiveTab(
-      props.active && props.active < totalTabs
-        ? props.active
-        : 0
-    );
+    setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
   }, [props.active]);
 
-  const wrapperClass = classNames({
-    ['TabsWrapper']: true,
-  }, className);
+  const wrapperClass = classNames(
+    {
+      ['TabsWrapper']: true,
+    },
+    className
+  );
 
   const tabClickHandler = (tabIndex: number) => {
     setActiveTab(tabIndex);
     if (onTabChange) onTabChange(tabIndex);
   };
 
-  const TabsHeader = (
-    tabs.map((child, index) => {
-      const { label, disabled } = child.props;
+  const TabsHeader = tabs.map((child, index) => {
+    const { label, disabled } = child.props;
 
-      const tabHeaderClass = classNames({
-        ['Tab']: true,
-        ['Tab--disabled']: disabled,
-        ['Tab--active']: !disabled && active === index,
-      });
+    const tabHeaderClass = classNames({
+      ['Tab']: true,
+      ['Tab--disabled']: disabled,
+      ['Tab--active']: !disabled && active === index,
+    });
 
-      return (
-        <div
-          data-test="DesignSystem-Tabs--Header"
-          key={index}
-          className={tabHeaderClass}
-          onClick={() => !disabled && tabClickHandler(index)}
-        >
-          {label}
-        </div>
-      );
-    })
-  );
+    return (
+      <div
+        data-test="DesignSystem-Tabs--Header"
+        key={index}
+        className={tabHeaderClass}
+        onClick={() => !disabled && tabClickHandler(index)}
+      >
+        {label}
+      </div>
+    );
+  });
 
   return (
     <div data-test="DesignSystem-TabsWrapper" {...baseProps} className={wrapperClass}>
-      <div className="TabsWrapper-header">
-        {TabsHeader}
-      </div>
+      <div className="TabsWrapper-header">{TabsHeader}</div>
       <div className="TabsWrapper-content" data-test="DesignSystem-Tabs--Content">
         {tabs[active]}
       </div>

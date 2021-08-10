@@ -26,5 +26,5 @@ export const imageShape = () => {
 export default {
   title: 'Components/Loaders/Placeholder/Variants/Image Shape',
   component: Placeholder,
-  subcomponents: { PlaceholderImage, PlaceholderParagraph }
+  subcomponents: { PlaceholderImage, PlaceholderParagraph },
 };

@@ -47,7 +47,7 @@ export default {
     viewMode: 'story',
     docs: {
       page: null,
-      docPage: null
-    }
-  }
+      docPage: null,
+    },
+  },
 };

@@ -5,7 +5,7 @@ export const updateBatchData = (data: Data, rowIndexes: number[], dataUpdate: Pa
   for (const rowIndex of rowIndexes) {
     updatedData[rowIndex] = {
       ...updatedData[rowIndex],
-      ...dataUpdate
+      ...dataUpdate,
     };
   }
 
@@ -17,10 +17,13 @@ export function translateData(schema: ColumnSchema, data: RowData) {
 
   if (schema.translate) {
     const translatedData = schema.translate(data);
-    newData[schema.name] = (translatedData !== null && typeof translatedData === 'object') ? {
-      ...newData[schema.name],
-      ...translatedData
-    } : translatedData;
+    newData[schema.name] =
+      translatedData !== null && typeof translatedData === 'object'
+        ? {
+            ...newData[schema.name],
+            ...translatedData,
+          }
+        : translatedData;
   }
   if (newData[schema.name] === null || typeof newData[schema.name] !== 'object') {
     newData[schema.name] = { title: newData[schema.name] };
@@ -32,12 +35,12 @@ export function translateData(schema: ColumnSchema, data: RowData) {
 export const filterData = (schema: Schema = [], data: Data = [], filterList: FetchDataOptions['filterList']): Data => {
   let filteredData = data;
   if (filterList) {
-    Object.keys(filterList).forEach(schemaName => {
+    Object.keys(filterList).forEach((schemaName) => {
       const filters = filterList[schemaName];
-      const sIndex = schema.findIndex(s => s.name === schemaName);
+      const sIndex = schema.findIndex((s) => s.name === schemaName);
       const { onFilterChange } = schema[sIndex];
       if (filters.length && onFilterChange) {
-        filteredData = filteredData.filter(d => onFilterChange(d, filters));
+        filteredData = filteredData.filter((d) => onFilterChange(d, filters));
       }
     });
   }
@@ -47,8 +50,8 @@ export const filterData = (schema: Schema = [], data: Data = [], filterList: Fet
 
 export const sortData = (schema: Schema = [], data: Data = [], sortingList: FetchDataOptions['sortingList']): Data => {
   const sortedData = [...data];
-  sortingList?.forEach(l => {
-    const sIndex = schema.findIndex(s => s.name === l.name);
+  sortingList?.forEach((l) => {
+    const sIndex = schema.findIndex((s) => s.name === l.name);
     if (sIndex !== -1) {
       const defaultComparator: Comparator = (a, b) => {
         const aData = translateData(schema[sIndex], a);
@@ -56,9 +59,7 @@ export const sortData = (schema: Schema = [], data: Data = [], sortingList: Fetc
         return aData[l.name].title.localeCompare(bData[l.name].title);
       };
 
-      const {
-        comparator = defaultComparator
-      } = schema[sIndex];
+      const { comparator = defaultComparator } = schema[sIndex];
 
       sortedData.sort(comparator);
       if (l.type === 'desc') sortedData.reverse();

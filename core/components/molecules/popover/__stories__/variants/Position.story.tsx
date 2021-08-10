@@ -12,7 +12,7 @@ export const position = () => {
     'bottom-start',
     'bottom-end',
     'left',
-    'right'
+    'right',
   ];
 
   const style = {
@@ -20,29 +20,25 @@ export const position = () => {
     'flex-wrap': 'wrap',
   };
 
-  const getTrigger = (pos: string) => (<Button appearance="basic">{pos}</Button>);
+  const getTrigger = (pos: string) => <Button appearance="basic">{pos}</Button>;
 
   return (
     <div style={style}>
-      {
-        positions.map((pos, ind) => {
-          return (
-            <div
-              key={ind}
-              className={ind < 3 ? 'mt-11 mr-13' : 'mt-5 mb-11 mr-13'}
-            >
-              <Popover trigger={getTrigger(pos)} position={pos} open={true}>
-                <div style={{ width: 100 }} className="mx-6 my-6">
-                  <Text>Popup</Text>
-                  <Button appearance="primary" className="mt-4">Click</Button>
-                </div>
-              </Popover>
-            </div>
-          );
-        })
-      }
-    </div >
-
+      {positions.map((pos, ind) => {
+        return (
+          <div key={ind} className={ind < 3 ? 'mt-11 mr-13' : 'mt-5 mb-11 mr-13'}>
+            <Popover trigger={getTrigger(pos)} position={pos} open={true}>
+              <div style={{ width: 100 }} className="mx-6 my-6">
+                <Text>Popup</Text>
+                <Button appearance="primary" className="mt-4">
+                  Click
+                </Button>
+              </div>
+            </Popover>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
@@ -53,8 +49,8 @@ export default {
     docs: {
       docPage: {
         title: 'Popover',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

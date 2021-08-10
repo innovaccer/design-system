@@ -22,7 +22,7 @@ export const showHead = () => {
           key={index}
           style={{
             margin: '20px',
-            width: '45%'
+            width: '45%',
           }}
         >
           <Heading>{`showHead: ${v}`}</Heading>
@@ -31,15 +31,8 @@ export const showHead = () => {
               height: '350px',
             }}
           >
-            <Card
-              shadow="light"
-              className="h-100"
-            >
-              <Table
-                showHead={v}
-                data={data}
-                schema={schema}
-              />
+            <Card shadow="light" className="h-100">
+              <Table showHead={v} data={data} schema={schema} />
             </Card>
           </div>
         </div>
@@ -56,10 +49,10 @@ export default {
       docPage: {
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
+          exclude: ['showHead'],
         },
-        noStory: true
-      }
-    }
-  }
+        noStory: true,
+      },
+    },
+  },
 };

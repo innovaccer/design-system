@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, Table, CardSubdued, Text } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
@@ -16,8 +15,7 @@ export const nestedTableWithNestedCards = () => {
       statusType: 'Error',
       errorCode: 2204,
       className: 'File not found',
-      errorMessage: 'Cannot fetch files'
-
+      errorMessage: 'Cannot fetch files',
     },
     {
       firstName: 'Frazer',
@@ -62,9 +60,9 @@ export const nestedTableWithNestedCards = () => {
       displayName: 'Status',
       width: '20%',
       cellType: 'STATUS_HINT',
-      translate: a => ({
+      translate: (a) => ({
         title: a.status,
-        statusAppearance: (a.status === 'Failed') ? 'alert' : 'success'
+        statusAppearance: a.status === 'Failed' ? 'alert' : 'success',
       }),
       filters: [
         { label: 'Failed', value: 'failed' },
@@ -81,10 +79,10 @@ export const nestedTableWithNestedCards = () => {
       name: 'user',
       displayName: 'User',
       width: '20%',
-      translate: a => ({
+      translate: (a) => ({
         title: `${a.lastName}, ${a.firstName}`,
         firstName: a.firstName,
-        lastName: a.lastName
+        lastName: a.lastName,
       }),
       cellType: 'AVATAR_WITH_TEXT',
     },
@@ -131,7 +129,7 @@ export const nestedTableWithNestedCards = () => {
         withHeader={true}
         headerOptions={{
           withSearch: true,
-          dynamicColumn: false
+          dynamicColumn: false,
         }}
         separator={false}
         showMenu={false}
@@ -139,7 +137,7 @@ export const nestedTableWithNestedCards = () => {
         filterPosition="HEADER"
         nestedRowRenderer={nestedRowRenderer}
         filterList={{
-          status: ['failed', 'completed']
+          status: ['failed', 'completed'],
         }}
       />
     </Card>
@@ -305,7 +303,7 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

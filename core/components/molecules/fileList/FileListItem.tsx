@@ -60,25 +60,18 @@ export interface FileListItemProps extends BaseProps, Record<string, any> {
 }
 
 export const FileListItem = (props: FileListItemProps) => {
-  const {
-    progress,
-    errorMessage,
-    onClick,
-    className,
-    actions,
-    fileItem,
-    file,
-    status,
-    fileSize
-  } = props;
+  const { progress, errorMessage, onClick, className, actions, fileItem, file, status, fileSize } = props;
 
   const { name } = file;
 
   const baseProps = extractBaseProps(props);
 
-  const FileItemClass = classNames({
-    ['FileItem']: true,
-  }, className);
+  const FileItemClass = classNames(
+    {
+      ['FileItem']: true,
+    },
+    className
+  );
 
   const onClickHandler = () => {
     if (onClick) {
@@ -90,30 +83,22 @@ export const FileListItem = (props: FileListItemProps) => {
     <div {...baseProps} className={FileItemClass} onClick={onClickHandler}>
       <div className="FileItem-file">
         <div className="FileItem-fileContent">
-          <FileIcon
-            file={file}
-            status={status}
-            progress={progress}
-          />
-          <Text
-            className="FileItem-text"
-            appearance={status === 'completed' ? 'default' : 'subtle'}
-          >
+          <FileIcon file={file} status={status} progress={progress} />
+          <Text className="FileItem-text" appearance={status === 'completed' ? 'default' : 'subtle'}>
             {name}
           </Text>
         </div>
         <div className="FileItem-actions">
-          <Text
-            className="FileItem-size"
-            appearance={'subtle'}
-          >
+          <Text className="FileItem-size" appearance={'subtle'}>
             {fileSize || file.size}
           </Text>
           {!!actions && actions}
         </div>
       </div>
       {status === 'error' && (
-        <Caption className={'FileItem-error'} error={true}>{errorMessage}</Caption>
+        <Caption className={'FileItem-error'} error={true}>
+          {errorMessage}
+        </Caption>
       )}
     </div>
   );
@@ -121,7 +106,7 @@ export const FileListItem = (props: FileListItemProps) => {
 
 FileListItem.defaultProps = {
   progress: 0,
-  errorMessage: 'Network Error'
+  errorMessage: 'Network Error',
 };
 
 FileListItem.displayName = 'FileListItem';

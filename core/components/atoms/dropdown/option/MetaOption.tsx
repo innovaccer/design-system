@@ -25,10 +25,7 @@ const MetaOption = (props: OptionTypeProps) => {
       data-disabled={disabled}
     >
       <div className={'Option-label'}>
-        <Text
-          className={textClassName}
-          appearance={appearance}
-        >
+        <Text className={textClassName} appearance={appearance}>
           {label}
         </Text>
         {subInfo && renderSubInfo(subInfo)}

@@ -26,12 +26,7 @@ export interface PaginationProps extends BaseProps {
 }
 
 export const Pagination = (props: PaginationProps) => {
-  const {
-    type,
-    totalPages,
-    onPageChange,
-    className
-  } = props;
+  const { type, totalPages, onPageChange, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -42,14 +37,17 @@ export const Pagination = (props: PaginationProps) => {
     setPage(props.page);
   }, [props.page]);
 
-  const wrapperClass = classNames({
-    ['Pagination']: true,
-    [`Pagination--${type}`]: type,
-  }, className);
+  const wrapperClass = classNames(
+    {
+      ['Pagination']: true,
+      [`Pagination--${type}`]: type,
+    },
+    className
+  );
 
   const nextButtonWrapperClass = classNames({
     ['Pagination-buttonWrapper']: true,
-    ['Pagination-buttonWrapper--next']: true
+    ['Pagination-buttonWrapper--next']: true,
   });
 
   const prevButtonWrapperClass = classNames({
@@ -137,7 +135,7 @@ export const Pagination = (props: PaginationProps) => {
           data-test="DesignSystem-Pagination--LastButton"
         />
       </div>
-    </div >
+    </div>
   );
 };
 
@@ -145,7 +143,7 @@ Pagination.displayName = 'Pagination';
 Pagination.defaultProps = {
   type: 'basic',
   page: 1,
-  totalPages: 1
+  totalPages: 1,
 };
 
 export default Pagination;

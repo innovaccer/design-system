@@ -5,16 +5,9 @@ import { Navigation, Button, Breadcrumbs, Badge, StatusHint, MetaList } from '@/
 import { action } from '@storybook/addon-actions';
 
 export const withNavigation = () => {
-  const navigationPosition = select(
-    'navigationPosition',
-    ['center', 'bottom'],
-    'center'
-  );
+  const navigationPosition = select('navigationPosition', ['center', 'bottom'], 'center');
   const separator = boolean('separator', true);
-  const title = text(
-    'title',
-    'Page title'
-  );
+  const title = text('title', 'Page title');
 
   const navigationData = [
     {
@@ -24,24 +17,24 @@ export const withNavigation = () => {
     },
     {
       name: 'menu_2',
-      label: 'Menu 2'
+      label: 'Menu 2',
     },
     {
       name: 'menu_3',
       label: 'Menu 3',
-      disabled: true
-    }
+      disabled: true,
+    },
   ];
 
   const breadcrumbData = [
     {
       label: 'Level 0',
-      link: '/level0'
+      link: '/level0',
     },
     {
       label: 'Level 1',
-      link: '/level1'
-    }
+      link: '/level1',
+    },
   ];
 
   const options = {
@@ -61,24 +54,10 @@ export const withNavigation = () => {
         <Button appearance="primary">Primary</Button>
       </div>
     ),
-    breadcrumbs: (
-      <Breadcrumbs
-        list={breadcrumbData}
-        onClick={link => action(`on-click: ${link}`)}
-      />
-    ),
-    badge: (
-      <Badge appearance="secondary">Badge</Badge>
-    ),
-    status: (
-      <StatusHint appearance="alert">Alert</StatusHint>
-    ),
-    meta: (
-      <MetaList
-        list={[{ label: 'Meta data' }]}
-        seperator={true}
-      />
-    )
+    breadcrumbs: <Breadcrumbs list={breadcrumbData} onClick={(link) => action(`on-click: ${link}`)} />,
+    badge: <Badge appearance="secondary">Badge</Badge>,
+    status: <StatusHint appearance="alert">Alert</StatusHint>,
+    meta: <MetaList list={[{ label: 'Meta data' }]} seperator={true} />,
   };
   return (
     <div className="w-100 p-6 bg-secondary-lightest">
@@ -168,8 +147,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

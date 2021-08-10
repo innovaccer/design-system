@@ -175,8 +175,8 @@ export default {
       docPage: {
         customCode,
         title: 'Create User Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

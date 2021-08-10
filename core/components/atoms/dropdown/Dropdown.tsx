@@ -9,7 +9,7 @@ import {
   _isControlled,
   _showSelectedItems,
   _isOpenControlled,
-  _isSelectAllPresent
+  _isSelectAllPresent,
 } from './utility';
 import { BaseProps } from '@/utils/types';
 
@@ -20,13 +20,13 @@ type fetchOptionsFunction = (searchTerm: string) => Promise<{
 }>;
 
 export type EventType =
-  'select-option' |
-  'deselect-option' |
-  'select-all' |
-  'deselect-all' |
-  'clear-all' |
-  'apply-selected' |
-  'cancel-selected';
+  | 'select-option'
+  | 'deselect-option'
+  | 'select-all'
+  | 'deselect-all'
+  | 'clear-all'
+  | 'apply-selected'
+  | 'cancel-selected';
 
 interface ControlledProps {
   /**
@@ -198,10 +198,10 @@ type AsyncDropdownProps = AsyncProps & SharedDropdownProps;
 
 const inputRef = React.createRef<HTMLInputElement>();
 
-export type UncontrolledDropdownProps = (SyncDropdownProps & AsyncDropdownProps);
-export type ControlledDropdownProps = (ControlledProps & SyncDropdownProps & AsyncDropdownProps);
+export type UncontrolledDropdownProps = SyncDropdownProps & AsyncDropdownProps;
+export type ControlledDropdownProps = ControlledProps & SyncDropdownProps & AsyncDropdownProps;
 
-export type DropdownProps = (ControlledDropdownProps & UncontrolledDropdownProps);
+export type DropdownProps = ControlledDropdownProps & UncontrolledDropdownProps;
 
 interface DropdownState {
   async: boolean;
@@ -242,25 +242,17 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     options: [],
     closeOnSelect: true,
     staticLimit: 50,
-    searchDebounceDuration: 300
+    searchDebounceDuration: 300,
   };
 
   constructor(props: DropdownProps) {
     super(props);
 
-    const {
-      selected = [],
-      totalOptions,
-      withCheckbox,
-      loading,
-      open,
-      options,
-    } = props;
+    const { selected = [], totalOptions, withCheckbox, loading, open, options } = props;
 
     this.staticLimit = Math.min(100, props.staticLimit);
     const optionsLength = totalOptions ? totalOptions : options.length;
-    const async = 'fetchOptions' in this.props
-      || optionsLength > this.staticLimit;
+    const async = 'fetchOptions' in this.props || optionsLength > this.staticLimit;
 
     const selectedGroup = !async ? this.getSelectedOptions(options, true) : [];
     const disabledOptions = this.getDisabledOptions(options);
@@ -279,7 +271,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       previousSelected: selectedGroup,
       selected: _showSelectedItems(async, '', withCheckbox) ? selected : [],
       triggerLabel: this.updateTriggerLabel(selectedGroup, optionsLength),
-      selectAll: getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
+      selectAll: getSelectAll(selectedGroup, optionsLength, disabledOptions.length),
     };
   }
 
@@ -307,7 +299,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
             optionsLength: options.length,
             searchedOptionsLength: options.length,
             triggerLabel: this.updateTriggerLabel(selectedGroup),
-            selectAll: getSelectAll(selectedGroup, this.state.optionsLength, disabledOptionsCount)
+            selectAll: getSelectAll(selectedGroup, this.state.optionsLength, disabledOptionsCount),
           });
 
           if (withSearch) inputRef.current?.focus();
@@ -315,9 +307,10 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       }
     }
 
-    if (this.props.selected !== undefined
-      && prevProps.selected !== this.props.selected
-      && prevProps.loading === this.props.loading
+    if (
+      this.props.selected !== undefined &&
+      prevProps.selected !== this.props.selected &&
+      prevProps.loading === this.props.loading
     ) {
       const isSingleSelect = !this.props.withCheckbox;
       this.updateSelectedOptions(this.props.selected, isSingleSelect, true);
@@ -327,133 +320,110 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       this.debounceSearch();
     }
 
-    if (prevProps.open !== this.props.open
-      || prevState.open !== this.state.open
-    ) {
+    if (prevProps.open !== this.props.open || prevState.open !== this.state.open) {
       if (_isOpenControlled(this.props.open) && this.props.open === this.state.open) return;
       this.updateOnPopperToggle();
     }
-
   }
 
   getDisabledOptions = (options: Option[] = []) => {
-    return options.filter(option => option.disabled);
-  }
+    return options.filter((option) => option.disabled);
+  };
 
   fetchOptionsFunction = (searchTerm: string) => {
     const { options } = this.props;
     const filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       resolve({
         searchTerm,
         options: filteredOptions,
         count: filteredOptions.length,
       });
     });
-  }
+  };
 
   getUnSelectedOptions = (options: Option[], init: boolean) => {
     if (options.length) {
       if (!init) {
-        return options.filter(option => (
-          this.state.tempSelected.findIndex(item => item.value === option.value) === -1
-        ));
+        return options.filter(
+          (option) => this.state.tempSelected.findIndex((item) => item.value === option.value) === -1
+        );
       }
 
       const { selected = [] } = this.props;
-      const unSelectedGroup = options.filter(option => (
-        _isControlled(this.props.selected) ?
-          selected.findIndex(item => item.value === option.value) === -1 : !option.selected
-      ));
+      const unSelectedGroup = options.filter((option) =>
+        _isControlled(this.props.selected)
+          ? selected.findIndex((item) => item.value === option.value) === -1
+          : !option.selected
+      );
 
       return unSelectedGroup;
     }
     return options;
-  }
+  };
 
   getSelectedOptions = (options: Option[], init: boolean) => {
     const { selected = [] } = this.props;
     if (options.length) {
       if (!init) return this.state.tempSelected;
 
-      const selectedGroup = _isControlled(this.props.selected) ? selected : options.filter(option => option.selected);
+      const selectedGroup = _isControlled(this.props.selected) ? selected : options.filter((option) => option.selected);
       return selectedGroup;
     }
     return [];
-  }
+  };
 
   updateOptions = (init: boolean, async?: boolean) => {
-    const {
-      searchTerm,
-      selectAll,
-      tempSelected,
-      previousSelected,
-    } = this.state;
+    const { searchTerm, selectAll, tempSelected, previousSelected } = this.state;
 
     let updatedAsync = async === undefined ? this.state.async : async;
     const { fetchOptions, withCheckbox, withSearch } = this.props;
     const fetchFunction = fetchOptions ? fetchOptions : this.fetchOptionsFunction;
 
-    fetchFunction(searchTerm)
-      .then((res: any) => {
-        const { options, count } = res;
-        if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
-          updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
+    fetchFunction(searchTerm).then((res: any) => {
+      const { options, count } = res;
+      if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
+        updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
 
-          const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ?
-            this.getUnSelectedOptions(options, init) : options;
-          const selectedGroup = searchTerm === '' ?
-            this.getSelectedOptions(options, init) : [];
-          const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
-          const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
+        const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox)
+          ? this.getUnSelectedOptions(options, init)
+          : options;
+        const selectedGroup = searchTerm === '' ? this.getSelectedOptions(options, init) : [];
+        const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
+        const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
 
-          this.setState({
-            ...this.state,
-            optionsLength,
-            loading: false,
-            async: updatedAsync,
-            searchedOptionsLength: count,
-            options: unSelectedGroup.slice(0, this.staticLimit),
-            tempSelected: init ? selectedGroup : tempSelected,
-            previousSelected: init ? selectedGroup : previousSelected,
-            selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
-            triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
-            selectAll: !updatedAsync && init
-              ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length)
-              : selectAll
-          });
-          if (updatedAsync || withSearch) inputRef.current?.focus();
-        }
-      });
-  }
+        this.setState({
+          ...this.state,
+          optionsLength,
+          loading: false,
+          async: updatedAsync,
+          searchedOptionsLength: count,
+          options: unSelectedGroup.slice(0, this.staticLimit),
+          tempSelected: init ? selectedGroup : tempSelected,
+          previousSelected: init ? selectedGroup : previousSelected,
+          selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
+          triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
+          selectAll:
+            !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length) : selectAll,
+        });
+        if (updatedAsync || withSearch) inputRef.current?.focus();
+      }
+    });
+  };
 
   updateSearchTerm = (search: string) => {
     this.setState({
       ...this.state,
       loading: true,
       searchInit: true,
-      searchTerm: search
+      searchTerm: search,
     });
-  }
+  };
 
   updateOnPopperToggle = () => {
-    const {
-      withCheckbox,
-      showApplyButton,
-      onClose,
-      name,
-      selected = []
-    } = this.props;
+    const { withCheckbox, showApplyButton, onClose, name, selected = [] } = this.props;
 
-    const {
-      previousSelected,
-      tempSelected,
-      optionsLength,
-      async,
-      loading,
-      searchTerm,
-      options
-    } = this.state;
+    const { previousSelected, tempSelected, optionsLength, async, loading, searchTerm, options } = this.state;
 
     const popperIsOpen = _isOpenControlled(this.props.open) ? this.props.open : this.state.open;
     const disabledOptionsCount = this.getDisabledOptions(options).length;
@@ -476,27 +446,29 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     if (popperIsOpen) {
       const moveSelectedGroup =
-        _showSelectedItems(async, searchTerm, withCheckbox) &&
-        !_isEqual(this.state.selected, tempSelected);
+        _showSelectedItems(async, searchTerm, withCheckbox) && !_isEqual(this.state.selected, tempSelected);
 
       this.setState({
         loading: moveSelectedGroup || loading || searchTerm !== '',
         searchInit: searchTerm !== '',
-        searchTerm: ''
+        searchTerm: '',
       });
 
       if (moveSelectedGroup) this.updateOptions(false);
     }
 
     if (onClose && !popperIsOpen) {
-      const arr = withCheckbox && showApplyButton
-        ? _isControlled(this.props.selected) ? selected : previousSelected
-        : this.state.tempSelected;
+      const arr =
+        withCheckbox && showApplyButton
+          ? _isControlled(this.props.selected)
+            ? selected
+            : previousSelected
+          : this.state.tempSelected;
 
-      const values = arr.map(option => option.value);
+      const values = arr.map((option) => option.value);
       onClose(values, name);
     }
-  }
+  };
 
   updateTriggerLabel = (selectedArray: Selected[] = [], totalOptions?: number) => {
     const selectedLength = selectedArray.length;
@@ -508,44 +480,29 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     let label = '';
 
     if (selectedLength <= labelLimit) {
-      label = selectedArray.map(option => {
-        return option.label;
-      }).join(', ');
+      label = selectedArray
+        .map((option) => {
+          return option.label;
+        })
+        .join(', ');
     } else {
-      label = customLabel ?
-        customLabel(selectedLength, optionsLength, selectedArray) : `${selectedLength} selected`;
+      label = customLabel ? customLabel(selectedLength, optionsLength, selectedArray) : `${selectedLength} selected`;
     }
 
     if (getLabel) getLabel(label);
     return label;
-  }
+  };
 
-  updateSelectedOptions = (
-    selectedArray: Option[],
-    isSingleSelect: boolean,
-    isControlled?: boolean,
-  ) => {
-    const {
-      optionsLength,
-      previousSelected,
-      selected,
-      loading,
-      open,
-    } = this.state;
+  updateSelectedOptions = (selectedArray: Option[], isSingleSelect: boolean, isControlled?: boolean) => {
+    const { optionsLength, previousSelected, selected, loading, open } = this.state;
 
-    const {
-      onChange,
-      withCheckbox,
-      showApplyButton,
-      closeOnSelect,
-      name,
-      onPopperToggle
-    } = this.props;
+    const { onChange, withCheckbox, showApplyButton, closeOnSelect, name, onPopperToggle } = this.props;
 
     const updatePreviousSelected = withCheckbox && showApplyButton && isControlled;
     const disabledOptions = this.getDisabledOptions(this.state.options);
-    const isClearClicked = (selectedArray.length === 0 && selected.length > 0)
-      || (selectedArray.every(option => option.disabled) && !selected.every(option => option.disabled));
+    const isClearClicked =
+      (selectedArray.length === 0 && selected.length > 0) ||
+      (selectedArray.every((option) => option.disabled) && !selected.every((option) => option.disabled));
 
     this.setState({
       ...this.state,
@@ -555,31 +512,24 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       open: _isOpenControlled(this.props.open) || withCheckbox ? open : !closeOnSelect,
       previousSelected: updatePreviousSelected ? selectedArray : previousSelected,
       selected: isClearClicked ? selectedArray : selected,
-      loading: isClearClicked ? true : loading
+      loading: isClearClicked ? true : loading,
     });
 
     if (isClearClicked) this.debounceClear();
 
     if (onChange && (!showApplyButton || isControlled)) {
-      const values = selectedArray.map(item => item.value);
+      const values = selectedArray.map((item) => item.value);
       const selectedValues = isSingleSelect ? values[0] : values;
       onChange(selectedValues, name);
     }
 
-    if (!withCheckbox
-      && closeOnSelect
-      && onPopperToggle
-      && _isOpenControlled(this.props.open)
-    ) {
+    if (!withCheckbox && closeOnSelect && onPopperToggle && _isOpenControlled(this.props.open)) {
       onPopperToggle(false, 'optionClick');
     }
-  }
+  };
 
   onOptionSelect = (option: Option) => {
-    const {
-      onUpdate,
-      selected,
-    } = this.props;
+    const { onUpdate, selected } = this.props;
 
     if (_isControlled(selected)) {
       if (onUpdate) onUpdate('select-option', option);
@@ -587,47 +537,34 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
 
     this.updateSelectedOptions([option], true);
-  }
+  };
 
   onSelect = (option: Option, checked: boolean) => {
-    const {
-      onUpdate,
-      selected,
-      showApplyButton
-    } = this.props;
+    const { onUpdate, selected, showApplyButton } = this.props;
 
     if (_isControlled(selected) && !showApplyButton) {
       if (onUpdate) onUpdate(checked ? 'select-option' : 'deselect-option', option);
       return;
     }
 
-    const {
-      tempSelected,
-    } = this.state;
+    const { tempSelected } = this.state;
 
     let selectedArray = tempSelected.slice();
 
     if (!checked) {
-      const index = selectedArray.findIndex(item => item.value === option.value);
+      const index = selectedArray.findIndex((item) => item.value === option.value);
       selectedArray.splice(index, 1);
     }
 
     selectedArray = checked ? selectedArray.concat(option) : selectedArray;
 
     this.updateSelectedOptions(selectedArray, false);
-  }
+  };
 
   onSelectAll = (event: ChangeEvent) => {
-    const {
-      onUpdate,
-      selected,
-      showApplyButton
-    } = this.props;
+    const { onUpdate, selected, showApplyButton } = this.props;
 
-    const {
-      tempSelected,
-      options
-    } = this.state;
+    const { tempSelected, options } = this.state;
 
     if (_isControlled(selected) && !showApplyButton) {
       if (onUpdate) onUpdate(event.target.checked ? 'select-all' : 'deselect-all');
@@ -635,21 +572,24 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
 
     const selectedArr = tempSelected.slice();
-    const selectedDisabledArray = selectedArr.filter(option => option.disabled);
+    const selectedDisabledArray = selectedArr.filter((option) => option.disabled);
 
     const selectedArray = event.target.checked
-      ? [...options.filter(option => !option.disabled), ...selectedDisabledArray]
+      ? [...options.filter((option) => !option.disabled), ...selectedDisabledArray]
       : selectedDisabledArray;
 
     this.updateSelectedOptions(selectedArray, false);
-  }
+  };
 
   debounceSearch = debounce(this.props.searchDebounceDuration, () => {
-    this.setState({
-      searchInit: false,
-    }, () => {
-      this.updateOptions(false);
-    });
+    this.setState(
+      {
+        searchInit: false,
+      },
+      () => {
+        this.updateOptions(false);
+      }
+    );
   });
 
   debounceClear = debounce(250, () => this.updateOptions(false));
@@ -657,7 +597,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   onClearOptions = () => {
     const { selected, name, onUpdate, showApplyButton, onChange } = this.props;
     const { tempSelected } = this.state;
-    const selectedArray = tempSelected.filter(option => option.disabled);
+    const selectedArray = tempSelected.filter((option) => option.disabled);
 
     if (_isControlled(selected) && !showApplyButton) {
       if (onUpdate) onUpdate('clear-all');
@@ -672,7 +612,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     });
     this.debounceClear();
     if (onChange && !showApplyButton) onChange(selectedArray, name);
-  }
+  };
 
   onTogglePopper = (type: string) => {
     const { onPopperToggle } = this.props;
@@ -680,14 +620,14 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     if (onPopperToggle && _isOpenControlled(this.props.open)) {
       onPopperToggle(false, type);
     }
-  }
+  };
 
   onCancelOptions = () => {
     const { previousSelected, tempSelected, optionsLength } = this.state;
     const { selected, onUpdate, onClose, name } = this.props;
 
     const popperIsOpen = _isOpenControlled(this.props.open) ? this.state.open : false;
-    const values = previousSelected.map(option => option.value);
+    const values = previousSelected.map((option) => option.value);
 
     if (_isControlled(selected)) {
       if (onUpdate) onUpdate('cancel-selected', previousSelected, tempSelected);
@@ -711,18 +651,15 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
 
     this.onTogglePopper('cancelClick');
-  }
+  };
 
   onApplyOptions = () => {
-    const {
-      tempSelected,
-      previousSelected,
-    } = this.state;
+    const { tempSelected, previousSelected } = this.state;
 
     const { onChange, selected, onUpdate, onClose, name } = this.props;
 
     const popperIsOpen = _isOpenControlled(this.props.open) ? this.state.open : false;
-    const values = tempSelected.map(option => option.value);
+    const values = tempSelected.map((option) => option.value);
 
     if (_isControlled(selected)) {
       if (onUpdate) onUpdate('apply-selected', previousSelected, tempSelected);
@@ -734,7 +671,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       ...this.state,
       previousSelected: tempSelected,
       optionsApplied: true,
-      open: popperIsOpen
+      open: popperIsOpen,
     });
 
     if (onChange) {
@@ -746,8 +683,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
 
     this.onTogglePopper('applyClick');
-
-  }
+  };
 
   onToggleDropdown = (updatedOpen: boolean, type?: string) => {
     if (this.props.disabled) {
@@ -764,8 +700,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     this.setState({
       open: updatedOpen,
     });
-
-  }
+  };
 
   render() {
     const {
@@ -779,21 +714,17 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       tempSelected,
       selectAll,
       triggerLabel,
-      previousSelected
+      previousSelected,
     } = this.state;
 
-    const {
-      withSelectAll = true,
-      withCheckbox,
-    } = this.props;
+    const { withSelectAll = true, withCheckbox } = this.props;
 
     const { triggerOptions = {}, selected, ...rest } = this.props;
     const remainingOptionsLen = searchedOptionsLength - options.length;
 
-    const firstEnabledOption =
-      _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
-        ? 0
-        : options.findIndex(option => !option.disabled);
+    const firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
+      ? 0
+      : options.findIndex((option) => !option.disabled);
 
     return (
       <DropdownList

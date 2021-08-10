@@ -6,20 +6,20 @@ import Stepper, { StepperProps as Props } from '../Stepper';
 const steps = [
   {
     label: 'Step A',
-    value: 'Step1'
+    value: 'Step1',
   },
   {
     label: 'Step B',
-    value: 'Step2'
+    value: 'Step2',
   },
   {
     label: 'Step C',
-    value: 'Step3'
+    value: 'Step3',
   },
   {
     label: 'Step D',
-    value: 'Step4'
-  }
+    value: 'Step4',
+  },
 ];
 
 const FunctionValue = jest.fn();
@@ -29,18 +29,14 @@ describe('Stepper component', () => {
     steps: valueHelper(steps, { required: true }),
     active: valueHelper(1, { required: true }),
     completed: valueHelper(0, { required: true }),
-    onChange: valueHelper(FunctionValue, { required: true })
+    onChange: valueHelper(FunctionValue, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <Stepper
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<Stepper {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -49,7 +45,6 @@ describe('Stepper component', () => {
 });
 
 describe('Stepper component', () => {
-
   it('renders steps', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} />);
     expect(getAllByTestId('DesignSystem-Step')).toHaveLength(4);
@@ -63,7 +58,6 @@ describe('Stepper component', () => {
     stepLabels.forEach((label, index) => {
       expect(label.textContent).toMatch(labels[index]);
     });
-
   });
 
   it('renders default active step', () => {
@@ -71,16 +65,13 @@ describe('Stepper component', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} />);
     expect(getAllByTestId('DesignSystem-Step')[defaultActive]).toHaveClass('Step--active');
   });
-
 });
 
 describe('Stepper Component with overwrite class', () => {
-
   it('overwrite Stepper class', () => {
     const { getByTestId } = render(<Stepper steps={steps} className="StepperClass" />);
     expect(getByTestId('DesignSystem-Stepper')).toHaveClass('StepperClass');
   });
-
 });
 
 describe('Stepper component with prop: active', () => {
@@ -102,7 +93,6 @@ describe('Stepper component with prop: active', () => {
     expect(getAllByTestId('DesignSystem-Step')[active]).toHaveClass('Step--active');
     expect(getAllByTestId('DesignSystem-Step--Icon')[active].textContent).toMatch('check_circle');
   });
-
 });
 
 describe('Stepper component with prop: completed', () => {
@@ -118,9 +108,7 @@ describe('Stepper component with prop: completed', () => {
         expect(step).toHaveClass('Icon--info');
       }
     });
-
   });
-
 });
 
 describe('Stepper component with disabled steps', () => {
@@ -136,7 +124,6 @@ describe('Stepper component with disabled steps', () => {
         expect(step).toHaveClass('Step--disabled');
       }
     });
-
   });
 
   it('renders Icon inside disabled step', () => {
@@ -149,9 +136,7 @@ describe('Stepper component with disabled steps', () => {
         expect(step).toHaveClass('Icon--disabled');
       }
     });
-
   });
-
 });
 
 describe('Stepper component with onChange callback', () => {
@@ -166,37 +151,24 @@ describe('Stepper component with onChange callback', () => {
     const { value } = steps[stepClicked];
 
     const { getAllByTestId } = render(
-      <Stepper
-        steps={steps}
-        active={active}
-        completed={completed}
-        onChange={onChange}
-      />
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
     );
 
     const stepNode = getAllByTestId('DesignSystem-Step')[stepClicked];
     fireEvent.click(stepNode);
     expect(onChange).toHaveBeenCalledTimes(1);
     expect(onChange).toHaveBeenCalledWith(stepClicked, completed, label, value);
-
   });
 
   it('upcoming steps are disabled ', () => {
     const disabledClicked = 3;
 
     const { getAllByTestId } = render(
-      <Stepper
-        steps={steps}
-        active={active}
-        completed={completed}
-        onChange={onChange}
-      />
+      <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
     );
 
     const stepNode = getAllByTestId('DesignSystem-Step')[disabledClicked];
     fireEvent.click(stepNode);
     expect(onChange).toHaveBeenCalledTimes(1);
-
   });
-
 });

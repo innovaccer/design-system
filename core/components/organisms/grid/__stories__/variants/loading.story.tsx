@@ -6,23 +6,16 @@ export const loading = () => {
     {
       name: 'name',
       displayName: 'Name',
-      width: '50%'
+      width: '50%',
     },
     {
       name: 'gender',
       displayName: 'Gender',
-      width: '50%'
-    }
+      width: '50%',
+    },
   ];
 
-  return (
-    <Grid
-      totalRecords={10}
-      pageSize={5}
-      schema={schema}
-      loading={true}
-    />
-  );
+  return <Grid totalRecords={10} pageSize={5} schema={schema} loading={true} />;
 };
 
 const customCode = `() => {
@@ -56,8 +49,8 @@ export default {
     docs: {
       docPage: {
         customCode,
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

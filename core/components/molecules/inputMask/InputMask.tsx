@@ -47,8 +47,8 @@ export interface MaskProps extends BaseProps {
 }
 export type InputMaskProps = InputProps & MaskProps;
 type SelectionPos = {
-  start: number,
-  end: number
+  start: number;
+  end: number;
 };
 
 /**
@@ -203,10 +203,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     }
 
     const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
-    if (removedLength === 1
-      && !updatedVal.length
-      && !isEditable(cursorPosition)
-      && newCursorPosition > 0) {
+    if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
       cursorPosition = newCursorPosition;
       cursorPosition--;
       maskedVal[cursorPosition] = placeholderChar;
@@ -256,9 +253,12 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     if (onFocus) onFocus(e);
   };
 
-  const classes = classNames({
-    'd-flex flex-column flex-grow-1': true,
-  }, className);
+  const classes = classNames(
+    {
+      'd-flex flex-column flex-grow-1': true,
+    },
+    className
+  );
 
   return (
     <div className={classes}>
@@ -284,7 +284,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
 InputMask.displayName = 'InputMask';
 // @ts-ignore
 InputMask.utils = {
-  getDefaultValue
+  getDefaultValue,
 };
 
 export default InputMask;

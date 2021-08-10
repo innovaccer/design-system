@@ -78,14 +78,7 @@ export interface AvatarGroupProps extends BaseProps {
 }
 
 export const AvatarGroup = (props: AvatarGroupProps) => {
-  const {
-    max,
-    borderColor,
-    popoverOptions,
-    tooltipPosition,
-    list,
-    className,
-  } = props;
+  const { max, borderColor, popoverOptions, tooltipPosition, list, className } = props;
 
   const {
     popperRenderer,
@@ -108,22 +101,23 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     boxShadow: `0 0 0 var(--spacing-xs) ${borderColor}`,
   };
 
-  const AvatarGroupClass = classNames({
-    ['AvatarGroup']: true,
-  }, className);
+  const AvatarGroupClass = classNames(
+    {
+      ['AvatarGroup']: true,
+    },
+    className
+  );
 
-  const popperClass = classNames({
-    ['AvatarGroup-Popper']: true,
-  }, popperClassName);
+  const popperClass = classNames(
+    {
+      ['AvatarGroup-Popper']: true,
+    },
+    popperClassName
+  );
 
   const trigger = (
     <div data-test="DesignSystem-AvatarGroup--TriggerAvatar" style={style}>
-      <Avatar
-        appearance="secondary"
-        firstName="+"
-        lastName={`${extraAvatars}`}
-        withTooltip={false}
-      />
+      <Avatar appearance="secondary" firstName="+" lastName={`${extraAvatars}`} withTooltip={false} />
     </div>
   );
 
@@ -137,23 +131,21 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     return (
       <div className="py-6 pr-4 pl-6">
         <div className="AvatarGroup-TextWrapper" style={{ maxHeight }}>
-          {
-            extraAvatarsList.map((item, ind) => {
-              const { firstName = '', lastName = '' } = item;
-              const name = `${firstName} ${lastName}`;
+          {extraAvatarsList.map((item, ind) => {
+            const { firstName = '', lastName = '' } = item;
+            const name = `${firstName} ${lastName}`;
 
-              return (
-                <Text
-                  key={ind}
-                  appearance={dark ? 'white' : 'default'}
-                  className={ind < extraAvatars - 1 ? 'mb-5' : ''}
-                  data-test="DesignSystem-AvatarGroup--Text"
-                >
-                  {name}
-                </Text>
-              );
-            })
-          }
+            return (
+              <Text
+                key={ind}
+                appearance={dark ? 'white' : 'default'}
+                className={ind < extraAvatars - 1 ? 'mb-5' : ''}
+                data-test="DesignSystem-AvatarGroup--Text"
+              >
+                {name}
+              </Text>
+            );
+          })}
         </div>
       </div>
     );
@@ -163,12 +155,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     const avatars = list.slice(0, max).map((item, index) => {
       const { appearance, firstName, lastName } = item;
       return (
-        <div
-          data-test="DesignSystem-AvatarGroup--Avatar"
-          className="AvatarGroup-item"
-          style={style}
-          key={index}
-        >
+        <div data-test="DesignSystem-AvatarGroup--Avatar" className="AvatarGroup-item" style={style} key={index}>
           <Avatar
             appearance={appearance}
             firstName={firstName}
@@ -183,11 +170,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   };
 
   return (
-    <div
-      data-test="DesignSystem-AvatarGroup"
-      {...baseProps}
-      className={`${AvatarGroupClass} d-inline-flex`}
-    >
+    <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
       {renderAvatars()}
       {list.length - max > 0 && (
         <Popover
@@ -200,8 +183,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
         >
           {renderPopper()}
         </Popover>
-      )
-      }
+      )}
     </div>
   );
 };

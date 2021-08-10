@@ -23,13 +23,7 @@ describe('Link component', () => {
     const attr = filterUndefined(props) as LinkProps;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Link
-          {...attr}
-        >
-          Link
-        </Link>
-      );
+      const { baseElement } = render(<Link {...attr}>Link</Link>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -38,7 +32,6 @@ describe('Link component', () => {
 });
 
 describe('Link component', () => {
-
   it('renders children', () => {
     const { getByTestId } = render(<Link>Click on Link</Link>);
     expect(getByTestId('DesignSystem-Link').textContent).toMatch('Click on Link');
@@ -63,7 +56,7 @@ describe('Link component', () => {
   });
 
   describe('Link component with prop:appearance', () => {
-    appearances.forEach(appearance => {
+    appearances.forEach((appearance) => {
       it(`should have the Link--${appearance} class when appearance=${appearance} `, () => {
         const { getByTestId } = render(<Link appearance={appearance}>Click on Link</Link>);
         expect(getByTestId('DesignSystem-Link')).toHaveClass(`Link--${appearance}`);
@@ -72,7 +65,7 @@ describe('Link component', () => {
   });
 
   describe('Link component with prop:size', () => {
-    sizes.forEach(size => {
+    sizes.forEach((size) => {
       it(`should have the Link--${size} class when appearance=${size} `, () => {
         const { getByTestId } = render(<Link size={size}>Click on Link</Link>);
         expect(getByTestId('DesignSystem-Link')).toHaveClass(`Link--${size}`);
@@ -86,5 +79,4 @@ describe('Link component', () => {
       expect(getByTestId('DesignSystem-Link')).toHaveClass('Link--disabled');
     });
   });
-
 });

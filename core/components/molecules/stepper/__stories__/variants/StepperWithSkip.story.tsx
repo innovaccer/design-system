@@ -17,7 +17,7 @@ export const stepperWithSkip = () => {
   const onClickHandler = () => {
     if (skipIndexes.includes(active)) {
       const updatedSkip = [...skipIndexes];
-      const index = updatedSkip.findIndex(skippedIndex => skippedIndex === active);
+      const index = updatedSkip.findIndex((skippedIndex) => skippedIndex === active);
       updatedSkip.splice(index, 1);
       setSkipIndexes(updatedSkip);
       // console.log(skipIndexes);
@@ -43,18 +43,16 @@ export const stepperWithSkip = () => {
       style={{ height: '200px' }}
     >
       <div className="d-flex justify-content-center py-5 bg-light w-100">
-        <Stepper
-          steps={steps}
-          active={active}
-          completed={completed}
-          onChange={onChange}
-          skipIndexes={skipIndexes}
-        />
+        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndexes} />
       </div>
       <br />
       <div className="w-25 d-flex justify-content-end">
-        <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className="mr-4">Skip</Button>
-        <Button onClick={onClickHandler} appearance="primary">Next</Button>
+        <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className="mr-4">
+          Skip
+        </Button>
+        <Button onClick={onClickHandler} appearance="primary">
+          Next
+        </Button>
       </div>
     </div>
   );
@@ -138,8 +136,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

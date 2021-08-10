@@ -31,15 +31,7 @@ export interface CollapsibleProps extends BaseProps {
 }
 
 export const Collapsible = (props: CollapsibleProps) => {
-  const {
-    expanded,
-    hoverable,
-    expandedWidth,
-    height,
-    children,
-    className,
-    onToggle,
-  } = props;
+  const { expanded, hoverable, expandedWidth, height, children, className, onToggle } = props;
 
   const [isClicked, setIsClicked] = React.useState(true);
   const [seperator, setSeperator] = React.useState(false);
@@ -55,26 +47,29 @@ export const Collapsible = (props: CollapsibleProps) => {
 
   const WrapperClass = classNames({
     ['Collapsible-wrapper']: true,
-    ['Collapsible-wrapper--overlay']: !isClicked
+    ['Collapsible-wrapper--overlay']: !isClicked,
   });
 
   const BodyClass = classNames({
     ['Collapsible-body']: true,
   });
 
-  const classes = classNames({
-    Collapsible: true,
-    ['Collapsible--overlay']: !isClicked,
-  }, className);
+  const classes = classNames(
+    {
+      Collapsible: true,
+      ['Collapsible--overlay']: !isClicked,
+    },
+    className
+  );
 
   const FooterClass = classNames({
     ['Collapsible-footer']: true,
-    ['Collapsible-footer--seperator']: seperator
+    ['Collapsible-footer--seperator']: seperator,
   });
 
   const onToggleHandler = (newExpanded: boolean, type: string) => () => {
     if (onToggle) {
-      if ((type === 'mouseenter' || type === 'mouseleave')) {
+      if (type === 'mouseenter' || type === 'mouseleave') {
         if ((isClicked && expanded) || !hoverable) return;
         setIsClicked(false);
       }
@@ -91,13 +86,7 @@ export const Collapsible = (props: CollapsibleProps) => {
 
   return (
     <div data-test="DesignSystem-CollapsibleWrapper" className={WrapperClass} style={{ height }}>
-      <div
-        data-test="DesignSystem-Collapsible"
-        {...baseProps}
-        data-layer={true}
-        className={classes}
-        style={{ width }}
-      >
+      <div data-test="DesignSystem-Collapsible" {...baseProps} data-layer={true} className={classes} style={{ width }}>
         <div
           className={BodyClass}
           data-test="DesignSystem-CollapsibleBody"
@@ -127,7 +116,7 @@ Collapsible.defaultProps = {
   expanded: false,
   hoverable: true,
   height: '100%',
-  expandedWidth: 'var(--spacing-9)'
+  expandedWidth: 'var(--spacing-9)',
 };
 
 export default Collapsible;

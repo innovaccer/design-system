@@ -24,30 +24,25 @@ export interface PlaceholderProps extends BaseProps {
 }
 
 export const Placeholder = (props: PlaceholderProps) => {
-  const {
-    imageSize,
-    withImage,
-    round,
-    children,
-    className
-  } = props;
+  const { imageSize, withImage, round, children, className } = props;
 
   const baseProps = extractBaseProps(props);
 
   const paragraphClasses = classNames({
     'Placeholder-paragraph': true,
-    ['Placeholder-paragraph--withImage']: withImage
+    ['Placeholder-paragraph--withImage']: withImage,
   });
 
-  const classes = classNames({
-    ['Placeholder']: true,
-  }, className);
+  const classes = classNames(
+    {
+      ['Placeholder']: true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-Placeholder" {...baseProps} className={classes}>
-      {withImage && (
-        <PlaceholderImage round={round} size={imageSize} data-test="DesignSystem-Placeholder--Image"/>
-      )}
+      {withImage && <PlaceholderImage round={round} size={imageSize} data-test="DesignSystem-Placeholder--Image" />}
       {children && (
         <div className={paragraphClasses} data-test="DesignSystem-Placeholder--Paragraph">
           {children}

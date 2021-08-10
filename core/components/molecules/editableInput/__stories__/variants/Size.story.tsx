@@ -17,22 +17,16 @@ export const size = () => {
   return (
     <div className="d-flex">
       <div className="d-flex flex-column" style={{ width: 'var(--spacing-9)' }}>
-        <Label withInput={true} className="ml-5">Regular</Label>
-        <EditableInput
-          placeholder="First Name"
-          value={name}
-          onChange={onChangeName}
-          className="mr-5"
-        />
+        <Label withInput={true} className="ml-5">
+          Regular
+        </Label>
+        <EditableInput placeholder="First Name" value={name} onChange={onChangeName} className="mr-5" />
       </div>
       <div className="d-flex flex-column" style={{ width: 'var(--spacing-7)' }}>
-        <Label withInput={true} className="ml-5">Tiny</Label>
-        <EditableInput
-          placeholder="Add Weight"
-          value={weight}
-          onChange={onChangeWeight}
-          size="tiny"
-        />
+        <Label withInput={true} className="ml-5">
+          Tiny
+        </Label>
+        <EditableInput placeholder="Add Weight" value={weight} onChange={onChangeWeight} size="tiny" />
       </div>
     </div>
   );
@@ -80,8 +74,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

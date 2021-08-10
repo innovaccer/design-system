@@ -35,26 +35,20 @@ export interface FileUploaderButtonProps extends BaseProps {
 }
 
 export const FileUploaderButton = (props: FileUploaderButtonProps) => {
-  const {
-    accept,
-    multiple,
-    uploadButtonLabel,
-    disabled,
-    name,
-    className,
-    id,
-    onChange
-  } = props;
+  const { accept, multiple, uploadButtonLabel, disabled, name, className, id, onChange } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const FileUploaderButtonClass = classNames({
-    ['FileUploaderButton']: true,
-  }, className);
+  const FileUploaderButtonClass = classNames(
+    {
+      ['FileUploaderButton']: true,
+    },
+    className
+  );
 
   return (
     <div {...baseProps} className={FileUploaderButtonClass}>
-      <Button disabled={disabled} icon="backup">
+      <Button type="button" disabled={disabled} icon="backup">
         {uploadButtonLabel}
       </Button>
       <input
@@ -66,7 +60,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
         type="file"
         tabIndex={-1}
         className="FileUploaderButton-input"
-        onChange={event => {
+        onChange={(event) => {
           const fileList = event.target.files ? Array.from(event.target.files) : [];
           if (onChange) onChange(fileList, event);
         }}
@@ -78,7 +72,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
 FileUploaderButton.defaultProps = {
   uploadButtonLabel: 'Upload files',
   disabled: false,
-  multiple: false
+  multiple: false,
 };
 
 FileUploaderButton.displayName = 'FileUploaderButton';

@@ -4,39 +4,22 @@ import Chip from '../Chip';
 import { action } from '@storybook/addon-actions';
 
 export const all = () => {
+  const type = select('type', ['action', 'selection', 'input'], 'input');
 
-  const type = select(
-    'type', ['action', 'selection', 'input'],
-    'input'
-  );
+  const label = text('label', 'Chip Label');
 
-  const label = text(
-    'label',
-    'Chip Label',
-  );
+  const icon = text('icon', 'assessment');
 
-  const icon = text(
-    'icon', 'assessment'
-  );
-
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
   let clearButton;
   if (type !== 'action') {
-    clearButton = boolean(
-      'clearButton', true
-    );
+    clearButton = boolean('clearButton', true);
   }
 
   let selected;
   if (type === 'selection') {
-    selected = boolean(
-      'selected',
-      false
-    );
+    selected = boolean('selected', false);
   }
   return (
     <Chip
@@ -54,5 +37,5 @@ export const all = () => {
 };
 export default {
   title: 'Components/Chip/All',
-  component: Chip
+  component: Chip,
 };

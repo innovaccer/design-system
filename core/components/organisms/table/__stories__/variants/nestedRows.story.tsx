@@ -16,16 +16,15 @@ export const nestedRows = () => {
         height: '350px',
       }}
     >
-      <Card
-        shadow="light"
-        className="h-100"
-      >
+      <Card shadow="light" className="h-100">
         <Table
           schema={schema}
           data={data}
           nestedRows={true}
           nestedRowRenderer={nestedRowRenderer}
-          onRowClick={(rowData, rowIndex) => action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()}
+          onRowClick={(rowData, rowIndex) =>
+            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
+          }
         />
       </Card>
     </div>
@@ -177,9 +176,9 @@ export default {
         customCode,
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

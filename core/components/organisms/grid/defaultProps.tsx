@@ -14,7 +14,7 @@ export const defaultProps: GridProps = {
   error: false,
   sortingList: [],
   filterList: {},
-  showFilters: true
+  showFilters: true,
 };
 
 export default defaultProps;

@@ -7,40 +7,19 @@ import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 export const syncLoaderSchema = () => {
-  const loading = boolean(
-    'loading',
-    true
-  );
+  const loading = boolean('loading', true);
 
-  const error = boolean(
-    'error',
-    false
-  );
+  const error = boolean('error', false);
 
-  const pageSize = number(
-    'pageSize',
-    5
-  );
+  const pageSize = number('pageSize', 5);
 
-  const withCheckbox = boolean(
-    'withCheckbox',
-    true
-  );
+  const withCheckbox = boolean('withCheckbox', true);
 
-  const applyLoaderSchema = boolean(
-    'applyLoaderSchema',
-    true
-  );
+  const applyLoaderSchema = boolean('applyLoaderSchema', true);
 
-  const applySchema = boolean(
-    'applySchema',
-    false
-  );
+  const applySchema = boolean('applySchema', false);
 
-  const applyData = boolean(
-    'applyData',
-    false
-  );
+  const applyData = boolean('applyData', false);
 
   return (
     <div
@@ -61,7 +40,7 @@ export const syncLoaderSchema = () => {
           showMenu={true}
           withHeader={true}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
           }}
         />
       </Card>
@@ -77,10 +56,10 @@ export default {
       docPage: {
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
+          exclude: ['showHead'],
         },
-        noStory: true
-      }
-    }
-  }
+        noStory: true,
+      },
+    },
+  },
 };

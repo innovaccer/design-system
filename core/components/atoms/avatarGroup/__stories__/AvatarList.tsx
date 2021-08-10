@@ -9,11 +9,11 @@ export const list = [
   },
   {
     firstName: 'Nancy',
-    lastName: 'Wheeler'
+    lastName: 'Wheeler',
   },
   {
     firstName: 'Monica',
-    lastName: 'Geller'
+    lastName: 'Geller',
   },
   {
     firstName: 'Arya',
@@ -25,10 +25,10 @@ export const list = [
   },
   {
     firstName: 'Walter',
-    lastName: 'Wheeler'
+    lastName: 'Wheeler',
   },
   {
     firstName: 'Mark',
-    lastName: 'Snow'
-  }
+    lastName: 'Snow',
+  },
 ];

@@ -11,7 +11,7 @@ const appearances: Appearance[] = [
   'accent1',
   'accent2',
   'accent3',
-  'accent4'
+  'accent4',
 ];
 
 const sizes: Size[] = ['regular', 'tiny'];
@@ -25,13 +25,7 @@ describe('Avatar component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = render(
-        <Avatar
-          {...attr}
-        >
-          JD
-        </Avatar>
-      );
+      const tree = render(<Avatar {...attr}>JD</Avatar>);
       expect(tree).toMatchSnapshot();
     });
   };
@@ -48,13 +42,7 @@ describe('Avatar component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const tree = render(
-        <Avatar
-          {...attr}
-        >
-          JD
-        </Avatar>
-      );
+      const tree = render(<Avatar {...attr}>JD</Avatar>);
       expect(tree).toMatchSnapshot();
     });
   };
@@ -63,7 +51,6 @@ describe('Avatar component', () => {
 });
 
 describe('Avatar component', () => {
-
   it('renders initials when firstName,lastName,children are given', () => {
     const { getByTestId } = render(<Avatar firstName="Design" lastName="System" children="Hey" />);
     expect(getByTestId('DesignSystem-Avatar').textContent).toMatch('He');
@@ -93,40 +80,32 @@ describe('Avatar component', () => {
     const { getByTestId } = render(<Avatar />);
     expect(getByTestId('DesignSystem-Avatar--Icon')).toBeInTheDocument();
   });
-
 });
 
 describe('Avatar component tagName', () => {
-
   it('renders tagName', () => {
     const { getByTestId } = render(<Avatar children="Design System" />);
     expect(getByTestId('DesignSystem-Avatar').tagName).toMatch('SPAN');
   });
-
 });
 
 describe('Avatar Component with overwrite class', () => {
-
   it('overwrite Avatar class', () => {
     const { getByTestId } = render(<Avatar className="AvatarClass">{'Avatar'}</Avatar>);
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('AvatarClass');
   });
-
 });
 
 describe('Avatar component with prop:appearance', () => {
-
-  appearances.forEach(color => {
+  appearances.forEach((color) => {
     it(`should have the Avatar--${color} class when appearance=${color} `, () => {
       const { getByTestId } = render(<Avatar children="Design" appearance={color} />);
       expect(getByTestId('DesignSystem-Avatar')).toHaveClass(`Avatar--${color}`);
     });
   });
-
 });
 
 describe('Avatar component with prop:size', () => {
-
   it('should have the Avatar--regular class when size is regular', () => {
     const { getByTestId } = render(<Avatar children="Design" />);
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--regular');
@@ -136,5 +115,4 @@ describe('Avatar component with prop:size', () => {
     const { getByTestId } = render(<Avatar children="Design" size={'tiny'} />);
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--tiny');
   });
-
 });

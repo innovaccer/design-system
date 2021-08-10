@@ -6,21 +6,17 @@ export const requiredVsOptionalMarking = () => {
     <div>
       <div className="d-flex">
         <div>
-          <Label withInput={true} required={true}>Email</Label>
-          <Input
-            name="input"
-            placeholder="e.g lawsonjoy@gmail.com"
-          />
+          <Label withInput={true} required={true}>
+            Email
+          </Label>
+          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Required Field</Text>
           </div>
         </div>
         <div className="ml-9">
           <Label withInput={true}>Email</Label>
-          <Input
-            name="input"
-            placeholder="e.g lawsonjoy@gmail.com"
-          />
+          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Optional Field</Text>
           </div>
@@ -29,20 +25,16 @@ export const requiredVsOptionalMarking = () => {
       <div className="d-flex mt-9">
         <div>
           <Label withInput={true}>Email</Label>
-          <Input
-            name="input"
-            placeholder="e.g lawsonjoy@gmail.com"
-          />
+          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Required Field</Text>
           </div>
         </div>
         <div className="ml-9">
-          <Label withInput={true} optional={true}>Email</Label>
-          <Input
-            name="input"
-            placeholder="e.g lawsonjoy@gmail.com"
-          />
+          <Label withInput={true} optional={true}>
+            Email
+          </Label>
+          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Optional Field</Text>
           </div>
@@ -60,9 +52,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

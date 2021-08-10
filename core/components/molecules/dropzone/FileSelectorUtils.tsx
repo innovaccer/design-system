@@ -11,18 +11,14 @@ export const COMMON_MIME_TYPES = new Map([
   ['png', 'image/png'],
   ['zip', 'application/zip'],
   ['doc', 'application/msword'],
-  ['docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']
+  ['docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
 ]);
 
-const FILES_TO_IGNORE = [
-  '.DS_Store',
-  'Thumbs.db'
-];
+const FILES_TO_IGNORE = ['.DS_Store', 'Thumbs.db'];
 
-interface FileArray extends Array<FileValue> { }
+interface FileArray extends Array<FileValue> {}
 
-type FileValue = FileWithPath
-  | FileArray[];
+type FileValue = FileWithPath | FileArray[];
 
 interface DOMFile extends Blob {
   readonly lastModified: number;
@@ -38,9 +34,7 @@ interface FileWithWebkitPath extends File {
 }
 
 export async function fromEvent(evt: Event): Promise<(FileWithPath | DataTransferItem)[]> {
-  return isDragEvt(evt) && evt.dataTransfer
-    ? getDataTransferFiles(evt.dataTransfer, evt.type)
-    : getInputFiles(evt);
+  return isDragEvt(evt) && evt.dataTransfer ? getDataTransferFiles(evt.dataTransfer, evt.type) : getInputFiles(evt);
 }
 
 function isDragEvt(value: any): value is DragEvent {
@@ -52,14 +46,15 @@ export function toFileWithPath(file: FileWithPath, path?: string): FileWithPath 
   if (typeof f.path !== 'string') {
     const { webkitRelativePath } = file as FileWithWebkitPath;
     Object.defineProperty(f, 'path', {
-      value: typeof path === 'string'
-        ? path
-        : typeof webkitRelativePath === 'string' && webkitRelativePath.length > 0
+      value:
+        typeof path === 'string'
+          ? path
+          : typeof webkitRelativePath === 'string' && webkitRelativePath.length > 0
           ? webkitRelativePath
           : file.name,
       writable: false,
       configurable: false,
-      enumerable: true
+      enumerable: true,
     });
   }
 
@@ -71,15 +66,14 @@ function withMimeType(file: FileWithPath) {
   const hasExtension = name && name.lastIndexOf('.') !== -1;
 
   if (hasExtension && !file.type) {
-    const ext = name.split('.')
-      .pop()!.toLowerCase();
+    const ext = name.split('.').pop()!.toLowerCase();
     const type = COMMON_MIME_TYPES.get(ext);
     if (type) {
       Object.defineProperty(file, 'type', {
         value: type,
         writable: false,
         configurable: false,
-        enumerable: true
+        enumerable: true,
       });
     }
   }
@@ -88,12 +82,8 @@ function withMimeType(file: FileWithPath) {
 }
 
 function getInputFiles(evt: Event) {
-  const files = isInput(evt.target)
-    ? evt.target.files
-      ? fromList<FileWithPath>(evt.target.files)
-      : []
-    : [];
-  return files.map(file => toFileWithPath(file));
+  const files = isInput(evt.target) ? (evt.target.files ? fromList<FileWithPath>(evt.target.files) : []) : [];
+  return files.map((file) => toFileWithPath(file));
 }
 
 function isInput(value: EventTarget | null): value is HTMLInputElement {
@@ -102,8 +92,7 @@ function isInput(value: EventTarget | null): value is HTMLInputElement {
 
 async function getDataTransferFiles(dt: DataTransfer, type: string) {
   if (dt.items) {
-    const items = fromList<DataTransferItem>(dt.items)
-      .filter(item => item.kind === 'file');
+    const items = fromList<DataTransferItem>(dt.items).filter((item) => item.kind === 'file');
 
     if (type !== 'drop') {
       return items;
@@ -112,12 +101,11 @@ async function getDataTransferFiles(dt: DataTransfer, type: string) {
     return noIgnoredFiles(flatten<FileWithPath>(files));
   }
 
-  return noIgnoredFiles(fromList<FileWithPath>(dt.files)
-    .map(file => toFileWithPath(file)));
+  return noIgnoredFiles(fromList<FileWithPath>(dt.files).map((file) => toFileWithPath(file)));
 }
 
 function noIgnoredFiles(files: FileWithPath[]) {
-  return files.filter(file => FILES_TO_IGNORE.indexOf(file.name) === -1);
+  return files.filter((file) => FILES_TO_IGNORE.indexOf(file.name) === -1);
 }
 
 function fromList<T>(items: DataTransferItemList | FileList): T[] {
@@ -147,10 +135,7 @@ function toFilePromises(item: DataTransferItem) {
 }
 
 function flatten<T>(items: any[]): T[] {
-  return items.reduce((acc, files) => [
-    ...acc,
-    ...(Array.isArray(files) ? flatten(files) : [files])
-  ], []);
+  return items.reduce((acc, files) => [...acc, ...(Array.isArray(files) ? flatten(files) : [files])], []);
 }
 
 function fromDataTransferItem(item: DataTransferItem) {
@@ -173,25 +158,28 @@ function fromDirEntry(entry: any) {
     const entries: Promise<FileValue[]>[] = [];
 
     function readEntries() {
-      reader.readEntries(async (batch: any[]) => {
-        if (!batch.length) {
-          // Done reading directory
-          try {
-            const files = await Promise.all(entries);
-            resolve(files);
-          } catch (err) {
-            reject(err);
-          }
-        } else {
-          const items = Promise.all(batch.map(fromEntry));
-          entries.push(items);
+      reader.readEntries(
+        async (batch: any[]) => {
+          if (!batch.length) {
+            // Done reading directory
+            try {
+              const files = await Promise.all(entries);
+              resolve(files);
+            } catch (err) {
+              reject(err);
+            }
+          } else {
+            const items = Promise.all(batch.map(fromEntry));
+            entries.push(items);
 
-          // Continue reading
-          readEntries();
+            // Continue reading
+            readEntries();
+          }
+        },
+        (err: any) => {
+          reject(err);
         }
-      }, (err: any) => {
-        reject(err);
-      });
+      );
     }
 
     readEntries();
@@ -200,11 +188,14 @@ function fromDirEntry(entry: any) {
 
 async function fromFileEntry(entry: any) {
   return new Promise<FileWithPath>((resolve, reject) => {
-    entry.file((file: FileWithPath) => {
-      const fwp = toFileWithPath(file, entry.fullPath);
-      resolve(fwp);
-    }, (err: any) => {
-      reject(err);
-    });
+    entry.file(
+      (file: FileWithPath) => {
+        const fwp = toFileWithPath(file, entry.fullPath);
+        resolve(fwp);
+      },
+      (err: any) => {
+        reject(err);
+      }
+    );
   });
 }

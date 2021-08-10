@@ -5,49 +5,23 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const inputType = select(
-    'type',
-    ['text', 'password', 'number'],
-    'number'
-  );
+  const inputType = select('type', ['text', 'password', 'number'], 'number');
 
-  const fields = select(
-    'fields',
-    [4, 6],
-    undefined
-  );
+  const fields = select('fields', [4, 6], undefined);
 
   const value = text('values', '6543');
 
-  const placeholder = text(
-    'placeholder',
-    '-'
-  );
+  const placeholder = text('placeholder', '-');
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
-  const autoFocus = boolean(
-    'autoFocus',
-    true
-  );
+  const autoFocus = boolean('autoFocus', true);
 
-  const readOnly = boolean(
-    'readOnly',
-    false
-  );
+  const readOnly = boolean('readOnly', false);
 
-  const error = boolean(
-    'error',
-    false
-  );
+  const error = boolean('error', false);
 
-  const pattern = text(
-    'pattern',
-    ''
-  );
+  const pattern = text('pattern', '');
 
   return (
     <>
@@ -76,8 +50,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Input'
-      }
-    }
-  }
+        title: 'Input',
+      },
+    },
+  },
 };

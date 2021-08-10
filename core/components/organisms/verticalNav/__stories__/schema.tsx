@@ -13,10 +13,10 @@ const schema: Schema = [
     tooltip: true,
     // pinned: 'left',
     separator: true,
-    translate: a => ({
+    translate: (a) => ({
       title: `${a.firstName} ${a.lastName}`,
       firstName: a.firstName,
-      lastName: a.lastName
+      lastName: a.lastName,
     }),
     filters: [
       { label: 'A-G', value: 'a-g' },
@@ -55,7 +55,7 @@ const schema: Schema = [
     // pinned: 'left',
     // align: 'center',
     // comparator: (a, b) => a.email.title.localeCompare(b.email.title),
-    cellType: 'WITH_META_LIST'
+    cellType: 'WITH_META_LIST',
     // image: iconImg,
   },
   {
@@ -66,9 +66,9 @@ const schema: Schema = [
     // separator: true,
     comparator: (a, b) => a.gender.localeCompare(b.gender),
     cellType: 'STATUS_HINT',
-    translate: a => ({
+    translate: (a) => ({
       title: a.gender,
-      statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+      statusAppearance: a.gender === 'Female' ? 'alert' : 'success',
     }),
     filters: [
       { label: 'Male', value: 'male' },
@@ -89,7 +89,7 @@ const schema: Schema = [
     // pinned: 'right',
     // separator: true,
     cellType: 'WITH_META_LIST',
-    cellRenderer: props => {
+    cellRenderer: (props) => {
       return (
         <>
           <Icon className="mr-5" name="events" />
@@ -97,12 +97,12 @@ const schema: Schema = [
             {...props}
             schema={{
               ...props.schema,
-              name: 'email'
+              name: 'email',
             }}
           />
         </>
       );
-    }
+    },
     // status: "success"
   },
 ];

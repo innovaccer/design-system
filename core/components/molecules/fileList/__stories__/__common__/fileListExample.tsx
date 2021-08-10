@@ -2,49 +2,49 @@ import { FileListProps } from '@/components/molecules/fileList';
 
 export const fileList: FileListProps['fileList'] = [
   {
-    file: File = {
+    file: (File = {
       name: 'Audio File.mp3',
       size: '3 MB',
       type: 'audio',
-    } as any,
+    } as any),
     status: 'uploading',
     progress: 45,
     id: 1,
   },
   {
-    file: File = {
+    file: (File = {
       name: 'Video File.mp4',
       size: '3 MB',
       type: 'video',
-    } as any,
+    } as any),
     status: 'completed',
     id: 2,
   },
   {
-    file: File = {
+    file: (File = {
       name: 'Image File.jpeg',
       size: '3 MB',
       type: 'image',
-    } as any,
+    } as any),
     status: 'error',
     errorMessage: 'Network failure',
     id: 3,
   },
   {
-    file: File = {
+    file: (File = {
       name: 'Document File.pdf',
       size: '3 MB',
       type: 'application',
-    } as any,
+    } as any),
     status: 'completed',
     id: 4,
   },
   {
-    file: File = {
+    file: (File = {
       name: 'Other File',
       size: '3 MB',
       type: 'others',
-    } as any,
+    } as any),
     status: 'completed',
-  }
+  },
 ];

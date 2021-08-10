@@ -41,14 +41,17 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
   const { className, heading, subHeading, backButton, backIcon, backIconCallback, backButtonCallback } = props;
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    OverlayHeader: true,
-    ['OverlayHeader--withBackButton']: backButton || backIcon,
-  }, className);
+  const classes = classNames(
+    {
+      OverlayHeader: true,
+      ['OverlayHeader--withBackButton']: backButton || backIcon,
+    },
+    className
+  );
 
   const subheadingClass = classNames({
     ['OverlayHeader-subheading']: true,
-    ['OverlayHeader-subheading--withBackButton']: backButton || backIcon
+    ['OverlayHeader-subheading--withBackButton']: backButton || backIcon,
   });
 
   return (

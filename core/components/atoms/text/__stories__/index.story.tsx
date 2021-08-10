@@ -4,25 +4,27 @@ import { Text } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const weight = optionsKnob('weight', { strong: 'strong', medium: 'medium' },
-    undefined,
-    {
-      display: 'inline-radio'
-    }
-  );
-  const size = optionsKnob('size', { small: 'small', regular: 'regular', large: 'large' },
-    undefined,
-    {
-      display: 'inline-radio'
-    }
-  );
+  const weight = optionsKnob('weight', { strong: 'strong', medium: 'medium' }, undefined, {
+    display: 'inline-radio',
+  });
+  const size = optionsKnob('size', { small: 'small', regular: 'regular', large: 'large' }, undefined, {
+    display: 'inline-radio',
+  });
   const small = boolean('small', false);
   const appearance = optionsKnob(
     'appearance',
-    { default: 'default', white: 'white', destructive: 'destructive', subtle: 'subtle', disabled: 'disabled', success: 'success', link: 'link' },
+    {
+      default: 'default',
+      white: 'white',
+      destructive: 'destructive',
+      subtle: 'subtle',
+      disabled: 'disabled',
+      success: 'success',
+      link: 'link',
+    },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
 
@@ -30,7 +32,7 @@ export const all = () => {
     size,
     weight,
     appearance,
-    small
+    small,
   };
 
   return (
@@ -46,8 +48,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Text'
-      }
-    }
-  }
+        title: 'Text',
+      },
+    },
+  },
 };

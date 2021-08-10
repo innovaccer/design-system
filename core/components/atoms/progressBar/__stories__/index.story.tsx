@@ -9,15 +9,12 @@ export const all = () => {
 
   return (
     <div className="w-50">
-      <ProgressBar
-        value={value}
-        max={max}
-      />
+      <ProgressBar value={value} max={max} />
     </div>
   );
 };
 
 export default {
   title: 'Components/ProgressBar/All',
-  component: ProgressBar
+  component: ProgressBar,
 };

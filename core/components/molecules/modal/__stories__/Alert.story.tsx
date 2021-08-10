@@ -15,13 +15,14 @@ export const alerts = () => {
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
       <Modal
         open={open}
@@ -31,17 +32,20 @@ export const alerts = () => {
         headerOptions={{
           heading: 'Discard Changes',
         }}
-        footer={(
+        footer={
           <>
-            <Button appearance="basic" onClick={action('Cancel button click')}>Cancel</Button>
-            <Button appearance="alert" className="ml-3" onClick={action('Discard button click')}>Discard</Button>
+            <Button appearance="basic" onClick={action('Cancel button click')}>
+              Cancel
+            </Button>
+            <Button appearance="alert" className="ml-3" onClick={action('Discard button click')}>
+              Discard
+            </Button>
           </>
-        )}
+        }
       >
         <Paragraph>
-            You are about to discard all the saved filters.
-            Once discarded, this action cannot be undone.
-            Please be sure of it.
+          You are about to discard all the saved filters. Once discarded, this action cannot be undone. Please be sure
+          of it.
         </Paragraph>
       </Modal>
     </div>
@@ -103,8 +107,8 @@ export default {
       docPage: {
         customCode,
         title: 'Modal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

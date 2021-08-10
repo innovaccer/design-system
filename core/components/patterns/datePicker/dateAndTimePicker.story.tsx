@@ -75,8 +75,8 @@ export default {
       docPage: {
         customCode,
         noProps: true,
-        title: 'Date and time picker'
-      }
-    }
-  }
+        title: 'Date and time picker',
+      },
+    },
+  },
 };

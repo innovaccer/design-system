@@ -11,7 +11,7 @@ import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'small' | 'medium' | 'large';
 type FooterOptions = {
-  actions: OverlayFooterProps['actions']
+  actions: OverlayFooterProps['actions'];
 };
 export interface ModalProps extends BaseProps {
   /**
@@ -120,7 +120,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   element: Element;
 
   static defaultProps = {
-    dimension: 'medium'
+    dimension: 'medium',
   };
 
   constructor(props: ModalProps) {
@@ -142,23 +142,26 @@ class Modal extends React.Component<ModalProps, ModalState> {
         const zIndex = getUpdatedZIndex({
           element: this.element,
           containerClassName: '.Overlay-container--open',
-          elementRef: this.modalRef
+          elementRef: this.modalRef,
         });
         this.setState({
           zIndex,
           open: true,
-          animate: true
+          animate: true,
         });
       } else {
-        this.setState({
-          animate: false,
-        }, () => {
-          window.setTimeout(() => {
-            this.setState({
-              open: false
-            });
-          }, 120);
-        });
+        this.setState(
+          {
+            animate: false,
+          },
+          () => {
+            window.setTimeout(() => {
+              this.setState({
+                open: false,
+              });
+            }, 120);
+          }
+        );
       }
     }
   }
@@ -185,15 +188,18 @@ class Modal extends React.Component<ModalProps, ModalState> {
       footerOptions,
       seperator,
       footer,
-      onClose
+      onClose,
     } = this.props;
 
-    const classes = classNames({
-      Modal: true,
-      'Modal--open': open,
-      'Modal-animation--open': animate,
-      'Modal-animation--close': !animate,
-    }, className);
+    const classes = classNames(
+      {
+        Modal: true,
+        'Modal--open': open,
+        'Modal-animation--open': animate,
+        'Modal-animation--close': !animate,
+      },
+      className
+    );
 
     const headerClass = classNames({
       ['Modal-header']: true,
@@ -217,29 +223,24 @@ class Modal extends React.Component<ModalProps, ModalState> {
         size: '3',
         sizeL: '4',
         sizeM: '4',
-        sizeXS: '10'
+        sizeXS: '10',
       },
       medium: {
         size: '4',
         sizeL: '6',
         sizeM: '6',
-        sizeXS: '10'
+        sizeXS: '10',
       },
       large: {
         size: '6',
         sizeL: '8',
         sizeM: '8',
-        sizeXS: '10'
-      }
+        sizeXS: '10',
+      },
     };
 
     const ModalContainer = (
-      <Row
-        data-test="DesignSystem-ModalContainer"
-        className={ContainerClass}
-        data-layer={true}
-        style={{ zIndex }}
-      >
+      <Row data-test="DesignSystem-ModalContainer" className={ContainerClass} data-layer={true} style={{ zIndex }}>
         <Column
           data-test="DesignSystem-Modal"
           {...baseProps}
@@ -250,12 +251,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {(headerOptions || header) && (
             <div className={headerClass}>
               <Column>
-                {!header && (
-                  <OverlayHeader
-                    data-test="DesignSystem-Modal--header"
-                    {...headerOptions}
-                  />
-                )}
+                {!header && <OverlayHeader data-test="DesignSystem-Modal--header" {...headerOptions} />}
 
                 {!!header && header}
               </Column>
@@ -273,46 +269,36 @@ class Modal extends React.Component<ModalProps, ModalState> {
           )}
           {children && (
             <>
-              {(headerOptions || footerOptions || footer || header) ? (
-                <OverlayBody
-                  className="Modal-body"
-                >
-                  {this.props.children}
-                </OverlayBody>
+              {headerOptions || footerOptions || footer || header ? (
+                <OverlayBody className="Modal-body">{this.props.children}</OverlayBody>
               ) : (
-                  children
-                )}
+                children
+              )}
             </>
           )}
-          {
-            (!!footer || !!footerOptions) &&
-            (
-              <OverlayFooter
-                data-test="DesignSystem-Modal--footer"
-                {...footerOptions}
-                open={open}
-                className={footerClass}
-              >
-                {footer}
-              </OverlayFooter>
-            )}
+          {(!!footer || !!footerOptions) && (
+            <OverlayFooter
+              data-test="DesignSystem-Modal--footer"
+              {...footerOptions}
+              open={open}
+              className={footerClass}
+            >
+              {footer}
+            </OverlayFooter>
+          )}
         </Column>
       </Row>
     );
 
     const ModalWrapper = backdropClose ? (
-      <OutsideClick
-        data-test="DesignSystem-Modal--OutsideClick"
-        onOutsideClick={this.onOutsideClickHandler}
-      >
+      <OutsideClick data-test="DesignSystem-Modal--OutsideClick" onOutsideClick={this.onOutsideClickHandler}>
         {ModalContainer}
       </OutsideClick>
-    ) : ModalContainer;
-
-    const WrapperElement = ReactDOM.createPortal(
-      ModalWrapper,
-      this.element
+    ) : (
+      ModalContainer
     );
+
+    const WrapperElement = ReactDOM.createPortal(ModalWrapper, this.element);
 
     return (
       <>

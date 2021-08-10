@@ -41,7 +41,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

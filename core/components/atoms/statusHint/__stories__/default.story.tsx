@@ -1,13 +1,7 @@
 import * as React from 'react';
 import StatusHint from '../StatusHint';
 
-export const defaultStatusHint = () => (
-  <StatusHint
-    appearance="default"
-  >
-    {'Default'}
-  </StatusHint>
-);
+export const defaultStatusHint = () => <StatusHint appearance="default">{'Default'}</StatusHint>;
 
 export default {
   title: 'Components/StatusHint/Default Status Hint',
@@ -15,8 +9,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'StatusHint'
-      }
-    }
-  }
+        title: 'StatusHint',
+      },
+    },
+  },
 };

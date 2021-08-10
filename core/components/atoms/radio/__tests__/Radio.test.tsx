@@ -23,11 +23,7 @@ describe('Radio component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Radio
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Radio {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -49,11 +45,7 @@ describe('Radio component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Radio
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Radio {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

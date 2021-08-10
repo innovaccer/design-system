@@ -117,8 +117,8 @@ export default {
       docPage: {
         customCode,
         title: 'Basic Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

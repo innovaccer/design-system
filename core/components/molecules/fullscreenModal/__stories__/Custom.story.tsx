@@ -35,13 +35,13 @@ export const customized = () => {
         open={open}
         dimension="medium"
         onClose={onClose}
-        header={(
+        header={
           <>
             <Heading>Custom Heading component</Heading>
             <Text appearance="subtle">This is subheading</Text>
           </>
-        )}
-        footer={(
+        }
+        footer={
           <>
             <Button appearance="basic" onClick={action('Basic button click')}>
               Basic
@@ -50,13 +50,11 @@ export const customized = () => {
               Primary
             </Button>
           </>
-        )}
+        }
       >
         <Text>Fullscreen Modal Body</Text>
         <Heading size="s">Description Title</Heading>
-        <Paragraph>
-          Adding a subheading clearly indicates the hierarchy of the information.
-        </Paragraph>
+        <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
         <Paragraph>
           Card Sections include supporting text like an article summary or a restaurant description.
         </Paragraph>
@@ -137,8 +135,8 @@ export default {
       docPage: {
         customCode,
         title: 'FullscreenModal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

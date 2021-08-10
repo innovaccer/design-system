@@ -7,11 +7,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, ModalDescription, Button, T
 export const old = () => {
   const open = boolean('open', true);
   const backdropClose = boolean('backdropClose', false);
-  const dimension = select(
-    'dimension',
-    ['small', 'medium', 'large'],
-    'medium'
-  );
+  const dimension = select('dimension', ['small', 'medium', 'large'], 'medium');
 
   const onClose = () => {
     updateKnob('open', false);
@@ -21,37 +17,32 @@ export const old = () => {
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
-      <Modal
-        open={open}
-        dimension={dimension}
-        backdropClose={backdropClose ? onClose : undefined}
-      >
-        <ModalHeader
-          onClose={onClose}
-          heading="Heading"
-          subHeading="Subheading"
-        />
+      <Modal open={open} dimension={dimension} backdropClose={backdropClose ? onClose : undefined}>
+        <ModalHeader onClose={onClose} heading="Heading" subHeading="Subheading" />
         <ModalBody>
           <Text>Modal Body</Text>
           <ModalDescription
             title="Description Title"
             description="Adding a subheading clearly indicates the hierarchy of the information."
           />
-          <ModalDescription
-            description="Card Sections include supporting text like an article summary or a restaurant description."
-          />
+          <ModalDescription description="Card Sections include supporting text like an article summary or a restaurant description." />
         </ModalBody>
         <ModalFooter open={open}>
-          <Button appearance="basic" onClick={action('Basic button click')}>Basic</Button>
-          <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>Primary</Button>
+          <Button appearance="basic" onClick={action('Basic button click')}>
+            Basic
+          </Button>
+          <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>
+            Primary
+          </Button>
         </ModalFooter>
       </Modal>
     </div>
@@ -116,8 +107,8 @@ export default {
       docPage: {
         customCode,
         title: 'Modal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

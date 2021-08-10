@@ -22,19 +22,13 @@ export const all = () => {
     withTooltip,
     size,
     firstName,
-    lastName
+    lastName,
   };
 
-  return (
-    <Avatar
-      {...options}
-    >
-      {children}
-    </Avatar>
-  );
+  return <Avatar {...options}>{children}</Avatar>;
 };
 
 export default {
   title: 'Components/Avatar/All',
-  component: Avatar
+  component: Avatar,
 };

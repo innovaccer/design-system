@@ -18,32 +18,16 @@ export interface GridRowProps {
 export const GridRow = (props: GridRowProps) => {
   const context = React.useContext(GridContext);
 
-  const {
-    type,
-    onRowClick,
-    loading,
-    withCheckbox,
-    nestedRows
-  } = context;
+  const { type, onRowClick, loading, withCheckbox, nestedRows } = context;
 
-  const {
-    schema,
-    data,
-    rowIndex: rI,
-    onSelect,
-    className
-  } = props;
+  const { schema, data, rowIndex: rI, onSelect, className } = props;
 
   const rowRef = React.useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = React.useState<boolean>(false);
 
-  const rowClasses = classNames(
-    'Grid-row',
-    'Grid-row--body',
-    {
-      'Grid-row--selected': data._selected
-    }
-  );
+  const rowClasses = classNames('Grid-row', 'Grid-row--body', {
+    'Grid-row--selected': data._selected,
+  });
 
   const onClickHandler = React.useCallback(() => {
     if (type === 'resource' && !loading) {
@@ -53,16 +37,16 @@ export const GridRow = (props: GridRowProps) => {
     }
   }, [data, rI]);
 
-  const pinnedSchema = schema.filter(s => !s.hidden && s.pinned);
-  const leftPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'left');
-  const rightPinnedSchema = pinnedSchema.filter(s => !s.hidden && s.pinned === 'right');
-  const unpinnedSchema = schema.filter(s => !s.hidden && !s.pinned);
+  const pinnedSchema = schema.filter((s) => !s.hidden && s.pinned);
+  const leftPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'left');
+  const rightPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'right');
+  const unpinnedSchema = schema.filter((s) => !s.hidden && !s.pinned);
 
   const renderCheckbox = (show: boolean) => {
-    if (!show || !(withCheckbox)) return null;
+    if (!show || !withCheckbox) return null;
 
     return (
-      <div className="Grid-cell Grid-cell--body Grid-cell--checkbox" onClick={e => e.stopPropagation()}>
+      <div className="Grid-cell Grid-cell--body Grid-cell--checkbox" onClick={(e) => e.stopPropagation()}>
         {loading ? (
           <Placeholder />
         ) : (
@@ -72,8 +56,7 @@ export const GridRow = (props: GridRowProps) => {
               onSelect(rI, event.target.checked);
             }}
           />
-        )
-        }
+        )}
       </div>
     );
   };
@@ -84,7 +67,7 @@ export const GridRow = (props: GridRowProps) => {
         'Grid-cellGroup': true,
         'Grid-cellGroup--pinned': pinned,
         [`Grid-cellGroup--pinned-${pinned}`]: pinned,
-        'Grid-cellGroup--main': !pinned
+        'Grid-cellGroup--main': !pinned,
       });
 
       return (
@@ -114,7 +97,7 @@ export const GridRow = (props: GridRowProps) => {
   };
 
   const wrapperClasses = classNames(className, {
-    'Grid-rowWrapper': true
+    'Grid-rowWrapper': true,
   });
 
   return (
@@ -126,10 +109,7 @@ export const GridRow = (props: GridRowProps) => {
       </div>
       {nestedRows && expanded && (
         <div className="Grid-nestedRow">
-          <GridNestedRow
-            data={data}
-            rowIndex={rI}
-          />
+          <GridNestedRow data={data} rowIndex={rI} />
         </div>
       )}
     </div>
@@ -137,7 +117,7 @@ export const GridRow = (props: GridRowProps) => {
 };
 
 GridRow.defaultProps = {
-  data: {}
+  data: {},
 };
 
 export default GridRow;

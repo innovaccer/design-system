@@ -34,11 +34,7 @@ describe('MetricInput component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <MetricInput
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<MetricInput {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -50,18 +46,14 @@ describe('MetricInput component', () => {
   const mapper: Record<string, any> = {
     defaultValue: valueHelper(value, { required: true }),
     icon: valueHelper(icon, { required: true }),
-    error: valueHelper(Booleanvalue, { required: true, iterate: true })
+    error: valueHelper(Booleanvalue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <MetricInput
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<MetricInput {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -70,92 +62,66 @@ describe('MetricInput component', () => {
 });
 
 describe('MetricInput component', () => {
-
   it('renders input and arrow icons', () => {
-    const { getByTestId } = render(
-      <MetricInput />
-    );
+    const { getByTestId } = render(<MetricInput />);
     expect(getByTestId('DesignSystem-MetricInput').tagName).toMatch('INPUT');
     expect(getByTestId('DesignSystem-MetricInput--upIcon')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-MetricInput--downIcon')).toBeInTheDocument();
   });
-
 });
 
 describe('MetricInput component with prop: size', () => {
-
   it('renders regular metric input by default', () => {
-    const { getByTestId } = render(
-      <MetricInput />
-    );
+    const { getByTestId } = render(<MetricInput />);
     expect(getByTestId('DesignSystem-MetricInput')).toHaveClass('MetricInput-input--regular');
     expect(getByTestId('DesignSystem-MetricInputWrapper')).toHaveClass('MetricInput--regular');
   });
 
   it('renders large metric input by default', () => {
-    const { getByTestId } = render(
-      <MetricInput size="large" />
-    );
+    const { getByTestId } = render(<MetricInput size="large" />);
     expect(getByTestId('DesignSystem-MetricInput')).toHaveClass('MetricInput-input--large');
     expect(getByTestId('DesignSystem-MetricInputWrapper')).toHaveClass('MetricInput--large');
   });
-
 });
 
 describe('MetricInput component with props prefix and suffix ', () => {
-
   it('renders prefix', () => {
-    const { getByTestId } = render(
-      <MetricInput prefix={prefix} />
-    );
+    const { getByTestId } = render(<MetricInput prefix={prefix} />);
     expect(getByTestId('DesignSystem-MetricInput--prefix')).toHaveTextContent(prefix);
   });
 
   it('renders suffix', () => {
-    const { getByTestId } = render(
-      <MetricInput suffix={suffix} />
-    );
+    const { getByTestId } = render(<MetricInput suffix={suffix} />);
     expect(getByTestId('DesignSystem-MetricInput--suffix')).toHaveTextContent(suffix);
   });
 
   it('renders icon', () => {
-    const { getByTestId } = render(
-      <MetricInput icon={icon} />
-    );
+    const { getByTestId } = render(<MetricInput icon={icon} />);
     expect(getByTestId('DesignSystem-MetricInput--icon')).toHaveTextContent(icon);
   });
 });
 
 describe('MetricInput component with props disabled and error ', () => {
-
   it('with prop: disabled', () => {
-    const { getByTestId } = render(
-      <MetricInput disabled={true} onChange={FunctionValue} />
-    );
+    const { getByTestId } = render(<MetricInput disabled={true} onChange={FunctionValue} />);
     expect(getByTestId('DesignSystem-MetricInputWrapper')).toHaveClass('MetricInput--disabled');
 
     const upArrowIcon = getByTestId('DesignSystem-MetricInput--upIcon');
     fireEvent.click(upArrowIcon);
     expect(FunctionValue).not.toHaveBeenCalled();
-
   });
 
   it('with prop: error', () => {
-    const { getByTestId } = render(
-      <MetricInput error={true} />
-    );
+    const { getByTestId } = render(<MetricInput error={true} />);
     expect(getByTestId('DesignSystem-MetricInputWrapper')).toHaveClass('MetricInput--error');
   });
 });
 
 describe('Uncontrolled MetricInput component', () => {
-
   it('with defaultValue', () => {
     const newValue = 11;
 
-    const { getByTestId } = render(
-      <MetricInput defaultValue={value} onChange={FunctionValue} />
-    );
+    const { getByTestId } = render(<MetricInput defaultValue={value} onChange={FunctionValue} />);
     const metricInput = getByTestId('DesignSystem-MetricInput');
     expect(metricInput).toHaveValue(value);
 
@@ -165,10 +131,7 @@ describe('Uncontrolled MetricInput component', () => {
   });
 
   it('increases value if up arrow key is pressed', () => {
-
-    const { getByTestId } = render(
-      <MetricInput defaultValue={value} onChange={FunctionValue} />
-    );
+    const { getByTestId } = render(<MetricInput defaultValue={value} onChange={FunctionValue} />);
     const metricInput = getByTestId('DesignSystem-MetricInput');
     expect(metricInput).toHaveValue(value);
 
@@ -182,10 +145,7 @@ describe('Uncontrolled MetricInput component', () => {
   });
 
   it('decreases value if down arrow key is pressed', () => {
-
-    const { getByTestId } = render(
-      <MetricInput defaultValue={value} onChange={FunctionValue} />
-    );
+    const { getByTestId } = render(<MetricInput defaultValue={value} onChange={FunctionValue} />);
     const metricInput = getByTestId('DesignSystem-MetricInput');
     expect(metricInput).toHaveValue(value);
 
@@ -199,26 +159,19 @@ describe('Uncontrolled MetricInput component', () => {
   });
 
   it('decreases value to -1 if input is empty and down arrow key is pressed', () => {
-
-    const { getByTestId } = render(
-      <MetricInput />
-    );
+    const { getByTestId } = render(<MetricInput />);
     const metricInput = getByTestId('DesignSystem-MetricInput');
     const downArrowIcon = getByTestId('DesignSystem-MetricInput--downIcon');
     fireEvent.click(downArrowIcon);
     expect(metricInput).toHaveValue(-1);
   });
-
 });
 
 describe('Controlled MetricInput component', () => {
-
   it('with value', () => {
     const newValue = 11;
 
-    const { getByTestId, rerender } = render(
-      <MetricInput value={value} onChange={FunctionValue} />
-    );
+    const { getByTestId, rerender } = render(<MetricInput value={value} onChange={FunctionValue} />);
     const metricInput = getByTestId('DesignSystem-MetricInput');
     expect(metricInput).toHaveValue(value);
 
@@ -229,19 +182,11 @@ describe('Controlled MetricInput component', () => {
     rerender(<MetricInput value={newValue} onChange={FunctionValue} />);
     expect(metricInput).toHaveValue(newValue);
   });
-
 });
 
 describe('MetricInput component with props min and max', () => {
-
   it('with prop: min', () => {
-    const { getByTestId } = render(
-      <MetricInput
-        defaultValue={min}
-        onChange={FunctionValue}
-        min={min}
-      />
-    );
+    const { getByTestId } = render(<MetricInput defaultValue={min} onChange={FunctionValue} min={min} />);
 
     const metricInput = getByTestId('DesignSystem-MetricInput');
     const downArrowIcon = getByTestId('DesignSystem-MetricInput--downIcon');
@@ -250,18 +195,11 @@ describe('MetricInput component with props min and max', () => {
   });
 
   it('with prop: max', () => {
-    const { getByTestId } = render(
-      <MetricInput
-        defaultValue={max}
-        onChange={FunctionValue}
-        max={max}
-      />
-    );
+    const { getByTestId } = render(<MetricInput defaultValue={max} onChange={FunctionValue} max={max} />);
 
     const metricInput = getByTestId('DesignSystem-MetricInput');
     const upArrowIcon = getByTestId('DesignSystem-MetricInput--upIcon');
     fireEvent.click(upArrowIcon);
     expect(metricInput).toHaveValue(max);
   });
-
 });

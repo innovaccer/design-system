@@ -10,9 +10,7 @@ describe('OverlayBody component', () => {
     it(testMessageHelper(attr), () => {
       const { asFragment } = render(
         <OverlayBody>
-          <div>
-            Overlay Body
-          </div>
+          <div>Overlay Body</div>
         </OverlayBody>
       );
 
@@ -29,12 +27,9 @@ describe('OverlayBody with overwrite class', () => {
   it('overwrite ModalBody class', () => {
     const { getByTestId } = render(
       <OverlayBody className={className}>
-        <div>
-          Modal Body
-        </div>
+        <div>Modal Body</div>
       </OverlayBody>
     );
     expect(getByTestId('DesignSystem-OverlayBody')).toHaveClass(className);
   });
-
 });

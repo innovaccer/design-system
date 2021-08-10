@@ -11,7 +11,7 @@ const KEY_CODE = {
   right: 'ArrowRight',
   down: 'ArrowDown',
   e: 'e',
-  E: 'E'
+  E: 'E',
 };
 
 interface VerificationProps extends BaseProps {
@@ -36,22 +36,24 @@ interface VerificationProps extends BaseProps {
 type Refs = RefObject<HTMLInputElement>[];
 
 export type VerificationCodeInputProps = VerificationProps &
-  Omit<InputProps,
-    'name' |
-    'type' |
-    'defaultValue' |
-    'size' |
-    'icon' |
-    'inlineLabel' |
-    'autoComplete' |
-    'onChange' |
-    'onClear' |
-    'info' |
-    'min' |
-    'max' |
-    'minLength' |
-    'maxLength' |
-    'actionIcon'>;
+  Omit<
+    InputProps,
+    | 'name'
+    | 'type'
+    | 'defaultValue'
+    | 'size'
+    | 'icon'
+    | 'inlineLabel'
+    | 'autoComplete'
+    | 'onChange'
+    | 'onClear'
+    | 'info'
+    | 'min'
+    | 'max'
+    | 'minLength'
+    | 'maxLength'
+    | 'actionIcon'
+  >;
 
 const VerificationCodeInput = (props: VerificationCodeInputProps) => {
   const {
@@ -192,16 +194,16 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
   };
 
   const wrapperClassNames = (i: number) =>
-    classNames({
-      'VerificationCodeInput-Input': true,
-      'ml-4': i > 0
-    }, className);
+    classNames(
+      {
+        'VerificationCodeInput-Input': true,
+        'ml-4': i > 0,
+      },
+      className
+    );
 
   return (
-    <div
-      data-test="DesignSystem-VerificationCodeInput"
-      className="VerificationCodeInput"
-    >
+    <div data-test="DesignSystem-VerificationCodeInput" className="VerificationCodeInput">
       {values.map((val: string, index: number) => (
         <Input
           key={index}
@@ -218,11 +220,9 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           ref={refs[index]}
           {...rest}
         />
-
       ))}
     </div>
   );
-
 };
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';

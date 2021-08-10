@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
@@ -42,17 +41,7 @@ export interface EditableInputProps extends BaseProps {
 }
 
 export const EditableInput = (props: EditableInputProps) => {
-  const {
-    value,
-    error,
-    size,
-    errorMessage,
-    placeholder,
-    inputOptions,
-    disableSaveAction,
-    onChange,
-    className,
-  } = props;
+  const { value, error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
 
   const { onChange: onInputChange, ...rest } = inputOptions;
 
@@ -63,9 +52,12 @@ export const EditableInput = (props: EditableInputProps) => {
   const inputRef = React.createRef<HTMLInputElement>();
   const baseProps = extractBaseProps(props);
 
-  const EditableInputClass = classNames({
-    ['EditableInput']: true,
-  }, className);
+  const EditableInputClass = classNames(
+    {
+      ['EditableInput']: true,
+    },
+    className
+  );
 
   const EditableDefaultClass = classNames({
     ['EditableInput-default']: true,
@@ -73,12 +65,12 @@ export const EditableInput = (props: EditableInputProps) => {
   });
 
   const InputClass = classNames({
-    ['EditableInput-Input--tiny']: size === 'tiny'
+    ['EditableInput-Input--tiny']: size === 'tiny',
   });
 
   const ActionClass = classNames({
     ['EditableInput-actions']: true,
-    [`EditableInput-actions--${size}`]: size
+    [`EditableInput-actions--${size}`]: size,
   });
 
   React.useEffect(() => {
@@ -144,45 +136,27 @@ export const EditableInput = (props: EditableInputProps) => {
   const renderChildren = () => {
     if (showComponent) {
       return error && errorMessage && editing ? (
-        <Popover
-          trigger={inputComponent}
-          position="right"
-          className="px-6 py-6 d-flex align-items-center"
-          on="hover"
-        >
+        <Popover trigger={inputComponent} position="right" className="px-6 py-6 d-flex align-items-center" on="hover">
           <Icon name="error" appearance={'alert'} className="mr-4" />
-          <Text
-            data-test="DesignSystem-EditableInput--ErrorPopper"
-            appearance="destructive"
-            weight="medium"
-          >
+          <Text data-test="DesignSystem-EditableInput--ErrorPopper" appearance="destructive" weight="medium">
             {errorMessage}
           </Text>
         </Popover>
-      ) : inputComponent;
+      ) : (
+        inputComponent
+      );
     }
 
     return (
-      <div
-        className={EditableDefaultClass}
-        data-test="DesignSystem-EditableInput--Default"
-      >
+      <div className={EditableDefaultClass} data-test="DesignSystem-EditableInput--Default">
         {value || placeholder}
       </div>
     );
   };
 
   return (
-    <div
-      data-test="DesignSystem-EditableInput"
-      {...baseProps}
-      className={EditableInputClass}
-      onKeyDown={onKeyDown}
-    >
-      <Editable
-        onChange={onChangeHandler}
-        editing={editing}
-      >
+    <div data-test="DesignSystem-EditableInput" {...baseProps} className={EditableInputClass} onKeyDown={onKeyDown}>
+      <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}
       </Editable>
       {editing && (
@@ -212,7 +186,7 @@ EditableInput.defaultProps = {
   size: 'regular',
   placeholder: '',
   value: '',
-  inputOptions: {}
+  inputOptions: {},
 };
 
 export default EditableInput;

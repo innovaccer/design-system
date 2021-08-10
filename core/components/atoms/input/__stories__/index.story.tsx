@@ -5,87 +5,37 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const inputType = select(
-    'type',
-    ['text', 'password', 'number', 'email', 'tel', 'url'],
-    undefined
-  );
+  const inputType = select('type', ['text', 'password', 'number', 'email', 'tel', 'url'], undefined);
 
-  const value = text(
-    'value',
-    ''
-  );
+  const value = text('value', '');
 
-  const size = select(
-    'size',
-    ['tiny', 'regular', 'large'],
-    undefined
-  );
+  const size = select('size', ['tiny', 'regular', 'large'], undefined);
 
-  const placeholder = text(
-    'placeholder',
-    'Placeholder'
-  );
+  const placeholder = text('placeholder', 'Placeholder');
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
-  const readOnly = boolean(
-    'readOnly',
-    false
-  );
+  const readOnly = boolean('readOnly', false);
 
-  const icon = text(
-    'icon',
-    ''
-  );
+  const icon = text('icon', '');
 
-  const required = boolean(
-    'required',
-    false
-  );
+  const required = boolean('required', false);
 
-  const inlineLabel = text(
-    'inlineLabel',
-    ''
-  );
+  const inlineLabel = text('inlineLabel', '');
 
-  const error = boolean(
-    'error',
-    false
-  );
+  const error = boolean('error', false);
 
-  const info = text(
-    'info',
-    'sample info popover'
-  );
+  const info = text('info', 'sample info popover');
 
-  const pattern = text(
-    'pattern',
-    ''
-  );
+  const pattern = text('pattern', '');
 
-  const min = number(
-    'min',
-    1
-  );
+  const min = number('min', 1);
 
-  const max = number(
-    'max',
-    30
-  );
+  const max = number('max', 30);
 
-  const minLength = number(
-    'minLength',
-    1
-  );
+  const minLength = number('minLength', 1);
 
-  const maxLength = number(
-    'maxLength',
-    30
-  );
+  const maxLength = number('maxLength', 30);
 
   return (
     <div className="w-25">
@@ -123,9 +73,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

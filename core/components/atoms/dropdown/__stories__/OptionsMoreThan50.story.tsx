@@ -7,20 +7,20 @@ const options: DropdownProps['options'] = [];
 for (let i = 1; i <= 100; i++) {
   options.push({
     label: `Option ${i}`,
-    value: `Option${i}`
+    value: `Option${i}`,
   });
 }
 
 // CSF format story
 export const dropdownOptionsMoreThan50 = () => {
   const getSearchedOptions = (opts: DropdownProps['options'], searchTerm: string) => {
-    const result = opts.filter(option => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const result = opts.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
   const fetchOptions = (searchTerm: string) => {
     const searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
-    return new Promise<any>(resolve => {
+    return new Promise<any>((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -31,14 +31,7 @@ export const dropdownOptionsMoreThan50 = () => {
     });
   };
 
-  return (
-    <Dropdown
-      fetchOptions={fetchOptions}
-      withCheckbox={true}
-      className="w-25"
-      placeholder="Select"
-    />
-  );
+  return <Dropdown fetchOptions={fetchOptions} withCheckbox={true} className="w-25" placeholder="Select" />;
 };
 
 const customCode = `() => {
@@ -88,8 +81,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

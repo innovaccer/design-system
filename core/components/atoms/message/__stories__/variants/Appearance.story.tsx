@@ -4,7 +4,6 @@ import { MessageProps } from '@/index.type';
 
 // CSF format story
 export const appearanceWithoutTitle = () => {
-
   const appearances: MessageProps['appearance'][] = ['default', 'alert', 'info', 'success', 'warning'];
   const innerStyle = {
     display: 'flex',
@@ -13,28 +12,29 @@ export const appearanceWithoutTitle = () => {
   };
   return (
     <div className="Row">
-      {
-        appearances.map((appear, ind) => {
-          return (
-            <div key={ind} style={innerStyle} className="mr-7 mb-7 w-25 d-flex">
-              <Message
-                appearance={appear}
-                description="Patient record has been updated with new records."
-                actions={(
-                  <>
-                    <Text className="cursor-pointer" appearance="link">Action 1</Text>
-                    <Text className="ml-5 cursor-pointer" appearance="link">Action 2</Text>
-                  </>
-                )}
-              />
-              <br />
-              <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
-            </div>
-          );
-        })
-      }
+      {appearances.map((appear, ind) => {
+        return (
+          <div key={ind} style={innerStyle} className="mr-7 mb-7 w-25 d-flex">
+            <Message
+              appearance={appear}
+              description="Patient record has been updated with new records."
+              actions={
+                <>
+                  <Text className="cursor-pointer" appearance="link">
+                    Action 1
+                  </Text>
+                  <Text className="ml-5 cursor-pointer" appearance="link">
+                    Action 2
+                  </Text>
+                </>
+              }
+            />
+            <br />
+            <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
+          </div>
+        );
+      })}
     </div>
-
   );
 };
 
@@ -44,8 +44,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Message'
-      }
-    }
-  }
+        title: 'Message',
+      },
+    },
+  },
 };

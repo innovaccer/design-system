@@ -11,7 +11,7 @@ import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
 
 export type Dimension = 'medium' | 'large';
 type FooterOptions = {
-  actions: OverlayFooterProps['actions']
+  actions: OverlayFooterProps['actions'];
 };
 
 export interface FullscreenModalProps extends BaseProps {
@@ -102,7 +102,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   element: Element;
 
   static defaultProps = {
-    dimension: 'medium'
+    dimension: 'medium',
   };
 
   constructor(props: FullscreenModalProps) {
@@ -112,7 +112,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
 
     this.state = {
       open: props.open,
-      animate: props.open
+      animate: props.open,
     };
   }
 
@@ -122,22 +122,22 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         const zIndex = getUpdatedZIndex({
           element: this.element,
           containerClassName: '.Overlay-container--open',
-          elementRef: this.modalRef
+          elementRef: this.modalRef,
         });
         this.setState({
           zIndex,
           open: true,
-          animate: true
+          animate: true,
         });
       } else {
         this.setState(
           {
-            animate: false
+            animate: false,
           },
           () => {
             window.setTimeout(() => {
               this.setState({
-                open: false
+                open: false,
               });
             }, 120);
           }
@@ -155,14 +155,14 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         FullscreenModal: true,
         'FullscreenModal--open': open,
         'FullscreenModal-animation--open': animate,
-        'FullscreenModal-animation--close': !animate
+        'FullscreenModal-animation--close': !animate,
       },
       className
     );
 
     const ContainerClass = classNames({
       ['Overlay-container']: true,
-      ['Overlay-container--open']: open
+      ['Overlay-container--open']: open,
     });
 
     const baseProps = extractBaseProps(this.props);
@@ -171,14 +171,14 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         size: '4',
         sizeL: '6',
         sizeM: '6',
-        sizeXS: '12'
+        sizeXS: '12',
       },
       large: {
         size: '6',
         sizeL: '8',
         sizeM: '8',
-        sizeXS: '12'
-      }
+        sizeXS: '12',
+      },
     };
 
     const ModalContainer = (
@@ -208,24 +208,19 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                   />
                 </Column>
               </Row>
-              <OverlayBody
-                data-test="DesignSystem-FullscreenModal--Body"
-                className="FullscreenModal-body"
-              >
+              <OverlayBody data-test="DesignSystem-FullscreenModal--Body" className="FullscreenModal-body">
                 {children}
               </OverlayBody>
-              {
-                (!!footer || !!footerOptions) &&
-                (
-                  <OverlayFooter
-                    data-test="DesignSystem-FullscreenModal--footer"
-                    {...footerOptions}
-                    open={open}
-                    className="FullscreenModal-footer"
-                  >
-                    {footer}
-                  </OverlayFooter>
-                )}
+              {(!!footer || !!footerOptions) && (
+                <OverlayFooter
+                  data-test="DesignSystem-FullscreenModal--footer"
+                  {...footerOptions}
+                  open={open}
+                  className="FullscreenModal-footer"
+                >
+                  {footer}
+                </OverlayFooter>
+              )}
             </Column>
           </Row>
         </div>

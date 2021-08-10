@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { TabsWrapper, Tab, Text, Badge, Icon } from '@/index';
+import { Tabs, Tab, Text, Badge, Icon } from '@/index';
 
 // CSF format story
-export const customTabs = () => {
+export const customLabels = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   const onTabChangeHandler = (tabIndex: number) => {
@@ -12,8 +12,54 @@ export const customTabs = () => {
   };
 
   return (
-    <TabsWrapper
-      active={activeIndex}
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler}>
+      <Tab
+        label={
+          <>
+            <div className="Tab-count">
+              <Badge appearance={activeIndex === 0 ? 'primary' : 'secondary'}>2</Badge>
+            </div>
+            <Text appearance={activeIndex !== 0 ? 'subtle' : 'link'}>Tab(Recommended)</Text>
+          </>
+        }
+      >
+        <div>Tab(Recommended)</div>
+      </Tab>
+      <Tab
+        label={
+          <div className="Tab-icon">
+            <Icon name="south_west" appearance={activeIndex === 1 ? 'info' : 'subtle'} />
+            <Text appearance={activeIndex !== 1 ? 'subtle' : 'link'}>All</Text>
+          </div>
+        }
+      >
+        <div>All</div>
+      </Tab>
+      <Tab
+        label={
+          <>
+            <Text appearance={activeIndex !== 2 ? 'subtle' : undefined}>Extras</Text>
+          </>
+        }
+        disabled={true}
+      >
+        <div>Extras</div>
+      </Tab>
+    </Tabs>
+  );
+};
+
+const customCode = `() => {
+  const [activeIndex, setActiveIndex] = React.useState(0);
+
+  const onTabChangeHandler = (tabIndex) => {
+    setActiveIndex(tabIndex);
+    console.log(\`\tab-change: \${tabIndex}\`)();
+  };
+
+  return (
+    <Tabs
+      activeIndex={activeIndex}
       onTabChange={onTabChangeHandler}
     >
       <Tab
@@ -27,7 +73,7 @@ export const customTabs = () => {
         )}
       >
         <div>
-          First Tab
+          Tab(Recommended)
         </div>
       </Tab>
       <Tab
@@ -39,7 +85,7 @@ export const customTabs = () => {
         )}
       >
         <div>
-          Second Tab
+          All
         </div>
       </Tab>
       <Tab
@@ -51,74 +97,22 @@ export const customTabs = () => {
         disabled={true}
       >
         <div>
-          Third Tab
+          Extras
         </div>
       </Tab>
-    </TabsWrapper>
-  );
-};
-
-const customCode = `() => {
-  const [activeIndex, setActive] = React.useState(0)
-  const onTabChangeHandler = (tabIndex) => {
-    setActive(tabIndex)
-  };
-  return (
-    <TabsWrapper
-      active={activeIndex}
-      onTabChange={onTabChangeHandler}
-    >
-      <Tab
-        label={(
-          <>
-            <div className="Tab-count">
-              <Badge appearance={activeIndex === 0 ? "primary" : "secondary"}>2</Badge>
-            </div>
-            <Text tabIndex={1} appearance={activeIndex !== 0 ? 'subtle' : 'link'}>Tab(Recommended)</Text>
-          </>
-        )}
-      >
-        <div>
-          First Tab
-        </div>
-      </Tab>
-      <Tab
-        label={(
-          <div className='Tab-icon'>
-            <Icon name='south_west' appearance={activeIndex === 1 ? 'info' : 'subtle'}/>
-            <Text tabIndex={2} appearance={activeIndex !== 1 ? 'subtle' : 'link'}>All</Text>
-          </div>
-        )}
-      >
-        <div>
-          Second Tab
-        </div>
-      </Tab>
-      <Tab
-        label={(
-          <>
-            <Text tabIndex={3} appearance={activeIndex !== 2 ? 'subtle' : undefined}>Extras</Text>
-          </>
-        )}
-        disabled={true}
-      >
-        <div>
-          Third Tab
-        </div>
-      </Tab>
-    </TabsWrapper>
+    </Tabs>
   );
 }`;
 
 export default {
-  title: 'Components/Tabs/Variants/Custom Tabs',
-  component: TabsWrapper,
+  title: 'Components/Tabs/Custom Labels',
+  component: Tabs,
   subcomponents: { Tab },
   parameters: {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

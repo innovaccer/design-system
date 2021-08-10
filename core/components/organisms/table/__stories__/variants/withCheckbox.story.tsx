@@ -23,7 +23,7 @@ export const withCheckbox = () => {
           key={index}
           style={{
             margin: '20px',
-            width: '45%'
+            width: '45%',
           }}
         >
           <Heading>{`withPagination: ${v}`}</Heading>
@@ -32,17 +32,20 @@ export const withCheckbox = () => {
               height: '350px',
             }}
           >
-            <Card
-              shadow="light"
-              className="h-100"
-            >
+            <Card shadow="light" className="h-100">
               <Table
                 data={data}
                 schema={schema}
                 withCheckbox={true}
                 withPagination={v}
-                onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
-                onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+                onSelect={(rowIndex, selected, selectedList, selectAll) =>
+                  action(
+                    `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+                      selectedList
+                    )} selectAll: ${selectAll}`
+                  )()
+                }
+                onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
               />
             </Card>
           </div>
@@ -60,9 +63,9 @@ export default {
       docPage: {
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

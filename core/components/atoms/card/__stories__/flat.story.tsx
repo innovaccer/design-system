@@ -5,12 +5,12 @@ import { Card } from '@/index';
 export const Flat = () => {
   return (
     <Card shadow="none">
-       <div className="p-8" />
+      <div className="p-8" />
     </Card>
   );
 };
 
 export default {
   title: 'Components/Card/Flat',
-  component: Card
+  component: Card,
 };

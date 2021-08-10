@@ -10,12 +10,7 @@ export const uncontrolledCheckbox = () => {
 
   return (
     <div>
-      <Checkbox
-        defaultChecked={true}
-        label={'Innovaccer'}
-        onChange={handleParentChange}
-        value={'Innovaccer'}
-      />
+      <Checkbox defaultChecked={true} label={'Innovaccer'} onChange={handleParentChange} value={'Innovaccer'} />
     </div>
   );
 };
@@ -26,8 +21,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Checkbox'
-      }
-    }
-  }
+        title: 'Checkbox',
+      },
+    },
+  },
 };

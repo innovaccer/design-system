@@ -3,24 +3,12 @@ import { OptionTypeProps } from './index';
 import Checkbox from '@/components/atoms/checkbox';
 
 const CheckboxOption = (props: OptionTypeProps) => {
-  const {
-    className,
-    selected,
-    optionData,
-    onChangeHandler,
-    onUpdateActiveOption,
-    dataTest,
-  } = props;
+  const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest } = props;
 
   const { label, disabled } = optionData;
 
   return (
-    <div
-      className={className}
-      onMouseEnter={onUpdateActiveOption}
-      data-test={dataTest}
-      data-disabled={disabled}
-    >
+    <div className={className} onMouseEnter={onUpdateActiveOption} data-test={dataTest} data-disabled={disabled}>
       <Checkbox
         label={label}
         disabled={disabled}

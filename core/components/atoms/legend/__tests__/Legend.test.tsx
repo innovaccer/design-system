@@ -29,11 +29,7 @@ describe('Legend component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Legend {...attr}>
-          {label}
-        </Legend>
-      );
+      const { baseElement } = render(<Legend {...attr}>{label}</Legend>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -51,11 +47,7 @@ describe('Legend component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Legend {...attr}>
-          {label}
-        </Legend>
-      );
+      const { baseElement } = render(<Legend {...attr}>{label}</Legend>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -73,11 +65,7 @@ describe('Legend component', () => {
     const attr = filterUndefined(props) as IProps;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Legend {...attr}>
-          {label}
-        </Legend>
-      );
+      const { baseElement } = render(<Legend {...attr}>{label}</Legend>);
       expect(baseElement).toMatchSnapshot();
     });
   };

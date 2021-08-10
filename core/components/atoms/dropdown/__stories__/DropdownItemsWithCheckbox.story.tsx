@@ -18,17 +18,12 @@ const options = [
   {
     label: '56 and above',
     value: '56_above',
-  }
+  },
 ];
 
 // CSF format story
 export const dropdownItemsWithCheckbox = () => (
-  <Dropdown
-    options={options}
-    withCheckbox={true}
-    className="w-25"
-    placeholder="Select"
-  />
+  <Dropdown options={options} withCheckbox={true} className="w-25" placeholder="Select" />
 );
 
 export default {
@@ -40,8 +35,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

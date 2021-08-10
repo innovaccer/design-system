@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Tabs, Heading, Dropdown } from '@/index';
+import { Tabs, Heading, Dropdown, Tab } from '@/index';
 
 // CSF format story
 export const basicTabs = () => {
@@ -8,35 +8,23 @@ export const basicTabs = () => {
     {
       label: 'Feb 9, 2019 (recent)',
       value: 'Feb 9, 2019 (recent)',
-      selected: true
+      selected: true,
     },
     {
       label: 'Feb 10, 2019',
-      value: 'Feb 10, 2019'
+      value: 'Feb 10, 2019',
     },
     {
       label: 'Feb 11, 2019',
-      value: 'Feb 11, 2019'
+      value: 'Feb 11, 2019',
     },
     {
       label: 'Feb 12, 2019',
-      value: 'Feb 12, 2019'
+      value: 'Feb 12, 2019',
     },
     {
       label: 'Feb 13, 2019',
-      value: 'Feb 13, 2019'
-    }
-  ];
-
-  const tabs = [
-    {
-      label: 'Clinical Gaps'
-    },
-    {
-      label: 'Claim Gaps'
-    },
-    {
-      label: 'Billing Gaps'
+      value: 'Feb 13, 2019',
     },
   ];
 
@@ -52,10 +40,17 @@ export const basicTabs = () => {
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs
-        tabs={tabs}
-        onTabChange={onTabChangeHandler}
-      />
+      <Tabs onTabChange={onTabChangeHandler}>
+        <Tab label="Clinical Gaps">
+          <div>Clinical Gaps</div>
+        </Tab>
+        <Tab label="Billing Gaps">
+          <div>Billing Gaps</div>
+        </Tab>
+        <Tab label="Claim Gaps" disabled={true}>
+          <div>Claim Gaps</div>
+        </Tab>
+      </Tabs>
     </div>
   );
 };
@@ -85,18 +80,6 @@ const customCode = `() => {
     }
   ];
 
-  const tabs = [
-    {
-      label: 'Clinical Gaps'
-    },
-    {
-      label: 'Claim Gaps'
-    },
-    {
-      label: 'Billing Gaps'
-    },
-  ];
-
   return(
     <div>
       <div className="d-flex justify-content-between">
@@ -105,10 +88,30 @@ const customCode = `() => {
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs
-        tabs={tabs}
-        onTabChange={console.log}
-      />
+      <Tabs>
+        <Tab
+          label="Clinical Gaps"
+        >
+          <div>
+            Clinical Gaps
+          </div>
+        </Tab>
+        <Tab
+          label="Billing Gaps"
+        >
+          <div>
+            Billing Gaps
+          </div>
+        </Tab>
+        <Tab
+          label="Claim Gaps"
+          disabled={true}
+        >
+          <div>
+            Claim Gaps
+          </div>
+        </Tab>
+      </Tabs>
     </div>
   );
 }`;
@@ -120,7 +123,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

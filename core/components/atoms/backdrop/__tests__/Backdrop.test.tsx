@@ -7,18 +7,14 @@ const booleanValue = [true, false];
 
 describe('Backdrop component', () => {
   const mapper = {
-    open: valueHelper(booleanValue, { required: true, iterate: true })
+    open: valueHelper(booleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Backdrop
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<Backdrop {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -27,9 +23,7 @@ describe('Backdrop component', () => {
 });
 
 describe('Backdrop component', () => {
-
   describe('Backdrop component with prop:open', () => {
-
     it('should have class Backdrop--open when open={true}', () => {
       const { getByTestId } = render(<Backdrop open={true} />);
       expect(getByTestId('DesignSystem-Backdrop')).toHaveClass('Backdrop--open ');
@@ -46,13 +40,10 @@ describe('Backdrop component', () => {
     });
 
     describe('Backdrop Component with overwrite class', () => {
-
       it('overwrite Backdrop class', () => {
         const { getByTestId } = render(<Backdrop className="BackdropClass" open={false} />);
         expect(getByTestId('DesignSystem-Backdrop')).toHaveClass('BackdropClass');
       });
-
     });
   });
-
 });

@@ -14,10 +14,10 @@ const schema: Schema = [
     tooltip: true,
     // pinned: 'left',
     separator: true,
-    translate: a => ({
+    translate: (a) => ({
       title: `${a.firstName} ${a.lastName}`,
       firstName: a.firstName,
-      lastName: a.lastName
+      lastName: a.lastName,
     }),
     filters: [
       { label: 'A-G', value: 'a-g' },
@@ -56,7 +56,7 @@ const schema: Schema = [
     // pinned: 'left',
     // align: 'center',
     // comparator: (a, b) => a.email.title.localeCompare(b.email.title),
-    cellType: 'WITH_META_LIST'
+    cellType: 'WITH_META_LIST',
     // image: iconImg,
   },
   {
@@ -67,9 +67,9 @@ const schema: Schema = [
     // separator: true,
     comparator: (a, b) => a.gender.localeCompare(b.gender),
     cellType: 'STATUS_HINT',
-    translate: a => ({
+    translate: (a) => ({
       title: a.gender,
-      statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+      statusAppearance: a.gender === 'Female' ? 'alert' : 'success',
     }),
     filters: [
       { label: 'Male', value: 'male' },
@@ -89,9 +89,9 @@ const schema: Schema = [
     resizable: true,
     align: 'center',
     cellType: 'ICON',
-    translate: _ => ({
-      icon: 'events'
-    })
+    translate: (_) => ({
+      icon: 'events',
+    }),
     // separator: true,
     // status: "success"
   },
@@ -113,15 +113,8 @@ const schema: Schema = [
         setWeight(value);
       };
 
-      return (
-        <EditableInput
-          placeholder="Add Weight"
-          value={weight}
-          onChange={onChangeWeight}
-          size="tiny"
-        />
-      );
-    }
+      return <EditableInput placeholder="Add Weight" value={weight} onChange={onChangeWeight} size="tiny" />;
+    },
     // status: "success"
   },
 ];

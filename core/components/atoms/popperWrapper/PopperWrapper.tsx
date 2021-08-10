@@ -24,10 +24,10 @@ type PositionType =
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
 type PopperChildrenProps = {
-  ref: React.Ref<any>,
-  placement: PositionType,
-  style: React.CSSProperties,
-  outOfBoundaries: boolean | null
+  ref: React.Ref<any>;
+  placement: PositionType;
+  style: React.CSSProperties;
+  outOfBoundaries: boolean | null;
 };
 
 export interface PopperWrapperProps {
@@ -106,7 +106,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     closeOnBackdropClick: true,
     hoverable: true,
     appendToBody: true,
-    style: {}
+    style: {},
   };
 
   constructor(props: PopperWrapperProps) {
@@ -118,7 +118,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     this.offsetMapping = {
       small: '2px',
       medium: '4px',
-      large: '8px'
+      large: '8px',
     };
     this.triggerRef = React.createRef();
     this.popupRef = React.createRef();
@@ -146,7 +146,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         const zIndex = this.getZIndexForLayer(triggerElement);
 
         this.setState({
-          zIndex: zIndex === undefined ? zIndex : zIndex + 1
+          zIndex: zIndex === undefined ? zIndex : zIndex + 1,
         });
       }
     }
@@ -213,17 +213,17 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   togglePopper = (type: string, newValue?: boolean) => {
     const { open, onToggle } = this.props;
-    onToggle((newValue === undefined ? !open : newValue), type);
-  }
+    onToggle(newValue === undefined ? !open : newValue, type);
+  };
 
   findDOMNode = (ref: React.RefObject<HTMLElement>) => {
     return ReactDOM.findDOMNode(ref.current!) as Element | null;
-  }
+  };
 
   doesEventContainsElement = (event: Event, ref: React.RefObject<any>) => {
     const el = this.findDOMNode(ref);
-    return (el && el.contains(event.target as HTMLElement));
-  }
+    return el && el.contains(event.target as HTMLElement);
+  };
 
   getZIndexForLayer(node: Element | null) {
     if (node === null) {
@@ -232,17 +232,11 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
     const layerNode = node.closest('[data-layer]') || document.body;
     const zIndex =
-      layerNode === document.body
-        ? 'auto'
-        : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
+      layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
     return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
   }
 
-  getUpdatedStyle = (
-    oldStyle: React.CSSProperties,
-    placement: PositionType,
-    offset: Offset
-  ) => {
+  getUpdatedStyle = (oldStyle: React.CSSProperties, placement: PositionType, offset: Offset) => {
     const { style } = this.props;
     const newStyle = { ...style, ...oldStyle };
     const position = placement ? placement.split('-')[0] : placement;
@@ -264,23 +258,24 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         break;
     }
     return newStyle;
-  }
+  };
 
   getTriggerElement(ref: React.Ref<any>) {
     const { trigger, on, triggerClass } = this.props;
-    const options = on === 'hover'
-      ? {
-        ref,
-        onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave
-      }
-      : {
-        ref,
-        onClick: (ev: React.MouseEvent<HTMLDivElement>) => {
-          ev.stopPropagation();
-          this.togglePopper('onClick');
-        }
-      };
+    const options =
+      on === 'hover'
+        ? {
+            ref,
+            onMouseEnter: this.handleMouseEnter,
+            onMouseLeave: this.handleMouseLeave,
+          }
+        : {
+            ref,
+            onClick: (ev: React.MouseEvent<HTMLDivElement>) => {
+              ev.stopPropagation();
+              this.togglePopper('onClick');
+            },
+          };
 
     const classes = classNames('PopperWrapper-trigger', triggerClass);
 
@@ -294,11 +289,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     };
 
     return (
-      <OutsideClick
-        className={classes}
-        onOutsideClick={onOutsideClickHandler}
-        {...options}
-      >
+      <OutsideClick className={classes} onOutsideClick={onOutsideClickHandler} {...options}>
         {trigger}
       </OutsideClick>
     );
@@ -313,12 +304,12 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       ref,
       style: {
         ...newStyle,
-        zIndex
+        zIndex,
       },
       'data-placement': placement,
       'data-hide': outOfBoundaries,
       onMouseEnter: this.handleMouseEnter,
-      onMouseLeave: this.handleMouseLeave
+      onMouseLeave: this.handleMouseLeave,
     });
     return element;
   }
@@ -332,18 +323,16 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         {open &&
           appendToBody &&
           ReactDOM.createPortal(
-            (
-              <Popper
-                placement={placement}
-                innerRef={this.popupRef}
-                modifiers={{
-                  preventOverflow: { boundariesElement: boundaryElement || document.body },
-                  hide: { enabled: hide }
-                }}
-              >
-                {this.getPopperChildren}
-              </Popper>
-            ),
+            <Popper
+              placement={placement}
+              innerRef={this.popupRef}
+              modifiers={{
+                preventOverflow: { boundariesElement: boundaryElement || document.body },
+                hide: { enabled: hide },
+              }}
+            >
+              {this.getPopperChildren}
+            </Popper>,
             document.body
           )}
         {open && !appendToBody && (

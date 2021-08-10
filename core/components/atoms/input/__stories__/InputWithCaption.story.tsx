@@ -10,12 +10,7 @@ export const inputWithCaption = () => {
           name="input"
           value="Value"
           type="password"
-          actionIcon={(
-            <Icon
-              name="visibility_off"
-              className="cursor-pointer"
-            />
-          )}
+          actionIcon={<Icon name="visibility_off" className="cursor-pointer" />}
         />
         <Caption withInput={true}>Create a string, unique password</Caption>
       </div>
@@ -25,14 +20,11 @@ export const inputWithCaption = () => {
           name="input"
           value="Value"
           type="password"
-          actionIcon={(
-            <Icon
-              name="visibility_off"
-              className="cursor-pointer"
-            />
-          )}
+          actionIcon={<Icon name="visibility_off" className="cursor-pointer" />}
         />
-        <Caption withInput={true} error={true}>Create a password with atleat 8 characters</Caption>
+        <Caption withInput={true} error={true}>
+          Create a password with atleat 8 characters
+        </Caption>
       </div>
     </div>
   );
@@ -46,9 +38,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

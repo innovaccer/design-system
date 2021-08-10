@@ -17,11 +17,7 @@ describe('DateRangePicker component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <DateRangePicker
-          startDate={new Date(2020, 2, 3)}
-          endDate={new Date(2020, 2, 11)}
-          {...attr}
-        />
+        <DateRangePicker startDate={new Date(2020, 2, 3)} endDate={new Date(2020, 2, 11)} {...attr} />
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -40,11 +36,7 @@ describe('DateRangePicker component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <DateRangePicker
-          startDate={new Date(2020, 2, 3)}
-          endDate={new Date(2020, 2, 11)}
-          {...attr}
-        />
+        <DateRangePicker startDate={new Date(2020, 2, 3)} endDate={new Date(2020, 2, 11)} {...attr} />
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -88,11 +80,7 @@ describe('DateRangePicker component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <DateRangePicker
-          startDate={new Date(2020, 2, 3)}
-          endDate={new Date(2020, 2, 11)}
-          {...attr}
-        />
+        <DateRangePicker startDate={new Date(2020, 2, 3)} endDate={new Date(2020, 2, 11)} {...attr} />
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -103,7 +91,7 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    withInput: valueHelper(booleanValue, { required: true, iterate: true })
+    withInput: valueHelper(booleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -111,11 +99,7 @@ describe('DateRangePicker component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <DateRangePicker
-          startDate={new Date(2020, 2, 3)}
-          endDate={new Date(2020, 2, 11)}
-          {...attr}
-        />
+        <DateRangePicker startDate={new Date(2020, 2, 3)} endDate={new Date(2020, 2, 11)} {...attr} />
       );
       expect(baseElement).toMatchSnapshot();
     });
@@ -126,7 +110,7 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    open: valueHelper(booleanValue, { required: true, iterate: true })
+    open: valueHelper(booleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -134,12 +118,7 @@ describe('DateRangePicker component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <DateRangePicker
-          startDate={new Date(2020, 2, 3)}
-          endDate={new Date(2020, 2, 11)}
-          withInput={true}
-          {...attr}
-        />
+        <DateRangePicker startDate={new Date(2020, 2, 3)} endDate={new Date(2020, 2, 11)} withInput={true} {...attr} />
       );
       expect(baseElement).toMatchSnapshot();
     });

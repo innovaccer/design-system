@@ -10,12 +10,12 @@ export const stepperInPageHeader = () => {
     },
     {
       value: 'step_2',
-      label: 'Message'
+      label: 'Message',
     },
     {
       value: 'step_3',
       label: 'Schedule',
-    }
+    },
   ];
 
   const options = [
@@ -30,7 +30,7 @@ export const stepperInPageHeader = () => {
     {
       label: 'Option 3',
       value: 'Option 3',
-    }
+    },
   ];
 
   const [active, setActive] = React.useState(0);
@@ -52,37 +52,30 @@ export const stepperInPageHeader = () => {
       <Text className="mr-4">few minutes ago</Text>
       <Avatar className="mr-4" firstName="John" lastName="Doe" appearance="accent2" />
       <div className="mr-4">
-        <Dropdown
-          menu={true}
-          icon="more_horiz"
-          options={options}
-        />
+        <Dropdown menu={true} icon="more_horiz" options={options} />
       </div>
       <Button className="mr-4">Finish Later</Button>
-      <Button className="mr-4" appearance="primary" onClick={onClickHandler}>Next</Button>
+      <Button className="mr-4" appearance="primary" onClick={onClickHandler}>
+        Next
+      </Button>
     </div>
   );
 
   const breadcrumbs = (
     <Breadcrumbs
-      list={[{
-        label: 'Campaigns',
-        link: '/Campaigns'
-      }]}
-      onClick={link => action(`on-click: ${link}`)}
+      list={[
+        {
+          label: 'Campaigns',
+          link: '/Campaigns',
+        },
+      ]}
+      onClick={(link) => action(`on-click: ${link}`)}
     />
   );
 
-  const badge = (
-    <Badge appearance="secondary">Message</Badge>
-  );
+  const badge = <Badge appearance="secondary">Message</Badge>;
 
-  const meta = (
-    <MetaList
-      list={[{ label: 'Alert' }, { label: 'Draft' }]}
-      seperator={true}
-    />
-  );
+  const meta = <MetaList list={[{ label: 'Alert' }, { label: 'Draft' }]} seperator={true} />;
 
   return (
     <div className="w-100 p-6 bg-secondary-lightest">
@@ -204,8 +197,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

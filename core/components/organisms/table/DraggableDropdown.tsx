@@ -9,10 +9,7 @@ interface DraggableDropdownProps {
 }
 
 export const DraggableDropdown = (props: DraggableDropdownProps) => {
-  const {
-    options,
-    onChange
-  } = props;
+  const { options, onChange } = props;
 
   const [open, setOpen] = React.useState<boolean>(false);
   const [tempOptions, setTempOptions] = React.useState(options);
@@ -23,14 +20,14 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   }, [open]);
 
   const handleParentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTempOptions(tempOptions.map(option => ({ ...option, selected: e.target.checked })));
+    setTempOptions(tempOptions.map((option) => ({ ...option, selected: e.target.checked })));
   };
 
   const handleChildChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const newOptions = [...tempOptions];
     newOptions[index] = {
       ...newOptions[index],
-      selected: e.target.checked
+      selected: e.target.checked,
     };
 
     setTempOptions(newOptions);
@@ -55,9 +52,10 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
       <Popover
         open={open}
         onToggle={onToggleHandler}
-        trigger={(
+        trigger={
           <Button
-            ref={el => {
+            type="button"
+            ref={(el) => {
               setTriggerWidth(`${el?.clientWidth}px`);
             }}
             size="tiny"
@@ -65,12 +63,14 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             icon="keyboard_arrow_down_filled"
             iconAlign="right"
           >
-            {`Showing ${options.filter(option => option.selected).length} of ${options.length} column${getPluralSuffix(options.length)}`}
+            {`Showing ${options.filter((option) => option.selected).length} of ${
+              options.length
+            } column${getPluralSuffix(options.length)}`}
           </Button>
-        )}
+        }
         triggerClass="w-100"
         customStyle={{
-          width: triggerWidth
+          width: triggerWidth,
         }}
         className="Header-draggableDropdown"
       >
@@ -79,9 +79,10 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             <Checkbox
               className="OptionCheckbox"
               label="Select All"
-              checked={tempOptions.every(option => option.selected)}
-              indeterminate={tempOptions.some(option => option.selected)
-                && tempOptions.some(option => !option.selected)}
+              checked={tempOptions.every((option) => option.selected)}
+              indeterminate={
+                tempOptions.some((option) => option.selected) && tempOptions.some((option) => !option.selected)
+              }
               onChange={handleParentChange}
             />
           </div>
@@ -91,11 +92,11 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                 key={option.value}
                 className="OptionWrapper d-flex flex-space-between align-items-center cursor-pointer"
                 draggable={true}
-                onDragStart={e => {
+                onDragStart={(e) => {
                   e.dataTransfer.setData('index', `${index}`);
                 }}
-                onDragOver={e => e.preventDefault()}
-                onDrop={e => {
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={(e) => {
                   const from = +e.dataTransfer.getData('index');
                   const to = index;
 
@@ -107,7 +108,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                   name={option.value as string}
                   label={option.label}
                   checked={tempOptions[index].selected}
-                  onChange={e => handleChildChange(e, index)}
+                  onChange={(e) => handleChildChange(e, index)}
                 />
                 <Icon name="drag_handle" className="mr-4" />
               </div>
@@ -115,8 +116,12 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
           })}
         </div>
         <div className="Dropdown-buttonWrapper">
-          <Button className="mr-4" size="tiny" onClick={onCancelHandler}>Cancel</Button>
-          <Button appearance="primary" size="tiny" onClick={onApplyHandler}>Apply</Button>
+          <Button type="button" className="mr-4" size="tiny" onClick={onCancelHandler}>
+            Cancel
+          </Button>
+          <Button type="button" appearance="primary" size="tiny" onClick={onApplyHandler}>
+            Apply
+          </Button>
         </div>
       </Popover>
     </div>

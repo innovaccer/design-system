@@ -13,30 +13,42 @@ export const dialogs = () => {
     action('on close triggered')();
   };
 
-  const data = [{ Name:'ER Education' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }, { Name:'Cervical Screening' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }, { Name:'Cervical Screening' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }];
+  const data = [
+    { Name: 'ER Education' },
+    { Name: 'HbA1c Test Due' },
+    { Name: 'Flu Vaccination' },
+    { Name: 'Well-Child Visit' },
+    { Name: 'Cervical Screening' },
+    { Name: 'HbA1c Test Due' },
+    { Name: 'Flu Vaccination' },
+    { Name: 'Well-Child Visit' },
+    { Name: 'Cervical Screening' },
+    { Name: 'HbA1c Test Due' },
+    { Name: 'Flu Vaccination' },
+    { Name: 'Well-Child Visit' },
+  ];
 
   const schema: TableProps['schema'] = [
     {
       name: 'data',
       displayName: 'data',
       cellRenderer: (props: GridCellProps) => {
-        return (
-          <Text className=" ml-4">{`${props.data.Name}`}</Text>
-        );
-      }
+        return <Text className=" ml-4">{`${props.data.Name}`}</Text>;
+      },
     },
   ];
 
   return (
     <div>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
+        <br />
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        <br />
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br />
       </Paragraph>
       <Modal
         open={open}
@@ -46,11 +58,13 @@ export const dialogs = () => {
         headerOptions={{
           heading: 'Cannot delete Leona Lucas',
         }}
-        footer={(
+        footer={
           <>
-            <Button className="ml-4" onClick={action('Close button click')}>Close</Button>
+            <Button className="ml-4" onClick={action('Close button click')}>
+              Close
+            </Button>
           </>
-        )}
+        }
       >
         <div>
           <Message
@@ -58,17 +72,14 @@ export const dialogs = () => {
             description="Following 11 outreaches are currently scheduled using this sender's details."
           />
         </div>
-        <div style={{ border: 'var(--border)', height:'185px' }} className="my-5 overflow-auto">
-          <List
-            data={data}
-            schema={schema}
-            size="compressed"
-          />
-          </div>
-        <Text weight="strong" className="mt-2">What to do next?</Text><br/>
-        <Text>
-          You cannot delete this sender until the scheduled outreaches have been completed or cancelled.
+        <div style={{ border: 'var(--border)', height: '185px' }} className="my-5 overflow-auto">
+          <List data={data} schema={schema} size="compressed" />
+        </div>
+        <Text weight="strong" className="mt-2">
+          What to do next?
         </Text>
+        <br />
+        <Text>You cannot delete this sender until the scheduled outreaches have been completed or cancelled.</Text>
       </Modal>
     </div>
   );
@@ -153,8 +164,8 @@ export default {
       docPage: {
         customCode,
         title: 'Modal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

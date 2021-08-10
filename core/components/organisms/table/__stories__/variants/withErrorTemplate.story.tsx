@@ -12,16 +12,8 @@ export const withErrorTemplate = () => {
         height: '350px',
       }}
     >
-      <Card
-        shadow="light"
-        className="h-100"
-      >
-        <Table
-          schema={schema}
-          data={[]}
-          error={true}
-          errorTemplate={errorTemplate}
-        />
+      <Card shadow="light" className="h-100">
+        <Table schema={schema} data={[]} error={true} errorTemplate={errorTemplate} />
       </Card>
     </div>
   );
@@ -159,9 +151,9 @@ export default {
         customCode,
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

@@ -9,9 +9,7 @@ import { fileErrorMessages } from './FileErrors';
 
 export type Type = 'standard' | 'compressed' | 'tight';
 
-export interface DropzoneProps extends
-  BaseProps,
-  DropzoneBaseProps {
+export interface DropzoneProps extends BaseProps, DropzoneBaseProps {
   /**
    * Description of accepted formats in `FileUploader`
    */
@@ -31,33 +29,22 @@ export interface DropzoneProps extends
 }
 
 export const Dropzone = (props: DropzoneProps) => {
-  const {
-    type,
-    sizeLabel,
-    className,
-    formatLabel,
-    sampleFileLink,
-    disabled,
-  } = props;
+  const { type, sizeLabel, className, formatLabel, sampleFileLink, disabled } = props;
 
-  const {
-    open,
-    getRootProps,
-    getInputProps,
-    isDragActive,
-    isDragReject,
-    fileError
-  } = DropzoneBase(props);
+  const { open, getRootProps, getInputProps, isDragActive, isDragReject, fileError } = DropzoneBase(props);
 
   const baseProps = extractBaseProps(props);
 
-  const DropzoneClass = classNames({
-    ['Dropzone']: true,
-    [`Dropzone--${type}`]: type,
-    ['Dropzone--disabled']: disabled,
-    ['Dropzone--active']: isDragActive,
-    ['Dropzone--error']: isDragReject,
-  }, className);
+  const DropzoneClass = classNames(
+    {
+      ['Dropzone']: true,
+      [`Dropzone--${type}`]: type,
+      ['Dropzone--disabled']: disabled,
+      ['Dropzone--active']: isDragActive,
+      ['Dropzone--error']: isDragReject,
+    },
+    className
+  );
 
   const IconClass = classNames({
     ['Dropzone-icon']: true,
@@ -93,43 +80,22 @@ export const Dropzone = (props: DropzoneProps) => {
 
     return (
       <React.Fragment>
-        {type !== 'tight' && (
-          <Icon
-            name="backup"
-            size={64}
-            className={IconClass}
-          />
-        )}
+        {type !== 'tight' && <Icon name="backup" size={64} className={IconClass} />}
         <div className={WrapperClass}>
           <span>
-            <Text
-              size="large"
-              weight="strong"
-              className="mr-2"
-              appearance={disabled ? 'disabled' : 'default'}
-            >
+            <Text size="large" weight="strong" className="mr-2" appearance={disabled ? 'disabled' : 'default'}>
               Drag your files here or
             </Text>
             <span className="cursor-pointer" onClick={open}>
-              <Text size="large" weight="strong" appearance={disabled ? 'disabled' : 'link'}> browse files</Text>
+              <Text size="large" weight="strong" appearance={disabled ? 'disabled' : 'link'}>
+                browse files
+              </Text>
             </span>
             <input {...getInputProps()} />
           </span>
-          {formatLabel && (
-            <Text appearance={disabled ? 'disabled' : 'subtle'}>
-              {formatLabel}
-            </Text>
-          )}
-          {sizeLabel && (
-            <Text
-              appearance={disabled ? 'disabled' : 'subtle'}
-            >
-              {sizeLabel}
-            </Text>
-          )}
-          {sampleFileLink && (
-            <div className="mt-5">{sampleFileLink}</div>
-          )}
+          {formatLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{formatLabel}</Text>}
+          {sizeLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{sizeLabel}</Text>}
+          {sampleFileLink && <div className="mt-5">{sampleFileLink}</div>}
         </div>
       </React.Fragment>
     );

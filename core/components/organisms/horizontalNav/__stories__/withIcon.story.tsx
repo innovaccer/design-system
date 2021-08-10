@@ -8,22 +8,22 @@ export const horizontalNavigationWithIcon = () => {
     {
       name: 'text',
       label: 'Text',
-      icon: 'message'
+      icon: 'message',
     },
     {
       name: 'voice',
       label: 'Voice',
-      icon: 'mic'
+      icon: 'mic',
     },
     {
       name: 'mail',
       label: 'Mail',
-      icon: 'email'
+      icon: 'email',
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'text'
+    name: 'text',
   });
 
   const onClickHandler = (menu: Menu) => {
@@ -33,12 +33,7 @@ export const horizontalNavigationWithIcon = () => {
 
   return (
     <div className="d-flex align-items-center py-6" style={{ background: 'var(--secondary-lightest)' }}>
-      <HorizontalNav
-        className="w-100 justify-content-center"
-        menus={data}
-        active={active}
-        onClick={onClickHandler}
-      />
+      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
     </div>
   );
 };
@@ -89,8 +84,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

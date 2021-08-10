@@ -1,5 +1,13 @@
 import { GridProps } from '@/index.type';
-import { ColumnSchema, Pinned, SortType, CellType, GridRef, updateColumnSchemaFunction, updateSortingListFunction } from './Grid';
+import {
+  ColumnSchema,
+  Pinned,
+  SortType,
+  CellType,
+  GridRef,
+  updateColumnSchemaFunction,
+  updateSortingListFunction,
+} from './Grid';
 
 type resizeColFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
@@ -8,10 +16,11 @@ type resizeColFn = (
 ) => void;
 type sortColumnFn = (
   gridInfo: {
-    sortingList: GridProps['sortingList'],
-    updateSortingList: updateSortingListFunction
+    sortingList: GridProps['sortingList'];
+    updateSortingList: updateSortingListFunction;
   },
-  name: ColumnSchema['name'], type: SortType
+  name: ColumnSchema['name'],
+  type: SortType
 ) => void;
 type pinColumnFn = (
   gridInfo: { updateColumnSchema: updateColumnSchemaFunction },
@@ -30,7 +39,7 @@ export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
     ev.preventDefault();
     if (elX) {
       updateColumnSchema(name, {
-        width: ev.pageX - elX
+        width: ev.pageX - elX,
       });
     }
   }
@@ -44,12 +53,9 @@ export const resizeCol: resizeColFn = ({ updateColumnSchema }, name, el) => {
 export const sortColumn: sortColumnFn = ({ sortingList, updateSortingList }, name, type) => {
   let newSortingList = [...sortingList];
 
-  const index = newSortingList.findIndex(l => l.name === name);
+  const index = newSortingList.findIndex((l) => l.name === name);
   if (index !== -1) {
-    newSortingList = [
-      ...newSortingList.slice(0, index),
-      ...newSortingList.slice(index + 1),
-    ];
+    newSortingList = [...newSortingList.slice(0, index), ...newSortingList.slice(index + 1)];
   }
 
   if (type !== 'unsort') newSortingList.push({ name, type });
@@ -59,7 +65,7 @@ export const sortColumn: sortColumnFn = ({ sortingList, updateSortingList }, nam
 
 export const pinColumn: pinColumnFn = ({ updateColumnSchema }, name: ColumnSchema['name'], type: Pinned) => {
   const schemaUpdate = {
-    pinned: type !== 'unpin' ? type : undefined
+    pinned: type !== 'unpin' ? type : undefined,
   };
 
   updateColumnSchema(name, schemaUpdate);
@@ -73,7 +79,7 @@ export const hideColumn: hideColumnFn = ({ updateColumnSchema }, name, value) =>
   updateColumnSchema(name, schemaUpdate);
 };
 
-export function getWidth({ ref, withCheckbox }: { ref: GridRef, withCheckbox?: boolean }, width: React.ReactText) {
+export function getWidth({ ref, withCheckbox }: { ref: GridRef; withCheckbox?: boolean }, width: React.ReactText) {
   const isPercent = typeof width === 'string' && width.slice(-1) === '%';
 
   if (isPercent) {

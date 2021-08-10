@@ -3,21 +3,11 @@ import { ChipInput } from '@/index';
 import { boolean, text } from '@storybook/addon-knobs';
 
 export const all = () => {
+  const allowDuplicates = boolean('allowDuplicates', false);
 
-  const allowDuplicates = boolean(
-    'allowDuplicates',
-    false
-  );
+  const placeholder = text('placeholder', 'Add value');
 
-  const placeholder = text(
-    'placeholder',
-    'Add value',
-  );
-
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
   return (
     <ChipInput
@@ -31,5 +21,5 @@ export const all = () => {
 
 export default {
   title: 'Components/ChipInput/All',
-  component: ChipInput
+  component: ChipInput,
 };

@@ -3,7 +3,6 @@ import { RangeSlider } from '@/index';
 
 // CSF format story
 export const disabled = () => {
-
   return (
     <div>
       <RangeSlider
@@ -14,18 +13,12 @@ export const disabled = () => {
         labelStepSize={1}
         defaultValue={[2, 4]}
       />
-      <RangeSlider
-        label="Default Slider"
-        stepSize={0.1}
-        labelStepSize={1}
-        defaultValue={[2, 4]}
-        className="mt-2"
-      />
+      <RangeSlider label="Default Slider" stepSize={0.1} labelStepSize={1} defaultValue={[2, 4]} className="mt-2" />
     </div>
   );
 };
 
 export default {
   title: 'Components/RangeSlider/Variants/Disabled',
-  component: RangeSlider
+  component: RangeSlider,
 };

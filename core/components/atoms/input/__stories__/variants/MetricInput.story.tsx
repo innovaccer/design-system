@@ -4,27 +4,16 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const metricInput = () => {
-
   return (
     <div>
       <div className="w-25">
-        <Input
-          name="input"
-          type="number"
-          size="regular"
-          onChange={action('on-change')}
-        />
+        <Input name="input" type="number" size="regular" onChange={action('on-change')} />
         <br />
         <Text weight="strong">Regular</Text>
       </div>
       <br />
       <div className="w-25">
-        <Input
-          name="input"
-          type="number"
-          size="large"
-          onChange={action('on-change')}
-        />
+        <Input name="input" type="number" size="large" onChange={action('on-change')} />
         <br />
         <Text weight="strong">Large</Text>
       </div>
@@ -40,9 +29,9 @@ export default {
       docPage: {
         title: 'Input',
         props: {
-          exclude: ['autocomplete']
-        }
-      }
-    }
-  }
+          exclude: ['autocomplete'],
+        },
+      },
+    },
+  },
 };

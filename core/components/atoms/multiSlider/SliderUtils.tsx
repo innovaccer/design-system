@@ -27,7 +27,6 @@ export const clamp = (value: number, min: number, max: number) => {
 };
 
 export const arraysEqual = (oldValues: number[], newValues: number[]) => {
-
   if (oldValues.length !== oldValues.length) return;
 
   return newValues.every((value, index) => value === oldValues[index]);
@@ -58,15 +57,11 @@ export function fillValues<T>(values: T[], startIndex: number, endIndex: number,
   for (let index = startIndex; index !== endIndex + inc; index += inc) {
     values[index] = fillValue;
   }
-
 }
 
 export function isElementOfType<P = {}>(
   element: any,
-  _ComponentType: React.ComponentType<P>,
+  _ComponentType: React.ComponentType<P>
 ): element is React.ReactElement<P> {
-  return (
-    element != null &&
-    element.type != null
-  );
+  return element != null && element.type != null;
 }

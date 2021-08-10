@@ -43,18 +43,7 @@ export interface ChipProps extends BaseProps {
 }
 
 export const Chip = (props: ChipProps) => {
-  const {
-    label,
-    icon,
-    clearButton,
-    type,
-    disabled,
-    selected,
-    onClose,
-    onClick,
-    name,
-    className,
-  } = props;
+  const { label, icon, clearButton, type, disabled, selected, onClose, onClick, name, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -65,15 +54,18 @@ export const Chip = (props: ChipProps) => {
     if (!disabled && onClick) onClick(name);
   };
 
-  const chipClass = classNames({
-    Chip: true,
-    [`Chip-${type}--disabled`]: disabled,
-    [`Chip--${type}`]: type && !disabled,
-    [`Chip-${type}--selected`]: selected && !disabled,
-  }, className);
+  const chipClass = classNames(
+    {
+      Chip: true,
+      [`Chip-${type}--disabled`]: disabled,
+      [`Chip--${type}`]: type && !disabled,
+      [`Chip-${type}--selected`]: selected && !disabled,
+    },
+    className
+  );
 
-  const clearbutton = ((type === 'action') ? false : clearButton);
-  const select = (((type === 'selection') && selected) ? true : false);
+  const clearbutton = type === 'action' ? false : clearButton;
+  const select = type === 'selection' && selected ? true : false;
 
   return (
     <GenericChip
@@ -94,7 +86,7 @@ export const Chip = (props: ChipProps) => {
 
 Chip.displayName = 'Chip';
 Chip.defaultProps = {
-  type: 'input'
+  type: 'input',
 };
 
 export default Chip;

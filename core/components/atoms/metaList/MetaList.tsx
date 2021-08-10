@@ -40,20 +40,16 @@ export interface MetaListProps extends BaseProps {
 }
 
 export const MetaList = (props: MetaListProps) => {
-  const {
-    list,
-    seperator,
-    seperatorAppearance,
-    iconAppearance,
-    labelAppearance,
-    className
-  } = props;
+  const { list, seperator, seperatorAppearance, iconAppearance, labelAppearance, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const MetaClass = classNames({
-    ['MetaList']: true,
-  }, className);
+  const MetaClass = classNames(
+    {
+      ['MetaList']: true,
+    },
+    className
+  );
 
   const SeperatorClass = classNames({
     ['MetaList-seperator']: true,
@@ -61,18 +57,13 @@ export const MetaList = (props: MetaListProps) => {
 
   const LeftSeperatorClass = classNames({
     ['MetaList-seperator']: true,
-    ['MetaList-seperator--left']: true
+    ['MetaList-seperator--left']: true,
   });
 
   return (
     <div {...baseProps} className={MetaClass}>
       {seperator && (
-        <Icon
-          name="fiber_manual_record"
-          size={8}
-          className={LeftSeperatorClass}
-          appearance={seperatorAppearance}
-        />
+        <Icon name="fiber_manual_record" size={8} className={LeftSeperatorClass} appearance={seperatorAppearance} />
       )}
 
       {list.map((item, ind) => {
@@ -81,19 +72,9 @@ export const MetaList = (props: MetaListProps) => {
 
         return (
           <span key={ind} className="MetaList-item">
-            <Meta
-              label={label}
-              icon={icon}
-              iconAppearance={iconAppearance}
-              labelAppearance={labelAppearance}
-            />
+            <Meta label={label} icon={icon} iconAppearance={iconAppearance} labelAppearance={labelAppearance} />
             {rightSeperator && (
-              <Icon
-                name="fiber_manual_record"
-                size={8}
-                className={SeperatorClass}
-                appearance={seperatorAppearance}
-              />
+              <Icon name="fiber_manual_record" size={8} className={SeperatorClass} appearance={seperatorAppearance} />
             )}
           </span>
         );
@@ -107,7 +88,7 @@ MetaList.displayName = 'MetaList';
 MetaList.defaultProps = {
   seperatorAppearance: 'disabled',
   iconAppearance: 'disabled',
-  labelAppearance: 'subtle'
+  labelAppearance: 'subtle',
 };
 
 export default MetaList;

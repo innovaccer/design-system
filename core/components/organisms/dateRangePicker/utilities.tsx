@@ -24,7 +24,7 @@ export const getCurrentWeek = () => {
 
   return {
     startDate: setDate(currentDate - currentDay + 1),
-    endDate: setDate(currentDate - currentDay + 7)
+    endDate: setDate(currentDate - currentDay + 7),
   };
 };
 
@@ -35,7 +35,7 @@ export const getPreviousWeek = () => {
 
   return {
     startDate: setDate(currentDate - currentDay - 6),
-    endDate: setDate(currentDate - currentDay)
+    endDate: setDate(currentDate - currentDay),
   };
 };
 
@@ -46,11 +46,7 @@ export const getPreviousMonth = () => {
 
   return {
     endDate: new Date(currentYear, currentMonth, 0),
-    startDate: new Date(
-      currentYear - +(currentMonth < 0),
-      (currentMonth + 11) % 12,
-      1
-    ),
+    startDate: new Date(currentYear - +(currentMonth < 0), (currentMonth + 11) % 12, 1),
   };
 };
 

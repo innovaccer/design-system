@@ -24,15 +24,15 @@ export const spaceSchema: Schema = [
           />
         </>
       );
-    }
+    },
   },
   {
     name: 'value',
     displayName: 'Value',
     width: '50%',
     resizable: true,
-    sorting: false
-  }
+    sorting: false,
+  },
 ];
 
 export const getSchema = (property: string, text: string, classnames?: string, css?: object) => {
@@ -56,14 +56,14 @@ export const getSchema = (property: string, text: string, classnames?: string, c
             />
           </>
         );
-      }
+      },
     },
     {
       name: 'value',
       displayName: 'Value',
       width: '33.3%',
       resizable: true,
-      sorting: false
+      sorting: false,
     },
     {
       name: 'preview',
@@ -74,7 +74,7 @@ export const getSchema = (property: string, text: string, classnames?: string, c
       cellRenderer: (props: any) => {
         const styleObj: object = Object.assign(
           {
-            [`${property}`]: `${`var(${props.data.token})`}`
+            [`${property}`]: `${`var(${props.data.token})`}`,
           },
           css
         );
@@ -83,7 +83,7 @@ export const getSchema = (property: string, text: string, classnames?: string, c
             {text}
           </div>
         );
-      }
-    }
+      },
+    },
   ];
 };

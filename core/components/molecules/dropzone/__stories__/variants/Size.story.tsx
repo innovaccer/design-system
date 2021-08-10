@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import { DropzoneProps } from '@/index.type';
 
 export const size = () => {
-
   const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles) => {
     return action(`Accepted Files: ${acceptedFiles}`)();
   };
@@ -16,7 +15,7 @@ export const size = () => {
         sizeLabel="Maximum size: 25 MB"
         onDrop={onDrop}
         className="mb-3"
-        sampleFileLink={(
+        sampleFileLink={
           <Link
             href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
             download="Test.pdf"
@@ -24,16 +23,18 @@ export const size = () => {
           >
             Download sample file
           </Link>
-        )}
+        }
       />
-      <Text size="large" weight="strong">Standard</Text>
+      <Text size="large" weight="strong">
+        Standard
+      </Text>
       <Dropzone
         formatLabel="Accepted formats: PDF, jpg"
         sizeLabel="Maximum size: 25 MB"
         onDrop={onDrop}
         type="compressed"
         className="mt-6 mb-3"
-        sampleFileLink={(
+        sampleFileLink={
           <Link
             href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
             download="Test.pdf"
@@ -41,16 +42,18 @@ export const size = () => {
           >
             Download sample file
           </Link>
-        )}
+        }
       />
-      <Text size="large" weight="strong">Compressed</Text>
+      <Text size="large" weight="strong">
+        Compressed
+      </Text>
       <Dropzone
         formatLabel="Accepted formats: PDF, jpg"
         sizeLabel="Maximum size: 25 MB"
         onDrop={onDrop}
         type="tight"
         className="mt-6 mb-3"
-        sampleFileLink={(
+        sampleFileLink={
           <Link
             href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
             download="Test.pdf"
@@ -58,9 +61,11 @@ export const size = () => {
           >
             Download sample file
           </Link>
-        )}
+        }
       />
-      <Text size="large" weight="strong">Tight</Text>
+      <Text size="large" weight="strong">
+        Tight
+      </Text>
     </div>
   );
 };
@@ -132,8 +137,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

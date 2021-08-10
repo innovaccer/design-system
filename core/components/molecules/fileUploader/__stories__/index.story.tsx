@@ -12,7 +12,7 @@ export const all = () => {
   const multiple = boolean('multiple', true);
 
   const onChangeHandler = (fileList: File[]) => {
-    const files = fileList.map(file => {
+    const files = fileList.map((file) => {
       return {
         file,
         status: 'completed',
@@ -30,7 +30,7 @@ export const all = () => {
         title={title}
         formatLabel={formatLabel}
         sizeLabel={sizeLabel}
-        sampleFileLink={(
+        sampleFileLink={
           <Link
             href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
             download="Test.pdf"
@@ -38,7 +38,7 @@ export const all = () => {
           >
             Download sample file
           </Link>
-        )}
+        }
       />
       <FileUploaderList fileList={fileNames} className="mt-4" />
     </div>
@@ -90,10 +90,10 @@ export default {
         props: {
           components: {
             FileUploader: FileUploaderComponent,
-            FileUploaderList: FileUploaderListComponent
+            FileUploaderList: FileUploaderListComponent,
           },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

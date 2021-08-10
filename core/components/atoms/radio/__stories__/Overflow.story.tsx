@@ -3,11 +3,7 @@ import Radio from '../index';
 
 export const OverflowContent = () => (
   <div className="w-25">
-    <Radio
-      label="Share both your healthcare data and some personal information."
-      name="options"
-      value="Option 1"
-    />
+    <Radio label="Share both your healthcare data and some personal information." name="options" value="Option 1" />
   </div>
 );
 
@@ -17,8 +13,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        props: { exclude: ['key'] }
-      }
-    }
-  }
+        props: { exclude: ['key'] },
+      },
+    },
+  },
 };

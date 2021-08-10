@@ -20,19 +20,26 @@ export const withEditableCell = () => {
           schema={editableSchema}
           withHeader={true}
           withCheckbox={true}
-          onSelect={(rowIndex, selected, selectedList, selectAll) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)()}
+          onSelect={(rowIndex, selected, selectedList, selectAll) =>
+            action(
+              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
+                selectedList
+              )} selectAll: ${selectAll}`
+            )()
+          }
           headerOptions={{
-            withSearch: true
+            withSearch: true,
           }}
           onSearch={(currData, searchTerm) => {
-            return currData.filter(d =>
-              d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
+            return currData.filter(
+              (d) =>
+                d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+                d.lastName.toLowerCase().match(searchTerm.toLowerCase())
             );
           }}
           withPagination={true}
           pageSize={5}
-          onPageChange={newPage => action(`on-page-change:- ${newPage}`)()}
+          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
         />
       </Card>
     </div>
@@ -195,9 +202,9 @@ export default {
         customCode,
         props: {
           components: { AsyncTable, SyncTable },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

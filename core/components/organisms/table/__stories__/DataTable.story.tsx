@@ -105,7 +105,7 @@ export const dataTable = () => {
       last_dos: '12/27/2020',
       firstName: 'Brina',
       lastName: 'Pirie',
-    }
+    },
   ];
 
   const schema: TableProps['schema'] = [
@@ -120,7 +120,7 @@ export const dataTable = () => {
       displayName: 'Claim Type',
       width: '15%',
       separator: true,
-      cellType: 'DEFAULT'
+      cellType: 'DEFAULT',
     },
     {
       name: 'insurance_name',
@@ -174,7 +174,7 @@ export const dataTable = () => {
       translate: (a: any) => ({
         title: `${a.firstName} ${a.lastName}`,
         firstName: a.firstName,
-        lastName: a.lastName
+        lastName: a.lastName,
       }),
     },
   ];
@@ -189,13 +189,14 @@ export const dataTable = () => {
         schema={schema}
         withHeader={true}
         headerOptions={{
-          withSearch: true
+          withSearch: true,
         }}
         onSearch={(currData, searchTerm) => {
-          return currData.filter(d =>
-            d.firstName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
-            || d.claim_id.toLowerCase().match(searchTerm.toLowerCase())
+          return currData.filter(
+            (d) =>
+              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||
+              d.claim_id.toLowerCase().match(searchTerm.toLowerCase())
           );
         }}
         withPagination={true}
@@ -420,7 +421,7 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

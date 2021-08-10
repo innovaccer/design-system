@@ -10,11 +10,7 @@ export const all = () => {
 
   const [value, setValue] = React.useState('');
 
-  const size = select(
-    'size',
-    ['regular', 'tiny'],
-    'regular'
-  );
+  const size = select('size', ['regular', 'tiny'], 'regular');
 
   const onChange = (updatedValue: string) => {
     setValue(updatedValue);
@@ -31,9 +27,7 @@ export const all = () => {
 
   return (
     <div style={{ width: 'var(--spacing-9)' }}>
-      <EditableInput
-        {...options}
-      />
+      <EditableInput {...options} />
     </div>
   );
 };
@@ -67,7 +61,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

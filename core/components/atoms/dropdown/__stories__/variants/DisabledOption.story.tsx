@@ -18,7 +18,9 @@ export const disabledOption = () => {
   return (
     <div className="d-flex">
       <div className="mr-9 w-25">
-        <Text weight="strong">{'With Checkbox'}</Text><br /><br />
+        <Text weight="strong">{'With Checkbox'}</Text>
+        <br />
+        <br />
         <Dropdown
           withCheckbox={true}
           withSelectAll={false}
@@ -29,13 +31,10 @@ export const disabledOption = () => {
         />
       </div>
       <div className="mr-9 w-25">
-        <Text weight="strong">{'Without Checkbox'}</Text><br /><br />
-        <Dropdown
-          options={disabledStoryOptions}
-          placeholder={'Select'}
-          onChange={onChangeHandler}
-          onClose={onClose}
-        />
+        <Text weight="strong">{'Without Checkbox'}</Text>
+        <br />
+        <br />
+        <Dropdown options={disabledStoryOptions} placeholder={'Select'} onChange={onChangeHandler} onClose={onClose} />
       </div>
     </div>
   );
@@ -95,8 +94,8 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 };

@@ -14,26 +14,14 @@ const options = [
   {
     label: 'Delete',
     value: 'delete',
-  }
+  },
 ];
 
 // CSF format story
 export const dropdownAsMenu = () => (
   <div className="d-flex w-50">
-    <Dropdown
-      options={options}
-      menu={true}
-      className="mr-5"
-      align="right"
-      maxWidth={130}
-    />
-    <Dropdown
-      options={options}
-      menu={true}
-      align="left"
-      className="mr-5"
-      maxWidth={130}
-    />
+    <Dropdown options={options} menu={true} className="mr-5" align="right" maxWidth={130} />
+    <Dropdown options={options} menu={true} align="left" className="mr-5" maxWidth={130} />
   </div>
 );
 
@@ -46,9 +34,9 @@ export default {
         title: 'Dropdown',
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

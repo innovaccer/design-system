@@ -19,9 +19,7 @@ describe('Tooltip component', () => {
 
     it(testMessageHelper(attr), () => {
       const { baseElement } = render(
-        <Tooltip
-          {...rest}
-        >
+        <Tooltip {...rest}>
           <Button>Button</Button>
         </Tooltip>
       );

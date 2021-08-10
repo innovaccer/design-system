@@ -3,12 +3,7 @@ import classNames from 'classnames';
 import { Text } from '@/index';
 import { MenuItem } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import {
-  getMenu,
-  isMenuActive,
-  ActiveMenu,
-  Menu
-} from '@/utils/navigationHelper';
+import { getMenu, isMenuActive, ActiveMenu, Menu } from '@/utils/navigationHelper';
 
 export interface VerticalNavProps extends BaseProps {
   /**
@@ -66,15 +61,7 @@ export interface VerticalNavProps extends BaseProps {
  */
 
 export const VerticalNav = (props: VerticalNavProps) => {
-  const {
-    menus,
-    active,
-    onClick,
-    expanded,
-    rounded,
-    autoCollapse,
-    className,
-  } = props;
+  const { menus, active, onClick, expanded, rounded, autoCollapse, className } = props;
 
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
   const baseProps = extractBaseProps(props);
@@ -128,19 +115,14 @@ export const VerticalNav = (props: VerticalNavProps) => {
 
       const sectionClass = classNames({
         ['VerticalNav-section']: true,
-        ['VerticalNav-section--border']: index !== 0
+        ['VerticalNav-section--border']: index !== 0,
       });
 
       return (
         <>
           {hasGroup && menu.group && expanded && (
             <div className={sectionClass}>
-              <Text
-                data-test="DesignSystem-VerticalNav--Section"
-                size="small"
-                weight="strong"
-                appearance="subtle"
-              >
+              <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
                 {menu.group}
               </Text>
             </div>
@@ -179,10 +161,13 @@ export const VerticalNav = (props: VerticalNavProps) => {
     return <>{list}</>;
   };
 
-  const classes = classNames({
-    VerticalNav: true,
-    ['VerticalNav--expanded']: expanded,
-  }, className);
+  const classes = classNames(
+    {
+      VerticalNav: true,
+      ['VerticalNav--expanded']: expanded,
+    },
+    className
+  );
 
   return (
     <div {...baseProps} className={classes}>
@@ -194,7 +179,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
 VerticalNav.defaultProps = {
   expanded: true,
   autoCollapse: true,
-  rounded: false
+  rounded: false,
 };
 
 export default VerticalNav;

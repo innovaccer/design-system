@@ -42,11 +42,13 @@ export const cutsomOption = () => {
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>
       <div style={{ marginRight: '20%', width: '200px' }}>
-        <Text weight="strong">Without Checkbox</Text> <br /><br />
+        <Text weight="strong">Without Checkbox</Text> <br />
+        <br />
         <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} />
       </div>
       <div style={{ marginRight: '20%', width: '200px' }}>
-        <Text weight="strong">With Checkbox</Text> <br /><br />
+        <Text weight="strong">With Checkbox</Text> <br />
+        <br />
         <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
       </div>
     </div>
@@ -116,10 +118,11 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
+          exclude: ['showHead'],
         },
-        description: 'In case of custom option with checkbox, developer needs to pass checked and onChange props to checkbox component like in the example below for the indeterminate state and other functionalities to work. ',
-      }
-    }
-  }
+        description:
+          'In case of custom option with checkbox, developer needs to pass checked and onChange props to checkbox component like in the example below for the indeterminate state and other functionalities to work. ',
+      },
+    },
+  },
 };

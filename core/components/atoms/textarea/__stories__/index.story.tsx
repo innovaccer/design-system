@@ -5,30 +5,15 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const all = () => {
-  const value = text(
-    'value',
-    ''
-  );
+  const value = text('value', '');
 
-  const placeholder = text(
-    'placeholder',
-    'Placeholder'
-  );
+  const placeholder = text('placeholder', 'Placeholder');
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
-  const error = boolean(
-    'error',
-    false
-  );
+  const error = boolean('error', false);
 
-  const resize = boolean(
-    'resize',
-    true
-  );
+  const resize = boolean('resize', true);
 
   const rows = number('rows', 3);
 

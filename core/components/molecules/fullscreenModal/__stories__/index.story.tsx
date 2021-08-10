@@ -45,29 +45,27 @@ export const all = () => {
         onClose={onClose}
         headerOptions={{
           heading: 'This is modal Heading',
-          subHeading: 'This is modal subheading'
+          subHeading: 'This is modal subheading',
         }}
         footerOptions={{
           actions: [
             {
               children: 'Basic',
               appearance: 'basic',
-              onClick: action('basic action')
+              onClick: action('basic action'),
             },
             {
               children: 'Primary',
               appearance: 'primary',
               className: 'ml-4',
-              onClick: action('primary action')
-            }
-          ]
+              onClick: action('primary action'),
+            },
+          ],
         }}
       >
         <Text>Fullscreen Modal Body</Text>
         <Heading size="s">Description Title</Heading>
-        <Paragraph>
-          Adding a subheading clearly indicates the hierarchy of the information.
-        </Paragraph>
+        <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
         <Paragraph>
           Card Sections include supporting text like an article summary or a restaurant description.
         </Paragraph>
@@ -150,8 +148,8 @@ export default {
       docPage: {
         customCode,
         title: 'FullscreenModal',
-        noHtml: true
-      }
-    }
-  }
+        noHtml: true,
+      },
+    },
+  },
 };

@@ -15,11 +15,7 @@ describe('Image placeholder component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <PlaceholderImage
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<PlaceholderImage {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -36,11 +32,7 @@ describe('Image placeholder component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <PlaceholderImage
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<PlaceholderImage {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };

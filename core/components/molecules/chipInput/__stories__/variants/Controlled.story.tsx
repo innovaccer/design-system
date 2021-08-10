@@ -4,14 +4,7 @@ import { ChipInput } from '@/index';
 export const controlled = () => {
   const [value, setValue] = React.useState(['1024', '80']);
 
-  return (
-    <ChipInput
-      value={value}
-      placeholder="Add value"
-      chipOptions={{ clearButton: true }}
-      onChange={setValue}
-    />
-  );
+  return <ChipInput value={value} placeholder="Add value" chipOptions={{ clearButton: true }} onChange={setValue} />;
 };
 
 const customCode = `() => {
@@ -33,8 +26,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

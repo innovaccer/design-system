@@ -11,9 +11,9 @@ const keyCodes = {
 };
 
 type ChipOptions = {
-  icon?: ChipProps['icon'],
-  type?: ChipProps['type'],
-  clearButton?: ChipProps['clearButton'],
+  icon?: ChipProps['icon'];
+  type?: ChipProps['type'];
+  clearButton?: ChipProps['clearButton'];
   onClick?: (value: string, index: number) => void;
 };
 
@@ -94,11 +94,14 @@ export const ChipInput = (props: ChipInputProps) => {
     }
   }, [value]);
 
-  const ChipInputClass = classNames({
-    ChipInput: true,
-    ['ChipInput--disabled']: disabled,
-    ['ChipInput--withChips']: chips.length > 0
-  }, className);
+  const ChipInputClass = classNames(
+    {
+      ChipInput: true,
+      ['ChipInput--disabled']: disabled,
+      ['ChipInput--withChips']: chips.length > 0,
+    },
+    className
+  );
 
   const onUpdateChips = (updatedChips: string[]) => {
     if (onChange) onChange(updatedChips);
@@ -187,12 +190,7 @@ export const ChipInput = (props: ChipInputProps) => {
   });
 
   return (
-    <div
-      data-test="DesignSystem-ChipInput"
-      {...baseProps}
-      className={ChipInputClass}
-      onClick={onClickHandler}
-    >
+    <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass} onClick={onClickHandler}>
       <div className="ChipInput-wrapper">
         {chips && chips.length > 0 && chipComponents}
         <input

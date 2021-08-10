@@ -11,9 +11,12 @@ export const OverlayBody = (props: OverlayBodyProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    OverlayBody: true,
-  }, className);
+  const classes = classNames(
+    {
+      OverlayBody: true,
+    },
+    className
+  );
 
   return (
     <div data-test="DesignSystem-OverlayBody" {...baseProps} className={classes}>
@@ -24,7 +27,7 @@ export const OverlayBody = (props: OverlayBodyProps) => {
 
 OverlayBody.defaultProps = {
   stickFooter: true,
-  withFooter: true
+  withFooter: true,
 };
 
 OverlayBody.displayName = 'OverlayBody';

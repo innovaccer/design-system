@@ -4,9 +4,7 @@ import { DropzoneProps, FileListProps } from '@/index.type';
 
 export const dropzoneWithFilelist = () => {
   const [files, setFiles] = React.useState<any>([]);
-  const getSize = (size: number) => (
-    `${(size / (1024 * 1024)).toFixed(2)} MB`
-  );
+  const getSize = (size: number) => `${(size / (1024 * 1024)).toFixed(2)} MB`;
 
   const onDelete = (id: number) => {
     const updatedFiles = files.filter((file: any) => file.id !== id);
@@ -14,14 +12,12 @@ export const dropzoneWithFilelist = () => {
   };
 
   const onDropHandler: DropzoneProps['onDrop'] = (_event, acceptedFiles, rejectedFiles) => {
-    const acceptedFileArray = acceptedFiles.map((file, id) => (
-    {
+    const acceptedFileArray = acceptedFiles.map((file, id) => ({
       file,
       id: files.length + id,
       fileSize: getSize(file.size),
       networkError: false,
-    }
-  ));
+    }));
 
     const rejectedFilesArray = rejectedFiles.map((fileObj, id) => {
       const { file, errors } = fileObj;
@@ -39,16 +35,11 @@ export const dropzoneWithFilelist = () => {
     setFiles(updatedFiles);
   };
 
-  const actionRenderer: FileListProps['actionRenderer'] = fileItem => {
+  const actionRenderer: FileListProps['actionRenderer'] = (fileItem) => {
     return (
       <React.Fragment>
         {fileItem.networkError && (
-          <Button
-            appearance="transparent"
-            icon="refresh"
-            size="regular"
-            className={'cursor-pointer'}
-          />
+          <Button appearance="transparent" icon="refresh" size="regular" className={'cursor-pointer'} />
         )}
         <Button
           appearance="transparent"
@@ -70,7 +61,7 @@ export const dropzoneWithFilelist = () => {
         multiple={true}
         onDrop={onDropHandler}
         className="mb-5"
-        sampleFileLink={(
+        sampleFileLink={
           <Link
             href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
             download="Test.pdf"
@@ -78,12 +69,9 @@ export const dropzoneWithFilelist = () => {
           >
             Download sample file
           </Link>
-        )}
+        }
       />
-      <FileList
-        fileList={files}
-        actionRenderer={actionRenderer}
-      />
+      <FileList fileList={files} actionRenderer={actionRenderer} />
     </React.Fragment>
   );
 };
@@ -181,8 +169,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };

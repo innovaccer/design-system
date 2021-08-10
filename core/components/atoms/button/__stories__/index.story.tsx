@@ -5,54 +5,23 @@ import Button from '../Button';
 
 // CSF format story
 export const all = () => {
-  const type = select(
-    'type',
-    ['button', 'submit', 'reset'],
-    undefined
-  );
+  const type = select('type', ['button', 'submit', 'reset'], undefined);
 
-  const appearance = select(
-    'appearance',
-    ['basic', 'primary', 'success', 'alert', 'transparent'],
-    undefined
-  );
+  const appearance = select('appearance', ['basic', 'primary', 'success', 'alert', 'transparent'], undefined);
 
-  const size = select(
-    'size',
-    ['tiny', 'regular', 'large'],
-    undefined
-  );
+  const size = select('size', ['tiny', 'regular', 'large'], undefined);
 
-  const disabled = boolean(
-    'disabled',
-    false
-  );
+  const disabled = boolean('disabled', false);
 
-  const expanded = boolean(
-    'expanded',
-    false
-  );
+  const expanded = boolean('expanded', false);
 
-  const loading = boolean(
-    'loading',
-    false
-  );
+  const loading = boolean('loading', false);
 
-  const icon = text(
-    'icon',
-    ''
-  );
+  const icon = text('icon', '');
 
-  const iconAlign = select(
-    'iconAlign',
-    ['left', 'right'],
-    undefined
-  );
+  const iconAlign = select('iconAlign', ['left', 'right'], undefined);
 
-  const children = text(
-    'children',
-    'Button'
-  );
+  const children = text('children', 'Button');
 
   return (
     <Button
@@ -75,5 +44,5 @@ export const all = () => {
 
 export default {
   title: 'Components/Button/All',
-  component: Button
+  component: Button,
 };

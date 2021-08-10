@@ -81,7 +81,7 @@ const customCode = `
         return <Button appearance="success" type="submit">Save</Button>
       }
 
-      return <Button appearance="primary" type="button" onClick={this.onClickNext}>Next</Button>
+      return <Button appearance="primary" onClick={this.onClickNext}>Next</Button>
     }
 
     render() {
@@ -206,8 +206,8 @@ export default {
       docPage: {
         customCode,
         title: 'Stepper Form',
-        noProps: true
-      }
-    }
-  }
+        noProps: true,
+      },
+    },
+  },
 };

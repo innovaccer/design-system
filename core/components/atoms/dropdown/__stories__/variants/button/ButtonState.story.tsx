@@ -12,37 +12,30 @@ export const state = () => {
     <div className="d-flex" style={{ minHeight: '270px' }}>
       <div className="d-flex mr-8" style={{ flexDirection: 'column', alignItems: 'center' }}>
         <div className="d-flex">
-          {
-            disabled.map((buttonState, ind) => {
-              return (
-                <div style={{ marginRight: '5%' }} key={ind}>
-                  <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br /><br />
-                  <Dropdown icon={'events'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
-                </div>
-              );
-            })
-          }
+          {disabled.map((buttonState, ind) => {
+            return (
+              <div style={{ marginRight: '5%' }} key={ind}>
+                <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br />
+                <br />
+                <Dropdown icon={'events'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
+              </div>
+            );
+          })}
         </div>
         <br />
         <Text weight="strong">{'Icon'}</Text>
       </div>
       <div className="d-flex" style={{ flexDirection: 'column', alignItems: 'center' }}>
         <div className="d-flex">
-          {
-            disabled.map((buttonState, ind) => {
-              return (
-                <div className="mr-8" key={ind}>
-                  <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br /><br />
-                  <Dropdown
-                    inlineLabel={'label'}
-                    disabled={buttonState}
-                    options={storyOptions}
-                    placeholder={'Select'}
-                  />
-                </div>
-              );
-            })
-          }
+          {disabled.map((buttonState, ind) => {
+            return (
+              <div className="mr-8" key={ind}>
+                <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br />
+                <br />
+                <Dropdown inlineLabel={'label'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
+              </div>
+            );
+          })}
         </div>
         <br />
         <Text weight="strong">{'Label'}</Text>
@@ -51,7 +44,7 @@ export const state = () => {
   );
 };
 
-const customCode =  `() => {
+const customCode = `() => {
   const storyOptions = [];
   for (let i = 1; i <= 10; i++) {
     storyOptions.push({
@@ -95,9 +88,9 @@ export default {
         customCode,
         props: {
           components: { Uncontrolled, Controlled },
-          exclude: ['showHead']
-        }
-      }
-    }
-  }
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };

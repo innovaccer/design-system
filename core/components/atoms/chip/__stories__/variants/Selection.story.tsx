@@ -5,14 +5,8 @@ import Chip from '../../Chip';
 import { action } from '@storybook/addon-actions';
 const BooleanValue = [true, false];
 export const Selection = () => {
-
-  const icon = text(
-    'icon', 'assessment'
-  );
-  const label = text(
-    'label',
-    'Selection'
-  );
+  const icon = text('icon', 'assessment');
+  const label = text('label', 'Selection');
   return (
     <div className="d-flex">
       {BooleanValue.map((booleanvalue, ind) => {
@@ -57,8 +51,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Chip'
-      }
-    }
-  }
+        title: 'Chip',
+      },
+    },
+  },
 };

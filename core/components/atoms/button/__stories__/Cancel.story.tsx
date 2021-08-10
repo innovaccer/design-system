@@ -2,10 +2,7 @@ import * as React from 'react';
 import Button from '../Button';
 
 export const BasicButton = () => (
-  <Button
-    appearance="basic"
-    size="regular"
-  >
+  <Button appearance="basic" size="regular">
     Cancel
   </Button>
 );
@@ -17,8 +14,8 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        description: 'Basic Button'
-      }
-    }
-  }
+        description: 'Basic Button',
+      },
+    },
+  },
 };

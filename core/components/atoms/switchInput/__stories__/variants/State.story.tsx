@@ -4,26 +4,19 @@ import Text from '@/components/atoms/text';
 
 // CSF format story
 export const state = () => {
-
   return (
     <div className="d-flex">
       <div className="mr-9">
-        <Switch
-          defaultChecked={true}
-          disabled={false}
-        />
+        <Switch defaultChecked={true} disabled={false} />
         <br />
         <Text weight="strong">Enabled</Text>
       </div>
       <div>
-        <Switch
-          disabled={true}
-          defaultChecked={true}
-        />
+        <Switch disabled={true} defaultChecked={true} />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
-    </div >
+    </div>
   );
 };
 
@@ -33,8 +26,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Switch'
-      }
-    }
-  }
+        title: 'Switch',
+      },
+    },
+  },
 };

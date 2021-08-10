@@ -13,7 +13,7 @@ export const pinnedColumns = () => {
       last_name: 'Lawson',
       dob: '01/12/1982',
       gender: 'Female',
-      facility: 'Charity Medical Clinic'
+      facility: 'Charity Medical Clinic',
     },
     {
       s_no: 2,
@@ -22,7 +22,7 @@ export const pinnedColumns = () => {
       last_name: 'Pop',
       dob: '01/11/1982',
       gender: 'Female',
-      facility: 'Bancroft Medical Clinic'
+      facility: 'Bancroft Medical Clinic',
     },
     {
       s_no: 3,
@@ -31,7 +31,7 @@ export const pinnedColumns = () => {
       last_name: 'Sanchez',
       dob: '02/12/1981',
       gender: 'Female',
-      facility: 'Lullaby Medical Clinic'
+      facility: 'Lullaby Medical Clinic',
     },
     {
       s_no: 4,
@@ -40,7 +40,7 @@ export const pinnedColumns = () => {
       last_name: 'Powell',
       dob: '01/10/1972',
       gender: 'Female',
-      facility: 'Charity Medical Clinic'
+      facility: 'Charity Medical Clinic',
     },
     {
       s_no: 5,
@@ -49,7 +49,7 @@ export const pinnedColumns = () => {
       last_name: 'Lane',
       dob: '01/10/1982',
       gender: 'Male',
-      facility: 'Lullaby Medical Clinic'
+      facility: 'Lullaby Medical Clinic',
     },
   ];
 
@@ -59,43 +59,43 @@ export const pinnedColumns = () => {
       displayName: 'S.no.',
       width: '5%',
       sorting: false,
-      pinned: 'left'
+      pinned: 'left',
     },
     {
       name: 'empi',
       displayName: 'EMPI',
       width: '10%',
       sorting: false,
-      pinned: 'left'
+      pinned: 'left',
     },
     {
       name: 'first_name',
       displayName: 'First Name',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'last_name',
       displayName: 'Last Name',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'dob',
       displayName: 'DOB',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'gender',
       displayName: 'Gender',
       width: '20%',
-      sorting: false
+      sorting: false,
     },
     {
       name: 'facility',
       displayName: 'Facility',
-      sorting: false
+      sorting: false,
     },
   ];
 
@@ -110,7 +110,7 @@ export const pinnedColumns = () => {
         schema={schema}
         withHeader={true}
         headerOptions={{
-          withSearch: false
+          withSearch: false,
         }}
         withPagination={false}
       />
@@ -242,7 +242,7 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-      }
-    }
-  }
+      },
+    },
+  },
 };

@@ -39,50 +39,36 @@ export interface NavigationProps extends BaseProps, VerticalNavigationProps {
  */
 
 export const Navigation = (props: NavigationProps) => {
-  const {
-    type,
-    align,
-    menus,
-    active,
-    onClick,
-    expanded,
-    rounded,
-    onToggle,
-    footer,
-    autoCollapse,
-    className
-  } = props;
+  const { type, align, menus, active, onClick, expanded, rounded, onToggle, footer, autoCollapse, className } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const classes = classNames({
-    ['Navigation']: true,
-    [`Navigation--${type}`]: type,
-    ['justify-content-center']: type === 'horizontal' && align === 'center',
-    ['justify-content-start']: type === 'horizontal' && align === 'left',
-    ['Navigation--collapsed']: !expanded
-  }, className);
+  const classes = classNames(
+    {
+      ['Navigation']: true,
+      [`Navigation--${type}`]: type,
+      ['justify-content-center']: type === 'horizontal' && align === 'center',
+      ['justify-content-start']: type === 'horizontal' && align === 'left',
+      ['Navigation--collapsed']: !expanded,
+    },
+    className
+  );
 
   const renderNavigation = () => {
-    return type === 'horizontal' ?
-      (
-        <HorizontalNav
-          menus={menus}
-          active={active}
-          onClick={onClick}
-        />
-      ) : (
-        <VerticalNavigation
-          menus={menus}
-          active={active}
-          autoCollapse={autoCollapse}
-          expanded={expanded}
-          rounded={rounded}
-          footer={footer}
-          onToggle={onToggle}
-          onClick={onClick}
-        />
-      );
+    return type === 'horizontal' ? (
+      <HorizontalNav menus={menus} active={active} onClick={onClick} />
+    ) : (
+      <VerticalNavigation
+        menus={menus}
+        active={active}
+        autoCollapse={autoCollapse}
+        expanded={expanded}
+        rounded={rounded}
+        footer={footer}
+        onToggle={onToggle}
+        onClick={onClick}
+      />
+    );
   };
 
   return (
@@ -97,7 +83,7 @@ Navigation.defaultProps = {
   align: 'center',
   expanded: true,
   autoCollapse: true,
-  rounded: false
+  rounded: false,
 };
 
 export default Navigation;

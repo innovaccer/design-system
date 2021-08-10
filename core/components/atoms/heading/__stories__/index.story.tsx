@@ -9,25 +9,17 @@ export const all = () => {
     { undefined, default: 'default', subtle: 'subtle', disabled: 'disabled', white: 'white' },
     undefined,
     {
-      display: 'inline-radio'
+      display: 'inline-radio',
     }
   );
 
-  const size = optionsKnob(
-    'size',
-    { s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl' },
-    undefined,
-    {
-      display: 'inline-radio'
-    }
-  );
+  const size = optionsKnob('size', { s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl' }, undefined, {
+    display: 'inline-radio',
+  });
 
   return (
     <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
-      <Heading
-        appearance={appearance}
-        size={size}
-      >
+      <Heading appearance={appearance} size={size}>
         Heading component have different varients, look for options in knobs tab.
       </Heading>
     </div>
@@ -40,8 +32,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Heading'
-      }
-    }
-  }
+        title: 'Heading',
+      },
+    },
+  },
 };

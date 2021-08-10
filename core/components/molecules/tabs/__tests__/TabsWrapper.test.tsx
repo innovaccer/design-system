@@ -19,11 +19,11 @@ describe('TabsWrapper component', () => {
 
     it(testMessageHelper(attr), () => {
       const { asFragment } = render(
-        <TabsWrapper
-          {...attr}
-        >
+        <TabsWrapper {...attr}>
           <Tab label={Label}>Tab 1</Tab>
-          <Tab label={Label} disabled={true}>Tab 2</Tab>
+          <Tab label={Label} disabled={true}>
+            Tab 2
+          </Tab>
         </TabsWrapper>
       );
       expect(asFragment()).toMatchSnapshot();
@@ -101,14 +101,15 @@ describe('TabsWrapper component', () => {
     const { getAllByTestId } = render(
       <TabsWrapper active={activeTab} onTabChange={FunctionValue}>
         <Tab label={<></>}>Tab 1</Tab>
-        <Tab label={<></>} disabled={true}>Tab 2</Tab>
+        <Tab label={<></>} disabled={true}>
+          Tab 2
+        </Tab>
       </TabsWrapper>
     );
 
     expect(getAllByTestId('DesignSystem-Tabs--Header')[activeTab]).not.toHaveClass('Tab--active');
     expect(getAllByTestId('DesignSystem-Tabs--Header')[disabledTab]).toHaveClass('Tab--disabled');
   });
-
 });
 
 describe('TabsWrapper component with prop: onTabChange', () => {
@@ -132,5 +133,4 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     rerender(tabs(clickedTab));
     expect(getAllByTestId('DesignSystem-Tabs--Header')[clickedTab]).toHaveClass('Tab--active');
   });
-
 });

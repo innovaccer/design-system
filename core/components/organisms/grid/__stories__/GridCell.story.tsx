@@ -8,16 +8,9 @@ export const Grid_Cell = () => {
     displayName: 'Name',
   };
 
-  const size = select(
-    'size',
-    ['comfortable', 'standard', 'compressed', 'tight'],
-    'comfortable'
-  );
+  const size = select('size', ['comfortable', 'standard', 'compressed', 'tight'], 'comfortable');
 
-  const width = number(
-    'width',
-    250
-  );
+  const width = number('width', 250);
 
   const cellType = select(
     'cellType',
@@ -25,21 +18,11 @@ export const Grid_Cell = () => {
     undefined
   );
 
-  const align = select(
-    'align',
-    ['left', 'center', 'right'],
-    'left'
-  );
+  const align = select('align', ['left', 'center', 'right'], 'left');
 
-  const tooltip = boolean(
-    'tooltip',
-    true
-  );
+  const tooltip = boolean('tooltip', true);
 
-  const loading = boolean(
-    'loading',
-    false
-  );
+  const loading = boolean('loading', false);
 
   return (
     <div className="Grid-cell Grid-cell--body" style={{ width, border: 'var(--border)' }}>
@@ -53,8 +36,8 @@ export const Grid_Cell = () => {
             name: {
               title: 'Schreiber Brynn',
               metaList: ['Meta Item 1', 'Meta Item 2'],
-              icon: 'events'
-            }
+              icon: 'events',
+            },
           }}
           schema={{
             ...schema,
@@ -71,5 +54,5 @@ export const Grid_Cell = () => {
 
 export default {
   title: 'Components/Grid/Grid Cell',
-  component: GridCell
+  component: GridCell,
 };

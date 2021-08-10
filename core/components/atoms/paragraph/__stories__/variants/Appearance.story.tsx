@@ -11,9 +11,7 @@ export const appearance = () => {
         return (
           <div key={ind} className="mr-6">
             <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
-              <Paragraph appearance={appear}>
-                Paragraph
-              </Paragraph>
+              <Paragraph appearance={appear}>Paragraph</Paragraph>
             </div>
             <br />
             <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
@@ -30,8 +28,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'Paragraph'
-      }
-    }
-  }
+        title: 'Paragraph',
+      },
+    },
+  },
 };

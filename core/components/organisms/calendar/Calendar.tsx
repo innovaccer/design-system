@@ -13,7 +13,7 @@ import {
   getFirstDayOfMonth,
   getIndexOfDay,
   getYearBlock,
-  convertToDate
+  convertToDate,
 } from './utility';
 
 export interface SharedProps extends BaseProps {
@@ -117,21 +117,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     monthsInView: 1,
     view: 'date',
     firstDayOfWeek: 'sunday',
-    jumpView: true
+    jumpView: true,
   };
 
   constructor(props: CalendarProps) {
     super(props);
 
-    const {
-      rangePicker,
-      startDate,
-      endDate,
-      monthsInView,
-      view
-    } = this.props;
+    const { rangePicker, startDate, endDate, monthsInView, view } = this.props;
 
-    const currDate = rangePicker ? (endDate || startDate) : props.date;
+    const currDate = rangePicker ? endDate || startDate : props.date;
 
     const yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
     const monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
@@ -152,37 +146,35 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   }
 
   componentDidUpdate(prevProps: CalendarProps, prevState: CalendarState) {
-    const {
-      monthsInView
-    } = this.props;
+    const { monthsInView } = this.props;
 
     if (prevProps.date !== this.props.date) {
       const { year, month, date } = getDateInfo(this.props.date);
       this.updateState(year, month, date);
       const d = convertToDate(this.props.date);
       this.setState({
-        currDate: d
+        currDate: d,
       });
     }
 
     if (prevProps.startDate !== this.props.startDate) {
       const d = convertToDate(this.props.startDate);
       this.setState({
-        startDate: d
+        startDate: d,
       });
     }
 
     if (prevProps.endDate !== this.props.endDate) {
       const d = convertToDate(this.props.endDate);
       this.setState({
-        endDate: d
+        endDate: d,
       });
     }
 
     if (prevProps.view !== this.props.view) {
       if (this.props.monthsInView === 1) {
         this.setState({
-          view: this.props.view
+          view: this.props.view,
         });
       }
     }
@@ -192,7 +184,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       if (yearNav) {
         this.setState({
           yearNav,
-          yearBlockNav: getYearBlock(yearNav)
+          yearBlockNav: getYearBlock(yearNav),
         });
       }
     }
@@ -201,40 +193,29 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       const { monthNav } = this.props;
       if (monthNav) {
         this.setState({
-          monthNav
+          monthNav,
         });
       }
     }
 
     if (prevState.currDate !== this.state.currDate) {
-      const {
-        rangePicker,
-        onDateChange
-      } = this.props;
+      const { rangePicker, onDateChange } = this.props;
 
-      const {
-        currDate,
-        startDate,
-        endDate
-      } = this.state;
+      const { currDate, startDate, endDate } = this.state;
 
       if (currDate) {
         if (onDateChange) onDateChange(currDate);
         if (rangePicker) {
           this.setState({
-            hoverDate: undefined
+            hoverDate: undefined,
           });
           if (startDate && endDate) {
             this.setState({
               startDate: currDate,
-              endDate: undefined
+              endDate: undefined,
             });
           } else {
-            const {
-              year,
-              month,
-              date
-            } = getDateInfo(currDate);
+            const { year, month, date } = getDateInfo(currDate);
             if (startDate) {
               if (compareDate(startDate, 'more', year, month, date)) {
                 this.setState({ startDate: currDate });
@@ -258,14 +239,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 
     if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
-      const {
-        onRangeChange
-      } = this.props;
+      const { onRangeChange } = this.props;
 
-      const {
-        startDate,
-        endDate
-      } = this.state;
+      const { startDate, endDate } = this.state;
 
       if (onRangeChange) onRangeChange(startDate, endDate);
     }
@@ -276,7 +252,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         this.setState({
           year,
           yearBlockNav: getYearBlock(year),
-          yearNav: year
+          yearNav: year,
         });
       }
     }
@@ -285,7 +261,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       const { month } = this.state;
       if (month !== undefined && monthsInView === 1) {
         this.setState({
-          monthNav: month
+          monthNav: month,
         });
       }
     }
@@ -295,62 +271,37 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     this.setState({
       year,
       month,
-      date
+      date,
     });
-  }
+  };
 
   getDateValue = (year: number, month: number, date: number): Date | undefined => {
     const d = new Date(year, month, date);
     return d;
-  }
+  };
 
   getNavDateInfo = (index: number): Record<string, any> => {
-    const {
-      yearBlockNav,
-      yearNav,
-      monthNav
-    } = this.state;
+    const { yearBlockNav, yearNav, monthNav } = this.state;
 
-    const {
-      monthBlock
-    } = config;
+    const { monthBlock } = config;
 
     const yearBlock = yearBlockNav;
     const month = (monthNav + index) % monthBlock;
     const year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
     return { yearBlock, year, month };
-  }
+  };
 
   getInRangeError = () => {
-    const {
-      rangePicker,
-      rangeLimit
-    } = this.props;
+    const { rangePicker, rangeLimit } = this.props;
 
-    const {
-      startDate: startDateState,
-      endDate: endDateState,
-      hoverDate: hoverDateState
-    } = this.state;
+    const { startDate: startDateState, endDate: endDateState, hoverDate: hoverDateState } = this.state;
 
     if (rangePicker && rangeLimit) {
-      const {
-        year: startYear,
-        month: startMonth,
-        date: startDate
-      } = getDateInfo(startDateState);
+      const { year: startYear, month: startMonth, date: startDate } = getDateInfo(startDateState);
 
-      const {
-        year: endYear,
-        month: endMonth,
-        date: endDate
-      } = getDateInfo(endDateState);
+      const { year: endYear, month: endMonth, date: endDate } = getDateInfo(endDateState);
 
-      const {
-        year: hoverYear,
-        month: hoverMonth,
-        date: hoverDate
-      } = getDateInfo(hoverDateState);
+      const { year: hoverYear, month: hoverMonth, date: hoverDate } = getDateInfo(hoverDateState);
 
       let limitDate: Date;
       if (startDateState) {
@@ -358,8 +309,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         limitDate.setDate(startDate + rangeLimit);
 
         return (
-          compareDate(limitDate, 'less', hoverYear, hoverMonth, hoverDate + 1)
-          || compareDate(limitDate, 'less', endYear, endMonth, endDate + 1)
+          compareDate(limitDate, 'less', hoverYear, hoverMonth, hoverDate + 1) ||
+          compareDate(limitDate, 'less', endYear, endMonth, endDate + 1)
         );
       }
       if (endDateState) {
@@ -367,53 +318,42 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         limitDate.setDate(endDate - rangeLimit);
 
         return (
-          compareDate(limitDate, 'more', hoverYear, hoverMonth, hoverDate - 1)
-          || compareDate(limitDate, 'more', startYear, startMonth, startDate - 1)
+          compareDate(limitDate, 'more', hoverYear, hoverMonth, hoverDate - 1) ||
+          compareDate(limitDate, 'more', startYear, startMonth, startDate - 1)
         );
       }
     }
     return false;
-  }
+  };
 
   selectYear = (year: number) => () => {
     this.updateState(year);
     this.setState({
-      view: 'month'
+      view: 'month',
     });
-  }
+  };
 
   selectMonth = (month: number) => () => {
     this.updateState(this.state.yearNav, month);
     this.setState({
-      view: 'date'
+      view: 'date',
     });
-  }
+  };
 
   selectDate = (index: number, date: number) => {
-    const {
-      year,
-      month
-    } = this.getNavDateInfo(index);
+    const { year, month } = this.getNavDateInfo(index);
 
     this.updateState(year, month, date);
     const d = this.getDateValue(year, month, date);
     this.setState({
-      currDate: d
+      currDate: d,
     });
-  }
+  };
 
   onNavIconClickHandler = (type: string) => () => {
-    const {
-      view,
-      yearBlockNav,
-      yearNav,
-      monthNav
-    } = this.state;
+    const { view, yearBlockNav, yearNav, monthNav } = this.state;
 
-    const {
-      yearBlockRange,
-      monthBlock
-    } = config;
+    const { yearBlockRange, monthBlock } = config;
 
     switch (view) {
       case 'year':
@@ -437,31 +377,25 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         }
         break;
     }
-  }
+  };
 
   renderJumpButton = (type: string) => {
-    const {
-      disabledBefore,
-      disabledAfter
-    } = this.props;
+    const { disabledBefore, disabledAfter } = this.props;
 
-    const {
-      view,
-      yearBlockNav,
-      yearNav,
-      monthNav
-    } = this.state;
+    const { view, yearBlockNav, yearNav, monthNav } = this.state;
 
     let disabled = false;
     switch (view) {
       case 'year':
         if (type === 'prev') {
-          disabled = compareYearBlock(disabledBefore, 'more', yearBlockNav)
-            || compareYearBlock(disabledBefore, 'equal', yearBlockNav);
+          disabled =
+            compareYearBlock(disabledBefore, 'more', yearBlockNav) ||
+            compareYearBlock(disabledBefore, 'equal', yearBlockNav);
         }
         if (type === 'next') {
-          disabled = compareYearBlock(disabledAfter, 'less', yearBlockNav)
-            || compareYearBlock(disabledAfter, 'equal', yearBlockNav);
+          disabled =
+            compareYearBlock(disabledAfter, 'less', yearBlockNav) ||
+            compareYearBlock(disabledAfter, 'equal', yearBlockNav);
         }
         break;
 
@@ -499,16 +433,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         onClick={this.onNavIconClickHandler(type)}
       />
     );
-  }
+  };
 
   onNavHeadingClickHandler = (currView: View) => () => {
-    const {
-      monthsInView
-    } = this.props;
+    const { monthsInView } = this.props;
 
-    let {
-      jumpView
-    } = this.props;
+    let { jumpView } = this.props;
 
     if (jumpView) {
       if (monthsInView > 1) jumpView = false;
@@ -519,28 +449,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       if (currView === 'month') this.setState({ view: 'year' });
       if (currView === 'date') this.setState({ view: 'month' });
     }
-  }
+  };
 
   renderHeaderContent = (index: number) => {
-    const {
-      size,
-      monthsInView,
-    } = this.props;
+    const { size, monthsInView } = this.props;
 
-    const {
-      view,
-      yearBlockNav
-    } = this.state;
+    const { view, yearBlockNav } = this.state;
 
-    const {
-      yearBlockRange,
-      months
-    } = config;
+    const { yearBlockRange, months } = config;
 
-    const {
-      year: yearNavVal,
-      month: monthNavVal
-    } = this.getNavDateInfo(index);
+    const { year: yearNavVal, month: monthNavVal } = this.getNavDateInfo(index);
 
     const headerContentClass = classNames({
       'Calendar-headerContent': true,
@@ -555,27 +473,17 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const renderHeading = (content: string) => {
       if (size === 'small') {
-        return (
-          <Text weight="strong">{content}</Text>
-        );
+        return <Text weight="strong">{content}</Text>;
       }
-      return (
-        <Heading size="s">{content}</Heading>
-      );
+      return <Heading size="s">{content}</Heading>;
     };
 
     return (
       <div className={headerContentClass}>
-        {view !== 'date' && (
-          <span onClick={this.onNavHeadingClickHandler(view)}>
-            {renderHeading(headerContent)}
-          </span>
-        )}
+        {view !== 'date' && <span onClick={this.onNavHeadingClickHandler(view)}>{renderHeading(headerContent)}</span>}
         {view === 'date' && (
           <>
-            <span onClick={this.onNavHeadingClickHandler(view)}>
-              {renderHeading(months[monthNavVal])}
-            </span>
+            <span onClick={this.onNavHeadingClickHandler(view)}>{renderHeading(months[monthNavVal])}</span>
             <span className="ml-4" onClick={this.onNavHeadingClickHandler('month')}>
               {renderHeading(yearNavVal)}
             </span>
@@ -583,24 +491,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         )}
       </div>
     );
-  }
+  };
 
   renderBodyYear = () => {
-    const {
-      yearBlockRange,
-      yearsInRow
-    } = config;
+    const { yearBlockRange, yearsInRow } = config;
 
-    const {
-      size,
-      rangePicker,
-      disabledBefore,
-      disabledAfter
-    } = this.props;
+    const { size, rangePicker, disabledBefore, disabledAfter } = this.props;
 
-    const {
-      yearBlockNav
-    } = this.state;
+    const { yearBlockNav } = this.state;
 
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
@@ -619,7 +517,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'Calendar-value--active': active,
             'Calendar-value--disabled': disabled,
             'Calendar-yearValue': true,
-            [`Calendar-yearValue--${size}`]: size
+            [`Calendar-yearValue--${size}`]: size,
           });
 
           return (
@@ -640,25 +538,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         })}
       </div>
     ));
-  }
+  };
 
   renderBodyMonth = () => {
-    const {
-      monthBlock,
-      monthsInRow,
-      months
-    } = config;
+    const { monthBlock, monthsInRow, months } = config;
 
-    const {
-      size,
-      disabledBefore,
-      disabledAfter
-    } = this.props;
+    const { size, disabledBefore, disabledAfter } = this.props;
 
-    const {
-      yearNav,
-      year
-    } = this.state;
+    const { yearNav, year } = this.state;
 
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
 
@@ -666,8 +553,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       <div key={row} className="Calendar-valueRow">
         {Array.from({ length: monthsInRow }, (_x, col) => {
           const month = monthsInRow * row + col;
-          const disabled = compareDate(disabledBefore, 'more', yearNav, month)
-            || compareDate(disabledAfter, 'less', yearNav, month);
+          const disabled =
+            compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
           const active = !disabled && year === yearNav && month === this.state.month;
 
           const valueClass = classNames({
@@ -675,7 +562,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'Calendar-value--active': active,
             'Calendar-value--dummy': disabled,
             'Calendar-monthValue': true,
-            [`Calendar-monthValue--${size}`]: size
+            [`Calendar-monthValue--${size}`]: size,
           });
 
           return (
@@ -696,42 +583,36 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         })}
       </div>
     ));
-  }
+  };
 
   onDateRowMouseLeaveHandler = () => {
-    const {
-      rangePicker
-    } = this.props;
+    const { rangePicker } = this.props;
 
     if (rangePicker) {
       this.setState({
-        hoverDate: undefined
+        hoverDate: undefined,
       });
     }
-  }
+  };
 
   renderBodyDate = (index: number) => {
-    const {
-      daysInRow,
-      days
-    } = config;
+    const { daysInRow, days } = config;
 
-    const {
-      size,
-      firstDayOfWeek
-    } = this.props;
+    const { size, firstDayOfWeek } = this.props;
 
     return (
       <>
         <div className="Calendar-dayValues">
           {Array.from({ length: 7 }, (_x, day) => {
             const valueClass = classNames({
-              'Calendar-valueWrapper': true
+              'Calendar-valueWrapper': true,
             });
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Subheading key={day} className={valueClass} appearance="disabled">{days[size][dayValue]}</Subheading>
+              <Subheading key={day} className={valueClass} appearance="disabled">
+                {days[size][dayValue]}
+              </Subheading>
             );
           })}
         </div>
@@ -740,34 +621,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         </div>
       </>
     );
-  }
+  };
 
   renderDateValues = (index: number) => {
-    const {
-      daysInRow
-    } = config;
+    const { daysInRow } = config;
 
-    const {
-      size,
-      rangePicker,
-      firstDayOfWeek,
-      disabledBefore,
-      disabledAfter
-    } = this.props;
+    const { size, rangePicker, firstDayOfWeek, disabledBefore, disabledAfter } = this.props;
 
-    const {
-      startDate,
-      endDate,
-      hoverDate,
-      year: yearState,
-      month: monthState,
-      date: dateState
-    } = this.state;
+    const { startDate, endDate, hoverDate, year: yearState, month: monthState, date: dateState } = this.state;
 
-    const {
-      year: yearNavVal,
-      month: monthNavVal
-    } = this.getNavDateInfo(index);
+    const { year: yearNavVal, month: monthNavVal } = this.getNavDateInfo(index);
 
     const dayRange = getDaysInMonth(yearNavVal, monthNavVal);
     const dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
@@ -792,7 +655,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         const d = this.getDateValue(yearNavVal, monthNavVal, date);
         if (!startDate || !endDate) {
           this.setState({
-            hoverDate: d
+            hoverDate: d,
           });
         }
       }
@@ -804,11 +667,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           {Array.from({ length: daysInRow }, (_x, col) => {
             const date = daysInRow * row + col - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
-            const disabled = !dummy
-              && (
-                compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date)
-                || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date)
-              );
+            const disabled =
+              !dummy &&
+              (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) ||
+                compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
             let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
             let startActive = false;
             let endActive = false;
@@ -820,40 +682,29 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
               active = !disabled && (startActive || endActive);
               if (startDate && endDate) {
-                inRange = !disabled
-                  && (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive)
-                  && (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
+                inRange =
+                  !disabled &&
+                  (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive) &&
+                  (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
               } else if (startDate) {
-                inRange = !disabled
-                  && (
-                    compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date)
-                    || inRangeLast
-                  )
-                  && compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
+                inRange =
+                  !disabled &&
+                  (compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date) || inRangeLast) &&
+                  compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
               } else if (endDate) {
-                inRange = !disabled
-                  && (
-                    compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date)
-                    || inRangeLast
-                  )
-                  && compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
+                inRange =
+                  !disabled &&
+                  (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) &&
+                  compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
               }
             }
 
-            const {
-              year: sYear,
-              month: sMonth,
-              date: sDate
-            } = getDateInfo(startDate);
-            const {
-              year: eYear,
-              month: eMonth,
-              date: eDate
-            } = getDateInfo(endDate);
-            const isStart = startActive
-              || (endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate));
-            const isEnd = endActive
-              || (startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate));
+            const { year: sYear, month: sMonth, date: sDate } = getDateInfo(startDate);
+            const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
+            const isStart =
+              startActive || (endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate));
+            const isEnd =
+              endActive || (startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate));
             const isRangeError = inRange && inRangeError;
 
             const wrapperClass = classNames({
@@ -877,13 +728,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'Calendar-value--dummy': dummy || disabled,
               'Calendar-value--disabled': disabled,
               'Calendar-dateValue': true,
-              [`Calendar-dateValue--${size}`]: size
+              [`Calendar-dateValue--${size}`]: size,
             });
             return (
-              <div
-                key={`${row}-${col}`}
-                className={wrapperClass}
-              >
+              <div key={`${row}-${col}`} className={wrapperClass}>
                 {!dummy && (
                   <Text
                     appearance={active ? 'white' : disabled ? 'disabled' : 'default'}
@@ -902,72 +750,53 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         </div>
       );
     });
-  }
+  };
 
   renderCalendar = (index: number) => {
-    const {
-      size,
-      monthsInView
-    } = this.props;
+    const { size, monthsInView } = this.props;
 
-    const {
-      view
-    } = this.state;
+    const { view } = this.state;
 
     const containerClass = classNames({
       ['Calendar']: true,
       [`Calendar--${view}`]: view,
-      [`Calendar--${size}`]: size
+      [`Calendar--${size}`]: size,
     });
 
     const headerClass = classNames({
-      'Calendar-header': true
+      'Calendar-header': true,
     });
 
     const bodyClass = classNames({
-      'Calendar-body': true
+      'Calendar-body': true,
     });
 
     return (
-      <div
-        key={index}
-        data-test="DesignSystem-Calendar"
-        className={containerClass}
-      >
+      <div key={index} data-test="DesignSystem-Calendar" className={containerClass}>
         <div className={headerClass}>
-          {index === 0 &&
-            this.renderJumpButton('prev')
-          }
+          {index === 0 && this.renderJumpButton('prev')}
           {this.renderHeaderContent(index)}
-          {index === monthsInView - 1 &&
-            this.renderJumpButton('next')
-          }
+          {index === monthsInView - 1 && this.renderJumpButton('next')}
         </div>
         <div className={bodyClass}>
-          {view === 'year' &&
-            this.renderBodyYear()
-          }
-          {view === 'month' && (
-            this.renderBodyMonth()
-          )}
-          {view === 'date' &&
-            this.renderBodyDate(index)
-          }
+          {view === 'year' && this.renderBodyYear()}
+          {view === 'month' && this.renderBodyMonth()}
+          {view === 'date' && this.renderBodyDate(index)}
         </div>
       </div>
     );
-  }
+  };
 
   render() {
-    const {
-      monthsInView,
-      className
-    } = this.props;
+    const { monthsInView, className } = this.props;
 
     const baseProps = extractBaseProps(this.props);
-    const classes = classNames({
-      'Calendar-wrapper': true
-    }, className);
+    const classes = classNames(
+      {
+        'Calendar-wrapper': true,
+      },
+      className
+    );
 
     return (
       <div {...baseProps} className={classes}>

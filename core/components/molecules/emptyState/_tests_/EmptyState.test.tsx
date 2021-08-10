@@ -4,7 +4,7 @@ import { EmptyState, Button } from '@/index';
 import { EmptyStateProps as Props, HeadingProps, TextProps } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const sizes: Props['size'][]  = ['large', 'small'];
+const sizes: Props['size'][] = ['large', 'small'];
 const imageHeight = {
   large: '256px',
   small: '128px',
@@ -27,19 +27,15 @@ const button = <Button data-test="DesignSystem-EmptyState--Button">Add Campaigns
 describe('EmptyState component', () => {
   const mapper: Record<string, any> = {
     size: valueHelper(sizes, { required: true, iterate: true }),
-    title:valueHelper(title, { required: true }),
-    description:valueHelper(description, { required: true }),
-    imageSrc:valueHelper(imageSrc, { required: true }),
+    title: valueHelper(title, { required: true }),
+    description: valueHelper(description, { required: true }),
+    imageSrc: valueHelper(imageSrc, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <EmptyState
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<EmptyState {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -47,10 +43,11 @@ describe('EmptyState component', () => {
 });
 
 describe('EmptyState component', () => {
-
-  it('should render div and it\'s children ', () => {
+  it("should render div and it's children ", () => {
     const { getByTestId } = render(
-    <EmptyState title={title} imageSrc={imageSrc} description={description} size="large">{button}</EmptyState>
+      <EmptyState title={title} imageSrc={imageSrc} description={description} size="large">
+        {button}
+      </EmptyState>
     );
     expect(getByTestId('DesignSystem-EmptyState')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-EmptyState--Img')).toBeInTheDocument();
@@ -61,47 +58,50 @@ describe('EmptyState component', () => {
 
   it('should render title', () => {
     const { getByTestId } = render(
-    <EmptyState title={title} imageSrc={imageSrc} description={description} size="large"/>
+      <EmptyState title={title} imageSrc={imageSrc} description={description} size="large" />
     );
     expect(getByTestId('DesignSystem-EmptyState--Heading').textContent).toMatch(title);
   });
 
   it('should render description', () => {
     const { getByTestId } = render(
-    <EmptyState title={title} imageSrc={imageSrc} description={description} size="large"/>
+      <EmptyState title={title} imageSrc={imageSrc} description={description} size="large" />
     );
     expect(getByTestId('DesignSystem-EmptyState--Text').textContent).toMatch(description);
   });
 
   it('should render image', () => {
     const { getByTestId } = render(
-    <EmptyState title={title} imageSrc={imageSrc} description={description} size="large"/>
+      <EmptyState title={title} imageSrc={imageSrc} description={description} size="large" />
     );
     expect(getByTestId('DesignSystem-EmptyState--Img')).toHaveAttribute('src', 'noContent');
   });
 
   it('should render Child', () => {
     const { getByTestId } = render(
-    <EmptyState title={title} imageSrc={imageSrc} description={description} size="large">{button}</EmptyState>
+      <EmptyState title={title} imageSrc={imageSrc} description={description} size="large">
+        {button}
+      </EmptyState>
     );
     expect(getByTestId('DesignSystem-EmptyState--Button')).toBeInTheDocument();
   });
-
 });
 
 describe('EmptyState with prop: size', () => {
-  sizes.forEach(size => {
+  sizes.forEach((size) => {
     it(`Should render emptystate with size: ${size}`, () => {
       const { getByTestId } = render(
-      <EmptyState title={title} imageSrc={imageSrc} description={description} size={size}>{button}</EmptyState>
+        <EmptyState title={title} imageSrc={imageSrc} description={description} size={size}>
+          {button}
+        </EmptyState>
       );
       expect(getByTestId('DesignSystem-EmptyState--Heading')).toHaveClass(`EmptyState-title EmptyState-title--${size}`);
-      expect(getByTestId('DesignSystem-EmptyState--Text')).toHaveClass(`EmptyState-description EmptyState-description--${size}`);
+      expect(getByTestId('DesignSystem-EmptyState--Text')).toHaveClass(
+        `EmptyState-description EmptyState-description--${size}`
+      );
       expect(getByTestId('DesignSystem-EmptyState--Heading')).toHaveStyle(`fontSize:${HeadingSize[size]}px`);
       expect(getByTestId('DesignSystem-EmptyState--Text')).toHaveStyle(`fontSize: ${textSize[size]}px`);
       expect(getByTestId('DesignSystem-EmptyState--Img')).toHaveAttribute('height', imageHeight[size]);
     });
-
   });
-
 });

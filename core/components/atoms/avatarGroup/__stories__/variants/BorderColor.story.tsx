@@ -3,25 +3,17 @@ import { AvatarGroup } from '@/index';
 import { list } from '../AvatarList';
 
 export const borderColor = () => {
-
-  const colors = [
-    'secondary',
-    'alert',
-    'warning',
-    'accent1',
-  ];
+  const colors = ['secondary', 'alert', 'warning', 'accent1'];
 
   return (
     <div className="d-flex">
-      {
-        colors.map((color, i) => {
-          return (
-            <div key={i} className="mr-9">
-              <AvatarGroup list={list.slice(0, 4)} borderColor={`var(--${color})`} />
-            </div>
-          );
-        })
-      }
+      {colors.map((color, i) => {
+        return (
+          <div key={i} className="mr-9">
+            <AvatarGroup list={list.slice(0, 4)} borderColor={`var(--${color})`} />
+          </div>
+        );
+      })}
     </div>
   );
 };
@@ -71,7 +63,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

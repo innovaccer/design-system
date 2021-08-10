@@ -3,15 +3,7 @@ import { Text } from '@/index';
 import { OptionTypeProps } from './index';
 
 const DefaultOption = (props: OptionTypeProps) => {
-  const {
-    className,
-    textClassName,
-    onClickHandler,
-    optionData,
-    appearance,
-    onUpdateActiveOption,
-    dataTest,
-  } = props;
+  const { className, textClassName, onClickHandler, optionData, appearance, onUpdateActiveOption, dataTest } = props;
 
   const { label, disabled } = optionData;
 
@@ -24,10 +16,7 @@ const DefaultOption = (props: OptionTypeProps) => {
       data-disabled={disabled}
     >
       <div className={'Option-label'}>
-        <Text
-          className={textClassName}
-          appearance={appearance}
-        >
+        <Text className={textClassName} appearance={appearance}>
           {label}
         </Text>
       </div>

@@ -132,8 +132,8 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Verification Code Input'
-      }
-    }
-  }
+        title: 'Verification Code Input',
+      },
+    },
+  },
 };

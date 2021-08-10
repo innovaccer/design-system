@@ -5,10 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 // CSF format story
 export const withInput = () => {
-  const dateValue = date(
-    'date',
-    undefined
-  );
+  const dateValue = date('date', undefined);
 
   const inputFormat = select(
     'inputFormat',
@@ -22,11 +19,7 @@ export const withInput = () => {
     undefined
   );
 
-  const view = select(
-    'view',
-    ['date', 'month', 'year'],
-    undefined
-  );
+  const view = select('view', ['date', 'month', 'year'], undefined);
 
   const firstDayOfWeek = select(
     'firstDayOfWeek',
@@ -34,35 +27,17 @@ export const withInput = () => {
     undefined
   );
 
-  const disabledBefore = date(
-    'disabledBefore',
-    new Date('Jan 20 2015')
-  );
+  const disabledBefore = date('disabledBefore', new Date('Jan 20 2015'));
 
-  const disabledAfter = date(
-    'disabledAfter',
-    new Date('Jan 20 2028')
-  );
+  const disabledAfter = date('disabledAfter', new Date('Jan 20 2028'));
 
-  const jumpView = boolean(
-    'jumpView',
-    true
-  );
+  const jumpView = boolean('jumpView', true);
 
-  const yearNav = number(
-    'yearNav',
-    -1
-  );
+  const yearNav = number('yearNav', -1);
 
-  const monthNav = number(
-    'monthNav',
-    -1
-  );
+  const monthNav = number('monthNav', -1);
 
-  const closeOnSelect = boolean(
-    'closeOnSelect',
-    true
-  );
+  const closeOnSelect = boolean('closeOnSelect', true);
 
   const attr: Record<string, any> = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
@@ -85,7 +60,7 @@ export const withInput = () => {
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         inputOptions={{
-          required: true
+          required: true,
         }}
         {...attr}
       />
@@ -96,5 +71,5 @@ export const withInput = () => {
 export default {
   title: 'Components/DatePicker/Variants/With Input',
   component: DatePicker,
-  subcomponents: { InputMask }
+  subcomponents: { InputMask },
 };

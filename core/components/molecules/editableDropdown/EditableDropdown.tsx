@@ -23,12 +23,7 @@ export interface EditableDropdownProps extends BaseProps {
 }
 
 export const EditableDropdown = (props: EditableDropdownProps) => {
-  const {
-    placeholder,
-    dropdownOptions,
-    className,
-    customTriggerRenderer,
-  } = props;
+  const { placeholder, dropdownOptions, className, customTriggerRenderer } = props;
 
   const { onChange: onDropdownChange, onClose: onDropdownClose, ...rest } = dropdownOptions;
 
@@ -36,17 +31,20 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
   const [editing, setEditing] = React.useState(false);
   const [showComponent, setShowComponent] = React.useState(false);
 
-  const CompClass = classNames({
-    ['EditableDropdown']: true
-  }, className);
+  const CompClass = classNames(
+    {
+      ['EditableDropdown']: true,
+    },
+    className
+  );
 
   const DefaultCompClass = classNames({
     ['EditableDropdown-default']: true,
-    ['d-none']: showComponent
+    ['d-none']: showComponent,
   });
 
   const EditableDropdownClass = classNames({
-    ['d-none']: !showComponent
+    ['d-none']: !showComponent,
   });
 
   const baseProps = extractBaseProps(props);
@@ -88,10 +86,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
   return (
     <div data-test="DesignSystem-EditableDropdown" {...baseProps} className={CompClass}>
-      <Editable
-        onChange={onChangeHandler}
-        editing={editing}
-      >
+      <Editable onChange={onChangeHandler} editing={editing}>
         <Dropdown
           placeholder={placeholder}
           onChange={onChange}
@@ -111,7 +106,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
 EditableDropdown.defaultProps = {
   placeholder: '',
-  dropdownOptions: {}
+  dropdownOptions: {},
 };
 
 export default EditableDropdown;

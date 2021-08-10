@@ -9,8 +9,12 @@ const title = 'Title goes here';
 const description = 'Description goes here';
 const actions = (
   <>
-    <Text className="mr-5 cursor-pointer" appearance="link">Action 1</Text>
-    <Text className="cursor-pointer" appearance="link">Action 2</Text>
+    <Text className="mr-5 cursor-pointer" appearance="link">
+      Action 1
+    </Text>
+    <Text className="cursor-pointer" appearance="link">
+      Action 2
+    </Text>
   </>
 );
 
@@ -26,13 +30,7 @@ describe('Message component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <Message
-          {...attr}
-        >
-          Description goes here
-        </Message>
-      );
+      const { baseElement } = render(<Message {...attr}>Description goes here</Message>);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -41,27 +39,20 @@ describe('Message component', () => {
 });
 
 describe('Message component', () => {
-
   it('renders description', () => {
-    const { getByTestId } = render(
-      <Message appearance="info" description={description} />
-    );
+    const { getByTestId } = render(<Message appearance="info" description={description} />);
     expect(getByTestId('DesignSystem-Message--Description').textContent).toMatch(description);
   });
-
 });
 
 describe('Message Component with overwrite class', () => {
-
   it('overwrite Message class', () => {
     const { getByTestId } = render(<Message className="MessageClass" description={description} />);
     expect(getByTestId('DesignSystem-Message')).toHaveClass('MessageClass');
   });
-
 });
 
 describe('Message component with prop:Title', () => {
-
   it('renders title', () => {
     const { getByTestId } = render(<Message appearance="info" title={'Masala'} description={description} />);
     expect(getByTestId('DesignSystem-Message--Title').textContent).toMatch('Masala');
@@ -69,18 +60,14 @@ describe('Message component with prop:Title', () => {
   });
 
   it('should not have Message-title class if title is not present ', () => {
-    const { getByTestId, queryByTestId } = render(
-      <Message appearance="info" description={description} />
-    );
+    const { getByTestId, queryByTestId } = render(<Message appearance="info" description={description} />);
     expect(queryByTestId('DesignSystem-Message--Title')).not.toBeInTheDocument();
     expect(getByTestId('DesignSystem-Message--Icon')).not.toHaveClass('Message-icon--withTitle');
   });
-
 });
 
 describe('Message component with prop:appearance', () => {
-
-  appearances.forEach(appearance => {
+  appearances.forEach((appearance) => {
     it(`should have the Message--${appearance} class when appearance = ${appearance}`, () => {
       const { getByTestId } = render(<Message appearance={appearance} description={description} />);
       expect(getByTestId('DesignSystem-Message')).toHaveClass(`Message--${appearance}`);
@@ -91,16 +78,11 @@ describe('Message component with prop:appearance', () => {
     const { queryByTestId } = render(<Message appearance="default" description={description} />);
     expect(queryByTestId('DesignSystem-Message--Icon')).not.toBeInTheDocument();
   });
-
 });
 
 describe('Message component with prop: actions', () => {
-
   it('renders actions', () => {
-    const { getByTestId } = render(
-      <Message appearance="info" description={description} actions={actions} />
-    );
+    const { getByTestId } = render(<Message appearance="info" description={description} actions={actions} />);
     expect(getByTestId('DesignSystem-Message--actions')).toBeInTheDocument();
   });
-
 });

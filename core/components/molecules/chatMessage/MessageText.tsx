@@ -9,7 +9,7 @@ export interface MessageTextProps extends BaseProps {
    */
   text: string;
   /**
- 	 * Message to be shown while user is typing
+   * Message to be shown while user is typing
    */
   typingText: string;
 }
@@ -17,36 +17,20 @@ export interface MessageTextProps extends BaseProps {
 export type InternalTextProps = MessageTextProps & SharedProps;
 
 export const MessageText = (props: InternalTextProps) => {
-  const {
-    text,
-    type,
-    isTyping,
-    typingText,
-    statusType,
-    className
-  } = props;
+  const { text, type, isTyping, typingText, statusType, className } = props;
 
   const baseProps = extractBaseProps(props);
 
   if (isTyping && type === 'incoming') {
     return (
-      <Text
-        {...baseProps}
-        appearance={'subtle'}
-        size={'small'}
-        className={className}
-      >
+      <Text {...baseProps} appearance={'subtle'} size={'small'} className={className}>
         {typingText}
       </Text>
     );
   }
 
   return (
-    <Text
-      {...baseProps}
-      className={className}
-      appearance={statusType === 'sending' ? 'subtle' : 'default'}
-    >
+    <Text {...baseProps} className={className} appearance={statusType === 'sending' ? 'subtle' : 'default'}>
       {text}
     </Text>
   );
@@ -54,7 +38,7 @@ export const MessageText = (props: InternalTextProps) => {
 
 MessageText.defaultProps = {
   text: '',
-  typingText: 'Typing..'
+  typingText: 'Typing..',
 };
 
 MessageText.displayName = 'MessageText';

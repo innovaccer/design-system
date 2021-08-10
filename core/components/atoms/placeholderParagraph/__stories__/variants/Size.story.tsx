@@ -7,18 +7,15 @@ export const size = () => {
 
   return (
     <div>
-      {
-        sizes.map((s, ind) => {
-          return (
-            <div key={ind} className="mb-7">
-              <PlaceholderParagraph size={s} />
-              <Text weight="strong">{s}</Text>
-            </div>
-          );
-        })
-      }
+      {sizes.map((s, ind) => {
+        return (
+          <div key={ind} className="mb-7">
+            <PlaceholderParagraph size={s} />
+            <Text weight="strong">{s}</Text>
+          </div>
+        );
+      })}
     </div>
-
   );
 };
 
@@ -28,8 +25,8 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        title: 'PlaceholderParagraph'
-      }
-    }
-  }
+        title: 'PlaceholderParagraph',
+      },
+    },
+  },
 };

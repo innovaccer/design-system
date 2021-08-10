@@ -12,5 +12,5 @@ export const successToast = () => (
 
 export default {
   title: 'Components/Toast/Success Toast',
-  component: Toast
+  component: Toast,
 };

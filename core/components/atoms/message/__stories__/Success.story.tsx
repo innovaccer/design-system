@@ -5,15 +5,12 @@ import { Message, Row, Column } from '@/index';
 export const successMessage = () => (
   <Row>
     <Column size="4">
-      <Message
-        appearance="success"
-        description="Password updated. Login with your updated credentials."
-      />
+      <Message appearance="success" description="Password updated. Login with your updated credentials." />
     </Column>
   </Row>
 );
 
 export default {
   title: 'Components/Message/Success Message',
-  component: Message
+  component: Message,
 };
