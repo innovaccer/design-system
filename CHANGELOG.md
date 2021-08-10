@@ -1,3 +1,60 @@
+## 2.3.0-1  (2021-08-10) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Improves Tabs API for custom tab (8018e724)
+
+### Fixes
+* Adds type `button` to all components using Button component (7be54df8)
+* Removes action Icon when input field is disabled (deeb1e1c)
+
+### Improvements
+* Adds not-allowed cursor in stepper for disabled step (a11a3dce)
+
+### Documentation
+NA
+
+-------------------
+
+## 2.3.0-0  (2021-08-10) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+* Fixes missing file icon in FileList (920e5c42)
+* Fixes disabled state in DatePicker (1826c560)
+
+### Improvements
+* Adds radio's css for hover and active state (a025c7d4)
+
+### Documentation
+* Adds stepper stories (7274e111)
+
+-------------------
 ## 2.2.0-2  (2021-07-14) 
 
 ### Highlights
