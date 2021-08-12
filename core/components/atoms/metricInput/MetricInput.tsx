@@ -198,7 +198,11 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     if (isUncontrolled) setValue(newValue);
 
     if (onChange) {
-      const syntheticEvent = Object.create(e, { target: { value: newValue } });
+      const syntheticEvent = Object.create(e, {
+        target: {
+          value: { value: newValue }
+        }
+      });
       onChange(syntheticEvent);
     }
   };
