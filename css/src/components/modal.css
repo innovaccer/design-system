@@ -75,5 +75,12 @@
 
 .Modal-body {
   padding: 0 var(--spacing-xl);
+}
+
+.Modal-body--withMargin {
   margin-bottom: 80px;
+}
+
+.Modal-body--withPadding {
+  padding-bottom: var(--spacing-2);
 }

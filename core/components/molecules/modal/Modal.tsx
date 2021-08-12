@@ -217,6 +217,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
       ['Overlay-container--open']: open,
     });
 
+    const isAPINew = (headerOptions || footerOptions || footer || header);
+    const bodyClass = classNames({
+      ['Modal-body']: true,
+      ['Modal-body--withMargin']: isAPINew ? !!footer : true,
+      ['Modal-body--withPadding']: isAPINew ? !footer : true,
+    })
+
     const baseProps = extractBaseProps(this.props);
     const sizeMap: Record<ModalProps['dimension'], Partial<ColumnProps>> = {
       small: {
@@ -270,7 +277,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {children && (
             <>
               {headerOptions || footerOptions || footer || header ? (
-                <OverlayBody className="Modal-body">{this.props.children}</OverlayBody>
+                <OverlayBody className={bodyClass}>{this.props.children}</OverlayBody>
               ) : (
                 children
               )}

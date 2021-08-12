@@ -17,6 +17,7 @@ export const ModalBody = (props: ModalBodyProps) => {
   const classes = classNames(
     {
       'Modal-body': true,
+      'Modal-body--withMargin': true
     },
     className
   );
