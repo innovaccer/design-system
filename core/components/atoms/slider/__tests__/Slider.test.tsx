@@ -9,7 +9,7 @@ const value = 10;
 
 describe('Slider component', () => {
   const mapper = {
-    defaultValue: valueHelper(defaultValue, { required: true}),
+    defaultValue: valueHelper(defaultValue, { required: true }),
   };
 
   const testFunc = (props: Record<number, any>): void => {
@@ -30,7 +30,7 @@ describe('Slider component', () => {
 
 describe('Slider component', () => {
   const mapper = {
-    value: valueHelper(value, { required: true}),
+    value: valueHelper(value, { required: true }),
   };
 
   const testFunc = (props: Record<number, any>): void => {

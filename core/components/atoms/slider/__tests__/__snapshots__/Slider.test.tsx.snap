@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Slider component 
-  
+  defaultValue: 10
  1`] = `
 <body>
   <div>
@@ -16,11 +16,11 @@ exports[`Slider component
         >
           <div
             class="Slider-progress Slider-progress--inRange"
-            style="width: 0%;"
+            style="width: 100%;"
           />
           <div
             class="Slider-progress"
-            style="width: 100%;"
+            style="width: 0%;"
           />
         </div>
         <div
@@ -34,7 +34,7 @@ exports[`Slider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--default Text--small"
+              class="Text Text--disabled Text--small"
               data-test="DesignSystem-Text"
             >
               0
@@ -174,7 +174,7 @@ exports[`Slider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--default Text--small"
               data-test="DesignSystem-Text"
             >
               10
@@ -183,14 +183,14 @@ exports[`Slider component
         </div>
         <div
           class="Slider-handle"
-          style="left: calc(0.00% - 0px);"
+          style="left: calc(100.00% - 0px);"
           tabindex="1"
         />
         <div
           class="Slider-tooltip Tooltip d-none"
-          style="left: calc(0.00% - 0px);"
+          style="left: calc(100.00% - 0px);"
         >
-          0
+          10
         </div>
       </div>
     </div>
@@ -199,8 +199,8 @@ exports[`Slider component
 `;
 
 exports[`Slider component 
-  
- 2`] = `
+  value: 10
+ 1`] = `
 <body>
   <div>
     <div
@@ -214,11 +214,11 @@ exports[`Slider component
         >
           <div
             class="Slider-progress Slider-progress--inRange"
-            style="width: 0%;"
+            style="width: 100%;"
           />
           <div
             class="Slider-progress"
-            style="width: 100%;"
+            style="width: 0%;"
           />
         </div>
         <div
@@ -232,7 +232,7 @@ exports[`Slider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--default Text--small"
+              class="Text Text--disabled Text--small"
               data-test="DesignSystem-Text"
             >
               0
@@ -372,7 +372,7 @@ exports[`Slider component
               class="Slider-ticks"
             />
             <span
-              class="Text Text--disabled Text--small"
+              class="Text Text--default Text--small"
               data-test="DesignSystem-Text"
             >
               10
@@ -381,14 +381,14 @@ exports[`Slider component
         </div>
         <div
           class="Slider-handle"
-          style="left: calc(0.00% - 0px);"
+          style="left: calc(100.00% - 0px);"
           tabindex="1"
         />
         <div
           class="Slider-tooltip Tooltip d-none"
-          style="left: calc(0.00% - 0px);"
+          style="left: calc(100.00% - 0px);"
         >
-          0
+          10
         </div>
       </div>
     </div>
