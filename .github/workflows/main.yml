@@ -31,7 +31,7 @@ jobs:
       
       - name: bump module version
         if: steps.is_release_commit.outputs.result == 1
-        run: npm version $(git log -1 --pretty=format:%s) -m "Released %s"
+        run: RELEASE_COMMIT=true npm version --no-commit-hooks $(git log -1 --pretty=format:%s) -m "Released %s"
 
       - name: gnerate .npmrc
         if: steps.is_release_commit.outputs.result == 1
