@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478629993 
+   * Generated on: 1628859152437 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.3.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -257,6 +257,8 @@ function _assertThisInitialized$2(self) {
 function _possibleConstructorReturn$1(self, call) {
   if (call && (typeof call === "object" || typeof call === "function")) {
     return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
   }
 
   return _assertThisInitialized$2(self);
@@ -2954,6 +2956,7 @@ var renderDropdown = function renderDropdown(list, onClick) {
 
   var customTrigger = function customTrigger() {
     return /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       size: "tiny",
       appearance: "transparent",
       icon: "more_horiz_filled",
@@ -4401,8 +4404,8 @@ var Trigger$1 = function Trigger(props) {
   }, inputOptions, {
     error: showError,
     mask: mask,
-    value: date$1 ? translateToString(inputFormat, date$1) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+    value: date$1 ? translateToString(inputFormat, date$1) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
     onChange: onChangeHandler,
     onBlur: onBlurHandler,
     onClear: onClearHandler,
@@ -4456,6 +4459,9 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var disabled = _this.props.inputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -4664,8 +4670,8 @@ var TimePicker = function TimePicker(props) {
     placeholderChar: placeholderChar
   }, inputOptions, {
     mask: mask,
-    value: time$1 ? translateToTime(inputFormat, time$1) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+    value: time$1 ? translateToTime(inputFormat, time$1) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
     validators: inputValidator,
     onChange: onChangeHandler,
     onClear: onClearHandler,
@@ -4814,10 +4820,10 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     onBlur: onBlur,
     onClick: onClick,
     onFocus: onFocus
-  })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
+  })), disabled ? '' : info ? /*#__PURE__*/React.createElement(Tooltip, {
     position: "top",
     tooltip: info
-  }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
+  }, trigger) : actionIcon && (value || defaultValue) ? actionIcon : onClear && (value || defaultValue) && /*#__PURE__*/React.createElement("div", {
     className: rightIconClass,
     onClick: function onClick(e) {
       return onClear(e);
@@ -7262,7 +7268,7 @@ keysShim.shim = function shimObjectKeys() {
 var objectKeys = keysShim;
 
 /* eslint complexity: [2, 18], max-statements: [2, 33] */
-var shams = function hasSymbols() {
+var shams$1 = function hasSymbols() {
 	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
 	if (typeof Symbol.iterator === 'symbol') { return true; }
 
@@ -7302,16 +7308,20 @@ var shams = function hasSymbols() {
 	return true;
 };
 
+var shams = function hasToStringTagShams() {
+	return shams$1() && !!Symbol.toStringTag;
+};
+
 var origSymbol = typeof Symbol !== 'undefined' && Symbol;
 
 
-var hasSymbols$3 = function hasNativeSymbols() {
+var hasSymbols$2 = function hasNativeSymbols() {
 	if (typeof origSymbol !== 'function') { return false; }
 	if (typeof Symbol !== 'function') { return false; }
 	if (typeof origSymbol('foo') !== 'symbol') { return false; }
 	if (typeof Symbol('bar') !== 'symbol') { return false; }
 
-	return shams();
+	return shams$1();
 };
 
 /* eslint no-invalid-this: 1 */
@@ -7411,7 +7421,7 @@ var ThrowTypeError = $gOPD$1
 	}())
 	: throwTypeError;
 
-var hasSymbols$2 = hasSymbols$3();
+var hasSymbols$1 = hasSymbols$2();
 
 var getProto$1 = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
 
@@ -7423,7 +7433,7 @@ var INTRINSICS = {
 	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined$1 : AggregateError,
 	'%Array%': Array,
 	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
-	'%ArrayIteratorPrototype%': hasSymbols$2 ? getProto$1([][Symbol.iterator]()) : undefined$1,
+	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto$1([][Symbol.iterator]()) : undefined$1,
 	'%AsyncFromSyncIteratorPrototype%': undefined$1,
 	'%AsyncFunction%': needsEval,
 	'%AsyncGenerator%': needsEval,
@@ -7451,10 +7461,10 @@ var INTRINSICS = {
 	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
 	'%isFinite%': isFinite,
 	'%isNaN%': isNaN,
-	'%IteratorPrototype%': hasSymbols$2 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
+	'%IteratorPrototype%': hasSymbols$1 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
 	'%JSON%': typeof JSON === 'object' ? JSON : undefined$1,
 	'%Map%': typeof Map === 'undefined' ? undefined$1 : Map,
-	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
+	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
 	'%Math%': Math,
 	'%Number%': Number,
 	'%Object%': Object,
@@ -7467,11 +7477,11 @@ var INTRINSICS = {
 	'%Reflect%': typeof Reflect === 'undefined' ? undefined$1 : Reflect,
 	'%RegExp%': RegExp,
 	'%Set%': typeof Set === 'undefined' ? undefined$1 : Set,
-	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
+	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
 	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$1 : SharedArrayBuffer,
 	'%String%': String,
-	'%StringIteratorPrototype%': hasSymbols$2 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
-	'%Symbol%': hasSymbols$2 ? Symbol : undefined$1,
+	'%StringIteratorPrototype%': hasSymbols$1 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
+	'%Symbol%': hasSymbols$1 ? Symbol : undefined$1,
 	'%SyntaxError%': $SyntaxError,
 	'%ThrowTypeError%': ThrowTypeError,
 	'%TypedArray%': TypedArray,
@@ -7758,7 +7768,7 @@ var callBound = function callBoundIntrinsic(name, allowMissing) {
 	return intrinsic;
 };
 
-var hasToStringTag$2 = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+var hasToStringTag$2 = shams();
 
 
 var $toString$1 = callBound('Object.prototype.toString');
@@ -7790,7 +7800,7 @@ isStandardArguments.isLegacyArguments = isLegacyArguments; // for tests
 
 var isArguments = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
 
-var hasSymbols$1 = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 
 var toStr$1 = Object.prototype.toString;
 var concat = Array.prototype.concat;
@@ -7834,7 +7844,7 @@ var defineProperty$2 = function (object, name, value, predicate) {
 var defineProperties = function (object, map) {
 	var predicates = arguments.length > 2 ? arguments[2] : {};
 	var props = objectKeys(map);
-	if (hasSymbols$1) {
+	if (hasSymbols) {
 		props = concat.call(props, Object.getOwnPropertySymbols(map));
 	}
 	for (var i = 0; i < props.length; i += 1) {
@@ -7887,8 +7897,7 @@ defineProperties_1(polyfill$1, {
 
 var objectIs = polyfill$1;
 
-var hasSymbols = shams();
-var hasToStringTag$1 = hasSymbols && !!Symbol.toStringTag;
+var hasToStringTag$1 = shams();
 var has;
 var $exec;
 var isRegexMarker;
@@ -8037,7 +8046,7 @@ var tryDateObject = function tryDateGetDayCall(value) {
 
 var toStr = Object.prototype.toString;
 var dateClass = '[object Date]';
-var hasToStringTag = typeof Symbol === 'function' && !!Symbol.toStringTag;
+var hasToStringTag = shams();
 
 var isDateObject = function isDateObject(value) {
 	if (typeof value !== 'object' || value === null) {
@@ -12461,10 +12470,12 @@ var Dialog = function Dialog(props) {
       heading: heading
     },
     footer: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       "data-test": "DesignSystem-Dialog--SecondaryButton",
       appearance: secondaryButtonAppearance,
       onClick: secondaryButtonCallback
     }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       className: "ml-4",
       "data-test": "DesignSystem-Dialog--PrimaryButton",
       appearance: primaryButtonAppearance,
@@ -12522,7 +12533,9 @@ var OverlayFooter = function OverlayFooter(props) {
       _ref.label;
           var options = _objectWithoutProperties$1(_ref, _excluded$6);
 
-      return /*#__PURE__*/React.createElement(Button, _extends$3({}, options, {
+      return /*#__PURE__*/React.createElement(Button, _extends$3({
+        type: "button"
+      }, options, {
         key: index
       }));
     }));
@@ -14189,8 +14202,8 @@ var Trigger = function Trigger(props) {
     placeholder: inputFormat
   }, startInputOptions, {
     mask: mask,
-    value: startDate ? translateToString(inputFormat, startDate) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : '',
+    value: startDate ? translateToString(inputFormat, startDate) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : '',
     onChange: function onChange(e, val) {
       onChangeHandler(e, val || '', 'start');
     },
@@ -14219,8 +14232,8 @@ var Trigger = function Trigger(props) {
     placeholder: inputFormat
   }, endInputOptions, {
     mask: mask,
-    value: endDate ? translateToString(inputFormat, endDate) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : '',
+    value: endDate ? translateToString(inputFormat, endDate) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : '',
     onChange: function onChange(e, val) {
       onChangeHandler(e, val || '', 'end');
     },
@@ -14538,6 +14551,14 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var _this$props2 = _this.props,
+          singleInput = _this$props2.singleInput,
+          inputOptions = _this$props2.inputOptions,
+          startInputOptions = _this$props2.startInputOptions,
+          endInputOptions = _this$props2.endInputOptions;
+      var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -14590,9 +14611,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.startDate !== this.props.startDate) {
-        var _this$props2 = this.props,
-            inputFormat = _this$props2.inputFormat,
-            validators = _this$props2.validators;
+        var _this$props3 = this.props,
+            inputFormat = _this$props3.inputFormat,
+            validators = _this$props3.validators;
         var d = convertToDate(this.props.startDate, inputFormat, validators);
         var val = translateToString(inputFormat, d);
         this.setState({
@@ -14602,9 +14623,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevProps.endDate !== this.props.endDate) {
-        var _this$props3 = this.props,
-            _inputFormat2 = _this$props3.inputFormat,
-            _validators = _this$props3.validators;
+        var _this$props4 = this.props,
+            _inputFormat2 = _this$props4.inputFormat,
+            _validators = _this$props4.validators;
 
         var _d = convertToDate(this.props.endDate, _inputFormat2, _validators);
 
@@ -14635,9 +14656,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
-        var _this$props4 = this.props,
-            onRangeChange = _this$props4.onRangeChange,
-            outputFormat = _this$props4.outputFormat;
+        var _this$props5 = this.props,
+            onRangeChange = _this$props5.onRangeChange,
+            outputFormat = _this$props5.outputFormat;
         var _this$state2 = this.state,
             _startDate3 = _this$state2.startDate,
             _endDate3 = _this$state2.endDate;
@@ -14667,24 +14688,24 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderCalendar",
     value: function renderCalendar() {
-      var _this$props5 = this.props;
-          _this$props5.startDate;
-          _this$props5.endDate;
-          _this$props5.yearNav;
-          _this$props5.monthNav;
-          _this$props5.open;
-          var inputFormat = _this$props5.inputFormat;
-          _this$props5.outputFormat;
-          _this$props5.startInputOptions;
-          _this$props5.endInputOptions;
-          var validators = _this$props5.validators;
-          _this$props5.withInput;
-          _this$props5.position;
-          var disabledBefore = _this$props5.disabledBefore,
-          disabledAfter = _this$props5.disabledAfter;
-          _this$props5.onRangeChange;
-          var rangeLimit = _this$props5.rangeLimit,
-          rest = _objectWithoutProperties$1(_this$props5, _excluded$3);
+      var _this$props6 = this.props;
+          _this$props6.startDate;
+          _this$props6.endDate;
+          _this$props6.yearNav;
+          _this$props6.monthNav;
+          _this$props6.open;
+          var inputFormat = _this$props6.inputFormat;
+          _this$props6.outputFormat;
+          _this$props6.startInputOptions;
+          _this$props6.endInputOptions;
+          var validators = _this$props6.validators;
+          _this$props6.withInput;
+          _this$props6.position;
+          var disabledBefore = _this$props6.disabledBefore,
+          disabledAfter = _this$props6.disabledAfter;
+          _this$props6.onRangeChange;
+          var rangeLimit = _this$props6.rangeLimit,
+          rest = _objectWithoutProperties$1(_this$props6, _excluded$3);
 
       var _this$state3 = this.state,
           startDate = _this$state3.startDate,
@@ -14709,17 +14730,17 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _classNames;
 
-      var _this$props6 = this.props,
-          withInput = _this$props6.withInput,
-          startInputOptions = _this$props6.startInputOptions,
-          endInputOptions = _this$props6.endInputOptions,
-          inputOptions = _this$props6.inputOptions,
-          inputFormat = _this$props6.inputFormat,
-          position = _this$props6.position,
-          validators = _this$props6.validators,
-          singleInput = _this$props6.singleInput,
-          contentAlign = _this$props6.contentAlign,
-          children = _this$props6.children;
+      var _this$props7 = this.props,
+          withInput = _this$props7.withInput,
+          startInputOptions = _this$props7.startInputOptions,
+          endInputOptions = _this$props7.endInputOptions,
+          inputOptions = _this$props7.inputOptions,
+          inputFormat = _this$props7.inputFormat,
+          position = _this$props7.position,
+          validators = _this$props7.validators,
+          singleInput = _this$props7.singleInput,
+          contentAlign = _this$props7.contentAlign,
+          children = _this$props7.children;
       var open = this.state.open;
       var RangePickerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'DateRangePicker', true), _defineProperty$2(_classNames, "DateRangePicker--".concat(contentAlign), contentAlign), _classNames));
 
@@ -14843,14 +14864,37 @@ var Tab = function Tab(props) {
 };
 Tab.displayName = 'Tab';
 
-var Tabs = function Tabs(props) {
-  var _classNames;
+var getChildrenArray = function getChildrenArray(children) {
+  return Array.isArray(children) ? children : [children];
+};
 
-  var tabs = props.tabs,
+var filterTabs = function filterTabs(children) {
+  var childrenArray = getChildrenArray(children);
+  var tabs = childrenArray.filter(function (element) {
+    return typeof element.type === 'function' && element.type.name === 'Tab';
+  });
+  return tabs;
+};
+
+var filterInlineComponent = function filterInlineComponent(children) {
+  var childrenArray = getChildrenArray(children);
+  var inlineComponent = childrenArray.filter(function (element) {
+    return !(typeof element.type === 'function' && element.type.name === 'Tab');
+  });
+  return inlineComponent;
+};
+
+var Tabs = function Tabs(props) {
+  var _classNames2;
+
+  var children = props.children,
       withSeparator = props.withSeparator,
       onTabChange = props.onTabChange,
       className = props.className;
   var baseProps = extractBaseProps(props);
+  var tabRefs = [];
+  var tabs = children ? filterTabs(children) : props.tabs;
+  var inlineComponent = children ? filterInlineComponent(children) : /*#__PURE__*/React.createElement(React.Fragment, null);
   var totalTabs = tabs.length;
 
   var _React$useState = React.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
@@ -14863,12 +14907,13 @@ var Tabs = function Tabs(props) {
       setActiveTab(props.activeIndex);
     }
   }, [props.activeIndex]);
-  var tabsClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Tabs', true), _defineProperty$2(_classNames, 'Tabs--withSeparator', withSeparator), _classNames), className);
+  var wrapperClass = classnames(_defineProperty$2({}, 'TabsWrapper', true), className);
+  var headerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'TabsWrapper-header', true), _defineProperty$2(_classNames2, 'TabsWrapper-header--withSeparator', withSeparator), _classNames2), className);
 
   var getPillsClass = function getPillsClass(disabled) {
-    var _classNames2;
+    var _classNames3;
 
-    return classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Tabs-pills', true), _defineProperty$2(_classNames2, 'Tabs-pills--disabled', disabled), _classNames2));
+    return classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Tab-pills', true), _defineProperty$2(_classNames3, 'Tab-pills--disabled', disabled), _classNames3));
   };
 
   var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
@@ -14881,8 +14926,6 @@ var Tabs = function Tabs(props) {
 
     if (onTabChange) onTabChange(tabIndex);
   };
-
-  var tabRefs = [];
 
   var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
     if (event.key === 'Enter') {
@@ -14901,9 +14944,10 @@ var Tabs = function Tabs(props) {
   };
 
   var renderInfo = function renderInfo(tab, index) {
-    var count = tab.count,
-        icon = tab.icon,
-        disabled = tab.disabled;
+    var _ref = tab,
+        count = _ref.count,
+        icon = _ref.icon,
+        disabled = _ref.disabled;
 
     if (count !== undefined) {
       return /*#__PURE__*/React.createElement(Pills, {
@@ -14926,44 +14970,60 @@ var Tabs = function Tabs(props) {
     return null;
   };
 
-  var renderTabs = function renderTabs() {
-    return tabs.map(function (tab, index) {
-      var _classNames3;
+  var renderTab = function renderTab(tab, index) {
+    var _ref2 = tab,
+        _ref2$label = _ref2.label,
+        label = _ref2$label === void 0 ? '' : _ref2$label,
+        disabled = _ref2.disabled;
 
-      var label = tab.label,
-          disabled = tab.disabled;
-      var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-      var tabHeaderClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Tab', true), _defineProperty$2(_classNames3, 'Tab--disabled', disabled), _defineProperty$2(_classNames3, 'Tab--active', !disabled && activeIndex === index), _classNames3));
-      return /*#__PURE__*/React.createElement("div", {
-        ref: function ref(element) {
-          return element && !disabled && tabRefs.push(element);
-        },
-        "data-test": "DesignSystem-Tabs--Tab",
-        key: index,
-        className: tabHeaderClass,
-        onClick: function onClick() {
-          return !disabled && tabClickHandler(index);
-        },
-        onKeyDown: function onKeyDown(event) {
-          return tabKeyDownHandler(event, index);
-        },
-        tabIndex: activeIndex === index ? 0 : -1
-      }, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
-        "data-test": "DesignSystem-Tabs--Text",
-        appearance: textAppearance
-      }, label));
-    });
+    if (typeof label !== 'string') {
+      return label;
+    }
+
+    var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+    return /*#__PURE__*/React.createElement(React.Fragment, null, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-Tabs--Text",
+      appearance: textAppearance
+    }, label));
   };
 
+  var renderTabs = tabs.map(function (tab, index) {
+    var _classNames4;
+
+    var currentTabProp = children && 'props' in tab ? tab.props : tab;
+    var disabled = currentTabProp.disabled;
+    var tabHeaderClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Tab', true), _defineProperty$2(_classNames4, 'Tab--disabled', disabled), _defineProperty$2(_classNames4, 'Tab--active', !disabled && activeIndex === index), _classNames4));
+    return /*#__PURE__*/React.createElement("div", {
+      ref: function ref(element) {
+        return element && !disabled && tabRefs.push(element);
+      },
+      "data-test": "DesignSystem-Tabs--Tab",
+      key: index,
+      className: tabHeaderClass,
+      onClick: function onClick() {
+        return !disabled && tabClickHandler(index);
+      },
+      onKeyDown: function onKeyDown(event) {
+        return tabKeyDownHandler(event, index);
+      },
+      tabIndex: activeIndex === index ? 0 : -1
+    }, renderTab(currentTabProp, index));
+  });
   return /*#__PURE__*/React.createElement("div", _extends$3({
     "data-test": "DesignSystem-Tabs"
   }, baseProps, {
-    className: tabsClass
-  }), renderTabs());
+    className: wrapperClass
+  }), /*#__PURE__*/React.createElement("div", {
+    className: headerClass
+  }, renderTabs, inlineComponent), children && /*#__PURE__*/React.createElement("div", {
+    className: "TabsWrapper-content",
+    "data-test": "DesignSystem-Tabs--Content"
+  }, tabs[activeIndex]));
 };
 Tabs.displayName = 'Tabs';
 Tabs.defaultProps = {
-  withSeparator: true
+  withSeparator: true,
+  tabs: []
 };
 
 var accepts = function accepts(file, acceptedFiles) {
@@ -15950,7 +16010,7 @@ var Dropzone = function Dropzone(props) {
       size: "large",
       weight: "strong",
       appearance: disabled ? 'disabled' : 'link'
-    }, " browse files")), /*#__PURE__*/React__default.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React__default.createElement(Text, {
+    }, "browse files")), /*#__PURE__*/React__default.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React__default.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
     }, formatLabel), sizeLabel && /*#__PURE__*/React__default.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
@@ -15997,6 +16057,7 @@ var FileUploaderButton = function FileUploaderButton(props) {
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
     className: FileUploaderButtonClass
   }), /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     disabled: disabled,
     icon: "backup"
   }, uploadButtonLabel), /*#__PURE__*/React.createElement("input", {
@@ -18019,6 +18080,7 @@ var DraggableDropdown = function DraggableDropdown(props) {
     open: open,
     onToggle: onToggleHandler,
     trigger: /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       ref: function ref(el) {
         setTriggerWidth("".concat(el === null || el === void 0 ? void 0 : el.clientWidth, "px"));
       },
@@ -18081,10 +18143,12 @@ var DraggableDropdown = function DraggableDropdown(props) {
   })), /*#__PURE__*/React.createElement("div", {
     className: "Dropdown-buttonWrapper"
   }, /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     className: "mr-4",
     size: "tiny",
     onClick: onCancelHandler
   }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     appearance: "primary",
     size: "tiny",
     onClick: onApplyHandler
@@ -19291,6 +19355,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.1";
+var version = "2.3.0-1";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };

@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478630381 
+   * Generated on: 1628859152891 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.3.0-1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2570,6 +2570,7 @@
 
       var customTrigger = function customTrigger() {
         return /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           size: "tiny",
           appearance: "transparent",
           icon: "more_horiz_filled",
@@ -4062,6 +4063,9 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var disabled = _this.props.inputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -4408,10 +4412,10 @@
         onBlur: onBlur,
         onClick: onClick,
         onFocus: onFocus
-      })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React__namespace.createElement(Tooltip, {
+      })), disabled ? '' : info ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
         position: "top",
         tooltip: info
-      }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React__namespace.createElement("div", {
+      }, trigger) : actionIcon && (value || defaultValue) ? actionIcon : onClear && (value || defaultValue) && /*#__PURE__*/React__namespace.createElement("div", {
         className: rightIconClass,
         onClick: function onClick(e) {
           return onClear(e);
@@ -7367,10 +7371,12 @@
           heading: heading
         },
         footer: /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           "data-test": "DesignSystem-Dialog--SecondaryButton",
           appearance: secondaryButtonAppearance,
           onClick: secondaryButtonCallback
         }, secondaryButtonLabel), /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           className: "ml-4",
           "data-test": "DesignSystem-Dialog--PrimaryButton",
           appearance: primaryButtonAppearance,
@@ -7427,7 +7433,9 @@
           _a.label;
               var options = __rest(_a, ["label"]);
 
-          return /*#__PURE__*/React__namespace.createElement(Button, __assign({}, options, {
+          return /*#__PURE__*/React__namespace.createElement(Button, __assign({
+            type: "button"
+          }, options, {
             key: index
           }));
         }));
@@ -9373,6 +9381,14 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var _a = _this.props,
+              singleInput = _a.singleInput,
+              inputOptions = _a.inputOptions,
+              startInputOptions = _a.startInputOptions,
+              endInputOptions = _a.endInputOptions;
+          var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -9667,31 +9683,55 @@
     };
     Tab.displayName = 'Tab';
 
-    var Tabs = function Tabs(props) {
-      var _a;
+    var getChildrenArray = function getChildrenArray(children) {
+      return Array.isArray(children) ? children : [children];
+    };
 
-      var tabs = props.tabs,
+    var filterTabs = function filterTabs(children) {
+      var childrenArray = getChildrenArray(children);
+      var tabs = childrenArray.filter(function (element) {
+        return typeof element.type === 'function' && element.type.name === 'Tab';
+      });
+      return tabs;
+    };
+
+    var filterInlineComponent = function filterInlineComponent(children) {
+      var childrenArray = getChildrenArray(children);
+      var inlineComponent = childrenArray.filter(function (element) {
+        return !(typeof element.type === 'function' && element.type.name === 'Tab');
+      });
+      return inlineComponent;
+    };
+
+    var Tabs = function Tabs(props) {
+      var _a, _b;
+
+      var children = props.children,
           withSeparator = props.withSeparator,
           onTabChange = props.onTabChange,
           className = props.className;
       var baseProps = extractBaseProps(props);
+      var tabRefs = [];
+      var tabs = children ? filterTabs(children) : props.tabs;
+      var inlineComponent = children ? filterInlineComponent(children) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null);
       var totalTabs = tabs.length;
 
-      var _b = React__namespace.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
-          activeIndex = _b[0],
-          setActiveTab = _b[1];
+      var _c = React__namespace.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
+          activeIndex = _c[0],
+          setActiveTab = _c[1];
 
       React__namespace.useEffect(function () {
         if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
           setActiveTab(props.activeIndex);
         }
       }, [props.activeIndex]);
-      var tabsClass = classNames__default['default']((_a = {}, _a['Tabs'] = true, _a['Tabs--withSeparator'] = withSeparator, _a), className);
+      var wrapperClass = classNames__default['default']((_a = {}, _a['TabsWrapper'] = true, _a), className);
+      var headerClass = classNames__default['default']((_b = {}, _b['TabsWrapper-header'] = true, _b['TabsWrapper-header--withSeparator'] = withSeparator, _b), className);
 
       var getPillsClass = function getPillsClass(disabled) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Tabs-pills'] = true, _a['Tabs-pills--disabled'] = disabled, _a));
+        return classNames__default['default']((_a = {}, _a['Tab-pills'] = true, _a['Tab-pills--disabled'] = disabled, _a));
       };
 
       var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
@@ -9704,8 +9744,6 @@
 
         if (onTabChange) onTabChange(tabIndex);
       };
-
-      var tabRefs = [];
 
       var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
         if (event.key === 'Enter') {
@@ -9724,9 +9762,10 @@
       };
 
       var renderInfo = function renderInfo(tab, index) {
-        var count = tab.count,
-            icon = tab.icon,
-            disabled = tab.disabled;
+        var _a = tab,
+            count = _a.count,
+            icon = _a.icon,
+            disabled = _a.disabled;
 
         if (count !== undefined) {
           return /*#__PURE__*/React__namespace.createElement(Pills, {
@@ -9749,44 +9788,60 @@
         return null;
       };
 
-      var renderTabs = function renderTabs() {
-        return tabs.map(function (tab, index) {
-          var _a;
+      var renderTab = function renderTab(tab, index) {
+        var _a = tab,
+            _b = _a.label,
+            label = _b === void 0 ? '' : _b,
+            disabled = _a.disabled;
 
-          var label = tab.label,
-              disabled = tab.disabled;
-          var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-          var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && activeIndex === index, _a));
-          return /*#__PURE__*/React__namespace.createElement("div", {
-            ref: function ref(element) {
-              return element && !disabled && tabRefs.push(element);
-            },
-            "data-test": "DesignSystem-Tabs--Tab",
-            key: index,
-            className: tabHeaderClass,
-            onClick: function onClick() {
-              return !disabled && tabClickHandler(index);
-            },
-            onKeyDown: function onKeyDown(event) {
-              return tabKeyDownHandler(event, index);
-            },
-            tabIndex: activeIndex === index ? 0 : -1
-          }, renderInfo(tab, index), /*#__PURE__*/React__namespace.createElement(Text, {
-            "data-test": "DesignSystem-Tabs--Text",
-            appearance: textAppearance
-          }, label));
-        });
+        if (typeof label !== 'string') {
+          return label;
+        }
+
+        var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, renderInfo(tab, index), /*#__PURE__*/React__namespace.createElement(Text, {
+          "data-test": "DesignSystem-Tabs--Text",
+          appearance: textAppearance
+        }, label));
       };
 
+      var renderTabs = tabs.map(function (tab, index) {
+        var _a;
+
+        var currentTabProp = children && 'props' in tab ? tab.props : tab;
+        var disabled = currentTabProp.disabled;
+        var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && activeIndex === index, _a));
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          ref: function ref(element) {
+            return element && !disabled && tabRefs.push(element);
+          },
+          "data-test": "DesignSystem-Tabs--Tab",
+          key: index,
+          className: tabHeaderClass,
+          onClick: function onClick() {
+            return !disabled && tabClickHandler(index);
+          },
+          onKeyDown: function onKeyDown(event) {
+            return tabKeyDownHandler(event, index);
+          },
+          tabIndex: activeIndex === index ? 0 : -1
+        }, renderTab(currentTabProp, index));
+      });
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Tabs"
       }, baseProps, {
-        className: tabsClass
-      }), renderTabs());
+        className: wrapperClass
+      }), /*#__PURE__*/React__namespace.createElement("div", {
+        className: headerClass
+      }, renderTabs, inlineComponent), children && /*#__PURE__*/React__namespace.createElement("div", {
+        className: "TabsWrapper-content",
+        "data-test": "DesignSystem-Tabs--Content"
+      }, tabs[activeIndex]));
     };
     Tabs.displayName = 'Tabs';
     Tabs.defaultProps = {
-      withSeparator: true
+      withSeparator: true,
+      tabs: []
     };
 
     var accepts = function accepts(file, acceptedFiles) {
@@ -10683,7 +10738,7 @@
           size: "large",
           weight: "strong",
           appearance: disabled ? 'disabled' : 'link'
-        }, " browse files")), /*#__PURE__*/React__default['default'].createElement("input", __assign({}, getInputProps()))), formatLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
+        }, "browse files")), /*#__PURE__*/React__default['default'].createElement("input", __assign({}, getInputProps()))), formatLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
           appearance: disabled ? 'disabled' : 'subtle'
         }, formatLabel), sizeLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
           appearance: disabled ? 'disabled' : 'subtle'
@@ -10732,6 +10787,7 @@
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileUploaderButtonClass
       }), /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         disabled: disabled,
         icon: "backup"
       }, uploadButtonLabel), /*#__PURE__*/React__namespace.createElement("input", {
@@ -12712,6 +12768,7 @@
         open: open,
         onToggle: onToggleHandler,
         trigger: /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           ref: function ref(el) {
             setTriggerWidth((el === null || el === void 0 ? void 0 : el.clientWidth) + "px");
           },
@@ -12774,10 +12831,12 @@
       })), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Dropdown-buttonWrapper"
       }, /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         className: "mr-4",
         size: "tiny",
         onClick: onCancelHandler
       }, "Cancel"), /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         appearance: "primary",
         size: "tiny",
         onClick: onApplyHandler
@@ -13914,7 +13973,7 @@
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-    var version = "2.2.1";
+    var version = "2.3.0-1";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
