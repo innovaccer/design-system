@@ -13,9 +13,16 @@ export const Meta = (props: MetaProps) => {
   const { label, icon, iconAppearance, labelAppearance } = props;
 
   return (
-    <span className={'Meta'}>
-      {icon && <Icon name={icon} appearance={iconAppearance} className={'Meta-icon'} />}
-      <Text appearance={labelAppearance}>{label}</Text>
+    <span data-test="DesignSystem-MetaList--Meta" className={'Meta'}>
+      {icon && (
+        <Icon
+          data-test="DesignSystem-MetaList--MetaIcon"
+          name={icon}
+          appearance={iconAppearance}
+          className={'Meta-icon'}
+        />
+      )}
+      <Text data-test="DesignSystem-MetaList--MetaLabel" appearance={labelAppearance}>{label}</Text>
     </span>
   );
 };
