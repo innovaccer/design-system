@@ -86,6 +86,7 @@
     display: flex;
     flex: 0 0 auto;
     overflow-x: auto;
+    border-bottom: var(--border);
 }
 
 .Grid-head::-webkit-scrollbar {
@@ -131,6 +132,7 @@
     flex-direction: column;
     min-width: fit-content;
     flex-shrink: 0;
+    border-bottom: var(--border);
 }
 
 .Grid-row {
@@ -139,7 +141,6 @@
     flex-shrink: 0;
     box-sizing: border-box;
     background: var(--white);
-    border-bottom: var(--border);
 }
 
 .Grid-row--body {

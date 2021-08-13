@@ -25,9 +25,13 @@ export const GridRow = (props: GridRowProps) => {
   const rowRef = React.useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = React.useState<boolean>(false);
 
-  const rowClasses = classNames('Grid-row', 'Grid-row--body', {
-    'Grid-row--selected': data._selected,
-  });
+  const rowClasses = classNames(
+    'Grid-row',
+    'Grid-row--body',
+    {
+      'Grid-row--selected': data._selected
+    }
+  );
 
   const onClickHandler = React.useCallback(() => {
     if (type === 'resource' && !loading) {
@@ -109,7 +113,10 @@ export const GridRow = (props: GridRowProps) => {
       </div>
       {nestedRows && expanded && (
         <div className="Grid-nestedRow">
-          <GridNestedRow data={data} rowIndex={rI} />
+          <GridNestedRow
+            data={data}
+            rowIndex={rI}
+          />
         </div>
       )}
     </div>
