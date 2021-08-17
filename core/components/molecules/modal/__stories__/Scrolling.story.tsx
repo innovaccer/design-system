@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Modal, Button, Text, Paragraph, Badge } from '@/index';
+import { Modal, Button, Text, Paragraph } from '@/index';
 
 export const scrolling = () => {
   const [open, setOpen] = React.useState(true);
@@ -31,10 +31,66 @@ export const scrolling = () => {
     },
     {
       question:
-        'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',
+      'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',
       options: ['Not at all', 'Several Days', 'More than half the days', 'Nearly every day'],
     },
-    { question: 'Feeling tired or having little energy?', options: ['Yes', 'No'] },
+    {
+      question: 'Feeling tired or having little energy?', options: ['Yes', 'No']
+    },
+    {
+      question: 'Which of the following refers to a programme that aims to enable patients to make better use of information and communication technology for health and health care?',
+      options: [
+        'Patient informatics',
+        'ICT health',
+        'Health-tech',
+        'None of these',
+      ],
+    },
+    {
+      question: 'The way messages are framed influences people’s intentions and willingness to change their behaviour. Which of the following refers to the type of message framing that gives information about a health behaviour that emphasizes the costs of failing to take action?',
+      options: [
+        'Gain-framed messages',
+        'Loss-framed messages',
+        'Neutrally-framed messages',
+        'None of these',
+      ],
+    },
+    {
+      question: 'Which of the following refers to the capacity to access, understand, appraise and apply health information and services, and to make appropriate health decisions to promote and maintain health?',
+      options: [
+        'health accessibility',
+        'health appraisal',
+        'health literacy',
+        'health promotion',
+      ],
+    },
+    {
+      question: 'Frederich Engels’ book entitled The Condition of the Working Class in England in 1844 provided a detailed description of the appalling living and working conditions and the limited health care of working-class residents in which of the following English cities?',
+      options: [
+        'London',
+        'Manchester',
+        'Liverpool',
+        'None of these',
+      ],
+    },
+    {
+      question: 'Which of the following explanations for health inequalities focus on the individual as the unit of analysis, emphasizing unthinking, reckless or irresponsible behaviour or incautious lifestyle as the moving determinant?',
+      options: [
+        'Individualist explanations',
+        'Natural and social selection',
+        'Materialist and structuralist explanations',
+        'Cultural and/or behavioural differences',
+      ],
+    },
+    {
+      question: 'This approach to health promotion is based on the assumption that humans are rational decision-makers, this approach relies heavily upon the provision of information about risks and benefits of certain behaviours.',
+      options: [
+        'Behaviour change approach',
+        'Community development approach',
+        'Biomedical approach',
+        'None of these',
+      ],
+    },
   ];
 
   return (
@@ -111,7 +167,14 @@ const customCode = `() => {
   const data = [{"question":"Do you experience any of the following in your current place of residence? [Select all that apply]", "options":["Deteriorating appearance","Inoperable plumbing","Inadequate wining","Leaking roofs","Crumbling foundations","Unsafe steps","in poor condition","None of the above"]},
     {"question":"In last 12 months, were you worried that your food would run out before you got money to buy more?", "options":["Yes","No"]},
     {"question":"Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual", "options":["Not at all","Several Days","More than half the days","Nearly every day"]},
-    {"question":"Feeling tired or having little energy?", "options":["Yes","No"]}];
+    {"question":"Feeling tired or having little energy?", "options":["Yes","No"]},
+    {"question": "Which of the following refers to a programme that aims to enable patients to make better use of information and communication technology for health and health care?", "options":["patient informatics","ICT health","Health-tech","None of these"]},
+    {"question": "The way messages are framed influences people’s intentions and willingness to change their behaviour. Which of the following refers to the type of message framing that gives information about a health behaviour that emphasizes the costs of failing to take action?", "options":["Gain-framed messages","Loss-framed messages","Neutrally-framed messages","None of these"]},
+    {"question": "Which of the following refers to the capacity to access, understand, appraise and apply health information and services, and to make appropriate health decisions to promote and maintain health?", "options":["health accessibility","health appraisal","health literacy","health promotion"]},
+    {"question": "Frederich Engels’ book entitled The Condition of the Working Class in England in 1844 provided a detailed description of the appalling living and working conditions and the limited health care of working-class residents in which of the following English cities?", "options":["London","Manchester","Liverpool","None of these"]},
+    {"question": "Which of the following explanations for health inequalities focus on the individual as the unit of analysis, emphasizing unthinking, reckless or irresponsible behaviour or incautious lifestyle as the moving determinant?", "options":["Individualist explanations","Natural and social selection","Materialist and structuralist explanations","Cultural and/or behavioural differences"]},
+    {"question": "This approach to health promotion is based on the assumption that humans are rational decision-makers, this approach relies heavily upon the provision of information about risks and benefits of certain behaviours.", "options":["Behaviour change approach","Community development approach","Biomedical approach","None of these"]},
+  ];
 
   return (
     <div>
