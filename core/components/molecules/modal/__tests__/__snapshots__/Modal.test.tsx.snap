@@ -225,7 +225,7 @@ exports[`Modal component
           </div>
         </div>
         <div
-          class="OverlayBody Modal-body"
+          class="OverlayBody Modal-body Modal-body--withMargin"
           data-test="DesignSystem-OverlayBody"
         >
           <div
@@ -372,7 +372,7 @@ exports[`Modal component
             </div>
           </div>
           <div
-            class="OverlayBody Modal-body"
+            class="OverlayBody Modal-body Modal-body--withMargin"
             data-test="DesignSystem-OverlayBody"
           >
             <div
@@ -531,7 +531,7 @@ exports[`Modal component
           </div>
         </div>
         <div
-          class="OverlayBody Modal-body"
+          class="OverlayBody Modal-body Modal-body--withPadding"
           data-test="DesignSystem-OverlayBody"
         >
           <div
@@ -678,7 +678,7 @@ exports[`Modal component
             </div>
           </div>
           <div
-            class="OverlayBody Modal-body"
+            class="OverlayBody Modal-body Modal-body--withPadding"
             data-test="DesignSystem-OverlayBody"
           >
             <div
@@ -976,7 +976,7 @@ exports[`Modal component
           </div>
         </div>
         <div
-          class="OverlayBody Modal-body"
+          class="OverlayBody Modal-body Modal-body--withMargin"
           data-test="DesignSystem-OverlayBody"
         >
           <div
@@ -1123,7 +1123,7 @@ exports[`Modal component
             </div>
           </div>
           <div
-            class="OverlayBody Modal-body"
+            class="OverlayBody Modal-body Modal-body--withMargin"
             data-test="DesignSystem-OverlayBody"
           >
             <div
@@ -1282,7 +1282,7 @@ exports[`Modal component
           </div>
         </div>
         <div
-          class="OverlayBody Modal-body"
+          class="OverlayBody Modal-body Modal-body--withPadding"
           data-test="DesignSystem-OverlayBody"
         >
           <div
@@ -1429,7 +1429,7 @@ exports[`Modal component
             </div>
           </div>
           <div
-            class="OverlayBody Modal-body"
+            class="OverlayBody Modal-body Modal-body--withPadding"
             data-test="DesignSystem-OverlayBody"
           >
             <div
@@ -1727,7 +1727,7 @@ exports[`Modal component
           </div>
         </div>
         <div
-          class="OverlayBody Modal-body"
+          class="OverlayBody Modal-body Modal-body--withMargin"
           data-test="DesignSystem-OverlayBody"
         >
           <div
@@ -1874,7 +1874,7 @@ exports[`Modal component
             </div>
           </div>
           <div
-            class="OverlayBody Modal-body"
+            class="OverlayBody Modal-body Modal-body--withMargin"
             data-test="DesignSystem-OverlayBody"
           >
             <div
@@ -2033,7 +2033,7 @@ exports[`Modal component
           </div>
         </div>
         <div
-          class="OverlayBody Modal-body"
+          class="OverlayBody Modal-body Modal-body--withPadding"
           data-test="DesignSystem-OverlayBody"
         >
           <div
@@ -2180,7 +2180,7 @@ exports[`Modal component
             </div>
           </div>
           <div
-            class="OverlayBody Modal-body"
+            class="OverlayBody Modal-body Modal-body--withPadding"
             data-test="DesignSystem-OverlayBody"
           >
             <div
