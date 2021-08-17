@@ -1338,7 +1338,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
-    class="OverlayBody Modal-body"
+    class="OverlayBody Modal-body Modal-body--withMargin"
     data-test="DesignSystem-OverlayBody"
   >
     <span
