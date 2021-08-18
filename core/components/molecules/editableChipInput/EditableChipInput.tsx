@@ -40,10 +40,13 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   const baseProps = extractBaseProps(props);
   const isWithChips = inputValue && inputValue.length;
-  const isControlled = value !== undefined;
+  const isControlled = props.value !== undefined;
 
   React.useEffect(() => {
-    if (isControlled) setValue(props.value);
+    if (isControlled) {
+      setInputValue(props.value);
+      setValue(props.value);
+    }
   }, [props.value]);
 
   const classes = classNames(
@@ -93,6 +96,20 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
         return;
     }
   };
+
+  const onChipDelete = (index: number) => {
+    if (value) {
+      const updatedValue = [...value];
+      updatedValue.splice(index, 1);
+      if (!isControlled) {
+        setInputValue(updatedValue);
+        setValue(updatedValue);
+      }
+
+      if (onChange) onChange(updatedValue);
+    }
+  };
+
   const renderDefaultState = () => {
     if (inputValue && inputValue.length) {
       return inputValue.map((val, index) => {
@@ -104,6 +121,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             label={val}
             className="my-2 mx-2"
             {...chipObject}
+            onClose={() => onChipDelete(index)}
             onClick={() => onClick && onClick(val, index)}
           />
         );
