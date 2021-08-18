@@ -9,7 +9,7 @@ export interface EditableInputProps extends BaseProps {
   /**
    * Value of the `Editable Input`
    */
-  value: string;
+  value?: string;
   /**
    * String to show inside `Editable Input` when value is not defined
    */
@@ -41,16 +41,22 @@ export interface EditableInputProps extends BaseProps {
 }
 
 export const EditableInput = (props: EditableInputProps) => {
-  const { value, error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
+  const { error, size, errorMessage, placeholder, inputOptions, disableSaveAction, onChange, className } = props;
 
   const { onChange: onInputChange, ...rest } = inputOptions;
 
-  const [inputValue, setInputValue] = React.useState(value);
+  const [inputValue, setInputValue] = React.useState(props.value);
+  const [value, setValue] = React.useState(props.value);
   const [editing, setEditing] = React.useState(false);
   const [showComponent, setShowComponent] = React.useState(false);
 
   const inputRef = React.createRef<HTMLInputElement>();
   const baseProps = extractBaseProps(props);
+  const isControlled = props.value !== undefined;
+
+  React.useEffect(() => {
+    if (isControlled) setValue(props.value);
+  }, [props.value]);
 
   const EditableInputClass = classNames(
     {
@@ -73,18 +79,16 @@ export const EditableInput = (props: EditableInputProps) => {
     [`EditableInput-actions--${size}`]: size,
   });
 
-  React.useEffect(() => {
-    setDefaultComponent();
-  }, [value]);
-
-  const setDefaultComponent = () => {
-    setInputValue(value);
+  const setDefaultComponent = (updatedValue?: string) => {
+    setInputValue(updatedValue);
     setEditing(false);
     setShowComponent(false);
   };
 
   const onSaveChanges = () => {
-    if (onChange) onChange(inputValue);
+    if (!isControlled) setValue(inputValue);
+    if (onChange) onChange(inputValue || '');
+    setDefaultComponent(inputValue);
   };
 
   const onInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -127,7 +131,7 @@ export const EditableInput = (props: EditableInputProps) => {
           onSaveChanges();
           break;
         case 'Escape':
-          setDefaultComponent();
+          setDefaultComponent(value);
           break;
       }
     }
@@ -143,8 +147,8 @@ export const EditableInput = (props: EditableInputProps) => {
           </Text>
         </Popover>
       ) : (
-        inputComponent
-      );
+          inputComponent
+        );
     }
 
     return (
@@ -165,7 +169,7 @@ export const EditableInput = (props: EditableInputProps) => {
             icon="clear"
             className="mr-3"
             size="tiny"
-            onClick={setDefaultComponent}
+            onClick={() => { setDefaultComponent(value) }}
             data-test="DesignSystem-EditableInput--Discard"
           />
           <Button
@@ -185,7 +189,6 @@ export const EditableInput = (props: EditableInputProps) => {
 EditableInput.defaultProps = {
   size: 'regular',
   placeholder: '',
-  value: '',
   inputOptions: {},
 };
 
