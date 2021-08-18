@@ -36,11 +36,15 @@
     cursor: pointer;
 }
 
-.Radio-label {
+.Radio-labelWrapper {
     padding-left: var(--spacing);
-    cursor: pointer;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+.Radio-Label{
+    display: flex;
+    cursor: pointer;
 }
 
 .Radio-wrapper {
