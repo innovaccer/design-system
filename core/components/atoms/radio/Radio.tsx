@@ -23,6 +23,10 @@ export interface RadioProps extends BaseProps, OmitNativeProps<HTMLInputElement,
    */
   label?: string;
   /**
+   * Describes Help Text of the `Radio`
+   */
+  helpText?: string;
+  /**
    * Name of the `Radio`
    */
   name: string;
@@ -55,14 +59,18 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     checked,
     defaultChecked,
     className,
+    helpText,
     ...rest
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
 
-  React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
-    return ref.current as HTMLInputElement;
-  });
+  React.useImperativeHandle(
+    forwardedRef,
+    (): HTMLInputElement => {
+      return ref.current as HTMLInputElement;
+    }
+  );
 
   const RadioClass = classNames(
     {
@@ -82,10 +90,14 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     [`Radio-outerWrapper--${size}`]: size,
   });
 
+  const RadioLabelClass = classNames({
+    ['Radio-Label']: true,
+  });
+
   const id = `${name}-${label}-${uidGenerator()}`;
   return (
-    <div className={RadioClass}>
-      <div className={RadioOuterWrapper}>
+    <div className={RadioClass} data-test="DesignSystem-Radio">
+      <div className={RadioOuterWrapper} data-test="DesignSystem-Radio-OuterWrapper">
         <input
           {...rest}
           type="radio"
@@ -98,16 +110,24 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           onChange={onChange}
           className="Radio-input"
           id={id}
+          data-test="DesignSystem-Radio-Input"
         />
         <span className={RadioWrapper} />
       </div>
-      {label && (
-        <label className="Radio-label" htmlFor={id}>
-          <Text size={size === 'tiny' ? 'small' : 'regular'} appearance={disabled ? 'disabled' : 'default'}>
-            {label}
-          </Text>
-        </label>
-      )}
+      <div className="Radio-labelWrapper">
+        {label && (
+          <label className={RadioLabelClass} htmlFor={id} data-test="DesignSystem-Radio-Label">
+            <Text size={size === 'tiny' ? 'small' : 'regular'} appearance={disabled ? 'disabled' : 'default'}>
+              {label}
+            </Text>
+          </label>
+        )}
+        {helpText && (
+            <Text data-test="DesignSystem-Radio-HelpText" size="small" appearance={disabled ? 'disabled' : 'subtle'}>
+              {helpText.trim()}
+            </Text>
+          )}
+      </div>
     </div>
   );
 });
