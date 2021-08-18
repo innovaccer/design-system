@@ -29,16 +29,22 @@ export interface EditableChipInputProps extends BaseProps {
 }
 
 export const EditableChipInput = (props: EditableChipInputProps) => {
-  const { placeholder, value, onChange, className, disableSaveAction, chipInputOptions } = props;
+  const { placeholder, onChange, className, disableSaveAction, chipInputOptions } = props;
 
   const { onChange: onChipInputChange, chipOptions = {}, ...rest } = chipInputOptions;
   const { onClick, ...chipObject } = chipOptions;
 
-  const [inputValue, setInputValue] = React.useState(value);
+  const [inputValue, setInputValue] = React.useState(props.value);
+  const [value, setValue] = React.useState(props.value);
   const [showComponent, setShowComponent] = React.useState(false);
 
   const baseProps = extractBaseProps(props);
   const isWithChips = inputValue && inputValue.length;
+  const isControlled = value !== undefined;
+
+  React.useEffect(() => {
+    if (isControlled) setValue(props.value);
+  }, [props.value]);
 
   const classes = classNames(
     {
@@ -60,22 +66,20 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     ['EditableChipInput-chipInput']: true,
   });
 
-  React.useEffect(() => {
-    setDefaultComponent();
-  }, [value]);
-
   const onChipInputChangeHandler = (val: string[]) => {
     setInputValue(val);
     if (onChipInputChange) onChipInputChange(val);
   };
 
-  const setDefaultComponent = () => {
-    setInputValue(value);
+  const setDefaultComponent = (updatedValue?: string[]) => {
+    setInputValue(updatedValue);
     setShowComponent(false);
   };
 
   const onSaveChanges = () => {
+    if (!isControlled) setValue(inputValue);
     if (onChange && inputValue) onChange(inputValue);
+    setDefaultComponent(inputValue);
   };
 
   const onChangeHandler = (eventType: string) => {
@@ -143,7 +147,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             icon="clear"
             className="mr-3"
             size="tiny"
-            onClick={setDefaultComponent}
+            onClick={() => { setDefaultComponent(value); }}
           />
           <Button
             data-test="DesignSystem-EditableChipInput--SaveButton"

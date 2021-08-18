@@ -134,7 +134,7 @@ describe('EditableChipInput component with action buttons and props: value and c
     rerender(<EditableChipInput onChange={onChange} value={newValue} chipInputOptions={chipInputOptions} />);
     expect(getByTestId(defaultComponentTestId)).toBeInTheDocument();
     expect(queryByTestId(chipInputTestId)).not.toBeInTheDocument();
-    expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[0].textContent).toMatch(`${newValue[0]}clear`);
-    expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[1].textContent).toMatch(`${newValue[1]}clear`);
+    expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[0].textContent).toMatch('Chip1clear_round');
+    expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[1].textContent).toMatch('Chip2clear_round');
   });
 });
