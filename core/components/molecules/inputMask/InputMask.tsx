@@ -210,10 +210,14 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     } else if (removedLength !== 1) {
       cursorPosition = newCursorPosition;
     }
+
     const newValue = maskedVal.slice(0, mask.length).join('');
     window.requestAnimationFrame(() => setCursorPosition(cursorPosition));
 
-    if (Utils.validators.isValid(validators, newValue)) {
+    if (
+      Utils.validators.isValid(validators, newValue)
+      && newValue !== value
+    ) {
       setValue(newValue);
       if (onChange) onChange(e, newValue);
     }
