@@ -769,12 +769,15 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Radio"
+    data-test="DesignSystem-Radio"
   >
     <div
       class="Radio-outerWrapper Radio-outerWrapper--regular"
+      data-test="DesignSystem-Radio-OuterWrapper"
     >
       <input
         class="Radio-input"
+        data-test="DesignSystem-Radio-Input"
         id="Hello World!-undefined-Test-uid"
         name="Hello World!"
         type="radio"
@@ -784,6 +787,9 @@ exports[`TS renders children 1`] = `
         class="Radio-wrapper Radio-wrapper--regular"
       />
     </div>
+    <div
+      class="Radio-labelWrapper"
+    />
   </div>
   <div
     class="Row"
