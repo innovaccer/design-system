@@ -22,11 +22,15 @@
     margin: 0;
 }
 
-.Checkbox-label {
+.Checkbox-labelWrapper {
     padding-left: var(--spacing);
-    cursor: pointer;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+}
+
+.Checkbox-label {
+    display: flex;
+    cursor: pointer;
 }
 
 .Checkbox-outerWrapper {
