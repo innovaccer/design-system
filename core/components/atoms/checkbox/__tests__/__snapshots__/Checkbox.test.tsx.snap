@@ -1,18 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox component 
-  checked: false, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  checked: false, disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           class="Checkbox-input"
+          data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
           tabindex="0"
@@ -21,37 +24,52 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         />
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Checkbox component 
-  checked: false, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  checked: false, disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox Checkbox--disabled"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           class="Checkbox-input"
+          data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
@@ -61,38 +79,53 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         />
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Checkbox component 
-  checked: true, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  checked: true, disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           checked=""
           class="Checkbox-input Checkbox-input--checked"
+          data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
           tabindex="0"
@@ -101,6 +134,7 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         >
           <i
             class="material-icons material-icons-round Icon Icon--white"
@@ -110,36 +144,50 @@ exports[`Checkbox component
           </i>
         </span>
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Checkbox component 
-  checked: true, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  checked: true, disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox Checkbox--disabled"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           checked=""
           class="Checkbox-input Checkbox-input--checked"
+          data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
@@ -149,6 +197,7 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         >
           <i
             class="material-icons material-icons-round Icon Icon--white"
@@ -158,35 +207,49 @@ exports[`Checkbox component
           </i>
         </span>
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Checkbox component 
-  indeterminate: true, disabled: false, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: true, disabled: false, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           class="Checkbox-input Checkbox-input--indeterminate"
+          data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
           tabindex="0"
@@ -195,6 +258,7 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         >
           <i
             class="material-icons material-icons-round Icon Icon--white"
@@ -204,35 +268,49 @@ exports[`Checkbox component
           </i>
         </span>
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Checkbox component 
-  indeterminate: true, disabled: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  indeterminate: true, disabled: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox Checkbox--disabled"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           class="Checkbox-input Checkbox-input--indeterminate"
+          data-test="DesignSystem-Checkbox-InputBox"
           disabled=""
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
@@ -242,6 +320,7 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         >
           <i
             class="material-icons material-icons-round Icon Icon--white"
@@ -251,36 +330,50 @@ exports[`Checkbox component
           </i>
         </span>
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Checkbox component 
-  size: "regular", checked: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  size: "regular", checked: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           checked=""
           class="Checkbox-input Checkbox-input--checked"
+          data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
           tabindex="0"
@@ -289,6 +382,7 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         >
           <i
             class="material-icons material-icons-round Icon Icon--white"
@@ -298,36 +392,50 @@ exports[`Checkbox component
           </i>
         </span>
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Checkbox component 
-  size: "tiny", checked: true, label: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
+  size: "tiny", checked: true, label: "Checkbox", helpText: "Checkbox", name: "Checkbox", value: "Checkbox", onChange: "[Function]"
  1`] = `
 <body>
   <div>
     <div
       class="Checkbox"
+      data-test="DesignSystem-Checkbox"
     >
       <div
         class="Checkbox-outerWrapper Checkbox-outerWrapper--tiny"
+        data-test="DesignSystem-Checkbox-OuterWrapper"
       >
         <input
           checked=""
           class="Checkbox-input Checkbox-input--checked"
+          data-test="DesignSystem-Checkbox-InputBox"
           id="Checkbox-Checkbox-Test-uid"
           name="Checkbox"
           tabindex="0"
@@ -336,6 +444,7 @@ exports[`Checkbox component
         />
         <span
           class="Checkbox-wrapper"
+          data-test="DesignSystem-Checkbox-Icon"
         >
           <i
             class="material-icons material-icons-round Icon Icon--white"
@@ -345,17 +454,28 @@ exports[`Checkbox component
           </i>
         </span>
       </div>
-      <label
-        class="Checkbox-label"
-        for="Checkbox-Checkbox-Test-uid"
+      <div
+        class="Checkbox-labelWrapper"
       >
+        <label
+          class="Checkbox-label"
+          data-test="DesignSystem-Checkbox-Label"
+          for="Checkbox-Checkbox-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--small"
+            data-test="DesignSystem-Text"
+          >
+            Checkbox
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--small"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Checkbox-HelpText"
         >
           Checkbox
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>

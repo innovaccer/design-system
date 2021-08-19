@@ -60,12 +60,15 @@ exports[`TS renders children 1`] = `
   />
   <div
     class="Checkbox"
+    data-test="DesignSystem-Checkbox"
   >
     <div
       class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+      data-test="DesignSystem-Checkbox-OuterWrapper"
     >
       <input
         class="Checkbox-input"
+        data-test="DesignSystem-Checkbox-InputBox"
         id="undefined-undefined-Test-uid"
         tabindex="0"
         type="checkbox"
@@ -73,8 +76,12 @@ exports[`TS renders children 1`] = `
       />
       <span
         class="Checkbox-wrapper"
+        data-test="DesignSystem-Checkbox-Icon"
       />
     </div>
+    <div
+      class="Checkbox-labelWrapper"
+    />
   </div>
   <div
     class="Col"
