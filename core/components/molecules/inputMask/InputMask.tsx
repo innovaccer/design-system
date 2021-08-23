@@ -119,8 +119,8 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   const setCursorPosition = (val: number) => setSelectionPos({ start: val, end: val });
 
   const getCurrSelection = () => ({
-    start: ref.current!.selectionStart || 0,
-    end: ref.current!.selectionEnd || 0,
+    start: ref.current?.selectionStart || 0,
+    end: ref.current?.selectionEnd || 0,
   });
 
   const setSelectionPos = (pos: SelectionPos): void => {

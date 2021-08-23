@@ -731,7 +731,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               [`Calendar-dateValue--${size}`]: size,
             });
             return (
-              <div key={`${row}-${col}`} className={wrapperClass}>
+              <div
+                key={`${row}-${col}`}
+                className={wrapperClass}
+                data-test="designSystem-Calendar-WrapperClass"
+              >
                 {!dummy && (
                   <Text
                     appearance={active ? 'white' : disabled ? 'disabled' : 'default'}
@@ -799,7 +803,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     );
 
     return (
-      <div {...baseProps} className={classes}>
+      <div {...baseProps} className={classes} data-test="DesignSystem-Calendar-Wrapper">
         {Array.from({ length: monthsInView }, (_x, index) => {
           return this.renderCalendar(index);
         })}
