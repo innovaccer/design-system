@@ -257,7 +257,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       ) : (
         onClear &&
         (value || defaultValue) && (
-          <div className={rightIconClass} onClick={(e) => onClear(e)}>
+          <div className={rightIconClass} onClick={(e) => onClear(e)} data-test="DesignSystem-Input--closeIcon">
             <Icon name={'close'} size={sizeMapping[size]} />
           </div>
         )
