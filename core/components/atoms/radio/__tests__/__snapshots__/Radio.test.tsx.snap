@@ -1,18 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio component 
-  disabled: false, selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
+  disabled: false, selected: true, label: "Radio", helpText: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
 <body>
   <div>
     <div
       class="Radio"
+      data-test="DesignSystem-Radio"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--regular"
+        data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
           class="Radio-input"
+          data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
           type="radio"
@@ -22,35 +25,49 @@ exports[`Radio component
           class="Radio-wrapper Radio-wrapper--regular"
         />
       </div>
-      <label
-        class="Radio-label"
-        for="Options-Radio-Test-uid"
+      <div
+        class="Radio-labelWrapper"
       >
+        <label
+          class="Radio-Label"
+          data-test="DesignSystem-Radio-Label"
+          for="Options-Radio-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Radio
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Radio-HelpText"
         >
           Radio
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Radio component 
-  disabled: true, selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
+  disabled: true, selected: true, label: "Radio", helpText: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
 <body>
   <div>
     <div
       class="Radio Radio--disabled"
+      data-test="DesignSystem-Radio"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--regular"
+        data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
           class="Radio-input"
+          data-test="DesignSystem-Radio-Input"
           disabled=""
           id="Options-Radio-Test-uid"
           name="Options"
@@ -61,35 +78,49 @@ exports[`Radio component
           class="Radio-wrapper Radio-wrapper--regular"
         />
       </div>
-      <label
-        class="Radio-label"
-        for="Options-Radio-Test-uid"
+      <div
+        class="Radio-labelWrapper"
       >
+        <label
+          class="Radio-Label"
+          data-test="DesignSystem-Radio-Label"
+          for="Options-Radio-Test-uid"
+        >
+          <span
+            class="Text Text--disabled Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Radio
+          </span>
+        </label>
         <span
-          class="Text Text--disabled Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--disabled Text--small"
+          data-test="DesignSystem-Radio-HelpText"
         >
           Radio
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Radio component 
-  size: "regular", selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
+  size: "regular", selected: true, label: "Radio", helpText: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
 <body>
   <div>
     <div
       class="Radio"
+      data-test="DesignSystem-Radio"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--regular"
+        data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
           class="Radio-input"
+          data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
           type="radio"
@@ -99,35 +130,49 @@ exports[`Radio component
           class="Radio-wrapper Radio-wrapper--regular"
         />
       </div>
-      <label
-        class="Radio-label"
-        for="Options-Radio-Test-uid"
+      <div
+        class="Radio-labelWrapper"
       >
+        <label
+          class="Radio-Label"
+          data-test="DesignSystem-Radio-Label"
+          for="Options-Radio-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--regular"
+            data-test="DesignSystem-Text"
+          >
+            Radio
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--regular"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Radio-HelpText"
         >
           Radio
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>
 `;
 
 exports[`Radio component 
-  size: "tiny", selected: true, label: "Radio", onChange: "[Function]", name: "Options", value: "Options"
+  size: "tiny", selected: true, label: "Radio", helpText: "Radio", onChange: "[Function]", name: "Options", value: "Options"
  1`] = `
 <body>
   <div>
     <div
       class="Radio"
+      data-test="DesignSystem-Radio"
     >
       <div
         class="Radio-outerWrapper Radio-outerWrapper--tiny"
+        data-test="DesignSystem-Radio-OuterWrapper"
       >
         <input
           class="Radio-input"
+          data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
           type="radio"
@@ -137,17 +182,28 @@ exports[`Radio component
           class="Radio-wrapper Radio-wrapper--tiny"
         />
       </div>
-      <label
-        class="Radio-label"
-        for="Options-Radio-Test-uid"
+      <div
+        class="Radio-labelWrapper"
       >
+        <label
+          class="Radio-Label"
+          data-test="DesignSystem-Radio-Label"
+          for="Options-Radio-Test-uid"
+        >
+          <span
+            class="Text Text--default Text--small"
+            data-test="DesignSystem-Text"
+          >
+            Radio
+          </span>
+        </label>
         <span
-          class="Text Text--default Text--small"
-          data-test="DesignSystem-Text"
+          class="Text Text--subtle Text--small"
+          data-test="DesignSystem-Radio-HelpText"
         >
           Radio
         </span>
-      </label>
+      </div>
     </div>
   </div>
 </body>

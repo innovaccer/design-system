@@ -7,7 +7,8 @@ import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overla
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { Row, Column, Backdrop, OutsideClick, Button } from '@/index';
 import { ColumnProps } from '@/index.type';
-import { getWrapperElement, getUpdatedZIndex } from '@/utils/overlayHelper';
+import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
+import OverlayManager from '@/utils/OverlayManager';
 
 export type Dimension = 'small' | 'medium' | 'large';
 type FooterOptions = {
@@ -33,7 +34,7 @@ export interface ModalProps extends BaseProps {
   /**
    * onClose callback to be called on `Modal` close
    */
-  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
+  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent> , reason?: string) => void;
   /**
    * Header options (doesn't work if `header` prop is used)
    *
@@ -117,6 +118,7 @@ interface ModalState {
  */
 class Modal extends React.Component<ModalProps, ModalState> {
   modalRef = React.createRef<HTMLDivElement>();
+
   element: Element;
 
   static defaultProps = {
@@ -136,6 +138,22 @@ class Modal extends React.Component<ModalProps, ModalState> {
     this.onOutsideClickHandler = this.onOutsideClickHandler.bind(this);
   }
 
+  onCloseHandler = (event: KeyboardEvent) => {
+    const isTopOverlay = OverlayManager.isTopOverlay(this.modalRef.current);
+    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler)
+  }
+
+  componentDidMount() {
+    if (this.state.open) {
+      OverlayManager.add(this.modalRef.current);
+    }
+    document.addEventListener('keydown', this.onCloseHandler)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onCloseHandler)
+  }
+
   componentDidUpdate(prevProps: ModalProps) {
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
@@ -144,24 +162,28 @@ class Modal extends React.Component<ModalProps, ModalState> {
           containerClassName: '.Overlay-container--open',
           elementRef: this.modalRef,
         });
+
         this.setState({
           zIndex,
           open: true,
           animate: true,
         });
+
+        OverlayManager.add(this.modalRef.current);
+
       } else {
-        this.setState(
-          {
-            animate: false,
-          },
-          () => {
-            window.setTimeout(() => {
-              this.setState({
-                open: false,
-              });
-            }, 120);
-          }
-        );
+        this.setState({
+          animate: false,
+        }, () => {
+          window.setTimeout(() => {
+            this.setState({
+              open: false
+            });
+          }, 120);
+        });
+
+        OverlayManager.remove(this.modalRef.current);
+
       }
     }
   }
@@ -171,6 +193,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const { open } = this.state;
 
     if (open) {
+      OverlayManager.remove(this.modalRef.current);
+
       if (onClose) onClose(event, 'OutsideClick');
       else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
     }
@@ -216,6 +240,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
       ['Overlay-container']: true,
       ['Overlay-container--open']: open,
     });
+
+    const isAPINew = (headerOptions || footerOptions || footer || header);
+    const bodyClass = classNames({
+      ['Modal-body']: true,
+      ['Modal-body--withMargin']: isAPINew ? !!footer : true,
+      ['Modal-body--withPadding']: isAPINew ? !footer : true,
+    })
 
     const baseProps = extractBaseProps(this.props);
     const sizeMap: Record<ModalProps['dimension'], Partial<ColumnProps>> = {
@@ -270,7 +301,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           {children && (
             <>
               {headerOptions || footerOptions || footer || header ? (
-                <OverlayBody className="Modal-body">{this.props.children}</OverlayBody>
+                <OverlayBody className={bodyClass}>{this.props.children}</OverlayBody>
               ) : (
                 children
               )}

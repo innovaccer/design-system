@@ -152,9 +152,25 @@ describe('EditableInput component with action buttons and props: value and input
     rerender(<EditableInput placeholder={StringValue} onChange={onChange} value={updatedValue} />);
     expect(queryByTestId(inputCompTestId)).not.toBeInTheDocument();
     expect(getByTestId(defaultCompTestId).textContent).toMatch(updatedValue);
+  });
 
+  it('save changes and editable input is uncontrolled', () => {
+    const updatedValue = 'Design System';
+
+    const { getByTestId, queryByTestId } = render(
+      <EditableInput placeholder={StringValue} onChange={onChange} />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
     fireEvent.click(editableWrapper);
-    expect(getByTestId(inputCompTestId)).toHaveValue(updatedValue);
+
+    const inputTrigger = getByTestId(inputCompTestId);
+    fireEvent.change(inputTrigger, { target: updatedValue });
+
+    const saveButton = getByTestId('DesignSystem-EditableInput--Save');
+    fireEvent.click(saveButton);
+    expect(onChange).toHaveBeenCalled();
+    expect(queryByTestId(inputCompTestId)).not.toBeInTheDocument();
   });
 });
 

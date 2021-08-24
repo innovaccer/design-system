@@ -61,9 +61,15 @@ export const MetaList = (props: MetaListProps) => {
   });
 
   return (
-    <div {...baseProps} className={MetaClass}>
+    <div data-test="DesignSystem-MetaList" {...baseProps} className={MetaClass}>
       {seperator && (
-        <Icon name="fiber_manual_record" size={8} className={LeftSeperatorClass} appearance={seperatorAppearance} />
+        <Icon
+          data-test="DesignSystem-MetaList--Seperator"
+          name="fiber_manual_record"
+          size={8}
+          className={LeftSeperatorClass}
+          appearance={seperatorAppearance}
+        />
       )}
 
       {list.map((item, ind) => {
@@ -74,7 +80,13 @@ export const MetaList = (props: MetaListProps) => {
           <span key={ind} className="MetaList-item">
             <Meta label={label} icon={icon} iconAppearance={iconAppearance} labelAppearance={labelAppearance} />
             {rightSeperator && (
-              <Icon name="fiber_manual_record" size={8} className={SeperatorClass} appearance={seperatorAppearance} />
+              <Icon
+                data-test="DesignSystem-MetaList--rightSeperator"
+                name="fiber_manual_record"
+                size={8}
+                className={SeperatorClass}
+                appearance={seperatorAppearance}
+              />
             )}
           </span>
         );

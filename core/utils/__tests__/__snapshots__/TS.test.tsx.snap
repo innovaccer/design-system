@@ -60,12 +60,15 @@ exports[`TS renders children 1`] = `
   />
   <div
     class="Checkbox"
+    data-test="DesignSystem-Checkbox"
   >
     <div
       class="Checkbox-outerWrapper Checkbox-outerWrapper--regular"
+      data-test="DesignSystem-Checkbox-OuterWrapper"
     >
       <input
         class="Checkbox-input"
+        data-test="DesignSystem-Checkbox-InputBox"
         id="undefined-undefined-Test-uid"
         tabindex="0"
         type="checkbox"
@@ -73,8 +76,12 @@ exports[`TS renders children 1`] = `
       />
       <span
         class="Checkbox-wrapper"
+        data-test="DesignSystem-Checkbox-Icon"
       />
     </div>
+    <div
+      class="Checkbox-labelWrapper"
+    />
   </div>
   <div
     class="Col"
@@ -740,6 +747,7 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="MetaList"
+    data-test="DesignSystem-MetaList"
   />
   <div
     class="OutsideClick"
@@ -768,12 +776,15 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Radio"
+    data-test="DesignSystem-Radio"
   >
     <div
       class="Radio-outerWrapper Radio-outerWrapper--regular"
+      data-test="DesignSystem-Radio-OuterWrapper"
     >
       <input
         class="Radio-input"
+        data-test="DesignSystem-Radio-Input"
         id="Hello World!-undefined-Test-uid"
         name="Hello World!"
         type="radio"
@@ -783,6 +794,9 @@ exports[`TS renders children 1`] = `
         class="Radio-wrapper Radio-wrapper--regular"
       />
     </div>
+    <div
+      class="Radio-labelWrapper"
+    />
   </div>
   <div
     class="Row"
@@ -1337,7 +1351,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
-    class="OverlayBody Modal-body"
+    class="OverlayBody Modal-body Modal-body--withMargin"
     data-test="DesignSystem-OverlayBody"
   >
     <span
