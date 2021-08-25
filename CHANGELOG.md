@@ -1,3 +1,36 @@
+## 2.3.0-2  (2021-25-10) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Adds Close on Escape Keypress feature in Overlays (c2904387)
+
+### Fixes
+* Fixes arrow click event argument in MetricInput (e4cf0bc5)
+* Adds default state delete functionality in EditableChipInput (3a8415f7)
+* Fixes done button and adds support for uncontrolled EditableChipInput (16a844be)
+* Fixes done button and adds support for uncontrolled EditableInput (f0de36cd)
+* Fixes onChange callback in InputMask (I18e111ce)
+* Removes margin bottom from modal body when there is no footer (7470a273)
+* Fixes nested row card border in Grid (132d0903)
+### Improvements
+* feat(Checkbox): Adds helptext in checkbox (1d41c6cc)
+* feat(Radio): Adds helptext in radio (fc886989)
+* Test(MetaList): Adds test cases for MetaList component (5023743f)
+### Documentation
+* Adds more content to scrolling modal story (c43c8fea)
+
+-------------------
 ## 2.3.0-1  (2021-08-10) 
 
 ### Highlights
