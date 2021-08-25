@@ -34,7 +34,7 @@ export const Box = (props: InternalBoxProps) => {
   );
 
   return (
-    <div {...baseProps} className={MessageClass} onClick={onClick}>
+    <div {...baseProps} className={MessageClass} onClick={onClick} data-test="DesignSystem-ChatMessage--Box">
       {children}
     </div>
   );
