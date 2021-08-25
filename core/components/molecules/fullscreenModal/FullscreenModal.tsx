@@ -29,7 +29,7 @@ export interface FullscreenModalProps extends BaseProps {
   /**
    * onClose callback to be called on `Fullscreen Modal` close
    */
-  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent> , reason?: string) => void;
+  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
 
   /**
    * Header options (doesn't work if `header` prop is used)
@@ -90,6 +90,10 @@ export interface FullscreenModalProps extends BaseProps {
    * Element to be rendered as modal body.
    */
   children?: React.ReactNode;
+  /**
+   * Closes `FullScreenModal` when `Escape` key is pressed
+   */
+  closeOnEscape?: boolean;
 }
 
 interface ModalState {
@@ -146,14 +150,16 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   }
 
   componentDidMount() {
-    if (this.state.open) {
-      OverlayManager.add(this.modalRef.current);
+    if (this.props.closeOnEscape) {
+      if (this.state.open) {
+        OverlayManager.add(this.modalRef.current);
+      }
+      document.addEventListener('keydown', this.onCloseHandler)
     }
-    document.addEventListener('keydown', this.onCloseHandler)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.onCloseHandler)
+    if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler)
   }
 
   componentDidUpdate(prevProps: FullscreenModalProps) {
@@ -172,7 +178,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           animate: true,
         });
 
-        OverlayManager.add(this.modalRef.current);
+        if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
 
       } else {
 
@@ -189,7 +195,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           }
         );
 
-        OverlayManager.remove(this.modalRef.current);
+        if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
 
       }
     }
