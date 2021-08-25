@@ -330,6 +330,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           style={style}
           onMouseOver={() => this.handleLabelMouseOver(i)}
           onMouseLeave={this.handleLabelMouseLeave}
+          data-test="DesignSystem-MultiSlider-Label"
         >
           <span className={'Slider-ticks'} />
           {labelRenderer !== false && (
@@ -410,13 +411,14 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
     });
 
     return (
-      <div {...baseProps} className={SliderClass}>
+      <div {...baseProps} className={SliderClass} data-test="DesignSystem-MultiSlider">
         {label && <Label withInput={true}>{label}</Label>}
         <div className={WrapperClass}>
           <div
             className="Slider-track"
             ref={(ref) => (this.trackElement = ref)}
             onMouseDown={this.maybeHandleTrackClick}
+            data-test="DesignSystem-MultiSlider-Slider-Track"
           >
             {this.renderTracks()}
           </div>
