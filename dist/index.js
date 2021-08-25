@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478630381 
+   * Generated on: 1629895851012 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.3.0-2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -1043,7 +1043,8 @@
           value = props.value,
           className = props.className;
           props.checked;
-          var rest = __rest(props, ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"]);
+          var helpText = props.helpText,
+          rest = __rest(props, ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked", "helpText"]);
 
       var ref = React__namespace.useRef(null);
       React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -1064,9 +1065,9 @@
       }, [props.checked]);
       var CheckboxClass = classNames__default['default']((_a = {}, _a['Checkbox'] = true, _a['Checkbox--disabled'] = disabled, _a), className);
       var CheckboxOuterWrapper = classNames__default['default']((_b = {}, _b['Checkbox-outerWrapper'] = true, _b["Checkbox-outerWrapper--" + size] = size, _b));
-      var CheckboxTextClass = classNames__default['default']((_c = {}, _c['Checkbox-label'] = true, _c));
-      var CheckboxInputWrapper = classNames__default['default']((_d = {}, _d['Checkbox-input'] = true, _d['Checkbox-input--checked'] = checked, _d['Checkbox-input--indeterminate'] = props.indeterminate, _d));
-      var CheckboxWrapper = classNames__default['default']((_e = {}, _e['Checkbox-wrapper'] = true, _e));
+      var CheckboxInputWrapper = classNames__default['default']((_c = {}, _c['Checkbox-input'] = true, _c['Checkbox-input--checked'] = checked, _c['Checkbox-input--indeterminate'] = props.indeterminate, _c));
+      var CheckboxWrapper = classNames__default['default']((_d = {}, _d['Checkbox-wrapper'] = true, _d));
+      var CheckboxLabelClass = classNames__default['default']((_e = {}, _e['Checkbox-label'] = true, _e));
 
       var setIndeterminate = function setIndeterminate(indeterminateValue) {
         ref.current.indeterminate = indeterminateValue;
@@ -1084,9 +1085,11 @@
       var id = name + "-" + label + "-" + uidGenerator();
       var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
       var IconSize = size === 'tiny' ? 12 : 16;
-      return /*#__PURE__*/React__namespace.createElement("div", {
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-Checkbox",
         className: CheckboxClass
       }, /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-Checkbox-OuterWrapper",
         className: CheckboxOuterWrapper
       }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, rest, {
         type: "checkbox",
@@ -1099,20 +1102,29 @@
         value: value,
         className: CheckboxInputWrapper,
         tabIndex: tabIndex,
-        id: id
+        id: id,
+        "data-test": "DesignSystem-Checkbox-InputBox"
       })), /*#__PURE__*/React__namespace.createElement("span", {
-        className: CheckboxWrapper
+        className: CheckboxWrapper,
+        "data-test": "DesignSystem-Checkbox-Icon"
       }, IconName && /*#__PURE__*/React__namespace.createElement(Icon, {
         name: IconName,
         size: IconSize,
         appearance: 'white'
-      }))), label && label.trim() && /*#__PURE__*/React__namespace.createElement("label", {
+      }))), /*#__PURE__*/React__namespace.createElement("div", {
+        className: "Checkbox-labelWrapper"
+      }, label && label.trim() && /*#__PURE__*/React__namespace.createElement("label", {
         htmlFor: id,
-        className: CheckboxTextClass
+        className: CheckboxLabelClass,
+        "data-test": "DesignSystem-Checkbox-Label"
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         size: size === 'tiny' ? 'small' : 'regular',
         appearance: disabled ? 'disabled' : 'default'
-      }, label.trim())));
+      }, label.trim())), helpText && /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-Checkbox-HelpText",
+        size: "small",
+        appearance: disabled ? 'disabled' : 'subtle'
+      }, helpText.trim()))));
     });
     Checkbox.displayName = 'Checkbox';
 
@@ -2570,6 +2582,7 @@
 
       var customTrigger = function customTrigger() {
         return /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           size: "tiny",
           appearance: "transparent",
           icon: "more_horiz_filled",
@@ -4062,6 +4075,9 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var disabled = _this.props.inputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -4408,10 +4424,10 @@
         onBlur: onBlur,
         onClick: onClick,
         onFocus: onFocus
-      })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React__namespace.createElement(Tooltip, {
+      })), disabled ? '' : info ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
         position: "top",
         tooltip: info
-      }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React__namespace.createElement("div", {
+      }, trigger) : actionIcon && (value || defaultValue) ? actionIcon : onClear && (value || defaultValue) && /*#__PURE__*/React__namespace.createElement("div", {
         className: rightIconClass,
         onClick: function onClick(e) {
           return onClear(e);
@@ -4521,7 +4537,9 @@
         if (onChange) {
           var syntheticEvent = Object.create(e, {
             target: {
-              value: newValue
+              value: {
+                value: newValue
+              }
             }
           });
           onChange(syntheticEvent);
@@ -4840,7 +4858,7 @@
           return setCursorPosition(cursorPosition);
         });
 
-        if (isValid(validators, newValue)) {
+        if (isValid(validators, newValue) && newValue !== value) {
           setValue(newValue);
           if (onChange) onChange(e, newValue);
         }
@@ -5245,12 +5263,15 @@
           iconAppearance = props.iconAppearance,
           labelAppearance = props.labelAppearance;
       return /*#__PURE__*/React__namespace.createElement("span", {
+        "data-test": "DesignSystem-MetaList--Meta",
         className: 'Meta'
       }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-MetaList--MetaIcon",
         name: icon,
         appearance: iconAppearance,
         className: 'Meta-icon'
       }), /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-MetaList--MetaLabel",
         appearance: labelAppearance
       }, label));
     };
@@ -5269,9 +5290,12 @@
       var MetaClass = classNames__default['default']((_a = {}, _a['MetaList'] = true, _a), className);
       var SeperatorClass = classNames__default['default']((_b = {}, _b['MetaList-seperator'] = true, _b));
       var LeftSeperatorClass = classNames__default['default']((_c = {}, _c['MetaList-seperator'] = true, _c['MetaList-seperator--left'] = true, _c));
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-MetaList"
+      }, baseProps, {
         className: MetaClass
       }), seperator && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-MetaList--Seperator",
         name: "fiber_manual_record",
         size: 8,
         className: LeftSeperatorClass,
@@ -5290,6 +5314,7 @@
           iconAppearance: iconAppearance,
           labelAppearance: labelAppearance
         }), rightSeperator && /*#__PURE__*/React__namespace.createElement(Icon, {
+          "data-test": "DesignSystem-MetaList--rightSeperator",
           name: "fiber_manual_record",
           size: 8,
           className: SeperatorClass,
@@ -5391,10 +5416,10 @@
     };
 
     var Radio = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
-      var _a, _b, _c;
+      var _a, _b, _c, _d;
 
-      var _d = props.size,
-          size = _d === void 0 ? 'regular' : _d,
+      var _e = props.size,
+          size = _e === void 0 ? 'regular' : _e,
           label = props.label,
           disabled = props.disabled,
           onChange = props.onChange,
@@ -5403,7 +5428,8 @@
           checked = props.checked,
           defaultChecked = props.defaultChecked,
           className = props.className,
-          rest = __rest(props, ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"]);
+          helpText = props.helpText,
+          rest = __rest(props, ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText"]);
 
       var ref = React__namespace.useRef(null);
       React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -5412,11 +5438,14 @@
       var RadioClass = classNames__default['default']((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a), className);
       var RadioWrapper = classNames__default['default']((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-wrapper--" + size] = size, _b));
       var RadioOuterWrapper = classNames__default['default']((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
+      var RadioLabelClass = classNames__default['default']((_d = {}, _d['Radio-Label'] = true, _d));
       var id = name + "-" + label + "-" + uidGenerator();
       return /*#__PURE__*/React__namespace.createElement("div", {
-        className: RadioClass
+        className: RadioClass,
+        "data-test": "DesignSystem-Radio"
       }, /*#__PURE__*/React__namespace.createElement("div", {
-        className: RadioOuterWrapper
+        className: RadioOuterWrapper,
+        "data-test": "DesignSystem-Radio-OuterWrapper"
       }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, rest, {
         type: "radio",
         disabled: disabled,
@@ -5427,16 +5456,24 @@
         value: value,
         onChange: onChange,
         className: "Radio-input",
-        id: id
+        id: id,
+        "data-test": "DesignSystem-Radio-Input"
       })), /*#__PURE__*/React__namespace.createElement("span", {
         className: RadioWrapper
-      })), label && /*#__PURE__*/React__namespace.createElement("label", {
-        className: "Radio-label",
-        htmlFor: id
+      })), /*#__PURE__*/React__namespace.createElement("div", {
+        className: "Radio-labelWrapper"
+      }, label && /*#__PURE__*/React__namespace.createElement("label", {
+        className: RadioLabelClass,
+        htmlFor: id,
+        "data-test": "DesignSystem-Radio-Label"
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         size: size === 'tiny' ? 'small' : 'regular',
         appearance: disabled ? 'disabled' : 'default'
-      }, label)));
+      }, label)), helpText && /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-Radio-HelpText",
+        size: "small",
+        appearance: disabled ? 'disabled' : 'subtle'
+      }, helpText.trim())));
     });
     Radio.displayName = 'Radio';
 
@@ -7367,10 +7404,12 @@
           heading: heading
         },
         footer: /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           "data-test": "DesignSystem-Dialog--SecondaryButton",
           appearance: secondaryButtonAppearance,
           onClick: secondaryButtonCallback
         }, secondaryButtonLabel), /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           className: "ml-4",
           "data-test": "DesignSystem-Dialog--PrimaryButton",
           appearance: primaryButtonAppearance,
@@ -7427,7 +7466,9 @@
           _a.label;
               var options = __rest(_a, ["label"]);
 
-          return /*#__PURE__*/React__namespace.createElement(Button, __assign({}, options, {
+          return /*#__PURE__*/React__namespace.createElement(Button, __assign({
+            type: "button"
+          }, options, {
             key: index
           }));
         }));
@@ -7526,6 +7567,52 @@
       });
       return zIndex > 0 ? zIndex : undefined;
     };
+    var closeOnEscapeKeypress = function closeOnEscapeKeypress(event, isTopOverlay, onClose) {
+      if (event.key === 'Escape' && isTopOverlay) {
+        onClose(event);
+        event.preventDefault();
+      }
+    };
+
+    var OverlayManager = function () {
+      function OverlayManager() {
+        this.overlays = [];
+      }
+
+      OverlayManager.prototype.add = function (overlay) {
+        if (overlay === null) return;
+        var overlayIdx = this.overlays.indexOf(overlay);
+
+        if (overlayIdx !== -1) {
+          return overlayIdx;
+        }
+
+        overlayIdx = this.overlays.length;
+        this.overlays.push(overlay);
+        return overlayIdx;
+      };
+
+      OverlayManager.prototype.remove = function (overlay) {
+        if (overlay === null) return;
+        var overlayIdx = this.overlays.indexOf(overlay);
+
+        if (overlayIdx === -1) {
+          return;
+        }
+
+        this.overlays.splice(overlayIdx, 1);
+      };
+
+      OverlayManager.prototype.isTopOverlay = function (overlay) {
+        if (overlay === null) return;
+        return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
+      };
+
+      return OverlayManager;
+    }();
+
+    var instance = new OverlayManager();
+    Object.freeze(instance);
 
     var Modal = function (_super) {
       __extends(Modal, _super);
@@ -7534,6 +7621,12 @@
         var _this = _super.call(this, props) || this;
 
         _this.modalRef = /*#__PURE__*/React__namespace.createRef();
+
+        _this.onCloseHandler = function (event) {
+          var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+          closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+        };
+
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -7542,6 +7635,22 @@
         _this.onOutsideClickHandler = _this.onOutsideClickHandler.bind(_this);
         return _this;
       }
+
+      Modal.prototype.componentDidMount = function () {
+        if (this.props.closeOnEscape) {
+          if (this.state.open) {
+            instance.add(this.modalRef.current);
+          }
+
+          document.addEventListener('keydown', this.onCloseHandler);
+        }
+      };
+
+      Modal.prototype.componentWillUnmount = function () {
+        if (this.props.closeOnEscape) {
+          document.removeEventListener('keydown', this.onCloseHandler);
+        }
+      };
 
       Modal.prototype.componentDidUpdate = function (prevProps) {
         var _this = this;
@@ -7558,6 +7667,7 @@
               open: true,
               animate: true
             });
+            if (this.props.closeOnEscape) instance.add(this.modalRef.current);
           } else {
             this.setState({
               animate: false
@@ -7568,6 +7678,7 @@
                 });
               }, 120);
             });
+            if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
           }
         }
       };
@@ -7579,28 +7690,29 @@
         var open = this.state.open;
 
         if (open) {
+          if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
           if (onClose) onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
         }
       };
 
       Modal.prototype.render = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
 
-        var _d = this.state,
-            animate = _d.animate,
-            open = _d.open,
-            zIndex = _d.zIndex;
-        var _e = this.props,
-            className = _e.className,
-            backdropClose = _e.backdropClose,
-            dimension = _e.dimension,
-            children = _e.children,
-            headerOptions = _e.headerOptions,
-            header = _e.header,
-            footerOptions = _e.footerOptions,
-            seperator = _e.seperator,
-            footer = _e.footer,
-            onClose = _e.onClose;
+        var _e = this.state,
+            animate = _e.animate,
+            open = _e.open,
+            zIndex = _e.zIndex;
+        var _f = this.props,
+            className = _f.className,
+            backdropClose = _f.backdropClose,
+            dimension = _f.dimension,
+            children = _f.children,
+            headerOptions = _f.headerOptions,
+            header = _f.header,
+            footerOptions = _f.footerOptions,
+            seperator = _f.seperator,
+            footer = _f.footer,
+            onClose = _f.onClose;
         var classes = classNames__default['default']({
           Modal: true,
           'Modal--open': open,
@@ -7610,6 +7722,8 @@
         var headerClass = classNames__default['default']((_a = {}, _a['Modal-header'] = true, _a['Modal-header--withSeperator'] = seperator, _a));
         var footerClass = classNames__default['default']((_b = {}, _b['Modal-footer'] = true, _b['Modal-footer--withSeperator'] = seperator, _b));
         var ContainerClass = classNames__default['default']((_c = {}, _c['Row'] = true, _c['Overlay-container'] = true, _c['Overlay-container--open'] = open, _c));
+        var isAPINew = headerOptions || footerOptions || footer || header;
+        var bodyClass = classNames__default['default']((_d = {}, _d['Modal-body'] = true, _d['Modal-body--withMargin'] = isAPINew ? !!footer : true, _d['Modal-body--withPadding'] = isAPINew ? !footer : true, _d));
         var baseProps = extractBaseProps(this.props);
         var sizeMap = {
           small: {
@@ -7658,7 +7772,7 @@
             if (onClose) onClose(event, 'IconClick');
           }
         }))), children && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headerOptions || footerOptions || footer || header ? /*#__PURE__*/React__namespace.createElement(OverlayBody, {
-          className: "Modal-body"
+          className: bodyClass
         }, this.props.children) : children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement(OverlayFooter, __assign({
           "data-test": "DesignSystem-Modal--footer"
         }, footerOptions, {
@@ -7720,7 +7834,8 @@
           className = props.className;
       var baseProps = extractBaseProps(props);
       var classes = classNames__default['default']({
-        'Modal-body': true
+        'Modal-body': true,
+        'Modal-body--withMargin': true
       }, className);
       return /*#__PURE__*/React__namespace.createElement(OverlayBody, __assign({}, baseProps, {
         stickFooter: true,
@@ -7756,6 +7871,30 @@
         var _this = _super.call(this, props) || this;
 
         _this.modalRef = /*#__PURE__*/React__namespace.createRef();
+
+        _this.onOutsideClickHandler = function (event) {
+          instance.remove(_this.modalRef.current);
+
+          if (_this.props.onClose) {
+            _this.props.onClose(event, 'EscapePress');
+          } else {
+            _this.setState({
+              animate: false
+            }, function () {
+              window.setTimeout(function () {
+                _this.setState({
+                  open: false
+                });
+              }, 120);
+            });
+          }
+        };
+
+        _this.onCloseHandler = function (event) {
+          var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+          closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+        };
+
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -7763,6 +7902,20 @@
         };
         return _this;
       }
+
+      FullscreenModal.prototype.componentDidMount = function () {
+        if (this.props.closeOnEscape) {
+          if (this.state.open) {
+            instance.add(this.modalRef.current);
+          }
+
+          document.addEventListener('keydown', this.onCloseHandler);
+        }
+      };
+
+      FullscreenModal.prototype.componentWillUnmount = function () {
+        if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler);
+      };
 
       FullscreenModal.prototype.componentDidUpdate = function (prevProps) {
         var _this = this;
@@ -7779,6 +7932,7 @@
               open: true,
               animate: true
             });
+            if (this.props.closeOnEscape) instance.add(this.modalRef.current);
           } else {
             this.setState({
               animate: false
@@ -7789,6 +7943,7 @@
                 });
               }, 120);
             });
+            if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
           }
         }
       };
@@ -7889,6 +8044,12 @@
         var _this = _super.call(this, props) || this;
 
         _this.sidesheetRef = /*#__PURE__*/React__namespace.createRef();
+
+        _this.onCloseHandler = function (event) {
+          var isTopOverlay = instance.isTopOverlay(_this.sidesheetRef.current);
+          closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+        };
+
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -7897,6 +8058,22 @@
         _this.onOutsideClickHandler = _this.onOutsideClickHandler.bind(_this);
         return _this;
       }
+
+      Sidesheet.prototype.componentDidMount = function () {
+        if (this.props.closeOnEscape) {
+          if (this.state.open) {
+            instance.add(this.sidesheetRef.current);
+          }
+
+          document.addEventListener('keydown', this.onCloseHandler);
+        }
+      };
+
+      Sidesheet.prototype.componentWillUnmount = function () {
+        if (this.props.closeOnEscape) {
+          document.removeEventListener('keydown', this.onCloseHandler);
+        }
+      };
 
       Sidesheet.prototype.componentDidUpdate = function (prevProps) {
         var _this = this;
@@ -7913,6 +8090,7 @@
               open: true,
               animate: true
             });
+            if (this.props.closeOnEscape) instance.add(this.sidesheetRef.current);
           } else {
             this.setState({
               animate: false
@@ -7923,6 +8101,7 @@
                 });
               }, 120);
             });
+            if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
           }
         }
       };
@@ -7932,6 +8111,7 @@
         var open = this.state.open;
 
         if (open) {
+          if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
           if (onClose) onClose(event, 'OutsideClick');
         }
       };
@@ -8469,8 +8649,7 @@
     var EditableInput = function EditableInput(props) {
       var _a, _b, _c, _d;
 
-      var value = props.value,
-          error = props.error,
+      var error = props.error,
           size = props.size,
           errorMessage = props.errorMessage,
           placeholder = props.placeholder,
@@ -8482,36 +8661,43 @@
       var onInputChange = inputOptions.onChange,
           rest = __rest(inputOptions, ["onChange"]);
 
-      var _e = React__namespace.useState(value),
+      var _e = React__namespace.useState(props.value),
           inputValue = _e[0],
           setInputValue = _e[1];
 
-      var _f = React__namespace.useState(false),
-          editing = _f[0],
-          setEditing = _f[1];
+      var _f = React__namespace.useState(props.value),
+          value = _f[0],
+          setValue = _f[1];
 
       var _g = React__namespace.useState(false),
-          showComponent = _g[0],
-          setShowComponent = _g[1];
+          editing = _g[0],
+          setEditing = _g[1];
+
+      var _h = React__namespace.useState(false),
+          showComponent = _h[0],
+          setShowComponent = _h[1];
 
       var inputRef = /*#__PURE__*/React__namespace.createRef();
       var baseProps = extractBaseProps(props);
+      var isControlled = props.value !== undefined;
+      React__namespace.useEffect(function () {
+        if (isControlled) setValue(props.value);
+      }, [props.value]);
       var EditableInputClass = classNames__default['default']((_a = {}, _a['EditableInput'] = true, _a), className);
       var EditableDefaultClass = classNames__default['default']((_b = {}, _b['EditableInput-default'] = true, _b["EditableInput-default--" + size] = size, _b));
       var InputClass = classNames__default['default']((_c = {}, _c['EditableInput-Input--tiny'] = size === 'tiny', _c));
       var ActionClass = classNames__default['default']((_d = {}, _d['EditableInput-actions'] = true, _d["EditableInput-actions--" + size] = size, _d));
-      React__namespace.useEffect(function () {
-        setDefaultComponent();
-      }, [value]);
 
-      var setDefaultComponent = function setDefaultComponent() {
-        setInputValue(value);
+      var setDefaultComponent = function setDefaultComponent(updatedValue) {
+        setInputValue(updatedValue);
         setEditing(false);
         setShowComponent(false);
       };
 
       var onSaveChanges = function onSaveChanges() {
-        if (onChange) onChange(inputValue);
+        if (!isControlled) setValue(inputValue);
+        if (onChange) onChange(inputValue || '');
+        setDefaultComponent(inputValue);
       };
 
       var onInputChangeHandler = function onInputChangeHandler(e) {
@@ -8556,7 +8742,7 @@
               break;
 
             case 'Escape':
-              setDefaultComponent();
+              setDefaultComponent(value);
               break;
           }
         }
@@ -8601,7 +8787,9 @@
         icon: "clear",
         className: "mr-3",
         size: "tiny",
-        onClick: setDefaultComponent,
+        onClick: function onClick() {
+          setDefaultComponent(value);
+        },
         "data-test": "DesignSystem-EditableInput--Discard"
       }), /*#__PURE__*/React__namespace.createElement(Button, {
         icon: "check",
@@ -8615,7 +8803,6 @@
     EditableInput.defaultProps = {
       size: 'regular',
       placeholder: '',
-      value: '',
       inputOptions: {}
     };
 
@@ -8623,7 +8810,6 @@
       var _a, _b, _c, _d;
 
       var placeholder = props.placeholder,
-          value = props.value,
           onChange = props.onChange,
           className = props.className,
           disableSaveAction = props.disableSaveAction,
@@ -8637,36 +8823,46 @@
       var _onClick = chipOptions.onClick,
           chipObject = __rest(chipOptions, ["onClick"]);
 
-      var _f = React__namespace.useState(value),
+      var _f = React__namespace.useState(props.value),
           inputValue = _f[0],
           setInputValue = _f[1];
 
-      var _g = React__namespace.useState(false),
-          showComponent = _g[0],
-          setShowComponent = _g[1];
+      var _g = React__namespace.useState(props.value),
+          value = _g[0],
+          setValue = _g[1];
+
+      var _h = React__namespace.useState(false),
+          showComponent = _h[0],
+          setShowComponent = _h[1];
 
       var baseProps = extractBaseProps(props);
       var isWithChips = inputValue && inputValue.length;
+      var isControlled = props.value !== undefined;
+      React__namespace.useEffect(function () {
+        if (isControlled) {
+          setInputValue(props.value);
+          setValue(props.value);
+        }
+      }, [props.value]);
       var classes = classNames__default['default']((_a = {}, _a['EditableChipInput'] = true, _a), className);
       var actionClass = classNames__default['default']((_b = {}, _b['EditableChipInput-actions'] = true, _b));
       var defaultClasses = classNames__default['default']((_c = {}, _c['EditableChipInput-default'] = !isWithChips, _c['EditableChipInput-defaultWithChips'] = isWithChips, _c));
       var inputClass = classNames__default['default']((_d = {}, _d['EditableChipInput-chipInput'] = true, _d));
-      React__namespace.useEffect(function () {
-        setDefaultComponent();
-      }, [value]);
 
       var onChipInputChangeHandler = function onChipInputChangeHandler(val) {
         setInputValue(val);
         if (onChipInputChange) onChipInputChange(val);
       };
 
-      var setDefaultComponent = function setDefaultComponent() {
-        setInputValue(value);
+      var setDefaultComponent = function setDefaultComponent(updatedValue) {
+        setInputValue(updatedValue);
         setShowComponent(false);
       };
 
       var onSaveChanges = function onSaveChanges() {
+        if (!isControlled) setValue(inputValue);
         if (onChange && inputValue) onChange(inputValue);
+        setDefaultComponent(inputValue);
       };
 
       var onChangeHandler = function onChangeHandler(eventType) {
@@ -8683,6 +8879,21 @@
         }
       };
 
+      var onChipDelete = function onChipDelete(index) {
+        if (value) {
+          var updatedValue = __spreadArrays(value);
+
+          updatedValue.splice(index, 1);
+
+          if (!isControlled) {
+            setInputValue(updatedValue);
+            setValue(updatedValue);
+          }
+
+          if (onChange) onChange(updatedValue);
+        }
+      };
+
       var renderDefaultState = function renderDefaultState() {
         if (inputValue && inputValue.length) {
           return inputValue.map(function (val, index) {
@@ -8693,6 +8904,9 @@
               label: val,
               className: "my-2 mx-2"
             }, chipObject, {
+              onClose: function onClose() {
+                return onChipDelete(index);
+              },
               onClick: function onClick() {
                 return _onClick && _onClick(val, index);
               }
@@ -8740,7 +8954,9 @@
         icon: "clear",
         className: "mr-3",
         size: "tiny",
-        onClick: setDefaultComponent
+        onClick: function onClick() {
+          setDefaultComponent(value);
+        }
       }), /*#__PURE__*/React__namespace.createElement(Button, {
         "data-test": "DesignSystem-EditableChipInput--SaveButton",
         icon: "check",
@@ -9373,6 +9589,14 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var _a = _this.props,
+              singleInput = _a.singleInput,
+              inputOptions = _a.inputOptions,
+              startInputOptions = _a.startInputOptions,
+              endInputOptions = _a.endInputOptions;
+          var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -9667,31 +9891,55 @@
     };
     Tab.displayName = 'Tab';
 
-    var Tabs = function Tabs(props) {
-      var _a;
+    var getChildrenArray = function getChildrenArray(children) {
+      return Array.isArray(children) ? children : [children];
+    };
 
-      var tabs = props.tabs,
+    var filterTabs = function filterTabs(children) {
+      var childrenArray = getChildrenArray(children);
+      var tabs = childrenArray.filter(function (element) {
+        return typeof element.type === 'function' && element.type.name === 'Tab';
+      });
+      return tabs;
+    };
+
+    var filterInlineComponent = function filterInlineComponent(children) {
+      var childrenArray = getChildrenArray(children);
+      var inlineComponent = childrenArray.filter(function (element) {
+        return !(typeof element.type === 'function' && element.type.name === 'Tab');
+      });
+      return inlineComponent;
+    };
+
+    var Tabs = function Tabs(props) {
+      var _a, _b;
+
+      var children = props.children,
           withSeparator = props.withSeparator,
           onTabChange = props.onTabChange,
           className = props.className;
       var baseProps = extractBaseProps(props);
+      var tabRefs = [];
+      var tabs = children ? filterTabs(children) : props.tabs;
+      var inlineComponent = children ? filterInlineComponent(children) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null);
       var totalTabs = tabs.length;
 
-      var _b = React__namespace.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
-          activeIndex = _b[0],
-          setActiveTab = _b[1];
+      var _c = React__namespace.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
+          activeIndex = _c[0],
+          setActiveTab = _c[1];
 
       React__namespace.useEffect(function () {
         if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
           setActiveTab(props.activeIndex);
         }
       }, [props.activeIndex]);
-      var tabsClass = classNames__default['default']((_a = {}, _a['Tabs'] = true, _a['Tabs--withSeparator'] = withSeparator, _a), className);
+      var wrapperClass = classNames__default['default']((_a = {}, _a['TabsWrapper'] = true, _a), className);
+      var headerClass = classNames__default['default']((_b = {}, _b['TabsWrapper-header'] = true, _b['TabsWrapper-header--withSeparator'] = withSeparator, _b), className);
 
       var getPillsClass = function getPillsClass(disabled) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Tabs-pills'] = true, _a['Tabs-pills--disabled'] = disabled, _a));
+        return classNames__default['default']((_a = {}, _a['Tab-pills'] = true, _a['Tab-pills--disabled'] = disabled, _a));
       };
 
       var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
@@ -9704,8 +9952,6 @@
 
         if (onTabChange) onTabChange(tabIndex);
       };
-
-      var tabRefs = [];
 
       var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
         if (event.key === 'Enter') {
@@ -9724,9 +9970,10 @@
       };
 
       var renderInfo = function renderInfo(tab, index) {
-        var count = tab.count,
-            icon = tab.icon,
-            disabled = tab.disabled;
+        var _a = tab,
+            count = _a.count,
+            icon = _a.icon,
+            disabled = _a.disabled;
 
         if (count !== undefined) {
           return /*#__PURE__*/React__namespace.createElement(Pills, {
@@ -9749,44 +9996,60 @@
         return null;
       };
 
-      var renderTabs = function renderTabs() {
-        return tabs.map(function (tab, index) {
-          var _a;
+      var renderTab = function renderTab(tab, index) {
+        var _a = tab,
+            _b = _a.label,
+            label = _b === void 0 ? '' : _b,
+            disabled = _a.disabled;
 
-          var label = tab.label,
-              disabled = tab.disabled;
-          var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-          var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && activeIndex === index, _a));
-          return /*#__PURE__*/React__namespace.createElement("div", {
-            ref: function ref(element) {
-              return element && !disabled && tabRefs.push(element);
-            },
-            "data-test": "DesignSystem-Tabs--Tab",
-            key: index,
-            className: tabHeaderClass,
-            onClick: function onClick() {
-              return !disabled && tabClickHandler(index);
-            },
-            onKeyDown: function onKeyDown(event) {
-              return tabKeyDownHandler(event, index);
-            },
-            tabIndex: activeIndex === index ? 0 : -1
-          }, renderInfo(tab, index), /*#__PURE__*/React__namespace.createElement(Text, {
-            "data-test": "DesignSystem-Tabs--Text",
-            appearance: textAppearance
-          }, label));
-        });
+        if (typeof label !== 'string') {
+          return label;
+        }
+
+        var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, renderInfo(tab, index), /*#__PURE__*/React__namespace.createElement(Text, {
+          "data-test": "DesignSystem-Tabs--Text",
+          appearance: textAppearance
+        }, label));
       };
 
+      var renderTabs = tabs.map(function (tab, index) {
+        var _a;
+
+        var currentTabProp = children && 'props' in tab ? tab.props : tab;
+        var disabled = currentTabProp.disabled;
+        var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && activeIndex === index, _a));
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          ref: function ref(element) {
+            return element && !disabled && tabRefs.push(element);
+          },
+          "data-test": "DesignSystem-Tabs--Tab",
+          key: index,
+          className: tabHeaderClass,
+          onClick: function onClick() {
+            return !disabled && tabClickHandler(index);
+          },
+          onKeyDown: function onKeyDown(event) {
+            return tabKeyDownHandler(event, index);
+          },
+          tabIndex: activeIndex === index ? 0 : -1
+        }, renderTab(currentTabProp, index));
+      });
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Tabs"
       }, baseProps, {
-        className: tabsClass
-      }), renderTabs());
+        className: wrapperClass
+      }), /*#__PURE__*/React__namespace.createElement("div", {
+        className: headerClass
+      }, renderTabs, inlineComponent), children && /*#__PURE__*/React__namespace.createElement("div", {
+        className: "TabsWrapper-content",
+        "data-test": "DesignSystem-Tabs--Content"
+      }, tabs[activeIndex]));
     };
     Tabs.displayName = 'Tabs';
     Tabs.defaultProps = {
-      withSeparator: true
+      withSeparator: true,
+      tabs: []
     };
 
     var accepts = function accepts(file, acceptedFiles) {
@@ -10683,7 +10946,7 @@
           size: "large",
           weight: "strong",
           appearance: disabled ? 'disabled' : 'link'
-        }, " browse files")), /*#__PURE__*/React__default['default'].createElement("input", __assign({}, getInputProps()))), formatLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
+        }, "browse files")), /*#__PURE__*/React__default['default'].createElement("input", __assign({}, getInputProps()))), formatLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
           appearance: disabled ? 'disabled' : 'subtle'
         }, formatLabel), sizeLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
           appearance: disabled ? 'disabled' : 'subtle'
@@ -10732,6 +10995,7 @@
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileUploaderButtonClass
       }), /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         disabled: disabled,
         icon: "backup"
       }, uploadButtonLabel), /*#__PURE__*/React__namespace.createElement("input", {
@@ -12712,6 +12976,7 @@
         open: open,
         onToggle: onToggleHandler,
         trigger: /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           ref: function ref(el) {
             setTriggerWidth((el === null || el === void 0 ? void 0 : el.clientWidth) + "px");
           },
@@ -12774,10 +13039,12 @@
       })), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Dropdown-buttonWrapper"
       }, /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         className: "mr-4",
         size: "tiny",
         onClick: onCancelHandler
       }, "Cancel"), /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         appearance: "primary",
         size: "tiny",
         onClick: onApplyHandler
@@ -13914,7 +14181,7 @@
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-    var version = "2.2.1";
+    var version = "2.3.0-2";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
