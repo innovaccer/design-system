@@ -53,6 +53,7 @@ export const layering = () => {
       </Button>
 
       <FullscreenModal
+        closeOnEscape={true}
         open={knobOpen}
         dimension={dimension}
         onClose={onClose}
@@ -85,6 +86,7 @@ export const layering = () => {
       </FullscreenModal>
 
       <FullscreenModal
+        closeOnEscape={true}
         open={knobSecondOpen}
         dimension={dimension}
         onClose={onCloseSecondOverlay}
@@ -154,6 +156,7 @@ const customCode = `
 
       <FullscreenModal
         open={open}
+        closeOnEscape={true}
         onClose={onClose}
         headerOptions={{
           heading: 'This is modal Heading',
@@ -186,6 +189,7 @@ const customCode = `
       </FullscreenModal>
 
       <FullscreenModal
+        closeOnEscape={true}
         open={openSecondOverlay}
         onClose={onCloseSecondOverlay}
         headerOptions={{

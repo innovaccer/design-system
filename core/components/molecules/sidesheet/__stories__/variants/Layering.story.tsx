@@ -92,13 +92,13 @@ export const layering = () => {
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         <br />
       </Paragraph>
-      <Sidesheet {...options}>
+      <Sidesheet {...options} dimension="large" closeOnEscape={true}>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
       </Sidesheet>
 
-      <Sidesheet {...SecondOverlayOptions}>
+      <Sidesheet {...SecondOverlayOptions} closeOnEscape={true}>
         <Text>Modal Body Part Two</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
@@ -168,12 +168,12 @@ const customCode = `() => {
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />
         <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
-      <Sidesheet {...options} >
+      <Sidesheet {...options} dimension="large" closeOnEscape={true}>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
       </Sidesheet>
-      <Sidesheet {...secondOverlayOptions} >
+      <Sidesheet {...secondOverlayOptions} closeOnEscape={true}>
         <Text>Modal Body Part Two</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />

@@ -33,6 +33,7 @@ export const layering = () => {
         <br />
       </Paragraph>
       <Modal
+        closeOnEscape={true}
         open={open}
         dimension={dimension}
         backdropClose={backdropClose}
@@ -61,6 +62,7 @@ export const layering = () => {
       </Modal>
 
       <Modal
+        closeOnEscape={true}
         open={openSecondOverlay}
         dimension={dimension}
         backdropClose={backdropClose}
@@ -111,6 +113,7 @@ const customCode = `() => {
         <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
       <Modal
+        closeOnEscape={true}
         open={open}
         dimension={dimension}
         backdropClose={backdropClose}
@@ -137,6 +140,7 @@ const customCode = `() => {
       </Modal>
 
       <Modal
+        closeOnEscape={true}
         open={openSecondOverlay}
         dimension={dimension}
         backdropClose={backdropClose}

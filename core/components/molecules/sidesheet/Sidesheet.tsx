@@ -93,6 +93,10 @@ export interface SidesheetProps extends BaseProps {
    */
   backdropClose?: boolean;
   /**
+   * Closes `Sidesheet` when `Escape` key is pressed
+   */
+  closeOnEscape?: boolean;
+  /**
    * Callback called `Sidesheet` is closed
    */
   onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
@@ -138,14 +142,18 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   }
 
   componentDidMount() {
-    if (this.state.open) {
-      OverlayManager.add(this.sidesheetRef.current);
+    if (this.props.closeOnEscape) {
+      if (this.state.open) {
+        OverlayManager.add(this.sidesheetRef.current);
+      }
+      document.addEventListener('keydown', this.onCloseHandler)
     }
-    document.addEventListener('keydown', this.onCloseHandler)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.onCloseHandler)
+    if (this.props.closeOnEscape) {
+      document.removeEventListener('keydown', this.onCloseHandler)
+    }
   }
 
   componentDidUpdate(prevProps: SidesheetProps) {
@@ -164,7 +172,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           animate: true,
         });
 
-        OverlayManager.add(this.sidesheetRef.current);
+        if (this.props.closeOnEscape) OverlayManager.add(this.sidesheetRef.current);
 
       } else {
 
@@ -178,7 +186,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           }, 120);
         });
 
-        OverlayManager.remove(this.sidesheetRef.current);
+        if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
 
       }
     }
@@ -189,7 +197,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const { open } = this.state;
 
     if (open) {
-      OverlayManager.remove(this.sidesheetRef.current);
+      if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       if (onClose) onClose(event, 'OutsideClick');
     }
   }
@@ -290,8 +298,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         {SidesheetContainer}
       </OutsideClick>
     ) : (
-      SidesheetContainer
-    );
+        SidesheetContainer
+      );
 
     const WrapperElement = ReactDOM.createPortal(SidesheetWrapper, this.element);
 
