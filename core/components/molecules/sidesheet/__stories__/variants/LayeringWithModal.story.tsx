@@ -76,13 +76,14 @@ export const layeringWithModal = () => {
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         <br />
       </Paragraph>
-      <Sidesheet {...options}>
+      <Sidesheet {...options} closeOnEscape={true}>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
       </Sidesheet>
 
       <Modal
+        closeOnEscape={true}
         open={openSecond}
         dimension="medium"
         backdropClose={false}
@@ -155,12 +156,13 @@ const customCode = `() => {
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />
         <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
-      <Sidesheet {...options} >
+      <Sidesheet {...options} closeOnEscape={true}>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
         <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
       </Sidesheet>
       <Modal
+        closeOnEscape={true}
         open={openSecond}
         dimension='medium'
         backdropClose={false}

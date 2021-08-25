@@ -34,7 +34,7 @@ export interface ModalProps extends BaseProps {
   /**
    * onClose callback to be called on `Modal` close
    */
-  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent> , reason?: string) => void;
+  onClose?: (event?: Event | React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
   /**
    * Header options (doesn't work if `header` prop is used)
    *
@@ -104,6 +104,10 @@ export interface ModalProps extends BaseProps {
    * Show dividers in the header and the footer.
    */
   seperator?: boolean;
+  /**
+   * Closes `Modal` when `Escape` key is pressed
+   */
+  closeOnEscape?: boolean;
 }
 
 interface ModalState {
@@ -144,14 +148,18 @@ class Modal extends React.Component<ModalProps, ModalState> {
   }
 
   componentDidMount() {
-    if (this.state.open) {
-      OverlayManager.add(this.modalRef.current);
+    if (this.props.closeOnEscape) {
+      if (this.state.open) {
+        OverlayManager.add(this.modalRef.current);
+      }
+      document.addEventListener('keydown', this.onCloseHandler)
     }
-    document.addEventListener('keydown', this.onCloseHandler)
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.onCloseHandler)
+    if (this.props.closeOnEscape) {
+      document.removeEventListener('keydown', this.onCloseHandler)
+    }
   }
 
   componentDidUpdate(prevProps: ModalProps) {
@@ -169,7 +177,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           animate: true,
         });
 
-        OverlayManager.add(this.modalRef.current);
+        if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
 
       } else {
         this.setState({
@@ -182,7 +190,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           }, 120);
         });
 
-        OverlayManager.remove(this.modalRef.current);
+        if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
 
       }
     }
@@ -193,7 +201,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
     const { open } = this.state;
 
     if (open) {
-      OverlayManager.remove(this.modalRef.current);
+      if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
 
       if (onClose) onClose(event, 'OutsideClick');
       else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
@@ -303,8 +311,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
               {headerOptions || footerOptions || footer || header ? (
                 <OverlayBody className={bodyClass}>{this.props.children}</OverlayBody>
               ) : (
-                children
-              )}
+                  children
+                )}
             </>
           )}
           {(!!footer || !!footerOptions) && (
@@ -326,8 +334,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
         {ModalContainer}
       </OutsideClick>
     ) : (
-      ModalContainer
-    );
+        ModalContainer
+      );
 
     const WrapperElement = ReactDOM.createPortal(ModalWrapper, this.element);
 
