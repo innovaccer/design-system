@@ -115,7 +115,7 @@ export const Trigger = (props: TriggerProps) => {
   };
 
   return (
-    <Row>
+    <Row data-test="DesignSystem-DateRangePicker-InputTrigger">
       <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--startDate">
         {startLabel && (
           <Label required={startInputOptions.required} withInput={true}>
