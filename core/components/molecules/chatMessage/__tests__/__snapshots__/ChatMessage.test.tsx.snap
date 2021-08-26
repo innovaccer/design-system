@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatMessage component prop:isTyping snapshot 
+  typingText: "Typing Text"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Box"
+    data-test="DesignSystem-ChatMessage--Box"
+  >
+    <span
+      class="Text Text--default Text--regular"
+      data-test="DesignSystem-Text"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChatMessage component prop:isTyping snapshot 
+  typingText: "Typing Text", isTyping: false
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Box"
+    data-test="DesignSystem-ChatMessage--Box"
+  >
+    <span
+      class="Text Text--default Text--regular"
+      data-test="DesignSystem-Text"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChatMessage component prop:isTyping snapshot 
+  typingText: "Typing Text", isTyping: true
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Box Box--typing Box-undefined--withStatus"
+    data-test="DesignSystem-ChatMessage--Box"
+  >
+    <span
+      class="Text Text--default Text--regular"
+      data-test="DesignSystem-Text"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChatMessage component prop:text snapshot 
+  text: "Message Text"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Box"
+    data-test="DesignSystem-ChatMessage--Box"
+  >
+    <span
+      class="Text Text--default Text--regular"
+      data-test="DesignSystem-Text"
+    >
+      Message Text
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChatMessage component prop:type snapshot 
+  type: "incoming", text: "Message Text"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Box Box--incoming"
+    data-test="DesignSystem-ChatMessage--Box"
+  >
+    <span
+      class="Text Text--default Text--regular"
+      data-test="DesignSystem-Text"
+    >
+      Message Text
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ChatMessage component prop:type snapshot 
+  type: "outgoing", text: "Message Text"
+ 1`] = `
+<DocumentFragment>
+  <div
+    class="Box Box--outgoing"
+    data-test="DesignSystem-ChatMessage--Box"
+  >
+    <span
+      class="Text Text--default Text--regular"
+      data-test="DesignSystem-Text"
+    >
+      Message Text
+    </span>
+  </div>
+</DocumentFragment>
+`;
