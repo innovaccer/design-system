@@ -114,12 +114,12 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     if (this.props.disabled) return;
 
     const { stepSize, value } = this.props;
-    const { which } = event;
+    const { keyCode } = event;
 
-    if (which === Keys.ARROW_LEFT) {
+    if (keyCode === Keys.ARROW_LEFT) {
       this.changeValue(value - stepSize);
       event.preventDefault();
-    } else if (which === Keys.ARROW_RIGHT) {
+    } else if (keyCode === Keys.ARROW_RIGHT) {
       this.changeValue(value + stepSize);
       event.preventDefault();
     }
@@ -128,7 +128,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
   handleKeyUp = (event: React.KeyboardEvent<HTMLSpanElement>) => {
     if (this.props.disabled) return;
 
-    if ([Keys.ARROW_LEFT, Keys.ARROW_RIGHT].indexOf(event.which) >= 0) {
+    if ([Keys.ARROW_LEFT, Keys.ARROW_RIGHT].indexOf(event.keyCode) >= 0) {
       const { onRelease } = this.props;
       if (onRelease) onRelease(this.props.value);
     }
@@ -193,6 +193,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           ref={this.refHandlers.handle}
           style={style}
           tabIndex={1}
+          data-test="DesignSystem-MultiSlider-Handle"
         />
         <div className={TooltipClass} style={style}>
           {label}

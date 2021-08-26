@@ -839,12 +839,14 @@ exports[`TS renders children 1`] = `
   </svg>
   <div
     class="Slider"
+    data-test="DesignSystem-MultiSlider"
   >
     <div
       class="Slider-wrapper"
     >
       <div
         class="Slider-track"
+        data-test="DesignSystem-MultiSlider-Slider-Track"
       >
         <div
           class="Slider-progress Slider-progress--inRange"
@@ -860,6 +862,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 0.00%;"
         >
           <span
@@ -874,6 +877,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 10.00%;"
         >
           <span
@@ -888,6 +892,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 20.00%;"
         >
           <span
@@ -902,6 +907,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 30.00%;"
         >
           <span
@@ -916,6 +922,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 40.00%;"
         >
           <span
@@ -930,6 +937,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 50.00%;"
         >
           <span
@@ -944,6 +952,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 60.00%;"
         >
           <span
@@ -958,6 +967,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 70.00%;"
         >
           <span
@@ -972,6 +982,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 80.00%;"
         >
           <span
@@ -986,6 +997,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 90.00%;"
         >
           <span
@@ -1000,6 +1012,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 100.00%;"
         >
           <span
@@ -1015,6 +1028,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        data-test="DesignSystem-MultiSlider-Handle"
         style="left: calc(0.00% - 0px);"
         tabindex="1"
       />
@@ -1028,12 +1042,14 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Slider"
+    data-test="DesignSystem-MultiSlider"
   >
     <div
       class="Slider-wrapper"
     >
       <div
         class="Slider-track"
+        data-test="DesignSystem-MultiSlider-Slider-Track"
       >
         <div
           class="Slider-progress"
@@ -1053,6 +1069,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 0.00%;"
         >
           <span
@@ -1067,6 +1084,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 10.00%;"
         >
           <span
@@ -1081,6 +1099,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 20.00%;"
         >
           <span
@@ -1095,6 +1114,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 30.00%;"
         >
           <span
@@ -1109,6 +1129,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 40.00%;"
         >
           <span
@@ -1123,6 +1144,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 50.00%;"
         >
           <span
@@ -1137,6 +1159,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 60.00%;"
         >
           <span
@@ -1151,6 +1174,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 70.00%;"
         >
           <span
@@ -1165,6 +1189,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 80.00%;"
         >
           <span
@@ -1179,6 +1204,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 90.00%;"
         >
           <span
@@ -1193,6 +1219,7 @@ exports[`TS renders children 1`] = `
         </div>
         <div
           class="Slider-label"
+          data-test="DesignSystem-MultiSlider-Label"
           style="left: 100.00%;"
         >
           <span
@@ -1208,6 +1235,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        data-test="DesignSystem-MultiSlider-Handle"
         style="left: calc(0.00% - 0px);"
         tabindex="1"
       />
@@ -1219,6 +1247,7 @@ exports[`TS renders children 1`] = `
       </div>
       <div
         class="Slider-handle"
+        data-test="DesignSystem-MultiSlider-Handle"
         style="left: calc(100.00% - 0px);"
         tabindex="1"
       />
