@@ -136,10 +136,15 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
     });
 
     return (
-      <div key={index}>
-        <div className={menuClasses} onClick={() => onClickHandler(menu)}>
+      <div data-test="DesignSystem-VerticalNavigation--MenuWrapper" key={index}>
+        <div
+          data-test="DesignSystem-VerticalNavigation--MenuItem"
+          className={menuClasses}
+          onClick={() => onClickHandler(menu)}
+        >
           {menu.icon && (
             <Icon
+              data-test="DesignSystem-VerticalNavigation--MenuIcon"
               className={menuIconClasses}
               name={menu.icon}
               appearance={getIconAppearance(activeMenuIcon, menu.disabled)}
@@ -152,6 +157,7 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
               </span>
               {menu.subMenu && menu.subMenu.length > 0 && (
                 <Icon
+                  data-test="DesignSystem-SubMenuIcon"
                   className="mx-4"
                   name={menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
                   appearance="subtle"
@@ -173,7 +179,12 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
               });
 
               return (
-                <div key={ind} className={subMenuClasses} onClick={() => onClickHandler(subMenu)}>
+                <div
+                  data-test="DesignSystem-VerticalNavigation--SubMenu"
+                  key={ind}
+                  className={subMenuClasses}
+                  onClick={() => onClickHandler(subMenu)}
+                >
                   <Text appearance={getTextAppearance(isActive, subMenu.disabled)}>{subMenu.label}</Text>
                 </div>
               );
