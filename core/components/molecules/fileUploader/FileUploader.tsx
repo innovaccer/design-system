@@ -46,7 +46,7 @@ export const FileUploader = (props: FileUploaderProps) => {
   );
 
   return (
-    <div {...baseProps} className={FileUploaderClass}>
+    <div {...baseProps} className={FileUploaderClass} data-test="DesignSystem-FileUploader">
       <Text weight="medium">{title}</Text>
       <FileUploaderFormat formatLabel={formatLabel} />
       <Text size="small" appearance="subtle" className={!formatLabel ? 'mt-4' : ''}>
