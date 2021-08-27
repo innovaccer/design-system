@@ -54,6 +54,7 @@ export const FileUploaderButton = (props: FileUploaderButtonProps) => {
       <input
         name={name}
         id={id}
+        data-test="DesignSystem-FileUploaderButton--Input"
         accept={accept && accept.join(', ')}
         multiple={multiple}
         disabled={disabled}
