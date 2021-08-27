@@ -141,6 +141,10 @@ export interface DropdownListProps extends ListProps {
    * </pre>
    */
   popoverOptions?: PopoverOptions;
+  /**
+   * Callback to translate optionData
+   */
+  translateOption?: (option: OptionSchema | any) => void;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -179,7 +183,6 @@ export const usePrevious = (value: any) => {
 
 const DropdownList = (props: OptionsProps) => {
   const {
-    listOptions = [],
     inputRef,
     align = 'right',
     optionType = 'DEFAULT',
@@ -189,7 +192,6 @@ const DropdownList = (props: OptionsProps) => {
     withSelectAll = true,
     maxHeight = 200,
     customTrigger,
-    selected,
     tempSelected,
     previousSelected,
     remainingOptions,
@@ -207,7 +209,14 @@ const DropdownList = (props: OptionsProps) => {
     cancelOptions,
     toggleDropdown,
     className,
+    translateOption,
   } = props;
+
+  let { selected, listOptions = [] } = props;
+  if (translateOption) {
+    selected = [...selected.map(translateOption)] as [];
+    listOptions = [...listOptions.map(translateOption)] as [];
+  }
 
   const baseProps = extractBaseProps(props);
 
