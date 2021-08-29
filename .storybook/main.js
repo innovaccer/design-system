@@ -38,4 +38,10 @@ module.exports = {
     // Return the altered config
     return config;
   },
+  refs: {
+    'rich-text-editor': {
+      title: "Rich Text Editor",
+      url: "https://innovaccer.github.io/mds-rich-text-editor/"
+    }
+   }
 }
