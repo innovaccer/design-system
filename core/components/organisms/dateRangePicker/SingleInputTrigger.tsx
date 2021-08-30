@@ -101,7 +101,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   };
 
   return (
-    <Row>
+    <Row data-test="DesignSystem-DateRangePicker-SingleInputTrigger">
       <Column>
         {label && (
           <Label required={inputOptions.required} withInput={true}>

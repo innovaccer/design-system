@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiSlider component 
+  labelStepSize: 10, labelPrecision: 5, stepSize: 5, label: "MultiSlider", min: 0, max: 100, onChange: "[Function]", onClick: "[Function]", onRelease: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Slider"
+      data-test="DesignSystem-MultiSlider"
+    >
+      <div
+        class="Label Label--withInput"
+        data-test="DesignSystem-Label"
+      >
+        <label
+          class="Label-text"
+          data-test="DesignSystem-Label--Text"
+        >
+          MultiSlider
+        </label>
+      </div>
+      <div
+        class="Slider-wrapper"
+      >
+        <div
+          class="Slider-track"
+          data-test="DesignSystem-MultiSlider-Slider-Track"
+        >
+          <div
+            class="Slider-progress"
+            style="width: 100%;"
+          />
+        </div>
+        <div
+          class="Slider-axis"
+        >
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 0.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              0.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 10.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              10.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 20.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              20.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 30.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              30.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 40.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              40.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 50.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              50.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 60.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              60.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 70.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              70.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 80.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              80.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 90.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              90.00000
+            </span>
+          </div>
+          <div
+            class="Slider-label"
+            data-test="DesignSystem-MultiSlider-Label"
+            style="left: 100.00%;"
+          >
+            <span
+              class="Slider-ticks"
+            />
+            <span
+              class="Text Text--disabled Text--small"
+              data-test="DesignSystem-Text"
+            >
+              100.00000
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
