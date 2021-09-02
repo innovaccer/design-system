@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Dropdown } from '@/index';
 import { DropdownProps as Props } from '@/index.type';
@@ -27,6 +27,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 const FunctionValue = jest.fn();
+const trigger = 'DesignSystem-DropdownTrigger';
 
 describe('Dropdown component', () => {
   const mapper: Record<string, any> = {
@@ -245,4 +246,14 @@ describe('Dropdown component', () => {
   };
 
   testHelper(mapper, testFunc);
+});
+
+describe('renders dropdown', () => {
+  it('renders popover', () => {
+    const { getByTestId } = render(<Dropdown options={storyOptions} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+  });
 });
