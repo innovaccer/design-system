@@ -16,6 +16,7 @@ const CheckboxOption = (props: OptionTypeProps) => {
         onChange={onChangeHandler}
         tabIndex={-1}
         className="OptionCheckbox"
+        data-test={`${dataTest}--Checkbox`}
       />
     </div>
   );
