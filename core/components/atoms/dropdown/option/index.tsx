@@ -132,6 +132,7 @@ const Option = (props: OptionProps) => {
   if (props.optionRenderer) {
     return (
       <div
+        data-test="DesignSystem-DropdownOption--Custom"
         className={customOptionClass}
         data-disabled={disabled}
         onMouseEnter={onUpdateActiveOption}
@@ -153,7 +154,11 @@ const Option = (props: OptionProps) => {
     const iconAppearance = selected ? 'white' : 'disabled';
 
     if (typeof subInfo === 'string') {
-      return <Text appearance={labelAppearance}>{subInfo}</Text>;
+      return (
+        <Text data-test="DesignSystem-DropdownOption--WITH_META--Meta" appearance={labelAppearance}>
+          {subInfo}
+        </Text>
+      );
     }
 
     const { list = [], seperator } = subInfo;
@@ -164,6 +169,7 @@ const Option = (props: OptionProps) => {
         iconAppearance={iconAppearance}
         labelAppearance={labelAppearance}
         seperatorAppearance={iconAppearance}
+        data-test="DesignSystem-DropdownOption--WITH_META--MetaList"
       />
     );
   };
