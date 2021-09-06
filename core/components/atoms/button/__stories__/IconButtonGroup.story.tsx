@@ -2,10 +2,10 @@ import * as React from 'react';
 import Button from '@/components/atoms/button';
 
 export const iconButtonGroup = () => (
-  <div className="d-flex">
-    <Button size="tiny" icon="content_copy" className="mr-2" />
-    <Button size="tiny" icon="content_paste" className="mr-2" />
-    <Button size="tiny" icon="delete" />
+  <div className="d-inline-flex">
+    <Button size="tiny" icon="content_copy " className="mr-2" tooltip="Copy" />
+    <Button size="tiny" icon="content_paste" className="mr-2" tooltip="Paste" />
+    <Button size="tiny" icon="delete" tooltip="Delete" />
   </div>
 );
 
