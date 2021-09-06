@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { Button } from '@/index';
 import { ButtonProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -230,5 +230,40 @@ describe('Button component with icon', () => {
       const { getByTestId } = render(<Button loading={true}>Button</Button>);
       expect(getByTestId('DesignSystem-Button').children[1]).toHaveClass('Button-text--hidden');
     });
+  });
+});
+
+describe('Button component with Tooltip', () => {
+
+  it('check for tooltip attribute', () => {
+    const { getByTestId } = render(
+      <Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank" />
+    );
+
+    fireEvent.mouseEnter(getByTestId('DesignSystem-Button'));
+    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+  });
+
+  it('check for tooltip when children is given', () => {
+    render(
+      <Button
+        appearance="basic"
+        icon="keyboard_arrow_right"
+        tooltip="Next in rank"
+      >
+        Click Me
+      </Button>
+    );
+
+    const TooltipComponent = screen.queryByText('DesignSystem-Popover');
+    expect(TooltipComponent).not.toBeInTheDocument();
+  });
+
+  it('check for tooltip when icon is not given', () => {
+    render(
+      <Button appearance="basic" tooltip="Next in rank" />
+    );
+    const TooltipComponent = screen.queryByText('DesignSystem-Popover');
+    expect(TooltipComponent).not.toBeInTheDocument();
   });
 });

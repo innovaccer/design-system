@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const iconButton = () => <Button appearance="basic" icon="keyboard_arrow_right" />;
+export const iconButton = () => <Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank" />;
 
 export default {
   title: 'Components/Button/Icon Button',
