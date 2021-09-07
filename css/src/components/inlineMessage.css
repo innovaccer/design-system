@@ -1,0 +1,29 @@
+.InlineMessage {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border-radius: var(--spacing-m);
+  background-color: var(--white);
+}
+
+.InlineMessage-icon {
+  margin-right: var(--spacing);
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s); 
+}
+
+.InlineMessage-text--warning, .InlineMessage-icon--warning {
+  color: var(--accent1);
+}
+
+.InlineMessage-text--alert {
+  color: var(--alert);
+}
+
+.InlineMessage-text--info {
+  color: var(--primary);
+}
+
+.InlineMessage-text--success {
+  color: var(--success);
+}
