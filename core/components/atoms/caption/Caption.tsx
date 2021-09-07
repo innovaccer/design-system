@@ -42,7 +42,7 @@ export const Caption = (props: CaptionProps) => {
   });
 
   return (
-    <div {...baseProps} className={classes}>
+    <div {...baseProps} className={classes} data-test="DesignSystem-Caption">
       {error && (
         <div className={errorIconClass}>
           <Icon size={14} name={'error'} appearance={'alert'} />

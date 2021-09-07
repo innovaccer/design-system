@@ -48,6 +48,7 @@ exports[`DatePicker component
         </div>
         <div
           class="Caption Caption--hidden Caption--withInput"
+          data-test="DesignSystem-Caption"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"
@@ -108,6 +109,7 @@ exports[`DatePicker component
         </div>
         <div
           class="Caption Caption--hidden Caption--withInput"
+          data-test="DesignSystem-Caption"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"
@@ -2148,6 +2150,7 @@ exports[`DatePicker component
         </div>
         <div
           class="Caption Caption--hidden Caption--withInput"
+          data-test="DesignSystem-Caption"
         >
           <span
             class="Text Text--subtle Text--medium Text--small"
