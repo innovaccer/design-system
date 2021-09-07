@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineMessage component 
+  appearance: "alert", description: "Inline Message here."
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="InlineMessage"
+      data-test="DesignSystem-InlineMessage"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon"
+        data-test="DesignSystem-InlineMessage--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        error_round
+      </i>
+      <div>
+        <span
+          class="Text Text--default Text--regular InlineMessage-text--alert"
+          data-test="DesignSystem-InlineMessage--Description"
+        >
+          Inline Message here.
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`InlineMessage component 
+  appearance: "default", description: "Inline Message here."
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="InlineMessage"
+      data-test="DesignSystem-InlineMessage"
+    >
+      <div>
+        <span
+          class="Text Text--default Text--regular InlineMessage-text--default"
+          data-test="DesignSystem-InlineMessage--Description"
+        >
+          Inline Message here.
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`InlineMessage component 
+  appearance: "info", description: "Inline Message here."
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="InlineMessage"
+      data-test="DesignSystem-InlineMessage"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--info InlineMessage-icon"
+        data-test="DesignSystem-InlineMessage--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        info_round
+      </i>
+      <div>
+        <span
+          class="Text Text--default Text--regular InlineMessage-text--info"
+          data-test="DesignSystem-InlineMessage--Description"
+        >
+          Inline Message here.
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`InlineMessage component 
+  appearance: "success", description: "Inline Message here."
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="InlineMessage"
+      data-test="DesignSystem-InlineMessage"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--success InlineMessage-icon"
+        data-test="DesignSystem-InlineMessage--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        check_circle_round
+      </i>
+      <div>
+        <span
+          class="Text Text--default Text--regular InlineMessage-text--success"
+          data-test="DesignSystem-InlineMessage--Description"
+        >
+          Inline Message here.
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`InlineMessage component 
+  appearance: "warning", description: "Inline Message here."
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="InlineMessage"
+      data-test="DesignSystem-InlineMessage"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--warning InlineMessage-icon InlineMessage-icon--warning"
+        data-test="DesignSystem-InlineMessage--Icon"
+        style="font-size: 16px; width: 16px;"
+      >
+        warning_round
+      </i>
+      <div>
+        <span
+          class="Text Text--default Text--regular InlineMessage-text--warning"
+          data-test="DesignSystem-InlineMessage--Description"
+        >
+          Inline Message here.
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
