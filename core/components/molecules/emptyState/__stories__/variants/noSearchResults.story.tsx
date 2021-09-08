@@ -2,7 +2,7 @@ import * as React from 'react';
 import { EmptyState, Button, Card } from '@/index';
 import noSearch from '../assets/noSearch.png';
 
-export const smallSizeWithButton = () => {
+export const noSearchResults = () => {
   return (
     <Card className="py-5">
       <EmptyState
@@ -18,6 +18,6 @@ export const smallSizeWithButton = () => {
 };
 
 export default {
-  title: 'Components/EmptyState/Variants/Small Size With Button',
+  title: 'Components/EmptyState/Variants/No Search Results',
   component: EmptyState,
 };
