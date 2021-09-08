@@ -51,7 +51,7 @@
   justify-content: flex-start;
   padding-top: var(--spacing-l);
   padding-bottom: var(--spacing-l);
-  padding-right: var(--spacing);
+  padding-right: var(--spacing-2);
 }
 
 .FullscreenModal-footer {
