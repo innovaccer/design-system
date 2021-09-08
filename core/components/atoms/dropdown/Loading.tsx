@@ -7,31 +7,31 @@ const Loading = (props: any) => {
 
   switch (loadingType) {
     case 'DEFAULT':
-      return <PlaceholderParagraph length={'large'} />;
+      return <PlaceholderParagraph length={'large'} data-test="DesignSystem-Dropdown--PlaceholderParagraph" />;
     case 'WITH_ICON':
       return (
-        <Placeholder withImage={true} round={true}>
+        <Placeholder withImage={true} round={true} data-test="DesignSystem-Dropdown--Placeholder">
           <PlaceholderParagraph length="large" />
         </Placeholder>
       );
     case 'WITH_META':
       return (
-        <Placeholder withImage={false}>
-          <PlaceholderParagraph length="large" />
-          <PlaceholderParagraph length="medium" size="xxs" />
+        <Placeholder withImage={false} data-test="DesignSystem-Dropdown--Placeholder">
+          <PlaceholderParagraph length="large" data-test="DesignSystem-Dropdown--PlaceholderParagraph" />
+          <PlaceholderParagraph length="medium" size="xxs" data-test="DesignSystem-Dropdown--PlaceholderParagraph" />
         </Placeholder>
       );
     case 'WITH_CHECKBOX':
       return (
-        <Placeholder withImage={true}>
+        <Placeholder withImage={true} data-test="DesignSystem-Dropdown--Placeholder">
           <PlaceholderParagraph length="large" />
         </Placeholder>
       );
     case 'ICON_WITH_META':
       return (
-        <Placeholder withImage={true} round={true} imageSize={'medium'}>
-          <PlaceholderParagraph length="large" />
-          <PlaceholderParagraph length="medium" size="xxs" />
+        <Placeholder withImage={true} round={true} imageSize={'medium'} data-test="DesignSystem-Dropdown--Placeholder">
+          <PlaceholderParagraph length="large" data-test="DesignSystem-Dropdown--PlaceholderParagraph" />
+          <PlaceholderParagraph length="medium" size="xxs" data-test="DesignSystem-Dropdown--PlaceholderParagraph" />
         </Placeholder>
       );
   }

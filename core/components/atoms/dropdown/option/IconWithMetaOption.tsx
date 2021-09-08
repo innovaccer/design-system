@@ -30,7 +30,9 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
       data-test={dataTest}
       data-disabled={disabled}
     >
-      {icon && <Icon className="Option-icon mr-4" name={icon} appearance={appearance} />}
+      {icon && (
+        <Icon data-test={`${dataTest}--Icon`} className="Option-icon mr-4" name={icon} appearance={appearance} />
+      )}
       <div className={'Option-label'}>
         <Text className={textClassName} appearance={appearance}>
           {label}
