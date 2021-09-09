@@ -16,7 +16,8 @@
   align-items: center;
   padding-left:var(--spacing);
   border: var(--spacing-xs) solid transparent;
-  min-height: var(--spacing-3);
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
   max-width: calc(100% - 28px);
   flex-wrap:wrap;
 }
