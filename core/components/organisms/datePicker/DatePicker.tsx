@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { Calendar, SharedProps } from '../calendar/Calendar';
 import { DateType, DateFormat } from '../calendar/types';
-import { Popover, Utils } from '@/index';
+import { Popover, Utils, Chip } from '@/index';
 import { PopoverProps, InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
 import { Trigger } from './Trigger';
+import config from '../calendar/config';
 
 export type DatePickerProps = SharedProps & {
   /**
@@ -180,19 +181,32 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       disabledAfter,
       onDateChange,
       closeOnSelect,
+      size,
       ...rest
     } = this.props;
 
     const { date } = this.state;
-
+    const { months } = config;
+    const monthIndex: number = new Date().getMonth();
+    const todayMonthAndDate: string = `${months[monthIndex]} ${new Date().getDate()}`;
     return (
-      <Calendar
-        {...rest}
-        date={convertToDate(date, inputFormat, validators)}
-        disabledBefore={convertToDate(disabledBefore, inputFormat, validators)}
-        disabledAfter={convertToDate(disabledAfter, inputFormat, validators)}
-        onDateChange={this.onDateChangeHandler}
-      />
+      <div>
+        <Calendar
+          {...rest}
+          date={convertToDate(date, inputFormat, validators)}
+          disabledBefore={convertToDate(disabledBefore, inputFormat, validators)}
+          disabledAfter={convertToDate(disabledAfter, inputFormat, validators)}
+          onDateChange={this.onDateChangeHandler}
+        />
+        <div className="d-flex justify-content-center pb-6 pt-3" data-test="DesignSystem-Select--TodaysDate-wrapper">
+          <Chip
+            label={`Today, ${todayMonthAndDate}`}
+            name="chip"
+            type="action"
+            onClick={() => this.onDateChangeHandler(new Date())}
+          />
+        </div>
+      </div>
     );
   }
 
