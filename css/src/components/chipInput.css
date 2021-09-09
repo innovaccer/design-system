@@ -4,8 +4,8 @@
   border-radius: var(--spacing-m);
   border: var(--border);
   padding-left: var(--spacing-s);
-  padding-top: var(--spacing-s);
-  padding-bottom: var(--spacing-s);
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
   background: var(--white);
   cursor: text;
   flex: 100%;
