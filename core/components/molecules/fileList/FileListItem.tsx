@@ -80,16 +80,20 @@ export const FileListItem = (props: FileListItemProps) => {
   };
 
   return (
-    <div {...baseProps} className={FileItemClass} onClick={onClickHandler}>
+    <div {...baseProps} className={FileItemClass} onClick={onClickHandler} data-test="DesignSystem-FileListItem">
       <div className="FileItem-file">
         <div className="FileItem-fileContent">
           <FileIcon file={file} status={status} progress={progress} />
-          <Text className="FileItem-text" appearance={status === 'completed' ? 'default' : 'subtle'}>
+          <Text
+            data-test="DesignSystem-FileListItem--Name"
+            className="FileItem-text"
+            appearance={status === 'completed' ? 'default' : 'subtle'}
+          >
             {name}
           </Text>
         </div>
         <div className="FileItem-actions">
-          <Text className="FileItem-size" appearance={'subtle'}>
+          <Text className="FileItem-size" appearance={'subtle'} data-test="DesignSystem-FileListItem--Size">
             {fileSize || file.size}
           </Text>
           {!!actions && actions}

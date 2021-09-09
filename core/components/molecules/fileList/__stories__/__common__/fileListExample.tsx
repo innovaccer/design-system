@@ -18,6 +18,7 @@ export const fileList: FileListProps['fileList'] = [
       type: 'video',
     } as any),
     status: 'completed',
+    fileSize: '4 MB',
     id: 2,
   },
   {
