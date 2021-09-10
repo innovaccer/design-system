@@ -1,3 +1,34 @@
+## 2.3.0  (2021-09-10) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+* Improve padding of close button in overlays header  (4d4965b9) 
+* Fixes nested rows losing their open state in grid (aed5b032)
+### Improvements
+* Adds test cases for FileUploaderComponent (5604656c)
+* Adds test cases for TimePicker component (4e776a46)
+* Adds test cases for ChatMessage Component (0443446c)
+* Adds test cases for slider component (fa82992a)
+* Adds test cases for DateRangePicker component (8c5abb26)
+### Documentation
+* Embeds rich text editor storybook (f3a469da)
+
+-------------------
+
 ## 2.3.0-2  (2021-25-10) 
 
 ### Highlights
