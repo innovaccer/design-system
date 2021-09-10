@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478629993 
+   * Generated on: 1631263425235 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.3.0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -257,6 +257,8 @@ function _assertThisInitialized$2(self) {
 function _possibleConstructorReturn$1(self, call) {
   if (call && (typeof call === "object" || typeof call === "function")) {
     return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
   }
 
   return _assertThisInitialized$2(self);
@@ -1363,7 +1365,7 @@ var uidGenerator = function uidGenerator() {
   return uuid;
 };
 
-var _excluded$w = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"];
+var _excluded$w = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked", "helpText"];
 
 /**
  * ######Checkbox has two types:
@@ -1371,7 +1373,7 @@ var _excluded$w = ["size", "tabIndex", "defaultChecked", "indeterminate", "label
  *  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)
  */
 var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
-  var _classNames, _classNames2, _classNames4;
+  var _classNames, _classNames2, _classNames3;
 
   var _props$size = props.size,
       size = _props$size === void 0 ? 'regular' : _props$size,
@@ -1386,7 +1388,8 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       value = props.value,
       className = props.className;
       props.checked;
-      var rest = _objectWithoutProperties$1(props, _excluded$w);
+      var helpText = props.helpText,
+      rest = _objectWithoutProperties$1(props, _excluded$w);
 
   var ref = React.useRef(null);
   React.useImperativeHandle(forwardedRef, function () {
@@ -1408,9 +1411,9 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   }, [props.checked]);
   var CheckboxClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Checkbox', true), _defineProperty$2(_classNames, 'Checkbox--disabled', disabled), _classNames), className);
   var CheckboxOuterWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Checkbox-outerWrapper', true), _defineProperty$2(_classNames2, "Checkbox-outerWrapper--".concat(size), size), _classNames2));
-  var CheckboxTextClass = classnames(_defineProperty$2({}, 'Checkbox-label', true));
-  var CheckboxInputWrapper = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Checkbox-input', true), _defineProperty$2(_classNames4, 'Checkbox-input--checked', checked), _defineProperty$2(_classNames4, 'Checkbox-input--indeterminate', props.indeterminate), _classNames4));
+  var CheckboxInputWrapper = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Checkbox-input', true), _defineProperty$2(_classNames3, 'Checkbox-input--checked', checked), _defineProperty$2(_classNames3, 'Checkbox-input--indeterminate', props.indeterminate), _classNames3));
   var CheckboxWrapper = classnames(_defineProperty$2({}, 'Checkbox-wrapper', true));
+  var CheckboxLabelClass = classnames(_defineProperty$2({}, 'Checkbox-label', true));
 
   var setIndeterminate = function setIndeterminate(indeterminateValue) {
     ref.current.indeterminate = indeterminateValue;
@@ -1428,9 +1431,11 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
   var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
   var IconSize = size === 'tiny' ? 12 : 16;
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-Checkbox",
     className: CheckboxClass
   }, /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-Checkbox-OuterWrapper",
     className: CheckboxOuterWrapper
   }, /*#__PURE__*/React.createElement("input", _extends$3({}, rest, {
     type: "checkbox",
@@ -1443,20 +1448,29 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     value: value,
     className: CheckboxInputWrapper,
     tabIndex: tabIndex,
-    id: id
+    id: id,
+    "data-test": "DesignSystem-Checkbox-InputBox"
   })), /*#__PURE__*/React.createElement("span", {
-    className: CheckboxWrapper
+    className: CheckboxWrapper,
+    "data-test": "DesignSystem-Checkbox-Icon"
   }, IconName && /*#__PURE__*/React.createElement(Icon, {
     name: IconName,
     size: IconSize,
     appearance: 'white'
-  }))), label && label.trim() && /*#__PURE__*/React.createElement("label", {
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "Checkbox-labelWrapper"
+  }, label && label.trim() && /*#__PURE__*/React.createElement("label", {
     htmlFor: id,
-    className: CheckboxTextClass
+    className: CheckboxLabelClass,
+    "data-test": "DesignSystem-Checkbox-Label"
   }, /*#__PURE__*/React.createElement(Text, {
     size: size === 'tiny' ? 'small' : 'regular',
     appearance: disabled ? 'disabled' : 'default'
-  }, label.trim())));
+  }, label.trim())), helpText && /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-Checkbox-HelpText",
+    size: "small",
+    appearance: disabled ? 'disabled' : 'subtle'
+  }, helpText.trim()))));
 });
 Checkbox.displayName = 'Checkbox';
 
@@ -2954,6 +2968,7 @@ var renderDropdown = function renderDropdown(list, onClick) {
 
   var customTrigger = function customTrigger() {
     return /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       size: "tiny",
       appearance: "transparent",
       icon: "more_horiz_filled",
@@ -3824,7 +3839,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           }, "Calendar-dateValue--".concat(size), size));
           return /*#__PURE__*/React.createElement("div", {
             key: "".concat(row, "-").concat(col),
-            className: wrapperClass
+            className: wrapperClass,
+            "data-test": "designSystem-Calendar-WrapperClass"
           }, !dummy && /*#__PURE__*/React.createElement(Text, {
             appearance: active ? 'white' : disabled ? 'disabled' : 'default',
             size: size === 'small' ? 'small' : 'regular',
@@ -4062,7 +4078,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         'Calendar-wrapper': true
       }, className);
       return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-        className: classes
+        className: classes,
+        "data-test": "DesignSystem-Calendar-Wrapper"
       }), Array.from({
         length: monthsInView
       }, function (_x, index) {
@@ -4401,8 +4418,8 @@ var Trigger$1 = function Trigger(props) {
   }, inputOptions, {
     error: showError,
     mask: mask,
-    value: date$1 ? translateToString(inputFormat, date$1) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+    value: date$1 ? translateToString(inputFormat, date$1) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
     onChange: onChangeHandler,
     onBlur: onBlurHandler,
     onClear: onClearHandler,
@@ -4456,6 +4473,9 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var disabled = _this.props.inputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -4664,8 +4684,8 @@ var TimePicker = function TimePicker(props) {
     placeholderChar: placeholderChar
   }, inputOptions, {
     mask: mask,
-    value: time$1 ? translateToTime(inputFormat, time$1) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+    value: time$1 ? translateToTime(inputFormat, time$1) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
     validators: inputValidator,
     onChange: onChangeHandler,
     onClear: onClearHandler,
@@ -4814,14 +4834,15 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     onBlur: onBlur,
     onClick: onClick,
     onFocus: onFocus
-  })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
+  })), disabled ? '' : info ? /*#__PURE__*/React.createElement(Tooltip, {
     position: "top",
     tooltip: info
-  }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
+  }, trigger) : actionIcon && (value || defaultValue) ? actionIcon : onClear && (value || defaultValue) && /*#__PURE__*/React.createElement("div", {
     className: rightIconClass,
     onClick: function onClick(e) {
       return onClear(e);
-    }
+    },
+    "data-test": "DesignSystem-Input--closeIcon"
   }, /*#__PURE__*/React.createElement(Icon, {
     name: 'close',
     size: sizeMapping$1[size]
@@ -4931,7 +4952,9 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     if (onChange) {
       var syntheticEvent = Object.create(e, {
         target: {
-          value: newValue
+          value: {
+            value: newValue
+          }
         }
       });
       onChange(syntheticEvent);
@@ -5134,9 +5157,11 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
   };
 
   var getCurrSelection = function getCurrSelection() {
+    var _ref$current, _ref$current2;
+
     return {
-      start: ref.current.selectionStart || 0,
-      end: ref.current.selectionEnd || 0
+      start: ((_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.selectionStart) || 0,
+      end: ((_ref$current2 = ref.current) === null || _ref$current2 === void 0 ? void 0 : _ref$current2.selectionEnd) || 0
     };
   };
 
@@ -5234,7 +5259,7 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       return setCursorPosition(cursorPosition);
     });
 
-    if (isValid(validators, newValue)) {
+    if (isValid(validators, newValue) && newValue !== value) {
       setValue(newValue);
       if (onChange) onChange(e, newValue);
     }
@@ -5377,7 +5402,8 @@ var Caption = function Caption(props) {
   }, _defineProperty$2(_classNames, 'Caption--hidden', hide), _defineProperty$2(_classNames, 'Caption--withInput', withInput), _classNames), className);
   var errorIconClass = classnames(_defineProperty$2({}, 'Caption-icon', true));
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: classes
+    className: classes,
+    "data-test": "DesignSystem-Caption"
   }), error && /*#__PURE__*/React.createElement("div", {
     className: errorIconClass
   }, /*#__PURE__*/React.createElement(Icon, {
@@ -5647,12 +5673,15 @@ var Meta = function Meta(props) {
       iconAppearance = props.iconAppearance,
       labelAppearance = props.labelAppearance;
   return /*#__PURE__*/React.createElement("span", {
+    "data-test": "DesignSystem-MetaList--Meta",
     className: 'Meta'
   }, icon && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-MetaList--MetaIcon",
     name: icon,
     appearance: iconAppearance,
     className: 'Meta-icon'
   }), /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-MetaList--MetaLabel",
     appearance: labelAppearance
   }, label));
 };
@@ -5671,9 +5700,12 @@ var MetaList = function MetaList(props) {
   var MetaClass = classnames(_defineProperty$2({}, 'MetaList', true), className);
   var SeperatorClass = classnames(_defineProperty$2({}, 'MetaList-seperator', true));
   var LeftSeperatorClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'MetaList-seperator', true), _defineProperty$2(_classNames3, 'MetaList-seperator--left', true), _classNames3));
-  return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-MetaList"
+  }, baseProps, {
     className: MetaClass
   }), seperator && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-MetaList--Seperator",
     name: "fiber_manual_record",
     size: 8,
     className: LeftSeperatorClass,
@@ -5692,6 +5724,7 @@ var MetaList = function MetaList(props) {
       iconAppearance: iconAppearance,
       labelAppearance: labelAppearance
     }), rightSeperator && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-MetaList--rightSeperator",
       name: "fiber_manual_record",
       size: 8,
       className: SeperatorClass,
@@ -5704,253 +5737,6 @@ MetaList.defaultProps = {
   seperatorAppearance: 'disabled',
   iconAppearance: 'disabled',
   labelAppearance: 'subtle'
-};
-
-var _excluded$i = ["children", "className", "onOutsideClick"];
-var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var children = props.children,
-      className = props.className,
-      onOutsideClick = props.onOutsideClick,
-      rest = _objectWithoutProperties$1(props, _excluded$i);
-
-  var innerRef = React.useRef(null);
-  React.useImperativeHandle(ref, function () {
-    return innerRef.current;
-  }, [innerRef]);
-  React.useEffect(function () {
-    document.addEventListener('click', handleOutsideClick, true);
-    return function () {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
-  var handleOutsideClick = React.useCallback(function (event) {
-    var element = innerRef;
-
-    if (!event.target || !element.current) {
-      return;
-    }
-
-    if (!ReactDOM.findDOMNode(element.current).contains(event.target)) {
-      onOutsideClick(event);
-    }
-  }, []);
-  var classes = classnames(_defineProperty$2({}, 'OutsideClick', true), className);
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    ref: innerRef
-  }, rest, {
-    className: classes
-  }), children);
-});
-OutsideClick.displayName = 'OutsideClick';
-
-var _excluded$h = ["appearance", "children", "className"];
-var Paragraph = function Paragraph(props) {
-  var appearance = props.appearance,
-      children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties$1(props, _excluded$h);
-
-  var classes = classnames(_defineProperty$2({
-    Text: true
-  }, "Text--".concat(appearance), appearance), className);
-  return /*#__PURE__*/React.createElement(GenericText, _extends$3({
-    "data-test": "DesignSystem-Paragraph"
-  }, rest, {
-    className: classes,
-    componentType: "p"
-  }), children);
-};
-Paragraph.displayName = 'Paragraph';
-Paragraph.defaultProps = {
-  appearance: 'default'
-};
-
-var ProgressBar = function ProgressBar(props) {
-  var max = props.max,
-      value = props.value,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var style = {
-    width: value > 0 ? "".concat(Math.min(value, max) * 100 / max, "%") : '0'
-  };
-  var ProgressBarClass = classnames({
-    ProgressBar: true
-  }, className);
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-ProgressBar"
-  }, baseProps, {
-    className: ProgressBarClass
-  }), /*#__PURE__*/React.createElement("div", {
-    className: 'ProgressBar-indicator',
-    style: style
-  }));
-};
-ProgressBar.displayName = 'ProgressBar';
-ProgressBar.defaultProps = {
-  max: 100
-};
-
-var _excluded$g = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"];
-var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
-  var _classNames, _classNames2, _classNames3;
-
-  var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      label = props.label,
-      disabled = props.disabled,
-      onChange = props.onChange,
-      name = props.name,
-      value = props.value,
-      checked = props.checked,
-      defaultChecked = props.defaultChecked,
-      className = props.className,
-      rest = _objectWithoutProperties$1(props, _excluded$g);
-
-  var ref = React.useRef(null);
-  React.useImperativeHandle(forwardedRef, function () {
-    return ref.current;
-  });
-  var RadioClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Radio', true), _defineProperty$2(_classNames, 'Radio--disabled', disabled), _classNames), className);
-  var RadioWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Radio-wrapper', true), _defineProperty$2(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
-  var RadioOuterWrapper = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Radio-outerWrapper', true), _defineProperty$2(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
-  var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
-  return /*#__PURE__*/React.createElement("div", {
-    className: RadioClass
-  }, /*#__PURE__*/React.createElement("div", {
-    className: RadioOuterWrapper
-  }, /*#__PURE__*/React.createElement("input", _extends$3({}, rest, {
-    type: "radio",
-    disabled: disabled,
-    checked: checked,
-    defaultChecked: defaultChecked,
-    ref: ref,
-    name: name,
-    value: value,
-    onChange: onChange,
-    className: "Radio-input",
-    id: id
-  })), /*#__PURE__*/React.createElement("span", {
-    className: RadioWrapper
-  })), label && /*#__PURE__*/React.createElement("label", {
-    className: "Radio-label",
-    htmlFor: id
-  }, /*#__PURE__*/React.createElement(Text, {
-    size: size === 'tiny' ? 'small' : 'regular',
-    appearance: disabled ? 'disabled' : 'default'
-  }, label)));
-});
-Radio.displayName = 'Radio';
-
-var _excluded$f = ["className", "children"];
-var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var className = props.className,
-      children = props.children,
-      rest = _objectWithoutProperties$1(props, _excluded$f);
-
-  var classes = classnames(_defineProperty$2({
-    Row: true
-  }, "".concat(className), className));
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-Row",
-    ref: ref
-  }, rest, {
-    className: classes
-  }), children);
-});
-Row.displayName = 'Row';
-
-var StatusHint = function StatusHint(props) {
-  var _classNames2;
-
-  var appearance = props.appearance,
-      children = props.children,
-      _onMouseEnter = props.onMouseEnter,
-      _onMouseLeave = props.onMouseLeave,
-      _onClick = props.onClick,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var StatusHintClass = classnames(_defineProperty$2({}, 'StatusHint', true), className);
-  var StatusHintIconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'StatusHint-icon', true), _defineProperty$2(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-StatusHint"
-  }, baseProps, {
-    className: StatusHintClass,
-    onClick: function onClick(e) {
-      return _onClick && _onClick(e);
-    },
-    onMouseEnter: function onMouseEnter(e) {
-      return _onMouseEnter && _onMouseEnter(e);
-    },
-    onMouseLeave: function onMouseLeave(e) {
-      return _onMouseLeave && _onMouseLeave(e);
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    "data-test": "DesignSystem-StatusHint--Icon",
-    className: StatusHintIconClass
-  }), /*#__PURE__*/React.createElement(Text, {
-    "data-test": "DesignSystem-StatusHint--Text",
-    weight: 'medium'
-  }, children));
-};
-StatusHint.displayName = 'StatusHint';
-StatusHint.defaultProps = {
-  appearance: 'default'
-};
-
-var Pills = function Pills(props) {
-  var _classNames;
-
-  var appearance = props.appearance,
-      children = props.children,
-      subtle = props.subtle,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {
-    Pills: true
-  }, _defineProperty$2(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty$2(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
-  return /*#__PURE__*/React.createElement("span", _extends$3({
-    "data-test": "DesignSystem-Pills"
-  }, baseProps, {
-    className: classes
-  }), children);
-};
-Pills.displayName = 'Pills';
-Pills.defaultProps = {
-  appearance: 'secondary'
-};
-
-var Spinner = function Spinner(props) {
-  var appearance = props.appearance,
-      size = props.size,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var wrapperClasses = classnames(_defineProperty$2({
-    Spinner: true
-  }, "Spinner--".concat(size), size), className);
-  var circleClasses = classnames(_defineProperty$2({
-    Circle: true
-  }, "Circle--".concat(appearance), appearance));
-  var svgProps = {
-    viewBox: '0 0 50 50'
-  };
-  var circleProps = {
-    cx: 25,
-    cy: 25,
-    r: 20,
-    fill: 'none',
-    strokeMiterlimit: '10',
-    strokeWidth: '4'
-  };
-  return /*#__PURE__*/React.createElement("svg", _extends$3({}, baseProps, {
-    className: wrapperClasses
-  }, svgProps), /*#__PURE__*/React.createElement("circle", _extends$3({
-    className: circleClasses
-  }, circleProps)));
-};
-Spinner.displayName = 'Spinner';
-Spinner.defaultProps = {
-  appearance: 'primary',
-  size: 'medium'
 };
 
 var ARROW_LEFT = 37;
@@ -6132,13 +5918,13 @@ var Handle = /*#__PURE__*/function (_React$Component) {
       var _this$props2 = _this.props,
           stepSize = _this$props2.stepSize,
           value = _this$props2.value;
-      var which = event.which;
+      var keyCode = event.keyCode;
 
-      if (which === ARROW_LEFT) {
+      if (keyCode === ARROW_LEFT) {
         _this.changeValue(value - stepSize);
 
         event.preventDefault();
-      } else if (which === ARROW_RIGHT) {
+      } else if (keyCode === ARROW_RIGHT) {
         _this.changeValue(value + stepSize);
 
         event.preventDefault();
@@ -6148,7 +5934,7 @@ var Handle = /*#__PURE__*/function (_React$Component) {
     _defineProperty$2(_assertThisInitialized$2(_this), "handleKeyUp", function (event) {
       if (_this.props.disabled) return;
 
-      if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.which) >= 0) {
+      if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.keyCode) >= 0) {
         var onRelease = _this.props.onRelease;
         if (onRelease) onRelease(_this.props.value);
       }
@@ -6241,7 +6027,8 @@ var Handle = /*#__PURE__*/function (_React$Component) {
         onKeyUp: this.handleKeyUp,
         ref: this.refHandlers.handle,
         style: style,
-        tabIndex: 1
+        tabIndex: 1,
+        "data-test": "DesignSystem-MultiSlider-Handle"
       }), /*#__PURE__*/React.createElement("div", {
         className: TooltipClass,
         style: style
@@ -6513,7 +6300,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
           onMouseOver: function onMouseOver() {
             return _this.handleLabelMouseOver(i);
           },
-          onMouseLeave: _this.handleLabelMouseLeave
+          onMouseLeave: _this.handleLabelMouseLeave,
+          "data-test": "DesignSystem-MultiSlider-Label"
         }, /*#__PURE__*/React.createElement("span", {
           className: 'Slider-ticks'
         }), labelRenderer !== false && /*#__PURE__*/React.createElement(Text, {
@@ -6643,7 +6431,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
       var SliderClass = classnames(_defineProperty$2({}, 'Slider', true), className);
       var WrapperClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Slider-wrapper', true), _defineProperty$2(_classNames3, 'Slider-wrapper--disabled', this.props.disabled), _classNames3));
       return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-        className: SliderClass
+        className: SliderClass,
+        "data-test": "DesignSystem-MultiSlider"
       }), label && /*#__PURE__*/React.createElement(Label, {
         withInput: true
       }, label), /*#__PURE__*/React.createElement("div", {
@@ -6653,7 +6442,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
         ref: function ref(_ref3) {
           return _this2.trackElement = _ref3;
         },
-        onMouseDown: this.maybeHandleTrackClick
+        onMouseDown: this.maybeHandleTrackClick,
+        "data-test": "DesignSystem-MultiSlider-Slider-Track"
       }, this.renderTracks()), /*#__PURE__*/React.createElement("div", {
         className: "Slider-axis"
       }, this.renderLabels()), this.renderHandles()));
@@ -6672,6 +6462,265 @@ _defineProperty$2(MultiSlider, "defaultProps", {
 });
 
 _defineProperty$2(MultiSlider, "Handle", MultiSliderHandle);
+
+var _excluded$i = ["children", "className", "onOutsideClick"];
+var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var children = props.children,
+      className = props.className,
+      onOutsideClick = props.onOutsideClick,
+      rest = _objectWithoutProperties$1(props, _excluded$i);
+
+  var innerRef = React.useRef(null);
+  React.useImperativeHandle(ref, function () {
+    return innerRef.current;
+  }, [innerRef]);
+  React.useEffect(function () {
+    document.addEventListener('click', handleOutsideClick, true);
+    return function () {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+  var handleOutsideClick = React.useCallback(function (event) {
+    var element = innerRef;
+
+    if (!event.target || !element.current) {
+      return;
+    }
+
+    if (!ReactDOM.findDOMNode(element.current).contains(event.target)) {
+      onOutsideClick(event);
+    }
+  }, []);
+  var classes = classnames(_defineProperty$2({}, 'OutsideClick', true), className);
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    ref: innerRef
+  }, rest, {
+    className: classes
+  }), children);
+});
+OutsideClick.displayName = 'OutsideClick';
+
+var _excluded$h = ["appearance", "children", "className"];
+var Paragraph = function Paragraph(props) {
+  var appearance = props.appearance,
+      children = props.children,
+      className = props.className,
+      rest = _objectWithoutProperties$1(props, _excluded$h);
+
+  var classes = classnames(_defineProperty$2({
+    Text: true
+  }, "Text--".concat(appearance), appearance), className);
+  return /*#__PURE__*/React.createElement(GenericText, _extends$3({
+    "data-test": "DesignSystem-Paragraph"
+  }, rest, {
+    className: classes,
+    componentType: "p"
+  }), children);
+};
+Paragraph.displayName = 'Paragraph';
+Paragraph.defaultProps = {
+  appearance: 'default'
+};
+
+var ProgressBar = function ProgressBar(props) {
+  var max = props.max,
+      value = props.value,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var style = {
+    width: value > 0 ? "".concat(Math.min(value, max) * 100 / max, "%") : '0'
+  };
+  var ProgressBarClass = classnames({
+    ProgressBar: true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-ProgressBar"
+  }, baseProps, {
+    className: ProgressBarClass
+  }), /*#__PURE__*/React.createElement("div", {
+    className: 'ProgressBar-indicator',
+    style: style
+  }));
+};
+ProgressBar.displayName = 'ProgressBar';
+ProgressBar.defaultProps = {
+  max: 100
+};
+
+var _excluded$g = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText"];
+var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
+  var _classNames, _classNames2, _classNames3;
+
+  var _props$size = props.size,
+      size = _props$size === void 0 ? 'regular' : _props$size,
+      label = props.label,
+      disabled = props.disabled,
+      onChange = props.onChange,
+      name = props.name,
+      value = props.value,
+      checked = props.checked,
+      defaultChecked = props.defaultChecked,
+      className = props.className,
+      helpText = props.helpText,
+      rest = _objectWithoutProperties$1(props, _excluded$g);
+
+  var ref = React.useRef(null);
+  React.useImperativeHandle(forwardedRef, function () {
+    return ref.current;
+  });
+  var RadioClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Radio', true), _defineProperty$2(_classNames, 'Radio--disabled', disabled), _classNames), className);
+  var RadioWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Radio-wrapper', true), _defineProperty$2(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
+  var RadioOuterWrapper = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Radio-outerWrapper', true), _defineProperty$2(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
+  var RadioLabelClass = classnames(_defineProperty$2({}, 'Radio-Label', true));
+  var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
+  return /*#__PURE__*/React.createElement("div", {
+    className: RadioClass,
+    "data-test": "DesignSystem-Radio"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: RadioOuterWrapper,
+    "data-test": "DesignSystem-Radio-OuterWrapper"
+  }, /*#__PURE__*/React.createElement("input", _extends$3({}, rest, {
+    type: "radio",
+    disabled: disabled,
+    checked: checked,
+    defaultChecked: defaultChecked,
+    ref: ref,
+    name: name,
+    value: value,
+    onChange: onChange,
+    className: "Radio-input",
+    id: id,
+    "data-test": "DesignSystem-Radio-Input"
+  })), /*#__PURE__*/React.createElement("span", {
+    className: RadioWrapper
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "Radio-labelWrapper"
+  }, label && /*#__PURE__*/React.createElement("label", {
+    className: RadioLabelClass,
+    htmlFor: id,
+    "data-test": "DesignSystem-Radio-Label"
+  }, /*#__PURE__*/React.createElement(Text, {
+    size: size === 'tiny' ? 'small' : 'regular',
+    appearance: disabled ? 'disabled' : 'default'
+  }, label)), helpText && /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-Radio-HelpText",
+    size: "small",
+    appearance: disabled ? 'disabled' : 'subtle'
+  }, helpText.trim())));
+});
+Radio.displayName = 'Radio';
+
+var _excluded$f = ["className", "children"];
+var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var className = props.className,
+      children = props.children,
+      rest = _objectWithoutProperties$1(props, _excluded$f);
+
+  var classes = classnames(_defineProperty$2({
+    Row: true
+  }, "".concat(className), className));
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-Row",
+    ref: ref
+  }, rest, {
+    className: classes
+  }), children);
+});
+Row.displayName = 'Row';
+
+var StatusHint = function StatusHint(props) {
+  var _classNames2;
+
+  var appearance = props.appearance,
+      children = props.children,
+      _onMouseEnter = props.onMouseEnter,
+      _onMouseLeave = props.onMouseLeave,
+      _onClick = props.onClick,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var StatusHintClass = classnames(_defineProperty$2({}, 'StatusHint', true), className);
+  var StatusHintIconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'StatusHint-icon', true), _defineProperty$2(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-StatusHint"
+  }, baseProps, {
+    className: StatusHintClass,
+    onClick: function onClick(e) {
+      return _onClick && _onClick(e);
+    },
+    onMouseEnter: function onMouseEnter(e) {
+      return _onMouseEnter && _onMouseEnter(e);
+    },
+    onMouseLeave: function onMouseLeave(e) {
+      return _onMouseLeave && _onMouseLeave(e);
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    "data-test": "DesignSystem-StatusHint--Icon",
+    className: StatusHintIconClass
+  }), /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-StatusHint--Text",
+    weight: 'medium'
+  }, children));
+};
+StatusHint.displayName = 'StatusHint';
+StatusHint.defaultProps = {
+  appearance: 'default'
+};
+
+var Pills = function Pills(props) {
+  var _classNames;
+
+  var appearance = props.appearance,
+      children = props.children,
+      subtle = props.subtle,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames((_classNames = {
+    Pills: true
+  }, _defineProperty$2(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty$2(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
+  return /*#__PURE__*/React.createElement("span", _extends$3({
+    "data-test": "DesignSystem-Pills"
+  }, baseProps, {
+    className: classes
+  }), children);
+};
+Pills.displayName = 'Pills';
+Pills.defaultProps = {
+  appearance: 'secondary'
+};
+
+var Spinner = function Spinner(props) {
+  var appearance = props.appearance,
+      size = props.size,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var wrapperClasses = classnames(_defineProperty$2({
+    Spinner: true
+  }, "Spinner--".concat(size), size), className);
+  var circleClasses = classnames(_defineProperty$2({
+    Circle: true
+  }, "Circle--".concat(appearance), appearance));
+  var svgProps = {
+    viewBox: '0 0 50 50'
+  };
+  var circleProps = {
+    cx: 25,
+    cy: 25,
+    r: 20,
+    fill: 'none',
+    strokeMiterlimit: '10',
+    strokeWidth: '4'
+  };
+  return /*#__PURE__*/React.createElement("svg", _extends$3({}, baseProps, {
+    className: wrapperClasses
+  }, svgProps), /*#__PURE__*/React.createElement("circle", _extends$3({
+    className: circleClasses
+  }, circleProps)));
+};
+Spinner.displayName = 'Spinner';
+Spinner.defaultProps = {
+  appearance: 'primary',
+  size: 'medium'
+};
 
 var _excluded$e = ["value", "defaultValue", "onRelease", "onChange"];
 var Slider = function Slider(props) {
@@ -7262,7 +7311,7 @@ keysShim.shim = function shimObjectKeys() {
 var objectKeys = keysShim;
 
 /* eslint complexity: [2, 18], max-statements: [2, 33] */
-var shams = function hasSymbols() {
+var shams$1 = function hasSymbols() {
 	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
 	if (typeof Symbol.iterator === 'symbol') { return true; }
 
@@ -7302,16 +7351,20 @@ var shams = function hasSymbols() {
 	return true;
 };
 
+var shams = function hasToStringTagShams() {
+	return shams$1() && !!Symbol.toStringTag;
+};
+
 var origSymbol = typeof Symbol !== 'undefined' && Symbol;
 
 
-var hasSymbols$3 = function hasNativeSymbols() {
+var hasSymbols$2 = function hasNativeSymbols() {
 	if (typeof origSymbol !== 'function') { return false; }
 	if (typeof Symbol !== 'function') { return false; }
 	if (typeof origSymbol('foo') !== 'symbol') { return false; }
 	if (typeof Symbol('bar') !== 'symbol') { return false; }
 
-	return shams();
+	return shams$1();
 };
 
 /* eslint no-invalid-this: 1 */
@@ -7411,7 +7464,7 @@ var ThrowTypeError = $gOPD$1
 	}())
 	: throwTypeError;
 
-var hasSymbols$2 = hasSymbols$3();
+var hasSymbols$1 = hasSymbols$2();
 
 var getProto$1 = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
 
@@ -7423,7 +7476,7 @@ var INTRINSICS = {
 	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined$1 : AggregateError,
 	'%Array%': Array,
 	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
-	'%ArrayIteratorPrototype%': hasSymbols$2 ? getProto$1([][Symbol.iterator]()) : undefined$1,
+	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto$1([][Symbol.iterator]()) : undefined$1,
 	'%AsyncFromSyncIteratorPrototype%': undefined$1,
 	'%AsyncFunction%': needsEval,
 	'%AsyncGenerator%': needsEval,
@@ -7451,10 +7504,10 @@ var INTRINSICS = {
 	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
 	'%isFinite%': isFinite,
 	'%isNaN%': isNaN,
-	'%IteratorPrototype%': hasSymbols$2 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
+	'%IteratorPrototype%': hasSymbols$1 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
 	'%JSON%': typeof JSON === 'object' ? JSON : undefined$1,
 	'%Map%': typeof Map === 'undefined' ? undefined$1 : Map,
-	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
+	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
 	'%Math%': Math,
 	'%Number%': Number,
 	'%Object%': Object,
@@ -7467,11 +7520,11 @@ var INTRINSICS = {
 	'%Reflect%': typeof Reflect === 'undefined' ? undefined$1 : Reflect,
 	'%RegExp%': RegExp,
 	'%Set%': typeof Set === 'undefined' ? undefined$1 : Set,
-	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
+	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
 	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$1 : SharedArrayBuffer,
 	'%String%': String,
-	'%StringIteratorPrototype%': hasSymbols$2 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
-	'%Symbol%': hasSymbols$2 ? Symbol : undefined$1,
+	'%StringIteratorPrototype%': hasSymbols$1 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
+	'%Symbol%': hasSymbols$1 ? Symbol : undefined$1,
 	'%SyntaxError%': $SyntaxError,
 	'%ThrowTypeError%': ThrowTypeError,
 	'%TypedArray%': TypedArray,
@@ -7758,7 +7811,7 @@ var callBound = function callBoundIntrinsic(name, allowMissing) {
 	return intrinsic;
 };
 
-var hasToStringTag$2 = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+var hasToStringTag$2 = shams();
 
 
 var $toString$1 = callBound('Object.prototype.toString');
@@ -7790,7 +7843,7 @@ isStandardArguments.isLegacyArguments = isLegacyArguments; // for tests
 
 var isArguments = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
 
-var hasSymbols$1 = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 
 var toStr$1 = Object.prototype.toString;
 var concat = Array.prototype.concat;
@@ -7834,7 +7887,7 @@ var defineProperty$2 = function (object, name, value, predicate) {
 var defineProperties = function (object, map) {
 	var predicates = arguments.length > 2 ? arguments[2] : {};
 	var props = objectKeys(map);
-	if (hasSymbols$1) {
+	if (hasSymbols) {
 		props = concat.call(props, Object.getOwnPropertySymbols(map));
 	}
 	for (var i = 0; i < props.length; i += 1) {
@@ -7887,8 +7940,7 @@ defineProperties_1(polyfill$1, {
 
 var objectIs = polyfill$1;
 
-var hasSymbols = shams();
-var hasToStringTag$1 = hasSymbols && !!Symbol.toStringTag;
+var hasToStringTag$1 = shams();
 var has;
 var $exec;
 var isRegexMarker;
@@ -8037,7 +8089,7 @@ var tryDateObject = function tryDateGetDayCall(value) {
 
 var toStr = Object.prototype.toString;
 var dateClass = '[object Date]';
-var hasToStringTag = typeof Symbol === 'function' && !!Symbol.toStringTag;
+var hasToStringTag = shams();
 
 var isDateObject = function isDateObject(value) {
 	if (typeof value !== 'object' || value === null) {
@@ -12461,10 +12513,12 @@ var Dialog = function Dialog(props) {
       heading: heading
     },
     footer: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       "data-test": "DesignSystem-Dialog--SecondaryButton",
       appearance: secondaryButtonAppearance,
       onClick: secondaryButtonCallback
     }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       className: "ml-4",
       "data-test": "DesignSystem-Dialog--PrimaryButton",
       appearance: primaryButtonAppearance,
@@ -12522,7 +12576,9 @@ var OverlayFooter = function OverlayFooter(props) {
       _ref.label;
           var options = _objectWithoutProperties$1(_ref, _excluded$6);
 
-      return /*#__PURE__*/React.createElement(Button, _extends$3({}, options, {
+      return /*#__PURE__*/React.createElement(Button, _extends$3({
+        type: "button"
+      }, options, {
         key: index
       }));
     }));
@@ -12621,6 +12677,62 @@ var getUpdatedZIndex = function getUpdatedZIndex(ele) {
   });
   return zIndex > 0 ? zIndex : undefined;
 };
+var closeOnEscapeKeypress = function closeOnEscapeKeypress(event, isTopOverlay, onClose) {
+  if (event.key === 'Escape' && isTopOverlay) {
+    onClose(event); // prevent browser-specific escape key behavior (Safari exits fullscreen)
+
+    event.preventDefault();
+  }
+};
+
+var OverlayManager = /*#__PURE__*/function () {
+  function OverlayManager() {
+    _classCallCheck$1(this, OverlayManager);
+
+    _defineProperty$2(this, "overlays", void 0);
+
+    this.overlays = [];
+  }
+
+  _createClass$1(OverlayManager, [{
+    key: "add",
+    value: function add(overlay) {
+      if (overlay === null) return;
+      var overlayIdx = this.overlays.indexOf(overlay);
+
+      if (overlayIdx !== -1) {
+        return overlayIdx;
+      }
+
+      overlayIdx = this.overlays.length;
+      this.overlays.push(overlay);
+      return overlayIdx;
+    }
+  }, {
+    key: "remove",
+    value: function remove(overlay) {
+      if (overlay === null) return;
+      var overlayIdx = this.overlays.indexOf(overlay);
+
+      if (overlayIdx === -1) {
+        return;
+      }
+
+      this.overlays.splice(overlayIdx, 1);
+    }
+  }, {
+    key: "isTopOverlay",
+    value: function isTopOverlay(overlay) {
+      if (overlay === null) return;
+      return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
+    }
+  }]);
+
+  return OverlayManager;
+}();
+
+var instance = new OverlayManager();
+Object.freeze(instance);
 
 /**
  * ** NOTE: Use `headerOptions`, `header`, `footerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
@@ -12642,6 +12754,11 @@ var Modal = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty$2(_assertThisInitialized$2(_this), "element", void 0);
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "onCloseHandler", function (event) {
+      var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+      closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+    });
+
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -12652,6 +12769,24 @@ var Modal = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass$1(Modal, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (this.props.closeOnEscape) {
+        if (this.state.open) {
+          instance.add(this.modalRef.current);
+        }
+
+        document.addEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.props.closeOnEscape) {
+        document.removeEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
@@ -12668,6 +12803,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
             open: true,
             animate: true
           });
+          if (this.props.closeOnEscape) instance.add(this.modalRef.current);
         } else {
           this.setState({
             animate: false
@@ -12678,6 +12814,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
               });
             }, 120);
           });
+          if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
         }
       }
     }
@@ -12690,13 +12827,14 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       var open = this.state.open;
 
       if (open) {
+        if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
         if (onClose) onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var _classNames, _classNames2, _classNames3;
+      var _classNames, _classNames2, _classNames3, _classNames4;
 
       var _this$state = this.state,
           animate = _this$state.animate,
@@ -12722,6 +12860,8 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       var headerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Modal-header', true), _defineProperty$2(_classNames, 'Modal-header--withSeperator', seperator), _classNames));
       var footerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Modal-footer', true), _defineProperty$2(_classNames2, 'Modal-footer--withSeperator', seperator), _classNames2));
       var ContainerClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Row', true), _defineProperty$2(_classNames3, 'Overlay-container', true), _defineProperty$2(_classNames3, 'Overlay-container--open', open), _classNames3));
+      var isAPINew = headerOptions || footerOptions || footer || header;
+      var bodyClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Modal-body', true), _defineProperty$2(_classNames4, 'Modal-body--withMargin', isAPINew ? !!footer : true), _defineProperty$2(_classNames4, 'Modal-body--withPadding', isAPINew ? !footer : true), _classNames4));
       var baseProps = extractBaseProps(this.props);
       var sizeMap = {
         small: {
@@ -12770,7 +12910,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
           if (onClose) onClose(event, 'IconClick');
         }
       }))), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footerOptions || footer || header ? /*#__PURE__*/React.createElement(OverlayBody, {
-        className: "Modal-body"
+        className: bodyClass
       }, this.props.children) : children), (!!footer || !!footerOptions) && /*#__PURE__*/React.createElement(OverlayFooter, _extends$3({
         "data-test": "DesignSystem-Modal--footer"
       }, footerOptions, {
@@ -12832,7 +12972,8 @@ var ModalBody = function ModalBody(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
-    'Modal-body': true
+    'Modal-body': true,
+    'Modal-body--withMargin': true
   }, className);
   return /*#__PURE__*/React.createElement(OverlayBody, _extends$3({}, baseProps, {
     stickFooter: true,
@@ -12877,6 +13018,29 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty$2(_assertThisInitialized$2(_this), "element", void 0);
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "onOutsideClickHandler", function (event) {
+      instance.remove(_this.modalRef.current);
+
+      if (_this.props.onClose) {
+        _this.props.onClose(event, 'EscapePress');
+      } else {
+        _this.setState({
+          animate: false
+        }, function () {
+          window.setTimeout(function () {
+            _this.setState({
+              open: false
+            });
+          }, 120);
+        });
+      }
+    });
+
+    _defineProperty$2(_assertThisInitialized$2(_this), "onCloseHandler", function (event) {
+      var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+      closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+    });
+
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -12886,6 +13050,22 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass$1(FullscreenModal, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (this.props.closeOnEscape) {
+        if (this.state.open) {
+          instance.add(this.modalRef.current);
+        }
+
+        document.addEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler);
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
@@ -12902,6 +13082,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
             open: true,
             animate: true
           });
+          if (this.props.closeOnEscape) instance.add(this.modalRef.current);
         } else {
           this.setState({
             animate: false
@@ -12912,6 +13093,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
               });
             }, 120);
           });
+          if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
         }
       }
     }
@@ -13024,6 +13206,11 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty$2(_assertThisInitialized$2(_this), "element", void 0);
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "onCloseHandler", function (event) {
+      var isTopOverlay = instance.isTopOverlay(_this.sidesheetRef.current);
+      closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+    });
+
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -13034,6 +13221,24 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass$1(Sidesheet, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (this.props.closeOnEscape) {
+        if (this.state.open) {
+          instance.add(this.sidesheetRef.current);
+        }
+
+        document.addEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.props.closeOnEscape) {
+        document.removeEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
@@ -13050,6 +13255,7 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
             open: true,
             animate: true
           });
+          if (this.props.closeOnEscape) instance.add(this.sidesheetRef.current);
         } else {
           this.setState({
             animate: false
@@ -13060,6 +13266,7 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
               });
             }, 120);
           });
+          if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
         }
       }
     }
@@ -13070,6 +13277,7 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
       var open = this.state.open;
 
       if (open) {
+        if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
         if (onClose) onClose(event, 'OutsideClick');
       }
     }
@@ -13362,7 +13570,8 @@ var Box = function Box(props) {
   var MessageClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Box', true), _defineProperty$2(_classNames, "Box--".concat(type), type), _defineProperty$2(_classNames, 'Box--typing', isTyping), _defineProperty$2(_classNames, 'Box--urgent', statusType === 'urgent'), _defineProperty$2(_classNames, "Box-".concat(type, "--withStatus"), withStatus || isTyping), _classNames), className);
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
     className: MessageClass,
-    onClick: onClick
+    onClick: onClick,
+    "data-test": "DesignSystem-ChatMessage--Box"
   }), children);
 };
 Box.displayName = 'Box';
@@ -13616,8 +13825,7 @@ var _excluded$5 = ["onChange"];
 var EditableInput = function EditableInput(props) {
   var _classNames2, _classNames4;
 
-  var value = props.value,
-      error = props.error,
+  var error = props.error,
       size = props.size,
       errorMessage = props.errorMessage,
       placeholder = props.placeholder,
@@ -13629,39 +13837,47 @@ var EditableInput = function EditableInput(props) {
   var onInputChange = inputOptions.onChange,
       rest = _objectWithoutProperties$1(inputOptions, _excluded$5);
 
-  var _React$useState = React.useState(value),
+  var _React$useState = React.useState(props.value),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       inputValue = _React$useState2[0],
       setInputValue = _React$useState2[1];
 
-  var _React$useState3 = React.useState(false),
+  var _React$useState3 = React.useState(props.value),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      editing = _React$useState4[0],
-      setEditing = _React$useState4[1];
+      value = _React$useState4[0],
+      setValue = _React$useState4[1];
 
   var _React$useState5 = React.useState(false),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      showComponent = _React$useState6[0],
-      setShowComponent = _React$useState6[1];
+      editing = _React$useState6[0],
+      setEditing = _React$useState6[1];
+
+  var _React$useState7 = React.useState(false),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      showComponent = _React$useState8[0],
+      setShowComponent = _React$useState8[1];
 
   var inputRef = /*#__PURE__*/React.createRef();
   var baseProps = extractBaseProps(props);
+  var isControlled = props.value !== undefined;
+  React.useEffect(function () {
+    if (isControlled) setValue(props.value);
+  }, [props.value]);
   var EditableInputClass = classnames(_defineProperty$2({}, 'EditableInput', true), className);
   var EditableDefaultClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'EditableInput-default', true), _defineProperty$2(_classNames2, "EditableInput-default--".concat(size), size), _classNames2));
   var InputClass = classnames(_defineProperty$2({}, 'EditableInput-Input--tiny', size === 'tiny'));
   var ActionClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'EditableInput-actions', true), _defineProperty$2(_classNames4, "EditableInput-actions--".concat(size), size), _classNames4));
-  React.useEffect(function () {
-    setDefaultComponent();
-  }, [value]);
 
-  var setDefaultComponent = function setDefaultComponent() {
-    setInputValue(value);
+  var setDefaultComponent = function setDefaultComponent(updatedValue) {
+    setInputValue(updatedValue);
     setEditing(false);
     setShowComponent(false);
   };
 
   var onSaveChanges = function onSaveChanges() {
-    if (onChange) onChange(inputValue);
+    if (!isControlled) setValue(inputValue);
+    if (onChange) onChange(inputValue || '');
+    setDefaultComponent(inputValue);
   };
 
   var onInputChangeHandler = function onInputChangeHandler(e) {
@@ -13706,7 +13922,7 @@ var EditableInput = function EditableInput(props) {
           break;
 
         case 'Escape':
-          setDefaultComponent();
+          setDefaultComponent(value);
           break;
       }
     }
@@ -13751,7 +13967,9 @@ var EditableInput = function EditableInput(props) {
     icon: "clear",
     className: "mr-3",
     size: "tiny",
-    onClick: setDefaultComponent,
+    onClick: function onClick() {
+      setDefaultComponent(value);
+    },
     "data-test": "DesignSystem-EditableInput--Discard"
   }), /*#__PURE__*/React.createElement(Button, {
     icon: "check",
@@ -13765,7 +13983,6 @@ var EditableInput = function EditableInput(props) {
 EditableInput.defaultProps = {
   size: 'regular',
   placeholder: '',
-  value: '',
   inputOptions: {}
 };
 
@@ -13775,7 +13992,6 @@ var EditableChipInput = function EditableChipInput(props) {
   var _classNames3;
 
   var placeholder = props.placeholder,
-      value = props.value,
       onChange = props.onChange,
       className = props.className,
       disableSaveAction = props.disableSaveAction,
@@ -13789,38 +14005,49 @@ var EditableChipInput = function EditableChipInput(props) {
   var _onClick = chipOptions.onClick,
       chipObject = _objectWithoutProperties$1(chipOptions, _excluded2$1);
 
-  var _React$useState = React.useState(value),
+  var _React$useState = React.useState(props.value),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       inputValue = _React$useState2[0],
       setInputValue = _React$useState2[1];
 
-  var _React$useState3 = React.useState(false),
+  var _React$useState3 = React.useState(props.value),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      showComponent = _React$useState4[0],
-      setShowComponent = _React$useState4[1];
+      value = _React$useState4[0],
+      setValue = _React$useState4[1];
+
+  var _React$useState5 = React.useState(false),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      showComponent = _React$useState6[0],
+      setShowComponent = _React$useState6[1];
 
   var baseProps = extractBaseProps(props);
   var isWithChips = inputValue && inputValue.length;
+  var isControlled = props.value !== undefined;
+  React.useEffect(function () {
+    if (isControlled) {
+      setInputValue(props.value);
+      setValue(props.value);
+    }
+  }, [props.value]);
   var classes = classnames(_defineProperty$2({}, 'EditableChipInput', true), className);
   var actionClass = classnames(_defineProperty$2({}, 'EditableChipInput-actions', true));
   var defaultClasses = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'EditableChipInput-default', !isWithChips), _defineProperty$2(_classNames3, 'EditableChipInput-defaultWithChips', isWithChips), _classNames3));
   var inputClass = classnames(_defineProperty$2({}, 'EditableChipInput-chipInput', true));
-  React.useEffect(function () {
-    setDefaultComponent();
-  }, [value]);
 
   var onChipInputChangeHandler = function onChipInputChangeHandler(val) {
     setInputValue(val);
     if (onChipInputChange) onChipInputChange(val);
   };
 
-  var setDefaultComponent = function setDefaultComponent() {
-    setInputValue(value);
+  var setDefaultComponent = function setDefaultComponent(updatedValue) {
+    setInputValue(updatedValue);
     setShowComponent(false);
   };
 
   var onSaveChanges = function onSaveChanges() {
+    if (!isControlled) setValue(inputValue);
     if (onChange && inputValue) onChange(inputValue);
+    setDefaultComponent(inputValue);
   };
 
   var onChangeHandler = function onChangeHandler(eventType) {
@@ -13837,6 +14064,21 @@ var EditableChipInput = function EditableChipInput(props) {
     }
   };
 
+  var onChipDelete = function onChipDelete(index) {
+    if (value) {
+      var updatedValue = _toConsumableArray(value);
+
+      updatedValue.splice(index, 1);
+
+      if (!isControlled) {
+        setInputValue(updatedValue);
+        setValue(updatedValue);
+      }
+
+      if (onChange) onChange(updatedValue);
+    }
+  };
+
   var renderDefaultState = function renderDefaultState() {
     if (inputValue && inputValue.length) {
       return inputValue.map(function (val, index) {
@@ -13847,6 +14089,9 @@ var EditableChipInput = function EditableChipInput(props) {
           label: val,
           className: "my-2 mx-2"
         }, chipObject, {
+          onClose: function onClose() {
+            return onChipDelete(index);
+          },
           onClick: function onClick() {
             return _onClick && _onClick(val, index);
           }
@@ -13894,7 +14139,9 @@ var EditableChipInput = function EditableChipInput(props) {
     icon: "clear",
     className: "mr-3",
     size: "tiny",
-    onClick: setDefaultComponent
+    onClick: function onClick() {
+      setDefaultComponent(value);
+    }
   }), /*#__PURE__*/React.createElement(Button, {
     "data-test": "DesignSystem-EditableChipInput--SaveButton",
     icon: "check",
@@ -14177,7 +14424,9 @@ var Trigger = function Trigger(props) {
     return isValid(validators, val, inputFormat);
   };
 
-  return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+  return /*#__PURE__*/React.createElement(Row, {
+    "data-test": "DesignSystem-DateRangePicker-InputTrigger"
+  }, /*#__PURE__*/React.createElement(Column, {
     size: '6',
     sizeXS: '12',
     className: "DateRangePicker-input DateRangePicker-input--startDate"
@@ -14189,8 +14438,8 @@ var Trigger = function Trigger(props) {
     placeholder: inputFormat
   }, startInputOptions, {
     mask: mask,
-    value: startDate ? translateToString(inputFormat, startDate) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : '',
+    value: startDate ? translateToString(inputFormat, startDate) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : '',
     onChange: function onChange(e, val) {
       onChangeHandler(e, val || '', 'start');
     },
@@ -14219,8 +14468,8 @@ var Trigger = function Trigger(props) {
     placeholder: inputFormat
   }, endInputOptions, {
     mask: mask,
-    value: endDate ? translateToString(inputFormat, endDate) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : '',
+    value: endDate ? translateToString(inputFormat, endDate) : init // @ts-ignore
+    ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : '',
     onChange: function onChange(e, val) {
       onChangeHandler(e, val || '', 'end');
     },
@@ -14346,7 +14595,9 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
     });
   };
 
-  return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label, {
+  return /*#__PURE__*/React.createElement(Row, {
+    "data-test": "DesignSystem-DateRangePicker-SingleInputTrigger"
+  }, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label, {
     required: inputOptions.required,
     withInput: true
   }, label), /*#__PURE__*/React.createElement(InputMask, _extends$3({
@@ -14538,6 +14789,14 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var _this$props2 = _this.props,
+          singleInput = _this$props2.singleInput,
+          inputOptions = _this$props2.inputOptions,
+          startInputOptions = _this$props2.startInputOptions,
+          endInputOptions = _this$props2.endInputOptions;
+      var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -14590,9 +14849,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.startDate !== this.props.startDate) {
-        var _this$props2 = this.props,
-            inputFormat = _this$props2.inputFormat,
-            validators = _this$props2.validators;
+        var _this$props3 = this.props,
+            inputFormat = _this$props3.inputFormat,
+            validators = _this$props3.validators;
         var d = convertToDate(this.props.startDate, inputFormat, validators);
         var val = translateToString(inputFormat, d);
         this.setState({
@@ -14602,9 +14861,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevProps.endDate !== this.props.endDate) {
-        var _this$props3 = this.props,
-            _inputFormat2 = _this$props3.inputFormat,
-            _validators = _this$props3.validators;
+        var _this$props4 = this.props,
+            _inputFormat2 = _this$props4.inputFormat,
+            _validators = _this$props4.validators;
 
         var _d = convertToDate(this.props.endDate, _inputFormat2, _validators);
 
@@ -14635,9 +14894,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
-        var _this$props4 = this.props,
-            onRangeChange = _this$props4.onRangeChange,
-            outputFormat = _this$props4.outputFormat;
+        var _this$props5 = this.props,
+            onRangeChange = _this$props5.onRangeChange,
+            outputFormat = _this$props5.outputFormat;
         var _this$state2 = this.state,
             _startDate3 = _this$state2.startDate,
             _endDate3 = _this$state2.endDate;
@@ -14667,24 +14926,24 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderCalendar",
     value: function renderCalendar() {
-      var _this$props5 = this.props;
-          _this$props5.startDate;
-          _this$props5.endDate;
-          _this$props5.yearNav;
-          _this$props5.monthNav;
-          _this$props5.open;
-          var inputFormat = _this$props5.inputFormat;
-          _this$props5.outputFormat;
-          _this$props5.startInputOptions;
-          _this$props5.endInputOptions;
-          var validators = _this$props5.validators;
-          _this$props5.withInput;
-          _this$props5.position;
-          var disabledBefore = _this$props5.disabledBefore,
-          disabledAfter = _this$props5.disabledAfter;
-          _this$props5.onRangeChange;
-          var rangeLimit = _this$props5.rangeLimit,
-          rest = _objectWithoutProperties$1(_this$props5, _excluded$3);
+      var _this$props6 = this.props;
+          _this$props6.startDate;
+          _this$props6.endDate;
+          _this$props6.yearNav;
+          _this$props6.monthNav;
+          _this$props6.open;
+          var inputFormat = _this$props6.inputFormat;
+          _this$props6.outputFormat;
+          _this$props6.startInputOptions;
+          _this$props6.endInputOptions;
+          var validators = _this$props6.validators;
+          _this$props6.withInput;
+          _this$props6.position;
+          var disabledBefore = _this$props6.disabledBefore,
+          disabledAfter = _this$props6.disabledAfter;
+          _this$props6.onRangeChange;
+          var rangeLimit = _this$props6.rangeLimit,
+          rest = _objectWithoutProperties$1(_this$props6, _excluded$3);
 
       var _this$state3 = this.state,
           startDate = _this$state3.startDate,
@@ -14709,17 +14968,17 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _classNames;
 
-      var _this$props6 = this.props,
-          withInput = _this$props6.withInput,
-          startInputOptions = _this$props6.startInputOptions,
-          endInputOptions = _this$props6.endInputOptions,
-          inputOptions = _this$props6.inputOptions,
-          inputFormat = _this$props6.inputFormat,
-          position = _this$props6.position,
-          validators = _this$props6.validators,
-          singleInput = _this$props6.singleInput,
-          contentAlign = _this$props6.contentAlign,
-          children = _this$props6.children;
+      var _this$props7 = this.props,
+          withInput = _this$props7.withInput,
+          startInputOptions = _this$props7.startInputOptions,
+          endInputOptions = _this$props7.endInputOptions,
+          inputOptions = _this$props7.inputOptions,
+          inputFormat = _this$props7.inputFormat,
+          position = _this$props7.position,
+          validators = _this$props7.validators,
+          singleInput = _this$props7.singleInput,
+          contentAlign = _this$props7.contentAlign,
+          children = _this$props7.children;
       var open = this.state.open;
       var RangePickerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'DateRangePicker', true), _defineProperty$2(_classNames, "DateRangePicker--".concat(contentAlign), contentAlign), _classNames));
 
@@ -14843,14 +15102,37 @@ var Tab = function Tab(props) {
 };
 Tab.displayName = 'Tab';
 
-var Tabs = function Tabs(props) {
-  var _classNames;
+var getChildrenArray = function getChildrenArray(children) {
+  return Array.isArray(children) ? children : [children];
+};
 
-  var tabs = props.tabs,
+var filterTabs = function filterTabs(children) {
+  var childrenArray = getChildrenArray(children);
+  var tabs = childrenArray.filter(function (element) {
+    return typeof element.type === 'function' && element.type.name === 'Tab';
+  });
+  return tabs;
+};
+
+var filterInlineComponent = function filterInlineComponent(children) {
+  var childrenArray = getChildrenArray(children);
+  var inlineComponent = childrenArray.filter(function (element) {
+    return !(typeof element.type === 'function' && element.type.name === 'Tab');
+  });
+  return inlineComponent;
+};
+
+var Tabs = function Tabs(props) {
+  var _classNames2;
+
+  var children = props.children,
       withSeparator = props.withSeparator,
       onTabChange = props.onTabChange,
       className = props.className;
   var baseProps = extractBaseProps(props);
+  var tabRefs = [];
+  var tabs = children ? filterTabs(children) : props.tabs;
+  var inlineComponent = children ? filterInlineComponent(children) : /*#__PURE__*/React.createElement(React.Fragment, null);
   var totalTabs = tabs.length;
 
   var _React$useState = React.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
@@ -14863,12 +15145,13 @@ var Tabs = function Tabs(props) {
       setActiveTab(props.activeIndex);
     }
   }, [props.activeIndex]);
-  var tabsClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Tabs', true), _defineProperty$2(_classNames, 'Tabs--withSeparator', withSeparator), _classNames), className);
+  var wrapperClass = classnames(_defineProperty$2({}, 'TabsWrapper', true), className);
+  var headerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'TabsWrapper-header', true), _defineProperty$2(_classNames2, 'TabsWrapper-header--withSeparator', withSeparator), _classNames2), className);
 
   var getPillsClass = function getPillsClass(disabled) {
-    var _classNames2;
+    var _classNames3;
 
-    return classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Tabs-pills', true), _defineProperty$2(_classNames2, 'Tabs-pills--disabled', disabled), _classNames2));
+    return classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Tab-pills', true), _defineProperty$2(_classNames3, 'Tab-pills--disabled', disabled), _classNames3));
   };
 
   var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
@@ -14881,8 +15164,6 @@ var Tabs = function Tabs(props) {
 
     if (onTabChange) onTabChange(tabIndex);
   };
-
-  var tabRefs = [];
 
   var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
     if (event.key === 'Enter') {
@@ -14901,9 +15182,10 @@ var Tabs = function Tabs(props) {
   };
 
   var renderInfo = function renderInfo(tab, index) {
-    var count = tab.count,
-        icon = tab.icon,
-        disabled = tab.disabled;
+    var _ref = tab,
+        count = _ref.count,
+        icon = _ref.icon,
+        disabled = _ref.disabled;
 
     if (count !== undefined) {
       return /*#__PURE__*/React.createElement(Pills, {
@@ -14926,44 +15208,60 @@ var Tabs = function Tabs(props) {
     return null;
   };
 
-  var renderTabs = function renderTabs() {
-    return tabs.map(function (tab, index) {
-      var _classNames3;
+  var renderTab = function renderTab(tab, index) {
+    var _ref2 = tab,
+        _ref2$label = _ref2.label,
+        label = _ref2$label === void 0 ? '' : _ref2$label,
+        disabled = _ref2.disabled;
 
-      var label = tab.label,
-          disabled = tab.disabled;
-      var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-      var tabHeaderClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Tab', true), _defineProperty$2(_classNames3, 'Tab--disabled', disabled), _defineProperty$2(_classNames3, 'Tab--active', !disabled && activeIndex === index), _classNames3));
-      return /*#__PURE__*/React.createElement("div", {
-        ref: function ref(element) {
-          return element && !disabled && tabRefs.push(element);
-        },
-        "data-test": "DesignSystem-Tabs--Tab",
-        key: index,
-        className: tabHeaderClass,
-        onClick: function onClick() {
-          return !disabled && tabClickHandler(index);
-        },
-        onKeyDown: function onKeyDown(event) {
-          return tabKeyDownHandler(event, index);
-        },
-        tabIndex: activeIndex === index ? 0 : -1
-      }, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
-        "data-test": "DesignSystem-Tabs--Text",
-        appearance: textAppearance
-      }, label));
-    });
+    if (typeof label !== 'string') {
+      return label;
+    }
+
+    var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+    return /*#__PURE__*/React.createElement(React.Fragment, null, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-Tabs--Text",
+      appearance: textAppearance
+    }, label));
   };
 
+  var renderTabs = tabs.map(function (tab, index) {
+    var _classNames4;
+
+    var currentTabProp = children && 'props' in tab ? tab.props : tab;
+    var disabled = currentTabProp.disabled;
+    var tabHeaderClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Tab', true), _defineProperty$2(_classNames4, 'Tab--disabled', disabled), _defineProperty$2(_classNames4, 'Tab--active', !disabled && activeIndex === index), _classNames4));
+    return /*#__PURE__*/React.createElement("div", {
+      ref: function ref(element) {
+        return element && !disabled && tabRefs.push(element);
+      },
+      "data-test": "DesignSystem-Tabs--Tab",
+      key: index,
+      className: tabHeaderClass,
+      onClick: function onClick() {
+        return !disabled && tabClickHandler(index);
+      },
+      onKeyDown: function onKeyDown(event) {
+        return tabKeyDownHandler(event, index);
+      },
+      tabIndex: activeIndex === index ? 0 : -1
+    }, renderTab(currentTabProp, index));
+  });
   return /*#__PURE__*/React.createElement("div", _extends$3({
     "data-test": "DesignSystem-Tabs"
   }, baseProps, {
-    className: tabsClass
-  }), renderTabs());
+    className: wrapperClass
+  }), /*#__PURE__*/React.createElement("div", {
+    className: headerClass
+  }, renderTabs, inlineComponent), children && /*#__PURE__*/React.createElement("div", {
+    className: "TabsWrapper-content",
+    "data-test": "DesignSystem-Tabs--Content"
+  }, tabs[activeIndex]));
 };
 Tabs.displayName = 'Tabs';
 Tabs.defaultProps = {
-  withSeparator: true
+  withSeparator: true,
+  tabs: []
 };
 
 var accepts = function accepts(file, acceptedFiles) {
@@ -15950,7 +16248,7 @@ var Dropzone = function Dropzone(props) {
       size: "large",
       weight: "strong",
       appearance: disabled ? 'disabled' : 'link'
-    }, " browse files")), /*#__PURE__*/React__default.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React__default.createElement(Text, {
+    }, "browse files")), /*#__PURE__*/React__default.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React__default.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
     }, formatLabel), sizeLabel && /*#__PURE__*/React__default.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
@@ -15997,11 +16295,13 @@ var FileUploaderButton = function FileUploaderButton(props) {
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
     className: FileUploaderButtonClass
   }), /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     disabled: disabled,
     icon: "backup"
   }, uploadButtonLabel), /*#__PURE__*/React.createElement("input", {
     name: name,
     id: id,
+    "data-test": "DesignSystem-FileUploaderButton--Input",
     accept: accept && accept.join(', '),
     multiple: multiple,
     disabled: disabled,
@@ -16037,7 +16337,8 @@ var FileUploader = function FileUploader(props) {
   var baseProps = extractBaseProps(props);
   var FileUploaderClass = classnames(_defineProperty$2({}, 'FileUploader', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: FileUploaderClass
+    className: FileUploaderClass,
+    "data-test": "DesignSystem-FileUploader"
   }), /*#__PURE__*/React.createElement(Text, {
     weight: "medium"
   }, title), /*#__PURE__*/React.createElement(FileUploaderFormat, {
@@ -16111,6 +16412,7 @@ var FileUploaderItem = function FileUploaderItem(props) {
   var baseProps = extractBaseProps(props);
   var FileItemClass = classnames(_defineProperty$2({}, 'FileUploaderItem', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
+    "data-test": "DesignSystem-FileUploader--Item",
     className: FileItemClass,
     onClick: function onClick() {
       return _onClick && _onClick(file, id);
@@ -16131,6 +16433,7 @@ var FileUploaderItem = function FileUploaderItem(props) {
       return _onRetry && _onRetry(file, id);
     }
   }), /*#__PURE__*/React.createElement(Button, {
+    "data-test": "DesignSystem-FileUploader--CancelButton",
     appearance: "transparent",
     size: "regular",
     onClick: function onClick() {
@@ -16158,7 +16461,8 @@ var FileUploaderList = function FileUploaderList(props) {
   var FileListClass = classnames(_defineProperty$2({}, 'FileUploaderList', true), className);
   if (fileList.length === 0) return null;
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: FileListClass
+    className: FileListClass,
+    "data-test": "DesignSystem-FileUploader--List"
   }), fileList.map(function (fileName, i) {
     return /*#__PURE__*/React.createElement(FileUploaderItem, _extends$3({
       key: i,
@@ -17414,23 +17718,29 @@ var GridBody = function GridBody(props) {
   var isLastPage = withPagination && page === totalPages;
   var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
 
-  var renderItem = function renderItem(rowIndex) {
+  var renderItem = function renderItem(rowIndex, item) {
     return /*#__PURE__*/React.createElement(GridRow, {
       rowIndex: rowIndex,
-      data: data[rowIndex],
+      data: !item ? data[rowIndex] : item,
       schema: schema,
       onSelect: onSelect
     });
   };
 
-  return /*#__PURE__*/React.createElement(index, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, !!withPagination ? /*#__PURE__*/React.createElement("div", {
+    className: "Grid-body",
+    "data-test": "DesignSystem-Grid-body-with-NoPagination"
+  }, data.map(function (item, i) {
+    return renderItem(i, item);
+  })) : /*#__PURE__*/React.createElement(index, {
     className: "Grid-body",
     minItemHeight: minRowHeight[size],
     totalLength: dataLength,
     length: 20,
     buffer: 7,
-    renderItem: renderItem
-  });
+    renderItem: renderItem,
+    "data-test": "DesignSystem-Grid-body-with-virtual-scroll"
+  }));
 };
 
 var Grid = /*#__PURE__*/function (_React$Component) {
@@ -18019,6 +18329,7 @@ var DraggableDropdown = function DraggableDropdown(props) {
     open: open,
     onToggle: onToggleHandler,
     trigger: /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       ref: function ref(el) {
         setTriggerWidth("".concat(el === null || el === void 0 ? void 0 : el.clientWidth, "px"));
       },
@@ -18081,10 +18392,12 @@ var DraggableDropdown = function DraggableDropdown(props) {
   })), /*#__PURE__*/React.createElement("div", {
     className: "Dropdown-buttonWrapper"
   }, /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     className: "mr-4",
     size: "tiny",
     onClick: onCancelHandler
   }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     appearance: "primary",
     size: "tiny",
     onClick: onApplyHandler
@@ -19291,6 +19604,6 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.1";
+var version = "2.3.0";
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, MultiSlider, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
