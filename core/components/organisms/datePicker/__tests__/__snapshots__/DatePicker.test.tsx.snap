@@ -138,7 +138,7 @@ exports[`DatePicker component
             class="Calendar-header"
           >
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -178,7 +178,7 @@ exports[`DatePicker component
               </span>
             </div>
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -202,48 +202,48 @@ exports[`DatePicker component
             <div
               class="Calendar-dayValues"
             >
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Sun
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Su
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Mon
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Mo
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Tue
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Tu
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Wed
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                We
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Thu
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Th
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Fri
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Fr
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Sat
-              </h4>
+                Sa
+              </span>
             </div>
             <div
               class="Calendar-dateValues"
@@ -641,7 +641,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 9
+            Today, Sep 13
           </span>
         </div>
       </div>
@@ -668,7 +668,7 @@ exports[`DatePicker component
             class="Calendar-header"
           >
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -708,7 +708,7 @@ exports[`DatePicker component
               </span>
             </div>
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -732,48 +732,48 @@ exports[`DatePicker component
             <div
               class="Calendar-dayValues"
             >
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Sun
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Su
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Mon
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Mo
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Tue
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Tu
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Wed
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                We
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Thu
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Th
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Fri
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Fr
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Sat
-              </h4>
+                Sa
+              </span>
             </div>
             <div
               class="Calendar-dateValues"
@@ -1171,7 +1171,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 9
+            Today, Sep 13
           </span>
         </div>
       </div>
@@ -1198,7 +1198,7 @@ exports[`DatePicker component
             class="Calendar-header"
           >
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -1228,7 +1228,7 @@ exports[`DatePicker component
               </span>
             </div>
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -1412,7 +1412,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 9
+            Today, Sep 13
           </span>
         </div>
       </div>
@@ -1439,7 +1439,7 @@ exports[`DatePicker component
             class="Calendar-header"
           >
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -1469,7 +1469,7 @@ exports[`DatePicker component
               </span>
             </div>
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -1653,7 +1653,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 9
+            Today, Sep 13
           </span>
         </div>
       </div>
@@ -1680,7 +1680,7 @@ exports[`DatePicker component
             class="Calendar-header"
           >
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--prev"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -1720,7 +1720,7 @@ exports[`DatePicker component
               </span>
             </div>
             <button
-              class="Button Button--regular Button--regularSquare Button--transparent Calendar-headerIcon Calendar-headerIcon--next"
+              class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
               data-test="DesignSystem-Button"
               tabindex="0"
               type="button"
@@ -1744,48 +1744,48 @@ exports[`DatePicker component
             <div
               class="Calendar-dayValues"
             >
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Sun
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Su
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Mon
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Mo
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Tue
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Tu
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Wed
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                We
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Thu
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Th
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Fri
-              </h4>
-              <h4
-                class="Subheading Subheading--disabled Calendar-valueWrapper"
-                data-test="DesignSystem-Subheading"
+                Fr
+              </span>
+              <span
+                class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+                data-test="DesignSystem-Text"
               >
-                Sat
-              </h4>
+                Sa
+              </span>
             </div>
             <div
               class="Calendar-dateValues"
@@ -2183,7 +2183,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 9
+            Today, Sep 13
           </span>
         </div>
       </div>
