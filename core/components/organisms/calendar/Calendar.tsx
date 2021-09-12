@@ -1,10 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Button, Heading, Subheading, Text } from '@/index';
+import { Button, Heading, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 import config from './config';
-import { Size, Day, View } from './types';
+import { Size, Day, View, Events } from './types';
 import {
   compareDate,
   compareYearBlock,
@@ -95,6 +95,17 @@ export type CalendarProps = {
    * **set `0` or `undefined` for infinite limit**
    */
   rangeLimit?: number;
+  /**
+   * Adds event highlighter to given date
+   * `events: {
+   *    'mm/dd/yyyy': true
+   * }`
+   * **OR**
+   * `events: {
+   *    'mm/dd/yyyy': [{}]
+   * }`
+   */
+  events?: Events;
 } & SharedProps;
 
 interface CalendarState {
@@ -109,6 +120,9 @@ interface CalendarState {
   yearBlockNav: number;
   yearNav: number;
   monthNav: number;
+  todayDate: number;
+  currMonth: number;
+  currYear: number;
 }
 
 export class Calendar extends React.Component<CalendarProps, CalendarState> {
@@ -130,7 +144,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
     const monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
     const { year, month, date } = getDateInfo(currDate);
-
+    const todayCompleteDate = getDateInfo(new Date());
     this.state = {
       currDate,
       startDate,
@@ -140,6 +154,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       year,
       month,
       date,
+      todayDate: todayCompleteDate.date,
+      currMonth: todayCompleteDate.month,
+      currYear: todayCompleteDate.year,
       view: monthsInView > 1 ? 'date' : view,
       yearBlockNav: getYearBlock(yearNav),
     };
@@ -427,7 +444,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       <Button
         type="button"
         className={headerIconClass}
-        appearance="transparent"
+        appearance="basic"
         icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
         disabled={disabled}
         onClick={this.onNavIconClickHandler(type)}
@@ -600,6 +617,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const { size, firstDayOfWeek } = this.props;
 
+    const textSize = size === 'large' ? 'regular' : 'small';
+
     return (
       <>
         <div className="Calendar-dayValues">
@@ -610,9 +629,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
 
             return (
-              <Subheading key={day} className={valueClass} appearance="disabled">
+              <Text key={day} className={valueClass} appearance="default" weight="strong" size={textSize}>
                 {days[size][dayValue]}
-              </Subheading>
+              </Text>
             );
           })}
         </div>
@@ -623,12 +642,31 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     );
   };
 
+  renderEventsIndicator(size: string, active: boolean) {
+    const eventsIndicatorClass = classNames({
+      'Calendar-eventsIndicator': true,
+      [`Calendar-eventsIndicator--${size}`]: true,
+      'Calendar-eventsIndicator--active': active,
+    });
+    return <span data-test="DesignSystem-Calendar-Event-Indicator" className={eventsIndicatorClass} />;
+  }
+
   renderDateValues = (index: number) => {
     const { daysInRow } = config;
 
     const { size, rangePicker, firstDayOfWeek, disabledBefore, disabledAfter } = this.props;
 
-    const { startDate, endDate, hoverDate, year: yearState, month: monthState, date: dateState } = this.state;
+    const {
+      startDate,
+      endDate,
+      hoverDate,
+      year: yearState,
+      month: monthState,
+      date: dateState,
+      currMonth,
+      currYear,
+      todayDate,
+    } = this.state;
 
     const { year: yearNavVal, month: monthNavVal } = this.getNavDateInfo(index);
 
@@ -637,6 +675,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const dummyDays = Math.abs(dayDiff);
     const noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
     const inRangeError = this.getInRangeError();
+
+    const events = this.props.events;
 
     const onClickHandler = (date: number) => () => {
       if (rangePicker) {
@@ -672,6 +712,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) ||
                 compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
             let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
+            const today =
+              !rangePicker && !disabled && currYear === yearNavVal && currMonth === monthNavVal && todayDate === date;
             let startActive = false;
             let endActive = false;
             let inRange = false;
@@ -707,6 +749,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               endActive || (startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate));
             const isRangeError = inRange && inRangeError;
 
+            const monthInString = `${monthNavVal + 1 > 9 ? monthNavVal + 1 : `0${monthNavVal + 1}`}`;
+            const dateInString = `${date > 9 ? date : `0${date}`}`;
+            const yearInString = `${yearNavVal}`;
+            const completeDateString = `${monthInString}/${dateInString}/${yearInString}`;
+            const isEventExist = events && typeof events === 'object' && events.hasOwnProperty(completeDateString);
+
             const wrapperClass = classNames({
               'Calendar-valueWrapper': true,
               'Calendar-valueWrapper--inRange': inRange || (rangePicker && active),
@@ -729,24 +777,24 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'Calendar-value--disabled': disabled,
               'Calendar-dateValue': true,
               [`Calendar-dateValue--${size}`]: size,
+              'Calendar-value--currentDate': today,
             });
             return (
-              <div
-                key={`${row}-${col}`}
-                className={wrapperClass}
-                data-test="designSystem-Calendar-WrapperClass"
-              >
+              <div key={`${row}-${col}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
                 {!dummy && (
-                  <Text
-                    appearance={active ? 'white' : disabled ? 'disabled' : 'default'}
-                    size={size === 'small' ? 'small' : 'regular'}
-                    data-test="DesignSystem-Calendar--dateValue"
-                    className={valueClass}
-                    onClick={onClickHandler(date)}
-                    onMouseOver={onMouseOverHandler(date)}
-                  >
-                    {date}
-                  </Text>
+                  <>
+                    <Text
+                      appearance={active ? 'white' : disabled ? 'disabled' : today ? 'link' : 'default'}
+                      size={size === 'small' ? 'small' : 'regular'}
+                      data-test="DesignSystem-Calendar--dateValue"
+                      className={valueClass}
+                      onClick={onClickHandler(date)}
+                      onMouseOver={onMouseOverHandler(date)}
+                    >
+                      {date}
+                    </Text>
+                    {isEventExist && this.renderEventsIndicator(size, active)}
+                  </>
                 )}
               </div>
             );
