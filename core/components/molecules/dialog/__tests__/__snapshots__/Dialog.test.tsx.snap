@@ -116,6 +116,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -236,6 +237,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -356,6 +358,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -476,6 +479,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -596,6 +600,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -716,6 +721,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -836,6 +842,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -956,6 +963,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -1076,6 +1084,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -1196,6 +1205,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -1316,6 +1326,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -1436,6 +1447,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;
@@ -1556,6 +1568,7 @@ exports[`Dialog component
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
     data-test="DesignSystem-Backdrop"
+    style="z-index: 1000;"
   />
 </body>
 `;

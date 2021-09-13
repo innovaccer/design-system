@@ -10,6 +10,10 @@ export interface BackdropProps extends BaseProps {
    * Handles open/close state
    */
   open: boolean;
+  /**
+   * Specify zIndex Value
+   */
+  zIndex?: number;
 }
 
 export const Backdrop: React.FC<BackdropProps> = (props) => {
@@ -61,7 +65,13 @@ export const Backdrop: React.FC<BackdropProps> = (props) => {
   }, [props.open]);
 
   const BackdropElement = ReactDOM.createPortal(
-    <div data-test="DesignSystem-Backdrop" data-layer={true} {...baseProps} className={classes} />,
+    <div
+      data-test="DesignSystem-Backdrop"
+      data-layer={true}
+      {...baseProps}
+      className={classes}
+      style={{ zIndex: props.zIndex }}
+    />,
     document.body
   );
 
