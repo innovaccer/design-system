@@ -223,6 +223,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
       onClose,
     } = this.props;
 
+    const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
+
     const classes = classNames(
       {
         Modal: true,
@@ -311,8 +313,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
               {headerOptions || footerOptions || footer || header ? (
                 <OverlayBody className={bodyClass}>{this.props.children}</OverlayBody>
               ) : (
-                  children
-                )}
+                children
+              )}
             </>
           )}
           {(!!footer || !!footerOptions) && (
@@ -334,15 +336,15 @@ class Modal extends React.Component<ModalProps, ModalState> {
         {ModalContainer}
       </OutsideClick>
     ) : (
-        ModalContainer
-      );
+      ModalContainer
+    );
 
     const WrapperElement = ReactDOM.createPortal(ModalWrapper, this.element);
 
     return (
       <>
         {WrapperElement}
-        <Backdrop open={this.state.animate} />
+        <Backdrop open={this.state.animate} zIndex={BackdropZIndex} />
       </>
     );
   }
