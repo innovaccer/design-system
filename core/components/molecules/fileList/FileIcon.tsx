@@ -45,9 +45,17 @@ export const FileIcon = (props: FileIconProps) => {
   }, [status]);
 
   if (status === 'uploading') {
-    return <ProgressRing size="small" value={progress || 0} className={uploadingIconClass} />;
+    return (
+      <ProgressRing
+        size="small"
+        value={progress || 0}
+        className={uploadingIconClass}
+        data-test="DesignSystem-FileListItem--ProgressRing"
+      />
+    );
   }
-  return <Icon name={IconMapping[fileType]} className={iconClass} />;
+
+  return <Icon name={IconMapping[fileType]} className={iconClass} data-test="DesignSystem-FileListItem--Icon" />;
 };
 
 FileIcon.displayName = 'FileIcon';
