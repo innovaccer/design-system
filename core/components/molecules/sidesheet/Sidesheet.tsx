@@ -217,6 +217,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       onClose,
     } = this.props;
 
+    const BackdropZIndex: number = zIndex ? zIndex - 1 : 1000;
+
     const classes = classNames(
       {
         Sidesheet: true,
@@ -298,15 +300,15 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         {SidesheetContainer}
       </OutsideClick>
     ) : (
-        SidesheetContainer
-      );
+      SidesheetContainer
+    );
 
     const WrapperElement = ReactDOM.createPortal(SidesheetWrapper, this.element);
 
     return (
       <>
         {WrapperElement}
-        <Backdrop open={this.state.animate} />
+        <Backdrop open={this.state.animate} zIndex={BackdropZIndex} />
       </>
     );
   }
