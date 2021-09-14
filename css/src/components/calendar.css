@@ -21,11 +21,11 @@
 }
 
 .Calendar--large {
-    padding-top: var(--spacing-l);
+    padding-top: var(--spacing-2);
     padding-left: var(--spacing-2);
     padding-right: var(--spacing-2);
-    padding-bottom: var(--spacing);
-    height: 272px;
+    padding-bottom: var(--spacing-l);
+    height: 324px;
     width: 316px;
 }
 
@@ -34,7 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: var(--spacing-m);
+    padding-bottom: var(--spacing-l);
 }
 
 .Calendar-headerIcon {
@@ -73,12 +73,22 @@
 .Calendar-valueRow {
     display: flex;
     justify-content: space-around;
+    padding-top: var(--spacing-s);
+    padding-bottom: var(--spacing-s);
+}
+
+.Calendar-valueRow:last-child {
+    display: flex;
+    justify-content: space-around;
+    padding-top: var(--spacing-s);
+    padding-bottom: 0;
 }
 
 .Calendar-valueWrapper {
     display: inline-flex;
     flex: 1 0 0;
     justify-content: center;
+    position: relative;
 }
 
 .Calendar-valueWrapper--inRange {
@@ -141,6 +151,10 @@
     background: var(--alert-lightest);
 }
 
+.Calendar-value--currentDate, .Calendar-value--currentDate:hover {
+    background: var(--primary-lightest) !important;
+}
+
 .Calendar-value--active, .Calendar-value--active:hover {
     background: var(--primary) !important;
 }
@@ -180,6 +194,8 @@
 .Calendar-dayValues {
     display: flex;
     justify-content: center;
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
 }
 
 .Calendar-dateValues {
@@ -191,4 +207,20 @@
 
 .Calendar-dayValues .Calendar-value {
     padding: 0;
+}
+
+.Calendar-eventsIndicator{
+    position: absolute;
+    bottom: var(--spacing-s);
+    width: var(--spacing-m);
+    height: var(--spacing-m);
+    background-color: var(--alert);
+    border-radius: 50%;
+}
+.Calendar-eventsIndicator--small{
+    width: 3px;
+    height: 3px;
+}
+.Calendar-eventsIndicator--active{
+    background-color: var(--white);
 }
