@@ -74,6 +74,17 @@ exports[`Input component
         type="text"
         value="value"
       />
+      <div
+        class="Input-icon Input-icon--right"
+        data-test="DesignSystem-Input--closeIcon"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          close_round
+        </i>
+      </div>
     </div>
   </div>
 </body>
@@ -107,6 +118,17 @@ exports[`Input component
         type="text"
         value="value"
       />
+      <div
+        class="Input-icon Input-icon--right"
+        data-test="DesignSystem-Input--closeIcon"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          close_round
+        </i>
+      </div>
     </div>
   </div>
 </body>
@@ -469,6 +491,17 @@ exports[`Input component
         type="text"
         value="value"
       />
+      <div
+        class="Input-icon Input-icon--right"
+        data-test="DesignSystem-Input--closeIcon"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          close_round
+        </i>
+      </div>
     </div>
   </div>
 </body>
@@ -501,6 +534,17 @@ exports[`Input component
         type="text"
         value="value"
       />
+      <div
+        class="Input-icon Input-icon--right"
+        data-test="DesignSystem-Input--closeIcon"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          style="font-size: 16px; width: 16px;"
+        >
+          close_round
+        </i>
+      </div>
     </div>
   </div>
 </body>

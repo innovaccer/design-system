@@ -103,7 +103,7 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   minWidth?: string;
   /**
-   * Callback function when user clicks the clear button
+   * Callback function when user clicks the clear button <br/>
    */
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
   /**
@@ -123,7 +123,8 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
   /**
-   * Custom Icon Component to be passed to Input to replace Clear Icon in the right
+   * Custom Icon Component to be passed to Input to replace Clear Icon in the right <br/>
+   * **Action Icon is visible only if input has some value or defaultValue**
    */
   actionIcon?: React.ReactElement<IconProps>;
 }
@@ -255,9 +256,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       ) : actionIcon && (value || defaultValue) ? (
         actionIcon
       ) : (
-        onClear &&
         (value || defaultValue) && (
-          <div className={rightIconClass} onClick={(e) => onClear(e)} data-test="DesignSystem-Input--closeIcon">
+          <div
+            className={rightIconClass}
+            onClick={(e) => onClear && onClear(e)}
+            data-test="DesignSystem-Input--closeIcon"
+          >
             <Icon name={'close'} size={sizeMapping[size]} />
           </div>
         )

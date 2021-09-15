@@ -641,7 +641,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 15
           </span>
         </div>
       </div>
@@ -1171,7 +1171,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 15
           </span>
         </div>
       </div>
@@ -1412,7 +1412,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 15
           </span>
         </div>
       </div>
@@ -1653,7 +1653,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 15
           </span>
         </div>
       </div>
@@ -2183,7 +2183,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 15
           </span>
         </div>
       </div>
