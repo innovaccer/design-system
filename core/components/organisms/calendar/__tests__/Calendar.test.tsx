@@ -131,4 +131,11 @@ describe('Calendar compoennt', () => {
     expect(getByTestId('DesignSystem-Calendar-Event-Indicator')).toBeInTheDocument();
     expect(getAllByTestId('DesignSystem-Calendar-Event-Indicator')[0]).toHaveClass('Calendar-eventsIndicator--small');
   });
+
+  it('renders events indicator on given dummy date', () => {
+    const events = { '10/01/2021': true };
+    const { getAllByTestId } = render(<Calendar date={new Date('09/12/2021')} events={events} size="small" />);
+
+    expect(getAllByTestId('designSystem-Calendar-WrapperClass')[0]).toHaveClass('Calendar-valueWrapper--dummy');
+  });
 });
