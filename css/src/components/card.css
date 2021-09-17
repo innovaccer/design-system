@@ -1,7 +1,7 @@
 /* badge */
 
 .Card {
-  border-radius: var(--spacing);
+  border-radius: var(--spacing-m);
   border: var(--spacing-xs) solid var(--secondary-light);
   position: relative;
   overflow: hidden;

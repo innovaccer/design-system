@@ -7,6 +7,7 @@ exports[`TimePicker component prop:inputFormat snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"
@@ -45,6 +46,7 @@ exports[`TimePicker component prop:inputFormat snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"
@@ -83,6 +85,7 @@ exports[`TimePicker component prop:outputFormat snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"
@@ -121,6 +124,7 @@ exports[`TimePicker component prop:outputFormat snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"
@@ -159,6 +163,7 @@ exports[`TimePicker component prop:time snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"
@@ -208,6 +213,7 @@ exports[`TimePicker component prop:time snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"
@@ -257,6 +263,7 @@ exports[`TimePicker component prop:validators snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"
@@ -295,6 +302,7 @@ exports[`TimePicker component prop:validators snapshot
   <div>
     <div
       class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
     >
       <div
         class="Input Input--regular"

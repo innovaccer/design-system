@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/noContent.png';
+import noContent from '../assets/pageNotLoaded.png';
 
-export const largeSize = () => (
+export const pageNotLoaded = () => (
   <div className="h-100 pb-5" style={{ backgroundColor: 'var(--secondary-lightest)' }}>
     <EmptyState
       title="There's a problem loading this page."
@@ -18,6 +18,6 @@ export const largeSize = () => (
 );
 
 export default {
-  title: 'Components/EmptyState/Variants/Large Size',
+  title: 'Components/EmptyState/Variants/Page Not Loaded',
   component: EmptyState,
 };

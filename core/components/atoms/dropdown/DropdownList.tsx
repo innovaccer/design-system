@@ -623,6 +623,7 @@ const DropdownList = (props: OptionsProps) => {
         customStyle={popoverStyle}
         position={alignmentMapping[align]}
         {...popoverOptions}
+        data-test="DesignSystem-Dropdown--Popover"
       >
         {(withSearch || props.async) && renderSearch()}
         {renderDropdownSection()}

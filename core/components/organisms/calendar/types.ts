@@ -8,3 +8,4 @@ export type DateObject = {
   date: number;
 };
 export type DateType = number | Date | string;
+export type Events = { [key: string]: boolean };

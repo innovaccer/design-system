@@ -19,6 +19,8 @@ for (let i = 1; i <= 10; i++) {
   disabledStoryOptions.push({
     label: `Option ${i}`,
     value: `Option ${i}`,
+    icon: 'events',
+    subInfo: 'subInfo',
     disabled: i === 2,
   });
 }

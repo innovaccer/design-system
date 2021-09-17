@@ -30,7 +30,8 @@
     "build-type": "rm -rf .lib && tsc -b tsconfig.type.json",
     "build": "npm run build-css && npm run build-js",
     "version": "./scripts/version.sh",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate-types": "node node_modules/.bin/dts-bundle-generator --config dts.config.js"
   },
   "author": "Innovaccer",
   "license": "MIT",
@@ -72,6 +73,7 @@
     "commitizen": "^4.2.4",
     "concurrently": "^5.1.0",
     "cz-conventional-changelog": "^3.3.0",
+    "dts-bundle-generator": "5.9.0",
     "eslint": "^6.8.0",
     "fork-ts-checker-webpack-plugin": "^4.0.0-beta.4",
     "gulp": "^4.0.2",
