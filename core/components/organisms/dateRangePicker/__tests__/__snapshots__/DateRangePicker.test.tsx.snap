@@ -27383,6 +27383,7 @@ exports[`DateRangePicker component
           </div>
           <div
             class="d-flex flex-column flex-grow-1"
+            data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
               class="Input Input--regular"
@@ -27448,6 +27449,7 @@ exports[`DateRangePicker component
           </div>
           <div
             class="d-flex flex-column flex-grow-1"
+            data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
               class="Input Input--regular"
