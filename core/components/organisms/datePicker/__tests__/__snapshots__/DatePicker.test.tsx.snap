@@ -10,6 +10,7 @@ exports[`DatePicker component
     >
       <div
         class="d-flex flex-column flex-grow-1"
+        data-test="DesignSystem-InputMask--Wrapper"
       >
         <div
           class="Input Input--regular"
@@ -71,6 +72,7 @@ exports[`DatePicker component
     >
       <div
         class="d-flex flex-column flex-grow-1"
+        data-test="DesignSystem-InputMask--Wrapper"
       >
         <div
           class="Input Input--regular"
@@ -641,7 +643,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 17
           </span>
         </div>
       </div>
@@ -1171,7 +1173,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 17
           </span>
         </div>
       </div>
@@ -1412,7 +1414,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 17
           </span>
         </div>
       </div>
@@ -1653,7 +1655,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 17
           </span>
         </div>
       </div>
@@ -2183,7 +2185,7 @@ exports[`DatePicker component
             class="Text Text--default Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
-            Today, Sep 13
+            Today, Sep 17
           </span>
         </div>
       </div>
@@ -2202,6 +2204,7 @@ exports[`DatePicker component
     >
       <div
         class="d-flex flex-column flex-grow-1"
+        data-test="DesignSystem-InputMask--Wrapper"
       >
         <div
           class="Input Input--regular"

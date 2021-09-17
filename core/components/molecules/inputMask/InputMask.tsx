@@ -214,10 +214,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     const newValue = maskedVal.slice(0, mask.length).join('');
     window.requestAnimationFrame(() => setCursorPosition(cursorPosition));
 
-    if (
-      Utils.validators.isValid(validators, newValue)
-      && newValue !== value
-    ) {
+    if (Utils.validators.isValid(validators, newValue) && newValue !== value) {
       setValue(newValue);
       if (onChange) onChange(e, newValue);
     }
@@ -265,7 +262,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
   );
 
   return (
-    <div className={classes}>
+    <div className={classes} data-test="DesignSystem-InputMask--Wrapper">
       <Input
         {...rest}
         value={value}
