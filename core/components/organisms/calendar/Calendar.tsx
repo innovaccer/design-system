@@ -100,10 +100,6 @@ export type CalendarProps = {
    * `events: {
    *    'mm/dd/yyyy': true
    * }`
-   * **OR**
-   * `events: {
-   *    'mm/dd/yyyy': [{}]
-   * }`
    */
   events?: Events;
 } & SharedProps;
