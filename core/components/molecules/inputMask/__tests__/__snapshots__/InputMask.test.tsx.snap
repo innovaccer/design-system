@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Mask component 
+  mask: [{},{},{},{}," ",{},{},{},{}," ",{},{},{},{}," ",{},{},{},{}], caption: "card", placeholderChar: [null,"*"], onChange: [null], onBlur: [null], onClear: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="d-flex flex-column flex-grow-1"
+      data-test="DesignSystem-InputMask--Wrapper"
+    >
+      <div
+        class="Input Input--regular"
+        data-test="DesignSystem-InputWrapper"
+        style="min-width: 256px;"
+      >
+        <input
+          autocomplete="off"
+          class="Input-input Input-input--regular"
+          data-test="DesignSystem-Input"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="Caption Caption--withInput"
+        data-test="DesignSystem-Caption"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          card
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+`;
