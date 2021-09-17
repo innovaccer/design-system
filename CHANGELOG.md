@@ -1,3 +1,38 @@
+## 2.4.0-0  (2021-09-17) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Automated the process of types bundling (21f435b0)
+* A new InlineMessage Component has been added (f852b2a8)
+* Added the events indicator on given date in Calendar Component (4714efa2)
+* A Chip has been added to Datepicker Component to select today's date (ee9e47e0)
+* Tooltip in Icon Button Component has been added (f9f14233)
+### Fixes
+* Removes the events type Array from Calendar Component (41abf4ef)
+* zIndex for Backdrop Component has been fixed (055edb09)
+* Border radius of Card Component has been fixed (c113a568)
+* New Stories has been added to EmptyState Component and updated the existing story (af83ea74)
+* Height of the Input field has been fixed when focus in EditableChipInput Component (bbb4f256)
+### Improvements
+* Added test cases for InputMask Component (e0f37b99)
+* Added test cases for FileList Component (b36a44f1)
+* Added test cases for Dropdown Component options and loading state (1cb98e93)
+### Documentation
+NA
+
+-------------------
+
 ## 2.3.0  (2021-09-10) 
 
 ### Highlights
