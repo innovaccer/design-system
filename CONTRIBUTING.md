@@ -635,6 +635,19 @@ information on [rebasing](https://git-scm.com/book/en/v2/Git-Branching-Rebasing)
 
 ### Make Changes and Commit
 
+#### Branch Naming Conventions
+
+The following are the steps you should follow when creating a new branch.
+
+- Start the branch name with prefixes like fix-, feat-, test-, or some other variant of the categorization of tasks.
+- Add a short description of the task. This makes the branch name recognizable and distinct.
+- Use hyphens as separators
+
+For example:
+
+* `bug-logo-alignment-issue`
+* `fix-modal-height`
+
 #### Before Commit
 
 Before committing, **you must ensure there are no linting, formatting errors and all tests pass.**
