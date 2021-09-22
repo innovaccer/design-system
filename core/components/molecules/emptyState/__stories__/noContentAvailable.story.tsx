@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
 import { text } from '@storybook/addon-knobs';
-import noContent from '../assets/noContent.png';
+import noContent from './assets/noContent.png';
 
 export const noContentAvailable = () => {
   const title = text('title', 'Manage your outreach campaigns');
@@ -21,6 +21,6 @@ export const noContentAvailable = () => {
 };
 
 export default {
-  title: 'Components/EmptyState/Variants/No Content Available',
+  title: 'Components/EmptyState/No Content Available',
   component: EmptyState,
 };
