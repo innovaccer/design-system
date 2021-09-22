@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { InlineMessage, Row, Column } from '@/index';
+
 // CSF format story
-export const warningMessage = () => (
+export const defaultMessage = () => (
   <Row>
     <Column size="4">
       <InlineMessage
-        appearance="warning"
-        description="Inline message goes here."
+        description="Create a strong, unique password."
       />
     </Column>
   </Row>
 );
 
 export default {
-  title: 'Components/InlineMessage/Warning Message',
+  title: 'Components/InlineMessage/Variants/Default Message',
   component: InlineMessage
 };
