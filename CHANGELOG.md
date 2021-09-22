@@ -1,3 +1,27 @@
+## 2.5.0-0  (2021-09-22) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Added previous and next month dates in current month's date in Calendar Component (4fe810bf)
+### Fixes
+NA
+### Improvements
+* Added test cases for Calendar Component (f22df8b6)
+### Documentation
+NA
+
+-------------------
 ## 2.4.0  (2021-09-22) 
 
 ### Highlights
