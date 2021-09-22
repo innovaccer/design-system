@@ -81,7 +81,7 @@ export const GridHead = (props: GridHeadProps) => {
   };
 
   return (
-    <div className="Grid-head">
+    <div className="Grid-head" data-test="DesignSystem-GridHead--Wrapper">
       <div className="Grid-row Grid-row--head">
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}

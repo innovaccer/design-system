@@ -596,7 +596,7 @@ exports[`TS renders children 1`] = `
           class="Text Text--default Text--regular"
           data-test="DesignSystem-GenericChip--Text"
         >
-          Today, Sep 17
+          Today, Sep 27
         </span>
       </div>
     </div>
@@ -2117,6 +2117,7 @@ exports[`TS renders children 1`] = `
   >
     <div
       class="Grid-head"
+      data-test="DesignSystem-GridHead--Wrapper"
     >
       <div
         class="Grid-row Grid-row--head"
@@ -2352,6 +2353,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Grid-head"
+          data-test="DesignSystem-GridHead--Wrapper"
         >
           <div
             class="Grid-row Grid-row--head"

@@ -114,6 +114,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     <div key={name} className={classes} ref={el}>
       <div
         className="Grid-cellContent"
+        data-test="Designsystem-Cell--Content"
         onClick={() => {
           if (!loading && sorting) {
             if (sorted === 'asc') onMenuChange(name, 'sortDesc');
