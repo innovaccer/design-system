@@ -183,8 +183,8 @@
     width: var(--spacing-3);
 }
 
-.Calendar-value--dummy {
-    pointer-events: none;
+.Calendar-valueWrapper--dummy {
+    opacity: 0.58;
 }
 
 .Calendar-value--disabled {
