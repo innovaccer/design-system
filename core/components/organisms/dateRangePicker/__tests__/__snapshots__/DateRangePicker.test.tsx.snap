@@ -131,13 +131,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -485,17 +499,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -636,13 +671,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -990,17 +1039,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1141,13 +1211,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -1495,17 +1579,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -1647,19 +1752,33 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   1
@@ -1670,7 +1789,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   2
@@ -1681,7 +1800,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   3
@@ -1692,7 +1811,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   4
@@ -1703,7 +1822,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   5
@@ -1718,7 +1837,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   6
@@ -1729,7 +1848,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   7
@@ -1740,7 +1859,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--end Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--end Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   8
@@ -1751,7 +1870,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   9
@@ -1762,7 +1881,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   10
@@ -1773,7 +1892,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   11
@@ -1784,7 +1903,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   12
@@ -1799,7 +1918,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   13
@@ -1810,7 +1929,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   14
@@ -1821,7 +1940,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -1832,7 +1951,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   16
@@ -1843,7 +1962,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   17
@@ -1854,7 +1973,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   18
@@ -1865,7 +1984,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   19
@@ -1880,7 +1999,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   20
@@ -1891,7 +2010,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   21
@@ -1902,7 +2021,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   22
@@ -1913,7 +2032,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   23
@@ -1924,7 +2043,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   24
@@ -1935,7 +2054,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   25
@@ -1946,7 +2065,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   26
@@ -1961,7 +2080,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   27
@@ -1972,7 +2091,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   28
@@ -1983,7 +2102,7 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   29
@@ -1994,24 +2113,45 @@ exports[`DateRangePicker component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--dummy Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--disabled Text--regular Calendar-value Calendar-value--disabled Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   30
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2641,21 +2781,49 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -2796,17 +2964,38 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  29
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -3154,13 +3343,27 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -3301,9 +3504,16 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -3651,21 +3861,49 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -3806,21 +4044,49 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  28
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  29
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -4168,9 +4434,16 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -4311,13 +4584,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -4665,17 +4952,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -4816,13 +5124,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -5170,17 +5492,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -5667,25 +6010,60 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -5826,9 +6204,16 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -6176,21 +6561,49 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -6331,13 +6744,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -6685,17 +7112,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -6836,13 +7284,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -7190,17 +7652,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -7341,13 +7824,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -7695,17 +8192,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -7846,13 +8364,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -8200,17 +8732,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -8351,13 +8904,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -8705,17 +9272,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -8856,13 +9444,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -9210,17 +9812,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -9361,13 +9984,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -9715,17 +10352,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -9866,13 +10524,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -10220,17 +10892,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -10371,9 +11064,16 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -10699,29 +11399,71 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  6
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -10862,9 +11604,16 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  28
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -11223,17 +11972,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -11374,21 +12144,49 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  28
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  29
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -11736,9 +12534,16 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -11879,13 +12684,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -12233,17 +13052,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -12366,13 +13206,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -12720,15 +13574,15 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
             </div>
@@ -12839,19 +13693,19 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
@@ -13333,13 +14187,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -13687,15 +14555,15 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
             </div>
@@ -13788,19 +14656,19 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
               />
               <div
@@ -14625,21 +15493,49 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -14780,13 +15676,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -15134,17 +16044,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -15285,13 +16216,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -15639,17 +16584,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -15790,13 +16756,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -16144,17 +17124,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -16295,13 +17296,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -16649,17 +17664,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -16800,13 +17836,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -17154,17 +18204,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -17305,13 +18376,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -17659,17 +18744,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -17810,13 +18916,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -18164,17 +19284,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -18315,13 +19456,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -18669,17 +19824,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -18820,13 +19996,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -19174,17 +20364,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -19325,13 +20536,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -19679,17 +20904,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -19830,13 +21076,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -20184,17 +21444,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -20335,13 +21616,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -20689,17 +21984,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -20840,13 +22156,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -21194,17 +22524,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -21345,13 +22696,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -21699,17 +23064,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -21850,13 +23236,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -22204,17 +23604,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -22355,13 +23776,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -22709,17 +24144,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -22860,13 +24316,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--inRangeError"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--inRangeError Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--inRangeError"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--inRangeError Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--inRangeError"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -23214,17 +24684,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -23365,13 +24856,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -23719,17 +25224,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -23870,13 +25396,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -24224,17 +25764,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -24375,13 +25936,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -24729,17 +26304,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -24880,13 +26476,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--small Calendar-value Calendar-dateValue Calendar-dateValue--small"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--small Calendar-value Calendar-dateValue Calendar-dateValue--small"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -25234,17 +26844,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--small Calendar-value Calendar-dateValue Calendar-dateValue--small"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--small Calendar-value Calendar-dateValue Calendar-dateValue--small"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--small Calendar-value Calendar-dateValue Calendar-dateValue--small"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -25874,21 +27505,49 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -26029,13 +27688,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -26383,17 +28056,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -26980,13 +28674,27 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -27334,17 +29042,38 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -27635,29 +29364,71 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  26
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  27
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  28
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  29
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -28009,29 +29780,71 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  6
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -28518,25 +30331,60 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -28677,9 +30525,16 @@ exports[`DateRangePicker component
               class="Calendar-valueRow"
             >
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
               <div
                 class="Calendar-valueWrapper"
                 data-test="designSystem-Calendar-WrapperClass"
@@ -29027,21 +30882,49 @@ exports[`DateRangePicker component
                 </span>
               </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
               <div
-                class="Calendar-valueWrapper"
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
                 data-test="designSystem-Calendar-WrapperClass"
-              />
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
             </div>
           </div>
         </div>

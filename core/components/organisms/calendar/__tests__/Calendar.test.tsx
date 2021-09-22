@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Calendar } from '@/index';
 import { CalendarProps as Props } from '@/index.type';
@@ -7,6 +7,7 @@ import { CalendarProps as Props } from '@/index.type';
 const day = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const size = ['small', 'large'];
 const view = ['year', 'month', 'date'];
+const FunctionValue = jest.fn();
 
 describe('Calendar component', () => {
   const mapper: Record<string, any> = {
@@ -130,5 +131,87 @@ describe('Calendar compoennt', () => {
 
     expect(getByTestId('DesignSystem-Calendar-Event-Indicator')).toBeInTheDocument();
     expect(getAllByTestId('DesignSystem-Calendar-Event-Indicator')[0]).toHaveClass('Calendar-eventsIndicator--small');
+  });
+
+  it('renders events indicator on given dummy date', () => {
+    const events = { '10/01/2021': true };
+    const { getAllByTestId } = render(<Calendar date={new Date('09/12/2021')} events={events} size="small" />);
+
+    expect(getAllByTestId('designSystem-Calendar-WrapperClass')[0]).toHaveClass('Calendar-valueWrapper--dummy');
+  });
+
+  it('calls onClick handler when date is selected', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} onDateChange={FunctionValue} view="date" />
+    );
+    const date = getAllByTestId('DesignSystem-Calendar--dateValue')[0];
+    fireEvent.click(date);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls onClick handler when date is selected and rangePicker is true', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} rangePicker={true} onDateChange={FunctionValue} view="date" />
+    );
+    const date = getAllByTestId('DesignSystem-Calendar--dateValue')[0];
+    fireEvent.click(date);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls onMouseOver handler when rangePicker is true', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} rangePicker={true} onDateChange={FunctionValue} view="date" />
+    );
+    const date = getAllByTestId('DesignSystem-Calendar--dateValue')[0];
+    fireEvent.mouseOver(date);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls onClick handler when jumpView is true', () => {
+    const { container } = render(
+      <Calendar date={new Date(2020, 2, 15)} onDateChange={FunctionValue} jumpView={true} view="month" />
+    );
+    const header = container.querySelectorAll('span')[0];
+    fireEvent.click(header);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls navIconClick handler when view is month', () => {
+    const { container } = render(<Calendar date={new Date(2020, 2, 15)} onDateChange={FunctionValue} view="month" />);
+    const headerIcon = container.querySelectorAll('.Calendar-headerIcon')[0];
+    fireEvent.click(headerIcon);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls navIconClick handler when view is year', () => {
+    const { container } = render(<Calendar date={new Date(2020, 2, 15)} onDateChange={FunctionValue} view="year" />);
+    const headerIcon = container.querySelectorAll('.Calendar-headerIcon')[0];
+    fireEvent.click(headerIcon);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls navIconClick handler when view is date', () => {
+    const { container } = render(<Calendar date={new Date(2020, 2, 15)} onDateChange={FunctionValue} view="date" />);
+    const headerIcon = container.querySelectorAll('.Calendar-headerIcon')[0];
+    fireEvent.click(headerIcon);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls selectYear function when view is year', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} onDateChange={FunctionValue} view="year" />
+    );
+    const year = getAllByTestId('DesignSystem-Calendar--yearValue')[0];
+    fireEvent.click(year);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls selectYear function when view is month', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} onDateChange={FunctionValue} view="month" />
+    );
+    const month = getAllByTestId('DesignSystem-Calendar--monthValue')[0];
+    fireEvent.click(month);
+    expect(FunctionValue).toHaveBeenCalled();
   });
 });

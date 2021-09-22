@@ -297,10 +297,15 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const { yearBlockNav, yearNav, monthNav } = this.state;
 
     const { monthBlock } = config;
-
     const yearBlock = yearBlockNav;
-    const month = (monthNav + index) % monthBlock;
-    const year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+    const month = (monthNav + index) % monthBlock === -1 ? 11 : (monthNav + index) % monthBlock;
+    // const year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+    let year;
+    if (index >= 0) {
+      year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+    } else {
+      year = yearNav - (index !== 0 && month > monthNav ? 1 : 0);
+    }
     return { yearBlock, year, month };
   };
 
@@ -353,11 +358,26 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     });
   };
 
-  selectDate = (index: number, date: number) => {
-    const { year, month } = this.getNavDateInfo(index);
-
-    this.updateState(year, month, date);
-    const d = this.getDateValue(year, month, date);
+  selectDate = (index: number, date: number, prevMonthDayRange: number, dayRange: number) => {
+    let neighbouringMonthIndex;
+    let neighbouringMonthDate;
+    let type = '';
+    if (date <= 0) {
+      neighbouringMonthIndex = index - 1;
+      neighbouringMonthDate = prevMonthDayRange + date;
+      type = 'prev';
+    } else if (date > dayRange) {
+      neighbouringMonthIndex = index + 1;
+      neighbouringMonthDate = date - dayRange;
+      type = 'next';
+    } else {
+      neighbouringMonthIndex = index;
+      neighbouringMonthDate = date;
+    }
+    const { year, month } = this.getNavDateInfo(neighbouringMonthIndex);
+    this.updateState(year, month, neighbouringMonthDate);
+    this.onNavIconClickHandler(type)();
+    const d = this.getDateValue(year, month, neighbouringMonthDate);
     this.setState({
       currDate: d,
     });
@@ -648,9 +668,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   }
 
   renderDateValues = (index: number) => {
-    const { daysInRow } = config;
+    const { daysInRow, monthBlock } = config;
 
-    const { size, rangePicker, firstDayOfWeek, disabledBefore, disabledAfter } = this.props;
+    const { size, rangePicker, firstDayOfWeek, disabledBefore, disabledAfter, monthsInView } = this.props;
 
     const {
       startDate,
@@ -666,10 +686,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const { year: yearNavVal, month: monthNavVal } = this.getNavDateInfo(index);
 
+    const prevMonth = monthNavVal - 1;
+    const prevYear = yearNavVal;
+    const prevMonthDayRange = getDaysInMonth(prevYear, prevMonth);
+
     const dayRange = getDaysInMonth(yearNavVal, monthNavVal);
     const dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
     const dummyDays = Math.abs(dayDiff);
-    const noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
+    const noOfRows = monthsInView
+      ? Math.ceil((dayRange + dummyDays) / daysInRow)
+      : Math.ceil((dayRange + dummyDays) / daysInRow) + 1;
     const inRangeError = this.getInRangeError();
 
     const events = this.props.events;
@@ -677,12 +703,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const onClickHandler = (date: number) => () => {
       if (rangePicker) {
         if (startDate && endDate) {
-          this.selectDate(index, date);
+          this.selectDate(index, date, prevMonthDayRange, dayRange);
         } else {
-          if (!inRangeError) this.selectDate(index, date);
+          if (!inRangeError) this.selectDate(index, date, prevMonthDayRange, dayRange);
         }
       } else {
-        this.selectDate(index, date);
+        this.selectDate(index, date, prevMonthDayRange, dayRange);
       }
     };
 
@@ -708,8 +734,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) ||
                 compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
             let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
-            const today =
-              !rangePicker && !disabled && currYear === yearNavVal && currMonth === monthNavVal && todayDate === date;
+            const today = () => {
+              let boolVal;
+              if (date <= 0) {
+                boolVal =
+                  currYear === yearNavVal && currMonth === monthNavVal - 1 && todayDate === prevMonthDayRange + date;
+              } else if (date > dayRange) {
+                boolVal = currYear === yearNavVal && currMonth === monthNavVal + 1 && todayDate === date - dayRange;
+              } else {
+                boolVal = currYear === yearNavVal && currMonth === monthNavVal && todayDate === date;
+              }
+              return boolVal;
+            };
             let startActive = false;
             let endActive = false;
             let inRange = false;
@@ -745,10 +781,26 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               endActive || (startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate));
             const isRangeError = inRange && inRangeError;
 
-            const monthInString = `${monthNavVal + 1 > 9 ? monthNavVal + 1 : `0${monthNavVal + 1}`}`;
-            const dateInString = `${date > 9 ? date : `0${date}`}`;
-            const yearInString = `${yearNavVal}`;
-            const completeDateString = `${monthInString}/${dateInString}/${yearInString}`;
+            const dateInString = `${date <= 0 ? prevMonthDayRange + date : date > dayRange ? date - dayRange : date}`;
+            const monthInString = `${
+              date <= 0
+                ? monthNavVal === 0
+                  ? monthNavVal + monthBlock
+                  : ((monthNavVal - 1) % monthBlock) + 1
+                : date > dayRange
+                ? ((monthNavVal + 1) % monthBlock) + 1
+                : monthNavVal + 1
+            }`;
+            const yearInString = `${
+              date <= 0 && monthNavVal + 1 === 1
+                ? yearNavVal - 1
+                : date > dayRange && monthNavVal + 1 === 12
+                ? yearNavVal + 1
+                : yearNavVal
+            }`;
+            const completeDateString = `${monthInString.length === 2 ? monthInString : `0${monthInString}`}/${
+              dateInString.length === 2 ? dateInString : `0${dateInString}`
+            }/${yearInString}`;
             const isEventExist = events && typeof events === 'object' && events.hasOwnProperty(completeDateString);
 
             const wrapperClass = classNames({
@@ -760,6 +812,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'Calendar-valueWrapper--startEnd': isStart && isEnd,
               'Calendar-valueWrapper--startError': isStart && isRangeError,
               'Calendar-valueWrapper--endError': isEnd && isRangeError,
+              'Calendar-valueWrapper--dummy': dummy,
             });
 
             const valueClass = classNames({
@@ -769,18 +822,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'Calendar-value--startError': isStart && isRangeError,
               'Calendar-value--endError': isEnd && isRangeError,
               'Calendar-value--active': active,
-              'Calendar-value--dummy': dummy || disabled,
               'Calendar-value--disabled': disabled,
               'Calendar-dateValue': true,
               [`Calendar-dateValue--${size}`]: size,
-              'Calendar-value--currentDate': today,
+              'Calendar-value--currentDate': today(),
             });
+
             return (
               <div key={`${row}-${col}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
                 {!dummy && (
                   <>
                     <Text
-                      appearance={active ? 'white' : disabled ? 'disabled' : today ? 'link' : 'default'}
+                      appearance={active ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default'}
                       size={size === 'small' ? 'small' : 'regular'}
                       data-test="DesignSystem-Calendar--dateValue"
                       className={valueClass}
@@ -788,6 +841,21 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                       onMouseOver={onMouseOverHandler(date)}
                     >
                       {date}
+                    </Text>
+                    {isEventExist && this.renderEventsIndicator(size, active)}
+                  </>
+                )}
+                {((dummy && date > 0 && index === monthsInView - 1) || (dummy && date <= 0 && index === 0)) && (
+                  <>
+                    <Text
+                      appearance={active ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default'}
+                      size={size === 'small' ? 'small' : 'regular'}
+                      data-test="DesignSystem-Calendar--dateValue"
+                      className={valueClass}
+                      onClick={onClickHandler(date)}
+                      onMouseOver={onMouseOverHandler(date)}
+                    >
+                      {date <= 0 ? prevMonthDayRange + date : date - dayRange}
                     </Text>
                     {isEventExist && this.renderEventsIndicator(size, active)}
                   </>
