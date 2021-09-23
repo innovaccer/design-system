@@ -631,7 +631,7 @@ exports[`TS renders children 1`] = `
           class="Text Text--default Text--regular"
           data-test="DesignSystem-GenericChip--Text"
         >
-          Today, Sep 22
+          Today, Sep 23
         </span>
       </div>
     </div>
