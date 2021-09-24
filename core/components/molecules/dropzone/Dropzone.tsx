@@ -57,22 +57,6 @@ export const Dropzone = (props: DropzoneProps) => {
     [`DropzoneWrapper--${type}`]: true,
   });
 
-  if (isDragReject) {
-    return (
-      <div {...getRootProps()} {...baseProps} className={DropzoneClass}>
-        <DropzoneError type={type} error={fileErrorMessages[fileError]} />
-      </div>
-    );
-  }
-
-  if (isDragActive) {
-    return (
-      <div {...getRootProps()} {...baseProps} className={DropzoneClass}>
-        <DropzoneActive type={type} />
-      </div>
-    );
-  }
-
   const renderDropzone = () => {
     if (isDragReject) return <DropzoneError type={type} error={fileErrorMessages[fileError]} />;
 
