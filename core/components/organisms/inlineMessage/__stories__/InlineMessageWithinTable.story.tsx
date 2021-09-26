@@ -127,7 +127,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/InlineMessage/Variants/Inline Message Within Table',
+  title: 'Components/InlineMessage/Inline Message Within Table',
   component: InlineMessage,
   parameters: {
     docs: {
