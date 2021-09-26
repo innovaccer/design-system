@@ -4,6 +4,18 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import { DatePicker } from '@/index';
 import { DatePickerProps as Props } from '@/index.type';
 
+let dateNowSpy: any;
+
+beforeAll(() => {
+  // Lock Time
+  dateNowSpy = jest.spyOn(Date, 'now').mockImplementation(() => 1632314975530);
+});
+
+afterAll(() => {
+  // Unlock Time
+  dateNowSpy.mockRestore();
+});
+
 const view = ['year', 'month', 'date'];
 const booleanValue = [true, false];
 const FunctionValue = jest.fn();

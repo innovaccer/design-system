@@ -187,8 +187,9 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
 
     const { date } = this.state;
     const { months } = config;
-    const monthIndex: number = new Date().getMonth();
-    const todayMonthAndDate: string = `${months[monthIndex]} ${new Date().getDate()}`;
+    const todayDate = new Date(Date.now());
+    const todayMonthAndDate: string = `${months[todayDate.getMonth()]} ${todayDate.getDate()}`;
+
     return (
       <div>
         <Calendar
