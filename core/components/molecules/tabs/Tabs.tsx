@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Pills, Icon, Text } from '@/index';
+import { Pills, Icon, Text, Tab } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 
 type Tab = React.ReactElement | TabConfig;
@@ -57,7 +57,7 @@ const filterTabs = (children: SingleOrArray<React.ReactElement>) => {
   const childrenArray = getChildrenArray(children);
 
   const tabs = childrenArray.filter(
-    (element: React.ReactElement) => typeof element.type === 'function' && element.type.name === 'Tab'
+    (element: React.ReactElement) => typeof element.type === 'function' && element.type.name === Tab.name
   );
 
   return tabs;
@@ -67,7 +67,7 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
   const childrenArray = getChildrenArray(children);
 
   const inlineComponent = childrenArray.filter(
-    (element: React.ReactElement) => !(typeof element.type === 'function' && element.type.name === 'Tab')
+    (element: React.ReactElement) => !(typeof element.type === 'function' && element.type.name === Tab.name)
   );
 
   return inlineComponent;
