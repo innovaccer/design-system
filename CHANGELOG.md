@@ -1,3 +1,29 @@
+## 2.5.0-1  (2021-09-27) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+### Fixes
+* Fixes the table header scroll when table body scroll (502cb1d1)
+* Fixes the Tabs Component rendering issue with checking children component type (8525a4e7)
+* Fixes the Datepicker snapshot which was getting updated as date changes (c001e925)
+### Improvements
+NA
+### Documentation
+NA
+
+-------------------
 ## 2.5.0-0  (2021-09-22) 
 
 ### Highlights
