@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { EmptyState, Button, Card } from '@/index';
-import noSearch from '../assets/noSearch.png';
+import noSearch from './assets/noSearch.png';
 
 export const noSearchResults = () => {
   return (
@@ -18,6 +18,6 @@ export const noSearchResults = () => {
 };
 
 export default {
-  title: 'Components/EmptyState/Variants/No Search Results',
+  title: 'Components/EmptyState/No Search Results',
   component: EmptyState,
 };
