@@ -57,22 +57,6 @@ export const Dropzone = (props: DropzoneProps) => {
     [`DropzoneWrapper--${type}`]: true,
   });
 
-  if (isDragReject) {
-    return (
-      <div {...getRootProps()} {...baseProps} className={DropzoneClass}>
-        <DropzoneError type={type} error={fileErrorMessages[fileError]} />
-      </div>
-    );
-  }
-
-  if (isDragActive) {
-    return (
-      <div {...getRootProps()} {...baseProps} className={DropzoneClass}>
-        <DropzoneActive type={type} />
-      </div>
-    );
-  }
-
   const renderDropzone = () => {
     if (isDragReject) return <DropzoneError type={type} error={fileErrorMessages[fileError]} />;
 
@@ -81,7 +65,7 @@ export const Dropzone = (props: DropzoneProps) => {
     return (
       <React.Fragment>
         {type !== 'tight' && <Icon name="backup" size={64} className={IconClass} />}
-        <div className={WrapperClass}>
+        <div className={WrapperClass} data-test="DesignSystem-Dropzone-Wrapper">
           <span>
             <Text size="large" weight="strong" className="mr-2" appearance={disabled ? 'disabled' : 'default'}>
               Drag your files here or
@@ -102,7 +86,7 @@ export const Dropzone = (props: DropzoneProps) => {
   };
 
   return (
-    <div {...getRootProps()} {...baseProps} className={DropzoneClass}>
+    <div {...getRootProps()} {...baseProps} className={DropzoneClass} data-test="DesignSystem-Dropzone">
       {renderDropzone()}
     </div>
   );
