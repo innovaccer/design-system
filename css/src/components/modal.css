@@ -22,9 +22,7 @@
 
 .Modal {
   position: fixed !important;
-  top: 104px;
-  min-height: 200px;
-  max-height: 70%;
+  max-height: calc(100vh - 128px);
   box-shadow: var(--shadow-m);
   background-color: var(--white);
   border-radius: var(--spacing);
@@ -32,6 +30,12 @@
   display: flex;
   flex-direction: column;
   visibility: hidden;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: min-content;
 }
 
 .Modal--open {
