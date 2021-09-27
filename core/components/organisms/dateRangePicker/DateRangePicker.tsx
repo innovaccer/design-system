@@ -232,6 +232,11 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
           else onRangeChange(undefined, undefined, sValue, eValue);
         }
       }
+      if (this.state.endDate && this.state.startDate) {
+        this.setState({
+          open: !this.state.open,
+        });
+      }
     }
   }
 

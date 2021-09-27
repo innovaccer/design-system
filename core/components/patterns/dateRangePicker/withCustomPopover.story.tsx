@@ -4,7 +4,7 @@ import { DateRangePicker, InputMask } from '@/index';
 const customCode = `
 
 () => {
-   class CustomPopover extends React.Component {
+  class CustomPopover extends React.Component {
     constructor(props) {
       super(props);
       console.log(DateRangePicker.utils);
@@ -13,7 +13,7 @@ const customCode = `
       this.state = {
         startDate,
         endDate,
-        selected: 'currWeek',
+        selected: "currWeek",
         monthNav: DateRangePicker.utils.getCurrentMonth()
       };
 
@@ -32,8 +32,8 @@ const customCode = `
       this.setState({
         startDate,
         endDate,
-        selected: 'currWeek',
-        monthNav: DateRangePicker.utils.getCurrentMonth(),
+        selected: "currWeek",
+        monthNav: DateRangePicker.utils.getCurrentMonth()
       });
     }
 
@@ -41,70 +41,78 @@ const customCode = `
       const { startDate, endDate, selected } = this.state;
 
       return (
-        <div className="pt-5 px-6" style={{ borderRight: 'var(--border)' }}>
+        <div className="pt-5 px-6" style={{ borderRight: "var(--border)" }}>
           <div className="d-flex align-items-center justify-content-between">
-            <Heading size="s" className="py-3">Range</Heading>
+            <Heading size="s" className="py-3">
+              Range
+            </Heading>
             <Icon name="refresh" onClick={this.onReset} />
           </div>
           <div className="pt-5">
-            <Radio
+            <Chip
               label="This week"
+              clearButton={false}
+              type="selection"
+              className="mb-6 d-block"
+              selected={selected === "currWeek"}
               name="rangePicker"
-              value="currWeek"
-              className="pb-6"
-              checked={selected === 'currWeek'}
-              onChange={this.onReset}
+              onClick={this.onReset}
             />
-            <Radio
+            <Chip
               label="Last week"
-              name="rangePicker"
-              value="prevWeek"
-              className="pb-6"
-              checked={selected === 'prevWeek'}
-              onChange={() => {
+              clearButton={false}
+              type="selection"
+              className="mb-6 d-block"
+              selected={selected === "prevWeek"}
+              name={"chip"}
+              onClick={() => {
                 this.setState({
-                  selected: 'prevWeek',
+                  selected: "prevWeek",
                   monthNav: DateRangePicker.utils.getCurrentMonth(),
                   ...DateRangePicker.utils.getPreviousWeek()
                 });
               }}
             />
-            <Radio
+            <Chip
               label="Last month"
+              clearButton={false}
+              type="selection"
+              className="mb-6  d-block"
+              selected={selected === "prevMonth"}
               name="rangePicker"
-              value="prevMonth"
-              className="pb-6"
-              checked={selected === 'prevMonth'}
-              onChange={() => {
+              onClick={() => {
                 this.setState({
-                  selected: 'prevMonth',
+                  selected: "prevMonth",
                   monthNav: DateRangePicker.utils.getCurrentMonth() - 1,
                   ...DateRangePicker.utils.getPreviousMonth()
                 });
               }}
             />
-            <Radio
+            <Chip
               label="Last 90 days"
+              clearButton={false}
+              type="selection"
+              className="mb-6  d-block"
+              selected={selected === "prev90Days"}
               name="rangePicker"
-              value="prev90Days"
-              className="pb-6"
-              checked={selected === 'prev90Days'}
-              onChange={() => {
+              onClick={() => {
                 this.setState({
-                  selected: 'prev90Days',
+                  selected: "prev90Days",
                   monthNav: DateRangePicker.utils.getCurrentMonth(),
                   ...DateRangePicker.utils.getPrevious90Days()
                 });
               }}
             />
-            <Radio
+             <Chip
               label="Custom"
+              clearButton={false}
+              type="selection"
+              className="mb-6  d-block"
+              selected={selected === "custom"}
               name="rangePicker"
-              value="custom"
-              checked={selected === 'custom'}
-              onChange={() => {
+              onClick={() => {
                 this.setState({
-                  selected: 'custom',
+                  selected: "custom",
                   monthNav: DateRangePicker.utils.getCurrentMonth(),
                   ...DateRangePicker.utils.getCustomDates()
                 });
@@ -113,7 +121,7 @@ const customCode = `
           </div>
         </div>
       );
-    };
+    }
 
     render() {
       const { startDate, endDate, monthNav } = this.state;
@@ -134,11 +142,11 @@ const customCode = `
             {this.renderChildren()}
           </DateRangePicker>
         </div>
-      )
+      );
     }
   }
 
-  return <CustomPopover />
+  return <CustomPopover />;
 }`;
 
 export const withCustomPopover = () => <></>;
