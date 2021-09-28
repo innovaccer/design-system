@@ -1,3 +1,34 @@
+## 2.5.0-2  (2021-09-29) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Calendar and DatePicker has new design and features for today date selection now. (7c3df346)
+* EmptyState component now supports inline SVG image. (863d69b0)
+
+### Fixes
+* Table/Grid horizontal scrolling issue is fixed. (a6949715)
+* Modal is now vertically centered and can have flexible heights. (ef6072a7)
+* Dropzone icon is visible now when we bring mouse to drop file over it. (5ba93be9)
+
+### Improvements
+NA
+
+### Documentation
+* Guideline for branch naming convention added. (1ef3cd96)
+
+-------------------
+
 ## 2.5.0-1  (2021-09-27) 
 
 ### Highlights
@@ -24,6 +55,7 @@ NA
 NA
 
 -------------------
+
 ## 2.5.0-0  (2021-09-22) 
 
 ### Highlights
