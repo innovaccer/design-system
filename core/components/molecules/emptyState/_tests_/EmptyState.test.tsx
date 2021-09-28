@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 import { EmptyState, Button } from '@/index';
-import { EmptyStateProps as Props, HeadingProps, TextProps } from '@/index.type';
+import { EmptyStateProps as Props, HeadingProps } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const sizes: Props['size'][] = ['large', 'small'];
@@ -15,10 +15,6 @@ const HeadingSize: Record<Props['size'], HeadingProps['size']> = {
   small: 'm',
 };
 
-const textSize: Record<Props['size'], TextProps['size']> = {
-  large: 'large',
-  small: 'regular',
-};
 const title = 'Manage your outreach campaigns';
 const description = 'Campaigns let you reach out to patients with text messages, emails and voice calls';
 const imageSrc = 'noContent';
@@ -99,8 +95,8 @@ describe('EmptyState with prop: size', () => {
       expect(getByTestId('DesignSystem-EmptyState--Text')).toHaveClass(
         `EmptyState-description EmptyState-description--${size}`
       );
-      expect(getByTestId('DesignSystem-EmptyState--Heading')).toHaveStyle(`fontSize:${HeadingSize[size]}px`);
-      expect(getByTestId('DesignSystem-EmptyState--Text')).toHaveStyle(`fontSize: ${textSize[size]}px`);
+      expect(getByTestId('DesignSystem-EmptyState--Heading')).toHaveClass(`Heading--${HeadingSize[size]}`);
+      expect(getByTestId('DesignSystem-EmptyState--Text')).toHaveClass(`EmptyState-description--${size}`);
       expect(getByTestId('DesignSystem-EmptyState--Img')).toHaveAttribute('height', imageHeight[size]);
     });
   });
