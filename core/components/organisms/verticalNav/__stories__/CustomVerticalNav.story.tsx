@@ -41,12 +41,12 @@ export const cutsomVerticalNavigation = () => {
     <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <>
-          <VerticalNav menus={data} expanded={expanded} active={active} onClick={setActive} />
           {expanded && (
             <div className="mt-5 d-flex justify-content-center" style={{ borderTop: 'var(--border)' }}>
               <DatePicker date={new Date()} size="small" />
             </div>
           )}
+          <VerticalNav menus={data} expanded={expanded} active={active} onClick={setActive} />
         </>
       </Collapsible>
     </div>
@@ -93,17 +93,17 @@ const customCode = `() => {
     <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <>
+        {expanded && (
+          <div className="mt-5 d-flex justify-content-center" style={{ borderTop: 'var(--border)' }}>
+          <DatePicker date={new Date()} size="small" />
+          </div>
+          )}
           <VerticalNav
             menus={data}
             expanded={expanded}
             active={active}
             onClick={setActive}
           />
-          {expanded && (
-            <div className="mt-5 d-flex justify-content-center" style={{ borderTop: 'var(--border)' }}>
-              <DatePicker date={new Date()} size="small" />
-            </div>
-          )}
         </>
       </Collapsible>
     </div>

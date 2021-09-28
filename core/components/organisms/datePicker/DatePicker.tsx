@@ -189,21 +189,36 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const { months } = config;
     const todayDate = new Date(Date.now());
     const todayMonthAndDate: string = `${months[todayDate.getMonth()]} ${todayDate.getDate()}`;
-
+    const currDate = convertToDate(date, inputFormat, validators);
+    const dateDisabledBefore = convertToDate(disabledBefore, inputFormat, validators);
+    const dateDisabledAfter = convertToDate(disabledAfter, inputFormat, validators);
+    const isTodayDisabled = () => {
+      let isTodayDateDisabled = true;
+      if (currDate && dateDisabledBefore && dateDisabledAfter) {
+        isTodayDateDisabled = currDate > dateDisabledBefore && currDate < dateDisabledAfter;
+      } else if (currDate && dateDisabledBefore) {
+        isTodayDateDisabled = currDate < dateDisabledBefore;
+      } else if (currDate && dateDisabledAfter) {
+        isTodayDateDisabled = currDate > dateDisabledAfter;
+      }
+      return !isTodayDateDisabled;
+    };
     return (
       <div>
         <Calendar
           {...rest}
-          date={convertToDate(date, inputFormat, validators)}
-          disabledBefore={convertToDate(disabledBefore, inputFormat, validators)}
-          disabledAfter={convertToDate(disabledAfter, inputFormat, validators)}
+          size={size}
+          date={currDate}
+          disabledBefore={dateDisabledBefore}
+          disabledAfter={dateDisabledAfter}
           onDateChange={this.onDateChangeHandler}
         />
-        <div className="d-flex justify-content-center pb-6 pt-3" data-test="DesignSystem-Select--TodaysDate-wrapper">
+        <div className="d-flex justify-content-center pb-6" data-test="DesignSystem-Select--TodaysDate-wrapper">
           <Chip
             label={`Today, ${todayMonthAndDate}`}
             name="chip"
             type="action"
+            disabled={isTodayDisabled()}
             onClick={() => this.onDateChangeHandler(new Date())}
           />
         </div>

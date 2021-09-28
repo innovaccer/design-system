@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Button, Heading, Text } from '@/index';
+import { Button, Heading, Text, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 import config from './config';
@@ -413,7 +413,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   };
 
   renderJumpButton = (type: string) => {
-    const { disabledBefore, disabledAfter } = this.props;
+    const { disabledBefore, disabledAfter, size } = this.props;
 
     const { view, yearBlockNav, yearNav, monthNav } = this.state;
 
@@ -463,6 +463,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         appearance="basic"
         icon={`arrow_${type === 'next' ? 'forward' : 'back'}`}
         disabled={disabled}
+        size={size === 'small' ? 'tiny' : 'regular'}
         onClick={this.onNavIconClickHandler(type)}
       />
     );
@@ -506,20 +507,45 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const renderHeading = (content: string) => {
       if (size === 'small') {
-        return <Text weight="strong">{content}</Text>;
+        return (
+          <>
+            <Text weight="strong">{content}</Text>
+            {view !== 'year' && <Icon appearance="inverse" className="pl-3" name="keyboard_arrow_down" />}
+          </>
+        );
       }
-      return <Heading size="s">{content}</Heading>;
+      return (
+        <>
+          <Heading size="s">{content}</Heading>
+          {view !== 'year' && <Icon appearance="inverse" className="pl-3" name="keyboard_arrow_down" />}
+        </>
+      );
     };
 
     return (
       <div className={headerContentClass}>
-        {view !== 'date' && <span onClick={this.onNavHeadingClickHandler(view)}>{renderHeading(headerContent)}</span>}
+        {view !== 'date' && (
+          <div
+            className="d-flex justify-content-center align-items-center"
+            onClick={this.onNavHeadingClickHandler(view)}
+          >
+            {renderHeading(headerContent)}
+          </div>
+        )}
         {view === 'date' && (
           <>
-            <span onClick={this.onNavHeadingClickHandler(view)}>{renderHeading(months[monthNavVal])}</span>
-            <span className="ml-4" onClick={this.onNavHeadingClickHandler('month')}>
+            <div
+              onClick={this.onNavHeadingClickHandler(view)}
+              className="d-flex justify-content-center align-items-center"
+            >
+              {renderHeading(months[monthNavVal])}
+            </div>
+            <div
+              className="ml-4 d-flex justify-content-center align-items-center"
+              onClick={this.onNavHeadingClickHandler('month')}
+            >
               {renderHeading(yearNavVal)}
-            </span>
+            </div>
           </>
         )}
       </div>
@@ -531,7 +557,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const { size, rangePicker, disabledBefore, disabledAfter } = this.props;
 
-    const { yearBlockNav } = this.state;
+    const { yearBlockNav, currYear } = this.state;
 
     const noOfRows = Math.ceil(yearBlockRange / yearsInRow);
 
@@ -544,6 +570,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const year = yearBlockNav + offset;
           const disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
           const active = !disabled && !rangePicker && year === this.state.year;
+          const isCurrentYear = () => {
+            return year === currYear;
+          };
 
           const valueClass = classNames({
             'Calendar-value': true,
@@ -551,6 +580,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'Calendar-value--disabled': disabled,
             'Calendar-yearValue': true,
             [`Calendar-yearValue--${size}`]: size,
+            'Calendar-value--currDateMonthYear': isCurrentYear(),
           });
 
           return (
@@ -562,7 +592,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             >
               <Text
                 size={size === 'small' ? 'small' : 'regular'}
-                appearance={active ? 'white' : disabled ? 'disabled' : 'default'}
+                appearance={active ? 'white' : disabled ? 'disabled' : isCurrentYear() ? 'link' : 'default'}
               >
                 {year}
               </Text>
@@ -578,7 +608,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const { size, disabledBefore, disabledAfter } = this.props;
 
-    const { yearNav, year } = this.state;
+    const { yearNav, year, currYear, currMonth } = this.state;
 
     const noOfRows = Math.ceil(monthBlock / monthsInRow);
 
@@ -589,13 +619,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const disabled =
             compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
           const active = !disabled && year === yearNav && month === this.state.month;
-
+          const isCurrentMonth = () => {
+            return currYear === yearNav && currMonth === month;
+          };
           const valueClass = classNames({
             'Calendar-value': true,
             'Calendar-value--active': active,
             'Calendar-value--dummy': disabled,
             'Calendar-monthValue': true,
             [`Calendar-monthValue--${size}`]: size,
+            'Calendar-value--currDateMonthYear': isCurrentMonth(),
           });
 
           return (
@@ -607,7 +640,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             >
               <Text
                 size={size === 'small' ? 'small' : 'regular'}
-                appearance={active ? 'white' : disabled ? 'disabled' : 'default'}
+                appearance={active ? 'white' : disabled ? 'disabled' : isCurrentMonth() ? 'link' : 'default'}
               >
                 {months[month]}
               </Text>
@@ -693,9 +726,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const dayRange = getDaysInMonth(yearNavVal, monthNavVal);
     const dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
     const dummyDays = Math.abs(dayDiff);
-    const noOfRows = monthsInView
-      ? Math.ceil((dayRange + dummyDays) / daysInRow)
-      : Math.ceil((dayRange + dummyDays) / daysInRow) + 1;
+    let noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
+    if (noOfRows === 6) {
+      noOfRows = noOfRows;
+    } else if (monthsInView > 1) {
+      noOfRows = noOfRows;
+    } else {
+      noOfRows = noOfRows + 1;
+    }
     const inRangeError = this.getInRangeError();
 
     const events = this.props.events;
@@ -730,9 +768,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const date = daysInRow * row + col - dummyDays + 1;
             const dummy = date <= 0 || date > dayRange;
             const disabled =
-              !dummy &&
-              (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) ||
-                compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
+              compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) ||
+              compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date);
             let active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
             const today = () => {
               let boolVal;
@@ -825,7 +862,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'Calendar-value--disabled': disabled,
               'Calendar-dateValue': true,
               [`Calendar-dateValue--${size}`]: size,
-              'Calendar-value--currentDate': today(),
+              'Calendar-value--currDateMonthYear': today(),
             });
 
             return (
@@ -875,12 +912,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const containerClass = classNames({
       ['Calendar']: true,
-      [`Calendar--${view}`]: view,
+      [`Calendar--${view}--${size}`]: view,
       [`Calendar--${size}`]: size,
     });
 
     const headerClass = classNames({
-      'Calendar-header': true,
+      [`Calendar-header--${size}`]: size,
     });
 
     const bodyClass = classNames({

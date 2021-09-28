@@ -133,11 +133,11 @@ exports[`DatePicker component
         data-test="DesignSystem-Calendar-Wrapper"
       >
         <div
-          class="Calendar Calendar--date Calendar--large"
+          class="Calendar Calendar--date--large Calendar--large"
           data-test="DesignSystem-Calendar"
         >
           <div
-            class="Calendar-header"
+            class="Calendar-header--large"
           >
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
@@ -160,16 +160,24 @@ exports[`DatePicker component
             <div
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
-              <span>
+              <div
+                class="d-flex justify-content-center align-items-center"
+              >
                 <h5
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   Mar
                 </h5>
-              </span>
-              <span
-                class="ml-4"
+                <i
+                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down_round
+                </i>
+              </div>
+              <div
+                class="ml-4 d-flex justify-content-center align-items-center"
               >
                 <h5
                   class="Heading Heading--s Heading--default"
@@ -177,7 +185,13 @@ exports[`DatePicker component
                 >
                   2020
                 </h5>
-              </span>
+                <i
+                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down_round
+                </i>
+              </div>
             </div>
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -655,12 +669,93 @@ exports[`DatePicker component
                   </span>
                 </div>
               </div>
+              <div
+                class="Calendar-valueRow"
+              >
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    5
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    6
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    7
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    8
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    9
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    10
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    11
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="d-flex justify-content-center pb-6 pt-3"
+        class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
@@ -691,11 +786,11 @@ exports[`DatePicker component
         data-test="DesignSystem-Calendar-Wrapper"
       >
         <div
-          class="Calendar Calendar--date Calendar--large"
+          class="Calendar Calendar--date--large Calendar--large"
           data-test="DesignSystem-Calendar"
         >
           <div
-            class="Calendar-header"
+            class="Calendar-header--large"
           >
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
@@ -718,16 +813,24 @@ exports[`DatePicker component
             <div
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
-              <span>
+              <div
+                class="d-flex justify-content-center align-items-center"
+              >
                 <h5
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   Mar
                 </h5>
-              </span>
-              <span
-                class="ml-4"
+                <i
+                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down_round
+                </i>
+              </div>
+              <div
+                class="ml-4 d-flex justify-content-center align-items-center"
               >
                 <h5
                   class="Heading Heading--s Heading--default"
@@ -735,7 +838,13 @@ exports[`DatePicker component
                 >
                   2020
                 </h5>
-              </span>
+                <i
+                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down_round
+                </i>
+              </div>
             </div>
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -1213,12 +1322,93 @@ exports[`DatePicker component
                   </span>
                 </div>
               </div>
+              <div
+                class="Calendar-valueRow"
+              >
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    5
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    6
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    7
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    8
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    9
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    10
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    11
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="d-flex justify-content-center pb-6 pt-3"
+        class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
@@ -1249,11 +1439,11 @@ exports[`DatePicker component
         data-test="DesignSystem-Calendar-Wrapper"
       >
         <div
-          class="Calendar Calendar--month Calendar--large"
+          class="Calendar Calendar--month--large Calendar--large"
           data-test="DesignSystem-Calendar"
         >
           <div
-            class="Calendar-header"
+            class="Calendar-header--large"
           >
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
@@ -1276,14 +1466,22 @@ exports[`DatePicker component
             <div
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
-              <span>
+              <div
+                class="d-flex justify-content-center align-items-center"
+              >
                 <h5
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   2020
                 </h5>
-              </span>
+                <i
+                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down_round
+                </i>
+              </div>
             </div>
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -1459,7 +1657,7 @@ exports[`DatePicker component
         </div>
       </div>
       <div
-        class="d-flex justify-content-center pb-6 pt-3"
+        class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
@@ -1490,11 +1688,11 @@ exports[`DatePicker component
         data-test="DesignSystem-Calendar-Wrapper"
       >
         <div
-          class="Calendar Calendar--year Calendar--large"
+          class="Calendar Calendar--year--large Calendar--large"
           data-test="DesignSystem-Calendar"
         >
           <div
-            class="Calendar-header"
+            class="Calendar-header--large"
           >
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
@@ -1517,14 +1715,16 @@ exports[`DatePicker component
             <div
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
-              <span>
+              <div
+                class="d-flex justify-content-center align-items-center"
+              >
                 <h5
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   2016 - 2027
                 </h5>
-              </span>
+              </div>
             </div>
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -1611,11 +1811,11 @@ exports[`DatePicker component
                 </span>
               </div>
               <div
-                class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
                 data-test="DesignSystem-Calendar--yearValue"
               >
                 <span
-                  class="Text Text--default Text--regular"
+                  class="Text Text--link Text--regular"
                   data-test="DesignSystem-Text"
                 >
                   2021
@@ -1700,7 +1900,7 @@ exports[`DatePicker component
         </div>
       </div>
       <div
-        class="d-flex justify-content-center pb-6 pt-3"
+        class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
@@ -1731,11 +1931,11 @@ exports[`DatePicker component
         data-test="DesignSystem-Calendar-Wrapper"
       >
         <div
-          class="Calendar Calendar--date Calendar--large"
+          class="Calendar Calendar--date--large Calendar--large"
           data-test="DesignSystem-Calendar"
         >
           <div
-            class="Calendar-header"
+            class="Calendar-header--large"
           >
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
@@ -1758,16 +1958,24 @@ exports[`DatePicker component
             <div
               class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
             >
-              <span>
+              <div
+                class="d-flex justify-content-center align-items-center"
+              >
                 <h5
                   class="Heading Heading--s Heading--default"
                   data-test="DesignSystem-Heading"
                 >
                   Mar
                 </h5>
-              </span>
-              <span
-                class="ml-4"
+                <i
+                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down_round
+                </i>
+              </div>
+              <div
+                class="ml-4 d-flex justify-content-center align-items-center"
               >
                 <h5
                   class="Heading Heading--s Heading--default"
@@ -1775,7 +1983,13 @@ exports[`DatePicker component
                 >
                   2020
                 </h5>
-              </span>
+                <i
+                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  keyboard_arrow_down_round
+                </i>
+              </div>
             </div>
             <button
               class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
@@ -2253,12 +2467,93 @@ exports[`DatePicker component
                   </span>
                 </div>
               </div>
+              <div
+                class="Calendar-valueRow"
+              >
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    5
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    6
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    7
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    8
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    9
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    10
+                  </span>
+                </div>
+                <div
+                  class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                  data-test="designSystem-Calendar-WrapperClass"
+                >
+                  <span
+                    class="Text Text--default Text--regular Calendar-value Calendar-dateValue Calendar-dateValue--large"
+                    data-test="DesignSystem-Calendar--dateValue"
+                  >
+                    11
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        class="d-flex justify-content-center pb-6 pt-3"
+        class="d-flex justify-content-center pb-6"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
