@@ -55,15 +55,3 @@ describe('Grid component', () => {
 
   testHelper(mapper, testFunc);
 });
-
-describe('renders children with and without pagination', () => {
-  it('renders children with pagination', () => {
-    const { getByTestId } = render(<Grid withPagination={true} />);
-    expect(getByTestId('DesignSystem-Grid-body-with-NoPagination')).toBeInTheDocument();
-  });
-
-  it('renders children without pagination', () => {
-    const { getByTestId } = render(<Grid withPagination={false} />);
-    expect(getByTestId('DesignSystem-Grid-body-with-virtual-scroll')).toBeInTheDocument();
-  });
-});

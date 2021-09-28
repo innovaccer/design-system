@@ -2384,7 +2384,6 @@ exports[`TS renders children 1`] = `
     </div>
     <div
       class="Grid-body"
-      data-test="DesignSystem-Grid-body-with-virtual-scroll"
     >
       <div
         style="flex-shrink: 0; height: 0px;"
