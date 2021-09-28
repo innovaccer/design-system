@@ -8,9 +8,9 @@ type Size = 'large' | 'small';
 
 export interface EmptyStateProps extends BaseProps {
   /**
-   *  Illustration to be shown
+   *  Illustration to be shown (Either image or imageSrc is mandatory to show image )
    */
-  imageSrc: string;
+  imageSrc?: string;
   /**
    * Heading of `EmptyState`
    */
@@ -29,6 +29,10 @@ export interface EmptyStateProps extends BaseProps {
    * Button / ButtonGroups to be added inside `EmptyState`
    */
   children?: React.ReactNode;
+  /**
+   * Image to be shown. Image height should be set while providing image. Provide height as 128px when size is  'small'. Provide height as 256px when size is  'large'.
+   */
+  image?: React.ReactNode;
 }
 
 export const imageHeight = {
@@ -47,7 +51,7 @@ export const textSize: Record<Size, TextProps['size']> = {
 };
 
 export const EmptyState = (props: EmptyStateProps) => {
-  const { imageSrc, title, description, size, children, className } = props;
+  const { imageSrc, title, description, size, children, className, image } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -70,7 +74,8 @@ export const EmptyState = (props: EmptyStateProps) => {
 
   return (
     <div data-test="DesignSystem-EmptyState" {...baseProps} className={WrapperClass}>
-      <img src={imageSrc} height={imageHeight[size]} data-test="DesignSystem-EmptyState--Img" />
+      {image && <div style={{ height: imageHeight[size] }}>{image}</div>}
+      {imageSrc && !image && <img src={imageSrc} height={imageHeight[size]} data-test="DesignSystem-EmptyState--Img" />}
       <Heading data-test="DesignSystem-EmptyState--Heading" size={HeadingSize[size]} className={HeadingClass}>
         {title}
       </Heading>

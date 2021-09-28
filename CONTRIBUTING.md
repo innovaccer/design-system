@@ -623,10 +623,11 @@ Subsequent pull requests only need to follow step 3 and beyond.
 
 1. Fork the repository on GitHub
 2. Clone the forked repository to your machine
-3. Make your changes and commit them to your local repository
-4. Rebase and push your commits to your GitHub remote fork/repository
-5. Issue a Pull Request to the official repository
-6. Your Pull Request is reviewed by a committer and merged into the repository
+3. Create a new branch as per the branch naming conventions provided below.
+4. Make your changes and commit them to your local repository
+5. Rebase and push your commits to your GitHub remote fork/repository
+6. Issue a Pull Request to the official repository
+7. Your Pull Request is reviewed by a committer and merged into the repository
 
 **NOTE**: While there are other ways to accomplish the steps using other tools, the examples here will assume most actions will be performed via `git` on command line.
 
@@ -666,6 +667,19 @@ npm run test
   ```
 
 Then, and only then, you can create your pull request.
+
+#### Branch Naming Conventions
+
+The following are the steps you should follow when creating a new branch.
+
+- Start the branch name with prefixes like fix-, feat-, test-  as mentioned in [conventional commit messages](https://conventionalcommits.org/)
+- Add a short description of the task. This makes the branch name recognizable and distinct.
+- Use hyphens as separators
+
+For example:
+
+* `feat-add-billing-module`
+* `fix-modal-height`
 
 #### Commit Guidelines
 

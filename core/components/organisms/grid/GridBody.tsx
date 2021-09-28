@@ -16,7 +16,8 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, size, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate } = context;
+  const { data, ref, size, loading, error, withPagination, nestedRows, page, pageSize, totalRecords, errorTemplate } =
+    context;
 
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
@@ -58,29 +59,38 @@ export const GridBody = (props: GridBodyProps) => {
     ? Math.min(totalRecords, pageSize)
     : totalRecords;
 
-  const renderItem = (rowIndex: number, item: object) => {
-    return <GridRow rowIndex={rowIndex} data={!item ? data[rowIndex] : item} schema={schema} onSelect={onSelect} />;
+  const renderRow = (rowIndex: number, item: object) => {
+    return (
+      <GridRow
+        key={rowIndex}
+        rowIndex={rowIndex}
+        data={!item ? data[rowIndex] : item}
+        schema={schema}
+        onSelect={onSelect}
+      />
+    );
   };
+
+  if (nestedRows) {
+    return (
+      <div className="Grid-body">
+        {data.map((item, i) => {
+          return renderRow(i, item);
+        })}
+      </div>
+    );
+  }
 
   return (
     <>
-      {!!withPagination ? (
-        <div className="Grid-body" data-test="DesignSystem-Grid-body-with-NoPagination">
-          {data.map((item, i) => {
-            return renderItem(i, item);
-          })}
-        </div>
-      ) : (
-        <VirtualScroll
-          className="Grid-body"
-          minItemHeight={minRowHeight[size]}
-          totalLength={dataLength}
-          length={20}
-          buffer={7}
-          renderItem={renderItem}
-          data-test="DesignSystem-Grid-body-with-virtual-scroll"
-        />
-      )}
+      <VirtualScroll
+        className="Grid-body"
+        minItemHeight={minRowHeight[size]}
+        totalLength={dataLength}
+        length={20}
+        buffer={7}
+        renderItem={renderRow}
+      />
     </>
   );
 };

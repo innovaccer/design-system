@@ -78,7 +78,7 @@ describe('DatePicker component', () => {
   });
 
   it('calls click handler', () => {
-    const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} />);
+    const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} date={new Date(2021, 9, 25)} />);
     const chip = getByTestId('DesignSystem-Chip--GenericChip');
     fireEvent.click(chip);
     expect(FunctionValue).toHaveBeenCalled();

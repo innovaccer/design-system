@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { EmptyState, Button } from '@/index';
-import noContent from '../assets/pageNotLoaded.png';
+import noContent from './assets/pageNotLoaded.png';
 
 export const pageNotLoaded = () => (
   <div className="h-100 pb-5" style={{ backgroundColor: 'var(--secondary-lightest)' }}>
@@ -18,6 +18,6 @@ export const pageNotLoaded = () => (
 );
 
 export default {
-  title: 'Components/EmptyState/Variants/Page Not Loaded',
+  title: 'Components/EmptyState/Page Not Loaded',
   component: EmptyState,
 };

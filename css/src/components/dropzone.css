@@ -99,7 +99,6 @@
 .Dropzone-stateIcon {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .Dropzone-stateIcon--standard {
