@@ -4,15 +4,13 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Avatar, Popover, Text } from '@/index';
 import { AvatarProps, PopoverProps } from '@/index.type';
 
-export type Size = 'regular' | 'tiny';
-
 interface AvatarData extends Record<string, any> {
   firstName?: string;
   lastName?: string;
   appearance?: AvatarProps['appearance'];
 }
 
-interface PopperProps {
+interface AvatarPopperProps {
   popperRenderer?: (names: AvatarData[]) => JSX.Element;
   appendToBody?: PopoverProps['appendToBody'];
   dark?: PopoverProps['dark'];
@@ -48,7 +46,7 @@ export interface AvatarGroupProps extends BaseProps {
    * **Popover for +x avatar**
    *
    * <pre className="DocPage-codeBlock">
-   * PopperProps: {
+   * AvatarPopperProps: {
    *   popperRenderer?: (names: AvatarData[]) => JSX.Element;
    *   appendToBody?: boolean;
    *   dark?: boolean;
@@ -70,7 +68,7 @@ export interface AvatarGroupProps extends BaseProps {
    * </pre>
    *
    */
-  popoverOptions: PopperProps;
+  popoverOptions: AvatarPopperProps;
   /**
    * Position to place the tooltip on `Avatars` shown before +x
    */

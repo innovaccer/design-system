@@ -2,9 +2,9 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
+import { AutoComplete } from '@/common.type';
 
-export type AutoComplete = 'on' | 'off';
-export type Size = 'regular' | 'large';
+export type MetricInputSize = 'regular' | 'large';
 
 export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
   /**
@@ -27,7 +27,7 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
    * Size of the `MetricInput`
    * @default "regular"
    */
-  size?: Size;
+  size?: MetricInputSize;
   /**
    * Material icon name
    */

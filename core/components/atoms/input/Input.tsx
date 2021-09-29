@@ -3,10 +3,10 @@ import classNames from 'classnames';
 import { Tooltip, Icon, Text } from '@/index';
 import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
+import { AutoComplete } from '@/common.type';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
-export type AutoComplete = 'on' | 'off';
-export type Size = 'tiny' | 'regular' | 'large';
+export type InputSize = 'tiny' | 'regular' | 'large';
 
 export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
   /**
@@ -35,7 +35,7 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    * Size of the `Input`
    * @default "regular"
    */
-  size?: Size;
+  size?: InputSize;
   /**
    * Material icon name
    */

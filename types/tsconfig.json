@@ -18,6 +18,6 @@
     },
     "files": [
         "index.d.ts",
-        "innovaccer-design-system-tests.ts"
+        "types-tests.tsx"
     ]
 }

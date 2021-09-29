@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Paragraph, { ParagraphProps as Props, Appearance } from '../Paragraph';
+import Paragraph, { ParagraphProps as Props, ParagraphAppearance } from '../Paragraph';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const appearance: Appearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
+const appearance: ParagraphAppearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
 
 const mapper = {
   appearance: valueHelper(appearance, { required: true, iterate: true }),

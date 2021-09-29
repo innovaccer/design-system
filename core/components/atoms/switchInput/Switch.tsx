@@ -2,11 +2,10 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { OmitNativeProps, BaseProps } from '@/utils/types';
 import { isSpaceKey } from '@/accessibility/utils';
+import { ChangeEvent } from '@/common.type';
 
-export type Size = 'regular' | 'tiny' | 'large';
-export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
-
-type MouseEvent = React.ChangeEvent<HTMLInputElement>;
+export type SwitchSize = 'regular' | 'tiny' | 'large';
+export type SwitchAppearance = 'primary' | 'alert' | 'success' | 'warning';
 
 type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
 
@@ -15,13 +14,13 @@ export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement
    * Size of `Switch`
    * @default "regular"
    */
-  size?: Size;
+  size?: SwitchSize;
   /**
    * Color of `Switch`
    *
    * **Soon to be deprecated**
    */
-  appearance?: Appearance;
+  appearance?: SwitchAppearance;
   /**
    * Default value of checked (Used in case of uncontrolled `Switch`)
    */
@@ -45,7 +44,7 @@ export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement
   /**
    * Callback function called when `Switch` is toggled
    */
-  onChange?: (event: MouseEvent | KeyboardEvent, selected: boolean) => void;
+  onChange?: (event: ChangeEvent | KeyboardEvent, selected: boolean) => void;
 }
 
 /**
@@ -90,7 +89,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     ['Switch-wrapper--checkedDisabled']: checked && disabled,
   });
 
-  const onChangeHandler = (event: MouseEvent | KeyboardEvent) => {
+  const onChangeHandler = (event: ChangeEvent | KeyboardEvent) => {
     if (event.type == 'change' || isSpaceKey(event as React.KeyboardEvent<HTMLElement>)) {
       if (checkedProp === undefined) setChecked(!checked);
       if (onChange) onChange(event, !checked);

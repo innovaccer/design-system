@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Heading, { HeadingProps as Props, Appearance, Size } from '../Heading';
+import Heading, { HeadingProps as Props, HeadingSize } from '../Heading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { HeadingAppearance } from '@/common.type';
 
-const appearance: Appearance[] = ['default', 'subtle', 'disabled', 'white'];
-const sizes: Size[] = ['s', 'm', 'l', 'xl', 'xxl'];
+const appearance: HeadingAppearance[] = ['default', 'subtle', 'disabled', 'white'];
+const sizes: HeadingSize[] = ['s', 'm', 'l', 'xl', 'xxl'];
 
 describe('Heading component', () => {
   const mapper = {

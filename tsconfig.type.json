@@ -31,6 +31,7 @@
     "node_modules",
     "core/**/__tests__",
     "core/**/__stories__",
-    ".github"
+    ".github",
+    "types"
   ]
 }

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Appearance, InlineMessage } from '../InlineMessage';
+import { InlineMessage } from '../InlineMessage';
 import { InlineMessageProps as Props } from '@/index.type';
+import { MessageAppearance } from '@/common.type';
 
-const appearance: Appearance[] = ['default', 'alert', 'info', 'success', 'warning'];
+const appearance: MessageAppearance[] = ['default', 'alert', 'info', 'success', 'warning'];
 
 const description = 'Inline Message here.';
 

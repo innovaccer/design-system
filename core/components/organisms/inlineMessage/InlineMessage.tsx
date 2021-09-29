@@ -2,8 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { MessageAppearance } from '@/common.type';
 
-export type Appearance = 'default' | 'alert' | 'info' | 'success' | 'warning';
 const IconMapping = {
   success: 'check_circle',
   info: 'info',
@@ -15,7 +15,7 @@ export interface InlineMessageProps extends BaseProps {
   /**
    * Color of `Inline Message`
    */
-  appearance: Appearance;
+  appearance: MessageAppearance;
   /**
    * Description of `Inline Message`
    */

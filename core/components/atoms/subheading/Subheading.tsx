@@ -2,8 +2,8 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
+import { HeadingAppearance } from '@/common.type';
 
-export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
 export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
   /**
    * Text to be rendered
@@ -13,7 +13,7 @@ export interface SubheadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingEle
   /**
    * Color of `Subheading`
    */
-  appearance: Appearance;
+  appearance: HeadingAppearance;
 }
 
 export const Subheading = (props: SubheadingProps) => {

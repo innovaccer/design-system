@@ -3,7 +3,7 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
-export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
+export type ParagraphAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
 export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphElement> {
   /**
@@ -14,7 +14,7 @@ export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphEl
   /**
    * Color of `Paragraph`
    */
-  appearance: Appearance;
+  appearance: ParagraphAppearance;
 }
 
 export const Paragraph = (props: ParagraphProps) => {
