@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
+import PlaceholderImage, { PlaceholderImageSize } from '@/components/atoms/placeholderImage';
 import { PlaceholderParagraphProps } from '@/components/atoms/placeholderParagraph';
 
 export interface PlaceholderProps extends BaseProps {
@@ -16,7 +16,7 @@ export interface PlaceholderProps extends BaseProps {
   /**
    * Specifies dimension of `Placeholder`
    */
-  imageSize: Size;
+  imageSize: PlaceholderImageSize;
   /**
    * To be rendered in `Placeholder` wrapper
    */

@@ -1,23 +1,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-
-export type Appearance =
-  | 'primary'
-  | 'secondary'
-  | 'alert'
-  | 'warning'
-  | 'success'
-  | 'accent1'
-  | 'accent2'
-  | 'accent3'
-  | 'accent4';
+import { AccentAppearance } from '@/common.type';
 
 export interface BadgeProps extends BaseProps {
   /*
    * Color of the `Badge`
    */
-  appearance: Appearance;
+  appearance: AccentAppearance;
   /**
    * Makes `Badge` appearance subtle
    */

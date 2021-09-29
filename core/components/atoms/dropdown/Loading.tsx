@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
 import Placeholder from '@/components/molecules/placeholder';
 

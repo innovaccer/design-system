@@ -1,6 +1,6 @@
 import { Schema } from '../../organisms/grid';
 import { GridCell, Button } from '@/index';
-import React from 'react';
+import * as React from 'react';
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
 

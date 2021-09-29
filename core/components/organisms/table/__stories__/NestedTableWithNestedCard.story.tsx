@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Card, Table, CardSubdued, Text } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { TableProps } from '@/index.type';

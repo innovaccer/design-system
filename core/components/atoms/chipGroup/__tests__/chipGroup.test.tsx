@@ -3,9 +3,9 @@ import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { ChipGroup } from '@/index';
 import { ChipGroupProps as Props } from '@/index.type';
-import { Type } from '../../chip/Chip';
+import { ChipType } from '../../chip/Chip';
 
-const type: Type[] = ['action', 'input', 'selection'];
+const type: ChipType[] = ['action', 'input', 'selection'];
 const FunctionValue = jest.fn();
 const onClick = jest.fn();
 const onClose = jest.fn();

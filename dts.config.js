@@ -4,8 +4,17 @@ const config = {
 	},
 	entries: [
 		{
-			filePath: 'dist/core/index.d.ts',
-			outFile: 'types/innovaccer-design-system/index.d.ts',
+			filePath: 'core/index.type.tsx',
+			outFile: 'types/index.d.ts',
+			libraries: {
+                /**
+                 * Array of package names from node_modules to import typings from.
+                 * Used types will be imported using `import { First, Second } from 'library-name';`.
+                 * By default all libraries will be imported (except inlined libraries and libraries from @types).
+                 * Optional. Default value is `undefined`.
+                 */
+			importedLibraries: ['react'],
+            },
 		},
 	],
 };

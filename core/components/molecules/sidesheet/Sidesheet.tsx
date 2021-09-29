@@ -3,17 +3,15 @@ import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { Row, Column, Backdrop, OutsideClick, Button } from '@/index';
 import { ColumnProps } from '@/index.type';
-import { OverlayFooter, OverlayFooterProps } from '@/components/molecules/overlayFooter';
+import { OverlayFooter } from '@/components/molecules/overlayFooter';
 import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
+import { FooterOptions } from '@/common.type';
 
-export type Dimension = 'regular' | 'large';
-type FooterOptions = {
-  actions: OverlayFooterProps['actions'];
-};
+export type SidesheetDimension = 'regular' | 'large';
 
 export interface SidesheetProps extends BaseProps {
   /**
@@ -55,7 +53,7 @@ export interface SidesheetProps extends BaseProps {
    *
    * Dimension: `large` | `regular`
    */
-  dimension: Dimension;
+  dimension: SidesheetDimension;
   /**
    * Handles open/close state
    */
@@ -108,7 +106,7 @@ interface SidesheetState {
   zIndex?: number;
 }
 
-const sidesheetWidth: Record<Dimension, ColumnProps['size']> = {
+const sidesheetWidth: Record<SidesheetDimension, ColumnProps['size']> = {
   regular: '6',
   large: '10',
 };
