@@ -4,7 +4,7 @@ const config = {
 	},
 	entries: [
 		{
-			filePath: 'dist/core/index.d.ts',
+			filePath: 'core/index.type.tsx',
 			outFile: 'types/innovaccer-design-system/index.d.ts',
 		},
 	],

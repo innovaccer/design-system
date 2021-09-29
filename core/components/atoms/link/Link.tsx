@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 
 type LinkTarget = '_blank' | '_self' | '_parent' | '_top';
-type Appearance = 'default' | 'subtle';
-type Size = 'regular' | 'tiny';
+type LinkAppearance = 'default' | 'subtle';
+type LinkSize = 'regular' | 'tiny';
 
 export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, 'onClick'> {
   /**
@@ -15,11 +15,11 @@ export interface LinkProps extends BaseProps, OmitNativeProps<HTMLLinkElement, '
   /**
    * Color of `Link`
    */
-  appearance: Appearance;
+  appearance: LinkAppearance;
   /**
    * Size of `Link`
    */
-  size: Size;
+  size: LinkSize;
   /**
    * Disables the `Link`, making it unable to be clicked
    */

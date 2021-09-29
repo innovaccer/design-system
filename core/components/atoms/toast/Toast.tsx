@@ -5,8 +5,7 @@ import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-
-export type Appearance = 'default' | 'info' | 'success' | 'alert' | 'warning';
+import { MessageAppearance } from '../../../commonTypes';
 
 export type Action = {
   /**
@@ -27,7 +26,7 @@ export interface ToastProps extends BaseProps {
   /**
    * Color of `Toast`
    */
-  appearance: Appearance;
+  appearance: MessageAppearance;
   /**
    * Message to be rendered inside `Toast`
    */

@@ -2,14 +2,14 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 
-export type Size = 'tiny' | 'regular';
+export type DropDownButtonSize = 'tiny' | 'regular';
 
 export interface TriggerProps {
   /**
    * Size of `Dropdown` trigger button
    * @default "regular"
    */
-  triggerSize?: Size;
+  triggerSize?: DropDownButtonSize;
   /**
    * Material icon name
    */

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { debounce } from 'throttle-debounce';
-import DropdownList, { DropdownListProps, SelectAll, Selected, ChangeEvent } from './DropdownList';
+import DropdownList, { DropdownListProps, SelectAll, Selected } from './DropdownList';
 import { OptionSchema as Option } from './option';
 import {
   getSearchedOptions,
@@ -12,6 +12,7 @@ import {
   _isSelectAllPresent,
 } from './utility';
 import { BaseProps } from '@/utils/types';
+import { ChangeEvent } from '../../../commonTypes';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;

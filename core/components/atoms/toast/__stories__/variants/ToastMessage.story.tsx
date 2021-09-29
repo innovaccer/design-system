@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Toast, { Appearance } from '../../Toast';
+import Toast from '../../Toast';
+import { MessageAppearance } from '../../../../../commonTypes';
 
 // CSF format story
 export const toastWithDescription = () => {
-  const appearances: Appearance[] = ['default', 'info', 'success', 'alert', 'warning'];
+  const appearances: MessageAppearance[] = ['default', 'info', 'success', 'alert', 'warning'];
 
   const message = text('message', 'Outreach was sent');
   return (

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { RangeSlider } from '@/index';
-
-type NumberRange = [number, number];
+import { NumberRange } from '../../../../../commonTypes';
 
 // CSF format story
 export const cutsomLabels = () => {

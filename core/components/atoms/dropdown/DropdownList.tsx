@@ -7,8 +7,8 @@ import Option, { OptionRendererProps, OptionSchema } from './option';
 import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { ChangeEvent } from '../../../commonTypes';
 
-export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
 
@@ -33,9 +33,9 @@ interface PopoverOptions {
   boundaryElement?: PopoverProps['boundaryElement'];
 }
 
-type ListProps = TriggerProps & OptionRendererProps;
+type TriggerAndOptionProps = TriggerProps & OptionRendererProps;
 
-export interface DropdownListProps extends ListProps {
+export interface DropdownListProps extends TriggerAndOptionProps {
   /**
    * Aligns the `Dropdown` left/right
    * @default "right"

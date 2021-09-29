@@ -3,8 +3,7 @@ import classNames from 'classnames';
 import { Text, Caption, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
-
-export type FileStatus = 'uploading' | 'completed' | 'error';
+import { FileStatus } from '../../../commonTypes';
 
 export interface FileItem {
   /**

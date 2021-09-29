@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import StatusHint, { StatusHintProps as IProps, Appearance } from '../StatusHint';
+import StatusHint, { StatusHintProps as IProps } from '../StatusHint';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { MessageAppearance } from '../../../../commonTypes';
 
 const label = 'StatusHint';
-const appearances: Appearance[] = ['default', 'alert', 'info', 'warning', 'success'];
+const appearances: MessageAppearance[] = ['default', 'alert', 'info', 'warning', 'success'];
 
 describe('StatusHint component', () => {
   const mapper = {

@@ -2,8 +2,7 @@ import * as React from 'react';
 import Text from '@/components/atoms/text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-
-export type Appearance = 'info' | 'alert' | 'warning' | 'success' | 'default';
+import { MessageAppearance } from '../../../commonTypes';
 
 export interface StatusHintProps extends BaseProps {
   /**
@@ -13,7 +12,7 @@ export interface StatusHintProps extends BaseProps {
   /**
    * Color of Icon
    */
-  appearance: Appearance;
+  appearance: MessageAppearance;
   /**
    * Handler to be called when `Status Hint` is clicked
    */

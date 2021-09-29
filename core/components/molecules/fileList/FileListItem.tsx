@@ -3,8 +3,7 @@ import classNames from 'classnames';
 import { Text, Caption } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileIcon from './FileIcon';
-
-export type FileStatus = 'uploading' | 'completed' | 'error';
+import { FileStatus } from '../../../commonTypes';
 
 export interface FileObject extends BaseProps, Record<string, any> {
   /**

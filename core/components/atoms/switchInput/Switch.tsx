@@ -1,24 +1,23 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { OmitNativeProps, BaseProps } from '@/utils/types';
+import { MouseEvent } from '../../../commonTypes';
 
-export type Size = 'regular' | 'tiny' | 'large';
-export type Appearance = 'primary' | 'alert' | 'success' | 'warning';
-
-type MouseEvent = React.ChangeEvent<HTMLInputElement>;
+export type SwitchSize = 'regular' | 'tiny' | 'large';
+export type SwitchAppearance = 'primary' | 'alert' | 'success' | 'warning';
 
 export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
    * Size of `Switch`
    * @default "regular"
    */
-  size?: Size;
+  size?: SwitchSize;
   /**
    * Color of `Switch`
    *
    * **Soon to be deprecated**
    */
-  appearance?: Appearance;
+  appearance?: SwitchAppearance;
   /**
    * Default value of checked (Used in case of uncontrolled `Switch`)
    */

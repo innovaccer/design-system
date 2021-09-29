@@ -2,9 +2,9 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
+import { HeadingAppearance } from '../../../commonTypes';
 
-export type Size = 's' | 'm' | 'l' | 'xl' | 'xxl';
-export type Appearance = 'default' | 'subtle' | 'disabled' | 'white';
+export type HeadingSize = 's' | 'm' | 'l' | 'xl' | 'xxl';
 
 export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
   /**
@@ -14,11 +14,11 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
   /**
    * Color of `Heading`
    */
-  appearance: Appearance;
+  appearance: HeadingAppearance;
   /**
    * size of `Heading`
    */
-  size: Size;
+  size: HeadingSize;
 }
 
 const sizeMap = {

@@ -2,8 +2,7 @@ import * as React from 'react';
 import { text, boolean, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import RangeSlider from '../RangeSlider';
-
-type NumberRange = [number, number];
+import { NumberRange } from '../../../../commonTypes';
 
 // CSF format story
 export const all = () => {

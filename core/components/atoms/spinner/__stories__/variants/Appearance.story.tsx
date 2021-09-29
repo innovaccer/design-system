@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Spinner, { Appearance } from '../../Spinner';
+import Spinner, { SpinnerAppearance } from '../../Spinner';
 import Text from '@/components/atoms/text';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: Appearance[] = ['primary', 'secondary', 'white'];
+  const appearances: SpinnerAppearance[] = ['primary', 'secondary', 'white'];
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {

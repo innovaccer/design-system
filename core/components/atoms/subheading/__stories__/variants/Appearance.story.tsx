@@ -1,10 +1,11 @@
 import * as React from 'react';
-import Subheading, { Appearance } from '../../index';
+import Subheading from '../../index';
 import Text from '@/components/atoms/text';
+import { HeadingAppearance } from '../../../../../commonTypes';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: Appearance[] = ['default', 'subtle', 'disabled', 'white'];
+  const appearances: HeadingAppearance[] = ['default', 'subtle', 'disabled', 'white'];
 
   return (
     <div className="d-flex">

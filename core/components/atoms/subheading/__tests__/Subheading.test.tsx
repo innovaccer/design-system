@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Subheading, { SubheadingProps as Props, Appearance } from '../Subheading';
+import Subheading, { SubheadingProps as Props } from '../Subheading';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { HeadingAppearance } from '../../../../commonTypes';
 
-const appearance: Appearance[] = ['default', 'subtle', 'disabled', 'white'];
+const appearance: HeadingAppearance[] = ['default', 'subtle', 'disabled', 'white'];
 
 const mapper = {
   appearance: valueHelper(appearance, { required: true, iterate: true }),

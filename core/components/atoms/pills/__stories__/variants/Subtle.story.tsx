@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import Pills, { Appearance } from '../../Pills';
+import Pills from '../../Pills';
 import Text from '@/components/atoms/text';
+import { AccentAppearance } from '../../../../../commonTypes';
 
 // CSF format story
 export const subtle = () => {
@@ -10,7 +11,7 @@ export const subtle = () => {
 
   const children = text('children', 'Pills');
 
-  const appearances: Appearance[] = [
+  const appearances: AccentAppearance[] = [
     'primary',
     'secondary',
     'alert',

@@ -23,7 +23,7 @@ export interface ErrorTemplateProps {
 
 export type FilterPosition = 'GRID' | 'HEADER';
 
-interface SyncProps {
+interface TableSyncProps {
   /**
    * <pre className="DocPage-codeBlock">
    *    Data: RowData[]
@@ -326,7 +326,7 @@ interface SharedTableProps extends BaseProps {
   filterPosition: FilterPosition;
 }
 
-export type SyncTableProps = SharedTableProps & SyncProps;
+export type SyncTableProps = SharedTableProps & TableSyncProps;
 export type AsyncTableProps = SharedTableProps & AsyncProps;
 export type TableProps = AsyncTableProps & SyncTableProps;
 

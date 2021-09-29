@@ -1,10 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
-import { Appearance } from './Toast';
+import { MessageAppearance } from '../../../commonTypes';
 
 export interface Props {
-  appearance: Appearance;
+  appearance: MessageAppearance;
   label: string;
   onClick?: (e: React.MouseEvent) => void;
 }

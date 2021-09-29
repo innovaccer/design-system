@@ -1,23 +1,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-
-export type Appearance =
-  | 'primary'
-  | 'secondary'
-  | 'alert'
-  | 'warning'
-  | 'success'
-  | 'accent1'
-  | 'accent2'
-  | 'accent3'
-  | 'accent4';
+import { AccentAppearance } from '../../../commonTypes';
 
 export interface PillsProps extends BaseProps {
   /**
    * Color of the `Pills`
    */
-  appearance: Appearance;
+  appearance: AccentAppearance;
   /**
    * Makes `Pills` appearance subtle
    */

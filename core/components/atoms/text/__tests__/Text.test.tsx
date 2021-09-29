@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Text, { TextProps as Props, Appearance, Size } from '../Text';
+import Text, { TextProps as Props, TextAppearance, Size } from '../Text';
 import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { _isEqual } from '../../dropdown/utility';
 
 const sizes: Size[] = ['small', 'regular', 'large'];
-const appearances: Appearance[] = ['default', 'white', 'destructive', 'disabled', 'subtle', 'success', 'link'];
+const appearances: TextAppearance[] = ['default', 'white', 'destructive', 'disabled', 'subtle', 'success', 'link'];
 const weight = ['strong', 'medium'];
 const BooleanValue = [true, false];
 const StringValue = 'Sample String';

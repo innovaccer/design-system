@@ -7,7 +7,7 @@ import DropzoneError from './DropzoneError';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { fileErrorMessages } from './FileErrors';
 
-export type Type = 'standard' | 'compressed' | 'tight';
+export type DropZoneType = 'standard' | 'compressed' | 'tight';
 
 export interface DropzoneProps extends BaseProps, DropzoneBaseProps {
   /**
@@ -17,7 +17,7 @@ export interface DropzoneProps extends BaseProps, DropzoneBaseProps {
   /**
    * Size of `Dropzone`
    */
-  type: Type;
+  type: DropZoneType;
   /**
    * Description of maximum size in `FileUploader`
    */

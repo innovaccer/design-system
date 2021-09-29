@@ -1,7 +1,6 @@
 import * as React from 'react';
 import MultiSlider, { MultiSliderProps } from '@/components/atoms/multiSlider';
-
-export type NumberRange = [number, number];
+import { NumberRange } from '../../../commonTypes';
 
 enum RangeIndex {
   START = 0,

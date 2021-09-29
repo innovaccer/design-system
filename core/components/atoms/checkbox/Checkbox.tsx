@@ -4,16 +4,15 @@ import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
-export type Size = 'regular' | 'tiny';
-
-type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+import { ChangeEvent } from '../../../commonTypes';
+export type CheckBoxSize = 'regular' | 'tiny';
 
 export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
    * Size of the `Checkbox`
    * @default "regular"
    */
-  size?: Size;
+  size?: CheckBoxSize;
   /**
    * Default value of checked (Used in case of uncontrolled `Checkbox`)
    */

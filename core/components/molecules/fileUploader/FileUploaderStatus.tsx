@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ProgressRing, Button } from '@/index';
-import { FileStatus } from './FileUploaderItem';
+import { FileStatus } from '../../../commonTypes';
 
 export interface FileUploaderStatusProps {
   file: File;

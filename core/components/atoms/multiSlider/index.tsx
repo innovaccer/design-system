@@ -13,8 +13,7 @@ import {
   fillValues,
   isElementOfType,
 } from './SliderUtils';
-
-type NumberRange = [number, number];
+import { NumberRange } from '../../../commonTypes';
 
 export interface MultiSliderProps extends BaseProps {
   /**

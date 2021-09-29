@@ -3,17 +3,16 @@ import classNames from 'classnames';
 import Text from '@/components/atoms/text';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
+import { MouseEvent } from '../../../commonTypes';
 
-export type Size = 'regular' | 'tiny';
-
-type MouseEvent = React.ChangeEvent<HTMLInputElement>;
+export type RadioSize = 'regular' | 'tiny';
 
 export interface RadioProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
    * Size of `Radio`
    * @default "regular"
    */
-  size?: Size;
+  size?: RadioSize;
   /**
    * Disables the `Radio`, making it unable to be pressed
    */

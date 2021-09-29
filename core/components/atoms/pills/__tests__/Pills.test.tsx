@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Pills, { PillsProps as Props, Appearance } from '../Pills';
+import Pills, { PillsProps as Props } from '../Pills';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { AccentAppearance } from '../../../../commonTypes';
 
-const appearances: Appearance[] = [
+const appearances: AccentAppearance[] = [
   'primary',
   'alert',
   'warning',

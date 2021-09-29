@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Avatar, { AvatarProps as Props, Appearance, Size } from '../Avatar';
+import Avatar, { AvatarProps as Props, AvatarSize } from '../Avatar';
+import { AccentAppearance } from '../../../../commonTypes';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const appearances: Appearance[] = [
+const appearances: AccentAppearance[] = [
   'primary',
   'alert',
   'warning',
@@ -14,7 +15,7 @@ const appearances: Appearance[] = [
   'accent4',
 ];
 
-const sizes: Size[] = ['regular', 'tiny'];
+const sizes: AvatarSize[] = ['regular', 'tiny'];
 
 describe('Avatar component', () => {
   const mapper = {
