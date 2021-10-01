@@ -1,10 +1,9 @@
 @keyframes modal-open {
   from {
-    top: 124px;
+    top: 20px;
     opacity: 0;
   }
   to {
-    top: 104px;
     opacity: 100;
   }
 }
