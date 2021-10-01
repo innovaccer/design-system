@@ -78,3 +78,4 @@ export { PageHeaderProps } from './components/organisms/pageHeader';
 export { FileListProps } from './components/molecules/fileList';
 export { VerificationCodeInputProps } from './components/molecules/verificationCodeInput';
 export { InlineMessageProps } from './components/organisms/inlineMessage';
+export { ChoiceListProps } from './components/organisms/choiceList';
