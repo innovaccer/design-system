@@ -128,7 +128,7 @@ const renderMetaList = (props: CellProps) => {
 
   if (metaList) {
     return (
-      <div className="GridCell-metaList">
+      <div className="GridCell-metaList" data-test="DesignSystem-GridCell-metaList">
         {metaList.map((list, index) => (
           <Text key={index} className="ellipsis" appearance={'subtle'} size="small">
             {list}
@@ -204,7 +204,11 @@ export const GridCell = (props: GridCellProps) => {
     case 'DEFAULT':
       return (
         <div className={`${cellClass} GridCell--align-${align} GridCell--default`}>
-          {loading ? <PlaceholderParagraph length="medium" /> : renderTitle({ tooltip, cellData })}
+          {loading ? (
+            <PlaceholderParagraph length="medium" data-test="DesignSystem-GridCell-placeHolder" />
+          ) : (
+            renderTitle({ tooltip, cellData })
+          )}
         </div>
       );
 
@@ -213,7 +217,7 @@ export const GridCell = (props: GridCellProps) => {
         <div className={`${cellClass} GridCell--metaList`}>
           {loading ? (
             <>
-              <PlaceholderParagraph length="medium" />
+              <PlaceholderParagraph length="medium" data-test="DesignSystem-GridCell-withMetaList" />
               <PlaceholderParagraph length="large" size="xxs" />
             </>
           ) : (
@@ -230,7 +234,10 @@ export const GridCell = (props: GridCellProps) => {
         return <Placeholder className={`GridCell--align-${align}`} imageSize={'medium'} round={true} />;
       }
       return (
-        <div className={`${cellClass} GridCell--align-${align} GridCell--avatar`}>
+        <div
+          className={`${cellClass} GridCell--align-${align} GridCell--avatar`}
+          data-test="DesignSystem-GridCell-avatar"
+        >
           {size !== 'tight' && renderAvatar({ cellData })}
         </div>
       );
@@ -244,7 +251,7 @@ export const GridCell = (props: GridCellProps) => {
         );
       }
       return (
-        <div className={`${cellClass} GridCell--avatarWithText`}>
+        <div className={`${cellClass}   `} data-test="DesignSystem-GridCell-avatarWithText">
           {size !== 'tight' && renderAvatar({ cellData })}
           {renderTitle({ tooltip, cellData })}
         </div>
@@ -260,7 +267,7 @@ export const GridCell = (props: GridCellProps) => {
         );
       }
       return (
-        <div className={`${cellClass} GridCell--avatarWithText`}>
+        <div className={`${cellClass} GridCell--avatarWithText`} data-test="DesignSystem-GridCell-avatarWithMetaList">
           {size !== 'tight' && renderAvatar({ cellData })}
           <div className="GridCell-metaListWrapper">
             {renderTitle({ tooltip, cellData })}
@@ -273,7 +280,11 @@ export const GridCell = (props: GridCellProps) => {
       if (loading) {
         return <Placeholder className={`GridCell--align-${align}`} imageSize={'small'} round={true} />;
       }
-      return <div className={`${cellClass} GridCell--align-${align} GridCell--icon`}>{renderIcon({ cellData })}</div>;
+      return (
+        <div className={`${cellClass} GridCell--align-${align} GridCell--icon`} data-test="DesignSystem-GridCell-icon">
+          {renderIcon({ cellData })}
+        </div>
+      );
 
     case 'STATUS_HINT':
       return (
