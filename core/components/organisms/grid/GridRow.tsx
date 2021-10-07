@@ -71,7 +71,7 @@ export const GridRow = (props: GridRowProps) => {
       });
 
       return (
-        <div className={classes}>
+        <div className={classes} data-test="DesignSystem-Grid-cellGroup">
           {renderCheckbox(shouldRenderCheckbox)}
           {currSchema.map((s, index) => {
             let cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
