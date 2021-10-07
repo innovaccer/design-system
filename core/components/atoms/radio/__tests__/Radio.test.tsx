@@ -57,27 +57,29 @@ describe('Radio component', () => {
 
 describe('Radio component', () => {
   it('renders children', () => {
-    const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue}/>);
+    const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue} />);
     expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
   });
 
   it('renders children : input', () => {
-    const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue}/>);
+    const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue} />);
     expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
   });
 
   it('renders children with label prop', () => {
-    const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue}/>);
+    const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue} />);
     expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Radio-Label')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-Radio-Label').textContent).toMatch(label)
+    expect(getByTestId('DesignSystem-Radio-Label').textContent).toMatch(label);
   });
 
   it('renders children with helpText prop', () => {
-    const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue} helpText={StringValue} />);
+    const { getByTestId } = render(
+      <Radio label={label} name={StringValue} value={StringValue} helpText={StringValue} />
+    );
     expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Radio-Label')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Radio-HelpText')).toBeInTheDocument();
@@ -85,14 +87,18 @@ describe('Radio component', () => {
   });
 
   it('calls onchange handler', () => {
-    const { getByTestId } = render(<Radio onChange={FunctionValue} label={label} name={StringValue} value={StringValue} helpText={StringValue} />);
+    const { getByTestId } = render(
+      <Radio onChange={FunctionValue} label={label} name={StringValue} value={StringValue} helpText={StringValue} />
+    );
     const input = getByTestId('DesignSystem-Radio-Input');
     fireEvent.click(input);
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('calls onchange handler when box is checked ', () => {
-    const { getByTestId } = render(<Radio onChange={FunctionValue} name={label} value={StringValue} label={StringValue} helpText={StringValue} />);
+    const { getByTestId } = render(
+      <Radio onChange={FunctionValue} name={label} value={StringValue} label={StringValue} helpText={StringValue} />
+    );
     const input = getByTestId('DesignSystem-Radio-Input');
     expect(input).not.toBeChecked();
     fireEvent.change(input, { target: { checked: true } });

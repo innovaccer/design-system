@@ -147,8 +147,8 @@ export const EditableInput = (props: EditableInputProps) => {
           </Text>
         </Popover>
       ) : (
-          inputComponent
-        );
+        inputComponent
+      );
     }
 
     return (
@@ -169,7 +169,9 @@ export const EditableInput = (props: EditableInputProps) => {
             icon="clear"
             className="mr-3"
             size="tiny"
-            onClick={() => { setDefaultComponent(value) }}
+            onClick={() => {
+              setDefaultComponent(value);
+            }}
             data-test="DesignSystem-EditableInput--Discard"
           />
           <Button

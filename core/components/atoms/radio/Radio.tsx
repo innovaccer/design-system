@@ -65,12 +65,9 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
 
   const ref = React.useRef<HTMLInputElement>(null);
 
-  React.useImperativeHandle(
-    forwardedRef,
-    (): HTMLInputElement => {
-      return ref.current as HTMLInputElement;
-    }
-  );
+  React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
+    return ref.current as HTMLInputElement;
+  });
 
   const RadioClass = classNames(
     {
@@ -123,10 +120,10 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           </label>
         )}
         {helpText && (
-            <Text data-test="DesignSystem-Radio-HelpText" size="small" appearance={disabled ? 'disabled' : 'subtle'}>
-              {helpText.trim()}
-            </Text>
-          )}
+          <Text data-test="DesignSystem-Radio-HelpText" size="small" appearance={disabled ? 'disabled' : 'subtle'}>
+            {helpText.trim()}
+          </Text>
+        )}
       </div>
     </div>
   );

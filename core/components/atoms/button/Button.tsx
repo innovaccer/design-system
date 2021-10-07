@@ -161,10 +161,10 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
                     disabled
                       ? 'disabled'
                       : appearance === 'basic' || appearance === 'transparent'
-                        ? selected
-                          ? 'info'
-                          : 'default'
-                        : 'white'
+                      ? selected
+                        ? 'info'
+                        : 'default'
+                      : 'white'
                   }
                   size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
                 />
@@ -175,15 +175,14 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
         )}
       </button>
     );
-  }
+  };
 
-  return (
-    icon && tooltip && !children ?
-      <Tooltip tooltip={tooltip}>
-        <ButtonElement />
-      </Tooltip>
-      :
+  return icon && tooltip && !children ? (
+    <Tooltip tooltip={tooltip}>
       <ButtonElement />
+    </Tooltip>
+  ) : (
+    <ButtonElement />
   );
 });
 

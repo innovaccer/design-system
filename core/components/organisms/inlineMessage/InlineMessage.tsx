@@ -23,17 +23,16 @@ export interface InlineMessageProps extends BaseProps {
 }
 
 export const InlineMessage = (props: InlineMessageProps) => {
-  const {
-    appearance,
-    className,
-    description
-  } = props;
+  const { appearance, className, description } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const InlineMessageClass = classNames({
-    ['InlineMessage']: true
-  }, className);
+  const InlineMessageClass = classNames(
+    {
+      ['InlineMessage']: true,
+    },
+    className
+  );
 
   const IconClass = classNames({
     ['InlineMessage-icon']: true,
@@ -41,7 +40,7 @@ export const InlineMessage = (props: InlineMessageProps) => {
   });
 
   const DescriptionClass = classNames({
-    [`InlineMessage-text--${appearance}`]: appearance
+    [`InlineMessage-text--${appearance}`]: appearance,
   });
 
   return (
@@ -55,10 +54,7 @@ export const InlineMessage = (props: InlineMessageProps) => {
         />
       )}
       <div>
-        <Text
-          data-test="DesignSystem-InlineMessage--Description"
-          className={DescriptionClass}
-        >
+        <Text data-test="DesignSystem-InlineMessage--Description" className={DescriptionClass}>
           {description}
         </Text>
       </div>
@@ -69,7 +65,7 @@ export const InlineMessage = (props: InlineMessageProps) => {
 InlineMessage.displayName = 'InlineMessage';
 InlineMessage.defaultProps = {
   appearance: 'default',
-  description: ''
+  description: '',
 };
 
 export default InlineMessage;

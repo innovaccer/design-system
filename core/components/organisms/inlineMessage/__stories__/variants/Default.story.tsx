@@ -5,14 +5,12 @@ import { InlineMessage, Row, Column } from '@/index';
 export const defaultMessage = () => (
   <Row>
     <Column size="4">
-      <InlineMessage
-        description="Create a strong, unique password."
-      />
+      <InlineMessage description="Create a strong, unique password." />
     </Column>
   </Row>
 );
 
 export default {
   title: 'Components/InlineMessage/Variants/Default Message',
-  component: InlineMessage
+  component: InlineMessage,
 };

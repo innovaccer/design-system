@@ -4,31 +4,21 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import { Appearance, InlineMessage } from '../InlineMessage';
 import { InlineMessageProps as Props } from '@/index.type';
 
-const appearance: Appearance[] = [
-  'default',
-  'alert',
-  'info',
-  'success',
-  'warning'
-];
+const appearance: Appearance[] = ['default', 'alert', 'info', 'success', 'warning'];
 
 const description = 'Inline Message here.';
 
 describe('InlineMessage component', () => {
   const mapper: Record<string, any> = {
     appearance: valueHelper(appearance, { required: true, iterate: true }),
-    description: valueHelper(description, { required: true })
+    description: valueHelper(description, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <InlineMessage
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<InlineMessage {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -53,7 +43,6 @@ describe('InlineMessage component with prop:appearance', () => {
 });
 
 describe('InlineMessage component ', () => {
-
   it('check for icon when appearance:default', () => {
     render(<InlineMessage appearance="default" description={description} />);
     const IconComponent = screen.queryByText('DesignSystem-InlineMessage--Icon');
@@ -61,12 +50,7 @@ describe('InlineMessage component ', () => {
   });
 
   it('render component when appearance is not default', () => {
-    const { getByTestId } = render(
-      <InlineMessage
-        appearance="info"
-        description={description}
-      />
-    );
+    const { getByTestId } = render(<InlineMessage appearance="info" description={description} />);
     const descriptionID = getByTestId('DesignSystem-InlineMessage--Description');
     expect(descriptionID).toBeInTheDocument();
     expect(descriptionID.textContent).toMatch(description);

@@ -169,7 +169,7 @@ describe('Modal component with props', () => {
   });
 
   it('renders children without footer props', () => {
-    const { getByTestId, queryByTestId } = render(<Modal backdropClose={FunctionValue} open={true} header={header}/>);
+    const { getByTestId, queryByTestId } = render(<Modal backdropClose={FunctionValue} open={true} header={header} />);
     expect(getByTestId('DesignSystem-ModalContainer')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Modal')).toBeInTheDocument();
     expect(queryByTestId('Modal-body--withMargin')).not.toBeInTheDocument();
