@@ -1,0 +1,24 @@
+name: "Test"
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    name: Test for coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+            
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      
+      - name: npm install
+        run: npm install
+            
+      - name: test
+        run: npm run test
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
