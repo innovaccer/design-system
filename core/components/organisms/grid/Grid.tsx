@@ -321,7 +321,7 @@ export class Grid extends React.Component<GridProps, GridState> {
       this.addScrollListeners();
     }
 
-    if (prevProps.page !== this.props.page) {
+    if (prevProps.page !== this.props.page || prevProps.error !== this.props.error) {
       this.removeScrollListeners();
       this.addScrollListeners();
     }
