@@ -141,6 +141,51 @@ We are currently only accepting bug fixes.
 
 Licensed under the [MIT License](https://github.com/innovaccer/design-system/blob/master/LICENSE).
 
-## 💜 Thanks
 
-Thanks to our many contributors.
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/aditya-kumawat"><img src="https://avatars.githubusercontent.com/u/12715487?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aditya Kumawat</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=aditya-kumawat" title="Code">💻</a></td>
+    <td align="center"><a href="https://riyalohia.github.io/portfolio/"><img src="https://avatars.githubusercontent.com/u/31706090?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Riya Lohia</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=riyalohia" title="Code">💻</a></td>
+    <td align="center"><a href="http://satyamyadav.info/"><img src="https://avatars.githubusercontent.com/u/3583587?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Satyam Yadav</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=satyamyadav" title="Code">💻</a> <a href="https://github.com/innovaccer/design-system/commits?author=satyamyadav" title="Documentation">📖</a> <a href="https://github.com/innovaccer/design-system/pulls?q=is%3Apr+reviewed-by%3Asatyamyadav" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/sandeshchoudhary"><img src="https://avatars.githubusercontent.com/u/11272274?v=4?s=100" width="100px;" alt=""/><br /><sub><b>sandeshchoudhary</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=sandeshchoudhary" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/adityajhajharia"><img src="https://avatars.githubusercontent.com/u/42600089?v=4?s=100" width="100px;" alt=""/><br /><sub><b>adityajhajharia</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=adityajhajharia" title="Code">💻</a></td>
+    <td align="center"><a href="https://sourcerer.io/anuradha9712"><img src="https://avatars.githubusercontent.com/u/46045493?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anuradha Aggarwal</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=anuradha9712" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/xlreon"><img src="https://avatars.githubusercontent.com/u/26788670?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sidharth</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=xlreon" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/stuti1090"><img src="https://avatars.githubusercontent.com/u/65341865?v=4?s=100" width="100px;" alt=""/><br /><sub><b>stuti1090</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=stuti1090" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/veekays"><img src="https://avatars.githubusercontent.com/u/6420348?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vikas Singh</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=veekays" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/SaniyaGupta"><img src="https://avatars.githubusercontent.com/u/15903031?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SaniyaGupta</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=SaniyaGupta" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/parth-chauhan-984624193/"><img src="https://avatars.githubusercontent.com/u/35137224?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Parth Chauhan</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=chauhanparth210" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/stutirao"><img src="https://avatars.githubusercontent.com/u/45294592?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stuti Pandey</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=stutirao" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Shib00"><img src="https://avatars.githubusercontent.com/u/33096446?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shivam Dwivedi</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=Shib00" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.rahulgaur.info/"><img src="https://avatars.githubusercontent.com/u/760474?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rahul Gaur</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=aregee" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/atifzaidi92"><img src="https://avatars.githubusercontent.com/u/54103064?v=4?s=100" width="100px;" alt=""/><br /><sub><b>atifzaidi92</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=atifzaidi92" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Sumit2399"><img src="https://avatars.githubusercontent.com/u/66456021?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sumit Dhyani</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=Sumit2399" title="Code">💻</a></td>
+    <td align="center"><a href="https://tanmay-portfolio.herokuapp.com/"><img src="https://avatars.githubusercontent.com/u/36269283?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tanmay Sharma</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=927tanmay" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
