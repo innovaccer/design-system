@@ -4,26 +4,32 @@
   </a>
 </p>
 <h1 align="center">
-  Innovaccer Design System
+  Masala Design System
 </h1>
-<h3 align="center">
-  A React-based UI toolkit for building Web Applications.
-</h3>
 
+> Masala is an open-source design system built at Innovaccer.
 
-## 🚀 Get Up and Running
+<br/>
 
->💡 If your app runs on `Innovaccer UI engine` you don't need following two steps, please see *Using Components* section bellow.
+<div align="center">
+
+[![codecov](https://codecov.io/gh/innovaccer/design-system/branch/master/graph/badge.svg?token=2LY7JLZGX0)](https://codecov.io/gh/innovaccer/design-system) ![GitHub](https://img.shields.io/github/license/innovaccer/design-system) ![GitHub top language](https://img.shields.io/github/languages/top/innovaccer/design-system) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/innovaccer/design-system)
+
+</div>
+<br/>
+
+### 🚀 Get Up and Running
+---
+> 💡 If your app runs on `Innovaccer UI engine` you don't need following two steps, please see _Using Components_ section bellow.
 
 There are two main steps to use a component in your project:
+
 1. Installing component library using npm or yarn.
 2. Loading stylesheet.
 
-
 **Installing component library:**
 
-
-Run the following command using [npm](https://www.npmjs.com/)  to add the component library to your project:
+Run the following command using [npm](https://www.npmjs.com/) to add the component library to your project:
 
 ```bash
 npm install @innovaccer/design-system
@@ -44,8 +50,10 @@ import '@innovaccer/design-system/css';
 The css sets the font family as `'Nunito Sans'` for the body. To add this font in your project you need to load this font. The recommended way to do it is by adding the following google font cdn link to your app's head.
 
 ```html
-<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
-
+<link
+  href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap"
+  rel="stylesheet"
+/>
 ```
 
 **Updating Font:**
@@ -56,7 +64,7 @@ If you don't add the font described above font family will not be affected by cs
 --font-family
 ```
 
-**Reset Styles** 
+**Reset Styles**
 
 As BEM is used reset.css is not used and no style reset is done.
 
@@ -68,17 +76,15 @@ For css variables to work on IE we use a polyfill at runtime to achieve dynamic 
 <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
 <script>
   cssVars({
-    onlyLegacy: true
+    onlyLegacy: true,
   });
 </script>
-
 ```
 
 **Using Components**
 
 Available components along with live code editor and API documentation can be found [here](https://innovaccer.github.io/design-system).
 Components can be imported as mentioned below:
-
 
 ```js
 {
@@ -97,7 +103,6 @@ Components can be imported as mentioned below:
 
 We have created a tutorial to guide you in creating an awesome app with Innovaccer Design System components. Please find it [here](/docs/AppTutorial.md).
 
-
 ## How to run locally?
 
 ```bash
@@ -111,17 +116,15 @@ npm install
 npm run dev
 ```
 
-
 ## Documentation
 
 **[Design](http://design.innovaccer.com)**
 
 **[Components](https://innovaccer.github.io/design-system)**
 
-
 ## ❗ Code of Conduct
 
- We expect everyone participating in the community to abide by our [**Code of Conduct**](https://github.com/innovaccer/design-system/blob/master/CODE_OF_CONDUCT.md). Please read it. Please follow it. We work hard to build each other up and create amazing things together. 💪💜
+We expect everyone participating in the community to abide by our [**Code of Conduct**](https://github.com/innovaccer/design-system/blob/master/CODE_OF_CONDUCT.md). Please read it. Please follow it. We work hard to build each other up and create amazing things together. 💪💜
 
 ## 🤝 How to Contribute
 
