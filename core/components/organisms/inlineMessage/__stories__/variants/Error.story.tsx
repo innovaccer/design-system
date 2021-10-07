@@ -5,15 +5,12 @@ import { InlineMessage, Row, Column } from '@/index';
 export const alertMessage = () => (
   <Row>
     <Column size="4">
-      <InlineMessage
-        appearance="alert"
-        description="Inline message goes here."
-      />
+      <InlineMessage appearance="alert" description="Inline message goes here." />
     </Column>
   </Row>
 );
 
 export default {
   title: 'Components/InlineMessage/Variants/Alert Message',
-  component: InlineMessage
+  component: InlineMessage,
 };

@@ -35,9 +35,7 @@ class OverlayManager {
   isTopOverlay(overlay: HTMLDivElement | null) {
     if (overlay === null) return;
 
-    return (
-      !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay
-    );
+    return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
   }
 }
 

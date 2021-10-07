@@ -32,7 +32,7 @@ const fileList: Props['fileList'] = [
     status: 'error',
     errorMessage: 'Network failure',
     id: 3,
-  }
+  },
 ];
 
 const FunctionValue = jest.fn();
@@ -42,18 +42,14 @@ describe('FileUploaderList component', () => {
     fileList: valueHelper(fileList, { required: true }),
     onClick: valueHelper(FunctionValue, { required: true }),
     onDelete: valueHelper(FunctionValue, { required: true }),
-    onRetry: valueHelper(FunctionValue, { required: true })
+    onRetry: valueHelper(FunctionValue, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <FileUploaderList
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<FileUploaderList {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -63,20 +59,13 @@ describe('FileUploaderList component', () => {
 
 describe('FileUploaderList component prop:fileList', () => {
   it('renders component if fileList is empty', () => {
-    const { queryByTestId } = render(
-      <FileUploaderList />
-    );
+    const { queryByTestId } = render(<FileUploaderList />);
     expect(queryByTestId(/DesignSystem-FileUploader--List/i)).toBeNull();
   });
 
   it('renders component if fileList is not empty', () => {
     const { getByTestId, getAllByTestId } = render(
-      <FileUploaderList
-        fileList={fileList}
-        onDelete={FunctionValue}
-        onRetry={FunctionValue}
-        onClick={FunctionValue}
-      />
+      <FileUploaderList fileList={fileList} onDelete={FunctionValue} onRetry={FunctionValue} onClick={FunctionValue} />
     );
     expect(getByTestId('DesignSystem-FileUploader--List')).toBeInTheDocument();
     expect(getAllByTestId('DesignSystem-FileUploader--Item')).toHaveLength(fileList.length);
@@ -85,45 +74,25 @@ describe('FileUploaderList component prop:fileList', () => {
 
 describe('FileUploaderList component Event Handler', () => {
   it('check for onClick Event Handler', () => {
-    const { getAllByTestId } = render(
-      <FileUploaderList
-        fileList={fileList}
-        onClick={FunctionValue}
-      />
-    );
+    const { getAllByTestId } = render(<FileUploaderList fileList={fileList} onClick={FunctionValue} />);
     fireEvent.click(getAllByTestId('DesignSystem-FileUploader--Item')[0]);
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('check for onDelete Event Handler', () => {
-    const { getAllByTestId } = render(
-      <FileUploaderList
-        fileList={fileList}
-        onDelete={FunctionValue}
-      />
-    );
+    const { getAllByTestId } = render(<FileUploaderList fileList={fileList} onDelete={FunctionValue} />);
     fireEvent.click(getAllByTestId('DesignSystem-FileUploader--CancelButton')[0]);
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('check for onRetry Event Handler', () => {
-    const { getByTestId } = render(
-      <FileUploaderList
-        fileList={[fileList[2]]}
-        onRetry={FunctionValue}
-      />
-    );
+    const { getByTestId } = render(<FileUploaderList fileList={[fileList[2]]} onRetry={FunctionValue} />);
     fireEvent.click(getByTestId('DesignSystem-Button'));
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('check for Error Caption', () => {
-    const { getByTestId } = render(
-      <FileUploaderList
-        fileList={[fileList[2]]}
-        onRetry={FunctionValue}
-      />
-    );
+    const { getByTestId } = render(<FileUploaderList fileList={[fileList[2]]} onRetry={FunctionValue} />);
     expect(getByTestId('DesignSystem-Caption')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-Caption').textContent).toMatch('Network failure');
   });

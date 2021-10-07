@@ -5,7 +5,7 @@ import { EditableInput } from '@/index';
 export const uncontrolled = () => {
   return (
     <div style={{ width: 'var(--spacing-9)' }}>
-      <EditableInput placeholder="First Name"/>
+      <EditableInput placeholder="First Name" />
     </div>
   );
 };

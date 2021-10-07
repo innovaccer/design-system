@@ -234,11 +234,8 @@ describe('Button component with icon', () => {
 });
 
 describe('Button component with Tooltip', () => {
-
   it('check for tooltip attribute', () => {
-    const { getByTestId } = render(
-      <Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank" />
-    );
+    const { getByTestId } = render(<Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank" />);
 
     fireEvent.mouseEnter(getByTestId('DesignSystem-Button'));
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
@@ -246,11 +243,7 @@ describe('Button component with Tooltip', () => {
 
   it('check for tooltip when children is given', () => {
     render(
-      <Button
-        appearance="basic"
-        icon="keyboard_arrow_right"
-        tooltip="Next in rank"
-      >
+      <Button appearance="basic" icon="keyboard_arrow_right" tooltip="Next in rank">
         Click Me
       </Button>
     );
@@ -260,9 +253,7 @@ describe('Button component with Tooltip', () => {
   });
 
   it('check for tooltip when icon is not given', () => {
-    render(
-      <Button appearance="basic" tooltip="Next in rank" />
-    );
+    render(<Button appearance="basic" tooltip="Next in rank" />);
     const TooltipComponent = screen.queryByText('DesignSystem-Popover');
     expect(TooltipComponent).not.toBeInTheDocument();
   });
