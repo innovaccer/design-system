@@ -7,7 +7,9 @@
   Masala Design System
 </h1>
 
-> Masala is an open-source design system built at Innovaccer.
+> Masala Design System (MDS) is an open-source design system built at Innovaccer.
+> This repo consists of React components based on the guidelines and principles of 
+> Masala Design System.
 
 <br/>
 
