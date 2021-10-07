@@ -2585,6 +2585,7 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Table"
+    data-test="DesignSystem-Table-wrapper"
   >
     <div
       class="Table-grid"
@@ -2603,6 +2604,7 @@ exports[`TS renders children 1`] = `
   </div>
   <div
     class="Table"
+    data-test="DesignSystem-Table-wrapper"
   >
     <div
       class="Table-grid"

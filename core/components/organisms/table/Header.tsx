@@ -149,6 +149,7 @@ export const Header = (props: HeaderProps) => {
         {withSearch && (
           <div className="Header-search">
             <Input
+              data-test="DesignSystem-Table-Header--withSearch"
               name="GridHeader-search"
               icon="search"
               placeholder={searchPlaceholder}
@@ -209,11 +210,19 @@ export const Header = (props: HeaderProps) => {
               {withPagination && selectAll?.checked && allowSelectAll && (
                 <div className="ml-4">
                   {!selectAllRecords ? (
-                    <Button size="tiny" onClick={() => setSelectAllRecords(true)}>
+                    <Button
+                      data-test="DesignSystem-Table-Header--selectAllItemsButton"
+                      size="tiny"
+                      onClick={() => setSelectAllRecords(true)}
+                    >
                       {`Select all ${totalRecords} items`}
                     </Button>
                   ) : (
-                    <Button size="tiny" onClick={() => setSelectAllRecords(false)}>
+                    <Button
+                      data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
+                      size="tiny"
+                      onClick={() => setSelectAllRecords(false)}
+                    >
                       Clear Selection
                     </Button>
                   )}

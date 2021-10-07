@@ -693,9 +693,9 @@ export class Table extends React.Component<TableProps, TableState> {
     const totalPages = getTotalPages(totalRecords, pageSize);
 
     return (
-      <div {...baseProps} className={`Table${classes}`}>
+      <div {...baseProps} className={`Table${classes}`} data-test="DesignSystem-Table-wrapper">
         {withHeader && (
-          <div className="Table-header">
+          <div className="Table-header" data-test="DesignSystem-Table-header">
             <Header
               {...this.state}
               // updateData={updateData}
