@@ -89,6 +89,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
           {tempOptions.map((option, index) => {
             return (
               <div
+                data-test="DesignSystem-Table-Header--draggableDropdownOption"
                 key={option.value}
                 className="OptionWrapper d-flex flex-space-between align-items-center cursor-pointer"
                 draggable={true}
