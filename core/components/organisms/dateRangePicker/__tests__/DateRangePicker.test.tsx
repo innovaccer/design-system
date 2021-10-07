@@ -36,145 +36,11 @@ const FunctionValue = jest.fn();
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    view: valueHelper(view, { required: true, iterate: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    monthsInView: valueHelper(numArray, { required: true, iterate: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
+    open: valueHelper(booleanValue, { required: true, iterate: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
+    withInput: valueHelper(booleanValue, { required: true, iterate: true }),
     rangeLimit: valueHelper(7, { required: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    withInput: valueHelper(booleanValue, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    open: valueHelper(booleanValue, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    size: valueHelper(size, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    jumpView: valueHelper(booleanValue, { required: true, iterate: true })
+    view: valueHelper(view, { required: true, iterate: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -220,7 +86,8 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    disabledBefore: valueHelper(dateFormat[1], { required: true })
+    disabledBefore: valueHelper(dateFormat[1], { required: true }),
+    jumpView: valueHelper(booleanValue, { required: true, iterate: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -243,6 +110,7 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
+    yearNav: valueHelper(numArray, { required: true, iterate: true }),
     disabledAfter: valueHelper(dateFormat[1], { required: true })
   };
 
@@ -266,7 +134,8 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    yearNav: valueHelper(numArray, { required: true, iterate: true })
+    monthNav: valueHelper(numArray, { required: true, iterate: true }),
+    monthsInView: valueHelper(numArray, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -289,74 +158,10 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    monthNav: valueHelper(numArray, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
+    startDate: valueHelper(dateFormat, { required: true, iterate: true }),
+    endDate: valueHelper(dateFormat, { required: true, iterate: true }),
+    position: valueHelper(position, { required: true, iterate: true }),
     contentAlign: valueHelper(alignPosition, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    startDate: valueHelper(dateFormat, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    endDate: valueHelper(dateFormat, { required: true, iterate: true })
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -400,52 +205,7 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    position: valueHelper(position, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
-    inputFormat: valueHelper(inputFormat, { required: true, iterate: true })
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
-      expect(baseElement).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('DateRangePicker component', () => {
-  const mapper: Record<string, any> = {
+    inputFormat: valueHelper(inputFormat, { required: true, iterate: true }),
     outputFormat: valueHelper(inputFormat, { required: true, iterate: true })
   };
 
@@ -518,6 +278,17 @@ describe('DateRangePicker component prop:singleInput', () => {
       />
     );
     expect(getByTestId('DesignSystem-DateRangePicker-SingleInputTrigger').textContent).toMatch('Date');
+  });
+
+  it('checks prop:singleInput=true with default dates', () => {
+    const { getByTestId } = render(
+      <DateRangePicker
+        singleInput={true}
+        withInput={true}
+      />
+    );
+    expect(getByTestId('DesignSystem-DateRangePicker-SingleInputTrigger')).toBeInTheDocument();
+    expect(screen.getAllByPlaceholderText('mm/dd/yyyy - mm/dd/yyyy')[0]).toBeInTheDocument();
   });
 });
 

@@ -58,8 +58,8 @@ const HeaderCell = (props: HeaderCellProps) => {
   const el = React.createRef<HTMLDivElement>();
 
   const sortOptions: DropdownProps['options'] = [
-    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_downward' },
-    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_upward' },
+    { label: 'Sort Ascending', value: 'sortAsc', icon: 'arrow_upward' },
+    { label: 'Sort Descending', value: 'sortDesc', icon: 'arrow_downward' },
   ];
   const pinOptions: DropdownProps['options'] = [
     { label: 'Pin Left', value: 'pinLeft', icon: 'skip_previous' },
@@ -98,9 +98,9 @@ const HeaderCell = (props: HeaderCellProps) => {
         <div className="Grid-sortingIcons">
           {sorted ? (
             sorted === 'asc' ? (
-              <Icon name="arrow_downward" />
-            ) : (
               <Icon name="arrow_upward" />
+            ) : (
+              <Icon name="arrow_downward" />
             )
           ) : (
             <Icon name="unfold_more" />
@@ -114,6 +114,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     <div key={name} className={classes} ref={el}>
       <div
         className="Grid-cellContent"
+        data-test="DesignSystem-Grid-cellContent"
         onClick={() => {
           if (!loading && sorting) {
             if (sorted === 'asc') onMenuChange(name, 'sortDesc');

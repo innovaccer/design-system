@@ -61,11 +61,8 @@ export const getPrevious90Days = () => {
 };
 
 export const getCustomDates = () => {
-  const current = new Date();
-  const currentDate = current.getDate();
-
   return {
-    startDate: setDate(currentDate),
-    endDate: setDate(currentDate),
+    startDate: '',
+    endDate: '',
   };
 };

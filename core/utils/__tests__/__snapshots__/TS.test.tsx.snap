@@ -2377,6 +2377,7 @@ exports[`TS renders children 1`] = `
   >
     <div
       class="Grid-head"
+      data-test="DesignSystem-GridHead-wrapper"
     >
       <div
         class="Grid-row Grid-row--head"
@@ -2611,6 +2612,7 @@ exports[`TS renders children 1`] = `
       >
         <div
           class="Grid-head"
+          data-test="DesignSystem-GridHead-wrapper"
         >
           <div
             class="Grid-row Grid-row--head"
