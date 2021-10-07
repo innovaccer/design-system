@@ -1,3 +1,33 @@
+## 2.5.0-3  (2021-10-07) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* A now component ChoiceList is added to use group of check box or radio inputs to work as a choice selector (2d9bb1ed)
+* New helper classes for applying border or removing border of an element are added. (7675c8b3)
+
+### Fixes
+* Issue in scrolling horizontally on a Table body not scrolled table header is resolved. (e71ea1c2)
+* Icons on Table header and column menu to sort the table are now pointed in correct directions. (718a1a37)
+* DateRangePicker pattern example now uses selection cheap in stead of radios for pre defined date range selections. (a1d0ee53)
+
+### Improvements
+* Code coverage is now more than 85% for the complete library.
+
+### Documentation
+
+-------------------
+
 ## 2.5.0-2  (2021-09-29) 
 
 ### Highlights
