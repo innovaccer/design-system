@@ -1,0 +1,170 @@
+{
+  "projectName": "design-system",
+  "projectOwner": "innovaccer",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "aditya-kumawat",
+      "name": "Aditya Kumawat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/12715487?v=4",
+      "profile": "https://github.com/aditya-kumawat",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "riyalohia",
+      "name": "Riya Lohia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31706090?v=4",
+      "profile": "https://riyalohia.github.io/portfolio/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "satyamyadav",
+      "name": "Satyam Yadav",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3583587?v=4",
+      "profile": "http://satyamyadav.info/",
+      "contributions": [
+        "code",
+        "doc",
+        "review"
+      ]
+    },
+    {
+      "login": "sandeshchoudhary",
+      "name": "sandeshchoudhary",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11272274?v=4",
+      "profile": "https://github.com/sandeshchoudhary",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "adityajhajharia",
+      "name": "adityajhajharia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/42600089?v=4",
+      "profile": "https://github.com/adityajhajharia",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "anuradha9712",
+      "name": "Anuradha Aggarwal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46045493?v=4",
+      "profile": "https://sourcerer.io/anuradha9712",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "xlreon",
+      "name": "Sidharth",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26788670?v=4",
+      "profile": "https://github.com/xlreon",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "stuti1090",
+      "name": "stuti1090",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65341865?v=4",
+      "profile": "https://github.com/stuti1090",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "veekays",
+      "name": "Vikas Singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6420348?v=4",
+      "profile": "https://github.com/veekays",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "SaniyaGupta",
+      "name": "SaniyaGupta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15903031?v=4",
+      "profile": "https://github.com/SaniyaGupta",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "chauhanparth210",
+      "name": "Parth Chauhan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35137224?v=4",
+      "profile": "https://www.linkedin.com/in/parth-chauhan-984624193/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "stutirao",
+      "name": "Stuti Pandey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45294592?v=4",
+      "profile": "https://github.com/stutirao",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Shib00",
+      "name": "Shivam Dwivedi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33096446?v=4",
+      "profile": "https://github.com/Shib00",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aregee",
+      "name": "Rahul Gaur",
+      "avatar_url": "https://avatars.githubusercontent.com/u/760474?v=4",
+      "profile": "http://www.rahulgaur.info/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "atifzaidi92",
+      "name": "atifzaidi92",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54103064?v=4",
+      "profile": "https://github.com/atifzaidi92",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Sumit2399",
+      "name": "Sumit Dhyani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66456021?v=4",
+      "profile": "https://github.com/Sumit2399",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "927tanmay",
+      "name": "Tanmay Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36269283?v=4",
+      "profile": "https://tanmay-portfolio.herokuapp.com/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

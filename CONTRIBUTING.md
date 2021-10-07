@@ -724,3 +724,26 @@ and `chore:` are valid but have no effect on versioning. **It would be great if 
 
 **For any change in source code of components that changes the API or functioning of the component corresponding story should be updated or a new story should be included**.
 
+
+## Add yourself to the contributor list
+
+We want to make sure everyone is recognized for their contributions !
+To add yourself to the `all-contributors` table in the README, you'll need to
+run the following commands from the root of the repo:
+
+```sh
+# Add new contributor <username>, who made a contribution of type <contribution>
+./node_modules/.bin/all-contributors add <username> <contribution>
+# Example:
+./node_modules/.bin/all-contributors add satyamyadav code,doc
+```
+
+Then, you'll need to generate the updated `all-contributors` table by running
+
+```sh
+all-contributors generate 
+OR
+./node_modules/.bin/all-contributors generate
+
+```
+
