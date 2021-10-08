@@ -6,40 +6,40 @@ export const border = () => {
   const data = [
     {
       className: 'border',
-      properties: 'border: var(--border) ;'
+      properties: 'border: var(--border) ;',
     },
     {
       className: 'border-top',
-      properties: ' border-top: var(--border) ;'
+      properties: ' border-top: var(--border) ;',
     },
     {
       className: 'border-bottom',
-      properties: 'border-bottom: var(--border) ;'
+      properties: 'border-bottom: var(--border) ;',
     },
     {
       className: 'border-right',
-      properties: 'border-right: var(--border) ;'
+      properties: 'border-right: var(--border) ;',
     },
     {
       className: 'border-left',
-      properties: 'border-left: var(--border) ;'
+      properties: 'border-left: var(--border) ;',
     },
     {
       className: 'border-0',
-      properties: 'border: 0 ;'
+      properties: 'border: 0 ;',
     },
     {
       className: 'border-top-0',
-      properties: ' border-top: 0 ;'
+      properties: ' border-top: 0 ;',
     },
     {
       className: 'border-bottom-0',
-      properties: 'border-bottom: 0 ;'
+      properties: 'border-bottom: 0 ;',
     },
     {
       className: 'border-right-0',
-      properties: 'border-right: 0 ;'
-    }
+      properties: 'border-right: 0 ;',
+    },
   ];
   return (
     <div>
@@ -52,7 +52,7 @@ export const border = () => {
       &nbsp;
       <div
         style={{
-          height: '250px'
+          height: '250px',
         }}
         className="mt-5 mb-8"
       >
@@ -62,7 +62,7 @@ export const border = () => {
             schema={utilitiesSchema}
             size={'standard'}
             headerOptions={{
-              withSearch: true
+              withSearch: true,
             }}
             showMenu={false}
           />
@@ -122,7 +122,7 @@ export default {
     viewMode: 'story',
     docs: {
       docPage: null,
-      page: null
-    }
-  }
+      page: null,
+    },
+  },
 };

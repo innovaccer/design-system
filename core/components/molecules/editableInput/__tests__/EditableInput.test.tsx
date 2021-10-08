@@ -157,9 +157,7 @@ describe('EditableInput component with action buttons and props: value and input
   it('save changes and editable input is uncontrolled', () => {
     const updatedValue = 'Design System';
 
-    const { getByTestId, queryByTestId } = render(
-      <EditableInput placeholder={StringValue} onChange={onChange} />
-    );
+    const { getByTestId, queryByTestId } = render(<EditableInput placeholder={StringValue} onChange={onChange} />);
 
     const editableWrapper = getByTestId(editableWrapperTestId);
     fireEvent.click(editableWrapper);

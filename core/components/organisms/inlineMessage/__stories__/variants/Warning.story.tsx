@@ -4,15 +4,12 @@ import { InlineMessage, Row, Column } from '@/index';
 export const warningMessage = () => (
   <Row>
     <Column size="4">
-      <InlineMessage
-        appearance="warning"
-        description="Inline message goes here."
-      />
+      <InlineMessage appearance="warning" description="Inline message goes here." />
     </Column>
   </Row>
 );
 
 export default {
   title: 'Components/InlineMessage/Variants/Warning Message',
-  component: InlineMessage
+  component: InlineMessage,
 };

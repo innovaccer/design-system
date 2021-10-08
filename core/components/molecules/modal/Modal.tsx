@@ -144,21 +144,21 @@ class Modal extends React.Component<ModalProps, ModalState> {
 
   onCloseHandler = (event: KeyboardEvent) => {
     const isTopOverlay = OverlayManager.isTopOverlay(this.modalRef.current);
-    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler)
-  }
+    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler);
+  };
 
   componentDidMount() {
     if (this.props.closeOnEscape) {
       if (this.state.open) {
         OverlayManager.add(this.modalRef.current);
       }
-      document.addEventListener('keydown', this.onCloseHandler)
+      document.addEventListener('keydown', this.onCloseHandler);
     }
   }
 
   componentWillUnmount() {
     if (this.props.closeOnEscape) {
-      document.removeEventListener('keydown', this.onCloseHandler)
+      document.removeEventListener('keydown', this.onCloseHandler);
     }
   }
 
@@ -178,20 +178,21 @@ class Modal extends React.Component<ModalProps, ModalState> {
         });
 
         if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
-
       } else {
-        this.setState({
-          animate: false,
-        }, () => {
-          window.setTimeout(() => {
-            this.setState({
-              open: false
-            });
-          }, 120);
-        });
+        this.setState(
+          {
+            animate: false,
+          },
+          () => {
+            window.setTimeout(() => {
+              this.setState({
+                open: false,
+              });
+            }, 120);
+          }
+        );
 
         if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
-
       }
     }
   }
@@ -251,12 +252,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
       ['Overlay-container--open']: open,
     });
 
-    const isAPINew = (headerOptions || footerOptions || footer || header);
+    const isAPINew = headerOptions || footerOptions || footer || header;
     const bodyClass = classNames({
       ['Modal-body']: true,
       ['Modal-body--withMargin']: isAPINew ? !!footer : true,
       ['Modal-body--withPadding']: isAPINew ? !footer : true,
-    })
+    });
 
     const baseProps = extractBaseProps(this.props);
     const sizeMap: Record<ModalProps['dimension'], Partial<ColumnProps>> = {

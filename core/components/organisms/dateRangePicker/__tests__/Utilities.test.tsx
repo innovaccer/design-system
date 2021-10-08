@@ -5,7 +5,7 @@ import {
   getPreviousWeek,
   getPreviousMonth,
   getPrevious90Days,
-  getCustomDates
+  getCustomDates,
 } from '../utilities';
 
 describe('dateRangePicker Component: renders date utilities', () => {

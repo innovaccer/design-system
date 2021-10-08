@@ -200,8 +200,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     if (onChange) {
       const syntheticEvent = Object.create(e, {
         target: {
-          value: { value: newValue }
-        }
+          value: { value: newValue },
+        },
       });
       onChange(syntheticEvent);
     }

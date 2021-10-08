@@ -18,7 +18,7 @@ export const layering = () => {
   const onCloseSecondOverlay = () => {
     updateKnob('openSecondOverlay', false);
     action('on close triggered')();
-  }
+  };
 
   return (
     <div>

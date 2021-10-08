@@ -104,6 +104,9 @@ describe('renders option with meta list', () => {
                 { icon: 'assessment', label: 'Meta data' },
               ],
               seperator: true,
+              iconAppearance: 'default',
+              labelAppearance: 'default',
+              seperatorAppearance: 'default',
             },
           },
         ]}

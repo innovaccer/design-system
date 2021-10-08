@@ -23,11 +23,10 @@ const data = [
     lastName: 'Ciric',
     lastUpdated: 'May 19, 2020',
     recipients: 118467,
-  }
+  },
 ];
 
 export const InlineMessageWithinTable = () => {
-
   const schema: TableProps['schema'] = [
     {
       name: 'name',
@@ -36,9 +35,9 @@ export const InlineMessageWithinTable = () => {
       cellType: 'WITH_META_LIST',
       translate: (a) => ({
         title: a.name,
-        metaList: [`${a.recipients} recipients`]
+        metaList: [`${a.recipients} recipients`],
       }),
-      sorting: false
+      sorting: false,
     },
     {
       name: 'lastUpdated',
@@ -51,10 +50,8 @@ export const InlineMessageWithinTable = () => {
       displayName: 'Message',
       sorting: false,
       width: '40%',
-      cellRenderer: () => (
-        <InlineMessage appearance="info" description="Patient profile updated." />
-      )
-    }
+      cellRenderer: () => <InlineMessage appearance="info" description="Patient profile updated." />,
+    },
   ];
 
   return (
@@ -66,7 +63,7 @@ export const InlineMessageWithinTable = () => {
         schema={schema}
         withHeader={false}
         headerOptions={{
-          withSearch: false
+          withSearch: false,
         }}
       />
     </Card>
@@ -133,7 +130,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-      }
-    }
-  }
+      },
+    },
+  },
 };

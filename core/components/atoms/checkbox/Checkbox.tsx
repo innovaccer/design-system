@@ -81,12 +81,9 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
 
   const ref = React.useRef<HTMLInputElement>(null);
 
-  React.useImperativeHandle(
-    forwardedRef,
-    (): HTMLInputElement => {
-      return ref.current as HTMLInputElement;
-    }
-  );
+  React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
+    return ref.current as HTMLInputElement;
+  });
 
   const [checked, setChecked] = React.useState(props.checked === undefined ? defaultChecked : props.checked);
 

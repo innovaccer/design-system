@@ -54,7 +54,12 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
   );
 
   return (
-    <div {...baseProps} data-test="DesignSystem-FileUploader--Item" className={FileItemClass} onClick={() => onClick && onClick(file, id)}>
+    <div
+      {...baseProps}
+      data-test="DesignSystem-FileUploader--Item"
+      className={FileItemClass}
+      onClick={() => onClick && onClick(file, id)}
+    >
       <div className="FileUploaderItem-file">
         <Text className="FileUploaderItem-text" appearance={status === 'completed' ? 'default' : 'subtle'}>
           {name}
@@ -67,7 +72,13 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
             progress={progress}
             onRetry={() => onRetry && onRetry(file, id)}
           />
-          <Button data-test="DesignSystem-FileUploader--CancelButton" appearance="transparent" size="regular" onClick={() => onDelete && onDelete(file, id)} icon="close" />
+          <Button
+            data-test="DesignSystem-FileUploader--CancelButton"
+            appearance="transparent"
+            size="regular"
+            onClick={() => onDelete && onDelete(file, id)}
+            icon="close"
+          />
         </div>
       </div>
       {status === 'error' && <Caption error={true}>{errorMessage}</Caption>}

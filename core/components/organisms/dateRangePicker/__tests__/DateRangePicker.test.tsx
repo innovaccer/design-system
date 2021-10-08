@@ -11,27 +11,13 @@ const booleanValue = [true, false];
 const size: Size[] = ['large', 'small'];
 const alignPosition = ['left', 'right'];
 const numArray = [1, 2, 3];
-const position = ['bottom',
-  'top',
-  'top-start',
-  'top-end',
-  'bottom-start',
-  'bottom-end',
-  'left',
-  'right'
-];
+const position = ['bottom', 'top', 'top-start', 'top-end', 'bottom-start', 'bottom-end', 'left', 'right'];
 const caption = 'testing caption';
 const currentDate = new Date(2021, 8, 12);
 const startDate = new Date(2020, 2, 3);
 const endDate = new Date(2021, 5, 8);
 const dateFormat = [currentDate, 1629790081880];
-const inputFormat = ['mm/dd/yyyy',
-  'dd/mm/yyyy',
-  'yyyy/mm/dd',
-  'mm-dd-yyyy',
-  'dd-mm-yyyy',
-  'yyyy-mm-dd'
-];
+const inputFormat = ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy/mm/dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'];
 const FunctionValue = jest.fn();
 
 describe('DateRangePicker component', () => {
@@ -40,20 +26,14 @@ describe('DateRangePicker component', () => {
     size: valueHelper(size, { required: true, iterate: true }),
     withInput: valueHelper(booleanValue, { required: true, iterate: true }),
     rangeLimit: valueHelper(7, { required: true }),
-    view: valueHelper(view, { required: true, iterate: true })
+    view: valueHelper(view, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -63,20 +43,14 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    firstDayOfWeek: valueHelper(weeksList, { required: true, iterate: true })
+    firstDayOfWeek: valueHelper(weeksList, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -87,20 +61,14 @@ describe('DateRangePicker component', () => {
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
     disabledBefore: valueHelper(dateFormat[1], { required: true }),
-    jumpView: valueHelper(booleanValue, { required: true, iterate: true })
+    jumpView: valueHelper(booleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -111,20 +79,14 @@ describe('DateRangePicker component', () => {
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
     yearNav: valueHelper(numArray, { required: true, iterate: true }),
-    disabledAfter: valueHelper(dateFormat[1], { required: true })
+    disabledAfter: valueHelper(dateFormat[1], { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -142,13 +104,7 @@ describe('DateRangePicker component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -161,18 +117,14 @@ describe('DateRangePicker component', () => {
     startDate: valueHelper(dateFormat, { required: true, iterate: true }),
     endDate: valueHelper(dateFormat, { required: true, iterate: true }),
     position: valueHelper(position, { required: true, iterate: true }),
-    contentAlign: valueHelper(alignPosition, { required: true, iterate: true })
+    contentAlign: valueHelper(alignPosition, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -182,20 +134,14 @@ describe('DateRangePicker component', () => {
 
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
-    singleInput: valueHelper(booleanValue, { required: true, iterate: true })
+    singleInput: valueHelper(booleanValue, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -206,20 +152,14 @@ describe('DateRangePicker component', () => {
 describe('DateRangePicker component', () => {
   const mapper: Record<string, any> = {
     inputFormat: valueHelper(inputFormat, { required: true, iterate: true }),
-    outputFormat: valueHelper(inputFormat, { required: true, iterate: true })
+    outputFormat: valueHelper(inputFormat, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <DateRangePicker
-          startDate={startDate}
-          endDate={endDate}
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -228,27 +168,14 @@ describe('DateRangePicker component', () => {
 });
 
 describe('DateRangePicker component prop:withInput', () => {
-
   it('show InputTrigger if prop:withInput is passed as true', () => {
-    const { getByTestId } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={true}
-      />
-    );
+    const { getByTestId } = render(<DateRangePicker startDate={startDate} endDate={endDate} withInput={true} />);
 
     expect(getByTestId('DesignSystem-DateRangePicker-InputTrigger')).toBeInTheDocument();
   });
 
   it('show InputTrigger if prop:withInput is passed as false', () => {
-    render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={false}
-      />
-    );
+    render(<DateRangePicker startDate={startDate} endDate={endDate} withInput={false} />);
 
     const inputTriggerComponent = screen.queryByText('DesignSystem-DateRangePicker-InputTrigger');
     expect(inputTriggerComponent).not.toBeInTheDocument();
@@ -258,35 +185,20 @@ describe('DateRangePicker component prop:withInput', () => {
 describe('DateRangePicker component prop:singleInput', () => {
   it('show SingleInputTrigger if prop:singleInput is passed as true', () => {
     const { getByTestId } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        singleInput={true}
-        withInput={true}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} singleInput={true} withInput={true} />
     );
     expect(getByTestId('DesignSystem-DateRangePicker-SingleInputTrigger')).toBeInTheDocument();
   });
 
   it('show correct label if prop:singleInput is passed as true', () => {
     const { getByTestId } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        singleInput={true}
-        withInput={true}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} singleInput={true} withInput={true} />
     );
     expect(getByTestId('DesignSystem-DateRangePicker-SingleInputTrigger').textContent).toMatch('Date');
   });
 
   it('checks prop:singleInput=true with default dates', () => {
-    const { getByTestId } = render(
-      <DateRangePicker
-        singleInput={true}
-        withInput={true}
-      />
-    );
+    const { getByTestId } = render(<DateRangePicker singleInput={true} withInput={true} />);
     expect(getByTestId('DesignSystem-DateRangePicker-SingleInputTrigger')).toBeInTheDocument();
     expect(screen.getAllByPlaceholderText('mm/dd/yyyy - mm/dd/yyyy')[0]).toBeInTheDocument();
   });
@@ -295,12 +207,7 @@ describe('DateRangePicker component prop:singleInput', () => {
 describe('DateRangePicker component prop:onRangeChange', () => {
   it('onClear Event handler ', () => {
     const { getAllByTestId } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} onRangeChange={FunctionValue} />
     );
 
     const InputTestId = getAllByTestId('DesignSystem-Input--closeIcon');
@@ -310,12 +217,7 @@ describe('DateRangePicker component prop:onRangeChange', () => {
 
   it('onChange Event handler ', () => {
     const { getAllByTestId } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} onRangeChange={FunctionValue} />
     );
 
     const InputTestId = getAllByTestId('DesignSystem-Input');
@@ -326,12 +228,7 @@ describe('DateRangePicker component prop:onRangeChange', () => {
 
   it('onBlur Event handler ', () => {
     const { getAllByTestId } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} onRangeChange={FunctionValue} />
     );
 
     const InputTestId = getAllByTestId('DesignSystem-Input');
@@ -343,14 +240,8 @@ describe('DateRangePicker component prop:onRangeChange', () => {
 
 describe('DateRangePicker component update state ', () => {
   it('check for updating start date', () => {
-
     const { getAllByTestId, rerender } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} onRangeChange={FunctionValue} />
     );
 
     const inputComponent = getAllByTestId('DesignSystem-Input');
@@ -359,25 +250,14 @@ describe('DateRangePicker component update state ', () => {
     expect(FunctionValue).toHaveBeenCalled();
 
     rerender(
-      <DateRangePicker
-        startDate={currentDate}
-        endDate={endDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={currentDate} endDate={endDate} withInput={true} onRangeChange={FunctionValue} />
     );
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('check for updating end date', () => {
-
     const { getAllByTestId, rerender } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} onRangeChange={FunctionValue} />
     );
 
     const inputComponent = getAllByTestId('DesignSystem-Input');
@@ -386,18 +266,12 @@ describe('DateRangePicker component update state ', () => {
     expect(FunctionValue).toHaveBeenCalled();
 
     rerender(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={currentDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={startDate} endDate={currentDate} withInput={true} onRangeChange={FunctionValue} />
     );
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('check for updating open state', () => {
-
     const { rerender } = render(
       <DateRangePicker
         startDate={startDate}
@@ -423,7 +297,6 @@ describe('DateRangePicker component update state ', () => {
   });
 
   it('check for updating yearNav', () => {
-
     const { rerender } = render(
       <DateRangePicker
         startDate={startDate}
@@ -450,7 +323,6 @@ describe('DateRangePicker component update state ', () => {
   });
 
   it('check for updating monthNav', () => {
-
     const { rerender } = render(
       <DateRangePicker
         startDate={startDate}
@@ -535,7 +407,6 @@ describe('DateRangePicker component Event handlers with prop:singleInput set to 
   });
 
   it('onBlur Event handler ', () => {
-
     const { getAllByTestId } = render(
       <DateRangePicker
         startDate={startDate}
@@ -575,12 +446,7 @@ describe('DateRangePicker component with prop:monthsInView', () => {
 
   it('check for calender--monthsInView prop default value', () => {
     const { getAllByTestId } = render(
-      <DateRangePicker
-        startDate={startDate}
-        endDate={endDate}
-        withInput={true}
-        onRangeChange={FunctionValue}
-      />
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} onRangeChange={FunctionValue} />
     );
     const InputTestId = getAllByTestId('DesignSystem-Input');
     fireEvent.click(InputTestId[0]);
@@ -590,7 +456,9 @@ describe('DateRangePicker component with prop:monthsInView', () => {
 
 describe('DateRangePicker Component with overwrite class', () => {
   it('overwrite DesignSystem-Calendar-Wrapper class', () => {
-    const { getByTestId } = render(<DateRangePicker startDate={startDate} endDate={endDate} className="DateRangePickerCustomClass" />);
+    const { getByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} className="DateRangePickerCustomClass" />
+    );
     expect(getByTestId('DesignSystem-Calendar-Wrapper')).toHaveClass('DateRangePickerCustomClass');
   });
 });

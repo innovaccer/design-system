@@ -122,50 +122,47 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
   }
 
   onOutsideClickHandler = (event: KeyboardEvent) => {
-
     OverlayManager.remove(this.modalRef.current);
 
     if (this.props.onClose) {
       this.props.onClose(event, 'EscapePress');
-
     } else {
       this.setState(
         {
-          animate: false
+          animate: false,
         },
         () => {
           window.setTimeout(() => {
             this.setState({
-              open: false
+              open: false,
             });
           }, 120);
         }
       );
     }
-  }
+  };
 
   onCloseHandler = (event: KeyboardEvent) => {
     const isTopOverlay = OverlayManager.isTopOverlay(this.modalRef.current);
-    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler)
-  }
+    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler);
+  };
 
   componentDidMount() {
     if (this.props.closeOnEscape) {
       if (this.state.open) {
         OverlayManager.add(this.modalRef.current);
       }
-      document.addEventListener('keydown', this.onCloseHandler)
+      document.addEventListener('keydown', this.onCloseHandler);
     }
   }
 
   componentWillUnmount() {
-    if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler)
+    if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler);
   }
 
   componentDidUpdate(prevProps: FullscreenModalProps) {
     if (prevProps.open !== this.props.open) {
       if (this.props.open) {
-
         const zIndex = getUpdatedZIndex({
           element: this.element,
           containerClassName: '.Overlay-container--open',
@@ -179,9 +176,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         });
 
         if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
-
       } else {
-
         this.setState(
           {
             animate: false,
@@ -196,7 +191,6 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
         );
 
         if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
-
       }
     }
   }
