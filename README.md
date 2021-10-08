@@ -8,7 +8,8 @@
 </h1>
 
 > Masala Design System (MDS) is an open-source design system built at Innovaccer.
-> This repo consists of React components based on the guidelines and principles of 
+> This is a simple and customizable component library to build faster, beautiful,
+> and more accessible React applications on the guidelines and principles of
 > Masala Design System.
 
 <br/>
@@ -20,34 +21,76 @@
 </div>
 <br/>
 
-### 🚀 Get Up and Running
----
-> 💡 If your app runs on `Innovaccer UI engine` you don't need following two steps, please see _Using Components_ section bellow.
+## 🚀 Get Up and Running
 
-There are two main steps to use a component in your project:
-
-1. Installing component library using npm or yarn.
-2. Loading stylesheet.
-
-**Installing component library:**
-
-Run the following command using [npm](https://www.npmjs.com/) to add the component library to your project:
+To install `@innovaccer/design-system` in your project, you will need to run the
+following command using [npm](https://www.npmjs.com/):
 
 ```bash
 npm install @innovaccer/design-system
 ```
 
+If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
+instead:
+
+```bash
+yarn add @innovaccer/design-system
+```
+
 **Adding style:**
 
-As this component library is part of a framework-agnostic design system used at Innovaccer the styling is done with CSS using CSS variables for theming and BEM methodology for reusable and modular styling. So it requires you to include CSS in your project by either importing or serving it as a static file. The complete stylesheet is published as part of the component library at path `@innovaccer/design-system/css`.
-
-Import style at your app's root.
+Import style at your app's root, it is not included in library bundle and shipped as a single css file.
+For more details see our [styling](#styling) section
 
 ```js
 import '@innovaccer/design-system/css';
 ```
 
-**Using design system font:**
+
+
+If you want to try out `@innovaccer/design-system`, you can also use
+[CodeSandbox](https://codesandbox.io/s/focused-germain-shbcw).
+
+[![Edit @innovaccer/design-system](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/focused-germain-shbcw)
+
+
+## Usage
+
+```js
+import { Button } from '@innovaccer/design-system';
+const App = () => {
+  return <Button>Done</Button>;
+};
+```
+
+For more information about each component, check out our
+[Storybook](https://innovaccer.github.io/design-system/).
+Check out our [Tutorial](/docs/AppTutorial.md) to guide you in creating an awesome app.
+
+## CDN
+
+If you prefer to include library globally by marking it as external in your application, [library](https://unpkg.com/browse/@innovaccer/design-system/) provides various single-file distributions, which can be used as following:
+
+```html
+<!-- style -->
+<link href="https://unpkg.com/@innovaccer/design-system@2.5.0-3/css/dist/index.css" rel="stylesheet" />
+
+<!-- un-compressed UMD -->
+<script src="https://unpkg.com/browse/@innovaccer/design-system@2.5.0-3/dist/index.umd.js"></script>
+
+<!-- brotli compressed UMD -->
+<script src="https://unpkg.com/@innovaccer/design-system@2.5.0-3/dist/index.umd.js.br"></script>
+
+<!-- gzip compressed UMD -->
+<script src="https://unpkg.com/@innovaccer/design-system@2.5.0-3/dist/index.umd.js.gz"></script>
+```
+
+## Styling
+
+As this component library is part of a framework-agnostic design system used at Innovaccer the styling is done with CSS using CSS variables for theming and BEM methodology for reusable and modular styling. So it requires you to include CSS in your project by either importing or serving it as a static file. The complete stylesheet is published as part of the component library at path `@innovaccer/design-system/css`.
+You can include css by importing it or loading it from cdn.
+
+**👉 Using Font**
 
 The css sets the font family as `'Nunito Sans'` for the body. To add this font in your project you need to load this font. The recommended way to do it is by adding the following google font cdn link to your app's head.
 
@@ -58,7 +101,7 @@ The css sets the font family as `'Nunito Sans'` for the body. To add this font i
 />
 ```
 
-**Updating Font:**
+**👉 Updating Font:**
 
 If you don't add the font described above font family will not be affected by css. However, if you want to update the font family update it via the following css variable.
 
@@ -66,11 +109,11 @@ If you don't add the font described above font family will not be affected by cs
 --font-family
 ```
 
-**Reset Styles**
+**👉 Reset Styles**
 
 As BEM is used reset.css is not used and no style reset is done.
 
-**Polyfill for IE**
+**👉 Polyfill for IE**
 
 For css variables to work on IE we use a polyfill at runtime to achieve dynamic theming through variables. Please add the following polyfill in your page.
 
@@ -83,46 +126,11 @@ For css variables to work on IE we use a polyfill at runtime to achieve dynamic 
 </script>
 ```
 
-**Using Components**
+## :books: Documentation
 
-Available components along with live code editor and API documentation can be found [here](https://innovaccer.github.io/design-system).
-Components can be imported as mentioned below:
+- [🌶 Masala Design System](http://design.innovaccer.com)
 
-```js
-{
-  ...
-  Avatar,
-  Backdrop,
-  Badge,
-  BreadcrumbsWrapper,
-  Breadcrumb,
-  ...
-} from '@innovaccer/design-system'
-
-```
-
-## Tutorial
-
-We have created a tutorial to guide you in creating an awesome app with Innovaccer Design System components. Please find it [here](/docs/AppTutorial.md).
-
-## How to run locally?
-
-```bash
-#clone repository
-git clone https://github.com/innovaccer/design-system.git
-
-#install dependencies
-npm install
-
-#start development server
-npm run dev
-```
-
-## Documentation
-
-**[Design](http://design.innovaccer.com)**
-
-**[Components](https://innovaccer.github.io/design-system)**
+- [📗 Components Storybook](https://innovaccer.github.io/design-system)
 
 ## ❗ Code of Conduct
 
@@ -133,19 +141,6 @@ We expect everyone participating in the community to abide by our [**Code of Con
 Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! :muscle::purple_heart:
 
 Check out our [**Contributing Guide**](https://github.com/innovaccer/design-system/blob/master/CONTRIBUTING.md) for ideas on contributing and setup steps for getting our repositories up and running on your local machine.
-
-### A note on how this repository is organized
-
-This repository is codebase for all and we publish it to NPM as package.
-
-### Contributing
-
-We are currently only accepting bug fixes.
-
-## :memo: License
-
-Licensed under the [MIT License](https://github.com/innovaccer/design-system/blob/master/LICENSE).
-
 
 ## Contributors ✨
 
@@ -194,3 +189,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## :memo: License
+
+Licensed under the [MIT License](https://github.com/innovaccer/design-system/blob/master/LICENSE).
