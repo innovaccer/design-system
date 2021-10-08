@@ -499,7 +499,7 @@ const DropdownList = (props: OptionsProps) => {
     if (listOptions.length === 0 && !loadingOptions) {
       const { noResultMessage = 'No result found' } = props;
       return (
-        <div className={'Dropdown-errorWrapper'}>
+        <div className={'Dropdown-errorWrapper'} data-test="DesignSystem-Dropdown--errorWrapper">
           <div className={'Option'}>
             <div className={'Option-subinfo'}>{noResultMessage}</div>
           </div>

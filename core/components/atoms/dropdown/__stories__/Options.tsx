@@ -1,3 +1,5 @@
+import { getSearchedOptions } from '../utility';
+
 export const dropdownOptions: any[] = [];
 export const preSelectedOptions: any[] = [];
 export const storyOptions: any[] = [];
@@ -152,3 +154,16 @@ export const iconItems = [
     icon: 'events',
   },
 ];
+
+export const fetchOptions = (searchTerm: string) => {
+  const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
+  return new Promise<any>((resolve) => {
+    window.setTimeout(() => {
+      resolve({
+        searchTerm,
+        options: searchedOptions,
+        count: searchedOptions.length,
+      });
+    }, 1000);
+  });
+};
