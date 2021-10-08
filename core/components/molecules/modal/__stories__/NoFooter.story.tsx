@@ -35,7 +35,6 @@ export const noFooter = () => {
           heading: 'Heading',
           subHeading: 'Subheading',
         }}
-
       >
         <Text>Modal Body</Text>
         <ModalDescription

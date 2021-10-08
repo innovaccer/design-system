@@ -13,18 +13,14 @@ const FunctionValue = jest.fn();
 describe('TimePicker component prop:inputFormat snapshot', () => {
   const mapper: Record<string, any> = {
     inputFormat: valueHelper(timeFormat, { required: true, iterate: true }),
-    onTimeChange: valueHelper(FunctionValue, { required: true })
+    onTimeChange: valueHelper(FunctionValue, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <TimePicker
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<TimePicker {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -35,18 +31,14 @@ describe('TimePicker component prop:inputFormat snapshot', () => {
 describe('TimePicker component prop:outputFormat snapshot', () => {
   const mapper: Record<string, any> = {
     outputFormat: valueHelper(timeFormat, { required: true, iterate: true }),
-    onTimeChange: valueHelper(FunctionValue, { required: true })
+    onTimeChange: valueHelper(FunctionValue, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <TimePicker
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<TimePicker {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -63,11 +55,7 @@ describe('TimePicker component prop:validators snapshot', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <TimePicker
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<TimePicker {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -84,11 +72,7 @@ describe('TimePicker component prop:time snapshot', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { baseElement } = render(
-        <TimePicker
-          {...attr}
-        />
-      );
+      const { baseElement } = render(<TimePicker {...attr} />);
       expect(baseElement).toMatchSnapshot();
     });
   };
@@ -97,14 +81,9 @@ describe('TimePicker component prop:time snapshot', () => {
 });
 
 describe('TimePicker component with different prop:time values', () => {
-
   timeValues.forEach((time, key) => {
-    it(`check time if prop:time is passed as ${typeof (time)} `, () => {
-      const { getByTestId } = render(
-        <TimePicker
-          time={time}
-        />
-      );
+    it(`check time if prop:time is passed as ${typeof time} `, () => {
+      const { getByTestId } = render(<TimePicker time={time} />);
       expect(getByTestId('DesignSystem-Input')).toHaveValue(expectedTimeValue[key]);
     });
   });
@@ -112,58 +91,33 @@ describe('TimePicker component with different prop:time values', () => {
 
 describe('TimePicker component with different prop:inputFormat values', () => {
   it('check format if prop:inputFormat is hh:mm', () => {
-    const { getByTestId } = render(
-      <TimePicker
-        time={timeValues[0]}
-        inputFormat="hh:mm"
-      />
-    );
+    const { getByTestId } = render(<TimePicker time={timeValues[0]} inputFormat="hh:mm" />);
     expect(getByTestId('DesignSystem-Input')).toHaveValue('20:44');
   });
 
   it('check format if prop:inputFormat is hh:mm AM', () => {
-    const { getByTestId } = render(
-      <TimePicker
-        time={timeValues[0]}
-        inputFormat="hh:mm AM"
-      />
-    );
+    const { getByTestId } = render(<TimePicker time={timeValues[0]} inputFormat="hh:mm AM" />);
     expect(getByTestId('DesignSystem-Input')).toHaveValue(expectedTimeValue[0]);
   });
 });
 
 describe('TimePicker component event handler', () => {
   it('onBlur Event handler ', () => {
-    const { getByTestId } = render(
-      <TimePicker
-        time={timeValues[1]}
-        onTimeChange={FunctionValue}
-      />
-    );
+    const { getByTestId } = render(<TimePicker time={timeValues[1]} onTimeChange={FunctionValue} />);
     const InputTestId = getByTestId('DesignSystem-Input');
     fireEvent.blur(InputTestId);
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('onChange Event handler ', () => {
-    const { getByTestId } = render(
-      <TimePicker
-        time={timeValues[1]}
-        onTimeChange={FunctionValue}
-      />
-    );
+    const { getByTestId } = render(<TimePicker time={timeValues[1]} onTimeChange={FunctionValue} />);
     const InputTestId = getByTestId('DesignSystem-Input');
     fireEvent.change(InputTestId, { target: { value: timeValues[0] } });
     expect(FunctionValue).toHaveBeenCalled();
   });
 
   it('onClear Event handler ', () => {
-    const { getByTestId } = render(
-      <TimePicker
-        time={timeValues[1]}
-        onTimeChange={FunctionValue}
-      />
-    );
+    const { getByTestId } = render(<TimePicker time={timeValues[1]} onTimeChange={FunctionValue} />);
     const InputTestId = getByTestId('DesignSystem-Input--closeIcon');
     fireEvent.click(InputTestId);
     expect(FunctionValue).toHaveBeenCalled();
@@ -192,7 +146,7 @@ describe('TimePicker component placeholder', () => {
         time={timeValues[1]}
         inputFormat="hh:mm"
         inputOptions={{
-          placeholderChar: '*'
+          placeholderChar: '*',
         }}
       />
     );
@@ -206,12 +160,7 @@ describe('TimePicker component placeholder', () => {
 describe('TimePicker component with different time format', () => {
   it('check when inputFormat and outputFormat is different', () => {
     const { getByTestId } = render(
-      <TimePicker
-        time={timeValues[1]}
-        onTimeChange={FunctionValue}
-        inputFormat="hh:mm AM"
-        outputFormat="hh:mm"
-      />
+      <TimePicker time={timeValues[1]} onTimeChange={FunctionValue} inputFormat="hh:mm AM" outputFormat="hh:mm" />
     );
     const InputTestId = getByTestId('DesignSystem-Input');
     fireEvent.blur(InputTestId);

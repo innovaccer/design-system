@@ -22,7 +22,9 @@ export const Meta = (props: MetaProps) => {
           className={'Meta-icon'}
         />
       )}
-      <Text data-test="DesignSystem-MetaList--MetaLabel" appearance={labelAppearance}>{label}</Text>
+      <Text data-test="DesignSystem-MetaList--MetaLabel" appearance={labelAppearance}>
+        {label}
+      </Text>
     </span>
   );
 };

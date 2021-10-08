@@ -138,27 +138,26 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
   onCloseHandler = (event: KeyboardEvent) => {
     const isTopOverlay = OverlayManager.isTopOverlay(this.sidesheetRef.current);
-    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler)
-  }
+    closeOnEscapeKeypress(event, isTopOverlay, this.onOutsideClickHandler);
+  };
 
   componentDidMount() {
     if (this.props.closeOnEscape) {
       if (this.state.open) {
         OverlayManager.add(this.sidesheetRef.current);
       }
-      document.addEventListener('keydown', this.onCloseHandler)
+      document.addEventListener('keydown', this.onCloseHandler);
     }
   }
 
   componentWillUnmount() {
     if (this.props.closeOnEscape) {
-      document.removeEventListener('keydown', this.onCloseHandler)
+      document.removeEventListener('keydown', this.onCloseHandler);
     }
   }
 
   componentDidUpdate(prevProps: SidesheetProps) {
     if (prevProps.open !== this.props.open) {
-
       if (this.props.open) {
         const zIndex = getUpdatedZIndex({
           element: this.element,
@@ -173,21 +172,21 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         });
 
         if (this.props.closeOnEscape) OverlayManager.add(this.sidesheetRef.current);
-
       } else {
-
-        this.setState({
-          animate: false,
-        }, () => {
-          window.setTimeout(() => {
-            this.setState({
-              open: false
-            });
-          }, 120);
-        });
+        this.setState(
+          {
+            animate: false,
+          },
+          () => {
+            window.setTimeout(() => {
+              this.setState({
+                open: false,
+              });
+            }, 120);
+          }
+        );
 
         if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
-
       }
     }
   }

@@ -12,24 +12,20 @@ const TextValues = {
   failedText: 'Failed Text',
   sendingText: 'Sending Text',
   typingText: 'Typing Text',
-  msgText: 'Message Text'
+  msgText: 'Message Text',
 };
 
 describe('ChatMessage component prop:type snapshot', () => {
   const mapper: Record<string, any> = {
     type: valueHelper(type, { required: true, iterate: true }),
-    text: valueHelper(TextValues.msgText, { required: true })
+    text: valueHelper(TextValues.msgText, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <ChatMessage
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<ChatMessage {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -40,18 +36,14 @@ describe('ChatMessage component prop:type snapshot', () => {
 describe('ChatMessage component prop:isTyping snapshot', () => {
   const mapper: Record<string, any> = {
     isTyping: valueHelper(BooleanValue, { iterate: true, required: false }),
-    typingText: valueHelper(TextValues.typingText, { required: true })
+    typingText: valueHelper(TextValues.typingText, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <ChatMessage
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<ChatMessage {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -61,18 +53,14 @@ describe('ChatMessage component prop:isTyping snapshot', () => {
 
 describe('ChatMessage component prop:text snapshot', () => {
   const mapper: Record<string, any> = {
-    text: valueHelper(TextValues.msgText, { required: true })
+    text: valueHelper(TextValues.msgText, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <ChatMessage
-          {...attr}
-        />
-      );
+      const { asFragment } = render(<ChatMessage {...attr} />);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -84,11 +72,7 @@ describe('ChatMessage component with different values of prop:type ', () => {
   type.forEach((value) => {
     it(`check for Message Box to have class Box--${value} if type is ${value}`, () => {
       const { getByTestId } = render(
-        <ChatMessage
-          text={TextValues.msgText}
-          type={value}
-          typingText={TextValues.typingText}
-        />
+        <ChatMessage text={TextValues.msgText} type={value} typingText={TextValues.typingText} />
       );
       expect(getByTestId('DesignSystem-ChatMessage--Box')).toHaveClass(`Box--${value}`);
     });
@@ -98,12 +82,7 @@ describe('ChatMessage component with different values of prop:type ', () => {
 describe('ChatMessage component prop:isTyping', () => {
   it('check for properties when isTyping is true', () => {
     const { getByTestId } = render(
-      <ChatMessage
-        type="incoming"
-        text={TextValues.msgText}
-        isTyping={true}
-        typingText={TextValues.typingText}
-      />
+      <ChatMessage type="incoming" text={TextValues.msgText} isTyping={true} typingText={TextValues.typingText} />
     );
     expect(getByTestId('DesignSystem-Text').textContent).toMatch(TextValues.typingText);
     expect(getByTestId('DesignSystem-ChatMessage--Box')).toHaveClass('Box-incoming--withStatus');
@@ -112,12 +91,7 @@ describe('ChatMessage component prop:isTyping', () => {
 
   it('check for text Message when isTyping is false', () => {
     const { getByTestId } = render(
-      <ChatMessage
-        type="incoming"
-        text={TextValues.msgText}
-        isTyping={false}
-        typingText={TextValues.typingText}
-      />
+      <ChatMessage type="incoming" text={TextValues.msgText} isTyping={false} typingText={TextValues.typingText} />
     );
     expect(getByTestId('DesignSystem-Text').textContent).toMatch(TextValues.msgText);
     expect(getByTestId('DesignSystem-ChatMessage--Box')).not.toHaveClass('Box-incoming--withStatus');
@@ -148,7 +122,7 @@ describe('ChatMessage component prop:statusOptions with type:failed', () => {
         typingText={TextValues.typingText}
         statusOptions={{
           type: 'failed',
-          failedText: TextValues.failedText
+          failedText: TextValues.failedText,
         }}
       />
     );
@@ -180,7 +154,7 @@ describe('ChatMessage component prop:statusOptions with type:sending', () => {
         typingText={TextValues.typingText}
         statusOptions={{
           type: 'sending',
-          sendingText: TextValues.sendingText
+          sendingText: TextValues.sendingText,
         }}
       />
     );
@@ -194,7 +168,7 @@ describe('ChatMessage component prop:statusOptions with type:sending', () => {
         type="incoming"
         typingText={TextValues.typingText}
         statusOptions={{
-          type: 'sending'
+          type: 'sending',
         }}
       />
     );
@@ -211,7 +185,7 @@ describe('ChatMessage component prop:statusOptions with type:sent', () => {
         typingText={TextValues.typingText}
         statusOptions={{
           type: 'sent',
-          time: timeStr
+          time: timeStr,
         }}
       />
     );
@@ -227,7 +201,7 @@ describe('ChatMessage component prop:statusOptions with type:sent', () => {
         typingText={TextValues.typingText}
         statusOptions={{
           type: 'sent',
-          time: timeNum
+          time: timeNum,
         }}
       />
     );
@@ -245,7 +219,7 @@ describe('ChatMessage component prop:statusOptions with type:read', () => {
         typingText={TextValues.typingText}
         statusOptions={{
           type: 'read',
-          readText: TextValues.readText
+          readText: TextValues.readText,
         }}
       />
     );
@@ -259,7 +233,7 @@ describe('ChatMessage component prop:statusOptions with type:read', () => {
         type="incoming"
         typingText={TextValues.typingText}
         statusOptions={{
-          type: 'read'
+          type: 'read',
         }}
       />
     );
@@ -275,7 +249,7 @@ describe('ChatMessage component prop:statusOptions with type:read', () => {
         statusOptions={{
           type: 'read',
           readText: TextValues.readText,
-          time: timeStr
+          time: timeStr,
         }}
       />
     );
@@ -292,7 +266,7 @@ describe('ChatMessage component prop:statusOptions with type:urgent', () => {
         type="incoming"
         typingText={TextValues.typingText}
         statusOptions={{
-          type: 'urgent'
+          type: 'urgent',
         }}
       />
     );
@@ -307,7 +281,7 @@ describe('ChatMessage component prop:statusOptions with type:urgent', () => {
         typingText={TextValues.typingText}
         statusOptions={{
           type: 'urgent',
-          time: timeStr
+          time: timeStr,
         }}
       />
     );

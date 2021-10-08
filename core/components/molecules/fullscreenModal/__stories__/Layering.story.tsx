@@ -23,7 +23,7 @@ export const layering = () => {
     setOpenSecondOverlay(!openSecondOverlay);
     action('on close triggered')();
     updateKnob('openSecondOverlay', !openSecondOverlay);
-  }
+  };
 
   const openModal = () => {
     setOpen(true);
@@ -100,7 +100,7 @@ export const layering = () => {
               children: 'Basic',
               appearance: 'basic',
               onClick: action('basic action'),
-            }
+            },
           ],
         }}
       >
