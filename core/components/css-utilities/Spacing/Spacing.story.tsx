@@ -105,7 +105,7 @@ export const spacing = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Spacing',
+  title: 'Others/Styles/Spacing',
   component: spacing,
   parameters: {
     viewMode: 'story',

@@ -66,7 +66,7 @@ export const position = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Position',
+  title: 'Others/Styles/Position',
   component: position,
   parameters: {
     viewMode: 'story',

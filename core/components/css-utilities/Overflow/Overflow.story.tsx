@@ -74,7 +74,7 @@ export const overflow = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Overflow',
+  title: 'Others/Styles/Overflow',
   component: overflow,
   parameters: {
     viewMode: 'story',
