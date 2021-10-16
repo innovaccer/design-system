@@ -1,3 +1,32 @@
+## 2.5.0-4  (2021-10-17) 
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+NA
+
+### Improvements
+* Improved test coverage to cover more than 92% of the code base.
+### Documentation
+* Readme is structured and updated for easy to access the required information (7d9c262d)
+* All existing contributors are added to Readme, an option to create request for getting added as contributor and documentation for the same is added. (07db26e9)
+
+
+-------------------
+
 ## 2.5.0-3  (2021-10-07) 
 
 ### Highlights
