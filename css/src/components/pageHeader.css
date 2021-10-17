@@ -40,6 +40,7 @@
 .PageHeader-navigationWrapper {
   display: inline-flex;
   margin-top: var(--spacing-l);
+  width: 100%;
 }
 
 .PageHeader .PageHeader-navigationWrapper {
