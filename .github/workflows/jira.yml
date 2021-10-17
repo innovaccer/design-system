@@ -28,7 +28,6 @@ jobs:
           ${{ github.event.issue.title }}
         description: |
           ${{ github.event.issue.body }}
-        fields: '{"labels":["github"], "customfield_10018": "DS-843", "customfield_11120":"${{ github.event.issue.html_url }}", "customfield_11760":{"value":"No"}}'
-
+        fields: '{"labels":["github"], "customfield_10018": "${{ secrets.JIRA_ID }}", "customfield_11120":"${{ github.event.issue.html_url }}", "customfield_11760":{"value":"No"}}'
     - name: Log created issue
       run: echo "Issue ${{ steps.create.outputs.issue }} was created"    
