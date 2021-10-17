@@ -1,4 +1,5 @@
 import { InputMaskProps } from '@/index.type';
+import { Utils } from '@/index';
 
 export const isEditable = (mask: InputMaskProps['mask'], pos: number) => typeof mask[pos] === 'object';
 
@@ -10,3 +11,9 @@ export const getDefaultValue = (mask: InputMaskProps['mask'], placeholderChar: I
 
   return val;
 };
+
+export const getDefaultValidator = (value: InputMaskProps['value']) => {
+  let val = value ? value : '';
+
+  return Utils.validators.date(val, 'mm/dd/yyyy');
+}

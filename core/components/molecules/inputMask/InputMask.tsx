@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, Validators, Mask } from '@/utils/types';
 import { Input, Caption, Utils } from '@/index';
 import { InputProps } from '@/index.type';
-import { getDefaultValue } from './utilites';
+import { getDefaultValue, getDefaultValidator } from './utilites';
 
 export interface MaskProps extends BaseProps {
   /**
@@ -213,8 +213,8 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
 
     const newValue = maskedVal.slice(0, mask.length).join('');
     window.requestAnimationFrame(() => setCursorPosition(cursorPosition));
-
-    if (Utils.validators.isValid(validators, newValue) && newValue !== value) {
+    let validator = Object.keys(validators).length !== 0? validators : getDefaultValidator;
+    if (Utils.validators.isValid(validator, newValue) && newValue !== value) {
       setValue(newValue);
       if (onChange) onChange(e, newValue);
     }
@@ -286,6 +286,7 @@ InputMask.displayName = 'InputMask';
 // @ts-ignore
 InputMask.utils = {
   getDefaultValue,
+  getDefaultValidator
 };
 
 export default InputMask;
