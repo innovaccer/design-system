@@ -14,6 +14,8 @@ const IconOption = (props: OptionTypeProps) => {
   });
 
   return (
+    // TODO(a11y): fix accessibility
+    /* eslint-disable */
     <div
       className={OptionClass}
       onClick={onClickHandler}
@@ -21,6 +23,7 @@ const IconOption = (props: OptionTypeProps) => {
       data-test={dataTest}
       data-disabled={disabled}
     >
+      {/* eslint-enable  */}
       {icon && (
         <Icon className="Option-icon mr-4" data-test={`${dataTest}--Icon`} name={icon} appearance={appearance} />
       )}

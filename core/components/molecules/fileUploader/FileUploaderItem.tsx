@@ -54,6 +54,8 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
   );
 
   return (
+    // TODO(a11y)
+    //  eslint-disable-next-line
     <div
       {...baseProps}
       data-test="DesignSystem-FileUploader--Item"

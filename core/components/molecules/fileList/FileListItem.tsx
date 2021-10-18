@@ -80,6 +80,8 @@ export const FileListItem = (props: FileListItemProps) => {
   };
 
   return (
+    // TODO(a11y)
+    //  eslint-disable-next-line
     <div {...baseProps} className={FileItemClass} onClick={onClickHandler} data-test="DesignSystem-FileListItem">
       <div className="FileItem-file">
         <div className="FileItem-fileContent">

@@ -8,13 +8,12 @@ present you with this guide.
 There are different ways to contribute, each with a different level
 of involvement and technical knowledge required, such as:
 
-* [Reporting Bugs](#reporting-bugs)
-* [Request Features](#request-features)
-* [Development](#development)
+- [Reporting Bugs](#reporting-bugs)
+- [Request Features](#request-features)
+- [Development](#development)
 
 **Please read this document carefully. It will help maintainers and readers
 in solving your issue(s), evaluating your feature request, etc.**
-
 
 ## Reporting Bugs
 
@@ -25,10 +24,9 @@ documentation.**
 
 If you've found a bug, please file a report in our [issue tracker](https://github.com/innovaccer/design-system/issues).
 
-
 ### Issue Search
 
-Search to see if it has already been reported via the *issue search*.
+Search to see if it has already been reported via the _issue search_.
 If so, up-vote it (using GitHub reactions) or add additional helpful details to
 the existing issue to show that it's affecting multiple people.
 
@@ -43,20 +41,22 @@ New feature requests are welcomed. Analyze whether the idea fits within the scop
 
 Please provide:
 
-* A detailed description of the advantages of your request
-* A potential implementation or design
-* Whatever else you have in your mind 🤓
+- A detailed description of the advantages of your request
+- A potential implementation or design
+- Whatever else you have in your mind 🤓
 
 ## Development
 
 ### Setting up the environment
+
 1. Fork the repository on Github.
 
 2. Run the environment locally:
-	```bash
+
+   ```bash
    #clone repository
    git clone https://github.com/[GITHUB_USERNAME]/design-system.git
-   
+
    #change directory to the cloned repository
    cd design-system
 
@@ -95,9 +95,9 @@ mkdir __stories__/variants
 
 #### Typescript Types
 
-- Component *types* names must be uppercase, e.g. Appearance, Size, etc.
+- Component _types_ names must be uppercase, e.g. Appearance, Size, etc.
 - Component Props interface should be named as `[COMPONENT_NAME]Props`, e.g. AvatarProps, HeadingProps.
-- Every component props interface should extend **BaseProps** (e.g className, data-test). Properties inside BaseProps  interface are defined in `@/utils/types`.
+- Every component props interface should extend **BaseProps** (e.g className, data-test). Properties inside BaseProps interface are defined in `@/utils/types`.
 
 #### Exports
 
@@ -121,6 +121,7 @@ mkdir __stories__/variants
   - `component`: Used by addons for automatic prop table generation and display of other component metadata
   - `parameters`: Used to control the behavior of Storybook features and addons.
   - `subcomponents`: Used to include subcomponents in prop table.
+
 ```tsx
 // Storybook CSF Format
 export default {
@@ -131,24 +132,25 @@ export default {
     docs: {
       docPage: {
         noHtml: true, // Includes Html in docPage
-        noStory:true, // Includes Story in docPage
+        noStory: true, // Includes Story in docPage
         noProps: true, // Includes props table in docPage,
         noSandbox: true, // Includes code sandbox button in docPage,
         title: 'Avatar', // Custom title
         description: 'Dummy description', // Custom description
-        customCode: '() => <Avatar>JD</Avatar>' // Custom code for live code editor,
-      }
-    }
-  }
+        customCode: '() => <Avatar>JD</Avatar>', // Custom code for live code editor,
+      },
+    },
+  },
 };
 ```
+
 ### Example Component
 
-  Let's assume we want to add *Avatar* component in *Atoms* category.
+Let's assume we want to add _Avatar_ component in _Atoms_ category.
 
 ##### Create folder structure
 
- ```bash
+```bash
 cd core/atoms
 mkdir avatar
 cd avatar
@@ -156,10 +158,10 @@ mkdir __tests__
 mkdir __stories__
 mkdir __stories__/variants
 ```
- 
+
 ##### [./core/components/atoms/avatar/Avatar.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/Avatar.tsx)
 
-Now we will add *Avatar* component logic.
+Now we will add _Avatar_ component logic.
 
 ###### Imports
 
@@ -178,13 +180,25 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 ###### Component types
 
 ```tsx
-export type Appearance = 'secondary' | 'primary' | 'alert' | 'warning' | 'success' | 'accent1' | 'accent2' | 'accent3' | 'accent4';
+export type Appearance =
+  | 'secondary'
+  | 'primary'
+  | 'alert'
+  | 'warning'
+  | 'success'
+  | 'accent1'
+  | 'accent2'
+  | 'accent3'
+  | 'accent4';
 
 export type Size = 'regular' | 'tiny';
 ```
+
 ###### Component interface
+
 - Component props interface should extend BaseProps.
 - Additional information of a prop is written in `/** */` block.
+
 ```tsx
 export interface AvatarProps extends BaseProps {
   /**
@@ -217,8 +231,10 @@ export interface AvatarProps extends BaseProps {
   size: Size;
 }
 ```
+
 ###### Component Logic
- - Props are destructured *(Note that Avatar is a Function Component)*.
+
+- Props are destructured _(Note that Avatar is a Function Component)_.
 
 ```jsx
 export const Avatar = (props: AvatarProps) => {
@@ -233,44 +249,52 @@ export const Avatar = (props: AvatarProps) => {
     appearance,
   } = props;
 ```
+
 - BaseProps are extracted via `extractBaseProps` function;
+
 ```jsx
-  const baseProps = extractBaseProps(props);
+const baseProps = extractBaseProps(props);
 
-  const initials = children
-    ? children.trim().slice(0, initialsLength)
-    : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
+const initials = children
+  ? children.trim().slice(0, initialsLength)
+  : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
 
-  const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
-  const DefaultAppearance = 'secondary';
+const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
+const DefaultAppearance = 'secondary';
 
-  const colors = ['accent4', 'primary', 'accent3', 'alert','accent2', 'warning', 'accent1', 'success'];
-  
-  const AvatarAppearance = appearance 
-  || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] 
-  || DefaultAppearance;
+const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
+
+const AvatarAppearance =
+  appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 ```
+
 - [ClassNames](https://www.npmjs.com/package/classnames) is a utility for conditionally joining CSS classNames together.
 - CSS is added according to [BEM Convention](http://getbem.com/naming/).
+
 ```jsx
-  const classes = classNames({
+const classes = classNames(
+  {
     Avatar: true,
     [`Avatar--${size}`]: size,
     [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
     ['Avatar--disabled']: !initials || !withTooltip,
-  }, className);
+  },
+  className
+);
 
-  const ContentClass = classNames({
-    [`Avatar-content--${size}`]: size,
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance
-  });
+const ContentClass = classNames({
+  [`Avatar-content--${size}`]: size,
+  [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+});
 
-  const IconClass = classNames({
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance
-  });
+const IconClass = classNames({
+  [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+});
 ```
+
 - Add rendering logic and `data-test` attribute.
 - Convention for adding data-test id is `DesignSystem-[COMPONENT_NAME]` and it is used for testing.
+
 ```jsx
   const renderAvatar = () => {
     return (
@@ -312,7 +336,9 @@ export const Avatar = (props: AvatarProps) => {
   return renderTooltip();
 };
 ```
+
 - Export Avatar component
+
 ```jsx
 Avatar.displayName = 'Avatar';
 
@@ -325,19 +351,26 @@ export default Avatar;
 export { default } from './Avatar';
 export * from './Avatar';
 ```
+
 #### Component Stories
+
 A [story](https://storybook.js.org/docs/react/get-started/whats-a-story) captures the rendered state of a UI component. We write multiple stories per component that describe all the interesting states a component can support.
 
- ##### Default Story
- ###### [/core/components/atoms/avatar/\_\_stories\_\_/index.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__stories__/index.story.tsx).
- - Import component and story knobs.
+##### Default Story
+
+###### [/core/components/atoms/avatar/\_\_stories\_\_/index.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__stories__/index.story.tsx).
+
+- Import component and story knobs.
+
 ```tsx
 import * as React from 'react';
 import { select, text } from '@storybook/addon-knobs';
 import { Avatar } from '@/index';
 ```
+
 - Every named export in the file represents the name of the story, in this case `All`.
 - Storybook knobs (e.g. select, text, boolean) allows to edit props dynamically using the Storybook UI.
+
 ```tsx
 export const all = () => {
   const appearance = select(
@@ -345,42 +378,46 @@ export const all = () => {
     ['primary', 'alert', 'warning', 'success', 'accent1', 'accent2', 'accent3', 'accent4', 'secondary'],
     undefined
   );
-  
+
   const size = select('size', ['regular', 'tiny'], undefined);
   const withTooltip = boolean('withTooltip', true);
 
   const children = text('children', 'JD');
 
   return (
-    <Avatar
-      appearance={appearance}
-      size={size}
-      withTooltip={withTooltip}
-    >
+    <Avatar appearance={appearance} size={size} withTooltip={withTooltip}>
       {children}
     </Avatar>
   );
 };
 ```
+
 - The default export defines metadata about component.
 - Title `Avatar/All` will show up in the navigation UI story hierarchy.
+
 ```jsx
 export default {
   title: 'Components/Avatar/All'',
   component: Avatar
 };
 ```
+
 ##### Variant Story
-   
-   We write stories corresponding to each prop in the variants folder. For example: `size` and `appearance` are props of Avatar component. Let us look at an example of `size` variant story.
- ###### [./core/components/atoms/avatar/\_\_stories\_\_/variants/size.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__stories__/variants/Size.story.tsx)
- - Import the required components.
+
+We write stories corresponding to each prop in the variants folder. For example: `size` and `appearance` are props of Avatar component. Let us look at an example of `size` variant story.
+
+###### [./core/components/atoms/avatar/\_\_stories\_\_/variants/size.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__stories__/variants/Size.story.tsx)
+
+- Import the required components.
+
 ```tsx
 import * as React from 'react';
-import { Avatar, Text} from '@/index';
+import { Avatar, Text } from '@/index';
 ```
+
 - Name of the story in this case will be `Size`.
 - JSX corresponding to this story will look like this:
+
 ```tsx
 export const size = () => (
   <div className="d-flex">
@@ -390,12 +427,14 @@ export const size = () => (
     </div>
     <div className="d-flex flex-column">
       <Text weight="strong">Tiny</Text> <br />
-      <Avatar firstName="John" lastName="Doe" size="tiny"/>
+      <Avatar firstName="John" lastName="Doe" size="tiny" />
     </div>
   </div>
 );
 ```
+
 - The default export defines metadata about component.
+
 ```jsx
 export default {
   title: 'Components/Avatar/Variants/Appearance',
@@ -404,9 +443,13 @@ export default {
 ```
 
 #### Component Testing
+
 ##### [./core/components/atoms/avatar/\_\_tests\_\_/Avatar.test.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/avatar/__tests__/Avatar.test.tsx)
+
 Now we will add snapshot and unit testing.
+
 ###### Imports
+
 ```tsx
 import * as React from 'react';
 import { render } from '@testing-library/react';
@@ -414,9 +457,12 @@ import { Avatar } from '@/index';
 import { AvatarProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 ```
+
 ##### Snapshot Testing
+
 - [Snapshot tests](https://jestjs.io/docs/en/snapshot-testing) are a very useful tool whenever you want to make sure your UI does not change unexpectedly.
 - Create a mapper object which includes required/iterable props.
+
 ```tsx
 const sizes: AvatarProps['size'][] = ['regular', 'tiny'];
 
@@ -429,13 +475,7 @@ describe('Avatar component', () => {
     const attr = filterUndefined(props) as Props;
 
     it(testMessageHelper(attr), () => {
-      const { asFragment } = render(
-        <Avatar
-          {...attr}
-        >
-          JD
-        </Avatar>
-      );
+      const { asFragment } = render(<Avatar {...attr}>JD</Avatar>);
       expect(asFragment()).toMatchSnapshot();
     });
   };
@@ -443,16 +483,23 @@ describe('Avatar component', () => {
   testHelper(mapper, testFunc);
 });
 ```
+
 ### DocPage Story
-   When our component has state or callbacks, we need to write custom code to render the story on docs page. Let us consider an example of `Controlled Checkbox` story.
- ###### [./core/components/atoms/checkbox/\_\_stories\_\_/variants/controlledCheckbox.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/checkbox/__stories__/variants/Uncontrolled.story.tsx)
- - Import the required components.
+
+When our component has state or callbacks, we need to write custom code to render the story on docs page. Let us consider an example of `Controlled Checkbox` story.
+
+###### [./core/components/atoms/checkbox/\_\_stories\_\_/variants/controlledCheckbox.story.tsx](https://github.com/innovaccer/design-system/blob/master/core/components/atoms/checkbox/__stories__/variants/Uncontrolled.story.tsx)
+
+- Import the required components.
+
 ```tsx
 import * as React from 'react';
 import { Checkbox } from '@/index';
 ```
+
 - Name of the story in this case will be `Controlled Checkbox`.
 - We will create a state `checked` which will be false initially (showing that checkbox is not selected) and will update it when checkbox is clicked.
+
 ```tsx
 export const controlledCheckbox = () => {
   const [checked, setChecked] = React.useState(false);
@@ -461,17 +508,12 @@ export const controlledCheckbox = () => {
     setChecked(event.target.checked);
   };
 
-  return (
-      <Checkbox
-        label="Innovaccer"
-        value="Innovaccer"
-        checked={checked}
-        onChange={handleParentChange}
-      />
-  );
+  return <Checkbox label="Innovaccer" value="Innovaccer" checked={checked} onChange={handleParentChange} />;
 };
 ```
+
 - At this point, we will only see JSX in our live code editor. To fix this, we will write cutsom code for docs page.
+
 ```
 const customCode = `() => {
   const [checked, setChecked] = React.useState(false);
@@ -490,7 +532,9 @@ const customCode = `() => {
   );
 }`;
 ```
-- Now we will export metadata of our story. 
+
+- Now we will export metadata of our story.
+
 ```jsx
 export default {
   title: 'Components/Checkbox/Variants/Controlled Checkbox',
@@ -498,24 +542,30 @@ export default {
   parameters: {
     docs: {
       docPage: {
-        customCode
-      }
-    }
-  }
+        customCode,
+      },
+    },
+  },
 };
 ```
+
 ### Creating Patterns
+
 Patterns are best practice solutions for how a user achieves a goal. They show reusable combinations of components and templates that address common user objectives with sequences and flows.
 Note: Patterns are only shown in `docs tab`.
 
 Let us create a pattern for SideNav.
- - Name of the pattern will be `Side Nav`.
- - As patterns are shown only in docs tab, canvas tab will not render any element..
+
+- Name of the pattern will be `Side Nav`.
+- As patterns are shown only in docs tab, canvas tab will not render any element..
+
 ```tsx
 import * as React from 'react';
 export const sideNav = () => <></>;
 ```
--  We will write custom code for docs tab.
+
+- We will write custom code for docs tab.
+
 ```
 const customCode = `() => {
   const menus = [
@@ -597,10 +647,12 @@ const customCode = `() => {
   );
 }`;
 ```
+
 - We have created a mock data for side nav menus.
 - We then need `expanded` and `active` state to manage VerticalNav component props.
 - We will then return JSX from our sideNav component.
 - Now we will export metadata of our pattern. As we do not need props table for patterns, so we will add `noProps: true` in our metadata.
+
 ```
 export default {
   title: 'Patterns/VerticalNavigation/Side Nav',
@@ -616,6 +668,7 @@ export default {
 };
 
 ```
+
 ### Submitting a Pull Request
 
 The following are the steps you should follow when creating a pull request.
@@ -642,7 +695,6 @@ Before committing, **you must ensure there are no linting, formatting errors and
 
 To ensure the above conditions, run:
 
-
 For checking prettier issues:
 
 ```bash
@@ -654,6 +706,7 @@ For formating prettier issues:
 ```bash
 npm run prettier
 ```
+
 For lint:
 
 ```bash
@@ -662,9 +715,9 @@ npm run lint
 
 For tests:
 
-  ```bash
+```bash
 npm run test
-  ```
+```
 
 Then, and only then, you can create your pull request.
 
@@ -672,14 +725,14 @@ Then, and only then, you can create your pull request.
 
 The following are the steps you should follow when creating a new branch.
 
-- Start the branch name with prefixes like fix-, feat-, test-  as mentioned in [conventional commit messages](https://conventionalcommits.org/)
+- Start the branch name with prefixes like fix-, feat-, test- as mentioned in [conventional commit messages](https://conventionalcommits.org/)
 - Add a short description of the task. This makes the branch name recognizable and distinct.
 - Use hyphens as separators
 
 For example:
 
-* `feat-add-billing-module`
-* `fix-modal-height`
+- `feat-add-billing-module`
+- `fix-modal-height`
 
 #### Commit Guidelines
 
@@ -689,8 +742,8 @@ semantic versioning.
 
 For example:
 
-* `feat: A new feature`
-* `fix: A bug fix`
+- `feat: A new feature`
+- `fix: A bug fix`
 
 A commit of the type **feat** introduces a new feature to the codebase
 (this correlates with MINOR in semantic versioning).
@@ -712,18 +765,15 @@ fix: xxxxxxxxxx
 Commits types such as as `docs:`,`style:`,`refactor:`,`perf:`,`test:`
 and `chore:` are valid but have no effect on versioning. **It would be great if you use them.**
 
-
 **PRs that do not follow the commit message guidelines will not be merged.**
 
 ## Update Tests
 
 **Any change in source code must include test updates**.
 
-
 ## Update Stories
 
 **For any change in source code of components that changes the API or functioning of the component corresponding story should be updated or a new story should be included**.
-
 
 ## Add yourself to the contributor list
 
@@ -741,9 +791,24 @@ run the following commands from the root of the repo:
 Then, you'll need to generate the updated `all-contributors` table by running
 
 ```sh
-all-contributors generate 
+all-contributors generate
 OR
 ./node_modules/.bin/all-contributors generate
 
 ```
 
+## Accessibility
+
+Accessibility is the practice of making your websites usable by as many people as possible. A page should be
+
+1. Keyboard friendly
+2. Color blind friendly / Color contrast
+3. Screen Reader / Voice over
+4. Should not distort on Zoom In or Out.
+
+To met the above criteria make sure following things are addressed.
+
+1. There is no `jsx-a11y` linting issue.
+2. All the Storybook Accessibility plugin checks are met.
+3. All the [WCAG 2.0 checks AA are covered](https://docs.google.com/spreadsheets/d/1q7SaO-Bki9RIusQKB01Q8WclHvmERXGU1rdl4ou9s5E/edit#gid=1091897153)
+4. All the [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.2/) are met.

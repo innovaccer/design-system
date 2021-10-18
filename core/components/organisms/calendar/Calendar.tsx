@@ -525,6 +525,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     return (
       <div className={headerContentClass}>
         {view !== 'date' && (
+          // TODO(a11y)
+          //  eslint-disable-next-line
           <div
             className="d-flex justify-content-center align-items-center"
             onClick={this.onNavHeadingClickHandler(view)}
@@ -532,14 +534,19 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             {renderHeading(headerContent)}
           </div>
         )}
+
         {view === 'date' && (
           <>
+            {/* TODO(a11y) */}
+            {/* eslint-disable-next-line */}
             <div
               onClick={this.onNavHeadingClickHandler(view)}
               className="d-flex justify-content-center align-items-center"
             >
               {renderHeading(months[monthNavVal])}
             </div>
+            {/* TODO(a11y) */}
+            {/* eslint-disable-next-line */}
             <div
               className="ml-4 d-flex justify-content-center align-items-center"
               onClick={this.onNavHeadingClickHandler('month')}
@@ -584,6 +591,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           });
 
           return (
+            //  TODO(a11y)
+            //  eslint-disable-next-line
             <div
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--yearValue"
@@ -632,6 +641,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           });
 
           return (
+            //TODO(a11y)
+            //eslint-disable-next-line
             <div
               key={`${row}-${col}`}
               data-test="DesignSystem-Calendar--monthValue"

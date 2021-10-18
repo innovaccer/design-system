@@ -137,6 +137,8 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
 
     return (
       <div key={index} data-test="DesignSystem-Navigation-VerticalNavigation--menuWrapper">
+        {/* TODO(a11y) */}
+        {/* eslint-disable-next-line */}
         <div
           data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
           className={menuClasses}
@@ -179,6 +181,8 @@ export const VerticalNavigation = (props: VerticalNavigationProps) => {
               });
 
               return (
+                // TODO(a11y)
+                // eslint-disable-next-line
                 <div
                   data-test="DesignSystem-Navigation-VerticalNavigation--subMenu"
                   key={ind}

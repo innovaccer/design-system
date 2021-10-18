@@ -106,11 +106,14 @@ export const Icon = (props: IconProps) => {
       </span>
     );
   }
+  // TODO(a11y): fix accessibility
+  /* eslint-disable */
   return (
     <i {...baseProps} className={iconClass} style={styles} onClick={onClick}>
       {type ? `${name}_${type}` : name}
     </i>
   );
+  /* eslint-enable */
 };
 
 Icon.displayName = 'Icon';

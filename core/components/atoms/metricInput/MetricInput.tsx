@@ -229,7 +229,10 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const iconSize = size === 'regular' ? 12 : 16;
 
   return (
+    // TODO(a11y): fix accessibility
+    /* eslint-disable */
     <div data-test="DesignSystem-MetricInputWrapper" className={classes} onClick={() => ref.current?.focus()}>
+      {/* eslint-enable  */}
       {icon && (
         <Icon
           data-test="DesignSystem-MetricInput--icon"
@@ -278,7 +281,10 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
           {suffix}
         </Text>
       )}
+      {/* TODO(a11y): fix accessibility  */}
+      {/* eslint-disable  */}
       <div className="MetricInput-arrowIcons" tabIndex={0}>
+        {/* eslint-enable  */}
         <Icon
           className={getArrowClass('up')}
           size={iconSize}

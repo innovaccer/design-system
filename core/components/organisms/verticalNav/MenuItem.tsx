@@ -71,6 +71,8 @@ export const MenuItem = (props: MenuItemProps) => {
   if (!expanded && !menu.icon) return null;
 
   return (
+    // TODO(a11y)
+    // eslint-disable-next-line
     <div className={ItemClass} {...baseProps} onClick={onClickHandler}>
       <div className="d-flex align-items-center overflow-hidden">
         {menu.icon && (
