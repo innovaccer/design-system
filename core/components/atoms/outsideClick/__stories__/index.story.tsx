@@ -35,7 +35,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/OutsideClick/All',
+  title: 'Others/Utilities/OutsideClick/All',
   component: OutsideClick,
   parameters: {
     docs: {

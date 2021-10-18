@@ -86,7 +86,7 @@ export const align = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Align',
+  title: 'Others/Styles/Align',
   component: align,
   parameters: {
     viewMode: 'story',
