@@ -233,8 +233,11 @@ const customCode = `() => {
   const nestedRowRenderer = (props) => {
     const {
       data,
+      rowIndex
     } = props;
-
+    if(rowIndex % 2){
+      return false;
+    }
     return (
       <CardSubdued className="ml-7">
         <div className="d-flex flex-row">
