@@ -13,7 +13,7 @@ export const getDefaultValue = (mask: InputMaskProps['mask'], placeholderChar: I
 };
 
 export const getDefaultValidator = (value: InputMaskProps['value']) => {
-  let val = value ? value : '';
+  const val = value ? value : '';
 
   return Utils.validators.date(val, 'mm/dd/yyyy');
 }
