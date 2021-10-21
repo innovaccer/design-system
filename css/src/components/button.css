@@ -192,16 +192,20 @@
 }
 
 .Button--transparent:hover {
-	background: var(--secondary-light);
+    background: var(--secondary-light);
+}
+
+.Button--transparent:focus {
+    background: color-mod(var(--stone-light) a(0.2));
+    /* box-shadow: var(--shadow-spread) var(--secondary-shadow); */
 }
 
 .Button--transparent:active {
 	background: var(--secondary);
 }
 
-.Button--transparent:focus {
-    background: color-mod(var(--stone-light) a(0.2));
-    /* box-shadow: var(--shadow-spread) var(--secondary-shadow); */
+.Button--transparent:focus:active {
+	background: var(--secondary);
 }
 
 .Button--transparent:disabled {
