@@ -1,16 +1,15 @@
 // @ts-nocheck
 
 import * as React from 'react';
-import { Title, Subtitle, Subheading, Description, Canvas, PropsProps, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Title, Description, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco, dark, a11yDark, githubGist, dracula, vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@/';
 import { Button, Card, TabsWrapper, Tab, Heading } from '@/index';
 import vsDark from 'prism-react-renderer/themes/vsDark';
-import { resetComponents, Story as PureStory } from '@storybook/components';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import openSandbox from './sandbox';
 import generateImports from './generateImports';
@@ -22,13 +21,6 @@ export interface Example {
   description?: string;
   imports: string[];
   component: React.ReactNode;
-}
-
-interface DocPageProps {
-  title?: string;
-  description?: React.ReactNode;
-  props?: PropsProps;
-  customCode?: string;
 }
 
 const beautifyHTMLOptions = {
@@ -50,14 +42,16 @@ const beautifyJSXOptions = {
 };
 
 const JSXtoStringOptions = {
-  filterProps: (val: any, key: string) => {
+  filterProps: (val: any) => {
     if (!val) return false;
     if (val && val.name === 'actionHandler') return false;
     // if(val && typeof val === 'function') return false;
     return true;
   },
   showFunctions: true,
-  functionValue: (_fn) => (_) => {},
+  functionValue: () => () => {
+    return;
+  },
   // maxInlineAttributesLineLength: 10,
   showDefaultProps: false,
   useBooleanShorthandSyntax: false,
@@ -162,9 +156,8 @@ ${jsx
 };
 
 const StoryComp = (props) => {
-  const { customCode, noHtml, noStory, noSandbox, isEmbed } = props;
-  const { story, storyId } = getStory();
-  const sp = story.parameters;
+  const { customCode, noHtml, noSandbox, isEmbed } = props;
+  const { story } = getStory();
   // const comp = sp.storySource.source;
   const comp = story.getOriginal()();
   const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
@@ -194,7 +187,9 @@ const StoryComp = (props) => {
         try {
           const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
           setHtmlCode(htmlValue);
-        } catch (e) {}
+        } catch (e) {
+          return;
+        }
       }
     }, [currentTab]);
 
@@ -225,7 +220,7 @@ const StoryComp = (props) => {
   if (!isEmbed) {
     actions.push({
       title: `${!isExpanded ? 'Show' : 'Hide'} code`,
-      onClick: (ev) => {
+      onClick: () => {
         setIsExpanded(!isExpanded);
       },
     });

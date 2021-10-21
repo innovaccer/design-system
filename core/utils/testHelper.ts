@@ -30,7 +30,7 @@ const iterateComb = (
   requiredComb.forEach((reqProps) => {
     optionalComb.forEach((optProps) => {
       const allProps = { ...reqProps, ...optProps };
-      if (!!testFunc) testFunc(allProps);
+      if (testFunc) testFunc(allProps);
       else combinations.push(allProps);
     });
   });

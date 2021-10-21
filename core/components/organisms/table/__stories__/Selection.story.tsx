@@ -239,7 +239,7 @@ const customCode = `
           withHeader={true}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
-            console.log(\`\on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)
+            console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)
           }
           headerOptions={{
             withSearch: true
@@ -252,7 +252,7 @@ const customCode = `
           }}
           withPagination={true}
           pageSize={5}
-          onPageChange={newPage => console.log(\`\on-page-change:- \${newPage}\`)}
+          onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
         />
       </Card>
   );

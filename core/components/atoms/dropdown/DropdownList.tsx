@@ -567,7 +567,7 @@ const DropdownList = (props: OptionsProps) => {
         event.preventDefault();
         dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
-      case 'Enter':
+      case 'Enter': {
         const activeElement = document.activeElement;
         if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
           event.preventDefault();
@@ -578,7 +578,8 @@ const DropdownList = (props: OptionsProps) => {
         }
         if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
         break;
-      case 'Tab':
+      }
+      case 'Tab': {
         if (!showApplyButton && dropdownOpen) {
           event.preventDefault();
           onToggleDropdown(false, 'onClick');
@@ -608,6 +609,7 @@ const DropdownList = (props: OptionsProps) => {
         }
 
         break;
+      }
       default:
         break;
     }

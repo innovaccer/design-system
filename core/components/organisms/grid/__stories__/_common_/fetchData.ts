@@ -1,6 +1,6 @@
-import { fetchDataFunction, Schema, RowData } from '../../Grid';
+import { fetchDataFunction, RowData } from '../../Grid';
 import data from './data';
-const schema: Schema = require('./schema').default;
+import schema from './schema';
 import { filterData, sortData } from '../../utility';
 
 export const fetchData: fetchDataFunction = (options) => {

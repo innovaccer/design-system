@@ -10,7 +10,7 @@ const customCode = `
     { key: 'uppercaseChar', validation: 'At least one (1) uppercase character'},
     { key: 'lowercaseChar', validation: 'At least one (1) lowercase character'},
     { key: 'numericChar', validation: 'At least one (1) numeric character' },
-    { key: 'specialChar', validation: 'At least one (1) special character (! @ # $ \ _)'},
+    { key: 'specialChar', validation: 'At least one (1) special character (! @ # $ \\ _)'},
   ];
 
   const regex = {

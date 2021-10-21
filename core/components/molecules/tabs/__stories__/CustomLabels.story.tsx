@@ -54,7 +54,7 @@ const customCode = `() => {
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);
-    console.log(\`\tab-change: \${tabIndex}\`)();
+    console.log(\`tab-change: \${tabIndex}\`)();
   };
 
   return (

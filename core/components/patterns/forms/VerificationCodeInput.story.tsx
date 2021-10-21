@@ -75,7 +75,7 @@ const customCode = `() => {
         <div>
           <div className="mb-5">
             <Text weight="strong">Note: </Text>
-            <Text weight="medium">{\`\Verified value of Verification Code Input is \${this.correctValue} in this example.\`}</Text>
+            <Text weight="medium">{\`Verified value of Verification Code Input is \${this.correctValue} in this example.\`}</Text>
           </div>
           <div className="w-50">
             {(value || error) && (
@@ -103,7 +103,7 @@ const customCode = `() => {
               </div>
               {isTimerStarted ? (
                 <Text className="mt-7 d-flex" weight="medium">
-                  {\`\Haven't recieved the code? Resend code in 0:\${time}\`}
+                  {\`Haven't recieved the code? Resend code in 0:\${time}\`}
                 </Text>
               ) : (
                   <Text

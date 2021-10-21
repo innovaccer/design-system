@@ -4,7 +4,7 @@ import data from '@/components/organisms/grid/__stories__/_common_/data';
 import './style.css';
 
 export const tableWithHeader = () => {
-  return (<></>);
+  return <></>;
 };
 
 const customCode = `/*
@@ -988,7 +988,7 @@ import './style.css';
       />
     </div>
   );
-}`
+}`;
 
 export default {
   title: 'Patterns/Table/Table With Header',
@@ -998,14 +998,14 @@ export default {
         title: 'Table with header',
         customCode,
         imports: {
-          debounce: debounce
+          debounce: debounce,
         },
         props: {
           exclude: ['showHead'],
         },
         noProps: true,
-        noSandbox: true
-      }
-    }
-  }
+        noSandbox: true,
+      },
+    },
+  },
 };
