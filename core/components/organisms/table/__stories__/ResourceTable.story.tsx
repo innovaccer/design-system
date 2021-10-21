@@ -268,6 +268,7 @@ const customCode = `
                   { label: 'Edit', value: 'Edit' },
                   { label: 'Delete', value: 'Delete' }
                 ]}
+                popoverOptions={{appendToBody:false}}
               />
             </div>
           </div>
