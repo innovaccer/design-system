@@ -150,7 +150,7 @@ export const sizing = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Sizing',
+  title: 'Others/Styles/Sizing',
   component: sizing,
   parameters: {
     viewMode: 'story',

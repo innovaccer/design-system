@@ -12,7 +12,7 @@ export const all = () => {
     <div className="d-flex">
       <Collapsible expanded={expanded} hoverable={hoverable} height="100vh" onToggle={setExpanded}>
         <div className="d-flex pt-4">
-          <Icon name="events" className="d-flex align-items-center px-5" />
+          <Icon name="events" className="d-flex align-items-center px-5 Text--regular" />
           {expanded && <Text className="mr-6">Collapsible</Text>}
         </div>
       </Collapsible>
@@ -31,7 +31,7 @@ const customCode = `() => {
         onToggle={setExpanded}
       >
         <div className="d-flex pt-4">
-          <Icon name="events" className="d-flex align-items-center px-5" />
+          <Icon name="events" className="d-flex align-items-center px-5 Text--regular" />
           {expanded && (
             <Text className="mr-6">Collapsible</Text>
           )}

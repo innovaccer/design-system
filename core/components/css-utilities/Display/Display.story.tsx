@@ -103,7 +103,7 @@ export const display = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Display',
+  title: 'Others/Styles/Display',
   component: display,
   parameters: {
     viewMode: 'story',

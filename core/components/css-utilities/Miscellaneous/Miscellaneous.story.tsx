@@ -43,7 +43,7 @@ export const miscellaneous = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Miscellaneous',
+  title: 'Others/Styles/Miscellaneous',
   component: miscellaneous,
   parameters: {
     viewMode: 'story',

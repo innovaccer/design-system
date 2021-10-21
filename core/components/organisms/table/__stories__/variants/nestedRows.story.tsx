@@ -136,9 +136,12 @@ const customCode = `
     const {
       schema,
       data,
-      loading
+      loading,
+      rowIndex
     } = props;
-
+    if (rowIndex % 2) {
+      return false;
+    }
     return (
       <List
         loading={loading}

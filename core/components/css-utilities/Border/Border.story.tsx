@@ -116,7 +116,7 @@ export const border = () => {
 };
 
 export default {
-  title: 'Others/Utilities/Border',
+  title: 'Others/Styles/Border',
   component: border,
   parameters: {
     viewMode: 'story',
