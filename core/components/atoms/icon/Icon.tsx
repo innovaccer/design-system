@@ -68,6 +68,11 @@ export interface IconProps extends BaseProps {
    * DOM node to be passed as child to the component
    */
   children?: React.ReactNode;
+  /**
+   * The tabindex global attribute indicates that its element can be focused, and
+   * where it participates in sequential keyboard navigation.
+   */
+  tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
 }
 
 export const Icon = (props: IconProps) => {

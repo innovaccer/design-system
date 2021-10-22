@@ -7,9 +7,12 @@ export const withSuffix = () => {
 
   return (
     <div className="d-flex align-items-center">
-      <Label className="mr-5">Body Height</Label>
+      <Label htmlFor="metric-input" className="mr-5">
+        Body Height
+      </Label>
       <div style={{ width: 'var(--spacing-6)' }}>
         <MetricInput
+          id="metric-input"
           suffix="in"
           value={value}
           onChange={(e) => {
@@ -26,9 +29,10 @@ const customCode = `() => {
 
   return (
     <div className="d-flex align-items-center">
-      <Label className="mr-5">Body Height</Label>
+      <Label htmlFor="metric-input" className="mr-5">Body Height</Label>
       <div style={{ width: 'var(--spacing-6)' }}>
         <MetricInput
+          id="metric-input"
           suffix="in"
           value={value}
           onChange={e => { setValue(e.target.value); }}

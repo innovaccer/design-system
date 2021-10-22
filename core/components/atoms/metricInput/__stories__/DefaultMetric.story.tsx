@@ -7,9 +7,13 @@ export const defaultMetric = () => {
 
   return (
     <div className="d-flex align-items-center">
-      <Label className="mr-5">No. of Days</Label>
+      <Label htmlFor="metric-input" className="mr-5">
+        No. of Days
+      </Label>
       <div style={{ width: 'var(--spacing-6)' }}>
         <MetricInput
+          id="metric-input"
+          name="metric-input"
           size="regular"
           value={value}
           onChange={(e) => {
@@ -26,9 +30,11 @@ const customCode = `() => {
 
   return (
     <div className="d-flex align-items-center">
-      <Label className="mr-5">No. of Days</Label>
+      <Label htmlFor="metric-input" className="mr-5">
       <div style={{ width: 'var(--spacing-6)' }}>
         <MetricInput
+          id="metric-input"
+          name="metric-input"
           size="regular"
           value={value}
           onChange={e => { setValue(e.target.value); }}
