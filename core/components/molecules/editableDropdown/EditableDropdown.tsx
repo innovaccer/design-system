@@ -57,12 +57,12 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     switch (eventType) {
       case 'edit':
         setEditing(true);
+        break;
       case 'hover':
         setShowComponent(true);
-        return;
+        break;
       case 'default':
         setShowComponent(false);
-        return;
     }
   };
 

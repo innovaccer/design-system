@@ -727,10 +727,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
     const dummyDays = Math.abs(dayDiff);
     let noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
+    // TODO: @veekays
+    // if(noOfRows !== 6 && monthsInView <= 1) ?
     if (noOfRows === 6) {
-      noOfRows = noOfRows;
     } else if (monthsInView > 1) {
-      noOfRows = noOfRows;
     } else {
       noOfRows = noOfRows + 1;
     }

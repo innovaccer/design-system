@@ -156,7 +156,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
     const prev = refs[prevIndex];
     const nextRef = refs[nextIndex];
     switch (e.key) {
-      case KEY_CODE.backspace:
+      case KEY_CODE.backspace: {
         e.preventDefault();
         const vals = [...values];
         if (values[index]) {
@@ -168,26 +168,30 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           setValues(vals);
         }
         break;
-      case KEY_CODE.left:
+      }
+      case KEY_CODE.left: {
         e.preventDefault();
         if (prev && prev.current) {
           prev.current.focus({ preventScroll: true });
         }
         break;
-      case KEY_CODE.right:
+      }
+      case KEY_CODE.right: {
         e.preventDefault();
         if (nextRef && nextRef.current) {
           nextRef.current.focus({ preventScroll: true });
         }
         break;
+      }
       case KEY_CODE.up:
       case KEY_CODE.down:
       case KEY_CODE.e:
-      case KEY_CODE.E:
+      case KEY_CODE.E: {
         if (type === 'number') {
           e.preventDefault();
         }
         break;
+      }
       default:
         break;
     }

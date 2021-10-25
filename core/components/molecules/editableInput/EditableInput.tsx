@@ -98,14 +98,19 @@ export const EditableInput = (props: EditableInputProps) => {
 
   const onChangeHandler = (eventType: string) => {
     switch (eventType) {
-      case 'edit':
+      case 'edit': {
         inputRef.current?.focus();
         setEditing(true);
-      case 'hover':
         setShowComponent(true);
-        return;
-      case 'default':
+        break;
+      }
+      case 'hover': {
+        setShowComponent(true);
+        break;
+      }
+      case 'default': {
         setShowComponent(false);
+      }
     }
   };
 

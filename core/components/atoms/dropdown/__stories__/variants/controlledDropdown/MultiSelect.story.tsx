@@ -34,7 +34,7 @@ export const multiSelect = () => {
 
   const onSelectLessThan50 = (type: EventType, option?: any) => {
     switch (type) {
-      case 'select-all':
+      case 'select-all': {
         const selectedDisabledArray = selectedLessThan50.filter((item) => item.disabled);
         const selectedOptions = [
           ...dropdownOptions.slice(0, 50).filter((item) => !item.disabled),
@@ -42,41 +42,51 @@ export const multiSelect = () => {
         ];
 
         setSelectedLessThan50(selectedOptions);
-        return;
-      case 'deselect-all':
+        break;
+      }
+      case 'deselect-all': {
         const selectedArr = selectedLessThan50.filter((item) => item.disabled);
         setSelectedLessThan50(selectedArr);
-        return;
-      case 'select-option':
+        break;
+      }
+      case 'select-option': {
         setSelectedLessThan50(selectedLessThan50.concat(option));
-        return;
-      case 'deselect-option':
+        break;
+      }
+      case 'deselect-option': {
         const selectedArray = selectedLessThan50.slice();
         const index = selectedArray.findIndex((item) => item.value === option.value);
         selectedArray.splice(index, 1);
         setSelectedLessThan50(selectedArray);
-      default:
-        return;
+        break;
+      }
+      default: {
+        break;
+      }
     }
   };
 
   const onSelectMoreThan50 = (type: EventType, option?: any) => {
     switch (type) {
-      case 'select-option':
+      case 'select-option': {
         setSelectedMoreThan50(selectedMoreThan50.concat(option));
-        return;
-      case 'deselect-option':
+        break;
+      }
+      case 'deselect-option': {
         const selectedArray = selectedMoreThan50.slice();
         const index = selectedArray.findIndex((item) => item.value === option.value);
         selectedArray.splice(index, 1);
         setSelectedMoreThan50(selectedArray);
-        return;
-      case 'clear-all':
+        break;
+      }
+      case 'clear-all': {
         const selectedArr = selectedMoreThan50.filter((item) => item.disabled);
         setSelectedMoreThan50(selectedArr);
-        return;
-      default:
-        return;
+        break;
+      }
+      default: {
+        break;
+      }
     }
   };
 

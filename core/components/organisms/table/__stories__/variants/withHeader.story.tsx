@@ -3,7 +3,6 @@ import { Card, Table } from '@/index';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { action } from '@storybook/addon-actions';
-import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 export const withHeader = () => {
   return (
@@ -29,7 +28,6 @@ export const withHeader = () => {
             )()
           }
           onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
-          withHeader={true}
           headerOptions={{
             withSearch: true,
           }}

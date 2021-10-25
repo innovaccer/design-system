@@ -26,7 +26,7 @@ export const uncontrolled = () => {
 };
 
 const customCode = `() => {
-  const onClick = (item) => console.log(\`\onClick: \${item}\`);
+  const onClick = (item) => console.log(\`onClick: \${item}\`);
   const chipOptions = { onClick, clearButton: true };
   const chipInputOptions = {
     chipOptions,

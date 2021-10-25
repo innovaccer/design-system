@@ -109,7 +109,7 @@ const customCode = `() => {
             );
           }}
           onRowClick={(rowData, rowIndex) =>
-            console.log(\`\on-row-click:- rowIndex: \${rowIndex} data: \${JSON.stringify(rowData)}\`)
+            console.log(\`on-row-click:- rowIndex: \${rowIndex} data: \${JSON.stringify(rowData)}\`)
           }
         />
       </Card>
