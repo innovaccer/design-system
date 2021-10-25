@@ -1,36 +1,10 @@
-## 2.5.0-4  (2021-10-17) 
+
+## 2.5.0  (2021-10-25) 
 
 ### Highlights
-NA
-
-### Breaking changes
-NA
-
-### Migration guide
-NA
-
-### Deprecations
-NA
-
-### Features
-NA
-
-### Fixes
-NA
-
-### Improvements
-* Improved test coverage to cover more than 92% of the code base.
-### Documentation
-* Readme is structured and updated for easy to access the required information (7d9c262d)
+* A now component ChoiceList is added to use group of check box or radio inputs to work as a choice selector (2d9bb1ed)
+* Calendar and DatePicker has new design and features for today date selection now. (7c3df346)
 * All existing contributors are added to Readme, an option to create request for getting added as contributor and documentation for the same is added. (07db26e9)
-
-
--------------------
-
-## 2.5.0-3  (2021-10-07) 
-
-### Highlights
-NA
 
 ### Breaking changes
 NA
@@ -44,99 +18,33 @@ NA
 ### Features
 * A now component ChoiceList is added to use group of check box or radio inputs to work as a choice selector (2d9bb1ed)
 * New helper classes for applying border or removing border of an element are added. (7675c8b3)
+* Calendar and DatePicker has new design and features for today date selection now. (7c3df346)
+* EmptyState component now supports inline SVG image. (863d69b0)
+* Added previous and next month dates in current month's date in Calendar Component (4fe810bf)
 
 ### Fixes
+* fix(button.css): fix active state in transparent button (1c499f0d)
+* fix(nestedtable): fix expand and collapse button issue (be69d5e5)
 * Issue in scrolling horizontally on a Table body not scrolled table header is resolved. (e71ea1c2)
 * Icons on Table header and column menu to sort the table are now pointed in correct directions. (718a1a37)
 * DateRangePicker pattern example now uses selection cheap in stead of radios for pre defined date range selections. (a1d0ee53)
-
-### Improvements
-* Code coverage is now more than 85% for the complete library.
-
-### Documentation
-
--------------------
-
-## 2.5.0-2  (2021-09-29) 
-
-### Highlights
-NA
-
-### Breaking changes
-NA
-
-### Migration guide
-NA
-
-### Deprecations
-NA
-
-### Features
-* Calendar and DatePicker has new design and features for today date selection now. (7c3df346)
-* EmptyState component now supports inline SVG image. (863d69b0)
-
-### Fixes
 * Table/Grid horizontal scrolling issue is fixed. (a6949715)
 * Modal is now vertically centered and can have flexible heights. (ef6072a7)
 * Dropzone icon is visible now when we bring mouse to drop file over it. (5ba93be9)
-
-### Improvements
-NA
-
-### Documentation
-* Guideline for branch naming convention added. (1ef3cd96)
-
--------------------
-
-## 2.5.0-1  (2021-09-27) 
-
-### Highlights
-NA
-
-### Breaking changes
-NA
-
-### Migration guide
-NA
-
-### Deprecations
-NA
-
-### Features
-NA
-### Fixes
 * Fixes the table header scroll when table body scroll (502cb1d1)
 * Fixes the Tabs Component rendering issue with checking children component type (8525a4e7)
 * Fixes the Datepicker snapshot which was getting updated as date changes (c001e925)
+
 ### Improvements
-NA
+* Improved test coverage to cover more than 92% of the code base.
+
 ### Documentation
-NA
-
--------------------
-
-## 2.5.0-0  (2021-09-22) 
-
-### Highlights
-NA
-
-### Breaking changes
-NA
-
-### Migration guide
-NA
-
-### Deprecations
-NA
-
-### Features
-* Added previous and next month dates in current month's date in Calendar Component (4fe810bf)
-### Fixes
-NA
-### Improvements
-* Added test cases for Calendar Component (f22df8b6)
-### Documentation
-NA
+* FileUploader component example is now more interactive (509a9053)
+* Navigation is more structured on story book for css and other utilities (56999d6b)
+* Message component example improved for versatile use-cases. (16fe6be6)
+* Readme is structured and updated for easy to access the required information (7d9c262d)
+* All existing contributors are added to Readme, an option to create request for getting added as contributor and documentation for the same is added. (07db26e9)
+* Guideline for branch naming convention added. (1ef3cd96)
 
 -------------------
 ## 2.4.0  (2021-09-22) 
