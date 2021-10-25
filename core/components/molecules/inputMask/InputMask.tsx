@@ -235,7 +235,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     if (deferId.current) window.cancelAnimationFrame(deferId.current);
   };
 
-  const onClearHandler = (e: React.MouseEvent<HTMLElement>) => {
+  const onClearHandler = (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
     // setValue('');
     // window.requestAnimationFrame(() => ref.current!.blur());
     setValue(getPlaceholderValue());

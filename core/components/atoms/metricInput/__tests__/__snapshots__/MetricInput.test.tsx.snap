@@ -29,14 +29,18 @@ exports[`MetricInput component
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
           data-test="DesignSystem-MetricInput--upIcon"
+          role="button"
           style="font-size: 12px; width: 12px;"
+          tabindex="0"
         >
           keyboard_arrow_up_round
         </i>
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
           data-test="DesignSystem-MetricInput--downIcon"
+          role="button"
           style="font-size: 12px; width: 12px;"
+          tabindex="0"
         >
           keyboard_arrow_down_round
         </i>
@@ -75,14 +79,18 @@ exports[`MetricInput component
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
           data-test="DesignSystem-MetricInput--upIcon"
+          role="button"
           style="font-size: 12px; width: 12px;"
+          tabindex="0"
         >
           keyboard_arrow_up_round
         </i>
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
           data-test="DesignSystem-MetricInput--downIcon"
+          role="button"
           style="font-size: 12px; width: 12px;"
+          tabindex="0"
         >
           keyboard_arrow_down_round
         </i>
@@ -127,14 +135,18 @@ exports[`MetricInput component
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--large MetricInput-arrowIcon--up"
           data-test="DesignSystem-MetricInput--upIcon"
+          role="button"
           style="font-size: 16px; width: 16px;"
+          tabindex="0"
         >
           keyboard_arrow_up_round
         </i>
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--large MetricInput-arrowIcon--down"
           data-test="DesignSystem-MetricInput--downIcon"
+          role="button"
           style="font-size: 16px; width: 16px;"
+          tabindex="0"
         >
           keyboard_arrow_down_round
         </i>
@@ -179,14 +191,18 @@ exports[`MetricInput component
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
           data-test="DesignSystem-MetricInput--upIcon"
+          role="button"
           style="font-size: 12px; width: 12px;"
+          tabindex="0"
         >
           keyboard_arrow_up_round
         </i>
         <i
           class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
           data-test="DesignSystem-MetricInput--downIcon"
+          role="button"
           style="font-size: 12px; width: 12px;"
+          tabindex="0"
         >
           keyboard_arrow_down_round
         </i>

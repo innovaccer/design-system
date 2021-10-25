@@ -12,7 +12,7 @@ export const basicInput = () => {
     setValue('');
   }, []);
 
-  return <Input name="input" className="w-25" value={value} onChange={onChange} onClear={onClear} />;
+  return <Input placeholder="Name" name="input" className="w-25" value={value} onChange={onChange} onClear={onClear} />;
 };
 
 const customCode = `() => {
@@ -28,6 +28,7 @@ const customCode = `() => {
 
   return (
     <Input
+      placeholder="Name"
       name="input"
       className="w-25"
       value={value}

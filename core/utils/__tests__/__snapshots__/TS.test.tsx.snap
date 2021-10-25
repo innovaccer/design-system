@@ -839,6 +839,7 @@ exports[`TS renders children 1`] = `
   <div
     class="Input Input--regular"
     data-test="DesignSystem-InputWrapper"
+    role="presentation"
     style="min-width: 256px;"
   >
     <input
@@ -855,6 +856,7 @@ exports[`TS renders children 1`] = `
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
+      role="presentation"
       style="min-width: 256px;"
     >
       <input
@@ -1492,7 +1494,9 @@ exports[`TS renders children 1`] = `
         </h5>
         <i
           class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+          role="button"
           style="font-size: 16px; width: 16px;"
+          tabindex="0"
         >
           close_round
         </i>

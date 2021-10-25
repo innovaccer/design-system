@@ -28,7 +28,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -61,7 +63,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -100,7 +104,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -139,7 +145,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -178,7 +186,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -217,7 +227,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -262,7 +274,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -315,7 +329,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -354,7 +370,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -413,7 +431,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -458,7 +478,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -517,7 +539,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -562,7 +586,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -621,7 +647,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -666,7 +694,9 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>

@@ -30,7 +30,9 @@ exports[`Collapsible component
           <i
             class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             keyboard_arrow_right_round
           </i>
@@ -71,7 +73,9 @@ exports[`Collapsible component
           <i
             class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             keyboard_arrow_right_round
           </i>
@@ -112,7 +116,9 @@ exports[`Collapsible component
           <i
             class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             keyboard_arrow_left_round
           </i>
@@ -154,7 +160,9 @@ exports[`Collapsible component
           <i
             class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             keyboard_arrow_left_round
           </i>
