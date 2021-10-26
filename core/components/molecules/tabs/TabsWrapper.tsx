@@ -52,6 +52,8 @@ export const TabsWrapper = (props: TabsWrapperProps) => {
     });
 
     return (
+      // TODO(a11y)
+      //  eslint-disable-next-line
       <div
         data-test="DesignSystem-Tabs--Header"
         key={index}

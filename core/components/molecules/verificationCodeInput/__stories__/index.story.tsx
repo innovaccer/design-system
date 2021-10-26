@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { VerificationCodeInput, Label } from '@/index';
-import { select, text, boolean, number } from '@storybook/addon-knobs';
+import { select, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 // CSF format story
@@ -38,6 +38,8 @@ export const all = () => {
         placeholder={placeholder}
         error={error}
         pattern={pattern}
+        // TODO(a11y)
+        //  eslint-disable-next-line
         autoFocus={autoFocus}
       />
     </>

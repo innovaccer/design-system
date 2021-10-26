@@ -33,11 +33,14 @@ export const Box = (props: InternalBoxProps) => {
     className
   );
 
+  /* TODO(a11y): fix accessibility  */
+  /* eslint-disable  */
   return (
     <div {...baseProps} className={MessageClass} onClick={onClick} data-test="DesignSystem-ChatMessage--Box">
       {children}
     </div>
   );
+  /* eslint-enable  */
 };
 
 Box.displayName = 'Box';

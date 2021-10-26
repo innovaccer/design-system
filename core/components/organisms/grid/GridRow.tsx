@@ -46,6 +46,8 @@ export const GridRow = (props: GridRowProps) => {
     if (!show || !withCheckbox) return null;
 
     return (
+      // TODO(a11y)
+      // eslint-disable-next-line
       <div className="Grid-cell Grid-cell--body Grid-cell--checkbox" onClick={(e) => e.stopPropagation()}>
         {loading ? (
           <Placeholder />
@@ -102,6 +104,8 @@ export const GridRow = (props: GridRowProps) => {
 
   return (
     <div className={wrapperClasses}>
+      {/* TODO(a11y)  */}
+      {/* eslint-disable-next-line */}
       <div className={rowClasses} onClick={onClickHandler} ref={rowRef}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}

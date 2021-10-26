@@ -119,6 +119,8 @@ export const EditableInput = (props: EditableInputProps) => {
       defaultValue={inputValue}
       placeholder={placeholder}
       className={InputClass}
+      // TODO(a11y)
+      // eslint-disable-next-line jsx-a11y/no-autofocus
       autoFocus={editing}
       size={size}
       onChange={onInputChangeHandler}
@@ -164,6 +166,8 @@ export const EditableInput = (props: EditableInputProps) => {
   };
 
   return (
+    // TODO(a11y)
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div data-test="DesignSystem-EditableInput" {...baseProps} className={EditableInputClass} onKeyDown={onKeyDown}>
       <Editable onChange={onChangeHandler} editing={editing}>
         {renderChildren()}

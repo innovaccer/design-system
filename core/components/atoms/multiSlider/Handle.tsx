@@ -182,6 +182,8 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     });
 
     return (
+      // TODO(a11y): fix accessibility
+      /* eslint-disable */
       <>
         <div
           className={className}
@@ -195,6 +197,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           tabIndex={1}
           data-test="DesignSystem-MultiSlider-Handle"
         />
+        {/* eslint-enable  */}
         <div className={TooltipClass} style={style}>
           {label}
         </div>

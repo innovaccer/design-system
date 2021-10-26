@@ -189,6 +189,8 @@ export const Tabs = (props: TabsProps) => {
     });
 
     return (
+      // TODO(a11y)
+      //  eslint-disable-next-line
       <div
         ref={(element) => element && !disabled && tabRefs.push(element)}
         data-test="DesignSystem-Tabs--Tab"

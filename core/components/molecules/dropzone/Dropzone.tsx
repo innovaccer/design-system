@@ -70,6 +70,8 @@ export const Dropzone = (props: DropzoneProps) => {
             <Text size="large" weight="strong" className="mr-2" appearance={disabled ? 'disabled' : 'default'}>
               Drag your files here or
             </Text>
+            {/* TODO(a11y): fix accessibility  */}
+            {/* eslint-disable */}
             <span className="cursor-pointer" onClick={open}>
               <Text size="large" weight="strong" appearance={disabled ? 'disabled' : 'link'}>
                 browse files
@@ -77,6 +79,7 @@ export const Dropzone = (props: DropzoneProps) => {
             </span>
             <input {...getInputProps()} />
           </span>
+          {/* eslint-enable */}
           {formatLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{formatLabel}</Text>}
           {sizeLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{sizeLabel}</Text>}
           {sampleFileLink && <div className="mt-5">{sampleFileLink}</div>}

@@ -210,6 +210,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     </div>
   );
 
+  // TODO(a11y): fix accessibility
+  /* eslint-disable */
   return (
     <div
       data-test="DesignSystem-InputWrapper"
@@ -217,6 +219,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       style={{ minWidth }}
       onClick={() => ref.current?.focus()}
     >
+      {/* eslint-enable */}
       {inlineLabel && (
         <div className="Input-inlineLabel">
           <Text appearance="subtle">{inlineLabel}</Text>
@@ -257,9 +260,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       ) : (
         onClear &&
         (value || defaultValue) && (
+          // TODO(a11y): fix accessibility
+          /* eslint-disable */
           <div className={rightIconClass} onClick={(e) => onClear(e)} data-test="DesignSystem-Input--closeIcon">
             <Icon name={'close'} size={sizeMapping[size]} />
           </div>
+          /* eslint-enable */
         )
       )}
     </div>
