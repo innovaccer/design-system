@@ -3,8 +3,16 @@ import { Textarea, Label } from '@/index';
 
 export const defaultTextarea = () => (
   <>
-    <Label withInput={true}>Comments</Label>
-    <Textarea name="Textarea" className="w-25" placeholder="Enter your comments here" />
+    <Label withInput={true} htmlFor="comments">
+      Comments
+    </Label>
+    <Textarea
+      name="comments"
+      id="comments"
+      aria-labelledby="Comments"
+      className="w-25"
+      placeholder="Enter your comments here"
+    />
   </>
 );
 
