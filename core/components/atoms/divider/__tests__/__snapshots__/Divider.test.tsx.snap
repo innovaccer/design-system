@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider component snapshots 
+  vertical: false, appearance: "basic"
+ 1`] = `
+<body>
+  <div>
+    <hr
+      class="Divider Divider--horizontal Divider--basic"
+      data-test="DesignSystem-Divider"
+    />
+  </div>
+</body>
+`;
+
+exports[`Divider component snapshots 
+  vertical: false, appearance: "header"
+ 1`] = `
+<body>
+  <div>
+    <hr
+      class="Divider Divider--horizontal Divider--header"
+      data-test="DesignSystem-Divider"
+    />
+  </div>
+</body>
+`;
+
+exports[`Divider component snapshots 
+  vertical: true, appearance: "basic"
+ 1`] = `
+<body>
+  <div>
+    <hr
+      class="Divider Divider--vertical Divider--basic"
+      data-test="DesignSystem-Divider"
+    />
+  </div>
+</body>
+`;
+
+exports[`Divider component snapshots 
+  vertical: true, appearance: "header"
+ 1`] = `
+<body>
+  <div>
+    <hr
+      class="Divider Divider--vertical"
+      data-test="DesignSystem-Divider"
+    />
+  </div>
+</body>
+`;
