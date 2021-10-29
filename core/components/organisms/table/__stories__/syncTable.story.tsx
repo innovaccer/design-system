@@ -10,13 +10,15 @@ export const syncTable = () => {
   return (
     <div
       style={{
-        height: '350px',
+        height: '550px',
       }}
     >
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
-          data={data}
+          data={[...Array(100)].map((_, index) => {
+            return data[index % 10];
+          })}
           schema={schema}
           withHeader={true}
           withCheckbox={true}
@@ -38,7 +40,7 @@ export const syncTable = () => {
             );
           }}
           withPagination={true}
-          pageSize={5}
+          pageSize={50}
           onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
         />
       </Card>
@@ -48,7 +50,13 @@ export const syncTable = () => {
 
 const customCode = `
 () => {
-  const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
+  const data = ${JSON.stringify(
+    [...Array(100)].map((_, index) => {
+      return data[index % 10];
+    }),
+    null,
+    4
+  )};
 
   const schema = [
     {
@@ -155,7 +163,7 @@ const customCode = `
   return (
     <div
       style={{
-        height: '350px',
+        height: '550px',
       }}
     >
       <Card className="h-100 overflow-hidden">
@@ -176,7 +184,7 @@ const customCode = `
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)}
           withPagination={true}
-          pageSize={5}
+          pageSize={50}
           onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
         />
       </Card>

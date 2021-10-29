@@ -718,6 +718,7 @@ export class Table extends React.Component<TableProps, TableState> {
         <div className="Table-grid">
           <Grid
             {...this.state}
+            key={this.state.searchTerm}
             updateData={this.updateData}
             updateSchema={this.updateSchema}
             updateSortingList={this.updateSortingList}
