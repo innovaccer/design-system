@@ -29,6 +29,7 @@ export const all = () => {
         error={error}
         resize={resize}
         rows={rows}
+        aria-labelledby="Textarea"
       />
     </div>
   );
