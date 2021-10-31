@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import DropzoneBase, { DropzoneBaseProps } from './DropzoneBase';

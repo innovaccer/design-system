@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { OmitNativeProps, BaseProps } from '@/utils/types';
-import { MouseEvent } from '../../../commonTypes';
+import { ChangeEvent } from '../../../commonTypes';
 
 export type SwitchSize = 'regular' | 'tiny' | 'large';
 export type SwitchAppearance = 'primary' | 'alert' | 'success' | 'warning';
@@ -41,7 +41,7 @@ export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement
   /**
    * Callback function called when `Switch` is toggled
    */
-  onChange?: (event: MouseEvent, selected: boolean) => void;
+  onChange?: (event: ChangeEvent, selected: boolean) => void;
 }
 
 /**
@@ -86,7 +86,7 @@ export const Switch = React.forwardRef<HTMLInputElement, SwitchProps>((props, re
     ['Switch-wrapper--checkedDisabled']: checked && disabled,
   });
 
-  const onChangeHandler = (event: MouseEvent) => {
+  const onChangeHandler = (event: ChangeEvent) => {
     if (checkedProp === undefined) setChecked(!checked);
     if (onChange) onChange(event, !checked);
   };

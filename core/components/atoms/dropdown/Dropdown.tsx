@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { debounce } from 'throttle-debounce';
 import DropdownList, { DropdownListProps, SelectAll, Selected } from './DropdownList';
-import { OptionSchema as Option } from './option';
+import { OptionSchema } from './option';
 import {
   getSearchedOptions,
   getSelectAll,
@@ -17,7 +17,7 @@ import { ChangeEvent } from '../../../commonTypes';
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
   count: number;
-  options: Option[];
+  options: OptionSchema[];
 }>;
 
 export type EventType =
@@ -34,7 +34,7 @@ interface ControlledProps {
    * Array of selected options <br/>
    *  **Denotes `Controlled Dropdown`**
    */
-  selected?: Option[];
+  selected?: OptionSchema[];
   /**
    * Callback function to handle different event types in controlled dropdown <br/>
    * **Event type here refers to `clicking on option` / `clicking on Clear, Cancel or Apply button`** <br/>
@@ -50,7 +50,7 @@ interface ControlledProps {
    * | 'apply-selected' | Array of previously selected options | Array of recently selected options |
    * | 'cancel-selected' | Array of previously selected options | Array of recently selected options |
    */
-  onUpdate?: (type: EventType, options?: Option | Option[], recentSelected?: Option[]) => void;
+  onUpdate?: (type: EventType, options?: OptionSchema | OptionSchema[], recentSelected?: OptionSchema[]) => void;
 }
 
 interface SyncProps {
@@ -80,7 +80,7 @@ interface SyncProps {
    * | disabled | Disables the option, making it unable to be pressed | |
    * | group | Defines group to which the option belongs | |
    */
-  options: Option[];
+  options: OptionSchema[];
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
    * Adds loaders inside `Dropdown` when waiting for an action to complete.
@@ -115,7 +115,7 @@ interface TriggerProps {
   /**
    * Callback function to change the label of trigger when options are selected
    */
-  customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;
+  customLabel?: (selected: number, totalOptions?: number, selectedOptions?: OptionSchema[]) => string;
   /**
    * Adds custom trigger
    */
@@ -207,7 +207,7 @@ export type DropdownProps = ControlledDropdownProps & UncontrolledDropdownProps;
 interface DropdownState {
   async: boolean;
   searchInit: boolean;
-  options: Option[];
+  options: OptionSchema[];
   loading?: boolean;
   optionsApplied: boolean;
   open?: boolean;
@@ -216,9 +216,9 @@ interface DropdownState {
   searchedOptionsLength: number;
   triggerLabel: string;
   selectAll: SelectAll;
-  selected: Option[];
-  tempSelected: Option[];
-  previousSelected: Option[];
+  selected: OptionSchema[];
+  tempSelected: OptionSchema[];
+  previousSelected: OptionSchema[];
 }
 
 /**
@@ -327,7 +327,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   }
 
-  getDisabledOptions = (options: Option[] = []) => {
+  getDisabledOptions = (options: OptionSchema[] = []) => {
     return options.filter((option) => option.disabled);
   };
 
@@ -343,7 +343,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     });
   };
 
-  getUnSelectedOptions = (options: Option[], init: boolean) => {
+  getUnSelectedOptions = (options: OptionSchema[], init: boolean) => {
     if (options.length) {
       if (!init) {
         return options.filter(
@@ -363,7 +363,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return options;
   };
 
-  getSelectedOptions = (options: Option[], init: boolean) => {
+  getSelectedOptions = (options: OptionSchema[], init: boolean) => {
     const { selected = [] } = this.props;
     if (options.length) {
       if (!init) return this.state.tempSelected;
@@ -494,7 +494,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return label;
   };
 
-  updateSelectedOptions = (selectedArray: Option[], isSingleSelect: boolean, isControlled?: boolean) => {
+  updateSelectedOptions = (selectedArray: OptionSchema[], isSingleSelect: boolean, isControlled?: boolean) => {
     const { optionsLength, previousSelected, selected, loading, open } = this.state;
 
     const { onChange, withCheckbox, showApplyButton, closeOnSelect, name, onPopperToggle } = this.props;
@@ -529,7 +529,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   };
 
-  onOptionSelect = (option: Option) => {
+  onOptionSelect = (option: OptionSchema) => {
     const { onUpdate, selected } = this.props;
 
     if (_isControlled(selected)) {
@@ -540,7 +540,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     this.updateSelectedOptions([option], true);
   };
 
-  onSelect = (option: Option, checked: boolean) => {
+  onSelect = (option: OptionSchema, checked: boolean) => {
     const { onUpdate, selected, showApplyButton } = this.props;
 
     if (_isControlled(selected) && !showApplyButton) {

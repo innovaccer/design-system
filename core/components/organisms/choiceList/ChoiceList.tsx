@@ -2,10 +2,10 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Checkbox, Radio, Label } from '@/index';
 import { BaseProps } from '@/utils/types';
+import { ChangeEvent } from '../../../commonTypes';
 
-export type Alignment = 'horizontal' | 'vertical';
-export type Size = 'regular' | 'tiny';
-type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+export type ChoiceListAlignment = 'horizontal' | 'vertical';
+export type ChoiceListSize = 'regular' | 'tiny';
 type noop = (ev: ChangeEvent) => void;
 
 export interface Choice {
@@ -43,12 +43,12 @@ export interface ChoiceListProps extends BaseProps {
    * Alignment in which the coices will be rendered
    * @default "vertical"
    */
-  alignment?: Alignment;
+  alignment?: ChoiceListAlignment;
   /**
    * Size of the `ChoiceList`
    * @default "regular"
    */
-  size?: Size;
+  size?: ChoiceListSize;
   /**
    * renders `checkbox` if `true` and renders `radio` if `false` of the `ChoiceList`
    * @default false
@@ -73,8 +73,8 @@ const renderCheckbox = (
   list: Choice[],
   handleOnChange: noop,
   ChoiceListDisabled: boolean,
-  size: Size,
-  alignment: Alignment,
+  size: ChoiceListSize,
+  alignment: ChoiceListAlignment,
   selected: string[]
 ) => {
   return list.map((item: Choice, checkboxIndex: number) => {
@@ -100,8 +100,8 @@ const renderRadio = (
   list: Choice[],
   handleOnChange: noop,
   ChoiceListDisabled: boolean,
-  size: Size,
-  alignment: Alignment,
+  size: ChoiceListSize,
+  alignment: ChoiceListAlignment,
   selected: string[]
 ) => {
   return list.map((item: Choice, radioIndex: number) => {
@@ -123,7 +123,7 @@ const renderRadio = (
   });
 };
 
-const getCheckboxClassName = (alignment: Alignment, index: number) => {
+const getCheckboxClassName = (alignment: ChoiceListAlignment, index: number) => {
   const ChoiceListCheckboxClass = classNames({
     [`ChoiceList-checkbox--${alignment}`]: true,
     ['ml-0']: index === 0 && alignment === 'horizontal',
@@ -132,7 +132,7 @@ const getCheckboxClassName = (alignment: Alignment, index: number) => {
   return ChoiceListCheckboxClass;
 };
 
-const getRadioClassName = (alignment: Alignment, index: number) => {
+const getRadioClassName = (alignment: ChoiceListAlignment, index: number) => {
   const ChoiceListRadioClass = classNames({
     [`ChoiceList-radio--${alignment}`]: true,
     ['ml-0']: index === 0 && alignment === 'horizontal',

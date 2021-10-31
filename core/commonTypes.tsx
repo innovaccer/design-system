@@ -19,5 +19,4 @@ export type FooterOptions = {
 };
 export type AutoComplete = 'on' | 'off';
 export type NumberRange = [number, number];
-export type MouseEvent = React.ChangeEvent<HTMLInputElement>;
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
