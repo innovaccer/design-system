@@ -53,11 +53,9 @@ export const InlineMessage = (props: InlineMessageProps) => {
           className={IconClass}
         />
       )}
-      <div>
-        <Text data-test="DesignSystem-InlineMessage--Description" className={DescriptionClass}>
-          {description}
-        </Text>
-      </div>
+      <Text data-test="DesignSystem-InlineMessage--Description" className={DescriptionClass}>
+        {description}
+      </Text>
     </div>
   );
 };
