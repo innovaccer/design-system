@@ -16,6 +16,31 @@ import {
   convertToDate,
 } from './utility';
 
+type OnHover = React.MouseEvent<HTMLSpanElement> | React.MouseEvent<HTMLDivElement>;
+interface hoveredDateProps {
+  value: number;
+  isToday: boolean;
+  isDisabled: boolean;
+  todayDate?: Date;
+  fullDate: Date;
+  date: number;
+  month: string;
+  year: number;
+  dayName: string;
+}
+interface hoveredMonthProps {
+  value: string;
+  month: string;
+  year?: number;
+  isCurrentMonth: boolean;
+  isDisabled: boolean;
+}
+interface hoveredYearProps {
+  value: number;
+  year: number;
+  isCurrentYear: boolean;
+  isDisabled: boolean;
+}
 export interface SharedProps extends BaseProps {
   /**
    * Size of `Calendar`
@@ -73,6 +98,18 @@ export type CalendarProps = {
    * Callback function called when range is changed
    */
   onRangeChange?: (startDate: Date | undefined, endDate: Date | undefined) => void;
+  /**
+   * Callback function called when a date is hovered
+   */
+  onDateHover?: (dateData: hoveredDateProps, evnt: OnHover) => void;
+  /**
+   * Callback function called when a month is hovered
+   */
+  onMonthHover?: (monthData: hoveredMonthProps, evnt: OnHover) => void;
+  /**
+   * Callback function called when a year is hovered
+   */
+  onYearHover?: (yearData: hoveredYearProps, evnt: OnHover) => void;
   /**
    * Selected date
    */
@@ -351,6 +388,22 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     });
   };
 
+  yearMouseOverHandler = (
+    year: number,
+    isCurrentYear: boolean,
+    isDisabled: boolean,
+    ev: React.MouseEvent<HTMLDivElement>
+  ) => {
+    const { onYearHover } = this.props;
+    const yearData = {
+      value: year,
+      year: year,
+      isCurrentYear: isCurrentYear,
+      isDisabled: isDisabled,
+    };
+    if (onYearHover) onYearHover(yearData, ev);
+  };
+
   selectMonth = (month: number) => () => {
     this.updateState(this.state.yearNav, month);
     this.setState({
@@ -358,7 +411,38 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     });
   };
 
+  monthMouseOverHandler = (
+    month: number,
+    isCurrentMonth: boolean,
+    isDisabled: boolean,
+    ev: React.MouseEvent<HTMLDivElement>
+  ) => {
+    const { months } = config;
+    const { onMonthHover } = this.props;
+    const monthData = {
+      value: months[month],
+      month: months[month],
+      year: this.state.year,
+      isCurrentMonth: isCurrentMonth,
+      isDisabled: isDisabled,
+    };
+    if (onMonthHover) onMonthHover(monthData, ev);
+  };
+
   selectDate = (index: number, date: number, prevMonthDayRange: number, dayRange: number) => {
+    const d = this.calculateDate(index, date, prevMonthDayRange, dayRange, false);
+    this.setState({
+      currDate: d,
+    });
+  };
+
+  calculateDate = (
+    index: number,
+    date: number,
+    prevMonthDayRange: number,
+    dayRange: number,
+    isDateHovered: boolean
+  ) => {
     let neighbouringMonthIndex;
     let neighbouringMonthDate;
     let type = '';
@@ -375,12 +459,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       neighbouringMonthDate = date;
     }
     const { year, month } = this.getNavDateInfo(neighbouringMonthIndex);
-    this.updateState(year, month, neighbouringMonthDate);
-    this.onNavIconClickHandler(type)();
+    if (isDateHovered === false) {
+      this.updateState(year, month, neighbouringMonthDate);
+      this.onNavIconClickHandler(type)();
+    }
     const d = this.getDateValue(year, month, neighbouringMonthDate);
-    this.setState({
-      currDate: d,
-    });
+    return d;
   };
 
   onNavIconClickHandler = (type: string) => () => {
@@ -598,6 +682,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               data-test="DesignSystem-Calendar--yearValue"
               className={valueClass}
               onClick={this.selectYear(year)}
+              onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
             >
               <Text
                 size={size === 'small' ? 'small' : 'regular'}
@@ -648,6 +733,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               data-test="DesignSystem-Calendar--monthValue"
               className={valueClass}
               onClick={this.selectMonth(month)}
+              onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
             >
               <Text
                 size={size === 'small' ? 'small' : 'regular'}
@@ -714,7 +800,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   renderDateValues = (index: number) => {
     const { daysInRow, monthBlock } = config;
 
-    const { size, rangePicker, firstDayOfWeek, disabledBefore, disabledAfter, monthsInView } = this.props;
+    const { size, rangePicker, firstDayOfWeek, disabledBefore, disabledAfter, monthsInView, onDateHover } = this.props;
 
     const {
       startDate,
@@ -770,6 +856,29 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           });
         }
       }
+    };
+
+    const onMouseEnterHandler = (
+      date: number,
+      isToday: boolean,
+      isDisabled: boolean,
+      ev: React.MouseEvent<HTMLSpanElement>
+    ) => {
+      const d = this.calculateDate(index, date, prevMonthDayRange, dayRange, true) || new Date();
+      const { months, days } = config;
+      const dayName = days.large[d.getDay()];
+      const dateData = {
+        value: d.getDate(),
+        isToday: isToday,
+        isDisabled: isDisabled,
+        todayDate: this.state.currDate,
+        fullDate: d,
+        date: d.getDate(),
+        month: months[d.getMonth()],
+        year: d.getFullYear(),
+        dayName: dayName,
+      };
+      if (onDateHover) onDateHover(dateData, ev);
     };
 
     return Array.from({ length: noOfRows }, (_y, row) => {
@@ -887,6 +996,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                       className={valueClass}
                       onClick={onClickHandler(date)}
                       onMouseOver={onMouseOverHandler(date)}
+                      onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                     >
                       {date}
                     </Text>
@@ -902,6 +1012,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                       className={valueClass}
                       onClick={onClickHandler(date)}
                       onMouseOver={onMouseOverHandler(date)}
+                      onMouseEnter={onMouseEnterHandler.bind(this, date, today(), disabled)}
                     >
                       {date <= 0 ? prevMonthDayRange + date : date - dayRange}
                     </Text>
