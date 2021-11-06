@@ -21,7 +21,7 @@
     "pre-commit": "lint-staged",
     "lint": "eslint ./core --ext .tsx,.ts",
     "prettier": "prettier --config ./.prettierrc --write 'core/**/*.{tx,tsx}'",
-    "prettier:check": "prettier --config ./.prettierrc --check 'core/**/*.ts{,x}'",
+    "prettier:check": "prettier --config ./.prettierrc --check",
     "build-css": "gulp --gulpfile css/gulpfile.js build",
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
     "watch-css": "gulp --gulpfile css/gulpfile.js build && gulp --gulpfile css/gulpfile.js watch",
@@ -137,8 +137,11 @@
   "repository": "github:innovaccer/design-system",
   "lint-staged": {
     "core/**/*.{tx,tsx}": [
-      "npm run prettier",
+      "npm run prettier:check",
       "npm run lint"
+    ],
+    "css/src/**/*.css": [
+      "npm run prettier:check"
     ]
   }
 }
