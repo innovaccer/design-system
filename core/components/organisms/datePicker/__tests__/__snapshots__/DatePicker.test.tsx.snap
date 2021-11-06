@@ -5080,6 +5080,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         <div
           class="Input Input--regular"
           data-test="DesignSystem-InputWrapper"
+          role="presentation"
           style="min-width: 256px;"
         >
           <div
@@ -5102,11 +5103,13 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
           />
           <div
             class="Input-icon Input-icon--right"
-            data-test="DesignSystem-Input--closeIcon"
           >
             <i
               class="material-icons material-icons-round Icon"
+              data-test="DesignSystem-Input--closeIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
+              tabindex="0"
             >
               close_round
             </i>

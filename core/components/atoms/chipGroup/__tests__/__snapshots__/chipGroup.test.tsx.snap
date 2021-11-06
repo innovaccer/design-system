@@ -54,7 +54,9 @@ exports[`ChipGroup component
           <i
             class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             clear_round
           </i>
@@ -83,7 +85,9 @@ exports[`ChipGroup component
           <i
             class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             clear_round
           </i>
@@ -112,7 +116,9 @@ exports[`ChipGroup component
           <i
             class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             clear_round
           </i>

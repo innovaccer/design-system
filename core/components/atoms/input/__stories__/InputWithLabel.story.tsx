@@ -10,8 +10,10 @@ export const inputWithLabel = () => {
 
   return (
     <>
-      <Label withInput={true}>Email</Label>
-      <Input name="input" className="w-25" value={value} onChange={onChange} />
+      <Label htmlFor="email" withInput={true}>
+        Email
+      </Label>
+      <Input id="email" placeholder="Email" className="w-25" value={value} onChange={onChange} />
     </>
   );
 };
@@ -25,12 +27,18 @@ const customCode = `() => {
 
   return (
     <>
-      <Label withInput={true}>Email</Label>
+      <Label 
+        withInput={true}
+        htmlFor="email"
+      >
+        Email
+      </Label>
       <Input
         name="input"
         className="w-25"
         value={value}
         onChange={onChange}
+        placeholder="Email"
       />
     </>
   );

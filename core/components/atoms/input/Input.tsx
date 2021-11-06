@@ -27,7 +27,8 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   defaultValue?: string;
   /**
-   * Text to display when input is empty
+   * Text to display when input is empty.
+   * Incase a label is missing, a placeholder should be provided to make it accessible for all user.
    */
   placeholder?: string;
   /**
@@ -105,7 +106,7 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
   /**
    * Callback function when user clicks the clear button
    */
-  onClear?: (e: React.MouseEvent<HTMLElement>) => void;
+  onClear?: (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => void;
   /**
    * Callback function when `Input` text changes
    */
@@ -210,16 +211,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     </div>
   );
 
-  // TODO(a11y): fix accessibility
-  /* eslint-disable */
   return (
     <div
       data-test="DesignSystem-InputWrapper"
       className={classes}
       style={{ minWidth }}
       onClick={() => ref.current?.focus()}
+      role="presentation"
     >
-      {/* eslint-enable */}
       {inlineLabel && (
         <div className="Input-inlineLabel">
           <Text appearance="subtle">{inlineLabel}</Text>
@@ -260,12 +259,17 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       ) : (
         onClear &&
         (value || defaultValue) && (
-          // TODO(a11y): fix accessibility
-          /* eslint-disable */
-          <div className={rightIconClass} onClick={(e) => onClear(e)} data-test="DesignSystem-Input--closeIcon">
-            <Icon name={'close'} size={sizeMapping[size]} />
+          <div className={rightIconClass}>
+            <Icon
+              data-test="DesignSystem-Input--closeIcon"
+              onClick={(e) => {
+                ref.current?.focus({ preventScroll: true });
+                onClear(e);
+              }}
+              name={'close'}
+              size={sizeMapping[size]}
+            />
           </div>
-          /* eslint-enable */
         )
       )}
     </div>
