@@ -5,11 +5,11 @@ import { MetricInput, Text } from '@/index';
 export const size = () => (
   <div className="d-flex" style={{ width: 'var(--spacing-8)' }}>
     <div className="d-flex flex-column align-items-center mr-8">
-      <MetricInput size="regular" className="mb-3" />
+      <MetricInput aria-label="Metric input regular size" size="regular" className="mb-3" />
       <Text>Regular</Text>
     </div>
     <div className="d-flex flex-column align-items-center">
-      <MetricInput size="large" className="mb-3" />
+      <MetricInput aria-label="Metric input large size" size="large" className="mb-3" />
       <Text>Large</Text>
     </div>
   </div>

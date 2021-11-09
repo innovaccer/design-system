@@ -7,9 +7,12 @@ export const withPrefix = () => {
 
   return (
     <div className="d-flex align-items-center">
-      <Label className="mr-5">Cost</Label>
+      <Label htmlFor="metric-input" className="mr-5">
+        Cost
+      </Label>
       <div style={{ width: 'var(--spacing-7)' }}>
         <MetricInput
+          id="metric-input"
           prefix="USD"
           value={value}
           onChange={(e) => {
@@ -26,9 +29,10 @@ const customCode = `() => {
 
   return (
     <div className="d-flex align-items-center">
-      <Label className="mr-5">Cost</Label>
+      <Label htmlFor="metric-input" className="mr-5">Cost</Label>
       <div style={{ width: 'var(--spacing-7)' }}>
         <MetricInput
+          id="metric-input"
           prefix="USD"
           value={value}
           onChange={e => { setValue(e.target.value); }}

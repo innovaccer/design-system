@@ -8,6 +8,7 @@ export const controlledMetricInput = () => {
   return (
     <div style={{ width: 'var(--spacing-6)' }}>
       <MetricInput
+        aria-label="Metric Input Label"
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
@@ -23,6 +24,7 @@ const customCode = `() => {
   return (
     <div style={{ width: 'var(--spacing-6)' }}>
       <MetricInput
+        aria-label="Metric Input Label"
         value={value}
         onChange={(e) => { setValue(e.target.value) }}
       />
