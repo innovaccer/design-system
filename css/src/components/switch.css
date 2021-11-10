@@ -40,6 +40,10 @@
   background-color: var(--secondary-light);
 }
 
+.Switch-input:focus ~ .Switch-wrapper {
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
 .Switch-wrapper--tiny {
   border-radius: 10px;
 }
