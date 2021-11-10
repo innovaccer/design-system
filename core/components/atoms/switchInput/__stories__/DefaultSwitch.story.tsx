@@ -2,7 +2,7 @@ import * as React from 'react';
 import Switch from '../index';
 
 // CSF format story
-export const defaultSwitch = () => <Switch defaultChecked={true} size="regular" />;
+export const defaultSwitch = () => <Switch aria-label="Default Checked Switch" defaultChecked={true} size="regular" />;
 
 export default {
   title: 'Components/Switch/Default Switch',
@@ -11,6 +11,9 @@ export default {
     docs: {
       docPage: {
         title: 'Switch',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Default Checked Switch'\` to describe the action of switch.
+         `,
       },
     },
   },
