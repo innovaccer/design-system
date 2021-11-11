@@ -1,239 +1,240 @@
 .Button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    position: relative;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-    border: 0;
-    border-radius: var(--spacing-m);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 0;
+  border-radius: var(--spacing-m);
 
-    padding-top: var(--spacing);
-    padding-bottom: var(--spacing);
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
 
-    text-align: center;
-    font-family: var(--font-family);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--font-size);
-    line-height: var(--font-height-s);
-    color: var(--text-white);
-	
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--font-height-s);
+  color: var(--text-white);
+
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 .Button:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 .Button:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .Button--iconAlign-right {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .Button--tiny {
-    height: var(--spacing-xl);
-    padding-right: var(--spacing);
-    padding-left: var(--spacing);
-    padding-top: var(--spacing-m);
-    padding-bottom: var(--spacing-m);
+  height: var(--spacing-xl);
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
 }
 
 .Button--tinySquare {
-    width: var(--spacing-xl);
+  width: var(--spacing-xl);
 }
 
 .Button--regular {
-    height: var(--spacing-3);
-    padding-right: var(--spacing-l);
-	padding-left: var(--spacing-l);
+  height: var(--spacing-3);
+  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-l);
 }
 
 .Button--regularSquare {
-    width: var(--spacing-3);
+  width: var(--spacing-3);
 }
 
 .Button--large {
-    height: 40px;
-    padding-right: var(--spacing-2);
-    padding-left: var(--spacing-2);
-    
-    line-height: var(--font-height-m);
-    font-size: var(--font-size-m);
+  height: 40px;
+  padding-right: var(--spacing-2);
+  padding-left: var(--spacing-2);
+
+  line-height: var(--font-height-m);
+  font-size: var(--font-size-m);
 }
 
 .Button--largeSquare {
-    width: 40px;
+  width: 40px;
 }
 
 .Button--tinySquare .Button-icon,
 .Button--largeSquare .Button-icon,
 .Button--tinySquare .Spinner,
 .Button--largeSquare .Spinner {
-    padding-left: var(--spacing-s);
-    padding-right: var(--spacing-s);
+  padding-left: var(--spacing-s);
+  padding-right: var(--spacing-s);
 }
 
 .Button--expanded {
-    width: 100%;
+  width: 100%;
 }
 
 .Button-icon {
-    line-height: inherit;
-    display: flex;
-    align-items: center;
+  line-height: inherit;
+  display: flex;
+  align-items: center;
 }
 
 .Button-icon--left {
-    margin-right: var(--spacing);
+  margin-right: var(--spacing);
 }
 
 .Button-icon--right {
-    margin-left: var(--spacing);
+  margin-left: var(--spacing);
 }
 
 .Button--tiny .Button-icon--left {
-    margin-right: var(--spacing-m);
+  margin-right: var(--spacing-m);
 }
 .Button--tiny .Button-icon--right {
-    margin-left: var(--spacing-m);
+  margin-left: var(--spacing-m);
 }
 
 .Button--basic {
-	background: var(--secondary-light);
-	color: var(--inverse);
+  background: var(--secondary-light);
+  color: var(--inverse);
 }
 
 .Button--basic:hover {
-	background: var(--secondary);
+  background: var(--secondary);
 }
 
 .Button--basic:active {
-	background: var(--secondary-dark);
+  background: var(--secondary-dark);
 }
 
 .Button--basic:focus {
-    box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .Button--basic:disabled {
-    background: var(--secondary-lighter);
-    color: var(--inverse-lightest);
+  background: var(--secondary-lighter);
+  color: var(--inverse-lightest);
 }
 
 .Button--primary {
-	background: var(--primary);
+  background: var(--primary);
 }
 
 .Button--primary:hover {
-	background: var(--primary-dark);
+  background: var(--primary-dark);
 }
 
 .Button--primary:active {
-	background: var(--primary-darker);
+  background: var(--primary-darker);
 }
 
 .Button--primary:focus {
-    box-shadow: var(--shadow-spread) var(--primary-shadow);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Button--primary:disabled {
-    background: var(--primary-lighter);
+  background: var(--primary-lighter);
 }
 
 .Button--success {
-	background: var(--success);
+  background: var(--success);
 }
 
 .Button--success:hover {
-	background: var(--success-dark);
+  background: var(--success-dark);
 }
 
 .Button--success:active {
-	background: var(--success-darker);
+  background: var(--success-darker);
 }
 
 .Button--success:focus {
-    box-shadow: var(--shadow-spread) var(--success-shadow);
+  box-shadow: var(--shadow-spread) var(--success-shadow);
 }
 
 .Button--success:disabled {
-    background: var(--success-lighter);
+  background: var(--success-lighter);
 }
 
 .Button--alert {
-	background: var(--alert);
+  background: var(--alert);
 }
 
 .Button--alert:hover {
-	background: var(--alert-dark);
+  background: var(--alert-dark);
 }
 
 .Button--alert:active {
-	background: var(--alert-darker);
+  background: var(--alert-darker);
 }
 
 .Button--alert:focus {
-    box-shadow: var(--shadow-spread) var(--alert-shadow);
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
 .Button--alert:disabled {
-    background: var(--alert-lighter);
+  background: var(--alert-lighter);
 }
 
 .Button--transparent {
-	background: transparent;
-	color: var(--inverse);
+  background: transparent;
+  color: var(--inverse);
 }
 
 .Button--transparent:hover {
-    background: var(--secondary-light);
+  background: var(--secondary-light);
 }
 
 .Button--transparent:focus {
-    background: color-mod(var(--stone-light) a(0.2));
-    /* box-shadow: var(--shadow-spread) var(--secondary-shadow); */
+  background: color-mod(var(--stone-light) a(0.2));
+  /* box-shadow: var(--shadow-spread) var(--secondary-shadow); */
 }
 
 .Button--transparent:active {
-	background: var(--secondary);
+  background: var(--secondary);
 }
 
 .Button--transparent:focus:active {
-	background: var(--secondary);
+  background: var(--secondary);
 }
 
 .Button--transparent:disabled {
-    background: transparent;
-    color: var(--inverse-lightest);
+  background: transparent;
+  color: var(--inverse-lightest);
 }
 
 .Button-spinner {
-    display: flex;
-    position: absolute;
-    z-index: 1;
+  display: flex;
+  position: absolute;
+  z-index: 1;
 }
 
 .Button--tiny .Spinner--small {
-    height: var(--font-size-s);
-    width: var(--font-size-s);
+  height: var(--font-size-s);
+  width: var(--font-size-s);
 }
 
 .Button--large .Spinner--small {
-    height: var(--font-size-l);
-    width: var(--font-size-l);
+  height: var(--font-size-l);
+  width: var(--font-size-l);
 }
 
 .Button--selected {
-    background: var(--primary-lightest);
-    color: var(--primary);
+  background: var(--primary-lightest);
+  color: var(--primary);
 }
 
 .Button-text--hidden {
-    visibility: hidden;
+  visibility: hidden;
 }

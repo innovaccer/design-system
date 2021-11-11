@@ -1,34 +1,34 @@
 .EmptyState {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
 .EmptyState-title {
-	text-align: center;
-	max-width: 480px;
+  text-align: center;
+  max-width: 480px;
 }
 
 .EmptyState-description {
-	text-align: center;
-	margin-top: var(--spacing-m);
-	max-width: 360px;
+  text-align: center;
+  margin-top: var(--spacing-m);
+  max-width: 360px;
 }
 
 .EmptyState-title--large {
-	margin-top: var(--spacing-4);
+  margin-top: var(--spacing-4);
 }
 
 .EmptyState-title--small {
-	margin-top: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
 }
 
 .EmptyState-description--large {
-	margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .EmptyState-description--small {
-	margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
 }

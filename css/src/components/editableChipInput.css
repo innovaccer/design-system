@@ -1,36 +1,37 @@
-.EditableChipInput{
+.EditableChipInput {
   position: relative;
   width: 100%;
 }
 .EditableChipInput-default {
   display: flex;
   align-items: center;
-  padding-left:var(--spacing-l);
+  padding-left: var(--spacing-l);
   border-left: var(--spacing-xs) solid transparent;
   min-height: var(--spacing-3);
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-.EditableChipInput-defaultWithChips{ 
+.EditableChipInput-defaultWithChips {
   display: flex;
   align-items: center;
-  padding-left:var(--spacing);
+  padding-left: var(--spacing);
   border: var(--spacing-xs) solid transparent;
   padding-top: var(--spacing-xs);
   padding-bottom: var(--spacing-xs);
   max-width: calc(100% - 28px);
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-.EditableChipInput-defaultWithChips:hover, .EditableChipInput-default:hover{
+.EditableChipInput-defaultWithChips:hover,
+.EditableChipInput-default:hover {
   background-color: var(--secondary-lightest);
 }
 
-.EditableChipInput-chipInput{
+.EditableChipInput-chipInput {
   padding-left: var(--spacing);
 }
 
-.EditableChipInput-actions{
+.EditableChipInput-actions {
   position: absolute;
   display: flex;
   justify-content: flex-end;

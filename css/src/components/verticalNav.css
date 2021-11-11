@@ -1,4 +1,3 @@
-
 .VerticalNav {
   display: inline-flex;
   flex-direction: column;
@@ -80,7 +79,7 @@
   padding-left: 40px;
 }
 
-.MenuItem  .Text {
+.MenuItem .Text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

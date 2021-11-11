@@ -1,9 +1,9 @@
 @keyframes shimmer {
-  0%{
-    background-position: -500px 0
+  0% {
+    background-position: -500px 0;
   }
-  100%{
-    background-position: 500px 0
+  100% {
+    background-position: 500px 0;
   }
 }
 
@@ -15,7 +15,12 @@
   animation-name: shimmer;
   animation-timing-function: linear;
   background: var(--secondary-lightest);
-  background: linear-gradient(to right, var(--secondary-lighter) 8%, var(--secondary-dark) 18%, var(--secondary-lighter) 33%);
+  background: linear-gradient(
+    to right,
+    var(--secondary-lighter) 8%,
+    var(--secondary-dark) 18%,
+    var(--secondary-lighter) 33%
+  );
   background-size: 1000px 104px;
 }
 

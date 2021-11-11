@@ -1,130 +1,130 @@
 /* input */
 
 .Input-input::-ms-clear {
-    display: none;
+  display: none;
 }
 
 .Input {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: row;
-    align-items: center;
-    box-sizing: border-box;
-    border-radius: var(--spacing-m);
-    border: var(--border);
-    padding-right: var(--spacing-l);
-    padding-left: var(--spacing-l);
-    background: var(--white);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: var(--spacing-m);
+  border: var(--border);
+  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-l);
+  background: var(--white);
 }
 
 .Input--tiny {
-    height: var(--spacing-xl);
-    padding-top: var(--spacing-m);
-    padding-bottom: var(--spacing-m);
+  height: var(--spacing-xl);
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
 }
 
 .Input--regular {
-    height: var(--spacing-3);
-    padding-top: var(--spacing);
-    padding-bottom: var(--spacing);
+  height: var(--spacing-3);
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
 }
 
 .Input--large {
-    height: 40px;
+  height: 40px;
 }
 
 .Input--large .Input-input {
-    line-height: var(--font-height-m);
-    font-size: var(--font-size-m);
+  line-height: var(--font-height-m);
+  font-size: var(--font-size-m);
 }
 
 .Input:hover {
-    background: var(--secondary-lightest);
-    border-color: var(--secondary-lightest);
-    cursor: text;
+  background: var(--secondary-lightest);
+  border-color: var(--secondary-lightest);
+  cursor: text;
 }
 
 .Input:focus-within {
-    background: var(--white);
-    border-color: var(--primary);
-    box-shadow: var(--shadow-spread) var(--primary-shadow);
+  background: var(--white);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Input:focus-within .Input-icon--left .Icon {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .Input--error:focus-within {
-    border-color: var(--alert);
-    box-shadow: var(--shadow-spread) var(--alert-shadow);
+  border-color: var(--alert);
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
 .Input--error:focus-within .Input-icon--left .Icon {
-    color: var(--alert);
+  color: var(--alert);
 }
 
 .Input--disabled {
-    background: var(--secondary-lightest);
-    border-color: var(--secondary-light);
-    pointer-events: none;
+  background: var(--secondary-lightest);
+  border-color: var(--secondary-light);
+  pointer-events: none;
 }
 
-.Input--disabled .Input-icon--left .Icon{
-    color: var(--inverse-lightest);
+.Input--disabled .Input-icon--left .Icon {
+  color: var(--inverse-lightest);
 }
 
 .Input--error,
 .Input--error:hover {
-    background: var(--white);
-    border-color: var(--alert);
+  background: var(--white);
+  border-color: var(--alert);
 }
 
 .Input-input {
-    display: flex;
-    width: 100%;
-    font-family: var(--font-family);
-    font-weight: var(--font-weight-normal);
-    font-size: var(--font-size);
-    line-height: var(--font-height-s);
-    color: var(--night);
-    padding: 0;
-    border: none;
-    background: transparent;
+  display: flex;
+  width: 100%;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size);
+  line-height: var(--font-height-s);
+  color: var(--night);
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
 .Input-input::placeholder {
-    color: var(--inverse-lighter);
+  color: var(--inverse-lighter);
 }
 
 .Input-input:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .Input-input:disabled .Input-input::placeholder {
-    color: var(--inverse-lighter);
+  color: var(--inverse-lighter);
 }
 
 .Input-icon {
-    display: flex;
-    align-content: center;
-    font-size: var(--font-size-m);
+  display: flex;
+  align-content: center;
+  font-size: var(--font-size-m);
 }
 
 .Input-icon--left .Icon {
-    margin-right: var(--spacing);
-    color: var(--inverse);
+  margin-right: var(--spacing);
+  color: var(--inverse);
 }
 
-.Input-icon--disabled .Icon{
-    color: var(--inverse-lightest);
+.Input-icon--disabled .Icon {
+  color: var(--inverse-lightest);
 }
 
-.Input-icon--right .Icon{
-    cursor: pointer;
-    margin-left: var(--spacing);
-    color: var(--inverse-lightest);
+.Input-icon--right .Icon {
+  cursor: pointer;
+  margin-left: var(--spacing);
+  color: var(--inverse-lightest);
 }
 
 .Input-inlineLabel {
-    margin-right: var(--spacing);
+  margin-right: var(--spacing);
 }

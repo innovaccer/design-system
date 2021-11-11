@@ -46,7 +46,7 @@
 .ChipInput-icon {
   height: var(--spacing-2);
   margin-top: var(--spacing-m);
-  padding-top: var(--spacing-s);  
+  padding-top: var(--spacing-s);
   margin-right: var(--spacing-l);
   cursor: pointer;
 }
