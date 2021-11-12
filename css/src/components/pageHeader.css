@@ -1,7 +1,7 @@
 .PageHeader-wrapper {
   padding: var(--spacing) var(--spacing-2);
 }
-.PageHeader-wrapper--separator{
+.PageHeader-wrapper--separator {
   border-bottom: var(--border);
 }
 

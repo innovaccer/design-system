@@ -1,7 +1,7 @@
 .Box {
   width: 100%;
   border-radius: var(--spacing);
-  padding: var(--spacing-l)
+  padding: var(--spacing-l);
 }
 
 .Box--typing {

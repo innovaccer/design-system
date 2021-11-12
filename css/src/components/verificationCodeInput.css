@@ -1,4 +1,3 @@
-
 .VerificationCodeInput-Input {
   display: inline-flex;
   width: 40px;
@@ -8,8 +7,8 @@
   text-align: center;
 }
 
-.VerificationCodeInput-Input .Input-input::-webkit-inner-spin-button, 
-.VerificationCodeInput-Input .Input-input::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+.VerificationCodeInput-Input .Input-input::-webkit-inner-spin-button,
+.VerificationCodeInput-Input .Input-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

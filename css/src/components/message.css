@@ -1,79 +1,78 @@
 .Message {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    padding: var(--spacing-l) var(--spacing-xl) var(--spacing-l) var(--spacing-2);
-    border: var(--spacing-xs) solid;
-    width: 100%;
-    border-radius: var(--spacing-m);
-    box-sizing: border-box;
-  }
-  
-  .Message--alert {
-    border-color: var(--alert);
-    background-color: color-mod(var(--alert-lightest) a(0.4));
-  }
-  
-  .Message--success {
-    border-color: var(--success);
-    background-color: color-mod(var(--success-lightest) a(0.4));
-  }
-  
-  .Message--info {
-    border-color: var(--primary);
-    background-color: color-mod(var(--primary-lightest) a(0.4));
-  }
-  
-  .Message--warning {
-    border-color: var(--accent1);
-    background-color: color-mod(var(--warning-lightest) a(0.4));
-  }
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  padding: var(--spacing-l) var(--spacing-xl) var(--spacing-l) var(--spacing-2);
+  border: var(--spacing-xs) solid;
+  width: 100%;
+  border-radius: var(--spacing-m);
+  box-sizing: border-box;
+}
 
-  .Message--default {
-    border-color: var(--secondary-dark);
-    background-color: var(--white);
-  }
-  
-  .Message-icon {
-    margin-right: var(--spacing-2);
-    padding-top: var(--spacing-s);
-  }
+.Message--alert {
+  border-color: var(--alert);
+  background-color: color-mod(var(--alert-lightest) a(0.4));
+}
 
-  .Message-icon--withTitle {
-    padding-top: var(--spacing-m);
-  }
+.Message--success {
+  border-color: var(--success);
+  background-color: color-mod(var(--success-lightest) a(0.4));
+}
 
-  .Message-icon--warning {
-    color: var(--accent1);
-  }
-  
-  .Message-heading {
-    margin-bottom: var(--spacing-m);
-  }
+.Message--info {
+  border-color: var(--primary);
+  background-color: color-mod(var(--primary-lightest) a(0.4));
+}
 
-  .Message-heading--alert,
-  .Message-text--alert {
-    color: var(--alert-darker) !important;
-  }
+.Message--warning {
+  border-color: var(--accent1);
+  background-color: color-mod(var(--warning-lightest) a(0.4));
+}
 
-  .Message-heading--info,
-  .Message-text--info {
-    color: var(--primary-darker) !important;
-  }
+.Message--default {
+  border-color: var(--secondary-dark);
+  background-color: var(--white);
+}
 
-  .Message-heading--success,
-  .Message-text--success {
-    color: var(--success-darker) !important;
-  }
+.Message-icon {
+  margin-right: var(--spacing-2);
+  padding-top: var(--spacing-s);
+}
 
-  .Message-heading--warning,
-  .Message-text--warning {
-    color: var(--accent1-darker) !important;
-  }
+.Message-icon--withTitle {
+  padding-top: var(--spacing-m);
+}
 
-  .Message-actions {
-    display: flex;
-    align-items: center;
-    margin-top: var(--spacing-l);
-  }
- 
+.Message-icon--warning {
+  color: var(--accent1);
+}
+
+.Message-heading {
+  margin-bottom: var(--spacing-m);
+}
+
+.Message-heading--alert,
+.Message-text--alert {
+  color: var(--alert-darker) !important;
+}
+
+.Message-heading--info,
+.Message-text--info {
+  color: var(--primary-darker) !important;
+}
+
+.Message-heading--success,
+.Message-text--success {
+  color: var(--success-darker) !important;
+}
+
+.Message-heading--warning,
+.Message-text--warning {
+  color: var(--accent1-darker) !important;
+}
+
+.Message-actions {
+  display: flex;
+  align-items: center;
+  margin-top: var(--spacing-l);
+}

@@ -1,28 +1,28 @@
 /** utility **/
 
 .hide-scroll-bar::-webkit-scrollbar {
-    height: 0px;
-    /* Remove scrollbar space */
-    background: transparent;
-    /* Optional: just make scrollbar invisible */
+  height: 0px;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */
 }
 
 .hide-scroll-bar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ellipsis--noWrap {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }

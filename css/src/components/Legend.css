@@ -1,11 +1,11 @@
 .Legend {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
 }
 
 .Legend-icon {
-    border-radius: var(--spacing-s);
-    margin-right: var(--spacing);
+  border-radius: var(--spacing-s);
+  margin-right: var(--spacing);
 }

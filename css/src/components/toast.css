@@ -1,171 +1,171 @@
 /* toast */
 
 .Toast {
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
 
-    width: 360px;
-    border-radius: var(--spacing-m);
-    padding-left: var(--spacing-2);
-    padding-right: var(--spacing-2);
-    padding-top: var(--spacing-l);
-    padding-bottom: var(--spacing-l);
+  width: 360px;
+  border-radius: var(--spacing-m);
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-2);
+  padding-top: var(--spacing-l);
+  padding-bottom: var(--spacing-l);
 }
 
 .Toast--withMessage {
-    padding-bottom: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
 }
 
 .Toast--default {
-    padding-left: var(--spacing-xl);
-    background-color: var(--inverse);
+  padding-left: var(--spacing-xl);
+  background-color: var(--inverse);
 }
 
 .Toast--info {
-    background-color: var(--primary);
+  background-color: var(--primary);
 }
 
 .Toast--alert {
-    background-color: var(--alert);
+  background-color: var(--alert);
 }
 
 .Toast--success {
-    background-color: var(--success);
+  background-color: var(--success);
 }
 
 .Toast--warning {
-    background-color: var(--warning);
+  background-color: var(--warning);
 }
 
 .Toast--warning {
-    color: var(--text);
+  color: var(--text);
 }
 
 .Toast-icon {
-    display: flex;
-    line-height: var(--font-height-m);
+  display: flex;
+  line-height: var(--font-height-m);
 }
 
 .Toast-icon--left {
-    margin-right: var(--spacing-2);
+  margin-right: var(--spacing-2);
 }
 
 .Toast-icon--right {
-    cursor: pointer;
-    margin-left: var(--spacing-2);
+  cursor: pointer;
+  margin-left: var(--spacing-2);
 }
 
 .Toast-icon--info,
 .Toast-icon--success,
 .Toast-icon--alert,
 .Toast-icon--default {
-    color: var(--text-white);
+  color: var(--text-white);
 }
 
 .Toast-icon--warning {
-    color: var(--warning-darker);
+  color: var(--warning-darker);
 }
 
 .Toast-body {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .Toast-title {
-    display: flex;
+  display: flex;
 }
 
 .Toast-heading {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .Toast-text {
-    padding-top: var(--spacing);
+  padding-top: var(--spacing);
 }
 
 .Toast-text--warning,
 .Toast-heading--warning {
-    color: var(--warning-darker) !important;
+  color: var(--warning-darker) !important;
 }
 
 .Toast-actions {
-    display: flex;
-    padding-top: var(--spacing-l);
+  display: flex;
+  padding-top: var(--spacing-l);
 }
 
 .Toast-actionButton {
-    color: var(--text-white);
-    border-radius: var(--spacing-m);
-    margin-right: var(--spacing);
+  color: var(--text-white);
+  border-radius: var(--spacing-m);
+  margin-right: var(--spacing);
 }
 
 .Toast-actionButton:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .Toast-actionButton--default {
-    background: var(--inverse-light);
+  background: var(--inverse-light);
 }
 
 .Toast-actionButton--default:hover,
 .Toast-actionButton--default:active {
-    background: var(--inverse);
+  background: var(--inverse);
 }
 
 .Toast-actionButton--default:focus {
-    box-shadow: var(--shadow-spread) color-mod(var(--inverse-lighter) a(0.16));
+  box-shadow: var(--shadow-spread) color-mod(var(--inverse-lighter) a(0.16));
 }
 
 .Toast-actionButton--info {
-    background: var(--primary-dark);
+  background: var(--primary-dark);
 }
 
 .Toast-actionButton--info:hover,
 .Toast-actionButton--info:active {
-    background: var(--primary-darker);
+  background: var(--primary-darker);
 }
 
 .Toast-actionButton--info:focus {
-    box-shadow: var(--shadow-spread) color-mod(var(--primary-dark) a(0.16));
+  box-shadow: var(--shadow-spread) color-mod(var(--primary-dark) a(0.16));
 }
 
 .Toast-actionButton--success {
-    background: var(--success-dark);
+  background: var(--success-dark);
 }
 
 .Toast-actionButton--success:hover,
 .Toast-actionButton--success:active {
-    background: var(--success-darker);
+  background: var(--success-darker);
 }
 
 .Toast-actionButton--success:focus {
-    box-shadow: var(--shadow-spread) color-mod(var(--success-dark) a(0.16));
+  box-shadow: var(--shadow-spread) color-mod(var(--success-dark) a(0.16));
 }
 
 .Toast-actionButton--alert {
-    background: var(--alert-dark);
+  background: var(--alert-dark);
 }
 
 .Toast-actionButton--alert:hover,
 .Toast-actionButton--alert:active {
-    background: var(--alert-darker);
+  background: var(--alert-darker);
 }
 
 .Toast-actionButton--alert:focus {
-    box-shadow: var(--shadow-spread) var(--alert-shadow);
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
 .Toast-actionButton--warning {
-    background: var(--warning-dark);
+  background: var(--warning-dark);
 }
 
 .Toast-actionButton--warning:hover,
 .Toast-actionButton--warning:active {
-    background: var(--warning-darker);
+  background: var(--warning-darker);
 }
 
 .Toast-actionButton--warning:focus {
-    box-shadow: var(--shadow-spread) var(--warning-shadow);
+  box-shadow: var(--shadow-spread) var(--warning-shadow);
 }

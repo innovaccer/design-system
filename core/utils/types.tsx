@@ -2,10 +2,9 @@ export type SingleOrArray<T> = T | T[];
 
 export type MakeRequired<T> = Exclude<T, null | undefined>;
 
-export type MakeOptional<T extends {}, K extends keyof any> = Omit<T, K> &
-  {
-    [OK in keyof T & K]?: T[OK];
-  };
+export type MakeOptional<T extends {}, K extends keyof any> = Omit<T, K> & {
+  [OK in keyof T & K]?: T[OK];
+};
 
 type ValidatorFn<K extends any[] = any[]> = (...values: K) => boolean;
 export type Validators = SingleOrArray<ValidatorFn>;

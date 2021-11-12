@@ -1,42 +1,42 @@
 .Meta {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: fit-content;
-    font-size: var(--font-size);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  font-size: var(--font-size);
 }
 
 .MetaList-seperator {
-    margin-left: var(--spacing);
+  margin-left: var(--spacing);
 }
-.MetaList-seperator--left{
-    margin-right: var(--spacing-m);
+.MetaList-seperator--left {
+  margin-right: var(--spacing-m);
 }
-.Meta-icon{
-    padding-right: var( --spacing-m);
-    display: flex;
-    align-items: center;
+.Meta-icon {
+  padding-right: var(--spacing-m);
+  display: flex;
+  align-items: center;
 }
 .MetaList {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: fit-content;
-    font-size: var(--font-size);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  font-size: var(--font-size);
 }
 .MetaList-item {
-    margin: 0 var(--spacing-m);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: fit-content;
-    font-size: var(--font-size);
+  margin: 0 var(--spacing-m);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  font-size: var(--font-size);
 }
 
 .MetaList-item:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .MetaList-item:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }

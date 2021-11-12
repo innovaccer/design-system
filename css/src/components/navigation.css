@@ -91,7 +91,7 @@
   overflow: hidden;
 }
 
-.Navigation-menu  .Text {
+.Navigation-menu .Text {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -112,7 +112,7 @@
 }
 
 .Navigation-footer--border {
-  border-top: var(--border)
+  border-top: var(--border);
 }
 
 .Navigation--collapsed .Navigation-menuIcon--footer {

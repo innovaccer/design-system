@@ -1,15 +1,15 @@
 .Chip {
   display: flex;
   box-sizing: border-box;
-  border-radius: var( --spacing-l);
-  padding-right: var( --spacing);
-  padding-left: var( --spacing);
-  padding-top: var( --spacing-s);
-  padding-bottom: var( --spacing-s);
+  border-radius: var(--spacing-l);
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
+  padding-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
   width: fit-content;
   justify-content: space-between;
   border-style: solid;
-  border-width: var( --spacing-xs);
+  border-width: var(--spacing-xs);
   align-items: center;
   flex-direction: row;
   cursor: default;
@@ -21,19 +21,19 @@
 }
 
 .Chip-icon--left {
-  padding-right: var( --spacing-m);
+  padding-right: var(--spacing-m);
   display: flex;
   align-items: center;
 }
 
 .Chip-icon--right {
-  padding-left: var( --spacing-m);
+  padding-left: var(--spacing-m);
   display: flex;
   align-items: center;
 }
 
 .Chip--action {
-  background: var( --shadow-0);
+  background: var(--shadow-0);
   border-color: var(--stone);
   cursor: pointer;
 }
@@ -58,7 +58,7 @@
 }
 
 .Chip--selection {
-  background: var( --shadow-0);
+  background: var(--shadow-0);
   border-color: var(--stone);
 }
 
@@ -90,13 +90,13 @@
 }
 
 .Chip-selection--disabled {
-  background: var( --shadow-0);
+  background: var(--shadow-0);
   border-color: var(--stone-light);
 }
 
 .Chip--input {
   background: var(--stone-light);
-  font-weight: var( --font-weight-normal);
+  font-weight: var(--font-weight-normal);
   border: 0px;
 }
 
