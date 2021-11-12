@@ -93,6 +93,17 @@ mkdir __stories__
 mkdir __stories__/variants
 ```
 
+### Naming
+
+  - **Extensions**: Use `.tsx` extension for components.
+  - **Filename**: Use PascalCase for filenames. E.g., `DropdownOptions.tsx`.
+
+    ```tsx
+    import DropdownOptions from './DropdownOptions';
+    ```
+
+  - **Component Naming**: Use the filename as the component name. For example, `DropdownOptions.tsx` should have a reference name of `DropdownOptions`. However, for root components of a directory, use `index.tsx` as the filename and use the directory name as the component name:
+
 #### Typescript Types
 
 - Component _types_ names must be uppercase, e.g. Appearance, Size, etc.
