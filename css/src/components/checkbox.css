@@ -26,6 +26,7 @@
   padding-left: var(--spacing);
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .Checkbox-label {
