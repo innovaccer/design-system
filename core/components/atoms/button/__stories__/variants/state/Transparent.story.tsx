@@ -10,7 +10,7 @@ export const transparent = () => {
   const expanded = false;
   const loading = false;
 
-  const children = text('children', 'Button');
+  const children = text('children', 'Open');
 
   const style = {
     justifyContent: 'space-between',
@@ -27,6 +27,7 @@ export const transparent = () => {
           expanded={expanded}
           disabled={disabled}
           loading={loading}
+          aria-label="Open"
         >
           {children}
         </Button>
@@ -43,6 +44,7 @@ export const transparent = () => {
           expanded={expanded}
           disabled={true}
           loading={loading}
+          aria-label="Open"
         >
           {children}
         </Button>
@@ -59,6 +61,7 @@ export const transparent = () => {
           expanded={expanded}
           disabled={disabled}
           loading={true}
+          aria-label="loading"
         >
           {''}
         </Button>
@@ -72,23 +75,8 @@ export const transparent = () => {
           onMouseLeave={action('mouse-leave')}
           appearance={'transparent'}
           size={'regular'}
-          expanded={expanded}
-          disabled={disabled}
-          loading={true}
-        >
-          {children}
-        </Button>
-        <br />
-        <Text weight="strong">Loading with Text</Text>
-      </div>
-      <div className="mr-9">
-        <Button
-          onClick={action('button-clicked')}
-          onMouseEnter={action('mouse-enter')}
-          onMouseLeave={action('mouse-leave')}
-          appearance={'transparent'}
-          size={'regular'}
           selected={true}
+          aria-label="Open"
         >
           {children}
         </Button>
@@ -104,6 +92,7 @@ export const transparent = () => {
           size={'regular'}
           selected={true}
           icon="events"
+          aria-label="Events"
         />
         <br />
         <Text weight="strong">Selected Icon</Text>
@@ -119,6 +108,13 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** 
+        <br/>
+        - Add \`aria-label='Open'\` to describe the action of button.
+        <br/> 
+        - Add \`aria-label='Events'\` on button with *event* icon to define its purpose.
+         `,
       },
     },
   },

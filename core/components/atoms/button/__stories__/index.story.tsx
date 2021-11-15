@@ -21,7 +21,7 @@ export const all = () => {
 
   const iconAlign = select('iconAlign', ['left', 'right'], undefined);
 
-  const children = text('children', 'Button');
+  const children = text('children', 'Open');
 
   return (
     <Button
@@ -36,6 +36,7 @@ export const all = () => {
       loading={loading}
       icon={icon}
       iconAlign={iconAlign}
+      aria-label="Open"
     >
       {children}
     </Button>
@@ -45,4 +46,13 @@ export const all = () => {
 export default {
   title: 'Components/Button/All',
   component: Button,
+  parameters: {
+    docs: {
+      docPage: {
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Open'\` to describe the action of button 
+         `,
+      },
+    },
+  },
 };

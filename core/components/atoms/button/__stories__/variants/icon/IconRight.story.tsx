@@ -32,6 +32,7 @@ export const iconRight = () => {
                 loading={loading}
                 icon={icon}
                 iconAlign={iconAlign}
+                aria-label="Refresh"
               >
                 {children}
               </Button>
@@ -52,6 +53,9 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Refresh'\` to describe the action of button 
+         `,
       },
     },
   },

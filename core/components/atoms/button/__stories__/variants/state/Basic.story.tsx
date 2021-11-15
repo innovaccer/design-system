@@ -10,7 +10,7 @@ export const basic = () => {
   const expanded = false;
   const loading = false;
 
-  const children = text('children', 'Button');
+  const children = text('children', 'Open');
 
   const style = {
     justifyContent: 'space-between',
@@ -28,6 +28,7 @@ export const basic = () => {
           expanded={expanded}
           disabled={disabled}
           loading={loading}
+          aria-label="Open"
         >
           {children}
         </Button>
@@ -44,6 +45,7 @@ export const basic = () => {
           expanded={expanded}
           disabled={true}
           loading={loading}
+          aria-label="Open"
         >
           {children}
         </Button>
@@ -60,6 +62,7 @@ export const basic = () => {
           expanded={expanded}
           disabled={disabled}
           loading={true}
+          aria-label="Loading"
         >
           {''}
         </Button>
@@ -73,23 +76,8 @@ export const basic = () => {
           onMouseLeave={action('mouse-leave')}
           appearance={'basic'}
           size={'regular'}
-          expanded={expanded}
-          disabled={disabled}
-          loading={true}
-        >
-          {children}
-        </Button>
-        <br />
-        <Text weight="strong">Loading with Text</Text>
-      </div>
-      <div className="mr-9">
-        <Button
-          onClick={action('button-clicked')}
-          onMouseEnter={action('mouse-enter')}
-          onMouseLeave={action('mouse-leave')}
-          appearance={'basic'}
-          size={'regular'}
           selected={true}
+          aria-label="Selected"
         >
           {children}
         </Button>
@@ -105,6 +93,7 @@ export const basic = () => {
           size={'regular'}
           selected={true}
           icon="events"
+          aria-label="Selected"
         />
         <br />
         <Text weight="strong">Selected Icon</Text>
@@ -120,6 +109,9 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Open'\` to describe the action of button 
+         `,
       },
     },
   },

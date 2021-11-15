@@ -19,6 +19,7 @@ export const icon = () => {
             icon="add"
             size="tiny"
             largeIcon={false}
+            aria-label="Add document"
           />
           <Button
             onClick={action('button-clicked')}
@@ -28,6 +29,7 @@ export const icon = () => {
             icon="add"
             size="tiny"
             largeIcon={true}
+            aria-label="Add document"
           />
         </div>
       </div>
@@ -44,6 +46,7 @@ export const icon = () => {
             icon="print"
             size="regular"
             largeIcon={false}
+            aria-label="Print"
           />
           <Button
             onClick={action('button-clicked')}
@@ -53,6 +56,7 @@ export const icon = () => {
             icon="print"
             size="regular"
             largeIcon={true}
+            aria-label="Print"
           />
         </div>
       </div>
@@ -69,6 +73,7 @@ export const icon = () => {
             icon="more_horiz"
             size="large"
             largeIcon={false}
+            aria-label="Menu"
           />
           <Button
             onClick={action('button-clicked')}
@@ -78,6 +83,7 @@ export const icon = () => {
             icon="more_horiz"
             size="large"
             largeIcon={true}
+            aria-label="Menu"
           />
         </div>
       </div>
@@ -92,6 +98,15 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** 
+        <br/> 
+        - Add \`aria-label='Add document'\` on button with *add* icon to indicate its purpose.
+        <br/> 
+        - Add \`aria-label='Print'\` on button with *print* icon to indicate its purpose.
+        <br/> 
+        - Add \`aria-label='Menu'\` on button with *menu* icon to indicate its purpose.
+         `,
       },
     },
   },

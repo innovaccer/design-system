@@ -1,7 +1,11 @@
 import * as React from 'react';
 import Button from '../Button';
 
-export const AlertButton = () => <Button appearance="alert">Delete</Button>;
+export const AlertButton = () => (
+  <Button appearance="alert" aria-label="Delete">
+    Delete
+  </Button>
+);
 
 export default {
   title: 'Components/Button/Alert Button',
@@ -11,6 +15,9 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Delete button',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Delete'\` to describe the action of button 
+         `,
       },
     },
   },

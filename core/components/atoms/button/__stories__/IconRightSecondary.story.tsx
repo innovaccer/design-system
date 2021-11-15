@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '../Button';
 
 export const iconRightButton = () => (
-  <Button icon="arrow_forward" iconAlign="right">
+  <Button icon="arrow_forward" iconAlign="right" aria-label="Next in rank">
     Next in rank
   </Button>
 );
@@ -15,6 +15,9 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Secondary button with right aligned icon.',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Next in rank'\` to describe the action of button. 
+         `,
       },
     },
   },
