@@ -2,8 +2,8 @@ import * as React from 'react';
 import Button from '../Button';
 
 export const PrimaryButton = () => (
-  <Button appearance="primary" size="regular">
-    Submit
+  <Button appearance="primary" size="regular" aria-label="Submit your response">
+    Submit your response
   </Button>
 );
 
@@ -15,6 +15,9 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Primary button',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Submit your response'\` to describe the action of button 
+         `,
       },
     },
   },

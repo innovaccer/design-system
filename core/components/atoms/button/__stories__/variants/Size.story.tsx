@@ -29,6 +29,7 @@ export const size = () => {
                 expanded={expanded}
                 disabled={disabled}
                 loading={loading}
+                aria-label={`${ButtonSize}`}
               >
                 {children}
               </Button>
@@ -49,6 +50,9 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** name accordingly which describe the action of button 
+         `,
       },
     },
   },

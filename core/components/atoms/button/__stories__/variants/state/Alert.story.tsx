@@ -10,7 +10,7 @@ export const alert = () => {
   const expanded = false;
   const loading = false;
 
-  const children = text('children', 'Button');
+  const children = text('children', 'Delete');
 
   const style = {
     justifyContent: 'space-between',
@@ -28,6 +28,7 @@ export const alert = () => {
           expanded={expanded}
           disabled={disabled}
           loading={loading}
+          aria-label="Delete"
         >
           {children}
         </Button>
@@ -44,6 +45,7 @@ export const alert = () => {
           expanded={expanded}
           disabled={true}
           loading={loading}
+          aria-label="Delete"
         >
           {children}
         </Button>
@@ -60,27 +62,12 @@ export const alert = () => {
           expanded={expanded}
           disabled={disabled}
           loading={true}
+          aria-label="Loading"
         >
           {''}
         </Button>
         <br />
         <Text weight="strong">Loading</Text>
-      </div>
-      <div className="mr-9">
-        <Button
-          onClick={action('button-clicked')}
-          onMouseEnter={action('mouse-enter')}
-          onMouseLeave={action('mouse-leave')}
-          appearance={'alert'}
-          size={'regular'}
-          expanded={expanded}
-          disabled={disabled}
-          loading={true}
-        >
-          {children}
-        </Button>
-        <br />
-        <Text weight="strong">Loading with Text</Text>
       </div>
     </div>
   );
@@ -93,6 +80,9 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Delete'\` to describe the action of button 
+         `,
       },
     },
   },
