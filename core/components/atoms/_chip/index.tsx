@@ -38,6 +38,8 @@ export const GenericChip = (props: GenericChipProps) => {
   };
 
   return (
+    // TODO(a11y)
+    // eslint-disable-next-line
     <div
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
       {...baseProps}

@@ -162,7 +162,7 @@ const customCode = `() => {
                 appearance="transparent"
                 onClick={e => e.stopPropagation()}
               >
-                {\`\can \${rights}\`}
+                {\`can \${rights}\`}
               </Button>
             );
           }

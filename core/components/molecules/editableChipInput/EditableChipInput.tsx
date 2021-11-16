@@ -87,13 +87,17 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
 
   const onChangeHandler = (eventType: string) => {
     switch (eventType) {
-      case 'edit':
+      case 'edit': {
         setShowComponent(true);
-      case 'hover':
-        return;
-      case 'default':
+        break;
+      }
+      case 'hover': {
+        break;
+      }
+      case 'default': {
         setShowComponent(false);
-        return;
+        break;
+      }
     }
   };
 

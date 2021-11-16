@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { useAccessibilityProps } from '@/accessibility/utils';
 
 export type Appearance =
   | 'default'
@@ -58,15 +59,25 @@ export interface IconProps extends BaseProps {
   /**
    * Handler to be called when icon is clicked
    */
-  onClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * Handler to be called when key is pressed on icon
+   */
+  onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void;
   /**
    * DOM node to be passed as child to the component
    */
   children?: React.ReactNode;
+  /**
+   * The tabindex global attribute indicates that its element can be focused, and
+   * where it participates in sequential keyboard navigation.
+   */
+  tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
 }
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, onClick, children } = props;
+  const { appearance, className, name, size, children } = props;
+  const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
 
@@ -107,7 +118,7 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i {...baseProps} className={iconClass} style={styles} onClick={onClick}>
+    <i {...baseProps} role="alert" className={iconClass} style={styles} {...accessibilityProps}>
       {type ? `${name}_${type}` : name}
     </i>
   );

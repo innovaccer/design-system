@@ -1,22 +1,22 @@
 .Table {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
 .Table-grid {
-    height: 100%;
-    overflow: hidden;
-    z-index: 1;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .Table-pagination {
-    display: flex;
-    justify-content: center;
-    background: var(--white);
-    padding: var(--spacing) 0;
-    border-top: var(--border);
+  display: flex;
+  justify-content: center;
+  background: var(--white);
+  padding: var(--spacing) 0;
+  border-top: var(--border);
 }

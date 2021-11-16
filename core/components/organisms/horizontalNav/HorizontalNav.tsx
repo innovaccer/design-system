@@ -69,6 +69,8 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     });
 
     return (
+      // TODO(a11y)
+      // eslint-disable-next-line
       <div data-test="DesignSystem-HorizontalNav" key={index} className={menuClasses} onClick={onClickHandler(menu)}>
         {renderIcon(menu, isActive)}
         <Text

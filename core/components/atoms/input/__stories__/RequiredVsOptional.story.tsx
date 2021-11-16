@@ -6,17 +6,19 @@ export const requiredVsOptionalMarking = () => {
     <div>
       <div className="d-flex">
         <div>
-          <Label withInput={true} required={true}>
+          <Label htmlFor="email" withInput={true} required={true}>
             Email
           </Label>
-          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
+          <Input id="email" required placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Required Field</Text>
           </div>
         </div>
         <div className="ml-9">
-          <Label withInput={true}>Email</Label>
-          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
+          <Label htmlFor="email2" withInput={true}>
+            Email
+          </Label>
+          <Input id="email2" placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Optional Field</Text>
           </div>
@@ -24,17 +26,19 @@ export const requiredVsOptionalMarking = () => {
       </div>
       <div className="d-flex mt-9">
         <div>
-          <Label withInput={true}>Email</Label>
-          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
+          <Label htmlFor="email3" withInput={true}>
+            Email
+          </Label>
+          <Input id="email3" placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Required Field</Text>
           </div>
         </div>
         <div className="ml-9">
-          <Label withInput={true} optional={true}>
+          <Label htmlFor="email4" withInput={true} optional={true}>
             Email
           </Label>
-          <Input name="input" placeholder="e.g lawsonjoy@gmail.com" />
+          <Input id="email4" placeholder="e.g lawsonjoy@gmail.com" />
           <div className="d-flex align-items-center justify-content-center mt-5">
             <Text weight="medium">Optional Field</Text>
           </div>

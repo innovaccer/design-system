@@ -12,6 +12,7 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 40px;"
       >
         <input

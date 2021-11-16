@@ -229,7 +229,14 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const iconSize = size === 'regular' ? 12 : 16;
 
   return (
-    <div data-test="DesignSystem-MetricInputWrapper" className={classes} onClick={() => ref.current?.focus()}>
+    <div
+      data-test="DesignSystem-MetricInputWrapper"
+      className={classes}
+      onClick={() => ref.current?.focus()}
+      onFocus={() => ref.current?.focus()}
+      onKeyDown={() => {}}
+      role="presentation"
+    >
       {icon && (
         <Icon
           data-test="DesignSystem-MetricInput--icon"
@@ -278,8 +285,10 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
           {suffix}
         </Text>
       )}
-      <div className="MetricInput-arrowIcons" tabIndex={0}>
+
+      <div className="MetricInput-arrowIcons">
         <Icon
+          tabIndex={-1}
           className={getArrowClass('up')}
           size={iconSize}
           name="keyboard_arrow_up"
@@ -287,6 +296,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
           data-test="DesignSystem-MetricInput--upIcon"
         />
         <Icon
+          tabIndex={-1}
           className={getArrowClass('down')}
           size={iconSize}
           name="keyboard_arrow_down"

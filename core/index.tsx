@@ -81,5 +81,6 @@ export { FileList } from './components/molecules/fileList';
 export { VerificationCodeInput } from './components/molecules/verificationCodeInput';
 export { InlineMessage } from './components/organisms/inlineMessage';
 export { ChoiceList } from './components/organisms/choiceList';
+export { Divider } from './components/atoms/divider';
 // @ts-ignore
 export { version } from '../package.json';

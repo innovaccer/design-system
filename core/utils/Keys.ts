@@ -1,3 +1,7 @@
+/**
+ * Key codes are deprecated, soon major browser support will end.
+ */
+
 export const BACKSPACE = 8;
 export const TAB = 9;
 export const ENTER = 13;

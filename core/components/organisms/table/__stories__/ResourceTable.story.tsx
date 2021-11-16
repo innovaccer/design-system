@@ -268,6 +268,7 @@ const customCode = `
                   { label: 'Edit', value: 'Edit' },
                   { label: 'Delete', value: 'Delete' }
                 ]}
+                popoverOptions={{appendToBody:false}}
               />
             </div>
           </div>
@@ -286,7 +287,7 @@ const customCode = `
         withHeader={true}
         filterPosition="HEADER"
         onSelect={(rowIndex, selected, selectedList, selectAll) =>
-          console.log(\`\on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)
+          console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)
         }
         headerOptions={{
           withSearch: true
@@ -304,7 +305,7 @@ const customCode = `
         withPagination={true}
         paginationType="basic"
         pageSize={4}
-        onPageChange={newPage => console.log(\`\on-page-change:- \${newPage}\`)}
+        onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
       />
     </Card>
   );

@@ -1,11 +1,19 @@
 @keyframes backdrop-open {
-  from { opacity: 0; }
-  to { opacity: 60; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 60;
+  }
 }
 
 @keyframes backdrop-close {
-  from { opacity: 60; }
-  to { opacity: 0; }
+  from {
+    opacity: 60;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .Backdrop {
@@ -37,5 +45,3 @@
 .Backdrop-animation--close {
   animation: backdrop-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
 }
-
-

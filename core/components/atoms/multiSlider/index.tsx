@@ -322,6 +322,8 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         }
       };
 
+      // TODO(a11y): fix accessibility
+      /* eslint-disable */
       labels.push(
         <div
           onClick={onClickHandler}
@@ -332,6 +334,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           onMouseLeave={this.handleLabelMouseLeave}
           data-test="DesignSystem-MultiSlider-Label"
         >
+          {/* eslint-enable  */}
           <span className={'Slider-ticks'} />
           {labelRenderer !== false && (
             <Text size="small" appearance={active ? 'default' : 'disabled'}>
@@ -414,12 +417,15 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
       <div {...baseProps} className={SliderClass} data-test="DesignSystem-MultiSlider">
         {label && <Label withInput={true}>{label}</Label>}
         <div className={WrapperClass}>
+          {/* TODO(a11y): fix accessibility  */}
+          {/* eslint-disable */}
           <div
             className="Slider-track"
             ref={(ref) => (this.trackElement = ref)}
             onMouseDown={this.maybeHandleTrackClick}
             data-test="DesignSystem-MultiSlider-Slider-Track"
           >
+            {/* eslint-enable */}
             {this.renderTracks()}
           </div>
           <div className="Slider-axis">{this.renderLabels()}</div>

@@ -1,210 +1,213 @@
 /** Grid **/
 
 .Grid-wrapper {
-    display: flex;
-    position: relative;
-    overflow: hidden;
-    height: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
 .Grid {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
-    overflow: hidden;
-    background: var(--white);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+  background: var(--white);
 }
 
-.Grid--resource .Grid-row--body:hover, .Grid--resource .Grid-row--body:hover .Grid-cellGroup {
-    cursor: pointer;
-    background: var(--secondary-lightest);
+.Grid--resource .Grid-row--body:hover,
+.Grid--resource .Grid-row--body:hover .Grid-cellGroup {
+  cursor: pointer;
+  background: var(--secondary-lightest);
 }
 
-.Grid--resource .Grid-row--body:active, .Grid--resource .Grid-row--body:active .Grid-cellGroup {
-    background: var(--warning-lightest) !important;
+.Grid--resource .Grid-row--body:active,
+.Grid--resource .Grid-row--body:active .Grid-cellGroup {
+  background: var(--warning-lightest) !important;
 }
 
 .Grid--resource .Grid-row--body:focus {
-    outline-color: var(--warning);
+  outline-color: var(--warning);
 }
 
 .Grid--pinned {
-    position: absolute;
-    height: 100%;
-    z-index: 2;
-    overflow-x: hidden;
-    -ms-overflow-style: none;
-    border-right: 3px solid var(--secondary);
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  border-right: 3px solid var(--secondary);
 }
 
 .Grid-pinned::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .Grid--main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .Grid--comfortable .Grid-cell--head {
-    min-height: 40px;
+  min-height: 40px;
 }
 
 .Grid--comfortable .Grid-cell--body {
-    padding-top: var(--spacing-l);
-    padding-bottom: var(--spacing-l);
+  padding-top: var(--spacing-l);
+  padding-bottom: var(--spacing-l);
 }
 
 .Grid--standard .Grid-cell--head {
-    min-height: 40px;
+  min-height: 40px;
 }
 
 .Grid--standard .Grid-cell--body {
-    padding-top: var(--spacing-l);
-    padding-bottom: var(--spacing-l);
+  padding-top: var(--spacing-l);
+  padding-bottom: var(--spacing-l);
 }
 
 .Grid--compressed .Grid-cell--head {
-    min-height: 40px;
+  min-height: 40px;
 }
 
 .Grid--compressed .Grid-cell--body {
-    padding-top: var(--spacing);
-    padding-bottom: var(--spacing);
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
 }
 
 .Grid--tight .Grid-cell--head {
-    min-height: var(--spacing-3);
+  min-height: var(--spacing-3);
 }
 
 .Grid--tight .Grid-cell--body {
-    padding-top: var(--spacing-m);
-    padding-bottom: var(--spacing-m);
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
 }
 
 .Grid-head {
-    display: flex;
-    flex: 0 0 auto;
-    overflow-x: auto;
-    border-bottom: var(--border);
+  display: flex;
+  flex: 0 0 auto;
+  overflow-x: auto;
+  border-bottom: var(--border);
 }
 
 .Grid-head::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .Grid-headCell {
-    display: flex;
-    height: 100%;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
 }
 
 .Grid-headCell--draggable {
-    cursor: grab;
+  cursor: grab;
 }
 
 .Grid-headCell--draggable:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 .Grid-body {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    overflow-x: auto;
-    overflow-y: overlay;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: overlay;
 }
 
 .Grid-body::-webkit-scrollbar {
-    background: var(--white);
-    height: var(--spacing-l);
-    width: var(--spacing-l);
+  background: var(--white);
+  height: var(--spacing-l);
+  width: var(--spacing-l);
 }
 
 .Grid-body::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: var(--spacing);
+  background: var(--secondary);
+  border-radius: var(--spacing);
 }
 
 .Grid-rowWrapper {
-    display: inline-flex;
-    flex-direction: column;
-    min-width: fit-content;
-    flex-shrink: 0;
-    border-bottom: var(--border);
+  display: inline-flex;
+  flex-direction: column;
+  min-width: fit-content;
+  flex-shrink: 0;
+  border-bottom: var(--border);
 }
 
 .Grid-row {
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    background: var(--white);
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background: var(--white);
 }
 
 .Grid-row--body {
-    border-color: var(--secondary-light);
+  border-color: var(--secondary-light);
 }
 
-.Grid-row--selected, .Grid-row--selected .Grid-cellGroup {
-    background: var(--warning-lightest) !important;
+.Grid-row--selected,
+.Grid-row--selected .Grid-cellGroup {
+  background: var(--warning-lightest) !important;
 }
 
 .Grid-rowWrapper:last-child .Grid-row--body {
-    border-bottom: 0;
+  border-bottom: 0;
 }
 
 .GridBody-padding {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .Grid-nestedRow {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .Grid-nestedRowTrigger {
-    margin-right: var(--spacing-l);
-    cursor: pointer;
+  margin-right: var(--spacing-l);
+  cursor: pointer;
 }
 
 .Grid-nestedRowPlaceholder {
-    width: 20px;
-    margin-right: var(--spacing-l);
+  width: 20px;
+  margin-right: var(--spacing-l);
 }
 
 .Grid-cell {
-    position: relative;
-    box-sizing: border-box;
-    padding-left: var(--spacing-l);
-    padding-right: var(--spacing-l);
+  position: relative;
+  box-sizing: border-box;
+  padding-left: var(--spacing-l);
+  padding-right: var(--spacing-l);
 }
 
 .Grid-cell--body {
-    padding-right: var(--spacing-l);
+  padding-right: var(--spacing-l);
 }
 
 .Grid-cell--head {
-    overflow: hidden;
-    padding-right: var(--spacing-m);
+  overflow: hidden;
+  padding-right: var(--spacing-m);
 }
 
 .Grid-cell--separator {
-    border-left: var(--border);
-    border-color: var(--secondary-light);
+  border-left: var(--border);
+  border-color: var(--secondary-light);
 }
 
 .Grid-cell--selected {
-    background: var(--primary-lightest);
+  background: var(--primary-lightest);
 }
 
 .Grid-cell--nestedRow {
-    padding-left: var(--spacing);
+  padding-left: var(--spacing);
 }
 
 .Grid-cell--head.Grid-cell:first-of-type {
-    border-left: none;
+  border-left: none;
 }
 
 /* .Grid .Grid-cellGroup--main .Grid-cell--head.Grid-cell:last-child {
@@ -212,180 +215,195 @@
 } */
 
 .Grid-cell--head.Grid-cell--selected {
-    background: var(--primary-light);
+  background: var(--primary-light);
 }
 
 .Grid-cell--checkbox {
-    width: unset;
-    min-width: unset;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    padding-right: 0 !important;
-    overflow: visible !important;
+  width: unset;
+  min-width: unset;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  padding-right: 0 !important;
+  overflow: visible !important;
 }
 
 .Grid-sortingIcons {
-    display: flex;
-    align-items: center;
-    padding-left: var(--spacing-m);
+  display: flex;
+  align-items: center;
+  padding-left: var(--spacing-m);
 }
 
 .Grid-cellReorder {
-    display: flex;
-    align-items: center;
-    cursor: grab;
+  display: flex;
+  align-items: center;
+  cursor: grab;
 }
 
 .Grid-cellReorder:active {
-    cursor: grabbing;
+  cursor: grabbing;
 }
 
 .Grid-cellContent {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    height: 100%;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .Grid-cell--head .Grid-cellContent {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .Grid-cellResize {
-    position: absolute;
-    right: 0;
-    width: var(--spacing-m);
-    cursor: ew-resize;
-    height: 100%;
+  position: absolute;
+  right: 0;
+  width: var(--spacing-m);
+  cursor: ew-resize;
+  height: 100%;
 }
 
 .Grid-cellSortIcon {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .Grid-cellSortIcon:hover {
-    background: var(--secondary);
+  background: var(--secondary);
 }
 
 .Grid-cellResize:hover {
-    background: var(--primary);
+  background: var(--primary);
 }
 
 .Grid-reorderHighlighter {
-    position: absolute;
-    height: 100%;
-    border: 3px solid var(--primary-light);
-    z-index: 10;
+  position: absolute;
+  height: 100%;
+  border: 3px solid var(--primary-light);
+  z-index: 10;
 }
 
 .Grid-cellGroup {
-    display: flex;
-    box-sizing: border-box;
-    background: var(--white);
+  display: flex;
+  box-sizing: border-box;
+  background: var(--white);
 }
 
 .Grid-cellGroup--pinned {
-    position: sticky;
-    z-index: 1;
+  position: sticky;
+  z-index: 1;
 }
 
 .Grid-cellGroup--pinned-left {
-    left: 0;
-    border-right: var(--border);
-    border-right-width: 4px;
-    border-image: linear-gradient( to right, var(--secondary), var(--secondary) 25%, color-mod(var(--secondary) a(0.1)) 25%, color-mod(var(--secondary) a(0.1))) 1 100%;
+  left: 0;
+  border-right: var(--border);
+  border-right-width: 4px;
+  border-image: linear-gradient(
+      to right,
+      var(--secondary),
+      var(--secondary) 25%,
+      color-mod(var(--secondary) a(0.1)) 25%,
+      color-mod(var(--secondary) a(0.1))
+    )
+    1 100%;
 }
 
 .Grid-cellGroup--pinned-right {
-    right: 0;
-    border-left: var(--border);
-    border-left-width: 4px;
-    border-image: linear-gradient( to left, var(--secondary), var(--secondary) 25%, color-mod(var(--secondary) a(0.1)) 25%, color-mod(var(--secondary) a(0.1))) 1 100%;
+  right: 0;
+  border-left: var(--border);
+  border-left-width: 4px;
+  border-image: linear-gradient(
+      to left,
+      var(--secondary),
+      var(--secondary) 25%,
+      color-mod(var(--secondary) a(0.1)) 25%,
+      color-mod(var(--secondary) a(0.1))
+    )
+    1 100%;
 }
 
 .Grid .Checkbox-wrapper {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 /** Grid Cell **/
 
 .GridCell {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .GridCell--align-left {
-    /* flex-direction: row; */
-    justify-content: flex-start;
-    text-align: left;
+  /* flex-direction: row; */
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .GridCell--align-right {
-    /* flex-direction: row-reverse; */
-    justify-content: flex-end;
-    text-align: right;
+  /* flex-direction: row-reverse; */
+  justify-content: flex-end;
+  text-align: right;
 }
 
 .GridCell--align-center {
-    justify-content: center;
-    text-align: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.GridCell--default {}
+.GridCell--default {
+}
 
 .GridCell--metaList {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
 }
 
 .GridCell--avatar .Avatar {
-    margin: 0;
+  margin: 0;
 }
 
 .GridCell-metaListWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
 .GridCell-metaList {
-    display: flex;
+  display: flex;
 }
 
 .GridCell-metaList .Text {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .GridCell-metaList .Text::before {
-    content: '';
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--spacing-m);
-    height: var(--spacing-m);
-    border-radius: 50%;
-    background: var(--secondary);
-    margin: 0 var(--spacing);
+  content: '';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-m);
+  height: var(--spacing-m);
+  border-radius: 50%;
+  background: var(--secondary);
+  margin: 0 var(--spacing);
 }
 
 .GridCell-metaList .Text:first-child::before {
-    display: none;
+  display: none;
 }
 
 .GridCell--metaList ul li:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* .GridCell-image {
@@ -407,58 +425,58 @@
 /** Table-header **/
 
 .Header {
-    background: var(--white);
-    padding: var(--spacing-l);
-    border-bottom: var(--border);
+  background: var(--white);
+  padding: var(--spacing-l);
+  border-bottom: var(--border);
 }
 
 .Header-content {
-    display: flex;
+  display: flex;
 }
 
 .Header-content--bottom {
-    align-items: center;
-    justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .Header-search {
-    width: var(--spacing-9);
-    margin-bottom: var(--spacing-2);
+  width: var(--spacing-9);
+  margin-bottom: var(--spacing-2);
 }
 
 .Header-label {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
 }
 
 .Header-label .Checkbox {
-    margin-right: var(--spacing);
+  margin-right: var(--spacing);
 }
 
 .Header-dropdown {
-    display: flex;
-    margin-left: var(--spacing-m);
-    margin-bottom: var(--spacing-2);
+  display: flex;
+  margin-left: var(--spacing-m);
+  margin-bottom: var(--spacing-2);
 }
 
 .Header-dropdown .Dropdown {
-    margin: 0 var(--spacing-m);
+  margin: 0 var(--spacing-m);
 }
 
 .Header-draggableDropdown .Dropdown-wrapper {
-    max-height: 200px;
-    overflow-y: auto;
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .Header-filters {
-    display: flex;
+  display: flex;
 }
 
 .Header-sorting {
-    display: flex;
+  display: flex;
 }
 
 .Header-actions {
-    margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
 }

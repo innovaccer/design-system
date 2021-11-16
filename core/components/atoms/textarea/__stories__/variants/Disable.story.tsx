@@ -24,6 +24,7 @@ export const Disable = () => {
                 placeholder="Placeholder"
                 disabled={value}
                 rows={3}
+                aria-labelledby="Textarea"
               />
             </div>
             <Text weight="strong">{value ? 'Disabled' : 'Enabled'}</Text>

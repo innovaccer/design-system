@@ -411,6 +411,8 @@ const DropdownList = (props: OptionsProps) => {
           icon={'search'}
           value={searchTerm}
           placeholder={'Search..'}
+          // TODO(a11y): research more on this.
+          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={true}
           onChange={searchHandler}
           onClear={searchClearHandler}
@@ -567,7 +569,7 @@ const DropdownList = (props: OptionsProps) => {
         event.preventDefault();
         dropdownOpen ? focusOption('up', optionClass) : onToggleDropdown(!dropdownOpen);
         break;
-      case 'Enter':
+      case 'Enter': {
         const activeElement = document.activeElement;
         if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
           event.preventDefault();
@@ -578,7 +580,8 @@ const DropdownList = (props: OptionsProps) => {
         }
         if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
         break;
-      case 'Tab':
+      }
+      case 'Tab': {
         if (!showApplyButton && dropdownOpen) {
           event.preventDefault();
           onToggleDropdown(false, 'onClick');
@@ -608,12 +611,15 @@ const DropdownList = (props: OptionsProps) => {
         }
 
         break;
+      }
       default:
         break;
     }
   };
 
   return (
+    //TODO(a11y)
+    //eslint-disable-next-line
     <div {...baseProps} className={dropdownClass} ref={triggerRef} onKeyDown={onkeydown}>
       <Popover
         onToggle={onToggleDropdown}

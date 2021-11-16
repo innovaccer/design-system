@@ -16,14 +16,12 @@ exports[`InlineMessage component
       >
         error_round
       </i>
-      <div>
-        <span
-          class="Text Text--default Text--regular InlineMessage-text--alert"
-          data-test="DesignSystem-InlineMessage--Description"
-        >
-          Inline Message here.
-        </span>
-      </div>
+      <span
+        class="Text Text--default Text--regular InlineMessage-text--alert"
+        data-test="DesignSystem-InlineMessage--Description"
+      >
+        Inline Message here.
+      </span>
     </div>
   </div>
 </body>
@@ -38,14 +36,12 @@ exports[`InlineMessage component
       class="InlineMessage"
       data-test="DesignSystem-InlineMessage"
     >
-      <div>
-        <span
-          class="Text Text--default Text--regular InlineMessage-text--default"
-          data-test="DesignSystem-InlineMessage--Description"
-        >
-          Inline Message here.
-        </span>
-      </div>
+      <span
+        class="Text Text--default Text--regular InlineMessage-text--default"
+        data-test="DesignSystem-InlineMessage--Description"
+      >
+        Inline Message here.
+      </span>
     </div>
   </div>
 </body>
@@ -67,14 +63,12 @@ exports[`InlineMessage component
       >
         info_round
       </i>
-      <div>
-        <span
-          class="Text Text--default Text--regular InlineMessage-text--info"
-          data-test="DesignSystem-InlineMessage--Description"
-        >
-          Inline Message here.
-        </span>
-      </div>
+      <span
+        class="Text Text--default Text--regular InlineMessage-text--info"
+        data-test="DesignSystem-InlineMessage--Description"
+      >
+        Inline Message here.
+      </span>
     </div>
   </div>
 </body>
@@ -96,14 +90,12 @@ exports[`InlineMessage component
       >
         check_circle_round
       </i>
-      <div>
-        <span
-          class="Text Text--default Text--regular InlineMessage-text--success"
-          data-test="DesignSystem-InlineMessage--Description"
-        >
-          Inline Message here.
-        </span>
-      </div>
+      <span
+        class="Text Text--default Text--regular InlineMessage-text--success"
+        data-test="DesignSystem-InlineMessage--Description"
+      >
+        Inline Message here.
+      </span>
     </div>
   </div>
 </body>
@@ -125,14 +117,12 @@ exports[`InlineMessage component
       >
         warning_round
       </i>
-      <div>
-        <span
-          class="Text Text--default Text--regular InlineMessage-text--warning"
-          data-test="DesignSystem-InlineMessage--Description"
-        >
-          Inline Message here.
-        </span>
-      </div>
+      <span
+        class="Text Text--default Text--regular InlineMessage-text--warning"
+        data-test="DesignSystem-InlineMessage--Description"
+      >
+        Inline Message here.
+      </span>
     </div>
   </div>
 </body>

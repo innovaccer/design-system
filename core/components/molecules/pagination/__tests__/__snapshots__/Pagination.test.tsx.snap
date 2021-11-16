@@ -140,6 +140,7 @@ exports[`Pagination component
       <div
         class="MetricInput MetricInput--regular Pagination-MetricInput"
         data-test="DesignSystem-MetricInputWrapper"
+        role="presentation"
       >
         <input
           class="MetricInput-input MetricInput-input--regular"
@@ -150,19 +151,22 @@ exports[`Pagination component
         />
         <div
           class="MetricInput-arrowIcons"
-          tabindex="0"
         >
           <i
             class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
             data-test="DesignSystem-MetricInput--upIcon"
+            role="button"
             style="font-size: 12px; width: 12px;"
+            tabindex="0"
           >
             keyboard_arrow_up_round
           </i>
           <i
             class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
             data-test="DesignSystem-MetricInput--downIcon"
+            role="button"
             style="font-size: 12px; width: 12px;"
+            tabindex="0"
           >
             keyboard_arrow_down_round
           </i>

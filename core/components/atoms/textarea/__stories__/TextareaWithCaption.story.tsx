@@ -6,15 +6,19 @@ export const textareaWithCaption = () => {
 
   return (
     <>
-      <Label withInput={true}>Confirmation Notes</Label>
+      <Label withInput={true} htmlFor="notes">
+        Confirmation Notes
+      </Label>
       <Textarea
-        name="Textarea"
+        name="notes"
         className="w-50"
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
         }}
         placeholder="Enter your comments here"
+        aria-labelledby="Confirmation Notes"
+        id="notes"
       />
       <Caption withInput={true}>This note will be automatically pinned for export.</Caption>
     </>
@@ -26,13 +30,15 @@ const customCode = `() => {
 
   return (
     <>
-      <Label withInput={true}>Confirmation Notes</Label>
+      <Label withInput={true} htmlFor="notes">Confirmation Notes</Label>
       <Textarea
         name="Textarea"
         className="w-50"
         value={value}
         onChange={e => { setValue(e.target.value); }}
         placeholder="Enter your comments here"
+        aria-labelledby="Confirmation Notes"
+        id="notes"
       />
       <Caption withInput={true}>This note will be automatically pinned for export.</Caption>
     </>

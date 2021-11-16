@@ -5,11 +5,10 @@
   background: var(--white);
   border-radius: var(--spacing-m);
   width: 100%;
-  background-image:
-  linear-gradient(to right,var(--secondary) 50%, rgba(255, 255, 255, 0) 0%), 
-  linear-gradient(var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(to right, var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
   background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
@@ -17,11 +16,10 @@
 
 .Dropzone--active {
   background: var(--primary-lightest);
-  background-image: 
-  linear-gradient(to right,var(--primary) 50%, rgba(255, 255, 255, 0) 0%), 
-  linear-gradient(var(--primary) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(to right, var(--primary) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-image: linear-gradient(to right, var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(to right, var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
   background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
@@ -29,11 +27,10 @@
 
 .Dropzone--error {
   background: var(--alert-lightest);
-  background-image: 
-  linear-gradient(to right,var(--alert) 50%, rgba(255, 255, 255, 0) 0%), 
-  linear-gradient(var(--alert) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(to right, var(--alert) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
+  background-image: linear-gradient(to right, var(--alert) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(to right, var(--alert) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
   background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
@@ -41,11 +38,10 @@
 
 .Dropzone--disabled {
   background: var(--secondary-lightest);
-  background-image: 
-  linear-gradient(to right,var(--secondary) 50%, rgba(255, 255, 255, 0) 0%), 
-  linear-gradient(var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(to right, var(--secondary) 50%,rgba(255, 255, 255, 0) 0%),
-  linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
+  background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
   background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;

@@ -79,3 +79,4 @@ export { FileListProps } from './components/molecules/fileList';
 export { VerificationCodeInputProps } from './components/molecules/verificationCodeInput';
 export { InlineMessageProps } from './components/organisms/inlineMessage';
 export { ChoiceListProps } from './components/organisms/choiceList';
+export { DividerProps } from './components/atoms/divider';

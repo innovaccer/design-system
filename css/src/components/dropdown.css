@@ -1,146 +1,146 @@
 .Dropdown {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
 }
 
 .Dropdown-wrapper {
-    margin-top: var(--spacing-m);
-    margin-bottom: var(--spacing-m);
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
 }
 
 .Dropdown-inputWrapper {
-    border-bottom: var(--border);
+  border-bottom: var(--border);
 }
 
 .Dropdown-input {
-    min-width: unset !important;
+  min-width: unset !important;
 }
 
 .Dropdown-input,
 .Dropdown-input:focus-within {
-    border: unset !important;
+  border: unset !important;
 }
 
 .Dropdown-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: var(--spacing-l);
-    margin-top: var(--spacing);
-    margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: var(--spacing-l);
+  margin-top: var(--spacing);
+  margin-bottom: 6px;
 }
 
 .Dropdown-section--withClear {
-    margin-top: var(--spacing-m);
-    margin-bottom: var(--spacing-s);
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-s);
 }
 
 .Dropdown--border {
-    border-top: var(--spacing-xs) solid var(--secondary-light);
+  border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
 .Dropdown-errorWrapper {
-    min-height: var(--spacing-7);
+  min-height: var(--spacing-7);
 }
 
 .Dropdown-buttonWrapper {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: var(--spacing);
-    padding-right: var(--spacing);
-    padding-bottom: var(--spacing);
-    border-top: var(--spacing-xs) solid var(--secondary-light);
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--spacing);
+  padding-right: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
 .Dropdown-footer {
-    padding-left: var(--spacing-l);
-    padding-bottom: var(--spacing-m);
-    padding-top: var(--spacing);
-    box-sizing: border-box;
+  padding-left: var(--spacing-l);
+  padding-bottom: var(--spacing-m);
+  padding-top: var(--spacing);
+  box-sizing: border-box;
 }
 
 .Option {
-    display: flex;
+  display: flex;
 }
 
 .Option,
 .Option-loading {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: var(--spacing-l);
-    padding-right: var(--spacing-l);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: var(--spacing-l);
+  padding-right: var(--spacing-l);
 }
 
 .OptionCheckbox {
-    width: 100%;
-    padding-left: var(--spacing-l);
-    padding-top: var(--spacing-m);
-    padding-bottom: var(--spacing-m);
+  width: 100%;
+  padding-left: var(--spacing-l);
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
 }
 
 .Option--active,
 .Option-checkbox--active {
-    background-color: var(--secondary-lightest);
-    cursor: pointer;
+  background-color: var(--secondary-lightest);
+  cursor: pointer;
 }
 
 .Option-loading {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .Option--selected {
-    background-color: var(--primary);
-    pointer-events: none;
+  background-color: var(--primary);
+  pointer-events: none;
 }
 
 .Option--disabled,
 .OptionWrapper--disabled {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .Option-label {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .OptionCheckbox .Checkbox-label {
-    padding-right: var(--spacing-l);
-    width: 100%;
-    display: flex;
-    overflow: hidden;
+  padding-right: var(--spacing-l);
+  width: 100%;
+  display: flex;
+  overflow: hidden;
 }
 
 .Option-text,
 .OptionCheckbox .Text {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .Option-text--wrap,
 .Dropdown-wrapper--wrap .OptionCheckbox .Text {
-    white-space: unset;
+  white-space: unset;
 }
 
 .Option--icon {
-    padding-left: var(--spacing);
+  padding-left: var(--spacing);
 }
 
 .Option-icon {
-    display: flex;
+  display: flex;
 }
 
 .Option-icon {
-    height: fit-content;
-    line-height: var(--font-height);
+  height: fit-content;
+  line-height: var(--font-height);
 }
 
 .Dropdown-wrapper::-webkit-scrollbar {
-    width: var(--spacing);
+  width: var(--spacing);
 }
 
 .Dropdown-wrapper::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: var(--spacing-m);
+  background: var(--secondary);
+  border-radius: var(--spacing-m);
 }

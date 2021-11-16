@@ -30,6 +30,8 @@ export const Step = (props: StepProps) => {
   const appearance = active ? 'link' : disabled ? 'disabled' : 'default';
 
   return (
+    // TODO(a11y)
+    // eslint-disable-next-line
     <div data-test="DesignSystem-Step" className={StepClass} onClick={onClickHandle}>
       <Icon
         data-test="DesignSystem-Step--Icon"

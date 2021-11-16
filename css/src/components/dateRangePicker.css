@@ -1,33 +1,33 @@
 .DateRangePicker {
-    display: flex;
+  display: flex;
 }
 
 .DateRangePicker--left {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .DateRangePicker--right {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .DateRangePicker-input {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .DateRangePicker-input--startDate {
-    padding-right: var(--spacing-m);
+  padding-right: var(--spacing-m);
 }
 
 .DateRangePicker-input--endDate {
-    padding-left: var(--spacing-m);
+  padding-left: var(--spacing-m);
 }
 
 @media (max-width: 576px) {
-    .DateRangePicker-input {
-        padding: 0;
-    }
+  .DateRangePicker-input {
+    padding: 0;
+  }
 
-    .DateRangePicker-input--endDate {
-        padding-top: var(--spacing);
-    }
+  .DateRangePicker-input--endDate {
+    padding-top: var(--spacing);
+  }
 }

@@ -11,7 +11,7 @@
   color: var(--white);
 }
 
-.Popover[data-hide="true"] {
+.Popover[data-hide='true'] {
   visibility: hidden;
   pointer-events: none;
 }

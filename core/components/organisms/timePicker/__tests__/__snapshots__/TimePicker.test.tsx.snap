@@ -12,6 +12,7 @@ exports[`TimePicker component prop:inputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input
@@ -51,6 +52,7 @@ exports[`TimePicker component prop:inputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input
@@ -90,6 +92,7 @@ exports[`TimePicker component prop:outputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input
@@ -129,6 +132,7 @@ exports[`TimePicker component prop:outputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input
@@ -168,6 +172,7 @@ exports[`TimePicker component prop:time snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input
@@ -180,11 +185,13 @@ exports[`TimePicker component prop:time snapshot
         />
         <div
           class="Input-icon Input-icon--right"
-          data-test="DesignSystem-Input--closeIcon"
         >
           <i
             class="material-icons material-icons-round Icon"
+            data-test="DesignSystem-Input--closeIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -218,6 +225,7 @@ exports[`TimePicker component prop:time snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input
@@ -230,11 +238,13 @@ exports[`TimePicker component prop:time snapshot
         />
         <div
           class="Input-icon Input-icon--right"
-          data-test="DesignSystem-Input--closeIcon"
         >
           <i
             class="material-icons material-icons-round Icon"
+            data-test="DesignSystem-Input--closeIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
+            tabindex="0"
           >
             close_round
           </i>
@@ -268,6 +278,7 @@ exports[`TimePicker component prop:validators snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input
@@ -307,6 +318,7 @@ exports[`TimePicker component prop:validators snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input

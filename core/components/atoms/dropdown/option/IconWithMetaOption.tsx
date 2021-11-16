@@ -23,6 +23,8 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
   });
 
   return (
+    // TODO(a11y): fix accessibility
+    /* eslint-disable */
     <div
       className={OptionClass}
       onClick={onClickHandler}
@@ -30,6 +32,7 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
       data-test={dataTest}
       data-disabled={disabled}
     >
+      {/* eslint-enable  */}
       {icon && (
         <Icon data-test={`${dataTest}--Icon`} className="Option-icon mr-4" name={icon} appearance={appearance} />
       )}

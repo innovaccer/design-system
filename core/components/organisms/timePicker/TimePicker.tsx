@@ -82,7 +82,7 @@ export const TimePicker = (props: TimePickerProps) => {
     if (inputOptions.onBlur) inputOptions.onBlur(e, val);
   };
 
-  const onClearHandler = (e: React.MouseEvent<HTMLElement>) => {
+  const onClearHandler = (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
     const updatedTime = '';
     setInit(true);
 

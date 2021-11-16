@@ -12,6 +12,7 @@ exports[`Input Mask component
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
+        role="presentation"
         style="min-width: 256px;"
       >
         <input

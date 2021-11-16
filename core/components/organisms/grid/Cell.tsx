@@ -112,6 +112,8 @@ const HeaderCell = (props: HeaderCellProps) => {
 
   return (
     <div key={name} className={classes} ref={el}>
+      {/* TODO(a11y) */}
+      {/* eslint-disable-next-line */}
       <div
         className="Grid-cellContent"
         data-test="DesignSystem-Grid-cellContent"
@@ -188,6 +190,8 @@ const HeaderCell = (props: HeaderCellProps) => {
         </>
       )}
       {schema.resizable && (
+        //TODO(a11y)
+        //eslint-disable-next-line
         <span
           className="Grid-cellResize"
           onMouseDown={() => {

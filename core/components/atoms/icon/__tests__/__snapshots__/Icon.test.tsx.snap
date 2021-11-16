@@ -7,7 +7,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent1"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -22,7 +24,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent1Dark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -37,7 +41,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent1Lighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -52,7 +58,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent2"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -67,7 +75,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent2Dark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -82,7 +92,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent2Lighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -97,7 +109,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent3"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -112,7 +126,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent3Dark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -127,7 +143,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent3Lighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -142,7 +160,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent4"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -157,7 +177,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent4Dark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -172,7 +194,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--accent4Lighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -187,7 +211,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--alert"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -202,7 +228,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--alertDark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -217,7 +245,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--alertLighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -232,7 +262,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--destructive"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -247,7 +279,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--disabled"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -262,7 +296,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--info"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -277,7 +313,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--inverse"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -292,7 +330,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--primary"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -307,7 +347,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--primaryDark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -322,7 +364,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--primaryLighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -337,7 +381,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--subtle"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -352,7 +398,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--success"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -367,7 +415,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--successDark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -382,7 +432,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--successLighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -397,7 +449,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--warning"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -412,7 +466,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--warningDark"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -427,7 +483,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--warningLighter"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -442,7 +500,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon Icon--white"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -457,7 +517,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons Icon"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_filled
     </i>
@@ -472,7 +534,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-outlined Icon"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_outlined
     </i>
@@ -487,7 +551,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-outlined Icon"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_outlined
     </i>
@@ -502,7 +568,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -517,7 +585,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-round Icon"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_round
     </i>
@@ -532,7 +602,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-sharp Icon"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_sharp
     </i>
@@ -547,7 +619,9 @@ exports[`Icon component
   <div>
     <i
       class="material-icons material-icons-two-tone Icon"
+      role="button"
       style="font-size: 50px; width: 50px;"
+      tabindex="0"
     >
       events_two-tone
     </i>

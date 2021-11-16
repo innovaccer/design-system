@@ -5,11 +5,11 @@
 }
 
 .ChoiceList-checkbox--vertical {
-  margin-top: var(--spacing)
+  margin-top: var(--spacing);
 }
 
 .ChoiceList-radio--vertical {
-  margin-top: var(--spacing)
+  margin-top: var(--spacing);
 }
 
 .ChoiceList--alignHorizontal {
@@ -17,9 +17,9 @@
 }
 
 .ChoiceList-checkbox--horizontal {
-  margin-left: var(--spacing-xl)
+  margin-left: var(--spacing-xl);
 }
 
 .ChoiceList-radio--horizontal {
-  margin-left: var(--spacing-xl)
+  margin-left: var(--spacing-xl);
 }

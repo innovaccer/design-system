@@ -16,7 +16,7 @@ export const COMMON_MIME_TYPES = new Map([
 
 const FILES_TO_IGNORE = ['.DS_Store', 'Thumbs.db'];
 
-interface FileArray extends Array<FileValue> {}
+type FileArray = Array<FileValue>;
 
 type FileValue = FileWithPath | FileArray[];
 

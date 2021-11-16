@@ -214,4 +214,31 @@ describe('Calendar compoennt', () => {
     fireEvent.click(month);
     expect(FunctionValue).toHaveBeenCalled();
   });
+
+  it('calls onMouseOver handler when date value is hovered', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} rangePicker={false} onDateHover={FunctionValue} view="date" />
+    );
+    const date = getAllByTestId('DesignSystem-Calendar--dateValue')[0];
+    fireEvent.mouseOver(date);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls onMouseOver handler when month value is hovered', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} rangePicker={false} onMonthHover={FunctionValue} view="month" />
+    );
+    const month = getAllByTestId('DesignSystem-Calendar--monthValue')[0];
+    fireEvent.mouseOver(month);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('calls onMouseOver handler when year value is hovered', () => {
+    const { getAllByTestId } = render(
+      <Calendar date={new Date(2020, 2, 15)} rangePicker={false} onYearHover={FunctionValue} view="year" />
+    );
+    const year = getAllByTestId('DesignSystem-Calendar--yearValue')[0];
+    fireEvent.mouseOver(year);
+    expect(FunctionValue).toHaveBeenCalled();
+  });
 });

@@ -38970,22 +38970,22 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Oct
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--regular"
+                class="Text Text--link Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Nov
@@ -39269,6 +39269,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -39292,11 +39293,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -39335,6 +39338,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -39358,11 +39362,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -39419,6 +39425,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -39442,11 +39449,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -39485,6 +39494,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -39508,11 +39518,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -39569,6 +39581,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -39592,11 +39605,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -39635,6 +39650,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -39658,11 +39674,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -40511,22 +40529,22 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 Oct
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--small"
+                class="Text Text--link Text--small"
                 data-test="DesignSystem-Text"
               >
                 Nov
@@ -40810,6 +40828,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -40833,11 +40852,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -40876,6 +40897,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -40899,11 +40921,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -40960,6 +40984,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -40983,11 +41008,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -41026,6 +41053,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -41049,11 +41077,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -41110,6 +41140,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -41133,11 +41164,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -41176,6 +41209,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -41199,11 +41233,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -42052,22 +42088,22 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Oct
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--regular"
+                class="Text Text--link Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Nov
@@ -42351,6 +42387,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -42374,11 +42411,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -42417,6 +42456,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -42440,11 +42480,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -43508,6 +43550,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -43531,11 +43574,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -43574,6 +43619,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -43597,11 +43643,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -44665,6 +44713,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -44688,11 +44737,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -44731,6 +44782,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -44754,11 +44806,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -46614,22 +46668,22 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 Oct
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--small"
+                class="Text Text--link Text--small"
                 data-test="DesignSystem-Text"
               >
                 Nov
@@ -46913,6 +46967,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -46936,11 +46991,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -46979,6 +47036,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -47002,11 +47060,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -48070,6 +48130,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -48093,11 +48154,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -48136,6 +48199,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -48159,11 +48223,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -49227,6 +49293,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -49250,11 +49317,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
@@ -49293,6 +49362,7 @@ exports[`DateRangePicker component
             <div
               class="Input Input--regular"
               data-test="DesignSystem-InputWrapper"
+              role="presentation"
               style="min-width: 256px;"
             >
               <div
@@ -49316,11 +49386,13 @@ exports[`DateRangePicker component
               />
               <div
                 class="Input-icon Input-icon--right"
-                data-test="DesignSystem-Input--closeIcon"
               >
                 <i
                   class="material-icons material-icons-round Icon"
+                  data-test="DesignSystem-Input--closeIcon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
+                  tabindex="0"
                 >
                   close_round
                 </i>
