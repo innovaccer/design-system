@@ -16,24 +16,11 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "lib": [
-      "es6",
-      "es7",
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es6", "es7", "es2017", "es2021", "dom"],
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "core/*"
-      ]
+      "@/*": ["core/*"]
     }
   },
-  "exclude": [
-    "dist",
-    "build",
-    "node_modules",
-    ".github",
-    ".husky"
-  ]
+  "exclude": ["dist", "build", "node_modules", ".github", ".husky"]
 }

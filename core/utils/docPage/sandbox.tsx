@@ -27,7 +27,6 @@ const getParameters = (options: { files: IFiles }) => {
 export default (jsxStoryCode: string) => {
   const structuredCode = jsxStoryCode
     .trim()
-    // @ts-ignore
     .replaceAll('// import', 'import')
     .replace('() => {', 'const App = () => {')
     .replaceAll('<>', '<React.Fragment>')

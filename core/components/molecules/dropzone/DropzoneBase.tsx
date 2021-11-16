@@ -149,8 +149,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     validator,
   } = props;
 
-  const rootRef = useRef(null);
-  const inputRef = useRef(null);
+  const rootRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [state, dispatch] = useReducer(reducer, initialState);
   const { isFocused, isFileDialogActive, draggedFiles } = state;
@@ -158,9 +158,9 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   const openFileDialog = useCallback(() => {
     if (inputRef.current) {
       dispatch({ type: 'openDialog' });
-      // @ts-ignore
-      inputRef.current.value = null;
-      // @ts-ignore
+
+      inputRef.current.value = '';
+
       inputRef.current.click();
     }
   }, [dispatch]);
@@ -169,10 +169,9 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     if (isFileDialogActive) {
       setTimeout(() => {
         if (inputRef.current) {
-          // @ts-ignore
           const { files } = inputRef.current;
 
-          if (!files.length) {
+          if (!files || !files.length) {
             dispatch({ type: 'closeDialog' });
 
             if (typeof onFileDialogCancel === 'function') {
@@ -193,7 +192,6 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
   const onKeyDownCb = useCallback(
     (event) => {
-      // @ts-ignore
       if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
         return;
       }
@@ -215,10 +213,9 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     dispatch({ type: 'blur' });
   }, []);
 
-  const dragTargetsRef = useRef([]);
+  const dragTargetsRef = useRef<any[]>([]);
 
   const onDocumentDrop = (event: any) => {
-    // @ts-ignore
     if (rootRef.current && rootRef.current.contains(event.target)) {
       return;
     }
@@ -245,7 +242,6 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       event.preventDefault();
       event.persist();
 
-      // @ts-ignore
       dragTargetsRef.current = [...dragTargetsRef.current, event.target];
 
       if (isEvtWithFiles(event)) {
@@ -294,11 +290,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       event.preventDefault();
       event.persist();
 
-      const targets = dragTargetsRef.current.filter(
-        // @ts-ignore
-        (target) => rootRef.current && rootRef.current.contains(target)
-      );
-      // @ts-ignore
+      const targets = dragTargetsRef.current.filter((target) => rootRef.current && rootRef.current.contains(target));
       const targetIdx = targets.indexOf(event.target);
       if (targetIdx !== -1) {
         targets.splice(targetIdx, 1);
