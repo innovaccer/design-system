@@ -1,3 +1,35 @@
+## 2.6.0-0  (2021-11-16) 
+### Highlights
+* Calender exposes onHover events on date month and year values (bcaa4aed)
+* New component Divider is added (7dc6034d)
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Calender exposes onHover events on date month and year values (bcaa4aed)
+* New component Divider is added (7dc6034d)
+
+
+### Fixes
+* Options with checkbox in dropdown can have truncated text now. (c4e8f3a3)
+* Text height of InlineMessage is corrected. (00bbd7e6)
+* Table search results going blank is now fixed. (d2a96002)
+* Table cell can render and position the dropdown inside properly. (3dea79b4)
+
+### Improvements
+* Library is now compatible with Node version 14.x LTS (33c736fd)
+* Accessibility linting plugin is added. (6fbb5883)
+
+### Documentation
+
+-------------------
 
 ## 2.5.0  (2021-10-25) 
 
