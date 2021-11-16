@@ -90,7 +90,7 @@ export const multiSelect = () => {
     }
   };
 
-  const onClose = (options: any[], _name: any) => {
+  const onClose = (options: any[]) => {
     return action(`dropdown closed with selected values: ${options}`)();
   };
 

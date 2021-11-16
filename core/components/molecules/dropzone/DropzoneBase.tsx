@@ -385,6 +385,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   };
 
   const composeKeyboardHandler = (_fn: any) => {
+    _fn;
     return null;
   };
 

@@ -11,6 +11,7 @@
   "settings": { "react": { "version": "detect" } },
   "globals": { "_": "readonly", "__": "readonly" },
   "rules": {
+    "no-unused-vars": "off",
     "prefer-conditional-expression": "off",
     "max-line-length": "off",
     "object-literal-sort-keys": "off",
@@ -47,7 +48,7 @@
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

@@ -442,7 +442,7 @@ const DropdownList = (props: OptionsProps) => {
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
 
     return (
-      <div className={SelectAllClass} onMouseEnter={(_e) => updateActiveOption(0, true)}>
+      <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
         <Checkbox
           label={label}
           onChange={onSelectAll}

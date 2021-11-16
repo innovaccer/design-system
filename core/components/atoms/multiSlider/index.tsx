@@ -130,8 +130,8 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
   };
 
   getHandleValues = (props: React.PropsWithChildren<InternalMultiSliderProps>) => {
-    const maybeHandles = React.Children.map(props.children, (child) =>
-      isElementOfType(child, MultiSlider.Handle) ? child.props : null
+    const maybeHandles = React.Children.map(props.children as React.ReactElement, (child) =>
+      isElementOfType(child) ? child.props : null
     );
 
     let handles = maybeHandles != null ? maybeHandles : [];

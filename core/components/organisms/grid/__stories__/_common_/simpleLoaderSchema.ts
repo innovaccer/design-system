@@ -1,5 +1,3 @@
-// @ts-ignore
-import image from './image.png';
 import { GridProps } from '../../Grid';
 
 const loaderSchema: GridProps['loaderSchema'] = [

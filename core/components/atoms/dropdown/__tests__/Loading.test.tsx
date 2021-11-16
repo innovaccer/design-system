@@ -4,7 +4,6 @@ import { Dropdown } from '@/index';
 
 import { storyOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions } from '../__stories__/Options';
 
-const FunctionValue = jest.fn();
 const trigger = 'DesignSystem-DropdownTrigger';
 
 describe('renders loading states', () => {

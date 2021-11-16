@@ -85,17 +85,17 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     return ref.current as HTMLInputElement;
   });
 
-  const [checked, setChecked] = React.useState(props.checked === undefined ? defaultChecked : props.checked);
+  const [checked, setChecked] = React.useState(checkedProp === undefined ? defaultChecked : checkedProp);
 
   React.useEffect(() => {
     setIndeterminate(indeterminate);
   }, [indeterminate]);
 
   React.useEffect(() => {
-    if (props.checked !== undefined) {
-      setChecked(props.checked);
+    if (checkedProp !== undefined) {
+      setChecked(checkedProp);
     }
-  }, [props.checked]);
+  }, [checkedProp]);
 
   const CheckboxClass = classNames(
     {
@@ -129,7 +129,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
   };
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (props.checked === undefined) {
+    if (checkedProp === undefined) {
       setChecked(e.target.checked);
       setIndeterminate(e.target.indeterminate);
     }
