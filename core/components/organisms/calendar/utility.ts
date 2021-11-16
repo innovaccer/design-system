@@ -151,9 +151,9 @@ export const translateToDate = (format: string, val: string, validators: Validat
   if (isValid(validators, val, format)) {
     const separator = format.includes('/') ? '/' : '-';
 
-    let year: number = -1,
-      month: number = -1,
-      date: number = -1;
+    let year = -1,
+      month = -1,
+      date = -1;
     const v = val.split(separator);
     format.split(separator).forEach((f, i) => {
       switch (f) {

@@ -97,7 +97,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     return { start: pos, end: pos };
   };
 
-  const getPlaceholderValue = (start: number = 0, end: number = mask.length - 1) =>
+  const getPlaceholderValue = (start = 0, end: number = mask.length - 1) =>
     getDefaultValue(mask, placeholderChar).slice(start, end + 1);
 
   const getSelectionLength = (val: SelectionPos) => Math.abs(val.end - val.start);
@@ -138,7 +138,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     deferId.current = window.requestAnimationFrame(updateSelection);
   };
 
-  const insertAtIndex = (currValue: string, index: number, iterator: number = 0) => {
+  const insertAtIndex = (currValue: string, index: number, iterator = 0) => {
     let newValue = '';
     const newIndex = index + 1;
     let newIterator = iterator;
