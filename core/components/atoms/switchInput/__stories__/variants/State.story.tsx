@@ -7,12 +7,12 @@ export const state = () => {
   return (
     <div className="d-flex">
       <div className="mr-9">
-        <Switch defaultChecked={true} disabled={false} />
+        <Switch aria-label="Switch enabled" defaultChecked={true} disabled={false} />
         <br />
         <Text weight="strong">Enabled</Text>
       </div>
       <div>
-        <Switch disabled={true} defaultChecked={true} />
+        <Switch aria-label="Switch disabled" disabled={true} defaultChecked={true} />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
@@ -27,6 +27,13 @@ export default {
     docs: {
       docPage: {
         title: 'Switch',
+        a11yProps: ` 
+        **aria-label:**
+        <br/> 
+        - Add \`aria-label='Switch enabled'\` on switch with *Enabled* text to describe the action of switch.
+        <br/>
+        - Add \`aria-label='Switch disabled'\` on switch with *Disabled* text to describe the action of switch.
+        `,
       },
     },
   },
