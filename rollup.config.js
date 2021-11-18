@@ -124,7 +124,7 @@ const tsConfig = {
     resolve({ extensions }),
     
     typescript({
-      typescript: require('ttypescript'),
+      typescript: require('typescript'),
       tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
     }),
 
