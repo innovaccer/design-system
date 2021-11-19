@@ -58,6 +58,14 @@ export type DatePickerProps = SharedProps & {
    * Close Popover on date selection
    */
   closeOnSelect: boolean;
+  /**
+   * Add or remove the select today's date chip from DatePicker Footer
+   */
+  showTodayDate?: boolean;
+  /**
+   * Element to be rendered inside Popover
+   */
+  children: React.ReactNode;
 };
 
 export interface DatePickerState {
@@ -182,6 +190,8 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       onDateChange,
       closeOnSelect,
       size,
+      showTodayDate = true,
+      children = <></>,
       ...rest
     } = this.props;
 
@@ -205,23 +215,28 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     };
     return (
       <div>
-        <Calendar
-          {...rest}
-          size={size}
-          date={currDate}
-          disabledBefore={dateDisabledBefore}
-          disabledAfter={dateDisabledAfter}
-          onDateChange={this.onDateChangeHandler}
-        />
-        <div className="d-flex justify-content-center pb-6" data-test="DesignSystem-Select--TodaysDate-wrapper">
-          <Chip
-            label={`Today, ${todayMonthAndDate}`}
-            name="chip"
-            type="action"
-            disabled={isTodayDisabled()}
-            onClick={() => this.onDateChangeHandler(new Date())}
+        <div className="d-flex">
+          {children}
+          <Calendar
+            {...rest}
+            size={size}
+            date={currDate}
+            disabledBefore={dateDisabledBefore}
+            disabledAfter={dateDisabledAfter}
+            onDateChange={this.onDateChangeHandler}
           />
         </div>
+        {showTodayDate && (
+          <div className="d-flex justify-content-center pb-6" data-test="DesignSystem-Select--TodaysDate-wrapper">
+            <Chip
+              label={`Today, ${todayMonthAndDate}`}
+              name="chip"
+              type="action"
+              disabled={isTodayDisabled()}
+              onClick={() => this.onDateChangeHandler(new Date())}
+            />
+          </div>
+        )}
       </div>
     );
   }
