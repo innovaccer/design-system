@@ -22,11 +22,11 @@
 }
 
 .Calendar--month--small {
-  height: 208px;
+  height: 192px;
 }
 
 .Calendar--year--small {
-  height: 208px;
+  height: 192px;
 }
 
 .Calendar--large {
@@ -42,11 +42,11 @@
 }
 
 .Calendar--month--large {
-  height: 274px;
+  height: 272px;
 }
 
 .Calendar--year--large {
-  height: 274px;
+  height: 272px;
 }
 
 .Calendar-header--large {
@@ -100,7 +100,7 @@
 
 .Calendar-valueRow {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: var(--spacing-s);
   padding-bottom: var(--spacing-s);
 }
