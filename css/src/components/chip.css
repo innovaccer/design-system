@@ -60,6 +60,7 @@
 .Chip--selection {
   background: var(--shadow-0);
   border-color: var(--stone);
+  cursor: pointer;
 }
 
 .Chip--selection:hover {
