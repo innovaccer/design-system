@@ -82,39 +82,46 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     ...rest
   } = props;
 
-  const getNewCursorPosition = (type: 'left' | 'right', position: number): number => {
-    if (type === 'right') {
-      for (let i = position; i < mask.length; i++) {
-        if (isEditable(i)) return i;
-      }
-      return mask.length;
-    }
-    if (type === 'left') {
-      for (let i = position; i >= 0; i--) {
-        if (isEditable(i - 1)) return i;
-      }
-      return 0;
-    }
-    return position;
-  };
+  const isEditable = React.useCallback((pos: number) => typeof mask[pos] === 'object', [mask]);
 
-  const getDefaultSelection = () => {
+  const getNewCursorPosition = React.useCallback(
+    (type: 'left' | 'right', position: number): number => {
+      if (type === 'right') {
+        for (let i = position; i < mask.length; i++) {
+          if (isEditable(i)) return i;
+        }
+        return mask.length;
+      }
+      if (type === 'left') {
+        for (let i = position; i >= 0; i--) {
+          if (isEditable(i - 1)) return i;
+        }
+        return 0;
+      }
+      return position;
+    },
+    [mask, isEditable]
+  );
+
+  const getDefaultSelection = React.useCallback(() => {
     const pos = getNewCursorPosition('right', 0);
     return { start: pos, end: pos };
-  };
+  }, [getNewCursorPosition]);
 
-  const getPlaceholderValue = (start = 0, end: number = mask.length - 1) =>
-    getDefaultValue(mask, placeholderChar).slice(start, end + 1);
+  const getPlaceholderValue = React.useCallback(
+    (start = 0, end: number = mask.length - 1) => getDefaultValue(mask, placeholderChar).slice(start, end + 1),
+    [mask, placeholderChar]
+  );
 
-  const getSelectionLength = (val: SelectionPos) => Math.abs(val.end - val.start);
+  const defaultPlaceholderValue = React.useMemo(() => getPlaceholderValue(), [getPlaceholderValue]);
+  const defaultSelection = React.useMemo(() => getDefaultSelection(), [getDefaultSelection]);
 
-  const isEditable = (pos: number) => typeof mask[pos] === 'object';
-
-  const deferId = React.useRef<number | undefined>();
-  const selectionRef = React.useRef<number>(0);
-  const [value, setValue] = React.useState<string>(defaultValue || valueProp || '');
-  const [selection, setSelection] = React.useState<SelectionPos>(getDefaultSelection());
   const ref = React.useRef<HTMLInputElement>(null);
+  const deferId = React.useRef<number | undefined>();
+  const selectionPos = React.useRef<SelectionPos>(defaultSelection);
+  const newSelectionPos = React.useRef<number>(0);
+
+  const [value, setValue] = React.useState<string>(defaultValue || valueProp || '');
 
   React.useImperativeHandle(forwardRef, () => ref.current as HTMLInputElement);
 
@@ -122,149 +129,195 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     setValue(valueProp || '');
   }, [valueProp]);
 
-  const setCursorPosition = (val: number) => setSelectionPos({ start: val, end: val });
+  React.useEffect(() => {
+    setCursorPosition(newSelectionPos.current);
+  }, [value]);
 
-  const getCurrSelection = () => ({
-    start: ref.current?.selectionStart || 0,
-    end: ref.current?.selectionEnd || 0,
-  });
+  const getSelectionLength = React.useCallback((val: SelectionPos) => Math.abs(val.end - val.start), []);
 
-  const setSelectionPos = (pos: SelectionPos): void => {
-    if (ref.current) {
-      const el = ref.current;
-      const start = Math.min(pos.start, pos.end);
-      const end = Math.max(pos.start, pos.end);
-      el.setSelectionRange(start, end);
-    }
-  };
+  const getCurrSelection = React.useCallback(
+    () => ({
+      start: ref.current?.selectionStart || 0,
+      end: ref.current?.selectionEnd || 0,
+    }),
+    [ref.current]
+  );
 
-  const updateSelection = () => {
-    setSelection(getCurrSelection());
-
-    deferId.current = window.requestAnimationFrame(updateSelection);
-  };
-
-  const insertAtIndex = (currValue: string, index: number, iterator = 0) => {
-    let newValue = '';
-    const newIndex = index + 1;
-    let newIterator = iterator;
-
-    if (index >= mask.length) {
-      return newValue;
-    }
-
-    if (iterator >= currValue.length) {
-      selectionRef.current = index;
-      return newValue;
-    }
-
-    const m = mask[index];
-    if (isEditable(index)) {
-      if (currValue[iterator].match(m)) {
-        newValue += currValue[iterator];
-      } else {
-        newValue += placeholderChar;
+  const setSelectionPos = React.useCallback(
+    (pos: SelectionPos): void => {
+      if (ref.current) {
+        const el = ref.current;
+        const start = Math.min(pos.start, pos.end);
+        const end = Math.max(pos.start, pos.end);
+        el.setSelectionRange(start, end);
       }
-      newIterator++;
-    } else {
-      newValue += m;
-    }
-
-    newValue += insertAtIndex(currValue, newIndex, newIterator);
-
-    return newValue;
-  };
-
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputVal = e.currentTarget.value;
-
-    const currSelection = getCurrSelection();
-    const start = Math.min(selection.start, currSelection.start);
-    const end = currSelection.end;
-
-    let cursorPosition = start;
-    let enteredVal = '';
-    let updatedVal = '';
-    let removedLength = 0;
-    let insertedStringLength = 0;
-
-    enteredVal = inputVal.slice(start, end);
-    updatedVal = insertAtIndex(enteredVal, start);
-    insertedStringLength = updatedVal.length;
-    if (currSelection.end > selection.end) {
-      removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
-    } else if (inputVal.length < value.length) {
-      removedLength = value.length - inputVal.length;
-    }
-
-    cursorPosition += insertedStringLength;
-
-    const maskedVal = value.split('');
-    for (let i = 0; i < insertedStringLength; i++) {
-      maskedVal[start + i] = updatedVal[i];
-    }
-    for (let i = 0; i < removedLength; i++) {
-      const index = start + insertedStringLength + i;
-      maskedVal[index] = getPlaceholderValue(index, index);
-    }
-
-    const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
-    if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
-      cursorPosition = newCursorPosition;
-      cursorPosition--;
-      maskedVal[cursorPosition] = placeholderChar;
-    } else if (removedLength !== 1) {
-      cursorPosition = newCursorPosition;
-    }
-
-    const newValue = maskedVal.slice(0, mask.length).join('');
-    window.requestAnimationFrame(() => setCursorPosition(cursorPosition));
-
-    if (Utils.validators.isValid(validators, newValue) && newValue !== value) {
-      setValue(newValue);
-      if (onChange) onChange(e, newValue);
-    }
-  };
-
-  const onBlurHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let inputVal = e.currentTarget.value;
-
-    if (clearOnEmptyBlur) {
-      if (inputVal === getPlaceholderValue()) {
-        setValue('');
-        inputVal = '';
-      }
-    }
-
-    if (onBlur) onBlur(e, inputVal);
-
-    if (deferId.current) window.cancelAnimationFrame(deferId.current);
-  };
-
-  const onClearHandler = (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
-    // setValue('');
-    // window.requestAnimationFrame(() => ref.current!.blur());
-    setValue(getPlaceholderValue());
-    window.requestAnimationFrame(() => setCursorPosition(getDefaultSelection().start));
-
-    if (onClear) onClear(e);
-  };
-
-  const onFocusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
-    deferId.current = window.requestAnimationFrame(updateSelection);
-    if (!value) {
-      setValue(getPlaceholderValue());
-      window.requestAnimationFrame(() => setSelectionPos(getDefaultSelection()));
-    }
-
-    if (onFocus) onFocus(e);
-  };
-
-  const classes = classNames(
-    {
-      'd-flex flex-column flex-grow-1': true,
     },
-    className
+    [ref.current]
+  );
+
+  const setCursorPosition = React.useCallback(
+    (val: number) => setSelectionPos({ start: val, end: val }),
+    [setSelectionPos]
+  );
+
+  const insertAtIndex = React.useCallback(
+    (currValue: string, index: number, iterator = 0) => {
+      let newValue = '';
+      const newIndex = index + 1;
+      let newIterator = iterator;
+
+      if (index >= mask.length) {
+        return newValue;
+      }
+
+      if (iterator >= currValue.length) {
+        selectionPos.current = { start: index, end: index };
+        return newValue;
+      }
+
+      const m = mask[index];
+      if (isEditable(index)) {
+        if (currValue[iterator].match(m)) {
+          newValue += currValue[iterator];
+        } else {
+          newValue += placeholderChar;
+        }
+        newIterator++;
+      } else {
+        newValue += m;
+      }
+
+      newValue += insertAtIndex(currValue, newIndex, newIterator);
+
+      return newValue;
+    },
+    [mask, placeholderChar, isEditable]
+  );
+
+  const updateSelection = React.useCallback(() => {
+    selectionPos.current = getCurrSelection();
+
+    deferId.current = window.requestAnimationFrame(updateSelection);
+  }, [selectionPos.current, getCurrSelection]);
+
+  const onChangeHandler = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const inputVal = e.currentTarget.value;
+
+      const currSelection = getCurrSelection();
+      const start = Math.min(selectionPos.current.start, currSelection.start);
+      const end = currSelection.end;
+
+      let cursorPosition = start;
+      let enteredVal = '';
+      let updatedVal = '';
+      let removedLength = 0;
+      let insertedStringLength = 0;
+
+      enteredVal = inputVal.slice(start, end);
+      updatedVal = insertAtIndex(enteredVal, start);
+      insertedStringLength = updatedVal.length;
+      if (currSelection.end > selectionPos.current.end) {
+        removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
+      } else if (inputVal.length < value.length) {
+        removedLength = value.length - inputVal.length;
+      }
+
+      cursorPosition += insertedStringLength;
+
+      const maskedVal = value.split('');
+      for (let i = 0; i < insertedStringLength; i++) {
+        maskedVal[start + i] = updatedVal[i];
+      }
+      for (let i = 0; i < removedLength; i++) {
+        const index = start + insertedStringLength + i;
+        maskedVal[index] = getPlaceholderValue(index, index);
+      }
+
+      const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
+      if (removedLength === 1 && !updatedVal.length && !isEditable(cursorPosition) && newCursorPosition > 0) {
+        cursorPosition = newCursorPosition;
+        cursorPosition--;
+        maskedVal[cursorPosition] = placeholderChar;
+      } else if (removedLength !== 1) {
+        cursorPosition = newCursorPosition;
+      }
+
+      const newValue = maskedVal.slice(0, mask.length).join('');
+      newSelectionPos.current = cursorPosition;
+
+      if (newValue !== value && Utils.validators.isValid(validators, newValue)) {
+        setValue(newValue);
+        onChange?.(e, newValue);
+      } else {
+        window.requestAnimationFrame(() => setCursorPosition(newSelectionPos.current));
+      }
+    },
+    [
+      selectionPos.current,
+      validators,
+      getCurrSelection,
+      insertAtIndex,
+      getSelectionLength,
+      getPlaceholderValue,
+      getNewCursorPosition,
+      isEditable,
+      setCursorPosition,
+      setValue,
+      onChange,
+    ]
+  );
+
+  const onBlurHandler = React.useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      let inputVal = e.currentTarget.value;
+
+      if (clearOnEmptyBlur) {
+        if (inputVal === defaultPlaceholderValue) {
+          setValue('');
+          inputVal = '';
+        }
+      }
+
+      onBlur?.(e, inputVal);
+
+      if (deferId.current) window.cancelAnimationFrame(deferId.current);
+    },
+    [clearOnEmptyBlur, deferId.current, getPlaceholderValue, setValue, onBlur]
+  );
+
+  const onClearHandler = React.useCallback(
+    (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
+      newSelectionPos.current = defaultSelection.start;
+      setValue(defaultPlaceholderValue);
+
+      onClear?.(e);
+    },
+    [setValue, getPlaceholderValue, setCursorPosition, getDefaultSelection, onClear]
+  );
+
+  const onFocusHandler = React.useCallback(
+    (e: React.FocusEvent<HTMLInputElement>) => {
+      deferId.current = window.requestAnimationFrame(updateSelection);
+      if (!value) {
+        newSelectionPos.current = defaultSelection.start;
+        setValue(getPlaceholderValue());
+      }
+
+      onFocus?.(e);
+    },
+    [deferId.current, value, updateSelection, setValue, setSelectionPos, onFocus]
+  );
+
+  const classes = React.useMemo(
+    () =>
+      classNames(
+        {
+          'd-flex flex-column flex-grow-1': true,
+        },
+        className
+      ),
+    [className]
   );
 
   return (
