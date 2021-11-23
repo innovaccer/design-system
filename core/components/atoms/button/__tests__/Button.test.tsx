@@ -10,7 +10,7 @@ const buttonType = ['button', 'submit', 'reset'];
 const icon = 'events';
 const iconAlign = ['left', 'right'];
 const sizes: Props['size'][] = ['tiny', 'regular', 'large'];
-const appearance = ['basic', 'primary', 'success', 'alert', 'transparent'];
+const appearance = ['basic', 'primary', 'alert', 'transparent'];
 const sizeMapping: Record<MakeRequired<Props['size']>, number> = {
   tiny: 12,
   regular: 16,
