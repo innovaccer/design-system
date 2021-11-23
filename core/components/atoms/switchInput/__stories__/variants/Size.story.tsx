@@ -12,7 +12,7 @@ export const size = () => {
         return (
           <div key={ind} className="mr-9">
             <div className="h-50">
-              <Switch defaultChecked={true} size={SwitchSize} />
+              <Switch aria-label={`Switch ${SwitchSize}`} defaultChecked={true} size={SwitchSize} />
             </div>
             <br />
             <Text weight="strong">{SwitchSize.charAt(0).toUpperCase() + SwitchSize.slice(1)}</Text>
@@ -30,6 +30,15 @@ export default {
     docs: {
       docPage: {
         title: 'Switch',
+        a11yProps: ` 
+        **aria-label:**
+        <br/> 
+        - Add \`aria-label='Switch tiny'\` on switch with *Tiny* text to describe the action of switch.
+        <br/>
+        - Add \`aria-label='Switch regular'\` on switch with *regular* text to describe the action of switch.
+        <br/>
+        - Add \`aria-label='Switch large'\` on switch with *Large* text to describe the action of switch.
+        `,
       },
     },
   },

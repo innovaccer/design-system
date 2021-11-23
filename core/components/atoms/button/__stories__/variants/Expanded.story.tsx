@@ -28,6 +28,7 @@ export const expanded = () => {
               expanded={ButtonExpanded}
               disabled={disabled}
               loading={loading}
+              aria-label={`${appear}`}
             >
               {children}
             </Button>
@@ -47,6 +48,9 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** name accordingly which describe the action of button 
+         `,
       },
     },
   },

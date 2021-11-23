@@ -299,6 +299,7 @@ export const docPage = () => {
     noProps = isEmbed,
     noSandbox,
     imports,
+    a11yProps,
   } = sp.docs.docPage || {};
   const { component: { displayName } = {} } = sp;
   const pageClassnames = classNames({
@@ -324,6 +325,15 @@ export const docPage = () => {
           imports={imports}
           isEmbed={isEmbed || isEmbedWithProp}
         />
+      )}
+
+      {a11yProps && (
+        <>
+          <br />
+          <br />
+          <Heading appearance="subtle">Accessibility</Heading>
+          <Description>{a11yProps}</Description>
+        </>
       )}
 
       {!noProps && (

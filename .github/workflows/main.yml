@@ -56,7 +56,7 @@ jobs:
         run: |
           git reset HEAD~1
           git add package.json
-          git commit -m "Released $(git log -1 --pretty=format:%s)"
+          git commit -m "Released $(git log -1 --pretty=format:%s)" --no-verify
 
       - name: push version to github
         if: steps.is_release_commit.outputs.result == 1

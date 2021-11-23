@@ -10,7 +10,7 @@ export const primary = () => {
   const expanded = false;
   const loading = false;
 
-  const children = text('children', 'Button');
+  const children = text('children', 'Login');
 
   const style = {
     justifyContent: 'space-between',
@@ -27,6 +27,7 @@ export const primary = () => {
           expanded={expanded}
           disabled={disabled}
           loading={loading}
+          aria-label="Login"
         >
           {children}
         </Button>
@@ -43,6 +44,7 @@ export const primary = () => {
           expanded={expanded}
           disabled={true}
           loading={loading}
+          aria-label="Login"
         >
           {children}
         </Button>
@@ -59,27 +61,12 @@ export const primary = () => {
           expanded={expanded}
           disabled={disabled}
           loading={true}
+          aria-label="Loading"
         >
           {''}
         </Button>
         <br />
         <Text weight="strong">Loading</Text>
-      </div>
-      <div className="mr-9">
-        <Button
-          onClick={action('button-clicked')}
-          onMouseEnter={action('mouse-enter')}
-          onMouseLeave={action('mouse-leave')}
-          appearance={'primary'}
-          size={'regular'}
-          expanded={expanded}
-          disabled={disabled}
-          loading={true}
-        >
-          {children}
-        </Button>
-        <br />
-        <Text weight="strong">Loading with Text</Text>
       </div>
     </div>
   );
@@ -92,6 +79,9 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
+        a11yProps: ` 
+        **aria-label:** Add \`aria-label='Login'\` to describe the action of button 
+         `,
       },
     },
   },

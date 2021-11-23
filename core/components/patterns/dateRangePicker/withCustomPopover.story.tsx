@@ -7,7 +7,6 @@ const customCode = `
    class CustomPopover extends React.Component {
     constructor(props) {
       super(props);
-      console.log(DateRangePicker.utils);
       const { startDate, endDate } = DateRangePicker.utils.getCurrentWeek();
 
       this.state = {
@@ -40,9 +39,9 @@ const customCode = `
       const { startDate, endDate, selected } = this.state;
 
       return (
-        <div className="pt-5 px-6" style={{ borderRight: 'var(--border)' }}>
+        <div className="pt-6 px-5">
           <div className="d-flex align-items-center justify-content-between">
-           <Heading size="s" className="py-3">Range</Heading>
+           <Subheading size="s" className="py-3" appearance="subtle">Range</Subheading>
             <Icon name="refresh" onClick={this.onReset} />
           </div>
           <div className="pt-5">
@@ -50,7 +49,7 @@ const customCode = `
               label="This week"
               clearButton={false}
               type="selection"
-              className="mb-6 d-block"
+              className="mb-5 d-block"
               selected={selected === "currWeek"}
               name="rangePicker"
               onClick={() => {
@@ -65,7 +64,7 @@ const customCode = `
               label="Last week"
               clearButton={false}
               type="selection"
-              className="mb-6 d-block"
+              className="mb-5 d-block"
               selected={selected === 'prevWeek'}
               name={"chip"}
               onClick={() => {
@@ -80,7 +79,7 @@ const customCode = `
               label="Last month"
               clearButton={false}
               type="selection"
-              className="mb-6  d-block"
+              className="mb-5  d-block"
               selected={selected === 'prevMonth'}
               name="rangePicker"
               onClick={() => {
@@ -95,7 +94,7 @@ const customCode = `
               label="Last 90 days"
               clearButton={false}
               type="selection"
-              className="mb-6  d-block"
+              className="mb-5  d-block"
               selected={selected === 'prev90Days'}
               name="rangePicker"
               onClick={() => {
@@ -110,7 +109,7 @@ const customCode = `
               label="Custom"
               clearButton={false}
               type="selection"
-              className="mb-6  d-block"
+              className="mb-5  d-block"
               selected={selected === 'custom'}
               name="rangePicker"
               onClick={() => {
@@ -143,6 +142,7 @@ const customCode = `
             monthNav={monthNav}
           >
             {this.renderChildren()}
+            <Divider vertical={true} />
           </DateRangePicker>
         </div>
       )
