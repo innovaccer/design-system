@@ -20,6 +20,9 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
   size?: Size;
   /**
    * Color of the `Button`
+   *
+   * **'success' has been deprecated and all success button types will now be changed to primary button automatically**
+   *
    * @default "basic"
    */
   appearance?: Appearance;

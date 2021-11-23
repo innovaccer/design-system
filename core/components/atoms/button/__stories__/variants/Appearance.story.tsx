@@ -10,7 +10,7 @@ export const appearance = () => {
   const expanded = false;
   const loading = false;
 
-  const appearances: Appearance[] = ['basic', 'primary', 'success', 'alert', 'transparent'];
+  const appearances: Appearance[] = ['basic', 'primary', 'alert', 'transparent'];
 
   const children = text('children', 'Button');
 
