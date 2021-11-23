@@ -7,7 +7,7 @@ import Button from '../Button';
 export const all = () => {
   const type = select('type', ['button', 'submit', 'reset'], undefined);
 
-  const appearance = select('appearance', ['basic', 'primary', 'success', 'alert', 'transparent'], undefined);
+  const appearance = select('appearance', ['basic', 'primary', 'alert', 'transparent'], undefined);
 
   const size = select('size', ['tiny', 'regular', 'large'], undefined);
 
