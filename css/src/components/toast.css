@@ -19,7 +19,7 @@
 
 .Toast--default {
   padding-left: var(--spacing-xl);
-  background-color: var(--inverse);
+  background-color: var(--primary);
 }
 
 .Toast--info {
