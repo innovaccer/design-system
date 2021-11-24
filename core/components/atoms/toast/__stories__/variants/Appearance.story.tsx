@@ -3,7 +3,7 @@ import Toast, { Appearance } from '../../Toast';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: Appearance[] = ['default', 'info', 'success', 'alert', 'warning'];
+  const appearances: Appearance[] = ['info', 'success', 'alert', 'warning'];
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {

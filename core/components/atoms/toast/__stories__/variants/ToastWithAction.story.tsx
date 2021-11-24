@@ -5,7 +5,7 @@ import Toast, { Appearance } from '../../Toast';
 
 // CSF format story
 export const toastWithAction = () => {
-  const appearances: Appearance[] = ['default', 'info', 'success', 'alert', 'warning'];
+  const appearances: Appearance[] = ['info', 'success', 'alert', 'warning'];
 
   const message = text('message', 'Outreach was sent');
 
