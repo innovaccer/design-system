@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { select, text } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import Toast from '../Toast';
 
 // CSF format story
 export const all = () => {
-  const appearance = select('appearance', ['default', 'info', 'success', 'alert', 'warning'], undefined);
-
   const title = text('title', 'Sample toast');
 
   const message = text('message', '');
@@ -31,9 +29,7 @@ export const all = () => {
     });
   }
 
-  return (
-    <Toast appearance={appearance} title={title} message={message} onClose={action('on-close clicked')} {...props} />
-  );
+  return <Toast title={title} message={message} onClose={action('on-close clicked')} {...props} />;
 };
 
 export default {

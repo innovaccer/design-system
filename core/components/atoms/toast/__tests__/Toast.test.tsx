@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, arrayHelper, testMessageHelper } from '@/utils/testHelper';
 import Toast, { ToastProps as Props } from '../Toast';
 
-const appearance = ['default', 'info', 'success', 'alert', 'warning'];
+const appearance = ['info', 'success', 'alert', 'warning'];
 const StringValue = 'Sample string';
 const FunctionValue = jest.fn();
 const Actions = [
