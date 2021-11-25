@@ -7,7 +7,7 @@ export const basic = () => {
   return (
     <div className="Row">
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" onChange={action('on-change')} onClear={action('on-clear')} />
+        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} />
         <br />
         <Text weight="strong">Default</Text>
       </div>
@@ -24,7 +24,7 @@ export const basic = () => {
         <Text weight="strong">Placeholder</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" onChange={action('on-change')} onClear={action('on-clear')} error={true} />
+        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} error={true} />
         <br />
         <Text weight="strong">Error</Text>
       </div>
