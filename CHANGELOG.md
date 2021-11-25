@@ -1,3 +1,35 @@
+
+## 2.6.0-1  (2021-11-25)
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* Datepicker has example for date presets for date selections  (d1a0f30c)
+* Switch and Button components are new accessible (AA) (1b64c361)
+
+### Fixes
+* Navigation center alignment bug is fixed in Pageheader component (c6c08ba4)
+* Chip component's pointer style is fixed for hovering (01f2f9fc)
+* Design of Calendar component is improved (e4ea85df)
+
+### Improvements
+NA
+
+### Documentation
+NA
+
+
+-------------------
+
 ## 2.6.0-0  (2021-11-16) 
 ### Highlights
 * Calender exposes onHover events on date month and year values (bcaa4aed)
