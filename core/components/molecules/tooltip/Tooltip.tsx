@@ -3,7 +3,7 @@ import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 
-const propsList = [
+const tooltipPropsList = [
   'trigger',
   'on',
   'open',
@@ -15,8 +15,8 @@ const propsList = [
   'hideOnReferenceEscape',
   'closeOnScroll',
 ] as const;
-type PopperProps = typeof propsList[number];
-export interface TooltipProps extends Omit<PopoverProps, PopperProps>, BaseProps {
+type TooltipPopperProps = typeof tooltipPropsList[number];
+export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, BaseProps {
   /**
    * Text to be rendered in `Tooltip`
    */
@@ -49,7 +49,7 @@ export const Tooltip = (props: TooltipProps) => {
 //   ...Popover.defaultProps,
 //   hoverable: false
 // }, propsList);
-Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, propsList), {
+Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
   hoverable: false,
 });
 

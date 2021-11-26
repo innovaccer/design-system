@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type Size = 'small' | 'medium' | 'large';
+export type PlaceholderImageSize = 'small' | 'medium' | 'large';
 
 export interface PlaceholderImageProps extends BaseProps {
   /**
@@ -12,7 +12,7 @@ export interface PlaceholderImageProps extends BaseProps {
   /**
    * Specifies dimension of `Placeholder`
    */
-  size: Size;
+  size: PlaceholderImageSize;
 }
 
 export const PlaceholderImage = (props: PlaceholderImageProps) => {

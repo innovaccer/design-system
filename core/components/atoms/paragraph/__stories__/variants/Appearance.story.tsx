@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Paragraph, { Appearance } from '../../index';
+import Paragraph, { ParagraphAppearance } from '../../index';
 import Text from '@/components/atoms/text';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: Appearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
+  const appearances: ParagraphAppearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {

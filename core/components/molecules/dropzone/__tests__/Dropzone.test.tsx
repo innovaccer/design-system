@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import Dropzone, { DropzoneProps as Props, Type } from '../Dropzone';
+import Dropzone, { DropzoneProps as Props, DropZoneType } from '../Dropzone';
 import Link from '@/components/atoms/link';
 import DropzoneError from '../DropzoneError';
 import { fromEvent } from '../FileSelectorUtils';
@@ -29,7 +29,7 @@ const multipleFileData = {
 
 const minSize = 50;
 const maxSize = 300;
-const types: Type[] = ['standard', 'compressed', 'tight'];
+const types: DropZoneType[] = ['standard', 'compressed', 'tight'];
 
 describe('Dropzone component snapshot', () => {
   const mapper: Record<string, any> = {

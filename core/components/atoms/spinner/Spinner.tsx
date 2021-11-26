@@ -2,18 +2,18 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type Appearance = 'primary' | 'secondary' | 'white';
-export type Size = 'small' | 'medium' | 'large';
+export type SpinnerAppearance = 'primary' | 'secondary' | 'white';
+export type SpinnerSize = 'small' | 'medium' | 'large';
 
 export interface SpinnerProps extends BaseProps {
   /**
    * Color of `Spinner`
    */
-  appearance: Appearance;
+  appearance: SpinnerAppearance;
   /**
    * Size of `Spinner`
    */
-  size: Size;
+  size: SpinnerSize;
 }
 
 export const Spinner = (props: SpinnerProps) => {

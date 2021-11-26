@@ -3,8 +3,8 @@ import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
-export type Size = 'small' | 'regular' | 'large';
-export type Appearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';
+export type TextSize = 'small' | 'regular' | 'large';
+export type TextAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';
 
 export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
@@ -22,11 +22,11 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
    * Color of `Text`
    */
-  appearance: Appearance;
+  appearance: TextAppearance;
   /**
    * Size of `Text`
    */
-  size: Size;
+  size: TextSize;
 }
 
 export const Text = (props: TextProps) => {

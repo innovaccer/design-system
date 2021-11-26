@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Text, { Appearance as LabelAppearance } from '@/components/atoms/text';
+import Text, { TextAppearance } from '@/components/atoms/text';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
@@ -15,7 +15,7 @@ export interface LegendProps extends BaseProps {
   /**
    * Color of label
    */
-  labelAppearance?: LabelAppearance;
+  labelAppearance?: TextAppearance;
   /**
    * Size of Icon
    */
