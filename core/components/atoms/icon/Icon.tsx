@@ -118,7 +118,7 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i {...baseProps} role="alert" className={iconClass} style={styles} {...accessibilityProps}>
+    <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
       {type ? `${name}_${type}` : name}
     </i>
   );
