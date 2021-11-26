@@ -1,57 +1,167 @@
 import * as React from 'react';
-import { Dropzone, Link } from '@/index';
-import { select, boolean, text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-import { DropzoneProps } from '@/index.type';
+import { Dropzone, Link, FileList, Button } from '@/index';
+import { DropzoneProps, FileListProps } from '@/index.type';
 
 export const all = () => {
-  const type = select('type', ['standard', 'compressed', 'tight'], 'standard');
+  const [files, setFiles] = React.useState<FileListProps['fileList']>([]);
+  const getSize = (size: number) => `${(size / (1024 * 1024)).toFixed(2)} MB`;
 
-  const formatLabel = text('formatLabel', 'Accepted formats: PDF, jpg');
-  const sizeLabel = text('sizeLabel', 'Maximum size: 25 MB');
-  const multiple = boolean('multiple', true);
+  const onDelete = (id: number) => {
+    const updatedFiles = files.filter((file) => file.id !== id);
+    setFiles(updatedFiles);
+  };
 
-  const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles) => {
-    return action(`Accepted Files: ${acceptedFiles}`)();
+  const onDropHandler: DropzoneProps['onDrop'] = (_event, acceptedFiles, rejectedFiles) => {
+    const acceptedFileDetailList: FileListProps['fileList'] = acceptedFiles.map((file, id) => ({
+      file,
+      id: files.length + id,
+      fileSize: getSize(file.size),
+      networkError: false,
+      status: 'completed',
+    }));
+
+    const rejectedFilesDetailList: FileListProps['fileList'] = rejectedFiles.map((rejectedFile, id) => {
+      const { file, errors } = rejectedFile;
+      const errorMessageArray = errors.map((error) => error.message);
+      return {
+        file,
+        id: files.length + id,
+        fileSize: getSize(file.size),
+        status: 'error',
+        errorMessage: errorMessageArray.join(' and '),
+        networkError: false,
+      };
+    });
+
+    const updatedFiles = [...files, ...acceptedFileDetailList, ...rejectedFilesDetailList];
+    setFiles(updatedFiles);
+  };
+
+  const actionRenderer: FileListProps['actionRenderer'] = (fileItem) => {
+    return (
+      <React.Fragment>
+        {fileItem.networkError && (
+          <Button appearance="transparent" icon="refresh" size="regular" className={'cursor-pointer'} />
+        )}
+        <Button
+          appearance="transparent"
+          icon="close"
+          size="regular"
+          onClick={() => onDelete(fileItem.id)}
+          className={'cursor-pointer'}
+        />
+      </React.Fragment>
+    );
   };
 
   return (
-    <Dropzone
-      formatLabel={formatLabel}
-      sizeLabel={sizeLabel}
-      multiple={multiple}
-      type={type}
-      onDrop={onDrop}
-      sampleFileLink={
-        <Link
-          href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
-          download="Test.pdf"
-          target="_blank"
-        >
-          Download sample file
-        </Link>
-      }
-    />
+    <React.Fragment>
+      <Dropzone
+        accept="image/jpeg, image/png"
+        formatLabel="Accepted formats: PDF, jpg"
+        sizeLabel="Maximum size: 25 MB"
+        multiple={true}
+        onDrop={onDropHandler}
+        className="mb-5"
+        sampleFileLink={
+          <Link
+            href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
+            download="Test.pdf"
+            target="_blank"
+          >
+            Download sample file
+          </Link>
+        }
+      />
+      <FileList fileList={files.map(({ file, metadata }) => ({ file, ...metadata }))} actionRenderer={actionRenderer} />
+    </React.Fragment>
   );
 };
 
 const customCode = `() => {
+  const [files, setFiles] = React.useState([]);
+
+  const getSize = (size) => (
+    \`\${(size / (1024 * 1024)).toFixed(2)} MB\`
+  );
+
+  const onDelete = (fileItem) => {
+    const updatedFiles = files.filter((file) => file.id !== fileItem.id);
+    setFiles(updatedFiles);
+  };
+
+  const onDropHandler = (event, acceptedFiles, rejectedFiles) => {
+    const acceptedFileDetailList = acceptedFiles.map((file, id) => (
+      {
+        file,
+        id: files.length + id,
+        fileSize: getSize(file.size),
+        networkError: false,
+      }
+    ));
+
+    const rejectedFilesDetailList = rejectedFiles.map((rejectedFile, id) => {
+      const { file, errors } = rejectedFile;
+      const errorMessageArray = errors.map((error) => error.message);
+      return {
+        file,
+        id: files.length + id,
+        fileSize: getSize(file.size),
+        status: 'error',
+        errorMessage: errorMessageArray.join(' and '),
+        networkError: false,
+      };
+    });
+    const updatedFiles = [...files, ...acceptedFileDetailList, ...rejectedFilesDetailList];
+    setFiles(updatedFiles);
+  };
+
+  const actionRenderer = (fileItem) => {
+    return (
+      <React.Fragment>
+        {fileItem.networkError && (
+          <Button
+            appearance="transparent"
+            icon="refresh"
+            size="regular"
+            className={'cursor-pointer'}
+          />
+        )}
+        <Button
+          appearance="transparent"
+          icon="close"
+          size="regular"
+          onClick={() => onDelete(fileItem)}
+          className={'cursor-pointer'}
+        />
+      </React.Fragment>
+    );
+  }
+
   return (
-    <Dropzone
-      formatLabel='Accepted formats: PDF, jpg'
-      sizeLabel='Maximum size: 25 MB'
-      disabled={false}
-      onDrop={(event, acceptedFiles, rejectedFiles) => { console.log(acceptedFiles, rejectedFiles) }}
-      sampleFileLink={(
-        <Link
-          href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
-          download="Test.pdf"
-          target="_blank"
-        >
-          Download sample file
-        </Link>
-      )}
-    />
+    <React.Fragment>
+      <Dropzone
+        accept="image/jpeg, image/png"
+        formatLabel="Accepted formats: PDF, jpg"
+        sizeLabel="Maximum size: 25 MB"
+        multiple={true}
+        onDrop={onDropHandler}
+        className="mb-5"
+        sampleFileLink={(
+          <Link
+            href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
+            download="Test.pdf"
+            target="_blank"
+          >
+            Download sample file
+          </Link>
+        )}
+      />
+      <FileList
+        fileList={files}
+        actionRenderer={actionRenderer}
+      />
+    </React.Fragment>
   );
 }`;
 
