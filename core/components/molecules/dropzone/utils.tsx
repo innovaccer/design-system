@@ -48,11 +48,11 @@ export const isEvtWithFiles = (event: any) => {
   );
 };
 
-export const isKindFile = (item: any) => {
+export const isKindFile = (item: null | Record<string, unknown>) => {
   return typeof item === 'object' && item !== null && item.kind === 'file';
 };
 
-export const onDocumentDragOver = (event: any) => {
+export const onDocumentDragOver = (event: DragEvent) => {
   event.preventDefault();
 };
 
@@ -60,8 +60,10 @@ export const isIeOrEdge = (userAgent = window.navigator.userAgent) => {
   return isIe(userAgent) || isEdge(userAgent);
 };
 
-export const composeEventHandlers = (...fns: any[]) => {
-  return (event: any, ...args: any[]) =>
+type functype = (event: Event, ...args: unknown[]) => void;
+
+export const composeEventHandlers = (...fns: functype[]) => {
+  return (event: Event, ...args: unknown[]) =>
     fns.some((fn) => {
       if (!isPropagationStopped(event) && fn) {
         fn(event, ...args);

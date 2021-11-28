@@ -240,7 +240,6 @@ describe('Vertical Navigation component prop: onClick', () => {
     const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Item')[menuClicked];
     fireEvent.click(activeMenu);
     expect(onClick).toHaveBeenCalled();
-    // @ts-ignore
-    expect(onClick).toHaveBeenCalledWith(menus[menuClicked].subMenu[0]);
+    expect(onClick).toHaveBeenCalledWith(menus[menuClicked].subMenu![0]);
   });
 });

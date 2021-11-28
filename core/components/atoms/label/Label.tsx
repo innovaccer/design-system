@@ -50,7 +50,7 @@ export const Label = (props: LabelProps) => {
     'Label--disabled': disabled,
   });
 
-  const renderInfo = (isRequired: boolean = false, isOptional?: boolean) => {
+  const renderInfo = (isRequired = false, isOptional?: boolean) => {
     if (isRequired) {
       return <span className="Label-requiredIndicator" data-test="DesignSystem-Label--RequiredIndicator" />;
     }

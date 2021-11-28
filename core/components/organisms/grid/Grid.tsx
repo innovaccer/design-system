@@ -288,6 +288,9 @@ export interface GridState {
 
 export class Grid extends React.Component<GridProps, GridState> {
   static defaultProps: GridProps;
+  gridRef: GridRef = null;
+  isHeadSyncing = false;
+  isBodySyncing = false;
 
   constructor(props: GridProps) {
     super(props);
@@ -326,10 +329,6 @@ export class Grid extends React.Component<GridProps, GridState> {
       this.addScrollListeners();
     }
   }
-
-  gridRef: GridRef = null;
-  isHeadSyncing: boolean = false;
-  isBodySyncing: boolean = false;
 
   addScrollListeners() {
     const gridHeadEl = this.gridRef!.querySelector('.Grid-head');

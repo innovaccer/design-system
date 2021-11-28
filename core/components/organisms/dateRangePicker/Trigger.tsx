@@ -130,7 +130,7 @@ export const Trigger = (props: TriggerProps) => {
           value={
             startDate
               ? translateToString(inputFormat, startDate)
-              : init // @ts-ignore
+              : init
               ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar)
               : ''
           }
@@ -162,7 +162,7 @@ export const Trigger = (props: TriggerProps) => {
           value={
             endDate
               ? translateToString(inputFormat, endDate)
-              : init // @ts-ignore
+              : init
               ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar)
               : ''
           }

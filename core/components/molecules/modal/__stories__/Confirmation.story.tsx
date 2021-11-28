@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Modal, ModalDescription, Button, Paragraph, Text } from '@/index';
+import { Modal, Button, Paragraph, Text } from '@/index';
 
 export const confirmations = () => {
   const [open, setOpen] = React.useState(true);

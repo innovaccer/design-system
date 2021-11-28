@@ -51,12 +51,18 @@ type SelectionPos = {
   end: number;
 };
 
+type InputMaskType = React.ForwardRefExoticComponent<InputProps & MaskProps & React.RefAttributes<HTMLInputElement>> & {
+  utils: {
+    getDefaultValue: typeof getDefaultValue;
+  };
+};
+
 /**
  * It works as Uncontrolled Input
  *
  * **Updated value can be passed**
  */
-export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, forwardRef) => {
+const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, forwardRef) => {
   const {
     mask: maskProp,
     value: valueProp,
@@ -97,7 +103,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     return { start: pos, end: pos };
   };
 
-  const getPlaceholderValue = (start: number = 0, end: number = mask.length - 1) =>
+  const getPlaceholderValue = (start = 0, end: number = mask.length - 1) =>
     getDefaultValue(mask, placeholderChar).slice(start, end + 1);
 
   const getSelectionLength = (val: SelectionPos) => Math.abs(val.end - val.start);
@@ -138,7 +144,7 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
     deferId.current = window.requestAnimationFrame(updateSelection);
   };
 
-  const insertAtIndex = (currValue: string, index: number, iterator: number = 0) => {
+  const insertAtIndex = (currValue: string, index: number, iterator = 0) => {
     let newValue = '';
     const newIndex = index + 1;
     let newIterator = iterator;
@@ -283,9 +289,16 @@ export const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((pro
 });
 
 InputMask.displayName = 'InputMask';
-// @ts-ignore
-InputMask.utils = {
+// we are adding a new property which is not present in default interface
+// we could have explicitly added the interface above with definition
+// but then it would force us to marks utils as optional
+// as we cannot add new properties by defining the InputMask
+// that would cause user to use `!` everywhere or check for utils
+(InputMask as InputMaskType).utils = {
   getDefaultValue,
 };
 
-export default InputMask;
+const X = InputMask as InputMaskType;
+
+export { X as InputMask };
+export default X as InputMaskType;

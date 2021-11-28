@@ -119,6 +119,15 @@ export interface DateRangePickerState {
 }
 
 export class DateRangePicker extends React.Component<DateRangePickerProps, DateRangePickerState> {
+  static utils = {
+    getCurrentWeek,
+    getPreviousWeek,
+    getPreviousMonth,
+    getPrevious90Days,
+    getCustomDates,
+    getCurrentYear,
+    getCurrentMonth,
+  };
   static defaultProps = {
     ...Calendar.defaultProps,
     children: <></>,
@@ -431,15 +440,5 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
     return this.renderCalendar();
   }
 }
-// @ts-ignore
-DateRangePicker.utils = {
-  getCurrentWeek,
-  getPreviousWeek,
-  getPreviousMonth,
-  getPrevious90Days,
-  getCustomDates,
-  getCurrentYear,
-  getCurrentMonth,
-};
 
 export default DateRangePicker;
