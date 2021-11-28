@@ -92,10 +92,10 @@ const sizeMapping = {
   large: 20,
 };
 
-const capMin = (min: number = -Infinity, value: number) =>
+const capMin = (min = -Infinity, value: number) =>
   isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0) ? value : Math.max(min, value);
 
-const capMax = (max: number = +Infinity, value: number) =>
+const capMax = (max = +Infinity, value: number) =>
   isNaN(max) || (!max && max !== 0) || isNaN(value) || (!value && value !== 0) ? value : Math.min(max, value);
 
 /**

@@ -9,10 +9,10 @@ export const firstDayOfWeek = () => {
 
   const style = {
     flexWrap: 'wrap',
-  };
+  } as const;
+  // to freeze the object for typescript
 
   return (
-    // @ts-ignore
     <div className="d-flex" style={style}>
       {values.map((v, index) => (
         <div className="mr-9 mt-5" key={index}>

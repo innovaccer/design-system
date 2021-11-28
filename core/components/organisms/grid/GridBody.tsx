@@ -1,5 +1,4 @@
 import * as React from 'react';
-// @ts-ignore
 import VirtualScroll from 'react-dynamic-virtual-scroll';
 import { GridRow } from './GridRow';
 import { GridState, onSelectFn, Schema, updatePrevPageInfoFunction } from './Grid';

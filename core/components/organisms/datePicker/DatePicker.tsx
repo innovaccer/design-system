@@ -198,7 +198,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const { date } = this.state;
     const { months } = config;
     const todayDate = new Date(Date.now());
-    const todayMonthAndDate: string = `${months[todayDate.getMonth()]} ${todayDate.getDate()}`;
+    const todayMonthAndDate = `${months[todayDate.getMonth()]} ${todayDate.getDate()}`;
     const currDate = convertToDate(date, inputFormat, validators);
     const dateDisabledBefore = convertToDate(disabledBefore, inputFormat, validators);
     const dateDisabledAfter = convertToDate(disabledAfter, inputFormat, validators);

@@ -352,7 +352,7 @@ describe('Dropdown component', () => {
 
 describe('renders dropdown component onKeyDown Handler', () => {
   const dropdownListId = 'DesignSystem-DropdownList-Wrapper';
-  keyDownEvents.forEach((action, key) => {
+  keyDownEvents.forEach((action) => {
     it(`checks for keyDown ${action} event with dropdownOpen set as true `, () => {
       const { getByTestId } = render(
         <Dropdown

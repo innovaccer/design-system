@@ -57,7 +57,7 @@ export const TimePicker = (props: TimePickerProps) => {
     setTime(updatedTime);
   }, [timeProp]);
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>, val: string = '') => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>, val = '') => {
     const updatedTime = val?.toUpperCase();
     setTime(updatedTime);
 
@@ -66,7 +66,7 @@ export const TimePicker = (props: TimePickerProps) => {
     }
   };
 
-  const onBlurHandler = (e: React.ChangeEvent<HTMLInputElement>, val: string = '') => {
+  const onBlurHandler = (e: React.ChangeEvent<HTMLInputElement>, val = '') => {
     const updatedTime = translateToTime(inputFormat, time);
     setInit(true);
 
@@ -102,11 +102,7 @@ export const TimePicker = (props: TimePickerProps) => {
       {...inputOptions}
       mask={mask}
       value={
-        time
-          ? translateToTime(inputFormat, time)
-          : init // @ts-ignore
-          ? InputMask.utils.getDefaultValue(mask, placeholderChar)
-          : ''
+        time ? translateToTime(inputFormat, time) : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : ''
       }
       validators={inputValidator}
       onChange={onChangeHandler}

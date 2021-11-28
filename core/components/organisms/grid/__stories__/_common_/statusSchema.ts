@@ -1,6 +1,4 @@
 import { Schema } from '../../Grid';
-// @ts-ignore
-import iconImg from './image.png';
 
 const schema: Schema = [
   {

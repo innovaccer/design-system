@@ -53,7 +53,11 @@ describe('Avatar component', () => {
 
 describe('Avatar component', () => {
   it('renders initials when firstName,lastName,children are given', () => {
-    const { getByTestId } = render(<Avatar firstName="Design" lastName="System" children="Hey" />);
+    const { getByTestId } = render(
+      <Avatar firstName="Design" lastName="System">
+        Hey
+      </Avatar>
+    );
     expect(getByTestId('DesignSystem-Avatar').textContent).toMatch('He');
   });
 
@@ -68,7 +72,7 @@ describe('Avatar component', () => {
   });
 
   it('renders initials when only children is given', () => {
-    const { getByTestId } = render(<Avatar children="Design System" />);
+    const { getByTestId } = render(<Avatar>Design System</Avatar>);
     expect(getByTestId('DesignSystem-Avatar').textContent).toMatch('De');
   });
 
@@ -85,7 +89,7 @@ describe('Avatar component', () => {
 
 describe('Avatar component tagName', () => {
   it('renders tagName', () => {
-    const { getByTestId } = render(<Avatar children="Design System" />);
+    const { getByTestId } = render(<Avatar>Design System</Avatar>);
     expect(getByTestId('DesignSystem-Avatar').tagName).toMatch('SPAN');
   });
 });
@@ -100,7 +104,7 @@ describe('Avatar Component with overwrite class', () => {
 describe('Avatar component with prop:appearance', () => {
   appearances.forEach((color) => {
     it(`should have the Avatar--${color} class when appearance=${color} `, () => {
-      const { getByTestId } = render(<Avatar children="Design" appearance={color} />);
+      const { getByTestId } = render(<Avatar appearance={color}>Design</Avatar>);
       expect(getByTestId('DesignSystem-Avatar')).toHaveClass(`Avatar--${color}`);
     });
   });
@@ -108,12 +112,12 @@ describe('Avatar component with prop:appearance', () => {
 
 describe('Avatar component with prop:size', () => {
   it('should have the Avatar--regular class when size is regular', () => {
-    const { getByTestId } = render(<Avatar children="Design" />);
+    const { getByTestId } = render(<Avatar>Design</Avatar>);
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--regular');
   });
 
   it('should have the Avatar--tiny class when size is tiny', () => {
-    const { getByTestId } = render(<Avatar children="Design" size={'tiny'} />);
+    const { getByTestId } = render(<Avatar size={'tiny'}>Design</Avatar>);
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--tiny');
   });
 });

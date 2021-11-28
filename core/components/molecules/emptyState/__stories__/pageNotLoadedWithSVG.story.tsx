@@ -17,11 +17,11 @@ export const pageNotLoadedWithSVG = () => {
             xmlnsXlink="http://www.w3.org/1999/xlink"
           >
             <title>Group 17</title>
-            <g id="Error-States" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Error-States" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g id="Artboard-Copy-31" transform="translate(-289.000000, -119.000000)">
                 <g id="Group-17" transform="translate(290.000000, 119.000000)">
                   <g id="Group-14">
-                    <g id="Group-25" transform="translate(0.000000, 366.044314)" stroke-linecap="round">
+                    <g id="Group-25" transform="translate(0.000000, 366.044314)" strokeLinecap="round">
                       <line
                         x1="10"
                         y1="1.5"
@@ -29,7 +29,7 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8"
                         stroke="#D4D4D4"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       />
                       <line
                         x1="71"
@@ -38,7 +38,7 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-7"
                         stroke="#D4D4D4"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       />
                       <line
                         x1="169"
@@ -47,8 +47,8 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-8"
                         stroke="#D4D4D4"
-                        stroke-width="3"
-                        stroke-linejoin="round"
+                        strokeWidth="3"
+                        strokeLinejoin="round"
                       />
                       <line x1="0" y1="1.5" x2="2" y2="1.5" id="Line-8-Copy-3" stroke="#A8A7A7" />
                       <line
@@ -58,7 +58,7 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-5"
                         stroke="#D4D4D4"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       />
                       <line
                         x1="560"
@@ -67,7 +67,7 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-2"
                         stroke="#D4D4D4"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       />
                       <line
                         x1="707"
@@ -76,7 +76,7 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-9"
                         stroke="#D4D4D4"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       />
                       <line
                         x1="851"
@@ -85,7 +85,7 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-12"
                         stroke="#D4D4D4"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       />
                       <line
                         x1="550"
@@ -94,7 +94,7 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-13"
                         stroke="#D4D4D4"
-                        stroke-linejoin="round"
+                        strokeLinejoin="round"
                       />
                       <line
                         x1="245"
@@ -103,8 +103,8 @@ export const pageNotLoadedWithSVG = () => {
                         y2="1.5"
                         id="Line-8-Copy-11"
                         stroke="#D4D4D4"
-                        stroke-width="3"
-                        stroke-linejoin="round"
+                        strokeWidth="3"
+                        strokeLinejoin="round"
                       />
                       <line x1="560" y1="1.5" x2="572" y2="1.5" id="Line-8-Copy-6" stroke="#A8A7A7" />
                     </g>
@@ -112,7 +112,7 @@ export const pageNotLoadedWithSVG = () => {
                       <g id="Group-7" transform="translate(0.000000, 139.000000)" stroke="#2D2B2B">
                         <g id="Group-2" transform="translate(110.000000, 64.799664)">
                           <circle id="Oval" fill="#2D2B2B" cx="41.5" cy="53.5" r="3.5" />
-                          <g id="Group" stroke-linecap="round">
+                          <g id="Group" strokeLinecap="round">
                             <g id="Group-3" transform="translate(0.479185, 0.479185)">
                               <line
                                 x1="-1.14563404"
@@ -151,7 +151,7 @@ export const pageNotLoadedWithSVG = () => {
                             </g>
                           </g>
                         </g>
-                        <g id="Group-15" stroke-linecap="round">
+                        <g id="Group-15" strokeLinecap="round">
                           <path
                             d="M12,4.26325641e-14 L288.023484,4.26325641e-14 C294.650901,3.96387706e-14 300.023484,5.372583 300.023484,12 L300.023484,153.220226 L300.023484,153.220226 L-3.97903932e-13,153.220226 L-3.97903932e-13,12 C-4.00491913e-13,5.372583 5.372583,4.20736441e-14 12,4.26325641e-14 Z"
                             id="Rectangle"
@@ -161,7 +161,7 @@ export const pageNotLoadedWithSVG = () => {
                             id="Rectangle-Copy-3"
                           />
                         </g>
-                        <g id="Group-23" transform="translate(110.090476, 179.195289)" stroke-linecap="round">
+                        <g id="Group-23" transform="translate(110.090476, 179.195289)" strokeLinecap="round">
                           <g id="Group-22">
                             <rect id="Rectangle" x="24" y="0.339622642" width="32" height="42" />
                             <rect
@@ -205,7 +205,7 @@ export const pageNotLoadedWithSVG = () => {
                           x2="298.768563"
                           y2="20.2493691"
                           id="Line-Copy-2"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                       </g>
                       <g id="Group-12-Copy" transform="translate(446.119654, 224.237839)">
@@ -251,13 +251,13 @@ export const pageNotLoadedWithSVG = () => {
                           d="M57.880346,67.5369449 C38.9408126,74.1814305 0.159841768,74.5285405 0.159841768,37.3246409 C1.35555104,22.0427524 33.6341456,26.192421 40.1414615,26.192421 C46.6487775,26.192421 62.6014465,30.7058259 70.535254,30.7058259 C78.4690614,30.7058259 62.6014465,18.8373312 70.535254,3.95074746 C73.3002735,-2.24633295 76.4153041,-0.444383806 79.880346,9.35659488"
                           id="Path-42"
                           stroke="#2D2B2B"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M83.3843933,28.0967511 C78.6990518,18.3415279 80.5259955,9.09259547 88.8652243,0.349953887 C97.6219004,-3.69874926 101.730766,28.0967511 101.730766,58.7621614 C104.19468,74.3896189 115.391837,80.1938166 132.042878,97.891113 C154.421962,124.198633 153.21582,157.738198 136.445274,171.921811 C128.177642,178.359007 83.3843933,173.389881 72.5010672,174.806475 C61.6177411,176.22307 63.880346,167.490305 69.9178111,163.241646 C75.9552761,158.992986 83.615842,163.43591 86.3761751,157.157207 C89.1365081,150.878504 79.880346,125.084895 101.730766,105.449223"
                           id="Path-43"
                           stroke="#2D2B2B"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M0.159841768,40.0319085 C1.45898037,34.5592927 3.28782305,31.3102396 5.64636981,30.2847495 C6.49004216,29.9179229 11.2404186,28.2135424 12.131247,28.0967511 C14.4649583,37.2514914 7.09664695,40.6483281 2.81130343,40.9621489 C0.490203836,41.8714293 -0.393616719,41.5613492 0.159841768,40.0319085 Z"
@@ -271,7 +271,7 @@ export const pageNotLoadedWithSVG = () => {
                           id="Path-47"
                           stroke="#2D2B2B"
                           fill="#F5F5F5"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                         />
                         <path
                           d="M145.943375,153.047021 C146.721054,153.205985 147.315607,153.289058 147.727034,153.29624 C148.138461,153.303421 148.640232,153.303421 149.232346,153.29624 L147.623459,159.230069 C146.767427,159.452105 145.998949,159.55718 145.318026,159.545295 C144.637102,159.533409 144.051269,159.458028 143.560527,159.319151 L145.943375,153.047021 Z"
@@ -284,14 +284,14 @@ export const pageNotLoadedWithSVG = () => {
                         d="M190,368.487294 L234.238468,368.487294 C239.314319,369.290012 245.614592,367.654648 253.139286,363.581201 C264.426327,357.471032 267.858415,368.487294 277.858415,368.487294 C284.525082,368.487294 290.564169,368.487294 295.975677,368.487294 C308.105846,367.752847 318.818393,364.898703 328.113318,359.924862 C337.408243,354.951021 346.885938,356.1698 356.546405,363.581201 C363.362552,366.85193 373.370179,368.487294 386.569285,368.487294 C399.768392,368.487294 405.050452,368.487294 402.415465,368.487294 C421.922996,370.753312 431.676762,356.969067 431.676762,327.13456 C435.09453,283.738068 431.354405,251.489375 454.391603,251 C465.05827,251 469.927735,262.333333 469,285"
                         id="Path-40"
                         stroke="#2D2B2B"
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                       />
                       <g id="Group-11" transform="translate(335.000000, 248.000000)" stroke="#2D2B2B">
-                        <rect id="Rectangle" stroke-linecap="round" x="0" y="0" width="53" height="55" rx="11" />
+                        <rect id="Rectangle" strokeLinecap="round" x="0" y="0" width="53" height="55" rx="11" />
                         <rect
                           id="Rectangle-Copy"
                           fill="#D8D8D8"
-                          stroke-linecap="round"
+                          strokeLinecap="round"
                           x="9"
                           y="10"
                           width="35"
@@ -309,7 +309,7 @@ export const pageNotLoadedWithSVG = () => {
                         opacity="0.292457217"
                         transform="translate(666.000000, 175.000000)"
                         stroke="#2D2B2B"
-                        stroke-linecap="round"
+                        strokeLinecap="round"
                       >
                         <g id="Group-10" transform="translate(0.210927, 0.216768)">
                           <path
@@ -375,13 +375,13 @@ export const pageNotLoadedWithSVG = () => {
                       </g>
                     </g>
                   </g>
-                  <g id="Group-4" transform="translate(510.000000, 285.000000)" stroke="#2D2B2B" stroke-linecap="round">
+                  <g id="Group-4" transform="translate(510.000000, 285.000000)" stroke="#2D2B2B" strokeLinecap="round">
                     <path
                       d="M0.140579809,20 L15.7942732,20 C16.7811299,6.66666667 14.217576,0 8.10361158,0 C1.98964714,0 -0.664696781,6.66666667 0.140579809,20 Z"
                       id="Path-41"
                       fill="#D8D8D8"
                     />
-                    <g id="Group-5" transform="translate(4.000000, 19.000000)" stroke-width="2">
+                    <g id="Group-5" transform="translate(4.000000, 19.000000)" strokeWidth="2">
                       <line x1="1" y1="1.997831" x2="1" y2="8.875" id="Line-2" />
                       <line x1="8" y1="1.997831" x2="8" y2="8.875" id="Line-2-Copy" />
                     </g>

@@ -12,10 +12,10 @@ export const showMenu = () => {
   const style = {
     display: 'flex',
     flexWrap: 'wrap',
-  };
+  } as const;
+  // to freeze the object for typescript
 
   return (
-    // @ts-ignore
     <div style={style}>
       {values.map((v, index) => (
         <div
