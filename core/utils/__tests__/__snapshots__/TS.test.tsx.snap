@@ -9,6 +9,7 @@ exports[`TS renders children 1`] = `
     <i
       class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
       data-test="DesignSystem-Avatar--Icon"
+      role="button"
       style="font-size: 16px; width: 16px;"
     >
       person_round
@@ -114,6 +115,7 @@ exports[`TS renders children 1`] = `
                 <i
                   class="material-icons material-icons-round Icon Icon--default"
                   data-test="DesignSystem-Button--Icon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   arrow_back_round
@@ -134,6 +136,7 @@ exports[`TS renders children 1`] = `
                 </h5>
                 <i
                   class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   keyboard_arrow_down_round
@@ -150,6 +153,7 @@ exports[`TS renders children 1`] = `
                 </h5>
                 <i
                   class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   keyboard_arrow_down_round
@@ -168,6 +172,7 @@ exports[`TS renders children 1`] = `
                 <i
                   class="material-icons material-icons-round Icon Icon--default"
                   data-test="DesignSystem-Button--Icon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   arrow_forward_round
@@ -759,6 +764,7 @@ exports[`TS renders children 1`] = `
         </div>
         <i
           class="material-icons material-icons-round Icon Icon--default"
+          role="button"
           style="font-size: 16px; width: 16px;"
         >
           keyboard_arrow_down_round
@@ -796,6 +802,7 @@ exports[`TS renders children 1`] = `
               />
               <i
                 class="material-icons material-icons-round Icon Icon--default"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -836,6 +843,7 @@ exports[`TS renders children 1`] = `
   </h4>
   <i
     class="material-icons material-icons-round Icon"
+    role="button"
     style="font-size: 16px; width: 16px;"
   >
     Hello World!_round
@@ -932,6 +940,7 @@ exports[`TS renders children 1`] = `
     <i
       class="material-icons material-icons-round Icon Icon--info Message-icon Message-icon--info"
       data-test="DesignSystem-Message--Icon"
+      role="button"
       style="font-size: 16px; width: 16px;"
     >
       info_round
@@ -1493,6 +1502,7 @@ exports[`TS renders children 1`] = `
   >
     <i
       class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+      role="button"
       style="font-size: 16px; width: 16px;"
     >
       info_round
@@ -1568,6 +1578,7 @@ exports[`TS renders children 1`] = `
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             close_round
@@ -1621,6 +1632,7 @@ exports[`TS renders children 1`] = `
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             first_page_round
@@ -1639,6 +1651,7 @@ exports[`TS renders children 1`] = `
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_before_round
@@ -1661,6 +1674,7 @@ exports[`TS renders children 1`] = `
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_next_round
@@ -1679,6 +1693,7 @@ exports[`TS renders children 1`] = `
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             last_page_round
@@ -1766,6 +1781,7 @@ exports[`TS renders children 1`] = `
             <i
               class="material-icons material-icons-round Icon Icon--default"
               data-test="DesignSystem-Button--Icon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               arrow_back_round
@@ -1786,6 +1802,7 @@ exports[`TS renders children 1`] = `
             </h5>
             <i
               class="material-icons material-icons-round Icon Icon--inverse pl-3"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down_round
@@ -1802,6 +1819,7 @@ exports[`TS renders children 1`] = `
             </h5>
             <i
               class="material-icons material-icons-round Icon Icon--inverse pl-3"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               keyboard_arrow_down_round
@@ -1820,6 +1838,7 @@ exports[`TS renders children 1`] = `
             <i
               class="material-icons material-icons-round Icon Icon--default"
               data-test="DesignSystem-Button--Icon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               arrow_forward_round

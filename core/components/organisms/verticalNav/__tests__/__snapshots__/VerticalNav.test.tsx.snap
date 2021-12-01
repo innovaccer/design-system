@@ -18,6 +18,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assignment_ind_round
@@ -34,6 +35,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             forum_round
@@ -49,6 +51,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--info"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assignment_ind_round
@@ -64,6 +67,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             events_round
@@ -80,6 +84,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             airline_seat_flat_angled_round
@@ -96,6 +101,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             favorite_round
@@ -135,6 +141,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assignment_ind_round
@@ -173,6 +180,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             forum_round
@@ -186,6 +194,7 @@ exports[`Vertical Navigation component
         </div>
         <i
           class="material-icons material-icons-round Icon Icon--subtle mx-4"
+          role="button"
           style="font-size: 16px; width: 16px;"
         >
           keyboard_arrow_up_round
@@ -200,6 +209,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--info mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assignment_ind_round
@@ -221,6 +231,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             events_round
@@ -243,6 +254,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--disabled mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             airline_seat_flat_angled_round
@@ -271,6 +283,7 @@ exports[`Vertical Navigation component
           <i
             class="material-icons material-icons-round Icon Icon--default mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             favorite_round
@@ -284,6 +297,7 @@ exports[`Vertical Navigation component
         </div>
         <i
           class="material-icons material-icons-round Icon Icon--subtle mx-4"
+          role="button"
           style="font-size: 16px; width: 16px;"
         >
           keyboard_arrow_down_round

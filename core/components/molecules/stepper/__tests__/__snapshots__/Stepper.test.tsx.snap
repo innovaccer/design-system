@@ -15,6 +15,7 @@ exports[`Stepper component
       <i
         class="material-icons material-icons-round Icon Icon--info mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle_round
@@ -33,6 +34,7 @@ exports[`Stepper component
       <i
         class="material-icons material-icons-round Icon Icon--info mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked_round
@@ -51,6 +53,7 @@ exports[`Stepper component
       <i
         class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked_round
@@ -69,6 +72,7 @@ exports[`Stepper component
       <i
         class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4"
         data-test="DesignSystem-Step--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         radio_button_unchecked_round

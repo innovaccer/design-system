@@ -440,6 +440,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 20px; width: 20px;"
         >
           events_round
@@ -467,6 +468,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 20px; width: 20px;"
         >
           events_round
@@ -494,6 +496,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 20px; width: 20px;"
         >
           events_round
@@ -537,6 +540,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events_round
@@ -564,6 +568,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events_round
@@ -591,6 +596,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 16px; width: 16px;"
         >
           events_round
@@ -634,6 +640,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 12px; width: 12px;"
         >
           events_round
@@ -661,6 +668,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 12px; width: 12px;"
         >
           events_round
@@ -688,6 +696,7 @@ exports[`Button component
         <i
           class="material-icons material-icons-round Icon Icon--default"
           data-test="DesignSystem-Button--Icon"
+          role="button"
           style="font-size: 12px; width: 12px;"
         >
           events_round

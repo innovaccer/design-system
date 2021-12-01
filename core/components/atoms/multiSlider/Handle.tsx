@@ -116,6 +116,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
     const { stepSize, value } = this.props;
     const { keyCode } = event;
 
+    // TODO(a11y): add ARROW_DOWN & ARROW_UP too
     if (keyCode === Keys.ARROW_LEFT) {
       this.changeValue(value - stepSize);
       event.preventDefault();
