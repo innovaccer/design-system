@@ -10,7 +10,7 @@ exports[`Sidesheet component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Overlay-container Overlay-container--open"
+      class="Row Overlay-container fade-in Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-SidesheetContainer"
     >
@@ -33,7 +33,7 @@ exports[`Sidesheet component
                 class="OverlayHeader-headerWrapper"
               >
                 <h4
-                  class="Heading Heading--m Heading--default"
+                  class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
                 >
                   Heading
@@ -98,7 +98,7 @@ exports[`Sidesheet component
     class="Overlay-wrapper"
   >
     <div
-      class="Row Overlay-container Overlay-container--open"
+      class="Row Overlay-container fade-in Overlay-container--open"
       data-layer="true"
       data-test="DesignSystem-SidesheetContainer"
     >
@@ -121,7 +121,7 @@ exports[`Sidesheet component
                 class="OverlayHeader-headerWrapper"
               >
                 <h4
-                  class="Heading Heading--m Heading--default"
+                  class="Heading Heading--m Heading--default Sidesheet-header--shiftLeft"
                   data-test="DesignSystem-OverlayHeader--heading"
                 >
                   Heading

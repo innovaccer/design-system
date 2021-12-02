@@ -136,7 +136,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Modal',
+        title: 'Sidesheet',
         noHtml: true,
       },
     },

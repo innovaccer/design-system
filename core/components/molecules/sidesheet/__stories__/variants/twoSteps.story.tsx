@@ -6,12 +6,20 @@ import { Heading, Text, Paragraph, Sidesheet, ModalDescription, Button } from '@
 
 export const twoSteps = () => {
   const [page, setPage] = React.useState(2);
+  const [animate, setAnimate] = React.useState(true);
 
   const open = boolean('open', true);
   const seperator = boolean('seperator', false);
   const stickFooter = boolean('stick bottom', false);
   const backdropClose = boolean('backdropClose', false);
   const dimension = select('dimension', ['regular', 'large'], 'regular');
+
+  React.useEffect(() => {
+    setAnimate(true);
+    return () => {
+      setAnimate(false);
+    };
+  }, [page]);
 
   const onClose = () => {
     updateKnob('open', false);
@@ -83,10 +91,12 @@ export const twoSteps = () => {
         <br />
       </Paragraph>
       <Sidesheet {...options}>
-        <Heading size="s">{`Page ${page}`}</Heading>
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <div className={animate ? 'fade-in' : ''} onAnimationEnd={() => setAnimate(false)}>
+          <Heading size="s">{`Page ${page}`}</Heading>
+          <Text>Modal Body</Text>
+          <ModalDescription {...modalDescriptionOptions} />
+          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        </div>
       </Sidesheet>
     </div>
   );
@@ -95,10 +105,18 @@ export const twoSteps = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(true);
   const [page, setPage] = React.useState(2);
+  const [animate, setAnimate] = React.useState(true);
 
   const onClose = () => {
     setOpen(!open);
   };
+
+  React.useEffect(() => {
+    setAnimate(true);
+    return () => {
+      setAnimate(false);
+    }
+  }, [page])
 
   const backIconCallback = (e) => {
     console.log('back icon clicked');
@@ -109,7 +127,7 @@ const customCode = `() => {
     backIconCallback,
     backIcon: page === 2,
     heading: \`Heading \${page}\`,
-    subHeading: 'Subheading'
+    subHeading: 'Subheading',
   };
 
   const options = {
@@ -171,10 +189,15 @@ const customCode = `() => {
         <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
       </Paragraph>
       <Sidesheet {...options} >
-        <Heading size="s">{\`Page \${page}\`}</Heading>
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <div 
+          className={ animate ? 'fade-in' : ''} 
+          onAnimationEnd={() => setAnimate(false)}
+        >
+          <Heading size="s">{\`Page \${page}\`}</Heading>
+          <Text>Modal Body</Text>
+          <ModalDescription {...modalDescriptionOptions} />
+          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        </div>
       </Sidesheet>
     </div>
   );
@@ -187,7 +210,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Modal',
+        title: 'Sidesheet',
         noHtml: true,
       },
     },
