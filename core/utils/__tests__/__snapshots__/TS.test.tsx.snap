@@ -926,12 +926,19 @@ exports[`TS renders children 1`] = `
     Hello World!
   </a>
   <div
-    class="Message Message--default"
+    class="Message Message--info"
     data-test="DesignSystem-Message"
   >
+    <i
+      class="material-icons material-icons-round Icon Icon--info Message-icon Message-icon--info"
+      data-test="DesignSystem-Message--Icon"
+      style="font-size: 16px; width: 16px;"
+    >
+      info_round
+    </i>
     <div>
       <span
-        class="Text Text--default Text--regular Message-text Message-text--default"
+        class="Text Text--default Text--regular Message-text Message-text--info"
         data-test="DesignSystem-Message--Description"
       >
         Hello World!

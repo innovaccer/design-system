@@ -4,7 +4,7 @@ import { Message, Text } from '@/index';
 import { MessageProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const appearances: Props['appearance'][] = ['default', 'alert', 'info', 'warning', 'success'];
+const appearances: Props['appearance'][] = ['alert', 'info', 'warning', 'success'];
 const title = 'Title goes here';
 const description = 'Description goes here';
 const actions = (
@@ -72,11 +72,6 @@ describe('Message component with prop:appearance', () => {
       const { getByTestId } = render(<Message appearance={appearance} description={description} />);
       expect(getByTestId('DesignSystem-Message')).toHaveClass(`Message--${appearance}`);
     });
-  });
-
-  it('should not render icon if appearance is default', () => {
-    const { queryByTestId } = render(<Message appearance="default" description={description} />);
-    expect(queryByTestId('DesignSystem-Message--Icon')).not.toBeInTheDocument();
   });
 });
 
