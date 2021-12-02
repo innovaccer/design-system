@@ -53,51 +53,6 @@ exports[`Message component
 `;
 
 exports[`Message component 
-  appearance: "default", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]"
- 1`] = `
-<body>
-  <div>
-    <div
-      class="Message Message--default"
-      data-test="DesignSystem-Message"
-    >
-      <div>
-        <h5
-          class="Heading Heading--s Heading--default Message-heading Message-heading--default"
-          data-test="DesignSystem-Message--Title"
-        >
-          Title goes here
-        </h5>
-        <span
-          class="Text Text--default Text--regular Message-text Message-text--default"
-          data-test="DesignSystem-Message--Description"
-        >
-          Description goes here
-        </span>
-        <div
-          class="Message-actions"
-          data-test="DesignSystem-Message--actions"
-        >
-          <span
-            class="Text Text--link Text--regular mr-5 cursor-pointer"
-            data-test="DesignSystem-Text"
-          >
-            Action 1
-          </span>
-          <span
-            class="Text Text--link Text--regular cursor-pointer"
-            data-test="DesignSystem-Text"
-          >
-            Action 2
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`Message component 
   appearance: "info", title: "Title goes here", description: "Description goes here", actions: "[ReactNode]"
  1`] = `
 <body>

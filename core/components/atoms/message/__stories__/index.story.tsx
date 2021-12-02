@@ -4,7 +4,7 @@ import { Message, Text } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const appearance = select('appearance', ['default', 'alert', 'info', 'success', 'warning'], undefined);
+  const appearance = select('appearance', ['alert', 'info', 'success', 'warning'], undefined);
 
   const title = text('title', 'Design System');
 
