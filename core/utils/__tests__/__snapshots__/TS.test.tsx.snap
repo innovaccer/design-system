@@ -1482,8 +1482,14 @@ exports[`TS renders children 1`] = `
     rows="3"
   />
   <div
-    class="Toast Toast--default"
+    class="Toast Toast--info"
   >
+    <i
+      class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+      style="font-size: 16px; width: 16px;"
+    >
+      info_round
+    </i>
     <div
       class="Toast-body"
     >
@@ -1491,13 +1497,13 @@ exports[`TS renders children 1`] = `
         class="Toast-title"
       >
         <h5
-          class="Heading Heading--s Heading--white Toast-heading Toast-heading--default"
+          class="Heading Heading--s Heading--white Toast-heading Toast-heading--info"
           data-test="DesignSystem-Heading"
         >
           Hello World!
         </h5>
         <i
-          class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--default"
+          class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
           role="button"
           style="font-size: 16px; width: 16px;"
           tabindex="0"
