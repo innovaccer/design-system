@@ -119,7 +119,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     };
   }
 
-  onOutsideClickHandler = (event: KeyboardEvent) => {
+  onOutsideClickHandler = (event: Event) => {
     OverlayManager.remove(this.modalRef.current);
 
     if (this.props.onClose) {

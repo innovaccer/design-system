@@ -28,10 +28,12 @@ type BodyCellProps = SharedCellProps & {
   expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 };
 
-export type CellProps = (HeaderCellProps | BodyCellProps) & {
-  isHead?: boolean;
-  firstCell: boolean;
-};
+export type CellProps = Partial<HeaderCellProps> &
+  Partial<BodyCellProps> &
+  SharedCellProps & {
+    isHead?: boolean;
+    firstCell: boolean;
+  };
 
 const HeaderCell = (props: HeaderCellProps) => {
   const context = React.useContext(GridContext);
@@ -265,24 +267,16 @@ export const Cell = (props: CellProps) => {
     isHead,
     firstCell,
     schema,
-    // @ts-ignore
     data,
-    // @ts-ignore
     rowIndex,
     colIndex,
-    // @ts-ignore
     expandedState,
-    // @ts-ignore
     onSelectAll,
-    // @ts-ignore
     onMenuChange,
-    // @ts-ignore
     onFilterChange,
-    // @ts-ignore
     updateColumnSchema,
-    // @ts-ignore
     reorderColumn,
-  } = props;
+  } = props as CellProps;
 
   const { draggable, separator, nestedRows, ref, withCheckbox } = context;
 
@@ -323,7 +317,7 @@ export const Cell = (props: CellProps) => {
             type: pinned || '',
           };
 
-          if (from.type === to.type) reorderColumn(from.name, to.name);
+          if (from.type === to.type && reorderColumn) reorderColumn(from.name, to.name);
         }
       }}
       style={{
@@ -337,13 +331,19 @@ export const Cell = (props: CellProps) => {
           colIndex={colIndex}
           schema={schema}
           onSelectAll={onSelectAll}
-          onMenuChange={onMenuChange}
-          onFilterChange={onFilterChange}
-          updateColumnSchema={updateColumnSchema}
-          reorderColumn={reorderColumn}
+          onMenuChange={onMenuChange!}
+          onFilterChange={onFilterChange!}
+          updateColumnSchema={updateColumnSchema!}
+          reorderColumn={reorderColumn!}
         />
       ) : (
-        <BodyCell rowIndex={rowIndex} colIndex={colIndex} data={data} schema={schema} expandedState={expandedState} />
+        <BodyCell
+          rowIndex={rowIndex!}
+          colIndex={colIndex}
+          data={data!}
+          schema={schema}
+          expandedState={expandedState!}
+        />
       )}
     </div>
   );

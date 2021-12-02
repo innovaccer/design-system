@@ -24,14 +24,21 @@ const getParameters = (options: { files: IFiles }) => {
   return compress(JSON.stringify(options));
 };
 
+const replaceAll = function (original: string, matchString: string, replaceString: string) {
+  // If a regex pattern
+  if (Object.prototype.toString.call(matchString).toLowerCase() === '[object regexp]') {
+    return original.replace(matchString, replaceString);
+  }
+
+  // If a string
+  return original.replace(new RegExp(matchString, 'g'), replaceString);
+};
+
 export default (jsxStoryCode: string) => {
-  const structuredCode = jsxStoryCode
-    .trim()
-    // @ts-ignore
-    .replaceAll('// import', 'import')
-    .replace('() => {', 'const App = () => {')
-    .replaceAll('<>', '<React.Fragment>')
-    .replaceAll('</>', '</React.Fragment>');
+  let structuredCode = replaceAll(jsxStoryCode.trim(), '// import', 'import').replace('() => {', 'const App = () => {');
+  structuredCode = replaceAll(structuredCode, '<>', '<React.Fragment>');
+  structuredCode = replaceAll(structuredCode, '</>', '</React.Fragment>');
+
   const code = `
 import ReactDOM from "react-dom";
 import React from "react";

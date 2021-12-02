@@ -1,7 +1,6 @@
-// @ts-nocheck
-const generateImports = (str = '', lib = {}, libName: string) => {
+const generateImports = (str = '', lib: Record<string, unknown> = {}, libName: string) => {
   const regexp = /<[A-Z]\w*/g;
-  const matchedArray = [...str.matchAll(regexp)];
+  const matchedArray = Array.from(str.matchAll(regexp));
 
   const componentsMap = matchedArray
     .flatMap((item) => item[0].replace('<', ''))

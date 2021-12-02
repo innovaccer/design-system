@@ -61,11 +61,7 @@ export const Trigger = (props: TriggerProps) => {
       error={showError}
       mask={mask}
       value={
-        date
-          ? translateToString(inputFormat, date)
-          : init // @ts-ignore
-          ? InputMask.utils.getDefaultValue(mask, placeholderChar)
-          : ''
+        date ? translateToString(inputFormat, date) : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : ''
       }
       onChange={onChangeHandler}
       onBlur={onBlurHandler}

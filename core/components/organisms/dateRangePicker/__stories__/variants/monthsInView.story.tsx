@@ -6,10 +6,10 @@ import Card from '@/components/atoms/card';
 export const monthsInView = () => {
   const style = {
     flexDirection: 'column',
-  };
+  } as const;
+  // to freeze the object for typescript
 
   return (
-    // @ts-ignore
     <div className="d-flex" style={style}>
       {Array.from([1, 2, 3], (x) => (
         <div className="mt-5" style={{ alignSelf: 'flex-start' }}>
