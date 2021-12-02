@@ -23,7 +23,7 @@ exports[`ChipInput component
             1020
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -43,7 +43,7 @@ exports[`ChipInput component
             80
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"

@@ -86,10 +86,6 @@
   border-color: var(--jal-lighter);
 }
 
-.Chip-selection--selected .Text {
-  color: var(--primary);
-}
-
 .Chip-selection--disabled {
   background: var(--shadow-0);
   border-color: var(--stone-light);
@@ -108,4 +104,10 @@
 .Chip-input--disabled {
   background: var(--stone-light);
   border: 0px;
+}
+
+.Chip-selection--selectedDisabled {
+  background: var(--jal-lightest);
+  border-color: var(--jal-lighter);
+  opacity: var(--transparent-58);
 }

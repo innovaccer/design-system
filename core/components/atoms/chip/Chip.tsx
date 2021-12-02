@@ -60,6 +60,7 @@ export const Chip = (props: ChipProps) => {
       [`Chip-${type}--disabled`]: disabled,
       [`Chip--${type}`]: type && !disabled,
       [`Chip-${type}--selected`]: selected && !disabled,
+      [`Chip-selection--selectedDisabled`]: type === 'selection' && selected && disabled,
     },
     className
   );

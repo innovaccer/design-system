@@ -39,7 +39,7 @@ exports[`ChipGroup component
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
+            class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             style="font-size: 16px; width: 16px;"
           >
@@ -52,7 +52,7 @@ exports[`ChipGroup component
             Input
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -77,7 +77,7 @@ exports[`ChipGroup component
             assessment_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--link Text--regular"
             data-test="DesignSystem-GenericChip--Text"
           >
             Selection
@@ -101,7 +101,7 @@ exports[`ChipGroup component
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
+            class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             style="font-size: 16px; width: 16px;"
           >
@@ -114,7 +114,7 @@ exports[`ChipGroup component
             Selection
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
