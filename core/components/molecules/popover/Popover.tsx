@@ -86,7 +86,7 @@ export const Popover = (props: PopoverProps) => {
     onToggle,
     className,
     hideOnReferenceEscape,
-    boundaryElement,
+    boundaryElement = document.body,
     ...rest
   } = props;
 
@@ -140,19 +140,12 @@ export const Popover = (props: PopoverProps) => {
 };
 
 Popover.displayName = 'Popover';
-// Popover.defaultProps = {
-//   ...filterProps(PopperWrapper.defaultProps, propsList, true),
-//   offset: 'large',
-//   position: 'bottom',
-//   hideOnReferenceEscape: true,
-//   customStyle: {},
-// }
+
 Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
   offset: 'large',
   position: 'bottom',
   hideOnReferenceEscape: true,
   customStyle: {},
-  boundaryElement: document.body,
 });
 
 export default Popover;
