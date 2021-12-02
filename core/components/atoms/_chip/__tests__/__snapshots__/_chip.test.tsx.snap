@@ -44,7 +44,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--default Text--regular"
+        class="Text Text--link Text--regular"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -91,14 +91,14 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
       >
         events_round
       </i>
       <span
-        class="Text Text--disabled Text--regular"
+        class="Text Text--link Text--regular"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -118,7 +118,7 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
       >
@@ -131,7 +131,7 @@ exports[`Chip component
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+        class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -161,7 +161,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--default Text--regular"
+        class="Text Text--link Text--regular"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -226,20 +226,20 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         style="font-size: 16px; width: 16px;"
       >
         events_round
       </i>
       <span
-        class="Text Text--disabled Text--regular"
+        class="Text Text--link Text--regular"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--right"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
