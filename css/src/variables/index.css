@@ -175,11 +175,14 @@
 
   /* 
   Grid columns
- Set the number of columns and specify the width of the gutters. 
- */
+  Set the number of columns and specify the width of the gutters. 
+  */
 
   --grid-columns: 12;
 
   /* Undefined colors */
   --card-subdued-bg: #fcfafa;
+
+  /* Transparancy (Opacity) */
+  --transparent-58: 0.58;
 }

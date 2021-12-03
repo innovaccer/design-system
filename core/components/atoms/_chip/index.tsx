@@ -4,6 +4,7 @@ import Icon from '@/components/atoms/icon';
 import Text from '@/components/atoms/text';
 import { Name } from '../chip/Chip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { IconProps, TextProps } from '@/index.type';
 
 export interface GenericChipProps extends BaseProps {
   label: string;
@@ -37,6 +38,19 @@ export const GenericChip = (props: GenericChipProps) => {
     if (onClick) onClick();
   };
 
+  const iconAppearance = classNames({
+    ['disabled']: disabled && !selected,
+    ['info']: selected,
+    ['subtle']: !disabled && !selected && !clearButton && !icon,
+    ['default']: !disabled && !selected && !clearButton && icon,
+  }) as IconProps['appearance'];
+
+  const textAppearance = classNames({
+    ['disabled']: disabled && !selected,
+    ['link']: selected,
+    ['default']: !disabled && !selected,
+  }) as TextProps['appearance'];
+
   return (
     // TODO(a11y)
     // eslint-disable-next-line
@@ -50,18 +64,18 @@ export const GenericChip = (props: GenericChipProps) => {
         <Icon
           data-test="DesignSystem-GenericChip--Icon"
           name={icon}
-          appearance={disabled ? 'disabled' : selected ? 'info' : 'default'}
+          appearance={iconAppearance}
           className={iconClass('left')}
         />
       )}
-      <Text data-test="DesignSystem-GenericChip--Text" appearance={disabled ? 'disabled' : 'default'}>
+      <Text data-test="DesignSystem-GenericChip--Text" appearance={textAppearance}>
         {label}
       </Text>
       {clearButton && (
         <Icon
           data-test="DesignSystem-GenericChip--clearButton"
           name="clear"
-          appearance={disabled ? 'disabled' : selected ? 'info' : 'subtle'}
+          appearance={iconAppearance}
           className={iconClass('right')}
           onClick={onCloseHandler}
         />

@@ -131,4 +131,11 @@ describe('Chip component', () => {
     fireEvent.click(onClose);
     expect(FunctionValue).toHaveBeenCalled();
   });
+
+  it('renders chip component with prop: selected, disabled and type selection', () => {
+    const { queryByTestId } = render(
+      <Chip label="Chip" name="Chip" type="selection" disabled={true} selected={true} />
+    );
+    expect(queryByTestId('DesignSystem-Chip--GenericChip')).toHaveClass('Chip-selection--selectedDisabled');
+  });
 });

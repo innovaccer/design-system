@@ -20,7 +20,7 @@
     "setup-css-dev": "./scripts/setup-local-css.sh",
     "pre-commit": "lint-staged",
     "lint": "eslint ./core --ext .tsx,.ts",
-    "prettier": "prettier --config ./.prettierrc --write 'core/**/*.{tx,tsx}'",
+    "prettier": "prettier --config ./.prettierrc --write 'core/**/*.{tx,tsx}' 'css/src/**/*.css'",
     "prettier:check": "prettier --config ./.prettierrc --check",
     "build-css": "gulp --gulpfile css/gulpfile.js build",
     "clean-css": "gulp --gulpfile css/gulpfile.js clean",
