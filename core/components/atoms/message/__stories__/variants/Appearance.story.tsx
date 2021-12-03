@@ -4,7 +4,7 @@ import { MessageProps } from '@/index.type';
 
 // CSF format story
 export const appearanceWithoutTitle = () => {
-  const appearances: MessageProps['appearance'][] = ['default', 'alert', 'info', 'success', 'warning'];
+  const appearances: MessageProps['appearance'][] = ['alert', 'info', 'success', 'warning'];
   const innerStyle = {
     display: 'flex',
     'align-items': 'center',

@@ -29,11 +29,6 @@
   background-color: color-mod(var(--warning-lightest) a(0.4));
 }
 
-.Message--default {
-  border-color: var(--secondary-dark);
-  background-color: var(--white);
-}
-
 .Message-icon {
   margin-right: var(--spacing-2);
   padding-top: var(--spacing-s);
