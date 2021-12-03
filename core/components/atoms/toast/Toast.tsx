@@ -53,7 +53,9 @@ export interface ToastProps extends BaseProps {
 }
 
 export const Toast = (props: ToastProps) => {
-  const { appearance = 'default', title, message, actions, onClose, className } = props;
+  const { title, message, actions, onClose, className } = props;
+  let { appearance } = props;
+  appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);
 
@@ -134,5 +136,8 @@ export const Toast = (props: ToastProps) => {
 };
 
 Toast.displayName = 'Toast';
+Toast.defaultProps = {
+  appearance: 'info',
+};
 
 export default Toast;
