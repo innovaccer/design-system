@@ -718,7 +718,13 @@ For formating prettier issues:
 npm run prettier
 ```
 
-For lint:
+For checking lint issues:
+
+```bash
+npm run lint:check
+```
+
+For formating lint issues:
 
 ```bash
 npm run lint

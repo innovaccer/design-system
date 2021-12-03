@@ -1,4 +1,4 @@
-import * as  React from 'react';
+import * as React from 'react';
 import { GridProps } from '@/index.type';
 import { GridRef } from './Grid';
 import defaultProps from './defaultProps';

@@ -1,7 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "jsx-a11y"],
+  "plugins": ["@typescript-eslint", "jsx-a11y", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -11,9 +11,9 @@
   "settings": { "react": { "version": "detect" } },
   "globals": { "_": "readonly", "__": "readonly" },
   "rules": {
+    "prettier/prettier": "error",
     "no-unused-vars": "off",
     "prefer-conditional-expression": "off",
-    "max-line-length": "off",
     "object-literal-sort-keys": "off",
     "no-submodule-imports": "off",
     "member-ordering": "off",
