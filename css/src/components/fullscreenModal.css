@@ -1,21 +1,22 @@
 @keyframes fullscreenModal-open {
   from {
     opacity: 0;
-    background: transparent;
-    transform: scaleX(120%) scaleY(120%) translateX(-10%) translateY(-10%);
+    transform: translateY(20px);
   }
   to {
     opacity: 100;
+    transform: translateY(0px);
   }
 }
 
 @keyframes fullscreenModal-close {
   from {
     opacity: 100;
+    transform: translateY(0px);
   }
   to {
     opacity: 0;
-    transform: scaleX(120%) scaleY(120%) translateX(-10%) translateY(-10%);
+    transform: translateY(20px);
   }
 }
 
