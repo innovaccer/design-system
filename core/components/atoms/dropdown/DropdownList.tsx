@@ -141,6 +141,10 @@ export interface DropdownListProps extends TriggerAndOptionProps {
    * </pre>
    */
   popoverOptions?: PopoverOptions;
+  /**
+   * Adds custom placeholder to searchBar
+   */
+  searchPlaceholder?: string;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -207,6 +211,7 @@ const DropdownList = (props: OptionsProps) => {
     cancelOptions,
     toggleDropdown,
     className,
+    searchPlaceholder = 'Search..',
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -410,7 +415,7 @@ const DropdownList = (props: OptionsProps) => {
           name="Dropdown-search"
           icon={'search'}
           value={searchTerm}
-          placeholder={'Search..'}
+          placeholder={searchPlaceholder}
           // TODO(a11y): research more on this.
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={true}
