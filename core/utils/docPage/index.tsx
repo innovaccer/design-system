@@ -165,7 +165,7 @@ const StoryComp = (props: {
   const { customCode, noHtml, noSandbox, isEmbed } = props;
   const { story } = getStory();
   // const comp = sp.storySource.source;
-  const comp = story.getOriginal()();
+  const comp = story.originalStoryFn();
   const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
 
   const [activeTab, setActiveTab] = React.useState<number>(0);
@@ -312,7 +312,7 @@ export const docPage = () => {
   } = sp.docs.docPage || {};
   const {
     component: { displayName },
-  } = sp;
+  } = story;
   const pageClassnames = classNames({
     DocPage: true,
     'pt-8 pb-8': !(isEmbed || isEmbedWithProp),
