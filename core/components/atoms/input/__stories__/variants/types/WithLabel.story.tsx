@@ -11,13 +11,7 @@ export const withLabel = () => {
           <Label withInput={true} required={true}>
             Full Name
           </Label>
-          <Input
-            name="input"
-            value="Value"
-            onChange={action('on-change')}
-            onClear={action('on-clear')}
-            required={true}
-          />
+          <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} required={true} />
         </div>
         <br />
         <Text weight="strong">No Caption</Text>
@@ -28,7 +22,6 @@ export const withLabel = () => {
         </Label>
         <Input
           name="input"
-          value="Value"
           type="password"
           onChange={action('on-change')}
           onClear={action('on-clear')}
@@ -44,7 +37,6 @@ export const withLabel = () => {
         </Label>
         <Input
           name="input"
-          value="Value"
           type="password"
           onChange={action('on-change')}
           onClear={action('on-clear')}

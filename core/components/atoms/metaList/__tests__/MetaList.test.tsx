@@ -3,8 +3,8 @@ import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { MetaList } from '@/index';
 import { MetaListProps as Props } from '@/index.type';
-import { Appearance as IconAppearance } from '../../icon';
-import { Appearance as TextAppearance } from '../../text';
+import { IconAppearance } from '../../icon';
+import { TextAppearance } from '../../text';
 
 const appearance: IconAppearance[] = [
   'primary',

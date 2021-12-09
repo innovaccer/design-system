@@ -8,14 +8,13 @@ export const iconLeft = () => {
   return (
     <div className="Row">
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" onChange={action('on-change')} onClear={action('on-clear')} icon={icon} />
+        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} icon={icon} />
         <br />
         <Text weight="strong">Default</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
         <Input
           name="input"
-          value=""
           placeholder="Placeholder"
           onChange={action('on-change')}
           onClear={action('on-clear')}
@@ -26,14 +25,7 @@ export const iconLeft = () => {
         <Text weight="strong">Placeholder</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input
-          name="input"
-          value="Value"
-          onChange={action('on-change')}
-          onClear={action('on-clear')}
-          error={true}
-          icon={icon}
-        />
+        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} error={true} icon={icon} />
         <br />
         <Text weight="strong">Error</Text>
       </div>

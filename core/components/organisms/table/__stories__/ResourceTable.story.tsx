@@ -135,7 +135,7 @@ export const resourceTable = () => {
           <div style={{ width: 'var(--spacing-3)' }} className="ml-6">
             <Dropdown
               triggerOptions={{
-                customTrigger: (_label: string) => <Button icon="more_horiz" appearance="transparent" />,
+                customTrigger: () => <Button icon="more_horiz" appearance="transparent" />,
               }}
               menu={true}
               align="left"

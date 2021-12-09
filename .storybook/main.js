@@ -42,6 +42,10 @@ module.exports = {
     'rich-text-editor': {
       title: "Rich Text Editor",
       url: "https://innovaccer.github.io/mds-rich-text-editor/"
+    },
+    'mds-helpers': {
+      title: "MDS Helpers",
+      url: "https://innovaccer.github.io/mds-helpers/"
     }
    }
 }

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
 import classNames from 'classnames';
 
@@ -35,7 +34,7 @@ export const OutsideClick = React.forwardRef<HTMLDivElement, OutsideClickProps>(
       return;
     }
 
-    if (!ReactDOM.findDOMNode(element.current)!.contains(event.target as HTMLElement)) {
+    if (!element.current!.contains(event.target as HTMLElement)) {
       onOutsideClick(event);
     }
   }, []);

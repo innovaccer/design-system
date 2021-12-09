@@ -1,7 +1,7 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "jsx-a11y"],
+  "plugins": ["@typescript-eslint", "jsx-a11y", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -11,8 +11,9 @@
   "settings": { "react": { "version": "detect" } },
   "globals": { "_": "readonly", "__": "readonly" },
   "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": "off",
     "prefer-conditional-expression": "off",
-    "max-line-length": "off",
     "object-literal-sort-keys": "off",
     "no-submodule-imports": "off",
     "member-ordering": "off",
@@ -38,16 +39,16 @@
     "jsx-wrap-multiline": "off",
     "no-prototype-builtins": "off",
     "react/prop-types": "off",
-    "react/no-unknown-property": "off",
+    "react/no-unknown-property": "error",
     "react/no-unescaped-entities": "off",
-    "react/no-children-prop": "off",
-    "react/no-find-dom-node": "off",
+    "react/no-children-prop": "error",
+    "react/no-find-dom-node": "error",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/ban-ts-comment": "error",
+    "@typescript-eslint/ban-types": "error",
+    "@typescript-eslint/no-inferrable-types": "error",
     "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "@typescript-eslint/no-non-null-assertion": "off"
   }
 }

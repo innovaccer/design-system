@@ -2,9 +2,9 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
+import { AutoComplete } from '@/common.type';
 
-export type AutoComplete = 'on' | 'off';
-export type Size = 'regular' | 'large';
+export type MetricInputSize = 'regular' | 'large';
 
 export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
   /**
@@ -27,7 +27,7 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
    * Size of the `MetricInput`
    * @default "regular"
    */
-  size?: Size;
+  size?: MetricInputSize;
   /**
    * Material icon name
    */
@@ -92,10 +92,10 @@ const sizeMapping = {
   large: 20,
 };
 
-const capMin = (min: number = -Infinity, value: number) =>
+const capMin = (min = -Infinity, value: number) =>
   isNaN(min) || (!min && min !== 0) || isNaN(value) || (!value && value !== 0) ? value : Math.max(min, value);
 
-const capMax = (max: number = +Infinity, value: number) =>
+const capMax = (max = +Infinity, value: number) =>
   isNaN(max) || (!max && max !== 0) || isNaN(value) || (!value && value !== 0) ? value : Math.min(max, value);
 
 /**

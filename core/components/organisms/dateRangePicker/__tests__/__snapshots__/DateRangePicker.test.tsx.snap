@@ -38981,22 +38981,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Nov
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--regular"
+                class="Text Text--link Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Dec
@@ -40540,22 +40540,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 Nov
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--small"
+                class="Text Text--link Text--small"
                 data-test="DesignSystem-Text"
               >
                 Dec
@@ -42099,22 +42099,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Nov
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--regular"
+                class="Text Text--link Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Dec
@@ -46679,22 +46679,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 Nov
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--default Text--small"
+                class="Text Text--link Text--small"
                 data-test="DesignSystem-Text"
               >
                 Dec

@@ -106,7 +106,7 @@ export interface DropzoneBaseProps extends BaseProps {
    * @param {FileRejection[]} fileRejections
    * @param {(DragEvent|Event)} event
    */
-  onDropRejected?: (event: DragEvent | Event, rejectedFiles: FileRejection[]) => any;
+  onDropRejected?: (event: DragEvent | Event, rejectedFiles: FileRejection[]) => void;
 
   /**
    * Custom validation function
@@ -149,8 +149,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     validator,
   } = props;
 
-  const rootRef = useRef(null);
-  const inputRef = useRef(null);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [state, dispatch] = useReducer(reducer, initialState);
   const { isFocused, isFileDialogActive, draggedFiles } = state;
@@ -158,9 +158,9 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   const openFileDialog = useCallback(() => {
     if (inputRef.current) {
       dispatch({ type: 'openDialog' });
-      // @ts-ignore
-      inputRef.current.value = null;
-      // @ts-ignore
+
+      inputRef.current.value = '';
+
       inputRef.current.click();
     }
   }, [dispatch]);
@@ -169,10 +169,9 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     if (isFileDialogActive) {
       setTimeout(() => {
         if (inputRef.current) {
-          // @ts-ignore
           const { files } = inputRef.current;
 
-          if (!files.length) {
+          if (!files || !files.length) {
             dispatch({ type: 'closeDialog' });
 
             if (typeof onFileDialogCancel === 'function') {
@@ -193,7 +192,6 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
   // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
   const onKeyDownCb = useCallback(
     (event) => {
-      // @ts-ignore
       if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
         return;
       }
@@ -215,11 +213,11 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     dispatch({ type: 'blur' });
   }, []);
 
-  const dragTargetsRef = useRef([]);
+  const dragTargetsRef = useRef<HTMLElement[]>([]);
 
-  const onDocumentDrop = (event: any) => {
-    // @ts-ignore
-    if (rootRef.current && rootRef.current.contains(event.target)) {
+  const onDocumentDrop = (event: DragEvent) => {
+    // Not every event target type is element so we have to check if it is.
+    if (event.target instanceof HTMLDivElement && rootRef.current && rootRef.current.contains(event.target)) {
       return;
     }
     event.preventDefault();
@@ -245,7 +243,6 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       event.preventDefault();
       event.persist();
 
-      // @ts-ignore
       dragTargetsRef.current = [...dragTargetsRef.current, event.target];
 
       if (isEvtWithFiles(event)) {
@@ -294,11 +291,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
       event.preventDefault();
       event.persist();
 
-      const targets = dragTargetsRef.current.filter(
-        // @ts-ignore
-        (target) => rootRef.current && rootRef.current.contains(target)
-      );
-      // @ts-ignore
+      const targets = dragTargetsRef.current.filter((target) => rootRef.current && rootRef.current.contains(target));
       const targetIdx = targets.indexOf(event.target);
       if (targetIdx !== -1) {
         targets.splice(targetIdx, 1);
@@ -336,7 +329,10 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
           }
 
           const acceptedFiles: File[] = [];
-          const fileRejections: any[] = [];
+          const fileRejections: {
+            file: File;
+            errors: FileError[];
+          }[] = [];
 
           files.forEach((file: File) => {
             const [accepted, acceptError] = fileAccepted(file, accept);
@@ -351,8 +347,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
               if (customErrors) {
                 errors = errors.concat(customErrors);
               }
-
-              fileRejections.push({ file, errors: errors.filter((e) => e) });
+              const filteredErrors = errors.filter((e) => e) as Array<FileError>;
+              fileRejections.push({ file, errors: filteredErrors });
             }
           });
 
@@ -380,16 +376,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     [multiple, accept, minSize, maxSize, getFilesFromEvent, onDrop, onDropAccepted, onDropRejected]
   );
 
-  const composeHandler = (fn: any) => {
+  const composeDragHandler = (fn: (event: DragEvent) => void) => {
     return disabled ? null : fn;
-  };
-
-  const composeKeyboardHandler = (_fn: any) => {
-    return null;
-  };
-
-  const composeDragHandler = (fn: any) => {
-    return composeHandler(fn);
   };
 
   const getRootProps = useMemo(
@@ -406,10 +394,6 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
         onDropCallback,
         ...rest
       }: any = {}) => ({
-        onKeyDown: composeKeyboardHandler(composeEventHandlers(onKeyDown, onKeyDownCb)),
-        onFocus: composeKeyboardHandler(composeEventHandlers(onFocus, onFocusCb)),
-        onBlur: composeKeyboardHandler(composeEventHandlers(onBlur, onBlurCb)),
-        // onClick: composeHandler(composeEventHandlers(onClick, onClickCb)),
         onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
         onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
         onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
@@ -432,8 +416,8 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
           multiple,
           type: 'file',
           style: { display: 'none' },
-          onChange: composeHandler(composeEventHandlers(onChange, onDropCb)),
-          onClick: composeHandler(composeEventHandlers(onClick, onInputElementClick)),
+          onChange: composeDragHandler(composeEventHandlers(onChange, onDropCb)),
+          onClick: composeDragHandler(composeEventHandlers(onClick, onInputElementClick)),
           autoComplete: 'off',
           tabIndex: -1,
           [refKey]: inputRef,
@@ -463,7 +447,7 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
     draggedFiles,
     fileError,
     isFocused: isFocused && !disabled,
-    open: composeHandler(openFileDialog),
+    open: composeDragHandler(openFileDialog),
   };
 };
 

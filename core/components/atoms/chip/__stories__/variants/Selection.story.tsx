@@ -42,6 +42,23 @@ export const Selection = () => {
         <br />
         <Text weight="strong">Selected: true</Text>
       </div>
+      <div className="mr-9">
+        <Chip
+          icon={icon}
+          label={label}
+          clearButton={true}
+          type="selection"
+          onClose={action(`onClose: ${name}`)}
+          onClick={action(`onClick: ${name}`)}
+          selected={true}
+          disabled={true}
+          name={'chip'}
+        />
+        <br />
+        <Text weight="strong">Selected: true</Text>
+        <br></br>
+        <Text weight="strong">Disabled: true</Text>
+      </div>
     </div>
   );
 };

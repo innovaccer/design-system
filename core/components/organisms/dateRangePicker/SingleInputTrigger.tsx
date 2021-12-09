@@ -21,7 +21,6 @@ export const SingleInputTrigger = (props: TriggerProps) => {
   const errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
   const { label } = inputOptions;
   const { placeholderChar = '_' } = inputOptions;
-  // @ts-ignore
   const defaultValue = InputMask.utils.getDefaultValue(mask, placeholderChar).split(' - ');
   const sValue = startValue || defaultValue[0];
   const eValue = endValue || defaultValue[1];

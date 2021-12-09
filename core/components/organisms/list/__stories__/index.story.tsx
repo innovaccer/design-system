@@ -12,21 +12,7 @@ import { SyncList, AsyncList } from './_common_/types';
 export const all = () => {
   const async = boolean('async', true);
 
-  let loading;
-  let error;
-  let applyData;
-  let applySchema;
   const applyLoaderSchema = boolean('applyLoaderSchema', true);
-
-  if (!async) {
-    loading = boolean('loading', false);
-
-    error = boolean('error', false);
-
-    applySchema = boolean('applySchema', true);
-
-    applyData = boolean('applyData', true);
-  }
 
   const type = select('type', ['resource', 'data'], 'resource');
 
@@ -45,8 +31,6 @@ export const all = () => {
   const pageSize = number('pageSize', 12);
 
   const multipleSorting = boolean('multipleSorting', false);
-
-  const headCellTooltip = boolean('headCellTooltip', false);
 
   const separator = boolean('separator', false);
 

@@ -4,7 +4,7 @@ import { HeadingProps, TextProps } from '@/index.type';
 import { Heading, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-type Size = 'large' | 'small';
+type EmptyStateSize = 'large' | 'small';
 
 export interface EmptyStateProps extends BaseProps {
   /**
@@ -24,7 +24,7 @@ export interface EmptyStateProps extends BaseProps {
    *
    * Size: 'large' | 'small'
    */
-  size: Size;
+  size: EmptyStateSize;
   /**
    * Button / ButtonGroups to be added inside `EmptyState`
    */
@@ -40,12 +40,12 @@ export const imageHeight = {
   small: '128px',
 };
 
-export const HeadingSize: Record<Size, HeadingProps['size']> = {
+export const HeadingSize: Record<EmptyStateSize, HeadingProps['size']> = {
   large: 'l',
   small: 'm',
 };
 
-export const textSize: Record<Size, TextProps['size']> = {
+export const textSize: Record<EmptyStateSize, TextProps['size']> = {
   large: 'large',
   small: 'regular',
 };

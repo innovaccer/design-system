@@ -17,11 +17,6 @@
   padding-bottom: var(--spacing-2);
 }
 
-.Toast--default {
-  padding-left: var(--spacing-xl);
-  background-color: var(--inverse);
-}
-
 .Toast--info {
   background-color: var(--primary);
 }

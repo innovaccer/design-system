@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type Length = 'small' | 'medium' | 'large';
-export type Size = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type PlaceholderParagraphSize = 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
 
 export interface PlaceholderParagraphProps extends BaseProps {
   /**
@@ -31,7 +31,7 @@ export interface PlaceholderParagraphProps extends BaseProps {
    *
    * xxxl: `Heading` size: xxl
    */
-  size?: Size;
+  size?: PlaceholderParagraphSize;
 }
 
 export const PlaceholderParagraph = (props: PlaceholderParagraphProps) => {

@@ -2,24 +2,22 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { OverlayFooter, OverlayFooterProps } from '@/components/molecules/overlayFooter';
+import { OverlayFooter } from '@/components/molecules/overlayFooter';
 import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
 import { OverlayBody } from '@/components/molecules/overlayBody';
 import { Row, Column, Button } from '@/index';
 import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
+import { FooterOptions } from '@/common.type';
 
-export type Dimension = 'medium' | 'large';
-type FooterOptions = {
-  actions: OverlayFooterProps['actions'];
-};
+export type FullScreenDimension = 'medium' | 'large';
 
 export interface FullscreenModalProps extends BaseProps {
   /**
    * Dimension of `Fullscreen Modal`
    */
-  dimension: Dimension;
+  dimension: FullScreenDimension;
 
   /**
    * Handles open/close state
@@ -121,7 +119,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     };
   }
 
-  onOutsideClickHandler = (event: KeyboardEvent) => {
+  onOutsideClickHandler = (event: Event) => {
     OverlayManager.remove(this.modalRef.current);
 
     if (this.props.onClose) {

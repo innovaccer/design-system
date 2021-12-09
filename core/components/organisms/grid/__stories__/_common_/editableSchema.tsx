@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Schema } from '../../Grid';
-// @ts-ignore
-import iconImg from './image.png';
 import { GridCellProps } from '../../GridCell';
 import { PlaceholderParagraph, EditableInput } from '@/index';
 
@@ -89,7 +87,7 @@ const schema: Schema = [
     resizable: true,
     align: 'center',
     cellType: 'ICON',
-    translate: (_) => ({
+    translate: () => ({
       icon: 'events',
     }),
     // separator: true,

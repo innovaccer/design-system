@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { boolean, text } from '@storybook/addon-knobs';
-import Chip, { Type } from '../../Chip';
+import Chip, { ChipType } from '../../Chip';
 import { action } from '@storybook/addon-actions';
 import Text from '@/components/atoms/text';
 export const Types = () => {
-  const types: Type[] = ['action', 'selection', 'input'];
+  const types: ChipType[] = ['action', 'selection', 'input'];
   const icon = text('icon', 'assessment');
   const label = text('label', 'ChipLabel');
   const clearButton = boolean('clearButton', true);

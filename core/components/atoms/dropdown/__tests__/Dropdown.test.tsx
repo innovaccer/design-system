@@ -352,7 +352,7 @@ describe('Dropdown component', () => {
 
 describe('renders dropdown component onKeyDown Handler', () => {
   const dropdownListId = 'DesignSystem-DropdownList-Wrapper';
-  keyDownEvents.forEach((action, key) => {
+  keyDownEvents.forEach((action) => {
     it(`checks for keyDown ${action} event with dropdownOpen set as true `, () => {
       const { getByTestId } = render(
         <Dropdown
@@ -456,5 +456,16 @@ describe('Dropdown component action buttons', () => {
     fireEvent.click(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]);
     fireEvent.click(getAllByTestId('DesignSystem-Button')[1]);
     expect(screen.queryByText('DesignSystem-Popover')).not.toBeInTheDocument();
+  });
+});
+
+describe('Dropdown component with search', () => {
+  it('check:prop searchPlaceholder', () => {
+    const { getByTestId } = render(
+      <Dropdown options={dropdownOptions} withSearch={true} searchPlaceholder="Custom search text" />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    expect(screen.getByPlaceholderText('Custom search text')).toBeInTheDocument();
   });
 });

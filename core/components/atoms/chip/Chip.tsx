@@ -3,7 +3,7 @@ import GenericChip from '../_chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type Type = 'action' | 'selection' | 'input';
+export type ChipType = 'action' | 'selection' | 'input';
 export type Name = number | string;
 
 export interface ChipProps extends BaseProps {
@@ -30,7 +30,7 @@ export interface ChipProps extends BaseProps {
   /**
    * Type of chip
    */
-  type: Type;
+  type: ChipType;
   /**
    * Handler to be called when Chip is closed
    */
@@ -60,6 +60,7 @@ export const Chip = (props: ChipProps) => {
       [`Chip-${type}--disabled`]: disabled,
       [`Chip--${type}`]: type && !disabled,
       [`Chip-${type}--selected`]: selected && !disabled,
+      [`Chip-selection--selectedDisabled`]: type === 'selection' && selected && disabled,
     },
     className
   );

@@ -2,13 +2,13 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
-export type Size = 'small' | 'regular';
+export type ProgressRingSize = 'small' | 'regular';
 
 export interface ProgressRingProps extends BaseProps {
   /**
    * Size of `Progress Ring`
    */
-  size: Size;
+  size: ProgressRingSize;
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max.
    */

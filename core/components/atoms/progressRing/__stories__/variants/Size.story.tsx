@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ProgressRing, { Size } from '../../ProgressRing';
+import ProgressRing, { ProgressRingSize as Size } from '../../ProgressRing';
 import Text from '@/components/atoms/text';
 
 // CSF format story

@@ -59,9 +59,6 @@ export function fillValues<T>(values: T[], startIndex: number, endIndex: number,
   }
 }
 
-export function isElementOfType<P = {}>(
-  element: any,
-  _ComponentType: React.ComponentType<P>
-): element is React.ReactElement<P> {
+export function isElementOfType(element: React.ReactElement) {
   return element != null && element.type != null;
 }

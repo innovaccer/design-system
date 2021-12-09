@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import Button, { Appearance } from '../../Button';
+import Button, { ButtonAppearance } from '../../Button';
 import Text from '@/components/atoms/text';
 
 // CSF format story
@@ -10,7 +10,7 @@ export const expanded = () => {
   const ButtonExpanded = true;
   const loading = false;
 
-  const appearances: Appearance[] = ['basic', 'primary', 'success', 'alert'];
+  const appearances: ButtonAppearance[] = ['basic', 'primary', 'alert'];
 
   const children = text('children', 'Button');
 

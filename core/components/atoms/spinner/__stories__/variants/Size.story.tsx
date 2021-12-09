@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Spinner, { Size } from '../../Spinner';
+import Spinner, { SpinnerSize as Size } from '../../Spinner';
 import Text from '@/components/atoms/text';
 
 // CSF format story

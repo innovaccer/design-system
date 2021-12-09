@@ -2,8 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Heading, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { MessageAppearance } from '@/common.type';
 
-export type Appearance = 'default' | 'alert' | 'info' | 'success' | 'warning';
 const IconMapping = {
   success: 'check_circle',
   info: 'info',
@@ -15,7 +15,7 @@ export interface MessageProps extends BaseProps {
   /**
    * Color of `Message`
    */
-  appearance: Appearance;
+  appearance: MessageAppearance;
   /**
    * Title of the `Message`
    */
@@ -38,7 +38,9 @@ export interface MessageProps extends BaseProps {
 }
 
 export const Message = (props: MessageProps) => {
-  const { appearance, actions, title, className } = props;
+  const { actions, title, className } = props;
+  let { appearance } = props;
+  appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);
 
@@ -88,14 +90,12 @@ export const Message = (props: MessageProps) => {
 
   return (
     <div data-test="DesignSystem-Message" {...baseProps} className={MessageClass}>
-      {appearance !== 'default' && (
-        <Icon
-          data-test="DesignSystem-Message--Icon"
-          name={IconMapping[appearance]}
-          appearance={appearance}
-          className={IconClass}
-        />
-      )}
+      <Icon
+        data-test="DesignSystem-Message--Icon"
+        name={IconMapping[appearance]}
+        appearance={appearance}
+        className={IconClass}
+      />
       <div>
         {title && (
           <Heading data-test="DesignSystem-Message--Title" size="s" className={TitleClass}>
@@ -115,7 +115,7 @@ export const Message = (props: MessageProps) => {
 
 Message.displayName = 'Message';
 Message.defaultProps = {
-  appearance: 'default',
+  appearance: 'info',
   description: '',
 };
 

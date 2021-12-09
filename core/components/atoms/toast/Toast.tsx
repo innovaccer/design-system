@@ -5,8 +5,7 @@ import Text from '@/components/atoms/text';
 import Icon from '@/components/atoms/icon';
 import ActionButton from './ActionButton';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-
-export type Appearance = 'default' | 'info' | 'success' | 'alert' | 'warning';
+import { MessageAppearance } from '@/common.type';
 
 export type Action = {
   /**
@@ -25,9 +24,13 @@ export interface ToastProps extends BaseProps {
    */
   title: string;
   /**
-   * Color of `Toast`
+   * Color of the `Toast`
+   *
+   * ** `'default'` has been deprecated, backward compatibility supported**
+   *
+   * @default "info"
    */
-  appearance: Appearance;
+  appearance: MessageAppearance;
   /**
    * Message to be rendered inside `Toast`
    */
@@ -50,7 +53,9 @@ export interface ToastProps extends BaseProps {
 }
 
 export const Toast = (props: ToastProps) => {
-  const { appearance, title, message, actions, onClose, className } = props;
+  const { title, message, actions, onClose, className } = props;
+  let { appearance } = props;
+  appearance = appearance === 'default' ? 'info' : appearance;
 
   const baseProps = extractBaseProps(props);
 
@@ -132,7 +137,7 @@ export const Toast = (props: ToastProps) => {
 
 Toast.displayName = 'Toast';
 Toast.defaultProps = {
-  appearance: 'default',
+  appearance: 'info',
 };
 
 export default Toast;

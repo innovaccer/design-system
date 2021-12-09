@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import * as React from 'react';
 import { Title, Description, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -7,7 +5,7 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import * as DS from '@/';
+import * as DS from '@';
 import { Button, Card, TabsWrapper, Tab, Heading } from '@/index';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
@@ -59,7 +57,9 @@ const JSXtoStringOptions = {
 
 const copyCode = (val: string) => navigator.clipboard.writeText(val);
 
-const CopyComp = (props) => {
+type OnClickType = (e: React.MouseEvent) => void;
+
+const CopyComp = (props: { onClick: OnClickType }) => {
   const { onClick } = props;
   return (
     <div
@@ -88,7 +88,7 @@ const buttonStyles = {
   background: 'white',
 };
 
-const ShowMoreLessButton = ({ onClick, text = 'More' }) => (
+const ShowMoreLessButton = ({ onClick, text = 'More' }: { onClick: OnClickType; text: string }) => (
   <div
     style={{
       display: 'grid',
@@ -132,7 +132,7 @@ const getStory = () => {
   return { storyId, story };
 };
 
-const getRawPreviewCode = (customCode, comp) => {
+const getRawPreviewCode = (customCode: string, comp: React.ReactNode) => {
   if (customCode) {
     return `${generateImports(customCode, componentLib, '@innovaccer/design-system')}
 ${customCode}
@@ -155,11 +155,17 @@ ${jsx
   return code;
 };
 
-const StoryComp = (props) => {
+const StoryComp = (props: {
+  noHtml: boolean;
+  customCode: string;
+  noSandbox: boolean;
+  isEmbed: boolean;
+  imports: string[];
+}) => {
   const { customCode, noHtml, noSandbox, isEmbed } = props;
   const { story } = getStory();
   // const comp = sp.storySource.source;
-  const comp = story.getOriginal()();
+  const comp = story.originalStoryFn();
   const html = !noHtml ? beautifyHTML(renderToStaticMarkup(comp), beautifyHTMLOptions) : '';
 
   const [activeTab, setActiveTab] = React.useState<number>(0);
@@ -168,7 +174,7 @@ const StoryComp = (props) => {
   const [isExpanded, setIsExpanded] = React.useState(isEmbed);
   const [showMore, setShowMore] = React.useState<boolean>(false);
   const [shouldShowMore, setShouldShowMore] = React.useState<boolean>(false);
-  const codePanel = React.useRef(null);
+  const codePanel = React.useRef<HTMLDivElement>(null);
 
   const importScope = props.imports;
 
@@ -179,11 +185,11 @@ const StoryComp = (props) => {
     return <></>;
   };
 
-  const TabsWrap = withLive(({ live, currentTab }) => {
+  const TabsWrap = withLive<{ live?: any; activeTab: number }>(({ live, activeTab }) => {
     const { error, element: Element } = live;
 
     React.useEffect(() => {
-      if (!error && currentTab === 1) {
+      if (!error && activeTab === 1) {
         try {
           const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
           setHtmlCode(htmlValue);
@@ -191,10 +197,10 @@ const StoryComp = (props) => {
           return;
         }
       }
-    }, [currentTab]);
+    }, [activeTab]);
 
     React.useEffect(() => {
-      if (codePanel.current?.clientHeight > '250') {
+      if (codePanel.current?.clientHeight && codePanel.current?.clientHeight > 250) {
         setShouldShowMore(true);
       }
     }, [codePanel]);
@@ -209,7 +215,7 @@ const StoryComp = (props) => {
   const actions = [
     {
       title: 'Edit in sandbox',
-      onClick: (ev) => {
+      onClick: (ev: React.MouseEvent) => {
         ev.preventDefault();
         openSandbox(jsxCode);
       },
@@ -223,12 +229,13 @@ const StoryComp = (props) => {
       onClick: () => {
         setIsExpanded(!isExpanded);
       },
+      disabled: false,
     });
   }
 
   const imports = React.useMemo(() => ({ ...DS, ...importScope }), []);
 
-  const tabChangeHandler = (tab) => {
+  const tabChangeHandler = (tab: number) => {
     setActiveTab(tab);
     setShouldShowMore(false);
   };
@@ -238,9 +245,9 @@ const StoryComp = (props) => {
       <LiveProvider code={jsxCode} scope={imports}>
         <Canvas
           className="my-0"
-          withSource="none"
           withToolbar={true}
           isExpanded={isExpanded}
+          withSource={'none' as any}
           additionalActions={actions}
         >
           <LivePreview />
@@ -260,11 +267,13 @@ const StoryComp = (props) => {
               }}
               className="DocPage-editorTabs"
             >
-              <TabsWrapper activeTab={activeTab} onTabChange={tabChangeHandler}>
+              <TabsWrapper active={activeTab} onTabChange={tabChangeHandler}>
                 <Tab label={'React'}>
                   <CopyComp
                     onClick={() => {
-                      const editor = document.querySelector('.npm__react-simple-code-editor__textarea');
+                      const editor = document.querySelector(
+                        '.npm__react-simple-code-editor__textarea'
+                      ) as HTMLTextAreaElement;
                       if (editor) copyCode(editor.value);
                     }}
                   />
@@ -301,17 +310,18 @@ export const docPage = () => {
     imports,
     a11yProps,
   } = sp.docs.docPage || {};
-  const { component: { displayName } = {} } = sp;
+  const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
     DocPage: true,
     'pt-8 pb-8': !(isEmbed || isEmbedWithProp),
   });
+  const docPageTitle: string = title || displayName;
 
   return (
     <div className={pageClassnames}>
       {!isEmbed && !isEmbedWithProp && (
         <>
-          <Title> {title || displayName} </Title>
+          <Title>{docPageTitle}</Title>
           <Description>{description}</Description>
         </>
       )}

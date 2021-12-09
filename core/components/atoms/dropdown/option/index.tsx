@@ -8,8 +8,8 @@ import IconWithMetaOption from './IconWithMetaOption';
 import { MetaList, Text } from '@/index';
 import { MetaListProps, IconProps, TextProps } from '@/index.type';
 import { OptionType } from '../DropdownList';
+import { ChangeEvent } from '@/common.type';
 
-export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export type ClickEvent = React.MouseEvent<HTMLDivElement>;
 
 export interface OptionRendererProps {

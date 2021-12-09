@@ -148,23 +148,23 @@
 }
 
 .Button--success {
-  background: var(--success);
+  background: var(--primary);
 }
 
 .Button--success:hover {
-  background: var(--success-dark);
+  background: var(--primary-dark);
 }
 
 .Button--success:active {
-  background: var(--success-darker);
+  background: var(--primary-darker);
 }
 
 .Button--success:focus {
-  box-shadow: var(--shadow-spread) var(--success-shadow);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Button--success:disabled {
-  background: var(--success-lighter);
+  background: var(--primary-lighter);
 }
 
 .Button--alert {

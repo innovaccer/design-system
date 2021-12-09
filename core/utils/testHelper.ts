@@ -42,7 +42,7 @@ const getCombinations = (Props: Record<string, any>): Record<string, any>[] => {
   const combinations: Record<string, any>[] = [];
   const propNames = Object.keys(Props);
 
-  const iterateProps = (curr: Record<string, any> = {}, propIndex: number = 0): void => {
+  const iterateProps = (curr: Record<string, any> = {}, propIndex = 0): void => {
     const iterateValues = (propValues: any[]) => {
       for (const propValue of propValues) {
         if (isMapper(propValue)) {

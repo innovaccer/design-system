@@ -4,9 +4,9 @@ import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
-export type Appearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
-export type Size = 'tiny' | 'regular' | 'large';
-export type Alignment = 'left' | 'right';
+export type ButtonAppearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
+export type ButtonSize = 'tiny' | 'regular' | 'large';
+export type ButtonAlignment = 'left' | 'right';
 
 export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement> {
   /**
@@ -17,12 +17,15 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    * The size of `Button`
    * @default "regular"
    */
-  size?: Size;
+  size?: ButtonSize;
   /**
    * Color of the `Button`
+   *
+   * **'success' has been deprecated and all success button types will now be changed to primary button automatically**
+   *
    * @default "basic"
    */
-  appearance?: Appearance;
+  appearance?: ButtonAppearance;
   /**
    * Disables the `Button`, making it unable to be pressed
    */
@@ -54,7 +57,7 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    * Align icon left or right
    * @default "left"
    */
-  iconAlign?: Alignment;
+  iconAlign?: ButtonAlignment;
   /**
    * Determines if size of icon is large
    *
@@ -88,7 +91,7 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
   onMouseLeave?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const sizeMapping: Record<Size, number> = {
+const sizeMapping: Record<ButtonSize, number> = {
   tiny: 12,
   regular: 16,
   large: 20,

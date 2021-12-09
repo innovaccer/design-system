@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, CardBody, CardHeader, Heading, Row, Column, Paragraph, Button, EmptyState } from '@/index';
+import { Card, CardBody, CardHeader, Heading, Row, Column, Button, EmptyState } from '@/index';
 import image from './assets/empty.png';
 
 // CSF format story

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { useAccessibilityProps } from '@/accessibility/utils';
 
-export type Appearance =
+export type IconAppearance =
   | 'default'
   | 'destructive'
   | 'white'
@@ -55,7 +55,7 @@ export interface IconProps extends BaseProps {
   /**
    * Color of `Icon`    // 'info' appearance will be deprecated soon.
    */
-  appearance?: Appearance;
+  appearance?: IconAppearance;
   /**
    * Handler to be called when icon is clicked
    */
@@ -118,7 +118,7 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i {...baseProps} role="alert" className={iconClass} style={styles} {...accessibilityProps}>
+    <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
       {type ? `${name}_${type}` : name}
     </i>
   );

@@ -217,7 +217,7 @@
 }
 
 .Calendar-valueWrapper--dummy {
-  opacity: 0.58;
+  opacity: var(--transparent-58);
 }
 
 .Calendar-value--disabled {

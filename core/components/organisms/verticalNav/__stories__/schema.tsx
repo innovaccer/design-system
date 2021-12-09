@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Schema } from '@/components/organisms/grid';
-// @ts-ignore
-import iconImg from './image.png';
 import { Icon, GridCell } from '@/index';
 
 const schema: Schema = [

@@ -7,8 +7,8 @@ import Option, { OptionRendererProps, OptionSchema } from './option';
 import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { ChangeEvent } from '@/common.type';
 
-export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
 
@@ -33,9 +33,9 @@ interface PopoverOptions {
   boundaryElement?: PopoverProps['boundaryElement'];
 }
 
-type ListProps = TriggerProps & OptionRendererProps;
+type TriggerAndOptionProps = TriggerProps & OptionRendererProps;
 
-export interface DropdownListProps extends ListProps {
+export interface DropdownListProps extends TriggerAndOptionProps {
   /**
    * Aligns the `Dropdown` left/right
    * @default "right"
@@ -141,6 +141,10 @@ export interface DropdownListProps extends ListProps {
    * </pre>
    */
   popoverOptions?: PopoverOptions;
+  /**
+   * Adds custom placeholder to searchBar
+   */
+  searchPlaceholder?: string;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -207,6 +211,7 @@ const DropdownList = (props: OptionsProps) => {
     cancelOptions,
     toggleDropdown,
     className,
+    searchPlaceholder = 'Search..',
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -410,7 +415,7 @@ const DropdownList = (props: OptionsProps) => {
           name="Dropdown-search"
           icon={'search'}
           value={searchTerm}
-          placeholder={'Search..'}
+          placeholder={searchPlaceholder}
           // TODO(a11y): research more on this.
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus={true}
@@ -442,7 +447,7 @@ const DropdownList = (props: OptionsProps) => {
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
 
     return (
-      <div className={SelectAllClass} onMouseEnter={(_e) => updateActiveOption(0, true)}>
+      <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
         <Checkbox
           label={label}
           onChange={onSelectAll}

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-import PlaceholderImage, { Size } from '../../PlaceholderImage';
+import PlaceholderImage, { PlaceholderImageSize } from '../../PlaceholderImage';
 import Text from '@/components/atoms/text';
 
 export const size = () => {
   const round = boolean('round', false);
-  const sizes: Size[] = ['small', 'medium', 'large'];
+  const sizes: PlaceholderImageSize[] = ['small', 'medium', 'large'];
   const options = {
     round,
   };

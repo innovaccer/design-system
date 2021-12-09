@@ -142,7 +142,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     if (prevProps.open !== this.props.open) {
       this._throttleWait = false;
       if (this.props.open) {
-        const triggerElement = this.findDOMNode(this.triggerRef);
+        const triggerElement = this.triggerRef.current;
         const zIndex = this.getZIndexForLayer(triggerElement);
 
         this.setState({
@@ -216,12 +216,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     onToggle(newValue === undefined ? !open : newValue, type);
   };
 
-  findDOMNode = (ref: React.RefObject<HTMLElement>) => {
-    return ReactDOM.findDOMNode(ref.current!) as Element | null;
-  };
-
   doesEventContainsElement = (event: Event, ref: React.RefObject<any>) => {
-    const el = this.findDOMNode(ref);
+    const el = ref.current;
     return el && el.contains(event.target as HTMLElement);
   };
 
