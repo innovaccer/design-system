@@ -310,9 +310,7 @@ export const docPage = () => {
     imports,
     a11yProps,
   } = sp.docs.docPage || {};
-  const {
-    component: { displayName },
-  } = story;
+  const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
     DocPage: true,
     'pt-8 pb-8': !(isEmbed || isEmbedWithProp),
