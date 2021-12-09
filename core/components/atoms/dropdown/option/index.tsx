@@ -155,7 +155,12 @@ const Option = (props: OptionProps) => {
 
     if (typeof subInfo === 'string') {
       return (
-        <Text data-test="DesignSystem-DropdownOption--WITH_META--Meta" appearance={labelAppearance}>
+        <Text
+          data-test="DesignSystem-DropdownOption--WITH_META--Meta"
+          appearance={labelAppearance}
+          size="small"
+          weight="medium"
+        >
           {subInfo}
         </Text>
       );
