@@ -1,7 +1,9 @@
 
-## 2.6.0-1  (2021-11-25)
+## 2.6.0  (2021-12-09)
 ### Highlights
-NA
+* Calender exposes onHover events on date month and year values (bcaa4aed)
+* New component Divider is added (7dc6034d)
+* Library is now compatible with Node version 14.x LTS (33c736fd)
 
 ### Breaking changes
 NA
@@ -15,51 +17,27 @@ NA
 ### Features
 * Datepicker has example for date presets for date selections  (d1a0f30c)
 * Switch and Button components are new accessible (AA) (1b64c361)
+* Calender exposes onHover events on date month and year values (bcaa4aed)
+* New component Divider is added (7dc6034d)
 
 ### Fixes
 * Navigation center alignment bug is fixed in Pageheader component (c6c08ba4)
 * Chip component's pointer style is fixed for hovering (01f2f9fc)
 * Design of Calendar component is improved (e4ea85df)
-
-### Improvements
-NA
-
-### Documentation
-NA
-
-
--------------------
-
-## 2.6.0-0  (2021-11-16) 
-### Highlights
-* Calender exposes onHover events on date month and year values (bcaa4aed)
-* New component Divider is added (7dc6034d)
-
-### Breaking changes
-NA
-
-### Migration guide
-NA
-
-### Deprecations
-NA
-
-### Features
-* Calender exposes onHover events on date month and year values (bcaa4aed)
-* New component Divider is added (7dc6034d)
-
-
-### Fixes
 * Options with checkbox in dropdown can have truncated text now. (c4e8f3a3)
 * Text height of InlineMessage is corrected. (00bbd7e6)
 * Table search results going blank is now fixed. (d2a96002)
 * Table cell can render and position the dropdown inside properly. (3dea79b4)
 
+
 ### Improvements
 * Library is now compatible with Node version 14.x LTS (33c736fd)
 * Accessibility linting plugin is added. (6fbb5883)
 
+
 ### Documentation
+NA
+
 
 -------------------
 
