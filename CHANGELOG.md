@@ -1,4 +1,40 @@
 
+## 2.7.0-0  (2021-12-09)
+### Highlights
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+* Button: appearance "success" is deprecated, please use "primary" (375c9aef)
+* Fileuploader component is deprecated, please use Dropzone type="tight" (c5d8ef43)
+* Toast: appearance "default" is deprecated, please use "info" (d589cf6f)
+* Message: appearance "default" is deprecated, please use "info" (3cd54421)
+
+
+### Features
+* Option to use custom search placeholder in Dropdown search input (9fcb2b65)
+
+### Fixes
+* fix: updates docpage for stories without components exported (d5138109)
+* fix(storybook): update package json file to fix storybook docs page (149f8ec8)
+* fix(InputMask): fixes issue with fast input (4d1f8330)
+* fix(switch): add styling for hover and active state (3a54a934)
+
+### Improvements
+*  Added transitions to fullscreenModal component (98cac857)
+*  Selected state for a disabled chips is now visible (c619c571)
+
+### Documentation
+* Example for custom header in sidesheet added (edc300cc)
+* Input examples (stories) are interactive now (ead16746)
+
+
+-------------------
+
 ## 2.6.0  (2021-12-09)
 ### Highlights
 * Calender exposes onHover events on date month and year values (bcaa4aed)
