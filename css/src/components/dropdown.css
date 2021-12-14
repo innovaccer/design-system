@@ -74,8 +74,8 @@
 .OptionCheckbox {
   width: 100%;
   padding-left: var(--spacing-l);
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .Option--active,
