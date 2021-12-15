@@ -5,13 +5,15 @@ import { Uncontrolled, Controlled } from '../_common_/types';
 import { storyOptions } from '../Options';
 
 // CSF format story
+
 export const customTrigger = () => {
+  const [value, setValue] = React.useState('Select');
   const onChange = (e: any) => {
-    e.preventDefault();
+    setValue(e.target.value);
   };
 
-  const customTriggerFunc = (label: string) => {
-    return <Input type="text" name="input" value={label} onChange={onChange} />;
+  const customTriggerFunc = () => {
+    return <Input type="text" name="input" value={value} onChange={onChange} />;
   };
 
   return (
@@ -33,8 +35,9 @@ const customCode = `() => {
       subInfo: 'subInfo'
     });
   }
+  const [value, setValue] = React.useState('Select');
   const onChange = (e) => {
-    e.preventDefault();
+    setValue(e.target.value);   
   };
 
   const customTriggerFunc = (label) => {
@@ -43,7 +46,7 @@ const customCode = `() => {
         <Input
           type="text"
           name="input"
-          value={label}
+          value={value}
           onChange={onChange}
         />
       </div>
