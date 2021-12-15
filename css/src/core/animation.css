@@ -23,3 +23,11 @@
 .fade-out {
   animation: fadeOut 120ms cubic-bezier(0.4, 0.14, 0.3, 1);
 }
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-1 {
+  opacity: 1;
+}

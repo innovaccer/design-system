@@ -61,6 +61,8 @@
 .DropdownButton--open {
   background-color: var(--secondary-dark) !important;
   color: var(--text) !important;
+  animation-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
+  animation-duration: 120ms;
 }
 
 .DropdownButton:disabled {
