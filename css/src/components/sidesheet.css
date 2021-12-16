@@ -1,22 +1,36 @@
 @keyframes sidesheet-open {
   from {
     right: -100%;
-    opacity: 0;
   }
   to {
-    right: 0px;
-    opacity: 100;
+    right: 0;
   }
 }
 
 @keyframes sidesheet-close {
   from {
     right: 0;
-    opacity: 100;
   }
   to {
     right: -100%;
-    opacity: 0;
+  }
+}
+
+@keyframes shift-right-spacing-3 {
+  from {
+    transform: translateX(calc(-1 * var(--spacing-3)));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shift-left-spacing-3 {
+  from {
+    transform: translateX(var(--spacing-3));
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
@@ -42,6 +56,7 @@
 
 .Sidesheet-animation--close {
   animation: sidesheet-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
+  animation-fill-mode: forwards;
 }
 
 .Sidesheet-header {
@@ -75,4 +90,12 @@
 .Sidesheet-footer--stickToBottom {
   position: absolute;
   bottom: 0;
+}
+
+.Sidesheet-header--shiftRight {
+  animation: shift-right-spacing-3 80ms cubic-bezier(0.2, 0, 0.38, 0.9);
+}
+
+.Sidesheet-header--shiftLeft {
+  animation: shift-left-spacing-3 80ms cubic-bezier(0.2, 0, 0.38, 0.9);
 }

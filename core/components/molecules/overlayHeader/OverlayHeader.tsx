@@ -10,7 +10,7 @@ export interface OverlayHeaderProps extends BaseProps {
   heading?: string;
   /**
    * Callback called when `Overlay` is closed
-   * **Soon to be depreacted**
+   * **Soon to be deprecated**
    */
   onClose?: (event: React.MouseEvent<HTMLElement, MouseEvent>, reason?: string) => void;
   /**
@@ -27,18 +27,23 @@ export interface OverlayHeaderProps extends BaseProps {
   backButtonCallback?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   /**
    * Shows back button
-   * **Soon to be depreacted**
+   * **Soon to be deprecated**
    */
   backIcon?: boolean;
   /**
    * Callback called when back button is clicked
-   * **Soon to be depreacted**
+   * **Soon to be deprecated**
    */
   backIconCallback?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  /**
+   * Specify css classes to be applied on heading
+   */
+  headingClass?: string;
 }
 
 export const OverlayHeader = (props: OverlayHeaderProps) => {
-  const { className, heading, subHeading, backButton, backIcon, backIconCallback, backButtonCallback } = props;
+  const { className, heading, subHeading, backButton, backIcon, backIconCallback, backButtonCallback, headingClass } =
+    props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -66,7 +71,11 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
             onClick={backButtonCallback || backIconCallback}
           />
         )}
-        {heading && <Heading data-test="DesignSystem-OverlayHeader--heading">{heading}</Heading>}
+        {heading && (
+          <Heading className={headingClass} data-test="DesignSystem-OverlayHeader--heading">
+            {heading}
+          </Heading>
+        )}
       </div>
       {subHeading && (
         <Text data-test="DesignSystem-OverlayHeader--Subheading" appearance="subtle" className={subheadingClass}>

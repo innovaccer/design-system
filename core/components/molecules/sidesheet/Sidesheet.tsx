@@ -228,7 +228,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
     const ContainerClass = classNames({
       ['Overlay-container']: true,
-      ['Overlay-container--open']: open,
+      ['fade-in']: animate,
+      ['Overlay-container--open']: animate,
+      ['fade-out']: !animate,
+      ['Overlay-container--close']: !animate,
     });
 
     const headerClass = classNames({
@@ -247,6 +250,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       ['Sidesheet-body--withMargin']: !!footer && stickFooter,
     });
 
+    const headingClass = classNames({
+      ['Sidesheet-header--shiftRight']: headerOptions?.backButton || headerOptions?.backIcon,
+      ['Sidesheet-header--shiftLeft']: !headerOptions?.backButton && !headerOptions?.backIcon,
+    });
+
     const baseProps = extractBaseProps(this.props);
 
     const SidesheetContainer = (
@@ -260,7 +268,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         <Column data-test="DesignSystem-Sidesheet" {...baseProps} className={classes} size={sidesheetWidth[dimension]}>
           <div className={headerClass}>
             <Column data-test="DesignSystem-Sidesheet--Header">
-              {!header && <OverlayHeader {...headerOptions} />}
+              {!header && <OverlayHeader headingClass={headingClass} {...headerOptions} />}
 
               {!!header && header}
             </Column>
