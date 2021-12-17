@@ -19,7 +19,7 @@
 }
 
 .Breadcrumbs-itemSeparator {
-  color: var(--inverse-lighter);
+  color: var(--secondary);
 }
 
 .Breadcrumbs-dropdown {
