@@ -2,7 +2,7 @@ name: "Test build release"
 on:
   push:
     branches:
-      - master
+      - 2.5.x
 jobs:
   release:
     # uncomment next line as soon as visual tesing starts working
@@ -62,11 +62,6 @@ jobs:
         if: steps.is_release_commit.outputs.result == 1
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master 
     
-      - name: deploy storybook
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        if: steps.is_release_commit.outputs.result == 1
-        run: npm run deploy-storybook -- --ci
       
       - name: notify release
         if: steps.is_release_commit.outputs.result == 1

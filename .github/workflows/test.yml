@@ -2,7 +2,7 @@ name: "Test"
 on:
   push:
     branches:
-      - master
+      - 2.5.x
 jobs:
   test:
     name: Test for coverage
@@ -20,5 +20,3 @@ jobs:
       - name: test
         run: npm run test
       
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
