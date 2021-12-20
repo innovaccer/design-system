@@ -94,7 +94,7 @@ const sizeMapping: Record<Size, number> = {
   large: 20,
 };
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+const ButtonBase = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     size = 'regular',
     appearance = 'basic',
@@ -129,60 +129,62 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     [`Button-icon--${iconAlign}`]: children && iconAlign,
   });
 
-  const ButtonElement = () => {
-    return (
-      <button
-        data-test="DesignSystem-Button"
-        ref={ref}
-        type={type}
-        className={buttonClass}
-        disabled={disabled || loading}
-        tabIndex={tabIndex}
-        {...rest}
-      >
-        {loading ? (
-          <>
-            <Spinner
-              size="small"
-              appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
-              data-test="DesignSystem-Button--Spinner"
-              className="Button-spinner"
-            />
-            <Text className="Button-text Button-text--hidden">{children || ''}</Text>
-          </>
-        ) : (
-          <>
-            {icon && (
-              <div className={iconClass}>
-                <Icon
-                  data-test="DesignSystem-Button--Icon"
-                  name={icon}
-                  appearance={
-                    disabled
-                      ? 'disabled'
-                      : appearance === 'basic' || appearance === 'transparent'
-                      ? selected
-                        ? 'info'
-                        : 'default'
-                      : 'white'
-                  }
-                  size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
-                />
-              </div>
-            )}
-            {children}
-          </>
-        )}
-      </button>
-    );
-  };
+  return (
+    <button
+      data-test="DesignSystem-Button"
+      ref={ref}
+      type={type}
+      className={buttonClass}
+      disabled={disabled || loading}
+      tabIndex={tabIndex}
+      {...rest}
+    >
+      {loading ? (
+        <>
+          <Spinner
+            size="small"
+            appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
+            data-test="DesignSystem-Button--Spinner"
+            className="Button-spinner"
+          />
+          <Text className="Button-text Button-text--hidden">{children || ''}</Text>
+        </>
+      ) : (
+        <>
+          {icon && (
+            <div className={iconClass}>
+              <Icon
+                data-test="DesignSystem-Button--Icon"
+                name={icon}
+                appearance={
+                  disabled
+                    ? 'disabled'
+                    : appearance === 'basic' || appearance === 'transparent'
+                    ? selected
+                      ? 'info'
+                      : 'default'
+                    : 'white'
+                }
+                size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
+              />
+            </div>
+          )}
+          {children}
+        </>
+      )}
+    </button>
+  );
+});
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const { icon, tooltip, children } = { ...props };
 
   return icon && tooltip && !children ? (
     <Tooltip tooltip={tooltip}>
-      <ButtonElement />
+      <ButtonBase {...props} ref={ref} />
     </Tooltip>
   ) : (
-    <ButtonElement />
+    <ButtonBase {...props} ref={ref} />
   );
 });
 
