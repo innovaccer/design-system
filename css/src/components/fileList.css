@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
 }
 .FileItem-actions {
   display: flex;
@@ -31,6 +32,7 @@
 .FileItem-size {
   margin-right: var(--spacing);
   margin-left: var(--spacing);
+  flex-shrink: 0;
 }
 .FileItem-text {
   white-space: nowrap;
