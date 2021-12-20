@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1635145037882 
+   * Generated on: 1640017583502 
    *      Package: @innovaccer/design-system
-   *      Version: v2.5.0
+   *      Version: v2.5.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -3059,7 +3059,7 @@ var sizeMapping$2 = {
   regular: 16,
   large: 20
 };
-var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
+var ButtonBase = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
 
   var _props$size = props.size,
@@ -3078,41 +3078,48 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
       selected = props.selected,
       loading = props.loading,
       disabled = props.disabled,
-      className = props.className,
-      tooltip = props.tooltip,
-      rest = _objectWithoutProperties$1(props, _excluded$u);
+      className = props.className;
+      props.tooltip;
+      var rest = _objectWithoutProperties$1(props, _excluded$u);
 
   var buttonClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Button', true), _defineProperty$2(_classNames, 'Button--expanded', expanded), _defineProperty$2(_classNames, "Button--".concat(size), size), _defineProperty$2(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty$2(_classNames, "Button--".concat(appearance), appearance), _defineProperty$2(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty$2(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
   var iconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Button-icon', true), _defineProperty$2(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
-
-  var ButtonElement = function ButtonElement() {
-    return /*#__PURE__*/React.createElement("button", _extends$3({
-      "data-test": "DesignSystem-Button",
-      ref: ref,
-      type: type,
-      className: buttonClass,
-      disabled: disabled || loading,
-      tabIndex: tabIndex
-    }, rest), loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Spinner, {
-      size: "small",
-      appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white',
-      "data-test": "DesignSystem-Button--Spinner",
-      className: "Button-spinner"
-    }), /*#__PURE__*/React.createElement(Text, {
-      className: "Button-text Button-text--hidden"
-    }, children || '')) : /*#__PURE__*/React.createElement(React.Fragment, null, icon && /*#__PURE__*/React.createElement("div", {
-      className: iconClass
-    }, /*#__PURE__*/React.createElement(Icon, {
-      "data-test": "DesignSystem-Button--Icon",
-      name: icon,
-      appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-      size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
-    })), children));
-  };
+  return /*#__PURE__*/React.createElement("button", _extends$3({
+    "data-test": "DesignSystem-Button",
+    ref: ref,
+    type: type,
+    className: buttonClass,
+    disabled: disabled || loading,
+    tabIndex: tabIndex
+  }, rest), loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Spinner, {
+    size: "small",
+    appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white',
+    "data-test": "DesignSystem-Button--Spinner",
+    className: "Button-spinner"
+  }), /*#__PURE__*/React.createElement(Text, {
+    className: "Button-text Button-text--hidden"
+  }, children || '')) : /*#__PURE__*/React.createElement(React.Fragment, null, icon && /*#__PURE__*/React.createElement("div", {
+    className: iconClass
+  }, /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-Button--Icon",
+    name: icon,
+    appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
+    size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
+  })), children));
+});
+var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var _props = _objectSpread2({}, props),
+      icon = _props.icon,
+      tooltip = _props.tooltip,
+      children = _props.children;
 
   return icon && tooltip && !children ? /*#__PURE__*/React.createElement(Tooltip, {
     tooltip: tooltip
-  }, /*#__PURE__*/React.createElement(ButtonElement, null)) : /*#__PURE__*/React.createElement(ButtonElement, null);
+  }, /*#__PURE__*/React.createElement(ButtonBase, _extends$3({}, props, {
+    ref: ref
+  }))) : /*#__PURE__*/React.createElement(ButtonBase, _extends$3({}, props, {
+    ref: ref
+  }));
 });
 Button.displayName = 'Button';
 
@@ -17699,10 +17706,10 @@ var VirtualScroll = /*#__PURE__*/function (_React$Component) {
           length = _this$props2.length,
           buffer = _this$props2.buffer;
           _this$props2.offset;
-          _this$props2.renderItem;
+          _this$props2.renderItems;
           _this$props2.minItemHeight;
           var forwardRef = _this$props2.forwardRef,
-          rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItem", "minItemHeight", "forwardRef"]);
+          rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItems", "minItemHeight", "forwardRef"]);
 
       var _this$state = this.state,
           init = _this$state.init,
@@ -17746,6 +17753,7 @@ _defineProperty(VirtualScroll, "defaultProps", {
 
 var index = /*#__PURE__*/React.forwardRef(function (props, ref) {
   return /*#__PURE__*/React.createElement(VirtualScroll, _extends({
+    key: props.totalLength,
     forwardRef: ref
   }, props));
 });
@@ -19971,6 +19979,6 @@ ChoiceList.defaultProps = {
   disabled: false
 };
 
-var version = "2.5.0";
+var version = "2.5.1";
 
 export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, ChoiceList, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, InlineMessage, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, MultiSlider, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };

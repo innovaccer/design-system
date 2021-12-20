@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1635145038303 
+   * Generated on: 1640017583851 
    *      Package: @innovaccer/design-system
-   *      Version: v2.5.0
+   *      Version: v2.5.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -2672,7 +2672,7 @@
       regular: 16,
       large: 20
     };
-    var Button = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+    var ButtonBase = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b;
 
       var _c = props.size,
@@ -2691,41 +2691,48 @@
           selected = props.selected,
           loading = props.loading,
           disabled = props.disabled,
-          className = props.className,
-          tooltip = props.tooltip,
-          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip"]);
+          className = props.className;
+          props.tooltip;
+          var rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip"]);
 
       var buttonClass = classNames__default["default"]((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
       var iconClass = classNames__default["default"]((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
-
-      var ButtonElement = function ButtonElement() {
-        return /*#__PURE__*/React__namespace.createElement("button", __assign({
-          "data-test": "DesignSystem-Button",
-          ref: ref,
-          type: type,
-          className: buttonClass,
-          disabled: disabled || loading,
-          tabIndex: tabIndex
-        }, rest), loading ? /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Spinner, {
-          size: "small",
-          appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white',
-          "data-test": "DesignSystem-Button--Spinner",
-          className: "Button-spinner"
-        }), /*#__PURE__*/React__namespace.createElement(Text, {
-          className: "Button-text Button-text--hidden"
-        }, children || '')) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, icon && /*#__PURE__*/React__namespace.createElement("div", {
-          className: iconClass
-        }, /*#__PURE__*/React__namespace.createElement(Icon, {
-          "data-test": "DesignSystem-Button--Icon",
-          name: icon,
-          appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
-          size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
-        })), children));
-      };
+      return /*#__PURE__*/React__namespace.createElement("button", __assign({
+        "data-test": "DesignSystem-Button",
+        ref: ref,
+        type: type,
+        className: buttonClass,
+        disabled: disabled || loading,
+        tabIndex: tabIndex
+      }, rest), loading ? /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Spinner, {
+        size: "small",
+        appearance: appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white',
+        "data-test": "DesignSystem-Button--Spinner",
+        className: "Button-spinner"
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
+        className: "Button-text Button-text--hidden"
+      }, children || '')) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, icon && /*#__PURE__*/React__namespace.createElement("div", {
+        className: iconClass
+      }, /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-Button--Icon",
+        name: icon,
+        appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
+        size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
+      })), children));
+    });
+    var Button = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      var _a = __assign({}, props),
+          icon = _a.icon,
+          tooltip = _a.tooltip,
+          children = _a.children;
 
       return icon && tooltip && !children ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
         tooltip: tooltip
-      }, /*#__PURE__*/React__namespace.createElement(ButtonElement, null)) : /*#__PURE__*/React__namespace.createElement(ButtonElement, null);
+      }, /*#__PURE__*/React__namespace.createElement(ButtonBase, __assign({}, props, {
+        ref: ref
+      }))) : /*#__PURE__*/React__namespace.createElement(ButtonBase, __assign({}, props, {
+        ref: ref
+      }));
     });
     Button.displayName = 'Button';
 
@@ -12380,10 +12387,10 @@
               length = _this$props2.length,
               buffer = _this$props2.buffer;
               _this$props2.offset;
-              _this$props2.renderItem;
+              _this$props2.renderItems;
               _this$props2.minItemHeight;
               var forwardRef = _this$props2.forwardRef,
-              rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItem", "minItemHeight", "forwardRef"]);
+              rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItems", "minItemHeight", "forwardRef"]);
 
           var _this$state = this.state,
               init = _this$state.init,
@@ -12427,6 +12434,7 @@
 
     var index = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       return /*#__PURE__*/React__namespace.createElement(VirtualScroll, _extends({
+        key: props.totalLength,
         forwardRef: ref
       }, props));
     });
@@ -14566,7 +14574,7 @@
       disabled: false
     };
 
-    var version = "2.5.0";
+    var version = "2.5.1";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
