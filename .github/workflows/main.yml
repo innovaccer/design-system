@@ -23,7 +23,7 @@ jobs:
       
       - name: npm install
         if: steps.is_release_commit.outputs.result == 1
-        run: npm install
+        run: npm ci
         
       - name: setup git
         if: steps.is_release_commit.outputs.result == 1
