@@ -13,11 +13,7 @@
   align-items: center;
   flex-direction: row;
   cursor: default;
-}
-
-.Chip-wrapper {
-  display: inline-flex;
-  align-items: center;
+  height: var(--spacing-xl);
 }
 
 .Chip-icon--left {

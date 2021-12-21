@@ -131,7 +131,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
         );
       });
     }
-    return <Text className="EditableChipInput--Text">{placeholder}</Text>;
+    return <Text className="pt-1">{placeholder}</Text>;
   };
 
   const renderChildren = () => {

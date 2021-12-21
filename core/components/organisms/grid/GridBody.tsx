@@ -70,7 +70,7 @@ export const GridBody = (props: GridBodyProps) => {
     );
   };
 
-  if (nestedRows) {
+  if (nestedRows && !loading) {
     return (
       <div className="Grid-body">
         {data.map((item, i) => {

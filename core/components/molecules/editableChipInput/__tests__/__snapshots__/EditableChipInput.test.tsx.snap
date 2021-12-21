@@ -20,7 +20,7 @@ exports[`EditableChipInput component
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip Chip--input my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
           >
             <span
@@ -40,7 +40,7 @@ exports[`EditableChipInput component
             </i>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip Chip--input my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
           >
             <span
@@ -86,7 +86,7 @@ exports[`EditableChipInput component
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip Chip--input my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
           >
             <span
@@ -106,7 +106,7 @@ exports[`EditableChipInput component
             </i>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip Chip--input my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
           >
             <span

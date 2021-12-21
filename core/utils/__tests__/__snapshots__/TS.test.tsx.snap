@@ -44,7 +44,7 @@ exports[`TS renders children 1`] = `
     </span>
   </div>
   <div
-    class="Chip-wrapper Chip Chip--input"
+    class="Chip Chip--input"
     data-test="DesignSystem-Chip--GenericChip"
   >
     <span
@@ -723,7 +723,7 @@ exports[`TS renders children 1`] = `
       data-test="DesignSystem-Select--TodaysDate-wrapper"
     >
       <div
-        class="Chip-wrapper Chip Chip--action"
+        class="Chip Chip--action"
         data-test="DesignSystem-Chip--GenericChip"
       >
         <span
@@ -2709,7 +2709,7 @@ exports[`TS renders children 1`] = `
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <span
-            class="Text Text--default Text--regular EditableChipInput--Text"
+            class="Text Text--default Text--regular pt-1"
             data-test="DesignSystem-Text"
           />
         </div>

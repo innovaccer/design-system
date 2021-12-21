@@ -72,7 +72,7 @@ const customCode = `() => {
     },
     {
       file:{
-        name: 'Image File.jpeg',
+        name: 'Image file name can be some times very long in size so it will get truncated File.jpeg',
         size: '3 MB',
         type: 'image',
       },
@@ -105,43 +105,44 @@ const customCode = `() => {
   };
 
   return (
-    <FileList
-      onClick={onClick}
-      fileList={fileList}
-      className="mt-4 FileList"
-      actionRenderer={fileItem => {
-        if (fileItem.id === 3) {
-          return(
-            <>
-            <Button
-              appearance="transparent"
-              icon="refresh"
-              size="regular"
-              onClick={() => onClick(fileItem)}
-              className={'cursor-pointer'}
-            />
+    <div className="pt-6 w-50">
+      <FileList
+        onClick={onClick}
+        fileList={fileList}
+        actionRenderer={fileItem => {
+          if (fileItem.id === 3) {
+            return(
+              <>
+              <Button
+                appearance="transparent"
+                icon="refresh"
+                size="regular"
+                onClick={() => onClick(fileItem)}
+                className={'cursor-pointer'}
+              />
+              <Button
+                appearance="transparent"
+                icon="close"
+                size="regular"
+                onClick={() => onClick(fileItem)}
+                className={'cursor-pointer ml-2'}
+              />
+            </>
+            );
+          }
+          return (
             <Button
               appearance="transparent"
               icon="close"
               size="regular"
-              onClick={() => onClick(fileItem)}
-              className={'cursor-pointer ml-2'}
+              onClick={() => {}}
+              className={'cursor-pointer'}
             />
-          </>
           );
         }
-        return (
-          <Button
-            appearance="transparent"
-            icon="close"
-            size="regular"
-            onClick={() => {}}
-            className={'cursor-pointer'}
-          />
-        );
-      }
-      }
-    />
+        }
+      />
+    </div>
   );
 }`;
 

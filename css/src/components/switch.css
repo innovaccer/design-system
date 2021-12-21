@@ -37,6 +37,8 @@
   left: 0;
   width: 100%;
   background-color: var(--secondary-light);
+  transition: background 120ms ease;
+  padding-right: 6px;
 }
 
 .Switch-input:focus ~ .Switch-wrapper {
@@ -85,16 +87,21 @@
   box-shadow: 0 0 var(--spacing-xs) 0 var(--shadow-20);
   border-radius: 50%;
   box-sizing: border-box;
+  transition-duration: 80ms;
 }
 
 .Switch-wrapper--checked {
   background-color: var(--primary);
+  transition: background 120ms ease;
+  padding-left: 6px;
+  padding-right: 2px !important;
 }
 
 .Switch-wrapper--checked:before {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
+  transition-duration: 80ms;
 }
 
 .Switch--disabled {

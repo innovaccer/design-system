@@ -120,6 +120,12 @@ describe('renders option with meta list', () => {
 });
 
 describe('renders active option', () => {
+  const dropdownOptions = [
+    { label: 'Below 18', subInfo: 'People bewlow 18 years old', value: 'below_18' },
+    { label: '19 - 35', subInfo: 'People 19-35 years old', value: '19-35' },
+    { label: '36 - 55', subInfo: 'People 36-55 years old', value: '36-55' },
+    { label: '56 and above', subInfo: 'People above 56 years old', value: '56_above' },
+  ];
   it('without checkbox', () => {
     const { getAllByTestId, getByTestId } = render(<Dropdown options={storyOptions} />);
     const dropdownTrigger = getByTestId(trigger);
@@ -138,6 +144,15 @@ describe('renders active option', () => {
     const option = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[0];
     fireEvent.mouseEnter(option);
     expect(option).toHaveClass('Option-checkbox--active');
+  });
+
+  it('with checkbox and option with subinfo', () => {
+    const { getAllByTestId, getByTestId } = render(<Dropdown options={dropdownOptions} withCheckbox={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META--Meta')[0].textContent).toMatch(
+      dropdownOptions[0].subInfo
+    );
   });
 });
 
