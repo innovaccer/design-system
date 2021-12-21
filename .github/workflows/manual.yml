@@ -1,0 +1,62 @@
+name: "Manual release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Release type to be used in npm version command'
+        required: true
+        default: 'prerelease'
+
+jobs:
+  release:
+    name: Release tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      
+      - name: npm install
+        run: npm install
+        
+      - name: setup git
+        run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
+      
+      - name: bump module version
+        run: RELEASE_COMMIT=true npm version --no-commit-hooks ${{ github.event.inputs.release_type }} -m "Released %s"
+
+      - name: gnerate .npmrc
+        run: cp .npmrc.stub .npmrc
+
+      - name: Publish to npmjs
+        run: npm publish --access public
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+
+      - name: remove .npmrc
+        run: rm -rf .npmrc
+        
+      - name: push module tags to github
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git v$(node -p -e "require('./package.json').version")
+
+      - name: remove css/dist dist/ from commit
+        run: |
+          git reset HEAD~1
+          git add package.json
+          git commit -m "Released v$(node -p -e "require('./package.json').version")" --no-verify
+
+      - name: push version to github
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:$GITHUB_REF_NAME 
+    
+      - name: deploy storybook
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npm run deploy-storybook -- --ci
+      
+      - name: notify release
+        uses: /innovaccer/design-system/actions/notify-release@master
+        env:
+          GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
