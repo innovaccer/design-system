@@ -29,7 +29,48 @@ export const all = () => {
   return <AvatarGroup {...options} />;
 };
 
+const customCode = `() => {
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler'
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller'
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler'
+    },
+  ];
+  return <AvatarGroup list={list} popoverOptions={{ dark: true, on: 'hover', position: 'bottom'}}/>;
+}`;
+
 export default {
   title: 'Components/AvatarGroup/All',
   component: AvatarGroup,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+      },
+    },
+  },
 };
