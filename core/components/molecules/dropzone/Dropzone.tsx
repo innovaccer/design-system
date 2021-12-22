@@ -6,6 +6,7 @@ import DropzoneActive from './DropzoneActive';
 import DropzoneError from './DropzoneError';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { fileErrorMessages } from './FileErrors';
+import { useAccessibilityProps } from '@/accessibility/utils';
 
 export type DropZoneType = 'standard' | 'compressed' | 'tight';
 
@@ -59,8 +60,12 @@ export const Dropzone = (props: DropzoneProps) => {
 
   const renderDropzone = () => {
     if (isDragReject) return <DropzoneError type={type} error={fileErrorMessages[fileError]} />;
-
     if (isDragActive) return <DropzoneActive type={type} />;
+
+    const buttonAccessibilityProps = useAccessibilityProps({
+      onClick: open,
+      'aria-label': 'Drag your files here or click to select files',
+    });
 
     return (
       <React.Fragment>
@@ -70,16 +75,18 @@ export const Dropzone = (props: DropzoneProps) => {
             <Text size="large" weight="strong" className="mr-2" appearance={disabled ? 'disabled' : 'default'}>
               Drag your files here or
             </Text>
-            {/* TODO(a11y): fix accessibility  */}
-            {/* eslint-disable */}
-            <span className="cursor-pointer" onClick={open}>
-              <Text size="large" weight="strong" appearance={disabled ? 'disabled' : 'link'}>
-                browse files
-              </Text>
-            </span>
+            <Text
+              tabIndex={disabled ? -1 : 0}
+              className="ml-2 cursor-pointer"
+              size="large"
+              weight="strong"
+              appearance={disabled ? 'disabled' : 'link'}
+              {...buttonAccessibilityProps}
+            >
+              browse files
+            </Text>
             <input {...getInputProps()} />
           </span>
-          {/* eslint-enable */}
           {formatLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{formatLabel}</Text>}
           {sizeLabel && <Text appearance={disabled ? 'disabled' : 'subtle'}>{sizeLabel}</Text>}
           {sampleFileLink && <div className="mt-5">{sampleFileLink}</div>}

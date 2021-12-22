@@ -62,6 +62,7 @@ exports[`Sidesheet component
                 <i
                   class="material-icons material-icons-round Icon Icon--default"
                   data-test="DesignSystem-Button--Icon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   close_round
@@ -150,6 +151,7 @@ exports[`Sidesheet component
                 <i
                   class="material-icons material-icons-round Icon Icon--default"
                   data-test="DesignSystem-Button--Icon"
+                  role="button"
                   style="font-size: 16px; width: 16px;"
                 >
                   close_round

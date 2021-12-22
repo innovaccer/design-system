@@ -10,6 +10,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error_round
@@ -51,6 +52,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info_round
@@ -92,6 +94,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle_round
@@ -133,6 +136,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error_round
@@ -174,6 +178,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error_round
@@ -221,6 +226,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error_round
@@ -282,6 +288,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info_round
@@ -329,6 +336,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info_round
@@ -390,6 +398,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle_round
@@ -437,6 +446,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle_round
@@ -498,6 +508,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error_round
@@ -545,6 +556,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error_round

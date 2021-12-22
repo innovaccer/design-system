@@ -12,6 +12,7 @@ exports[`Message component
       <i
         class="material-icons material-icons-round Icon Icon--alert Message-icon Message-icon--alert Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         error_round
@@ -64,6 +65,7 @@ exports[`Message component
       <i
         class="material-icons material-icons-round Icon Icon--info Message-icon Message-icon--info Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         info_round
@@ -116,6 +118,7 @@ exports[`Message component
       <i
         class="material-icons material-icons-round Icon Icon--success Message-icon Message-icon--success Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         check_circle_round
@@ -168,6 +171,7 @@ exports[`Message component
       <i
         class="material-icons material-icons-round Icon Icon--warning Message-icon Message-icon--warning Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
+        role="button"
         style="font-size: 16px; width: 16px;"
       >
         warning_round

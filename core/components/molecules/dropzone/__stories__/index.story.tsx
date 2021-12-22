@@ -41,9 +41,17 @@ export const all = () => {
     return (
       <React.Fragment>
         {fileItem.networkError && (
-          <Button appearance="transparent" icon="refresh" size="regular" className={'cursor-pointer'} />
+          <Button
+            aria-label={`Remove ${fileItem.file.name}`}
+            appearance="transparent"
+            icon="refresh"
+            size="regular"
+            onClick={() => onDelete(fileItem.id)}
+            className={'cursor-pointer'}
+          />
         )}
         <Button
+          aria-label={`Remove ${fileItem.file.name}`}
           appearance="transparent"
           icon="close"
           size="regular"
@@ -121,13 +129,16 @@ const customCode = `() => {
       <React.Fragment>
         {fileItem.networkError && (
           <Button
+            aria-label={\`Remove \${fileItem.file.name}\`}
             appearance="transparent"
             icon="refresh"
             size="regular"
+            onClick={() => onDelete(fileItem.id)}
             className={'cursor-pointer'}
           />
         )}
         <Button
+          aria-label={\`Remove \${fileItem.file.name}\`}
           appearance="transparent"
           icon="close"
           size="regular"
@@ -172,6 +183,9 @@ export default {
     docs: {
       docPage: {
         customCode,
+        a11yProps: ` 
+        If you are using File list like shown above, don't forget to add \`\`aria-label\`\` to the button.
+         `,
       },
     },
   },
