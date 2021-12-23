@@ -1,5 +1,8 @@
 
-## 2.7.0  (2021-12-20)
+
+
+
+## 2.7.0  (2021-12-23)
 ### Highlights
 
 ### Breaking changes
@@ -17,12 +20,20 @@ NA
 
 ### Features
 * Option to use custom search placeholder in Dropdown search input (9fcb2b65)
+* Adds keyboard interactions in Dropzone component. (8541a26d)
+* Adds subinfo option when checkbox is true Dropdown (96a581a3)
+* Adds transition to switch component (f8cbba79)
+* Transition in sidesheet component added (8c61ef05)
 
 ### Fixes
 * fix: updates docpage for stories without components exported (d5138109)
 * fix(storybook): update package json file to fix storybook docs page (149f8ec8)
 * fix(InputMask): fixes issue with fast input (4d1f8330)
 * fix(switch): add styling for hover and active state (3a54a934)
+* Button re-rendering issue is fixed, which was sometimes causing button to be clicked twice. (6b46d66f)
+* FileList truncates long file names now. (0c2a07b6)
+* Breadcrumbs separator color updated. (5b88f5c5)
+* Fixed loader issue when Table has nested rows. (f41f7f96)
 
 ### Improvements
 *  Added transitions to fullscreenModal component (98cac857)
@@ -31,6 +42,9 @@ NA
 ### Documentation
 * Example for custom header in sidesheet added (edc300cc)
 * Input examples (stories) are interactive now (ead16746)
+* add npm ci command to use package.lock freezed versions on CI environments on github actions (621d0934)
+* updates versions of dev dependencies for security issues (3c3d5288)
+* adds manual release workflow (e31559d3)
 
 
 -------------------
