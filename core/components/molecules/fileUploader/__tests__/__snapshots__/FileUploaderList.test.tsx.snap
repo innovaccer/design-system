@@ -61,6 +61,7 @@ exports[`FileUploaderList component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 close_round
@@ -97,6 +98,7 @@ exports[`FileUploaderList component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 close_round
@@ -133,6 +135,7 @@ exports[`FileUploaderList component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 refresh_round
@@ -150,6 +153,7 @@ exports[`FileUploaderList component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 close_round
@@ -167,6 +171,7 @@ exports[`FileUploaderList component
         >
           <i
             class="material-icons material-icons-round Icon Icon--alert"
+            role="button"
             style="font-size: 14px; width: 14px;"
           >
             error_round

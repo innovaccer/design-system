@@ -10,6 +10,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--compressed"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -26,14 +27,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--link Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -70,6 +70,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -86,14 +87,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--link Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -140,14 +140,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--link Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -184,6 +183,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--compressed Dropzone-icon--disabled"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -200,14 +200,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="-1"
         >
-          <span
-            class="Text Text--disabled Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -244,6 +243,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard Dropzone-icon--disabled"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -260,14 +260,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="-1"
         >
-          <span
-            class="Text Text--disabled Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -314,14 +313,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="-1"
         >
-          <span
-            class="Text Text--disabled Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -358,6 +356,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -374,14 +373,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--link Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -405,6 +403,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -421,14 +420,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--link Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -453,6 +451,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -469,14 +468,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--link Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"
@@ -500,6 +498,7 @@ exports[`Dropzone component snapshot
   >
     <i
       class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
+      role="button"
       style="font-size: 64px; width: 64px;"
     >
       backup_round
@@ -516,14 +515,13 @@ exports[`Dropzone component snapshot
           Drag your files here or
         </span>
         <span
-          class="cursor-pointer"
+          aria-label="Drag your files here or click to select files"
+          class="Text Text--link Text--strong Text--large ml-2 cursor-pointer"
+          data-test="DesignSystem-Text"
+          role="button"
+          tabindex="0"
         >
-          <span
-            class="Text Text--link Text--strong Text--large"
-            data-test="DesignSystem-Text"
-          >
-            browse files
-          </span>
+          browse files
         </span>
         <input
           autocomplete="off"

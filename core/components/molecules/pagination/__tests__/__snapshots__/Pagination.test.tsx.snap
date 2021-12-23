@@ -22,6 +22,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             first_page_round
@@ -39,6 +40,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_before_round
@@ -60,6 +62,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_next_round
@@ -77,6 +80,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             last_page_round
@@ -110,6 +114,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             first_page_round
@@ -127,6 +132,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_before_round
@@ -193,6 +199,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             navigate_next_round
@@ -210,6 +217,7 @@ exports[`Pagination component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             last_page_round

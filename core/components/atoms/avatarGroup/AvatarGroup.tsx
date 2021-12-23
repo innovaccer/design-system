@@ -178,6 +178,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
           position={position}
           appendToBody={appendToBody}
           className={popperClass}
+          offset="medium"
         >
           {renderPopper()}
         </Popover>

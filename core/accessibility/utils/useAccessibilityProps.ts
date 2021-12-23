@@ -1,19 +1,39 @@
 import * as React from 'react';
-import { isEnterKey } from '@/accessibility/utils';
+
+type AriaRoleType = React.AriaRole;
+type KeyboardEventKeyType = KeyboardEvent['key'];
 
 interface IProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
-  role?: React.AriaRole;
+  role?: AriaRoleType;
   'aria-label'?: React.AriaAttributes['aria-label'];
 }
 
-const useAccessibilityProps = ({ onClick, onKeyDown, role, ...rest }: IProps) => {
+const allowed: Record<string, Set<KeyboardEventKeyType>> = {
+  button: new Set(['Enter', 'Space', 'Spacebar', ' ']),
+  link: new Set(['Enter']),
+  // onChange handles everything, no need for extra keyboard interaction
+  checkbox: new Set([]),
+  radio: new Set([]),
+};
+
+// Refer for keyboard interactions: https://webaim.org/techniques/keyboard/#testing
+const isKeyboardInteractionAllowed = (role: AriaRoleType, key: KeyboardEventKeyType) => {
+  if (!allowed[role]) {
+    return false;
+  }
+
+  const allowedKeys = allowed[role];
+  return allowedKeys.has(key);
+};
+
+const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', ...rest }: IProps) => {
   return {
     ...(onClick
       ? {
           onClick: onClick,
-          role: role || 'button',
+          role: role,
           tabIndex: 0,
           'aria-label': rest['aria-label'],
           onKeyDown: (e: React.SyntheticEvent<HTMLElement>) => {
@@ -21,8 +41,12 @@ const useAccessibilityProps = ({ onClick, onKeyDown, role, ...rest }: IProps) =>
               onKeyDown(e as React.KeyboardEvent<HTMLElement>);
               return;
             }
-            if (isEnterKey(e as React.KeyboardEvent<HTMLElement>) && onClick) {
-              onClick(e as React.MouseEvent<HTMLElement>);
+            const key = (e as React.KeyboardEvent<HTMLElement>).key;
+            if (isKeyboardInteractionAllowed(role, key)) {
+              if (onClick) {
+                e.preventDefault();
+                onClick(e as React.MouseEvent<HTMLElement>);
+              }
             }
           },
         }

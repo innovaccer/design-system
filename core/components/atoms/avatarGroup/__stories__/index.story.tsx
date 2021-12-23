@@ -7,7 +7,7 @@ export const all = () => {
   const position = select(
     'position',
     ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end'],
-    'bottom'
+    'bottom-end'
   );
 
   const on = select('on', ['click', 'hover'], 'hover');

@@ -41,6 +41,7 @@ exports[`FileUploader component
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             backup_round
@@ -94,6 +95,7 @@ exports[`FileUploader component prop:accept snapshot
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             backup_round
@@ -148,6 +150,7 @@ exports[`FileUploader component prop:disabled snapshot
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             backup_round
@@ -202,6 +205,7 @@ exports[`FileUploader component prop:disabled snapshot
           <i
             class="material-icons material-icons-round Icon Icon--disabled"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             backup_round
@@ -256,6 +260,7 @@ exports[`FileUploader component prop:multiple snapshot
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             backup_round
@@ -309,6 +314,7 @@ exports[`FileUploader component prop:multiple snapshot
           <i
             class="material-icons material-icons-round Icon Icon--default"
             data-test="DesignSystem-Button--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             backup_round

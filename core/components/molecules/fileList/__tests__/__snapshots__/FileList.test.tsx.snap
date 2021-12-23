@@ -75,6 +75,7 @@ exports[`FileList component
           <i
             class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--video"
             data-test="DesignSystem-FileListItem--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             movie_round
@@ -111,6 +112,7 @@ exports[`FileList component
           <i
             class="material-icons material-icons-round Icon FileIcon FileIcon--image"
             data-test="DesignSystem-FileListItem--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             image_round
@@ -142,6 +144,7 @@ exports[`FileList component
         >
           <i
             class="material-icons material-icons-round Icon Icon--alert"
+            role="button"
             style="font-size: 14px; width: 14px;"
           >
             error_round
@@ -168,6 +171,7 @@ exports[`FileList component
           <i
             class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--application"
             data-test="DesignSystem-FileListItem--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             insert_drive_file_round
@@ -204,6 +208,7 @@ exports[`FileList component
           <i
             class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--others"
             data-test="DesignSystem-FileListItem--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             text_snippet_round

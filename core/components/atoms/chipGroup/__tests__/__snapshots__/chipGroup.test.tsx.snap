@@ -19,6 +19,7 @@ exports[`ChipGroup component
           <i
             class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -41,6 +42,7 @@ exports[`ChipGroup component
           <i
             class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -72,6 +74,7 @@ exports[`ChipGroup component
           <i
             class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -103,6 +106,7 @@ exports[`ChipGroup component
           <i
             class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round

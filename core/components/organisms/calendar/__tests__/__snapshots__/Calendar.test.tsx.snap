@@ -28,6 +28,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -48,6 +49,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -64,6 +66,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -82,6 +85,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -663,6 +667,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -683,6 +688,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -699,6 +705,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -718,6 +725,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -1300,6 +1308,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -1320,6 +1329,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -1336,6 +1346,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -1354,6 +1365,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -1936,6 +1948,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -1956,6 +1969,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -1972,6 +1986,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -1991,6 +2006,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--disabled"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -2572,6 +2588,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -2592,6 +2609,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -2608,6 +2626,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -2626,6 +2645,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -3207,6 +3227,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -3227,6 +3248,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -3243,6 +3265,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -3261,6 +3284,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -3842,6 +3866,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -3862,6 +3887,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -3878,6 +3904,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -3896,6 +3923,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -4477,6 +4505,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -4497,6 +4526,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -4513,6 +4543,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -4531,6 +4562,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -5112,6 +5144,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -5132,6 +5165,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -5148,6 +5182,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -5166,6 +5201,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -5747,6 +5783,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -5767,6 +5804,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -5783,6 +5821,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -5801,6 +5840,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -6382,6 +6422,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -6402,6 +6443,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -6418,6 +6460,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -6436,6 +6479,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -7017,6 +7061,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -7037,6 +7082,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -7053,6 +7099,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -7071,6 +7118,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -7652,6 +7700,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -7672,6 +7721,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -7688,6 +7738,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -8148,6 +8199,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -8164,6 +8216,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -8182,6 +8235,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -8661,6 +8715,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -8681,6 +8736,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -8697,6 +8753,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -9157,6 +9214,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -9173,6 +9231,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -9626,6 +9685,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -9642,6 +9702,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -9660,6 +9721,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -10206,6 +10268,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -10226,6 +10289,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -10242,6 +10306,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -10260,6 +10325,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -10841,6 +10907,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -10861,6 +10928,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -10879,6 +10947,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -11072,6 +11141,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_back_round
@@ -11104,6 +11174,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 arrow_forward_round
@@ -11297,6 +11368,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_back_round
@@ -11317,6 +11389,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -11333,6 +11406,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -11351,6 +11425,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_forward_round
@@ -11932,6 +12007,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_back_round
@@ -11952,6 +12028,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -11968,6 +12045,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -12428,6 +12506,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -12444,6 +12523,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -12462,6 +12542,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_forward_round
@@ -12941,6 +13022,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_back_round
@@ -12961,6 +13043,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -12977,6 +13060,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -13437,6 +13521,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -13453,6 +13538,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -13906,6 +13992,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -13922,6 +14009,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -13940,6 +14028,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_forward_round
@@ -14486,6 +14575,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_back_round
@@ -14506,6 +14596,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -14522,6 +14613,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -14540,6 +14632,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_forward_round
@@ -15121,6 +15214,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_back_round
@@ -15141,6 +15235,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                role="button"
                 style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down_round
@@ -15159,6 +15254,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_forward_round
@@ -15352,6 +15448,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_back_round
@@ -15384,6 +15481,7 @@ exports[`Calendar component
               <i
                 class="material-icons material-icons-round Icon Icon--default"
                 data-test="DesignSystem-Button--Icon"
+                role="button"
                 style="font-size: 12px; width: 12px;"
               >
                 arrow_forward_round

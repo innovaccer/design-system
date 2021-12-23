@@ -21,6 +21,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -51,6 +52,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -140,6 +142,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -170,6 +173,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -259,6 +263,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -289,6 +294,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -378,6 +384,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -408,6 +415,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -497,6 +505,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -527,6 +536,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -616,6 +626,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -646,6 +657,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -735,6 +747,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -765,6 +778,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -854,6 +868,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -884,6 +899,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -973,6 +989,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1003,6 +1020,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1092,6 +1110,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1122,6 +1141,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1211,6 +1231,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1241,6 +1262,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1330,6 +1352,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1360,6 +1383,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1449,6 +1473,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1479,6 +1504,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1568,6 +1594,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1598,6 +1625,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1687,6 +1715,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1717,6 +1746,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1806,6 +1836,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1836,6 +1867,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -1925,6 +1957,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -1955,6 +1988,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2044,6 +2078,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2074,6 +2109,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2163,6 +2199,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2193,6 +2230,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2282,6 +2320,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2312,6 +2351,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2401,6 +2441,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2431,6 +2472,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2520,6 +2562,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2550,6 +2593,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2639,6 +2683,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2669,6 +2714,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2758,6 +2804,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2788,6 +2835,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2877,6 +2925,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -2907,6 +2956,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -2996,6 +3046,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3026,6 +3077,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3115,6 +3167,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3145,6 +3198,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3234,6 +3288,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3264,6 +3319,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3353,6 +3409,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3383,6 +3440,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3472,6 +3530,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3502,6 +3561,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3591,6 +3651,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3621,6 +3682,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3710,6 +3772,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3724,6 +3787,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -3739,6 +3803,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3769,6 +3834,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3783,6 +3849,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -3798,6 +3865,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3887,6 +3955,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3901,6 +3970,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -3916,6 +3986,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -3946,6 +4017,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -3960,6 +4032,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -3975,6 +4048,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4064,6 +4138,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4078,6 +4153,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -4093,6 +4169,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4123,6 +4200,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4137,6 +4215,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -4152,6 +4231,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4241,6 +4321,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4255,6 +4336,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -4270,6 +4352,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4300,6 +4383,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4314,6 +4398,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -4329,6 +4414,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4418,6 +4504,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4432,6 +4519,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -4447,6 +4535,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4477,6 +4566,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4491,6 +4581,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -4506,6 +4597,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4595,6 +4687,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4609,6 +4702,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -4624,6 +4718,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4654,6 +4749,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4668,6 +4764,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -4683,6 +4780,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4772,6 +4870,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4786,6 +4885,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -4801,6 +4901,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4831,6 +4932,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4845,6 +4947,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -4860,6 +4963,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -4949,6 +5053,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -4979,6 +5084,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5061,6 +5167,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
           data-test="DesignSystem-MetaList--Seperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -5075,6 +5182,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5098,6 +5206,7 @@ Object {
       <i
         class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
         data-test="DesignSystem-MetaList--Seperator"
+        role="button"
         style="font-size: 8px; width: 8px;"
       >
         fiber_manual_record_round
@@ -5112,6 +5221,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5201,6 +5311,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5215,6 +5326,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent1 MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -5230,6 +5342,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5260,6 +5373,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5274,6 +5388,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent1 MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -5289,6 +5404,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5378,6 +5494,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5392,6 +5509,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent1Dark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -5407,6 +5525,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5437,6 +5556,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5451,6 +5571,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent1Dark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -5466,6 +5587,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5555,6 +5677,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5569,6 +5692,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent1Lighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -5584,6 +5708,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5614,6 +5739,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5628,6 +5754,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent1Lighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -5643,6 +5770,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5732,6 +5860,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5746,6 +5875,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent2 MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -5761,6 +5891,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5791,6 +5922,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5805,6 +5937,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent2 MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -5820,6 +5953,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5909,6 +6043,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5923,6 +6058,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent2Dark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -5938,6 +6074,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -5968,6 +6105,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -5982,6 +6120,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent2Dark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -5997,6 +6136,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6086,6 +6226,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6100,6 +6241,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent2Lighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -6115,6 +6257,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6145,6 +6288,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6159,6 +6303,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent2Lighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -6174,6 +6319,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6263,6 +6409,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6277,6 +6424,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent3 MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -6292,6 +6440,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6322,6 +6471,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6336,6 +6486,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent3 MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -6351,6 +6502,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6440,6 +6592,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6454,6 +6607,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent3Dark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -6469,6 +6623,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6499,6 +6654,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6513,6 +6669,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent3Dark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -6528,6 +6685,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6617,6 +6775,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6631,6 +6790,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent3Lighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -6646,6 +6806,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6676,6 +6837,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6690,6 +6852,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent3Lighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -6705,6 +6868,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6794,6 +6958,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6808,6 +6973,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent4 MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -6823,6 +6989,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6853,6 +7020,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6867,6 +7035,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent4 MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -6882,6 +7051,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -6971,6 +7141,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -6985,6 +7156,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent4Dark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -7000,6 +7172,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7030,6 +7203,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7044,6 +7218,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent4Dark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -7059,6 +7234,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7148,6 +7324,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7162,6 +7339,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--accent4Lighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -7177,6 +7355,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7207,6 +7386,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7221,6 +7401,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--accent4Lighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -7236,6 +7417,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7325,6 +7507,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7339,6 +7522,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--alert MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -7354,6 +7538,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7384,6 +7569,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7398,6 +7584,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--alert MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -7413,6 +7600,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7502,6 +7690,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7516,6 +7705,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--alertDark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -7531,6 +7721,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7561,6 +7752,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7575,6 +7767,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--alertDark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -7590,6 +7783,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7679,6 +7873,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7693,6 +7888,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--alertLighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -7708,6 +7904,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7738,6 +7935,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7752,6 +7950,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--alertLighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -7767,6 +7966,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7856,6 +8056,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7870,6 +8071,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--default MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -7885,6 +8087,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -7915,6 +8118,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -7929,6 +8133,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--default MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -7944,6 +8149,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8033,6 +8239,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8047,6 +8254,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--destructive MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -8062,6 +8270,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8092,6 +8301,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8106,6 +8316,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--destructive MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -8121,6 +8332,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8210,6 +8422,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8224,6 +8437,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -8239,6 +8453,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8269,6 +8484,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8283,6 +8499,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -8298,6 +8515,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8387,6 +8605,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8401,6 +8620,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--info MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -8416,6 +8636,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8446,6 +8667,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8460,6 +8682,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--info MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -8475,6 +8698,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8564,6 +8788,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8578,6 +8803,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--inverse MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -8593,6 +8819,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8623,6 +8850,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8637,6 +8865,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--inverse MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -8652,6 +8881,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8741,6 +8971,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8755,6 +8986,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--primary MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -8770,6 +9002,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8800,6 +9033,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8814,6 +9048,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--primary MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -8829,6 +9064,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8918,6 +9154,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8932,6 +9169,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--primaryDark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -8947,6 +9185,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -8977,6 +9216,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -8991,6 +9231,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--primaryDark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -9006,6 +9247,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9095,6 +9337,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9109,6 +9352,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--primaryLighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -9124,6 +9368,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9154,6 +9399,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9168,6 +9414,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--primaryLighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -9183,6 +9430,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9272,6 +9520,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9286,6 +9535,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--subtle MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -9301,6 +9551,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9331,6 +9582,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9345,6 +9597,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--subtle MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -9360,6 +9613,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9449,6 +9703,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9463,6 +9718,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--success MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -9478,6 +9734,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9508,6 +9765,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9522,6 +9780,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--success MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -9537,6 +9796,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9626,6 +9886,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9640,6 +9901,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--successDark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -9655,6 +9917,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9685,6 +9948,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9699,6 +9963,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--successDark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -9714,6 +9979,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9803,6 +10069,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9817,6 +10084,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--successLighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -9832,6 +10100,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9862,6 +10131,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9876,6 +10146,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--successLighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -9891,6 +10162,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -9980,6 +10252,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -9994,6 +10267,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--warning MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -10009,6 +10283,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -10039,6 +10314,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -10053,6 +10329,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--warning MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -10068,6 +10345,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -10157,6 +10435,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -10171,6 +10450,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--warningDark MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -10186,6 +10466,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -10216,6 +10497,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -10230,6 +10512,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--warningDark MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -10245,6 +10528,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -10334,6 +10618,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -10348,6 +10633,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--warningLighter MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -10363,6 +10649,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -10393,6 +10680,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -10407,6 +10695,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--warningLighter MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -10422,6 +10711,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -10511,6 +10801,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -10525,6 +10816,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--white MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
+            role="button"
             style="font-size: 8px; width: 8px;"
           >
             fiber_manual_record_round
@@ -10540,6 +10832,7 @@ Object {
             <i
               class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
               style="font-size: 16px; width: 16px;"
             >
               assessment_round
@@ -10570,6 +10863,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
@@ -10584,6 +10878,7 @@ Object {
         <i
           class="material-icons material-icons-round Icon Icon--white MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
+          role="button"
           style="font-size: 8px; width: 8px;"
         >
           fiber_manual_record_round
@@ -10599,6 +10894,7 @@ Object {
           <i
             class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
             style="font-size: 16px; width: 16px;"
           >
             assessment_round
