@@ -135,7 +135,7 @@ describe('AvatarGroup Component with prop: popoverOptions', () => {
   it('renders avatars with prop: popperRenderer', () => {
     const max = 3;
     const popperList = list.slice(max, list.length);
-    const popperRenderer = jest.fn();
+    const popperRenderer = jest.fn(() => <div>Avatar</div>);
 
     const { getByTestId } = render(
       <AvatarGroup list={list} max={max} popoverOptions={{ popperRenderer, on: 'click', dark: false }} />
