@@ -86,10 +86,22 @@ export interface PopperWrapperProps {
    * type: 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick';
    */
   onToggle: (open: boolean, type?: string) => void;
+  /*
+   * animationClass is for providing custom animations for open/close of the popover
+   * animationClass.open - takes animation class when popover is open
+   * animationClass.close - takes animation class when popover is close
+   */
+  animationClass?: {
+    open: string;
+    close: string;
+  };
 }
 
 interface PopperWrapperState {
   zIndex?: number;
+  animationKeyframe: string;
+  isOpen: boolean;
+  uniqueKey: string;
 }
 
 export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWrapperState> {
@@ -99,6 +111,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   _timer?: number;
   _throttleWait?: boolean;
   offsetMapping: Record<Offset, string>;
+  positionOffset: Record<PositionType, string>;
 
   static defaultProps = {
     on: 'click',
@@ -112,7 +125,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   constructor(props: PopperWrapperProps) {
     super(props);
 
-    this.state = {};
+    this.state = { animationKeyframe: '', isOpen: this.props.open || false, uniqueKey: '' };
 
     this.hoverableDelay = 100;
     this.offsetMapping = {
@@ -120,6 +133,25 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       medium: '4px',
       large: '8px',
     };
+
+    this.positionOffset = {
+      'auto-start': 'top left',
+      auto: 'top',
+      'auto-end': 'top right',
+      'top-start': 'bottom left',
+      top: 'bottom',
+      'top-end': 'bottom right',
+      'right-start': 'top right',
+      right: 'top right',
+      'right-end': 'top right',
+      'bottom-end': 'top right',
+      bottom: 'top',
+      'bottom-start': 'top left',
+      'left-end': 'top left',
+      left: 'top left',
+      'left-start': 'top left',
+    };
+
     this.triggerRef = React.createRef();
     this.popupRef = React.createRef();
 
@@ -141,13 +173,23 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     }
     if (prevProps.open !== this.props.open) {
       this._throttleWait = false;
+      this.setState({
+        animationKeyframe: '',
+      });
       if (this.props.open) {
         const triggerElement = this.triggerRef.current;
         const zIndex = this.getZIndexForLayer(triggerElement);
 
         this.setState({
           zIndex: zIndex === undefined ? zIndex : zIndex + 1,
+          isOpen: true,
         });
+      } else {
+        setTimeout(() => {
+          this.setState({
+            isOpen: false,
+          });
+        }, 120);
       }
     }
   }
@@ -292,31 +334,94 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   }
 
   getPopperChildren({ ref, style, placement, outOfBoundaries }: PopperChildrenProps) {
-    const { offset, children } = this.props;
-    const { zIndex } = this.state;
+    const { offset, children, open, animationClass } = this.props;
+    const { zIndex, animationKeyframe, uniqueKey } = this.state;
     const newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
+    let childrenStyles = {
+      ...newStyle,
+      zIndex,
+    };
+    let classes = '';
 
-    const element = React.cloneElement(children, {
+    if (!animationClass) {
+      const transformStyles = this.popupRef.current?.style.getPropertyValue('transform');
+      if (transformStyles && !animationKeyframe) {
+        const uniqueKey = Math.random().toString(36).substring(2, 6);
+
+        const popperAnimation = `
+        @keyframes popper-open-${uniqueKey} {
+          from { 
+            transform: ${transformStyles} scaleY(0.5);
+            opacity: 0.5;
+          }
+          to {
+            transform: ${transformStyles} scaleY(1);
+            opacity: 1
+          }
+        }
+        @keyframes popper-close-${uniqueKey} {
+          from {
+            transform: ${transformStyles} scaleY(1);
+            opacity: 1
+          }
+          to {
+            transform: ${transformStyles} scaleY(0);
+            opacity: 0.5
+          }
+        }`;
+
+        this.setState({
+          animationKeyframe: popperAnimation,
+          uniqueKey,
+        });
+      }
+
+      const popperAnimationStyles = {
+        transformOrigin: this.positionOffset[this.props.placement],
+        animation: open
+          ? `popper-open-${uniqueKey} 120ms cubic-bezier(0, 0, 0.38, 0.9)`
+          : `popper-close-${uniqueKey} 120ms cubic-bezier(0.2, 0, 1, 0.9)`,
+      };
+
+      childrenStyles = {
+        ...childrenStyles,
+        ...popperAnimationStyles,
+      };
+    } else {
+      classes = classNames(
+        {
+          [`${animationClass.open}`]: open,
+          [`${animationClass.close}`]: !open,
+        },
+        children.props.className
+      );
+    }
+
+    const childProps = {
       ref,
-      style: {
-        ...newStyle,
-        zIndex,
-      },
+      style: childrenStyles,
       'data-placement': placement,
       'data-hide': outOfBoundaries,
       onMouseEnter: this.handleMouseEnter,
       onMouseLeave: this.handleMouseLeave,
-    });
+    };
+
+    const element = React.cloneElement(
+      children,
+      animationClass ? { ...childProps, className: classes } : { ...childProps }
+    );
     return element;
   }
 
   render() {
-    const { placement, appendToBody, open, hide, boundaryElement } = this.props;
+    const { placement, appendToBody, hide, boundaryElement } = this.props;
+    const { animationKeyframe, isOpen } = this.state;
 
     return (
       <Manager>
+        <style>{animationKeyframe}</style>
         <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(ref)}</Reference>
-        {open &&
+        {isOpen &&
           appendToBody &&
           ReactDOM.createPortal(
             <Popper
@@ -331,7 +436,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             </Popper>,
             document.body
           )}
-        {open && !appendToBody && (
+        {isOpen && !appendToBody && (
           <Popper placement={placement} innerRef={this.popupRef}>
             {this.getPopperChildren}
           </Popper>
