@@ -743,6 +743,7 @@ exports[`TS renders children 1`] = `
   <div
     class="Dropdown"
   >
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -787,6 +788,7 @@ exports[`TS renders children 1`] = `
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
         >
+          <style />
           <div
             class="OutsideClick PopperWrapper-trigger w-100"
           >
@@ -1530,6 +1532,7 @@ exports[`TS renders children 1`] = `
       </div>
     </div>
   </div>
+  <style />
   <div
     class="OutsideClick PopperWrapper-trigger"
   >
@@ -1744,6 +1747,7 @@ exports[`TS renders children 1`] = `
       stroke-width="8"
     />
   </svg>
+  <style />
   <div
     class="OutsideClick PopperWrapper-trigger"
   >

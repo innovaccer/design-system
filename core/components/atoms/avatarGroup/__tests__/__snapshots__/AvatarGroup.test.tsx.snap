@@ -16,6 +16,7 @@ Object {
           data-test="DesignSystem-AvatarGroup--Avatar"
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
+          <style />
           <div
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
@@ -37,6 +38,7 @@ Object {
           data-test="DesignSystem-AvatarGroup--Avatar"
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
+          <style />
           <div
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
@@ -53,6 +55,7 @@ Object {
             </span>
           </div>
         </div>
+        <style />
         <div
           class="OutsideClick PopperWrapper-trigger"
         >
@@ -85,6 +88,7 @@ Object {
         data-test="DesignSystem-AvatarGroup--Avatar"
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
+        <style />
         <div
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
@@ -106,6 +110,7 @@ Object {
         data-test="DesignSystem-AvatarGroup--Avatar"
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
+        <style />
         <div
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
@@ -122,6 +127,7 @@ Object {
           </span>
         </div>
       </div>
+      <style />
       <div
         class="OutsideClick PopperWrapper-trigger"
       >
