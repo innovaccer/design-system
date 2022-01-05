@@ -171,18 +171,9 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
         if (this.props.closeOnEscape) OverlayManager.add(this.sidesheetRef.current);
       } else {
-        this.setState(
-          {
-            animate: false,
-          },
-          () => {
-            window.setTimeout(() => {
-              this.setState({
-                open: false,
-              });
-            }, 120);
-          }
-        );
+        this.setState({
+          animate: false,
+        });
 
         if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       }
@@ -196,6 +187,14 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     if (open) {
       if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       if (onClose) onClose(event, 'OutsideClick');
+    }
+  }
+
+  handleAnimationEnd() {
+    if (!this.state.animate) {
+      this.setState({
+        open: false,
+      });
     }
   }
 
@@ -230,7 +229,6 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       ['Overlay-container']: true,
       ['fade-in']: animate,
       ['Overlay-container--open']: animate,
-      ['fade-out']: !animate,
       ['Overlay-container--close']: !animate,
     });
 
@@ -264,6 +262,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         data-layer={true}
         style={{ zIndex }}
         ref={this.sidesheetRef}
+        onAnimationEnd={this.handleAnimationEnd}
       >
         <Column data-test="DesignSystem-Sidesheet" {...baseProps} className={classes} size={sidesheetWidth[dimension]}>
           <div className={headerClass}>
