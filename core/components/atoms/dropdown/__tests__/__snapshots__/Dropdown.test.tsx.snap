@@ -234,7 +234,7 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <span
-              class="Text Text--subtle Text--regular mr-4"
+              class="Text Text--subtle Text--regular mr-4 white-space-nowrap"
               data-test="DesignSystem-Text"
             >
               Label
@@ -372,7 +372,7 @@ exports[`Dropdown component
             class="DropdownButton-wrapper"
           >
             <span
-              class="Text Text--subtle Text--regular mr-4"
+              class="Text Text--subtle Text--regular mr-4 white-space-nowrap"
               data-test="DesignSystem-Text"
             >
               Label
