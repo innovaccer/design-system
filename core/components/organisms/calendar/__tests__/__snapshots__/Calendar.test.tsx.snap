@@ -11248,11 +11248,11 @@ exports[`Calendar component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -11263,11 +11263,11 @@ exports[`Calendar component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--default Text--regular"
+                class="Text Text--link Text--regular"
                 data-test="DesignSystem-Text"
               >
                 2022
@@ -15555,11 +15555,11 @@ exports[`Calendar component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -15570,11 +15570,11 @@ exports[`Calendar component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--default Text--small"
+                class="Text Text--link Text--small"
                 data-test="DesignSystem-Text"
               >
                 2022
