@@ -93,7 +93,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
       {!menu && (
         <div className="DropdownButton-wrapper">
           {inlineLabel && (
-            <Text appearance="subtle" className="mr-4">
+            <Text appearance="subtle" className="mr-4 white-space-nowrap">
               {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
             </Text>
           )}
