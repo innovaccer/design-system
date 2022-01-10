@@ -116,13 +116,13 @@
 }
 
 .Input-icon--disabled .Icon {
-  color: var(--inverse-lightest);
+  color: var(--inverse-light);
 }
 
 .Input-icon--right .Icon {
   cursor: pointer;
   margin-left: var(--spacing);
-  color: var(--inverse-lightest);
+  color: var(--inverse-light);
 }
 
 .Input-inlineLabel {
