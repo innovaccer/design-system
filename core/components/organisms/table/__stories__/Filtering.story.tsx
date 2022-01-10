@@ -297,7 +297,7 @@ import './style.css';
             />
           </div>
         </div>
-        <div className="mb-5">
+        <div className="mb-5 d-flex">
           {Object.keys(filterList).map(filter => {
             return filterList[filter].map(value => (
               <Chip
@@ -832,6 +832,9 @@ import './style.css';
 export default {
   title: 'Components/Table/Filtering',
   parameters: {
+    previewTabs: {
+      canvas: { hidden: true },
+    },
     docs: {
       docPage: {
         customCode,
