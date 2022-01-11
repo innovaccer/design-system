@@ -15,3 +15,118 @@
   word-break: break-word;
   hyphens: auto;
 }
+
+@keyframes tooltip-open-top {
+  from {
+    top: 0px;
+    opacity: 0.5;
+  }
+  to {
+    top: -8px;
+    opacity: 1;
+  }
+}
+@keyframes tooltip-close-top {
+  from {
+    top: -8px;
+    opacity: 0.5;
+  }
+  to {
+    top: 0px;
+    opacity: 0;
+  }
+}
+
+.Tooltip-animation-open-top {
+  animation: tooltip-open-top 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+.Tooltip-animation-close-top {
+  animation: tooltip-close-top 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+@keyframes tooltip-open-bottom {
+  from {
+    top: 0px;
+    opacity: 0.5;
+  }
+  to {
+    top: 8px;
+    opacity: 1;
+  }
+}
+@keyframes tooltip-close-bottom {
+  from {
+    top: 8px;
+    opacity: 0.5;
+  }
+  to {
+    top: 0px;
+    opacity: 0;
+  }
+}
+
+.Tooltip-animation-open-bottom {
+  animation: tooltip-open-bottom 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+.Tooltip-animation-close-bottom {
+  animation: tooltip-close-bottom 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+
+@keyframes tooltip-open-left {
+  from {
+    left: 0px;
+    opacity: 0.5;
+  }
+  to {
+    left: -8px;
+    opacity: 1;
+  }
+}
+@keyframes tooltip-close-left {
+  from {
+    left: -8px;
+    opacity: 0.5;
+  }
+  to {
+    left: 0px;
+    opacity: 0;
+  }
+}
+
+.Tooltip-animation-open-left {
+  animation: tooltip-open-left 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+.Tooltip-animation-close-left {
+  animation: tooltip-close-left 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+
+@keyframes tooltip-open-right {
+  from {
+    left: 0px;
+    opacity: 0.5;
+  }
+  to {
+    left: 8px;
+    opacity: 1;
+  }
+}
+@keyframes tooltip-close-right {
+  from {
+    left: 8px;
+    opacity: 0.5;
+  }
+  to {
+    left: 0px;
+    opacity: 0;
+  }
+}
+
+.Tooltip-animation-open-right {
+  animation: tooltip-open-right 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+.Tooltip-animation-close-right {
+  animation: tooltip-close-right 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
