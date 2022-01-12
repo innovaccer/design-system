@@ -112,7 +112,6 @@
 }
 
 .Button--basic:hover {
-  background: var(--secondary);
   box-shadow: var(--shadow-s);
 }
 
