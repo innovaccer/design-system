@@ -6,7 +6,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
@@ -34,7 +34,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
@@ -62,7 +62,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
@@ -90,7 +90,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
@@ -118,7 +118,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
@@ -155,7 +155,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
@@ -192,7 +192,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
@@ -229,7 +229,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="undefined"
+      class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i

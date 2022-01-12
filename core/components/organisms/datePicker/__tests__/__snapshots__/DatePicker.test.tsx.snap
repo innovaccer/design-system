@@ -645,7 +645,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip-action--disabled"
+          class="Chip-wrapper Chip Chip-action--disabled"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -1307,7 +1307,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -1969,7 +1969,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip-action--disabled"
+          class="Chip-wrapper Chip Chip-action--disabled"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -2630,7 +2630,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -3291,7 +3291,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -3952,7 +3952,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -4208,7 +4208,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -4457,7 +4457,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span
@@ -5118,7 +5118,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
         >
           <span

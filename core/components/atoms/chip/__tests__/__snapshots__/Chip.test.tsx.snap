@@ -6,7 +6,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Action"
+      class="Chip-wrapper Chip Chip--Action"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -24,7 +24,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Action"
+      class="Chip-wrapper Chip Chip--Action"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -42,7 +42,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip-Action--disabled"
+      class="Chip-wrapper Chip Chip-Action--disabled"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -60,7 +60,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Input"
+      class="Chip-wrapper Chip Chip--Input"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -78,7 +78,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Input"
+      class="Chip-wrapper Chip Chip--Input"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -96,7 +96,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip-Input--disabled"
+      class="Chip-wrapper Chip Chip-Input--disabled"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -114,7 +114,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Selection"
+      class="Chip-wrapper Chip Chip--Selection"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -132,7 +132,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Selection"
+      class="Chip-wrapper Chip Chip--Selection"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -150,7 +150,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip-Selection--disabled"
+      class="Chip-wrapper Chip Chip-Selection--disabled"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -168,7 +168,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Selection"
+      class="Chip-wrapper Chip Chip--Selection"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
@@ -186,7 +186,7 @@ exports[`Chip component
 <body>
   <div>
     <div
-      class="Chip Chip--Selection Chip-Selection--selected"
+      class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected"
       data-test="DesignSystem-Chip--GenericChip"
     >
       <span
