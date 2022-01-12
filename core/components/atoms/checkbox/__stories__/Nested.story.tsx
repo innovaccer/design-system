@@ -51,6 +51,7 @@ export const NestedCheckboxes = () => {
               value={label}
               onChange={(c) => handleChildChange(c, ind)}
               defaultChecked={ind < 2}
+              className="mt-4"
             />
           );
         })}
@@ -105,6 +106,7 @@ const customCode = `() => {
                 checked={checked[ind]}
                 value={label}
                 onChange={c => handleChildChange(c, ind)}
+                className="mt-4"
               />
             );
           })

@@ -3,7 +3,7 @@ import { Checkbox, Label } from '@/index';
 
 export const CheckboxGroup = () => (
   <div>
-    <Label>Problems</Label>
+    <Label className="mb-3">Problems</Label>
     <Checkbox label="Cardiovascular" defaultChecked={true} />
     <Checkbox label="Obesity" defaultChecked={true} className="mt-5" />
     <Checkbox label="Patient has language barriers" className="mt-5" />
