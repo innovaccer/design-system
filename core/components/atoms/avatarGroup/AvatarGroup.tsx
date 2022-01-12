@@ -1,8 +1,11 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { Avatar, Popover, Text } from '@/index';
+import { Popover } from '@/index';
 import { AvatarProps, PopoverProps } from '@/index.type';
+import AvatarCount from './AvatarCount';
+import Avatars from './Avatars';
+import AvatarPopperBody from './AvatarPopperBody';
 
 interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -10,7 +13,7 @@ interface AvatarData extends Record<string, any> {
   appearance?: AvatarProps['appearance'];
 }
 
-interface AvatarPopperProps {
+interface AvatarPopoverProps {
   popperRenderer?: (names: AvatarData[]) => JSX.Element;
   appendToBody?: PopoverProps['appendToBody'];
   dark?: PopoverProps['dark'];
@@ -46,7 +49,7 @@ export interface AvatarGroupProps extends BaseProps {
    * **Popover for +x avatar**
    *
    * <pre className="DocPage-codeBlock">
-   * AvatarPopperProps: {
+   * AvatarPopoverProps: {
    *   popperRenderer?: (names: AvatarData[]) => JSX.Element;
    *   appendToBody?: boolean;
    *   dark?: boolean;
@@ -68,7 +71,7 @@ export interface AvatarGroupProps extends BaseProps {
    * </pre>
    *
    */
-  popoverOptions: AvatarPopperProps;
+  popoverOptions: AvatarPopoverProps;
   /**
    * Position to place the tooltip on `Avatars` shown before +x
    */
@@ -90,7 +93,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const extraAvatars = list.length > max ? (list.length - max > 9 ? 9 : list.length - max) : 0;
+  const hiddenAvatarCount = list.length > max ? Math.min(list.length - max, 99) : 0;
 
   const style = {
     borderRadius: '50%',
@@ -113,74 +116,25 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     popperClassName
   );
 
-  const trigger = (
-    <div data-test="DesignSystem-AvatarGroup--TriggerAvatar" style={style}>
-      <Avatar appearance="secondary" firstName="+" lastName={`${extraAvatars}`} withTooltip={false} />
-    </div>
-  );
-
-  const renderPopper = () => {
-    const extraAvatarsList = list.slice(max, list.length);
-
-    if (popperRenderer && typeof renderPopper === 'function') {
-      return popperRenderer(extraAvatarsList);
-    }
-
-    return (
-      <div className="py-6 pr-4 pl-6">
-        <div className="AvatarGroup-TextWrapper" style={{ maxHeight }}>
-          {extraAvatarsList.map((item, ind) => {
-            const { firstName = '', lastName = '' } = item;
-            const name = `${firstName} ${lastName}`;
-
-            return (
-              <Text
-                key={ind}
-                appearance={dark ? 'white' : 'default'}
-                className={ind < extraAvatars - 1 ? 'mb-5' : ''}
-                data-test="DesignSystem-AvatarGroup--Text"
-              >
-                {name}
-              </Text>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
-
-  const renderAvatars = () => {
-    const avatars = list.slice(0, max).map((item, index) => {
-      const { appearance, firstName, lastName } = item;
-      return (
-        <div data-test="DesignSystem-AvatarGroup--Avatar" className="AvatarGroup-item" style={style} key={index}>
-          <Avatar
-            appearance={appearance}
-            firstName={firstName}
-            lastName={lastName}
-            withTooltip={true}
-            tooltipPosition={tooltipPosition}
-          />
-        </div>
-      );
-    });
-    return avatars;
-  };
-
   return (
     <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
-      {renderAvatars()}
+      <Avatars avatarList={list.slice(0, max)} avatarStyle={style} tooltipPosition={tooltipPosition} />
       {list.length - max > 0 && (
         <Popover
           on={on}
           dark={dark}
-          trigger={trigger}
+          trigger={<AvatarCount hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
           position={position}
           appendToBody={appendToBody}
           className={popperClass}
           offset="medium"
         >
-          {renderPopper()}
+          <AvatarPopperBody
+            hiddenAvatarList={list.slice(max, list.length)}
+            popperRenderer={popperRenderer}
+            maxHeight={maxHeight}
+            dark={dark}
+          />
         </Popover>
       )}
     </div>

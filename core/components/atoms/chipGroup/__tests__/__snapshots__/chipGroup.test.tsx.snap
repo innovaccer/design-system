@@ -13,7 +13,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip Chip--action"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
@@ -36,7 +36,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip Chip--input"
+          class="Chip-wrapper Chip Chip--input"
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
@@ -68,7 +68,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip Chip--selection Chip-selection--selected"
+          class="Chip-wrapper Chip Chip--selection Chip-selection--selected"
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
@@ -100,7 +100,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip Chip--selection"
+          class="Chip-wrapper Chip Chip--selection"
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i

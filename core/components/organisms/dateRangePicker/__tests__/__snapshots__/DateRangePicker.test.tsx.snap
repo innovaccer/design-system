@@ -39233,11 +39233,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Dec
@@ -39386,11 +39386,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -39401,11 +39401,11 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--default Text--regular"
+                class="Text Text--link Text--regular"
                 data-test="DesignSystem-Text"
               >
                 2022
@@ -39483,6 +39483,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -39641,6 +39642,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -39799,6 +39801,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -40807,11 +40810,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 Dec
@@ -40960,11 +40963,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -40975,11 +40978,11 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--default Text--small"
+                class="Text Text--link Text--small"
                 data-test="DesignSystem-Text"
               >
                 2022
@@ -41057,6 +41060,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -41215,6 +41219,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -41373,6 +41378,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -42381,11 +42387,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--large"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 Dec
@@ -42534,11 +42540,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--link Text--regular"
+                class="Text Text--default Text--regular"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -42549,11 +42555,11 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--default Text--regular"
+                class="Text Text--link Text--regular"
                 data-test="DesignSystem-Text"
               >
                 2022
@@ -42631,6 +42637,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -42785,7 +42792,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
   >
     <div
       class="Calendar-wrapper"
@@ -43802,6 +43809,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -43956,7 +43964,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
   >
     <div
       class="Calendar-wrapper"
@@ -44973,6 +44981,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -45127,7 +45136,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
   >
     <div
       class="Calendar-wrapper"
@@ -46994,11 +47003,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-monthValue Calendar-monthValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-monthValue Calendar-monthValue--small"
               data-test="DesignSystem-Calendar--monthValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 Dec
@@ -47147,11 +47156,11 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--link Text--small"
+                class="Text Text--default Text--small"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -47162,11 +47171,11 @@ exports[`DateRangePicker component
             class="Calendar-valueRow"
           >
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--default Text--small"
+                class="Text Text--link Text--small"
                 data-test="DesignSystem-Text"
               >
                 2022
@@ -47244,6 +47253,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -47398,7 +47408,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
   >
     <div
       class="Calendar-wrapper"
@@ -48415,6 +48425,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -48569,7 +48580,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
   >
     <div
       class="Calendar-wrapper"
@@ -49586,6 +49597,7 @@ exports[`DateRangePicker component
  1`] = `
 <body>
   <div>
+    <style />
     <div
       class="OutsideClick PopperWrapper-trigger w-100"
     >
@@ -49740,7 +49752,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
   >
     <div
       class="Calendar-wrapper"

@@ -1,7 +1,7 @@
 .ProgressBar {
   width: 100%;
   border-radius: var(--spacing-m);
-  background: var(--secondary-lightest);
+  background: var(--secondary-lighter);
 }
 
 .ProgressBar-indicator {

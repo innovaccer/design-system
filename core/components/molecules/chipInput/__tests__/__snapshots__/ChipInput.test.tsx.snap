@@ -13,7 +13,7 @@ exports[`ChipInput component
         class="ChipInput-wrapper"
       >
         <div
-          class="Chip Chip--input my-2 mx-2"
+          class="Chip-wrapper Chip Chip--input my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
         >
           <span
@@ -33,7 +33,7 @@ exports[`ChipInput component
           </i>
         </div>
         <div
-          class="Chip Chip--input my-2 mx-2"
+          class="Chip-wrapper Chip Chip--input my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
         >
           <span
@@ -86,7 +86,7 @@ exports[`ChipInput component
         class="ChipInput-wrapper"
       >
         <div
-          class="Chip Chip-input--disabled my-2 mx-2"
+          class="Chip-wrapper Chip Chip-input--disabled my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
         >
           <span
@@ -106,7 +106,7 @@ exports[`ChipInput component
           </i>
         </div>
         <div
-          class="Chip Chip-input--disabled my-2 mx-2"
+          class="Chip-wrapper Chip Chip-input--disabled my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
         >
           <span

@@ -99,4 +99,5 @@
 .Slider-handle--disabled {
   pointer-events: none;
   background-color: var(--secondary-light);
+  box-shadow: none;
 }

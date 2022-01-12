@@ -19,6 +19,7 @@ exports[`EditableDropdown component
           class="Dropdown d-none"
           data-test="DesignSystem-EditableDropdown--Dropdown"
         >
+          <style />
           <div
             class="OutsideClick PopperWrapper-trigger w-100"
           >

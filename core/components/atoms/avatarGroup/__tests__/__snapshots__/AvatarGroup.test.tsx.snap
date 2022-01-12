@@ -16,6 +16,7 @@ Object {
           data-test="DesignSystem-AvatarGroup--Avatar"
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
+          <style />
           <div
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
@@ -37,6 +38,7 @@ Object {
           data-test="DesignSystem-AvatarGroup--Avatar"
           style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
         >
+          <style />
           <div
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
@@ -53,6 +55,7 @@ Object {
             </span>
           </div>
         </div>
+        <style />
         <div
           class="OutsideClick PopperWrapper-trigger"
         >
@@ -62,10 +65,9 @@ Object {
           >
             <span
               class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
-              data-test="DesignSystem-Avatar"
             >
               <span
-                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--secondary"
+                class="Text Text--white Text--regular Avatar-content--secondary"
                 data-test="DesignSystem-Text"
               >
                 +4
@@ -86,6 +88,7 @@ Object {
         data-test="DesignSystem-AvatarGroup--Avatar"
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
+        <style />
         <div
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
@@ -107,6 +110,7 @@ Object {
         data-test="DesignSystem-AvatarGroup--Avatar"
         style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
       >
+        <style />
         <div
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
@@ -123,6 +127,7 @@ Object {
           </span>
         </div>
       </div>
+      <style />
       <div
         class="OutsideClick PopperWrapper-trigger"
       >
@@ -132,10 +137,9 @@ Object {
         >
           <span
             class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
-            data-test="DesignSystem-Avatar"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--secondary"
+              class="Text Text--white Text--regular Avatar-content--secondary"
               data-test="DesignSystem-Text"
             >
               +4
