@@ -15,6 +15,10 @@
   cursor: default;
   height: var(--spacing-xl);
 }
+.Chip-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
 
 .Chip-icon--left {
   padding-right: var(--spacing-m);

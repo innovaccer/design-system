@@ -57,7 +57,7 @@ export const GenericChip = (props: GenericChipProps) => {
     <div
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
       {...baseProps}
-      className={`${className}`}
+      className={`Chip-wrapper ${className}`}
       onClick={onClickHandler}
     >
       {icon && (
