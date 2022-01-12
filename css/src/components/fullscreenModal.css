@@ -32,11 +32,6 @@
   overflow: auto;
   display: flex;
   flex-direction: column;
-  visibility: hidden;
-}
-
-.FullscreenModal--open {
-  visibility: visible;
 }
 
 .FullscreenModal-animation--open {
