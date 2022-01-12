@@ -50,6 +50,7 @@
 
 .Chip--action:active {
   background: var(--stone-dark);
+  border: none;
 }
 
 .Chip-action--disabled {
@@ -75,6 +76,7 @@
 
 .Chip--selection:active {
   background: var(--stone-dark);
+  border: none;
 }
 
 .Chip-selection--selected {
@@ -99,7 +101,7 @@
 }
 
 .Chip--input:hover {
-  background: var(--stone-light);
+  box-shadow: var(--shadow-s);
 }
 
 .Chip-input--disabled {
