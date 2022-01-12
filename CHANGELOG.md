@@ -1,6 +1,34 @@
 
+## 2.8.0-0  (2022-01-12)
+### Highlights
 
+### Breaking changes
+NA
 
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+* Fix chip inline alignment problem (253ba672)
+* Fix progressbar background color (938be99b)
+* Fix disabled  slider knob shadow (aff1ddb6)
+* Fix broken alignment due to inlineLabel in Dropdown (d7b51053)
+* Resolve tooltip close issue on disabled button (cc0c693d)
+
+### Improvements
+* Add popover transitions (f1873f65)
+* Add support for three characters in Avatar component (ba6bc35b)
+
+### Documentation
+NA
+
+-------------------
 
 ## 2.7.0  (2021-12-23)
 ### Highlights
