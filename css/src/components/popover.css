@@ -15,3 +15,15 @@
   visibility: hidden;
   pointer-events: none;
 }
+
+@keyframes popper-fade-in {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

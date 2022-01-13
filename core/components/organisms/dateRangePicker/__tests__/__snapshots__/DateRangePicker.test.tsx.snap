@@ -42792,7 +42792,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -43964,7 +43964,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -45136,7 +45136,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -47408,7 +47408,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -48580,7 +48580,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -49752,7 +49752,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
