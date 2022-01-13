@@ -59,6 +59,11 @@
   box-sizing: border-box;
 }
 
+.Dropdown-items {
+  animation-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
+  animation-fill-mode: forwards;
+}
+
 .Option {
   display: flex;
 }
