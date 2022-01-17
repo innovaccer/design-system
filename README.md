@@ -126,6 +126,12 @@ For css variables to work on IE we use a polyfill at runtime to achieve dynamic 
 </script>
 ```
 
+## :card_file_box: Repos
+Here are the supporting repositories.
+- **[MDS Rich Text Editor](https://github.com/innovaccer/mds-rich-text-editor)** - Feature-rich WYSIWYG (What You See Is What You Get) HTML editor and WYSIWYG Markdown editor. It is used to create blogs, notes sections, comment sections etc. It has a variety of tools to edit and format rich content.
+- **[MDS Docs](https://github.com/innovaccer/mds-docs)** - Documentation site for Masala design system.
+- **[MDS Helpers](https://github.com/innovaccer/mds-helpers)** - Alert Service.
+
 ## :books: Documentation
 
 - [🌶 Masala Design System](http://design.innovaccer.com)
