@@ -18,3 +18,14 @@
 .Overlay-container--close {
   animation-timing-function: cubic-bezier(0.4, 0.14, 1, 1);
 }
+
+::-webkit-scrollbar {
+  width: var(--spacing-2);
+}
+
+::-webkit-scrollbar-thumb {
+  border: var(--spacing-s) solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+  border-radius: var(--spacing);
+  background-color: var(--secondary);
+}
