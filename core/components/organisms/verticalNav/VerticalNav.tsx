@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Text } from '@/index';
-import { MenuItem } from './MenuItem';
+import { MenuItem, MenuItemProps } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getMenu, isMenuActive, ActiveMenu, Menu } from '@/utils/navigationHelper';
 
@@ -54,6 +54,10 @@ export interface VerticalNavProps extends BaseProps {
    * Only one SubMenu visible at a time**(applicable only for type: `vertical`)**
    */
   autoCollapse: boolean;
+  /**
+   * Option to pass Custom Item Renderer
+   */
+  customItemRenderer?: (props: MenuItemProps) => JSX.Element;
 }
 
 /**
@@ -61,7 +65,7 @@ export interface VerticalNavProps extends BaseProps {
  */
 
 export const VerticalNav = (props: VerticalNavProps) => {
-  const { menus, active, onClick, expanded, rounded, autoCollapse, className } = props;
+  const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer } = props;
 
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
   const baseProps = extractBaseProps(props);
@@ -137,6 +141,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
             rounded={rounded}
             isChildrenVisible={isChildrenVisible}
             onClick={onClickHandler}
+            customItemRenderer={customItemRenderer}
           />
           {menuState[menu.name] &&
             menu.subMenu &&
@@ -151,6 +156,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
                   rounded={rounded}
                   onClick={onClickHandler}
                   isActive={isMenuActive(menus, subMenu, active)}
+                  customItemRenderer={customItemRenderer}
                 />
               );
             })}
