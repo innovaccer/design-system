@@ -118,17 +118,6 @@
   overflow-y: overlay;
 }
 
-.Grid-body::-webkit-scrollbar {
-  background: var(--white);
-  height: var(--spacing-l);
-  width: var(--spacing-l);
-}
-
-.Grid-body::-webkit-scrollbar-thumb {
-  background: var(--secondary);
-  border-radius: var(--spacing);
-}
-
 .Grid-rowWrapper {
   display: inline-flex;
   flex-direction: column;

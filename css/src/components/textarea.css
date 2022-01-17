@@ -47,14 +47,3 @@
 .Textarea--resize {
   resize: auto;
 }
-
-.Textarea::-webkit-scrollbar {
-  width: var(--spacing-2);
-}
-
-.Textarea::-webkit-scrollbar-thumb {
-  border: var(--spacing-m) solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-  border-radius: var(--spacing);
-  background-color: var(--secondary);
-}
