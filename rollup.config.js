@@ -50,7 +50,7 @@ function globals() {
 }
 
 const baseConfig = {
-  input: './core/index.tsx',
+  input: './src/index.tsx',
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en#external-e-external
   external: ['react', 'react-dom'],
@@ -59,7 +59,7 @@ const baseConfig = {
 const commonJsPlugins =  [
     alias({
       entries: [
-        { find: '@', replacement: path.resolve('./core') },
+        { find: '@', replacement: path.resolve('./src') },
       ]
     }),
     

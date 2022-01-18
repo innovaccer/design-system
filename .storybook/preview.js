@@ -2,7 +2,7 @@ import React from 'react';
 import '../css';
 import './docPage.css'
 import { DocsContainer } from '@storybook/addon-docs/blocks';
-import { docPage } from '@/utils/docPage';
+import { docPage } from './docPage';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { primary } from './themes';
 

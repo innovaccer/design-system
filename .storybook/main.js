@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   "stories": [
-    "../core/components/**/*.story.@(js|jsx|ts|tsx)"
+    // "../src/stories/**/*.story.@(js|jsx|ts|tsx)",
+    "../src/components/avatar/**/*.story.@(js|jsx|ts|tsx)"
   ],
   "addons": [
     /**
@@ -17,7 +18,7 @@ module.exports = {
      */
     "@storybook/addon-essentials",
     '@storybook/addon-a11y',
-    "@storybook/addon-knobs",
+    // "@storybook/addon-knobs",
   ],
   typescript: {
     check: false,
@@ -34,18 +35,18 @@ module.exports = {
     },
   },
   webpackFinal: async (config, { configType }) => {
-    config.resolve.alias['@'] = path.resolve(__dirname, '../core');
+    config.resolve.alias['@'] = path.resolve(__dirname, '../src');
     // Return the altered config
     return config;
   },
-  refs: {
-    'rich-text-editor': {
-      title: "Rich Text Editor",
-      url: "https://innovaccer.github.io/mds-rich-text-editor/"
-    },
-    'mds-helpers': {
-      title: "MDS Helpers",
-      url: "https://innovaccer.github.io/mds-helpers/"
-    }
-   }
+  // refs: {
+  //   'rich-text-editor': {
+  //     title: "Rich Text Editor",
+  //     url: "https://innovaccer.github.io/mds-rich-text-editor/"
+  //   },
+  //   'mds-helpers': {
+  //     title: "MDS Helpers",
+  //     url: "https://innovaccer.github.io/mds-helpers/"
+  //   }
+  //  }
 }

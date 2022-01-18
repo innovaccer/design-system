@@ -31,7 +31,7 @@ const config = {
     }
   },
   moduleNameMapper: {
-    '@/(.*)$': '<rootDir>/core/$1'
+    '@/(.*)$': '<rootDir>/src/$1'
   }
 };
 
