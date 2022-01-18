@@ -1,0 +1,22 @@
+base: foundations
+menus:
+  - label: Principles
+    link: /foundations/principles/
+
+  - label: Colors
+    link: /foundations/colors/
+
+  - label: Logos
+    link: /foundations/logos/
+
+  - label: Layout
+    link: /foundations/layout/
+
+  - label: Typography
+    link: /foundations/typography/
+
+  - label: Interactions
+    link: /foundations/interactions/
+
+  - label: Response Time
+    link: /foundations/response-time/
