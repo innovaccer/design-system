@@ -5,7 +5,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { OverlayFooter } from '@/components/molecules/overlayFooter';
 import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
 import { OverlayBody } from '@/components/molecules/overlayBody';
-import { Row, Column, Backdrop, OutsideClick, Button } from '@/index';
+import { Row, Column, Backdrop, OutsideClick, Button, Tooltip } from '@/index';
 import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
@@ -296,14 +296,16 @@ class Modal extends React.Component<ModalProps, ModalState> {
                 {!!header && header}
               </Column>
               <Column className="flex-grow-0">
-                <Button
-                  icon="close"
-                  appearance="transparent"
-                  data-test="DesignSystem-Modal--CloseButton"
-                  onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-                    if (onClose) onClose(event, 'IconClick');
-                  }}
-                />
+                <Tooltip tooltip="Close" position="top">
+                  <Button
+                    icon="close"
+                    appearance="transparent"
+                    data-test="DesignSystem-Modal--CloseButton"
+                    onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                      if (onClose) onClose(event, 'IconClick');
+                    }}
+                  />
+                </Tooltip>
               </Column>
             </div>
           )}

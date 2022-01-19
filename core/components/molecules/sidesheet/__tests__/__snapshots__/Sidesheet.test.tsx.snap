@@ -51,24 +51,29 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <button
-              class="Button Button--regular Button--regularSquare Button--transparent"
-              data-test="DesignSystem-Sidesheet--CloseButton"
-              tabindex="0"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Sidesheet--CloseButton"
+                tabindex="0"
               >
-                <i
-                  class="material-icons material-icons-round Icon Icon--default"
-                  data-test="DesignSystem-Button--Icon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
                 >
-                  close_round
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
@@ -140,24 +145,29 @@ exports[`Sidesheet component
             class="Col flex-grow-0"
             data-test="DesignSystem-Column"
           >
-            <button
-              class="Button Button--regular Button--regularSquare Button--transparent"
-              data-test="DesignSystem-Sidesheet--CloseButton"
-              tabindex="0"
+            <style />
+            <div
+              class="OutsideClick PopperWrapper-trigger"
             >
-              <div
-                class="Button-icon"
+              <button
+                class="Button Button--regular Button--regularSquare Button--transparent"
+                data-test="DesignSystem-Sidesheet--CloseButton"
+                tabindex="0"
               >
-                <i
-                  class="material-icons material-icons-round Icon Icon--default"
-                  data-test="DesignSystem-Button--Icon"
-                  role="button"
-                  style="font-size: 16px; width: 16px;"
+                <div
+                  class="Button-icon"
                 >
-                  close_round
-                </i>
-              </div>
-            </button>
+                  <i
+                    class="material-icons material-icons-round Icon Icon--default"
+                    data-test="DesignSystem-Button--Icon"
+                    role="button"
+                    style="font-size: 16px; width: 16px;"
+                  >
+                    close_round
+                  </i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <div
