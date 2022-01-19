@@ -22,5 +22,5 @@
       "@/*": ["core/*"]
     }
   },
-  "exclude": ["dist", "build", "node_modules", ".github", ".husky"]
+  "exclude": ["dist", "build", "node_modules", ".github", ".husky", "docs"]
 }

@@ -1,0 +1,17 @@
+.Rules-Container {
+  background-color: var(--secondary-lightest);
+  border-radius: var(--spacing-m);
+  pointer-events: none;
+  margin-top: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+}
+
+.Rules-Dont {
+  border-top: var(--spacing-s) solid var(--alert);
+  border-top-right-radius: var(--spacing-m);
+}
+
+.Rules-Do {
+  border-top: var(--spacing-s) solid var(--success);
+  border-top-left-radius: var(--spacing-m);
+}

@@ -1,0 +1,30 @@
+.overview-cardBody {
+  height: 134px;
+  opacity: 0.6;
+}
+
+.overview-cardBody:hover {
+  opacity: 1;
+}
+
+.overview-card:hover {
+  box-shadow: var(--shadow-s);
+}
+
+.min-width-100 {
+  min-width: 100% !important;
+}
+
+.scrollbar {
+  width: var(--spacing-l);
+  border-radius: var(--spacing);
+  height: var(--spacing-6);
+}
+
+.card-link, .card-link:hover {
+  text-decoration: none !important;
+}
+
+.card-link[disabled], .card-link[disabled] * {
+  pointer-events: none;
+}

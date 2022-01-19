@@ -1,0 +1,7 @@
+.link {
+  font-weight: var(--font-weight-normal);
+}
+
+.link:hover {
+  border-bottom: none !important;
+}

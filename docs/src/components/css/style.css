@@ -1,0 +1,84 @@
+.in-page-nav {
+  top: 0;
+  align-self: flex-start;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0.25;
+    margin-top: 2px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+.page-animation {
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.page-scroll {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.list {
+  margin-top: var(--spacing-m);
+}
+
+.list > li {
+  list-style: none;
+  margin-bottom: var(--spacing-2);
+  margin-left: var(--spacing-s);
+}
+
+.list li::before {
+  content: "\2022";
+  width: 2px;
+  display: inline-block;
+  color: var(--inverse-lightest);
+  margin-right: var(--spacing-l);
+}
+
+.toast {
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.rectangle {
+  background-color: var(--secondary-lightest);
+  border: var(--border);
+  border-radius: var(--spacing-m);
+  font-weight: var(--font-weight-bold);
+  display: inline-block;
+  padding: 0 var(--spacing-m) 0 var(--spacing-m);
+  font-family: "Roboto mono";
+}
+
+.A11y-markdown code{
+  background-color: var(--secondary-lightest);
+  border: 1px solid var(--secondary-light);
+  font-weight: var(--font-weight-bold);
+  color: var(--inverse);
+  line-height: 1;
+  padding: 3px 5px;
+  white-space: nowrap;
+  border-radius: var(--spacing-m);
+  font-size: var(--spacing-l);
+}
+
+.A11y-markdown code{
+  background-color: var(--secondary-lightest);
+  border: 1px solid var(--secondary-light);
+  font-weight: var(--font-weight-bold);
+  color: var(--inverse);
+  line-height: 1;
+  padding: 3px 5px;
+  white-space: nowrap;
+  border-radius: var(--spacing-m);
+  font-size: var(--spacing-l);
+}

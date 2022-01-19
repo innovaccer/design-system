@@ -1,0 +1,192 @@
+---
+title: Interactions
+description: Motion can bring the screen to life, guide users through complex experiences, and help move them forward—from here to there, now to next, start to finish—and make progress.
+date: 15 June 2021
+showMobile: true
+---
+
+Motion helps in conveying action and hierarchy. It can bring the screen to life, guide users through complex experiences, and help move them forward—from now to next and start to finish. These guidelines are based on the Carbon Design System
+
+<br />
+<br />
+
+#### Style
+
+Productivity and expression are both essential to an interface. Reserve expressive motion for occasional, important moments, to better capture the user’s attention and offer a rhythmic break to the productive experience.
+Hence there are two styles of motion - Productive motion and Expressive motion.
+
+<br />
+
+##### Productive motion
+
+Productive motion is appropriate for moments when the user needs to focus on completing tasks. Micro-interactions such as button states, dropdowns, revealing additional information, or rendering data tables and visualisations can be designed with productive motion.
+
+<br />
+
+##### Expressive motion
+
+Expressive motion is appropriate for moments such as opening a new page, clicking the primary action button, or when the movement itself conveys a meaning. System alerts and the appearance of notification boxes are great cases for expressive motion.
+
+<br />
+<br />
+
+#### Easing
+
+Elements on the screen should speed up quickly and slow down smoothly, obeying the physics of a light-weight material. “Easing curves” describe the precise amount of accelerations in motion. There are three types of easing curves -
+
+<br />
+
+##### Standard easing
+
+Use <Rectangle name={'standard-easing'} /> when an element is visible from the beginning to the end of a motion. Expanding card and the sorting of table rows are good examples.
+
+<br />
+
+##### Entrance easing
+
+With this style, an element quickly appears and slows down to a stop. Use <Rectangle name={'entrance-ease'} /> when adding elements to the view, such as a modal or toast appearing. Elements moving in response to the user’s input, such as a dropdown opening or toggle switching should also use this style.
+
+<br />
+
+##### Exit easing
+
+Use <Rectangle name={'exit-easing'} /> when removing elements from view, such as closing a modal or toaster. The element speeds up as it exits from view, implying that its departure from the screen is permanent.
+
+An exception to exits: if an element leaves the view but stays nearby, ready to reappear upon user action, use standard easing instead. A good example of this is a reveal. The reveal leaves the view, but slows down as it exits, implying that it would come to rest just outside the view, and ready to be recalled.
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        curve: 'Standard easing',
+        productive: 'cubic-bezier(0.2, 0, 0.38, 0.9)',
+        expressive: 'cubic-bezier(0.4, 0.14, 0.3, 1)s',
+      },
+      {
+        curve: 'Entrance easing',
+        productive: 'cubic-bezier(0, 0, 0.38, 0.9)',
+        expressive: 'cubic-bezier(0, 0, 0.3, 1)',
+      },
+      {
+        curve: 'Exit easing',
+        productive: 'cubic-bezier(0.2, 0, 1, 0.9)',
+        expressive: 'cubic-bezier(0.4, 0.14, 1, 1)',
+      },
+    ]}
+    schema={[
+      {
+        name: 'curve',
+        displayName: 'Curve',
+        width: '20%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'productive',
+        displayName: 'Productive',
+        width: '40%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.productive} />;
+        },
+      },
+      {
+        name: 'expressive',
+        displayName: 'Expressive',
+        width: '40%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.expressive} />;
+        },
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+
+<br />
+<br />
+<br />
+
+#### Duration
+
+Duration is calculated based on the style and size of the motion. Among the two motion styles, productive motion is significantly faster than expressive motion. Motion’s duration should be dynamic based on the size of the animation; the larger the change in distance (traveled) or size (scaling) of the element, the longer the animation takes.
+
+<br />
+
+##### Duration values
+
+<br />
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        tokens: 'duration--fast-01',
+        usage:
+          'Micro-interactions such as button and toggle',
+        value: '80ms',
+      },
+      {
+        tokens: 'duration--fast-02',
+        usage: 'Micro-interactions such as fade',
+        value: '120ms',
+      },
+      {
+        tokens: 'duration--moderate-01',
+        usage:
+          'Micro-interactions, small expansion, short distance movements',
+        value: '160ms',
+      },
+      {
+        tokens: 'duration--moderate-02',
+        usage: 'Expansion, system communication, toast',
+        value: '240ms',
+      },
+      {
+        tokens: 'duration--slow-01',
+        usage:
+          'Large expansion, important system notifications',
+        value: '4000ms',
+      },
+      {
+        tokens: 'duration--slow-02',
+        usage: 'Background dimming',
+        value: '720ms',
+      },
+    ]}
+    schema={[
+      {
+        name: 'tokens',
+        displayName: 'Tokens',
+        width: '25%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.tokens} />;
+        },
+      },
+      {
+        name: 'usage',
+        displayName: 'Usage',
+        width: '45%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'value',
+        displayName: 'Value',
+        width: '30%',
+        sorting: false,
+        separator: true,
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>

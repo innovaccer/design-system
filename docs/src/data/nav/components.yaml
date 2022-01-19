@@ -1,0 +1,18 @@
+base: components
+menus:
+  - label: Overview
+    link: /components/overview/tabs/all-components/
+  - label: Avatars
+    link: /components/avatar/usage/
+  - label: Badges
+    link: /components/badges/usage/
+  - label: Breadcrumbs
+    link: /components/breadcrumbs/usage/
+  - label: Button
+    link: /components/button/usage/
+  - label: Card
+    link: /components/card/usage/
+  - label: Checkbox
+    link: /components/checkbox/usage/
+  - label: Message
+    link: /components/message/usage/

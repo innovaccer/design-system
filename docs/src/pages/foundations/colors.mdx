@@ -1,0 +1,149 @@
+---
+title: Colors
+description: Maintaining consistent and engaging digital interfaces, whether applications or experiences, demands extended guidance around color usage
+date: 15 June 2021
+showMobile: true
+---
+
+export const PRIMARY_COLORS = [
+  {
+    name: 'Jal - Darker',
+    backgroundColor: 'var(--primary-darker)',
+    hexCode: '#003365',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Dark',
+    backgroundColor: 'var(--primary-dark)',
+    hexCode: '#00509F',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Default',
+    backgroundColor: 'var(--primary)',
+    hexCode: '#0070DD',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Light',
+    backgroundColor: 'var(--primary-light)',
+    hexCode: '#4F9DE7',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Lighter',
+    backgroundColor: 'var(--primary-lighter)',
+    hexCode: '#97C5F0',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Lightest',
+    backgroundColor: 'var(--primary-lightest)',
+    hexCode: '#DCECF9',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+];
+
+export const ALERT_COLORS = [
+  {
+    name: 'Jal - Darker',
+    backgroundColor: 'var(--alert-darker)',
+    hexCode: '#631919',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Dark',
+    backgroundColor: 'var(--alert-dark)',
+    hexCode: '#9C2828',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Default',
+    backgroundColor: 'var(--alert)',
+    hexCode: '#D93737',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Light',
+    backgroundColor: 'var(--alert-light)',
+    hexCode: '#EB776C',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Lighter',
+    backgroundColor: 'var(--alert-lighter)',
+    hexCode: '#F7ADA5',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Jal - Lightest',
+    backgroundColor: 'var(--alert-lightest)',
+    hexCode: '#F9E2E2',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+];
+
+export const WARNING_COLORS = [
+  {
+    name: 'Haldi - Darker',
+    backgroundColor: 'var(--warning-darker)',
+    hexCode: '#6B4A06',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Haldi - Dark',
+    backgroundColor: 'var(--warning-dark)',
+    hexCode: '#B78707',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Haldi - Default',
+    backgroundColor: 'var(--warning)',
+    hexCode: '#FFC208',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Haldi - Light',
+    backgroundColor: 'var(--warning-light)',
+    hexCode: '#FFD462',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Haldi - Lighter',
+    backgroundColor: 'var(--warning-lighter)',
+    hexCode: '#FFE597',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+  {
+    name: 'Haldi - Lightest',
+    backgroundColor: 'var(--warning-lightest)',
+    hexCode: '#FFF5C7',
+    colorCode: 'rgb(0, 51, 101)',
+  },
+];
+
+#### Primary color
+
+<br />
+
+##### Jal
+
+<Row className='mb-10'>
+  <Colors colorData={PRIMARY_COLORS} />
+</Row>
+
+#### Secondary colors
+
+<br />
+
+##### Mirch
+
+<Row className='mb-10'>
+  <Colors colorData={ALERT_COLORS} />
+</Row>
+
+##### Haldi
+
+<Row>
+  <Colors colorData={WARNING_COLORS} />
+</Row>

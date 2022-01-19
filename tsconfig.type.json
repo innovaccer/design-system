@@ -32,6 +32,7 @@
     "core/**/__tests__",
     "core/**/__stories__",
     ".github",
-    "types"
+    "types",
+    "docs"
   ]
 }

@@ -1,0 +1,23 @@
+.home-menu {
+  background-color: var(--primary-darker);
+}
+
+.border-radius--rounded {
+  border-radius: 50%;
+}
+
+.font-weight--normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.home-text-color {
+  color: #151414;
+}
+
+.sticky-bottom {
+  bottom: var(--spacing-2);
+}
+
+.gatsby-image-wrapper [data-placeholder-image] {
+  background-color: var(--white) !important;
+}

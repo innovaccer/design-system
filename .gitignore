@@ -64,7 +64,6 @@ bower_components
 # --------------------
 # App Files
 # --------------------
-data/
 tests/results/**
 modules/public/
 modules/views/
@@ -98,3 +97,7 @@ coverage
 dist
 css/dist
 .lib
+.dist
+docs/public/*
+docs/.cache
+docs/node_modules

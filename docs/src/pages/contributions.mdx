@@ -1,0 +1,16 @@
+---
+description: Instructions for developing and contributing. Here's how you can contribute.
+date: 15 June 2021
+---
+
+Using design system font:
+The css sets the font family as 'Nunito Sans' for the body. To add this font in your project you need to load this font. The recommended way to do it is by adding the following google font cdn link to your app's head.
+Updating Font:
+If you don't add the font described above font family will not be affected by css. However, if you want to update the font family update it via the following css variable.
+
+--font-family
+Reset Styles
+As BEM is used reset.css is not used and no style reset is done.
+
+Polyfill for IE
+For css variables to work on IE we use a polyfill at runtime to achieve dynamic theming through variables. Please add the following polyfill in your page.
