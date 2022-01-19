@@ -17,12 +17,3 @@
   align-items: flex-end;
   overflow-y: auto;
 }
-
-.AvatarGroup-TextWrapper::-webkit-scrollbar {
-  width: var(--spacing);
-}
-
-.AvatarGroup-TextWrapper::-webkit-scrollbar-thumb {
-  background: var(--secondary);
-  border-radius: var(--spacing-m);
-}
