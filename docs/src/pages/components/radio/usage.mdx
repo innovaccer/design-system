@@ -21,4 +21,106 @@ showMobile: true
 
 The radio button can have a help text below the label to provide some extra information about the particular option. The help text will always be aligned to the label. Clicking over the help text will not change the state of radio. 
 
-<Preview name='with-help-text'/>
+<Preview name='radio-with-help-text'/>
+
+#### Sizes
+
+Radio comes in two sizes: Regular and Tiny.
+
+<Preview name='radio-variants-size'/>
+<br/>
+
+#### Configurations
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Label',
+        Value: '<Label>',
+        Configurable: 'Optional',
+      },
+      {
+        Property: 'Margin between the control and the label',
+        Value: '8px',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '50',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '25%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '25%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+#### Usage
+<br/>
+
+##### Radio group
+
+Radio group consists of a list of multiple options, with a label on the top. The label should clearly state the grouping category or the action to perform. 
+
+*Note: Multiple radio buttons should have a minimum of ***8px*** spacing in between.*
+
+<Preview name='radio-radio-group'/>
+
+##### Alignment
+
+The radio buttons in a group can be aligned either vertically or horizontally. However, it is advisable to stack the radio buttons vertically with one option in a line for easier reading and scanning. If you need to use them horizontally, make sure to space the options appropriately so that it is clear which control goes with which label. 
+
+<Preview name='alignment-of-radio-group'/>
+
+##### Overflow Behaviour 
+
+If the label or the help text with the radio component overflows, wrap it to the next line but make sure that the control and the label are top aligned.
+
+<Preview name='overflow-content'/>
+
+##### Default Selection
+
+<ul>
+  <li>If a radio group is optional to fill, no option from the list should be selected by default. </li>
+  <li>Even if the radio group is mandatory to fill, it is recommended not to have a default option selected in order to avoid submitting that option by mistake. However, if the need arises you have the choice to make an option selected by default. In that case, make sure to select the safest and most likely option. </li>
+</ul>
+<br/>
+
+##### Radio vs Checkbox
+
+Checkboxes allow users to select multiple options whereas radio buttons allow only one selection from a list of mutually exclusive options.
+<br/>
+
+##### Radio vs Dropdown
+
+Radio buttons are recommended to use when there are fewer than 5 options as it is easier for users to scan and select the appropriate option and save an additional click. 
+
+However, if the number of options exceeds 5 or if the space is limited then it is recommended to use dropdowns to better utilize the space.
+
+*image to be made later*
+
