@@ -22,3 +22,9 @@ menus:
     link: /components/datePicker/usage/
   - label: Message
     link: /components/message/usage/
+  - label: Radio
+    link: /components/radio/usage/
+  - label: Table
+    link: /components/table/usage/
+  - label: Toast
+    link: /components/toast/usage/
