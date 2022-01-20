@@ -17,22 +17,14 @@ const LeftNav = (props) => {
   const [active, setActive] = React.useState();
 
   function getActiveNavItem() {
-    let activeMenu;
-    if (
-      isBrowser &&
-      window.location.pathname &&
-      window.location.pathname.includes('tabs')
-    ) {
-      activeMenu = navItems.filter((item) => {
-        if (item.link && item.link.includes('tabs')) {
-          const url =
-            window.location.pathname.split('tabs');
-          if (item.link.includes(url[0])) {
-            return item.link;
-          }
-        }
+    if (isBrowser && window.location.pathname && frontmatter.tabs) {
+
+      const url = window.location.pathname.split('/');
+      const activeMenu = navItems.filter(({ link }) => {
+        return link && link.includes(url[1] + '/' + url[2]);
       });
-      return activeMenu[0].link;
+      return activeMenu[0]?.link;
+
     } else {
       return window.location.pathname;
     }
