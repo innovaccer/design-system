@@ -287,14 +287,13 @@ const DropdownList = (props: OptionsProps) => {
 
   const animateClass = classNames({
     ['fade-in']: dropdownOpen,
-    ['opacity-0']: true,
+    ['opacity-0']: dropdownOpen,
     ['Dropdown-items']: true,
-    ['fade-out']: !dropdownOpen,
   });
 
   const getAnimateOrderStyle = (order: number) => {
     const animateStyle: React.CSSProperties = {
-      animationDelay: (dropdownOpen ? order : order * -1) * 80 + 'ms',
+      animationDelay: dropdownOpen ? order * 20 + 'ms' : '',
     };
     return animateStyle;
   };
