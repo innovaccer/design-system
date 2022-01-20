@@ -1,0 +1,218 @@
+---
+title: Toast
+description:
+  Toasts are used to show alerts and give feedback to the users about an action they took.
+date: 17 Jan 2022
+tabs: ['Usage', 'Interactions', 'Code']
+showMobile: true
+---
+
+#### Showing the toast
+
+*Interaction has been slowed down for display purpose only*
+
+<!-- ![](./images/toast-2.gif) -->
+<img src='./images/toast-2.gif' width='100%' height='auto'/>
+<br/>
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Margin - Left',
+        Initial: 'Outside the frame',
+        Final: '32 px',
+      },
+      {
+        Property: 'Margin - Bottom',
+        Initial: '32 px',
+        Final: '32 px',
+      },
+      {
+        Property: 'Opacity',
+        Initial: '0',
+        Final: '100',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+##### Curve
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0, 0, 0.3, 1)',
+        Duration: '240ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+#### Closing the toast
+
+*Interaction has been slowed down for display purpose only*
+
+<!-- ![](./images/toast-3.gif) -->
+<img src='./images/toast-3.gif' width='100%' height='auto'/>
+<br/>
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Margin - Left',
+        Initial: '32px',
+        Final: 'Outside the frame',
+      },
+      {
+        Property: 'Opacity',
+        Initial: '100',
+        Final: '0',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+##### Curve
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0.4, 0.14, 1, 1)',
+        Duration: '120ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+#### Multiple toasts
+
+![](./images/toast-4.png)
+
+<br/>
+
+Only one toast is displayed at a time. Subsequent toasts get stacked with a **margin of 16px** with the latest one on top.
+
+<!-- ![](./images/toast-5.gif) -->
+<img src='./images/toast-5.gif' width='100%' height='auto'/>
+<br/>
+<br/>
