@@ -36,7 +36,7 @@
 }
 
 .list li::before {
-  content: "\2022";
+  content: '\2022';
   width: 2px;
   display: inline-block;
   color: var(--inverse-lightest);
@@ -56,10 +56,10 @@
   font-weight: var(--font-weight-bold);
   display: inline-block;
   padding: 0 var(--spacing-m) 0 var(--spacing-m);
-  font-family: "Roboto mono";
+  font-family: 'Roboto mono';
 }
 
-.A11y-markdown code{
+.A11y-markdown code {
   background-color: var(--secondary-lightest);
   border: 1px solid var(--secondary-light);
   font-weight: var(--font-weight-bold);
@@ -71,14 +71,27 @@
   font-size: var(--spacing-l);
 }
 
-.A11y-markdown code{
-  background-color: var(--secondary-lightest);
+.overflow-x-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-x-scroll {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
   border: 1px solid var(--secondary-light);
-  font-weight: var(--font-weight-bold);
-  color: var(--inverse);
-  line-height: 1;
-  padding: 3px 5px;
-  white-space: nowrap;
-  border-radius: var(--spacing-m);
-  font-size: var(--spacing-l);
+  padding: var(--spacing-l);
+}
+
+.docblock-argstable th,
+.docblock-argstable td {
+  border: none;
 }

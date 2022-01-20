@@ -139,7 +139,7 @@ const Layout = ({
 
   const PreviewWithPropTable = ({ name }) => {
     return (
-      <div>
+      <div className="overflow-x-scroll">
         <ArgsTable rows={getPropTableData(name)} />
       </div>
     );
