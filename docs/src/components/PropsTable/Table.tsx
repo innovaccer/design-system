@@ -29,7 +29,6 @@ export const TableWrapper = styled.table<{
     // fontSize: theme.typography.size.s2 - 1,
     lineHeight: '20px',
     textAlign: 'left',
-    width: '100%',
 
     // Margin collapse
     marginTop: inAddonPanel ? 0 : 25,
