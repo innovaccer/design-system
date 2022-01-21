@@ -8,7 +8,7 @@ menus:
     link: /components/badges/usage/
   - label: Breadcrumbs
     link: /components/breadcrumbs/usage/
-  - label: Button
+  - label: Buttons
     link: /components/button/usage/
   - label: Card
     link: /components/card/usage/
