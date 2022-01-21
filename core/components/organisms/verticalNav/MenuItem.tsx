@@ -13,10 +13,12 @@ export interface MenuItemProps extends BaseProps {
   isChildren?: boolean;
   isChildrenVisible?: boolean;
   onClick?: (menu: Menu) => void;
+  customItemRenderer?: (props: MenuItemProps) => JSX.Element;
 }
 
 export const MenuItem = (props: MenuItemProps) => {
-  const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick } = props;
+  const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick, customItemRenderer } =
+    props;
 
   const baseProps = extractBaseProps(props);
 
@@ -70,7 +72,9 @@ export const MenuItem = (props: MenuItemProps) => {
 
   if (!expanded && !menu.icon) return null;
 
-  return (
+  return customItemRenderer ? (
+    customItemRenderer(props)
+  ) : (
     // TODO(a11y)
     // eslint-disable-next-line
     <div className={ItemClass} {...baseProps} onClick={onClickHandler}>
