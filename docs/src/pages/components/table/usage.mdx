@@ -206,9 +206,9 @@ Content in table cells should be aligned to the top of the row in cases where th
 
 ![Top aligned](./images/table-8.png)
 
-##### Column actions
-
 <br/>
+
+##### Column actions
 
 ###### Show/Hide columns
 
@@ -228,6 +228,10 @@ Another way to offer column sorting is by clicking on the column name.
     separator={true}
     data={[
       {
+        click: 'On 1st click',
+        sort: 'sort ascending',
+      },
+      {
         click: 'On 2nd click',
         sort: 'sort descending',
       },
@@ -239,7 +243,7 @@ Another way to offer column sorting is by clicking on the column name.
     schema={[
       {
         name: 'click',
-        displayName: 'On 1st click',
+        displayName: 'Number of clicks',
         width: '50%',
         sorting: false,
         separator: true,
@@ -247,7 +251,7 @@ Another way to offer column sorting is by clicking on the column name.
       },
       {
         name: 'sort',
-        displayName: 'sort ascending',
+        displayName: 'Sorting behaviour',
         width: '50%',
         sorting: false,
         separator: true
@@ -258,4 +262,103 @@ Another way to offer column sorting is by clicking on the column name.
 </Card>
 <br/>
 <br/>
-###### 
+
+<img src='./images/table-11.gif' width='100%' height='auto'/>
+
+<br/>
+
+###### Filtering a column
+
+Although filters in a table are applied using dropdowns, there is a provision to apply filters in a specific column.
+
+![Filtering a column](./images/table-12.png)
+
+<br/>
+
+###### Reordering a column
+
+The cursor changes to Pointing Hand when hovering on a header cell indicating that the column can be picked and moved.
+
+![Reordering a column](./images/table-13.png)
+
+<br/>
+
+##### Pinned Column(s)
+
+**Pinned Column Divider** is used to pin columns to the left so that they get fixed and do not scroll along with the rest of the columns. It is quite handy when the no. of columns is too many and all of them are not visible without scrolling. In that case, the pinning can help freeze the crucial columns in order to maintain the context.
+
+<Preview name='pinned-columns' />
+
+##### Selection
+
+On selection - Sort, Filters, and other actions disappear in lieu of Bulk Action(s). There can be different states and behaviors after selection is triggered -
+
+###### No items selected - the default state
+
+![No items selected](./images/table-14.png)
+
+<br/>
+
+###### A few items selected
+
+When a selection is triggered, there is an option to provide actions related to the selection at the top right.
+
+![A few items selected](./images/table-15.png)
+
+<br/>
+
+###### All items on the page selected
+
+An option to select all the items across all pages is presented in the header.
+
+![All items on the page selected](./images/table-16.png)
+
+<br/>
+
+###### All items selected
+
+An option to clear selection is presented in the header.
+
+![All items selected](./images/table-17.png)
+
+<br/>
+
+##### Sorting
+
+Table header remains fixed when scrolling so as to maintain the connection of the values in the cells with the column headers which helps easy understanding of data.
+
+![All items selected](./images/table-18.png)
+
+<br/>
+
+##### Pagination vs Infinite Scroll
+
+Use pagination over infinite scroll so that the user can navigate to an item’s detail page and return back to the same page. Retaining the scroll position in a long list of items can be resource-intensive and hence infinite scroll is avoided and Pagination is used.
+
+##### Filtering
+
+###### 1. When filters are frequently used
+
+Since the filters are frequently used, there is a dedicated fixed section alongside the table to apply those filters. The applied filters are added as chips just below the search bar to quickly enable/disable an already applied filter.
+Please note that there is no filtering option in the table itself.
+
+![When filters are frequently used](./images/table-19.png)
+
+<br/>
+
+###### 2. When filters are sparingly used
+
+In the case of 4 or fewer filters, all the filters are available in the table card for quick access.
+
+![When filters are sparingly used](./images/table-20.png)
+
+<br/>
+
+In case the need arises to use more than 3 filters, the top 3 filters are available inside the table card as they should be. There is an additional button to add more filters. When clicked, a side panel appears in the right just like the case where filters are frequently used.
+
+The only difference is that this panel can be closed/opened on demand unlike case 1.
+
+![Panel can be closed in this case](./images/table-21.png)
+
+<br/>
+<br/>
