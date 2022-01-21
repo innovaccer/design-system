@@ -10,7 +10,7 @@ menus:
     link: /components/breadcrumbs/usage/
   - label: Buttons
     link: /components/button/usage/
-  - label: Card
+  - label: Cards
     link: /components/card/usage/
   - label: Checkbox
     link: /components/checkbox/usage/
