@@ -26,5 +26,8 @@ menus:
     link: /components/radio/usage/
   - label: Table
     link: /components/table/usage/
+  - label: Tabs
+    link: /components/tabs/usage/
   - label: Toast
     link: /components/toast/usage/
+
