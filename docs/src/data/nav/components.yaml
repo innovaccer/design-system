@@ -16,5 +16,7 @@ menus:
     link: /components/card/usage/
   - label: Checkbox
     link: /components/checkbox/usage/
+  - label: Chips
+    link: /components/chips/usage/
   - label: Message
     link: /components/message/usage/
