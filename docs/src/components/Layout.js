@@ -88,6 +88,7 @@ const Layout = ({
   tabs,
   logos,
   showMobile,
+  location,
   ...rest
 }) => {
   const is404 = children && children.key === null;
@@ -198,13 +199,7 @@ const Layout = ({
   };
 
   const showAnimation = () => {
-    //show animation for only first tab or pages without tabs
-
-    const { tabs } = frontmatter;
-    const name = relativePagePath.slice(relativePagePath.lastIndexOf('/') + 1, relativePagePath.lastIndexOf('.mdx'));
-    if (tabs?.length && name !== tabs[0].toLowerCase().split(' ').join('-')) {
-      return false;
-    }
+    if (location.state?.animation === false) return false;
     return true;
   }
 
