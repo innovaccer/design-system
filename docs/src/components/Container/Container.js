@@ -52,7 +52,7 @@ const Container = ({
     const pagePath = relativePagePath.split('/');
     const pages = pagePath.slice(0, pagePath.length - 1);
     const path = `${pages.join('/')}/${nextTabSlug}/`;
-    navigate(path);
+    navigate(path, { state: { animation: false }, });
     setActiveIndex(tabIndex);
   };
 
