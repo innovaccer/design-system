@@ -1,0 +1,84 @@
+---
+title: Tooltip
+description:
+  Toasts are used to show alerts and give feedback to the users about an action they took.
+date: 24 Jan 2022
+tabs: ['Usage', 'Interactions', 'Code']
+showMobile: true
+---
+
+#### Structure
+
+<Preview name='button-icon-button' />
+
+#### Positioning
+
+<Preview name='tooltip-variants-position' />
+
+#### Configurations
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Maximum width',
+        Value: '256px, after which the text wraps',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Padding from trigger',
+        Value: '4px',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+#### Usage
+
+<br/>
+
+##### Default position
+
+The preferred and default side of tooltip is the bottom of the trigger.
+
+![Default position](./images/Tooltip-1.png)
+<br/>
+<br/>
+
+##### Use only for Icon buttons
+
+Avoid using tooltips for anything else but labels for icon buttons.
+
