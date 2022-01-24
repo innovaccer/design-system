@@ -1,19 +1,21 @@
 ---
-title: Toast
+title: Tooltip
 description:
   Toasts are used to show alerts and give feedback to the users about an action they took.
-date: 17 Jan 2022
+date: 24 Jan 2022
 tabs: ['Usage', 'Interactions', 'Code']
 showMobile: true
 ---
 
-#### Showing the toast
+#### Showing the tooltip
 
-*Interaction has been slowed down for display purpose only*
-
-<!-- ![](./images/toast-2.gif) -->
-<img src='./images/toast-2.gif' width='100%' height='auto'/>
 <br/>
+
+<img src='./images/tooltip-2.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+
 <br/>
 
 <Card shadow='none'>
@@ -22,20 +24,15 @@ showMobile: true
     separator={true}
     data={[
       {
-        Property: 'Margin - Left',
-        Initial: 'Outside the frame',
-        Final: '32 px',
-      },
-      {
-        Property: 'Margin - Bottom',
-        Initial: '32 px',
-        Final: '32 px',
+        Property: 'Relative Position X/Y',
+        Initial: '+/- 8px',
+        Final: '0px',
       },
       {
         Property: 'Opacity',
         Initial: '0',
         Final: '100',
-      }
+      },
     ]}
     schema={[
       {
@@ -51,7 +48,10 @@ showMobile: true
         displayName: 'Initial state',
         width: '33%',
         sorting: false,
-        separator: true
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Initial} />;
+        },
         
       },
       {
@@ -59,18 +59,18 @@ showMobile: true
         displayName: 'Final state',
         width: '33%',
         sorting: false,
-        separator: true
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Final} />;
+        },
       },
     ]}
     withHeader={false}
   />
 </Card>
 <br/>
-<br/>
 
 **Curve**
-
-<br/>
 
 <Card shadow='none'>
   <Table
@@ -79,14 +79,15 @@ showMobile: true
     data={[
       {
         Curve: 'cubic-bezier(0, 0, 0.3, 1)',
-        Duration: '240ms',
+        Duration: '120ms',
+        Delay: '400ms'
       }
     ]}
     schema={[
       {
         name: 'Curve',
         displayName: 'Curve',
-        width: '50%',
+        width: '33%',
         sorting: false,
         separator: true,
         cellRenderer: ({ data }) => {
@@ -96,7 +97,15 @@ showMobile: true
       {
         name: 'Duration',
         displayName: 'Duration',
-        width: '50%',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Delay',
+        displayName: 'Initial Delay',
+        width: '33%',
         sorting: false,
         separator: true
         
@@ -108,13 +117,15 @@ showMobile: true
 <br/>
 <br/>
 
-#### Closing the toast
+#### Hiding the tooltip
 
-*Interaction has been slowed down for display purpose only*
-
-<!-- ![](./images/toast-3.gif) -->
-<img src='./images/toast-3.gif' width='100%' height='auto'/>
 <br/>
+
+<img src='./images/tooltip-3.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+
 <br/>
 
 <Card shadow='none'>
@@ -123,15 +134,15 @@ showMobile: true
     separator={true}
     data={[
       {
-        Property: 'Margin - Left',
-        Initial: '32px',
-        Final: 'Outside the frame',
+        Property: 'Relative Position X/Y',
+        Initial: '0px',
+        Final: '+/- 8px',
       },
       {
         Property: 'Opacity',
         Initial: '100',
         Final: '0',
-      }
+      },
     ]}
     schema={[
       {
@@ -147,7 +158,10 @@ showMobile: true
         displayName: 'Initial state',
         width: '33%',
         sorting: false,
-        separator: true
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Initial} />;
+        },
         
       },
       {
@@ -155,18 +169,18 @@ showMobile: true
         displayName: 'Final state',
         width: '33%',
         sorting: false,
-        separator: true
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Final} />;
+        },
       },
     ]}
     withHeader={false}
   />
 </Card>
 <br/>
-<br/>
 
 **Curve**
-
-<br/>
 
 <Card shadow='none'>
   <Table
@@ -175,7 +189,7 @@ showMobile: true
     data={[
       {
         Curve: 'cubic-bezier(0.4, 0.14, 1, 1)',
-        Duration: '120ms',
+        Duration: '80ms',
       }
     ]}
     schema={[
@@ -201,18 +215,5 @@ showMobile: true
     withHeader={false}
   />
 </Card>
-<br/>
-<br/>
-
-#### Multiple toasts
-
-![](./images/toast-4.png)
-
-<br/>
-
-Only one toast is displayed at a time. Subsequent toasts get stacked with a **margin of 16px** with the latest one on top.
-
-<!-- ![](./images/toast-5.gif) -->
-<img src='./images/toast-5.gif' width='100%' height='auto'/>
 <br/>
 <br/>

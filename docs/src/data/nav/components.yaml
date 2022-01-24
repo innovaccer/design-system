@@ -30,4 +30,6 @@ menus:
     link: /components/tabs/usage/
   - label: Toast
     link: /components/toast/usage/
+  - label: Tooltip
+    link: /components/tooltip/usage
 
