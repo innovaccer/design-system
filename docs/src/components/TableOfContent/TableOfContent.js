@@ -26,7 +26,7 @@ const TableOfContent = (props) => {
       urlHash = location.hash.slice(1);
       setActive(urlHash);
     } else if(navItems && navItems.length) {
-       setActive(navItems[0].url.slice(1));
+       setActive(navItems[0].url?.slice(1));
     }
   }, []);
 
@@ -81,7 +81,7 @@ const TableOfContent = (props) => {
           return (
             <li key={key}>
               <div
-                className={`${active == item.url.slice(1) ? 'active-link' : ''
+                className={`${active == item.url?.slice(1) ? 'active-link' : ''
                   }`}
               >
                 <Link
