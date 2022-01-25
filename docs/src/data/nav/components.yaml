@@ -18,5 +18,7 @@ menus:
     link: /components/checkbox/usage/
   - label: Chips
     link: /components/chips/usage/
+  - label: Date picker
+    link: /components/datePicker/usage/
   - label: Message
     link: /components/message/usage/
