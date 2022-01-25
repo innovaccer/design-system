@@ -24,6 +24,8 @@ menus:
     link: /components/message/usage/
   - label: Radio
     link: /components/radio/usage/
+  - label: Steppers
+    link: /components/steppers/usage/
   - label: Switch
     link: /components/switch/usage/
   - label: Table
