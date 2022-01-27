@@ -8,11 +8,17 @@ menus:
     link: /components/badges/usage/
   - label: Breadcrumbs
     link: /components/breadcrumbs/usage/
-  - label: Button
+  - label: Buttons
     link: /components/button/usage/
-  - label: Card
+  - label: Calendar
+    link: /components/calendar/usage/
+  - label: Cards
     link: /components/card/usage/
   - label: Checkbox
     link: /components/checkbox/usage/
+  - label: Chips
+    link: /components/chips/usage/
+  - label: Date picker
+    link: /components/datePicker/usage/
   - label: Message
     link: /components/message/usage/
