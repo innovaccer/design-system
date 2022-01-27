@@ -20,6 +20,8 @@ menus:
     link: /components/chips/usage/
   - label: Date picker
     link: /components/datePicker/usage/
+  - label: Dividers
+    link: /components/dividers/usage/
   - label: Message
     link: /components/message/usage/
   - label: Radio
