@@ -15,7 +15,7 @@ import {
   CardBody,
   Button,
   Icon,
-  Toast
+  Tooltip
 } from '@innovaccer/design-system';
 import {
   LiveProvider,
@@ -60,8 +60,10 @@ const StoryComp = ({
   const [htmlCode, setHtmlCode] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeButton, setActiveButton] = useState('React');
-  const [showToast, setShowToast] = useState(false);
   const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData));
+  const [isTooltipActive , setTooltipActive] = useState(false)
+  const [tooltipName , setTooltipName] = useState('copy')
+  const ref = React.createRef();
 
   const TabsWrap = withLive(({ live }) => {
     const { element: Element } = live;
@@ -97,11 +99,12 @@ const StoryComp = ({
     } else {
       navigator.clipboard.writeText(htmlCode);
     }
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 1000);
+    setTooltipName("copied!");
+    setTooltipActive(true)
   }
 
   const CopyCode = (props) => {
+    console.log(props)
     const { onClick } = props;
     return (
       <div className='ml-auto d-flex'>
@@ -115,13 +118,27 @@ const StoryComp = ({
             }}
           />
         }
-        <Icon
-          name='content_copy'
-          size={20}
-          appearance='white'
-          onClick={onClick}
-          className='align-self-center cursor-pointer'
-        />
+        <div 
+          className='align-self-end'
+          onMouseLeave={()=>{setTooltipActive(false);setTooltipName('copy')}}
+           ref={ref}
+        >
+          <Tooltip 
+            open={isTooltipActive} 
+            tooltip={tooltipName} 
+            position="bottom"
+            appendToBody={false}
+            boundaryElement={ref} 
+          >
+            <Icon
+            name='content_copy'
+            size={20}
+            appearance='white'
+            onClick={onClick}
+            className='align-self-center cursor-pointer'
+          />
+          </Tooltip>
+        </div>
       </div>
     );
   };
@@ -231,15 +248,6 @@ const StoryComp = ({
             </Card>
           )}
         </LiveProvider>
-        {
-          showToast &&
-          <Toast
-            appearance="success"
-            title="Copied to clipboard"
-            className="position-fixed ml-5 toast"
-            onClose={() => setShowToast(false)}
-          />
-        }
       </div>
     </>
   );

@@ -7,6 +7,8 @@ import {
   Heading,
   Button,
   Toast,
+  Icon,
+  Tooltip
 } from '@innovaccer/design-system';
 import LeftNav from './LeftNav';
 import TableOfContent from './TableOfContent/TableOfContent';
@@ -31,37 +33,8 @@ import { ArgsTable } from './PropsTable/Table';
 import Markdown from 'markdown-to-jsx';
 import { useFrontmatter } from '../util/Frontmatter';
 
-const copyToClipboard = (str) => {
-  let codeBlock = '';
-  if (Object.keys(str).length > 0) {
-    const element = str.props.children;
-    if (Array.isArray(element) && element.length) {
-      element.map((elt) => {
-        if (typeof elt === 'object') {
-          codeBlock = codeBlock + elt.props.children;
-        } else {
-          codeBlock = codeBlock + elt;
-        }
-      });
-    } else {
-      codeBlock = str.props.children;
-    }
-  }
-  navigator.clipboard.writeText(codeBlock);
-};
 
-const Code = ({ children, ...rest }) => {
-  return (
-    <>
-      <div {...rest}>{children}</div>
-      <Button
-        icon='copy'
-        className='ml-auto p-0'
-        onClick={() => copyToClipboard(children)}
-      />
-    </>
-  );
-};
+
 
 const List = ({ children, ...rest }) => {
   return (
@@ -93,9 +66,67 @@ const Layout = ({
 }) => {
   const is404 = children && children.key === null;
   const [isToastActive, setIsToastActive] = useState(false);
+  const [codeCopyText , setCodeCopyText] = useState('')
   const [toastTitle, setToastTitle] = useState('');
+  const [isTooltipActiveHeading, setTooltipActiveHeading] = useState(false);
+  const [isTooltipActiveCode , setTooltipActiveCode] = useState(false)
+  const [tooltipName, setTooltipName] = useState('copy');
+  const [isHovered , setIsHovered] = useState(false);
+  const [hoveredId , setHoveredId]= useState('');
   const frontmatter = useFrontmatter(relativePagePath);
+  const refHeading= React.createRef();
+  const refCode = React.createRef();
 
+  const copyToClipboard = (str) => {
+  if(typeof(str)==="string"){
+    navigator.clipboard.writeText(str);
+  }
+  else{
+    let codeBlock = '';
+    if (Object.keys(str).length > 0) {
+      const element = str.props.children;
+      if (Array.isArray(element) && element.length) {
+        element.map((elt) => {
+          if (typeof elt === 'object') {
+            codeBlock = codeBlock + elt.props.children;
+          } else {
+            codeBlock = codeBlock + elt;
+          }
+        });
+      } else {
+        codeBlock = str.props.children;
+      }
+    }
+    navigator.clipboard.writeText(codeBlock);
+    setCodeCopyText(str._source.lineNumber)
+  }
+};
+
+  const Code = ({ children, ...rest }) => {
+  return (
+    <>
+      <div {...rest}>{children}</div>
+      <div 
+        onMouseLeave={()=>{setTooltipName("copy");setTooltipActiveCode(false)}}
+        className='ml-auto'
+      >
+      <Tooltip 
+        open={children._source?.lineNumber === codeCopyText? isTooltipActiveCode:false} 
+        tooltip={tooltipName} 
+        position="bottom"
+        appendToBody={true}
+        boundaryElement={refCode}
+      >
+        <Button
+        icon='copy'
+        className='p-0'
+        onClick={() => {copyToClipboard(children);toggleTooltip("Copied!","code")}}
+        />
+      </Tooltip>
+      </div>
+    </>
+  );
+};
   function getJsxCode(name) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const componentData = useGetStorybookData(name);
@@ -151,7 +182,15 @@ const Layout = ({
     setToastTitle(name);
     setTimeout(() => setIsToastActive(false), 1500);
   }
-
+  const toggleTooltip = (name , type) => {
+    if(type ==="code"){
+      setTooltipActiveCode(true)
+    }
+    else{
+      setTooltipActiveHeading(true);
+    }
+    setTooltipName(name);
+  }
   const Logos = ({ children, logoData, ...rest }) => {
     return (
       <ProductLogos
@@ -175,6 +214,37 @@ const Layout = ({
       />
     );
   };
+  const MDXHeading=({HeadingInfo,size})=>{
+        return(
+          <div 
+            onMouseEnter={()=>{setIsHovered(true);setHoveredId(HeadingInfo.id);}} 
+            onMouseLeave={()=>{setIsHovered(false);setTooltipName("copy");setTooltipActiveHeading(false)}} 
+            className={`d-inline-flex ${size === "s"? "align-items-center":"align-items-baseline"}`}
+            ref={refHeading}
+          >
+            <Heading className={`mr-4 ${size ==="s" ? "mt-3 mb-4" : ""}`}  size={size} {...HeadingInfo} />
+            {isHovered && hoveredId==HeadingInfo.id &&
+              <div className="cursor-pointer">
+                <Tooltip 
+                  open={isTooltipActiveHeading} 
+                  tooltip={tooltipName} 
+                  position="bottom"
+                  appendToBody={false}
+                  boundaryElement={refHeading}
+                >
+                  <Icon 
+                    onClick={()=>hoverCopyHandler(HeadingInfo.id)} 
+                    appearance="subtle" 
+                    type="filled" 
+                    size={16} 
+                    name="link"
+                  />
+                </Tooltip>
+              </div>
+            }
+        </div>
+        )
+  }
 
   const DSComponents = {
     ...MDSComponents,
@@ -187,17 +257,29 @@ const Layout = ({
     DONTs,
     InlineMessage,
     IconWrapper,
-    h1: (props) => <Heading size='xxl' {...props} />,
-    h2: (props) => <Heading size='xl' {...props} />,
-    h3: (props) => <Heading size='l' {...props} />,
-    h4: (props) => <Heading size='m' {...props} />,
-    h5: (props) => <Heading size='s' {...props} />,
+    h1: (props) => <MDXHeading size='xxl' HeadingInfo={props} />,
+    h2: (props) => <MDXHeading size='xl' HeadingInfo={props} />,
+    h3: (props) => <MDXHeading size='l' HeadingInfo={props} />,
+    h4: (props) => <MDXHeading size="m" HeadingInfo={props} />,
+    h5: (props) => <MDXHeading size="s" HeadingInfo={props} />,
     ul: List,
     Logos: (props) => <Logos {...props} />,
     Rectangle: (props) => <Rectangle {...props} />,
     Colors: (props) => <Colors {...props} />,
   };
-
+  const hoverCopyHandler=(id)=>{
+    const currURL = window.location.href
+    if(currURL.includes(id)){
+      copyToClipboard(currURL)
+  }
+  else if(currURL.includes("#")){
+    copyToClipboard(currURL.slice(0,currURL.indexOf("#")+1)+id)
+}
+    else {
+      copyToClipboard(currURL+"#"+id)
+    }
+    toggleTooltip("Copied!" , "Heading")
+  }
   const showAnimation = () => {
     if (location.state?.animation === false) return false;
     return true;
@@ -217,7 +299,7 @@ const Layout = ({
         leftMenuList={leftMenuList}
         relativePagePath={relativePagePath}
       />
-      <Row style={{ height: 'calc(100vh - 48px)' }}>
+      <Row style={{ height: 'calc(100vh - 48px)' }} ref={refCode}>
         <LeftNav
           is404Page={is404}
           relativePagePath={relativePagePath}
