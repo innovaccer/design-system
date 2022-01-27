@@ -6,6 +6,12 @@ import { Link as MDSLink } from '@innovaccer/design-system';
 
 const Header = ({ relativePagePath }) => {
   const items = useHeaderItems();
+  const checkactive = (label) => {
+    let res = false;
+    const pagePath = relativePagePath.split('/');
+    if(pagePath[1]===label.toLowerCase()) res = true; 
+    return res; 
+  }
   return (
     <div
       id="mainHeader"
@@ -36,14 +42,7 @@ const Header = ({ relativePagePath }) => {
             <Link
               key={index}
               to={link}
-              className={`HeaderLink ${relativePagePath.includes(
-                label.toLowerCase()
-              )
-                ? 'HeaderLink--active'
-                : ''
-                } ${relativePagePath.includes(
-                  label.toLowerCase()
-                )
+              className={`HeaderLink  ${checkactive(label)
                   ? 'HeaderLink--active'
                   : 'HeaderLink--default'
                 }`}
