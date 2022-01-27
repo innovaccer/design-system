@@ -1,0 +1,392 @@
+---
+title: Switch
+description:
+  Switches are used to toggle between two states in a user interface - ON and OFF, hence resembling the real-life switches used to turn something ON or OFF.
+date: 24 Jan 2022
+tabs: ['Usage', 'Interactions', 'Code']
+showMobile: true
+---
+
+#### Switch - Off to On state
+
+<br/>
+
+<img src='./images/switch-1.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+
+##### Knob
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Margin-left',
+        Initial: '2 px',
+        Final: '-',
+      },
+      {
+        Property: 'Margin-right',
+        Initial: '-',
+        Final: '2px',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Initial} />;
+        },
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Final} />;
+        },
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0.4, 0.14, 0.3, 1)',
+        Duration: '80ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+##### Background
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Color (left to right)',
+        Initial: '$Stone-Light',
+        Final: '$Jal-Default',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Initial} />;
+        },
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Final} />;
+        },
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0.4, 0.14, 0.3, 1)',
+        Duration: '80ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+#### Switch - On to Off state
+
+<br/>
+
+<img src='./images/switch-2.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+
+##### Knob
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Margin-left',
+        Initial: '-',
+        Final: '2px',
+      },
+      {
+        Property: 'Margin-right',
+        Initial: '2px',
+        Final: '-',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Initial} />;
+        },
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Final} />;
+        },
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0.4, 0.14, 1, 1)',
+        Duration: '80ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+##### Background
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Color (right to left)',
+        Initial: '$Jal-Default',
+        Final: '$Stone-Light',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Initial} />;
+        },
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Final} />;
+        },
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0.4, 0.14, 1, 1)',
+        Duration: '80ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
