@@ -21,8 +21,7 @@
   line-height: var(--font-height-s);
   color: var(--text-white);
 
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Button:disabled {
