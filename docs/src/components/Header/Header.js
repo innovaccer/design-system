@@ -9,12 +9,8 @@ const Header = ({ relativePagePath }) => {
   const checkactive = (label) => {
     let res = false;
     const pagePath = relativePagePath.split('/');
-    if(pagePath.length>1){
-      if(pagePath[1]===label.toLowerCase()) res = true;
-    }
-    if(pagePath.length>2){
-      if(pagePath[2]===label.toLowerCase()) res = true; 
-    } 
+    if(pagePath.length>1 && pagePath[1]===label.toLowerCase()) res = true;
+    if(pagePath.length>2 && pagePath[2]===label.toLowerCase()) res = true; 
     return res; 
   }
   return (
