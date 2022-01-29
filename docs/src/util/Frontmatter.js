@@ -10,8 +10,6 @@ export function useFrontmatter(relativePagePath) {
           node {
             slug
             frontmatter {
-              component
-              date
               description
               logos
               showMobile
@@ -25,7 +23,6 @@ export function useFrontmatter(relativePagePath) {
   `);
 
   const componentName = relativePagePath.slice(1, relativePagePath.lastIndexOf('/'));
-
   const data = edges.filter(item => {
     const { slug, frontmatter } = item.node;
     return slug.includes(componentName) && frontmatter.title != frontmatter.description
