@@ -60,6 +60,7 @@
   justify-content: center;
   box-sizing: border-box;
   z-index: 1;
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Radio--disabled {
@@ -90,6 +91,7 @@
 
 .Radio-input:checked ~ .Radio-wrapper:after {
   display: block;
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Radio-wrapper:after {
