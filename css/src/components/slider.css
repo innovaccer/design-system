@@ -84,6 +84,8 @@
   box-sizing: border-box;
   outline: none;
   display: flex;
+  transition: border var(--duration--fast-01) var(--standard-productive-curve),
+    background-color var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Slider-handle:hover {
