@@ -6,11 +6,10 @@ import { Link as MDSLink } from '@innovaccer/design-system';
 
 const Header = ({ relativePagePath }) => {
   const items = useHeaderItems();
-  const checkactive = (label) => {
+  const checkActive = (label) => {
     let res = false;
     const pagePath = relativePagePath.split('/');
-    if(pagePath.length>1 && pagePath[1]===label.toLowerCase()) res = true;
-    if(pagePath.length>2 && pagePath[2]===label.toLowerCase()) res = true; 
+    if(pagePath[1]===label.toLowerCase() || pagePath[2]===label.toLowerCase()) res = true; 
     return res; 
   }
   return (
@@ -43,7 +42,7 @@ const Header = ({ relativePagePath }) => {
             <Link
               key={index}
               to={link}
-              className={`HeaderLink ${ checkactive(label)
+              className={`HeaderLink ${ checkActive(label)
                   ? 'HeaderLink--active'
                   : 'HeaderLink--default'
                 }`}
