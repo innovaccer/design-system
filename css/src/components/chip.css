@@ -14,6 +14,7 @@
   flex-direction: row;
   cursor: default;
   height: var(--spacing-xl);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 .Chip-wrapper {
   display: inline-flex;
