@@ -15,6 +15,7 @@
   padding-right: var(--spacing-l);
   padding-left: var(--spacing-l);
   background: var(--white);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Input--tiny {
