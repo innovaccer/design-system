@@ -66,6 +66,7 @@
 
 .Option {
   display: flex;
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Option,
