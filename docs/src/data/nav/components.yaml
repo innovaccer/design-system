@@ -22,3 +22,24 @@ menus:
     link: /components/datePicker/usage/
   - label: Message
     link: /components/message/usage/
+  - label: Radio
+    link: /components/radio/usage/
+  - label: Side sheet
+    link: /components/sidesheet/usage/
+  - label: Slider
+    link: /components/slider/usage/
+  - label: Status Hint
+    link: /components/statushint/usage/
+  - label: Steppers
+    link: /components/steppers/usage/
+  - label: Switch
+    link: /components/switch/usage/
+  - label: Table
+    link: /components/table/usage/
+  - label: Tabs
+    link: /components/tabs/usage/
+  - label: Toast
+    link: /components/toast/usage/
+  - label: Tooltip
+    link: /components/tooltip/usage
+

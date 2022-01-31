@@ -1,0 +1,114 @@
+---
+title: Switch
+description:
+  Switches are used to toggle between two states in a user interface - ON and OFF, hence resembling the real-life switches used to turn something ON or OFF.
+date: 24 Jan 2022
+tabs: ['Usage', 'Interactions', 'Code']
+showMobile: true
+---
+
+#### Structure
+
+<Preview name='switch-default-switch' />
+
+#### Sizes
+
+Switches come in 2 sizes based on height and width - **Regular** and **Tiny**.
+
+<Preview name='switch-variants-size' />
+
+#### Properties
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Color - ON state',
+        Value: '#0070DD (primary)',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Color - OFF state',
+        Value: '#E5E5E5 (stone-light)',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Oval shadow',
+        Value: 'Shadow 20',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Value} />;
+        },
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+#### Usage
+
+<br/>
+
+##### Switch size
+
+The size of the switch depends on the other components appearing around it. If other components are regular in size, then the regular variant of switch should be used. The same goes for the tiny variant.
+
+![Switch size](./images/switch-3.png)
+<br/>
+
+##### Switch vs Checkbox
+
+<br/>
+
+<ul>
+<li> Tapping a switch is a two-step action: selection and execution. </li>
+<li> Whereas checkbox is just a selection of an option(s) and its execution requires another control, usually a button. </li>
+</ul>
+
+###### Instant response
+
+The options that require an instant response are best selected using a switch.
+
+*image pending*
+
+###### Multiple choices
+
+Checkboxes are preferred over switches when multiple options are available and the user has to select one or more options from them. Clicking multiple switches one by one and waiting to see results after each click takes extra time.
+*image pending*
+
+###### Confirmation
+
+Checkboxes are preferred when an explicit action is required to confirm settings.
+*image pending*
+
+
