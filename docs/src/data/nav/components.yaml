@@ -22,6 +22,8 @@ menus:
     link: /components/datePicker/usage/
   - label: Dividers
     link: /components/dividers/usage/
+  - label: Dropdowns
+    link: /components/dropdowns/usage/
   - label: Message
     link: /components/message/usage/
   - label: Radio

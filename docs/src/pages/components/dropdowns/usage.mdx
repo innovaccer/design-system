@@ -1,0 +1,151 @@
+---
+title: Dropdowns
+description: Dropdowns offer multiple choices in a compact way.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Dropdowns display a list of options for users to choose from. They provide the option to let users select a single option or multiple.
+
+### Structure
+Dropdown is made up of 2 key components - a custom **button** which acts as a trigger and a **popover** which acts as a container for the options.
+
+![Dropdown structure](./images/dropdowns-1.png)
+<br/>
+<br/>
+
+### Types
+Dropdowns can be categorized into **2 types** basis on their uses -
+
+#### Standard
+This is the typical custom button + popover combination of dropdowns.
+<Preview name="dropdown-all"/>
+
+#### Menu
+This is the icon button + popover combination of dropdowns which is used only for menu commands e.g. edit, export, delete, etc. This is **not used** for selecting options. The menu can open in either direction i.e towards left or towards the right.
+<Preview name="dropdown-dropdown-as-menu"/>
+
+### Variants
+<br/>
+
+#### Button variants
+The custom button for dropdowns comes with a few variants -
+
+##### Standard
+The standard variant consists of just text which changes its state when one or more options are selected.
+<Preview name="dropdown-standard-dropdown"/>
+
+##### With icon
+This variant comes with an icon in the left preceding the text to provide additional cues regarding the type of the options.
+<Preview name="dropdown-dropdown-with-icon"/>
+
+##### Inline label
+This variant comes with a label preceding the text and can be used at places where there is a space crunch.
+<Preview name="dropdown-label-position-in-dropdown"/>
+
+#### Options variants
+The options in a dropdown can be single select or multi-select. They come with a few variants -
+
+##### Standard
+This variant comes with just text.
+<Preview name="dropdown-standard-dropdown"/>
+
+##### With icon
+This variant comes with an icon preceding the text.
+<Preview name="dropdown-dropdown-items-with-icon"/>
+
+##### With sub info
+This variant comes with sub-info beneath the text.
+<Preview name="dropdown-dropdown-items-with-icon"/>
+
+##### With checkbox
+This variant comes with the support of checkboxes to select single or multiple options. The options here can also have sub info just like the previous variant.
+<Preview name="dropdown-dropdown-items-with-checkbox"/>
+
+### Sizes
+Dropdowns come in **2 sizes** - regular and tiny.
+<Preview name="dropdown-variants-size"/>
+
+### States
+<br/>
+
+#### Button states
+The custom button comes in **5 states** - default, hover, focus, active and disabled.
+
+![States of the custom dropdown button](./images/dropdowns-2.png)
+<br/>
+<br/>
+
+#### Options states
+The options come in **3 states** - default, hover and selected. Users can also use the up/down arrow key to traverse the options. In that case, the highlighted option has the same state as hover.
+
+![States of options](./images/dropdowns-3.png)
+<br/>
+<br/>
+
+### Usage
+<br/>
+
+#### Search
+Dropdown can be offered with a search functionality. In that case, the search input appears at the top.
+<Preview name="dropdown-search-in-dropdown"/>
+
+#### Multi select
+The multi-select behavior in a dropdown is divided into **2 categories** as following.
+
+##### For options less than or equal to a threshold
+<Preview name="dropdown-dropdown-options-less-than-50"/>
+
+![Multi-select behavior of dropdown for options less than or equal to a threshold](./images/dropdowns-4.png)
+<br/>
+<br/>
+
+##### For options more than the threshold
+<Preview name="dropdown-dropdown-options-more-than-50"/>
+
+![Multi-select behavior of dropdown for options more than the threshold](./images/dropdowns-5.png)
+<br/>
+<br/>
+
+50 is the default threshold and it can be changed to any number between 50 to 100.
+<br/>
+
+#### Grouping options
+Dropdown options can be grouped under a section using a sub header, if needed.
+
+![Grouping options under a sub heading](./images/dropdowns-6.png)
+<br/>
+<br/>
+
+#### Label position
+The label provides a better understanding of what kind of selection is expected. Labels can be placed either on the top of the dropdown or can be placed inline with the value or placeholder of the dropdown.
+<Preview name="dropdown-label-position-in-dropdown"/>
+
+#### Help text
+Help text can be provided beneath a dropdown to add context regarding the type of input required just like the input fields.
+<Preview name="dropdown-dropdown-with-caption"/>
+
+#### Actions in footer
+Using network resources on each checkbox selection in a dropdown can be quite expensive. To avoid sending api calls at every selection, the dropdown with multi-select comes with an option of having actions in the footer. This helps in sending the api call just once i.e. on click of Add/Apply button.
+<Preview name="dropdown-dropdown-with-action-buttons"/>
+
+#### Custom trigger
+Dropdowns can also be triggered by other components, primarily by buttons and icon buttons. The basic behavior of the dropdown remains the same.
+
+![Custom triggers to open a dropdown](./images/dropdowns-7.png)
+<br/>
+<br/>
+
+#### Dropdown vs. Radio
+It is recommended to use dropdowns if the number of single-select options exceeds 5 or if the space is limited, to better utilize the space. Radios should be used if the options are fewer than 5 and there are no space restrictions.
+
+![Dropdown vs. radio](./images/dropdowns-8.png)
+<br/>
+<br/>
+
+#### Dropdown vs. Checkbox
+It is recommended to use dropdowns if the number of multi-select options exceeds 5 or if the space is limited, to better utilize the space. Checkboxes should be used if the options are fewer than 5 and there are no space restrictions.
+
+![Dropdown vs. checkbox](./images/dropdowns-9.png)
+<br/>
+<br/>
