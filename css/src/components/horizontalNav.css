@@ -12,6 +12,7 @@
   padding-left: var(--spacing-l);
   border-radius: var(--spacing-2);
   margin: 0 var(--spacing-xs);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .HorizontalNav-menu--disabled {
