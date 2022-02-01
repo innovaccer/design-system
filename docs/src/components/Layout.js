@@ -212,9 +212,11 @@ const Layout = ({
     <>
       <Meta
         titleType={titleType}
-        pageTitle={pageTitle}
-        pageDescription={pageDescription}
+        docTitle={pageTitle}
+        docDescription={pageDescription}
         pageKeywords={pageKeywords}
+        frontmatter={frontmatter}
+        relativePagePath={relativePagePath}
       />
       <Header
         leftMenuList={leftMenuList}
