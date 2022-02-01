@@ -1,6 +1,7 @@
 .Link {
   text-decoration: none;
   font-weight: var(--font-weight-medium);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Link--regular {
