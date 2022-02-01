@@ -1,0 +1,27 @@
+.search-result {
+  max-height: 400px;
+  width: 450px;
+}
+
+.search-result-entry:hover{
+  background-color: var(--secondary-lightest);
+}
+
+.search-result-link{
+  text-decoration: none !important;
+}
+
+.search-result::-webkit-scrollbar-thumb{
+  background: var(--secondary-dark);
+  border-radius: 6px;
+}
+
+.search-result::-webkit-scrollbar{
+  background: var(--white);
+  width: var(--spacing-l);
+}
+
+.search-input{
+  right: var(--spacing-2);
+  top: var(--spacing);
+}

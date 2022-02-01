@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { useHeaderItems } from '../../util/HeaderItems';
 import './Header.css';
 import { Link as MDSLink } from '@innovaccer/design-system';
+import Search from '../GlobalSearch/Search';
 
 const Header = ({ relativePagePath }) => {
   const items = useHeaderItems();
@@ -19,7 +20,7 @@ const Header = ({ relativePagePath }) => {
       <Link to='/' className='HeaderLink ml-0'>
         <img src="/images/headerLogo.png" width="290px" height="28px" />
       </Link>
-      <div >
+      <div>
         {items.map(({ link, label }, index) => {
           const isExternal =
             link.startsWith('http://') ||
@@ -51,6 +52,7 @@ const Header = ({ relativePagePath }) => {
           );
         })}
       </div>
+      <Search />
     </div>
   );
 };
