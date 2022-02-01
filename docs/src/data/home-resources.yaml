@@ -1,0 +1,14 @@
+- name: Figma UI Library
+  link: /resources/
+  imgSrc: '/images/figma.png'
+  description: Use our Masala Design System  UI Kit to mock up pages and prototypes.
+
+- name: Storybook
+  link: https://innovaccer.github.io/design-system/
+  imgSrc: '/images/storybook.png'
+  description: Use our open source UI library of react components to streamline development
+
+- name: Design Tokens
+  link: https://github.com/innovaccer/design-system
+  imgSrc: '/images/designtoken.png'
+  description: Use our Masala Design System UI Kit to mock up pages and prototypes.

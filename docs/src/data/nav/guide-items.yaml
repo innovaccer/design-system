@@ -1,0 +1,6 @@
+base: guides
+menus:
+  - label: Guides
+    subMenu:
+      - label: Authoring MDX
+        link: /guides/MDX

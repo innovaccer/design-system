@@ -185,4 +185,23 @@
 
   /* Transparancy (Opacity) */
   --transparent-58: 0.58;
+
+  /* Transition curve timing function */
+  /* Use standard-easing when an element is visible from the beginning to the end of a motion. Ex-Expanding cards. */
+  --standard-productive-curve: cubic-bezier(0.2, 0, 0.38, 0.9);
+  --standard-expressive-curve: cubic-bezier(0.4, 0.14, 0.3, 1);
+  /* Use entrance-easing when an element quickly appears and slows down to a stop. Ex-when adding elements to the view, such as a modal appearing. */
+  --entrance-productive-curve: cubic-bezier(0, 0, 0.38, 0.9);
+  --entrance-expressive-curve: cubic-bezier(0, 0, 0.3, 1);
+  /* Use exit-easing when removing elements from view, such as closing a modal or toaster. */
+  --exit-productive-curve: cubic-bezier(0.2, 0, 1, 0.9);
+  --exit-expressive-curve: cubic-bezier(0.4, 0.14, 1, 1);
+
+  /* Transition duration */
+  --duration--fast-01: 80ms;
+  --duration--fast-02: 120ms;
+  --duration--moderate-01: 160ms;
+  --duration--moderate-02: 240ms;
+  --duration--slow-01: 400ms;
+  --duration--slow-02: 720ms;
 }

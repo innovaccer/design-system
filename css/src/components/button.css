@@ -21,8 +21,7 @@
   line-height: var(--font-height-s);
   color: var(--text-white);
 
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Button:disabled {
@@ -112,7 +111,7 @@
 }
 
 .Button--basic:hover {
-  background: var(--secondary);
+  box-shadow: var(--shadow-s);
 }
 
 .Button--basic:active {
@@ -199,7 +198,7 @@
 
 .Button--transparent:focus {
   background: color-mod(var(--stone-light) a(0.2));
-  /* box-shadow: var(--shadow-spread) var(--secondary-shadow); */
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .Button--transparent:active {

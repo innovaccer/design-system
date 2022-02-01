@@ -64,11 +64,13 @@
 
 .MenuItem:hover {
   background-color: var(--secondary-light);
+  box-shadow: var(--shadow-s);
 }
 
 .MenuItem--active,
 .MenuItem--active:hover {
   background: var(--primary-lightest);
+  box-shadow: none;
 }
 
 .MenuItem--rounded {

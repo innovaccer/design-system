@@ -1,0 +1,652 @@
+---
+title: Button
+description: Buttons initiate actions and indicate what will happen after interacting with them.
+date: 15 June 2021
+tabs: ['Usage', 'Code', 'Content']
+showMobile: true
+---
+
+#### Take the right actions
+Take the right actions in order to move towards the goal. Use them to make your labels predictable and consequential.
+
+##### Create vs. New
+**Create**
+
+Lets the user start something from scratch like creating an account or a group etc. Prefer 'Create' over 'New'.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Create account</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Create group</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Create a new account
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Create this group
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**New**
+
+Lets the user create a new object like documents, files, folders etc.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>New document</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>New referral</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Create New Document
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Create New Referral
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Cancel vs. Discard
+**Cancel**
+
+Use it to cancel the existing action and close the current modal, dialog, or page. 
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Cancel</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Cancel appointment</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Abort
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Cancel the Appointment
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Discard**
+
+Use it to completely remove the existing draft before closing the window or page.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Discard changes</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Discard the changes?
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Done vs. Ok
+**Done**
+
+Use it to show the user their task is finished and can return back to the previous page or window.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Done</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Over
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**OK**
+
+Indicates confirmation of an action. Here both letters remains in uppercase. Never use ‘Close’ adjacent to ‘OK’.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>OK</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>OK</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>OK</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>OK, got it</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        O.K
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Ok
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        ok
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        OK, got it!
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Export vs. Download
+**Export**
+
+Use export when the user wants to save documents or files in a different format to another location.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Export all</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Export as PDF</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Export everything
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Export into PDF
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Download**
+
+Use download when the user wants to transfer files from a remote to a local system.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Download</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Download update</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Click here to download
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Yes, download this update now
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Edit vs. Change
+**Edit**
+
+Use it to modify or change data, value, or text to the current window or page.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Edit</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Edit</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Edit profile</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Manage
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Change
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Edit My Profile
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Change**
+
+Use it to make modifications or changes to the existing window or page.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Change group</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Change the Group
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Search vs. Find
+**Search**
+
+Use the search label to indicate an attempt to find information on a computer, database or on the internet. Prefer 'Search' over 'Find'.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Search</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Advanced Search</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        SEARCH...
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Let's Advanced Search
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Find**
+
+Use it to show the process of locating a specific file, document, or any other object on a computer or on the internet.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Find...</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Find out more</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Find here.......
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Click here to Find out more
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Select vs. Choose
+**Select**
+
+Use it to select data, value or item from the table.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Select</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Select all</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Pick
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Select all items
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Choose**
+
+Use it to make a more subjective decision like choosing files, groups, or templates.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Choose files</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Choose these files
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Import vs. Upload
+**Import**
+
+Use import when the user wants to transfer files from one format to another usually within a new file. 
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Import all</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Import template</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Import altogether
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Import this template
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Upload**
+
+Use upload when the user wants to transfer files from a local to a remote system via internet.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Upload</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Upload files</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Click here to upload
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Upload the files
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Delete vs. Remove
+**Delete**
+
+Lets the user eliminate or erase an existing object forever.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Delete</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Delete account</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Move to trash
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Delete this account
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Upload**
+
+Lets the user remove files, accounts or groups from the current window or page.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Remove</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Remove</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Remove account</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Delete
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Discard
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Remove this account
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Apply vs. Save
+**Apply**
+
+Lets the user make changes or modifications to a file or document before closing the window.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Apply changes</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Apply filters</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Save changes
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Apply these filters
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Save**
+
+Use it to save data or pending modifications to a file or document before closing the window.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Save as</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Save and continue</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Save changes</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Save As
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Save & continue
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Apply changes
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Close vs. Dismiss
+**Close**
+
+Use it to close existing dialog, modal, or page. Never use ‘Close’ adjacent to ‘OK’.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Close</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Save and close</IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>Submit and close</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Close this window
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Save & close
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Submit & close
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Dismiss**
+
+Lets the user leave the existing page or window.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Dismiss</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Dismiss this page
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+##### Exit vs. Quit
+**Close**
+
+Lets the user leave the existing application or website by closing the page or window. Prefer 'Exit' over 'Quit'.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Exit</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Exit page
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+**Quit**
+
+Use it to shut the application and exit the page.
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>Quit</IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Quit app
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+
+#### Remember to
+* Use verbs for initiating an action.
+* Use consistent words for labels throughout the product.
+* Use sentence case for labels and buttons even if the text is long.
+* Keep your microcopy short and crisp without getting vague.
+* Avoid punctuations for microcopy.
+* Avoid unnecessary words such as 'a', 'an', 'the' etc.
+* Avoid the use of Ampersand, always use the full word 'and'.
+* Avoid tricky words, stick to simple recognizable words.
+* Avoid using branded terms for labels and buttons.
+
+For more content guidelines for button, head to [Button Guidelines](/content/button-guidelines/tabs/confusing-buttons).

@@ -140,12 +140,3 @@
   height: fit-content;
   line-height: var(--font-height);
 }
-
-.Dropdown-wrapper::-webkit-scrollbar {
-  width: var(--spacing);
-}
-
-.Dropdown-wrapper::-webkit-scrollbar-thumb {
-  background: var(--secondary);
-  border-radius: var(--spacing-m);
-}

@@ -36,14 +36,3 @@
   padding-left: var(--spacing-xl);
   padding-right: var(--spacing-xl);
 }
-
-.OverlayBody::-webkit-scrollbar {
-  width: var(--spacing-2);
-}
-
-.OverlayBody::-webkit-scrollbar-thumb {
-  border: var(--spacing-m) solid rgba(0, 0, 0, 0);
-  background-clip: padding-box;
-  border-radius: var(--spacing);
-  background-color: var(--secondary);
-}

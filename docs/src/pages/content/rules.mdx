@@ -1,0 +1,136 @@
+---
+title: Rules guidelines
+description: Use this guide to make DOs & DONTs components.
+---
+
+Use this guide to make DOs & DONTs components.
+
+#### Single
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper> Create account </IconWrapper>
+    </InlineMessage>
+  </DOs>
+
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType = 'error'> Create a new account </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+<br />
+
+#### Multiple
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper> Create account </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper> Create group </IconWrapper>
+    </InlineMessage>
+  </DOs>
+
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType = 'error'> Create a new account </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType = 'error'> Create this group </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+<br />
+
+#### Multi-line
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper> This is where all the care conversations happen between the team members. </IconWrapper>
+    </InlineMessage>
+  </DOs>
+
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType = 'error'> This is where all the care conversations happen between the team members. </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+<br />
+
+#### Multi-line with a heading
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>
+        <b>Here's to new beginnings! Let all your care conversations happen here</b>
+      </IconWrapper>
+      <p class='ml-7'>This is where all the care conversations happen between the team members.</p>
+    </InlineMessage>
+  </DOs>
+
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType = 'error'> <b>No Messages</b> </IconWrapper>
+      <p class='ml-7'>This is where all the care conversations happen between the team members.</p>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+<br />
+
+#### Multi-line with a heading
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper> 
+        <b>Here's to new beginnings! Let all your care conversations happen here</b>
+      </IconWrapper>
+      <div class='ml-7'>
+        <p>Let all your care conversations happen here.</p>
+        <Button>Start conversation</Button>
+      </div>
+    </InlineMessage>
+  </DOs>
+
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType = 'error'> <b>No Messages</b> </IconWrapper>
+      <div class='ml-7'>
+        <p>This is where all the care conversations happen between the team members.</p>
+        <Button>Begin conversation</Button>
+      </div>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+<br />
+
+#### Landscape
+
+<Rules isPortraitMode={true} BgColor='#f4f4f4'>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>
+        <b>Here's to new beginnings! Here's to new beginnings Here's to new</b>
+      </IconWrapper>
+      <p class='ml-7' >Let all your care conversations happen here.</p>
+    </InlineMessage>
+  </DOs>
+
+  <DONTs>
+    <InlineMessage> 
+      <IconWrapper iconType = 'error'> <b>No Messages</b> </IconWrapper>
+      <p class='ml-7'>This is where all the care conversations happen between the team members.</p>
+    </InlineMessage>
+  </DONTs>
+</Rules>

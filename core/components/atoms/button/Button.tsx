@@ -97,6 +97,7 @@ const sizeMapping: Record<ButtonSize, number> = {
   large: 20,
 };
 
+// eslint-disable-next-line react/display-name
 const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     size = 'regular',
@@ -178,8 +179,6 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     </button>
   );
 });
-
-ButtonElement.displayName = 'ButtonElement';
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const { icon, tooltip, children } = props;

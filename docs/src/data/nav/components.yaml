@@ -1,0 +1,45 @@
+base: components
+menus:
+  - label: Overview
+    link: /components/overview/tabs/all-components/
+  - label: Avatars
+    link: /components/avatar/usage/
+  - label: Badges
+    link: /components/badges/usage/
+  - label: Breadcrumbs
+    link: /components/breadcrumbs/usage/
+  - label: Buttons
+    link: /components/button/usage/
+  - label: Calendar
+    link: /components/calendar/usage/
+  - label: Cards
+    link: /components/card/usage/
+  - label: Checkbox
+    link: /components/checkbox/usage/
+  - label: Chips
+    link: /components/chips/usage/
+  - label: Date picker
+    link: /components/datePicker/usage/
+  - label: Message
+    link: /components/message/usage/
+  - label: Radio
+    link: /components/radio/usage/
+  - label: Side sheet
+    link: /components/sidesheet/usage/
+  - label: Slider
+    link: /components/slider/usage/
+  - label: Status Hint
+    link: /components/statushint/usage/
+  - label: Steppers
+    link: /components/steppers/usage/
+  - label: Switch
+    link: /components/switch/usage/
+  - label: Table
+    link: /components/table/usage/
+  - label: Tabs
+    link: /components/tabs/usage/
+  - label: Toast
+    link: /components/toast/usage/
+  - label: Tooltip
+    link: /components/tooltip/usage
+

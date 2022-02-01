@@ -1,0 +1,302 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "public": {
+      "name": "public",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "src": {
+      "name": "src",
+      "isOrdered": true,
+      "folders": {
+        "components": {
+          "name": "components",
+          "isOrdered": true,
+          "folders": {
+            "Colors": {
+              "name": "Colors",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "Container": {
+              "name": "Container",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "Footer": {
+              "name": "Footer",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "Header": {
+              "name": "Header",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "LastModifiedDate": {
+              "name": "LastModifiedDate",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "LeftNav": {
+              "name": "LeftNav",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "Logos": {
+              "name": "Logos",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "PropsTable": {
+              "name": "PropsTable",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "Rules": {
+              "name": "Rules",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "TableOfContent": {
+              "name": "TableOfContent",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "css": {
+              "name": "css",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "templates": {
+              "name": "templates",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "data": {
+          "name": "data",
+          "isOrdered": true,
+          "folders": {
+            "components": {
+              "name": "components",
+              "isOrdered": true,
+              "folders": {
+                "images": {
+                  "name": "images",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                }
+              },
+              "files": {}
+            },
+            "nav": {
+              "name": "nav",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "images": {
+          "name": "images",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "pages": {
+          "name": "pages",
+          "isOrdered": true,
+          "folders": {
+            "components": {
+              "name": "components",
+              "isOrdered": true,
+              "folders": {
+                "avatar": {
+                  "name": "avatar",
+                  "isOrdered": true,
+                  "folders": {
+                    "images": {
+                      "name": "images",
+                      "isOrdered": true,
+                      "folders": {},
+                      "files": {}
+                    }
+                  },
+                  "files": {}
+                },
+                "badges": {
+                  "name": "badges",
+                  "isOrdered": true,
+                  "folders": {
+                    "images": {
+                      "name": "images",
+                      "isOrdered": true,
+                      "folders": {},
+                      "files": {}
+                    }
+                  },
+                  "files": {}
+                },
+                "breadcrumbs": {
+                  "name": "breadcrumbs",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "button": {
+                  "name": "button",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "card": {
+                  "name": "card",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "checkbox": {
+                  "name": "checkbox",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "message": {
+                  "name": "message",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "overview": {
+                  "name": "overview",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                },
+                "table": {
+                  "name": "table",
+                  "isOrdered": true,
+                  "folders": {},
+                  "files": {}
+                }
+              },
+              "files": {}
+            },
+            "content": {
+              "name": "content",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "foundations": {
+              "name": "foundations",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "getting-started": {
+              "name": "getting-started",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "guides": {
+              "name": "guides",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "home": {
+              "name": "home",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "introduction": {
+              "name": "introduction",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "mobile": {
+              "name": "mobile",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "patterns": {
+              "name": "patterns",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            },
+            "resources": {
+              "name": "resources",
+              "isOrdered": true,
+              "folders": {},
+              "files": {}
+            }
+          },
+          "files": {}
+        },
+        "util": {
+          "name": "util",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "static": {
+      "name": "static",
+      "isOrdered": true,
+      "folders": {
+        "icons": {
+          "name": "icons",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "images": {
+          "name": "images",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "tools": {
+      "name": "tools",
+      "isOrdered": true,
+      "folders": {},
+      "files": {
+        "changeloghead": 0
+      }
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}

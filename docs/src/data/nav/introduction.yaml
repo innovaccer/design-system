@@ -1,0 +1,11 @@
+base: introduction
+menus:
+  - label: Get started
+    subMenu:
+      - label: Developers
+        link: /introduction/get-started/developers/
+      - label: Designers
+        link: /introduction/get-started/designers/
+
+  - label: What's new
+    link: /introduction/what's-new/
