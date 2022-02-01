@@ -32,6 +32,7 @@ export const Pills = (props: PillsProps) => {
     className
   );
 
+  
   return (
     <span data-test="DesignSystem-Pills" {...baseProps} className={classes}>
       {children}
