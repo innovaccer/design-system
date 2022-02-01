@@ -24,6 +24,8 @@ menus:
     link: /components/dividers/usage/
   - label: Dropdowns
     link: /components/dropdowns/usage/
+  - label: Icons
+    link: /components/icons/usage/
   - label: Message
     link: /components/message/usage/
   - label: Radio
