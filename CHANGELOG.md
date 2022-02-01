@@ -1,4 +1,44 @@
 
+## 2.9.0-0  (2022-02-01)
+### Highlights
+* feat: adds docs site (44ab33d3)
+* feat(verticalNav): add custom item renderer option (810a099f)
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* feat: adds docs site (44ab33d3)
+* feat(verticalNav): add custom item renderer option (810a099f)
+
+
+### Fixes
+* fix(verticalnav): fix verticalnav active hover state shadow (1b341516)
+* fix(button): fix button hover background color (1e696743)
+* fix(button): fix button hover and focus style (795ae48b)
+* fix(dropdown): fix dropdown items closing animation (dc8c6102)
+* fix(tabs): fix tabs conflict in selected focused state style (fa4ff904)
+* fix(toast): add message to  discription story (1cac895d)
+* fix(button): props table not showing (70ac3e39)
+* fix(leftNav): fix left navbar highlighting on tab changes (d836a42e)
+* fix(table): add border in table for mdx and fix overflow behaviour (233293ed)
+* fix(table): make scrollbar width consistent (af5da8f6)
+* fix(table): fix table data issue when rows are more than 27 (b33aafc1)
+
+### Improvements
+NA
+
+### Documentation
+* Adds documentations for components.
+
+-------------------
+
 ## 2.8.0-0  (2022-01-12)
 ### Highlights
 
