@@ -60,7 +60,7 @@ const LeftNav = (props) => {
   };
 
   return (
-    <div className='h-100 bg-secondary-lightest border-right'>
+    <div className='h-100 bg-secondary-lightest border-right page-scroll'>
       {showMenuButtons && (
         <div className='d-flex pt-6 pl-6'>
           <Button
