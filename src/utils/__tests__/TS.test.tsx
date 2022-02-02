@@ -2,15 +2,15 @@ import * as React from 'react';
 import * as DS from '../../index';
 import { render } from '@testing-library/react';
 
-const noop = () => {};
-const string = 'Hello World!';
-const dummyComp = <DS.Text>{string}</DS.Text>;
+// const noop = () => {};
+// const string = 'Hello World!';
+// const dummyComp = <DS.Text>{string}</DS.Text>;
 
 export const TS = () => {
   return (
     <>
       <DS.Avatar />
-      <DS.AvatarGroup list={[]} />
+      {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
       <DS.Badge>Badge</DS.Badge>
       <DS.Breadcrumbs list={[]} onClick={noop} />
@@ -78,7 +78,7 @@ export const TS = () => {
       <DS.Table />
       <DS.Navigation menus={[]} />
       <DS.PageHeader title={string} />
-      <DS.EditableChipInput placeholder="" />
+      <DS.EditableChipInput placeholder="" /> */}
     </>
   );
 };

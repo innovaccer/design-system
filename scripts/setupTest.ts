@@ -1,24 +1,21 @@
 import '@testing-library/jest-dom';
-const ReactTestingLibrary = require('@testing-library/react');
-
-// Configure React Testing Library
-const { configure } = ReactTestingLibrary;
+import { configure } from '@testing-library/react';
 
 configure({ testIdAttribute: 'data-test' });
 
-jest.mock('@/utils/uidGenerator', () => () => ('Test-uid'));
+// jest.mock('@/utils/uidGenerator', () => () => 'Test-uid');
 
 document.createRange = () => ({
   setStart: () => {},
   setEnd: () => {},
   createContextualFragment: (str) => {
-    var temp = document.createElement('template');
+    const temp = document.createElement('template');
     temp.innerHTML = str;
     return temp.content;
   },
   // @ts-ignore
   commonAncestorContainer: {
-    nodeName: "BODY",
+    nodeName: 'BODY',
     ownerDocument: document,
   },
 });
