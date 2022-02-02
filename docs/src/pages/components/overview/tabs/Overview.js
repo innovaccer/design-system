@@ -45,7 +45,7 @@ function Overview() {
                       className='w-100 overflow-hidden overview-card pb-5'
                     >
                       <CardBody>
-                        <div className='py-5'>
+                        <div className='py-5 card-opacity'>
                           <div className='d-flex justify-content-center align-items-center' style={{ overflow: 'hidden', height: '136px' }}>
                             {React.createElement(image)}
                           </div>
