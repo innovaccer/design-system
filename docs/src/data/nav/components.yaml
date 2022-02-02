@@ -44,6 +44,7 @@ menus:
     hideInMobile: true
   - label: Icons
     link: /components/icons/usage/
+<<<<<<< HEAD
     hideInMobile: true
   - label: Inline editable fields
     link: /components/inlineEditableFields/usage/
@@ -54,6 +55,11 @@ menus:
     link: /components/links/usage/
     hideInMobile: true
   - label: Messages
+=======
+  - label: Inputs
+    link: /components/inputs/usage/
+  - label: Message
+>>>>>>> 52e56d1b (Added content for inputs)
     link: /components/message/usage/
     hideInMobile: true
   - label: Meta list
