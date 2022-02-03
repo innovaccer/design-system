@@ -26,6 +26,8 @@ menus:
     link: /components/dropdowns/usage/
   - label: Icons
     link: /components/icons/usage/
+  - label: Inline editable fields
+    link: /components/inlineEditableFields/usage/
   - label: Inputs
     link: /components/inputs/usage/
   - label: Message
