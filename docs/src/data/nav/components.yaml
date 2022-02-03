@@ -40,11 +40,13 @@ menus:
     link: /components/modals/usage/
   - label: Radio
     link: /components/radio/usage/
+  - label: Rich text editor
+    link: /components/richtext/usage/  
   - label: Side sheet
     link: /components/sidesheet/usage/
   - label: Slider
     link: /components/slider/usage/
-  - label: Status Hint
+  - label: Status hint
     link: /components/statushint/usage/
   - label: Steppers
     link: /components/steppers/usage/
