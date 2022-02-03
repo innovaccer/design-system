@@ -1,0 +1,143 @@
+---
+title: Rich text editor
+description:
+  Rich text editor is a text box in which users can decorate and format the text.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Rich text editor also provides options to add media and other useful entities such as inserting images, adding hyperlinks, etc.
+
+### Structure
+
+<Preview name='default-radio'/>
+
+### Properties
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Headings',
+        Value: 'Heading 4, Heading 3, Heading 2, Heading 1',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Text decoration',
+        Value: 'Bold, Italics, Underline, Strikethrough',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Text color',
+        Value: 'Night, Stone, Neem, Jal, Mirch, Tawak',
+        Configurable: '❌',
+      },
+      {
+        Property: 'List formatting',
+        Value: 'Bulleted list, Numbered list',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Insert options',
+        Value: 'Attachment, Image, Personalization, Link, More (Extendable option)',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '25%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '25%%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Hover on options bar items
+
+![Hovering on options bar items](./images/richtext-1.png)
+
+<br/>
+
+#### Selection on options bar items
+
+![Selection on options bar items](./images/richtext-2.png)
+
+<br/>
+
+#### Inserting images
+
+Users can insert images in the rich text editor using the image button from the options bar.
+
+![Inserting images](./images/richtext-3.png)
+
+<br/>
+
+#### Deleting images
+
+Users can delete any previously added images by **either using backspace or from the selection popover**. As the name suggests, selection popover appears when **a user clicks on the image**.
+
+![Deleting images](./images/richtext-4.png)
+
+<br/>
+
+#### Adding personalized content
+
+Rich text editor comes with the option to add personalized content. This can be done either 
+by **using the personalize button** from the options bar **or by pressing '@' on the keyboard**. Doing 
+so will open a dropdown with custom options. The selected option then appears as a chip which 
+can be cleared from the editor if needed.
+
+![Adding personalized content](./images/richtext-5.png)
+
+<br/>
+
+#### Adding hyperlinks
+
+Users can add hyperlinks using the link button from the options bar.
+
+![Adding hyperlinks](./images/richtext-6.png)
+
+<br/>
+
+##### Editing the hyperlink
+
+Users can edit the hyperlink using the options popover which can be revealed by **clicking on the link**.
+
+![Editing the hyperlink](./images/richtext-7.png)
+
+<br/>
+
+In the options popover -
+
+-   Clicking the link opens it in a new tab.
+-   Clicking on the edit button opens the same modal through which a link is added. 
+-   Clicking on the delete button removes the link and the displayed text altogether.
