@@ -30,7 +30,7 @@ menus:
     link: /components/inlineEditableFields/usage/
   - label: Inputs
     link: /components/inputs/usage/
-  - label: Message
+  - label: Messages
     link: /components/message/usage/
   - label: Radio
     link: /components/radio/usage/
