@@ -22,6 +22,8 @@ menus:
     link: /components/datePicker/usage/
   - label: Message
     link: /components/message/usage/
+  - label: Progress indicators
+    link: /components/progressindicators/usage/
   - label: Radio
     link: /components/radio/usage/
   - label: Rich text editor

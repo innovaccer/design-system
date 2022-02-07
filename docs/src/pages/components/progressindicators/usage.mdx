@@ -1,0 +1,181 @@
+---
+title: Progress Indicators
+description:
+  Progress Indicators are used to show progress of an ongoing process.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Progress indicator is a key part of any user interface screen. It helps users become aware of the loading progress of different components in the application.
+
+### Types
+
+<br/>
+
+#### Progress bar
+
+Goes from 0 to 100 linearly.
+
+<Preview name='switch-default-switch'/>
+
+#### Progress Ring
+
+Goes from 0 to 100 along the circumference. It comes in 2 sizes -
+
+<Preview name='switch-default-switch'/>
+
+#### Spinner
+
+Spins endlessly to show indeterminate progress unlike progress bar and ring. Spinner comes in 3 sizes -
+
+**Small** - For inline loaders such as in Buttons.
+**Medium** - For Modals and Cards.
+**Big** - For Page loaders.
+
+<Preview name='switch-default-switch'/>
+
+#### Skeleton Loader
+
+Skeleton loaders are used if there is a defined template for the data that is going to be displayed. This type of loading state should be used for container-based components(like avatars, lists, and so on) and data-based components(like tables).
+
+<Preview name='switch-default-switch'/>
+
+### Usage
+
+<br/>
+
+#### Nature of the process
+
+<br/>
+
+##### Determinate
+
+When the time taken to load a process is determinable.
+
+-   Use **Progress Bar** for general determinable processes.
+
+![Showing progress using progress bar](./images/progressindicators-1.png)
+
+<br/>
+
+-   Use **Progress Ring** if the process is contextual to a component
+
+![Showing progress using progress ring](./images/progressindicators-2.png)
+
+<br/>
+
+##### Indeterminate 
+
+When the time taken to load a process cannot be determined.
+
+-   Use **Skeleton loaders** if there is a defined template for the data that is going to be displayed.
+
+![Showing loading state using skeleton loaders](./images/progressindicators-3.png)
+
+<br/>
+
+-   Use **Spinners** if there is no defined template for the data that is going to be displayed
+
+![Showing loading state using spinner](./images/progressindicators-4.png)
+
+<br/>
+
+-   Use **Spinners** if the process is contextual to a component, e.g. button.
+
+![Showing loading state using spinner in button](./images/progressindicators-5.png)
+
+<br/>
+<br/>
+
+#### Skeleton loaders
+
+<br/>
+
+##### Visual Structure
+
+Skeleton loaders imitate each component of a cell separately at the time of loading, to create a perception of decreased loading time. 
+
+![Visual structure of skeleton loaders](./images/progressindicators-6.png)
+
+<br/>
+
+##### Page with Static vs Dynamic Content
+
+![Static vs Dynamic content](./images/progressindicators-7.png)
+
+<br/>
+
+#### Skeleton Loader vs Spinner
+
+A typical process starts with loading the app first. Refer to the table below and  the examples to have a better understanding:
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Loading the app',
+        Value: 'Unpredictable',
+        Configurable: 'Spinner',
+      },
+      {
+        Property: 'Loading page template',
+        Value: 'Predictable',
+        Configurable: 'Skeleton',
+      },
+      {
+        Property: 'Making API Calls',
+        Value: 'Data can be empty',
+        Configurable: 'Spinner',
+      },
+      {
+        Property: 'Making API Calls',
+        Value: 'Data will always be present',
+        Configurable: 'Skeleton',
+      },
+      {
+        Property: 'Searching',
+        Value: 'Data can be empty',
+        Configurable: 'Spinner',
+      },
+      {
+        Property: 'Changing page',
+        Value: 'Data will always be present',
+        Configurable: 'Skeleton',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'State',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Value',
+        displayName: 'Content-type',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Loader-type',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+#### Progressive Loading
+
+Progressive loading is a technique that loads the page in chunks i.e. from the simplest view to the most detailed view. Table in the above section demonstrates the step-by-step loading of a page. 
+
+
