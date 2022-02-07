@@ -22,6 +22,8 @@ menus:
     link: /components/datePicker/usage/
   - label: Message
     link: /components/message/usage/
+  - label: Popover
+    link: /components/popover/usage/
   - label: Progress indicators
     link: /components/progressindicators/usage/
   - label: Radio
