@@ -34,15 +34,14 @@ menus:
     link: /components/links/usage/
   - label: Messages
     link: /components/message/usage/
-<<<<<<< HEAD
   - label: Meta list
     link: /components/metaList/usage/
   - label: Modals
     link: /components/modals/usage/
-=======
+  - label: Popover
+    link: /components/popover/usage/
   - label: Progress indicators
     link: /components/progressindicators/usage/
->>>>>>> 23d6b64c (Completed progress indicators)
   - label: Radio
     link: /components/radio/usage/
   - label: Rich text editor
