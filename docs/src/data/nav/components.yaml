@@ -34,6 +34,8 @@ menus:
     link: /components/links/usage/
   - label: Messages
     link: /components/message/usage/
+  - label: Meta list
+    link: /components/metaList/usage/
   - label: Radio
     link: /components/radio/usage/
   - label: Side sheet
