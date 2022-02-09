@@ -36,6 +36,8 @@ menus:
     link: /components/message/usage/
   - label: Meta list
     link: /components/metaList/usage/
+  - label: Modals
+    link: /components/modals/usage/
   - label: Radio
     link: /components/radio/usage/
   - label: Side sheet
