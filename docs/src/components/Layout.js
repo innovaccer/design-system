@@ -84,7 +84,6 @@ const Layout = ({
   pageDescription,
   pageKeywords,
   relativePagePath,
-  component,
   tabs,
   logos,
   showMobile,
@@ -246,7 +245,6 @@ const Layout = ({
                 <ComponentsContainer
                   pageTitle={pageTitle}
                   relativePagePath={relativePagePath}
-                  component={component}
                   tabs={tabs}
                   pageDescription={pageDescription}
                   frontmatter={frontmatter}
