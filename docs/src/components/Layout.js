@@ -226,8 +226,8 @@ const Layout = ({
           frontmatter={frontmatter}
         />
         <Column className={`${showAnimation() ? "page-animation" : ''} page-scroll h-100`}>
-          <Row>
-            <Column className="px-12 py-8 min-vh-100" size={9}>
+          <Row className='justify-content-center'>
+            <Column className="px-12 py-8 min-vh-100 inner-left-container" size={9}>
               {!relativePagePath.includes('components') && (
                 <Container
                   pageTitle={pageTitle}
