@@ -5,4 +5,31 @@ tabs: ["Usage", "Code"]
 showMobile: false
 ---
 
-Calendar lets users select a date. The dates are arranged in a grid visually for familiarity and easy scanning.
+Calendar lets users select a date. The dates are arranged in a grid visually for familiarity and easy scanning. 
+
+### Structure
+A calendar is always visible upfront on screen when used i.e. a date can be selected directly unlike a date picker where a date can be selected only after interacting with a trigger.
+<Preview name="calendar-all" />
+
+### Sizes
+Calendar comes in **2 sizes** - regular and tiny.
+<Preview name="calendar-variants-size" />
+
+### States
+A time entity in calendar (date, month, year) can come in different states -
+
+![States of a date in calendar](./images/calendar-1.png)
+<br/>
+<br/>
+
+### Usage
+#### Calendar vs. Date picker
+Date picker is nothing but a calendar inside a popover and hence a trigger is always required to open it e.g. an input box. On the other hand, calendar is used as an inline component to show a view without additional triggers.
+
+![Calendar is used inline](./images/calendar-2.png)
+<br/>
+<br/>
+
+#### Date with an event
+Specific date can be highlighted to show that there is an event on that particular day.
+<Preview name="calendar-variants-with-events" />
