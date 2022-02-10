@@ -14,9 +14,10 @@ const TableOfContent = (props) => {
 
   useEffect(() => {
     const navIds = getIds(navItems);
-    document.body.addEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
+    let element = document.getElementById("main-container");
+    element.addEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
     return () => {
-      document.body.removeEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
+      element.removeEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
     }
   }, []);
 
@@ -30,11 +31,22 @@ const TableOfContent = (props) => {
     }
   }, []);
 
+  const isInViewport = (element) => {
+    const rect = element.getBoundingClientRect();
+    let flag = (rect.top-60)>= 0 && rect.bottom+25 <= (window.innerHeight || document.documentElement.clientHeight);
+    if (flag) return "inViewPort";
+    else if(rect.bottom+25 > (window.innerHeight || document.documentElement.clientHeight)) return "belowViewPort";
+    else return "aboveViewPort";
+  }
+
   const onScrollHandler = (e, idList) => {
     // Don't set the active index based on scroll if a link was just clicked
     if (clickedRef.current) {
       return;
     }
+    if(e.target.classList.contains("in-page-nav")){
+      return;
+   }
     const headerHeight = document.getElementById('mainHeader').getBoundingClientRect().height;
     const viewportHeight = document.body.offsetHeight - headerHeight;
     let resultFound = false;
@@ -46,6 +58,10 @@ const TableOfContent = (props) => {
         if (top > 0 && viewportHeight > top - height) {
           setActive(item);
           resultFound = true;
+          let activeElement = document.getElementsByClassName('active-link')[0];
+          let flag = isInViewport(activeElement);
+          if(flag === "belowViewPort") activeElement.scrollIntoView(false);
+          else if(flag === "aboveViewPort") activeElement.scrollIntoView(true);
         };
       };
     });
