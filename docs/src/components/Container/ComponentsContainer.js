@@ -52,7 +52,7 @@ const ComponentsContainer = ({
 
   return (
     <>
-      <Heading>{isSiblingTab ? frontmatter?.title : pageTitle}</Heading>
+      <Heading size='xl' className='my-5'>{isSiblingTab ? frontmatter?.title : pageTitle}</Heading>
       <Paragraph>{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
 
       {tabsList && tabsList.length && (
