@@ -46,13 +46,13 @@ const ComponentsContainer = ({
     const pagePath = relativePagePath.split('/');
     const pages = pagePath.slice(0, pagePath.length - 1);
     const path = `${pages.join('/')}/${nextTabSlug}/`;
-    navigate(path);
+    navigate(path, { state: { animation: false }, });
     setActiveIndex(tabIndex);
   };
 
   return (
     <>
-      <Heading>{isSiblingTab ? frontmatter?.title : pageTitle}</Heading>
+      <Heading size='xl' className='my-5'>{isSiblingTab ? frontmatter?.title : pageTitle}</Heading>
       <Paragraph>{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
 
       {tabsList && tabsList.length && (

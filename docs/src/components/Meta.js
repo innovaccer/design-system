@@ -5,10 +5,13 @@ import { useMetadata } from '../util/hooks';
 const favicon = '/icons/favicon_io/favicon-16x16.png';
 const faviconLarge = '/icons/favicon_io/favicon-32x32.png';
 const faviconApple = '/icons/favicon_io/apple-touch-icon.png';
-const  cardImage = '/icons/card-image.png';
+const cardImage = '/icons/card-image.png';
 
-const Meta = ({ pageTitle, pageDescription, pageKeywords, titleType }) => {
+const Meta = ({ docTitle, docDescription, pageKeywords, titleType, frontmatter, relativePagePath }) => {
   const { title, description, keywords, lang } = useMetadata();
+  const isSiblingTab = relativePagePath?.split('.')[0] === '/' + docTitle?.replace(/\s/g, '');
+  const pageTitle = isSiblingTab ? frontmatter?.title : docTitle;
+  const pageDescription = isSiblingTab ? frontmatter?.description : docDescription;
 
   const getPageTitle = () => {
     switch (titleType) {

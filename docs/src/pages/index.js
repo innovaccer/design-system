@@ -56,7 +56,7 @@ const Home = () => {
 
   return (
     <Homepage relativePagePath={'/404'} is404={true}>
-      <Meta titleType='page' pageTitle='Masala Design System' />
+      <Meta titleType='page' docTitle='Masala Design System' />
       <Row className="h-100">
         <Column className="page-animation">
 

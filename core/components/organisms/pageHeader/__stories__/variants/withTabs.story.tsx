@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PageHeader from '../../PageHeader';
-import { Button, Text, Tab, TabsWrapper, Badge } from '@/index';
+import { Button, Text, Tab, TabsWrapper, Pills } from '@/index';
 import { action } from '@storybook/addon-actions';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { number, text, boolean } from '@storybook/addon-knobs';
@@ -24,7 +24,7 @@ export const withTabs = () => {
           label={
             <>
               <div className="Tab-count">
-                <Badge appearance="secondary">2</Badge>
+                <Pills appearance="secondary">2</Pills>
               </div>
               <Text appearance={active !== 0 ? 'subtle' : undefined}>Tab 1</Text>
             </>
@@ -36,7 +36,7 @@ export const withTabs = () => {
           label={
             <>
               <div className="Tab-count">
-                <Badge appearance="secondary">12</Badge>
+                <Pills appearance="secondary">12</Pills>
               </div>
               <Text appearance={active !== 1 ? 'subtle' : undefined}>Tab 2</Text>
             </>
@@ -48,7 +48,7 @@ export const withTabs = () => {
           label={
             <>
               <div className="Tab-count">
-                <Badge appearance="secondary">5</Badge>
+                <Pills appearance="secondary">5</Pills>
               </div>
               <Text appearance={active !== 2 ? 'subtle' : undefined}>Tab 3</Text>
             </>
@@ -95,7 +95,7 @@ const customCode = `() => {
           label={(
             <>
               <div className="Tab-count">
-                <Badge appearance="secondary">2</Badge>
+                <Pills appearance="secondary">2</Pills>
               </div>
               <Text appearance={active !== 0 ? 'subtle' : undefined}>Tab 1</Text>
             </>
@@ -107,7 +107,7 @@ const customCode = `() => {
           label={(
             <>
               <div className="Tab-count">
-                <Badge appearance="secondary">12</Badge>
+                <Pills appearance="secondary">12</Pills>
               </div>
               <Text appearance={active !== 1 ? 'subtle' : undefined}>Tab 2</Text>
             </>
@@ -119,7 +119,7 @@ const customCode = `() => {
           label={(
             <>
               <div className="Tab-count">
-                <Badge appearance="secondary">5</Badge>
+                <Pills appearance="secondary">5</Pills>
               </div>
               <Text appearance={active !== 2 ? 'subtle' : undefined}>Tab 3</Text>
             </>

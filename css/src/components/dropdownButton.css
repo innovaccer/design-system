@@ -5,6 +5,7 @@
   padding-bottom: unset;
   background: var(--secondary-light);
   color: var(--text);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .DropdownButton-wrapper {

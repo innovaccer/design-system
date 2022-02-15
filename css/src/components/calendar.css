@@ -150,6 +150,7 @@
   cursor: pointer;
   user-select: none;
   border-radius: var(--spacing-m);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Calendar-value:hover {

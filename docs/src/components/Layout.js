@@ -84,10 +84,10 @@ const Layout = ({
   pageDescription,
   pageKeywords,
   relativePagePath,
-  component,
   tabs,
   logos,
   showMobile,
+  location,
   ...rest
 }) => {
   const is404 = children && children.key === null;
@@ -198,13 +198,7 @@ const Layout = ({
   };
 
   const showAnimation = () => {
-    //show animation for only first tab or pages without tabs
-
-    const { tabs } = frontmatter;
-    const name = relativePagePath.slice(relativePagePath.lastIndexOf('/') + 1, relativePagePath.lastIndexOf('.mdx'));
-    if (tabs?.length && name !== tabs[0].toLowerCase().split(' ').join('-')) {
-      return false;
-    }
+    if (location.state?.animation === false) return false;
     return true;
   }
 
@@ -212,9 +206,11 @@ const Layout = ({
     <>
       <Meta
         titleType={titleType}
-        pageTitle={pageTitle}
-        pageDescription={pageDescription}
+        docTitle={pageTitle}
+        docDescription={pageDescription}
         pageKeywords={pageKeywords}
+        frontmatter={frontmatter}
+        relativePagePath={relativePagePath}
       />
       <Header
         leftMenuList={leftMenuList}
@@ -229,8 +225,8 @@ const Layout = ({
           frontmatter={frontmatter}
         />
         <Column className={`${showAnimation() ? "page-animation" : ''} page-scroll h-100`}>
-          <Row>
-            <Column className="px-12 py-8 min-vh-100" size={9}>
+          <Row className='justify-content-center'>
+            <Column className="px-12 py-8 min-vh-100 inner-left-container" size={9}>
               {!relativePagePath.includes('components') && (
                 <Container
                   pageTitle={pageTitle}
@@ -249,7 +245,6 @@ const Layout = ({
                 <ComponentsContainer
                   pageTitle={pageTitle}
                   relativePagePath={relativePagePath}
-                  component={component}
                   tabs={tabs}
                   pageDescription={pageDescription}
                   frontmatter={frontmatter}
