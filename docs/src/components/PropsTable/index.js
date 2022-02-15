@@ -137,7 +137,7 @@ const StoryComp = ({
   const showLiveEditorContent = () => {
     if (activeButton === 'React') {
       return (
-        <div className="px-4">
+        <div className="px-4" id="react-tab">
           <LiveEditor theme={vsDark} />
         </div>
       );
