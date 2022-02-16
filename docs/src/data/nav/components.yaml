@@ -42,4 +42,9 @@ menus:
     link: /components/toast/usage/
   - label: Tooltip
     link: /components/tooltip/usage
-
+  - label: DemoMobile
+    link: /components/overview/tabs/all-components/
+    hideInWeb: true
+  - label: DemoWeb
+    link: /components/overview/tabs/all-components/
+    hideInMobile: true

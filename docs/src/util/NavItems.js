@@ -2,9 +2,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { MOBILE } from '../util/constants';
 
 export function useNavItems(relativePagePath) {
-    const {
-      allNavYaml: { nodes },
-    } = useStaticQuery(graphql`
+  const {
+    allNavYaml: { nodes },
+  } = useStaticQuery(graphql`
       query LEFT_NAV_QUERY {
         allNavYaml {
           nodes {
@@ -12,6 +12,8 @@ export function useNavItems(relativePagePath) {
             menus {
               label
               link
+              hideInMobile
+              hideInWeb
               subMenu {
                 label
                 link
