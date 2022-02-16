@@ -12,7 +12,14 @@ const isBrowser = typeof window !== 'undefined';
 
 const LeftNav = (props) => {
   const { relativePagePath, showMobile, frontmatter } = props;
-  const navItems = useNavItems(relativePagePath);
+  const navItemsList = useNavItems(relativePagePath);
+  const navItems = navItemsList.filter((item) => {
+    if(relativePagePath.includes(MOBILE)){
+      return !item.hideInMobile;
+    }
+    return !item.hideInWeb;
+  });
+
   const showMenuButtons = showMobile || frontmatter?.showMobile;
   const [active, setActive] = React.useState();
 
