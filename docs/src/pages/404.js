@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Homepage from '../components/templates/Homepage';
 import {
   Heading,
@@ -8,6 +8,13 @@ import {
 import { navigate } from 'gatsby';
 
 const PageNotFound = () => {
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.pathname.includes('/components')) {
+      navigate('/components/overview/tabs/all-components/');
+    }
+  }, []);
+
   return (
     <Homepage relativePagePath={'/404'} is404={true}>
       <div className='m-auto w-50 mt-10'>
