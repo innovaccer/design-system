@@ -95,3 +95,7 @@ table td {
 .docblock-argstable td {
   border: none;
 }
+
+.inner-left-container {
+  max-width: 888px;
+}
