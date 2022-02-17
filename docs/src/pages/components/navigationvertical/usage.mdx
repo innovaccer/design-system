@@ -1,0 +1,261 @@
+---
+title: Navigation - Vertical
+description:
+  Vertical navigation helps the users to quickly move among different pages in a module.
+component: navigationvertical
+tabs: ['Usage','Interactions', 'Code']
+showMobile: true
+---
+
+Vertical navigation helps the users to quickly move among different pages in a module just like the horizontal navigation. The key difference here is that the navigation items are laid out vertically and hence there is virtually no limit on the number of navigation items to be displayed.
+
+### Types
+
+<br/>
+
+#### Flat
+
+<Preview name='components-verticalnav-flat-edged-vertical-navigation'/>
+
+#### Rounded
+
+Rounded variant comes handy when the navigation is not at the extreme left. Hence the left part of the selected navigation item is rounded and not flat.
+
+<Preview name='components-verticalnav-round-edged-vertical-navigation'/>
+
+### Properties
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Panel width',
+        Value: '256px',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Height of a nav item',
+        Value: '36px',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Width of a nav item',
+        Value: 'auto',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Panel collapse/expand action icon',
+        Value: 'keyboard_arrow_left/keyboard_arrow_right icon',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Section',
+        Value: '<Label> + Divider',
+        Configurable: 'Optional',
+      },
+      {
+        Property: 'Icons in panel',
+        Value: '<Icons>',
+        Configurable: 'Optional',
+      },
+      {
+        Property: 'Icon size',
+        Value: '16x16px',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Count (in parent)*',
+        Value: '<Count>',
+        Configurable: 'Optional',
+      },
+      {
+        Property: 'Count (in child)',
+        Value: '<Count>',
+        Configurable: 'Optional',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Note**: Count in parent item is supported only when it does not have children.
+
+<br/>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Maximum levels
+
+To reduce the unnecessary visual clutter, a maximum of two levels are supported in the vertical navigation. If more than two levels are needed, one can use tabs, horizontal navigation, or secondary navigation inside the page.
+
+<br/>
+
+#### Collapsing a panel
+
+<br/>
+
+##### Parent Item - Without Icons
+
+The panel cannot be collapsed when the parent items do not have icons.
+
+![Parent Item - Without Icons](./images/navigationvertical-1.png)
+
+<br/>
+<br/>
+
+##### Parent Item - With Icons
+
+<br/>
+
+![Parent Item - With Icons](./images/navigationvertical-2.png)
+
+<br/>
+<br/>
+
+##### Child Item - Without Icons
+
+In this case, the panel will collapse to the icons of the parent items. In the collapsed view, the parent having the selected child will be shown as active.
+
+![Child Item - Without Icons](./images/navigationvertical-3.png)
+
+<br/>
+<br/>
+
+##### Child Item - With Icons
+
+The icons of children will be visible in the collapsed panel only if the parent was initially expanded.
+
+![Child Item - With Icons](./images/navigationvertical-4.png)
+
+<br/>
+<br/>
+
+#### Hover on collapsed panel
+
+Hovering over the collapsed panel expands it in overlay mode.
+
+<Preview name='verticalnav-hoverable-vertical-navigation'/>
+
+#### Scrolling when the nav overflows
+
+The toggle panel button is differentiated with a shadow and a divider if the content inside the nav panel becomes scrollable.
+
+![Scrolling when the nav overflows](./images/navigationvertical-6.png)
+
+<br/>
+<br/>
+
+#### Grouping
+
+It is possible to group navigation items into categories. Grouping is restricted to the parent level, to keep the navigation simple.
+
+##### Parent Item - Without Icons
+
+**Example 1:**
+
+As the parent items do not have icons, the panel will be non-collapsible.
+
+![Parent Item - Without Icons](./images/navigationvertical-7.png)
+
+<br/>
+
+**Example 2:**
+
+As the parent items do not have icons, the panel will be non-collapsible.
+
+![Parent Item - Without Icons](./images/navigationvertical-8.png)
+
+<br/>
+<br/>
+
+##### Parent Item - With Icons
+
+In this case, the section title and the subsequent divider will disappear when the panel is collapsed.
+
+![Parent Item - With Icons](./images/navigationvertical-9.png)
+
+<br/>
+<br/>
+
+#### Secondary nav panel
+
+The width of the nav items here will be decided on the basis of the grid that the particular screen size supports.
+
+Just like the primary navigation panel, the secondary navigation panel also supports up to two levels of navigation.
+
+The secondary panel will be non-collapsible for all the cases.
+
+<br/>
+
+##### Inside a Card
+
+If the secondary navigation panel is used inside a card, the nav items used will be having a flat left edge.
+<Preview name='verticalnav-secondary-vertical-navigation'/>
+
+##### Floating Panel
+
+If the secondary navigation panel is floating, the nav items used will be having rounded edges.
+<Preview name='verticalnav-round-edged-vertical-navigation'/>
+
+**Note:** The width of nav items here is derived based on the grid.
+
+<br/>
+
+####  Expand/Collapse Parent Item
+
+Clicking over the collapsed parent item for the first time will expand the particular parent item. Clicking again will collapse the parent item.
+
+![Collapsing the parent item](./images/navigationvertical-12.png)
+![Expanding the parent item](./images/navigationvertical-13.png)
+
+**Note**: If a parent item having an active child is collapsed then after collapsing, the parent will be in the active state.
+
+<br/>
+
+#### Custom Panel
+
+The navigation panel can be customized to accommodate content other than the navigation items. In case of collapsing such panel, only the collapsed navigation items will be shown.
+
+![Custom panel](./images/navigationvertical-14.png)
+
+<br/>
+<br/>
+
+#### Dynamically adding a new item
+
+Navigation items can be added dynamically to the panel on the go. Add item component always appears in the bottom.
+
+<br/>
+<br/>
