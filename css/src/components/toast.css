@@ -38,7 +38,6 @@
 }
 
 .Toast-icon {
-  display: flex;
   line-height: var(--font-height-m);
 }
 
