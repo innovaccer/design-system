@@ -1,0 +1,89 @@
+---
+title: Dividers
+description: Dividers are used to separate content into different sections.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Dividers can help separate the content into different sections within a page but if used abundantly can make the interface cluttered.
+
+### Types
+<br/>
+
+#### Horizontal
+The horizontal divider divides the content vertically. It divides the whole layout into sections & typically spans the full width of the layout. Such dividers are useful for separating different rows of a table, sections inside a card, headers and footers from body, etc.
+<Preview name="components-divider-basic-divider-in-card"/>
+
+#### Vertical
+The vertical divider divides the content horizontally.
+<Preview name="components-divider-vertical-divider"/>
+
+### Appearances
+<br/>
+
+#### Basic
+Basic appearance is the default appearance of the dividers and the most used one.
+
+![Basic appearance of horizontal dividers in a table](./images/dividers-1.png)
+<br/>
+
+![Basic appearance of a vertical divider](./images/dividers-2.png)
+<br/>
+
+#### Header
+Header appearance is typically used in headers and footers to differentiate these sections from the body. It is slightly darker from the default variant. The slightly darker color and the position of this divider help in differentiating it from the basic dividers which might be present in the body.
+
+For example, if a user is scrolling the content of the body, any basic divider present there can be distinguished from this divider because of its color and position.
+
+![Header appearance of horizontal divider in a page header](./images/dividers-3.png)
+<br/>
+
+![Header appearance of horizontal divider in a card](./images/dividers-4.png)
+<br/>
+<br/>
+
+### Usage
+<br/>
+
+#### Indentation
+Horizontal dividers with basic appearance can be slightly spaced from the left (12px or 16 px). This way they can separate related list-type content. They should be aligned with anchoring elements in the left such as icons, avatars, etc.
+<Preview name="components-divider-indented-divider"/>
+
+> Table is the only exception here where we do not use the indented divider in rows because table can have vertical dividers as well which then make it appear like the familiar Excel like structure. Having an indented divider doesn't work in that case.
+<br/>
+
+In most of the cases, the content inside cards/containers already has a padding of 16px and thus the divider(s) should start in such a way that it is aligned with the content (be it text or an anchor point like an icon, avatar, etc.).
+
+![Default list type content vs List with anchor point](./images/dividers-5.png)
+<br/>
+
+For cases where the available width is not enough to accommodate content with 16px padding, indentation of **12px** should be used.
+
+![Due to the space crunch, padding inside cards is 12px instead of the regular 16px & hence 12px indentation is being used here](./images/dividers-6.png)
+<br/>
+
+#### Being aware of default padding/margin
+A lot of the times there is a default padding/margin present in a component e.g. in the body of a sidesheet. Hence, in such cases the dividers do not span till the edge(s). Be aware of padding/margin in such cases.
+
+![Dividers here are within the confinement of body (after applied padding)](./images/dividers-7.png)
+<br/>
+
+#### Dividers with scrollable content
+In modals, sheets, and cards with scrollable content, the header appearance of divider should be used in the header and footer. The slightly darker color of this divider and its position help in differentiating it from the basic appearance that might be present in the body.
+
+![Header divider in both header & footer](./images/dividers-8.png)
+<br/>
+
+#### Nesting of Dividers
+Sometimes multiple dividers may be needed within a section. In such cases, the dividers should be used in a way so that the hierarchy of information is preserved.
+
+![Multiple dividers being used to maintain the hierarchy](./images/dividers-9.png)
+<br/>
+
+#### Dividers in Horizontal Layout
+In horizontal forms or layout, dividers can help users keep track of the row that is being viewed/edited at the moment.
+![Dividers in a horizontal layout form](./images/dividers-10.png)
+<br/>
+
+#### Overuse of Dividers
+Dividers should only be used if the elements cannot be separated enough using white space. Overuse of dividers would only result in visual clutter. 

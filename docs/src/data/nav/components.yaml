@@ -20,8 +20,24 @@ menus:
     link: /components/chips/usage/
   - label: Date picker
     link: /components/datePicker/usage/
-  - label: Message
+  - label: Dividers
+    link: /components/dividers/usage/
+  - label: Dropdowns
+    link: /components/dropdowns/usage/
+  - label: Icons
+    link: /components/icons/usage/
+  - label: Inline editable fields
+    link: /components/inlineEditableFields/usage/
+  - label: Inputs
+    link: /components/inputs/usage/
+  - label: Links
+    link: /components/links/usage/
+  - label: Messages
     link: /components/message/usage/
+  - label: Meta list
+    link: /components/metaList/usage/
+  - label: Modals
+    link: /components/modals/usage/
   - label: Radio
     link: /components/radio/usage/
   - label: Side sheet
