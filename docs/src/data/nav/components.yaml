@@ -22,6 +22,14 @@ menus:
     link: /components/datePicker/usage/
   - label: Message
     link: /components/message/usage/
+  - label: Navigation - Horizontal
+    link: /components/navigationhoriz/usage/
+  - label: Navigation - Vertical
+    link: /components/navigationvertical/usage/
+  - label: Pagination
+    link: /components/pagination/usage/
+  - label: Pills
+    link: /components/pills/usage/
   - label: Popover
     link: /components/popover/usage/
   - label: Progress indicators
@@ -44,8 +52,9 @@ menus:
     link: /components/table/usage/
   - label: Tabs
     link: /components/tabs/usage/
+  - label: Time picker
+    link: /components/timepicker/usage/
   - label: Toast
     link: /components/toast/usage/
   - label: Tooltip
     link: /components/tooltip/usage
-
