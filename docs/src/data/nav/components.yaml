@@ -80,4 +80,3 @@ menus:
   - label: DemoWeb
     link: /components/overview/tabs/all-components/
     hideInMobile: true
-    link: /components/tooltip/usage
