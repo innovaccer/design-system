@@ -2,47 +2,117 @@
 title: Slider
 description:
   A slider lets user select a value (or range) from a given range of values.
-tabs: ['Usage', 'Code']
+tabs: ['Usage','Interactions', 'Code']
 showMobile: true
 ---
 
 ### Types
-<br/>
 
-#### Based on Usage
+Based on usage, sliders are of two types -
 
-Based on the way sliders are used, they are of two types -
+#### Default slider
 
-##### Discrete slider
+The default slider can be used whenever selection of a single value is required out of a range.
+
+<Preview name='components-slider-variants-uncontrolled-slider'/>
+
+#### Range slider
+
+Range slider is used if the user wants to select a range instead of a single value.
+
+<Preview name='components-rangeslider-variants-uncontrolled-slider'/>
+
+### Variants
+
+Based on selection, sliders have two variants -
+
+#### Discrete slider
 
 In the case of discrete slier, while dragging slider knob will snap from one tick mark to the other.
 No values between two tick marks can be selected.
 
-
 <Preview name='components-slider-variants-disctere-slider'/>
 
-##### Free slider
+#### Free slider
 
 In the case of free slider, while dragging slider knob can move to each and every intermediate value possible. 
 Values between tick marks can also be selected.
 
 <Preview name='components-slider-variants-free-slider'/>
 
-#### Based on selection
-
-Based on the selection, sliders are of two types -
-
-##### Default slider
-
-The default slider can be used whenever selection of a single value is required out of a range.
-
-
-##### Range slider
-
-Range slider is used if the user wants to select a range instead of a single value.
-
 ### Properties
 
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Label',
+        Value: '<Label>',
+        Configurable: 'Optional',
+      },
+      {
+        Property: 'Number of ticks',
+        Value: '11 (Default)',
+        Configurable: '✅',
+      },
+      {
+        Property: 'Visibility of ticks',
+        Value: 'Visible',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Number of numbers',
+        Value: '11 (Default)',
+        Configurable: '✅',
+      },
+      {
+        Property: 'Visibility of numbers',
+        Value: 'Visible (Default)',
+        Configurable: '✅',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
 
 ### Usage
+
+#### Pairing with metric inputs
+
+Use slider with metric inputs for better accessibility in the case where **choosing a specific value** is important. 
+
+![Slider paired with metrix inputs](./images/slider-1.png)
+
+<br/>
+<br/>
 

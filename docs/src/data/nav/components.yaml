@@ -38,13 +38,27 @@ menus:
     link: /components/metaList/usage/
   - label: Modals
     link: /components/modals/usage/
+  - label: Navigation - Horizontal
+    link: /components/navigationhoriz/usage/
+  - label: Navigation - Vertical
+    link: /components/navigationvertical/usage/
+  - label: Pagination
+    link: /components/pagination/usage/
+  - label: Pills
+    link: /components/pills/usage/
+  - label: Popover
+    link: /components/popover/usage/
+  - label: Progress indicators
+    link: /components/progressindicators/usage/
   - label: Radio
     link: /components/radio/usage/
+  - label: Rich text editor
+    link: /components/richtext/usage/  
   - label: Side sheet
     link: /components/sidesheet/usage/
   - label: Slider
     link: /components/slider/usage/
-  - label: Status Hint
+  - label: Status hint
     link: /components/statushint/usage/
   - label: Steppers
     link: /components/steppers/usage/
@@ -54,6 +68,8 @@ menus:
     link: /components/table/usage/
   - label: Tabs
     link: /components/tabs/usage/
+  - label: Time picker
+    link: /components/timepicker/usage/
   - label: Toast
     link: /components/toast/usage/
   - label: Tooltip

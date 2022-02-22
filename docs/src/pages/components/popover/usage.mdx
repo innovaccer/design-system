@@ -1,0 +1,133 @@
+---
+title: Popover
+description:
+  Popover is used to display floating content in relation to a trigger, usually a button or link.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+### Appearance
+
+<br/>
+
+#### Light
+
+<Preview name='popover-light-popover'/> 
+
+#### Dark
+
+<Preview name='popover-dark-popover'/> 
+
+### Properties
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Background color',
+        Value: 'Namak for Light, Night for Dark',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Corner radius',
+        Value: '4px',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Shadow',
+        Value: 'Shadow 30',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+### Usage
+
+<br/>
+
+#### Positioning of Popover
+
+Popovers appear either 8px above or 8px below their trigger.
+
+The **preferred and default side is the bottom**. Popovers use smart positioning if there is not enough space in the designated direction.
+
+![Positioning of popover](./images/popover-1.png)
+
+<br/>
+
+#### Popover as tooltip
+
+<br/>
+
+![Popover as tooltip](./images/popover-2.png)
+
+<br/>
+<br/>
+
+#### Popover as a floating component
+
+<br/>
+
+![Popover as a floating component](./images/popover-3.png)
+
+<br/>
+<br/>
+
+#### Popover with actions
+
+<Preview name='popover-popover-with-action'/> 
+
+#### Popover with inputs
+
+<Preview name='popover-popover-with-input'/>  
+
+#### Popover as a dropdown
+
+<br/>
+
+![Popover as a dropdown](./images/popover-6.png)
+
+<br/>
+<br/>
+
+#### Popover as a menu
+
+<br/>
+
+![Popover as a menu](./images/popover-7.png)
+
+<br/>
+<br/>

@@ -5,11 +5,11 @@ tabs: ['Usage', 'Interactions', 'Code']
 showMobile: true
 ---
 
-#### Types
+### Types
 
 <br/>
 
-##### Resource table
+#### Resource table
 
 A table of resources where **a resource is an object in itself and has a detailed view linked to it.** 
 
@@ -18,7 +18,7 @@ Usually, there is only one resource table on a page. Think of a resource as - a 
 To reduce noise, a resource table doesn’t have column dividers.
 <Preview name='resource-table' />
 
-##### Data table
+#### Data table
 
 A data table is only meant for information consumption. It can occasionally contain minor actions such as copy, edit, remove, etc. Since the data can be dense, it can also have column dividers for subtle distinctions among columns. This way a data table also resembles spreadsheet-like tools which users are already familiar with.
 
@@ -26,17 +26,17 @@ If in some rare cases the data in a cell needs to be edited, it is recommended t
 
 <Preview name='data-table' />
 
-##### Table as a list
+#### Table as a list
 
 The table component can also be used to generate a list that has a simple structure than a table. A list is a subset of a table in a way that it does not contain the header row (and hence no columns). It comes in two options -
 
-###### Option list
+##### Option list
 
 A list of options where an option is an entity that a user can select/pick.
 
 <Preview name='table-as-option-list' />
 
-###### Description list
+##### Description list
 
 A list of items containing simple information which is meant for consumption only.
 
@@ -44,7 +44,7 @@ It can occasionally contain minor actions such as copy, edit, remove, etc.
 
 <Preview name='table-as-description-list' />
 
-#### Sizes 
+### Sizes 
 
 There are 3 types of sizes available for use which only differ in the vertical padding and header row height -
 
@@ -112,19 +112,19 @@ There are 3 types of sizes available for use which only differ in the vertical p
 <br/>
 <br/>
 
-##### Standard table
+#### Standard table
 
 <br/>
 
 <Preview name='standard-table' />
 
-##### Compressed table
+#### Compressed table
 
 <br/>
 
 <Preview name='compressed-table' />
 
-##### Tight table
+#### Tight table
 
 This size is typically suited for information-dense data tables.
 
@@ -132,52 +132,62 @@ This size is typically suited for information-dense data tables.
 
 <br/>
 
-#### Usage
+### Usage
 
 <br/>
 
-##### Table background
+#### Table background
 
-###### Default Card
+<br/>
+
+##### Default Card
 
 The table is typically laid out on the default card, which helps in differentiating it from the background gray color.
 
 ![Table on a default card](./images/table-1.png)
 
-###### Flat card
+<br/>
+
+##### Flat card
 
 There can be cases when the table has to be used on a side sheet or a full-screen modal where the background is white. In that case, flat card is used instead of the default card.
 
 ![Table on a flat card](./images/table-2.png)
 
-##### Nested table
+<br/>
 
-###### With column extension
+#### Nested table
+
+##### With column extension
 
 <Preview name='nested-rows' />
 
-###### With nested card
+##### With nested card
 
 <Preview name='nested-table-with-nested-cards' />
 
-##### Table header
+#### Table header
 
 The position of the header is fixed at the top so that the rows scroll between the header and footer.
 
-###### Resource and Data table
+##### Resource and Data table
 
 The headers for these tables have a ‘Showing x items’ label and optional ‘Search’ input, filtering options.
 
 ![Resource and data table](./images/table-3.png)
 
-###### Table as a list
+<br/>
+
+##### Table as a list
 
 Checkbox precedes the 'Showing x items' label in the header row when using the table as a list since it doesn't have the column header row.
 As there are no columns, hence there is no option to Sort. In that case, use the Search + Sort variant of the header where there is a dropdown for sorting following the search input.
 
 ![Table as a list](./images/table-4.png)
 
-##### Exception in a row
+<br/>
+
+#### Exception in a row
 
 An exception may be added to a specific row such as a failure or a warning. In that case, use the **Subtle badge component** and resize the list to have **8px** padding from the bottom. 
 
@@ -185,21 +195,27 @@ This behavior is not available out of the box and hence a custom cell should be 
 
 ![Exception in a row](./images/table-5.png)
 
-##### Custom cell
+<br/>
+
+#### Custom cell
 
 Standard table cells cover the most frequent use cases. For the other use cases, a custom cell can be created by using the **Emply Cell component**. Minimum padding of **12px** from either side of the empty cell is maintained.
 
 ![Custom cell](./images/table-6.png)
 
-##### Alignment in table cells
+<br/>
 
-###### Center aligned
+#### Alignment in table cells
+
+##### Center aligned
 
 Content in table cells should be aligned to the center of the row in cases where the **height of content is similar** in cells across the same row. 
 
 ![Center aligned](./images/table-7.png)
 
-###### Top aligned
+<br/>
+
+##### Top aligned
 
 Content in table cells should be aligned to the top of the row in cases where the **height of content is different** in cells across the same row. 
 
@@ -207,15 +223,17 @@ Content in table cells should be aligned to the top of the row in cases where th
 
 <br/>
 
-##### Column actions
+#### Column actions
 
-###### Show/Hide columns
+##### Show/Hide columns
 
 This action appears in the extreme right just above the header row.
 
 ![Show/Hide columns](./images/table-9.png)
 
-###### Sorting a column
+<br/>
+
+##### Sorting a column
 
 ![Sorting a column](./images/table-10.png)
 
@@ -265,8 +283,8 @@ Another way to offer column sorting is by clicking on the column name.
 <img src='./images/table-11.gif' width='100%' height='auto'/>
 
 <br/>
-
-###### Filtering a column
+<br/>
+##### Filtering a column
 
 Although filters in a table are applied using dropdowns, there is a provision to apply filters in a specific column.
 
@@ -274,7 +292,7 @@ Although filters in a table are applied using dropdowns, there is a provision to
 
 <br/>
 
-###### Reordering a column
+##### Reordering a column
 
 The cursor changes to Pointing Hand when hovering on a header cell indicating that the column can be picked and moved.
 
@@ -282,23 +300,24 @@ The cursor changes to Pointing Hand when hovering on a header cell indicating th
 
 <br/>
 
-##### Pinned Column(s)
+#### Pinned Column(s)
 
 **Pinned Column Divider** is used to pin columns to the left so that they get fixed and do not scroll along with the rest of the columns. It is quite handy when the no. of columns is too many and all of them are not visible without scrolling. In that case, the pinning can help freeze the crucial columns in order to maintain the context.
 
 <Preview name='pinned-columns' />
 
-##### Selection
+#### Selection
 
 On selection - Sort, Filters, and other actions disappear in lieu of Bulk Action(s). There can be different states and behaviors after selection is triggered -
 
-###### No items selected - the default state
+##### No items selected - the default state
+<br/>
 
 ![No items selected](./images/table-14.png)
 
 <br/>
 
-###### A few items selected
+##### A few items selected
 
 When a selection is triggered, there is an option to provide actions related to the selection at the top right.
 
@@ -306,7 +325,7 @@ When a selection is triggered, there is an option to provide actions related to 
 
 <br/>
 
-###### All items on the page selected
+##### All items on the page selected
 
 An option to select all the items across all pages is presented in the header.
 
@@ -314,7 +333,7 @@ An option to select all the items across all pages is presented in the header.
 
 <br/>
 
-###### All items selected
+##### All items selected
 
 An option to clear selection is presented in the header.
 
@@ -322,7 +341,7 @@ An option to clear selection is presented in the header.
 
 <br/>
 
-##### Sorting
+#### Sorting
 
 Table header remains fixed when scrolling so as to maintain the connection of the values in the cells with the column headers which helps easy understanding of data.
 
@@ -330,13 +349,15 @@ Table header remains fixed when scrolling so as to maintain the connection of th
 
 <br/>
 
-##### Pagination vs Infinite Scroll
+#### Pagination vs Infinite Scroll
 
 Use pagination over infinite scroll so that the user can navigate to an item’s detail page and return back to the same page. Retaining the scroll position in a long list of items can be resource-intensive and hence infinite scroll is avoided and Pagination is used.
 
-##### Filtering
+#### Filtering
 
-###### 1. When filters are frequently used
+<br/>
+
+##### 1. When filters are frequently used
 
 Since the filters are frequently used, there is a dedicated fixed section alongside the table to apply those filters. The applied filters are added as chips just below the search bar to quickly enable/disable an already applied filter.
 Please note that there is no filtering option in the table itself.
@@ -345,7 +366,7 @@ Please note that there is no filtering option in the table itself.
 
 <br/>
 
-###### 2. When filters are sparingly used
+##### 2. When filters are sparingly used
 
 In the case of 4 or fewer filters, all the filters are available in the table card for quick access.
 

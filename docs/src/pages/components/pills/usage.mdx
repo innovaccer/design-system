@@ -1,0 +1,97 @@
+---
+title: Pills
+description:
+  Pills are used to highlight number of items. 
+component: pills
+tabs: ['Usage', 'Code']
+showMobile: true
+---
+
+Pills are used to highlight number of items. For status and text, use a Badge. 
+
+### Types
+
+<br/>
+
+#### Solid
+
+Solid Pills are used to highlight number of items in reference to a particular component so that the component gets recognized easily. eg Pill over the notification icon.
+
+<Preview name='components-pills-alert'/>
+
+#### Subtle
+
+Subtle Pills are used when many pills are used in reference to a group of components. In that case, solid pills become a bit overwhelming. eg Pills in vertical navigation items.
+
+<Preview name='components-pills-subtle-alert'/>
+
+### Appearance
+
+A pill comes in 9 appearances.
+
+<Preview name='components-pills-variants-appearance'/>
+
+### Properties
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Max Width',
+        Value: '160px',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Corner radius',
+        Value: '10px',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Padding (Top, Right, Bottom, Left)',
+        Value: '2px, 6px, 2px, 6px',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Pills vs Badges
+
+Pills are used to display count of entities while badges are used for tagging entities.
+
+*image pending*
