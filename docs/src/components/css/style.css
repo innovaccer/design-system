@@ -103,3 +103,10 @@ table td {
 .scroll-y {
   overflow-y: scroll;
 }
+.bitmap-container {
+  text-align: center !important;
+}
+.bitmap-container img{
+  height: auto;
+  width: 50%;
+}
