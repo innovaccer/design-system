@@ -1,0 +1,154 @@
+---
+title: Forms
+description: Forms are a combination of multiple components such as inputs, radio, buttons, etc. arranged intuitively.
+tabs: ["Usage", "Code"]
+---
+
+Multiple components such as inputs, radio, buttons, etc. can be combined to create forms to intake information from the users.
+
+### Structure
+The width of each field should be determined based on the no. of columns that you would want to use in a form. The example below is showing a two-column form.
+
+If you are using a multi-column form, make sure that the fields that you place adjacent to each other are relatable enough so that the users don’t get confused as to which field should be filled first. (e.g. First Name & Last Name)
+
+#### Actions
+Number of actions should be limited i.e. 2 or 3 at max. If there is a requirement of tertiary action right where the primary and secondary actions are, consider using the transparent button.
+
+Primary actions should be disabled until all of the fields have been filled. A tooltip showing appropriate text should appear while hovering over that action.
+
+![](./images/forms-1.png)
+<br/>
+<br/>
+
+### Types
+#### Basic forms
+These are the forms that can be completed in a single step. Clicking the primary action submits the form.
+<Preview name="forms-basic-form" />
+
+#### Multi-step forms
+* Forms that can only be completed in more than one step.
+* Clicking the primary action button takes to the next step and the primary action on the final step submits the form.
+* Each step should have a primary action saying “Next”. And the last step should have a primary action to submit the form.
+* Each step should have a “Previous” action to navigate to the previous steps.
+* “Cancel” or "Discard" button discards all the changes irrespective of the current step.
+
+<Preview name="forms-stepper-form" />
+
+#### Inline Forms
+In these forms, inputs fields are horizontally stacked which can save vertical space.
+<Preview name="forms-inline-label-form" />
+
+#### Password Requirements
+<Preview name="forms-create-password" />
+
+### Usage
+#### Required vs Optional Fields
+Inputs can be marked as optional or required depending upon the context. To avoid unnecessary clutter, mark only the minority fields as optional or required.
+
+**When no. of required fields < no. of optional fields**
+
+![Number of required fields < number of optional fields](./images/forms-2.png)
+<br/>
+
+**When no. of required fields > no. of optional fields**
+
+![Number of required fields < no. of optional fields](./images/forms-3.png)
+<br/>
+
+It is recommended to keep the notations of required and optional fields consistent throughout the app as different notations can confuse users.
+ 
+#### Validation and Feedback
+Form feedback should be shown using the message component only after the users click the primary action.
+
+![Form feedback](./images/forms-4.png)
+<br/>
+<br/>
+
+#### Using Switches
+Switches provide immediate results hence they don’t need any action button to save the response. (Can be used with some auto-saving forms)
+
+![Switches in a form](./images/forms-5.png)
+<br/>
+<br/>
+
+#### Dialogs
+Actions should be displayed at the bottom right of the dialog because users scan short forms in Z-pattern. The primary action must be the rightmost action and other actions on its left (if any).
+
+![Forms in a dialog](./images/forms-6.png)
+<br/>
+<br/>
+
+#### Sidesheets
+Actions should be displayed at the left of the sidesheet because users scan long forms in F-pattern. The primary action must be the leftmost action followed by other actions(if any). 
+
+**Example 1**
+
+Content here takes space that is greater than 75% of the height. Hence, the actions should be at the bottom of the sidesheet (in footer).
+
+![Forms in a sidesheet](./images/forms-7.jpg)
+<br/>
+<br/>
+
+**Example 2**
+
+Content here takes space that is less than 75 % of the height. Hence, the actions should appear just below the last field.
+
+![Forms in a sidesheet](./images/forms-8.png)
+<br/>
+<br/>
+
+#### In-page forms
+In a page-long form, users scans through F pattern, hence the actions should be on the bottom left. Primary action would be the leftmost action followed by other actions (if any). One can use inline labels as well, because plenty of vertical space is available.
+
+**Note**: It is recommended to use large size of buttons in the case of such forms.
+
+![Full page forms](./images/forms-9.png)
+<br/>
+<br/>
+
+#### Auto-complete
+Users can accept the autocomplete suggestion by pressing the tab key or the right arrow key.
+
+![Auto completion in forms](./images/forms-10.png)
+<br/>
+<br/>
+
+#### Auto-suggestion
+Suggestions can be shown in a form just below the input field.
+
+![Auto suggestion in forms](./images/forms-11.png)
+<br/>
+<br/>
+
+#### Auto-saving
+Forms can be auto-saved. In such cases, users should also be given an option to manually save the data of the form. Doing so can be helpful in cases when autosave fails due to any reason.
+
+There can be 4 states in such forms:
+
+##### No changes made
+<br/>
+
+##### Saving
+
+![Saving state in an auto save form](./images/forms-12.png)
+<br/>
+<br/>
+
+##### Saved
+
+![Saved state in an auto save form](./images/forms-13.png)
+<br/>
+<br/>
+
+##### Unsaved changes
+
+![Unsaved changes state in an auto save form](./images/forms-14.png)
+<br/>
+
+These states will appear just under the header where the form is being used (under the header description in case there is one). For example - just below the header of a modal/sidesheet as shown above.
+
+In case the form is being used on an entire page, auto-save can be a part of page header as shown here -
+
+![Auto saving in the page header](./images/forms-15.png)
+<br/>
+<br/>
