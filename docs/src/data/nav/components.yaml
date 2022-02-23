@@ -2,16 +2,23 @@ base: components
 menus:
   - label: Overview
     link: /components/overview/tabs/all-components/
+  - label: Action sheet
+    link: /mobile/components/actionsheet/usage
+    hideInWeb: true
   - label: Avatars
     link: /components/avatar/usage/
+    hideInMobile: true
   - label: Badges
     link: /components/badges/usage/
+    hideInMobile: true
   - label: Breadcrumbs
     link: /components/breadcrumbs/usage/
+    hideInMobile: true
   - label: Buttons
     link: /components/button/usage/
   - label: Calendar
     link: /components/calendar/usage/
+    hideInMobile: true
   - label: Cards
     link: /components/card/usage/
   - label: Checkbox
@@ -20,60 +27,83 @@ menus:
     link: /components/chips/usage/
   - label: Date picker
     link: /components/datePicker/usage/
+    hideInMobile: true
   - label: Dividers
     link: /components/dividers/usage/
+    hideInMobile: true
   - label: Dropdowns
     link: /components/dropdowns/usage/
+    hideInMobile: true
   - label: Icons
     link: /components/icons/usage/
+    hideInMobile: true
   - label: Inline editable fields
     link: /components/inlineEditableFields/usage/
+    hideInMobile: true
   - label: Inputs
     link: /components/inputs/usage/
   - label: Links
     link: /components/links/usage/
+    hideInMobile: true
   - label: Messages
     link: /components/message/usage/
+    hideInMobile: true
   - label: Meta list
     link: /components/metaList/usage/
+    hideInMobile: true
   - label: Modals
     link: /components/modals/usage/
+    hideInMobile: true
   - label: Navigation - Horizontal
     link: /components/navigationhoriz/usage/
+    hideInMobile: true
   - label: Navigation - Vertical
     link: /components/navigationvertical/usage/
+    hideInMobile: true
   - label: Pagination
     link: /components/pagination/usage/
+    hideInMobile: true
   - label: Pills
     link: /components/pills/usage/
+    hideInMobile: true
   - label: Popover
     link: /components/popover/usage/
+    hideInMobile: true
   - label: Progress indicators
     link: /components/progressindicators/usage/
+    hideInMobile: true
   - label: Radio
     link: /components/radio/usage/
   - label: Rich text editor
-    link: /components/richtext/usage/  
+    link: /components/richtext/usage/
+    hideInMobile: true
   - label: Side sheet
     link: /components/sidesheet/usage/
+    hideInMobile: true
   - label: Slider
     link: /components/slider/usage/
+    hideInMobile: true
   - label: Status hint
     link: /components/statushint/usage/
+    hideInMobile: true
   - label: Steppers
     link: /components/steppers/usage/
+    hideInMobile: true
   - label: Switch
     link: /components/switch/usage/
   - label: Table
     link: /components/table/usage/
+    hideInMobile: true
   - label: Tabs
     link: /components/tabs/usage/
   - label: Time picker
     link: /components/timepicker/usage/
+    hideInMobile: true
   - label: Toast
     link: /components/toast/usage/
   - label: Tooltip
     link: /components/tooltip/usage
+    hideInMobile: true
   - label: DemoMobile
     link: /components/overview/tabs/all-components/
     hideInWeb: true
