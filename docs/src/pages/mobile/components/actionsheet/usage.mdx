@@ -1,0 +1,146 @@
+---
+title: Action sheet
+description:
+  Action sheet is used to provide quick actions related to specific content.
+tabs: ['Usage', 'Interactions']
+showMobile: true
+---
+
+Action sheet is used to provide two or more actions for a single call to action. The sheet appears above the content and remains in focus till the users interact with or dismiss the sheet. 
+
+In a way, an action sheet is a subset of a bottom sheet containing a list of actions.
+
+### Variants
+
+Actions in the action sheet can have two types -
+
+#### Title only
+
+An action here only consists of a title apart from the icon at the left.
+
+![Title only](./images/actionsheet-1.png)
+
+<br/>
+<br/>
+
+#### Title + Secondary text
+
+Action here consists of a secondary helper text alongside the title and the icon at the left. 
+
+This type should only be used in case the purpose of the action is unclear through title only or there are complex action titles that require extra information to differentiate the purpose.
+
+![Title + Secondary text](./images/actionsheet-1.png)
+
+<br/>
+<br/>
+
+### Properties
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Width',
+        Value: 'Full width',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Max height',
+        Value: 'Upto 93% of the screen',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Heading',
+        Value: '<Title>',
+        Configurable: '-',
+      },
+      {
+        Property: 'Close action',
+        Value: 'Close icon button',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Icon in an action',
+        Value: '<Icon>',
+        Configurable: '-',
+      },
+      {
+        Property: 'Label of an action',
+        Value: '<label>',
+        Configurable: '-',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+### Usage
+
+<br/>
+
+#### Height of action sheet
+
+The height of the action sheet depends on the number of actions it has. The more the actions, the higher the sheet would be. The height can go upto `93%` of the screen's height to accommodate the vast number of actions.
+
+In case the actions are not accommodated within `93%` of the screen's height, show high-priority actions first, and the rest of the actions on scrolling.
+
+![Height of actions sheet](./images/actionsheet-3.png)
+<br/>
+<br/>
+
+#### Number of actions
+
+**At least two actions** should be present when using an action sheet. For a single action item, use a button instead.
+
+It is recommended to have a **maximum of 5-7 actions** in sheet to keep all the actions within reach. In case more actions are required, filter the actions, if possible, such that they can be accommodated within `93%` of the screen's height since users would have to scroll to reveal all actions. Scrolling adds up an extra step and may not be evident to everyone.
+
+<br/>
+
+#### Dismissal of action sheet
+
+Interacting with an action item closes the sheet. The sheet can be dismissed without interacting by tapping on the close icon button or tapping outside the sheet container.
+
+<img src='./images/actionsheet-4.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+<br/>
+
+#### Title of the Action Item
+
+The title of the Action Item should be concise and limited to a word or two. Use title + secondary text variant to show additional information.
+
+<br/>
+<br/>
