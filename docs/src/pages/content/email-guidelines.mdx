@@ -3,6 +3,28 @@ title: Email guidelines
 description: Use these guiding principles to make you emails authentic, relevant and focused.
 ---
 
+#### Tone profile
+<br/>
+<br/>
+
+<Row className="justify-content-around">
+    <div class="bitmap-container">
+        <img src="/images/clear.png"/>
+        <Subheading className="mt-5" appearance="subtle">CLEAR</Subheading>
+    </div>
+    <div class="bitmap-container">
+        <img src="/images/concise.png"/>
+        <Subheading className="mt-5" appearance="subtle">CONCISE</Subheading>
+    </div>
+    <div class="bitmap-container">
+        <img src="/images/friendly.png"/>
+        <Subheading className="mt-5" appearance="subtle">FRIENDLY</Subheading>
+    </div>
+</Row>
+<br />
+<br />
+<br />
+
 #### Writing subject lines
 
 Write a direct subject line to avoid confusion.
@@ -14,7 +36,6 @@ Write a direct subject line to avoid confusion.
         Action required: Confirm your email address
       </IconWrapper>
     </InlineMessage>
-    <br />
     <InlineMessage>
       <IconWrapper>
         Welcome to Innovaccer-app: Here's how to take your
@@ -46,62 +67,337 @@ Greet your recipients appropriately. Make use of professional salutations. Use �
   <DOs>
     <InlineMessage>
       <IconWrapper>
-        Hello James, As requested, we have updated your
-        email from maryjames05@innovaccer.com to
-        james.mary@innovaccer.com. You can also go to the
-        innovaccer-app to see the changes.
+        Hello James,
       </IconWrapper>
+      <br/>
+      <div class='ml-7'>
+        As requested, we have updated your
+        email from <u>maryjames05@innovaccer.com</u> to <u>james.mary@innovaccer.com</u>. You can also go to the
+        innovaccer-app to see the changes.
+      </div>
     </InlineMessage>
     <div class='ml-7'>
       <Button>Go to app</Button>
       <br />
       If you didn't make this request, please ignore the
-      email or reach out to the support team.
+      email or reach out to the <u> support team </u> .
     </div>
     <InlineMessage>
       <IconWrapper>
-        Hi James, Sorry! We had to lock your account because
+        Hi James,
+        <br/>
+        <br/>
+        Sorry!
+        <br/>
+        We had to lock your account because
         we didn’t see you for the last 90 days. Please
         submit a request to the system administrator to get
         it unlocked.
       </IconWrapper>
     </InlineMessage>
-    <div class='ml-7'>
+    <div class='ml-7 pb-6'>
       <Button>Send request</Button>
       <br />
       If you didn't make this request, please ignore the
-      email or reach out to the support team.
+      email or reach out to  <u> support team </u>.
     </div>
   </DOs>
   <DONTs>
     <InlineMessage>
       <IconWrapper iconType='error'>
-        Hey, As requested, we have updated your email from
-        maryjames05@innovaccer.com to
-        james.mary@innovaccer.com. You can also go to the
-        innovaccer-app to see the changes.
+        Hey,
       </IconWrapper>
+      <br/>
+      <div class='ml-7'>
+        As requested, we have updated your email
+        from <u>maryjames05@innovaccer.com</u> to <u>james.mary@innovaccer.com</u>. You can also go to the
+        innovaccer-app to see the changes.
+      </div>  
     </InlineMessage>
     <div class='ml-7'>
       <Button>Send request</Button>
       <br />
       If you didn't make this request, please ignore the
-      email or reach out to the support team.
+      email or reach out to the <u> support team </u>.
     </div>
     <InlineMessage>
       <IconWrapper iconType='error'>
-        Yo, Sorry! We had to lock your account because we
+        Yo,
+        <br/>
+        <br/>
+        Sorry!
+        <br/>
+        We had to lock your account because we
         didn’t see you for the last 90 days. Please submit a
         request to the system administrator to get it
         unlocked.
       </IconWrapper>
     </InlineMessage>
-    <div class='ml-7'>
+    <div class='ml-7 pb-6'>
       <Button>Send request</Button>
       <br />
       If you didn't make this request, please ignore the
-      email or reach out to the support team.
+      email or reach out to the <u> support team </u>.
     </div>
   </DONTs>
 </Rules>
 <br />
+
+#### Email tone
+
+use a friendly tone.
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>
+        Oh no! 
+      </IconWrapper>
+      <br/>
+      <div class='ml-7'>
+        Looks like your account has been deactivated by the system administrator. Please reach out to <u> user-assist@Innovaccer.com </u> for assistance.
+      </div>
+    </InlineMessage>
+    <div class='ml-7 pb-6'>
+      <Button>Open email</Button>
+      <br />
+      If you didn't make this request, please ignore the
+      email.
+    </div>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        User account deactivated!
+        <br/>
+        <br/>
+        Hi,
+        <br/>
+        <br/>
+        Your account has been deactivated by the system administrator.
+        </IconWrapper>
+        <br/>
+        <div class='ml-7'>
+          In case of any other issue, please reach out to <u> user-assist@innovaccer.com </u>.
+        </div>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+#### Avoid Acronyms
+
+Avoid using emoticons and acronyms.
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>
+        Hello James,
+        <br/>
+        <br/>
+        Sorry!
+        <br/>
+        <br/>
+        We had to lock your account because you didn’t update your password for the last 90 days. Please reset your password to unlock it.
+      </IconWrapper>
+    </InlineMessage>
+    <div class='ml-7 pb-6'>
+      <Button> Update password </Button>
+      <br />
+       If you didn't make this request, please ignore the email or reach out to the <u> support team </u>.
+    </div>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+          Hello James,
+          <br/>
+          <br/>
+          Sorry! :(
+          <br/>
+          <br/>
+          We had to lock your account because you didn’t update your password for the last 90 days. Please reset your  P-WORD to unlock it.     
+      </IconWrapper>
+    </InlineMessage>
+    <div class='ml-7 pb-6'>
+      <Button> Update password </Button>
+      <br />
+      If you didn't make this request, please ignore the email or reach out to the <u> support team </u>.
+    </div>
+  </DONTs>
+</Rules>
+
+#### Avoid ALL CAPS
+
+Don’t use ALL CAPS.
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>
+        Welcome to the Innovaccer-app
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper>
+        Your password is expiring in 10 days
+      </IconWrapper>
+    </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        WELCOME TO THE INNOVACCER-APP
+      </IconWrapper>
+    </InlineMessage>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        YOUR PASSWORD IS EXPIRING IN 10 DAYS
+      </IconWrapper>
+    </InlineMessage>
+  </DONTs>
+</Rules>
+
+#### Be concise
+
+Keep the length of the content concise.
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>
+        Hi James,
+        <br/>
+        <br/>
+        Sorry!
+        <br/>
+        <br/>
+        We had to lock your account because we didn’t see you for the last 90 days. Please submit a request to the system administrator to get it unlocked.
+      </IconWrapper>
+    </InlineMessage>
+    <div class='ml-7 pb-6'>
+      <Button> Send Request </Button>
+      <br />
+      If you didn't make this request, please ignore the email or reach out to the <u> support team </u>.
+    </div>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error' >
+        Your account is locked!
+        <br/>
+        <br/>
+        User name: john.doe@innovaccer.com
+        <br/>
+        <br/>
+        Hi James,
+        <br/>
+        <br/>
+        Sorry for the inconvenience but we had to lock your account as you have not signed in for the last ninety days
+        <br/>
+        <br/>
+        To unlock your account, submit a request to the system administrator
+      </IconWrapper>
+    </InlineMessage>
+    <div class='ml-7 pb-6'>
+      <Button> Request to unlock </Button>
+      <br />
+      For further assistance, please get in touch with the <u> support team </u>.
+    </div>
+  </DONTs>
+</Rules>
+
+#### Using puctuations
+
+Use exclamation points sparingly.
+
+<Rules>
+  <DOs>
+    <InlineMessage>
+      <IconWrapper>
+       Hola! Welcome to the Innovaccer-app
+      </IconWrapper>
+      <br/>
+      <IconWrapper>
+        Oh no!
+      </IconWrapper>
+      <br/>
+      <div class='ml-7'>
+        Looks like your account has been deactivated by the system administrator. Please reach out to <u> user-assist@Innovaccer.com </u> for assistance.
+      </div>
+    </InlineMessage>
+    <div class='ml-7 pb-6'> 
+      <Button> Open email </Button>
+      <br/>
+      If you didn't make this request, please ignore the email.
+    </div>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Hola!!! Welcome to the Innovaccer-app
+      </IconWrapper>
+      <br/>
+      <IconWrapper iconType='error'>
+        Oh no!!!
+      </IconWrapper>
+      <br/>
+      <div class='ml-7'>
+        Looks like your account has been deactivated by the system administrator. Please reach out to <u> user-assist@Innovaccer.com </u> for assistance.
+      </div>
+    </InlineMessage>
+    <div class='ml-7 pb-6'> 
+      <Button> Open email </Button>
+      <br/>
+      If you didn't make this request, please ignore the email.
+    </div>
+  </DONTs>
+</Rules>
+
+#### Humor in writing
+
+Don’t go overboard with humor. 
+
+<Rules>
+  <DOs>
+   <InlineMessage>
+      <IconWrapper >
+        Swipe right to see what's new!
+      </IconWrapper>
+   </InlineMessage>
+   <InlineMessage>
+      <IconWrapper>
+        Rethink your marketing: Why you need to go local
+      </IconWrapper>
+   </InlineMessage>
+  </DOs>
+  <DONTs>
+    <InlineMessage>
+      <IconWrapper iconType='error'>
+        Swipe right on us!
+      </IconWrapper>
+   </InlineMessage>
+   <InlineMessage>
+      <IconWrapper iconType='error'>
+        Your marketing sucks: Why you need to think local
+      </IconWrapper>
+   </InlineMessage>
+  </DONTs>
+</Rules>
+
+#### Checklist to remember
+<br/>
+
+* Mention what’s attached.
+* Always check for spelling, punctuation, and grammar errors before sending it to anyone.
+* Write names properly with correct spellings.
+* Add hyperlinks in the footer in case your Call To Action is not clickable by the recipient.
+
+
+
+
+
+
+
+
+
