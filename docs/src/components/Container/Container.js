@@ -92,13 +92,13 @@ const Container = ({
           Download all
         </Button>
       )}
+      <Paragraph className='mb-6'>{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
       {tabsList && tabsList.length && (
         <>
-          <Paragraph>{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
           <Tabs
             activeIndex={activeIndex}
             onTabChange={onTabChangeHandler}
-            className='mb-6 mt-4'
+            className='mb-6 '
           >
             {tabsList.map((tab) => (
               <Tab label={tab}></Tab>
