@@ -3,7 +3,7 @@ menus:
   - label: Overview
     link: /components/overview/tabs/all-components/
   - label: Action sheet
-    link: /mobile/components/actionsheet/usage
+    link: /components/actionsheet/usage
     hideInWeb: true
   - label: Avatars
     link: /components/avatar/usage/
