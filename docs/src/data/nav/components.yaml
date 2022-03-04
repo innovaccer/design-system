@@ -11,6 +11,8 @@ menus:
   - label: Badges
     link: /components/badges/usage/
     hideInMobile: true
+  - label: Bottom navigation
+    link: /components/bottomnav/usage
   - label: Breadcrumbs
     link: /components/breadcrumbs/usage/
     hideInMobile: true
