@@ -2,3 +2,6 @@ base: patterns
 menus:
   - label: File uploader
     link: /patterns/fileUploader/usage/
+  - label: UI states
+    link: /patterns/uiStates/usage/
+  
