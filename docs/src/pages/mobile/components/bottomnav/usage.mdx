@@ -1,0 +1,190 @@
+---
+title: Bottom navigation
+description:
+  Bottom navigation is used to switch between top-level navigations quickly. 
+tabs: ['Usage',]
+showMobile: true
+---
+
+Bottom navigation allows the user to switch between top-level navigations of an app quickly. It is anchored to the bottom of the screen. 
+
+### Structure
+
+Bottom navigation consists of at least 2 tabs with one of the tabs in the active state. Each tab consists of an icon and a label. The background color is **Namak** in correspondence to the Header.
+
+![Bottom navigation](./images/bottomnav-1.png)
+
+<br/>
+<br/>
+
+### Sizes
+
+<br/>
+
+#### Regular height
+
+It is used for **Mobile- Portrait orientation.**
+
+![Regular height](./images/bottomnav-1.png)
+
+<br/>
+
+#### Compact height
+
+To maximize screen utilization, Bottom Navigation with compact height is used for -
+
+-   Mobile - Landscape orientation
+-   Tablets - Portrait & Landscape orientations.
+
+![Regular height](./images/bottomnav-8.png)
+
+<br/>
+<br/>
+
+### Properties
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Width',
+        Value: 'Full width',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Height',
+        Value: 'One of the two fixed heights - Regular and Compact',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Background color',
+        Value: 'Namak',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Notification',
+        Value: 'Without count and With count',
+        Configurable: '-',
+      },
+      {
+        Property: 'Number of tabs',
+        Value: '2-5',
+        Configurable: '✅',
+      },
+      {
+        Property: 'Divider',
+        Value: 'Header divider',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+### Usage
+
+<br/>
+
+#### Tab label
+
+Keep the label of the tab concise, typically limiting it to a single word. It should convey the purpose along with the icon. 
+Refrain from truncating, shrinking, or wrapping text. 
+
+*Do and don't*
+<br/>
+
+#### Number of tabs
+
+Bottom Navigation consists of at least 2 tabs with one in the active state at any point in time. Too many tabs reduce the tappable area. For more than 5 tabs, add a 'More' tab.
+
+![Left - 2 tabs, Right - 5 tabs](./images/bottomnav-3.png)
+
+<br/>
+
+For more than 5 tabs, encapsulate the less prominant tabs in a 'More' tab
+
+
+![More tab](./images/bottomnav-4.png)
+
+<br/>
+<br/>
+
+#### Showing notifications
+
+Tabs can show notifications to indicate the availability of new information. There are two options available -
+
+• Without count - It consists of a red dot.
+
+• With count - It consists of a Pill to display a number.
+
+![Left - without count, Right - with count](./images/bottomnav-5.png)
+
+<br/>
+<br/>
+
+#### Scrolling behavior
+
+Bottom navigation consists of the same tabs throughout the app to reduce cognitive load. It stays visible by default while scrolling but can be configured to hide in order to offer maximum viewable content while scrolling.
+
+<br/>
+
+#### Mobile & Tablet Orientation
+
+<br/>
+
+-   Portrait orientation in Mobile uses regular height
+
+![Portrait orientation in Mobile uses regular height](./images/bottomnav-6.png)
+
+<br/>
+
+-   Landscape orientation in Mobile uses compact height
+
+![Landscape orientation in Mobile uses compact height](./images/bottomnav-7.png)
+
+<br/>
+
+-   Portrait orientation in Tablet uses compact height
+
+![Portrait orientation in Tablet uses compact height](./images/bottomnav-8.png)
+
+<br/>
+
+-   Landscape orientation in Tablet uses compact height
+
+![Landscape orientation in Tablet uses compact height](./images/bottomnav-9.png)
+
+<br/>
+<br/>
