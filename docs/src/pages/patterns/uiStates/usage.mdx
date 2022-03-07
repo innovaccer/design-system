@@ -1,0 +1,175 @@
+---
+title: UI states
+description: UI states are used to inform users about the various states a page or container can be.
+tabs: ["Usage", "Code"]
+---
+
+UI states are used to inform users about the various states a page or container can be. There can be 4 possible states for a typical workflow:
+1. Loading states
+2. Content placeholders
+3. Error states
+4. Empty states
+
+
+### Principles
+* Load progressively.
+* Skeleton over spinner.
+* Show a progress bar if loading takes more than 1s.
+* If the content or data may be empty after loading, use a spinner.
+* Avoid flicker (showing an element and then removing it).
+<br/>
+
+### Loading state
+A typical process starts with loading the app first. If we go step by step -
+
+<table style="width: 100%">
+    <thead>
+        <tr>
+            <th align="left">State</th>
+            <th align="left">Content type</th>
+            <th align="left">Loader type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Loading the app</td>
+            <td>Unpredictable</td>
+            <td>Spinner</td>
+        </tr>
+        <tr>
+            <td>Loading page template</td>
+            <td>Predictable</td>
+            <td>Skeleton</td>
+        </tr>
+        <tr>
+            <td>Making API calls</td>
+            <td>Data can be empty</td>
+            <td>Spinner</td>
+        </tr>
+        <tr>
+            <td>Making API calls</td>
+            <td>Data will always be present</td>
+            <td>Skeleton</td>
+        </tr>
+        <tr>
+            <td>Searching</td>
+            <td>Data can be empty</td>
+            <td>Spinner</td>
+        </tr>
+        <tr>
+            <td>Changing page</td>
+            <td>Data will always be present</td>
+            <td>Skeleton</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+
+### Examples
+#### Loading the app
+
+![Loading the app](./images/uiStates-1.jpg)
+<br/>
+<br/>
+
+#### Loading the page template
+
+![Loading the page template](./images/uiStates-2.jpg)
+<br/>
+<br/>
+
+#### Making API calls - Data can be empty
+
+![Making API calls where data can be empty](./images/uiStates-3.jpg)
+<br/>
+<br/>
+
+#### Making API calls - Data cannot be empty
+
+![Making API calls where data cannot be empty](./images/uiStates-4.jpg)
+<br/>
+<br/>
+
+#### Searching - Data can be empty
+
+![Searching where data can be empty](./images/uiStates-5.jpg)
+<br/>
+<br/>
+
+#### Pagination - Data cannot be empty
+
+![Pagination where data cannot be empty](./images/uiStates-6.jpg)
+<br/>
+<br/>
+
+
+### Empty and Error States
+<br/>
+
+<table style="width: 100%">
+    <thead>
+        <tr>
+            <th align="left">State</th>
+            <th align="left">Content</th>
+            <th align="left">Card</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>No content available</td>
+            <td>
+                Blank screen with illustration
+                <br/>
+                Educate the content about this module
+                <br/>
+                Call to action (Create, search, etc)
+            </td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>No search results</td>
+            <td>No results illustration</td>
+            <td>Yes, if previously present</td>
+        </tr>
+        <tr>
+            <td>Error (page not loaded)</td>
+            <td>
+                Blank screen with error illustration
+                <br/>
+                Retry button
+            </td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Error (search/filter/pagination)</td>
+            <td>Toast with the error message and 'Try again' action</td>
+            <td>Yes, if previously present</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<br/>
+
+#### Examples
+##### No content available
+<Preview name="emptystate-no-content-available" />
+
+##### No search results
+<Preview name="emptystate-no-search-results" />
+
+##### Error (page not loaded)
+<Preview name="emptystate-page-not-loaded-with-svg" />
+
+##### Error (search/filter/pagination)
+<br/>
+
+![Error for search/filter/pagination](./images/uiStates-7.jpg)
+<br/>
+<br/>
+<br/>
+
+### Flowchart
+
+![Flowchart for a typical UI state](./images/uiStates-8.png)
+<br/>
+<br/>
