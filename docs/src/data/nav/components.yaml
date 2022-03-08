@@ -63,6 +63,9 @@ menus:
   - label: Pagination
     link: /components/pagination/usage/
     hideInMobile: true
+  - label: Page headers
+    link: /components/pageHeaders/usage/
+    hideInMobile: true
   - label: Pills
     link: /components/pills/usage/
     hideInMobile: true
