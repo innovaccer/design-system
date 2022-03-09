@@ -3,7 +3,7 @@ menus:
   - label: Overview
     link: /components/overview/tabs/all-components/
   - label: Action sheet
-    link: /components/actionsheet/usage
+    link: /components/actionSheet/usage
     hideInWeb: true
   - label: Avatars
     link: /components/avatar/usage/
@@ -16,6 +16,9 @@ menus:
   - label: Breadcrumbs
     link: /components/breadcrumbs/usage/
     hideInMobile: true
+  - label: Bottom sheet
+    link: /components/bottomSheet/usage/
+    hideInWeb: true
   - label: Buttons
     link: /components/button/usage/
   - label: Calendar
@@ -108,10 +111,4 @@ menus:
     link: /components/toast/usage/
   - label: Tooltip
     link: /components/tooltip/usage
-    hideInMobile: true
-  - label: DemoMobile
-    link: /components/overview/tabs/all-components/
-    hideInWeb: true
-  - label: DemoWeb
-    link: /components/overview/tabs/all-components/
     hideInMobile: true
