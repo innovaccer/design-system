@@ -12,7 +12,7 @@ menus:
     link: /components/badges/usage/
     hideInMobile: true
   - label: Bottom navigation
-    link: /components/bottomnavigation/usage
+    link: /components/bottomNavigation/usage
   - label: Breadcrumbs
     link: /components/breadcrumbs/usage/
     hideInMobile: true
