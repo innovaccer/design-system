@@ -20,6 +20,9 @@ menus:
     link: /components/chips/usage/
   - label: Date picker
     link: /components/datePicker/usage/
+  - label: Dialogs
+    link: /components/dialogs/usage/
+    hideInWeb: true
   - label: Dividers
     link: /components/dividers/usage/
   - label: Dropdowns
