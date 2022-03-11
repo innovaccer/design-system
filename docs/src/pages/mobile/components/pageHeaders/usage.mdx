@@ -1,0 +1,159 @@
+---
+title: Page headers
+description: Page headers are used to convey what a page collectively contains.
+tabs: ["Usage"]
+showMobile: true
+---
+
+Page headers are used to convey what a page collectively contains e.g. Messages, Profile information, etc. They appear at the top of the page, below the status bar, and enable navigation. 
+
+### Types
+Page headers come in **2 types** basis on where the users currently are in the app hierarchy - level 0 and level 1.
+
+#### Level 0
+Level 0 header is used at the topmost level of navigation.
+
+![A level 0 header](./images/pageHeaders-1.png)
+<br/>
+
+#### Level 1
+Level 1 header is used for the second and subsequent level(s). It should replace the level 0 header when used. Users can navigate to the previous page using the back button present in the top left side of the header.
+
+![A level 1 header](./images/pageHeaders-2.png)
+<br/>
+
+### Variants
+Both the level 0 and level 1 page headers come in **5 variants** - default, with subheading, with icon buttons, with label button and with tabs.
+
+All of these variants can be combined to get the desired results with the limitation of having just 1 type of actions i.e. either the icon buttons or a label button can be there at a time.
+
+#### Default
+Default variant consists of just the heading. In level 1, it also comes with a back button.
+
+**Level 0**
+
+![Default level 0 header](./images/pageHeaders-3.png)
+<br/>
+
+**Level 1**
+
+![Default level 1 header](./images/pageHeaders-4.png)
+<br/>
+
+#### With subheading
+This variant comes with a subheading just below the heading.
+
+**Level 0**
+
+![Level 0 header with subheading](./images/pageHeaders-5.png)
+<br/>
+
+**Level 1**
+
+![Level 1 header with subheading](./images/pageHeaders-6.png)
+<br/>
+
+#### With icon buttons
+This variant comes with an option to have up to **2 icon buttons** in the top right of the header.
+
+**Level 0**
+
+![Level 0 header with 2 icon buttons](./images/pageHeaders-1.png)
+<br/>
+
+**Level 1**
+
+![Level 1 header with 1 icon button](./images/pageHeaders-2.png)
+<br/>
+
+#### With label button
+This variant comes with an option to have a label button in the top right of the header.
+
+**Level 0**
+
+![Level 0 header with a label button](./images/pageHeaders-7.png)
+<br/>
+
+**Level 1**
+
+![Level 1 header with a label button](./images/pageHeaders-8.png)
+<br/>
+
+#### With tabs
+This variant comes with an option to have tabs just below the heading.
+
+**Level 0**
+
+![Level 0 header with tabs](./images/pageHeaders-9.png)
+<br/>
+
+**Level 1**
+
+![Level 1 header with tabs](./images/pageHeaders-10.png)
+<br/>
+
+### Sizes
+Page headers come in **2 sizes** - prominent and compact.
+
+#### Prominent
+
+**Level 0**
+
+![Level 0 prominent header](./images/pageHeaders-7.png)
+<br/>
+
+**Level 1**
+
+![Level 1 prominent header](./images/pageHeaders-8.png)
+<br/>
+<br/>
+
+#### Compact
+
+**Level 0**
+
+![Level 0 compact header](./images/pageHeaders-11.png)
+<br/>
+
+**Level 1**
+
+![Level 1 compact header](./images/pageHeaders-12.png)
+<br/>
+
+### Usage
+#### Scrolling behavior
+As user scrolls the page content, the prominent header transitions to the compact header to maximize the space available for content consumption.
+
+On scroll, the background of the header becomes white with a divider appearing in the bottom, to create a sense of visual separation.
+
+![Before Scrolling (Left) vs After Scrolling (Right)](./images/pageHeaders-13.png)
+<br/>
+
+#### Actions combination
+The actions on the extreme left and the extreme right of the header are purely optional. However, the number of actions should not exceed 2 for any side. 
+
+**Actions on Left**
+
+On left, it is suggested to use a single icon button which can take up the following forms: 
+* **A back button (←)**, which returns to the previous page.
+* **A close button (X)**, which closes the modal type pages.
+
+![With back button (Left) vs with close button (Right)](./images/pageHeaders-14.png)
+<br/>
+
+**Actions on Right**
+
+On the right side, either a label button or a maximum of two icon buttons can be used but the **combination of both is not allowed.**
+* **Icon buttons**, which are contextual to the page content. A maximum of 2 actions are allowed, **if there are more actions, hide them under a Menu (•••) button.**
+* **Label button**, which is to be used when the icon buttons are not intuitive enough. Try to use a compact copy for the link button in order to accommodate other content effectively.
+
+![Either a label button or a maximum of two icon buttons can be used on the right side.](./images/pageHeaders-15.png)
+<br/>
+
+#### Modal vs non-modal page header
+Non-modal pages are pages that can stack on top of one another. Users can navigate back through the previous levels using the back arrow (**←**) placed at the top left of the header.
+
+While modal pages are those which the users can dismiss or cancel using the close button (**X**) placed at the top left of the header. 
+
+![Non-Modal Page Header (Left) vs Modal Page Header (Right)](./images/pageHeaders-16.png)
+<br/>
