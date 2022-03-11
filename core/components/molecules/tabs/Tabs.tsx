@@ -9,6 +9,7 @@ export interface TabConfig {
   count?: number;
   icon?: string;
   disabled?: boolean;
+  className?: string;
 }
 
 export interface TabsProps extends BaseProps {
@@ -28,6 +29,7 @@ export interface TabsProps extends BaseProps {
    *    count?: number;
    *    icon?: string;
    *    disabled?: boolean;
+   *    className?: string;
    *  }
    *
    * | Name | Description | Default |
@@ -36,6 +38,7 @@ export interface TabsProps extends BaseProps {
    * | count | Count of Tab | |
    * | icon | Icon to be rendered inside Tab | |
    * | disabled | Determines if tab is disabled | |
+   * | className | Class on tab content | |
    * </pre>
    */
   tabs: TabConfig[];
@@ -114,6 +117,19 @@ export const Tabs = (props: TabsProps) => {
       ['Tab-pills--disabled']: disabled,
     });
 
+  let activeTab;
+  let activeTabClass;
+  if ('props' in tabs[activeIndex]) {
+    activeTab = tabs[activeIndex] as React.ReactElement;
+    activeTabClass = activeTab.props?.className;
+  } else {
+    activeTab = tabs[activeIndex] as TabConfig;
+    activeTabClass = activeTab.className;
+  }
+  const tabContentClass = classNames({
+    ['TabsWrapper-content']: true,
+    [`${activeTabClass}`]: activeTabClass,
+  });
   const tabClickHandler = (tabIndex: number, isKeyboard?: boolean) => {
     if (props.activeIndex === undefined) {
       setActiveTab(tabIndex);
@@ -212,7 +228,7 @@ export const Tabs = (props: TabsProps) => {
         {inlineComponent}
       </div>
       {children && (
-        <div className="TabsWrapper-content" data-test="DesignSystem-Tabs--Content">
+        <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
           {tabs[activeIndex]}
         </div>
       )}
