@@ -1,23 +1,119 @@
 ---
 title: Card
-description: Cards act as containers to group related information and actions together.
+description: Cards act as containers to group related information and actions together. 
 date: 15 June 2021
-tabs: ['Usage', 'Code']
+tabs: ['Usage',]
 showMobile: true
 ---
 
-#### Types
+Cards act as containers to group related information and actions together. Elements like text and images should be placed inside cards in a way that clearly indicates hierarchy.
 
-<br />
+### Structure
 
-##### Default
+<br/>
 
-<Preview name='default-card' />
+![Default card](./images/mcard-1.png)
 
-##### Subdued
+<br/>
+<br/>
 
-<Preview name='card-subdued' />
+### Properties
 
-##### Flat
+<br/>
 
-<Preview name='card-flat' />
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Width',
+        Value: '<Width>',
+        Configurable: '-',
+      },
+      {
+        Property: 'Height',
+        Value: '<Height>',
+        Configurable: '-',
+      },
+      {
+        Property: 'Shadow',
+        Value: 'A card is restricted to one of the following shadows, basis on its type: "Shadow 0 (Flat Card)" or "Shadow 10"',
+        Configurable: '-',
+      },
+      {
+        Property: 'Background color',
+        Value: 'Namak',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Corner Radius',
+        Value: '4px',
+        Configurable: '❌',
+      },
+      {
+        Property: 'Border',
+        Value: '0px for Default Card, 1px for Flat Card',
+        Configurable: '❌',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Value',
+        displayName: 'Value',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Configurable',
+        displayName: 'Configurable?',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+### Usage
+
+<br/>
+
+#### Card Structure
+
+The umbrella view of the card consists of a **header** at the top, the **body**, and the **footer** at the bottom. 
+These elements are not always mandatory and can be customized according to the requirements.
+
+![Card structure](./images/mcard-2.png)
+
+<br/>
+
+##### Templates
+
+We recommend some templates to fasten up the whole design process. 
+All the elements(except the card header) are optional and can be omitted according to the requirements. 
+
+<br/>
+
+#### Card with Sections
+
+A card can have multiple sections to show related but distinct information. 
+A divider can be used to separate different sections in a card.
+
+![Card with sections](./images/mcard-3.png)
+
+<br/>
+<br/>
