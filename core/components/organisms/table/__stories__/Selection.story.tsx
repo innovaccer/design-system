@@ -1,6 +1,5 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { TableProps } from '@/index.type';
 import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { action } from '@/utils/action';
@@ -102,7 +101,7 @@ const data = [
 ];
 
 export const selection = () => {
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'name',
       displayName: 'Name',

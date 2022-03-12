@@ -4,11 +4,10 @@ import schema from '@/components/organisms/grid/__stories__/_common_/simpleSchem
 import { Card, Heading, Table } from '@/index';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 import { action } from '@/utils/action';
-import { GridType } from '@/components/organisms/grid';
 
 // CSF format story
 export const type = () => {
-  const values: GridType[] = ['resource', 'data'];
+  const values = ['resource', 'data'];
 
   const style = {
     display: 'flex',

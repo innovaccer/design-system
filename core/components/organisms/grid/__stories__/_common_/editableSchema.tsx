@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { Schema } from '../../Grid';
-import { GridCellProps } from '../../GridCell';
 import { PlaceholderParagraph, EditableInput } from '@/index';
 
-const schema: Schema = [
+const schema = [
   {
     name: 'name',
     displayName: 'Name',
@@ -100,7 +98,7 @@ const schema: Schema = [
     resizable: true,
     // pinned: 'right',
     // separator: true,
-    cellRenderer: (props: GridCellProps) => {
+    cellRenderer: (props) => {
       const { loading } = props;
 
       if (loading) return <PlaceholderParagraph length="medium" />;

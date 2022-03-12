@@ -1,6 +1,5 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { TableProps } from '@/index.type';
 import { Card, Table, Dropdown, Avatar, Button } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { action } from '@/utils/action';
@@ -80,7 +79,7 @@ export const resourceTable = () => {
     Failed: 'alert',
   };
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'name',
       displayName: 'Name',

@@ -2,10 +2,9 @@ import * as React from 'react';
 import PageHeader from '../..//PageHeader';
 import { Navigation, Button, Text } from '@/index';
 import { action } from '@/utils/action';
-import { text, boolean } from '@storybook/addon-knobs';
 
 export const withNavigation = () => {
-  const title = text('title', 'Page title');
+  const title = 'Page title';
 
   const navigationData = [
     {
@@ -23,7 +22,7 @@ export const withNavigation = () => {
       disabled: true,
     },
   ];
-  const separator = boolean('separator', true);
+  const separator = true;
 
   const options = {
     title,

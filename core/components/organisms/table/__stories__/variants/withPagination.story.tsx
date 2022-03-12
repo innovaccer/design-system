@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Card, Heading, Table } from '@/index';
-import { TableProps } from '@/index.type';
 import { action } from '@/utils/action';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
@@ -8,7 +7,7 @@ import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/
 
 // CSF format story
 export const withPagination = () => {
-  const values: TableProps['paginationType'][] = ['basic', 'jump'];
+  const values = ['basic', 'jump'];
 
   const style = {
     display: 'flex',

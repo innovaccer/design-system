@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Card, List, Text, Button } from '@/index';
-import { TableProps } from '@/index.type';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { action } from '@/utils/action';
-import { GridCellProps } from '@/components/organisms/grid/GridCell';
 
 export const tableAsDescriptionList = () => {
   const data = [
@@ -27,7 +25,7 @@ export const tableAsDescriptionList = () => {
     },
   ];
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'info',
       displayName: 'Info',
@@ -44,7 +42,7 @@ export const tableAsDescriptionList = () => {
       name: 'rights',
       displayName: 'Rights',
       width: '20%',
-      cellRenderer: (props: GridCellProps) => {
+      cellRenderer: (props) => {
         const renderRights = () => {
           if (props.data.owner) {
             return (

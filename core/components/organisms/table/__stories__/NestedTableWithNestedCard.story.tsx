@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Card, Table, CardSubdued, Text } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { TableProps } from '@/index.type';
 
 export const nestedTableWithNestedCards = () => {
   const data = [
@@ -39,7 +38,7 @@ export const nestedTableWithNestedCards = () => {
     },
   ];
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'lastRun',
       displayName: 'Last Run',

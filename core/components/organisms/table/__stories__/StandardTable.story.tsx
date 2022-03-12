@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Card, Table } from '@/index';
-import { TableProps } from '@/index.type';
 import { AsyncTable, SyncTable } from './_common_/types';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 
@@ -43,7 +42,7 @@ export const standardTable = () => {
     },
   ];
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'name',
       displayName: 'Name',

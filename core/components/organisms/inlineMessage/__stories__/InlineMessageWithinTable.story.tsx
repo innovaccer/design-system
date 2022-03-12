@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { TableProps } from '@/index.type';
 import { Card, Table, InlineMessage } from '@/index';
 
 const data = [
@@ -27,7 +26,7 @@ const data = [
 ];
 
 export const InlineMessageWithinTable = () => {
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'name',
       displayName: 'Name',

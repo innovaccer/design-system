@@ -1,7 +1,6 @@
 import * as React from 'react';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
-import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
 import { action } from '@/utils/action';
@@ -11,53 +10,53 @@ import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRend
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 
 export const all = () => {
-  const async = boolean('async', false);
+  const async = false;
 
   let loading;
   let error;
   let applyData;
   let applySchema;
-  const applyLoaderSchema = boolean('applyLoaderSchema', true);
+  const applyLoaderSchema = true;
 
   if (!async) {
-    loading = boolean('loading', false);
+    loading = false;
 
-    error = boolean('error', false);
+    error = false;
 
-    applySchema = boolean('applySchema', true);
+    applySchema = true;
 
-    applyData = boolean('applyData', true);
+    applyData = true;
   }
 
-  const type = select('type', ['resource', 'data'], 'resource');
+  const type = 'resource';
 
-  const size = select('size', ['comfortable', 'standard', 'compressed', 'tight'], 'comfortable');
+  const size = 'comfortable';
 
-  const draggable = boolean('draggable', true);
+  const draggable = true;
 
-  const nestedRows = boolean('nestedRows', false);
+  const nestedRows = false;
 
-  const withHeader = boolean('withHeader', true);
+  const withHeader = true;
 
-  const withCheckbox = boolean('withCheckbox', false);
+  const withCheckbox = false;
 
-  const showMenu = boolean('showMenu', true);
+  const showMenu = true;
 
-  const withPagination = boolean('withPagination', false);
+  const withPagination = false;
 
-  const page = number('page', 1);
+  const page = 1;
 
-  const paginationType = select('paginationType', ['basic', 'jump'], 'jump');
+  const paginationType = 'jump';
 
-  const pageSize = number('pageSize', 12);
+  const pageSize = 12;
 
-  const multipleSorting = boolean('multipleSorting', false);
+  const multipleSorting = false;
 
-  const headCellTooltip = boolean('headCellTooltip', false);
+  const headCellTooltip = false;
 
-  const separator = boolean('separator', false);
+  const separator = false;
 
-  const filterPosition = select('filterPosition', ['GRID', 'HEADER'], undefined);
+  const filterPosition = 'HEADER';
 
   let dataAttr = {};
   if (async) {

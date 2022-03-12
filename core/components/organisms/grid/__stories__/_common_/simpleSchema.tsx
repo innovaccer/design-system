@@ -1,6 +1,4 @@
-import { Schema } from '../../Grid';
-
-const simpleSchema: Schema = [
+const simpleSchema = [
   {
     name: 'name',
     displayName: 'Name',

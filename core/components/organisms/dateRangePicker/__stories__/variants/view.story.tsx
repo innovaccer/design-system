@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { View } from '@/components/organisms/calendar/types';
 import { DateRangePicker, Card } from '@/index';
 
 // CSF format story
 export const view = () => {
-  const values: View[] = ['year', 'month', 'date'];
+  const values = ['year', 'month', 'date'];
 
   return (
     <div className="d-flex">

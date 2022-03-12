@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Navigation, Button, PageHeader } from '@/index';
-import { Menu } from '../../navigation';
 export const level0WithNavigation = () => {
   const navigationData = [
     {
@@ -17,7 +16,7 @@ export const level0WithNavigation = () => {
     name: 'menu_1',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     setActive(menu);
   };
 

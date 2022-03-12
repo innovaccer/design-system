@@ -3,12 +3,11 @@ import PageHeader from '../../PageHeader';
 import { Button, Text, Tab, TabsWrapper, Pills } from '@/index';
 import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { number, text, boolean } from '@storybook/addon-knobs';
 
 export const withTabs = () => {
-  const active = number('active', 1);
-  const separator = boolean('separator', true);
-  const title = text('title', 'Page title');
+  const active = 2;
+  const separator = true;
+  const title = 'Page title';
 
   const onTabChangeHandler = (tabIndex) => {
     updateKnob('active', tabIndex);

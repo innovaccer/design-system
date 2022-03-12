@@ -1,12 +1,11 @@
-import { fetchDataFunction, RowData } from '../../Grid';
 import data from './data';
 import schema from './schema';
 import { filterData, sortData } from '../../utility';
 
-export const fetchData: fetchDataFunction = (options) => {
+export const fetchData = (options) => {
   const { page, pageSize, sortingList, filterList, searchTerm } = options;
 
-  const onSearch = (d: RowData, searchTerm = '') => {
+  const onSearch = (d, searchTerm = '') => {
     return (
       d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||
       d.lastName.toLowerCase().match(searchTerm.toLowerCase())
