@@ -134,7 +134,7 @@ const remarkSlug = require(`remark-slug`);
       {
         resolve: `gatsby-source-filesystem`,
         options: {
-          name: `images`,
+          name: `StaticImages`,
           path: `./static/images`,
         },
       },
