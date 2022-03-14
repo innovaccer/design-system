@@ -32,12 +32,16 @@ menus:
     link: /components/chips/usage/
   - label: Date picker
     link: /components/datePicker/usage/
+<<<<<<< HEAD
     hideInMobile: true
+=======
+>>>>>>> fd2f1c54882bd9cc7df2d71e1528ca5087c70ab1
   - label: Dialogs
     link: /components/dialogs/usage/
     hideInWeb: true
   - label: Dividers
     link: /components/dividers/usage/
+<<<<<<< HEAD
     hideInMobile: true
   - label: Dropdowns
     link: /components/dropdowns/usage/
@@ -48,10 +52,19 @@ menus:
   - label: Inline editable fields
     link: /components/inlineEditableFields/usage/
     hideInMobile: true
+=======
+  - label: Dropdowns
+    link: /components/dropdowns/usage/
+  - label: Icons
+    link: /components/icons/usage/
+  - label: Inline editable fields
+    link: /components/inlineEditableFields/usage/
+>>>>>>> fd2f1c54882bd9cc7df2d71e1528ca5087c70ab1
   - label: Inputs
     link: /components/inputs/usage/
   - label: Links
     link: /components/links/usage/
+<<<<<<< HEAD
     hideInMobile: true
   - label: Messages
     link: /components/message/usage/
@@ -82,6 +95,14 @@ menus:
   - label: Progress indicators
     link: /components/progressindicators/usage/
     hideInMobile: true
+=======
+  - label: Messages
+    link: /components/message/usage/
+  - label: Meta list
+    link: /components/metaList/usage/
+  - label: Modals
+    link: /components/modals/usage/
+>>>>>>> fd2f1c54882bd9cc7df2d71e1528ca5087c70ab1
   - label: Radio
     link: /components/radio/usage/
   - label: Rich text editor
