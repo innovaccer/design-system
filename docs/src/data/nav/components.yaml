@@ -33,6 +33,9 @@ menus:
   - label: Date picker
     link: /components/datePicker/usage/
     hideInMobile: true
+  - label: Dialogs
+    link: /components/dialogs/usage/
+    hideInWeb: true
   - label: Dividers
     link: /components/dividers/usage/
     hideInMobile: true
