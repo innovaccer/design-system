@@ -60,10 +60,10 @@ menus:
     link: /components/modals/usage/
     hideInMobile: true
   - label: Navigation - Horizontal
-    link: /components/navigationhoriz/usage/
+    link: /components/navigationHorizontal/usage/
     hideInMobile: true
   - label: Navigation - Vertical
-    link: /components/navigationvertical/usage/
+    link: /components/navigationVertical/usage/
     hideInMobile: true
   - label: Pagination
     link: /components/pagination/usage/
@@ -77,12 +77,12 @@ menus:
     link: /components/popover/usage/
     hideInMobile: true
   - label: Progress indicators
-    link: /components/progressindicators/usage/
+    link: /components/progressIndicators/usage/
     hideInMobile: true
   - label: Radio
     link: /components/radio/usage/
   - label: Rich text editor
-    link: /components/richtext/usage/
+    link: /components/richTextEditor/usage/
     hideInMobile: true
   - label: Side sheet
     link: /components/sidesheet/usage/
@@ -91,7 +91,7 @@ menus:
     link: /components/slider/usage/
     hideInMobile: true
   - label: Status hint
-    link: /components/statushint/usage/
+    link: /components/statusHint/usage/
     hideInMobile: true
   - label: Steppers
     link: /components/steppers/usage/
@@ -104,7 +104,7 @@ menus:
   - label: Tabs
     link: /components/tabs/usage/
   - label: Time picker
-    link: /components/timepicker/usage/
+    link: /components/timePicker/usage/
     hideInMobile: true
   - label: Toast
     link: /components/toast/usage/
