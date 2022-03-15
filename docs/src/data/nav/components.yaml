@@ -53,6 +53,9 @@ menus:
   - label: Links
     link: /components/links/usage/
     hideInMobile: true
+  - label: List
+    link: /components/list/usage/
+    hideInWeb: true
   - label: Messages
     link: /components/message/usage/
     hideInMobile: true
