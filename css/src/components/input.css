@@ -113,17 +113,17 @@
 
 .Input-icon--left .Icon {
   margin-right: var(--spacing);
-  color: var(--inverse);
+  color: var(--inverse-lighter);
 }
 
 .Input-icon--disabled .Icon {
-  color: var(--inverse-lightest);
+  color: var(--inverse-lighter);
 }
 
 .Input-icon--right .Icon {
   cursor: pointer;
   margin-left: var(--spacing);
-  color: var(--inverse-lightest);
+  color: var(--inverse-lighter);
 }
 
 .Input-inlineLabel {
