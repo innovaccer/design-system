@@ -21,6 +21,10 @@ export interface TabProps {
    * To be rendered in `Tab` component
    */
   children?: React.ReactNode;
+  /**
+   * Add custom class on tab content
+   */
+  className?: string;
 }
 
 export const Tab = (props: TabProps) => {
