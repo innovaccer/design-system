@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import { action } from '@/utils/action';
 import { Modal, ModalHeader, ModalFooter, ModalBody, ModalDescription, Button, Paragraph } from '@/index';
-
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const small = () => {
-  const open = boolean('open', true);
-  const backdropClose = boolean('backdropClose', false);
+  const open = true;
+  const backdropClose = false;
   const dimension = 'small';
 
   const onClose = () => {

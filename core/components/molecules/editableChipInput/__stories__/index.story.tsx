@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import { action } from '@/utils/action';
 import { EditableChipInput } from '@/index';
 
@@ -13,7 +12,7 @@ export const all = () => {
   };
   const onClick = (item) => action(`onClick: ${item}`);
 
-  const placeholder = text('Placeholder', 'Add Value');
+  const placeholder = 'Add Value';
   const chipOptions = { onClick, clearButton: true };
   const chipInputOptions = {
     chipOptions,

@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Dropzone, Text } from '@/index';
 import { action } from '@/utils/action';
-import { DropzoneProps } from '@/index.type';
 
 export const disabled = () => {
-  const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles) => {
+  const onDrop = (_event, acceptedFiles) => {
     return action(`Accepted Files: ${acceptedFiles}`)();
   };
 

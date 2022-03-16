@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import { action } from '@/utils/action';
 import { EditableDropdown, Label } from '@/index';
 
@@ -15,7 +14,7 @@ for (let i = 1; i <= 100; i++) {
 }
 
 export const all = () => {
-  const placeholder = text('Placeholder', 'Select Option');
+  const placeholder = 'Select Option';
 
   const getSearchedOptions = (options, searchTerm) => {
     const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));

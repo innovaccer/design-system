@@ -1,13 +1,10 @@
 import * as React from 'react';
 import { ChipInput } from '@/index';
-import { boolean, text } from '@storybook/addon-knobs';
 
 export const all = () => {
-  const allowDuplicates = boolean('allowDuplicates', false);
-
-  const placeholder = text('placeholder', 'Add value');
-
-  const disabled = boolean('disabled', false);
+  const allowDuplicates = false;
+  const placeholder = 'Add value';
+  const disabled = false;
 
   return (
     <ChipInput

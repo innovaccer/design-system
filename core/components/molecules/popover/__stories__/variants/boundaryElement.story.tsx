@@ -1,27 +1,21 @@
 import * as React from 'react';
-import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Button, Popover } from '@/index';
 
 // CSF format story
 export const boundaryElement = () => {
-  const open = boolean('open', false);
+  const open = false;
 
-  const position = select(
-    'position',
-    ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'],
-    'bottom'
-  );
+  const position = 'bottom';
 
-  const on = select('on', ['click', 'hover'], 'click');
-
-  const appendToBody = boolean('appendToBody', true);
-  const hoverable = boolean('hoverable', true);
-  const closeOnBackdropClick = boolean('closeOnBackdropClick', true);
-  const closeOnScroll = boolean('closeOnScroll', true);
-  const hideOnReferenceEscape = boolean('hideOnReferenceEscape', true);
-  const dark = boolean('dark', false);
+  const on = 'hover';
+  const appendToBody = true;
+  const hoverable = true;
+  const closeOnBackdropClick = true;
+  const closeOnScroll = true;
+  const hideOnReferenceEscape = true;
+  const dark = false;
 
   const onToggle = () => {
     updateKnob('open', !open);
@@ -29,7 +23,7 @@ export const boundaryElement = () => {
 
   const trigger = <Button appearance="basic">Open Popup</Button>;
 
-  const options: Record<string, any> = {
+  const options = {
     trigger,
     position,
     appendToBody,

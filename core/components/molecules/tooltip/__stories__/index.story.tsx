@@ -1,17 +1,12 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
 import { Tooltip, Button } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const position = select(
-    'position',
-    ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'],
-    'bottom'
-  );
-  const appendToBody = boolean('appendToBody', true);
-  const hoverable = boolean('hoverable', false);
-  const tooltip = text('tooltip', 'An awesome tooltip');
+  const position = 'bottom';
+  const appendToBody = true;
+  const hoverable = false;
+  const tooltip = 'An awesome tooltip';
 
   const options = {
     tooltip,

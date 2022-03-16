@@ -1,22 +1,11 @@
 import * as React from 'react';
-import { text, boolean } from '@storybook/addon-knobs';
 import { Tooltip, Button } from '@/index';
-import { TooltipProps } from '@/index.type';
 
 // CSF format story
 export const position = () => {
-  const positions: TooltipProps['position'][] = [
-    'top',
-    'top-start',
-    'top-end',
-    'bottom',
-    'bottom-start',
-    'bottom-end',
-    'left',
-    'right',
-  ];
-  const appendToBody = boolean('appendToBody', false);
-  const tooltip = text('tooltip', 'An awesome tooltip');
+  const positions = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
+  const appendToBody = false;
+  const tooltip = 'An awesome tooltip';
 
   const options = {
     tooltip,
