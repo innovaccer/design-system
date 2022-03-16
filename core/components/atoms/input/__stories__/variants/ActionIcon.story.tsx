@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Input, Icon } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const actionIcon = () => {
   const customIcon = <Icon name="events" onClick={action('custom action icon')} />;

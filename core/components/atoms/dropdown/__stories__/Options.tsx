@@ -1,12 +1,12 @@
 import { getSearchedOptions } from '../utility';
 
-export const dropdownOptions: any[] = [];
-export const preSelectedOptions: any[] = [];
-export const storyOptions: any[] = [];
-export const disabledStoryOptions: any[] = [];
-export const iconOptions: any[] = [];
-export const subInfoOptions: any[] = [];
-export const iconWithSubinfoOptions: any[] = [];
+export const dropdownOptions = [];
+export const preSelectedOptions = [];
+export const storyOptions = [];
+export const disabledStoryOptions = [];
+export const iconOptions = [];
+export const subInfoOptions = [];
+export const iconWithSubinfoOptions = [];
 
 for (let i = 1; i <= 10; i++) {
   storyOptions.push({
@@ -84,7 +84,7 @@ for (let i = 41; i <= 100; i++) {
   });
 }
 
-export const selectedStoryOptions: any[] = [];
+export const selectedStoryOptions = [];
 
 for (let i = 1; i <= 10; i++) {
   selectedStoryOptions.push({
@@ -94,7 +94,7 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
-export const multiSelectedStoryOptions: any[] = [];
+export const multiSelectedStoryOptions = [];
 
 for (let i = 1; i <= 10; i++) {
   multiSelectedStoryOptions.push({
@@ -155,9 +155,9 @@ export const iconItems = [
   },
 ];
 
-export const fetchOptions = (searchTerm: string) => {
+export const fetchOptions = (searchTerm) => {
   const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-  return new Promise<any>((resolve) => {
+  return new Promise((resolve) => {
     window.setTimeout(() => {
       resolve({
         searchTerm,

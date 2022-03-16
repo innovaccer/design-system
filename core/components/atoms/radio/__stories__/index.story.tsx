@@ -1,23 +1,22 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Radio from '../Radio';
 
 // CSF format story
 export const all = () => {
-  const size = select('size', ['regular', 'tiny'], undefined);
+  const size = 'tiny';
 
-  const label = text('label', 'Radio');
+  const label = 'Radio';
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const defaultChecked = boolean('defaultChecked', false);
+  const defaultChecked = false;
 
-  const checked = boolean('checked', undefined);
+  const checked = undefined;
 
   const name = 'gender';
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (event) => {
     return action(`onChange: ${event.target.value}: ${event.target.checked}`)();
   };
 

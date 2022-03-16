@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Button, Paragraph, FullscreenModal, Label, Input, Radio, Icon, Text, Card } from '@/index';
 
 export const largeWidth = () => {

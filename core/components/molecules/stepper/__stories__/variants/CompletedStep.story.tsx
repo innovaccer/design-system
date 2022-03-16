@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Stepper } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { steps } from '../Steps';
 
 export const completedStep = () => {
   const [active, setActive] = React.useState(3);
 
-  const onChange = (index: number) => {
+  const onChange = (index) => {
     setActive(index);
     return action(`Active Index: ${index}`)();
   };

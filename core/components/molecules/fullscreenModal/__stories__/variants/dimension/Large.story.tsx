@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const large = () => {
   const [open, setOpen] = React.useState(true);

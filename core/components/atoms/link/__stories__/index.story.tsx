@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { text, select, boolean } from '@storybook/addon-knobs';
 import { Link } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
-  const href = text('href', 'http://innovaccer.com');
-  const target = select('target', ['_blank', '_self', '_parent', '_top'], '_blank');
-  const size = select('size', ['regular', 'tiny'], 'regular');
-  const appearance = select('appearance', ['default', 'subtle'], 'default');
-  const disabled = boolean('disabled', false);
+  const href = 'http://innovaccer.com';
+  const target = '_blank';
+  const size = 'regular';
+  const appearance = 'subtle';
+  const disabled = false;
 
   const options = {
     href,

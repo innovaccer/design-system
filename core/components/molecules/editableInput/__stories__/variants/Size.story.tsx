@@ -6,11 +6,11 @@ export const size = () => {
   const [name, setName] = React.useState('');
   const [weight, setWeight] = React.useState('');
 
-  const onChangeName = (value: string) => {
+  const onChangeName = (value) => {
     setName(value);
   };
 
-  const onChangeWeight = (value: string) => {
+  const onChangeWeight = (value) => {
     setWeight(value);
   };
 

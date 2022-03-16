@@ -4,7 +4,7 @@ import data from '@/components/organisms/grid/__stories__/_common_/data';
 import editableSchema from '@/components/organisms/grid/__stories__/_common_/editableSchema';
 import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from '../_common_/types';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const withEditableCell = () => {
   return (

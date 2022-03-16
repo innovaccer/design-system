@@ -26,7 +26,7 @@ export const withStepper = () => {
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(-1);
 
-  const onChangeHandler = (activeStep: number) => {
+  const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 

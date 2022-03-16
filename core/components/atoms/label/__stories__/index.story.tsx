@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import Label from '../index';
 
 // CSF format story
 export const all = () => {
-  const disabled = boolean('disabled', false);
-  const required = boolean('required', false);
-  const optional = boolean('optional', false);
+  const disabled = false;
+  const required = false;
+  const optional = false;
 
   const options = {
     disabled,

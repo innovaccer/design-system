@@ -1,17 +1,13 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Badge from '../../Badge';
 import Text from '@/components/atoms/text';
-import { AccentAppearance } from '@/common.type';
 
 // CSF format story
 export const subtle = () => {
   const ButtonSubtle = true;
   const weight = 'strong';
-
-  const children = text('children', 'Badge');
-
-  const appearances: AccentAppearance[] = [
+  const children = 'Badge';
+  const appearances = [
     'primary',
     'secondary',
     'alert',

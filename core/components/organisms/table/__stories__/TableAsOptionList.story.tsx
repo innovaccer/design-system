@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Card, List, Text } from '@/index';
 import { TableProps } from '@/index.type';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const tableAsOptionList = () => {
   const data = [

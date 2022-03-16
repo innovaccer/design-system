@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { select } from '@storybook/addon-knobs';
 import Spinner from '../Spinner';
 
 // CSF format story
 export const all = () => {
-  const appearance = select('appearance', ['primary', 'secondary', 'white'], undefined);
+  const appearance = 'white';
 
-  const size = select('size', ['small', 'medium', 'large'], undefined);
+  const size = 'small';
 
   const options = {
     appearance,

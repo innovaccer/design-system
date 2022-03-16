@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { RangeSlider } from '@/index';
-import { NumberRange } from '@/common.type';
 
 // CSF format story
 export const controlledSlider = () => {
-  const [value, setValue] = React.useState<NumberRange>([2, 4]);
+  const [value, setValue] = React.useState([2, 4]);
 
-  const onChange = (newValue: NumberRange) => {
+  const onChange = (newValue) => {
     window.setTimeout(() => {
       setValue(newValue);
     }, 1000);

@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Toast from '../Toast';
 
 // CSF format story
 export const all = () => {
-  const title = text('title', 'Sample toast');
+  const title = 'Sample toast';
 
-  const message = text('message', '');
+  const message = '';
 
-  const actionLabel1 = text('actionLabel1', '');
-  const actionLabel2 = text('actionLabel2', '');
+  const actionLabel1 = '';
+  const actionLabel2 = '';
 
-  const props: Record<string, any> = {
+  const props = {
     actions: [],
   };
 

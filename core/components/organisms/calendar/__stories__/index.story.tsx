@@ -2,7 +2,7 @@ import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
 import Calendar from '../Calendar';
 import Card from '@/components/atoms/card';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { convertToDate } from '@/components/organisms/calendar/utility';
 
 // CSF format story
@@ -53,8 +53,8 @@ export const all = () => {
         date={convertToDate(dateValue)}
         startDate={convertToDate(startDate)}
         endDate={convertToDate(endDate)}
-        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
-        onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
+        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
+        onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}

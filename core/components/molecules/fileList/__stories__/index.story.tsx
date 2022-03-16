@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FileList, Button } from '@/index';
 import { fileList } from './__common__/fileListExample';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { FileListItemProps } from '../FileListItem';
 
 export const all = () => {

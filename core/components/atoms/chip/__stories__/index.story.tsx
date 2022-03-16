@@ -1,25 +1,24 @@
 import * as React from 'react';
-import { select, boolean, text } from '@storybook/addon-knobs';
 import Chip from '../Chip';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const all = () => {
-  const type = select('type', ['action', 'selection', 'input'], 'input');
+  const type = 'selection';
 
-  const label = text('label', 'Chip Label');
+  const label = 'Chip Label';
 
-  const icon = text('icon', 'assessment');
+  const icon = 'assessment';
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
   let clearButton;
   if (type !== 'action') {
-    clearButton = boolean('clearButton', true);
+    clearButton = true;
   }
 
   let selected;
   if (type === 'selection') {
-    selected = boolean('selected', false);
+    selected = false;
   }
   return (
     <Chip

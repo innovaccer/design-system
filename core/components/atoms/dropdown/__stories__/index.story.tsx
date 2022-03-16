@@ -1,54 +1,53 @@
 import * as React from 'react';
-import { select, text, boolean, number } from '@storybook/addon-knobs';
 import { Uncontrolled, Controlled } from './_common_/types';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Dropdown from '../Dropdown';
 import { dropdownOptions } from './Options';
 
 // CSF format story
 export const all = () => {
-  const triggerSize = select('trigger size', ['regular', 'tiny'], undefined);
+  const triggerSize = 'tiny';
 
-  const align = select('align', ['right', 'left'], undefined);
+  const align = 'left';
 
-  const optionType = select('option type', ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'], undefined);
+  const optionType = 'ICON_WITH_META';
 
-  const error = boolean('error', false);
+  const error = false;
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const menu = boolean('menu', false);
+  const menu = false;
 
-  const withSearch = boolean('withSearch', false);
+  const withSearch = false;
 
-  const withCheckbox = boolean('withCheckbox', false);
+  const withCheckbox = false;
 
-  const showApplyButton = boolean('show apply button', false);
+  const showApplyButton = false;
 
-  const closeOnSelect = boolean('close on select', true);
+  const closeOnSelect = true;
 
-  const icon = text('icon', '');
+  const icon = '';
 
-  const placeholder = text('placeholder', 'Select');
+  const placeholder = 'Select';
 
-  const selectAllLabel = text('select all label', 'Select All');
+  const selectAllLabel = 'Select All';
 
-  const inlineLabel = text('inline label', '');
+  const inlineLabel = '';
 
-  const labelLimit = number('trigger label limit', 2);
+  const labelLimit = 2;
 
-  const maxHeight = number('maximum height', 200);
+  const maxHeight = 200;
 
-  const loadersCount = number('Loaders Count', 10);
+  const loadersCount = 10;
 
-  const getSearchedOptions = (options: any, searchTerm: string) => {
-    const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+  const getSearchedOptions = (options, searchTerm) => {
+    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string) => {
+  const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>((resolve) => {
+    return new Promise((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -59,16 +58,16 @@ export const all = () => {
     });
   };
 
-  const customLabel = (selectedLength: number, totalOptions?: number) => {
+  const customLabel = (selectedLength, totalOptions) => {
     const optionsLength = totalOptions ? totalOptions : dropdownOptions.length;
     return `${selectedLength} of ${optionsLength} are selected`;
   };
 
-  const onChangeHandler = (selectedValues: any[]) => {
+  const onChangeHandler = (selectedValues) => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
-  const onClose = (selectedValues: any[]) => {
+  const onClose = (selectedValues) => {
     return action(`dropdown closed with selected values: ${selectedValues}`)();
   };
 

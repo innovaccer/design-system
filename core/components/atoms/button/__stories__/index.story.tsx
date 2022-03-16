@@ -1,27 +1,26 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Button from '../Button';
 
 // CSF format story
 export const all = () => {
-  const type = select('type', ['button', 'submit', 'reset'], undefined);
+  const type = 'button';
 
-  const appearance = select('appearance', ['basic', 'primary', 'alert', 'transparent'], undefined);
+  const appearance = 'basic';
 
-  const size = select('size', ['tiny', 'regular', 'large'], undefined);
+  const size = 'large';
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const expanded = boolean('expanded', false);
+  const expanded = false;
 
-  const loading = boolean('loading', false);
+  const loading = false;
 
-  const icon = text('icon', '');
+  const icon = '';
 
-  const iconAlign = select('iconAlign', ['left', 'right'], undefined);
+  const iconAlign = 'right';
 
-  const children = text('children', 'Open');
+  const children = 'Open';
 
   return (
     <Button

@@ -1,11 +1,10 @@
 import * as React from 'react';
 import Heading from '../../index';
 import Text from '@/components/atoms/text';
-import { HeadingAppearance } from '@/common.type';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: HeadingAppearance[] = ['default', 'subtle', 'disabled', 'white'];
+  const appearances = ['default', 'subtle', 'disabled', 'white'];
   return (
     <div className="Row">
       {appearances.map((appear, ind) => {

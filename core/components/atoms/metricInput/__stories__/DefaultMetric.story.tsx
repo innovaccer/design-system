@@ -3,7 +3,7 @@ import { MetricInput, Label } from '@/index';
 
 // CSF format story
 export const defaultMetric = () => {
-  const [value, setValue] = React.useState<React.ReactText>(15);
+  const [value, setValue] = React.useState(15);
 
   return (
     <div className="d-flex align-items-center">

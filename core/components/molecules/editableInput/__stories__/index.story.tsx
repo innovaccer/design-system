@@ -12,7 +12,7 @@ export const all = () => {
 
   const size = select('size', ['regular', 'tiny'], 'regular');
 
-  const onChange = (updatedValue: string) => {
+  const onChange = (updatedValue) => {
     setValue(updatedValue);
   };
 

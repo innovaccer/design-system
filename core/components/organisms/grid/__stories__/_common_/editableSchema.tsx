@@ -107,7 +107,7 @@ const schema: Schema = [
 
       const [weight, setWeight] = React.useState('');
 
-      const onChangeWeight = (value: string) => {
+      const onChangeWeight = (value) => {
         setWeight(value);
       };
 

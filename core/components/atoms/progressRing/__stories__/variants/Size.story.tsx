@@ -1,10 +1,10 @@
 import * as React from 'react';
-import ProgressRing, { ProgressRingSize as Size } from '../../ProgressRing';
+import ProgressRing from '../../ProgressRing';
 import Text from '@/components/atoms/text';
 
 // CSF format story
 export const size = () => {
-  const sizes: Size[] = ['small', 'regular'];
+  const sizes = ['small', 'regular'];
   return (
     <div className="d-flex">
       {sizes.map((ProgressRingSize, ind) => {

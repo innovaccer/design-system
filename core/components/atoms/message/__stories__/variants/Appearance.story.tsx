@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Message, Text } from '@/index';
-import { MessageProps } from '@/index.type';
 
 // CSF format story
 export const appearanceWithoutTitle = () => {
-  const appearances: MessageProps['appearance'][] = ['alert', 'info', 'success', 'warning'];
+  const appearances = ['alert', 'info', 'success', 'warning'];
   const innerStyle = {
     display: 'flex',
     'align-items': 'center',

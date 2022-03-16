@@ -1,17 +1,9 @@
 import * as React from 'react';
-import { optionsKnob } from '@storybook/addon-knobs';
 import Paragraph from '../index';
 
 // CSF format story
 export const all = () => {
-  const appearance = optionsKnob(
-    'appearance',
-    { white: 'white', destructive: 'destructive', subtle: 'subtle', disabled: 'disabled' },
-    undefined,
-    {
-      display: 'inline-radio',
-    }
-  );
+  const appearance = 'white';
   const options = {
     appearance,
   };

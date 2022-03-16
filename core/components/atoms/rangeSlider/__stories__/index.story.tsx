@@ -1,19 +1,18 @@
 import * as React from 'react';
-import { text, boolean, number } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import RangeSlider from '../RangeSlider';
 import { NumberRange } from '@/common.type';
 
 // CSF format story
 export const all = () => {
-  const min = number('min', 0) || undefined;
-  const max = number('max', 10) || undefined;
-  const stepSize = number('step size', 0.1) || undefined;
-  const labelStepSize = number('label step size', 1) || undefined;
-  const label = text('Label', 'Slider Label');
-  const disabled = boolean('disabled', false);
+  const min = 0;
+  const max = 10;
+  const stepSize = 0.1;
+  const labelStepSize = 1;
+  const label = 'Slider Label';
+  const disabled = false;
 
-  const onChange = (value: NumberRange) => {
+  const onChange = (value) => {
     return action(`new value: ${value}`);
   };
 

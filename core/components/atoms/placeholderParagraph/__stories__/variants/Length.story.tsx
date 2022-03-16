@@ -1,9 +1,9 @@
 import * as React from 'react';
-import PlaceholderParagraph, { Length } from '../../PlaceholderParagraph';
+import PlaceholderParagraph from '../../PlaceholderParagraph';
 import Text from '@/components/atoms/text';
 
 export const length = () => {
-  const lengths: Length[] = ['small', 'medium', 'large'];
+  const lengths = ['small', 'medium', 'large'];
 
   return (
     <div>

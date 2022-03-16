@@ -3,7 +3,7 @@ import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/simpleSchema';
 import { Card, Heading, Table } from '@/index';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { GridType } from '@/components/organisms/grid';
 
 // CSF format story

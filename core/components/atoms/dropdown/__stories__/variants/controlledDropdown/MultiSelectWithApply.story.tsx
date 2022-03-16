@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
-import Dropdown, { EventType } from '@/components/atoms/dropdown';
+import { action } from '@/utils/action';
+import Dropdown from '@/components/atoms/dropdown';
 import { Uncontrolled, Controlled } from '../../_common_/types';
 import Text from '@/components/atoms/text';
 import { dropdownOptions } from '../../Options';
@@ -10,11 +10,11 @@ export const multiSelectWithApplyButton = () => {
   const [selected, setSelected] = React.useState([dropdownOptions[3]]);
   const [open, setOpen] = React.useState(false);
 
-  const onChangeHandler = (selectedValues: any[]) => {
+  const onChangeHandler = (selectedValues) => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
-  const onUpdate = (type: EventType, _options?: any, recentSelected?: any) => {
+  const onUpdate = (type, _options, recentSelected) => {
     switch (type) {
       case 'apply-selected':
         setOpen(!open);
@@ -28,7 +28,7 @@ export const multiSelectWithApplyButton = () => {
     }
   };
 
-  const onPopperToggle = (isPopperOpen: boolean) => {
+  const onPopperToggle = (isPopperOpen) => {
     setOpen(isPopperOpen);
   };
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Dropdown } from '@/index';
 import { Uncontrolled, Controlled } from './_common_/types';
 
-const options: any[] = [];
+const options = [];
 for (let i = 1; i <= 50; i++) {
   options.push({
     label: `Option ${i}`,

@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { boolean, text } from '@storybook/addon-knobs';
 import Caption from '../index';
 
 // CSF format story
 export const all = () => {
-  const error = boolean('error', false);
-  const hide = boolean('hide', false);
-  const withInput = boolean('with input', false);
-  const children = text('children', 'Caption');
+  const error = false;
+  const hide = false;
+  const withInput = false;
+  const children = 'Caption';
   const options = {
     error,
     hide,

@@ -5,7 +5,7 @@ import { storyOptions } from '../Options';
 import { OptionType } from '../../DropdownList';
 import { Uncontrolled, Controlled } from '../_common_/types';
 
-const labelMapping: { [key: string]: string } = {
+const labelMapping: { [key] } = {
   ['DEFAULT']: 'Default',
   ['WITH_ICON']: 'Icon',
   ['WITH_META']: 'SubInfo',

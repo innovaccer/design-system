@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Tabs, Dropdown, Input, Tab } from '@/index';
 
 // CSF format story
@@ -15,7 +15,7 @@ export const inlineContent = () => {
     },
   ];
 
-  const onTabChangeHandler = (tabIndex: number) => {
+  const onTabChangeHandler = (tabIndex) => {
     return action(`tab-change: ${tabIndex}`)();
   };
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { select } from '@storybook/addon-knobs';
 import { TimePicker } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
@@ -9,7 +9,7 @@ export const all = () => {
 
   const outputFormat = select('outputFormat', ['hh:mm AM', 'hh:mm'], undefined);
 
-  const onTimeChange = (val?: string) => {
+  const onTimeChange = (val) => {
     return action(`updated time: ${val}`)();
   };
 

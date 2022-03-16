@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
-import { DropdownAlign } from '../../DropdownList';
 import { Uncontrolled, Controlled } from '../_common_/types';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
 
 // CSF format story
 export const align = () => {
-  const dropdownAlignments: DropdownAlign[] = ['right', 'left'];
+  const dropdownAlignments = ['right', 'left'];
 
   return (
     <div style={{ display: 'flex', minHeight: '280px' }}>

@@ -1,10 +1,9 @@
 import * as React from 'react';
 import MetaList from '../MetaList';
-import { boolean } from '@storybook/addon-knobs';
 
 // CSF format story
 export const all = () => {
-  const seperator = boolean('seperator', true);
+  const seperator = true;
 
   const list = [
     {

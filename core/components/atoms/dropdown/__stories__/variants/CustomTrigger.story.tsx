@@ -6,11 +6,11 @@ import { storyOptions } from '../Options';
 
 // CSF format story
 export const customTrigger = () => {
-  const onChange = (e: any) => {
+  const onChange = (e) => {
     e.preventDefault();
   };
 
-  const customTriggerFunc = (label: string) => {
+  const customTriggerFunc = (label) => {
     return <Input type="text" name="input" value={label} onChange={onChange} />;
   };
 

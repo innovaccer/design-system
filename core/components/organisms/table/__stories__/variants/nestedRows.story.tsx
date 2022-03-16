@@ -4,7 +4,7 @@ import { nestedRowRenderer } from '@/components/organisms/grid/__stories__/_comm
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const nestedRows = () => {

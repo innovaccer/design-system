@@ -1,21 +1,10 @@
 import * as React from 'react';
-import { optionsKnob } from '@storybook/addon-knobs';
 import Heading from '../index';
 
 // CSF format story
 export const all = () => {
-  const appearance = optionsKnob(
-    'appearance',
-    { undefined, default: 'default', subtle: 'subtle', disabled: 'disabled', white: 'white' },
-    undefined,
-    {
-      display: 'inline-radio',
-    }
-  );
-
-  const size = optionsKnob('size', { s: 's', m: 'm', l: 'l', xl: 'xl', xxl: 'xxl' }, undefined, {
-    display: 'inline-radio',
-  });
+  const appearance = 'white';
+  const size = 'xxl';
 
   return (
     <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>

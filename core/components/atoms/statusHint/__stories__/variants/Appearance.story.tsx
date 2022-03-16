@@ -1,10 +1,9 @@
 import * as React from 'react';
 import StatusHint from '../../StatusHint';
-import { MessageAppearance } from '@/common.type';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: MessageAppearance[] = ['info', 'success', 'alert', 'warning', 'default'];
+  const appearances = ['info', 'success', 'alert', 'warning', 'default'];
 
   return (
     <div>

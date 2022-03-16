@@ -1,16 +1,14 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import { Input, Text } from '@/index';
-import { action } from '@storybook/addon-actions';
-import { Size } from '@/components/atoms/button';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const size = () => {
-  const value = text('value', '');
+  const value = '';
 
-  const sizes: Size[] = ['tiny', 'regular', 'large'];
+  const sizes = ['tiny', 'regular', 'large'];
 
-  const placeholder = text('placeholder', 'Placeholder');
+  const placeholder = 'Placeholder';
 
   return (
     <div className="d-flex">

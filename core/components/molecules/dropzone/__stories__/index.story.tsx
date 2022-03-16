@@ -3,10 +3,10 @@ import { Dropzone, Link, FileList, Button } from '@/index';
 import { DropzoneProps, FileListProps } from '@/index.type';
 
 export const all = () => {
-  const [files, setFiles] = React.useState<FileListProps['fileList']>([]);
-  const getSize = (size: number) => `${(size / (1024 * 1024)).toFixed(2)} MB`;
+  const [files, setFiles] = React.useState([]);
+  const getSize = (size) => `${(size / (1024 * 1024)).toFixed(2)} MB`;
 
-  const onDelete = (id: number) => {
+  const onDelete = (id) => {
     const updatedFiles = files.filter((file) => file.id !== id);
     setFiles(updatedFiles);
   };

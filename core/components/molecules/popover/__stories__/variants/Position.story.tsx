@@ -20,7 +20,7 @@ export const position = () => {
     'flex-wrap': 'wrap',
   };
 
-  const getTrigger = (pos: string) => <Button appearance="basic">{pos}</Button>;
+  const getTrigger = (pos) => <Button appearance="basic">{pos}</Button>;
 
   return (
     <div style={style}>

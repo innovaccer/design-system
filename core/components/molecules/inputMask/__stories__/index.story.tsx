@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { select, text, boolean } from '@storybook/addon-knobs';
 import { InputMask, Utils } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
@@ -28,7 +28,7 @@ export const all = () => {
 
   const info = text('info', 'sample info tooltip');
 
-  const inputValidator = (val: string) => {
+  const inputValidator = (val) => {
     return Utils.validators.date(val, 'mm/dd/yyyy');
   };
 

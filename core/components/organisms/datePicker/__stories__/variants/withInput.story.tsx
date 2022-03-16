@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
 import { DatePicker, InputMask } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const withInput = () => {
@@ -54,7 +54,7 @@ export const withInput = () => {
         outputFormat={outputFormat}
         jumpView={jumpView}
         date={dateValue}
-        onDateChange={(currDate?: Date, currValue?: string) => {
+        onDateChange={(currDate, currValue) => {
           action(`on date change : ${currDate} --- ${currValue}`)();
         }}
         view={view}

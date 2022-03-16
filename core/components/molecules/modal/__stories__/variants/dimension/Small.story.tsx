@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Modal, ModalHeader, ModalFooter, ModalBody, ModalDescription, Button, Paragraph } from '@/index';
 
 import { updateKnob } from '@/utils/storybookEventEmitter';

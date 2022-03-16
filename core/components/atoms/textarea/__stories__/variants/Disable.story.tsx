@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, Textarea } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const Disable = () => {
   const innerStyle = {

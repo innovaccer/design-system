@@ -171,7 +171,7 @@ export const dataTable = () => {
         }
         return false;
       },
-      translate: (a: any) => ({
+      translate: (a) => ({
         title: `${a.firstName} ${a.lastName}`,
         firstName: a.firstName,
         lastName: a.lastName,
