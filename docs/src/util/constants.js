@@ -5,3 +5,5 @@ export const buttonVariants = [
   'split-button',
 ];
 export const avatarVariants = ['default-avatar', 'size'];
+export const copyMessage = 'Copy';
+export const copyMessageSuccess = 'Copied!';
