@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import { Paragraph } from '@/index';
 import { action } from '@/utils/action';
 import Dialog from '../../../Dialog';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const alert = () => {
-  const open = boolean('open', true);
+  const open = true;
 
   const onClose = () => {
     updateKnob('open', false);

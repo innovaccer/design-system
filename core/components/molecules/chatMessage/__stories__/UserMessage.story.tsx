@@ -1,18 +1,14 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
 import { ChatMessage } from '@/index';
 // CSF format story
 export const chatMessage = () => {
-  const type = select('type', ['incoming', 'outgoing'], 'incoming');
-
-  const statusType = select('statusType', ['sent', 'urgent', 'read', 'sending', 'failed'], 'sent');
-
-  const isTyping = boolean('isTyping', false);
-
-  const message = text('text', 'Hello, there.');
-  const typingText = text('typing text', 'Typing..');
-  const failedMessage = text('failed message', 'Click to retry');
-  const sendingMessage = text('sending message', 'Sending');
+  const type = 'incoming';
+  const statusType = 'sent';
+  const isTyping = false;
+  const message = 'Hello, there.';
+  const typingText = 'Typing..';
+  const failedMessage = 'Click to retry';
+  const sendingMessage = 'Sending';
 
   const options = {
     type,

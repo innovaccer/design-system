@@ -1,16 +1,15 @@
 import * as React from 'react';
-import { boolean, select } from '@storybook/addon-knobs';
 import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Paragraph, Sidesheet, Button, ModalDescription } from '@/index';
 
 export const all = () => {
-  const open = boolean('open', true);
-  const seperator = boolean('seperator', false);
-  const backIcon = boolean('back icon', false);
-  const stickFooter = boolean('stick bottom', false);
-  const backdropClose = boolean('backdropClose', false);
-  const dimension = select('dimension', ['regular', 'large'], 'regular');
+  const open = true;
+  const seperator = false;
+  const backIcon = false;
+  const stickFooter = false;
+  const backdropClose = false;
+  const dimension = 'regular';
 
   const onClose = () => {
     updateKnob('open', false);
