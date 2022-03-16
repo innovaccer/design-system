@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Text, { TextAppearance } from '../../index';
+import Text from '../../index';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: TextAppearance[] = ['default', 'white', 'destructive', 'subtle', 'disabled', 'success', 'link'];
+  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled', 'success', 'link'];
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {

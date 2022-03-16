@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { boolean } from '@storybook/addon-knobs';
 import { Paragraph } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Dialog from '../../../Dialog';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 

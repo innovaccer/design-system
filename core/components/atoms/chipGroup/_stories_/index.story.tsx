@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { ChipType } from '../../chip/Chip';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { ChipGroup } from '../ChipGroup';
 export const all = () => {
-  const type: ChipType[] = ['action', 'input', 'selection'];
+  const type = ['action', 'input', 'selection'];
   const list = [
     {
       label: 'Action',

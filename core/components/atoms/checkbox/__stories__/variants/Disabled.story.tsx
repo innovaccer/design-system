@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Checkbox from '../../index';
 import Text from '@/components/atoms/text';
 
 // CSF format story
 export const disabled = () => {
-  const label = text('label', 'Checkbox');
+  const label = 'Checkbox';
   return (
     <div className="d-flex">
       <div className="mr-5">

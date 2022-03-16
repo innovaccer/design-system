@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Navigation, Breadcrumbs, Badge, MetaList, PageHeader } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Menu } from '../../navigation';
 
 export const level1WithNavigation = () => {

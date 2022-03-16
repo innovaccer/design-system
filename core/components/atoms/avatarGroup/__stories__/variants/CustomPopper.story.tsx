@@ -3,8 +3,8 @@ import { AvatarGroup, Avatar, Text } from '@/index';
 import { list } from '../AvatarList';
 
 export const customPopper = () => {
-  const popperRenderer = (names: any) => {
-    const AvatarList = names.map((avatar: any, index: number) => {
+  const popperRenderer = (names) => {
+    const AvatarList = names.map((avatar, index) => {
       const { firstName, lastName, appearance } = avatar;
 
       return (

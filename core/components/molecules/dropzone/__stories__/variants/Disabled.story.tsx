@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Dropzone, Text } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { DropzoneProps } from '@/index.type';
 
 export const disabled = () => {

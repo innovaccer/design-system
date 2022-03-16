@@ -3,7 +3,7 @@ import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loade
 import { TableProps } from '@/index.type';
 import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 const data = [
   {

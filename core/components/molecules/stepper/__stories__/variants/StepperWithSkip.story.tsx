@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { steps } from '../Steps';
 import { Stepper, Button } from '@/index';
 
 export const stepperWithSkip = () => {
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(active - 1);
-  const [skipIndexes, setSkipIndexes] = React.useState<number[]>([]);
+  const [skipIndexes, setSkipIndexes] = React.useState([]);
   const requiredSteps = [0];
 
-  const onChange = (activeStep: number) => {
+  const onChange = (activeStep) => {
     setActive(activeStep);
     return action(`Active Index: ${activeStep}`)();
   };

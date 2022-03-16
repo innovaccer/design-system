@@ -3,7 +3,7 @@ import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Card, Grid } from '@/index';
 import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';

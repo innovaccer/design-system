@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Heading, { Size } from '../../index';
+import Heading from '../../index';
 import Text from '@/components/atoms/text';
 
 // CSF format story
 export const size = () => {
-  const sizes: Size[] = ['s', 'm', 'l', 'xl', 'xxl'];
+  const sizes = ['s', 'm', 'l', 'xl', 'xxl'];
 
   return (
     <div className="Row">

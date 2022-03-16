@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { Dropdown } from '@/index';
-import { DropdownProps } from '@/index.type';
 import { Uncontrolled, Controlled } from './_common_/types';
 
-const options: DropdownProps['options'] = [];
+const options = [];
 for (let i = 1; i <= 100; i++) {
   options.push({
     label: `Option ${i}`,
@@ -13,14 +12,14 @@ for (let i = 1; i <= 100; i++) {
 
 // CSF format story
 export const dropdownOptionsMoreThan50 = () => {
-  const getSearchedOptions = (opts: DropdownProps['options'], searchTerm: string) => {
+  const getSearchedOptions = (opts, searchTerm) => {
     const result = opts.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string) => {
+  const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
-    return new Promise<any>((resolve) => {
+    return new Promise((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,

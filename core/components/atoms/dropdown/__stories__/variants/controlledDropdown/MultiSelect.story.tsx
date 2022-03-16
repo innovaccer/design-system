@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
-import Dropdown, { EventType } from '@/components/atoms/dropdown';
+import { action } from '@/utils/action';
+import Dropdown from '@/components/atoms/dropdown';
 import { Uncontrolled, Controlled } from '../../_common_/types';
 import Text from '@/components/atoms/text';
 import { dropdownOptions } from '../../Options';
@@ -10,14 +10,14 @@ export const multiSelect = () => {
   const [selectedMoreThan50, setSelectedMoreThan50] = React.useState([dropdownOptions[3]]);
   const [selectedLessThan50, setSelectedLessThan50] = React.useState([dropdownOptions[3]]);
 
-  const getSearchedOptions = (options: any, searchTerm: string) => {
-    const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+  const getSearchedOptions = (options, searchTerm) => {
+    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string) => {
+  const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>((resolve) => {
+    return new Promise((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -28,11 +28,11 @@ export const multiSelect = () => {
     });
   };
 
-  const onChangeHandler = (selectedValues: any[]) => {
+  const onChangeHandler = (selectedValues) => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
-  const onSelectLessThan50 = (type: EventType, option?: any) => {
+  const onSelectLessThan50 = (type, option) => {
     switch (type) {
       case 'select-all': {
         const selectedDisabledArray = selectedLessThan50.filter((item) => item.disabled);
@@ -66,7 +66,7 @@ export const multiSelect = () => {
     }
   };
 
-  const onSelectMoreThan50 = (type: EventType, option?: any) => {
+  const onSelectMoreThan50 = (type, option) => {
     switch (type) {
       case 'select-option': {
         setSelectedMoreThan50(selectedMoreThan50.concat(option));
@@ -90,7 +90,7 @@ export const multiSelect = () => {
     }
   };
 
-  const onClose = (options: any[]) => {
+  const onClose = (options) => {
     return action(`dropdown closed with selected values: ${options}`)();
   };
 

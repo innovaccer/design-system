@@ -6,7 +6,7 @@ import data from '../../grid/__stories__/_common_/data';
 import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { SyncList, AsyncList } from './_common_/types';
 
 export const all = () => {

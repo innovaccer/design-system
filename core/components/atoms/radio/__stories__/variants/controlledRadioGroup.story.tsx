@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Radio from '../../Radio';
 
 // CSF format story
 export const ControlledRadioGroup = () => {
-  const [selected, setSelected] = React.useState<string>('Option 2');
+  const [selected, setSelected] = React.useState('Option 2');
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (event) => {
     setSelected(event.target.value);
     return action(`onChange: ${event.target.value}: ${event.target.checked}`)();
   };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';

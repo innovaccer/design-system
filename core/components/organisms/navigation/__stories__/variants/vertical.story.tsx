@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Navigation } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { boolean } from '@storybook/addon-knobs';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Menu } from '../../Navigation';

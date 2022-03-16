@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
 import { DateRangePicker, InputMask } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const withSingleInput = () => {
@@ -57,7 +57,7 @@ export const withSingleInput = () => {
         inputFormat={inputFormat}
         outputFormat={outputFormat}
         jumpView={jumpView}
-        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) =>
+        onRangeChange={(sDate, eDate, sValue, eValue) =>
           action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
         }
         view={view}

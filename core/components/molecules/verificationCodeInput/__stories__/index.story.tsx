@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { VerificationCodeInput, Label } from '@/index';
 import { select, text, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {

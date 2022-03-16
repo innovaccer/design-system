@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { select } from '@storybook/addon-knobs';
 import { Card, CardHeader, CardBody, CardFooter, Button, Text, CardSubdued } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const shadow = select('shadow', ['none', 'default'], undefined);
+  const shadow = 'default';
 
   return (
     <>

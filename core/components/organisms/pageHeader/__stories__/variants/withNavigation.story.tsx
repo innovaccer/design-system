@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PageHeader from '../..//PageHeader';
 import { Navigation, Button, Text } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { text, boolean } from '@storybook/addon-knobs';
 
 export const withNavigation = () => {

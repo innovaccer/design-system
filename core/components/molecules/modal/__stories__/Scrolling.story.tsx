@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Modal, Button, Text, Paragraph } from '@/index';
 
 export const scrolling = () => {
@@ -119,7 +119,7 @@ export const scrolling = () => {
                 <div className="d-inline-block ml-2">
                   <Text size="small">{object.question}</Text>
                   <div className="mb-5 mt-3">
-                    {object.options.map((option: string, ind: number) => {
+                    {object.options.map((option, ind) => {
                       return (
                         <Button key={ind} className="mr-4 mt-4 d-inline" size="tiny">
                           {option}

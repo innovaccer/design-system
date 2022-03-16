@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import { Icon, Text } from '@/index';
 
 // CSF format story
@@ -16,7 +15,7 @@ export const Appearance = () => {
     ['inverse', 'subtle', 'disabled'],
   ];
 
-  const name = text('Name', 'events');
+  const name = 'events';
   return (
     <div>
       {appearances.map((appearance, ind) => {

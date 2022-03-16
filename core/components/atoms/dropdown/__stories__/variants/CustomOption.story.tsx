@@ -18,7 +18,7 @@ export const cutsomOption = () => {
     justifyContent: 'space-between',
   };
 
-  const customOptionRenderer = (props: any) => {
+  const customOptionRenderer = (props) => {
     const { label, icon } = props.optionData;
     return (
       <div style={optionStyle}>
@@ -28,7 +28,7 @@ export const cutsomOption = () => {
     );
   };
 
-  const customCheckboxRenderer = (props: any) => {
+  const customCheckboxRenderer = (props) => {
     const { label } = props.optionData;
 
     return (

@@ -8,7 +8,7 @@ export const ScrollableContent = () => {
       width: '100%',
       name: 'data',
       displayName: '',
-      cellRenderer: (props: any) => {
+      cellRenderer: (props) => {
         return (
           <>
             <Paragraph>

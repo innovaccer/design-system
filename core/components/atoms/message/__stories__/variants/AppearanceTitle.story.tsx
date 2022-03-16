@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import { Message, Text } from '@/index';
-import { MessageProps } from '@/index.type';
 
 // CSF format story
 export const appearanceWithTitle = () => {
-  const appearances: MessageProps['appearance'][] = ['alert', 'info', 'success', 'warning'];
+  const appearances = ['alert', 'info', 'success', 'warning'];
   const innerStyle = {
     display: 'flex',
     'align-items': 'center',
     'flex-direction': 'column',
   };
 
-  const title = text('title', 'Outreach was not saved');
+  const title = 'Outreach was not saved';
 
   return (
     <div className="Row">

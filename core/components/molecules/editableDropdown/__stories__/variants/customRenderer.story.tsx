@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { EditableDropdown, Label, StatusHint, Icon } from '@/index';
 
 // CSF format story
-const options: any = [];
+const options = [];
 for (let i = 1; i <= 10; i++) {
   options.push({
     label: `Option ${i}`,
@@ -14,11 +14,11 @@ for (let i = 1; i <= 10; i++) {
 }
 
 export const customRender = () => {
-  const onChange = (selectedValues: any) => {
+  const onChange = (selectedValues) => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
-  const customTrigger = (label: string) => {
+  const customTrigger = (label) => {
     return (
       <div
         className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100"
@@ -30,11 +30,11 @@ export const customRender = () => {
     );
   };
 
-  const customRenderer = (label: string) => {
+  const customRenderer = (label) => {
     return <StatusHint appearance="warning">{label}</StatusHint>;
   };
 
-  const optionRenderer = (props: any) => {
+  const optionRenderer = (props) => {
     const { label } = props.optionData;
     return (
       <StatusHint className="px-5 py-4 cursor-pointer" appearance="warning">

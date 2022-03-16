@@ -5,7 +5,7 @@ import { Slider } from '@/index';
 export const controlledSlider = () => {
   const [value, setValue] = React.useState(4);
 
-  const onChange = (newValue: number) => {
+  const onChange = (newValue) => {
     window.setTimeout(() => {
       setValue(newValue);
     }, 1000);

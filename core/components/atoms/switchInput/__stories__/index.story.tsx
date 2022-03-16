@@ -1,19 +1,18 @@
 import * as React from 'react';
-import { select, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import Switch from '../index';
 import { Label } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const size = select('size', ['regular', 'large', 'tiny'], undefined);
+  const size = 'tiny';
 
-  const checked = boolean('checked', false);
+  const checked = false;
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const onChangeHandler = (_event: any, checkedValue: boolean) => {
+  const onChangeHandler = (_event, checkedValue) => {
     updateKnob('checked', checkedValue);
     return action(`switch-change: ${checkedValue}`)();
   };

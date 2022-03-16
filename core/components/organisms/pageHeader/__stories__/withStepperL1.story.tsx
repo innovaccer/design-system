@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, Avatar, PageHeader, Dropdown } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const level1WithStepper = () => {
   const stepperData = [
@@ -36,7 +36,7 @@ export const level1WithStepper = () => {
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(-1);
 
-  const onChangeHandler = (activeStep: number) => {
+  const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 

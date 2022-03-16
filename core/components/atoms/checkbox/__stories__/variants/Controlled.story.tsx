@@ -5,7 +5,7 @@ import Checkbox from '../../index';
 export const controlledCheckbox = () => {
   const [checked, setChecked] = React.useState(false);
 
-  const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleParentChange = (event) => {
     const updatedChecked = event.target.checked;
     window.setTimeout(() => {
       setChecked(updatedChecked);

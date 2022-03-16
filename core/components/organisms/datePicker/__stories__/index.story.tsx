@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { boolean, select, date, number } from '@storybook/addon-knobs';
 import { DatePicker, Card, InputMask } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
@@ -59,7 +59,7 @@ export const all = () => {
         outputFormat={outputFormat}
         jumpView={jumpView}
         date={dateValue}
-        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
+        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}
@@ -74,7 +74,7 @@ export const all = () => {
         outputFormat={outputFormat}
         jumpView={jumpView}
         date={dateValue}
-        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
+        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}

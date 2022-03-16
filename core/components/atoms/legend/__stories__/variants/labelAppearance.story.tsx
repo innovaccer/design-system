@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { TextAppearance as LabelApperance } from '@/components/atoms/text';
 import Legend from '../../Legend';
 
 // CSF format story
 export const labelAppearance = () => {
-  const appearances: LabelApperance[] = ['default', 'white', 'destructive', 'subtle', 'disabled'];
+  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled'];
   return (
     <div>
       {appearances.map((appearance, i) => {

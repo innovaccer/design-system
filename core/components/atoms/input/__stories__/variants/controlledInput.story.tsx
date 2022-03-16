@@ -4,14 +4,14 @@ import Icon from '@/components/atoms/icon';
 
 export const controlledInput = () => {
   const [value, setValue] = React.useState('Value');
-  const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleParentChange = (event) => {
     const updatedValue = event.target.value;
     window.setTimeout(() => {
       setValue(updatedValue);
     }, 1000);
   };
   const [value1, setValue1] = React.useState('Value');
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (event) => {
     const updatedValue = event.target.value;
     window.setTimeout(() => {
       setValue1(updatedValue);

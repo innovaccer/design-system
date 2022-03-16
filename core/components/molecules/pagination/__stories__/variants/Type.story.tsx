@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { number } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Pagination, { PaginationType } from '../../Pagination';
 import Text from '@/components/atoms/text';
 

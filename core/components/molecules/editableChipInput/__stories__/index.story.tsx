@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { EditableChipInput } from '@/index';
 
 // CSF format story
 
 export const all = () => {
-  const [value, setValue] = React.useState<string[]>();
+  const [value, setValue] = React.useState();
 
-  const onChange = (updatedValue: string[]) => {
+  const onChange = (updatedValue) => {
     setValue(updatedValue);
   };
-  const onClick = (item: any) => action(`onClick: ${item}`);
+  const onClick = (item) => action(`onClick: ${item}`);
 
   const placeholder = text('Placeholder', 'Add Value');
   const chipOptions = { onClick, clearButton: true };

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Spinner, { SpinnerSize as Size } from '../../Spinner';
+import Spinner from '../../Spinner';
 import Text from '@/components/atoms/text';
 
 // CSF format story
 export const size = () => {
-  const sizes: Size[] = ['small', 'medium', 'large'];
+  const sizes = ['small', 'medium', 'large'];
   return (
     <div className="d-flex">
       {sizes.map((SpinnerSize, ind) => {
