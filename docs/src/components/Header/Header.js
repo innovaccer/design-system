@@ -3,13 +3,15 @@ import { Link } from 'gatsby';
 import { useHeaderItems } from '../../util/HeaderItems';
 import './Header.css';
 import { Link as MDSLink } from '@innovaccer/design-system';
+import Search from '../AlgoliaSearch';
+const searchIndices = [{ name: process.env.GATSBY_ALGOLIA_INDEX_NAME, title: process.env.GATSBY_ALGOLIA_INDEX_NAME }]
 
 const Header = ({ relativePagePath }) => {
   const items = useHeaderItems();
   const checkActive = (label) => {
     const pagePath = relativePagePath.split('/');
-    if(pagePath[1]===label.toLowerCase() || pagePath[2]===label.toLowerCase()) return true; 
-    return false; 
+    if (pagePath[1] === label.toLowerCase() || pagePath[2] === label.toLowerCase()) return true;
+    return false;
   }
   return (
     <div
@@ -19,7 +21,7 @@ const Header = ({ relativePagePath }) => {
       <Link to='/' className='HeaderLink ml-0'>
         <img src="/images/headerLogo.png" width="290px" height="28px" />
       </Link>
-      <div >
+      <div>
         {items.map(({ link, label }, index) => {
           const isExternal =
             link.startsWith('http://') ||
@@ -42,8 +44,8 @@ const Header = ({ relativePagePath }) => {
               key={index}
               to={link}
               className={`HeaderLink  ${checkActive(label)
-                  ? 'HeaderLink--active'
-                  : 'HeaderLink--default'
+                ? 'HeaderLink--active'
+                : 'HeaderLink--default'
                 }`}
             >
               {label}
@@ -51,6 +53,8 @@ const Header = ({ relativePagePath }) => {
           );
         })}
       </div>
+      <Search indices={searchIndices} />
+
     </div>
   );
 };

@@ -1,0 +1,27 @@
+.search-result{
+  height: 400px;
+  width: 475px;
+}
+
+.algolia-search{
+  right:0;
+  margin-top: var(--spacing-2);
+}
+
+.search-result-entry:hover{
+  background-color: var(--secondary-lightest);
+}
+
+.search-result-link{
+  text-decoration: none !important;
+}
+
+.search-result::-webkit-scrollbar-thumb{
+  background: var(--secondary-dark);
+  border-radius: 6px;
+}
+
+.search-result::-webkit-scrollbar{
+  background: var(--white);
+  width: var(--spacing-l);
+}
