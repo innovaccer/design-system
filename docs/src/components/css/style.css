@@ -21,7 +21,7 @@
 }
 
 .page-scroll {
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -101,7 +101,7 @@ table td {
 }
 
 .scroll-y {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .bitmap-container {
   text-align: center !important;
