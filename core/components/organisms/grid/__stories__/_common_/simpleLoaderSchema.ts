@@ -1,6 +1,4 @@
-import { GridProps } from '../../Grid';
-
-const loaderSchema: GridProps['loaderSchema'] = [
+const loaderSchema = [
   {
     name: 'name',
     displayName: 'Name',

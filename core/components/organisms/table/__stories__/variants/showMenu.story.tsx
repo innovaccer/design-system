@@ -2,12 +2,11 @@ import * as React from 'react';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/simpleSchema';
 import { Card, Heading, Table } from '@/index';
-import { TableProps } from '@/index.type';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 // CSF format story
 export const showMenu = () => {
-  const values: TableProps['showMenu'][] = [true, false];
+  const values = [true, false];
 
   const style = {
     display: 'flex',

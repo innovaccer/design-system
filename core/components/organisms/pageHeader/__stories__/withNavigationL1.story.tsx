@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Navigation, Breadcrumbs, Badge, MetaList, PageHeader } from '@/index';
 import { action } from '@/utils/action';
-import { Menu } from '../../navigation';
 
 export const level1WithNavigation = () => {
   const navigationData = [
@@ -19,7 +18,7 @@ export const level1WithNavigation = () => {
     name: 'menu_1',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     setActive(menu);
   };
 

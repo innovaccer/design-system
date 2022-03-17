@@ -2,24 +2,23 @@ import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
-import { boolean, number } from '@storybook/addon-knobs';
 import { Card, Table } from '@/index';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 export const syncLoaderSchema = () => {
-  const loading = boolean('loading', true);
+  const loading = true;
 
-  const error = boolean('error', false);
+  const error = false;
 
-  const pageSize = number('pageSize', 5);
+  const pageSize = 5;
 
-  const withCheckbox = boolean('withCheckbox', true);
+  const withCheckbox = true;
 
-  const applyLoaderSchema = boolean('applyLoaderSchema', true);
+  const applyLoaderSchema = true;
 
-  const applySchema = boolean('applySchema', false);
+  const applySchema = false;
 
-  const applyData = boolean('applyData', false);
+  const applyData = false;
 
   return (
     <div

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Schema } from '../../Grid';
 import { Icon, GridCell } from '@/index';
 
-const schema: Schema = [
+const schema = [
   {
     name: 'name',
     displayName: 'Name',

@@ -1,11 +1,10 @@
 import * as React from 'react';
 import Calendar from '../../Calendar';
-import { Day } from '@/components/organisms/calendar/types';
 import Card from '@/components/atoms/card';
 
 // CSF format story
 export const firstDayOfWeek = () => {
-  const values: Day[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+  const values = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
   const style = {
     flexWrap: 'wrap',

@@ -1,13 +1,12 @@
 import * as React from 'react';
 import PageHeader from '../..//PageHeader';
-import { select, text, boolean } from '@storybook/addon-knobs';
 import { Navigation, Button, Breadcrumbs, Badge, StatusHint, MetaList } from '@/index';
 import { action } from '@/utils/action';
 
 export const withNavigation = () => {
-  const navigationPosition = select('navigationPosition', ['center', 'bottom'], 'center');
-  const separator = boolean('separator', true);
-  const title = text('title', 'Page title');
+  const navigationPosition = 'center';
+  const separator = true;
+  const title = 'Page title';
 
   const navigationData = [
     {

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { VerticalNav, Icon, Tooltip, Text } from '@/index';
-import { MenuItemProps } from '../MenuItem';
 
 export const CustomItemsRenderer = () => {
   const data = [
@@ -82,7 +81,7 @@ export const CustomItemsRenderer = () => {
     name: 'care_management.timeline',
   });
 
-  const customItemRenderer = (props: MenuItemProps) => {
+  const customItemRenderer = (props) => {
     const { menu, expanded, isChildren } = props;
     return (
       <div className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}>

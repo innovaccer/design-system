@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { VerticalNav, Collapsible } from '@/index';
-import { Menu } from '../../Navigation';
 
 export const flatEdgedVerticalNavigation = () => {
   const data = [
@@ -122,7 +121,7 @@ export const flatEdgedVerticalNavigation = () => {
     name: 'medical_records.allergies',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     setActive(menu);
   };
 

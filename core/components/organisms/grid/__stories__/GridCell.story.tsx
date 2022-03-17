@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { GridCell } from '@/index';
-import { select, boolean, number } from '@storybook/addon-knobs';
 
 export const Grid_Cell = () => {
   const schema = {
@@ -8,21 +7,17 @@ export const Grid_Cell = () => {
     displayName: 'Name',
   };
 
-  const size = select('size', ['comfortable', 'standard', 'compressed', 'tight'], 'comfortable');
+  const size = 'comfortable';
 
-  const width = number('width', 250);
+  const width = 250;
 
-  const cellType = select(
-    'cellType',
-    ['DEFAULT', 'WITH_META_LIST', 'AVATAR', 'AVATAR_WITH_TEXT', 'AVATAR_WITH_META_LIST', 'STATUS_HINT', 'ICON'],
-    undefined
-  );
+  const cellType = 'STATUS_HINT';
 
-  const align = select('align', ['left', 'center', 'right'], 'left');
+  const align = 'left';
 
-  const tooltip = boolean('tooltip', true);
+  const tooltip = true;
 
-  const loading = boolean('loading', false);
+  const loading = false;
 
   return (
     <div className="Grid-cell Grid-cell--body" style={{ width, border: 'var(--border)' }}>
