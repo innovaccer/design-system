@@ -17,7 +17,7 @@
     "baseUrl": "./",
     "paths": {
       "@/*": [
-        "core/*"
+        "src/*"
       ]
     },
     "plugins": [
@@ -26,11 +26,12 @@
     ]
   },
   "exclude": [
+    "core",
     "dist",
     "build",
     "node_modules",
-    "core/**/__tests__",
-    "core/**/__stories__",
+    "src/**/__tests__",
+    "src/**/__stories__",
     ".github",
     "types"
   ]

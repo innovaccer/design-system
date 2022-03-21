@@ -70,7 +70,7 @@ const commonJsPlugins =  [
     commonjs(),
 
     // Compile TypeScript/JavaScript files
-    babel({ extensions, include: ['core/**/*'] }),
+    babel({ extensions, include: ['src/**/*'] }),
 
     json(),
 
@@ -114,7 +114,7 @@ const tsConfig = {
   plugins: [
     alias({
       entries: [
-        { find: '@', replacement: path.resolve('./core') },
+        { find: '@', replacement: path.resolve('./src') },
       ]
     }),
 
@@ -132,7 +132,7 @@ const tsConfig = {
     commonjs(),
 
     // Compile TypeScript/JavaScript files
-    babel({ extensions, include: ['core/**/*'] }),
+    babel({ extensions, include: ['src/**/*'] }),
   ],
   output: {
     dir: 'dist',

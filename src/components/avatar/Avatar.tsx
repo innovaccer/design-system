@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { TooltipProps } from '@/index.type';
+// import { TooltipProps } from '@/index.type';
 import { AccentAppearance } from '@/common.type';
 
 export type AvatarSize = 'regular' | 'tiny';
@@ -31,7 +31,7 @@ export interface AvatarProps extends BaseProps {
   /**
    * Position to place the tooltip
    */
-  tooltipPosition: TooltipProps['position'];
+  // tooltipPosition: TooltipProps['position'];
   /**
    * Determines size of `Avatar`
    */
@@ -41,7 +41,7 @@ export interface AvatarProps extends BaseProps {
 const initialsLength = 2;
 
 export const Avatar = (props: AvatarProps) => {
-  const { withTooltip, tooltipPosition, size, children, firstName, lastName, className, appearance } = props;
+  const { withTooltip, size, children, firstName, lastName, className, appearance } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -49,7 +49,7 @@ export const Avatar = (props: AvatarProps) => {
     ? children.trim().slice(0, initialsLength)
     : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
 
-  const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
+  // const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
   const DefaultAppearance = 'secondary';
 
   const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
