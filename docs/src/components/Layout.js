@@ -4,9 +4,9 @@ import '@fontsource/nunito-sans';
 import {
   Row,
   Column,
-  Heading,
   Button,
   Toast,
+  Tooltip
 } from '@innovaccer/design-system';
 import LeftNav from './LeftNav';
 import TableOfContent from './TableOfContent/TableOfContent';
@@ -30,38 +30,11 @@ import { useGetStorybookData } from '../util/StorybookData';
 import { ArgsTable } from './PropsTable/Table';
 import Markdown from 'markdown-to-jsx';
 import { useFrontmatter } from '../util/Frontmatter';
+import MDXHeading from './MDXHeading.js';
+import { copyMessage } from "../util/constants.js";
 
-const copyToClipboard = (str) => {
-  let codeBlock = '';
-  if (Object.keys(str).length > 0) {
-    const element = str.props.children;
-    if (Array.isArray(element) && element.length) {
-      element.map((elt) => {
-        if (typeof elt === 'object') {
-          codeBlock = codeBlock + elt.props.children;
-        } else {
-          codeBlock = codeBlock + elt;
-        }
-      });
-    } else {
-      codeBlock = str.props.children;
-    }
-  }
-  navigator.clipboard.writeText(codeBlock);
-};
 
-const Code = ({ children, ...rest }) => {
-  return (
-    <>
-      <div {...rest}>{children}</div>
-      <Button
-        icon='copy'
-        className='ml-auto p-0'
-        onClick={() => copyToClipboard(children)}
-      />
-    </>
-  );
-};
+
 
 const List = ({ children, ...rest }) => {
   return (
@@ -70,7 +43,6 @@ const List = ({ children, ...rest }) => {
     </div>
   )
 }
-
 const leftMenuList = [
   {
     title: 'Gatsby Theme MDS'
@@ -92,9 +64,63 @@ const Layout = ({
 }) => {
   const is404 = children && children.key === null;
   const [isToastActive, setIsToastActive] = useState(false);
+  const [codeCopyText , setCodeCopyText] = useState('')
   const [toastTitle, setToastTitle] = useState('');
+  const [isTooltipActiveCode , setTooltipActiveCode] = useState(false)
+  const [tooltipName, setTooltipName] = useState(copyMessage);
   const frontmatter = useFrontmatter(relativePagePath);
+  const refCode = React.createRef();
+  
+  const copyToClipboard = (str) => {
+  if(typeof(str)==="string"){
+    navigator.clipboard.writeText(str);
+  }
+  else{
+    let codeBlock = '';
+    if (Object.keys(str).length > 0) {
+      const element = str.props.children;
+      if (Array.isArray(element) && element.length) {
+        element.map((elt) => {
+          if (typeof elt === 'object') {
+            codeBlock = codeBlock + elt.props.children;
+          } else {
+            codeBlock = codeBlock + elt;
+          }
+        });
+      } else {
+        codeBlock = str.props.children;
+      }
+    }
+    navigator.clipboard.writeText(codeBlock);
+    setCodeCopyText(str._source.lineNumber)
+  }
+};
 
+  const Code = ({ children, ...rest }) => {
+  return (
+    <>
+      <div {...rest}>{children}</div>
+      <div 
+        onMouseLeave={()=>{setTooltipName(copyMessage);setTooltipActiveCode(false)}}
+        className='ml-auto'
+      >
+      <Tooltip 
+        open={children._source?.lineNumber === codeCopyText? isTooltipActiveCode:false} 
+        tooltip={tooltipName} 
+        position="bottom"
+        appendToBody={true}
+        boundaryElement={refCode}
+      >
+        <Button
+        icon='copy'
+        className='p-0'
+        onClick={() => {copyToClipboard(children);toggleTooltip("Copied!","code")}}
+        />
+      </Tooltip>
+      </div>
+    </>
+  );
+};
   function getJsxCode(name) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const componentData = useGetStorybookData(name);
@@ -150,7 +176,12 @@ const Layout = ({
     setToastTitle(name);
     setTimeout(() => setIsToastActive(false), 1500);
   }
-
+  const toggleTooltip = (name , type) => {
+    if(type ==="code"){
+      setTooltipActiveCode(true)
+    }
+    setTooltipName(name);
+  }
   const Logos = ({ children, logoData, ...rest }) => {
     return (
       <ProductLogos
@@ -174,7 +205,6 @@ const Layout = ({
       />
     );
   };
-
   const DSComponents = {
     ...MDSComponents,
     pre: Code,
@@ -186,17 +216,16 @@ const Layout = ({
     DONTs,
     InlineMessage,
     IconWrapper,
-    h1: (props) => <Heading size='xxl' {...props} />,
-    h2: (props) => <Heading size='xl' {...props} />,
-    h3: (props) => <Heading size='l' {...props} />,
-    h4: (props) => <Heading size='m' {...props} />,
-    h5: (props) => <Heading size='s' {...props} />,
+    h1: (props) => <MDXHeading size='xxl' headingInfo={props}/>,
+    h2: (props) => <MDXHeading size='xl' headingInfo={props} />,
+    h3: (props) => <MDXHeading size='l' headingInfo={props} />,
+    h4: (props) => <MDXHeading size="m" headingInfo={props} />,
+    h5: (props) => <MDXHeading size="s" headingInfo={props} />,
     ul: List,
     Logos: (props) => <Logos {...props} />,
     Rectangle: (props) => <Rectangle {...props} />,
     Colors: (props) => <Colors {...props} />,
   };
-
   const showAnimation = () => {
     if (location.state?.animation === false) return false;
     return true;
@@ -216,7 +245,7 @@ const Layout = ({
         leftMenuList={leftMenuList}
         relativePagePath={relativePagePath}
       />
-      <Row style={{ height: 'calc(100vh - 48px)' }}>
+      <Row style={{ height: 'calc(100vh - 48px)' }} ref={refCode}>
         <LeftNav
           is404Page={is404}
           relativePagePath={relativePagePath}
@@ -224,7 +253,7 @@ const Layout = ({
           showMobile={showMobile}
           frontmatter={frontmatter}
         />
-        <Column className={`${showAnimation() ? "page-animation" : ''} page-scroll h-100`}>
+        <Column className={`${showAnimation() ? "page-animation" : ''} page-scroll h-100`} id="main-container">
           <Row className='justify-content-center'>
             <Column className="px-12 py-8 min-vh-100 inner-left-container" size={9}>
               {!relativePagePath.includes('components') && (
@@ -258,7 +287,8 @@ const Layout = ({
 
             <Column
               size={3}
-              className="pb-6 in-page-nav position-sticky"
+              className="pb-6 in-page-nav position-sticky scroll-y"
+              style={{ height: 'calc(100vh - 48px)' }}
             >
               <TableOfContent
                 is404Page={is404}

@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { VerticalNav } from '@/index';
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
-import { Menu } from '../../../Navigation';
+import { action } from '@/utils/action';
 
 export const section = () => {
-  const autoCollapse = boolean('autoCollapse', true);
+  const autoCollapse = true;
 
   const data = [
     {
@@ -84,7 +82,7 @@ export const section = () => {
     name: 'care_management.timeline',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     action(`menu-clicked: ${JSON.stringify(menu)}`)();
 
     setActive(menu);

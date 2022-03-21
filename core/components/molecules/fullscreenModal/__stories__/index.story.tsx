@@ -1,15 +1,13 @@
 import * as React from 'react';
-import { select, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
 export const all = () => {
   const [open, setOpen] = React.useState(true);
-  const dimension = select('dimension', ['medium', 'large'], 'medium');
-
-  const knobOpen = boolean('open', open);
+  const dimension = 'medium';
+  const knobOpen = open;
 
   const onClose = () => {
     setOpen(!open);

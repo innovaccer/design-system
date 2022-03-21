@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Toast from '../../Toast';
-import { MessageAppearance } from '@/common.type';
 
 // CSF format story
 export const toastWithAction = () => {
-  const appearances: MessageAppearance[] = ['info', 'success', 'alert', 'warning'];
+  const appearances = ['info', 'success', 'alert', 'warning'];
 
-  const message = text('message', 'Outreach was sent');
+  const message = 'Outreach was sent';
 
-  const actionLabel1 = text('actionLabel1', 'Try Again');
-  const actionLabel2 = text('actionLabel2', '');
+  const actionLabel1 = 'Try Again';
+  const actionLabel2 = '';
 
-  const props: Record<string, any> = {
+  const props = {
     actions: [],
   };
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
-import Dropdown, { EventType } from '@/components/atoms/dropdown';
+import { action } from '@/utils/action';
+import Dropdown from '@/components/atoms/dropdown';
 import { Uncontrolled, Controlled } from '../../_common_/types';
 import { dropdownOptions } from '../../Options';
 
@@ -9,14 +9,14 @@ export const singleSelect = () => {
   const [selected, setSelected] = React.useState([dropdownOptions[3]]);
   const [open, setOpen] = React.useState(false);
 
-  const getSearchedOptions = (options: any, searchTerm: string) => {
-    const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+  const getSearchedOptions = (options, searchTerm) => {
+    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string) => {
+  const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>((resolve) => {
+    return new Promise((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,
@@ -27,17 +27,17 @@ export const singleSelect = () => {
     });
   };
 
-  const onChangeHandler = (selectedValues: any[]) => {
+  const onChangeHandler = (selectedValues) => {
     return action(`selected values length: ${selectedValues}`)();
   };
 
-  const onUpdate = (_type: EventType, option?: any) => {
+  const onUpdate = (_type, option) => {
     window.setTimeout(() => {
       setSelected([option]);
     }, 2000);
   };
 
-  const onPopperToggle = (updatedOpen: boolean) => {
+  const onPopperToggle = (updatedOpen) => {
     setOpen(updatedOpen);
   };
 

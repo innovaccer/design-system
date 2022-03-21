@@ -1,41 +1,40 @@
 import * as React from 'react';
-import { select, text, boolean, number } from '@storybook/addon-knobs';
 import Input from '../Input';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
-  const inputType = select('type', ['text', 'password', 'number', 'email', 'tel', 'url'], undefined);
+  const inputType = 'url';
 
-  const value = text('value', '');
+  const value = '';
 
-  const size = select('size', ['tiny', 'regular', 'large'], undefined);
+  const size = 'large';
 
-  const placeholder = text('placeholder', 'Placeholder');
+  const placeholder = 'Placeholder';
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const readOnly = boolean('readOnly', false);
+  const readOnly = false;
 
-  const icon = text('icon', '');
+  const icon = '';
 
-  const required = boolean('required', false);
+  const required = false;
 
-  const inlineLabel = text('inlineLabel', '');
+  const inlineLabel = '';
 
-  const error = boolean('error', false);
+  const error = false;
 
-  const info = text('info', 'sample info popover');
+  const info = 'sample info popover';
 
-  const pattern = text('pattern', '');
+  const pattern = '';
 
-  const min = number('min', 1);
+  const min = 1;
 
-  const max = number('max', 30);
+  const max = 30;
 
-  const minLength = number('minLength', 1);
+  const minLength = 1;
 
-  const maxLength = number('maxLength', 30);
+  const maxLength = 30;
 
   return (
     <div className="w-25">

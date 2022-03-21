@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { Navigation } from '@/index';
-import { Menu } from '../Navigation';
-import { select } from '@storybook/addon-knobs';
 
 export const navigationTabs = () => {
   const data = [
@@ -27,11 +25,11 @@ export const navigationTabs = () => {
     name: 'tab1',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     setActive(menu);
   };
 
-  const align = select('align', ['left', 'center'], 'center');
+  const align = 'center';
 
   return <Navigation align={align} menus={data} active={active} onClick={onClickHandler} />;
 };

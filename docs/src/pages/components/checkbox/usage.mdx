@@ -1,48 +1,79 @@
 ---
 title: Checkbox
-description:
-  A checkbox lets users select one or more values from a list of options.
-  Options are not mutually exclusive here so the selection of any option won’t affect the other.
+description: Checkbox lets users select one or more values.
 tabs: ["Usage", "Code"]
 showMobile: true
 ---
 
-#### Types
+Checkboxes lets users select one or more values from a list of options. Options are not mutually exclusive here so the selection of any option won’t affect the other.
 
+### Variants
 <br/>
 
-##### Default
-
+#### Default
+The default variant comes with a checkbox control and a label, to cater most of the use cases. This entire combination of checkbox control and label is clickable to change the checkbox selection.
 <Preview name="checkbox-default" />
 
-##### With Help Text
-
-The checkbox can have a help text below the label to provide some extra information about the particular option.
-The help text will always be aligned to the label. Clicking over the help text will not change the state of checkbox.
-
+#### With help text
+A checkbox can have a help text below the label to provide additional information about that particular option. The help text will always be aligned to the label. Clicking over the help text will not change the state of checkbox.
 <Preview name="checkbox-with-help-text" />
 
-#### Usage
+### Sizes
+Checkbox comes in two sizes - regular and tiny.
+<Preview name="components-checkbox-variants-size"/>
+
+### States
 <br/>
 
-##### Checkbox Group
+#### Selection States
+Checkbox has three selection states - checked, unchecked and indeterminate.
 
-Checkbox group is a list of multiple standalone checkboxes with a group label on the top. 
+![Selection states of a checkbox](./images/checkbox-1.png)
+<br/>
 
-*Note: Multiple checkboxes should have a minimum of 8px spacing in between.
+#### Interactive States
+Checkbox has five interactive states - default, hover, active, focus and disabled.
 
-<Preview name="checkbox-checkbox-group" />
+![Interactive states of a checkbox](./images/checkbox-2.png)
+<br/>
+<br/>
 
-##### Nesting
+### Usage
+<br/>
 
+#### Checkbox Group
+Checkbox group is a list of multiple standalone checkboxes with a group label on the top.
+
+**Note**: Multiple checkboxes should have a minimum of 8px spacing in between.
+<Preview name="checkbox-checkbox-group"/>
+
+#### Alignment
+A group of checkboxes can be aligned either **vertically** or **horizontally**. However, it is advisable to stack the checkboxes vertically with one option in a line for easier reading and scanning. If you need to use them horizontally, make sure to space the options appropriately so that it is clear which control goes with which label.
+<Preview name="checkbox-checkbox-group"/>
+
+#### Nesting
 Checkboxes can be nested in case of a list having sub-sections. The parent remains unchecked if no child is checked. 
 
-Indeterminate state of the parent shows a partially checked state when there is a nested relationship. The parent checkbox will remain indeterminate until all of its child checkboxes are checked.
-
+Indeterminate state of the parent shows a partially checked state when there is a nested relationship. The parent checkbox will remain indeterminate until some of its children checkboxes are checked.
 <Preview name="checkbox-nested" />
 
-##### Overflow Behavior
-
+#### Overflow Behavior
 If the label or the help text with the checkbox overflows, wrap it to the next line but make sure that the control and the label are top aligned.
-
 <Preview name="checkbox-overflow" />
+
+#### Checkbox vs. Radio
+Radio buttons allow only one selection from a list of mutually exclusive options whereas checkboxes allow users to select multiple options.
+
+#### Checkbox vs. Switch
+Checkbox should be considered instead of a switch when a confirmation action is required to apply the changes. For example in forms etc.
+
+![Checkbox vs. switch](./images/checkbox-3.png)
+<br/>
+
+#### Checkbox vs. Dropdown
+Checkboxes should be used when there are fewer than 5 options as they are easy to scan and save an additional click of opening a dropdown.
+
+However, if the number of options exceeds 5 or if the space is limited then it is recommended to use dropdowns.
+
+![Checkbox vs. dropdown](./images/checkbox-4.png)
+<br/>

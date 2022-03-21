@@ -6,7 +6,7 @@ import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const sections = () => {
-  const options: any[] = [];
+  const options = [];
 
   for (let i = 1; i <= 10; i++) {
     options.push({

@@ -1,12 +1,11 @@
 import * as React from 'react';
 import Calendar from '../../Calendar';
-import { View } from '@/components/organisms/calendar/types';
 import Card from '@/components/atoms/card';
 import Heading from '@/components/atoms/heading';
 
 // CSF format story
 export const size = () => {
-  const view: View[] = ['year', 'month', 'date'];
+  const view = ['year', 'month', 'date'];
 
   return (
     <>

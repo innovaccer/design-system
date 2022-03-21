@@ -8,14 +8,14 @@ import { dropdownOptions } from '../Options';
 export const staticLimit = () => {
   const BooleanValue = [true, false];
 
-  const getSearchedOptions = (options: any, searchTerm: string) => {
-    const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+  const getSearchedOptions = (options, searchTerm) => {
+    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string) => {
+  const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>((resolve) => {
+    return new Promise((resolve) => {
       window.setTimeout(() => {
         resolve({
           searchTerm,

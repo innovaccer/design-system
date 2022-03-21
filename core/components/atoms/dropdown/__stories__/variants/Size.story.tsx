@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Dropdown from '../../Dropdown';
-import { DropDownButtonSize } from '../../DropdownButton';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
 import { Uncontrolled, Controlled } from '../_common_/types';
 
 // CSF format story
 export const size = () => {
-  const sizes: DropDownButtonSize[] = ['tiny', 'regular'];
+  const sizes = ['tiny', 'regular'];
 
   return (
     <div className="d-flex">

@@ -21,7 +21,7 @@
 }
 
 .page-scroll {
-  overflow-y: scroll;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -98,4 +98,15 @@ table td {
 
 .inner-left-container {
   max-width: 888px;
+}
+
+.scroll-y {
+  overflow-y: auto;
+}
+.bitmap-container {
+  text-align: center !important;
+}
+.bitmap-container img{
+  height: auto;
+  width: 50%;
 }

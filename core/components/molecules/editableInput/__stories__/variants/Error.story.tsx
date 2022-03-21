@@ -5,7 +5,7 @@ import { EditableInput } from '@/index';
 export const error = () => {
   const [value, setValue] = React.useState('');
 
-  const onChange = (updatedValue: string) => {
+  const onChange = (updatedValue) => {
     setValue(updatedValue);
   };
 

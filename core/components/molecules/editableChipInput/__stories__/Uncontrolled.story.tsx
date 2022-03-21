@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { EditableChipInput } from '@/index';
 
 // CSF format story
 
 export const uncontrolled = () => {
-  const onClick = (item: any) => action(`onClick: ${item}`);
+  const onClick = (item) => action(`onClick: ${item}`);
   const chipOptions = { onClick, clearButton: true };
   const chipInputOptions = {
     chipOptions,

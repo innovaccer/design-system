@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Input } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const iconLeftInput = () => (
   <Input name="input" placeholder="Search" className="w-25" onChange={action('on-change')} icon={'search'} />

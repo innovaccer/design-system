@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { OutsideClick, Card, Heading } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {

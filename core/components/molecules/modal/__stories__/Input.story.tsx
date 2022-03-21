@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Modal, Button, Paragraph, Navigation, Heading, Label, Dropdown } from '@/index';
 
 export const inputModals = () => {
@@ -44,7 +44,7 @@ export const inputModals = () => {
     name: 'Tab1',
   });
 
-  const onClickHandler = (menu: any) => {
+  const onClickHandler = (menu) => {
     setActive(menu);
   };
 

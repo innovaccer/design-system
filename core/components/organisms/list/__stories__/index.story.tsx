@@ -3,36 +3,35 @@ import { Card } from '@/index';
 import List from '../List';
 import schema from '../../grid/__stories__/_common_/schema';
 import data from '../../grid/__stories__/_common_/data';
-import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { SyncList, AsyncList } from './_common_/types';
 
 export const all = () => {
-  const async = boolean('async', true);
+  const async = true;
 
-  const applyLoaderSchema = boolean('applyLoaderSchema', true);
+  const applyLoaderSchema = true;
 
-  const type = select('type', ['resource', 'data'], 'resource');
+  const type = 'resource';
 
-  const size = select('size', ['comfortable', 'standard', 'compressed', 'tight'], 'comfortable');
+  const size = 'comfortable';
 
-  const withHeader = boolean('withHeader', false);
+  const withHeader = false;
 
-  const withCheckbox = boolean('withCheckbox', false);
+  const withCheckbox = false;
 
-  const withPagination = boolean('withPagination', true);
+  const withPagination = true;
 
-  const page = number('page', 1);
+  const page = 1;
 
-  const paginationType = select('paginationType', ['basic', 'jump'], 'jump');
+  const paginationType = 'jump';
 
-  const pageSize = number('pageSize', 12);
+  const pageSize = 12;
 
-  const multipleSorting = boolean('multipleSorting', false);
+  const multipleSorting = false;
 
-  const separator = boolean('separator', false);
+  const separator = false;
 
   let dataAttr = {};
   if (async) {

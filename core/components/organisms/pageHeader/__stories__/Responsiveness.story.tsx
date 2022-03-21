@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Breadcrumbs, Text, StatusHint, Navigation, AvatarGroup, PageHeader, Dropdown } from '@/index';
-import { action } from '@storybook/addon-actions';
-import { Menu } from '../../navigation';
+import { action } from '@/utils/action';
 
 export const Responsiveness = () => {
   const navigationData = [
@@ -45,7 +44,7 @@ export const Responsiveness = () => {
     name: 'menu_1',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     setActive(menu);
   };
 

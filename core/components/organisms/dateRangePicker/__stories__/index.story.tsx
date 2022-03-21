@@ -1,53 +1,40 @@
 import * as React from 'react';
-import { boolean, select, date, number } from '@storybook/addon-knobs';
 import { DateRangePicker, InputMask, Card } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
-  const withInput = boolean('withInput', false);
+  const withInput = false;
 
-  const open = boolean('open', false);
+  const open = false;
 
-  const monthsInView = number('monthsInView', withInput ? 2 : 1);
+  const monthsInView = withInput ? 2 : 1;
 
-  const inputFormat = select(
-    'inputFormat',
-    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
-    undefined
-  );
+  const inputFormat = 'dd/mm/yyyy';
 
-  const outputFormat = select(
-    'outputFormat',
-    ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy-mm-dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'],
-    undefined
-  );
+  const outputFormat = 'mm/dd/yyyy';
 
-  const startDate = date('startDate', undefined);
+  const startDate = new Date('Jan 20 2015');
 
-  const endDate = date('endDate', undefined);
+  const endDate = new Date('Jan 27 2015');
 
-  const view = select('view', ['date', 'month', 'year'], undefined);
+  const view = 'month';
 
-  const rangeLimit = number('rangeLimit', 0);
+  const rangeLimit = 0;
 
-  const firstDayOfWeek = select(
-    'firstDayOfWeek',
-    ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
-    undefined
-  );
+  const firstDayOfWeek = 'thursday';
 
-  const disabledBefore = date('disabledBefore', new Date('Jan 20 2015'));
+  const disabledBefore = new Date('Jan 20 2015');
 
-  const disabledAfter = date('disabledAfter', new Date('Jan 20 2028'));
+  const disabledAfter = new Date('Jan 20 2028');
 
-  const jumpView = boolean('jumpView', true);
+  const jumpView = true;
 
-  const yearNav = number('yearNav', -1);
+  const yearNav = -1;
 
-  const monthNav = number('monthNav', -1);
+  const monthNav = -1;
 
-  const attr: Record<string, any> = {};
+  const attr = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
   if (disabledAfter) attr.disabledAfter = disabledAfter;
   if (rangeLimit) attr.rangeLimit = rangeLimit;
@@ -65,7 +52,7 @@ export const all = () => {
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) =>
+        onRangeChange={(sDate, eDate, sValue, eValue) =>
           action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
         }
         view={view}
@@ -82,7 +69,7 @@ export const all = () => {
         jumpView={jumpView}
         startDate={startDate}
         endDate={endDate}
-        onRangeChange={(sDate?: Date, eDate?: Date, sValue?: string, eValue?: string) =>
+        onRangeChange={(sDate, eDate, sValue, eValue) =>
           action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()
         }
         view={view}

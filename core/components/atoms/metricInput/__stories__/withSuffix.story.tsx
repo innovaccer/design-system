@@ -3,7 +3,7 @@ import { MetricInput, Label } from '@/index';
 
 // CSF format story
 export const withSuffix = () => {
-  const [value, setValue] = React.useState<React.ReactText>(65);
+  const [value, setValue] = React.useState(65);
 
   return (
     <div className="d-flex align-items-center">

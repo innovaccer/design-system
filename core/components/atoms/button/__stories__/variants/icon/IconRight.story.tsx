@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-import Button, { ButtonSize } from '../../../Button';
+import { action } from '@/utils/action';
+import Button from '../../../Button';
 import Text from '@/components/atoms/text';
 
 // CSF format story
@@ -11,10 +10,10 @@ export const iconRight = () => {
   const loading = false;
   const iconAlign = 'right';
 
-  const size: ButtonSize[] = ['tiny', 'regular', 'large'];
+  const size = ['tiny', 'regular', 'large'];
 
-  const icon = text('icon', 'refresh');
-  const children = text('children', 'Button');
+  const icon = 'refresh';
+  const children = 'Button';
   return (
     <div className="d-flex w-25">
       {size.map((IconSize, ind) => {

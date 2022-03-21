@@ -1,13 +1,11 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import Toast from '../../Toast';
-import { MessageAppearance } from '@/common.type';
 
 // CSF format story
 export const toastWithDescription = () => {
-  const appearances: MessageAppearance[] = ['info', 'success', 'alert', 'warning'];
+  const appearances = ['info', 'success', 'alert', 'warning'];
 
-  const message = text('message', 'Outreach was sent');
+  const message = 'Outreach was sent';
   return (
     <div className="d-flex">
       {appearances.map((appearance, ind) => {

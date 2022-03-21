@@ -1,0 +1,578 @@
+---
+title: Bottom sheet
+description:
+  Bottom sheets are containers with content that supplements the screen's primary content.
+tabs: ['Usage', 'Interactions']
+showMobile: true
+---
+
+### Opening a Modal Bottom sheet
+
+<br/>
+
+<img src='./images/bottomsheet-6.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+
+#### Sheet
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Margin - Bottom',
+        Initial: 'Outside the frame',
+        Final: '0px',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Motion**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'Expressive Motion',
+        Duration: 'Entrance Easing',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Style of Motion',
+        width: '50%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Duration',
+        displayName: 'Easing',
+        width: '50%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0, 0, 0.3, 1)',
+        Duration: '240ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+#### Overlay
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Opacity',
+        Initial: '0%',
+        Final: '100%',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Motion**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'Expressive Motion',
+        Duration: 'Entrance Easing',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Style of Motion',
+        width: '50%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Duration',
+        displayName: 'Easing',
+        width: '50%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0, 0, 0.3, 1)',
+        Duration: '240ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+### Closing a Bottom sheet
+
+<br/>
+
+<img src='./images/bottomsheet-7.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+
+#### Sheet
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Margin - Bottom',
+        Initial: '0px',
+        Final: 'Outside the frame',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Motion**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'Expressive Motion',
+        Duration: 'Exit Easing',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Style of Motion',
+        width: '50%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Duration',
+        displayName: 'Easing',
+        width: '50%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0.4, 0.14, 1, 1)',
+        Duration: '240ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+
+#### Overlay
+
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'Opacity',
+        Initial: '0%',
+        Final: '100%',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+
+**Motion**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'Expressive Motion',
+        Duration: 'Exit Easing',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Style of Motion',
+        width: '50%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Duration',
+        displayName: 'Easing',
+        width: '50%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0.4, 0.14, 1, 1)',
+        Duration: '240ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+### Scrolling within a Sheet
+
+<br/>
+
+<img src='./images/bottomsheet-5.gif' width='100%' height='auto'/>
+
+<br/>
+<br/>
+
+The curves for swiping the sheet up and down are similar. 
+
+**Motion**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'Expressive Motion',
+        Duration: 'Entrance Easing',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Style of Motion',
+        width: '50%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'Duration',
+        displayName: 'Easing',
+        width: '50%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
+**Curve**
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'cubic-bezier(0, 0, 0.3, 1)',
+        Duration: '240ms',
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '50%',
+        sorting: false,
+        separator: true,
+        cellRenderer: ({ data }) => {
+          return <Rectangle name={data.Curve} />;
+        },
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '50%',
+        sorting: false,
+        separator: true
+        
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+<br/>

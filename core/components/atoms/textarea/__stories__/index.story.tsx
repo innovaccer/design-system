@@ -1,21 +1,20 @@
 import * as React from 'react';
-import { text, boolean, number } from '@storybook/addon-knobs';
 import { Textarea } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
-  const value = text('value', '');
+  const value = '';
 
-  const placeholder = text('placeholder', 'Placeholder');
+  const placeholder = 'Placeholder';
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const error = boolean('error', false);
+  const error = false;
 
-  const resize = boolean('resize', true);
+  const resize = true;
 
-  const rows = number('rows', 3);
+  const rows = 3;
 
   return (
     <div style={{ maxWidth: '300px' }}>

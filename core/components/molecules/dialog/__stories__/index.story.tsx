@@ -1,25 +1,14 @@
 import * as React from 'react';
-import { boolean, select } from '@storybook/addon-knobs';
 import { Paragraph } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Dialog from '../Dialog';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const all = () => {
-  const open = boolean('open', true);
-  const dimension = select('dimension', ['small', 'medium', 'large'], 'small');
-
-  const primaryButtonAppearance = select(
-    'primaryButtonAppearance',
-    ['basic', 'primary', 'success', 'alert', 'transparent'],
-    'primary'
-  );
-
-  const secondaryButtonAppearance = select(
-    'secondaryButtonAppearance',
-    ['basic', 'primary', 'success', 'alert', 'transparent'],
-    'basic'
-  );
+  const open = true;
+  const dimension = 'small';
+  const primaryButtonAppearance = 'primary';
+  const secondaryButtonAppearance = 'basic';
 
   const onClose = () => {
     updateKnob('open', false);

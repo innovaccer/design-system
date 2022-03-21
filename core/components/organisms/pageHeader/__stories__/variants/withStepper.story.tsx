@@ -1,10 +1,9 @@
 import * as React from 'react';
 import PageHeader from '../..//PageHeader';
 import { Stepper, Button, Text } from '@/index';
-import { text, boolean } from '@storybook/addon-knobs';
 
 export const withStepper = () => {
-  const title = text('title', 'Page title');
+  const title = 'Page title';
 
   const stepperData = [
     {
@@ -21,12 +20,12 @@ export const withStepper = () => {
     },
   ];
 
-  const separator = boolean('separator', true);
+  const separator = true;
 
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(-1);
 
-  const onChangeHandler = (activeStep: number) => {
+  const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Placeholder from '../../Placeholder';
 import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
-import PlaceholderImage, { Size } from '@/components/atoms/placeholderImage';
+import PlaceholderImage from '@/components/atoms/placeholderImage';
 import Text from '@/components/atoms/text';
 
 export const imageSize = () => {
-  const sizes: Size[] = ['small', 'medium', 'large'];
+  const sizes = ['small', 'medium', 'large'];
 
   return (
     <div className="d-flex">

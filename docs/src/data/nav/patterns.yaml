@@ -1,0 +1,10 @@
+base: patterns
+menus:
+  - label: File uploader
+    link: /patterns/fileUploader/usage/
+  - label: Forms
+    link: /patterns/forms/usage/
+  - label: Layouts
+    link: /patterns/layouts/usage/
+  - label: UI states
+    link: /patterns/uiStates/usage/

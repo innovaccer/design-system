@@ -15,13 +15,13 @@ export const NestedCheckboxes = () => {
   const [checked, setChecked] = React.useState(childArray);
   const [parentStatus, setParentStatus] = React.useState(parentObj);
 
-  const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleParentChange = (event) => {
     const updatedArray = [...childArray].fill(event.target.checked);
     setChecked(updatedArray);
     setParentStatus({ indeterminate: event.target.indeterminate, checked: event.target.checked });
   };
 
-  const handleChildChange = (event: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleChildChange = (event, index) => {
     const updateCheck = [...checked];
     updateCheck[index] = event.target.checked;
     const totalCount = labels.length;

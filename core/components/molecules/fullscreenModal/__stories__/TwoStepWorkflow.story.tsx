@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, Paragraph, Text, Card, FullscreenModal, Input, Label } from '@/index';
-import { List, TableProps } from '@/index.type';
+import { List } from '@/index.type';
 
 export const twoStepsWorkflow = () => {
   const [open, setOpen] = React.useState(true);
@@ -32,7 +32,7 @@ export const twoStepsWorkflow = () => {
     { name: 'Patient does not show Emotion', icon: 'cancel' },
   ];
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'name',
       displayName: 'name',

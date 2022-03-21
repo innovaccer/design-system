@@ -1,13 +1,12 @@
 import * as React from 'react';
 import PageHeader from '../../PageHeader';
-import { select, text, boolean } from '@storybook/addon-knobs';
 import { Stepper, Button, Breadcrumbs, Badge, StatusHint, MetaList } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 export const withStepper = () => {
-  const navigationPosition = select('navigationPosition', ['center', 'bottom'], 'center');
-  const separator = boolean('separator', true);
-  const title = text('title', 'Page title');
+  const navigationPosition = 'center';
+  const separator = true;
+  const title = 'Page title';
 
   const stepperData = [
     {
@@ -38,7 +37,7 @@ export const withStepper = () => {
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(-1);
 
-  const onChangeHandler = (activeStep: number) => {
+  const onChangeHandler = (activeStep) => {
     setActive(activeStep);
   };
 

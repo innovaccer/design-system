@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Button from '../../../Button';
 import Text from '@/components/atoms/text';
 
@@ -9,9 +8,7 @@ export const transparent = () => {
   const disabled = false;
   const expanded = false;
   const loading = false;
-
-  const children = text('children', 'Open');
-
+  const children = 'Open';
   const style = {
     justifyContent: 'space-between',
   };

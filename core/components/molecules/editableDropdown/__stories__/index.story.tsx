@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { EditableDropdown, Label } from '@/index';
 
 // CSF format story
-const dropdownOptions: any = [];
+const dropdownOptions = [];
 for (let i = 1; i <= 100; i++) {
   dropdownOptions.push({
     label: `Option ${i}`,
@@ -15,16 +14,16 @@ for (let i = 1; i <= 100; i++) {
 }
 
 export const all = () => {
-  const placeholder = text('Placeholder', 'Select Option');
+  const placeholder = 'Select Option';
 
-  const getSearchedOptions = (options: any, searchTerm: string) => {
-    const result = options.filter((option: any) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+  const getSearchedOptions = (options, searchTerm) => {
+    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
     return result;
   };
 
-  const fetchOptions = (searchTerm: string) => {
+  const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise<any>((resolve) => {
+    return new Promise((resolve) => {
       window.setTimeout(() => {
         resolve({
           options: searchedOptions,
@@ -34,7 +33,7 @@ export const all = () => {
     });
   };
 
-  const onChange = (selectedValues: any) => {
+  const onChange = (selectedValues) => {
     return action(`selected values length: ${selectedValues}`)();
   };
 

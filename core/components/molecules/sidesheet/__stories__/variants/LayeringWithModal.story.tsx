@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { boolean, select } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Paragraph, Sidesheet, Button, ModalDescription } from '@/index';
 import Modal from '@/components/molecules/modal';
 
 export const layeringWithModal = () => {
-  const open = boolean('open', true);
-  const openSecond = boolean('openSecond', false);
-  const seperator = boolean('seperator', false);
-  const backIcon = boolean('back icon', false);
-  const stickFooter = boolean('stick bottom', false);
-  const backdropClose = boolean('backdropClose', false);
-  const dimension = select('dimension', ['regular', 'large'], 'regular');
+  const open = true;
+  const openSecond = false;
+  const seperator = false;
+  const backIcon = false;
+  const stickFooter = false;
+  const backdropClose = false;
+  const dimension = 'regular';
 
   const onClose = () => {
     updateKnob('open', false);

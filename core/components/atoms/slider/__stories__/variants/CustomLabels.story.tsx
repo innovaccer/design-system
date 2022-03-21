@@ -5,11 +5,11 @@ import { Slider } from '@/index';
 export const cutsomLabels = () => {
   const [value, setValue] = React.useState(4);
 
-  const onChange = (newValue: number) => {
+  const onChange = (newValue) => {
     setValue(newValue);
   };
 
-  const labelRenderer = (newValue: number) => {
+  const labelRenderer = (newValue) => {
     return `${newValue}%`;
   };
 

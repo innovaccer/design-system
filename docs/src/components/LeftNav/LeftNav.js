@@ -12,22 +12,28 @@ const isBrowser = typeof window !== 'undefined';
 
 const LeftNav = (props) => {
   const { relativePagePath, showMobile, frontmatter } = props;
-  const navItems = useNavItems(relativePagePath);
+  const navItemsList = useNavItems(relativePagePath);
+  const navItems = navItemsList.filter((item) => {
+    if(relativePagePath.includes(MOBILE)){
+      return !item.hideInMobile;
+    }
+    return !item.hideInWeb;
+  });
+
   const showMenuButtons = showMobile || frontmatter?.showMobile;
   const [active, setActive] = React.useState();
 
   function getActiveNavItem() {
-    if (isBrowser && window.location.pathname && frontmatter.tabs) {
-
-      const url = window.location.pathname.split('/');
+    const pathName = window.location.pathname;
+    if (isBrowser && pathName && frontmatter.tabs) {
+      const url = pathName.split('/');
+      const componentName = pathName.includes('mobile') ? url[2] + '/' + url[3] : url[1] + '/' + url[2];
       const activeMenu = navItems.filter(({ link }) => {
-        return link && link.includes(url[1] + '/' + url[2]);
+        return link && link.includes(componentName);
       });
       return activeMenu[0]?.link;
-
-    } else {
-      return window.location.pathname;
     }
+    return pathName;
   }
 
   useEffect(() => {

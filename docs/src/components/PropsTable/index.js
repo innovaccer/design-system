@@ -15,7 +15,7 @@ import {
   CardBody,
   Button,
   Icon,
-  Toast
+  Tooltip
 } from '@innovaccer/design-system';
 import {
   LiveProvider,
@@ -25,6 +25,7 @@ import {
   withLive
 } from 'react-live';
 import './prism.css';
+import { copyMessage, copyMessageSuccess } from '../../util/constants';
 
 const beautifyHTMLOptions = {
   indent_size: 2,
@@ -60,8 +61,10 @@ const StoryComp = ({
   const [htmlCode, setHtmlCode] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeButton, setActiveButton] = useState('React');
-  const [showToast, setShowToast] = useState(false);
   const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData));
+  const [isTooltipActive, setTooltipActive] = useState(false);
+  const [tooltipName, setTooltipName] = useState(copyMessage);
+  const ref = React.createRef();
 
   const TabsWrap = withLive(({ live }) => {
     const { element: Element } = live;
@@ -97,8 +100,8 @@ const StoryComp = ({
     } else {
       navigator.clipboard.writeText(htmlCode);
     }
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 1000);
+    setTooltipName(copyMessageSuccess);
+    setTooltipActive(true)
   }
 
   const CopyCode = (props) => {
@@ -115,13 +118,27 @@ const StoryComp = ({
             }}
           />
         }
-        <Icon
-          name='content_copy'
-          size={20}
-          appearance='white'
-          onClick={onClick}
-          className='align-self-center cursor-pointer'
-        />
+        <div 
+          className='align-self-end'
+          onMouseLeave={()=>{setTooltipActive(false);setTooltipName(copyMessage)}}
+           ref={ref}
+        >
+          <Tooltip 
+            open={isTooltipActive} 
+            tooltip={tooltipName} 
+            position="bottom"
+            appendToBody={false}
+            boundaryElement={ref} 
+          >
+            <Icon
+            name='content_copy'
+            size={20}
+            appearance='white'
+            onClick={onClick}
+            className='align-self-center cursor-pointer'
+          />
+          </Tooltip>
+        </div>
       </div>
     );
   };
@@ -137,7 +154,7 @@ const StoryComp = ({
   const showLiveEditorContent = () => {
     if (activeButton === 'React') {
       return (
-        <div className="px-4">
+        <div className="px-4" id="react-tab">
           <LiveEditor theme={vsDark} />
         </div>
       );
@@ -231,15 +248,6 @@ const StoryComp = ({
             </Card>
           )}
         </LiveProvider>
-        {
-          showToast &&
-          <Toast
-            appearance="success"
-            title="Copied to clipboard"
-            className="position-fixed ml-5 toast"
-            onClose={() => setShowToast(false)}
-          />
-        }
       </div>
     </>
   );

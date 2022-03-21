@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Avatar from '../../Avatar';
 import Text from '@/components/atoms/text';
-import { AccentAppearance } from '@/common.type';
 
 // CSF format story
 export const appearance = () => {
   const weight = 'strong';
 
-  const appearances: AccentAppearance[] = [
+  const appearances = [
     'primary',
     'secondary',
     'alert',

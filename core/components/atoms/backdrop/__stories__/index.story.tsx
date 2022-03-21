@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import Backdrop from '../Backdrop';
 import { Paragraph } from '@/index';
 
 export const all = () => {
-  const open = boolean('open', true);
+  const open = true;
 
   const options = {
     open,

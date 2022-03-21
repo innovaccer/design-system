@@ -1,9 +1,9 @@
 import * as React from 'react';
-import PlaceholderParagraph, { PlaceholderParagraphSize } from '../../PlaceholderParagraph';
+import PlaceholderParagraph from '../../PlaceholderParagraph';
 import Text from '@/components/atoms/text';
 
 export const size = () => {
-  const sizes: PlaceholderParagraphSize[] = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'];
+  const sizes = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'];
 
   return (
     <div>

@@ -1,43 +1,38 @@
 import * as React from 'react';
-import { boolean, select, date, number } from '@storybook/addon-knobs';
 import Calendar from '../Calendar';
 import Card from '@/components/atoms/card';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { convertToDate } from '@/components/organisms/calendar/utility';
 
 // CSF format story
 export const all = () => {
-  const monthsInView = number('monthsInView', 1);
+  const monthsInView = 1;
 
-  const dateValue = date('date', undefined);
+  const dateValue = new Date('Jan 11 2021');
 
-  const startDate = date('startDate', undefined);
+  const startDate = new Date('Jan 15 2021');
 
-  const endDate = date('endDate', undefined);
+  const endDate = new Date('Jan 20 2021');
 
-  const view = select('view', ['date', 'month', 'year'], undefined);
+  const view = 'year';
 
-  const rangePicker = boolean('rangePicker', false);
+  const rangePicker = false;
 
-  const rangeLimit = number('rangeLimit', 0);
+  const rangeLimit = 0;
 
-  const firstDayOfWeek = select(
-    'firstDayOfWeek',
-    ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
-    undefined
-  );
+  const firstDayOfWeek = 'saturday';
 
-  const disabledBefore = date('disabledBefore', new Date('Jan 20 2015'));
+  const disabledBefore = new Date('Jan 20 2015');
 
-  const disabledAfter = date('disabledAfter', new Date('Jan 20 2028'));
+  const disabledAfter = new Date('Jan 20 2028');
 
-  const jumpView = boolean('jumpView', true);
+  const jumpView = true;
 
-  const yearNav = number('yearNav', -1);
+  const yearNav = -1;
 
-  const monthNav = number('monthNav', -1);
+  const monthNav = -1;
 
-  const attr: Record<string, any> = {};
+  const attr = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
   if (disabledAfter) attr.disabledAfter = disabledAfter;
   if (rangeLimit) attr.rangeLimit = rangeLimit;
@@ -53,8 +48,8 @@ export const all = () => {
         date={convertToDate(dateValue)}
         startDate={convertToDate(startDate)}
         endDate={convertToDate(endDate)}
-        onDateChange={(currDate?: Date) => action(`on date change : ${currDate}`)()}
-        onRangeChange={(sDate?: Date, eDate?: Date) => action(`on range change: ${sDate} - ${eDate}`)()}
+        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
+        onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
         view={view}
         firstDayOfWeek={firstDayOfWeek}
         {...attr}

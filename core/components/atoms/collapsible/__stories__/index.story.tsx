@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
 import Collapsible from '@/components/atoms/collapsible';
 import { Icon, Text } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const hoverable = boolean('hoverable', true);
+  const hoverable = true;
   const [expanded, setExpanded] = React.useState(false);
 
   return (

@@ -1,18 +1,17 @@
 import * as React from 'react';
 import { Dropzone, Link, FileList, Button } from '@/index';
-import { DropzoneProps, FileListProps } from '@/index.type';
 
 export const all = () => {
-  const [files, setFiles] = React.useState<FileListProps['fileList']>([]);
-  const getSize = (size: number) => `${(size / (1024 * 1024)).toFixed(2)} MB`;
+  const [files, setFiles] = React.useState([]);
+  const getSize = (size) => `${(size / (1024 * 1024)).toFixed(2)} MB`;
 
-  const onDelete = (id: number) => {
+  const onDelete = (id) => {
     const updatedFiles = files.filter((file) => file.id !== id);
     setFiles(updatedFiles);
   };
 
-  const onDropHandler: DropzoneProps['onDrop'] = (_event, acceptedFiles, rejectedFiles) => {
-    const acceptedFileDetailList: FileListProps['fileList'] = acceptedFiles.map((file, id) => ({
+  const onDropHandler = (_event, acceptedFiles, rejectedFiles) => {
+    const acceptedFileDetailList = acceptedFiles.map((file, id) => ({
       file,
       id: files.length + id,
       fileSize: getSize(file.size),
@@ -20,7 +19,7 @@ export const all = () => {
       status: 'completed',
     }));
 
-    const rejectedFilesDetailList: FileListProps['fileList'] = rejectedFiles.map((rejectedFile, id) => {
+    const rejectedFilesDetailList = rejectedFiles.map((rejectedFile, id) => {
       const { file, errors } = rejectedFile;
       const errorMessageArray = errors.map((error) => error.message);
       return {
@@ -37,7 +36,7 @@ export const all = () => {
     setFiles(updatedFiles);
   };
 
-  const actionRenderer: FileListProps['actionRenderer'] = (fileItem) => {
+  const actionRenderer = (fileItem) => {
     return (
       <React.Fragment>
         {fileItem.networkError && (

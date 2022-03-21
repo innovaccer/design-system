@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Card, Table, CardSubdued, Text } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { TableProps } from '@/index.type';
 
 export const nestedTableWithNestedCards = () => {
   const data = [
@@ -39,7 +38,7 @@ export const nestedTableWithNestedCards = () => {
     },
   ];
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'lastRun',
       displayName: 'Last Run',
@@ -88,7 +87,7 @@ export const nestedTableWithNestedCards = () => {
     },
   ];
 
-  const nestedRowRenderer = (props: any) => (
+  const nestedRowRenderer = (props) => (
     <CardSubdued className="ml-7 mb-4 mt-3 mr-4">
       <div className="d-flex flex-row">
         <div style={{ width: '17%' }}>

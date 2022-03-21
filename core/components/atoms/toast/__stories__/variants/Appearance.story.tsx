@@ -1,10 +1,9 @@
 import * as React from 'react';
 import Toast from '../../Toast';
-import { MessageAppearance } from '@/common.type';
 
 // CSF format story
 export const appearance = () => {
-  const appearances: MessageAppearance[] = ['info', 'success', 'alert', 'warning'];
+  const appearances = ['info', 'success', 'alert', 'warning'];
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {

@@ -1,26 +1,15 @@
 import * as React from 'react';
 import { Text, Button, Popover } from '@/index';
-import { PopoverProps } from '@/index.type';
 
 // CSF format story
 export const position = () => {
-  const positions: PopoverProps['position'][] = [
-    'top',
-    'top-start',
-    'top-end',
-    'bottom',
-    'bottom-start',
-    'bottom-end',
-    'left',
-    'right',
-  ];
-
+  const positions = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
   const style = {
     display: 'flex',
     'flex-wrap': 'wrap',
   };
 
-  const getTrigger = (pos: string) => <Button appearance="basic">{pos}</Button>;
+  const getTrigger = (pos) => <Button appearance="basic">{pos}</Button>;
 
   return (
     <div style={style}>

@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Paragraph, Sidesheet, ModalDescription, Button, Badge, Heading, Divider } from '@/index';
 
 export const customHeader = () => {
-  const open = boolean('open', true);
-  const seperator = boolean('seperator', false);
-  const stickFooter = boolean('stick bottom', false);
-  const backdropClose = boolean('backdropClose', false);
+  const open = true;
+  const seperator = false;
+  const stickFooter = false;
+  const backdropClose = false;
 
   const onClose = () => {
     updateKnob('open', false);

@@ -1,27 +1,26 @@
 import * as React from 'react';
 import { VerificationCodeInput, Label } from '@/index';
-import { select, text, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
-  const inputType = select('type', ['text', 'password', 'number'], 'number');
+  const inputType = 'number';
 
-  const fields = select('fields', [4, 6], undefined);
+  const fields = undefined;
 
-  const value = text('values', '6543');
+  const value = '6543';
 
-  const placeholder = text('placeholder', '-');
+  const placeholder = '-';
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const autoFocus = boolean('autoFocus', true);
+  const autoFocus = true;
 
-  const readOnly = boolean('readOnly', false);
+  const readOnly = false;
 
-  const error = boolean('error', false);
+  const error = false;
 
-  const pattern = text('pattern', '');
+  const pattern = '';
 
   return (
     <>

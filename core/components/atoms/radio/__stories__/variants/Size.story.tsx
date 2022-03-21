@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Radio, { Size } from '../../index';
+import Radio from '../../index';
 
 // CSF format story
 export const size = () => {
-  const sizes: Size[] = ['tiny', 'regular'];
+  const sizes = ['tiny', 'regular'];
 
   const name = 'gender';
   return (

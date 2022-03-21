@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { boolean, select } from '@storybook/addon-knobs';
 import PlaceholderImage from '../PlaceholderImage';
 
 export const all = () => {
-  const round = boolean('round', false);
-  const size = select('size', ['small', 'medium', 'large'], 'small');
+  const round = false;
+  const size = 'small';
 
   const options = {
     round,

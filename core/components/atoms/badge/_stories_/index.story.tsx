@@ -1,18 +1,11 @@
 import * as React from 'react';
-import { select, boolean, text } from '@storybook/addon-knobs';
 import Badge from '../Badge';
 
 // CSF format story
 export const all = () => {
-  const appearance = select(
-    'appearance',
-    ['primary', 'secondary', 'alert', 'warning', 'success', 'accent1', 'accent2', 'accent3', 'accent4'],
-    undefined
-  );
-
-  const subtle = boolean('subtle', false);
-
-  const children = text('children', 'Badge');
+  const appearance = 'primary';
+  const subtle = false;
+  const children = 'Badge';
 
   return (
     <Badge appearance={appearance} subtle={subtle}>

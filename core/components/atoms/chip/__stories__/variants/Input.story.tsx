@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { text } from '@storybook/addon-knobs';
 import { Text } from '@/index';
 import Chip from '../../Chip';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 const BooleanValue = [true, false];
 export const Input = () => {
-  const icon = text('icon', 'assessment');
-  const label = text('label', 'Input');
+  const icon = 'assessment';
+  const label = 'Input';
   return (
     <div className="d-flex">
       {BooleanValue.map((booleanvalue, ind) => {

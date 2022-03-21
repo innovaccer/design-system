@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { select, number } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import Pagination from '../Pagination';
 
 // CSF format story
 export const all = () => {
-  const paginationType = select('type', ['basic', 'jump'], undefined);
+  const paginationType = 'jump';
 
-  const page = number('page', 1);
+  const page = 1;
 
-  const totalPages = number('totalPages', 50);
+  const totalPages = 50;
 
   return (
     <Pagination

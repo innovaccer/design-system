@@ -3,7 +3,7 @@ import { MetricInput } from '@/index';
 
 // CSF format story
 export const controlledMetricInput = () => {
-  const [value, setValue] = React.useState<React.ReactText>(10);
+  const [value, setValue] = React.useState(10);
 
   return (
     <div style={{ width: 'var(--spacing-6)' }}>

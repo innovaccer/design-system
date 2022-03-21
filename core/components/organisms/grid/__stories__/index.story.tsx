@@ -1,47 +1,46 @@
 import * as React from 'react';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
-import { boolean, select, number } from '@storybook/addon-knobs';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Card, Grid } from '@/index';
 import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 
 export const all = () => {
-  const applyLoaderSchema = boolean('applyLoaderSchema', true);
+  const applyLoaderSchema = true;
 
-  const loading = boolean('loading', false);
+  const loading = false;
 
-  const error = boolean('error', false);
+  const error = false;
 
-  const applySchema = boolean('applySchema', true);
+  const applySchema = true;
 
-  const applyData = boolean('applyData', true);
+  const applyData = true;
 
-  const totalRecords = number('totalRecords', data.length);
+  const totalRecords = data.length;
 
-  const type = select('type', ['resource', 'data'], 'resource');
+  const type = 'resource';
 
-  const size = select('size', ['comfortable', 'standard', 'compressed', 'tight'], 'comfortable');
+  const size = 'comfortable';
 
-  const draggable = boolean('draggable', true);
+  const draggable = true;
 
-  const nestedRows = boolean('nestedRows', false);
+  const nestedRows = false;
 
-  const withCheckbox = boolean('withCheckbox', false);
+  const withCheckbox = false;
 
-  const showMenu = boolean('showMenu', true);
+  const showMenu = true;
 
-  const withPagination = boolean('withPagination', false);
+  const withPagination = false;
 
-  const page = number('page', 1);
+  const page = 1;
 
-  const pageSize = number('pageSize', 12);
+  const pageSize = 12;
 
-  const headCellTooltip = boolean('headCellTooltip', false);
+  const headCellTooltip = false;
 
-  const separator = boolean('separator', false);
+  const separator = false;
 
   return (
     <div

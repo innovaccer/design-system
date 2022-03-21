@@ -1,8 +1,6 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Modal, Button, Text, Paragraph, Message, List } from '@/index';
-import { GridCellProps } from '@/components/organisms/grid/GridCell';
-import { TableProps } from '@/index.type';
 
 export const dialogs = () => {
   const [open, setOpen] = React.useState(true);
@@ -28,11 +26,11 @@ export const dialogs = () => {
     { Name: 'Well-Child Visit' },
   ];
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'data',
       displayName: 'data',
-      cellRenderer: (props: GridCellProps) => {
+      cellRenderer: (props) => {
         return <Text className=" ml-4">{`${props.data.Name}`}</Text>;
       },
     },

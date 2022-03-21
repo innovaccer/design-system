@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Navigation } from '@/index';
-import { action } from '@storybook/addon-actions';
-import { Menu } from '../../Navigation';
-import { select } from '@storybook/addon-knobs';
+import { action } from '@/utils/action';
 
 export const horizontal = () => {
   const data = [
@@ -27,13 +25,13 @@ export const horizontal = () => {
     name: 'menu_1',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     action(`menu-clicked: ${JSON.stringify(menu)}`)();
 
     setActive(menu);
   };
 
-  const align = select('align', ['left', 'center'], 'center');
+  const align = 'center';
 
   return (
     <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>

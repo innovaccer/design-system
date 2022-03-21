@@ -1,14 +1,11 @@
 import * as React from 'react';
-import { select, text } from '@storybook/addon-knobs';
 import { Message, Text } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const appearance = select('appearance', ['alert', 'info', 'success', 'warning'], undefined);
-
-  const title = text('title', 'Design System');
-
-  const description = text('description', 'Design System is a library of reusable components');
+  const appearance = 'warning';
+  const title = 'Design System';
+  const description = 'Design System is a library of reusable components';
 
   return (
     <Message

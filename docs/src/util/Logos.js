@@ -2,18 +2,23 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 export function useLogoItems() {
   const {
-    allImageSharp: { nodes },
+    allFile: { edges },
   } = useStaticQuery(graphql`
     query IMAGES {
-      allImageSharp {
-        nodes {
-          fluid {
-            src
+      allFile(filter: {sourceInstanceName: {eq: "StaticImages"}}) {
+        edges {
+          node {
+            childImageSharp {
+              gatsbyImageData
+              fluid {
+                src
+              }
+            }
           }
-          gatsbyImageData
         }
       }
     }
   `);
-  return nodes;
+  const data = edges.map((item) => item.node.childImageSharp)
+  return data;
 }

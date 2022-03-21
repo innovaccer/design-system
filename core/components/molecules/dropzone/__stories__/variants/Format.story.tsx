@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Dropzone, Link } from '@/index';
-import { action } from '@storybook/addon-actions';
-import { DropzoneProps } from '@/index.type';
+import { action } from '@/utils/action';
 
 export const format = () => {
-  const onDrop: DropzoneProps['onDrop'] = (_event, acceptedFiles, rejectedFiles) => {
+  const onDrop = (_event, acceptedFiles, rejectedFiles) => {
     return action(`Accepted Files: ${acceptedFiles}, rejectedFiles: ${rejectedFiles}`)();
   };
 

@@ -1,16 +1,15 @@
 import * as React from 'react';
 import PageHeader from '../../PageHeader';
 import { Button, Breadcrumbs, Badge, StatusHint, Tab, TabsWrapper, Text, MetaList } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { number, text, boolean } from '@storybook/addon-knobs';
 
 export const withTabs = () => {
-  const active = number('active', 1);
-  const separator = boolean('separator', true);
-  const title = text('title', 'Page title');
+  const active = 1;
+  const separator = true;
+  const title = 'Page title';
 
-  const onTabChangeHandler = (tabIndex: number) => {
+  const onTabChangeHandler = (tabIndex) => {
     updateKnob('active', tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };

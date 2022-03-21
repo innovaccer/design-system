@@ -1,16 +1,14 @@
 import * as React from 'react';
 import { Navigation } from '@/index';
-import { action } from '@storybook/addon-actions';
-import { boolean } from '@storybook/addon-knobs';
+import { action } from '@/utils/action';
 import { updateKnob } from '@/utils/storybookEventEmitter';
-import { Menu } from '../../Navigation';
 
 export const verticalRound = () => {
-  const expanded = boolean('expanded', false);
+  const expanded = false;
 
-  const autoCollapse = boolean('autoCollapse', true);
+  const autoCollapse = true;
 
-  const footer = boolean('footer', true);
+  const footer = true;
 
   const data = [
     {
@@ -81,7 +79,7 @@ export const verticalRound = () => {
     name: 'care_management.timeline',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     action(`menu-clicked: ${JSON.stringify(menu)}`)();
 
     setActive(menu);

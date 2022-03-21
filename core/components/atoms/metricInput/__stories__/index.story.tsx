@@ -1,25 +1,24 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
 import { MetricInput } from '@/index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
-  const size = select('size', ['regular', 'large'], undefined);
+  const size = 'large';
 
-  const placeholder = text('placeholder', 'Placeholder');
+  const placeholder = 'Placeholder';
 
-  const disabled = boolean('disabled', false);
+  const disabled = false;
 
-  const readOnly = boolean('readOnly', false);
+  const readOnly = false;
 
-  const icon = text('icon', '');
+  const icon = '';
 
-  const prefix = text('prefix', '');
+  const prefix = '';
 
-  const suffix = text('suffix', '');
+  const suffix = '';
 
-  const error = boolean('error', false);
+  const error = false;
 
   return (
     <div style={{ width: 'var(--spacing-8)' }}>

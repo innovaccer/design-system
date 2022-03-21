@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 import { Tabs, Tab, Text, Badge, Icon } from '@/index';
 
 // CSF format story
 export const customLabels = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
-  const onTabChangeHandler = (tabIndex: number) => {
+  const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };

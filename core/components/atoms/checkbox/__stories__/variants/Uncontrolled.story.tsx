@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Checkbox from '../../index';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 // CSF format story
 export const uncontrolledCheckbox = () => {
-  const handleParentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleParentChange = (event) => {
     return action(`onChange: ${event.target.checked}`)();
   };
 

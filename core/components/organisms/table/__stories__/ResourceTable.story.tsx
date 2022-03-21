@@ -1,9 +1,8 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { TableProps } from '@/index.type';
 import { Card, Table, Dropdown, Avatar, Button } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { action } from '@storybook/addon-actions';
+import { action } from '@/utils/action';
 
 const data = [
   {
@@ -73,14 +72,14 @@ const data = [
 ];
 
 export const resourceTable = () => {
-  const statusAppearance: any = {
+  const statusAppearance = {
     'In Progress': 'info',
     Scheduled: 'warning',
     Draft: 'default',
     Failed: 'alert',
   };
 
-  const schema: TableProps['schema'] = [
+  const schema = [
     {
       name: 'name',
       displayName: 'Name',

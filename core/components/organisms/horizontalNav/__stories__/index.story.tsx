@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { HorizontalNav } from '@/index';
-import { action } from '@storybook/addon-actions';
-import { Menu } from '@/utils/navigationHelper';
+import { action } from '@/utils/action';
 
 export const all = () => {
   const data = [
@@ -26,7 +25,7 @@ export const all = () => {
     name: 'menu_1',
   });
 
-  const onClickHandler = (menu: Menu) => {
+  const onClickHandler = (menu) => {
     action(`menu-clicked: ${JSON.stringify(menu)}`)();
 
     setActive(menu);

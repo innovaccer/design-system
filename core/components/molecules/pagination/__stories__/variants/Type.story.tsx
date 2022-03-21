@@ -1,16 +1,15 @@
 import * as React from 'react';
-import { number } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
-import Pagination, { PaginationType } from '../../Pagination';
+import { action } from '@/utils/action';
+import Pagination from '../../Pagination';
 import Text from '@/components/atoms/text';
 
 // CSF format story
 export const type = () => {
-  const paginationTypes: PaginationType[] = ['basic', 'jump'];
+  const paginationTypes = ['basic', 'jump'];
 
-  const page = number('page', 1);
+  const page = 1;
 
-  const totalPages = number('totalPages', 50);
+  const totalPages = 50;
 
   const innerStyle = {
     display: 'flex',

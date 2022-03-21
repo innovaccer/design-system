@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { FileList, Button } from '@/index';
 import { fileList } from './__common__/fileListExample';
-import { action } from '@storybook/addon-actions';
-import { FileListItemProps } from '../FileListItem';
+import { action } from '@/utils/action';
 
 export const all = () => {
-  const onClick = (file: FileListItemProps) => {
+  const onClick = (file) => {
     return action(`Clicked ${file}`)();
   };
 

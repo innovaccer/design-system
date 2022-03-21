@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { select, text, boolean } from '@storybook/addon-knobs';
 import { EditableInput } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const placeholder = text('Placeholder', 'First Name');
-  const error = boolean('error', false);
-  const errorMessage = text('Error Message', 'Error Message Description');
+  const placeholder = 'First Name';
+  const error = false;
+  const errorMessage = 'Error Message Description';
 
   const [value, setValue] = React.useState('');
 
-  const size = select('size', ['regular', 'tiny'], 'regular');
+  const size = 'regular';
 
-  const onChange = (updatedValue: string) => {
+  const onChange = (updatedValue) => {
     setValue(updatedValue);
   };
 
