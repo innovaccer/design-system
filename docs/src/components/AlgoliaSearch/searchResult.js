@@ -5,7 +5,7 @@ import {
   Index,
   connectHits,
 } from "react-instantsearch-dom";
-import { Popover, Subheading, Text, Icon, Badge } from '@innovaccer/design-system';
+import { Popover, Subheading, Text, Icon, Badge, Divider } from '@innovaccer/design-system';
 import './search.css';
 import { removeDuplicate, getHeadingUrl } from "./helpers";
 
@@ -52,7 +52,9 @@ const CustomResultEntry = ({ data }) => {
               className="search-result-link">
               <div className="p-4 search-result-entry d-flex align-items-center">
                 <Icon className="mx-4" appearance='subtle' size={16} name='tag' />
-                <Text appearance='subtle'>{item.name}</Text>
+                <Text
+                // appearance='subtle'
+                >{item.name}</Text>
               </div>
             </Link>
           </div>
@@ -65,8 +67,11 @@ const CustomResultEntry = ({ data }) => {
 const ShowResults = ({ name, list }) => {
   return (
     <div>
-      <Subheading className="pb-4 px-5" appearance="subtle">{name}</Subheading>
+      <Subheading className="pb-4 px-5 search-category"
+        appearance="subtle"
+      >{name}</Subheading>
       {list.map((data) => <CustomResultEntry data={data} />)}
+      <Divider className="mb-4" />
     </div>
   )
 }
