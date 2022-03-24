@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import Checkbox from '../Checkbox';
 
 // CSF format story
@@ -9,15 +8,15 @@ export const all = () => {
 
   const label = 'Checkbox';
 
-  const checked = false;
+  const [checked, setChecked] = React.useState(false);
 
-  const indeterminate = false;
+  const [indeterminate, setIndeterminate] = React.useState(false);
 
   const disabled = false;
 
   const onChangeHandler = (event) => {
-    updateKnob('checked', event.target.checked);
-    updateKnob('indeterminate', event.target.indeterminate);
+    setChecked(!checked);
+    setIndeterminate(!indeterminate);
     return action(`onChange: ${event.target.checked}`)();
   };
 

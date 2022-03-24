@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Navigation } from '@/index';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const verticalRound = () => {
-  const expanded = false;
+  const [expanded, setExpanded] = React.useState(false);
 
   const autoCollapse = true;
 
@@ -93,7 +92,7 @@ export const verticalRound = () => {
         expanded={expanded}
         autoCollapse={autoCollapse}
         footer={footer}
-        onToggle={() => updateKnob('expanded', !expanded)}
+        onToggle={() => setExpanded(!expanded)}
         active={active}
         rounded={true}
         onClick={onClickHandler}

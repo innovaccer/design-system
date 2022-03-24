@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Paragraph, Sidesheet, Button, ModalDescription } from '@/index';
 import Modal from '@/components/molecules/modal';
 
 export const layeringWithModal = () => {
-  const open = true;
-  const openSecond = false;
+  const [open, setOpen] = React.useState(true);
+  const [openSecond, setOpenSecond] = React.useState(false);
   const seperator = false;
   const backIcon = false;
   const stickFooter = false;
@@ -14,12 +13,12 @@ export const layeringWithModal = () => {
   const dimension = 'regular';
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
     action('on close triggered')();
   };
 
   const onCloseSecond = () => {
-    updateKnob('openSecond', false);
+    setOpenSecond(false);
     action('on close triggered')();
   };
 
@@ -44,7 +43,7 @@ export const layeringWithModal = () => {
     backdropClose,
     footer: (
       <>
-        <Button appearance="primary" className="mr-4" onClick={() => updateKnob('openSecond', true)}>
+        <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
           Open
         </Button>
         <Button appearance="basic">Basic</Button>

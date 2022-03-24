@@ -2,15 +2,14 @@ import * as React from 'react';
 import PageHeader from '../../PageHeader';
 import { Button, Breadcrumbs, Badge, StatusHint, Tab, TabsWrapper, Text, MetaList } from '@/index';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const withTabs = () => {
-  const active = 1;
+  const [active, setActive] = React.useState(1);
   const separator = true;
   const title = 'Page title';
 
   const onTabChangeHandler = (tabIndex) => {
-    updateKnob('active', tabIndex);
+    setActive(tabIndex);
     return action(`tab-change: ${tabIndex}`)();
   };
 
