@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { Card, CardBody, Row, Column, Heading, Input, } from '@innovaccer/design-system';
+import { Card, CardBody, Row, Column, Heading, Input,EmptyState,Button } from '@innovaccer/design-system';
 import { Link } from 'gatsby';
-
 import './overview.css';
 import { debounce } from '../../../../util/Helpers';
 import { data } from '../../../../data/components/index.js';
+import noResultImage from '../../../home/noresult.png';
+
 
 function Overview() {
 
   const [previewList, setPreviewList] = useState(data);
+  const [searchKey , setSearchKey] = useState('')
 
   const onSearchHandler = debounce((target) => {
+    setSearchKey(target.value)
     const searchList = data
       .filter((item) => item.name.toLowerCase().match(target.value.toLowerCase()));
     setPreviewList(searchList);
@@ -60,9 +63,13 @@ function Overview() {
                 </Column>
               )
             }) :
-            <Heading size="s" className="mb-5">
-              No result found :(
-            </Heading>
+            <div className="d-flex justify-content-center" style={{ transform: "translate(50%,64px)" }}>
+              <EmptyState 
+                description="Sorry! We could not find any match. Please try again"
+                imageSrc={noResultImage}
+                size="small" title={`No results found for ${"'"+searchKey+"'"}`}
+              />
+            </div>
         }
       </Row>
     </div>
