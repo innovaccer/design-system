@@ -2,13 +2,12 @@ import * as React from 'react';
 import { Paragraph } from '@/index';
 import { action } from '@/utils/action';
 import Dialog from '../../../Dialog';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const success = () => {
-  const open = true;
+  const [open, setOpen] = React.useState(true);
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
   };
 
   const options = {

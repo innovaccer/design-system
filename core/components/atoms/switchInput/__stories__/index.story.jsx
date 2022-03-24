@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import Switch from '../index';
 import { Label } from '@/index';
 
@@ -8,12 +7,12 @@ import { Label } from '@/index';
 export const all = () => {
   const size = 'tiny';
 
-  const checked = false;
+  const [checked, setChecked] = React.useState(false);
 
   const disabled = false;
 
   const onChangeHandler = (_event, checkedValue) => {
-    updateKnob('checked', checkedValue);
+    setChecked(!checked);
     return action(`switch-change: ${checkedValue}`)();
   };
 

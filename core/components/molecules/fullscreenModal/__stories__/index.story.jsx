@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
@@ -12,12 +11,10 @@ export const all = () => {
   const onClose = () => {
     setOpen(!open);
     action('on close triggered')();
-    updateKnob('open', !open);
   };
 
   const openModal = () => {
     setOpen(true);
-    updateKnob('open', !open);
   };
 
   return (

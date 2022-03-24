@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Paragraph, Sidesheet, Button, ModalDescription } from '@/index';
 
 export const all = () => {
-  const open = true;
+  const [open, setOpen] = React.useState(true);
   const seperator = false;
   const backIcon = false;
   const stickFooter = false;
@@ -12,7 +11,7 @@ export const all = () => {
   const dimension = 'regular';
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
     action('on close triggered')();
   };
 

@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
 import { Modal, ModalHeader, ModalFooter, ModalBody, ModalDescription, Button, Paragraph } from '@/index';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const large = () => {
-  const open = true;
+  const [open, setOpen] = React.useState(true);
   const backdropClose = false;
   const dimension = 'large';
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
     action('on close triggered')();
   };
 

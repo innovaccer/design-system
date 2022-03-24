@@ -1,14 +1,11 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Button, Popover } from '@/index';
 
 // CSF format story
 export const boundaryElement = () => {
-  const open = false;
-
+  const [open, setOpen] = React.useState(false);
   const position = 'bottom';
-
   const on = 'hover';
   const appendToBody = true;
   const hoverable = true;
@@ -18,7 +15,7 @@ export const boundaryElement = () => {
   const dark = false;
 
   const onToggle = () => {
-    updateKnob('open', !open);
+    setOpen(!open);
   };
 
   const trigger = <Button appearance="basic">Open Popup</Button>;

@@ -1,21 +1,20 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Modal, ModalDescription, ModalHeader, ModalBody, ModalFooter, Button, Text, Paragraph } from '@/index';
 
 export const layering = () => {
-  const open = true;
-  const openSecondOverlay = false;
+  const [open, setOpen] = React.useState(true);
+  const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
   const backdropClose = false;
   const dimension = 'medium';
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
     action('on close triggered')();
   };
 
   const onCloseSecondOverlay = () => {
-    updateKnob('openSecondOverlay', false);
+    setOpenSecondOverlay(false);
     action('on close triggered')();
   };
 
@@ -46,7 +45,7 @@ export const layering = () => {
             <Button appearance="basic" onClick={action('Basic button click')}>
               Basic
             </Button>
-            <Button appearance="primary" className="ml-4" onClick={() => updateKnob('openSecondOverlay', true)}>
+            <Button appearance="primary" className="ml-4" onClick={() => setOpenSecondOverlay(true)}>
               Open
             </Button>
           </>

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
@@ -14,23 +13,19 @@ export const layering = () => {
   const onClose = () => {
     setOpen(!open);
     action('on close triggered')();
-    updateKnob('open', !open);
   };
 
   const onCloseSecondOverlay = () => {
     setOpenSecondOverlay(!openSecondOverlay);
     action('on close triggered')();
-    updateKnob('openSecondOverlay', !openSecondOverlay);
   };
 
   const openModal = () => {
     setOpen(true);
-    updateKnob('open', !open);
   };
 
   const openSecondModal = () => {
     setOpenSecondOverlay(true);
-    updateKnob('openSecondOverlay', true);
   };
 
   return (

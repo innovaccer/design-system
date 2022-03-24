@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Heading, Text, Paragraph, Sidesheet, ModalDescription, Button } from '@/index';
 
 export const twoSteps = () => {
   const [page, setPage] = React.useState(2);
   const [animate, setAnimate] = React.useState(true);
-
-  const open = true;
+  const [open, setOpen] = React.useState(true);
   const seperator = false;
   const stickFooter = false;
   const backdropClose = false;
@@ -21,7 +19,7 @@ export const twoSteps = () => {
   }, [page]);
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
     action('on close triggered')();
   };
 
