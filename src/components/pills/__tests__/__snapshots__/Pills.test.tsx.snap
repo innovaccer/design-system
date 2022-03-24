@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pills Component Snapshots 
+  appearance: "accent1", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent1"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "accent1", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent1"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "accent2", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent2"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "accent2", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent2"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "accent3", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent3"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "accent3", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent3"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "accent4", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--accent4"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "accent4", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-accent4"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "alert", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--alert"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "alert", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-alert"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "primary", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--primary"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "primary", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-primary"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "success", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--success"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "success", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-success"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "warning", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--warning"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Pills Component Snapshots 
+  appearance: "warning", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Pills Badge--subtle-warning"
+      data-test="DesignSystem-Pills"
+      role="status"
+    >
+      Pills
+    </span>
+  </div>
+</body>
+`;
