@@ -31,7 +31,7 @@ import { ArgsTable } from './PropsTable/Table';
 import Markdown from 'markdown-to-jsx';
 import { useFrontmatter } from '../util/Frontmatter';
 import MDXHeading from './MDXHeading.js';
-import { copyMessage } from "../util/constants.js";
+import { copyMessage,copyMessageSuccess } from "../util/constants.js";
 
 
 
@@ -92,7 +92,7 @@ const Layout = ({
       }
     }
     navigator.clipboard.writeText(codeBlock);
-    setCodeCopyText(str._source.lineNumber)
+    setCodeCopyText(str)
   }
 };
 
@@ -105,7 +105,7 @@ const Layout = ({
         className='ml-auto'
       >
       <Tooltip 
-        open={children._source?.lineNumber === codeCopyText? isTooltipActiveCode:false} 
+        open={children === codeCopyText? isTooltipActiveCode:false} 
         tooltip={tooltipName} 
         position="bottom"
         appendToBody={true}
@@ -114,7 +114,7 @@ const Layout = ({
         <Button
         icon='copy'
         className='p-0'
-        onClick={() => {copyToClipboard(children);toggleTooltip("Copied!","code")}}
+        onClick={() => {copyToClipboard(children);toggleTooltip(copyMessageSuccess,"code")}}
         />
       </Tooltip>
       </div>
