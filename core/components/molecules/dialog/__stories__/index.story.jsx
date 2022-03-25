@@ -2,16 +2,15 @@ import * as React from 'react';
 import { Paragraph } from '@/index';
 import { action } from '@/utils/action';
 import Dialog from '../Dialog';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 
 export const all = () => {
-  const open = true;
+  const [open, setOpen] = React.useState(true);
   const dimension = 'small';
   const primaryButtonAppearance = 'primary';
   const secondaryButtonAppearance = 'basic';
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
     action('on close triggered')();
   };
 

@@ -1,16 +1,15 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { updateKnob } from '@/utils/storybookEventEmitter';
 import { Text, Paragraph, Sidesheet, ModalDescription, Button, Badge, Heading, Divider } from '@/index';
 
 export const customHeader = () => {
-  const open = true;
+  const [open, setOpen] = React.useState(true);
   const seperator = false;
   const stickFooter = false;
   const backdropClose = false;
 
   const onClose = () => {
-    updateKnob('open', false);
+    setOpen(false);
     action('on close triggered')();
   };
 
