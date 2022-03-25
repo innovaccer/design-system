@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./tools/develop.sh",
     "build": "./tools/build.sh",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "extract:dev": "export NODE_ENV=development && node ./tools/extract.js",
+    "extract": "export NODE_ENV=production && node ./tools/extract.js"
   },
   "dependencies": {
     "gatsby": "^3.6.1",
