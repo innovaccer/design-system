@@ -38,12 +38,14 @@ export const GenericChip = (props: GenericChipProps) => {
     if (onClick) onClick();
   };
 
-  const iconAppearance = classNames({
-    ['disabled']: disabled && !selected,
-    ['info']: selected,
-    ['subtle']: !disabled && !selected && !clearButton && !icon,
-    ['default']: !disabled && !selected && !clearButton && icon,
-  }) as IconProps['appearance'];
+  const iconAppearance = (align: string) =>
+    classNames({
+      ['disabled']: disabled && !selected,
+      ['primary']: !disabled && selected,
+      ['primary_lighter']: disabled && selected,
+      ['subtle']: !disabled && !selected && align === 'right',
+      ['inverse']: !disabled && !selected && align === 'left',
+    }) as IconProps['appearance'];
 
   const textAppearance = classNames({
     ['disabled']: disabled && !selected,
@@ -64,7 +66,7 @@ export const GenericChip = (props: GenericChipProps) => {
         <Icon
           data-test="DesignSystem-GenericChip--Icon"
           name={icon}
-          appearance={iconAppearance}
+          appearance={iconAppearance('left')}
           className={iconClass('left')}
         />
       )}
@@ -75,7 +77,7 @@ export const GenericChip = (props: GenericChipProps) => {
         <Icon
           data-test="DesignSystem-GenericChip--clearButton"
           name="clear"
-          appearance={iconAppearance}
+          appearance={iconAppearance('right')}
           className={iconClass('right')}
           onClick={onCloseHandler}
         />
