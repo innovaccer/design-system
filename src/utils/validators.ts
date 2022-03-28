@@ -75,3 +75,20 @@
 
 //   return hoursCond && minutes <= 60;
 // };
+
+export const checkIfImageExists = (url: string, callback: (arg0: boolean) => void) => {
+  const img = new Image();
+  img.src = url;
+
+  if (img.complete) {
+    callback(true);
+  } else {
+    img.onload = () => {
+      callback(true);
+    };
+
+    img.onerror = () => {
+      callback(false);
+    };
+  }
+};

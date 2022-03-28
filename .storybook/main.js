@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  staticDirs: ['../dist/static'],
   "stories": [
     "../src/components/**/*.story.@(js|jsx|ts|tsx)"
   ],

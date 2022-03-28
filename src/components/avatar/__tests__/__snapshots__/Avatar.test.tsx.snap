@@ -8,29 +8,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent1"
+        class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent1"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent1"
+      class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent1"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -95,29 +99,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent2"
+        class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent2"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent2"
+      class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent2"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -182,29 +190,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent3"
+        class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent3"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent3"
+      class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent3"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -269,29 +281,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent4"
+        class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent4"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent4"
+      class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent4"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -356,29 +372,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--alert"
+        class="Avatar Avatar--regular Avatar--alert Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--alert"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--alert"
+      class="Avatar Avatar--regular Avatar--alert Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--alert"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -443,29 +463,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--primary"
+        class="Avatar Avatar--regular Avatar--primary Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--primary"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--primary"
+      class="Avatar Avatar--regular Avatar--primary Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--primary"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -530,29 +554,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--success"
+        class="Avatar Avatar--regular Avatar--success Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--success"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--success"
+      class="Avatar Avatar--regular Avatar--success Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--success"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -617,29 +645,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--warning"
+        class="Avatar Avatar--regular Avatar--warning Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--warning"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--warning"
+      class="Avatar Avatar--regular Avatar--warning Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--warning"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -704,29 +736,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent1"
+        class="Avatar Avatar--regular Avatar--secondary Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent1"
+      class="Avatar Avatar--regular Avatar--secondary Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 16px; width: 16px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -791,29 +827,33 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--tiny Avatar--accent1"
+        class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
-        <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
-          data-test="DesignSystem-Text"
+        <i
+          class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+          data-test="DesignSystem-Avatar--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
         >
-          JD
-        </span>
+          person_round
+        </i>
       </span>
     </div>
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--tiny Avatar--accent1"
+      class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
-      <span
-        class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
-        data-test="DesignSystem-Text"
+      <i
+        class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 12px; width: 12px;"
       >
-        JD
-      </span>
+        person_round
+      </i>
     </span>
   </div>,
   "debug": [Function],

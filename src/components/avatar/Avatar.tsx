@@ -2,120 +2,121 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-// import { TooltipProps } from '@/index.type';
 import { AccentAppearance } from '@/common.type';
+import { checkIfImageExists } from '@/utils/validators';
 
 export type AvatarSize = 'regular' | 'tiny';
-
 export interface AvatarProps extends BaseProps {
   /**
    * Color of the `Avatar`
    */
   appearance?: AccentAppearance;
   /**
-   * **Only first 2 characters are rendered (SOON TO BE DEPRECATED)**
+   * Text to show in `Avatar`
    */
-  children?: string;
+  text?: string;
   /**
-   * First Name
+   * Icon to show in `Avatar`
    */
-  firstName?: string;
+  icon?: string;
+
+  image?: {
+    /**
+     * Image url to show in `Avatar`
+     */
+    src: string;
+    /**
+     * Image alt text to show in `Avatar`
+     */
+    altText: string;
+  };
   /**
-   * Last Name
+   * Tooltip text to show in `Avatar`
    */
-  lastName?: string;
+  tooltip?: string;
   /**
-   * Determines if tooltip is visible
-   */
-  withTooltip: boolean;
-  /**
-   * Position to place the tooltip
-   */
-  // tooltipPosition: TooltipProps['position'];
-  /**
-   * Determines size of `Avatar`
+   * To set size of the `Avatar`
    */
   size: AvatarSize;
 }
 
-const initialsLength = 2;
-
 export const Avatar = (props: AvatarProps) => {
-  const { withTooltip, size, children, firstName, lastName, className, appearance } = props;
+  const { size, className, appearance, icon, text, tooltip, image, ...rest } = props;
+
+  // To check if the image src loads a valid image
+  const [isValidImage, setValidImage] = React.useState<boolean>(false);
+  React.useEffect(() => checkIfImageExists(image?.src ? image.src : '', setValidImage), [image]);
 
   const baseProps = extractBaseProps(props);
 
-  const initials = children
-    ? children.trim().slice(0, initialsLength)
-    : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
-
-  // const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
-  const DefaultAppearance = 'secondary';
+  const defaultAppearance = 'secondary';
 
   const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
 
-  const AvatarAppearance =
-    appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
+  const avatarAppearance =
+    appearance || (text && colors[(text.charCodeAt(0) + (text.charCodeAt(1) || 0)) % 8]) || defaultAppearance;
 
   const classes = classNames(
     {
       Avatar: true,
       [`Avatar--${size}`]: size,
-      [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
-      ['Avatar--disabled']: !initials || !withTooltip,
+      [`Avatar--${avatarAppearance}`]: avatarAppearance,
+      ['Avatar--disabled']: !text || !image?.src || !icon,
+      ['overflow-hidden']: !text,
     },
     className
   );
 
-  const ContentClass = classNames({
+  const contentClass = classNames({
     [`Avatar-content--${size}`]: size,
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+    [`Avatar-content--${avatarAppearance}`]: avatarAppearance,
   });
 
-  const IconClass = classNames({
-    [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
+  const iconClass = classNames({
+    [`Avatar-content--${avatarAppearance}`]: avatarAppearance,
   });
 
-  const renderAvatar = () => {
-    return (
-      <span data-test="DesignSystem-Avatar" {...baseProps} className={classes}>
-        {initials && (
-          <Text weight="medium" appearance={'white'} className={ContentClass}>
-            {initials}
-          </Text>
-        )}
-        {!initials && (
-          <Icon
-            data-test="DesignSystem-Avatar--Icon"
-            name="person"
-            size={size === 'regular' ? 16 : 12}
-            appearance={'white'}
-            className={IconClass}
-          />
-        )}
-      </span>
-    );
+  const imageDimensions = {
+    width: `${size === 'regular' ? 32 : 24}px`,
+    height: `${size === 'regular' ? 32 : 24}px`,
   };
 
-  const renderTooltip = () => {
-    if (withTooltip && initials) {
-      return (
-        <>{renderAvatar()}</>
-        // <Tooltip tooltip={tooltip} position={tooltipPosition} triggerClass={'flex-grow-0'}>
-        // </Tooltip>
-      );
-    }
-
-    return renderAvatar();
-  };
-
-  return renderTooltip();
+  return (
+    <span title={tooltip} data-test="DesignSystem-Avatar" {...baseProps} {...rest} className={classes}>
+      {text && (
+        <Text weight="medium" appearance={'white'} className={contentClass}>
+          {text}
+        </Text>
+      )}
+      {icon && (
+        <Icon
+          data-test="DesignSystem-Avatar--Icon"
+          name={icon}
+          size={size === 'regular' ? 16 : 12}
+          appearance={'white'}
+          className={iconClass}
+        />
+      )}
+      {image && isValidImage ? (
+        <img data-test="DesignSystem-Avatar--Image" src={image?.src} alt={image.altText} {...imageDimensions} />
+      ) : (
+        image?.altText.charAt(0)
+      )}
+      {!text && !isValidImage && !image?.altText && !icon && (
+        <Icon
+          data-test="DesignSystem-Avatar--Icon"
+          name="person"
+          size={size === 'regular' ? 16 : 12}
+          appearance={'white'}
+          className={iconClass}
+        />
+      )}
+    </span>
+  );
 };
 
 Avatar.displayName = 'Avatar';
 Avatar.defaultProps = {
-  tooltipPosition: 'bottom',
-  withTooltip: true,
   size: 'regular',
 };
 
