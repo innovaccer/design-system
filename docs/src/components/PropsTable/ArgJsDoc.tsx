@@ -57,7 +57,7 @@ export const Table = styled.table(({ theme }) => ({
     '& code': {
       margin: 0,
       display: 'inline-block',
-      fontSize: theme.typography.size.s1,
+      fontSize: theme?.typography?.size.s1,
     },
   },
 }));
