@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import Homepage from '../components/templates/Homepage';
 import {
-  Heading,
   Button,
-  Paragraph,
+  EmptyState
 } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
+import notFoundImage from './home/404.png'
+
 
 const PageNotFound = () => {
 
@@ -17,19 +18,19 @@ const PageNotFound = () => {
 
   return (
     <Homepage relativePagePath={'/404'} is404={true}>
-      <div className='m-auto w-50 mt-10'>
-        <Heading size='xl'>Page not found</Heading>
-        <Paragraph className='my-8'>
-          Oops! The page you are looking for has been
-          removed or relocated.
-        </Paragraph>
-        <Button
+      <div className="d-flex justify-content-center" style={{ transform: "translate(0,50%)" }}>
+        <EmptyState description="Sorry, the page you are lookikng for does not exist. Let's get you back"
+          imageSrc={notFoundImage}
+          size="small" title="Oh no! There's no masala"
+        >
+          <Button
           icon='arrow_backward'
           iconAlign='left'
-          onClick={() => navigate(-1)}
-        >
+          onClick={() => navigate('/')}
+          >
           Go Back
-        </Button>
+          </Button>
+        </EmptyState>
       </div>
     </Homepage>
   );

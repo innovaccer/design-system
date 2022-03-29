@@ -1,12 +1,17 @@
 const path = require('path');
+require("dotenv").config({
+    path: path.join(__dirname, `../.env.${process.env.NODE_ENV}`),
+  })
+
 const { writeFile } = require('fs-extra');
 const puppeteerCore = require('puppeteer-core');
 
-const STORYBOOK_HOST = "https://innovaccer.github.io/design-system/iframe.html?id=components-avatar-all--all&args=&viewMode=story"
+const STORYBOOK_HOST = process.env.STORYBOOK_HOST || "https://innovaccer.github.io/design-system/iframe.html?id=components-avatar-all--all&args=&viewMode=story"
 
 const read = async (url) => {
     const browser = await usePuppeteerBrowser();
     const page = await browser.newPage();
+    console.log('Loading storybook from: ', url);
     await page.goto(url);
     await page.waitForFunction('window.__STORYBOOK_STORY_STORE__ && window.__STORYBOOK_STORY_STORE__.extract && window.__STORYBOOK_STORY_STORE__.extract()');
     const data = JSON.parse(await page.evaluate(async () => {
@@ -41,6 +46,9 @@ async function extract(input, targetPath) {
     if (input && targetPath) {
         const [location, exit] = await useLocation(input);
         const data = await read(location);
+        console.log('Clearing content in: ', targetPath);
+        await writeFile(targetPath, '');
+        console.log('Writing data to: ', targetPath);
         await writeFile(targetPath, JSON.stringify(data, null, 2));
         await exit();
     }
@@ -49,4 +57,4 @@ async function extract(input, targetPath) {
     }
 }
 
-extract(STORYBOOK_HOST, path.join(__dirname, '../site/src/data', 'storybook.json'))
+extract(STORYBOOK_HOST, path.join(__dirname, '../src/data', 'storybook.json'))
