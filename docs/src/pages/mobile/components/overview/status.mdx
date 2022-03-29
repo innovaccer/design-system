@@ -6,14 +6,14 @@ showMobile: true
 ---
 
 import { navigate } from 'gatsby';
-import { data, schema } from "../../../../data/components/index.js";
+import { data, schema } from "../../../../data/components/mobile.js";
 
 <Card shadow="none">
   <Table
     showMenu={false}
     type="resource"
     onRowClick={(props) => {
-      navigate(`/components/${props.link.toLowerCase()}`);
+      navigate(`/mobile/components/${props.link}`);
     }}
     data={data}
     schema={schema}
