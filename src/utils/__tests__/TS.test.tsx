@@ -3,16 +3,17 @@ import * as DS from '../../index';
 import { render } from '@testing-library/react';
 
 // const noop = () => {};
-// const string = 'Hello World!';
+const string = 'Hello World!';
 // const dummyComp = <DS.Text>{string}</DS.Text>;
 
 export const TS = () => {
   return (
     <>
       <DS.Avatar />
+      <DS.Badge>Badge</DS.Badge>
+      <DS.Pills>{string}</DS.Pills>
       {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
-      <DS.Badge>Badge</DS.Badge>
       <DS.Breadcrumbs list={[]} onClick={noop} />
       <DS.Button />
       <DS.Card>{dummyComp}</DS.Card>
@@ -40,7 +41,6 @@ export const TS = () => {
       <DS.Radio name={string} value={string} />
       <DS.Row />
       <DS.StatusHint>{string}</DS.StatusHint>
-      <DS.Pills>{string}</DS.Pills>
       <DS.Spinner />
       <DS.Slider />
       <DS.RangeSlider />

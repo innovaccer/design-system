@@ -15,5 +15,19 @@ exports[`TS renders children 1`] = `
       person_round
     </i>
   </span>
+  <span
+    class="Badge Badge--secondary"
+    data-test="DesignSystem-Badge"
+    role="status"
+  >
+    Badge
+  </span>
+  <span
+    class="Pills Badge--secondary"
+    data-test="DesignSystem-Pills"
+    role="status"
+  >
+    Hello World!
+  </span>
 </DocumentFragment>
 `;
