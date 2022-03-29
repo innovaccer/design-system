@@ -47,13 +47,13 @@ function Overview() {
                       shadow='none'
                       className='w-100 overflow-hidden overview-card pb-5'
                     >
-                      <CardBody>
+                      <CardBody className='px-0'>
                         <div className='py-5 card-opacity'>
                           <div className='d-flex justify-content-center align-items-center' style={{ overflow: 'hidden', height: '136px' }}>
                             {React.createElement(image)}
                           </div>
                         </div>
-                        <Heading size="s">
+                        <Heading size="s" className='ml-6'>
                           {name}
                         </Heading>
                       </CardBody>
