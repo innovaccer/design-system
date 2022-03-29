@@ -13,6 +13,7 @@ menus:
     hideInMobile: true
   - label: Bottom navigation
     link: /components/bottomNavigation/usage
+    hideInWeb: true
   - label: Breadcrumbs
     link: /components/breadcrumbs/usage/
     hideInMobile: true

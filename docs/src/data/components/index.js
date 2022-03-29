@@ -10,12 +10,12 @@ const imgStyle = {
 export const data = [
   {
     link: 'avatar/usage',
-    design: 'Unavailable',
+    design: 'Available',
     name: 'Avatars',
-    code: 'Unavailable',
+    code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/Avatar.png"
         alt="Avatars"
         imgStyle={imgStyle}
       />)
@@ -24,206 +24,386 @@ export const data = [
     link: 'badges/usage',
     name: 'Badges',
     design: "Available",
-    code: "Unavailable"
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Badge.png"
+        alt="Badges"
+        imgStyle={imgStyle}
+      />)
   },
   {
     link: 'breadcrumbs/usage',
     name: 'Breadcrumb',
     design: "Available",
     code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Breadcrumb.png"
+        alt="Breadcrumbs"
+        imgStyle={imgStyle}
+      />)
   },
   {
     link: 'button/usage',
     name: 'Buttons',
     design: "Available",
     code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Buttons.png"
+        alt="Button"
+        imgStyle={imgStyle}
+      />)
   },
   {
     link: 'card/usage',
     name: 'Card',
     design: "Available",
     code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Cards.png"
+        alt="Card"
+        imgStyle={imgStyle}
+      />)
   },
   {
     link: 'checkbox/usage',
     name: 'Checkbox',
     design: "Available",
     code: "Available",
-  },
-  {
-    link: '',
-    name: 'Chips',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: 'datepicker/usage',
-    name: 'Date & Time Picker',
-    design: "Unavailable",
-    code: "Available",
     image: () => (
       <StaticImage
-        src="./images/Datepicker.png"
-        alt="Avatars"
+        src="./images/Checkbox.png"
+        alt="Checkbox"
         imgStyle={imgStyle}
       />)
   },
   {
-    link: '',
+    link: 'chips/usage',
+    name: 'Chips',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Chips.png"
+        alt="Chip"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'datePicker/usage',
+    name: 'Date & Time Picker',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Date&TimePicker.png"
+        alt="Date and Time picker"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'dividers/usage',
     name: 'Dividers',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Dividers.png"
+        alt="Dividers"
+        imgStyle={imgStyle}
+      />)
   },
   {
-    link: '',
+    link: 'dropdowns/usage',
     name: 'Dropdown',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Dropdowns.png"
+        alt="Dropdown"
+        imgStyle={imgStyle}
+      />)
   },
   {
-    link: '',
+    link: 'icons/usage',
     name: 'Icons',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Icons.png"
+        alt="Icons"
+        imgStyle={imgStyle}
+      />)
   },
   {
-    link: '',
+    link: 'inputs/usage',
     name: 'Inputs',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Inputs.png"
+        alt="Inputs"
+        imgStyle={imgStyle}
+      />)
   },
   {
-    link: '',
+    link: 'inlineEditableFields',
     name: 'Inline editable fields',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/InlineEditableField.png"
+        alt="Inline editable fields"
+        imgStyle={imgStyle}
+      />)
   },
   {
-    link: '',
+    link: 'links/usage',
     name: 'Links',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Link.png"
+        alt="Link"
+        imgStyle={imgStyle}
+      />)
   },
   {
     link: 'message/usage',
     name: 'Message',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Modal',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-
-    link: '',
-    name: 'Navigation - Horizontal',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Navigation - Vertical',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Pagination',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Pills',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Popover',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Progress indicators',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Radio',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Scrollbar',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Sidesheet',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Slider',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Status hints',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Steppers',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Switch',
-    design: "Unavailable",
-    code: "Unavailable",
-  },
-  {
-    link: '',
-    name: 'Table',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
     image: () => (
       <StaticImage
-        src="./images/Table.png"
-        alt="Avatars"
+        src="./images/Message.png"
+        alt="Message"
         imgStyle={imgStyle}
       />)
   },
   {
-    link: '',
+    link: 'modals/usage',
+    name: 'Modal',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Modal.png"
+        alt="Modals"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+
+    link: 'navigationHorizontal/usage',
+    name: 'Navigation - Horizontal',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/NavigationHorizontal.png"
+        alt="Navigation - Horizontal"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'navigationVertical/usage',
+    name: 'Navigation - Vertical',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/NavigationVertical.png"
+        alt="Navigation - Vertical"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'pagination/usage',
+    name: 'Pagination',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Pagination.png"
+        alt="Pagination"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'pills/usage',
+    name: 'Pills',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Pill.png"
+        alt="Pill"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'popover/usage',
+    name: 'Popover',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Popover.png"
+        alt="Popover"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'progressIndicators/usage',
+    name: 'Progress indicators',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/ProgressIndicators.png"
+        alt="Progress indicators"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'radio/usage',
+    name: 'Radio',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Radio.png"
+        alt="Radio"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'richTextEditor/usage',
+    name: 'Rich text editor',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/RichTextEditor.png"
+        alt="Rich text editor"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'sidesheet/usage',
+    name: 'Sidesheet',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Sidesheet.png"
+        alt="SideSheet"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'slider/usage',
+    name: 'Slider',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Slider.png"
+        alt="Slider"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'statusHint/usage',
+    name: 'Status hints',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Status.png"
+        alt="Status hint"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'steppers/usage',
+    name: 'Steppers',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Steppers.png"
+        alt="Steppers"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'switch/usage',
+    name: 'Switch',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Switch.png"
+        alt="Switch"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'table/usage',
+    name: 'Table',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Table.png"
+        alt="Table"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'tabs/usage',
     name: 'Tabs',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Tabs.png"
+        alt="Tabs"
+        imgStyle={imgStyle}
+      />)
   },
   {
-    link: '',
+    link: 'toast/usage',
     name: 'Toast',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Toast.png"
+        alt="Toast"
+        imgStyle={imgStyle}
+      />)
   },
   {
-    link: '',
+    link: 'tooltip/usage',
     name: 'Tooltip',
-    design: "Unavailable",
-    code: "Unavailable",
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Tooltip.png"
+        alt="Tooltip"
+        imgStyle={imgStyle}
+      />)
   }
 ];
 
