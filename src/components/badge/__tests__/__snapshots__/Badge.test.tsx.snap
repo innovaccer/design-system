@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge component 
+  appearance: "accent1", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--accent1"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "accent1", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-accent1"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "accent2", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--accent2"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "accent2", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-accent2"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "accent3", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--accent3"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "accent3", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-accent3"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "accent4", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--accent4"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "accent4", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-accent4"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "alert", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--alert"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "alert", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-alert"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "primary", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--primary"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "primary", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-primary"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "success", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--success"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "success", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-success"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "warning", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--warning"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Badge component 
+  appearance: "warning", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Badge Badge--subtle-warning"
+      data-test="DesignSystem-Badge"
+      role="status"
+    >
+      Badge
+    </span>
+  </div>
+</body>
+`;
