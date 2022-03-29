@@ -5,6 +5,7 @@ tabs: ["All components", "Status"]
 showMobile: true
 ---
 
-import Overview from './Overview.js';
+import Overview from '../../../data/components/Overview.js';
+import { data } from "../../../data/components/index.js";
 
-<Overview />
+<Overview data={data} />

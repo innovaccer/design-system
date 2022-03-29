@@ -113,7 +113,7 @@ const remarkSlug = require(`remark-slug`);
     siteMetadata: {
       isSearchEnabled,
       isServiceWorkerEnabled,
-      title: 'Gatsby Theme MDS',
+      title: 'Masala Design System',
       description:
         'Documentation site for using Innovaccer Masala Design System.',
       keywords: 'gatsby,theme,MDS,masala,design,system, masala design system,style,guide,component,library,design system,styleguide',

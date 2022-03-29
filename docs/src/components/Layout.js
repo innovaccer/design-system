@@ -45,7 +45,7 @@ const List = ({ children, ...rest }) => {
 }
 const leftMenuList = [
   {
-    title: 'Gatsby Theme MDS'
+    title: 'Masala Design System'
   }
 ];
 
