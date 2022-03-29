@@ -1,6 +1,6 @@
 {
   "name": "@innovaccer/design-system",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "description": "React components library project for Innovaccer Design System",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
