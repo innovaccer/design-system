@@ -1,0 +1,15 @@
+import { navigate } from 'gatsby';
+import { data, schema } from "../../../data/components/index.js";
+
+<Card shadow="none">
+  <Table
+    showMenu={false}
+    type="resource"
+    onRowClick={(props) => {
+      navigate(`/components/${props.link}`);
+    }}
+    data={data}
+    schema={schema}
+    withPagination={false}
+  />
+</Card>

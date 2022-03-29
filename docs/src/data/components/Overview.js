@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { Card, CardBody, Row, Column, Heading, Input,EmptyState,Button } from '@innovaccer/design-system';
+import { Card, CardBody, Row, Column, Heading, Input, EmptyState, Button } from '@innovaccer/design-system';
 import { Link } from 'gatsby';
 import './overview.css';
-import { debounce } from '../../../../util/Helpers';
-import { data } from '../../../../data/components/index.js';
-import noResultImage from '../../../home/noresult.png';
+import { debounce } from '../../util/Helpers';
+import noResultImage from './images/noresult.png';
 
-
-function Overview() {
+function Overview({ data, mode }) {
 
   const [previewList, setPreviewList] = useState(data);
   const [searchKey , setSearchKey] = useState('')
@@ -33,8 +31,6 @@ function Overview() {
         {
           previewList.length > 0 ?
             previewList.map(({ image = () => (<img alt='' />), name, link = '' }) => {
-
-
               return (
                 <Column
                   size={4}
@@ -42,7 +38,7 @@ function Overview() {
                   className="pr-6 pb-6"
                 >
 
-                  <Link className='card-link' disabled={!link.length} to={`/components/${(link).toLowerCase()}`}>
+                  <Link className='card-link' disabled={!link.length} to={ mode === "mobile" ? `/mobile/components/${(link)}` : `/components/${(link)}`}>
                     <Card
                       shadow='none'
                       className='w-100 overflow-hidden overview-card pb-5'

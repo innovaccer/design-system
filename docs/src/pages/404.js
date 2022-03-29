@@ -12,7 +12,7 @@ const PageNotFound = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.location.pathname.includes('/components')) {
-      navigate('/components/overview/tabs/all-components/');
+      navigate('/components/overview/all-components/');
     }
   }, []);
 

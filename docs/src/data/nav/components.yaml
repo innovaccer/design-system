@@ -1,7 +1,7 @@
 base: components
 menus:
   - label: Overview
-    link: /components/overview/tabs/all-components/
+    link: /components/overview/all-components/
   - label: Action sheet
     link: /components/actionSheet/usage
     hideInWeb: true
