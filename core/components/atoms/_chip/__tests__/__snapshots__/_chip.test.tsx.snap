@@ -10,7 +10,7 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -38,7 +38,7 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -94,7 +94,7 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -122,7 +122,7 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -136,7 +136,7 @@ exports[`Chip component
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
+        class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -159,7 +159,7 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -173,7 +173,7 @@ exports[`Chip component
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--right cursor-pointer"
+        class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--right cursor-pointer"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -233,7 +233,7 @@ exports[`Chip component
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -247,7 +247,7 @@ exports[`Chip component
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--right"
+        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--right"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
