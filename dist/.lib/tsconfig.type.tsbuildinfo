@@ -1197,7 +1197,7 @@
         "affectsGlobalScope": false
       },
       "../../core/components/organisms/dateRangePicker/DateRangePicker.tsx": {
-        "version": "7ebba3cb60d72057bc2d01fe2ac609081e0929e3b983b852c5de602b9c57e905",
+        "version": "3a4f78c1ac8d6df9af2e07a98f5e0885771dc7c3629b1a248a730dc9e08d39d4",
         "signature": "051ddfe71109196a0b344f0010dc22e485bc318528f2f24329d5f62740f58eef",
         "affectsGlobalScope": false
       },

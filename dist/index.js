@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1642573925341 
+   * Generated on: 1648645852559 
    *      Package: @innovaccer/design-system
-   *      Version: v2.8.0
+   *      Version: v2.8.1
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -10249,7 +10249,7 @@
 
           if (this.state.startDate && this.state.endDate) {
             this.setState({
-              open: !this.state.open
+              open: false
             });
           }
         }
@@ -14922,7 +14922,7 @@
       vertical: false
     };
 
-    var version = "2.8.0";
+    var version = "2.8.1";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
