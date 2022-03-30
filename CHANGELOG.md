@@ -1,4 +1,73 @@
 
+## 2.10.0-0  (2022-03-30)
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+* (docs): add design for no results in components search (5594cb28)
+* (docs): add design for 404 page (4dfef4de)
+* (docs) : add copy to clipboard for codeblocks and headings (78cb4501)
+
+### Fixes
+* (DateRangePicker): popover not closing on range selection (b5597056)
+* (doc): fix tooltip message while copying code on introduction page (58a7c313)
+* (docs): fix page layout overflow scroll to auto (93176391)
+* (chips): fix input chips hover and selection and active  chips border (e64d8e85)
+* (docs) fix actionsheet navigation issue (1ab2ed4f)
+* (toast): fix toast close button width (ee95e19f)
+* (docs): fix description in container (9f826bcc)
+* (docs): fix font family for react tab in show code (3933bb9f)
+* (docs): fix scroll jump in right nav bar (549ce214)
+* (input): update input icon appearance (1b1e1e1a)
+* (docs): add separate navigation for mobile and web components (97632861)
+* (docs): fix leftnav highlight on tab changes (4bee0cfb)
+
+### Improvements
+NA
+
+### Documentation
+* (docs): updated images in web overview (7292d892)
+* (docs): update front-matter for components and patterns (24fabc67)
+* (docs): add content for lists in mobile (7952a33b)
+* (docs): add documentation for dialogs in mobile (addeef3e)
+* (docs): add documentation for inputs in mobile (d7267f29)
+* (docs): add content for page headers in mobile (4a1e4898)
+* (docs): add documentation for chips in mobile (dc6deb57)
+* (docs): add documentation for cards in mobile (de6766c4)
+* (docs): add content for radio in mobile (067fd7b7)
+* (docs): add content for switch in mobile (02e91667)
+* (docs): add content for tabs in mobile (c5b7ab5b)
+* (docs): add content for toast in mobile (6e756ddd)
+* (docs): update empty state for description (9fffbe8a)
+* (docs): update email-guidlines md files (a358874e)
+* (docs) add documentation for bottom sheet in mobile (8ad96de9)
+* (docs): update error-messages md file (3b77abe1)
+* (docs): update placeholder-text md file (25f8dbbb)
+* (docs): add content for layouts (285bb162)
+* (docs): add alt text in an image in forms (d01d33a8)
+* (docs):Added content for Patterns - Forms (22077e0c)
+* (docs): add content for page headers (d9ffab58)
+* (docs): Added content for UI states (4344340d)
+* (docs) add documentation for buttons in mobile (59bbfea1)
+* (docs) add documentation of action sheet (6587a47e)
+* (docs): update email guidelines content (c6220015)
+* (docs): update error messages  content (b2dd0586)
+* (docs): update empty states content (2b7156d4)
+* (docs): add documentation for navigation, meta list, pagination (2a9cb91f)
+* (docs): added content for file uploader (ec8ffca3)
+
+-------------------
+
 ## 2.9.0-0  (2022-02-01)
 ### Highlights
 * feat: adds docs site (44ab33d3)
