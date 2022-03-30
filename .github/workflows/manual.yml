@@ -32,7 +32,7 @@ jobs:
         run: cp .npmrc.stub .npmrc
 
       - name: Publish to npmjs
-        run: npm publish --access public
+        run: npm publish --access public --tag=patch
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
