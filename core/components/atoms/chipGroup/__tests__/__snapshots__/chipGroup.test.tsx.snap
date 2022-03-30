@@ -17,7 +17,7 @@ exports[`ChipGroup component
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default Chip-icon Chip-icon--left"
+            class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -40,7 +40,7 @@ exports[`ChipGroup component
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
-            class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
+            class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -54,7 +54,7 @@ exports[`ChipGroup component
             Input
           </span>
           <i
-            class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -72,7 +72,7 @@ exports[`ChipGroup component
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--left"
+            class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -86,7 +86,7 @@ exports[`ChipGroup component
             Selection
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--info Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -104,7 +104,7 @@ exports[`ChipGroup component
           data-test="DesignSystem-ChipGroup--Chip"
         >
           <i
-            class="material-icons material-icons-round Icon Chip-icon Chip-icon--left"
+            class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -118,7 +118,7 @@ exports[`ChipGroup component
             Selection
           </span>
           <i
-            class="material-icons material-icons-round Icon Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
