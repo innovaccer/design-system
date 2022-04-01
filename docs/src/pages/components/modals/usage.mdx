@@ -15,7 +15,7 @@ If the information or interactions are more complex, consider using a side sheet
 
 #### Standard modal
 Standard modals appear in the center of the screen along with an overlay which prevents users from interacting with the background.
-<Preview name="fullscreenmodal-customized" />
+<Preview name="modal-dialogs" />
 
 #### Full screen modal
 Full screen modals cover the entire screen. They are used when you want the complete undivided attention of users. The prime use case is when the users create a new entity because in such cases the context with the content behind the modal is typically not required.
@@ -27,19 +27,19 @@ They should not be used for confirmations, critical alerts or to present informa
 #### Standard modal
 ##### Dialogs
 Dialogs are used to convey information to users where interaction with that information is not required.
-<Preview name="fullscreenmodal-customized" />
+<Preview name="modal-dialogs" />
 
 ##### Alerts
 Alerts are used to convey critical information before taking a destructive action such as delete, discard, deactivate, etc.
-<Preview name="fullscreenmodal-customized" />
+<Preview name="modal-alerts" />
 
 ##### Confirmations
 Confirmation dialogs are used to take confirmation from users before taking any important action.
-<Preview name="fullscreenmodal-customized" />
+<Preview name="modal-confirmations" />
 
 ##### Input modals
 Input modals are used to present forms to users such as input fields, dropdowns, etc. 
-<Preview name="fullscreenmodal-customized" />
+<Preview name="modal-input-modals" />
 
 ### Sizes
 #### Standard modal
@@ -197,7 +197,7 @@ You should avoid adding scrollable content in a modal as they are meant to be us
 Few points to keep in mind then -
 * Scrolling becomes active only when the content overflows the modal i.e. the max height of the modal is achieved. Max height of a modal is the height of the screen with a margin of 64px from top and bottom.
 * To indicate that the content can be scrolled, use a scrollbar and show the dividers in both the header and the footer component. This helps to convey that the header and the footer are fixed.
-<Preview name="fullscreenmodal-customized" />
+<Preview name="modal-scrolling" />
 
 #### Closing the modal
 Clicking outside the modal should **not** cancel the current process and close the modal by default. However, this behavior is configurable and can be turned **on** for dialogs only since they just present information and any sort of user interaction is not required there. Pressing **ESC** key on the keyboard does the same.
@@ -223,7 +223,7 @@ Full screen modal is initialized and displayed when a user clicks on a “Create
 
 ##### Two steps workflow - Back button
 To maintain simplicity, full screen modals are only supposed to have 1 step. But even then, there can be cases when a two steps workflow is required in order to create an entity. In that case, the header of the full screen modal can be updated to include a back button.
-<Preview name="fullscreenmodal-customized" />
+<Preview name="fullscreenmodal-two-steps-workflow" />
 
 ##### Action buttons
 Just like the default modals, the action buttons appear at the bottom right and follows the same order rules.
@@ -234,4 +234,4 @@ Just like the default modals, the action buttons appear at the bottom right and 
 
 #### Scrolling behavior
 Unlike default modals, the header and footer are **not fixed** in the full screen modals. So the content goes beneath the fold like this -
-<Preview name="fullscreenmodal-customized" />
+<Preview name="fullscreenmodal-scrolling" />
