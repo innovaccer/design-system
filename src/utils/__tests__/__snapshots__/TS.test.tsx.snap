@@ -3,7 +3,7 @@
 exports[`TS renders children 1`] = `
 <DocumentFragment>
   <span
-    class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+    class="Avatar Avatar--regular Avatar--secondary Avatar--disabled overflow-hidden"
     data-test="DesignSystem-Avatar"
   >
     <i
