@@ -36,11 +36,11 @@ const Home = () => {
             key < 3 &&
             (
               key === 0 ?
-                <div className="mt-4">
+                <div className="mt-4" key={key}>
                   <Text weight='strong' className="home-text-color">{item}</Text>
                 </div>
                 :
-                <div className="list">
+                <div className="list" key={key}>
                   <li className="m-0">
                     <Text appearance='subtle' size='small' weight='medium'>
                       {item.substring(0, item.lastIndexOf('('))}
