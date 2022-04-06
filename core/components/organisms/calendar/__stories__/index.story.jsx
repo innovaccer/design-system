@@ -2,7 +2,6 @@ import * as React from 'react';
 import Calendar from '../Calendar';
 import Card from '@/components/atoms/card';
 import { action } from '@/utils/action';
-import { convertToDate } from '@/components/organisms/calendar/utility';
 
 // CSF format story
 export const all = () => {
@@ -38,6 +37,27 @@ export const all = () => {
   if (rangeLimit) attr.rangeLimit = rangeLimit;
   if (yearNav !== -1) attr.yearNav = yearNav;
   if (monthNav !== -1) attr.monthNav = monthNav;
+  
+  // we redefine this function here because in storybook.json we donot get imported functions.
+  const convertToDate = (
+    d, format, validators
+  ) => {
+    let dateVal;
+  
+    if (d) {
+      if (typeof d === 'number') {
+        dateVal = new Date(d);
+      } else if (typeof d === 'string') {
+        return format ? translateToDate(format, d, validators) : undefined;
+      } else if (!(d instanceof Date)) {
+        const { year, month, date } = d;
+        dateVal = new Date(year, month, date, 0, 0, 0);
+      } else {
+        dateVal = d;
+      }
+    }
+    return dateVal;
+  };
 
   return (
     <Card className="d-inline-flex" shadow="light">
