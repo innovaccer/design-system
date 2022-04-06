@@ -31,11 +31,14 @@ export default (jsxStoryCode: string) => {
     .replaceAll('// import', 'import')
     .replace('() => ', 'const App = () => ')
     .replaceAll('<>', '<React.Fragment>')
-    .replaceAll('</>', '</React.Fragment>');
+    .replaceAll('</>', '</React.Fragment>')
+    .replaceAll('action(', 'console.log(');
+
   const code = `
 import ReactDOM from "react-dom";
 import React from "react";
 import "@innovaccer/design-system/css";
+
 ${structuredCode}
 
 ReactDOM.render(<App />, document.getElementById("root"));
