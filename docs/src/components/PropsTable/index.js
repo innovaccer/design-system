@@ -192,9 +192,9 @@ const StoryComp = ({
               </div>
             </CardHeader>
             <CardBody className='d-flex flex-column align-items-center'>
-              <div className='w-100 overflow-x-scroll' ref={testRef}>
+              <div className='w-100' ref={testRef}>
                 <LivePreview
-                  className='p-8 mw-100 mh-100 d-block'
+                  className='p-8 mw-100 mh-100 d-block live-provider mb-3'
                   style={{ zoom: zoom }}
                 />
                 <LiveError />
@@ -203,6 +203,7 @@ const StoryComp = ({
                 <Button
                   appearance='basic'
                   onClick={() => setIsExpanded(!isExpanded)}
+                  size="tiny" 
                 >
                   {isExpanded ? 'Hide code' : 'Show code'}
                 </Button>
