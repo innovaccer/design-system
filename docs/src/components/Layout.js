@@ -127,7 +127,7 @@ const Layout = ({
 
     const jsxCode = componentData && componentData.parameters
       ? componentData.parameters.docs.docPage?.customCode ||
-      componentData.parameters.storySource.source
+      componentData.parameters.storySource?.source
       : '';
     return jsxCode;
   }
