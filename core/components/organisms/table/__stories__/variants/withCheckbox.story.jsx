@@ -12,7 +12,7 @@ export const withCheckbox = () => {
   const style = {
     display: 'flex',
     flexWrap: 'wrap',
-  } as const;
+  };
   // to freeze the object for typescript
 
   return (
