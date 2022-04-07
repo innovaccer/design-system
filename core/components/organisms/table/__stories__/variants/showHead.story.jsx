@@ -11,7 +11,7 @@ export const showHead = () => {
   const style = {
     display: 'flex',
     flexWrap: 'wrap',
-  } as const;
+  };
   // to freeze the object for typescript
 
   return (
