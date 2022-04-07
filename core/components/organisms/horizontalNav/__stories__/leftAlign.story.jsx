@@ -30,7 +30,7 @@ export const leftAlignedNavigationTabs = () => {
     },
   ];
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState({
     name: 'medicine',
   });
@@ -131,7 +131,7 @@ const customCode = `() => {
     },
   ];
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [active, setActive] = React.useState({
     name: 'medicine'
   });
