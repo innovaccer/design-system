@@ -5,3 +5,7 @@
 .codesandBox-icon {
   fill: var(--white);
 }
+
+.live-provider {
+  overflow-x: scroll;
+}
