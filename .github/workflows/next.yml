@@ -37,13 +37,13 @@ jobs:
         run: rm -rf .npmrc
         
       - name: push tag to github
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git --follow-tags
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(node ./getVersion.js)
 
       - name: remove css/dist dist/ from commit
         run: |
           git reset HEAD~1
           git add package.json
-          git commit -m "Released $(git log -1 --pretty=format:%s)" --no-verify
+          git commit -m "Released $(node ./getVersion.js) [skip ci]" --no-verify
 
       - name: push version to github
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:next
