@@ -83,7 +83,7 @@ const commonJsPlugins =  [
 const jsUmdOutputConfig = {
     file: 'dist/index.umd.js',
     format: 'umd',
-    name: `InnovaccerDesignSystem`,
+    name: `InnovaccerDesignSystemNext`,
     globals: globals(),
     banner: banner()
 }
@@ -102,7 +102,7 @@ const jsEsmConfig = {
   output: {
     file: 'dist/index.esm.js',
     format: 'esm',
-    name: `InnovaccerDesignSystem`,
+    name: `InnovaccerDesignSystemNext`,
     globals: globals(),
     banner: banner()
   }

@@ -1,0 +1,55 @@
+name: "Release next"
+on:
+  push:
+    branches:
+      - next
+jobs:
+  release:
+    # uncomment next line as soon as visual tesing starts working
+    # needs: visual_test 
+    name: Release tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      
+      - name: npm install
+        run: npm ci
+        
+      - name: setup git
+        run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
+      
+      - name: bump module version
+        run: RELEASE_COMMIT=true npm version --no-commit-hooks prerelease -m "Released %s [skip ci]"
+
+      - name: gnerate .npmrc
+        run: cp .npmrc.stub .npmrc
+
+      - name: Publish to npmjs
+        run: npm publish --access public --tag=next
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+
+      - name: remove .npmrc
+        run: rm -rf .npmrc
+        
+      - name: push tag to github
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git --follow-tags
+
+      - name: remove css/dist dist/ from commit
+        run: |
+          git reset HEAD~1
+          git add package.json
+          git commit -m "Released $(git log -1 --pretty=format:%s)" --no-verify
+
+      - name: push version to github
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:next
+    
+      
+      - name: notify release
+        uses: /innovaccer/design-system/actions/notify-release@next
+        env:
+          GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
