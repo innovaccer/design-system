@@ -23,7 +23,7 @@ jobs:
         run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
       
       - name: bump module version
-        run: RELEASE_COMMIT=true npm version --no-commit-hooks prerelease -m "Released %s [skip ci]"
+        run: npm version --no-commit-hooks prerelease -m "Released %s [skip ci]"
 
       - name: gnerate .npmrc
         run: cp .npmrc.stub .npmrc
