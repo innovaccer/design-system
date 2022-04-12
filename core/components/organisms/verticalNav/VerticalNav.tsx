@@ -126,7 +126,13 @@ export const VerticalNav = (props: VerticalNavProps) => {
         <>
           {hasGroup && menu.group && expanded && (
             <div className={sectionClass}>
-              <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
+              <Text
+                className="ellipsis--noWrap"
+                data-test="DesignSystem-VerticalNav--Section"
+                size="small"
+                weight="strong"
+                appearance="subtle"
+              >
                 {menu.group}
               </Text>
             </div>

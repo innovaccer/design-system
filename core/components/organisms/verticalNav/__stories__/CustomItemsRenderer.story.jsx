@@ -10,7 +10,7 @@ export const CustomItemsRenderer = () => {
     },
     {
       name: 'care_management',
-      label: 'Care Management',
+      label: 'Care Management Timeline Protocol',
       icon: 'forum',
       subMenu: [
         {
@@ -88,8 +88,8 @@ export const CustomItemsRenderer = () => {
         {menu.icon && (
           <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
         )}
-        <Tooltip tooltip={menu.label}>
-          <Text weight="medium">{menu.label}</Text>
+        <Tooltip position="bottom" tooltip={menu.label}>
+          <Text className="ellipsis--noWrap w-75" weight="medium">{menu.label}</Text>
         </Tooltip>
       </div>
     );
@@ -117,7 +117,7 @@ const customCode = `() => {
     },
     {
       name: 'care_management',
-      label: 'Care Management',
+      label: 'Care Management Timeline Protocol',
       icon: 'forum',
       subMenu: [
         {
@@ -202,8 +202,8 @@ const customCode = `() => {
               name={menu.icon}
             />
         }
-        <Tooltip tooltip={menu.label}>
-          <Text weight="medium">
+        <Tooltip position="bottom" tooltip={menu.label}>
+          <Text weight="medium" className="ellipsis--noWrap w-75">
             {menu.label}
           </Text>
         </Tooltip>

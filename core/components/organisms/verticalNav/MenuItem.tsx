@@ -88,7 +88,11 @@ export const MenuItem = (props: MenuItemProps) => {
           />
         )}
         {expanded && (
-          <Text data-test="DesignSystem-VerticalNav--Text" appearance={getTextAppearance(isActive, menu.disabled)}>
+          <Text
+            className="ellipsis--noWrap"
+            data-test="DesignSystem-VerticalNav--Text"
+            appearance={getTextAppearance(isActive, menu.disabled)}
+          >
             {menu.label}
           </Text>
         )}
