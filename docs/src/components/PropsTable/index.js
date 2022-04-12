@@ -64,7 +64,6 @@ const StoryComp = ({
   const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData));
   const [isTooltipActive, setTooltipActive] = useState(false);
   const [tooltipName, setTooltipName] = useState(copyMessage);
-  const ref = React.createRef();
 
   const TabsWrap = withLive(({ live }) => {
     const { element: Element } = live;
@@ -109,34 +108,37 @@ const StoryComp = ({
     return (
       <div className='ml-auto d-flex'>
         {activeButton === 'React' &&
-          <img
-            src="/icons/4691539_codesandbox_icon.svg"
-            className='codesandBox-icon cursor-pointer mr-6 align-self-center'
-            onClick={(e) => {
-              e.preventDefault();
-              openSandbox(jsxCode);
-            }}
-          />
-        }
-        <div 
-          className='align-self-end'
-          onMouseLeave={()=>{setTooltipActive(false);setTooltipName(copyMessage)}}
-           ref={ref}
-        >
-          <Tooltip 
-            open={isTooltipActive} 
-            tooltip={tooltipName} 
+          <Tooltip
+            tooltip="Open in CodeSandbox"
             position="bottom"
-            appendToBody={false}
-            boundaryElement={ref} 
+            on="hover"
+          >
+            <img
+              src="/icons/4691539_codesandbox_icon.svg"
+              className='codesandBox-icon cursor-pointer mr-6 align-self-center'
+              onClick={(e) => {
+                e.preventDefault();
+                openSandbox(jsxCode);
+              }}
+            />
+          </Tooltip>
+        }
+        <div
+          className='align-self-end'
+          onMouseLeave={() => { setTooltipActive(false); setTooltipName(copyMessage) }}
+        >
+          <Tooltip
+            open={isTooltipActive}
+            tooltip={tooltipName}
+            position="bottom"
           >
             <Icon
-            name='content_copy'
-            size={20}
-            appearance='white'
-            onClick={onClick}
-            className='align-self-center cursor-pointer'
-          />
+              name='content_copy'
+              size={20}
+              appearance='white'
+              onClick={onClick}
+              className='align-self-center cursor-pointer'
+            />
           </Tooltip>
         </div>
       </div>
@@ -203,7 +205,7 @@ const StoryComp = ({
                 <Button
                   appearance='basic'
                   onClick={() => setIsExpanded(!isExpanded)}
-                  size="tiny" 
+                  size="tiny"
                 >
                   {isExpanded ? 'Hide code' : 'Show code'}
                 </Button>
