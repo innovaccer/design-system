@@ -41,7 +41,6 @@
 
 .Input:hover {
   background: var(--secondary-lightest);
-  border-color: var(--secondary-lightest);
   cursor: text;
 }
 
