@@ -1,0 +1,256 @@
+{
+  "args": {},
+  "componentId": "components-table-table-as-description-list",
+  "title": "Components/Table/Table As Description List",
+  "kind": "Components/Table/Table As Description List",
+  "id": "components-table-table-as-description-list--table-as-description-list",
+  "name": "Table As Description List",
+  "story": "Table As Description List",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const data = [\n    {\n      firstName: 'John',\n      lastName: 'Doe',\n      email: 'jonathandoe@gamil.com',\n      owner: true\n    },\n    {\n      firstName: 'Katty',\n      lastName: 'Perry',\n      email: 'kattyperry21@gamil.com',\n      edit: true\n    },\n    {\n      firstName: 'Daniel',\n      lastName: 'Low',\n      email: 'daniellow02@yahoo.com',\n      view: true\n    },\n  ];\n\n  const schema = [\n    {\n      name: 'info',\n      displayName: 'Info',\n      width: '80%',\n      cellType: 'AVATAR_WITH_META_LIST',\n      translate: a => ({\n        firstName: a.firstName,\n        lastName: a.lastName,\n        title: `${a.firstName} ${a.lastName}`,\n        metaList: [a.email]\n      }),\n    },\n    {\n      name: 'rights',\n      displayName: 'Rights',\n      width: '20%',\n      cellRenderer: (props) => {\n        const renderRights = () => {\n          if (props.data.owner) {\n            return <Text appearance=\"subtle\" className=\"pr-5\">owner</Text>;\n          }\n\n          if (props.data.edit || props.data.view) {\n            const rights = props.data.edit ? 'edit' : 'view';\n            return (\n              <Button\n                icon=\"keyboard_arrow_down\"\n                iconAlign=\"right\"\n                appearance=\"transparent\"\n                onClick={e => e.stopPropagation()}\n              >\n                {`can ${rights}`}\n              </Button>\n            );\n          }\n\n          return null;\n        };\n\n        return (\n          <div className=\"d-flex align-items-center justify-content-end flex-grow-1\">\n            {renderRights()}\n          </div>\n        );\n      }\n    }\n  ];\n\n  return (\n      <Card  className=\"py-4\">\n        <Text size=\"large\" weight=\"strong\" className=\"ml-5\">Sharing Test Manual</Text>\n        <List\n          type=\"resource\"\n          withHeader={true}\n          headerOptions={{\n            withSearch: true,\n            dynamicColumn: false\n          }}\n          separator={false}\n          showMenu={false}\n          data={data}\n          schema={schema}\n          withPagination={false}\n          onSearch={(currData, searchTerm) => {\n            return currData.filter(d =>\n              d.firstName.toLowerCase().match(searchTerm.toLowerCase())\n              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())\n            );\n          }}\n          onRowClick={(rowData, rowIndex) =>\n            console.log(`o\n-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)\n          }\n        />\n      </Card>\n  );\n}",
+        "title": "Table as Option List",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/table/__stories__/TableAsDescriptionList.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      firstName: 'John',\n      lastName: 'Doe',\n      email: 'jonathandoe@gamil.com',\n      owner: true,\n    },\n    {\n      firstName: 'Katty',\n      lastName: 'Perry',\n      email: 'kattyperry21@gamil.com',\n      edit: true,\n    },\n    {\n      firstName: 'Daniel',\n      lastName: 'Low',\n      email: 'daniellow02@yahoo.com',\n      view: true,\n    },\n  ];\n\n  const schema = [\n    {\n      name: 'info',\n      displayName: 'Info',\n      width: '80%',\n      cellType: 'AVATAR_WITH_META_LIST',\n      translate: (a) => ({\n        firstName: a.firstName,\n        lastName: a.lastName,\n        title: `${a.firstName} ${a.lastName}`,\n        metaList: [a.email],\n      }),\n    },\n    {\n      name: 'rights',\n      displayName: 'Rights',\n      width: '20%',\n      cellRenderer: (props) => {\n        const renderRights = () => {\n          if (props.data.owner) {\n            return (\n              <Text appearance=\"subtle\" className=\"pr-5\">\n                owner\n              </Text>\n            );\n          }\n\n          if (props.data.edit || props.data.view) {\n            const rights = props.data.edit ? 'edit' : 'view';\n            return (\n              <Button\n                icon=\"keyboard_arrow_down\"\n                iconAlign=\"right\"\n                appearance=\"transparent\"\n                onClick={(e) => e.stopPropagation()}\n              >\n                {`can ${rights}`}\n              </Button>\n            );\n          }\n\n          return null;\n        };\n\n        return <div className=\"d-flex align-items-center justify-content-end flex-grow-1\">{renderRights()}</div>;\n      },\n    },\n  ];\n\n  return (\n    <Card className=\"py-4\">\n      <Text size=\"large\" weight=\"strong\" className=\"ml-5\">\n        Sharing Test Manual\n      </Text>\n      <List\n        type=\"resource\"\n        withHeader={true}\n        headerOptions={{\n          withSearch: true,\n          dynamicColumn: false,\n        }}\n        separator={false}\n        showMenu={false}\n        data={data}\n        schema={schema}\n        withPagination={false}\n        onSearch={(currData, searchTerm) => {\n          return currData.filter(\n            (d) =>\n              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||\n              d.lastName.toLowerCase().match(searchTerm.toLowerCase())\n          );\n        }}\n        onRowClick={(rowData, rowIndex) =>\n          action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n        }\n      />\n    </Card>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-table-table-as-description-list--table-as-description-list",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

@@ -1,0 +1,641 @@
+{
+  "args": {},
+  "componentId": "components-icon-all",
+  "title": "Components/Icon/All",
+  "kind": "Components/Icon/All",
+  "id": "components-icon-all--all",
+  "name": "All",
+  "story": "All",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  return(\n    <Icon size={50} name='place'/>\n    );\n}"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/atoms/icon/__stories__/index.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const appearance = 'white';\n  const iconType = 'sharp';\n  const size = 50;\n  const name = 'info';\n\n  return (\n    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>\n      <Icon appearance={appearance} type={iconType} size={size} name={name} onClick={action('click-event')} />\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-icon-all--all",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "name": {
+        "name": "name",
+        "description": "Material icon name",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "size": {
+        "name": "size",
+        "description": "Size of `Icon`",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "16"
+          }
+        }
+      },
+      "type": {
+        "name": "type",
+        "description": "Type of material `Icon`\n\n** `'outline' | 'rounded'` will be deprecated**",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "round",
+            "filled",
+            "outlined",
+            "outline",
+            "rounded",
+            "two-tone",
+            "sharp"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"round\" | \"filled\" | \"outlined\" | \"outline\" | \"rounded\" | \"two-tone\" | \"sharp\""
+          },
+          "defaultValue": {
+            "summary": "round"
+          }
+        }
+      },
+      "appearance": {
+        "name": "appearance",
+        "description": "Color of `Icon`    // 'info' appearance will be deprecated soon.",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "info",
+            "default",
+            "disabled",
+            "primary",
+            "alert",
+            "warning",
+            "success",
+            "accent1",
+            "accent2",
+            "accent3",
+            "accent4",
+            "subtle",
+            "white",
+            "destructive",
+            "primary_lighter",
+            "primary_dark",
+            "alert_lighter",
+            "alert_dark",
+            "warning_lighter",
+            "warning_dark",
+            "success_lighter",
+            "success_dark",
+            "accent1_lighter",
+            "accent1_dark",
+            "accent2_lighter",
+            "accent2_dark",
+            "accent3_lighter",
+            "accent3_dark",
+            "accent4_lighter",
+            "accent4_dark",
+            "inverse"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+          },
+          "defaultValue": null
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Handler to be called when icon is clicked",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: MouseEvent<HTMLElement, MouseEvent>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: MouseEvent<HTMLElement, MouseEvent>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onKeyDown": {
+        "name": "onKeyDown",
+        "description": "Handler to be called when key is pressed on icon",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: KeyboardEvent<HTMLElement>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: KeyboardEvent<HTMLElement>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "children": {
+        "name": "children",
+        "description": "DOM node to be passed as child to the component",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "tabIndex": {
+        "name": "tabIndex",
+        "description": "The tabindex global attribute indicates that its element can be focused, and\nwhere it participates in sequential keyboard navigation.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "name": {
+      "name": "name",
+      "description": "Material icon name",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "size": {
+      "name": "size",
+      "description": "Size of `Icon`",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "16"
+        }
+      }
+    },
+    "type": {
+      "name": "type",
+      "description": "Type of material `Icon`\n\n** `'outline' | 'rounded'` will be deprecated**",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "round",
+          "filled",
+          "outlined",
+          "outline",
+          "rounded",
+          "two-tone",
+          "sharp"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"round\" | \"filled\" | \"outlined\" | \"outline\" | \"rounded\" | \"two-tone\" | \"sharp\""
+        },
+        "defaultValue": {
+          "summary": "round"
+        }
+      }
+    },
+    "appearance": {
+      "name": "appearance",
+      "description": "Color of `Icon`    // 'info' appearance will be deprecated soon.",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "info",
+          "default",
+          "disabled",
+          "primary",
+          "alert",
+          "warning",
+          "success",
+          "accent1",
+          "accent2",
+          "accent3",
+          "accent4",
+          "subtle",
+          "white",
+          "destructive",
+          "primary_lighter",
+          "primary_dark",
+          "alert_lighter",
+          "alert_dark",
+          "warning_lighter",
+          "warning_dark",
+          "success_lighter",
+          "success_dark",
+          "accent1_lighter",
+          "accent1_dark",
+          "accent2_lighter",
+          "accent2_dark",
+          "accent3_lighter",
+          "accent3_dark",
+          "accent4_lighter",
+          "accent4_dark",
+          "inverse"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+        },
+        "defaultValue": null
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Handler to be called when icon is clicked",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: MouseEvent<HTMLElement, MouseEvent>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: MouseEvent<HTMLElement, MouseEvent>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onKeyDown": {
+      "name": "onKeyDown",
+      "description": "Handler to be called when key is pressed on icon",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: KeyboardEvent<HTMLElement>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: KeyboardEvent<HTMLElement>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "children": {
+      "name": "children",
+      "description": "DOM node to be passed as child to the component",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "tabIndex": {
+      "name": "tabIndex",
+      "description": "The tabindex global attribute indicates that its element can be focused, and\nwhere it participates in sequential keyboard navigation.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

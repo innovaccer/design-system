@@ -1,0 +1,842 @@
+{
+  "args": {},
+  "componentId": "components-textarea-all",
+  "title": "Components/Textarea/All",
+  "kind": "Components/Textarea/All",
+  "id": "components-textarea-all--all",
+  "name": "All",
+  "story": "All",
+  "component": {
+    "displayName": "Textarea",
+    "__docgenInfo": {
+      "description": "",
+      "displayName": "Textarea",
+      "props": {
+        "name": {
+          "defaultValue": null,
+          "description": "Name of the `Textarea`",
+          "name": "name",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "value": {
+          "defaultValue": null,
+          "description": "Value of the `Textarea`",
+          "name": "value",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "defaultValue": {
+          "defaultValue": null,
+          "description": "Adds default value to `Input`",
+          "name": "defaultValue",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "placeholder": {
+          "defaultValue": null,
+          "description": "Text to display when Textarea is empty",
+          "name": "placeholder",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "rows": {
+          "defaultValue": null,
+          "description": "Number of rows in `Textarea`",
+          "name": "rows",
+          "required": false,
+          "type": {
+            "name": "number | undefined"
+          }
+        },
+        "disabled": {
+          "defaultValue": null,
+          "description": "Disables the `Textarea`, making it unable to type\n\n**set to `true` if onChange is not provided**",
+          "name": "disabled",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "required": {
+          "defaultValue": null,
+          "description": "Shows the user that this field id required",
+          "name": "required",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "error": {
+          "defaultValue": null,
+          "description": "Shows error state in case of failed validation",
+          "name": "error",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "resize": {
+          "defaultValue": null,
+          "description": "Disable the resizable property of a `Textarea`",
+          "name": "resize",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "onChange": {
+          "defaultValue": null,
+          "description": "Callback function when `Textarea` text changes",
+          "name": "onChange",
+          "required": false,
+          "type": {
+            "name": "((e: ChangeEvent<HTMLTextAreaElement>) => void) | undefined"
+          }
+        },
+        "onClick": {
+          "defaultValue": null,
+          "description": "Handler to be called when `Textarea` is clicked",
+          "name": "onClick",
+          "required": false,
+          "type": {
+            "name": "((e: MouseEvent<HTMLTextAreaElement, MouseEvent>) => void) | undefined"
+          }
+        },
+        "onBlur": {
+          "defaultValue": null,
+          "description": "Handler to be called when `Textarea` loses focus",
+          "name": "onBlur",
+          "required": false,
+          "type": {
+            "name": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+          }
+        },
+        "onFocus": {
+          "defaultValue": null,
+          "description": "Handler to be called when `Textarea` gets focus",
+          "name": "onFocus",
+          "required": false,
+          "type": {
+            "name": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+          }
+        },
+        "className": {
+          "defaultValue": null,
+          "description": "Adds custom class",
+          "name": "className",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "data-test": {
+          "defaultValue": null,
+          "description": "Stores custom testing data private to the component.",
+          "name": "data-test",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/atoms/textarea/__stories__/index.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const value = '';\n\n  const placeholder = 'Placeholder';\n\n  const disabled = false;\n\n  const error = false;\n\n  const resize = true;\n\n  const rows = 3;\n\n  return (\n    <div style={{ maxWidth: '300px' }}>\n      <Textarea\n        name=\"Textarea\"\n        value={value}\n        disabled={disabled}\n        onChange={action('on-change')}\n        onClick={action('on-click')}\n        placeholder={placeholder}\n        error={error}\n        resize={resize}\n        rows={rows}\n        aria-labelledby=\"Textarea\"\n      />\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-textarea-all--all",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "name": {
+        "name": "name",
+        "description": "Name of the `Textarea`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "value": {
+        "name": "value",
+        "description": "Value of the `Textarea`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "defaultValue": {
+        "name": "defaultValue",
+        "description": "Adds default value to `Input`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "placeholder": {
+        "name": "placeholder",
+        "description": "Text to display when Textarea is empty",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "rows": {
+        "name": "rows",
+        "description": "Number of rows in `Textarea`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "disabled": {
+        "name": "disabled",
+        "description": "Disables the `Textarea`, making it unable to type\n\n**set to `true` if onChange is not provided**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "required": {
+        "name": "required",
+        "description": "Shows the user that this field id required",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "error": {
+        "name": "error",
+        "description": "Shows error state in case of failed validation",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "resize": {
+        "name": "resize",
+        "description": "Disable the resizable property of a `Textarea`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onChange": {
+        "name": "onChange",
+        "description": "Callback function when `Textarea` text changes",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: ChangeEvent<HTMLTextAreaElement>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: ChangeEvent<HTMLTextAreaElement>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Handler to be called when `Textarea` is clicked",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: MouseEvent<HTMLTextAreaElement, MouseEvent>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: MouseEvent<HTMLTextAreaElement, MouseEvent>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onBlur": {
+        "name": "onBlur",
+        "description": "Handler to be called when `Textarea` loses focus",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onFocus": {
+        "name": "onFocus",
+        "description": "Handler to be called when `Textarea` gets focus",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "name": {
+      "name": "name",
+      "description": "Name of the `Textarea`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "value": {
+      "name": "value",
+      "description": "Value of the `Textarea`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "defaultValue": {
+      "name": "defaultValue",
+      "description": "Adds default value to `Input`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "description": "Text to display when Textarea is empty",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "rows": {
+      "name": "rows",
+      "description": "Number of rows in `Textarea`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "disabled": {
+      "name": "disabled",
+      "description": "Disables the `Textarea`, making it unable to type\n\n**set to `true` if onChange is not provided**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "required": {
+      "name": "required",
+      "description": "Shows the user that this field id required",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Shows error state in case of failed validation",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "resize": {
+      "name": "resize",
+      "description": "Disable the resizable property of a `Textarea`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onChange": {
+      "name": "onChange",
+      "description": "Callback function when `Textarea` text changes",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: ChangeEvent<HTMLTextAreaElement>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: ChangeEvent<HTMLTextAreaElement>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Handler to be called when `Textarea` is clicked",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: MouseEvent<HTMLTextAreaElement, MouseEvent>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: MouseEvent<HTMLTextAreaElement, MouseEvent>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onBlur": {
+      "name": "onBlur",
+      "description": "Handler to be called when `Textarea` loses focus",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onFocus": {
+      "name": "onFocus",
+      "description": "Handler to be called when `Textarea` gets focus",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: FocusEvent<HTMLTextAreaElement, Element>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

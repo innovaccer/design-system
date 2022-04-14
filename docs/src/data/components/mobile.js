@@ -13,12 +13,12 @@ export const data = [
     design: 'Available',
     name: 'Action Sheet',
     code: 'Available',
-    image: () => (
-      <StaticImage
-        src="./images/Avatars.png"
-        alt="Avatars"
-        imgStyle={imgStyle}
-      />)
+    // image: () => (
+    //   <StaticImage
+    //     src="/images/Avatars.png"
+    //     alt="Avatars"
+    //     imgStyle={imgStyle}
+    //   />)
   },
 ];
 

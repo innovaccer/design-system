@@ -1,0 +1,1407 @@
+{
+  "args": {},
+  "componentId": "components-table-resource-table",
+  "title": "Components/Table/Resource Table",
+  "kind": "Components/Table/Resource Table",
+  "id": "components-table-resource-table--resource-table",
+  "name": "Resource Table",
+  "story": "Resource Table",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "\n() => {\n  const data = [\n    {\n        \"name\": \"Asthma Outreach\",\n        \"firstName\": \"Brooke\",\n        \"lastName\": \"Heeran\",\n        \"status\": \"In Progress\",\n        \"lastUpdated\": \"June 20, 2020\",\n        \"recipients\": 11846\n    },\n    {\n        \"firstName\": \"Frazer\",\n        \"lastName\": \"Cathro\",\n        \"status\": \"Scheduled\",\n        \"lastUpdated\": \"June 19, 2020\",\n        \"name\": \"HbA1c Test due\",\n        \"recipients\": 12846\n    },\n    {\n        \"firstName\": \"Lemmie\",\n        \"name\": \"ER Education\",\n        \"lastName\": \"Ciric\",\n        \"status\": \"Draft\",\n        \"lastUpdated\": \"May 19, 2020\",\n        \"recipients\": 118467\n    },\n    {\n        \"firstName\": \"Randy\",\n        \"lastName\": \"Boatwright\",\n        \"name\": \"Flu Vaccination\",\n        \"status\": \"Failed\",\n        \"lastUpdated\": \"March 19, 2020\",\n        \"recipients\": 10846\n    },\n    {\n        \"firstName\": \"Rolando\",\n        \"lastName\": \"Cyples\",\n        \"name\": \"Well-child Visit\",\n        \"status\": \"In Progress\",\n        \"lastUpdated\": \"April 19, 2020\",\n        \"recipients\": 11847\n    },\n    {\n        \"firstName\": \"Lem\",\n        \"lastName\": \"Males\",\n        \"name\": \"Annual wellness Visit\",\n        \"status\": \"In Progress\",\n        \"lastUpdated\": \"June 16, 2020\",\n        \"recipients\": 118100\n    },\n    {\n        \"firstName\": \"Sayres\",\n        \"lastName\": \"Adelberg\",\n        \"name\": \"Flu Vaccination\",\n        \"status\": \"Draft\",\n        \"lastUpdated\": \"Dec 19, 2020\",\n        \"recipients\": 11848\n    },\n    {\n        \"firstName\": \"Murray\",\n        \"lastName\": \"Bravington\",\n        \"name\": \"Well-child Visit\",\n        \"status\": \"Draft\",\n        \"lastUpdated\": \"April 19, 2020\",\n        \"recipients\": 11890\n    }\n];\n\n  const statusAppearance = {\n    'In Progress': 'info',\n    'Scheduled': 'warning',\n    'Draft': 'default',\n    'Failed': 'alert'\n  };\n\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: '30%',\n      cellType: 'WITH_META_LIST',\n      sorting: false,\n      translate: a => ({\n        title: a.name,\n        metaList: [`${a.recipients} recipients`]\n      }),\n    },\n    {\n      name: 'status',\n      displayName: 'Status',\n      width: '20%',\n      cellType: 'STATUS_HINT',\n      sorting: false,\n      filters: [\n        { label: 'In Progress', value: 'In Progress' },\n        { label: 'Scheduled', value: 'Scheduled' },\n        { label: 'Draft', value: 'Draft' },\n        { label: 'Failed', value: 'Failed' }\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          if (a.status === filter) return true;\n        }\n        return false;\n      },\n      translate: a => {\n        const status = a.status;\n        return ({\n          title: status,\n          statusAppearance: statusAppearance[status]\n        });\n      }\n    },\n    {\n      name: 'lastUpdated',\n      displayName: 'Last Updated on',\n      width: '30%',\n      sorting: false,\n    },\n    {\n      name: 'user',\n      displayName: '',\n      sorting: false,\n      width: '20%',\n      cellRenderer: (props) => {\n        const { data } = props;\n        return (\n          <div className=\"d-flex align-items-center justify-content-end flex-grow-1\">\n            <Avatar firstName={data.firstName} lastName={data.lastName} />\n            <div style={{ width: 'var(--spacing-3)' }} className=\"ml-6\">\n              <Dropdown\n                triggerOptions={{\n                  customTrigger: () => (\n                    <Button icon=\"more_horiz\" appearance=\"transparent\" />\n                  )\n                }}\n                menu={true}\n                align=\"left\"\n                options={[\n                  { label: 'Edit', value: 'Edit' },\n                  { label: 'Delete', value: 'Delete' }\n                ]}\n                popoverOptions={{appendToBody:false}}\n              />\n            </div>\n          </div>\n        );\n      }\n    }\n  ];\n\n  return (\n    <Card>\n      <Table\n        showMenu={false}\n        type=\"resource\"\n        data={data}\n        schema={schema}\n        withHeader={true}\n        filterPosition=\"HEADER\"\n        onSelect={(rowIndex, selected, selectedList, selectAll) =>\n          console.log(`on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)} selectAll: ${selectAll}`)\n        }\n        headerOptions={{\n          withSearch: true\n        }}\n        filterList={{\n          status: ['In Progress', 'Scheduled', 'Draft', 'Failed']\n        }}\n        onSearch={(currData, searchTerm) => {\n          return currData.filter(d =>\n            d.firstName.toLowerCase().match(searchTerm.toLowerCase())\n            || d.lastName.toLowerCase().match(searchTerm.toLowerCase())\n            || d.name.toLowerCase().match(searchTerm.toLowerCase())\n          );\n        }}\n        withPagination={true}\n        paginationType=\"basic\"\n        pageSize={4}\n        onPageChange={newPage => console.log(`on-page-change:- ${newPage}`)}\n      />\n    </Card>\n  );\n};\n",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/table/__stories__/ResourceTable.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const statusAppearance = {\n    'In Progress': 'info',\n    Scheduled: 'warning',\n    Draft: 'default',\n    Failed: 'alert',\n  };\n\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: '30%',\n      cellType: 'WITH_META_LIST',\n      translate: (a) => ({\n        title: a.name,\n        metaList: [`${a.recipients} recipients`],\n      }),\n      sorting: false,\n    },\n    {\n      name: 'status',\n      displayName: 'Status',\n      width: '20%',\n      cellType: 'STATUS_HINT',\n      sorting: false,\n      filters: [\n        { label: 'In Progress', value: 'In Progress' },\n        { label: 'Scheduled', value: 'Scheduled' },\n        { label: 'Draft', value: 'Draft' },\n        { label: 'Failed', value: 'Failed' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          if (a.status === filter) return true;\n        }\n        return false;\n      },\n      translate: (a) => {\n        const status = a.status;\n        return {\n          title: status,\n          statusAppearance: statusAppearance[status],\n        };\n      },\n    },\n    {\n      name: 'lastUpdated',\n      displayName: 'Last Updated on',\n      width: '30%',\n      sorting: false,\n    },\n    {\n      name: 'user',\n      displayName: '',\n      sorting: false,\n      width: '20%',\n      cellRenderer: (props) => (\n        <div className=\"d-flex align-items-center justify-content-end flex-grow-1\">\n          <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />\n          <div style={{ width: 'var(--spacing-3)' }} className=\"ml-6\">\n            <Dropdown\n              triggerOptions={{\n                customTrigger: () => <Button icon=\"more_horiz\" appearance=\"transparent\" />,\n              }}\n              menu={true}\n              align=\"left\"\n              options={[\n                { label: 'Edit', value: 'Edit' },\n                { label: 'Delete', value: 'Delete' },\n              ]}\n            />\n          </div>\n        </div>\n      ),\n    },\n  ];\n\n  return (\n    <Card>\n      <Table\n        loaderSchema={loaderSchema}\n        showMenu={false}\n        type=\"resource\"\n        data={data}\n        schema={schema}\n        withHeader={true}\n        filterPosition=\"HEADER\"\n        filterList={{\n          status: ['In Progress', 'Scheduled', 'Draft', 'Failed'],\n        }}\n        onSelect={(rowIndex, selected, selectedList, selectAll) =>\n          action(\n            `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(\n              selectedList\n            )} selectAll: ${selectAll}`\n          )()\n        }\n        headerOptions={{\n          withSearch: true,\n        }}\n        onSearch={(currData, searchTerm) => {\n          return currData.filter(\n            (d) =>\n              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||\n              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||\n              d.name.toLowerCase().match(searchTerm.toLowerCase())\n          );\n        }}\n        withPagination={true}\n        paginationType=\"basic\"\n        pageSize={4}\n        onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}\n      />\n    </Card>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-table-resource-table--resource-table",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "showHead": {
+        "name": "showHead",
+        "description": "Controls Table Head display",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "type": {
+        "name": "type",
+        "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "data",
+            "resource"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"data\" | \"resource\""
+          },
+          "defaultValue": {
+            "summary": "\"data\""
+          }
+        }
+      },
+      "size": {
+        "name": "size",
+        "description": "Table cell size",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "standard",
+            "compressed",
+            "tight",
+            "comfortable"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"standard\" | \"compressed\" | \"tight\" | \"comfortable\""
+          },
+          "defaultValue": {
+            "summary": "\"standard\""
+          }
+        }
+      },
+      "draggable": {
+        "name": "draggable",
+        "description": "Allow Column reordering",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "nestedRows": {
+        "name": "nestedRows",
+        "description": "Allow nested rows",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "nestedRowRenderer": {
+        "name": "nestedRowRenderer",
+        "description": "Renderer to be used for nested rows\n\n<pre className=\"DocPage-codeBlock\">\nNestedRowProps: {\n    rowIndex: number;\n    data: RowData;\n    schema: GridProps['schema'];\n    loading: boolean;\n}\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "FC<NestedRowProps> | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "FC<NestedRowProps> | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "withHeader": {
+        "name": "withHeader",
+        "description": "Set to use `Header`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "headerOptions": {
+        "name": "headerOptions",
+        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ExternalHeaderProps | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "ExternalHeaderProps | undefined"
+          },
+          "defaultValue": {
+            "summary": "{ }"
+          }
+        }
+      },
+      "withCheckbox": {
+        "name": "withCheckbox",
+        "description": "Set for Row checkboxes",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showMenu": {
+        "name": "showMenu",
+        "description": "Set for visibility of Menu on Table Head Cell",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "withPagination": {
+        "name": "withPagination",
+        "description": "Set for `Pagination` component in `Table`(**Not applied if pageSize >= totalRecords**)",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "page": {
+        "name": "page",
+        "description": "Initial page passed to `Table`",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "1"
+          }
+        }
+      },
+      "paginationType": {
+        "name": "paginationType",
+        "description": "`Pagination` component type",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "basic",
+            "jump"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"basic\" | \"jump\""
+          },
+          "defaultValue": {
+            "summary": "\"jump\""
+          }
+        }
+      },
+      "pageSize": {
+        "name": "pageSize",
+        "description": "Number of rows to be rendered on a page\n\n**Also used to control number of rows to be rendered while loading: true**",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "15"
+          }
+        }
+      },
+      "loaderSchema": {
+        "name": "loaderSchema",
+        "description": "Schema to be used for loading state **only when `schema: undefined`**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Schema"
+        },
+        "table": {
+          "type": {
+            "summary": "Schema"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "multipleSorting": {
+        "name": "multipleSorting",
+        "description": "Set to allow multiple column sorting",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "sortingList": {
+        "name": "sortingList",
+        "description": "Initial sortingList passed to `Table`\n\n<pre className=\"DocPage-codeBlock\">\nSortType: 'asc' | 'desc'\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "{ name: string; type: SortType; }[]"
+        },
+        "table": {
+          "type": {
+            "summary": "{ name: string; type: SortType; }[]"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "filterList": {
+        "name": "filterList",
+        "description": "Initial filterList passed to `Table`\n\n<pre className=\"DocPage-codeBlock\">\nFilter: Array of selected values passed in dropdown\n`any[]`\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Record<string, Filter>"
+        },
+        "table": {
+          "type": {
+            "summary": "Record<string, Filter>"
+          },
+          "defaultValue": {
+            "summary": "{ }"
+          }
+        }
+      },
+      "errorTemplate": {
+        "name": "errorTemplate",
+        "description": "Template to be rendered when **error: true**\n\n<pre className=\"DocPage-codeBlock\">\nErrorTemplateProps: {\n    errorType: TableProps['errorType']\n}\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "FunctionComponent<ErrorTemplateProps> | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "FunctionComponent<ErrorTemplateProps> | undefined"
+          },
+          "defaultValue": {
+            "summary": "(props: ErrorTemplateProps) => {\n  const { errorType = 'DEFAULT' } = props;\n\n  const errorMessages: Record<string, string> = {\n    FAILED_TO_FETCH: 'Failed to fetch data',\n    NO_RECORDS_FOUND: 'No results found',\n    DEFAULT: 'No results found',\n  };\n  return <Heading>{errorMessages[errorType]}</Heading>;\n}"
+          }
+        }
+      },
+      "searchDebounceDuration": {
+        "name": "searchDebounceDuration",
+        "description": "Debounce duration to call updateData in case of search term update",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "750"
+          }
+        }
+      },
+      "onRowClick": {
+        "name": "onRowClick",
+        "description": "Callback to be called when a row is clicked in case of Table type: \"resource\"\n\n`onRowClickFunction: (data: RowData, rowIndexes?: number) => void`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "onRowClickFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "onRowClickFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onSelect": {
+        "name": "onSelect",
+        "description": "Callback to be called when a row is selected",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onPageChange": {
+        "name": "onPageChange",
+        "description": "Callback to be called on page change in case of withPagination: true",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((page: number) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((page: number) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "headCellTooltip": {
+        "name": "headCellTooltip",
+        "description": "Shows tooltip on Head Cell hover",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "separator": {
+        "name": "separator",
+        "description": "Shows left separator to all columns\n\n**Can be override by Column Schema**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "filterPosition": {
+        "name": "filterPosition",
+        "description": "Filters position in the Table\n\n`FilterPosition: 'HEADER' | 'GRID'`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "GRID",
+            "HEADER"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"GRID\" | \"HEADER\""
+          },
+          "defaultValue": {
+            "summary": "\"GRID\""
+          }
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "fetchData": {
+        "name": "fetchData",
+        "description": "Callback to be called in case of async `Table`\n\n<pre className=\"DocPage-codeBlock\">\nfetchDataFunction: (options: FetchDataOptions) => Promise<{\n      searchTerm?: string,\n      count: number,\n      data: Data,\n      schema: Schema\n}>;\n\nFetchDataOptions: {\n      page?: number;\n      pageSize?: number;\n      filterList?: TableProps['sortingList'];\n      sortingList?: TableProps['filterList'];\n      searchTerm?: string;\n  }\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "fetchDataFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "fetchDataFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data": {
+        "name": "data",
+        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Data"
+        },
+        "table": {
+          "type": {
+            "summary": "Data"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "schema": {
+        "name": "schema",
+        "description": "<pre className=\"DocPage-codeBlock\">\n    Schema: ColumnSchema[]\n\n    ColumnSchema: {\n        name: string;\n        displayName: string;\n        width?: React.ReactText;\n        minWidth?: React.ReactText;\n        maxWidth?: React.ReactText;\n        resizable?: boolean;\n        sorting?: boolean;\n        comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;\n        separator?: boolean;\n        pinned?: 'left' | 'right';\n        hidden?: boolean;\n        filters?: DropdownProps['options'];\n        onFilterChange?: (data: RowData, filters: Filter) => boolean;\n        translate?: (data: RowData) => RowData,\n        cellType?: CellType;\n        cellRenderer?: React.FunctionComponent\\<GridCellProps\\>;\n        align?: Alignment;\n    }\n\n    GridCellProps: {\n        size: GridSize;\n        rowIndex: number;\n        colIndex: number;\n        data: RowData;\n        schema: ColumnSchema;\n        loading: boolean;\n        expanded: boolean;\n    }\n\n| CellType | CellData | Default Width |\n| --- | --- | --- |\n| DEFAULT | string \\| { title: string } | { width: 200 } |\n| WITH\\_META\\_LIST | { title: string, metaList: string[] } | { width: 200 } |\n| AVATAR | { firstName?: string, lastName?: string, title?: string } | { width: 50, minWidth: 50 } |\n| AVATAR\\_WITH\\_TEXT | { firstName?: string, lastName?: string, title: string } | { width: 250 } |\n| AVATAR\\_WITH\\_META\\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } | { width: 250 } |\n| ICON | { icon: string } | { width: 50, minWidth: 50 } |\n| STATUS_HINT | { title: string, statusAppearance: string } | { width: 100 } |\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | key of the value in `RowData` | |\n| displayName | Column Head Label | |\n| width | width of the column(px or %) | |\n| minWidth | min-width of the column(px or %) | 100 |\n| maxWidth | max-width of the column(px or %) | 800 |\n| resizable | Denotes if column is resizable | |\n| sorting | Enables sorting in column | true |\n| comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |\n| separator | Shows Left separator | |\n| tooltip | Shows tooltip on hover | |\n| pinned | Pin column | |\n| hidden | Denotes if column is hidden | |\n| filters | Filter options for the column | |\n| onFilterChange | Callback to be called on Filter Change | |\n| translate | Translate Cell Data | |\n| cellType | Cell Type | 'DEFAULT' |\n| cellRenderer | Custom Cell Renderer | |\n| align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | \"left\" |",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Schema"
+        },
+        "table": {
+          "type": {
+            "summary": "Schema"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "loading": {
+        "name": "loading",
+        "description": "Set for loading state of Table(in case of sync)",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "error": {
+        "name": "error",
+        "description": "Set for error state of Table(in case of sync)",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "errorType": {
+        "name": "errorType",
+        "description": "Error type to be passed to errorTemplate props",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onSearch": {
+        "name": "onSearch",
+        "description": "Callback to be called on searchTerm change(in case of sync)",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((data: Data, searchTerm: string) => Data) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((data: Data, searchTerm: string) => Data) | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "showHead": {
+      "name": "showHead",
+      "description": "Controls Table Head display",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "type": {
+      "name": "type",
+      "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "data",
+          "resource"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"data\" | \"resource\""
+        },
+        "defaultValue": {
+          "summary": "\"data\""
+        }
+      }
+    },
+    "size": {
+      "name": "size",
+      "description": "Table cell size",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "standard",
+          "compressed",
+          "tight",
+          "comfortable"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"standard\" | \"compressed\" | \"tight\" | \"comfortable\""
+        },
+        "defaultValue": {
+          "summary": "\"standard\""
+        }
+      }
+    },
+    "draggable": {
+      "name": "draggable",
+      "description": "Allow Column reordering",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "nestedRows": {
+      "name": "nestedRows",
+      "description": "Allow nested rows",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "nestedRowRenderer": {
+      "name": "nestedRowRenderer",
+      "description": "Renderer to be used for nested rows\n\n<pre className=\"DocPage-codeBlock\">\nNestedRowProps: {\n    rowIndex: number;\n    data: RowData;\n    schema: GridProps['schema'];\n    loading: boolean;\n}\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "FC<NestedRowProps> | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "FC<NestedRowProps> | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "withHeader": {
+      "name": "withHeader",
+      "description": "Set to use `Header`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "headerOptions": {
+      "name": "headerOptions",
+      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ExternalHeaderProps | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "ExternalHeaderProps | undefined"
+        },
+        "defaultValue": {
+          "summary": "{ }"
+        }
+      }
+    },
+    "withCheckbox": {
+      "name": "withCheckbox",
+      "description": "Set for Row checkboxes",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showMenu": {
+      "name": "showMenu",
+      "description": "Set for visibility of Menu on Table Head Cell",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "withPagination": {
+      "name": "withPagination",
+      "description": "Set for `Pagination` component in `Table`(**Not applied if pageSize >= totalRecords**)",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "page": {
+      "name": "page",
+      "description": "Initial page passed to `Table`",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "1"
+        }
+      }
+    },
+    "paginationType": {
+      "name": "paginationType",
+      "description": "`Pagination` component type",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "basic",
+          "jump"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"basic\" | \"jump\""
+        },
+        "defaultValue": {
+          "summary": "\"jump\""
+        }
+      }
+    },
+    "pageSize": {
+      "name": "pageSize",
+      "description": "Number of rows to be rendered on a page\n\n**Also used to control number of rows to be rendered while loading: true**",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "15"
+        }
+      }
+    },
+    "loaderSchema": {
+      "name": "loaderSchema",
+      "description": "Schema to be used for loading state **only when `schema: undefined`**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Schema"
+      },
+      "table": {
+        "type": {
+          "summary": "Schema"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "multipleSorting": {
+      "name": "multipleSorting",
+      "description": "Set to allow multiple column sorting",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "sortingList": {
+      "name": "sortingList",
+      "description": "Initial sortingList passed to `Table`\n\n<pre className=\"DocPage-codeBlock\">\nSortType: 'asc' | 'desc'\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "{ name: string; type: SortType; }[]"
+      },
+      "table": {
+        "type": {
+          "summary": "{ name: string; type: SortType; }[]"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "filterList": {
+      "name": "filterList",
+      "description": "Initial filterList passed to `Table`\n\n<pre className=\"DocPage-codeBlock\">\nFilter: Array of selected values passed in dropdown\n`any[]`\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Record<string, Filter>"
+      },
+      "table": {
+        "type": {
+          "summary": "Record<string, Filter>"
+        },
+        "defaultValue": {
+          "summary": "{ }"
+        }
+      }
+    },
+    "errorTemplate": {
+      "name": "errorTemplate",
+      "description": "Template to be rendered when **error: true**\n\n<pre className=\"DocPage-codeBlock\">\nErrorTemplateProps: {\n    errorType: TableProps['errorType']\n}\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "FunctionComponent<ErrorTemplateProps> | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "FunctionComponent<ErrorTemplateProps> | undefined"
+        },
+        "defaultValue": {
+          "summary": "(props: ErrorTemplateProps) => {\n  const { errorType = 'DEFAULT' } = props;\n\n  const errorMessages: Record<string, string> = {\n    FAILED_TO_FETCH: 'Failed to fetch data',\n    NO_RECORDS_FOUND: 'No results found',\n    DEFAULT: 'No results found',\n  };\n  return <Heading>{errorMessages[errorType]}</Heading>;\n}"
+        }
+      }
+    },
+    "searchDebounceDuration": {
+      "name": "searchDebounceDuration",
+      "description": "Debounce duration to call updateData in case of search term update",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "750"
+        }
+      }
+    },
+    "onRowClick": {
+      "name": "onRowClick",
+      "description": "Callback to be called when a row is clicked in case of Table type: \"resource\"\n\n`onRowClickFunction: (data: RowData, rowIndexes?: number) => void`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "onRowClickFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "onRowClickFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onSelect": {
+      "name": "onSelect",
+      "description": "Callback to be called when a row is selected",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onPageChange": {
+      "name": "onPageChange",
+      "description": "Callback to be called on page change in case of withPagination: true",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((page: number) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((page: number) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "headCellTooltip": {
+      "name": "headCellTooltip",
+      "description": "Shows tooltip on Head Cell hover",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "separator": {
+      "name": "separator",
+      "description": "Shows left separator to all columns\n\n**Can be override by Column Schema**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "filterPosition": {
+      "name": "filterPosition",
+      "description": "Filters position in the Table\n\n`FilterPosition: 'HEADER' | 'GRID'`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "GRID",
+          "HEADER"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"GRID\" | \"HEADER\""
+        },
+        "defaultValue": {
+          "summary": "\"GRID\""
+        }
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "fetchData": {
+      "name": "fetchData",
+      "description": "Callback to be called in case of async `Table`\n\n<pre className=\"DocPage-codeBlock\">\nfetchDataFunction: (options: FetchDataOptions) => Promise<{\n      searchTerm?: string,\n      count: number,\n      data: Data,\n      schema: Schema\n}>;\n\nFetchDataOptions: {\n      page?: number;\n      pageSize?: number;\n      filterList?: TableProps['sortingList'];\n      sortingList?: TableProps['filterList'];\n      searchTerm?: string;\n  }\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "fetchDataFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "fetchDataFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data": {
+      "name": "data",
+      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Data"
+      },
+      "table": {
+        "type": {
+          "summary": "Data"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "schema": {
+      "name": "schema",
+      "description": "<pre className=\"DocPage-codeBlock\">\n    Schema: ColumnSchema[]\n\n    ColumnSchema: {\n        name: string;\n        displayName: string;\n        width?: React.ReactText;\n        minWidth?: React.ReactText;\n        maxWidth?: React.ReactText;\n        resizable?: boolean;\n        sorting?: boolean;\n        comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;\n        separator?: boolean;\n        pinned?: 'left' | 'right';\n        hidden?: boolean;\n        filters?: DropdownProps['options'];\n        onFilterChange?: (data: RowData, filters: Filter) => boolean;\n        translate?: (data: RowData) => RowData,\n        cellType?: CellType;\n        cellRenderer?: React.FunctionComponent\\<GridCellProps\\>;\n        align?: Alignment;\n    }\n\n    GridCellProps: {\n        size: GridSize;\n        rowIndex: number;\n        colIndex: number;\n        data: RowData;\n        schema: ColumnSchema;\n        loading: boolean;\n        expanded: boolean;\n    }\n\n| CellType | CellData | Default Width |\n| --- | --- | --- |\n| DEFAULT | string \\| { title: string } | { width: 200 } |\n| WITH\\_META\\_LIST | { title: string, metaList: string[] } | { width: 200 } |\n| AVATAR | { firstName?: string, lastName?: string, title?: string } | { width: 50, minWidth: 50 } |\n| AVATAR\\_WITH\\_TEXT | { firstName?: string, lastName?: string, title: string } | { width: 250 } |\n| AVATAR\\_WITH\\_META\\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } | { width: 250 } |\n| ICON | { icon: string } | { width: 50, minWidth: 50 } |\n| STATUS_HINT | { title: string, statusAppearance: string } | { width: 100 } |\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | key of the value in `RowData` | |\n| displayName | Column Head Label | |\n| width | width of the column(px or %) | |\n| minWidth | min-width of the column(px or %) | 100 |\n| maxWidth | max-width of the column(px or %) | 800 |\n| resizable | Denotes if column is resizable | |\n| sorting | Enables sorting in column | true |\n| comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |\n| separator | Shows Left separator | |\n| tooltip | Shows tooltip on hover | |\n| pinned | Pin column | |\n| hidden | Denotes if column is hidden | |\n| filters | Filter options for the column | |\n| onFilterChange | Callback to be called on Filter Change | |\n| translate | Translate Cell Data | |\n| cellType | Cell Type | 'DEFAULT' |\n| cellRenderer | Custom Cell Renderer | |\n| align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | \"left\" |",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Schema"
+      },
+      "table": {
+        "type": {
+          "summary": "Schema"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "loading": {
+      "name": "loading",
+      "description": "Set for loading state of Table(in case of sync)",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Set for error state of Table(in case of sync)",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "errorType": {
+      "name": "errorType",
+      "description": "Error type to be passed to errorTemplate props",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onSearch": {
+      "name": "onSearch",
+      "description": "Callback to be called on searchTerm change(in case of sync)",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((data: Data, searchTerm: string) => Data) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((data: Data, searchTerm: string) => Data) | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

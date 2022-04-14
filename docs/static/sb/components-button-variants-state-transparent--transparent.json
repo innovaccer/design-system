@@ -1,0 +1,1103 @@
+{
+  "args": {},
+  "componentId": "components-button-variants-state-transparent",
+  "title": "Components/Button/Variants/State/Transparent",
+  "kind": "Components/Button/Variants/State/Transparent",
+  "id": "components-button-variants-state-transparent--transparent",
+  "name": "Transparent",
+  "story": "Transparent",
+  "component": {
+    "displayName": "Button",
+    "__docgenInfo": {
+      "description": "",
+      "displayName": "Button",
+      "props": {
+        "type": {
+          "defaultValue": null,
+          "description": "Type of `Button`",
+          "name": "type",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"button\""
+              },
+              {
+                "value": "\"submit\""
+              },
+              {
+                "value": "\"reset\""
+              }
+            ]
+          }
+        },
+        "size": {
+          "defaultValue": null,
+          "description": "The size of `Button`",
+          "name": "size",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"regular\""
+              },
+              {
+                "value": "\"tiny\""
+              },
+              {
+                "value": "\"large\""
+              }
+            ]
+          }
+        },
+        "appearance": {
+          "defaultValue": null,
+          "description": "Color of the `Button`\n\n**'success' has been deprecated and all success button types will now be changed to primary button automatically**",
+          "name": "appearance",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"primary\""
+              },
+              {
+                "value": "\"alert\""
+              },
+              {
+                "value": "\"success\""
+              },
+              {
+                "value": "\"basic\""
+              },
+              {
+                "value": "\"transparent\""
+              }
+            ]
+          }
+        },
+        "disabled": {
+          "defaultValue": null,
+          "description": "Disables the `Button`, making it unable to be pressed",
+          "name": "disabled",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "expanded": {
+          "defaultValue": null,
+          "description": "Expands the `Button` to full width",
+          "name": "expanded",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "selected": {
+          "defaultValue": null,
+          "description": "Selected state of `Button`\n\n**Only applicable for `appearance: 'basic' | 'transparent'`**",
+          "name": "selected",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "loading": {
+          "defaultValue": null,
+          "description": "Adds loader inside `Button` when waiting for an action to complete",
+          "name": "loading",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "icon": {
+          "defaultValue": null,
+          "description": "Name of icon that is to be added inside `Button`\nMaterial icon name",
+          "name": "icon",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "tooltip": {
+          "defaultValue": null,
+          "description": "Adds title to `Button` when only icon is present",
+          "name": "tooltip",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "iconAlign": {
+          "defaultValue": null,
+          "description": "Align icon left or right",
+          "name": "iconAlign",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"left\""
+              },
+              {
+                "value": "\"right\""
+              }
+            ]
+          }
+        },
+        "largeIcon": {
+          "defaultValue": null,
+          "description": "Determines if size of icon is large\n\n**Valid when button has icon only**",
+          "name": "largeIcon",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "children": {
+          "defaultValue": null,
+          "description": "Text to be added inside `Button`",
+          "name": "children",
+          "required": false,
+          "type": {
+            "name": "string | number | undefined"
+          }
+        },
+        "tabIndex": {
+          "defaultValue": null,
+          "description": "Specifies tab index of `Button`",
+          "name": "tabIndex",
+          "required": false,
+          "type": {
+            "name": "number | undefined"
+          }
+        },
+        "autoFocus": {
+          "defaultValue": null,
+          "description": "Specifies autoFocus on render",
+          "name": "autoFocus",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "onClick": {
+          "defaultValue": null,
+          "description": "Handler to be called when `Button` is clicked",
+          "name": "onClick",
+          "required": false,
+          "type": {
+            "name": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+          }
+        },
+        "onMouseEnter": {
+          "defaultValue": null,
+          "description": "Handler to be called when mouse pointer enters `Button`.",
+          "name": "onMouseEnter",
+          "required": false,
+          "type": {
+            "name": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+          }
+        },
+        "onMouseLeave": {
+          "defaultValue": null,
+          "description": "Handler to be called when mouse pointer leaves `Button`.",
+          "name": "onMouseLeave",
+          "required": false,
+          "type": {
+            "name": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+          }
+        },
+        "className": {
+          "defaultValue": null,
+          "description": "Adds custom class",
+          "name": "className",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "data-test": {
+          "defaultValue": null,
+          "description": "Stores custom testing data private to the component.",
+          "name": "data-test",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "title": "Button",
+        "a11yProps": " \n        **aria-label:** \n        <br/>\n        - Add `aria-label='Open'` to describe the action of button.\n        <br/> \n        - Add `aria-label='Events'` on button with *event* icon to define its purpose.\n         "
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/atoms/button/__stories__/variants/state/Transparent.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const disabled = false;\n  const expanded = false;\n  const loading = false;\n  const children = 'Open';\n  const style = {\n    justifyContent: 'space-between',\n  };\n  return (\n    <div className=\"d-flex w-25\" style={style}>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'transparent'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={disabled}\n          loading={loading}\n          aria-label=\"Open\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Default</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'transparent'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={true}\n          loading={loading}\n          aria-label=\"Open\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Disabled</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'transparent'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={disabled}\n          loading={true}\n          aria-label=\"loading\"\n        >\n          {''}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Loading</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'transparent'}\n          size={'regular'}\n          selected={true}\n          aria-label=\"Open\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Selected</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'transparent'}\n          size={'regular'}\n          selected={true}\n          icon=\"events\"\n          aria-label=\"Events\"\n        />\n        <br />\n        <Text weight=\"strong\">Selected Icon</Text>\n      </div>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-button-variants-state-transparent--transparent",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "type": {
+        "name": "type",
+        "description": "Type of `Button`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "button",
+            "submit",
+            "reset"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"button\" | \"submit\" | \"reset\""
+          },
+          "defaultValue": null
+        }
+      },
+      "size": {
+        "name": "size",
+        "description": "The size of `Button`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "regular",
+            "tiny",
+            "large"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
+          },
+          "defaultValue": null
+        }
+      },
+      "appearance": {
+        "name": "appearance",
+        "description": "Color of the `Button`\n\n**'success' has been deprecated and all success button types will now be changed to primary button automatically**",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "primary",
+            "alert",
+            "success",
+            "basic",
+            "transparent"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
+          },
+          "defaultValue": null
+        }
+      },
+      "disabled": {
+        "name": "disabled",
+        "description": "Disables the `Button`, making it unable to be pressed",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "expanded": {
+        "name": "expanded",
+        "description": "Expands the `Button` to full width",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "selected": {
+        "name": "selected",
+        "description": "Selected state of `Button`\n\n**Only applicable for `appearance: 'basic' | 'transparent'`**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "loading": {
+        "name": "loading",
+        "description": "Adds loader inside `Button` when waiting for an action to complete",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "icon": {
+        "name": "icon",
+        "description": "Name of icon that is to be added inside `Button`\nMaterial icon name",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "tooltip": {
+        "name": "tooltip",
+        "description": "Adds title to `Button` when only icon is present",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "iconAlign": {
+        "name": "iconAlign",
+        "description": "Align icon left or right",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "left",
+            "right"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"left\" | \"right\""
+          },
+          "defaultValue": null
+        }
+      },
+      "largeIcon": {
+        "name": "largeIcon",
+        "description": "Determines if size of icon is large\n\n**Valid when button has icon only**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "children": {
+        "name": "children",
+        "description": "Text to be added inside `Button`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "tabIndex": {
+        "name": "tabIndex",
+        "description": "Specifies tab index of `Button`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "autoFocus": {
+        "name": "autoFocus",
+        "description": "Specifies autoFocus on render",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Handler to be called when `Button` is clicked",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onMouseEnter": {
+        "name": "onMouseEnter",
+        "description": "Handler to be called when mouse pointer enters `Button`.",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onMouseLeave": {
+        "name": "onMouseLeave",
+        "description": "Handler to be called when mouse pointer leaves `Button`.",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "type": {
+      "name": "type",
+      "description": "Type of `Button`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "button",
+          "submit",
+          "reset"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"button\" | \"submit\" | \"reset\""
+        },
+        "defaultValue": null
+      }
+    },
+    "size": {
+      "name": "size",
+      "description": "The size of `Button`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "regular",
+          "tiny",
+          "large"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
+        },
+        "defaultValue": null
+      }
+    },
+    "appearance": {
+      "name": "appearance",
+      "description": "Color of the `Button`\n\n**'success' has been deprecated and all success button types will now be changed to primary button automatically**",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "primary",
+          "alert",
+          "success",
+          "basic",
+          "transparent"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
+        },
+        "defaultValue": null
+      }
+    },
+    "disabled": {
+      "name": "disabled",
+      "description": "Disables the `Button`, making it unable to be pressed",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "expanded": {
+      "name": "expanded",
+      "description": "Expands the `Button` to full width",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "selected": {
+      "name": "selected",
+      "description": "Selected state of `Button`\n\n**Only applicable for `appearance: 'basic' | 'transparent'`**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "loading": {
+      "name": "loading",
+      "description": "Adds loader inside `Button` when waiting for an action to complete",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "icon": {
+      "name": "icon",
+      "description": "Name of icon that is to be added inside `Button`\nMaterial icon name",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "tooltip": {
+      "name": "tooltip",
+      "description": "Adds title to `Button` when only icon is present",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "iconAlign": {
+      "name": "iconAlign",
+      "description": "Align icon left or right",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "left",
+          "right"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"left\" | \"right\""
+        },
+        "defaultValue": null
+      }
+    },
+    "largeIcon": {
+      "name": "largeIcon",
+      "description": "Determines if size of icon is large\n\n**Valid when button has icon only**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "children": {
+      "name": "children",
+      "description": "Text to be added inside `Button`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "tabIndex": {
+      "name": "tabIndex",
+      "description": "Specifies tab index of `Button`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "autoFocus": {
+      "name": "autoFocus",
+      "description": "Specifies autoFocus on render",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Handler to be called when `Button` is clicked",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onMouseEnter": {
+      "name": "onMouseEnter",
+      "description": "Handler to be called when mouse pointer enters `Button`.",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onMouseLeave": {
+      "name": "onMouseLeave",
+      "description": "Handler to be called when mouse pointer leaves `Button`.",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

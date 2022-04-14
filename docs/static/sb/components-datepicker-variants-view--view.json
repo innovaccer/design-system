@@ -1,0 +1,1057 @@
+{
+  "args": {},
+  "componentId": "components-datepicker-variants-view",
+  "title": "Components/DatePicker/Variants/View",
+  "kind": "Components/DatePicker/Variants/View",
+  "id": "components-datepicker-variants-view--view",
+  "name": "View",
+  "story": "View",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "title": "DatePicker"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/datePicker/__stories__/variants/view.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const values = ['year', 'month', 'date'];\n\n  return (\n    <div className=\"d-flex\">\n      {values.map((v, index) => (\n        <div key={index} className=\"mr-5\">\n          <Card className=\"d-inline-flex\" shadow=\"light\">\n            <DatePicker date={new Date(2020, 2, 1)} view={v} />\n          </Card>\n        </div>\n      ))}\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-datepicker-variants-view--view",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "size": {
+        "name": "size",
+        "description": "Size of `Calendar`",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "large",
+            "small"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"large\" | \"small\""
+          },
+          "defaultValue": {
+            "summary": "\"large\""
+          }
+        }
+      },
+      "monthsInView": {
+        "name": "monthsInView",
+        "description": "Number of months rendered in view",
+        "type": {
+          "required": true,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "1"
+          }
+        }
+      },
+      "jumpView": {
+        "name": "jumpView",
+        "description": "Enables jumping to different view on clicking on Calendar Header\n\n**set to `false` if monthsInView > 1**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "firstDayOfWeek": {
+        "name": "firstDayOfWeek",
+        "description": "Specifies first day of week to be rendered",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "sunday",
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"sunday\" | \"monday\" | \"tuesday\" | \"wednesday\" | \"thursday\" | \"friday\" | \"saturday\""
+          },
+          "defaultValue": {
+            "summary": "\"sunday\""
+          }
+        }
+      },
+      "view": {
+        "name": "view",
+        "description": "Specifies initial view of `Calendar`",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "date",
+            "month",
+            "year"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"date\" | \"month\" | \"year\""
+          },
+          "defaultValue": {
+            "summary": "\"date\""
+          }
+        }
+      },
+      "disabledBefore": {
+        "name": "disabledBefore",
+        "description": "Dates to be disabled before mentioned date",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "disabledAfter": {
+        "name": "disabledAfter",
+        "description": "Dates to be disabled after mentioned date",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "yearNav": {
+        "name": "yearNav",
+        "description": "Initial year to be set for navigation\n\n**use only if date, startDate and endDate are all set or undefined**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "monthNav": {
+        "name": "monthNav",
+        "description": "Initial month to be set for navigation\n\n**0 indexed(0-11)**\n\n**use only if date, startDate and endDate are all set or undefined**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDateChange": {
+        "name": "onDateChange",
+        "description": "Callback function called when date is changed",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "date": {
+        "name": "date",
+        "description": "Selected date\n\n`number` - number of milliseconds elapsed since January 1, 1970, 00:00:00 UTC\n\n`string` - Date string value as per `inputFormat`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | number | Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | number | Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "withInput": {
+        "name": "withInput",
+        "description": "Set if `InputMask` should be used as trigger",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "open": {
+        "name": "open",
+        "description": "Sets open state of `Popover`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "position": {
+        "name": "position",
+        "description": "Position of `DatePicker` with respect to `InputMask`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "bottom",
+            "top",
+            "top-start",
+            "top-end",
+            "bottom-start",
+            "bottom-end",
+            "left",
+            "right"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+          },
+          "defaultValue": {
+            "summary": "\"bottom-start\""
+          }
+        }
+      },
+      "inputFormat": {
+        "name": "inputFormat",
+        "description": "Should be used if `date` is of type `string`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "mm/dd/yyyy",
+            "dd/mm/yyyy",
+            "yyyy/mm/dd",
+            "mm-dd-yyyy",
+            "dd-mm-yyyy",
+            "yyyy-mm-dd"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"mm/dd/yyyy\" | \"dd/mm/yyyy\" | \"yyyy/mm/dd\" | \"mm-dd-yyyy\" | \"dd-mm-yyyy\" | \"yyyy-mm-dd\""
+          },
+          "defaultValue": {
+            "summary": "\"mm/dd/yyyy\""
+          }
+        }
+      },
+      "outputFormat": {
+        "name": "outputFormat",
+        "description": "Should be used to translate `date` to desired format for `onDateChange` callback",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "mm/dd/yyyy",
+            "dd/mm/yyyy",
+            "yyyy/mm/dd",
+            "mm-dd-yyyy",
+            "dd-mm-yyyy",
+            "yyyy-mm-dd"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"mm/dd/yyyy\" | \"dd/mm/yyyy\" | \"yyyy/mm/dd\" | \"mm-dd-yyyy\" | \"dd-mm-yyyy\" | \"yyyy-mm-dd\""
+          },
+          "defaultValue": {
+            "summary": "\"mm/dd/yyyy\""
+          }
+        }
+      },
+      "inputOptions": {
+        "name": "inputOptions",
+        "description": "Props to be used for `InputMask`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+        },
+        "table": {
+          "type": {
+            "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+          },
+          "defaultValue": {
+            "summary": "{ }"
+          }
+        }
+      },
+      "validators": {
+        "name": "validators",
+        "description": "custom Validator for `DatePicker`\n\n`ValidatorFn = (val: string, format: string) => boolean`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "SingleOrArray<ValidatorFn<any[]>>"
+        },
+        "table": {
+          "type": {
+            "summary": "SingleOrArray<ValidatorFn<any[]>>"
+          },
+          "defaultValue": {
+            "summary": "[Utils.validators.date]"
+          }
+        }
+      },
+      "closeOnSelect": {
+        "name": "closeOnSelect",
+        "description": "Close Popover on date selection",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "showTodayDate": {
+        "name": "showTodayDate",
+        "description": "Add or remove the select today's date chip from DatePicker Footer",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "children": {
+        "name": "children",
+        "description": "Element to be rendered inside Popover",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "size": {
+      "name": "size",
+      "description": "Size of `Calendar`",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "large",
+          "small"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"large\" | \"small\""
+        },
+        "defaultValue": {
+          "summary": "\"large\""
+        }
+      }
+    },
+    "monthsInView": {
+      "name": "monthsInView",
+      "description": "Number of months rendered in view",
+      "type": {
+        "required": true,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "1"
+        }
+      }
+    },
+    "jumpView": {
+      "name": "jumpView",
+      "description": "Enables jumping to different view on clicking on Calendar Header\n\n**set to `false` if monthsInView > 1**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "firstDayOfWeek": {
+      "name": "firstDayOfWeek",
+      "description": "Specifies first day of week to be rendered",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"sunday\" | \"monday\" | \"tuesday\" | \"wednesday\" | \"thursday\" | \"friday\" | \"saturday\""
+        },
+        "defaultValue": {
+          "summary": "\"sunday\""
+        }
+      }
+    },
+    "view": {
+      "name": "view",
+      "description": "Specifies initial view of `Calendar`",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "date",
+          "month",
+          "year"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"date\" | \"month\" | \"year\""
+        },
+        "defaultValue": {
+          "summary": "\"date\""
+        }
+      }
+    },
+    "disabledBefore": {
+      "name": "disabledBefore",
+      "description": "Dates to be disabled before mentioned date",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "disabledAfter": {
+      "name": "disabledAfter",
+      "description": "Dates to be disabled after mentioned date",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "yearNav": {
+      "name": "yearNav",
+      "description": "Initial year to be set for navigation\n\n**use only if date, startDate and endDate are all set or undefined**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "monthNav": {
+      "name": "monthNav",
+      "description": "Initial month to be set for navigation\n\n**0 indexed(0-11)**\n\n**use only if date, startDate and endDate are all set or undefined**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDateChange": {
+      "name": "onDateChange",
+      "description": "Callback function called when date is changed",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "date": {
+      "name": "date",
+      "description": "Selected date\n\n`number` - number of milliseconds elapsed since January 1, 1970, 00:00:00 UTC\n\n`string` - Date string value as per `inputFormat`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | number | Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | number | Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "withInput": {
+      "name": "withInput",
+      "description": "Set if `InputMask` should be used as trigger",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "open": {
+      "name": "open",
+      "description": "Sets open state of `Popover`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "position": {
+      "name": "position",
+      "description": "Position of `DatePicker` with respect to `InputMask`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "bottom",
+          "top",
+          "top-start",
+          "top-end",
+          "bottom-start",
+          "bottom-end",
+          "left",
+          "right"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+        },
+        "defaultValue": {
+          "summary": "\"bottom-start\""
+        }
+      }
+    },
+    "inputFormat": {
+      "name": "inputFormat",
+      "description": "Should be used if `date` is of type `string`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "mm/dd/yyyy",
+          "dd/mm/yyyy",
+          "yyyy/mm/dd",
+          "mm-dd-yyyy",
+          "dd-mm-yyyy",
+          "yyyy-mm-dd"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"mm/dd/yyyy\" | \"dd/mm/yyyy\" | \"yyyy/mm/dd\" | \"mm-dd-yyyy\" | \"dd-mm-yyyy\" | \"yyyy-mm-dd\""
+        },
+        "defaultValue": {
+          "summary": "\"mm/dd/yyyy\""
+        }
+      }
+    },
+    "outputFormat": {
+      "name": "outputFormat",
+      "description": "Should be used to translate `date` to desired format for `onDateChange` callback",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "mm/dd/yyyy",
+          "dd/mm/yyyy",
+          "yyyy/mm/dd",
+          "mm-dd-yyyy",
+          "dd-mm-yyyy",
+          "yyyy-mm-dd"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"mm/dd/yyyy\" | \"dd/mm/yyyy\" | \"yyyy/mm/dd\" | \"mm-dd-yyyy\" | \"dd-mm-yyyy\" | \"yyyy-mm-dd\""
+        },
+        "defaultValue": {
+          "summary": "\"mm/dd/yyyy\""
+        }
+      }
+    },
+    "inputOptions": {
+      "name": "inputOptions",
+      "description": "Props to be used for `InputMask`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+      },
+      "table": {
+        "type": {
+          "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+        },
+        "defaultValue": {
+          "summary": "{ }"
+        }
+      }
+    },
+    "validators": {
+      "name": "validators",
+      "description": "custom Validator for `DatePicker`\n\n`ValidatorFn = (val: string, format: string) => boolean`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "SingleOrArray<ValidatorFn<any[]>>"
+      },
+      "table": {
+        "type": {
+          "summary": "SingleOrArray<ValidatorFn<any[]>>"
+        },
+        "defaultValue": {
+          "summary": "[Utils.validators.date]"
+        }
+      }
+    },
+    "closeOnSelect": {
+      "name": "closeOnSelect",
+      "description": "Close Popover on date selection",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "showTodayDate": {
+      "name": "showTodayDate",
+      "description": "Add or remove the select today's date chip from DatePicker Footer",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "children": {
+      "name": "children",
+      "description": "Element to be rendered inside Popover",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

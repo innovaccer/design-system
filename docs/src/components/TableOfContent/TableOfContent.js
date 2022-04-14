@@ -60,7 +60,7 @@ const TableOfContent = (props) => {
           resultFound = true;
           let activeElement = document.getElementsByClassName('active-link')[0];
           let flag = isInViewport(activeElement);
-          if(flag === "belowViewPort") activeElement.scrollIntoView(false);
+          if(flag === "belowViewPort") activeElement.scrollIntoView(true);
           else if(flag === "aboveViewPort") activeElement.scrollIntoView(true);
         };
       };
@@ -74,7 +74,7 @@ const TableOfContent = (props) => {
     clickedRef.current = true;
     unsetClickedRef.current = setTimeout(() => {
       clickedRef.current = false;
-    }, 1000);
+    }, 0);
   };
 
   function getIds(items) {

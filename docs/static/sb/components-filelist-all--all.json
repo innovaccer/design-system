@@ -1,0 +1,405 @@
+{
+  "args": {},
+  "componentId": "components-filelist-all",
+  "title": "Components/FileList/All",
+  "kind": "Components/FileList/All",
+  "id": "components-filelist-all--all",
+  "name": "All",
+  "story": "All",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const fileList = [\n    {\n      file:{\n        name: 'Audio File.mp3',\n        size: '3 MB',\n        type: 'audio',\n      },\n      status: 'uploading',\n      progress: 45,\n      id: 1,\n    },\n    {\n      file:{\n        name: 'Video File.mp4',\n        size: '3 MB',\n        type: 'video',\n      },\n      status: 'completed',\n      id: 2,\n    },\n    {\n      file:{\n        name: 'Image file name can be some times very long in size so it will get truncated File.jpeg',\n        size: '3 MB',\n        type: 'image',\n      },\n      status: 'error',\n      errorMessage: 'Network failure',\n      id: 3,\n    },\n    {\n      file:{\n        name: 'Document File.pdf',\n        size: '3 MB',\n        type: 'application',\n      },\n      status: 'completed',\n      id: 4,\n    },\n    {\n      file:{\n        name: 'Other File',\n        size: '3 MB',\n        type: 'others',\n      },\n      status: 'completed',\n      id: 5,\n    }\n  ];\n\n  const onClick = (file) => {\n    console.log(`Clicked: ${file}`);\n  };\n\n  return (\n    <div className=\"pt-6 w-50\">\n      <FileList\n        onClick={onClick}\n        fileList={fileList}\n        actionRenderer={fileItem => {\n          if (fileItem.id === 3) {\n            return(\n              <>\n              <Button\n                appearance=\"transparent\"\n                icon=\"refresh\"\n                size=\"regular\"\n                onClick={() => onClick(fileItem)}\n                className={'cursor-pointer'}\n              />\n              <Button\n                appearance=\"transparent\"\n                icon=\"close\"\n                size=\"regular\"\n                onClick={() => onClick(fileItem)}\n                className={'cursor-pointer ml-2'}\n              />\n            </>\n            );\n          }\n          return (\n            <Button\n              appearance=\"transparent\"\n              icon=\"close\"\n              size=\"regular\"\n              onClick={() => {}}\n              className={'cursor-pointer'}\n            />\n          );\n        }\n        }\n      />\n    </div>\n  );\n}"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/molecules/fileList/__stories__/index.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const onClick = (file) => {\n    return action(`Clicked ${file}`)();\n  };\n\n  return (\n    <FileList\n      onClick={onClick}\n      fileList={fileList}\n      className=\"mt-4 FileList\"\n      actionRenderer={(fileItem) => {\n        if (fileItem.id === 3) {\n          return (\n            <>\n              <Button\n                appearance=\"transparent\"\n                icon=\"refresh\"\n                size=\"regular\"\n                onClick={() => onClick(fileItem)}\n                className={'cursor-pointer'}\n              />\n              <Button\n                appearance=\"transparent\"\n                icon=\"close\"\n                size=\"regular\"\n                onClick={() => onClick(fileItem)}\n                className={'cursor-pointer ml-2'}\n              />\n            </>\n          );\n        }\n        return (\n          <Button\n            appearance=\"transparent\"\n            icon=\"close\"\n            size=\"regular\"\n            onClick={() => {}}\n            className={'cursor-pointer'}\n          />\n        );\n      }}\n    />\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-filelist-all--all",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "fileList": {
+        "name": "fileList",
+        "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+        },
+        "table": {
+          "type": {
+            "summary": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Callback called when file item is clicked",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((file: FileListItemProps) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((file: FileListItemProps) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "actionRenderer": {
+        "name": "actionRenderer",
+        "description": "Actions to be rendered inside the file item",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "FC<FileListItemProps> | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "FC<FileListItemProps> | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "fileList": {
+      "name": "fileList",
+      "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+      },
+      "table": {
+        "type": {
+          "summary": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Callback called when file item is clicked",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((file: FileListItemProps) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((file: FileListItemProps) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "actionRenderer": {
+      "name": "actionRenderer",
+      "description": "Actions to be rendered inside the file item",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "FC<FileListItemProps> | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "FC<FileListItemProps> | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

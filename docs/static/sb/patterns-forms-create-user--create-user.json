@@ -1,0 +1,251 @@
+{
+  "args": {},
+  "componentId": "patterns-forms-create-user",
+  "title": "Patterns/Forms/Create User",
+  "kind": "Patterns/Forms/Create User",
+  "id": "patterns-forms-create-user--create-user",
+  "name": "Create User",
+  "story": "Create User",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "\n\n() => {\n  const genderOptions = [\n    {\n      label: 'Male',\n      value: 'Male',\n    },\n    {\n      label: 'Female',\n      value: 'Female',\n    }\n  ];\n\n  const userOptions = [\n    {\n      label: 'User A',\n      value: 'UserA',\n    },\n    {\n      label: 'User B',\n      value: 'UserB',\n    }\n  ];\n\n  class CreateUser extends React.Component {\n    constructor(props = {}) {\n      super(props);\n\n      this.state = {\n        updateDisabled: true,\n        data: {},\n      };\n\n      this.onChange = this.onChange.bind(this);\n      this.onSubmit = this.onSubmit.bind(this);\n    }\n\n    onChange(value, name) {\n      const updatedData = { ...this.state.data, [name]: value };\n\n      this.setState({\n        data: updatedData,\n        updateDisabled: Object.keys(updatedData).every(key => !updatedData[key])\n      });\n    }\n\n    onSubmit(event) {\n      event.preventDefault();\n      console.log(this.state.data);\n      return false;\n    }\n\n    render() {\n      return (\n      <div className=\"w-100\">\n        <Card className=\"px-6 py-6\">\n          <Text appearance=\"subtle\" weight=\"strong\">Primary Details</Text>\n          <form onSubmit={this.onSubmit}>\n            <Row className=\"mt-6\">\n              <Column sizeXL={4} sizeL={4} sizeM={6} className=\"mr-6 mb-6\">\n                <Label withInput={true} required={true}>Last Name</Label>\n                <Input\n                  name=\"lastName\"\n                  type=\"text\"\n                  placeholder=\"E.g. Doe, Smith, etc.\"\n                  icon=\"person\"\n                  autocomplete={'off'}\n                  onChange={(event) => this.onChange(event.target.value, event.target.name)}\n                />\n              </Column>\n              <Column sizeXL={4} sizeL={4} sizeM={5} className=\"mr-6 mb-6\">\n                <Label withInput={true}>Middle Name</Label>\n                <Input\n                  name=\"middleName\"\n                  type=\"text\"\n                  placeholder=\"E.g. Doe, Smith, etc.\"\n                  icon=\"person\"\n                  autocomplete={'off'}\n                  onChange={(event) => this.onChange(event.target.value, event.target.name)}\n                />\n              </Column>\n              <Column sizeXL={3} sizeL={3} sizeM={6} className=\"mr-6 mb-6\">\n                <Label withInput={true} required={true}>First Name</Label>\n                <Input\n                  name=\"firstName\"\n                  type=\"text\"\n                  placeholder=\"E.g. John, Will, etc.\"\n                  icon=\"person\"\n                  autocomplete={'off'}\n                  onChange={(event) => this.onChange(event.target.value, event.target.name)}\n                />\n              </Column>\n              <Column sizeXL={4} sizeL={4} sizeM={5} className=\"mr-6 mb-6\">\n                <Label withInput={true}>Gender</Label>\n                <Dropdown\n                  options={genderOptions}\n                  onChange={(value) => this.onChange(value, 'gender')}\n                />\n              </Column>\n              <Column sizeXL={4} sizeL={4} sizeM={6} className=\"mr-6 mb-6\">\n                <Label withInput={true}>Date of Birth</Label>\n                <DatePicker\n                  withInput={true}\n                  onDateChange={(currentDate) => this.onChange(currentDate, 'dob')}\n                  inputOptions={{\n                    placeholder: 'MM/DD/YYYY',\n                    icon: 'cake',\n                    mask: [/\\d/, /\\d/, '/', /\\d/, /\\d/, '/', /\\d/, /\\d/, /\\d/, /\\d/]\n                  }}\n                />\n              </Column>\n              <Column sizeXL={3} sizeL={3} sizeM={5} className=\"mr-6 mb-6\">\n                <Label withInput={true} >Maiden Name</Label>\n                <Input\n                  name=\"MaidenName\"\n                  type=\"text\"\n                  placeholder=\"E.g. Roe, Will, etc.\"\n                  icon=\"person\"\n                  autocomplete={'off'}\n                  onChange={(event) => this.onChange(event.target.value, event.target.name)}\n                />\n              </Column>\n              <Column sizeXL={4} sizeL={4} sizeM={6} className=\"mr-6 mb-6\">\n                <Label withInput={true} required={true}>Email Address</Label>\n                <Input\n                  name=\"email\"\n                  type=\"email\"\n                  placeholder=\"E.g. abc@gmail.com\"\n                  autocomplete={'off'}\n                  onChange={(event) => this.onChange(event.target.value, event.target.name)}\n                />\n              </Column>\n              <Column sizeXL={4} sizeL={4} sizeM={5} className=\"mr-6 mb-6\">\n                <Label withInput={true}>User Type</Label>\n                <Dropdown\n                  options={userOptions}\n                  placeholder=\"Select User Type\"\n                  onChange={(value) => this.onChange(value, 'userType')}\n                />\n              </Column>\n              <Column sizeXL={3} sizeL={3} sizeM={5} className=\"mr-6 mb-6\">\n                <Label withInput={true} >NPI</Label>\n                <Input\n                  name=\"npi\"\n                  type=\"text\"\n                  placeholder=\"E.g. 000000\"\n                  autocomplete={'off'}\n                  onChange={(event) => this.onChange(event.target.value, event.target.name)}\n                />\n              </Column>\n            </Row>\n            <div className=\"d-flex justify-content-end\">\n              <Button className=\"mr-4\">Cancel</Button>\n              <Button type=\"submit\" appearance=\"success\" disabled={this.state.updateDisabled}>Update Account</Button>\n            </div>\n          </form>\n        </Card>\n      </div>\n      );\n    }\n  }\n\n  return <CreateUser />\n}",
+        "title": "Create User Form",
+        "noProps": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/patterns/forms/CreateUser.story.tsx",
+    "storySource": {
+      "source": "() => <></>"
+    },
+    "__isArgsStory": false,
+    "__id": "patterns-forms-create-user--create-user",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

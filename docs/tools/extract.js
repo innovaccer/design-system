@@ -47,9 +47,15 @@ async function extract(input, targetPath) {
         const [location, exit] = await useLocation(input);
         const data = await read(location);
         console.log('Clearing content in: ', targetPath);
-        await writeFile(targetPath, '');
+        // await writeFile(targetPath, '');
         console.log('Writing data to: ', targetPath);
-        await writeFile(targetPath, JSON.stringify(data, null, 2));
+        await writeFile(`${targetPath}/storybook.json`, JSON.stringify(data, null, 2));
+
+        await Promise.all(Object.keys(data).map(async(key) => {
+            return await writeFile(`${targetPath}/${key}.json`, JSON.stringify(data[key], null, 2));
+
+        }))
+
         await exit();
     }
     else {
@@ -57,4 +63,4 @@ async function extract(input, targetPath) {
     }
 }
 
-extract(STORYBOOK_HOST, path.join(__dirname, '../src/data', 'storybook.json'))
+extract(STORYBOOK_HOST, path.join(__dirname, '../static/sb'))
