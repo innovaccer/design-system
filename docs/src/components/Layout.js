@@ -26,14 +26,140 @@ import IconWrapper from './Rules/IconWrapper';
 import Footer from './Footer/Footer';
 import ProductLogos from './Logos/Logos';
 import ProductColors from './Colors/Colors';
-import { useGetStorybookData } from '../util/StorybookData';
+// import { useGetStorybookData } from '../util/StorybookData';
 import { ArgsTable } from './PropsTable/Table';
 import Markdown from 'markdown-to-jsx';
 import { useFrontmatter } from '../util/Frontmatter';
 import MDXHeading from './MDXHeading.js';
-import { copyMessage,copyMessageSuccess } from "../util/constants.js";
+import { copyMessage, copyMessageSuccess } from "../util/constants.js";
+import axios from 'axios';
+
+const useGetStorybookData = async (name) => {
+  let componentName = name;
+
+  if(!name.startsWith('components')) {
+    componentName =  `components-${componentName}`
+  }
 
 
+  const data = await axios.get(`/sb/${componentName}.json`)
+    .then(({ data = {}}) => {
+      if(!Object.keys(data).length) {
+        return Promise.reject(`Could not get details for id: ${componentName}`);
+      }
+      return data;
+    })
+
+  return data;
+}
+
+function getJsxCode(name) {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  return useGetStorybookData(name)
+    .then(componentData => {
+      const jsxCode = componentData && componentData.parameters
+        ? componentData.parameters.docs.docPage?.customCode ||
+        componentData.parameters.storySource?.source
+        : '';
+      return jsxCode;
+
+    })
+}
+
+function getPropTableData(name) {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  return useGetStorybookData(name)
+  .then(componentData => {
+
+    const jsxCode = componentData
+      ? componentData.parameters.argTypes
+      : '';
+    return jsxCode;
+
+  })
+}
+
+
+const Preview = ({ name }) => {
+  return (
+    <div>
+      <PropsTable
+        dataProvider={() => getJsxCode(name)}
+      />
+    </div>
+  );
+};
+
+const A11yBlock = ({ name }) => {
+  const [data, setData] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    useGetStorybookData(name)
+      .then((componentData) => {
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+        const a11yProps = componentData && componentData.parameters.docs.docPage?.a11yProps;
+
+        setData(a11yProps);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>
+      Loading ...
+    </div>
+  }
+
+  if (error) {
+    return <MDSComponents.Message className="my-7" appearance="alert" title={error} description="Hold tight, we are working to get it up for you to interact with." />      
+  }
+  return (
+    <div className="mb-8">
+      {data && <Markdown className="A11y-markdown">{data}</Markdown>}
+    </div>
+  );
+}
+
+const PreviewWithPropTable = ({ name }) => {
+
+  const [data, setData] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+
+  React.useEffect(() => {
+    getPropTableData(name)
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>
+      Loading ...
+    </div>
+  }
+
+  if (error) {
+    return <MDSComponents.Message className="my-7" appearance="alert" title={error} description="Hold tight, we are working to get it up for you to interact with." />      
+  }
+
+  return (
+    <div className="overflow-x-scroll">
+      <ArgsTable rows={data} />
+    </div>
+  );
+};
 
 
 const List = ({ children, ...rest }) => {
@@ -64,110 +190,61 @@ const Layout = ({
 }) => {
   const is404 = children && children.key === null;
   const [isToastActive, setIsToastActive] = useState(false);
-  const [codeCopyText , setCodeCopyText] = useState('')
+  const [codeCopyText, setCodeCopyText] = useState('')
   const [toastTitle, setToastTitle] = useState('');
-  const [isTooltipActiveCode , setTooltipActiveCode] = useState(false)
+  const [isTooltipActiveCode, setTooltipActiveCode] = useState(false)
   const [tooltipName, setTooltipName] = useState(copyMessage);
   const frontmatter = useFrontmatter(relativePagePath);
   const refCode = React.createRef();
-  
+
   const copyToClipboard = (str) => {
-  if(typeof(str)==="string"){
-    navigator.clipboard.writeText(str);
-  }
-  else{
-    let codeBlock = '';
-    if (Object.keys(str).length > 0) {
-      const element = str.props.children;
-      if (Array.isArray(element) && element.length) {
-        element.map((elt) => {
-          if (typeof elt === 'object') {
-            codeBlock = codeBlock + elt.props.children;
-          } else {
-            codeBlock = codeBlock + elt;
-          }
-        });
-      } else {
-        codeBlock = str.props.children;
-      }
+    if (typeof (str) === "string") {
+      navigator.clipboard.writeText(str);
     }
-    navigator.clipboard.writeText(codeBlock);
-    setCodeCopyText(str)
-  }
-};
-
-  const Code = ({ children, ...rest }) => {
-  return (
-    <>
-      <div {...rest}>{children}</div>
-      <div 
-        onMouseLeave={()=>{setTooltipName(copyMessage);setTooltipActiveCode(false)}}
-        className='ml-auto'
-      >
-      <Tooltip 
-        open={children === codeCopyText? isTooltipActiveCode:false} 
-        tooltip={tooltipName} 
-        position="bottom"
-        appendToBody={true}
-        boundaryElement={refCode}
-      >
-        <Button
-        icon='copy'
-        className='p-0'
-        onClick={() => {copyToClipboard(children);toggleTooltip(copyMessageSuccess,"code")}}
-        />
-      </Tooltip>
-      </div>
-    </>
-  );
-};
-  function getJsxCode(name) {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const componentData = useGetStorybookData(name);
-
-    const jsxCode = componentData && componentData.parameters
-      ? componentData.parameters.docs.docPage?.customCode ||
-      componentData.parameters.storySource?.source
-      : '';
-    return jsxCode;
-  }
-
-  function getPropTableData(name) {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const componentData = useGetStorybookData(name);
-
-    const jsxCode = componentData
-      ? componentData.parameters.argTypes
-      : '';
-    return jsxCode;
-  }
-
-  const Preview = ({ name }) => {
-    return (
-      <div>
-        <PropsTable
-          componentData={getJsxCode(name)}
-        />
-      </div>
-    );
+    else {
+      let codeBlock = '';
+      if (Object.keys(str).length > 0) {
+        const element = str.props.children;
+        if (Array.isArray(element) && element.length) {
+          element.map((elt) => {
+            if (typeof elt === 'object') {
+              codeBlock = codeBlock + elt.props.children;
+            } else {
+              codeBlock = codeBlock + elt;
+            }
+          });
+        } else {
+          codeBlock = str.props.children;
+        }
+      }
+      navigator.clipboard.writeText(codeBlock);
+      setCodeCopyText(str)
+    }
   };
 
-  const A11yBlock = ({ name }) => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const componentData = useGetStorybookData(name);
-    const a11yProps = componentData && componentData.parameters.docs.docPage?.a11yProps;
+  const Code = ({ children, ...rest }) => {
     return (
-      <div className="mb-8">
-        {a11yProps && <Markdown className="A11y-markdown">{a11yProps}</Markdown>}
-      </div>
-    );
-  }
-
-  const PreviewWithPropTable = ({ name }) => {
-    return (
-      <div className="overflow-x-scroll">
-        <ArgsTable rows={getPropTableData(name)} />
-      </div>
+      <>
+        <div {...rest}>{children}</div>
+        <div
+          onMouseLeave={() => { setTooltipName(copyMessage); setTooltipActiveCode(false) }}
+          className='ml-auto'
+        >
+          <Tooltip
+            open={children === codeCopyText ? isTooltipActiveCode : false}
+            tooltip={tooltipName}
+            position="bottom"
+            appendToBody={true}
+            boundaryElement={refCode}
+          >
+            <Button
+              icon='copy'
+              className='p-0'
+              onClick={() => { copyToClipboard(children); toggleTooltip(copyMessageSuccess, "code") }}
+            />
+          </Tooltip>
+        </div>
+      </>
     );
   };
 
@@ -176,8 +253,8 @@ const Layout = ({
     setToastTitle(name);
     setTimeout(() => setIsToastActive(false), 1500);
   }
-  const toggleTooltip = (name , type) => {
-    if(type ==="code"){
+  const toggleTooltip = (name, type) => {
+    if (type === "code") {
       setTooltipActiveCode(true)
     }
     setTooltipName(name);
@@ -216,7 +293,7 @@ const Layout = ({
     DONTs,
     InlineMessage,
     IconWrapper,
-    h1: (props) => <MDXHeading size='xxl' headingInfo={props}/>,
+    h1: (props) => <MDXHeading size='xxl' headingInfo={props} />,
     h2: (props) => <MDXHeading size='xl' headingInfo={props} />,
     h3: (props) => <MDXHeading size='l' headingInfo={props} />,
     h4: (props) => <MDXHeading size="m" headingInfo={props} />,

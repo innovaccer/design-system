@@ -1,0 +1,251 @@
+{
+  "args": {},
+  "componentId": "patterns-forms-stepper-form",
+  "title": "Patterns/Forms/Stepper Form",
+  "kind": "Patterns/Forms/Stepper Form",
+  "id": "patterns-forms-stepper-form--stepper-form",
+  "name": "Stepper Form",
+  "story": "Stepper Form",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "\n\n() => {\n  const steps = [\n    {\n      label: 'Define Input/Output',\n      value: 'Define_Input_Output'\n    },\n    {\n      label: 'Add Configuration',\n      value: 'Add_Configuration'\n    },\n  ];\n  const totalSteps = steps.length;\n\n  const options = [];\n  for (let i = 1; i <= 10; i++) {\n    options.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n    });\n  }\n\n  class StepperForm extends React.Component {\n    constructor(props = {}) {\n      super(props);\n\n      this.state = {\n        activeStep: 0,\n        completedStep: -1,\n        data: {},\n        configuration: {},\n      };\n\n      this.onChangeStep = this.onChangeStep.bind(this);\n      this.onClickNext = this.onClickNext.bind(this);\n      this.onChangeOutput = this.onChangeOutput.bind(this);\n      this.onSubmit = this.onSubmit.bind(this);\n      this.renderButton = this.renderButton.bind(this);\n    }\n\n    onChangeStep(activeStep) {\n      this.setState({\n        activeStep\n      })\n    }\n\n    onChangeOutput(value, name) {\n      const data = {\n        ...this.state.data,\n        [name]: value,\n      };\n\n      this.setState({\n        data\n      });\n    }\n\n    onClickNext() {\n      const { activeStep, completedStep } = this.state;\n      const updatedActive = activeStep > completedStep ? activeStep + 1 : completedStep + 1;\n      this.setState({\n        activeStep: updatedActive,\n        completedStep: activeStep > completedStep ? activeStep : completedStep\n      });\n    }\n\n    onSubmit(event) {\n      event.preventDefault();\n      console.log(this.state.data);\n      console.log(this.state.configuration);\n      return false;\n    }\n\n    renderButton() {\n      if (this.state.activeStep + 1 === totalSteps) {\n        return <Button appearance=\"success\" type=\"submit\">Save</Button>\n      }\n\n      return <Button appearance=\"primary\" onClick={this.onClickNext}>Next</Button>\n    }\n\n    render() {\n      const { value } = steps[this.state.activeStep];\n\n      return (\n        <div className=\"w-75\">\n          <Card className=\"px-7 py-6\">\n            <form onSubmit={this.onSubmit}>\n              <div className=\"d-flex justify-content-between\">\n                <Stepper\n                  steps={steps}\n                  active={this.state.activeStep}\n                  completed={this.state.completedStep}\n                  onChange={this.onChangeStep}\n                />\n                {this.renderButton()}\n              </div>\n              <div className={value !== 'Define_Input_Output' ? 'd-none' : ''}>\n                <div className=\"d-flex mr-3 mt-7 mb-2\">\n                  <Text weight=\"strong\" className=\"mr-4\">Source</Text>\n                  <Badge appearance=\"warning\">2 Inputs</Badge>\n                </div>\n                <Text size=\"small\" appearance=\"subtle\">\n                  The system automatically creates collection for multiple support.\n                </Text>\n                <div className=\"w-50 mt-4\">\n                  <Dropdown\n                    options={options}\n                    placeholder=\"Input Collection 1\"\n                    className=\"mb-4\"\n                    onChange={(value) => this.onChangeOutput(value, 'collection1')}\n                  />\n                  <Dropdown\n                    options={options}\n                    placeholder=\"Input Collection 2\"\n                    onChange={(value) => this.onChangeOutput(value, 'collection2')}\n                  />\n                </div>\n                <div className=\"d-flex mr-3 mt-8 mb-2\">\n                  <Text weight=\"strong\" className=\"mr-4\">Destination</Text>\n                  <Badge appearance=\"success\">8 Outputs</Badge>\n                </div>\n                <Text size=\"small\" appearance=\"subtle\">\n                  The system automatically creates collection for multiple support.\n                </Text>\n                <div className=\"w-50 mt-6\">\n                  <Label withInput={true}>Destination Collection</Label>\n                  <Dropdown\n                    options={options}\n                    placeholder=\"Select Destination\"\n                    onChange={(value) => this.onChangeOutput(value, 'collection')}\n                  />\n                </div>\n                <div className=\"mt-6 w-50\">\n                  <Label withInput={true} required>Prefix</Label>\n                  <InputMask\n                    mask={[/\\d/, '_', /\\d/, '_', /\\d/]}\n                    name=\"prefix\"\n                    placeholder=\"<workspace_id>_<workflow_id>_<pipeline_id>\"\n                    placeholderChar=\"-\"\n                    onChange={(e) => this.onChangeOutput(e.target.value, e.target.name)}\n                  />\n                </div>\n                <div className=\"w-25 mt-6\">\n                  <Label withInput={true} required>Retention</Label>\n                  <Dropdown options={options} onChange={(value) => this.onChangeOutput(value, 'retention')} />\n                  <Label className=\"mt-6\" withInput={true}>Visibility Clarification</Label>\n                  <Dropdown options={options} onChange={(value) => this.onChangeOutput(value, 'clarification')} />\n                </div>\n              </div>\n              <div className={value !== 'Add_Configuration' ? 'd-none' : ''}>\n                <div className=\"d-flex mt-7\">\n                  <Avatar className=\"mr-5\" firstName=\"A\" appearance=\"success\" />\n                  <div className=\"d-flex flex-column\">\n                    <Text weight=\"strong\" className=\"mb-2\">Job Configuration</Text>\n                    <Text size=\"small\" appearance=\"subtle\">\n                      The system automatically creates collection for multiple support.\n                    </Text>\n                  </div>\n                </div>\n                <div className=\"w-25 mt-6\">\n                  <Label withInput={true} required>Mode</Label>\n                  <Dropdown\n                    options={options}\n                    onChange={(value) => {\n                      this.setState({\n                        configuration: { ...this.state.configuration, mode: value }\n                      });\n                    }}\n                  />\n                </div>\n                <div className=\"mt-6 w-50\">\n                  <Label withInput={true} required>Regex</Label>\n                  <Textarea\n                    rows={3}\n                    onChange={(e, value) => {\n                      this.setState({\n                        configuration: { ...this.state.configuration, regex: value }\n                      });\n                    }}\n                  />\n                </div>\n                <Label className=\"mt-6\" withInput={true} required>Retention</Label>\n                <Switch appearance=\"primary\" defaultChecked={true} className=\"d-flex\" />\n              </div>\n            </form>\n          </Card>\n        </div>\n      );\n    }\n\n  }\n\n  return <StepperForm />\n}",
+        "title": "Stepper Form",
+        "noProps": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/patterns/forms/StepperForm.story.tsx",
+    "storySource": {
+      "source": "() => <></>"
+    },
+    "__isArgsStory": false,
+    "__id": "patterns-forms-stepper-form--stepper-form",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

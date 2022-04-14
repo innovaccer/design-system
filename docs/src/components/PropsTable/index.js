@@ -40,7 +40,10 @@ const beautifyHTMLOptions = {
   indent_empty_lines: true,
 };
 
-const getRawPreviewCode = (customCode, comp) => {
+const getRawPreviewCode = (customCode, dataProvider) => {
+  if(dataProvider) {
+    return `() => <div><Spinner /></div>`
+  }
   if (customCode) {
     return `${generateImports(
       customCode,
@@ -55,15 +58,28 @@ ${customCode}
 
 const StoryComp = ({
   componentData,
+  dataProvider,
 }) => {
   const testRef = useRef(null);
   const [zoom, setZoom] = useState(1);
   const [htmlCode, setHtmlCode] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeButton, setActiveButton] = useState('React');
-  const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData));
+  const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData, dataProvider));
   const [isTooltipActive, setTooltipActive] = useState(false);
   const [tooltipName, setTooltipName] = useState(copyMessage);
+
+  React.useEffect(() => {
+    if(dataProvider) {
+      dataProvider()
+        .then((data) => {
+          setJsxCode(getRawPreviewCode(data));
+        })
+        .catch((err) => {
+        setJsxCode(`<Message className="my-7" appearance="alert" title="${err}" description="We are working to get it up for you to interact with." />`);
+        });
+    }
+  }, []);
 
   const TabsWrap = withLive(({ live }) => {
     const { element: Element } = live;
@@ -170,7 +186,7 @@ const StoryComp = ({
   return (
     <>
       <div className='pb-8 pt-4 d-flex w-100 m-auto flex-column align-items-center'>
-        <LiveProvider code={jsxCode.replaceAll('action(', '() => console.log(')} scope={imports}>
+        <LiveProvider code={jsxCode ? jsxCode.replaceAll('action(', '() => console.log(') : ''} scope={imports}>
           <Card
             shadow='none'
             className='w-100 overflow-hidden'

@@ -1,0 +1,251 @@
+{
+  "args": {},
+  "componentId": "patterns-forms-basic-form",
+  "title": "Patterns/Forms/Basic Form",
+  "kind": "Patterns/Forms/Basic Form",
+  "id": "patterns-forms-basic-form--basic-form",
+  "name": "Basic Form",
+  "story": "Basic Form",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "\n\n() => {\n  class BasicForm extends React.Component {\n\n    constructor(props) {\n      super(props);\n\n      this.state = {\n        signInDisabled: true,\n        passwordVisible: false,\n        data: { email: '', password: '' }\n      };\n\n      this.onEmailChange = this.onEmailChange.bind(this);\n      this.onPasswordChange = this.onPasswordChange.bind(this);\n      this.onActionClick = this.onActionClick.bind(this);\n      this.onSubmit = this.onSubmit.bind(this);\n    }\n\n    onActionClick() {\n      this.setState({\n        passwordVisible: !this.state.passwordVisible\n      });\n    }\n\n    onEmailChange(event) {\n      const { password = '' } = this.state.data;\n      const email = event.target.value;\n      const disabled = !password || !email;\n\n      this.setState({\n        data: { ...this.state.data, email },\n        signInDisabled: disabled\n      });\n    };\n\n    onPasswordChange(event) {\n      const { email = '' } = this.state.data;\n      const password = event.target.value;\n      const disabled = !password || !email;\n\n      this.setState({\n        data: { ...this.state.data, password },\n        signInDisabled: disabled\n      });\n    }\n\n    onSubmit(e) {\n      e.preventDefault();\n      const { email = '', password = '' } = this.state.data;\n      console.log(`email: ${email}, password: ${password}`);\n      return false;\n    }\n\n    render() {\n      const { password = '' } = this.state.data;\n\n      return (\n        <div style={{ width: '350px' }}>\n          <Card className=\"px-6 py-6\">\n            <form onSubmit={this.onSubmit}>\n              <Heading className=\"mb-7\" size=\"m\">Login</Heading>\n              <Label withInput={true}>Email</Label>\n              <Input\n                name=\"input\"\n                type=\"text\"\n                placeholder=\"Enter email\"\n                className=\"mb-6\"\n                autocomplete={'off'}\n                onChange={this.onEmailChange}\n              />\n              <Label withInput={true}>Password</Label>\n              <Input\n                name=\"input\"\n                className=\"mb-4\"\n                placeholder=\"Enter password\"\n                autocomplete={'off'}\n                type={this.state.passwordVisible ? 'text' : 'password'}\n                value={password}\n                onChange={this.onPasswordChange}\n                actionIcon={(\n                  <Icon\n                    name={this.state.passwordVisible ? 'visibility' : 'visibility_off'}\n                    onClick={this.onActionClick}\n                  />\n                )}\n              />\n              <Link target=\"_blank\" href=\"#\">Forgot Password?</Link>\n              <Button\n                className=\"mt-7\"\n                appearance=\"primary\"\n                expanded={true}\n                disabled={this.state.signInDisabled}\n                type=\"submit\"\n              >\n                Sign In\n              </Button>\n            </form>\n          </Card>\n        </div>\n      );\n    }\n  }\n\n  return <BasicForm />\n}",
+        "title": "Basic Form",
+        "noProps": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/patterns/forms/basicForm.story.tsx",
+    "storySource": {
+      "source": "() => <></>"
+    },
+    "__isArgsStory": false,
+    "__id": "patterns-forms-basic-form--basic-form",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

@@ -1,0 +1,959 @@
+{
+  "args": {},
+  "componentId": "components-calendar-variants-with-events",
+  "title": "Components/Calendar/Variants/With Events",
+  "kind": "Components/Calendar/Variants/With Events",
+  "id": "components-calendar-variants-with-events--with-events",
+  "name": "With Events",
+  "story": "With Events",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "title": "Calendar"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/calendar/__stories__/variants/withEvents.story.jsx",
+    "storySource": {
+      "source": "() => {\n  return (\n    <>\n      <div className=\"mt-8\">\n        <Heading>size: small with events</Heading>\n        <div className=\"d-flex\">\n          <div className=\"mr-8\">\n            <Card className=\"d-inline-flex\" shadow=\"light\">\n              <Calendar events={{ '12/21/2021': true }} date={new Date('12/21/2021')} size={'small'} />\n            </Card>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"mt-8\">\n        <Heading>size: large with events</Heading>\n        <div className=\"d-flex\">\n          <div className=\"mr-8\">\n            <Card className=\"d-inline-flex\" shadow=\"light\">\n              <Calendar events={{ '12/20/2021': true }} date={new Date('12/21/2021')} size={'large'} />\n            </Card>\n          </div>\n        </div>\n      </div>\n    </>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-calendar-variants-with-events--with-events",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "onDateChange": {
+        "name": "onDateChange",
+        "description": "Callback function called when date is changed",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((date: Date) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((date: Date) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onRangeChange": {
+        "name": "onRangeChange",
+        "description": "Callback function called when range is changed",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((startDate: Date | undefined, endDate: Date | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((startDate: Date | undefined, endDate: Date | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDateHover": {
+        "name": "onDateHover",
+        "description": "Callback function called when a date is hovered",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((dateData: hoveredDateProps, evnt: OnHover) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((dateData: hoveredDateProps, evnt: OnHover) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onMonthHover": {
+        "name": "onMonthHover",
+        "description": "Callback function called when a month is hovered",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((monthData: hoveredMonthProps, evnt: OnHover) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((monthData: hoveredMonthProps, evnt: OnHover) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onYearHover": {
+        "name": "onYearHover",
+        "description": "Callback function called when a year is hovered",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((yearData: hoveredYearProps, evnt: OnHover) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((yearData: hoveredYearProps, evnt: OnHover) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "date": {
+        "name": "date",
+        "description": "Selected date",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "rangePicker": {
+        "name": "rangePicker",
+        "description": "Set if want to use as RangePicker",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "startDate": {
+        "name": "startDate",
+        "description": "Selected startDate for RangePicker",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "endDate": {
+        "name": "endDate",
+        "description": "Selected endDate for RangePicker",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "rangeLimit": {
+        "name": "rangeLimit",
+        "description": "Allowed limit for difference in startDate and endDate\n\n**set `0` or `undefined` for infinite limit**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "events": {
+        "name": "events",
+        "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Events | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Events | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "size": {
+        "name": "size",
+        "description": "Size of `Calendar`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "large",
+            "small"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"large\" | \"small\""
+          },
+          "defaultValue": {
+            "summary": "\"large\""
+          }
+        }
+      },
+      "monthsInView": {
+        "name": "monthsInView",
+        "description": "Number of months rendered in view",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "1"
+          }
+        }
+      },
+      "jumpView": {
+        "name": "jumpView",
+        "description": "Enables jumping to different view on clicking on Calendar Header\n\n**set to `false` if monthsInView > 1**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "firstDayOfWeek": {
+        "name": "firstDayOfWeek",
+        "description": "Specifies first day of week to be rendered",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "sunday",
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"sunday\" | \"monday\" | \"tuesday\" | \"wednesday\" | \"thursday\" | \"friday\" | \"saturday\""
+          },
+          "defaultValue": {
+            "summary": "\"sunday\""
+          }
+        }
+      },
+      "view": {
+        "name": "view",
+        "description": "Specifies initial view of `Calendar`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "date",
+            "month",
+            "year"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"date\" | \"month\" | \"year\""
+          },
+          "defaultValue": {
+            "summary": "\"date\""
+          }
+        }
+      },
+      "disabledBefore": {
+        "name": "disabledBefore",
+        "description": "Dates to be disabled before mentioned date",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "disabledAfter": {
+        "name": "disabledAfter",
+        "description": "Dates to be disabled after mentioned date",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "Date | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "Date | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "yearNav": {
+        "name": "yearNav",
+        "description": "Initial year to be set for navigation\n\n**use only if date, startDate and endDate are all set or undefined**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "monthNav": {
+        "name": "monthNav",
+        "description": "Initial month to be set for navigation\n\n**0 indexed(0-11)**\n\n**use only if date, startDate and endDate are all set or undefined**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "onDateChange": {
+      "name": "onDateChange",
+      "description": "Callback function called when date is changed",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((date: Date) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((date: Date) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onRangeChange": {
+      "name": "onRangeChange",
+      "description": "Callback function called when range is changed",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((startDate: Date | undefined, endDate: Date | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((startDate: Date | undefined, endDate: Date | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDateHover": {
+      "name": "onDateHover",
+      "description": "Callback function called when a date is hovered",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((dateData: hoveredDateProps, evnt: OnHover) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((dateData: hoveredDateProps, evnt: OnHover) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onMonthHover": {
+      "name": "onMonthHover",
+      "description": "Callback function called when a month is hovered",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((monthData: hoveredMonthProps, evnt: OnHover) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((monthData: hoveredMonthProps, evnt: OnHover) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onYearHover": {
+      "name": "onYearHover",
+      "description": "Callback function called when a year is hovered",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((yearData: hoveredYearProps, evnt: OnHover) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((yearData: hoveredYearProps, evnt: OnHover) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "date": {
+      "name": "date",
+      "description": "Selected date",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "rangePicker": {
+      "name": "rangePicker",
+      "description": "Set if want to use as RangePicker",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "startDate": {
+      "name": "startDate",
+      "description": "Selected startDate for RangePicker",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "endDate": {
+      "name": "endDate",
+      "description": "Selected endDate for RangePicker",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "rangeLimit": {
+      "name": "rangeLimit",
+      "description": "Allowed limit for difference in startDate and endDate\n\n**set `0` or `undefined` for infinite limit**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "events": {
+      "name": "events",
+      "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Events | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Events | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "size": {
+      "name": "size",
+      "description": "Size of `Calendar`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "large",
+          "small"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"large\" | \"small\""
+        },
+        "defaultValue": {
+          "summary": "\"large\""
+        }
+      }
+    },
+    "monthsInView": {
+      "name": "monthsInView",
+      "description": "Number of months rendered in view",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "1"
+        }
+      }
+    },
+    "jumpView": {
+      "name": "jumpView",
+      "description": "Enables jumping to different view on clicking on Calendar Header\n\n**set to `false` if monthsInView > 1**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "firstDayOfWeek": {
+      "name": "firstDayOfWeek",
+      "description": "Specifies first day of week to be rendered",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"sunday\" | \"monday\" | \"tuesday\" | \"wednesday\" | \"thursday\" | \"friday\" | \"saturday\""
+        },
+        "defaultValue": {
+          "summary": "\"sunday\""
+        }
+      }
+    },
+    "view": {
+      "name": "view",
+      "description": "Specifies initial view of `Calendar`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "date",
+          "month",
+          "year"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"date\" | \"month\" | \"year\""
+        },
+        "defaultValue": {
+          "summary": "\"date\""
+        }
+      }
+    },
+    "disabledBefore": {
+      "name": "disabledBefore",
+      "description": "Dates to be disabled before mentioned date",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "disabledAfter": {
+      "name": "disabledAfter",
+      "description": "Dates to be disabled after mentioned date",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "Date | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "Date | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "yearNav": {
+      "name": "yearNav",
+      "description": "Initial year to be set for navigation\n\n**use only if date, startDate and endDate are all set or undefined**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "monthNav": {
+      "name": "monthNav",
+      "description": "Initial month to be set for navigation\n\n**0 indexed(0-11)**\n\n**use only if date, startDate and endDate are all set or undefined**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

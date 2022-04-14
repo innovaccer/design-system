@@ -1,0 +1,256 @@
+{
+  "args": {},
+  "componentId": "components-table-tight-table",
+  "title": "Components/Table/Tight Table",
+  "kind": "Components/Table/Tight Table",
+  "id": "components-table-tight-table--tight-table",
+  "name": "Tight Table",
+  "story": "Tight Table",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'MSSP Track 1 Urban',\n      status: \"Active\",\n      measures: \"9\",\n      current_period: \"March 2017 - Feb 2018\",\n      added_in: \"March 2014\",\n    },\n    {\n      name: 'MSSP Track 1 Rural',\n      status: \"Active\",\n      measures: \"9\",\n      current_period: \"March 2017 - Feb 201\",\n      added_in: \"March 2015\",\n    },\n    {\n      name: 'MSSP Track 2',\n      status: \"Inactive\",\n      measures: \"14\",\n      current_period: \"March 2017 - Feb 201\",\n      added_in: \"March 2016\",\n    },\n    {\n      name: 'Aetna',\n      status: \"Active\",\n      measures: \"20\",\n      current_period: \"March 2017 - Feb 201\",\n      added_in: \"March 2019\",\n    },\n    {\n      name: 'BCBS',\n      status: \"Active\",\n      measures: \"16\",\n      current_period: \"March 2017 - Feb 201\",\n      added_in: \"March 2017\",\n    },\n  ];\n\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: '20%',\n      sorting: false\n    },\n    {\n      name: 'status',\n      displayName: 'Status',\n      width: '20%',\n      translate: a => ({\n        title: a.status,\n        statusAppearance: (a.status === 'Inactive') ? 'default' : 'success'\n      }),\n      cellType: \"STATUS_HINT\",\n      sorting: false\n    },\n    {\n      name: 'measures',\n      displayName: 'No. of Measures',\n      width: '20%',\n      sorting: false\n    },\n    {\n      name: 'current_period',\n      displayName: 'Current Period',\n      width: '20%',\n      sorting: false\n    },\n    {\n      name: 'added_in',\n      displayName: 'Added in',\n      width: '20%',\n      sorting: false\n    },\n  ];\n\n  return (\n      <Card>\n        <Table\n          showMenu={false}\n          size=\"tight\"\n          separator={false}\n          data={data}\n          schema={schema}\n          withHeader={true}\n          headerOptions={{\n            withSearch: true\n          }}\n          onSearch={(currData, searchTerm) => {\n            return currData.filter(d =>\n              d.name.toLowerCase().match(searchTerm.toLowerCase())\n            );\n          }}\n          withPagination={false}\n        />\n      </Card>\n  );\n}",
+        "title": "Tight Table",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/table/__stories__/TightStory.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      name: 'MSSP Track 1 Urban',\n      status: 'Active',\n      measures: '9',\n      current_period: 'March 2017 - Feb 2018',\n      added_in: 'March 2014',\n    },\n    {\n      name: 'MSSP Track 1 Rural',\n      status: 'Active',\n      measures: '9',\n      current_period: 'March 2017 - Feb 2019',\n      added_in: 'March 2015',\n    },\n    {\n      name: 'MSSP Track 2',\n      status: 'Inactive',\n      measures: '14',\n      current_period: 'March 2017 - Feb 2018',\n      added_in: 'March 2016',\n    },\n    {\n      name: 'Aetna',\n      status: 'Active',\n      measures: '20',\n      current_period: 'March 2017 - Feb 2019',\n      added_in: 'March 2019',\n    },\n    {\n      name: 'BCBS',\n      status: 'Active',\n      measures: '16',\n      current_period: 'March 2017 - Feb 2018',\n      added_in: 'March 2017',\n    },\n  ];\n\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: '20%',\n      sorting: false,\n    },\n    {\n      name: 'status',\n      displayName: 'Status',\n      width: '20%',\n      translate: (a) => ({\n        title: a.status,\n        statusAppearance: a.status === 'Inactive' ? 'default' : 'success',\n      }),\n      cellType: 'STATUS_HINT',\n      sorting: false,\n    },\n    {\n      name: 'measures',\n      displayName: 'No. of Measures',\n      width: '20%',\n      sorting: false,\n    },\n    {\n      name: 'current_period',\n      displayName: 'Current Period',\n      width: '20%',\n      sorting: false,\n    },\n    {\n      name: 'added_in',\n      displayName: 'Added in',\n      width: '20%',\n      sorting: false,\n    },\n  ];\n\n  return (\n    <Card>\n      <Table\n        loaderSchema={loaderSchema}\n        size=\"tight\"\n        showMenu={false}\n        separator={false}\n        data={data}\n        schema={schema}\n        withHeader={true}\n        headerOptions={{\n          withSearch: true,\n        }}\n        onSearch={(currData, searchTerm) => {\n          return currData.filter((d) => d.name.toLowerCase().match(searchTerm.toLowerCase()));\n        }}\n        withPagination={false}\n      />\n    </Card>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-table-tight-table--tight-table",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

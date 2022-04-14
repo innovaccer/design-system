@@ -1,0 +1,248 @@
+{
+  "args": {},
+  "componentId": "others-design-tokens-typography",
+  "title": "Others/Design Tokens/Typography",
+  "kind": "Others/Design Tokens/Typography",
+  "id": "others-design-tokens-typography--typography",
+  "name": "Typography",
+  "story": "Typography",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "page": null,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": null
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "story",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/css-utilities/designTokens/Typography.story.tsx",
+    "storySource": {
+      "source": "() => {\n  React.useEffect(() => {\n    const collection = document.getElementsByClassName('setBgColor');\n    giveBgColor(collection);\n  });\n\n  const textColorsSchema = getSchema('color', 'aA bB cC');\n  const fontSizeSchema = getSchema('fontSize', 'aA bB cC');\n  const fontWeightSchema = getSchema('fontWeight', 'aA bB cC');\n  const fontHeightSchema = getSchema('lineHeight', 'aA bB cC', '', { backgroundColor: 'var(--secondary-light)' });\n\n  return (\n    <div>\n      <Heading size=\"xxl\">Design Tokens</Heading>\n      <br />\n      <br />\n      <Heading size=\"m\">Typography</Heading>\n      <Text appearance=\"default\" size=\"regular\" weight=\"strong\">\n        The design system has many built in tokens to easily solve most common use cases surrounding text and its\n        formatting.\n      </Text>\n      <br />\n      <br />\n      <Heading size=\"m\">Text Colors</Heading>\n      <Card className=\"h-100 overflow-hidden\">\n        <Table data={textColors} schema={textColorsSchema} />\n      </Card>\n      <br />\n      <Heading size=\"m\">Font Family</Heading>\n      <Paragraph appearance=\"default\">\n        The <Text weight=\"strong\">--font-family</Text> token provides with Nunito sans font family which is used\n        throughout the design system.\n      </Paragraph>\n      <br />\n      <Card className=\"w-25 p-4\">\n        <Row>\n          <Column size=\"6\" sizeS=\"12\" sizeXS=\"12\">\n            <div style={{ fontFamily: 'Times New Roman, Times, serif' }}>Normal Text</div>\n          </Column>\n          <Column size=\"6\" sizeS=\"12\" sizeXS=\"12\">\n            <div style={{ fontFamily: 'var(--font-family)' }}>Nunito Sans</div>\n          </Column>\n        </Row>\n      </Card>\n      <br />\n      <Heading size=\"m\">Font Size</Heading>\n      <Card className=\"h-100 overflow-hidden\">\n        <Table data={fontSize} schema={fontSizeSchema} />\n      </Card>\n      <br />\n      <Heading size=\"m\">Font Weight</Heading>\n      <Card className=\"h-100 overflow-hidden\">\n        <Table data={fontWeight} schema={fontWeightSchema} />\n      </Card>\n      <br />\n      <Heading size=\"m\">Font Height</Heading>\n      <Card className=\"h-100 overflow-hidden\">\n        <Table data={fontHeight} schema={fontHeightSchema} />\n      </Card>\n      <br />\n      <Heading size=\"m\">Letter Spacing</Heading>\n      <Paragraph appearance=\"default\">\n        The <Text weight=\"strong\">--letter-spacing</Text> token provides with <Text weight=\"strong\">0.5px </Text>\n        of spacing between letters.\n      </Paragraph>\n      <br />\n      <Card className=\"w-25 p-4\">\n        <Row>\n          <Column size=\"12\">\n            <div>\n              Text <strong>without</strong> letter spacing\n            </div>\n          </Column>\n          <Column size=\"12\">\n            <div style={{ letterSpacing: 'var(--letter-spacing)' }}>\n              Text <strong>with</strong> letter spacing\n            </div>\n          </Column>\n        </Row>\n      </Card>\n      <br />\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "others-design-tokens-typography--typography",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

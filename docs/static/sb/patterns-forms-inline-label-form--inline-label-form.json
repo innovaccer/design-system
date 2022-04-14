@@ -1,0 +1,251 @@
+{
+  "args": {},
+  "componentId": "patterns-forms-inline-label-form",
+  "title": "Patterns/Forms/Inline Label Form",
+  "kind": "Patterns/Forms/Inline Label Form",
+  "id": "patterns-forms-inline-label-form--inline-label-form",
+  "name": "Inline Label Form",
+  "story": "Inline Label Form",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "\n\n() => {\n  const languages = [\n    {\n      label: 'Hindi',\n      value: 'Hindi',\n    },\n    {\n      label: 'English',\n      value: 'English',\n      selected: true\n    },\n    {\n      label: 'French',\n      value: 'French',\n    }\n  ];\n\n  class InlineLabelForm extends React.Component {\n    constructor(props = {}) {\n      super(props);\n\n      this.state = {\n        data: {\n          language: 'English',\n          defaultLanguage: 'English',\n          defaultPhoneNumber: 'primaryPhoneNumber'\n        },\n      };\n\n      this.onChange = this.onChange.bind(this);\n      this.onSubmit = this.onSubmit.bind(this);\n    }\n\n    onChange(value, name) {\n      const { defaultLanguage = '' } = this.state.data;\n\n      const updatedData = {\n        ...this.state.data,\n        [name]: value,\n      };\n\n      this.setState({\n        data: updatedData,\n      });\n    }\n\n    onSubmit(event) {\n      event.preventDefault();\n      console.log(this.state.data);\n      return false;\n    }\n\n    render() {\n      const { defaultLanguage, language, defaultPhoneNumber } = this.state.data;\n\n      return (\n      <div className=\"w-100\">\n        <Card className=\"px-6 py-6\">\n          <form onSubmit={this.onSubmit}>\n            <Row className=\"mb-6\">\n              <Column size={3} className=\"d-flex align-items-center\">\n                <Icon className=\"mr-4\" name=\"language\" />\n                <Text>Known Languages</Text>\n              </Column>\n              <Column size={8} className=\"d-flex\">\n                <div className=\"mr-5 w-25\">\n                  <Dropdown\n                    options={languages}\n                    onChange={(value) => {\n                      const updatedData = {\n                        ...this.state.data,\n                        language: value,\n                        defaultLanguage: defaultLanguage !== '' ? value : defaultLanguage,\n                      };\n                      this.setState({data: updatedData})\n                    }}\n                  />\n                </div>\n                <Checkbox\n                  name=\"defaultLanguage\"\n                  label=\"Set as Default\"\n                  defaultChecked={defaultLanguage}\n                  onChange={(e) => {\n                    const updatedData = {\n                      ...this.state.data,\n                      defaultLanguage: e.target.checked ? language : '',\n                    };\n                    this.setState({data: updatedData})\n                  }}\n                />\n              </Column>\n              <Column size={1} className=\"d-flex align-items-center justify-content-end\">\n                <Button icon=\"delete\" appearance=\"transparent\" />\n              </Column>\n            </Row>\n            <Row className=\"my-5\">\n              <Column className=\"d-flex align-items-center\" size={3}>\n                <Icon className=\"mr-4\" name=\"record_voice_over\" />\n                <Text>Preferred Method of Contact</Text>\n              </Column>\n              <Column size={8} className=\"d-flex\">\n                <Button className=\"mr-3\" icon=\"call\" onClick={() => this.onChange('phone', 'contact')}>Phone</Button>\n                <Button className=\"mr-3\" icon=\"chat\" onClick={() => this.onChange('message', 'contact')}>Message</Button>\n                <Button className=\"mr-3\" icon=\"email\" onClick={() => this.onChange('email', 'contact')}>Email</Button>\n                <Button\n                  className=\"mr-3\"\n                  icon=\"markunread_mailbox\"\n                  onClick={() => this.onChange('letter', 'contact')}\n                >\n                  Letter\n                </Button>\n              </Column>\n              <Column size={1} className=\"d-flex align-items-center justify-content-end\">\n                <Button icon=\"delete\" appearance=\"transparent\" />\n              </Column>\n            </Row>\n            <Row className=\"mt-6\">\n              <Column size={3} className=\"d-flex align-items-center\">\n                <Icon className=\"mr-4\" name=\"call\" />\n                <Text>Phone Numbers</Text>\n              </Column>\n              <Column size={8} className=\"d-flex\">\n                <InputMask\n                  mask={['(', /[1-9]/, /\\d/, /\\d/, ')', ' ', /\\d/, /\\d/, /\\d/, '-', /\\d/, /\\d/, /\\d/, /\\d/]}\n                  placeholder=\"(___) ___-____\"\n                  className=\"mr-4\"\n                  name=\"primaryPhoneNumber\"\n                  onChange={(e, value) => this.onChange(value, e.target.name)}\n                />\n                <Radio\n                  defaultChecked={defaultPhoneNumber === 'primaryPhoneNumber'}\n                  name=\"defaultPhoneNumber\"\n                  value=\"defaultPrimaryPhoneNumber\"\n                  label=\"Mark as Preferred\"\n                  onChange={(e) => {\n                    const updatedData = {\n                      ...this.state.data,\n                      defaultPhoneNumber: e.target.checked ? 'primaryPhoneNumber' : defaultPhoneNumber\n                    };\n                    this.setState({data: updatedData})\n                  }}\n                />\n              </Column>\n              <Column size={1} className=\"d-flex align-items-center justify-content-end\">\n                <Button icon=\"delete\" appearance=\"transparent\" />\n              </Column>\n            </Row>\n            <Row className=\"my-5\">\n              <Column size={3} className=\"d-flex align-items-center\" />\n              <Column size={8} className=\"d-flex\">\n                <InputMask\n                  mask={['(', /[1-9]/, /\\d/, /\\d/, ')', ' ', /\\d/, /\\d/, /\\d/, '-', /\\d/, /\\d/, /\\d/, /\\d/]}\n                  placeholder=\"(___) ___-____\"\n                  className=\"mr-4\"\n                  name=\"secondaryPhoneNumber\"\n                  onChange={(e, value) => this.onChange(value, e.target.name)}\n                />\n                <Radio\n                  defaultChecked={defaultPhoneNumber === 'secondaryPhoneNumber'}\n                  name=\"defaultPhoneNumber\"\n                  value=\"defaultSecondaryPhoneNumber\"\n                  label=\"Mark as Preferred\"\n                  onChange={(e) => {\n                    const updatedData = {\n                      ...this.state.data,\n                      defaultPhoneNumber: e.target.checked ? 'secondaryPhoneNumber' : defaultPhoneNumber\n                    };\n                    this.setState({data: updatedData})\n                  }}\n                />\n              </Column>\n              <Column size={1} className=\"d-flex align-items-center justify-content-end\">\n                <Icon name=\"flag\" appearance=\"warning\" className=\"mr-4\"/>\n              </Column>\n            </Row>\n          <div className=\"d-flex\">\n            <Button className=\"mr-4\" type=\"submit\" appearance=\"success\">Save</Button>\n            <Button>Cancel</Button>\n          </div>\n          </form>\n        </Card>\n      </div>\n      );\n    }\n  }\n\n  return <InlineLabelForm />\n}",
+        "title": "Inline Label Form",
+        "noProps": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/patterns/forms/InlineLabelForm.story.tsx",
+    "storySource": {
+      "source": "() => <></>"
+    },
+    "__isArgsStory": false,
+    "__id": "patterns-forms-inline-label-form--inline-label-form",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

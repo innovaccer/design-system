@@ -19,14 +19,14 @@ ol {
 }
 
 .page-animation {
-  animation: fadeInAnimation ease 0.5s;
+  animation: fadeInAnimation ease 0.05s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 .page-scroll {
   overflow-y: auto;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 .list {
