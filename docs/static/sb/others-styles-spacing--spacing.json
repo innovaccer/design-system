@@ -1,0 +1,248 @@
+{
+  "args": {},
+  "componentId": "others-styles-spacing",
+  "title": "Others/Styles/Spacing",
+  "kind": "Others/Styles/Spacing",
+  "id": "others-styles-spacing--spacing",
+  "name": "Spacing",
+  "story": "Spacing",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "page": null,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": null
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "story",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/css-utilities/Spacing/Spacing.story.tsx",
+    "storySource": {
+      "source": "() => {\n  return (\n    <div>\n      <Heading size=\"xxl\">Spacing</Heading>\n      <br />\n      <br />\n      <Text weight=\"strong\">\n        The classes are named using the format (property)(sides)-(size) for xs and (property)(sides)-(breakpoint)-(size)\n        for sm, md, lg, and xl.\n      </Text>\n      <br />\n      <Paragraph>\n        <br />\n        <Text weight=\"strong\">Where property is one of:</Text>\n        <br />\n        m - for classes that set margin\n        <br />\n        p - for classes that set padding\n        <br />\n        <br />\n        <Text weight=\"strong\">Where sides is one of:</Text>\n        <br />\n        t - for classes that set margin-top or padding-top\n        <br />\n        b - for classes that set margin-bottom or padding-bottom\n        <br />\n        l - for classes that set margin-left or padding-left\n        <br />\n        r - for classes that set margin-right or padding-right\n        <br />\n        x - for classes that set both *-left and *-right\n        <br />\n        y - for classes that set both *-top and *-bottom\n        <br />\n        blank - for classes that set a margin or padding on all 4 sides of the element\n        <br />\n        <br />\n        <Text weight=\"strong\">Where size is one of:</Text>\n      </Paragraph>\n      <br />\n      <div className=\"mt-5 mb-8 bg-secondary-lightest p-3 Card w-50\">\n        <Row>\n          <Column className=\"p-2\">\n            <Text weight=\"strong\">Size</Text>\n          </Column>\n          <Column className=\"p-2\">\n            <Text weight=\"strong\">Token</Text>\n          </Column>\n          <Column className=\"p-2\">\n            <Text weight=\"strong\">Pixels</Text>\n          </Column>\n        </Row>\n        {sizeData.map(({ value, properties, pixel }, index) => {\n          return (\n            <Row key={index}>\n              <Column className=\"p-2\">{value}</Column>\n              <Column className=\"p-2\">{properties}</Column>\n              <Column className=\"p-2\">{pixel}</Column>\n            </Row>\n          );\n        })}\n      </div>\n      <Heading size=\"m\">Class List</Heading>\n      <div className=\"mt-5 mb-8\">\n        <Card className=\"h-100 overflow-hidden\">\n          <Table\n            data={classData}\n            schema={classSchema}\n            separator={true}\n            withHeader={true}\n            headerOptions={{\n              withSearch: true,\n            }}\n            size=\"tight\"\n            showMenu={false}\n            pageSize={16}\n            onSearch={(currData, searchTerm) => {\n              return currData.filter((d) => d.pixel.toLowerCase().includes(searchTerm.toLowerCase()));\n            }}\n          />\n        </Card>\n      </div>\n      <Heading size=\"m\">Examples</Heading>\n      <Paragraph>Here are some representative examples of these classes:</Paragraph>\n      &nbsp;\n      <div className=\"w-50 bg-secondary p-10 m-10\">\n        This text is the content of the box. We have added a (p-10) padding, (m-10) margin to it.\n      </div>\n      <div className=\"DocPage-codeBlock pt-5 pb-5 pl-5\">\n        {'<div className=\"w-50 bg-secondary p-10 m-10 \">'}\n        <br />\n        {'This text is the content of the box.'}\n        {'We have added a (p-10) padding, (m-10) margin to it.'}\n        <br />\n        {'</div>'}\n      </div>\n      &nbsp;\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "others-styles-spacing--spacing",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

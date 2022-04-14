@@ -1,0 +1,715 @@
+{
+  "args": {},
+  "componentId": "components-dialog-variants-secondarybutton-transparent",
+  "title": "Components/Dialog/Variants/SecondaryButton/Transparent",
+  "kind": "Components/Dialog/Variants/SecondaryButton/Transparent",
+  "id": "components-dialog-variants-secondarybutton-transparent--transparent",
+  "name": "Transparent",
+  "story": "Transparent",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const [open, setOpen] = React.useState(true);\n\n  const onClose = () => {\n    setOpen(!open);\n  };\n\n  const options = {\n    open,\n    onClose,\n    icon: 'pan_tool',\n    heading: 'Heading',\n    title: 'Description Title',\n    description: 'Adding a subheading clearly indicates the hierarchy of the information.',\n    secondaryButtonAppearance: 'transparent',\n    primaryButtonLabel: 'Primary',\n    secondaryButtonLabel: 'Secondary',\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />\n        <Button appearance=\"primary\" onClick={() => setOpen(true)}>Open</Button>\n      </Paragraph>\n      <Dialog {...options} />\n    </div>\n  );\n}",
+        "title": "Dialog",
+        "noHtml": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/molecules/dialog/__stories__/variants/secondaryButton/Transparent.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const [open, setOpen] = React.useState(true);\n\n  const onClose = () => {\n    setOpen(false);\n  };\n\n  const options = {\n    open,\n    onClose,\n    icon: 'pan_tool',\n    heading: 'Heading',\n    title: 'Description Title/Variants',\n    description: 'Adding a subheading clearly indicates the hierarchy of the information.',\n    primaryButtonLabel: 'Primary',\n    primaryButtonCallback: action('primary click'),\n    secondaryButtonLabel: 'Secondary',\n    secondaryButtonCallback: action('secondary click'),\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\n        magna aliqua.\n        <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n        <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        <br />\n      </Paragraph>\n      <Dialog secondaryButtonAppearance=\"transparent\" {...options} />\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-dialog-variants-secondarybutton-transparent--transparent",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "onClose": {
+        "name": "onClose",
+        "description": "Callback for `Dialog` close event",
+        "type": {
+          "required": true,
+          "name": "function",
+          "value": "(event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void"
+        },
+        "table": {
+          "type": {
+            "summary": "(event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void"
+          },
+          "defaultValue": null
+        }
+      },
+      "dimension": {
+        "name": "dimension",
+        "description": "Dimension of `Dialog`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "large",
+            "small",
+            "medium"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"large\" | \"small\" | \"medium\""
+          },
+          "defaultValue": {
+            "summary": "\"small\""
+          }
+        }
+      },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": null
+        }
+      },
+      "heading": {
+        "name": "heading",
+        "description": "Dialog heading",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "title": {
+        "name": "title",
+        "description": "Dialog's description title",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "description": {
+        "name": "description",
+        "description": "Description inside `Dialog`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "primaryButtonLabel": {
+        "name": "primaryButtonLabel",
+        "description": "Label of first button inside `Dialog`",
+        "type": {
+          "required": true,
+          "name": "string"
+        },
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "primaryButtonAppearance": {
+        "name": "primaryButtonAppearance",
+        "description": "Color of second button inside `Dialog`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "primary",
+            "alert",
+            "success",
+            "basic",
+            "transparent"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
+          },
+          "defaultValue": {
+            "summary": "primary"
+          }
+        }
+      },
+      "primaryButtonCallback": {
+        "name": "primaryButtonCallback",
+        "description": "Handler to be called when first button is clicked",
+        "type": {
+          "required": true,
+          "name": "function",
+          "value": "() => void"
+        },
+        "table": {
+          "type": {
+            "summary": "() => void"
+          },
+          "defaultValue": null
+        }
+      },
+      "secondaryButtonLabel": {
+        "name": "secondaryButtonLabel",
+        "description": "Label of second button inside `Dialog`",
+        "type": {
+          "required": true,
+          "name": "string"
+        },
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "secondaryButtonAppearance": {
+        "name": "secondaryButtonAppearance",
+        "description": "Color of second button inside `Dialog`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "primary",
+            "alert",
+            "success",
+            "basic",
+            "transparent"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
+          },
+          "defaultValue": {
+            "summary": "basic"
+          }
+        }
+      },
+      "secondaryButtonCallback": {
+        "name": "secondaryButtonCallback",
+        "description": "Handler to be called when second button is clicked",
+        "type": {
+          "required": true,
+          "name": "function",
+          "value": "() => void"
+        },
+        "table": {
+          "type": {
+            "summary": "() => void"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "onClose": {
+      "name": "onClose",
+      "description": "Callback for `Dialog` close event",
+      "type": {
+        "required": true,
+        "name": "function",
+        "value": "(event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void"
+      },
+      "table": {
+        "type": {
+          "summary": "(event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void"
+        },
+        "defaultValue": null
+      }
+    },
+    "dimension": {
+      "name": "dimension",
+      "description": "Dimension of `Dialog`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "large",
+          "small",
+          "medium"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"large\" | \"small\" | \"medium\""
+        },
+        "defaultValue": {
+          "summary": "\"small\""
+        }
+      }
+    },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": null
+      }
+    },
+    "heading": {
+      "name": "heading",
+      "description": "Dialog heading",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "title": {
+      "name": "title",
+      "description": "Dialog's description title",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "description": {
+      "name": "description",
+      "description": "Description inside `Dialog`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "primaryButtonLabel": {
+      "name": "primaryButtonLabel",
+      "description": "Label of first button inside `Dialog`",
+      "type": {
+        "required": true,
+        "name": "string"
+      },
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "primaryButtonAppearance": {
+      "name": "primaryButtonAppearance",
+      "description": "Color of second button inside `Dialog`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "primary",
+          "alert",
+          "success",
+          "basic",
+          "transparent"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
+        },
+        "defaultValue": {
+          "summary": "primary"
+        }
+      }
+    },
+    "primaryButtonCallback": {
+      "name": "primaryButtonCallback",
+      "description": "Handler to be called when first button is clicked",
+      "type": {
+        "required": true,
+        "name": "function",
+        "value": "() => void"
+      },
+      "table": {
+        "type": {
+          "summary": "() => void"
+        },
+        "defaultValue": null
+      }
+    },
+    "secondaryButtonLabel": {
+      "name": "secondaryButtonLabel",
+      "description": "Label of second button inside `Dialog`",
+      "type": {
+        "required": true,
+        "name": "string"
+      },
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "secondaryButtonAppearance": {
+      "name": "secondaryButtonAppearance",
+      "description": "Color of second button inside `Dialog`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "primary",
+          "alert",
+          "success",
+          "basic",
+          "transparent"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
+        },
+        "defaultValue": {
+          "summary": "basic"
+        }
+      }
+    },
+    "secondaryButtonCallback": {
+      "name": "secondaryButtonCallback",
+      "description": "Handler to be called when second button is clicked",
+      "type": {
+        "required": true,
+        "name": "function",
+        "value": "() => void"
+      },
+      "table": {
+        "type": {
+          "summary": "() => void"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

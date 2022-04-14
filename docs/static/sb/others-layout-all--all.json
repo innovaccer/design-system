@@ -1,0 +1,1402 @@
+{
+  "args": {},
+  "componentId": "others-layout-all",
+  "title": "Others/Layout/All",
+  "kind": "Others/Layout/All",
+  "id": "others-layout-all--all",
+  "name": "All",
+  "story": "All",
+  "component": {
+    "displayName": "Column",
+    "__docgenInfo": {
+      "description": "",
+      "displayName": "Column",
+      "props": {
+        "size": {
+          "defaultValue": null,
+          "description": "Default size of Column",
+          "name": "size",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "1"
+              },
+              {
+                "value": "\"1\""
+              },
+              {
+                "value": "\"2\""
+              },
+              {
+                "value": "\"3\""
+              },
+              {
+                "value": "\"4\""
+              },
+              {
+                "value": "\"5\""
+              },
+              {
+                "value": "\"6\""
+              },
+              {
+                "value": "\"7\""
+              },
+              {
+                "value": "\"8\""
+              },
+              {
+                "value": "\"9\""
+              },
+              {
+                "value": "\"10\""
+              },
+              {
+                "value": "\"11\""
+              },
+              {
+                "value": "\"12\""
+              },
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "4"
+              },
+              {
+                "value": "5"
+              },
+              {
+                "value": "6"
+              },
+              {
+                "value": "7"
+              },
+              {
+                "value": "9"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "12"
+              }
+            ]
+          }
+        },
+        "sizeXS": {
+          "defaultValue": null,
+          "description": "Size of Column if the viewport is between 0 to 575 pixels wide.",
+          "name": "sizeXS",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "1"
+              },
+              {
+                "value": "\"1\""
+              },
+              {
+                "value": "\"2\""
+              },
+              {
+                "value": "\"3\""
+              },
+              {
+                "value": "\"4\""
+              },
+              {
+                "value": "\"5\""
+              },
+              {
+                "value": "\"6\""
+              },
+              {
+                "value": "\"7\""
+              },
+              {
+                "value": "\"8\""
+              },
+              {
+                "value": "\"9\""
+              },
+              {
+                "value": "\"10\""
+              },
+              {
+                "value": "\"11\""
+              },
+              {
+                "value": "\"12\""
+              },
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "4"
+              },
+              {
+                "value": "5"
+              },
+              {
+                "value": "6"
+              },
+              {
+                "value": "7"
+              },
+              {
+                "value": "9"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "12"
+              }
+            ]
+          }
+        },
+        "sizeS": {
+          "defaultValue": null,
+          "description": "Size of Column if the viewport is between 576 and 767 pixels wide.",
+          "name": "sizeS",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "1"
+              },
+              {
+                "value": "\"1\""
+              },
+              {
+                "value": "\"2\""
+              },
+              {
+                "value": "\"3\""
+              },
+              {
+                "value": "\"4\""
+              },
+              {
+                "value": "\"5\""
+              },
+              {
+                "value": "\"6\""
+              },
+              {
+                "value": "\"7\""
+              },
+              {
+                "value": "\"8\""
+              },
+              {
+                "value": "\"9\""
+              },
+              {
+                "value": "\"10\""
+              },
+              {
+                "value": "\"11\""
+              },
+              {
+                "value": "\"12\""
+              },
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "4"
+              },
+              {
+                "value": "5"
+              },
+              {
+                "value": "6"
+              },
+              {
+                "value": "7"
+              },
+              {
+                "value": "9"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "12"
+              }
+            ]
+          }
+        },
+        "sizeM": {
+          "defaultValue": null,
+          "description": "Size of Column if the viewport is between 768 and 991 pixels wide.",
+          "name": "sizeM",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "1"
+              },
+              {
+                "value": "\"1\""
+              },
+              {
+                "value": "\"2\""
+              },
+              {
+                "value": "\"3\""
+              },
+              {
+                "value": "\"4\""
+              },
+              {
+                "value": "\"5\""
+              },
+              {
+                "value": "\"6\""
+              },
+              {
+                "value": "\"7\""
+              },
+              {
+                "value": "\"8\""
+              },
+              {
+                "value": "\"9\""
+              },
+              {
+                "value": "\"10\""
+              },
+              {
+                "value": "\"11\""
+              },
+              {
+                "value": "\"12\""
+              },
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "4"
+              },
+              {
+                "value": "5"
+              },
+              {
+                "value": "6"
+              },
+              {
+                "value": "7"
+              },
+              {
+                "value": "9"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "12"
+              }
+            ]
+          }
+        },
+        "sizeL": {
+          "defaultValue": null,
+          "description": "Size of Column if the viewport is between 992 and 1199 pixels wide.",
+          "name": "sizeL",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "1"
+              },
+              {
+                "value": "\"1\""
+              },
+              {
+                "value": "\"2\""
+              },
+              {
+                "value": "\"3\""
+              },
+              {
+                "value": "\"4\""
+              },
+              {
+                "value": "\"5\""
+              },
+              {
+                "value": "\"6\""
+              },
+              {
+                "value": "\"7\""
+              },
+              {
+                "value": "\"8\""
+              },
+              {
+                "value": "\"9\""
+              },
+              {
+                "value": "\"10\""
+              },
+              {
+                "value": "\"11\""
+              },
+              {
+                "value": "\"12\""
+              },
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "4"
+              },
+              {
+                "value": "5"
+              },
+              {
+                "value": "6"
+              },
+              {
+                "value": "7"
+              },
+              {
+                "value": "9"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "12"
+              }
+            ]
+          }
+        },
+        "sizeXL": {
+          "defaultValue": null,
+          "description": "Size of Column if the viewport is 1200 pixels wide or wider.",
+          "name": "sizeXL",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "10"
+              },
+              {
+                "value": "8"
+              },
+              {
+                "value": "2"
+              },
+              {
+                "value": "1"
+              },
+              {
+                "value": "\"1\""
+              },
+              {
+                "value": "\"2\""
+              },
+              {
+                "value": "\"3\""
+              },
+              {
+                "value": "\"4\""
+              },
+              {
+                "value": "\"5\""
+              },
+              {
+                "value": "\"6\""
+              },
+              {
+                "value": "\"7\""
+              },
+              {
+                "value": "\"8\""
+              },
+              {
+                "value": "\"9\""
+              },
+              {
+                "value": "\"10\""
+              },
+              {
+                "value": "\"11\""
+              },
+              {
+                "value": "\"12\""
+              },
+              {
+                "value": "\"auto\""
+              },
+              {
+                "value": "3"
+              },
+              {
+                "value": "4"
+              },
+              {
+                "value": "5"
+              },
+              {
+                "value": "6"
+              },
+              {
+                "value": "7"
+              },
+              {
+                "value": "9"
+              },
+              {
+                "value": "11"
+              },
+              {
+                "value": "12"
+              }
+            ]
+          }
+        },
+        "className": {
+          "defaultValue": null,
+          "description": "Adds custom class",
+          "name": "className",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "data-test": {
+          "defaultValue": null,
+          "description": "Stores custom testing data private to the component.",
+          "name": "data-test",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        }
+      }
+    }
+  },
+  "subcomponents": {
+    "Row": {
+      "displayName": "Row",
+      "__docgenInfo": {
+        "description": "",
+        "displayName": "Row",
+        "props": {
+          "className": {
+            "defaultValue": null,
+            "description": "Adds custom class",
+            "name": "className",
+            "required": false,
+            "type": {
+              "name": "string | undefined"
+            }
+          },
+          "data-test": {
+            "defaultValue": null,
+            "description": "Stores custom testing data private to the component.",
+            "name": "data-test",
+            "required": false,
+            "type": {
+              "name": "string | undefined"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/molecules/Layout/index.story.tsx",
+    "storySource": {
+      "source": "() => {\n  const size = optionsKnob(\n    'size',\n    {\n      1: '1',\n      2: '2',\n      3: '3',\n      4: '4',\n      5: '5',\n      6: '6',\n      7: '7',\n      8: '8',\n      9: '9',\n      10: '10',\n      11: '11',\n      12: '12',\n    },\n    undefined,\n    {\n      display: 'inline-radio',\n    }\n  );\n  const sizeXS = optionsKnob(\n    'sizeXS',\n    {\n      1: '1',\n      2: '2',\n      3: '3',\n      4: '4',\n      5: '5',\n      6: '6',\n      7: '7',\n      8: '8',\n      9: '9',\n      10: '10',\n      11: '11',\n      12: '12',\n    },\n    undefined,\n    {\n      display: 'inline-radio',\n    }\n  );\n  const sizeS = optionsKnob(\n    'sizeS',\n    {\n      1: '1',\n      2: '2',\n      3: '3',\n      4: '4',\n      5: '5',\n      6: '6',\n      7: '7',\n      8: '8',\n      9: '9',\n      10: '10',\n      11: '11',\n      12: '12',\n    },\n    undefined,\n    {\n      display: 'inline-radio',\n    }\n  );\n  const sizeM = optionsKnob(\n    'sizeM',\n    {\n      1: '1',\n      2: '2',\n      3: '3',\n      4: '4',\n      5: '5',\n      6: '6',\n      7: '7',\n      8: '8',\n      9: '9',\n      10: '10',\n      11: '11',\n      12: '12',\n    },\n    undefined,\n    {\n      display: 'inline-radio',\n    }\n  );\n  const sizeL = optionsKnob(\n    'sizeL',\n    {\n      1: '1',\n      2: '2',\n      3: '3',\n      4: '4',\n      5: '5',\n      6: '6',\n      7: '7',\n      8: '8',\n      9: '9',\n      10: '10',\n      11: '11',\n      12: '12',\n    },\n    undefined,\n    {\n      display: 'inline-radio',\n    }\n  );\n  const sizeXL = optionsKnob(\n    'sizeXL',\n    {\n      1: '1',\n      2: '2',\n      3: '3',\n      4: '4',\n      5: '5',\n      6: '6',\n      7: '7',\n      8: '8',\n      9: '9',\n      10: '10',\n      11: '11',\n      12: '12',\n    },\n    undefined,\n    {\n      display: 'inline-radio',\n    }\n  );\n\n  const columnOptions = {\n    size,\n    sizeXL,\n    sizeL,\n    sizeM,\n    sizeS,\n    sizeXS,\n  };\n  return (\n    <Row>\n      <Column {...columnOptions}>1</Column>\n      <Column {...columnOptions}>2</Column>\n      <Column {...columnOptions}>3</Column>\n      <Column {...columnOptions}>4</Column>\n      <Column {...columnOptions}>5</Column>\n      <Column {...columnOptions}>6</Column>\n      <Column {...columnOptions}>7</Column>\n      <Column {...columnOptions}>8</Column>\n      <Column {...columnOptions}>9</Column>\n      <Column {...columnOptions}>10</Column>\n      <Column {...columnOptions}>11</Column>\n      <Column {...columnOptions}>12</Column>\n    </Row>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "others-layout-all--all",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "size": {
+        "name": "size",
+        "description": "Default size of Column",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "10",
+            "8",
+            "2",
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "auto",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "9",
+            "11",
+            "12"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+          },
+          "defaultValue": null
+        }
+      },
+      "sizeXS": {
+        "name": "sizeXS",
+        "description": "Size of Column if the viewport is between 0 to 575 pixels wide.",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "10",
+            "8",
+            "2",
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "auto",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "9",
+            "11",
+            "12"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+          },
+          "defaultValue": null
+        }
+      },
+      "sizeS": {
+        "name": "sizeS",
+        "description": "Size of Column if the viewport is between 576 and 767 pixels wide.",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "10",
+            "8",
+            "2",
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "auto",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "9",
+            "11",
+            "12"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+          },
+          "defaultValue": null
+        }
+      },
+      "sizeM": {
+        "name": "sizeM",
+        "description": "Size of Column if the viewport is between 768 and 991 pixels wide.",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "10",
+            "8",
+            "2",
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "auto",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "9",
+            "11",
+            "12"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+          },
+          "defaultValue": null
+        }
+      },
+      "sizeL": {
+        "name": "sizeL",
+        "description": "Size of Column if the viewport is between 992 and 1199 pixels wide.",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "10",
+            "8",
+            "2",
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "auto",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "9",
+            "11",
+            "12"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+          },
+          "defaultValue": null
+        }
+      },
+      "sizeXL": {
+        "name": "sizeXL",
+        "description": "Size of Column if the viewport is 1200 pixels wide or wider.",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "10",
+            "8",
+            "2",
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "auto",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "9",
+            "11",
+            "12"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "size": {
+      "name": "size",
+      "description": "Default size of Column",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "10",
+          "8",
+          "2",
+          "1",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "auto",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "9",
+          "11",
+          "12"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+        },
+        "defaultValue": null
+      }
+    },
+    "sizeXS": {
+      "name": "sizeXS",
+      "description": "Size of Column if the viewport is between 0 to 575 pixels wide.",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "10",
+          "8",
+          "2",
+          "1",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "auto",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "9",
+          "11",
+          "12"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+        },
+        "defaultValue": null
+      }
+    },
+    "sizeS": {
+      "name": "sizeS",
+      "description": "Size of Column if the viewport is between 576 and 767 pixels wide.",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "10",
+          "8",
+          "2",
+          "1",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "auto",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "9",
+          "11",
+          "12"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+        },
+        "defaultValue": null
+      }
+    },
+    "sizeM": {
+      "name": "sizeM",
+      "description": "Size of Column if the viewport is between 768 and 991 pixels wide.",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "10",
+          "8",
+          "2",
+          "1",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "auto",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "9",
+          "11",
+          "12"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+        },
+        "defaultValue": null
+      }
+    },
+    "sizeL": {
+      "name": "sizeL",
+      "description": "Size of Column if the viewport is between 992 and 1199 pixels wide.",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "10",
+          "8",
+          "2",
+          "1",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "auto",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "9",
+          "11",
+          "12"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+        },
+        "defaultValue": null
+      }
+    },
+    "sizeXL": {
+      "name": "sizeXL",
+      "description": "Size of Column if the viewport is 1200 pixels wide or wider.",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "10",
+          "8",
+          "2",
+          "1",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "auto",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "9",
+          "11",
+          "12"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | 10 | 8 | 2 | 1 | \"1\" | \"2\" | \"3\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"11\" | \"12\" | \"auto\" | 3 | 4 | 5 | 6 | 7 | 9 | 11 | 12"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

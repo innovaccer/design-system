@@ -1,0 +1,248 @@
+{
+  "args": {},
+  "componentId": "others-styles-flex",
+  "title": "Others/Styles/Flex",
+  "kind": "Others/Styles/Flex",
+  "id": "others-styles-flex--flex",
+  "name": "Flex",
+  "story": "Flex",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "page": null,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": null
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "story",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/css-utilities/Flex/Flex.story.tsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      className: 'flex-fill',\n      properties: 'flex: 1 1 auto ;',\n    },\n    {\n      className: 'flex-row',\n      properties: 'flex-direction: row ;',\n    },\n    {\n      className: 'flex-column',\n      properties: 'flex-direction: column ;',\n    },\n    {\n      className: 'flex-row-reverse',\n      properties: 'flex-direction: row-reverse ;',\n    },\n    {\n      className: 'flex-column-reverse',\n      properties: 'flex-direction: column-reverse ;',\n    },\n    {\n      className: 'flex-grow-0',\n      properties: 'flex-grow: 0 ;',\n    },\n    {\n      className: 'flex-grow-1',\n      properties: 'flex-grow: 1 ;',\n    },\n    {\n      className: 'flex-shrink-0',\n      properties: 'flex-shrink: 0 ;',\n    },\n    {\n      className: 'flex-shrink-1',\n      properties: 'flex-shrink: 1 ;',\n    },\n    {\n      className: 'flex-wrap',\n      properties: 'flex-wrap: wrap ;',\n    },\n    {\n      className: 'flex-nowrap',\n      properties: 'flex-wrap: nowrap ;',\n    },\n    {\n      className: 'flex-wrap-reverse',\n      properties: 'flex-wrap: wrap-reverse ;',\n    },\n    {\n      className: 'justify-content-start',\n      properties: 'justify-content: flex-start ;',\n    },\n    {\n      className: 'justify-content-end',\n      properties: 'justify-content: flex-end ;',\n    },\n    {\n      className: 'justify-content-center',\n      properties: 'justify-content: center ;',\n    },\n    {\n      className: 'justify-content-between',\n      properties: 'justify-content: space-between ;',\n    },\n    {\n      className: 'justify-content-around',\n      properties: 'justify-content: space-around ;',\n    },\n    {\n      className: 'justify-content-evenly',\n      properties: 'justify-content: space-evenly ;',\n    },\n    {\n      className: 'align-items-start',\n      properties: 'align-items: flex-start ;',\n    },\n    {\n      className: 'align-items-end',\n      properties: 'align-items: flex-end ;',\n    },\n    {\n      className: 'align-items-center',\n      properties: 'align-items: center ;',\n    },\n    {\n      className: 'align-items-baseline',\n      properties: 'align-items: baseline ;',\n    },\n    {\n      className: 'align-items-stretch',\n      properties: 'align-items: stretch ;',\n    },\n    {\n      className: 'align-content-start',\n      properties: 'align-content: flex-start ;',\n    },\n    {\n      className: 'align-content-end',\n      properties: 'align-content: flex-end ;',\n    },\n    {\n      className: 'align-content-center',\n      properties: 'align-content: center ;',\n    },\n    {\n      className: 'align-content-between',\n      properties: 'align-content: space-between ;',\n    },\n    {\n      className: 'align-content-around',\n      properties: 'align-content: space-around ;',\n    },\n    {\n      className: 'align-content-stretch',\n      properties: 'align-content: stretch ;',\n    },\n    {\n      className: 'align-self-auto',\n      properties: 'align-self: auto ;',\n    },\n    {\n      className: 'align-self-start',\n      properties: 'align-self: flex-start ;',\n    },\n    {\n      className: 'align-self-end',\n      properties: 'align-self: flex-end ;',\n    },\n    {\n      className: 'align-self-center',\n      properties: 'align-self: center ;',\n    },\n    {\n      className: 'align-self-baseline',\n      properties: 'align-self: baseline ;',\n    },\n    {\n      className: 'align-self-stretch',\n      properties: 'align-self: stretch ;',\n    },\n    {\n      className: 'order-first',\n      properties: 'order: -1 ;',\n    },\n    {\n      className: 'order-0',\n      properties: 'order: 0 ;',\n    },\n    {\n      className: 'order-1',\n      properties: 'order: 1 ;',\n    },\n    {\n      className: 'order-2',\n      properties: 'order: 2 ;',\n    },\n    {\n      className: 'order-3',\n      properties: 'order: 3 ;',\n    },\n    {\n      className: 'order-4',\n      properties: 'order: 4 ;',\n    },\n    {\n      className: 'order-5',\n      properties: 'order: 5 ;',\n    },\n    {\n      className: 'order-last',\n      properties: 'order: 6 ;',\n    },\n  ];\n  return (\n    <div>\n      <Heading size=\"xxl\">Flex</Heading>\n      <br />\n      <Text weight=\"strong\">\n        Quickly manage the layout, alignment, and sizing of grid columns, navigation, components, and more with a full\n        suite of responsive flexbox utilities.\n      </Text>\n      <div\n        style={{\n          height: '350px',\n        }}\n        className=\"mt-5 mb-8\"\n      >\n        <Card className=\"h-100\">\n          <Table\n            data={data}\n            schema={utilitiesSchema}\n            headerOptions={{\n              withSearch: true,\n            }}\n            size={'standard'}\n            showMenu={false}\n          />\n        </Card>\n      </div>\n      <Heading size=\"m\">Examples</Heading>\n      <Paragraph>Here are some representative examples of these classes:</Paragraph>\n      &nbsp;\n      <Heading size=\"s\">\n        Use .flex-row to set a horizontal direction (the browser default), or .flex-row-reverse to start the horizontal\n        direction from the opposite side.\n      </Heading>\n      &nbsp;\n      <div className=\"d-flex flex-row Utilities-example h-25\">\n        <div className=\"p-2\">Flex item 1</div>\n        <div className=\"p-2\">Flex item 2</div>\n        <div className=\"p-2\">Flex item 3</div>\n      </div>\n      &nbsp;\n      <div className=\"d-flex flex-row-reverse Utilities-example h-25\">\n        <div className=\"p-2\">Flex item 1</div>\n        <div className=\"p-2\">Flex item 2</div>\n        <div className=\"p-2\">Flex item 3</div>\n      </div>\n      &nbsp;\n      <div className=\"DocPage-codeBlock pb-5 pt-5 pl-5\">\n        {'<div className=\"d-flex flex-row \">'}\n        <br />\n        &nbsp; {'<div className=\"p-2\">Flex item 1</div>'}\n        <br />\n        &nbsp; {'<div className=\"p-2\">Flex item 2</div>'}\n        <br />\n        &nbsp; {'<div className=\"p-2\">Flex item 3</div>'}\n        <br />\n        {'</div>'}\n        <br />\n        {'<div className=\"d-flex flex-row-reverse\">'}\n        <br />\n        &nbsp; {'<div className=\"p-2\">Flex item 1</div>'}\n        <br />\n        &nbsp; {'<div className=\"p-2\">Flex item 2</div>'}\n        <br />\n        &nbsp; {'<div className=\"p-2\">Flex item 3</div>'}\n        <br />\n        {'</div>'}\n      </div>\n      &nbsp;\n      <Heading size=\"s\">\n        Use .flex-column to set a vertical direction, or .flex-column-reverse to start the vertical direction from the\n        opposite side.\n      </Heading>\n      &nbsp;\n      <div className=\"d-flex flex-column Utilities-example\">\n        <div className=\"p-2\">Flex item 1</div>\n        <div className=\"p-2\">Flex item 2</div>\n        <div className=\"p-2\">Flex item 3</div>\n      </div>\n      &nbsp;\n      <div className=\"d-flex flex-column-reverse Utilities-example\">\n        <div className=\"p-2\">Flex item 1</div>\n        <div className=\"p-2\">Flex item 2</div>\n        <div className=\"p-2\">Flex item 3</div>\n      </div>\n      &nbsp;\n      <div className=\"DocPage-codeBlock pb-5 pt-5 pl-5\">\n        <code>\n          {'<div className=\"d-flex flex-column\">'}\n          <br />\n          &nbsp; {'<div className=\"p-2\">Flex item 1</div>'}\n          <br />\n          &nbsp; {'<div className=\"p-2\">Flex item 2</div>'}\n          <br />\n          &nbsp; {'<div className=\"p-2\">Flex item 3</div>'}\n          <br />\n          {'</div>'}\n          <br />\n        </code>\n        &nbsp;\n        <code>\n          {'<div className=\"d-flex flex-column-reverse\">'}\n          <br />\n          &nbsp; {'<div className=\"p-2\">Flex item 1</div>'}\n          <br />\n          &nbsp; {'<div className=\"p-2\">Flex item 2</div>'}\n          <br />\n          &nbsp; {'<div className=\"p-2\">Flex item 3</div>'}\n          <br />\n          {'</div>'}\n          <br />\n        </code>\n      </div>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "others-styles-flex--flex",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

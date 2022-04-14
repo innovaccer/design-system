@@ -1,0 +1,1301 @@
+{
+  "args": {},
+  "componentId": "components-grid-all",
+  "title": "Components/Grid/All",
+  "kind": "Components/Grid/All",
+  "id": "components-grid-all--all",
+  "name": "All",
+  "story": "All",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "noStory": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/grid/__stories__/index.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const applyLoaderSchema = true;\n\n  const loading = false;\n\n  const error = false;\n\n  const applySchema = true;\n\n  const applyData = true;\n\n  const totalRecords = data.length;\n\n  const type = 'resource';\n\n  const size = 'comfortable';\n\n  const draggable = true;\n\n  const nestedRows = false;\n\n  const withCheckbox = false;\n\n  const showMenu = true;\n\n  const withPagination = false;\n\n  const page = 1;\n\n  const pageSize = 12;\n\n  const headCellTooltip = false;\n\n  const separator = false;\n\n  return (\n    <div\n      style={{\n        height: '350px',\n      }}\n    >\n      <Card className=\"h-100 overflow-hidden\">\n        <Grid\n          schema={applySchema ? schema : undefined}\n          data={applyData ? data : undefined}\n          loading={loading}\n          error={error}\n          errorTemplate={errorTemplate}\n          totalRecords={totalRecords}\n          withCheckbox={withCheckbox}\n          showMenu={showMenu}\n          type={type}\n          size={size}\n          headCellTooltip={headCellTooltip}\n          separator={separator}\n          draggable={draggable}\n          nestedRows={nestedRows}\n          nestedRowRenderer={nestedRowRenderer}\n          withPagination={withPagination}\n          page={page}\n          pageSize={pageSize}\n          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}\n          onRowClick={(rowData, rowIndex) =>\n            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n          }\n          onSelect={(rowIndex, selected) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected}`)()}\n          onSelectAll={(selected, selectedAll) => {\n            action(`on-select:- selected: ${selected} selectedAll: ${selectedAll}`)();\n          }}\n          sortingList={[{ name: 'name', type: 'desc' }]}\n          filterList={{\n            name: ['h-r', 's-z'],\n          }}\n        />\n      </Card>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-grid-all--all",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "size": {
+        "name": "size",
+        "description": "Controls spacing of `Grid`",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "standard",
+            "compressed",
+            "tight",
+            "comfortable"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"standard\" | \"compressed\" | \"tight\" | \"comfortable\""
+          },
+          "defaultValue": {
+            "summary": "\"standard\""
+          }
+        }
+      },
+      "type": {
+        "name": "type",
+        "description": "Grid type",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "data",
+            "resource"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"data\" | \"resource\""
+          },
+          "defaultValue": {
+            "summary": "\"data\""
+          }
+        }
+      },
+      "onRowClick": {
+        "name": "onRowClick",
+        "description": "Callback on Row click in case of `Resource Grid`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "onRowClickFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "onRowClickFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "loaderSchema": {
+        "name": "loaderSchema",
+        "description": "Schema used to render `loading` state",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Schema"
+        },
+        "table": {
+          "type": {
+            "summary": "Schema"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "schema": {
+        "name": "schema",
+        "description": "Schema used to render `data` object",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Schema"
+        },
+        "table": {
+          "type": {
+            "summary": "Schema"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "data": {
+        "name": "data",
+        "description": "Data object",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Data"
+        },
+        "table": {
+          "type": {
+            "summary": "Data"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "totalRecords": {
+        "name": "totalRecords",
+        "description": "Total records in grid",
+        "type": {
+          "required": true,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "0"
+          }
+        }
+      },
+      "loading": {
+        "name": "loading",
+        "description": "Loading state of Grid",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "error": {
+        "name": "error",
+        "description": "Error state of Grid",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "updateData": {
+        "name": "updateData",
+        "description": "Callback to be called to get the updated data",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "(() => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "(() => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "updateSchema": {
+        "name": "updateSchema",
+        "description": "Callback to be called to get the updated data",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "updateSchemaFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "updateSchemaFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showHead": {
+        "name": "showHead",
+        "description": "Shows grid head",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "showMenu": {
+        "name": "showMenu",
+        "description": "Shows menu in head cell",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "draggable": {
+        "name": "draggable",
+        "description": "Allows dragging of column",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "nestedRows": {
+        "name": "nestedRows",
+        "description": "Allows nested rows",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "nestedRowRenderer": {
+        "name": "nestedRowRenderer",
+        "description": "Renderer to be used for nested rows",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "FC<NestedRowProps> | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "FC<NestedRowProps> | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "withPagination": {
+        "name": "withPagination",
+        "description": "Shows pagination component",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "page": {
+        "name": "page",
+        "description": "Current page",
+        "type": {
+          "required": true,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "1"
+          }
+        }
+      },
+      "pageSize": {
+        "name": "pageSize",
+        "description": "Number of rows on a page",
+        "type": {
+          "required": true,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "15"
+          }
+        }
+      },
+      "withCheckbox": {
+        "name": "withCheckbox",
+        "description": "Shows checkbox in the left most column",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onSelect": {
+        "name": "onSelect",
+        "description": "Callback on row select",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "onSelectFn | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "onSelectFn | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onSelectAll": {
+        "name": "onSelectAll",
+        "description": "Callback on column head select",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "onSelectAllFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "onSelectAllFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "errorTemplate": {
+        "name": "errorTemplate",
+        "description": "Error Template\n**Functional Component will be deprecated soon**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "sortingList": {
+        "name": "sortingList",
+        "description": "Sorting List",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "{ name: string; type: SortType; }[]"
+        },
+        "table": {
+          "type": {
+            "summary": "{ name: string; type: SortType; }[]"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "updateSortingList": {
+        "name": "updateSortingList",
+        "description": "update Sorting List Callback",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "updateSortingListFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "updateSortingListFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "filterList": {
+        "name": "filterList",
+        "description": "Filter List",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Record<string, Filter>"
+        },
+        "table": {
+          "type": {
+            "summary": "Record<string, Filter>"
+          },
+          "defaultValue": {
+            "summary": "{ }"
+          }
+        }
+      },
+      "updateFilterList": {
+        "name": "updateFilterList",
+        "description": "update Filter List Callback",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "updateFilterListFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "updateFilterListFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "selectAll": {
+        "name": "selectAll",
+        "description": "Select All",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "{ checked: boolean; indeterminate: boolean; } | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "{ checked: boolean; indeterminate: boolean; } | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "headCellTooltip": {
+        "name": "headCellTooltip",
+        "description": "Shows tooltip on Head Cell hover",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "separator": {
+        "name": "separator",
+        "description": "Shows left separator to all columns\n\n**Can be override by Column Schema**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showFilters": {
+        "name": "showFilters",
+        "description": "Show filters in Head Cell",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "size": {
+      "name": "size",
+      "description": "Controls spacing of `Grid`",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "standard",
+          "compressed",
+          "tight",
+          "comfortable"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"standard\" | \"compressed\" | \"tight\" | \"comfortable\""
+        },
+        "defaultValue": {
+          "summary": "\"standard\""
+        }
+      }
+    },
+    "type": {
+      "name": "type",
+      "description": "Grid type",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "data",
+          "resource"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"data\" | \"resource\""
+        },
+        "defaultValue": {
+          "summary": "\"data\""
+        }
+      }
+    },
+    "onRowClick": {
+      "name": "onRowClick",
+      "description": "Callback on Row click in case of `Resource Grid`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "onRowClickFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "onRowClickFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "loaderSchema": {
+      "name": "loaderSchema",
+      "description": "Schema used to render `loading` state",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Schema"
+      },
+      "table": {
+        "type": {
+          "summary": "Schema"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "schema": {
+      "name": "schema",
+      "description": "Schema used to render `data` object",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Schema"
+      },
+      "table": {
+        "type": {
+          "summary": "Schema"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "data": {
+      "name": "data",
+      "description": "Data object",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Data"
+      },
+      "table": {
+        "type": {
+          "summary": "Data"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "totalRecords": {
+      "name": "totalRecords",
+      "description": "Total records in grid",
+      "type": {
+        "required": true,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "0"
+        }
+      }
+    },
+    "loading": {
+      "name": "loading",
+      "description": "Loading state of Grid",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Error state of Grid",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "updateData": {
+      "name": "updateData",
+      "description": "Callback to be called to get the updated data",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "(() => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "(() => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "updateSchema": {
+      "name": "updateSchema",
+      "description": "Callback to be called to get the updated data",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "updateSchemaFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "updateSchemaFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showHead": {
+      "name": "showHead",
+      "description": "Shows grid head",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "showMenu": {
+      "name": "showMenu",
+      "description": "Shows menu in head cell",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "draggable": {
+      "name": "draggable",
+      "description": "Allows dragging of column",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "nestedRows": {
+      "name": "nestedRows",
+      "description": "Allows nested rows",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "nestedRowRenderer": {
+      "name": "nestedRowRenderer",
+      "description": "Renderer to be used for nested rows",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "FC<NestedRowProps> | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "FC<NestedRowProps> | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "withPagination": {
+      "name": "withPagination",
+      "description": "Shows pagination component",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "page": {
+      "name": "page",
+      "description": "Current page",
+      "type": {
+        "required": true,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "1"
+        }
+      }
+    },
+    "pageSize": {
+      "name": "pageSize",
+      "description": "Number of rows on a page",
+      "type": {
+        "required": true,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "15"
+        }
+      }
+    },
+    "withCheckbox": {
+      "name": "withCheckbox",
+      "description": "Shows checkbox in the left most column",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onSelect": {
+      "name": "onSelect",
+      "description": "Callback on row select",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "onSelectFn | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "onSelectFn | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onSelectAll": {
+      "name": "onSelectAll",
+      "description": "Callback on column head select",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "onSelectAllFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "onSelectAllFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "errorTemplate": {
+      "name": "errorTemplate",
+      "description": "Error Template\n**Functional Component will be deprecated soon**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "sortingList": {
+      "name": "sortingList",
+      "description": "Sorting List",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "{ name: string; type: SortType; }[]"
+      },
+      "table": {
+        "type": {
+          "summary": "{ name: string; type: SortType; }[]"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "updateSortingList": {
+      "name": "updateSortingList",
+      "description": "update Sorting List Callback",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "updateSortingListFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "updateSortingListFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "filterList": {
+      "name": "filterList",
+      "description": "Filter List",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Record<string, Filter>"
+      },
+      "table": {
+        "type": {
+          "summary": "Record<string, Filter>"
+        },
+        "defaultValue": {
+          "summary": "{ }"
+        }
+      }
+    },
+    "updateFilterList": {
+      "name": "updateFilterList",
+      "description": "update Filter List Callback",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "updateFilterListFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "updateFilterListFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "selectAll": {
+      "name": "selectAll",
+      "description": "Select All",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "{ checked: boolean; indeterminate: boolean; } | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "{ checked: boolean; indeterminate: boolean; } | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "headCellTooltip": {
+      "name": "headCellTooltip",
+      "description": "Shows tooltip on Head Cell hover",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "separator": {
+      "name": "separator",
+      "description": "Shows left separator to all columns\n\n**Can be override by Column Schema**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showFilters": {
+      "name": "showFilters",
+      "description": "Show filters in Head Cell",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}
