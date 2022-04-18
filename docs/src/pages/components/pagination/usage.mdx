@@ -22,55 +22,24 @@ Jump pagination lets the users jump to a specific page by entering the page numb
 <Preview name='components-pagination-pagination-with-jump'/>
 
 ### Properties
-
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Current page</td>
+    <td>&#60;current page&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Total pages</td>
+    <td>&#60;total pages&#62;</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Current page',
-        Value: '<current-page>',
-        Configurable: '-',
-      },
-      {
-        Property: 'Total pages',
-        Value: '<total-pages>',
-        Configurable: '✅',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
-<br/>
-
 
 ### Usage
 
