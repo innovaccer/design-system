@@ -32,53 +32,31 @@ Status hint comes in 5 Appearances -
 <Preview name='statushint-default-status-hint'/>
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Label',
-        Value: '<Label>',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Color of status dot',
-        Value: 'Color based on - Info, Warning, Success, Alert, Default',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Appearance</td>
+    <td>
+      <ul>
+          <li>Default</li>
+          <li>Info</li>
+          <li>Success</li>
+          <li>Warning</li>
+          <li>Alert</li>
+      </ul>
+    </td>
+    <td>Default</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Label</td>
+    <td>&#60;label&#62;</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage 

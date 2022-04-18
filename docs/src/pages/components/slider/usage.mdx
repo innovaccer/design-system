@@ -40,68 +40,33 @@ Values between tick marks can also be selected.
 <Preview name='components-slider-variants-free-slider'/>
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Label',
-        Value: '<Label>',
-        Configurable: 'Optional',
-      },
-      {
-        Property: 'Number of ticks',
-        Value: '11 (Default)',
-        Configurable: '✅',
-      },
-      {
-        Property: 'Visibility of ticks',
-        Value: 'Visible',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Number of numbers',
-        Value: '11 (Default)',
-        Configurable: '✅',
-      },
-      {
-        Property: 'Visibility of numbers',
-        Value: 'Visible (Default)',
-        Configurable: '✅',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Label<br/><em>(optional)</em></td>
+    <td>&#60;label&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Ticks</td>
+    <td>&#60;ticks&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Numbers<br/><em>(optional)</em></td>
+    <td>&#60;numbers&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Step size</td>
+    <td>&#60;size&#62;</td>
+    <td>1</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage
@@ -114,4 +79,3 @@ Use slider with metric inputs for better accessibility in the case where **choos
 
 <br/>
 <br/>
-

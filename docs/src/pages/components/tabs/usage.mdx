@@ -39,74 +39,44 @@ This variant consists of a Close Icon Button along with the label. It supports t
 <br/>
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Minimum width of a tab item',
-        Value: '64px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Height',
-        Value: '48px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Maximum no. of tabs',
-        Value: '5',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Additional options',
-        Value: 'One of these- Leading pill Leading icon Trailing close icon button',
-        Configurable: 'Optional',
-      },
-      {
-        Property: 'Label',
-        Value: '<Label>',
-        Configurable: '-',
-      },
-      {
-        Property: 'Horizontal spacing between tabs',
-        Value: '0px',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '34%',
-        sorting: false,
-        separator: true,
-        cellType: 'DEFAULT'
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Label</td>
+    <td>&#60;label&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Minimum width (of a tab item)</td>
+    <td>64px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Height (of a tab item)</td>
+    <td>48px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Add-on<br/><em>(optional)</em></td>
+    <td>
+        <ul>
+            <li>Leading pill</li>
+            <li>Leading icon</li>
+            <li>Trailing close icon button</li>
+        </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Spacing between tabs</td>
+    <td>0px</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage
@@ -156,7 +126,3 @@ Tabs should have short and scannable labels, generally limited to a single word.
 #### Maximum Tabs
 
 Too many tabs can unnecessarily clutter the UI. Hence it is recommended **not to use more than 5 tabs** at once.
-
-
-
-

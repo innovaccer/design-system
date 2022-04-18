@@ -30,58 +30,55 @@ A pill comes in 9 appearances.
 <Preview name='components-pills-variants-appearance'/>
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Max Width',
-        Value: '160px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Corner radius',
-        Value: '10px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Padding (Top, Right, Bottom, Left)',
-        Value: '2px, 6px, 2px, 6px',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Appearance</td>
+    <td>
+      <ul>
+          <li>Jal</li>
+          <li>Stone</li>
+          <li>Neem</li>
+          <li>Haldi</li>
+          <li>Mirch</li>
+          <li>Tawak</li>
+          <li>Nimbu</li>
+          <li>Neel</li>
+          <li>Jamun</li>
+      </ul>
+    </td>
+    <td>Stone</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Subtle<br/><em>(optional)</em></td>
+    <td>
+        <ul>
+            <li>True</li>
+            <li>False</li>
+        </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Max width</td>
+    <td>160px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius</td>
+    <td>20px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+    <td>2px, 6px, 2px, 6px</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage
