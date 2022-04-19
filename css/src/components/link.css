@@ -40,10 +40,12 @@
 
 .Link--default:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
+  border-radius: var(--spacing-m);
 }
 
 .Link--subtle:focus {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  border-radius: var(--spacing-m);
 }
 
 .Link--disabled {
