@@ -25,6 +25,7 @@
   align-items: center;
   cursor: pointer;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
+  width: var(--spacing-9);
 }
 
 .MenuItem--horizontal {
