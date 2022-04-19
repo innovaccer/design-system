@@ -13,12 +13,180 @@ export const data = [
     design: 'Available',
     name: 'Action Sheet',
     code: 'Available',
-    // image: () => (
-    //   <StaticImage
-    //     src="/images/Avatars.png"
-    //     alt="Avatars"
-    //     imgStyle={imgStyle}
-    //   />)
+    image: () => (
+      <StaticImage
+        src="./images/Avatar.png"
+        alt="Action Sheet"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'bottomNavigation/usage',
+    design: 'Available',
+    name: 'Bottom navigation',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Bottom navigation"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'bottomSheet/usage',
+    design: 'Available',
+    name: 'Bottom sheet',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Bottom sheet"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'buttons/usage',
+    design: 'Available',
+    name: 'Buttons',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Buttons"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'cards/usage',
+    design: 'Available',
+    name: 'Cards',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Cards"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'checkbox/usage',
+    design: 'Available',
+    name: 'Checkbox',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Checkbox"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'chips/usage',
+    design: 'Available',
+    name: 'Chips',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Chips"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'dialogs/usage',
+    design: 'Available',
+    name: 'Dialogs',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Dialogs"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'inputs/usage',
+    design: 'Available',
+    name: 'Inputs',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Inputs"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'list/usage',
+    design: 'Available',
+    name: 'List',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="List"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'pageHeaders/usage',
+    design: 'Available',
+    name: 'Page headers',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Page headers"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'radio/usage',
+    design: 'Available',
+    name: 'Radio',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Radio"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'switch/usage',
+    design: 'Available',
+    name: 'Switch',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Switch"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'tabs/usage',
+    design: 'Available',
+    name: 'Tabs',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Tabs"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'toast/usage',
+    design: 'Available',
+    name: 'Toast',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/Avatars.png"
+        alt="Toast"
+        imgStyle={imgStyle}
+      />)
   },
 ];
 
