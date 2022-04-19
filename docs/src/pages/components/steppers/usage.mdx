@@ -16,74 +16,48 @@ The stepper can be used at different places to serve different purposes. The ste
 <Preview name='stepper-all' />
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Height of a stepper item',
-        Value: '32px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Corner radius of the active stepper item',
-        Value: '16px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Margin for the item (top, right, bottom, left)',
-        Value: '0px, 1px, 0px, 1px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Spacing between two stepper items',
-        Value: '0px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Leading Icon',
-        Value: 'Depending upon the state of a step, the icon can take any one of the following values: check_circle OR radio_button_unchecked',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Label',
-        Value: '<Label>',
-        Configurable: '-',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '34%',
-        sorting: false,
-        separator: true,
-        cellType: 'DEFAULT'
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Height (of a stepper item)</td>
+    <td>32px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius (of the active stepper item)</td>
+    <td>16px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Margin (of a stepper item)<br/><em>(top, right, bottom, left)</em></td>
+    <td>0px, 1px, 0px, 1px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Spacing between stepper items</td>
+    <td>0px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Leading icon</td>
+    <td>
+      <ul>
+          <li>check_circle</li>
+          <li>radio_button_unchecked</li>
+      </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Label</td>
+    <td>&#60;label&#62;</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage

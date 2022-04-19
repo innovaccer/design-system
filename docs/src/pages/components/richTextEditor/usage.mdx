@@ -12,68 +12,96 @@ Rich text editor also provides options to add media and other useful entities su
 <Preview name='default-radio'/>
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Headings',
-        Value: 'Heading 4, Heading 3, Heading 2, Heading 1',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Text decoration',
-        Value: 'Bold, Italics, Underline, Strikethrough',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Text color',
-        Value: 'Night, Stone, Neem, Jal, Mirch, Tawak',
-        Configurable: '❌',
-      },
-      {
-        Property: 'List formatting',
-        Value: 'Bulleted list, Numbered list',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Insert options',
-        Value: 'Attachment, Image, Personalization, Link, More (Extendable option)',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '25%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '50%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '25%%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Heading</td>
+    <td>
+      <ul>
+          <li>Heading 1</li>
+          <li>Heading 2</li>
+          <li>Heading 3</li>
+          <li>Heading 4</li>
+      </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Text decoration</td>
+    <td>
+      <ul>
+          <li>Bold</li>
+          <li>Italics</li>
+          <li>Underline</li>
+          <li>Strikethrough</li>
+      </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Text color</td>
+    <td>
+      <ul>
+          <li>Night</li>
+          <li>Stone</li>
+          <li>Neem</li>
+          <li>Jal</li>
+          <li>Mirch</li>
+          <li>Tawak</li>
+      </ul>
+    </td>
+    <td>Night</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Text alignment</td>
+    <td>
+      <ul>
+          <li>Left</li>
+          <li>Center</li>
+          <li>Right</li>
+      </ul>
+    </td>
+    <td>Left</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>List formatting</td>
+    <td>
+      <ul>
+          <li>Bulleted list</li>
+          <li>Numbered list</li>
+          <li>Right</li>
+      </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Insert options</td>
+    <td>
+      <ul>
+          <li>Attachment</li>
+          <li>Image</li>
+          <li>Personalization</li>
+          <li>Link</li>
+          <li>More (extendable option)</li>
+      </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Read only<br/><em>(optional)</em></td>
+    <td>
+      <ul>
+          <li>True</li>
+          <li>False</li>
+      </ul>
+    </td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage

@@ -77,70 +77,48 @@ The large side sheet takes **10 columns** in the grid and starts from left side 
 <Preview name='sidesheet-large'/>
 
 ### Properties
-
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Height',
-        Value: '100%',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Margin (Top, Right, Bottom)',
-        Value: '0px, 0px, 0px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Corner radius',
-        Value: '0px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Background color',
-        Value: '#FFFFFF',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Shadow',
-        Value: 'Shadow 30',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '34%',
-        sorting: false,
-        separator: true,
-        cellType: 'DEFAULT'
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Size</td>
+    <td>
+      <ul>
+          <li>Regular</li>
+          <li>Large</li>
+      </ul>
+    </td>
+    <td>Regular</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Height</td>
+    <td>100%</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Margin<br/><em>(top, right, bottom)</em></td>
+    <td>0px, 0px, 0px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius</td>
+    <td>0px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Background color</td>
+    <td>Namak</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Shadow</td>
+    <td>Shadow 30</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage

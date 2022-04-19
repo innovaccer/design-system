@@ -10,54 +10,35 @@ showMobile: true
 <Preview name='button-icon-button' />
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Maximum width',
-        Value: '256px, after which the text wraps',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Padding from trigger',
-        Value: '4px',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '34%',
-        sorting: false,
-        separator: true,
-        cellType: 'DEFAULT'
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Position</td>
+    <td>
+      <ul>
+          <li>Top</li>
+          <li>Right</li>
+          <li>Bottom</li>
+          <li>Left</li>
+      </ul>
+    </td>
+    <td>Bottom</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Maximum width</td>
+    <td>256px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Spacing from trigger</td>
+    <td>4px</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage
