@@ -7,27 +7,33 @@ export const flatEdgedVerticalNavigation = () => {
       name: 'home',
       label: 'Home',
       icon: 'home',
+      count: 10
     },
     {
       name: 'profile',
       label: 'Profile',
       icon: 'account_circle',
+      count: 25,
       subMenu: [
         {
           name: 'profile.personal',
           label: 'Personal',
+          count: 5
         },
         {
           name: 'profile.are_team',
           label: 'Care Team',
+          count: 10
         },
         {
           name: 'profile.goals',
           label: 'Goals',
+          count: 5
         },
         {
           name: 'profile.care_plans',
           label: 'Care Plans',
+          count: 5
         },
       ],
     },
@@ -140,27 +146,33 @@ const customCode = `() => {
       name: 'home',
       label: 'Home',
       icon: 'home',
+      count: 10
     },
     {
       name: 'profile',
       label: 'Profile',
       icon: 'account_circle',
+      count: 25,
       subMenu: [
         {
           name: 'profile.personal',
-          label: 'Personal'
+          label: 'Personal',
+          count: 5
         },
         {
           name: 'profile.are_team',
-          label: 'Care Team'
+          label: 'Care Team',
+          count: 10
         },
         {
           name: 'profile.goals',
-          label: 'Goals'
+          label: 'Goals',
+          count: 5
         },
         {
           name: 'profile.care_plans',
-          label: 'Care Plans'
+          label: 'Care Plans',
+          count: 5
         }
       ]
     },
