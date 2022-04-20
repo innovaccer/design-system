@@ -1,0 +1,807 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component 
+  appearance: "alert", disabled: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--alert Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "alert", expanded: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--alert Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "alert", expanded: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--expanded Button--regular Button--alert Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "alert", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--alert Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
+      </span>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "alert", selected: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--alert Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "basic", disabled: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "basic", expanded: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "basic", expanded: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--expanded Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "basic", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
+      </span>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "basic", selected: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--selected Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "primary", disabled: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--primary Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "primary", expanded: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--primary Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "primary", expanded: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--expanded Button--regular Button--primary Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "primary", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--primary Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
+      </span>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "primary", selected: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--primary Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "transparent", disabled: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "transparent", expanded: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "transparent", expanded: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--expanded Button--regular Button--transparent Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "transparent", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      >
+        Button
+      </span>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  appearance: "transparent", selected: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--transparent Button--selected Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "large"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--large Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "large", icon: "events", iconAlign: "left"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--large Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      iconalign="left"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "large", icon: "events", iconAlign: "right"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--large Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      iconalign="right"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "large", icon: "events", largeIcon: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--large Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "regular"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "regular", icon: "events", iconAlign: "left"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      iconalign="left"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "regular", icon: "events", iconAlign: "right"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      iconalign="right"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "regular", icon: "events", largeIcon: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "tiny"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "tiny", icon: "events", iconAlign: "left"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      iconalign="left"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "tiny", icon: "events", iconAlign: "right"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      iconalign="right"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  size: "tiny", icon: "events", largeIcon: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      icon="events"
+      tabindex="0"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  type: "button"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+      type="button"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  type: "reset"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+      type="reset"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component 
+  type: "submit"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+      type="submit"
+    >
+      Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component with no children 
+  appearance: "alert", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--regularSquare Button--alert"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component with no children 
+  appearance: "basic", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--regularSquare Button--basic"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component with no children 
+  appearance: "primary", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--regularSquare Button--primary"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--white"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Button component with no children 
+  appearance: "transparent", loading: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--regularSquare Button--transparent"
+      data-test="DesignSystem-Button"
+      disabled=""
+      tabindex="0"
+    >
+      <svg
+        class="Spinner Spinner--small Button-spinner"
+        data-test="DesignSystem-Button--Spinner"
+        viewBox="0 0 50 50"
+      >
+        <circle
+          class="Circle Circle--secondary"
+          cx="25"
+          cy="25"
+          fill="none"
+          r="20"
+          stroke-miterlimit="10"
+          stroke-width="4"
+        />
+      </svg>
+      <span
+        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        data-test="DesignSystem-Text"
+      />
+    </button>
+  </div>
+</body>
+`;
