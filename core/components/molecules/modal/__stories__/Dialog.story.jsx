@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Modal, Button, Text, Paragraph, Message, List } from '@/index';
 
 export const dialogs = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = true;
   const dimension = 'medium';
   const onClose = () => {
@@ -84,7 +84,7 @@ export const dialogs = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = true;
   const dimension = 'medium';
   const onClose = () => {

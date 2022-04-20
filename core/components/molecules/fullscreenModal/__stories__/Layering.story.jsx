@@ -4,7 +4,7 @@ import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
 export const layering = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
   const dimension = 'medium';
   const knobOpen = open;

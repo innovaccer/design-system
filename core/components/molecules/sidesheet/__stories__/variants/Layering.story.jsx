@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Text, Paragraph, Sidesheet, Button, ModalDescription } from '@/index';
 
 export const layering = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
   const seperator = false;
   const backIcon = false;
@@ -106,7 +106,7 @@ export const layering = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
 
   const onClose = () => {

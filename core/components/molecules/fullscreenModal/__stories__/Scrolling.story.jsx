@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Button, Text, Paragraph, FullscreenModal } from '@/index';
 
 export const scrolling = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
@@ -112,7 +112,7 @@ export const scrolling = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);

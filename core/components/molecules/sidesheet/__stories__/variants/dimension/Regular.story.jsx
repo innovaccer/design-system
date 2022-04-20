@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Text, Paragraph, Sidesheet, ModalDescription, Button } from '@/index';
 
 export const regular = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const seperator = false;
   const backIcon = false;
   const stickFooter = false;
@@ -75,7 +75,7 @@ export const regular = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
