@@ -12,12 +12,10 @@ export const layering = () => {
 
   const onClose = () => {
     setOpen(!open);
-    action('on close triggered')();
   };
 
   const onCloseSecondOverlay = () => {
     setOpenSecondOverlay(!openSecondOverlay);
-    action('on close triggered')();
   };
 
   const openModal = () => {

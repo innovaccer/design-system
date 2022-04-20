@@ -7,7 +7,6 @@ export const largeWidth = () => {
 
   const onClose = () => {
     setOpen(!open);
-    action('on close triggered')();
   };
 
   const data = [
@@ -89,7 +88,6 @@ const customCode = `() => {
 
   const onClose = () => {
     setOpen(!open);
-    console.log('on close triggered')();
   };
 
   const data = [{ iconName: 'message', textMessage: 'Text Message' }, { iconName: 'chat_bubble', textMessage: 'Portal Message' }, { iconName: 'email', textMessage: 'E-mail' }, { iconName: 'markunread_mailbox', textMessage: 'Letter' }, { iconName: 'mic', textMessage: 'Voice Recording' }];
