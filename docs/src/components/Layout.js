@@ -139,7 +139,7 @@ const PreviewWithPropTable = ({ name }) => {
         setLoading(false);
       })
       .catch((err) => {
-        setError(err);
+        setError(`Could not get details for id: ${name}`);
         setLoading(false);
       });
   }, []);
