@@ -75,6 +75,11 @@
   box-shadow: none;
 }
 
+.MenuItem:active {
+  background: var(--primary-lighter);
+  box-shadow: none;
+}
+
 .MenuItem--rounded {
   border-radius: var(--spacing-2);
 }
