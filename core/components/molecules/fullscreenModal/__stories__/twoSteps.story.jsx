@@ -3,7 +3,7 @@ import { Button, Paragraph, Text, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
 export const twoSteps = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(0);
 
   const onClose = () => {

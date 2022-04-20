@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Modal, ModalDescription, ModalHeader, ModalBody, ModalFooter, Button, Text, Paragraph } from '@/index';
 
 export const layering = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
   const backdropClose = false;
   const dimension = 'medium';
@@ -85,7 +85,7 @@ export const layering = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
   const dimension = 'medium';
   const backdropClose = false;

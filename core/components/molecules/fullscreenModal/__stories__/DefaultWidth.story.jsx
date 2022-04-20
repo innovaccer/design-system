@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Button, Paragraph, FullscreenModal, Label, Input, Textarea } from '@/index';
 
 export const defaultWidth = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
@@ -50,7 +50,7 @@ export const defaultWidth = () => {
 };
 
 const customCode = `() => {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
 
     const onClose = () => {
       setOpen(!open);

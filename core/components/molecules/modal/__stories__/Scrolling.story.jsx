@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Modal, Button, Text, Paragraph } from '@/index';
 
 export const scrolling = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = false;
 
   const onClose = () => {
@@ -138,7 +138,7 @@ export const scrolling = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = false;
 
   const onClose = () => {

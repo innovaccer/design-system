@@ -4,7 +4,7 @@ import Dialog from '../../../Dialog';
 import { Paragraph } from '@/index';
 
 export const small = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(false);
@@ -41,7 +41,7 @@ export const small = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
