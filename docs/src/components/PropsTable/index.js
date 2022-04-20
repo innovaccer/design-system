@@ -26,6 +26,7 @@ import {
 } from 'react-live';
 import './prism.css';
 import { copyMessage, copyMessageSuccess } from '../../util/constants';
+import { useEffect } from 'react';
 
 const beautifyHTMLOptions = {
   indent_size: 2,
@@ -83,9 +84,14 @@ const StoryComp = ({
 
   const TabsWrap = withLive(({ live }) => {
     const { element: Element } = live;
+    if(!live.element) {
+      return null;
+    }
     try {
       const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
-      setHtmlCode(htmlValue);
+      useEffect(() => {
+        setHtmlCode(htmlValue);
+      })
     } catch (e) { }
     return null;
   });

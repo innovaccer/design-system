@@ -128,7 +128,7 @@ const A11yBlock = ({ name }) => {
 
 const PreviewWithPropTable = ({ name }) => {
 
-  const [data, setData] = React.useState([]);
+  const [data, setData] = React.useState({});
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
