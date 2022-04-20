@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
 import RangeSlider from '../RangeSlider';
-import { NumberRange } from '@/common.type';
 
 // CSF format story
 export const all = () => {
@@ -24,8 +23,8 @@ export const all = () => {
     label,
     disabled,
     onChange,
-    defaultValue: [2, 4] as NumberRange,
-  };
+    defaultValue: [2, 4]
+  }
 
   return <RangeSlider className="mt-2" {...options} />;
 };
