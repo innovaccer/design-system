@@ -7,7 +7,6 @@ export const scrolling = () => {
 
   const onClose = () => {
     setOpen(!open);
-    action('on close triggered')();
   };
 
   const data = [
@@ -116,7 +115,6 @@ const customCode = `() => {
 
   const onClose = () => {
     setOpen(!open);
-    console.log('on close triggered')();
   };
 
   const data = [{ question:'Do you experience any of the following in your current place of residence? [Select all that apply]', options:['Deteriorating appearance', 'Inoperable plumbing', 'Inadequate wining', 'Leaking roofs', 'Crumbling foundations', 'Unsafe steps', 'in poor condition', 'None of the above'] },

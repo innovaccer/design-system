@@ -7,7 +7,6 @@ export const defaultWidth = () => {
 
   const onClose = () => {
     setOpen(!open);
-    action('on close triggered')();
   };
 
   return (
@@ -54,7 +53,6 @@ const customCode = `() => {
 
     const onClose = () => {
       setOpen(!open);
-      console.log('on close triggered')();
     };
 
     return (

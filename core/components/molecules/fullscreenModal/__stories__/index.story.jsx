@@ -10,7 +10,6 @@ export const all = () => {
 
   const onClose = () => {
     setOpen(!open);
-    action('on close triggered')();
   };
 
   const openModal = () => {
