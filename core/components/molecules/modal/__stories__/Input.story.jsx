@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Modal, Button, Paragraph, Navigation, Heading, Label, Dropdown } from '@/index';
 
 export const inputModals = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = false;
 
   const onClose = () => {
@@ -119,7 +119,7 @@ export const inputModals = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose =false;
 
   const onClose = () => {

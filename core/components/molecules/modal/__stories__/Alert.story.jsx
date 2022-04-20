@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Modal, Button, Paragraph } from '@/index';
 
 export const alerts = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = false;
   const dimension = 'small';
 
@@ -53,7 +53,7 @@ export const alerts = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = false;
   const dimension = 'small';
 

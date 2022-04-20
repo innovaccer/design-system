@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Modal, ModalHeader, ModalBody, ModalFooter, ModalDescription, Button, Text, Paragraph } from '@/index';
 
 export const old = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const backdropClose = false;
   const dimension = 'medium';
 
@@ -48,7 +48,7 @@ export const old = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const dimension = 'medium';
 
   const onClose = () => {

@@ -4,7 +4,7 @@ import { Text, Paragraph, Sidesheet, Button, ModalDescription } from '@/index';
 import Modal from '@/components/molecules/modal';
 
 export const layeringWithModal = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
   const seperator = false;
   const backIcon = false;
@@ -106,7 +106,7 @@ export const layeringWithModal = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
 
   const onClose = () => {

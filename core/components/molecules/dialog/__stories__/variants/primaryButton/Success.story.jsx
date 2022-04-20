@@ -4,7 +4,7 @@ import { action } from '@/utils/action';
 import Dialog from '../../../Dialog';
 
 export const success = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(false);
@@ -41,7 +41,7 @@ export const success = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);

@@ -4,7 +4,7 @@ import { action } from '@/utils/action';
 import Dialog from '../Dialog';
 
 export const all = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const dimension = 'small';
   const primaryButtonAppearance = 'primary';
   const secondaryButtonAppearance = 'basic';
@@ -48,7 +48,7 @@ export const all = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);

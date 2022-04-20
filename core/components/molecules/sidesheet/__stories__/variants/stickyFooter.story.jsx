@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Text, Paragraph, Sidesheet, ModalDescription, Button } from '@/index';
 
 export const stickyFooter = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const seperator = false;
   const backdropClose = false;
   const dimension = 'regular';
@@ -83,7 +83,7 @@ export const stickyFooter = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
