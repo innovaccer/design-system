@@ -88,7 +88,7 @@ export const CustomItemsRenderer = () => {
         {menu.icon && (
           <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
         )}
-        <Tooltip tooltip={menu.label}>
+        <Tooltip tooltip={menu.label} position="right">
           <Text weight="medium">{menu.label}</Text>
         </Tooltip>
       </div>
@@ -202,7 +202,7 @@ const customCode = `() => {
               name={menu.icon}
             />
         }
-        <Tooltip tooltip={menu.label}>
+        <Tooltip tooltip={menu.label} position="right">
           <Text weight="medium">
             {menu.label}
           </Text>
