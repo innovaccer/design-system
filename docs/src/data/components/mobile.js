@@ -15,7 +15,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatar.png"
+        src="./images/mobile/ActionSheet.png"
         alt="Action Sheet"
         imgStyle={imgStyle}
       />)
@@ -27,7 +27,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/BottomNavigation.png"
         alt="Bottom navigation"
         imgStyle={imgStyle}
       />)
@@ -39,7 +39,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/BottomSheet.png"
         alt="Bottom sheet"
         imgStyle={imgStyle}
       />)
@@ -51,7 +51,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Buttons.png"
         alt="Buttons"
         imgStyle={imgStyle}
       />)
@@ -63,7 +63,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Card.png"
         alt="Cards"
         imgStyle={imgStyle}
       />)
@@ -75,7 +75,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Checkbox.png"
         alt="Checkbox"
         imgStyle={imgStyle}
       />)
@@ -87,7 +87,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Chips.png"
         alt="Chips"
         imgStyle={imgStyle}
       />)
@@ -99,7 +99,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Dialog.png"
         alt="Dialogs"
         imgStyle={imgStyle}
       />)
@@ -111,7 +111,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Input.png"
         alt="Inputs"
         imgStyle={imgStyle}
       />)
@@ -123,7 +123,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/List.png"
         alt="List"
         imgStyle={imgStyle}
       />)
@@ -135,7 +135,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/PageHeader.png"
         alt="Page headers"
         imgStyle={imgStyle}
       />)
@@ -147,7 +147,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Radio.png"
         alt="Radio"
         imgStyle={imgStyle}
       />)
@@ -159,7 +159,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Switch.png"
         alt="Switch"
         imgStyle={imgStyle}
       />)
@@ -171,7 +171,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Tabs.png"
         alt="Tabs"
         imgStyle={imgStyle}
       />)
@@ -183,7 +183,7 @@ export const data = [
     code: 'Available',
     image: () => (
       <StaticImage
-        src="./images/Avatars.png"
+        src="./images/mobile/Toast.png"
         alt="Toast"
         imgStyle={imgStyle}
       />)
