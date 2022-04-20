@@ -326,7 +326,6 @@ export const docPage = () => {
   const sourceContext = useContext(SourceContext);
   const raw = getSourceProps({ ids: [storyId] }, docsContext, sourceContext);
   const code = `${raw.code}`;
-  console.log(code);
   const customCode = code;
   // END: get raw source of the story
 
