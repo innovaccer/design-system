@@ -27,6 +27,7 @@ import {
 import './prism.css';
 import { copyMessage, copyMessageSuccess } from '../../util/constants';
 import { useEffect } from 'react';
+import ErrorBoundary from '../ErrorBoundary';
 
 const beautifyHTMLOptions = {
   indent_size: 2,
@@ -192,6 +193,7 @@ const StoryComp = ({
   return (
     <>
       <div className='pb-8 pt-4 d-flex w-100 m-auto flex-column align-items-center'>
+      <ErrorBoundary>
         <LiveProvider code={jsxCode ? jsxCode.replaceAll('action(', '() => console.log(') : ''} scope={imports}>
           <Card
             shadow='none'
@@ -273,6 +275,7 @@ const StoryComp = ({
             </Card>
           )}
         </LiveProvider>
+        </ErrorBoundary>
       </div>
     </>
   );
