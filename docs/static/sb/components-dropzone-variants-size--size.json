@@ -1,0 +1,915 @@
+{
+  "args": {},
+  "componentId": "components-dropzone-variants-size",
+  "title": "Components/Dropzone/Variants/Size",
+  "kind": "Components/Dropzone/Variants/Size",
+  "id": "components-dropzone-variants-size--size",
+  "name": "Size",
+  "story": "Size",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const onDrop = (event, acceptedFiles, rejectedFiles) => {\n    console.log(acceptedFiles, rejectedFiles);\n  };\n\n  return (\n    <div className=\"w-50 d-flex flex-column align-items-center\">\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel='Maximum size: 25 MB'\n        onDrop={onDrop}\n        className=\"mb-3\"\n        sampleFileLink={(\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        )}\n      />\n      <Text size=\"large\" weight=\"strong\">Standard</Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel='Maximum size: 25 MB'\n        onDrop={onDrop}\n        type=\"compressed\"\n        className=\"mt-6 mb-3\"\n        sampleFileLink={(\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        )}\n      />\n      <Text size=\"large\" weight=\"strong\">Compressed</Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel='Maximum size: 25 MB'\n        onDrop={onDrop}\n        type=\"tight\"\n        className=\"mt-6 mb-3\"\n        sampleFileLink={(\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        )}\n      />\n      <Text size=\"large\" weight=\"strong\">Tight</Text>\n    </div>\n  );\n}"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/molecules/dropzone/__stories__/variants/Size.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const onDrop = (_event, acceptedFiles) => {\n    return action(`Accepted Files: ${acceptedFiles}`)();\n  };\n\n  return (\n    <div className=\"w-50 d-flex flex-column align-items-center\">\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        onDrop={onDrop}\n        className=\"mb-3\"\n        sampleFileLink={\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        }\n      />\n      <Text size=\"large\" weight=\"strong\">\n        Standard\n      </Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        onDrop={onDrop}\n        type=\"compressed\"\n        className=\"mt-6 mb-3\"\n        sampleFileLink={\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        }\n      />\n      <Text size=\"large\" weight=\"strong\">\n        Compressed\n      </Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        onDrop={onDrop}\n        type=\"tight\"\n        className=\"mt-6 mb-3\"\n        sampleFileLink={\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        }\n      />\n      <Text size=\"large\" weight=\"strong\">\n        Tight\n      </Text>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-dropzone-variants-size--size",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "formatLabel": {
+        "name": "formatLabel",
+        "description": "Description of accepted formats in `FileUploader`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "type": {
+        "name": "type",
+        "description": "Size of `Dropzone`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "standard",
+            "compressed",
+            "tight"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"standard\" | \"compressed\" | \"tight\""
+          },
+          "defaultValue": {
+            "summary": "\"standard\""
+          }
+        }
+      },
+      "sizeLabel": {
+        "name": "sizeLabel",
+        "description": "Description of maximum size in `FileUploader`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "sampleFileLink": {
+        "name": "sampleFileLink",
+        "description": "Link component to download sample file",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "accept": {
+        "name": "accept",
+        "description": "Set accepted file types.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | string[] | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | string[] | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "multiple": {
+        "name": "multiple",
+        "description": "Allow drag 'n' drop (or selection from the file dialog) of multiple files",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "preventDropOnDocument": {
+        "name": "preventDropOnDocument",
+        "description": "If false, allow dropped items to take over the current browser window",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "minSize": {
+        "name": "minSize",
+        "description": "Minimum file size (in bytes)",
+        "type": {
+          "required": true,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "0"
+          }
+        }
+      },
+      "maxSize": {
+        "name": "maxSize",
+        "description": "Maximum file size (in bytes)",
+        "type": {
+          "required": true,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "Infinity"
+          }
+        }
+      },
+      "disabled": {
+        "name": "disabled",
+        "description": "Enable/disable the dropzone",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "getFilesFromEvent": {
+        "name": "getFilesFromEvent",
+        "description": "Use this to provide a custom file aggregator",
+        "type": {
+          "required": true,
+          "name": "function",
+          "value": "(event: Event | DragEvent) => any"
+        },
+        "table": {
+          "type": {
+            "summary": "(event: Event | DragEvent) => any"
+          },
+          "defaultValue": {
+            "summary": "fromEvent( ... )"
+          }
+        }
+      },
+      "onFileDialogCancel": {
+        "name": "onFileDialogCancel",
+        "description": "Callback for when closing the file dialog with no selection",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "(() => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "(() => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDragEnter": {
+        "name": "onDragEnter",
+        "description": "Callback for when the `dragenter` event occurs.",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: DragEvent) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: DragEvent) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDragLeave": {
+        "name": "onDragLeave",
+        "description": "Callback for when the `dragleave` event occurs",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: DragEvent) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: DragEvent) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDragOver": {
+        "name": "onDragOver",
+        "description": "Callback for when the `dragover` event occurs",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: DragEvent) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: DragEvent) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDrop": {
+        "name": "onDrop",
+        "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n   type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n   message: string;\n}\n\nFileRejection {\n  file: File;\n  errors: FileError[];\n}\n</pre>",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDropAccepted": {
+        "name": "onDropAccepted",
+        "description": "Callback for when the `drop` event occurs.\nNote that if no files are accepted, this callback is not invoked.",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: Event | DragEvent, files: File[]) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: Event | DragEvent, files: File[]) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onDropRejected": {
+        "name": "onDropRejected",
+        "description": "Callback for when the `drop` event occurs.\nNote that if no files are rejected, this callback is not invoked.",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "validator": {
+        "name": "validator",
+        "description": "Custom validation function\nThe value must be a function that accepts File object and returns null if file should be accepted\nor error object/array of error objects if file should me rejected",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((file: File) => FileError | FileError[]) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((file: File) => FileError | FileError[]) | undefined"
+          },
+          "defaultValue": {
+            "summary": "func"
+          }
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "formatLabel": {
+      "name": "formatLabel",
+      "description": "Description of accepted formats in `FileUploader`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "type": {
+      "name": "type",
+      "description": "Size of `Dropzone`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "standard",
+          "compressed",
+          "tight"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"standard\" | \"compressed\" | \"tight\""
+        },
+        "defaultValue": {
+          "summary": "\"standard\""
+        }
+      }
+    },
+    "sizeLabel": {
+      "name": "sizeLabel",
+      "description": "Description of maximum size in `FileUploader`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "sampleFileLink": {
+      "name": "sampleFileLink",
+      "description": "Link component to download sample file",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "accept": {
+      "name": "accept",
+      "description": "Set accepted file types.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | string[] | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | string[] | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "multiple": {
+      "name": "multiple",
+      "description": "Allow drag 'n' drop (or selection from the file dialog) of multiple files",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "preventDropOnDocument": {
+      "name": "preventDropOnDocument",
+      "description": "If false, allow dropped items to take over the current browser window",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "minSize": {
+      "name": "minSize",
+      "description": "Minimum file size (in bytes)",
+      "type": {
+        "required": true,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "0"
+        }
+      }
+    },
+    "maxSize": {
+      "name": "maxSize",
+      "description": "Maximum file size (in bytes)",
+      "type": {
+        "required": true,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "Infinity"
+        }
+      }
+    },
+    "disabled": {
+      "name": "disabled",
+      "description": "Enable/disable the dropzone",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "getFilesFromEvent": {
+      "name": "getFilesFromEvent",
+      "description": "Use this to provide a custom file aggregator",
+      "type": {
+        "required": true,
+        "name": "function",
+        "value": "(event: Event | DragEvent) => any"
+      },
+      "table": {
+        "type": {
+          "summary": "(event: Event | DragEvent) => any"
+        },
+        "defaultValue": {
+          "summary": "fromEvent( ... )"
+        }
+      }
+    },
+    "onFileDialogCancel": {
+      "name": "onFileDialogCancel",
+      "description": "Callback for when closing the file dialog with no selection",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "(() => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "(() => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDragEnter": {
+      "name": "onDragEnter",
+      "description": "Callback for when the `dragenter` event occurs.",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: DragEvent) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: DragEvent) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDragLeave": {
+      "name": "onDragLeave",
+      "description": "Callback for when the `dragleave` event occurs",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: DragEvent) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: DragEvent) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDragOver": {
+      "name": "onDragOver",
+      "description": "Callback for when the `dragover` event occurs",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: DragEvent) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: DragEvent) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDrop": {
+      "name": "onDrop",
+      "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n   type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n   message: string;\n}\n\nFileRejection {\n  file: File;\n  errors: FileError[];\n}\n</pre>",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDropAccepted": {
+      "name": "onDropAccepted",
+      "description": "Callback for when the `drop` event occurs.\nNote that if no files are accepted, this callback is not invoked.",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: Event | DragEvent, files: File[]) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: Event | DragEvent, files: File[]) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onDropRejected": {
+      "name": "onDropRejected",
+      "description": "Callback for when the `drop` event occurs.\nNote that if no files are rejected, this callback is not invoked.",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "validator": {
+      "name": "validator",
+      "description": "Custom validation function\nThe value must be a function that accepts File object and returns null if file should be accepted\nor error object/array of error objects if file should me rejected",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((file: File) => FileError | FileError[]) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((file: File) => FileError | FileError[]) | undefined"
+        },
+        "defaultValue": {
+          "summary": "func"
+        }
+      }
+    }
+  }
+}

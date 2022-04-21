@@ -1,0 +1,256 @@
+{
+  "args": {},
+  "componentId": "components-table-pinned-columns",
+  "title": "Components/Table/Pinned Columns",
+  "kind": "Components/Table/Pinned Columns",
+  "id": "components-table-pinned-columns--pinned-columns",
+  "name": "Pinned Columns",
+  "story": "Pinned Columns",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const data = [\n    {\n      s_no: 1,\n      empi: \"P087636\",\n      first_name: \"Joy\",\n      last_name: \"Lawson\",\n      dob: \"01/12/1982\",\n      gender: 'Female',\n      facility: 'Charity Medical Clinic'\n    },\n    {\n      s_no: 2,\n      empi: \"P087637\",\n      first_name: \"Hannah\",\n      last_name: \"Pop\",\n      dob: \"01/11/1982\",\n      gender: 'Female',\n      facility: 'Bancroft Medical Clinic'\n    },\n    {\n      s_no: 3,\n      empi: \"P087638\",\n      first_name: \"Lisa\",\n      last_name: \"Sanchez\",\n      dob: \"02/12/1981\",\n      gender: 'Female',\n      facility: 'Lullaby Medical Clinic'\n    },\n    {\n      s_no: 4,\n      empi: \"P087639\",\n      first_name: \"Kathy\",\n      last_name: \"Powell\",\n      dob: \"01/10/1972\",\n      gender: 'Female',\n      facility: 'Charity Medical Clinic'\n    },\n    {\n      s_no: 5 ,\n      empi: \"P087631\",\n      first_name: \"Dennis\",\n      last_name: \"Lane\",\n      dob: \"01/10/1982\",\n      gender: 'Male',\n      facility: 'Lullaby Medical Clinic'\n    },\n  ];\n\n  const schema = [\n    {\n      name: 's_no',\n      displayName: 'S.no.',\n      width: '5%',\n      sorting: false,\n      pinned: 'left'\n    },\n    {\n      name: 'empi',\n      displayName: 'EMPI',\n      width: '10%',\n      sorting: false,\n      pinned: 'left'\n    },\n    {\n      name: 'first_name',\n      displayName: 'First Name',\n      width: '20%',\n      sorting: false\n    },\n    {\n      name: 'last_name',\n      displayName: 'Last Name',\n      width: '20%',\n      sorting: false\n    },\n    {\n      name: 'dob',\n      displayName: 'DOB',\n      width: '20%',\n      sorting: false\n    },\n    {\n      name: 'gender',\n      displayName: 'Gender',\n      width: '20%',\n      sorting: false\n    },\n    {\n      name: 'facility',\n      displayName: 'Facility',\n      sorting: false\n    },\n  ];\n\n  return (\n      <Card>\n        <Table\n          showMenu={false}\n          size=\"compressed\"\n          separator={false}\n          data={data}\n          schema={schema}\n          withHeader={true}\n          headerOptions={{\n            withSearch: false\n          }}\n          withPagination={false}\n        />\n      </Card>\n  );\n}",
+        "title": "Pinned Column",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/table/__stories__/PinnedColumn.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      s_no: 1,\n      empi: 'P087636',\n      first_name: 'Joy',\n      last_name: 'Lawson',\n      dob: '01/12/1982',\n      gender: 'Female',\n      facility: 'Charity Medical Clinic',\n    },\n    {\n      s_no: 2,\n      empi: 'P087637',\n      first_name: 'Hannah',\n      last_name: 'Pop',\n      dob: '01/11/1982',\n      gender: 'Female',\n      facility: 'Bancroft Medical Clinic',\n    },\n    {\n      s_no: 3,\n      empi: 'P087638',\n      first_name: 'Lisa',\n      last_name: 'Sanchez',\n      dob: '02/12/1981',\n      gender: 'Female',\n      facility: 'Lullaby Medical Clinic',\n    },\n    {\n      s_no: 4,\n      empi: 'P087639',\n      first_name: 'Kathy',\n      last_name: 'Powell',\n      dob: '01/10/1972',\n      gender: 'Female',\n      facility: 'Charity Medical Clinic',\n    },\n    {\n      s_no: 5,\n      empi: 'P087631',\n      first_name: 'Dennis',\n      last_name: 'Lane',\n      dob: '01/10/1982',\n      gender: 'Male',\n      facility: 'Lullaby Medical Clinic',\n    },\n  ];\n\n  const schema = [\n    {\n      name: 's_no',\n      displayName: 'S.no.',\n      width: '5%',\n      sorting: false,\n      pinned: 'left',\n    },\n    {\n      name: 'empi',\n      displayName: 'EMPI',\n      width: '10%',\n      sorting: false,\n      pinned: 'left',\n    },\n    {\n      name: 'first_name',\n      displayName: 'First Name',\n      width: '20%',\n      sorting: false,\n    },\n    {\n      name: 'last_name',\n      displayName: 'Last Name',\n      width: '20%',\n      sorting: false,\n    },\n    {\n      name: 'dob',\n      displayName: 'DOB',\n      width: '20%',\n      sorting: false,\n    },\n    {\n      name: 'gender',\n      displayName: 'Gender',\n      width: '20%',\n      sorting: false,\n    },\n    {\n      name: 'facility',\n      displayName: 'Facility',\n      sorting: false,\n    },\n  ];\n\n  return (\n    <Card>\n      <Table\n        loaderSchema={loaderSchema}\n        size=\"compressed\"\n        showMenu={false}\n        separator={false}\n        data={data}\n        schema={schema}\n        withHeader={true}\n        headerOptions={{\n          withSearch: false,\n        }}\n        withPagination={false}\n      />\n    </Card>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-table-pinned-columns--pinned-columns",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

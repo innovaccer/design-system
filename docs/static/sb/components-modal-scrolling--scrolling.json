@@ -1,0 +1,653 @@
+{
+  "args": {},
+  "componentId": "components-modal-scrolling",
+  "title": "Components/Modal/Scrolling",
+  "kind": "Components/Modal/Scrolling",
+  "id": "components-modal-scrolling--scrolling",
+  "name": "Scrolling",
+  "story": "Scrolling",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const [open, setOpen] = React.useState(true);\n  const backdropClose = false;\n\n  const onClose = () => {\n    setOpen(!open);\n    console.log('on close triggered')();\n  };\n\n  const data = [{\"question\":\"Do you experience any of the following in your current place of residence? [Select all that apply]\", \"options\":[\"Deteriorating appearance\",\"Inoperable plumbing\",\"Inadequate wining\",\"Leaking roofs\",\"Crumbling foundations\",\"Unsafe steps\",\"in poor condition\",\"None of the above\"]},\n    {\"question\":\"In last 12 months, were you worried that your food would run out before you got money to buy more?\", \"options\":[\"Yes\",\"No\"]},\n    {\"question\":\"Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual\", \"options\":[\"Not at all\",\"Several Days\",\"More than half the days\",\"Nearly every day\"]},\n    {\"question\":\"Feeling tired or having little energy?\", \"options\":[\"Yes\",\"No\"]},\n    {\"question\": \"Which of the following refers to a programme that aims to enable patients to make better use of information and communication technology for health and health care?\", \"options\":[\"patient informatics\",\"ICT health\",\"Health-tech\",\"None of these\"]},\n    {\"question\": \"The way messages are framed influences people’s intentions and willingness to change their behaviour. Which of the following refers to the type of message framing that gives information about a health behaviour that emphasizes the costs of failing to take action?\", \"options\":[\"Gain-framed messages\",\"Loss-framed messages\",\"Neutrally-framed messages\",\"None of these\"]},\n    {\"question\": \"Which of the following refers to the capacity to access, understand, appraise and apply health information and services, and to make appropriate health decisions to promote and maintain health?\", \"options\":[\"health accessibility\",\"health appraisal\",\"health literacy\",\"health promotion\"]},\n    {\"question\": \"Frederich Engels’ book entitled The Condition of the Working Class in England in 1844 provided a detailed description of the appalling living and working conditions and the limited health care of working-class residents in which of the following English cities?\", \"options\":[\"London\",\"Manchester\",\"Liverpool\",\"None of these\"]},\n    {\"question\": \"Which of the following explanations for health inequalities focus on the individual as the unit of analysis, emphasizing unthinking, reckless or irresponsible behaviour or incautious lifestyle as the moving determinant?\", \"options\":[\"Individualist explanations\",\"Natural and social selection\",\"Materialist and structuralist explanations\",\"Cultural and/or behavioural differences\"]},\n    {\"question\": \"This approach to health promotion is based on the assumption that humans are rational decision-makers, this approach relies heavily upon the provision of information about risks and benefits of certain behaviours.\", \"options\":[\"Behaviour change approach\",\"Community development approach\",\"Biomedical approach\",\"None of these\"]},\n  ];\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />\n        Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident,\n        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />\n        <Button appearance=\"primary\" onClick={() => setOpen(true)}>Open</Button>\n      </Paragraph>\n      <Modal\n        open={open}\n        dimension=\"large\"\n        backdropClose={backdropClose}\n        onClose={onClose}\n        headerOptions={{\n          heading: 'Survey',\n        }}\n        footer={(\n          <>\n            <Button  onClick={console.log('Cancel button click')}>Cancel</Button>\n            <Button appearance=\"primary\" className=\"ml-4\" onClick={console.log('Next button click')}>Next</Button>\n          </>\n        )}\n        seperator={true}\n      >\n        <div className=\"mt-5\">\n          <Text weight=\"strong\">All questions must be answered, unless marked</Text><br/>\n          {\n            data.map((object, index) => {\n              return(\n                <div key={index} className=\"mt-5 d-flex\">\n                  <div >\n                    <Text size=\"small\" className=\"mr-4\">\n                    {`${index + 1}.`}\n                    </Text>\n                  </div>\n                  <div className=\"d-inline-block ml-2\">\n                    <Text size=\"small\">\n                      {object.question}\n                    </Text>\n                    <div className=\"mb-5 mt-3\">\n                      {\n                        object.options.map((option , ind) => {\n                          return(\n                            <Button key={ind} className=\"mr-4 mt-4 d-inline\" size=\"tiny\">\n                              {option}\n                            </Button>\n                          );\n                        })\n                      }\n                    </div>\n                  </div>\n                </div>\n              );\n            })\n          }\n        </div>\n      </Modal>\n    </div>\n  );\n}",
+        "title": "Modal",
+        "noHtml": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/molecules/modal/__stories__/Scrolling.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const [open, setOpen] = React.useState(true);\n  const backdropClose = false;\n\n  const onClose = () => {\n    setOpen(!open);\n    action('on close triggered')();\n  };\n\n  const data = [\n    {\n      question: 'Do you experience any of the following in your current place of residence? [Select all that apply]',\n      options: [\n        'Deteriorating appearance',\n        'Inoperable plumbing',\n        'Inadequate wining',\n        'Leaking roofs',\n        'Crumbling foundations',\n        'Unsafe steps',\n        'Porches in poor condition',\n        'None of the above',\n      ],\n    },\n    {\n      question: 'In last 12 months, were you worried that your food would run out before you got money to buy more?',\n      options: ['Yes', 'No'],\n    },\n    {\n      question:\n        'Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual',\n      options: ['Not at all', 'Several Days', 'More than half the days', 'Nearly every day'],\n    },\n    {\n      question: 'Feeling tired or having little energy?',\n      options: ['Yes', 'No'],\n    },\n    {\n      question:\n        'Which of the following refers to a programme that aims to enable patients to make better use of information and communication technology for health and health care?',\n      options: ['Patient informatics', 'ICT health', 'Health-tech', 'None of these'],\n    },\n    {\n      question:\n        'The way messages are framed influences people’s intentions and willingness to change their behaviour. Which of the following refers to the type of message framing that gives information about a health behaviour that emphasizes the costs of failing to take action?',\n      options: ['Gain-framed messages', 'Loss-framed messages', 'Neutrally-framed messages', 'None of these'],\n    },\n    {\n      question:\n        'Which of the following refers to the capacity to access, understand, appraise and apply health information and services, and to make appropriate health decisions to promote and maintain health?',\n      options: ['health accessibility', 'health appraisal', 'health literacy', 'health promotion'],\n    },\n    {\n      question:\n        'Frederich Engels’ book entitled The Condition of the Working Class in England in 1844 provided a detailed description of the appalling living and working conditions and the limited health care of working-class residents in which of the following English cities?',\n      options: ['London', 'Manchester', 'Liverpool', 'None of these'],\n    },\n    {\n      question:\n        'Which of the following explanations for health inequalities focus on the individual as the unit of analysis, emphasizing unthinking, reckless or irresponsible behaviour or incautious lifestyle as the moving determinant?',\n      options: [\n        'Individualist explanations',\n        'Natural and social selection',\n        'Materialist and structuralist explanations',\n        'Cultural and/or behavioural differences',\n      ],\n    },\n    {\n      question:\n        'This approach to health promotion is based on the assumption that humans are rational decision-makers, this approach relies heavily upon the provision of information about risks and benefits of certain behaviours.',\n      options: ['Behaviour change approach', 'Community development approach', 'Biomedical approach', 'None of these'],\n    },\n  ];\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\n        magna aliqua.\n        <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n        <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        <br />\n      </Paragraph>\n      <Modal\n        open={open}\n        dimension=\"large\"\n        backdropClose={backdropClose}\n        onClose={onClose}\n        headerOptions={{\n          heading: 'Survey',\n        }}\n        footer={\n          <>\n            <Button onClick={action('Cancel button click')}>Cancel</Button>\n            <Button appearance=\"primary\" className=\"ml-4\" onClick={action('Next button click')}>\n              Next\n            </Button>\n          </>\n        }\n        seperator={true}\n      >\n        <div className=\"mt-5\">\n          <Text weight=\"strong\">All questions must be answered, unless marked</Text>\n          <br />\n          {data.map((object, index) => {\n            return (\n              <div key={index} className=\"mt-5 d-flex\">\n                <div>\n                  <Text size=\"small\" className=\"mr-4\">\n                    {`${index + 1}.`}\n                  </Text>\n                </div>\n                <div className=\"d-inline-block ml-2\">\n                  <Text size=\"small\">{object.question}</Text>\n                  <div className=\"mb-5 mt-3\">\n                    {object.options.map((option, ind) => {\n                      return (\n                        <Button key={ind} className=\"mr-4 mt-4 d-inline\" size=\"tiny\">\n                          {option}\n                        </Button>\n                      );\n                    })}\n                  </div>\n                </div>\n              </div>\n            );\n          })}\n        </div>\n      </Modal>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-modal-scrolling--scrolling",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "backdropClose": {
+        "name": "backdropClose",
+        "description": "Callback for `Modal` close event on backdrop click\n\n** Callback will be deprecated soon. Will only support boolean value. **\n\n** Use `boolean` value if you are using `headerOptions` and `onClose` **",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | ((event?: Event | undefined, reason?: string | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | ((event?: Event | undefined, reason?: string | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "dimension": {
+        "name": "dimension",
+        "description": "Dimension of `Modal`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "large",
+            "small",
+            "medium"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"large\" | \"small\" | \"medium\""
+          },
+          "defaultValue": {
+            "summary": "\"medium\""
+          }
+        }
+      },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close state",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClose": {
+        "name": "onClose",
+        "description": "onClose callback to be called on `Modal` close",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "headerOptions": {
+        "name": "headerOptions",
+        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |\n\n** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "OverlayHeaderProps | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "OverlayHeaderProps | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "header": {
+        "name": "header",
+        "description": "header component to be used as modal header.\nclose button is not part of header so it will not be replaced.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "footer": {
+        "name": "footer",
+        "description": "Custom `footer` component\n\n** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "footerOptions": {
+        "name": "footerOptions",
+        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "FooterOptions | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "FooterOptions | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "children": {
+        "name": "children",
+        "description": "Element to be rendered\n\n** No need to write `ModalHeader`, `ModalBody` and `ModalFooter` anymore **\n** if you are using `headerOptions` and `footer` **\n** Just pass the content to be rendered in the `Modal` body. **\n\n** Support for composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "seperator": {
+        "name": "seperator",
+        "description": "Show dividers in the header and the footer.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "closeOnEscape": {
+        "name": "closeOnEscape",
+        "description": "Closes `Modal` when `Escape` key is pressed",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "backdropClose": {
+      "name": "backdropClose",
+      "description": "Callback for `Modal` close event on backdrop click\n\n** Callback will be deprecated soon. Will only support boolean value. **\n\n** Use `boolean` value if you are using `headerOptions` and `onClose` **",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | ((event?: Event | undefined, reason?: string | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | ((event?: Event | undefined, reason?: string | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "dimension": {
+      "name": "dimension",
+      "description": "Dimension of `Modal`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "large",
+          "small",
+          "medium"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"large\" | \"small\" | \"medium\""
+        },
+        "defaultValue": {
+          "summary": "\"medium\""
+        }
+      }
+    },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close state",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClose": {
+      "name": "onClose",
+      "description": "onClose callback to be called on `Modal` close",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "headerOptions": {
+      "name": "headerOptions",
+      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |\n\n** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "OverlayHeaderProps | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "OverlayHeaderProps | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "header": {
+      "name": "header",
+      "description": "header component to be used as modal header.\nclose button is not part of header so it will not be replaced.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "footer": {
+      "name": "footer",
+      "description": "Custom `footer` component\n\n** Don't use composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "footerOptions": {
+      "name": "footerOptions",
+      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "FooterOptions | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "FooterOptions | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "children": {
+      "name": "children",
+      "description": "Element to be rendered\n\n** No need to write `ModalHeader`, `ModalBody` and `ModalFooter` anymore **\n** if you are using `headerOptions` and `footer` **\n** Just pass the content to be rendered in the `Modal` body. **\n\n** Support for composition of `ModalHeader`, `ModalBody` and `ModalFooter` will be deprecated soon. **",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "seperator": {
+      "name": "seperator",
+      "description": "Show dividers in the header and the footer.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "closeOnEscape": {
+      "name": "closeOnEscape",
+      "description": "Closes `Modal` when `Escape` key is pressed",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

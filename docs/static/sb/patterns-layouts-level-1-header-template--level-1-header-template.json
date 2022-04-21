@@ -1,0 +1,251 @@
+{
+  "args": {},
+  "componentId": "patterns-layouts-level-1-header-template",
+  "title": "Patterns/Layouts/Level 1 Header Template",
+  "kind": "Patterns/Layouts/Level 1 Header Template",
+  "id": "patterns-layouts-level-1-header-template--level-1-header-template",
+  "name": "Level 1 Header Template",
+  "story": "Level 1 Header Template",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const navigationPosition = 'center';\n  const title = 'Page title';\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2'\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true\n    }\n  ];\n  const breadcrumbData = [\n    {\n      label: 'Level 0',\n      link: '/level0'\n    },\n    {\n      label: 'Level 1',\n      link: '/level1'\n    }\n  ];\n\n  const options = {\n    navigationPosition,\n    title,\n    navigation: <Navigation menus={navigationData} onClick={menu => console.log(menu)} active={{ name: 'menu_1' }} />,\n    actions: (\n      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>\n        <Button appearance=\"primary\">Primary</Button>\n      </div>\n    ),\n    breadcrumbs: (\n      <Breadcrumbs\n        list={breadcrumbData}\n        onClick={link => console.log(link)}\n      />\n    ),\n    badge: (\n      <Badge appearance=\"secondary\">Badge</Badge>\n    )\n  };\n\n  return(\n    <div className=\"d-flex flex-column bg-secondary-lightest vh-100\">\n      <PageHeader\n        {...options}\n      />\n      <Row className=\"h-100 p-6\">\n        <Column className=\"h-100 bg-light\" />\n      </Row>\n    </div>\n  );\n}",
+        "title": "Level 1 Header Template",
+        "noProps": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/patterns/layouts/level1HeaderTemplate.story.tsx",
+    "storySource": {
+      "source": "() => <></>"
+    },
+    "__isArgsStory": false,
+    "__id": "patterns-layouts-level-1-header-template--level-1-header-template",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

@@ -1,0 +1,1680 @@
+{
+  "args": {},
+  "componentId": "components-dropdown-variants-multi-options",
+  "title": "Components/Dropdown/Variants/Multi Options",
+  "kind": "Components/Dropdown/Variants/Multi Options",
+  "id": "components-dropdown-variants-multi-options--multi-options",
+  "name": "Multi Options",
+  "story": "Multi Options",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const storyOptions = [];\n  for (let i = 1; i <= 10; i++) {\n    storyOptions.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n      icon: 'events',\n      subInfo: 'subInfo'\n    });\n  }\n\n  const onClose = (options) => {\n    console.log(options);\n  };\n\n  const onChangeHandler = (selectedValues) => {\n    console.log(selectedValues);\n  };\n\n  return (\n    <div className='d-flex'>\n      <div className='mr-9 w-25'>\n        <Text weight=\"strong\">{'With Apply Button'}</Text><br /><br />\n        <Dropdown\n          maxHeight={180}\n          withCheckbox={true}\n          showApplyButton={true}\n          options={storyOptions}\n          placeholder={'Select'}\n          onChange={onChangeHandler}\n          onClose={onClose}\n        />\n      </div>\n      <div className='mr-9 w-25'>\n        <Text weight=\"strong\">{'Without Apply Button'}</Text><br /><br />\n        <Dropdown\n          withCheckbox={true}\n          options={storyOptions}\n          placeholder={'Select'}\n          onChange={onChangeHandler}\n          onClose={onClose}\n        />\n      </div>\n      <div className='mr-9 w-25'>\n        <Text weight=\"strong\">{'Without Select All (Options <= 50)'}</Text><br /><br />\n        <Dropdown\n          withCheckbox={true}\n          withSelectAll={false}\n          options={storyOptions}\n          placeholder={'Select'}\n          onChange={onChangeHandler}\n          onClose={onClose}\n        />\n      </div>\n    </div>\n  )\n}",
+        "title": "Dropdown",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/atoms/dropdown/__stories__/variants/MultiOptions.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const onClose = (options) => {\n    return action(`dropdown closed with selected values: ${options}`)();\n  };\n\n  const onChangeHandler = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"mr-9 w-25\">\n        <Text weight=\"strong\">{'With Apply Button'}</Text>\n        <br />\n        <br />\n        <Dropdown\n          maxHeight={180}\n          withCheckbox={true}\n          showApplyButton={true}\n          options={storyOptions}\n          placeholder={'Select'}\n          onChange={onChangeHandler}\n          onClose={onClose}\n        />\n      </div>\n      <div className=\"mr-9 w-25\">\n        <Text weight=\"strong\">{'Without Apply Button'}</Text>\n        <br />\n        <br />\n        <Dropdown\n          withCheckbox={true}\n          options={storyOptions}\n          placeholder={'Select'}\n          onChange={onChangeHandler}\n          onClose={onClose}\n        />\n      </div>\n      <div className=\"mr-9 w-25\">\n        <Text weight=\"strong\">{'Without Select All (Options <= 50)'}</Text>\n        <br />\n        <br />\n        <Dropdown\n          withCheckbox={true}\n          withSelectAll={false}\n          options={storyOptions}\n          placeholder={'Select'}\n          onChange={onChangeHandler}\n          onClose={onClose}\n        />\n      </div>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-dropdown-variants-multi-options--multi-options",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "selected": {
+        "name": "selected",
+        "description": "Array of selected options <br/>\n  **Denotes `Controlled Dropdown`**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "OptionSchema[] | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "OptionSchema[] | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onUpdate": {
+        "name": "onUpdate",
+        "description": "Callback function to handle different event types in controlled dropdown <br/>\n**Event type here refers to `clicking on option` / `clicking on Clear, Cancel or Apply button`** <br/>\n**Only works if `selected` is not undefined**\n\n| EventType | options | recentSelected |\n| --- | --- | --- |\n| 'select-option' | Selected Option | undefined |\n| 'deselect-option' | Unselected Option | undefined |\n| 'select-all' | undefined | undefined |\n| 'deselect-all' | undefined | undefined |\n| 'clear-all' | undefined | undefined |\n| 'apply-selected' | Array of previously selected options | Array of recently selected options |\n| 'cancel-selected' | Array of previously selected options | Array of recently selected options |",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((type: EventType, options?: OptionSchema | OptionSchema[] | undefined, recentSelected?: OptionSchema[] | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((type: EventType, options?: OptionSchema | OptionSchema[] | undefined, recentSelected?: OptionSchema[] | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "options": {
+        "name": "options",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionSchema: {\n   label: string;\n   value: React.ReactText;\n   icon?: string;\n   subInfo?: string | [MetaListProps]\n    (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);\n   optionType?: OptionType;\n   selected?: boolean;\n   disabled?: boolean;\n   group?: string;\n}\n</pre>\n\nOptionType: 'DEFAULT' | 'WITH\\_ICON' | 'WITH\\_META' | 'ICON\\_WITH\\_META'\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Describes Label of the option | |\n| value | Value of option | |\n| icon | Name of icon inside option | |\n| selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |\n| disabled | Disables the option, making it unable to be pressed | |\n| group | Defines group to which the option belongs | |",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "OptionSchema[]"
+        },
+        "table": {
+          "type": {
+            "summary": "OptionSchema[]"
+          },
+          "defaultValue": {
+            "summary": "[]"
+          }
+        }
+      },
+      "loading": {
+        "name": "loading",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nAdds loaders inside `Dropdown` when waiting for an action to complete.\n(Loading is internally handled when options are fetched from API.)\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "name": {
+        "name": "name",
+        "description": "Unique name of `Dropdown`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "totalOptions": {
+        "name": "totalOptions",
+        "description": "Count of options in `Dropdown`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "closeOnSelect": {
+        "name": "closeOnSelect",
+        "description": "Determines if dropdown closes on option selection (works in case of single select)",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "triggerOptions": {
+        "name": "triggerOptions",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "TriggerProps"
+        },
+        "table": {
+          "type": {
+            "summary": "TriggerProps"
+          },
+          "defaultValue": {
+            "summary": "{ }"
+          }
+        }
+      },
+      "open": {
+        "name": "open",
+        "description": "Determines if the `Dropdown Popover` is open <br/>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "staticLimit": {
+        "name": "staticLimit",
+        "description": "Static limit of options to be rendered in the Dropdown List\n\n**Max value supported: 100**",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "50"
+          }
+        }
+      },
+      "searchDebounceDuration": {
+        "name": "searchDebounceDuration",
+        "description": "Debounce duration to call updateData in case of search term update",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": {
+            "summary": "300"
+          }
+        }
+      },
+      "onPopperToggle": {
+        "name": "onPopperToggle",
+        "description": "Callback function called to toggle the `Dropdown Popover`\n\ntype: 'onClick' | 'outsideClick' | 'optionClick' | 'applyClick' | 'cancelClick'\n\n**Works with `open` prop**\n\n**Type `optionClick` works in case of single select (closeOnSelect = true)**",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((open: boolean, type?: string | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((open: boolean, type?: string | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "getLabel": {
+        "name": "getLabel",
+        "description": "Callback to get the updated label of `Dropdown trigger`",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((label: string) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((label: string) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onChange": {
+        "name": "onChange",
+        "description": "Callback function called when selected options are updated. <br/>\n**In case of uncontrolled dropdown, it is called when user `clicks on option` /**\n**`clicks on Clear,or Apply button` while in case of controlled dropdown,**\n**it is called when selected options are updated**",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((selected: any, name?: string | number | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((selected: any, name?: string | number | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClose": {
+        "name": "onClose",
+        "description": "Callback function called when dropdown is closed",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((selected: any[], name?: string | number | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((selected: any[], name?: string | number | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "align": {
+        "name": "align",
+        "description": "Aligns the `Dropdown` left/right",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "left",
+            "right"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"left\" | \"right\""
+          },
+          "defaultValue": null
+        }
+      },
+      "noResultMessage": {
+        "name": "noResultMessage",
+        "description": "Display message when there is no result",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "selectAllLabel": {
+        "name": "selectAllLabel",
+        "description": "Label of Select All checkbox",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "footerLabel": {
+        "name": "footerLabel",
+        "description": "Label of Footer inside `Dropdown`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "selectedSectionLabel": {
+        "name": "selectedSectionLabel",
+        "description": "Label for selected options section",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "applyButtonLabel": {
+        "name": "applyButtonLabel",
+        "description": "Label of Apply button\n\n(visible in case of `withCheckbox` and `showApplyButton`)",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "cancelButtonLabel": {
+        "name": "cancelButtonLabel",
+        "description": "Label of Cancel button\n\n(visible in case of `withCheckbox` and `showApplyButton`)",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "withSearch": {
+        "name": "withSearch",
+        "description": "Determines if user can type to search for options (Always true for options count > staticLimit)",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "withCheckbox": {
+        "name": "withCheckbox",
+        "description": "Determines if user can select more than one items",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "withSelectAll": {
+        "name": "withSelectAll",
+        "description": "Determines if `Select All` option is visible\n**Applicable only in case of `withCheckbox` and `options <= staticLimit`**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showApplyButton": {
+        "name": "showApplyButton",
+        "description": "Updates the value of selected array after apply button is clicked, applicable in case of multiple selections",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "truncateOption": {
+        "name": "truncateOption",
+        "description": "Trims label if it is too long",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "maxHeight": {
+        "name": "maxHeight",
+        "description": "Specifies max height of `Dropdown`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "width": {
+        "name": "width",
+        "description": "Adds custom width to `Dropdown Popper`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "maxWidth": {
+        "name": "maxWidth",
+        "description": "Adds maximum width to `Dropdown Popper`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "minWidth": {
+        "name": "minWidth",
+        "description": "Adds minimum width to `Dropdown Popper`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "loadersCount": {
+        "name": "loadersCount",
+        "description": "Number of loaders to be shown when loading is true",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "popoverOptions": {
+        "name": "popoverOptions",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "PopoverOptions | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "PopoverOptions | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "searchPlaceholder": {
+        "name": "searchPlaceholder",
+        "description": "Adds custom placeholder to searchBar",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "triggerSize": {
+        "name": "triggerSize",
+        "description": "Size of `Dropdown` trigger button",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "regular",
+            "tiny"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"regular\" | \"tiny\""
+          },
+          "defaultValue": null
+        }
+      },
+      "icon": {
+        "name": "icon",
+        "description": "Material icon name",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "placeholder": {
+        "name": "placeholder",
+        "description": "String to show inside `Dropdown trigger` when no options are selected",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "inlineLabel": {
+        "name": "inlineLabel",
+        "description": "Label inside `Dropdown trigger button`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "disabled": {
+        "name": "disabled",
+        "description": "Determines if `Dropdown` is disabled",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "menu": {
+        "name": "menu",
+        "description": "Determines if type of `dropdown` is a menu",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "error": {
+        "name": "error",
+        "description": "Determines if `Dropdown` has error",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "optionRenderer": {
+        "name": "optionRenderer",
+        "description": "Adds custom option\n\n<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionProps: {\n   optionData: Option;\n   selected: boolean;\n   active?: boolean;\n   index: number;\n   onChange?: (checked: boolean) => void;\n}\n</pre>",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "optionType": {
+        "name": "optionType",
+        "description": "Type of option",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "DEFAULT",
+            "WITH_ICON",
+            "WITH_META",
+            "ICON_WITH_META"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"DEFAULT\" | \"WITH_ICON\" | \"WITH_META\" | \"ICON_WITH_META\""
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "fetchOptions": {
+        "name": "fetchOptions",
+        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "fetchOptionsFunction | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "fetchOptionsFunction | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "selected": {
+      "name": "selected",
+      "description": "Array of selected options <br/>\n  **Denotes `Controlled Dropdown`**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "OptionSchema[] | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "OptionSchema[] | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onUpdate": {
+      "name": "onUpdate",
+      "description": "Callback function to handle different event types in controlled dropdown <br/>\n**Event type here refers to `clicking on option` / `clicking on Clear, Cancel or Apply button`** <br/>\n**Only works if `selected` is not undefined**\n\n| EventType | options | recentSelected |\n| --- | --- | --- |\n| 'select-option' | Selected Option | undefined |\n| 'deselect-option' | Unselected Option | undefined |\n| 'select-all' | undefined | undefined |\n| 'deselect-all' | undefined | undefined |\n| 'clear-all' | undefined | undefined |\n| 'apply-selected' | Array of previously selected options | Array of recently selected options |\n| 'cancel-selected' | Array of previously selected options | Array of recently selected options |",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((type: EventType, options?: OptionSchema | OptionSchema[] | undefined, recentSelected?: OptionSchema[] | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((type: EventType, options?: OptionSchema | OptionSchema[] | undefined, recentSelected?: OptionSchema[] | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "options": {
+      "name": "options",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionSchema: {\n   label: string;\n   value: React.ReactText;\n   icon?: string;\n   subInfo?: string | [MetaListProps]\n    (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);\n   optionType?: OptionType;\n   selected?: boolean;\n   disabled?: boolean;\n   group?: string;\n}\n</pre>\n\nOptionType: 'DEFAULT' | 'WITH\\_ICON' | 'WITH\\_META' | 'ICON\\_WITH\\_META'\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Describes Label of the option | |\n| value | Value of option | |\n| icon | Name of icon inside option | |\n| selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |\n| disabled | Disables the option, making it unable to be pressed | |\n| group | Defines group to which the option belongs | |",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "OptionSchema[]"
+      },
+      "table": {
+        "type": {
+          "summary": "OptionSchema[]"
+        },
+        "defaultValue": {
+          "summary": "[]"
+        }
+      }
+    },
+    "loading": {
+      "name": "loading",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nAdds loaders inside `Dropdown` when waiting for an action to complete.\n(Loading is internally handled when options are fetched from API.)\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "name": {
+      "name": "name",
+      "description": "Unique name of `Dropdown`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "totalOptions": {
+      "name": "totalOptions",
+      "description": "Count of options in `Dropdown`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "closeOnSelect": {
+      "name": "closeOnSelect",
+      "description": "Determines if dropdown closes on option selection (works in case of single select)",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "triggerOptions": {
+      "name": "triggerOptions",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "TriggerProps"
+      },
+      "table": {
+        "type": {
+          "summary": "TriggerProps"
+        },
+        "defaultValue": {
+          "summary": "{ }"
+        }
+      }
+    },
+    "open": {
+      "name": "open",
+      "description": "Determines if the `Dropdown Popover` is open <br/>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "staticLimit": {
+      "name": "staticLimit",
+      "description": "Static limit of options to be rendered in the Dropdown List\n\n**Max value supported: 100**",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "50"
+        }
+      }
+    },
+    "searchDebounceDuration": {
+      "name": "searchDebounceDuration",
+      "description": "Debounce duration to call updateData in case of search term update",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": {
+          "summary": "300"
+        }
+      }
+    },
+    "onPopperToggle": {
+      "name": "onPopperToggle",
+      "description": "Callback function called to toggle the `Dropdown Popover`\n\ntype: 'onClick' | 'outsideClick' | 'optionClick' | 'applyClick' | 'cancelClick'\n\n**Works with `open` prop**\n\n**Type `optionClick` works in case of single select (closeOnSelect = true)**",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((open: boolean, type?: string | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((open: boolean, type?: string | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "getLabel": {
+      "name": "getLabel",
+      "description": "Callback to get the updated label of `Dropdown trigger`",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((label: string) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((label: string) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onChange": {
+      "name": "onChange",
+      "description": "Callback function called when selected options are updated. <br/>\n**In case of uncontrolled dropdown, it is called when user `clicks on option` /**\n**`clicks on Clear,or Apply button` while in case of controlled dropdown,**\n**it is called when selected options are updated**",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((selected: any, name?: string | number | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((selected: any, name?: string | number | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClose": {
+      "name": "onClose",
+      "description": "Callback function called when dropdown is closed",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((selected: any[], name?: string | number | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((selected: any[], name?: string | number | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "align": {
+      "name": "align",
+      "description": "Aligns the `Dropdown` left/right",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "left",
+          "right"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"left\" | \"right\""
+        },
+        "defaultValue": null
+      }
+    },
+    "noResultMessage": {
+      "name": "noResultMessage",
+      "description": "Display message when there is no result",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "selectAllLabel": {
+      "name": "selectAllLabel",
+      "description": "Label of Select All checkbox",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "footerLabel": {
+      "name": "footerLabel",
+      "description": "Label of Footer inside `Dropdown`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "selectedSectionLabel": {
+      "name": "selectedSectionLabel",
+      "description": "Label for selected options section",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "applyButtonLabel": {
+      "name": "applyButtonLabel",
+      "description": "Label of Apply button\n\n(visible in case of `withCheckbox` and `showApplyButton`)",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "cancelButtonLabel": {
+      "name": "cancelButtonLabel",
+      "description": "Label of Cancel button\n\n(visible in case of `withCheckbox` and `showApplyButton`)",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "withSearch": {
+      "name": "withSearch",
+      "description": "Determines if user can type to search for options (Always true for options count > staticLimit)",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "withCheckbox": {
+      "name": "withCheckbox",
+      "description": "Determines if user can select more than one items",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "withSelectAll": {
+      "name": "withSelectAll",
+      "description": "Determines if `Select All` option is visible\n**Applicable only in case of `withCheckbox` and `options <= staticLimit`**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showApplyButton": {
+      "name": "showApplyButton",
+      "description": "Updates the value of selected array after apply button is clicked, applicable in case of multiple selections",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "truncateOption": {
+      "name": "truncateOption",
+      "description": "Trims label if it is too long",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "maxHeight": {
+      "name": "maxHeight",
+      "description": "Specifies max height of `Dropdown`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "width": {
+      "name": "width",
+      "description": "Adds custom width to `Dropdown Popper`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "maxWidth": {
+      "name": "maxWidth",
+      "description": "Adds maximum width to `Dropdown Popper`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "minWidth": {
+      "name": "minWidth",
+      "description": "Adds minimum width to `Dropdown Popper`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "loadersCount": {
+      "name": "loadersCount",
+      "description": "Number of loaders to be shown when loading is true",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "popoverOptions": {
+      "name": "popoverOptions",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "PopoverOptions | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "PopoverOptions | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "searchPlaceholder": {
+      "name": "searchPlaceholder",
+      "description": "Adds custom placeholder to searchBar",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "triggerSize": {
+      "name": "triggerSize",
+      "description": "Size of `Dropdown` trigger button",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "regular",
+          "tiny"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"regular\" | \"tiny\""
+        },
+        "defaultValue": null
+      }
+    },
+    "icon": {
+      "name": "icon",
+      "description": "Material icon name",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "description": "String to show inside `Dropdown trigger` when no options are selected",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "inlineLabel": {
+      "name": "inlineLabel",
+      "description": "Label inside `Dropdown trigger button`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "disabled": {
+      "name": "disabled",
+      "description": "Determines if `Dropdown` is disabled",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "menu": {
+      "name": "menu",
+      "description": "Determines if type of `dropdown` is a menu",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Determines if `Dropdown` has error",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "optionRenderer": {
+      "name": "optionRenderer",
+      "description": "Adds custom option\n\n<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionProps: {\n   optionData: Option;\n   selected: boolean;\n   active?: boolean;\n   index: number;\n   onChange?: (checked: boolean) => void;\n}\n</pre>",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "optionType": {
+      "name": "optionType",
+      "description": "Type of option",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "DEFAULT",
+          "WITH_ICON",
+          "WITH_META",
+          "ICON_WITH_META"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"DEFAULT\" | \"WITH_ICON\" | \"WITH_META\" | \"ICON_WITH_META\""
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "fetchOptions": {
+      "name": "fetchOptions",
+      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "fetchOptionsFunction | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "fetchOptionsFunction | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "args": {},
+  "componentId": "components-table-data-table",
+  "title": "Components/Table/Data Table",
+  "kind": "Components/Table/Data Table",
+  "id": "components-table-data-table--data-table",
+  "name": "Data Table",
+  "story": "Data Table",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const data = [\n    {\n      claim_id: 'Q10000101',\n      claim_type: 'Professional',\n      plan_name: \"MSSP Track 3\",\n      insurance_name: \"Medicare\",\n      first_dos: \"03/27/2020\",\n      last_dos: \"03/30/2020\",\n      firstName: 'Brooke',\n      lastName: 'Heeran',\n    },\n    {\n      claim_id: 'Q10000102',\n      claim_type: \"Professional\",\n      plan_name: \"MSSP Track 1\",\n      insurance_name: \"Medicare\",\n      first_dos: \"03/24/2020\",\n      last_dos: \"04/30/2020\",\n      firstName: 'Frazer',\n      lastName: 'Cathro',\n    },\n    {\n      claim_id: 'Q10000103',\n      claim_type: \"Professional\",\n      plan_name: \"MSSP Track 3\",\n      insurance_name: \"Medicare\",\n      first_dos: \"05/16/2020\",\n      last_dos: \"05/30/2020\",\n      firstName: 'Lemmie',\n      lastName: 'Ciric',\n    },\n    {\n      claim_id: 'Q10000104',\n      claim_type: \"Institutional\",\n      plan_name: \"MSSP Track 3\",\n      insurance_name: \"Medicare\",\n      first_dos: \"12/27/2020\",\n      last_dos: \"12/30/2020\",\n      firstName: 'Randy',\n      lastName: 'Boatwright',\n    },\n    {\n      claim_id: 'Q10000105',\n      claim_type: \"Professional\",\n      plan_name: \"MSSP Track 3\",\n      insurance_name: \"Medicare\",\n      first_dos: \"05/04/2020\",\n      last_dos: \"05/28/2020\",\n      firstName: 'Rolando',\n      lastName: 'Cyples',\n    },\n    {\n      claim_id: 'Q10000106',\n      claim_type: \"Institutional\",\n      plan_name: \"MSSP Track 3\",\n      insurance_name: \"Medicare\",\n      first_dos: \"01/27/2020\",\n      last_dos: \"03/30/2020\",\n      firstName: 'Lem',\n      lastName: 'Males',\n    },\n    {\n      claim_id: 'Q10000107',\n      claim_type: \"Professional\",\n      plan_name: \"MSSP Track 3\",\n      insurance_name: \"Medicare\",\n      first_dos: \"03/30/2020\",\n      last_dos: \"04/30/2020\",\n      firstName: 'Sayres',\n      lastName: 'Adelberg',\n    },\n    {\n      claim_id: 'Q10000108',\n      claim_type: \"Professional\",\n      plan_name: \"MSSP Track 3\",\n      insurance_name: \"Medicare\",\n      first_dos: \"02/27/2020\",\n      last_dos: \"03/30/2020\",\n      firstName: 'Murray',\n      lastName: 'Bravington',\n    },\n    {\n      claim_id: 'Q10000109',\n      claim_type: \"Institutional\",\n      plan_name: \"MSSP Track 5\",\n      insurance_name: \"Medicare\",\n      first_dos: \"03/17/2020\",\n      last_dos: \"03/30/2020\",\n      firstName: 'Carin',\n      lastName: 'Robiou',\n    },\n    {\n      claim_id: 'Q100001010',\n      claim_type: \"Institutional\",\n      plan_name: \"MSSP Track 6\",\n      insurance_name: \"Medicare\",\n      first_dos: \"09/27/2020\",\n      last_dos: \"12/27/2020\",\n      firstName: 'Brina',\n      lastName: 'Pirie',\n    }\n  ];\n\n  const schema = [\n    {\n      name: 'claim_id',\n      displayName: 'Claim Id',\n      width: '12%',\n      separator: true,\n    },\n    {\n      name: 'claim_type',\n      displayName: 'Claim Type',\n      width: '15%',\n      separator: true,\n      cellType: \"DEFAULT\"\n    },\n    {\n      name: 'insurance_name',\n      displayName: 'Insurance Name',\n      width: '15%',\n      separator: true,\n    },\n    {\n      name: 'plan_name',\n      displayName: 'Plan Name',\n      width: '15%',\n      separator: true,\n    },\n    {\n      name: 'first_dos',\n      displayName: 'First Date of Service',\n      width: '18%',\n      separator: true,\n    },\n    {\n      name: 'last_dos',\n      displayName: 'Last Date of Service',\n      width: '18%',\n      separator: true,\n    },\n    {\n      name: 'provider_name',\n      displayName: 'Provider Name',\n      separator: true,\n      filters: [\n        { label: 'A-G', value: 'a-g' },\n        { label: 'H-R', value: 'h-r' },\n        { label: 'S-Z', value: 's-z' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          switch (filter) {\n            case 'a-g':\n              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;\n              break;\n            case 'h-r':\n              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;\n              break;\n            case 's-z':\n              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;\n              break;\n          }\n        }\n        return false;\n      },\n      translate: (a) => ({\n        title: `${a.firstName} ${a.lastName}`,\n        firstName: a.firstName,\n        lastName: a.lastName\n      }),\n    },\n  ];\n\n  const loaderSchema = [\n    {\n        \"name\": \"name\",\n        \"displayName\": \"Name\",\n        \"width\": \"40%\",\n        \"resizable\": true,\n        \"tooltip\": true,\n        \"separator\": true,\n        \"filters\": [\n            {\n                \"label\": \"A-G\",\n                \"value\": \"a-g\"\n            },\n            {\n                \"label\": \"H-R\",\n                \"value\": \"h-r\"\n            },\n            {\n                \"label\": \"S-Z\",\n                \"value\": \"s-z\"\n            }\n        ],\n        \"cellType\": \"AVATAR_WITH_TEXT\"\n    },\n    {\n        \"name\": \"email\",\n        \"displayName\": \"Email\",\n        \"width\": 250,\n        \"resizable\": true,\n        \"sorting\": false,\n        \"cellType\": \"WITH_META_LIST\"\n    },\n    {\n        \"name\": \"gender\",\n        \"displayName\": \"Gender\",\n        \"width\": 180,\n        \"resizable\": true,\n        \"cellType\": \"STATUS_HINT\",\n        \"filters\": [\n            {\n                \"label\": \"Male\",\n                \"value\": \"male\"\n            },\n            {\n                \"label\": \"Female\",\n                \"value\": \"female\"\n            }\n        ]\n    },\n    {\n        \"name\": \"icon\",\n        \"displayName\": \"Icon\",\n        \"width\": 100,\n        \"resizable\": true,\n        \"align\": \"center\",\n        \"cellType\": \"ICON\"\n    },\n    {\n        \"name\": \"customCell\",\n        \"displayName\": \"Custom Cell\",\n        \"width\": 200,\n        \"resizable\": true,\n        \"cellType\": \"WITH_META_LIST\"\n    }\n];\n\n  return (\n      <Card>\n        <Table\n          loaderSchema={loaderSchema}\n          showMenu={false}\n          separator={true}\n          data={data}\n          schema={schema}\n          withHeader={true}\n          headerOptions={{\n            withSearch: true\n          }}\n          onSearch={(currData, searchTerm) => {\n            return currData.filter(d =>\n              d.firstName.toLowerCase().match(searchTerm.toLowerCase())\n              || d.lastName.toLowerCase().match(searchTerm.toLowerCase())\n              || d.claim_id.toLowerCase().match(searchTerm.toLowerCase())\n            );\n          }}\n          withPagination={true}\n          pageSize={5}\n          onPageChange={newPage => console.log(`on-page-change:- ${newPage}`)}\n        />\n      </Card>\n  );\n}",
+        "title": "Data table",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/table/__stories__/DataTable.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      claim_id: 'Q10000101',\n      claim_type: 'Professional',\n      plan_name: 'MSSP Track 3',\n      insurance_name: 'Medicare',\n      first_dos: '03/27/2020',\n      last_dos: '03/30/2020',\n      firstName: 'Brooke',\n      lastName: 'Heeran',\n    },\n    {\n      claim_id: 'Q10000102',\n      claim_type: 'Professional',\n      plan_name: 'MSSP Track 1',\n      insurance_name: 'Medicare',\n      first_dos: '03/24/2020',\n      last_dos: '04/30/2020',\n      firstName: 'Frazer',\n      lastName: 'Cathro',\n    },\n    {\n      claim_id: 'Q10000103',\n      claim_type: 'Professional',\n      plan_name: 'MSSP Track 3',\n      insurance_name: 'Medicare',\n      first_dos: '05/16/2020',\n      last_dos: '05/30/2020',\n      firstName: 'Lemmie',\n      lastName: 'Ciric',\n    },\n    {\n      claim_id: 'Q10000104',\n      claim_type: 'Institutional',\n      plan_name: 'MSSP Track 3',\n      insurance_name: 'Medicare',\n      first_dos: '12/27/2020',\n      last_dos: '12/30/2020',\n      firstName: 'Randy',\n      lastName: 'Boatwright',\n    },\n    {\n      claim_id: 'Q10000105',\n      claim_type: 'Professional',\n      plan_name: 'MSSP Track 3',\n      insurance_name: 'Medicare',\n      first_dos: '05/04/2020',\n      last_dos: '05/28/2020',\n      firstName: 'Rolando',\n      lastName: 'Cyples',\n    },\n    {\n      claim_id: 'Q10000106',\n      claim_type: 'Institutional',\n      plan_name: 'MSSP Track 3',\n      insurance_name: 'Medicare',\n      first_dos: '01/27/2020',\n      last_dos: '03/30/2020',\n      firstName: 'Lem',\n      lastName: 'Males',\n    },\n    {\n      claim_id: 'Q10000107',\n      claim_type: 'Professional',\n      plan_name: 'MSSP Track 3',\n      insurance_name: 'Medicare',\n      first_dos: '03/30/2020',\n      last_dos: '04/30/2020',\n      firstName: 'Sayres',\n      lastName: 'Adelberg',\n    },\n    {\n      claim_id: 'Q10000108',\n      claim_type: 'Professional',\n      plan_name: 'MSSP Track 3',\n      insurance_name: 'Medicare',\n      first_dos: '02/27/2020',\n      last_dos: '03/30/2020',\n      firstName: 'Murray',\n      lastName: 'Bravington',\n    },\n    {\n      claim_id: 'Q10000109',\n      claim_type: 'Institutional',\n      plan_name: 'MSSP Track 5',\n      insurance_name: 'Medicare',\n      first_dos: '03/17/2020',\n      last_dos: '03/30/2020',\n      firstName: 'Carin',\n      lastName: 'Robiou',\n    },\n    {\n      claim_id: 'Q100001010',\n      claim_type: 'Institutional',\n      plan_name: 'MSSP Track 6',\n      insurance_name: 'Medicare',\n      first_dos: '09/27/2020',\n      last_dos: '12/27/2020',\n      firstName: 'Brina',\n      lastName: 'Pirie',\n    },\n  ];\n\n  const schema = [\n    {\n      name: 'claim_id',\n      displayName: 'Claim Id',\n      width: '12%',\n      separator: true,\n    },\n    {\n      name: 'claim_type',\n      displayName: 'Claim Type',\n      width: '15%',\n      separator: true,\n      cellType: 'DEFAULT',\n    },\n    {\n      name: 'insurance_name',\n      displayName: 'Insurance Name',\n      width: '15%',\n      separator: true,\n    },\n    {\n      name: 'plan_name',\n      displayName: 'Plan Name',\n      width: '15%',\n      separator: true,\n    },\n    {\n      name: 'first_dos',\n      displayName: 'First Date of Service',\n      width: '18%',\n      separator: true,\n    },\n    {\n      name: 'last_dos',\n      displayName: 'Last Date of Service',\n      width: '18%',\n      separator: true,\n    },\n    {\n      name: 'provider_name',\n      displayName: 'Provider Name',\n      separator: true,\n      filters: [\n        { label: 'A-G', value: 'a-g' },\n        { label: 'H-R', value: 'h-r' },\n        { label: 'S-Z', value: 's-z' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          switch (filter) {\n            case 'a-g':\n              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;\n              break;\n            case 'h-r':\n              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;\n              break;\n            case 's-z':\n              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;\n              break;\n          }\n        }\n        return false;\n      },\n      translate: (a) => ({\n        title: `${a.firstName} ${a.lastName}`,\n        firstName: a.firstName,\n        lastName: a.lastName,\n      }),\n    },\n  ];\n\n  return (\n    <Card>\n      <Table\n        loaderSchema={loaderSchema}\n        showMenu={false}\n        separator={true}\n        data={data}\n        schema={schema}\n        withHeader={true}\n        headerOptions={{\n          withSearch: true,\n        }}\n        onSearch={(currData, searchTerm) => {\n          return currData.filter(\n            (d) =>\n              d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||\n              d.lastName.toLowerCase().match(searchTerm.toLowerCase()) ||\n              d.claim_id.toLowerCase().match(searchTerm.toLowerCase())\n          );\n        }}\n        withPagination={true}\n        pageSize={5}\n      />\n    </Card>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-table-data-table--data-table",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}
