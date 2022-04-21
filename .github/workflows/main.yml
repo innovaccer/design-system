@@ -1,4 +1,4 @@
-name: "Test build release"
+name: 'Release new version'
 on:
   push:
     branches:
@@ -6,29 +6,29 @@ on:
 jobs:
   release:
     # uncomment next line as soon as visual tesing starts working
-    # needs: visual_test 
+    # needs: visual_test
     name: Release tag
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Check for release commit
         id: 'is_release_commit'
         uses: /innovaccer/design-system/actions/check-release-commit@master
-      
+
       - uses: actions/setup-node@v1
         if: steps.is_release_commit.outputs.result == 1
         with:
           node-version: '14.x'
-      
+
       - name: npm install
         if: steps.is_release_commit.outputs.result == 1
         run: npm ci
-        
+
       - name: setup git
         if: steps.is_release_commit.outputs.result == 1
         run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
-      
+
       - name: bump module version
         if: steps.is_release_commit.outputs.result == 1
         run: RELEASE_COMMIT=true npm version --no-commit-hooks $(git log -1 --pretty=format:%s) -m "Released %s"
@@ -46,7 +46,7 @@ jobs:
       - name: remove .npmrc
         if: steps.is_release_commit.outputs.result == 1
         run: rm -rf .npmrc
-        
+
       - name: push module tags to github
         if: steps.is_release_commit.outputs.result == 1
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(git log -2 --pretty=format:%B | tail -n1)
@@ -60,16 +60,54 @@ jobs:
 
       - name: push version to github
         if: steps.is_release_commit.outputs.result == 1
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master 
-    
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master
+
       - name: deploy storybook
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         if: steps.is_release_commit.outputs.result == 1
-        run: npm run deploy-storybook -- --ci
-      
+        run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-prod --aws-profile=NONE --ci
+        env:
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
+          AWS_REGION: ${{ secrets.DOCS_REGION }}
+
       - name: notify release
         if: steps.is_release_commit.outputs.result == 1
         uses: /innovaccer/design-system/actions/notify-release@master
         env:
           GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
+
+  site_deploy:
+    name: Deploy docs site
+    needs: release
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
+    env:
+      DOCS_BUCKET: webui-mds-docs-prod
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: npm install
+        run: npm i
+
+      - name: extract stories
+        run: npm run extract
+        env:
+          STORYBOOK_HOST: 'https://mds.innovaccer.com/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story'
+
+      - name: build
+        run: npm run build
+        env:
+          DOCS_BUCKET: webui-mds-docs-prod
+
+      - name: deploy
+        run: npm run deploy
+        env:
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
+          AWS_REGION: ${{ secrets.DOCS_REGION }}

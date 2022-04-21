@@ -1,4 +1,4 @@
-name: Pull request
+name: Docs pull request
 
 on: pull_request
 
@@ -6,6 +6,9 @@ jobs:
   lint_test_build:
     name: lint, test and build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
     steps:
       - uses: actions/checkout@v1
 
@@ -13,8 +16,8 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: yarn install
-        run: cd docs && yarn install
+      - name: npm install
+        run: npm install
 
       - name: build
-        run: cd docs && yarn build
+        run: npm run build

@@ -101,3 +101,4 @@ css/dist
 docs/public/*
 docs/.cache
 docs/node_modules
+docs/static/sb/
