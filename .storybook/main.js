@@ -46,6 +46,10 @@ module.exports = {
     'mds-helpers': {
       title: "MDS Helpers",
       url: "https://innovaccer.github.io/mds-helpers/"
+    },
+    'assessment-components': {
+      title: "Assessment-components",
+      url: "https://metadata.oninnovaccer.com:3002/"
     }
    }
 }
