@@ -4,14 +4,14 @@ import Text from '@/components/atoms/text';
 import { Uncontrolled, Controlled } from '../_common_/types';
 import { storyOptions, iconOptions, subInfoOptions, iconWithSubinfoOptions } from '../Options';
 
-const labelMapping: { [key] } = {
+const labelMapping = {
   ['DEFAULT']: 'Default',
   ['WITH_ICON']: 'Icon',
   ['WITH_META']: 'SubInfo',
   ['ICON_WITH_META']: 'Icon with SubInfo',
 };
 
-const optionsMapping: { [key] } = {
+const optionsMapping = {
   ['DEFAULT']: storyOptions,
   ['WITH_ICON']: iconOptions,
   ['WITH_META']: subInfoOptions,
