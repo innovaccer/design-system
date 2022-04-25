@@ -11,6 +11,8 @@ const tabs = [
   {
     count: 10,
     label: 'Tab 1',
+    isDismissible: true,
+    onDismiss: FunctionValue,
   },
   {
     icon: 'call_received',
@@ -213,5 +215,17 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     expect(firstLabel.tabIndex).toBe(-1);
     expect(secondLabel.tabIndex).toBe(0);
     expect(document.activeElement).toContainElement(firstLabel);
+  });
+
+  it('renders tab component with isDismissible prop:true', () => {
+    const { getAllByTestId } = render(<Tabs tabs={tabs} />);
+    expect(getAllByTestId('DesignSystem-DismissibleTabs--Icon')[0]).toBeInTheDocument();
+  });
+
+  it('renders tab component with isDismissible prop:true and calls onDismiss', () => {
+    const { getAllByTestId } = render(<Tabs tabs={tabs} />);
+    const tab = getAllByTestId('DesignSystem-DismissibleTabs--Icon')[0];
+    fireEvent.click(tab);
+    expect(FunctionValue).toHaveBeenCalled();
   });
 });

@@ -112,3 +112,8 @@
 .Tab-pills--disabled {
   opacity: 60%;
 }
+
+.DismissibleTab-icon--right {
+  padding-left: var(--spacing-m);
+  padding-top: var(--spacing-s);
+}
