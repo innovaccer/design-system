@@ -3,7 +3,7 @@ import { Button, Paragraph, Text, Card, FullscreenModal, Input, Label } from '@/
 import { List } from '@/index.type';
 
 export const twoStepsWorkflow = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(0);
 
   const onClose = () => {
@@ -125,7 +125,7 @@ export const twoStepsWorkflow = () => {
 
 const customCode = `
 () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(0);
 
   const onClose = () => {

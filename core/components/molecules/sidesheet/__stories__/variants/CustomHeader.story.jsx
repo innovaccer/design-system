@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Text, Paragraph, Sidesheet, ModalDescription, Button, Badge, Heading, Divider } from '@/index';
 
 export const customHeader = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const seperator = false;
   const stickFooter = false;
   const backdropClose = false;
@@ -82,7 +82,7 @@ export const customHeader = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);

@@ -4,7 +4,7 @@ import Heading from '@/components/atoms/heading';
 import { action } from '@/utils/action';
 
 export const large = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
