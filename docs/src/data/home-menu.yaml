@@ -1,23 +1,19 @@
 - name: Foundations
   link: /foundations/principles/
   content: A strong foundation is key to create great products. Use these foundations to create authentic and engaging designs.
-  icon: apartment
-  appearance: success
+  img: Foundations
 
 - name: Content
   link: /content/voice-and-tone-guidelines/tabs/voice-and-tone/
   content: Content isn't king, it's the kingdom. Use it as a bridge between confusion and clarity.
-  icon: notes
-  appearance: accent1
+  img: Content
 
 - name: Components
   link: /components/overview/all-components/
   content: Components are the reusable building blocks of our design system and are combined together to form intuitive patterns.
-  icon: widgets
-  appearance: alert
+  img: Components
 
 - name: Patterns
   link: /patterns/
   content: Patterns are reusable combinations of components that solve common user problems.
-  icon: pattern
-  appearance: accent2
+  img: Patterns
