@@ -11,8 +11,7 @@ export default function useHomeMenu() {
             name
             link
             content
-            icon
-            appearance
+            img
           }
         }
       }
