@@ -262,7 +262,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         data-layer={true}
         style={{ zIndex }}
         ref={this.sidesheetRef}
-        onAnimationEnd={this.handleAnimationEnd}
+        onAnimationEnd={() => this.handleAnimationEnd}
       >
         <Column data-test="DesignSystem-Sidesheet" {...baseProps} className={classes} size={sidesheetWidth[dimension]}>
           <div className={headerClass}>
