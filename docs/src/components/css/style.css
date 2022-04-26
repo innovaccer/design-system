@@ -116,3 +116,16 @@ table td {
   height: auto;
   width: 50%;
 }
+
+blockquote {
+  margin: 0;
+  padding: 12px 12px 12px 16px;
+  border-radius: 4px;
+  border-left: 4px solid var(--primary);
+  background-color: var(--secondary-lightest);
+}
+
+blockquote p {
+  margin: 0;
+  color: #000000;
+}
