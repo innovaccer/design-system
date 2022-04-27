@@ -58,6 +58,21 @@ ${customCode}
   }
 };
 
+const TabsWrap = withLive(({ live, onUpdate }) => {
+  useEffect(() => {
+    const { element: Element } = live;
+    if(!!live.element) {
+      try {
+        const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
+        onUpdate(htmlValue);
+      } catch (e) { 
+        console.log(e);
+      }
+    }
+  }, [live.element]);
+  return null;
+});
+
 const StoryComp = ({
   componentData,
   dataProvider,
@@ -83,20 +98,10 @@ const StoryComp = ({
     }
   }, []);
 
-  const TabsWrap = withLive(({ live }) => {
-    const { element: Element } = live;
-    if(!live.element) {
-      return null;
-    }
-    try {
-      const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
-      useEffect(() => {
-        setHtmlCode(htmlValue);
-      })
-    } catch (e) { }
-    return null;
-  });
-
+  const updateHtml = (htmlValue) => {
+    setHtmlCode(htmlValue);
+  }
+  
   const renderCodeBlock = (val) => (
     <div>
       <style>
@@ -236,7 +241,7 @@ const StoryComp = ({
               </div>
             </CardBody>
           </Card>
-          <TabsWrap />
+          <TabsWrap onUpdate={updateHtml} />
           {isExpanded && (
             <Card
               shadow='none'
