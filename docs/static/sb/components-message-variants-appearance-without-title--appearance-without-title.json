@@ -287,11 +287,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactNode"
+          "value": "{React.ReactNode}"
         },
         "table": {
           "type": {
-            "summary": "ReactNode"
+            "summary": "{React.ReactNode}"
           },
           "defaultValue": null
         }
@@ -405,11 +405,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactNode"
+        "value": "{React.ReactNode}"
       },
       "table": {
         "type": {
-          "summary": "ReactNode"
+          "summary": "{React.ReactNode}"
         },
         "defaultValue": null
       }

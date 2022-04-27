@@ -261,7 +261,7 @@
       },
       "chipOptions": {
         "name": "chipOptions",
-        "description": "<pre className=\"DocPage-codeBlock\">\n  ChipOptions: {\n   icon?: string;\n   type?: action | input | selection\n   clearButton?: boolean;\n   onClick?: (value: string, index: number) => void;\n  }\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\n ChipOptions: {\n  icon?: string;\n  type?: action | input | selection\n  clearButton?: boolean;\n  onClick?: (value: string, index: number) => void;\n }\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -451,7 +451,7 @@
     },
     "chipOptions": {
       "name": "chipOptions",
-      "description": "<pre className=\"DocPage-codeBlock\">\n  ChipOptions: {\n   icon?: string;\n   type?: action | input | selection\n   clearButton?: boolean;\n   onClick?: (value: string, index: number) => void;\n  }\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\n ChipOptions: {\n  icon?: string;\n  type?: action | input | selection\n  clearButton?: boolean;\n  onClick?: (value: string, index: number) => void;\n }\n</pre>",
       "type": {
         "required": false,
         "name": "other",

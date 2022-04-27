@@ -255,7 +255,9 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "4"
+          }
         }
       },
       "type": {
@@ -275,7 +277,9 @@
           "type": {
             "summary": "undefined | \"number\" | \"text\" | \"password\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"number\""
+          }
         }
       },
       "onComplete": {
@@ -500,7 +504,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "256"
+          }
         }
       }
     }
@@ -519,7 +525,9 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "4"
+        }
       }
     },
     "type": {
@@ -539,7 +547,9 @@
         "type": {
           "summary": "undefined | \"number\" | \"text\" | \"password\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"number\""
+        }
       }
     },
     "onComplete": {
@@ -764,7 +774,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "256"
+        }
       }
     }
   }

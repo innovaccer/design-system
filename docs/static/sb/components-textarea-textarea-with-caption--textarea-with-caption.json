@@ -49,7 +49,9 @@
           }
         },
         "rows": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "3"
+          },
           "description": "Number of rows in `Textarea`",
           "name": "rows",
           "required": false,
@@ -460,7 +462,9 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "3"
+          }
         }
       },
       "disabled": {
@@ -689,7 +693,9 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "3"
+        }
       }
     },
     "disabled": {

@@ -24,7 +24,9 @@
             }
           },
           "type": {
-            "defaultValue": null,
+            "defaultValue": {
+              "value": "\"text\""
+            },
             "description": "Type of text inside `Input`",
             "name": "type",
             "required": false,
@@ -83,7 +85,9 @@
             }
           },
           "size": {
-            "defaultValue": null,
+            "defaultValue": {
+              "value": "\"regular\""
+            },
             "description": "Size of the `Input`",
             "name": "size",
             "required": false,
@@ -243,7 +247,9 @@
             }
           },
           "minWidth": {
-            "defaultValue": null,
+            "defaultValue": {
+              "value": "256"
+            },
             "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
             "name": "minWidth",
             "required": false,
@@ -302,7 +308,7 @@
             "name": "actionIcon",
             "required": false,
             "type": {
-              "name": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+              "name": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
             }
           },
           "className": {
@@ -333,7 +339,9 @@
             }
           },
           "placeholderChar": {
-            "defaultValue": null,
+            "defaultValue": {
+              "value": "'_'"
+            },
             "description": "Character to be used for empty value at particular index in `Mask`",
             "name": "placeholderChar",
             "required": false,
@@ -351,16 +359,20 @@
             }
           },
           "validators": {
-            "defaultValue": null,
+            "defaultValue": {
+              "value": "[]"
+            },
             "description": "custom Validator for `InputMask`\n\n`ValidatorFn: (val: string) => boolean`",
             "name": "validators",
             "required": false,
             "type": {
-              "name": "ValidatorFn<any[]> | ValidatorFn<any[]>[] | undefined"
+              "name": "Validators | undefined"
             }
           },
           "clearOnEmptyBlur": {
-            "defaultValue": null,
+            "defaultValue": {
+              "value": "true"
+            },
             "description": "Clear the `Input` on blur if value === defaultPlaceholderValue",
             "name": "clearOnEmptyBlur",
             "required": false,
@@ -810,6 +822,27 @@
           "type": {
             "summary": "((startDate?: Date | undefined, endDate?: Date | undefined, startValue?: string | undefined, endValue?: string | undefined) => void) | undefined"
           },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "startDate",
+                "description": "Start Date object"
+              },
+              {
+                "name": "endDate",
+                "description": "End Date object"
+              },
+              {
+                "name": "startDateVal",
+                "description": "Start Date string value as per `outputFormat`"
+              },
+              {
+                "name": "endDateVal",
+                "description": "End Date string value as per `outputFormat`"
+              }
+            ],
+            "returns": false
+          },
           "defaultValue": null
         }
       },
@@ -857,11 +890,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "string | number | Date | undefined"
+          "value": "DateType | undefined"
         },
         "table": {
           "type": {
-            "summary": "string | number | Date | undefined"
+            "summary": "DateType | undefined"
           },
           "defaultValue": null
         }
@@ -872,11 +905,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "string | number | Date | undefined"
+          "value": "DateType | undefined"
         },
         "table": {
           "type": {
-            "summary": "string | number | Date | undefined"
+            "summary": "DateType | undefined"
           },
           "defaultValue": null
         }
@@ -938,7 +971,9 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "false"
+          }
         }
       },
       "position": {
@@ -1072,11 +1107,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "SingleOrArray<ValidatorFn<any[]>>"
+          "value": "Validators"
         },
         "table": {
           "type": {
-            "summary": "SingleOrArray<ValidatorFn<any[]>>"
+            "summary": "Validators"
           },
           "defaultValue": {
             "summary": "[Utils.validators.date]"
@@ -1286,6 +1321,27 @@
         "type": {
           "summary": "((startDate?: Date | undefined, endDate?: Date | undefined, startValue?: string | undefined, endValue?: string | undefined) => void) | undefined"
         },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "startDate",
+              "description": "Start Date object"
+            },
+            {
+              "name": "endDate",
+              "description": "End Date object"
+            },
+            {
+              "name": "startDateVal",
+              "description": "Start Date string value as per `outputFormat`"
+            },
+            {
+              "name": "endDateVal",
+              "description": "End Date string value as per `outputFormat`"
+            }
+          ],
+          "returns": false
+        },
         "defaultValue": null
       }
     },
@@ -1333,11 +1389,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "string | number | Date | undefined"
+        "value": "DateType | undefined"
       },
       "table": {
         "type": {
-          "summary": "string | number | Date | undefined"
+          "summary": "DateType | undefined"
         },
         "defaultValue": null
       }
@@ -1348,11 +1404,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "string | number | Date | undefined"
+        "value": "DateType | undefined"
       },
       "table": {
         "type": {
-          "summary": "string | number | Date | undefined"
+          "summary": "DateType | undefined"
         },
         "defaultValue": null
       }
@@ -1414,7 +1470,9 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "false"
+        }
       }
     },
     "position": {
@@ -1548,11 +1606,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "SingleOrArray<ValidatorFn<any[]>>"
+        "value": "Validators"
       },
       "table": {
         "type": {
-          "summary": "SingleOrArray<ValidatorFn<any[]>>"
+          "summary": "Validators"
         },
         "defaultValue": {
           "summary": "[Utils.validators.date]"

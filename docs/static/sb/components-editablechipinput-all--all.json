@@ -310,11 +310,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+          "value": "Omit<ChipInputProps, \"defaultValue\" | \"placeholder\" | \"value\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+            "summary": "Omit<ChipInputProps, \"defaultValue\" | \"placeholder\" | \"value\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -422,11 +422,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+        "value": "Omit<ChipInputProps, \"defaultValue\" | \"placeholder\" | \"value\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+          "summary": "Omit<ChipInputProps, \"defaultValue\" | \"placeholder\" | \"value\">"
         },
         "defaultValue": {
           "summary": "{ }"

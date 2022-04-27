@@ -36,7 +36,9 @@
           }
         },
         "size": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"regular\""
+          },
           "description": "The size of `Button`",
           "name": "size",
           "required": false,
@@ -59,7 +61,9 @@
           }
         },
         "appearance": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"basic\""
+          },
           "description": "Color of the `Button`\n\n**'success' has been deprecated and all success button types will now be changed to primary button automatically**",
           "name": "appearance",
           "required": false,
@@ -142,7 +146,9 @@
           }
         },
         "iconAlign": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"left\""
+          },
           "description": "Align icon left or right",
           "name": "iconAlign",
           "required": false,
@@ -176,11 +182,13 @@
           "name": "children",
           "required": false,
           "type": {
-            "name": "string | number | undefined"
+            "name": "ReactText | undefined"
           }
         },
         "tabIndex": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "0"
+          },
           "description": "Specifies tab index of `Button`",
           "name": "tabIndex",
           "required": false,
@@ -521,7 +529,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "appearance": {
@@ -543,7 +553,9 @@
           "type": {
             "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"basic\""
+          }
         }
       },
       "disabled": {
@@ -652,7 +664,9 @@
           "type": {
             "summary": "undefined | \"left\" | \"right\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"left\""
+          }
         }
       },
       "largeIcon": {
@@ -676,11 +690,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "string | number | undefined"
+          "value": "ReactText | undefined"
         },
         "table": {
           "type": {
-            "summary": "string | number | undefined"
+            "summary": "ReactText | undefined"
           },
           "defaultValue": null
         }
@@ -697,7 +711,9 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "0"
+          }
         }
       },
       "autoFocus": {
@@ -831,7 +847,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "appearance": {
@@ -853,7 +871,9 @@
         "type": {
           "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"basic\""
+        }
       }
     },
     "disabled": {
@@ -962,7 +982,9 @@
         "type": {
           "summary": "undefined | \"left\" | \"right\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"left\""
+        }
       }
     },
     "largeIcon": {
@@ -986,11 +1008,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "string | number | undefined"
+        "value": "ReactText | undefined"
       },
       "table": {
         "type": {
-          "summary": "string | number | undefined"
+          "summary": "ReactText | undefined"
         },
         "defaultValue": null
       }
@@ -1007,7 +1029,9 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "0"
+        }
       }
     },
     "autoFocus": {

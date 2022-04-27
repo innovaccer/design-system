@@ -449,6 +449,15 @@
           "type": {
             "summary": "(event: Event | DragEvent) => any"
           },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "event",
+                "description": "A drag event or input change event (if files were selected via the file dialog)"
+              }
+            ],
+            "returns": false
+          },
           "defaultValue": {
             "summary": "fromEvent( ... )"
           }
@@ -481,6 +490,15 @@
           "type": {
             "summary": "((event: DragEvent) => void) | undefined"
           },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "event",
+                "description": null
+              }
+            ],
+            "returns": false
+          },
           "defaultValue": null
         }
       },
@@ -495,6 +513,15 @@
         "table": {
           "type": {
             "summary": "((event: DragEvent) => void) | undefined"
+          },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "event",
+                "description": null
+              }
+            ],
+            "returns": false
           },
           "defaultValue": null
         }
@@ -511,12 +538,21 @@
           "type": {
             "summary": "((event: DragEvent) => void) | undefined"
           },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "event",
+                "description": null
+              }
+            ],
+            "returns": false
+          },
           "defaultValue": null
         }
       },
       "onDrop": {
         "name": "onDrop",
-        "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n   type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n   message: string;\n}\n\nFileRejection {\n  file: File;\n  errors: FileError[];\n}\n</pre>",
+        "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n  type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n  message: string;\n}\n\nFileRejection {\n file: File;\n errors: FileError[];\n}\n</pre>",
         "type": {
           "required": false,
           "name": "function",
@@ -525,6 +561,23 @@
         "table": {
           "type": {
             "summary": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
+          },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "acceptedFiles",
+                "description": null
+              },
+              {
+                "name": "fileRejections",
+                "description": null
+              },
+              {
+                "name": "event",
+                "description": "A drag event or input change event (if files were selected via the file dialog)"
+              }
+            ],
+            "returns": false
           },
           "defaultValue": null
         }
@@ -541,6 +594,19 @@
           "type": {
             "summary": "((event: Event | DragEvent, files: File[]) => void) | undefined"
           },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "files",
+                "description": null
+              },
+              {
+                "name": "event",
+                "description": null
+              }
+            ],
+            "returns": false
+          },
           "defaultValue": null
         }
       },
@@ -556,6 +622,19 @@
           "type": {
             "summary": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
           },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "fileRejections",
+                "description": null
+              },
+              {
+                "name": "event",
+                "description": null
+              }
+            ],
+            "returns": false
+          },
           "defaultValue": null
         }
       },
@@ -570,6 +649,15 @@
         "table": {
           "type": {
             "summary": "((file: File) => FileError | FileError[]) | undefined"
+          },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "file",
+                "description": null
+              }
+            ],
+            "returns": false
           },
           "defaultValue": {
             "summary": "func"
@@ -785,6 +873,15 @@
         "type": {
           "summary": "(event: Event | DragEvent) => any"
         },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "event",
+              "description": "A drag event or input change event (if files were selected via the file dialog)"
+            }
+          ],
+          "returns": false
+        },
         "defaultValue": {
           "summary": "fromEvent( ... )"
         }
@@ -817,6 +914,15 @@
         "type": {
           "summary": "((event: DragEvent) => void) | undefined"
         },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "event",
+              "description": null
+            }
+          ],
+          "returns": false
+        },
         "defaultValue": null
       }
     },
@@ -831,6 +937,15 @@
       "table": {
         "type": {
           "summary": "((event: DragEvent) => void) | undefined"
+        },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "event",
+              "description": null
+            }
+          ],
+          "returns": false
         },
         "defaultValue": null
       }
@@ -847,12 +962,21 @@
         "type": {
           "summary": "((event: DragEvent) => void) | undefined"
         },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "event",
+              "description": null
+            }
+          ],
+          "returns": false
+        },
         "defaultValue": null
       }
     },
     "onDrop": {
       "name": "onDrop",
-      "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n   type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n   message: string;\n}\n\nFileRejection {\n  file: File;\n  errors: FileError[];\n}\n</pre>",
+      "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n  type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n  message: string;\n}\n\nFileRejection {\n file: File;\n errors: FileError[];\n}\n</pre>",
       "type": {
         "required": false,
         "name": "function",
@@ -861,6 +985,23 @@
       "table": {
         "type": {
           "summary": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
+        },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "acceptedFiles",
+              "description": null
+            },
+            {
+              "name": "fileRejections",
+              "description": null
+            },
+            {
+              "name": "event",
+              "description": "A drag event or input change event (if files were selected via the file dialog)"
+            }
+          ],
+          "returns": false
         },
         "defaultValue": null
       }
@@ -877,6 +1018,19 @@
         "type": {
           "summary": "((event: Event | DragEvent, files: File[]) => void) | undefined"
         },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "files",
+              "description": null
+            },
+            {
+              "name": "event",
+              "description": null
+            }
+          ],
+          "returns": false
+        },
         "defaultValue": null
       }
     },
@@ -892,6 +1046,19 @@
         "type": {
           "summary": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
         },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "fileRejections",
+              "description": null
+            },
+            {
+              "name": "event",
+              "description": null
+            }
+          ],
+          "returns": false
+        },
         "defaultValue": null
       }
     },
@@ -906,6 +1073,15 @@
       "table": {
         "type": {
           "summary": "((file: File) => FileError | FileError[]) | undefined"
+        },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "file",
+              "description": null
+            }
+          ],
+          "returns": false
         },
         "defaultValue": {
           "summary": "func"

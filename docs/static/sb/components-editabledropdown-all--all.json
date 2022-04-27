@@ -265,11 +265,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 42 more ... | \"fetchOptions\">"
+          "value": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 42 more ... | \"fetchOptions\">"
+            "summary": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -347,11 +347,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 42 more ... | \"fetchOptions\">"
+        "value": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 42 more ... | \"fetchOptions\">"
+          "summary": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
         },
         "defaultValue": {
           "summary": "{ }"

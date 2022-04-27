@@ -13,7 +13,9 @@
       "displayName": "Card",
       "props": {
         "shadow": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
+          },
           "description": "Shadow of the `Card`",
           "name": "shadow",
           "required": false,
@@ -318,7 +320,9 @@
           "type": {
             "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
+          }
         }
       },
       "className": {
@@ -374,7 +378,9 @@
         "type": {
           "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
+        }
       }
     },
     "className": {
