@@ -23,7 +23,9 @@
           }
         },
         "type": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"text\""
+          },
           "description": "Type of text inside `Input`",
           "name": "type",
           "required": false,
@@ -82,7 +84,9 @@
           }
         },
         "size": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"regular\""
+          },
           "description": "Size of the `Input`",
           "name": "size",
           "required": false,
@@ -242,7 +246,9 @@
           }
         },
         "minWidth": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "256"
+          },
           "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
           "name": "minWidth",
           "required": false,
@@ -301,7 +307,7 @@
           "name": "actionIcon",
           "required": false,
           "type": {
-            "name": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+            "name": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
           }
         },
         "className": {
@@ -332,7 +338,9 @@
           }
         },
         "placeholderChar": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "'_'"
+          },
           "description": "Character to be used for empty value at particular index in `Mask`",
           "name": "placeholderChar",
           "required": false,
@@ -350,16 +358,20 @@
           }
         },
         "validators": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "[]"
+          },
           "description": "custom Validator for `InputMask`\n\n`ValidatorFn: (val: string) => boolean`",
           "name": "validators",
           "required": false,
           "type": {
-            "name": "ValidatorFn<any[]> | ValidatorFn<any[]>[] | undefined"
+            "name": "Validators | undefined"
           }
         },
         "clearOnEmptyBlur": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "true"
+          },
           "description": "Clear the `Input` on blur if value === defaultPlaceholderValue",
           "name": "clearOnEmptyBlur",
           "required": false,
@@ -642,7 +654,9 @@
           "type": {
             "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"text\""
+          }
         }
       },
       "value": {
@@ -707,7 +721,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "icon": {
@@ -936,7 +952,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "256"
+          }
         }
       },
       "onClear": {
@@ -1020,11 +1038,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+          "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+            "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
           },
           "defaultValue": null
         }
@@ -1086,7 +1104,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "'_'"
+          }
         }
       },
       "caption": {
@@ -1110,13 +1130,15 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ValidatorFn<any[]> | ValidatorFn<any[]>[] | undefined"
+          "value": "Validators | undefined"
         },
         "table": {
           "type": {
-            "summary": "ValidatorFn<any[]> | ValidatorFn<any[]>[] | undefined"
+            "summary": "Validators | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "[]"
+          }
         }
       },
       "clearOnEmptyBlur": {
@@ -1131,7 +1153,9 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "true"
+          }
         }
       }
     }
@@ -1173,7 +1197,9 @@
         "type": {
           "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"text\""
+        }
       }
     },
     "value": {
@@ -1238,7 +1264,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "icon": {
@@ -1467,7 +1495,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "256"
+        }
       }
     },
     "onClear": {
@@ -1551,11 +1581,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+        "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+          "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
         },
         "defaultValue": null
       }
@@ -1617,7 +1647,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "'_'"
+        }
       }
     },
     "caption": {
@@ -1641,13 +1673,15 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ValidatorFn<any[]> | ValidatorFn<any[]>[] | undefined"
+        "value": "Validators | undefined"
       },
       "table": {
         "type": {
-          "summary": "ValidatorFn<any[]> | ValidatorFn<any[]>[] | undefined"
+          "summary": "Validators | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "[]"
+        }
       }
     },
     "clearOnEmptyBlur": {
@@ -1662,7 +1696,9 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "true"
+        }
       }
     }
   }

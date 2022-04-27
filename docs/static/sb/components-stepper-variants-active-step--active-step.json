@@ -277,7 +277,7 @@
       },
       "steps": {
         "name": "steps",
-        "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
+        "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n label: string;\n value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -296,11 +296,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
+          "value": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
+            "summary": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -390,7 +390,7 @@
     },
     "steps": {
       "name": "steps",
-      "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
+      "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n label: string;\n value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
       "type": {
         "required": true,
         "name": "other",
@@ -409,11 +409,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
+        "value": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
+          "summary": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
         },
         "defaultValue": null
       }

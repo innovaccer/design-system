@@ -339,6 +339,22 @@
           "defaultValue": null
         }
       },
+      "withTrigger": {
+        "name": "withTrigger",
+        "description": "Determines whether to show trigger at bottom of `Collapsible`",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -466,6 +482,22 @@
           "summary": "ReactChild"
         },
         "defaultValue": null
+      }
+    },
+    "withTrigger": {
+      "name": "withTrigger",
+      "description": "Determines whether to show trigger at bottom of `Collapsible`",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
       }
     },
     "className": {

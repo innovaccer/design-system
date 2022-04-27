@@ -392,7 +392,7 @@
       },
       "events": {
         "name": "events",
-        "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
+        "description": "Adds event highlighter to given date\n`events: {\n   'mm/dd/yyyy': true\n}`",
         "type": {
           "required": false,
           "name": "other",
@@ -750,7 +750,7 @@
     },
     "events": {
       "name": "events",
-      "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
+      "description": "Adds event highlighter to given date\n`events: {\n   'mm/dd/yyyy': true\n}`",
       "type": {
         "required": false,
         "name": "other",

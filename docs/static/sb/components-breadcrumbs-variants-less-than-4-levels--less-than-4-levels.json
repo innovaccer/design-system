@@ -245,7 +245,7 @@
     "argTypes": {
       "list": {
         "name": "list",
-        "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n    label: string;\n    link: string;\n}\n</pre>",
+        "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n   label: string;\n   link: string;\n}\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -309,7 +309,7 @@
   "argTypes": {
     "list": {
       "name": "list",
-      "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n    label: string;\n    link: string;\n}\n</pre>",
+      "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n   label: string;\n   link: string;\n}\n</pre>",
       "type": {
         "required": true,
         "name": "other",

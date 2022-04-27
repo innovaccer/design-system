@@ -299,11 +299,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
+          "value": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
+            "summary": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
           },
           "defaultValue": null
         }
@@ -400,11 +400,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
+        "value": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
+          "summary": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
         },
         "defaultValue": null
       }

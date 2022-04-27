@@ -13,7 +13,9 @@
       "displayName": "Radio",
       "props": {
         "size": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"regular\""
+          },
           "description": "Size of `Radio`",
           "name": "size",
           "required": false,
@@ -382,7 +384,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "disabled": {
@@ -553,7 +557,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "disabled": {

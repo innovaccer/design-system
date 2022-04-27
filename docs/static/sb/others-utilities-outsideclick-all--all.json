@@ -27,7 +27,7 @@
           "name": "children",
           "required": true,
           "type": {
-            "name": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
+            "name": "ReactElement<any, string | JSXElementConstructor<any>>"
           }
         },
         "className": {
@@ -309,11 +309,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
+          "value": "ReactElement<any, string | JSXElementConstructor<any>>"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
+            "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
           },
           "defaultValue": null
         }
@@ -373,11 +373,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
+        "value": "ReactElement<any, string | JSXElementConstructor<any>>"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
+          "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
         },
         "defaultValue": null
       }

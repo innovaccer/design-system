@@ -9,11 +9,13 @@
   "component": {
     "displayName": "Checkbox",
     "__docgenInfo": {
-      "description": "######Checkbox has two types:\n  - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "######Checkbox has two types:\n - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "Checkbox",
       "props": {
         "size": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"regular\""
+          },
           "description": "Size of the `Checkbox`",
           "name": "size",
           "required": false,
@@ -105,7 +107,9 @@
           }
         },
         "tabIndex": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "0"
+          },
           "description": "Specifies tab index of `Checkbox`",
           "name": "tabIndex",
           "required": false,
@@ -396,7 +400,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "defaultChecked": {
@@ -531,7 +537,9 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "0"
+          }
         }
       },
       "onChange": {
@@ -599,7 +607,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "defaultChecked": {
@@ -734,7 +744,9 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "0"
+        }
       }
     },
     "onChange": {
