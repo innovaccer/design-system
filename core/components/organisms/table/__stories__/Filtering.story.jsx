@@ -2,6 +2,7 @@ import * as React from 'react';
 import { debounce } from 'throttle-debounce';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import './_common_/style.css';
+import { AsyncTable, SyncTable } from './_common_/types';
 
 export const filtering = () => {
   return <></>;
@@ -840,6 +841,7 @@ export default {
           debounce,
         },
         props: {
+          components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
         noSandbox: true,

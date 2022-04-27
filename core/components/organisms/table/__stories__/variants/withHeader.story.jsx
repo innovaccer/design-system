@@ -3,6 +3,7 @@ import { Card, Table } from '@/index';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { action } from '@/utils/action';
+import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 export const withHeader = () => {
   return (
@@ -39,4 +40,15 @@ export const withHeader = () => {
 
 export default {
   title: 'Components/Table/Variants/With Header',
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Compressed Table',
+        props: {
+          components: { AsyncTable, SyncTable },
+          exclude: ['showHead'],
+        },
+      },
+    },
+  },
 };
