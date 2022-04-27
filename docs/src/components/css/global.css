@@ -13,3 +13,7 @@ body {
 .border-right {
   border-right: var(--border);
 }
+
+p {
+  margin-top: 8px;
+}

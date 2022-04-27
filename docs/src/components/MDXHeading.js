@@ -35,13 +35,20 @@ const MDXHeading = ({ size, headingInfo }) => {
     <div
       onMouseEnter={() => hoverHandler("Enter", headingInfo)}
       onMouseLeave={() => hoverHandler("Leave", headingInfo)}
-      className={`d-inline-flex w-100 ${
-        size === "s" ? "align-items-center" : "align-items-baseline"
-      }`}
+      className={`d-inline-flex w-100 ${size === "s" ? "align-items-center" : "align-items-baseline"
+        }`}
       ref={refHeading}
     >
       <Heading
-        className={`mr-4 ${size === "s" ? "mt-3 mb-4" : ""}`}
+        className={`mr-4 
+          ${size === "s" || size === "m" ?
+            "mt-4"
+            : size === "l" ?
+              "mt-6"
+              : ""
+          }`
+        }
+
         size={size}
         {...headingInfo}
       />
