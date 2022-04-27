@@ -251,7 +251,7 @@
     "argTypes": {
       "selected": {
         "name": "selected",
-        "description": "Array of selected options <br/>\n  **Denotes `Controlled Dropdown`**",
+        "description": "Array of selected options <br/>\n **Denotes `Controlled Dropdown`**",
         "type": {
           "required": false,
           "name": "other",
@@ -281,7 +281,7 @@
       },
       "options": {
         "name": "options",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionSchema: {\n   label: string;\n   value: React.ReactText;\n   icon?: string;\n   subInfo?: string | [MetaListProps]\n    (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);\n   optionType?: OptionType;\n   selected?: boolean;\n   disabled?: boolean;\n   group?: string;\n}\n</pre>\n\nOptionType: 'DEFAULT' | 'WITH\\_ICON' | 'WITH\\_META' | 'ICON\\_WITH\\_META'\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Describes Label of the option | |\n| value | Value of option | |\n| icon | Name of icon inside option | |\n| selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |\n| disabled | Disables the option, making it unable to be pressed | |\n| group | Defines group to which the option belongs | |",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionSchema: {\n  label: string;\n  value: React.ReactText;\n  icon?: string;\n  subInfo?: string | [MetaListProps]\n   (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);\n  optionType?: OptionType;\n  selected?: boolean;\n  disabled?: boolean;\n  group?: string;\n}\n</pre>\n\nOptionType: 'DEFAULT' | 'WITH\\_ICON' | 'WITH\\_META' | 'ICON\\_WITH\\_META'\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Describes Label of the option | |\n| value | Value of option | |\n| icon | Name of icon inside option | |\n| selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |\n| disabled | Disables the option, making it unable to be pressed | |\n| group | Defines group to which the option belongs | |",
         "type": {
           "required": false,
           "name": "other",
@@ -359,7 +359,7 @@
       },
       "triggerOptions": {
         "name": "triggerOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n   labelLimit?: number;\n   customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n   customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -497,7 +497,9 @@
           "type": {
             "summary": "undefined | \"left\" | \"right\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"right\""
+          }
         }
       },
       "noResultMessage": {
@@ -512,7 +514,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"No result found\""
+          }
         }
       },
       "selectAllLabel": {
@@ -527,7 +531,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"Select All\""
+          }
         }
       },
       "footerLabel": {
@@ -542,7 +548,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"Search for more options\""
+          }
         }
       },
       "selectedSectionLabel": {
@@ -557,7 +565,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"Selected Items\""
+          }
         }
       },
       "applyButtonLabel": {
@@ -572,7 +582,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"Apply\""
+          }
         }
       },
       "cancelButtonLabel": {
@@ -587,7 +599,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"Cancel\""
+          }
         }
       },
       "withSearch": {
@@ -632,7 +646,9 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "true"
+          }
         }
       },
       "showApplyButton": {
@@ -662,7 +678,9 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "true"
+          }
         }
       },
       "maxHeight": {
@@ -677,7 +695,9 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "200"
+          }
         }
       },
       "width": {
@@ -737,12 +757,14 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "10"
+          }
         }
       },
       "popoverOptions": {
         "name": "popoverOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n   appendToBody?: boolean;\n   hideOnReferenceEscape?: boolean;\n   boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -786,7 +808,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "icon": {
@@ -816,7 +840,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"Select\""
+          }
         }
       },
       "inlineLabel": {
@@ -861,7 +887,9 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "false"
+          }
         }
       },
       "error": {
@@ -881,15 +909,15 @@
       },
       "optionRenderer": {
         "name": "optionRenderer",
-        "description": "Adds custom option\n\n<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionProps: {\n   optionData: Option;\n   selected: boolean;\n   active?: boolean;\n   index: number;\n   onChange?: (checked: boolean) => void;\n}\n</pre>",
+        "description": "Adds custom option\n\n<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionProps: {\n  optionData: Option;\n  selected: boolean;\n  active?: boolean;\n  index: number;\n  onChange?: (checked: boolean) => void;\n}\n</pre>",
         "type": {
           "required": false,
           "name": "function",
-          "value": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+          "value": "((props: OptionProps) => ReactElement<any, string | JSXElementConstructor<any>>) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+            "summary": "((props: OptionProps) => ReactElement<any, string | JSXElementConstructor<any>>) | undefined"
           },
           "defaultValue": null
         }
@@ -947,7 +975,7 @@
       },
       "fetchOptions": {
         "name": "fetchOptions",
-        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n     searchTerm?: string;\n     count: number,\n     option: Option[],\n}>;\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -966,7 +994,7 @@
   "argTypes": {
     "selected": {
       "name": "selected",
-      "description": "Array of selected options <br/>\n  **Denotes `Controlled Dropdown`**",
+      "description": "Array of selected options <br/>\n **Denotes `Controlled Dropdown`**",
       "type": {
         "required": false,
         "name": "other",
@@ -996,7 +1024,7 @@
     },
     "options": {
       "name": "options",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionSchema: {\n   label: string;\n   value: React.ReactText;\n   icon?: string;\n   subInfo?: string | [MetaListProps]\n    (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);\n   optionType?: OptionType;\n   selected?: boolean;\n   disabled?: boolean;\n   group?: string;\n}\n</pre>\n\nOptionType: 'DEFAULT' | 'WITH\\_ICON' | 'WITH\\_META' | 'ICON\\_WITH\\_META'\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Describes Label of the option | |\n| value | Value of option | |\n| icon | Name of icon inside option | |\n| selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |\n| disabled | Disables the option, making it unable to be pressed | |\n| group | Defines group to which the option belongs | |",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionSchema: {\n  label: string;\n  value: React.ReactText;\n  icon?: string;\n  subInfo?: string | [MetaListProps]\n   (https://innovaccer.github.io/design-system/?path=/docs/components-metalist-all--all);\n  optionType?: OptionType;\n  selected?: boolean;\n  disabled?: boolean;\n  group?: string;\n}\n</pre>\n\nOptionType: 'DEFAULT' | 'WITH\\_ICON' | 'WITH\\_META' | 'ICON\\_WITH\\_META'\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Describes Label of the option | |\n| value | Value of option | |\n| icon | Name of icon inside option | |\n| selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |\n| disabled | Disables the option, making it unable to be pressed | |\n| group | Defines group to which the option belongs | |",
       "type": {
         "required": false,
         "name": "other",
@@ -1074,7 +1102,7 @@
     },
     "triggerOptions": {
       "name": "triggerOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n   labelLimit?: number;\n   customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n   customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
       "type": {
         "required": false,
         "name": "other",
@@ -1212,7 +1240,9 @@
         "type": {
           "summary": "undefined | \"left\" | \"right\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"right\""
+        }
       }
     },
     "noResultMessage": {
@@ -1227,7 +1257,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"No result found\""
+        }
       }
     },
     "selectAllLabel": {
@@ -1242,7 +1274,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"Select All\""
+        }
       }
     },
     "footerLabel": {
@@ -1257,7 +1291,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"Search for more options\""
+        }
       }
     },
     "selectedSectionLabel": {
@@ -1272,7 +1308,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"Selected Items\""
+        }
       }
     },
     "applyButtonLabel": {
@@ -1287,7 +1325,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"Apply\""
+        }
       }
     },
     "cancelButtonLabel": {
@@ -1302,7 +1342,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"Cancel\""
+        }
       }
     },
     "withSearch": {
@@ -1347,7 +1389,9 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "true"
+        }
       }
     },
     "showApplyButton": {
@@ -1377,7 +1421,9 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "true"
+        }
       }
     },
     "maxHeight": {
@@ -1392,7 +1438,9 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "200"
+        }
       }
     },
     "width": {
@@ -1452,12 +1500,14 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "10"
+        }
       }
     },
     "popoverOptions": {
       "name": "popoverOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n   appendToBody?: boolean;\n   hideOnReferenceEscape?: boolean;\n   boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
       "type": {
         "required": false,
         "name": "other",
@@ -1501,7 +1551,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "icon": {
@@ -1531,7 +1583,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"Select\""
+        }
       }
     },
     "inlineLabel": {
@@ -1576,7 +1630,9 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "false"
+        }
       }
     },
     "error": {
@@ -1596,15 +1652,15 @@
     },
     "optionRenderer": {
       "name": "optionRenderer",
-      "description": "Adds custom option\n\n<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionProps: {\n   optionData: Option;\n   selected: boolean;\n   active?: boolean;\n   index: number;\n   onChange?: (checked: boolean) => void;\n}\n</pre>",
+      "description": "Adds custom option\n\n<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nOptionProps: {\n  optionData: Option;\n  selected: boolean;\n  active?: boolean;\n  index: number;\n  onChange?: (checked: boolean) => void;\n}\n</pre>",
       "type": {
         "required": false,
         "name": "function",
-        "value": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+        "value": "((props: OptionProps) => ReactElement<any, string | JSXElementConstructor<any>>) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((props: OptionProps) => ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>) | undefined"
+          "summary": "((props: OptionProps) => ReactElement<any, string | JSXElementConstructor<any>>) | undefined"
         },
         "defaultValue": null
       }
@@ -1662,7 +1718,7 @@
     },
     "fetchOptions": {
       "name": "fetchOptions",
-      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n     searchTerm?: string;\n     count: number,\n     option: Option[],\n}>;\n</pre>",
       "type": {
         "required": false,
         "name": "other",

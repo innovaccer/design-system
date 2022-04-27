@@ -9,7 +9,7 @@
   "component": {
     "displayName": "MetricInput",
     "__docgenInfo": {
-      "description": "###### MetricInput has two types:\n  - [Controlled MetricInput](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled MetricInput](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "###### MetricInput has two types:\n - [Controlled MetricInput](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled MetricInput](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "MetricInput",
       "props": {
         "name": {
@@ -27,7 +27,7 @@
           "name": "value",
           "required": false,
           "type": {
-            "name": "string | number | undefined"
+            "name": "ReactText | undefined"
           }
         },
         "defaultValue": {
@@ -36,7 +36,7 @@
           "name": "defaultValue",
           "required": false,
           "type": {
-            "name": "string | number | undefined"
+            "name": "ReactText | undefined"
           }
         },
         "placeholder": {
@@ -49,7 +49,9 @@
           }
         },
         "size": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"regular\""
+          },
           "description": "Size of the `MetricInput`",
           "name": "size",
           "required": false,
@@ -490,11 +492,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "string | number | undefined"
+          "value": "ReactText | undefined"
         },
         "table": {
           "type": {
-            "summary": "string | number | undefined"
+            "summary": "ReactText | undefined"
           },
           "defaultValue": null
         }
@@ -505,11 +507,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "string | number | undefined"
+          "value": "ReactText | undefined"
         },
         "table": {
           "type": {
-            "summary": "string | number | undefined"
+            "summary": "ReactText | undefined"
           },
           "defaultValue": null
         }
@@ -545,7 +547,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"large\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "icon": {
@@ -817,11 +821,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "string | number | undefined"
+        "value": "ReactText | undefined"
       },
       "table": {
         "type": {
-          "summary": "string | number | undefined"
+          "summary": "ReactText | undefined"
         },
         "defaultValue": null
       }
@@ -832,11 +836,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "string | number | undefined"
+        "value": "ReactText | undefined"
       },
       "table": {
         "type": {
-          "summary": "string | number | undefined"
+          "summary": "ReactText | undefined"
         },
         "defaultValue": null
       }
@@ -872,7 +876,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"large\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "icon": {

@@ -9,7 +9,7 @@
   "component": {
     "displayName": "Input",
     "__docgenInfo": {
-      "description": "###### Input has two types:\n  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "###### Input has two types:\n - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "Input",
       "props": {
         "name": {
@@ -22,7 +22,9 @@
           }
         },
         "type": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"text\""
+          },
           "description": "Type of text inside `Input`",
           "name": "type",
           "required": false,
@@ -81,7 +83,9 @@
           }
         },
         "size": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"regular\""
+          },
           "description": "Size of the `Input`",
           "name": "size",
           "required": false,
@@ -241,7 +245,9 @@
           }
         },
         "minWidth": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "256"
+          },
           "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
           "name": "minWidth",
           "required": false,
@@ -300,7 +306,7 @@
           "name": "actionIcon",
           "required": false,
           "type": {
-            "name": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+            "name": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
           }
         },
         "className": {
@@ -602,7 +608,9 @@
           "type": {
             "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"text\""
+          }
         }
       },
       "value": {
@@ -667,7 +675,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "icon": {
@@ -896,7 +906,9 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "256"
+          }
         }
       },
       "onClear": {
@@ -980,11 +992,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+          "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+            "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
           },
           "defaultValue": null
         }
@@ -1058,7 +1070,9 @@
         "type": {
           "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"text\""
+        }
       }
     },
     "value": {
@@ -1123,7 +1137,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "icon": {
@@ -1352,7 +1368,9 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "256"
+        }
       }
     },
     "onClear": {
@@ -1436,11 +1454,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+        "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
+          "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
         },
         "defaultValue": null
       }

@@ -245,15 +245,15 @@
     "argTypes": {
       "fileList": {
         "name": "fileList",
-        "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n   file: File;\n   status: FileStatus;\n   progress: number;\n   icon: IconOptions\n   errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+          "value": "Omit<FileListItemProps[], \"onClick\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+            "summary": "Omit<FileListItemProps[], \"onClick\">"
           },
           "defaultValue": {
             "summary": "[]"
@@ -326,15 +326,15 @@
   "argTypes": {
     "fileList": {
       "name": "fileList",
-      "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n   file: File;\n   status: FileStatus;\n   progress: number;\n   icon: IconOptions\n   errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+        "value": "Omit<FileListItemProps[], \"onClick\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<FileListItemProps[], number | \"length\" | \"toString\" | \"toLocaleString\" | \"pop\" | \"push\" | \"concat\" | \"join\" | \"reverse\" | \"shift\" | \"slice\" | \"sort\" | \"splice\" | ... 20 more ... | \"at\">"
+          "summary": "Omit<FileListItemProps[], \"onClick\">"
         },
         "defaultValue": {
           "summary": "[]"

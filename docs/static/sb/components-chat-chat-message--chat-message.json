@@ -275,7 +275,7 @@
       },
       "statusOptions": {
         "name": "statusOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nStatusProps: {\n   type: 'failed' | 'sending' | 'sent' | 'read' | 'urgent';;\n   time?: string | number;\n   readText?: string;\n   failedText?: string;\n   sendingText?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| type | Type of message status | |\n| time | Time at which message was sent/recieved | |\n| readText | Message to be shown if chat message is read | Read |\n| failedText | Message to be shown if chat message can't be delivered | Click to retry |\n| sendingText | Message to be shown while sending chat message | Sending |",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nStatusProps: {\n  type: 'failed' | 'sending' | 'sent' | 'read' | 'urgent';;\n  time?: string | number;\n  readText?: string;\n  failedText?: string;\n  sendingText?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| type | Type of message status | |\n| time | Time at which message was sent/recieved | |\n| readText | Message to be shown if chat message is read | Read |\n| failedText | Message to be shown if chat message can't be delivered | Click to retry |\n| sendingText | Message to be shown while sending chat message | Sending |",
         "type": {
           "required": false,
           "name": "other",
@@ -400,7 +400,7 @@
     },
     "statusOptions": {
       "name": "statusOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nStatusProps: {\n   type: 'failed' | 'sending' | 'sent' | 'read' | 'urgent';;\n   time?: string | number;\n   readText?: string;\n   failedText?: string;\n   sendingText?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| type | Type of message status | |\n| time | Time at which message was sent/recieved | |\n| readText | Message to be shown if chat message is read | Read |\n| failedText | Message to be shown if chat message can't be delivered | Click to retry |\n| sendingText | Message to be shown while sending chat message | Sending |",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nStatusProps: {\n  type: 'failed' | 'sending' | 'sent' | 'read' | 'urgent';;\n  time?: string | number;\n  readText?: string;\n  failedText?: string;\n  sendingText?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| type | Type of message status | |\n| time | Time at which message was sent/recieved | |\n| readText | Message to be shown if chat message is read | Read |\n| failedText | Message to be shown if chat message can't be delivered | Click to retry |\n| sendingText | Message to be shown while sending chat message | Sending |",
       "type": {
         "required": false,
         "name": "other",

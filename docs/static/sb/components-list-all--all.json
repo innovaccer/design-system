@@ -265,7 +265,7 @@
             "summary": "\"data\" | \"resource\""
           },
           "defaultValue": {
-            "summary": "\"data\""
+            "summary": "\"\\\"data\\\"\""
           }
         }
       },
@@ -287,7 +287,7 @@
             "summary": "\"standard\" | \"compressed\" | \"tight\" | \"comfortable\""
           },
           "defaultValue": {
-            "summary": "\"standard\""
+            "summary": "\"\\\"standard\\\"\""
           }
         }
       },
@@ -308,7 +308,7 @@
       },
       "data": {
         "name": "data",
-        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\n   Data: RowData[]\n\n   RowData: Record<string, any> & {\n     _selected?: boolean\n   }\n\n   `_selected`  Denotes row selection\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -334,6 +334,27 @@
         "table": {
           "type": {
             "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+          },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "rowIndexes",
+                "description": "Updated rowIndexes"
+              },
+              {
+                "name": "selected",
+                "description": "Updated selected value"
+              },
+              {
+                "name": "allSelected",
+                "description": "List of selected data in the `Table`"
+              },
+              {
+                "name": "selectAll",
+                "description": "Denotes selection of all records in `Table`"
+              }
+            ],
+            "returns": false
           },
           "defaultValue": null
         }
@@ -449,7 +470,7 @@
       },
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n   children?: React.ReactNode;\n   withSearch?: boolean;\n   searchPlaceholder?: string;\n   dynamicColumn?: boolean;\n   allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
         "type": {
           "required": false,
           "name": "other",
@@ -498,7 +519,7 @@
       },
       "schema": {
         "name": "schema",
-        "description": "<pre className=\"DocPage-codeBlock\">\n    Schema: ColumnSchema[]\n\n    ColumnSchema: {\n        name: string;\n        displayName: string;\n        width?: React.ReactText;\n        minWidth?: React.ReactText;\n        maxWidth?: React.ReactText;\n        resizable?: boolean;\n        sorting?: boolean;\n        comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;\n        separator?: boolean;\n        pinned?: 'left' | 'right';\n        hidden?: boolean;\n        filters?: DropdownProps['options'];\n        onFilterChange?: (data: RowData, filters: Filter) => boolean;\n        translate?: (data: RowData) => RowData,\n        cellType?: CellType;\n        cellRenderer?: React.FunctionComponent\\<GridCellProps\\>;\n        align?: Alignment;\n    }\n\n    GridCellProps: {\n        size: GridSize;\n        rowIndex: number;\n        colIndex: number;\n        data: RowData;\n        schema: ColumnSchema;\n        loading: boolean;\n        expanded: boolean;\n    }\n\n| CellType | CellData | Default Width |\n| --- | --- | --- |\n| DEFAULT | string \\| { title: string } | { width: 200 } |\n| WITH\\_META\\_LIST | { title: string, metaList: string[] } | { width: 200 } |\n| AVATAR | { firstName?: string, lastName?: string, title?: string } | { width: 50, minWidth: 50 } |\n| AVATAR\\_WITH\\_TEXT | { firstName?: string, lastName?: string, title: string } | { width: 250 } |\n| AVATAR\\_WITH\\_META\\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } | { width: 250 } |\n| ICON | { icon: string } | { width: 50, minWidth: 50 } |\n| STATUS_HINT | { title: string, statusAppearance: string } | { width: 100 } |\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | key of the value in `RowData` | |\n| displayName | Column Head Label | |\n| width | width of the column(px or %) | |\n| minWidth | min-width of the column(px or %) | 100 |\n| maxWidth | max-width of the column(px or %) | 800 |\n| resizable | Denotes if column is resizable | |\n| sorting | Enables sorting in column | true |\n| comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |\n| separator | Shows Left separator | |\n| tooltip | Shows tooltip on hover | |\n| pinned | Pin column | |\n| hidden | Denotes if column is hidden | |\n| filters | Filter options for the column | |\n| onFilterChange | Callback to be called on Filter Change | |\n| translate | Translate Cell Data | |\n| cellType | Cell Type | 'DEFAULT' |\n| cellRenderer | Custom Cell Renderer | |\n| align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | \"left\" |",
+        "description": "<pre className=\"DocPage-codeBlock\">\n   Schema: ColumnSchema[]\n\n   ColumnSchema: {\n       name: string;\n       displayName: string;\n       width?: React.ReactText;\n       minWidth?: React.ReactText;\n       maxWidth?: React.ReactText;\n       resizable?: boolean;\n       sorting?: boolean;\n       comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;\n       separator?: boolean;\n       pinned?: 'left' | 'right';\n       hidden?: boolean;\n       filters?: DropdownProps['options'];\n       onFilterChange?: (data: RowData, filters: Filter) => boolean;\n       translate?: (data: RowData) => RowData,\n       cellType?: CellType;\n       cellRenderer?: React.FunctionComponent\\<GridCellProps\\>;\n       align?: Alignment;\n   }\n\n   GridCellProps: {\n       size: GridSize;\n       rowIndex: number;\n       colIndex: number;\n       data: RowData;\n       schema: ColumnSchema;\n       loading: boolean;\n       expanded: boolean;\n   }\n\n| CellType | CellData | Default Width |\n| --- | --- | --- |\n| DEFAULT | string \\| { title: string } | { width: 200 } |\n| WITH\\_META\\_LIST | { title: string, metaList: string[] } | { width: 200 } |\n| AVATAR | { firstName?: string, lastName?: string, title?: string } | { width: 50, minWidth: 50 } |\n| AVATAR\\_WITH\\_TEXT | { firstName?: string, lastName?: string, title: string } | { width: 250 } |\n| AVATAR\\_WITH\\_META\\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } | { width: 250 } |\n| ICON | { icon: string } | { width: 50, minWidth: 50 } |\n| STATUS_HINT | { title: string, statusAppearance: string } | { width: 100 } |\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | key of the value in `RowData` | |\n| displayName | Column Head Label | |\n| width | width of the column(px or %) | |\n| minWidth | min-width of the column(px or %) | 100 |\n| maxWidth | max-width of the column(px or %) | 800 |\n| resizable | Denotes if column is resizable | |\n| sorting | Enables sorting in column | true |\n| comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |\n| separator | Shows Left separator | |\n| tooltip | Shows tooltip on hover | |\n| pinned | Pin column | |\n| hidden | Denotes if column is hidden | |\n| filters | Filter options for the column | |\n| onFilterChange | Callback to be called on Filter Change | |\n| translate | Translate Cell Data | |\n| cellType | Cell Type | 'DEFAULT' |\n| cellRenderer | Custom Cell Renderer | |\n| align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | \"left\" |",
         "type": {
           "required": true,
           "name": "other",
@@ -530,7 +551,7 @@
       },
       "nestedRowRenderer": {
         "name": "nestedRowRenderer",
-        "description": "Renderer to be used for nested rows\n\n<pre className=\"DocPage-codeBlock\">\nNestedRowProps: {\n    rowIndex: number;\n    data: RowData;\n    schema: GridProps['schema'];\n    loading: boolean;\n}\n</pre>",
+        "description": "Renderer to be used for nested rows\n\n<pre className=\"DocPage-codeBlock\">\nNestedRowProps: {\n   rowIndex: number;\n   data: RowData;\n   schema: GridProps['schema'];\n   loading: boolean;\n}\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -578,7 +599,7 @@
       },
       "errorTemplate": {
         "name": "errorTemplate",
-        "description": "Template to be rendered when **error: true**\n\n<pre className=\"DocPage-codeBlock\">\nErrorTemplateProps: {\n    errorType: TableProps['errorType']\n}\n</pre>",
+        "description": "Template to be rendered when **error: true**\n\n<pre className=\"DocPage-codeBlock\">\nErrorTemplateProps: {\n   errorType: TableProps['errorType']\n}\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -658,7 +679,7 @@
             "summary": "\"basic\" | \"jump\""
           },
           "defaultValue": {
-            "summary": "\"jump\""
+            "summary": "\"\\\"jump\\\"\""
           }
         }
       },
@@ -695,7 +716,7 @@
       },
       "fetchData": {
         "name": "fetchData",
-        "description": "Callback to be called in case of async `Table`\n\n<pre className=\"DocPage-codeBlock\">\nfetchDataFunction: (options: FetchDataOptions) => Promise<{\n      searchTerm?: string,\n      count: number,\n      data: Data,\n      schema: Schema\n}>;\n\nFetchDataOptions: {\n      page?: number;\n      pageSize?: number;\n      filterList?: TableProps['sortingList'];\n      sortingList?: TableProps['filterList'];\n      searchTerm?: string;\n  }\n</pre>",
+        "description": "Callback to be called in case of async `Table`\n\n<pre className=\"DocPage-codeBlock\">\nfetchDataFunction: (options: FetchDataOptions) => Promise<{\n     searchTerm?: string,\n     count: number,\n     data: Data,\n     schema: Schema\n}>;\n\nFetchDataOptions: {\n     page?: number;\n     pageSize?: number;\n     filterList?: TableProps['sortingList'];\n     sortingList?: TableProps['filterList'];\n     searchTerm?: string;\n }\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -758,7 +779,7 @@
           "summary": "\"data\" | \"resource\""
         },
         "defaultValue": {
-          "summary": "\"data\""
+          "summary": "\"\\\"data\\\"\""
         }
       }
     },
@@ -780,7 +801,7 @@
           "summary": "\"standard\" | \"compressed\" | \"tight\" | \"comfortable\""
         },
         "defaultValue": {
-          "summary": "\"standard\""
+          "summary": "\"\\\"standard\\\"\""
         }
       }
     },
@@ -801,7 +822,7 @@
     },
     "data": {
       "name": "data",
-      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\n   Data: RowData[]\n\n   RowData: Record<string, any> & {\n     _selected?: boolean\n   }\n\n   `_selected`  Denotes row selection\n</pre>",
       "type": {
         "required": true,
         "name": "other",
@@ -827,6 +848,27 @@
       "table": {
         "type": {
           "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+        },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "rowIndexes",
+              "description": "Updated rowIndexes"
+            },
+            {
+              "name": "selected",
+              "description": "Updated selected value"
+            },
+            {
+              "name": "allSelected",
+              "description": "List of selected data in the `Table`"
+            },
+            {
+              "name": "selectAll",
+              "description": "Denotes selection of all records in `Table`"
+            }
+          ],
+          "returns": false
         },
         "defaultValue": null
       }
@@ -942,7 +984,7 @@
     },
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n   children?: React.ReactNode;\n   withSearch?: boolean;\n   searchPlaceholder?: string;\n   dynamicColumn?: boolean;\n   allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
       "type": {
         "required": false,
         "name": "other",
@@ -991,7 +1033,7 @@
     },
     "schema": {
       "name": "schema",
-      "description": "<pre className=\"DocPage-codeBlock\">\n    Schema: ColumnSchema[]\n\n    ColumnSchema: {\n        name: string;\n        displayName: string;\n        width?: React.ReactText;\n        minWidth?: React.ReactText;\n        maxWidth?: React.ReactText;\n        resizable?: boolean;\n        sorting?: boolean;\n        comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;\n        separator?: boolean;\n        pinned?: 'left' | 'right';\n        hidden?: boolean;\n        filters?: DropdownProps['options'];\n        onFilterChange?: (data: RowData, filters: Filter) => boolean;\n        translate?: (data: RowData) => RowData,\n        cellType?: CellType;\n        cellRenderer?: React.FunctionComponent\\<GridCellProps\\>;\n        align?: Alignment;\n    }\n\n    GridCellProps: {\n        size: GridSize;\n        rowIndex: number;\n        colIndex: number;\n        data: RowData;\n        schema: ColumnSchema;\n        loading: boolean;\n        expanded: boolean;\n    }\n\n| CellType | CellData | Default Width |\n| --- | --- | --- |\n| DEFAULT | string \\| { title: string } | { width: 200 } |\n| WITH\\_META\\_LIST | { title: string, metaList: string[] } | { width: 200 } |\n| AVATAR | { firstName?: string, lastName?: string, title?: string } | { width: 50, minWidth: 50 } |\n| AVATAR\\_WITH\\_TEXT | { firstName?: string, lastName?: string, title: string } | { width: 250 } |\n| AVATAR\\_WITH\\_META\\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } | { width: 250 } |\n| ICON | { icon: string } | { width: 50, minWidth: 50 } |\n| STATUS_HINT | { title: string, statusAppearance: string } | { width: 100 } |\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | key of the value in `RowData` | |\n| displayName | Column Head Label | |\n| width | width of the column(px or %) | |\n| minWidth | min-width of the column(px or %) | 100 |\n| maxWidth | max-width of the column(px or %) | 800 |\n| resizable | Denotes if column is resizable | |\n| sorting | Enables sorting in column | true |\n| comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |\n| separator | Shows Left separator | |\n| tooltip | Shows tooltip on hover | |\n| pinned | Pin column | |\n| hidden | Denotes if column is hidden | |\n| filters | Filter options for the column | |\n| onFilterChange | Callback to be called on Filter Change | |\n| translate | Translate Cell Data | |\n| cellType | Cell Type | 'DEFAULT' |\n| cellRenderer | Custom Cell Renderer | |\n| align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | \"left\" |",
+      "description": "<pre className=\"DocPage-codeBlock\">\n   Schema: ColumnSchema[]\n\n   ColumnSchema: {\n       name: string;\n       displayName: string;\n       width?: React.ReactText;\n       minWidth?: React.ReactText;\n       maxWidth?: React.ReactText;\n       resizable?: boolean;\n       sorting?: boolean;\n       comparator?: (a: RowData, b: RowData) => -1 | 0 | 1;\n       separator?: boolean;\n       pinned?: 'left' | 'right';\n       hidden?: boolean;\n       filters?: DropdownProps['options'];\n       onFilterChange?: (data: RowData, filters: Filter) => boolean;\n       translate?: (data: RowData) => RowData,\n       cellType?: CellType;\n       cellRenderer?: React.FunctionComponent\\<GridCellProps\\>;\n       align?: Alignment;\n   }\n\n   GridCellProps: {\n       size: GridSize;\n       rowIndex: number;\n       colIndex: number;\n       data: RowData;\n       schema: ColumnSchema;\n       loading: boolean;\n       expanded: boolean;\n   }\n\n| CellType | CellData | Default Width |\n| --- | --- | --- |\n| DEFAULT | string \\| { title: string } | { width: 200 } |\n| WITH\\_META\\_LIST | { title: string, metaList: string[] } | { width: 200 } |\n| AVATAR | { firstName?: string, lastName?: string, title?: string } | { width: 50, minWidth: 50 } |\n| AVATAR\\_WITH\\_TEXT | { firstName?: string, lastName?: string, title: string } | { width: 250 } |\n| AVATAR\\_WITH\\_META\\_LIST | { firstName?: string, lastName?: string, title: string, metaList: string[] } | { width: 250 } |\n| ICON | { icon: string } | { width: 50, minWidth: 50 } |\n| STATUS_HINT | { title: string, statusAppearance: string } | { width: 100 } |\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | key of the value in `RowData` | |\n| displayName | Column Head Label | |\n| width | width of the column(px or %) | |\n| minWidth | min-width of the column(px or %) | 100 |\n| maxWidth | max-width of the column(px or %) | 800 |\n| resizable | Denotes if column is resizable | |\n| sorting | Enables sorting in column | true |\n| comparator | Sorting Function to be passed(in case of sync) | Default string comparator(localeCompare) |\n| separator | Shows Left separator | |\n| tooltip | Shows tooltip on hover | |\n| pinned | Pin column | |\n| hidden | Denotes if column is hidden | |\n| filters | Filter options for the column | |\n| onFilterChange | Callback to be called on Filter Change | |\n| translate | Translate Cell Data | |\n| cellType | Cell Type | 'DEFAULT' |\n| cellRenderer | Custom Cell Renderer | |\n| align | Align cell content<br>**Align applicable only for following cellTypes:<br>DEFAULT, AVATAR, ICON, STATUS_HINT** | \"left\" |",
       "type": {
         "required": true,
         "name": "other",
@@ -1023,7 +1065,7 @@
     },
     "nestedRowRenderer": {
       "name": "nestedRowRenderer",
-      "description": "Renderer to be used for nested rows\n\n<pre className=\"DocPage-codeBlock\">\nNestedRowProps: {\n    rowIndex: number;\n    data: RowData;\n    schema: GridProps['schema'];\n    loading: boolean;\n}\n</pre>",
+      "description": "Renderer to be used for nested rows\n\n<pre className=\"DocPage-codeBlock\">\nNestedRowProps: {\n   rowIndex: number;\n   data: RowData;\n   schema: GridProps['schema'];\n   loading: boolean;\n}\n</pre>",
       "type": {
         "required": false,
         "name": "other",
@@ -1071,7 +1113,7 @@
     },
     "errorTemplate": {
       "name": "errorTemplate",
-      "description": "Template to be rendered when **error: true**\n\n<pre className=\"DocPage-codeBlock\">\nErrorTemplateProps: {\n    errorType: TableProps['errorType']\n}\n</pre>",
+      "description": "Template to be rendered when **error: true**\n\n<pre className=\"DocPage-codeBlock\">\nErrorTemplateProps: {\n   errorType: TableProps['errorType']\n}\n</pre>",
       "type": {
         "required": false,
         "name": "other",
@@ -1151,7 +1193,7 @@
           "summary": "\"basic\" | \"jump\""
         },
         "defaultValue": {
-          "summary": "\"jump\""
+          "summary": "\"\\\"jump\\\"\""
         }
       }
     },
@@ -1188,7 +1230,7 @@
     },
     "fetchData": {
       "name": "fetchData",
-      "description": "Callback to be called in case of async `Table`\n\n<pre className=\"DocPage-codeBlock\">\nfetchDataFunction: (options: FetchDataOptions) => Promise<{\n      searchTerm?: string,\n      count: number,\n      data: Data,\n      schema: Schema\n}>;\n\nFetchDataOptions: {\n      page?: number;\n      pageSize?: number;\n      filterList?: TableProps['sortingList'];\n      sortingList?: TableProps['filterList'];\n      searchTerm?: string;\n  }\n</pre>",
+      "description": "Callback to be called in case of async `Table`\n\n<pre className=\"DocPage-codeBlock\">\nfetchDataFunction: (options: FetchDataOptions) => Promise<{\n     searchTerm?: string,\n     count: number,\n     data: Data,\n     schema: Schema\n}>;\n\nFetchDataOptions: {\n     page?: number;\n     pageSize?: number;\n     filterList?: TableProps['sortingList'];\n     sortingList?: TableProps['filterList'];\n     searchTerm?: string;\n }\n</pre>",
       "type": {
         "required": false,
         "name": "other",

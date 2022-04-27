@@ -346,11 +346,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 350 more ... | \"data-test\">"
+          "value": "Omit<InputProps, \"defaultValue\" | \"size\" | \"placeholder\" | \"value\" | \"error\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 350 more ... | \"data-test\">"
+            "summary": "Omit<InputProps, \"defaultValue\" | \"size\" | \"placeholder\" | \"value\" | \"error\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -509,11 +509,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 350 more ... | \"data-test\">"
+        "value": "Omit<InputProps, \"defaultValue\" | \"size\" | \"placeholder\" | \"value\" | \"error\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 350 more ... | \"data-test\">"
+          "summary": "Omit<InputProps, \"defaultValue\" | \"size\" | \"placeholder\" | \"value\" | \"error\">"
         },
         "defaultValue": {
           "summary": "{ }"

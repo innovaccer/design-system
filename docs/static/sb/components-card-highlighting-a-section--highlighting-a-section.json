@@ -97,7 +97,9 @@
                 "displayName": "Card",
                 "props": {
                   "shadow": {
-                    "defaultValue": null,
+                    "defaultValue": {
+                      "value": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
+                    },
                     "description": "Shadow of the `Card`",
                     "name": "shadow",
                     "required": false,

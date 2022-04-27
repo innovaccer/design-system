@@ -34,7 +34,7 @@
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [open, setOpen] = React.useState(true);\n\n  const onClose = () => {\n    setOpen(!open);\n  };\n\n  const headerOptions = {\n    heading: 'Heading',\n    subHeading: 'Subheading'\n  };\n\n  const options = {\n    onClose,\n    open,\n    headerOptions,\n    footer: (\n      <>\n        <Button appearance=\"primary\" className=\"mr-4\">Primary</Button>\n        <Button appearance=\"basic\">Basic</Button>\n      </>\n    )\n  };\n\n  const modalDescriptionOptions = {\n    title: 'Description Title',\n    description: 'Adding a subheading clearly indicates the hierarchy of the information.',\n    removePadding: true\n  };\n\n  const modalDescriptionOptionsWithoutTitle = {\n    description: 'Card Sections include supporting text like an article summary or a restaurant description.',\n    removePadding: true\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />\n        <Button appearance=\"primary\" onClick={() => setOpen(true)}>Open</Button>\n      </Paragraph>\n      <Sidesheet {...options} dimension=\"large\">\n        <Text>Modal Body</Text>\n        <ModalDescription {...modalDescriptionOptions} />\n        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />\n      </Sidesheet>\n    </div>\n  );\n}",
+        "customCode": "() => {\n  const [open, setOpen] = React.useState(false);\n\n  const onClose = () => {\n    setOpen(!open);\n  };\n\n  const headerOptions = {\n    heading: 'Heading',\n    subHeading: 'Subheading'\n  };\n\n  const options = {\n    onClose,\n    open,\n    headerOptions,\n    footer: (\n      <>\n        <Button appearance=\"primary\" className=\"mr-4\">Primary</Button>\n        <Button appearance=\"basic\">Basic</Button>\n      </>\n    )\n  };\n\n  const modalDescriptionOptions = {\n    title: 'Description Title',\n    description: 'Adding a subheading clearly indicates the hierarchy of the information.',\n    removePadding: true\n  };\n\n  const modalDescriptionOptionsWithoutTitle = {\n    description: 'Card Sections include supporting text like an article summary or a restaurant description.',\n    removePadding: true\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />\n        <Button appearance=\"primary\" onClick={() => setOpen(true)}>Open</Button>\n      </Paragraph>\n      <Sidesheet {...options} dimension=\"large\">\n        <Text>Modal Body</Text>\n        <ModalDescription {...modalDescriptionOptions} />\n        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />\n      </Sidesheet>\n    </div>\n  );\n}",
         "title": "Sidesheet",
         "noHtml": true
       }
@@ -235,7 +235,7 @@
     "options": {},
     "fileName": "./core/components/molecules/sidesheet/__stories__/variants/dimension/Large.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [open, setOpen] = React.useState(true);\n  const seperator = false;\n  const backIcon = false;\n  const stickFooter = false;\n  const backdropClose = false;\n\n  const onClose = () => {\n    setOpen(false);\n    action('on close triggered')();\n  };\n\n  const backIconCallback = () => {\n    action('back icon clicked')();\n  };\n\n  const headerOptions = {\n    backIcon,\n    backIconCallback: backIcon ? backIconCallback : undefined,\n    heading: 'Heading',\n    subHeading: 'Subheading',\n  };\n\n  const options = {\n    onClose,\n    open,\n    seperator,\n    headerOptions,\n    stickFooter,\n    backdropClose,\n    footer: (\n      <>\n        <Button appearance=\"primary\" className=\"mr-4\">\n          Primary\n        </Button>\n        <Button appearance=\"basic\">Basic</Button>\n      </>\n    ),\n  };\n\n  const modalDescriptionOptions = {\n    title: 'Description Title',\n    description: 'Adding a subheading clearly indicates the hierarchy of the information.',\n    removePadding: true,\n  };\n\n  const modalDescriptionOptionsWithoutTitle = {\n    description: 'Card Sections include supporting text like an article summary or a restaurant description.',\n    removePadding: true,\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\n        magna aliqua.\n        <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n        <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        <br />\n      </Paragraph>\n      <Sidesheet {...options} dimension=\"large\">\n        <Text>Modal Body</Text>\n        <ModalDescription {...modalDescriptionOptions} />\n        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />\n      </Sidesheet>\n    </div>\n  );\n}"
+      "source": "() => {\n  const [open, setOpen] = React.useState(false);\n  const seperator = false;\n  const backIcon = false;\n  const stickFooter = false;\n  const backdropClose = false;\n\n  const onClose = () => {\n    setOpen(false);\n    action('on close triggered')();\n  };\n\n  const backIconCallback = () => {\n    action('back icon clicked')();\n  };\n\n  const headerOptions = {\n    backIcon,\n    backIconCallback: backIcon ? backIconCallback : undefined,\n    heading: 'Heading',\n    subHeading: 'Subheading',\n  };\n\n  const options = {\n    onClose,\n    open,\n    seperator,\n    headerOptions,\n    stickFooter,\n    backdropClose,\n    footer: (\n      <>\n        <Button appearance=\"primary\" className=\"mr-4\">\n          Primary\n        </Button>\n        <Button appearance=\"basic\">Basic</Button>\n      </>\n    ),\n  };\n\n  const modalDescriptionOptions = {\n    title: 'Description Title',\n    description: 'Adding a subheading clearly indicates the hierarchy of the information.',\n    removePadding: true,\n  };\n\n  const modalDescriptionOptionsWithoutTitle = {\n    description: 'Card Sections include supporting text like an article summary or a restaurant description.',\n    removePadding: true,\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\n        magna aliqua.\n        <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n        <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        <br />\n      </Paragraph>\n      <Sidesheet {...options} dimension=\"large\">\n        <Text>Modal Body</Text>\n        <ModalDescription {...modalDescriptionOptions} />\n        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />\n      </Sidesheet>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-sidesheet-large--large",
@@ -247,15 +247,15 @@
     "argTypes": {
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<OverlayHeaderProps, \"className\" | \"data-test\" | \"heading\" | \"subHeading\" | \"backButton\" | \"backButtonCallback\" | \"backIcon\" | \"backIconCallback\" | \"headingClass\">"
+          "value": "Omit<OverlayHeaderProps, \"onClose\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<OverlayHeaderProps, \"className\" | \"data-test\" | \"heading\" | \"subHeading\" | \"backButton\" | \"backButtonCallback\" | \"backIcon\" | \"backIconCallback\" | \"headingClass\">"
+            "summary": "Omit<OverlayHeaderProps, \"onClose\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -375,7 +375,7 @@
       },
       "footerOptions": {
         "name": "footerOptions",
-        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -469,15 +469,15 @@
   "argTypes": {
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<OverlayHeaderProps, \"className\" | \"data-test\" | \"heading\" | \"subHeading\" | \"backButton\" | \"backButtonCallback\" | \"backIcon\" | \"backIconCallback\" | \"headingClass\">"
+        "value": "Omit<OverlayHeaderProps, \"onClose\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<OverlayHeaderProps, \"className\" | \"data-test\" | \"heading\" | \"subHeading\" | \"backButton\" | \"backButtonCallback\" | \"backIcon\" | \"backIconCallback\" | \"headingClass\">"
+          "summary": "Omit<OverlayHeaderProps, \"onClose\">"
         },
         "defaultValue": {
           "summary": "{ }"
@@ -597,7 +597,7 @@
     },
     "footerOptions": {
       "name": "footerOptions",
-      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
       "type": {
         "required": false,
         "name": "other",

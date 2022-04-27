@@ -294,7 +294,7 @@
       },
       "actions": {
         "name": "actions",
-        "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n    label: string,\n    onClick: (e: React.MouseEvent) => void\n}\n</pre>",
+        "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n   label: string,\n   onClick: (e: React.MouseEvent) => void\n}\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -410,7 +410,7 @@
     },
     "actions": {
       "name": "actions",
-      "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n    label: string,\n    onClick: (e: React.MouseEvent) => void\n}\n</pre>",
+      "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n   label: string,\n   onClick: (e: React.MouseEvent) => void\n}\n</pre>",
       "type": {
         "required": false,
         "name": "other",

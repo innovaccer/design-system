@@ -445,6 +445,19 @@
           "type": {
             "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
           },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "date",
+                "description": "Date object"
+              },
+              {
+                "name": "dateVal",
+                "description": "Date string value as per `outputFormat`"
+              }
+            ],
+            "returns": false
+          },
           "defaultValue": null
         }
       },
@@ -454,11 +467,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "string | number | Date | undefined"
+          "value": "DateType | undefined"
         },
         "table": {
           "type": {
-            "summary": "string | number | Date | undefined"
+            "summary": "DateType | undefined"
           },
           "defaultValue": null
         }
@@ -490,7 +503,9 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "false"
+          }
         }
       },
       "position": {
@@ -573,11 +588,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+          "value": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+            "summary": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -590,11 +605,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "SingleOrArray<ValidatorFn<any[]>>"
+          "value": "Validators"
         },
         "table": {
           "type": {
-            "summary": "SingleOrArray<ValidatorFn<any[]>>"
+            "summary": "Validators"
           },
           "defaultValue": {
             "summary": "[Utils.validators.date]"
@@ -852,6 +867,19 @@
         "type": {
           "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
         },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "date",
+              "description": "Date object"
+            },
+            {
+              "name": "dateVal",
+              "description": "Date string value as per `outputFormat`"
+            }
+          ],
+          "returns": false
+        },
         "defaultValue": null
       }
     },
@@ -861,11 +889,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "string | number | Date | undefined"
+        "value": "DateType | undefined"
       },
       "table": {
         "type": {
-          "summary": "string | number | Date | undefined"
+          "summary": "DateType | undefined"
         },
         "defaultValue": null
       }
@@ -897,7 +925,9 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "false"
+        }
       }
     },
     "position": {
@@ -980,11 +1010,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+        "value": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+          "summary": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
         },
         "defaultValue": {
           "summary": "{ }"
@@ -997,11 +1027,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "SingleOrArray<ValidatorFn<any[]>>"
+        "value": "Validators"
       },
       "table": {
         "type": {
-          "summary": "SingleOrArray<ValidatorFn<any[]>>"
+          "summary": "Validators"
         },
         "defaultValue": {
           "summary": "[Utils.validators.date]"

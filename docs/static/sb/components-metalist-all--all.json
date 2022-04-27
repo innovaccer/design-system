@@ -242,7 +242,7 @@
     "argTypes": {
       "list": {
         "name": "list",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n   label: string;\n   icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n  label: string;\n  icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -431,7 +431,7 @@
   "argTypes": {
     "list": {
       "name": "list",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n   label: string;\n   icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n  label: string;\n  icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
       "type": {
         "required": true,
         "name": "other",

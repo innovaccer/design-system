@@ -9,11 +9,13 @@
   "component": {
     "displayName": "Switch",
     "__docgenInfo": {
-      "description": "######Switch has two types:\n  - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled Switch](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "######Switch has two types:\n - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Switch](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "Switch",
       "props": {
         "size": {
-          "defaultValue": null,
+          "defaultValue": {
+            "value": "\"regular\""
+          },
           "description": "Size of `Switch`",
           "name": "size",
           "required": false,
@@ -391,7 +393,9 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
         }
       },
       "appearance": {
@@ -556,7 +560,9 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
       }
     },
     "appearance": {

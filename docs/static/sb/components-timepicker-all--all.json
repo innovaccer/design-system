@@ -250,11 +250,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "string | number | undefined"
+          "value": "TimeType | undefined"
         },
         "table": {
           "type": {
-            "summary": "string | number | undefined"
+            "summary": "TimeType | undefined"
           },
           "defaultValue": null
         }
@@ -265,11 +265,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+          "value": "Omit<InputMaskProps, \"value\" | \"validators\" | \"mask\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+            "summary": "Omit<InputMaskProps, \"value\" | \"validators\" | \"mask\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -322,11 +322,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "SingleOrArray<ValidatorFn<any[]>>"
+          "value": "Validators"
         },
         "table": {
           "type": {
-            "summary": "SingleOrArray<ValidatorFn<any[]>>"
+            "summary": "Validators"
           },
           "defaultValue": {
             "summary": "[Utils.validators.time]"
@@ -358,11 +358,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "string | number | undefined"
+        "value": "TimeType | undefined"
       },
       "table": {
         "type": {
-          "summary": "string | number | undefined"
+          "summary": "TimeType | undefined"
         },
         "defaultValue": null
       }
@@ -373,11 +373,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+        "value": "Omit<InputMaskProps, \"value\" | \"validators\" | \"mask\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+          "summary": "Omit<InputMaskProps, \"value\" | \"validators\" | \"mask\">"
         },
         "defaultValue": {
           "summary": "{ }"
@@ -430,11 +430,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "SingleOrArray<ValidatorFn<any[]>>"
+        "value": "Validators"
       },
       "table": {
         "type": {
-          "summary": "SingleOrArray<ValidatorFn<any[]>>"
+          "summary": "Validators"
         },
         "defaultValue": {
           "summary": "[Utils.validators.time]"
