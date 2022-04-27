@@ -1,6 +1,5 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
-import '@fontsource/nunito-sans';
 import {
   Row,
   Column,
@@ -37,14 +36,14 @@ import axios from 'axios';
 const useGetStorybookData = async (name) => {
   let componentName = name;
 
-  if(!name.startsWith('components')) {
-    componentName =  `components-${componentName}`
+  if (!name.startsWith('components')) {
+    componentName = `components-${componentName}`
   }
 
 
   const data = await axios.get(`/sb/${componentName}.json`)
-    .then(({ data = {}}) => {
-      if(!Object.keys(data).length) {
+    .then(({ data = {} }) => {
+      if (!Object.keys(data).length) {
         return Promise.reject(`Could not get details for id: ${componentName}`);
       }
       return data;
@@ -69,14 +68,14 @@ function getJsxCode(name) {
 function getPropTableData(name) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   return useGetStorybookData(name)
-  .then(componentData => {
+    .then(componentData => {
 
-    const jsxCode = componentData
-      ? componentData.parameters.argTypes
-      : '';
-    return jsxCode;
+      const jsxCode = componentData
+        ? componentData.parameters.argTypes
+        : '';
+      return jsxCode;
 
-  })
+    })
 }
 
 
@@ -98,7 +97,7 @@ const A11yBlock = ({ name }) => {
   React.useEffect(() => {
     useGetStorybookData(name)
       .then((componentData) => {
-          // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         const a11yProps = componentData && componentData.parameters.docs.docPage?.a11yProps;
 
         setData(a11yProps);
@@ -117,7 +116,7 @@ const A11yBlock = ({ name }) => {
   }
 
   if (error) {
-    return <MDSComponents.Message className="my-7" appearance="alert" title={error} description="Hold tight, we are working to get it up for you to interact with." />      
+    return <MDSComponents.Message className="my-7" appearance="alert" title={error} description="Hold tight, we are working to get it up for you to interact with." />
   }
   return (
     <div className="mb-8">
@@ -151,7 +150,7 @@ const PreviewWithPropTable = ({ name }) => {
   }
 
   if (error) {
-    return <MDSComponents.Message className="my-7" appearance="alert" title={error} description="Hold tight, we are working to get it up for you to interact with." />      
+    return <MDSComponents.Message className="my-7" appearance="alert" title={error} description="Hold tight, we are working to get it up for you to interact with." />
   }
 
   return (
