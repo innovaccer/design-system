@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '../Layout';
 import { useFrontmatter } from '../../util/Frontmatter';
-import MDXPage from '../PageLayout/MDXPage';
+import ComponentPage from '../PageLayout/ComponentPage';
 
 export default ({ pageContext, children, ...rest }) => {
   const { frontmatter = {}, titleType, relativePagePath } = pageContext;
-  const { title, description, keywords, tabs, logos, showMobile = false } = frontmatter;
+  const { title, description, keywords, tabs, showMobile = false } = frontmatter;
   const is404 = children && children.key === null;
   const newFrontmatter = useFrontmatter(relativePagePath);
 
@@ -21,7 +21,7 @@ export default ({ pageContext, children, ...rest }) => {
       showAnimation={rest.location.state?.animation === false ? false : true}
       is404Page={is404}
     >
-      <MDXPage 
+      <ComponentPage 
         frontmatter={newFrontmatter}
         relativePagePath={relativePagePath}
         description={description}
@@ -30,7 +30,6 @@ export default ({ pageContext, children, ...rest }) => {
         children={children}
         is404Page={is404}
         location={rest.location}
-        logos={logos}
       />
     </Layout>
   );

@@ -63,9 +63,11 @@ exports.onCreatePage = (
     deletePage(page);
     createPage({
       ...page,
+     // component: require.resolve("./src/components/templates/Homepage.js"),
       context: {
         ...page.context,
         relativePagePath,
+        body: page.body,
         titleType,
         frontmatter,
         MdxNode,
