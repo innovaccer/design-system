@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { useHeaderItems } from '../../util/HeaderItems';
-import './Header.css';
 import { Link as MDSLink } from '@innovaccer/design-system';
 import Search from '../GlobalSearch';
+import './Header.css';
 
 const Header = ({ relativePagePath }) => {
   const ref = React.createRef();
   const items = useHeaderItems();
+
   const checkActive = (label) => {
     const pagePath = relativePagePath.split('/');
     if (pagePath[1] === label.toLowerCase() || pagePath[2] === label.toLowerCase()) return true;
     return false;
   }
+
   return (
     <div
       id="mainHeader"

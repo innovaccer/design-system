@@ -417,7 +417,7 @@ export const schema = [
     cellRenderer: ({ data }) => {
       return <Link 
       className='Text--link card-link'
-      to={`/components/${data.link}`}
+      to={`/components/${data.link}/`}
       >
         {data.name}
       </Link>;

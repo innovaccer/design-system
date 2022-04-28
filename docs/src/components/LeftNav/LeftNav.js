@@ -10,34 +10,52 @@ import { MOBILE } from '../../util/constants';
 
 const isBrowser = typeof window !== 'undefined';
 
+function getActiveNavItem(tabs, navItems) {
+  const pathName = window.location.pathname;
+  if (isBrowser && pathName && tabs) {
+    const url = pathName.split('/');
+    const componentName = pathName.includes('mobile') ? url[2] + '/' + url[3] : url[1] + '/' + url[2];
+    const activeMenu = navItems.filter(({ link }) => {
+      return link && link.includes(componentName);
+    });
+    return activeMenu[0]?.link;
+  }
+  return pathName;
+}
+
+const handleNavigate = (name) => {
+  if (name === MOBILE) {
+    navigate(`/mobile${window.location.pathname}`);
+  } else {
+    if (window.location.pathname.includes('/mobile')) {
+      navigate(
+        window.location.pathname.replace('/mobile', '')
+      );
+    }
+  }
+};
+
+function getHeading(relativePagePath) {
+  const componentName =
+    relativePagePath && relativePagePath.split('/')[1];
+  return componentName.toUpperCase();
+};
+
 const LeftNav = (props) => {
   const { relativePagePath, showMobile, frontmatter } = props;
   const navItemsList = useNavItems(relativePagePath);
+  const showMenuButtons = showMobile || frontmatter?.showMobile;
+  const [active, setActive] = React.useState();
+
   const navItems = navItemsList.filter((item) => {
-    if(relativePagePath.includes(MOBILE)){
+    if (relativePagePath.includes(MOBILE)) {
       return !item.hideInMobile;
     }
     return !item.hideInWeb;
   });
 
-  const showMenuButtons = showMobile || frontmatter?.showMobile;
-  const [active, setActive] = React.useState();
-
-  function getActiveNavItem() {
-    const pathName = window.location.pathname;
-    if (isBrowser && pathName && frontmatter.tabs) {
-      const url = pathName.split('/');
-      const componentName = pathName.includes('mobile') ? url[2] + '/' + url[3] : url[1] + '/' + url[2];
-      const activeMenu = navItems.filter(({ link }) => {
-        return link && link.includes(componentName);
-      });
-      return activeMenu[0]?.link;
-    }
-    return pathName;
-  }
-
   useEffect(() => {
-    const active = isBrowser ? getActiveNavItem() : '';
+    const active = isBrowser ? getActiveNavItem(frontmatter.tabs, navItems) : '';
     const obj = { link: active }
     setActive(obj);
   }, []);
@@ -45,24 +63,6 @@ const LeftNav = (props) => {
   const onClickHandler = (menu) => {
     navigate(menu.link);
     setActive(menu);
-  };
-
-  const handleNavigate = (name) => {
-    if (name === MOBILE) {
-      navigate(`/mobile${window.location.pathname}`);
-    } else {
-      if (window.location.pathname.includes('/mobile')) {
-        navigate(
-          window.location.pathname.replace('/mobile', '')
-        );
-      }
-    }
-  };
-
-  const getHeading = () => {
-    const componentName =
-      relativePagePath && relativePagePath.split('/')[1];
-    return componentName.toUpperCase();
   };
 
   return (
@@ -91,7 +91,7 @@ const LeftNav = (props) => {
         </div>
       )}
       <Subheading className='pl-6 pt-6 pb-3' appearance='subtle'>
-        {getHeading()}
+        {getHeading(relativePagePath)}
       </Subheading>
       <VerticalNav
         menus={navItems}

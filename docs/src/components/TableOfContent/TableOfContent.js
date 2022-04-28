@@ -4,6 +4,27 @@ import { Subheading } from '@innovaccer/design-system';
 import { Link } from 'gatsby';
 import './TableOfContent.css';
 
+const isInViewport = (element) => {
+  const rect = element.getBoundingClientRect();
+  let flag = (rect.top - 60) >= 0 && rect.bottom + 25 <= (window.innerHeight || document.documentElement.clientHeight);
+  if (flag) return "inViewPort";
+  else if (rect.bottom + 25 > (window.innerHeight || document.documentElement.clientHeight)) return "belowViewPort";
+  else return "aboveViewPort";
+}
+
+function getIds(items) {
+  return items.reduce((acc, item) => {
+    if (item.url) {
+      // url has a # as first character, remove it to get the raw Id
+      acc.push(item.url.slice(1));
+    }
+    if (item.items) {
+      acc.push(...getIds(item.items));
+    }
+    return acc;
+  }, []);
+}
+
 const TableOfContent = (props) => {
   const { relativePagePath, location } = props;
   const clickedRef = useRef(false);
@@ -26,27 +47,19 @@ const TableOfContent = (props) => {
     if (location && location.hash) {
       urlHash = location.hash.slice(1);
       setActive(urlHash);
-    } else if(navItems && navItems.length) {
-       setActive(navItems[0].url?.slice(1));
+    } else if (navItems && navItems.length) {
+      setActive(navItems[0].url?.slice(1));
     }
   }, []);
-
-  const isInViewport = (element) => {
-    const rect = element.getBoundingClientRect();
-    let flag = (rect.top-60)>= 0 && rect.bottom+25 <= (window.innerHeight || document.documentElement.clientHeight);
-    if (flag) return "inViewPort";
-    else if(rect.bottom+25 > (window.innerHeight || document.documentElement.clientHeight)) return "belowViewPort";
-    else return "aboveViewPort";
-  }
 
   const onScrollHandler = (e, idList) => {
     // Don't set the active index based on scroll if a link was just clicked
     if (clickedRef.current) {
       return;
     }
-    if(e.target.classList.contains("in-page-nav")){
+    if (e.target.classList.contains("in-page-nav")) {
       return;
-   }
+    }
     const headerHeight = document.getElementById('mainHeader').getBoundingClientRect().height;
     const viewportHeight = document.body.offsetHeight - headerHeight;
     let resultFound = false;
@@ -60,8 +73,8 @@ const TableOfContent = (props) => {
           resultFound = true;
           let activeElement = document.getElementsByClassName('active-link')[0];
           let flag = isInViewport(activeElement);
-          if(flag === "belowViewPort") activeElement.scrollIntoView(true);
-          else if(flag === "aboveViewPort") activeElement.scrollIntoView(true);
+          if (flag === "belowViewPort") activeElement.scrollIntoView(true);
+          else if (flag === "aboveViewPort") activeElement.scrollIntoView(true);
         };
       };
     });
@@ -76,19 +89,6 @@ const TableOfContent = (props) => {
       clickedRef.current = false;
     }, 0);
   };
-
-  function getIds(items) {
-    return items.reduce((acc, item) => {
-      if (item.url) {
-        // url has a # as first character, remove it to get the raw Id
-        acc.push(item.url.slice(1));
-      }
-      if (item.items) {
-        acc.push(...getIds(item.items));
-      }
-      return acc;
-    }, []);
-  }
 
   function renderItems(items) {
     return (

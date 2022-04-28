@@ -9,6 +9,28 @@ import {
 import { navigate } from 'gatsby';
 import { useLogoItems } from '../../util/Logos';
 
+function downloadAllLogos(logoList, nodes) {
+  const images = logoList.map((logo) => {
+    const filteredGatsbyImage = nodes.filter((img) =>
+      img.fluid.src.includes(logo)
+    );
+    if (filteredGatsbyImage.length) {
+      return {
+        name: logo,
+        src: filteredGatsbyImage[0].fluid.src,
+      };
+    }
+  });
+  images.map((image) => {
+    let element = document.createElement('a');
+    element.href = image.src;
+    element.setAttribute('download', image.name);
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  });
+};
+
 const Container = ({
   children,
   pageTitle,
@@ -43,9 +65,7 @@ const Container = ({
       )
       : '';
 
-  const [activeIndex, setActiveIndex] = React.useState(
-    activeTab || 0
-  );
+  const [activeIndex, setActiveIndex] = React.useState(activeTab || 0);
 
   const onTabChangeHandler = (tabIndex) => {
     const nextTabSlug = getTabSlug(tabIndex);
@@ -54,28 +74,6 @@ const Container = ({
     const path = `${pages.join('/')}/${nextTabSlug}/`;
     navigate(path, { state: { animation: false }, });
     setActiveIndex(tabIndex);
-  };
-
-  const downloadAllLogos = () => {
-    const images = logoList.map((logo) => {
-      const filteredGatsbyImage = nodes.filter((img) =>
-        img.fluid.src.includes(logo)
-      );
-      if (filteredGatsbyImage.length) {
-        return {
-          name: logo,
-          src: filteredGatsbyImage[0].fluid.src,
-        };
-      }
-    });
-    images.map((image) => {
-      let element = document.createElement('a');
-      element.href = image.src;
-      element.setAttribute('download', image.name);
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
-    });
   };
 
   return (
@@ -87,7 +85,7 @@ const Container = ({
         <Button
           className='download-logos'
           icon='download'
-          onClick={downloadAllLogos}
+          onClick={() => downloadAllLogos(logoList, nodes)}
         >
           Download all
         </Button>

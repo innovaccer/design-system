@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSearchItems } from '../../util/Search';
 import { Input, Popover, Icon, Text, Subheading } from '@innovaccer/design-system';
 import { Link } from "gatsby";
-import "./search.css";
 import { debounce } from '../../util/Helpers';
+import "./search.css";
 
 const getHighlightedText = (text, query) => {
   return text.replace(new RegExp(query, "gi"), (match) => `<b>${match}</b>`)
