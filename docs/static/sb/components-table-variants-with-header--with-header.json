@@ -32,6 +32,15 @@
         "inputBorderRadius": 4,
         "brandTitle": "Masala Design System v2.10.0-0",
         "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "title": "Compressed Table",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
       }
     },
     "framework": "react",

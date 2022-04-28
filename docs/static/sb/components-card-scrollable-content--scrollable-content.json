@@ -24,10 +24,10 @@
                 "value": "undefined"
               },
               {
-                "value": "\"default\""
+                "value": "\"dark\""
               },
               {
-                "value": "\"dark\""
+                "value": "\"default\""
               },
               {
                 "value": "\"none\""
@@ -307,8 +307,8 @@
           "name": "enum",
           "value": [
             "undefined",
-            "default",
             "dark",
+            "default",
             "none",
             "light",
             "medium"
@@ -316,7 +316,7 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\""
+            "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
           },
           "defaultValue": null
         }
@@ -363,8 +363,8 @@
         "name": "enum",
         "value": [
           "undefined",
-          "default",
           "dark",
+          "default",
           "none",
           "light",
           "medium"
@@ -372,7 +372,7 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\""
+          "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
         },
         "defaultValue": null
       }

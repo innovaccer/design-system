@@ -265,11 +265,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+          "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 360 more ... | \"clearOnEmptyBlur\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+            "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 360 more ... | \"clearOnEmptyBlur\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -373,11 +373,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+        "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 360 more ... | \"clearOnEmptyBlur\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 357 more ... | \"clearOnEmptyBlur\">"
+          "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 360 more ... | \"clearOnEmptyBlur\">"
         },
         "defaultValue": {
           "summary": "{ }"

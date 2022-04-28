@@ -299,9 +299,9 @@
           "required": false,
           "name": "enum",
           "value": [
+            "success",
             "default",
             "disabled",
-            "success",
             "link",
             "subtle",
             "white",
@@ -310,7 +310,7 @@
         },
         "table": {
           "type": {
-            "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+            "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
           },
           "defaultValue": {
             "summary": "\"default\""
@@ -428,9 +428,9 @@
         "required": false,
         "name": "enum",
         "value": [
+          "success",
           "default",
           "disabled",
-          "success",
           "link",
           "subtle",
           "white",
@@ -439,7 +439,7 @@
       },
       "table": {
         "type": {
-          "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+          "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
         },
         "defaultValue": {
           "summary": "\"default\""

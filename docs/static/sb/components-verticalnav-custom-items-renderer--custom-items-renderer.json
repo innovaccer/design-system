@@ -34,7 +34,7 @@
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const data = [\n    {\n      name: 'clinical_data',\n      label: 'Clinical Data',\n      icon: 'assignment_ind'\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management',\n      icon: 'forum',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'people'\n        },\n        {\n          name: 'care_management.care_protocol',\n          label: 'Care Protocol',\n          icon: 'fact_check'\n        },\n        {\n          name: 'care_management.assessments',\n          label: 'Assessments',\n          icon: 'assessment'\n        },\n        {\n          name: 'care_management.tasks',\n          label: 'Tasks',\n          icon: 'alarm'\n        },\n      ]\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      icon: 'airline_seat_flat_angled'\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite'\n    },\n    {\n      name: 'preventive_health',\n      label: 'Preventive Health',\n      icon: 'beenhere'\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'receipt'\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'account_circle'\n    },\n    {\n      name: 'manual_entry',\n      label: 'Manual Entry',\n      icon: 'edit'\n    },\n    {\n      name: 'patient_notes',\n      label: 'Patient Notes',\n      icon: 'note_add'\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment'\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline'\n  });\n\n  const customItemRenderer = (props) => {\n    const {menu, onClick, expanded, isChildren} = props;\n    return ( \n      <div \n        onClick={() => onClick(menu)}\n        className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}\n      >\n        {menu.icon && \n            <Icon\n              data-test=\"DesignSystem-VerticalNav--Icon\"\n              className={expanded ? 'mr-4' : ''}\n              name={menu.icon}\n            />\n        }\n        <Tooltip tooltip={menu.label}>\n          <Text weight=\"medium\">\n            {menu.label}\n          </Text>\n        </Tooltip>\n      </div>\n    );\n  };\n  \n  return (\n    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={setActive}\n        customItemRenderer={customItemRenderer}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'clinical_data',\n      label: 'Clinical Data',\n      icon: 'assignment_ind'\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management',\n      icon: 'forum',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'people'\n        },\n        {\n          name: 'care_management.care_protocol',\n          label: 'Care Protocol',\n          icon: 'fact_check'\n        },\n        {\n          name: 'care_management.assessments',\n          label: 'Assessments',\n          icon: 'assessment'\n        },\n        {\n          name: 'care_management.tasks',\n          label: 'Tasks',\n          icon: 'alarm'\n        },\n      ]\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      icon: 'airline_seat_flat_angled'\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite'\n    },\n    {\n      name: 'preventive_health',\n      label: 'Preventive Health',\n      icon: 'beenhere'\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'receipt'\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'account_circle'\n    },\n    {\n      name: 'manual_entry',\n      label: 'Manual Entry',\n      icon: 'edit'\n    },\n    {\n      name: 'patient_notes',\n      label: 'Patient Notes',\n      icon: 'note_add'\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment'\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline'\n  });\n\n  const customItemRenderer = (props) => {\n    const {menu, onClick, expanded, isChildren} = props;\n    return ( \n      <div \n        onClick={() => onClick(menu)}\n        className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}\n      >\n        {menu.icon && \n            <Icon\n              data-test=\"DesignSystem-VerticalNav--Icon\"\n              className={expanded ? 'mr-4' : ''}\n              name={menu.icon}\n            />\n        }\n        <Tooltip tooltip={menu.label} position=\"right\">\n          <Text weight=\"medium\">\n            {menu.label}\n          </Text>\n        </Tooltip>\n      </div>\n    );\n  };\n  \n  return (\n    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={setActive}\n        customItemRenderer={customItemRenderer}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/verticalNav/__stories__/CustomItemsRenderer.story.jsx",
     "storySource": {
-      "source": "() => {\n  const data = [\n    {\n      name: 'clinical_data',\n      label: 'Clinical Data',\n      icon: 'assignment_ind',\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management',\n      icon: 'forum',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'people',\n        },\n        {\n          name: 'care_management.care_protocol',\n          label: 'Care Protocol',\n          icon: 'fact_check',\n        },\n        {\n          name: 'care_management.assessments',\n          label: 'Assessments',\n          icon: 'assessment',\n        },\n        {\n          name: 'care_management.tasks',\n          label: 'Tasks',\n          icon: 'alarm',\n        },\n      ],\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      icon: 'airline_seat_flat_angled',\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite',\n    },\n    {\n      name: 'preventive_health',\n      label: 'Preventive Health',\n      icon: 'beenhere',\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'receipt',\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'account_circle',\n    },\n    {\n      name: 'manual_entry',\n      label: 'Manual Entry',\n      icon: 'edit',\n    },\n    {\n      name: 'patient_notes',\n      label: 'Patient Notes',\n      icon: 'note_add',\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline',\n  });\n\n  const customItemRenderer = (props) => {\n    const { menu, expanded, isChildren } = props;\n    return (\n      <div className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}>\n        {menu.icon && (\n          <Icon data-test=\"DesignSystem-VerticalNav--Icon\" className={expanded ? 'mr-4' : ''} name={menu.icon} />\n        )}\n        <Tooltip tooltip={menu.label}>\n          <Text weight=\"medium\">{menu.label}</Text>\n        </Tooltip>\n      </div>\n    );\n  };\n\n  return (\n    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={setActive}\n        customItemRenderer={customItemRenderer}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const data = [\n    {\n      name: 'clinical_data',\n      label: 'Clinical Data',\n      icon: 'assignment_ind',\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management',\n      icon: 'forum',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'people',\n        },\n        {\n          name: 'care_management.care_protocol',\n          label: 'Care Protocol',\n          icon: 'fact_check',\n        },\n        {\n          name: 'care_management.assessments',\n          label: 'Assessments',\n          icon: 'assessment',\n        },\n        {\n          name: 'care_management.tasks',\n          label: 'Tasks',\n          icon: 'alarm',\n        },\n      ],\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      icon: 'airline_seat_flat_angled',\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite',\n    },\n    {\n      name: 'preventive_health',\n      label: 'Preventive Health',\n      icon: 'beenhere',\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'receipt',\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'account_circle',\n    },\n    {\n      name: 'manual_entry',\n      label: 'Manual Entry',\n      icon: 'edit',\n    },\n    {\n      name: 'patient_notes',\n      label: 'Patient Notes',\n      icon: 'note_add',\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline',\n  });\n\n  const customItemRenderer = (props) => {\n    const { menu, expanded, isChildren } = props;\n    return (\n      <div className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}>\n        {menu.icon && (\n          <Icon data-test=\"DesignSystem-VerticalNav--Icon\" className={expanded ? 'mr-4' : ''} name={menu.icon} />\n        )}\n        <Tooltip tooltip={menu.label} position=\"right\">\n          <Text weight=\"medium\">{menu.label}</Text>\n        </Tooltip>\n      </div>\n    );\n  };\n\n  return (\n    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={setActive}\n        customItemRenderer={customItemRenderer}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-verticalnav-custom-items-renderer--custom-items-renderer",
@@ -349,6 +349,22 @@
             "summary": "((props: MenuItemProps) => Element) | undefined"
           },
           "defaultValue": null
+        }
+      },
+      "showTooltip": {
+        "name": "showTooltip",
+        "description": "Determines whether to show tooltip for menu label",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
         }
       },
       "className": {
@@ -491,6 +507,22 @@
           "summary": "((props: MenuItemProps) => Element) | undefined"
         },
         "defaultValue": null
+      }
+    },
+    "showTooltip": {
+      "name": "showTooltip",
+      "description": "Determines whether to show tooltip for menu label",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
       }
     },
     "className": {

@@ -310,11 +310,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+          "value": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+            "summary": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -422,11 +422,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+        "value": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
+          "summary": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
         },
         "defaultValue": {
           "summary": "{ }"

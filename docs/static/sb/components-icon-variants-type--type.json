@@ -308,9 +308,6 @@
           "name": "enum",
           "value": [
             "undefined",
-            "info",
-            "default",
-            "disabled",
             "primary",
             "alert",
             "warning",
@@ -319,6 +316,9 @@
             "accent2",
             "accent3",
             "accent4",
+            "default",
+            "disabled",
+            "info",
             "subtle",
             "white",
             "destructive",
@@ -343,7 +343,7 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+            "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
           },
           "defaultValue": null
         }
@@ -507,9 +507,6 @@
         "name": "enum",
         "value": [
           "undefined",
-          "info",
-          "default",
-          "disabled",
           "primary",
           "alert",
           "warning",
@@ -518,6 +515,9 @@
           "accent2",
           "accent3",
           "accent4",
+          "default",
+          "disabled",
+          "info",
           "subtle",
           "white",
           "destructive",
@@ -542,7 +542,7 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+          "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
         },
         "defaultValue": null
       }

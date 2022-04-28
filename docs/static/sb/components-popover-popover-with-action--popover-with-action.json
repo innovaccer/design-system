@@ -393,21 +393,6 @@
           "defaultValue": null
         }
       },
-      "open": {
-        "name": "open",
-        "description": "Handles open/close",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "boolean | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean | undefined"
-          },
-          "defaultValue": null
-        }
-      },
       "trigger": {
         "name": "trigger",
         "description": "Element triggering the `Popover`",
@@ -441,6 +426,21 @@
           "defaultValue": {
             "summary": "\"click\""
           }
+        }
+      },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
         }
       },
       "offset": {
@@ -711,21 +711,6 @@
         "defaultValue": null
       }
     },
-    "open": {
-      "name": "open",
-      "description": "Handles open/close",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "boolean | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean | undefined"
-        },
-        "defaultValue": null
-      }
-    },
     "trigger": {
       "name": "trigger",
       "description": "Element triggering the `Popover`",
@@ -759,6 +744,21 @@
         "defaultValue": {
           "summary": "\"click\""
         }
+      }
+    },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
       }
     },
     "offset": {

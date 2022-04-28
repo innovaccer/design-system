@@ -573,11 +573,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+          "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 358 more ... | \"clearOnEmptyBlur\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+            "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 358 more ... | \"clearOnEmptyBlur\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -980,11 +980,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+        "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 358 more ... | \"clearOnEmptyBlur\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | ... 356 more ... | \"clearOnEmptyBlur\">"
+          "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 358 more ... | \"clearOnEmptyBlur\">"
         },
         "defaultValue": {
           "summary": "{ }"

@@ -278,7 +278,7 @@
       },
       "tabs": {
         "name": "tabs",
-        "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n  Tab {\n    label: React.ReactText;\n    count?: number;\n    icon?: string;\n    disabled?: boolean;\n    className?: string;\n  }\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n</pre>",
+        "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n  Tab {\n    label: React.ReactText;\n    count?: number;\n    icon?: string;\n    disabled?: boolean;\n    className?: string;\n    isDismissible?: boolean;\n    onDismiss?: (tabInfo: object) => void;\n  }\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n| isDismissible | Determines if tab is dismissible | |\n| onDismiss | Called with tab info when a tab is being removed | |",
         "type": {
           "required": false,
           "name": "other",
@@ -391,7 +391,7 @@
     },
     "tabs": {
       "name": "tabs",
-      "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n  Tab {\n    label: React.ReactText;\n    count?: number;\n    icon?: string;\n    disabled?: boolean;\n    className?: string;\n  }\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n</pre>",
+      "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n  Tab {\n    label: React.ReactText;\n    count?: number;\n    icon?: string;\n    disabled?: boolean;\n    className?: string;\n    isDismissible?: boolean;\n    onDismiss?: (tabInfo: object) => void;\n  }\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n| isDismissible | Determines if tab is dismissible | |\n| onDismiss | Called with tab info when a tab is being removed | |",
       "type": {
         "required": false,
         "name": "other",

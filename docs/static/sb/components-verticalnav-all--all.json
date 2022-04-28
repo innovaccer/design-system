@@ -351,6 +351,22 @@
           "defaultValue": null
         }
       },
+      "showTooltip": {
+        "name": "showTooltip",
+        "description": "Determines whether to show tooltip for menu label",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -491,6 +507,22 @@
           "summary": "((props: MenuItemProps) => Element) | undefined"
         },
         "defaultValue": null
+      }
+    },
+    "showTooltip": {
+      "name": "showTooltip",
+      "description": "Determines whether to show tooltip for menu label",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
       }
     },
     "className": {

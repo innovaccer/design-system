@@ -249,24 +249,34 @@
     },
     "args": {},
     "argTypes": {
-      "type": {
-        "name": "type",
-        "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
         "type": {
-          "required": true,
-          "name": "enum",
-          "value": [
-            "data",
-            "resource"
-          ]
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
         },
         "table": {
           "type": {
-            "summary": "\"data\" | \"resource\""
+            "summary": "string | undefined"
           },
-          "defaultValue": {
-            "summary": "\"data\""
-          }
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
         }
       },
       "size": {
@@ -291,21 +301,6 @@
           }
         }
       },
-      "className": {
-        "name": "className",
-        "description": "Adds custom class",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "string | undefined"
-          },
-          "defaultValue": null
-        }
-      },
       "data": {
         "name": "data",
         "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
@@ -323,6 +318,26 @@
           }
         }
       },
+      "type": {
+        "name": "type",
+        "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "data",
+            "resource"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"data\" | \"resource\""
+          },
+          "defaultValue": {
+            "summary": "\"data\""
+          }
+        }
+      },
       "onSelect": {
         "name": "onSelect",
         "description": "Callback to be called when a row is selected",
@@ -334,37 +349,6 @@
         "table": {
           "type": {
             "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
-          },
-          "defaultValue": null
-        }
-      },
-      "error": {
-        "name": "error",
-        "description": "Set for error state of Table(in case of sync)",
-        "type": {
-          "required": true,
-          "name": "boolean"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean"
-          },
-          "defaultValue": {
-            "summary": "false"
-          }
-        }
-      },
-      "data-test": {
-        "name": "data-test",
-        "description": "Stores custom testing data private to the component.",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "string | undefined"
           },
           "defaultValue": null
         }
@@ -413,6 +397,22 @@
           },
           "defaultValue": {
             "summary": "1"
+          }
+        }
+      },
+      "error": {
+        "name": "error",
+        "description": "Set for error state of Table(in case of sync)",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
           }
         }
       },
@@ -742,24 +742,34 @@
   },
   "initialArgs": {},
   "argTypes": {
-    "type": {
-      "name": "type",
-      "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
       "type": {
-        "required": true,
-        "name": "enum",
-        "value": [
-          "data",
-          "resource"
-        ]
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
       },
       "table": {
         "type": {
-          "summary": "\"data\" | \"resource\""
+          "summary": "string | undefined"
         },
-        "defaultValue": {
-          "summary": "\"data\""
-        }
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
       }
     },
     "size": {
@@ -784,21 +794,6 @@
         }
       }
     },
-    "className": {
-      "name": "className",
-      "description": "Adds custom class",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "string | undefined"
-        },
-        "defaultValue": null
-      }
-    },
     "data": {
       "name": "data",
       "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
@@ -816,6 +811,26 @@
         }
       }
     },
+    "type": {
+      "name": "type",
+      "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "data",
+          "resource"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"data\" | \"resource\""
+        },
+        "defaultValue": {
+          "summary": "\"data\""
+        }
+      }
+    },
     "onSelect": {
       "name": "onSelect",
       "description": "Callback to be called when a row is selected",
@@ -827,37 +842,6 @@
       "table": {
         "type": {
           "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
-        },
-        "defaultValue": null
-      }
-    },
-    "error": {
-      "name": "error",
-      "description": "Set for error state of Table(in case of sync)",
-      "type": {
-        "required": true,
-        "name": "boolean"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean"
-        },
-        "defaultValue": {
-          "summary": "false"
-        }
-      }
-    },
-    "data-test": {
-      "name": "data-test",
-      "description": "Stores custom testing data private to the component.",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "string | undefined"
         },
         "defaultValue": null
       }
@@ -906,6 +890,22 @@
         },
         "defaultValue": {
           "summary": "1"
+        }
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Set for error state of Table(in case of sync)",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
         }
       }
     },

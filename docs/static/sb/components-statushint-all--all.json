@@ -262,16 +262,16 @@
           "required": false,
           "name": "enum",
           "value": [
-            "info",
-            "default",
             "alert",
             "warning",
-            "success"
+            "success",
+            "default",
+            "info"
           ]
         },
         "table": {
           "type": {
-            "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+            "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
           },
           "defaultValue": {
             "summary": "\"default\""
@@ -379,16 +379,16 @@
         "required": false,
         "name": "enum",
         "value": [
-          "info",
-          "default",
           "alert",
           "warning",
-          "success"
+          "success",
+          "default",
+          "info"
         ]
       },
       "table": {
         "type": {
-          "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+          "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
         },
         "defaultValue": {
           "summary": "\"default\""
