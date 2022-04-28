@@ -127,7 +127,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
       });
 
       return (
-        <>
+        <React.Fragment key={index}>
           {hasGroup && menu.group && expanded && (
             <div className={sectionClass}>
               <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
@@ -195,11 +195,11 @@ export const VerticalNav = (props: VerticalNavProps) => {
                 />
               );
             })}
-        </>
+        </React.Fragment>
       );
     });
 
-    return <>{list}</>;
+    return list;
   };
 
   const classes = classNames(
