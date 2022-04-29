@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text } from '@/index';
+import { Text, Tooltip } from '@/index';
 import { MenuItem, MenuItemProps } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getMenu, isMenuActive, ActiveMenu, Menu } from '@/utils/navigationHelper';
@@ -58,6 +58,10 @@ export interface VerticalNavProps extends BaseProps {
    * Option to pass Custom Item Renderer
    */
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  /**
+   * Determines whether to show tooltip for menu label
+   */
+  showTooltip: boolean;
 }
 
 /**
@@ -65,7 +69,7 @@ export interface VerticalNavProps extends BaseProps {
  */
 
 export const VerticalNav = (props: VerticalNavProps) => {
-  const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer } = props;
+  const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer, showTooltip } = props;
 
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
   const baseProps = extractBaseProps(props);
@@ -123,7 +127,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
       });
 
       return (
-        <>
+        <React.Fragment key={index}>
           {hasGroup && menu.group && expanded && (
             <div className={sectionClass}>
               <Text data-test="DesignSystem-VerticalNav--Section" size="small" weight="strong" appearance="subtle">
@@ -131,22 +135,53 @@ export const VerticalNav = (props: VerticalNavProps) => {
               </Text>
             </div>
           )}
-          <MenuItem
-            data-test="DesignSystem-VerticalNav--Item"
-            menu={menu}
-            expanded={expanded}
-            isActive={isActive}
-            hasSubmenu={hasSubmenu}
-            isChildren={false}
-            rounded={rounded}
-            isChildrenVisible={isChildrenVisible}
-            onClick={onClickHandler}
-            customItemRenderer={customItemRenderer}
-          />
+          {showTooltip ? (
+            <Tooltip tooltip={menu.label} position="right">
+              <MenuItem
+                data-test="DesignSystem-VerticalNav--Item"
+                menu={menu}
+                expanded={expanded}
+                isActive={isActive}
+                hasSubmenu={hasSubmenu}
+                isChildren={false}
+                rounded={rounded}
+                isChildrenVisible={isChildrenVisible}
+                onClick={onClickHandler}
+                customItemRenderer={customItemRenderer}
+              />
+            </Tooltip>
+          ) : (
+            <MenuItem
+              data-test="DesignSystem-VerticalNav--Item"
+              menu={menu}
+              expanded={expanded}
+              isActive={isActive}
+              hasSubmenu={hasSubmenu}
+              isChildren={false}
+              rounded={rounded}
+              isChildrenVisible={isChildrenVisible}
+              onClick={onClickHandler}
+              customItemRenderer={customItemRenderer}
+            />
+          )}
           {menuState[menu.name] &&
             menu.subMenu &&
             menu.subMenu.map((subMenu, id) => {
-              return (
+              return showTooltip ? (
+                <Tooltip tooltip={subMenu.label} position="right">
+                  <MenuItem
+                    key={id}
+                    menu={subMenu}
+                    expanded={expanded}
+                    hasSubmenu={false}
+                    isChildren={true}
+                    rounded={rounded}
+                    onClick={onClickHandler}
+                    isActive={isMenuActive(menus, subMenu, active)}
+                    customItemRenderer={customItemRenderer}
+                  />
+                </Tooltip>
+              ) : (
                 <MenuItem
                   key={id}
                   menu={subMenu}
@@ -160,11 +195,11 @@ export const VerticalNav = (props: VerticalNavProps) => {
                 />
               );
             })}
-        </>
+        </React.Fragment>
       );
     });
 
-    return <>{list}</>;
+    return list;
   };
 
   const classes = classNames(
@@ -186,6 +221,7 @@ VerticalNav.defaultProps = {
   expanded: true,
   autoCollapse: true,
   rounded: false,
+  showTooltip: false,
 };
 
 export default VerticalNav;

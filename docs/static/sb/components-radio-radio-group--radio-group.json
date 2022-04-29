@@ -1,0 +1,714 @@
+{
+  "args": {},
+  "componentId": "components-radio-radio-group",
+  "title": "Components/Radio/Radio Group",
+  "kind": "Components/Radio/Radio Group",
+  "id": "components-radio-radio-group--radio-group",
+  "name": "Radio Group",
+  "story": "Radio Group",
+  "component": {
+    "displayName": "Radio",
+    "__docgenInfo": {
+      "description": "",
+      "displayName": "Radio",
+      "props": {
+        "size": {
+          "defaultValue": {
+            "value": "\"regular\""
+          },
+          "description": "Size of `Radio`",
+          "name": "size",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"regular\""
+              },
+              {
+                "value": "\"tiny\""
+              }
+            ]
+          }
+        },
+        "disabled": {
+          "defaultValue": null,
+          "description": "Disables the `Radio`, making it unable to be pressed",
+          "name": "disabled",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "label": {
+          "defaultValue": null,
+          "description": "Describes Label of the `Radio`",
+          "name": "label",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "helpText": {
+          "defaultValue": null,
+          "description": "Describes Help Text of the `Radio`",
+          "name": "helpText",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "name": {
+          "defaultValue": null,
+          "description": "Name of the `Radio`",
+          "name": "name",
+          "required": true,
+          "type": {
+            "name": "string"
+          }
+        },
+        "value": {
+          "defaultValue": null,
+          "description": "Name of the `Radio`",
+          "name": "value",
+          "required": true,
+          "type": {
+            "name": "string"
+          }
+        },
+        "defaultChecked": {
+          "defaultValue": null,
+          "description": "Denotes initial selection in case of Uncontrolled `Radio`",
+          "name": "defaultChecked",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "checked": {
+          "defaultValue": null,
+          "description": "Denotes selection in case of Controlled `Radio`",
+          "name": "checked",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "onChange": {
+          "defaultValue": null,
+          "description": "Callback function called when user the selects an option",
+          "name": "onChange",
+          "required": false,
+          "type": {
+            "name": "((event: ChangeEvent) => void) | undefined"
+          }
+        },
+        "className": {
+          "defaultValue": null,
+          "description": "Adds custom class",
+          "name": "className",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "data-test": {
+          "defaultValue": null,
+          "description": "Stores custom testing data private to the component.",
+          "name": "data-test",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "props": {
+          "exclude": [
+            "key"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/atoms/radio/__stories__/RadioGroup.story.jsx",
+    "storySource": {
+      "source": "() => (\n  <div>\n    <Radio size={'regular'} label={'High'} name={'Priority'} value={'High'} defaultChecked={true} />\n    <Radio size={'regular'} label={'Medium'} name={'Priority'} value={'Medium'} />\n    <Radio size={'regular'} label={'Low'} name={'Priority'} value={'Low'} />\n  </div>\n)"
+    },
+    "__isArgsStory": false,
+    "__id": "components-radio-radio-group--radio-group",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "size": {
+        "name": "size",
+        "description": "Size of `Radio`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "regular",
+            "tiny"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"regular\" | \"tiny\""
+          },
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
+        }
+      },
+      "disabled": {
+        "name": "disabled",
+        "description": "Disables the `Radio`, making it unable to be pressed",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "label": {
+        "name": "label",
+        "description": "Describes Label of the `Radio`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "helpText": {
+        "name": "helpText",
+        "description": "Describes Help Text of the `Radio`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "name": {
+        "name": "name",
+        "description": "Name of the `Radio`",
+        "type": {
+          "required": true,
+          "name": "string"
+        },
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "value": {
+        "name": "value",
+        "description": "Name of the `Radio`",
+        "type": {
+          "required": true,
+          "name": "string"
+        },
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "defaultChecked": {
+        "name": "defaultChecked",
+        "description": "Denotes initial selection in case of Uncontrolled `Radio`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "checked": {
+        "name": "checked",
+        "description": "Denotes selection in case of Controlled `Radio`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onChange": {
+        "name": "onChange",
+        "description": "Callback function called when user the selects an option",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: ChangeEvent) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: ChangeEvent) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "size": {
+      "name": "size",
+      "description": "Size of `Radio`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "regular",
+          "tiny"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"regular\" | \"tiny\""
+        },
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
+      }
+    },
+    "disabled": {
+      "name": "disabled",
+      "description": "Disables the `Radio`, making it unable to be pressed",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "label": {
+      "name": "label",
+      "description": "Describes Label of the `Radio`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "helpText": {
+      "name": "helpText",
+      "description": "Describes Help Text of the `Radio`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "name": {
+      "name": "name",
+      "description": "Name of the `Radio`",
+      "type": {
+        "required": true,
+        "name": "string"
+      },
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "value": {
+      "name": "value",
+      "description": "Name of the `Radio`",
+      "type": {
+        "required": true,
+        "name": "string"
+      },
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "defaultChecked": {
+      "name": "defaultChecked",
+      "description": "Denotes initial selection in case of Uncontrolled `Radio`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "checked": {
+      "name": "checked",
+      "description": "Denotes selection in case of Controlled `Radio`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onChange": {
+      "name": "onChange",
+      "description": "Callback function called when user the selects an option",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: ChangeEvent) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: ChangeEvent) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

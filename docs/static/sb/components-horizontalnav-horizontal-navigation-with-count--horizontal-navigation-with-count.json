@@ -1,0 +1,401 @@
+{
+  "args": {},
+  "componentId": "components-horizontalnav-horizontal-navigation-with-count",
+  "title": "Components/HorizontalNav/Horizontal Navigation With Count",
+  "kind": "Components/HorizontalNav/Horizontal Navigation With Count",
+  "id": "components-horizontalnav-horizontal-navigation-with-count--horizontal-navigation-with-count",
+  "name": "Horizontal Navigation With Count",
+  "story": "Horizontal Navigation With Count",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'to-dos',\n      label: 'To-dos',\n      count: 15\n    },\n    {\n      name: 'activity_received',\n      label: 'Activity received',\n      count: 7\n    },\n    {\n      name: 'activity_sent',\n      label: 'Activity sent',\n      count: 9\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'to-dos'\n  });\n\n  const onClickHandler = (menu) => {\n    console.log('menu-clicked: ', menu);\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"d-flex align-items-center py-6\" style={{ background: 'var(--secondary-lightest)' }}>\n      <HorizontalNav\n        className=\"w-100 justify-content-center\"\n        menus={data}\n        active={active}\n        onClick={onClickHandler}\n      />\n    </div>\n  );\n}"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/horizontalNav/__stories__/withCount.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      name: 'to-dos',\n      label: 'To-dos',\n      count: 15,\n    },\n    {\n      name: 'activity_received',\n      label: 'Activity received',\n      count: 7,\n    },\n    {\n      name: 'activity_sent',\n      label: 'Activity sent',\n      count: 9,\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'to-dos',\n  });\n\n  const onClickHandler = (menu) => {\n    action(`menu-clicked: ${JSON.stringify(menu)}`)();\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"d-flex align-items-center py-6\" style={{ background: 'var(--secondary-lightest)' }}>\n      <HorizontalNav className=\"w-100 justify-content-center\" menus={data} active={active} onClick={onClickHandler} />\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-horizontalnav-horizontal-navigation-with-count--horizontal-navigation-with-count",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((menu: Menu) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((menu: Menu) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "menus": {
+        "name": "menus",
+        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Menu[]"
+        },
+        "table": {
+          "type": {
+            "summary": "Menu[]"
+          },
+          "defaultValue": null
+        }
+      },
+      "active": {
+        "name": "active",
+        "description": "Sets menu as active",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ActiveMenu | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "ActiveMenu | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((menu: Menu) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((menu: Menu) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "menus": {
+      "name": "menus",
+      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Menu[]"
+      },
+      "table": {
+        "type": {
+          "summary": "Menu[]"
+        },
+        "defaultValue": null
+      }
+    },
+    "active": {
+      "name": "active",
+      "description": "Sets menu as active",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ActiveMenu | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "ActiveMenu | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

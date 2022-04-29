@@ -6,7 +6,7 @@ import Card from '@/components/atoms/card';
 export const monthsInView = () => {
   const style = {
     flexDirection: 'column',
-  } as const;
+  };
   // to freeze the object for typescript
 
   return (

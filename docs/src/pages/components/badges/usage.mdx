@@ -8,35 +8,87 @@ showMobile: true
 Badges contain short labels that help in 'tagging' entities. The container of a badge is rounded at the corners.
 <br/>
 
-#### Types
+### Types
 <br />
 
-##### Solid
+#### Solid
 
 Solid badges are used to highlight important information on the page so that they can be recognized easily. They use solid color to easily pop out in a page.
-<Preview name='badge-solid-warning' />
+<Preview name='components-badge-solid-warning--solid-warning' />
 
-##### Subtle
+#### Subtle
 
 Subtle badges are used when a lot of entities on a single page need tagging/labeling. In that case, using solid badges becomes a bit overwhelming e.g. tags in a list. This is why subtle badges use the lightest shade of the colors.
-<Preview name='badge-subtle-warning' />
+<Preview name='components-badge-subtle-warning--subtle-warning' />
 <br/>
 
-#### Appearances
+### Appearances
 A badge comes in 9 appearances.
-<Preview name='appearance' />
+<Preview name='components-badge-variants-appearance--appearance' />
 <br/>
 
-#### Usage
+### Properties
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Appearance</td>
+    <td>
+        <ul>
+            <li>Jal</li>
+            <li>Stone</li>
+            <li>Neem</li>
+            <li>Haldi</li>
+            <li>Mirch</li>
+            <li>Tawak</li>
+            <li>Nimbu</li>
+            <li>Neel</li>
+            <li>Jamun</li>
+        </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Subtle<br/><em>(optional)</em></td>
+    <td>
+        <ul>
+            <li>True</li>
+            <li>False</li>
+        </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Max width</td>
+    <td>160px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius</td>
+    <td>3px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+    <td>2px, 4px, 2px, 4px</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
-##### Spacing between badges
+### Usage
+<br/>
+
+#### Spacing between badges
 Badges should maintain a **minimum spacing of 8px** from the content on either side.
 
 ![Spacing between badges](./images/badges-1.png)
 <br/>
 
-##### Badges vs Pills
+#### Badges vs Pills
 Badges are used for tagging entities while pills are used to display count of entities.
 
 ![When to use badges vs pills](./images/badges-2.png)

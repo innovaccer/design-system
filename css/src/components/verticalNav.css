@@ -25,6 +25,7 @@
   align-items: center;
   cursor: pointer;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
+  width: var(--spacing-9);
 }
 
 .MenuItem--horizontal {
@@ -71,6 +72,11 @@
 .MenuItem--active,
 .MenuItem--active:hover {
   background: var(--primary-lightest);
+  box-shadow: none;
+}
+
+.MenuItem:active {
+  background: var(--primary-lighter);
   box-shadow: none;
 }
 

@@ -10,44 +10,72 @@ Cards make it easy to scan for relevant and actionable information by grouping t
 Cards can be arranged vertically, horizontally or in a grid.
 <br/>
 
-#### Types
+### Types
 <br/>
 
-##### Default
+#### Default
 
 Default card is the most used type of card. It consists of a shadow, `Shadow 10` by default.
-<Preview name='default-card' />
+<Preview name='components-card-default-card--default-card' />
 
-##### Subdued
+#### Subdued
 
 Subdued card is used to highlight a section inside a card. The condition is that this section must be at the edges (top, right, bottom, left) and not somewhere in between.
-<Preview name='card-subdued' />
+<Preview name='components-card-subdued--subdued' />
 
-##### Flat
+#### Flat
 
 Flat card is used to create sections within a default card i.e. card inside a card.
-<Preview name='card-flat' />
+<Preview name='components-card-flat--flat' />
 <br/>
 
-#### Usage
+### Properties
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Style</td>
+    <td>
+        <ul>
+            <li>Shadow 10</li>
+            <li>Shadow 20</li>
+            <li>Shadow 30</li>
+            <li>Subdued</li>
+            <li>No shadow</li>
+        </ul>
+    </td>
+    <td>Shadow 10</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius</td>
+    <td>4px</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
-##### Scrolling inside a card
+### Usage
+<br/>
+
+#### Scrolling inside a card
 To indicate that the content is scrollable within a card, use a scrollbar. The dividers in the header and the footer should only be shown when the content is scrollable.
 
-<Preview name="default-card" />
+<Preview name="components-card-default-card--default-card" />
 
-##### Highlighting a section
+#### Highlighting a section
 Subdued card is used to highlight a section inside a card. The condition is that this section must be at the edges (bottom, right, etc.) and not somewhere in between.
 
-<Preview name="card-subdued" />
+<Preview name="components-card-subdued--subdued" />
 
-##### Card within a default card
+#### Card within a default card
 Flat card is used when there is a need to create sections within a default card i.e. card inside a card.
 
-<Preview name="card-card-within-a-card" />
+<Preview name="components-card-card-within-a-card--card-within-a-card" />
 
-##### Empty card
+#### Empty card
 When data is not available, the card remains empty. In that case, an illustration and/or an error message is displayed.
 
-<Preview name="default-card" />
+<Preview name="components-card-default-card--default-card" />

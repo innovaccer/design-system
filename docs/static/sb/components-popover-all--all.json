@@ -1,0 +1,920 @@
+{
+  "args": {},
+  "componentId": "components-popover-all",
+  "title": "Components/Popover/All",
+  "kind": "Components/Popover/All",
+  "id": "components-popover-all--all",
+  "name": "All",
+  "story": "All",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  return(\n    <div className='mb-11'>\n      <Popover\n        position=\"bottom-start\"\n        on=\"click\"\n        trigger={<Button appearance=\"basic\">Open Popup</Button>}\n      >\n        <div style={{ width: 100 }} className='mx-6 my-6'>\n          <Text>Popup</Text>\n          <Button appearance=\"primary\" className=\"mt-4\">Click</Button>\n        </div>\n      </Popover>\n    </div>\n  );\n}",
+        "props": {
+          "exclude": [
+            "offset"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/molecules/popover/__stories__/index.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const [open, setOpen] = React.useState(false);\n  const position = 'bottom';\n  const on = 'hover';\n  const appendToBody = true;\n  const hoverable = true;\n  const closeOnBackdropClick = true;\n  const hideOnReferenceEscape = true;\n  const dark = false;\n\n  const onToggle = () => {\n    setOpen(!open);\n  };\n\n  const trigger = <Button appearance=\"basic\">Open Popup</Button>;\n\n  const options = {\n    trigger,\n    position,\n    appendToBody,\n    dark,\n    closeOnBackdropClick,\n    hideOnReferenceEscape,\n    on,\n    hoverable,\n    open,\n    onToggle,\n  };\n  if (on === 'hover') delete options.onToggle;\n\n  return (\n    <Popover {...options}>\n      <div style={{ width: 100 }} className=\"mx-6 my-6\">\n        <Text>Popup</Text>\n        <Button className=\"mt-4\" appearance=\"primary\" onClick={action('button clicked inside popover')}>\n          Click\n        </Button>\n      </div>\n    </Popover>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-popover-all--all",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "children": {
+        "name": "children",
+        "description": "To be rendered in `Popover` component",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "position": {
+        "name": "position",
+        "description": "Position to place the `trigger`",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "bottom",
+            "top",
+            "top-start",
+            "top-end",
+            "bottom-start",
+            "bottom-end",
+            "left",
+            "right"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+          },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "Position",
+                "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
+              }
+            ],
+            "returns": false
+          },
+          "defaultValue": {
+            "summary": "\"bottom\""
+          }
+        }
+      },
+      "onToggle": {
+        "name": "onToggle",
+        "description": "Callback after `Popover` is toggled",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((open: boolean, type?: string | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((open: boolean, type?: string | undefined) => void) | undefined"
+          },
+          "jsDocTags": {
+            "params": [
+              {
+                "name": "type",
+                "description": "'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'"
+              }
+            ],
+            "returns": false
+          },
+          "defaultValue": null
+        }
+      },
+      "dark": {
+        "name": "dark",
+        "description": "Changes background of `Popover`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "customStyle": {
+        "name": "customStyle",
+        "description": "Adds custom CSS to `Popover` element\n\n<pre className=\"DocPage-codeBlock\">\nCustomStyle {\n height?: number | string;\n width?: number | string;\n minWidth?: number | string;\n minHeight?: number | string;\n maxHeight?: number | string;\n maxWidth?: number | string;\n}\n</pre>",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "CustomStyle"
+        },
+        "table": {
+          "type": {
+            "summary": "CustomStyle"
+          },
+          "defaultValue": {
+            "summary": "{ }"
+          }
+        }
+      },
+      "triggerClass": {
+        "name": "triggerClass",
+        "description": "Class to be added to PopperWrapper trigger",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "hideOnReferenceEscape": {
+        "name": "hideOnReferenceEscape",
+        "description": "Hides the `Popover` when its reference element is outside of the `Popover` boundaries",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "boundaryElement": {
+        "name": "boundaryElement",
+        "description": "BoundaryElement for `Popover`",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Element | RefObject<HTMLElement>"
+        },
+        "table": {
+          "type": {
+            "summary": "Element | RefObject<HTMLElement>"
+          },
+          "defaultValue": null
+        }
+      },
+      "animationClass": {
+        "name": "animationClass",
+        "description": "",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "{ open: string; close: string; } | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "{ open: string; close: string; } | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "trigger": {
+        "name": "trigger",
+        "description": "Element triggering the `Popover`",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
+          },
+          "defaultValue": null
+        }
+      },
+      "on": {
+        "name": "on",
+        "description": "Event triggering the `Popover`",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "click",
+            "hover"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"click\" | \"hover\""
+          },
+          "defaultValue": {
+            "summary": "\"click\""
+          }
+        }
+      },
+      "offset": {
+        "name": "offset",
+        "description": "Vertical offset from trigger\n\n<pre className=\"DocPage-codeBlock\">\n{\n   small: '2px',\n   medium: '4px',\n   large: '8px'\n}\n</pre>",
+        "type": {
+          "required": true,
+          "name": "enum",
+          "value": [
+            "large",
+            "small",
+            "medium"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"large\" | \"small\" | \"medium\""
+          },
+          "defaultValue": {
+            "summary": "\"large\""
+          }
+        }
+      },
+      "closeOnBackdropClick": {
+        "name": "closeOnBackdropClick",
+        "description": "Close on Backdrop click",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "closeOnScroll": {
+        "name": "closeOnScroll",
+        "description": "Close on `boundaryElement` scroll",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "appendToBody": {
+        "name": "appendToBody",
+        "description": "Appends `trigger` wrapper inside body",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "hoverable": {
+        "name": "hoverable",
+        "description": "Holds `Popover` on hover\n\n**Use only if you are using `on = 'hover'`**",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "children": {
+      "name": "children",
+      "description": "To be rendered in `Popover` component",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "position": {
+      "name": "position",
+      "description": "Position to place the `trigger`",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "bottom",
+          "top",
+          "top-start",
+          "top-end",
+          "bottom-start",
+          "bottom-end",
+          "left",
+          "right"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+        },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "Position",
+              "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
+            }
+          ],
+          "returns": false
+        },
+        "defaultValue": {
+          "summary": "\"bottom\""
+        }
+      }
+    },
+    "onToggle": {
+      "name": "onToggle",
+      "description": "Callback after `Popover` is toggled",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((open: boolean, type?: string | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((open: boolean, type?: string | undefined) => void) | undefined"
+        },
+        "jsDocTags": {
+          "params": [
+            {
+              "name": "type",
+              "description": "'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'"
+            }
+          ],
+          "returns": false
+        },
+        "defaultValue": null
+      }
+    },
+    "dark": {
+      "name": "dark",
+      "description": "Changes background of `Popover`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "customStyle": {
+      "name": "customStyle",
+      "description": "Adds custom CSS to `Popover` element\n\n<pre className=\"DocPage-codeBlock\">\nCustomStyle {\n height?: number | string;\n width?: number | string;\n minWidth?: number | string;\n minHeight?: number | string;\n maxHeight?: number | string;\n maxWidth?: number | string;\n}\n</pre>",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "CustomStyle"
+      },
+      "table": {
+        "type": {
+          "summary": "CustomStyle"
+        },
+        "defaultValue": {
+          "summary": "{ }"
+        }
+      }
+    },
+    "triggerClass": {
+      "name": "triggerClass",
+      "description": "Class to be added to PopperWrapper trigger",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "hideOnReferenceEscape": {
+      "name": "hideOnReferenceEscape",
+      "description": "Hides the `Popover` when its reference element is outside of the `Popover` boundaries",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "boundaryElement": {
+      "name": "boundaryElement",
+      "description": "BoundaryElement for `Popover`",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Element | RefObject<HTMLElement>"
+      },
+      "table": {
+        "type": {
+          "summary": "Element | RefObject<HTMLElement>"
+        },
+        "defaultValue": null
+      }
+    },
+    "animationClass": {
+      "name": "animationClass",
+      "description": "",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "{ open: string; close: string; } | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "{ open: string; close: string; } | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "trigger": {
+      "name": "trigger",
+      "description": "Element triggering the `Popover`",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
+        },
+        "defaultValue": null
+      }
+    },
+    "on": {
+      "name": "on",
+      "description": "Event triggering the `Popover`",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "click",
+          "hover"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"click\" | \"hover\""
+        },
+        "defaultValue": {
+          "summary": "\"click\""
+        }
+      }
+    },
+    "offset": {
+      "name": "offset",
+      "description": "Vertical offset from trigger\n\n<pre className=\"DocPage-codeBlock\">\n{\n   small: '2px',\n   medium: '4px',\n   large: '8px'\n}\n</pre>",
+      "type": {
+        "required": true,
+        "name": "enum",
+        "value": [
+          "large",
+          "small",
+          "medium"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"large\" | \"small\" | \"medium\""
+        },
+        "defaultValue": {
+          "summary": "\"large\""
+        }
+      }
+    },
+    "closeOnBackdropClick": {
+      "name": "closeOnBackdropClick",
+      "description": "Close on Backdrop click",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "closeOnScroll": {
+      "name": "closeOnScroll",
+      "description": "Close on `boundaryElement` scroll",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "appendToBody": {
+      "name": "appendToBody",
+      "description": "Appends `trigger` wrapper inside body",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "hoverable": {
+      "name": "hoverable",
+      "description": "Holds `Popover` on hover\n\n**Use only if you are using `on = 'hover'`**",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

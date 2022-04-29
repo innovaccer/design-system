@@ -1,0 +1,256 @@
+{
+  "args": {},
+  "componentId": "components-table-nested-table-with-nested-cards",
+  "title": "Components/Table/Nested Table With Nested Cards",
+  "kind": "Components/Table/Nested Table With Nested Cards",
+  "id": "components-table-nested-table-with-nested-cards--nested-table-with-nested-cards",
+  "name": "Nested Table With Nested Cards",
+  "story": "Nested Table With Nested Cards",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const data = [\n    {\n      \"firstName\": \"Brooke\",\n      \"lastName\": \"Heeran\",\n      lastRun: \"Yesterday 3:14 PM\",\n      \"name\": \"Risk Analysis\",\n      \"type\": \"Batch Execution\",\n      status: \"Failed\",\n      statusType: \"Error\",\n      errorCode: 2204,\n      className: \"File not found\",\n      errorMessage: \"Cannot fetch files\"\n\n    },\n    {\n      \"firstName\": \"Frazer\",\n      \"lastName\": \"Cathro\",\n      lastRun: \"Yesterday 11:15 AM\",\n      \"name\": \"Quality\",\n      \"type\": \"Batch Execution\",\n      status: \"Completed\",\n      statusType: \"Done\",\n      className: \"Executed\",\n    },\n    {\n      \"firstName\": \"Lemmie\",\n      \"lastName\": \"Ciric\",\n      lastRun: \"Yesterday 9:17 PM\",\n      \"name\": \"Claims\",\n      \"type\": \"Test Function\",\n      status: \"Completed\",\n      statusType: \"Done\",\n      className: \"Executed\",\n    },\n  ];\n\n  const schema = [\n    {\n      name: 'lastRun',\n      displayName: 'Last Run',\n      width: '25%',\n    },\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: '15%',\n    },\n    {\n      name: 'type',\n      displayName: 'Type',\n      width: '20%',\n    },\n    {\n      name: 'status',\n      displayName: 'Status',\n      width: '20%',\n      cellType: 'STATUS_HINT',\n      translate: a => ({\n        title: a.status,\n        statusAppearance: (a.status === 'Failed') ? 'alert' : 'success'\n      }),\n      filters: [\n        { label: 'Failed', value: 'failed' },\n        { label: 'Completed', value: 'completed' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          if (a.status.toLowerCase() === filter) return true;\n        }\n        return false;\n      },\n    },\n    {\n      name: 'user',\n      displayName: 'User',\n      width: '20%',\n      translate: a => ({\n        title: `${a.lastName}, ${a.firstName}`,\n        firstName: a.firstName,\n        lastName: a.lastName\n      }),\n      cellType: 'AVATAR_WITH_TEXT',\n    },\n  ];\n\n  const nestedRowRenderer = (props) => {\n    const {\n      data,\n      rowIndex\n    } = props;\n    if(rowIndex % 2){\n      return false;\n    }\n    return (\n      <CardSubdued className=\"ml-7 mb-4 mt-3 mr-4\">\n        <div className=\"d-flex flex-row\">\n          <div style={{ width: '17%' }}>\n            <Text weight=\"medium\">Type</Text>\n          </div>\n          <Text>{data.type}</Text>\n        </div>\n        {data.errorCode && (\n          <div className=\"d-flex flex-row\">\n            <div style={{ width: '17%' }}>\n              <Text weight=\"medium\">Error code</Text>\n            </div>\n            <Text>{data.errorCode}</Text>\n          </div>\n        )}\n        <div className=\"d-flex flex-row\">\n          <div style={{ width: '17%' }}>\n            <Text weight=\"medium\">Class name</Text>\n          </div>\n          <Text>{data.className}</Text>\n        </div>\n        {data.errorMessage && (\n          <div className=\"d-flex flex-row\">\n            <div style={{ width: '17%' }}>\n              <Text weight=\"medium\">Error message</Text>\n            </div>\n            <Text>{data.errorMessage}</Text>\n          </div>\n        )}\n      </CardSubdued>\n    );\n  }\n\n  return (\n    <Card>\n      <Table\n        data={data}\n        schema={schema}\n        withHeader={true}\n        headerOptions={{\n          withSearch: true,\n          dynamicColumn: false\n        }}\n        separator={false}\n        showMenu={false}\n        nestedRows={true}\n        filterPosition=\"HEADER\"\n        nestedRowRenderer={nestedRowRenderer}\n        filterList={{\n          status: ['failed', 'completed']\n        }}\n      />\n    </Card>\n  );\n}",
+        "title": "Nested Table With Nested Cards",
+        "props": {
+          "components": {},
+          "exclude": [
+            "showHead"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/table/__stories__/NestedTableWithNestedCard.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      firstName: 'Brooke',\n      lastName: 'Heeran',\n      lastRun: 'Yesterday 3:14 PM',\n      name: 'Risk Analysis',\n      type: 'Batch Execution',\n      status: 'Failed',\n      statusType: 'Error',\n      errorCode: 2204,\n      className: 'File not found',\n      errorMessage: 'Cannot fetch files',\n    },\n    {\n      firstName: 'Frazer',\n      lastName: 'Cathro',\n      lastRun: 'Yesterday 11:15 AM',\n      name: 'Quality',\n      type: 'Batch Execution',\n      status: 'Completed',\n      statusType: 'Done',\n      className: 'Executed',\n    },\n    {\n      firstName: 'Lemmie',\n      lastName: 'Ciric',\n      lastRun: 'Yesterday 9:17 PM',\n      name: 'Claims',\n      type: 'Test Function',\n      status: 'Completed',\n      statusType: 'Done',\n      className: 'Executed',\n    },\n  ];\n\n  const schema = [\n    {\n      name: 'lastRun',\n      displayName: 'Last Run',\n      width: '25%',\n    },\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: '15%',\n    },\n    {\n      name: 'type',\n      displayName: 'Type',\n      width: '20%',\n    },\n    {\n      name: 'status',\n      displayName: 'Status',\n      width: '20%',\n      cellType: 'STATUS_HINT',\n      translate: (a) => ({\n        title: a.status,\n        statusAppearance: a.status === 'Failed' ? 'alert' : 'success',\n      }),\n      filters: [\n        { label: 'Failed', value: 'failed' },\n        { label: 'Completed', value: 'completed' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          if (a.status.toLowerCase() === filter) return true;\n        }\n        return false;\n      },\n    },\n    {\n      name: 'user',\n      displayName: 'User',\n      width: '20%',\n      translate: (a) => ({\n        title: `${a.lastName}, ${a.firstName}`,\n        firstName: a.firstName,\n        lastName: a.lastName,\n      }),\n      cellType: 'AVATAR_WITH_TEXT',\n    },\n  ];\n\n  const nestedRowRenderer = (props) => (\n    <CardSubdued className=\"ml-7 mb-4 mt-3 mr-4\">\n      <div className=\"d-flex flex-row\">\n        <div style={{ width: '17%' }}>\n          <Text weight=\"medium\">Type</Text>\n        </div>\n        <Text>{props.data.type}</Text>\n      </div>\n      {props.data.errorCode && (\n        <div className=\"d-flex flex-row\">\n          <div style={{ width: '17%' }}>\n            <Text weight=\"medium\">Error code</Text>\n          </div>\n          <Text>{props.data.errorCode}</Text>\n        </div>\n      )}\n      <div className=\"d-flex flex-row\">\n        <div style={{ width: '17%' }}>\n          <Text weight=\"medium\">Class name</Text>\n        </div>\n        <Text>{props.data.className}</Text>\n      </div>\n      {props.data.errorMessage && (\n        <div className=\"d-flex flex-row\">\n          <div style={{ width: '17%' }}>\n            <Text weight=\"medium\">Error message</Text>\n          </div>\n          <Text>{props.data.errorMessage}</Text>\n        </div>\n      )}\n    </CardSubdued>\n  );\n\n  return (\n    <Card>\n      <Table\n        data={data}\n        schema={schema}\n        withHeader={true}\n        headerOptions={{\n          withSearch: true,\n          dynamicColumn: false,\n        }}\n        separator={false}\n        showMenu={false}\n        nestedRows={true}\n        filterPosition=\"HEADER\"\n        nestedRowRenderer={nestedRowRenderer}\n        filterList={{\n          status: ['failed', 'completed'],\n        }}\n      />\n    </Card>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-table-nested-table-with-nested-cards--nested-table-with-nested-cards",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

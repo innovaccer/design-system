@@ -5,7 +5,7 @@ import { storyOptions } from '../Options';
 import { OptionType } from '../../DropdownList';
 import { Uncontrolled, Controlled } from '../_common_/types';
 
-const labelMapping: { [key] } = {
+const labelMapping = {
   ['DEFAULT']: 'Default',
   ['WITH_ICON']: 'Icon',
   ['WITH_META']: 'SubInfo',
@@ -31,7 +31,7 @@ export const loadingType = () => {
           <div style={style} key={ind}>
             <Text weight="strong">{labelMapping[type]}</Text>
             <br />
-            <Dropdown options={storyOptions.slice(0, 5)} optionType={type as OptionType} loading={true} />
+            <Dropdown options={storyOptions.slice(0, 5)} optionType={type} loading={true} />
           </div>
         );
       })}

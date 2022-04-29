@@ -1,0 +1,248 @@
+{
+  "args": {},
+  "componentId": "others-styles-background",
+  "title": "Others/Styles/Background",
+  "kind": "Others/Styles/Background",
+  "id": "others-styles-background--background",
+  "name": "Background",
+  "story": "Background",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "page": null,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": null
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "story",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/css-utilities/Background/Background.story.tsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      className: 'bg-primary',\n      properties: 'background-color: var(--primary);',\n    },\n    {\n      className: 'bg-secondary',\n      properties: 'background-color: var(--secondary);',\n    },\n    {\n      className: 'bg-secondary-lighter',\n      properties: 'background-color: var(--secondary-lighter);',\n    },\n    {\n      className: 'bg-secondary-lightest',\n      properties: 'background-color: var(--secondary-lightest);',\n    },\n    {\n      className: 'bg-success',\n      properties: 'background-color: var(--success);',\n    },\n    {\n      className: 'bg-warning',\n      properties: 'background-color: var(--warning);',\n    },\n    {\n      className: 'bg-danger',\n      properties: 'background-color: var(--alert);',\n    },\n    {\n      className: 'bg-light',\n      properties: 'background-color: var(--white);',\n    },\n    {\n      className: 'bg-dark',\n      properties: 'background-color: var(--inverse);',\n    },\n    {\n      className: 'bg-transparent',\n      properties: 'background-color: transparent;',\n    },\n  ];\n\n  return (\n    <div>\n      <Heading size=\"xxl\">Background color</Heading>\n      <br />\n      <Text weight=\"strong\">Easily set the background of an element to any contextual class</Text>\n      <div\n        style={{\n          height: '250px',\n        }}\n        className=\"mt-5 mb-8\"\n      >\n        <Card className=\"h-100\">\n          <Table\n            data={data}\n            schema={utilitiesSchema}\n            headerOptions={{\n              withSearch: true,\n            }}\n            size={'standard'}\n            showMenu={false}\n          />\n        </Card>\n      </div>\n      <Heading size=\"m\">Examples</Heading>\n      <Paragraph>Here are some representative examples of these classes:</Paragraph>\n      &nbsp;\n      <div className=\"p-7 mb-4 bg-primary\">.bg-primary</div>\n      <div className=\"p-7 mb-4 bg-secondary\">.bg-secondary</div>\n      <div className=\"p-7 mb-4 bg-secondary-lighter\">.bg-secondary-lighter</div>\n      <div className=\"p-7 mb-4 bg-secondary-lightest\">.bg-secondary-lightest</div>\n      <div className=\"p-7 mb-4 bg-success \">.bg-success</div>\n      <div className=\"p-7 mb-4 bg-danger \">.bg-danger</div>\n      <div className=\"p-7 mb-4 bg-warning text-dark\">.bg-warning</div>\n      <div className=\"p-7 mb-4 bg-light text-dark\">.bg-light</div>\n      <div className=\"p-7 mb-4 bg-transparent text-dark\">.bg-transparent</div>\n      <div className=\"p-7 mb-4 bg-dark Utilities-text--color\">.bg-dark</div>\n      &nbsp;\n      <div className=\"DocPage-codeBlock pb-5 pt-5 pl-5\">\n        {'<div className=\"p-7 mb-4 bg-primary\" >.bg-primary </div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-secondary\">.bg-secondary </div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-secondary-lighter\">.bg-secondary-lighter</div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-secondary-lightest\">.bg-secondary-lightest</div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-success\">.bg-success </div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-danger\">.bg-danger </div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-warning\">.bg-warning </div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-light\">.bg-light </div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-transparent\">.bg-transparent </div>'}\n        <br />\n        {'<div className=\"p-7 mb-4 bg-dark\">.bg-dark </div>'}\n        <br />\n      </div>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "others-styles-background--background",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

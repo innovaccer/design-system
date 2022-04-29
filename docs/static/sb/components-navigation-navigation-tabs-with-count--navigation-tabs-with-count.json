@@ -1,0 +1,637 @@
+{
+  "args": {},
+  "componentId": "components-navigation-navigation-tabs-with-count",
+  "title": "Components/Navigation/Navigation Tabs With Count",
+  "kind": "Components/Navigation/Navigation Tabs With Count",
+  "id": "components-navigation-navigation-tabs-with-count--navigation-tabs-with-count",
+  "name": "Navigation Tabs With Count",
+  "story": "Navigation Tabs With Count",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'tab1',\n      label: 'Tab #1',\n      count: 1\n    },\n    {\n      name: 'tab2',\n      label: 'Tab #2',\n      count: 2,\n      disabled: true\n    },\n    {\n      name: 'tab3',\n      label: 'Tab #3',\n      count: 10\n    },\n    {\n      name: 'tab4',\n      label: 'Tab #3',\n      count: 100\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'tab1'\n  });\n\n  const onClickHandler = (menu) => {\n    setActive(menu);\n  };\n\n  const align = 'center';\n\n  return (\n    <Navigation\n      align={align}\n      menus={data}\n      active={active}\n      onClick={onClickHandler}\n    />\n  );\n}"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/navigation/__stories__/NavigationTabsWithCount.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      name: 'tab1',\n      label: 'Tab #1',\n      count: 1,\n    },\n    {\n      name: 'tab2',\n      label: 'Tab #2',\n      count: 2,\n      disabled: true,\n    },\n    {\n      name: 'tab3',\n      label: 'Tab #3',\n      count: 10,\n    },\n    {\n      name: 'tab4',\n      label: 'Tab #3',\n      count: 100,\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'tab1',\n  });\n\n  const onClickHandler = (menu) => {\n    setActive(menu);\n  };\n\n  const align = 'center';\n\n  return <Navigation align={align} menus={data} active={active} onClick={onClickHandler} />;\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-navigation-navigation-tabs-with-count--navigation-tabs-with-count",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "type": {
+        "name": "type",
+        "description": "`Navigation` component type\n\n`LayoutType: 'horizontal' | 'vertical'`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "horizontal",
+            "vertical"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"horizontal\" | \"vertical\""
+          },
+          "defaultValue": {
+            "summary": "\"horizontal\""
+          }
+        }
+      },
+      "align": {
+        "name": "align",
+        "description": "Alignment of `Navigation` component\n\n**Applicable only in case of type: `horizontal`**\n\n`Align: 'left' | 'center'`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "left",
+            "center"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"left\" | \"center\""
+          },
+          "defaultValue": {
+            "summary": "\"center\""
+          }
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "menus": {
+        "name": "menus",
+        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Menu[]"
+        },
+        "table": {
+          "type": {
+            "summary": "Menu[]"
+          },
+          "defaultValue": null
+        }
+      },
+      "active": {
+        "name": "active",
+        "description": "Sets menu as active",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ActiveMenu | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "ActiveMenu | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((menu: Menu) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((menu: Menu) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "rounded": {
+        "name": "rounded",
+        "description": "Makes active menu rounded **(applicable only for type: `vertical` and `expanded` menu)**",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "expanded": {
+        "name": "expanded",
+        "description": "Set expanded state of `Navigation`**(applicable only for type: `vertical`)**",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "footer": {
+        "name": "footer",
+        "description": "Shows footer**(applicable only for type: `vertical`)**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onToggle": {
+        "name": "onToggle",
+        "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((expanded: boolean) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((expanded: boolean) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "autoCollapse": {
+        "name": "autoCollapse",
+        "description": "Only one SubMenu visible at a time**(applicable only for type: `vertical`)**",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "type": {
+      "name": "type",
+      "description": "`Navigation` component type\n\n`LayoutType: 'horizontal' | 'vertical'`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "horizontal",
+          "vertical"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"horizontal\" | \"vertical\""
+        },
+        "defaultValue": {
+          "summary": "\"horizontal\""
+        }
+      }
+    },
+    "align": {
+      "name": "align",
+      "description": "Alignment of `Navigation` component\n\n**Applicable only in case of type: `horizontal`**\n\n`Align: 'left' | 'center'`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "left",
+          "center"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"left\" | \"center\""
+        },
+        "defaultValue": {
+          "summary": "\"center\""
+        }
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "menus": {
+      "name": "menus",
+      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Menu[]"
+      },
+      "table": {
+        "type": {
+          "summary": "Menu[]"
+        },
+        "defaultValue": null
+      }
+    },
+    "active": {
+      "name": "active",
+      "description": "Sets menu as active",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ActiveMenu | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "ActiveMenu | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((menu: Menu) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((menu: Menu) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "rounded": {
+      "name": "rounded",
+      "description": "Makes active menu rounded **(applicable only for type: `vertical` and `expanded` menu)**",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "expanded": {
+      "name": "expanded",
+      "description": "Set expanded state of `Navigation`**(applicable only for type: `vertical`)**",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "footer": {
+      "name": "footer",
+      "description": "Shows footer**(applicable only for type: `vertical`)**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onToggle": {
+      "name": "onToggle",
+      "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((expanded: boolean) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((expanded: boolean) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "autoCollapse": {
+      "name": "autoCollapse",
+      "description": "Only one SubMenu visible at a time**(applicable only for type: `vertical`)**",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    }
+  }
+}

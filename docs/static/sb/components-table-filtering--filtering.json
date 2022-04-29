@@ -1,0 +1,257 @@
+{
+  "args": {},
+  "componentId": "components-table-filtering",
+  "title": "Components/Table/Filtering",
+  "kind": "Components/Table/Filtering",
+  "id": "components-table-filtering--filtering",
+  "name": "Filtering",
+  "story": "Filtering",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "/*\nimport * as React from 'react';\nimport { debounce } from 'throttle-debounce';\nimport {\n  Card,\n  Button,\n  Label,\n  Grid,\n  Placeholder,\n  PlaceholderParagraph,\n  Dropdown,\n  Input,\n  Checkbox,\n  Subheading,\n  Icon,\n  Pagination,\n  DatePicker,\n} from '@innovaccer/design-system';\nimport './style.css';\n\n// styles.css\n.Table-container {\n  display: flex;\n  height: 100%;\n}\n\n.Table-filters {\n  box-sizing: border-box;\n  display: flex;\n  flex-shrink: 0;\n  flex-direction: column;\n  height: 100%;\n  width: var(--spacing-9);\n  padding: 0 var(--spacing-l);\n}\n\n.Table-filtersHeading {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.Table-filter {\n  padding: var(--spacing) 0;\n}\n\n.Table-filter:first-of-type {\n  padding-top: var(--spacing-l);\n}\n\n.Table-filter:last-of-type {\n  padding-bottom: var(--spacing-l);\n}\n\n.Table-filter .Input {\n  min-width: unset;\n}\n*/\n\n() => {\n\n  const getTotalPages = (totalRecords, pageSize) => Math.ceil(totalRecords / pageSize);\n\n  const hasSchema = schema => (schema && !!schema.length);\n  const getPluralSuffix = (count) => count > 1 ? 's' : '';\n\n  const updateBatchData = (data, rowIndexes, dataUpdate) => {\n    const updatedData = [...data];\n    for (const rowIndex of rowIndexes) {\n      updatedData[rowIndex] = {\n        ...updatedData[rowIndex],\n        ...dataUpdate\n      };\n    }\n\n    return updatedData;\n  };\n\n  const moveToIndex = (arr, from, to) => {\n    if (from === to) return arr;\n\n    let newArr = arr;\n    if (from < to) {\n      newArr = [\n        ...arr.slice(0, from),\n        ...arr.slice(from + 1, to + 1),\n        arr[from],\n        ...arr.slice(to + 1)\n      ];\n    } else {\n      newArr = [\n        ...arr.slice(0, to),\n        arr[from],\n        ...arr.slice(to, from),\n        ...arr.slice(from + 1)\n      ];\n    }\n\n    return newArr;\n  };\n\n  const DraggableDropdown = (props) => {\n    const {\n      options,\n      onChange\n    } = props;\n\n    const [open, setOpen] = React.useState(false);\n    const [tempOptions, setTempOptions] = React.useState(options);\n    const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-8)');\n\n    React.useEffect(() => {\n      setTempOptions(options);\n    }, [open]);\n\n    const handleParentChange = (e) => {\n      setTempOptions(tempOptions.map(option => ({ ...option, selected: e.target.checked })));\n    };\n\n    const handleChildChange = (e, index) => {\n      const newOptions = [...tempOptions];\n      newOptions[index] = {\n        ...newOptions[index],\n        selected: e.target.checked\n      };\n\n      setTempOptions(newOptions);\n    };\n\n    const onToggleHandler = (newOpen) => {\n      setOpen(newOpen);\n    };\n\n    const onCancelHandler = () => {\n      setOpen(false);\n    };\n\n    const onApplyHandler = () => {\n      setOpen(false);\n\n      if (onChange) onChange(tempOptions);\n    };\n\n    return (\n      <div className=\"Dropdown\">\n        <Popover\n          open={open}\n          onToggle={onToggleHandler}\n          trigger={(\n            <Button\n              ref={el => {\n                // setTriggerWidth(`${el.clientWidth}px`);\n              }}\n              size=\"tiny\"\n              appearance=\"transparent\"\n              icon=\"keyboard_arrow_down_filled\"\n              iconAlign=\"right\"\n            >\n              {`Showing ${options.filter(option => option.selected).length} of ${options.length} column${getPluralSuffix(options.length)}`}\n            </Button>\n          )}\n          triggerClass=\"w-100\"\n          customStyle={{\n            width: triggerWidth\n          }}\n          className=\"Header-draggableDropdown\"\n        >\n          <div className=\"Dropdown-wrapper\">\n            <div className=\"OptionWrapper\">\n              <Checkbox\n                className=\"OptionCheckbox\"\n                label=\"Select All\"\n                checked={tempOptions.every(option => option.selected)}\n                indeterminate={tempOptions.some(option => option.selected)\n                  && tempOptions.some(option => !option.selected)}\n                onChange={handleParentChange}\n              />\n            </div>\n            {tempOptions.map((option, index) => {\n              return (\n                <div\n                  key={option.value}\n                  className=\"OptionWrapper d-flex flex-space-between align-items-center cursor-pointer\"\n                  draggable={true}\n                  onDragStart={e => {\n                    e.dataTransfer.setData('index', `${index}`);\n                  }}\n                  onDragOver={e => e.preventDefault()}\n                  onDrop={e => {\n                    const from = +e.dataTransfer.getData('index');\n                    const to = index;\n\n                    if (from !== to) setTempOptions(moveToIndex(tempOptions, from, to));\n                  }}\n                >\n                  <Checkbox\n                    className=\"OptionCheckbox\"\n                    name={option.value}\n                    label={option.label}\n                    checked={tempOptions[index].selected}\n                    onChange={e => handleChildChange(e, index)}\n                  />\n                  <Icon name=\"drag_handle\" className=\"mr-4\" />\n                </div>\n              );\n            })}\n          </div>\n          <div className=\"Dropdown-buttonWrapper\">\n            <Button className=\"mr-4\" size=\"tiny\" onClick={onCancelHandler}>Cancel</Button>\n            <Button appearance=\"primary\" size=\"tiny\" onClick={onApplyHandler}>Apply</Button>\n          </div>\n        </Popover>\n      </div>\n    );\n  };\n\n  const Header = (props) => {\n    const {\n      loading,\n      error,\n      data,\n      schema,\n      showHead,\n      withPagination,\n      page,\n      pageSize,\n      withCheckbox,\n      updateSchema,\n      filterList = {},\n      totalRecords = 0,\n      searchPlaceholder,\n      searchTerm,\n      updateSearchTerm,\n      onFilterChange,\n      allowSelectAll,\n    } = props;\n\n    const filterSchema = schema.filter(s => s.filters);\n\n    const onSearchChange = e => {\n      const value = e.target.value;\n      if (updateSearchTerm) {\n        updateSearchTerm(value);\n      }\n    };\n\n    const columnOptions = schema.map(s => ({\n      label: s.displayName,\n      value: s.name,\n      selected: !s.hidden\n    }));\n\n    const onDynamicColumnUpdate = (options) => {\n      const newSchema = options.map(option => ({\n        ...schema.find(colSchema => colSchema.name === option.value),\n        hidden: !option.selected\n      }));\n\n      if (updateSchema) updateSchema(newSchema);\n    };\n\n    const selectedCount = data.filter(d => d._selected).length;\n    const startIndex = (page - 1) * pageSize + 1;\n    const endIndex = Math.min(page * pageSize, totalRecords);\n\n  const label = error\n    ? `Showing 0 items`\n    : withCheckbox && selectedCount\n      ? selectAllRecords\n        ? `Selected all ${totalRecords} item${getPluralSuffix(totalRecords)}`\n        : `Selected ${selectedCount} item${getPluralSuffix(totalRecords)} on this page`\n      : withPagination\n        ? `Showing ${startIndex}-${endIndex} of ${totalRecords} item${getPluralSuffix(totalRecords)}`\n        : `Showing ${totalRecords} item${getPluralSuffix(totalRecords)}`;\n\n    return (\n      <div className=\"Header\">\n        <div className=\"Header-content Header-content--top\">\n          <div className=\"Header-search\">\n            <Input\n              name=\"GridHeader-search\"\n              icon=\"search\"\n              placeholder={searchPlaceholder}\n              onChange={onSearchChange}\n              value={searchTerm}\n              onClear={() => updateSearchTerm && updateSearchTerm('')}\n              disabled={loading && !hasSchema(schema)}\n            />\n          </div>\n        </div>\n        <div className=\"mb-5\">\n          {Object.keys(filterList).map(filter => {\n            return filterList[filter].map(value => (\n              <Chip\n                label={value}\n                name={`${filter}--${value}`}\n                clearButton={true}\n                className=\"mr-4\"\n                onClose={() => {\n                  const updatedFilter = filterList[filter].filter(f => f !== value);\n                  onFilterChange(filter, updatedFilter);\n                }}\n              />\n            ))\n          })}\n        </div>\n        <div className=\"Header-content Header-content--bottom\">\n          <div className=\"Header-label\">\n            {loading ? (\n              <Placeholder withImage={!showHead && withCheckbox}>\n                <PlaceholderParagraph length={'small'} size={'s'} />\n              </Placeholder>\n            ) : (\n                <Label>{label}</Label>\n              )\n            }\n          </div>\n          <div className=\"Header-hideColumns\">\n            <DraggableDropdown\n              options={columnOptions}\n              onChange={onDynamicColumnUpdate}\n            />\n          </div>\n        </div>\n      </div>\n    );\n  };\n\n  Header.defaultProps = {\n    schema: [],\n    data: [],\n    searchPlaceholder: 'Search',\n    dynamicColumn: true\n  };\n\n  class Table extends React.Component {\n    constructor(props) {\n      super(props);\n      const filterList = {\n        name: ['a-g', 'h-r', 's-z'],\n        gender: ['male', 'female'],\n        status: ['completed', 'failed']\n      };\n\n      this.state = {\n        filterList,\n        data: [],\n        schema: [],\n        page: 1,\n        totalRecords: 0,\n        sortingList: props.sortingList || [],\n        loading: true,\n        error: false,\n        searchTerm: undefined,\n      };\n\n      this.pageSize = 3;\n      this.searchDebounceDuration = 750;\n      this.debounceUpdate = debounce(this.searchDebounceDuration, this.updateDataFn);\n    }\n\n    componentDidMount() {\n      this.updateData();\n    }\n\n    componentDidUpdate(_prevProps, prevState) {\n      if (prevState.page !== this.state.page) {\n        const { onPageChange } = this.props;\n        if (onPageChange) onPageChange(this.state.page);\n      }\n\n      if (prevState.page !== this.state.page\n        || prevState.filterList !== this.state.filterList\n        || prevState.sortingList !== this.state.sortingList\n        || prevState.searchTerm !== this.state.searchTerm) {\n        if (!this.props.loading) this.updateData({});\n      }\n    }\n\n    updateData() {\n      this.setState({\n        loading: true\n      });\n\n      this.debounceUpdate();\n    }\n\n    updateDataFn() {\n\n      const {\n        fetchData,\n      } = this.props;\n\n      const {\n        page,\n        sortingList,\n        filterList,\n        searchTerm\n      } = this.state;\n\n      const {\n        pageSize\n      } = this;\n\n      const opts = {\n        page,\n        pageSize,\n        sortingList,\n        filterList,\n        searchTerm,\n      };\n\n      this.setState({\n        loading: true\n      });\n      if (fetchData) {\n        fetchData(opts)\n          .then((res) => {\n            const data = res.data;\n            const schema = this.state.schema.length ? this.state.schema : res.schema;\n            this.setState({\n              data,\n              schema,\n              totalRecords: res.count,\n              loading: false,\n              error: !data.length\n            });\n          })\n          .catch(() => {\n            this.setState({\n              loading: false,\n              error: true,\n              data: []\n            });\n          });\n      }\n    }\n\n    onPageChange(newPage) {\n      this.setState({\n        page: newPage\n      });\n    }\n\n    onFilterChange(name, selected) {\n      const {\n        filterList\n      } = this.state;\n\n      const newFilterList = {\n        ...filterList,\n        [name]: selected\n      };\n\n      this.updateFilterList(newFilterList);\n    }\n\n    updateSchema(newSchema) {\n      this.setState({\n        schema: newSchema\n      });\n    }\n\n    updateSortingList(newSortingList) {\n      const {\n        multipleSorting\n      } = this.props;\n\n      this.setState({\n        sortingList: multipleSorting ? [...newSortingList] : newSortingList.slice(-1),\n        page: 1,\n      });\n    }\n\n    updateFilterList(newFilterList) {\n      this.setState({\n        filterList: newFilterList,\n        page: 1,\n      });\n    }\n\n    updateSearchTerm(newSearchTerm) {\n      this.setState({\n        searchTerm: newSearchTerm,\n        page: 1\n      });\n    }\n\n    render() {\n      const {\n        loaderSchema,\n      } = this.props;\n\n      const withPagination = true;\n      const {\n        pageSize\n      } = this;\n\n      const {\n        totalRecords,\n        filterList,\n        loading\n      } = this.state;\n      const totalPages = getTotalPages(totalRecords, pageSize);\n\n      return (\n        <div className=\"Table-container\">\n          <div style={{ width: 'calc(100% - var(--spacing-9))' }}>\n            <Card className=\"Table overflow-hidden\">\n              <div className=\"Table-header\">\n                <Header\n                  {...this.state}\n                  updateSchema={this.updateSchema.bind(this)}\n                  updateSearchTerm={this.updateSearchTerm.bind(this)}\n                  withCheckbox={false}\n                  withPagination={withPagination}\n                  pageSize={pageSize}\n                  onFilterChange={this.onFilterChange.bind(this)}\n                />\n              </div>\n              <div className=\"Table-grid\">\n                <Grid\n                  {...this.state}\n                  updateData={this.updateData.bind(this)}\n                  updateSchema={this.updateSchema.bind(this)}\n                  updateSortingList={this.updateSortingList.bind(this)}\n                  updateFilterList={this.updateFilterList.bind(this)}\n                  withCheckbox={false}\n                  showMenu={false}\n                  type=\"data\"\n                  size=\"comfortable\"\n                  draggable={true}\n                  withPagination={withPagination && totalPages > 1}\n                  pageSize={pageSize}\n                  loaderSchema={loaderSchema}\n                />\n              </div>\n              {withPagination && (totalPages > 1) && (\n                <div className=\"Table-pagination\">\n                  <Pagination\n                    page={this.state.page}\n                    totalPages={getTotalPages(totalRecords, pageSize)}\n                    type=\"jump\"\n                    onPageChange={this.onPageChange.bind(this)}\n                  />\n                </div>\n              )}\n            </Card>\n          </div>\n          <div className={'Table-filters'}>\n            <div className=\"Table-filtersHeading\">\n              <Subheading>Filters</Subheading>\n            </div>\n            <div>\n              <div className=\"Table-filter\">\n                <Dropdown\n                  key=\"name\"\n                  disabled={loading}\n                  withCheckbox={true}\n                  showApplyButton={true}\n                  inlineLabel={\"Name\"}\n                  key={filterList['name']}\n                  options={[\n                    { label: 'A-G', value: 'a-g', selected: filterList['name'].includes('a-g') },\n                    { label: 'H-R', value: 'h-r', selected: filterList['name'].includes('h-r') },\n                    { label: 'S-Z', value: 's-z', selected: filterList['name'].includes('s-z') },\n                  ]}\n                  onChange={selected => this.onFilterChange(\"name\", selected)}\n                />\n              </div>\n              <div className=\"Table-filter\">\n                <Dropdown\n                  key=\"gender\"\n                  disabled={loading}\n                  withCheckbox={true}\n                  showApplyButton={true}\n                  inlineLabel={\"Gender\"}\n                  key={filterList['gender']}\n                  options={[\n                    { label: 'Male', value: 'male', selected: filterList['gender'].includes('male') },\n                    { label: 'Female', value: 'female', selected: filterList['gender'].includes('female') },\n                  ]}\n                  onChange={selected => this.onFilterChange(\"gender\", selected)}\n                />\n              </div>\n              <div className=\"Table-filter\">\n                <Dropdown\n                  key=\"status\"\n                  disabled={loading}\n                  withCheckbox={true}\n                  showApplyButton={true}\n                  inlineLabel={\"Status\"}\n                  key={filterList['status']}\n                  options={[\n                    { label: 'Completed', value: 'completed', selected: filterList['status'].includes('completed') },\n                    { label: 'Failed', value: 'failed', selected: filterList['status'].includes('failed') },\n                  ]}\n                  onChange={selected => this.onFilterChange(\"status\", selected)}\n              />\n              </div>\n            </div>\n          </div>\n        </div>\n      );\n    }\n  }\n\n  const translateData = (schema, data) => {\n    let newData = data;\n\n    if (schema.translate) {\n      const translatedData = schema.translate(data);\n      newData = {\n        ...newData,\n        [schema.name]: typeof translatedData === 'object' ? {\n          ...newData[schema.name],\n          ...translatedData\n        } : translatedData\n      };\n    }\n    if (typeof newData[schema.name] !== 'object') newData[schema.name] = { title: newData[schema.name] };\n\n    return newData;\n  }\n\n  const onFilterChange = {\n    \"name\": (a, filters) => {\n      for (const filter of filters) {\n        switch (filter) {\n          case 'a-g':\n            if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;\n            break;\n          case 'h-r':\n            if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;\n            break;\n          case 's-z':\n            if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;\n            break;\n        }\n      }\n      return false;\n    },\n    \"gender\": (a, filters) => {\n      for (const filter of filters) {\n        if (a.gender.toLowerCase() === filter) return true;\n      }\n      return false;\n    },\n    \"status\": (a, filters) => {\n      for (const filter of filters) {\n        if (a.status.toLowerCase() === filter) return true;\n      }\n      return false;\n    },\n  };\n\n  const filterData = (data, filterList) => {\n    let filteredData = data;\n    if (filterList) {\n      Object.keys(filterList).forEach(name => {\n        const filters = filterList[name];\n        const onChange = onFilterChange[name];\n        if (onChange) {\n          filteredData = filteredData.filter(d => onChange(d, filters));\n        }\n      });\n    }\n    return filteredData;\n  };\n\n  const sortData = (schema, data, sortingList) => {\n    const sortedData = [...data];\n    sortingList.forEach(l => {\n      const sIndex = schema.findIndex(s => s.name === l.name);\n      if (sIndex !== -1) {\n        const defaultComparator = (a, b) => {\n          const aData = translateData(schema[sIndex], a);\n          const bData = translateData(schema[sIndex], b);\n          return aData[l.name].title.localeCompare(bData[l.name].title);\n        };\n\n        const {\n          comparator = defaultComparator\n        } = schema[sIndex];\n\n        sortedData.sort(comparator);\n        if (l.type === 'desc') sortedData.reverse();\n      }\n    });\n\n    return sortedData;\n  };\n\n  const paginateData = (data, page, pageSize) => {\n    const start = (page - 1) * pageSize;\n    const end = start + pageSize;\n    const paginatedData = data.slice(start, end);\n    return paginatedData;\n  };\n\n  const data = [\n    {\n        \"firstName\": \"Brooke\",\n        \"lastName\": \"Heeran\",\n        \"email\": \"bheeran0@altervista.org\",\n        \"gender\": \"Female\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Frazer\",\n        \"lastName\": \"Cathro\",\n        \"email\": \"fcathro1@ucla.edu\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Lemmie\",\n        \"lastName\": \"Ciric\",\n        \"email\": {\n            \"title\": \"lciric2@dmoz.org\",\n            \"metaList\": [\n                \"First\",\n                \"Second\"\n            ]\n        },\n        \"gender\": \"Male\",\n        \"status\": \"Completed\"\n    },\n    {\n        \"firstName\": \"Randy\",\n        \"lastName\": \"Boatwright\",\n        \"email\": \"rboatwright3@arstechnica.com\",\n        \"status\": \"Completed\",\n        \"gender\": \"Male\"\n    },\n    {\n        \"firstName\": \"Rolando\",\n        \"lastName\": \"Cyples\",\n        \"email\": \"rcyples4@biglobe.ne.jp\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Lem\",\n        \"lastName\": \"Males\",\n        \"email\": \"lmales5@admin.ch\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Sayres\",\n        \"lastName\": \"Adelberg\",\n        \"email\": \"sadelberg6@uol.com.br\",\n        \"gender\": \"Male\",\n        \"status\": \"Completed\"\n    },\n    {\n        \"firstName\": \"Murray\",\n        \"lastName\": \"Bravington\",\n        \"email\": \"mbravington7@drupal.org\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Jena\",\n        \"lastName\": \"Swatheridge\",\n        \"email\": \"jswatheridge8@npr.org\",\n        \"gender\": \"Female\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Annabel\",\n        \"lastName\": \"Nelsey\",\n        \"email\": \"anelsey9@google.com\",\n        \"gender\": \"Female\",\n        \"status\": \"Completed\"\n    }\n];\n\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: 300,\n      resizable: true,\n      separator: true,\n      translate: a => ({\n        title: `${a.firstName} ${a.lastName}`,\n        firstName: a.firstName,\n        lastName: a.lastName\n      }),\n      cellType: 'AVATAR_WITH_TEXT',\n    },\n    {\n      name: 'email',\n      displayName: 'Email',\n      width: 350,\n      resizable: true,\n      sorting: false,\n      separator: true,\n      cellType: 'WITH_META_LIST'\n    },\n    {\n      name: 'gender',\n      displayName: 'Gender',\n      width: 200,\n      resizable: true,\n      separator: true,\n      comparator: (a, b) => a.gender.localeCompare(b.gender),\n      cellType: 'STATUS_HINT',\n      translate: a => ({\n        title: a.gender,\n        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'\n      }),\n    },\n    {\n      name: 'status',\n      displayName: 'Status',\n      width: '100',\n      cellType: 'STATUS_HINT',\n      separator: true,\n      translate: a => ({\n        title: a.status,\n        statusAppearance: (a.status === 'Failed') ? 'alert' : 'success'\n      }),\n    },\n  ];\n\n  const fetchData = (options) => {\n    const {\n      page,\n      pageSize,\n      sortingList,\n      filterList,\n      searchTerm\n    } = options;\n\n    const onSearch = (d, searchTerm = '') => {\n      return (\n        d.firstName.toLowerCase().match(searchTerm.toLowerCase())\n        || d.lastName.toLowerCase().match(searchTerm.toLowerCase())\n      );\n\n      return true;\n    }\n\n    const filteredData = filterData(data, filterList);\n    const searchedData = filteredData.filter(d => onSearch(d, searchTerm));\n    const sortedData = sortData(schema, searchedData, sortingList);\n\n    if (page && pageSize) {\n      return new Promise(resolve => {\n        window.setTimeout(() => {\n          const start = (page - 1) * pageSize;\n          const end = start + pageSize;\n          const slicedData = sortedData.slice(start, end);\n          resolve({\n            searchTerm,\n            schema,\n            count: sortedData.length,\n            data: slicedData,\n          });\n        }, 2000);\n      });\n    }\n\n    return new Promise(resolve => {\n      window.setTimeout(() => {\n        resolve({\n          searchTerm,\n          schema,\n          count: sortedData.length,\n          data: sortedData,\n        });\n      }, 2000);\n    });\n  }\n\n  const loaderSchema = schema.filter(s => {\n    const { name, displayName, width, separator, cellType, cellRenderer } = s;\n    return {\n      name, displayName, width, separator, cellType, cellRenderer\n    };\n  });\n\n  return (\n    <div\n      style={{\n        background: 'var(--secondary-lightest)'\n      }}\n    >\n      <Table\n        loaderSchema={loaderSchema}\n        fetchData={fetchData}\n      />\n    </div>\n  );\n}",
+        "title": "Table with header",
+        "imports": {},
+        "props": {
+          "exclude": [
+            "showHead"
+          ]
+        },
+        "noSandbox": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/table/__stories__/Filtering.story.jsx",
+    "storySource": {
+      "source": "() => {\n  return <></>;\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-table-filtering--filtering",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {}
+  },
+  "initialArgs": {},
+  "argTypes": {}
+}

@@ -22,87 +22,58 @@ Rounded variant comes handy when the navigation is not at the extreme left. Henc
 <Preview name='components-verticalnav-round-edged-vertical-navigation'/>
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Panel width',
-        Value: '256px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Height of a nav item',
-        Value: '36px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Width of a nav item',
-        Value: 'auto',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Panel collapse/expand action icon',
-        Value: 'keyboard_arrow_left/keyboard_arrow_right icon',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Section',
-        Value: '<Label> + Divider',
-        Configurable: 'Optional',
-      },
-      {
-        Property: 'Icons in panel',
-        Value: '<Icons>',
-        Configurable: 'Optional',
-      },
-      {
-        Property: 'Icon size',
-        Value: '16x16px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Count (in parent)*',
-        Value: '<Count>',
-        Configurable: 'Optional',
-      },
-      {
-        Property: 'Count (in child)',
-        Value: '<Count>',
-        Configurable: 'Optional',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Width of panel</td>
+    <td>256px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Height (of a nav item)</td>
+    <td>36px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Width (of a nav item)</td>
+    <td>Auto</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Panel collapse/expand action icon</td>
+    <td>keyboard_arrow_left/<br/>keyboard_arrow_right icon</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Section<br/><em>(optional)</em></td>
+    <td>&#60;section title&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Icon<br/><em>(optional)</em></td>
+    <td>&#60;icon name&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Icon size</td>
+    <td>16x16px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Count (in parent)*<br/><em>(optional)</em></td>
+    <td>&#60;count&#62;</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Count (in child)<br/><em>(optional)</em></td>
+    <td>&#60;count&#62;</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 **Note**: Count in parent item is supported only when it does not have children.

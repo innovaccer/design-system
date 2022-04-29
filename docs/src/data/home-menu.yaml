@@ -11,7 +11,7 @@
   appearance: accent1
 
 - name: Components
-  link: /components/overview/tabs/all-components/
+  link: /components/overview/all-components/
   content: Components are the reusable building blocks of our design system and are combined together to form intuitive patterns.
   icon: widgets
   appearance: alert

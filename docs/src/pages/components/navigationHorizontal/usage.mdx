@@ -29,73 +29,33 @@ This variant consists of the pill component and a label. The pill component help
 <Preview name='horizontalnav-horizontal-navigation-with-count'/>
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Height of a nav item',
-        Value: '32px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Corner radius of the item',
-        Value: '16px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Margin for the item (top, right, bottom, left)',
-        Value: '0px, 1px, 0px, 1px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Spacing between nav items',
-        Value: '0px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Maximum no. of nav items',
-        Value: '4',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Maximum value of count',
-        Value: '99+',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Height (of a nav item)</td>
+    <td>32px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius (of a nav item)</td>
+    <td>16px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Margin (of a nav item)<br/><em>(top, right, bottom, left)</em></td>
+    <td>0px, 1px, 0px, 1px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Spacing between nav items</td>
+    <td>0px</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage

@@ -12,7 +12,11 @@ const PageNotFound = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined' && window.location.pathname.includes('/components')) {
-      navigate('/components/overview/tabs/all-components/');
+      if (window.location.pathname.includes('/mobile')) {
+        navigate('/mobile/components/overview/all-components/');
+      } else {
+        navigate('/components/overview/all-components/');
+      }
     }
   }, []);
 
@@ -24,11 +28,11 @@ const PageNotFound = () => {
           size="small" title="Oh no! There's no masala"
         >
           <Button
-          icon='arrow_backward'
-          iconAlign='left'
-          onClick={() => navigate('/')}
+            icon='arrow_backward'
+            iconAlign='left'
+            onClick={() => navigate('/')}
           >
-          Go Back
+            Go Back
           </Button>
         </EmptyState>
       </div>

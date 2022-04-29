@@ -5,7 +5,7 @@ import { Heading, Text, Paragraph, Sidesheet, ModalDescription, Button } from '@
 export const twoSteps = () => {
   const [page, setPage] = React.useState(2);
   const [animate, setAnimate] = React.useState(true);
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const seperator = false;
   const stickFooter = false;
   const backdropClose = false;
@@ -100,7 +100,7 @@ export const twoSteps = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(2);
   const [animate, setAnimate] = React.useState(true);
 

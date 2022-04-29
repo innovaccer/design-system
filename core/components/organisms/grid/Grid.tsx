@@ -2,6 +2,7 @@ import * as React from 'react';
 import { DropdownProps, CheckboxProps, GridCellProps } from '@/index.type';
 import { GridHead } from './GridHead';
 import { GridBody } from './GridBody';
+import { HeaderCellRendererProps } from './Cell';
 import { sortColumn, pinColumn, hideColumn, moveToIndex, getSchema } from './utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { NestedRowProps } from './GridNestedRow';
@@ -121,6 +122,10 @@ export type ColumnSchema = {
    * @default DEFAULT
    */
   cellType?: CellType;
+  /**
+   * Custom header cell renderer
+   */
+  headerCellRenderer?: React.FC<HeaderCellRendererProps>;
   /**
    * Custom cell renderer
    */

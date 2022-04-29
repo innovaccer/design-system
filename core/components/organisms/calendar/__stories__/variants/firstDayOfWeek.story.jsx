@@ -8,7 +8,7 @@ export const firstDayOfWeek = () => {
 
   const style = {
     flexWrap: 'wrap',
-  } as const;
+  };
   // to freeze the object for typescript
 
   return (

@@ -1,7 +1,7 @@
 ---
 title: Popover
 description: Popover is used to display floating content in relation to a trigger, usually a button or link.
-tabs: ['Usage', 'Code']
+tabs: ['Usage', 'Code', 'Interactions']
 showMobile: true
 ---
 
@@ -18,60 +18,50 @@ showMobile: true
 <Preview name='popover-dark-popover'/> 
 
 ### Properties
-
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Position</td>
+    <td>
+      <ul>
+          <li>Top</li>
+          <li>Right</li>
+          <li>Bottom</li>
+          <li>Left</li>
+          <li>Top start</li>
+          <li>Top end</li>
+          <li>Bottom start</li>
+          <li>Bottom end</li>
+      </ul>
+    </td>
+    <td>Bottom</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Appearance</td>
+    <td>
+        <ul>
+            <li>Light</li>
+            <li>Dark</li>
+        </ul>
+    </td>
+    <td>Light</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius</td>
+    <td>4px</td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Shadow</td>
+    <td>Shadow 30</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Background color',
-        Value: 'Namak for Light, Night for Dark',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Corner radius',
-        Value: '4px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Shadow',
-        Value: 'Shadow 30',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
-<br/>
-
 
 ### Usage
 

@@ -1,0 +1,591 @@
+{
+  "args": {},
+  "componentId": "components-fullscreenmodal-two-steps",
+  "title": "Components/FullscreenModal/Two Steps",
+  "kind": "Components/FullscreenModal/Two Steps",
+  "id": "components-fullscreenmodal-two-steps--two-steps",
+  "name": "Two Steps",
+  "story": "Two Steps",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "\n() => {\n  const [open, setOpen] = React.useState(false);\n  const [page, setPage] = React.useState(0);\n\n  const onClose = () => {\n    setOpen(!open);\n  };\n\n  const openModal = () => {\n    setOpen(true);\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\n        magna aliqua.\n        <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n        <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        <br />\n      </Paragraph>\n\n      <Button className=\"m-8\" appearance=\"primary\" onClick={openModal}>\n        Open modal\n      </Button>\n\n      <FullscreenModal\n        open={open}\n        dimension=\"medium\"\n        onClose={onClose}\n        headerOptions={{\n          heading: 'This is modal Heading',\n          subHeading: 'This is modal subheading',\n          backButton: !!page,\n          backButtonCallback: () => setPage(0)\n        }}\n        footer={(\n          <>\n            {page === 0 && (\n              <Button appearance=\"primary\" onClick={() => setPage(1)}>\n                Next\n              </Button>\n            )}\n            {page === 1 && (\n              <>\n                <Button appearance=\"primary\" onClick={() => console.log(\"Submit button clicked\")}>\n                  Submit\n                </Button>\n                <Button appearance=\"basic\" onClick={() => setPage(0)} className=\"ml-4\">\n                  Back\n                </Button>\n              </>\n            )}\n          </>\n        )}\n      >\n        {page === 0 && (\n          <>\n            <Text>Fullscreen Modal Body</Text>\n            <Heading size=\"s\">Description Title</Heading>\n            <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>\n            <Paragraph>Card Sections include supporting text like an article summary or a restaurant description.</Paragraph>\n          </>\n        )}\n        {page === 1 && (\n          <>\n            <Text>This is some info</Text>\n            <Heading size=\"s\">Second screen</Heading>\n            <Paragraph>\n              This screen may be used as info screen or read more, for multiple step forms please use steppers.\n            </Paragraph>\n            <Paragraph>Card Sections include supporting text like an article summary or a restaurant description.</Paragraph>\n          </>\n        )}\n      </FullscreenModal>\n    </div>\n  );\n}",
+        "title": "FullscreenModal",
+        "noHtml": true
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/molecules/fullscreenModal/__stories__/twoSteps.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const [open, setOpen] = React.useState(false);\n  const [page, setPage] = React.useState(0);\n\n  const onClose = () => {\n    setOpen(!open);\n  };\n\n  const openModal = () => {\n    setOpen(true);\n  };\n\n  return (\n    <div>\n      <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore\n        magna aliqua.\n        <br />\n        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\n        <br />\n        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />\n        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        <br />\n      </Paragraph>\n\n      <Button appearance=\"primary\" onClick={openModal}>\n        Open modal\n      </Button>\n\n      <FullscreenModal\n        open={open}\n        dimension=\"medium\"\n        onClose={onClose}\n        headerOptions={{\n          heading: 'This is modal Heading',\n          subHeading: 'This is modal subheading',\n          backButton: !!page,\n          backButtonCallback: () => setPage(0),\n        }}\n        footer={\n          <>\n            {page === 0 && (\n              <Button appearance=\"primary\" onClick={() => setPage(1)}>\n                Next\n              </Button>\n            )}\n            {page === 1 && (\n              <>\n                <Button appearance=\"primary\">Submit</Button>\n                <Button appearance=\"basic\" onClick={() => setPage(0)} className=\"ml-4\">\n                  Back\n                </Button>\n              </>\n            )}\n          </>\n        }\n      >\n        {page === 0 && (\n          <>\n            <Text>Fullscreen Modal Body</Text>\n            <Heading size=\"s\">Description Title</Heading>\n            <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>\n            <Paragraph>\n              Card Sections include supporting text like an article summary or a restaurant description.\n            </Paragraph>\n          </>\n        )}\n        {page === 1 && (\n          <>\n            <Text>This is some info</Text>\n            <Heading size=\"s\">Second screen</Heading>\n            <Paragraph>\n              This screen may be used as info screen or read more, for multiple step forms please use steppers.\n            </Paragraph>\n            <Paragraph>\n              Card Sections include supporting text like an article summary or a restaurant description.\n            </Paragraph>\n          </>\n        )}\n      </FullscreenModal>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-fullscreenmodal-two-steps--two-steps",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "dimension": {
+        "name": "dimension",
+        "description": "Dimension of `Fullscreen Modal`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "large",
+            "medium"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"large\" | \"medium\""
+          },
+          "defaultValue": {
+            "summary": "\"medium\""
+          }
+        }
+      },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close state",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClose": {
+        "name": "onClose",
+        "description": "onClose callback to be called on `Fullscreen Modal` close",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "headerOptions": {
+        "name": "headerOptions",
+        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "OverlayHeaderProps | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "OverlayHeaderProps | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "header": {
+        "name": "header",
+        "description": "header component to be used as modal header.\nclose button is not part of header so it will not be replaced.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "footerOptions": {
+        "name": "footerOptions",
+        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "FooterOptions | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "FooterOptions | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "footer": {
+        "name": "footer",
+        "description": "footer component to be used as modal footer.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "children": {
+        "name": "children",
+        "description": "Element to be rendered as modal body.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactNode"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "closeOnEscape": {
+        "name": "closeOnEscape",
+        "description": "Closes `FullScreenModal` when `Escape` key is pressed",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "dimension": {
+      "name": "dimension",
+      "description": "Dimension of `Fullscreen Modal`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "large",
+          "medium"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"large\" | \"medium\""
+        },
+        "defaultValue": {
+          "summary": "\"medium\""
+        }
+      }
+    },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close state",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClose": {
+      "name": "onClose",
+      "description": "onClose callback to be called on `Fullscreen Modal` close",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event?: Event | MouseEvent<HTMLElement, MouseEvent> | undefined, reason?: string | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "headerOptions": {
+      "name": "headerOptions",
+      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "OverlayHeaderProps | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "OverlayHeaderProps | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "header": {
+      "name": "header",
+      "description": "header component to be used as modal header.\nclose button is not part of header so it will not be replaced.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "footerOptions": {
+      "name": "footerOptions",
+      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "FooterOptions | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "FooterOptions | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "footer": {
+      "name": "footer",
+      "description": "footer component to be used as modal footer.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "children": {
+      "name": "children",
+      "description": "Element to be rendered as modal body.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactNode"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "closeOnEscape": {
+      "name": "closeOnEscape",
+      "description": "Closes `FullScreenModal` when `Escape` key is pressed",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

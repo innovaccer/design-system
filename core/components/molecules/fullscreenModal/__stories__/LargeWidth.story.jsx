@@ -3,11 +3,10 @@ import { action } from '@/utils/action';
 import { Button, Paragraph, FullscreenModal, Label, Input, Radio, Icon, Text, Card } from '@/index';
 
 export const largeWidth = () => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
-    action('on close triggered')();
   };
 
   const data = [
@@ -85,11 +84,10 @@ export const largeWidth = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
     setOpen(!open);
-    console.log('on close triggered')();
   };
 
   const data = [{ iconName: 'message', textMessage: 'Text Message' }, { iconName: 'chat_bubble', textMessage: 'Portal Message' }, { iconName: 'email', textMessage: 'E-mail' }, { iconName: 'markunread_mailbox', textMessage: 'Letter' }, { iconName: 'mic', textMessage: 'Voice Recording' }];

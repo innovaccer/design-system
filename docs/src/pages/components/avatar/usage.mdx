@@ -8,35 +8,79 @@ showMobile: true
 An avatar consists of the display picture of the entity that it represents i.e. a user. In case a display picture is not available, it consists of a colored background and the initials of the name that it represents. And if somehow the initials can't be fetched, a fallback glyph is used.
 <br/>
 
-#### Types
-<br/>
-
-##### Appearances
+### Appearances
 Avatar comes in 9 Appearances -
-<Preview name='avatar-variants-appearance' />
+<Preview name='components-avatar-variants-appearance--appearance' />
 
-##### Sizes
+### Sizes
 Avatar comes in 2 sizes -
-<Preview name='size' />
+<Preview name='components-avatar-variants-size--size' />
 <br/>
 
-#### Usage
+### Properties
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Appearance</td>
+    <td>
+        <ul>
+            <li>Jal</li>
+            <li>Stone</li>
+            <li>Neem</li>
+            <li>Haldi</li>
+            <li>Mirch</li>
+            <li>Tawak</li>
+            <li>Nimbu</li>
+            <li>Neel</li>
+            <li>Jamun</li>
+        </ul>
+    </td>
+    <td>-</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Size</td>
+    <td>
+        <ul>
+            <li>Regular</li>
+            <li>Tiny</li>
+        </ul>
+    </td>
+    <td>Regular</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Outline</td>
+    <td>&#60;color&#62;</td>
+    <td>Namak</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Additional users</td>
+    <td>&#60;count&#62;</td>
+    <td>-</td>
+  </tr>
+</table>
 <br/>
 
-##### Color Assignment
+### Usage
+<br/>
+
+#### Color Assignment
 The background colors to be used in the avatars should be generated dynamically such that at the time of its creation a random color (from the available options) is assigned. Once assigned, the color should stay the same as long as that particular avatar is in use.
 
 For example, an avatar generated for a user - Franklin Clinton, can look like following and it will look the same wherever it is used.
 ![](./images/avatar-1.png)
 <br/>
 
-##### Displaying Name
+#### Displaying Name
 Since avatars can only show images or initials, there should be an option to show the full name of an entity. This can be achieved by **hovering** over on an avatar which displays a tooltip containing the full name.
 ![](./images/avatar-2.png)
 
 <br/>
 
-##### Number of avatars
+#### Number of avatars
 Avatars can be used individually or as a group if required. For example - If an activity is being done by 4 users, you would want to use the avatar group for the same.
 
 To be specific, an avatar can be used in 3 ways as -

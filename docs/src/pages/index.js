@@ -75,7 +75,7 @@ const Home = () => {
                 <br />
                 <Button
                   appearance='primary'
-                  onClick={() => navigate('/introduction/get-started/developers/')}
+                  onClick={() => navigate('/introduction/get-started/designers/')}
                 >
                   Get started
                 </Button>

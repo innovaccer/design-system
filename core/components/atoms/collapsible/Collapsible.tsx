@@ -28,10 +28,14 @@ export interface CollapsibleProps extends BaseProps {
    * Components to render inside `Collapsible`
    */
   children: React.ReactChild;
+  /**
+   * Determines whether to show trigger at bottom of `Collapsible`
+   */
+  withTrigger: boolean;
 }
 
 export const Collapsible = (props: CollapsibleProps) => {
-  const { expanded, hoverable, expandedWidth, height, children, className, onToggle } = props;
+  const { expanded, hoverable, expandedWidth, height, children, className, onToggle, withTrigger } = props;
 
   const [isClicked, setIsClicked] = React.useState(true);
   const [seperator, setSeperator] = React.useState(false);
@@ -96,15 +100,17 @@ export const Collapsible = (props: CollapsibleProps) => {
         >
           {children}
         </div>
-        <div data-test="DesignSystem-Collapsible--Footer" className={FooterClass}>
-          <Icon
-            name={expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}
-            data-test="DesignSystem-Collapsible--FooterIcon"
-            className="px-5 py-4 my-2 cursor-pointer"
-            onClick={onToggleHandler(!expanded, 'click')}
-            size={16}
-          />
-        </div>
+        {withTrigger && (
+          <div data-test="DesignSystem-Collapsible--Footer" className={FooterClass}>
+            <Icon
+              name={expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}
+              data-test="DesignSystem-Collapsible--FooterIcon"
+              className="px-5 py-4 my-2 cursor-pointer"
+              onClick={onToggleHandler(!expanded, 'click')}
+              size={16}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
@@ -117,6 +123,7 @@ Collapsible.defaultProps = {
   hoverable: true,
   height: '100%',
   expandedWidth: 'var(--spacing-9)',
+  withTrigger: true,
 };
 
 export default Collapsible;

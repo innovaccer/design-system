@@ -26,6 +26,8 @@ import {
 } from 'react-live';
 import './prism.css';
 import { copyMessage, copyMessageSuccess } from '../../util/constants';
+import { useEffect } from 'react';
+import ErrorBoundary from '../ErrorBoundary';
 
 const beautifyHTMLOptions = {
   indent_size: 2,
@@ -40,7 +42,10 @@ const beautifyHTMLOptions = {
   indent_empty_lines: true,
 };
 
-const getRawPreviewCode = (customCode, comp) => {
+const getRawPreviewCode = (customCode, dataProvider) => {
+  if(dataProvider) {
+    return `() => <div><Spinner /></div>`
+  }
   if (customCode) {
     return `${generateImports(
       customCode,
@@ -53,28 +58,50 @@ ${customCode}
   }
 };
 
+const TabsWrap = withLive(({ live, onUpdate }) => {
+  useEffect(() => {
+    const { element: Element } = live;
+    if(!!live.element) {
+      try {
+        const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
+        onUpdate(htmlValue);
+      } catch (e) { 
+        console.log(e);
+      }
+    }
+  }, [live.element]);
+  return null;
+});
+
 const StoryComp = ({
   componentData,
+  dataProvider,
 }) => {
   const testRef = useRef(null);
   const [zoom, setZoom] = useState(1);
   const [htmlCode, setHtmlCode] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeButton, setActiveButton] = useState('React');
-  const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData));
+  const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData, dataProvider));
   const [isTooltipActive, setTooltipActive] = useState(false);
   const [tooltipName, setTooltipName] = useState(copyMessage);
-  const ref = React.createRef();
 
-  const TabsWrap = withLive(({ live }) => {
-    const { element: Element } = live;
-    try {
-      const htmlValue = beautifyHTML(renderToStaticMarkup(<Element />), beautifyHTMLOptions);
-      setHtmlCode(htmlValue);
-    } catch (e) { }
-    return null;
-  });
+  React.useEffect(() => {
+    if(dataProvider) {
+      dataProvider()
+        .then((data) => {
+          setJsxCode(getRawPreviewCode(data));
+        })
+        .catch((err) => {
+        setJsxCode(`<Message className="my-7" appearance="alert" title="${err}" description="We are working to get it up for you to interact with." />`);
+        });
+    }
+  }, []);
 
+  const updateHtml = (htmlValue) => {
+    setHtmlCode(htmlValue);
+  }
+  
   const renderCodeBlock = (val) => (
     <div>
       <style>
@@ -109,34 +136,37 @@ const StoryComp = ({
     return (
       <div className='ml-auto d-flex'>
         {activeButton === 'React' &&
-          <img
-            src="/icons/4691539_codesandbox_icon.svg"
-            className='codesandBox-icon cursor-pointer mr-6 align-self-center'
-            onClick={(e) => {
-              e.preventDefault();
-              openSandbox(jsxCode);
-            }}
-          />
-        }
-        <div 
-          className='align-self-end'
-          onMouseLeave={()=>{setTooltipActive(false);setTooltipName(copyMessage)}}
-           ref={ref}
-        >
-          <Tooltip 
-            open={isTooltipActive} 
-            tooltip={tooltipName} 
+          <Tooltip
+            tooltip="Open in CodeSandbox"
             position="bottom"
-            appendToBody={false}
-            boundaryElement={ref} 
+            on="hover"
+          >
+            <img
+              src="/icons/4691539_codesandbox_icon.svg"
+              className='codesandBox-icon cursor-pointer mr-6 align-self-center'
+              onClick={(e) => {
+                e.preventDefault();
+                openSandbox(jsxCode);
+              }}
+            />
+          </Tooltip>
+        }
+        <div
+          className='align-self-end'
+          onMouseLeave={() => { setTooltipActive(false); setTooltipName(copyMessage) }}
+        >
+          <Tooltip
+            open={isTooltipActive}
+            tooltip={tooltipName}
+            position="bottom"
           >
             <Icon
-            name='content_copy'
-            size={20}
-            appearance='white'
-            onClick={onClick}
-            className='align-self-center cursor-pointer'
-          />
+              name='content_copy'
+              size={20}
+              appearance='white'
+              onClick={onClick}
+              className='align-self-center cursor-pointer'
+            />
           </Tooltip>
         </div>
       </div>
@@ -168,7 +198,8 @@ const StoryComp = ({
   return (
     <>
       <div className='pb-8 pt-4 d-flex w-100 m-auto flex-column align-items-center'>
-        <LiveProvider code={jsxCode} scope={imports}>
+      <ErrorBoundary>
+        <LiveProvider code={jsxCode ? jsxCode.replaceAll('action(', '() => console.log(') : ''} scope={imports}>
           <Card
             shadow='none'
             className='w-100 overflow-hidden'
@@ -192,9 +223,9 @@ const StoryComp = ({
               </div>
             </CardHeader>
             <CardBody className='d-flex flex-column align-items-center'>
-              <div className='w-100 overflow-x-scroll' ref={testRef}>
+              <div className='w-100' ref={testRef}>
                 <LivePreview
-                  className='p-8 mw-100 mh-100 d-block'
+                  className='p-8 mw-100 mh-100 d-block live-provider mb-3'
                   style={{ zoom: zoom }}
                 />
                 <LiveError />
@@ -203,13 +234,14 @@ const StoryComp = ({
                 <Button
                   appearance='basic'
                   onClick={() => setIsExpanded(!isExpanded)}
+                  size="tiny"
                 >
                   {isExpanded ? 'Hide code' : 'Show code'}
                 </Button>
               </div>
             </CardBody>
           </Card>
-          <TabsWrap />
+          <TabsWrap onUpdate={updateHtml} />
           {isExpanded && (
             <Card
               shadow='none'
@@ -248,6 +280,7 @@ const StoryComp = ({
             </Card>
           )}
         </LiveProvider>
+        </ErrorBoundary>
       </div>
     </>
   );

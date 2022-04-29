@@ -1,0 +1,1496 @@
+{
+  "args": {},
+  "componentId": "components-input-variants-types-basic",
+  "title": "Components/Input/Variants/Types/Basic",
+  "kind": "Components/Input/Variants/Types/Basic",
+  "id": "components-input-variants-types-basic--basic",
+  "name": "Basic",
+  "story": "Basic",
+  "component": {
+    "displayName": "Input",
+    "__docgenInfo": {
+      "description": "###### Input has two types:\n - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)",
+      "displayName": "Input",
+      "props": {
+        "name": {
+          "defaultValue": null,
+          "description": "Name of the `Input`",
+          "name": "name",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "type": {
+          "defaultValue": {
+            "value": "\"text\""
+          },
+          "description": "Type of text inside `Input`",
+          "name": "type",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"number\""
+              },
+              {
+                "value": "\"text\""
+              },
+              {
+                "value": "\"tel\""
+              },
+              {
+                "value": "\"url\""
+              },
+              {
+                "value": "\"email\""
+              },
+              {
+                "value": "\"password\""
+              }
+            ]
+          }
+        },
+        "value": {
+          "defaultValue": null,
+          "description": "Value of the `Input` (Used in case of controlled `Input`)",
+          "name": "value",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "defaultValue": {
+          "defaultValue": null,
+          "description": "Adds default value to `Input` (Used in case of uncontrolled `Input`)",
+          "name": "defaultValue",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "placeholder": {
+          "defaultValue": null,
+          "description": "Text to display when input is empty.\nIncase a label is missing, a placeholder should be provided to make it accessible for all user.",
+          "name": "placeholder",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "\"regular\""
+          },
+          "description": "Size of the `Input`",
+          "name": "size",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"regular\""
+              },
+              {
+                "value": "\"tiny\""
+              },
+              {
+                "value": "\"large\""
+              }
+            ]
+          }
+        },
+        "icon": {
+          "defaultValue": null,
+          "description": "Material icon name",
+          "name": "icon",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "inlineLabel": {
+          "defaultValue": null,
+          "description": "Label to be displayed inside `Input`",
+          "name": "inlineLabel",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "disabled": {
+          "defaultValue": null,
+          "description": "Disables the `Input`, making it unable to type",
+          "name": "disabled",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "required": {
+          "defaultValue": null,
+          "description": "Shows the user that this field id required",
+          "name": "required",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "autoFocus": {
+          "defaultValue": null,
+          "description": "Adds autoFocus",
+          "name": "autoFocus",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "autoComplete": {
+          "defaultValue": null,
+          "description": "Specifies whether `input field should have autocomplete enabled",
+          "name": "autoComplete",
+          "required": false,
+          "type": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "undefined"
+              },
+              {
+                "value": "\"on\""
+              },
+              {
+                "value": "\"off\""
+              }
+            ]
+          }
+        },
+        "readOnly": {
+          "defaultValue": null,
+          "description": "Disables the `Input`, making it unable to type",
+          "name": "readOnly",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "min": {
+          "defaultValue": null,
+          "description": "Valid for number it defines the most negative value in the range of permitted values.",
+          "name": "min",
+          "required": false,
+          "type": {
+            "name": "number | undefined"
+          }
+        },
+        "max": {
+          "defaultValue": null,
+          "description": "Valid for text, url, tel, email, and password, it defines the maximum number of characters\n(as UTF-16 code units) the user can enter into the field.",
+          "name": "max",
+          "required": false,
+          "type": {
+            "name": "number | undefined"
+          }
+        },
+        "minLength": {
+          "defaultValue": null,
+          "description": "Valid for text, url, tel, email, and password, it defines the minimum number of characters\n(as UTF-16 code units) the user can enter into the entry field.",
+          "name": "minLength",
+          "required": false,
+          "type": {
+            "name": "number | undefined"
+          }
+        },
+        "maxLength": {
+          "defaultValue": null,
+          "description": "Valid for text, url, tel, email, and password, it defines the maximum number of characters\n(as UTF-16 code units) the user can enter into the field.",
+          "name": "maxLength",
+          "required": false,
+          "type": {
+            "name": "number | undefined"
+          }
+        },
+        "pattern": {
+          "defaultValue": null,
+          "description": "The pattern attribute, when specified, is a regular expression that the input's value\nmust match in order for the value to pass constraint validation.",
+          "name": "pattern",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "error": {
+          "defaultValue": null,
+          "description": "Shows error state in case of failed validation",
+          "name": "error",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
+        "info": {
+          "defaultValue": null,
+          "description": "Text to be rendered in info `Popover`",
+          "name": "info",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "minWidth": {
+          "defaultValue": {
+            "value": "256"
+          },
+          "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
+          "name": "minWidth",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "onClear": {
+          "defaultValue": null,
+          "description": "Callback function when user clicks the clear button",
+          "name": "onClear",
+          "required": false,
+          "type": {
+            "name": "((e: MouseEvent<HTMLElement, MouseEvent> | KeyboardEvent<HTMLElement>) => void) | undefined"
+          }
+        },
+        "onChange": {
+          "defaultValue": null,
+          "description": "Callback function when `Input` text changes",
+          "name": "onChange",
+          "required": false,
+          "type": {
+            "name": "((e: ChangeEvent<HTMLInputElement>) => void) | undefined"
+          }
+        },
+        "onClick": {
+          "defaultValue": null,
+          "description": "Handler to be called when `Input` is clicked",
+          "name": "onClick",
+          "required": false,
+          "type": {
+            "name": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void) | undefined"
+          }
+        },
+        "onBlur": {
+          "defaultValue": null,
+          "description": "Handler to be called when `Input` loses focus",
+          "name": "onBlur",
+          "required": false,
+          "type": {
+            "name": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+          }
+        },
+        "onFocus": {
+          "defaultValue": null,
+          "description": "Handler to be called when `Input` gets focus",
+          "name": "onFocus",
+          "required": false,
+          "type": {
+            "name": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+          }
+        },
+        "actionIcon": {
+          "defaultValue": null,
+          "description": "Custom Icon Component to be passed to Input to replace Clear Icon in the right",
+          "name": "actionIcon",
+          "required": false,
+          "type": {
+            "name": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+          }
+        },
+        "className": {
+          "defaultValue": null,
+          "description": "Adds custom class",
+          "name": "className",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
+        "data-test": {
+          "defaultValue": null,
+          "description": "Stores custom testing data private to the component.",
+          "name": "data-test",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "title": "Input",
+        "props": {
+          "exclude": [
+            "autocomplete"
+          ]
+        }
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/atoms/input/__stories__/variants/types/BasicInput.story.jsx",
+    "storySource": {
+      "source": "() => {\n  return (\n    <div className=\"Row\">\n      <div className=\"mr-9 mb-8 w-25\">\n        <Input name=\"input\" onChange={action('on-change')} onClear={action('on-clear')} />\n        <br />\n        <Text weight=\"strong\">Default</Text>\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Input\n          name=\"input\"\n          value=\"\"\n          placeholder=\"Placeholder\"\n          onChange={action('on-change')}\n          onClear={action('on-clear')}\n          info=\"sample info popover\"\n        />\n        <br />\n        <Text weight=\"strong\">Placeholder</Text>\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Input name=\"input\" onChange={action('on-change')} onClear={action('on-clear')} error={true} />\n        <br />\n        <Text weight=\"strong\">Error</Text>\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Input name=\"input\" value=\"Value\" onChange={action('on-change')} disabled={true} />\n        <br />\n        <Text weight=\"strong\">Disabled</Text>\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Input name=\"input\" value=\"Value\" />\n        <br />\n        <Text weight=\"strong\">Read Only</Text>\n      </div>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-input-variants-types-basic--basic",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "name": {
+        "name": "name",
+        "description": "Name of the `Input`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "type": {
+        "name": "type",
+        "description": "Type of text inside `Input`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "number",
+            "text",
+            "tel",
+            "url",
+            "email",
+            "password"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
+          },
+          "defaultValue": {
+            "summary": "\"text\""
+          }
+        }
+      },
+      "value": {
+        "name": "value",
+        "description": "Value of the `Input` (Used in case of controlled `Input`)",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "defaultValue": {
+        "name": "defaultValue",
+        "description": "Adds default value to `Input` (Used in case of uncontrolled `Input`)",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "placeholder": {
+        "name": "placeholder",
+        "description": "Text to display when input is empty.\nIncase a label is missing, a placeholder should be provided to make it accessible for all user.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "size": {
+        "name": "size",
+        "description": "Size of the `Input`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "regular",
+            "tiny",
+            "large"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
+          },
+          "defaultValue": {
+            "summary": "\"regular\""
+          }
+        }
+      },
+      "icon": {
+        "name": "icon",
+        "description": "Material icon name",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "inlineLabel": {
+        "name": "inlineLabel",
+        "description": "Label to be displayed inside `Input`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "disabled": {
+        "name": "disabled",
+        "description": "Disables the `Input`, making it unable to type",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "required": {
+        "name": "required",
+        "description": "Shows the user that this field id required",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "autoFocus": {
+        "name": "autoFocus",
+        "description": "Adds autoFocus",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "autoComplete": {
+        "name": "autoComplete",
+        "description": "Specifies whether `input field should have autocomplete enabled",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "on",
+            "off"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"on\" | \"off\""
+          },
+          "defaultValue": null
+        }
+      },
+      "readOnly": {
+        "name": "readOnly",
+        "description": "Disables the `Input`, making it unable to type",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "min": {
+        "name": "min",
+        "description": "Valid for number it defines the most negative value in the range of permitted values.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "max": {
+        "name": "max",
+        "description": "Valid for text, url, tel, email, and password, it defines the maximum number of characters\n(as UTF-16 code units) the user can enter into the field.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "minLength": {
+        "name": "minLength",
+        "description": "Valid for text, url, tel, email, and password, it defines the minimum number of characters\n(as UTF-16 code units) the user can enter into the entry field.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "maxLength": {
+        "name": "maxLength",
+        "description": "Valid for text, url, tel, email, and password, it defines the maximum number of characters\n(as UTF-16 code units) the user can enter into the field.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "number | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "number | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "pattern": {
+        "name": "pattern",
+        "description": "The pattern attribute, when specified, is a regular expression that the input's value\nmust match in order for the value to pass constraint validation.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "error": {
+        "name": "error",
+        "description": "Shows error state in case of failed validation",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "info": {
+        "name": "info",
+        "description": "Text to be rendered in info `Popover`",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "minWidth": {
+        "name": "minWidth",
+        "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": {
+            "summary": "256"
+          }
+        }
+      },
+      "onClear": {
+        "name": "onClear",
+        "description": "Callback function when user clicks the clear button",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: MouseEvent<HTMLElement, MouseEvent> | KeyboardEvent<HTMLElement>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: MouseEvent<HTMLElement, MouseEvent> | KeyboardEvent<HTMLElement>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onChange": {
+        "name": "onChange",
+        "description": "Callback function when `Input` text changes",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: ChangeEvent<HTMLInputElement>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: ChangeEvent<HTMLInputElement>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Handler to be called when `Input` is clicked",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onBlur": {
+        "name": "onBlur",
+        "description": "Handler to be called when `Input` loses focus",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onFocus": {
+        "name": "onFocus",
+        "description": "Handler to be called when `Input` gets focus",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "actionIcon": {
+        "name": "actionIcon",
+        "description": "Custom Icon Component to be passed to Input to replace Clear Icon in the right",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "name": {
+      "name": "name",
+      "description": "Name of the `Input`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "type": {
+      "name": "type",
+      "description": "Type of text inside `Input`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "number",
+          "text",
+          "tel",
+          "url",
+          "email",
+          "password"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
+        },
+        "defaultValue": {
+          "summary": "\"text\""
+        }
+      }
+    },
+    "value": {
+      "name": "value",
+      "description": "Value of the `Input` (Used in case of controlled `Input`)",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "defaultValue": {
+      "name": "defaultValue",
+      "description": "Adds default value to `Input` (Used in case of uncontrolled `Input`)",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "description": "Text to display when input is empty.\nIncase a label is missing, a placeholder should be provided to make it accessible for all user.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "size": {
+      "name": "size",
+      "description": "Size of the `Input`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "regular",
+          "tiny",
+          "large"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
+        },
+        "defaultValue": {
+          "summary": "\"regular\""
+        }
+      }
+    },
+    "icon": {
+      "name": "icon",
+      "description": "Material icon name",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "inlineLabel": {
+      "name": "inlineLabel",
+      "description": "Label to be displayed inside `Input`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "disabled": {
+      "name": "disabled",
+      "description": "Disables the `Input`, making it unable to type",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "required": {
+      "name": "required",
+      "description": "Shows the user that this field id required",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "autoFocus": {
+      "name": "autoFocus",
+      "description": "Adds autoFocus",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "autoComplete": {
+      "name": "autoComplete",
+      "description": "Specifies whether `input field should have autocomplete enabled",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "on",
+          "off"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"on\" | \"off\""
+        },
+        "defaultValue": null
+      }
+    },
+    "readOnly": {
+      "name": "readOnly",
+      "description": "Disables the `Input`, making it unable to type",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "min": {
+      "name": "min",
+      "description": "Valid for number it defines the most negative value in the range of permitted values.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "max": {
+      "name": "max",
+      "description": "Valid for text, url, tel, email, and password, it defines the maximum number of characters\n(as UTF-16 code units) the user can enter into the field.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "minLength": {
+      "name": "minLength",
+      "description": "Valid for text, url, tel, email, and password, it defines the minimum number of characters\n(as UTF-16 code units) the user can enter into the entry field.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "maxLength": {
+      "name": "maxLength",
+      "description": "Valid for text, url, tel, email, and password, it defines the maximum number of characters\n(as UTF-16 code units) the user can enter into the field.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "number | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "pattern": {
+      "name": "pattern",
+      "description": "The pattern attribute, when specified, is a regular expression that the input's value\nmust match in order for the value to pass constraint validation.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Shows error state in case of failed validation",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "info": {
+      "name": "info",
+      "description": "Text to be rendered in info `Popover`",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "minWidth": {
+      "name": "minWidth",
+      "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": {
+          "summary": "256"
+        }
+      }
+    },
+    "onClear": {
+      "name": "onClear",
+      "description": "Callback function when user clicks the clear button",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: MouseEvent<HTMLElement, MouseEvent> | KeyboardEvent<HTMLElement>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: MouseEvent<HTMLElement, MouseEvent> | KeyboardEvent<HTMLElement>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onChange": {
+      "name": "onChange",
+      "description": "Callback function when `Input` text changes",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: ChangeEvent<HTMLInputElement>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: ChangeEvent<HTMLInputElement>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Handler to be called when `Input` is clicked",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onBlur": {
+      "name": "onBlur",
+      "description": "Handler to be called when `Input` loses focus",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onFocus": {
+      "name": "onFocus",
+      "description": "Handler to be called when `Input` gets focus",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "actionIcon": {
+      "name": "actionIcon",
+      "description": "Custom Icon Component to be passed to Input to replace Clear Icon in the right",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

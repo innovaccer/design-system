@@ -1,0 +1,559 @@
+{
+  "args": {},
+  "componentId": "components-verticalnav-hoverable-vertical-navigation",
+  "title": "Components/VerticalNav/Hoverable Vertical Navigation",
+  "kind": "Components/VerticalNav/Hoverable Vertical Navigation",
+  "id": "components-verticalnav-hoverable-vertical-navigation--hoverable-vertical-navigation",
+  "name": "Hoverable Vertical Navigation",
+  "story": "Hoverable Vertical Navigation",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandUrl": "https://github.com/innovaccer/design-system/"
+      },
+      "docPage": {
+        "customCode": "() => {\n  const tableData = [\n    {\n        \"firstName\": \"Brooke\",\n        \"lastName\": \"Heeran\",\n        \"email\": \"bheeran0@altervista.org\",\n        \"gender\": \"Female\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Frazer\",\n        \"lastName\": \"Cathro\",\n        \"email\": \"fcathro1@ucla.edu\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Lemmie\",\n        \"lastName\": \"Ciric\",\n        \"email\": {\n            \"title\": \"lciric2@dmoz.org\",\n            \"metaList\": [\n                \"First\",\n                \"Second\"\n            ]\n        },\n        \"gender\": \"Male\",\n        \"status\": \"Completed\"\n    },\n    {\n        \"firstName\": \"Randy\",\n        \"lastName\": \"Boatwright\",\n        \"email\": \"rboatwright3@arstechnica.com\",\n        \"status\": \"Completed\",\n        \"gender\": \"Male\"\n    },\n    {\n        \"firstName\": \"Rolando\",\n        \"lastName\": \"Cyples\",\n        \"email\": \"rcyples4@biglobe.ne.jp\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Lem\",\n        \"lastName\": \"Males\",\n        \"email\": \"lmales5@admin.ch\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Sayres\",\n        \"lastName\": \"Adelberg\",\n        \"email\": \"sadelberg6@uol.com.br\",\n        \"gender\": \"Male\",\n        \"status\": \"Completed\"\n    },\n    {\n        \"firstName\": \"Murray\",\n        \"lastName\": \"Bravington\",\n        \"email\": \"mbravington7@drupal.org\",\n        \"gender\": \"Male\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Jena\",\n        \"lastName\": \"Swatheridge\",\n        \"email\": \"jswatheridge8@npr.org\",\n        \"gender\": \"Female\",\n        \"status\": \"Failed\"\n    },\n    {\n        \"firstName\": \"Annabel\",\n        \"lastName\": \"Nelsey\",\n        \"email\": \"anelsey9@google.com\",\n        \"gender\": \"Female\",\n        \"status\": \"Completed\"\n    }\n];\n\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: '40%',\n      resizable: true,\n      separator: true,\n      tooltip: true,\n      translate: a => ({\n        title: `${a.firstName} ${a.lastName}`,\n        firstName: a.firstName,\n        lastName: a.lastName\n      }),\n      filters: [\n        { label: 'A-G', value: 'a-g' },\n        { label: 'H-R', value: 'h-r' },\n        { label: 'S-Z', value: 's-z' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          switch (filter) {\n            case 'a-g':\n              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;\n              break;\n            case 'h-r':\n              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;\n              break;\n            case 's-z':\n              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;\n              break;\n          }\n        }\n        return false;\n      },\n      cellType: 'AVATAR_WITH_TEXT',\n    },\n    {\n      name: 'email',\n      displayName: 'Email',\n      width: 350,\n      resizable: true,\n      sorting: false,\n      cellType: 'WITH_META_LIST'\n    },\n    {\n      name: 'gender',\n      displayName: 'Gender',\n      width: 200,\n      resizable: true,\n      comparator: (a, b) => a.gender.localeCompare(b.gender),\n      cellType: 'STATUS_HINT',\n      translate: a => ({\n        title: a.gender,\n        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'\n      }),\n      filters: [\n        { label: 'Male', value: 'male' },\n        { label: 'Female', value: 'female' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          if (a.gender.toLowerCase() === filter) return true;\n        }\n        return false;\n      },\n    },\n  ];\n\n  const data = [\n    {\n      name: 'clinical_data',\n      label: 'Clinical Data',\n      icon: 'assignment_ind'\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management',\n      icon: 'forum',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'people'\n        },\n        {\n          name: 'care_management.care_protocol',\n          label: 'Care Protocol',\n          icon: 'fact_check'\n        },\n        {\n          name: 'care_management.assessments',\n          label: 'Assessments',\n          icon: 'assessment'\n        },\n        {\n          name: 'care_management.tasks',\n          label: 'Tasks',\n          icon: 'alarm'\n        },\n        {\n          name: 'care_management.goals',\n          label: 'Goals',\n          icon: 'golf_course'\n        },\n        {\n          name: 'care_management.care_plans',\n          label: 'Care Plans',\n          icon: 'accessibility_new'\n        },\n        {\n          name: 'care_management.medical_adherence',\n          label: 'Medical Adherence',\n          icon: 'local_pharmacy'\n        },\n        {\n          name: 'care_management.community_resources',\n          label: 'Community Resources',\n          icon: 'businesses'\n        }\n      ]\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      icon: 'airline_seat_flat_angled'\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite'\n    },\n    {\n      name: 'preventive_health',\n      label: 'Preventive Health',\n      icon: 'beenhere'\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'receipt'\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'account_circle'\n    },\n    {\n      name: 'manual_entry',\n      label: 'Manual Entry',\n      icon: 'edit'\n    },\n    {\n      name: 'patient_notes',\n      label: 'Patient Notes',\n      icon: 'note_add'\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment'\n    },\n  ];\n\n  const [expanded, setExpanded] = React.useState(false);\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline'\n  });\n\n  return (\n    <div className=\"d-flex\" style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>\n      <Collapsible expanded={expanded} onToggle={setExpanded}>\n        <VerticalNav\n          menus={data}\n          active={active}\n          expanded={expanded}\n          onClick={setActive}\n        />\n      </Collapsible>\n      <div className=\"ml-6 d-flex flex-column\">\n        <Heading className=\"my-5\">Assessments</Heading>\n        <Card className=\"h-100 overflow-hidden\">\n          <Table\n            data={tableData}\n            schema={schema}\n            withHeader={true}\n            withCheckbox={true}\n            headerOptions={{\n              withSearch: true\n            }}\n            onSearch={(currData, searchTerm) => {\n              return currData.filter(d =>\n                d.firstName.toLowerCase().match(searchTerm.toLowerCase())\n                || d.lastName.toLowerCase().match(searchTerm.toLowerCase())\n              );\n            }}\n            withPagination={true}\n            pageSize={5}\n          />\n        </Card>\n      </div>\n    </div>\n  );\n}"
+      }
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "viewMode": "docs",
+    "actions": {
+      "argTypesRegex": "^on[A-Z].*"
+    },
+    "a11y": {
+      "element": "#root",
+      "manual": false
+    },
+    "viewport": {
+      "viewports": {
+        "iphone5": {
+          "name": "iPhone 5",
+          "styles": {
+            "height": "568px",
+            "width": "320px"
+          },
+          "type": "mobile"
+        },
+        "iphone6": {
+          "name": "iPhone 6",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone6p": {
+          "name": "iPhone 6 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphone8p": {
+          "name": "iPhone 8 Plus",
+          "styles": {
+            "height": "736px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonex": {
+          "name": "iPhone X",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphonexr": {
+          "name": "iPhone XR",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonexsmax": {
+          "name": "iPhone XS Max",
+          "styles": {
+            "height": "896px",
+            "width": "414px"
+          },
+          "type": "mobile"
+        },
+        "iphonese2": {
+          "name": "iPhone SE (2nd generation)",
+          "styles": {
+            "height": "667px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12mini": {
+          "name": "iPhone 12 mini",
+          "styles": {
+            "height": "812px",
+            "width": "375px"
+          },
+          "type": "mobile"
+        },
+        "iphone12": {
+          "name": "iPhone 12",
+          "styles": {
+            "height": "844px",
+            "width": "390px"
+          },
+          "type": "mobile"
+        },
+        "iphone12promax": {
+          "name": "iPhone 12 Pro Max",
+          "styles": {
+            "height": "926px",
+            "width": "428px"
+          },
+          "type": "mobile"
+        },
+        "ipad": {
+          "name": "iPad",
+          "styles": {
+            "height": "1024px",
+            "width": "768px"
+          },
+          "type": "tablet"
+        },
+        "ipad10p": {
+          "name": "iPad Pro 10.5-in",
+          "styles": {
+            "height": "1112px",
+            "width": "834px"
+          },
+          "type": "tablet"
+        },
+        "ipad12p": {
+          "name": "iPad Pro 12.9-in",
+          "styles": {
+            "height": "1366px",
+            "width": "1024px"
+          },
+          "type": "tablet"
+        },
+        "galaxys5": {
+          "name": "Galaxy S5",
+          "styles": {
+            "height": "640px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "galaxys9": {
+          "name": "Galaxy S9",
+          "styles": {
+            "height": "740px",
+            "width": "360px"
+          },
+          "type": "mobile"
+        },
+        "nexus5x": {
+          "name": "Nexus 5X",
+          "styles": {
+            "height": "660px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "nexus6p": {
+          "name": "Nexus 6P",
+          "styles": {
+            "height": "732px",
+            "width": "412px"
+          },
+          "type": "mobile"
+        },
+        "pixel": {
+          "name": "Pixel",
+          "styles": {
+            "height": "960px",
+            "width": "540px"
+          },
+          "type": "mobile"
+        },
+        "pixelxl": {
+          "name": "Pixel XL",
+          "styles": {
+            "height": "1280px",
+            "width": "720px"
+          },
+          "type": "mobile"
+        }
+      }
+    },
+    "controls": {
+      "expanded": true
+    },
+    "options": {},
+    "fileName": "./core/components/organisms/verticalNav/__stories__/HoverableVerticalNav.story.jsx",
+    "storySource": {
+      "source": "() => {\n  const data = [\n    {\n      name: 'clinical_data',\n      label: 'Clinical Data',\n      icon: 'assignment_ind',\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management',\n      icon: 'forum',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'people',\n        },\n        {\n          name: 'care_management.care_protocol',\n          label: 'Care Protocol',\n          icon: 'fact_check',\n        },\n        {\n          name: 'care_management.assessments',\n          label: 'Assessments',\n          icon: 'assessment',\n        },\n        {\n          name: 'care_management.tasks',\n          label: 'Tasks',\n          icon: 'alarm',\n        },\n        {\n          name: 'care_management.goals',\n          label: 'Goals',\n          icon: 'golf_course',\n        },\n        {\n          name: 'care_management.care_plans',\n          label: 'Care Plans',\n          icon: 'accessibility_new',\n        },\n        {\n          name: 'care_management.medical_adherence',\n          label: 'Medical Adherence',\n          icon: 'local_pharmacy',\n        },\n        {\n          name: 'care_management.community_resources',\n          label: 'Community Resources',\n          icon: 'businesses',\n        },\n      ],\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      icon: 'airline_seat_flat_angled',\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite',\n    },\n    {\n      name: 'preventive_health',\n      label: 'Preventive Health',\n      icon: 'beenhere',\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'receipt',\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'account_circle',\n    },\n    {\n      name: 'manual_entry',\n      label: 'Manual Entry',\n      icon: 'edit',\n    },\n    {\n      name: 'patient_notes',\n      label: 'Patient Notes',\n      icon: 'note_add',\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment',\n    },\n  ];\n\n  const [expanded, setExpanded] = React.useState(false);\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline',\n  });\n\n  return (\n    <div className=\"d-flex\" style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>\n      <Collapsible expanded={expanded} onToggle={setExpanded}>\n        <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />\n      </Collapsible>\n      <div className=\"ml-6 d-flex flex-column\">\n        <Heading className=\"my-5\">Assessments</Heading>\n        <Card className=\"h-100 overflow-hidden\">\n          <Table\n            data={tableData}\n            schema={schema}\n            withHeader={true}\n            withCheckbox={true}\n            headerOptions={{\n              withSearch: true,\n            }}\n            onSearch={(currData, searchTerm) => {\n              return currData.filter(\n                (d) =>\n                  d.firstName.toLowerCase().match(searchTerm.toLowerCase()) ||\n                  d.lastName.toLowerCase().match(searchTerm.toLowerCase())\n              );\n            }}\n            withPagination={true}\n            pageSize={5}\n          />\n        </Card>\n      </div>\n    </div>\n  );\n}"
+    },
+    "__isArgsStory": false,
+    "__id": "components-verticalnav-hoverable-vertical-navigation--hoverable-vertical-navigation",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {},
+    "argTypes": {
+      "menus": {
+        "name": "menus",
+        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+        "type": {
+          "required": true,
+          "name": "other",
+          "value": "Menu[]"
+        },
+        "table": {
+          "type": {
+            "summary": "Menu[]"
+          },
+          "defaultValue": null
+        }
+      },
+      "active": {
+        "name": "active",
+        "description": "Sets menu as active",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "ActiveMenu | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "ActiveMenu | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onClick": {
+        "name": "onClick",
+        "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((menu: Menu) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((menu: Menu) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "rounded": {
+        "name": "rounded",
+        "description": "Makes active menu rounded **(applicable only for type: `vertical` and `expanded` menu)**",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "expanded": {
+        "name": "expanded",
+        "description": "Set expanded state of `Navigation`**(applicable only for type: `vertical`)**",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "autoCollapse": {
+        "name": "autoCollapse",
+        "description": "Only one SubMenu visible at a time**(applicable only for type: `vertical`)**",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "customItemRenderer": {
+        "name": "customItemRenderer",
+        "description": "Option to pass Custom Item Renderer",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((props: MenuItemProps) => Element) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((props: MenuItemProps) => Element) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showTooltip": {
+        "name": "showTooltip",
+        "description": "Determines whether to show tooltip for menu label",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {},
+  "argTypes": {
+    "menus": {
+      "name": "menus",
+      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+      "type": {
+        "required": true,
+        "name": "other",
+        "value": "Menu[]"
+      },
+      "table": {
+        "type": {
+          "summary": "Menu[]"
+        },
+        "defaultValue": null
+      }
+    },
+    "active": {
+      "name": "active",
+      "description": "Sets menu as active",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "ActiveMenu | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "ActiveMenu | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onClick": {
+      "name": "onClick",
+      "description": "Callback to be called on Menu click**(only if it's not disabled)**",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((menu: Menu) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((menu: Menu) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "rounded": {
+      "name": "rounded",
+      "description": "Makes active menu rounded **(applicable only for type: `vertical` and `expanded` menu)**",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "expanded": {
+      "name": "expanded",
+      "description": "Set expanded state of `Navigation`**(applicable only for type: `vertical`)**",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "autoCollapse": {
+      "name": "autoCollapse",
+      "description": "Only one SubMenu visible at a time**(applicable only for type: `vertical`)**",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "customItemRenderer": {
+      "name": "customItemRenderer",
+      "description": "Option to pass Custom Item Renderer",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((props: MenuItemProps) => Element) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((props: MenuItemProps) => Element) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showTooltip": {
+      "name": "showTooltip",
+      "description": "Determines whether to show tooltip for menu label",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}

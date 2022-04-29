@@ -16,61 +16,23 @@ Switches come in 2 sizes based on height and width - **Regular** and **Tiny**.
 <Preview name='switch-variants-size' />
 
 ### Properties
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Color - ON state',
-        Value: '#0070DD (primary)',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Color - OFF state',
-        Value: '#E5E5E5 (stone-light)',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Oval shadow',
-        Value: 'Shadow 20',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '34%',
-        sorting: false,
-        separator: true,
-        cellType: 'DEFAULT'
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true,
-        cellRenderer: ({ data }) => {
-          return <Rectangle name={data.Value} />;
-        },
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
+<table style="width: 100%">
+  <tr>
+    <th style="width:33%; text-align: left;">Property</th>
+    <th style="width:33%; text-align: left;">Value(s)</th>
+    <th style="width:33%; text-align: left;">Default value</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Size</td>
+    <td>
+      <ul>
+          <li>Regular</li>
+          <li>Tiny</li>
+      </ul>
+    </td>
+    <td>Regular</td>
+  </tr>
+</table>
 <br/>
 
 ### Usage
