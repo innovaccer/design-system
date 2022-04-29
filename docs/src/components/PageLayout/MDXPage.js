@@ -8,19 +8,20 @@ import {
 } from '@innovaccer/design-system';
 import { MDXProvider } from "@mdx-js/react";
 import TableOfContent from '../TableOfContent/TableOfContent';
-import { MDXComponents } from '../MDXComponents';
+import { MDXComponents } from './utility';
 import { copyMessage, copyMessageSuccess } from "../../util/constants.js";
 import ProductLogos from '../Logos/Logos';
 import ProductColors from '../Colors/Colors';
 import ComponentsContainer from '../Container/ComponentsContainer';
 import Container from '../Container';
 import '../css/style.css';
-// import { useFrontmatter } from '../../util/Frontmatter';
+import Layout from "../Layout";
 
-const MDXPage = ({
+const MDXPage = (
+  {
   relativePagePath,
   description,
-  frontmatter,
+  newFrontmatter,
   title,
   tabs,
   children,
@@ -34,7 +35,6 @@ const MDXPage = ({
   const [isTooltipActiveCode, setTooltipActiveCode] = useState(false)
   const [tooltipName, setTooltipName] = useState(copyMessage);
   const refCode = React.createRef();
-  // const newFrontmatter = useFrontmatter(relativePagePath);
 
   const toggleToast = (name) => {
     setIsToastActive(true);
@@ -129,7 +129,7 @@ const MDXPage = ({
               tabs={tabs}
               pageDescription={description}
               logos={logos}
-              frontmatter={frontmatter}
+              frontmatter={newFrontmatter}
             >
               <MDXProvider components={DSComponents}>
                 {children}
@@ -142,7 +142,7 @@ const MDXPage = ({
               relativePagePath={relativePagePath}
               tabs={tabs}
               pageDescription={description}
-              frontmatter={frontmatter}
+              frontmatter={newFrontmatter}
             >
               <MDXProvider components={DSComponents}>
                 {children}
@@ -177,4 +177,5 @@ const MDXPage = ({
   );
 };
 
+MDXPage.Layout = Layout;
 export default MDXPage;

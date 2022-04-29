@@ -8,30 +8,24 @@ import Header from './Header';
 import LeftNav from './LeftNav';
 import Meta from './Meta';
 import './css/style.css';
-// import { useFrontmatter } from '../util/Frontmatter';
+import { useFrontmatter } from '../util/Frontmatter';
+import MDXPage from './PageLayout/MDXPage';
 
-const Layout = ({
-  titleType,
-  pageTitle,
-  pageDescription,
-  pageKeywords,
-  relativePagePath,
-  showMobile,
-  showAnimation,
-  is404Page,
-  children,
-  frontmatter
-}) => {
-
-  // const newFrontmatter = useFrontmatter(relativePagePath);
+const Layout = (props) => {
+  const { pageContext, children, location } = props;
+  const { frontmatter = {}, titleType, relativePagePath } = pageContext;
+  const { title, description, keywords, tabs, logos, showMobile = false } = frontmatter;
+  const is404Page = children && children.key === null;
+  const newFrontmatter = useFrontmatter(relativePagePath);
+  const showAnimation = location.state?.animation === false ? false : true;
 
   return (
     <>
       <Meta
         titleType={titleType}
-        docTitle={pageTitle}
-        docDescription={pageDescription}
-        pageKeywords={pageKeywords}
+        docTitle={title}
+        docDescription={description}
+        pageKeywords={keywords}
         frontmatter={frontmatter}
         relativePagePath={relativePagePath}
       />
@@ -42,12 +36,24 @@ const Layout = ({
         <LeftNav
           is404Page={is404Page}
           relativePagePath={relativePagePath}
-          pageTitle={pageTitle}
+          pageTitle={title}
           showMobile={showMobile}
           frontmatter={frontmatter}
         />
+
         <Column className={`${showAnimation ? "page-animation" : ''} page-scroll h-100`} id="main-container">
-          {children}
+          {/* {children} */}
+          <MDXPage
+            newFrontmatter={newFrontmatter}
+            relativePagePath={relativePagePath}
+            description={description}
+            title={title}
+            tabs={tabs}
+            children={children}
+            is404Page={is404Page}
+            location={location}
+            logos={logos}
+          />
           <Footer relativePagePath={relativePagePath} />
         </Column>
       </Row>
