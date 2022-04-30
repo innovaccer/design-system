@@ -27,3 +27,7 @@
 .card-link[disabled], .card-link[disabled] * {
   pointer-events: none;
 }
+
+.card-heading {
+  bottom: var(--spacing-l);
+}
