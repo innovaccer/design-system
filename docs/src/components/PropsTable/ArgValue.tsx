@@ -57,8 +57,8 @@ const Text = styled.span<{ simple?: boolean }>(
 );
 
 const ExpandButton = styled.button<{}>(() => ({
-  fontFamily: theme.typography.fonts.mono,
-  color: theme.color.secondary,
+  fontFamily: theme.typography?.fonts.mono,
+  color: theme.color?.secondary,
   marginBottom: '4px',
   background: 'none',
   border: 'none',
@@ -67,9 +67,9 @@ const ExpandButton = styled.button<{}>(() => ({
 const Expandable = styled.div<{}>(
   codeCommon,
   ({ theme }) => ({
-    fontFamily: theme.typography.fonts.mono,
-    color: theme.color.secondary,
-    fontSize: theme.typography.size.s1, // overrides codeCommon
+    fontFamily: theme.typography?.fonts.mono,
+    color: theme.color?.secondary,
+    fontSize: theme.typography?.size.s1, // overrides codeCommon
     margin: 0,
     whiteSpace: 'nowrap',
     display: 'flex',

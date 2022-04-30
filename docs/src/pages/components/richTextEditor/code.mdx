@@ -1,6 +1,29 @@
-#### Live Demo
+---
+title: Rich text editor
+description: Rich text editor is a text box in which users can decorate and format the text.
+tabs: ['Usage', 'Code']
+showMobile: true
+---
 
-<Preview name='rich-text-editor_library-basic--all'/>
+#### Live Demo
+<br/>
+
+![Rich Text Editor](./images/richtext-8.png)
+
+```javascript
+import { Editor } from '@innovaccer/rich-text-editor';
+import '@innovaccer/rich-text-editor/dist/rich-text-editor.css';
+
+<Editor
+  ariaLabel="RichTextEditor"
+  editorClassName="RichTextEditor"
+  placeholder="Begin typing.."
+  textAlignment="left"
+/>
+```
+
+<br/>
 
 #### Props
-<PreviewWithPropTable name='rich-text-editor_library-basic--all' />
+
+<PreviewWithPropTable name='library-basic--all' />
