@@ -1,0 +1,1039 @@
+{
+  "args": {
+    "editorClassName": "RichTextEditor",
+    "placeholder": "Begin typing..",
+    "textAlignment": "left",
+    "ariaLabel": "RichTextEditor",
+    "spellCheck": false,
+    "readOnly": false
+  },
+  "componentId": "library-basic",
+  "title": "Library/Basic",
+  "kind": "Library/Basic",
+  "id": "library-basic--all",
+  "name": "All",
+  "story": "All",
+  "parameters": {
+    "docs": {
+      "inlineStories": true,
+      "iframeHeight": 100
+    },
+    "framework": "react",
+    "backgrounds": {
+      "grid": {
+        "cellSize": 20,
+        "opacity": 0.5,
+        "cellAmount": 5
+      },
+      "values": [
+        {
+          "name": "light",
+          "value": "#F8F8F8"
+        },
+        {
+          "name": "dark",
+          "value": "#333333"
+        }
+      ]
+    },
+    "options": {
+      "isFullscreen": false,
+      "showNav": true,
+      "showPanel": true,
+      "panelPosition": "bottom",
+      "hierarchySeparator": {},
+      "hierarchyRootSeparator": {},
+      "sidebarAnimations": true,
+      "enableShortcuts": true,
+      "isToolshown": true,
+      "theme": {
+        "base": "light",
+        "colorPrimary": "#0000001a",
+        "colorSecondary": "deepskyblue",
+        "appBg": "white",
+        "appContentBg": "white",
+        "appBorderColor": "#0000001a",
+        "appBorderRadius": 4,
+        "fontBase": "\"Nunito Sans\", \"Open Sans\", sans-serif",
+        "fontCode": "monospace",
+        "textColor": "black",
+        "textInverseColor": "rgba(255,255,255,0.9)",
+        "textMutedColor": "#666666",
+        "barTextColor": "silver",
+        "barSelectedColor": "black",
+        "barBg": "white",
+        "inputBg": "white",
+        "inputBorder": "silver",
+        "inputTextColor": "black",
+        "inputBorderRadius": 4,
+        "brandTitle": "Innovaccer Rich Text Editor v2.0.1"
+      }
+    },
+    "fileName": "./stories/Basic/index.story.js",
+    "storySource": {
+      "source": "(args) => <Editor {...args} />"
+    },
+    "__isArgsStory": true,
+    "__id": "library-basic--all",
+    "globals": {
+      "measureEnabled": false,
+      "outline": false
+    },
+    "args": {
+      "editorClassName": "RichTextEditor",
+      "placeholder": "Begin typing..",
+      "textAlignment": "left",
+      "ariaLabel": "RichTextEditor",
+      "spellCheck": false,
+      "readOnly": false
+    },
+    "argTypes": {
+      "editorClassName": {
+        "control": {
+          "type": "text"
+        },
+        "name": "editorClassName",
+        "type": {
+          "name": "string",
+          "required": false
+        },
+        "description": "Class applied around the editor",
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "placeholder": {
+        "control": {
+          "type": "text"
+        },
+        "name": "placeholder",
+        "type": {
+          "name": "string",
+          "required": false
+        },
+        "description": "Text to display when `Editor` is empty",
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "textAlignment": {
+        "control": {
+          "type": "radio"
+        },
+        "options": [
+          "left",
+          "right",
+          "center"
+        ],
+        "name": "textAlignment",
+        "type": {
+          "name": "enum",
+          "required": false,
+          "value": [
+            "left",
+            "right",
+            "center"
+          ]
+        },
+        "description": "Specify whether text alignment should be forced in a direction\nregardless of input characters.",
+        "table": {
+          "type": {
+            "summary": "'left' | 'right' | 'center'"
+          },
+          "defaultValue": null
+        }
+      },
+      "ariaLabel": {
+        "control": {
+          "type": "text"
+        },
+        "name": "ariaLabel",
+        "type": {
+          "name": "string",
+          "required": false
+        },
+        "description": "Attribute used to define a string that labels the current element.\n\nUsed in cases where a text label is not visible on the screen.",
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "spellCheck": {
+        "control": {
+          "type": "boolean"
+        },
+        "name": "spellCheck",
+        "type": {
+          "name": "boolean",
+          "required": false
+        },
+        "description": "Checks for misspellings in a text.",
+        "table": {
+          "type": {
+            "summary": "bool"
+          },
+          "defaultValue": null
+        }
+      },
+      "readOnly": {
+        "control": {
+          "type": "boolean"
+        },
+        "name": "readOnly",
+        "type": {
+          "name": "boolean",
+          "required": false
+        },
+        "description": "Set whether the `Editor` component should be editable.",
+        "table": {
+          "type": {
+            "summary": "bool"
+          },
+          "defaultValue": null
+        }
+      },
+      "mention": {
+        "control": {
+          "type": "object"
+        },
+        "name": "mention",
+        "description": "Used to enable mention in the editor\n\n| Name | Description | Default |\n| --- | --- | --- |\n| seperator | Character that separates a mention from word preceding it | '  ' |\n| trigger | Character that causes mention suggestions to appear, | '@' |\n| suggestion | Properties: label, value, icon | |\n| fetchSuggestions | Fetch dynamic suggestions list (Either use suggestion or fetchSuggestions option)\n| chipOptions | [Design System Chip Props](https://innovaccer.github.io/design-system/?path=/docs/components-chip-all--all) | |\n| dropdownOptions | Properties: dropdownClassName, customOptionRenderer = (suggestion, active, index) => React.ReactNode | |\n| renderer | customRenderer = (value) => React.ReactNode | |",
+        "type": {
+          "required": false,
+          "name": "object",
+          "value": {
+            "separator": {
+              "name": "string"
+            },
+            "trigger": {
+              "name": "string"
+            },
+            "chipOptions": {
+              "name": "object"
+            },
+            "dropdownOptions": {
+              "name": "object",
+              "value": {
+                "dropdownClassName": {
+                  "name": "string"
+                },
+                "customOptionRenderer": {
+                  "name": "function"
+                }
+              }
+            },
+            "renderer": {
+              "name": "function"
+            },
+            "suggestions": {
+              "name": "object",
+              "value": {
+                "label": {
+                  "name": "string"
+                },
+                "value": {
+                  "name": "string"
+                },
+                "icon": {
+                  "name": "string"
+                }
+              }
+            },
+            "fetchSuggestions": {
+              "name": "function"
+            }
+          }
+        },
+        "table": {
+          "type": {
+            "summary": "object",
+            "detail": "{\n  separator: string,\n  trigger: string,\n  chipOptions: object,\n  dropdownOptions: {\n    dropdownClassName: string,\n    customOptionRenderer: func\n  },\n  renderer: func,\n  suggestions: {\n    label: string,\n    value: string,\n    icon: string\n  },\n  fetchSuggestions: func\n}"
+          },
+          "defaultValue": null
+        }
+      },
+      "editorState": {
+        "control": {
+          "type": "object",
+          "disable": true
+        },
+        "name": "editorState",
+        "description": "The EditorState object is a complete snapshot of the state of the editor, including contents, cursor, and undo/redo history.\n\nAll changes to content and selection within the editor will create new EditorState objects.\n\n[Read More about Editor State](https://draftjs.org/docs/api-reference-editor-state)\n\n**Works in case of controlled `Editor`**",
+        "type": {
+          "required": false,
+          "name": "object"
+        },
+        "table": {
+          "type": {
+            "summary": "object"
+          },
+          "defaultValue": null
+        }
+      },
+      "onEditorStateChange": {
+        "name": "onEditorStateChange",
+        "description": "Callback function called each time there is change in state of editor\n\nonChange: (editorState: EditorState) => void;",
+        "type": {
+          "required": false,
+          "name": "function"
+        },
+        "table": {
+          "type": {
+            "summary": "func"
+          },
+          "defaultValue": null
+        }
+      },
+      "defaultEditorState": {
+        "control": {
+          "type": "object",
+          "disable": true
+        },
+        "name": "defaultEditorState",
+        "description": "Property to initialize editor state once when its created.\n\n**Works in case of uncontrolled `Editor`**",
+        "type": {
+          "required": false,
+          "name": "object"
+        },
+        "table": {
+          "type": {
+            "summary": "object"
+          },
+          "defaultValue": null
+        }
+      },
+      "onContentStateChange": {
+        "name": "onContentStateChange",
+        "description": "Callback function called each time there is change in state of editor\n\nonChange: (contentState: ContentState) => void;",
+        "type": {
+          "required": false,
+          "name": "function"
+        },
+        "table": {
+          "type": {
+            "summary": "func"
+          },
+          "defaultValue": null
+        }
+      },
+      "defaultContentState": {
+        "control": {
+          "type": "object",
+          "disable": true
+        },
+        "name": "defaultContentState",
+        "description": "Property to initialize content state once when its created.\n\n**Works in case of uncontrolled `Editor`**",
+        "type": {
+          "required": false,
+          "name": "object"
+        },
+        "table": {
+          "type": {
+            "summary": "object"
+          },
+          "defaultValue": null
+        }
+      },
+      "contentState": {
+        "control": {
+          "type": "object",
+          "disable": true
+        },
+        "name": "contentState",
+        "description": "ContentState is an object with the entire contents of an editor: text, block and inline styles, and entity ranges.\n\n[Read More about Content State](https://draftjs.org/docs/api-reference-content-state)",
+        "type": {
+          "required": false,
+          "name": "object"
+        },
+        "table": {
+          "type": {
+            "summary": "object"
+          },
+          "defaultValue": null
+        }
+      },
+      "toolbar": {
+        "control": {
+          "type": "object"
+        },
+        "name": "toolbar",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nCustomizes pre-built option in the toolbar\n\nToolbarShape: {\n  textDecoration: {\n    max: number; // default: 3\n    bold: { label: string, title: string },\n    italic: { label: string, title: string },\n    underline: { label: string, title: string },\n    strikethrough: { label: string, title: string },\n  },\n  colorPicker: {\n    colors: string[];\n  },\n  insert: {\n    max: number, // default: 2\n    link: { isVisible: boolean, title: string },\n    image: {\n      isVisible: boolean,\n      title: string,\n      alt: string,\n      defaultSize: { height: string, width: string },\n      uploadCallback:\n        (file) => Promise<{ data: { link: <THE_URL>}}>\n    }\n  }\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| max | Max controls visible on toolbar, rest are visible inside dropdown | |\n| label | Label of control in dropdown |  |\n| title | Tooltip of control on toolbar | |\n| colors | Array of colors to be shown in color-picker | |\n| isVisible | Determines if control is visible | true |\n| alt | Used to enable alt field for images | |\n| defaultSize | Used to pass default size (height and width) of image | height: '100px', width: '300px' |\n| uploadCallback | Returns a promise that resolves to give image src.  | |",
+        "type": {
+          "required": false,
+          "raw": "toolbarShape",
+          "name": "other",
+          "value": "custom"
+        },
+        "table": {
+          "type": {
+            "summary": "toolbarShape"
+          },
+          "defaultValue": null
+        }
+      },
+      "showToolbar": {
+        "control": {
+          "type": "boolean"
+        },
+        "name": "showToolbar",
+        "description": "Determines whether to show Toolbar option or not",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "bool"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "wrapperClassName": {
+        "control": {
+          "type": "text"
+        },
+        "name": "wrapperClassName",
+        "description": "Class applied around both the editor and the toolbar",
+        "type": {
+          "required": false,
+          "name": "string"
+        },
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "toolbarClassName": {
+        "control": {
+          "type": "text"
+        },
+        "name": "toolbarClassName",
+        "description": "Class applied around the toolbar",
+        "type": {
+          "required": false,
+          "name": "string"
+        },
+        "table": {
+          "type": {
+            "summary": "string"
+          },
+          "defaultValue": null
+        }
+      },
+      "editorStyle": {
+        "control": {
+          "type": "object"
+        },
+        "name": "editorStyle",
+        "description": "Style object applied around the editor",
+        "type": {
+          "required": false,
+          "name": "object"
+        },
+        "table": {
+          "type": {
+            "summary": "object"
+          },
+          "defaultValue": null
+        }
+      },
+      "onFocus": {
+        "name": "onFocus",
+        "description": "Callback called when editor is focused.\n\nonFocus = (event) => void;",
+        "type": {
+          "required": false,
+          "name": "function"
+        },
+        "table": {
+          "type": {
+            "summary": "func"
+          },
+          "defaultValue": null
+        }
+      },
+      "onBlur": {
+        "name": "onBlur",
+        "description": "Callback called when editor is blurred.\n\nonFocus = (event, editorState) => void;",
+        "type": {
+          "required": false,
+          "name": "function"
+        },
+        "table": {
+          "type": {
+            "summary": "func"
+          },
+          "defaultValue": null
+        }
+      },
+      "onTab": {
+        "name": "onTab",
+        "description": "Callback called when editor receives 'tab' keydown\n\nonTab = (event, editorState) => void;",
+        "type": {
+          "required": false,
+          "name": "function"
+        },
+        "table": {
+          "type": {
+            "summary": "func"
+          },
+          "defaultValue": null
+        }
+      },
+      "autoFocus": {
+        "control": {
+          "type": "boolean"
+        },
+        "name": "autoFocus",
+        "description": "Determines if element should automatically get focus when the page loads",
+        "type": {
+          "required": false,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "bool"
+          },
+          "defaultValue": {
+            "summary": "true"
+          }
+        }
+      },
+      "wrapperId": {
+        "control": {
+          "type": "number",
+          "disable": true
+        },
+        "name": "wrapperId",
+        "description": "Custom id added to wrapper around the editor.",
+        "type": {
+          "required": false,
+          "name": "number"
+        },
+        "table": {
+          "type": {
+            "summary": "number"
+          },
+          "defaultValue": null
+        }
+      },
+      "editorRef": {
+        "name": "editorRef",
+        "description": "Reference of Editor can be obtained using editorRef property.\n\nThis can be used to raise events on editor like focus editor.\n\neditorRef = (ref) => void;",
+        "type": {
+          "required": false,
+          "name": "function"
+        },
+        "table": {
+          "type": {
+            "summary": "func"
+          },
+          "defaultValue": null
+        }
+      },
+      "handlePastedText": {
+        "name": "handlePastedText",
+        "description": "",
+        "type": {
+          "required": false,
+          "name": "function"
+        },
+        "table": {
+          "type": {
+            "summary": "func"
+          },
+          "defaultValue": null
+        }
+      }
+    }
+  },
+  "initialArgs": {
+    "editorClassName": "RichTextEditor",
+    "placeholder": "Begin typing..",
+    "textAlignment": "left",
+    "ariaLabel": "RichTextEditor",
+    "spellCheck": false,
+    "readOnly": false
+  },
+  "argTypes": {
+    "editorClassName": {
+      "control": {
+        "type": "text"
+      },
+      "name": "editorClassName",
+      "type": {
+        "name": "string",
+        "required": false
+      },
+      "description": "Class applied around the editor",
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "placeholder": {
+      "control": {
+        "type": "text"
+      },
+      "name": "placeholder",
+      "type": {
+        "name": "string",
+        "required": false
+      },
+      "description": "Text to display when `Editor` is empty",
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "textAlignment": {
+      "control": {
+        "type": "radio"
+      },
+      "options": [
+        "left",
+        "right",
+        "center"
+      ],
+      "name": "textAlignment",
+      "type": {
+        "name": "enum",
+        "required": false,
+        "value": [
+          "left",
+          "right",
+          "center"
+        ]
+      },
+      "description": "Specify whether text alignment should be forced in a direction\nregardless of input characters.",
+      "table": {
+        "type": {
+          "summary": "'left' | 'right' | 'center'"
+        },
+        "defaultValue": null
+      }
+    },
+    "ariaLabel": {
+      "control": {
+        "type": "text"
+      },
+      "name": "ariaLabel",
+      "type": {
+        "name": "string",
+        "required": false
+      },
+      "description": "Attribute used to define a string that labels the current element.\n\nUsed in cases where a text label is not visible on the screen.",
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "spellCheck": {
+      "control": {
+        "type": "boolean"
+      },
+      "name": "spellCheck",
+      "type": {
+        "name": "boolean",
+        "required": false
+      },
+      "description": "Checks for misspellings in a text.",
+      "table": {
+        "type": {
+          "summary": "bool"
+        },
+        "defaultValue": null
+      }
+    },
+    "readOnly": {
+      "control": {
+        "type": "boolean"
+      },
+      "name": "readOnly",
+      "type": {
+        "name": "boolean",
+        "required": false
+      },
+      "description": "Set whether the `Editor` component should be editable.",
+      "table": {
+        "type": {
+          "summary": "bool"
+        },
+        "defaultValue": null
+      }
+    },
+    "mention": {
+      "control": {
+        "type": "object"
+      },
+      "name": "mention",
+      "description": "Used to enable mention in the editor\n\n| Name | Description | Default |\n| --- | --- | --- |\n| seperator | Character that separates a mention from word preceding it | '  ' |\n| trigger | Character that causes mention suggestions to appear, | '@' |\n| suggestion | Properties: label, value, icon | |\n| fetchSuggestions | Fetch dynamic suggestions list (Either use suggestion or fetchSuggestions option)\n| chipOptions | [Design System Chip Props](https://innovaccer.github.io/design-system/?path=/docs/components-chip-all--all) | |\n| dropdownOptions | Properties: dropdownClassName, customOptionRenderer = (suggestion, active, index) => React.ReactNode | |\n| renderer | customRenderer = (value) => React.ReactNode | |",
+      "type": {
+        "required": false,
+        "name": "object",
+        "value": {
+          "separator": {
+            "name": "string"
+          },
+          "trigger": {
+            "name": "string"
+          },
+          "chipOptions": {
+            "name": "object"
+          },
+          "dropdownOptions": {
+            "name": "object",
+            "value": {
+              "dropdownClassName": {
+                "name": "string"
+              },
+              "customOptionRenderer": {
+                "name": "function"
+              }
+            }
+          },
+          "renderer": {
+            "name": "function"
+          },
+          "suggestions": {
+            "name": "object",
+            "value": {
+              "label": {
+                "name": "string"
+              },
+              "value": {
+                "name": "string"
+              },
+              "icon": {
+                "name": "string"
+              }
+            }
+          },
+          "fetchSuggestions": {
+            "name": "function"
+          }
+        }
+      },
+      "table": {
+        "type": {
+          "summary": "object",
+          "detail": "{\n  separator: string,\n  trigger: string,\n  chipOptions: object,\n  dropdownOptions: {\n    dropdownClassName: string,\n    customOptionRenderer: func\n  },\n  renderer: func,\n  suggestions: {\n    label: string,\n    value: string,\n    icon: string\n  },\n  fetchSuggestions: func\n}"
+        },
+        "defaultValue": null
+      }
+    },
+    "editorState": {
+      "control": {
+        "type": "object",
+        "disable": true
+      },
+      "name": "editorState",
+      "description": "The EditorState object is a complete snapshot of the state of the editor, including contents, cursor, and undo/redo history.\n\nAll changes to content and selection within the editor will create new EditorState objects.\n\n[Read More about Editor State](https://draftjs.org/docs/api-reference-editor-state)\n\n**Works in case of controlled `Editor`**",
+      "type": {
+        "required": false,
+        "name": "object"
+      },
+      "table": {
+        "type": {
+          "summary": "object"
+        },
+        "defaultValue": null
+      }
+    },
+    "onEditorStateChange": {
+      "name": "onEditorStateChange",
+      "description": "Callback function called each time there is change in state of editor\n\nonChange: (editorState: EditorState) => void;",
+      "type": {
+        "required": false,
+        "name": "function"
+      },
+      "table": {
+        "type": {
+          "summary": "func"
+        },
+        "defaultValue": null
+      }
+    },
+    "defaultEditorState": {
+      "control": {
+        "type": "object",
+        "disable": true
+      },
+      "name": "defaultEditorState",
+      "description": "Property to initialize editor state once when its created.\n\n**Works in case of uncontrolled `Editor`**",
+      "type": {
+        "required": false,
+        "name": "object"
+      },
+      "table": {
+        "type": {
+          "summary": "object"
+        },
+        "defaultValue": null
+      }
+    },
+    "onContentStateChange": {
+      "name": "onContentStateChange",
+      "description": "Callback function called each time there is change in state of editor\n\nonChange: (contentState: ContentState) => void;",
+      "type": {
+        "required": false,
+        "name": "function"
+      },
+      "table": {
+        "type": {
+          "summary": "func"
+        },
+        "defaultValue": null
+      }
+    },
+    "defaultContentState": {
+      "control": {
+        "type": "object",
+        "disable": true
+      },
+      "name": "defaultContentState",
+      "description": "Property to initialize content state once when its created.\n\n**Works in case of uncontrolled `Editor`**",
+      "type": {
+        "required": false,
+        "name": "object"
+      },
+      "table": {
+        "type": {
+          "summary": "object"
+        },
+        "defaultValue": null
+      }
+    },
+    "contentState": {
+      "control": {
+        "type": "object",
+        "disable": true
+      },
+      "name": "contentState",
+      "description": "ContentState is an object with the entire contents of an editor: text, block and inline styles, and entity ranges.\n\n[Read More about Content State](https://draftjs.org/docs/api-reference-content-state)",
+      "type": {
+        "required": false,
+        "name": "object"
+      },
+      "table": {
+        "type": {
+          "summary": "object"
+        },
+        "defaultValue": null
+      }
+    },
+    "toolbar": {
+      "control": {
+        "type": "object"
+      },
+      "name": "toolbar",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nCustomizes pre-built option in the toolbar\n\nToolbarShape: {\n  textDecoration: {\n    max: number; // default: 3\n    bold: { label: string, title: string },\n    italic: { label: string, title: string },\n    underline: { label: string, title: string },\n    strikethrough: { label: string, title: string },\n  },\n  colorPicker: {\n    colors: string[];\n  },\n  insert: {\n    max: number, // default: 2\n    link: { isVisible: boolean, title: string },\n    image: {\n      isVisible: boolean,\n      title: string,\n      alt: string,\n      defaultSize: { height: string, width: string },\n      uploadCallback:\n        (file) => Promise<{ data: { link: <THE_URL>}}>\n    }\n  }\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| max | Max controls visible on toolbar, rest are visible inside dropdown | |\n| label | Label of control in dropdown |  |\n| title | Tooltip of control on toolbar | |\n| colors | Array of colors to be shown in color-picker | |\n| isVisible | Determines if control is visible | true |\n| alt | Used to enable alt field for images | |\n| defaultSize | Used to pass default size (height and width) of image | height: '100px', width: '300px' |\n| uploadCallback | Returns a promise that resolves to give image src.  | |",
+      "type": {
+        "required": false,
+        "raw": "toolbarShape",
+        "name": "other",
+        "value": "custom"
+      },
+      "table": {
+        "type": {
+          "summary": "toolbarShape"
+        },
+        "defaultValue": null
+      }
+    },
+    "showToolbar": {
+      "control": {
+        "type": "boolean"
+      },
+      "name": "showToolbar",
+      "description": "Determines whether to show Toolbar option or not",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "bool"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "wrapperClassName": {
+      "control": {
+        "type": "text"
+      },
+      "name": "wrapperClassName",
+      "description": "Class applied around both the editor and the toolbar",
+      "type": {
+        "required": false,
+        "name": "string"
+      },
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "toolbarClassName": {
+      "control": {
+        "type": "text"
+      },
+      "name": "toolbarClassName",
+      "description": "Class applied around the toolbar",
+      "type": {
+        "required": false,
+        "name": "string"
+      },
+      "table": {
+        "type": {
+          "summary": "string"
+        },
+        "defaultValue": null
+      }
+    },
+    "editorStyle": {
+      "control": {
+        "type": "object"
+      },
+      "name": "editorStyle",
+      "description": "Style object applied around the editor",
+      "type": {
+        "required": false,
+        "name": "object"
+      },
+      "table": {
+        "type": {
+          "summary": "object"
+        },
+        "defaultValue": null
+      }
+    },
+    "onFocus": {
+      "name": "onFocus",
+      "description": "Callback called when editor is focused.\n\nonFocus = (event) => void;",
+      "type": {
+        "required": false,
+        "name": "function"
+      },
+      "table": {
+        "type": {
+          "summary": "func"
+        },
+        "defaultValue": null
+      }
+    },
+    "onBlur": {
+      "name": "onBlur",
+      "description": "Callback called when editor is blurred.\n\nonFocus = (event, editorState) => void;",
+      "type": {
+        "required": false,
+        "name": "function"
+      },
+      "table": {
+        "type": {
+          "summary": "func"
+        },
+        "defaultValue": null
+      }
+    },
+    "onTab": {
+      "name": "onTab",
+      "description": "Callback called when editor receives 'tab' keydown\n\nonTab = (event, editorState) => void;",
+      "type": {
+        "required": false,
+        "name": "function"
+      },
+      "table": {
+        "type": {
+          "summary": "func"
+        },
+        "defaultValue": null
+      }
+    },
+    "autoFocus": {
+      "control": {
+        "type": "boolean"
+      },
+      "name": "autoFocus",
+      "description": "Determines if element should automatically get focus when the page loads",
+      "type": {
+        "required": false,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "bool"
+        },
+        "defaultValue": {
+          "summary": "true"
+        }
+      }
+    },
+    "wrapperId": {
+      "control": {
+        "type": "number",
+        "disable": true
+      },
+      "name": "wrapperId",
+      "description": "Custom id added to wrapper around the editor.",
+      "type": {
+        "required": false,
+        "name": "number"
+      },
+      "table": {
+        "type": {
+          "summary": "number"
+        },
+        "defaultValue": null
+      }
+    },
+    "editorRef": {
+      "name": "editorRef",
+      "description": "Reference of Editor can be obtained using editorRef property.\n\nThis can be used to raise events on editor like focus editor.\n\neditorRef = (ref) => void;",
+      "type": {
+        "required": false,
+        "name": "function"
+      },
+      "table": {
+        "type": {
+          "summary": "func"
+        },
+        "defaultValue": null
+      }
+    },
+    "handlePastedText": {
+      "name": "handlePastedText",
+      "description": "",
+      "type": {
+        "required": false,
+        "name": "function"
+      },
+      "table": {
+        "type": {
+          "summary": "func"
+        },
+        "defaultValue": null
+      }
+    }
+  }
+}
