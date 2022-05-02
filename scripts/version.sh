@@ -6,8 +6,8 @@ DATE=$(date +%F)
 echo "\n-------------------\n **v$PACKAGE_VERSION**  ($DATE) \n\n$LOG";
 
 # build
-npm run build && 
+# npm run build && 
 
 # add changes to git
-git add dist -f && 
-git add css/dist -f
+# git add dist -f && 
+# git add css/dist -f
