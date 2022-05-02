@@ -51,16 +51,20 @@ jobs:
         if: steps.is_release_commit.outputs.result == 1
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(git log -2 --pretty=format:%B | tail -n1)
 
-      - name: remove css/dist dist/ from commit
-        if: steps.is_release_commit.outputs.result == 1
-        run: |
-          git reset HEAD~1
-          git add package.json
-          git commit -m "Released $(git log -1 --pretty=format:%s)" --no-verify
+      # Note : not working due to limitation of github actions to push to protected branches.
+      # Error example : remote: error: GH006: Protected branch update failed for refs/heads/docs.
+      # Please add updated version in package.json while adding the release commit itself.
 
-      - name: push version to github
-        if: steps.is_release_commit.outputs.result == 1
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master
+      # - name: remove css/dist dist/ from commit
+      #   if: steps.is_release_commit.outputs.result == 1
+      #   run: |
+      #     git reset HEAD~1
+      #     git add package.json
+      #     git commit -m "Released $(git log -1 --pretty=format:%s)" --no-verify
+
+      # - name: push version to github
+      #   if: steps.is_release_commit.outputs.result == 1
+      #   run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master
 
       - name: deploy storybook
         if: steps.is_release_commit.outputs.result == 1

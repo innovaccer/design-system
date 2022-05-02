@@ -1,4 +1,4 @@
-name: "Manual release"
+name: "Custom release"
 
 on:
   workflow_dispatch:
@@ -51,11 +51,6 @@ jobs:
       - name: push version to github
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:$GITHUB_REF_NAME 
     
-      - name: deploy storybook
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npm run deploy-storybook -- --ci
-      
       - name: notify release
         uses: /innovaccer/design-system/actions/notify-release@master
         env:
