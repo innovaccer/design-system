@@ -33,7 +33,7 @@ jobs:
 
       - name: setup git
         # if: steps.is_release_commit.outputs.result == 1
-        run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
+        run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "satyam.yadav@innovaccer.com" && git config --global user.name "innosatyam"
 
       - name: bump module version
         # if: steps.is_release_commit.outputs.result == 1
