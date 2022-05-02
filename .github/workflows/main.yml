@@ -2,7 +2,7 @@ name: 'Release new version'
 on:
   push:
     branches:
-      - master
+      - docs
 jobs:
   release:
     # uncomment next line as soon as visual tesing starts working
@@ -12,69 +12,69 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check for release commit
-        id: 'is_release_commit'
-        uses: /innovaccer/design-system/actions/check-release-commit@master
+      # - name: Check for release commit
+      #   id: 'is_release_commit'
+      #   uses: /innovaccer/design-system/actions/check-release-commit@master
 
       - uses: actions/setup-node@v1
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         with:
           node-version: '14.x'
 
       - name: npm install
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         run: npm ci
 
       - name: setup git
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
 
       - name: bump module version
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         run: RELEASE_COMMIT=true npm version --no-commit-hooks $(git log -1 --pretty=format:%s) -m "Released %s"
 
-      - name: gnerate .npmrc
-        if: steps.is_release_commit.outputs.result == 1
-        run: cp .npmrc.stub .npmrc
+      # - name: gnerate .npmrc
+      #   # if: steps.is_release_commit.outputs.result == 1
+      #   run: cp .npmrc.stub .npmrc
 
-      - name: Publish to npmjs
-        if: steps.is_release_commit.outputs.result == 1
-        run: npm publish --access public
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      # - name: Publish to npmjs
+      #   # if: steps.is_release_commit.outputs.result == 1
+      #   run: npm publish --access public
+      #   env:
+      #     NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
-      - name: remove .npmrc
-        if: steps.is_release_commit.outputs.result == 1
-        run: rm -rf .npmrc
+      # - name: remove .npmrc
+      #   # if: steps.is_release_commit.outputs.result == 1
+      #   run: rm -rf .npmrc
 
-      - name: push module tags to github
-        if: steps.is_release_commit.outputs.result == 1
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(git log -2 --pretty=format:%B | tail -n1)
+      # - name: push module tags to github
+      #   # if: steps.is_release_commit.outputs.result == 1
+      #   run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git $(git log -2 --pretty=format:%B | tail -n1)
 
-      - name: remove css/dist dist/ from commit
-        if: steps.is_release_commit.outputs.result == 1
-        run: |
-          git reset HEAD~1
-          git add package.json
-          git commit -m "Released $(git log -1 --pretty=format:%s)" --no-verify
+      # - name: remove css/dist dist/ from commit
+      #   # if: steps.is_release_commit.outputs.result == 1
+      #   run: |
+      #     git reset HEAD~1
+      #     git add package.json
+      #     git commit -m "Released $(git log -1 --pretty=format:%s)" --no-verify
 
       - name: push version to github
-        if: steps.is_release_commit.outputs.result == 1
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:master
+        # if: steps.is_release_commit.outputs.result == 1
+        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:docs
 
-      - name: deploy storybook
-        if: steps.is_release_commit.outputs.result == 1
-        run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-prod --aws-profile=NONE --ci
-        env:
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
-          AWS_REGION: ${{ secrets.DOCS_REGION }}
+      # - name: deploy storybook
+      #   # if: steps.is_release_commit.outputs.result == 1
+      #   run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-prod --aws-profile=NONE --ci
+      #   env:
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
+      #     AWS_REGION: ${{ secrets.DOCS_REGION }}
 
-      - name: notify release
-        if: steps.is_release_commit.outputs.result == 1
-        uses: /innovaccer/design-system/actions/notify-release@master
-        env:
-          GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
+      # - name: notify release
+      #   # if: steps.is_release_commit.outputs.result == 1
+      #   uses: /innovaccer/design-system/actions/notify-release@master
+      #   env:
+      #     GCHAT_PATH: ${{ secrets.GCHAT_PATH }}
 
   site_deploy:
     name: Deploy docs site
@@ -88,33 +88,33 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Check for release commit
-        id: 'is_release_commit'
-        uses: /innovaccer/design-system/actions/check-release-commit@master
+      # - name: Check for release commit
+      #   id: 'is_release_commit'
+      #   uses: /innovaccer/design-system/actions/check-release-commit@master
 
       - uses: actions/setup-node@v1
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         with:
           node-version: '14.x'
 
       - name: npm install
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         run: npm i
 
       - name: extract stories
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         run: npm run extract
         env:
           STORYBOOK_HOST: 'https://mds.innovaccer.com/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story'
 
       - name: build
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         run: npm run build
         env:
           DOCS_BUCKET: webui-mds-docs-prod
 
       - name: deploy
-        if: steps.is_release_commit.outputs.result == 1
+        # if: steps.is_release_commit.outputs.result == 1
         run: npm run deploy
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
