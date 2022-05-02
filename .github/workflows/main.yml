@@ -3,6 +3,12 @@ on:
   push:
     branches:
       - docs
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: 'Release type to be used in npm version command'
+        required: true
+        default: 'prerelease'
 jobs:
   release:
     # uncomment next line as soon as visual tesing starts working
