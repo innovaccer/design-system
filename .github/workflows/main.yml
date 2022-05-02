@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: docs
 
       # - name: Check for release commit
       #   id: 'is_release_commit'
@@ -33,7 +35,7 @@ jobs:
 
       - name: setup git
         # if: steps.is_release_commit.outputs.result == 1
-        run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "satyam.yadav@innovaccer.com" && git config --global user.name "innosatyam"
+        run: git remote add upstream https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
 
       - name: bump module version
         # if: steps.is_release_commit.outputs.result == 1
@@ -66,7 +68,7 @@ jobs:
 
       - name: push version to github
         # if: steps.is_release_commit.outputs.result == 1
-        run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:docs
+        run: git push upstream 
 
       # - name: deploy storybook
       #   # if: steps.is_release_commit.outputs.result == 1
