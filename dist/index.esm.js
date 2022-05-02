@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478629993 
+   * Generated on: 1651481013721 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.11.0-0
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -257,6 +257,8 @@ function _assertThisInitialized$2(self) {
 function _possibleConstructorReturn$1(self, call) {
   if (call && (typeof call === "object" || typeof call === "function")) {
     return call;
+  } else if (call !== void 0) {
+    throw new TypeError("Derived constructors may only return object or undefined");
   }
 
   return _assertThisInitialized$2(self);
@@ -567,46 +569,80 @@ var date$1 = function date(val, format) {
 
   switch (format) {
     case 'dd/mm/yyyy':
-      var p = val.split('/');
-      var date = +p[0] || 1;
-      var month = +p[1] || 1;
-      var year = +p[2] || 1900;
-      return validate(date, month, year);
+      {
+        var p = val.split('/');
+
+        var _date = +p[0] || 1;
+
+        var month = +p[1] || 1;
+        var year = +p[2] || 1900;
+        return validate(_date, month, year);
+      }
 
     case 'mm/dd/yyyy':
-      var p = val.split('/');
-      var date = +p[1] || 1;
-      var month = +p[0] || 1;
-      var year = +p[2] || 1900;
-      return validate(date, month, year);
+      {
+        var _p = val.split('/');
+
+        var _date2 = +_p[1] || 1;
+
+        var _month = +_p[0] || 1;
+
+        var _year = +_p[2] || 1900;
+
+        return validate(_date2, _month, _year);
+      }
 
     case 'yyyy/mm/dd':
-      var p = val.split('/');
-      var date = +p[2] || 1;
-      var month = +p[1] || 1;
-      var year = +p[0] || 1900;
-      return validate(date, month, year);
+      {
+        var _p2 = val.split('/');
+
+        var _date3 = +_p2[2] || 1;
+
+        var _month2 = +_p2[1] || 1;
+
+        var _year2 = +_p2[0] || 1900;
+
+        return validate(_date3, _month2, _year2);
+      }
 
     case 'dd-mm-yyyy':
-      var p = val.split('-');
-      var date = +p[0] || 1;
-      var month = +p[1] || 1;
-      var year = +p[2] || 1900;
-      return validate(date, month, year);
+      {
+        var _p3 = val.split('-');
+
+        var _date4 = +_p3[0] || 1;
+
+        var _month3 = +_p3[1] || 1;
+
+        var _year3 = +_p3[2] || 1900;
+
+        return validate(_date4, _month3, _year3);
+      }
 
     case 'mm-dd-yyyy':
-      var p = val.split('-');
-      var date = +p[1] || 1;
-      var month = +p[0] || 1;
-      var year = +p[2] || 1900;
-      return validate(date, month, year);
+      {
+        var _p4 = val.split('-');
+
+        var _date5 = +_p4[1] || 1;
+
+        var _month4 = +_p4[0] || 1;
+
+        var _year4 = +_p4[2] || 1900;
+
+        return validate(_date5, _month4, _year4);
+      }
 
     case 'yyyy-mm-dd':
-      var p = val.split('-');
-      var date = +p[2] || 1;
-      var month = +p[1] || 1;
-      var year = +p[0] || 1900;
-      return validate(date, month, year);
+      {
+        var _p5 = val.split('-');
+
+        var _date6 = +_p5[2] || 1;
+
+        var _month5 = +_p5[1] || 1;
+
+        var _year5 = +_p5[0] || 1900;
+
+        return validate(_date6, _month5, _year5);
+      }
 
     default:
       return false;
@@ -812,6 +848,83 @@ Avatar.defaultProps = {
   size: 'regular'
 };
 
+var AvatarCount = function AvatarCount(props) {
+  var _classNames2;
+
+  var hiddenAvatarCount = props.hiddenAvatarCount,
+      avatarStyle = props.avatarStyle;
+  var ContentClass = classnames(_defineProperty$2({}, "Avatar-content--secondary", true));
+  var AvatarVariantsClass = classnames((_classNames2 = {
+    Avatar: true
+  }, _defineProperty$2(_classNames2, "Avatar--regular", true), _defineProperty$2(_classNames2, "Avatar--secondary", true), _defineProperty$2(_classNames2, 'Avatar--disabled', true), _classNames2));
+  return /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
+    style: avatarStyle
+  }, /*#__PURE__*/React.createElement("span", {
+    className: AvatarVariantsClass
+  }, /*#__PURE__*/React.createElement(Text, {
+    appearance: 'white',
+    className: ContentClass
+  }, "+".concat(hiddenAvatarCount))));
+};
+
+var Avatars = function Avatars(props) {
+  var avatarList = props.avatarList,
+      avatarStyle = props.avatarStyle,
+      tooltipPosition = props.tooltipPosition;
+  var avatars = avatarList.map(function (item, index) {
+    var appearance = item.appearance,
+        firstName = item.firstName,
+        lastName = item.lastName;
+    return /*#__PURE__*/React.createElement("div", {
+      "data-test": "DesignSystem-AvatarGroup--Avatar",
+      className: "AvatarGroup-item",
+      style: avatarStyle,
+      key: index
+    }, /*#__PURE__*/React.createElement(Avatar, {
+      appearance: appearance,
+      firstName: firstName,
+      lastName: lastName,
+      withTooltip: true,
+      tooltipPosition: tooltipPosition
+    }));
+  });
+  return avatars;
+};
+
+var AvatarPopperBody = function AvatarPopperBody(props) {
+  var hiddenAvatarList = props.hiddenAvatarList,
+      popperRenderer = props.popperRenderer,
+      maxHeight = props.maxHeight,
+      dark = props.dark;
+
+  if (popperRenderer) {
+    return popperRenderer(hiddenAvatarList);
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "py-6 pr-4 pl-6"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "AvatarGroup-TextWrapper",
+    style: {
+      maxHeight: maxHeight
+    }
+  }, hiddenAvatarList.map(function (item, ind) {
+    var _item$firstName = item.firstName,
+        firstName = _item$firstName === void 0 ? '' : _item$firstName,
+        _item$lastName = item.lastName,
+        lastName = _item$lastName === void 0 ? '' : _item$lastName;
+    var name = "".concat(firstName, " ").concat(lastName);
+    var AvatarTextClass = classnames(_defineProperty$2({}, "mb-5", ind < hiddenAvatarList.length - 1));
+    return /*#__PURE__*/React.createElement(Text, {
+      key: ind,
+      appearance: dark ? 'white' : 'default',
+      className: AvatarTextClass,
+      "data-test": "DesignSystem-AvatarGroup--Text"
+    }, name);
+  })));
+};
+
 var AvatarGroup = function AvatarGroup(props) {
   var max = props.max,
       borderColor = props.borderColor,
@@ -833,7 +946,7 @@ var AvatarGroup = function AvatarGroup(props) {
       _popoverOptions$poppe = popoverOptions.popperClassName,
       popperClassName = _popoverOptions$poppe === void 0 ? '' : _popoverOptions$poppe;
   var baseProps = extractBaseProps(props);
-  var extraAvatars = list.length > max ? list.length - max > 9 ? 9 : list.length - max : 0;
+  var hiddenAvatarCount = list.length > max ? Math.min(list.length - max, 99) : 0;
   var style = {
     borderRadius: '50%',
     backgroundColor: "".concat(borderColor),
@@ -842,78 +955,31 @@ var AvatarGroup = function AvatarGroup(props) {
   };
   var AvatarGroupClass = classnames(_defineProperty$2({}, 'AvatarGroup', true), className);
   var popperClass = classnames(_defineProperty$2({}, 'AvatarGroup-Popper', true), popperClassName);
-  var trigger = /*#__PURE__*/React.createElement("div", {
-    "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
-    style: style
-  }, /*#__PURE__*/React.createElement(Avatar, {
-    appearance: "secondary",
-    firstName: "+",
-    lastName: "".concat(extraAvatars),
-    withTooltip: false
-  }));
-
-  var renderPopper = function renderPopper() {
-    var extraAvatarsList = list.slice(max, list.length);
-
-    if (popperRenderer && typeof renderPopper === 'function') {
-      return popperRenderer(extraAvatarsList);
-    }
-
-    return /*#__PURE__*/React.createElement("div", {
-      className: "py-6 pr-4 pl-6"
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "AvatarGroup-TextWrapper",
-      style: {
-        maxHeight: maxHeight
-      }
-    }, extraAvatarsList.map(function (item, ind) {
-      var _item$firstName = item.firstName,
-          firstName = _item$firstName === void 0 ? '' : _item$firstName,
-          _item$lastName = item.lastName,
-          lastName = _item$lastName === void 0 ? '' : _item$lastName;
-      var name = "".concat(firstName, " ").concat(lastName);
-      return /*#__PURE__*/React.createElement(Text, {
-        key: ind,
-        appearance: dark ? 'white' : 'default',
-        className: ind < extraAvatars - 1 ? 'mb-5' : '',
-        "data-test": "DesignSystem-AvatarGroup--Text"
-      }, name);
-    })));
-  };
-
-  var renderAvatars = function renderAvatars() {
-    var avatars = list.slice(0, max).map(function (item, index) {
-      var appearance = item.appearance,
-          firstName = item.firstName,
-          lastName = item.lastName;
-      return /*#__PURE__*/React.createElement("div", {
-        "data-test": "DesignSystem-AvatarGroup--Avatar",
-        className: "AvatarGroup-item",
-        style: style,
-        key: index
-      }, /*#__PURE__*/React.createElement(Avatar, {
-        appearance: appearance,
-        firstName: firstName,
-        lastName: lastName,
-        withTooltip: true,
-        tooltipPosition: tooltipPosition
-      }));
-    });
-    return avatars;
-  };
-
   return /*#__PURE__*/React.createElement("div", _extends$3({
     "data-test": "DesignSystem-AvatarGroup"
   }, baseProps, {
     className: "".concat(AvatarGroupClass, " d-inline-flex")
-  }), renderAvatars(), list.length - max > 0 && /*#__PURE__*/React.createElement(Popover, {
+  }), /*#__PURE__*/React.createElement(Avatars, {
+    avatarList: list.slice(0, max),
+    avatarStyle: style,
+    tooltipPosition: tooltipPosition
+  }), list.length - max > 0 && /*#__PURE__*/React.createElement(Popover, {
     on: on,
     dark: dark,
-    trigger: trigger,
+    trigger: /*#__PURE__*/React.createElement(AvatarCount, {
+      hiddenAvatarCount: hiddenAvatarCount,
+      avatarStyle: style
+    }),
     position: position,
     appendToBody: appendToBody,
-    className: popperClass
-  }, renderPopper()));
+    className: popperClass,
+    offset: "medium"
+  }, /*#__PURE__*/React.createElement(AvatarPopperBody, {
+    hiddenAvatarList: list.slice(max, list.length),
+    popperRenderer: popperRenderer,
+    maxHeight: maxHeight,
+    dark: dark
+  })));
 };
 AvatarGroup.displayName = 'AvatarGroup';
 AvatarGroup.defaultProps = {
@@ -984,7 +1050,10 @@ var Backdrop = function Backdrop(props) {
     "data-test": "DesignSystem-Backdrop",
     "data-layer": true
   }, baseProps, {
-    className: classes
+    className: classes,
+    style: {
+      zIndex: props.zIndex
+    }
   })), document.body);
   return BackdropElement;
 };
@@ -1211,7 +1280,7 @@ var getSelectAll$1 = function getSelectAll(selected, optionsLength, disabledOpti
   };
 };
 
-var _excluded$z = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"];
+var _excluded$A = ["triggerSize", "placeholder", "menu", "children", "icon", "disabled", "open", "inlineLabel", "error"];
 var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
 
@@ -1227,7 +1296,7 @@ var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
       open = props.open,
       inlineLabel = props.inlineLabel,
       error = props.error,
-      rest = _objectWithoutProperties$1(props, _excluded$z);
+      rest = _objectWithoutProperties$1(props, _excluded$A);
 
   var buttonDisabled = disabled ? 'disabled' : 'default';
   var trimmedPlaceholder = placeholder.trim();
@@ -1247,7 +1316,7 @@ var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
     className: "DropdownButton-wrapper"
   }, inlineLabel && /*#__PURE__*/React.createElement(Text, {
     appearance: "subtle",
-    className: "mr-4"
+    className: "mr-4 white-space-nowrap"
   }, "".concat(inlineLabel.trim().charAt(0).toUpperCase()).concat(inlineLabel.trim().slice(1))), icon && !inlineLabel && /*#__PURE__*/React.createElement(Icon, {
     appearance: buttonDisabled,
     className: "d-flex align-items-center mr-4",
@@ -1261,21 +1330,21 @@ var DropdownButton = /*#__PURE__*/React.forwardRef(function (props, ref) {
 });
 DropdownButton.displayName = 'DropdownButton';
 
-var _excluded$y = ["children", "componentType", "className"];
+var _excluded$z = ["children", "componentType", "className"];
 
 var GenericText = function GenericText(_ref) {
   var children = _ref.children,
       _ref$componentType = _ref.componentType,
       componentType = _ref$componentType === void 0 ? 'span' : _ref$componentType,
       className = _ref.className,
-      props = _objectWithoutProperties$1(_ref, _excluded$y);
+      props = _objectWithoutProperties$1(_ref, _excluded$z);
 
   return /*#__PURE__*/React.createElement(componentType, _objectSpread2(_objectSpread2({}, props), {}, {
     className: className
   }), children);
 };
 
-var _excluded$x = ["appearance", "size", "children", "weight", "small", "className"];
+var _excluded$y = ["appearance", "size", "children", "weight", "small", "className"];
 var Text = function Text(props) {
   var _classNames;
 
@@ -1285,7 +1354,7 @@ var Text = function Text(props) {
       weight = props.weight,
       small = props.small,
       className = props.className,
-      rest = _objectWithoutProperties$1(props, _excluded$x);
+      rest = _objectWithoutProperties$1(props, _excluded$y);
 
   var classes = classnames((_classNames = {
     Text: true
@@ -1303,6 +1372,62 @@ Text.defaultProps = {
   size: 'regular'
 };
 
+var isSpaceKey = function isSpaceKey(e) {
+  return e.key === 'Space';
+};
+
+var _excluded$x = ["onClick", "onKeyDown", "role"];
+var allowed = {
+  button: new Set(['Enter', 'Space', 'Spacebar', ' ']),
+  link: new Set(['Enter']),
+  // onChange handles everything, no need for extra keyboard interaction
+  checkbox: new Set([]),
+  radio: new Set([])
+}; // Refer for keyboard interactions: https://webaim.org/techniques/keyboard/#testing
+
+var isKeyboardInteractionAllowed = function isKeyboardInteractionAllowed(role, key) {
+  if (!allowed[role]) {
+    return false;
+  }
+
+  var allowedKeys = allowed[role];
+  return allowedKeys.has(key);
+};
+
+var useAccessibilityProps = function useAccessibilityProps(_ref) {
+  var onClick = _ref.onClick,
+      _onKeyDown = _ref.onKeyDown,
+      _ref$role = _ref.role,
+      role = _ref$role === void 0 ? 'button' : _ref$role,
+      rest = _objectWithoutProperties$1(_ref, _excluded$x);
+
+  return _objectSpread2({}, onClick ? {
+    onClick: onClick,
+    role: role,
+    tabIndex: 0,
+    'aria-label': rest['aria-label'],
+    onKeyDown: function onKeyDown(e) {
+      if (_onKeyDown) {
+        _onKeyDown(e);
+
+        return;
+      }
+
+      var key = e.key;
+
+      if (isKeyboardInteractionAllowed(role, key)) {
+        if (onClick) {
+          e.preventDefault();
+          onClick(e);
+        }
+      }
+    }
+  } : {
+    role: role,
+    'aria-label': rest['aria-label']
+  });
+};
+
 var Icon = function Icon(props) {
   var _classNames;
 
@@ -1310,8 +1435,8 @@ var Icon = function Icon(props) {
       className = props.className,
       name = props.name,
       size = props.size,
-      onClick = props.onClick,
       children = props.children;
+  var accessibilityProps = useAccessibilityProps(props);
   var baseProps = extractBaseProps(props);
 
   var mapper = function mapper(val) {
@@ -1342,9 +1467,8 @@ var Icon = function Icon(props) {
 
   return /*#__PURE__*/React.createElement("i", _extends$3({}, baseProps, {
     className: iconClass,
-    style: styles,
-    onClick: onClick
-  }), type ? "".concat(name, "_").concat(type) : name);
+    style: styles
+  }, accessibilityProps), type ? "".concat(name, "_").concat(type) : name);
 };
 Icon.displayName = 'Icon';
 Icon.defaultProps = {
@@ -1363,7 +1487,7 @@ var uidGenerator = function uidGenerator() {
   return uuid;
 };
 
-var _excluded$w = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"];
+var _excluded$w = ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked", "helpText"];
 
 /**
  * ######Checkbox has two types:
@@ -1371,7 +1495,7 @@ var _excluded$w = ["size", "tabIndex", "defaultChecked", "indeterminate", "label
  *  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)
  */
 var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
-  var _classNames, _classNames2, _classNames4;
+  var _classNames, _classNames2, _classNames3;
 
   var _props$size = props.size,
       size = _props$size === void 0 ? 'regular' : _props$size,
@@ -1384,16 +1508,17 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       onChange = props.onChange,
       name = props.name,
       value = props.value,
-      className = props.className;
-      props.checked;
-      var rest = _objectWithoutProperties$1(props, _excluded$w);
+      className = props.className,
+      checkedProp = props.checked,
+      helpText = props.helpText,
+      rest = _objectWithoutProperties$1(props, _excluded$w);
 
   var ref = React.useRef(null);
   React.useImperativeHandle(forwardedRef, function () {
     return ref.current;
   });
 
-  var _React$useState = React.useState(props.checked === undefined ? defaultChecked : props.checked),
+  var _React$useState = React.useState(checkedProp === undefined ? defaultChecked : checkedProp),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       checked = _React$useState2[0],
       setChecked = _React$useState2[1];
@@ -1402,22 +1527,22 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     setIndeterminate(indeterminate);
   }, [indeterminate]);
   React.useEffect(function () {
-    if (props.checked !== undefined) {
-      setChecked(props.checked);
+    if (checkedProp !== undefined) {
+      setChecked(checkedProp);
     }
-  }, [props.checked]);
+  }, [checkedProp]);
   var CheckboxClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Checkbox', true), _defineProperty$2(_classNames, 'Checkbox--disabled', disabled), _classNames), className);
   var CheckboxOuterWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Checkbox-outerWrapper', true), _defineProperty$2(_classNames2, "Checkbox-outerWrapper--".concat(size), size), _classNames2));
-  var CheckboxTextClass = classnames(_defineProperty$2({}, 'Checkbox-label', true));
-  var CheckboxInputWrapper = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Checkbox-input', true), _defineProperty$2(_classNames4, 'Checkbox-input--checked', checked), _defineProperty$2(_classNames4, 'Checkbox-input--indeterminate', props.indeterminate), _classNames4));
+  var CheckboxInputWrapper = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Checkbox-input', true), _defineProperty$2(_classNames3, 'Checkbox-input--checked', checked), _defineProperty$2(_classNames3, 'Checkbox-input--indeterminate', props.indeterminate), _classNames3));
   var CheckboxWrapper = classnames(_defineProperty$2({}, 'Checkbox-wrapper', true));
+  var CheckboxLabelClass = classnames(_defineProperty$2({}, 'Checkbox-label', true));
 
   var setIndeterminate = function setIndeterminate(indeterminateValue) {
     ref.current.indeterminate = indeterminateValue;
   };
 
   var onChangeHandler = function onChangeHandler(e) {
-    if (props.checked === undefined) {
+    if (checkedProp === undefined) {
       setChecked(e.target.checked);
       setIndeterminate(e.target.indeterminate);
     }
@@ -1428,9 +1553,11 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
   var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
   var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
   var IconSize = size === 'tiny' ? 12 : 16;
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-Checkbox",
     className: CheckboxClass
   }, /*#__PURE__*/React.createElement("div", {
+    "data-test": "DesignSystem-Checkbox-OuterWrapper",
     className: CheckboxOuterWrapper
   }, /*#__PURE__*/React.createElement("input", _extends$3({}, rest, {
     type: "checkbox",
@@ -1443,20 +1570,29 @@ var Checkbox = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     value: value,
     className: CheckboxInputWrapper,
     tabIndex: tabIndex,
-    id: id
+    id: id,
+    "data-test": "DesignSystem-Checkbox-InputBox"
   })), /*#__PURE__*/React.createElement("span", {
-    className: CheckboxWrapper
+    className: CheckboxWrapper,
+    "data-test": "DesignSystem-Checkbox-Icon"
   }, IconName && /*#__PURE__*/React.createElement(Icon, {
     name: IconName,
     size: IconSize,
     appearance: 'white'
-  }))), label && label.trim() && /*#__PURE__*/React.createElement("label", {
+  }))), /*#__PURE__*/React.createElement("div", {
+    className: "Checkbox-labelWrapper"
+  }, label && label.trim() && /*#__PURE__*/React.createElement("label", {
     htmlFor: id,
-    className: CheckboxTextClass
+    className: CheckboxLabelClass,
+    "data-test": "DesignSystem-Checkbox-Label"
   }, /*#__PURE__*/React.createElement(Text, {
     size: size === 'tiny' ? 'small' : 'regular',
     appearance: disabled ? 'disabled' : 'default'
-  }, label.trim())));
+  }, label.trim())), helpText && /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-Checkbox-HelpText",
+    size: "small",
+    appearance: disabled ? 'disabled' : 'subtle'
+  }, helpText.trim()))));
 });
 Checkbox.displayName = 'Checkbox';
 
@@ -1467,8 +1603,36 @@ var CheckboxOption = function CheckboxOption(props) {
       onChangeHandler = props.onChangeHandler,
       onUpdateActiveOption = props.onUpdateActiveOption,
       dataTest = props.dataTest;
-  var label = optionData.label,
+  var subInfo = optionData.subInfo,
+      label = optionData.label,
       disabled = optionData.disabled;
+
+  var renderSubInfo = function renderSubInfo(subInfo) {
+    var labelAppearance = disabled ? 'disabled' : 'subtle';
+    var iconAppearance = selected ? 'white' : 'disabled';
+
+    if (typeof subInfo === 'string') {
+      return /*#__PURE__*/React.createElement(Text, {
+        "data-test": "DesignSystem-DropdownOption--WITH_META--Meta",
+        appearance: labelAppearance,
+        size: "small",
+        weight: "medium"
+      }, subInfo);
+    }
+
+    var _subInfo$list = subInfo.list,
+        list = _subInfo$list === void 0 ? [] : _subInfo$list,
+        seperator = subInfo.seperator;
+    return /*#__PURE__*/React.createElement(MetaList, {
+      list: list,
+      seperator: seperator,
+      iconAppearance: iconAppearance,
+      labelAppearance: labelAppearance,
+      seperatorAppearance: iconAppearance,
+      "data-test": "DesignSystem-DropdownOption--WITH_META--MetaList"
+    });
+  };
+
   return /*#__PURE__*/React.createElement("div", {
     className: className,
     onMouseEnter: onUpdateActiveOption,
@@ -1480,8 +1644,11 @@ var CheckboxOption = function CheckboxOption(props) {
     checked: selected,
     onChange: onChangeHandler,
     tabIndex: -1,
-    className: "OptionCheckbox"
-  }));
+    className: "OptionCheckbox ".concat(subInfo ? 'pb-0' : ''),
+    "data-test": "".concat(dataTest, "--Checkbox")
+  }), subInfo && /*#__PURE__*/React.createElement("div", {
+    className: "pl-8 ml-3"
+  }, renderSubInfo(subInfo)));
 };
 
 var DefaultOption = function DefaultOption(props) {
@@ -1494,18 +1661,24 @@ var DefaultOption = function DefaultOption(props) {
       dataTest = props.dataTest;
   var label = optionData.label,
       disabled = optionData.disabled;
-  return /*#__PURE__*/React.createElement("div", {
-    className: className,
-    onClick: onClickHandler,
-    onMouseEnter: onUpdateActiveOption,
-    "data-test": dataTest,
-    "data-disabled": disabled
-  }, /*#__PURE__*/React.createElement("div", {
-    className: 'Option-label'
-  }, /*#__PURE__*/React.createElement(Text, {
-    className: textClassName,
-    appearance: appearance
-  }, label)));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y): fix accessibility
+
+    /* eslint-disable */
+    React.createElement("div", {
+      className: className,
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption,
+      "data-test": dataTest,
+      "data-disabled": disabled
+    }, /*#__PURE__*/React.createElement("div", {
+      className: 'Option-label'
+    }, /*#__PURE__*/React.createElement(Text, {
+      className: textClassName,
+      appearance: appearance
+    }, label)))
+  );
 };
 
 var MetaOption = function MetaOption(props) {
@@ -1520,18 +1693,24 @@ var MetaOption = function MetaOption(props) {
   var subInfo = optionData.subInfo,
       label = optionData.label,
       disabled = optionData.disabled;
-  return /*#__PURE__*/React.createElement("div", {
-    className: className,
-    onClick: onClickHandler,
-    onMouseEnter: onUpdateActiveOption,
-    "data-test": dataTest,
-    "data-disabled": disabled
-  }, /*#__PURE__*/React.createElement("div", {
-    className: 'Option-label'
-  }, /*#__PURE__*/React.createElement(Text, {
-    className: textClassName,
-    appearance: appearance
-  }, label), subInfo && renderSubInfo(subInfo)));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y): fix accessibility
+
+    /* eslint-disable */
+    React.createElement("div", {
+      className: className,
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption,
+      "data-test": dataTest,
+      "data-disabled": disabled
+    }, /*#__PURE__*/React.createElement("div", {
+      className: 'Option-label'
+    }, /*#__PURE__*/React.createElement(Text, {
+      className: textClassName,
+      appearance: appearance
+    }, label), subInfo && renderSubInfo(subInfo)))
+  );
 };
 
 var IconOption = function IconOption(props) {
@@ -1548,22 +1727,29 @@ var IconOption = function IconOption(props) {
       icon = optionData.icon,
       disabled = optionData.disabled;
   var OptionClass = classnames((_classNames = {}, _defineProperty$2(_classNames, "".concat(className), true), _defineProperty$2(_classNames, 'Option--icon', icon), _classNames));
-  return /*#__PURE__*/React.createElement("div", {
-    className: OptionClass,
-    onClick: onClickHandler,
-    onMouseEnter: onUpdateActiveOption,
-    "data-test": dataTest,
-    "data-disabled": disabled
-  }, icon && /*#__PURE__*/React.createElement(Icon, {
-    className: "Option-icon mr-4",
-    name: icon,
-    appearance: appearance
-  }), /*#__PURE__*/React.createElement("div", {
-    className: 'Option-label'
-  }, /*#__PURE__*/React.createElement(Text, {
-    className: textClassName,
-    appearance: appearance
-  }, label)));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y): fix accessibility
+
+    /* eslint-disable */
+    React.createElement("div", {
+      className: OptionClass,
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption,
+      "data-test": dataTest,
+      "data-disabled": disabled
+    }, icon && /*#__PURE__*/React.createElement(Icon, {
+      className: "Option-icon mr-4",
+      "data-test": "".concat(dataTest, "--Icon"),
+      name: icon,
+      appearance: appearance
+    }), /*#__PURE__*/React.createElement("div", {
+      className: 'Option-label'
+    }, /*#__PURE__*/React.createElement(Text, {
+      className: textClassName,
+      appearance: appearance
+    }, label)))
+  );
 };
 
 var IconWithMetaOption = function IconWithMetaOption(props) {
@@ -1582,22 +1768,29 @@ var IconWithMetaOption = function IconWithMetaOption(props) {
       icon = optionData.icon,
       disabled = optionData.disabled;
   var OptionClass = classnames((_classNames = {}, _defineProperty$2(_classNames, "".concat(className), true), _defineProperty$2(_classNames, 'Option--icon', icon), _classNames));
-  return /*#__PURE__*/React.createElement("div", {
-    className: OptionClass,
-    onClick: onClickHandler,
-    onMouseEnter: onUpdateActiveOption,
-    "data-test": dataTest,
-    "data-disabled": disabled
-  }, icon && /*#__PURE__*/React.createElement(Icon, {
-    className: "Option-icon mr-4",
-    name: icon,
-    appearance: appearance
-  }), /*#__PURE__*/React.createElement("div", {
-    className: 'Option-label'
-  }, /*#__PURE__*/React.createElement(Text, {
-    className: textClassName,
-    appearance: appearance
-  }, label), subInfo && renderSubInfo(subInfo)));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y): fix accessibility
+
+    /* eslint-disable */
+    React.createElement("div", {
+      className: OptionClass,
+      onClick: onClickHandler,
+      onMouseEnter: onUpdateActiveOption,
+      "data-test": dataTest,
+      "data-disabled": disabled
+    }, icon && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "".concat(dataTest, "--Icon"),
+      className: "Option-icon mr-4",
+      name: icon,
+      appearance: appearance
+    }), /*#__PURE__*/React.createElement("div", {
+      className: 'Option-label'
+    }, /*#__PURE__*/React.createElement(Text, {
+      className: textClassName,
+      appearance: appearance
+    }, label), subInfo && renderSubInfo(subInfo)))
+  );
 };
 
 var _OptionTypeMapping;
@@ -1645,6 +1838,7 @@ var Option = function Option(props) {
 
   if (props.optionRenderer) {
     return /*#__PURE__*/React.createElement("div", _extends$3({
+      "data-test": "DesignSystem-DropdownOption--Custom",
       className: customOptionClass,
       "data-disabled": disabled,
       onMouseEnter: onUpdateActiveOption
@@ -1665,7 +1859,10 @@ var Option = function Option(props) {
 
     if (typeof subInfo === 'string') {
       return /*#__PURE__*/React.createElement(Text, {
-        appearance: labelAppearance
+        "data-test": "DesignSystem-DropdownOption--WITH_META--Meta",
+        appearance: labelAppearance,
+        size: "small",
+        weight: "medium"
       }, subInfo);
     }
 
@@ -1677,7 +1874,8 @@ var Option = function Option(props) {
       seperator: seperator,
       iconAppearance: iconAppearance,
       labelAppearance: labelAppearance,
-      seperatorAppearance: iconAppearance
+      seperatorAppearance: iconAppearance,
+      "data-test": "DesignSystem-DropdownOption--WITH_META--MetaList"
     });
   };
 
@@ -1780,45 +1978,54 @@ var Loading = function Loading(props) {
 
   switch (loadingType) {
     case 'DEFAULT':
-      return /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
-        length: 'large'
+      return /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+        length: 'large',
+        "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
       });
 
     case 'WITH_ICON':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true,
-        round: true
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        round: true,
+        "data-test": "DesignSystem-Dropdown--Placeholder"
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
       }));
 
     case 'WITH_META':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
-        withImage: false
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
-        length: "large"
-      }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
+        withImage: false,
+        "data-test": "DesignSystem-Dropdown--Placeholder"
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+        length: "large",
+        "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
+      }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "medium",
-        size: "xxs"
+        size: "xxs",
+        "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
       }));
 
     case 'WITH_CHECKBOX':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
-        withImage: true
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
+        withImage: true,
+        "data-test": "DesignSystem-Dropdown--Placeholder"
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large"
       }));
 
     case 'ICON_WITH_META':
-      return /*#__PURE__*/React__default.createElement(Placeholder, {
+      return /*#__PURE__*/React.createElement(Placeholder, {
         withImage: true,
         round: true,
-        imageSize: 'medium'
-      }, /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
-        length: "large"
-      }), /*#__PURE__*/React__default.createElement(PlaceholderParagraph, {
+        imageSize: 'medium',
+        "data-test": "DesignSystem-Dropdown--Placeholder"
+      }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
+        length: "large",
+        "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
+      }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "medium",
-        size: "xxs"
+        size: "xxs",
+        "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
       }));
   }
 
@@ -1831,7 +2038,7 @@ var alignmentMapping = {
 };
 
 var DropdownList = function DropdownList(props) {
-  var _classNames4, _classNames5;
+  var _classNames2, _classNames5, _classNames6;
 
   var _props$listOptions = props.listOptions,
       listOptions = _props$listOptions === void 0 ? [] : _props$listOptions,
@@ -1868,7 +2075,9 @@ var DropdownList = function DropdownList(props) {
       applyOptions = props.applyOptions,
       cancelOptions = props.cancelOptions,
       toggleDropdown = props.toggleDropdown,
-      className = props.className;
+      className = props.className,
+      _props$searchPlacehol = props.searchPlaceholder,
+      searchPlaceholder = _props$searchPlacehol === void 0 ? 'Search..' : _props$searchPlacehol;
   var baseProps = extractBaseProps(props);
   var dropdownRef = /*#__PURE__*/React.createRef();
   var triggerRef = /*#__PURE__*/React.createRef();
@@ -1884,8 +2093,10 @@ var DropdownList = function DropdownList(props) {
   var _React$useState3 = React.useState(firstEnabledOption),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
       cursor = _React$useState4[0],
-      setCursor = _React$useState4[1];
+      setCursor = _React$useState4[1]; // Re-initializes its value to 0 on every re-render
 
+
+  var animateOrder = 0;
   React.useEffect(function () {
     if (dropdownOpen) {
       var _triggerRef$current;
@@ -1942,15 +2153,24 @@ var DropdownList = function DropdownList(props) {
     return Dropdown;
   };
 
-  var getDropdownSectionClass = function getDropdownSectionClass(showClearButton) {
-    var _classNames2;
+  var animateClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'fade-in', dropdownOpen), _defineProperty$2(_classNames2, 'opacity-0', dropdownOpen), _defineProperty$2(_classNames2, 'Dropdown-items', true), _classNames2));
 
-    return classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Dropdown-section', true), _defineProperty$2(_classNames2, 'Dropdown-section--withClear', showClearButton), _classNames2));
+  var getAnimateOrderStyle = function getAnimateOrderStyle(order) {
+    var animateStyle = {
+      animationDelay: dropdownOpen ? order * 20 + 'ms' : ''
+    };
+    return animateStyle;
+  };
+
+  var getDropdownSectionClass = function getDropdownSectionClass(showClearButton) {
+    var _classNames3;
+
+    return classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Dropdown-section', true), _defineProperty$2(_classNames3, 'Dropdown-section--withClear', showClearButton), _classNames3), animateClass);
   };
 
   var dropdownClass = classnames(_defineProperty$2({}, 'Dropdown', true), className);
-  var dropdownWrapperClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Dropdown-wrapper', true), _defineProperty$2(_classNames4, 'Dropdown-wrapper--wrap', !truncateOption), _classNames4));
-  var SelectAllClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Option-checkbox', true), _defineProperty$2(_classNames5, 'Option-checkbox--active', cursor === 0), _defineProperty$2(_classNames5, 'OptionWrapper', true), _classNames5));
+  var dropdownWrapperClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Dropdown-wrapper', true), _defineProperty$2(_classNames5, 'Dropdown-wrapper--wrap', !truncateOption), _classNames5));
+  var SelectAllClass = classnames((_classNames6 = {}, _defineProperty$2(_classNames6, 'Option-checkbox', true), _defineProperty$2(_classNames6, 'Option-checkbox--active', cursor === 0), _defineProperty$2(_classNames6, 'OptionWrapper', true), _classNames6), animateClass);
 
   var onToggleDropdown = function onToggleDropdown(open, type) {
     var _dropdownTriggerRef$c;
@@ -2000,7 +2220,8 @@ var DropdownList = function DropdownList(props) {
     var _props$footerLabel = props.footerLabel,
         footerLabel = _props$footerLabel === void 0 ? 'Search for more options' : _props$footerLabel;
     return /*#__PURE__*/React.createElement("div", {
-      className: 'Dropdown-footer'
+      className: "Dropdown-footer ".concat(animateClass),
+      style: getAnimateOrderStyle(++animateOrder)
     }, /*#__PURE__*/React.createElement(Text, {
       size: "small",
       appearance: 'subtle'
@@ -2013,7 +2234,8 @@ var DropdownList = function DropdownList(props) {
       return option.disabled;
     });
     return /*#__PURE__*/React.createElement("div", {
-      className: getDropdownSectionClass(selectedGroup)
+      className: getDropdownSectionClass(selectedGroup),
+      style: getAnimateOrderStyle(++animateOrder)
     }, /*#__PURE__*/React.createElement(Text, {
       size: "small",
       appearance: 'subtle'
@@ -2030,7 +2252,8 @@ var DropdownList = function DropdownList(props) {
     var disable = _isEqual(previousSelected, tempSelected);
 
     return /*#__PURE__*/React.createElement("div", {
-      className: 'Dropdown-buttonWrapper'
+      className: "Dropdown-buttonWrapper ".concat(animateClass),
+      style: getAnimateOrderStyle(++animateOrder)
     }, /*#__PURE__*/React.createElement(Button, {
       ref: dropdownCancelButtonRef,
       className: "mr-4",
@@ -2051,12 +2274,15 @@ var DropdownList = function DropdownList(props) {
 
   var renderSearch = function renderSearch() {
     return /*#__PURE__*/React.createElement("div", {
-      className: 'Dropdown-inputWrapper'
+      className: "Dropdown-inputWrapper ".concat(animateClass),
+      style: getAnimateOrderStyle(++animateOrder)
     }, /*#__PURE__*/React.createElement(Input, {
       name: "Dropdown-search",
       icon: 'search',
       value: searchTerm,
-      placeholder: 'Search..',
+      placeholder: searchPlaceholder // TODO(a11y): research more on this.
+      // eslint-disable-next-line jsx-a11y/no-autofocus
+      ,
       autoFocus: true,
       onChange: searchHandler,
       onClear: searchClearHandler,
@@ -2086,8 +2312,9 @@ var DropdownList = function DropdownList(props) {
         onSelectAll = props.onSelectAll;
     var label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
     return /*#__PURE__*/React.createElement("div", {
+      style: getAnimateOrderStyle(++animateOrder),
       className: SelectAllClass,
-      onMouseEnter: function onMouseEnter(_e) {
+      onMouseEnter: function onMouseEnter() {
         return updateActiveOption(0, true);
       }
     }, /*#__PURE__*/React.createElement(Checkbox, {
@@ -2111,7 +2338,10 @@ var DropdownList = function DropdownList(props) {
     var optionIsSelected = tempSelected.findIndex(function (option) {
       return option.value === item.value;
     }) !== -1;
-    return /*#__PURE__*/React.createElement(Option, {
+    return /*#__PURE__*/React.createElement("div", {
+      style: getAnimateOrderStyle(++animateOrder),
+      className: animateClass
+    }, /*#__PURE__*/React.createElement(Option, {
       optionData: item,
       truncateOption: truncateOption,
       selected: optionIsSelected,
@@ -2128,7 +2358,7 @@ var DropdownList = function DropdownList(props) {
         return props.onSelect(item, e.target.checked);
       },
       optionType: props.optionType
-    });
+    }));
   };
 
   var renderDropdownSection = function renderDropdownSection() {
@@ -2153,7 +2383,8 @@ var DropdownList = function DropdownList(props) {
       var _props$noResultMessag = props.noResultMessage,
           noResultMessage = _props$noResultMessag === void 0 ? 'No result found' : _props$noResultMessag;
       return /*#__PURE__*/React.createElement("div", {
-        className: 'Dropdown-errorWrapper'
+        className: 'Dropdown-errorWrapper',
+        "data-test": "DesignSystem-Dropdown--errorWrapper"
       }, /*#__PURE__*/React.createElement("div", {
         className: 'Option'
       }, /*#__PURE__*/React.createElement("div", {
@@ -2204,8 +2435,6 @@ var DropdownList = function DropdownList(props) {
   };
 
   var onkeydown = function onkeydown(event) {
-    var _dropdownApplyButtonR;
-
     var optionClass = '.OptionWrapper';
 
     switch (event.key) {
@@ -2220,65 +2449,78 @@ var DropdownList = function DropdownList(props) {
         break;
 
       case 'Enter':
-        var activeElement = document.activeElement;
+        {
+          var activeElement = document.activeElement;
 
-        if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
-          event.preventDefault();
-          var classes = withCheckbox ? "".concat(optionClass, " .Checkbox-input") : optionClass;
-          var elements = document.querySelectorAll(classes);
-          var element = elements[cursor];
-          if (element) element.click();
+          if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
+            event.preventDefault();
+            var classes = withCheckbox ? "".concat(optionClass, " .Checkbox-input") : optionClass;
+            var elements = document.querySelectorAll(classes);
+            var element = elements[cursor];
+            if (element) element.click();
+          }
+
+          if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
+          break;
         }
-
-        if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
-        break;
 
       case 'Tab':
-        if (!showApplyButton && dropdownOpen) {
-          event.preventDefault();
-          onToggleDropdown(false, 'onClick');
-          return;
-        }
+        {
+          var _dropdownApplyButtonR;
 
-        var currentElement = document.activeElement;
-        var disabledApplyButton = (_dropdownApplyButtonR = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR === void 0 ? void 0 : _dropdownApplyButtonR.disabled;
-
-        if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
-          event.preventDefault();
-          onToggleDropdown(false, 'onClick');
-          return;
-        }
-
-        if (showApplyButton && dropdownOpen) {
-          event.preventDefault();
-
-          if (currentElement === dropdownCancelButtonRef.current) {
-            var _dropdownApplyButtonR2;
-
-            (_dropdownApplyButtonR2 = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR2 === void 0 ? void 0 : _dropdownApplyButtonR2.focus();
-          } else {
-            var _dropdownCancelButton;
-
-            (_dropdownCancelButton = dropdownCancelButtonRef.current) === null || _dropdownCancelButton === void 0 ? void 0 : _dropdownCancelButton.focus();
+          if (!showApplyButton && dropdownOpen) {
+            event.preventDefault();
+            onToggleDropdown(false, 'onClick');
+            return;
           }
-        }
 
-        break;
+          var currentElement = document.activeElement;
+          var disabledApplyButton = (_dropdownApplyButtonR = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR === void 0 ? void 0 : _dropdownApplyButtonR.disabled;
+
+          if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
+            event.preventDefault();
+            onToggleDropdown(false, 'onClick');
+            return;
+          }
+
+          if (showApplyButton && dropdownOpen) {
+            event.preventDefault();
+
+            if (currentElement === dropdownCancelButtonRef.current) {
+              var _dropdownApplyButtonR2;
+
+              (_dropdownApplyButtonR2 = dropdownApplyButtonRef.current) === null || _dropdownApplyButtonR2 === void 0 ? void 0 : _dropdownApplyButtonR2.focus();
+            } else {
+              var _dropdownCancelButton;
+
+              (_dropdownCancelButton = dropdownCancelButtonRef.current) === null || _dropdownCancelButton === void 0 ? void 0 : _dropdownCancelButton.focus();
+            }
+          }
+
+          break;
+        }
     }
   };
 
-  return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: dropdownClass,
-    ref: triggerRef,
-    onKeyDown: onkeydown
-  }), /*#__PURE__*/React.createElement(Popover, _extends$3({
-    onToggle: onToggleDropdown,
-    trigger: trigger,
-    triggerClass: !menu ? 'w-100' : '',
-    open: dropdownOpen,
-    customStyle: popoverStyle,
-    position: alignmentMapping[align]
-  }, popoverOptions), (withSearch || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()));
+  return (
+    /*#__PURE__*/
+    //TODO(a11y)
+    //eslint-disable-next-line
+    React.createElement("div", _extends$3({}, baseProps, {
+      className: dropdownClass,
+      ref: triggerRef,
+      onKeyDown: onkeydown
+    }), /*#__PURE__*/React.createElement(Popover, _extends$3({
+      onToggle: onToggleDropdown,
+      trigger: trigger,
+      triggerClass: !menu ? 'w-100' : '',
+      open: dropdownOpen,
+      customStyle: popoverStyle,
+      position: alignmentMapping[align]
+    }, popoverOptions, {
+      "data-test": "DesignSystem-Dropdown--Popover"
+    }), (withSearch || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()))
+  );
 };
 
 DropdownList.displayName = 'DropdownList';
@@ -2954,6 +3196,7 @@ var renderDropdown = function renderDropdown(list, onClick) {
 
   var customTrigger = function customTrigger() {
     return /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       size: "tiny",
       appearance: "transparent",
       icon: "more_horiz_filled",
@@ -3017,13 +3260,14 @@ var Breadcrumbs = function Breadcrumbs(props) {
   }, "/"))));
 };
 
-var _excluded$u = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"];
+var _excluded$u = ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip"];
 var sizeMapping$2 = {
   tiny: 12,
   regular: 16,
   large: 20
-};
-var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
+}; // eslint-disable-next-line react/display-name
+
+var ButtonElement = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var _classNames, _classNames2;
 
   var _props$size = props.size,
@@ -3042,8 +3286,9 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
       selected = props.selected,
       loading = props.loading,
       disabled = props.disabled,
-      className = props.className,
-      rest = _objectWithoutProperties$1(props, _excluded$u);
+      className = props.className;
+      props.tooltip;
+      var rest = _objectWithoutProperties$1(props, _excluded$u);
 
   var buttonClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Button', true), _defineProperty$2(_classNames, 'Button--expanded', expanded), _defineProperty$2(_classNames, "Button--".concat(size), size), _defineProperty$2(_classNames, "Button--".concat(size, "Square"), !children), _defineProperty$2(_classNames, "Button--".concat(appearance), appearance), _defineProperty$2(_classNames, 'Button--selected', selected && (appearance === 'basic' || appearance === 'transparent')), _defineProperty$2(_classNames, "Button--iconAlign-".concat(iconAlign), children && iconAlign), _defineProperty$2(_classNames, "".concat(className), className), _classNames));
   var iconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Button-icon', true), _defineProperty$2(_classNames2, "Button-icon--".concat(iconAlign), children && iconAlign), _classNames2));
@@ -3070,6 +3315,18 @@ var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
     size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
   })), children));
 });
+var Button = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var icon = props.icon,
+      tooltip = props.tooltip,
+      children = props.children;
+  return icon && tooltip && !children ? /*#__PURE__*/React.createElement(Tooltip, {
+    tooltip: tooltip
+  }, /*#__PURE__*/React.createElement(ButtonElement, _extends$3({}, props, {
+    ref: ref
+  }))) : /*#__PURE__*/React.createElement(ButtonElement, _extends$3({}, props, {
+    ref: ref
+  }));
+});
 Button.displayName = 'Button';
 
 var config = {
@@ -3080,8 +3337,8 @@ var config = {
   daysInRow: 7,
   months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   days: {
-    small: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-    large: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+    small: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    large: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
   }
 };
 
@@ -3308,8 +3565,16 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           monthNav = _this$state.monthNav;
       var monthBlock = config.monthBlock;
       var yearBlock = yearBlockNav;
-      var month = (monthNav + index) % monthBlock;
-      var year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+      var month = (monthNav + index) % monthBlock === -1 ? 11 : (monthNav + index) % monthBlock; // const year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+
+      var year;
+
+      if (index >= 0) {
+        year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+      } else {
+        year = yearNav - (index !== 0 && month > monthNav ? 1 : 0);
+      }
+
       return {
         yearBlock: yearBlock,
         year: year,
@@ -3370,6 +3635,17 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       };
     });
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "yearMouseOverHandler", function (year, isCurrentYear, isDisabled, ev) {
+      var onYearHover = _this.props.onYearHover;
+      var yearData = {
+        value: year,
+        year: year,
+        isCurrentYear: isCurrentYear,
+        isDisabled: isDisabled
+      };
+      if (onYearHover) onYearHover(yearData, ev);
+    });
+
     _defineProperty$2(_assertThisInitialized$2(_this), "selectMonth", function (month) {
       return function () {
         _this.updateState(_this.state.yearNav, month);
@@ -3380,18 +3656,58 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       };
     });
 
-    _defineProperty$2(_assertThisInitialized$2(_this), "selectDate", function (index, date) {
-      var _this$getNavDateInfo = _this.getNavDateInfo(index),
-          year = _this$getNavDateInfo.year,
-          month = _this$getNavDateInfo.month;
+    _defineProperty$2(_assertThisInitialized$2(_this), "monthMouseOverHandler", function (month, isCurrentMonth, isDisabled, ev) {
+      var months = config.months;
+      var onMonthHover = _this.props.onMonthHover;
+      var monthData = {
+        value: months[month],
+        month: months[month],
+        year: _this.state.year,
+        isCurrentMonth: isCurrentMonth,
+        isDisabled: isDisabled
+      };
+      if (onMonthHover) onMonthHover(monthData, ev);
+    });
 
-      _this.updateState(year, month, date);
-
-      var d = _this.getDateValue(year, month, date);
+    _defineProperty$2(_assertThisInitialized$2(_this), "selectDate", function (index, date, prevMonthDayRange, dayRange) {
+      var d = _this.calculateDate(index, date, prevMonthDayRange, dayRange, false);
 
       _this.setState({
         currDate: d
       });
+    });
+
+    _defineProperty$2(_assertThisInitialized$2(_this), "calculateDate", function (index, date, prevMonthDayRange, dayRange, isDateHovered) {
+      var neighbouringMonthIndex;
+      var neighbouringMonthDate;
+      var type = '';
+
+      if (date <= 0) {
+        neighbouringMonthIndex = index - 1;
+        neighbouringMonthDate = prevMonthDayRange + date;
+        type = 'prev';
+      } else if (date > dayRange) {
+        neighbouringMonthIndex = index + 1;
+        neighbouringMonthDate = date - dayRange;
+        type = 'next';
+      } else {
+        neighbouringMonthIndex = index;
+        neighbouringMonthDate = date;
+      }
+
+      var _this$getNavDateInfo = _this.getNavDateInfo(neighbouringMonthIndex),
+          year = _this$getNavDateInfo.year,
+          month = _this$getNavDateInfo.month;
+
+      if (isDateHovered === false) {
+        _this.updateState(year, month, neighbouringMonthDate);
+
+        _this.onNavIconClickHandler(type)();
+      }
+
+      var d = _this.getDateValue(year, month, neighbouringMonthDate);
+
+      return d;
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onNavIconClickHandler", function (type) {
@@ -3452,7 +3768,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     _defineProperty$2(_assertThisInitialized$2(_this), "renderJumpButton", function (type) {
       var _this$props2 = _this.props,
           disabledBefore = _this$props2.disabledBefore,
-          disabledAfter = _this$props2.disabledAfter;
+          disabledAfter = _this$props2.disabledAfter,
+          size = _this$props2.size;
       var _this$state4 = _this.state,
           view = _this$state4.view,
           yearBlockNav = _this$state4.yearBlockNav,
@@ -3501,9 +3818,10 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/React.createElement(Button, {
         type: "button",
         className: headerIconClass,
-        appearance: "transparent",
+        appearance: "basic",
         icon: "arrow_".concat(type === 'next' ? 'forward' : 'back'),
         disabled: disabled,
+        size: size === 'small' ? 'tiny' : 'regular',
         onClick: _this.onNavIconClickHandler(type)
       });
     });
@@ -3556,24 +3874,38 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
 
       var renderHeading = function renderHeading(content) {
         if (size === 'small') {
-          return /*#__PURE__*/React.createElement(Text, {
+          return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
             weight: "strong"
-          }, content);
+          }, content), view !== 'year' && /*#__PURE__*/React.createElement(Icon, {
+            appearance: "inverse",
+            className: "pl-3",
+            name: "keyboard_arrow_down"
+          }));
         }
 
-        return /*#__PURE__*/React.createElement(Heading, {
+        return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Heading, {
           size: "s"
-        }, content);
+        }, content), view !== 'year' && /*#__PURE__*/React.createElement(Icon, {
+          appearance: "inverse",
+          className: "pl-3",
+          name: "keyboard_arrow_down"
+        }));
       };
 
       return /*#__PURE__*/React.createElement("div", {
         className: headerContentClass
-      }, view !== 'date' && /*#__PURE__*/React.createElement("span", {
+      }, view !== 'date' &&
+      /*#__PURE__*/
+      // TODO(a11y)
+      //  eslint-disable-next-line
+      React.createElement("div", {
+        className: "d-flex justify-content-center align-items-center",
         onClick: _this.onNavHeadingClickHandler(view)
-      }, renderHeading(headerContent)), view === 'date' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", {
-        onClick: _this.onNavHeadingClickHandler(view)
-      }, renderHeading(months[monthNavVal])), /*#__PURE__*/React.createElement("span", {
-        className: "ml-4",
+      }, renderHeading(headerContent)), view === 'date' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+        onClick: _this.onNavHeadingClickHandler(view),
+        className: "d-flex justify-content-center align-items-center"
+      }, renderHeading(months[monthNavVal])), /*#__PURE__*/React.createElement("div", {
+        className: "ml-4 d-flex justify-content-center align-items-center",
         onClick: _this.onNavHeadingClickHandler('month')
       }, renderHeading(yearNavVal))));
     });
@@ -3586,7 +3918,9 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           rangePicker = _this$props4.rangePicker,
           disabledBefore = _this$props4.disabledBefore,
           disabledAfter = _this$props4.disabledAfter;
-      var yearBlockNav = _this.state.yearBlockNav;
+      var _this$state6 = _this.state,
+          yearBlockNav = _this$state6.yearBlockNav,
+          currYear = _this$state6.currYear;
       var noOfRows = Math.ceil(yearBlockRange / yearsInRow);
       return Array.from({
         length: noOfRows
@@ -3597,26 +3931,39 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         }, Array.from({
           length: yearsInRow
         }, function (_x, col) {
+          var _classNames2;
+
           var offset = yearsInRow * row + col;
           if (offset === yearBlockNav) return undefined;
           var year = yearBlockNav + offset;
           var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
           var active = !disabled && !rangePicker && year === _this.state.year;
-          var valueClass = classnames(_defineProperty$2({
+
+          var isCurrentYear = function isCurrentYear() {
+            return year === currYear;
+          };
+
+          var valueClass = classnames((_classNames2 = {
             'Calendar-value': true,
             'Calendar-value--active': active,
             'Calendar-value--disabled': disabled,
             'Calendar-yearValue': true
-          }, "Calendar-yearValue--".concat(size), size));
-          return /*#__PURE__*/React.createElement("div", {
-            key: "".concat(row, "-").concat(col),
-            "data-test": "DesignSystem-Calendar--yearValue",
-            className: valueClass,
-            onClick: _this.selectYear(year)
-          }, /*#__PURE__*/React.createElement(Text, {
-            size: size === 'small' ? 'small' : 'regular',
-            appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-          }, year));
+          }, _defineProperty$2(_classNames2, "Calendar-yearValue--".concat(size), size), _defineProperty$2(_classNames2, 'Calendar-value--currDateMonthYear', isCurrentYear()), _classNames2));
+          return (
+            /*#__PURE__*/
+            //  TODO(a11y)
+            //  eslint-disable-next-line
+            React.createElement("div", {
+              key: "".concat(row, "-").concat(col),
+              "data-test": "DesignSystem-Calendar--yearValue",
+              className: valueClass,
+              onClick: _this.selectYear(year),
+              onMouseOver: _this.yearMouseOverHandler.bind(_assertThisInitialized$2(_this), year, isCurrentYear(), disabled)
+            }, /*#__PURE__*/React.createElement(Text, {
+              size: size === 'small' ? 'small' : 'regular',
+              appearance: active ? 'white' : disabled ? 'disabled' : isCurrentYear() ? 'link' : 'default'
+            }, year))
+          );
         }));
       });
     });
@@ -3629,9 +3976,11 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           size = _this$props5.size,
           disabledBefore = _this$props5.disabledBefore,
           disabledAfter = _this$props5.disabledAfter;
-      var _this$state6 = _this.state,
-          yearNav = _this$state6.yearNav,
-          year = _this$state6.year;
+      var _this$state7 = _this.state,
+          yearNav = _this$state7.yearNav,
+          year = _this$state7.year,
+          currYear = _this$state7.currYear,
+          currMonth = _this$state7.currMonth;
       var noOfRows = Math.ceil(monthBlock / monthsInRow);
       return Array.from({
         length: noOfRows
@@ -3642,24 +3991,37 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         }, Array.from({
           length: monthsInRow
         }, function (_x, col) {
+          var _classNames3;
+
           var month = monthsInRow * row + col;
           var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
           var active = !disabled && year === yearNav && month === _this.state.month;
-          var valueClass = classnames(_defineProperty$2({
+
+          var isCurrentMonth = function isCurrentMonth() {
+            return currYear === yearNav && currMonth === month;
+          };
+
+          var valueClass = classnames((_classNames3 = {
             'Calendar-value': true,
             'Calendar-value--active': active,
             'Calendar-value--dummy': disabled,
             'Calendar-monthValue': true
-          }, "Calendar-monthValue--".concat(size), size));
-          return /*#__PURE__*/React.createElement("div", {
-            key: "".concat(row, "-").concat(col),
-            "data-test": "DesignSystem-Calendar--monthValue",
-            className: valueClass,
-            onClick: _this.selectMonth(month)
-          }, /*#__PURE__*/React.createElement(Text, {
-            size: size === 'small' ? 'small' : 'regular',
-            appearance: active ? 'white' : disabled ? 'disabled' : 'default'
-          }, months[month]));
+          }, _defineProperty$2(_classNames3, "Calendar-monthValue--".concat(size), size), _defineProperty$2(_classNames3, 'Calendar-value--currDateMonthYear', isCurrentMonth()), _classNames3));
+          return (
+            /*#__PURE__*/
+            //TODO(a11y)
+            //eslint-disable-next-line
+            React.createElement("div", {
+              key: "".concat(row, "-").concat(col),
+              "data-test": "DesignSystem-Calendar--monthValue",
+              className: valueClass,
+              onClick: _this.selectMonth(month),
+              onMouseOver: _this.monthMouseOverHandler.bind(_assertThisInitialized$2(_this), month, isCurrentMonth(), disabled)
+            }, /*#__PURE__*/React.createElement(Text, {
+              size: size === 'small' ? 'small' : 'regular',
+              appearance: active ? 'white' : disabled ? 'disabled' : isCurrentMonth() ? 'link' : 'default'
+            }, months[month]))
+          );
         }));
       });
     });
@@ -3680,6 +4042,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       var _this$props6 = _this.props,
           size = _this$props6.size,
           firstDayOfWeek = _this$props6.firstDayOfWeek;
+      var textSize = size === 'large' ? 'regular' : 'small';
       return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
         className: "Calendar-dayValues"
       }, Array.from({
@@ -3689,10 +4052,12 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           'Calendar-valueWrapper': true
         });
         var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
-        return /*#__PURE__*/React.createElement(Subheading, {
+        return /*#__PURE__*/React.createElement(Text, {
           key: day,
           className: valueClass,
-          appearance: "disabled"
+          appearance: "default",
+          weight: "strong",
+          size: textSize
         }, days[size][dayValue]);
       })), /*#__PURE__*/React.createElement("div", {
         className: "Calendar-dateValues",
@@ -3701,42 +4066,58 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "renderDateValues", function (index) {
-      var daysInRow = config.daysInRow;
+      var daysInRow = config.daysInRow,
+          monthBlock = config.monthBlock;
       var _this$props7 = _this.props,
           size = _this$props7.size,
           rangePicker = _this$props7.rangePicker,
           firstDayOfWeek = _this$props7.firstDayOfWeek,
           disabledBefore = _this$props7.disabledBefore,
-          disabledAfter = _this$props7.disabledAfter;
-      var _this$state7 = _this.state,
-          startDate = _this$state7.startDate,
-          endDate = _this$state7.endDate,
-          hoverDate = _this$state7.hoverDate,
-          yearState = _this$state7.year,
-          monthState = _this$state7.month,
-          dateState = _this$state7.date;
+          disabledAfter = _this$props7.disabledAfter,
+          monthsInView = _this$props7.monthsInView,
+          onDateHover = _this$props7.onDateHover;
+      var _this$state8 = _this.state,
+          startDate = _this$state8.startDate,
+          endDate = _this$state8.endDate,
+          hoverDate = _this$state8.hoverDate,
+          yearState = _this$state8.year,
+          monthState = _this$state8.month,
+          dateState = _this$state8.date,
+          currMonth = _this$state8.currMonth,
+          currYear = _this$state8.currYear,
+          todayDate = _this$state8.todayDate;
 
       var _this$getNavDateInfo3 = _this.getNavDateInfo(index),
           yearNavVal = _this$getNavDateInfo3.year,
           monthNavVal = _this$getNavDateInfo3.month;
 
+      var prevMonth = monthNavVal - 1;
+      var prevYear = yearNavVal;
+      var prevMonthDayRange = getDaysInMonth(prevYear, prevMonth);
       var dayRange = getDaysInMonth(yearNavVal, monthNavVal);
       var dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
       var dummyDays = Math.abs(dayDiff);
-      var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
+      var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow); // TODO: @veekays
+      // if(noOfRows !== 6 && monthsInView <= 1) ?
+
+      if (noOfRows === 6) ; else if (monthsInView > 1) ; else {
+        noOfRows = noOfRows + 1;
+      }
 
       var inRangeError = _this.getInRangeError();
+
+      var events = _this.props.events;
 
       var onClickHandler = function onClickHandler(date) {
         return function () {
           if (rangePicker) {
             if (startDate && endDate) {
-              _this.selectDate(index, date);
+              _this.selectDate(index, date, prevMonthDayRange, dayRange);
             } else {
-              if (!inRangeError) _this.selectDate(index, date);
+              if (!inRangeError) _this.selectDate(index, date, prevMonthDayRange, dayRange);
             }
           } else {
-            _this.selectDate(index, date);
+            _this.selectDate(index, date, prevMonthDayRange, dayRange);
           }
         };
       };
@@ -3755,6 +4136,25 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         };
       };
 
+      var onMouseEnterHandler = function onMouseEnterHandler(date, isToday, isDisabled, ev) {
+        var d = _this.calculateDate(index, date, prevMonthDayRange, dayRange, true) || new Date();
+        var months = config.months,
+            days = config.days;
+        var dayName = days.large[d.getDay()];
+        var dateData = {
+          value: d.getDate(),
+          isToday: isToday,
+          isDisabled: isDisabled,
+          todayDate: _this.state.currDate,
+          fullDate: d,
+          date: d.getDate(),
+          month: months[d.getMonth()],
+          year: d.getFullYear(),
+          dayName: dayName
+        };
+        if (onDateHover) onDateHover(dateData, ev);
+      };
+
       return Array.from({
         length: noOfRows
       }, function (_y, row) {
@@ -3764,10 +4164,27 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         }, Array.from({
           length: daysInRow
         }, function (_x, col) {
+          var _classNames4;
+
           var date = daysInRow * row + col - dummyDays + 1;
           var dummy = date <= 0 || date > dayRange;
-          var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
+          var disabled = compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date);
           var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
+
+          var today = function today() {
+            var boolVal;
+
+            if (date <= 0) {
+              boolVal = currYear === yearNavVal && currMonth === monthNavVal - 1 && todayDate === prevMonthDayRange + date;
+            } else if (date > dayRange) {
+              boolVal = currYear === yearNavVal && currMonth === monthNavVal + 1 && todayDate === date - dayRange;
+            } else {
+              boolVal = currYear === yearNavVal && currMonth === monthNavVal && todayDate === date;
+            }
+
+            return boolVal;
+          };
+
           var startActive = false;
           var endActive = false;
           var inRange = false;
@@ -3801,6 +4218,11 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           var isStart = startActive || endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate);
           var isEnd = endActive || startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate);
           var isRangeError = inRange && inRangeError;
+          var dateInString = "".concat(date <= 0 ? prevMonthDayRange + date : date > dayRange ? date - dayRange : date);
+          var monthInString = "".concat(date <= 0 ? monthNavVal === 0 ? monthNavVal + monthBlock : (monthNavVal - 1) % monthBlock + 1 : date > dayRange ? (monthNavVal + 1) % monthBlock + 1 : monthNavVal + 1);
+          var yearInString = "".concat(date <= 0 && monthNavVal + 1 === 1 ? yearNavVal - 1 : date > dayRange && monthNavVal + 1 === 12 ? yearNavVal + 1 : yearNavVal);
+          var completeDateString = "".concat(monthInString.length === 2 ? monthInString : "0".concat(monthInString), "/").concat(dateInString.length === 2 ? dateInString : "0".concat(dateInString), "/").concat(yearInString);
+          var isEventExist = events && _typeof(events) === 'object' && events.hasOwnProperty(completeDateString);
           var wrapperClass = classnames({
             'Calendar-valueWrapper': true,
             'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
@@ -3809,30 +4231,40 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
             'Calendar-valueWrapper--end': isEnd && !isStart,
             'Calendar-valueWrapper--startEnd': isStart && isEnd,
             'Calendar-valueWrapper--startError': isStart && isRangeError,
-            'Calendar-valueWrapper--endError': isEnd && isRangeError
+            'Calendar-valueWrapper--endError': isEnd && isRangeError,
+            'Calendar-valueWrapper--dummy': dummy
           });
-          var valueClass = classnames(_defineProperty$2({
+          var valueClass = classnames((_classNames4 = {
             'Calendar-value': true,
             'Calendar-value--start': isStart && !isEnd,
             'Calendar-value--end': isEnd && !isStart,
             'Calendar-value--startError': isStart && isRangeError,
             'Calendar-value--endError': isEnd && isRangeError,
             'Calendar-value--active': active,
-            'Calendar-value--dummy': dummy || disabled,
             'Calendar-value--disabled': disabled,
             'Calendar-dateValue': true
-          }, "Calendar-dateValue--".concat(size), size));
+          }, _defineProperty$2(_classNames4, "Calendar-dateValue--".concat(size), size), _defineProperty$2(_classNames4, 'Calendar-value--currDateMonthYear', today()), _classNames4));
           return /*#__PURE__*/React.createElement("div", {
             key: "".concat(row, "-").concat(col),
-            className: wrapperClass
-          }, !dummy && /*#__PURE__*/React.createElement(Text, {
-            appearance: active ? 'white' : disabled ? 'disabled' : 'default',
+            className: wrapperClass,
+            "data-test": "designSystem-Calendar-WrapperClass"
+          }, !dummy && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+            appearance: active ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default',
             size: size === 'small' ? 'small' : 'regular',
             "data-test": "DesignSystem-Calendar--dateValue",
             className: valueClass,
             onClick: onClickHandler(date),
-            onMouseOver: onMouseOverHandler(date)
-          }, date));
+            onMouseOver: onMouseOverHandler(date),
+            onMouseEnter: onMouseEnterHandler.bind(_assertThisInitialized$2(_this), date, today(), disabled)
+          }, date), isEventExist && _this.renderEventsIndicator(size, active)), (dummy && date > 0 && index === monthsInView - 1 || dummy && date <= 0 && index === 0) && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+            appearance: active ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default',
+            size: size === 'small' ? 'small' : 'regular',
+            "data-test": "DesignSystem-Calendar--dateValue",
+            className: valueClass,
+            onClick: onClickHandler(date),
+            onMouseOver: onMouseOverHandler(date),
+            onMouseEnter: onMouseEnterHandler.bind(_assertThisInitialized$2(_this), date, today(), disabled)
+          }, date <= 0 ? prevMonthDayRange + date : date - dayRange), isEventExist && _this.renderEventsIndicator(size, active)));
         }));
       });
     });
@@ -3844,10 +4276,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
           size = _this$props8.size,
           monthsInView = _this$props8.monthsInView;
       var view = _this.state.view;
-      var containerClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Calendar', true), _defineProperty$2(_classNames5, "Calendar--".concat(view), view), _defineProperty$2(_classNames5, "Calendar--".concat(size), size), _classNames5));
-      var headerClass = classnames({
-        'Calendar-header': true
-      });
+      var containerClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Calendar', true), _defineProperty$2(_classNames5, "Calendar--".concat(view, "--").concat(size), view), _defineProperty$2(_classNames5, "Calendar--".concat(size), size), _classNames5));
+      var headerClass = classnames(_defineProperty$2({}, "Calendar-header--".concat(size), size));
       var bodyClass = classnames({
         'Calendar-body': true
       });
@@ -3879,6 +4309,7 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         _month = _getDateInfo6.month,
         _date = _getDateInfo6.date;
 
+    var todayCompleteDate = getDateInfo(new Date());
     _this.state = {
       currDate: currDate,
       startDate: _startDate,
@@ -3888,6 +4319,9 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       year: _year,
       month: _month,
       date: _date,
+      todayDate: todayCompleteDate.date,
+      currMonth: todayCompleteDate.month,
+      currYear: todayCompleteDate.year,
       view: _monthsInView > 1 ? 'date' : _view,
       yearBlockNav: getYearBlock(_yearNav)
     };
@@ -3961,10 +4395,10 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         var _this$props10 = this.props,
             rangePicker = _this$props10.rangePicker,
             onDateChange = _this$props10.onDateChange;
-        var _this$state8 = this.state,
-            currDate = _this$state8.currDate,
-            _startDate3 = _this$state8.startDate,
-            _endDate3 = _this$state8.endDate;
+        var _this$state9 = this.state,
+            currDate = _this$state9.currDate,
+            _startDate3 = _this$state9.startDate,
+            _endDate3 = _this$state9.endDate;
 
         if (currDate) {
           if (onDateChange) onDateChange(currDate);
@@ -4021,9 +4455,9 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
 
       if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
         var onRangeChange = this.props.onRangeChange;
-        var _this$state9 = this.state,
-            _startDate4 = _this$state9.startDate,
-            _endDate4 = _this$state9.endDate;
+        var _this$state10 = this.state,
+            _startDate4 = _this$state10.startDate,
+            _endDate4 = _this$state10.endDate;
         if (onRangeChange) onRangeChange(_startDate4, _endDate4);
       }
 
@@ -4050,6 +4484,19 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "renderEventsIndicator",
+    value: function renderEventsIndicator(size, active) {
+      var _classNames7;
+
+      var eventsIndicatorClass = classnames((_classNames7 = {
+        'Calendar-eventsIndicator': true
+      }, _defineProperty$2(_classNames7, "Calendar-eventsIndicator--".concat(size), true), _defineProperty$2(_classNames7, 'Calendar-eventsIndicator--active', active), _classNames7));
+      return /*#__PURE__*/React.createElement("span", {
+        "data-test": "DesignSystem-Calendar-Event-Indicator",
+        className: eventsIndicatorClass
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -4062,7 +4509,8 @@ var Calendar = /*#__PURE__*/function (_React$Component) {
         'Calendar-wrapper': true
       }, className);
       return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-        className: classes
+        className: classes,
+        "data-test": "DesignSystem-Calendar-Wrapper"
       }), Array.from({
         length: monthsInView
       }, function (_x, index) {
@@ -4172,6 +4620,8 @@ CardFooter.defaultProps = {
 };
 
 var GenericChip = function GenericChip(props) {
+  var _classNames3;
+
   var label = props.label,
       icon = props.icon,
       clearButton = props.clearButton,
@@ -4197,26 +4647,38 @@ var GenericChip = function GenericChip(props) {
     if (onClick) onClick();
   };
 
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-GenericChip--GenericChipWrapper"
-  }, baseProps, {
-    className: "Chip-wrapper ".concat(className),
-    onClick: onClickHandler
-  }), icon && /*#__PURE__*/React.createElement(Icon, {
-    "data-test": "DesignSystem-GenericChip--Icon",
-    name: icon,
-    appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
-    className: iconClass('left')
-  }), /*#__PURE__*/React.createElement(Text, {
-    "data-test": "DesignSystem-GenericChip--Text",
-    appearance: disabled ? 'disabled' : 'default'
-  }, label), clearButton && /*#__PURE__*/React.createElement(Icon, {
-    "data-test": "DesignSystem-GenericChip--clearButton",
-    name: "clear",
-    appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
-    className: iconClass('right'),
-    onClick: onCloseHandler
-  }));
+  var iconAppearance = function iconAppearance(align) {
+    var _classNames2;
+
+    return classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'disabled', disabled && !selected), _defineProperty$2(_classNames2, 'primary', !disabled && selected), _defineProperty$2(_classNames2, 'primary_lighter', disabled && selected), _defineProperty$2(_classNames2, 'subtle', !disabled && !selected && align === 'right'), _defineProperty$2(_classNames2, 'inverse', !disabled && !selected && align === 'left'), _classNames2));
+  };
+
+  var textAppearance = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'disabled', disabled && !selected), _defineProperty$2(_classNames3, 'link', selected), _defineProperty$2(_classNames3, 'default', !disabled && !selected), _classNames3));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y)
+    // eslint-disable-next-line
+    React.createElement("div", _extends$3({
+      "data-test": "DesignSystem-GenericChip--GenericChipWrapper"
+    }, baseProps, {
+      className: "Chip-wrapper ".concat(className),
+      onClick: onClickHandler
+    }), icon && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-GenericChip--Icon",
+      name: icon,
+      appearance: iconAppearance('left'),
+      className: iconClass('left')
+    }), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-GenericChip--Text",
+      appearance: textAppearance
+    }, label), clearButton && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-GenericChip--clearButton",
+      name: "clear",
+      appearance: iconAppearance('right'),
+      className: iconClass('right'),
+      onClick: onCloseHandler
+    }))
+  );
 };
 GenericChip.displayName = 'GenericChip';
 
@@ -4245,7 +4707,7 @@ var Chip = function Chip(props) {
 
   var chipClass = classnames((_classNames = {
     Chip: true
-  }, _defineProperty$2(_classNames, "Chip-".concat(type, "--disabled"), disabled), _defineProperty$2(_classNames, "Chip--".concat(type), type && !disabled), _defineProperty$2(_classNames, "Chip-".concat(type, "--selected"), selected && !disabled), _classNames), className);
+  }, _defineProperty$2(_classNames, "Chip-".concat(type, "--disabled"), disabled), _defineProperty$2(_classNames, "Chip--".concat(type), type && !disabled), _defineProperty$2(_classNames, "Chip-".concat(type, "--selected"), selected && !disabled), _defineProperty$2(_classNames, "Chip-selection--selectedDisabled", type === 'selection' && selected && disabled), _classNames), className);
   var clearbutton = type === 'action' ? false : clearButton;
   var select = type === 'selection' && selected ? true : false;
   return /*#__PURE__*/React.createElement(GenericChip, _extends$3({
@@ -4395,14 +4857,13 @@ var Trigger$1 = function Trigger(props) {
   };
 
   var mask = date[inputFormat];
-  return /*#__PURE__*/React.createElement(InputMask, _extends$3({
+  return /*#__PURE__*/React.createElement(X, _extends$3({
     icon: "events",
     placeholder: inputFormat
   }, inputOptions, {
     error: showError,
     mask: mask,
-    value: date$1 ? translateToString(inputFormat, date$1) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+    value: date$1 ? translateToString(inputFormat, date$1) : init ? X.utils.getDefaultValue(mask, placeholderChar) : '',
     onChange: onChangeHandler,
     onBlur: onBlurHandler,
     onClear: onClearHandler,
@@ -4412,7 +4873,7 @@ var Trigger$1 = function Trigger(props) {
   }));
 };
 
-var _excluded$q = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"];
+var _excluded$q = ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect", "size", "showTodayDate", "children"];
 var DatePicker = /*#__PURE__*/function (_React$Component) {
   _inherits$1(DatePicker, _React$Component);
 
@@ -4456,6 +4917,9 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var disabled = _this.props.inputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -4531,6 +4995,8 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "renderCalendar",
     value: function renderCalendar() {
+      var _this2 = this;
+
       var _this$props4 = this.props;
           _this$props4.date;
           _this$props4.open;
@@ -4544,15 +5010,55 @@ var DatePicker = /*#__PURE__*/function (_React$Component) {
           disabledAfter = _this$props4.disabledAfter;
           _this$props4.onDateChange;
           _this$props4.closeOnSelect;
-          var rest = _objectWithoutProperties$1(_this$props4, _excluded$q);
+          var size = _this$props4.size,
+          _this$props4$showToda = _this$props4.showTodayDate,
+          showTodayDate = _this$props4$showToda === void 0 ? true : _this$props4$showToda,
+          _this$props4$children = _this$props4.children,
+          children = _this$props4$children === void 0 ? /*#__PURE__*/React.createElement(React.Fragment, null) : _this$props4$children,
+          rest = _objectWithoutProperties$1(_this$props4, _excluded$q);
 
       var date = this.state.date;
-      return /*#__PURE__*/React.createElement(Calendar, _extends$3({}, rest, {
-        date: convertToDate(date, inputFormat, validators),
-        disabledBefore: convertToDate(disabledBefore, inputFormat, validators),
-        disabledAfter: convertToDate(disabledAfter, inputFormat, validators),
+      var months = config.months;
+      var todayDate = new Date(Date.now());
+      var todayMonthAndDate = "".concat(months[todayDate.getMonth()], " ").concat(todayDate.getDate());
+      var currDate = convertToDate(date, inputFormat, validators);
+      var dateDisabledBefore = convertToDate(disabledBefore, inputFormat, validators);
+      var dateDisabledAfter = convertToDate(disabledAfter, inputFormat, validators);
+
+      var isTodayDisabled = function isTodayDisabled() {
+        var isTodayDateDisabled = true;
+
+        if (currDate && dateDisabledBefore && dateDisabledAfter) {
+          isTodayDateDisabled = currDate > dateDisabledBefore && currDate < dateDisabledAfter;
+        } else if (currDate && dateDisabledBefore) {
+          isTodayDateDisabled = currDate < dateDisabledBefore;
+        } else if (currDate && dateDisabledAfter) {
+          isTodayDateDisabled = currDate > dateDisabledAfter;
+        }
+
+        return !isTodayDateDisabled;
+      };
+
+      return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+        className: "d-flex"
+      }, children, /*#__PURE__*/React.createElement(Calendar, _extends$3({}, rest, {
+        size: size,
+        date: currDate,
+        disabledBefore: dateDisabledBefore,
+        disabledAfter: dateDisabledAfter,
         onDateChange: this.onDateChangeHandler
-      }));
+      }))), showTodayDate && /*#__PURE__*/React.createElement("div", {
+        className: "d-flex justify-content-center pb-6",
+        "data-test": "DesignSystem-Select--TodaysDate-wrapper"
+      }, /*#__PURE__*/React.createElement(Chip, {
+        label: "Today, ".concat(todayMonthAndDate),
+        name: "chip",
+        type: "action",
+        disabled: isTodayDisabled(),
+        onClick: function onClick() {
+          return _this2.onDateChangeHandler(new Date());
+        }
+      })));
     }
   }, {
     key: "render",
@@ -4659,13 +5165,12 @@ var TimePicker = function TimePicker(props) {
   };
 
   var mask = time[inputFormat];
-  return /*#__PURE__*/React.createElement(InputMask, _extends$3({
+  return /*#__PURE__*/React.createElement(X, _extends$3({
     placeholder: placeholders[inputFormat],
     placeholderChar: placeholderChar
   }, inputOptions, {
     mask: mask,
-    value: time$1 ? translateToTime(inputFormat, time$1) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+    value: time$1 ? translateToTime(inputFormat, time$1) : init ? X.utils.getDefaultValue(mask, placeholderChar) : '',
     validators: inputValidator,
     onChange: onChangeHandler,
     onClear: onClearHandler,
@@ -4787,7 +5292,8 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       var _ref$current2;
 
       return (_ref$current2 = ref.current) === null || _ref$current2 === void 0 ? void 0 : _ref$current2.focus();
-    }
+    },
+    role: "presentation"
   }, inlineLabel && /*#__PURE__*/React.createElement("div", {
     className: "Input-inlineLabel"
   }, /*#__PURE__*/React.createElement(Text, {
@@ -4814,15 +5320,21 @@ var Input = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     onBlur: onBlur,
     onClick: onClick,
     onFocus: onFocus
-  })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React.createElement(Tooltip, {
+  })), disabled ? '' : info ? /*#__PURE__*/React.createElement(Tooltip, {
     position: "top",
     tooltip: info
-  }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React.createElement("div", {
-    className: rightIconClass,
-    onClick: function onClick(e) {
-      return onClear(e);
-    }
+  }, trigger) : actionIcon && (value || defaultValue) ? actionIcon : onClear && (value || defaultValue) && /*#__PURE__*/React.createElement("div", {
+    className: rightIconClass
   }, /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-Input--closeIcon",
+    onClick: function onClick(e) {
+      var _ref$current3;
+
+      (_ref$current3 = ref.current) === null || _ref$current3 === void 0 ? void 0 : _ref$current3.focus({
+        preventScroll: true
+      });
+      onClear(e);
+    },
     name: 'close',
     size: sizeMapping$1[size]
   })));
@@ -4931,7 +5443,9 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     if (onChange) {
       var syntheticEvent = Object.create(e, {
         target: {
-          value: newValue
+          value: {
+            value: newValue
+          }
         }
       });
       onChange(syntheticEvent);
@@ -4965,7 +5479,14 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
       var _ref$current2;
 
       return (_ref$current2 = ref.current) === null || _ref$current2 === void 0 ? void 0 : _ref$current2.focus();
-    }
+    },
+    onFocus: function onFocus() {
+      var _ref$current3;
+
+      return (_ref$current3 = ref.current) === null || _ref$current3 === void 0 ? void 0 : _ref$current3.focus();
+    },
+    onKeyDown: function onKeyDown() {},
+    role: "presentation"
   }, icon && /*#__PURE__*/React.createElement(Icon, {
     "data-test": "DesignSystem-MetricInput--icon",
     name: icon,
@@ -5000,9 +5521,9 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     size: size,
     appearance: "subtle"
   }, suffix), /*#__PURE__*/React.createElement("div", {
-    className: "MetricInput-arrowIcons",
-    tabIndex: 0
+    className: "MetricInput-arrowIcons"
   }, /*#__PURE__*/React.createElement(Icon, {
+    tabIndex: -1,
     className: getArrowClass('up'),
     size: iconSize,
     name: "keyboard_arrow_up",
@@ -5011,6 +5532,7 @@ var MetricInput = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
     },
     "data-test": "DesignSystem-MetricInput--upIcon"
   }), /*#__PURE__*/React.createElement(Icon, {
+    tabIndex: -1,
     className: getArrowClass('down'),
     size: iconSize,
     name: "keyboard_arrow_down",
@@ -5063,7 +5585,10 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
       className = props.className,
       rest = _objectWithoutProperties$1(props, _excluded$m);
 
-  var getNewCursorPosition = function getNewCursorPosition(type, position) {
+  var isEditable = React.useCallback(function (pos) {
+    return _typeof(mask[pos]) === 'object';
+  }, [mask]);
+  var getNewCursorPosition = React.useCallback(function (type, position) {
     if (type === 'right') {
       for (var i = position; i < mask.length; i++) {
         if (isEditable(i)) return i;
@@ -5081,80 +5606,70 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     }
 
     return position;
-  };
-
-  var getDefaultSelection = function getDefaultSelection() {
+  }, [mask, isEditable]);
+  var getDefaultSelection = React.useCallback(function () {
     var pos = getNewCursorPosition('right', 0);
     return {
       start: pos,
       end: pos
     };
-  };
-
-  var getPlaceholderValue = function getPlaceholderValue() {
+  }, [getNewCursorPosition]);
+  var getPlaceholderValue = React.useCallback(function () {
     var start = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
     var end = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : mask.length - 1;
     return getDefaultValue(mask, placeholderChar).slice(start, end + 1);
-  };
-
-  var getSelectionLength = function getSelectionLength(val) {
-    return Math.abs(val.end - val.start);
-  };
-
-  var isEditable = function isEditable(pos) {
-    return _typeof(mask[pos]) === 'object';
-  };
-
+  }, [mask, placeholderChar]);
+  var defaultPlaceholderValue = React.useMemo(function () {
+    return getPlaceholderValue();
+  }, [getPlaceholderValue]);
+  var defaultSelection = React.useMemo(function () {
+    return getDefaultSelection();
+  }, [getDefaultSelection]);
+  var ref = React.useRef(null);
   var deferId = React.useRef();
-  var selectionRef = React.useRef(0);
+  var selectionPos = React.useRef(defaultSelection);
+  var newSelectionPos = React.useRef(0);
 
   var _React$useState = React.useState(defaultValue || valueProp || ''),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       value = _React$useState2[0],
       setValue = _React$useState2[1];
 
-  var _React$useState3 = React.useState(getDefaultSelection()),
-      _React$useState4 = _slicedToArray(_React$useState3, 2),
-      selection = _React$useState4[0],
-      setSelection = _React$useState4[1];
-
-  var ref = React.useRef(null);
   React.useImperativeHandle(forwardRef, function () {
     return ref.current;
   });
   React.useEffect(function () {
     setValue(valueProp || '');
   }, [valueProp]);
+  React.useEffect(function () {
+    setCursorPosition(newSelectionPos.current);
+  }, [value]);
+  var getSelectionLength = React.useCallback(function (val) {
+    return Math.abs(val.end - val.start);
+  }, []);
+  var getCurrSelection = React.useCallback(function () {
+    var _ref$current, _ref$current2;
 
-  var setCursorPosition = function setCursorPosition(val) {
-    return setSelectionPos({
-      start: val,
-      end: val
-    });
-  };
-
-  var getCurrSelection = function getCurrSelection() {
     return {
-      start: ref.current.selectionStart || 0,
-      end: ref.current.selectionEnd || 0
+      start: ((_ref$current = ref.current) === null || _ref$current === void 0 ? void 0 : _ref$current.selectionStart) || 0,
+      end: ((_ref$current2 = ref.current) === null || _ref$current2 === void 0 ? void 0 : _ref$current2.selectionEnd) || 0
     };
-  };
-
-  var setSelectionPos = function setSelectionPos(pos) {
+  }, [ref.current]);
+  var setSelectionPos = React.useCallback(function (pos) {
     if (ref.current) {
       var el = ref.current;
       var start = Math.min(pos.start, pos.end);
       var end = Math.max(pos.start, pos.end);
       el.setSelectionRange(start, end);
     }
-  };
-
-  var updateSelection = function updateSelection() {
-    setSelection(getCurrSelection());
-    deferId.current = window.requestAnimationFrame(updateSelection);
-  };
-
-  var insertAtIndex = function insertAtIndex(currValue, index) {
+  }, [ref.current]);
+  var setCursorPosition = React.useCallback(function (val) {
+    return setSelectionPos({
+      start: val,
+      end: val
+    });
+  }, [setSelectionPos]);
+  var insertAtIndex = React.useCallback(function (currValue, index) {
     var iterator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
     var newValue = '';
     var newIndex = index + 1;
@@ -5165,7 +5680,10 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     }
 
     if (iterator >= currValue.length) {
-      selectionRef.current = index;
+      selectionPos.current = {
+        start: index,
+        end: index
+      };
       return newValue;
     }
 
@@ -5185,12 +5703,15 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
 
     newValue += insertAtIndex(currValue, newIndex, newIterator);
     return newValue;
-  };
-
-  var onChangeHandler = function onChangeHandler(e) {
+  }, [mask, placeholderChar, isEditable]);
+  var updateSelection = React.useCallback(function () {
+    selectionPos.current = getCurrSelection();
+    deferId.current = window.requestAnimationFrame(updateSelection);
+  }, [selectionPos.current, getCurrSelection]);
+  var onChangeHandler = React.useCallback(function (e) {
     var inputVal = e.currentTarget.value;
     var currSelection = getCurrSelection();
-    var start = Math.min(selection.start, currSelection.start);
+    var start = Math.min(selectionPos.current.start, currSelection.start);
     var end = currSelection.end;
     var cursorPosition = start;
     var enteredVal = '';
@@ -5201,8 +5722,8 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     updatedVal = insertAtIndex(enteredVal, start);
     insertedStringLength = updatedVal.length;
 
-    if (currSelection.end > selection.end) {
-      removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
+    if (currSelection.end > selectionPos.current.end) {
+      removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
     } else if (inputVal.length < value.length) {
       removedLength = value.length - inputVal.length;
     }
@@ -5230,58 +5751,53 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     }
 
     var newValue = maskedVal.slice(0, mask.length).join('');
-    window.requestAnimationFrame(function () {
-      return setCursorPosition(cursorPosition);
-    });
+    newSelectionPos.current = cursorPosition;
 
-    if (isValid(validators, newValue)) {
+    if (newValue !== value && isValid(validators, newValue)) {
       setValue(newValue);
-      if (onChange) onChange(e, newValue);
+      onChange === null || onChange === void 0 ? void 0 : onChange(e, newValue);
+    } else {
+      window.requestAnimationFrame(function () {
+        return setCursorPosition(newSelectionPos.current);
+      });
     }
-  };
-
-  var onBlurHandler = function onBlurHandler(e) {
+  }, [selectionPos.current, validators, getCurrSelection, insertAtIndex, getSelectionLength, getPlaceholderValue, getNewCursorPosition, isEditable, setCursorPosition, setValue, onChange]);
+  var onBlurHandler = React.useCallback(function (e) {
     var inputVal = e.currentTarget.value;
 
     if (clearOnEmptyBlur) {
-      if (inputVal === getPlaceholderValue()) {
+      if (inputVal === defaultPlaceholderValue) {
         setValue('');
         inputVal = '';
       }
     }
 
-    if (onBlur) onBlur(e, inputVal);
+    onBlur === null || onBlur === void 0 ? void 0 : onBlur(e, inputVal);
     if (deferId.current) window.cancelAnimationFrame(deferId.current);
-  };
-
-  var onClearHandler = function onClearHandler(e) {
-    // setValue('');
-    // window.requestAnimationFrame(() => ref.current!.blur());
-    setValue(getPlaceholderValue());
-    window.requestAnimationFrame(function () {
-      return setCursorPosition(getDefaultSelection().start);
-    });
-    if (onClear) onClear(e);
-  };
-
-  var onFocusHandler = function onFocusHandler(e) {
+  }, [clearOnEmptyBlur, deferId.current, getPlaceholderValue, setValue, onBlur]);
+  var onClearHandler = React.useCallback(function (e) {
+    newSelectionPos.current = defaultSelection.start;
+    setValue(defaultPlaceholderValue);
+    onClear === null || onClear === void 0 ? void 0 : onClear(e);
+  }, [setValue, getPlaceholderValue, setCursorPosition, getDefaultSelection, onClear]);
+  var onFocusHandler = React.useCallback(function (e) {
     deferId.current = window.requestAnimationFrame(updateSelection);
 
     if (!value) {
+      newSelectionPos.current = defaultSelection.start;
       setValue(getPlaceholderValue());
-      window.requestAnimationFrame(function () {
-        return setSelectionPos(getDefaultSelection());
-      });
     }
 
-    if (onFocus) onFocus(e);
-  };
-
-  var classes = classnames({
-    'd-flex flex-column flex-grow-1': true
-  }, className);
+    onFocus === null || onFocus === void 0 ? void 0 : onFocus(e);
+  }, [deferId.current, value, updateSelection, setValue, setSelectionPos, onFocus]);
+  var classes = React.useMemo(function () {
+    return classnames({
+      'd-flex flex-column flex-grow-1': true
+    }, className);
+  }, [className]);
   return /*#__PURE__*/React.createElement("div", {
-    className: classes
+    className: classes,
+    "data-test": "DesignSystem-InputMask--Wrapper"
   }, /*#__PURE__*/React.createElement(Input, _extends$3({}, rest, {
     value: value,
     error: error,
@@ -5298,11 +5814,16 @@ var InputMask = /*#__PURE__*/React.forwardRef(function (props, forwardRef) {
     hide: !caption
   }, caption));
 });
-InputMask.displayName = 'InputMask'; // @ts-ignore
+InputMask.displayName = 'InputMask'; // we are adding a new property which is not present in default interface
+// we could have explicitly added the interface above with definition
+// but then it would force us to marks utils as optional
+// as we cannot add new properties by defining the InputMask
+// that would cause user to use `!` everywhere or check for utils
 
 InputMask.utils = {
   getDefaultValue: getDefaultValue
 };
+var X = InputMask;
 
 var _excluded$l = ["required", "optional", "withInput", "disabled", "children", "className"];
 
@@ -5377,7 +5898,8 @@ var Caption = function Caption(props) {
   }, _defineProperty$2(_classNames, 'Caption--hidden', hide), _defineProperty$2(_classNames, 'Caption--withInput', withInput), _classNames), className);
   var errorIconClass = classnames(_defineProperty$2({}, 'Caption-icon', true));
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: classes
+    className: classes,
+    "data-test": "DesignSystem-Caption"
   }), error && /*#__PURE__*/React.createElement("div", {
     className: errorIconClass
   }, /*#__PURE__*/React.createElement(Icon, {
@@ -5408,7 +5930,10 @@ var Legend = function Legend(props) {
     background: "var(--".concat(iconAppearance, ")"),
     height: "".concat(iconSize, "px"),
     width: "".concat(iconSize, "px")
-  };
+  }; // TODO(a11y): fix accessibility
+
+  /* eslint-disable */
+
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
     className: legendClass,
     onClick: function onClick(e) {
@@ -5501,14 +6026,14 @@ var EditableDropdown = function EditableDropdown(props) {
     switch (eventType) {
       case 'edit':
         setEditing(true);
+        break;
 
       case 'hover':
         setShowComponent(true);
-        return;
+        break;
 
       case 'default':
         setShowComponent(false);
-        return;
     }
   };
 
@@ -5580,7 +6105,7 @@ Link.defaultProps = {
   disabled: false
 };
 
-var IconMapping$1 = {
+var IconMapping$2 = {
   success: 'check_circle',
   info: 'info',
   warning: 'warning',
@@ -5589,10 +6114,11 @@ var IconMapping$1 = {
 var Message = function Message(props) {
   var _classNames, _classNames2, _classNames3, _classNames4;
 
-  var appearance = props.appearance,
-      actions = props.actions,
+  var actions = props.actions,
       title = props.title,
       className = props.className;
+  var appearance = props.appearance;
+  appearance = appearance === 'default' ? 'info' : appearance;
   var baseProps = extractBaseProps(props);
   var MessageClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Message', true), _defineProperty$2(_classNames, "Message--".concat(appearance), appearance), _classNames), className);
   var IconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Message-icon', true), _defineProperty$2(_classNames2, "Message-icon--".concat(appearance), appearance), _defineProperty$2(_classNames2, 'Message-icon--withTitle', title), _classNames2));
@@ -5621,9 +6147,9 @@ var Message = function Message(props) {
     "data-test": "DesignSystem-Message"
   }, baseProps, {
     className: MessageClass
-  }), appearance !== 'default' && /*#__PURE__*/React.createElement(Icon, {
+  }), /*#__PURE__*/React.createElement(Icon, {
     "data-test": "DesignSystem-Message--Icon",
-    name: IconMapping$1[appearance],
+    name: IconMapping$2[appearance],
     appearance: appearance,
     className: IconClass
   }), /*#__PURE__*/React.createElement("div", null, title && /*#__PURE__*/React.createElement(Heading, {
@@ -5637,7 +6163,7 @@ var Message = function Message(props) {
 };
 Message.displayName = 'Message';
 Message.defaultProps = {
-  appearance: 'default',
+  appearance: 'info',
   description: ''
 };
 
@@ -5647,12 +6173,15 @@ var Meta = function Meta(props) {
       iconAppearance = props.iconAppearance,
       labelAppearance = props.labelAppearance;
   return /*#__PURE__*/React.createElement("span", {
+    "data-test": "DesignSystem-MetaList--Meta",
     className: 'Meta'
   }, icon && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-MetaList--MetaIcon",
     name: icon,
     appearance: iconAppearance,
     className: 'Meta-icon'
   }), /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-MetaList--MetaLabel",
     appearance: labelAppearance
   }, label));
 };
@@ -5671,9 +6200,12 @@ var MetaList = function MetaList(props) {
   var MetaClass = classnames(_defineProperty$2({}, 'MetaList', true), className);
   var SeperatorClass = classnames(_defineProperty$2({}, 'MetaList-seperator', true));
   var LeftSeperatorClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'MetaList-seperator', true), _defineProperty$2(_classNames3, 'MetaList-seperator--left', true), _classNames3));
-  return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-MetaList"
+  }, baseProps, {
     className: MetaClass
   }), seperator && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-MetaList--Seperator",
     name: "fiber_manual_record",
     size: 8,
     className: LeftSeperatorClass,
@@ -5692,6 +6224,7 @@ var MetaList = function MetaList(props) {
       iconAppearance: iconAppearance,
       labelAppearance: labelAppearance
     }), rightSeperator && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-MetaList--rightSeperator",
       name: "fiber_manual_record",
       size: 8,
       className: SeperatorClass,
@@ -5706,253 +6239,9 @@ MetaList.defaultProps = {
   labelAppearance: 'subtle'
 };
 
-var _excluded$i = ["children", "className", "onOutsideClick"];
-var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var children = props.children,
-      className = props.className,
-      onOutsideClick = props.onOutsideClick,
-      rest = _objectWithoutProperties$1(props, _excluded$i);
-
-  var innerRef = React.useRef(null);
-  React.useImperativeHandle(ref, function () {
-    return innerRef.current;
-  }, [innerRef]);
-  React.useEffect(function () {
-    document.addEventListener('click', handleOutsideClick, true);
-    return function () {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, []);
-  var handleOutsideClick = React.useCallback(function (event) {
-    var element = innerRef;
-
-    if (!event.target || !element.current) {
-      return;
-    }
-
-    if (!ReactDOM.findDOMNode(element.current).contains(event.target)) {
-      onOutsideClick(event);
-    }
-  }, []);
-  var classes = classnames(_defineProperty$2({}, 'OutsideClick', true), className);
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    ref: innerRef
-  }, rest, {
-    className: classes
-  }), children);
-});
-OutsideClick.displayName = 'OutsideClick';
-
-var _excluded$h = ["appearance", "children", "className"];
-var Paragraph = function Paragraph(props) {
-  var appearance = props.appearance,
-      children = props.children,
-      className = props.className,
-      rest = _objectWithoutProperties$1(props, _excluded$h);
-
-  var classes = classnames(_defineProperty$2({
-    Text: true
-  }, "Text--".concat(appearance), appearance), className);
-  return /*#__PURE__*/React.createElement(GenericText, _extends$3({
-    "data-test": "DesignSystem-Paragraph"
-  }, rest, {
-    className: classes,
-    componentType: "p"
-  }), children);
-};
-Paragraph.displayName = 'Paragraph';
-Paragraph.defaultProps = {
-  appearance: 'default'
-};
-
-var ProgressBar = function ProgressBar(props) {
-  var max = props.max,
-      value = props.value,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var style = {
-    width: value > 0 ? "".concat(Math.min(value, max) * 100 / max, "%") : '0'
-  };
-  var ProgressBarClass = classnames({
-    ProgressBar: true
-  }, className);
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-ProgressBar"
-  }, baseProps, {
-    className: ProgressBarClass
-  }), /*#__PURE__*/React.createElement("div", {
-    className: 'ProgressBar-indicator',
-    style: style
-  }));
-};
-ProgressBar.displayName = 'ProgressBar';
-ProgressBar.defaultProps = {
-  max: 100
-};
-
-var _excluded$g = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"];
-var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
-  var _classNames, _classNames2, _classNames3;
-
-  var _props$size = props.size,
-      size = _props$size === void 0 ? 'regular' : _props$size,
-      label = props.label,
-      disabled = props.disabled,
-      onChange = props.onChange,
-      name = props.name,
-      value = props.value,
-      checked = props.checked,
-      defaultChecked = props.defaultChecked,
-      className = props.className,
-      rest = _objectWithoutProperties$1(props, _excluded$g);
-
-  var ref = React.useRef(null);
-  React.useImperativeHandle(forwardedRef, function () {
-    return ref.current;
-  });
-  var RadioClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Radio', true), _defineProperty$2(_classNames, 'Radio--disabled', disabled), _classNames), className);
-  var RadioWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Radio-wrapper', true), _defineProperty$2(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
-  var RadioOuterWrapper = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Radio-outerWrapper', true), _defineProperty$2(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
-  var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
-  return /*#__PURE__*/React.createElement("div", {
-    className: RadioClass
-  }, /*#__PURE__*/React.createElement("div", {
-    className: RadioOuterWrapper
-  }, /*#__PURE__*/React.createElement("input", _extends$3({}, rest, {
-    type: "radio",
-    disabled: disabled,
-    checked: checked,
-    defaultChecked: defaultChecked,
-    ref: ref,
-    name: name,
-    value: value,
-    onChange: onChange,
-    className: "Radio-input",
-    id: id
-  })), /*#__PURE__*/React.createElement("span", {
-    className: RadioWrapper
-  })), label && /*#__PURE__*/React.createElement("label", {
-    className: "Radio-label",
-    htmlFor: id
-  }, /*#__PURE__*/React.createElement(Text, {
-    size: size === 'tiny' ? 'small' : 'regular',
-    appearance: disabled ? 'disabled' : 'default'
-  }, label)));
-});
-Radio.displayName = 'Radio';
-
-var _excluded$f = ["className", "children"];
-var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
-  var className = props.className,
-      children = props.children,
-      rest = _objectWithoutProperties$1(props, _excluded$f);
-
-  var classes = classnames(_defineProperty$2({
-    Row: true
-  }, "".concat(className), className));
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-Row",
-    ref: ref
-  }, rest, {
-    className: classes
-  }), children);
-});
-Row.displayName = 'Row';
-
-var StatusHint = function StatusHint(props) {
-  var _classNames2;
-
-  var appearance = props.appearance,
-      children = props.children,
-      _onMouseEnter = props.onMouseEnter,
-      _onMouseLeave = props.onMouseLeave,
-      _onClick = props.onClick,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var StatusHintClass = classnames(_defineProperty$2({}, 'StatusHint', true), className);
-  var StatusHintIconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'StatusHint-icon', true), _defineProperty$2(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-StatusHint"
-  }, baseProps, {
-    className: StatusHintClass,
-    onClick: function onClick(e) {
-      return _onClick && _onClick(e);
-    },
-    onMouseEnter: function onMouseEnter(e) {
-      return _onMouseEnter && _onMouseEnter(e);
-    },
-    onMouseLeave: function onMouseLeave(e) {
-      return _onMouseLeave && _onMouseLeave(e);
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    "data-test": "DesignSystem-StatusHint--Icon",
-    className: StatusHintIconClass
-  }), /*#__PURE__*/React.createElement(Text, {
-    "data-test": "DesignSystem-StatusHint--Text",
-    weight: 'medium'
-  }, children));
-};
-StatusHint.displayName = 'StatusHint';
-StatusHint.defaultProps = {
-  appearance: 'default'
-};
-
-var Pills = function Pills(props) {
-  var _classNames;
-
-  var appearance = props.appearance,
-      children = props.children,
-      subtle = props.subtle,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var classes = classnames((_classNames = {
-    Pills: true
-  }, _defineProperty$2(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty$2(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
-  return /*#__PURE__*/React.createElement("span", _extends$3({
-    "data-test": "DesignSystem-Pills"
-  }, baseProps, {
-    className: classes
-  }), children);
-};
-Pills.displayName = 'Pills';
-Pills.defaultProps = {
-  appearance: 'secondary'
-};
-
-var Spinner = function Spinner(props) {
-  var appearance = props.appearance,
-      size = props.size,
-      className = props.className;
-  var baseProps = extractBaseProps(props);
-  var wrapperClasses = classnames(_defineProperty$2({
-    Spinner: true
-  }, "Spinner--".concat(size), size), className);
-  var circleClasses = classnames(_defineProperty$2({
-    Circle: true
-  }, "Circle--".concat(appearance), appearance));
-  var svgProps = {
-    viewBox: '0 0 50 50'
-  };
-  var circleProps = {
-    cx: 25,
-    cy: 25,
-    r: 20,
-    fill: 'none',
-    strokeMiterlimit: '10',
-    strokeWidth: '4'
-  };
-  return /*#__PURE__*/React.createElement("svg", _extends$3({}, baseProps, {
-    className: wrapperClasses
-  }, svgProps), /*#__PURE__*/React.createElement("circle", _extends$3({
-    className: circleClasses
-  }, circleProps)));
-};
-Spinner.displayName = 'Spinner';
-Spinner.defaultProps = {
-  appearance: 'primary',
-  size: 'medium'
-};
-
+/**
+ * Key codes are deprecated, soon major browser support will end.
+ */
 var ARROW_LEFT = 37;
 var ARROW_RIGHT = 39;
 
@@ -6013,7 +6302,7 @@ function fillValues(values, startIndex, endIndex, fillValue) {
     values[index] = fillValue;
   }
 }
-function isElementOfType(element, _ComponentType) {
+function isElementOfType(element) {
   return element != null && element.type != null;
 }
 
@@ -6132,13 +6421,13 @@ var Handle = /*#__PURE__*/function (_React$Component) {
       var _this$props2 = _this.props,
           stepSize = _this$props2.stepSize,
           value = _this$props2.value;
-      var which = event.which;
+      var keyCode = event.keyCode; // TODO(a11y): add ARROW_DOWN & ARROW_UP too
 
-      if (which === ARROW_LEFT) {
+      if (keyCode === ARROW_LEFT) {
         _this.changeValue(value - stepSize);
 
         event.preventDefault();
-      } else if (which === ARROW_RIGHT) {
+      } else if (keyCode === ARROW_RIGHT) {
         _this.changeValue(value + stepSize);
 
         event.preventDefault();
@@ -6148,7 +6437,7 @@ var Handle = /*#__PURE__*/function (_React$Component) {
     _defineProperty$2(_assertThisInitialized$2(_this), "handleKeyUp", function (event) {
       if (_this.props.disabled) return;
 
-      if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.which) >= 0) {
+      if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.keyCode) >= 0) {
         var onRelease = _this.props.onRelease;
         if (onRelease) onRelease(_this.props.value);
       }
@@ -6232,20 +6521,27 @@ var Handle = /*#__PURE__*/function (_React$Component) {
       };
       var className = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Slider-handle', true), _defineProperty$2(_classNames, 'Slider-handle--disabled', disabled), _defineProperty$2(_classNames, 'Slider-handle--active', isHandleMoving), _classNames));
       var TooltipClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Slider-tooltip', true), _defineProperty$2(_classNames2, 'Tooltip', true), _defineProperty$2(_classNames2, 'd-none', !showTootlip), _classNames2));
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-        className: className,
-        onMouseOver: this.handleMouseOver,
-        onMouseLeave: this.handleMouseLeave,
-        onMouseDown: this.beginHandleMovement,
-        onKeyDown: this.handleKeyDown,
-        onKeyUp: this.handleKeyUp,
-        ref: this.refHandlers.handle,
-        style: style,
-        tabIndex: 1
-      }), /*#__PURE__*/React.createElement("div", {
-        className: TooltipClass,
-        style: style
-      }, label));
+      return (
+        /*#__PURE__*/
+        // TODO(a11y): fix accessibility
+
+        /* eslint-disable */
+        React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+          className: className,
+          onMouseOver: this.handleMouseOver,
+          onMouseLeave: this.handleMouseLeave,
+          onMouseDown: this.beginHandleMovement,
+          onKeyDown: this.handleKeyDown,
+          onKeyUp: this.handleKeyUp,
+          ref: this.refHandlers.handle,
+          style: style,
+          tabIndex: 1,
+          "data-test": "DesignSystem-MultiSlider-Handle"
+        }), /*#__PURE__*/React.createElement("div", {
+          className: TooltipClass,
+          style: style
+        }, label))
+      );
     }
   }]);
 
@@ -6503,7 +6799,10 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
               foundHandle.changeValue(i);
             }
           }
-        };
+        }; // TODO(a11y): fix accessibility
+
+        /* eslint-disable */
+
 
         labels.push( /*#__PURE__*/React.createElement("div", {
           onClick: onClickHandler,
@@ -6513,7 +6812,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
           onMouseOver: function onMouseOver() {
             return _this.handleLabelMouseOver(i);
           },
-          onMouseLeave: _this.handleLabelMouseLeave
+          onMouseLeave: _this.handleLabelMouseLeave,
+          "data-test": "DesignSystem-MultiSlider-Label"
         }, /*#__PURE__*/React.createElement("span", {
           className: 'Slider-ticks'
         }), labelRenderer !== false && /*#__PURE__*/React.createElement(Text, {
@@ -6643,7 +6943,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
       var SliderClass = classnames(_defineProperty$2({}, 'Slider', true), className);
       var WrapperClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Slider-wrapper', true), _defineProperty$2(_classNames3, 'Slider-wrapper--disabled', this.props.disabled), _classNames3));
       return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-        className: SliderClass
+        className: SliderClass,
+        "data-test": "DesignSystem-MultiSlider"
       }), label && /*#__PURE__*/React.createElement(Label, {
         withInput: true
       }, label), /*#__PURE__*/React.createElement("div", {
@@ -6653,7 +6954,8 @@ var MultiSlider = /*#__PURE__*/function (_React$Component) {
         ref: function ref(_ref3) {
           return _this2.trackElement = _ref3;
         },
-        onMouseDown: this.maybeHandleTrackClick
+        onMouseDown: this.maybeHandleTrackClick,
+        "data-test": "DesignSystem-MultiSlider-Slider-Track"
       }, this.renderTracks()), /*#__PURE__*/React.createElement("div", {
         className: "Slider-axis"
       }, this.renderLabels()), this.renderHandles()));
@@ -6672,6 +6974,271 @@ _defineProperty$2(MultiSlider, "defaultProps", {
 });
 
 _defineProperty$2(MultiSlider, "Handle", MultiSliderHandle);
+
+var _excluded$i = ["children", "className", "onOutsideClick"];
+var OutsideClick = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var children = props.children,
+      className = props.className,
+      onOutsideClick = props.onOutsideClick,
+      rest = _objectWithoutProperties$1(props, _excluded$i);
+
+  var innerRef = React.useRef(null);
+  React.useImperativeHandle(ref, function () {
+    return innerRef.current;
+  }, [innerRef]);
+  React.useEffect(function () {
+    document.addEventListener('click', handleOutsideClick, true);
+    return function () {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+  var handleOutsideClick = React.useCallback(function (event) {
+    var element = innerRef;
+
+    if (!event.target || !element.current) {
+      return;
+    }
+
+    if (!element.current.contains(event.target)) {
+      onOutsideClick(event);
+    }
+  }, []);
+  var classes = classnames(_defineProperty$2({}, 'OutsideClick', true), className);
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    ref: innerRef
+  }, rest, {
+    className: classes
+  }), children);
+});
+OutsideClick.displayName = 'OutsideClick';
+
+var _excluded$h = ["appearance", "children", "className"];
+var Paragraph = function Paragraph(props) {
+  var appearance = props.appearance,
+      children = props.children,
+      className = props.className,
+      rest = _objectWithoutProperties$1(props, _excluded$h);
+
+  var classes = classnames(_defineProperty$2({
+    Text: true
+  }, "Text--".concat(appearance), appearance), className);
+  return /*#__PURE__*/React.createElement(GenericText, _extends$3({
+    "data-test": "DesignSystem-Paragraph"
+  }, rest, {
+    className: classes,
+    componentType: "p"
+  }), children);
+};
+Paragraph.displayName = 'Paragraph';
+Paragraph.defaultProps = {
+  appearance: 'default'
+};
+
+var ProgressBar = function ProgressBar(props) {
+  var max = props.max,
+      value = props.value,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var style = {
+    width: value > 0 ? "".concat(Math.min(value, max) * 100 / max, "%") : '0'
+  };
+  var ProgressBarClass = classnames({
+    ProgressBar: true
+  }, className);
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-ProgressBar"
+  }, baseProps, {
+    className: ProgressBarClass
+  }), /*#__PURE__*/React.createElement("div", {
+    className: 'ProgressBar-indicator',
+    style: style
+  }));
+};
+ProgressBar.displayName = 'ProgressBar';
+ProgressBar.defaultProps = {
+  max: 100
+};
+
+var _excluded$g = ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText"];
+var Radio = /*#__PURE__*/React.forwardRef(function (props, forwardedRef) {
+  var _classNames, _classNames2, _classNames3;
+
+  var _props$size = props.size,
+      size = _props$size === void 0 ? 'regular' : _props$size,
+      label = props.label,
+      disabled = props.disabled,
+      onChange = props.onChange,
+      name = props.name,
+      value = props.value,
+      checked = props.checked,
+      defaultChecked = props.defaultChecked,
+      className = props.className,
+      helpText = props.helpText,
+      rest = _objectWithoutProperties$1(props, _excluded$g);
+
+  var ref = React.useRef(null);
+  React.useImperativeHandle(forwardedRef, function () {
+    return ref.current;
+  });
+  var RadioClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Radio', true), _defineProperty$2(_classNames, 'Radio--disabled', disabled), _classNames), className);
+  var RadioWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Radio-wrapper', true), _defineProperty$2(_classNames2, "Radio-wrapper--".concat(size), size), _classNames2));
+  var RadioOuterWrapper = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Radio-outerWrapper', true), _defineProperty$2(_classNames3, "Radio-outerWrapper--".concat(size), size), _classNames3));
+  var RadioLabelClass = classnames(_defineProperty$2({}, 'Radio-Label', true));
+  var id = "".concat(name, "-").concat(label, "-").concat(uidGenerator());
+  return /*#__PURE__*/React.createElement("div", {
+    className: RadioClass,
+    "data-test": "DesignSystem-Radio"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: RadioOuterWrapper,
+    "data-test": "DesignSystem-Radio-OuterWrapper"
+  }, /*#__PURE__*/React.createElement("input", _extends$3({}, rest, {
+    type: "radio",
+    disabled: disabled,
+    checked: checked,
+    defaultChecked: defaultChecked,
+    ref: ref,
+    name: name,
+    value: value,
+    onChange: onChange,
+    className: "Radio-input",
+    id: id,
+    "data-test": "DesignSystem-Radio-Input"
+  })), /*#__PURE__*/React.createElement("span", {
+    className: RadioWrapper
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "Radio-labelWrapper"
+  }, label && /*#__PURE__*/React.createElement("label", {
+    className: RadioLabelClass,
+    htmlFor: id,
+    "data-test": "DesignSystem-Radio-Label"
+  }, /*#__PURE__*/React.createElement(Text, {
+    size: size === 'tiny' ? 'small' : 'regular',
+    appearance: disabled ? 'disabled' : 'default'
+  }, label)), helpText && /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-Radio-HelpText",
+    size: "small",
+    appearance: disabled ? 'disabled' : 'subtle'
+  }, helpText.trim())));
+});
+Radio.displayName = 'Radio';
+
+var _excluded$f = ["className", "children"];
+var Row = /*#__PURE__*/React.forwardRef(function (props, ref) {
+  var className = props.className,
+      children = props.children,
+      rest = _objectWithoutProperties$1(props, _excluded$f);
+
+  var classes = classnames(_defineProperty$2({
+    Row: true
+  }, "".concat(className), className));
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-Row",
+    ref: ref
+  }, rest, {
+    className: classes
+  }), children);
+});
+Row.displayName = 'Row';
+
+var StatusHint = function StatusHint(props) {
+  var _classNames2;
+
+  var appearance = props.appearance,
+      children = props.children,
+      _onMouseEnter = props.onMouseEnter,
+      _onMouseLeave = props.onMouseLeave,
+      _onClick = props.onClick,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var StatusHintClass = classnames(_defineProperty$2({}, 'StatusHint', true), className);
+  var StatusHintIconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'StatusHint-icon', true), _defineProperty$2(_classNames2, "StatusHint--".concat(appearance), appearance), _classNames2));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y): fix accessibility
+
+    /* eslint-disable */
+    React.createElement("div", _extends$3({
+      "data-test": "DesignSystem-StatusHint"
+    }, baseProps, {
+      className: StatusHintClass,
+      onClick: function onClick(e) {
+        return _onClick && _onClick(e);
+      },
+      onMouseEnter: function onMouseEnter(e) {
+        return _onMouseEnter && _onMouseEnter(e);
+      },
+      onMouseLeave: function onMouseLeave(e) {
+        return _onMouseLeave && _onMouseLeave(e);
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      "data-test": "DesignSystem-StatusHint--Icon",
+      className: StatusHintIconClass
+    }), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-StatusHint--Text",
+      weight: 'medium'
+    }, children))
+  );
+};
+StatusHint.displayName = 'StatusHint';
+StatusHint.defaultProps = {
+  appearance: 'default'
+};
+
+var Pills = function Pills(props) {
+  var _classNames;
+
+  var appearance = props.appearance,
+      children = props.children,
+      subtle = props.subtle,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var classes = classnames((_classNames = {
+    Pills: true
+  }, _defineProperty$2(_classNames, "Badge--".concat(appearance), appearance && !subtle), _defineProperty$2(_classNames, "Badge--subtle-".concat(appearance), subtle), _classNames), className);
+  return /*#__PURE__*/React.createElement("span", _extends$3({
+    "data-test": "DesignSystem-Pills"
+  }, baseProps, {
+    className: classes
+  }), children);
+};
+Pills.displayName = 'Pills';
+Pills.defaultProps = {
+  appearance: 'secondary'
+};
+
+var Spinner = function Spinner(props) {
+  var appearance = props.appearance,
+      size = props.size,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var wrapperClasses = classnames(_defineProperty$2({
+    Spinner: true
+  }, "Spinner--".concat(size), size), className);
+  var circleClasses = classnames(_defineProperty$2({
+    Circle: true
+  }, "Circle--".concat(appearance), appearance));
+  var svgProps = {
+    viewBox: '0 0 50 50'
+  };
+  var circleProps = {
+    cx: 25,
+    cy: 25,
+    r: 20,
+    fill: 'none',
+    strokeMiterlimit: '10',
+    strokeWidth: '4'
+  };
+  return /*#__PURE__*/React.createElement("svg", _extends$3({}, baseProps, {
+    className: wrapperClasses
+  }, svgProps), /*#__PURE__*/React.createElement("circle", _extends$3({
+    className: circleClasses
+  }, circleProps)));
+};
+Spinner.displayName = 'Spinner';
+Spinner.defaultProps = {
+  appearance: 'primary',
+  size: 'medium'
+};
 
 var _excluded$e = ["value", "defaultValue", "onRelease", "onChange"];
 var Slider = function Slider(props) {
@@ -6817,8 +7384,10 @@ var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
   var SwitchWrapper = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Switch-wrapper', true), _defineProperty$2(_classNames2, 'Switch-wrapper--disabled', disabled), _defineProperty$2(_classNames2, "Switch-wrapper--".concat(size), size), _defineProperty$2(_classNames2, 'Switch-wrapper--checked', checked), _defineProperty$2(_classNames2, 'Switch-wrapper--checkedDisabled', checked && disabled), _classNames2));
 
   var onChangeHandler = function onChangeHandler(event) {
-    if (checkedProp === undefined) setChecked(!checked);
-    if (onChange) onChange(event, !checked);
+    if (event.type == 'change' || isSpaceKey(event)) {
+      if (checkedProp === undefined) setChecked(!checked);
+      if (onChange) onChange(event, !checked);
+    }
   };
 
   return /*#__PURE__*/React.createElement("div", {
@@ -6832,7 +7401,8 @@ var Switch = /*#__PURE__*/React.forwardRef(function (props, ref) {
     ref: ref,
     name: name,
     value: value,
-    className: "Switch-input"
+    className: "Switch-input",
+    onKeyUp: onChangeHandler
   })), /*#__PURE__*/React.createElement("span", {
     className: SwitchWrapper
   }));
@@ -6911,12 +7481,13 @@ ActionButton.defaultProps = {
 var Toast = function Toast(props) {
   var _classNames, _classNames2, _classNames4, _classNames5;
 
-  var appearance = props.appearance,
-      title = props.title,
+  var title = props.title,
       message = props.message,
       actions = props.actions,
       onClose = props.onClose,
       className = props.className;
+  var appearance = props.appearance;
+  appearance = appearance === 'default' ? 'info' : appearance;
   var baseProps = extractBaseProps(props);
   var wrapperClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Toast', true), _defineProperty$2(_classNames, 'Toast--withMessage', message), _defineProperty$2(_classNames, "Toast--".concat(appearance), appearance), _classNames), className);
   var IconMapping = {
@@ -6975,7 +7546,7 @@ var Toast = function Toast(props) {
 };
 Toast.displayName = 'Toast';
 Toast.defaultProps = {
-  appearance: 'default'
+  appearance: 'info'
 };
 
 var objectWithoutPropertiesLoose = createCommonjsModule(function (module) {
@@ -7262,7 +7833,7 @@ keysShim.shim = function shimObjectKeys() {
 var objectKeys = keysShim;
 
 /* eslint complexity: [2, 18], max-statements: [2, 33] */
-var shams = function hasSymbols() {
+var shams$1 = function hasSymbols() {
 	if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') { return false; }
 	if (typeof Symbol.iterator === 'symbol') { return true; }
 
@@ -7302,16 +7873,20 @@ var shams = function hasSymbols() {
 	return true;
 };
 
+var shams = function hasToStringTagShams() {
+	return shams$1() && !!Symbol.toStringTag;
+};
+
 var origSymbol = typeof Symbol !== 'undefined' && Symbol;
 
 
-var hasSymbols$3 = function hasNativeSymbols() {
+var hasSymbols$2 = function hasNativeSymbols() {
 	if (typeof origSymbol !== 'function') { return false; }
 	if (typeof Symbol !== 'function') { return false; }
 	if (typeof origSymbol('foo') !== 'symbol') { return false; }
 	if (typeof Symbol('bar') !== 'symbol') { return false; }
 
-	return shams();
+	return shams$1();
 };
 
 /* eslint no-invalid-this: 1 */
@@ -7411,7 +7986,7 @@ var ThrowTypeError = $gOPD$1
 	}())
 	: throwTypeError;
 
-var hasSymbols$2 = hasSymbols$3();
+var hasSymbols$1 = hasSymbols$2();
 
 var getProto$1 = Object.getPrototypeOf || function (x) { return x.__proto__; }; // eslint-disable-line no-proto
 
@@ -7423,7 +7998,7 @@ var INTRINSICS = {
 	'%AggregateError%': typeof AggregateError === 'undefined' ? undefined$1 : AggregateError,
 	'%Array%': Array,
 	'%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined$1 : ArrayBuffer,
-	'%ArrayIteratorPrototype%': hasSymbols$2 ? getProto$1([][Symbol.iterator]()) : undefined$1,
+	'%ArrayIteratorPrototype%': hasSymbols$1 ? getProto$1([][Symbol.iterator]()) : undefined$1,
 	'%AsyncFromSyncIteratorPrototype%': undefined$1,
 	'%AsyncFunction%': needsEval,
 	'%AsyncGenerator%': needsEval,
@@ -7451,10 +8026,10 @@ var INTRINSICS = {
 	'%Int32Array%': typeof Int32Array === 'undefined' ? undefined$1 : Int32Array,
 	'%isFinite%': isFinite,
 	'%isNaN%': isNaN,
-	'%IteratorPrototype%': hasSymbols$2 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
+	'%IteratorPrototype%': hasSymbols$1 ? getProto$1(getProto$1([][Symbol.iterator]())) : undefined$1,
 	'%JSON%': typeof JSON === 'object' ? JSON : undefined$1,
 	'%Map%': typeof Map === 'undefined' ? undefined$1 : Map,
-	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
+	'%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Map()[Symbol.iterator]()),
 	'%Math%': Math,
 	'%Number%': Number,
 	'%Object%': Object,
@@ -7467,11 +8042,11 @@ var INTRINSICS = {
 	'%Reflect%': typeof Reflect === 'undefined' ? undefined$1 : Reflect,
 	'%RegExp%': RegExp,
 	'%Set%': typeof Set === 'undefined' ? undefined$1 : Set,
-	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$2 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
+	'%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols$1 ? undefined$1 : getProto$1(new Set()[Symbol.iterator]()),
 	'%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined$1 : SharedArrayBuffer,
 	'%String%': String,
-	'%StringIteratorPrototype%': hasSymbols$2 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
-	'%Symbol%': hasSymbols$2 ? Symbol : undefined$1,
+	'%StringIteratorPrototype%': hasSymbols$1 ? getProto$1(''[Symbol.iterator]()) : undefined$1,
+	'%Symbol%': hasSymbols$1 ? Symbol : undefined$1,
 	'%SyntaxError%': $SyntaxError,
 	'%ThrowTypeError%': ThrowTypeError,
 	'%TypedArray%': TypedArray,
@@ -7758,7 +8333,7 @@ var callBound = function callBoundIntrinsic(name, allowMissing) {
 	return intrinsic;
 };
 
-var hasToStringTag$2 = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+var hasToStringTag$2 = shams();
 
 
 var $toString$1 = callBound('Object.prototype.toString');
@@ -7790,7 +8365,7 @@ isStandardArguments.isLegacyArguments = isLegacyArguments; // for tests
 
 var isArguments = supportsStandardArguments ? isStandardArguments : isLegacyArguments;
 
-var hasSymbols$1 = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
+var hasSymbols = typeof Symbol === 'function' && typeof Symbol('foo') === 'symbol';
 
 var toStr$1 = Object.prototype.toString;
 var concat = Array.prototype.concat;
@@ -7834,7 +8409,7 @@ var defineProperty$2 = function (object, name, value, predicate) {
 var defineProperties = function (object, map) {
 	var predicates = arguments.length > 2 ? arguments[2] : {};
 	var props = objectKeys(map);
-	if (hasSymbols$1) {
+	if (hasSymbols) {
 		props = concat.call(props, Object.getOwnPropertySymbols(map));
 	}
 	for (var i = 0; i < props.length; i += 1) {
@@ -7887,8 +8462,7 @@ defineProperties_1(polyfill$1, {
 
 var objectIs = polyfill$1;
 
-var hasSymbols = shams();
-var hasToStringTag$1 = hasSymbols && !!Symbol.toStringTag;
+var hasToStringTag$1 = shams();
 var has;
 var $exec;
 var isRegexMarker;
@@ -8037,7 +8611,7 @@ var tryDateObject = function tryDateGetDayCall(value) {
 
 var toStr = Object.prototype.toString;
 var dateClass = '[object Date]';
-var hasToStringTag = typeof Symbol === 'function' && !!Symbol.toStringTag;
+var hasToStringTag = shams();
 
 var isDateObject = function isDateObject(value) {
 	if (typeof value !== 'object' || value === null) {
@@ -11601,13 +12175,8 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       onToggle(newValue === undefined ? !open : newValue, type);
     });
 
-    _defineProperty$2(_assertThisInitialized$2(_this), "findDOMNode", function (ref) {
-      return ReactDOM.findDOMNode(ref.current);
-    });
-
     _defineProperty$2(_assertThisInitialized$2(_this), "doesEventContainsElement", function (event, ref) {
-      var el = _this.findDOMNode(ref);
-
+      var el = ref.current;
       return el && el.contains(event.target);
     });
 
@@ -11639,7 +12208,11 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
       return newStyle;
     });
 
-    _this.state = {};
+    _this.state = {
+      animationKeyframe: '',
+      isOpen: _this.props.open || false,
+      uniqueKey: ''
+    };
     _this.hoverableDelay = 100;
     _this.offsetMapping = {
       small: '2px',
@@ -11671,12 +12244,16 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
 
       if (prevProps.open !== this.props.open) {
         this._throttleWait = false;
+        this.setState({
+          animationKeyframe: ''
+        });
 
         if (this.props.open) {
-          var triggerElement = this.findDOMNode(this.triggerRef);
+          var triggerElement = this.triggerRef.current;
           var zIndex = this.getZIndexForLayer(triggerElement);
           this.setState({
-            zIndex: zIndex === undefined ? zIndex : zIndex + 1
+            zIndex: zIndex === undefined ? zIndex : zIndex + 1,
+            isOpen: true
           });
         }
       }
@@ -11810,44 +12387,99 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "getPopperChildren",
     value: function getPopperChildren(_ref) {
+      var _this4 = this;
+
       var ref = _ref.ref,
           style = _ref.style,
           placement = _ref.placement,
           outOfBoundaries = _ref.outOfBoundaries;
       var _this$props5 = this.props,
           offset = _this$props5.offset,
-          children = _this$props5.children;
-      var zIndex = this.state.zIndex;
+          children = _this$props5.children,
+          open = _this$props5.open,
+          animationClass = _this$props5.animationClass;
+      var _this$state = this.state,
+          zIndex = _this$state.zIndex,
+          animationKeyframe = _this$state.animationKeyframe,
+          uniqueKey = _this$state.uniqueKey;
       var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-      var element = /*#__PURE__*/React.cloneElement(children, {
+
+      var childrenStyles = _objectSpread2(_objectSpread2({}, newStyle), {}, {
+        zIndex: zIndex
+      });
+
+      var classes = '';
+
+      if (!animationClass) {
+        var _this$popupRef$curren, _this$popupRef$curren2;
+
+        var maxHeight = (_this$popupRef$curren = this.popupRef.current) === null || _this$popupRef$curren === void 0 ? void 0 : _this$popupRef$curren.offsetHeight; // we need to check for transformStyles so that we open the popover at correct position (left/right)
+
+        var transformStyles = (_this$popupRef$curren2 = this.popupRef.current) === null || _this$popupRef$curren2 === void 0 ? void 0 : _this$popupRef$curren2.style.getPropertyValue('transform');
+
+        if (transformStyles && maxHeight && placement && !animationKeyframe) {
+          var _uniqueKey = Math.random().toString(36).substring(2, 6);
+
+          var isTop = placement.includes('top');
+          var popperAnimation = "\n        @keyframes popper-open-".concat(_uniqueKey, " {\n          from { \n            max-height: 0;\n            ").concat(isTop ? "margin-top: ".concat(maxHeight, "px") : '', ";\n          }\n          to {\n            max-height: ").concat(maxHeight, "px;\n            ").concat(isTop ? "margin-top: 0px" : '', ";\n          }\n        }\n        @keyframes popper-close-").concat(_uniqueKey, " {\n          from {\n            max-height: ").concat(maxHeight, "px;\n            ").concat(isTop ? "margin-top: 0px" : '', ";\n          }\n          to {\n            max-height: 0;\n            ").concat(isTop ? "margin-top: ".concat(maxHeight, "px") : '', ";\n          }\n        }\n        ");
+          this.setState({
+            animationKeyframe: popperAnimation,
+            uniqueKey: _uniqueKey
+          });
+        } // defining popper-fade-in custom keyframe as it is specific to popover usecase.
+
+
+        var popperAnimationStyles = {
+          animation: open ? "popper-open-".concat(uniqueKey, " 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms") : "popper-close-".concat(uniqueKey, " 120ms cubic-bezier(0.2, 0, 1, 0.9) 120ms, fadeOut 120ms 120ms")
+        };
+        childrenStyles = _objectSpread2(_objectSpread2(_objectSpread2({}, childrenStyles), popperAnimationStyles), {}, {
+          overflow: 'hidden'
+        });
+      } else {
+        var _classNames;
+
+        classes = classnames((_classNames = {}, _defineProperty$2(_classNames, "".concat(animationClass.open), open), _defineProperty$2(_classNames, "".concat(animationClass.close), !open), _classNames), children.props.className);
+      }
+
+      var childProps = {
         ref: ref,
-        style: _objectSpread2(_objectSpread2({}, newStyle), {}, {
-          zIndex: zIndex
-        }),
+        style: childrenStyles,
         'data-placement': placement,
         'data-hide': outOfBoundaries,
         onMouseEnter: this.handleMouseEnter,
-        onMouseLeave: this.handleMouseLeave
-      });
+        onMouseLeave: this.handleMouseLeave,
+        onAnimationEnd: function onAnimationEnd() {
+          if (!open) {
+            _this4.setState({
+              isOpen: false
+            });
+          }
+        }
+      };
+      var element = /*#__PURE__*/React.cloneElement(children, animationClass ? _objectSpread2(_objectSpread2({}, childProps), {}, {
+        className: classes
+      }) : _objectSpread2({}, childProps));
       return element;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this5 = this;
 
       var _this$props6 = this.props,
           placement = _this$props6.placement,
           appendToBody = _this$props6.appendToBody,
-          open = _this$props6.open,
           hide = _this$props6.hide,
           boundaryElement = _this$props6.boundaryElement;
-      return /*#__PURE__*/React.createElement(Manager, null, /*#__PURE__*/React.createElement(Reference, {
+      var _this$state2 = this.state,
+          animationKeyframe = _this$state2.animationKeyframe,
+          isOpen = _this$state2.isOpen;
+      return /*#__PURE__*/React.createElement(Manager, null, /*#__PURE__*/React.createElement("style", null, animationKeyframe), /*#__PURE__*/React.createElement(Reference, {
         innerRef: this.triggerRef
       }, function (_ref2) {
         var ref = _ref2.ref;
-        return _this4.getTriggerElement(ref);
-      }), open && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(Popper, {
+        return _this5.getTriggerElement(ref);
+      }), isOpen && appendToBody && /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(Popper, {
         placement: placement,
         innerRef: this.popupRef,
         modifiers: {
@@ -11858,7 +12490,7 @@ var PopperWrapper = /*#__PURE__*/function (_React$Component) {
             enabled: hide
           }
         }
-      }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React.createElement(Popper, {
+      }, this.getPopperChildren), document.body), isOpen && !appendToBody && /*#__PURE__*/React.createElement(Popper, {
         placement: placement,
         innerRef: this.popupRef
       }, this.getPopperChildren));
@@ -11878,7 +12510,7 @@ _defineProperty$2(PopperWrapper, "defaultProps", {
 });
 
 var _excluded$9 = ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"];
-var propsList$1 = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
+var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
 var Popover = function Popover(props) {
   var position = props.position,
       customStyle = props.customStyle,
@@ -11887,7 +12519,8 @@ var Popover = function Popover(props) {
       onToggle = props.onToggle,
       className = props.className,
       hideOnReferenceEscape = props.hideOnReferenceEscape,
-      boundaryElement = props.boundaryElement,
+      _props$boundaryElemen = props.boundaryElement,
+      boundaryElement = _props$boundaryElemen === void 0 ? document.body : _props$boundaryElemen,
       rest = _objectWithoutProperties$1(props, _excluded$9);
 
   var _React$useState = React.useState(!!props.open),
@@ -11931,20 +12564,12 @@ var Popover = function Popover(props) {
     placement: position
   }), PopoverWrapper);
 };
-Popover.displayName = 'Popover'; // Popover.defaultProps = {
-//   ...filterProps(PopperWrapper.defaultProps, propsList, true),
-//   offset: 'large',
-//   position: 'bottom',
-//   hideOnReferenceEscape: true,
-//   customStyle: {},
-// }
-
-Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList$1, true), {
+Popover.displayName = 'Popover';
+Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
   offset: 'large',
   position: 'bottom',
   hideOnReferenceEscape: true,
-  customStyle: {},
-  boundaryElement: document.body
+  customStyle: {}
 });
 
 var _excluded$8 = ["type", "onClick"];
@@ -12082,32 +12707,39 @@ var ChipInput = function ChipInput(props) {
       }
     }, rest));
   });
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-ChipInput"
-  }, baseProps, {
-    className: ChipInputClass,
-    onClick: onClickHandler
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "ChipInput-wrapper"
-  }, chips && chips.length > 0 && chipComponents, /*#__PURE__*/React.createElement("input", {
-    "data-test": "DesignSystem-ChipInput--Input",
-    ref: inputRef,
-    className: "ChipInput-input",
-    autoFocus: autoFocus,
-    placeholder: placeholder,
-    disabled: disabled,
-    value: inputValue,
-    onBlur: onBlur,
-    onFocus: onFocus,
-    onChange: onInputChangeHandler,
-    onKeyDown: onKeyDownHandler
-  })), chips.length > 0 && /*#__PURE__*/React.createElement(Icon, {
-    "data-test": "DesignSystem-ChipInput--Icon",
-    name: "close",
-    appearance: "subtle",
-    className: "ChipInput-icon",
-    onClick: onDeleteAllHandler
-  }));
+  return (
+    /*#__PURE__*/
+
+    /* TODO(a11y): fix accessibility  */
+
+    /* eslint-disable  */
+    React.createElement("div", _extends$3({
+      "data-test": "DesignSystem-ChipInput"
+    }, baseProps, {
+      className: ChipInputClass,
+      onClick: onClickHandler
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "ChipInput-wrapper"
+    }, chips && chips.length > 0 && chipComponents, /*#__PURE__*/React.createElement("input", {
+      "data-test": "DesignSystem-ChipInput--Input",
+      ref: inputRef,
+      className: "ChipInput-input",
+      autoFocus: autoFocus,
+      placeholder: placeholder,
+      disabled: disabled,
+      value: inputValue,
+      onBlur: onBlur,
+      onFocus: onFocus,
+      onChange: onInputChangeHandler,
+      onKeyDown: onKeyDownHandler
+    })), chips.length > 0 && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-ChipInput--Icon",
+      name: "close",
+      appearance: "subtle",
+      className: "ChipInput-icon",
+      onClick: onDeleteAllHandler
+    }))
+  );
 };
 ChipInput.displayName = 'ChipInput';
 ChipInput.defaultProps = {
@@ -12162,8 +12794,42 @@ var isMenuActive = function isMenuActive(menus, menu, active) {
   return false;
 };
 
-var MenuItem = function MenuItem(props) {
+var _MenuLabel = function MenuLabel(props) {
+  var label = props.label,
+      disabled = props.disabled,
+      isActive = props.isActive;
+  return /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-VerticalNav--Text",
+    appearance: getTextAppearance(isActive, disabled)
+  }, label);
+};
+
+var _MenuIcon = function MenuIcon(props) {
+  var isChildrenVisible = props.isChildrenVisible;
+  return /*#__PURE__*/React.createElement(Icon, {
+    className: "mx-4",
+    name: isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
+    appearance: "subtle"
+  });
+};
+
+var _MenuPills = function MenuPills(props) {
   var _classNames;
+
+  var disabled = props.disabled,
+      isActive = props.isActive,
+      count = props.count;
+  var PillsClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'MenuItem-count', true), _defineProperty$2(_classNames, 'MenuItem-count--disabled', disabled), _classNames));
+  return /*#__PURE__*/React.createElement(Pills, {
+    subtle: disabled,
+    className: PillsClass,
+    appearance: getPillsAppearance(isActive),
+    "data-test": "DesignSystem-VerticalNav--Pills"
+  }, count);
+};
+
+var MenuItem = function MenuItem(props) {
+  var _classNames2;
 
   var menu = props.menu,
       isActive = props.isActive,
@@ -12172,42 +12838,64 @@ var MenuItem = function MenuItem(props) {
       hasSubmenu = props.hasSubmenu,
       isChildren = props.isChildren,
       isChildrenVisible = props.isChildrenVisible,
-      onClick = props.onClick;
+      onClick = props.onClick,
+      customItemRenderer = props.customItemRenderer;
   var baseProps = extractBaseProps(props);
 
   var onClickHandler = function onClickHandler() {
     if (onClick) onClick(menu);
   };
 
-  var ItemClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'MenuItem', true), _defineProperty$2(_classNames, 'MenuItem--vertical', true), _defineProperty$2(_classNames, 'MenuItem--collapsed', !expanded), _defineProperty$2(_classNames, 'MenuItem--expanded', expanded), _defineProperty$2(_classNames, 'MenuItem--active', isActive), _defineProperty$2(_classNames, 'MenuItem--disabled', menu.disabled), _defineProperty$2(_classNames, 'MenuItem--subMenu', isChildren && expanded), _defineProperty$2(_classNames, 'MenuItem--rounded', rounded && expanded), _classNames));
+  var ItemClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'MenuItem', true), _defineProperty$2(_classNames2, 'MenuItem--vertical', true), _defineProperty$2(_classNames2, 'MenuItem--collapsed', !expanded), _defineProperty$2(_classNames2, 'MenuItem--expanded', expanded), _defineProperty$2(_classNames2, 'MenuItem--active', isActive), _defineProperty$2(_classNames2, 'MenuItem--disabled', menu.disabled), _defineProperty$2(_classNames2, 'MenuItem--subMenu', isChildren && expanded), _defineProperty$2(_classNames2, 'MenuItem--rounded', rounded && expanded), _classNames2));
 
   var renderSubMenu = function renderSubMenu() {
     if (hasSubmenu) {
-      return /*#__PURE__*/React.createElement(Icon, {
-        className: "mx-4",
-        name: isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
-        appearance: "subtle"
+      return /*#__PURE__*/React.createElement(_MenuIcon, {
+        isChildrenVisible: isChildrenVisible
       });
     }
 
     if (menu.count !== undefined) {
-      var _classNames2;
-
       var count = menu.count > 99 ? '99+' : menu.count;
-      var PillsClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'MenuItem-count', true), _defineProperty$2(_classNames2, 'MenuItem-count--disabled', menu.disabled), _classNames2));
-      return /*#__PURE__*/React.createElement(Pills, {
-        subtle: menu.disabled,
-        className: PillsClass,
-        appearance: getPillsAppearance(isActive),
-        "data-test": "DesignSystem-VerticalNav--Pills"
-      }, count);
+      return /*#__PURE__*/React.createElement(_MenuPills, {
+        disabled: menu.disabled,
+        isActive: isActive,
+        count: count
+      });
     }
 
     return null;
   };
 
   if (!expanded && !menu.icon) return null;
-  return /*#__PURE__*/React.createElement("div", _extends$3({
+
+  var customItemProps = _objectSpread2(_objectSpread2({}, props), {}, {
+    MenuIcon: function MenuIcon() {
+      return _MenuIcon({
+        isChildrenVisible: isChildrenVisible
+      });
+    },
+    MenuLabel: function MenuLabel() {
+      return _MenuLabel({
+        label: menu.label,
+        disabled: menu.disabled,
+        isActive: isActive
+      });
+    },
+    MenuPills: function MenuPills() {
+      return menu.count !== undefined ? _MenuPills({
+        disabled: menu.disabled,
+        isActive: isActive,
+        count: menu.count
+      }) : /*#__PURE__*/React.createElement(React.Fragment, null);
+    }
+  });
+
+  return customItemRenderer ? customItemRenderer(customItemProps) :
+  /*#__PURE__*/
+  // TODO(a11y)
+  // eslint-disable-next-line
+  React.createElement("div", _extends$3({
     className: ItemClass
   }, baseProps, {
     onClick: onClickHandler
@@ -12218,10 +12906,11 @@ var MenuItem = function MenuItem(props) {
     className: expanded ? 'mr-4' : '',
     name: menu.icon,
     appearance: getIconAppearance(isActive, menu.disabled)
-  }), expanded && /*#__PURE__*/React.createElement(Text, {
-    "data-test": "DesignSystem-VerticalNav--Text",
-    appearance: getTextAppearance(isActive, menu.disabled)
-  }, menu.label)), expanded && renderSubMenu());
+  }), expanded && /*#__PURE__*/React.createElement(_MenuLabel, {
+    label: menu.label,
+    disabled: menu.disabled,
+    isActive: isActive
+  })), expanded && renderSubMenu());
 };
 MenuItem.defaultProps = {
   isActive: false
@@ -12237,7 +12926,9 @@ var VerticalNav = function VerticalNav(props) {
       expanded = props.expanded,
       rounded = props.rounded,
       autoCollapse = props.autoCollapse,
-      className = props.className;
+      className = props.className,
+      customItemRenderer = props.customItemRenderer,
+      showTooltip = props.showTooltip;
 
   var _React$useState = React.useState({}),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -12298,14 +12989,19 @@ var VerticalNav = function VerticalNav(props) {
       var isChildrenVisible = hasSubmenu && menuState[menu.name];
       var hasGroup = index === 0 || menus[index - 1].group !== menu.group;
       var sectionClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'VerticalNav-section', true), _defineProperty$2(_classNames, 'VerticalNav-section--border', index !== 0), _classNames));
-      return /*#__PURE__*/React.createElement(React.Fragment, null, hasGroup && menu.group && expanded && /*#__PURE__*/React.createElement("div", {
+      return /*#__PURE__*/React.createElement(React.Fragment, {
+        key: index
+      }, hasGroup && menu.group && expanded && /*#__PURE__*/React.createElement("div", {
         className: sectionClass
       }, /*#__PURE__*/React.createElement(Text, {
         "data-test": "DesignSystem-VerticalNav--Section",
         size: "small",
         weight: "strong",
         appearance: "subtle"
-      }, menu.group)), /*#__PURE__*/React.createElement(MenuItem, {
+      }, menu.group)), showTooltip ? /*#__PURE__*/React.createElement(Tooltip, {
+        tooltip: menu.label,
+        position: "right"
+      }, /*#__PURE__*/React.createElement(MenuItem, {
         "data-test": "DesignSystem-VerticalNav--Item",
         menu: menu,
         expanded: expanded,
@@ -12314,9 +13010,24 @@ var VerticalNav = function VerticalNav(props) {
         isChildren: false,
         rounded: rounded,
         isChildrenVisible: isChildrenVisible,
-        onClick: onClickHandler
+        onClick: onClickHandler,
+        customItemRenderer: customItemRenderer
+      })) : /*#__PURE__*/React.createElement(MenuItem, {
+        "data-test": "DesignSystem-VerticalNav--Item",
+        menu: menu,
+        expanded: expanded,
+        isActive: isActive,
+        hasSubmenu: hasSubmenu,
+        isChildren: false,
+        rounded: rounded,
+        isChildrenVisible: isChildrenVisible,
+        onClick: onClickHandler,
+        customItemRenderer: customItemRenderer
       }), menuState[menu.name] && menu.subMenu && menu.subMenu.map(function (subMenu, id) {
-        return /*#__PURE__*/React.createElement(MenuItem, {
+        return showTooltip ? /*#__PURE__*/React.createElement(Tooltip, {
+          tooltip: subMenu.label,
+          position: "right"
+        }, /*#__PURE__*/React.createElement(MenuItem, {
           key: id,
           menu: subMenu,
           expanded: expanded,
@@ -12324,11 +13035,22 @@ var VerticalNav = function VerticalNav(props) {
           isChildren: true,
           rounded: rounded,
           onClick: onClickHandler,
-          isActive: isMenuActive(menus, subMenu, active)
+          isActive: isMenuActive(menus, subMenu, active),
+          customItemRenderer: customItemRenderer
+        })) : /*#__PURE__*/React.createElement(MenuItem, {
+          key: id,
+          menu: subMenu,
+          expanded: expanded,
+          hasSubmenu: false,
+          isChildren: true,
+          rounded: rounded,
+          onClick: onClickHandler,
+          isActive: isMenuActive(menus, subMenu, active),
+          customItemRenderer: customItemRenderer
         });
       }));
     });
-    return /*#__PURE__*/React.createElement(React.Fragment, null, list);
+    return list;
   };
 
   var classes = classnames(_defineProperty$2({
@@ -12341,7 +13063,8 @@ var VerticalNav = function VerticalNav(props) {
 VerticalNav.defaultProps = {
   expanded: true,
   autoCollapse: true,
-  rounded: false
+  rounded: false,
+  showTooltip: false
 };
 
 var HorizontalNav = function HorizontalNav(props) {
@@ -12394,16 +13117,21 @@ var HorizontalNav = function HorizontalNav(props) {
     var menuClasses = classnames((_classNames3 = {
       'HorizontalNav-menu': true
     }, _defineProperty$2(_classNames3, 'HorizontalNav-menu--active', isActive), _defineProperty$2(_classNames3, 'HorizontalNav-menu--disabled', menu.disabled), _classNames3));
-    return /*#__PURE__*/React.createElement("div", {
-      "data-test": "DesignSystem-HorizontalNav",
-      key: index,
-      className: menuClasses,
-      onClick: onClickHandler(menu)
-    }, renderIcon(menu, isActive), /*#__PURE__*/React.createElement(Text, {
-      appearance: getTextAppearance(isActive, menu.disabled),
-      "data-test": "DesignSystem-HorizontalNav--Text",
-      className: "HorizontalNav-menuText"
-    }, menu.label));
+    return (
+      /*#__PURE__*/
+      // TODO(a11y)
+      // eslint-disable-next-line
+      React.createElement("div", {
+        "data-test": "DesignSystem-HorizontalNav",
+        key: index,
+        className: menuClasses,
+        onClick: onClickHandler(menu)
+      }, renderIcon(menu, isActive), /*#__PURE__*/React.createElement(Text, {
+        appearance: getTextAppearance(isActive, menu.disabled),
+        "data-test": "DesignSystem-HorizontalNav--Text",
+        className: "HorizontalNav-menuText"
+      }, menu.label))
+    );
   });
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
     className: classes
@@ -12411,7 +13139,17 @@ var HorizontalNav = function HorizontalNav(props) {
 };
 
 var _excluded$7 = ["children", "tooltip"];
-var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
+var tooltipPropsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
+var positionValue = {
+  bottom: 'bottom',
+  top: 'top',
+  'top-start': 'top',
+  'top-end': 'top',
+  'bottom-start': 'bottom',
+  'bottom-end': 'bottom',
+  left: 'left',
+  right: 'right'
+};
 var Tooltip = function Tooltip(props) {
   var children = props.children,
       tooltip = props.tooltip,
@@ -12427,13 +13165,18 @@ var Tooltip = function Tooltip(props) {
     trigger: children,
     on: 'hover',
     offset: 'medium'
-  }, rest), tooltipWrapper);
+  }, rest, {
+    animationClass: {
+      open: "Tooltip-animation-open-".concat(positionValue[props.position]),
+      close: "Tooltip-animation-close-".concat(positionValue[props.position])
+    }
+  }), tooltipWrapper);
 }; // Tooltip.defaultProps = filterProps({
 //   ...Popover.defaultProps,
 //   hoverable: false
 // }, propsList);
 
-Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, propsList), {
+Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
   hoverable: false
 });
 
@@ -12461,10 +13204,12 @@ var Dialog = function Dialog(props) {
       heading: heading
     },
     footer: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       "data-test": "DesignSystem-Dialog--SecondaryButton",
       appearance: secondaryButtonAppearance,
       onClick: secondaryButtonCallback
     }, secondaryButtonLabel), /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       className: "ml-4",
       "data-test": "DesignSystem-Dialog--PrimaryButton",
       appearance: primaryButtonAppearance,
@@ -12522,7 +13267,9 @@ var OverlayFooter = function OverlayFooter(props) {
       _ref.label;
           var options = _objectWithoutProperties$1(_ref, _excluded$6);
 
-      return /*#__PURE__*/React.createElement(Button, _extends$3({}, options, {
+      return /*#__PURE__*/React.createElement(Button, _extends$3({
+        type: "button"
+      }, options, {
         key: index
       }));
     }));
@@ -12546,7 +13293,8 @@ var OverlayHeader = function OverlayHeader(props) {
       backButton = props.backButton,
       backIcon = props.backIcon,
       backIconCallback = props.backIconCallback,
-      backButtonCallback = props.backButtonCallback;
+      backButtonCallback = props.backButtonCallback,
+      headingClass = props.headingClass;
   var baseProps = extractBaseProps(props);
   var classes = classnames(_defineProperty$2({
     OverlayHeader: true
@@ -12565,6 +13313,7 @@ var OverlayHeader = function OverlayHeader(props) {
     icon: "keyboard_backspace",
     onClick: backButtonCallback || backIconCallback
   }), heading && /*#__PURE__*/React.createElement(Heading, {
+    className: headingClass,
     "data-test": "DesignSystem-OverlayHeader--heading"
   }, heading)), subHeading && /*#__PURE__*/React.createElement(Text, {
     "data-test": "DesignSystem-OverlayHeader--Subheading",
@@ -12620,7 +13369,64 @@ var getUpdatedZIndex = function getUpdatedZIndex(ele) {
     zIndex = Math.max(zIndex, prevZIndex + 10);
   });
   return zIndex > 0 ? zIndex : undefined;
+}; // keyboard event, boolean?, (event: Event) => void
+
+var closeOnEscapeKeypress = function closeOnEscapeKeypress(event, isTopOverlay, onClose) {
+  if (event.key === 'Escape' && isTopOverlay) {
+    onClose(event); // prevent browser-specific escape key behavior (Safari exits fullscreen)
+
+    event.preventDefault();
+  }
 };
+
+var OverlayManager = /*#__PURE__*/function () {
+  function OverlayManager() {
+    _classCallCheck$1(this, OverlayManager);
+
+    _defineProperty$2(this, "overlays", void 0);
+
+    this.overlays = [];
+  }
+
+  _createClass$1(OverlayManager, [{
+    key: "add",
+    value: function add(overlay) {
+      if (overlay === null) return;
+      var overlayIdx = this.overlays.indexOf(overlay);
+
+      if (overlayIdx !== -1) {
+        return overlayIdx;
+      }
+
+      overlayIdx = this.overlays.length;
+      this.overlays.push(overlay);
+      return overlayIdx;
+    }
+  }, {
+    key: "remove",
+    value: function remove(overlay) {
+      if (overlay === null) return;
+      var overlayIdx = this.overlays.indexOf(overlay);
+
+      if (overlayIdx === -1) {
+        return;
+      }
+
+      this.overlays.splice(overlayIdx, 1);
+    }
+  }, {
+    key: "isTopOverlay",
+    value: function isTopOverlay(overlay) {
+      if (overlay === null) return;
+      return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
+    }
+  }]);
+
+  return OverlayManager;
+}();
+
+var instance = new OverlayManager();
+Object.freeze(instance);
 
 /**
  * ** NOTE: Use `headerOptions`, `header`, `footerOptions`, `footer`, `onClose` and `backdropClose`(boolean). **
@@ -12642,6 +13448,11 @@ var Modal = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty$2(_assertThisInitialized$2(_this), "element", void 0);
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "onCloseHandler", function (event) {
+      var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+      closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+    });
+
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -12652,6 +13463,24 @@ var Modal = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass$1(Modal, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (this.props.closeOnEscape) {
+        if (this.state.open) {
+          instance.add(this.modalRef.current);
+        }
+
+        document.addEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.props.closeOnEscape) {
+        document.removeEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
@@ -12668,6 +13497,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
             open: true,
             animate: true
           });
+          if (this.props.closeOnEscape) instance.add(this.modalRef.current);
         } else {
           this.setState({
             animate: false
@@ -12678,6 +13508,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
               });
             }, 120);
           });
+          if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
         }
       }
     }
@@ -12690,13 +13521,14 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       var open = this.state.open;
 
       if (open) {
+        if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
         if (onClose) onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var _classNames, _classNames2, _classNames3;
+      var _classNames, _classNames2, _classNames3, _classNames4;
 
       var _this$state = this.state,
           animate = _this$state.animate,
@@ -12713,6 +13545,7 @@ var Modal = /*#__PURE__*/function (_React$Component) {
           seperator = _this$props2.seperator,
           footer = _this$props2.footer,
           onClose = _this$props2.onClose;
+      var BackdropZIndex = zIndex ? zIndex - 1 : 1000;
       var classes = classnames({
         Modal: true,
         'Modal--open': open,
@@ -12722,6 +13555,8 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       var headerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Modal-header', true), _defineProperty$2(_classNames, 'Modal-header--withSeperator', seperator), _classNames));
       var footerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Modal-footer', true), _defineProperty$2(_classNames2, 'Modal-footer--withSeperator', seperator), _classNames2));
       var ContainerClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Row', true), _defineProperty$2(_classNames3, 'Overlay-container', true), _defineProperty$2(_classNames3, 'Overlay-container--open', open), _classNames3));
+      var isAPINew = headerOptions || footerOptions || footer || header;
+      var bodyClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Modal-body', true), _defineProperty$2(_classNames4, 'Modal-body--withMargin', isAPINew ? !!footer : true), _defineProperty$2(_classNames4, 'Modal-body--withPadding', isAPINew ? !footer : true), _classNames4));
       var baseProps = extractBaseProps(this.props);
       var sizeMap = {
         small: {
@@ -12762,6 +13597,9 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         "data-test": "DesignSystem-Modal--header"
       }, headerOptions)), !!header && header), /*#__PURE__*/React.createElement(Column, {
         className: "flex-grow-0"
+      }, /*#__PURE__*/React.createElement(Tooltip, {
+        tooltip: "Close",
+        position: "top"
       }, /*#__PURE__*/React.createElement(Button, {
         icon: "close",
         appearance: "transparent",
@@ -12769,8 +13607,8 @@ var Modal = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick(event) {
           if (onClose) onClose(event, 'IconClick');
         }
-      }))), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footerOptions || footer || header ? /*#__PURE__*/React.createElement(OverlayBody, {
-        className: "Modal-body"
+      })))), children && /*#__PURE__*/React.createElement(React.Fragment, null, headerOptions || footerOptions || footer || header ? /*#__PURE__*/React.createElement(OverlayBody, {
+        className: bodyClass
       }, this.props.children) : children), (!!footer || !!footerOptions) && /*#__PURE__*/React.createElement(OverlayFooter, _extends$3({
         "data-test": "DesignSystem-Modal--footer"
       }, footerOptions, {
@@ -12783,7 +13621,8 @@ var Modal = /*#__PURE__*/function (_React$Component) {
       }, ModalContainer) : ModalContainer;
       var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalWrapper, this.element);
       return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
-        open: this.state.animate
+        open: this.state.animate,
+        zIndex: BackdropZIndex
       }));
     }
   }]);
@@ -12832,7 +13671,8 @@ var ModalBody = function ModalBody(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
   var classes = classnames({
-    'Modal-body': true
+    'Modal-body': true,
+    'Modal-body--withMargin': true
   }, className);
   return /*#__PURE__*/React.createElement(OverlayBody, _extends$3({}, baseProps, {
     stickFooter: true,
@@ -12877,6 +13717,29 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty$2(_assertThisInitialized$2(_this), "element", void 0);
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "onOutsideClickHandler", function (event) {
+      instance.remove(_this.modalRef.current);
+
+      if (_this.props.onClose) {
+        _this.props.onClose(event, 'EscapePress');
+      } else {
+        _this.setState({
+          animate: false
+        }, function () {
+          window.setTimeout(function () {
+            _this.setState({
+              open: false
+            });
+          }, 120);
+        });
+      }
+    });
+
+    _defineProperty$2(_assertThisInitialized$2(_this), "onCloseHandler", function (event) {
+      var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+      closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+    });
+
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -12886,6 +13749,22 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass$1(FullscreenModal, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (this.props.closeOnEscape) {
+        if (this.state.open) {
+          instance.add(this.modalRef.current);
+        }
+
+        document.addEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler);
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
       var _this2 = this;
@@ -12902,6 +13781,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
             open: true,
             animate: true
           });
+          if (this.props.closeOnEscape) instance.add(this.modalRef.current);
         } else {
           this.setState({
             animate: false
@@ -12912,6 +13792,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
               });
             }, 120);
           });
+          if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
         }
       }
     }
@@ -12935,7 +13816,6 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
           onClose = _this$props.onClose;
       var classes = classnames({
         FullscreenModal: true,
-        'FullscreenModal--open': open,
         'FullscreenModal-animation--open': animate,
         'FullscreenModal-animation--close': !animate
       }, className);
@@ -12955,7 +13835,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
           sizeXS: '12'
         }
       };
-      var ModalContainer = /*#__PURE__*/React.createElement("div", {
+      var ModalContainer = open ? /*#__PURE__*/React.createElement("div", {
         "data-test": "DesignSystem-FullscreenModalContainer",
         className: ContainerClass,
         "data-layer": true,
@@ -12975,6 +13855,8 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
         "data-test": "DesignSystem-FullscreenModal--header"
       }, headerOptions)), !!header && header), /*#__PURE__*/React.createElement(Column, {
         className: "flex-grow-0"
+      }, /*#__PURE__*/React.createElement(Tooltip, {
+        tooltip: "Close"
       }, /*#__PURE__*/React.createElement(Button, {
         icon: "close",
         appearance: "transparent",
@@ -12982,7 +13864,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick(event) {
           if (onClose) onClose(event, 'IconClick');
         }
-      }))), /*#__PURE__*/React.createElement(OverlayBody, {
+      })))), /*#__PURE__*/React.createElement(OverlayBody, {
         "data-test": "DesignSystem-FullscreenModal--Body",
         className: "FullscreenModal-body"
       }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React.createElement(OverlayFooter, _extends$3({
@@ -12990,7 +13872,7 @@ var FullscreenModal = /*#__PURE__*/function (_React$Component) {
       }, footerOptions, {
         open: open,
         className: "FullscreenModal-footer"
-      }), footer)))));
+      }), footer))))) : null;
       var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(ModalContainer, this.element);
       return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement);
     }
@@ -13024,6 +13906,11 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
 
     _defineProperty$2(_assertThisInitialized$2(_this), "element", void 0);
 
+    _defineProperty$2(_assertThisInitialized$2(_this), "onCloseHandler", function (event) {
+      var isTopOverlay = instance.isTopOverlay(_this.sidesheetRef.current);
+      closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+    });
+
     _this.element = getWrapperElement();
     _this.state = {
       open: props.open,
@@ -13034,10 +13921,26 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass$1(Sidesheet, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      if (this.props.closeOnEscape) {
+        if (this.state.open) {
+          instance.add(this.sidesheetRef.current);
+        }
+
+        document.addEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (this.props.closeOnEscape) {
+        document.removeEventListener('keydown', this.onCloseHandler);
+      }
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      var _this2 = this;
-
       if (prevProps.open !== this.props.open) {
         if (this.props.open) {
           var zIndex = getUpdatedZIndex({
@@ -13050,16 +13953,12 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
             open: true,
             animate: true
           });
+          if (this.props.closeOnEscape) instance.add(this.sidesheetRef.current);
         } else {
           this.setState({
             animate: false
-          }, function () {
-            window.setTimeout(function () {
-              _this2.setState({
-                open: false
-              });
-            }, 120);
           });
+          if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
         }
       }
     }
@@ -13070,13 +13969,28 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
       var open = this.state.open;
 
       if (open) {
+        if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
         if (onClose) onClose(event, 'OutsideClick');
+      }
+    }
+  }, {
+    key: "handleAnimationEnd",
+    value: function handleAnimationEnd() {
+      if (!this.state.animate) {
+        this.setState({
+          open: false
+        });
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var _classNames, _classNames2, _classNames3, _classNames4;
+      var _classNames,
+          _classNames2,
+          _classNames3,
+          _classNames4,
+          _classNames5,
+          _this2 = this;
 
       var _this$state = this.state,
           animate = _this$state.animate,
@@ -13093,16 +14007,18 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
           footerOptions = _this$props.footerOptions,
           header = _this$props.header,
           onClose = _this$props.onClose;
+      var BackdropZIndex = zIndex ? zIndex - 1 : 1000;
       var classes = classnames({
         Sidesheet: true,
         'Sidesheet--open': open,
         'Sidesheet-animation--open': animate,
         'Sidesheet-animation--close': !animate
       }, className);
-      var ContainerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Overlay-container', true), _defineProperty$2(_classNames, 'Overlay-container--open', open), _classNames));
+      var ContainerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Overlay-container', true), _defineProperty$2(_classNames, 'fade-in', animate), _defineProperty$2(_classNames, 'Overlay-container--open', animate), _defineProperty$2(_classNames, 'Overlay-container--close', !animate), _classNames));
       var headerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Sidesheet-header', true), _defineProperty$2(_classNames2, 'Sidesheet-header--withSeperator', seperator), _classNames2));
       var footerClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Sidesheet-footer', true), _defineProperty$2(_classNames3, 'Sidesheet-footer--withSeperator', seperator), _defineProperty$2(_classNames3, 'Sidesheet-footer--stickToBottom', stickFooter), _classNames3));
       var bodyClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'Sidesheet-body', true), _defineProperty$2(_classNames4, 'Sidesheet-body--withMargin', !!footer && stickFooter), _classNames4));
+      var headingClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'Sidesheet-header--shiftRight', (headerOptions === null || headerOptions === void 0 ? void 0 : headerOptions.backButton) || (headerOptions === null || headerOptions === void 0 ? void 0 : headerOptions.backIcon)), _defineProperty$2(_classNames5, 'Sidesheet-header--shiftLeft', !(headerOptions !== null && headerOptions !== void 0 && headerOptions.backButton) && !(headerOptions !== null && headerOptions !== void 0 && headerOptions.backIcon)), _classNames5));
       var baseProps = extractBaseProps(this.props);
       var SidesheetContainer = /*#__PURE__*/React.createElement(Row, {
         "data-test": "DesignSystem-SidesheetContainer",
@@ -13111,7 +14027,10 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         style: {
           zIndex: zIndex
         },
-        ref: this.sidesheetRef
+        ref: this.sidesheetRef,
+        onAnimationEnd: function onAnimationEnd() {
+          return _this2.handleAnimationEnd;
+        }
       }, /*#__PURE__*/React.createElement(Column, _extends$3({
         "data-test": "DesignSystem-Sidesheet"
       }, baseProps, {
@@ -13121,8 +14040,12 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         className: headerClass
       }, /*#__PURE__*/React.createElement(Column, {
         "data-test": "DesignSystem-Sidesheet--Header"
-      }, !header && /*#__PURE__*/React.createElement(OverlayHeader, headerOptions), !!header && header), /*#__PURE__*/React.createElement(Column, {
+      }, !header && /*#__PURE__*/React.createElement(OverlayHeader, _extends$3({
+        headingClass: headingClass
+      }, headerOptions)), !!header && header), /*#__PURE__*/React.createElement(Column, {
         className: "flex-grow-0"
+      }, /*#__PURE__*/React.createElement(Tooltip, {
+        tooltip: "Close"
       }, /*#__PURE__*/React.createElement(Button, {
         icon: "close",
         appearance: "transparent",
@@ -13130,7 +14053,7 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
         onClick: function onClick(event) {
           if (onClose) onClose(event, 'IconClick');
         }
-      }))), /*#__PURE__*/React.createElement(OverlayBody, {
+      })))), /*#__PURE__*/React.createElement(OverlayBody, {
         "data-test": "DesignSystem-Sidesheet--OverlayBody",
         className: bodyClass
       }, this.props.children), (!!footer || !!footerOptions) && /*#__PURE__*/React.createElement(OverlayFooter, _extends$3({
@@ -13145,7 +14068,8 @@ var Sidesheet = /*#__PURE__*/function (_React$Component) {
       }, SidesheetContainer) : SidesheetContainer;
       var WrapperElement = /*#__PURE__*/ReactDOM.createPortal(SidesheetWrapper, this.element);
       return /*#__PURE__*/React.createElement(React.Fragment, null, WrapperElement, /*#__PURE__*/React.createElement(Backdrop, {
-        open: this.state.animate
+        open: this.state.animate,
+        zIndex: BackdropZIndex
       }));
     }
   }]);
@@ -13168,7 +14092,8 @@ var Collapsible = function Collapsible(props) {
       height = props.height,
       children = props.children,
       className = props.className,
-      onToggle = props.onToggle;
+      onToggle = props.onToggle,
+      withTrigger = props.withTrigger;
 
   var _React$useState = React.useState(true),
       _React$useState2 = _slicedToArray(_React$useState, 2),
@@ -13232,7 +14157,7 @@ var Collapsible = function Collapsible(props) {
     onMouseEnter: onToggleHandler(true, 'mouseenter'),
     onMouseLeave: onToggleHandler(false, 'mouseleave'),
     ref: ref
-  }, children), /*#__PURE__*/React.createElement("div", {
+  }, children), withTrigger && /*#__PURE__*/React.createElement("div", {
     "data-test": "DesignSystem-Collapsible--Footer",
     className: FooterClass
   }, /*#__PURE__*/React.createElement(Icon, {
@@ -13248,7 +14173,8 @@ Collapsible.defaultProps = {
   expanded: false,
   hoverable: true,
   height: '100%',
-  expandedWidth: 'var(--spacing-9)'
+  expandedWidth: 'var(--spacing-9)',
+  withTrigger: true
 };
 
 var Status = function Status(props) {
@@ -13360,10 +14286,16 @@ var Box = function Box(props) {
       className = props.className;
   var baseProps = extractBaseProps(props);
   var MessageClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Box', true), _defineProperty$2(_classNames, "Box--".concat(type), type), _defineProperty$2(_classNames, 'Box--typing', isTyping), _defineProperty$2(_classNames, 'Box--urgent', statusType === 'urgent'), _defineProperty$2(_classNames, "Box-".concat(type, "--withStatus"), withStatus || isTyping), _classNames), className);
+  /* TODO(a11y): fix accessibility  */
+
+  /* eslint-disable  */
+
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
     className: MessageClass,
-    onClick: onClick
+    onClick: onClick,
+    "data-test": "DesignSystem-ChatMessage--Box"
   }), children);
+  /* eslint-enable  */
 };
 Box.displayName = 'Box';
 
@@ -13445,7 +14377,8 @@ var EmptyState = function EmptyState(props) {
       description = props.description,
       size = props.size,
       children = props.children,
-      className = props.className;
+      className = props.className,
+      image = props.image;
   var baseProps = extractBaseProps(props);
   var WrapperClass = classnames(_defineProperty$2({}, 'EmptyState', true), className);
   var HeadingClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'EmptyState-title', true), _defineProperty$2(_classNames2, "EmptyState-title--".concat(size), true), _classNames2));
@@ -13454,7 +14387,15 @@ var EmptyState = function EmptyState(props) {
     "data-test": "DesignSystem-EmptyState"
   }, baseProps, {
     className: WrapperClass
-  }), /*#__PURE__*/React.createElement("img", {
+  }), image && /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: imageHeight[size]
+    }
+  }, image), imageSrc && !image &&
+  /*#__PURE__*/
+  //TODO(a11y)
+  //eslint-disable-next-line
+  React.createElement("img", {
     src: imageSrc,
     height: imageHeight[size],
     "data-test": "DesignSystem-EmptyState--Img"
@@ -13616,8 +14557,7 @@ var _excluded$5 = ["onChange"];
 var EditableInput = function EditableInput(props) {
   var _classNames2, _classNames4;
 
-  var value = props.value,
-      error = props.error,
+  var error = props.error,
       size = props.size,
       errorMessage = props.errorMessage,
       placeholder = props.placeholder,
@@ -13629,39 +14569,47 @@ var EditableInput = function EditableInput(props) {
   var onInputChange = inputOptions.onChange,
       rest = _objectWithoutProperties$1(inputOptions, _excluded$5);
 
-  var _React$useState = React.useState(value),
+  var _React$useState = React.useState(props.value),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       inputValue = _React$useState2[0],
       setInputValue = _React$useState2[1];
 
-  var _React$useState3 = React.useState(false),
+  var _React$useState3 = React.useState(props.value),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      editing = _React$useState4[0],
-      setEditing = _React$useState4[1];
+      value = _React$useState4[0],
+      setValue = _React$useState4[1];
 
   var _React$useState5 = React.useState(false),
       _React$useState6 = _slicedToArray(_React$useState5, 2),
-      showComponent = _React$useState6[0],
-      setShowComponent = _React$useState6[1];
+      editing = _React$useState6[0],
+      setEditing = _React$useState6[1];
+
+  var _React$useState7 = React.useState(false),
+      _React$useState8 = _slicedToArray(_React$useState7, 2),
+      showComponent = _React$useState8[0],
+      setShowComponent = _React$useState8[1];
 
   var inputRef = /*#__PURE__*/React.createRef();
   var baseProps = extractBaseProps(props);
+  var isControlled = props.value !== undefined;
+  React.useEffect(function () {
+    if (isControlled) setValue(props.value);
+  }, [props.value]);
   var EditableInputClass = classnames(_defineProperty$2({}, 'EditableInput', true), className);
   var EditableDefaultClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'EditableInput-default', true), _defineProperty$2(_classNames2, "EditableInput-default--".concat(size), size), _classNames2));
   var InputClass = classnames(_defineProperty$2({}, 'EditableInput-Input--tiny', size === 'tiny'));
   var ActionClass = classnames((_classNames4 = {}, _defineProperty$2(_classNames4, 'EditableInput-actions', true), _defineProperty$2(_classNames4, "EditableInput-actions--".concat(size), size), _classNames4));
-  React.useEffect(function () {
-    setDefaultComponent();
-  }, [value]);
 
-  var setDefaultComponent = function setDefaultComponent() {
-    setInputValue(value);
+  var setDefaultComponent = function setDefaultComponent(updatedValue) {
+    setInputValue(updatedValue);
     setEditing(false);
     setShowComponent(false);
   };
 
   var onSaveChanges = function onSaveChanges() {
-    if (onChange) onChange(inputValue);
+    if (!isControlled) setValue(inputValue);
+    if (onChange) onChange(inputValue || '');
+    setDefaultComponent(inputValue);
   };
 
   var onInputChangeHandler = function onInputChangeHandler(e) {
@@ -13670,26 +14618,36 @@ var EditableInput = function EditableInput(props) {
   };
 
   var onChangeHandler = function onChangeHandler(eventType) {
-    var _inputRef$current;
-
     switch (eventType) {
       case 'edit':
-        (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
-        setEditing(true);
+        {
+          var _inputRef$current;
+
+          (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
+          setEditing(true);
+          setShowComponent(true);
+          break;
+        }
 
       case 'hover':
-        setShowComponent(true);
-        return;
+        {
+          setShowComponent(true);
+          break;
+        }
 
       case 'default':
-        setShowComponent(false);
+        {
+          setShowComponent(false);
+        }
     }
   };
 
   var inputComponent = /*#__PURE__*/React.createElement(Input, _extends$3({
     defaultValue: inputValue,
     placeholder: placeholder,
-    className: InputClass,
+    className: InputClass // TODO(a11y)
+    // eslint-disable-next-line jsx-a11y/no-autofocus
+    ,
     autoFocus: editing,
     size: size,
     onChange: onInputChangeHandler,
@@ -13706,7 +14664,7 @@ var EditableInput = function EditableInput(props) {
           break;
 
         case 'Escape':
-          setDefaultComponent();
+          setDefaultComponent(value);
           break;
       }
     }
@@ -13736,36 +14694,42 @@ var EditableInput = function EditableInput(props) {
     }, value || placeholder);
   };
 
-  return /*#__PURE__*/React.createElement("div", _extends$3({
-    "data-test": "DesignSystem-EditableInput"
-  }, baseProps, {
-    className: EditableInputClass,
-    onKeyDown: onKeyDown
-  }), /*#__PURE__*/React.createElement(Editable, {
-    onChange: onChangeHandler,
-    editing: editing
-  }, renderChildren()), editing && /*#__PURE__*/React.createElement("div", {
-    className: ActionClass,
-    "data-test": "DesignSystem-EditableInput--Actions"
-  }, /*#__PURE__*/React.createElement(Button, {
-    icon: "clear",
-    className: "mr-3",
-    size: "tiny",
-    onClick: setDefaultComponent,
-    "data-test": "DesignSystem-EditableInput--Discard"
-  }), /*#__PURE__*/React.createElement(Button, {
-    icon: "check",
-    appearance: "primary",
-    size: "tiny",
-    disabled: disableSaveAction,
-    onClick: onSaveChanges,
-    "data-test": "DesignSystem-EditableInput--Save"
-  })));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y)
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    React.createElement("div", _extends$3({
+      "data-test": "DesignSystem-EditableInput"
+    }, baseProps, {
+      className: EditableInputClass,
+      onKeyDown: onKeyDown
+    }), /*#__PURE__*/React.createElement(Editable, {
+      onChange: onChangeHandler,
+      editing: editing
+    }, renderChildren()), editing && /*#__PURE__*/React.createElement("div", {
+      className: ActionClass,
+      "data-test": "DesignSystem-EditableInput--Actions"
+    }, /*#__PURE__*/React.createElement(Button, {
+      icon: "clear",
+      className: "mr-3",
+      size: "tiny",
+      onClick: function onClick() {
+        setDefaultComponent(value);
+      },
+      "data-test": "DesignSystem-EditableInput--Discard"
+    }), /*#__PURE__*/React.createElement(Button, {
+      icon: "check",
+      appearance: "primary",
+      size: "tiny",
+      disabled: disableSaveAction,
+      onClick: onSaveChanges,
+      "data-test": "DesignSystem-EditableInput--Save"
+    })))
+  );
 };
 EditableInput.defaultProps = {
   size: 'regular',
   placeholder: '',
-  value: '',
   inputOptions: {}
 };
 
@@ -13775,7 +14739,6 @@ var EditableChipInput = function EditableChipInput(props) {
   var _classNames3;
 
   var placeholder = props.placeholder,
-      value = props.value,
       onChange = props.onChange,
       className = props.className,
       disableSaveAction = props.disableSaveAction,
@@ -13789,51 +14752,84 @@ var EditableChipInput = function EditableChipInput(props) {
   var _onClick = chipOptions.onClick,
       chipObject = _objectWithoutProperties$1(chipOptions, _excluded2$1);
 
-  var _React$useState = React.useState(value),
+  var _React$useState = React.useState(props.value),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       inputValue = _React$useState2[0],
       setInputValue = _React$useState2[1];
 
-  var _React$useState3 = React.useState(false),
+  var _React$useState3 = React.useState(props.value),
       _React$useState4 = _slicedToArray(_React$useState3, 2),
-      showComponent = _React$useState4[0],
-      setShowComponent = _React$useState4[1];
+      value = _React$useState4[0],
+      setValue = _React$useState4[1];
+
+  var _React$useState5 = React.useState(false),
+      _React$useState6 = _slicedToArray(_React$useState5, 2),
+      showComponent = _React$useState6[0],
+      setShowComponent = _React$useState6[1];
 
   var baseProps = extractBaseProps(props);
   var isWithChips = inputValue && inputValue.length;
+  var isControlled = props.value !== undefined;
+  React.useEffect(function () {
+    if (isControlled) {
+      setInputValue(props.value);
+      setValue(props.value);
+    }
+  }, [props.value]);
   var classes = classnames(_defineProperty$2({}, 'EditableChipInput', true), className);
   var actionClass = classnames(_defineProperty$2({}, 'EditableChipInput-actions', true));
   var defaultClasses = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'EditableChipInput-default', !isWithChips), _defineProperty$2(_classNames3, 'EditableChipInput-defaultWithChips', isWithChips), _classNames3));
   var inputClass = classnames(_defineProperty$2({}, 'EditableChipInput-chipInput', true));
-  React.useEffect(function () {
-    setDefaultComponent();
-  }, [value]);
 
   var onChipInputChangeHandler = function onChipInputChangeHandler(val) {
     setInputValue(val);
     if (onChipInputChange) onChipInputChange(val);
   };
 
-  var setDefaultComponent = function setDefaultComponent() {
-    setInputValue(value);
+  var setDefaultComponent = function setDefaultComponent(updatedValue) {
+    setInputValue(updatedValue);
     setShowComponent(false);
   };
 
   var onSaveChanges = function onSaveChanges() {
+    if (!isControlled) setValue(inputValue);
     if (onChange && inputValue) onChange(inputValue);
+    setDefaultComponent(inputValue);
   };
 
   var onChangeHandler = function onChangeHandler(eventType) {
     switch (eventType) {
       case 'edit':
-        setShowComponent(true);
+        {
+          setShowComponent(true);
+          break;
+        }
 
       case 'hover':
-        return;
+        {
+          break;
+        }
 
       case 'default':
-        setShowComponent(false);
-        return;
+        {
+          setShowComponent(false);
+          break;
+        }
+    }
+  };
+
+  var onChipDelete = function onChipDelete(index) {
+    if (value) {
+      var updatedValue = _toConsumableArray(value);
+
+      updatedValue.splice(index, 1);
+
+      if (!isControlled) {
+        setInputValue(updatedValue);
+        setValue(updatedValue);
+      }
+
+      if (onChange) onChange(updatedValue);
     }
   };
 
@@ -13847,6 +14843,9 @@ var EditableChipInput = function EditableChipInput(props) {
           label: val,
           className: "my-2 mx-2"
         }, chipObject, {
+          onClose: function onClose() {
+            return onChipDelete(index);
+          },
           onClick: function onClick() {
             return _onClick && _onClick(val, index);
           }
@@ -13855,7 +14854,7 @@ var EditableChipInput = function EditableChipInput(props) {
     }
 
     return /*#__PURE__*/React.createElement(Text, {
-      className: "EditableChipInput--Text"
+      className: "pt-1"
     }, placeholder);
   };
 
@@ -13894,7 +14893,9 @@ var EditableChipInput = function EditableChipInput(props) {
     icon: "clear",
     className: "mr-3",
     size: "tiny",
-    onClick: setDefaultComponent
+    onClick: function onClick() {
+      setDefaultComponent(value);
+    }
   }), /*#__PURE__*/React.createElement(Button, {
     "data-test": "DesignSystem-EditableChipInput--SaveButton",
     icon: "check",
@@ -13969,19 +14970,24 @@ var Step = function Step(props) {
 
   var iconAppearance = completed ? 'info' : disabled ? 'disabled' : active ? 'info' : 'default';
   var appearance = active ? 'link' : disabled ? 'disabled' : 'default';
-  return /*#__PURE__*/React.createElement("div", {
-    "data-test": "DesignSystem-Step",
-    className: StepClass,
-    onClick: onClickHandle
-  }, /*#__PURE__*/React.createElement(Icon, {
-    "data-test": "DesignSystem-Step--Icon",
-    name: completed ? 'check_circle' : 'radio_button_unchecked',
-    appearance: iconAppearance,
-    className: "mr-3 my-4"
-  }), label && /*#__PURE__*/React.createElement(Text, {
-    weight: "medium",
-    appearance: appearance
-  }, label));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y)
+    // eslint-disable-next-line
+    React.createElement("div", {
+      "data-test": "DesignSystem-Step",
+      className: StepClass,
+      onClick: onClickHandle
+    }, /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-Step--Icon",
+      name: completed ? 'check_circle' : 'radio_button_unchecked',
+      appearance: iconAppearance,
+      className: "mr-3 my-4"
+    }), label && /*#__PURE__*/React.createElement(Text, {
+      weight: "medium",
+      appearance: appearance
+    }, label))
+  );
 };
 Step.displayName = 'Step';
 
@@ -14177,20 +15183,21 @@ var Trigger = function Trigger(props) {
     return isValid(validators, val, inputFormat);
   };
 
-  return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, {
+  return /*#__PURE__*/React.createElement(Row, {
+    "data-test": "DesignSystem-DateRangePicker-InputTrigger"
+  }, /*#__PURE__*/React.createElement(Column, {
     size: '6',
     sizeXS: '12',
     className: "DateRangePicker-input DateRangePicker-input--startDate"
   }, startLabel && /*#__PURE__*/React.createElement(Label, {
     required: startInputOptions.required,
     withInput: true
-  }, startLabel), /*#__PURE__*/React.createElement(InputMask, _extends$3({
+  }, startLabel), /*#__PURE__*/React.createElement(X, _extends$3({
     icon: "events",
     placeholder: inputFormat
   }, startInputOptions, {
     mask: mask,
-    value: startDate ? translateToString(inputFormat, startDate) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : '',
+    value: startDate ? translateToString(inputFormat, startDate) : init ? X.utils.getDefaultValue(mask, startPlaceholderChar) : '',
     onChange: function onChange(e, val) {
       onChangeHandler(e, val || '', 'start');
     },
@@ -14214,13 +15221,12 @@ var Trigger = function Trigger(props) {
   }, endLabel && /*#__PURE__*/React.createElement(Label, {
     required: endInputOptions.required,
     withInput: true
-  }, endLabel), /*#__PURE__*/React.createElement(InputMask, _extends$3({
+  }, endLabel), /*#__PURE__*/React.createElement(X, _extends$3({
     icon: "events",
     placeholder: inputFormat
   }, endInputOptions, {
     mask: mask,
-    value: endDate ? translateToString(inputFormat, endDate) // @ts-ignore
-    : init ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : '',
+    value: endDate ? translateToString(inputFormat, endDate) : init ? X.utils.getDefaultValue(mask, endPlaceholderChar) : '',
     onChange: function onChange(e, val) {
       onChangeHandler(e, val || '', 'end');
     },
@@ -14258,9 +15264,8 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
   var errorMessage = inputOptions.caption === undefined ? 'Invalid value' : inputOptions.caption;
   var label = inputOptions.label;
   var _inputOptions$placeho = inputOptions.placeholderChar,
-      placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho; // @ts-ignore
-
-  var defaultValue = InputMask.utils.getDefaultValue(mask, placeholderChar).split(' - ');
+      placeholderChar = _inputOptions$placeho === void 0 ? '_' : _inputOptions$placeho;
+  var defaultValue = X.utils.getDefaultValue(mask, placeholderChar).split(' - ');
   var sValue = startValue || defaultValue[0];
   var eValue = endValue || defaultValue[1];
 
@@ -14346,10 +15351,12 @@ var SingleInputTrigger = function SingleInputTrigger(props) {
     });
   };
 
-  return /*#__PURE__*/React.createElement(Row, null, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label, {
+  return /*#__PURE__*/React.createElement(Row, {
+    "data-test": "DesignSystem-DateRangePicker-SingleInputTrigger"
+  }, /*#__PURE__*/React.createElement(Column, null, label && /*#__PURE__*/React.createElement(Label, {
     required: inputOptions.required,
     withInput: true
-  }, label), /*#__PURE__*/React.createElement(InputMask, _extends$3({
+  }, label), /*#__PURE__*/React.createElement(X, _extends$3({
     icon: "events",
     placeholder: "".concat(inputFormat, " - ").concat(inputFormat)
   }, inputOptions, {
@@ -14420,11 +15427,9 @@ var getPrevious90Days = function getPrevious90Days() {
   };
 };
 var getCustomDates = function getCustomDates() {
-  var current = new Date();
-  var currentDate = current.getDate();
   return {
-    startDate: setDate(currentDate),
-    endDate: setDate(currentDate)
+    startDate: '',
+    endDate: ''
   };
 };
 
@@ -14538,6 +15543,14 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     });
 
     _defineProperty$2(_assertThisInitialized$2(_this), "onToggleHandler", function (o, type) {
+      var _this$props2 = _this.props,
+          singleInput = _this$props2.singleInput,
+          inputOptions = _this$props2.inputOptions,
+          startInputOptions = _this$props2.startInputOptions,
+          endInputOptions = _this$props2.endInputOptions;
+      var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+      if (disabled) return;
+
       switch (type) {
         case 'outsideClick':
           _this.setState({
@@ -14590,9 +15603,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
       if (prevProps.startDate !== this.props.startDate) {
-        var _this$props2 = this.props,
-            inputFormat = _this$props2.inputFormat,
-            validators = _this$props2.validators;
+        var _this$props3 = this.props,
+            inputFormat = _this$props3.inputFormat,
+            validators = _this$props3.validators;
         var d = convertToDate(this.props.startDate, inputFormat, validators);
         var val = translateToString(inputFormat, d);
         this.setState({
@@ -14602,9 +15615,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevProps.endDate !== this.props.endDate) {
-        var _this$props3 = this.props,
-            _inputFormat2 = _this$props3.inputFormat,
-            _validators = _this$props3.validators;
+        var _this$props4 = this.props,
+            _inputFormat2 = _this$props4.inputFormat,
+            _validators = _this$props4.validators;
 
         var _d = convertToDate(this.props.endDate, _inputFormat2, _validators);
 
@@ -14635,9 +15648,9 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
       }
 
       if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
-        var _this$props4 = this.props,
-            onRangeChange = _this$props4.onRangeChange,
-            outputFormat = _this$props4.outputFormat;
+        var _this$props5 = this.props,
+            onRangeChange = _this$props5.onRangeChange,
+            outputFormat = _this$props5.outputFormat;
         var _this$state2 = this.state,
             _startDate3 = _this$state2.startDate,
             _endDate3 = _this$state2.endDate;
@@ -14662,29 +15675,35 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
             if (!startError) onRangeChange(_startDate3, undefined, sValue, eValue);else if (!endError) onRangeChange(undefined, _endDate3, sValue, eValue);else onRangeChange(undefined, undefined, sValue, eValue);
           }
         }
+
+        if (this.state.startDate && this.state.endDate) {
+          this.setState({
+            open: false
+          });
+        }
       }
     }
   }, {
     key: "renderCalendar",
     value: function renderCalendar() {
-      var _this$props5 = this.props;
-          _this$props5.startDate;
-          _this$props5.endDate;
-          _this$props5.yearNav;
-          _this$props5.monthNav;
-          _this$props5.open;
-          var inputFormat = _this$props5.inputFormat;
-          _this$props5.outputFormat;
-          _this$props5.startInputOptions;
-          _this$props5.endInputOptions;
-          var validators = _this$props5.validators;
-          _this$props5.withInput;
-          _this$props5.position;
-          var disabledBefore = _this$props5.disabledBefore,
-          disabledAfter = _this$props5.disabledAfter;
-          _this$props5.onRangeChange;
-          var rangeLimit = _this$props5.rangeLimit,
-          rest = _objectWithoutProperties$1(_this$props5, _excluded$3);
+      var _this$props6 = this.props;
+          _this$props6.startDate;
+          _this$props6.endDate;
+          _this$props6.yearNav;
+          _this$props6.monthNav;
+          _this$props6.open;
+          var inputFormat = _this$props6.inputFormat;
+          _this$props6.outputFormat;
+          _this$props6.startInputOptions;
+          _this$props6.endInputOptions;
+          var validators = _this$props6.validators;
+          _this$props6.withInput;
+          _this$props6.position;
+          var disabledBefore = _this$props6.disabledBefore,
+          disabledAfter = _this$props6.disabledAfter;
+          _this$props6.onRangeChange;
+          var rangeLimit = _this$props6.rangeLimit,
+          rest = _objectWithoutProperties$1(_this$props6, _excluded$3);
 
       var _this$state3 = this.state,
           startDate = _this$state3.startDate,
@@ -14709,17 +15728,17 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _classNames;
 
-      var _this$props6 = this.props,
-          withInput = _this$props6.withInput,
-          startInputOptions = _this$props6.startInputOptions,
-          endInputOptions = _this$props6.endInputOptions,
-          inputOptions = _this$props6.inputOptions,
-          inputFormat = _this$props6.inputFormat,
-          position = _this$props6.position,
-          validators = _this$props6.validators,
-          singleInput = _this$props6.singleInput,
-          contentAlign = _this$props6.contentAlign,
-          children = _this$props6.children;
+      var _this$props7 = this.props,
+          withInput = _this$props7.withInput,
+          startInputOptions = _this$props7.startInputOptions,
+          endInputOptions = _this$props7.endInputOptions,
+          inputOptions = _this$props7.inputOptions,
+          inputFormat = _this$props7.inputFormat,
+          position = _this$props7.position,
+          validators = _this$props7.validators,
+          singleInput = _this$props7.singleInput,
+          contentAlign = _this$props7.contentAlign,
+          children = _this$props7.children;
       var open = this.state.open;
       var RangePickerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'DateRangePicker', true), _defineProperty$2(_classNames, "DateRangePicker--".concat(contentAlign), contentAlign), _classNames));
 
@@ -14754,7 +15773,17 @@ var DateRangePicker = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return DateRangePicker;
-}(React.Component); // @ts-ignore
+}(React.Component);
+
+_defineProperty$2(DateRangePicker, "utils", {
+  getCurrentWeek: getCurrentWeek,
+  getPreviousWeek: getPreviousWeek,
+  getPreviousMonth: getPreviousMonth,
+  getPrevious90Days: getPrevious90Days,
+  getCustomDates: getCustomDates,
+  getCurrentYear: getCurrentYear,
+  getCurrentMonth: getCurrentMonth
+});
 
 _defineProperty$2(DateRangePicker, "defaultProps", _objectSpread2(_objectSpread2({}, Calendar.defaultProps), {}, {
   children: /*#__PURE__*/React.createElement(React.Fragment, null),
@@ -14774,16 +15803,6 @@ _defineProperty$2(DateRangePicker, "defaultProps", _objectSpread2(_objectSpread2
     label: 'End Date'
   }
 }));
-
-DateRangePicker.utils = {
-  getCurrentWeek: getCurrentWeek,
-  getPreviousWeek: getPreviousWeek,
-  getPreviousMonth: getPreviousMonth,
-  getPrevious90Days: getPrevious90Days,
-  getCustomDates: getCustomDates,
-  getCurrentYear: getCurrentYear,
-  getCurrentMonth: getCurrentMonth
-};
 
 var TabsWrapper = function TabsWrapper(props) {
   var children = props.children,
@@ -14815,14 +15834,19 @@ var TabsWrapper = function TabsWrapper(props) {
         label = _child$props.label,
         disabled = _child$props.disabled;
     var tabHeaderClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Tab', true), _defineProperty$2(_classNames2, 'Tab--disabled', disabled), _defineProperty$2(_classNames2, 'Tab--active', !disabled && active === index), _classNames2));
-    return /*#__PURE__*/React.createElement("div", {
-      "data-test": "DesignSystem-Tabs--Header",
-      key: index,
-      className: tabHeaderClass,
-      onClick: function onClick() {
-        return !disabled && tabClickHandler(index);
-      }
-    }, label);
+    return (
+      /*#__PURE__*/
+      // TODO(a11y)
+      //  eslint-disable-next-line
+      React.createElement("div", {
+        "data-test": "DesignSystem-Tabs--Header",
+        key: index,
+        className: tabHeaderClass,
+        onClick: function onClick() {
+          return !disabled && tabClickHandler(index);
+        }
+      }, label)
+    );
   });
   return /*#__PURE__*/React.createElement("div", _extends$3({
     "data-test": "DesignSystem-TabsWrapper"
@@ -14843,14 +15867,37 @@ var Tab = function Tab(props) {
 };
 Tab.displayName = 'Tab';
 
-var Tabs = function Tabs(props) {
-  var _classNames;
+var getChildrenArray = function getChildrenArray(children) {
+  return Array.isArray(children) ? children : [children];
+};
 
-  var tabs = props.tabs,
+var filterTabs = function filterTabs(children) {
+  var childrenArray = getChildrenArray(children);
+  var tabs = childrenArray.filter(function (element) {
+    return typeof element.type === 'function' && element.type.name === Tab.name;
+  });
+  return tabs;
+};
+
+var filterInlineComponent = function filterInlineComponent(children) {
+  var childrenArray = getChildrenArray(children);
+  var inlineComponent = childrenArray.filter(function (element) {
+    return !(typeof element.type === 'function' && element.type.name === Tab.name);
+  });
+  return inlineComponent;
+};
+
+var Tabs = function Tabs(props) {
+  var _classNames2, _classNames5, _props, _props2;
+
+  var children = props.children,
       withSeparator = props.withSeparator,
       onTabChange = props.onTabChange,
       className = props.className;
   var baseProps = extractBaseProps(props);
+  var tabRefs = [];
+  var tabs = children ? filterTabs(children) : props.tabs;
+  var inlineComponent = children ? filterInlineComponent(children) : /*#__PURE__*/React.createElement(React.Fragment, null);
   var totalTabs = tabs.length;
 
   var _React$useState = React.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
@@ -14863,13 +15910,35 @@ var Tabs = function Tabs(props) {
       setActiveTab(props.activeIndex);
     }
   }, [props.activeIndex]);
-  var tabsClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Tabs', true), _defineProperty$2(_classNames, 'Tabs--withSeparator', withSeparator), _classNames), className);
+  var wrapperClass = classnames(_defineProperty$2({}, 'TabsWrapper', true), className);
+  var headerClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'TabsWrapper-header', true), _defineProperty$2(_classNames2, 'TabsWrapper-header--withSeparator', withSeparator), _classNames2), className);
 
   var getPillsClass = function getPillsClass(disabled) {
-    var _classNames2;
+    var _classNames3;
 
-    return classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Tabs-pills', true), _defineProperty$2(_classNames2, 'Tabs-pills--disabled', disabled), _classNames2));
+    return classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Tab-pills', true), _defineProperty$2(_classNames3, 'Tab-pills--disabled', disabled), _classNames3));
   };
+
+  var iconClass = function iconClass(disabled) {
+    var _classNames4;
+
+    return classnames((_classNames4 = {}, _defineProperty$2(_classNames4, "DismissibleTab-icon--right", true), _defineProperty$2(_classNames4, 'cursor-pointer', !disabled), _classNames4));
+  };
+
+  var activeTab;
+  var activeTabClass;
+
+  if ('props' in tabs[activeIndex]) {
+    var _activeTab$props;
+
+    activeTab = tabs[activeIndex];
+    activeTabClass = (_activeTab$props = activeTab.props) === null || _activeTab$props === void 0 ? void 0 : _activeTab$props.className;
+  } else {
+    activeTab = tabs[activeIndex];
+    activeTabClass = activeTab.className;
+  }
+
+  var tabContentClass = classnames((_classNames5 = {}, _defineProperty$2(_classNames5, 'TabsWrapper-content', true), _defineProperty$2(_classNames5, "".concat(activeTabClass), activeTabClass), _classNames5));
 
   var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
     if (props.activeIndex === undefined) {
@@ -14881,8 +15950,6 @@ var Tabs = function Tabs(props) {
 
     if (onTabChange) onTabChange(tabIndex);
   };
-
-  var tabRefs = [];
 
   var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
     if (event.key === 'Enter') {
@@ -14901,9 +15968,10 @@ var Tabs = function Tabs(props) {
   };
 
   var renderInfo = function renderInfo(tab, index) {
-    var count = tab.count,
-        icon = tab.icon,
-        disabled = tab.disabled;
+    var _ref = tab,
+        count = _ref.count,
+        icon = _ref.icon,
+        disabled = _ref.disabled;
 
     if (count !== undefined) {
       return /*#__PURE__*/React.createElement(Pills, {
@@ -14926,15 +15994,62 @@ var Tabs = function Tabs(props) {
     return null;
   };
 
-  var renderTabs = function renderTabs() {
-    return tabs.map(function (tab, index) {
-      var _classNames3;
+  var renderDismissIcon = function renderDismissIcon(tab, index, onDismiss) {
+    var _ref2 = tab,
+        disabled = _ref2.disabled,
+        label = _ref2.label;
+    var iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
+    var tabInfo = {
+      label: label,
+      activeIndex: activeIndex,
+      currentTabIndex: index
+    };
 
-      var label = tab.label,
-          disabled = tab.disabled;
-      var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-      var tabHeaderClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'Tab', true), _defineProperty$2(_classNames3, 'Tab--disabled', disabled), _defineProperty$2(_classNames3, 'Tab--active', !disabled && activeIndex === index), _classNames3));
-      return /*#__PURE__*/React.createElement("div", {
+    var onCloseHandler = function onCloseHandler(e) {
+      e.stopPropagation();
+      if (onDismiss) onDismiss(tabInfo);
+    };
+
+    return /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-DismissibleTabs--Icon",
+      name: "clear",
+      appearance: iconAppearance,
+      className: iconClass(disabled),
+      onClick: !disabled ? onCloseHandler : function () {}
+    });
+  };
+
+  var renderTab = function renderTab(tab, index) {
+    var _ref3 = tab,
+        _ref3$label = _ref3.label,
+        label = _ref3$label === void 0 ? '' : _ref3$label,
+        disabled = _ref3.disabled,
+        isDismissible = _ref3.isDismissible,
+        _ref3$onDismiss = _ref3.onDismiss,
+        onDismiss = _ref3$onDismiss === void 0 ? function () {} : _ref3$onDismiss;
+
+    if (typeof label !== 'string') {
+      return label;
+    }
+
+    var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+    return /*#__PURE__*/React.createElement(React.Fragment, null, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-Tabs--Text",
+      appearance: textAppearance
+    }, label), isDismissible && renderDismissIcon(tab, index, onDismiss));
+  };
+
+  var renderTabs = tabs.map(function (tab, index) {
+    var _classNames6;
+
+    var currentTabProp = children && 'props' in tab ? tab.props : tab;
+    var disabled = currentTabProp.disabled;
+    var tabHeaderClass = classnames((_classNames6 = {}, _defineProperty$2(_classNames6, 'Tab', true), _defineProperty$2(_classNames6, 'Tab--disabled', disabled), _defineProperty$2(_classNames6, 'Tab--active', !disabled && activeIndex === index), _classNames6));
+    return (
+      /*#__PURE__*/
+      // TODO(a11y)
+      //  eslint-disable-next-line
+      React.createElement("div", {
         ref: function ref(element) {
           return element && !disabled && tabRefs.push(element);
         },
@@ -14948,22 +16063,33 @@ var Tabs = function Tabs(props) {
           return tabKeyDownHandler(event, index);
         },
         tabIndex: activeIndex === index ? 0 : -1
-      }, renderInfo(tab, index), /*#__PURE__*/React.createElement(Text, {
-        "data-test": "DesignSystem-Tabs--Text",
-        appearance: textAppearance
-      }, label));
-    });
-  };
-
+      }, renderTab(currentTabProp, index))
+    );
+  });
   return /*#__PURE__*/React.createElement("div", _extends$3({
     "data-test": "DesignSystem-Tabs"
   }, baseProps, {
-    className: tabsClass
-  }), renderTabs());
+    className: wrapperClass
+  }), /*#__PURE__*/React.createElement("div", {
+    className: headerClass
+  }, renderTabs, inlineComponent), children && (_props = tabs[activeIndex].props) !== null && _props !== void 0 && _props.disabled ? /*#__PURE__*/React.createElement("div", {
+    className: "h-100 pb-5",
+    style: {
+      backgroundColor: 'var(--secondary-lightest)'
+    }
+  }, /*#__PURE__*/React.createElement(EmptyState, {
+    title: "There's a problem loading this page.",
+    description: "Tab is disabled and you are not authorized to see the content of this tab",
+    size: "large"
+  })) : children && !((_props2 = tabs[activeIndex].props) !== null && _props2 !== void 0 && _props2.disabled) ? /*#__PURE__*/React.createElement("div", {
+    className: tabContentClass,
+    "data-test": "DesignSystem-Tabs--Content"
+  }, tabs[activeIndex]) : null);
 };
 Tabs.displayName = 'Tabs';
 Tabs.defaultProps = {
-  withSeparator: true
+  withSeparator: true,
+  tabs: []
 };
 
 var accepts = function accepts(file, acceptedFiles) {
@@ -15514,10 +16640,8 @@ var DropzoneBase = function DropzoneBase(props) {
     if (inputRef.current) {
       dispatch({
         type: 'openDialog'
-      }); // @ts-ignore
-
-      inputRef.current.value = null; // @ts-ignore
-
+      });
+      inputRef.current.value = '';
       inputRef.current.click();
     }
   }, [dispatch]);
@@ -15526,10 +16650,9 @@ var DropzoneBase = function DropzoneBase(props) {
     if (isFileDialogActive) {
       setTimeout(function () {
         if (inputRef.current) {
-          // @ts-ignore
           var _files = inputRef.current.files;
 
-          if (!_files.length) {
+          if (!_files || !_files.length) {
             dispatch({
               type: 'closeDialog'
             });
@@ -15551,7 +16674,6 @@ var DropzoneBase = function DropzoneBase(props) {
   }, [inputRef, isFileDialogActive, onFileDialogCancel]); // Cb to open the file dialog when SPACE/ENTER occurs on the dropzone
 
   var onKeyDownCb = useCallback(function (event) {
-    // @ts-ignore
     if (!rootRef.current || !rootRef.current.isEqualNode(event.target)) {
       return;
     }
@@ -15575,8 +16697,8 @@ var DropzoneBase = function DropzoneBase(props) {
   var dragTargetsRef = useRef([]);
 
   var onDocumentDrop = function onDocumentDrop(event) {
-    // @ts-ignore
-    if (rootRef.current && rootRef.current.contains(event.target)) {
+    // Not every event target type is element so we have to check if it is.
+    if (event.target instanceof HTMLDivElement && rootRef.current && rootRef.current.contains(event.target)) {
       return;
     }
 
@@ -15599,8 +16721,7 @@ var DropzoneBase = function DropzoneBase(props) {
   }, [rootRef, preventDropOnDocument]);
   var onDragEnterCb = useCallback(function (event) {
     event.preventDefault();
-    event.persist(); // @ts-ignore
-
+    event.persist();
     dragTargetsRef.current = [].concat(_toConsumableArray(dragTargetsRef.current), [event.target]);
 
     if (isEvtWithFiles(event)) {
@@ -15642,11 +16763,9 @@ var DropzoneBase = function DropzoneBase(props) {
   var onDragLeaveCb = useCallback(function (event) {
     event.preventDefault();
     event.persist();
-    var targets = dragTargetsRef.current.filter( // @ts-ignore
-    function (target) {
+    var targets = dragTargetsRef.current.filter(function (target) {
       return rootRef.current && rootRef.current.contains(target);
-    }); // @ts-ignore
-
+    });
     var targetIdx = targets.indexOf(event.target);
 
     if (targetIdx !== -1) {
@@ -15705,11 +16824,12 @@ var DropzoneBase = function DropzoneBase(props) {
               errors = errors.concat(customErrors);
             }
 
+            var filteredErrors = errors.filter(function (e) {
+              return e;
+            });
             fileRejections.push({
               file: file,
-              errors: errors.filter(function (e) {
-                return e;
-              })
+              errors: filteredErrors
             });
           }
         });
@@ -15738,26 +16858,18 @@ var DropzoneBase = function DropzoneBase(props) {
     });
   }, [multiple, accept, minSize, maxSize, getFilesFromEvent, onDrop, onDropAccepted, onDropRejected]);
 
-  var composeHandler = function composeHandler(fn) {
-    return disabled ? null : fn;
-  };
-
-  var composeKeyboardHandler = function composeKeyboardHandler(_fn) {
-    return null;
-  };
-
   var composeDragHandler = function composeDragHandler(fn) {
-    return composeHandler(fn);
+    return disabled ? null : fn;
   };
 
   var getRootProps = useMemo(function () {
     return function () {
       var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
           _ref$refKey = _ref.refKey,
-          refKey = _ref$refKey === void 0 ? 'ref' : _ref$refKey,
-          onKeyDown = _ref.onKeyDown,
-          onFocus = _ref.onFocus,
-          onBlur = _ref.onBlur;
+          refKey = _ref$refKey === void 0 ? 'ref' : _ref$refKey;
+          _ref.onKeyDown;
+          _ref.onFocus;
+          _ref.onBlur;
           _ref.onClick;
           var onDragEnterCallback = _ref.onDragEnterCallback,
           onDragOverCallback = _ref.onDragOverCallback,
@@ -15766,10 +16878,6 @@ var DropzoneBase = function DropzoneBase(props) {
           rest = _objectWithoutProperties$1(_ref, _excluded$2);
 
       return _objectSpread2(_defineProperty$2({
-        onKeyDown: composeKeyboardHandler(composeEventHandlers(onKeyDown, onKeyDownCb)),
-        onFocus: composeKeyboardHandler(composeEventHandlers(onFocus, onFocusCb)),
-        onBlur: composeKeyboardHandler(composeEventHandlers(onBlur, onBlurCb)),
-        // onClick: composeHandler(composeEventHandlers(onClick, onClickCb)),
         onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
         onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
         onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
@@ -15796,8 +16904,8 @@ var DropzoneBase = function DropzoneBase(props) {
         style: {
           display: 'none'
         },
-        onChange: composeHandler(composeEventHandlers(onChange, onDropCb)),
-        onClick: composeHandler(composeEventHandlers(onClick, onInputElementClick)),
+        onChange: composeDragHandler(composeEventHandlers(onChange, onDropCb)),
+        onClick: composeDragHandler(composeEventHandlers(onClick, onInputElementClick)),
         autoComplete: 'off',
         tabIndex: -1
       }, refKey, inputRef);
@@ -15831,7 +16939,7 @@ var DropzoneBase = function DropzoneBase(props) {
     draggedFiles: draggedFiles,
     fileError: fileError,
     isFocused: isFocused && !disabled,
-    open: composeHandler(openFileDialog)
+    open: composeDragHandler(openFileDialog)
   });
 };
 DropzoneBase.displayName = 'DropzoneBase';
@@ -15907,60 +17015,48 @@ var Dropzone = function Dropzone(props) {
   var IconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'Dropzone-icon', true), _defineProperty$2(_classNames2, "Dropzone-icon--".concat(type), true), _defineProperty$2(_classNames2, 'Dropzone-icon--disabled', disabled), _classNames2));
   var WrapperClass = classnames((_classNames3 = {}, _defineProperty$2(_classNames3, 'DropzoneWrapper', true), _defineProperty$2(_classNames3, "DropzoneWrapper--".concat(type), true), _classNames3));
 
-  if (isDragReject) {
-    return /*#__PURE__*/React__default.createElement("div", _extends$3({}, getRootProps(), baseProps, {
-      className: DropzoneClass
-    }), /*#__PURE__*/React__default.createElement(DropzoneError, {
-      type: type,
-      error: fileErrorMessages[fileError]
-    }));
-  }
-
-  if (isDragActive) {
-    return /*#__PURE__*/React__default.createElement("div", _extends$3({}, getRootProps(), baseProps, {
-      className: DropzoneClass
-    }), /*#__PURE__*/React__default.createElement(DropzoneActive, {
-      type: type
-    }));
-  }
-
   var renderDropzone = function renderDropzone() {
-    if (isDragReject) return /*#__PURE__*/React__default.createElement(DropzoneError, {
+    if (isDragReject) return /*#__PURE__*/React.createElement(DropzoneError, {
       type: type,
       error: fileErrorMessages[fileError]
     });
-    if (isDragActive) return /*#__PURE__*/React__default.createElement(DropzoneActive, {
+    if (isDragActive) return /*#__PURE__*/React.createElement(DropzoneActive, {
       type: type
     });
-    return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, type !== 'tight' && /*#__PURE__*/React__default.createElement(Icon, {
+    var buttonAccessibilityProps = useAccessibilityProps({
+      onClick: open,
+      'aria-label': 'Drag your files here or click to select files'
+    });
+    return /*#__PURE__*/React.createElement(React.Fragment, null, type !== 'tight' && /*#__PURE__*/React.createElement(Icon, {
       name: "backup",
       size: 64,
       className: IconClass
-    }), /*#__PURE__*/React__default.createElement("div", {
-      className: WrapperClass
-    }, /*#__PURE__*/React__default.createElement("span", null, /*#__PURE__*/React__default.createElement(Text, {
+    }), /*#__PURE__*/React.createElement("div", {
+      className: WrapperClass,
+      "data-test": "DesignSystem-Dropzone-Wrapper"
+    }, /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Text, {
       size: "large",
       weight: "strong",
       className: "mr-2",
       appearance: disabled ? 'disabled' : 'default'
-    }, "Drag your files here or"), /*#__PURE__*/React__default.createElement("span", {
-      className: "cursor-pointer",
-      onClick: open
-    }, /*#__PURE__*/React__default.createElement(Text, {
+    }, "Drag your files here or"), /*#__PURE__*/React.createElement(Text, _extends$3({
+      tabIndex: disabled ? -1 : 0,
+      className: "ml-2 cursor-pointer",
       size: "large",
       weight: "strong",
       appearance: disabled ? 'disabled' : 'link'
-    }, " browse files")), /*#__PURE__*/React__default.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React__default.createElement(Text, {
+    }, buttonAccessibilityProps), "browse files"), /*#__PURE__*/React.createElement("input", getInputProps())), formatLabel && /*#__PURE__*/React.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
-    }, formatLabel), sizeLabel && /*#__PURE__*/React__default.createElement(Text, {
+    }, formatLabel), sizeLabel && /*#__PURE__*/React.createElement(Text, {
       appearance: disabled ? 'disabled' : 'subtle'
-    }, sizeLabel), sampleFileLink && /*#__PURE__*/React__default.createElement("div", {
+    }, sizeLabel), sampleFileLink && /*#__PURE__*/React.createElement("div", {
       className: "mt-5"
     }, sampleFileLink)));
   };
 
-  return /*#__PURE__*/React__default.createElement("div", _extends$3({}, getRootProps(), baseProps, {
-    className: DropzoneClass
+  return /*#__PURE__*/React.createElement("div", _extends$3({}, getRootProps(), baseProps, {
+    className: DropzoneClass,
+    "data-test": "DesignSystem-Dropzone"
   }), renderDropzone());
 };
 Dropzone.displayName = 'Dropzone';
@@ -15997,11 +17093,13 @@ var FileUploaderButton = function FileUploaderButton(props) {
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
     className: FileUploaderButtonClass
   }), /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     disabled: disabled,
     icon: "backup"
   }, uploadButtonLabel), /*#__PURE__*/React.createElement("input", {
     name: name,
     id: id,
+    "data-test": "DesignSystem-FileUploaderButton--Input",
     accept: accept && accept.join(', '),
     multiple: multiple,
     disabled: disabled,
@@ -16037,7 +17135,8 @@ var FileUploader = function FileUploader(props) {
   var baseProps = extractBaseProps(props);
   var FileUploaderClass = classnames(_defineProperty$2({}, 'FileUploader', true), className);
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: FileUploaderClass
+    className: FileUploaderClass,
+    "data-test": "DesignSystem-FileUploader"
   }), /*#__PURE__*/React.createElement(Text, {
     weight: "medium"
   }, title), /*#__PURE__*/React.createElement(FileUploaderFormat, {
@@ -16110,36 +17209,43 @@ var FileUploaderItem = function FileUploaderItem(props) {
   var name = file.name;
   var baseProps = extractBaseProps(props);
   var FileItemClass = classnames(_defineProperty$2({}, 'FileUploaderItem', true), className);
-  return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: FileItemClass,
-    onClick: function onClick() {
-      return _onClick && _onClick(file, id);
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "FileUploaderItem-file"
-  }, /*#__PURE__*/React.createElement(Text, {
-    className: "FileUploaderItem-text",
-    appearance: status === 'completed' ? 'default' : 'subtle'
-  }, name), /*#__PURE__*/React.createElement("div", {
-    className: "d-flex align-items-center"
-  }, /*#__PURE__*/React.createElement(FileUploaderStatus, {
-    file: file,
-    id: id,
-    status: status,
-    progress: progress,
-    onRetry: function onRetry() {
-      return _onRetry && _onRetry(file, id);
-    }
-  }), /*#__PURE__*/React.createElement(Button, {
-    appearance: "transparent",
-    size: "regular",
-    onClick: function onClick() {
-      return onDelete && onDelete(file, id);
-    },
-    icon: "close"
-  }))), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
-    error: true
-  }, errorMessage));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y)
+    //  eslint-disable-next-line
+    React.createElement("div", _extends$3({}, baseProps, {
+      "data-test": "DesignSystem-FileUploader--Item",
+      className: FileItemClass,
+      onClick: function onClick() {
+        return _onClick && _onClick(file, id);
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "FileUploaderItem-file"
+    }, /*#__PURE__*/React.createElement(Text, {
+      className: "FileUploaderItem-text",
+      appearance: status === 'completed' ? 'default' : 'subtle'
+    }, name), /*#__PURE__*/React.createElement("div", {
+      className: "d-flex align-items-center"
+    }, /*#__PURE__*/React.createElement(FileUploaderStatus, {
+      file: file,
+      id: id,
+      status: status,
+      progress: progress,
+      onRetry: function onRetry() {
+        return _onRetry && _onRetry(file, id);
+      }
+    }), /*#__PURE__*/React.createElement(Button, {
+      "data-test": "DesignSystem-FileUploader--CancelButton",
+      appearance: "transparent",
+      size: "regular",
+      onClick: function onClick() {
+        return onDelete && onDelete(file, id);
+      },
+      icon: "close"
+    }))), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
+      error: true
+    }, errorMessage))
+  );
 };
 FileUploaderItem.defaultProps = {
   status: 'completed',
@@ -16158,7 +17264,8 @@ var FileUploaderList = function FileUploaderList(props) {
   var FileListClass = classnames(_defineProperty$2({}, 'FileUploaderList', true), className);
   if (fileList.length === 0) return null;
   return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: FileListClass
+    className: FileListClass,
+    "data-test": "DesignSystem-FileUploader--List"
   }), fileList.map(function (fileName, i) {
     return /*#__PURE__*/React.createElement(FileUploaderItem, _extends$3({
       key: i,
@@ -16432,7 +17539,7 @@ var defaultProps$1 = {
   showFilters: true
 };
 
-var context = /*#__PURE__*/React__default.createContext(_objectSpread2(_objectSpread2({}, defaultProps$1), {}, {
+var context = /*#__PURE__*/React.createContext(_objectSpread2(_objectSpread2({}, defaultProps$1), {}, {
   ref: null
 }));
 var GridProvider = context.Provider;
@@ -16486,9 +17593,21 @@ var GridNestedRow = function GridNestedRow(props) {
 var HeaderCell = function HeaderCell(props) {
   var context$1 = React.useContext(context);
   var schema = props.schema,
+      colIndex = props.colIndex,
+      onSelectAll = props.onSelectAll,
       onMenuChange = props.onMenuChange,
       onFilterChange = props.onFilterChange,
-      updateColumnSchema = props.updateColumnSchema;
+      updateColumnSchema = props.updateColumnSchema,
+      reorderColumn = props.reorderColumn;
+  var headProps = {
+    schema: schema,
+    colIndex: colIndex,
+    onSelectAll: onSelectAll,
+    onMenuChange: onMenuChange,
+    onFilterChange: onFilterChange,
+    updateColumnSchema: updateColumnSchema,
+    reorderColumn: reorderColumn
+  };
   var loading = context$1.loading,
       draggable = context$1.draggable,
       showMenu = context$1.showMenu,
@@ -16511,11 +17630,11 @@ var HeaderCell = function HeaderCell(props) {
   var sortOptions = [{
     label: 'Sort Ascending',
     value: 'sortAsc',
-    icon: 'arrow_downward'
+    icon: 'arrow_upward'
   }, {
     label: 'Sort Descending',
     value: 'sortDesc',
-    icon: 'arrow_upward'
+    icon: 'arrow_downward'
   }];
   var pinOptions = [{
     label: 'Pin Left',
@@ -16566,9 +17685,9 @@ var HeaderCell = function HeaderCell(props) {
     }, schema.displayName), sorting && /*#__PURE__*/React.createElement("div", {
       className: "Grid-sortingIcons"
     }, sorted ? sorted === 'asc' ? /*#__PURE__*/React.createElement(Icon, {
-      name: "arrow_downward"
-    }) : /*#__PURE__*/React.createElement(Icon, {
       name: "arrow_upward"
+    }) : /*#__PURE__*/React.createElement(Icon, {
+      name: "arrow_downward"
     }) : /*#__PURE__*/React.createElement(Icon, {
       name: "unfold_more"
     })));
@@ -16580,6 +17699,7 @@ var HeaderCell = function HeaderCell(props) {
     ref: el
   }, /*#__PURE__*/React.createElement("div", {
     className: "Grid-cellContent",
+    "data-test": "DesignSystem-Grid-cellContent",
     onClick: function onClick() {
       if (!loading && sorting) {
         if (sorted === 'asc') onMenuChange(name, 'sortDesc');
@@ -16591,11 +17711,11 @@ var HeaderCell = function HeaderCell(props) {
     withImage: false
   }, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
     length: "medium"
-  })) : /*#__PURE__*/React.createElement(React.Fragment, null, headCellTooltip ? /*#__PURE__*/React.createElement(Tooltip, {
+  })) : !schema.headerCellRenderer && headCellTooltip ? /*#__PURE__*/React.createElement(Tooltip, {
     position: "top-start",
     triggerClass: "w-100 overflow-hidden",
     tooltip: schema.displayName
-  }, renderLabel()) : renderLabel())), showFilters && filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !isValidSchema ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
+  }, renderLabel()) : schema.headerCellRenderer && !headCellTooltip ? schema.headerCellRenderer(headProps) : renderLabel()), showFilters && filters && /*#__PURE__*/React.createElement(React.Fragment, null, loading && !isValidSchema ? /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement(Placeholder, null)) : /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Dropdown, {
     menu: true,
     showApplyButton: true,
     withCheckbox: true,
@@ -16633,7 +17753,11 @@ var HeaderCell = function HeaderCell(props) {
       return onMenuChange(name, selected);
     },
     minWidth: 176
-  }))), schema.resizable && /*#__PURE__*/React.createElement("span", {
+  }))), schema.resizable &&
+  /*#__PURE__*/
+  //TODO(a11y)
+  //eslint-disable-next-line
+  React.createElement("span", {
     className: "Grid-cellResize",
     onMouseDown: function onMouseDown() {
       resizeCol({
@@ -16694,18 +17818,19 @@ var BodyCell = function BodyCell(props) {
 
 var Cell = function Cell(props) {
   var context$1 = React.useContext(context);
-  var isHead = props.isHead,
-      firstCell = props.firstCell,
-      schema = props.schema,
-      data = props.data,
-      rowIndex = props.rowIndex,
-      colIndex = props.colIndex,
-      expandedState = props.expandedState,
-      onSelectAll = props.onSelectAll,
-      onMenuChange = props.onMenuChange,
-      onFilterChange = props.onFilterChange,
-      updateColumnSchema = props.updateColumnSchema,
-      reorderColumn = props.reorderColumn;
+  var _ref = props,
+      isHead = _ref.isHead,
+      firstCell = _ref.firstCell,
+      schema = _ref.schema,
+      data = _ref.data,
+      rowIndex = _ref.rowIndex,
+      colIndex = _ref.colIndex,
+      expandedState = _ref.expandedState,
+      onSelectAll = _ref.onSelectAll,
+      onMenuChange = _ref.onMenuChange,
+      onFilterChange = _ref.onFilterChange,
+      updateColumnSchema = _ref.updateColumnSchema,
+      reorderColumn = _ref.reorderColumn;
   var draggable = context$1.draggable,
       separator = context$1.separator,
       nestedRows = context$1.nestedRows,
@@ -16755,7 +17880,7 @@ var Cell = function Cell(props) {
           name: name,
           type: pinned || ''
         };
-        if (from.type === to.type) reorderColumn(from.name, to.name);
+        if (from.type === to.type && reorderColumn) reorderColumn(from.name, to.name);
       }
     },
     style: {
@@ -16854,7 +17979,8 @@ var GridHead = function GridHead(props) {
   };
 
   return /*#__PURE__*/React.createElement("div", {
-    className: "Grid-head"
+    className: "Grid-head",
+    "data-test": "DesignSystem-GridHead-wrapper"
   }, /*#__PURE__*/React.createElement("div", {
     className: "Grid-row Grid-row--head"
   }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')));
@@ -17207,10 +18333,10 @@ var VirtualScroll = /*#__PURE__*/function (_React$Component) {
           length = _this$props2.length,
           buffer = _this$props2.buffer;
           _this$props2.offset;
-          _this$props2.renderItem;
+          _this$props2.renderItems;
           _this$props2.minItemHeight;
           var forwardRef = _this$props2.forwardRef,
-          rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItem", "minItemHeight", "forwardRef"]);
+          rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItems", "minItemHeight", "forwardRef"]);
 
       var _this$state = this.state,
           init = _this$state.init,
@@ -17254,6 +18380,7 @@ _defineProperty(VirtualScroll, "defaultProps", {
 
 var index = /*#__PURE__*/React.forwardRef(function (props, ref) {
   return /*#__PURE__*/React.createElement(VirtualScroll, _extends({
+    key: props.totalLength,
     forwardRef: ref
   }, props));
 });
@@ -17302,17 +18429,22 @@ var GridRow = function GridRow(props) {
 
   var renderCheckbox = function renderCheckbox(show) {
     if (!show || !withCheckbox) return null;
-    return /*#__PURE__*/React.createElement("div", {
-      className: "Grid-cell Grid-cell--body Grid-cell--checkbox",
-      onClick: function onClick(e) {
-        return e.stopPropagation();
-      }
-    }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, {
-      checked: !!data._selected,
-      onChange: function onChange(event) {
-        onSelect(rI, event.target.checked);
-      }
-    }));
+    return (
+      /*#__PURE__*/
+      // TODO(a11y)
+      // eslint-disable-next-line
+      React.createElement("div", {
+        className: "Grid-cell Grid-cell--body Grid-cell--checkbox",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
+      }, loading ? /*#__PURE__*/React.createElement(Placeholder, null) : /*#__PURE__*/React.createElement(Checkbox, {
+        checked: !!data._selected,
+        onChange: function onChange(event) {
+          onSelect(rI, event.target.checked);
+        }
+      }))
+    );
   };
 
   var renderSchema = function renderSchema(currSchema, shouldRenderCheckbox, pinned) {
@@ -17324,7 +18456,8 @@ var GridRow = function GridRow(props) {
         'Grid-cellGroup--pinned': pinned
       }, _defineProperty$2(_classNames, "Grid-cellGroup--pinned-".concat(pinned), pinned), _defineProperty$2(_classNames, 'Grid-cellGroup--main', !pinned), _classNames));
       return /*#__PURE__*/React.createElement("div", {
-        className: classes
+        className: classes,
+        "data-test": "DesignSystem-Grid-cellGroup"
       }, renderCheckbox(shouldRenderCheckbox), currSchema.map(function (s, index) {
         var cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
         if (pinned === 'right') cI += unpinnedSchema.length;
@@ -17371,6 +18504,7 @@ var GridBody = function GridBody(props) {
       loading = context$1.loading,
       error = context$1.error,
       withPagination = context$1.withPagination,
+      nestedRows = context$1.nestedRows,
       page = context$1.page,
       pageSize = context$1.pageSize,
       totalRecords = context$1.totalRecords,
@@ -17414,23 +18548,31 @@ var GridBody = function GridBody(props) {
   var isLastPage = withPagination && page === totalPages;
   var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
 
-  var renderItem = function renderItem(rowIndex) {
+  var renderRow = function renderRow(rowIndex, item) {
     return /*#__PURE__*/React.createElement(GridRow, {
+      key: rowIndex,
       rowIndex: rowIndex,
-      data: data[rowIndex],
+      data: !item ? data[rowIndex] : item,
       schema: schema,
       onSelect: onSelect
     });
   };
 
-  return /*#__PURE__*/React.createElement(index, {
+  if (nestedRows && !loading) {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "Grid-body"
+    }, data.map(function (item, i) {
+      return renderRow(i, item);
+    }));
+  }
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(index, {
     className: "Grid-body",
     minItemHeight: minRowHeight[size],
     totalLength: dataLength,
-    length: 20,
-    buffer: 7,
-    renderItem: renderItem
-  });
+    length: dataLength,
+    renderItem: renderRow
+  }));
 };
 
 var Grid = /*#__PURE__*/function (_React$Component) {
@@ -17645,7 +18787,7 @@ var Grid = /*#__PURE__*/function (_React$Component) {
         this.addScrollListeners();
       }
 
-      if (prevProps.page !== this.props.page) {
+      if (prevProps.page !== this.props.page || prevProps.error !== this.props.error) {
         this.removeScrollListeners();
         this.addScrollListeners();
       }
@@ -17759,7 +18901,8 @@ var renderMetaList = function renderMetaList(props) {
 
   if (metaList) {
     return /*#__PURE__*/React.createElement("div", {
-      className: "GridCell-metaList"
+      className: "GridCell-metaList",
+      "data-test": "DesignSystem-GridCell-metaList"
     }, metaList.map(function (list, index) {
       return /*#__PURE__*/React.createElement(Text, {
         key: index,
@@ -17844,7 +18987,8 @@ var GridCell = function GridCell(props) {
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--default")
       }, loading ? /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-        length: "medium"
+        length: "medium",
+        "data-test": "DesignSystem-GridCell-placeHolder"
       }) : renderTitle({
         tooltip: tooltip,
         cellData: cellData
@@ -17854,7 +18998,8 @@ var GridCell = function GridCell(props) {
       return /*#__PURE__*/React.createElement("div", {
         className: "".concat(cellClass, " GridCell--metaList")
       }, loading ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(PlaceholderParagraph, {
-        length: "medium"
+        length: "medium",
+        "data-test": "DesignSystem-GridCell-withMetaList"
       }), /*#__PURE__*/React.createElement(PlaceholderParagraph, {
         length: "large",
         size: "xxs"
@@ -17875,7 +19020,8 @@ var GridCell = function GridCell(props) {
       }
 
       return /*#__PURE__*/React.createElement("div", {
-        className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--avatar")
+        className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--avatar"),
+        "data-test": "DesignSystem-GridCell-avatar"
       }, size !== 'tight' && renderAvatar({
         cellData: cellData
       }));
@@ -17892,7 +19038,8 @@ var GridCell = function GridCell(props) {
       }
 
       return /*#__PURE__*/React.createElement("div", {
-        className: "".concat(cellClass, " GridCell--avatarWithText")
+        className: "".concat(cellClass, "   "),
+        "data-test": "DesignSystem-GridCell-avatarWithText"
       }, size !== 'tight' && renderAvatar({
         cellData: cellData
       }), renderTitle({
@@ -17915,7 +19062,8 @@ var GridCell = function GridCell(props) {
       }
 
       return /*#__PURE__*/React.createElement("div", {
-        className: "".concat(cellClass, " GridCell--avatarWithText")
+        className: "".concat(cellClass, " GridCell--avatarWithText"),
+        "data-test": "DesignSystem-GridCell-avatarWithMetaList"
       }, size !== 'tight' && renderAvatar({
         cellData: cellData
       }), /*#__PURE__*/React.createElement("div", {
@@ -17937,7 +19085,8 @@ var GridCell = function GridCell(props) {
       }
 
       return /*#__PURE__*/React.createElement("div", {
-        className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--icon")
+        className: "".concat(cellClass, " GridCell--align-").concat(align, " GridCell--icon"),
+        "data-test": "DesignSystem-GridCell-icon"
       }, renderIcon({
         cellData: cellData
       }));
@@ -18019,6 +19168,7 @@ var DraggableDropdown = function DraggableDropdown(props) {
     open: open,
     onToggle: onToggleHandler,
     trigger: /*#__PURE__*/React.createElement(Button, {
+      type: "button",
       ref: function ref(el) {
         setTriggerWidth("".concat(el === null || el === void 0 ? void 0 : el.clientWidth, "px"));
       },
@@ -18052,6 +19202,7 @@ var DraggableDropdown = function DraggableDropdown(props) {
     onChange: handleParentChange
   })), tempOptions.map(function (option, index) {
     return /*#__PURE__*/React.createElement("div", {
+      "data-test": "DesignSystem-Table-Header--draggableDropdownOption",
       key: option.value,
       className: "OptionWrapper d-flex flex-space-between align-items-center cursor-pointer",
       draggable: true,
@@ -18081,10 +19232,12 @@ var DraggableDropdown = function DraggableDropdown(props) {
   })), /*#__PURE__*/React.createElement("div", {
     className: "Dropdown-buttonWrapper"
   }, /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     className: "mr-4",
     size: "tiny",
     onClick: onCancelHandler
   }, "Cancel"), /*#__PURE__*/React.createElement(Button, {
+    type: "button",
     appearance: "primary",
     size: "tiny",
     onClick: onApplyHandler
@@ -18195,6 +19348,7 @@ var Header = function Header(props) {
   }, withSearch && /*#__PURE__*/React.createElement("div", {
     className: "Header-search"
   }, /*#__PURE__*/React.createElement(Input, {
+    "data-test": "DesignSystem-Table-Header--withSearch",
     name: "GridHeader-search",
     icon: "search",
     placeholder: searchPlaceholder,
@@ -18248,11 +19402,13 @@ var Header = function Header(props) {
   })) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Label, null, label), withPagination && (selectAll === null || selectAll === void 0 ? void 0 : selectAll.checked) && allowSelectAll && /*#__PURE__*/React.createElement("div", {
     className: "ml-4"
   }, !selectAllRecords ? /*#__PURE__*/React.createElement(Button, {
+    "data-test": "DesignSystem-Table-Header--selectAllItemsButton",
     size: "tiny",
     onClick: function onClick() {
       return setSelectAllRecords(true);
     }
   }, "Select all ".concat(totalRecords, " items")) : /*#__PURE__*/React.createElement(Button, {
+    "data-test": "DesignSystem-Table-Header--clearSelectionItemsButton",
     size: "tiny",
     onClick: function onClick() {
       return setSelectAllRecords(false);
@@ -18637,9 +19793,11 @@ var Table = /*#__PURE__*/function (_React$Component) {
       var totalRecords = this.state.totalRecords;
       var totalPages = getTotalPages(totalRecords, pageSize);
       return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-        className: "Table".concat(classes)
+        className: "Table".concat(classes),
+        "data-test": "DesignSystem-Table-wrapper"
       }), withHeader && /*#__PURE__*/React.createElement("div", {
-        className: "Table-header"
+        className: "Table-header",
+        "data-test": "DesignSystem-Table-header"
       }, /*#__PURE__*/React.createElement(Header, _extends$3({}, this.state, {
         // updateData={updateData}
         updateSchema: this.updateSchema // updateSortingList={updateSortingList}
@@ -18655,6 +19813,7 @@ var Table = /*#__PURE__*/function (_React$Component) {
       }, headerAttr), headerChildren)), /*#__PURE__*/React.createElement("div", {
         className: "Table-grid"
       }, /*#__PURE__*/React.createElement(Grid, _extends$3({}, this.state, {
+        key: this.state.searchTerm,
         updateData: this.updateData,
         updateSchema: this.updateSchema,
         updateSortingList: this.updateSortingList,
@@ -18783,13 +19942,16 @@ var VerticalNavigation = function VerticalNavigation(props) {
       'Navigation-menuIcon--active': activeMenuIcon
     });
     return /*#__PURE__*/React.createElement("div", {
-      key: index
+      key: index,
+      "data-test": "DesignSystem-Navigation-VerticalNavigation--menuWrapper"
     }, /*#__PURE__*/React.createElement("div", {
+      "data-test": "DesignSystem-Navigation-VerticalNavigation--menuItem",
       className: menuClasses,
       onClick: function onClick() {
         return onClickHandler(menu);
       }
     }, menu.icon && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-Navigation-VerticalNavigation--menuIcon",
       className: menuIconClasses,
       name: menu.icon,
       appearance: getIconAppearance(activeMenuIcon, menu.disabled)
@@ -18798,6 +19960,7 @@ var VerticalNavigation = function VerticalNavigation(props) {
     }, /*#__PURE__*/React.createElement(Text, {
       appearance: getTextAppearance(activeMenu, menu.disabled)
     }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React.createElement(Icon, {
+      "data-test": "DesignSystem-Navigation-VerticalNavigation--expandedSubMenuIcon",
       className: "mx-4",
       name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
       appearance: "subtle"
@@ -18808,15 +19971,21 @@ var VerticalNavigation = function VerticalNavigation(props) {
 
       var isActive = isMenuActive(menus, subMenu, active);
       var subMenuClasses = classnames(menuClasses, (_classNames2 = {}, _defineProperty$2(_classNames2, 'Navigation-menu--subMenu', true), _defineProperty$2(_classNames2, 'Navigation-menu--active', isActive), _classNames2));
-      return /*#__PURE__*/React.createElement("div", {
-        key: ind,
-        className: subMenuClasses,
-        onClick: function onClick() {
-          return onClickHandler(subMenu);
-        }
-      }, /*#__PURE__*/React.createElement(Text, {
-        appearance: getTextAppearance(isActive, subMenu.disabled)
-      }, subMenu.label));
+      return (
+        /*#__PURE__*/
+        // TODO(a11y)
+        // eslint-disable-next-line
+        React.createElement("div", {
+          "data-test": "DesignSystem-Navigation-VerticalNavigation--subMenu",
+          key: ind,
+          className: subMenuClasses,
+          onClick: function onClick() {
+            return onClickHandler(subMenu);
+          }
+        }, /*#__PURE__*/React.createElement(Text, {
+          appearance: getTextAppearance(isActive, subMenu.disabled)
+        }, subMenu.label))
+      );
     })));
   });
   var footerClasses = classnames(_defineProperty$2({
@@ -18954,7 +20123,7 @@ PageHeader.defaultProps = {
 
 var useEffect = React.useEffect,
     useState = React.useState;
-var IconMapping = {
+var IconMapping$1 = {
   audio: 'audiotrack',
   image: 'image',
   video: 'movie',
@@ -18974,7 +20143,7 @@ var FileIcon = function FileIcon(props) {
       setAnimate = _useState2[1];
 
   var type = file.type.split('/')[0] || 'others';
-  var fileType = IconMapping[type] ? type : 'others';
+  var fileType = IconMapping$1[type] ? type : 'others';
   var iconClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'FileIcon', true), _defineProperty$2(_classNames, 'FileIcon--animate', animate), _defineProperty$2(_classNames, "FileIcon--".concat(fileType), true), _classNames));
   var uploadingIconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'FileIcon', true), _defineProperty$2(_classNames2, 'FileIcon--uploading', true), _classNames2));
   useEffect(function () {
@@ -18989,13 +20158,15 @@ var FileIcon = function FileIcon(props) {
     return /*#__PURE__*/React.createElement(ProgressRing, {
       size: "small",
       value: progress || 0,
-      className: uploadingIconClass
+      className: uploadingIconClass,
+      "data-test": "DesignSystem-FileListItem--ProgressRing"
     });
   }
 
   return /*#__PURE__*/React.createElement(Icon, {
-    name: IconMapping[fileType],
-    className: iconClass
+    name: IconMapping$1[fileType],
+    className: iconClass,
+    "data-test": "DesignSystem-FileListItem--Icon"
   });
 };
 FileIcon.displayName = 'FileIcon';
@@ -19024,29 +20195,37 @@ var FileListItem = function FileListItem(props) {
     }
   };
 
-  return /*#__PURE__*/React.createElement("div", _extends$3({}, baseProps, {
-    className: FileItemClass,
-    onClick: onClickHandler
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "FileItem-file"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "FileItem-fileContent"
-  }, /*#__PURE__*/React.createElement(FileIcon, {
-    file: file,
-    status: status,
-    progress: progress
-  }), /*#__PURE__*/React.createElement(Text, {
-    className: "FileItem-text",
-    appearance: status === 'completed' ? 'default' : 'subtle'
-  }, name)), /*#__PURE__*/React.createElement("div", {
-    className: "FileItem-actions"
-  }, /*#__PURE__*/React.createElement(Text, {
-    className: "FileItem-size",
-    appearance: 'subtle'
-  }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
-    className: 'FileItem-error',
-    error: true
-  }, errorMessage));
+  return (
+    /*#__PURE__*/
+    // TODO(a11y)
+    //  eslint-disable-next-line
+    React.createElement("div", _extends$3({}, baseProps, {
+      className: FileItemClass,
+      onClick: onClickHandler,
+      "data-test": "DesignSystem-FileListItem"
+    }), /*#__PURE__*/React.createElement("div", {
+      className: "FileItem-file"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "FileItem-fileContent"
+    }, /*#__PURE__*/React.createElement(FileIcon, {
+      file: file,
+      status: status,
+      progress: progress
+    }), /*#__PURE__*/React.createElement(Text, {
+      "data-test": "DesignSystem-FileListItem--Name",
+      className: "FileItem-text",
+      appearance: status === 'completed' ? 'default' : 'subtle'
+    }, name)), /*#__PURE__*/React.createElement("div", {
+      className: "FileItem-actions"
+    }, /*#__PURE__*/React.createElement(Text, {
+      className: "FileItem-size",
+      appearance: 'subtle',
+      "data-test": "DesignSystem-FileListItem--Size"
+    }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React.createElement(Caption, {
+      className: 'FileItem-error',
+      error: true
+    }, errorMessage))
+  );
 };
 FileListItem.defaultProps = {
   progress: 0,
@@ -19210,54 +20389,62 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
     switch (e.key) {
       case KEY_CODE.backspace:
-        e.preventDefault();
+        {
+          e.preventDefault();
 
-        var vals = _toConsumableArray(values);
+          var vals = _toConsumableArray(values);
 
-        if (values[index]) {
-          vals[index] = '';
-          setValues(vals);
-        } else if (prev && prev.current) {
-          vals[prevIndex] = '';
-          prev.current.focus({
-            preventScroll: true
-          });
-          setValues(vals);
+          if (values[index]) {
+            vals[index] = '';
+            setValues(vals);
+          } else if (prev && prev.current) {
+            vals[prevIndex] = '';
+            prev.current.focus({
+              preventScroll: true
+            });
+            setValues(vals);
+          }
+
+          break;
         }
-
-        break;
 
       case KEY_CODE.left:
-        e.preventDefault();
+        {
+          e.preventDefault();
 
-        if (prev && prev.current) {
-          prev.current.focus({
-            preventScroll: true
-          });
+          if (prev && prev.current) {
+            prev.current.focus({
+              preventScroll: true
+            });
+          }
+
+          break;
         }
-
-        break;
 
       case KEY_CODE.right:
-        e.preventDefault();
+        {
+          e.preventDefault();
 
-        if (nextRef && nextRef.current) {
-          nextRef.current.focus({
-            preventScroll: true
-          });
+          if (nextRef && nextRef.current) {
+            nextRef.current.focus({
+              preventScroll: true
+            });
+          }
+
+          break;
         }
-
-        break;
 
       case KEY_CODE.up:
       case KEY_CODE.down:
       case KEY_CODE.e:
       case KEY_CODE.E:
-        if (type === 'number') {
-          e.preventDefault();
-        }
+        {
+          if (type === 'number') {
+            e.preventDefault();
+          }
 
-        break;
+          break;
+        }
     }
   };
 
@@ -19291,6 +20478,177 @@ var VerificationCodeInput = function VerificationCodeInput(props) {
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
 
-var version = "2.2.1";
+var IconMapping = {
+  success: 'check_circle',
+  info: 'info',
+  warning: 'warning',
+  alert: 'error'
+};
+var InlineMessage = function InlineMessage(props) {
+  var _classNames2;
 
-export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, Input, InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
+  var appearance = props.appearance,
+      className = props.className,
+      description = props.description;
+  var baseProps = extractBaseProps(props);
+  var InlineMessageClass = classnames(_defineProperty$2({}, 'InlineMessage', true), className);
+  var IconClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, 'InlineMessage-icon', true), _defineProperty$2(_classNames2, 'InlineMessage-icon--warning', appearance === 'warning'), _classNames2));
+  var DescriptionClass = classnames(_defineProperty$2({}, "InlineMessage-text--".concat(appearance), appearance));
+  return /*#__PURE__*/React.createElement("div", _extends$3({
+    "data-test": "DesignSystem-InlineMessage"
+  }, baseProps, {
+    className: InlineMessageClass
+  }), appearance !== 'default' && /*#__PURE__*/React.createElement(Icon, {
+    "data-test": "DesignSystem-InlineMessage--Icon",
+    name: IconMapping[appearance],
+    appearance: appearance,
+    className: IconClass
+  }), /*#__PURE__*/React.createElement(Text, {
+    "data-test": "DesignSystem-InlineMessage--Description",
+    className: DescriptionClass
+  }, description));
+};
+InlineMessage.displayName = 'InlineMessage';
+InlineMessage.defaultProps = {
+  appearance: 'default',
+  description: ''
+};
+
+var renderCheckbox = function renderCheckbox(list, handleOnChange, ChoiceListDisabled, size, alignment, selected) {
+  return list.map(function (item, checkboxIndex) {
+    var name = item.name,
+        value = item.value,
+        helpText = item.helpText,
+        disabled = item.disabled,
+        label = item.label;
+    return /*#__PURE__*/React.createElement(Checkbox, {
+      key: checkboxIndex,
+      label: label,
+      onChange: handleOnChange,
+      disabled: disabled || ChoiceListDisabled,
+      helpText: helpText,
+      size: size,
+      name: name,
+      value: value,
+      defaultChecked: selected.length !== 0 && selected.includes(value),
+      className: getCheckboxClassName(alignment, checkboxIndex)
+    });
+  });
+};
+
+var renderRadio = function renderRadio(list, handleOnChange, ChoiceListDisabled, size, alignment, selected) {
+  return list.map(function (item, radioIndex) {
+    var name = item.name,
+        value = item.value,
+        helpText = item.helpText,
+        disabled = item.disabled,
+        label = item.label;
+    return /*#__PURE__*/React.createElement(Radio, {
+      key: radioIndex,
+      label: label,
+      onChange: handleOnChange,
+      disabled: disabled || ChoiceListDisabled,
+      helpText: helpText,
+      size: size,
+      name: name,
+      value: value,
+      defaultChecked: selected.length !== 0 && selected.includes(value),
+      className: getRadioClassName(alignment, radioIndex)
+    });
+  });
+};
+
+var getCheckboxClassName = function getCheckboxClassName(alignment, index) {
+  var _classNames;
+
+  var ChoiceListCheckboxClass = classnames((_classNames = {}, _defineProperty$2(_classNames, "ChoiceList-checkbox--".concat(alignment), true), _defineProperty$2(_classNames, 'ml-0', index === 0 && alignment === 'horizontal'), _defineProperty$2(_classNames, 'mt-0', index === 0 && alignment === 'vertical'), _classNames));
+  return ChoiceListCheckboxClass;
+};
+
+var getRadioClassName = function getRadioClassName(alignment, index) {
+  var _classNames2;
+
+  var ChoiceListRadioClass = classnames((_classNames2 = {}, _defineProperty$2(_classNames2, "ChoiceList-radio--".concat(alignment), true), _defineProperty$2(_classNames2, 'ml-0', index === 0 && alignment === 'horizontal'), _defineProperty$2(_classNames2, 'mt-0', index === 0 && alignment === 'vertical'), _classNames2));
+  return ChoiceListRadioClass;
+};
+
+var ChoiceList = function ChoiceList(props) {
+  var title = props.title,
+      choices = props.choices,
+      _props$alignment = props.alignment,
+      alignment = _props$alignment === void 0 ? 'vertical' : _props$alignment,
+      _props$allowMultiple = props.allowMultiple,
+      allowMultiple = _props$allowMultiple === void 0 ? false : _props$allowMultiple,
+      onChange = props.onChange,
+      _props$disabled = props.disabled,
+      disabled = _props$disabled === void 0 ? false : _props$disabled,
+      _props$size = props.size,
+      size = _props$size === void 0 ? 'regular' : _props$size;
+  var _props$selected = props.selected,
+      selected = _props$selected === void 0 ? [] : _props$selected;
+  var selectedChoiceValue = selected && selected || [];
+  var ChoiceListClass = classnames(_defineProperty$2({}, 'ChoiceList', true));
+  var ChoiceListVerticalClass = classnames(_defineProperty$2({}, 'ChoiceList--alignVertical', true));
+  var ChoiceHorizontalClass = classnames(_defineProperty$2({}, 'ChoiceList--alignHorizontal', true));
+
+  var handleOnChange = function handleOnChange(e) {
+    if (e.target.checked && allowMultiple) {
+      if (!selectedChoiceValue.includes(e.target.value)) {
+        selectedChoiceValue = [].concat(_toConsumableArray(selectedChoiceValue), [e.target.value]);
+      }
+    } else if (!e.target.checked && allowMultiple) {
+      selectedChoiceValue = selectedChoiceValue.filter(function (el) {
+        return el !== e.target.value;
+      });
+    }
+
+    if (!allowMultiple) {
+      if (!selectedChoiceValue.includes(e.target.value)) {
+        selectedChoiceValue = [];
+        selectedChoiceValue = [].concat(_toConsumableArray(selectedChoiceValue), [e.target.value]);
+      }
+    }
+
+    if (onChange) onChange(e, selectedChoiceValue);
+  };
+
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("fieldset", {
+    className: ChoiceListClass,
+    "data-test": "DesignSystem-ChoiceList-Wrapper"
+  }, title && title.trim() && /*#__PURE__*/React.createElement(Label, null, title.trim()), allowMultiple ? /*#__PURE__*/React.createElement("div", {
+    className: "".concat(alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass)
+  }, renderCheckbox(choices, handleOnChange, disabled, size, alignment, selected)) : /*#__PURE__*/React.createElement("div", {
+    className: "".concat(alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass)
+  }, renderRadio(choices, handleOnChange, disabled, size, alignment, selected))));
+};
+ChoiceList.displayName = 'ChoiceList';
+ChoiceList.defaultProps = {
+  alignment: 'vertical',
+  size: 'regular',
+  allowMultiple: false,
+  disabled: false
+};
+
+var Divider = function Divider(props) {
+  var _classNames;
+
+  var vertical = props.vertical,
+      appearance = props.appearance,
+      className = props.className;
+  var baseProps = extractBaseProps(props);
+  var DividerClass = classnames((_classNames = {}, _defineProperty$2(_classNames, 'Divider', true), _defineProperty$2(_classNames, 'Divider--horizontal', !vertical), _defineProperty$2(_classNames, 'Divider--vertical', vertical), _defineProperty$2(_classNames, 'Divider--basic', appearance !== 'header'), _defineProperty$2(_classNames, 'Divider--header', !vertical && appearance === 'header'), _classNames), className);
+  return /*#__PURE__*/React.createElement("hr", _extends$3({
+    "data-test": "DesignSystem-Divider"
+  }, baseProps, {
+    className: DividerClass
+  }));
+};
+Divider.displayName = 'Divider';
+Divider.defaultProps = {
+  appearance: 'basic',
+  vertical: false
+};
+
+var version = "2.11.0-0";
+
+export { Avatar, AvatarGroup, Backdrop, Badge, Breadcrumbs, Button, Calendar, Caption, Card, CardBody, CardFooter, CardHeader, CardSubdued, ChatMessage, Checkbox, Chip, ChipGroup, ChipInput, ChoiceList, Collapsible, Column, DatePicker, DateRangePicker, Dialog, Divider, Dropdown, Dropzone, EditableChipInput, EditableDropdown, EditableInput, EmptyState, FileList, FileUploader, FileUploaderList, FullscreenModal, Grid, GridCell, Heading, HorizontalNav, Icon, InlineMessage, Input, X as InputMask, Label, Legend, Link, List, Message, MetaList, MetricInput, Modal, ModalBody, ModalDescription, ModalFooter, ModalHeader, MultiSlider, Navigation, OutsideClick, PageHeader, Pagination, Paragraph, Pills, Placeholder, PlaceholderParagraph, Popover, ProgressBar, ProgressRing, Radio, RangeSlider, Row, Sidesheet, Slider, Spinner, StatusHint, Stepper, Subheading, Switch, Tab, Table, Tabs, TabsWrapper, Text, Textarea, TimePicker, Toast, Tooltip, index$1 as Utils, VerificationCodeInput, VerticalNav, version };
