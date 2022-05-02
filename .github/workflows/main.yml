@@ -68,7 +68,7 @@ jobs:
 
       - name: push version to github
         # if: steps.is_release_commit.outputs.result == 1
-        run: git push upstream 
+        run: git push upstream docs
 
       # - name: deploy storybook
       #   # if: steps.is_release_commit.outputs.result == 1
