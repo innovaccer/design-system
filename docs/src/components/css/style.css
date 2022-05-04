@@ -129,3 +129,8 @@ blockquote p {
   margin: 0;
   color: #000000;
 }
+
+.Heading-tooltip {
+  width: 80px;
+  text-align: center;
+}

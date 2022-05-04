@@ -60,6 +60,7 @@ const MDXHeading = ({ size, headingInfo }) => {
             position="bottom"
             appendToBody={false}
             boundaryElement={refHeading}
+            className="Heading-tooltip"
           >
             <Icon
               onClick={() => {
