@@ -16,7 +16,7 @@
     "dev": "concurrently --kill-others --raw \"npm run watch-css\" \"npm run start\"",
     "storybook": "start-storybook",
     "build-storybook": "build-storybook -c .storybook -o .dist --loglevel error",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook": "storybook-to-aws-s3",
     "setup-css-dev": "./scripts/setup-local-css.sh",
     "pre-commit": "lint-staged",
     "lint:check": "eslint ./src --ext .tsx,.ts",

@@ -48,7 +48,13 @@ jobs:
       - name: push version to github
         run: git push https://${{ secrets.GH_TOKEN }}@github.com/$GITHUB_REPOSITORY.git HEAD:next
     
-      
+      - name: deploy storybook
+        run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-next --aws-profile=NONE --ci
+        env:
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
+          AWS_REGION: ${{ secrets.DOCS_REGION }}
+
       - name: notify release
         uses: /innovaccer/design-system/actions/notify-release@next
         env:
