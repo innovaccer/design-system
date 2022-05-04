@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { useNavItems } from '../../util/NavItems';
+import React from 'react';
 import {
   VerticalNav,
   Subheading,
@@ -8,43 +7,11 @@ import {
 import { navigate } from 'gatsby';
 import { MOBILE } from '../../util/constants';
 
-const isBrowser = typeof window !== 'undefined';
-
 const LeftNav = (props) => {
-  const { relativePagePath, showMobile, frontmatter } = props;
-  const navItemsList = useNavItems(relativePagePath);
-  const navItems = navItemsList.filter((item) => {
-    if(relativePagePath.includes(MOBILE)){
-      return !item.hideInMobile;
-    }
-    return !item.hideInWeb;
-  });
-
-  const showMenuButtons = showMobile || frontmatter?.showMobile;
-  const [active, setActive] = React.useState();
-
-  function getActiveNavItem() {
-    const pathName = window.location.pathname;
-    if (isBrowser && pathName && frontmatter.tabs) {
-      const url = pathName.split('/');
-      const componentName = pathName.includes('mobile') ? url[2] + '/' + url[3] : url[1] + '/' + url[2];
-      const activeMenu = navItems.filter(({ link }) => {
-        return link && link.includes(componentName);
-      });
-      return activeMenu[0]?.link;
-    }
-    return pathName;
-  }
-
-  useEffect(() => {
-    const active = isBrowser ? getActiveNavItem() : '';
-    const obj = { link: active }
-    setActive(obj);
-  }, []);
+  const { relativePagePath, activeNavItem, navItems, showMenuButtons } = props;
 
   const onClickHandler = (menu) => {
     navigate(menu.link);
-    setActive(menu);
   };
 
   const handleNavigate = (name) => {
@@ -95,7 +62,7 @@ const LeftNav = (props) => {
       </Subheading>
       <VerticalNav
         menus={navItems}
-        active={active}
+        active={activeNavItem}
         onClick={onClickHandler}
         expanded={true}
         autoCollapse={false}

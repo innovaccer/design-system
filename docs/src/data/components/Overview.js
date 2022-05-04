@@ -25,6 +25,7 @@ function Overview({ data, mode }) {
         name="input"
         placeholder="Search components"
         onChange={({ target }) => onSearchHandler(target)}
+        autoComplete={false}
       />
 
       <Row>
@@ -38,7 +39,7 @@ function Overview({ data, mode }) {
                   className="pr-6 pb-6"
                 >
 
-                  <Link className='card-link' disabled={!link.length} to={ mode === "mobile" ? `/mobile/components/${(link)}` : `/components/${(link)}`}>
+                  <Link className='card-link' disabled={!link.length} to={ mode === "mobile" ? `/mobile/components/${(link)}/` : `/components/${(link)}/`}>
                     <Card
                       shadow='none'
                       className='w-100 overflow-hidden overview-card pb-5'

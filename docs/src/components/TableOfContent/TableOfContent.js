@@ -13,6 +13,7 @@ const TableOfContent = (props) => {
   const [active, setActive] = useState('');
 
   useEffect(() => {
+    console.log('inside useeffect 1')
     const navIds = getIds(navItems);
     let element = document.getElementById("main-container");
     element.addEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
@@ -22,6 +23,7 @@ const TableOfContent = (props) => {
   }, []);
 
   useEffect(() => {
+    console.log('inside useeffect 2')
     let urlHash = '';
     if (location && location.hash) {
       urlHash = location.hash.slice(1);

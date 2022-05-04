@@ -25,9 +25,9 @@ const MDXPage = (
   title,
   tabs,
   children,
-  is404Page,
   location,
-  logos
+  logos,
+  activeIndex
 }) => {
   const [isToastActive, setIsToastActive] = useState(false);
   const [codeCopyText, setCodeCopyText] = useState('')
@@ -130,6 +130,7 @@ const MDXPage = (
               pageDescription={description}
               logos={logos}
               frontmatter={newFrontmatter}
+              activeIndex={activeIndex}
             >
               <MDXProvider components={DSComponents}>
                 {children}
@@ -143,6 +144,7 @@ const MDXPage = (
               tabs={tabs}
               pageDescription={description}
               frontmatter={newFrontmatter}
+              activeIndex={activeIndex}
             >
               <MDXProvider components={DSComponents}>
                 {children}
@@ -157,7 +159,6 @@ const MDXPage = (
           style={{ height: 'calc(100vh - 48px)' }}
         >
           <TableOfContent
-            is404Page={is404Page}
             relativePagePath={relativePagePath}
             pageTitle={title}
             location={location}

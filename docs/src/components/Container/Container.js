@@ -8,6 +8,7 @@ import {
 } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
 import { useLogoItems } from '../../util/Logos';
+import { getTabSlug } from '../../util/Helpers';
 
 const Container = ({
   children,
@@ -16,44 +17,21 @@ const Container = ({
   relativePagePath,
   pageDescription,
   logos,
-  frontmatter
+  frontmatter,
+  activeIndex
 }) => {
   const nodes = useLogoItems();
-  const page = relativePagePath.split('/');
-  const pageName = page[page.length - 1].split('.')[0];
 
   const isSiblingTab = relativePagePath.split('.')[0] === '/' + pageTitle.replace(/\s/g, '');
   const tabsList = isSiblingTab ? frontmatter?.tabs : tabs;
   const logoList = isSiblingTab ? frontmatter?.logos : logos;
 
-  const getTabSlug = (tabIndex) => {
-    const tabName = tabsList[tabIndex];
-    let tabSlug = '';
-    if (tabName.length) {
-      tabSlug = tabName.toLowerCase().replace(/\s/g, '-');
-    }
-    return tabSlug;
-  };
-
-  const activeTab =
-    tabsList && tabsList.length
-      ? tabsList.findIndex(
-        (tab, index) =>
-          getTabSlug(index) === pageName.toLowerCase()
-      )
-      : '';
-
-  const [activeIndex, setActiveIndex] = React.useState(
-    activeTab || 0
-  );
-
   const onTabChangeHandler = (tabIndex) => {
-    const nextTabSlug = getTabSlug(tabIndex);
+    const nextTabSlug = getTabSlug(tabIndex, tabsList);
     const pagePath = relativePagePath.split('/');
     const pages = pagePath.slice(0, pagePath.length - 1);
     const path = `${pages.join('/')}/${nextTabSlug}/`;
     navigate(path, { state: { animation: false }, });
-    setActiveIndex(tabIndex);
   };
 
   const downloadAllLogos = () => {
