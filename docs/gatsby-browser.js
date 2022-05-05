@@ -21,6 +21,18 @@ exports.onRouteUpdate = ({ location, prevLocation }) => {
   // window.scrollTo(0,0);
 }
 
+exports.shouldUpdateScroll = ({
+  routerProps: { location },
+  getSavedScrollPosition
+}) => {
+  // const currentPosition = getSavedScrollPosition(location)
+  // const queriedPosition = getSavedScrollPosition({ pathname: `/random` })
+
+  window.scrollTo(0, 0)
+
+  return false;
+}
+
 exports.wrapPageElement = ({ element, props }) => {
   console.log('updated props', props);
   

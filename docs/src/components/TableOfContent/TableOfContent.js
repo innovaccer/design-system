@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useNavItems } from '../../util/InPageNavItems';
+import { useInPageNavItems } from '../../util/InPageNavItems';
 import { Subheading } from '@innovaccer/design-system';
 import { Link } from 'gatsby';
 import './TableOfContent.css';
@@ -9,21 +9,19 @@ const TableOfContent = (props) => {
   const clickedRef = useRef(false);
   const unsetClickedRef = useRef(null);
 
-  let navItems = useNavItems(relativePagePath);
+  let navItems = useInPageNavItems(relativePagePath);
   const [active, setActive] = useState('');
 
   useEffect(() => {
-    console.log('inside useeffect 1')
     const navIds = getIds(navItems);
     let element = document.getElementById("main-container");
-    element.addEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
+    element && element.addEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
     return () => {
       element.removeEventListener('scroll', (e) => onScrollHandler(e, navIds), true);
     }
   }, []);
 
   useEffect(() => {
-    console.log('inside useeffect 2')
     let urlHash = '';
     if (location && location.hash) {
       urlHash = location.hash.slice(1);
@@ -42,6 +40,7 @@ const TableOfContent = (props) => {
   }
 
   const onScrollHandler = (e, idList) => {
+    console.log('inside scroll handler')
     // Don't set the active index based on scroll if a link was just clicked
     if (clickedRef.current) {
       return;

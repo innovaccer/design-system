@@ -64,3 +64,36 @@ export function isInViewport(element) {
   else if(rect.bottom+25 > (window.innerHeight || document.documentElement.clientHeight)) return "belowViewPort";
   else return "aboveViewPort";
 }
+
+export function onScrollHandler(e, idList, clickedRef, activeNavSetter ) {
+
+  // Don't set the active index based on scroll if a link was just clicked
+  if (clickedRef.current) {
+    return;
+  }
+  if(e.target.classList.contains("in-page-nav")){
+    return;
+ }
+  const headerHeight = document.getElementById('mainHeader').getBoundingClientRect().height;
+  const viewportHeight = document.body.offsetHeight - headerHeight;
+  let resultFound = false;
+
+  idList && idList.forEach((item) => {
+    let element = document.getElementById(item);
+    if (element && !resultFound) {
+      const { top, height } = element.getBoundingClientRect();
+      if (top > 0 && viewportHeight > top - height) {
+        // setActive(item);
+        // activeInPageNav = item;
+        activeNavSetter(item);
+        console.log('inside scroll activeInPageNav', activeInPageNav);
+        resultFound = true;
+        let activeElement = document.getElementsByClassName('active-link')[0];
+        let flag = activeElement && isInViewport(activeElement);
+        if(flag === "belowViewPort") activeElement.scrollIntoView(true);
+        else if(flag === "aboveViewPort") activeElement.scrollIntoView(true);
+      };
+    };
+  });
+  // return activeInPageNav;
+};

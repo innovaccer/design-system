@@ -27,7 +27,12 @@ const MDXPage = (
   children,
   location,
   logos,
-  activeIndex
+  activeIndex,
+  activeInPageNav,
+  inPageNavItems,
+  onInPageNavClickHandler,
+  clickedRef,
+  unsetClickedRef
 }) => {
   const [isToastActive, setIsToastActive] = useState(false);
   const [codeCopyText, setCodeCopyText] = useState('')
@@ -162,6 +167,11 @@ const MDXPage = (
             relativePagePath={relativePagePath}
             pageTitle={title}
             location={location}
+            activeInPageNav={activeInPageNav}
+            inPageNavItems={inPageNavItems}
+            onInPageNavClickHandler={onInPageNavClickHandler}
+            clickedRef={clickedRef}
+            unsetClickedRef={unsetClickedRef}
           />
         </Column>
       </Row>

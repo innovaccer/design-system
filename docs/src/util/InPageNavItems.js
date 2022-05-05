@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export function useNavItems(relativePagePath) {
+export function useInPageNavItems(relativePagePath) {
   const {
     allMdx: { edges },
   } = useStaticQuery(graphql`
