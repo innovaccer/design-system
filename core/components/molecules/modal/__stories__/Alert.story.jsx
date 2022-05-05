@@ -59,7 +59,7 @@ const customCode = `() => {
 
   const onClose = () => {
     setOpen(!open);
-    console.log('on close triggered')();
+    console.log('on close triggered');
   };
 
   return (

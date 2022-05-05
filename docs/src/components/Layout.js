@@ -36,11 +36,6 @@ import axios from 'axios';
 const useGetStorybookData = async (name) => {
   let componentName = name;
 
-  if (!name.startsWith('components')) {
-    componentName = `components-${componentName}`
-  }
-
-
   const data = await axios.get(`/sb/${componentName}.json`)
     .then(({ data = {} }) => {
       if (!Object.keys(data).length) {
