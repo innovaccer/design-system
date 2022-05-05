@@ -1,151 +1,324 @@
-import * as React from 'react';
 import classNames from 'classnames';
-import { PopperWrapper, PopperWrapperProps } from '@/components/popperWrapper';
-import { BaseProps, filterProps } from '@/utils/types';
+import * as React from 'react';
+import { flip, offset, shift } from '@floating-ui/react-dom';
+import {
+  FloatingFocusManager,
+  FloatingPortal,
+  useClick,
+  useDismiss,
+  useInteractions,
+  useRole,
+  useId,
+  useFloating,
+  useHover,
+  FloatingContext,
+} from '@floating-ui/react-dom-interactions';
 
-type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'right';
+export type PositionType =
+  | 'bottom'
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'left'
+  | 'right';
 
-export interface CustomStyle {
-  height?: number | string;
-  minHeight?: number | string;
-  maxHeight?: number | string;
-  width?: number | string;
-  minWidth?: number | string;
-  maxWidth?: number | string;
-}
-
-const propsList = [
-  'appendToBody',
-  'trigger',
-  'hoverable',
-  'on',
-  'open',
-  'closeOnBackdropClick',
-  'offset',
-  'closeOnScroll',
-] as const;
-type PopperProps = typeof propsList[number];
-
-export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
+export type Offset = 'small' | 'medium' | 'large';
+export interface PopoverProps {
   /**
-   * To be rendered in `Popover` component
+   * Element triggering the `Popover`
    */
-  children: React.ReactNode;
+  trigger?: React.ReactElement<any>;
   /**
-   * Position to place the `trigger`
+   * Element to which the popover will be bound to
+   */
+  boundaryElement?: React.RefObject<any> | null;
+  /**
+   * Determines from where the popover starts to open/close
    *
-   * @param Position - 'top' | 'top-start' | 'top-end' | 'bottom'
-   * | 'bottom-start' | 'bottom-end' | 'left' | 'right'
    */
-  position: Position;
+  placement?: PositionType;
   /**
-   * Callback after `Popover` is toggled
+   * Elements to be rendered inside the popover
+   */
+  children: React.ReactElement<any>;
+  /**
+   * Custom inline styles to be added to popover
+   */
+  style?: React.CSSProperties;
+  /**
+   * ClassName to style the popover content
+   */
+  className?: string;
+  /**
+   * Shows `Popover` on hover
    *
-   * @param type - 'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'
    */
-  onToggle?: (open: boolean, type?: string) => void;
+  hoverable?: boolean;
   /**
-   * Changes background of `Popover`
-   */
-  dark?: boolean;
-  /**
-   * Adds custom CSS to `Popover` element
+   * Vertical offset from trigger
    *
    * <pre className="DocPage-codeBlock">
-   * CustomStyle {
-   *  height?: number | string;
-   *  width?: number | string;
-   *  minWidth?: number | string;
-   *  minHeight?: number | string;
-   *  maxHeight?: number | string;
-   *  maxWidth?: number | string;
+   * {
+   *    small: '2px',
+   *    medium: '4px',
+   *    large: '8px'
    * }
    * </pre>
    */
-  customStyle: CustomStyle;
+  offset?: Offset;
   /**
-   * Class to be added to PopperWrapper trigger
+   * Handles open/close
    */
-  triggerClass?: string;
+  open?: boolean;
   /**
-   * Hides the `Popover` when its reference element is outside of the `Popover` boundaries
+   * Sets popover background to dark
    */
-  hideOnReferenceEscape?: boolean;
+  dark?: boolean;
   /**
-   * BoundaryElement for `Popover`
+   * dissmiss object to configure when `Popover` is dismissed
+   *
+   * <pre className="DocPage-codeBlock">
+   * {
+   * enabled: true,
+   * escapeKey: true,
+   * referencePointerDown: true,
+   * outsidePointerDown: true,
+   * ancestorScroll: true,
+   * bubbles: true,
+   * }
+   * </pre>
+   *
+   * https://floating-ui.com/docs/useDismiss
    */
-  boundaryElement: React.RefObject<HTMLElement> | Element;
+  dismissOptions?: {
+    enabled?: boolean;
+    escapeKey?: boolean;
+    referencePointerDown?: boolean;
+    outsidePointerDown?: boolean;
+    ancestorScroll?: boolean;
+    bubbles?: boolean;
+  };
+
+  /**
+   * Callback after `Popover` is toggled
+   *
+   * returns the popover context object
+   */
+  onToggle?: (context: FloatingContext) => void;
 }
 
-export const Popover = (props: PopoverProps) => {
+/**
+ * @description Find DOM node from ref
+ * @param {ref} ref React ref
+ */
+
+/**
+ * Popup display additional information on click or hover event
+ * @class Popup
+ * @extends {React.Component<IProps, IState>}
+ */
+export const Popover: React.FC<PopoverProps> = (props) => {
   const {
-    position,
-    customStyle,
-    dark,
     children,
+    trigger,
+    open,
+    style: componentStyles,
+    placement,
+    hoverable,
+    offset: componentOffset,
+    dismissOptions,
     onToggle,
     className,
-    hideOnReferenceEscape,
-    boundaryElement = document.body,
-    ...rest
+    dark,
+    boundaryElement,
   } = props;
 
-  const [open, setOpen] = React.useState<boolean>(!!props.open);
-  const [init, setInit] = React.useState(false);
+  const [isOpen, setOpen] = React.useState<boolean>(open ?? false);
+  const [animationKeyframe, setKeyframe] = React.useState<string>('');
+  const [animation, setAnimation] = React.useState<string>('');
+  const [maxHeight, setMaxHeight] = React.useState<number>(0);
+
+  const id = useId();
+  const labelId = `${id}-label`;
+  const descriptionId = `${id}-description`;
+  const animationId = `${id}-animation`;
+
+  let animationDelayTimer: NodeJS.Timeout | null = null;
+
+  let offsetNumber = 2;
+  if (componentOffset === 'small') {
+    offsetNumber = 2;
+  }
+  if (componentOffset === 'medium') {
+    offsetNumber = 4;
+  }
+  if (componentOffset === 'large') {
+    offsetNumber = 8;
+  }
+
+  const onOpenChange = async (open: boolean) => {
+    const isTop = currentPlacement.includes('top');
+    const animationFrame = `
+      @keyframes popper-open-${animationId} {
+        from {
+          max-height: 0;
+          ${isTop ? `margin-top: 0px` : ''};
+        }
+        to {
+          max-height: ${maxHeight}px;
+          ${isTop ? `margin-top: -${maxHeight}px` : ''};
+        }
+      }
+      @keyframes popper-close-${animationId} {
+        from {
+          max-height: ${maxHeight}px;
+          ${isTop ? `margin-top: -${maxHeight}px` : ''};
+        }
+        to {
+          max-height: 0;
+          ${isTop ? `margin-top: 0px` : ''};
+        }
+      }
+      `;
+
+    if (maxHeight) {
+      await setKeyframe(animationFrame);
+      if (open) {
+        await setAnimation(`popper-open-${animationId} 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms`);
+      } else {
+        await setAnimation(`popper-close-${animationId} 120ms cubic-bezier(0.2, 0, 1, 0.9), fadeOut 120ms `);
+      }
+      animationDelayTimer = setTimeout(() => setOpen(open), 120);
+    }
+  };
+
+  const {
+    x,
+    y,
+    reference,
+    floating,
+    strategy,
+    refs,
+    context,
+    placement: currentPlacement,
+  } = useFloating({
+    open: isOpen,
+    onOpenChange: trigger ? onOpenChange : undefined,
+    middleware: [offset(offsetNumber), flip({ boundary: boundaryElement as any, altBoundary: true }), shift()],
+    placement,
+  });
 
   React.useEffect(() => {
-    if (props.open !== undefined) setOpen(props.open);
-  }, [props.open]);
-
-  const defaultOnToggle = React.useCallback((newOpen: boolean | ((prevState: boolean) => boolean)) => {
-    setOpen(newOpen);
+    if (!maxHeight) {
+      const fn = async () => {
+        await setOpen(true);
+        const offsetHeight = refs.floating.current?.offsetHeight;
+        if (offsetHeight) {
+          setMaxHeight(offsetHeight);
+        }
+        setOpen(isOpen);
+      };
+      fn();
+    }
+    return () => {
+      clearTimeout(Number(animationDelayTimer));
+    };
   }, []);
 
+  const interactions = [
+    useClick(context, { pointerDown: false }),
+    useRole(context),
+    useDismiss(context, { ...dismissOptions }),
+  ];
+
+  const { getReferenceProps, getFloatingProps } = useInteractions(
+    hoverable ? [...interactions, useHover(context)] : interactions
+  );
+
   React.useEffect(() => {
-    if (!init) {
-      if ('current' in boundaryElement && boundaryElement.current) {
-        setInit(true);
-      }
-    }
-  }, [boundaryElement]);
+    onToggle && onToggle(context);
+  }, [context]);
 
   const classes = classNames(
     {
-      Popover: true,
       ['Popover--dark']: dark,
+      [`${className}`]: className,
     },
-    className
+    `Popover`
   );
 
-  const PopoverWrapper = (
-    <div data-test="DesignSystem-Popover" className={classes} data-layer={true}>
-      {children}
-    </div>
+  const positionOffset = {
+    'auto-start': 'top left',
+    auto: 'top',
+    'auto-end': 'top right',
+    'top-start': 'bottom left',
+    top: 'bottom left',
+    'top-end': 'bottom right',
+    'right-start': 'top right',
+    right: 'top right',
+    'right-end': 'top right',
+    'bottom-end': 'top right',
+    bottom: 'top',
+    'bottom-start': 'top left',
+    'left-end': 'top left',
+    left: 'top left',
+    'left-start': 'top left',
+  };
+
+  const popover = (
+    <FloatingFocusManager context={context}>
+      <div
+        data-test="DesignSystem-Popover"
+        {...getFloatingProps({
+          className: classes,
+          ref: floating,
+          style: {
+            left: x ?? '',
+            top: y ?? '',
+            position: strategy,
+            animation: animation,
+            overflow: 'clip',
+            transformOrigin: positionOffset[currentPlacement],
+            ...componentStyles,
+          },
+          'aria-labelledby': labelId,
+          'aria-describedby': descriptionId,
+          onAnimationEnd: () => {
+            if (currentPlacement.includes('top')) {
+              Object.assign(refs.floating.current?.style, {
+                marginTop: `-${maxHeight}px`,
+              });
+            }
+          },
+        })}
+      >
+        {children}
+      </div>
+    </FloatingFocusManager>
   );
+
+  const referenceProps = { ...getReferenceProps({ ref: reference }) };
 
   return (
-    <PopperWrapper
-      {...rest}
-      init={init}
-      boundaryElement={'current' in boundaryElement ? boundaryElement.current : boundaryElement}
-      open={open}
-      hide={hideOnReferenceEscape}
-      style={customStyle}
-      onToggle={onToggle || defaultOnToggle}
-      placement={position}
-    >
-      {PopoverWrapper}
-    </PopperWrapper>
+    <>
+      {trigger
+        ? React.cloneElement(trigger, {
+            ...referenceProps,
+            onClick: open ? () => onOpenChange(!isOpen) : referenceProps?.onClick,
+          })
+        : null}
+      <style>{animationKeyframe}</style>
+      {isOpen && trigger && <FloatingPortal>{popover}</FloatingPortal>}
+      {isOpen && !trigger && popover}
+    </>
   );
 };
 
-Popover.displayName = 'Popover';
-
-Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
-  offset: 'large',
-  position: 'bottom',
-  hideOnReferenceEscape: true,
-  customStyle: {},
-});
+Popover.defaultProps = {
+  placement: 'bottom-start',
+  offset: 'medium',
+};
 
 export default Popover;

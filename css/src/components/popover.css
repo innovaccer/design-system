@@ -1,6 +1,5 @@
 .Popover {
   border-radius: var(--spacing-m);
-  position: absolute;
   z-index: 500;
   background: var(--white);
   box-shadow: var(--shadow-l);
@@ -14,4 +13,18 @@
 .Popover[data-hide='true'] {
   visibility: hidden;
   pointer-events: none;
+}
+
+@keyframes popper-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
