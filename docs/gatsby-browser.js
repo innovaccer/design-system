@@ -14,8 +14,8 @@ const Layout = require("./src/components/Layout").default;
 const Home = require("./src/pages/index").default;
 
 exports.onRouteUpdate = ({ location, prevLocation }) => {
-  console.log("new pathname", location.pathname)
-  console.log("old pathname", prevLocation ? prevLocation.pathname : null);
+  // console.log("new pathname", location.pathname)
+  // console.log("old pathname", prevLocation ? prevLocation.pathname : null);
   // let element = document.getElementById("main-container");
   //   element.addEventListener('scroll', (e) => console.log('im scrolling'));
   // window.scrollTo(0,0);

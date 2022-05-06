@@ -6,9 +6,16 @@ import {
 } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
 import { MOBILE } from '../../util/constants';
+import { useEffect } from 'react';
 
 const LeftNav = (props) => {
   const { relativePagePath, activeNavItem, navItems, showMenuButtons } = props;
+
+  console.log('activeNavItem inside leftnav', activeNavItem);
+
+  useEffect(() => {
+    console.log('inside leftnav useeffect', activeNavItem);
+  },[activeNavItem]);
 
   const onClickHandler = (menu) => {
     navigate(menu.link);

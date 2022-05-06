@@ -65,8 +65,8 @@ export function isInViewport(element) {
   else return "aboveViewPort";
 }
 
-export function onScrollHandler(e, idList, clickedRef, activeNavSetter ) {
-
+export function onScrollHandler(e, idList, clickedRef, getActiveNav ) {
+  console.log('inside onScrollHandler');
   // Don't set the active index based on scroll if a link was just clicked
   if (clickedRef.current) {
     return;
@@ -85,8 +85,9 @@ export function onScrollHandler(e, idList, clickedRef, activeNavSetter ) {
       if (top > 0 && viewportHeight > top - height) {
         // setActive(item);
         // activeInPageNav = item;
-        activeNavSetter(item);
-        console.log('inside scroll activeInPageNav', activeInPageNav);
+        // activeNavSetter(item);
+        // getActiveNav(item);
+        //console.log('inside scroll activeInPageNav', activeInPageNav);
         resultFound = true;
         let activeElement = document.getElementsByClassName('active-link')[0];
         let flag = activeElement && isInViewport(activeElement);

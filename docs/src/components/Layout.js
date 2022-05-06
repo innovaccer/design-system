@@ -23,14 +23,7 @@ const Layout = (props) => {
   const newFrontmatter = useFrontmatter(relativePagePath);
   const showAnimation = location.state?.animation === false ? false : true;
 
-  useEffect(() => {
-    console.log('im mounting');
-    return () => {
-      console.log('im unmounting');
-    }
-  }, []);
-
-  // for leftNav Items List
+  // ================for leftNav Items List====================
   const navItemsList = useNavItems(relativePagePath);
   const navItems = navItemsList.filter((item) => {
     if (relativePagePath.includes(MOBILE)) {
@@ -39,38 +32,62 @@ const Layout = (props) => {
     return !item.hideInWeb;
   });
 
-  const activeNavItem = getActiveNavItem(props.path, navItems, newFrontmatter);
+  let activeNavItem = getActiveNavItem(props.path, navItems, newFrontmatter);
 
-  // for Table of Content Scroll Behaviour
+  useEffect(() => {
+    console.log('im mounting');
+    activeNavItem = getActiveNavItem(props.path, navItems, newFrontmatter);
+    console.log('activeNavItem', activeNavItem);
+    return () => {
+      console.log('im unmounting');
+    }
+  }, []);
+
+  // =============for Table of Content Scroll Behaviour=================
   const clickedRef = useRef(false);
   const unsetClickedRef = useRef(null);
   let activeInPageNav = '';
 
-  // let inPageNavItems = useInPageNavItems(relativePagePath);
-  // const navIds = getIds(inPageNavItems);
+  let inPageNavItems = useInPageNavItems(relativePagePath);
+  const navIds = getIds(inPageNavItems);
 
-  // function getActiveNav(value) {
-  //   if (value) {
-  //     activeInPageNav = value;
-  //   }
-  //   console.log('activenav inside setter', activeInPageNav);
-  //   return activeInPageNav;
-  // }
+  function getActiveNav(value) {
+    console.log('value-> ', value);
+    let urlHash = '';
+    if (location && location.hash) {
+      urlHash = location.hash.slice(1);
+      activeInPageNav = urlHash;
+    } 
+    else if (inPageNavItems && inPageNavItems.length) {
+      activeInPageNav = inPageNavItems[0].url?.slice(1);
+    }
+    else if (value) {
+      activeInPageNav = value;
+    }
+    console.log('activenav inside setter', activeInPageNav);
+    return activeInPageNav;
+  }
 
-  // let element = document.getElementById("main-container");
-  // element && element.addEventListener('scroll', (e) => {
-  //   activeInPageNav = onScrollHandler(e, navIds, clickedRef, activeInPageNav, getActiveNav);
-  //   getActiveNav();
-  //   // console.log('result--> ', activeInPageNav);
-  // }, true);
+  let element = document.getElementById("main-container");
+  element && element.addEventListener('scroll', (e) => {
+    onScrollHandler(e, navIds, clickedRef, getActiveNav);
+    // getActiveNav();
+    // console.log('result--> ', activeInPageNav);
+  }, true);
 
-  // let urlHash = '';
-  // if (location && location.hash) {
-  //   urlHash = location.hash.slice(1);
-  //   activeInPageNav = urlHash;
-  // } else if (navItems && navItems.length) {
-  //   activeInPageNav = navItems[0].url?.slice(1);
-  // }
+  const onInPageNavClickHandler = (e, itemUrl) => {
+    console.log('itemUrl', itemUrl);
+    getActiveNav(itemUrl);
+
+    let activeElement = document.getElementById(itemUrl);
+    activeElement.scrollIntoView(true);
+
+    // Used to disable onScrollHandler if the page scrolls due to a click
+    clickedRef.current = true;
+    unsetClickedRef.current = setTimeout(() => {
+      clickedRef.current = false;
+    }, 0);
+  };
 
   return (
     <>
@@ -89,8 +106,8 @@ const Layout = (props) => {
         <LeftNav
           relativePagePath={relativePagePath}
           showMenuButtons={showMobile || newFrontmatter?.showMobile}
-          // activeNavItem={getActiveNavItem(props.path, navItems, newFrontmatter)}
-          activeNavItem={activeNavItem}
+          activeNavItem={getActiveNavItem(props.path, navItems, newFrontmatter)}
+          // activeNavItem={activeNavItem}
           navItems={navItems}
         />
 
@@ -105,9 +122,9 @@ const Layout = (props) => {
             location={location}
             logos={logos}
             activeIndex={getActiveTab(relativePagePath, title, newFrontmatter, tabs)}
-            //inPageNavItems={inPageNavItems}
-            // onInPageNavClickHandler={onInPageNavClickHandler}
-            //activeInPageNav={getActiveNav()}
+            inPageNavItems={inPageNavItems}
+            onInPageNavClickHandler={onInPageNavClickHandler}
+            activeInPageNav={getActiveNav()}
             clickedRef={clickedRef}
             unsetClickedRef={unsetClickedRef}
           />
