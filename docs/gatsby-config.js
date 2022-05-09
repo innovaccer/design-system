@@ -158,8 +158,8 @@ module.exports = {
         ],
         plugins: [`gatsby-remark-images`],
         defaultLayouts: {
-          default: require.resolve('./src/components/templates/Default.js'),
-          home: require.resolve('./src/components/templates/Homepage.js'),
+          // default: require.resolve('./src/components/templates/Default.js'),
+          // home: require.resolve('./src/components/templates/Homepage.js'),
         },
       },
     },

@@ -15,6 +15,7 @@ import ProductColors from '../Colors/Colors';
 import ComponentsContainer from '../Container/ComponentsContainer';
 import Container from '../Container';
 import '../css/style.css';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const MDXPage = (
   {
@@ -130,7 +131,8 @@ const MDXPage = (
               frontmatter={newFrontmatter}
             >
               <MDXProvider components={DSComponents}>
-                {children}
+                <MDXRenderer frontmatter={newFrontmatter}>{children}</MDXRenderer>
+                {/* <MDXRenderer>{children}</MDXRenderer> */}
               </MDXProvider>
             </Container>
           )}
@@ -143,7 +145,8 @@ const MDXPage = (
               frontmatter={newFrontmatter}
             >
               <MDXProvider components={DSComponents}>
-                {children}
+                <MDXRenderer frontmatter={newFrontmatter}>{children}</MDXRenderer>
+                {/* {children} */}
               </MDXProvider>
             </ComponentsContainer>
           )}

@@ -15,7 +15,7 @@ const Layout = (props) => {
   const { frontmatter = {}, titleType, relativePagePath, location, children } = props;
   const { title, description, keywords, tabs, logos, showMobile = false } = frontmatter;
   const showAnimation = location.state?.animation === false ? false : true;
-  const newFrontmatter = useFrontmatter(relativePagePath);
+  // const newFrontmatter = useFrontmatter(relativePagePath);
 
   return (
     <>
@@ -24,7 +24,7 @@ const Layout = (props) => {
         docTitle={title}
         docDescription={description}
         pageKeywords={keywords}
-        frontmatter={newFrontmatter}
+        frontmatter={frontmatter}
         relativePagePath={relativePagePath}
       />
       <Header
@@ -33,7 +33,7 @@ const Layout = (props) => {
       <Row style={{ height: 'calc(100vh - 48px)' }}>
         <LeftNav
           relativePagePath={relativePagePath}
-          frontmatter={newFrontmatter}
+          frontmatter={frontmatter}
           showMobile={showMobile}
         />
 
@@ -41,16 +41,17 @@ const Layout = (props) => {
           className={`${showAnimation ? "page-animation" : ''} page-scroll h-100`}
           id="main-container"
         >
-          <MDXPage
+          {/* <MDXPage
             relativePagePath={relativePagePath}
             description={description}
-            newFrontmatter={newFrontmatter}
+            newFrontmatter={frontmatter}
             title={title}
             tabs={tabs}
             children={children}
             location={location}
             logos={logos}
-          />
+          /> */}
+          {children}
           <Footer relativePagePath={relativePagePath} />
         </Column>
       </Row>

@@ -27,9 +27,9 @@ export function useFrontmatter(relativePagePath) {
   const data = edges.filter(item => {
     const { slug, frontmatter } = item.node;
     if (relativePagePath.includes('mobile')) {
-      return slug.includes(componentName) && slug.includes('mobile') && frontmatter.title != frontmatter.description
+      return slug.includes(componentName) && slug.includes('mobile') && frontmatter.title !== "" && frontmatter.description
     }
-    return slug.includes(componentName) && !slug.includes('mobile') && frontmatter.title != frontmatter.description
+    return slug.includes(componentName) && !slug.includes('mobile') && frontmatter.title !== "" && frontmatter.description
   });
   const frontmatter = data[0]?.node.frontmatter;
   return frontmatter;
