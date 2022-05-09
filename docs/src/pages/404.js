@@ -10,7 +10,7 @@ import { useNavItems } from '../util/NavItems';
 
 const PageNotFound = () => {
   const pathName = typeof window !== 'undefined' && window.location.pathname;
-  const navItemsList = useNavItems(pathName);
+  const navItemsList = pathName ? useNavItems(pathName): [];
 
   useEffect(() => {
     let redirectPath;
