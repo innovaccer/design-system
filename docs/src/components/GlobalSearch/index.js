@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useSearchItems } from '../../util/Search';
 import { Input, Popover, Icon, Text, Subheading } from '@innovaccer/design-system';
 import { Link } from "gatsby";
@@ -89,7 +89,7 @@ const PageHit = ({ searchList, query }) => {
   })
 
   return (
-    <div>
+    <div className='w-100'>
       {components.length > 0 && <ShowResults query={query} name="Components" list={components} />}
       {patterns.length > 0 && <ShowResults query={query} name="Patterns" list={patterns} />}
       {foundations.length > 0 && <ShowResults query={query} name="Foundations" list={foundations} />}
@@ -105,7 +105,7 @@ const NoQueryResult = () => {
     <div className="p-7 d-flex align-items-center overflow-hidden">
       <Icon className="mr-6" appearance='subtle' size={24} name='touch_app' />
       <Text weight="medium" appearance='subtle'>
-        Tip: Press ’s’ to quickly start searching.
+        Tip: Press ’cmd + k’ to quickly start searching.
       </Text>
     </div>
   )
@@ -116,7 +116,7 @@ const NoResultFound = ({ query }) => {
     <div className="p-7 d-flex align-items-center overflow-hidden">
       <Icon className="mr-6" appearance='subtle' size={24} name='search_off' />
       <Text weight="medium">
-        {`No results found for ${query}`}
+        {`No results found for '${query}'`}
       </Text>
     </div>
   )
@@ -130,11 +130,23 @@ const ShowQueryResult = ({ query, searchResult }) => {
   )
 }
 
+const Content = ({ query, searchResult }) => {
+  return (
+    <>
+      {query === '' && <NoQueryResult />}
+      {query && searchResult.length === 0 && <NoResultFound query={query} />}
+      {
+        query && searchResult.length != 0 &&
+        <ShowQueryResult query={query} searchResult={searchResult} />
+      }
+    </>
+  )
+}
+
 const Search = ({ parentRef }) => {
-  const [query, setQuery] = useState(null);
+  const [query, setQuery] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const [openPopover, setOpenPopover] = useState(false);
-  const [isInstantSearch, setInstanceSearch] = useState(false);
   const searchList = useSearchItems();
   const searchRef = useRef();
 
@@ -149,28 +161,25 @@ const Search = ({ parentRef }) => {
 
   const handleInstantSearch = (e) => {
     const inputField = searchRef.current;
-    if ((e.key === "S" || e.key === "s") && inputField !== document.activeElement) {
+    if ((e.ctrltKey || e.metaKey) && (e.key === 'K' || e.key === 'k')) {
       e.preventDefault();
-      setInstanceSearch(true);
       inputField.click();
     }
   }
 
   const handleSearchQuery = debounce((target) => {
     const query = target.value;
-    if (isInstantSearch) {
-      setInstanceSearch(false);
-      setQuery(null);
-    } else {
-      setQuery(query);
-    }
     setOpenPopover(true);
     const list = searchList.filter((data) => {
       const { title, description } = data.node.frontmatter;
-      return title.toLowerCase().includes(query.toLowerCase()) || description.toLowerCase().includes(query.toLowerCase());
+      return title.toLowerCase().includes(query?.toLowerCase()) || description.toLowerCase().includes(query?.toLowerCase());
     });
     setSearchResult(list);
   });
+
+  const onClear = useCallback(() => {
+    setQuery('');
+  }, []);
 
   return (
     <div className='d-flex justify-content-end align-items-center'>
@@ -179,25 +188,25 @@ const Search = ({ parentRef }) => {
         open={openPopover}
         appendToBody={false}
         boundaryElement={parentRef}
-        className="pt-2 mr-4 overflow-auto Search-result"
+        className="pt-2 mr-4 mt-3 overflow-auto Search-result"
         trigger={
           <Input
             ref={searchRef}
             icon="search"
             name="input"
             autoComplete="off"
+            value={query}
             placeholder="Search components, patterns.."
-            onChange={({ target }) => handleSearchQuery(target)}
+            onClear={(e) => onClear(e)}
             onBlur={() => setOpenPopover(false)}
+            onChange={({ target }) => {
+              setQuery(target.value);
+              handleSearchQuery(target)
+            }}
           />
         }
       >
-        {!query && <NoQueryResult />}
-        {query && searchResult.length === 0 && <NoResultFound query={query} />}
-        {
-          query && searchResult.length != 0 &&
-          <ShowQueryResult query={query} searchResult={searchResult} />
-        }
+        <Content query={query} searchResult={searchResult} />
       </Popover>
     </div>
   );
