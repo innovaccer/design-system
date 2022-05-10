@@ -14,10 +14,16 @@ import {
   Card,
   Badge,
   Text,
-  Icon,
   Link,
-  Subheading
+  Subheading,
+  Icon
 } from '@innovaccer/design-system';
+import * as HomeIcons from '../util/HomeIcons';
+
+const MenuIcons = ({ name }) => {
+  const SvgIcons = HomeIcons[name] || (() => <div></div>);
+  return <SvgIcons />
+}
 
 const Home = () => {
 
@@ -84,7 +90,7 @@ const Home = () => {
               <Column>
                 <StaticImage
                   src="./home/HomeBanner.png"
-                  alt="test"
+                  alt="Masala Design System"
                 />
               </Column>
             </Row>
@@ -103,16 +109,9 @@ const Home = () => {
                         >
                           <div className='d-flex'>
                             <div className='mr-6'>
-                              <span
-                                className='border-radius--rounded p-4 d-inline-flex'
-                                style={{ backgroundColor: `var(--${menuItem.appearance}-lightest)` }}
-                              >
-                                <Icon
-                                  name={menuItem.icon}
-                                  appearance={menuItem.appearance}
-                                  size={24}
-                                />
-                              </span>
+                              <Icon>
+                                <MenuIcons name={menuItem.img} />
+                              </Icon>
                             </div>
 
                             <div>
