@@ -4,6 +4,10 @@ description: UI states are used to inform users about the various states a page 
 tabs: ["Usage", "Code"]
 ---
 
+import noContentImage from './images/noContent.png';
+import noSearch from './images/noSearch.png';
+import pageNotLoaded from './images/pageNotLoaded.png';
+
 UI states are used to inform users about the various states a page or container can be. There can be 4 possible states for a typical workflow:
 1. Loading states
 2. Content placeholders
@@ -152,13 +156,52 @@ A typical process starts with loading the app first. If we go step by step -
 
 #### Examples
 ##### No content available
-<Preview name="components-emptystate-no-content-available--no-content-available" />
+<div className="py-5" style={{ backgroundColor: 'var(--secondary-lightest)'}}>
+    <EmptyState 
+        description="Campaigns let you reach out to patients with text messages, emails and voice calls" 
+        imageSrc={noContentImage}
+        size="large" 
+        title="Manage your outreach campaigns"
+    >
+    <Button appearance="primary" size="large">
+        Reload page
+    </Button>
+    </EmptyState>
+</div>
+
+<br/>
 
 ##### No search results
-<Preview name="components-emptystate-no-search-results--no-search-results" />
+<div className="py-5" style={{ backgroundColor: 'var(--secondary-lightest)'}}>
+    <EmptyState 
+        description="Try adjusting your search to find what you are looking for." 
+        imageSrc={noSearch}
+        size="small" 
+        title="We didn't find a match"
+    >
+        <Button appearance="basic">
+            Try Again
+        </Button>
+    </EmptyState>
+</div>
+
+<br/>
 
 ##### Error (page not loaded)
-<Preview name="components-emptystate-page-not-loaded-with-svg--page-not-loaded-with-svg" />
+<div className="py-5" style={{ backgroundColor: 'var(--secondary-lightest)'}}>
+    <EmptyState 
+        description="A technical problem is preventing the page from loading. Try reloading this page." 
+        imageSrc={pageNotLoaded} 
+        size="large" 
+        title="There's a problem loading this page."
+    >
+        <Button appearance="primary" size="large">
+            Reload page
+        </Button>
+    </EmptyState>
+</div>
+
+<br/>
 
 ##### Error (search/filter/pagination)
 <br/>
