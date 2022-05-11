@@ -89,7 +89,7 @@ const customCode = `() => {
   const dimension = 'medium';
   const onClose = () => {
     setOpen(!open);
-    console.log('on close triggered')();
+    console.log('on close triggered');
   };
 
   const data = [{ Name:'ER Education' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }, { Name:'Cervical Screening' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }, { Name:'Cervical Screening' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }];

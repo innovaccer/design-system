@@ -277,7 +277,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -482,7 +482,7 @@
     "options": {},
     "fileName": "./core/components/atoms/button/__stories__/SplitButton.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"d-flex\">\n    <Button className=\"mr-2\" aria-label=\"Request review\">\n      Request review\n    </Button>\n    <div className=\"mb-10\" style={{ width: '150px' }}>\n      <Dropdown menu={true} icon=\"expand_more\" options={options} />\n    </div>\n  </div>\n)"
+      "source": "() => {\n\n  const options = [\n    {\n      label: 'Download All',\n      value: 'Download All',\n    },\n    {\n      label: 'Download Selected',\n      value: 'Download Selected',\n    },\n  ];\n\n  return (\n    <div className=\"d-flex\">\n      <Button className=\"mr-2\" aria-label=\"Request review\">\n        Request review\n      </Button>\n      <div className=\"mb-10\" style={{ width: '150px' }}>\n        <Dropdown menu={true} icon=\"expand_more\" options={options} />\n      </div>\n    </div>\n  )\n}"
     },
     "__isArgsStory": false,
     "__id": "components-button-split-button--split-button",
