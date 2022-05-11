@@ -17,7 +17,7 @@ const StatusTag = ({ category }) => {
   return <Badge appearance={appearance[categoryName]}>{category}</Badge>
 }
 
-function Overview({ data, mode }) {
+function Overview({ data, mode, path = 'components' }) {
 
   const [previewList, setPreviewList] = useState(data);
   const [searchKey, setSearchKey] = useState('')
@@ -53,7 +53,7 @@ function Overview({ data, mode }) {
                   <Link
                     className='card-link'
                     disabled={!link.length}
-                    to={mode === "mobile" ? `/mobile/components/${(link)}` : `/components/${(link)}`}
+                    to={mode === "mobile" ? `/mobile/${path}/${(link)}` : `/${path}/${(link)}`}
                   >
                     <Card
                       shadow='none'
