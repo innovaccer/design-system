@@ -73,7 +73,6 @@ function getPropTableData(name) {
     })
 }
 
-
 const Preview = ({ name }) => {
   return (
     <div>
@@ -155,7 +154,6 @@ const PreviewWithPropTable = ({ name }) => {
   );
 };
 
-
 const List = ({ children, ...rest }) => {
   return (
     <div className='list'>
@@ -168,6 +166,105 @@ const leftMenuList = [
     title: 'Masala Design System'
   }
 ];
+
+const ComponentsPage = (props) => {
+  const {
+    tabs,
+    children,
+    pageTitle,
+    frontmatter,
+    DSComponents,
+    relativePagePath,
+    pageDescription
+  } = props;
+
+  return (
+    <ComponentsContainer
+      pageTitle={pageTitle}
+      relativePagePath={relativePagePath}
+      tabs={tabs}
+      pageDescription={pageDescription}
+      frontmatter={frontmatter}
+    >
+      <MDXProvider components={DSComponents}>
+        {children}
+      </MDXProvider>
+    </ComponentsContainer>
+  )
+}
+
+const MDXPage = (props) => {
+  const {
+    tabs,
+    children,
+    pageTitle,
+    frontmatter,
+    DSComponents,
+    relativePagePath,
+    pageDescription,
+    logos
+  } = props;
+
+  return (
+    <Container
+      pageTitle={pageTitle}
+      relativePagePath={relativePagePath}
+      tabs={tabs}
+      pageDescription={pageDescription}
+      logos={logos}
+      frontmatter={frontmatter}
+    >
+      <MDXProvider components={DSComponents}>
+        {children}
+      </MDXProvider>
+    </Container>
+  )
+}
+
+const OverviewContainer = (props) => {
+  return (
+    <Row className='justify-content-center'>
+      <Column className="px-11 py-8 min-vh-100 overview-container" size={12}>
+        <ComponentsPage {...props} />
+      </Column>
+    </Row>
+  )
+}
+
+const MarkdownContainer = (props) => {
+  const {
+    relativePagePath,
+    is404,
+    pageTitle,
+    location
+  } = props;
+
+  return (
+    <Row className='justify-content-center'>
+      <Column className="px-11 py-8 min-vh-100 inner-left-container" size={9}>
+        {
+          !relativePagePath.includes('components') ?
+            <MDXPage {...props} />
+            :
+            <ComponentsPage {...props} />
+        }
+      </Column>
+
+      <Column
+        size={3}
+        className="pb-6 in-page-nav position-sticky scroll-y"
+        style={{ height: 'calc(100vh - 48px)' }}
+      >
+        <TableOfContent
+          is404Page={is404}
+          relativePagePath={relativePagePath}
+          pageTitle={pageTitle}
+          location={location}
+        />
+      </Column>
+    </Row>
+  )
+}
 
 const Layout = ({
   children,
@@ -190,6 +287,7 @@ const Layout = ({
   const [tooltipName, setTooltipName] = useState(copyMessage);
   const frontmatter = useFrontmatter(relativePagePath);
   const refCode = React.createRef();
+  const isOverviewPage = relativePagePath.includes('overview');
 
   const copyToClipboard = (str) => {
     if (typeof (str) === "string") {
@@ -247,12 +345,14 @@ const Layout = ({
     setToastTitle(name);
     setTimeout(() => setIsToastActive(false), 1500);
   }
+
   const toggleTooltip = (name, type) => {
     if (type === "code") {
       setTooltipActiveCode(true)
     }
     setTooltipName(name);
   }
+
   const Logos = ({ children, logoData, ...rest }) => {
     return (
       <ProductLogos
@@ -276,6 +376,7 @@ const Layout = ({
       />
     );
   };
+
   const DSComponents = {
     ...MDSComponents,
     pre: Code,
@@ -297,6 +398,7 @@ const Layout = ({
     Rectangle: (props) => <Rectangle {...props} />,
     Colors: (props) => <Colors {...props} />,
   };
+  
   const showAnimation = () => {
     if (location.state?.animation === false) return false;
     return true;
@@ -325,50 +427,30 @@ const Layout = ({
           frontmatter={frontmatter}
         />
         <Column className={`${showAnimation() ? "page-animation" : ''} page-scroll h-100`} id="main-container">
-          <Row className='justify-content-center'>
-            <Column className="px-12 py-8 min-vh-100 inner-left-container" size={9}>
-              {!relativePagePath.includes('components') && (
-                <Container
-                  pageTitle={pageTitle}
-                  relativePagePath={relativePagePath}
-                  tabs={tabs}
-                  pageDescription={pageDescription}
-                  logos={logos}
-                  frontmatter={frontmatter}
-                >
-                  <MDXProvider components={DSComponents}>
-                    {children}
-                  </MDXProvider>
-                </Container>
-              )}
-              {relativePagePath.includes('components') && (
-                <ComponentsContainer
-                  pageTitle={pageTitle}
-                  relativePagePath={relativePagePath}
-                  tabs={tabs}
-                  pageDescription={pageDescription}
-                  frontmatter={frontmatter}
-                >
-                  <MDXProvider components={DSComponents}>
-                    {children}
-                  </MDXProvider>
-                </ComponentsContainer>
-              )}
-            </Column>
-
-            <Column
-              size={3}
-              className="pb-6 in-page-nav position-sticky scroll-y"
-              style={{ height: 'calc(100vh - 48px)' }}
-            >
-              <TableOfContent
-                is404Page={is404}
-                relativePagePath={relativePagePath}
-                pageTitle={pageTitle}
-                location={rest.location}
-              />
-            </Column>
-          </Row>
+          {!isOverviewPage ?
+            <MarkdownContainer
+              relativePagePath={relativePagePath}
+              is404={is404}
+              pageTitle={pageTitle}
+              location={rest.location}
+              tabs={tabs}
+              children={children}
+              frontmatter={frontmatter}
+              DSComponents={DSComponents}
+              pageDescription={pageDescription}
+              logos={logos}
+            />
+            :
+            <OverviewContainer
+              tabs={tabs}
+              children={children}
+              pageTitle={pageTitle}
+              frontmatter={frontmatter}
+              DSComponents={DSComponents}
+              relativePagePath={relativePagePath}
+              pageDescription={pageDescription}
+            />
+          }
           {isToastActive && (
             <Toast
               appearance='success'

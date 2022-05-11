@@ -31,3 +31,7 @@
 .card-heading {
   bottom: var(--spacing-l);
 }
+
+.overview-container-card {
+  max-width: 220px;
+}

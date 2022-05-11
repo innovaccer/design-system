@@ -103,7 +103,11 @@ table td {
 }
 
 .inner-left-container {
-  max-width: 960px;
+  max-width: 1024px;
+}
+
+.overview-container {
+  max-width: 1600px;
 }
 
 .scroll-y {
