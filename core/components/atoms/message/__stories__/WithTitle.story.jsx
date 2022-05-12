@@ -4,7 +4,7 @@ import { Message, Row, Column, Text } from '@/index';
 // CSF format story
 export const MessageWithTitle = () => (
   <Row>
-    <Column size="5">
+    <Column size="8">
       <Message
         appearance="warning"
         title="Sender 'Alta Wells' already exists "
