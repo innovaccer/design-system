@@ -22,7 +22,7 @@ export const size = () => {
         </Label>
         <EditableInput placeholder="First Name" value={name} onChange={onChangeName} className="mr-5" />
       </div>
-      <div className="d-flex flex-column" style={{ width: 'var(--spacing-7)' }}>
+      <div className="d-flex ml-8 flex-column" style={{ width: 'var(--spacing-7)' }}>
         <Label withInput={true} className="ml-5">
           Tiny
         </Label>
@@ -55,7 +55,7 @@ const customCode = `() => {
           className="mr-5"
         />
       </div>
-      <div className="d-flex flex-column" style={{ width: 'var(--spacing-7)' }}>
+      <div className="d-flex ml-8 flex-column" style={{ width: 'var(--spacing-7)' }}>
         <Label withInput={true} className="ml-5">Tiny</Label>
         <EditableInput
           placeholder="Add Weight"
