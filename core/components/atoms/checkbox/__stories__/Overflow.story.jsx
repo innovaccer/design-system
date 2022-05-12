@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Checkbox from '../index';
+import { Checkbox, Column } from '@/index';
 
 export const OverflowBehavior = () => (
-  <div className="w-25">
+  <Column size={4}>
     <Checkbox label="Patient with impaired physical mobility and care deficits." />
-  </div>
+  </Column>
 );
 
 export default {
