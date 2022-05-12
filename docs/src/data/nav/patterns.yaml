@@ -1,7 +1,7 @@
 base: patterns
 menus:
   - label: Overview
-    link: /patterns/overview/all-components/
+    link: /patterns/overview/all-patterns/
   - label: File uploader
     link: /patterns/fileUploader/usage/
   - label: Forms
