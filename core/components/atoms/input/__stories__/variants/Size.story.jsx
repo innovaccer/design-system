@@ -11,11 +11,11 @@ export const size = () => {
   const placeholder = 'Placeholder';
 
   return (
-    <div className="d-flex">
+    <div>
       {sizes.map((InputSize, ind) => {
         return (
-          <div key={ind} className="mr-9 w-25">
-            <div className="h-50">
+          <div key={ind} className="mr-9 mb-8 w-25">
+            <Text weight="strong">{InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}</Text>
               <Input
                 name="input"
                 value={value}
@@ -25,9 +25,6 @@ export const size = () => {
                 placeholder={placeholder}
                 size={InputSize}
               />
-            </div>
-            <br />
-            <Text weight="strong">{InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}</Text>
           </div>
         );
       })}
