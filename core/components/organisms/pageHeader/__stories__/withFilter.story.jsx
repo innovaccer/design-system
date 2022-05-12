@@ -31,7 +31,7 @@ export const level0WithFilter = () => {
   );
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="p-6 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader title="Users" separator={true} tabs={tab} actions={actions} />
     </div>
   );
@@ -71,7 +71,7 @@ const customCode = `() => {
   );
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="p-6 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader
         title="Users"
         separator={true}

@@ -35,7 +35,7 @@ export const level1WithFilter = () => {
   );
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="p-6 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader title="Sender creation report" separator={true} tabs={tab} breadcrumbs={breadcrumbs} />
     </div>
   );
@@ -78,7 +78,7 @@ const customCode = `() => {
   );
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="p-6 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader
         title="Sender creation report"
         separator={true}
