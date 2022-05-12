@@ -29,7 +29,7 @@ export const level0WithNavigation = () => {
   );
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="p-6 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader title="Dashboard" separator={true} navigation={navigation} actions={actions} />
     </div>
   );
@@ -64,7 +64,7 @@ const customCode = `() => {
   );
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="p-6 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader
         title="Dashboard"
         separator={true}

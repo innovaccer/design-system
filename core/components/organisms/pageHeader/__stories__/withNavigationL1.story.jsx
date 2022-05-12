@@ -6,7 +6,7 @@ export const level1WithNavigation = () => {
   const navigationData = [
     {
       name: 'menu_1',
-      label: 'Perormance',
+      label: 'Performance',
     },
     {
       name: 'menu_2',
@@ -42,7 +42,7 @@ export const level1WithNavigation = () => {
   );
   const meta = <MetaList list={[{ label: 'Text' }, { label: 'Email' }]} />;
   return (
-    <div className="w-100 p-5 bg-secondary-lightest">
+    <div className="p-5 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader
         title="Covid-19"
         separator={true}
@@ -62,7 +62,7 @@ const customCode = `() => {
   const navigationData = [
     {
       name: 'menu_1',
-      label: 'Perormance',
+      label: 'Performance',
     },
     {
       name: 'menu_2',
@@ -107,7 +107,7 @@ const customCode = `() => {
     />
   );
   return (
-    <div className="w-100 p-5 bg-secondary-lightest">
+    <div className="p-5 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader
         title="Covid-19"
         separator={true}
