@@ -4,7 +4,7 @@ import { Divider, Row, Column, Card, CardBody, Text, Heading, Radio } from '@/in
 export const VerticalDivider = () => {
   return (
     <Row>
-      <Column size="8">
+      <Column size="10">
         <Card shadow="none">
           <CardBody className="p-0">
             <Row>
