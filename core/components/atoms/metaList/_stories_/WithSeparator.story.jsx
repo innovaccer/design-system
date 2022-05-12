@@ -2,7 +2,8 @@ import * as React from 'react';
 import MetaList from '../MetaList';
 
 // CSF format story
-export const all = () => {
+export const WithSeparator = () => {
+  const seperator = true;
 
   const list = [
     {
@@ -17,12 +18,12 @@ export const all = () => {
 
   return (
     <div>
-      <MetaList list={list} />
+      <MetaList list={list} seperator={seperator} />
     </div>
   );
 };
 
 export default {
-  title: 'Components/MetaList/All',
+  title: 'Components/MetaList/With Separator',
   component: MetaList,
 };
