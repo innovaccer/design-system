@@ -26,7 +26,7 @@ export const tabsWithCount = () => {
         <Button appearance="primary">New Strategy</Button>
       </div>
       <div className="d-flex align-items-center mt-3">
-        <Tabs onTabChange={onTabChangeHandler}>
+        <Tabs onTabChange={onTabChangeHandler} className="mb-6">
           <Tab label="All" count={12}>
             <div>All</div>
           </Tab>
@@ -71,6 +71,7 @@ const customCode = `() => {
       <div className="d-flex align-items-center mt-3" >
         <Tabs
           onTabChange={console.log}
+          className="mb-6"
         >
           <Tab label="All" count={12}>
             <div>All</div>

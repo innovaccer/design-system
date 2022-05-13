@@ -12,7 +12,7 @@ export const customLabels = () => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler}>
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
       <Tab
         label={
           <>
@@ -61,6 +61,7 @@ const customCode = `() => {
     <Tabs
       activeIndex={activeIndex}
       onTabChange={onTabChangeHandler}
+      className="mb-6"
     >
       <Tab
         label={(
