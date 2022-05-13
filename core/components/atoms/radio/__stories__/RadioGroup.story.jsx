@@ -1,12 +1,15 @@
 import * as React from 'react';
-import Radio from '../index';
+import { Radio, Text } from '@/index';
 
 export const radioGroup = () => (
-  <div>
-    <Radio size={'regular'} label={'High'} name={'Priority'} value={'High'} defaultChecked={true} />
-    <Radio size={'regular'} label={'Medium'} name={'Priority'} value={'Medium'} />
-    <Radio size={'regular'} label={'Low'} name={'Priority'} value={'Low'} />
-  </div>
+  <>
+    <Text weight="strong">Priority</Text>
+    <div className="mt-4">
+      <Radio size={'regular'} label={'High'} name={'Priority'} value={'High'} defaultChecked={true} />
+      <Radio size={'regular'} label={'Medium'} name={'Priority'} value={'Medium'} />
+      <Radio size={'regular'} label={'Low'} name={'Priority'} value={'Low'} />
+    </div>
+  </>
 );
 
 export default {

@@ -9,7 +9,7 @@ export const withHelpText = () => {
       value={'accepted'}
       name={'consent'}
       helpText={'This app will have access to both your healthcare data and some personal information.'}
-      className="w-25"
+      className="w-50"
     />
   );
 };
