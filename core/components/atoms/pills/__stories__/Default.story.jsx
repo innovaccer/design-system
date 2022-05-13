@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Pills from '../../pills';
 
-export const defaultpill = () => (
+export const defaultPill = () => (
   <Pills appearance="secondary" subtle={false}>
-    {'1'}
+    10
   </Pills>
 );
 
 export default {
-  title: 'Components/Pills/Defaultpill',
+  title: 'Components/Pills/Default Pill',
   component: Pills,
   parameters: {
     docs: {

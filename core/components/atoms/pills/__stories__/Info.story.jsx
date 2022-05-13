@@ -3,7 +3,7 @@ import Pills from '../Pills';
 
 export const info = () => (
   <Pills appearance="primary" subtle={false}>
-    {'Pills'}
+    10
   </Pills>
 );
 
