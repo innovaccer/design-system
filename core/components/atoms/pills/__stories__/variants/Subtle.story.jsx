@@ -6,7 +6,7 @@ import Text from '@/components/atoms/text';
 export const subtle = () => {
   const ButtonSubtle = true;
   const weight = 'strong';
-  const children = 'Pills';
+  const children = 10;
   const appearances = [
     'primary',
     'secondary',

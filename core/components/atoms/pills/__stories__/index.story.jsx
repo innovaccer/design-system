@@ -5,7 +5,7 @@ import Pills from '../Pills';
 export const all = () => {
   const appearance = 'warning';
   const subtle = false;
-  const children = 'Pill';
+  const children = 10;
 
   return (
     <Pills appearance={appearance} subtle={subtle}>
