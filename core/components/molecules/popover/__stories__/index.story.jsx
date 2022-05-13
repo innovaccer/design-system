@@ -17,7 +17,7 @@ export const all = () => {
     setOpen(!open);
   };
 
-  const trigger = <Button appearance="basic">Open Popup</Button>;
+  const trigger = <Button appearance="basic">Open Popover</Button>;
 
   const options = {
     trigger,
@@ -51,7 +51,7 @@ const customCode = `() => {
       <Popover
         position="bottom-start"
         on="click"
-        trigger={<Button appearance="basic">Open Popup</Button>}
+        trigger={<Button appearance="basic">Open Popover</Button>}
       >
         <div style={{ width: 100 }} className='mx-6 my-6'>
           <Text>Popup</Text>
