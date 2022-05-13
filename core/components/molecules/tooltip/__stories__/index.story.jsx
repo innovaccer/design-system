@@ -16,9 +16,9 @@ export const all = () => {
   };
 
   return (
-    <div style={{ marginTop: '30px', marginLeft: '150px' }}>
+    <div className="mt-8 ml-12">
       <Tooltip {...options}>
-        <Button>{position}</Button>
+        <Button>Hover over me</Button>
       </Tooltip>
     </div>
   );
