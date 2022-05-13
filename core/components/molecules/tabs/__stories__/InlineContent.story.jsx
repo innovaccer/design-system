@@ -20,7 +20,7 @@ export const inlineContent = () => {
   };
 
   return (
-    <Tabs onTabChange={onTabChangeHandler}>
+    <Tabs onTabChange={onTabChangeHandler} className="mb-6">
       <Tab label="All" count={12}>
         <div>All</div>
       </Tab>
@@ -57,6 +57,7 @@ const customCode = `() => {
   return(
     <Tabs
       onTabChange={console.log}
+      className="mb-6"
     >
       <Tab label="All" count={12}>
         <div>All</div>
