@@ -7,7 +7,7 @@ export const popoverWithMenu = () => {
     <div className="d-flex">
       <Avatar firstName="John" lastName="Doe" />
       <Text className="ml-4 mt-4" size="large">
-        Hi James
+        Open Popover
       </Text>
       <Button appearance="transparent" icon="arrow_drop_down" />
     </div>
@@ -15,7 +15,7 @@ export const popoverWithMenu = () => {
 
   return (
     <div className="mb-12">
-      <Popover position="bottom-start" on="click" trigger={trigger} open={true}>
+      <Popover position="bottom-start" on="click" trigger={trigger} open={false}>
         <div style={{ width: 'var(--spacing-9)' }} className=" mx-6 my-6">
           <div className="d-flex">
             <Avatar firstName="John" lastName="Doe" />
