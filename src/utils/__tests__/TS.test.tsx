@@ -12,6 +12,9 @@ export const TS = () => {
       <DS.Avatar />
       <DS.Badge>Badge</DS.Badge>
       <DS.Pills>{string}</DS.Pills>
+      <DS.Bold>{string}</DS.Bold>
+      <DS.Italics>{string}</DS.Italics>
+      <DS.Underline>{string}</DS.Underline>
       {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
       <DS.Breadcrumbs list={[]} onClick={noop} />

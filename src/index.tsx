@@ -10,5 +10,8 @@ export { Spinner } from './components/spinner';
 export { Popover } from './components/popover';
 export { Tooltip } from './components/tooltip';
 export { OutsideClick } from './components/outsideClick';
+export { Bold } from './components/bold';
+export { Italics } from './components/italics';
+export { Underline } from './components/underline';
 
 export { version } from '../package.json';

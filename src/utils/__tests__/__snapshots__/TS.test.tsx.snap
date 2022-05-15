@@ -29,5 +29,20 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </span>
+  <b
+    data-test="DesignSystem-Bold"
+  >
+    Hello World!
+  </b>
+  <i
+    data-test="DesignSystem-Italics"
+  >
+    Hello World!
+  </i>
+  <u
+    data-test="DesignSystem-Underline"
+  >
+    Hello World!
+  </u>
 </DocumentFragment>
 `;
