@@ -16,10 +16,6 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
    */
   weight?: 'strong' | 'medium';
   /**
-   * Changes size of `Text`**[SOON\_TO\_BE\_DEPRECATED]**
-   */
-  small?: boolean;
-  /**
    * Color of `Text`
    */
   appearance: TextAppearance;
@@ -30,7 +26,7 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
 }
 
 export const Text = (props: TextProps) => {
-  const { appearance, size, children, weight, small, className, ...rest } = props;
+  const { appearance, size, children, weight, className, ...rest } = props;
 
   const classes = classNames(
     {
@@ -38,8 +34,6 @@ export const Text = (props: TextProps) => {
       [`Next-Text--${appearance}`]: appearance,
       [`Next-Text--${weight}`]: weight,
       [`Next-Text--${size}`]: size,
-      /* SOON_TO_BE_DEPRECATED */
-      ['Next-Text--small']: size === 'small' || small,
     },
     className
   );

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Text, { TextProps as Props, TextAppearance, Size } from '../Text';
+import Text, { TextProps as Props, TextAppearance, TextSize } from '../Text';
 import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const sizes: Size[] = ['small', 'regular', 'large'];
+const sizes: TextSize[] = ['small', 'regular', 'large'];
 const appearances: TextAppearance[] = ['default', 'white', 'destructive', 'disabled', 'subtle', 'success', 'link'];
 const weight = ['strong', 'medium'];
 const BooleanValue = [true, false];
@@ -108,13 +108,6 @@ describe('Text component', () => {
     it('should have the class Text--medium when weight="medium"', () => {
       const { getByTestId } = render(<Text weight="medium">{'Design System'}</Text>);
       expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--medium');
-    });
-  });
-
-  describe('Text Component with Prop:small', () => {
-    it('should have the class Text--small when small="true"', () => {
-      const { getByTestId } = render(<Text small={true}>{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--small');
     });
   });
 

@@ -235,7 +235,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Next-Text Next-Text--default Next-Text--regular Next-Text--small"
+        class="Next-Text Next-Text--default Next-Text--regular"
         data-test="DesignSystem-Text"
       >
         Sample String
@@ -244,7 +244,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--regular Next-Text--small"
+      class="Next-Text Next-Text--default Next-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
