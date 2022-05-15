@@ -10,5 +10,6 @@ export { Spinner } from './components/spinner';
 export { Popover } from './components/popover';
 export { Tooltip } from './components/tooltip';
 export { OutsideClick } from './components/outsideClick';
+export { Paragraph } from './components/paragraph';
 
 export { version } from '../package.json';
