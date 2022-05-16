@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/message/__stories__/WithTitle.story.jsx",
     "storySource": {
-      "source": "() => (\n  <Row>\n    <Column size=\"5\">\n      <Message\n        appearance=\"warning\"\n        title=\"Sender 'Alta Wells' already exists \"\n        description=\"Based on the details you've entered, we found that this sender might already be on our platform.\"\n        actions={\n          <>\n            <Text className=\"cursor-pointer\" appearance=\"link\">\n              Edit details\n            </Text>\n          </>\n        }\n      />\n    </Column>\n  </Row>\n)"
+      "source": "() => (\n  <Row>\n    <Column size=\"8\">\n      <Message\n        appearance=\"warning\"\n        title=\"Sender 'Alta Wells' already exists \"\n        description=\"Based on the details you've entered, we found that this sender might already be on our platform.\"\n        actions={\n          <>\n            <Text className=\"cursor-pointer\" appearance=\"link\">\n              Edit details\n            </Text>\n          </>\n        }\n      />\n    </Column>\n  </Row>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-message-message-with-title--message-with-title",

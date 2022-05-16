@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/pills/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearance = 'warning';\n  const subtle = false;\n  const children = 'Pill';\n\n  return (\n    <Pills appearance={appearance} subtle={subtle}>\n      {children}\n    </Pills>\n  );\n}"
+      "source": "() => {\n  const appearance = 'warning';\n  const subtle = false;\n  const children = 10;\n\n  return (\n    <Pills appearance={appearance} subtle={subtle}>\n      {children}\n    </Pills>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-pills-all--all",

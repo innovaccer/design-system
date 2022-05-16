@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/Dark.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"mb-12\">\n    <Popover\n      position=\"bottom\"\n      on=\"click\"\n      trigger={<Button appearance=\"basic\">Open Popup</Button>}\n      dark={true}\n      open={true}\n    >\n      <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />\n    </Popover>\n  </div>\n)"
+      "source": "() => (\n  <div className=\"mb-9\">\n    <Popover\n      position=\"bottom\"\n      on=\"click\"\n      trigger={<Button appearance=\"basic\">Open Popover</Button>}\n      dark={true}\n      open={false}\n    >\n      <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />\n    </Popover>\n  </div>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-popover-dark-popover--dark-popover",
