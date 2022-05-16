@@ -8,11 +8,17 @@ import Search from '../GlobalSearch';
 const Header = ({ relativePagePath }) => {
   const ref = React.createRef();
   const items = useHeaderItems();
+
   const checkActive = (label) => {
     const pagePath = relativePagePath.split('/');
     if (pagePath[1] === label.toLowerCase() || pagePath[2] === label.toLowerCase()) return true;
     return false;
   }
+
+  const onClickHandler = () => {
+    localStorage.removeItem('leftNavScrollPosition');
+  }
+
   return (
     <div
       id="mainHeader"
@@ -34,8 +40,9 @@ const Header = ({ relativePagePath }) => {
                 <MDSLink
                   key={index}
                   href={link}
-                  className="HeaderLink HeaderLink--default"
                   target="_blank"
+                  onClick={onClickHandler}
+                  className="HeaderLink HeaderLink--default"
                 >
                   {label}
                 </MDSLink>
@@ -43,8 +50,9 @@ const Header = ({ relativePagePath }) => {
             }
             return (
               <Link
-                key={index}
                 to={link}
+                key={index}
+                onClick={onClickHandler}
                 className={`HeaderLink  ${checkActive(label)
                   ? 'HeaderLink--active'
                   : 'HeaderLink--default'
