@@ -17,7 +17,7 @@ export const dismissibleTab = () => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler}>
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
       {!hideTab && (
         <Tab
           label="Tab(Recommended)"
@@ -54,6 +54,7 @@ const customCode = `() => {
     <Tabs
       activeIndex={activeIndex}
       onTabChange={onTabChangeHandler}
+      className="mb-6"
     >
       {!hideTab && (
         <Tab

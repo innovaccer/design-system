@@ -4,7 +4,7 @@ import Pills from '..';
 export const subtleAlert = () => {
   return (
     <Pills appearance="alert" subtle={true}>
-      {'Pills'}
+      10
     </Pills>
   );
 };

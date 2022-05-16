@@ -13,12 +13,14 @@ export const all = () => {
   };
 
   return (
-    <TimePicker
-      key={`${inputFormat}${outputFormat}`}
-      inputFormat={inputFormat}
-      outputFormat={outputFormat}
-      onTimeChange={onTimeChange}
-    />
+    <div className="w-25">
+      <TimePicker
+        key={`${inputFormat}${outputFormat}`}
+        inputFormat={inputFormat}
+        outputFormat={outputFormat}
+        onTimeChange={onTimeChange}
+      />
+    </div>
   );
 };
 
@@ -28,11 +30,13 @@ const customCode = `() => {
   };
 
   return (
-    <TimePicker
-      inputFormat={'hh:mm AM'}
-      outputFormat={'hh:mm AM'}
-      onTimeChange={onTimeChange}
-    />
+    <div className="w-25">
+      <TimePicker
+        inputFormat={'hh:mm AM'}
+        outputFormat={'hh:mm AM'}
+        onTimeChange={onTimeChange}
+      />
+    </div>
   );
 }`;
 

@@ -40,7 +40,7 @@ export const basicTabs = () => {
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs onTabChange={onTabChangeHandler}>
+      <Tabs onTabChange={onTabChangeHandler} className="mb-6">
         <Tab label="Clinical Gaps">
           <div>Clinical Gaps</div>
         </Tab>
@@ -88,7 +88,7 @@ const customCode = `() => {
           <Dropdown options={options} />
         </div>
       </div>
-      <Tabs>
+      <Tabs className="mb-6">
         <Tab
           label="Clinical Gaps"
         >
