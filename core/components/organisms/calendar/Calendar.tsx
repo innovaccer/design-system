@@ -570,7 +570,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   };
 
   renderHeaderContent = (index: number) => {
-    const { size, monthsInView } = this.props;
+    const { size, monthsInView, rangePicker } = this.props;
 
     const { view, yearBlockNav } = this.state;
 
@@ -594,14 +594,16 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
         return (
           <>
             <Text weight="strong">{content}</Text>
-            {view !== 'year' && <Icon appearance="inverse" className="pl-3" name="keyboard_arrow_down" />}
+            {view !== 'year' && !rangePicker && (
+              <Icon appearance="inverse" className="pl-3" name="keyboard_arrow_down" />
+            )}
           </>
         );
       }
       return (
         <>
           <Heading size="s">{content}</Heading>
-          {view !== 'year' && <Icon appearance="inverse" className="pl-3" name="keyboard_arrow_down" />}
+          {view !== 'year' && !rangePicker && <Icon appearance="inverse" className="pl-3" name="keyboard_arrow_down" />}
         </>
       );
     };
