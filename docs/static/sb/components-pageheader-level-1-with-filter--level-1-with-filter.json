@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const tabs = [\n    {\n      count: 32,\n      label: 'New'\n    },\n    {\n      count: 4,\n      label: 'Invalid'\n    },\n    {\n      count: 2,\n      label: 'Duplicate'\n    }\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = (\n    <Tabs\n      tabs={tabs}\n      activeIndex={activeIndex}\n      onTabChange={setActiveIndex}\n    />\n  );\n\n  const breadcrumbs = (\n    <Breadcrumbs\n      list={[{\n        label: 'Senders',\n        link: '/Senders'\n      }]}\n      onClick={link => console.log(`on-click: ${link}`)}\n    />\n  );\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader\n        title=\"Sender creation report\"\n        separator={true}\n        tabs={tab}\n        breadcrumbs={breadcrumbs}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const tabs = [\n    {\n      count: 32,\n      label: 'New'\n    },\n    {\n      count: 4,\n      label: 'Invalid'\n    },\n    {\n      count: 2,\n      label: 'Duplicate'\n    }\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = (\n    <Tabs\n      tabs={tabs}\n      activeIndex={activeIndex}\n      onTabChange={setActiveIndex}\n    />\n  );\n\n  const breadcrumbs = (\n    <Breadcrumbs\n      list={[{\n        label: 'Senders',\n        link: '/Senders'\n      }]}\n      onClick={link => console.log(`on-click: ${link}`)}\n    />\n  );\n\n  return (\n    <div className=\"p-6 bg-secondary-lightest\" style={{width:'900px'}}>\n      <PageHeader\n        title=\"Sender creation report\"\n        separator={true}\n        tabs={tab}\n        breadcrumbs={breadcrumbs}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/pageHeader/__stories__/withFilterL1.story.jsx",
     "storySource": {
-      "source": "() => {\n  const tabs = [\n    {\n      count: 32,\n      label: 'New',\n    },\n    {\n      count: 4,\n      label: 'Invalid',\n    },\n    {\n      count: 2,\n      label: 'Duplicate',\n    },\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;\n\n  const breadcrumbs = (\n    <Breadcrumbs\n      list={[\n        {\n          label: 'Senders',\n          link: '/Senders',\n        },\n      ]}\n      onClick={(link) => action(`on-click: ${link}`)}\n    />\n  );\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader title=\"Sender creation report\" separator={true} tabs={tab} breadcrumbs={breadcrumbs} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const tabs = [\n    {\n      count: 32,\n      label: 'New',\n    },\n    {\n      count: 4,\n      label: 'Invalid',\n    },\n    {\n      count: 2,\n      label: 'Duplicate',\n    },\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;\n\n  const breadcrumbs = (\n    <Breadcrumbs\n      list={[\n        {\n          label: 'Senders',\n          link: '/Senders',\n        },\n      ]}\n      onClick={(link) => action(`on-click: ${link}`)}\n    />\n  );\n\n  return (\n    <div className=\"p-6 bg-secondary-lightest\" style={{width:'900px'}}>\n      <PageHeader title=\"Sender creation report\" separator={true} tabs={tab} breadcrumbs={breadcrumbs} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-pageheader-level-1-with-filter--level-1-with-filter",

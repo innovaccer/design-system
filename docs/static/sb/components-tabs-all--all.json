@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const onTabChangeHandler = (tabIndex) => {\n    setActiveIndex(tabIndex);\n  };\n\n  return(\n    <Tabs\n      activeIndex={activeIndex}\n      onTabChange={onTabChangeHandler}\n    >\n      <Tab label=\"Tab(Recommended)\" count={10}>\n        <div>Tab(Recommended)</div>\n      </Tab>\n      <Tab label=\"All\" icon=\"call_received\">\n        <div>All</div>\n      </Tab>\n      <Tab label=\"Extras\" disabled={true}>\n        <div>Extras</div>\n      </Tab>\n    </Tabs>\n  );\n}"
+        "customCode": "() => {\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const onTabChangeHandler = (tabIndex) => {\n    setActiveIndex(tabIndex);\n  };\n\n  return(\n    <Tabs\n      activeIndex={activeIndex}\n      onTabChange={onTabChangeHandler}\n      className=\"mb-6\"\n    >\n      <Tab label=\"Tab(Recommended)\" count={10}>\n        <div>Tab(Recommended)</div>\n      </Tab>\n      <Tab label=\"All\" icon=\"call_received\">\n        <div>All</div>\n      </Tab>\n      <Tab label=\"Extras\" disabled={true}>\n        <div>Extras</div>\n      </Tab>\n    </Tabs>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/tabs/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const onTabChangeHandler = (tabIndex) => {\n    setActiveIndex(tabIndex);\n    return action(`tab-change: ${tabIndex}`)();\n  };\n\n  return (\n    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler}>\n      <Tab label=\"Tab(Recommended)\" count={10}>\n        <div>Tab(Recommended)</div>\n      </Tab>\n      <Tab label=\"All\" icon=\"call_received\">\n        <div>All</div>\n      </Tab>\n      <Tab label=\"Extras\" disabled={true}>\n        <div>Extras</div>\n      </Tab>\n    </Tabs>\n  );\n}"
+      "source": "() => {\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const onTabChangeHandler = (tabIndex) => {\n    setActiveIndex(tabIndex);\n    return action(`tab-change: ${tabIndex}`)();\n  };\n\n  return (\n    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className=\"mb-6\">\n      <Tab label=\"Tab(Recommended)\" count={10}>\n        <div>Tab(Recommended)</div>\n      </Tab>\n      <Tab label=\"All\" icon=\"call_received\">\n        <div>All</div>\n      </Tab>\n      <Tab label=\"Extras\" disabled={true}>\n        <div>Extras</div>\n      </Tab>\n    </Tabs>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-tabs-all--all",

@@ -354,7 +354,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -562,7 +562,7 @@
     "options": {},
     "fileName": "./core/components/atoms/input/__stories__/variants/Size.story.jsx",
     "storySource": {
-      "source": "() => {\n  const value = '';\n\n  const sizes = ['tiny', 'regular', 'large'];\n\n  const placeholder = 'Placeholder';\n\n  return (\n    <div className=\"d-flex\">\n      {sizes.map((InputSize, ind) => {\n        return (\n          <div key={ind} className=\"mr-9 w-25\">\n            <div className=\"h-50\">\n              <Input\n                name=\"input\"\n                value={value}\n                onChange={action('on-change')}\n                onClick={action('on-click')}\n                onClear={action('on-clear')}\n                placeholder={placeholder}\n                size={InputSize}\n              />\n            </div>\n            <br />\n            <Text weight=\"strong\">{InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const value = '';\n\n  const sizes = ['tiny', 'regular', 'large'];\n\n  const placeholder = 'Placeholder';\n\n  return (\n    <div>\n      {sizes.map((InputSize, ind) => {\n        return (\n          <div key={ind} className=\"mr-9 mb-8 w-25\">\n            <Text weight=\"strong\">{InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}</Text>\n              <Input\n                name=\"input\"\n                value={value}\n                onChange={action('on-change')}\n                onClick={action('on-click')}\n                onClear={action('on-clear')}\n                placeholder={placeholder}\n                size={InputSize}\n              />\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-input-variants-size--size",

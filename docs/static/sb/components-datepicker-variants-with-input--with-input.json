@@ -408,7 +408,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -608,7 +608,7 @@
     "options": {},
     "fileName": "./core/components/organisms/datePicker/__stories__/variants/withInput.story.jsx",
     "storySource": {
-      "source": "() => {\n  const dateValue = undefined;\n\n  const inputFormat = 'mm-dd-yyyy';\n\n  const outputFormat = 'yyyy-mm-dd';\n\n  const view = 'date';\n\n  const firstDayOfWeek = 'saturday';\n\n  const disabledBefore = new Date('Jan 20 2015');\n\n  const disabledAfter = new Date('Jan 20 2028');\n\n  const jumpView = true;\n\n  const yearNav = -1;\n\n  const monthNav = -1;\n\n  const closeOnSelect = true;\n\n  const attr = {};\n  if (disabledBefore) attr.disabledBefore = disabledBefore;\n  if (disabledAfter) attr.disabledAfter = disabledAfter;\n  if (yearNav !== -1) attr.yearNav = yearNav;\n  if (monthNav !== -1) attr.monthNav = monthNav;\n\n  return (\n    <div className=\"w-25\">\n      <DatePicker\n        withInput={true}\n        closeOnSelect={closeOnSelect}\n        inputFormat={inputFormat}\n        outputFormat={outputFormat}\n        jumpView={jumpView}\n        date={dateValue}\n        onDateChange={(currDate, currValue) => {\n          action(`on date change : ${currDate} --- ${currValue}`)();\n        }}\n        view={view}\n        firstDayOfWeek={firstDayOfWeek}\n        inputOptions={{\n          required: true,\n        }}\n        {...attr}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const dateValue = undefined;\n\n  const inputFormat = 'mm/dd/yyyy';\n\n  const outputFormat = 'yyyy/mm/dd';\n\n  const view = 'date';\n\n  const firstDayOfWeek = 'saturday';\n\n  const disabledBefore = new Date('Jan 20 2015');\n\n  const disabledAfter = new Date('Jan 20 2028');\n\n  const jumpView = true;\n\n  const yearNav = -1;\n\n  const monthNav = -1;\n\n  const closeOnSelect = true;\n\n  const attr = {};\n  if (disabledBefore) attr.disabledBefore = disabledBefore;\n  if (disabledAfter) attr.disabledAfter = disabledAfter;\n  if (yearNav !== -1) attr.yearNav = yearNav;\n  if (monthNav !== -1) attr.monthNav = monthNav;\n\n  return (\n    <div className=\"w-25\">\n      <DatePicker\n        withInput={true}\n        closeOnSelect={closeOnSelect}\n        inputFormat={inputFormat}\n        outputFormat={outputFormat}\n        jumpView={jumpView}\n        date={dateValue}\n        onDateChange={(currDate, currValue) => {\n          action(`on date change : ${currDate} --- ${currValue}`)();\n        }}\n        view={view}\n        firstDayOfWeek={firstDayOfWeek}\n        inputOptions={{\n          required: true,\n        }}\n        {...attr}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-datepicker-variants-with-input--with-input",

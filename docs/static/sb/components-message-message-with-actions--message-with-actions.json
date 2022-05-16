@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/message/__stories__/WithActions.story.jsx",
     "storySource": {
-      "source": "() => (\n  <Row>\n    <Column size=\"4\">\n      <Message\n        appearance=\"alert\"\n        description=\"Sorry we couldn't subscribe you. Please try again.\"\n        actions={\n          <>\n            <Text className=\"cursor-pointer\" appearance=\"link\">\n              Try again\n            </Text>\n          </>\n        }\n      />\n    </Column>\n  </Row>\n)"
+      "source": "() => (\n  <Row>\n    <Column size=\"8\">\n      <Message\n        appearance=\"alert\"\n        description=\"Sorry we couldn't subscribe you. Please try again.\"\n        actions={\n          <>\n            <Text className=\"cursor-pointer\" appearance=\"link\">\n              Try again\n            </Text>\n          </>\n        }\n      />\n    </Column>\n  </Row>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-message-message-with-actions--message-with-actions",

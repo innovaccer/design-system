@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/pills/__stories__/SubtleWarning.story.jsx",
     "storySource": {
-      "source": "() => (\n  <Pills appearance=\"warning\" subtle={true}>\n    {'Pills'}\n  </Pills>\n)"
+      "source": "() => (\n  <Pills appearance=\"warning\" subtle={true}>\n    10\n  </Pills>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-pills-subtle-warning--subtle-warning",

@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [name, setName] = React.useState('');\n  const [weight, setWeight] = React.useState('');\n\n  const onChangeName = (value) => {\n    setName(value);\n  };\n\n  const onChangeWeight = (value) => {\n    setWeight(value);\n  }\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"d-flex flex-column\" style={{ width: 'var(--spacing-9)' }}>\n        <Label withInput={true} className=\"ml-5\">Regular</Label>\n        <EditableInput\n          placeholder=\"First Name\"\n          value={name}\n          onChange={onChangeName}\n          className=\"mr-5\"\n        />\n      </div>\n      <div className=\"d-flex flex-column\" style={{ width: 'var(--spacing-7)' }}>\n        <Label withInput={true} className=\"ml-5\">Tiny</Label>\n        <EditableInput\n          placeholder=\"Add Weight\"\n          value={weight}\n          onChange={onChangeWeight}\n          size=\"tiny\"\n        />\n      </div>\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const [name, setName] = React.useState('');\n  const [weight, setWeight] = React.useState('');\n\n  const onChangeName = (value) => {\n    setName(value);\n  };\n\n  const onChangeWeight = (value) => {\n    setWeight(value);\n  }\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"d-flex flex-column\" style={{ width: 'var(--spacing-9)' }}>\n        <Label withInput={true} className=\"ml-5\">Regular</Label>\n        <EditableInput\n          placeholder=\"First Name\"\n          value={name}\n          onChange={onChangeName}\n          className=\"mr-5\"\n        />\n      </div>\n      <div className=\"d-flex ml-8 flex-column\" style={{ width: 'var(--spacing-7)' }}>\n        <Label withInput={true} className=\"ml-5\">Tiny</Label>\n        <EditableInput\n          placeholder=\"Add Weight\"\n          value={weight}\n          onChange={onChangeWeight}\n          size=\"tiny\"\n        />\n      </div>\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/editableInput/__stories__/variants/Size.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [name, setName] = React.useState('');\n  const [weight, setWeight] = React.useState('');\n\n  const onChangeName = (value) => {\n    setName(value);\n  };\n\n  const onChangeWeight = (value) => {\n    setWeight(value);\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"d-flex flex-column\" style={{ width: 'var(--spacing-9)' }}>\n        <Label withInput={true} className=\"ml-5\">\n          Regular\n        </Label>\n        <EditableInput placeholder=\"First Name\" value={name} onChange={onChangeName} className=\"mr-5\" />\n      </div>\n      <div className=\"d-flex flex-column\" style={{ width: 'var(--spacing-7)' }}>\n        <Label withInput={true} className=\"ml-5\">\n          Tiny\n        </Label>\n        <EditableInput placeholder=\"Add Weight\" value={weight} onChange={onChangeWeight} size=\"tiny\" />\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const [name, setName] = React.useState('');\n  const [weight, setWeight] = React.useState('');\n\n  const onChangeName = (value) => {\n    setName(value);\n  };\n\n  const onChangeWeight = (value) => {\n    setWeight(value);\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"d-flex flex-column\" style={{ width: 'var(--spacing-9)' }}>\n        <Label withInput={true} className=\"ml-5\">\n          Regular\n        </Label>\n        <EditableInput placeholder=\"First Name\" value={name} onChange={onChangeName} className=\"mr-5\" />\n      </div>\n      <div className=\"d-flex ml-8 flex-column\" style={{ width: 'var(--spacing-7)' }}>\n        <Label withInput={true} className=\"ml-5\">\n          Tiny\n        </Label>\n        <EditableInput placeholder=\"Add Weight\" value={weight} onChange={onChangeWeight} size=\"tiny\" />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-editableinput-variants-size--size",

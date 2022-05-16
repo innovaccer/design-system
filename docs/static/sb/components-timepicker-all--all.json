@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const onTimeChange = (val) => {\n    console.log(val);\n  };\n\n  return (\n    <TimePicker\n      inputFormat={'hh:mm AM'}\n      outputFormat={'hh:mm AM'}\n      onTimeChange={onTimeChange}\n    />\n  );\n}",
+        "customCode": "() => {\n  const onTimeChange = (val) => {\n    console.log(val);\n  };\n\n  return (\n    <div className=\"w-25\">\n      <TimePicker\n        inputFormat={'hh:mm AM'}\n        outputFormat={'hh:mm AM'}\n        onTimeChange={onTimeChange}\n      />\n    </div>\n  );\n}",
         "title": "TimePicker"
       }
     },
@@ -234,7 +234,7 @@
     "options": {},
     "fileName": "./core/components/organisms/timePicker/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const inputFormat = 'hh:mm AM';\n\n  const outputFormat = 'hh:mm';\n\n  const onTimeChange = (val) => {\n    return action(`updated time: ${val}`)();\n  };\n\n  return (\n    <TimePicker\n      key={`${inputFormat}${outputFormat}`}\n      inputFormat={inputFormat}\n      outputFormat={outputFormat}\n      onTimeChange={onTimeChange}\n    />\n  );\n}"
+      "source": "() => {\n  const inputFormat = 'hh:mm AM';\n\n  const outputFormat = 'hh:mm';\n\n  const onTimeChange = (val) => {\n    return action(`updated time: ${val}`)();\n  };\n\n  return (\n    <div className=\"w-25\">\n      <TimePicker\n        key={`${inputFormat}${outputFormat}`}\n        inputFormat={inputFormat}\n        outputFormat={outputFormat}\n        onTimeChange={onTimeChange}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-timepicker-all--all",

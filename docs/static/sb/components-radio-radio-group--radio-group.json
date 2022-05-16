@@ -151,7 +151,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -358,7 +358,7 @@
     "options": {},
     "fileName": "./core/components/atoms/radio/__stories__/RadioGroup.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div>\n    <Radio size={'regular'} label={'High'} name={'Priority'} value={'High'} defaultChecked={true} />\n    <Radio size={'regular'} label={'Medium'} name={'Priority'} value={'Medium'} />\n    <Radio size={'regular'} label={'Low'} name={'Priority'} value={'Low'} />\n  </div>\n)"
+      "source": "() => (\n  <>\n    <Text weight=\"strong\">Priority</Text>\n    <div className=\"mt-4\">\n      <Radio size={'regular'} label={'High'} name={'Priority'} value={'High'} defaultChecked={true} />\n      <Radio size={'regular'} label={'Medium'} name={'Priority'} value={'Medium'} />\n      <Radio size={'regular'} label={'Low'} name={'Priority'} value={'Low'} />\n    </div>\n  </>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-radio-radio-group--radio-group",

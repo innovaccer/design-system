@@ -171,7 +171,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -371,7 +371,7 @@
     "options": {},
     "fileName": "./core/components/atoms/checkbox/__stories__/HelpText.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <Checkbox\n      label={'Guardian'}\n      helpText={'A member legally responsible for the care of the patient.'}\n      className=\"w-25\"\n    />\n  );\n}"
+      "source": "() => {\n  return (\n    <Checkbox\n      label={'Guardian'}\n      helpText={'A member legally responsible for the care of the patient.'}\n      className=\"w-50\"\n    />\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-checkbox-with-help-text--with-help-text",
