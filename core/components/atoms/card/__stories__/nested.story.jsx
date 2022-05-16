@@ -4,7 +4,7 @@ import { Card, Row, Column, CardHeader, CardBody, Heading, Text, Badge } from '@
 export const CardWithinACard = () => {
   return (
     <Row>
-      <Column size="5">
+      <Column size="8">
         <Card>
           <CardHeader>
             <Heading size="s">Managed Plans</Heading>
@@ -36,14 +36,6 @@ export const CardWithinACard = () => {
                     </Text>
                     <Text small={true} className="ml-3">
                       04/19
-                    </Text>
-                  </Column>
-                  <Column>
-                    <Text appearance="disabled" small={true}>
-                      Plan ID:
-                    </Text>
-                    <Text small={true} className="ml-3">
-                      040
                     </Text>
                   </Column>
                   <Column>
@@ -86,14 +78,6 @@ export const CardWithinACard = () => {
                     </Text>
                     <Text small={true} className="ml-3">
                       11/18
-                    </Text>
-                  </Column>
-                  <Column>
-                    <Text appearance="disabled" small={true}>
-                      Plan ID:
-                    </Text>
-                    <Text small={true} className="ml-3">
-                      002
                     </Text>
                   </Column>
                   <Column>

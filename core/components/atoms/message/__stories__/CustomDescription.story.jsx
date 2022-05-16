@@ -3,7 +3,7 @@ import { Message, Row, Column, Text } from '@/index';
 
 export const CustomDescription = () => (
   <Row>
-    <Column size="4">
+    <Column size="8">
       <Message
         actions={
           <>
