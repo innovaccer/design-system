@@ -14,7 +14,7 @@ const LeftNav = (props) => {
   const { relativePagePath, showMobile, frontmatter } = props;
   const navItemsList = useNavItems(relativePagePath);
   const navItems = navItemsList.filter((item) => {
-    if(relativePagePath.includes(MOBILE)){
+    if (relativePagePath.includes(MOBILE)) {
       return !item.hideInMobile;
     }
     return !item.hideInWeb;
@@ -36,10 +36,23 @@ const LeftNav = (props) => {
     return pathName;
   }
 
+  const setPosition = (position) => {
+    localStorage.setItem('leftNavScrollPosition', position);
+  };
+
   useEffect(() => {
     const active = isBrowser ? getActiveNavItem() : '';
     const obj = { link: active }
     setActive(obj);
+
+    const ele = document.getElementById('navbar-container');
+
+    const scrollPosition = localStorage.getItem('leftNavScrollPosition');
+    ele.scrollTop = scrollPosition;
+
+    ele.addEventListener('scroll', setPosition(ele.scrollTop));
+    return () => ele.removeEventListener('scroll', setPosition(ele.scrollTop));
+
   }, []);
 
   const onClickHandler = (menu) => {
@@ -66,7 +79,10 @@ const LeftNav = (props) => {
   };
 
   return (
-    <div className='h-100 bg-secondary-lightest border-right page-scroll'>
+    <div
+      id="navbar-container"
+      className='h-100 bg-secondary-lightest border-right page-scroll'
+    >
       {showMenuButtons && (
         <div className='d-flex pt-6 pl-6'>
           <Button
