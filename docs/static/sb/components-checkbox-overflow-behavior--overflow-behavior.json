@@ -171,7 +171,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -374,7 +374,7 @@
     "options": {},
     "fileName": "./core/components/atoms/checkbox/__stories__/Overflow.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"w-25\">\n    <Checkbox label=\"Patient with impaired physical mobility and care deficits.\" />\n  </div>\n)"
+      "source": "() => (\n  <Column size={4}>\n    <Checkbox label=\"Patient with impaired physical mobility and care deficits.\" />\n  </Column>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-checkbox-overflow-behavior--overflow-behavior",

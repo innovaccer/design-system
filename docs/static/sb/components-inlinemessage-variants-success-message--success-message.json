@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/organisms/inlineMessage/__stories__/variants/Success.story.jsx",
     "storySource": {
-      "source": "() => (\n  <Row>\n    <Column size=\"4\">\n      <InlineMessage appearance=\"success\" description=\"Inline message goes here.\" />\n    </Column>\n  </Row>\n)"
+      "source": "() => (\n  <InlineMessage appearance=\"success\" description=\"Inline message goes here.\" />\n)"
     },
     "__isArgsStory": false,
     "__id": "components-inlinemessage-variants-success-message--success-message",

@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/Inputs.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"mb-14\">\n    <Popover position=\"bottom-start\" on=\"click\" trigger={<Link>Save as filter view</Link>} open={true}>\n      <div style={{ width: 'var(--spacing-9)', height: 'var(--spacing-8)+var(--spacing-xl)' }} className=\"mx-6 my-6\">\n        <Label required={true} withInput={true}>\n          Name\n        </Label>\n        <Input name=\"input\" required={true} placeholder=\"Name\" />\n        <Label className=\"mt-4\" withInput={true}>\n          Description\n        </Label>\n        <Textarea name=\"Textarea\" placeholder=\"Write a description\" />\n        <div className=\"d-flex justify-content-end\">\n          <Button className=\"mt-5\" appearance=\"primary\">\n            Save Filter\n          </Button>\n        </div>\n      </div>\n    </Popover>\n  </div>\n)"
+      "source": "() => (\n  <div className=\"mb-13\">\n    <Popover\n      position=\"bottom-start\"\n      on=\"click\"\n      trigger={<Link>Open Popover</Link>}\n      open={false}\n    >\n      <div style={{ width: 'var(--spacing-9)', height: 'var(--spacing-8)+var(--spacing-xl)' }} className=\"mx-6 my-6\">\n        <Label required={true} withInput={true}>\n          Name\n        </Label>\n        <Input name=\"input\" required={true} placeholder=\"Name\" />\n        <Label className=\"mt-4\" withInput={true}>\n          Description\n        </Label>\n        <Textarea name=\"Textarea\" placeholder=\"Write a description\" />\n        <div className=\"d-flex justify-content-end\">\n          <Button className=\"mt-5\" appearance=\"primary\">\n            Save Filter\n          </Button>\n        </div>\n      </div>\n    </Popover>\n  </div>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-popover-popover-with-input--popover-with-input",

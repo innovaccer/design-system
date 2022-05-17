@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/message/__stories__/Warning.story.jsx",
     "storySource": {
-      "source": "() => (\n  <Row>\n    <Column size=\"4\">\n      <Message appearance=\"warning\" description=\"Try to save again. If it continues to fail, please raise a ticket.\" />\n    </Column>\n  </Row>\n)"
+      "source": "() => (\n  <Row>\n    <Column size=\"8\">\n      <Message appearance=\"warning\" description=\"Try to save again. If it continues to fail, please raise a ticket.\" />\n    </Column>\n  </Row>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-message-warning-message--warning-message",

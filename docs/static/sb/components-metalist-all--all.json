@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/metaList/_stories_/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const seperator = true;\n\n  const list = [\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n  ];\n\n  return (\n    <div>\n      <MetaList list={list} seperator={seperator} />\n    </div>\n  );\n}"
+      "source": "() => {\n\n  const list = [\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n  ];\n\n  return (\n    <div>\n      <MetaList list={list} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-metalist-all--all",

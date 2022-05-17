@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/molecules/tooltip/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const position = 'bottom';\n  const appendToBody = true;\n  const hoverable = false;\n  const tooltip = 'An awesome tooltip';\n\n  const options = {\n    tooltip,\n    hoverable,\n    position,\n    appendToBody,\n  };\n\n  return (\n    <div style={{ marginTop: '30px', marginLeft: '150px' }}>\n      <Tooltip {...options}>\n        <Button>{position}</Button>\n      </Tooltip>\n    </div>\n  );\n}"
+      "source": "() => {\n  const position = 'bottom';\n  const appendToBody = true;\n  const hoverable = false;\n  const tooltip = 'An awesome tooltip';\n\n  const options = {\n    tooltip,\n    hoverable,\n    position,\n    appendToBody,\n  };\n\n  return (\n    <div className=\"mt-8 ml-12\">\n      <Tooltip {...options}>\n        <Button>Hover over me</Button>\n      </Tooltip>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-tooltip-all--all",

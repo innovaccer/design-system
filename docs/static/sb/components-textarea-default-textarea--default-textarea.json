@@ -176,7 +176,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -379,7 +379,7 @@
     "options": {},
     "fileName": "./core/components/atoms/textarea/__stories__/defaultTextarea.story.jsx",
     "storySource": {
-      "source": "() => (\n  <>\n    <Label withInput={true} htmlFor=\"comments\">\n      Comments\n    </Label>\n    <Textarea\n      name=\"comments\"\n      id=\"comments\"\n      aria-labelledby=\"Comments\"\n      className=\"w-25\"\n      placeholder=\"Enter your comments here\"\n    />\n  </>\n)"
+      "source": "() => (\n  <>\n    <Label withInput={true} htmlFor=\"comments\">\n      Comments\n    </Label>\n    <Textarea\n      name=\"comments\"\n      id=\"comments\"\n      aria-labelledby=\"Comments\"\n      className=\"w-50\"\n      placeholder=\"Enter your comments here\"\n    />\n  </>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-textarea-default-textarea--default-textarea",
