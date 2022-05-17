@@ -125,28 +125,52 @@ const A11yBlock = ({ name }) => {
   );
 }
 
-const PreviewWithPropTable = ({ name }) => {
+const FrameWrapper = ({ componentName }) => {
+
+  const onLoad = () => {
+    document.getElementById('iframe-loader').style.display = 'none';
+  };
+
+  return (
+    <>
+      <div id="iframe-loader">
+        Loading ...
+      </div>
+      <iframe
+        id="myFrame"
+        width="100%"
+        height="800px"
+        scrolling="no"
+        frameBorder="0"
+        onLoad={onLoad}
+        src={`https://mds-dev.innovaccer.com/iframe.html?id=${componentName}&viewMode=docs&panel=true&nav=false&addons=1&stories=0&embed=prop-table`}
+      />
+    </>
+  );
+}
+
+const PreviewWithPropTable = ({ name, embed }) => {
 
   const [data, setData] = React.useState({});
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
-    getPropTableData(name)
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(`Could not get details for id: ${name}`);
-        setLoading(false);
-      });
+    if (!embed) {
+      getPropTableData(name)
+        .then((data) => {
+          setData(data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setError(`Could not get details for id: ${name}`);
+          setLoading(false);
+        });
+    }
   }, []);
 
-  if (loading) {
-    return <div>
-      Loading ...
-    </div>
+  if (loading && !embed) {
+    return <div> Loading ... </div>
   }
 
   if (error) {
@@ -155,7 +179,11 @@ const PreviewWithPropTable = ({ name }) => {
 
   return (
     <div className="overflow-x-scroll">
-      <ArgsTable rows={data} />
+      {embed ?
+        <FrameWrapper componentName={name} />
+        :
+        <ArgsTable rows={data} />
+      }
     </div>
   );
 };
@@ -404,7 +432,7 @@ const Layout = ({
     Rectangle: (props) => <Rectangle {...props} />,
     Colors: (props) => <Colors {...props} />,
   };
-  
+
   const showAnimation = () => {
     if (location.state?.animation === false) return false;
     return true;
