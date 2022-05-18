@@ -75,7 +75,8 @@ ol {
   font-size: var(--spacing-l);
 }
 
-.overflow-x-scroll::-webkit-scrollbar {
+.overflow-x-scroll::-webkit-scrollbar, 
+.scroll-y::-webkit-scrollbar {
   display: none;
 }
 
