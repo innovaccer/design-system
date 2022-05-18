@@ -1,22 +1,22 @@
 import * as React from 'react';
 import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
-import { BaseProps, filterProps } from '@/utils/types';
+import { BaseProps } from '@/utils/types';
 
-const tooltipPropsList = [
-  'trigger',
-  'on',
-  'open',
-  'offset',
-  'onToggle',
-  'dark',
-  'customStyle',
-  'closeOnBackdropClick',
-  'hideOnReferenceEscape',
-  'closeOnScroll',
-] as const;
-type TooltipPopperProps = typeof tooltipPropsList[number];
-export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, BaseProps {
+// const tooltipPropsList = [
+//   'trigger',
+//   'on',
+//   'open',
+//   'offset',
+//   'onToggle',
+//   'dark',
+//   'customStyle',
+//   'closeOnBackdropClick',
+//   'hideOnReferenceEscape',
+//   'closeOnScroll',
+// ] as const;
+// type TooltipPopperProps = typeof tooltipPropsList[number];
+export interface TooltipProps extends BaseProps {
   /**
    * Text to be rendered in `Tooltip`
    */
@@ -39,7 +39,7 @@ export const Tooltip = (props: TooltipProps) => {
   );
 
   return (
-    <Popover trigger={children} on={'hover'} offset={'medium'} {...rest}>
+    <Popover trigger={children} offset={'medium'} {...rest}>
       {tooltipWrapper}
     </Popover>
   );
@@ -49,8 +49,8 @@ export const Tooltip = (props: TooltipProps) => {
 //   ...Popover.defaultProps,
 //   hoverable: false
 // }, propsList);
-Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
-  hoverable: false,
-});
+// Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
+//   hoverable: false,
+// });
 
 export default Tooltip;

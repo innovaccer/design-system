@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover component snapshots 
+  trigger: "[ReactNode]", placement: "bottom", open: true, onToggle: "[Function]", dark: false
+ 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="floating-ui-4"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="Button Button--regular Button--basic Button--iconAlign-left"
+    data-test="DesignSystem-PopoverTrigger"
+    tabindex="0"
+  >
+    Open Popup
+  </button>
+  <style />
+</DocumentFragment>
+`;
+
+exports[`Popover component snapshots 
+  trigger: "[ReactNode]", placement: "bottom", open: true, onToggle: "[Function]", dark: true
+ 1`] = `
+<DocumentFragment>
+  <button
+    aria-controls="floating-ui-1"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="Button Button--regular Button--basic Button--iconAlign-left"
+    data-test="DesignSystem-PopoverTrigger"
+    tabindex="0"
+  >
+    Open Popup
+  </button>
+  <style />
+</DocumentFragment>
+`;

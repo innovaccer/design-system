@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Button } from '@/index';
 import { ButtonProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -234,14 +234,15 @@ describe('Button component with icon', () => {
 });
 
 describe('Button component with Tooltip', () => {
-  it('check for tooltip attribute', () => {
-    const { getByTestId } = render(
-      <Button appearance="basic" iconOptions={{ name: 'keyboard_arrow_right', tooltip: 'Next in rank' }} />
-    );
+  // TODO - To uncomment when tooltip is implemented
+  // it('check for tooltip attribute', () => {
+  //   const { getByTestId } = render(
+  //     <Button appearance="basic" iconOptions={{ name: 'keyboard_arrow_right', tooltip: 'Next in rank' }} />
+  //   );
 
-    fireEvent.mouseEnter(getByTestId('DesignSystem-Button'));
-    expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
-  });
+  //   fireEvent.mouseEnter(getByTestId('DesignSystem-Button'));
+  //   expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
+  // });
 
   it('check for tooltip when children is given', () => {
     render(
