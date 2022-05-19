@@ -5,7 +5,7 @@ import { Text, MetaList } from '@/index';
 import { MetaListProps } from '@/index.type';
 
 const CheckboxOption = (props: OptionTypeProps) => {
-  const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest } = props;
+  const { className, selected, optionData, onClickHandler, onChangeHandler, onUpdateActiveOption, dataTest } = props;
   const { subInfo, label, disabled } = optionData;
 
   const renderSubInfo = (subInfo: string | MetaListProps) => {
@@ -39,12 +39,19 @@ const CheckboxOption = (props: OptionTypeProps) => {
   };
 
   return (
-    <div className={className} onMouseEnter={onUpdateActiveOption} data-test={dataTest} data-disabled={disabled}>
+    //eslint-disable-next-line
+    <div
+      onClick={onClickHandler}
+      className={className}
+      onMouseEnter={onUpdateActiveOption}
+      data-test={dataTest}
+      data-disabled={disabled}
+    >
       <Checkbox
+        onChange={onChangeHandler}
         label={label}
         disabled={disabled}
         checked={selected}
-        onChange={onChangeHandler}
         tabIndex={-1}
         className={`OptionCheckbox ${subInfo ? 'pb-0' : ''}`}
         data-test={`${dataTest}--Checkbox`}
