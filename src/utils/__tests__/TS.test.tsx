@@ -20,6 +20,7 @@ export const TS = () => {
       <DS.Popover trigger={dummyComp}>{dummyComp}</DS.Popover>
       <DS.Strikethrough>{string}</DS.Strikethrough>
       <DS.Underline>{string}</DS.Underline>
+      <DS.Tooltip text={string}>{dummyComp}</DS.Tooltip>
       {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
       <DS.Breadcrumbs list={[]} onClick={noop} />
@@ -55,7 +56,6 @@ export const TS = () => {
       <DS.Text>{string}</DS.Text>
       <DS.Textarea />
       <DS.Toast title={string} />
-      <DS.Tooltip tooltip={string}>{dummyComp}</DS.Tooltip>
       <DS.Dialog
         open={false}
         onClose={noop}

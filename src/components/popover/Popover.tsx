@@ -12,6 +12,7 @@ import {
   useFloating,
   useHover,
   FloatingContext,
+  useFocus,
 } from '@floating-ui/react-dom-interactions';
 
 export type PositionType =
@@ -107,6 +108,17 @@ export interface PopoverProps {
    * returns the popover context object
    */
   onToggle?: (context: FloatingContext) => void;
+  /**
+   * To set custom open/close animation
+   */
+  animationClass?: {
+    open: string;
+    close: string;
+  };
+  /**
+   * To set custom open/close animation
+   */
+  role?: 'tooltip' | 'dialog' | 'menu' | 'listbox' | 'grid' | 'tree';
 }
 
 /**
@@ -133,6 +145,8 @@ export const Popover: React.FC<PopoverProps> = (props) => {
     className,
     dark,
     boundaryElement,
+    animationClass,
+    role,
   } = props;
 
   const [isOpen, setOpen] = React.useState<boolean>(open ?? false);
@@ -159,8 +173,9 @@ export const Popover: React.FC<PopoverProps> = (props) => {
   }
 
   const onOpenChange = async (open: boolean) => {
-    const isTop = currentPlacement.includes('top');
-    const animationFrame = `
+    if (!animationClass) {
+      const isTop = currentPlacement.includes('top');
+      const animationFrame = `
       @keyframes popper-open-${animationId} {
         from {
           max-height: 0;
@@ -183,12 +198,20 @@ export const Popover: React.FC<PopoverProps> = (props) => {
       }
       `;
 
-    if (maxHeight) {
-      await setKeyframe(animationFrame);
+      if (maxHeight) {
+        setKeyframe(animationFrame);
+        if (open) {
+          setAnimation(`popper-open-${animationId} 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms`);
+        } else {
+          setAnimation(`popper-close-${animationId} 120ms cubic-bezier(0.2, 0, 1, 0.9), fadeOut 120ms `);
+        }
+        animationDelayTimer = setTimeout(() => setOpen(open), 120);
+      }
+    } else {
       if (open) {
-        await setAnimation(`popper-open-${animationId} 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms`);
+        setAnimation(animationClass.open);
       } else {
-        await setAnimation(`popper-close-${animationId} 120ms cubic-bezier(0.2, 0, 1, 0.9), fadeOut 120ms `);
+        setAnimation(animationClass.close);
       }
       animationDelayTimer = setTimeout(() => setOpen(open), 120);
     }
@@ -222,6 +245,7 @@ export const Popover: React.FC<PopoverProps> = (props) => {
       };
       fn();
     }
+
     return () => {
       clearTimeout(Number(animationDelayTimer));
     };
@@ -229,8 +253,9 @@ export const Popover: React.FC<PopoverProps> = (props) => {
 
   const interactions = [
     useClick(context, { pointerDown: false }),
-    useRole(context),
+    useRole(context, { role: role ?? 'dialog' }),
     useDismiss(context, { ...dismissOptions }),
+    useFocus(context, { enabled: false }),
   ];
 
   const { getReferenceProps, getFloatingProps } = useInteractions(
@@ -240,14 +265,6 @@ export const Popover: React.FC<PopoverProps> = (props) => {
   React.useEffect(() => {
     onToggle && onToggle(context);
   }, [context]);
-
-  const classes = classNames(
-    {
-      ['Mds-Popover--dark']: dark,
-      [`${className}`]: className,
-    },
-    `Mds-Popover`
-  );
 
   const positionOffset = {
     'auto-start': 'top left',
@@ -267,6 +284,30 @@ export const Popover: React.FC<PopoverProps> = (props) => {
     'left-start': 'top left',
   };
 
+  const tooltipPositionValue: { [key: string]: string } = {
+    bottom: 'bottom',
+    top: 'top',
+    'top-start': 'top',
+    'top-end': 'top',
+    'bottom-start': 'bottom',
+    'bottom-end': 'bottom',
+    left: 'left',
+    'left-start': 'left',
+    'left-end': 'left',
+    right: 'right',
+    'right-start': 'right',
+    'right-end': 'right',
+  };
+
+  const classes = classNames(
+    {
+      ['Mds-Popover--dark']: dark,
+      [`${animation}-${tooltipPositionValue[currentPlacement]}`]: animationClass && animation,
+      [`${className}`]: className,
+    },
+    `Mds-Popover`
+  );
+
   const popover = (
     <FloatingFocusManager context={context}>
       <div
@@ -278,20 +319,22 @@ export const Popover: React.FC<PopoverProps> = (props) => {
             left: x ?? '',
             top: y ?? '',
             position: strategy,
-            animation: animation,
+            animation: animationClass ? undefined : animation,
             overflow: 'clip',
             transformOrigin: positionOffset[currentPlacement],
             ...componentStyles,
           },
           'aria-labelledby': labelId,
           'aria-describedby': descriptionId,
-          onAnimationEnd: () => {
-            if (currentPlacement.includes('top')) {
-              Object.assign(refs.floating.current?.style, {
-                marginTop: `-${maxHeight}px`,
-              });
-            }
-          },
+          onAnimationEnd: !animationClass
+            ? () => {
+                if (currentPlacement.includes('top')) {
+                  Object.assign(refs.floating.current?.style, {
+                    marginTop: `-${maxHeight}px`,
+                  });
+                }
+              }
+            : undefined,
         })}
       >
         {children}
@@ -301,12 +344,21 @@ export const Popover: React.FC<PopoverProps> = (props) => {
 
   const referenceProps = { ...getReferenceProps({ ref: reference }) };
 
+  let onClick = undefined;
+  if (!hoverable) {
+    if (open) {
+      onClick = () => onOpenChange(!isOpen);
+    } else {
+      onClick = referenceProps?.onClick;
+    }
+  }
+
   return (
     <>
       {trigger
         ? React.cloneElement(trigger, {
             ...referenceProps,
-            onClick: open ? () => onOpenChange(!isOpen) : referenceProps?.onClick,
+            onClick,
           })
         : null}
       <style>{animationKeyframe}</style>
