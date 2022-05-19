@@ -35,8 +35,14 @@ import axios from 'axios';
 
 const useGetStorybookData = async (name) => {
   let componentName = name;
+  let componentPath = `/sb/${componentName}.json`;
 
-  const data = await axios.get(`/sb/${componentName}.json`)
+  // To handle Rich Text Editor Stories
+  if (name.startsWith('library')) {
+    componentPath = `/rte/${componentName}.json`
+  }
+
+  const data = await axios.get(componentPath)
     .then(({ data = {} }) => {
       if (!Object.keys(data).length) {
         return Promise.reject(`Could not get details for id: ${componentName}`);
