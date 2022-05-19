@@ -8,11 +8,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--accent1 Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent1"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent1"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -24,11 +24,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--accent1 Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent1"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent1"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -99,11 +99,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--accent2 Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent2"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent2"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -115,11 +115,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--accent2 Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent2"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent2"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -190,11 +190,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--accent3 Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent3"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent3"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -206,11 +206,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--accent3 Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent3"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent3"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -281,11 +281,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--accent4 Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--accent4"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent4"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -297,11 +297,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--accent4 Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--accent4"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--accent4"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -372,11 +372,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--alert Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--alert Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--alert"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--alert"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -388,11 +388,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--alert Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--alert Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--alert"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--alert"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -463,11 +463,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--primary Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--primary Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--primary"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--primary"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -479,11 +479,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--primary Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--primary Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--primary"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--primary"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -554,11 +554,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--success Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--success Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--success"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--success"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -570,11 +570,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--success Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--success Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--success"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--success"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -645,11 +645,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--warning Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--warning Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--warning"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--warning"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -661,11 +661,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--warning Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--warning Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--warning"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--warning"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -736,11 +736,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--regular Avatar--secondary Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--regular Next-Avatar--secondary Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--secondary"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -752,11 +752,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--regular Avatar--secondary Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--regular Next-Avatar--secondary Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--secondary"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -827,11 +827,11 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled overflow-hidden"
+        class="Next-Avatar Next-Avatar--tiny Next-Avatar--secondary Next-Avatar--disabled Next-overflow-hidden"
         data-test="DesignSystem-Avatar"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+          class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--secondary"
           data-test="DesignSystem-Avatar--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -843,11 +843,11 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled overflow-hidden"
+      class="Next-Avatar Next-Avatar--tiny Next-Avatar--secondary Next-Avatar--disabled Next-overflow-hidden"
       data-test="DesignSystem-Avatar"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+        class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--secondary"
         data-test="DesignSystem-Avatar--Icon"
         role="button"
         style="font-size: 12px; width: 12px;"

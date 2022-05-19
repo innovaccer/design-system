@@ -6,7 +6,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--alert Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--alert Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -23,7 +23,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--alert Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--alert Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -39,7 +39,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--expanded Button--regular Button--alert Button--iconAlign-left"
+      class="Next-Button Next-Button--expanded Next-Button--regular Next-Button--alert Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -55,13 +55,13 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--alert Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--alert Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -76,7 +76,7 @@ exports[`Button component
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       >
         Button
@@ -92,7 +92,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--alert Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--alert Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -108,7 +108,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -125,7 +125,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -141,7 +141,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--expanded Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--expanded Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -157,13 +157,13 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -178,7 +178,7 @@ exports[`Button component
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       >
         Button
@@ -194,7 +194,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--selected Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--selected Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -210,7 +210,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--primary Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--primary Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -227,7 +227,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--primary Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--primary Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -243,7 +243,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--expanded Button--regular Button--primary Button--iconAlign-left"
+      class="Next-Button Next-Button--expanded Next-Button--regular Next-Button--primary Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -259,13 +259,13 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--primary Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--primary Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -280,7 +280,7 @@ exports[`Button component
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       >
         Button
@@ -296,7 +296,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--primary Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--primary Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -312,7 +312,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--transparent Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
@@ -329,7 +329,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--transparent Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -345,7 +345,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--expanded Button--regular Button--transparent Button--iconAlign-left"
+      class="Next-Button Next-Button--expanded Next-Button--regular Next-Button--transparent Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -361,13 +361,13 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--transparent Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--transparent Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -382,7 +382,7 @@ exports[`Button component
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       >
         Button
@@ -398,7 +398,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--transparent Button--selected Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--transparent Next-Button--selected Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -414,7 +414,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--large Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--large Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -430,7 +430,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--large Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--large Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       iconalign="left"
@@ -448,7 +448,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--large Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--large Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       iconalign="right"
@@ -466,7 +466,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--large Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--large Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       tabindex="0"
@@ -483,7 +483,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -499,7 +499,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       iconalign="left"
@@ -517,7 +517,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       iconalign="right"
@@ -535,7 +535,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       tabindex="0"
@@ -552,7 +552,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--tiny Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
@@ -568,7 +568,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--tiny Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       iconalign="left"
@@ -586,7 +586,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--tiny Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       iconalign="right"
@@ -604,7 +604,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--tiny Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--tiny Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       icon="events"
       tabindex="0"
@@ -621,7 +621,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
       type="button"
@@ -638,7 +638,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
       type="reset"
@@ -655,7 +655,7 @@ exports[`Button component
 <body>
   <div>
     <button
-      class="Button Button--regular Button--basic Button--iconAlign-left"
+      class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
       type="submit"
@@ -672,13 +672,13 @@ exports[`Button component with no children
 <body>
   <div>
     <button
-      class="Button Button--regular Button--regularSquare Button--alert"
+      class="Next-Button Next-Button--regular Next-Button--regularSquare Next-Button--alert"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -693,7 +693,7 @@ exports[`Button component with no children
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       />
     </button>
@@ -707,13 +707,13 @@ exports[`Button component with no children
 <body>
   <div>
     <button
-      class="Button Button--regular Button--regularSquare Button--basic"
+      class="Next-Button Next-Button--regular Next-Button--regularSquare Next-Button--basic"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -728,7 +728,7 @@ exports[`Button component with no children
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       />
     </button>
@@ -742,13 +742,13 @@ exports[`Button component with no children
 <body>
   <div>
     <button
-      class="Button Button--regular Button--regularSquare Button--primary"
+      class="Next-Button Next-Button--regular Next-Button--regularSquare Next-Button--primary"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -763,7 +763,7 @@ exports[`Button component with no children
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       />
     </button>
@@ -777,13 +777,13 @@ exports[`Button component with no children
 <body>
   <div>
     <button
-      class="Button Button--regular Button--regularSquare Button--transparent"
+      class="Next-Button Next-Button--regular Next-Button--regularSquare Next-Button--transparent"
       data-test="DesignSystem-Button"
       disabled=""
       tabindex="0"
     >
       <svg
-        class="Spinner Spinner--small Button-spinner"
+        class="Spinner Spinner--small Next-Button-spinner"
         data-test="DesignSystem-Button--Spinner"
         viewBox="0 0 50 50"
       >
@@ -798,7 +798,7 @@ exports[`Button component with no children
         />
       </svg>
       <span
-        class="Text Text--default Text--regular Button-text Button-text--hidden"
+        class="Next-Text Next-Text--default Next-Text--regular Next-Button-text Next-Button-text--hidden"
         data-test="DesignSystem-Text"
       />
     </button>

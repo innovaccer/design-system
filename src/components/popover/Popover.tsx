@@ -243,10 +243,10 @@ export const Popover: React.FC<PopoverProps> = (props) => {
 
   const classes = classNames(
     {
-      ['Popover--dark']: dark,
+      ['Next-Popover--dark']: dark,
       [`${className}`]: className,
     },
-    `Popover`
+    `Next-Popover`
   );
 
   const positionOffset = {

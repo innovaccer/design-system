@@ -102,32 +102,32 @@ describe('Text component', () => {
   describe('Text Component with Prop:weight', () => {
     it('should have the class Text--strong when weight="strong"', () => {
       const { getByTestId } = render(<Text weight="strong">{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--strong');
+      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--strong');
     });
 
     it('should have the class Text--medium when weight="medium"', () => {
       const { getByTestId } = render(<Text weight="medium">{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--medium');
+      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--medium');
     });
   });
 
   describe('Text Component with Prop:small', () => {
     it('should have the class Text--small when small="true"', () => {
       const { getByTestId } = render(<Text small={true}>{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--small');
+      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--small');
     });
   });
 
   describe('Text Component with Prop:appearances', () => {
     it('should have the class Text--default when appearances="default"', () => {
       const { getByTestId } = render(<Text appearance="default">{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Text--default');
+      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--default');
     });
 
     appearances.forEach((appearance) => {
       it(`should have the Text--${appearance} class when appearances=${appearance} `, () => {
         const { getByTestId } = render(<Text appearance={appearance}>{'Design System'}</Text>);
-        expect(getByTestId('DesignSystem-Text')).toHaveClass(`Text--${appearance}`);
+        expect(getByTestId('DesignSystem-Text')).toHaveClass(`Next-Text--${appearance}`);
       });
     });
   });

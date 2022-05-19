@@ -8,7 +8,7 @@ exports[`Popover component snapshots
     aria-controls="floating-ui-4"
     aria-expanded="true"
     aria-haspopup="dialog"
-    class="Button Button--regular Button--basic Button--iconAlign-left"
+    class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
     data-test="DesignSystem-PopoverTrigger"
     tabindex="0"
   >
@@ -26,7 +26,7 @@ exports[`Popover component snapshots
     aria-controls="floating-ui-1"
     aria-expanded="true"
     aria-haspopup="dialog"
-    class="Button Button--regular Button--basic Button--iconAlign-left"
+    class="Next-Button Next-Button--regular Next-Button--basic Next-Button--iconAlign-left"
     data-test="DesignSystem-PopoverTrigger"
     tabindex="0"
   >

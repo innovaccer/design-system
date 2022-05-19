@@ -34,12 +34,12 @@ export const Text = (props: TextProps) => {
 
   const classes = classNames(
     {
-      Text: true,
-      [`Text--${appearance}`]: appearance,
-      [`Text--${weight}`]: weight,
-      [`Text--${size}`]: size,
+      [`Next-Text`]: true,
+      [`Next-Text--${appearance}`]: appearance,
+      [`Next-Text--${weight}`]: weight,
+      [`Next-Text--${size}`]: size,
       /* SOON_TO_BE_DEPRECATED */
-      ['Text--small']: size === 'small' || small,
+      ['Next-Text--small']: size === 'small' || small,
     },
     className
   );
