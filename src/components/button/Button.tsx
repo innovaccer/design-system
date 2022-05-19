@@ -139,19 +139,19 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const iconAlignment = iconOptions?.align || 'left';
 
   const buttonClass = classNames({
-    ['Button']: true,
-    ['Button--expanded']: expanded,
-    [`Button--${size}`]: size,
-    [`Button--${size}Square`]: !children,
-    [`Button--${appearance}`]: appearance,
-    ['Button--selected']: selected && (appearance === 'basic' || appearance === 'transparent'),
-    [`Button--iconAlign-${iconAlignment}`]: children && iconAlignment,
+    ['Next-Button']: true,
+    ['Next-Button--expanded']: expanded,
+    [`Next-Button--${size}`]: size,
+    [`Next-Button--${size}Square`]: !children,
+    [`Next-Button--${appearance}`]: appearance,
+    ['Next-Button--selected']: selected && (appearance === 'basic' || appearance === 'transparent'),
+    [`Next-Button--iconAlign-${iconAlignment}`]: children && iconAlignment,
     [`${className}`]: className,
   });
 
   const iconClass = classNames({
-    ['Button-icon']: true,
-    [`Button-icon--${iconAlignment}`]: children && iconAlignment,
+    ['Next-Button-icon']: true,
+    [`Next-Button-icon--${iconAlignment}`]: children && iconAlignment,
   });
 
   return (
@@ -170,9 +170,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
             size="small"
             appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
             data-test="DesignSystem-Button--Spinner"
-            className="Button-spinner"
+            className="Next-Button-spinner"
           />
-          <Text className="Button-text Button-text--hidden">{children || ''}</Text>
+          <Text className="Next-Button-text Next-Button-text--hidden">{children || ''}</Text>
         </>
       ) : (
         <>

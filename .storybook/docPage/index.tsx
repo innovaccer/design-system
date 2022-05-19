@@ -13,7 +13,7 @@ import openSandbox from './sandbox';
 import generateImports from './generateImports';
 import * as componentLib from '@/index';
 import classNames from 'classnames';
-
+import '@innovaccer/design-system/css'
 import { DocsContext } from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
 import { SourceContext } from '@storybook/addon-docs/dist/esm/blocks/SourceContainer';
 import { getSourceProps } from '@storybook/addon-docs/dist/esm/blocks/Source';

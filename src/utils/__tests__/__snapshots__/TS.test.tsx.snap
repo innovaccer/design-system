@@ -3,11 +3,11 @@
 exports[`TS renders children 1`] = `
 <DocumentFragment>
   <span
-    class="Avatar Avatar--regular Avatar--secondary Avatar--disabled overflow-hidden"
+    class="Next-Avatar Next-Avatar--regular Next-Avatar--secondary Next-Avatar--disabled Next-overflow-hidden"
     data-test="DesignSystem-Avatar"
   >
     <i
-      class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+      class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--secondary"
       data-test="DesignSystem-Avatar--Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -16,14 +16,14 @@ exports[`TS renders children 1`] = `
     </i>
   </span>
   <span
-    class="Badge Badge--secondary"
+    class="Next-Badge Next-Badge--secondary"
     data-test="DesignSystem-Badge"
     role="status"
   >
     Badge
   </span>
   <span
-    class="Pills Badge--secondary"
+    class="Next-Pills Next-Badge--secondary"
     data-test="DesignSystem-Pills"
     role="status"
   >

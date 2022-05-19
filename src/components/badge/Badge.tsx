@@ -29,9 +29,9 @@ export const Badge = (props: BadgeProps) => {
 
   const classes = classNames(
     {
-      Badge: true,
-      [`Badge--${appearance}`]: appearance && !subtle,
-      [`Badge--subtle-${appearance}`]: subtle,
+      [`Next-Badge`]: true,
+      [`Next-Badge--${appearance}`]: appearance && !subtle,
+      [`Next-Badge--subtle-${appearance}`]: subtle,
     },
     className
   );

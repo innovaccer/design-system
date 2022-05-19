@@ -29,9 +29,9 @@ export const Pills = (props: PillsProps) => {
 
   const classes = classNames(
     {
-      Pills: true,
-      [`Badge--${appearance}`]: appearance && !subtle,
-      [`Badge--subtle-${appearance}`]: subtle,
+      [`Next-Pills`]: true,
+      [`Next-Badge--${appearance}`]: appearance && !subtle,
+      [`Next-Badge--subtle-${appearance}`]: subtle,
     },
     className
   );
