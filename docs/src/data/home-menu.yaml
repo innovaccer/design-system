@@ -14,6 +14,6 @@
   img: Components
 
 - name: Patterns
-  link: /patterns/
+  link: /patterns/overview/all-patterns/
   content: Patterns are reusable combinations of components that solve common user problems.
   img: Patterns
