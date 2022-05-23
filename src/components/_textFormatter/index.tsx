@@ -15,7 +15,7 @@ export interface TextFormatProps extends BaseProps, BaseHtmlProps<HTMLElement> {
 
 type Component = (x: TextFormatProps) => React.ReactElement;
 
-const withTextFormatter = (props: Props):Component => {
+const withTextFormatter = (props: Props): Component => {
   const TextFormat = (textProps: TextFormatProps) => {
     const dataTestID = textProps['data-test'] || props['data-test'];
 
