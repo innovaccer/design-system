@@ -29,5 +29,11 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </span>
+  <p
+    class="Text Text--default"
+    data-test="DesignSystem-Paragraph"
+  >
+    Hello World!
+  </p>
 </DocumentFragment>
 `;

@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph component 
+  appearance: "default"
+ 1`] = `
+<body>
+  <div>
+    <p
+      class="Text Text--default"
+      data-test="DesignSystem-Paragraph"
+    >
+      Sample string
+    </p>
+  </div>
+</body>
+`;
+
+exports[`Paragraph component 
+  appearance: "destructive"
+ 1`] = `
+<body>
+  <div>
+    <p
+      class="Text Text--destructive"
+      data-test="DesignSystem-Paragraph"
+    >
+      Sample string
+    </p>
+  </div>
+</body>
+`;
+
+exports[`Paragraph component 
+  appearance: "disabled"
+ 1`] = `
+<body>
+  <div>
+    <p
+      class="Text Text--disabled"
+      data-test="DesignSystem-Paragraph"
+    >
+      Sample string
+    </p>
+  </div>
+</body>
+`;
+
+exports[`Paragraph component 
+  appearance: "subtle"
+ 1`] = `
+<body>
+  <div>
+    <p
+      class="Text Text--subtle"
+      data-test="DesignSystem-Paragraph"
+    >
+      Sample string
+    </p>
+  </div>
+</body>
+`;
+
+exports[`Paragraph component 
+  appearance: "white"
+ 1`] = `
+<body>
+  <div>
+    <p
+      class="Text Text--white"
+      data-test="DesignSystem-Paragraph"
+    >
+      Sample string
+    </p>
+  </div>
+</body>
+`;

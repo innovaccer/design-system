@@ -12,6 +12,7 @@ export const TS = () => {
       <DS.Avatar />
       <DS.Badge>Badge</DS.Badge>
       <DS.Pills>{string}</DS.Pills>
+      <DS.Paragraph>{string}</DS.Paragraph>
       {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
       <DS.Breadcrumbs list={[]} onClick={noop} />
@@ -36,7 +37,6 @@ export const TS = () => {
       <DS.Message>{string}</DS.Message>
       <DS.MetaList list={[]} />
       <DS.OutsideClick onOutsideClick={noop}>{dummyComp}</DS.OutsideClick>
-      <DS.Paragraph>{string}</DS.Paragraph>
       <DS.ProgressBar value={0} />
       <DS.Radio name={string} value={string} />
       <DS.Row />
