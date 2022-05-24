@@ -22,6 +22,27 @@ exports[`TS renders children 1`] = `
   >
     Badge
   </span>
+  <b
+    data-test="DesignSystem-Bold"
+  >
+    Hello World!
+  </b>
+  <button
+    class="Next-Button Next-Button--regular Next-Button--regularSquare Next-Button--basic"
+    data-test="DesignSystem-Button"
+    tabindex="0"
+  />
+  <i
+    data-test="DesignSystem-Italic"
+  >
+    Hello World!
+  </i>
+  <p
+    class="Text Text--default"
+    data-test="DesignSystem-Paragraph"
+  >
+    Hello World!
+  </p>
   <span
     class="Next-Pills Next-Badge--secondary"
     data-test="DesignSystem-Pills"
@@ -29,11 +50,15 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </span>
-  <p
-    class="Text Text--default"
-    data-test="DesignSystem-Paragraph"
+  <s
+    data-test="DesignSystem-Strikethrough"
   >
     Hello World!
-  </p>
+  </s>
+  <u
+    data-test="DesignSystem-Underline"
+  >
+    Hello World!
+  </u>
 </DocumentFragment>
 `;
