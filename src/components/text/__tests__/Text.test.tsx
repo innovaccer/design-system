@@ -50,7 +50,6 @@ describe('Text component', () => {
     children: valueHelper(StringValue, { required: true }),
     weight: valueHelper(weight, { required: true, iterate: true }),
   };
-
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
 
@@ -102,25 +101,25 @@ describe('Text component', () => {
   describe('Text Component with Prop:weight', () => {
     it('should have the class Text--strong when weight="strong"', () => {
       const { getByTestId } = render(<Text weight="strong">{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--strong');
+      expect(getByTestId('DesignSystem-Text')).toHaveClass('Mds-Text--strong');
     });
 
     it('should have the class Text--medium when weight="medium"', () => {
       const { getByTestId } = render(<Text weight="medium">{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--medium');
+      expect(getByTestId('DesignSystem-Text')).toHaveClass('Mds-Text--medium');
     });
   });
 
   describe('Text Component with Prop:appearances', () => {
     it('should have the class Text--default when appearances="default"', () => {
       const { getByTestId } = render(<Text appearance="default">{'Design System'}</Text>);
-      expect(getByTestId('DesignSystem-Text')).toHaveClass('Next-Text--default');
+      expect(getByTestId('DesignSystem-Text')).toHaveClass('Mds-Text--default');
     });
 
     appearances.forEach((appearance) => {
       it(`should have the Text--${appearance} class when appearances=${appearance} `, () => {
         const { getByTestId } = render(<Text appearance={appearance}>{'Design System'}</Text>);
-        expect(getByTestId('DesignSystem-Text')).toHaveClass(`Next-Text--${appearance}`);
+        expect(getByTestId('DesignSystem-Text')).toHaveClass(`Mds-Text--${appearance}`);
       });
     });
   });

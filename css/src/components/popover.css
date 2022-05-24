@@ -1,16 +1,16 @@
-.Popover {
+.Mds-Popover {
   border-radius: var(--spacing-m);
   z-index: 500;
   background: var(--white);
   box-shadow: var(--shadow-l);
 }
 
-.Popover--dark {
+.Mds-Popover--dark {
   background: var(--inverse);
   color: var(--white);
 }
 
-.Popover[data-hide='true'] {
+.Mds-Popover[data-hide='true'] {
   visibility: hidden;
   pointer-events: none;
 }

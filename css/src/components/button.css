@@ -1,4 +1,4 @@
-.Button {
+.Mds-Button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -25,20 +25,20 @@
     box-shadow 0.15s ease-in-out;
 }
 
-.Button:disabled {
+.Mds-Button:disabled {
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.Button:focus {
+.Mds-Button:focus {
   outline: 0;
 }
 
-.Button--iconAlign-right {
+.Mds-Button--iconAlign-right {
   flex-direction: row-reverse;
 }
 
-.Button--tiny {
+.Mds-Button--tiny {
   height: var(--spacing-xl);
   padding-right: var(--spacing);
   padding-left: var(--spacing);
@@ -46,21 +46,21 @@
   padding-bottom: var(--spacing-m);
 }
 
-.Button--tinySquare {
+.Mds-Button--tinySquare {
   width: var(--spacing-xl);
 }
 
-.Button--regular {
+.Mds-Button--regular {
   height: var(--spacing-3);
   padding-right: var(--spacing-l);
   padding-left: var(--spacing-l);
 }
 
-.Button--regularSquare {
+.Mds-Button--regularSquare {
   width: var(--spacing-3);
 }
 
-.Button--large {
+.Mds-Button--large {
   height: 40px;
   padding-right: var(--spacing-2);
   padding-left: var(--spacing-2);
@@ -69,173 +69,173 @@
   font-size: var(--font-size-m);
 }
 
-.Button--largeSquare {
+.Mds-Button--largeSquare {
   width: 40px;
 }
 
-.Button--tinySquare .Button-icon,
-.Button--largeSquare .Button-icon,
-.Button--tinySquare .Spinner,
-.Button--largeSquare .Spinner {
+.Mds-Button--tinySquare .Mds-Button-icon,
+.Mds-Button--largeSquare .Mds-Button-icon,
+.Mds-Button--tinySquare .Spinner,
+.Mds-Button--largeSquare .Spinner {
   padding-left: var(--spacing-s);
   padding-right: var(--spacing-s);
 }
 
-.Button--expanded {
+.Mds-Button--expanded {
   width: 100%;
 }
 
-.Button-icon {
+.Mds-Button-icon {
   line-height: inherit;
   display: flex;
   align-items: center;
 }
 
-.Button-icon--left {
+.Mds-Button-icon--left {
   margin-right: var(--spacing);
 }
 
-.Button-icon--right {
+.Mds-Button-icon--right {
   margin-left: var(--spacing);
 }
 
-.Button--tiny .Button-icon--left {
+.Mds-Button--tiny .Mds-Button-icon--left {
   margin-right: var(--spacing-m);
 }
-.Button--tiny .Button-icon--right {
+.Mds-Button--tiny .Mds-Button-icon--right {
   margin-left: var(--spacing-m);
 }
 
-.Button--basic {
+.Mds-Button--basic {
   background: var(--secondary-light);
   color: var(--inverse);
 }
 
-.Button--basic:hover {
+.Mds-Button--basic:hover {
   background: var(--secondary);
 }
 
-.Button--basic:active {
+.Mds-Button--basic:active {
   background: var(--secondary-dark);
 }
 
-.Button--basic:focus {
+.Mds-Button--basic:focus {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
-.Button--basic:disabled {
+.Mds-Button--basic:disabled {
   background: var(--secondary-lighter);
   color: var(--inverse-lightest);
 }
 
-.Button--primary {
+.Mds-Button--primary {
   background: var(--primary);
 }
 
-.Button--primary:hover {
+.Mds-Button--primary:hover {
   background: var(--primary-dark);
 }
 
-.Button--primary:active {
+.Mds-Button--primary:active {
   background: var(--primary-darker);
 }
 
-.Button--primary:focus {
+.Mds-Button--primary:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
-.Button--primary:disabled {
+.Mds-Button--primary:disabled {
   background: var(--primary-lighter);
 }
 
-.Button--success {
+.Mds-Button--success {
   background: var(--primary);
 }
 
-.Button--success:hover {
+.Mds-Button--success:hover {
   background: var(--primary-dark);
 }
 
-.Button--success:active {
+.Mds-Button--success:active {
   background: var(--primary-darker);
 }
 
-.Button--success:focus {
+.Mds-Button--success:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
-.Button--success:disabled {
+.Mds-Button--success:disabled {
   background: var(--primary-lighter);
 }
 
-.Button--alert {
+.Mds-Button--alert {
   background: var(--alert);
 }
 
-.Button--alert:hover {
+.Mds-Button--alert:hover {
   background: var(--alert-dark);
 }
 
-.Button--alert:active {
+.Mds-Button--alert:active {
   background: var(--alert-darker);
 }
 
-.Button--alert:focus {
+.Mds-Button--alert:focus {
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.Button--alert:disabled {
+.Mds-Button--alert:disabled {
   background: var(--alert-lighter);
 }
 
-.Button--transparent {
+.Mds-Button--transparent {
   background: transparent;
   color: var(--inverse);
 }
 
-.Button--transparent:hover {
+.Mds-Button--transparent:hover {
   background: var(--secondary-light);
 }
 
-.Button--transparent:focus {
+.Mds-Button--transparent:focus {
   background: color-mod(var(--stone-light) a(0.2));
   /* box-shadow: var(--shadow-spread) var(--secondary-shadow); */
 }
 
-.Button--transparent:active {
+.Mds-Button--transparent:active {
   background: var(--secondary);
 }
 
-.Button--transparent:focus:active {
+.Mds-Button--transparent:focus:active {
   background: var(--secondary);
 }
 
-.Button--transparent:disabled {
+.Mds-Button--transparent:disabled {
   background: transparent;
   color: var(--inverse-lightest);
 }
 
-.Button-spinner {
+.Mds-Button-spinner {
   display: flex;
   position: absolute;
   z-index: 1;
 }
 
-.Button--tiny .Spinner--small {
+.Mds-Button--tiny .Spinner--small {
   height: var(--font-size-s);
   width: var(--font-size-s);
 }
 
-.Button--large .Spinner--small {
+.Mds-Button--large .Spinner--small {
   height: var(--font-size-l);
   width: var(--font-size-l);
 }
 
-.Button--selected {
+.Mds-Button--selected {
   background: var(--primary-lightest);
   color: var(--primary);
 }
 
-.Button-text--hidden {
+.Mds-Button-text--hidden {
   visibility: hidden;
 }

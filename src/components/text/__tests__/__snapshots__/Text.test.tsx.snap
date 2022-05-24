@@ -6,7 +6,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--regular"
+      class="Mds-Text Mds-Text--default Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -21,7 +21,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--destructive Next-Text--regular"
+      class="Mds-Text Mds-Text--destructive Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -36,7 +36,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--disabled Next-Text--regular"
+      class="Mds-Text Mds-Text--disabled Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -51,7 +51,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--link Next-Text--regular"
+      class="Mds-Text Mds-Text--link Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -66,7 +66,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--subtle Next-Text--regular"
+      class="Mds-Text Mds-Text--subtle Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -81,7 +81,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--success Next-Text--regular"
+      class="Mds-Text Mds-Text--success Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -96,7 +96,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--white Next-Text--regular"
+      class="Mds-Text Mds-Text--white Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -111,7 +111,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--large"
+      class="Mds-Text Mds-Text--default Mds-Text--large"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -126,7 +126,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--regular"
+      class="Mds-Text Mds-Text--default Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -141,7 +141,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--small"
+      class="Mds-Text Mds-Text--default Mds-Text--small"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -158,7 +158,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Next-Text Next-Text--default Next-Text--regular"
+        class="Mds-Text Mds-Text--default Mds-Text--regular"
         data-test="DesignSystem-Text"
       >
         Sample String
@@ -167,7 +167,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--regular"
+      class="Mds-Text Mds-Text--default Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -235,7 +235,7 @@ Object {
   "baseElement": <body>
     <div>
       <span
-        class="Next-Text Next-Text--default Next-Text--regular"
+        class="Mds-Text Mds-Text--default Mds-Text--regular"
         data-test="DesignSystem-Text"
       >
         Sample String
@@ -244,7 +244,7 @@ Object {
   </body>,
   "container": <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--regular"
+      class="Mds-Text Mds-Text--default Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -310,7 +310,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--medium Next-Text--regular"
+      class="Mds-Text Mds-Text--default Mds-Text--medium Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String
@@ -325,7 +325,7 @@ exports[`Text component
 <body>
   <div>
     <span
-      class="Next-Text Next-Text--default Next-Text--strong Next-Text--regular"
+      class="Mds-Text Mds-Text--default Mds-Text--strong Mds-Text--regular"
       data-test="DesignSystem-Text"
     >
       Sample String

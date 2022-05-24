@@ -54,22 +54,22 @@ describe('Avatar component', () => {
 describe('Avatar component', () => {
   it('render with regular size when no prop is provided', () => {
     const { getByTestId } = render(<Avatar />);
-    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Next-Avatar--regular');
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Mds-Avatar--regular');
   });
 
   it('render disabled avatar when no prop provided', () => {
     const { getByTestId } = render(<Avatar />);
-    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Next-Avatar--disabled');
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Mds-Avatar--disabled');
   });
 
   it('renders avatar primary when appearance primary is passed', () => {
     const { getByTestId } = render(<Avatar appearance="primary" text="JD" />);
-    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Next-Avatar--primary');
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Mds-Avatar--primary');
   });
 
   it('renders tiny size when tiny primary is passed', () => {
     const { getByTestId } = render(<Avatar size="tiny" text="JD" />);
-    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Next-Avatar--tiny');
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Mds-Avatar--tiny');
   });
 
   it('renders tooltip when tooltip is passed', () => {

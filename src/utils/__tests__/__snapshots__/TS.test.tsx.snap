@@ -3,11 +3,11 @@
 exports[`TS renders children 1`] = `
 <DocumentFragment>
   <span
-    class="Next-Avatar Next-Avatar--regular Next-Avatar--secondary Next-Avatar--disabled Next-overflow-hidden"
+    class="Mds-Avatar Mds-Avatar--regular Mds-Avatar--secondary Mds-Avatar--disabled Mds-overflow-hidden"
     data-test="DesignSystem-Avatar"
   >
     <i
-      class="material-icons material-icons-round Icon Icon--white Next-Avatar-content--secondary"
+      class="material-icons material-icons-round Icon Icon--white Mds-Avatar-content--secondary"
       data-test="DesignSystem-Avatar--Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -16,7 +16,7 @@ exports[`TS renders children 1`] = `
     </i>
   </span>
   <span
-    class="Next-Badge Next-Badge--secondary"
+    class="Mds-Badge Mds-Badge--secondary"
     data-test="DesignSystem-Badge"
     role="status"
   >
@@ -28,7 +28,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </b>
   <button
-    class="Next-Button Next-Button--regular Next-Button--regularSquare Next-Button--basic"
+    class="Mds-Button Mds-Button--regular Mds-Button--regularSquare Mds-Button--basic"
     data-test="DesignSystem-Button"
     tabindex="0"
   />
@@ -44,7 +44,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </p>
   <span
-    class="Next-Pills Next-Badge--secondary"
+    class="Mds-Pills Mds-Badge--secondary"
     data-test="DesignSystem-Pills"
     role="status"
   >

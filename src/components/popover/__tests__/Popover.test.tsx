@@ -51,7 +51,7 @@ describe('Popover props tests', () => {
     );
 
     expect(getByTestId('DesignSystem-Popover--Content')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-Popover--Content')).not.toHaveClass('Next-Popover--dark');
+    expect(getByTestId('DesignSystem-Popover--Content')).not.toHaveClass('Mds-Popover--dark');
   });
 
   it('Popover component with prop: dark', () => {
@@ -61,7 +61,7 @@ describe('Popover props tests', () => {
       </Popover>
     );
 
-    expect(getByTestId('DesignSystem-Popover')).toHaveClass('Next-Popover--dark');
+    expect(getByTestId('DesignSystem-Popover')).toHaveClass('Mds-Popover--dark');
   });
 
   it('Popover component with customStyle', () => {

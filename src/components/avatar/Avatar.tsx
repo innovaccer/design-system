@@ -58,22 +58,22 @@ export const Avatar = (props: AvatarProps) => {
 
   const classes = classNames(
     {
-      [`Next-Avatar`]: true,
-      [`Next-Avatar--${size}`]: size,
-      [`Next-Avatar--${avatarAppearance}`]: avatarAppearance,
-      ['Next-Avatar--disabled']: !text || !image?.src || !icon,
-      ['Next-overflow-hidden']: !text,
+      [`Mds-Avatar`]: true,
+      [`Mds-Avatar--${size}`]: size,
+      [`Mds-Avatar--${avatarAppearance}`]: avatarAppearance,
+      ['Mds-Avatar--disabled']: !text || !image?.src || !icon,
+      ['Mds-overflow-hidden']: !text,
     },
     className
   );
 
   const contentClass = classNames({
-    [`Next-Avatar-content--${size}`]: size,
-    [`Next-Avatar-content--${avatarAppearance}`]: avatarAppearance,
+    [`Mds-Avatar-content--${size}`]: size,
+    [`Mds-Avatar-content--${avatarAppearance}`]: avatarAppearance,
   });
 
   const iconClass = classNames({
-    [`Next-Avatar-content--${avatarAppearance}`]: avatarAppearance,
+    [`Mds-Avatar-content--${avatarAppearance}`]: avatarAppearance,
   });
 
   const imageDimensions = {

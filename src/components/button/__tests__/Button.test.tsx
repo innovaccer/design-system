@@ -213,22 +213,22 @@ describe('Button component with icon', () => {
   describe('Button with spinner', () => {
     it('Should have Button-spinner and Button--regularSquare class when loading state and no children', () => {
       const { getByTestId } = render(<Button loading={true} />);
-      expect(getByTestId('DesignSystem-Button')).toHaveClass('Next-Button--regularSquare');
+      expect(getByTestId('DesignSystem-Button')).toHaveClass('Mds-Button--regularSquare');
     });
 
     it('Should have Button-spinner class when loading state', () => {
       const { getByTestId } = render(<Button loading={true}>Button</Button>);
-      expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Next-Button-spinner');
+      expect(getByTestId('DesignSystem-Button--Spinner')).toHaveClass('Mds-Button-spinner');
     });
 
     it('Should have no Button-spinner class when no loading state', () => {
       const { getByTestId } = render(<Button loading={false}>Button</Button>);
-      expect(getByTestId('DesignSystem-Button')).not.toHaveClass('Next-Button-spinner');
+      expect(getByTestId('DesignSystem-Button')).not.toHaveClass('Mds-Button-spinner');
     });
 
     it('Should have Button-text--hidden class when loading', () => {
       const { getByTestId } = render(<Button loading={true}>Button</Button>);
-      expect(getByTestId('DesignSystem-Button').children[1]).toHaveClass('Next-Button-text--hidden');
+      expect(getByTestId('DesignSystem-Button').children[1]).toHaveClass('Mds-Button-text--hidden');
     });
   });
 });

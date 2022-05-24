@@ -51,7 +51,7 @@ describe('Badge component', () => {
           Design
         </Badge>
       );
-      expect(getByTestId('DesignSystem-Badge')).toHaveClass('Next-Badge BadgeClass');
+      expect(getByTestId('DesignSystem-Badge')).toHaveClass('Mds-Badge BadgeClass');
     });
   });
 
@@ -70,7 +70,7 @@ describe('Badge component', () => {
     appearances.forEach((appearance) => {
       it(`should have the Badge--${appearance} class when appearance=${appearance} `, () => {
         const { getByTestId } = render(<Badge appearance={appearance}>Design</Badge>);
-        expect(getByTestId('DesignSystem-Badge')).toHaveClass(`Next-Badge--${appearance}`);
+        expect(getByTestId('DesignSystem-Badge')).toHaveClass(`Mds-Badge--${appearance}`);
       });
     });
   });
@@ -83,7 +83,7 @@ describe('Badge component', () => {
             Design
           </Badge>
         );
-        expect(getByTestId('DesignSystem-Badge')).toHaveClass(`Next-Badge--subtle-${appearance}`);
+        expect(getByTestId('DesignSystem-Badge')).toHaveClass(`Mds-Badge--subtle-${appearance}`);
       });
     });
   });

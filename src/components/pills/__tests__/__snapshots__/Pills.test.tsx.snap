@@ -6,7 +6,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--accent1"
+      class="Mds-Pills Mds-Badge--accent1"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -22,7 +22,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-accent1"
+      class="Mds-Pills Mds-Badge--subtle-accent1"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -38,7 +38,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--accent2"
+      class="Mds-Pills Mds-Badge--accent2"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -54,7 +54,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-accent2"
+      class="Mds-Pills Mds-Badge--subtle-accent2"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -70,7 +70,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--accent3"
+      class="Mds-Pills Mds-Badge--accent3"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -86,7 +86,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-accent3"
+      class="Mds-Pills Mds-Badge--subtle-accent3"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -102,7 +102,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--accent4"
+      class="Mds-Pills Mds-Badge--accent4"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -118,7 +118,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-accent4"
+      class="Mds-Pills Mds-Badge--subtle-accent4"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -134,7 +134,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--alert"
+      class="Mds-Pills Mds-Badge--alert"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -150,7 +150,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-alert"
+      class="Mds-Pills Mds-Badge--subtle-alert"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -166,7 +166,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--primary"
+      class="Mds-Pills Mds-Badge--primary"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -182,7 +182,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-primary"
+      class="Mds-Pills Mds-Badge--subtle-primary"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -198,7 +198,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--success"
+      class="Mds-Pills Mds-Badge--success"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -214,7 +214,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-success"
+      class="Mds-Pills Mds-Badge--subtle-success"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -230,7 +230,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--warning"
+      class="Mds-Pills Mds-Badge--warning"
       data-test="DesignSystem-Pills"
       role="status"
     >
@@ -246,7 +246,7 @@ exports[`Pills Component Snapshots
 <body>
   <div>
     <span
-      class="Next-Pills Next-Badge--subtle-warning"
+      class="Mds-Pills Mds-Badge--subtle-warning"
       data-test="DesignSystem-Pills"
       role="status"
     >
