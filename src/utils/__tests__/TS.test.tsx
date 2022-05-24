@@ -11,12 +11,16 @@ export const TS = () => {
     <>
       <DS.Avatar />
       <DS.Badge>Badge</DS.Badge>
-      <DS.Pills>{string}</DS.Pills>
+      <DS.Bold>{string}</DS.Bold>
+      <DS.Button />
+      <DS.Italic>{string}</DS.Italic>
       <DS.Paragraph>{string}</DS.Paragraph>
+      <DS.Pills>{string}</DS.Pills>
+      <DS.Strikethrough>{string}</DS.Strikethrough>
+      <DS.Underline>{string}</DS.Underline>
       {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
       <DS.Breadcrumbs list={[]} onClick={noop} />
-      <DS.Button />
       <DS.Card>{dummyComp}</DS.Card>
       <DS.Chip name={string} label={string} />
       <DS.ChipGroup list={[]} />
