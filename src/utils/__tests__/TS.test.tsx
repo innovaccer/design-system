@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 // const noop = () => {};
 const string = 'Hello World!';
-// const dummyComp = <DS.Text>{string}</DS.Text>;
+const dummyComp = <DS.Text>{string}</DS.Text>;
 
 export const TS = () => {
   return (
@@ -14,8 +14,10 @@ export const TS = () => {
       <DS.Bold>{string}</DS.Bold>
       <DS.Button />
       <DS.Italic>{string}</DS.Italic>
+      <DS.Link>{string}</DS.Link>
       <DS.Paragraph>{string}</DS.Paragraph>
       <DS.Pills>{string}</DS.Pills>
+      <DS.Popover trigger={dummyComp}>{dummyComp}</DS.Popover>
       <DS.Strikethrough>{string}</DS.Strikethrough>
       <DS.Underline>{string}</DS.Underline>
       {/* <DS.AvatarGroup list={[]} />
@@ -72,7 +74,6 @@ export const TS = () => {
       <DS.Placeholder />
       <DS.PlaceholderParagraph />
       <DS.ProgressRing value={0} />
-      <DS.Popover trigger={dummyComp}>{dummyComp}</DS.Popover>
       <DS.Stepper steps={[]} />
       <DS.DateRangePicker />
       <DS.TabsWrapper>{dummyComp}</DS.TabsWrapper>

@@ -1,51 +1,54 @@
-.Link {
+.Mds-Link {
   text-decoration: none;
   font-weight: var(--font-weight-medium);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
-.Link--regular {
+.Mds-Link--regular {
   font-size: var(--font-size);
 }
 
-.Link--tiny {
+.Mds-Link--tiny {
   font-size: var(--font-size-s);
 }
 
-.Link--default {
+.Mds-Link--default {
   color: var(--text-link);
 }
 
-.Link--subtle {
+.Mds-Link--subtle {
   color: var(--inverse-lighter);
 }
 
-.Link--default:hover {
+.Mds-Link--default:hover {
   border-bottom: var(--spacing-xs) solid var(--primary);
 }
 
-.Link--subtle:hover {
+.Mds-Link--subtle:hover {
   border-bottom: var(--spacing-xs) solid var(--inverse-lighter);
 }
 
-.Link--default:active {
+.Mds-Link--default:active {
   color: var(--primary-dark);
   border: none;
 }
 
-.Link--subtle:active {
+.Mds-Link--subtle:active {
   color: var(--inverse);
   border: none;
 }
 
-.Link--default:focus {
+.Mds-Link--default:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
+  border-radius: var(--spacing-m);
 }
 
-.Link--subtle:focus {
+.Mds-Link--subtle:focus {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  border-radius: var(--spacing-m);
 }
 
-.Link--disabled {
+.Mds-Link--disabled {
   color: var(--inverse-lightest);
   pointer-events: none;
 }

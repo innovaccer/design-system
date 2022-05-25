@@ -12,5 +12,6 @@ export { Tooltip } from './components/tooltip';
 export { OutsideClick } from './components/outsideClick';
 export { Paragraph } from './components/paragraph';
 export * from './components/textFormatter';
+export { Link } from './components/link';
 
 export { version } from '../package.json';
