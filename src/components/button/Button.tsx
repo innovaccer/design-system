@@ -139,19 +139,19 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const iconAlignment = iconOptions?.align || 'left';
 
   const buttonClass = classNames({
-    ['Next-Button']: true,
-    ['Next-Button--expanded']: expanded,
-    [`Next-Button--${size}`]: size,
-    [`Next-Button--${size}Square`]: !children,
-    [`Next-Button--${appearance}`]: appearance,
-    ['Next-Button--selected']: selected && (appearance === 'basic' || appearance === 'transparent'),
-    [`Next-Button--iconAlign-${iconAlignment}`]: children && iconAlignment,
+    ['Mds-Button']: true,
+    ['Mds-Button--expanded']: expanded,
+    [`Mds-Button--${size}`]: size,
+    [`Mds-Button--${size}Square`]: !children,
+    [`Mds-Button--${appearance}`]: appearance,
+    ['Mds-Button--selected']: selected && (appearance === 'basic' || appearance === 'transparent'),
+    [`Mds-Button--iconAlign-${iconAlignment}`]: children && iconAlignment,
     [`${className}`]: className,
   });
 
   const iconClass = classNames({
-    ['Next-Button-icon']: true,
-    [`Next-Button-icon--${iconAlignment}`]: children && iconAlignment,
+    ['Mds-Button-icon']: true,
+    [`Mds-Button-icon--${iconAlignment}`]: children && iconAlignment,
   });
 
   return (
@@ -170,9 +170,9 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
             size="small"
             appearance={appearance === 'basic' || appearance === 'transparent' ? 'secondary' : 'white'}
             data-test="DesignSystem-Button--Spinner"
-            className="Next-Button-spinner"
+            className="Mds-Button-spinner"
           />
-          <Text className="Next-Button-text Next-Button-text--hidden">{children || ''}</Text>
+          <Text className="Mds-Button-text Mds-Button-text--hidden">{children || ''}</Text>
         </>
       ) : (
         <>

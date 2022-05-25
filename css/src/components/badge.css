@@ -1,6 +1,6 @@
 /* badge */
 
-.Badge {
+.Mds-Badge {
   /* 160px */
   max-width: calc(var(--spacing-2) * 10);
   /* truncate */
@@ -21,90 +21,90 @@
   cursor: default;
 }
 
-.Badge--primary {
+.Mds-Badge--primary {
   background: var(--primary);
   color: var(--white);
 }
 
-.Badge--secondary {
+.Mds-Badge--secondary {
   background: var(--secondary-light);
 }
 
-.Badge--success {
+.Mds-Badge--success {
   background: var(--success);
   color: var(--white);
 }
 
-.Badge--alert {
+.Mds-Badge--alert {
   background: var(--alert);
   color: var(--white);
 }
 
-.Badge--warning {
+.Mds-Badge--warning {
   background: var(--warning);
   color: var(--warning-darker);
 }
 
-.Badge--accent1 {
+.Mds-Badge--accent1 {
   background: var(--accent1);
   color: var(--white);
 }
 
-.Badge--accent2 {
+.Mds-Badge--accent2 {
   background: var(--accent2);
   color: var(--white);
 }
 
-.Badge--accent3 {
+.Mds-Badge--accent3 {
   background: var(--accent3);
   color: var(--white);
 }
 
-.Badge--accent4 {
+.Mds-Badge--accent4 {
   background: var(--accent4);
   color: var(--accent4-darker);
 }
 
-.Badge--subtle-primary {
+.Mds-Badge--subtle-primary {
   color: var(--primary-dark);
   background: var(--primary-lightest);
 }
 
-.Badge--subtle-secondary {
+.Mds-Badge--subtle-secondary {
   background: var(--secondary-light);
 }
 
-.Badge--subtle-success {
+.Mds-Badge--subtle-success {
   color: var(--success-dark);
   background: var(--success-lightest);
 }
 
-.Badge--subtle-alert {
+.Mds-Badge--subtle-alert {
   color: var(--alert-dark);
   background: var(--alert-lightest);
 }
 
-.Badge--subtle-warning {
+.Mds-Badge--subtle-warning {
   color: var(--warning-darker);
   background: var(--warning-lightest);
 }
 
-.Badge--subtle-accent1 {
+.Mds-Badge--subtle-accent1 {
   color: var(--accent1-darker);
   background: var(--accent1-lightest);
 }
 
-.Badge--subtle-accent2 {
+.Mds-Badge--subtle-accent2 {
   color: var(--accent2-dark);
   background: var(--accent2-lightest);
 }
 
-.Badge--subtle-accent3 {
+.Mds-Badge--subtle-accent3 {
   color: var(--accent3-dark);
   background: var(--accent3-lightest);
 }
 
-.Badge--subtle-accent4 {
+.Mds-Badge--subtle-accent4 {
   color: var(--accent4-darker);
   background: var(--accent4-lightest);
 }

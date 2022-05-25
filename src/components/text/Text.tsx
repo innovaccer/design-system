@@ -30,10 +30,10 @@ export const Text = (props: TextProps) => {
 
   const classes = classNames(
     {
-      [`Next-Text`]: true,
-      [`Next-Text--${appearance}`]: appearance,
-      [`Next-Text--${weight}`]: weight,
-      [`Next-Text--${size}`]: size,
+      [`Mds-Text`]: true,
+      [`Mds-Text--${appearance}`]: appearance,
+      [`Mds-Text--${weight}`]: weight,
+      [`Mds-Text--${size}`]: size,
     },
     className
   );

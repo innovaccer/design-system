@@ -1,6 +1,6 @@
 /* badge */
 
-.Avatar {
+.Mds-Avatar {
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
@@ -12,77 +12,77 @@
   cursor: pointer;
 }
 
-.Avatar--regular {
+.Mds-Avatar--regular {
   height: var(--spacing-3);
   width: var(--spacing-3);
 }
 
-.Avatar--tiny {
+.Mds-Avatar--tiny {
   height: var(--spacing-xl);
   width: var(--spacing-xl);
 }
 
-.Avatar--disabled {
+.Mds-Avatar--disabled {
   cursor: default;
 }
 
-.Avatar--primary {
+.Mds-Avatar--primary {
   background: var(--primary);
 }
 
-.Avatar--secondary {
+.Mds-Avatar--secondary {
   background: var(--secondary-light);
 }
 
-.Avatar--success {
+.Mds-Avatar--success {
   background: var(--success);
 }
 
-.Avatar--alert {
+.Mds-Avatar--alert {
   background: var(--alert);
 }
 
-.Avatar--warning {
+.Mds-Avatar--warning {
   background: var(--warning);
 }
 
-.Avatar--accent1 {
+.Mds-Avatar--accent1 {
   background: var(--accent1);
 }
 
-.Avatar--accent2 {
+.Mds-Avatar--accent2 {
   background: var(--accent2);
 }
 
-.Avatar--accent3 {
+.Mds-Avatar--accent3 {
   background: var(--accent3);
 }
 
-.Avatar--accent4 {
+.Mds-Avatar--accent4 {
   background: var(--accent4);
 }
 
-.Avatar-content--tiny {
+.Mds-Avatar-content--tiny {
   line-height: var(--font-height-s) !important;
   font-size: 10px !important;
 }
 
-.Avatar-content--secondary {
+.Mds-Avatar-content--secondary {
   color: var(--inverse) !important;
 }
 
-.Avatar-content--success {
+.Mds-Avatar-content--success {
   color: var(--success-darker) !important;
 }
 
-.Avatar-content--warning {
+.Mds-Avatar-content--warning {
   color: var(--warning-darker) !important;
 }
 
-.Avatar-content--accent1 {
+.Mds-Avatar-content--accent1 {
   color: var(--accent1-darker) !important;
 }
 
-.Avatar-content--accent4 {
+.Mds-Avatar-content--accent4 {
   color: var(--accent4-darker) !important;
 }

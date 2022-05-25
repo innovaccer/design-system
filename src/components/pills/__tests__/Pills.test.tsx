@@ -66,7 +66,7 @@ describe('Pills component', () => {
     appearances.forEach((appearance) => {
       it(`should have the Badge--${appearance} class when appearance=${appearance} `, () => {
         const { getByTestId } = render(<Pills appearance={appearance}>{'Design'}</Pills>);
-        expect(getByTestId('DesignSystem-Pills')).toHaveClass(`Next-Badge--${appearance}`);
+        expect(getByTestId('DesignSystem-Pills')).toHaveClass(`Mds-Badge--${appearance}`);
       });
     });
   });
@@ -79,7 +79,7 @@ describe('Pills component', () => {
             {'Design'}
           </Pills>
         );
-        expect(getByTestId('DesignSystem-Pills')).toHaveClass(`Next-Badge--subtle-${appearance}`);
+        expect(getByTestId('DesignSystem-Pills')).toHaveClass(`Mds-Badge--subtle-${appearance}`);
       });
     });
   });
