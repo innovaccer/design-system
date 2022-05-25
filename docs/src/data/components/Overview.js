@@ -32,7 +32,7 @@ function Overview({ data, mode, path = 'components' }) {
   return (
     <div>
       <Input
-        className="w-50 my-7"
+        className="w-25 my-7"
         icon="search"
         name="input"
         placeholder="Search components"
