@@ -37,6 +37,13 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </i>
+  <a
+    aria-disabled="false"
+    class="Mds-Link Mds-Link--regular Mds-Link--default"
+    data-test="DesignSystem-Link"
+  >
+    Hello World!
+  </a>
   <p
     class="Text Text--default"
     data-test="DesignSystem-Paragraph"
@@ -50,6 +57,16 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </span>
+  <span
+    aria-controls="floating-ui-1"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="Mds-Text Mds-Text--default Mds-Text--regular"
+    data-test="DesignSystem-Text"
+  >
+    Hello World!
+  </span>
+  <style />
   <s
     data-test="DesignSystem-Strikethrough"
   >

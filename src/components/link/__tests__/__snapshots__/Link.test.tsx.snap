@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_blank", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <a
+      aria-disabled="false"
+      class="Mds-Link Mds-Link--regular Mds-Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_blank"
+    >
+      Link
+    </a>
+  </div>
+</body>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_parent", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <a
+      aria-disabled="false"
+      class="Mds-Link Mds-Link--regular Mds-Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_parent"
+    >
+      Link
+    </a>
+  </div>
+</body>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_self", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <a
+      aria-disabled="false"
+      class="Mds-Link Mds-Link--regular Mds-Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_self"
+    >
+      Link
+    </a>
+  </div>
+</body>
+`;
+
+exports[`Link component 
+  id: "Sample string", href: "Sample string", target: "_top", rel: "Sample string", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <a
+      aria-disabled="false"
+      class="Mds-Link Mds-Link--regular Mds-Link--default"
+      data-test="DesignSystem-Link"
+      href="Sample string"
+      id="Sample string"
+      rel="Sample string"
+      target="_top"
+    >
+      Link
+    </a>
+  </div>
+</body>
+`;
