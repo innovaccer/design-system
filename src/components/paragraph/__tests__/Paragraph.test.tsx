@@ -38,7 +38,7 @@ describe('Paragraph component', () => {
     appearance.forEach((appear) => {
       it(`should have the Text--${appear} class when appearance=${appear} `, () => {
         const { getByTestId } = render(<Paragraph appearance={appear}>{'Paragraph'}</Paragraph>);
-        expect(getByTestId('DesignSystem-Paragraph')).toHaveClass(`Text--${appear}`);
+        expect(getByTestId('DesignSystem-Paragraph')).toHaveClass(`Mds-Text--${appear}`);
       });
     });
   });

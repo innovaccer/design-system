@@ -9,9 +9,7 @@ export default {
       docPage: {
         title: 'Badge',
         description: 'Badges are used to tag entities with concise and relevant information.',
-        a11yProps: `
-          **ariaLabel:** Add \`ariaLabel='Current Status'\` to describe additional information for badge.
-         `,
+        a11yProps: "**ariaLabel:** Add \`ariaLabel='Current Status'\` to describe additional information for badge.",
       },
     },
   },

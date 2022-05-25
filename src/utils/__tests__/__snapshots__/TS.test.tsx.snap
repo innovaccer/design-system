@@ -38,7 +38,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </i>
   <p
-    class="Text Text--default"
+    class="Mds-Text Mds-Text--default"
     data-test="DesignSystem-Paragraph"
   >
     Hello World!

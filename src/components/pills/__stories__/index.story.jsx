@@ -9,9 +9,7 @@ export default {
       docPage: {
         title: 'Pills',
         description: 'Pills are used to highlight number of items. For status and text, use a Badge.',
-        a11yProps: `
-        **ariaLabel:** Add \`ariaLabel='Total records'\` to describe the numeric value in Pills.
-         `,
+        a11yProps: "**ariaLabel:** Add \`ariaLabel='Total records'\` to describe the numeric value in Pills.",
       },
     },
   },
