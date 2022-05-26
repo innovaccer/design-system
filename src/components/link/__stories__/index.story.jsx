@@ -17,17 +17,17 @@ export default {
 
 export const Default = () => {
   return (
-    <Link href="http://innovaccer.com">Click this Link</Link>
+    <Link href="https://innovaccer.com">Click this Link</Link>
   );
 };
 
 export const Appearances = () => {
   return (
     <div>
-      <Link href="http://innovaccer.com">
+      <Link href="https://innovaccer.com">
         Default Link.
       </Link>
-      <Link appearance="subtle" className="ml-7" href="http://innovaccer.com">
+      <Link appearance="subtle" className="ml-7" href="https://innovaccer.com">
         Subtle Link.
       </Link>
     </div>
@@ -37,10 +37,10 @@ export const Appearances = () => {
 export const Size = () => {
   return (
     <div>
-      <Link href="http://innovaccer.com">
+      <Link href="https://innovaccer.com">
         Regular Link.
       </Link>
-      <Link className="ml-7" href="http://innovaccer.com" size="tiny">
+      <Link className="ml-7" href="https://innovaccer.com" size="tiny">
         Tiny Link.
       </Link>
     </div>
@@ -50,10 +50,10 @@ export const Size = () => {
 export const Disabled = () => {
   return (
     <div>
-      <Link href="http://innovaccer.com">
+      <Link href="https://innovaccer.com">
         Link Enabled.
       </Link>
-      <Link className="ml-7" disabled={true} href="http://innovaccer.com">
+      <Link className="ml-7" disabled={true} href="https://innovaccer.com">
         Link Disabled.
       </Link>
     </div>
@@ -63,10 +63,10 @@ export const Disabled = () => {
 export const Target = () => {
   return (
     <div>
-      <Link href="http://innovaccer.com" target="_blank">Blank Target Link</Link>
-      <Link className="ml-7" href="http://innovaccer.com" target="_self">Self Target Link</Link>
-      <Link className="ml-7" href="http://innovaccer.com" target="_parent">Parent Target Link</Link>
-      <Link className="ml-7" href="http://innovaccer.com" target="_top">Top Target Link</Link>
+      <Link href="https://innovaccer.com" target="_blank">Blank Target Link</Link>
+      <Link className="ml-7" href="https://innovaccer.com" target="_self">Self Target Link</Link>
+      <Link className="ml-7" href="https://innovaccer.com" target="_parent">Parent Target Link</Link>
+      <Link className="ml-7" href="https://innovaccer.com" target="_top">Top Target Link</Link>
     </div>
   )
 }
@@ -81,13 +81,13 @@ export const Download = () => {
 
 export const HrefLang = () => {
   return (
-    <Link href="http://innovaccer.com" hreflang="en">Click this Link</Link>
+    <Link href="https://innovaccer.com" hreflang="en">Click this Link</Link>
   )
 }
 
 export const OnClick = () => {
   return (
-    <Link href="http://innovaccer.com" target="_blank" onClick={() => console.log('link clicked')}>
+    <Link href="https://innovaccer.com" target="_blank" onClick={() => console.log('link clicked')}>
       Click this Link
     </Link>
   )
