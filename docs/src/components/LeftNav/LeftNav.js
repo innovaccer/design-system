@@ -73,8 +73,12 @@ const LeftNav = (props) => {
   };
 
   const getHeading = () => {
-    const componentName =
-      relativePagePath && relativePagePath.split('/')[1];
+    let componentName = '';
+    if (relativePagePath && relativePagePath.includes('mobile')) {
+      componentName = relativePagePath.split('/')[2];
+    } else {
+      componentName = relativePagePath && relativePagePath.split('/')[1];
+    }
     return componentName.toUpperCase();
   };
 
