@@ -21,8 +21,8 @@ export const Paragraph = (props: ParagraphProps) => {
 
   const classes = classNames(
     {
-      Text: true,
-      [`Text--${appearance}`]: appearance,
+      [`Mds-Text`]: true,
+      [`Mds-Text--${appearance}`]: appearance,
     },
     className
   );
