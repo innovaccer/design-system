@@ -111,7 +111,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   _timer?: number;
   _throttleWait?: boolean;
   offsetMapping: Record<Offset, string>;
-  positionOffset: Record<PositionType, string>;
 
   static defaultProps = {
     on: 'click',
@@ -132,24 +131,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       small: '2px',
       medium: '4px',
       large: '8px',
-    };
-
-    this.positionOffset = {
-      'auto-start': 'top left',
-      auto: 'top',
-      'auto-end': 'top right',
-      'top-start': 'bottom left',
-      top: 'bottom',
-      'top-end': 'bottom right',
-      'right-start': 'top right',
-      right: 'top right',
-      'right-end': 'top right',
-      'bottom-end': 'top right',
-      bottom: 'top',
-      'bottom-start': 'top left',
-      'left-end': 'top left',
-      left: 'top left',
-      'left-start': 'top left',
     };
 
     this.triggerRef = React.createRef();
@@ -184,12 +165,6 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
           zIndex: zIndex === undefined ? zIndex : zIndex + 1,
           isOpen: true,
         });
-      } else {
-        setTimeout(() => {
-          this.setState({
-            isOpen: false,
-          });
-        }, 120);
       }
     }
   }
@@ -344,31 +319,35 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     let classes = '';
 
     if (!animationClass) {
+      const maxHeight = this.popupRef.current?.offsetHeight;
+      // we need to check for transformStyles so that we open the popover at correct position (left/right)
       const transformStyles = this.popupRef.current?.style.getPropertyValue('transform');
-      if (transformStyles && !animationKeyframe) {
+      if (transformStyles && maxHeight && placement && !animationKeyframe) {
         const uniqueKey = Math.random().toString(36).substring(2, 6);
+        const isTop = placement.includes('top');
 
         const popperAnimation = `
         @keyframes popper-open-${uniqueKey} {
           from { 
-            transform: ${transformStyles} scaleY(0.5);
-            opacity: 0.5;
+            max-height: 0;
+            ${isTop ? `margin-top: ${maxHeight}px` : ''};
           }
           to {
-            transform: ${transformStyles} scaleY(1);
-            opacity: 1
+            max-height: ${maxHeight}px;
+            ${isTop ? `margin-top: 0px` : ''};
           }
         }
         @keyframes popper-close-${uniqueKey} {
           from {
-            transform: ${transformStyles} scaleY(1);
-            opacity: 1
+            max-height: ${maxHeight}px;
+            ${isTop ? `margin-top: 0px` : ''};
           }
           to {
-            transform: ${transformStyles} scaleY(0);
-            opacity: 0.5
+            max-height: 0;
+            ${isTop ? `margin-top: ${maxHeight}px` : ''};
           }
-        }`;
+        }
+        `;
 
         this.setState({
           animationKeyframe: popperAnimation,
@@ -376,16 +355,17 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         });
       }
 
+      // defining popper-fade-in custom keyframe as it is specific to popover usecase.
       const popperAnimationStyles = {
-        transformOrigin: this.positionOffset[this.props.placement],
         animation: open
-          ? `popper-open-${uniqueKey} 120ms cubic-bezier(0, 0, 0.38, 0.9)`
-          : `popper-close-${uniqueKey} 120ms cubic-bezier(0.2, 0, 1, 0.9)`,
+          ? `popper-open-${uniqueKey} 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms`
+          : `popper-close-${uniqueKey} 120ms cubic-bezier(0.2, 0, 1, 0.9) 120ms, fadeOut 120ms 120ms`,
       };
 
       childrenStyles = {
         ...childrenStyles,
         ...popperAnimationStyles,
+        overflow: 'hidden',
       };
     } else {
       classes = classNames(
@@ -404,6 +384,13 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       'data-hide': outOfBoundaries,
       onMouseEnter: this.handleMouseEnter,
       onMouseLeave: this.handleMouseLeave,
+      onAnimationEnd: () => {
+        if (!open) {
+          this.setState({
+            isOpen: false,
+          });
+        }
+      },
     };
 
     const element = React.cloneElement(

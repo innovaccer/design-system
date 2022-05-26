@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import * as React from 'react';
 import { Title, Description, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
@@ -13,10 +13,6 @@ import openSandbox from './sandbox';
 import generateImports from './generateImports';
 import * as componentLib from '@/index';
 import classNames from 'classnames';
-import '@innovaccer/design-system/css';
-import { DocsContext } from '@storybook/addon-docs/dist/esm/blocks/DocsContext';
-import { SourceContext } from '@storybook/addon-docs/dist/esm/blocks/SourceContainer';
-import { getSourceProps } from '@storybook/addon-docs/dist/esm/blocks/Source';
 
 export interface Example {
   title: string;
@@ -306,7 +302,7 @@ export const docPage = () => {
     title,
     description,
     props: propsAttr,
-    // customCode,
+    customCode,
     noHtml,
     noStory,
     noProps = isEmbed,
@@ -320,15 +316,6 @@ export const docPage = () => {
     'pt-8 pb-8': !(isEmbed || isEmbedWithProp),
   });
   const docPageTitle: string = title || displayName;
-
-  // get raw sourc of the story
-  const docsContext = useContext(DocsContext);
-  const sourceContext = useContext(SourceContext);
-  const raw = getSourceProps({ ids: [storyId] }, docsContext, sourceContext);
-  const code = `${raw.code}`;
-  console.log(code);
-  const customCode = code;
-  // END: get raw sourc of the story
 
   return (
     <div className={pageClassnames}>

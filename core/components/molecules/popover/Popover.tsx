@@ -75,6 +75,15 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * BoundaryElement for `Popover`
    */
   boundaryElement: React.RefObject<HTMLElement> | Element;
+  /*
+   * animationClass is for providing custom animations for open/close of the popover
+   * animationClass.open - takes animation class when popover is open
+   * animationClass.close - takes animation class when popover is close
+   */
+  animationClass?: {
+    open: string;
+    close: string;
+  };
 }
 
 export const Popover = (props: PopoverProps) => {

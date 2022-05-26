@@ -21,6 +21,18 @@ export interface TabProps {
    * To be rendered in `Tab` component
    */
   children?: React.ReactNode;
+  /**
+   * Add custom class on tab content
+   */
+  className?: string;
+  /**
+   * Determines if tab is dismissible
+   */
+  isDismissible?: boolean;
+  /**
+   * Called with tab info when a tab is being removed
+   */
+  onDismiss?: (tabInfo: object) => void;
 }
 
 export const Tab = (props: TabProps) => {

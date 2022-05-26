@@ -5,7 +5,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { OverlayFooter } from '@/components/molecules/overlayFooter';
 import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
 import { OverlayBody } from '@/components/molecules/overlayBody';
-import { Row, Column, Button } from '@/index';
+import { Row, Column, Button, Tooltip } from '@/index';
 import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
@@ -200,7 +200,6 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     const classes = classNames(
       {
         FullscreenModal: true,
-        'FullscreenModal--open': open,
         'FullscreenModal-animation--open': animate,
         'FullscreenModal-animation--close': !animate,
       },
@@ -228,7 +227,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
       },
     };
 
-    const ModalContainer = (
+    const ModalContainer = open ? (
       <div
         data-test="DesignSystem-FullscreenModalContainer"
         className={ContainerClass}
@@ -245,14 +244,16 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
                   {!!header && header}
                 </Column>
                 <Column className="flex-grow-0">
-                  <Button
-                    icon="close"
-                    appearance="transparent"
-                    data-test="DesignSystem-FullscreenModal--CloseButton"
-                    onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-                      if (onClose) onClose(event, 'IconClick');
-                    }}
-                  />
+                  <Tooltip tooltip="Close">
+                    <Button
+                      icon="close"
+                      appearance="transparent"
+                      data-test="DesignSystem-FullscreenModal--CloseButton"
+                      onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                        if (onClose) onClose(event, 'IconClick');
+                      }}
+                    />
+                  </Tooltip>
                 </Column>
               </Row>
               <OverlayBody data-test="DesignSystem-FullscreenModal--Body" className="FullscreenModal-body">
@@ -272,7 +273,7 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
           </Row>
         </div>
       </div>
-    );
+    ) : null;
 
     const WrapperElement = ReactDOM.createPortal(ModalContainer, this.element);
 

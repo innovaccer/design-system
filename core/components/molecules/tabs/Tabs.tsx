@@ -1,16 +1,25 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Pills, Icon, Text, Tab } from '@/index';
+import { Pills, Icon, Text, Tab, EmptyState } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 
 type Tab = React.ReactElement | TabConfig;
+type noop = (tabInfo: TabInfo) => void;
+
+interface TabInfo {
+  label: string;
+  activeIndex: number;
+  currentTabIndex: number;
+}
 export interface TabConfig {
   label: string;
   count?: number;
   icon?: string;
   disabled?: boolean;
+  className?: string;
+  isDismissible?: boolean;
+  onDismiss?: (tabInfo: TabInfo) => void;
 }
-
 export interface TabsProps extends BaseProps {
   /**
    * Index of desired selected `Tab`
@@ -28,7 +37,11 @@ export interface TabsProps extends BaseProps {
    *    count?: number;
    *    icon?: string;
    *    disabled?: boolean;
+   *    className?: string;
+   *    isDismissible?: boolean;
+   *    onDismiss?: (tabInfo: object) => void;
    *  }
+   * </pre>
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
@@ -36,7 +49,9 @@ export interface TabsProps extends BaseProps {
    * | count | Count of Tab | |
    * | icon | Icon to be rendered inside Tab | |
    * | disabled | Determines if tab is disabled | |
-   * </pre>
+   * | className | Class on tab content | |
+   * | isDismissible | Determines if tab is dismissible | |
+   * | onDismiss | Called with tab info when a tab is being removed | |
    */
   tabs: TabConfig[];
   /**
@@ -114,6 +129,26 @@ export const Tabs = (props: TabsProps) => {
       ['Tab-pills--disabled']: disabled,
     });
 
+  const iconClass = (disabled?: boolean) =>
+    classNames({
+      [`DismissibleTab-icon--right`]: true,
+      ['cursor-pointer']: !disabled,
+    });
+
+  let activeTab;
+  let activeTabClass;
+  if ('props' in tabs[activeIndex]) {
+    activeTab = tabs[activeIndex] as React.ReactElement;
+    activeTabClass = activeTab.props?.className;
+  } else {
+    activeTab = tabs[activeIndex] as TabConfig;
+    activeTabClass = activeTab.className;
+  }
+  const tabContentClass = classNames({
+    ['TabsWrapper-content']: true,
+    [`${activeTabClass}`]: activeTabClass,
+  });
+
   const tabClickHandler = (tabIndex: number, isKeyboard?: boolean) => {
     if (props.activeIndex === undefined) {
       setActiveTab(tabIndex);
@@ -155,25 +190,41 @@ export const Tabs = (props: TabsProps) => {
       const iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
       return <Icon data-test="DesignSystem-Tabs--Icon" className="mr-4" name={icon} appearance={iconAppearance} />;
     }
-
     return null;
   };
 
-  const renderTab = (tab: Tab, index: number) => {
-    const { label = '', disabled } = tab as TabConfig;
+  const renderDismissIcon = (tab: Tab, index: number, onDismiss: noop) => {
+    const { disabled, label } = tab as TabConfig;
+    const iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
+    const tabInfo = { label: label, activeIndex: activeIndex, currentTabIndex: index };
+    const onCloseHandler = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      if (onDismiss) onDismiss(tabInfo);
+    };
+    return (
+      <Icon
+        data-test="DesignSystem-DismissibleTabs--Icon"
+        name="clear"
+        appearance={iconAppearance}
+        className={iconClass(disabled)}
+        onClick={!disabled ? onCloseHandler : () => {}}
+      />
+    );
+  };
 
+  const renderTab = (tab: Tab, index: number) => {
+    const { label = '', disabled, isDismissible, onDismiss = () => {} } = tab as TabConfig;
     if (typeof label !== 'string') {
       return label;
     }
-
     const textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-
     return (
       <>
         {renderInfo(tab, index)}
         <Text data-test="DesignSystem-Tabs--Text" appearance={textAppearance}>
           {label}
         </Text>
+        {isDismissible && renderDismissIcon(tab, index, onDismiss)}
       </>
     );
   };
@@ -204,18 +255,25 @@ export const Tabs = (props: TabsProps) => {
       </div>
     );
   });
-
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
       <div className={headerClass}>
         {renderTabs}
         {inlineComponent}
       </div>
-      {children && (
-        <div className="TabsWrapper-content" data-test="DesignSystem-Tabs--Content">
+      {children && (tabs[activeIndex] as any).props?.disabled ? (
+        <div className="h-100 pb-5" style={{ backgroundColor: 'var(--secondary-lightest)' }}>
+          <EmptyState
+            title="There's a problem loading this page."
+            description="Tab is disabled and you are not authorized to see the content of this tab"
+            size="large"
+          ></EmptyState>
+        </div>
+      ) : children && !(tabs[activeIndex] as any).props?.disabled ? (
+        <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
           {tabs[activeIndex]}
         </div>
-      )}
+      ) : null}
     </div>
   );
 };

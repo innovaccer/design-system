@@ -161,3 +161,21 @@ export const gridBreakpointData = [
   { token: '--grid-l-breakpoint', value: '992px' },
   { token: '--grid-xl-breakpoint', value: '1200px' },
 ];
+
+export const transitionsCurveData = [
+  { token: '--standard-productive-curve', value: 'cubic-bezier(0.2, 0, 0.38, 0.9)' },
+  { token: '--standard-expressive-curve', value: 'cubic-bezier(0.4, 0.14, 0.3, 1)' },
+  { token: '--entrance-productive-curve', value: 'cubic-bezier(0, 0, 0.38, 0.9)' },
+  { token: '--entrance-expressive-curve', value: 'cubic-bezier(0, 0, 0.3, 1)' },
+  { token: '--exit-productive-curve', value: 'cubic-bezier(0.2, 0, 1, 0.9)' },
+  { token: '--exit-expressive-curve', value: 'cubic-bezier(0.4, 0.14, 1, 1)' },
+];
+
+export const transitionsDurationData = [
+  { token: '--duration--fast-01', value: '80ms' },
+  { token: '--duration--fast-02', value: '120ms' },
+  { token: '--duration--moderate-01', value: '160ms' },
+  { token: '--duration--moderate-02', value: '240ms' },
+  { token: '--duration--slow-01', value: '400ms' },
+  { token: '--duration--slow-02', value: '720ms' },
+];

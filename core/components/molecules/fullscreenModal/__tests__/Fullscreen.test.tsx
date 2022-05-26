@@ -178,21 +178,18 @@ describe('FullscreenModal component with prop: open', () => {
   it('renders FullscreenModal with open: true', () => {
     const { getByTestId } = render(<FullscreenModal open={true} />);
 
-    expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal--open');
     expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal-animation--open');
     expect(getByTestId('DesignSystem-FullscreenModalContainer')).toHaveClass('Overlay-container--open');
   });
 
   it('renders FullscreenModal with open: false', () => {
-    const { getByTestId } = render(<FullscreenModal open={false} />);
-
-    expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal-animation--close');
+    const { container } = render(<FullscreenModal open={false} />);
+    expect(container.firstChild).toBeNull();
   });
 
   it('renders FullscreenModal with toggle of open', () => {
     const { getByTestId, rerender } = render(<FullscreenModal open={true}>this is modal body</FullscreenModal>);
 
-    expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal--open');
     expect(getByTestId('DesignSystem-FullscreenModal')).toHaveClass('FullscreenModal-animation--open');
 
     const closeIcon = getByTestId('DesignSystem-FullscreenModal--CloseButton');

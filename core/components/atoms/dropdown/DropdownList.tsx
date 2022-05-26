@@ -225,6 +225,9 @@ const DropdownList = (props: OptionsProps) => {
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [cursor, setCursor] = React.useState(firstEnabledOption);
 
+  // Re-initializes its value to 0 on every re-render
+  let animateOrder = 0;
+
   React.useEffect(() => {
     if (dropdownOpen) {
       const { width, minWidth, maxWidth } = props;
@@ -282,11 +285,27 @@ const DropdownList = (props: OptionsProps) => {
     return Dropdown;
   };
 
+  const animateClass = classNames({
+    ['fade-in']: dropdownOpen,
+    ['opacity-0']: dropdownOpen,
+    ['Dropdown-items']: true,
+  });
+
+  const getAnimateOrderStyle = (order: number) => {
+    const animateStyle: React.CSSProperties = {
+      animationDelay: dropdownOpen ? order * 20 + 'ms' : '',
+    };
+    return animateStyle;
+  };
+
   const getDropdownSectionClass = (showClearButton?: boolean) => {
-    return classNames({
-      ['Dropdown-section']: true,
-      ['Dropdown-section--withClear']: showClearButton,
-    });
+    return classNames(
+      {
+        ['Dropdown-section']: true,
+        ['Dropdown-section--withClear']: showClearButton,
+      },
+      animateClass
+    );
   };
 
   const dropdownClass = classNames(
@@ -301,11 +320,14 @@ const DropdownList = (props: OptionsProps) => {
     ['Dropdown-wrapper--wrap']: !truncateOption,
   });
 
-  const SelectAllClass = classNames({
-    ['Option-checkbox']: true,
-    ['Option-checkbox--active']: cursor === 0,
-    ['OptionWrapper']: true,
-  });
+  const SelectAllClass = classNames(
+    {
+      ['Option-checkbox']: true,
+      ['Option-checkbox--active']: cursor === 0,
+      ['OptionWrapper']: true,
+    },
+    animateClass
+  );
 
   const onToggleDropdown = (open: boolean, type?: string) => {
     toggleDropdown(open, type);
@@ -347,7 +369,7 @@ const DropdownList = (props: OptionsProps) => {
   const renderFooter = () => {
     const { footerLabel = 'Search for more options' } = props;
     return (
-      <div className={'Dropdown-footer'}>
+      <div className={`Dropdown-footer ${animateClass}`} style={getAnimateOrderStyle(++animateOrder)}>
         <Text size="small" appearance={'subtle'}>
           {footerLabel}
         </Text>
@@ -360,7 +382,7 @@ const DropdownList = (props: OptionsProps) => {
     const isClearDisabled = selected.every((option) => option.disabled);
 
     return (
-      <div className={getDropdownSectionClass(selectedGroup)}>
+      <div className={getDropdownSectionClass(selectedGroup)} style={getAnimateOrderStyle(++animateOrder)}>
         <Text size="small" appearance={'subtle'}>
           {group}
         </Text>
@@ -382,7 +404,7 @@ const DropdownList = (props: OptionsProps) => {
   const renderApplyButton = () => {
     const disable = _isEqual(previousSelected, tempSelected);
     return (
-      <div className={'Dropdown-buttonWrapper'}>
+      <div className={`Dropdown-buttonWrapper ${animateClass}`} style={getAnimateOrderStyle(++animateOrder)}>
         <Button
           ref={dropdownCancelButtonRef}
           className="mr-4"
@@ -410,7 +432,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const renderSearch = () => {
     return (
-      <div className={'Dropdown-inputWrapper'}>
+      <div className={`Dropdown-inputWrapper ${animateClass}`} style={getAnimateOrderStyle(++animateOrder)}>
         <Input
           name="Dropdown-search"
           icon={'search'}
@@ -447,7 +469,11 @@ const DropdownList = (props: OptionsProps) => {
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
 
     return (
-      <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
+      <div
+        style={getAnimateOrderStyle(++animateOrder)}
+        className={SelectAllClass}
+        onMouseEnter={() => updateActiveOption(0, true)}
+      >
         <Checkbox
           label={label}
           onChange={onSelectAll}
@@ -470,22 +496,23 @@ const DropdownList = (props: OptionsProps) => {
 
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
     const optionIsSelected = tempSelected.findIndex((option) => option.value === item.value) !== -1;
-
     return (
-      <Option
-        optionData={item}
-        truncateOption={truncateOption}
-        selected={optionIsSelected}
-        index={index}
-        updateActiveOption={updateActiveOption}
-        optionRenderer={optionRenderer}
-        active={active}
-        checkboxes={withCheckbox}
-        menu={menu}
-        onClick={() => optionClickHandler(item)}
-        onChange={(e) => props.onSelect(item, e.target.checked)}
-        optionType={props.optionType}
-      />
+      <div style={getAnimateOrderStyle(++animateOrder)} className={animateClass}>
+        <Option
+          optionData={item}
+          truncateOption={truncateOption}
+          selected={optionIsSelected}
+          index={index}
+          updateActiveOption={updateActiveOption}
+          optionRenderer={optionRenderer}
+          active={active}
+          checkboxes={withCheckbox}
+          menu={menu}
+          onClick={() => optionClickHandler(item)}
+          onChange={(e) => props.onSelect(item, e.target.checked)}
+          optionType={props.optionType}
+        />
+      </div>
     );
   };
 
