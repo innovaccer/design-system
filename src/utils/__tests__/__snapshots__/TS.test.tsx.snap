@@ -72,6 +72,12 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </s>
+  <h4
+    class="Mds-Subheading Mds-Subheading--default"
+    data-test="DesignSystem-Subheading"
+  >
+    Hello World!
+  </h4>
   <u
     data-test="DesignSystem-Underline"
   >

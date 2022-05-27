@@ -19,6 +19,7 @@ export const TS = () => {
       <DS.Pills>{string}</DS.Pills>
       <DS.Popover trigger={dummyComp}>{dummyComp}</DS.Popover>
       <DS.Strikethrough>{string}</DS.Strikethrough>
+      <DS.Subheading>{string}</DS.Subheading>
       <DS.Underline>{string}</DS.Underline>
       <DS.Tooltip text={string}>{dummyComp}</DS.Tooltip>
       {/* <DS.AvatarGroup list={[]} />
@@ -51,7 +52,6 @@ export const TS = () => {
       <DS.Spinner />
       <DS.Slider />
       <DS.RangeSlider />
-      <DS.Subheading>{string}</DS.Subheading>
       <DS.Switch />
       <DS.Text>{string}</DS.Text>
       <DS.Textarea />

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Subheading component 
+  appearance: "default"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Subheading Mds-Subheading--default"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Subheading component 
+  appearance: "disabled"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Subheading Mds-Subheading--disabled"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Subheading component 
+  appearance: "subtle"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Subheading Mds-Subheading--subtle"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Subheading component 
+  appearance: "white"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Subheading Mds-Subheading--white"
+      data-test="DesignSystem-Subheading"
+    >
+      Subheading
+    </h4>
+  </div>
+</body>
+`;

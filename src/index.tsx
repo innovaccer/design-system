@@ -13,5 +13,6 @@ export { OutsideClick } from './components/outsideClick';
 export { Paragraph } from './components/paragraph';
 export * from './components/textFormatter';
 export { Link } from './components/link';
+export { Subheading } from './components/subheading';
 
 export { version } from '../package.json';
