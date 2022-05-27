@@ -32,6 +32,12 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Button"
     tabindex="0"
   />
+  <h4
+    class="Mds-Heading Mds-Heading--m Mds-Heading--default"
+    data-test="DesignSystem-Heading"
+  >
+    Hello World!
+  </h4>
   <i
     data-test="DesignSystem-Italic"
   >
@@ -72,11 +78,6 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </s>
-  <u
-    data-test="DesignSystem-Underline"
-  >
-    Hello World!
-  </u>
   <span
     aria-describedby="floating-ui-4"
     class="Mds-Text Mds-Text--default Mds-Text--regular"
@@ -85,5 +86,10 @@ exports[`TS renders children 1`] = `
     Hello World!
   </span>
   <style />
+  <u
+    data-test="DesignSystem-Underline"
+  >
+    Hello World!
+  </u>
 </DocumentFragment>
 `;

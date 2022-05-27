@@ -13,14 +13,15 @@ export const TS = () => {
       <DS.Badge>Badge</DS.Badge>
       <DS.Bold>{string}</DS.Bold>
       <DS.Button />
+      <DS.Heading>{string}</DS.Heading>
       <DS.Italic>{string}</DS.Italic>
       <DS.Link>{string}</DS.Link>
       <DS.Paragraph>{string}</DS.Paragraph>
       <DS.Pills>{string}</DS.Pills>
       <DS.Popover trigger={dummyComp}>{dummyComp}</DS.Popover>
       <DS.Strikethrough>{string}</DS.Strikethrough>
-      <DS.Underline>{string}</DS.Underline>
       <DS.Tooltip text={string}>{dummyComp}</DS.Tooltip>
+      <DS.Underline>{string}</DS.Underline>
       {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
       <DS.Breadcrumbs list={[]} onClick={noop} />
@@ -33,7 +34,6 @@ export const TS = () => {
       <DS.Dropdown />
       <DS.EditableDropdown />
       <DS.EditableInput />
-      <DS.Heading>{string}</DS.Heading>
       <DS.Icon name={string} />
       <DS.Input />
       <DS.InputMask mask={[]} />

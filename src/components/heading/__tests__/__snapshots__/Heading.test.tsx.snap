@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading component Snapshot for prop:appearance 
+  appearance: "default"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Heading Mds-Heading--m Mds-Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:appearance 
+  appearance: "disabled"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Heading Mds-Heading--m Mds-Heading--disabled"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:appearance 
+  appearance: "subtle"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Heading Mds-Heading--m Mds-Heading--subtle"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:appearance 
+  appearance: "white"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Heading Mds-Heading--m Mds-Heading--white"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:size 
+  size: "l"
+ 1`] = `
+<body>
+  <div>
+    <h3
+      class="Mds-Heading Mds-Heading--l Mds-Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h3>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:size 
+  size: "m"
+ 1`] = `
+<body>
+  <div>
+    <h4
+      class="Mds-Heading Mds-Heading--m Mds-Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h4>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:size 
+  size: "s"
+ 1`] = `
+<body>
+  <div>
+    <h5
+      class="Mds-Heading Mds-Heading--s Mds-Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h5>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:size 
+  size: "xl"
+ 1`] = `
+<body>
+  <div>
+    <h2
+      class="Mds-Heading Mds-Heading--xl Mds-Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h2>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:size 
+  size: "xxl"
+ 1`] = `
+<body>
+  <div>
+    <h1
+      class="Mds-Heading Mds-Heading--xxl Mds-Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </h1>
+  </div>
+</body>
+`;
