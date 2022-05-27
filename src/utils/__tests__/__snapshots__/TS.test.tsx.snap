@@ -77,5 +77,13 @@ exports[`TS renders children 1`] = `
   >
     Hello World!
   </u>
+  <span
+    aria-describedby="floating-ui-4"
+    class="Mds-Text Mds-Text--default Mds-Text--regular"
+    data-test="DesignSystem-Text"
+  >
+    Hello World!
+  </span>
+  <style />
 </DocumentFragment>
 `;

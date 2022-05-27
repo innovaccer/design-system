@@ -207,7 +207,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
   const { iconOptions, children } = props;
 
   return iconOptions?.name && iconOptions?.tooltip && !children ? (
-    <Tooltip tooltip={iconOptions?.tooltip}>
+    <Tooltip text={iconOptions?.tooltip}>
       <ButtonElement {...props} ref={ref} />
     </Tooltip>
   ) : (

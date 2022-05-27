@@ -5,6 +5,10 @@
   box-shadow: var(--shadow-l);
 }
 
+.Mds-Popover:focus {
+  outline: none;
+}
+
 .Mds-Popover--dark {
   background: var(--inverse);
   color: var(--white);

@@ -1,4 +1,4 @@
-.Tooltip {
+.Mds-Tooltip {
   max-width: var(--spacing-9);
   padding: var(--spacing) var(--spacing-2);
   border-radius: var(--spacing-m);
@@ -11,7 +11,139 @@
   transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
 }
 
-.Tooltip-text {
+.Mds-Tooltip-text {
   word-break: break-word;
   hyphens: auto;
+}
+
+@keyframes Mds-tooltip-open-top {
+  from {
+    margin-top: var(--spacing-m);
+    opacity: 0.5;
+  }
+
+  to {
+    margin-top: calc(-1 * var(--spacing-m));
+    opacity: 1;
+  }
+}
+
+@keyframes Mds-tooltip-close-top {
+  from {
+    margin-top: calc(-1 * var(--spacing-m));
+    opacity: 0.5;
+  }
+
+  to {
+    margin-top: var(--spacing-m);
+    opacity: 0;
+  }
+}
+
+.Mds-Tooltip-animation-open-top {
+  animation: Mds-tooltip-open-top 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+
+.Mds-Tooltip-animation-close-top {
+  animation: Mds-tooltip-close-top 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+
+@keyframes Mds-tooltip-open-bottom {
+  from {
+    margin-top: calc(-1 * var(--spacing-m));
+    opacity: 0.5;
+  }
+
+  to {
+    margin-top: var(--spacing-m);
+    opacity: 1;
+  }
+}
+
+@keyframes Mds-tooltip-close-bottom {
+  from {
+    margin-top: var(--spacing-m);
+    opacity: 0.5;
+  }
+
+  to {
+    margin-top: calc(-1 * var(--spacing-m));
+    opacity: 0;
+  }
+}
+
+.Mds-Tooltip-animation-open-bottom {
+  animation: Mds-tooltip-open-bottom 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+
+.Mds-Tooltip-animation-close-bottom {
+  animation: Mds-tooltip-close-bottom 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+
+@keyframes Mds-tooltip-open-left {
+  from {
+    margin-left: var(--spacing-m);
+    opacity: 0.5;
+  }
+
+  to {
+    margin-left: calc(-1 * var(--spacing-m));
+    opacity: 1;
+  }
+}
+
+@keyframes Mds-tooltip-close-left {
+  from {
+    margin-left: calc(-1 * var(--spacing-m));
+    opacity: 0.5;
+  }
+
+  to {
+    margin-left: var(--spacing-m);
+    opacity: 0;
+  }
+}
+
+.Mds-Tooltip-animation-open-left {
+  animation: Mds-tooltip-open-left 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+
+.Mds-Tooltip-animation-close-left {
+  animation: Mds-tooltip-close-left 120ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+
+@keyframes Mds-tooltip-open-right {
+  from {
+    margin-left: calc(-1 * var(--spacing-m));
+    opacity: 0.5;
+  }
+
+  to {
+    margin-left: var(--spacing-m);
+    opacity: 1;
+  }
+}
+
+@keyframes Mds-tooltip-close-right {
+  from {
+    margin-left: var(--spacing-m);
+    opacity: 0.5;
+  }
+
+  to {
+    margin-left: calc(-1 * var(--spacing-m));
+    opacity: 0;
+  }
+}
+
+.Mds-Tooltip-animation-open-right {
+  animation: Mds-tooltip-open-right 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation-fill-mode: forwards;
+}
+
+.Mds-Tooltip-animation-close-right {
+  animation: Mds-tooltip-close-right 120ms cubic-bezier(0.4, 0.14, 1, 1);
 }

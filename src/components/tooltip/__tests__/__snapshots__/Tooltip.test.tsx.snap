@@ -1,0 +1,449 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip component 
+  position: "bottom", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-9-description"
+      aria-labelledby="floating-ui-9-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-10"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-10"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "bottom-end", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-15-description"
+      aria-labelledby="floating-ui-15-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-16"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-16"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "bottom-start", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-12-description"
+      aria-labelledby="floating-ui-12-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-13"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-13"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "left", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-18-description"
+      aria-labelledby="floating-ui-18-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-19"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-19"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "right", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-21-description"
+      aria-labelledby="floating-ui-21-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-22"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-22"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-1"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-0-description"
+      aria-labelledby="floating-ui-0-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-1"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-end", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-6-description"
+      aria-labelledby="floating-ui-6-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-7"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-7"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+</body>
+`;
+
+exports[`Tooltip component 
+  position: "top-start", tooltip: "Sample string"
+ 1`] = `
+<body>
+  <div
+    id="floating-ui-root"
+  >
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+    <div
+      aria-describedby="floating-ui-3-description"
+      aria-labelledby="floating-ui-3-label"
+      class="Mds-Popover"
+      data-test="DesignSystem-Popover"
+      id="floating-ui-4"
+      role="tooltip"
+      style="position: absolute; overflow: clip; transform-origin: top left;"
+      tabindex="-1"
+    >
+      <div
+        class="Mds-Tooltip"
+      >
+        <span
+          class="Mds-Text Mds-Text--white Mds-Text--regular Mds-Tooltip-text"
+          data-test="DesignSystem-Text"
+        />
+      </div>
+    </div>
+    <span
+      aria-hidden="true"
+      data-aria-hidden="true"
+      style="position: fixed; opacity: 0; pointer-events: none; outline: 0;"
+      tabindex="0"
+    />
+  </div>
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  >
+    <button
+      aria-describedby="floating-ui-4"
+      class="Mds-Button Mds-Button--regular Mds-Button--basic Mds-Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      Button
+    </button>
+    <style />
+  </div>
+</body>
+`;
