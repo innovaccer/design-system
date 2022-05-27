@@ -32,15 +32,6 @@ export type BaseProps = {
 export type BaseHtmlProps<T> = Omit<React.HTMLProps<T>, 'ref' | 'size' | 'className'>;
 export type OmitNativeProps<T, K extends keyof any> = Omit<BaseHtmlProps<T>, K>;
 
-type ChildProps = {
-  /**
-   * Text to be rendered
-   */
-  children: React.ReactNode;
-};
-
-export type TextFormatterProps = ChildProps & BaseProps & BaseHtmlProps<HTMLElement>;
-
 export const extractBaseProps = (props: Record<string, any>) => {
   const baseProps = ['className', 'data-test'];
   const basePropsObj = baseProps.reduce((acc, curr) => {

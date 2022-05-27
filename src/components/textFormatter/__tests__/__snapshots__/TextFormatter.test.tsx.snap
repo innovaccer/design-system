@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bold component Snapshots 
+  
+ 1`] = `
+<body>
+  <div>
+    <b
+      data-test="DesignSystem-Bold"
+    >
+      TextFormatter text
+    </b>
+  </div>
+</body>
+`;
+
+exports[`Italic component Snapshots 
+  
+ 1`] = `
+<body>
+  <div>
+    <i
+      data-test="DesignSystem-Italic"
+    >
+      TextFormatter text
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Strikethrough component Snapshots 
+  
+ 1`] = `
+<body>
+  <div>
+    <s
+      data-test="DesignSystem-Strikethrough"
+    >
+      TextFormatter text
+    </s>
+  </div>
+</body>
+`;
+
+exports[`Underline component Snapshots 
+  
+ 1`] = `
+<body>
+  <div>
+    <u
+      data-test="DesignSystem-Underline"
+    >
+      TextFormatter text
+    </u>
+  </div>
+</body>
+`;
