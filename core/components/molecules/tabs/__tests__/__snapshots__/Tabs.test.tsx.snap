@@ -28,6 +28,15 @@ exports[`Tabs component
         >
           Tab 1
         </span>
+        <i
+          class="material-icons material-icons-round Icon Icon--info DismissibleTab-icon--right cursor-pointer"
+          data-test="DesignSystem-DismissibleTabs--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+          tabindex="0"
+        >
+          clear_round
+        </i>
       </div>
       <div
         class="Tab"
@@ -100,6 +109,15 @@ exports[`Tabs component
         >
           Tab 1
         </span>
+        <i
+          class="material-icons material-icons-round Icon Icon--info DismissibleTab-icon--right cursor-pointer"
+          data-test="DesignSystem-DismissibleTabs--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+          tabindex="0"
+        >
+          clear_round
+        </i>
       </div>
       <div
         class="Tab"

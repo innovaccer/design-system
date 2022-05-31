@@ -48,13 +48,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65,13 +58,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -688,13 +674,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -705,13 +684,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -1327,13 +1299,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -1344,13 +1309,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -1966,13 +1924,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -1983,13 +1934,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -2605,13 +2549,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -2622,13 +2559,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -3244,13 +3174,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -3261,13 +3184,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -3883,13 +3799,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -3900,13 +3809,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -4522,13 +4424,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -4539,13 +4434,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -5161,13 +5049,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -5178,13 +5059,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -5800,13 +5674,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -5817,13 +5684,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -6439,13 +6299,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -6456,13 +6309,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -7078,13 +6924,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -7095,13 +6934,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -7717,13 +7549,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -7734,13 +7559,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -8356,13 +8174,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -8373,13 +8184,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -8995,13 +8799,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -9012,13 +8809,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -9634,13 +9424,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -9651,13 +9434,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -10273,13 +10049,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -10290,13 +10059,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -10912,13 +10674,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -10929,13 +10684,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -11551,13 +11299,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -11568,13 +11309,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -12190,13 +11924,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -12207,13 +11934,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -12829,13 +12549,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -12846,13 +12559,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -13468,13 +13174,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -13485,13 +13184,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -14107,13 +13799,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -14124,13 +13809,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -14746,13 +14424,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -14763,13 +14434,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -15385,13 +15049,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -15402,13 +15059,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -16024,13 +15674,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -16041,13 +15684,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -16663,13 +16299,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -16680,13 +16309,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -17302,13 +16924,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -17319,13 +16934,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -17941,13 +17549,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -17958,13 +17559,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -18580,13 +18174,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -18597,13 +18184,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -19219,13 +18799,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -19236,13 +18809,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -19858,13 +19424,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -19875,13 +19434,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -20497,13 +20049,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -20514,13 +20059,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -21136,13 +20674,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -21153,13 +20684,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -21775,13 +21299,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -21792,13 +21309,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -22414,13 +21924,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -22431,13 +21934,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -23053,13 +22549,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -23070,13 +22559,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -23692,13 +23174,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -23709,13 +23184,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -24331,13 +23799,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -24348,13 +23809,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -24970,13 +24424,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -24987,13 +24434,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -25609,13 +25049,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -25626,13 +25059,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -26248,13 +25674,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -26265,13 +25684,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -26887,13 +26299,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -26904,13 +26309,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -27526,13 +26924,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -27543,13 +26934,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -28165,13 +27549,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -28182,13 +27559,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -28804,13 +28174,6 @@ exports[`DateRangePicker component
               >
                 Feb
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -28821,13 +28184,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -29443,13 +28799,6 @@ exports[`DateRangePicker component
               >
                 Feb
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -29460,13 +28809,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -29907,13 +29249,6 @@ exports[`DateRangePicker component
               >
                 Mar
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -29924,13 +29259,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -30458,13 +29786,6 @@ exports[`DateRangePicker component
               >
                 Feb
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -30475,13 +29796,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -30922,13 +30236,6 @@ exports[`DateRangePicker component
               >
                 Mar
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -30939,13 +30246,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -31400,13 +30700,6 @@ exports[`DateRangePicker component
               >
                 Apr
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -31417,13 +30710,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -31930,13 +31216,6 @@ exports[`DateRangePicker component
               >
                 Mar
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -31947,13 +31226,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -32569,13 +31841,6 @@ exports[`DateRangePicker component
               >
                 Mar
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -32586,13 +31851,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -33054,13 +32312,6 @@ exports[`DateRangePicker component
               >
                 Apr
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -33071,13 +32322,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -33584,13 +32828,6 @@ exports[`DateRangePicker component
               >
                 Mar
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -33601,13 +32838,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -34069,13 +33299,6 @@ exports[`DateRangePicker component
               >
                 Apr
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -34086,13 +33309,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -34540,13 +33756,6 @@ exports[`DateRangePicker component
               >
                 May
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -34557,13 +33766,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -35137,13 +34339,6 @@ exports[`DateRangePicker component
               >
                 Apr
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -35154,13 +34349,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -35776,13 +34964,6 @@ exports[`DateRangePicker component
               >
                 Apr
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -35793,13 +34974,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -36275,13 +35449,6 @@ exports[`DateRangePicker component
               >
                 May
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -36292,13 +35459,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -36872,13 +36032,6 @@ exports[`DateRangePicker component
               >
                 Apr
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -36889,13 +36042,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -37371,13 +36517,6 @@ exports[`DateRangePicker component
               >
                 May
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -37388,13 +36527,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -37881,13 +37013,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -37898,13 +37023,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -38425,13 +37543,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -38442,13 +37553,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -39064,13 +38168,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -40002,13 +39099,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -40019,13 +39109,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -40641,13 +39724,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -41579,13 +40655,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -41596,13 +40665,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -42218,13 +41280,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -42792,7 +41847,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -42836,13 +41891,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -42853,13 +41901,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -43321,13 +42362,6 @@ exports[`DateRangePicker component
               >
                 Jul
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -43338,13 +42372,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -43964,7 +42991,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -44008,13 +43035,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -44025,13 +43045,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -44493,13 +43506,6 @@ exports[`DateRangePicker component
               >
                 Jul
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -44510,13 +43516,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -45136,7 +44135,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -45180,13 +44179,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -45197,13 +44189,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -45665,13 +44650,6 @@ exports[`DateRangePicker component
               >
                 Jul
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -45682,13 +44660,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -46195,13 +45166,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -46212,13 +45176,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -46834,13 +45791,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -47408,7 +46358,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -47452,13 +46402,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -47469,13 +46412,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -47937,13 +46873,6 @@ exports[`DateRangePicker component
               >
                 Jul
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -47954,13 +46883,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -48580,7 +47502,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -48624,13 +47546,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -48641,13 +47556,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -49109,13 +48017,6 @@ exports[`DateRangePicker component
               >
                 Jul
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -49126,13 +48027,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -49752,7 +48646,7 @@ exports[`DateRangePicker component
     class="Popover DateRangePicker DateRangePicker--left"
     data-layer="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; transform-origin: top left; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9);"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
   >
     <div
       class="Calendar-wrapper"
@@ -49796,13 +48690,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -49813,13 +48700,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
         </div>
@@ -50281,13 +49161,6 @@ exports[`DateRangePicker component
               >
                 Jul
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -50298,13 +49171,6 @@ exports[`DateRangePicker component
               >
                 2021
               </span>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -50811,13 +49677,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -50828,13 +49687,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -51450,13 +50302,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -51467,13 +50312,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -52087,13 +50925,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -52104,13 +50935,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -52237,13 +51061,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -52254,13 +51071,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -52387,13 +51197,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -52404,13 +51207,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -52537,13 +51333,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -52554,13 +51343,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -52687,13 +51469,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -52704,13 +51479,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -52837,13 +51605,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -52854,13 +51615,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -52987,13 +51741,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -53004,13 +51751,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -53137,13 +51877,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -53154,13 +51887,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -53287,13 +52013,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -53304,13 +52023,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -53437,13 +52149,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -53454,13 +52159,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -53587,13 +52285,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -53604,13 +52295,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -53737,13 +52421,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -53754,13 +52431,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -53887,13 +52557,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -53904,13 +52567,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -54037,13 +52693,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -54054,13 +52703,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -54187,13 +52829,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -54204,13 +52839,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -54337,13 +52965,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -54354,13 +52975,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -54489,13 +53103,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -54506,13 +53113,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -55128,13 +53728,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -55145,13 +53738,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -55767,13 +54353,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -55784,13 +54363,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -56406,13 +54978,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -56423,13 +54988,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -57045,13 +55603,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -57062,13 +55613,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -57684,13 +56228,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -57701,13 +56238,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -58323,13 +56853,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -58340,13 +56863,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -58962,13 +57478,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -58979,13 +57488,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -59601,13 +58103,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -59618,13 +58113,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -60240,13 +58728,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -60257,13 +58738,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -60879,13 +59353,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -60896,13 +59363,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -61518,13 +59978,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -61535,13 +59988,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -62157,13 +60603,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -62174,13 +60613,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -62796,13 +61228,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -62813,13 +61238,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -63435,13 +61853,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -63452,13 +61863,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -64074,13 +62478,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -64091,13 +62488,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -64711,13 +63101,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -64728,13 +63111,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -64861,13 +63237,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -64878,13 +63247,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -65011,13 +63373,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65028,13 +63383,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -65161,13 +63509,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65178,13 +63519,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -65311,13 +63645,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65328,13 +63655,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -65461,13 +63781,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65478,13 +63791,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -65611,13 +63917,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65628,13 +63927,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -65761,13 +64053,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65778,13 +64063,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -65911,13 +64189,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -65928,13 +64199,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -66061,13 +64325,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -66078,13 +64335,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -66211,13 +64461,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -66228,13 +64471,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -66361,13 +64597,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -66378,13 +64607,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -66511,13 +64733,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -66528,13 +64743,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -66661,13 +64869,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -66678,13 +64879,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -66811,13 +65005,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -66828,13 +65015,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -66961,13 +65141,6 @@ exports[`DateRangePicker component
                 class="Heading Heading--s Heading--default"
                 data-test="DesignSystem-Heading"
               />
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -66978,13 +65151,6 @@ exports[`DateRangePicker component
               >
                 NaN
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -67113,13 +65279,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -67130,13 +65289,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -67752,13 +65904,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -67769,13 +65914,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -68391,13 +66529,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -68408,13 +66539,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -69030,13 +67154,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -69047,13 +67164,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -69669,13 +67779,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -69686,13 +67789,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -70308,13 +68404,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -70325,13 +68414,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -70947,13 +69029,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -70964,13 +69039,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -71586,13 +69654,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -71603,13 +69664,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -72225,13 +70279,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -72242,13 +70289,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -72864,13 +70904,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -72881,13 +70914,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -73503,13 +71529,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -73520,13 +71539,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -74142,13 +72154,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -74159,13 +72164,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -74781,13 +72779,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -74798,13 +72789,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -75420,13 +73404,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -75437,13 +73414,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -76059,13 +74029,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -76076,13 +74039,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -76698,13 +74654,6 @@ exports[`DateRangePicker component
               >
                 Aug
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -76715,13 +74664,6 @@ exports[`DateRangePicker component
               >
                 2021
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -77337,13 +75279,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -77354,13 +75289,6 @@ exports[`DateRangePicker component
               >
                 1
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -77976,13 +75904,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -77993,13 +75914,6 @@ exports[`DateRangePicker component
               >
                 2
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button
@@ -78615,13 +76529,6 @@ exports[`DateRangePicker component
               >
                 Jun
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
             <div
               class="ml-4 d-flex justify-content-center align-items-center"
@@ -78632,13 +76539,6 @@ exports[`DateRangePicker component
               >
                 3
               </h5>
-              <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
-                role="button"
-                style="font-size: 16px; width: 16px;"
-              >
-                keyboard_arrow_down_round
-              </i>
             </div>
           </div>
           <button

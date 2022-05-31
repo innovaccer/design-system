@@ -1,6 +1,4 @@
-import { FileListProps } from '@/components/molecules/fileList';
-
-export const fileList: FileListProps['fileList'] = [
+export const fileList = [
   {
     file: (File = {
       name: 'Audio File.mp3',

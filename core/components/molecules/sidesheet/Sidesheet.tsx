@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import { Row, Column, Backdrop, OutsideClick, Button } from '@/index';
+import { Row, Column, Backdrop, OutsideClick, Button, Tooltip } from '@/index';
 import { ColumnProps } from '@/index.type';
 import { OverlayFooter } from '@/components/molecules/overlayFooter';
 import { OverlayHeader, OverlayHeaderProps } from '@/components/molecules/overlayHeader';
@@ -171,18 +171,9 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
         if (this.props.closeOnEscape) OverlayManager.add(this.sidesheetRef.current);
       } else {
-        this.setState(
-          {
-            animate: false,
-          },
-          () => {
-            window.setTimeout(() => {
-              this.setState({
-                open: false,
-              });
-            }, 120);
-          }
-        );
+        this.setState({
+          animate: false,
+        });
 
         if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       }
@@ -196,6 +187,14 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     if (open) {
       if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       if (onClose) onClose(event, 'OutsideClick');
+    }
+  }
+
+  handleAnimationEnd() {
+    if (!this.state.animate) {
+      this.setState({
+        open: false,
+      });
     }
   }
 
@@ -230,7 +229,6 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       ['Overlay-container']: true,
       ['fade-in']: animate,
       ['Overlay-container--open']: animate,
-      ['fade-out']: !animate,
       ['Overlay-container--close']: !animate,
     });
 
@@ -264,6 +262,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
         data-layer={true}
         style={{ zIndex }}
         ref={this.sidesheetRef}
+        onAnimationEnd={() => this.handleAnimationEnd}
       >
         <Column data-test="DesignSystem-Sidesheet" {...baseProps} className={classes} size={sidesheetWidth[dimension]}>
           <div className={headerClass}>
@@ -273,14 +272,16 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
               {!!header && header}
             </Column>
             <Column className="flex-grow-0">
-              <Button
-                icon="close"
-                appearance="transparent"
-                data-test="DesignSystem-Sidesheet--CloseButton"
-                onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-                  if (onClose) onClose(event, 'IconClick');
-                }}
-              />
+              <Tooltip tooltip="Close">
+                <Button
+                  icon="close"
+                  appearance="transparent"
+                  data-test="DesignSystem-Sidesheet--CloseButton"
+                  onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+                    if (onClose) onClose(event, 'IconClick');
+                  }}
+                />
+              </Tooltip>
             </Column>
           </div>
           <OverlayBody data-test="DesignSystem-Sidesheet--OverlayBody" className={bodyClass}>

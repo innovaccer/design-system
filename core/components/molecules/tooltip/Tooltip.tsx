@@ -15,6 +15,16 @@ const tooltipPropsList = [
   'hideOnReferenceEscape',
   'closeOnScroll',
 ] as const;
+const positionValue = {
+  bottom: 'bottom',
+  top: 'top',
+  'top-start': 'top',
+  'top-end': 'top',
+  'bottom-start': 'bottom',
+  'bottom-end': 'bottom',
+  left: 'left',
+  right: 'right',
+};
 type TooltipPopperProps = typeof tooltipPropsList[number];
 export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, BaseProps {
   /**
@@ -39,7 +49,16 @@ export const Tooltip = (props: TooltipProps) => {
   );
 
   return (
-    <Popover trigger={children} on={'hover'} offset={'medium'} {...rest}>
+    <Popover
+      trigger={children}
+      on={'hover'}
+      offset={'medium'}
+      {...rest}
+      animationClass={{
+        open: `Tooltip-animation-open-${positionValue[props.position]}`,
+        close: `Tooltip-animation-close-${positionValue[props.position]}`,
+      }}
+    >
       {tooltipWrapper}
     </Popover>
   );

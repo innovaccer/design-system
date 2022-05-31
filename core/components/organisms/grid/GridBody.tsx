@@ -86,8 +86,7 @@ export const GridBody = (props: GridBodyProps) => {
         className="Grid-body"
         minItemHeight={minRowHeight[size]}
         totalLength={dataLength}
-        length={20}
-        buffer={7}
+        length={dataLength}
         renderItem={renderRow}
       />
     </>

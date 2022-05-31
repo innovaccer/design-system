@@ -28,6 +28,8 @@ type BodyCellProps = SharedCellProps & {
   expandedState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 };
 
+export type HeaderCellRendererProps = HeaderCellProps & SharedCellProps;
+
 export type CellProps = Partial<HeaderCellProps> &
   Partial<BodyCellProps> &
   SharedCellProps & {
@@ -37,7 +39,17 @@ export type CellProps = Partial<HeaderCellProps> &
 
 const HeaderCell = (props: HeaderCellProps) => {
   const context = React.useContext(GridContext);
-  const { schema, onMenuChange, onFilterChange, updateColumnSchema } = props;
+  const { schema, colIndex, onSelectAll, onMenuChange, onFilterChange, updateColumnSchema, reorderColumn } = props;
+
+  const headProps: HeaderCellRendererProps = {
+    schema,
+    colIndex,
+    onSelectAll,
+    onMenuChange,
+    onFilterChange,
+    updateColumnSchema,
+    reorderColumn,
+  };
 
   const {
     loading,
@@ -131,16 +143,14 @@ const HeaderCell = (props: HeaderCellProps) => {
           <Placeholder withImage={false}>
             <PlaceholderParagraph length="medium" />
           </Placeholder>
+        ) : !schema.headerCellRenderer && headCellTooltip ? (
+          <Tooltip position="top-start" triggerClass="w-100 overflow-hidden" tooltip={schema.displayName}>
+            {renderLabel()}
+          </Tooltip>
+        ) : schema.headerCellRenderer && !headCellTooltip ? (
+          schema.headerCellRenderer(headProps)
         ) : (
-          <>
-            {headCellTooltip ? (
-              <Tooltip position="top-start" triggerClass="w-100 overflow-hidden" tooltip={schema.displayName}>
-                {renderLabel()}
-              </Tooltip>
-            ) : (
-              renderLabel()
-            )}
-          </>
+          renderLabel()
         )}
       </div>
       {showFilters && filters && (

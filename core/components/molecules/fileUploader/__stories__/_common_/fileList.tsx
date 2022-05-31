@@ -1,12 +1,10 @@
-import { FileUploaderListProps } from '../../FileUploaderList';
-
-const file: File = {
+const file = {
   name: '_DSC0071.JPG',
   size: 585947,
   type: 'image/jpeg',
 } as any;
 
-export const fileList: FileUploaderListProps['fileList'] = [
+export const fileList = [
   {
     file,
     status: 'uploading',
