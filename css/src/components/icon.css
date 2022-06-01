@@ -3,7 +3,7 @@
  * https://google.github.io/material-design-icons/
  */
 
-/* Rules for sizing the icon. */
+/* Rules for sizing the Mds-Icon. */
 
 /* .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -19,133 +19,129 @@
 
 /* .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); } */
-.Icon {
+.Mds-Icon {
   flex-shrink: 0;
   overflow: hidden;
   flex-shrink: 0;
   user-select: none;
 }
 
-.Icon--subtle {
+.Mds-Icon--subtle {
   color: var(--text-subtle);
 }
 
-.Icon--disabled {
+.Mds-Icon--disabled {
   color: var(--text-disabled);
 }
 
-.Icon--destructive {
+.Mds-Icon--destructive {
   color: var(--text-destructive);
 }
 
-.Icon--white {
+.Mds-Icon--white {
   color: var(--text-white);
 }
 
-.Icon--default {
+.Mds-Icon--default {
   color: var(--text);
 }
 
-.Icon--info {
-  color: var(--primary);
-}
-
-.Icon--success {
+.Mds-Icon--success {
   color: var(--success);
 }
 
-.Icon--warning {
+.Mds-Icon--warning {
   color: var(--warning);
 }
 
-.Icon--alert {
+.Mds-Icon--alert {
   color: var(--alert);
 }
 
-.Icon--primary {
+.Mds-Icon--primary {
   color: var(--primary);
 }
 
-.Icon--primaryLighter {
+.Mds-Icon--primaryLighter {
   color: var(--primary-lighter);
 }
 
-.Icon--primaryDark {
+.Mds-Icon--primaryDark {
   color: var(--primary-dark);
 }
 
-.Icon--alertLighter {
+.Mds-Icon--alertLighter {
   color: var(--alert-lighter);
 }
 
-.Icon--alertDark {
+.Mds-Icon--alertDark {
   color: var(--alert-dark);
 }
 
-.Icon--successLighter {
+.Mds-Icon--successLighter {
   color: var(--success-lighter);
 }
 
-.Icon--successDark {
+.Mds-Icon--successDark {
   color: var(--success-dark);
 }
 
-.Icon--warningLighter {
+.Mds-Icon--warningLighter {
   color: var(--warning-lighter);
 }
 
-.Icon--warningDark {
+.Mds-Icon--warningDark {
   color: var(--warning-dark);
 }
 
-.Icon--accent1 {
+.Mds-Icon--accent1 {
   color: var(--accent1);
 }
 
-.Icon--accent1Lighter {
+.Mds-Icon--accent1Lighter {
   color: var(--accent1-lighter);
 }
 
-.Icon--accent1Dark {
+.Mds-Icon--accent1Dark {
   color: var(--accent1-dark);
 }
 
-.Icon--accent2 {
+.Mds-Icon--accent2 {
   color: var(--accent2);
 }
 
-.Icon--accent2Lighter {
+.Mds-Icon--accent2Lighter {
   color: var(--accent2-lighter);
 }
 
-.Icon--accent2Dark {
+.Mds-Icon--accent2Dark {
   color: var(--accent2-dark);
 }
 
-.Icon--accent3 {
+.Mds-Icon--accent3 {
   color: var(--accent3);
 }
 
-.Icon--accent3Lighter {
+.Mds-Icon--accent3Lighter {
   color: var(--accent3-lighter);
 }
 
-.Icon--accent3Dark {
+.Mds-Icon--accent3Dark {
   color: var(--accent3-dark);
 }
 
-.Icon--accent4 {
+.Mds-Icon--accent4 {
   color: var(--accent4);
 }
 
-.Icon--accent4Lighter {
+.Mds-Icon--accent4Lighter {
   color: var(--accent4-lighter);
 }
 
-.Icon--accent4Dark {
+.Mds-Icon--accent4Dark {
   color: var(--accent4-dark);
 }
 
-.Icon--inverse {
+.Mds-Icon--inverse {
   color: var(--inverse);
 }

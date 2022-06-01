@@ -1,0 +1,545 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent1", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent1"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent1_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent1Dark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent1_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent1Lighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent2", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent2"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent2_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent2Dark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent2_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent2Lighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent3", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent3"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent3_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent3Dark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent3_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent3Lighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent4", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent4"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent4_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent4Dark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "accent4_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--accent4Lighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "alert", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--alert"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "alert_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--alertDark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "alert_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--alertLighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "destructive", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--destructive"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "disabled", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--disabled"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "inverse", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--inverse"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "primary", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--primary"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "primary_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--primaryDark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "primary_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--primaryLighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "subtle", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--subtle"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "success", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--success"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "success_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--successDark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "success_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--successLighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "warning", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--warning"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "warning_dark", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--warningDark"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "warning_lighter", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--warningLighter"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, appearance: "white", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--white"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, type: "filled", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons Mds-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_filled
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, type: "outlined", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-outlined Mds-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_outlined
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, type: "round", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round Mds-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, type: "sharp", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-sharp Mds-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_sharp
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component 
+  name: "events", size: 50, type: "two-tone", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-two-tone Mds-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+    >
+      undefined_two-tone
+    </i>
+  </div>
+</body>
+`;

@@ -91,11 +91,12 @@ export const Avatar = (props: AvatarProps) => {
       {icon && (
         <Icon
           data-test="DesignSystem-Avatar--Icon"
-          name={icon}
           size={size === 'regular' ? 16 : 12}
           appearance={'white'}
           className={iconClass}
-        />
+        >
+          {icon}
+        </Icon>
       )}
       {image && isValidImage ? (
         <img data-test="DesignSystem-Avatar--Image" src={image?.src} alt={image.altText} {...imageDimensions} />
@@ -105,11 +106,12 @@ export const Avatar = (props: AvatarProps) => {
       {!text && !isValidImage && !image?.altText && !icon && (
         <Icon
           data-test="DesignSystem-Avatar--Icon"
-          name="person"
           size={size === 'regular' ? 16 : 12}
           appearance={'white'}
           className={iconClass}
-        />
+        >
+          person
+        </Icon>
       )}
     </span>
   );

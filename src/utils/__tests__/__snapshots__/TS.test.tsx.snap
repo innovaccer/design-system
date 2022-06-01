@@ -7,7 +7,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Avatar"
   >
     <i
-      class="material-icons material-icons-round Icon Icon--white Mds-Avatar-content--secondary"
+      class="material-icons material-icons-round Mds-Icon Mds-Icon--white Mds-Avatar-content--secondary"
       data-test="DesignSystem-Avatar--Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -85,5 +85,12 @@ exports[`TS renders children 1`] = `
     Hello World!
   </span>
   <style />
+  <i
+    class="material-icons material-icons-round Mds-Icon"
+    role="button"
+    style="font-size: 16px; width: 16px;"
+  >
+    Hello World!_round
+  </i>
 </DocumentFragment>
 `;

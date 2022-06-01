@@ -180,18 +180,19 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
             <div className={iconClass}>
               <Icon
                 data-test="DesignSystem-Button--Icon"
-                name={iconOptions?.name}
                 appearance={
                   disabled
                     ? 'disabled'
                     : appearance === 'basic' || appearance === 'transparent'
                     ? selected
-                      ? 'info'
+                      ? 'primary'
                       : 'default'
                     : 'white'
                 }
                 size={iconOptions?.isLarge && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
-              />
+              >
+                {iconOptions?.name}
+              </Icon>
             </div>
           )}
           {children}

@@ -9,7 +9,6 @@ export type IconAppearance =
   | 'white'
   | 'subtle'
   | 'disabled'
-  | 'info'
   | 'alert'
   | 'warning'
   | 'success'
@@ -35,13 +34,9 @@ export type IconAppearance =
   | 'accent4_lighter'
   | 'accent4_dark'
   | 'inverse';
-export type IconType = 'filled' | 'outlined' | 'outline' | 'rounded' | 'round' | 'two-tone' | 'sharp'; // 'outline', 'rounded' to be deprecated soon.
+export type IconType = 'filled' | 'outlined' | 'rounded' | 'two-tone' | 'sharp';
 
 export interface IconProps extends BaseProps {
-  /**
-   * Material icon name
-   */
-  name?: string;
   /**
    * Size of `Icon`
    */
@@ -49,11 +44,10 @@ export interface IconProps extends BaseProps {
   /**
    * Type of material `Icon`
    *
-   * ** `'outline' | 'rounded'` will be deprecated**
    */
   type?: IconType;
   /**
-   * Color of `Icon`    // 'info' appearance will be deprecated soon.
+   * Color of `Icon`
    */
   appearance?: IconAppearance;
   /**
@@ -76,18 +70,10 @@ export interface IconProps extends BaseProps {
 }
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children } = props;
+  const { appearance, className, size, children, type, tabIndex } = props;
   const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
-
-  const mapper = (val: IconProps['type']) => {
-    if (val === 'outline') return 'outlined';
-    if (val === 'rounded') return 'round';
-    return val;
-  };
-
-  const type = mapper(props.type);
 
   const getIconAppearance = (iconColor: string) => {
     const x = iconColor.indexOf('_');
@@ -96,30 +82,24 @@ export const Icon = (props: IconProps) => {
 
   const color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
 
-  const iconClass = classNames({
-    ['material-icons']: true, // change to !type || type === 'filled' after migration
-    [`material-icons-${mapper(type)}`]: type && type !== 'filled',
-    ['Icon']: true,
-    [`Icon--${color}`]: appearance,
-    [`${className}`]: className,
-  });
+  const iconClass = classNames(
+    {
+      ['material-icons']: true, // change to !type || type === 'filled' after migration
+      [`material-icons-${type}`]: type && type !== 'filled',
+      ['Mds-Icon']: true,
+      [`Mds-Icon--${color}`]: appearance,
+    },
+    className
+  );
 
   const styles = {
     fontSize: `${size}px`,
     width: `${size}px`,
   };
 
-  // change `children` to {name} after migration
-  if (children && React.isValidElement(children)) {
-    return (
-      <span {...baseProps} className={className}>
-        {children}
-      </span>
-    );
-  }
   return (
-    <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
-      {type ? `${name}_${type}` : name}
+    <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps} tabIndex={tabIndex}>
+      {type ? `${children}_${type}` : children}
     </i>
   );
 };

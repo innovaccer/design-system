@@ -21,6 +21,7 @@ export const TS = () => {
       <DS.Strikethrough>{string}</DS.Strikethrough>
       <DS.Underline>{string}</DS.Underline>
       <DS.Tooltip text={string}>{dummyComp}</DS.Tooltip>
+      <DS.Icon>{string}</DS.Icon>
       {/* <DS.AvatarGroup list={[]} />
       <DS.Backdrop open={false} />
       <DS.Breadcrumbs list={[]} onClick={noop} />
@@ -34,7 +35,6 @@ export const TS = () => {
       <DS.EditableDropdown />
       <DS.EditableInput />
       <DS.Heading>{string}</DS.Heading>
-      <DS.Icon name={string} />
       <DS.Input />
       <DS.InputMask mask={[]} />
       <DS.Label>{string}</DS.Label>
