@@ -1,8 +1,6 @@
 import * as React from 'react';
-import VirtualScroll from 'react-dynamic-virtual-scroll';
 import { GridRow } from './GridRow';
 import { GridState, onSelectFn, Schema, updatePrevPageInfoFunction } from './Grid';
-import { GridProps } from '@/index.type';
 import GridContext from './GridContext';
 
 export interface GridBodyProps {
@@ -15,8 +13,7 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, size, loading, error, withPagination, nestedRows, page, pageSize, totalRecords, errorTemplate } =
-    context;
+  const { data, ref, loading, error, page, errorTemplate } = context;
 
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
@@ -41,23 +38,6 @@ export const GridBody = (props: GridBodyProps) => {
     };
   }, []);
 
-  const minRowHeight: Record<GridProps['size'], number> = {
-    comfortable: 40,
-    standard: 40,
-    compressed: 32,
-    tight: 24,
-  };
-
-  const totalPages = Math.ceil(totalRecords / pageSize);
-  const isLastPage = withPagination && page === totalPages;
-  const dataLength = isLastPage
-    ? totalRecords - (page - 1) * pageSize
-    : loading
-    ? pageSize
-    : withPagination
-    ? Math.min(totalRecords, pageSize)
-    : totalRecords;
-
   const renderRow = (rowIndex: number, item: object) => {
     return (
       <GridRow
@@ -70,25 +50,13 @@ export const GridBody = (props: GridBodyProps) => {
     );
   };
 
-  if (nestedRows && !loading) {
-    return (
+  return (
+    <>
       <div className="Grid-body">
         {data.map((item, i) => {
           return renderRow(i, item);
         })}
       </div>
-    );
-  }
-
-  return (
-    <>
-      <VirtualScroll
-        className="Grid-body"
-        minItemHeight={minRowHeight[size]}
-        totalLength={dataLength}
-        length={dataLength}
-        renderItem={renderRow}
-      />
     </>
   );
 };
