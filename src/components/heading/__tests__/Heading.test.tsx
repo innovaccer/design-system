@@ -5,13 +5,13 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import { HeadingAppearance } from '@/common.type';
 
 const appearance: HeadingAppearance[] = ['default', 'subtle', 'disabled', 'white'];
-const sizes: HeadingSize[] = ['s', 'm', 'l', 'xl', 'xxl'];
+const sizes: HeadingSize[] = ['x-small', 'small', 'medium', 'large', 'x-large'];
 const sizeMap = {
-  s: 'H5',
-  m: 'H4',
-  l: 'H3',
-  xl: 'H2',
-  xxl: 'H1',
+  'x-small': 'H5',
+  small: 'H4',
+  medium: 'H3',
+  large: 'H2',
+  'x-large': 'H1',
 };
 
 describe('Heading component Snapshot for prop:appearance', () => {

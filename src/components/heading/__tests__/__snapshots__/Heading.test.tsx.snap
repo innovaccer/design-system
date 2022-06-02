@@ -61,76 +61,76 @@ exports[`Heading component Snapshot for prop:appearance
 `;
 
 exports[`Heading component Snapshot for prop:size 
-  size: "l"
+  size: "large"
  1`] = `
 <body>
   <div>
-    <span
-      class="Mds-Heading Mds-Heading--l Mds-Heading--default"
+    <h2
+      class="Mds-Heading Mds-Heading--large Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </span>
+    </h2>
   </div>
 </body>
 `;
 
 exports[`Heading component Snapshot for prop:size 
-  size: "m"
+  size: "medium"
  1`] = `
 <body>
   <div>
-    <span
-      class="Mds-Heading Mds-Heading--m Mds-Heading--default"
+    <h3
+      class="Mds-Heading Mds-Heading--medium Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </span>
+    </h3>
   </div>
 </body>
 `;
 
 exports[`Heading component Snapshot for prop:size 
-  size: "s"
+  size: "small"
  1`] = `
 <body>
   <div>
-    <span
-      class="Mds-Heading Mds-Heading--s Mds-Heading--default"
+    <h4
+      class="Mds-Heading Mds-Heading--small Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </span>
+    </h4>
   </div>
 </body>
 `;
 
 exports[`Heading component Snapshot for prop:size 
-  size: "xl"
+  size: "x-large"
  1`] = `
 <body>
   <div>
-    <span
-      class="Mds-Heading Mds-Heading--xl Mds-Heading--default"
+    <h1
+      class="Mds-Heading Mds-Heading--x-large Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </span>
+    </h1>
   </div>
 </body>
 `;
 
 exports[`Heading component Snapshot for prop:size 
-  size: "xxl"
+  size: "x-small"
  1`] = `
 <body>
   <div>
-    <span
-      class="Mds-Heading Mds-Heading--xxl Mds-Heading--default"
+    <h5
+      class="Mds-Heading Mds-Heading--x-small Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </span>
+    </h5>
   </div>
 </body>
 `;
