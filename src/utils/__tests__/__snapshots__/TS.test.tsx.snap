@@ -32,12 +32,12 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Button"
     tabindex="0"
   />
-  <h4
-    class="Mds-Heading Mds-Heading--m Mds-Heading--default"
+  <h3
+    class="Mds-Heading Mds-Heading--medium Mds-Heading--default"
     data-test="DesignSystem-Heading"
   >
     Hello World!
-  </h4>
+  </h3>
   <i
     data-test="DesignSystem-Italic"
   >

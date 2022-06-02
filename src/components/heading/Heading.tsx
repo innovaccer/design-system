@@ -24,9 +24,9 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
 // TODO: accept "element" prop for mapping of heading tag
 const sizeMap = {
   'x-small': 'h5',
-  'small': 'h4',
-  'medium': 'h3',
-  'large': 'h2',
+  small: 'h4',
+  medium: 'h3',
+  large: 'h2',
   'x-large': 'h1',
 };
 

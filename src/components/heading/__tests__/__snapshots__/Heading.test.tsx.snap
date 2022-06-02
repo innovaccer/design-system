@@ -5,12 +5,12 @@ exports[`Heading component Snapshot for prop:appearance
  1`] = `
 <body>
   <div>
-    <h4
-      class="Mds-Heading Mds-Heading--m Mds-Heading--default"
+    <h3
+      class="Mds-Heading Mds-Heading--medium Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </h4>
+    </h3>
   </div>
 </body>
 `;
@@ -20,12 +20,12 @@ exports[`Heading component Snapshot for prop:appearance
  1`] = `
 <body>
   <div>
-    <h4
-      class="Mds-Heading Mds-Heading--m Mds-Heading--disabled"
+    <h3
+      class="Mds-Heading Mds-Heading--medium Mds-Heading--disabled"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </h4>
+    </h3>
   </div>
 </body>
 `;
@@ -35,12 +35,12 @@ exports[`Heading component Snapshot for prop:appearance
  1`] = `
 <body>
   <div>
-    <h4
-      class="Mds-Heading Mds-Heading--m Mds-Heading--subtle"
+    <h3
+      class="Mds-Heading Mds-Heading--medium Mds-Heading--subtle"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </h4>
+    </h3>
   </div>
 </body>
 `;
@@ -50,23 +50,8 @@ exports[`Heading component Snapshot for prop:appearance
  1`] = `
 <body>
   <div>
-    <h4
-      class="Mds-Heading Mds-Heading--m Mds-Heading--white"
-      data-test="DesignSystem-Heading"
-    >
-      Heading
-    </h4>
-  </div>
-</body>
-`;
-
-exports[`Heading component Snapshot for prop:size 
-  size: "l"
- 1`] = `
-<body>
-  <div>
     <h3
-      class="Mds-Heading Mds-Heading--l Mds-Heading--default"
+      class="Mds-Heading Mds-Heading--medium Mds-Heading--white"
       data-test="DesignSystem-Heading"
     >
       Heading
@@ -76,16 +61,31 @@ exports[`Heading component Snapshot for prop:size
 `;
 
 exports[`Heading component Snapshot for prop:size 
+  size: "l"
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Mds-Heading Mds-Heading--l Mds-Heading--default"
+      data-test="DesignSystem-Heading"
+    >
+      Heading
+    </span>
+  </div>
+</body>
+`;
+
+exports[`Heading component Snapshot for prop:size 
   size: "m"
  1`] = `
 <body>
   <div>
-    <h4
+    <span
       class="Mds-Heading Mds-Heading--m Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </h4>
+    </span>
   </div>
 </body>
 `;
@@ -95,12 +95,12 @@ exports[`Heading component Snapshot for prop:size
  1`] = `
 <body>
   <div>
-    <h5
+    <span
       class="Mds-Heading Mds-Heading--s Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </h5>
+    </span>
   </div>
 </body>
 `;
@@ -110,12 +110,12 @@ exports[`Heading component Snapshot for prop:size
  1`] = `
 <body>
   <div>
-    <h2
+    <span
       class="Mds-Heading Mds-Heading--xl Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </h2>
+    </span>
   </div>
 </body>
 `;
@@ -125,12 +125,12 @@ exports[`Heading component Snapshot for prop:size
  1`] = `
 <body>
   <div>
-    <h1
+    <span
       class="Mds-Heading Mds-Heading--xxl Mds-Heading--default"
       data-test="DesignSystem-Heading"
     >
       Heading
-    </h1>
+    </span>
   </div>
 </body>
 `;
