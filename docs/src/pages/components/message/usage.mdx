@@ -12,123 +12,127 @@ Messages are used to provide collective feedback to the users about an action or
 
 #### Standard
 This is the default variant when it comes to messages. It has a significant visual loudness and should be used with caution.
-<Preview name="message-info-message" />
+<Preview name="components-message-info-message--info-message" />
 
 #### Inline message
 It is the less attention-grabbing counterpart and hence can be used in between components or patterns.
-<Preview name="inlinemessage-variants-info-message" />
+<Preview name="components-inlinemessage-variants-info-message--info-message" />
 
 ### Variants
 
 Standard message comes with a few variants -
 #### With title
 A title can be shown at the top of the messages. It is typically used to summarize the description in case it's long.
-<Preview name="message-message-with-title" />
+<Preview name="components-message-message-with-title--message-with-title" />
 
 #### With actions
 Actions can be a part of messages and are typically used to directly or indirectly dismiss them.
-<Preview name="message-message-with-actions" />
+<Preview name="components-message-message-with-actions--message-with-actions" />
 
 ### Appearances
 Messages come in **4 appearances** basis on the intent -
 
 #### Info
 The info appearance is used when the message needs to provide information that requires some attention from the users.
-<Preview name="message-info-message" />
-<Preview name="inlinemessage-variants-info-message" />
+<Preview name="components-message-info-message--info-message" />
+<Preview name="components-inlinemessage-variants-info-message--info-message" />
 
 #### Warning
 The warning appearance is used when the message needs to notify a warning that might need users' attention.
-<Preview name="message-warning-message" />
-<Preview name="inlinemessage-variants-warning-message" />
+<Preview name="components-message-warning-message--warning-message" />
+<Preview name="components-inlinemessage-variants-warning-message--warning-message" />
 
 #### Alert
 The alert appearance is used when the message needs to provide an error or failure information that requires immediate attention.
-<Preview name="message-alert-message" />
-<Preview name="inlinemessage-variants-alert-message" />
+<Preview name="components-message-alert-message--alert-message" />
+<Preview name="components-inlinemessage-variants-alert-message--alert-message" />
 
 #### Success
 The success variant is used when the inline message needs to notify the successful completion of a task or action.
-<Preview name="message-success-message" />
-<Preview name="inlinemessage-variants-success-message" />
+<Preview name="components-message-success-message--success-message" />
+<Preview name="components-inlinemessage-variants-success-message--success-message" />
 
 ### Properties
 #### Standard message
 <table style="width: 100%">
-  <tr>
-    <th style="width:33%; text-align: left;">Property</th>
-    <th style="width:33%; text-align: left;">Value(s)</th>
-    <th style="width:33%; text-align: left;">Default value</th>
-  </tr>
-  <tr style="vertical-align: top">
-    <td>Appearance</td>
-    <td>
-        <ul>
-            <li>Info</li>
-            <li>Success</li>
-            <li>Warning</li>
-            <li>Alert</li>
-        </ul>
-    </td>
-    <td>Info</td>
-  </tr>
-  <tr style="vertical-align: top">
-    <td>Title<br/><em>(optional)</em></td>
-    <td>&#60;title&#62;</td>
-    <td>-</td>
-  </tr>
-  <tr style="vertical-align: top">
-    <td>Description</td>
-    <td>&#60;description&#62;</td>
-    <td>-</td>
-  </tr>
-  <tr style="vertical-align: top">
-    <td>Actions<br/><em>(optional)</em></td>
-    <td>
-        <ul>
-            <li>Action 1</li>
-            <li>Action 2</li>
-        </ul>
-    </td>
-    <td>-</td>
-  </tr>
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Appearance</td>
+      <td>
+          <ul>
+              <li>Info</li>
+              <li>Success</li>
+              <li>Warning</li>
+              <li>Alert</li>
+          </ul>
+      </td>
+      <td>Info</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Title<br/><em>(optional)</em></td>
+      <td>&#60;title&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Description</td>
+      <td>&#60;description&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Actions<br/><em>(optional)</em></td>
+      <td>
+          <ul>
+              <li>Action 1</li>
+              <li>Action 2</li>
+          </ul>
+      </td>
+      <td>-</td>
+    </tr>
+  </tbody>
 </table>
 <br/>
 
 #### Inline message
 <table style="width: 100%">
-  <tr>
-    <th style="width:33%; text-align: left;">Property</th>
-    <th style="width:33%; text-align: left;">Value(s)</th>
-    <th style="width:33%; text-align: left;">Default value</th>
-  </tr>
-  <tr style="vertical-align: top">
-    <td>Appearance</td>
-    <td>
-        <ul>
-            <li>Info</li>
-            <li>Success</li>
-            <li>Warning</li>
-            <li>Alert</li>
-        </ul>
-    </td>
-    <td>Info</td>
-  </tr>
-  <tr style="vertical-align: top">
-    <td>Size</td>
-    <td>
-        <ul>
-            <li>Regular</li>
-            <li>Tiny</li>
-        </ul>
-    </td>
-    <td>Regular</td>
-  </tr>
-  <tr style="vertical-align: top">
-    <td>Description</td>
-    <td>&#60;description&#62;</td>
-    <td>-</td>
-  </tr>
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Appearance</td>
+      <td>
+          <ul>
+              <li>Info</li>
+              <li>Success</li>
+              <li>Warning</li>
+              <li>Alert</li>
+          </ul>
+      </td>
+      <td>Info</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Regular</li>
+              <li>Tiny</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Description</td>
+      <td>&#60;description&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
 </table>
 <br/>
 

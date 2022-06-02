@@ -3,7 +3,6 @@ import MetaList from '../MetaList';
 
 // CSF format story
 export const all = () => {
-  const seperator = true;
 
   const list = [
     {
@@ -18,7 +17,7 @@ export const all = () => {
 
   return (
     <div>
-      <MetaList list={list} seperator={seperator} />
+      <MetaList list={list} />
     </div>
   );
 };

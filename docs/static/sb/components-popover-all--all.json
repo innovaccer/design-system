@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  return(\n    <div className='mb-11'>\n      <Popover\n        position=\"bottom-start\"\n        on=\"click\"\n        trigger={<Button appearance=\"basic\">Open Popup</Button>}\n      >\n        <div style={{ width: 100 }} className='mx-6 my-6'>\n          <Text>Popup</Text>\n          <Button appearance=\"primary\" className=\"mt-4\">Click</Button>\n        </div>\n      </Popover>\n    </div>\n  );\n}",
+        "customCode": "() => {\n  return(\n    <div className='mb-11'>\n      <Popover\n        position=\"bottom-start\"\n        on=\"click\"\n        trigger={<Button appearance=\"basic\">Open Popover</Button>}\n      >\n        <div style={{ width: 100 }} className='mx-6 my-6'>\n          <Text>Popup</Text>\n          <Button appearance=\"primary\" className=\"mt-4\">Click</Button>\n        </div>\n      </Popover>\n    </div>\n  );\n}",
         "props": {
           "exclude": [
             "offset"
@@ -238,7 +238,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [open, setOpen] = React.useState(false);\n  const position = 'bottom';\n  const on = 'hover';\n  const appendToBody = true;\n  const hoverable = true;\n  const closeOnBackdropClick = true;\n  const hideOnReferenceEscape = true;\n  const dark = false;\n\n  const onToggle = () => {\n    setOpen(!open);\n  };\n\n  const trigger = <Button appearance=\"basic\">Open Popup</Button>;\n\n  const options = {\n    trigger,\n    position,\n    appendToBody,\n    dark,\n    closeOnBackdropClick,\n    hideOnReferenceEscape,\n    on,\n    hoverable,\n    open,\n    onToggle,\n  };\n  if (on === 'hover') delete options.onToggle;\n\n  return (\n    <Popover {...options}>\n      <div style={{ width: 100 }} className=\"mx-6 my-6\">\n        <Text>Popup</Text>\n        <Button className=\"mt-4\" appearance=\"primary\" onClick={action('button clicked inside popover')}>\n          Click\n        </Button>\n      </div>\n    </Popover>\n  );\n}"
+      "source": "() => {\n  const [open, setOpen] = React.useState(false);\n  const position = 'bottom';\n  const on = 'hover';\n  const appendToBody = true;\n  const hoverable = true;\n  const closeOnBackdropClick = true;\n  const hideOnReferenceEscape = true;\n  const dark = false;\n\n  const onToggle = () => {\n    setOpen(!open);\n  };\n\n  const trigger = <Button appearance=\"basic\">Open Popover</Button>;\n\n  const options = {\n    trigger,\n    position,\n    appendToBody,\n    dark,\n    closeOnBackdropClick,\n    hideOnReferenceEscape,\n    on,\n    hoverable,\n    open,\n    onToggle,\n  };\n  if (on === 'hover') delete options.onToggle;\n\n  return (\n    <Popover {...options}>\n      <div style={{ width: 100 }} className=\"mx-6 my-6\">\n        <Text>Popup</Text>\n        <Button className=\"mt-4\" appearance=\"primary\" onClick={action('button clicked inside popover')}>\n          Click\n        </Button>\n      </div>\n    </Popover>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-popover-all--all",

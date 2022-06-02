@@ -3,8 +3,13 @@ import { Button, Popover, Label, Textarea, Link, Input } from '@/index';
 
 // CSF format story
 export const popoverWithInput = () => (
-  <div className="mb-14">
-    <Popover position="bottom-start" on="click" trigger={<Link>Save as filter view</Link>} open={true}>
+  <div className="mb-13">
+    <Popover
+      position="bottom-start"
+      on="click"
+      trigger={<Link>Open Popover</Link>}
+      open={false}
+    >
       <div style={{ width: 'var(--spacing-9)', height: 'var(--spacing-8)+var(--spacing-xl)' }} className="mx-6 my-6">
         <Label required={true} withInput={true}>
           Name

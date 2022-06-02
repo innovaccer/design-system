@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Modal, Button, Text, Paragraph, Message, List } from '@/index';
+import { Modal, Button, Text, Message, List } from '@/index';
 
 export const dialogs = () => {
   const [open, setOpen] = React.useState(false);
@@ -38,16 +38,7 @@ export const dialogs = () => {
 
   return (
     <div>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        <br />
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        <br />
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br />
-      </Paragraph>
+      <Button appearance="primary" onClick={() => setOpen(true)}>Open Modal</Button>
       <Modal
         open={open}
         dimension={dimension}
@@ -89,7 +80,7 @@ const customCode = `() => {
   const dimension = 'medium';
   const onClose = () => {
     setOpen(!open);
-    console.log('on close triggered')();
+    console.log('on close triggered');
   };
 
   const data = [{ Name:'ER Education' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }, { Name:'Cervical Screening' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }, { Name:'Cervical Screening' }, { Name:'HbA1c Test Due' } , { Name:'Flu Vaccination' }  , { Name:'Well-Child Visit' }];
@@ -108,16 +99,7 @@ const customCode = `() => {
 
   return (
     <div>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
-      </Paragraph>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>Open Modal</Button>
       <Modal
         open={open}
         dimension={dimension}

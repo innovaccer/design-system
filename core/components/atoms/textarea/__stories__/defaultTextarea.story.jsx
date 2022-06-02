@@ -10,7 +10,7 @@ export const defaultTextarea = () => (
       name="comments"
       id="comments"
       aria-labelledby="Comments"
-      className="w-25"
+      className="w-50"
       placeholder="Enter your comments here"
     />
   </>

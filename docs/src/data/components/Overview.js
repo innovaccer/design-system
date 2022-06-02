@@ -1,14 +1,26 @@
 import React, { useState } from 'react';
-import { Card, CardBody, Row, Column, Heading, Input, EmptyState, Button } from '@innovaccer/design-system';
+import { Card, CardBody, Row, Column, Heading, Input, EmptyState, Badge } from '@innovaccer/design-system';
 import { Link } from 'gatsby';
 import './overview.css';
 import { debounce } from '../../util/Helpers';
 import noResultImage from './images/noresult.png';
 
-function Overview({ data, mode }) {
+const StatusTag = ({ category }) => {
+
+  const categoryName = category?.toUpperCase();
+
+  const appearance = {
+    "CODE UNAVAILABLE": "accent1",
+    "BETA": "accent2"
+  }
+
+  return <Badge appearance={appearance[categoryName]}>{category}</Badge>
+}
+
+function Overview({ data, mode, path = 'components' }) {
 
   const [previewList, setPreviewList] = useState(data);
-  const [searchKey , setSearchKey] = useState('')
+  const [searchKey, setSearchKey] = useState('')
 
   const onSearchHandler = debounce((target) => {
     setSearchKey(target.value)
@@ -20,54 +32,61 @@ function Overview({ data, mode }) {
   return (
     <div>
       <Input
-        className="w-50 my-7"
+        className="w-25 my-7"
         icon="search"
         name="input"
         placeholder="Search components"
         onChange={({ target }) => onSearchHandler(target)}
       />
 
-      <Row>
+      <div className='d-flex flex-wrap'>
         {
           previewList.length > 0 ?
-            previewList.map(({ image = () => (<img alt='' />), name, link = '' }) => {
+            previewList.map(({ image = () => (<img alt='' />), name, status, link = '' }) => {
               return (
-                <Column
-                  size={4}
+                <div
                   key={name}
-                  className="pr-6 pb-6"
+                  className='overview-container-card pb-6 mr-6'
                 >
 
-                  <Link className='card-link' disabled={!link.length} to={ mode === "mobile" ? `/mobile/components/${(link)}` : `/components/${(link)}`}>
+                  <Link
+                    className='card-link'
+                    disabled={!link.length}
+                    to={mode === "mobile" ? `/mobile/${path}/${(link)}` : `/${path}/${(link)}`}
+                  >
                     <Card
                       shadow='none'
-                      className='w-100 overflow-hidden overview-card pb-5'
+                      className='w-100 overflow-hidden overview-card pb-5 h-100'
                     >
                       <CardBody className='px-0'>
-                        <div className='py-5 card-opacity'>
-                          <div className='d-flex justify-content-center align-items-center' style={{ overflow: 'hidden', height: '136px' }}>
+                        <div className='py-5 card-opacity d-flex flex-column'>
+                          <div className='d-flex justify-content-end mr-5'>
+                            {status && <StatusTag category={status} />}
+                          </div>
+
+                          <div className='d-flex justify-content-center align-items-center' style={{ overflow: 'hidden', height: '168px' }}>
                             {React.createElement(image)}
                           </div>
                         </div>
-                        <Heading size="s" className='ml-6'>
+                        <Heading size="s" className='ml-6 position-absolute card-heading'>
                           {name}
                         </Heading>
                       </CardBody>
                     </Card>
                   </Link>
-
-                </Column>
+                </div>
               )
             }) :
             <div className="d-flex justify-content-center" style={{ transform: "translate(50%,64px)" }}>
-              <EmptyState 
+              <EmptyState
+                size="small"
                 description="Sorry! We could not find any match. Please try again"
                 imageSrc={noResultImage}
-                size="small" title={`No results found for ${"'"+searchKey+"'"}`}
+                title={`No results found for '${searchKey}'`}
               />
             </div>
         }
-      </Row>
+      </div>
     </div>
   )
 }

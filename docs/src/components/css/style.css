@@ -75,7 +75,8 @@ ol {
   font-size: var(--spacing-l);
 }
 
-.overflow-x-scroll::-webkit-scrollbar {
+.overflow-x-scroll::-webkit-scrollbar, 
+.scroll-y::-webkit-scrollbar {
   display: none;
 }
 
@@ -103,7 +104,11 @@ table td {
 }
 
 .inner-left-container {
-  max-width: 960px;
+  max-width: 1024px;
+}
+
+.overview-container {
+  max-width: 1600px;
 }
 
 .scroll-y {
@@ -128,4 +133,9 @@ blockquote {
 blockquote p {
   margin: 0;
   color: #000000;
+}
+
+.Heading-tooltip {
+  width: 80px;
+  text-align: center;
 }

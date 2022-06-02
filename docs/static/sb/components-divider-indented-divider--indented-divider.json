@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/divider/__stories__/IndentedDivider.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <Row>\n      <Column size=\"6\">\n        <Heading size=\"m\">Select assessment</Heading>\n        <Card>\n          <CardBody className=\"p-0\">\n            <Row className=\"p-6\">\n              <Column size={8}>\n                <Input className=\"w-25\" icon=\"search\" name=\"input\" placeholder=\"Search\" />\n              </Column>\n            </Row>\n\n            <Divider appearance=\"header\" />\n\n            <div className=\"pl-6\">\n              <div className=\"py-6\">\n                <Text>Functional Assessment - Initial</Text>\n              </div>\n              <Divider />\n\n              <div className=\"py-6\">\n                <Text>Functional Assessment - Discharge</Text>\n              </div>\n              <Divider />\n\n              <div className=\"py-6\">\n                <Text>Social Influence of Health</Text>\n              </div>\n              <Divider />\n\n              <div className=\"py-6\">\n                <Text>Social Determinants of Health</Text>\n              </div>\n            </div>\n          </CardBody>\n        </Card>\n      </Column>\n    </Row>\n  );\n}"
+      "source": "() => {\n  return (\n    <Row>\n      <Column size=\"8\">\n        <Heading size=\"m\">Select assessment</Heading>\n        <Card>\n          <CardBody className=\"p-0\">\n            <Row className=\"p-6\">\n              <Column size={8}>\n                <Input className=\"w-25\" icon=\"search\" name=\"input\" placeholder=\"Search\" />\n              </Column>\n            </Row>\n\n            <Divider appearance=\"header\" />\n\n            <div className=\"pl-6\">\n              <div className=\"py-6\">\n                <Text>Functional Assessment - Initial</Text>\n              </div>\n              <Divider />\n\n              <div className=\"py-6\">\n                <Text>Functional Assessment - Discharge</Text>\n              </div>\n              <Divider />\n\n              <div className=\"py-6\">\n                <Text>Social Influence of Health</Text>\n              </div>\n              <Divider />\n\n              <div className=\"py-6\">\n                <Text>Social Determinants of Health</Text>\n              </div>\n            </div>\n          </CardBody>\n        </Card>\n      </Column>\n    </Row>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-divider-indented-divider--indented-divider",

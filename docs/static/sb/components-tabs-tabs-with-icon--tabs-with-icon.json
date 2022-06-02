@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  return(\n    <div>\n      <div className=\"d-flex align-items-center\">\n        <Heading size=\"s\">Diabetes: Hemoglobin A1c Poor Control</Heading>\n        <Link className=\"ml-4\">Measure definition</Link>\n      </div>\n      <Tabs\n        onTabChange={console.log}\n      >\n        <Tab label=\"2020\" icon=\"warning\">\n          <div>2020</div>\n        </Tab>\n        <Tab label=\"2019\" icon=\"check_circle\">\n          <div>2019</div>\n        </Tab>\n        <Tab label=\"2018\" icon=\"warning\">\n          <div>2018</div>\n        </Tab>\n        <Tab label=\"2017\" icon=\"check_circle\">\n          <div>2017</div>\n        </Tab>\n      </Tabs>\n    </div>\n  );\n}"
+        "customCode": "() => {\n  return(\n    <div>\n      <div className=\"d-flex align-items-center\">\n        <Heading size=\"s\">Diabetes: Hemoglobin A1c Poor Control</Heading>\n        <Link className=\"ml-4\">Measure definition</Link>\n      </div>\n      <Tabs\n        onTabChange={console.log}\n        className=\"mb-6\"\n      >\n        <Tab label=\"2020\" icon=\"warning\">\n          <div>2020</div>\n        </Tab>\n        <Tab label=\"2019\" icon=\"check_circle\">\n          <div>2019</div>\n        </Tab>\n        <Tab label=\"2018\" icon=\"warning\">\n          <div>2018</div>\n        </Tab>\n        <Tab label=\"2017\" icon=\"check_circle\">\n          <div>2017</div>\n        </Tab>\n      </Tabs>\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/tabs/__stories__/TabsWithIcon.story.jsx",
     "storySource": {
-      "source": "() => {\n  const onTabChangeHandler = (tabIndex) => {\n    return action(`tab-change: ${tabIndex}`)();\n  };\n\n  return (\n    <div>\n      <div className=\"d-flex align-items-center\">\n        <Heading size=\"s\">Diabetes: Hemoglobin A1c Poor Control</Heading>\n        <Link className=\"ml-4\">Measure definition</Link>\n      </div>\n      <Tabs onTabChange={onTabChangeHandler}>\n        <Tab label=\"2020\" icon=\"warning\">\n          <div>2020</div>\n        </Tab>\n        <Tab label=\"2019\" icon=\"check_circle\">\n          <div>2019</div>\n        </Tab>\n        <Tab label=\"2018\" icon=\"warning\">\n          <div>2018</div>\n        </Tab>\n        <Tab label=\"2017\" icon=\"check_circle\">\n          <div>2017</div>\n        </Tab>\n      </Tabs>\n    </div>\n  );\n}"
+      "source": "() => {\n  const onTabChangeHandler = (tabIndex) => {\n    return action(`tab-change: ${tabIndex}`)();\n  };\n\n  return (\n    <div>\n      <div className=\"d-flex align-items-center\">\n        <Heading size=\"s\">Diabetes: Hemoglobin A1c Poor Control</Heading>\n        <Link className=\"ml-4\">Measure definition</Link>\n      </div>\n      <Tabs onTabChange={onTabChangeHandler} className=\"mb-6\">\n        <Tab label=\"2020\" icon=\"warning\">\n          <div>2020</div>\n        </Tab>\n        <Tab label=\"2019\" icon=\"check_circle\">\n          <div>2019</div>\n        </Tab>\n        <Tab label=\"2018\" icon=\"warning\">\n          <div>2018</div>\n        </Tab>\n        <Tab label=\"2017\" icon=\"check_circle\">\n          <div>2017</div>\n        </Tab>\n      </Tabs>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-tabs-tabs-with-icon--tabs-with-icon",

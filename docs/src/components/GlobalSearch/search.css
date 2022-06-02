@@ -1,0 +1,22 @@
+.Search-result {
+  max-height: 400px;
+  width: 450px;
+}
+
+.Search-result__entry:hover {
+  background-color: var(--secondary-lightest);
+}
+
+.Search-result__link {
+  text-decoration: none;
+}
+
+.Search-result::-webkit-scrollbar-thumb {
+  background: var(--secondary-dark);
+  border-radius: 6px;
+}
+
+.Search-result::-webkit-scrollbar {
+  background: var(--white);
+  width: var(--spacing-l);
+}

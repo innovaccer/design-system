@@ -4,7 +4,7 @@ import { Divider, Row, Column, Card, CardBody, Heading, Input, Text } from '@/in
 export const IndentedDivider = () => {
   return (
     <Row>
-      <Column size="6">
+      <Column size="8">
         <Heading size="m">Select assessment</Heading>
         <Card>
           <CardBody className="p-0">

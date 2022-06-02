@@ -82,7 +82,7 @@ const customCode = `() => {
   };
 
   const onChange = (selectedValues) => {
-    consol.log(selectedValues);
+    console.log(selectedValues);
   };
 
   return (

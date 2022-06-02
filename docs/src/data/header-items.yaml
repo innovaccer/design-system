@@ -11,10 +11,7 @@
   link: /components/overview/all-components/
 
 - label: Patterns
-  link: /patterns/
-
-- label: Resources
-  link: /resources/
+  link: /patterns/overview/all-patterns/
 
 - label: Storybook
   link: https://innovaccer.github.io/design-system

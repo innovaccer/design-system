@@ -50,7 +50,7 @@ export function useNavItems(relativePagePath) {
   }
 
   const pagePath = relativePagePath.includes(MOBILE)
-    ? relativePagePath.split('/')[2].replace('.mdx', '')
+    ? relativePagePath.split('/')[2]?.replace('.mdx', '')
     : relativePagePath.replace('/', '').split('.')[0];
 
   const navPage = getKey(nodes, pagePath);
@@ -64,7 +64,7 @@ export function useNavItems(relativePagePath) {
     const menu = {
       ...node,
       name: node.label,
-      link: relativePagePath.includes(MOBILE) ? `/mobile${node.link}` : node.link,
+      link: relativePagePath.includes(MOBILE) && node.link ? `/mobile${node.link}` : node.link,
     };
 
     if (menu.subMenu) {
@@ -72,7 +72,7 @@ export function useNavItems(relativePagePath) {
         return {
           ...item,
           name: `${menu.name}.${item.label}`,
-          link: relativePagePath.includes(MOBILE)
+          link: relativePagePath.includes(MOBILE) && item.link
             ? `/mobile${item.link}`
             : item.link,
         };

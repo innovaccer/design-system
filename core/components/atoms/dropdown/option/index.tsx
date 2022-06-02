@@ -66,7 +66,7 @@ interface OptionProps extends OptionRendererProps {
   index: number;
   active?: boolean;
   menu?: boolean;
-  onClick?: () => void;
+  onClick?: (event: ClickEvent) => void;
   onChange?: (event: ChangeEvent) => void;
   updateActiveOption?: (index: number) => void;
 }
@@ -94,7 +94,7 @@ const Option = (props: OptionProps) => {
   });
 
   const CheckboxClassName = classNames({
-    ['Option-checkbox']: true,
+    ['Option-checkbox']: !selected,
     ['Option-checkbox--active']: active,
     ['OptionWrapper']: true,
   });
@@ -119,7 +119,7 @@ const Option = (props: OptionProps) => {
     e.stopPropagation();
     if (disabled) return;
 
-    if (onClick) onClick();
+    if (onClick) onClick(e);
   };
 
   const onChangeHandler = (e: ChangeEvent) => {

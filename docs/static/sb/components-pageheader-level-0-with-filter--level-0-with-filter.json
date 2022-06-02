@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const tabs = [\n    {\n      count: 4,\n      label: 'Current'\n    },\n    {\n      count: 4,\n      label: 'Invited'\n    },\n    {\n      count: 4,\n      label: 'Inactive'\n    }\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = (\n    <Tabs\n      tabs={tabs}\n      activeIndex={activeIndex}\n      onTabChange={setActiveIndex}\n    />\n  );\n\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button icon=\"get_app\" className=\"mr-4\">Download Records</Button>\n      <Button appearance=\"primary\">Invite users</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader\n        title=\"Users\"\n        separator={true}\n        tabs={tab}\n        actions={actions}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const tabs = [\n    {\n      count: 4,\n      label: 'Current'\n    },\n    {\n      count: 4,\n      label: 'Invited'\n    },\n    {\n      count: 4,\n      label: 'Inactive'\n    }\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = (\n    <Tabs\n      tabs={tabs}\n      activeIndex={activeIndex}\n      onTabChange={setActiveIndex}\n    />\n  );\n\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button icon=\"get_app\" className=\"mr-4\">Download Records</Button>\n      <Button appearance=\"primary\">Invite users</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"p-6 bg-secondary-lightest\" style={{width:'900px'}}>\n      <PageHeader\n        title=\"Users\"\n        separator={true}\n        tabs={tab}\n        actions={actions}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/pageHeader/__stories__/withFilter.story.jsx",
     "storySource": {
-      "source": "() => {\n  const tabs = [\n    {\n      count: 4,\n      label: 'Current',\n    },\n    {\n      count: 4,\n      label: 'Invited',\n    },\n    {\n      count: 4,\n      label: 'Inactive',\n    },\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;\n\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button icon=\"get_app\" className=\"mr-4\">\n        Download Records\n      </Button>\n      <Button appearance=\"primary\">Invite users</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader title=\"Users\" separator={true} tabs={tab} actions={actions} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const tabs = [\n    {\n      count: 4,\n      label: 'Current',\n    },\n    {\n      count: 4,\n      label: 'Invited',\n    },\n    {\n      count: 4,\n      label: 'Inactive',\n    },\n  ];\n\n  const [activeIndex, setActiveIndex] = React.useState(0);\n\n  const tab = <Tabs tabs={tabs} activeIndex={activeIndex} onTabChange={setActiveIndex} />;\n\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button icon=\"get_app\" className=\"mr-4\">\n        Download Records\n      </Button>\n      <Button appearance=\"primary\">Invite users</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"p-6 bg-secondary-lightest\" style={{width:'900px'}}>\n      <PageHeader title=\"Users\" separator={true} tabs={tab} actions={actions} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-pageheader-level-0-with-filter--level-0-with-filter",

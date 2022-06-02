@@ -297,6 +297,7 @@ export const docPage = () => {
   const sp = story.parameters;
   const isEmbed = window.location.search.includes('embed=min');
   const isEmbedWithProp = window.location.search.includes('embed=prop');
+  const isEmbedOnlyProp = window.location.search.includes('embed=prop-table');
 
   const {
     title,
@@ -326,7 +327,7 @@ export const docPage = () => {
         </>
       )}
 
-      {!noStory && (
+      {!noStory && !isEmbedOnlyProp && (
         <StoryComp
           key={storyId}
           customCode={customCode}

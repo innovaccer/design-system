@@ -100,8 +100,8 @@ const Container = ({
             onTabChange={onTabChangeHandler}
             className='mb-6 '
           >
-            {tabsList.map((tab) => (
-              <Tab label={tab}></Tab>
+            {tabsList.map((tab, index) => (
+              <Tab label={tab} key={index}></Tab>
             ))}
           </Tabs>
         </>

@@ -6,9 +6,9 @@ import { action } from '@/utils/action';
 export const withInput = () => {
   const dateValue = undefined;
 
-  const inputFormat = 'mm-dd-yyyy';
+  const inputFormat = 'mm/dd/yyyy';
 
-  const outputFormat = 'yyyy-mm-dd';
+  const outputFormat = 'yyyy/mm/dd';
 
   const view = 'date';
 

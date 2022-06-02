@@ -7,7 +7,7 @@ export const withHelpText = () => {
     <Checkbox
       label={'Guardian'}
       helpText={'A member legally responsible for the care of the patient.'}
-      className="w-25"
+      className="w-50"
     />
   );
 };

@@ -1,13 +1,9 @@
 import * as React from 'react';
-import { InlineMessage, Row, Column } from '@/index';
+import { InlineMessage } from '@/index';
 
 // CSF format story
 export const successMessage = () => (
-  <Row>
-    <Column size="4">
-      <InlineMessage appearance="success" description="Inline message goes here." />
-    </Column>
-  </Row>
+  <InlineMessage appearance="success" description="Inline message goes here." />
 );
 
 export default {

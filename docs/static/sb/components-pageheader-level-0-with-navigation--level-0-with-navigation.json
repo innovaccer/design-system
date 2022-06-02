@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Virtual Visits',\n    },\n    {\n      name: 'menu_2',\n      label: 'Assesments'\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1'\n  });\n\n  const onClickHandler = (menu) => {\n    setActive(menu);\n  };\n\n  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active}/>;\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button className=\"mr-4\">Reorganize</Button>\n      <Button icon=\"get_app\">Export to PDF</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader\n        title=\"Dashboard\"\n        separator={true}\n        navigation={navigation}\n        actions={actions}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Virtual Visits',\n    },\n    {\n      name: 'menu_2',\n      label: 'Assesments'\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1'\n  });\n\n  const onClickHandler = (menu) => {\n    setActive(menu);\n  };\n\n  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active}/>;\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button className=\"mr-4\">Reorganize</Button>\n      <Button icon=\"get_app\">Export to PDF</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"p-6 bg-secondary-lightest\" style={{width:'900px'}}>\n      <PageHeader\n        title=\"Dashboard\"\n        separator={true}\n        navigation={navigation}\n        actions={actions}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/pageHeader/__stories__/withNavigation.story.jsx",
     "storySource": {
-      "source": "() => {\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Virtual Visits',\n    },\n    {\n      name: 'menu_2',\n      label: 'Assesments',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1',\n  });\n\n  const onClickHandler = (menu) => {\n    setActive(menu);\n  };\n\n  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button className=\"mr-4\">Reorganize</Button>\n      <Button icon=\"get_app\">Export to PDF</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader title=\"Dashboard\" separator={true} navigation={navigation} actions={actions} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Virtual Visits',\n    },\n    {\n      name: 'menu_2',\n      label: 'Assesments',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1',\n  });\n\n  const onClickHandler = (menu) => {\n    setActive(menu);\n  };\n\n  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;\n  const actions = (\n    <div className=\"d-flex justify-content-end align-items-center\">\n      <Button className=\"mr-4\">Reorganize</Button>\n      <Button icon=\"get_app\">Export to PDF</Button>\n    </div>\n  );\n\n  return (\n    <div className=\"p-6 bg-secondary-lightest\" style={{width:'900px'}}>\n      <PageHeader title=\"Dashboard\" separator={true} navigation={navigation} actions={actions} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-pageheader-level-0-with-navigation--level-0-with-navigation",

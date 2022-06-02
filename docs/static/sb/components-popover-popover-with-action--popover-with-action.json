@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.10.0-0",
+        "brandTitle": "Masala Design System v2.11.0-4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/Actions.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"mb-12\">\n    <Popover\n      position=\"bottom-start\"\n      on=\"click\"\n      trigger={<Button appearance=\"basic\">Unpublished Changes</Button>}\n      open={true}\n    >\n      <div style={{ width: 'var(--spacing-9)' }} className=\"mx-6 my-6\">\n        <Text>You have some edits saved in draft state.You can resume editing or discard those changes.</Text>\n        <div className=\"d-flex\">\n          <Button className=\"mt-4\" appearance=\"primary\">\n            Edit Registry\n          </Button>\n          <Button className=\"mt-4 ml-5\" appearance=\"basic\">\n            Discard Changes\n          </Button>\n        </div>\n      </div>\n    </Popover>\n  </div>\n)"
+      "source": "() => (\n  <div className=\"mb-10\">\n    <Popover\n      position=\"bottom-start\"\n      on=\"click\"\n      trigger={<Button appearance=\"basic\">Open Popover</Button>}\n      open={false}\n    >\n      <div style={{ width: 'var(--spacing-9)' }} className=\"mx-6 my-6\">\n        <Text>You have some edits saved in draft state.You can resume editing or discard those changes.</Text>\n        <div className=\"d-flex\">\n          <Button className=\"mt-4\" appearance=\"primary\">\n            Edit Registry\n          </Button>\n          <Button className=\"mt-4 ml-5\" appearance=\"basic\">\n            Discard Changes\n          </Button>\n        </div>\n      </div>\n    </Popover>\n  </div>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-popover-popover-with-action--popover-with-action",

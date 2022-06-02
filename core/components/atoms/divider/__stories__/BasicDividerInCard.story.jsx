@@ -4,7 +4,7 @@ import { Divider, Row, Column, Card, CardBody, Text, Badge } from '@/index';
 export const BasicDividerInCard = () => {
   return (
     <Row>
-      <Column size="5">
+      <Column size="9">
         <Card className="pt-6" shadow="none">
           <CardBody>
             <Row>
@@ -34,7 +34,7 @@ export const BasicDividerInCard = () => {
           {/* Horizontal Divider */}
           <Divider />
 
-          <CardBody className="pt-4">
+          <CardBody className="py-4">
             <Row>
               <Column>
                 <Text appearance="disabled" small={true}>

@@ -14,10 +14,16 @@ import {
   Card,
   Badge,
   Text,
-  Icon,
   Link,
-  Subheading
+  Subheading,
+  Icon
 } from '@innovaccer/design-system';
+import * as HomeIcons from '../util/HomeIcons';
+
+const MenuIcons = ({ name }) => {
+  const SvgIcons = HomeIcons[name] || (() => <div></div>);
+  return <SvgIcons />
+}
 
 const Home = () => {
 
@@ -36,11 +42,11 @@ const Home = () => {
             key < 3 &&
             (
               key === 0 ?
-                <div className="mt-4">
+                <div className="mt-4" key={key}>
                   <Text weight='strong' className="home-text-color">{item}</Text>
                 </div>
                 :
-                <div className="list">
+                <div className="list" key={key}>
                   <li className="m-0">
                     <Text appearance='subtle' size='small' weight='medium'>
                       {item.substring(0, item.lastIndexOf('('))}
@@ -84,7 +90,7 @@ const Home = () => {
               <Column>
                 <StaticImage
                   src="./home/HomeBanner.png"
-                  alt="test"
+                  alt="Masala Design System"
                 />
               </Column>
             </Row>
@@ -103,16 +109,9 @@ const Home = () => {
                         >
                           <div className='d-flex'>
                             <div className='mr-6'>
-                              <span
-                                className='border-radius--rounded p-4 d-inline-flex'
-                                style={{ backgroundColor: `var(--${menuItem.appearance}-lightest)` }}
-                              >
-                                <Icon
-                                  name={menuItem.icon}
-                                  appearance={menuItem.appearance}
-                                  size={24}
-                                />
-                              </span>
+                              <Icon>
+                                <MenuIcons name={menuItem.img} />
+                              </Icon>
                             </div>
 
                             <div>
