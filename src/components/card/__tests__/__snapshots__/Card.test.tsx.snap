@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component 
+  shadow: "default", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Card Card--shadow-default"
+      style="width: 150px; height: 150px;"
+    >
+      <span>
+        Hello
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Card component 
+  shadow: "none", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Card Card--shadow-none"
+      style="width: 150px; height: 150px;"
+    >
+      <span>
+        Hello
+      </span>
+    </div>
+  </div>
+</body>
+`;
