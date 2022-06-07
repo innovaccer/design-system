@@ -45,7 +45,7 @@ export const data = [
       />)
   },
   {
-    link: 'buttons/usage',
+    link: 'button/usage',
     design: 'Available',
     name: 'Buttons',
     code: 'Available',
@@ -57,7 +57,7 @@ export const data = [
       />)
   },
   {
-    link: 'cards/usage',
+    link: 'card/usage',
     design: 'Available',
     name: 'Cards',
     code: 'Available',
