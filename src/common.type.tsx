@@ -11,7 +11,10 @@ export type AccentAppearance =
   | 'accent3'
   | 'accent4';
 
-export type HeadingAppearance = 'default' | 'subtle' | 'disabled' | 'white';
+export type HeadingAppearance = 'positive' | 'negative' | 'warning' | 'link' | 'destructive';
+export type HeadingVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+export type HeadingSize = 'x-small' | 'small' | 'medium' | 'large' | 'x-large';
+
 export type MessageAppearance = 'default' | 'alert' | 'info' | 'success' | 'warning';
 export type FileStatus = 'uploading' | 'completed' | 'error';
 // export type FooterOptions = {

@@ -2,9 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
-import { HeadingAppearance } from '@/common.type';
-
-export type HeadingSize = 'x-small' | 'small' | 'medium' | 'large' | 'x-large';
+import { HeadingVariant, HeadingSize } from '@/common.type';
 
 export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElement> {
   /**
@@ -12,39 +10,43 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
    */
   children: React.ReactText;
   /**
-   * Color of `Heading`
+   * Defines the type of heading
    */
-  appearance: HeadingAppearance;
+  element: HeadingVariant;
   /**
    * size of `Heading`
    */
   size: HeadingSize;
+  /**
+   * Makes `Heading` appearance as subtle
+   */
+  subtle?: boolean;
+  /**
+   * Makes `Heading` appearance as inverted
+   */
+  inverted?: boolean;
+  /**
+   * Makes `Heading` appearance as disabled
+   */
+  disabled?: boolean;
 }
 
-// TODO: accept "element" prop for mapping of heading tag
-const sizeMap = {
-  'x-small': 'h5',
-  small: 'h4',
-  medium: 'h3',
-  large: 'h2',
-  'x-large': 'h1',
-};
-
 export const Heading = (props: HeadingProps) => {
-  // TODO: rename appearances & accept subtle as a prop
-  const { appearance, size, children, className, ...rest } = props;
+  const { size, children, subtle, inverted, disabled, className, element, ...rest } = props;
 
   const classes = classNames(
     {
       ['Mds-Heading']: true,
       [`Mds-Heading--${size}`]: size,
-      [`Mds-Heading--${appearance}`]: appearance,
+      [`Mds-Heading--subtle`]: subtle,
+      [`Mds-Heading--disabled`]: disabled,
+      [`Mds-Heading--white`]: inverted,
     },
     className
   );
 
   return (
-    <GenericText data-test="DesignSystem-Heading" {...rest} className={classes} componentType={sizeMap[size]}>
+    <GenericText data-test="DesignSystem-Heading" {...rest} className={classes} componentType={element}>
       {children}
     </GenericText>
   );
@@ -52,7 +54,8 @@ export const Heading = (props: HeadingProps) => {
 
 Heading.displayName = 'Heading';
 Heading.defaultProps = {
-  appearance: 'default',
+  // appearance: 'default',
+  element: 'h3',
   size: 'medium',
 };
 
