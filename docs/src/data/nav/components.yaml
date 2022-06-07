@@ -59,10 +59,6 @@ menus:
     link: /components/dropdowns/usage/
     hideInMobile: true
 
-  - label: Help text
-    link: /components/helpText/usage/
-    hideInMobile: true
-
   - label: Icons
     link: /components/icons/usage/
     hideInMobile: true
