@@ -19,6 +19,7 @@ export const Trigger = (props: TriggerProps) => {
   const { placeholderChar = '_' } = inputOptions;
 
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+    const { onChange } = inputOptions;
     setState({
       open: true,
     });
@@ -27,9 +28,12 @@ export const Trigger = (props: TriggerProps) => {
       const d = translateToDate(inputFormat, val, validators);
       setState({ date: d });
     }
+
+    if (onChange) onChange(_e);
   };
 
   const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
+    const { onBlur } = inputOptions;
     setState({
       init: true,
     });
@@ -37,13 +41,18 @@ export const Trigger = (props: TriggerProps) => {
     if (!val || val.includes(placeholderChar)) {
       setState({ date: undefined });
     }
+
+    if (onBlur) onBlur(_e, val || '');
   };
 
-  const onClearHandler = () => {
+  const onClearHandler = (e: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>) => {
+    const { onClear } = inputOptions;
     setState({
       init: true,
       date: undefined,
     });
+
+    if (onClear) onClear(e);
   };
 
   const showError = inputOptions.error || (inputOptions.required && error && init);
