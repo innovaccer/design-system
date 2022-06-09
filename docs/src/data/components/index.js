@@ -129,18 +129,6 @@ export const data = [
       />)
   },
   {
-    link: 'helpText/usage',
-    name: 'Help text',
-    design: "Available",
-    code: "Unavailable",
-    image: () => (
-      <StaticImage
-        src="./images/Helptext2.png"
-        alt="Help text"
-        imgStyle={imgStyle}
-      />)
-  },
-  {
     link: 'icons/usage',
     name: 'Icons',
     design: "Available",
