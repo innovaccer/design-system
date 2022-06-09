@@ -69,18 +69,6 @@ export const data = [
       />)
   },
   {
-    link: 'checkbox/usage',
-    design: 'Available',
-    name: 'Checkbox',
-    code: 'Available',
-    image: () => (
-      <StaticImage
-        src="./images/mobile/Checkbox.png"
-        alt="Checkbox"
-        imgStyle={imgStyle}
-      />)
-  },
-  {
     link: 'chips/usage',
     design: 'Available',
     name: 'Chips',
