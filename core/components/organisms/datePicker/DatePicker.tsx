@@ -146,7 +146,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const { year: daYear, month: daMonth, date: daDate } = getDateInfo(disabledAfter);
 
     return !date
-      ? true
+      ? false
       : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
   };
 
