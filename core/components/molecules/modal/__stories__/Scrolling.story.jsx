@@ -88,8 +88,8 @@ export const scrolling = () => {
         }}
         footer={
           <>
-            <Button onClick={action('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-4" onClick={action('Next button click')}>
+            <Button onClick={() => action('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-4" onClick={() => action('Next button click')}>
               Next
             </Button>
           </>
@@ -162,8 +162,8 @@ const customCode = `() => {
         }}
         footer={(
           <>
-            <Button  onClick={console.log('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-4" onClick={console.log('Next button click')}>Next</Button>
+            <Button  onClick={() => console.log('Cancel button click')}>Cancel</Button>
+            <Button appearance="primary" className="ml-4" onClick={() => console.log('Next button click')}>Next</Button>
           </>
         )}
         seperator={true}

@@ -4,14 +4,14 @@
     opacity: 0;
   }
   to {
-    opacity: 100;
+    opacity: 1;
   }
 }
 
 @keyframes modal-close {
   from {
     top: 104px;
-    opacity: 100;
+    opacity: 1;
   }
   to {
     top: 124px;
@@ -28,7 +28,7 @@
   overflow: auto;
   display: flex;
   flex-direction: column;
-  visibility: hidden;
+  display: none;
   margin: auto;
   top: 0;
   right: 0;
@@ -38,15 +38,15 @@
 }
 
 .Modal--open {
-  visibility: visible;
+  display: block;
 }
 
 .Modal-animation--open {
-  animation: modal-open 240ms cubic-bezier(0, 0, 0.3, 1);
+  animation: modal-open var(--duration--moderate-02) var(--entrance-expressive-curve);
 }
 
 .Modal-animation--close {
-  animation: modal-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
+  animation: modal-close var(--duration--fast-02) var(--exit-expressive-curve);
 }
 
 .Modal-header {
