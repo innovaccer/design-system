@@ -203,7 +203,7 @@ export const Popover: React.FC<PopoverProps> = (props) => {
         if (open) {
           setAnimation(`popper-open-${animationId} 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms`);
         } else {
-          setAnimation(`popper-close-${animationId} 120ms cubic-bezier(0.2, 0, 1, 0.9), fadeOut 120ms `);
+          setAnimation(`popper-close-${animationId} 120ms cubic-bezier(0.2, 0, 1, 0.9), MdsFadeOut 120ms `);
         }
         animationDelayTimer = setTimeout(() => setOpen(open), 120);
       }
