@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+@keyframes MdsFadeIn {
   from {
     opacity: 0;
   }
@@ -7,7 +7,7 @@
   }
 }
 
-@keyframes fadeOut {
+@keyframes MdsFadeOut {
   from {
     opacity: 1;
   }
@@ -16,10 +16,10 @@
   }
 }
 
-.fade-in {
-  animation: fadeIn 120ms cubic-bezier(0.2, 0, 0.38, 0.9);
+.Mds-fade-in {
+  animation: MdsFadeIn 120ms cubic-bezier(0.2, 0, 0.38, 0.9);
 }
 
-.fade-out {
-  animation: fadeOut 120ms cubic-bezier(0.4, 0.14, 0.3, 1);
+.Mds-fade-out {
+  animation: MdsFadeOut 120ms cubic-bezier(0.4, 0.14, 0.3, 1);
 }
