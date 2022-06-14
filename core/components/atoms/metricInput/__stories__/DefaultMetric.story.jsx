@@ -30,7 +30,7 @@ const customCode = `() => {
 
   return (
     <div className="d-flex align-items-center">
-      <Label htmlFor="metric-input" className="mr-5">
+      <Label htmlFor="metric-input" className="mr-5"> No. of Days </Label>
       <div style={{ width: 'var(--spacing-6)' }}>
         <MetricInput
           id="metric-input"
