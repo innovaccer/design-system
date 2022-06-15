@@ -38,12 +38,12 @@ export const Trigger = (props: TriggerProps) => {
       init: true,
     });
 
-    if (!val) {
-      setState({ error: false });
-    }
+    const hasNumber = /\d/;
 
-    if (val && val.includes(placeholderChar)) {
-      setState({ date: undefined, error: true });
+    if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
+      setState({ error: true });
+    } else if ((val && !hasNumber.test(val)) || !val) {
+      setState({ error: false });
     }
 
     if (onBlur) onBlur(_e, val || '');

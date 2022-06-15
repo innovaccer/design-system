@@ -223,8 +223,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         removedLength = value.length - inputVal.length;
       }
 
-      cursorPosition += insertedStringLength;
-
       const maskedVal = value.split('');
       for (let i = 0; i < insertedStringLength; i++) {
         maskedVal[start + i] = updatedVal[i];
@@ -232,6 +230,16 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
       for (let i = 0; i < removedLength; i++) {
         const index = start + insertedStringLength + i;
         maskedVal[index] = getPlaceholderValue(index, index);
+      }
+
+      const enteredValue = maskedVal.slice(0, mask.length).join('');
+      if (
+        updatedVal !== placeholderChar &&
+        updatedVal !== '' &&
+        !updatedVal.includes(placeholderChar) &&
+        Utils.validators.isValid(validators, enteredValue)
+      ) {
+        cursorPosition += insertedStringLength;
       }
 
       const newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
