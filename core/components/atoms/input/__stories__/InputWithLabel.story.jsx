@@ -4,6 +4,10 @@ import { Input, Label } from '@/index';
 export const inputWithLabel = () => {
   const [value, setValue] = React.useState('lawsonjoy@gmail.com');
 
+  //To select the value passed in input field
+  const handleClick = (e) => {
+    e.target.select();
+  };
   const onChange = React.useCallback((e) => {
     setValue(e.target.value);
   }, []);
@@ -13,7 +17,7 @@ export const inputWithLabel = () => {
       <Label htmlFor="email" withInput={true}>
         Email
       </Label>
-      <Input id="email" placeholder="Email" className="w-25" value={value} onChange={onChange} />
+      <Input id="email" placeholder="Email" className="w-25" value={value} onClick={handleClick} onChange={onChange} />
     </>
   );
 };

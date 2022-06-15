@@ -2,19 +2,24 @@ import * as React from 'react';
 import { Input, Label } from '@/index';
 
 export const labelPosition = () => {
+
+  //To select the value passed in input field
+  const handleClick = (e) => {
+    e.target.select();
+  };
   return (
     <div className="d-flex align-items-end">
       <div>
         <Label htmlFor="fullName" withInput={true}>
           Full Name
         </Label>
-        <Input placeholder="Full name" id="fullName" value="Joy Lawson" />
+        <Input placeholder="Full name" id="fullName" value="Joy Lawson" onClick={handleClick} />
       </div>
       <div className="d-flex align-items-center ml-9">
         <Label htmlFor="fullName2" className="mr-6">
           Full Name
         </Label>
-        <Input placeholder="Full name" id="fullName2" value="Joy Lawson" />
+        <Input placeholder="Full name" id="fullName2" value="Joy Lawson" onClick={handleClick} />
       </div>
     </div>
   );
