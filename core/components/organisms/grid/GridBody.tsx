@@ -1,6 +1,8 @@
 import * as React from 'react';
+// import VirtualScroll from 'react-dynamic-virtual-scroll';
 import { GridRow } from './GridRow';
 import { GridState, onSelectFn, Schema, updatePrevPageInfoFunction } from './Grid';
+// import { GridProps } from '@/index.type';
 import GridContext from './GridContext';
 
 export interface GridBodyProps {
@@ -13,7 +15,7 @@ export interface GridBodyProps {
 export const GridBody = (props: GridBodyProps) => {
   const context = React.useContext(GridContext);
 
-  const { data, ref, loading, error, page, errorTemplate } = context;
+  const { data, ref, loading, error, withPagination, page, pageSize, totalRecords, errorTemplate } = context;
 
   if (!loading && error) {
     return errorTemplate ? (typeof errorTemplate === 'function' ? errorTemplate({}) : errorTemplate) : null;
@@ -38,6 +40,16 @@ export const GridBody = (props: GridBodyProps) => {
     };
   }, []);
 
+  const totalPages = Math.ceil(totalRecords / pageSize);
+  const isLastPage = withPagination && page === totalPages;
+  const dataLength = isLastPage
+    ? totalRecords - (page - 1) * pageSize
+    : loading
+    ? pageSize
+    : withPagination
+    ? Math.min(totalRecords, pageSize)
+    : totalRecords;
+
   const renderRow = (rowIndex: number, item: object) => {
     return (
       <GridRow
@@ -50,14 +62,19 @@ export const GridBody = (props: GridBodyProps) => {
     );
   };
 
+  const getArrayList = () => {
+    if (loading && !data.length) {
+      return [...Array(dataLength).map((x) => x)];
+    }
+    return data;
+  };
+
   return (
-    <>
-      <div className="Grid-body">
-        {data.map((item, i) => {
-          return renderRow(i, item);
-        })}
-      </div>
-    </>
+    <div className="Grid-body">
+      {getArrayList().map((item, i) => {
+        return renderRow(i, item);
+      })}
+    </div>
   );
 };
 
