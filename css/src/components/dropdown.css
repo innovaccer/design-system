@@ -104,6 +104,18 @@
   background-color: var(--secondary-light);
 }
 
+.Option-checkbox:active
+  > .OptionCheckbox
+  > .Checkbox-outerWrapper
+  > .Checkbox-input--indeterminate
+  ~ .Checkbox-wrapper {
+  background-color: var(--primary-dark);
+}
+
+.Option-checkbox:hover > .OptionCheckbox > .Checkbox-outerWrapper > .Checkbox-input--indeterminate ~ .Checkbox-wrapper {
+  border: none;
+}
+
 .Option--active,
 .Option-checkbox--active {
   background-color: var(--secondary-lightest);

@@ -322,7 +322,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const SelectAllClass = classNames(
     {
-      ['Option-checkbox']: !selected,
+      ['Option-checkbox']: !selected || !props.selectAll.checked,
       ['Option-checkbox--active']: cursor === 0,
       ['OptionWrapper']: true,
     },
