@@ -38,8 +38,12 @@ export const Trigger = (props: TriggerProps) => {
       init: true,
     });
 
-    if (!val || val.includes(placeholderChar)) {
-      setState({ date: undefined });
+    if (!val) {
+      setState({ error: false });
+    }
+
+    if (val && val.includes(placeholderChar)) {
+      setState({ date: undefined, error: true });
     }
 
     if (onBlur) onBlur(_e, val || '');
@@ -77,7 +81,7 @@ export const Trigger = (props: TriggerProps) => {
       onClear={onClearHandler}
       caption={showError ? errorMessage : ''}
       validators={[inputValidator]}
-      clearOnEmptyBlur={false}
+      clearOnEmptyBlur={true}
     />
   );
 };
