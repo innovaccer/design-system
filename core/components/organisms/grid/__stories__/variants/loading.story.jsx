@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Grid } from '@/index';
 
-export const loading = () => {
+export const GridLoadingState = () => {
   const schema = [
     {
       name: 'name',
@@ -44,7 +44,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Components/Grid/Variants/Loading',
+  title: 'Components/Grid/Variants/Grid Loading State',
   parameters: {
     docs: {
       docPage: {
