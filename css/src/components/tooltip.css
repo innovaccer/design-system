@@ -22,13 +22,13 @@
     opacity: 0.5;
   }
   to {
-    top: -8px;
+    top: -4px;
     opacity: 1;
   }
 }
 @keyframes tooltip-close-top {
   from {
-    top: -8px;
+    top: -4px;
     opacity: 0.5;
   }
   to {
@@ -50,13 +50,13 @@
     opacity: 0.5;
   }
   to {
-    top: 8px;
+    top: 4px;
     opacity: 1;
   }
 }
 @keyframes tooltip-close-bottom {
   from {
-    top: 8px;
+    top: 4px;
     opacity: 0.5;
   }
   to {
@@ -79,13 +79,13 @@
     opacity: 0.5;
   }
   to {
-    left: -8px;
+    left: -4px;
     opacity: 1;
   }
 }
 @keyframes tooltip-close-left {
   from {
-    left: -8px;
+    left: -4px;
     opacity: 0.5;
   }
   to {
@@ -108,13 +108,13 @@
     opacity: 0.5;
   }
   to {
-    left: 8px;
+    left: 4px;
     opacity: 1;
   }
 }
 @keyframes tooltip-close-right {
   from {
-    left: 8px;
+    left: 4px;
     opacity: 0.5;
   }
   to {
