@@ -227,7 +227,7 @@ const StoryComp = (props: {
     actions.push({
       title: `${!isExpanded ? 'Show' : 'Hide'} code`,
       onClick: () => {
-        setIsExpanded(!isExpanded);
+        setIsExpanded((isExpanded) => !isExpanded);
       },
       disabled: false,
     });
