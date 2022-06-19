@@ -126,10 +126,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   React.useImperativeHandle(forwardRef, () => ref.current as HTMLInputElement);
 
   React.useEffect(() => {
-    setValue(valueProp || '');
-  }, [valueProp]);
-
-  React.useEffect(() => {
     setCursorPosition(newSelectionPos.current);
   }, [value]);
 
@@ -216,14 +212,18 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
       enteredVal = inputVal.slice(start, end);
       updatedVal = insertAtIndex(enteredVal, start);
+      let oldValue = value;
+      if (oldValue.length === 0) {
+        oldValue = defaultPlaceholderValue;
+      }
       insertedStringLength = updatedVal.length;
       if (currSelection.end > selectionPos.current.end) {
         removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
-      } else if (inputVal.length < value.length) {
-        removedLength = value.length - inputVal.length;
+      } else if (inputVal.length < oldValue.length) {
+        removedLength = oldValue.length - inputVal.length;
       }
 
-      const maskedVal = value.split('');
+      const maskedVal = oldValue.split('');
       for (let i = 0; i < insertedStringLength; i++) {
         maskedVal[start + i] = updatedVal[i];
       }
@@ -253,10 +253,14 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
 
       const newValue = maskedVal.slice(0, mask.length).join('');
       newSelectionPos.current = cursorPosition;
-
-      if (newValue !== value && Utils.validators.isValid(validators, newValue)) {
-        setValue(newValue);
-        onChange?.(e, newValue);
+      if (newValue !== oldValue && Utils.validators.isValid(validators, newValue)) {
+        if (defaultPlaceholderValue === '__:__ _M') {
+          setValue(newValue.toUpperCase());
+          onChange?.(e, newValue.toUpperCase());
+        } else {
+          setValue(newValue);
+          onChange?.(e, newValue);
+        }
       } else {
         window.requestAnimationFrame(() => setCursorPosition(newSelectionPos.current));
       }
@@ -279,7 +283,6 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const onBlurHandler = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       let inputVal = e.currentTarget.value;
-
       if (clearOnEmptyBlur) {
         if (inputVal === defaultPlaceholderValue) {
           setValue('');

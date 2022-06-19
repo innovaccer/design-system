@@ -167,3 +167,23 @@ describe('TimePicker component with different time format', () => {
     expect(FunctionValue).toHaveBeenCalled();
   });
 });
+
+describe('TimePicker component with different placeholder', () => {
+  it('TimePicker with "__:__ _M" format', () => {
+    const { getByTestId } = render(
+      <TimePicker onTimeChange={FunctionValue} inputFormat="hh:mm AM" outputFormat="hh:mm AM" />
+    );
+    const input = getByTestId('DesignSystem-Input');
+    fireEvent.focus(input);
+    expect(input).toHaveValue('__:__ _M');
+  });
+
+  it('TimePicker with "__:__" format', () => {
+    const { getByTestId } = render(
+      <TimePicker onTimeChange={FunctionValue} inputFormat="hh:mm" outputFormat="hh:mm" />
+    );
+    const input = getByTestId('DesignSystem-Input');
+    fireEvent.focus(input);
+    expect(input).toHaveValue('__:__');
+  });
+});

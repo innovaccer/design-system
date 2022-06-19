@@ -133,6 +133,12 @@ describe('renders DatePicker component Event Handlers ', () => {
     const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} />);
     const input = getByTestId('DesignSystem-Input');
     fireEvent.blur(input);
+    expect(input).toHaveValue('');
+  });
+  it('checks onFocus Event', () => {
+    const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} />);
+    const input = getByTestId('DesignSystem-Input');
+    fireEvent.focus(input);
     expect(input).toHaveValue('__/__/____');
   });
 });
