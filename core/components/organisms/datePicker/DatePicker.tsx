@@ -47,7 +47,7 @@ export type DatePickerProps = SharedProps & {
   /**
    * Props to be used for `InputMask`
    */
-  inputOptions: Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClear'>;
+  inputOptions: Omit<InputMaskProps, 'mask' | 'value'>;
   /**
    * custom Validator for `DatePicker`
    *
@@ -146,7 +146,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const { year: daYear, month: daMonth, date: daDate } = getDateInfo(disabledAfter);
 
     return !date
-      ? true
+      ? false
       : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
   };
 

@@ -45,7 +45,7 @@ export const data = [
       />)
   },
   {
-    link: 'buttons/usage',
+    link: 'button/usage',
     design: 'Available',
     name: 'Buttons',
     code: 'Available',
@@ -57,7 +57,7 @@ export const data = [
       />)
   },
   {
-    link: 'cards/usage',
+    link: 'card/usage',
     design: 'Available',
     name: 'Cards',
     code: 'Available',
@@ -65,18 +65,6 @@ export const data = [
       <StaticImage
         src="./images/mobile/Card.png"
         alt="Cards"
-        imgStyle={imgStyle}
-      />)
-  },
-  {
-    link: 'checkbox/usage',
-    design: 'Available',
-    name: 'Checkbox',
-    code: 'Available',
-    image: () => (
-      <StaticImage
-        src="./images/mobile/Checkbox.png"
-        alt="Checkbox"
         imgStyle={imgStyle}
       />)
   },

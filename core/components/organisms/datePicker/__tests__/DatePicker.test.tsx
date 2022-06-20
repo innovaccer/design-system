@@ -112,42 +112,6 @@ describe('renders DatePicker component Event Handlers ', () => {
     expect(getByTestId('DesignSystem-Popover')).toBeInTheDocument();
   });
 
-  it('checks onCancel Event in case of required:true', () => {
-    const { getByTestId, getAllByTestId } = render(
-      <DatePicker
-        onDateChange={FunctionValue}
-        withInput={true}
-        date={newDate}
-        inputOptions={{
-          required: true,
-        }}
-      />
-    );
-    const closeIcon = getByTestId('DesignSystem-Input--closeIcon');
-    expect(closeIcon).toBeInTheDocument();
-    fireEvent.click(closeIcon);
-    expect(getByTestId('DesignSystem-Caption')).toBeInTheDocument();
-    expect(getAllByTestId('DesignSystem-Text')[0]).toHaveTextContent('Invalid value');
-  });
-
-  it('checks for custom caption onCancel Event', () => {
-    const { getByTestId, getAllByTestId } = render(
-      <DatePicker
-        onDateChange={FunctionValue}
-        withInput={true}
-        date={newDate}
-        inputOptions={{
-          required: true,
-          caption: 'Invalid Date Entered',
-        }}
-      />
-    );
-    const closeIcon = getByTestId('DesignSystem-Input--closeIcon');
-    fireEvent.click(closeIcon);
-    expect(getByTestId('DesignSystem-Caption')).toBeInTheDocument();
-    expect(getAllByTestId('DesignSystem-Text')[0]).toHaveTextContent('Invalid Date Entered');
-  });
-
   it('checks for custom placeholderChar option onClose Event', () => {
     const { getByTestId } = render(
       <DatePicker
@@ -166,11 +130,15 @@ describe('renders DatePicker component Event Handlers ', () => {
   });
 
   it('checks onBlur Event', () => {
-    const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} date={newDate} />);
-    const closeIcon = getByTestId('DesignSystem-Input--closeIcon');
+    const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} />);
     const input = getByTestId('DesignSystem-Input');
-    fireEvent.click(closeIcon);
     fireEvent.blur(input);
+    expect(input).toHaveValue('');
+  });
+  it('checks onFocus Event', () => {
+    const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} />);
+    const input = getByTestId('DesignSystem-Input');
+    fireEvent.focus(input);
     expect(input).toHaveValue('__/__/____');
   });
 });

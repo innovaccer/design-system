@@ -102,6 +102,7 @@ interface PopperWrapperState {
   animationKeyframe: string;
   isOpen: boolean;
   uniqueKey: string;
+  showClosingAnimation: boolean;
 }
 
 export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWrapperState> {
@@ -124,7 +125,12 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   constructor(props: PopperWrapperProps) {
     super(props);
 
-    this.state = { animationKeyframe: '', isOpen: this.props.open || false, uniqueKey: '' };
+    this.state = {
+      animationKeyframe: '',
+      isOpen: this.props.open || false,
+      uniqueKey: '',
+      showClosingAnimation: false,
+    };
 
     this.hoverableDelay = 100;
     this.offsetMapping = {
@@ -213,6 +219,9 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       const { onToggle } = this.props;
 
       onToggle(true, 'mouseEnter');
+      this.setState(() => {
+        return { isOpen: true };
+      });
     }
   }
 
@@ -224,6 +233,19 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         this.mouseMoveHandler();
       } else {
         onToggle(false, 'mouseLeave');
+        this.setState(
+          {
+            showClosingAnimation: true,
+          },
+          () => {
+            window.setTimeout(() => {
+              this.setState({
+                showClosingAnimation: false,
+                isOpen: false,
+              });
+            }, 120);
+          }
+        );
       }
     }
   }
@@ -370,8 +392,8 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     } else {
       classes = classNames(
         {
-          [`${animationClass.open}`]: open,
-          [`${animationClass.close}`]: !open,
+          [`${animationClass.open}`]: this.state.isOpen,
+          [`${animationClass.close}`]: this.state.showClosingAnimation,
         },
         children.props.className
       );

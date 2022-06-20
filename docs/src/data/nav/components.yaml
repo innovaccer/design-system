@@ -39,6 +39,7 @@ menus:
 
   - label: Checkbox
     link: /components/checkbox/usage/
+    hideInMobile: true
 
   - label: Chips
     link: /components/chips/usage/
@@ -57,6 +58,10 @@ menus:
 
   - label: Dropdowns
     link: /components/dropdowns/usage/
+    hideInMobile: true
+
+  - label: Help text
+    link: /components/helpText/usage/
     hideInMobile: true
 
   - label: Icons
