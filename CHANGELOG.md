@@ -1,4 +1,43 @@
 
+## 2.13.0  (2022-06-21)
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+*  fix(timepicker): fix placeholder value getting disappear (1ac69560)
+*  fix(modal): fix modal closing animation (d0236cfe)
+*  fix(popover): fix popover animation flickering issue (3c01529b)
+*  fix(inputMask): fix cursor position on input mask (cbd7f31a)
+*  fix(grid): fix grid loading state (aa3672bb)
+*  fix(grid): fix loading state in grid (0a8719d5)
+*  fix(datepicker): reset to default on blur state (d5565fd2)
+*  fix(docs): remove checkbox from mobile nav (3d4aa0f1)
+*  fix(datePicker): fix event handlers for datepicker (f79e3c29)
+*  fix(docs): fix links on mobile overview page (17e621ba)
+*  fix(docs): add missing images (17483411)
+
+### Improvements
+NA
+
+### Documentation
+*  docs(docs): add checkbox in mobile (929861d6)
+*  docs(docs): add help text in web components (c5e9fd8a)
+
+-------------------
+
 ## 2.13.0-0  (2022-06-20)
 
 ### Highlights
