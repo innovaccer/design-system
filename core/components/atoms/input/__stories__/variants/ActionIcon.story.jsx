@@ -16,6 +16,7 @@ const customCode = `() => {
   return (
     <Input
       name="input"
+      value="Value"
       actionIcon={actionIcon}
     />
   );
