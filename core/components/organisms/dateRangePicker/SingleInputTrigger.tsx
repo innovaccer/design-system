@@ -76,6 +76,20 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     });
   };
 
+  const getErrorState = (currentVal: string, siblingVal: string) => {
+    const hasNumber = /\d/;
+
+    if (currentVal && siblingVal && !currentVal.includes(placeholderChar) && siblingVal.includes(placeholderChar)) {
+      return true;
+    } else if (currentVal && hasNumber.test(currentVal) && currentVal.includes(placeholderChar)) {
+      return true;
+    } else if ((currentVal && !hasNumber.test(currentVal)) || !currentVal) {
+      return false;
+    }
+
+    return null;
+  };
+
   const onBlurHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string) => {
     setState({
       init: true,
@@ -84,6 +98,13 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     const date = val.split(' - ');
     const startVal = date[0];
     const endVal = date[1];
+
+    const startErr = getErrorState(startVal, endVal);
+    const endErr = getErrorState(endVal, startVal);
+
+    if (startErr !== null && endErr !== null) {
+      setState({ startError: startErr, endError: endErr });
+    }
 
     if (!startVal || startVal.includes(placeholderChar)) setState({ startDate: undefined });
     if (!endVal || endVal.includes(placeholderChar)) setState({ endDate: undefined });
@@ -123,7 +144,7 @@ export const SingleInputTrigger = (props: TriggerProps) => {
           error={showError}
           caption={showError ? errorMessage : ''}
           validators={[inputValidator]}
-          clearOnEmptyBlur={false}
+          clearOnEmptyBlur={true}
         />
       </Column>
     </Row>
