@@ -39,7 +39,6 @@ menus:
 
   - label: Checkbox
     link: /components/checkbox/usage/
-    hideInMobile: true
 
   - label: Chips
     link: /components/chips/usage/
