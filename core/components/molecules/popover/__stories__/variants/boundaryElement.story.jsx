@@ -38,8 +38,8 @@ export const boundaryElement = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   return (
-    <div ref={ref} style={{ height: 150, border: '1px dashed', padding: 20, overflow: 'auto' }}>
-      <Popover {...options} boundaryElement={ref}>
+    <div ref={ref.current} style={{ height: 150, border: '1px dashed', padding: 20, overflow: 'auto' }}>
+      <Popover {...options} boundaryElement={ref.current}>
         <div style={{ width: 100 }} className="mx-6 my-6">
           <Text>Popup</Text>
           <Button className="mt-4" appearance="primary" onClick={action('button clicked inside popover')}>
