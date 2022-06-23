@@ -8,7 +8,7 @@
     "dev": "./tools/develop.sh",
     "build": "./tools/build.sh",
     "serve": "gatsby serve",
-    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id d2p21c4y3psve4 --paths \"/*\"",
+    "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E2FYU8KR1XGDBZ --paths \"/*\"",
     "clean": "gatsby clean",
     "extract:dev": "export STORYBOOK_HOST='http://localhost:5000/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story' && node ./tools/extract.js",
     "extract": "node ./tools/extract.js"
