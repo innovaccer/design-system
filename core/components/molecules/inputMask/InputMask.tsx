@@ -79,6 +79,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     onFocus,
     onClear,
     className,
+    id,
     ...rest
   } = props;
 
@@ -124,6 +125,10 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
   const [value, setValue] = React.useState<string>(defaultValue || valueProp || '');
 
   React.useImperativeHandle(forwardRef, () => ref.current as HTMLInputElement);
+
+  React.useEffect(() => {
+    setValue(valueProp || '');
+  }, [valueProp]);
 
   React.useEffect(() => {
     setCursorPosition(newSelectionPos.current);
@@ -213,7 +218,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
       enteredVal = inputVal.slice(start, end);
       updatedVal = insertAtIndex(enteredVal, start);
       let oldValue = value;
-      if (oldValue.length === 0) {
+      if (oldValue.length === 0 && id === 'parent-TimePicker') {
         oldValue = defaultPlaceholderValue;
       }
       insertedStringLength = updatedVal.length;

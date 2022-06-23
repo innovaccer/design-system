@@ -108,6 +108,7 @@ export const TimePicker = (props: TimePickerProps) => {
       onChange={onChangeHandler}
       onClear={onClearHandler}
       onBlur={onBlurHandler}
+      id="parent-TimePicker"
     />
   );
 };
