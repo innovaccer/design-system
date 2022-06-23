@@ -66,12 +66,29 @@ export const Trigger = (props: TriggerProps) => {
     setState({
       init: true,
     });
+    const hasNumber = /\d/;
+
     if (type === 'start') {
       const { placeholderChar = '_' } = startInputOptions;
+
+      if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
+        setState({ startError: true });
+      } else if ((val && !hasNumber.test(val)) || !val) {
+        setState({ startError: false });
+      }
+
       if (!val || val.includes(placeholderChar)) setState({ startDate: undefined });
     }
+
     if (type === 'end') {
       const { placeholderChar = '_' } = endInputOptions;
+
+      if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
+        setState({ endError: true });
+      } else if ((val && !hasNumber.test(val)) || !val) {
+        setState({ endError: false });
+      }
+
       if (!val || val.includes(placeholderChar)) setState({ endDate: undefined });
     }
   };
@@ -145,7 +162,7 @@ export const Trigger = (props: TriggerProps) => {
           error={showStartError}
           caption={showStartError ? startErrorMessage : ''}
           validators={[inputValidator]}
-          clearOnEmptyBlur={false}
+          clearOnEmptyBlur={true}
         />
       </Column>
       <Column size={'6'} sizeXS={'12'} className="DateRangePicker-input DateRangePicker-input--endDate">
@@ -177,7 +194,7 @@ export const Trigger = (props: TriggerProps) => {
           error={showEndError}
           caption={showEndError ? endErrorMessage : ''}
           validators={[inputValidator]}
-          clearOnEmptyBlur={false}
+          clearOnEmptyBlur={true}
         />
       </Column>
     </Row>
