@@ -537,7 +537,9 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       return;
     }
 
-    this.updateSelectedOptions([option], true);
+    if (!this.props.withCheckbox) {
+      this.updateSelectedOptions([option], true);
+    }
   };
 
   onSelect = (option: OptionSchema, checked: boolean) => {
