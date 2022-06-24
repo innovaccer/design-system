@@ -77,31 +77,11 @@
   padding-right: var(--spacing-l);
 }
 
-.Option:active {
-  background-color: var(--jal-lighter);
-}
-
-.Option > .Checkbox-input {
-  background-color: var(--white);
-}
-
 .OptionCheckbox {
   width: 100%;
   padding-left: var(--spacing-l);
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.Option-checkbox > .OptionCheckbox > .Checkbox-outerWrapper {
-  background-color: var(--shadow-0);
-}
-
-.Option-checkbox:hover > .OptionCheckbox > .Checkbox-outerWrapper > .Checkbox-input ~ .Checkbox-wrapper {
-  border: var(--spacing-xs) solid var(--stone-dark);
-}
-
-.Option-checkbox:active > .OptionCheckbox > .Checkbox-outerWrapper > .Checkbox-input ~ .Checkbox-wrapper {
-  background-color: var(--secondary-light);
 }
 
 .Option--active,
