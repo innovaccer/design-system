@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimePicker component snapshots renders snapshot for all props 
+  startTime: "05:00 AM", endTime: "11:00 PM", showDuration: false, timeFormat: "12-Hour"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger w-100"
+      >
+        <button
+          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+          data-test="DesignSystem-DropdownTrigger"
+          tabindex="0"
+          type="button"
+          value=""
+        >
+          <div
+            class="DropdownButton-wrapper"
+          >
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down_round
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TimePicker component snapshots renders snapshot for all props 
+  startTime: "05:00 AM", endTime: "11:00 PM", showDuration: false, timeFormat: "24-Hour"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger w-100"
+      >
+        <button
+          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+          data-test="DesignSystem-DropdownTrigger"
+          tabindex="0"
+          type="button"
+          value=""
+        >
+          <div
+            class="DropdownButton-wrapper"
+          >
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down_round
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TimePicker component snapshots renders snapshot for all props 
+  startTime: "05:00 AM", endTime: "11:00 PM", showDuration: true, timeFormat: "12-Hour"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger w-100"
+      >
+        <button
+          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+          data-test="DesignSystem-DropdownTrigger"
+          tabindex="0"
+          type="button"
+          value=""
+        >
+          <div
+            class="DropdownButton-wrapper"
+          >
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down_round
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`TimePicker component snapshots renders snapshot for all props 
+  startTime: "05:00 AM", endTime: "11:00 PM", showDuration: true, timeFormat: "24-Hour"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Dropdown"
+    >
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger w-100"
+      >
+        <button
+          class="Button DropdownButton DropdownButton--regular DropdownButton--placeholder"
+          data-test="DesignSystem-DropdownTrigger"
+          tabindex="0"
+          type="button"
+          value=""
+        >
+          <div
+            class="DropdownButton-wrapper"
+          >
+            <span
+              class="Text Text--regular DropdownButton-text"
+            >
+              Select
+            </span>
+          </div>
+          <i
+            class="material-icons material-icons-round Icon Icon--default"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            keyboard_arrow_down_round
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;

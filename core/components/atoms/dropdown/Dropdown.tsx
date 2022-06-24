@@ -10,6 +10,7 @@ import {
   _showSelectedItems,
   _isOpenControlled,
   _isSelectAllPresent,
+  scrollToOptionIndex,
 } from './utility';
 import { BaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
@@ -192,6 +193,10 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * Callback function called when dropdown is closed
    */
   onClose?: (selected: any[], name?: string | number) => void;
+  /**
+   * Specify the option index which needs to be focused
+   */
+  tabIndex?: number;
 }
 
 type SyncDropdownProps = SyncProps & SharedDropdownProps;
@@ -219,6 +224,7 @@ interface DropdownState {
   selected: OptionSchema[];
   tempSelected: OptionSchema[];
   previousSelected: OptionSchema[];
+  scrollIndex?: number;
 }
 
 /**
@@ -383,6 +389,11 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     fetchFunction(searchTerm).then((res: any) => {
       const { options, count } = res;
+      if (res.scrollToIndex) {
+        setTimeout(() => {
+          scrollToOptionIndex(res.scrollToIndex, options);
+        }, 0);
+      }
       if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
         updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
 
@@ -395,6 +406,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
         this.setState({
           ...this.state,
+          scrollIndex: res.scrollToIndex || 0,
           optionsLength,
           loading: false,
           async: updatedAsync,
@@ -716,14 +728,17 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       selectAll,
       triggerLabel,
       previousSelected,
+      scrollIndex,
     } = this.state;
 
     const { withSelectAll = true, withCheckbox } = this.props;
 
-    const { triggerOptions = {}, selected, ...rest } = this.props;
+    const { triggerOptions = {}, selected, tabIndex, ...rest } = this.props;
     const remainingOptionsLen = searchedOptionsLength - options.length;
 
-    const firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
+    const firstEnabledOption = tabIndex
+      ? tabIndex
+      : _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
       ? 0
       : options.findIndex((option) => !option.disabled);
 
@@ -752,6 +767,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         onOptionSelect={this.onOptionSelect}
         onSelectAll={this.onSelectAll}
         customTrigger={triggerOptions.customTrigger}
+        scrollIndex={scrollIndex}
         {...rest}
       />
     );
