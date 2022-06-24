@@ -2,8 +2,8 @@ import * as React from 'react';
 import { InputMask, Utils } from '@/index';
 import { InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
-
 import { translateToTime, getOutputTimeString, placeholders, isPlaceholderPresent } from './utils';
+import TimePickerWithDropdown, { TimerListProps } from './TimePickerWithDropdown';
 
 export type AMPMType = 'AM' | 'PM';
 export type TimeFormat = 'hh:mm AM' | 'hh:mm';
@@ -41,10 +41,18 @@ export interface TimePickerProps {
    * Callback function called when input field is blurred
    */
   onTimeChange?: (timeVal?: string) => void;
+  /**
+   * show timer with dropdown
+   */
+  withDropdown?: boolean;
+  /**
+   * Valid only when `withDropdown` is set as `true`
+   */
+  withDropdownOptions?: TimerListProps;
 }
 
 export const TimePicker = (props: TimePickerProps) => {
-  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, time: timeProp } = props;
+  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, withDropdown, time: timeProp } = props;
 
   const [time, setTime] = React.useState(timeProp);
   const [init, setInit] = React.useState(false);
@@ -96,20 +104,30 @@ export const TimePicker = (props: TimePickerProps) => {
 
   const mask = Utils.masks.time[inputFormat];
   return (
-    <InputMask
-      placeholder={placeholders[inputFormat]}
-      placeholderChar={placeholderChar}
-      {...inputOptions}
-      mask={mask}
-      value={
-        time ? translateToTime(inputFormat, time) : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : ''
-      }
-      validators={inputValidator}
-      onChange={onChangeHandler}
-      onClear={onClearHandler}
-      onBlur={onBlurHandler}
-      id="parent-TimePicker"
-    />
+    <>
+      {withDropdown ? (
+        <TimePickerWithDropdown {...props.withDropdownOptions} />
+      ) : (
+        <InputMask
+          placeholder={placeholders[inputFormat]}
+          placeholderChar={placeholderChar}
+          {...inputOptions}
+          mask={mask}
+          value={
+            time
+              ? translateToTime(inputFormat, time)
+              : init
+              ? InputMask.utils.getDefaultValue(mask, placeholderChar)
+              : ''
+          }
+          validators={inputValidator}
+          onChange={onChangeHandler}
+          onClear={onClearHandler}
+          onBlur={onBlurHandler}
+          id="parent-TimePicker"
+        />
+      )}
+    </>
   );
 };
 
@@ -118,6 +136,7 @@ TimePicker.defaultProps = {
   outputFormat: 'hh:mm AM',
   inputOptions: {},
   validators: [Utils.validators.time],
+  withDropdown: false,
 };
 
 TimePicker.displayName = 'TimePicker';

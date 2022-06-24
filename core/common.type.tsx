@@ -20,3 +20,4 @@ export type FooterOptions = {
 export type AutoComplete = 'on' | 'off';
 export type NumberRange = [number, number];
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
+export type TimeFormat = 'hh:mm AM' | 'hh:mm';

@@ -11,6 +11,7 @@ import {
   _isOpenControlled,
   _isSelectAllPresent,
 } from './utility';
+import { getSearchedTimeList } from '@/components/organisms/timePicker/utility';
 import { BaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
 
@@ -192,6 +193,11 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * Callback function called when dropdown is closed
    */
   onClose?: (selected: any[], name?: string | number) => void;
+  /**
+   * Defines if Dropdown is used as TimePicker
+   * @ignore
+   */
+  isTimePickerRange?: boolean;
 }
 
 type SyncDropdownProps = SyncProps & SharedDropdownProps;
@@ -333,7 +339,11 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
   fetchOptionsFunction = (searchTerm: string) => {
     const { options } = this.props;
-    const filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
+    const filteredOptions = searchTerm
+      ? this.props.isTimePickerRange
+        ? getSearchedTimeList(options, searchTerm)
+        : getSearchedOptions(options, searchTerm)
+      : options;
     return new Promise<any>((resolve) => {
       resolve({
         searchTerm,
@@ -413,9 +423,10 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   };
 
   updateSearchTerm = (search: string) => {
+    const showLoader = this.props.isTimePickerRange ? false : true;
     this.setState({
       ...this.state,
-      loading: true,
+      loading: showLoader,
       searchInit: true,
       searchTerm: search,
     });
