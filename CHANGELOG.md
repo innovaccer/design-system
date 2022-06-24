@@ -1,4 +1,37 @@
 
+## 2.13.1  (2022-06-24)
+
+### Highlights
+NA
+
+### Breaking changes
+NA
+
+### Migration guide
+NA
+
+### Deprecations
+NA
+
+### Features
+NA
+
+### Fixes
+*  fix(daterangepicker): fix error state on blur event (fcc00594)
+*  fix(daterangepicker): fix dateRangePicker input freeze (c98352c0)
+*  fix(popover): fix boundary element story (ca351ed5)
+*  fix(metricInput): fix default metric input story (0eb7e111)
+
+### Improvements
+NA
+
+### Documentation
+*  fix(docs): update distribution id for docs-dev (6e21010d)
+*  fix(docs): update distribution id for docs-dev (6c23c6ed)
+*  feat(docs): add component images (3f9e1fc4)
+*  feat(docs): add helptext component (4601c1e0)
+
+-------------------
 ## 2.13.0  (2022-06-21)
 
 ### Highlights
