@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { scrollIntoView, _isEqual, _isSelectAllPresent } from './utility';
+import { scrollIntoView, _isEqual, _isSelectAllPresent, scrollToOptionIndex } from './utility';
 import { Popover, Checkbox, Button, Text, Input } from '@/index';
 import { PopoverProps } from '@/index.type';
 import DropdownButton, { TriggerProps } from './DropdownButton';
@@ -145,6 +145,11 @@ export interface DropdownListProps extends TriggerAndOptionProps {
    * Adds custom placeholder to searchBar
    */
   searchPlaceholder?: string;
+  /**
+   * Specify index of option where cursor should scroll
+   * @ignore
+   */
+  scrollIndex?: number;
 }
 
 interface OptionsProps extends DropdownListProps, BaseProps {
@@ -212,6 +217,7 @@ const DropdownList = (props: OptionsProps) => {
     toggleDropdown,
     className,
     searchPlaceholder = 'Search..',
+    scrollIndex,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -226,6 +232,7 @@ const DropdownList = (props: OptionsProps) => {
   const [cursor, setCursor] = React.useState(firstEnabledOption);
 
   React.useEffect(() => {
+    let timer: any;
     if (dropdownOpen) {
       const { width, minWidth, maxWidth } = props;
       const popperWidth = triggerRef.current?.clientWidth;
@@ -238,7 +245,18 @@ const DropdownList = (props: OptionsProps) => {
       };
 
       setPopoverStyle(popperWrapperStyle);
+
+      // scrolls to current time
+      if (scrollIndex && tempSelected.length === 0) {
+        timer = setTimeout(() => {
+          scrollToOptionIndex(scrollIndex, listOptions);
+        }, 100);
+      }
     }
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, [dropdownOpen]);
 
   React.useEffect(() => {

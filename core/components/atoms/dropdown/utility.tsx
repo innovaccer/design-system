@@ -51,3 +51,9 @@ export const getSelectAll = (selected: Option[], optionsLength: number, disabled
   }
   return { indeterminate: false, checked: false };
 };
+
+export const scrollToOptionIndex = (scrollIndex: number, listOptions: any) => {
+  const optionID = listOptions && listOptions[scrollIndex]?.optionID;
+  const targetOption = document.getElementById(optionID);
+  targetOption && targetOption.scrollIntoView && targetOption.scrollIntoView({ block: 'center' });
+};
