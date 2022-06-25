@@ -26,7 +26,6 @@
   background-color: var(--white);
   border-radius: var(--spacing);
   overflow: auto;
-  display: flex;
   flex-direction: column;
   display: none;
   margin: auto;
@@ -38,7 +37,7 @@
 }
 
 .Modal--open {
-  display: block;
+  display: flex;
 }
 
 .Modal-animation--open {
