@@ -3,7 +3,7 @@ import { scrollIntoView, _isEqual, _isSelectAllPresent } from './utility';
 import { Popover, Checkbox, Button, Text, Input } from '@/index';
 import { PopoverProps } from '@/index.type';
 import DropdownButton, { TriggerProps } from './DropdownButton';
-import Option, { ClickEvent, OptionRendererProps, OptionSchema } from './option';
+import Option, { OptionRendererProps, OptionSchema } from './option';
 import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
@@ -322,7 +322,7 @@ const DropdownList = (props: OptionsProps) => {
 
   const SelectAllClass = classNames(
     {
-      ['Option-checkbox']: !selected,
+      ['Option-checkbox']: true,
       ['Option-checkbox--active']: cursor === 0,
       ['OptionWrapper']: true,
     },
@@ -347,10 +347,6 @@ const DropdownList = (props: OptionsProps) => {
 
   const optionClickHandler = (item: any) => {
     props.onOptionSelect(item);
-    if (withCheckbox) {
-      const optionIsSelected = tempSelected.findIndex((option) => option.value === item.value) !== -1;
-      props.onSelect(item, !optionIsSelected);
-    }
     dropdownTriggerRef.current?.focus();
   };
 
@@ -512,11 +508,7 @@ const DropdownList = (props: OptionsProps) => {
           active={active}
           checkboxes={withCheckbox}
           menu={menu}
-          onClick={(e: ClickEvent) => {
-            e.preventDefault();
-            e.stopPropagation();
-            optionClickHandler(item);
-          }}
+          onClick={() => optionClickHandler(item)}
           onChange={(e) => props.onSelect(item, e.target.checked)}
           optionType={props.optionType}
         />
