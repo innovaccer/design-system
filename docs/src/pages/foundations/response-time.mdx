@@ -1,6 +1,6 @@
 ---
 title: Response times
-description: Instructions for Response Time. 0.1s to 1s is about the limit to keep it snappy.
+description: Instructions for Response Time.
 date: 15 June 2021
 showMobile: true
 ---
@@ -11,7 +11,7 @@ showMobile: true
 
 #### Free navigation
 
-**1.0 second** is the limit for having the user feel that the system is **reacting instantaneously**, meaning that no special feedback is necessary except to display the result.
+**0.1 second** is the limit for having the user feel that the system is **reacting instantaneously**, meaning that no special feedback is necessary except to display the result.
 
 For example, this is the limit from the time the user selects a row in a table until that row should highlight or otherwise give feedback that it's selected.
 
@@ -57,7 +57,7 @@ For example, this is the limit from the time the user selects a row in a table u
 <br />
 <br />
 
-#### Data manipulation
+#### Direct manipulation
 
 **1.0 second** is about the limit for the **user's flow of thought
 to stay** uninterrupted, even though the user will notice the delay.
@@ -73,9 +73,9 @@ For example, if sorting a table according to the selected column can't be done i
     separator={true}
     data={[
       {
-        good: '[0, 100ms]',
-        needs_improvement: '(100ms, 300ms]',
-        poor: 'over 300ms',
+        good: '[0, 1000ms]',
+        needs_improvement: '(1000ms, 3000ms]',
+        poor: 'over 3000ms',
       },
     ]}
     schema={[

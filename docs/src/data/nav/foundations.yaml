@@ -22,7 +22,7 @@ menus:
     link: /foundations/interactions/
     hideInMobile: true
 
-  - label: Response Time
+  - label: Response times
     link: /foundations/response-time/
     hideInMobile: true
 
