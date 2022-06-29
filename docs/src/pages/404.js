@@ -29,7 +29,7 @@ const PageNotFound = () => {
         style={{ transform: "translate(0,50%)" }}
       >
         <EmptyState
-          description="Sorry, the page you are lookikng for does not exist. Let's get you back"
+          description="Sorry, the page you are looking for does not exist. Let's get you back"
           imageSrc={notFoundImage}
           size="small"
           title="Oh no! There's no masala"
