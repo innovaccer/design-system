@@ -1,5 +1,8 @@
 base: components
 menus:
+
+  
+
   - label: Overview
     link: /components/overview/all-components/
     
@@ -62,6 +65,10 @@ menus:
   - label: Help text
     link: /components/helpText/usage/
     hideInMobile: true
+    
+  - label: File list
+    link: /components/fileList/usage
+    hideInWeb: true
 
   - label: Icons
     link: /components/icons/usage/
@@ -165,3 +172,5 @@ menus:
     link: /components/tooltip/usage
     hideInMobile: true
     
+    
+  
