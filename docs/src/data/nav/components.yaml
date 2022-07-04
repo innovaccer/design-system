@@ -13,7 +13,6 @@ menus:
 
   - label: Badges
     link: /components/badges/usage/
-    hideInMobile: true
 
   - label: Bottom navigation
     link: /components/bottomNavigation/usage
