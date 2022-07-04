@@ -66,15 +66,35 @@ export const isFormat12hour = (format: string) => {
 };
 
 // =========== SEARCH LOGIC ==============
-// const _checkNumberWithAMPM = (str: string) => {
-//   const numberWithAMPMRegex = /^[0-9]+[ AaMmPp]*$/;
-//   return numberWithAMPMRegex.test(str);
-// };
-
 const _checkNumber = (str: string) => {
   const numberRegex = /^[0-9]+$/;
   return numberRegex.test(str);
 };
+
+const _checkNumberWithAMPM = (str: string) => {
+  const numberWithAMPMRegex = /^[0-9]+[ AaMmPp]+$/;
+  return numberWithAMPMRegex.test(str);
+};
+
+const specialCharRegex = /[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
+
+const _checkNumberWithSpecialChar = (str: string) => {
+  const numberWithSpecialCharRegex = /^[0-9]+[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~][0-9]*$/;
+  return numberWithSpecialCharRegex.test(str);
+};
+
+const _checkNumberWithSpecialCharAPM = (str: string) => {
+  const numberWithSpecialCharAPM = /^[0-9]+[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~][0-9]+[ AaMmPp]+$/;
+  return numberWithSpecialCharAPM.test(str);
+};
+
+const _isTimeInAM = (str: string) => {
+  return str.includes('a') || str.includes('A');
+};
+
+// const _isTimeInPM = (str: string) => {
+//   return str.includes('p') || str.includes('P');
+// };
 
 const getCurrentTimeIn12HourFormat = () => {
   return new Date().toLocaleTimeString('en-US', { hour: '2-digit', hour12: true, minute: '2-digit' });
@@ -93,18 +113,21 @@ const getSearchTimeFromNumber = (searchTerm: string) => {
   let mm = '00';
 
   switch (searchLen) {
-    case 1:
+    case 1: // if search term length is 1 consider it as hour
       hh = '0' + searchTerm;
       break;
-    case 2:
+
+    case 2: // if search term length is 2
       if (searchTerm <= '12') {
-        // hh = searchTerm;
+        // consider it as hour
         hh = ('0' + searchTerm).slice(-2);
       } else {
+        // consider first term as hour and last term as min
         hh = '0' + searchTerm[0];
         mm = searchTerm[1] + '0';
       }
       break;
+
     case 3:
       if (firstTwoTerm <= '12') {
         hh = ('0' + firstTwoTerm).slice(-2);
@@ -114,11 +137,15 @@ const getSearchTimeFromNumber = (searchTerm: string) => {
         mm = searchTerm.slice(1);
       }
       break;
+
     case 4:
+      // @todo: add support if user type 2100
       hh = firstTwoTerm;
       mm = searchTerm.slice(2);
       break;
+
     default:
+      // set time as -1 in case of invalid time
       hh = '-1';
       mm = '-1';
   }
@@ -128,15 +155,19 @@ const getSearchTimeFromNumber = (searchTerm: string) => {
 
 /**
  * Find next available time zone (AM | PM) slot based on current time
- * @param searchTime
+ * @param searchTime in hh:mm format
  * @returns search time in hh:mm (AM | PM) format
  */
 const getTimeZoneFromCurrentTime = (searchTime: string) => {
   const currentTimeStamp = getCurrentTimeIn12HourFormat();
   const currentTimeZone = currentTimeStamp ? getAMPMType(currentTimeStamp) : 'AM';
+  // @todo check this condition like ('12:03' > '02:00' returns true which is incorrect)
   if (currentTimeStamp > searchTime) {
     if (currentTimeZone === 'PM') {
+      // @todo: add this condition
+      // if next date is allowed
       searchTime += ' AM';
+      // else show invalid time
     } else {
       searchTime += 'PM';
     }
@@ -146,18 +177,72 @@ const getTimeZoneFromCurrentTime = (searchTime: string) => {
   return searchTime;
 };
 
+/**
+ *
+ * @param searchTime in [number APM] format
+ * @returns search time in hh:mm APM format
+ */
+const getTimeFromNumberWithAPM = (searchTime: string) => {
+  const timeArr = searchTime.split(/[\saAmMpP]/);
+  const timeValue = timeArr[0];
+  const timeInHourMin = getSearchTimeFromNumber(timeValue);
+  const timeZone = _isTimeInAM(searchTime) ? 'AM' : 'PM';
+  const modifiedSearchTime = timeInHourMin + ` ${timeZone}`;
+  return modifiedSearchTime;
+};
+
+/**
+ * @param searchTime in [number special-char] format
+ * @returns time in hh:mm format
+ */
+const getTimeFromNumberWithSpecialChar = (searchTime: string) => {
+  const time = searchTime.split(specialCharRegex);
+  const hh = ('0' + time[0]).slice(-2);
+  const mm = time[1] !== '' ? (time[1] + '0').slice(0, 2) : '00';
+  const timeInHHMM = `${hh}:${mm}`;
+
+  return timeInHHMM;
+};
+
+/**
+ * Modifies the search term w.r.t time shown in option list
+ * @param searchTerm entered by user in any format
+ * @returns modified search term in hh:mm AM|PM format
+ */
 const formatSearchTerm = (searchTerm: string) => {
   let searchTime = '00:00';
 
-  // If search term only contains number
+  // If search term only contains numbers
   if (_checkNumber(searchTerm)) {
-    const searchTimeObj = getSearchTimeFromNumber(searchTerm);
-    searchTime = getTimeZoneFromCurrentTime(searchTimeObj);
+    const timeInHHMM = getSearchTimeFromNumber(searchTerm);
+    searchTime = getTimeZoneFromCurrentTime(timeInHHMM);
   }
 
-  // if (_checkNumberWithAMPM(searchTerm)) {
-  //   searchTime = getSearchTimeWithoutSpecialChar(searchTerm);
-  // }
+  // if search term contains numbers along with [apm]
+  else if (_checkNumberWithAMPM(searchTerm)) {
+    searchTime = getTimeFromNumberWithAPM(searchTerm);
+  }
+
+  // if search term contains numbers along with special character
+  else if (_checkNumberWithSpecialChar(searchTerm)) {
+    const timeInHHMM = getTimeFromNumberWithSpecialChar(searchTerm);
+    searchTime = getTimeZoneFromCurrentTime(timeInHHMM);
+  }
+
+  // if search term contains numbers, special character & [AmPm]
+  else if (_checkNumberWithSpecialCharAPM(searchTerm)) {
+    const timeWithoutAPM = searchTerm.replace(/[\saApPmM]/g, '');
+    let timeInHHMM = '00:00';
+
+    if (_checkNumber(timeWithoutAPM)) {
+      timeInHHMM = getSearchTimeFromNumber(timeWithoutAPM);
+    } else if (_checkNumberWithSpecialChar(timeWithoutAPM)) {
+      timeInHHMM = getTimeFromNumberWithSpecialChar(timeWithoutAPM);
+    }
+
+    const timeZone = _isTimeInAM(searchTerm) ? 'AM' : 'PM';
+    searchTime = timeInHHMM + ` ${timeZone}`;
+  }
 
   return searchTime;
 };

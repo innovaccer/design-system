@@ -1,4 +1,3 @@
-import { scrollIntoView } from '@/components/atoms/dropdown/utility';
 import { isFormat12hour, get12HourTimeList, get12HourSearchIndex } from './12HourUtils';
 import { get24HourTimeList } from './24HourUtils';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
@@ -27,6 +26,24 @@ export const getSearchedTimeList = (options: OptionSchema[], searchTerm: string)
   const dropdownWrapper = document.getElementsByClassName('Dropdown-wrapper')[0] as HTMLDivElement;
   const optionText = document.querySelectorAll('.Dropdown-items')[searchIndex] as HTMLDivElement;
 
-  scrollIntoView(dropdownWrapper, optionText);
+  if (optionText) {
+    scrollIntoView(dropdownWrapper, optionText);
+  }
   return options;
+};
+
+export const scrollIntoView = (menuElement: HTMLDivElement | null, focusedElement: HTMLElement) => {
+  const menuRect = menuElement?.getBoundingClientRect();
+  const focusedRect = focusedElement.getBoundingClientRect();
+  const overscroll = focusedElement.offsetHeight;
+
+  if (menuRect && focusedRect.bottom > menuRect.bottom && menuElement) {
+    scrollTo(menuElement, focusedElement.offsetTop - menuRect!.height + overscroll);
+  } else if (menuRect && focusedRect.top < menuRect!.top && menuElement) {
+    scrollTo(menuElement, focusedElement.offsetTop - overscroll);
+  }
+};
+
+export const scrollTo = (element: Element, top: number) => {
+  element.scrollTo(0, top);
 };

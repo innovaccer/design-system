@@ -3,7 +3,7 @@ import { InputMask, Utils } from '@/index';
 import { InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { translateToTime, getOutputTimeString, placeholders, isPlaceholderPresent } from './utils';
-import TimePickerWithDropdown, { TimerListProps } from './TimePickerWithDropdown';
+import TimePickerWithDropdown, { TimerListProps } from './TimePickerWithFuzzySearch';
 
 export type AMPMType = 'AM' | 'PM';
 export type TimeFormat = 'hh:mm AM' | 'hh:mm';

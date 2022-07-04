@@ -35,10 +35,14 @@ export interface TimerListProps {
    * Callback function to fetch options from API based on search term
    */
   fetchOptions?: fetchOptionsFunction;
+  /**
+   * Display message when there is no result
+   */
+  noResultMessage?: string;
 }
 
-export const TimePickerWithDropdown = (props: TimerListProps) => {
-  const { startTime, endTime, timeFormat, interval, fetchOptions, optionList } = props;
+export const TimePickerWithFuzzySearch = (props: TimerListProps) => {
+  const { startTime, endTime, timeFormat, interval, fetchOptions, optionList, noResultMessage, ...rest } = props;
 
   const getDropdownOptionList = () => {
     if (optionList) {
@@ -67,15 +71,17 @@ export const TimePickerWithDropdown = (props: TimerListProps) => {
       searchPlaceholder="Search"
       fetchOptions={fetchOptions}
       options={dropdownOptionList}
+      noResultMessage={noResultMessage}
       staticLimit={dropdownOptionList.length}
+      {...rest}
     />
   );
 };
 
-TimePickerWithDropdown.defaultProps = {
+TimePickerWithFuzzySearch.defaultProps = {
   timeFormat: 'hh:mm AM',
   interval: 15,
 };
 
-TimePickerWithDropdown.displayName = 'TimePickerWithDropdown';
-export default TimePickerWithDropdown;
+TimePickerWithFuzzySearch.displayName = 'TimePickerWithFuzzySearch';
+export default TimePickerWithFuzzySearch;

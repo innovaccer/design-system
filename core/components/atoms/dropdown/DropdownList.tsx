@@ -571,6 +571,7 @@ const DropdownList = (props: OptionsProps) => {
     const updatedCursor = direction === 'down' ? cursor + 1 : cursor - 1;
     let startIndex = updatedCursor;
     const endIndex = direction === 'down' ? elements.length : -1;
+
     while (startIndex !== endIndex) {
       const node = elements[startIndex];
 
