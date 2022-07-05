@@ -131,7 +131,6 @@ menus:
 
   - label: Slider
     link: /components/slider/usage/
-    hideInMobile: true
 
   - label: Status hint
     link: /components/statusHint/usage/
