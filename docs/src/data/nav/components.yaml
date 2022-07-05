@@ -87,7 +87,6 @@ menus:
 
   - label: Meta list
     link: /components/metaList/usage/
-    hideInMobile: true
 
   - label: Modals
     link: /components/modals/usage/
