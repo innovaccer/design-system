@@ -138,7 +138,6 @@ menus:
 
   - label: Steppers
     link: /components/steppers/usage/
-    hideInMobile: true
 
   - label: Switch
     link: /components/switch/usage/
