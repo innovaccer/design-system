@@ -140,6 +140,7 @@ const getSearchTimeFromNumber = (searchTerm: string) => {
 
     case 4:
       // @todo: add support if user type 2100
+      // hh = String(Number(firstTwoTerm) % 12);
       hh = firstTwoTerm;
       mm = searchTerm.slice(2);
       break;
@@ -178,7 +179,6 @@ const getTimeZoneFromCurrentTime = (searchTime: string) => {
 };
 
 /**
- *
  * @param searchTime in [number APM] format
  * @returns search time in hh:mm APM format
  */

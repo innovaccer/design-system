@@ -3,7 +3,7 @@ import { InputMask, Utils } from '@/index';
 import { InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { translateToTime, getOutputTimeString, placeholders, isPlaceholderPresent } from './utils';
-import TimePickerWithDropdown, { TimerListProps } from './TimePickerWithFuzzySearch';
+import TimePickerWithFuzzySearch, { TimerListProps } from './TimePickerWithFuzzySearch';
 
 export type AMPMType = 'AM' | 'PM';
 export type TimeFormat = 'hh:mm AM' | 'hh:mm';
@@ -106,7 +106,7 @@ export const TimePicker = (props: TimePickerProps) => {
   return (
     <>
       {withDropdown ? (
-        <TimePickerWithDropdown {...props.withDropdownOptions} />
+        <TimePickerWithFuzzySearch {...props.withDropdownOptions} />
       ) : (
         <InputMask
           placeholder={placeholders[inputFormat]}

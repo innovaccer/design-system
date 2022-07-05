@@ -19,15 +19,22 @@ export const getTimeOptionList = (startTime: string, endTime: string, interval: 
 };
 
 export const getSearchedTimeList = (options: OptionSchema[], searchTerm: string) => {
-  const searchIndex = get12HourSearchIndex(options, searchTerm);
+  const searchIndex = get12HourSearchIndex(options, searchTerm) + 1;
   const result: [] = [];
-  if (searchIndex === -1) return result;
+  if (searchIndex === -1) return result; // if no option matches search term
 
   const dropdownWrapper = document.getElementsByClassName('Dropdown-wrapper')[0] as HTMLDivElement;
-  const optionText = document.querySelectorAll('.Dropdown-items')[searchIndex] as HTMLDivElement;
+  const optionList = document.querySelectorAll('.Dropdown-items');
+  const targetOption = optionList[searchIndex] as HTMLDivElement;
+  const activeOptionClassName = 'Option--active';
 
-  if (optionText) {
-    scrollIntoView(dropdownWrapper, optionText);
+  // remove class from previous selected option
+  optionList.forEach((i) => i.classList.remove(activeOptionClassName));
+
+  // add active class to current target option
+  targetOption.classList.add(activeOptionClassName);
+  if (targetOption) {
+    scrollIntoView(dropdownWrapper, targetOption);
   }
   return options;
 };
