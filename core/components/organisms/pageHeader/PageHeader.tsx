@@ -90,23 +90,30 @@ export const PageHeader = (props: PageHeaderProps) => {
     return <div className="PageHeader-navigationWrapper">{navigation || stepper}</div>;
   };
 
+  const colSize = (navigation || stepper) && actions ? '4' : navigation || actions || stepper ? '8' : '12';
+
   return (
     <div {...baseProps} className={wrapperClasses}>
       {breadcrumbs}
       <div className={classes}>
         <Row>
-          <Column size="4" sizeXL="4" sizeM="4">
+          <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
             <div className="PageHeader-titleWrapper">
               <Heading className="PageHeader-title">{title}</Heading>
               {badge}
             </div>
           </Column>
-          <Column size="4" sizeXL="4" sizeM="4">
-            {(!breadcrumbs || navigationPosition === 'center') && renderCenter()}
-          </Column>
-          <Column size="4" sizeXL="4" sizeM="4">
-            {actions}
-          </Column>
+          {navigation ||
+            (stepper && (
+              <Column size="4" sizeXL="4" sizeM="4">
+                {(!breadcrumbs || navigationPosition === 'center') && renderCenter()}
+              </Column>
+            ))}
+          {actions && (
+            <Column size="4" sizeXL="4" sizeM="4">
+              {actions}
+            </Column>
+          )}
         </Row>
       </div>
       {(status || meta) && (
