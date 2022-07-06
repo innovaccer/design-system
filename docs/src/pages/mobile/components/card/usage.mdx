@@ -7,11 +7,24 @@ showMobile: true
 
 Cards act as containers to group related information and actions together. Elements like text and images should be placed inside cards in a way that clearly indicates hierarchy.
 
-### Structure
+### Types
 
 <br/>
 
+#### Default card
+Default card is the most used type of card. It consists of a shadow, Shadow 10 by default.
+
 ![Default card](./images/mcard-1.png)
+
+#### Flat card
+Flat card is used to either create sections within a default card i.e. card inside a card or use cards on screens with white background.
+
+![Default card](./images/mcard-2.png)
+
+#### High shadow
+High shadow cards are recommended to use when the screen consists of only card type entities. It consists of a shadow, Shadow 40. 
+
+![Default card](./images/mcard-3.png)
 
 <br/>
 <br/>
@@ -20,70 +33,32 @@ Cards act as containers to group related information and actions together. Eleme
 
 <br/>
 
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'Width',
-        Value: '<Width>',
-        Configurable: '-',
-      },
-      {
-        Property: 'Height',
-        Value: '<Height>',
-        Configurable: '-',
-      },
-      {
-        Property: 'Shadow',
-        Value: 'A card is restricted to one of the following shadows, basis on its type: "Shadow 0 (Flat Card)" or "Shadow 10"',
-        Configurable: '-',
-      },
-      {
-        Property: 'Background color',
-        Value: 'Namak',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Corner Radius',
-        Value: '4px',
-        Configurable: '❌',
-      },
-      {
-        Property: 'Border',
-        Value: '0px for Default Card, 1px for Flat Card',
-        Configurable: '❌',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '34%',
-        sorting: false,
-        separator: true,
-        cellType: 'DEFAULT'
-      },
-      {
-        name: 'Value',
-        displayName: 'Value',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Configurable',
-        displayName: 'Configurable?',
-        width: '33%',
-        sorting: false,
-        separator: true
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Style</td>
+      <td>
+        <ul>
+          <li>Shadow 0 (Flat card)</li>
+          <li>Shadow 10 (Default shadow)</li>
+          <li>Shadow 40 (High shadow)</li>
+        </ul>
+      </td>
+      <td>Shadow 10 (Default shadow)</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Corner Radius</td>
+      <td>8px</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
 <br/>
 <br/>
 
@@ -96,7 +71,7 @@ Cards act as containers to group related information and actions together. Eleme
 The umbrella view of the card consists of a **header** at the top, the **body**, and the **footer** at the bottom. 
 These elements are not always mandatory and can be customized according to the requirements.
 
-![Card structure](./images/mcard-2.png)
+![Card structure](./images/mcard-4.png)
 
 <br/>
 
@@ -112,7 +87,19 @@ All the elements(except the card header) are optional and can be omitted accordi
 A card can have multiple sections to show related but distinct information. 
 A divider can be used to separate different sections in a card.
 
-![Card with sections](./images/mcard-3.png)
+![Card with sections](./images/mcard-5.png)
 
 <br/>
+<br/>
+
+#### Usage of high shadow cards
+
+High shadow cards are recommended to use when the screen consists of only card type entities. 
+
+For screens where the content is the combination of cards, lists, etc it is not recommended to use the high shadow cards to avoid the inconsistency in the actual and the visual hierarchies of the entities. 
+
+**Note:** In the example below, the image on the left has only cards hence is a use case for High shadow cards. Whereas in the image on right, using high shadow cards convey a different visual hierarchy for both, the list and the card, even though they are on the same level of information hierarchy. 
+
+![Card with sections](./images/mcard-6.png)
+
 <br/>
