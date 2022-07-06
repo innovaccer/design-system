@@ -134,7 +134,6 @@ menus:
 
   - label: Status hint
     link: /components/statusHint/usage/
-    hideInMobile: true
 
   - label: Steppers
     link: /components/steppers/usage/
