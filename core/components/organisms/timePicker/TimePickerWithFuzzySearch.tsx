@@ -10,7 +10,11 @@ type fetchOptionsFunction = (searchTerm: string) => Promise<{
   options: OptionSchema[];
 }>;
 
-export interface TimerListProps {
+export interface TimePickerWithDropdown {
+  /**
+   * show timer with dropdown
+   */
+  withDropdown?: boolean;
   /**
    * Indicates the start time for the options in particular time format `hh:mm [AM | PM]` or `hh:mm`
    */
@@ -20,7 +24,7 @@ export interface TimerListProps {
    */
   endTime?: string;
   /**
-   * Depicts the time interval in `min` between options
+   * Depicts the time interval in `minutes` between options
    */
   interval: number;
   /**
@@ -44,12 +48,16 @@ export interface TimerListProps {
    */
   showTimeDifference?: boolean;
   /**
-   * time in hh:mm based on which time difference is shown in option label
+   * time in `hh:mm [AM | PM]` based on which time difference is shown in option label
    */
   referenceTime: string;
+  /**
+   * Callback function to be called when options are selected from dropdown.
+   */
+  onChange: (selected: any[] | any, name?: string | number) => void;
 }
 
-export const TimePickerWithFuzzySearch = (props: TimerListProps) => {
+export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
   const {
     endTime,
     interval,

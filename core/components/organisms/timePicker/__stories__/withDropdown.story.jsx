@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { TimePicker } from '@/index';
 import { action } from '@/utils/action';
+import { TimePickerAsDropdown, TimePickerAsInput } from './_common_/types';
 
 // CSF format story
 export const timePickerAsDropdown = () => {
@@ -17,13 +18,11 @@ export const timePickerAsDropdown = () => {
       <TimePicker
         key={`${inputFormat}${outputFormat}`}
         withDropdown={true}
-        withDropdownOptions={{
-          startTime: '10:15 AM',
-          endTime: '11:15 PM',
-          showTimeDifference: true,
-          referenceTime: '08:00 AM',
-          onChange: onChangeHandler,
-        }}
+        startTime="10:15 AM"
+        endTime="11:15 PM"
+        showTimeDifference={true}
+        referenceTime="08:00 AM"
+        onChange={onChangeHandler}
       />
     </div>
   );
@@ -39,13 +38,11 @@ const customCode = `() => {
     <div className="w-25">
       <TimePicker
         withDropdown={true}
-        withDropdownOptions={{
-          startTime: '10:15 AM',
-          endTime: '11:15 PM',
-          showTimeDifference: true,
-          referenceTime: '08:00 AM',
-          onChange: onChangeHandler
-        }}
+        startTime="10:15 AM"
+        endTime="11:15 PM"
+        showTimeDifference={true}
+        referenceTime="08:00 AM"
+        onChange={onChangeHandler}
       />
     </div>
   );
@@ -59,6 +56,9 @@ export default {
       docPage: {
         customCode,
         title: 'TimePicker',
+        props: {
+          components: { TimePickerAsInput, TimePickerAsDropdown },
+        },
       },
     },
   },

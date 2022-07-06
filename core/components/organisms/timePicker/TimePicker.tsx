@@ -3,13 +3,24 @@ import { InputMask, Utils } from '@/index';
 import { InputMaskProps } from '@/index.type';
 import { Validators } from '@/utils/types';
 import { translateToTime, getOutputTimeString, placeholders, isPlaceholderPresent } from './utils';
-import TimePickerWithFuzzySearch, { TimerListProps } from './TimePickerWithFuzzySearch';
+import TimePickerWithFuzzySearch, { TimePickerWithDropdown } from './TimePickerWithFuzzySearch';
 
 export type AMPMType = 'AM' | 'PM';
 export type TimeFormat = 'hh:mm AM' | 'hh:mm';
 export type TimeType = number | string;
 
-export interface TimePickerProps {
+// export interface TimePickerWithDropdown {
+//   /**
+//    * show timer with dropdown
+//    */
+//   withDropdown?: boolean;
+//   /**
+//    * Valid only when `withDropdown` is set as `true`
+//    */
+//   withDropdownOptions?: TimerListProps;
+// }
+
+export interface TimePickerWithInput {
   /**
    * Selected time
    *
@@ -41,15 +52,9 @@ export interface TimePickerProps {
    * Callback function called when input field is blurred
    */
   onTimeChange?: (timeVal?: string) => void;
-  /**
-   * show timer with dropdown
-   */
-  withDropdown?: boolean;
-  /**
-   * Valid only when `withDropdown` is set as `true`
-   */
-  withDropdownOptions?: TimerListProps;
 }
+
+export type TimePickerProps = TimePickerWithInput & TimePickerWithDropdown;
 
 export const TimePicker = (props: TimePickerProps) => {
   const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, withDropdown, time: timeProp } = props;
@@ -106,7 +111,7 @@ export const TimePicker = (props: TimePickerProps) => {
   return (
     <>
       {withDropdown ? (
-        <TimePickerWithFuzzySearch {...props.withDropdownOptions} />
+        <TimePickerWithFuzzySearch {...props} />
       ) : (
         <InputMask
           placeholder={placeholders[inputFormat]}
