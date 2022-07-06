@@ -8,22 +8,21 @@ export const timePickerAsDropdown = () => {
 
   const outputFormat = 'hh:mm';
 
-  const onTimeChange = (val) => {
-    return action(`updated time: ${val}`)();
+  const onChangeHandler = (props) => {
+    return action(`updated time: ${props}`)();
   };
 
   return (
     <div className="w-25">
       <TimePicker
         key={`${inputFormat}${outputFormat}`}
-        inputFormat={inputFormat}
-        outputFormat={outputFormat}
-        onTimeChange={onTimeChange}
         withDropdown={true}
         withDropdownOptions={{
           startTime: '10:15 AM',
           endTime: '11:15 PM',
-          interval: 20
+          showTimeDifference: true,
+          referenceTime: '08:00 AM',
+          onChange: onChangeHandler,
         }}
       />
     </div>
@@ -31,20 +30,21 @@ export const timePickerAsDropdown = () => {
 };
 
 const customCode = `() => {
-  const onTimeChange = (val) => {
-    console.log(val);
+
+  const onChangeHandler = (props) => {
+    console.log(props);
   };
 
   return (
     <div className="w-25">
       <TimePicker
-        inputFormat={'hh:mm AM'}
-        outputFormat={'hh:mm AM'}
-        onTimeChange={onTimeChange}
         withDropdown={true}
         withDropdownOptions={{
           startTime: '10:15 AM',
           endTime: '11:15 PM',
+          showTimeDifference: true,
+          referenceTime: '08:00 AM',
+          onChange: onChangeHandler
         }}
       />
     </div>

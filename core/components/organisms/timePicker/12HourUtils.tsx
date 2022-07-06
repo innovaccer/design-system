@@ -12,6 +12,7 @@ const get12HourIntervalList = (interval: number) => {
 
     // store date in array in [00:00 - 12:00 AM/PM format]
     timesList[i] = ('0' + (hh % 12)).slice(-2) + ':' + ('0' + mm).slice(-2) + ' ' + AMPM[Math.floor(hh / 12)];
+
     startTime = startTime + interval;
   }
 
@@ -65,6 +66,39 @@ export const isFormat12hour = (format: string) => {
   return format === 'hh:mm AM';
 };
 
+/**
+ * @param val
+ * @returns insert 0 at start in case of single digit
+ */
+const convertToTwoDigit = (val: string | number) => {
+  return ('0' + val).slice(-2);
+};
+
+/**
+ * Convert time in 24 hour format
+ * @param time in hh:mm [AM | PM] 12 hour format
+ * @returns time in hhmm 24 hour format
+ */
+const convertTo24hrFormat = (time: string) => {
+  const timeArr = time.split(':');
+  let hour = timeArr[0];
+  if (_isTimeInPM(time)) {
+    hour = convertToTwoDigit(Number(timeArr[0]) + 12);
+  }
+  const min = timeArr[1];
+  return `${hour}${min}`;
+};
+
+export const getTimeDifference = (startTime: string, endTime: string) => {
+  const startTimeIn24Format = convertTo24hrFormat(startTime);
+  const endTimeIn24Format = convertTo24hrFormat(endTime);
+  let timeDiff = String(Number(endTimeIn24Format.slice(0, 4)) - Number(startTimeIn24Format.slice(0, 4)));
+  timeDiff = ('0' + timeDiff).slice(-4);
+  const hour = timeDiff.slice(0, 2);
+  const min = timeDiff.slice(2);
+  return `${hour} hr ${min} min`;
+};
+
 // =========== SEARCH LOGIC ==============
 const _checkNumber = (str: string) => {
   const numberRegex = /^[0-9]+$/;
@@ -92,9 +126,9 @@ const _isTimeInAM = (str: string) => {
   return str.includes('a') || str.includes('A');
 };
 
-// const _isTimeInPM = (str: string) => {
-//   return str.includes('p') || str.includes('P');
-// };
+export const _isTimeInPM = (str: string) => {
+  return str.includes('p') || str.includes('P');
+};
 
 const getCurrentTimeIn12HourFormat = () => {
   return new Date().toLocaleTimeString('en-US', { hour: '2-digit', hour12: true, minute: '2-digit' });
@@ -120,7 +154,7 @@ const getSearchTimeFromNumber = (searchTerm: string) => {
     case 2: // if search term length is 2
       if (searchTerm <= '12') {
         // consider it as hour
-        hh = ('0' + searchTerm).slice(-2);
+        hh = convertToTwoDigit(searchTerm);
       } else {
         // consider first term as hour and last term as min
         hh = '0' + searchTerm[0];
@@ -130,7 +164,7 @@ const getSearchTimeFromNumber = (searchTerm: string) => {
 
     case 3:
       if (firstTwoTerm <= '12') {
-        hh = ('0' + firstTwoTerm).slice(-2);
+        hh = convertToTwoDigit(firstTwoTerm);
         mm = searchTerm.slice(2) + '0';
       } else {
         hh = '0' + searchTerm[0];
@@ -197,7 +231,7 @@ const getTimeFromNumberWithAPM = (searchTime: string) => {
  */
 const getTimeFromNumberWithSpecialChar = (searchTime: string) => {
   const time = searchTime.split(specialCharRegex);
-  const hh = ('0' + time[0]).slice(-2);
+  const hh = convertToTwoDigit(time[0]);
   const mm = time[1] !== '' ? (time[1] + '0').slice(0, 2) : '00';
   const timeInHHMM = `${hh}:${mm}`;
 
@@ -247,8 +281,8 @@ const formatSearchTerm = (searchTerm: string) => {
   return searchTime;
 };
 
-const getLabelFromOptionList = (optionList: OptionSchema[]) => {
-  const list = optionList.map((option: any) => option.label);
+const getValueFromOptionList = (optionList: OptionSchema[]) => {
+  const list = optionList.map((option: any) => option.value);
   return list;
 };
 
@@ -260,7 +294,7 @@ const getLabelFromOptionList = (optionList: OptionSchema[]) => {
  */
 export const get12HourSearchIndex = (options: OptionSchema[], searchTerm: string) => {
   const modifiedSearchTerm = formatSearchTerm(searchTerm);
-  const modifiedOptionList = getLabelFromOptionList(options);
+  const modifiedOptionList = getValueFromOptionList(options);
   const searchIndex = getNearestTimeOptionIndex(modifiedOptionList, modifiedSearchTerm);
   if (searchIndex > modifiedOptionList.length) {
     return -1;

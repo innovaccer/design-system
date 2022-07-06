@@ -12,11 +12,11 @@ type fetchOptionsFunction = (searchTerm: string) => Promise<{
 
 export interface TimerListProps {
   /**
-   * Indicates the start time for the options
+   * Indicates the start time for the options in particular time format `hh:mm [AM | PM]` or `hh:mm`
    */
   startTime?: string;
   /**
-   * Indicates the end time for the options
+   * Indicates the end time for the options in particular time format `hh:mm [AM | PM]` or `hh:mm`
    */
   endTime?: string;
   /**
@@ -39,10 +39,29 @@ export interface TimerListProps {
    * Display message when there is no result
    */
   noResultMessage?: string;
+  /**
+   * Set as true if wants to display time difference in option label w.r.t reference time
+   */
+  showTimeDifference?: boolean;
+  /**
+   * time in hh:mm based on which time difference is shown in option label
+   */
+  referenceTime: string;
 }
 
 export const TimePickerWithFuzzySearch = (props: TimerListProps) => {
-  const { startTime, endTime, timeFormat, interval, fetchOptions, optionList, noResultMessage, ...rest } = props;
+  const {
+    endTime,
+    interval,
+    startTime,
+    timeFormat,
+    optionList,
+    fetchOptions,
+    referenceTime,
+    noResultMessage,
+    showTimeDifference,
+    ...rest
+  } = props;
 
   const getDropdownOptionList = () => {
     if (optionList) {
@@ -53,7 +72,14 @@ export const TimePickerWithFuzzySearch = (props: TimerListProps) => {
     const endTime12HourFormat = '11:59 PM';
     const endTime24HourFormat = '23:59';
     const updatedEndTime = endTime ? endTime : timeFormat === 'hh:mm AM' ? endTime12HourFormat : endTime24HourFormat;
-    const timeOptionList = getTimeOptionList(updatedStartTime, updatedEndTime, interval, timeFormat);
+    const timeOptionList = getTimeOptionList(
+      updatedStartTime,
+      updatedEndTime,
+      interval,
+      timeFormat,
+      referenceTime,
+      showTimeDifference
+    );
     return timeOptionList;
   };
 
@@ -80,6 +106,7 @@ export const TimePickerWithFuzzySearch = (props: TimerListProps) => {
 
 TimePickerWithFuzzySearch.defaultProps = {
   timeFormat: 'hh:mm AM',
+  referenceTime: '00:00 AM',
   interval: 15,
 };
 
