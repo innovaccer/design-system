@@ -83,7 +83,6 @@ menus:
 
   - label: Messages
     link: /components/message/usage/
-    hideInMobile: true
 
   - label: Meta list
     link: /components/metaList/usage/
