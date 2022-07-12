@@ -21,6 +21,18 @@ export const data = [
       />)
   },
   {
+    link: 'badge/usage',
+    design: 'Available',
+    name: 'Badge',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/mobile/Badge.png"
+        alt="Badge"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
     link: 'bottomNavigation/usage',
     design: 'Available',
     name: 'Bottom navigation',
@@ -105,6 +117,18 @@ export const data = [
       />)
   },
   {
+    link: 'dropdown/usage',
+    design: 'Available',
+    name: 'Dropdowns',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/mobile/Dropdown.png"
+        alt="Dropdowns"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
     link: 'inputs/usage',
     design: 'Available',
     name: 'Inputs',
@@ -129,6 +153,30 @@ export const data = [
       />)
   },
   {
+    link: 'metaList/usage',
+    design: 'Available',
+    name: 'Meta list',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/mobile/MetaList.png"
+        alt="<Meta list>"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'message/usage',
+    design: 'Available',
+    name: 'Messages',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/mobile/Message.png"
+        alt="Messages"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
     link: 'pageHeaders/usage',
     design: 'Available',
     name: 'Page headers',
@@ -149,6 +197,42 @@ export const data = [
       <StaticImage
         src="./images/mobile/Radio.png"
         alt="Radio"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'slider/usage',
+    design: 'Available',
+    name: 'Slider',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/mobile/Slider.png"
+        alt="Slider"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'statusHint/usage',
+    design: 'Available',
+    name: 'Status hint',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/mobile/StatusHint.png"
+        alt="Status hint"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'stepper/usage',
+    design: 'Available',
+    name: 'Stepper',
+    code: 'Available',
+    image: () => (
+      <StaticImage
+        src="./images/mobile/Stepper.png"
+        alt="Stepper"
         imgStyle={imgStyle}
       />)
   },
