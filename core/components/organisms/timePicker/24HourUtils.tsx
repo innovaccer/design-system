@@ -14,5 +14,6 @@ export const get24HourTimeList = (interval: number, startTime: string, endTime: 
     timeList.push(parseStartTime.toTimeString().substring(0, 5));
     parseStartTime.setMinutes(parseStartTime.getMinutes() + interval);
   }
+  console.log('timeList---> ', timeList);
   return timeList;
 };

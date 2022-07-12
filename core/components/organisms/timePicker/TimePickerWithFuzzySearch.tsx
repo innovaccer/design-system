@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Dropdown } from '@/index';
 import { TimeFormat } from '@/common.type';
-import { getTimeOptionList } from './utility';
+// import { getTimeOptionList } from './timePickerUtility';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
+import { getTimeIn24HrFormat, getTimeListIn24HourFormat, convertTimeToOptionList } from './timePickerUtility';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
@@ -71,24 +72,55 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
     ...rest
   } = props;
 
+  // const getDropdownOptionList = () => {
+  //   if (optionList) {
+  //     return optionList;
+  //   }
+
+  //   const updatedStartTime = startTime || '00:00';
+  //   const endTime12HourFormat = '11:59 PM';
+  //   const endTime24HourFormat = '23:59';
+  //   const updatedEndTime = endTime ? endTime : timeFormat === 'hh:mm AM' ? endTime12HourFormat : endTime24HourFormat;
+  //   const timeOptionList = getTimeOptionList(
+  //     updatedStartTime,
+  //     updatedEndTime,
+  //     interval,
+  //     timeFormat,
+  //     referenceTime,
+  //     showTimeDifference
+  //   );
+  //   return timeOptionList;
+  // };
+
+  const computeEndTime = () => {
+    if (!startTime) {
+      return '23:59';
+    }
+
+    return '';
+  };
+
   const getDropdownOptionList = () => {
     if (optionList) {
       return optionList;
     }
 
-    const updatedStartTime = startTime || '00:00 AM';
-    const endTime12HourFormat = '11:59 PM';
-    const endTime24HourFormat = '23:59';
-    const updatedEndTime = endTime ? endTime : timeFormat === 'hh:mm AM' ? endTime12HourFormat : endTime24HourFormat;
-    const timeOptionList = getTimeOptionList(
-      updatedStartTime,
-      updatedEndTime,
-      interval,
-      timeFormat,
-      referenceTime,
-      showTimeDifference
+    const startTimeIn24Hr = startTime ? getTimeIn24HrFormat(startTime) : '00:00';
+    const endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime();
+
+    const timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
+    console.log(
+      'generated timeList---> ',
+      timeList,
+      'startTimeIn24Hr',
+      startTimeIn24Hr,
+      'endTimeIn24Hr',
+      endTimeIn24Hr
     );
-    return timeOptionList;
+
+    const dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, showTimeDifference);
+
+    return dropdownOptionList;
   };
 
   const dropdownOptionList = getDropdownOptionList();
