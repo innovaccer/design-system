@@ -11,24 +11,24 @@ export const data = [
   {
     link: 'avatar/usage',
     design: 'Available',
-    name: 'Avatars',
+    name: 'Avatar',
     code: 'Available',
     image: () => (
       <StaticImage
         src="./images/Avatar.png"
-        alt="Avatars"
+        alt="Avatar"
         imgStyle={imgStyle}
       />)
   },
   {
     link: 'badges/usage',
-    name: 'Badges',
+    name: 'Badge',
     design: "Available",
     code: "Available",
     image: () => (
       <StaticImage
         src="./images/Badge.png"
-        alt="Badges"
+        alt="Badge"
         imgStyle={imgStyle}
       />)
   },
@@ -40,7 +40,7 @@ export const data = [
     image: () => (
       <StaticImage
         src="./images/Breadcrumb.png"
-        alt="Breadcrumbs"
+        alt="Breadcrumb"
         imgStyle={imgStyle}
       />)
   },
@@ -52,7 +52,7 @@ export const data = [
     image: () => (
       <StaticImage
         src="./images/Buttons.png"
-        alt="Button"
+        alt="Buttons"
         imgStyle={imgStyle}
       />)
   },
@@ -100,19 +100,19 @@ export const data = [
     image: () => (
       <StaticImage
         src="./images/Chips.png"
-        alt="Chip"
+        alt="Chips"
         imgStyle={imgStyle}
       />)
   },
   {
     link: 'datePicker/usage',
-    name: 'Date & Time Picker',
+    name: 'Date picker',
     design: "Available",
     code: "Available",
     image: () => (
       <StaticImage
         src="./images/Date&TimePicker.png"
-        alt="Date and Time picker"
+        alt="Date picker"
         imgStyle={imgStyle}
       />)
   },
@@ -130,13 +130,13 @@ export const data = [
   },
   {
     link: 'dropdowns/usage',
-    name: 'Dropdown',
+    name: 'Dropdowns',
     design: "Available",
     code: "Available",
     image: () => (
       <StaticImage
         src="./images/Dropdowns.png"
-        alt="Dropdown"
+        alt="Dropdowns"
         imgStyle={imgStyle}
       />)
   },
@@ -190,7 +190,7 @@ export const data = [
   },
   {
     link: 'links/usage',
-    name: 'Links',
+    name: 'Link',
     design: "Available",
     code: "Available",
     image: () => (
@@ -202,13 +202,13 @@ export const data = [
   },
   {
     link: 'message/usage',
-    name: 'Message',
+    name: 'Messages',
     design: "Available",
     code: "Available",
     image: () => (
       <StaticImage
         src="./images/Message.png"
-        alt="Message"
+        alt="Messages"
         imgStyle={imgStyle}
       />)
   },
@@ -226,7 +226,7 @@ export const data = [
   },
   {
     link: 'modals/usage',
-    name: 'Modal',
+    name: 'Modals',
     design: "Available",
     code: "Available",
     image: () => (
@@ -287,7 +287,7 @@ export const data = [
   },
   {
     link: 'pills/usage',
-    name: 'Pills',
+    name: 'Pill',
     design: "Available",
     code: "Available",
     image: () => (
@@ -353,25 +353,25 @@ export const data = [
     image: () => (
       <StaticImage
         src="./images/Sidesheet.png"
-        alt="SideSheet"
+        alt="Sidesheet"
         imgStyle={imgStyle}
       />)
   },
   {
     link: 'slider/usage',
-    name: 'Slider',
+    name: 'Sliders',
     design: "Available",
     code: "Available",
     image: () => (
       <StaticImage
         src="./images/Slider.png"
-        alt="Slider"
+        alt="Sliders"
         imgStyle={imgStyle}
       />)
   },
   {
     link: 'statusHint/usage',
-    name: 'Status hints',
+    name: 'Status hint',
     design: "Available",
     code: "Available",
     image: () => (
@@ -383,13 +383,13 @@ export const data = [
   },
   {
     link: 'steppers/usage',
-    name: 'Steppers',
+    name: 'Stepper',
     design: "Available",
     code: "Available",
     image: () => (
       <StaticImage
         src="./images/Steppers.png"
-        alt="Steppers"
+        alt="Stepper"
         imgStyle={imgStyle}
       />)
   },
@@ -407,13 +407,13 @@ export const data = [
   },
   {
     link: 'table/usage',
-    name: 'Table',
+    name: 'Tables',
     design: "Available",
     code: "Available",
     image: () => (
       <StaticImage
         src="./images/Table.png"
-        alt="Table"
+        alt="Tables"
         imgStyle={imgStyle}
       />)
   },
