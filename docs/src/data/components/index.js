@@ -57,6 +57,18 @@ export const data = [
       />)
   },
   {
+    link: 'calendar/usage',
+    name: 'Calendar',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Calendar.png"
+        alt="Card"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
     link: 'card/usage',
     name: 'Card',
     design: "Available",
@@ -153,18 +165,6 @@ export const data = [
       />)
   },
   {
-    link: 'inputs/usage',
-    name: 'Inputs',
-    design: "Available",
-    code: "Available",
-    image: () => (
-      <StaticImage
-        src="./images/Inputs.png"
-        alt="Inputs"
-        imgStyle={imgStyle}
-      />)
-  },
-  {
     link: 'inlineEditableFields',
     name: 'Inline editable fields',
     design: "Available",
@@ -173,6 +173,18 @@ export const data = [
       <StaticImage
         src="./images/InlineEditableField.png"
         alt="Inline editable fields"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'inputs/usage',
+    name: 'Inputs',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/Inputs.png"
+        alt="Inputs"
         imgStyle={imgStyle}
       />)
   },
@@ -197,6 +209,18 @@ export const data = [
       <StaticImage
         src="./images/Message.png"
         alt="Message"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'metaList/usage',
+    name: 'Meta list',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/MetaList.png"
+        alt="Meta list"
         imgStyle={imgStyle}
       />)
   },
@@ -234,6 +258,18 @@ export const data = [
       <StaticImage
         src="./images/NavigationVertical.png"
         alt="Navigation - Vertical"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'pageHeaders/usage',
+    name: 'Page Headers',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/PageHeader.png"
+        alt="Page Headers"
         imgStyle={imgStyle}
       />)
   },
@@ -390,6 +426,18 @@ export const data = [
       <StaticImage
         src="./images/Tabs.png"
         alt="Tabs"
+        imgStyle={imgStyle}
+      />)
+  },
+  {
+    link: 'timePicker/usage',
+    name: 'Time picker',
+    design: "Available",
+    code: "Available",
+    image: () => (
+      <StaticImage
+        src="./images/TimePicker.png"
+        alt="Time Picker"
         imgStyle={imgStyle}
       />)
   },
