@@ -127,36 +127,24 @@ export const get24HourTimeList = (startTime: string, endTime: string, interval: 
  * @param interval
  * @returns time list in 24 hour format including times option for next day
  */
-const getReverseTimeList = (startTime: string, interval: number) => {
-  const timeList = get24HourTimeList('00:00', '23:59', interval);
-  const startTimeIndex = timeList.indexOf(startTime);
-  const presentDayList = timeList.slice(startTimeIndex);
-  const nextDayList = timeList.slice(0, startTimeIndex);
-  const result = presentDayList.concat(nextDayList);
-
-  return result;
-};
-
-const getNextDayTimeList = (startTime: string, endTime: string, interval: number) => {
+const getReverseTimeList = (startTime: string, endTime: string, interval: number) => {
   const timeList = get24HourTimeList('00:00', '23:59', interval);
   const startTimeIndex = timeList.indexOf(startTime);
   const endTimeIndex = timeList.indexOf(endTime);
+  const nextDayTimeIndex = endTime === '' ? startTimeIndex : endTimeIndex + 1;
+
   const presentDayList = timeList.slice(startTimeIndex);
-  const nextDayList = timeList.slice(0, endTimeIndex + 1);
+  const nextDayList = timeList.slice(0, nextDayTimeIndex);
   const result = presentDayList.concat(nextDayList);
 
   return result;
 };
 
 export const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval: number) => {
-  if (endTime === '') {
-    return getReverseTimeList(startTime, interval);
+  if (endTime === '' || checkTimeDifference(startTime, endTime)) {
+    return getReverseTimeList(startTime, endTime, interval);
   }
 
-  // if start time is greater than end time
-  if (checkTimeDifference(startTime, endTime)) {
-    return getNextDayTimeList(startTime, endTime, interval);
-  }
   return get24HourTimeList(startTime, endTime, interval);
 };
 
