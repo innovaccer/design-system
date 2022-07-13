@@ -82,6 +82,17 @@ export const getTimeIn24HrFormat = (timeStr: string) => {
 /**
  * @param startTime in HH:MM format
  * @param endTime in HH:MM format
+ * @returns returns true if start time is greater than end time
+ */
+export const checkTimeDifference = (startTime: string, endTime: string) => {
+  const parseStartTime = parseDate(startTime);
+  const parseEndTime = parseDate(endTime);
+  return parseStartTime > parseEndTime;
+};
+
+/**
+ * @param startTime in HH:MM format
+ * @param endTime in HH:MM format
  * @param interval
  * @returns array of 24 hour time list based on interval
  */
@@ -94,6 +105,20 @@ export const get24HourTimeList = (startTime: string, endTime: string, interval: 
     timeList.push(parseStartTime.toTimeString().substring(0, 5));
     parseStartTime.setMinutes(parseStartTime.getMinutes() + interval);
   }
+
+  /*
+    startTime="10:15 PM"
+    endTime="11:45 AM"
+    result = [10:15pm, 10:30pm, 10:45pm, 11:00pm, 11:15pm, 11:]
+  */
+
+  console.log('parseStartTime', parseStartTime, 'parseEndTime', parseEndTime, 'cond', parseStartTime > parseEndTime);
+
+  // while (parseStartTime > parseEndTime) {
+  //   timeList.push(parseStartTime.toTimeString().substring(0, 5));
+  //   parseStartTime.setMinutes(parseStartTime.getMinutes() + interval);
+  // }
+
   return timeList;
 };
 
@@ -112,9 +137,25 @@ const getReverseTimeList = (startTime: string, interval: number) => {
   return result;
 };
 
+const getNextDayTimeList = (startTime: string, endTime: string, interval: number) => {
+  const timeList = get24HourTimeList('00:00', '23:59', interval);
+  const startTimeIndex = timeList.indexOf(startTime);
+  const endTimeIndex = timeList.indexOf(endTime);
+  const presentDayList = timeList.slice(startTimeIndex);
+  const nextDayList = timeList.slice(0, endTimeIndex + 1);
+  const result = presentDayList.concat(nextDayList);
+
+  return result;
+};
+
 export const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval: number) => {
   if (endTime === '') {
     return getReverseTimeList(startTime, interval);
+  }
+
+  // if start time is greater than end time
+  if (checkTimeDifference(startTime, endTime)) {
+    return getNextDayTimeList(startTime, endTime, interval);
   }
   return get24HourTimeList(startTime, endTime, interval);
 };
