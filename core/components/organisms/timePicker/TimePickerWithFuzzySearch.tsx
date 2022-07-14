@@ -3,7 +3,8 @@ import { Dropdown } from '@/index';
 import { TimeFormat } from '@/common.type';
 // import { getTimeOptionList } from './timePickerUtility';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
-import { getTimeIn24HrFormat, getTimeListIn24HourFormat, convertTimeToOptionList } from './timePickerUtility';
+// import { getTimeIn24HrFormat, getTimeListIn24HourFormat, convertTimeToOptionList } from './timePickerUtility';
+import { getDropdownOptionList } from './timePickerUtility';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
@@ -49,9 +50,9 @@ export interface TimePickerWithDropdown {
    */
   showTimeDifference?: boolean;
   /**
-   * time in `hh:mm [AM | PM]` based on which time difference is shown in option label
+   * refers to time based on which time difference is shown in option label
    */
-  referenceTime: string;
+  // referenceTime?: string;
   /**
    * Callback function to be called when options are selected from dropdown.
    */
@@ -66,64 +67,13 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
     timeFormat,
     optionList,
     fetchOptions,
-    referenceTime,
+    // referenceTime,
     noResultMessage,
     showTimeDifference,
     ...rest
   } = props;
 
-  // const getDropdownOptionList = () => {
-  //   if (optionList) {
-  //     return optionList;
-  //   }
-
-  //   const updatedStartTime = startTime || '00:00';
-  //   const endTime12HourFormat = '11:59 PM';
-  //   const endTime24HourFormat = '23:59';
-  //   const updatedEndTime = endTime ? endTime : timeFormat === 'hh:mm AM' ? endTime12HourFormat : endTime24HourFormat;
-  //   const timeOptionList = getTimeOptionList(
-  //     updatedStartTime,
-  //     updatedEndTime,
-  //     interval,
-  //     timeFormat,
-  //     referenceTime,
-  //     showTimeDifference
-  //   );
-  //   return timeOptionList;
-  // };
-
-  const computeEndTime = () => {
-    if (!startTime) {
-      return '23:59';
-    }
-
-    return '';
-  };
-
-  const getDropdownOptionList = () => {
-    if (optionList) {
-      return optionList;
-    }
-
-    const startTimeIn24Hr = startTime ? getTimeIn24HrFormat(startTime) : '00:00';
-    const endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime();
-
-    const timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
-    console.log(
-      'generated timeList---> ',
-      timeList,
-      'startTimeIn24Hr',
-      startTimeIn24Hr,
-      'endTimeIn24Hr',
-      endTimeIn24Hr
-    );
-
-    const dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, showTimeDifference);
-
-    return dropdownOptionList;
-  };
-
-  const dropdownOptionList = getDropdownOptionList();
+  const dropdownOptionList = getDropdownOptionList(props);
 
   // const [dropdownOptionList, setDropdownOptionList] = React.useState<OptionSchema[]>(
   //   getTimeOptionList(startTime, endTime, interval)
@@ -146,7 +96,7 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
 
 TimePickerWithFuzzySearch.defaultProps = {
   timeFormat: 'hh:mm AM',
-  referenceTime: '00:00 AM',
+  // referenceTime: '00:00 AM',
   interval: 15,
 };
 

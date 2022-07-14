@@ -21,7 +21,6 @@ export const timePickerAsDropdown = () => {
         startTime="10:15 AM"
         endTime="11:15 PM"
         showTimeDifference={true}
-        referenceTime="08:00 AM"
         onChange={onChangeHandler}
       />
     </div>
@@ -41,7 +40,6 @@ const customCode = `() => {
         startTime="10:15 AM"
         endTime="11:15 PM"
         showTimeDifference={true}
-        referenceTime="08:00 AM"
         onChange={onChangeHandler}
       />
     </div>

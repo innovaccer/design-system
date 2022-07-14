@@ -1,4 +1,5 @@
 import { TimeFormat } from '@/common.type';
+import { TimePickerWithDropdown } from './TimePickerWithFuzzySearch';
 
 const parseDate = (date_time: any) => {
   const d = new Date();
@@ -148,24 +149,75 @@ export const getTimeListIn24HourFormat = (startTime: string, endTime: string, in
   return get24HourTimeList(startTime, endTime, interval);
 };
 
-const getCustomLabel = (time: string, timeFormat: TimeFormat, showTimeDifference?: boolean) => {
+const getTimeDifference = (startTime: string, endTime: string) => {
+  // const initDate = '14/07/2022 ';
+
+  // const timeStart = new Date('07/07/2022 ' + '08:15 AM');
+  // const timeEnd = new Date('07/07/2022 ' + '11:00 PM');
+
+  const timeStart = new Date('07/07/2022 ' + startTime);
+  const timeEnd = new Date('07/07/2022 ' + endTime);
+
+  const diff = timeEnd.getTime() - timeStart.getTime();
+  const diff_as_date = new Date(diff);
+
+  const hours = diff_as_date.getUTCHours();
+  const min = diff_as_date.getUTCMinutes();
+  console.log('time diff-> ', hours, 'min', min);
+
+  const timeDiffLabel = ` (${hours} hr ${min} min)`;
+  return timeDiffLabel;
+};
+
+const getCustomLabel = (time: string, timeFormat: TimeFormat, showTimeDifference?: boolean, referenceTime?: string) => {
   let label = time;
   if (isFormat12Hour(timeFormat)) {
     label = convert24To12HourFormat(time);
   }
-  if (showTimeDifference) {
-    label += ' (todo)';
+  if (showTimeDifference && referenceTime) {
+    const timeDifference = getTimeDifference(referenceTime, time);
+    label += timeDifference;
   }
 
   return label;
 };
 
-export const convertTimeToOptionList = (timeList: string[], timeFormat: TimeFormat, showTimeDifference?: boolean) => {
+export const convertTimeToOptionList = (
+  timeList: string[],
+  timeFormat: TimeFormat,
+  showTimeDifference?: boolean,
+  referenceTime?: string
+) => {
   const optionList = timeList.map((time) => {
     return {
-      label: getCustomLabel(time, timeFormat, showTimeDifference),
+      label: getCustomLabel(time, timeFormat, showTimeDifference, referenceTime),
       value: time,
     };
   });
   return optionList;
+};
+
+const computeEndTime = (startTime: string | undefined) => {
+  return startTime ? '' : '23:59';
+  // if (!startTime) {
+  //   return '23:59';
+  // }
+
+  // return '';
+};
+
+export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
+  const { optionList, startTime, endTime, interval, timeFormat, showTimeDifference } = props;
+  if (optionList) {
+    return optionList;
+  }
+
+  const startTimeIn24Hr = startTime ? getTimeIn24HrFormat(startTime) : '00:00';
+  const endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime(startTime);
+
+  const timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
+
+  const dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, showTimeDifference, startTime);
+
+  return dropdownOptionList;
 };
