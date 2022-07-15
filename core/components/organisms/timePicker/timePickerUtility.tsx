@@ -8,7 +8,7 @@ const parseDate = (date_time: any) => {
   return d;
 };
 
-const isFormat12Hour = (format: string) => {
+export const isFormat12Hour = (format: string) => {
   return format === 'hh:mm AM';
 };
 
@@ -48,7 +48,7 @@ const convert12To24HourFormat = (timeStr: string) => {
  * @param val
  * @returns insert 0 at start in case of single digit
  */
-const convertToTwoDigit = (val: string) => {
+export const convertToTwoDigit = (val: string | number) => {
   return ('0' + val).slice(-2);
 };
 
