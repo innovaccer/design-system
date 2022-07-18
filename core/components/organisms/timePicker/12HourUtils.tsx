@@ -248,18 +248,18 @@ const formatSearchTerm = (searchTerm: string) => {
 
   // If search term only contains numbers
   if (_checkNumber(searchTerm)) {
-    const timeInHHMM = getSearchTimeFromNumber(searchTerm);
+    const timeInHHMM = getSearchTimeFromNumber(searchTerm); //done
     searchTime = getTimeZoneFromCurrentTime(timeInHHMM);
   }
 
   // if search term contains numbers along with [apm]
   else if (_checkNumberWithAMPM(searchTerm)) {
-    searchTime = getTimeFromNumberWithAPM(searchTerm);
+    searchTime = getTimeFromNumberWithAPM(searchTerm); //done
   }
 
   // if search term contains numbers along with special character
   else if (_checkNumberWithSpecialChar(searchTerm)) {
-    const timeInHHMM = getTimeFromNumberWithSpecialChar(searchTerm);
+    const timeInHHMM = getTimeFromNumberWithSpecialChar(searchTerm); //done
     searchTime = getTimeZoneFromCurrentTime(timeInHHMM);
   }
 

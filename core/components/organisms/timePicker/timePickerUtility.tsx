@@ -16,7 +16,7 @@ const isTimeIn12HourFormat = (time: string) => {
   return _isTimeInAM(time) || _isTimeInPM(time);
 };
 
-const _isTimeInAM = (time: string) => {
+export const _isTimeInAM = (time: string) => {
   return time.includes('a') || time.includes('A');
 };
 
@@ -39,7 +39,7 @@ const convert12To24HourFormat = (timeStr: string) => {
     hours = '00';
   }
   if (_isTimeInPM(modifier)) {
-    hours = String(parseInt(hours, 10) + 12);
+    hours = (parseInt(hours, 10) + 12).toString();
   }
   return `${hours}:${minutes}`;
 };
@@ -63,12 +63,12 @@ export const convert24To12HourFormat = (timeStr: string) => {
   const modifier = hours >= 12 ? 'PM' : 'AM';
 
   const convertedHours = hours % 12 || 12;
-  let hoursInString = String(convertedHours);
+  let hoursInString = convertedHours.toString();
   hoursInString = convertToTwoDigit(hoursInString);
 
   const minutes = timeArr[1];
 
-  const result = `${String(hoursInString)}:${minutes} ${modifier}`;
+  const result = `${hoursInString.toString()}:${minutes} ${modifier}`;
   return result;
 };
 
@@ -216,6 +216,7 @@ export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
   const endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime(startTime);
 
   const timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
+  console.log('24 time list-> ', timeList);
 
   const dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, showTimeDifference, startTime);
 

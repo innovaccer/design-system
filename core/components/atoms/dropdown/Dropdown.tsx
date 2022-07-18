@@ -11,7 +11,7 @@ import {
   _isOpenControlled,
   _isSelectAllPresent,
 } from './utility';
-import { getSearchedTimeList } from '@/components/organisms/timePicker/utility';
+import { getSearchedTimeList } from '@/components/organisms/timePicker/searchUtils';
 import { BaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
 
