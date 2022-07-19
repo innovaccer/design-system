@@ -6,34 +6,6 @@ import {
   get24HourCurrentTime,
 } from './timePickerUtility';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
-// import { TimeFormat } from '@/common.type';
-
-// const computeThreeDigitToTime = (searchTerm: string, timeFormat: TimeFormat) => {
-//   const searchTimeInNum = parseInt(searchTerm, 10);
-//   const firstTwoTerm = searchTerm.slice(0, searchTerm.length - 1);
-
-//   if (isFormat12Hour(timeFormat)) {
-//     if (searchTimeInNum <= 12) {
-//       hh = convertToTwoDigit(firstTwoTerm);
-//       mm = searchTerm.slice(2) + '0';
-//     } else {
-//       hh = '0' + searchTerm[0];
-//       mm = searchTerm.slice(1);
-//     }
-//   } else {
-//     if (searchTimeInNum <= 24) {
-//       hh = convertToTwoDigit(firstTwoTerm);
-//       mm = searchTerm.slice(2) + '0';
-//     } else {
-//     }
-//   }
-// };
-
-// const computeThreeDigitToTime = (searchTerm: string, timeFormat: TimeFormat) => {
-//   const searchTimeInNum = parseInt(searchTerm, 10);
-//   const is12HourFormat = isFormat12Hour(timeFormat);
-//   return (is12HourFormat && searchTimeInNum <= 12) || (!is12HourFormat && searchTimeInNum <= 24);
-// };
 
 interface timeObj {
   hour: string;
@@ -122,18 +94,6 @@ const getSearchTimeFromNumber = (searchTerm: string, show12HourFormat?: boolean)
       break;
 
     case 3:
-      // if (computeThreeDigitToTime(firstTwoTerm, timeFormat)) {
-      //   hh = convertToTwoDigit(firstTwoTerm);
-      //   mm = searchTerm.slice(2) + '0';
-      // }
-      // if (firstTwoTerm <= '12') {
-      //   hh = convertToTwoDigit(firstTwoTerm);
-      //   mm = searchTerm.slice(2) + '0';
-      // }
-      // else {
-      //   hh = '0' + searchTerm[0];
-      //   mm = searchTerm.slice(1);
-      // }
       hh = '0' + searchTerm[0];
       mm = convertMinTo60(searchTerm.slice(1));
       break;
@@ -222,25 +182,6 @@ const convert12To24HourFormat = (hours: string, searchTerm: string) => {
   return hours;
 };
 
-// const getCurrentRelativeTime = (startTime: string, endTime: string) => {
-//   const timeStart = new Date('07/07/2022 ' + startTime);
-//   const timeEnd = new Date('07/07/2022 ' + endTime);
-
-//   const diff = timeEnd.getTime() - timeStart.getTime();
-//   const diff_as_date = new Date(diff);
-
-//   const hours = diff_as_date.getUTCHours();
-//   const min = diff_as_date.getUTCMinutes();
-//   console.log('time diff-> ', hours, 'min', min);
-
-//   const timeDiffLabel = ` (${hours} hr ${min} min)`;
-//   return timeDiffLabel;
-// };
-
-// const convert24TimeStrToNum = (time: string) => {
-//   return parseInt(time.replace(':', ''), 10);
-// };
-
 /**
  * Switch to AM/PM time based on current time
  * @param optionList
@@ -250,13 +191,10 @@ const getCurrentRelativeTime = (optionList: string[], searchTime: timeObj) => {
   const searchTimeStr = `${searchTime.hour}:${searchTime.min}`;
   const currentTime = get24HourCurrentTime();
   const greaterTime = checkTimeDifference(currentTime, searchTimeStr);
-  console.log('optionList', optionList);
-  if (greaterTime) {
-    // @todo handle time in circular list
-    // const currentTimeIndex = getNearestTimeOptionIndex(optionList, currentTime);
-    // const searchTimeIndex = getNearestTimeOptionIndex(optionList, searchTime);
-    // if(currentTimeIndex){
-    // }
+  const currentTimeIndex = findClosestTimeIndex(optionList, currentTime);
+  const searchTimeIndex = findClosestTimeIndex(optionList, searchTimeStr);
+
+  if (greaterTime && currentTimeIndex > searchTimeIndex) {
     const hourIn24Format = parseInt(searchTime.hour, 10) + 12;
     searchTime.hour = hourIn24Format.toString();
   }
@@ -264,43 +202,40 @@ const getCurrentRelativeTime = (optionList: string[], searchTime: timeObj) => {
   return searchTime;
 };
 
-// const getNearestTimeOptionIndex = (list: string[], option: string) => {
-//   const optionIndex = list.indexOf(option);
+const convert24TimeStrToNum = (time: string) => {
+  return parseInt(time.replace(':', ''), 10);
+};
 
-//   // if value is present inside array return index
-//   if (optionIndex !== -1) {
-//     return optionIndex;
-//   }
-//   // else return nearest time value index
-//   else {
-//     let index = 0;
-//     let listItem = convert24TimeStrToNum(list[index]);
-//     const optionItem = convert24TimeStrToNum(option);
-//     while (list && index <= list.length && optionItem > listItem) {
-//       index++;
-//       listItem = convert24TimeStrToNum(list[index]);
-//     }
+const findClosestTimeIndex = (list: string[], searchItem: string) => {
+  const searchItemInNum = convert24TimeStrToNum(searchItem);
+  let closestItemIndex = 0;
+  let optionItemInNum = convert24TimeStrToNum(list[0]);
 
-//     return index;
-//   }
-// };
+  let minDiff = Math.abs(searchItemInNum - optionItemInNum);
 
-const findIndexInOptionList = (optionList: string[], searchTerm: string) => {
-  console.log('aaaoption list in findindex-> ', optionList, searchTerm);
+  for (let index = 0; index < list.length; index++) {
+    optionItemInNum = convert24TimeStrToNum(list[index]);
+    const diff = Math.abs(searchItemInNum - optionItemInNum);
+
+    if (diff <= minDiff) {
+      minDiff = diff;
+      closestItemIndex = index;
+    }
+  }
+  return closestItemIndex;
 };
 
 /**
  * Get index of search term from option list
  * @param optionList
  * @param searchTerm
- * @returns Index of the search term
+ * @returns Index of the search term in option list
  */
 export const getSearchIndex = (optionList: string[], searchTerm: string) => {
   const { hour, min } = formatSearchTerm(optionList, searchTerm);
   const searchItem = `${hour}:${min}`;
-  console.log('aaasearchItemSearchItem', searchItem);
 
-  const searchIndex = findIndexInOptionList(optionList, searchItem);
+  const searchIndex = findClosestTimeIndex(optionList, searchItem);
 
   return searchIndex;
 };
@@ -314,22 +249,37 @@ export const getSearchedTimeList = (options: OptionSchema[], searchTerm: string)
   const optionList = getValueFromOptionList(options);
   const searchIndex = getSearchIndex(optionList, searchTerm);
 
-  console.log('searchIndex-> ', searchIndex);
-  // const result: [] = [];
-  // if (searchIndex === -1) return result; // if no option matches search term
+  const result: [] = [];
+  if (searchIndex === -1) return result; // if no option matches search term
 
-  // const dropdownWrapper = document.getElementsByClassName('Dropdown-wrapper')[0] as HTMLDivElement;
-  // const optionList = document.querySelectorAll('.Dropdown-items');
-  // const targetOption = optionList[searchIndex] as HTMLDivElement;
-  // const activeOptionClassName = 'Option--active';
+  const dropdownWrapper = document.getElementsByClassName('Dropdown-wrapper')[0] as HTMLDivElement;
+  const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
+  const targetOption = dropdownOptionList[searchIndex + 1] as HTMLDivElement;
+  const activeOptionClassName = 'Option--active';
 
-  // // remove class from previous selected option
-  // optionList.forEach((i) => i.classList.remove(activeOptionClassName));
+  // remove class from previous selected option
+  dropdownOptionList.forEach((i) => i.classList.remove(activeOptionClassName));
 
-  // // add active class to current target option
-  // targetOption.classList.add(activeOptionClassName);
-  // if (targetOption) {
-  //   scrollIntoView(dropdownWrapper, targetOption);
-  // }
+  // add active class to current target option
+  targetOption.classList.add(activeOptionClassName);
+  if (targetOption) {
+    scrollIntoView(dropdownWrapper, targetOption);
+  }
   return options;
+};
+
+export const scrollIntoView = (menuElement: HTMLDivElement | null, focusedElement: HTMLElement) => {
+  const menuRect = menuElement?.getBoundingClientRect();
+  const focusedRect = focusedElement.getBoundingClientRect();
+  const overscroll = focusedElement.offsetHeight;
+
+  if (menuRect && focusedRect.bottom > menuRect.bottom && menuElement) {
+    scrollTo(menuElement, focusedElement.offsetTop - menuRect!.height + overscroll);
+  } else if (menuRect && focusedRect.top < menuRect!.top && menuElement) {
+    scrollTo(menuElement, focusedElement.offsetTop - overscroll);
+  }
+};
+
+export const scrollTo = (element: Element, top: number) => {
+  element.scrollTo(0, top);
 };

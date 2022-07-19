@@ -112,19 +112,6 @@ const get24HourTimeList = (startTime: string, endTime: string, interval: number)
     parseStartTime.setMinutes(parseStartTime.getMinutes() + interval);
   }
 
-  /*
-    startTime="10:15 PM"
-    endTime="11:45 AM"
-    result = [10:15pm, 10:30pm, 10:45pm, 11:00pm, 11:15pm, 11:]
-  */
-
-  console.log('parseStartTime', parseStartTime, 'parseEndTime', parseEndTime, 'cond', parseStartTime > parseEndTime);
-
-  // while (parseStartTime > parseEndTime) {
-  //   timeList.push(parseStartTime.toTimeString().substring(0, 5));
-  //   parseStartTime.setMinutes(parseStartTime.getMinutes() + interval);
-  // }
-
   return timeList;
 };
 
@@ -155,11 +142,6 @@ const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval:
 };
 
 const getTimeDifference = (startTime: string, endTime: string) => {
-  // const initDate = '14/07/2022 ';
-
-  // const timeStart = new Date('07/07/2022 ' + '08:15 AM');
-  // const timeEnd = new Date('07/07/2022 ' + '11:00 PM');
-
   const timeStart = new Date('07/07/2022 ' + startTime);
   const timeEnd = new Date('07/07/2022 ' + endTime);
 
@@ -168,7 +150,6 @@ const getTimeDifference = (startTime: string, endTime: string) => {
 
   const hours = diff_as_date.getUTCHours();
   const min = diff_as_date.getUTCMinutes();
-  console.log('time diff-> ', hours, 'min', min);
 
   const timeDiffLabel = ` (${hours} hr ${min} min)`;
   return timeDiffLabel;
@@ -204,11 +185,6 @@ const convertTimeToOptionList = (
 
 const computeEndTime = (startTime: string | undefined) => {
   return startTime ? '' : '23:59';
-  // if (!startTime) {
-  //   return '23:59';
-  // }
-
-  // return '';
 };
 
 export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
@@ -221,7 +197,6 @@ export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
   const endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime(startTime);
 
   const timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
-  console.log('24 time list-> ', timeList);
 
   const dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, showTimeDifference, startTime);
 
