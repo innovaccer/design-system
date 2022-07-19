@@ -9,17 +9,6 @@ export type AMPMType = 'AM' | 'PM';
 export type TimeFormat = 'hh:mm AM' | 'hh:mm';
 export type TimeType = number | string;
 
-// export interface TimePickerWithDropdown {
-//   /**
-//    * show timer with dropdown
-//    */
-//   withDropdown?: boolean;
-//   /**
-//    * Valid only when `withDropdown` is set as `true`
-//    */
-//   withDropdownOptions?: TimerListProps;
-// }
-
 export interface TimePickerWithInput {
   /**
    * Selected time

@@ -4,7 +4,7 @@ import { action } from '@/utils/action';
 import { TimePickerAsDropdown, TimePickerAsInput } from './_common_/types';
 
 // CSF format story
-export const timePickerAsDropdown = () => {
+export const TimePicker12HourFormat = () => {
   const inputFormat = 'hh:mm AM';
 
   const outputFormat = 'hh:mm';
@@ -47,7 +47,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/TimePicker/Time Picker As Dropdown',
+  title: 'Components/TimePicker/Time Picker 12 Hour Format',
   component: TimePicker,
   parameters: {
     docs: {

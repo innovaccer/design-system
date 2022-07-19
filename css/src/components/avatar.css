@@ -27,8 +27,7 @@
 }
 
 .Avatar--primary {
-  /* background: var(--primary); */
-  background: rgba(var(--primary), 0.5);
+  background: var(--primary);
 }
 
 .Avatar--secondary {

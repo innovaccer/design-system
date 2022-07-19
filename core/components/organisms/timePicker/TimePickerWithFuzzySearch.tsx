@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { Dropdown } from '@/index';
 import { TimeFormat } from '@/common.type';
-// import { getTimeOptionList } from './timePickerUtility';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
-// import { getTimeIn24HrFormat, getTimeListIn24HourFormat, convertTimeToOptionList } from './timePickerUtility';
 import { getDropdownOptionList } from './timePickerUtility';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
@@ -50,10 +48,6 @@ export interface TimePickerWithDropdown {
    */
   showTimeDifference?: boolean;
   /**
-   * refers to time based on which time difference is shown in option label
-   */
-  // referenceTime?: string;
-  /**
    * Callback function to be called when options are selected from dropdown.
    */
   onChange: (selected: any[] | any, name?: string | number) => void;
@@ -67,7 +61,6 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
     timeFormat,
     optionList,
     fetchOptions,
-    // referenceTime,
     noResultMessage,
     showTimeDifference,
     ...rest
@@ -96,7 +89,6 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
 
 TimePickerWithFuzzySearch.defaultProps = {
   timeFormat: 'hh:mm AM',
-  // referenceTime: '00:00 AM',
   interval: 15,
 };
 
