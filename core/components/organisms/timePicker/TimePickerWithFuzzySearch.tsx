@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Dropdown } from '@/index';
 import { TimeFormat } from '@/common.type';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
-import { getDropdownOptionList } from './timePickerUtility';
+import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './timePickerUtility';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
@@ -56,6 +56,7 @@ export interface TimePickerWithDropdown {
 export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
   const {
     endTime,
+    onChange,
     interval,
     startTime,
     timeFormat,
@@ -67,6 +68,15 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
   } = props;
 
   const dropdownOptionList = getDropdownOptionList(props);
+
+  const onChangeHandler = (props: string) => {
+    let time = props;
+    if (isFormat12Hour(timeFormat)) {
+      time = convert24To12HourFormat(time);
+    }
+
+    onChange && onChange(time);
+  };
 
   // const [dropdownOptionList, setDropdownOptionList] = React.useState<OptionSchema[]>(
   //   getTimeOptionList(startTime, endTime, interval)
@@ -82,6 +92,7 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
       options={dropdownOptionList}
       noResultMessage={noResultMessage}
       staticLimit={dropdownOptionList.length}
+      onChange={onChangeHandler}
       {...rest}
     />
   );
