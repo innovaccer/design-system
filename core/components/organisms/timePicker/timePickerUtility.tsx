@@ -8,7 +8,7 @@ const parseDate = (date_time: any) => {
   return d;
 };
 
-export const isFormat12Hour = (format: string) => {
+const isFormat12Hour = (format: string) => {
   return format === 'hh:mm AM';
 };
 
@@ -22,6 +22,11 @@ export const _isTimeInAM = (time: string) => {
 
 export const _isTimeInPM = (time: string) => {
   return time.includes('p') || time.includes('P');
+};
+
+export const get24HourCurrentTime = () => {
+  const today = new Date();
+  return today.getHours() + ':' + today.getMinutes();
 };
 
 /**
@@ -57,7 +62,7 @@ export const convertToTwoDigit = (val: string | number) => {
  * @param timeStr in HH:MM format
  * @returns time in hh:mm [AM/PM] format
  */
-export const convert24To12HourFormat = (timeStr: string) => {
+const convert24To12HourFormat = (timeStr: string) => {
   const timeArr = timeStr.split(':');
   const hours = parseInt(timeArr[0], 10);
   const modifier = hours >= 12 ? 'PM' : 'AM';
@@ -72,7 +77,7 @@ export const convert24To12HourFormat = (timeStr: string) => {
   return result;
 };
 
-export const getTimeIn24HrFormat = (timeStr: string) => {
+const getTimeIn24HrFormat = (timeStr: string) => {
   if (isTimeIn12HourFormat(timeStr)) {
     return convert12To24HourFormat(timeStr);
   }
@@ -97,7 +102,7 @@ export const checkTimeDifference = (startTime: string, endTime: string) => {
  * @param interval
  * @returns array of 24 hour time list based on interval
  */
-export const get24HourTimeList = (startTime: string, endTime: string, interval: number) => {
+const get24HourTimeList = (startTime: string, endTime: string, interval: number) => {
   const timeList = [];
   const parseStartTime = parseDate(startTime);
   const parseEndTime = parseDate(endTime);
@@ -141,7 +146,7 @@ const getReverseTimeList = (startTime: string, endTime: string, interval: number
   return result;
 };
 
-export const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval: number) => {
+const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval: number) => {
   if (endTime === '' || checkTimeDifference(startTime, endTime)) {
     return getReverseTimeList(startTime, endTime, interval);
   }
@@ -182,7 +187,7 @@ const getCustomLabel = (time: string, timeFormat: TimeFormat, showTimeDifference
   return label;
 };
 
-export const convertTimeToOptionList = (
+const convertTimeToOptionList = (
   timeList: string[],
   timeFormat: TimeFormat,
   showTimeDifference?: boolean,

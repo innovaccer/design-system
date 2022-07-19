@@ -1,4 +1,10 @@
-import { convertToTwoDigit, _isTimeInAM, _isTimeInPM } from './timePickerUtility';
+import {
+  convertToTwoDigit,
+  _isTimeInAM,
+  _isTimeInPM,
+  checkTimeDifference,
+  get24HourCurrentTime,
+} from './timePickerUtility';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 // import { TimeFormat } from '@/common.type';
 
@@ -28,6 +34,11 @@ import { OptionSchema } from '@/components/atoms/dropdown/option';
 //   const is12HourFormat = isFormat12Hour(timeFormat);
 //   return (is12HourFormat && searchTimeInNum <= 12) || (!is12HourFormat && searchTimeInNum <= 24);
 // };
+
+interface timeObj {
+  hour: string;
+  min: string;
+}
 
 const convertMinTo60 = (time: string) => {
   const timeInNum = parseInt(time, 10) % 60;
@@ -156,12 +167,15 @@ const getTimeFromNumberWithAPM = (searchTime: string) => {
  * @param searchTerm entered by user in any format
  * @returns modified search term in 24 hour format
  */
-export const formatSearchTerm = (searchTerm: string) => {
+export const formatSearchTerm = (optionList: string[], searchTerm: string) => {
   let searchTime = { hour: '00', min: '00' };
 
   // If search term only contains numbers
   if (_checkNumber(searchTerm)) {
-    searchTime = getSearchTimeFromNumber(searchTerm);
+    const searchTimeInHHMM = getSearchTimeFromNumber(searchTerm);
+
+    // switch to AM/PM based on current time
+    searchTime = getCurrentRelativeTime(optionList, searchTimeInHHMM);
   }
 
   // if search term contains numbers along with [apm]
@@ -172,7 +186,10 @@ export const formatSearchTerm = (searchTerm: string) => {
 
   // if search term contains numbers along with special character
   else if (_checkNumberWithSpecialChar(searchTerm)) {
-    searchTime = getTimeFromNumberWithSpecialChar(searchTerm);
+    const searchTimeInHHMM = getTimeFromNumberWithSpecialChar(searchTerm);
+
+    // switch to AM/PM based on current time
+    searchTime = getCurrentRelativeTime(optionList, searchTimeInHHMM);
   }
 
   // if search term contains numbers, special character & [AmPm]
@@ -205,7 +222,70 @@ const convert12To24HourFormat = (hours: string, searchTerm: string) => {
   return hours;
 };
 
-const findIndexInOptionList = (optionList: OptionSchema[], searchTerm: string) => {
+// const getCurrentRelativeTime = (startTime: string, endTime: string) => {
+//   const timeStart = new Date('07/07/2022 ' + startTime);
+//   const timeEnd = new Date('07/07/2022 ' + endTime);
+
+//   const diff = timeEnd.getTime() - timeStart.getTime();
+//   const diff_as_date = new Date(diff);
+
+//   const hours = diff_as_date.getUTCHours();
+//   const min = diff_as_date.getUTCMinutes();
+//   console.log('time diff-> ', hours, 'min', min);
+
+//   const timeDiffLabel = ` (${hours} hr ${min} min)`;
+//   return timeDiffLabel;
+// };
+
+// const convert24TimeStrToNum = (time: string) => {
+//   return parseInt(time.replace(':', ''), 10);
+// };
+
+/**
+ * Switch to AM/PM time based on current time
+ * @param optionList
+ * @param searchTime
+ */
+const getCurrentRelativeTime = (optionList: string[], searchTime: timeObj) => {
+  const searchTimeStr = `${searchTime.hour}:${searchTime.min}`;
+  const currentTime = get24HourCurrentTime();
+  const greaterTime = checkTimeDifference(currentTime, searchTimeStr);
+  console.log('optionList', optionList);
+  if (greaterTime) {
+    // @todo handle time in circular list
+    // const currentTimeIndex = getNearestTimeOptionIndex(optionList, currentTime);
+    // const searchTimeIndex = getNearestTimeOptionIndex(optionList, searchTime);
+    // if(currentTimeIndex){
+    // }
+    const hourIn24Format = parseInt(searchTime.hour, 10) + 12;
+    searchTime.hour = hourIn24Format.toString();
+  }
+
+  return searchTime;
+};
+
+// const getNearestTimeOptionIndex = (list: string[], option: string) => {
+//   const optionIndex = list.indexOf(option);
+
+//   // if value is present inside array return index
+//   if (optionIndex !== -1) {
+//     return optionIndex;
+//   }
+//   // else return nearest time value index
+//   else {
+//     let index = 0;
+//     let listItem = convert24TimeStrToNum(list[index]);
+//     const optionItem = convert24TimeStrToNum(option);
+//     while (list && index <= list.length && optionItem > listItem) {
+//       index++;
+//       listItem = convert24TimeStrToNum(list[index]);
+//     }
+
+//     return index;
+//   }
+// };
+
+const findIndexInOptionList = (optionList: string[], searchTerm: string) => {
   console.log('aaaoption list in findindex-> ', optionList, searchTerm);
 };
 
@@ -215,8 +295,8 @@ const findIndexInOptionList = (optionList: OptionSchema[], searchTerm: string) =
  * @param searchTerm
  * @returns Index of the search term
  */
-export const getSearchIndex = (optionList: OptionSchema[], searchTerm: string) => {
-  const { hour, min } = formatSearchTerm(searchTerm);
+export const getSearchIndex = (optionList: string[], searchTerm: string) => {
+  const { hour, min } = formatSearchTerm(optionList, searchTerm);
   const searchItem = `${hour}:${min}`;
   console.log('aaasearchItemSearchItem', searchItem);
 
@@ -225,8 +305,15 @@ export const getSearchIndex = (optionList: OptionSchema[], searchTerm: string) =
   return searchIndex;
 };
 
+const getValueFromOptionList = (optionList: OptionSchema[]) => {
+  const list = optionList.map((option: any) => option.value);
+  return list;
+};
+
 export const getSearchedTimeList = (options: OptionSchema[], searchTerm: string) => {
-  const searchIndex = getSearchIndex(options, searchTerm);
+  const optionList = getValueFromOptionList(options);
+  const searchIndex = getSearchIndex(optionList, searchTerm);
+
   console.log('searchIndex-> ', searchIndex);
   // const result: [] = [];
   // if (searchIndex === -1) return result; // if no option matches search term
