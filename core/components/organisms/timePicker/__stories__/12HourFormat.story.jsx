@@ -22,6 +22,7 @@ export const TimePicker12HourFormat = () => {
         endTime="11:15 PM"
         showTimeDifference={true}
         onChange={onChangeHandler}
+        disabledOptionList={['11:00 AM', '02:00 PM']}
       />
     </div>
   );
@@ -41,6 +42,7 @@ const customCode = `() => {
         endTime="11:15 PM"
         showTimeDifference={true}
         onChange={onChangeHandler}
+        disabledOptionList={['11:00 AM', '02:00 PM']}
       />
     </div>
   );

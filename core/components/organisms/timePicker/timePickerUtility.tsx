@@ -168,16 +168,30 @@ const getCustomLabel = (time: string, timeFormat: TimeFormat, showTimeDifference
   return label;
 };
 
+const isOptionDisabled = (time: string, timeFormat: TimeFormat, disabledOptionList: string[]) => {
+  let timeValue = time;
+  if (isFormat12Hour(timeFormat)) {
+    timeValue = convert24To12HourFormat(time);
+  }
+  if (disabledOptionList.includes(timeValue)) {
+    return true;
+  }
+
+  return false;
+};
+
 const convertTimeToOptionList = (
   timeList: string[],
   timeFormat: TimeFormat,
   showTimeDifference?: boolean,
-  referenceTime?: string
+  referenceTime?: string,
+  disabledOptionList?: string[]
 ) => {
   const optionList = timeList.map((time) => {
     return {
       label: getCustomLabel(time, timeFormat, showTimeDifference, referenceTime),
       value: time,
+      disabled: disabledOptionList && isOptionDisabled(time, timeFormat, disabledOptionList),
     };
   });
   return optionList;
@@ -188,7 +202,7 @@ const computeEndTime = (startTime: string | undefined) => {
 };
 
 export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
-  const { optionList, startTime, endTime, interval, timeFormat, showTimeDifference } = props;
+  const { optionList, startTime, endTime, interval, timeFormat, showTimeDifference, disabledOptionList } = props;
   if (optionList) {
     return optionList;
   }
@@ -198,7 +212,13 @@ export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
 
   const timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
 
-  const dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, showTimeDifference, startTime);
+  const dropdownOptionList = convertTimeToOptionList(
+    timeList,
+    timeFormat,
+    showTimeDifference,
+    startTime,
+    disabledOptionList
+  );
 
   return dropdownOptionList;
 };

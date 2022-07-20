@@ -15,7 +15,12 @@ const customCode = `() => {
 
   return (
     <div className="w-25">
-      <TimePicker withDropdown={true} startTime="00:00" endTime="23:59" timeFormat="hh:mm" />
+      <TimePicker 
+        withDropdown={true} 
+        startTime="00:00" 
+        endTime="23:59" 
+        timeFormat="hh:mm" 
+      />
     </div>
   );
 }`;

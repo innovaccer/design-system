@@ -252,7 +252,6 @@ export const getSearchedTimeList = (options: OptionSchema[], searchTerm: string)
   const result: [] = [];
   if (searchIndex === -1) return result; // if no option matches search term
 
-  const dropdownWrapper = document.getElementsByClassName('Dropdown-wrapper')[0] as HTMLDivElement;
   const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
   const targetOption = dropdownOptionList[searchIndex + 1] as HTMLDivElement;
   const activeOptionClassName = 'Option--active';
@@ -263,23 +262,7 @@ export const getSearchedTimeList = (options: OptionSchema[], searchTerm: string)
   // add active class to current target option
   targetOption.classList.add(activeOptionClassName);
   if (targetOption) {
-    scrollIntoView(dropdownWrapper, targetOption);
+    targetOption.scrollIntoView({ block: 'center' });
   }
   return options;
-};
-
-export const scrollIntoView = (menuElement: HTMLDivElement | null, focusedElement: HTMLElement) => {
-  const menuRect = menuElement?.getBoundingClientRect();
-  const focusedRect = focusedElement.getBoundingClientRect();
-  const overscroll = focusedElement.offsetHeight;
-
-  if (menuRect && focusedRect.bottom > menuRect.bottom && menuElement) {
-    scrollTo(menuElement, focusedElement.offsetTop - menuRect!.height + overscroll);
-  } else if (menuRect && focusedRect.top < menuRect!.top && menuElement) {
-    scrollTo(menuElement, focusedElement.offsetTop - overscroll);
-  }
-};
-
-export const scrollTo = (element: Element, top: number) => {
-  element.scrollTo(0, top);
 };

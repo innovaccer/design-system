@@ -48,6 +48,10 @@ export interface TimePickerWithDropdown {
    */
   showTimeDifference?: boolean;
   /**
+   *  Specify list of options in `hh:mm [AM | PM]` or `hh:mm` time format which need to be set as disabled
+   */
+  disabledOptionList?: string[];
+  /**
    * Callback function to be called when options are selected from dropdown.
    */
   onChange: (selected: any[] | any, name?: string | number) => void;
@@ -64,6 +68,7 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
     fetchOptions,
     noResultMessage,
     showTimeDifference,
+    disabledOptionList,
     ...rest
   } = props;
 
