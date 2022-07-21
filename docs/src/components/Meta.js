@@ -104,6 +104,10 @@ const Meta = ({ docTitle, docDescription, pageKeywords, titleType, frontmatter, 
         },
       ]}
     >
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="  default-src 'self' 'unsafe-eval'; style-src 'unsafe-inline' innovaccer/design-system/css; img-src 'self' data: ; script-src-elem 'self' www.googletagmanager.com ; font-src https://fontsource.org/ ; connect-src 'self' www.google-analytics.com ; frame-src mds.innovaccer.com"
+      ></meta>
       <html lang={lang} />
       <link rel='icon' href={favicon} />
       <link rel='icon' href={faviconLarge} />
