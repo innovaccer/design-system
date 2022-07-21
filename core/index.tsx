@@ -65,6 +65,7 @@ export { Placeholder } from './components/molecules/placeholder';
 export { EditableInput } from './components/molecules/editableInput';
 export { EditableChipInput } from './components/molecules/editableChipInput';
 export { PlaceholderParagraph } from './components/atoms/placeholderParagraph';
+export { PlaceholderImage } from './components/atoms/placeholderImage';
 export { ProgressRing } from './components/atoms/progressRing';
 export { Stepper } from './components/molecules/stepper';
 export { DateRangePicker } from './components/organisms/dateRangePicker';
