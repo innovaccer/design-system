@@ -143,7 +143,7 @@ const FrameWrapper = ({ componentName }) => {
         scrolling="no"
         frameBorder="0"
         onLoad={onLoad}
-        src={`https://mds-dev.innovaccer.com/iframe.html?id=${componentName}&viewMode=docs&panel=true&nav=false&addons=1&stories=0&embed=prop-table`}
+        src={`https://mds.innovaccer.com/iframe.html?id=${componentName}&viewMode=docs&panel=true&nav=false&addons=1&stories=0&embed=prop-table`}
       />
     </>
   );
