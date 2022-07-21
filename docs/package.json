@@ -11,7 +11,9 @@
     "deploy": "gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E2FYU8KR1XGDBZ --paths \"/*\"",
     "clean": "gatsby clean",
     "extract:dev": "export STORYBOOK_HOST='http://localhost:5000/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story' && node ./tools/extract.js",
-    "extract": "node ./tools/extract.js"
+    "extract": "node ./tools/extract.js",
+    "cypress:open": "cypress open",
+    "cypress": "cypress run"
   },
   "dependencies": {
     "@fontsource/nunito": "^4.5.0",
@@ -56,5 +58,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^10.3.1"
+  }
 }
