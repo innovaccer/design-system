@@ -9,7 +9,7 @@
 }
 
 .Dropdown-inputWrapper {
-  border-bottom: var(--border);
+  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
 }
 
 .Dropdown-input {
@@ -19,6 +19,7 @@
 .Dropdown-input,
 .Dropdown-input:focus-within {
   border: unset !important;
+  box-shadow: none !important;
 }
 
 .Dropdown-section {
