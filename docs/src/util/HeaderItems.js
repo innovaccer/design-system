@@ -9,7 +9,8 @@ export function useHeaderItems() {
         edges {
           node {
             label
-            link            
+            link
+            img
           }
         }
       }

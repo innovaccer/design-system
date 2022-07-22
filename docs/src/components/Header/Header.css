@@ -30,3 +30,7 @@
 .HeaderLink--default {
   color: var(--inverse);
 }
+
+.icon {
+  top: 1px;
+}
