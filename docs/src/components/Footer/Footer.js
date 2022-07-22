@@ -17,6 +17,14 @@ const Footer = ({ relativePagePath }) => {
               link.startsWith('https://');
           }
           return (
+            !link?
+              <Text
+                appearance={'subtle'}
+                className={'mr-8'}
+              >
+                {label}
+              </Text>
+            :
             <Link
               key={index}
               href={link}
