@@ -24,11 +24,6 @@ export const _isTimeInPM = (time: string) => {
   return time.includes('p') || time.includes('P');
 };
 
-export const get24HourCurrentTime = () => {
-  const today = new Date();
-  return today.getHours() + ':' + today.getMinutes();
-};
-
 /**
  * Convert time from 12 hour format to 24 hour format
  * @param timeStr in hh:mm [AM/PM] format

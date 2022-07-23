@@ -10,8 +10,8 @@ import {
   _showSelectedItems,
   _isOpenControlled,
   _isSelectAllPresent,
+  scrollToOptionIndex,
 } from './utility';
-import { getSearchedTimeList } from '@/components/organisms/timePicker/searchUtils';
 import { BaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
 
@@ -193,11 +193,7 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * Callback function called when dropdown is closed
    */
   onClose?: (selected: any[], name?: string | number) => void;
-  /**
-   * Defines if Dropdown is used as TimePicker
-   * @ignore
-   */
-  isTimePickerRange?: boolean;
+  /** */
 }
 
 type SyncDropdownProps = SyncProps & SharedDropdownProps;
@@ -225,6 +221,7 @@ interface DropdownState {
   selected: OptionSchema[];
   tempSelected: OptionSchema[];
   previousSelected: OptionSchema[];
+  scrollIndex?: number;
 }
 
 /**
@@ -339,11 +336,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
   fetchOptionsFunction = (searchTerm: string) => {
     const { options } = this.props;
-    const filteredOptions = searchTerm
-      ? this.props.isTimePickerRange
-        ? getSearchedTimeList(options, searchTerm)
-        : getSearchedOptions(options, searchTerm)
-      : options;
+    const filteredOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
     return new Promise<any>((resolve) => {
       resolve({
         searchTerm,
@@ -393,6 +386,9 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     fetchFunction(searchTerm).then((res: any) => {
       const { options, count } = res;
+      if (res.scrollToIndex) {
+        scrollToOptionIndex(res.scrollToIndex);
+      }
       if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
         updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
 
@@ -405,6 +401,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
         this.setState({
           ...this.state,
+          scrollIndex: res.scrollToIndex || 0,
           optionsLength,
           loading: false,
           async: updatedAsync,
@@ -423,10 +420,9 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   };
 
   updateSearchTerm = (search: string) => {
-    const showLoader = this.props.isTimePickerRange ? false : true;
     this.setState({
       ...this.state,
-      loading: showLoader,
+      loading: true,
       searchInit: true,
       searchTerm: search,
     });
@@ -727,6 +723,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       selectAll,
       triggerLabel,
       previousSelected,
+      scrollIndex,
     } = this.state;
 
     const { withSelectAll = true, withCheckbox } = this.props;
@@ -763,6 +760,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         onOptionSelect={this.onOptionSelect}
         onSelectAll={this.onSelectAll}
         customTrigger={triggerOptions.customTrigger}
+        scrollIndex={scrollIndex}
         {...rest}
       />
     );

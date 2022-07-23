@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Dropdown } from '@/index';
 import { TimeFormat } from '@/common.type';
+import { getScrollIndex } from './searchUtils';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './timePickerUtility';
 
@@ -8,6 +9,7 @@ type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
   count: number;
   options: OptionSchema[];
+  scrollToIndex: number;
 }>;
 
 export interface TimePickerWithDropdown {
@@ -58,19 +60,7 @@ export interface TimePickerWithDropdown {
 }
 
 export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
-  const {
-    endTime,
-    onChange,
-    interval,
-    startTime,
-    timeFormat,
-    optionList,
-    fetchOptions,
-    noResultMessage,
-    showTimeDifference,
-    disabledOptionList,
-    ...rest
-  } = props;
+  const { onChange, timeFormat, fetchOptions, noResultMessage } = props;
 
   const dropdownOptionList = getDropdownOptionList(props);
 
@@ -83,6 +73,22 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
     onChange && onChange(time);
   };
 
+  const getOptionList = (searchTerm: string) => {
+    const indexValue = getScrollIndex(dropdownOptionList, searchTerm);
+    console.log('aaindexValue', indexValue, dropdownOptionList[indexValue]);
+
+    return Promise.resolve({
+      options: indexValue === -1 ? [] : dropdownOptionList,
+      count: dropdownOptionList.length,
+      scrollToIndex: indexValue + 1,
+      searchTerm,
+    });
+  };
+
+  const fetchOptionList = () => {
+    return fetchOptions ? fetchOptions : getOptionList;
+  };
+
   // const [dropdownOptionList, setDropdownOptionList] = React.useState<OptionSchema[]>(
   //   getTimeOptionList(startTime, endTime, interval)
   // );
@@ -90,15 +96,13 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
   return (
     <Dropdown
       maxHeight={160}
+      loadersCount={0}
       withSearch={true}
-      isTimePickerRange={true}
       searchPlaceholder="Search"
-      fetchOptions={fetchOptions}
-      options={dropdownOptionList}
+      onChange={onChangeHandler}
+      fetchOptions={fetchOptionList()}
       noResultMessage={noResultMessage}
       staticLimit={dropdownOptionList.length}
-      onChange={onChangeHandler}
-      {...rest}
     />
   );
 };

@@ -51,3 +51,11 @@ export const getSelectAll = (selected: Option[], optionsLength: number, disabled
   }
   return { indeterminate: false, checked: false };
 };
+
+export const scrollToOptionIndex = (scrollIndex: number) => {
+  const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
+  const targetOption = dropdownOptionList[scrollIndex] as HTMLDivElement;
+  if (targetOption) {
+    targetOption.scrollIntoView({ block: 'center' });
+  }
+};

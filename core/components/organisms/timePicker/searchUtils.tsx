@@ -1,10 +1,4 @@
-import {
-  convertToTwoDigit,
-  _isTimeInAM,
-  _isTimeInPM,
-  checkTimeDifference,
-  get24HourCurrentTime,
-} from './timePickerUtility';
+import { convertToTwoDigit, _isTimeInAM, _isTimeInPM, checkTimeDifference } from './timePickerUtility';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 
 interface timeObj {
@@ -16,6 +10,11 @@ const convertMinTo60 = (time: string) => {
   const timeInNum = parseInt(time, 10) % 60;
   const min = (timeInNum.toString() + '0').slice(0, 2);
   return min;
+};
+
+const get24HourCurrentTime = () => {
+  const today = new Date();
+  return convertToTwoDigit(today.getHours()) + ':' + convertToTwoDigit(today.getMinutes());
 };
 
 const convertHourTo24 = (time: string) => {
@@ -245,24 +244,40 @@ const getValueFromOptionList = (optionList: OptionSchema[]) => {
   return list;
 };
 
-export const getSearchedTimeList = (options: OptionSchema[], searchTerm: string) => {
+const getSearchValueIndex = (options: OptionSchema[], searchTerm: string): number => {
   const optionList = getValueFromOptionList(options);
   const searchIndex = getSearchIndex(optionList, searchTerm);
+  return searchIndex;
 
-  const result: [] = [];
-  if (searchIndex === -1) return result; // if no option matches search term
+  // const result: [] = [];
+  // if (searchIndex === -1) return result; // if no option matches search term
 
-  const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
-  const targetOption = dropdownOptionList[searchIndex + 1] as HTMLDivElement;
-  const activeOptionClassName = 'Option--active';
+  // const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
+  // const targetOption = dropdownOptionList[searchIndex + 1] as HTMLDivElement;
+  // console.log('targetOption', targetOption, dropdownOptionList);
+  // const activeOptionClassName = 'Option--active';
 
   // remove class from previous selected option
-  dropdownOptionList.forEach((i) => i.classList.remove(activeOptionClassName));
+  // dropdownOptionList.forEach((i) => i.classList.remove(activeOptionClassName));
 
   // add active class to current target option
-  targetOption.classList.add(activeOptionClassName);
-  if (targetOption) {
-    targetOption.scrollIntoView({ block: 'center' });
+  // targetOption.classList.add(activeOptionClassName);
+  // if (targetOption) {
+  //   targetOption.scrollIntoView({ block: 'center' });
+  // }
+};
+
+export const getScrollIndex = (dropdownOptionList: OptionSchema[], searchTerm: string): number => {
+  if (searchTerm === '') {
+    // return current time index
+    const currTime = get24HourCurrentTime();
+    const optionList = getValueFromOptionList(dropdownOptionList);
+
+    const currTimeIndex = findClosestTimeIndex(optionList, currTime);
+    console.log('currTimeIndex', currTimeIndex, currTime);
+    return currTimeIndex;
   }
-  return options;
+
+  //@todo return -1 in case of invalid search
+  return getSearchValueIndex(dropdownOptionList, searchTerm);
 };
