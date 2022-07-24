@@ -62,6 +62,8 @@ export interface TimePickerWithDropdown {
 export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
   const { onChange, timeFormat, fetchOptions, noResultMessage } = props;
 
+  const [tabIndex, setTabIndex] = React.useState(0);
+
   const dropdownOptionList = getDropdownOptionList(props);
 
   const onChangeHandler = (props: string) => {
@@ -75,8 +77,7 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
 
   const getOptionList = (searchTerm: string) => {
     const indexValue = getScrollIndex(dropdownOptionList, searchTerm);
-    console.log('aaindexValue', indexValue, dropdownOptionList[indexValue]);
-
+    setTabIndex(indexValue);
     return Promise.resolve({
       options: indexValue === -1 ? [] : dropdownOptionList,
       count: dropdownOptionList.length,
@@ -98,6 +99,7 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
       maxHeight={160}
       loadersCount={0}
       withSearch={true}
+      tabIndex={tabIndex}
       searchPlaceholder="Search"
       onChange={onChangeHandler}
       fetchOptions={fetchOptionList()}

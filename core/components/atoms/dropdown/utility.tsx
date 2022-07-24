@@ -55,7 +55,17 @@ export const getSelectAll = (selected: Option[], optionsLength: number, disabled
 export const scrollToOptionIndex = (scrollIndex: number) => {
   const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
   const targetOption = dropdownOptionList[scrollIndex] as HTMLDivElement;
-  if (targetOption) {
-    targetOption.scrollIntoView({ block: 'center' });
+  targetOption && targetOption.scrollIntoView({ block: 'center' });
+};
+
+export const scrollToInitialOption = (scrollIndex: number) => {
+  const selectedOption = document.querySelector('.Option--selected') as HTMLDivElement;
+
+  if (selectedOption) {
+    selectedOption.scrollIntoView({ block: 'center' });
+  } else {
+    const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
+    const targetOption = dropdownOptionList[scrollIndex] as HTMLDivElement;
+    targetOption && targetOption.scrollIntoView({ block: 'center' });
   }
 };

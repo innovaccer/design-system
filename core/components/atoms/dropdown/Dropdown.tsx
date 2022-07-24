@@ -193,7 +193,10 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    * Callback function called when dropdown is closed
    */
   onClose?: (selected: any[], name?: string | number) => void;
-  /** */
+  /**
+   * Specify the option index which needs to be focused
+   */
+  tabIndex?: number;
 }
 
 type SyncDropdownProps = SyncProps & SharedDropdownProps;
@@ -728,10 +731,12 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
     const { withSelectAll = true, withCheckbox } = this.props;
 
-    const { triggerOptions = {}, selected, ...rest } = this.props;
+    const { triggerOptions = {}, selected, tabIndex, ...rest } = this.props;
     const remainingOptionsLen = searchedOptionsLength - options.length;
 
-    const firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
+    const firstEnabledOption = this.props.tabIndex
+      ? this.props.tabIndex
+      : _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox)
       ? 0
       : options.findIndex((option) => !option.disabled);
 
