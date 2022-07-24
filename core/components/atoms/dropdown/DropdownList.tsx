@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { scrollIntoView, _isEqual, _isSelectAllPresent, scrollToInitialOption } from './utility';
+import { scrollIntoView, _isEqual, _isSelectAllPresent, scrollToOptionIndex } from './utility';
 import { Popover, Checkbox, Button, Text, Input } from '@/index';
 import { PopoverProps } from '@/index.type';
 import DropdownButton, { TriggerProps } from './DropdownButton';
@@ -249,7 +249,7 @@ const DropdownList = (props: OptionsProps) => {
       // scrolls to specific option index when dropdown opens
       if (scrollIndex) {
         setTimeout(() => {
-          scrollToInitialOption(scrollIndex);
+          scrollToOptionIndex(scrollIndex);
         }, 100);
       }
     }
