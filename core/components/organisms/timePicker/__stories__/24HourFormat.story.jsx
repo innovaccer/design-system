@@ -6,7 +6,7 @@ import { TimePickerAsDropdown, TimePickerAsInput } from './_common_/types';
 export const TimePicker24HourFormat = () => {
   return (
     <div className="w-25">
-      <TimePicker withDropdown={true} startTime="00:00" endTime="23:59" timeFormat="hh:mm" />
+      <TimePicker withSearch={true} startTime="00:00" endTime="23:59" timeFormat="24-Hour" />
     </div>
   );
 };
@@ -16,10 +16,10 @@ const customCode = `() => {
   return (
     <div className="w-25">
       <TimePicker 
-        withDropdown={true} 
+        withSearch={true} 
         startTime="00:00" 
         endTime="23:59" 
-        timeFormat="hh:mm" 
+        timeFormat="24-Hour" 
       />
     </div>
   );

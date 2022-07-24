@@ -1,5 +1,4 @@
-import { TimeFormat } from '@/common.type';
-import { TimePickerWithDropdown } from './TimePickerWithFuzzySearch';
+import { TimePickerWithDropdown, TimeFormat } from '../TimePickerWithFuzzySearch';
 
 const parseDate = (date_time: any) => {
   const d = new Date();
@@ -9,7 +8,7 @@ const parseDate = (date_time: any) => {
 };
 
 export const isFormat12Hour = (format: string) => {
-  return format === 'hh:mm AM';
+  return format === '12-Hour';
 };
 
 const isTimeIn12HourFormat = (time: string) => {
@@ -150,12 +149,12 @@ const getTimeDifference = (startTime: string, endTime: string) => {
   return timeDiffLabel;
 };
 
-const getCustomLabel = (time: string, timeFormat: TimeFormat, showTimeDifference?: boolean, referenceTime?: string) => {
+const getCustomLabel = (time: string, timeFormat: TimeFormat, showDuration?: boolean, referenceTime?: string) => {
   let label = time;
   if (isFormat12Hour(timeFormat)) {
     label = convert24To12HourFormat(time);
   }
-  if (showTimeDifference && referenceTime) {
+  if (showDuration && referenceTime) {
     const timeDifference = getTimeDifference(referenceTime, time);
     label += timeDifference;
   }
@@ -163,12 +162,12 @@ const getCustomLabel = (time: string, timeFormat: TimeFormat, showTimeDifference
   return label;
 };
 
-const isOptionDisabled = (time: string, timeFormat: TimeFormat, disabledOptionList: string[]) => {
+const isOptionDisabled = (time: string, timeFormat: TimeFormat, disabledSlotList: string[]) => {
   let timeValue = time;
   if (isFormat12Hour(timeFormat)) {
     timeValue = convert24To12HourFormat(time);
   }
-  if (disabledOptionList.includes(timeValue)) {
+  if (disabledSlotList.includes(timeValue)) {
     return true;
   }
 
@@ -178,15 +177,15 @@ const isOptionDisabled = (time: string, timeFormat: TimeFormat, disabledOptionLi
 const convertTimeToOptionList = (
   timeList: string[],
   timeFormat: TimeFormat,
-  showTimeDifference?: boolean,
+  showDuration?: boolean,
   referenceTime?: string,
-  disabledOptionList?: string[]
+  disabledSlotList?: string[]
 ) => {
   const optionList = timeList.map((time) => {
     return {
-      label: getCustomLabel(time, timeFormat, showTimeDifference, referenceTime),
+      label: getCustomLabel(time, timeFormat, showDuration, referenceTime),
       value: time,
-      disabled: disabledOptionList && isOptionDisabled(time, timeFormat, disabledOptionList),
+      disabled: disabledSlotList && isOptionDisabled(time, timeFormat, disabledSlotList),
     };
   });
   return optionList;
@@ -197,23 +196,14 @@ const computeEndTime = (startTime: string | undefined) => {
 };
 
 export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
-  const { optionList, startTime, endTime, interval, timeFormat, showTimeDifference, disabledOptionList } = props;
-  if (optionList) {
-    return optionList;
-  }
+  const { startTime, endTime, interval, timeFormat, showDuration, disabledSlotList } = props;
 
   const startTimeIn24Hr = startTime ? getTimeIn24HrFormat(startTime) : '00:00';
   const endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime(startTime);
 
   const timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
 
-  const dropdownOptionList = convertTimeToOptionList(
-    timeList,
-    timeFormat,
-    showTimeDifference,
-    startTime,
-    disabledOptionList
-  );
+  const dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, showDuration, startTime, disabledSlotList);
 
   return dropdownOptionList;
 };

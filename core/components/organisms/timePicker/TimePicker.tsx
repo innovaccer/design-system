@@ -46,7 +46,7 @@ export interface TimePickerWithInput {
 export type TimePickerProps = TimePickerWithInput & TimePickerWithDropdown;
 
 export const TimePicker = (props: TimePickerProps) => {
-  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, withDropdown, time: timeProp } = props;
+  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, withSearch, time: timeProp } = props;
 
   const [time, setTime] = React.useState(timeProp);
   const [init, setInit] = React.useState(false);
@@ -99,7 +99,7 @@ export const TimePicker = (props: TimePickerProps) => {
   const mask = Utils.masks.time[inputFormat];
   return (
     <>
-      {withDropdown ? (
+      {withSearch ? (
         <TimePickerWithFuzzySearch {...props} />
       ) : (
         <InputMask
