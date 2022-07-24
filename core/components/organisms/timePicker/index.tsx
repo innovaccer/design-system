@@ -1,3 +1,4 @@
 export { default } from './TimePicker';
 export * from './TimePicker';
-export * from './TimePickerWithFuzzySearch';
+export * from './TimePickerAsInput';
+export * from './TimePickerAsDropdown';

@@ -4,10 +4,7 @@ import { getScrollIndex } from './utility/searchUtils';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './utility/timePickerUtility';
 
-type fetchOptionsFunction = (
-  searchTerm: string,
-  options?: OptionSchema[]
-) => Promise<{
+type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
   count: number;
   options: OptionSchema[];
@@ -16,7 +13,7 @@ type fetchOptionsFunction = (
 
 export type TimeFormat = '12-Hour' | '24-Hour';
 
-export interface TimePickerWithDropdown {
+export interface TimePickerDropdownProps {
   /**
    * Set as `true` to show timePicker with search
    */
@@ -41,7 +38,7 @@ export interface TimePickerWithDropdown {
    * Callback function to fetch options list from API based on search term
    *
    * <pre className="DocPage-codeBlock p-4">
-   * fetchOptionsFunction: (searchTerm: string, options: OptionSchema[]) => Promise<{
+   * fetchOptionsFunction: (searchTerm: string) => Promise<{
    *      searchTerm?: string;
    *      count: number,
    *      option: Option[],
@@ -68,7 +65,7 @@ export interface TimePickerWithDropdown {
   onChange: (selected: any[] | any, name?: string | number) => void;
 }
 
-export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
+export const TimePickerAsDropdown = (props: TimePickerDropdownProps) => {
   const { onChange, timeFormat, fetchTimeOptions, noResultMessage } = props;
 
   const [tabIndex, setTabIndex] = React.useState(0);
@@ -116,10 +113,10 @@ export const TimePickerWithFuzzySearch = (props: TimePickerWithDropdown) => {
   );
 };
 
-TimePickerWithFuzzySearch.defaultProps = {
+TimePickerAsDropdown.defaultProps = {
   timeFormat: '12-Hour',
   interval: 15,
 };
 
-TimePickerWithFuzzySearch.displayName = 'TimePickerWithFuzzySearch';
-export default TimePickerWithFuzzySearch;
+TimePickerAsDropdown.displayName = 'TimePickerAsDropdown';
+export default TimePickerAsDropdown;

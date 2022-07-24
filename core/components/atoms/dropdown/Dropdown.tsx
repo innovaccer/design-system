@@ -15,10 +15,7 @@ import {
 import { BaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
 
-type fetchOptionsFunction = (
-  searchTerm: string,
-  options?: OptionSchema[]
-) => Promise<{
+type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
   count: number;
   options: OptionSchema[];
@@ -99,7 +96,7 @@ interface AsyncProps {
    * Callback function to fetch options from API
    *
    * <pre className="DocPage-codeBlock">
-   * fetchOptionsFunction: (searchTerm: string, options: OptionSchema[]) => Promise<{
+   * fetchOptionsFunction: (searchTerm: string) => Promise<{
    *      searchTerm?: string;
    *      count: number,
    *      option: Option[],
@@ -390,7 +387,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const { fetchOptions, withCheckbox, withSearch } = this.props;
     const fetchFunction = fetchOptions ? fetchOptions : this.fetchOptionsFunction;
 
-    fetchFunction(searchTerm, this.state.options).then((res: any) => {
+    fetchFunction(searchTerm).then((res: any) => {
       const { options, count } = res;
       if (res.scrollToIndex) {
         scrollToOptionIndex(res.scrollToIndex);

@@ -1,4 +1,4 @@
-import { TimeType, AMPMType } from './TimePicker';
+import { TimeType, AMPMType } from './TimePickerAsInput';
 import { InputProps } from '@/index.type';
 
 interface TimeObject {

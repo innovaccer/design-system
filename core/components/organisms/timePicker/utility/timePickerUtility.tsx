@@ -1,4 +1,4 @@
-import { TimePickerWithDropdown, TimeFormat } from '../TimePickerWithFuzzySearch';
+import { TimePickerDropdownProps, TimeFormat } from '../TimePickerAsDropdown';
 
 const parseDate = (date_time: any) => {
   const d = new Date();
@@ -195,7 +195,7 @@ const computeEndTime = (startTime: string | undefined) => {
   return startTime ? '' : '23:59';
 };
 
-export const getDropdownOptionList = (props: TimePickerWithDropdown) => {
+export const getDropdownOptionList = (props: TimePickerDropdownProps) => {
   const { startTime, endTime, interval, timeFormat, showDuration, disabledSlotList } = props;
 
   const startTimeIn24Hr = startTime ? getTimeIn24HrFormat(startTime) : '00:00';
