@@ -1,4 +1,10 @@
-import { convertToTwoDigit, _isTimeInAM, _isTimeInPM, checkTimeDifference } from './timePickerUtility';
+import {
+  convertToTwoDigit,
+  _isTimeInAM,
+  _isTimeInPM,
+  checkTimeDifference,
+  getTimeDifference,
+} from './timePickerUtility';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 
 interface timeObj {
@@ -7,7 +13,10 @@ interface timeObj {
 }
 
 const convertMinTo60 = (time: string) => {
-  const timeInNum = parseInt(time, 10) % 60;
+  const parseNum = parseInt(time, 10);
+  if (parseNum < 10) return time;
+
+  const timeInNum = parseNum > 60 ? parseNum % 60 : parseNum;
   const min = (timeInNum.toString() + '0').slice(0, 2);
   return min;
 };
@@ -201,26 +210,19 @@ const getCurrentRelativeTime = (optionList: string[], searchTime: timeObj) => {
   return searchTime;
 };
 
-const convert24TimeStrToNum = (time: string) => {
-  return parseInt(time.replace(':', ''), 10);
-};
-
-const findClosestTimeIndex = (list: string[], searchItem: string) => {
-  const searchItemInNum = convert24TimeStrToNum(searchItem);
+const findClosestTimeIndex = (optionList: string[], searchItem: string) => {
   let closestItemIndex = 0;
-  let optionItemInNum = convert24TimeStrToNum(list[0]);
+  const minTime = { hour: 100, mins: 100 };
 
-  let minDiff = Math.abs(searchItemInNum - optionItemInNum);
-
-  for (let index = 0; index < list.length; index++) {
-    optionItemInNum = convert24TimeStrToNum(list[index]);
-    const diff = Math.abs(searchItemInNum - optionItemInNum);
-
-    if (diff <= minDiff) {
-      minDiff = diff;
+  for (let index = 0; index < optionList.length; index++) {
+    const { hour, minute } = getTimeDifference(searchItem, optionList[index]);
+    if (hour < minTime.hour || (hour === minTime.hour && minute < minTime.mins)) {
+      minTime.hour = hour;
+      minTime.mins = minute;
       closestItemIndex = index;
     }
   }
+
   return closestItemIndex;
 };
 
@@ -231,11 +233,14 @@ const findClosestTimeIndex = (list: string[], searchItem: string) => {
  * @returns Index of the search term in option list
  */
 export const getSearchIndex = (optionList: string[], searchTerm: string) => {
-  const { hour, min } = formatSearchTerm(optionList, searchTerm);
+  let { hour, min } = formatSearchTerm(optionList, searchTerm);
+  if (min === '60') {
+    min = '00';
+    hour = (parseInt(hour, 10) + 1).toString();
+  }
   const searchItem = `${hour}:${min}`;
 
   const searchIndex = findClosestTimeIndex(optionList, searchItem);
-
   return searchIndex;
 };
 
@@ -253,27 +258,26 @@ const getValueFromOptionList = (optionList: OptionSchema[]) => {
   return list;
 };
 
-const getSearchValueIndex = (options: OptionSchema[], searchTerm: string): number => {
+const getSearchValueIndex = (options: string[], searchTerm: string): number => {
+  // Search Term is valid if it contains number
   if (!isValidSearchTerm(searchTerm)) {
-    // Search Term is valid if it contains number
     return -1;
   }
 
-  const optionList = getValueFromOptionList(options);
-  const searchIndex = getSearchIndex(optionList, searchTerm);
+  const searchIndex = getSearchIndex(options, searchTerm);
   return searchIndex;
 };
 
 export const getScrollIndex = (dropdownOptionList: OptionSchema[], searchTerm: string): number => {
+  const optionList = getValueFromOptionList(dropdownOptionList);
+
   if (searchTerm === '') {
     // return current time index
     const currTime = get24HourCurrentTime();
-    const optionList = getValueFromOptionList(dropdownOptionList);
 
     const currTimeIndex = findClosestTimeIndex(optionList, currTime);
     return currTimeIndex;
   }
 
-  //@todo return -1 in case of invalid search
-  return getSearchValueIndex(dropdownOptionList, searchTerm);
+  return getSearchValueIndex(optionList, searchTerm);
 };

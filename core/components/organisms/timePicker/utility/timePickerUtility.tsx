@@ -135,18 +135,17 @@ const getTimeListIn24HourFormat = (startTime: string, endTime: string, interval:
   return get24HourTimeList(startTime, endTime, interval);
 };
 
-const getTimeDifference = (startTime: string, endTime: string) => {
+export const getTimeDifference = (startTime: string, endTime: string) => {
   const timeStart = new Date('07/07/2022 ' + startTime);
   const timeEnd = new Date('07/07/2022 ' + endTime);
 
   const diff = timeEnd.getTime() - timeStart.getTime();
   const diff_as_date = new Date(diff);
 
-  const hours = diff_as_date.getUTCHours();
-  const min = diff_as_date.getUTCMinutes();
+  const hour = diff_as_date.getUTCHours();
+  const minute = diff_as_date.getUTCMinutes();
 
-  const timeDiffLabel = ` (${hours} hr ${min} min)`;
-  return timeDiffLabel;
+  return { hour, minute };
 };
 
 const getCustomLabel = (time: string, timeFormat: TimeFormat, showDuration?: boolean, referenceTime?: string) => {
@@ -155,8 +154,9 @@ const getCustomLabel = (time: string, timeFormat: TimeFormat, showDuration?: boo
     label = convert24To12HourFormat(time);
   }
   if (showDuration && referenceTime) {
-    const timeDifference = getTimeDifference(referenceTime, time);
-    label += timeDifference;
+    const { hour, minute } = getTimeDifference(referenceTime, time);
+    const timeDiffLabel = ` (${hour} hr ${minute} min)`;
+    label += timeDiffLabel;
   }
 
   return label;
