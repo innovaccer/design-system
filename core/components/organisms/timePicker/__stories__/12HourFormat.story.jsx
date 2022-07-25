@@ -19,6 +19,7 @@ export const TimePicker12HourFormat = () => {
         showDuration={true}
         onChange={onChangeHandler}
         disabledSlotList={['08:00 AM', '02:00 PM']}
+        noResultMessage="Invalid Time"
       />
     </div>
   );
@@ -39,6 +40,7 @@ const customCode = `() => {
         showDuration={true}
         onChange={onChangeHandler}
         disabledSlotList={['08:00 AM', '02:00 PM']}
+        noResultMessage="Invalid Time"
       />
     </div>
   );

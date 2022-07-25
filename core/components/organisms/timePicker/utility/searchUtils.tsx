@@ -239,32 +239,29 @@ export const getSearchIndex = (optionList: string[], searchTerm: string) => {
   return searchIndex;
 };
 
+/**
+ * Checks if parameters contains a number
+ * @param searchTerm
+ * @returns true if term contains a number
+ */
+const isValidSearchTerm = (searchTerm: string) => {
+  return /\d/.test(searchTerm);
+};
+
 const getValueFromOptionList = (optionList: OptionSchema[]) => {
   const list = optionList.map((option: any) => option.value);
   return list;
 };
 
 const getSearchValueIndex = (options: OptionSchema[], searchTerm: string): number => {
+  if (!isValidSearchTerm(searchTerm)) {
+    // Search Term is valid if it contains number
+    return -1;
+  }
+
   const optionList = getValueFromOptionList(options);
   const searchIndex = getSearchIndex(optionList, searchTerm);
   return searchIndex;
-
-  // const result: [] = [];
-  // if (searchIndex === -1) return result; // if no option matches search term
-
-  // const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
-  // const targetOption = dropdownOptionList[searchIndex + 1] as HTMLDivElement;
-  // console.log('targetOption', targetOption, dropdownOptionList);
-  // const activeOptionClassName = 'Option--active';
-
-  // remove class from previous selected option
-  // dropdownOptionList.forEach((i) => i.classList.remove(activeOptionClassName));
-
-  // add active class to current target option
-  // targetOption.classList.add(activeOptionClassName);
-  // if (targetOption) {
-  //   targetOption.scrollIntoView({ block: 'center' });
-  // }
 };
 
 export const getScrollIndex = (dropdownOptionList: OptionSchema[], searchTerm: string): number => {
@@ -274,7 +271,6 @@ export const getScrollIndex = (dropdownOptionList: OptionSchema[], searchTerm: s
     const optionList = getValueFromOptionList(dropdownOptionList);
 
     const currTimeIndex = findClosestTimeIndex(optionList, currTime);
-    console.log('currTimeIndex', currTimeIndex, currTime);
     return currTimeIndex;
   }
 
