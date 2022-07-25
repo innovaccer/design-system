@@ -62,7 +62,7 @@ export interface TimePickerDropdownProps {
   /**
    * Callback function which is called when options are selected from dropdown.
    */
-  onChange: (selected: any[] | any, name?: string | number) => void;
+  onChange?: (selected: any[] | any, name?: string | number) => void;
 }
 
 export const TimePickerAsDropdown = (props: TimePickerDropdownProps) => {

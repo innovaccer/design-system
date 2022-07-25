@@ -1,22 +1,17 @@
 import * as React from 'react';
-import TimePickerWithFuzzySearch, { TimePickerDropdownProps } from './TimePickerAsDropdown';
+import TimePickerAsDropdown, { TimePickerDropdownProps } from './TimePickerAsDropdown';
 import TimePickerAsInput, { TimePickerInputProps } from './TimePickerAsInput';
-// import { Utils } from '@/index';
 
 export type TimePickerProps = TimePickerInputProps & TimePickerDropdownProps;
 
 export const TimePicker = (props: TimePickerProps) => {
-  return props.withSearch ? <TimePickerWithFuzzySearch {...props} /> : <TimePickerAsInput {...props} />;
+  return props.withSearch ? <TimePickerAsDropdown {...props} /> : <TimePickerAsInput {...props} />;
 };
 
-// TimePicker.defaultProps = {
-//   inputFormat: 'hh:mm AM',
-//   outputFormat: 'hh:mm AM',
-//   inputOptions: {},
-//   validators: [Utils.validators.time],
-//   timeFormat: '12-Hour',
-//   interval: 15,
-// };
+TimePicker.defaultProps = {
+  ...TimePickerAsInput.defaultProps,
+  ...TimePickerAsDropdown.defaultProps,
+};
 
 TimePicker.displayName = 'TimePicker';
 export default TimePicker;
