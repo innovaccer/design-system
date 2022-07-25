@@ -6,10 +6,6 @@ import { TimePickerAsInput } from '../TimePickerAsInput';
 
 // CSF format story
 export const TimePicker12HourFormat = () => {
-  const inputFormat = 'hh:mm AM';
-
-  const outputFormat = 'hh:mm';
-
   const onChangeHandler = (props) => {
     return action(`updated time: ${props}`)();
   };
@@ -17,13 +13,12 @@ export const TimePicker12HourFormat = () => {
   return (
     <div className="w-25">
       <TimePicker
-        key={`${inputFormat}${outputFormat}`}
         withSearch={true}
         startTime="07:00 AM"
         endTime="11:59 PM"
-        showTimeDifference={true}
+        showDuration={true}
         onChange={onChangeHandler}
-        disabledOptionList={['11:00 AM', '02:00 PM']}
+        disabledSlotList={['08:00 AM', '02:00 PM']}
       />
     </div>
   );
@@ -41,9 +36,9 @@ const customCode = `() => {
         withSearch={true}
         startTime="07:00 AM"
         endTime="11:59 PM"
-        showTimeDifference={true}
+        showDuration={true}
         onChange={onChangeHandler}
-        disabledOptionList={['11:00 AM', '02:00 PM']}
+        disabledSlotList={['08:00 AM', '02:00 PM']}
       />
     </div>
   );
