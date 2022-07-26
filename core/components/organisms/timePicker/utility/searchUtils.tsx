@@ -245,12 +245,16 @@ export const getSearchIndex = (optionList: string[], searchTerm: string) => {
 };
 
 /**
- * Checks if parameters contains a number
  * @param searchTerm
- * @returns true if term contains a number
+ * @returns count number of digits present inside search term
  */
+const countNumberInStr = (searchTerm: string) => {
+  return searchTerm.match(/\d/g)?.length || 0;
+};
+
 const isValidSearchTerm = (searchTerm: string) => {
-  return /\d/.test(searchTerm);
+  const totalDigit = countNumberInStr(searchTerm);
+  return totalDigit > 0 && totalDigit < 5;
 };
 
 const getValueFromOptionList = (optionList: OptionSchema[]) => {

@@ -8,7 +8,7 @@ type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
   count: number;
   options: OptionSchema[];
-  scrollToIndex: number;
+  scrollToIndex?: number;
 }>;
 
 export type TimeFormat = '12-Hour' | '24-Hour';

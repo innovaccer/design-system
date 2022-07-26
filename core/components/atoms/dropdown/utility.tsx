@@ -56,7 +56,7 @@ export const scrollToOptionIndex = (scrollIndex: number) => {
   const dropdownOptionList = document.querySelectorAll('.Dropdown-items');
   const targetOption = dropdownOptionList[scrollIndex] as HTMLDivElement;
   console.log('scroll called', targetOption);
-  targetOption && targetOption.scrollIntoView({ block: 'center' });
+  targetOption && targetOption.scrollIntoView && targetOption.scrollIntoView({ block: 'center' });
 };
 
 // export const scrollToInitialOption = (scrollIndex: number) => {
