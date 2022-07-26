@@ -6,9 +6,9 @@ export const image = () => {
     <Icon size={50}>
       <img
         alt="Innovaccer logo"
-        src="https://innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg"
-        width="150"
-        height="150"
+        src="https://design.innovaccer.com/images/withoutType.png"
+        width="50"
+        height="50"
       />
     </Icon>
   );
