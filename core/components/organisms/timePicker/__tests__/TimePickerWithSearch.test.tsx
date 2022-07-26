@@ -1,12 +1,16 @@
 import * as React from 'react';
 import { TimePicker } from '@/index';
 import { render, fireEvent, waitFor } from '@testing-library/react';
+import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { TimePickerProps as Props } from '@/index.type';
 
 const optionID = 'DesignSystem-DropdownOption--DEFAULT';
 const trigger = 'DesignSystem-DropdownTrigger';
 const startTime = '05:00 AM';
 const endTime = '11:00 PM';
 const FunctionValue = jest.fn();
+const booleanValue = [true, false];
+const timeFormat = ['12-Hour', '24-Hour'];
 
 let dateNowSpy: any;
 
@@ -33,6 +37,27 @@ const fetchOption = () => {
     }, 1000);
   });
 };
+
+const testFunc = (props: Record<string, any>): void => {
+  const attr = filterUndefined(props) as Props;
+
+  it(testMessageHelper(attr), () => {
+    const { baseElement } = render(<TimePicker withSearch={true} {...attr} />);
+    expect(baseElement).toMatchSnapshot();
+  });
+};
+
+describe('TimePicker component snapshots', () => {
+  describe('renders snapshot for all props', () => {
+    const mapper: Record<string, any> = {
+      startTime: valueHelper(startTime, { required: true, iterate: false }),
+      endTime: valueHelper(endTime, { required: true, iterate: false }),
+      showDuration: valueHelper(booleanValue, { required: true, iterate: true }),
+      timeFormat: valueHelper(timeFormat, { required: true, iterate: true }),
+    };
+    testHelper(mapper, testFunc);
+  });
+});
 
 describe('TimePicker option list in 12 hour format', () => {
   it('check list when no start time & end time is given', async () => {
