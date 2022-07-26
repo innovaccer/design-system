@@ -41,8 +41,21 @@ export interface TimePickerDropdownProps {
    * fetchOptionsFunction: (searchTerm: string) => Promise<{
    *      searchTerm?: string;
    *      count: number,
-   *      option: Option[],
+   *      options: OptionSchema[];
+   *      scrollToIndex?: number;
    * }>;
+   * <br/> <br/>
+   *
+   * OptionSchema: {
+   *   label: string;
+   *   value: React.ReactText;
+   *   icon?: string;
+   *   subInfo?: string | [MetaListProps]
+   *   optionType?: OptionType;
+   *   selected?: boolean;
+   *   disabled?: boolean;
+   *   group?: string;
+   * }
    * </pre>
    *
    */
