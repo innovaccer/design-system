@@ -248,7 +248,8 @@ const DropdownList = (props: OptionsProps) => {
       setPopoverStyle(popperWrapperStyle);
       // scrolls to specific option index when dropdown opens
       console.log('selected', tempSelected);
-      if (scrollIndex && tempSelected.length === 0) {
+      // if (scrollIndex && tempSelected.length === 0) {
+      if (scrollIndex) {
         setTimeout(() => {
           scrollToOptionIndex(scrollIndex);
         }, 100);
