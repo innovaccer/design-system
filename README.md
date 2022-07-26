@@ -178,6 +178,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/atifzaidi92"><img src="https://avatars.githubusercontent.com/u/54103064?v=4?s=100" width="100px;" alt=""/><br /><sub><b>atifzaidi92</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=atifzaidi92" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Sumit2399"><img src="https://avatars.githubusercontent.com/u/66456021?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sumit Dhyani</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=Sumit2399" title="Code">💻</a></td>
     <td align="center"><a href="https://tanmay-portfolio.herokuapp.com/"><img src="https://avatars.githubusercontent.com/u/36269283?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tanmay Sharma</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=927tanmay" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/amanverma"><img src="https://avatars.githubusercontent.com/u/4127481?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Aman Verma</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=amanverma" title="Tests">⚠️</a></td>
   </tr>
 </table>
 
