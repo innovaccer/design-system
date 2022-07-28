@@ -186,6 +186,7 @@ const convertTimeToOptionList = (
       label: getCustomLabel(time, timeFormat, showDuration, referenceTime),
       value: time,
       disabled: disabledSlotList && isOptionDisabled(time, timeFormat, disabledSlotList),
+      selected: false,
     };
   });
   return optionList;

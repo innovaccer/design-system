@@ -3,6 +3,7 @@ import { Dropdown } from '@/index';
 import { getScrollIndex } from './utility/searchUtils';
 import { OptionSchema } from '@/components/atoms/dropdown/option';
 import { getDropdownOptionList, isFormat12Hour, convert24To12HourFormat } from './utility/timePickerUtility';
+import { scrollToOptionIndex } from '@/components/atoms/dropdown/utility';
 
 type fetchOptionsFunction = (searchTerm: string) => Promise<{
   searchTerm?: string;
@@ -78,26 +79,52 @@ export interface TimePickerDropdownProps {
   onChange?: (selected: any[] | any, name?: string | number) => void;
 }
 
+let scrollFlag = false;
+let selectedList: OptionSchema[] = [];
+
 export const TimePickerAsDropdown = (props: TimePickerDropdownProps) => {
   const { onChange, timeFormat, fetchTimeOptions, noResultMessage } = props;
 
   const [tabIndex, setTabIndex] = React.useState(0);
+  const [open, setOpen] = React.useState(false);
 
   const dropdownOptionList = getDropdownOptionList(props);
 
+  React.useEffect(() => {
+    if (open && scrollFlag) {
+      setTimeout(() => {
+        scrollToOptionIndex(tabIndex + 1);
+      }, 100);
+    }
+  }, [open, scrollFlag]);
+
   const onChangeHandler = (props: string) => {
     let time = props;
+    scrollFlag = true;
+
     if (isFormat12Hour(timeFormat)) {
       time = convert24To12HourFormat(time);
     }
 
+    const index = dropdownOptionList.findIndex((option) => option.value === props);
+    selectedList = [dropdownOptionList[index]];
+    dropdownOptionList[index].selected = true;
+    setTabIndex(index);
     onChange && onChange(time);
   };
 
   const getOptionList = (searchTerm: string) => {
     const indexValue = getScrollIndex(dropdownOptionList, searchTerm);
 
-    setTabIndex(indexValue);
+    scrollFlag = false;
+
+    if (searchTerm === '' && selectedList.length > 0) {
+      const selectedIndex = dropdownOptionList.findIndex((option) => option.value === selectedList[0].value);
+      setTabIndex(selectedIndex);
+      scrollFlag = true;
+    } else {
+      setTabIndex(indexValue);
+    }
 
     return Promise.resolve({
       options: indexValue === -1 ? [] : dropdownOptionList,
@@ -107,9 +134,9 @@ export const TimePickerAsDropdown = (props: TimePickerDropdownProps) => {
     });
   };
 
-  const fetchOptionList = () => {
+  const fetchOptionList = React.useCallback(() => {
     return fetchTimeOptions ? fetchTimeOptions : getOptionList;
-  };
+  }, []);
 
   return (
     <Dropdown
@@ -122,6 +149,10 @@ export const TimePickerAsDropdown = (props: TimePickerDropdownProps) => {
       fetchOptions={fetchOptionList()}
       noResultMessage={noResultMessage}
       staticLimit={dropdownOptionList.length}
+      open={open}
+      onPopperToggle={() => {
+        setOpen(!open);
+      }}
     />
   );
 };
