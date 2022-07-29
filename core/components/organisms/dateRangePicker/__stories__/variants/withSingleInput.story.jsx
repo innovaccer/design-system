@@ -28,6 +28,8 @@ export const withSingleInput = () => {
 
   const monthNav = -1;
 
+  const open = false;
+
   const attr = {};
   if (disabledBefore) attr.disabledBefore = disabledBefore;
   if (disabledAfter) attr.disabledAfter = disabledAfter;
@@ -55,6 +57,7 @@ export const withSingleInput = () => {
           label: 'Date',
         }}
         {...attr}
+        open={open}
       />
     </div>
   );
