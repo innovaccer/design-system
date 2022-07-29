@@ -94,7 +94,7 @@ export const TimePickerAsDropdown = (props: TimePickerDropdownProps) => {
     if (open && scrollFlag) {
       setTimeout(() => {
         scrollToOptionIndex(tabIndex + 1);
-      }, 100);
+      }, 0);
     }
   }, [open, scrollFlag]);
 
