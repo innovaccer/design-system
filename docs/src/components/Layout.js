@@ -348,7 +348,7 @@ const Layout = ({
   };
 
   const Colors = ({ children, colorData, ...rest }) => {
-    return <ProductColors colorData={colorData} toggleToast={toggleToast} />;
+    return <ProductColors colorData={colorData} />;
   };
 
   const DSComponents = {
