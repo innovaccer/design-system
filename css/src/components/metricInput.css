@@ -34,6 +34,7 @@
 .MetricInput:focus-within {
   background: var(--white);
   border-color: var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .MetricInput:focus-within .MetricInput-icon {
