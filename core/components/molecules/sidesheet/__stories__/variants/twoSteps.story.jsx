@@ -77,7 +77,9 @@ export const twoSteps = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
       <Sidesheet {...options}>
         <div className={animate ? 'fade-in' : ''} onAnimationEnd={() => setAnimate(false)}>
           <Heading size="s">{`Page ${page}`}</Heading>
@@ -96,7 +98,7 @@ const customCode = `() => {
   const [animate, setAnimate] = React.useState(true);
 
   const onClose = () => {
-    setOpen(!open);
+    setOpen(false);
   };
 
   React.useEffect(() => {
