@@ -78,7 +78,7 @@ export const withTabs = () => {
     meta: <MetaList list={[{ label: 'Meta data' }]} seperator={true} />,
   };
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="w-100 py-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
@@ -174,7 +174,7 @@ const customCode = `() => {
     )
   };
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="w-100 py-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );

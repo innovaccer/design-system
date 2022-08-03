@@ -51,7 +51,7 @@ export const withStepper = () => {
   };
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="w-100 py-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
@@ -100,7 +100,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="w-100 py-6 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
