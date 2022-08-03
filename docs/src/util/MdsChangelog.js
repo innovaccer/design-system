@@ -5,7 +5,7 @@ export default function MdsChangelog() {
     allMdx: { edges },
   } = useStaticQuery(graphql`
     query MDS_CHANGELOG {
-      allMdx(filter: {frontmatter: {title: {eq: "Release notes"}}}) {
+      allMdx(filter: { frontmatter: { title: { eq: "Release notes" } } }) {
         edges {
           node {
             internal {
@@ -17,7 +17,7 @@ export default function MdsChangelog() {
           }
         }
       }
-    }  
+    }
   `);
 
   const items = edges.map(({ node }) => node);
@@ -25,18 +25,14 @@ export default function MdsChangelog() {
   const record = {
     version: '',
     releaseDate: '',
-    updatesList: []
-  }
+    updatesList: [],
+  };
 
   if (items.length > 0) {
-
     const metadata = items[0].headings[0].value;
 
     record.version = metadata.substring(0, metadata.indexOf('('));
-    record.releaseDate = metadata.substring(
-      metadata.indexOf("(") + 1,
-      metadata.lastIndexOf(")")
-    );
+    record.releaseDate = metadata.substring(metadata.indexOf('(') + 1, metadata.lastIndexOf(')'));
 
     const htmlContent = items[0].internal.content;
     const latestUpdate = htmlContent.split('\n----')[0];
@@ -49,7 +45,6 @@ export default function MdsChangelog() {
     updateList
       .filter((item) => item.includes(listSeparator))
       .map((item) => record.updatesList.push(item.split(listSeparator)));
-
   }
   return record;
 }

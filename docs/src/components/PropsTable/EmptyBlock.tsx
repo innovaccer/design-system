@@ -3,8 +3,7 @@ import { styled } from '@storybook/theming';
 import { withReset } from './Shared';
 
 const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
-  backgroundColor:
-    theme.base === 'light' ? 'rgba(0,0,0,.01)' : 'rgba(255,255,255,.01)',
+  backgroundColor: theme.base === 'light' ? 'rgba(0,0,0,.01)' : 'rgba(255,255,255,.01)',
   borderRadius: theme.appBorderRadius,
   border: `1px dashed ${theme.appBorderColor}`,
   display: 'flex',
@@ -17,6 +16,4 @@ const Wrapper = styled.div<{}>(withReset, ({ theme }) => ({
   // fontSize: theme.typography.size.s2,
 }));
 
-export const EmptyBlock = (props: any) => (
-  <Wrapper {...props} className="docblock-emptyblock" />
-);
+export const EmptyBlock = (props: any) => <Wrapper {...props} className="docblock-emptyblock" />;

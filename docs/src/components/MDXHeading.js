@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Heading, Icon, Tooltip } from "@innovaccer/design-system";
-import { copyMessage, copyMessageSuccess } from "../util/constants.js";
+import React, { useState } from 'react';
+import { Heading, Icon, Tooltip } from '@innovaccer/design-system';
+import { copyMessage, copyMessageSuccess } from '../util/constants.js';
 
 const copyToClipboard = (str) => {
   navigator.clipboard.writeText(str);
@@ -23,22 +23,20 @@ const MDXHeading = ({ size, headingInfo }) => {
 
     if (currURL.includes(id)) {
       copyToClipboard(currURL);
-    }
-    else if (currURL.includes("#")) {
-      copyToClipboard(currURL.slice(0, currURL.indexOf("#") + 1) + id);
-    }
-    else {
-      copyToClipboard(currURL + "#" + id);
+    } else if (currURL.includes('#')) {
+      copyToClipboard(currURL.slice(0, currURL.indexOf('#') + 1) + id);
+    } else {
+      copyToClipboard(currURL + '#' + id);
     }
     setTooltipActive(true);
     setTooltipName(copyMessageSuccess);
   };
 
   const sizeMarginMapper = {
-    s: "mt-4",
-    m: "mt-4",
-    l: "mt-6"
-  }
+    s: 'mt-4',
+    m: 'mt-4',
+    l: 'mt-6',
+  };
 
   return (
     <div
@@ -47,11 +45,7 @@ const MDXHeading = ({ size, headingInfo }) => {
       onMouseLeave={onMouseLeaveHandler}
       className={`d-inline-flex w-100 align-items-center ${sizeMarginMapper[size]}`}
     >
-      <Heading
-        className="mr-4"
-        size={size}
-        {...headingInfo}
-      />
+      <Heading className="mr-4" size={size} {...headingInfo} />
       <div className="cursor-pointer d-flex">
         {isHovered && (
           <Tooltip

@@ -19,10 +19,7 @@ const reducer = (state, action) => {
   }
 };
 export const NavContextProvider = ({ children }) => {
-  const [
-    { leftNavIsOpen, searchIsOpen, switcherIsOpen, leftNavScrollOffset },
-    dispatch,
-  ] = useReducer(reducer, {
+  const [{ leftNavIsOpen, searchIsOpen, switcherIsOpen, leftNavScrollOffset }, dispatch] = useReducer(reducer, {
     leftNavIsOpen: false,
     searchIsOpen: false,
     switcherIsOpen: false,

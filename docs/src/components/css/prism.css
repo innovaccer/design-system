@@ -32,7 +32,7 @@
   justify-content: space-between;
 }
 
-code[class*="language-"] {
+code[class*='language-'] {
   background: transparent !important;
   white-space: pre-wrap !important;
 }

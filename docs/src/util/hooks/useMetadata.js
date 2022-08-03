@@ -8,7 +8,7 @@ const useMetadata = () => {
           title
           description
           keywords
-          isSearchEnabled          
+          isSearchEnabled
           lang
         }
       }

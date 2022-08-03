@@ -112,10 +112,7 @@ export const TableWrapper = styled.table<{
           ...(!inAddonPanel && {
             borderColor:
               theme.base === 'light'
-                ? transparentize(
-                    0.035,
-                    theme.appBorderColor
-                  )
+                ? transparentize(0.035, theme.appBorderColor)
                 : opacify(0.05, theme.appBorderColor),
           }),
         },
@@ -146,19 +143,13 @@ const ResetButton = styled.button(({ theme }) => ({
   userSelect: 'none',
   margin: 0,
 
-  backgroundColor:
-    theme.base === 'light' ? '#EAF3FC' : theme.color.border,
+  backgroundColor: theme.base === 'light' ? '#EAF3FC' : theme.color.border,
   boxShadow:
-    theme.base === 'light'
-      ? `${theme.color.border} 0 0 0 1px inset`
-      : `${theme.color.darker}  0 0 0 1px inset`,
+    theme.base === 'light' ? `${theme.color.border} 0 0 0 1px inset` : `${theme.color.darker}  0 0 0 1px inset`,
   color: theme.color.secondary,
 
   '&:hover': {
-    background:
-      theme.base === 'light'
-        ? darken(0.03, '#EAF3FC')
-        : opacify(0.1, theme.color.border),
+    background: theme.base === 'light' ? darken(0.03, '#EAF3FC') : opacify(0.1, theme.color.border),
   },
 
   '&:focus': {
@@ -187,12 +178,9 @@ export type SortType = 'alpha' | 'requiredFirst' | 'none';
 type SortFn = (a: ArgType, b: ArgType) => number;
 
 const sortFns: Record<SortType, SortFn | null> = {
-  alpha: (a: ArgType, b: ArgType) =>
-    a.name.localeCompare(b.name),
+  alpha: (a: ArgType, b: ArgType) => a.name.localeCompare(b.name),
   requiredFirst: (a: ArgType, b: ArgType) =>
-    Number(!!b.type?.required) -
-      Number(!!a.type?.required) ||
-    a.name.localeCompare(b.name),
+    Number(!!b.type?.required) - Number(!!a.type?.required) || a.name.localeCompare(b.name),
   none: undefined,
 };
 export interface ArgsTableRowProps {
@@ -210,9 +198,7 @@ export interface ArgsTableErrorProps {
   error: ArgsTableError;
 }
 
-export type ArgsTableProps =
-  | ArgsTableRowProps
-  | ArgsTableErrorProps;
+export type ArgsTableProps = ArgsTableRowProps | ArgsTableErrorProps;
 
 type Rows = ArgType[];
 type Subsection = Rows;
@@ -244,19 +230,15 @@ const groupRows = (rows: ArgType, sort: SortType) => {
       if (!subcategory) {
         section.ungrouped.push({ key, ...row });
       } else {
-        const subsection =
-          section.subsections[subcategory] || [];
+        const subsection = section.subsections[subcategory] || [];
         subsection.push({ key, ...row });
         section.subsections[subcategory] = subsection;
       }
       sections.sections[category] = section;
     } else if (subcategory) {
-      const subsection =
-        sections.ungroupedSubsections[subcategory] || [];
+      const subsection = sections.ungroupedSubsections[subcategory] || [];
       subsection.push({ key, ...row });
-      sections.ungroupedSubsections[
-        subcategory
-      ] = subsection;
+      sections.ungroupedSubsections[subcategory] = subsection;
     } else {
       sections.ungrouped.push({ key, ...row });
     }
@@ -265,13 +247,9 @@ const groupRows = (rows: ArgType, sort: SortType) => {
   // apply sort
   const sortFn = sortFns[sort];
 
-  const sortSubsection = (
-    record: Record<string, Subsection>
-  ) => {
+  const sortSubsection = (record: Record<string, Subsection>) => {
     if (!sortFn) return record;
-    return Object.keys(record).reduce<
-      Record<string, Subsection>
-    >(
+    return Object.keys(record).reduce<Record<string, Subsection>>(
       (acc, cur) => ({
         ...acc,
         [cur]: record[cur].sort(sortFn),
@@ -282,21 +260,13 @@ const groupRows = (rows: ArgType, sort: SortType) => {
 
   const sorted = {
     ungrouped: sections.ungrouped.sort(sortFn),
-    ungroupedSubsections: sortSubsection(
-      sections.ungroupedSubsections
-    ),
-    sections: Object.keys(sections.sections).reduce<
-      Record<string, Section>
-    >(
+    ungroupedSubsections: sortSubsection(sections.ungroupedSubsections),
+    sections: Object.keys(sections.sections).reduce<Record<string, Section>>(
       (acc, cur) => ({
         ...acc,
         [cur]: {
-          ungrouped: sections.sections[cur].ungrouped.sort(
-            sortFn
-          ),
-          subsections: sortSubsection(
-            sections.sections[cur].subsections
-          ),
+          ungrouped: sections.sections[cur].ungrouped.sort(sortFn),
+          subsections: sortSubsection(sections.sections[cur].subsections),
         },
       }),
       {}
@@ -343,18 +313,13 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
     Object.entries(groups.sections).length === 0 &&
     Object.entries(groups.ungroupedSubsections).length === 0
   ) {
-    return (
-      <EmptyBlock>
-        No inputs found for this component.&nbsp;
-      </EmptyBlock>
-    );
+    return <EmptyBlock>No inputs found for this component.&nbsp;</EmptyBlock>;
   }
 
   let colSpan = 1;
   if (updateArgs) colSpan += 1;
   if (!compact) colSpan += 2;
-  const expandable =
-    Object.keys(groups.sections).length > 0;
+  const expandable = Object.keys(groups.sections).length > 0;
 
   const common = {
     updateArgs,
@@ -363,10 +328,7 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
     initialExpandedArgs,
   };
   return (
-    <TableWrapper
-      {...{ compact, inAddonPanel }}
-      className="docblock-argstable"
-    >
+    <TableWrapper {...{ compact, inAddonPanel }} className="docblock-argstable">
       <thead className="docblock-argstable-head">
         <tr>
           <th>Name</th>
@@ -375,13 +337,7 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
           {updateArgs ? (
             <th>
               <ControlHeadingWrapper>
-                Control{' '}
-                {resetArgs && (
-                  <ResetButton
-                    onClick={() => resetArgs()}
-                    title="Reset controls"
-                  ></ResetButton>
-                )}
+                Control {resetArgs && <ResetButton onClick={() => resetArgs()} title="Reset controls"></ResetButton>}
               </ControlHeadingWrapper>
             </th>
           ) : null}
@@ -389,74 +345,31 @@ export const ArgsTable: FC<ArgsTableProps> = (props) => {
       </thead>
       <tbody className="docblock-argstable-body">
         {groups.ungrouped.map((row) => (
-          <ArgRow
-            key={row.key}
-            row={row}
-            arg={args && args[row.key]}
-            {...common}
-          />
+          <ArgRow key={row.key} row={row} arg={args && args[row.key]} {...common} />
         ))}
 
-        {Object.entries(groups.ungroupedSubsections).map(
-          ([subcategory, subsection]) => (
-            <SectionRow
-              key={subcategory}
-              label={subcategory}
-              level="subsection"
-              colSpan={colSpan}
-            >
-              {subsection.map((row) => (
-                <ArgRow
-                  key={row.key}
-                  row={row}
-                  arg={args && args[row.key]}
-                  expandable={expandable}
-                  {...common}
-                />
-              ))}
-            </SectionRow>
-          )
-        )}
+        {Object.entries(groups.ungroupedSubsections).map(([subcategory, subsection]) => (
+          <SectionRow key={subcategory} label={subcategory} level="subsection" colSpan={colSpan}>
+            {subsection.map((row) => (
+              <ArgRow key={row.key} row={row} arg={args && args[row.key]} expandable={expandable} {...common} />
+            ))}
+          </SectionRow>
+        ))}
 
-        {Object.entries(groups.sections).map(
-          ([category, section]) => (
-            <SectionRow
-              key={category}
-              label={category}
-              level="section"
-              colSpan={colSpan}
-            >
-              {section.ungrouped.map((row) => (
-                <ArgRow
-                  key={row.key}
-                  row={row}
-                  arg={args && args[row.key]}
-                  {...common}
-                />
-              ))}
-              {Object.entries(section.subsections).map(
-                ([subcategory, subsection]) => (
-                  <SectionRow
-                    key={subcategory}
-                    label={subcategory}
-                    level="subsection"
-                    colSpan={colSpan}
-                  >
-                    {subsection.map((row) => (
-                      <ArgRow
-                        key={row.key}
-                        row={row}
-                        arg={args && args[row.key]}
-                        expandable={expandable}
-                        {...common}
-                      />
-                    ))}
-                  </SectionRow>
-                )
-              )}
-            </SectionRow>
-          )
-        )}
+        {Object.entries(groups.sections).map(([category, section]) => (
+          <SectionRow key={category} label={category} level="section" colSpan={colSpan}>
+            {section.ungrouped.map((row) => (
+              <ArgRow key={row.key} row={row} arg={args && args[row.key]} {...common} />
+            ))}
+            {Object.entries(section.subsections).map(([subcategory, subsection]) => (
+              <SectionRow key={subcategory} label={subcategory} level="subsection" colSpan={colSpan}>
+                {subsection.map((row) => (
+                  <ArgRow key={row.key} row={row} arg={args && args[row.key]} expandable={expandable} {...common} />
+                ))}
+              </SectionRow>
+            ))}
+          </SectionRow>
+        ))}
       </tbody>
     </TableWrapper>
   );

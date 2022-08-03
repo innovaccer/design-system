@@ -1,13 +1,11 @@
-import React from "react";
+import React from 'react';
 import Header from '../Header';
 
-export default ({relativePagePath, children }) => {
+export default ({ relativePagePath, children }) => {
   return (
     <div>
-      <Header
-        relativePagePath={relativePagePath}
-      />
+      <Header relativePagePath={relativePagePath} />
       {children}
     </div>
   );
-} 
+};
