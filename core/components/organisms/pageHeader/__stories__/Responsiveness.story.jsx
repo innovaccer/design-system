@@ -75,7 +75,7 @@ export const Responsiveness = () => {
   const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="w-100 py-6 bg-secondary-lightest">
       <PageHeader
         navigationPosition="bottom"
         title="Pac Follow-Up Protocol"
@@ -174,7 +174,7 @@ const customCode = `() => {
   );
 
   return (
-    <div className="p-6 bg-secondary-lightest">
+    <div className="py-6 bg-secondary-lightest">
       <PageHeader
         navigationPosition="bottom"
         title="Pac Follow-Up Protocol"
