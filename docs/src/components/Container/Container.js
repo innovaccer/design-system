@@ -1,23 +1,9 @@
 import React from 'react';
-import {
-  Paragraph,
-  Heading,
-  Tabs,
-  Tab,
-  Button,
-} from '@innovaccer/design-system';
+import { Paragraph, Heading, Tabs, Tab, Button } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
 import { useLogoItems } from '../../util/Logos';
 
-const Container = ({
-  children,
-  pageTitle,
-  tabs,
-  relativePagePath,
-  pageDescription,
-  logos,
-  frontmatter
-}) => {
+const Container = ({ children, pageTitle, tabs, relativePagePath, pageDescription, logos, frontmatter }) => {
   const nodes = useLogoItems();
   const page = relativePagePath.split('/');
   const pageName = page[page.length - 1].split('.')[0];
@@ -36,31 +22,22 @@ const Container = ({
   };
 
   const activeTab =
-    tabsList && tabsList.length
-      ? tabsList.findIndex(
-        (tab, index) =>
-          getTabSlug(index) === pageName.toLowerCase()
-      )
-      : '';
+    tabsList && tabsList.length ? tabsList.findIndex((tab, index) => getTabSlug(index) === pageName.toLowerCase()) : '';
 
-  const [activeIndex, setActiveIndex] = React.useState(
-    activeTab || 0
-  );
+  const [activeIndex, setActiveIndex] = React.useState(activeTab || 0);
 
   const onTabChangeHandler = (tabIndex) => {
     const nextTabSlug = getTabSlug(tabIndex);
     const pagePath = relativePagePath.split('/');
     const pages = pagePath.slice(0, pagePath.length - 1);
     const path = `${pages.join('/')}/${nextTabSlug}/`;
-    navigate(path, { state: { animation: false }, });
+    navigate(path, { state: { animation: false } });
     setActiveIndex(tabIndex);
   };
 
   const downloadAllLogos = () => {
     const images = logoList.map((logo) => {
-      const filteredGatsbyImage = nodes.filter((img) =>
-        img.fluid.src.includes(logo)
-      );
+      const filteredGatsbyImage = nodes.filter((img) => img.fluid.src.includes(logo));
       if (filteredGatsbyImage.length) {
         return {
           name: logo,
@@ -80,26 +57,18 @@ const Container = ({
 
   return (
     <>
-      <Heading size='xl' className='my-5'>
+      <Heading size="xl" className="my-5">
         {isSiblingTab ? frontmatter?.title : pageTitle}
       </Heading>
       {logoList && logoList.length && (
-        <Button
-          className='download-logos'
-          icon='download'
-          onClick={downloadAllLogos}
-        >
+        <Button className="download-logos" icon="download" onClick={downloadAllLogos}>
           Download all
         </Button>
       )}
-      <Paragraph className='mb-6'>{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
+      <Paragraph className="mb-6">{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
       {tabsList && tabsList.length && (
         <>
-          <Tabs
-            activeIndex={activeIndex}
-            onTabChange={onTabChangeHandler}
-            className='mb-6 '
-          >
+          <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6 ">
             {tabsList.map((tab, index) => (
               <Tab label={tab} key={index}></Tab>
             ))}

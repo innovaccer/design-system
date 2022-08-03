@@ -80,28 +80,21 @@ export const SectionRow: FC<SectionRowProps> = ({
   colSpan = 3,
 }) => {
   const [expanded, setExpanded] = useState(initialExpanded);
-  const Level =
-    level === 'subsection' ? Subsection : Section;
+  const Level = level === 'subsection' ? Subsection : Section;
   // @ts-ignore
   const itemCount = children?.length || 0;
-  const caption =
-    level === 'subsection'
-      ? `${itemCount} item${itemCount !== 1 ? 's' : ''}`
-      : '';
+  const caption = level === 'subsection' ? `${itemCount} item${itemCount !== 1 ? 's' : ''}` : '';
   const icon = expanded ? 'arrowdown' : 'arrowright';
 
-  const helperText = `${expanded ? 'Hide' : 'Side'} ${
-    level === 'subsection' ? itemCount : label
-  } item${itemCount !== 1 ? 's' : ''}`;
+  const helperText = `${expanded ? 'Hide' : 'Side'} ${level === 'subsection' ? itemCount : label} item${
+    itemCount !== 1 ? 's' : ''
+  }`;
 
   return (
     <>
       <StyledTr title={helperText}>
         <Level colSpan={1}>
-          <ClickIntercept
-            onClick={(e) => setExpanded(!expanded)}
-            tabIndex={0}
-          >
+          <ClickIntercept onClick={(e) => setExpanded(!expanded)} tabIndex={0}>
             {helperText}
           </ClickIntercept>
           <FlexWrapper>
@@ -110,11 +103,7 @@ export const SectionRow: FC<SectionRowProps> = ({
           </FlexWrapper>
         </Level>
         <StyledTd colSpan={colSpan - 1}>
-          <ClickIntercept
-            onClick={(e) => setExpanded(!expanded)}
-            tabIndex={-1}
-            style={{ outline: 'none' }}
-          >
+          <ClickIntercept onClick={(e) => setExpanded(!expanded)} tabIndex={-1} style={{ outline: 'none' }}>
             {helperText}
           </ClickIntercept>
           {expanded ? null : caption}

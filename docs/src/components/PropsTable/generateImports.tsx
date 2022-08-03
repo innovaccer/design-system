@@ -12,9 +12,7 @@ const generateImports = (str = '', lib = {}, libName: string) => {
       return finalMap;
     }, {});
 
-  return `// import { ${Object.keys(componentsMap).join(
-    ', '
-  )} } from '${libName}';`;
+  return `// import { ${Object.keys(componentsMap).join(', ')} } from '${libName}';`;
 };
 
 export default generateImports;

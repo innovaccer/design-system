@@ -13,27 +13,21 @@ const Header = ({ relativePagePath }) => {
     const pagePath = relativePagePath.split('/');
     if (pagePath[1] === label.toLowerCase() || pagePath[2] === label.toLowerCase()) return true;
     return false;
-  }
+  };
 
   const onClickHandler = () => {
     localStorage.removeItem('leftNavScrollPosition');
-  }
+  };
 
   return (
-    <div
-      id="mainHeader"
-      ref={ref}
-      className='header bg-light d-flex w-100 position-sticky px-5'
-    >
-      <div className='d-flex justify-content-start align-items-center'>
-        <Link to='/' className='HeaderLink ml-0'>
+    <div id="mainHeader" ref={ref} className="header bg-light d-flex w-100 position-sticky px-5">
+      <div className="d-flex justify-content-start align-items-center">
+        <Link to="/" className="HeaderLink ml-0">
           <img src="/images/headerLogo.png" width="290px" height="28px" />
         </Link>
         <div>
           {items.map(({ link, label }, index) => {
-            const isExternal =
-              link.startsWith('http://') ||
-              link.startsWith('https://');
+            const isExternal = link.startsWith('http://') || link.startsWith('https://');
 
             if (isExternal) {
               return (
@@ -46,17 +40,14 @@ const Header = ({ relativePagePath }) => {
                 >
                   {label}
                 </MDSLink>
-              )
+              );
             }
             return (
               <Link
                 to={link}
                 key={index}
                 onClick={onClickHandler}
-                className={`HeaderLink  ${checkActive(label)
-                  ? 'HeaderLink--active'
-                  : 'HeaderLink--default'
-                  }`}
+                className={`HeaderLink  ${checkActive(label) ? 'HeaderLink--active' : 'HeaderLink--default'}`}
               >
                 {label}
               </Link>

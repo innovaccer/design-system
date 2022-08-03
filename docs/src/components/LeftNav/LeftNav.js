@@ -1,10 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavItems } from '../../util/NavItems';
-import {
-  VerticalNav,
-  Subheading,
-  Button,
-} from '@innovaccer/design-system';
+import { VerticalNav, Subheading, Button } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
 import { MOBILE } from '../../util/constants';
 
@@ -42,7 +38,7 @@ const LeftNav = (props) => {
 
   useEffect(() => {
     const active = isBrowser ? getActiveNavItem() : '';
-    const obj = { link: active }
+    const obj = { link: active };
     setActive(obj);
 
     const ele = document.getElementById('navbar-container');
@@ -52,7 +48,6 @@ const LeftNav = (props) => {
 
     ele.addEventListener('scroll', setPosition(ele.scrollTop));
     return () => ele.removeEventListener('scroll', setPosition(ele.scrollTop));
-
   }, []);
 
   const onClickHandler = (menu) => {
@@ -65,9 +60,7 @@ const LeftNav = (props) => {
       navigate(`/mobile${window.location.pathname}`);
     } else {
       if (window.location.pathname.includes('/mobile')) {
-        navigate(
-          window.location.pathname.replace('/mobile', '')
-        );
+        navigate(window.location.pathname.replace('/mobile', ''));
       }
     }
   };
@@ -83,16 +76,13 @@ const LeftNav = (props) => {
   };
 
   return (
-    <div
-      id="navbar-container"
-      className='h-100 bg-secondary-lightest border-right page-scroll'
-    >
+    <div id="navbar-container" className="h-100 bg-secondary-lightest border-right page-scroll">
       {showMenuButtons && (
-        <div className='d-flex pt-6 pl-6'>
+        <div className="d-flex pt-6 pl-6">
           <Button
-            appearance='basic'
-            size='regular'
-            className='mr-4'
+            appearance="basic"
+            size="regular"
+            className="mr-4"
             onClick={() => handleNavigate()}
             selected={!relativePagePath.includes(MOBILE)}
             expanded={true}
@@ -100,26 +90,20 @@ const LeftNav = (props) => {
             Web
           </Button>
           <Button
-            appearance='basic'
+            appearance="basic"
             onClick={() => handleNavigate(MOBILE)}
             selected={relativePagePath.includes(MOBILE)}
-            className='mr-6'
+            className="mr-6"
             expanded={true}
           >
             Mobile
           </Button>
         </div>
       )}
-      <Subheading className='pl-6 pt-6 pb-3' appearance='subtle'>
+      <Subheading className="pl-6 pt-6 pb-3" appearance="subtle">
         {getHeading()}
       </Subheading>
-      <VerticalNav
-        menus={navItems}
-        active={active}
-        onClick={onClickHandler}
-        expanded={true}
-        autoCollapse={false}
-      />
+      <VerticalNav menus={navItems} active={active} onClick={onClickHandler} expanded={true} autoCollapse={false} />
     </div>
   );
 };

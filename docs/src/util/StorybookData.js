@@ -13,12 +13,10 @@ export function useGetStorybookData(componentName) {
           }
         }
       }
-    }  
+    }
   `);
 
-  const list = edges.filter((item) =>
-    item.node.key.includes(componentName.toLowerCase())
-  )
+  const list = edges.filter((item) => item.node.key.includes(componentName.toLowerCase()));
   const result = JSON.parse(list[0].node.value);
   return result;
 }

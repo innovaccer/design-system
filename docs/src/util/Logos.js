@@ -5,7 +5,7 @@ export function useLogoItems() {
     allFile: { edges },
   } = useStaticQuery(graphql`
     query IMAGES {
-      allFile(filter: {sourceInstanceName: {eq: "StaticImages"}}) {
+      allFile(filter: { sourceInstanceName: { eq: "StaticImages" } }) {
         edges {
           node {
             childImageSharp {
@@ -19,6 +19,6 @@ export function useLogoItems() {
       }
     }
   `);
-  const data = edges.map((item) => item.node.childImageSharp)
+  const data = edges.map((item) => item.node.childImageSharp);
   return data;
 }
