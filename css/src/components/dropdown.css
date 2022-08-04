@@ -9,7 +9,7 @@
 }
 
 .Dropdown-inputWrapper {
-  border-bottom: var(--border);
+  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
 }
 
 .Dropdown-input {
@@ -19,6 +19,7 @@
 .Dropdown-input,
 .Dropdown-input:focus-within {
   border: unset !important;
+  box-shadow: none !important;
 }
 
 .Dropdown-section {
@@ -57,11 +58,6 @@
   padding-bottom: var(--spacing-m);
   padding-top: var(--spacing);
   box-sizing: border-box;
-}
-
-.Dropdown-items {
-  animation-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
-  animation-fill-mode: forwards;
 }
 
 .Option {

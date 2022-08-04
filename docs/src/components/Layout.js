@@ -5,7 +5,8 @@ import {
   Column,
   Button,
   Toast,
-  Tooltip
+  Tooltip,
+  Text
 } from '@innovaccer/design-system';
 import LeftNav from './LeftNav';
 import TableOfContent from './TableOfContent/TableOfContent';
@@ -143,7 +144,7 @@ const FrameWrapper = ({ componentName }) => {
         scrolling="no"
         frameBorder="0"
         onLoad={onLoad}
-        src={`https://mds-dev.innovaccer.com/iframe.html?id=${componentName}&viewMode=docs&panel=true&nav=false&addons=1&stories=0&embed=prop-table`}
+        src={`https://mds.innovaccer.com/iframe.html?id=${componentName}&viewMode=docs&panel=true&nav=false&addons=1&stories=0&embed=prop-table`}
       />
     </>
   );
@@ -300,6 +301,14 @@ const MarkdownContainer = (props) => {
   )
 }
 
+const Caption = ({children}) => {
+  return ( 
+    <Text size='small' appearance='subtle' className='d-flex mt-4 justify-content-center text-align--center'>
+      {children}
+    </Text>
+  )
+}
+
 const Layout = ({
   children,
   titleType,
@@ -422,6 +431,7 @@ const Layout = ({
     DONTs,
     InlineMessage,
     IconWrapper,
+    Caption,
     h1: (props) => <MDXHeading size='xxl' headingInfo={props} />,
     h2: (props) => <MDXHeading size='xl' headingInfo={props} />,
     h3: (props) => <MDXHeading size='l' headingInfo={props} />,

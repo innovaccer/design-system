@@ -13,7 +13,6 @@ menus:
 
   - label: Badges
     link: /components/badges/usage/
-    hideInMobile: true
 
   - label: Bottom navigation
     link: /components/bottomNavigation/usage
@@ -57,7 +56,7 @@ menus:
 
   - label: Dropdowns
     link: /components/dropdowns/usage/
-    hideInMobile: true
+    
 
   - label: Help text
     link: /components/helpText/usage/
@@ -84,11 +83,9 @@ menus:
 
   - label: Messages
     link: /components/message/usage/
-    hideInMobile: true
 
   - label: Meta list
     link: /components/metaList/usage/
-    hideInMobile: true
 
   - label: Modals
     link: /components/modals/usage/
@@ -134,15 +131,12 @@ menus:
 
   - label: Slider
     link: /components/slider/usage/
-    hideInMobile: true
 
   - label: Status hint
     link: /components/statusHint/usage/
-    hideInMobile: true
 
   - label: Steppers
     link: /components/steppers/usage/
-    hideInMobile: true
 
   - label: Switch
     link: /components/switch/usage/

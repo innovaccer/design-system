@@ -139,3 +139,7 @@ blockquote p {
   width: 80px;
   text-align: center;
 }
+
+.text-align--center{
+  text-align: center;
+}

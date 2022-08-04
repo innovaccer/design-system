@@ -7,7 +7,7 @@ const Footer = ({ relativePagePath }) => {
   const items = useFooterItems();
   return (
     <div
-      className={`d-flex w-100 px-12 py-7 bg-secondary-lightest position-sticky align-items-center ${relativePagePath === '/home' ? 'justify-content-center' : ''}`}>
+      className={`d-flex w-100 px-11 py-7 bg-secondary-lightest position-sticky align-items-center ${relativePagePath === '/home' ? 'justify-content-center' : ''}`}>
       <div>
         {items.map(({ link, label }, index) => {
           let isExternal;
@@ -17,6 +17,14 @@ const Footer = ({ relativePagePath }) => {
               link.startsWith('https://');
           }
           return (
+            !link?
+              <Text
+                appearance={'subtle'}
+                className={'mr-8'}
+              >
+                {label}
+              </Text>
+            :
             <Link
               key={index}
               href={link}

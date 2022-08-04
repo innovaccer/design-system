@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Heading, Text, Sidesheet, ModalDescription, Button } from '@/index';
 
 export const twoSteps = () => {
-  const [page, setPage] = React.useState(2);
+  const [page, setPage] = React.useState(1);
   const [animate, setAnimate] = React.useState(true);
   const [open, setOpen] = React.useState(false);
   const seperator = false;
@@ -77,7 +77,9 @@ export const twoSteps = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
       <Sidesheet {...options}>
         <div className={animate ? 'fade-in' : ''} onAnimationEnd={() => setAnimate(false)}>
           <Heading size="s">{`Page ${page}`}</Heading>
@@ -92,11 +94,11 @@ export const twoSteps = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
-  const [page, setPage] = React.useState(2);
+  const [page, setPage] = React.useState(1);
   const [animate, setAnimate] = React.useState(true);
 
   const onClose = () => {
-    setOpen(!open);
+    setOpen(false);
   };
 
   React.useEffect(() => {

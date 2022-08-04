@@ -11,53 +11,29 @@ showMobile: true
 
 #### Free navigation
 
-**1.0 second** is the limit for having the user feel that the system is **reacting instantaneously**, meaning that no special feedback is necessary except to display the result.
+**0.1 second** is the limit for having the user feel that the system is **reacting instantaneously**, meaning that no special feedback is necessary except to display the result.
 
 For example, this is the limit from the time the user selects a row in a table until that row should highlight or otherwise give feedback that it's selected.
 
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        good: '[0, 100ms]',
-        needs_improvement: '(100ms, 300ms]',
-        poor: 'over 300ms',
-      },
-    ]}
-    schema={[
-      {
-        name: 'good',
-        displayName: 'Good',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'needs_improvement',
-        displayName: 'Needs Improvement',
-        width: '33%',
-        sorting: false,
-        cellType: 'WITH_META_LIST',
-        separator: true,
-      },
-      {
-        name: 'poor',
-        displayName: 'Poor',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Good</th>
+      <th style="width:33%; text-align: left;">Needs improvement</th>
+      <th style="width:33%; text-align: left;">Poor</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>[0, 100ms]</td>
+      <td>(100ms, 300ms]</td>
+      <td>over 300ms</td>
+    </tr>
+  </tbody>
+</table>
 
 <br />
 <br />
 
-#### Data manipulation
+#### Direct manipulation
 
 **1.0 second** is about the limit for the **user's flow of thought
 to stay** uninterrupted, even though the user will notice the delay.
@@ -67,43 +43,22 @@ feeling of operating directly on the data.
 
 For example, if sorting a table according to the selected column can't be done in 0.1 seconds, it certainly has to be done in 1 second, or users will feel that the UI is sluggish and will lose the sense of "flow" in performing their task. For delays of more than 1 second, indicate to the user that the computer is working on the problem, for example by changing the shape of the cursor.
 
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        good: '[0, 100ms]',
-        needs_improvement: '(100ms, 300ms]',
-        poor: 'over 300ms',
-      },
-    ]}
-    schema={[
-      {
-        name: 'good',
-        displayName: 'Good',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'needs_improvement',
-        displayName: 'Needs Improvement',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-      {
-        name: 'poor',
-        displayName: 'Poor',
-        width: '33%',
-        sorting: false,
-        separator: true,
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Good</th>
+      <th style="width:33%; text-align: left;">Needs improvement</th>
+      <th style="width:33%; text-align: left;">Poor</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>[0, 1000ms]</td>
+      <td>(1000ms, 3000ms]</td>
+      <td>over 3000ms</td>
+    </tr>
+  </tbody>
+</table>
+
 
 <br />
 <br />

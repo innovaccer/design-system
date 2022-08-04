@@ -102,3 +102,5 @@ docs/public/*
 docs/.cache
 docs/node_modules
 docs/static/sb/
+docs/cypress/videos
+docs/cypress/screenshots
