@@ -12,6 +12,9 @@ export const COMMON_MIME_TYPES = new Map([
   ['zip', 'application/zip'],
   ['doc', 'application/msword'],
   ['docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
+  ['csv', 'text/csv'],
+  ['xlss', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+  ['xls', 'application/vnd.ms-excel'],
 ]);
 
 const FILES_TO_IGNORE = ['.DS_Store', 'Thumbs.db'];
