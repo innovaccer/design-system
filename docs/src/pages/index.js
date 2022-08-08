@@ -102,9 +102,10 @@ const Home = () => {
                 menuSection.map((menuItem, key) => {
                   return (
                     <Column size={3} key={key}>
+                      <div className='mr-7 h-100 overflow-visble'>
                       <Link href={menuItem.link}>
                         <Card
-                          className='mr-7 p-6 h-100 overflow-visible'
+                          className='p-6 h-100'
                           shadow='none'
                         >
                           <div className='d-flex'>
@@ -125,6 +126,7 @@ const Home = () => {
                           </div>
                         </Card>
                       </Link>
+                      </div> 
                     </Column>
                   )
                 })
