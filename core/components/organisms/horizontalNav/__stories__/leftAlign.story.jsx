@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Modal, Button, Paragraph, HorizontalNav, Dropdown, Label } from '@/index';
+import { Modal, Button, Paragraph, HorizontalNav, Dropdown, Label, Heading } from '@/index';
 
 export const leftAlignedNavigationTabs = () => {
   const options = [];
@@ -44,6 +44,17 @@ export const leftAlignedNavigationTabs = () => {
     setActive(menu);
   };
 
+  const subHeading = (
+    <HorizontalNav align="left" menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />
+  );
+
+  const header = (
+    <div>
+      <Heading className="ml-7 mb-3">Medication</Heading>
+      {subHeading}
+    </div>
+  );
+
   return (
     <div>
       <Paragraph>
@@ -69,9 +80,7 @@ export const leftAlignedNavigationTabs = () => {
         open={open}
         dimension="large"
         onClose={onClose}
-        headerOptions={{
-          heading: 'Medication',
-        }}
+        header={header}
         footer={
           <>
             <Button appearance="basic">Discard</Button>
@@ -80,11 +89,9 @@ export const leftAlignedNavigationTabs = () => {
             </Button>
           </>
         }
+        seperator={true}
       >
-        <div className="pb-4" style={{ borderBottom: 'var(--border)' }}>
-          <HorizontalNav menus={data} active={active} onClick={onClickHandler} />
-        </div>
-        <div className="pt-5 w-50">
+        <div className="py-5 w-50">
           <Label withInput={true} required={true}>
             Type
           </Label>
@@ -144,6 +151,23 @@ const customCode = `() => {
     setActive(menu);
   };
 
+  const subHeading = (
+    <HorizontalNav
+      align="left"
+      menus={data}
+      active={active}
+      onClick={onClickHandler}
+      className="ml-5 mt-4"
+    />
+  );
+
+  const header = (
+    <div>
+      <Heading className="ml-7 mb-3">Medication</Heading>
+      {subHeading}
+    </div>
+  );
+
   return (
     <div>
       <Paragraph>
@@ -160,24 +184,16 @@ const customCode = `() => {
         open={open}
         dimension="large"
         onClose={onClose}
-        headerOptions={{
-          heading: 'Medication',
-        }}
+        header={header}
         footer={(
           <>
             <Button appearance="basic">Discard</Button>
             <Button appearance="primary" className="ml-4">Create</Button>
           </>
         )}
+        seperator={true}
       >
-        <div className="pb-4" style={{ borderBottom: 'var(--border)' }}>
-          <HorizontalNav
-            menus={data}
-            active={active}
-            onClick={onClickHandler}
-          />
-        </div>
-        <div className="pt-5 w-50">
+        <div className="py-5 w-50">
           <Label withInput={true} required={true}>Type</Label>
           <Dropdown
             options={options}
