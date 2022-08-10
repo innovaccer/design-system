@@ -13,7 +13,11 @@
     "extract:dev": "export STORYBOOK_HOST='http://localhost:5000/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story' && node ./tools/extract.js",
     "extract": "node ./tools/extract.js",
     "cypress:open": "cypress open",
-    "cypress": "cypress run"
+    "cypress": "cypress run",
+    "lint:check": "eslint ./src --ext .tsx,.ts,.js",
+    "lint": "npm run lint:check -- --fix",
+    "prettier:check": "prettier --config ./.prettierrc --check",
+    "prettier": "prettier --config ./.prettierrc --write 'src/**/*.css'"
   },
   "dependencies": {
     "@fontsource/nunito": "^4.5.0",
@@ -60,6 +64,11 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "cypress": "^10.3.1"
+    "cypress": "^10.3.1",
+    "prettier": "^2.3.2",
+    "eslint": "^7.31.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0"
+  
   }
 }

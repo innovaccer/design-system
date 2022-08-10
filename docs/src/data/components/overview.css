@@ -20,11 +20,13 @@
   height: var(--spacing-6);
 }
 
-.card-link, .card-link:hover {
+.card-link,
+.card-link:hover {
   text-decoration: none !important;
 }
 
-.card-link[disabled], .card-link[disabled] * {
+.card-link[disabled],
+.card-link[disabled] * {
   pointer-events: none;
 }
 

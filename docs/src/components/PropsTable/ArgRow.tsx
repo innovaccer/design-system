@@ -44,15 +44,13 @@ const Description = styled.div(() => ({
   },
 }));
 
-const Type = styled.div<{ hasDescription: boolean }>(
-  ({ hasDescription }) => ({
-    color:
-      theme.base === 'light'
-        ? transparentize(0.1, theme.color.defaultText)
-        : transparentize(0.2, theme.color.defaultText),
-    marginTop: hasDescription ? 4 : 0,
-  })
-);
+const Type = styled.div<{ hasDescription: boolean }>(({ hasDescription }) => ({
+  color:
+    theme.base === 'light'
+      ? transparentize(0.1, theme.color.defaultText)
+      : transparentize(0.2, theme.color.defaultText),
+  marginTop: hasDescription ? 4 : 0,
+}));
 
 const TypeWithJsDoc = styled.div<{
   hasDescription: boolean;
@@ -65,35 +63,24 @@ const TypeWithJsDoc = styled.div<{
   marginBottom: 12,
 }));
 
-const StyledTd = styled.td<{ expandable: boolean }>(
-  ({ expandable }) => ({
-    paddingLeft: '20px',
-  })
-);
+const StyledTd = styled.td<{ expandable: boolean }>(({ expandable }) => ({
+  paddingLeft: '20px',
+}));
 
 export const ArgRow: FC<ArgRowProps> = (props) => {
-  const {
-    row,
-    updateArgs,
-    compact,
-    initialExpandedArgs,
-  } = props;
+  const { row, updateArgs, compact, initialExpandedArgs } = props;
   const { name, description } = row;
   const table = (row.table || {}) as TableAnnotation;
   const type = table.type || row.type;
-  const defaultValue =
-    table.defaultValue || row.defaultValue;
+  const defaultValue = table.defaultValue || row.defaultValue;
   const required = row.type?.required;
-  const hasDescription =
-    description != null && description !== '';
+  const hasDescription = description != null && description !== '';
 
   return (
     <tr>
       <StyledTd expandable={true}>
         <Name>{name}</Name>
-        {required ? (
-          <Required title="Required">*</Required>
-        ) : null}
+        {required ? <Required title="Required">*</Required> : null}
       </StyledTd>
       {compact ? null : (
         <td>
@@ -104,39 +91,24 @@ export const ArgRow: FC<ArgRowProps> = (props) => {
           )}
           {table.jsDocTags != null ? (
             <>
-              <TypeWithJsDoc
-                hasDescription={hasDescription}
-              >
-                <ArgValue
-                  value={type}
-                  initialExpandedArgs={initialExpandedArgs}
-                />
+              <TypeWithJsDoc hasDescription={hasDescription}>
+                <ArgValue value={type} initialExpandedArgs={initialExpandedArgs} />
               </TypeWithJsDoc>
               <ArgJsDoc tags={table.jsDocTags} />
             </>
           ) : (
             <Type hasDescription={hasDescription}>
-              <ArgValue
-                value={type}
-                initialExpandedArgs={initialExpandedArgs}
-              />
+              <ArgValue value={type} initialExpandedArgs={initialExpandedArgs} />
             </Type>
           )}
         </td>
       )}
       {compact ? null : (
         <td>
-          <ArgValue
-            value={defaultValue}
-            initialExpandedArgs={initialExpandedArgs}
-          />
+          <ArgValue value={defaultValue} initialExpandedArgs={initialExpandedArgs} />
         </td>
       )}
-      {updateArgs ? (
-        <td>
-          {/* <ArgControl {...(props as ArgControlProps)} /> */}
-        </td>
-      ) : null}
+      {updateArgs ? <td>{/* <ArgControl {...(props as ArgControlProps)} /> */}</td> : null}
     </tr>
   );
 };

@@ -7,24 +7,21 @@ const Footer = ({ relativePagePath }) => {
   const items = useFooterItems();
   return (
     <div
-      className={`d-flex w-100 px-11 py-7 bg-secondary-lightest position-sticky align-items-center ${relativePagePath === '/home' ? 'justify-content-center' : ''}`}>
+      className={`d-flex w-100 px-11 py-7 bg-secondary-lightest position-sticky align-items-center ${
+        relativePagePath === '/home' ? 'justify-content-center' : ''
+      }`}
+    >
       <div>
         {items.map(({ link, label }, index) => {
           let isExternal;
           if (link) {
-            isExternal =
-              link.startsWith('http://') ||
-              link.startsWith('https://');
+            isExternal = link.startsWith('http://') || link.startsWith('https://');
           }
-          return (
-            !link?
-              <Text
-                appearance={'subtle'}
-                className={'mr-8'}
-              >
-                {label}
-              </Text>
-            :
+          return !link ? (
+            <Text appearance={'subtle'} className={'mr-8'}>
+              {label}
+            </Text>
+          ) : (
             <Link
               key={index}
               href={link}
@@ -32,11 +29,7 @@ const Footer = ({ relativePagePath }) => {
               target={isExternal && '_blank'}
               disabled={index === 0}
             >
-              <Text
-                appearance={index === 0 ? 'subtle' : 'default'}
-              >
-                {label}
-              </Text>
+              <Text appearance={index === 0 ? 'subtle' : 'default'}>{label}</Text>
             </Link>
           );
         })}

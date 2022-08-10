@@ -1,1 +1,32 @@
-{}
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [ "jsx-a11y", "prettier"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "settings": { "react": { "version": "detect" } },
+    "globals": { "_": "readonly", "__": "readonly" },
+    "rules": {
+      "react/prop-types": "off",
+      "react/no-unescaped-entities": "off",
+      "no-undef": "off",
+      "jsx-a11y/alt-text": "off",
+      "no-inner-declarations": "off",
+      "react/no-children-prop": "off",
+      "jsx-a11y/iframe-has-title": "off", 
+      "react/jsx-key": "off",
+      "react/display-name": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/ban-ts-comment": "off",      
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/ban-types": "off",
+      "@typescript-eslint/no-unused-vars": "off"
+    }
+  }
+  
