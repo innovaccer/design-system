@@ -18,7 +18,7 @@ const Footer = ({ relativePagePath }) => {
             isExternal = link.startsWith('http://') || link.startsWith('https://');
           }
           return !link ? (
-            <Text appearance={'subtle'} className={'mr-8'}>
+            <Text key={index} appearance={'subtle'} className={'mr-8'}>
               {label}
             </Text>
           ) : (
