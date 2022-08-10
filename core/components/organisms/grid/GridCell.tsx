@@ -176,7 +176,11 @@ const renderStatusHint = (props: CellProps) => {
   const children = cellData.title;
 
   if (children) {
-    return <StatusHint appearance={statusAppearance}>{children}</StatusHint>;
+    return (
+      <StatusHint className="ellipsis" appearance={statusAppearance}>
+        {children}
+      </StatusHint>
+    );
   }
 
   return null;

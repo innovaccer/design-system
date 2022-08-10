@@ -354,6 +354,13 @@
   overflow: hidden;
 }
 
+.GridCell--statusHint {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
 .GridCell--avatar .Avatar {
   margin: 0;
 }

@@ -57,7 +57,7 @@ export const StatusHint = (props: StatusHintProps) => {
     >
       {/* eslint-enable */}
       <span data-test="DesignSystem-StatusHint--Icon" className={StatusHintIconClass} />
-      <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'}>
+      <Text className={className} data-test="DesignSystem-StatusHint--Text" weight={'medium'}>
         {children}
       </Text>
     </div>
