@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.3",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/tooltip/__stories__/variants/Position.story.jsx",
     "storySource": {
-      "source": "() => {\n  const positions = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];\n  const appendToBody = false;\n  const tooltip = 'An awesome tooltip';\n\n  const options = {\n    tooltip,\n    appendToBody,\n  };\n\n  return (\n    <div className=\"pb-6 Row\">\n      {positions.map((pos, ind) => {\n        return (\n          <div key={ind} className=\"mr-13 mt-8\">\n            <Tooltip position={pos} {...options}>\n              <div\n                ref={(buttonRef) => {\n                  const event = new MouseEvent('mouseover', {\n                    view: window,\n                    bubbles: true,\n                    cancelable: true,\n                  });\n                  if (buttonRef) buttonRef.dispatchEvent(event);\n                }}\n              >\n                <Button>{pos}</Button>\n              </div>\n            </Tooltip>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const positions = ['top', 'top-start', 'bottom', 'top-end', 'bottom-start', 'bottom-end', 'right', 'left'];\n  const appendToBody = false;\n  const tooltip = 'An awesome tooltip';\n\n  const options = {\n    tooltip,\n    appendToBody,\n  };\n\n  return (\n    <div className=\"pb-6 Row\">\n      {positions.map((pos, ind) => {\n        return (\n          <div key={ind} className=\"mr-13 mt-8\">\n            <Tooltip position={pos} {...options}>\n              <Button>{pos}</Button>\n            </Tooltip>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-tooltip-variants-position--position",
@@ -263,11 +263,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+          "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
+            "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
           },
           "defaultValue": null
         }
@@ -322,15 +322,6 @@
         "table": {
           "type": {
             "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
-          },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "Position",
-                "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
-              }
-            ],
-            "returns": false
           },
           "defaultValue": {
             "summary": "\"bottom\""
@@ -438,11 +429,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+        "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
+          "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "defaultValue": null
       }
@@ -497,15 +488,6 @@
       "table": {
         "type": {
           "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
-        },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "Position",
-              "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
-            }
-          ],
-          "returns": false
         },
         "defaultValue": {
           "summary": "\"bottom\""
