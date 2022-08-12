@@ -10,6 +10,7 @@ export function useHeaderItems() {
           node {
             label
             link
+            img
           }
         }
       }

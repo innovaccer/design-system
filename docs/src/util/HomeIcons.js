@@ -96,3 +96,13 @@ export const Patterns = () => (
     </g>
   </svg>
 );
+
+export const Storybook = () => (
+  <svg width="20" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M18 13v6c0 .5304-.2107 1.0391-.5858 1.4142S16.5304 21 16 21H5c-.53043 0-1.03914-.2107-1.41421-.5858C3.21071 20.0391 3 19.5304 3 19V8c0-.53043.21071-1.03914.58579-1.41421C3.96086 6.21071 4.46957 6 5 6h6M15 3h6v6M10 14L21 3"
+      stroke-width="2"
+      stroke="#2f2f2f"
+    ></path>
+  </svg>
+);
