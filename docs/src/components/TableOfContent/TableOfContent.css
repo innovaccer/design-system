@@ -4,10 +4,17 @@
 
 .toc-link {
   text-decoration: none;
-  font-size: var(--font-size);
   color: var(--inverse);
   padding: var(--spacing) 0;
   display: inline-block;
+}
+
+.toc-font--regular {
+  font-size: var(--font-size);
+}
+
+.toc-font--small {
+  font-size: var(--font-size-s);
 }
 
 .right-nav-container {
