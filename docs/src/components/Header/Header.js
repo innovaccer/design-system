@@ -2,8 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { useHeaderItems } from '../../util/HeaderItems';
 import './Header.css';
-import { Link as MDSLink } from '@innovaccer/design-system';
+import { Link as MDSLink, Icon } from '@innovaccer/design-system';
 import Search from '../GlobalSearch';
+import * as HomeIcons from '../../util/HomeIcons';
+
+const MenuIcons = ({ name }) => {
+  const SvgIcons = HomeIcons[name] || (() => <div></div>);
+  return <SvgIcons />;
+};
 
 const Header = ({ relativePagePath }) => {
   const ref = React.createRef();
@@ -26,7 +32,7 @@ const Header = ({ relativePagePath }) => {
           <img src="/images/headerLogo.png" width="290px" height="28px" />
         </Link>
         <div>
-          {items.map(({ link, label }, index) => {
+          {items.map(({ link, label, img }, index) => {
             const isExternal = link.startsWith('http://') || link.startsWith('https://');
 
             if (isExternal) {
@@ -39,6 +45,11 @@ const Header = ({ relativePagePath }) => {
                   className="HeaderLink HeaderLink--default"
                 >
                   {label}
+                  {img &&
+                    <Icon className="HeaderIcon position-relative pl-4">
+                      <MenuIcons name={img} />
+                    </Icon>
+                  }
                 </MDSLink>
               );
             }
@@ -50,6 +61,10 @@ const Header = ({ relativePagePath }) => {
                 className={`HeaderLink  ${checkActive(label) ? 'HeaderLink--active' : 'HeaderLink--default'}`}
               >
                 {label}
+                {img && <Icon className="HeaderIcon position-relative pl-8">
+                    <MenuIcons name={img} />
+                  </Icon>
+                }
               </Link>
             );
           })}

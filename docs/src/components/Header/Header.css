@@ -30,3 +30,7 @@
 .HeaderLink--default {
   color: var(--inverse);
 }
+
+.HeaderIcon {
+  top: 2px;
+}
