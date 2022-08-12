@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Row, Column, Text } from '@/index';
+import { Checkbox, Label, Row, Column, Text, Heading } from '@/index';
 
 const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
@@ -7,15 +7,7 @@ export const AlignmentOfCheckboxGroup = () => (
   <div>
     <Row>
       <Column>
-        <Label>Days</Label>
-        {days.map((day, index) => {
-          return <Checkbox key={index} label={day} defaultChecked={index < 2} className={index !== 0 ? 'mt-4' : ''} />;
-        })}
-        <div className="pt-5">
-          <Text>Vertical Alignment</Text>
-        </div>
-      </Column>
-      <Column>
+        <Heading size="s">Horizontal Alignment</Heading>
         <Label>Days</Label>
         <div className="d-flex">
           {days.map((day, index) => {
@@ -24,9 +16,15 @@ export const AlignmentOfCheckboxGroup = () => (
             );
           })}
         </div>
-        <div className="pt-5">
-          <Text>Horizontal Alignment</Text>
-        </div>
+      </Column>
+    </Row>
+    <Row>
+      <Column className="pt-5 mt-8">
+        <Heading size="s">Vertical Alignment</Heading>
+        <Label>Days</Label>
+        {days.map((day, index) => {
+          return <Checkbox key={index} label={day} defaultChecked={index < 2} className={index !== 0 ? 'mt-4' : ''} />;
+        })}
       </Column>
     </Row>
   </div>
