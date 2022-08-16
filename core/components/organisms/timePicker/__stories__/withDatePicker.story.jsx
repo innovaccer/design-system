@@ -7,13 +7,11 @@ import { TimePickerWithSearch } from '../TimePickerWithSearch';
 export const withDatePicker = () => {
   const [open, setOpen] = React.useState(false);
 
-  const handleDateChange = (date) => {
-    if (date) {
-      setOpen(false);
-      window.setTimeout(() => {
-        setOpen(true);
-      }, 0);
-    }
+  const handleDateChange = () => {
+    setOpen(false);
+    window.setTimeout(() => {
+      setOpen(true);
+    }, 0);
   };
 
   return (
@@ -42,13 +40,12 @@ const customCode = `() => {
 
   const [open, setOpen] = React.useState(false);
 
-  const handleDateChange = (date) => {
-    if(date) {
+  const handleDateChange = () => {
       setOpen(false);
       setTimeout(() => {
         setOpen(true);
       }, 0);
-    }
+    
   };
 
   return (

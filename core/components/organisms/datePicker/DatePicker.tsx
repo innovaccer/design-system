@@ -130,7 +130,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       if (onDateChange) {
         if (!newError) {
           const dVal = translateToString(outputFormat, date);
-          onDateChange(date, dVal);
+          date && onDateChange(date, dVal);
         } else {
           onDateChange(undefined, '');
         }
