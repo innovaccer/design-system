@@ -63,13 +63,9 @@ export const Table = styled.table(({ theme }) => ({
 }));
 
 export const ArgJsDoc: FC<ArgJsDocArgs> = ({ tags }) => {
-  const params = (tags.params || []).filter(
-    (x) => x.description
-  );
+  const params = (tags.params || []).filter((x) => x.description);
   const hasDisplayableParams = params.length !== 0;
-  const hasDisplayableReturns =
-    tags.returns != null &&
-    tags.returns.description != null;
+  const hasDisplayableReturns = tags.returns != null && tags.returns.description != null;
 
   if (!hasDisplayableParams && !hasDisplayableReturns) {
     return null;

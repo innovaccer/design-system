@@ -22,12 +22,8 @@ export function useNavItems(relativePagePath) {
 
   const headings = edges
     .filter(({ node }) => {
-      const fileName =
-        node.fileAbsolutePath.split('pages')[1];
-      if (
-        fileName === relativePagePath &&
-        node.headings.length
-      ) {
+      const fileName = node.fileAbsolutePath.split('pages')[1];
+      if (fileName === relativePagePath && node.headings.length) {
         return node;
       }
     })

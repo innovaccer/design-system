@@ -20,11 +20,17 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      return <Message className="my-7" appearance="alert" title="Something is broken." description="Hold tight, we are working to get it up for you to interact with." />
-
+      return (
+        <Message
+          className="my-7"
+          appearance="alert"
+          title="Something is broken."
+          description="Hold tight, we are working to get it up for you to interact with."
+        />
+      );
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 

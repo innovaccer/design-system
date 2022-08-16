@@ -29,7 +29,7 @@ export const tableAsDescriptionList = () => {
     {
       name: 'info',
       displayName: 'Info',
-      width: '80%',
+      width: '75%',
       cellType: 'AVATAR_WITH_META_LIST',
       translate: (a) => ({
         firstName: a.firstName,
@@ -41,7 +41,7 @@ export const tableAsDescriptionList = () => {
     {
       name: 'rights',
       displayName: 'Rights',
-      width: '20%',
+      width: '25%',
       cellRenderer: (props) => {
         const renderRights = () => {
           if (props.data.owner) {
@@ -132,7 +132,7 @@ const customCode = `() => {
     {
       name: 'info',
       displayName: 'Info',
-      width: '80%',
+      width: '75%',
       cellType: 'AVATAR_WITH_META_LIST',
       translate: a => ({
         firstName: a.firstName,
@@ -144,7 +144,7 @@ const customCode = `() => {
     {
       name: 'rights',
       displayName: 'Rights',
-      width: '20%',
+      width: '25%',
       cellRenderer: (props) => {
         const renderRights = () => {
           if (props.data.owner) {

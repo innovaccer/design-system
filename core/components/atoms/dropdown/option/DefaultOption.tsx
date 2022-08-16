@@ -19,7 +19,7 @@ const DefaultOption = (props: OptionTypeProps) => {
     >
       {/* eslint-enable  */}
       <div className={'Option-label'}>
-        <Text className={textClassName} appearance={appearance}>
+        <Text className={textClassName} appearance={appearance} id={optionData.optionID}>
           {label}
         </Text>
       </div>

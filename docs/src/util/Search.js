@@ -21,7 +21,7 @@ export function useSearchItems() {
 
   const searchList = edges.filter((item) => {
     const { title, description } = item.node.frontmatter;
-    return title && description && title != description
-  })
+    return title && description && title != description;
+  });
   return searchList;
 }

@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useSearchItems } from '../../util/Search';
 import { Input, Popover, Icon, Text, Subheading } from '@innovaccer/design-system';
-import { Link } from "gatsby";
-import "./search.css";
+import { Link } from 'gatsby';
+import './search.css';
 import { debounce } from '../../util/Helpers';
 
 const getHighlightedText = (text, query) => {
-  return text.replace(new RegExp(query, "gi"), (match) => `<b>${match}</b>`)
-}
+  return text.replace(new RegExp(query, 'gi'), (match) => `<b>${match}</b>`);
+};
 
 const CustomResultEntry = ({ data, query }) => {
   return (
@@ -16,32 +16,38 @@ const CustomResultEntry = ({ data, query }) => {
         <div className="Search-result__entry px-5 py-4">
           <div className="d-flex align-items-center overflow-hidden">
             <Text dangerouslySetInnerHTML={{ __html: getHighlightedText(data.frontmatter.title, query) }}></Text>
-            {
-              data.slug.includes('mobile') ?
-                <Icon className="ml-4" appearance='subtle' size={16} name='phone_iphone' /> :
-                <Icon className="ml-4" appearance='subtle' size={16} name='desktop_windows' />
-            }
+            {data.slug.includes('mobile') ? (
+              <Icon className="ml-4" appearance="subtle" size={16} name="phone_iphone" />
+            ) : (
+              <Icon className="ml-4" appearance="subtle" size={16} name="desktop_windows" />
+            )}
           </div>
           <div>
-            <Text appearance='subtle' dangerouslySetInnerHTML={{ __html: getHighlightedText(data.frontmatter.description, query) }}></Text>
+            <Text
+              appearance="subtle"
+              dangerouslySetInnerHTML={{ __html: getHighlightedText(data.frontmatter.description, query) }}
+            ></Text>
           </div>
         </div>
       </Link>
     </div>
-  )
-}
+  );
+};
 
 const ShowResults = ({ name, list, query }) => {
   return (
     <div>
-      <Subheading className="pb-2 px-5" appearance="subtle">{name}</Subheading>
-      {list.map((data, key) => <CustomResultEntry key={key} query={query} data={data.node} />)}
+      <Subheading className="pb-2 px-5" appearance="subtle">
+        {name}
+      </Subheading>
+      {list.map((data, key) => (
+        <CustomResultEntry key={key} query={query} data={data.node} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
 const PageHit = ({ searchList, query }) => {
-
   const components = [],
     patterns = [],
     foundations = [],
@@ -86,10 +92,10 @@ const PageHit = ({ searchList, query }) => {
       default:
         break;
     }
-  })
+  });
 
   return (
-    <div className='w-100'>
+    <div className="w-100">
       {components.length > 0 && <ShowResults query={query} name="Components" list={components} />}
       {patterns.length > 0 && <ShowResults query={query} name="Patterns" list={patterns} />}
       {foundations.length > 0 && <ShowResults query={query} name="Foundations" list={foundations} />}
@@ -97,51 +103,46 @@ const PageHit = ({ searchList, query }) => {
       {resources.length > 0 && <ShowResults query={query} name="Resources" list={resources} />}
       {introduction.length > 0 && <ShowResults query={query} name="Introduction" list={introduction} />}
     </div>
-  )
-}
+  );
+};
 
 const NoQueryResult = () => {
   return (
     <div className="p-7 d-flex align-items-center overflow-hidden">
-      <Icon className="mr-6" appearance='subtle' size={24} name='touch_app' />
-      <Text weight="medium" appearance='subtle'>
+      <Icon className="mr-6" appearance="subtle" size={24} name="touch_app" />
+      <Text weight="medium" appearance="subtle">
         Tip: Press ’cmd + k’ to quickly start searching.
       </Text>
     </div>
-  )
-}
+  );
+};
 
 const NoResultFound = ({ query }) => {
   return (
     <div className="p-7 d-flex align-items-center overflow-hidden">
-      <Icon className="mr-6" appearance='subtle' size={24} name='search_off' />
-      <Text weight="medium">
-        {`No results found for '${query}'`}
-      </Text>
+      <Icon className="mr-6" appearance="subtle" size={24} name="search_off" />
+      <Text weight="medium">{`No results found for '${query}'`}</Text>
     </div>
-  )
-}
+  );
+};
 
 const ShowQueryResult = ({ query, searchResult }) => {
   return (
     <div className="pt-6 pb-4 d-flex align-items-center overflow-hidden">
       <PageHit query={query} searchList={searchResult} />
     </div>
-  )
-}
+  );
+};
 
 const Content = ({ query, searchResult }) => {
   return (
     <>
       {query === '' && <NoQueryResult />}
       {query && searchResult.length === 0 && <NoResultFound query={query} />}
-      {
-        query && searchResult.length != 0 &&
-        <ShowQueryResult query={query} searchResult={searchResult} />
-      }
+      {query && searchResult.length != 0 && <ShowQueryResult query={query} searchResult={searchResult} />}
     </>
-  )
-}
+  );
+};
 
 const Search = ({ parentRef }) => {
   const [query, setQuery] = useState('');
@@ -156,7 +157,7 @@ const Search = ({ parentRef }) => {
 
     return () => {
       element.removeEventListener('keydown', handleInstantSearch);
-    }
+    };
   }, []);
 
   const handleInstantSearch = (e) => {
@@ -165,14 +166,16 @@ const Search = ({ parentRef }) => {
       e.preventDefault();
       inputField.click();
     }
-  }
+  };
 
   const handleSearchQuery = debounce((target) => {
     const query = target.value;
     setOpenPopover(true);
     const list = searchList.filter((data) => {
       const { title, description } = data.node.frontmatter;
-      return title.toLowerCase().includes(query?.toLowerCase()) || description.toLowerCase().includes(query?.toLowerCase());
+      return (
+        title.toLowerCase().includes(query?.toLowerCase()) || description.toLowerCase().includes(query?.toLowerCase())
+      );
     });
     setSearchResult(list);
   });
@@ -182,7 +185,7 @@ const Search = ({ parentRef }) => {
   }, []);
 
   return (
-    <div className='d-flex justify-content-end align-items-center'>
+    <div className="d-flex justify-content-end align-items-center">
       <Popover
         position="bottom-start"
         open={openPopover}
@@ -201,7 +204,7 @@ const Search = ({ parentRef }) => {
             onBlur={() => setOpenPopover(false)}
             onChange={({ target }) => {
               setQuery(target.value);
-              handleSearchQuery(target)
+              handleSearchQuery(target);
             }}
           />
         }

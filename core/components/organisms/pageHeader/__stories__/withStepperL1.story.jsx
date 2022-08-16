@@ -74,7 +74,7 @@ export const level1WithStepper = () => {
   const meta = <MetaList list={[{ label: 'Draft' }]} seperator={false} />;
 
   return (
-    <div className="w-100 p-6 bg-secondary-lightest">
+    <div className="w-100 py-6 bg-secondary-lightest">
       <PageHeader
         title="Annual Wellness Visit"
         separator={true}
@@ -168,7 +168,7 @@ const customCode = `() => {
   );
 
   return (
-    <div className="p-6 bg-secondary-lightest" style={{width:'1200px'}}>
+    <div className="py-6 bg-secondary-lightest" style={{width:'1200px'}}>
       <PageHeader
         title="Annual Wellness Visit"
         separator={true}

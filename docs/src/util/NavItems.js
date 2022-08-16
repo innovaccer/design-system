@@ -5,24 +5,24 @@ export function useNavItems(relativePagePath) {
   const {
     allNavYaml: { nodes },
   } = useStaticQuery(graphql`
-      query LEFT_NAV_QUERY {
-        allNavYaml {
-          nodes {
-            base
-            menus {
+    query LEFT_NAV_QUERY {
+      allNavYaml {
+        nodes {
+          base
+          menus {
+            label
+            link
+            hideInMobile
+            hideInWeb
+            subMenu {
               label
               link
-              hideInMobile
-              hideInWeb
-              subMenu {
-                label
-                link
-              }
             }
           }
         }
       }
-    `);
+    }
+  `);
 
   const getKey = (nodes, relativePath) => {
     const keys = nodes.map((elt) => {
@@ -47,7 +47,7 @@ export function useNavItems(relativePagePath) {
     });
 
     return value;
-  }
+  };
 
   const pagePath = relativePagePath.includes(MOBILE)
     ? relativePagePath.split('/')[2]?.replace('.mdx', '')
@@ -58,7 +58,6 @@ export function useNavItems(relativePagePath) {
   const navData = nodes.filter((node) => {
     return node.base === navPage;
   });
-
 
   const navItems = navData[0].menus.map((node) => {
     const menu = {
@@ -72,9 +71,7 @@ export function useNavItems(relativePagePath) {
         return {
           ...item,
           name: `${menu.name}.${item.label}`,
-          link: relativePagePath.includes(MOBILE) && item.link
-            ? `/mobile${item.link}`
-            : item.link,
+          link: relativePagePath.includes(MOBILE) && item.link ? `/mobile${item.link}` : item.link,
         };
       });
     }

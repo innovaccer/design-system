@@ -42,7 +42,7 @@ export const level1WithNavigation = () => {
   );
   const meta = <MetaList list={[{ label: 'Text' }, { label: 'Email' }]} />;
   return (
-    <div className="p-5 bg-secondary-lightest" style={{width:'900px'}}>
+    <div className="py-5 bg-secondary-lightest" style={{ width: '900px' }}>
       <PageHeader
         title="Covid-19"
         separator={true}
@@ -107,7 +107,7 @@ const customCode = `() => {
     />
   );
   return (
-    <div className="p-5 bg-secondary-lightest" style={{width:'900px'}}>
+    <div className="py-5 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader
         title="Covid-19"
         separator={true}

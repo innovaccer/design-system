@@ -13,7 +13,7 @@ export const all = () => {
 
   const endDate = new Date('Jan 20 2021');
 
-  const view = 'year';
+  const view = 'date';
 
   const rangePicker = false;
 
@@ -37,13 +37,11 @@ export const all = () => {
   if (rangeLimit) attr.rangeLimit = rangeLimit;
   if (yearNav !== -1) attr.yearNav = yearNav;
   if (monthNav !== -1) attr.monthNav = monthNav;
-  
+
   // we redefine this function here because in storybook.json we donot get imported functions.
-  const convertToDate = (
-    d, format, validators
-  ) => {
+  const convertToDate = (d, format, validators) => {
     let dateVal;
-  
+
     if (d) {
       if (typeof d === 'number') {
         dateVal = new Date(d);

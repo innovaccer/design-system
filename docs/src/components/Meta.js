@@ -6,7 +6,7 @@ const favicon = '/icons/favicon_io/favicon-16x16.png';
 const faviconLarge = '/icons/favicon_io/favicon-32x32.png';
 const faviconApple = '/icons/favicon_io/apple-touch-icon.png';
 const cardImage = '/icons/card-image.png';
-const GA_MEASUREMENT_ID = "G-HTLCYE0XZT";
+const GA_MEASUREMENT_ID = 'G-HTLCYE0XZT';
 
 const Meta = ({ docTitle, docDescription, pageKeywords, titleType, frontmatter, relativePagePath }) => {
   const { title, description, keywords, lang } = useMetadata();
@@ -32,9 +32,11 @@ const Meta = ({ docTitle, docDescription, pageKeywords, titleType, frontmatter, 
 
   function embedGoogleAnalytics() {
     // <!-- Global site tag (gtag.js) - Google Analytics -->
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       window.dataLayer = window.dataLayer || [];
-      function gtag() { window.dataLayer && window.dataLayer.push(arguments); }
+      function gtag() {
+        window.dataLayer && window.dataLayer.push(arguments);
+      }
       gtag('js', new Date());
       gtag('config', GA_MEASUREMENT_ID);
     }
@@ -105,14 +107,12 @@ const Meta = ({ docTitle, docDescription, pageKeywords, titleType, frontmatter, 
       ]}
     >
       <html lang={lang} />
-      <link rel='icon' href={favicon} />
-      <link rel='icon' href={faviconLarge} />
-      <link rel='icon' href={faviconApple} />
+      <link rel="icon" href={favicon} />
+      <link rel="icon" href={faviconLarge} />
+      <link rel="icon" href={faviconApple} />
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
-      <script>
-        {embedGoogleAnalytics()}
-      </script>
+      <script>{embedGoogleAnalytics()}</script>
     </Helmet>
   );
 };
