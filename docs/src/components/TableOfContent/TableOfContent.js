@@ -8,6 +8,7 @@ const TableOfContent = (props) => {
   const { relativePagePath, location } = props;
   const clickedRef = useRef(false);
   const unsetClickedRef = useRef(null);
+  const depth = 0;
 
   let navItems = useNavItems(relativePagePath);
   const [active, setActive] = useState('');
@@ -91,7 +92,7 @@ const TableOfContent = (props) => {
     }, []);
   }
 
-  function renderItems(items) {
+  function renderItems(items,depth) {
     return (
       <ul className="table-of-content-list pr-8">
         {items &&
@@ -102,7 +103,7 @@ const TableOfContent = (props) => {
                   <Link
                     to={item.url}
                     onClick={(e) => onClickHandler(e, item.url.slice(1))}
-                    className="toc-link"
+                    className={`toc-link ${depth == 0 ? 'toc-font--regular' : 'toc-font--small'}`}
                     style={{
                       display: `${item.title ? 'inline-block' : 'none'}`,
                     }}
@@ -110,7 +111,7 @@ const TableOfContent = (props) => {
                     {item.title}
                   </Link>
                 </div>
-                {item.items && renderItems(item.items)}
+                {item.items && renderItems(item.items,1)}
               </li>
             );
           })}
@@ -125,7 +126,7 @@ const TableOfContent = (props) => {
           <Subheading appearance="subtle" className="pl-6 mt-10">
             CONTENTS
           </Subheading>
-          {renderItems(navItems)}
+          {renderItems(navItems,depth)}
         </>
       ) : (
         ''
