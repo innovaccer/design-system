@@ -3,7 +3,7 @@ import { Tooltip, Button } from '@/index';
 
 // CSF format story
 export const position = () => {
-  const positions = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
+  const positions = ['top', 'top-start', 'bottom', 'top-end', 'bottom-start', 'bottom-end', 'right', 'left'];
   const appendToBody = false;
   const tooltip = 'An awesome tooltip';
 
@@ -18,18 +18,7 @@ export const position = () => {
         return (
           <div key={ind} className="mr-13 mt-8">
             <Tooltip position={pos} {...options}>
-              <div
-                ref={(buttonRef) => {
-                  const event = new MouseEvent('mouseover', {
-                    view: window,
-                    bubbles: true,
-                    cancelable: true,
-                  });
-                  if (buttonRef) buttonRef.dispatchEvent(event);
-                }}
-              >
-                <Button>{pos}</Button>
-              </div>
+              <Button>{pos}</Button>
             </Tooltip>
           </div>
         );
