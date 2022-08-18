@@ -86,6 +86,10 @@
   cursor: pointer;
 }
 
+.Option--active {
+  transition: var(--standard-productive-curve);
+}
+
 .Option-loading {
   pointer-events: none;
 }
