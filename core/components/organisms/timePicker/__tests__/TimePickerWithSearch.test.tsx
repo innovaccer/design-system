@@ -462,25 +462,3 @@ describe('TimePicker Search when current time is in AM', () => {
 
   dateNowSpy.mockRestore();
 });
-
-describe('TimePicker Search when current time is in PM', () => {
-  const dateNowSpy = jest.spyOn(Date, 'now').mockImplementation(() => 1632315010510); // 20:15
-
-  it('check for one digit search query', async () => {
-    const { getByTestId, getAllByTestId } = render(<TimePicker withSearch={true} />);
-    const dropdownTrigger = getByTestId(trigger);
-
-    fireEvent.click(dropdownTrigger);
-    const searchInput = getByTestId('DesignSystem-Input');
-    expect(searchInput).toBeInTheDocument();
-    fireEvent.input(searchInput, { target: { value: '7' } });
-
-    await waitFor(() => {
-      const optionList = getAllByTestId(optionID);
-      expect(optionList[76]).toHaveTextContent('07:00 PM');
-      expect(optionList[76]).toHaveClass(activeOptionClass);
-    });
-  });
-
-  dateNowSpy.mockRestore();
-});
