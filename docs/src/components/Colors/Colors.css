@@ -17,3 +17,7 @@
 .underline {
   text-decoration: underline;
 }
+
+.font-size--s {
+  font-size: var(--font-size-s);
+}
