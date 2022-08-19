@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getTextAppearance, getIconAppearance, getPillsAppearance, Menu } from '@/utils/navigationHelper';
-
+import Link from '@/components/atoms/_text';
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
   isActive: boolean;
@@ -71,10 +71,15 @@ export const MenuItem = (props: MenuItemProps) => {
   const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick, customItemRenderer } =
     props;
 
-  const baseProps = extractBaseProps(props);
-
-  const onClickHandler = () => {
+  const onClickHandler = (ev: { preventDefault: () => void }) => {
+    ev.preventDefault();
     if (onClick) onClick(menu);
+  };
+
+  const baseProps = {
+    onClick: onClickHandler,
+    href: menu.link,
+    ...extractBaseProps(props),
   };
 
   const ItemClass = classNames({
@@ -115,7 +120,7 @@ export const MenuItem = (props: MenuItemProps) => {
   ) : (
     // TODO(a11y)
     // eslint-disable-next-line
-    <div className={ItemClass} {...baseProps} onClick={onClickHandler}>
+    <Link componentType="a" className={ItemClass} {...baseProps}>
       <div className="d-flex align-items-center overflow-hidden">
         {menu.icon && (
           <Icon
@@ -128,7 +133,7 @@ export const MenuItem = (props: MenuItemProps) => {
         {expanded && <MenuLabel label={menu.label} disabled={menu.disabled} isActive={isActive} />}
       </div>
       {expanded && renderSubMenu()}
-    </div>
+    </Link>
   );
 };
 
