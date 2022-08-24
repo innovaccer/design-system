@@ -56,6 +56,56 @@ const TabsWrap = withLive(({ live, onUpdate }) => {
   return null;
 });
 
+
+const CopyCode = (props) => {
+
+  const [isTooltipActive, setTooltipActive] = useState(false);
+  const [tooltipName, setTooltipName] = useState(copyMessage);
+  const { activeButton, jsxCode, htmlCode } = props;
+  const copyToClipboard = (reactCode, htmlCode) => {
+    if (activeButton === 'React') {
+      navigator.clipboard.writeText(reactCode);
+    } else {
+      navigator.clipboard.writeText(htmlCode);
+    }
+    setTooltipName(copyMessageSuccess);
+    setTooltipActive(true);
+  };
+  return (
+    <div className="ml-auto d-flex">
+      {activeButton === 'React' && (
+        <Tooltip tooltip="Open in CodeSandbox" position="bottom" on="hover">
+          <img
+            src="/icons/4691539_codesandbox_icon.svg"
+            className="codesandBox-icon cursor-pointer mr-6 align-self-center"
+            onClick={(e) => {
+              e.preventDefault();
+              openSandbox(jsxCode);
+            }}
+          />
+        </Tooltip>
+      )}
+      <div
+        className="align-self-end"
+        onMouseLeave={() => {
+          setTooltipActive(false);
+          setTooltipName(copyMessage);
+        }}
+      >
+        <Tooltip open={isTooltipActive} tooltip={tooltipName} position="bottom" className="Heading-tooltip">
+          <Icon
+            name="content_copy"
+            size={20}
+            appearance="white"
+            onClick={() => copyToClipboard(jsxCode, htmlCode)}
+            className="align-self-center cursor-pointer"
+          />
+        </Tooltip>
+      </div>
+    </div>
+  );
+};
+
 const StoryComp = ({ componentData, dataProvider }) => {
   const testRef = useRef(null);
   const [zoom, setZoom] = useState(1);
@@ -63,8 +113,6 @@ const StoryComp = ({ componentData, dataProvider }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeButton, setActiveButton] = useState('React');
   const [jsxCode, setJsxCode] = React.useState(getRawPreviewCode(componentData, dataProvider));
-  const [isTooltipActive, setTooltipActive] = useState(false);
-  const [tooltipName, setTooltipName] = useState(copyMessage);
 
   React.useEffect(() => {
     if (dataProvider) {
@@ -97,54 +145,7 @@ const StoryComp = ({ componentData, dataProvider }) => {
         {val}
       </SyntaxHighlighter>
     </div>
-  );
-
-  const copyToClipboard = (reactCode, htmlCode) => {
-    if (activeButton === 'React') {
-      navigator.clipboard.writeText(reactCode);
-    } else {
-      navigator.clipboard.writeText(htmlCode);
-    }
-    setTooltipName(copyMessageSuccess);
-    setTooltipActive(true);
-  };
-
-  const CopyCode = (props) => {
-    const { onClick } = props;
-    return (
-      <div className="ml-auto d-flex">
-        {activeButton === 'React' && (
-          <Tooltip tooltip="Open in CodeSandbox" position="bottom" on="hover">
-            <img
-              src="/icons/4691539_codesandbox_icon.svg"
-              className="codesandBox-icon cursor-pointer mr-6 align-self-center"
-              onClick={(e) => {
-                e.preventDefault();
-                openSandbox(jsxCode);
-              }}
-            />
-          </Tooltip>
-        )}
-        <div
-          className="align-self-end"
-          onMouseLeave={() => {
-            setTooltipActive(false);
-            setTooltipName(copyMessage);
-          }}
-        >
-          <Tooltip open={isTooltipActive} tooltip={tooltipName} position="bottom">
-            <Icon
-              name="content_copy"
-              size={20}
-              appearance="white"
-              onClick={onClick}
-              className="align-self-center cursor-pointer"
-            />
-          </Tooltip>
-        </div>
-      </div>
-    );
-  };
+  );  
 
   const handleZoomIn = () => {
     setZoom(zoom + 0.5);
@@ -224,9 +225,9 @@ const StoryComp = ({ componentData, dataProvider }) => {
                     HTML
                   </Button>
                   <CopyCode
-                    onClick={() => {
-                      copyToClipboard(jsxCode, htmlCode);
-                    }}
+                    jsxCode={jsxCode}
+                    htmlCode={htmlCode}
+                    activeButton={activeButton}
                   />
                 </div>
 
