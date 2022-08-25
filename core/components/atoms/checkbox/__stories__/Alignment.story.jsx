@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Row, Column, Text, Heading } from '@/index';
+import { Checkbox, Label, Row, Column, Heading } from '@/index';
 
 const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 

@@ -14,7 +14,9 @@ export const medium = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Modal</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
       <Modal
         open={open}
         dimension={dimension}

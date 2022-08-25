@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Paragraph, Text, Card, FullscreenModal, Input, Label } from '@/index';
+import { Button, Text, Card, FullscreenModal, Input, Label } from '@/index';
 import { List } from '@/index.type';
 
 export const twoStepsWorkflow = () => {
@@ -50,7 +50,6 @@ export const twoStepsWorkflow = () => {
 
   return (
     <div>
-
       <Button appearance="primary" onClick={openModal}>
         Open Modal
       </Button>

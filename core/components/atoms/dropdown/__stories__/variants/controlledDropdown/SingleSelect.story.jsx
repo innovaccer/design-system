@@ -17,7 +17,7 @@ export const singleSelect = () => {
   const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise((resolve) => {
-      window.setTimeout(() => {
+      this.window.setTimeout(() => {
         resolve({
           searchTerm,
           options: searchedOptions,
@@ -32,7 +32,7 @@ export const singleSelect = () => {
   };
 
   const onUpdate = (_type, option) => {
-    window.setTimeout(() => {
+    this.window.setTimeout(() => {
       setSelected([option]);
     }, 2000);
   };
@@ -78,7 +78,7 @@ const customCode = `() => {
   const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise(resolve => {
-      window.setTimeout(() => {
+      this.window.setTimeout(() => {
         resolve({
           searchTerm,
           options: searchedOptions,
@@ -93,7 +93,7 @@ const customCode = `() => {
   };
 
   const onUpdate = (_type, option) => {
-    window.setTimeout(() => {
+    this.window.setTimeout(() => {
       setSelected([option]);
     }, 2000);
   };

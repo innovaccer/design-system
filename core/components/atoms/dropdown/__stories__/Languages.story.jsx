@@ -4,7 +4,7 @@ import Label from '@/components/atoms/label';
 import { Uncontrolled, Controlled } from './_common_/types';
 
 // CSF format story
-export const languages = () =>{
+export const languages = () => {
   const options = [
     {
       label: 'Hindi',
@@ -20,12 +20,12 @@ export const languages = () =>{
     },
   ];
   return (
-  <div className="mb-11 w-25">
-    <Label withInput={true}>Select Language</Label>
-    <Dropdown options={options} />
-  </div>
+    <div className="mb-11 w-25">
+      <Label withInput={true}>Select Language</Label>
+      <Dropdown options={options} />
+    </div>
   );
-}
+};
 
 export default {
   title: 'Components/Dropdown/Languages',

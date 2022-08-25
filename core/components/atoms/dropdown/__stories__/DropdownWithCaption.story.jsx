@@ -5,7 +5,7 @@ import Label from '../../label';
 import Caption from '../../caption';
 
 // CSF format story
-export const dropdownWithCaption = () =>{
+export const dropdownWithCaption = () => {
   const options = [
     {
       label: 'Alabama (205)',
@@ -49,13 +49,13 @@ export const dropdownWithCaption = () =>{
     },
   ];
   return (
-  <>
-    <Label withInput={true}>Area code</Label>
-    <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select an area code" />
-    <Caption withInput={true}>If the number with this code is not available, we will use the next best match</Caption>
-  </>
+    <>
+      <Label withInput={true}>Area code</Label>
+      <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select an area code" />
+      <Caption withInput={true}>If the number with this code is not available, we will use the next best match</Caption>
+    </>
   );
-}
+};
 
 export default {
   title: 'Components/Dropdown/Dropdown With Caption',

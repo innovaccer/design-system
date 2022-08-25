@@ -3,7 +3,6 @@ import MetaList from '../MetaList';
 
 // CSF format story
 export const all = () => {
-
   const list = [
     {
       label: 'Meta data',

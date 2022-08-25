@@ -19,7 +19,7 @@
     "deploy-storybook": "storybook-to-aws-s3",
     "setup-css-dev": "./scripts/setup-local-css.sh",
     "pre-commit": "lint-staged",
-    "lint:check": "eslint ./core --ext .tsx,.ts",
+    "lint:check": "eslint ./core --ext .tsx,.ts,.js,.jsx",
     "lint": "npm run lint:check -- --fix",
     "prettier:check": "prettier --config ./.prettierrc --check",
     "prettier": "prettier --config ./.prettierrc --write 'css/src/**/*.css'",
@@ -143,7 +143,7 @@
   ],
   "repository": "github:innovaccer/design-system",
   "lint-staged": {
-    "core/**/*.{tx,tsx}": [
+    "core/**/*.{tx,tsx,js,jsx}": [
       "npm run lint:check"
     ],
     "css/src/**/*.css": [
