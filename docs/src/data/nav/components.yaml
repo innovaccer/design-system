@@ -7,7 +7,7 @@ menus:
     link: /components/actionSheet/usage
     hideInWeb: true
 
-  - label: Avatars
+  - label: Avatar
     link: /components/avatar/usage/
     hideInMobile: true
 
