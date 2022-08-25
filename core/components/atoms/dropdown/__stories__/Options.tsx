@@ -1,12 +1,37 @@
 import { getSearchedOptions } from '../utility';
 
-export const dropdownOptions = [];
-export const preSelectedOptions = [];
-export const storyOptions = [];
-export const disabledStoryOptions = [];
-export const iconOptions = [];
-export const subInfoOptions = [];
-export const iconWithSubinfoOptions = [];
+type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
+
+interface OptionSchema extends Record<string, any> {
+  label: string;
+  value: React.ReactText;
+  icon: string;
+  subInfo: string;
+  optionType?: OptionType;
+  selected?: boolean;
+  disabled?: boolean;
+  group?: string;
+}
+
+interface SelectedOptionSchema extends Record<string, any> {
+  label: string;
+  value: React.ReactText;
+  selected?: boolean;
+}
+
+interface fetchOptionSchema {
+  searchTerm?: string | undefined;
+  count: number;
+  options: OptionSchema[];
+}
+
+export const dropdownOptions: OptionSchema[] = [];
+export const preSelectedOptions: SelectedOptionSchema[] = [];
+export const storyOptions: OptionSchema[] = [];
+export const disabledStoryOptions: OptionSchema[] = [];
+export const iconOptions: OptionSchema[] = [];
+export const subInfoOptions: OptionSchema[] = [];
+export const iconWithSubinfoOptions: OptionSchema[] = [];
 
 for (let i = 1; i <= 10; i++) {
   storyOptions.push({
@@ -84,7 +109,7 @@ for (let i = 41; i <= 100; i++) {
   });
 }
 
-export const selectedStoryOptions = [];
+export const selectedStoryOptions: SelectedOptionSchema[] = [];
 
 for (let i = 1; i <= 10; i++) {
   selectedStoryOptions.push({
@@ -94,7 +119,7 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
-export const multiSelectedStoryOptions = [];
+export const multiSelectedStoryOptions: SelectedOptionSchema[] = [];
 
 for (let i = 1; i <= 10; i++) {
   multiSelectedStoryOptions.push({
@@ -155,9 +180,9 @@ export const iconItems = [
   },
 ];
 
-export const fetchOptions = (searchTerm) => {
+export const fetchOptions = (searchTerm: string) => {
   const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-  return new Promise((resolve) => {
+  return new Promise<fetchOptionSchema>((resolve) => {
     window.setTimeout(() => {
       resolve({
         searchTerm,
