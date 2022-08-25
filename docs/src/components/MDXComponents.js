@@ -185,7 +185,7 @@ const OrderedList = ({ children }) => {
 
 const Caption = ({ children }) => {
   return (
-    <MDSComponents.Text size="small" appearance="subtle" className="d-flex mt-4 justify-content-center text-align--center">
+    <MDSComponents.Text size="small" appearance="subtle" className="d-flex my-4 justify-content-center text-align--center">
       {children}
     </MDSComponents.Text>
   );
