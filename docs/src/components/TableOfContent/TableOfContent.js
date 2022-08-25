@@ -51,6 +51,10 @@ const TableOfContent = (props) => {
     const headerHeight = document.getElementById('mainHeader').getBoundingClientRect().height;
     const viewportHeight = document.body.offsetHeight - headerHeight;
     let resultFound = false;
+    const fetchUrl = (activeUrl) => {
+      let path = activeUrl.split('#');
+      return path[path.length - 1];
+    };
 
     idList &&
       idList.forEach((item) => {
@@ -61,9 +65,16 @@ const TableOfContent = (props) => {
             setActive(item);
             resultFound = true;
             let activeElement = document.getElementsByClassName('active-link')[0];
+            let activeUrl = activeElement.getElementsByClassName('toc-link')[0].href;
+            let subHeading = document.getElementsByClassName('subheading')[0];
+
+            const activeContent = fetchUrl(activeUrl);
             let flag = isInViewport(activeElement);
             if (flag === 'belowViewPort') activeElement.scrollIntoView(true);
-            else if (flag === 'aboveViewPort') activeElement.scrollIntoView(true);
+            else if (flag === 'aboveViewPort') {
+              if (activeContent == idList[0]) subHeading.scrollIntoView(true);
+              else activeElement.scrollIntoView(true);
+            }
           }
         }
       });
@@ -123,9 +134,11 @@ const TableOfContent = (props) => {
     <div className="d-flex flex-column right-nav-container overflow-hidden">
       {navItems && navItems.length ? (
         <>
-          <Subheading appearance="subtle" className="pl-6 mt-10">
-            CONTENTS
-          </Subheading>
+          <div className="subheading">
+            <Subheading appearance="subtle" className="pl-6 mt-10">
+              CONTENTS
+            </Subheading>
+          </div>
           {renderItems(navItems,depth)}
         </>
       ) : (
