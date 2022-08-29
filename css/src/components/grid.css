@@ -161,8 +161,16 @@
   cursor: pointer;
 }
 
+.Grid-nestedRow .Grid-rowWrapper {
+  border-bottom: 0;
+}
+
+.Grid-nestedRow .Grid-cell:first-child {
+  padding-left: calc(var(--spacing-3) + var(--spacing));
+}
+
 .Grid-nestedRowPlaceholder {
-  width: 20px;
+  width: var(--spacing-xl);
   margin-right: var(--spacing-l);
 }
 

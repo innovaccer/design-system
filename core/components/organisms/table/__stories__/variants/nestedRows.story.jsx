@@ -143,11 +143,14 @@ const customCode = `
       return false;
     }
     return (
-      <List
-        loading={loading}
-        schema={schema}
-        data={[data]}
-      />
+      <div>
+        <Divider className='ml-5' />
+        <List
+          loading={loading}
+          schema={schema}
+          data={[data]}
+        />
+      </div>
     );
   }
 

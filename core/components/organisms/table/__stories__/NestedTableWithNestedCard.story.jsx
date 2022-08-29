@@ -88,7 +88,7 @@ export const nestedTableWithNestedCards = () => {
   ];
 
   const nestedRowRenderer = (props) => (
-    <CardSubdued className="ml-7 mb-4 mt-3 mr-4">
+    <CardSubdued className="mb-4 mt-3 mr-4" style={{ marginLeft: '40px' }}>
       <div className="d-flex flex-row">
         <div style={{ width: '17%' }}>
           <Text weight="medium">Type</Text>
@@ -238,7 +238,7 @@ const customCode = `() => {
       return false;
     }
     return (
-      <CardSubdued className="ml-7 mb-4 mt-3 mr-4">
+      <CardSubdued className="mb-4 mt-3 mr-4" style={{ marginLeft: '40px' }}>
         <div className="d-flex flex-row">
           <div style={{ width: '17%' }}>
             <Text weight="medium">Type</Text>
