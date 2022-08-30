@@ -57,7 +57,9 @@ export const all = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
       <Sidesheet {...options}>
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />

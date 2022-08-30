@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Modal, Button, Text, Paragraph } from '@/index';
+import { Modal, Button, Text } from '@/index';
 
 export const scrolling = () => {
   const [open, setOpen] = React.useState(false);
@@ -77,7 +77,9 @@ export const scrolling = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Modal</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
       <Modal
         open={open}
         dimension="large"

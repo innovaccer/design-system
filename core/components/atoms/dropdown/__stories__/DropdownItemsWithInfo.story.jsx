@@ -3,8 +3,7 @@ import { Dropdown } from '@/index';
 import { Uncontrolled, Controlled } from './_common_/types';
 
 // CSF format story
-export const dropdownItemsWithSubInfo = () =>{
-
+export const dropdownItemsWithSubInfo = () => {
   const options = [
     {
       label: 'Lawson, Joy',
@@ -23,9 +22,7 @@ export const dropdownItemsWithSubInfo = () =>{
     },
   ];
 
-  return (
-  <Dropdown options={options} optionType="WITH_META" className="w-25" placeholder="Select Recipient" />
-  );
+  return <Dropdown options={options} optionType="WITH_META" className="w-25" placeholder="Select Recipient" />;
 };
 
 export default {

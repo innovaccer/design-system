@@ -3,7 +3,6 @@ import Button from '@/components/atoms/button';
 import Dropdown from '@/components/atoms/dropdown';
 
 export const splitButton = () => {
-
   const options = [
     {
       label: 'Download All',
@@ -24,7 +23,7 @@ export const splitButton = () => {
         <Dropdown menu={true} icon="expand_more" options={options} />
       </div>
     </div>
-  )
+  );
 };
 
 export default {

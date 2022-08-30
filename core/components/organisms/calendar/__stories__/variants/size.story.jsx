@@ -5,7 +5,6 @@ import Heading from '@/components/atoms/heading';
 
 // CSF format story
 export const size = () => {
-
   return (
     <>
       <div className="mt-8">
@@ -13,7 +12,7 @@ export const size = () => {
         <div className="d-flex">
           <div className="mr-8">
             <Card className="d-inline-flex" shadow="light">
-              <Calendar date={new Date(2020, 2, 15)} size={'small'} view='date' />
+              <Calendar date={new Date(2020, 2, 15)} size={'small'} view="date" />
             </Card>
           </div>
         </div>
@@ -24,7 +23,7 @@ export const size = () => {
         <div className="d-flex">
           <div className="mr-8">
             <Card className="d-inline-flex" shadow="light">
-              <Calendar date={new Date(2020, 2, 15)} size={'large'} view='date' />
+              <Calendar date={new Date(2020, 2, 15)} size={'large'} view="date" />
             </Card>
           </div>
         </div>

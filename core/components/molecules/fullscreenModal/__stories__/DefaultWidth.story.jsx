@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Button, Paragraph, FullscreenModal, Label, Input, Textarea } from '@/index';
+import { Button, FullscreenModal, Label, Input, Textarea } from '@/index';
 
 export const defaultWidth = () => {
   const [open, setOpen] = React.useState(false);
@@ -11,7 +11,9 @@ export const defaultWidth = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Modal</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
 
       <FullscreenModal
         open={open}

@@ -16,7 +16,7 @@ export const preSelection = () => {
   const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(preSelectedOptions, searchTerm) : preSelectedOptions;
     return new Promise((resolve) => {
-      window.setTimeout(() => {
+      this.window.setTimeout(() => {
         resolve({
           searchTerm,
           options: searchedOptions,
@@ -64,7 +64,7 @@ const customCode = `() => {
   const fetchOptions = (searchTerm, limit) => {
     const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
     return new Promise(resolve => {
-      window.setTimeout(() => {
+      this.window.setTimeout(() => {
         resolve({
           options: searchedOptions.slice(0, limit),
           count: searchedOptions.length,

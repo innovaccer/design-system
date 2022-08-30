@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { VerticalNav, Icon, Tooltip, Text } from '@/index';
+import { VerticalNav } from '@/index';
 
 export const LabelOverflowBehaviour = () => {
   const data = [
     {
       name: 'clinical_data',
       label: 'Clinical Data',
-      icon: 'assignment_ind'
+      icon: 'assignment_ind',
     },
     {
       name: 'care_management',
@@ -16,29 +16,29 @@ export const LabelOverflowBehaviour = () => {
         {
           name: 'care_management.timeline',
           label: 'Timeline',
-          icon: 'people'
+          icon: 'people',
         },
         {
           name: 'care_management.care_protocol',
           label: 'Care Protocol Management Guidelines',
-          icon: 'fact_check'
+          icon: 'fact_check',
         },
         {
           name: 'care_management.assessments',
           label: 'Assessments',
-          icon: 'assessment'
+          icon: 'assessment',
         },
-      ]
+      ],
     },
     {
       name: 'episodes',
       label: 'Episodes',
-      icon: 'airline_seat_flat_angled'
+      icon: 'airline_seat_flat_angled',
     },
     {
       name: 'preventive_health',
       label: 'Preventive Health Precautions Template',
-      icon: 'beenhere'
+      icon: 'beenhere',
     },
   ];
 
@@ -48,13 +48,7 @@ export const LabelOverflowBehaviour = () => {
 
   return (
     <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>
-      <VerticalNav
-        menus={data}
-        expanded={true}
-        active={active}
-        onClick={setActive}
-        showTooltip={true}
-      />
+      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} showTooltip={true} />
     </div>
   );
 };

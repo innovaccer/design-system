@@ -16,15 +16,15 @@ export const size = () => {
         return (
           <div key={ind} className="mr-9 mb-8 w-25">
             <Text weight="strong">{InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}</Text>
-              <Input
-                name="input"
-                value={value}
-                onChange={action('on-change')}
-                onClick={action('on-click')}
-                onClear={action('on-clear')}
-                placeholder={placeholder}
-                size={InputSize}
-              />
+            <Input
+              name="input"
+              value={value}
+              onChange={action('on-change')}
+              onClick={action('on-click')}
+              onClear={action('on-clear')}
+              placeholder={placeholder}
+              size={InputSize}
+            />
           </div>
         );
       })}

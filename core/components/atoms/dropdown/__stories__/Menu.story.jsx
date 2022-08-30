@@ -4,7 +4,6 @@ import { Uncontrolled, Controlled } from './_common_/types';
 
 // CSF format story
 export const dropdownAsMenu = () => {
-
   const options = [
     {
       label: 'Edit',
@@ -18,13 +17,13 @@ export const dropdownAsMenu = () => {
       label: 'Delete',
       value: 'delete',
     },
-  ]
+  ];
   return (
     <div className="d-flex w-50">
-    <Dropdown options={options} menu={true} className="mr-5" align="right" maxWidth={130} />
-    <Dropdown options={options} menu={true} align="left" className="mr-5" maxWidth={130} />
-  </div>
-  )
+      <Dropdown options={options} menu={true} className="mr-5" align="right" maxWidth={130} />
+      <Dropdown options={options} menu={true} align="left" className="mr-5" maxWidth={130} />
+    </div>
+  );
 };
 
 export default {

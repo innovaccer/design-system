@@ -17,8 +17,8 @@ export const Input = () => {
               clearButton={true}
               disabled={booleanvalue}
               type="input"
-              onClose={action(`onClose: ${name}`)}
-              onClick={action(`onClick: ${name}`)}
+              onClose={action(`onClose: ${label}`)}
+              onClick={action(`onClick: ${label}`)}
               name={'chip'}
             />
             <br />

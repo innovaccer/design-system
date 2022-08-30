@@ -22,9 +22,7 @@ export const dropdownItemsWithCheckbox = () => {
       value: '56_above',
     },
   ];
-   return (
-  <Dropdown options={options} withCheckbox={true} className="w-25" placeholder="Select" />
-  );
+  return <Dropdown options={options} withCheckbox={true} className="w-25" placeholder="Select" />;
 };
 
 export default {

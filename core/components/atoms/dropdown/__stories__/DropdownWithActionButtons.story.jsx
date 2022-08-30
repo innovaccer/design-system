@@ -47,16 +47,16 @@ export const dropdownWithActionButtons = () => {
     },
   ];
   return (
-  <Dropdown
-    options={options}
-    withSearch={true}
-    className="w-25"
-    placeholder="Select problem"
-    withCheckbox={true}
-    showApplyButton={true}
-  />
+    <Dropdown
+      options={options}
+      withSearch={true}
+      className="w-25"
+      placeholder="Select problem"
+      withCheckbox={true}
+      showApplyButton={true}
+    />
   );
-}
+};
 
 export default {
   title: 'Components/Dropdown/Dropdown With Action Buttons',

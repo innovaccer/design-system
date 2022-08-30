@@ -16,7 +16,6 @@ export const large = () => {
 
   return (
     <div>
-
       <Button appearance="primary" onClick={openModal}>
         Open Modal
       </Button>

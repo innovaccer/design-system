@@ -10,7 +10,7 @@ export const withDatePicker = () => {
   const handleDateChange = (date) => {
     if (date) {
       setOpen(false);
-      window.setTimeout(() => {
+      this.window.setTimeout(() => {
         setOpen(true);
       }, 0);
     }

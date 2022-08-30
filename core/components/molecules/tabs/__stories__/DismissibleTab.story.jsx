@@ -13,6 +13,7 @@ export const dismissibleTab = () => {
   };
 
   const onDismissHandler = (tabInfo) => {
+    action(`tab-change: ${tabInfo}`)();
     setHideTab(true);
   };
 

@@ -3,7 +3,7 @@ import { Dropdown } from '@/index';
 import { Uncontrolled, Controlled } from './_common_/types';
 
 // CSF format story
-export const searchInDropdown = () =>{
+export const searchInDropdown = () => {
   const options = [
     {
       label: 'Financial',
@@ -26,10 +26,8 @@ export const searchInDropdown = () =>{
       value: 'lack_of_understanding',
     },
   ];
-  return (
-  <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select barriers" />
-  );
-}
+  return <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select barriers" />;
+};
 
 export default {
   title: 'Components/Dropdown/Search In Dropdown',

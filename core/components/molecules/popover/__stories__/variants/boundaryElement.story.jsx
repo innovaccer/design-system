@@ -35,7 +35,7 @@ export const boundaryElement = () => {
   };
   if (on === 'hover') delete options.onToggle;
 
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = React.useRef < React.HTMLDivElement > null;
 
   return (
     <div ref={ref.current} style={{ height: 150, border: '1px dashed', padding: 20, overflow: 'auto' }}>

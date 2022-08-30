@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Text, Paragraph, Sidesheet, ModalDescription, Button } from '@/index';
+import { Text, Sidesheet, ModalDescription, Button } from '@/index';
 
 export const regular = () => {
   const [open, setOpen] = React.useState(false);
@@ -55,7 +55,9 @@ export const regular = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
       <Sidesheet {...options} dimension="regular">
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />
