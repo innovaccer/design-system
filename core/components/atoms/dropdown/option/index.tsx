@@ -56,6 +56,7 @@ export interface OptionTypeProps {
   onClickHandler?: (event: ClickEvent) => void;
   onChangeHandler?: (event: ChangeEvent) => void;
   renderSubInfo: (subInfo: string | MetaListProps) => React.ReactElement;
+  id?: string;
 }
 
 interface OptionProps extends OptionRendererProps {
@@ -69,6 +70,7 @@ interface OptionProps extends OptionRendererProps {
   onClick?: () => void;
   onChange?: (event: ChangeEvent) => void;
   updateActiveOption?: (index: number) => void;
+  id?: string;
 }
 
 const OptionTypeMapping: { [key: string]: (props: OptionTypeProps) => JSX.Element } = {
@@ -80,7 +82,18 @@ const OptionTypeMapping: { [key: string]: (props: OptionTypeProps) => JSX.Elemen
 };
 
 const Option = (props: OptionProps) => {
-  const { optionData, selected, onClick, updateActiveOption, onChange, active, index, checkboxes, menu } = props;
+  const {
+    optionData,
+    selected,
+    onClick,
+    updateActiveOption,
+    onChange,
+    active,
+    index,
+    checkboxes,
+    menu,
+    id = '',
+  } = props;
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
   const { disabled } = optionData;
@@ -195,6 +208,7 @@ const Option = (props: OptionProps) => {
     onUpdateActiveOption,
     dataTest: `DesignSystem-DropdownOption--${type}`,
     className: checkboxes ? CheckboxClassName : OptionClassName,
+    id,
   });
 };
 

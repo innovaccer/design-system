@@ -54,6 +54,10 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
    * Callback function called when user the selects an option
    */
   onChange?: (event: ChangeEvent) => void;
+  /**
+   * htmlFor label id for checkbox
+   */
+  id?: string;
 }
 
 /**
@@ -75,6 +79,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     className,
     checked: checkedProp,
     helpText,
+    id = `${name}-${label}-${uidGenerator()}`,
     ...rest
   } = props;
 
@@ -134,7 +139,6 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     }
     if (onChange) onChange(e);
   };
-  const id = `${name}-${label}-${uidGenerator()}`;
   const IconName = indeterminate ? 'remove' : checked ? 'check' : '';
   const IconSize = size === 'tiny' ? 12 : 16;
 
