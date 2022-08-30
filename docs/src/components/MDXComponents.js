@@ -175,9 +175,17 @@ const List = ({ children }) => {
   )
 }
 
+const OrderedList = ({ children }) => {
+  return (
+    <ol className='ordered-list'>
+      {children}
+    </ol>
+  )
+}
+
 const Caption = ({ children }) => {
   return (
-    <MDSComponents.Text size="small" appearance="subtle" className="d-flex mt-4 justify-content-center text-align--center">
+    <MDSComponents.Text size="small" appearance="subtle" className="d-flex my-4 justify-content-center text-align--center">
       {children}
     </MDSComponents.Text>
   );
@@ -195,6 +203,7 @@ export const MDXComponents = {
   IconWrapper,
   Caption,
   ul: List,
+  ol: OrderedList,
   h1: (props) => <MDXHeading size='xxl' headingInfo={props} />,
   h2: (props) => <MDXHeading size='xl' headingInfo={props} />,
   h3: (props) => <MDXHeading size='l' headingInfo={props} />,
