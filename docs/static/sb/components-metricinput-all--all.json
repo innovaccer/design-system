@@ -9,7 +9,7 @@
   "component": {
     "displayName": "MetricInput",
     "__docgenInfo": {
-      "description": "###### MetricInput has two types:\n - [Controlled MetricInput](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled MetricInput](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "###### MetricInput has two types:\n  - [Controlled MetricInput](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled MetricInput](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "MetricInput",
       "props": {
         "name": {
@@ -27,7 +27,7 @@
           "name": "value",
           "required": false,
           "type": {
-            "name": "ReactText | undefined"
+            "name": "string | number | undefined"
           }
         },
         "defaultValue": {
@@ -36,7 +36,7 @@
           "name": "defaultValue",
           "required": false,
           "type": {
-            "name": "ReactText | undefined"
+            "name": "string | number | undefined"
           }
         },
         "placeholder": {
@@ -49,9 +49,7 @@
           }
         },
         "size": {
-          "defaultValue": {
-            "value": "\"regular\""
-          },
+          "defaultValue": null,
           "description": "Size of the `MetricInput`",
           "name": "size",
           "required": false,
@@ -252,7 +250,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.4-1",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -491,11 +489,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactText | undefined"
+          "value": "string | number | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactText | undefined"
+            "summary": "string | number | undefined"
           },
           "defaultValue": null
         }
@@ -506,11 +504,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactText | undefined"
+          "value": "string | number | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactText | undefined"
+            "summary": "string | number | undefined"
           },
           "defaultValue": null
         }
@@ -546,9 +544,7 @@
           "type": {
             "summary": "undefined | \"regular\" | \"large\""
           },
-          "defaultValue": {
-            "summary": "\"regular\""
-          }
+          "defaultValue": null
         }
       },
       "icon": {
@@ -820,11 +816,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactText | undefined"
+        "value": "string | number | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactText | undefined"
+          "summary": "string | number | undefined"
         },
         "defaultValue": null
       }
@@ -835,11 +831,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactText | undefined"
+        "value": "string | number | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactText | undefined"
+          "summary": "string | number | undefined"
         },
         "defaultValue": null
       }
@@ -875,9 +871,7 @@
         "type": {
           "summary": "undefined | \"regular\" | \"large\""
         },
-        "defaultValue": {
-          "summary": "\"regular\""
-        }
+        "defaultValue": null
       }
     },
     "icon": {
