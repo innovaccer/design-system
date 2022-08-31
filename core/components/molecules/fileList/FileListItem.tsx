@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, InlineMessage } from '@/index';
+import { Text, InlineMessage, Row, Column } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
@@ -83,22 +83,31 @@ export const FileListItem = (props: FileListItemProps) => {
     //  eslint-disable-next-line
     <div {...baseProps} className={FileItemClass} onClick={onClickHandler} data-test="DesignSystem-FileListItem">
       <div className="FileItem-file">
-        <div className="FileItem-fileContent">
-          <FileIcon file={file} status={status} progress={progress} />
-          <Text
-            data-test="DesignSystem-FileListItem--Name"
-            className="FileItem-text"
-            appearance={status === 'completed' ? 'default' : 'subtle'}
-          >
-            {name}
-          </Text>
-        </div>
-        <div className="FileItem-actions">
-          <Text className="FileItem-size" appearance={'subtle'} data-test="DesignSystem-FileListItem--Size">
-            {fileSize || file.size}
-          </Text>
-          {!!actions && actions}
-        </div>
+        <Row className="w-100">
+          <Column size={9} className="FileItem-fileContent">
+            <FileIcon file={file} status={status} progress={progress} />
+            <Text
+              data-test="DesignSystem-FileListItem--Name"
+              className="FileItem-text"
+              weight="medium"
+              appearance={status === 'completed' ? 'default' : 'subtle'}
+            >
+              {name}
+            </Text>
+          </Column>
+
+          <Column size={3} className="FileItem-actions">
+            <Text
+              className="FileItem-size"
+              size="small"
+              appearance={'subtle'}
+              data-test="DesignSystem-FileListItem--Size"
+            >
+              {fileSize || file.size}
+            </Text>
+            {!!actions && actions}
+          </Column>
+        </Row>
       </div>
       {status === 'error' && (
         <InlineMessage size="small" appearance="alert" description={errorMessage} className={'FileItem-error'} />

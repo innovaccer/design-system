@@ -16,87 +16,57 @@ exports[`FileList component
         class="FileItem-file"
       >
         <div
-          class="FileItem-fileContent"
+          class="Row w-100"
+          data-test="DesignSystem-Row"
         >
-          <svg
-            class="Ring Ring--small FileIcon FileIcon--uploading"
-            data-test="DesignSystem-FileListItem--ProgressRing"
-            viewBox="0 0 50 50"
+          <div
+            class="Col Col--9 FileItem-fileContent"
+            data-test="DesignSystem-Column"
           >
-            <circle
-              class="Ring-background"
-              cx="25"
-              cy="25"
-              fill="none"
-              r="20"
-              stroke-dasharray="125.66370614359172 125.66370614359172"
-              stroke-width="8"
-            />
-            <circle
-              class="Ring-indicator"
-              cx="25"
-              cy="25"
-              data-test="DesignSystem-ProgressRing--Circle"
-              fill="none"
-              r="20"
-              stroke-dasharray="125.66370614359172 125.66370614359172"
-              stroke-dashoffset="69.11503837897544"
-              stroke-width="8"
-            />
-          </svg>
-          <span
-            class="Text Text--subtle Text--regular FileItem-text"
-            data-test="DesignSystem-FileListItem--Name"
+            <svg
+              class="Ring Ring--small FileIcon FileIcon--uploading"
+              data-test="DesignSystem-FileListItem--ProgressRing"
+              viewBox="0 0 50 50"
+            >
+              <circle
+                class="Ring-background"
+                cx="25"
+                cy="25"
+                fill="none"
+                r="20"
+                stroke-dasharray="125.66370614359172 125.66370614359172"
+                stroke-width="8"
+              />
+              <circle
+                class="Ring-indicator"
+                cx="25"
+                cy="25"
+                data-test="DesignSystem-ProgressRing--Circle"
+                fill="none"
+                r="20"
+                stroke-dasharray="125.66370614359172 125.66370614359172"
+                stroke-dashoffset="69.11503837897544"
+                stroke-width="8"
+              />
+            </svg>
+            <span
+              class="Text Text--subtle Text--medium Text--regular FileItem-text"
+              data-test="DesignSystem-FileListItem--Name"
+            >
+              Audio File.mp3
+            </span>
+          </div>
+          <div
+            class="Col Col--3 FileItem-actions"
+            data-test="DesignSystem-Column"
           >
-            Audio File.mp3
-          </span>
-        </div>
-        <div
-          class="FileItem-actions"
-        >
-          <span
-            class="Text Text--subtle Text--regular FileItem-size"
-            data-test="DesignSystem-FileListItem--Size"
-          >
-            3 MB
-          </span>
-        </div>
-      </div>
-    </div>
-    <div
-      class="FileItem"
-      data-test="DesignSystem-FileListItem"
-    >
-      <div
-        class="FileItem-file"
-      >
-        <div
-          class="FileItem-fileContent"
-        >
-          <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--video"
-            data-test="DesignSystem-FileListItem--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            movie_round
-          </i>
-          <span
-            class="Text Text--default Text--regular FileItem-text"
-            data-test="DesignSystem-FileListItem--Name"
-          >
-            Video File.mp4
-          </span>
-        </div>
-        <div
-          class="FileItem-actions"
-        >
-          <span
-            class="Text Text--subtle Text--regular FileItem-size"
-            data-test="DesignSystem-FileListItem--Size"
-          >
-            4 MB
-          </span>
+            <span
+              class="Text Text--subtle Text--small FileItem-size"
+              data-test="DesignSystem-FileListItem--Size"
+            >
+              3 MB
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -108,32 +78,83 @@ exports[`FileList component
         class="FileItem-file"
       >
         <div
-          class="FileItem-fileContent"
+          class="Row w-100"
+          data-test="DesignSystem-Row"
         >
-          <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--image"
-            data-test="DesignSystem-FileListItem--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="Col Col--9 FileItem-fileContent"
+            data-test="DesignSystem-Column"
           >
-            image_round
-          </i>
-          <span
-            class="Text Text--subtle Text--regular FileItem-text"
-            data-test="DesignSystem-FileListItem--Name"
+            <i
+              class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--video"
+              data-test="DesignSystem-FileListItem--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              movie_round
+            </i>
+            <span
+              class="Text Text--default Text--medium Text--regular FileItem-text"
+              data-test="DesignSystem-FileListItem--Name"
+            >
+              Video File.mp4
+            </span>
+          </div>
+          <div
+            class="Col Col--3 FileItem-actions"
+            data-test="DesignSystem-Column"
           >
-            Image File.jpeg
-          </span>
+            <span
+              class="Text Text--subtle Text--small FileItem-size"
+              data-test="DesignSystem-FileListItem--Size"
+            >
+              4 MB
+            </span>
+          </div>
         </div>
+      </div>
+    </div>
+    <div
+      class="FileItem"
+      data-test="DesignSystem-FileListItem"
+    >
+      <div
+        class="FileItem-file"
+      >
         <div
-          class="FileItem-actions"
+          class="Row w-100"
+          data-test="DesignSystem-Row"
         >
-          <span
-            class="Text Text--subtle Text--regular FileItem-size"
-            data-test="DesignSystem-FileListItem--Size"
+          <div
+            class="Col Col--9 FileItem-fileContent"
+            data-test="DesignSystem-Column"
           >
-            3 MB
-          </span>
+            <i
+              class="material-icons material-icons-round Icon FileIcon FileIcon--image"
+              data-test="DesignSystem-FileListItem--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              image_round
+            </i>
+            <span
+              class="Text Text--subtle Text--medium Text--regular FileItem-text"
+              data-test="DesignSystem-FileListItem--Name"
+            >
+              Image File.jpeg
+            </span>
+          </div>
+          <div
+            class="Col Col--3 FileItem-actions"
+            data-test="DesignSystem-Column"
+          >
+            <span
+              class="Text Text--subtle Text--small FileItem-size"
+              data-test="DesignSystem-FileListItem--Size"
+            >
+              3 MB
+            </span>
+          </div>
         </div>
       </div>
       <div
@@ -164,32 +185,39 @@ exports[`FileList component
         class="FileItem-file"
       >
         <div
-          class="FileItem-fileContent"
+          class="Row w-100"
+          data-test="DesignSystem-Row"
         >
-          <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--application"
-            data-test="DesignSystem-FileListItem--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="Col Col--9 FileItem-fileContent"
+            data-test="DesignSystem-Column"
           >
-            insert_drive_file_round
-          </i>
-          <span
-            class="Text Text--default Text--regular FileItem-text"
-            data-test="DesignSystem-FileListItem--Name"
+            <i
+              class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--application"
+              data-test="DesignSystem-FileListItem--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              insert_drive_file_round
+            </i>
+            <span
+              class="Text Text--default Text--medium Text--regular FileItem-text"
+              data-test="DesignSystem-FileListItem--Name"
+            >
+              Document File.pdf
+            </span>
+          </div>
+          <div
+            class="Col Col--3 FileItem-actions"
+            data-test="DesignSystem-Column"
           >
-            Document File.pdf
-          </span>
-        </div>
-        <div
-          class="FileItem-actions"
-        >
-          <span
-            class="Text Text--subtle Text--regular FileItem-size"
-            data-test="DesignSystem-FileListItem--Size"
-          >
-            3 MB
-          </span>
+            <span
+              class="Text Text--subtle Text--small FileItem-size"
+              data-test="DesignSystem-FileListItem--Size"
+            >
+              3 MB
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -201,32 +229,39 @@ exports[`FileList component
         class="FileItem-file"
       >
         <div
-          class="FileItem-fileContent"
+          class="Row w-100"
+          data-test="DesignSystem-Row"
         >
-          <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--others"
-            data-test="DesignSystem-FileListItem--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="Col Col--9 FileItem-fileContent"
+            data-test="DesignSystem-Column"
           >
-            text_snippet_round
-          </i>
-          <span
-            class="Text Text--default Text--regular FileItem-text"
-            data-test="DesignSystem-FileListItem--Name"
+            <i
+              class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--others"
+              data-test="DesignSystem-FileListItem--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              text_snippet_round
+            </i>
+            <span
+              class="Text Text--default Text--medium Text--regular FileItem-text"
+              data-test="DesignSystem-FileListItem--Name"
+            >
+              Other File
+            </span>
+          </div>
+          <div
+            class="Col Col--3 FileItem-actions"
+            data-test="DesignSystem-Column"
           >
-            Other File
-          </span>
-        </div>
-        <div
-          class="FileItem-actions"
-        >
-          <span
-            class="Text Text--subtle Text--regular FileItem-size"
-            data-test="DesignSystem-FileListItem--Size"
-          >
-            3 MB
-          </span>
+            <span
+              class="Text Text--subtle Text--small FileItem-size"
+              data-test="DesignSystem-FileListItem--Size"
+            >
+              3 MB
+            </span>
+          </div>
         </div>
       </div>
     </div>
