@@ -16,8 +16,8 @@ export const Action = () => {
               icon={icon}
               label={label}
               disabled={booleanvalue}
-              onClose={action(`onClose: ${name}`)}
-              onClick={action(`onClick: ${name}`)}
+              onClose={action(`onClose: ${label}`)}
+              onClick={action(`onClick: ${label}`)}
               type="action"
               name={'chip'}
             />

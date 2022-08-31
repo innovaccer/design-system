@@ -17,8 +17,8 @@ export const Selection = () => {
               clearButton={true}
               disabled={booleanvalue}
               type="selection"
-              onClose={action(`onClose: ${name}`)}
-              onClick={action(`onClick: ${name}`)}
+              onClose={action(`onClose: ${label}`)}
+              onClick={action(`onClick: ${label}`)}
               selected={false}
               name={'chip'}
             />
@@ -33,8 +33,8 @@ export const Selection = () => {
           label={label}
           clearButton={true}
           type="selection"
-          onClose={action(`onClose: ${name}`)}
-          onClick={action(`onClick: ${name}`)}
+          onClose={action(`onClose: ${label}`)}
+          onClick={action(`onClick: ${label}`)}
           selected={true}
           name={'chip'}
         />
@@ -47,8 +47,8 @@ export const Selection = () => {
           label={label}
           clearButton={true}
           type="selection"
-          onClose={action(`onClose: ${name}`)}
-          onClick={action(`onClick: ${name}`)}
+          onClose={action(`onClose: ${label}`)}
+          onClick={action(`onClick: ${label}`)}
           selected={true}
           disabled={true}
           name={'chip'}

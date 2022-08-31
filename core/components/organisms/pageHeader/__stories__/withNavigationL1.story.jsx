@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navigation, Breadcrumbs, Badge, MetaList, PageHeader } from '@/index';
+import { Navigation, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint } from '@/index';
 import { action } from '@/utils/action';
 
 export const level1WithNavigation = () => {
@@ -41,6 +41,9 @@ export const level1WithNavigation = () => {
     </Badge>
   );
   const meta = <MetaList list={[{ label: 'Text' }, { label: 'Email' }]} />;
+
+  const status = <StatusHint appearance="info">Ongoing</StatusHint>;
+
   return (
     <div className="py-5 bg-secondary-lightest" style={{ width: '900px' }}>
       <PageHeader
@@ -106,6 +109,9 @@ const customCode = `() => {
       list={[{ label: 'Text' }, { label: 'Email' }]}
     />
   );
+
+  const status = <StatusHint appearance="info">Ongoing</StatusHint>;
+
   return (
     <div className="py-5 bg-secondary-lightest" style={{width:'900px'}}>
       <PageHeader

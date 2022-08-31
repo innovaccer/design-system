@@ -1,174 +1,20 @@
 import React, { useState } from 'react';
-import { Row, Column, Button, Toast, Tooltip, Text } from '@innovaccer/design-system';
-import LeftNav from './LeftNav';
-import TableOfContent from './TableOfContent/TableOfContent';
-import Header from './Header';
-import Container from './Container';
-import ComponentsContainer from './Container/ComponentsContainer';
-import { MDXProvider } from '@mdx-js/react';
-import * as MDSComponents from '@innovaccer/design-system';
-import Meta from './Meta';
 import './css/style.css';
-import PropsTable from './PropsTable/index';
-import Rules from './Rules/Rules';
-import DOs from './Rules/DOs';
-import DONTs from './Rules/DONTs';
-import InlineMessage from './Rules/InlineMessage';
-import IconWrapper from './Rules/IconWrapper';
+import Meta from './Meta';
+import Header from './Header';
+import LeftNav from './LeftNav';
+import Container from './Container';
 import Footer from './Footer/Footer';
 import ProductLogos from './Logos/Logos';
+import { MDXProvider } from '@mdx-js/react';
 import ProductColors from './Colors/Colors';
-// import { useGetStorybookData } from '../util/StorybookData';
-import { ArgsTable } from './PropsTable/Table';
-import Markdown from 'markdown-to-jsx';
+import { MDXComponents } from './MDXComponents';
 import { useFrontmatter } from '../util/Frontmatter';
-import MDXHeading from './MDXHeading.js';
+import TableOfContent from './TableOfContent/TableOfContent';
+import ComponentsContainer from './Container/ComponentsContainer';
 import { copyMessage, copyMessageSuccess } from '../util/constants.js';
-import axios from 'axios';
+import { Row, Column, Button, Toast, Tooltip } from '@innovaccer/design-system';
 
-const useGetStorybookData = async (name) => {
-  let componentName = name;
-  let componentPath = `/sb/${componentName}.json`;
-
-  // To handle Rich Text Editor Stories
-  if (name.startsWith('library')) {
-    componentPath = `/rte/${componentName}.json`;
-  }
-
-  const data = await axios.get(componentPath).then(({ data = {} }) => {
-    if (!Object.keys(data).length) {
-      return Promise.reject(`Could not get details for id: ${componentName}`);
-    }
-    return data;
-  });
-
-  return data;
-};
-
-function getJsxCode(name) {
-  return useGetStorybookData(name).then((componentData) => {
-    const jsxCode =
-      componentData && componentData.parameters
-        ? componentData.parameters.docs.docPage?.customCode || componentData.parameters.storySource?.source
-        : '';
-    return jsxCode;
-  });
-}
-
-function getPropTableData(name) {
-  return useGetStorybookData(name).then((componentData) => {
-    const jsxCode = componentData ? componentData.parameters.argTypes : '';
-    return jsxCode;
-  });
-}
-
-const Preview = ({ name }) => {
-  return (
-    <div>
-      <PropsTable dataProvider={() => getJsxCode(name)} />
-    </div>
-  );
-};
-
-const A11yBlock = ({ name }) => {
-  const [data, setData] = React.useState([]);
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
-
-  React.useEffect(() => {
-    useGetStorybookData(name)
-      .then((componentData) => {
-        const a11yProps = componentData && componentData.parameters.docs.docPage?.a11yProps;
-
-        setData(a11yProps);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <div>Loading ...</div>;
-  }
-
-  if (error) {
-    return (
-      <MDSComponents.Message
-        className="my-7"
-        appearance="alert"
-        title={error}
-        description="Hold tight, we are working to get it up for you to interact with."
-      />
-    );
-  }
-  return <div className="mb-8">{data && <Markdown className="A11y-markdown">{data}</Markdown>}</div>;
-};
-
-const FrameWrapper = ({ componentName }) => {
-  const onLoad = () => {
-    document.getElementById('iframe-loader').style.display = 'none';
-  };
-
-  return (
-    <>
-      <div id="iframe-loader">Loading ...</div>
-      <iframe
-        id="myFrame"
-        width="100%"
-        height="800px"
-        scrolling="no"
-        frameBorder="0"
-        onLoad={onLoad}
-        src={`https://mds.innovaccer.com/iframe.html?id=${componentName}&viewMode=docs&panel=true&nav=false&addons=1&stories=0&embed=prop-table`}
-      />
-    </>
-  );
-};
-
-const PreviewWithPropTable = ({ name, embed }) => {
-  const [data, setData] = React.useState({});
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(null);
-
-  React.useEffect(() => {
-    if (!embed) {
-      getPropTableData(name)
-        .then((data) => {
-          setData(data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setError(`Could not get details for id: ${name}`);
-          setLoading(false);
-        });
-    }
-  }, []);
-
-  if (loading && !embed) {
-    return <div> Loading ... </div>;
-  }
-
-  if (error) {
-    return (
-      <MDSComponents.Message
-        className="my-7"
-        appearance="alert"
-        title={error}
-        description="Hold tight, we are working to get it up for you to interact with."
-      />
-    );
-  }
-
-  return (
-    <div className="overflow-x-scroll">{embed ? <FrameWrapper componentName={name} /> : <ArgsTable rows={data} />}</div>
-  );
-};
-
-const List = ({ children, ...rest }) => {
-  return <div className="list">{children}</div>;
-};
 const leftMenuList = [
   {
     title: 'Masala Design System',
@@ -236,14 +82,6 @@ const MarkdownContainer = (props) => {
         />
       </Column>
     </Row>
-  );
-};
-
-const Caption = ({ children }) => {
-  return (
-    <Text size="small" appearance="subtle" className="d-flex mt-4 justify-content-center text-align--center">
-      {children}
-    </Text>
   );
 };
 
@@ -343,34 +181,14 @@ const Layout = ({
     return <ProductLogos logoData={logoData} toggleToast={toggleToast} />;
   };
 
-  const Rectangle = ({ name, ...rest }) => {
-    return <div className="rectangle">{name}</div>;
-  };
-
   const Colors = ({ children, colorData, ...rest }) => {
-    return <ProductColors colorData={colorData} toggleToast={toggleToast} />;
+    return <ProductColors colorData={colorData} />;
   };
 
   const DSComponents = {
-    ...MDSComponents,
+    ...MDXComponents,
     pre: Code,
-    Preview: Preview,
-    PreviewWithPropTable: PreviewWithPropTable,
-    A11yBlock: A11yBlock,
-    Rules,
-    DOs,
-    DONTs,
-    InlineMessage,
-    IconWrapper,
-    Caption,
-    h1: (props) => <MDXHeading size="xxl" headingInfo={props} />,
-    h2: (props) => <MDXHeading size="xl" headingInfo={props} />,
-    h3: (props) => <MDXHeading size="l" headingInfo={props} />,
-    h4: (props) => <MDXHeading size="m" headingInfo={props} />,
-    h5: (props) => <MDXHeading size="s" headingInfo={props} />,
-    ul: List,
     Logos: (props) => <Logos {...props} />,
-    Rectangle: (props) => <Rectangle {...props} />,
     Colors: (props) => <Colors {...props} />,
   };
 

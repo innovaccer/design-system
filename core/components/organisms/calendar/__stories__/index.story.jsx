@@ -38,7 +38,42 @@ export const all = () => {
   if (yearNav !== -1) attr.yearNav = yearNav;
   if (monthNav !== -1) attr.monthNav = monthNav;
 
-  // we redefine this function here because in storybook.json we donot get imported functions.
+  // we redefine this function here because in storybook.json we do not get imported functions.
+
+  const isValid = (validators, ...value) => {
+    const iterator = Array.isArray(validators) ? validators : [validators];
+
+    return iterator.every((validator) => validator(...value));
+  };
+
+  const translateToDate = (format, val, validators) => {
+    if (isValid(validators, val, format)) {
+      const separator = format.includes('/') ? '/' : '-';
+
+      let year = -1,
+        month = -1,
+        date = -1;
+      const v = val.split(separator);
+      format.split(separator).forEach((f, i) => {
+        switch (f) {
+          case 'mm':
+            month = +v[i] - 1;
+            break;
+          case 'yyyy':
+            year = +v[i];
+            break;
+          case 'dd':
+            date = +v[i];
+            break;
+        }
+      });
+      const d = convertToDate({ year, month, date });
+      return d;
+    } else {
+      return undefined;
+    }
+  };
+
   const convertToDate = (d, format, validators) => {
     let dateVal;
 

@@ -2,9 +2,8 @@ import * as React from 'react';
 import { Dropdown } from '@/index';
 import { Uncontrolled, Controlled } from './_common_/types';
 
-
 // CSF format story
-export const dropdownWithIcon = () =>{
+export const dropdownWithIcon = () => {
   const options = [
     {
       label: 'Alabama',
@@ -204,9 +203,9 @@ export const dropdownWithIcon = () =>{
     },
   ];
   return (
-  <Dropdown options={options} icon="location_on" className="w-25" placeholder="Select state" staticLimit={100} />
+    <Dropdown options={options} icon="location_on" className="w-25" placeholder="Select state" staticLimit={100} />
   );
-}
+};
 
 export default {
   title: 'Components/Dropdown/Dropdown With Icon',

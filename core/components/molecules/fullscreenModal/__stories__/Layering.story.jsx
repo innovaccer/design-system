@@ -28,7 +28,9 @@ export const layering = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={openModal}>Open Modal</Button>
+      <Button appearance="primary" onClick={openModal}>
+        Open Modal
+      </Button>
 
       <FullscreenModal
         closeOnEscape={true}

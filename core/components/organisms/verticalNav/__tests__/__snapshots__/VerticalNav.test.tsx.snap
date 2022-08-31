@@ -8,9 +8,10 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
     >
-      <div
+      <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
         data-test="DesignSystem-VerticalNav--Item"
+        href="/patient360"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -24,8 +25,8 @@ exports[`Vertical Navigation component
             assignment_ind_round
           </i>
         </div>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
         data-test="DesignSystem-VerticalNav--Item"
       >
@@ -41,8 +42,8 @@ exports[`Vertical Navigation component
             forum_round
           </i>
         </div>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active"
       >
         <div
@@ -57,8 +58,8 @@ exports[`Vertical Navigation component
             assignment_ind_round
           </i>
         </div>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
       >
         <div
@@ -73,8 +74,8 @@ exports[`Vertical Navigation component
             events_round
           </i>
         </div>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled"
         data-test="DesignSystem-VerticalNav--Item"
       >
@@ -90,8 +91,8 @@ exports[`Vertical Navigation component
             airline_seat_flat_angled_round
           </i>
         </div>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
         data-test="DesignSystem-VerticalNav--Item"
       >
@@ -107,7 +108,7 @@ exports[`Vertical Navigation component
             favorite_round
           </i>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </body>
@@ -131,9 +132,10 @@ exports[`Vertical Navigation component
           Section 1
         </span>
       </div>
-      <div
+      <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
+        href="/patient360"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -159,7 +161,7 @@ exports[`Vertical Navigation component
         >
           10
         </span>
-      </div>
+      </a>
       <div
         class="VerticalNav-section VerticalNav-section--border"
       >
@@ -170,7 +172,7 @@ exports[`Vertical Navigation component
           Section 2
         </span>
       </div>
-      <div
+      <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
       >
@@ -199,8 +201,8 @@ exports[`Vertical Navigation component
         >
           keyboard_arrow_up_round
         </i>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded"
       >
         <div
@@ -221,8 +223,8 @@ exports[`Vertical Navigation component
             Timeline
           </span>
         </div>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded"
       >
         <div
@@ -243,8 +245,8 @@ exports[`Vertical Navigation component
             Care Plans
           </span>
         </div>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
       >
@@ -272,8 +274,8 @@ exports[`Vertical Navigation component
         >
           99+
         </span>
-      </div>
-      <div
+      </a>
+      <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
       >
@@ -302,7 +304,7 @@ exports[`Vertical Navigation component
         >
           keyboard_arrow_down_round
         </i>
-      </div>
+      </a>
     </div>
   </div>
 </body>

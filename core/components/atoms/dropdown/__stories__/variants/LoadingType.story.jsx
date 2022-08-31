@@ -2,7 +2,6 @@ import * as React from 'react';
 import Dropdown from '../../Dropdown';
 import Text from '@/components/atoms/text';
 import { storyOptions } from '../Options';
-import { OptionType } from '../../DropdownList';
 import { Uncontrolled, Controlled } from '../_common_/types';
 
 const labelMapping = {

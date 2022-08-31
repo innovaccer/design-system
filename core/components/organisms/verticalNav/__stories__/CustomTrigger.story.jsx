@@ -6,45 +6,47 @@ import { Icon, VerticalNav, Heading } from '@/index';
 export const CustomTrigger = () => {
   const [expanded, setExpanded] = React.useState(false);
   const [active, setActive] = React.useState({
-    name: 'To-do\'s.Due',
+    name: "To-do's.Due",
   });
 
   const data = [
     {
-      name: 'To-do\'s',
-      label: 'To-do\'s',
+      name: "To-do's",
+      label: "To-do's",
       icon: 'assignment_ind',
       count: 31,
       subMenu: [
         {
-          name: 'To-do\'s.Due',
+          name: "To-do's.Due",
           label: 'Due',
-          count: 31
+          count: 31,
         },
         {
-          name: 'To-do\'s.Completed',
+          name: "To-do's.Completed",
           label: 'Completed',
-          count: 0
+          count: 0,
         },
       ],
     },
     {
       name: 'Received',
       label: 'Received',
-      count: 0
+      count: 0,
     },
     {
       name: 'Sent',
       label: 'Sent',
-      count: 5
+      count: 5,
     },
   ];
 
   return (
     <div>
-      <div className='d-flex align-items-center mb-3'>
-        <Icon name="menu" className="cursor-pointer" onClick={() => setExpanded(!expanded) }></Icon>
-        <Heading size='s' className="ml-4">My Worklist</Heading>
+      <div className="d-flex align-items-center mb-3">
+        <Icon name="menu" className="cursor-pointer" onClick={() => setExpanded(!expanded)}></Icon>
+        <Heading size="s" className="ml-4">
+          My Worklist
+        </Heading>
       </div>
       <Collapsible withTrigger={false} expanded={expanded} height="100vh">
         <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />

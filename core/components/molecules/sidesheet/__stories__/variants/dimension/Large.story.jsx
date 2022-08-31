@@ -55,7 +55,9 @@ export const Large = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
       <Sidesheet {...options} dimension="large">
         <Text>Modal Body</Text>
         <ModalDescription {...modalDescriptionOptions} />

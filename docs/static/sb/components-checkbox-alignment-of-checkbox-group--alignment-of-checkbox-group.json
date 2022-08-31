@@ -9,13 +9,11 @@
   "component": {
     "displayName": "Checkbox",
     "__docgenInfo": {
-      "description": "######Checkbox has two types:\n - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "######Checkbox has two types:\n  - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "Checkbox",
       "props": {
         "size": {
-          "defaultValue": {
-            "value": "\"regular\""
-          },
+          "defaultValue": null,
           "description": "Size of the `Checkbox`",
           "name": "size",
           "required": false,
@@ -107,9 +105,7 @@
           }
         },
         "tabIndex": {
-          "defaultValue": {
-            "value": "0"
-          },
+          "defaultValue": null,
           "description": "Specifies tab index of `Checkbox`",
           "name": "tabIndex",
           "required": false,
@@ -171,7 +167,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.4-1",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -374,7 +370,7 @@
     "options": {},
     "fileName": "./core/components/atoms/checkbox/__stories__/Alignment.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div>\n    <Row>\n      <Column>\n        <Label>Days</Label>\n        {days.map((day, index) => {\n          return <Checkbox key={index} label={day} defaultChecked={index < 2} className={index !== 0 ? 'mt-4' : ''} />;\n        })}\n        <div className=\"pt-5\">\n          <Text>Vertical Alignment</Text>\n        </div>\n      </Column>\n      <Column>\n        <Label>Days</Label>\n        <div className=\"d-flex\">\n          {days.map((day, index) => {\n            return (\n              <Checkbox className={index !== 0 ? 'ml-7' : ''} key={index} label={day} defaultChecked={index < 2} />\n            );\n          })}\n        </div>\n        <div className=\"pt-5\">\n          <Text>Horizontal Alignment</Text>\n        </div>\n      </Column>\n    </Row>\n  </div>\n)"
+      "source": "() => {\n  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];\n\n  return (\n    <div>\n      <Row>\n        <Column>\n          <Heading size=\"s\">Horizontal Alignment</Heading>\n          <Label>Days</Label>\n          <div className=\"d-flex\">\n            {days.map((day, index) => {\n              return (\n                <Checkbox className={index !== 0 ? 'ml-7' : ''} key={index} label={day} defaultChecked={index < 2} />\n              );\n            })}\n          </div>\n        </Column>\n      </Row>\n      <Row>\n        <Column className=\"pt-5 mt-8\">\n          <Heading size=\"s\">Vertical Alignment</Heading>\n          <Label>Days</Label>\n          {days.map((day, index) => {\n            return (\n              <Checkbox key={index} label={day} defaultChecked={index < 2} className={index !== 0 ? 'mt-4' : ''} />\n            );\n          })}\n        </Column>\n      </Row>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-checkbox-alignment-of-checkbox-group--alignment-of-checkbox-group",
@@ -400,9 +396,7 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\""
           },
-          "defaultValue": {
-            "summary": "\"regular\""
-          }
+          "defaultValue": null
         }
       },
       "defaultChecked": {
@@ -537,9 +531,7 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": {
-            "summary": "0"
-          }
+          "defaultValue": null
         }
       },
       "onChange": {
@@ -607,9 +599,7 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\""
         },
-        "defaultValue": {
-          "summary": "\"regular\""
-        }
+        "defaultValue": null
       }
     },
     "defaultChecked": {
@@ -744,9 +734,7 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": {
-          "summary": "0"
-        }
+        "defaultValue": null
       }
     },
     "onChange": {

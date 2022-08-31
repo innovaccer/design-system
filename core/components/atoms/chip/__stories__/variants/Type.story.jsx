@@ -20,8 +20,8 @@ export const Types = () => {
               clearButton={clearButton}
               disabled={disabled}
               type={type}
-              onClose={action(`onClose: ${name}`)}
-              onClick={action(`onClick: ${name}`)}
+              onClose={action(`onClose: ${label}`)}
+              onClick={action(`onClick: ${label}`)}
               selected={selected}
               name={'chip'}
             />

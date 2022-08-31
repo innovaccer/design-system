@@ -7,7 +7,7 @@ export const flatEdgedVerticalNavigation = () => {
       name: 'home',
       label: 'Home',
       icon: 'home',
-      count: 10
+      count: 10,
     },
     {
       name: 'profile',
@@ -18,22 +18,22 @@ export const flatEdgedVerticalNavigation = () => {
         {
           name: 'profile.personal',
           label: 'Personal',
-          count: 5
+          count: 5,
         },
         {
           name: 'profile.are_team',
           label: 'Care Team',
-          count: 10
+          count: 10,
         },
         {
           name: 'profile.goals',
           label: 'Goals',
-          count: 5
+          count: 5,
         },
         {
           name: 'profile.care_plans',
           label: 'Care Plans',
-          count: 5
+          count: 5,
         },
       ],
     },

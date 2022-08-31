@@ -3,7 +3,7 @@ import { Dropdown } from '@/index';
 import { Uncontrolled, Controlled } from './_common_/types';
 
 // CSF format story
-export const standardDropdown = () =>{
+export const standardDropdown = () => {
   const options = [
     {
       label: 'Draft',
@@ -30,7 +30,7 @@ export const standardDropdown = () =>{
       value: 'completely_failed',
     },
   ];
-   return (<Dropdown options={options} className="w-25" placeholder="Status" />)
+  return <Dropdown options={options} className="w-25" placeholder="Status" />;
 };
 
 export default {

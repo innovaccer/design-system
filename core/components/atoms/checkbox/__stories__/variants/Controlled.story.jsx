@@ -7,7 +7,7 @@ export const controlledCheckbox = () => {
 
   const handleParentChange = (event) => {
     const updatedChecked = event.target.checked;
-    window.setTimeout(() => {
+    this.window.setTimeout(() => {
       setChecked(updatedChecked);
     }, 2000);
   };
@@ -20,7 +20,7 @@ const customCode = `() => {
 
   const handleParentChange = (event) => {
     const updatedChecked = event.target.checked;
-    window.setTimeout(() => {
+    this.window.setTimeout(() => {
       setChecked(updatedChecked);
     }, 2000);
   };

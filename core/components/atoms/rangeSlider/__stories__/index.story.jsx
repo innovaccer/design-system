@@ -23,8 +23,8 @@ export const all = () => {
     label,
     disabled,
     onChange,
-    defaultValue: [2, 4]
-  }
+    defaultValue: [2, 4],
+  };
 
   return <RangeSlider className="mt-2" {...options} />;
 };

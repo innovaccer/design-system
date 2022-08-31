@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VerticalNav, Icon, Tooltip, Text, Pills } from '@/index';
+import { VerticalNav, Icon } from '@/index';
 
 export const CustomOptionsRenderer = () => {
   const data = [
@@ -18,25 +18,25 @@ export const CustomOptionsRenderer = () => {
           name: 'care_management.timeline',
           label: 'Timeline',
           icon: 'people',
-          count: 10
+          count: 10,
         },
         {
           name: 'care_management.care_protocol',
           label: 'Care Protocol',
           icon: 'fact_check',
-          count: 10
+          count: 10,
         },
         {
           name: 'care_management.assessments',
           label: 'Assessments',
           icon: 'assessment',
-          count: 10
+          count: 10,
         },
         {
           name: 'care_management.tasks',
           label: 'Tasks',
           icon: 'alarm',
-          count: 10
+          count: 10,
         },
       ],
     },
@@ -44,7 +44,7 @@ export const CustomOptionsRenderer = () => {
       name: 'episodes',
       label: 'Episodes',
       icon: 'airline_seat_flat_angled',
-      count: 100
+      count: 100,
     },
     {
       name: 'risk',
@@ -88,9 +88,10 @@ export const CustomOptionsRenderer = () => {
   });
 
   const customItemRenderer = (props) => {
-    const {menu, onClick, hasSubmenu, expanded, isChildren, MenuIcon, MenuLabel, MenuPills} = props;
-    return ( 
-      <div 
+    const { menu, onClick, hasSubmenu, expanded, isChildren, MenuIcon, MenuLabel, MenuPills } = props;
+    return (
+      <div
+        aria-hidden="true"
         onClick={() => onClick(menu)}
         className={`p-5 d-flex align-items-center cursor-pointer ${isChildren ? 'ml-7' : ''}`}
       >

@@ -20,7 +20,7 @@ export const dropdownOptionsMoreThan50 = () => {
   const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
     return new Promise((resolve) => {
-      window.setTimeout(() => {
+      this.window.setTimeout(() => {
         resolve({
           searchTerm,
           options: searchedOptions,
@@ -50,7 +50,7 @@ const customCode = `() => {
   const fetchOptions = (searchTerm) => {
     const searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
     return new Promise(resolve => {
-      window.setTimeout(() => {
+      this.window.setTimeout(() => {
         resolve({
           searchTerm,
           options: searchedOptions,

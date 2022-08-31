@@ -19,9 +19,9 @@ export const statusWithoutLabel = () => {
     },
   ];
   return (
-  <div className="mb-11 w-25">
-    <Dropdown options={options} placeholder="All Categories" />
-  </div>
+    <div className="mb-11 w-25">
+      <Dropdown options={options} placeholder="All Categories" />
+    </div>
   );
 };
 

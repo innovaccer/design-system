@@ -35,7 +35,7 @@ ol {
 
 .list > li {
   list-style: none;
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing);
   margin-left: var(--spacing-s);
 }
 
@@ -43,8 +43,12 @@ ol {
   content: '\2022';
   width: 2px;
   display: inline-block;
-  color: var(--inverse-lightest);
+  color: var(--inverse-light);
   margin-right: var(--spacing-l);
+}
+
+.ordered-list > li {
+  margin-bottom: var(--spacing);
 }
 
 .toast {

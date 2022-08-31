@@ -14,7 +14,9 @@ export const old = () => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Modal</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Modal
+      </Button>
       <Modal open={open} dimension={dimension} backdropClose={backdropClose ? onClose : undefined}>
         <ModalHeader onClose={onClose} heading="Heading" subHeading="Subheading" />
         <ModalBody>

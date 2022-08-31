@@ -8,6 +8,7 @@ const TableOfContent = (props) => {
   const { relativePagePath, location } = props;
   const clickedRef = useRef(false);
   const unsetClickedRef = useRef(null);
+  const depth = 0;
 
   let navItems = useNavItems(relativePagePath);
   const [active, setActive] = useState('');
@@ -50,6 +51,10 @@ const TableOfContent = (props) => {
     const headerHeight = document.getElementById('mainHeader').getBoundingClientRect().height;
     const viewportHeight = document.body.offsetHeight - headerHeight;
     let resultFound = false;
+    const fetchUrl = (activeUrl) => {
+      let path = activeUrl.split('#');
+      return path[path.length - 1];
+    };
 
     idList &&
       idList.forEach((item) => {
@@ -60,9 +65,16 @@ const TableOfContent = (props) => {
             setActive(item);
             resultFound = true;
             let activeElement = document.getElementsByClassName('active-link')[0];
+            let activeUrl = activeElement.getElementsByClassName('toc-link')[0].href;
+            let subHeading = document.getElementsByClassName('subheading')[0];
+
+            const activeContent = fetchUrl(activeUrl);
             let flag = isInViewport(activeElement);
             if (flag === 'belowViewPort') activeElement.scrollIntoView(true);
-            else if (flag === 'aboveViewPort') activeElement.scrollIntoView(true);
+            else if (flag === 'aboveViewPort') {
+              if (activeContent == idList[0]) subHeading.scrollIntoView(true);
+              else activeElement.scrollIntoView(true);
+            }
           }
         }
       });
@@ -91,7 +103,7 @@ const TableOfContent = (props) => {
     }, []);
   }
 
-  function renderItems(items) {
+  function renderItems(items,depth) {
     return (
       <ul className="table-of-content-list pr-8">
         {items &&
@@ -102,7 +114,7 @@ const TableOfContent = (props) => {
                   <Link
                     to={item.url}
                     onClick={(e) => onClickHandler(e, item.url.slice(1))}
-                    className="toc-link"
+                    className={`toc-link ${depth == 0 ? 'toc-font--regular' : 'toc-font--small'}`}
                     style={{
                       display: `${item.title ? 'inline-block' : 'none'}`,
                     }}
@@ -110,7 +122,7 @@ const TableOfContent = (props) => {
                     {item.title}
                   </Link>
                 </div>
-                {item.items && renderItems(item.items)}
+                {item.items && renderItems(item.items,1)}
               </li>
             );
           })}
@@ -122,10 +134,12 @@ const TableOfContent = (props) => {
     <div className="d-flex flex-column right-nav-container overflow-hidden">
       {navItems && navItems.length ? (
         <>
-          <Subheading appearance="subtle" className="pl-6 mt-10">
-            CONTENTS
-          </Subheading>
-          {renderItems(navItems)}
+          <div className="subheading">
+            <Subheading appearance="subtle" className="pl-6 mt-10">
+              CONTENTS
+            </Subheading>
+          </div>
+          {renderItems(navItems,depth)}
         </>
       ) : (
         ''
