@@ -65,7 +65,7 @@ export type DatePickerProps = SharedProps & {
   /**
    * Element to be rendered inside Popover
    */
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 export interface DatePickerState {
