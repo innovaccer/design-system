@@ -37,10 +37,19 @@ export interface ChoiceListProps extends BaseProps {
   title?: string;
   /**
    * Describes Collection of choices
+   * <pre className="DocPage-codeBlock">
+   *  Choice: {
+   *   value?: string;
+   *   label?: string;
+   *   disabled?: boolean;
+   *   helpText?: string;
+   *   name?: string;
+   *  }
+   * </pre>
    */
   choices: Choice[];
   /**
-   * Alignment in which the coices will be rendered
+   * Alignment in which the choices will be rendered
    * @default "vertical"
    */
   alignment?: ChoiceListAlignment;
@@ -66,7 +75,7 @@ export interface ChoiceListProps extends BaseProps {
   /**
    * Callback when the selected choices change
    */
-  onChange?(event: ChangeEvent, selected: string[]): void;
+  onChange?: (event: ChangeEvent, selected: string[]) => void;
 }
 
 const renderCheckbox = (
@@ -150,13 +159,17 @@ export const ChoiceList = (props: ChoiceListProps) => {
     onChange,
     disabled = false,
     size = 'regular',
+    className,
   } = props;
 
   const { selected = [] } = props;
   let selectedChoiceValue = (selected && selected) || [];
-  const ChoiceListClass = classNames({
-    ['ChoiceList']: true,
-  });
+  const ChoiceListClass = classNames(
+    {
+      ['ChoiceList']: true,
+    },
+    className
+  );
 
   const ChoiceListVerticalClass = classNames({
     ['ChoiceList--alignVertical']: true,
