@@ -177,6 +177,7 @@ export const EditableInput = (props: EditableInputProps) => {
           <Button
             icon="clear"
             className="mr-3"
+            largeIcon={true}
             size="tiny"
             onClick={() => {
               setDefaultComponent(value);
@@ -186,6 +187,7 @@ export const EditableInput = (props: EditableInputProps) => {
           <Button
             icon="check"
             appearance="primary"
+            largeIcon={true}
             size="tiny"
             disabled={disableSaveAction}
             onClick={onSaveChanges}
