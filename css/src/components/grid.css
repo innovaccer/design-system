@@ -354,6 +354,15 @@
   overflow: hidden;
 }
 
+.GridCell--statusHint .StatusHint {
+  overflow: hidden;
+}
+
+.GridCell--statusHint .StatusHint .Text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .GridCell--avatar .Avatar {
   margin: 0;
 }
