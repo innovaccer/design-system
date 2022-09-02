@@ -7,7 +7,7 @@ import { Uncontrolled, Controlled } from '../_common_/types';
 import { storyOptions } from '../Options';
 
 // CSF format story
-export const cutsomOption = () => {
+export const customOption = () => {
   const optionStyle = {
     paddingRight: 12,
     paddingLeft: 12,
@@ -110,7 +110,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants/Cutsom Option',
+  title: 'Components/Dropdown/Variants/Custom Option',
   component: Dropdown,
   parameters: {
     docs: {
