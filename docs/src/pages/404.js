@@ -5,10 +5,16 @@ import { navigate } from 'gatsby';
 import notFoundImage from './home/404.png';
 import { useNavItems } from '../util/NavItems';
 
-const PageNotFound = () => {
+const PageNotFound = ({ location }) => {
   const pathName = typeof window !== 'undefined' && window.location.pathname;
   const navItemsList = pathName ? useNavItems(pathName) : [];
 
+  const stateCheck = () => {
+    if (location.state?.redirectLink === true) return true;
+    return false;
+    
+  };
+  
   useEffect(() => {
     let redirectPath;
     if (pathName.includes('/mobile')) {
@@ -19,6 +25,7 @@ const PageNotFound = () => {
     navigate(redirectPath?.link);
   }, []);
 
+  if (stateCheck() ) return null;
   return (
     <Homepage relativePagePath={'/404'} is404={true}>
       <div className="d-flex justify-content-center" style={{ transform: 'translate(0,50%)' }}>
@@ -36,5 +43,4 @@ const PageNotFound = () => {
     </Homepage>
   );
 };
-
 export default PageNotFound;
