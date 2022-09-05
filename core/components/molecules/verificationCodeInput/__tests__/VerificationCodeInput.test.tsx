@@ -30,9 +30,9 @@ describe('VerificationCodeInput component', () => {
     max,
     value,
     placeholder,
-    autoFocus: valueHelper(autoFocus, { required: false }),
-    fields: valueHelper(fields, { required: false }),
-    type: valueHelper(type, { required: false }),
+    autoFocus: valueHelper(autoFocus, { required: false, iterate: true }),
+    fields: valueHelper(fields, { required: false, iterate: true }),
+    type: valueHelper(type, { required: false, iterate: true }),
     onComplete: FunctionValue,
   };
 
@@ -132,9 +132,9 @@ describe('VerificationCodeInput component events', () => {
       if (el) {
         const input = el.getElementsByClassName('Input-input')[0];
         fireEvent.change(input, { target: { value: '234' } });
-        expect(input).toHaveValue('2');
+        expect(input).toHaveValue(2);
         fireEvent.change(input, { target: { value: '' } });
-        expect(input).toHaveValue('2');
+        expect(input).toHaveValue(2);
       }
     }
   });
@@ -162,19 +162,19 @@ describe('VerificationCodeInput component events', () => {
 
     fireEvent.keyDown(input1, { key: KEY_CODE.up });
     expect(input1).toHaveFocus();
-    expect(input0).toHaveValue('4');
+    expect(input0).toHaveValue(4);
 
     fireEvent.keyDown(input1, { key: KEY_CODE.down });
     expect(input1).toHaveFocus();
-    expect(input0).toHaveValue('4');
+    expect(input0).toHaveValue(4);
 
     fireEvent.keyDown(input1, { key: KEY_CODE.e });
     expect(input1).toHaveFocus();
-    expect(input0).toHaveValue('4');
+    expect(input0).toHaveValue(4);
 
     fireEvent.keyDown(input1, { key: KEY_CODE.E });
     expect(input1).toHaveFocus();
-    expect(input0).toHaveValue('4');
+    expect(input0).toHaveValue(4);
 
     fireEvent.keyDown(input1, { key: KEY_CODE.space });
     expect(input1).toHaveFocus();
@@ -224,5 +224,44 @@ describe('VerificationCodeInput component callback', () => {
 
     fireEvent.blur(input0);
     expect(FunctionValue).toHaveBeenCalled();
+  });
+});
+
+describe('VerificationCodeInput component types', () => {
+  it('check for letters input when type="number"', () => {
+    const { getByTestId } = render(<VerificationCodeInput fields={1} />);
+
+    expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
+
+    const [input0] = [...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any)];
+
+    fireEvent.change(input0, { target: { value: 'a' } });
+    expect(input0).toHaveValue(null);
+  });
+
+  it('check for letters input when type="password"', () => {
+    const { getByTestId } = render(<VerificationCodeInput fields={1} type="password" />);
+
+    expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
+
+    const [input0] = [...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any)];
+
+    fireEvent.change(input0, { target: { value: 'a' } });
+    expect(input0).toHaveValue('a');
+  });
+
+  it('check for input when type="text"', () => {
+    const { getByTestId } = render(<VerificationCodeInput fields={2} type="text" />);
+
+    expect(getByTestId('DesignSystem-VerificationCodeInput')).toBeInTheDocument();
+
+    const [input0, input1] = [
+      ...(getByTestId('DesignSystem-VerificationCodeInput').querySelectorAll('div > input') as any),
+    ];
+
+    fireEvent.change(input0, { target: { value: 'a' } });
+    fireEvent.change(input1, { target: { value: '1' } });
+    expect(input0).toHaveValue('a');
+    expect(input1).toHaveValue('1');
   });
 });
