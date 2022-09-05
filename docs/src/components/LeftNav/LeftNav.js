@@ -57,10 +57,10 @@ const LeftNav = (props) => {
 
   const handleNavigate = (name) => {
     if (name === MOBILE) {
-      navigate(`/mobile${window.location.pathname}`);
+      navigate(`/mobile${window.location.pathname}`, { state: { redirectLink: true } });
     } else {
       if (window.location.pathname.includes('/mobile')) {
-        navigate(window.location.pathname.replace('/mobile', ''));
+        navigate(window.location.pathname.replace('/mobile', '', { state: { redirectLink: true } }));
       }
     }
   };
