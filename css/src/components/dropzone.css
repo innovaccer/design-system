@@ -50,15 +50,18 @@
 .Dropzone--standard {
   flex-direction: column;
   height: 196px;
+  min-width: 480px;
 }
 
 .Dropzone--compressed {
   flex-direction: row;
   height: 124px;
+  min-width: 400px;
 }
 
 .Dropzone--tight {
   height: 124px;
+  min-width: 320px;
 }
 
 .DropzoneWrapper {
@@ -76,10 +79,6 @@
   align-items: start;
 }
 
-.Dropzone-icon {
-  color: var(--inverse-lighter);
-}
-
 .Dropzone-icon--standard {
   margin-bottom: var(--spacing-l);
 }
@@ -89,18 +88,17 @@
 }
 
 .Dropzone-icon--disabled {
-  color: var(--inverse-lightest);
+  fill: var(--inverse-lightest);
 }
 
-.Dropzone-stateIcon {
-  display: flex;
-  align-items: center;
+.Dropzone-icon--default {
+  fill: var(--inverse-lighter);
 }
 
-.Dropzone-stateIcon--standard {
-  margin-bottom: var(--spacing-2);
+.Dropzone-icon--active {
+  fill: var(--primary);
 }
 
-.Dropzone-stateIcon--compressed {
-  margin-right: var(--spacing-2);
+.Dropzone-icon--error {
+  fill: var(--alert);
 }

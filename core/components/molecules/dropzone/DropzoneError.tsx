@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Text, Icon } from '@/index';
+import { Text } from '@/index';
 import { DropzoneProps } from '@/index.type';
-import classNames from 'classnames';
+import DropzoneIcon from './DropzoneIcon';
 
 export interface DropzoneErrorProps {
   error: string;
@@ -11,14 +11,9 @@ export interface DropzoneErrorProps {
 export const DropzoneError = (props: DropzoneErrorProps) => {
   const { type, error } = props;
 
-  const IconClass = classNames({
-    ['Dropzone-stateIcon']: true,
-    [`Dropzone-stateIcon--${type}`]: type,
-  });
-
   return (
     <React.Fragment>
-      {type !== 'tight' && <Icon name="error" size={64} appearance="alert" className={IconClass} />}
+      {type !== 'tight' && <DropzoneIcon type={type} name="error" />}
       <Text appearance="destructive" size="large" weight="strong">
         {error}
       </Text>
