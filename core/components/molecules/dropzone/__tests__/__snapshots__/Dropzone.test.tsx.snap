@@ -8,13 +8,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--compressed"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--compressed"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--compressed"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--default"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--compressed"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -68,13 +70,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--standard"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--standard"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--default"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--standard"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -181,13 +185,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--compressed Dropzone--disabled"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--compressed Dropzone-icon--disabled"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--compressed"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--disabled"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--compressed"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -241,13 +247,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--standard Dropzone--disabled"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard Dropzone-icon--disabled"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--standard"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--disabled"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--standard"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -354,13 +362,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--standard"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--standard"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--default"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--standard"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -401,13 +411,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--standard"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--standard"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--default"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--standard"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -449,13 +461,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--standard"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--standard"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--default"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--standard"
       data-test="DesignSystem-Dropzone-Wrapper"
@@ -496,13 +510,15 @@ exports[`Dropzone component snapshot
     class="Dropzone Dropzone--standard"
     data-test="DesignSystem-Dropzone"
   >
-    <i
-      class="material-icons material-icons-round Icon Dropzone-icon Dropzone-icon--standard"
-      role="button"
-      style="font-size: 64px; width: 64px;"
+    <svg
+      class="Dropzone-icon--standard"
+      fill="none"
     >
-      backup_round
-    </i>
+      <path
+        class="Dropzone-icon--default"
+        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+      />
+    </svg>
     <div
       class="DropzoneWrapper DropzoneWrapper--standard"
       data-test="DesignSystem-Dropzone-Wrapper"
