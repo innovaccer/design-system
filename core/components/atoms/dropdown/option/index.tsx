@@ -150,7 +150,7 @@ const Option = (props: OptionProps) => {
   }
 
   const renderSubInfo = (subInfo: string | MetaListProps) => {
-    const labelAppearance = disabled ? 'disabled' : selected ? 'white' : 'subtle';
+    const labelAppearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'subtle';
     const iconAppearance = selected ? 'white' : 'disabled';
 
     if (typeof subInfo === 'string') {
