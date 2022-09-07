@@ -129,6 +129,14 @@ describe('renders DatePicker component Event Handlers ', () => {
     expect(getByTestId('DesignSystem-Input')).toHaveValue('**/**/****');
   });
 
+  it('checks for input field onChange event with empty date', async () => {
+    const { getByTestId } = render(<DatePicker date="" onDateChange={FunctionValue} withInput={true} />);
+    const input = getByTestId('DesignSystem-Input');
+    fireEvent.change(input, { currentTarget: { value: '' } });
+    fireEvent.blur(input);
+    expect(input).toHaveValue('__/__/____');
+  });
+
   it('checks onBlur Event', () => {
     const { getByTestId } = render(<DatePicker onDateChange={FunctionValue} withInput={true} />);
     const input = getByTestId('DesignSystem-Input');
