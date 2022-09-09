@@ -47,9 +47,10 @@ exports[`TS renders children 1`] = `
   <div
     class="Chip-wrapper Chip Chip--input"
     data-test="DesignSystem-Chip--GenericChip"
+    tabindex="0"
   >
     <span
-      class="Text Text--default Text--regular"
+      class="Text Text--regular color-inverse"
       data-test="DesignSystem-GenericChip--Text"
     >
       Hello World!
@@ -730,9 +731,10 @@ exports[`TS renders children 1`] = `
       <div
         class="Chip-wrapper Chip Chip--action"
         data-test="DesignSystem-Chip--GenericChip"
+        tabindex="0"
       >
         <span
-          class="Text Text--default Text--regular"
+          class="Text Text--regular color-inverse"
           data-test="DesignSystem-GenericChip--Text"
         >
           Today, Jun 14

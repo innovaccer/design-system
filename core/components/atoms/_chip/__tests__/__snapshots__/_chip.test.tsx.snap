@@ -8,6 +8,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
@@ -18,7 +19,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--default Text--regular"
+        class="Text Text--regular color-inverse"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -36,9 +37,10 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -46,7 +48,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--link Text--regular"
+        class="Text Text--regular color-primary-dark"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -64,6 +66,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
@@ -74,7 +77,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--disabled Text--regular"
+        class="Text Text--regular color-inverse-lightest"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -92,6 +95,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
@@ -102,7 +106,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--link Text--regular"
+        class="Text Text--regular color-primary-lighter primary-dark"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -120,6 +124,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
@@ -130,7 +135,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--default Text--regular"
+        class="Text Text--regular color-inverse"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -157,9 +162,10 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--left"
+        class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -167,13 +173,13 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--link Text--regular"
+        class="Text Text--regular color-primary-dark"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--right cursor-pointer"
+        class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -194,6 +200,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
@@ -204,7 +211,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--disabled Text--regular"
+        class="Text Text--regular color-inverse-lightest"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -231,6 +238,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
@@ -241,13 +249,13 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--link Text--regular"
+        class="Text Text--regular color-primary-lighter primary-dark"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--right"
+        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--right Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"

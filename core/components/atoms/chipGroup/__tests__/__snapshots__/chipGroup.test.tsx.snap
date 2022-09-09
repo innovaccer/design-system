@@ -15,6 +15,7 @@ exports[`ChipGroup component
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-ChipGroup--Chip"
+          tabindex="0"
         >
           <i
             class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
@@ -25,7 +26,7 @@ exports[`ChipGroup component
             assessment_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Action
@@ -38,6 +39,7 @@ exports[`ChipGroup component
         <div
           class="Chip-wrapper Chip Chip--input"
           data-test="DesignSystem-ChipGroup--Chip"
+          tabindex="0"
         >
           <i
             class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
@@ -48,7 +50,7 @@ exports[`ChipGroup component
             assessment_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Input
@@ -70,9 +72,10 @@ exports[`ChipGroup component
         <div
           class="Chip-wrapper Chip Chip--selection Chip-selection--selected"
           data-test="DesignSystem-ChipGroup--Chip"
+          tabindex="0"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--left"
+            class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -80,13 +83,13 @@ exports[`ChipGroup component
             assessment_round
           </i>
           <span
-            class="Text Text--link Text--regular"
+            class="Text Text--regular color-primary-dark"
             data-test="DesignSystem-GenericChip--Text"
           >
             Selection
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--primary Chip-icon Chip-icon--right cursor-pointer"
+            class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -102,6 +105,7 @@ exports[`ChipGroup component
         <div
           class="Chip-wrapper Chip Chip--selection"
           data-test="DesignSystem-ChipGroup--Chip"
+          tabindex="0"
         >
           <i
             class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
@@ -112,7 +116,7 @@ exports[`ChipGroup component
             assessment_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Selection

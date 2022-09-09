@@ -27,6 +27,7 @@ export const GenericChip = (props: GenericChipProps) => {
       ['Chip-icon']: true,
       [`Chip-icon--${align}`]: align,
       ['cursor-pointer']: align === 'right' && !disabled,
+      ['Chip-icon--selected']: align === 'right' && selected,
     });
 
   const onCloseHandler = (e: React.MouseEvent) => {
@@ -41,22 +42,25 @@ export const GenericChip = (props: GenericChipProps) => {
   const iconAppearance = (align: string) =>
     classNames({
       ['disabled']: disabled && !selected,
-      ['primary']: !disabled && selected,
+      ['primary_dark']: !disabled && selected,
       ['primary_lighter']: disabled && selected,
       ['subtle']: !disabled && !selected && align === 'right',
       ['inverse']: !disabled && !selected && align === 'left',
     }) as IconProps['appearance'];
 
-  const textAppearance = classNames({
-    ['disabled']: disabled && !selected,
-    ['link']: selected,
-    ['default']: !disabled && !selected,
-  }) as TextProps['appearance'];
+  const textColor = classNames({
+    ['primary-lighter']: disabled && selected,
+    ['inverse-lightest']: disabled && !selected,
+    ['primary-dark']: selected,
+    ['inverse']: !disabled && !selected,
+  }) as TextProps['color'];
 
   return (
     // TODO(a11y)
     // eslint-disable-next-line
     <div
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
       {...baseProps}
       className={`Chip-wrapper ${className}`}
@@ -70,7 +74,7 @@ export const GenericChip = (props: GenericChipProps) => {
           className={iconClass('left')}
         />
       )}
-      <Text data-test="DesignSystem-GenericChip--Text" appearance={textAppearance}>
+      <Text data-test="DesignSystem-GenericChip--Text" color={textColor}>
         {label}
       </Text>
       {clearButton && (
