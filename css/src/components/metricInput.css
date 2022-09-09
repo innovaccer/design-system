@@ -27,7 +27,6 @@
 
 .MetricInput:hover {
   background: var(--secondary-lightest);
-  border-color: var(--secondary-lightest);
   cursor: text;
 }
 
@@ -106,38 +105,22 @@
   line-height: var(--font-height-m);
 }
 
-.MetricInput-arrowIcons {
-  display: flex;
-  flex-direction: column;
-  margin-top: var(--spacing-s);
-  margin-bottom: var(--spacing-s);
-  cursor: pointer;
-}
-
-.MetricInput-arrowIcons:focus {
-  outline: 0;
-}
-
-.MetricInput-arrowIcon {
-  background: var(--secondary-lightest);
-}
-
-.MetricInput-arrowIcon--regular {
-  margin-left: var(--spacing-l);
-}
-
-.MetricInput-arrowIcon--large {
-  margin-left: var(--spacing-2);
-}
-
-.MetricInput-arrowIcon--down {
-  margin-top: var(--spacing-s);
-}
-
 .MetricInput-input::-webkit-inner-spin-button,
 .MetricInput-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin: 0;
+}
+
+.MetricInput-arrowIcon--large {
+  height: var(--spacing-2);
+  width: var(--spacing-2);
+  border-radius: var(--spacing-s);
+}
+
+.MetricInput-arrowIcon--regular {
+  height: var(--spacing-l);
+  width: var(--spacing-l);
+  border-radius: var(--spacing-s);
 }

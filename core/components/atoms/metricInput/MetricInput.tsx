@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Icon, Text } from '@/index';
+import { Button, Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete } from '@/common.type';
 
@@ -168,12 +168,10 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     [`MetricInput-icon--${size}`]: size,
   });
 
-  const getArrowClass = (direction: string) =>
-    classNames({
-      ['MetricInput-arrowIcon']: true,
-      [`MetricInput-arrowIcon--${size}`]: size,
-      [`MetricInput-arrowIcon--${direction}`]: direction,
-    });
+  const actionButton = classNames({
+    ['p-0']: true,
+    [`MetricInput-arrowIcon--${size}`]: size,
+  });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (isUncontrolled) {
@@ -226,17 +224,10 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     }
   };
 
-  const iconSize = size === 'regular' ? 12 : 16;
+  const actionButtonSize = size === 'large' ? 'regular' : 'tiny';
 
   return (
-    <div
-      data-test="DesignSystem-MetricInputWrapper"
-      className={classes}
-      onClick={() => ref.current?.focus()}
-      onFocus={() => ref.current?.focus()}
-      onKeyDown={() => {}}
-      role="presentation"
-    >
+    <div data-test="DesignSystem-MetricInputWrapper" className={classes} onKeyDown={() => {}} role="presentation">
       {icon && (
         <Icon
           data-test="DesignSystem-MetricInput--icon"
@@ -286,20 +277,18 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         </Text>
       )}
 
-      <div className="MetricInput-arrowIcons">
-        <Icon
-          tabIndex={-1}
-          className={getArrowClass('up')}
-          size={iconSize}
-          name="keyboard_arrow_up"
+      <div>
+        <Button
+          icon="keyboard_arrow_up"
+          size={actionButtonSize}
+          className={`${actionButton} mb-2`}
           onClick={(e) => onArrowClick(e, 'up')}
           data-test="DesignSystem-MetricInput--upIcon"
         />
-        <Icon
-          tabIndex={-1}
-          className={getArrowClass('down')}
-          size={iconSize}
-          name="keyboard_arrow_down"
+        <Button
+          icon="keyboard_arrow_down"
+          size={actionButtonSize}
+          className={actionButton}
           onClick={(e) => onArrowClick(e, 'down')}
           data-test="DesignSystem-MetricInput--downIcon"
         />
