@@ -101,7 +101,8 @@
 
 .Option--disabled,
 .OptionWrapper--disabled {
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: default;
 }
 
 .Option-label {
