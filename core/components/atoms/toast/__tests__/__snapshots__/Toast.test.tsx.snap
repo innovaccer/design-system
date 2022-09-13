@@ -139,7 +139,7 @@ exports[`Toast component
         role="button"
         style="font-size: 16px; width: 16px;"
       >
-        error_round
+        warning_round
       </i>
       <div
         class="Toast-body"
@@ -511,7 +511,7 @@ exports[`Toast component
         role="button"
         style="font-size: 16px; width: 16px;"
       >
-        error_round
+        warning_round
       </i>
       <div
         class="Toast-body"
@@ -559,7 +559,7 @@ exports[`Toast component
         role="button"
         style="font-size: 16px; width: 16px;"
       >
-        error_round
+        warning_round
       </i>
       <div
         class="Toast-body"

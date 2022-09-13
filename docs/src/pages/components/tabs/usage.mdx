@@ -6,36 +6,24 @@ showMobile: true
 ---
 
 ### Variants
-
-<br />
-
 #### Basic tabs
-
 This variation consists of only a label. 
-
 <Preview name='components-tabs-basic-tabs--basic-tabs'/>
 
 #### Tabs with Count
-
 This variation uses the Pill component to display the count along with the label.
-
 <Preview name='components-tabs-tabs-with-count--tabs-with-count'/>
 
 #### Tabs with Icon
-
-This variant consists of an icon along with the label. Icons should only be used when they add additional value to the label. 
-
+This variant consists of an icon along with the label. Icons should only be used when they add additional value to the label.
 For example, with the help of icons, one can easily see the status without actually navigating to each and every tab.
-
 <Preview name='components-tabs-tabs-with-icon--tabs-with-icon'/>
 
 #### Dismissible Tabs
-
 This variant consists of a Close Icon Button along with the label. It supports the dismissal of the tabs. These tabs can be triggered through an action button. In case the tab is already open on the screen, the action to re-open the tab should be known to the user.
 
 ![Dismissible tabs](./images/tabs-1.png)
-
-<br/>
+<Caption>Dismissible tabs</Caption>
 <br/>
 
 ### Properties
@@ -82,49 +70,70 @@ This variant consists of a Close Icon Button along with the label. It supports t
 <br/>
 
 ### Usage
-
 <br/>
 
 #### Tabs vs Navigation
-
 Tabs have similar kind of content and act as filters. Don’t use tabs to group content that is dissimilar.
 
 ![Tabs have similar kind of content and act as filters](./images/tabs-2.png)
-
+<Caption>Tabs have similar kind of content and act as filters</Caption>
 <br/>
 
 On the other hand, navigation menu items are generally used to group independent pages.
 
 ![Navigation represents independent pages](./images/tabs-3.png)
-
+<Caption>Navigation represents independent pages</Caption>
 <br/>
 
 If **navigation items and tabs** are used on the same page make sure to use them in such a way that while switching between multiple tabs, the user stays on the same page and sees relative data whereas while switching between multiple navigation items, the user is taken to a new page which may or may not be relative.
 
 ![Tabs and navigation on the same page](./images/tabs-4.png)
-
+<Caption>Tabs and navigation on the same page</Caption>
 <br/>
 
 #### Tabs within other components
-
 Tabs are usually paired with components like headers or nested in components like cards, modals, and sidesheets.
 
-![With page header](./images/tabs-5.png)
-
+![Tabs in a page header](./images/tabs-5.png)
+<Caption>Tabs in a page header</Caption>
 <br/>
 
-![In a modal](./images/tabs-6.png)
-
+![Tabs in a modal](./images/tabs-6.png)
+<Caption>Tabs in a modal</Caption>
 <br/>
 
-![In a card](./images/tabs-7.png)
-
+![Tabs in a card](./images/tabs-7.png)
+<Caption>Tabs in a card</Caption>
 <br/>
 
-#### Tab Label
+#### Tab label
+Tabs should have short and scannable labels, generally limited to a single word.
 
-Tabs should have short and scannable labels, generally limited to a single word. 
-
-#### Maximum Tabs
-
+#### Maximum tabs
 Too many tabs can unnecessarily clutter the UI. Hence it is recommended **not to use more than 5 tabs** at once.
+
+#### Opening behavior of dismissible tabs
+Dismissible tabs are opened as the right-most tab in a tab group. They stack up towards the right in the order they are opened.
+
+![Dismissible tabs are opened as the right-most tab in a tab group](./images/tabs-9.png)
+<Caption>Dismissible tabs are opened as the right-most tab in a tab group</Caption>
+<br/>
+
+#### Closing behavior of dismissible tabs
+All tabs can be dismissible if they are used inside a container like card, modal, sidesheet, etc. Closing the last tab will close the container.
+
+Though in most of the cases, the dismissible tabs are opened from basic tabs and hence there is no need for closing the container in those cases.
+
+#### Reordering behavior of dismissible tabs
+Dismissible tabs can be reordered through drag and drop. The order of basic tabs cannot be changed in any case though.
+
+![Reordering of a dismissible tab](./images/tabs-10.png)
+<Caption>Reordering of a dismissible tab</Caption>
+<br/>
+
+#### Tabs overflow
+In case of overflow, the additional tabs are shown in an overflow menu. When a tab is selected from the overflow menu, it replaces the last visible tab from the tab group.
+
+![Overflowing in a tab group](./images/tabs-11.png)
+<Caption>Overflowing in a tab group</Caption>
+<br/>

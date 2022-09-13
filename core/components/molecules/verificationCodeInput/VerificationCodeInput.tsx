@@ -222,6 +222,7 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
           onBlur={onBlurHandler}
           data-id={index}
           ref={refs[index]}
+          type={type}
           {...rest}
         />
       ))}
@@ -230,5 +231,9 @@ const VerificationCodeInput = (props: VerificationCodeInputProps) => {
 };
 
 VerificationCodeInput.displayName = 'VerificationCodeInput';
+VerificationCodeInput.defaultProps = {
+  type: 'number',
+  fields: 4,
+};
 
 export default VerificationCodeInput;

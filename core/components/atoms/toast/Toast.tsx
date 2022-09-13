@@ -72,7 +72,7 @@ export const Toast = (props: ToastProps) => {
     info: 'info',
     success: 'check_circle',
     alert: 'error',
-    warning: 'error',
+    warning: 'warning',
   };
 
   const icon = IconMapping[appearance];

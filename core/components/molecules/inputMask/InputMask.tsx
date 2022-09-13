@@ -218,7 +218,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
       enteredVal = inputVal.slice(start, end);
       updatedVal = insertAtIndex(enteredVal, start);
       let oldValue = value;
-      if (oldValue.length === 0 && id === 'parent-TimePicker') {
+      if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
         oldValue = defaultPlaceholderValue;
       }
       insertedStringLength = updatedVal.length;
