@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
+import uidGenerator from '@/utils/uidGenerator';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
@@ -295,6 +296,7 @@ const DropdownList = (props: OptionsProps) => {
   const getDropdownClass = (index: number, isGroup: boolean) => {
     const Dropdown = classNames({
       ['Dropdown--border']: isGroup && index !== 0,
+      ['Option-checkboxWrapper']: true,
     });
 
     return Dropdown;
@@ -320,9 +322,9 @@ const DropdownList = (props: OptionsProps) => {
   });
 
   const SelectAllClass = classNames({
-    ['Option-checkbox']: true,
     ['Option-checkbox--active']: cursor === 0,
-    ['OptionWrapper']: true,
+    ['Option-checkboxWrapper']: true,
+    ['Option-checkbox']: true,
   });
 
   const onToggleDropdown = (open: boolean, type?: string) => {
@@ -463,17 +465,21 @@ const DropdownList = (props: OptionsProps) => {
     const { selectAllLabel = 'Select All', selectAll, onSelectAll } = props;
 
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
+    const [id] = React.useState(() => uidGenerator());
 
     return (
       <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
-        <Checkbox
-          label={label}
-          onChange={onSelectAll}
-          checked={selectAll.checked}
-          indeterminate={selectAll.indeterminate}
-          tabIndex={-1}
-          className="OptionCheckbox"
-        />
+        <label htmlFor={id} className="Checkbox-label">
+          <Checkbox
+            label={label}
+            onChange={onSelectAll}
+            checked={selectAll.checked}
+            indeterminate={selectAll.indeterminate}
+            tabIndex={-1}
+            className="OptionCheckbox"
+            id={id}
+          />
+        </label>
       </div>
     );
   };
@@ -488,21 +494,26 @@ const DropdownList = (props: OptionsProps) => {
 
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
     const optionIsSelected = tempSelected.findIndex((option) => option.value === item.value) !== -1;
+    const id = `Checkbox-option-${index}-${item.value}`;
+
     return (
-      <Option
-        optionData={item}
-        truncateOption={truncateOption}
-        selected={optionIsSelected}
-        index={index}
-        updateActiveOption={updateActiveOption}
-        optionRenderer={optionRenderer}
-        active={active}
-        checkboxes={withCheckbox}
-        menu={menu}
-        onClick={() => optionClickHandler(item)}
-        onChange={(e) => props.onSelect(item, e.target.checked)}
-        optionType={props.optionType}
-      />
+      <label htmlFor={id}>
+        <Option
+          optionData={item}
+          truncateOption={truncateOption}
+          selected={optionIsSelected}
+          index={index}
+          updateActiveOption={updateActiveOption}
+          optionRenderer={optionRenderer}
+          active={active}
+          checkboxes={withCheckbox}
+          menu={menu}
+          onClick={() => optionClickHandler(item)}
+          onChange={(e) => props.onSelect(item, e.target.checked)}
+          optionType={props.optionType}
+          id={id}
+        />
+      </label>
     );
   };
 
