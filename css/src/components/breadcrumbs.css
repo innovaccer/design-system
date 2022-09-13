@@ -26,3 +26,11 @@
   display: flex;
   align-items: center;
 }
+
+.Breadcrumbs-Button {
+  margin: 0 var(--spacing-m);
+}
+
+.Breadcrumbs-Button:focus {
+  background: var(--secondary) !important;
+}

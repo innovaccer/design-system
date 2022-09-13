@@ -56,6 +56,8 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
         size="tiny"
         appearance="transparent"
         icon="more_horiz_filled"
+        largeIcon={true}
+        className="Breadcrumbs-Button"
         data-test="DesignSystem-Breadcrumbs--Button"
       />
     );
