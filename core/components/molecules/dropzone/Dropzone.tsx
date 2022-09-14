@@ -1,12 +1,13 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Icon, Text } from '@/index';
+import { Text } from '@/index';
 import DropzoneBase, { DropzoneBaseProps } from './DropzoneBase';
 import DropzoneActive from './DropzoneActive';
 import DropzoneError from './DropzoneError';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { fileErrorMessages } from './FileErrors';
 import { useAccessibilityProps } from '@/accessibility/utils';
+import DropzoneIcon from './DropzoneIcon';
 
 export type DropZoneType = 'standard' | 'compressed' | 'tight';
 
@@ -47,12 +48,6 @@ export const Dropzone = (props: DropzoneProps) => {
     className
   );
 
-  const IconClass = classNames({
-    ['Dropzone-icon']: true,
-    [`Dropzone-icon--${type}`]: true,
-    ['Dropzone-icon--disabled']: disabled,
-  });
-
   const WrapperClass = classNames({
     ['DropzoneWrapper']: true,
     [`DropzoneWrapper--${type}`]: true,
@@ -69,7 +64,7 @@ export const Dropzone = (props: DropzoneProps) => {
 
     return (
       <React.Fragment>
-        {type !== 'tight' && <Icon name="backup" size={64} className={IconClass} />}
+        {type !== 'tight' && <DropzoneIcon disabled={disabled} name="default" type={type} />}
         <div className={WrapperClass} data-test="DesignSystem-Dropzone-Wrapper">
           <span>
             <Text size="large" weight="strong" className="mr-2" appearance={disabled ? 'disabled' : 'default'}>
