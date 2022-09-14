@@ -178,6 +178,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Sumit2399"><img src="https://avatars.githubusercontent.com/u/66456021?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sumit Dhyani</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=Sumit2399" title="Code">💻</a></td>
     <td align="center"><a href="https://tanmay-portfolio.herokuapp.com/"><img src="https://avatars.githubusercontent.com/u/36269283?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tanmay Sharma</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=927tanmay" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Rashi-Gupta-2000"><img src="https://avatars.githubusercontent.com/u/99866103?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rashi Gupta</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=Rashi-Gupta-2000" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/varnikajain15"><img src="https://avatars.githubusercontent.com/u/55780559?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Varnika Jain</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=varnikajain15" title="Code">💻</a></td>
   </tr>
 </table>
 
