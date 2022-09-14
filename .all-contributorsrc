@@ -174,11 +174,20 @@
         "code"
       ]
     },
-  {
+    {
       "login": "varnikajain15",
       "name": "Varnika Jain",
       "avatar_url": "https://avatars.githubusercontent.com/u/55780559?v=4",
       "profile": "https://github.com/varnikajain15",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aman2000verma",
+      "name": "Aman Verma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45339091?v=4",
+      "profile": "https://github.com/aman2000verma",
       "contributions": [
         "code"
       ]
