@@ -155,27 +155,43 @@ exports[`Pagination component
           type="number"
           value="10"
         />
-        <div
-          class="MetricInput-arrowIcons"
-        >
-          <i
-            class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--up"
+        <div>
+          <button
+            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular mb-2"
             data-test="DesignSystem-MetricInput--upIcon"
-            role="button"
-            style="font-size: 12px; width: 12px;"
             tabindex="0"
           >
-            keyboard_arrow_up_round
-          </i>
-          <i
-            class="material-icons material-icons-round Icon MetricInput-arrowIcon MetricInput-arrowIcon--regular MetricInput-arrowIcon--down"
+            <div
+              class="Button-icon"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--default"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 12px; width: 12px;"
+              >
+                keyboard_arrow_up_round
+              </i>
+            </div>
+          </button>
+          <button
+            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular"
             data-test="DesignSystem-MetricInput--downIcon"
-            role="button"
-            style="font-size: 12px; width: 12px;"
             tabindex="0"
           >
-            keyboard_arrow_down_round
-          </i>
+            <div
+              class="Button-icon"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--default"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 12px; width: 12px;"
+              >
+                keyboard_arrow_down_round
+              </i>
+            </div>
+          </button>
         </div>
       </div>
       <span
