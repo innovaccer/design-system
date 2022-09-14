@@ -46,13 +46,10 @@ For more details see our [styling](#styling) section
 import '@innovaccer/design-system/css';
 ```
 
-
-
 If you want to try out `@innovaccer/design-system`, you can also use
 [CodeSandbox](https://codesandbox.io/s/focused-germain-shbcw).
 
 [![Edit @innovaccer/design-system](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/focused-germain-shbcw)
-
 
 ## Usage
 
@@ -127,7 +124,9 @@ For css variables to work on IE we use a polyfill at runtime to achieve dynamic 
 ```
 
 ## :card_file_box: Repos
+
 Here are the supporting repositories.
+
 - **[MDS Rich Text Editor](https://github.com/innovaccer/mds-rich-text-editor)** - Feature-rich WYSIWYG (What You See Is What You Get) HTML editor and WYSIWYG Markdown editor. It is used to create blogs, notes sections, comment sections etc. It has a variety of tools to edit and format rich content.
 - **[MDS Docs](https://github.com/innovaccer/mds-docs)** - Documentation site for Masala design system.
 - **[MDS Helpers](https://github.com/innovaccer/mds-helpers)** - Alert Service.
@@ -178,6 +177,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/atifzaidi92"><img src="https://avatars.githubusercontent.com/u/54103064?v=4?s=100" width="100px;" alt=""/><br /><sub><b>atifzaidi92</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=atifzaidi92" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Sumit2399"><img src="https://avatars.githubusercontent.com/u/66456021?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sumit Dhyani</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=Sumit2399" title="Code">💻</a></td>
     <td align="center"><a href="https://tanmay-portfolio.herokuapp.com/"><img src="https://avatars.githubusercontent.com/u/36269283?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tanmay Sharma</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=927tanmay" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Rashi-Gupta-2000"><img src="https://avatars.githubusercontent.com/u/99866103?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rashi Gupta</b></sub></a><br /><a href="https://github.com/innovaccer/design-system/commits?author=Rashi-Gupta-2000" title="Code">💻</a></td>
   </tr>
 </table>
 
