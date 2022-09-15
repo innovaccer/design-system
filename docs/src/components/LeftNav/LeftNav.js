@@ -60,9 +60,13 @@ const LeftNav = (props) => {
 
   const handleNavigate = (name) => {
     if (name === MOBILE) {
-      navigate(`/mobile${window.location.pathname}`, { state: { redirectLink: true } });
+      if (!window.location.pathname.includes('/mobile')) {
+        // navigate to mobile section
+        navigate(`/mobile${window.location.pathname}`, { state: { redirectLink: true } });
+      }
     } else {
       if (window.location.pathname.includes('/mobile')) {
+        // navigate to web section
         navigate(window.location.pathname.replace('/mobile', '', { state: { redirectLink: true } }));
       }
     }
@@ -94,7 +98,7 @@ const LeftNav = (props) => {
             name="phone_iphone"
             text="Mobile"
             onClick={() => handleNavigate(MOBILE)}
-            className={`mr-6 ${isMobile && 'Tile--selected' }`}
+            className={`mr-6 ${isMobile && 'Tile--selected'}`}
             selected={`${isMobile ? 'true' : 'false'}`}
             type={`${isMobile ? 'selection' : 'action'}`}
           />
