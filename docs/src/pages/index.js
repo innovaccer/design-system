@@ -3,20 +3,14 @@ import { navigate } from 'gatsby';
 import Meta from '../components/Meta';
 import Homepage from '../components/templates/Homepage';
 import Footer from '../components/Footer/Footer';
-import { MediumBlogs, useHomeMenu, MdsChangelog, useHomeResources } from '../util';
+import { MediumBlogs, MdsChangelog, useHomeResources } from '../util';
 import { StaticImage } from 'gatsby-plugin-image';
 import './home/homepage.css';
-import { Row, Column, Heading, Button, Card, Badge, Text, Link, Subheading, Icon } from '@innovaccer/design-system';
-import * as HomeIcons from '../util/HomeIcons';
-
-const MenuIcons = ({ name }) => {
-  const SvgIcons = HomeIcons[name] || (() => <div></div>);
-  return <SvgIcons />;
-};
+import { Row, Column, Heading, Button, Card, Badge, Text, Link, Subheading } from '@innovaccer/design-system';
+import HomeCard from './home/HomeCard';
 
 const Home = () => {
   const mediumBlogList = MediumBlogs().slice(0, 3);
-  const menuSection = useHomeMenu();
   const resourceSection = useHomeResources();
   const changelog = MdsChangelog();
 
@@ -28,8 +22,8 @@ const Home = () => {
         return (
           key < 3 &&
           (key === 0 ? (
-            <div className="mt-4" key={key}>
-              <Text weight="strong" className="home-text-color">
+            <div className="mt-5" key={key}>
+              <Text weight="strong" size="large">
                 {item}
               </Text>
             </div>
@@ -51,19 +45,23 @@ const Home = () => {
       <Meta titleType="page" docTitle="Masala Design System" />
       <Row className="h-100">
         <Column className="page-animation">
-          <section className="px-12 pt-8">
+          <section className="pt-8">
             <Row className="align-items-center">
+              <Column size={1} />
               <Column>
-                <Text weight="medium">Welcome to</Text>
-                <Heading size="xl" className="mt-2 home-text-color">
+                <Heading size="xxl" className="mt-2 home-heading">
                   Masala Design System
                 </Heading>
-                <Heading size="m" className="mt-4 font-weight--normal home-text-color">
+                <Heading size="s" className="mt-6 font-weight--normal text-width">
                   Designers, developers, product managers, and UXer's use Innovaccer's Masala Design System to build
                   products effortlessly, fearlessly, and conveniently.
                 </Heading>
                 <br />
-                <Button appearance="primary" onClick={() => navigate('/introduction/get-started/designers/')}>
+                <Button
+                  appearance="primary"
+                  onClick={() => navigate('/introduction/get-started/designers/')}
+                  className="button-size px-6"
+                >
                   Get started
                 </Button>
                 <br />
@@ -71,53 +69,19 @@ const Home = () => {
               <Column>
                 <StaticImage src="./home/HomeBanner.png" alt="Masala Design System" />
               </Column>
+              <Column size={1} />
             </Row>
           </section>
 
-          <section className="px-12 py-11 home-menu">
-            <Row>
-              {
-                menuSection.map((menuItem, key) => {
-                  return (
-                    <Column size={3} key={key}>
-                      <div className='mr-7 h-100 overflow-visble'>
-                      <Link href={menuItem.link}>
-                        <Card
-                          className='p-6 h-100'
-                          shadow='none'
-                        >
-                          <div className='d-flex'>
-                            <div className='mr-6'>
-                              <Icon>
-                                <MenuIcons name={menuItem.img} />
-                              </Icon>
-                            </div>
+          <HomeCard />
 
-                          <div>
-                            <Heading size="s" className="mb-4 home-text-color">
-                              {menuItem.name}
-                            </Heading>
-                            <Text appearance="subtle" className="font-weight--normal">
-                              {menuItem.content}
-                            </Text>
-                          </div>
-                          </div>
-                        </Card>
-                      </Link>
-                      </div> 
-                    </Column>
-                  )
-                })
-              }
-            </Row>
-          </section>
-
-          <section className="px-12 py-11">
-            <Row>
-              <Column size={6}>
-                <Card className="p-6 mr-6 h-100 overflow-visible" shadow="none">
+          <section className="home_card-padding--y">
+            <Row className="card-height">
+              <Column size={1} />
+              <Column size={5}>
+                <Card className="px-7 card-padding mr-6 h-100 overflow-visible" shadow="none">
                   <div className="d-flex">
-                    <Heading size="m" className="mb-3 home-text-color">
+                    <Heading size="m" className="mb-2">
                       Masala Design System v{changelog.version.trim()}
                     </Heading>
                     <div>
@@ -131,18 +95,19 @@ const Home = () => {
                     <Subheading appearance="subtle">{releaseDate}</Subheading>
                     <div>{getChangelogContent()}</div>
                   </div>
-
-                  <Link href={"/introduction/what's-new/"}> View all updates</Link>
+                  <div className="position-absolute sticky-bottom">
+                    <Link href={"/introduction/what's-new/"}> View all updates</Link>
+                  </div>
                 </Card>
               </Column>
-              <Column size={6}>
-                <Card className="p-6 mr-6 h-100 overflow-visible" shadow="none">
-                  <Heading size="m" className="home-text-color mb-5">
+              <Column size={5}>
+                <Card className="px-7 card-padding ml-6 h-100 overflow-visible" shadow="none">
+                  <Heading size="m" className="mb-6">
                     Blogs by Innovaccer Design
                   </Heading>
                   {mediumBlogList.map((blog, key) => {
                     return (
-                      <div className={`d-flex ${key === 2 ? 'mb-0' : 'mb-5'}`} key={key}>
+                      <div className={`d-flex ${key === 2 ? 'mb-0' : 'mb-6'}`} key={key}>
                         <div style={{ width: '40px' }}>
                           <img
                             src={`https://miro.medium.com/fit/c/28/28/${blog.author.imageId}`}
@@ -169,24 +134,28 @@ const Home = () => {
                   </div>
                 </Card>
               </Column>
+              <Column size={1} />
             </Row>
           </section>
 
-          <section className="px-12 py-11 bg-secondary-lightest">
-            <Heading size="xl" className="home-text-color">
-              Resources
-            </Heading>
-            <Row className="mt-7">
+          <section className="home_card-padding--y bg-secondary-lightest">
+            <Row>
+              <Column size={1} />
+              <Heading size="xl">Resources</Heading>
+              <Column size={1} />
+            </Row>
+            <Row className="mt-8">
+              <Column size={1} />
               {resourceSection.map((resource, key) => (
-                <Column key={key}>
+                <Column key={key} className={`${key === 2 ? 'mr-0': 'mr-7'}`}>
                   <Link href={resource.link} target="_blank">
-                    <Card className="mr-6 p-6 h-100 overflow-visible" shadow="none">
+                    <Card className="p-6 h-100 overflow-visible" shadow="none">
                       <Row>
                         <Column size={2} className="mr-6">
-                          <img src={resource.imgSrc} width="100%" height="100%" alt={resource.name} />
+                          <img src={resource.imgSrc} className="home-img-size" alt={resource.name} />
                         </Column>
                         <Column>
-                          <Heading size="m" className="mb-2 home-text-color">
+                          <Heading size="m" className="mb-2">
                             {resource.name}
                           </Heading>
                           <Text appearance="subtle" className="font-weight--normal">
@@ -198,9 +167,9 @@ const Home = () => {
                   </Link>
                 </Column>
               ))}
+              <Column size={1} />
             </Row>
           </section>
-
           <Footer relativePagePath={'/home'} />
         </Column>
       </Row>
