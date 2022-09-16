@@ -290,3 +290,21 @@ describe('render Table with async true', () => {
     expect(fetchData).toBeCalled();
   });
 });
+
+describe('render Table with drag', () => {
+  it('render Table: drag column', () => {});
+  const schema = [
+    { name: 'name', displayName: 'Name', width: '50%' },
+    { name: 'gender', displayName: 'Gender', width: '50%' },
+  ];
+  const data = [
+    { name: 'Zara', gender: 'f' },
+    { name: 'Sara', gender: 'm' },
+  ];
+  const { container } = render(<Table schema={schema} data={data} />);
+  const column = container.getElementsByClassName('Grid-cell')[0];
+  expect(column).toHaveClass('Grid-cell--head');
+  fireEvent.mouseDown(column);
+  fireEvent.dragStart(column, { dataTransfer: { setData: jest.fn() } });
+  expect(column).toHaveClass('Grid-cell--dragged');
+});

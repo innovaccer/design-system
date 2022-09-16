@@ -1,0 +1,17 @@
+.Tile {
+    height: calc(var(--spacing-4) - var(--spacing-m));
+    width: calc(var(--spacing-6) + var(--spacing-l));
+    border-radius: var(--spacing-m);
+}
+
+.Tile--selected:active {
+    border: var(--spacing-xs) solid var(--primary-lighter);
+}
+
+.Icon {
+    box-sizing: content-box;
+}
+
+.Chip-icon--left {
+    padding-right: var(--spacing);
+}

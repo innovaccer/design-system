@@ -8,7 +8,7 @@ export const dropdownItemsWithCheckboxAndSubinfo = () => {
     {
       label: 'Below 18',
       value: 'below_18',
-      subInfo: 'People bewlow 18 years old',
+      subInfo: 'People below 18 years old',
     },
     {
       label: '19 - 35',

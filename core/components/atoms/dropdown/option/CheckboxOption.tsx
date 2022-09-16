@@ -5,7 +5,7 @@ import { Text, MetaList } from '@/index';
 import { MetaListProps } from '@/index.type';
 
 const CheckboxOption = (props: OptionTypeProps) => {
-  const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest } = props;
+  const { className, selected, optionData, onChangeHandler, onUpdateActiveOption, dataTest, id = '' } = props;
   const { subInfo, label, disabled } = optionData;
 
   const renderSubInfo = (subInfo: string | MetaListProps) => {
@@ -48,6 +48,7 @@ const CheckboxOption = (props: OptionTypeProps) => {
         tabIndex={-1}
         className={`OptionCheckbox ${subInfo ? 'pb-0' : ''}`}
         data-test={`${dataTest}--Checkbox`}
+        id={id}
       />
       {subInfo && <div className="pl-8 ml-3">{renderSubInfo(subInfo)}</div>}
     </div>

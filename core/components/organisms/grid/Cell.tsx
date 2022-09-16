@@ -20,6 +20,7 @@ type HeaderCellProps = SharedCellProps & {
   onFilterChange: GridHeadProps['onFilterChange'];
   updateColumnSchema: GridHeadProps['updateColumnSchema'];
   reorderColumn: GridHeadProps['reorderColumn'];
+  setIsDragged: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 type BodyCellProps = SharedCellProps & {
@@ -39,7 +40,16 @@ export type CellProps = Partial<HeaderCellProps> &
 
 const HeaderCell = (props: HeaderCellProps) => {
   const context = React.useContext(GridContext);
-  const { schema, colIndex, onSelectAll, onMenuChange, onFilterChange, updateColumnSchema, reorderColumn } = props;
+  const {
+    schema,
+    setIsDragged,
+    colIndex,
+    onSelectAll,
+    onMenuChange,
+    onFilterChange,
+    updateColumnSchema,
+    reorderColumn,
+  } = props;
 
   const headProps: HeaderCellRendererProps = {
     schema,
@@ -49,6 +59,7 @@ const HeaderCell = (props: HeaderCellProps) => {
     onFilterChange,
     updateColumnSchema,
     reorderColumn,
+    setIsDragged,
   };
 
   const {
@@ -208,6 +219,7 @@ const HeaderCell = (props: HeaderCellProps) => {
           className="Grid-cellResize"
           onMouseDown={() => {
             resizeCol({ updateColumnSchema }, name, el.current);
+            setIsDragged(false);
           }}
         />
       )}
@@ -294,9 +306,12 @@ export const Cell = (props: CellProps) => {
 
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
+  const [isDragged, setIsDragged] = React.useState<boolean>(false);
+
   const cellClass = classNames({
     'Grid-cell': true,
     'Grid-cell--head': isHead,
+    'Grid-cell--dragged': isDragged && draggable,
     'Grid-cell--body': !isHead,
     'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
     'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows,
@@ -311,13 +326,25 @@ export const Cell = (props: CellProps) => {
       draggable={isHead && draggable}
       onDragStart={(e) => {
         if (draggable) {
+          setIsDragged(true);
           e.dataTransfer.setData('name', name);
           if (pinned) e.dataTransfer.setData('type', pinned);
         }
       }}
+      onDrag={() => {
+        setIsDragged(false);
+      }}
       onDragOver={(e) => e.preventDefault()}
+      onMouseUpCapture={() => {
+        setIsDragged(false);
+      }}
+      onDragEnd={(e) => {
+        e.preventDefault();
+        setIsDragged(false);
+      }}
       onDrop={(e) => {
         if (draggable) {
+          setIsDragged(false);
           const from = {
             name: e.dataTransfer.getData('name'),
             type: e.dataTransfer.getData('type'),
@@ -345,6 +372,7 @@ export const Cell = (props: CellProps) => {
           onFilterChange={onFilterChange!}
           updateColumnSchema={updateColumnSchema!}
           reorderColumn={reorderColumn!}
+          setIsDragged={setIsDragged}
         />
       ) : (
         <BodyCell

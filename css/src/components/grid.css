@@ -34,7 +34,7 @@
 .Grid--pinned {
   position: absolute;
   height: 100%;
-  z-index: 2;
+  z-index: 1002;
   overflow-x: hidden;
   -ms-overflow-style: none;
   border-right: 3px solid var(--secondary);
@@ -108,6 +108,10 @@
 
 .Grid-headCell--draggable:active {
   cursor: grabbing;
+  z-index: 3;
+  opacity: 1;
+  background-color: inherit;
+  color: inherit;
 }
 
 .Grid-body {
@@ -190,6 +194,13 @@
   padding-right: var(--spacing-m);
 }
 
+.Grid-cell--dragged {
+  z-index: 3;
+  opacity: 1;
+  background-color: inherit;
+  color: inherit;
+}
+
 .Grid-cell--separator {
   border-left: var(--border);
   border-color: var(--secondary-light);
@@ -247,6 +258,7 @@
   flex-grow: 1;
   height: 100%;
   box-sizing: border-box;
+  z-index: inherit;
 }
 
 .Grid-cell--head .Grid-cellContent {
@@ -290,7 +302,7 @@
 
 .Grid-cellGroup--pinned {
   position: sticky;
-  z-index: 1;
+  z-index: 1001;
 }
 
 .Grid-cellGroup--pinned-left {
