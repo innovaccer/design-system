@@ -73,6 +73,14 @@
   padding-right: var(--spacing-l);
 }
 
+.Option-checkbox .Checkbox-outerWrapper {
+  background-color: var(--shadow-0);
+}
+
+.Option-checkboxWrapper {
+  display: block;
+}
+
 .OptionCheckbox {
   width: 100%;
   padding-left: var(--spacing-l);
@@ -101,7 +109,8 @@
 
 .Option--disabled,
 .OptionWrapper--disabled {
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: default;
 }
 
 .Option-label {

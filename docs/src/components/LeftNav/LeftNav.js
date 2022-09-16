@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavItems } from '../../util/NavItems';
-import { VerticalNav, Subheading, Button } from '@innovaccer/design-system';
+import { VerticalNav, Subheading } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
 import { MOBILE } from '../../util/constants';
+import Tile from '../Tile/Tile';
 
 const isBrowser = typeof window !== 'undefined';
 
@@ -15,6 +16,8 @@ const LeftNav = (props) => {
     }
     return !item.hideInWeb;
   });
+
+  const isMobile = relativePagePath.includes(MOBILE);
 
   const showMenuButtons = showMobile || frontmatter?.showMobile;
   const [active, setActive] = React.useState();
@@ -57,9 +60,13 @@ const LeftNav = (props) => {
 
   const handleNavigate = (name) => {
     if (name === MOBILE) {
-      navigate(`/mobile${window.location.pathname}`, { state: { redirectLink: true } });
+      if (!window.location.pathname.includes('/mobile')) {
+        // navigate to mobile section
+        navigate(`/mobile${window.location.pathname}`, { state: { redirectLink: true } });
+      }
     } else {
       if (window.location.pathname.includes('/mobile')) {
+        // navigate to web section
         navigate(window.location.pathname.replace('/mobile', '', { state: { redirectLink: true } }));
       }
     }
@@ -79,25 +86,22 @@ const LeftNav = (props) => {
     <div id="navbar-container" className="h-100 bg-secondary-lightest border-right page-scroll">
       {showMenuButtons && (
         <div className="d-flex pt-6 pl-6">
-          <Button
-            appearance="basic"
-            size="regular"
-            className="mr-4"
+          <Tile
+            name="desktop_windows"
+            text="Web"
             onClick={() => handleNavigate()}
-            selected={!relativePagePath.includes(MOBILE)}
-            expanded={true}
-          >
-            Web
-          </Button>
-          <Button
-            appearance="basic"
+            className={`mr-4 ${!isMobile && 'Tile--selected'}`}
+            selected={`${!isMobile ? 'true' : 'false'}`}
+            type={`${!isMobile ? 'selection' : 'action'}`}
+          />
+          <Tile
+            name="phone_iphone"
+            text="Mobile"
             onClick={() => handleNavigate(MOBILE)}
-            selected={relativePagePath.includes(MOBILE)}
-            className="mr-6"
-            expanded={true}
-          >
-            Mobile
-          </Button>
+            className={`mr-6 ${isMobile && 'Tile--selected'}`}
+            selected={`${isMobile ? 'true' : 'false'}`}
+            type={`${isMobile ? 'selection' : 'action'}`}
+          />
         </div>
       )}
       <Subheading className="pl-6 pt-6 pb-3" appearance="subtle">
