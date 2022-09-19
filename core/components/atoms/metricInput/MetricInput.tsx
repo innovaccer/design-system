@@ -171,6 +171,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const actionButton = classNames({
     ['p-0']: true,
     [`MetricInput-arrowIcon--${size}`]: size,
+    ['ml-4']: size === 'regular',
+    ['ml-6']: size === 'large',
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -277,7 +279,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         </Text>
       )}
 
-      <div>
+      <div className="MetricInput-arrowIcons">
         <Button
           icon="keyboard_arrow_up"
           size={actionButtonSize}

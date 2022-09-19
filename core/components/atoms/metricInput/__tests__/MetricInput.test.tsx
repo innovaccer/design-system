@@ -65,8 +65,8 @@ describe('MetricInput component', () => {
   it('renders input and arrow icons', () => {
     const { getByTestId } = render(<MetricInput />);
     expect(getByTestId('DesignSystem-MetricInput').tagName).toMatch('INPUT');
-    expect(getByTestId('DesignSystem-MetricInput--upIcon')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-MetricInput--downIcon')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-MetricInput--upIcon').tagName).toMatch('BUTTON');
+    expect(getByTestId('DesignSystem-MetricInput--downIcon').tagName).toMatch('BUTTON');
   });
 });
 
