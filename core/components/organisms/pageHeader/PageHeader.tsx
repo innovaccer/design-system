@@ -82,31 +82,42 @@ export const PageHeader = (props: PageHeaderProps) => {
     PageHeader: true,
   });
 
-  const renderCenter = () => {
+  const renderNav = () => {
     if (!navigation && !stepper) {
       return null;
     }
-
     return <div className="PageHeader-navigationWrapper">{navigation || stepper}</div>;
   };
+
+  const colSize = (navigation || stepper) && navigationPosition === 'center' ? '4' : actions ? '8' : '12';
 
   return (
     <div {...baseProps} className={wrapperClasses}>
       {breadcrumbs}
       <div className={classes}>
         <Row>
-          <Column size="4" sizeXL="4" sizeM="4">
+          <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
             <div className="PageHeader-titleWrapper">
               <Heading className="PageHeader-title">{title}</Heading>
               {badge}
             </div>
           </Column>
-          <Column size="4" sizeXL="4" sizeM="4">
-            {(!breadcrumbs || navigationPosition === 'center') && renderCenter()}
-          </Column>
-          <Column size="4" sizeXL="4" sizeM="4">
-            {actions}
-          </Column>
+          {(!breadcrumbs || navigationPosition === 'center') && colSize === '4' && (
+            <Column size="4" sizeXL="4" sizeM="4">
+              {renderNav()}
+            </Column>
+          )}
+          {actions ? (
+            <Column size="4" sizeXL="4" sizeM="4">
+              <div className="PageHeader-actionsWrapper">{actions}</div>
+            </Column>
+          ) : (
+            (navigation || stepper) && (
+              <Column size="4" sizeXL="4" sizeM="4">
+                <div className="PageHeader-actionsWrapper"></div>
+              </Column>
+            )
+          )}
         </Row>
       </div>
       {(status || meta) && (
@@ -115,7 +126,7 @@ export const PageHeader = (props: PageHeaderProps) => {
           {meta}
         </div>
       )}
-      {breadcrumbs && navigationPosition === 'bottom' && renderCenter()}
+      {breadcrumbs && navigationPosition === 'bottom' && renderNav()}
       {tabs && <div>{tabs}</div>}
     </div>
   );
