@@ -8,7 +8,6 @@ import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
-import uidGenerator from '@/utils/uidGenerator';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
@@ -465,7 +464,7 @@ const DropdownList = (props: OptionsProps) => {
     const { selectAllLabel = 'Select All', selectAll, onSelectAll } = props;
 
     const label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
-    const [id] = React.useState(() => uidGenerator());
+    const id = `Checkbox-option-${label.toLowerCase().replace(/\s+/g, '')}-${new Date().getTime()}`;
 
     return (
       <div className={SelectAllClass} onMouseEnter={() => updateActiveOption(0, true)}>
@@ -494,7 +493,7 @@ const DropdownList = (props: OptionsProps) => {
 
     const active = selectAllPresent ? index + 1 === cursor : index === cursor;
     const optionIsSelected = tempSelected.findIndex((option) => option.value === item.value) !== -1;
-    const id = `Checkbox-option-${index}-${item.value}`;
+    const id = `Checkbox-option-${index}-${item.value}-${new Date().getTime()}`;
 
     return (
       <label htmlFor={id}>
