@@ -11,9 +11,10 @@ exports[`Horizontal Navigation component
       <div
         class="HorizontalNav-menu HorizontalNav-menu--active"
         data-test="DesignSystem-HorizontalNav"
+        tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--info mr-3"
+          class="material-icons material-icons-round Icon Icon--primaryDark mr-3"
           data-test="DesignSystem-HorizontalNav--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -21,15 +22,16 @@ exports[`Horizontal Navigation component
           events_round
         </i>
         <span
-          class="Text Text--link Text--regular HorizontalNav-menuText"
+          class="Text Text--regular color-primary-dark HorizontalNav-menuText"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #1
         </span>
       </div>
       <div
-        class="HorizontalNav-menu"
+        class="HorizontalNav-menu HorizontalNav-menu--default"
         data-test="DesignSystem-HorizontalNav"
+        tabindex="0"
       >
         <span
           class="Pills Badge--secondary HorizontalNav-pills"
@@ -38,18 +40,19 @@ exports[`Horizontal Navigation component
           10
         </span>
         <span
-          class="Text Text--default Text--regular HorizontalNav-menuText"
+          class="Text Text--regular color-inverse HorizontalNav-menuText"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #2
         </span>
       </div>
       <div
-        class="HorizontalNav-menu HorizontalNav-menu--disabled"
+        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-menu--disabled"
         data-test="DesignSystem-HorizontalNav"
+        tabindex="0"
       >
         <span
-          class="Text Text--disabled Text--regular HorizontalNav-menuText"
+          class="Text Text--regular color-inverse-lightest HorizontalNav-menuText"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #3

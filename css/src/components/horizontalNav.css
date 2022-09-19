@@ -19,13 +19,35 @@
   pointer-events: none;
 }
 
-.HorizontalNav-menu:hover {
-  background-color: var(--secondary-light);
+.HorizontalNav-menu--default:focus-visible {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: none;
 }
 
-.HorizontalNav-menu--active,
+.HorizontalNav-menu--default:hover {
+  background-color: var(--secondary);
+}
+
+.HorizontalNav-menu--default:active {
+  background-color: var(--secondary-dark);
+}
+
+.HorizontalNav-menu--active {
+  background-color: var(--primary-lightest);
+}
+
+.HorizontalNav-menu--active:focus-visible {
+  background-color: var(--primary-lightest);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: none;
+}
+
 .HorizontalNav-menu--active:hover {
-  background: var(--primary-lightest);
+  background-color: var(--primary-lighter);
+}
+
+.HorizontalNav-menu--active:active {
+  background-color: var(--primary-light);
 }
 
 .HorizontalNav-menuText {

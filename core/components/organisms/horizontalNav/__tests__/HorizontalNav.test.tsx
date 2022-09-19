@@ -122,7 +122,7 @@ describe('Horizontal Navigation component with prop: menus', () => {
   it('renders menus with disabled menu', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[disabledIndex];
-    expect(disabledMenu).toHaveClass('Text--disabled');
+    expect(disabledMenu).toHaveClass('color-inverse-lightest');
   });
 
   it('renders iconMenus with disabled menu', () => {
@@ -144,13 +144,13 @@ describe('Horizontal Navigation component active menu', () => {
   it('renders menus with active menu', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} />);
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[activeIndex];
-    expect(activeMenu).toHaveClass('Text--link');
+    expect(activeMenu).toHaveClass('color-primary-dark');
   });
 
   it('renders iconMenus with active menu', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={iconMenus} active={active} />);
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Icon')[activeIndex];
-    expect(activeMenu).toHaveClass('Icon--info');
+    expect(activeMenu).toHaveClass('Icon--primaryDark');
   });
 
   it('renders countMenus with active menu', () => {
@@ -162,7 +162,7 @@ describe('Horizontal Navigation component active menu', () => {
   it('renders active menu with link', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={menus} active={{ link: '/patient360' }} />);
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[activeIndex];
-    expect(activeMenu).toHaveClass('Text--link');
+    expect(activeMenu).toHaveClass('color-primary-dark');
   });
 });
 
@@ -175,5 +175,25 @@ describe('Horizontal Navigation component prop: onClick', () => {
     fireEvent.click(activeMenu);
     expect(onClick).toHaveBeenCalledTimes(1);
     expect(onClick).toHaveBeenCalledWith(menus[stepClicked]);
+  });
+});
+
+describe('Horizontal Navigation component css classes', () => {
+  it('renders text with disabled state ', () => {
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
+    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[2];
+    expect(disabledMenu).toHaveClass('color-inverse-lightest');
+  });
+
+  it('renders text with default state ', () => {
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
+    const defaultMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[0];
+    expect(defaultMenu).toHaveClass('color-inverse');
+  });
+
+  it('renders text with active state ', () => {
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} active={{ link: '/patient360' }} />);
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[0];
+    expect(activeMenu).toHaveClass('color-primary-dark');
   });
 });
