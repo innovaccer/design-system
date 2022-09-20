@@ -155,9 +155,11 @@ exports[`Pagination component
           type="number"
           value="10"
         />
-        <div>
+        <div
+          class="MetricInput-arrowIcons"
+        >
           <button
-            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular mb-2"
+            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4 mb-2"
             data-test="DesignSystem-MetricInput--upIcon"
             tabindex="0"
           >
@@ -175,7 +177,7 @@ exports[`Pagination component
             </div>
           </button>
           <button
-            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular"
+            class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4"
             data-test="DesignSystem-MetricInput--downIcon"
             tabindex="0"
           >
