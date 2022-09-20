@@ -3,8 +3,12 @@ import Button from '@/components/atoms/button';
 
 export const iconButtonGroup = () => (
   <div className="d-inline-flex">
-    <Button size="tiny" icon="content_copy" aria-label="Copy" className="mr-4" tooltip="Copy" />
-    <Button size="tiny" icon="content_paste" aria-label="Paste" className="mr-4" tooltip="Paste" />
+    <div className="mr-4">
+      <Button size="tiny" icon="content_copy" aria-label="Copy" tooltip="Copy" />
+    </div>
+    <div className="mr-4">
+      <Button size="tiny" icon="content_paste" aria-label="Paste" tooltip="Paste" />
+    </div>
     <Button size="tiny" icon="delete" aria-label="Delete" tooltip="Delete" />
   </div>
 );
