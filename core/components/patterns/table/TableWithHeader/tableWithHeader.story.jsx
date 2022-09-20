@@ -465,7 +465,7 @@ import './style.css';
         showVerticalFilters: props.showVerticalFilters,
       };
   
-      this.pageSize = 3;
+      this.pageSize = 4;
       this.searchDebounceDuration = 750;
       this.debounceUpdate = debounce(this.searchDebounceDuration, this.updateDataFn);
     }
@@ -978,7 +978,7 @@ import './style.css';
   return (
     <div
       style={{
-        height: '350px',
+        height: '450px',
         background: 'var(--secondary-lightest)'
       }}
     >

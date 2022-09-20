@@ -57,7 +57,6 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-        noStory: true,
       },
     },
   },

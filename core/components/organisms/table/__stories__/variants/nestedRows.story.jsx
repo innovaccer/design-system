@@ -13,7 +13,7 @@ export const nestedRows = () => {
   return (
     <div
       style={{
-        height: '350px',
+        height: '450px',
       }}
     >
       <Card shadow="light" className="h-100">
@@ -108,6 +108,7 @@ const customCode = `
       resizable: true,
       align: 'center',
       cellType: 'ICON',
+      sorting: false,
       translate: _ => ({
         icon: 'events'
       })
@@ -118,6 +119,7 @@ const customCode = `
       width: 200,
       resizable: true,
       separator: true,
+      sorting: false,
       cellRenderer: (props) => {
         const {
           loading
@@ -157,7 +159,7 @@ const customCode = `
   return (
     <div
       style={{
-        height: '350px',
+        height: '450px',
       }}
     >
       <Card className="h-100 overflow-hidden">
