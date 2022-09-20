@@ -1,0 +1,280 @@
+.color-white {
+  color: var(--white);
+}
+
+.color-primary {
+  color: var(--primary);
+}
+
+.color-secondary {
+  color: var(--secondary);
+}
+
+.color-success {
+  color: var(--success);
+}
+
+.color-alert {
+  color: var(--alert);
+}
+
+.color-warning {
+  color: var(--warning);
+}
+
+.color-accent1 {
+  color: var(--accent1);
+}
+
+.color-accent2 {
+  color: var(--accent2);
+}
+
+.color-accent3 {
+  color: var(--accent3);
+}
+
+.color-accent4 {
+  color: var(--accent4);
+}
+
+.color-inverse {
+  color: var(--inverse);
+}
+
+/* dark */
+
+.color-primary-dark {
+  color: var(--primary-dark);
+}
+
+.color-secondary-dark {
+  color: var(--secondary-dark);
+}
+
+.color-success-dark {
+  color: var(--success-dark);
+}
+
+.color-alert-dark {
+  color: var(--alert-dark);
+}
+
+.color-warning-dark {
+  color: var(--warning-dark);
+}
+
+.color-accent1-dark {
+  color: var(--accent1-dark);
+}
+
+.color-accent2-dark {
+  color: var(--accent2-dark);
+}
+
+.color-accent3-dark {
+  color: var(--accent3-dark);
+}
+
+.color-accent4-dark {
+  color: var(--accent4-dark);
+}
+
+/* darker */
+
+.color-primary-darker {
+  color: var(--primary-darker);
+}
+
+.color-success-darker {
+  color: var(--success-darker);
+}
+
+.color-alert-darker {
+  color: var(--alert-darker);
+}
+
+.color-warning-darker {
+  color: var(--warning-darker);
+}
+
+.color-accent1-darker {
+  color: var(--accent1-darker);
+}
+
+.color-accent2-darker {
+  color: var(--accent2-darker);
+}
+
+.color-accent3-darker {
+  color: var(--accent3-darker);
+}
+
+.color-accent4-darker {
+  color: var(--accent4-darker);
+}
+
+/* light */
+
+.color-primary-light {
+  color: var(--primary-light);
+}
+
+.color-secondary-light {
+  color: var(--secondary-light);
+}
+
+.color-success-light {
+  color: var(--success-light);
+}
+
+.color-alert-light {
+  color: var(--alert-light);
+}
+
+.color-warning-light {
+  color: var(--warning-light);
+}
+
+.color-accent1-light {
+  color: var(--accent1-light);
+}
+
+.color-accent2-light {
+  color: var(--accent2-light);
+}
+
+.color-accent3-light {
+  color: var(--accent3-light);
+}
+
+.color-accent4-light {
+  color: var(--accent4-light);
+}
+
+.color-inverse-light {
+  color: var(--inverse-light);
+}
+
+/* lighter */
+.color-primary-lighter {
+  color: var(--primary-lighter);
+}
+
+.color-secondary-lighter {
+  color: var(--secondary-lighter);
+}
+
+.color-success-lighter {
+  color: var(--success-lighter);
+}
+
+.color-alert-lighter {
+  color: var(--alert-lighter);
+}
+
+.color-warning-lighter {
+  color: var(--warning-lighter);
+}
+
+.color-accent1-lighter {
+  color: var(--accent1-lighter);
+}
+
+.color-accent2-lighter {
+  color: var(--accent2-lighter);
+}
+
+.color-accent3-lighter {
+  color: var(--accent3-lighter);
+}
+
+.color-accent4-lighter {
+  color: var(--accent4-lighter);
+}
+
+.color-inverse-lighter {
+  color: var(--inverse-lighter);
+}
+
+/* lightest */
+.color-primary-lightest {
+  color: var(--primary-lightest);
+}
+
+.color-secondary-lightest {
+  color: var(--secondary-lightest);
+}
+
+.color-success-lightest {
+  color: var(--success-lightest);
+}
+
+.color-alert-lightest {
+  color: var(--alert-lightest);
+}
+
+.color-warning-lightest {
+  color: var(--warning-lightest);
+}
+
+.color-accent1-lightest {
+  color: var(--accent1-lightest);
+}
+
+.color-accent2-lightest {
+  color: var(--accent2-lightest);
+}
+
+.color-accent3-lightest {
+  color: var(--accent3-lightest);
+}
+
+.color-accent4-lightest {
+  color: var(--accent4-lightest);
+}
+
+.color-inverse-lightest {
+  color: var(--inverse-lightest);
+}
+
+/* shadow */
+.color-primary-shadow {
+  color: var(--primary-shadow);
+}
+
+.color-secondary-shadow {
+  color: var(--secondary-shadow);
+}
+
+.color-success-shadow {
+  color: var(--success-shadow);
+}
+
+.color-alert-shadow {
+  color: var(--alert-shadow);
+}
+
+.color-warning-shadow {
+  color: var(--warning-shadow);
+}
+
+.color-accent1-shadow {
+  color: var(--accent1-shadow);
+}
+
+.color-accent2-shadow {
+  color: var(--accent2-shadow);
+}
+
+.color-accent3-shadow {
+  color: var(--accent3-shadow);
+}
+
+.color-accent4-shadow {
+  color: var(--accent4-shadow);
+}
+
+.color-inverse-shadow {
+  color: var(--inverse-shadow);
+}
