@@ -198,7 +198,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
   componentDidUpdate(prevProps: CalendarProps, prevState: CalendarState) {
     const { monthsInView } = this.props;
 
-    if (prevProps.date !== this.props.date) {
+    if (prevProps.date?.getTime() !== this.props.date?.getTime()) {
       const { year, month, date } = getDateInfo(this.props.date);
       this.updateState(year, month, date);
       const d = convertToDate(this.props.date);
@@ -207,14 +207,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       });
     }
 
-    if (prevProps.startDate !== this.props.startDate) {
+    if (prevProps.startDate?.getTime() !== this.props.startDate?.getTime()) {
       const d = convertToDate(this.props.startDate);
       this.setState({
         startDate: d,
       });
     }
 
-    if (prevProps.endDate !== this.props.endDate) {
+    if (prevProps.endDate?.getTime() !== this.props.endDate?.getTime()) {
       const d = convertToDate(this.props.endDate);
       this.setState({
         endDate: d,
@@ -248,7 +248,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       }
     }
 
-    if (prevState.currDate !== this.state.currDate) {
+    if (prevState.currDate?.getTime() !== this.state.currDate?.getTime()) {
       const { rangePicker, onDateChange } = this.props;
 
       const { currDate, startDate, endDate } = this.state;
@@ -288,7 +288,10 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       }
     }
 
-    if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
+    if (
+      prevState.startDate?.getTime() !== this.state.startDate?.getTime() ||
+      prevState.endDate?.getTime() !== this.state.endDate?.getTime()
+    ) {
       const { onRangeChange } = this.props;
 
       const { startDate, endDate } = this.state;
