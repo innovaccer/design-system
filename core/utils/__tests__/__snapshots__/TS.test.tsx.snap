@@ -2481,7 +2481,7 @@ exports[`TS renders children 1`] = `
         data-test="DesignSystem-Row"
       >
         <div
-          class="Col Col--4 Col--m-4 Col--xl-4"
+          class="Col Col--12 Col--m-12 Col--xl-12"
           data-test="DesignSystem-Column"
         >
           <div
@@ -2495,14 +2495,6 @@ exports[`TS renders children 1`] = `
             </h4>
           </div>
         </div>
-        <div
-          class="Col Col--4 Col--m-4 Col--xl-4"
-          data-test="DesignSystem-Column"
-        />
-        <div
-          class="Col Col--4 Col--m-4 Col--xl-4"
-          data-test="DesignSystem-Column"
-        />
       </div>
     </div>
   </div>
