@@ -30,7 +30,7 @@
 }
 
 .Textarea:disabled {
-  color: var(--inverse-lighter);
+  color: var(--inverse-lightest);
   background: var(--secondary-lightest);
   border-color: var(--secondary-light);
 }
