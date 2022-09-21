@@ -54,7 +54,7 @@
 }
 
 .DropdownButton:focus {
-  background-color: var(--secondary-lighter);
+  background-color: var(--secondary-light);
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 

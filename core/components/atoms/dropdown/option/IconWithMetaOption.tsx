@@ -12,6 +12,7 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
     optionData,
     onUpdateActiveOption,
     appearance,
+    color,
     dataTest,
   } = props;
 
@@ -37,7 +38,7 @@ const IconWithMetaOption = (props: OptionTypeProps) => {
         <Icon data-test={`${dataTest}--Icon`} className="Option-icon mr-4" name={icon} appearance={appearance} />
       )}
       <div className={'Option-label'}>
-        <Text className={textClassName} appearance={appearance}>
+        <Text className={textClassName} color={color}>
           {label}
         </Text>
         {subInfo && renderSubInfo(subInfo)}
