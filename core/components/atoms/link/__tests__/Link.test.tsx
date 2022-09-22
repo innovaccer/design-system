@@ -73,10 +73,32 @@ describe('Link component', () => {
     });
   });
 
-  describe('Link component with prop:disabled', () => {
+  describe('Link component with prop:disabled and with no appearance', () => {
     it('link should be disabled', () => {
       const { getByTestId } = render(<Link disabled={true}>Click on Link</Link>);
-      expect(getByTestId('DesignSystem-Link')).toHaveClass('Link--disabled');
+      expect(getByTestId('DesignSystem-Link')).toHaveClass('Link--default-disabled');
+    });
+  });
+
+  describe('Link component with prop:disabled and with default appearance', () => {
+    it('link should be disabled', () => {
+      const { getByTestId } = render(
+        <Link disabled={true} appearance="default">
+          Click on Link
+        </Link>
+      );
+      expect(getByTestId('DesignSystem-Link')).toHaveClass('Link--default-disabled');
+    });
+  });
+
+  describe('Link component with prop:disabled and with subtle appearance', () => {
+    it('link should be disabled', () => {
+      const { getByTestId } = render(
+        <Link disabled={true} appearance="subtle">
+          Click on Link
+        </Link>
+      );
+      expect(getByTestId('DesignSystem-Link')).toHaveClass('Link--subtle-disabled');
     });
   });
 });

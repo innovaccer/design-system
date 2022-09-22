@@ -4,6 +4,10 @@
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
+.Link:focus-visible {
+  outline: none;
+}
+
 .Link--regular {
   font-size: var(--font-size);
 }
@@ -21,15 +25,17 @@
 }
 
 .Link--default:hover {
-  border-bottom: var(--spacing-xs) solid var(--primary);
+  border-bottom: var(--spacing-xs) solid var(--primary-dark);
+  color: var(--primary-dark);
 }
 
 .Link--subtle:hover {
-  border-bottom: var(--spacing-xs) solid var(--inverse-lighter);
+  border-bottom: var(--spacing-xs) solid var(--inverse-light);
+  color: var(--inverse-light);
 }
 
 .Link--default:active {
-  color: var(--primary-dark);
+  color: var(--primary-darker);
   border: none;
 }
 
@@ -48,7 +54,12 @@
   border-radius: var(--spacing-m);
 }
 
-.Link--disabled {
+.Link--default-disabled {
+  color: var(--primary-lighter);
+  pointer-events: none;
+}
+
+.Link--subtle-disabled {
   color: var(--inverse-lightest);
   pointer-events: none;
 }

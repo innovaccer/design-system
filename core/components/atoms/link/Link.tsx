@@ -60,9 +60,9 @@ export const Link = (props: LinkProps) => {
   const classes = classNames(
     {
       Link: true,
-      ['Link--disabled']: disabled,
       [`Link--${size}`]: size,
       [`Link--${appearance}`]: appearance,
+      [`Link--${appearance}-disabled`]: disabled,
     },
     className
   );

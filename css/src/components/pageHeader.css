@@ -1,6 +1,7 @@
 .PageHeader-wrapper {
   padding: var(--spacing) var(--spacing-2);
 }
+
 .PageHeader-wrapper--separator {
   border-bottom: var(--border);
 }
@@ -21,10 +22,12 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-right: var(--spacing);
 }
 
 .PageHeader-titleWrapper .Badge {
   margin-left: var(--spacing-l);
+  flex-shrink: 0;
 }
 
 .PageHeader-statusWrapper {
@@ -45,10 +48,18 @@
   justify-content: center;
   align-items: center;
   margin-top: 0 !important;
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
 }
 
 .PageHeader-title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.PageHeader-actionsWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: var(--spacing);
 }

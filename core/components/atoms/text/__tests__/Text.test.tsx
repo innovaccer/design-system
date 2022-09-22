@@ -1,9 +1,9 @@
 import * as React from 'react';
-import Text, { TextProps as Props, TextAppearance, Size } from '../Text';
+import Text, { TextProps as Props, TextAppearance, TextSize } from '../Text';
 import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const sizes: Size[] = ['small', 'regular', 'large'];
+const sizes: TextSize[] = ['small', 'regular', 'large'];
 const appearances: TextAppearance[] = ['default', 'white', 'destructive', 'disabled', 'subtle', 'success', 'link'];
 const weight = ['strong', 'medium'];
 const BooleanValue = [true, false];
@@ -130,5 +130,21 @@ describe('Text component', () => {
         expect(getByTestId('DesignSystem-Text')).toHaveClass(`Text--${appearance}`);
       });
     });
+  });
+});
+
+describe('Text Component with Prop:color', () => {
+  it('should have the text color as accent1 when prop color="accent1"', () => {
+    const { getByTestId } = render(<Text color="accent1">{'Design System'}</Text>);
+    expect(getByTestId('DesignSystem-Text')).toHaveClass('color-accent1');
+  });
+
+  it('should given preference to color over appearance prop', () => {
+    const { getByTestId } = render(
+      <Text color="accent1-lightest" appearance="destructive">
+        {'Design System'}
+      </Text>
+    );
+    expect(getByTestId('DesignSystem-Text')).toHaveClass('color-accent1-lightest');
   });
 });
