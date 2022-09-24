@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { getTextAppearance, getIconAppearance, getPillsAppearance, Menu } from '@/utils/navigationHelper';
+import { getTextColor, getIconAppearance, getPillsAppearance, Menu } from '@/utils/navigationHelper';
 import Link from '@/components/atoms/_text';
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
@@ -29,21 +29,27 @@ interface MenuLabelProps {
 
 interface MenuIconProps {
   isChildrenVisible?: boolean;
+  isActive?: boolean;
+  disabled?: boolean;
 }
 
 const MenuLabel = (props: MenuLabelProps) => {
   const { label, disabled, isActive } = props;
   return (
-    <Text data-test="DesignSystem-VerticalNav--Text" appearance={getTextAppearance(isActive, disabled)}>
+    <Text data-test="DesignSystem-VerticalNav--Text" color={getTextColor(isActive, disabled)}>
       {label}
     </Text>
   );
 };
 
 const MenuIcon = (props: MenuIconProps) => {
-  const { isChildrenVisible } = props;
+  const { isChildrenVisible, isActive, disabled } = props;
   return (
-    <Icon className="mx-4" name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} appearance="subtle" />
+    <Icon
+      className="mx-4"
+      name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+      appearance={isActive ? 'primary_dark' : disabled ? 'disabled' : 'subtle'}
+    />
   );
 };
 
@@ -79,6 +85,7 @@ export const MenuItem = (props: MenuItemProps) => {
   const baseProps = {
     onClick: onClickHandler,
     href: menu.link,
+    tabIndex: 0,
     ...extractBaseProps(props),
   };
 
@@ -95,7 +102,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const renderSubMenu = () => {
     if (hasSubmenu) {
-      return <MenuIcon isChildrenVisible={isChildrenVisible} />;
+      return <MenuIcon isChildrenVisible={isChildrenVisible} isActive={isActive} disabled={menu.disabled} />;
     }
 
     if (menu.count !== undefined) {
@@ -109,7 +116,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const customItemProps = {
     ...props,
-    MenuIcon: () => MenuIcon({ isChildrenVisible }),
+    MenuIcon: () => MenuIcon({ isChildrenVisible, isActive, disabled: menu.disabled }),
     MenuLabel: () => MenuLabel({ label: menu.label, disabled: menu.disabled, isActive: isActive }),
     MenuPills: () =>
       menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,

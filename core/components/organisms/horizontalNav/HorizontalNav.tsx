@@ -3,13 +3,7 @@ import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { VerticalNavProps } from '@/index.type';
 import { extractBaseProps, BaseProps } from '@/utils/types';
-import {
-  getTextColor,
-  getHorizontalIconAppearance,
-  getPillsAppearance,
-  isMenuActive,
-  Menu,
-} from '@/utils/navigationHelper';
+import { getTextColor, getIconAppearance, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
 
 export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
 export type Align = 'left' | 'center';
@@ -56,7 +50,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
         <Icon
           className="mr-3"
           name={menu.icon}
-          appearance={getHorizontalIconAppearance(isActive, menu.disabled)}
+          appearance={getIconAppearance(isActive, menu.disabled)}
           data-test="DesignSystem-HorizontalNav--Icon"
         />
       );

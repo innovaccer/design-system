@@ -66,20 +66,27 @@
 }
 
 .MenuItem:hover {
-  background-color: var(--secondary-light);
-  box-shadow: var(--shadow-s);
+  background: var(--secondary);
   text-decoration: none;
+}
+
+.MenuItem:active {
+  background: var(--secondary-dark);
+}
+
+.MenuItem:focus-visible {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: none;
 }
 
 .MenuItem--active,
 .MenuItem--active:hover {
   background: var(--primary-lightest);
-  box-shadow: none;
 }
 
-.MenuItem:active {
-  background: var(--primary-lighter);
-  box-shadow: none;
+.MenuItem--active:focus-visible {
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: none;
 }
 
 .MenuItem--rounded {
