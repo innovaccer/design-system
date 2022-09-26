@@ -5,11 +5,10 @@ tabs: ["Usage", "Code"]
 showMobile: true
 ---
 
-Calendar lets users select a date. The dates are arranged in a grid visually for familiarity and easy scanning. 
+Calendar lets users select a date. The dates are arranged in a grid visually for familiarity and easy scanning. A calendar is always visible upfront on screen when used i.e. a date can be selected directly unlike a date picker where a date can be selected only after interacting with a trigger.
 
-### Structure
-A calendar is always visible upfront on screen when used i.e. a date can be selected directly unlike a date picker where a date can be selected only after interacting with a trigger.
 <Preview name="components-calendar-all--all" />
+
 
 ### Sizes
 Calendar comes in **2 sizes** - regular and small.
@@ -22,7 +21,34 @@ A time entity in calendar (date, month, year) can come in different states -
 <br/>
 <br/>
 
-### Properties
+### Structure
+<br/>
+<br/>
+
+![Structure of calendar](./images/calendar-structure.png)
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+  <tr>
+    <th style="width:50%; text-align: left;">Property</th>
+    <th style="width:50%; text-align: left;">Value(s)</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Size</td>
+    <td>324x316px <em>(Regular)</em> <br/>
+        248x212px <em>(Small)</em> </td>
+  </tr>
+ </tbody>
+</table>
+
+<br/>
+
+### Configurations
+<br/>
+<br/>
+
+
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -60,6 +86,7 @@ A time entity in calendar (date, month, year) can come in different states -
 Date picker is nothing but a calendar inside a popover and hence a trigger is always required to open it e.g. an input box. On the other hand, calendar is used as an inline component to show a view without additional triggers.
 
 ![Calendar is used inline](./images/calendar-2.png)
+<Caption> Calendar is used inline </Caption>
 <br/>
 <br/>
 
