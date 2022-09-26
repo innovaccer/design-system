@@ -22,5 +22,5 @@
 
 .Ring-indicator {
   stroke: var(--primary);
-  transition: stroke-dashOffset 200ms;
+  transition: var(--duration--slow-01) var(--standard-expressive-curve);
 }
