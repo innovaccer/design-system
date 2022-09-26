@@ -31,7 +31,7 @@ export const horizontalNavigationWithCount = () => {
   };
 
   return (
-    <div className="d-flex align-items-center py-6" style={{ background: 'var(--secondary-lightest)' }}>
+    <div className="d-flex align-items-center py-6 bg-secondary-lightest">
       <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
     </div>
   );
@@ -66,7 +66,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="d-flex align-items-center py-6" style={{ background: 'var(--secondary-lightest)' }}>
+    <div className="d-flex align-items-center py-6 bg-secondary-lightest">
       <HorizontalNav
         className="w-100 justify-content-center"
         menus={data}

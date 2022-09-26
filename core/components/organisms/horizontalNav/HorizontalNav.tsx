@@ -3,7 +3,13 @@ import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { VerticalNavProps } from '@/index.type';
 import { extractBaseProps, BaseProps } from '@/utils/types';
-import { getTextAppearance, getIconAppearance, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
+import {
+  getTextColor,
+  getHorizontalIconAppearance,
+  getPillsAppearance,
+  isMenuActive,
+  Menu,
+} from '@/utils/navigationHelper';
 
 export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
 export type Align = 'left' | 'center';
@@ -50,7 +56,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
         <Icon
           className="mr-3"
           name={menu.icon}
-          appearance={getIconAppearance(isActive, menu.disabled)}
+          appearance={getHorizontalIconAppearance(isActive, menu.disabled)}
           data-test="DesignSystem-HorizontalNav--Icon"
         />
       );
@@ -64,6 +70,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
     const menuClasses = classNames({
       'HorizontalNav-menu': true,
+      'HorizontalNav-menu--default': !isActive,
       ['HorizontalNav-menu--active']: isActive,
       ['HorizontalNav-menu--disabled']: menu.disabled,
     });
@@ -71,10 +78,10 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     return (
       // TODO(a11y)
       // eslint-disable-next-line
-      <div data-test="DesignSystem-HorizontalNav" key={index} className={menuClasses} onClick={onClickHandler(menu)}>
+      <div tabIndex={0} data-test="DesignSystem-HorizontalNav" key={index} className={menuClasses} onClick={onClickHandler(menu)}>
         {renderIcon(menu, isActive)}
         <Text
-          appearance={getTextAppearance(isActive, menu.disabled)}
+          color={getTextColor(isActive, menu.disabled)}
           data-test="DesignSystem-HorizontalNav--Text"
           className="HorizontalNav-menuText"
         >
