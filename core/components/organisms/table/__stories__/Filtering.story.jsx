@@ -364,7 +364,7 @@ import './style.css';
         searchTerm: undefined,
       };
 
-      this.pageSize = 3;
+      this.pageSize = 5;
       this.searchDebounceDuration = 750;
       this.debounceUpdate = debounce(this.searchDebounceDuration, this.updateDataFn);
     }

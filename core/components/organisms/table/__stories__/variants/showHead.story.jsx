@@ -13,6 +13,7 @@ export const showHead = () => {
     flexWrap: 'wrap',
   };
   // to freeze the object for typescript
+  // console.log(schema, 'hi');
 
   return (
     <div style={style}>
@@ -40,17 +41,134 @@ export const showHead = () => {
   );
 };
 
+const customCode = `
+() => {
+  const data = ${JSON.stringify(data, null, 4)};
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+      width: 300,
+      resizable: true,
+      separator: true,
+      tooltip: true,
+      translate: a => ({
+        title: \`\${a.firstName} \${a.lastName}\`,
+        firstName: a.firstName,
+        lastName: a.lastName
+      }),
+      filters: [
+        { label: 'A-G', value: 'a-g' },
+        { label: 'H-R', value: 'h-r' },
+        { label: 'S-Z', value: 's-z' },
+      ],
+      onFilterChange: (a, filters) => {
+        for (const filter of filters) {
+          switch (filter) {
+            case 'a-g':
+              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;
+              break;
+            case 'h-r':
+              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;
+              break;
+            case 's-z':
+              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;
+              break;
+          }
+        }
+        return false;
+      },
+      cellType: 'AVATAR_WITH_TEXT',
+    },
+    {
+      name: 'email',
+      displayName: 'Email',
+      width: 350,
+      resizable: true,
+      sorting: false,
+    },
+    {
+      name: 'gender',
+      displayName: 'Gender',
+      width: 200,
+      resizable: true,
+      comparator: (a, b) => a.gender.localeCompare(b.gender),
+      cellType: 'STATUS_HINT',
+      translate: a => ({
+        title: a.gender,
+        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'
+      }),
+      filters: [
+        { label: 'Male', value: 'male' },
+        { label: 'Female', value: 'female' },
+      ],
+      onFilterChange: (a, filters) => {
+        for (const filter of filters) {
+          if (a.gender.toLowerCase() === filter) return true;
+        }
+        return false;
+      },
+    },
+    {
+      name: 'icon',
+      displayName: 'Icon',
+      width: 100,
+      resizable: true,
+      align: 'center',
+      cellType: 'ICON',
+      sorting: false,
+      translate: _ => ({
+        icon: 'events'
+      })
+    },
+  ];
+
+  const values = [true, false];
+
+  const style = {
+    display: 'flex',
+    flexWrap: 'wrap',
+  };
+
+  return (
+    <div style={style}>
+      {values.map((v, index) => (
+        <div
+          key={index}
+          style={{
+            margin: '20px',
+            width: '45%',
+          }}
+        >
+          <Heading>{\`showHead: \${v}\`}</Heading>
+          <div
+            style={{
+              height: '350px',
+            }}
+          >
+            <Card shadow="light" className="h-100">
+              <Table showHead={v} data={data} schema={schema} />
+            </Card>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+`;
+
 export default {
   title: 'Components/Table/Variants/Show Head',
   component: Table,
   parameters: {
     docs: {
       docPage: {
+        customCode,
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-        noStory: true,
       },
     },
   },

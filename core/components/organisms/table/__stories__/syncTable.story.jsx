@@ -131,6 +131,7 @@ const customCode = `
       resizable: true,
       align: 'center',
       cellType: 'ICON',
+      sorting: false,
       translate: _ => ({
         icon: 'events'
       })
@@ -141,6 +142,7 @@ const customCode = `
       width: 200,
       resizable: true,
       cellType: 'WITH_META_LIST',
+      sorting: false,
       cellRenderer: props => {
         return (
           <>
@@ -158,7 +160,6 @@ const customCode = `
     },
   ];
 
-  const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
 
   return (
     <div
@@ -168,7 +169,7 @@ const customCode = `
     >
       <Card className="h-100 overflow-hidden">
         <Table
-          loaderSchema={loaderSchema}
+
           data={data}
           schema={schema}
           withHeader={true}

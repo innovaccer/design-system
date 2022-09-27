@@ -10,7 +10,7 @@ export const withEditableCell = () => {
   return (
     <div
       style={{
-        height: '350px',
+        height: '450px',
       }}
     >
       <Card className="h-100 overflow-hidden">
@@ -123,6 +123,7 @@ const customCode = `
       resizable: true,
       align: 'center',
       cellType: 'ICON',
+      sorting: false,
       translate: _ => ({
         icon: 'events'
       })
@@ -133,6 +134,7 @@ const customCode = `
       width: 200,
       resizable: true,
       separator: true,
+      sorting: false,
       cellRenderer: (props) => {
         const { loading } = props;
 
@@ -163,7 +165,7 @@ const customCode = `
   return (
     <div
       style={{
-        height: '350px',
+        height: '450px',
       }}
     >
       <Card className="h-100 overflow-hidden">
