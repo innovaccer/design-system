@@ -32,15 +32,8 @@ export const all = () => {
   };
 
   return (
-    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
-      <div
-        style={{
-          background: 'white',
-          padding: 'var(--spacing-m)',
-          borderTop: 'var(--border)',
-          borderBottom: 'var(--border)',
-        }}
-      >
+    <div className="bg-secondary-lightest" style={{ height: '200px' }}>
+      <div className="bg-light border-top border-bottom p-3">
         <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
       </div>
     </div>
@@ -76,15 +69,8 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
-      <div
-        style={{
-            background: 'white',
-            padding: 'var(--spacing-m)',
-            borderTop: 'var(--border)',
-            borderBottom: 'var(--border)'
-        }}
-      >
+    <div className="bg-secondary-lightest" style={{ height: '200px' }}>
+      <div className="bg-light border-top border-bottom p-3">
         <HorizontalNav
           className="w-100 justify-content-center"
           menus={data}

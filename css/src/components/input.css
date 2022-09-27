@@ -32,6 +32,8 @@
 
 .Input--large {
   height: 40px;
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
 }
 
 .Input--large .Input-input {
@@ -40,7 +42,8 @@
 }
 
 .Input:hover {
-  background: var(--secondary-lightest);
+  background: var(--secondary-lighter);
+  border-color: var(--secondary-dark);
   cursor: text;
 }
 
@@ -65,7 +68,7 @@
 
 .Input--disabled {
   background: var(--secondary-lightest);
-  border-color: var(--secondary-light);
+  border-color: var(--secondary-lighter);
   pointer-events: none;
 }
 

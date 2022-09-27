@@ -23,6 +23,18 @@ export const tableAsDescriptionList = () => {
       email: 'daniellow02@yahoo.com',
       view: true,
     },
+    {
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+      email: 'rboatwright3@arstechnica.com',
+      edit: true,
+    },
+    {
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+      email: 'rcyples4@biglobe.ne.jp',
+      owner: true,
+    },
   ];
 
   const schema = [
@@ -126,6 +138,18 @@ const customCode = `() => {
       email: 'daniellow02@yahoo.com',
       view: true
     },
+    {
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+      email: 'rboatwright3@arstechnica.com',
+      edit: true,
+    },
+    {
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+      email: 'rcyples4@biglobe.ne.jp',
+      owner: true,
+    },
   ];
 
   const schema = [
@@ -212,7 +236,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-        title: 'Table as Option List',
+        title: 'Table as Description List',
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],

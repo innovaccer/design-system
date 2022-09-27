@@ -36,6 +36,28 @@ export const nestedTableWithNestedCards = () => {
       statusType: 'Done',
       className: 'Executed',
     },
+    {
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+      lastRun: 'Yesterday 4:26 PM',
+      name: 'Risk Analysis',
+      type: 'Batch Execution',
+      status: 'Completed',
+      statusType: 'Done',
+      className: 'Executed',
+    },
+    {
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+      lastRun: 'Yesterday 7:34 AM',
+      name: 'Quality',
+      type: 'Test Function',
+      status: 'Failed',
+      statusType: 'Error',
+      errorCode: 2204,
+      className: 'File not found',
+      errorMessage: 'Cannot fetch files',
+    },
   ];
 
   const schema = [
@@ -177,6 +199,28 @@ const customCode = `() => {
       status: "Completed",
       statusType: "Done",
       className: "Executed",
+    },
+    {
+      firstName: 'Randy',
+      lastName: 'Boatwright',
+      lastRun: 'Yesterday 4:26 PM',
+      name: 'Risk Analysis',
+      type: 'Batch Execution',
+      status: 'Completed',
+      statusType: 'Done',
+      className: 'Executed',
+    },
+    {
+      firstName: 'Rolando',
+      lastName: 'Cyples',
+      lastRun: 'Yesterday 7:34 AM',
+      name: 'Quality',
+      type: 'Test Function',
+      status: 'Failed',
+      statusType: 'Error',
+      errorCode: 2204,
+      className: 'File not found',
+      errorMessage: 'Cannot fetch files',
     },
   ];
 

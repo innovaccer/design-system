@@ -54,12 +54,81 @@ export const withCheckbox = () => {
   );
 };
 
+const customCode = `
+() => {
+  const data = ${JSON.stringify(data, null, 4)};
+
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',  
+      resizable: true,
+      separator: true,
+      tooltip: true,
+      translate: a => ({
+        title: \`\${a.firstName} \${a.lastName}\`,
+        firstName: a.firstName,
+        lastName: a.lastName
+      }),
+      cellType: 'AVATAR_WITH_TEXT',
+    },
+    {
+      name: 'email',
+      displayName: 'Email',
+      width: 350,
+      resizable: true,
+    },
+  ];
+
+  const values = [true, false];
+
+  const style = {
+    display: 'flex',
+    flexWrap: 'wrap',
+  };
+
+  return (
+   <div style={style}>
+      {values.map((v, index) => (
+        <div
+          key={index}
+          style={{
+            margin: '20px',
+            width: '45%',
+          }}
+        >
+          <Heading>{\`withPagination: \${v}\`}</Heading>
+          <div
+            style={{
+              height: '350px',
+            }}
+          >
+            <Card shadow="light" className="h-100">
+              <Table
+                data={data}
+                schema={schema}
+                withCheckbox={true}
+                withPagination={v}
+                onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)}
+                pageSize={15}
+                onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
+              />
+            </Card>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+`;
+
 export default {
   title: 'Components/Table/Variants/With Checkbox',
   component: Table,
   parameters: {
     docs: {
       docPage: {
+        customCode,
         props: {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
