@@ -111,7 +111,7 @@
 }
 
 .Button--basic:hover {
-  box-shadow: var(--shadow-s);
+  background: var(--secondary);
 }
 
 .Button--basic:active {
@@ -193,20 +193,19 @@
 }
 
 .Button--transparent:hover {
-  background: var(--secondary-light);
+  background: var(--secondary);
 }
 
 .Button--transparent:focus {
-  background: color-mod(var(--stone-light) a(0.2));
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .Button--transparent:active {
-  background: var(--secondary);
+  background: var(--secondary-dark);
 }
 
 .Button--transparent:focus:active {
-  background: var(--secondary);
+  background: var(--secondary-dark);
 }
 
 .Button--transparent:disabled {
@@ -232,7 +231,29 @@
 
 .Button--selected {
   background: var(--primary-lightest);
-  color: var(--primary);
+  color: var(--primary-dark);
+}
+
+.Button--selected:hover {
+  background: var(--primary-lighter);
+}
+
+.Button--selected:active {
+  background: var(--primary-light);
+}
+
+.Button--selected:focus {
+  background: var(--primary-lightest);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Button--selected:focus:active {
+  background: var(--primary-light);
+}
+
+.Button--selected:disabled {
+  background: var(--primary-lightest);
+  color: var(--primary-lighter);
 }
 
 .Button-text--hidden {

@@ -165,7 +165,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
                     ? 'disabled'
                     : appearance === 'basic' || appearance === 'transparent'
                     ? selected
-                      ? 'info'
+                      ? 'primary_dark'
                       : 'default'
                     : 'white'
                 }
