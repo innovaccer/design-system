@@ -42,6 +42,10 @@ export interface RadioProps extends BaseProps, OmitNativeProps<HTMLInputElement,
    */
   checked?: boolean;
   /**
+   * Shows error state in case of failed validation
+   */
+  error?: boolean;
+  /**
    * Callback function called when user the selects an option
    */
   onChange?: (event: ChangeEvent) => void;
@@ -59,6 +63,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     defaultChecked,
     className,
     helpText,
+    error,
     ...rest
   } = props;
 
@@ -78,6 +83,8 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
 
   const RadioWrapper = classNames({
     ['Radio-wrapper']: true,
+    [`Radio-defaultWrapper`]: !error,
+    [`Radio-errorWrapper`]: error,
     [`Radio-wrapper--${size}`]: size,
   });
 
@@ -108,7 +115,10 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           id={id}
           data-test="DesignSystem-Radio-Input"
         />
-        <span className={RadioWrapper} />
+        {
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+          <span tabIndex={0} data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
+        }
       </div>
       <div className="Radio-labelWrapper">
         {label && (

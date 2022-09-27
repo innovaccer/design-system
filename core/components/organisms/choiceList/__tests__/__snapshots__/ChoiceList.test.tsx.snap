@@ -40,7 +40,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -77,7 +79,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -143,7 +147,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -180,7 +186,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -247,7 +255,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -285,7 +295,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -352,7 +364,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -390,7 +404,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -888,7 +904,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -925,7 +943,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -991,7 +1011,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1028,7 +1050,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1095,7 +1119,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1133,7 +1159,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1200,7 +1228,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1238,7 +1268,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--regular"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1736,7 +1768,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1773,7 +1807,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1839,7 +1875,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1876,7 +1914,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1943,7 +1983,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -1981,7 +2023,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2048,7 +2092,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2086,7 +2132,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2584,7 +2632,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2621,7 +2671,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2687,7 +2739,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2724,7 +2778,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2791,7 +2847,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2829,7 +2887,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2896,7 +2956,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
@@ -2934,7 +2996,9 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Radio-wrapper Radio-wrapper--tiny"
+              class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
+              data-test="DesignSystem-Radio-wrapper"
+              tabindex="0"
             />
           </div>
           <div
