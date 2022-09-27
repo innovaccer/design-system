@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Caption, Button } from '@/index';
+import { Text, InlineMessage, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileUploaderStatus from './FileUploaderStatus';
 import { FileStatus } from '@/common.type';
@@ -82,7 +82,7 @@ export const FileUploaderItem = (props: FileUploaderItemProps) => {
           />
         </div>
       </div>
-      {status === 'error' && <Caption error={true}>{errorMessage}</Caption>}
+      {status === 'error' && <InlineMessage size="small" appearance="alert" description={errorMessage} />}
     </div>
   );
 };

@@ -63,7 +63,7 @@ describe('FileList component', () => {
 
   it('renders file with status: error', () => {
     const { getByTestId } = render(<FileList fileList={[fileList[2]] as FileListType} />);
-    expect(getByTestId('DesignSystem-Caption').textContent).toMatch(`${fileList[2].errorMessage}`);
+    expect(getByTestId('DesignSystem-InlineMessage--Description').textContent).toMatch(`${fileList[2].errorMessage}`);
     expect(getByTestId('DesignSystem-FileListItem--Name')).toHaveClass('Text--subtle');
     expect(getByTestId('DesignSystem-FileListItem--Icon')).not.toHaveClass('FileIcon--animate');
   });

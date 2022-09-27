@@ -883,17 +883,6 @@ exports[`TS renders children 1`] = `
         value=""
       />
     </div>
-    <div
-      class="Caption Caption--hidden Caption--withInput"
-      data-test="DesignSystem-Caption"
-    >
-      <span
-        class="Text Text--subtle Text--medium Text--small"
-        data-test="DesignSystem-Text"
-      >
-        undefined
-      </span>
-    </div>
   </div>
   <div
     class="Label"

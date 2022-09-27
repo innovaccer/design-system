@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelpText component snapshot 
+  error: false, message: "Help Text Component"
+ 1`] = `
+<body>
+  <div>
+    <span
+      class="Text Text--subtle Text--medium Text--small mt-3"
+      data-test="DesignSystem-Text"
+    >
+      Help Text Component
+    </span>
+  </div>
+</body>
+`;
+
+exports[`HelpText component snapshot 
+  error: true, message: "Help Text Component"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="InlineMessage mt-3"
+      data-test="DesignSystem-InlineMessage"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon"
+        data-test="DesignSystem-InlineMessage--Icon"
+        role="button"
+        style="font-size: 14px; width: 14px;"
+      >
+        error_round
+      </i>
+      <span
+        class="Text Text--default Text--medium Text--small InlineMessage-text--alert"
+        data-test="DesignSystem-InlineMessage--Description"
+      >
+        Help Text Component
+      </span>
+    </div>
+  </div>
+</body>
+`;
