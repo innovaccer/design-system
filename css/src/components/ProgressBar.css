@@ -8,5 +8,5 @@
   height: var(--spacing);
   background-color: var(--primary);
   border-radius: var(--spacing-m);
-  transition: width 200ms;
+  transition: var(--duration--slow-01) var(--standard-expressive-curve);
 }
