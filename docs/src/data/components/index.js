@@ -44,7 +44,7 @@ export const data = [
   },
   {
     link: 'card/usage',
-    name: 'Card',
+    name: 'Cards',
     design: 'Available',
     code: 'Available',
     image: () => <StaticImage src="./images/Cards.png" alt="Card" imgStyle={imgStyle} />,
@@ -65,7 +65,7 @@ export const data = [
   },
   {
     link: 'datePicker/usage',
-    name: 'Date picker',
+    name: 'Date pickers',
     design: 'Available',
     code: 'Available',
     image: () => <StaticImage src="./images/Date&TimePicker.png" alt="Date picker" imgStyle={imgStyle} />,
@@ -93,7 +93,7 @@ export const data = [
   },
   {
     link: 'icons/usage',
-    name: 'Icons',
+    name: 'Icon',
     design: 'Available',
     code: 'Available',
     image: () => <StaticImage src="./images/Icons.png" alt="Icons" imgStyle={imgStyle} />,
