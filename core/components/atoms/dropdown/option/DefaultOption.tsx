@@ -3,7 +3,7 @@ import { Text } from '@/index';
 import { OptionTypeProps } from './index';
 
 const DefaultOption = (props: OptionTypeProps) => {
-  const { className, textClassName, onClickHandler, optionData, appearance, onUpdateActiveOption, dataTest } = props;
+  const { className, textClassName, onClickHandler, optionData, color, onUpdateActiveOption, dataTest } = props;
 
   const { label, disabled } = optionData;
 
@@ -19,7 +19,7 @@ const DefaultOption = (props: OptionTypeProps) => {
     >
       {/* eslint-enable  */}
       <div className={'Option-label'}>
-        <Text className={textClassName} appearance={appearance} id={optionData.optionID}>
+        <Text className={textClassName} color={color} id={optionData.optionID}>
           {label}
         </Text>
       </div>

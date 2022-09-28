@@ -79,7 +79,7 @@
 
 .Checkbox-input:active ~ .Checkbox-wrapper {
   border: var(--spacing-xs) solid var(--inverse-lightest);
-  background-color: var(--secondary-light);
+  background-color: var(--shadow-0);
 }
 
 .Checkbox--disabled {
