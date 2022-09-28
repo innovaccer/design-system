@@ -15,9 +15,10 @@ exports[`ChipInput component
         <div
           class="Chip-wrapper Chip Chip--input my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             1020
@@ -35,9 +36,10 @@ exports[`ChipInput component
         <div
           class="Chip-wrapper Chip Chip--input my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             80
@@ -88,9 +90,10 @@ exports[`ChipInput component
         <div
           class="Chip-wrapper Chip Chip-input--disabled my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
+          tabindex="0"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--regular color-inverse-lightest"
             data-test="DesignSystem-GenericChip--Text"
           >
             1020
@@ -108,9 +111,10 @@ exports[`ChipInput component
         <div
           class="Chip-wrapper Chip Chip-input--disabled my-2 mx-2"
           data-test="DesignSystem-ChipInput--Chip"
+          tabindex="0"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--regular color-inverse-lightest"
             data-test="DesignSystem-GenericChip--Text"
           >
             80

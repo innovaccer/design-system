@@ -647,9 +647,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         <div
           class="Chip-wrapper Chip Chip-action--disabled"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--regular color-inverse-lightest"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -1309,9 +1310,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -1971,9 +1973,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         <div
           class="Chip-wrapper Chip Chip-action--disabled"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--regular color-inverse-lightest"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -2632,9 +2635,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -3293,9 +3297,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -3954,9 +3959,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -4210,9 +4216,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -4459,9 +4466,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -5120,9 +5128,10 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
         <div
           class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
+          tabindex="0"
         >
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
