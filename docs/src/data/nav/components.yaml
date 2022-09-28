@@ -11,7 +11,7 @@ menus:
     link: /components/avatar/usage/
     hideInMobile: true
 
-  - label: Badges
+  - label: Badge
     link: /components/badges/usage/
 
   - label: Bottom navigation
