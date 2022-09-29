@@ -11,6 +11,7 @@ import {
   updateSchemaFunction,
   updateSortingListFunction,
   updateFilterListFunction,
+  FetchDataOptions,
 } from '../grid';
 import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getTotalPages } from '../grid/utility';
 import { BaseProps, extractBaseProps } from '@/utils/types';
@@ -509,7 +510,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     this.onSelect(-1, false);
 
-    const opts = {
+    const opts: FetchDataOptions = {
       page,
       pageSize,
       sortingList,
