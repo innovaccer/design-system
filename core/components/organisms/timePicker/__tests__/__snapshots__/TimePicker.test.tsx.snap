@@ -24,17 +24,6 @@ exports[`TimePicker component prop:inputFormat snapshot
           value=""
         />
       </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
-      </div>
     </div>
   </div>
 </body>
@@ -63,17 +52,6 @@ exports[`TimePicker component prop:inputFormat snapshot
           type="text"
           value=""
         />
-      </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
       </div>
     </div>
   </div>
@@ -104,17 +82,6 @@ exports[`TimePicker component prop:outputFormat snapshot
           value=""
         />
       </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
-      </div>
     </div>
   </div>
 </body>
@@ -143,17 +110,6 @@ exports[`TimePicker component prop:outputFormat snapshot
           type="text"
           value=""
         />
-      </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
       </div>
     </div>
   </div>
@@ -197,17 +153,6 @@ exports[`TimePicker component prop:time snapshot
           </i>
         </div>
       </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
-      </div>
     </div>
   </div>
 </body>
@@ -250,17 +195,6 @@ exports[`TimePicker component prop:time snapshot
           </i>
         </div>
       </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
-      </div>
     </div>
   </div>
 </body>
@@ -290,17 +224,6 @@ exports[`TimePicker component prop:validators snapshot
           value=""
         />
       </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
-      </div>
     </div>
   </div>
 </body>
@@ -329,17 +252,6 @@ exports[`TimePicker component prop:validators snapshot
           type="text"
           value=""
         />
-      </div>
-      <div
-        class="Caption Caption--hidden Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          undefined
-        </span>
       </div>
     </div>
   </div>

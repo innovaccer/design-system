@@ -23,17 +23,6 @@ exports[`Input Mask component
           value=""
         />
       </div>
-      <div
-        class="Caption Caption--withInput"
-        data-test="DesignSystem-Caption"
-      >
-        <span
-          class="Text Text--subtle Text--medium Text--small"
-          data-test="DesignSystem-Text"
-        >
-          card
-        </span>
-      </div>
     </div>
   </div>
 </body>

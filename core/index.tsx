@@ -83,5 +83,6 @@ export { VerificationCodeInput } from './components/molecules/verificationCodeIn
 export { InlineMessage } from './components/organisms/inlineMessage';
 export { ChoiceList } from './components/organisms/choiceList';
 export { Divider } from './components/atoms/divider';
+export { HelpText } from './components/atoms/helpText';
 
 export { version } from '../package.json';

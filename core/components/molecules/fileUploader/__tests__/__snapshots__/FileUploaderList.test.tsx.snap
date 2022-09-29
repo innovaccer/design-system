@@ -163,23 +163,20 @@ exports[`FileUploaderList component
         </div>
       </div>
       <div
-        class="Caption"
-        data-test="DesignSystem-Caption"
+        class="InlineMessage"
+        data-test="DesignSystem-InlineMessage"
       >
-        <div
-          class="Caption-icon"
+        <i
+          class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon"
+          data-test="DesignSystem-InlineMessage--Icon"
+          role="button"
+          style="font-size: 14px; width: 14px;"
         >
-          <i
-            class="material-icons material-icons-round Icon Icon--alert"
-            role="button"
-            style="font-size: 14px; width: 14px;"
-          >
-            error_round
-          </i>
-        </div>
+          error_round
+        </i>
         <span
-          class="Text Text--destructive Text--medium Text--small"
-          data-test="DesignSystem-Text"
+          class="Text Text--default Text--medium Text--small InlineMessage-text--alert"
+          data-test="DesignSystem-InlineMessage--Description"
         >
           Network failure
         </span>
