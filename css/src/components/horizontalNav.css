@@ -12,7 +12,6 @@
   padding-left: var(--spacing-l);
   border-radius: var(--spacing-2);
   margin: 0 var(--spacing-xs);
-  transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .HorizontalNav-menu--disabled {
@@ -54,6 +53,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.HorizontalNav-menu--active,
+.HorizontalNav-animate {
+  transition-delay: var(--duration--fast-02);
+}
+
+.HorizontalNav-animate {
+  transition: var(--duration--fast-02) var(--standard-productive-curve);
 }
 
 .HorizontalNav-pills {

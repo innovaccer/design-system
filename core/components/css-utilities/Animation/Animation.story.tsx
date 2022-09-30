@@ -1,16 +1,63 @@
 import * as React from 'react';
-import { Heading, Card, Table, Text } from '@/index';
-import utilitiesSchema from '../Schema';
+import { Heading, Card, Text, Column, Row, Button } from '@/index';
+
+type ContainerProp = {
+  className: string;
+  property: string;
+};
+
+const Container = (props: ContainerProp) => {
+  const { className, property } = props;
+  return (
+    <Column size={4} className="m-5">
+      <Card className="h-100 p-4">
+        <div className="mb-4 d-flex align-items-center">
+          <Text weight="strong" className="mr-5">
+            ClassName:
+          </Text>
+          <code>{className}</code>
+          <Button
+            title="Copy className to clipboard"
+            appearance="transparent"
+            icon="content_copy"
+            className="ml-4"
+            onClick={() => navigator.clipboard.writeText(className)}
+          />
+        </div>
+        <Text weight="strong" className="mr-5">
+          Properties:
+        </Text>
+        <code>{property}</code>
+      </Card>
+    </Column>
+  );
+};
 
 export const animation = () => {
   const data = [
     {
+      className: 'opacity-0',
+      properties: 'opacity: 0',
+    },
+    {
+      className: 'opacity-1',
+      properties: 'opacity: 1',
+    },
+    {
       className: 'fade-in',
-      properties: 'animation: fadeIn 120ms cubic-bezier(0.2, 0, 0.38, 0.9);',
+      properties: '0 to 100 opacity',
     },
     {
       className: 'fade-out',
-      properties: 'animation: fadeOut 120ms cubic-bezier(0.4, 0.14, 0.3, 1);',
+      properties: '100 to 0 opacity',
+    },
+    {
+      className: 'slideOut-left',
+      properties: 'The object is moving 16px left while fading out, using an exit-expressive-curve',
+    },
+    {
+      className: 'slideIn-left',
+      properties: 'The object is moving 16px left while fading in, using an entrance-expressive-curve',
     },
   ];
 
@@ -19,19 +66,12 @@ export const animation = () => {
       <Heading size="xxl">Animation</Heading>
       <br />
       <Text weight="strong">Easily set the animation using below classes</Text>
-      <div className="mt-5 mb-8">
-        <Card className="h-100">
-          <Table
-            data={data}
-            schema={utilitiesSchema}
-            headerOptions={{
-              withSearch: true,
-            }}
-            size={'standard'}
-            showMenu={false}
-          />
-        </Card>
-      </div>
+      <Row className="mt-5 mb-8">
+        {data.map((item, key) => {
+          const { className, properties } = item;
+          return <Container key={key} className={className} property={properties} />;
+        })}
+      </Row>
     </div>
   );
 };

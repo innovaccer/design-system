@@ -14,54 +14,54 @@ Object {
           class="HorizontalNav"
         >
           <div
-            class="HorizontalNav-menu HorizontalNav-menu--default"
+            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav"
             tabindex="0"
           >
             <span
-              class="Pills Badge--secondary HorizontalNav-pills"
+              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Pills"
             >
               1
             </span>
             <span
-              class="Text Text--regular color-inverse HorizontalNav-menuText"
+              class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Text"
             >
               Tab #1
             </span>
           </div>
           <div
-            class="HorizontalNav-menu HorizontalNav-menu--default"
+            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav"
             tabindex="0"
           >
             <span
-              class="Pills Badge--secondary HorizontalNav-pills"
+              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Pills"
             >
               2
             </span>
             <span
-              class="Text Text--regular color-inverse HorizontalNav-menuText"
+              class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Text"
             >
               Tab #2
             </span>
           </div>
           <div
-            class="HorizontalNav-menu HorizontalNav-menu--default"
+            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav"
             tabindex="0"
           >
             <span
-              class="Pills Badge--secondary HorizontalNav-pills"
+              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Pills"
             >
               3
             </span>
             <span
-              class="Text Text--regular color-inverse HorizontalNav-menuText"
+              class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Text"
             >
               Tab #3
@@ -79,54 +79,54 @@ Object {
         class="HorizontalNav"
       >
         <div
-          class="HorizontalNav-menu HorizontalNav-menu--default"
+          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav"
           tabindex="0"
         >
           <span
-            class="Pills Badge--secondary HorizontalNav-pills"
+            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Pills"
           >
             1
           </span>
           <span
-            class="Text Text--regular color-inverse HorizontalNav-menuText"
+            class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Text"
           >
             Tab #1
           </span>
         </div>
         <div
-          class="HorizontalNav-menu HorizontalNav-menu--default"
+          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav"
           tabindex="0"
         >
           <span
-            class="Pills Badge--secondary HorizontalNav-pills"
+            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Pills"
           >
             2
           </span>
           <span
-            class="Text Text--regular color-inverse HorizontalNav-menuText"
+            class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Text"
           >
             Tab #2
           </span>
         </div>
         <div
-          class="HorizontalNav-menu HorizontalNav-menu--default"
+          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav"
           tabindex="0"
         >
           <span
-            class="Pills Badge--secondary HorizontalNav-pills"
+            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Pills"
           >
             3
           </span>
           <span
-            class="Text Text--regular color-inverse HorizontalNav-menuText"
+            class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Text"
           >
             Tab #3
@@ -203,54 +203,54 @@ Object {
           class="HorizontalNav"
         >
           <div
-            class="HorizontalNav-menu HorizontalNav-menu--default"
+            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav"
             tabindex="0"
           >
             <span
-              class="Pills Badge--secondary HorizontalNav-pills"
+              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Pills"
             >
               1
             </span>
             <span
-              class="Text Text--regular color-inverse HorizontalNav-menuText"
+              class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Text"
             >
               Tab #1
             </span>
           </div>
           <div
-            class="HorizontalNav-menu HorizontalNav-menu--default"
+            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav"
             tabindex="0"
           >
             <span
-              class="Pills Badge--secondary HorizontalNav-pills"
+              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Pills"
             >
               2
             </span>
             <span
-              class="Text Text--regular color-inverse HorizontalNav-menuText"
+              class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Text"
             >
               Tab #2
             </span>
           </div>
           <div
-            class="HorizontalNav-menu HorizontalNav-menu--default"
+            class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav"
             tabindex="0"
           >
             <span
-              class="Pills Badge--secondary HorizontalNav-pills"
+              class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Pills"
             >
               3
             </span>
             <span
-              class="Text Text--regular color-inverse HorizontalNav-menuText"
+              class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
               data-test="DesignSystem-HorizontalNav--Text"
             >
               Tab #3
@@ -268,54 +268,54 @@ Object {
         class="HorizontalNav"
       >
         <div
-          class="HorizontalNav-menu HorizontalNav-menu--default"
+          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav"
           tabindex="0"
         >
           <span
-            class="Pills Badge--secondary HorizontalNav-pills"
+            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Pills"
           >
             1
           </span>
           <span
-            class="Text Text--regular color-inverse HorizontalNav-menuText"
+            class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Text"
           >
             Tab #1
           </span>
         </div>
         <div
-          class="HorizontalNav-menu HorizontalNav-menu--default"
+          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav"
           tabindex="0"
         >
           <span
-            class="Pills Badge--secondary HorizontalNav-pills"
+            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Pills"
           >
             2
           </span>
           <span
-            class="Text Text--regular color-inverse HorizontalNav-menuText"
+            class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Text"
           >
             Tab #2
           </span>
         </div>
         <div
-          class="HorizontalNav-menu HorizontalNav-menu--default"
+          class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav"
           tabindex="0"
         >
           <span
-            class="Pills Badge--secondary HorizontalNav-pills"
+            class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Pills"
           >
             3
           </span>
           <span
-            class="Text Text--regular color-inverse HorizontalNav-menuText"
+            class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
             data-test="DesignSystem-HorizontalNav--Text"
           >
             Tab #3
