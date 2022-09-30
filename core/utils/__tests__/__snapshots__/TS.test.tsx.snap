@@ -993,7 +993,9 @@ exports[`TS renders children 1`] = `
         value="Hello World!"
       />
       <span
-        class="Radio-wrapper Radio-wrapper--regular"
+        class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
+        data-test="DesignSystem-Radio-wrapper"
+        tabindex="0"
       />
     </div>
     <div
