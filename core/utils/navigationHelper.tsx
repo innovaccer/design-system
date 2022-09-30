@@ -20,10 +20,6 @@ export const getTextColor = (isActive: boolean, disabled?: boolean) => {
 };
 
 export const getIconAppearance = (isActive: boolean, disabled?: boolean) => {
-  return disabled ? 'disabled' : isActive ? 'info' : 'default';
-};
-
-export const getHorizontalIconAppearance = (isActive: boolean, disabled?: boolean) => {
   return disabled ? 'disabled' : isActive ? 'primary_dark' : 'default';
 };
 

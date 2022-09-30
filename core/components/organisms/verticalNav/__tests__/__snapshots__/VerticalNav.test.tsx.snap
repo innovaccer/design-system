@@ -12,6 +12,7 @@ exports[`Vertical Navigation component
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
         data-test="DesignSystem-VerticalNav--Item"
         href="/patient360"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -29,6 +30,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
         data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -45,12 +47,13 @@ exports[`Vertical Navigation component
       </a>
       <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--info"
+            class="material-icons material-icons-round Icon Icon--primaryDark"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -61,6 +64,7 @@ exports[`Vertical Navigation component
       </a>
       <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -78,6 +82,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled"
         data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -95,6 +100,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--collapsed"
         data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -136,6 +142,7 @@ exports[`Vertical Navigation component
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
         href="/patient360"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -149,7 +156,7 @@ exports[`Vertical Navigation component
             assignment_ind_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Patient 360
@@ -175,6 +182,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -188,7 +196,7 @@ exports[`Vertical Navigation component
             forum_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Management and Resources
@@ -204,12 +212,13 @@ exports[`Vertical Navigation component
       </a>
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--info mr-4"
+            class="material-icons material-icons-round Icon Icon--primaryDark mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -217,7 +226,7 @@ exports[`Vertical Navigation component
             assignment_ind_round
           </i>
           <span
-            class="Text Text--link Text--regular"
+            class="Text Text--regular color-primary-dark"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Timeline
@@ -226,6 +235,7 @@ exports[`Vertical Navigation component
       </a>
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -239,7 +249,7 @@ exports[`Vertical Navigation component
             events_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Plans
@@ -249,6 +259,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -262,7 +273,7 @@ exports[`Vertical Navigation component
             airline_seat_flat_angled_round
           </i>
           <span
-            class="Text Text--disabled Text--regular"
+            class="Text Text--regular color-inverse-lightest"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Episodes
@@ -278,6 +289,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
         data-test="DesignSystem-VerticalNav--Item"
+        tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -291,7 +303,7 @@ exports[`Vertical Navigation component
             favorite_round
           </i>
           <span
-            class="Text Text--default Text--regular"
+            class="Text Text--regular color-inverse"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Risk
