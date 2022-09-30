@@ -1,68 +1,52 @@
-const foundationURLs = [
-  'http://localhost:8000/foundations/principles/',
-  'http://localhost:8000/foundations/colors/',
-  'http://localhost:8000/foundations/logos/',
-  'http://localhost:8000/foundations/layout/',
-  'http://localhost:8000/foundations/typography/',
-  'http://localhost:8000/foundations/interactions/',
-  'http://localhost:8000/foundations/response-time/',
-];
+const hostURL = process.env.HOST_URL || 'http://localhost:8000/foundations/principles/';
 
-const tocURLs = [
-  'http://localhost:8000/foundations/colors/',
-  'http://localhost:8000/foundations/layout/',
-  'http://localhost:8000/foundations/interactions/',
-];
-
-describe('Cypress Test for table of contents of foundations page', () => {
-  it('check if all links direct to the content', () => {
-    cy.tableOfContent({URLs: foundationURLs })
+describe('Cypress Test of foundations page', () => {
+  it('visit docs main page', () => {
+    cy.visit(hostURL);
   });
-});
 
-
-// describe('Cypress Test for table of contents with nested element of foundations page', () => {
-//   it('check if all links direct to the content', () => {
-//     tocURLs.forEach((url) => {
-//       cy.visit(url);
-//       cy.wait(1000);
-
-//       cy.get('.right-nav-container > ul > li > ul > li > div > a').each((page) => {
-//         cy.request(page.prop('href'));
-//         cy.get('.Heading.Heading--default.mr-4').contains(`${page.text()}`);
-//       });
-//     });
-//   });
-// });
-
-// describe('Cypress Test for left nav of foundation page', () => {
-//   it('visit content page', () => {
-//     foundationURLs.forEach((url) => {
-//       cy.visit(url);
-//     });
-//   });
-
-//   it('check if page exist for all links', () => {
-//     cy.get('a').each((page) => {
-//       cy.request(page.prop('href'));
-//     });
-//   });
-
-//   describe('Test for Docs web and mobile tile of foundation page', () => {
-//     it('Web and Mobile tile', () => {
-//       foundationURLs.forEach((url) => {
-//         cy.visit(url);
-
-//         cy.get('.Tile').click({
-//           multiple: true,
-//         });
-//       });
-//     });
-//   });
-// });
-
-describe('Cypress Test for images of content page', () => {
-  it('check if images of page are loading', function () {
-    cy.imagesCheck({URLs: foundationURLs })
+  it('check for all the links it redirects', () => {
+    cy.get('[data-test=DesignSystem-VerticalNav--Item]').each((navLink) => {
+      navLink.click();
+      cy.visit(navLink[0].href);
+      cy.linkCheck();
+    });
   });
+
+  it('check if all links of toc direct to the content', () => {
+    cy.get('[data-test=DesignSystem-VerticalNav--Item]').each((navLink) => {
+      navLink.click();
+      cy.visit(navLink[0].href);
+      cy.tableOfContent();
+    });
+  });
+
+  it('check if images of page are loading', () => {
+    cy.get('[data-test=DesignSystem-VerticalNav--Item]').each((navLink) => {
+      navLink.click();
+      cy.visit(navLink[0].href);
+      cy.imagesCheck();
+    });
+  });
+
+  it('check for web and mobile tile of foundation page', () => {
+    cy.get('[data-test=DesignSystem-VerticalNav--Item]').each((navLink) => {
+      navLink.click();
+      cy.visit(navLink[0].href);
+      cy.tileClick();
+    });
+  });
+  // cy.get('[data-test=DesignSystem-VerticalNav--Item]').each(navLink => {
+  // it('check for all the links it redirects', () => {
+  //   cy.visit(hostURL);
+  //   // cy.get('[data-test=DesignSystem-VerticalNav--Item]').each(navLink => {
+  //     navLink.click();
+  //     console.log(navLink[0].href);
+  //     cy.visit(navLink[0].href);
+  //     cy.tableOfContent();
+  //     cy.imagesCheck();
+  //     cy.tileClick();
+  //     cy.linkCheck();
+  //   });
+  // });
 });

@@ -35,26 +35,45 @@
 //     }
 //   }
 // }
-Cypress.Commands.add('tableOfContent', ({ URLs }) => {
-    URLs.forEach((url) => {
-        cy.visit(url);
-        cy.wait(1000);
-
-        cy.get('.right-nav-container > ul > li > div > a').each((page) => {
-            cy.request(page.prop('href'));
+Cypress.Commands.add('tableOfContent', () => {
+    // URLs.forEach((url) => {
+        cy.wait(3000);
+        // cy.visit(url);
+        cy.get('[data-test=Docs-Toc--Link]').each((page) => {
             cy.get('.Heading.Heading--default.mr-4').contains(`${page.text()}`);
         });
     });
-})
+// })
 
-Cypress.Commands.add('imagesCheck', ({ URLs }) => {
-    URLs.forEach((url) => {
-        cy.visit(url);
+Cypress.Commands.add('imagesCheck', () => {
+    // URLs.forEach((url) => {
+        // cy.visit(url);
         cy.viewport('macbook-15');
-        cy.wait(1000);
+        cy.wait(3000)
 
         cy.get('img').each(($img) => {
             cy.wrap($img).scrollIntoView().should('be.visible');
         });
     });
-})
+// })
+
+Cypress.Commands.add('tileClick', () => {
+    // URLs.forEach((url) => {
+        // cy.visit(url);
+        cy.wait(1000);
+        cy.get('.Tile').click({
+            multiple: true,
+        });
+    });
+// })
+
+Cypress.Commands.add('linkCheck', () => {
+    // URLs.forEach((url) => {
+        // cy.visit(url);
+        cy.wait(1000);
+        
+        cy.get('[data-test=DesignSystem-Row]').find('a').each((page) => {
+            cy.request(page.prop('href'));
+        })
+    })
+// })
