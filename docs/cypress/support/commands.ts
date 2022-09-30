@@ -35,3 +35,26 @@
 //     }
 //   }
 // }
+Cypress.Commands.add('tableOfContent', ({ URLs }) => {
+    URLs.forEach((url) => {
+        cy.visit(url);
+        cy.wait(1000);
+
+        cy.get('.right-nav-container > ul > li > div > a').each((page) => {
+            cy.request(page.prop('href'));
+            cy.get('.Heading.Heading--default.mr-4').contains(`${page.text()}`);
+        });
+    });
+})
+
+Cypress.Commands.add('imagesCheck', ({ URLs }) => {
+    URLs.forEach((url) => {
+        cy.visit(url);
+        cy.viewport('macbook-15');
+        cy.wait(1000);
+
+        cy.get('img').each(($img) => {
+            cy.wrap($img).scrollIntoView().should('be.visible');
+        });
+    });
+})
