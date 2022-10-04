@@ -11,14 +11,14 @@ menus:
     link: /components/avatar/usage/
     hideInMobile: true
 
-  - label: Badges
+  - label: Badge
     link: /components/badges/usage/
 
   - label: Bottom navigation
     link: /components/bottomNavigation/usage
     hideInWeb: true
 
-  - label: Breadcrumbs
+  - label: Breadcrumb
     link: /components/breadcrumbs/usage/
     hideInMobile: true
 

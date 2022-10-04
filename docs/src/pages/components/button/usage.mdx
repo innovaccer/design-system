@@ -66,7 +66,41 @@ Buttons come in **6 states** - default, hover, active, focus, disabled and loadi
 <Preview name='components-button-variants-state-primary--primary' />
 <br/>
 
-### Properties
+### Structure 
+<br/>
+<br/>
+
+![Structure of buttons](./images/button-structure.png)
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Property</th>
+      <th style="width:50%; text-align: left;">Value(s)</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>
+          <ul>
+              <li>24 px <em>(Small)</em></li>
+              <li>32 px <em>(Regular)</em></li>
+              <li>40 px <em>(Large)</em></li>
+          </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Corner radius</td>
+      <td>4 px</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Configurations
+<br/>
+<br/>
+
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -84,7 +118,7 @@ Buttons come in **6 states** - default, hover, active, focus, disabled and loadi
               <li>Transparent</li>
           </ul>
       </td>
-      <td>-</td>
+      <td>Basic</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Size</td>
@@ -103,7 +137,7 @@ Buttons come in **6 states** - default, hover, active, focus, disabled and loadi
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Icon aligment<br/><em>(optional)</em></td>
+      <td>Icon aligment<br/></td>
       <td>
           <ul>
               <li>Left</li>
@@ -113,14 +147,14 @@ Buttons come in **6 states** - default, hover, active, focus, disabled and loadi
       <td>Left</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Expanded<br/><em>(optional)</em></td>
+      <td>Expanded<br/></td>
       <td>
           <ul>
               <li>True</li>
               <li>False</li>
           </ul>
       </td>
-      <td>-</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>
@@ -137,6 +171,8 @@ Buttons come with a loading state which can be used to indicate that the action 
 Always use tooltip with icon buttons. It provides an additional way to indicate the meaning of the button. Keep the tooltip label concise.
 
 ![Show tooltip on an icon button](./images/buttons-1.png)
+<Caption>Show tooltip on an icon button</Caption>
+
 <br/>
 
 #### Split button
@@ -147,6 +183,7 @@ Basic and icon buttons can be combined to create a split button. The split butto
 As mentioned earlier, in addition to the common 6 states, basic and transparent appearances also supports an additional **selected** state which can be used to mimic toggle behavior.
 
 ![Bold icon button in selected state](./images/buttons-2.png)
+<Caption>Bold icon button in selected state</Caption>
 <br/>
 
 #### Button groups

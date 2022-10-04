@@ -7,8 +7,6 @@ showMobile: true
 
 Date picker lets users select or directly enter date values. It can either be a single date or a date range.
 
-### Structure
-Date picker is built up using calendar and popover components. Unlike calendar, which can be displayed upfront, a trigger is always needed for the date picker such as inputs.
 <Preview name="components-datepicker-variants-with-input--with-input"/>
 
 ### Types
@@ -27,7 +25,43 @@ For selecting a date range.
 <br/>
 <br/>
 
-### Properties
+### Structure
+<br/>
+<br/>
+Date picker is built up using calendar and popover components. Unlike calendar, which can be displayed upfront, a trigger is always needed for the date picker such as inputs.
+<br/>
+<br/>
+
+
+![Structure of date picker](./images/datePicker-structure.png)
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Property</th>
+      <th style="width:50%; text-align: left;">Value(s)</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>292x212 px <em>(Small)</em></li>
+              <li>372x316 px <em>(Regular)</em></li>
+          </ul>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<br/>
+
+
+
+### Configurations
+<br/>
+<br/>
+
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -50,8 +84,8 @@ For selecting a date range.
       <td>Size</td>
       <td>
           <ul>
-              <li>Regular</li>
               <li>Small</li>
+              <li>Regular</li>
           </ul>
       </td>
       <td>Regular</td>
@@ -71,11 +105,14 @@ One obvious expectation from a date picker is the ability to input values using 
 Use selection chips to give quick selection of preset date/date-range values.
 
 ![Using preset values](./images/datePicker-3.png)
+<Caption>Using preset values</Caption>
 <br/>
 
 If there is a space crunch, you can have these preset values in the popover itself. But this defeats the purpose of quick selection since the users will have to open the popover to access them. Hence, make sure to use this only when there is no option left.
 
 ![Preset values inside popover](./images/datePicker-4.png)
+<Caption>Preset values inside popover</Caption>
+
 <br/>
 
 #### Using single input for a date range
@@ -86,12 +123,16 @@ If there is a space crunch, you can have a single input for entering/selecting a
 As soon as a date or date range is selected, time picker dropdown should be triggered so that users can select the time without any additional click.
 
 ![Date and time picker together](./images/datePicker-5.png)
+<Caption>Date and time picker together</Caption>
+
 <br/>
 
 #### Selecting day of the week or time of day
 Use selection chips for selecting day of the week or time of day.
 
-![Date and time picker together](./images/datePicker-6.png)
+![Selection chips to select day od the week or time of day](./images/datePicker-6.png)
+<Caption>Selection chips to select day of the week or time of day</Caption>
+
 
 
  
