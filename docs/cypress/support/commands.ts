@@ -38,7 +38,8 @@
 Cypress.Commands.add('tableOfContent', () => {
     cy.wait(3000);
     cy.get('[data-test=Docs-Toc--Link]').each((page) => {
-        cy.get('[data-test=DesignSystem-Heading]').contains(`${page.text()}`);
+        const tocText = (page.text()).replace(/  +/g, ' ')
+        cy.get('[data-test=DesignSystem-Heading]').contains(`${tocText}`);
     });
 });
 
@@ -60,7 +61,7 @@ Cypress.Commands.add('tileToggle', () => {
 
 Cypress.Commands.add('linkVisit', () => {
     cy.wait(1000);
-    cy.get('[data-test=Docs-inner--container]').find('a').each((page) => {
+    cy.get('[data-test=Docs-inner--container]').find('a').not(':contains("email")').each((page) => {
         cy.request(page.prop('href'));
     })
 })
@@ -69,7 +70,7 @@ Cypress.Commands.add('leftnavTraverse', (arr) => {
     cy.get('[data-test=Docs-Leftnav]').find('a').not(':contains("started")').each(page => {
         cy.request(page.prop('href'));
     })
-    cy.get('[data-test=DesignSystem-VerticalNav--Item]').each((navLink) => {
+    cy.get('[data-test=Docs-VerticalNav--Items]').find('a').not(':contains("started")').each((navLink) => {
         arr.push(navLink.prop('href'))
     })
 })
