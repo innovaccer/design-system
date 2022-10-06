@@ -18,6 +18,7 @@ export const Step = (props: StepProps) => {
     ['Step']: true,
     ['Step--active']: active,
     ['Step--disabled']: disabled,
+    ['Stepper-animate']: true,
   });
 
   const onClickHandle = () => {
