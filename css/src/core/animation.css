@@ -2,6 +2,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -11,6 +12,7 @@
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
   }
@@ -54,6 +56,28 @@
   }
 }
 
+@keyframes exitRightCurve {
+  from {
+    opacity: 1;
+    left: 0;
+  }
+
+  to {
+    opacity: 0;
+    left: var(--spacing-2);
+  }
+}
+
+@keyframes entryRightCurve {
+  from {
+    left: calc(-1 * var(--spacing-2));
+  }
+
+  to {
+    left: 0;
+  }
+}
+
 .slideOut-left {
   animation: exitLeftCurve var(--duration--moderate-02) var(--exit-expressive-curve);
   animation-fill-mode: forwards;
@@ -62,4 +86,14 @@
 .slideIn-left {
   animation: fadeIn var(--duration--moderate-01) var(--entrance-expressive-curve),
     entryLeftCurve var(--duration--moderate-02) var(--entrance-expressive-curve);
+}
+
+.slideOut-right {
+  animation: exitRightCurve var(--duration--moderate-02) var(--exit-expressive-curve);
+  animation-fill-mode: forwards;
+}
+
+.slideIn-right {
+  animation: fadeIn var(--duration--moderate-01) var(--entrance-expressive-curve),
+    entryRightCurve var(--duration--moderate-02) var(--entrance-expressive-curve);
 }

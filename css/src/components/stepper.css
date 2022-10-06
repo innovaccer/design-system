@@ -21,3 +21,12 @@
 .Step--disabled {
   cursor: not-allowed;
 }
+
+.Step--active {
+  transition-delay: var(--duration--fast-02);
+}
+
+.Stepper-animate {
+  transition-delay: var(--duration--fast-02);
+  transition: var(--duration--fast-02) var(--standard-productive-curve);
+}
