@@ -9,6 +9,7 @@ const CopyToClipboard = React.forwardRef((props, ref) => {
   return (
     <Tooltip tooltip={tooltipStatus} appendToBody={false} boundaryElement={ref}>
       <div
+        role='presentation'
         className="d-flex flex-column mx-1 cursor-pointer"
         onClick={() => {
           navigator.clipboard.writeText(code);
