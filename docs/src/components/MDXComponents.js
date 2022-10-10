@@ -37,7 +37,6 @@ const useGetStorybookData = async (name) => {
 };
 
 function getJsxCode(name) {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   return useGetStorybookData(name)
     .then(componentData => {
       const jsxCode = componentData && componentData.parameters
@@ -60,7 +59,6 @@ const Preview = ({ name }) => {
 };
 
 function getPropTableData(name) {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   return useGetStorybookData(name)
     .then(componentData => {
       const jsxCode = componentData
