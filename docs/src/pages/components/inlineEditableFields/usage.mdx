@@ -5,7 +5,7 @@ tabs: ['Usage', 'Code']
 showMobile: true
 ---
 
-Inline editable fields enables users to edit the data right where they see it. They come handy when editing a form can be quite frequent and the users want to maintain the context.
+Inline editable fields enable users to edit the data right where they see it. They come handy when the users want to update a field or two without losing context and editing is not the primary intent of the page. 
 
 ### Types
 <br/>
@@ -29,37 +29,202 @@ Inline editable input comes in **2 sizes** - regular and small. On the other han
 ### States
 <br/>
 
-#### Basic input
+#### Input
 
-![States of inline editable input](./images/inlineEditableFields-1.png)
+![States of inline editable input](./images/inlineEditable-inputStates.png)
 <br/>
 
 #### Input with chips
 
-![States of inline editable input with chips](./images/inlineEditableField-2.png)
+![States of inline editable input with chips](./images/inlineEditable-chipsStates.png)
 <br/>
 
 #### Dropdown
 
-![States of inline editable dropdown](./images/inlineEditableField-3.png)
+![States of inline editable dropdown](./images/inlineEditable-dropdownStates.png)
 <br/>
 <br/>
+
+### Structure
+![Structure of inline editable dropdown](./images/inlineEditable-structure.png)
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Property</th>
+      <th style="width:50%; text-align: left;">Value(s)</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>
+            <ul>
+              <li>32px <em>(Regular input, dropdown)</em></li>
+              <li>24px <em>(Small input)</em></li>
+            </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Padding (right, left)</td>
+      <td>12 px, 12 px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Spacing between input and actions</td>
+      <td>4 px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Spacing between actions</td>
+      <td>4 px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+### Configurations
+
+#### Input
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Regular</li>
+              <li>Small</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Width<br/></td>
+      <td>&#60;width&#62;</td>
+      <td>256 px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Placeholder<br/></td>
+      <td>&#60;placeholder&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Dropdown
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Width<br/></td>
+      <td>&#60;width&#62;</td>
+      <td>256 px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Placeholder<br/></td>
+      <td>&#60;placeholder&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Label
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Required</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Optional</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Info</td>
+      <td>
+          <ul>
+              <li>True</li>
+              <li>False</li>
+          </ul>
+      </td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
 
 ### Usage
 <br/>
 
-#### Saving changes
-There are two options to save the changes made -
-1. The primary check button
-2. The return key on the keyboard
+#### Intent
+Inline editable fields are used when the users want to update a field or two without losing context and editing is not the primary intent of the page.
 
-#### Discarding changes
-There are two options to discard the changes made -
-1. The secondary clear button
-2. The escape key on the keyboard
+![Using Inline editable fields](./images/inlineEditable-intent.png)
 
 #### Showing error
-Errors are shown using popovers alongside the input field.
+Errors are shown using popovers alongside the inline editable field.
 
-![Errors in inline editable input](./images/inlineEditableFields-4.png)
+![Showing error in inline editable fields](./images/inlineEditable-error.png)
+<Caption> Showing error in inline editable fields </Caption>
+
+<br/>
+
+#### Overflow behaviour
+After the text has reached to the end of the field, it gets wrapped into the next line.
+
+![Overflow behaviour of inline editable fields](./images/inlineEditable-error.png)
+<Caption> Overflow behaviour of inline editable fields </Caption>
+
+<br/>
+
+#### Horizontal spacing between label and field
+It is recommended to have a minimum spacing of 4px between the label and the inline editable field when placed horizontally.
+
+> This spacing is recommended so that the focus ring doesn’t overlap with the label. 
+
+<br/>
+
+![Recommended minimum spacing between the label and field](./images/inlineEditable-error.png)
+<Caption> Recommended minimum spacing between the label and field </Caption>
 <br/>
