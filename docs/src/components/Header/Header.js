@@ -29,7 +29,7 @@ const Header = ({ relativePagePath }) => {
     <div id="mainHeader" ref={ref} className="header bg-light d-flex w-100 position-sticky px-5">
       <div className="d-flex justify-content-start align-items-center">
         <Link to="/" className="HeaderLink ml-0">
-          <img src="/images/headerLogo.png" width="290px" height="28px" />
+          <img src="/images/headerLogo.png" alt="logo" width="290px" height="28px" />
         </Link>
         <div>
           {items.map(({ link, label, img }, index) => {

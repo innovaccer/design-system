@@ -208,7 +208,7 @@ const Layout = ({
         relativePagePath={relativePagePath}
       />
       <Header leftMenuList={leftMenuList} relativePagePath={relativePagePath} />
-      <Row style={{ height: 'calc(100vh - 48px)' }} ref={refCode}>
+      <Row data-test="Docs-Main--Row" style={{ height: 'calc(100vh - 48px)' }} ref={refCode}>
         <LeftNav
           is404Page={is404}
           relativePagePath={relativePagePath}
