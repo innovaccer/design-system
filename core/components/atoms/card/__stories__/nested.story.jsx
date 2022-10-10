@@ -29,7 +29,7 @@ export const CardWithinACard = () => {
                   <br />
                   <Text weight="medium">ZGP123456789</Text>
                 </div>
-                <Row className="py-4" style={{ borderTop: 'var(--border)' }}>
+                <Row className="py-4 border-top">
                   <Column>
                     <Text appearance="disabled" small={true}>
                       Last attr:
@@ -71,7 +71,7 @@ export const CardWithinACard = () => {
                   <br />
                   <Text weight="medium">HKA987654321</Text>
                 </div>
-                <Row className="py-4" style={{ borderTop: 'var(--border)' }}>
+                <Row className="py-4 border-top">
                   <Column>
                     <Text appearance="disabled" small={true}>
                       Last attr:
