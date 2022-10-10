@@ -7,7 +7,7 @@ export const all = () => {
   const size = 'xxl';
 
   return (
-    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
+    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
       <Heading appearance={appearance} size={size}>
         Heading component have different varients, look for options in knobs tab.
       </Heading>
