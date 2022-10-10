@@ -132,7 +132,7 @@ export const flatEdgedVerticalNavigation = () => {
   };
 
   return (
-    <div style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <VerticalNav menus={data} expanded={expanded} active={active} onClick={onClickHandler} />
       </Collapsible>
@@ -272,7 +272,7 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <VerticalNav
           menus={data}
