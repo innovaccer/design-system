@@ -50,8 +50,47 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
 <br/>
 <br/>
 
-### Properties
+### Structure
+<br/>
+<br/>
+
+![Structure of Inputs](./images/input-structure.png)
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Property</th>
+      <th style="width:50%; text-align: left;">Value(s)</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>
+            <ul>
+              <li>24 px <em>(Small)</em></li>
+              <li>32 px <em>(Regular)</em></li>
+              <li>40 px <em>(Large)</em></li>
+            </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Padding (right, left)</td>
+      <td>12 px, 12 px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+
+### Configurations
+
 #### Input
+<br/>
+<br/>
+
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -63,12 +102,17 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
       <td>Size</td>
       <td>
           <ul>
+              <li>Small</li>
               <li>Regular</li>
-              <li>Tiny</li>
               <li>Large</li>
           </ul>
       </td>
       <td>Regular</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Placeholder</td>
+      <td>&#60;placeholder&#62;</td>
+      <td>-</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Icon left<br/><em>(optional)</em></td>
@@ -90,6 +134,9 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
 <br/>
 
 #### Label
+<br/>
+<br/>
+
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -153,11 +200,15 @@ Inputs can be marked as optional or required depending upon the context. To avoi
 **When no. of required fields < no. of optional fields**
 
 ![Number of required fields < number of optional fields](./images/inputs-3.png)
+
+<Caption> Number of required fields is less than number of optional fields </Caption>
+
 <br/>
 
 **When no. of required fields > no. of optional fields**
 
-![Number of required fields < no. of optional fields](./images/inputs-4.png)
+![Number of required fields > no. of optional fields](./images/inputs-4.png)
+<Caption> Number of required fields is more than no. of optional fields </Caption>
 <br/>
 
 It is recommended to keep the notations of required and optional fields consistent throughout the app as different notations can confuse users.
@@ -173,6 +224,8 @@ Inputs can also be used to create filters in the field values by using input chi
 <br/>
 
 ![Multi line behavior in input with chips](./images/inputs-6.png)
+<Caption> Multi line behavior in input with chips </Caption>
+
 <br/>
 <br/>
 
