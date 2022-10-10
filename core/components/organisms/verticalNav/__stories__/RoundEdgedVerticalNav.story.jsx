@@ -129,7 +129,7 @@ export const roundEdgedVerticalNavigation = () => {
   });
 
   return (
-    <div className="d-flex" style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
+    <div className="d-flex bg-secondary-lightest vh-100">
       <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
       <VerticalNav
         menus={secondaryNavdata}
@@ -271,10 +271,7 @@ const customCode = `() => {
   });
 
   return (
-    <div
-      className="d-flex"
-      style={{ height: '100vh', background: 'var(--secondary-lightest)' }}
-    >
+    <div className="d-flex bg-secondary-lightest vh-100">
       <VerticalNav
         menus={primaryNavdata}
         active={primaryActive}

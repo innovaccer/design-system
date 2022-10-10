@@ -81,7 +81,7 @@ export const rounded = () => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <VerticalNav
         menus={data}
         expanded={true}
@@ -171,7 +171,7 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <VerticalNav
         menus={data}
         expanded={true}
