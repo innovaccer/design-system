@@ -9,12 +9,9 @@ export const basic = () => {
   const expanded = false;
   const loading = false;
   const children = 'Open';
-  const style = {
-    justifyContent: 'space-between',
-  };
 
   return (
-    <div className="d-flex w-25" style={style}>
+    <div className="d-flex w-25 justify-content-between">
       <div className="mr-9">
         <Button
           onClick={action('button-clicked')}
