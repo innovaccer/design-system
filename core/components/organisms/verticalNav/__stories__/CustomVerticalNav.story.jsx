@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { VerticalNav, Collapsible, DatePicker } from '@/index';
 
-export const cutsomVerticalNavigation = () => {
+export const customVerticalNavigation = () => {
   const data = [
     {
       name: 'to_dos',
@@ -38,11 +38,11 @@ export const cutsomVerticalNavigation = () => {
   });
 
   return (
-    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <>
           {expanded && (
-            <div className="mt-5 d-flex justify-content-center" style={{ borderTop: 'var(--border)' }}>
+            <div className="mt-5 d-flex justify-content-center border-top">
               <DatePicker date={new Date()} size="small" />
             </div>
           )}
@@ -90,11 +90,11 @@ const customCode = `() => {
   });
 
   return (
-    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <Collapsible expanded={expanded} onToggle={setExpanded} hoverable={false}>
         <>
         {expanded && (
-          <div className="mt-5 d-flex justify-content-center" style={{ borderTop: 'var(--border)' }}>
+          <div className="mt-5 d-flex justify-content-center border-top">
           <DatePicker date={new Date()} size="small" />
           </div>
           )}
@@ -111,7 +111,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/Cutsom Vertical Navigation',
+  title: 'Components/VerticalNav/Custom Vertical Navigation',
   component: VerticalNav,
   parameters: {
     docs: {

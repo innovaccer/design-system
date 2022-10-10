@@ -105,7 +105,7 @@ export const hoverableVerticalNavigation = () => {
   });
 
   return (
-    <div className="d-flex" style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
+    <div className="d-flex bg-secondary-lightest vh-100">
       <Collapsible expanded={expanded} onToggle={setExpanded}>
         <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />
       </Collapsible>
@@ -308,7 +308,7 @@ const customCode = `() => {
   });
 
   return (
-    <div className="d-flex" style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
+    <div className="d-flex bg-secondary-lightest vh-100">
       <Collapsible expanded={expanded} onToggle={setExpanded}>
         <VerticalNav
           menus={data}

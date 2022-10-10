@@ -144,7 +144,7 @@ export const secondaryVerticalNavigation = () => {
   });
 
   return (
-    <div className="d-flex" style={{ height: '100vh', background: 'var(--secondary-lightest)' }}>
+    <div className="d-flex bg-secondary-lightest vh-100">
       <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
       <div className="w-100 ml-6">
         <Heading className="my-5">Assessments</Heading>
@@ -300,10 +300,7 @@ const customCode = `() => {
   });
 
   return (
-    <div
-      className="d-flex"
-      style={{ height: '100vh', background: 'var(--secondary-lightest)' }}
-    >
+    <div className="d-flex bg-secondary-lightest vh-100">
       <VerticalNav
         menus={primaryNavdata}
         active={primaryActive}
