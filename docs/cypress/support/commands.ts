@@ -50,10 +50,12 @@ Cypress.Commands.add('imageRender', () => {
         cy.wrap($img).scrollIntoView().should('be.visible').should('have.attr', 'alt');
     });
 });
+
 Cypress.Commands.add('tileToggle', () => {
     cy.wait(1000);
     cy.get('.Tile').click({
         multiple: true,
+        force: true
     });
 });
 
@@ -63,7 +65,6 @@ Cypress.Commands.add('linkVisit', () => {
         cy.request(page.prop('href'));
     })
 })
-
 
 Cypress.Commands.add('leftnavTraverse', (arr) => {
     cy.get('[data-test=DesignSystem-VerticalNav--Item]').each((navLink) => arr.push(navLink.prop('href')))
