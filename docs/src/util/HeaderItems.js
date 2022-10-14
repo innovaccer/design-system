@@ -11,6 +11,7 @@ export function useHeaderItems() {
             label
             link
             img
+            mobileTab
           }
         }
       }
