@@ -9,7 +9,7 @@ export const all = () => {
   };
 
   return (
-    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
+    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
       <Paragraph {...options}>
         Paragraph <b>component</b> have different varients, look for options in knobs tab.
       </Paragraph>

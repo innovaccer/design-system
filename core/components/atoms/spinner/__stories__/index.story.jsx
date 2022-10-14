@@ -13,7 +13,7 @@ export const all = () => {
   };
 
   return (
-    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
+    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
       <Spinner {...options} />
     </div>
   );
