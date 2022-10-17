@@ -8,6 +8,6 @@ declare namespace Cypress {
         tabsVisit(): Chainable<Element>
         livePreview(): Chainable<Element>
         statusTable(): Chainable<Element>
-        searchBar(): Chainable<Element>
+        searchBar(falseQuery: string, searchQuery: string): Chainable<Element>
     }
 }

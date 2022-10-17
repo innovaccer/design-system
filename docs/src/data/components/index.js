@@ -99,7 +99,7 @@ export const data = [
     image: () => <StaticImage src="./images/Icons.png" alt="Icons" imgStyle={imgStyle} />,
   },
   {
-    link: 'inlineEditableFields',
+    link: 'inlineEditableFields/usage',
     name: 'Inline editable fields',
     design: 'Available',
     code: 'Available',

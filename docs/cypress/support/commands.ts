@@ -63,11 +63,13 @@ Cypress.Commands.add('tileToggle', () => {
 
 Cypress.Commands.add('linkVisit', () => {
   cy.wait(1000);
-  cy.get('[data-test=Docs-inner--container]')
-    .find('a')
-    .each((page) => {
-      if (page.prop('href').length) {
-        cy.request(page.prop('href'));
+    cy.get('[data-test=Docs-inner--container]').then((container) => {
+      if (container.find('a').length) {
+        cy.get('a').each((page) => {
+          if (page.prop('href').length) {
+            cy.request(page.prop('href'));
+          }
+        });
       }
     });
 });
@@ -110,9 +112,7 @@ Cypress.Commands.add('tabsVisit', () => {
         .each((page) => {
           const path = fetchPath(page[0].innerText, page[0].baseURI);
           cy.visit(path);
-          if (path.includes('code')) {
-            cy.livePreview();
-          }
+          cy.livePreview();
           if (!path.includes('overview')) {
             cy.tableOfContent();
           }
@@ -135,12 +135,10 @@ Cypress.Commands.add('statusTable', () => {
 
 })
 
-Cypress.Commands.add('searchBar', () => {
-  const falseQuery = 'abc'
-  cy.get('[data-test=Docs-inner--container]').find('input[name="input"]').type(`${falseQuery}{enter}`)
-  cy.get('[data-test=DesignSystem-EmptyState]').contains(`No results found for '${falseQuery}'`)
+Cypress.Commands.add('searchBar', (falseQuery, searchQuery) => {
+  cy.get('[data-test=Docs-inner--container]').find('input[name="input"]').type(`${falseQuery}{enter}`);
+  cy.get('[data-test=DesignSystem-EmptyState]').contains(`No results found for '${falseQuery}'`);
 
-  const searchQuery = 'Forms'
   cy.get('[data-test=Docs-inner--container]').find('input[name="input"]').clear().type(`${searchQuery}{enter}`);
   cy.get('[data-test=Docs-Card--Heading]').contains(searchQuery);
-})
+});
