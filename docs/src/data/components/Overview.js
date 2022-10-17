@@ -60,7 +60,7 @@ function Overview({ data, mode, path = 'components' }) {
                           {React.createElement(image)}
                         </div>
                       </div>
-                      <Heading size="s" className="ml-6 position-absolute card-heading">
+                      <Heading data-test="Docs-Card-Heading" size="s" className="ml-6 position-absolute card-heading">
                         {name}
                       </Heading>
                     </CardBody>
