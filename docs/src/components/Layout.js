@@ -57,7 +57,7 @@ const MDXPage = (props) => {
 const OverviewContainer = (props) => {
   return (
     <Row className="justify-content-center">
-      <Column className="px-11 py-8 min-vh-100 overview-container" size={12}>
+      <Column data-test="Docs-inner--container" className="px-11 py-8 min-vh-100 overview-container" size={12}>
         <ComponentsPage {...props} />
       </Column>
     </Row>
@@ -68,8 +68,8 @@ const MarkdownContainer = (props) => {
   const { relativePagePath, is404, pageTitle, location } = props;
 
   return (
-    <Row data-test="Docs-inner--container" className="justify-content-center">
-      <Column className="px-11 py-8 min-vh-100 inner-left-container" size={9}>
+    <Row className="justify-content-center">
+      <Column data-test="Docs-inner--container" className="px-11 py-8 min-vh-100 inner-left-container" size={9}>
         {!relativePagePath.includes('components') ? <MDXPage {...props} /> : <ComponentsPage {...props} />}
       </Column>
 

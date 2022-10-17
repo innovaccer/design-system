@@ -74,7 +74,7 @@ const StoryComp = ({ componentData, dataProvider }) => {
         })
         .catch((err) => {
           setJsxCode(
-            `<Message className="my-7" appearance="alert" title="${err}" description="We are working to get it up for you to interact with." />`
+            `<Message data-test="Docs-error-message" className="my-7" appearance="alert" title="${err}" description="We are working to get it up for you to interact with." />`
           );
         });
     }
@@ -194,7 +194,7 @@ const StoryComp = ({ componentData, dataProvider }) => {
               </CardHeader>
               <CardBody className="d-flex flex-column align-items-center">
                 <div className="w-100" ref={testRef}>
-                  <LivePreview className="p-8 mw-100 mh-100 d-block live-provider mb-3" style={{ zoom: zoom }} />
+                  <LivePreview data-test="Docs-live--provider" className="p-8 mw-100 mh-100 d-block live-provider mb-3" style={{ zoom: zoom }} />
                   <LiveError />
                 </div>
                 <div className="d-flex justify-content-end w-100 mb-6">

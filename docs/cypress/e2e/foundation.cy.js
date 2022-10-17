@@ -8,13 +8,6 @@ describe('Cypress Test of foundations page', () => {
     cy.leftnavTraverse(navLink);
   });
 
-  it('check for all the links it redirects', () => {
-    navLink.forEach((page) => {
-      cy.visit(page);
-      cy.linkVisit();
-    });
-  });
-
   it('check if all links of toc direct to the content', () => {
     navLink.forEach((page) => {
       cy.visit(page);
