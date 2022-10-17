@@ -28,5 +28,4 @@ describe('Cypress Test of content page', () => {
       cy.imageRender();
     });
   });
-
 });

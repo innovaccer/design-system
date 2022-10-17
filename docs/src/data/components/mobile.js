@@ -15,7 +15,7 @@ export const data = [
     image: () => <StaticImage src="./images/mobile/ActionSheet.png" alt="Action Sheet" imgStyle={imgStyle} />,
   },
   {
-    link: 'badge/usage',
+    link: 'badges/usage',
     design: 'Available',
     name: 'Badge',
     code: 'Available',
@@ -71,7 +71,7 @@ export const data = [
     image: () => <StaticImage src="./images/mobile/Dialog.png" alt="Dialogs" imgStyle={imgStyle} />,
   },
   {
-    link: 'dropdown/usage',
+    link: 'dropdowns/usage',
     design: 'Available',
     name: 'Dropdowns',
     code: 'Available',
@@ -134,7 +134,7 @@ export const data = [
     image: () => <StaticImage src="./images/mobile/StatusHint.png" alt="Status hint" imgStyle={imgStyle} />,
   },
   {
-    link: 'stepper/usage',
+    link: 'steppers/usage',
     design: 'Available',
     name: 'Stepper',
     code: 'Available',
