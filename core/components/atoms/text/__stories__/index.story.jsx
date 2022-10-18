@@ -15,7 +15,7 @@ export const all = () => {
   };
 
   return (
-    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
+    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
       <Text {...options}>Text component have different varients, look for options in knobs tab.</Text>
     </div>
   );

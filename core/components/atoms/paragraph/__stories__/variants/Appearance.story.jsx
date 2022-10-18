@@ -10,7 +10,7 @@ export const appearance = () => {
       {appearances.map((appear, ind) => {
         return (
           <div key={ind} className="mr-6">
-            <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
+            <div className={appear === 'white' ? 'bg-dark' : 'bg-transparent'}>
               <Paragraph appearance={appear}>Paragraph</Paragraph>
             </div>
             <br />

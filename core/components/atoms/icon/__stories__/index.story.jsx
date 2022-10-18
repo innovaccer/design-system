@@ -10,7 +10,7 @@ export const all = () => {
   const name = 'info';
 
   return (
-    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
+    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
       <Icon appearance={appearance} type={iconType} size={size} name={name} onClick={action('click-event')} />
     </div>
   );

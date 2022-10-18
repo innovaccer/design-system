@@ -10,7 +10,7 @@ export const appearance = () => {
       {appearances.map((appear, ind) => {
         return (
           <div key={ind} className="mr-8">
-            <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>
+            <div className={appear === 'white' ? 'bg-dark' : 'bg-transparent'}>
               <Spinner appearance={appear} />
             </div>
             <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
