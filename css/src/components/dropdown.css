@@ -92,6 +92,12 @@
   padding-bottom: 6px;
 }
 
+.Option--active,
+.Option-checkbox--active {
+  background-color: var(--secondary-lightest);
+  cursor: pointer;
+}
+
 .Option--active:hover,
 .Option-checkbox--active:hover {
   background-color: var(--secondary-lighter);
