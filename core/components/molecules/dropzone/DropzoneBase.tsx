@@ -393,14 +393,16 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
         onDragLeaveCallback,
         onDropCallback,
         ...rest
-      }: any = {}) => ({
-        onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
-        onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
-        onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
-        onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb)),
-        [refKey]: rootRef,
-        ...rest,
-      }),
+      }: any = {}) => {
+        return {
+          onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
+          onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
+          onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
+          onDrop: composeDragHandler(composeEventHandlers(onDropCallback, onDropCb)),
+          [refKey]: rootRef,
+          ...rest,
+        };
+      },
     [rootRef, onKeyDownCb, onFocusCb, onBlurCb, onDragEnterCb, onDragOverCb, onDragLeaveCb, onDropCb, disabled]
   );
 
@@ -422,7 +424,6 @@ export const DropzoneBase = (props: DropzoneBaseProps) => {
           tabIndex: -1,
           [refKey]: inputRef,
         };
-
         return {
           ...inputProps,
           ...rest,

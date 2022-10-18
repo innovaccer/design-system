@@ -37,6 +37,7 @@ export const getTooSmallRejectionErr = (minSize: number) => {
 };
 
 export const fileAccepted = (file: File, accept?: string | string[]) => {
+  console.log(file, accept);
   const isAcceptable = file.type === 'application/x-moz-file' || accepts(file, accept);
   return [isAcceptable, isAcceptable ? null : getInvalidTypeRejectionErr(accept)];
 };
