@@ -21,28 +21,51 @@ Rounded variant comes handy when the navigation is not at the extreme left. Henc
 
 <Preview name='components-verticalnav-round-edged-vertical-navigation--round-edged-vertical-navigation'/>
 
-### Properties
+### Structure
+<br/>
+<br/>
+
+![Single entity](./images/verticalnav-structure.png)
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Height</td>
+     <td> 36 px </td>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Width</td>
+     <td> 256 px </td>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Corner radius (Top right, bottom right)</td>
+     <td> 16 px </td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Spacing between nav items</td>
+      <td>0px</td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Icon size</td>
+      <td>16x16 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+
+### Configurations
 <table style="width: 100%">
   <tbody>
     <tr>
       <th style="width:33%; text-align: left;">Property</th>
       <th style="width:33%; text-align: left;">Value(s)</th>
       <th style="width:33%; text-align: left;">Default value</th>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Width of panel</td>
-      <td>256px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Height (of a nav item)</td>
-      <td>36px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Width (of a nav item)</td>
-      <td>Auto</td>
-      <td>-</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Panel collapse/expand action icon</td>
@@ -57,11 +80,6 @@ Rounded variant comes handy when the navigation is not at the extreme left. Henc
     <tr style="vertical-align: top">
       <td>Icon<br/><em>(optional)</em></td>
       <td>&#60;icon name&#62;</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Icon size</td>
-      <td>16x16px</td>
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
@@ -102,6 +120,8 @@ To reduce the unnecessary visual clutter, a maximum of two levels are supported 
 The panel cannot be collapsed when the parent items do not have icons.
 
 ![Parent Item - Without Icons](./images/navigationvertical-1.png)
+<Caption>Parent Item - Without Icons</Caption>
+
 
 <br/>
 <br/>
@@ -111,6 +131,8 @@ The panel cannot be collapsed when the parent items do not have icons.
 <br/>
 
 ![Parent Item - With Icons](./images/navigationvertical-2.png)
+<Caption> Parent Item - With Icons </Caption>
+
 
 <br/>
 <br/>
@@ -120,6 +142,8 @@ The panel cannot be collapsed when the parent items do not have icons.
 In this case, the panel will collapse to the icons of the parent items. In the collapsed view, the parent having the selected child will be shown as active.
 
 ![Child Item - Without Icons](./images/navigationvertical-3.png)
+<Caption> Child Item - Without Icons </Caption>
+
 
 <br/>
 <br/>
@@ -129,6 +153,8 @@ In this case, the panel will collapse to the icons of the parent items. In the c
 The icons of children will be visible in the collapsed panel only if the parent was initially expanded.
 
 ![Child Item - With Icons](./images/navigationvertical-4.png)
+<Caption> Child Item - With Icons </Caption>
+
 
 <br/>
 <br/>
@@ -144,6 +170,8 @@ Hovering over the collapsed panel expands it in overlay mode.
 The toggle panel button is differentiated with a shadow and a divider if the content inside the nav panel becomes scrollable.
 
 ![Scrolling when the nav overflows](./images/navigationvertical-6.png)
+<Caption> Scrolling when the nav overflows </Caption>
+
 
 <br/>
 <br/>
@@ -159,6 +187,8 @@ It is possible to group navigation items into categories. Grouping is restricted
 As the parent items do not have icons, the panel will be non-collapsible.
 
 ![Parent Item - Without Icons](./images/navigationvertical-7.png)
+<Caption> Parent Item - Without Icons </Caption>
+
 
 <br/>
 
@@ -167,6 +197,8 @@ As the parent items do not have icons, the panel will be non-collapsible.
 As the parent items do not have icons, the panel will be non-collapsible.
 
 ![Parent Item - Without Icons](./images/navigationvertical-8.png)
+<Caption> Parent Item - Without Icons </Caption>
+
 
 <br/>
 <br/>
@@ -176,6 +208,8 @@ As the parent items do not have icons, the panel will be non-collapsible.
 In this case, the section title and the subsequent divider will disappear when the panel is collapsed.
 
 ![Parent Item - With Icons](./images/navigationvertical-9.png)
+<Caption> Parent Item - With Icons </Caption>
+
 
 <br/>
 <br/>
@@ -209,7 +243,9 @@ If the secondary navigation panel is floating, the nav items used will be having
 Clicking over the collapsed parent item for the first time will expand the particular parent item. Clicking again will collapse the parent item.
 
 ![Collapsing the parent item](./images/navigationvertical-12.png)
+
 ![Expanding the parent item](./images/navigationvertical-13.png)
+
 
 **Note**: If a parent item having an active child is collapsed then after collapsing, the parent will be in the active state.
 
@@ -220,6 +256,7 @@ Clicking over the collapsed parent item for the first time will expand the parti
 The navigation panel can be customized to accommodate content other than the navigation items. In case of collapsing such panel, only the collapsed navigation items will be shown.
 
 ![Custom panel](./images/navigationvertical-14.png)
+<Caption> Custom panel </Caption>
 
 <br/>
 <br/>
