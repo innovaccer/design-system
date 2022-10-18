@@ -324,6 +324,7 @@ const DropdownList = (props: OptionsProps) => {
     ['Option-checkbox--active']: cursor === 0,
     ['Option-checkboxWrapper']: true,
     ['Option-checkbox']: true,
+    ['OptionWrapper']: true,
   });
 
   const onToggleDropdown = (open: boolean, type?: string) => {
