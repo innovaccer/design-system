@@ -35,7 +35,7 @@ export const withInput = () => {
   if (monthNav !== -1) attr.monthNav = monthNav;
 
   return (
-    <div className="w-50">
+    <div className="w-75">
       <DateRangePicker
         withInput={true}
         startDate={startDate}
