@@ -7,13 +7,6 @@ showMobile: true
 
 Dropdowns display a list of options for users to choose from. They provide the option to let users select a single option or multiple.
 
-### Structure
-Dropdown is made up of 2 key components - a custom **button** which acts as a trigger and a **popover** which acts as a container for the options.
-
-![Dropdown structure](./images/dropdowns-1.png)
-<br/>
-<br/>
-
 ### Types
 Dropdowns can be categorized into **2 types** basis on their uses -
 
@@ -83,14 +76,124 @@ The options come in **3 states** - default, hover and selected. Users can also u
 <br/>
 <br/>
 
-### Properties
+### Structure
+<br/>
+
+Dropdown is made up of 2 key components - a custom **button** which acts as a trigger and a **popover** which acts as a container for the options.
+
+
+![Dropdown structure](./images/dropdowns-1.png)
+<br/>
+<br/>
+
+#### Trigger (Dropdown button)
+<br/>
+<br/>
+
+![Structure of dropdown button](./images/dropdownbutton-structure.png)
+<br/>
+ 
+<table style="width: 100%">
+ <tbody>
+  <tr>
+    <th style="width:50%; text-align: left;">Property</th>
+    <th style="width:50%; text-align: left;">Value(s)</th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Height</td>
+    <td>32 px</td>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>Corner radius</td>
+    <td>4 px</td>
+  </tr>
+ </tbody>
+</table>
+
+<br/>
+
 #### Options
+<br/>
+<br/>
+
+![Structure of dropdown options](./images/dropdownoptions-structure.png)
+<br/>
+ 
+<table style="width: 100%">
+ <tbody>
+  <tr>
+    <th style="width:50%; text-align: left;">Property</th>
+    <th style="width:50%; text-align: left;">Value(s)</th>
+  </tr>
+  <tr style="vertical-align: top">
+      <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+      <td>6 px, 8 px, 6 px, 12 px</td>
+  </tr>
+ </tbody>
+</table>
+
+<br/>
+
+
+### Configurations
+<br/>
+<br/>
+
+#### Trigger (Dropdown button)
+<br/>
+<br/>
+
 <table style="width: 100%">
   <tbody>
     <tr>
       <th style="width:33%; text-align: left;">Property</th>
       <th style="width:33%; text-align: left;">Value(s)</th>
       <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Size</td>
+      <td>
+          <ul>
+              <li>Small</li>
+              <li>Regular</li>
+          </ul>
+      </td>
+      <td>Regular</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Placeholder<br/></td>
+      <td>&#60;placeholder&#62;</td>
+      <td>Select</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Icon<br/><em>(optional)</em></td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Inline label<br/><em>(optional)</em></td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+#### Options
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Label<br/></td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Icon<br/><em>(optional)</em></td>
@@ -111,38 +214,6 @@ The options come in **3 states** - default, hover and selected. Users can also u
 </table>
 <br/>
 
-#### Trigger (Dropdown button)
-<table style="width: 100%">
-  <tbody>
-    <tr>
-      <th style="width:33%; text-align: left;">Property</th>
-      <th style="width:33%; text-align: left;">Value(s)</th>
-      <th style="width:33%; text-align: left;">Default value</th>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Size</td>
-      <td>
-          <ul>
-              <li>Regular</li>
-              <li>Tiny</li>
-          </ul>
-      </td>
-      <td>Regular</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Icon<br/><em>(optional)</em></td>
-      <td>&#60;icon name&#62;</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Inline label<br/><em>(optional)</em></td>
-      <td>&#60;label&#62;</td>
-      <td>-</td>
-    </tr>
-  </tbody>
-</table>
-<br/>
-
 ### Usage
 <br/>
 
@@ -157,6 +228,8 @@ The multi-select behavior in a dropdown is divided into **2 categories** as foll
 <Preview name="components-dropdown-dropdown-options-less-than-50--dropdown-options-less-than-50"/>
 
 ![Multi-select behavior of dropdown for options less than or equal to a threshold](./images/dropdowns-4.png)
+<Caption> Multi-select behavior of dropdown for options less than or equal to a threshold </Caption>
+
 <br/>
 <br/>
 
@@ -164,16 +237,19 @@ The multi-select behavior in a dropdown is divided into **2 categories** as foll
 <Preview name="components-dropdown-dropdown-options-more-than-50--dropdown-options-more-than-50"/>
 
 ![Multi-select behavior of dropdown for options more than the threshold](./images/dropdowns-5.png)
-<br/>
+<Caption> Multi-select behavior of dropdown for options more than the threshold </Caption>
+
 <br/>
 
-50 is the default threshold and it can be changed to any number between 50 to 100.
+**Note:** 50 is the default threshold and it can be changed to any number between 50 to 100.
 <br/>
 
 #### Grouping options
 Dropdown options can be grouped under a section using a sub header, if needed.
 
 ![Grouping options under a sub heading](./images/dropdowns-6.png)
+<Caption> Grouping options under a sub heading </Caption>
+
 <br/>
 <br/>
 
@@ -193,6 +269,8 @@ Using network resources on each checkbox selection in a dropdown can be quite ex
 Dropdowns can also be triggered by other components, primarily by buttons and icon buttons. The basic behavior of the dropdown remains the same.
 
 ![Custom triggers to open a dropdown](./images/dropdowns-7.png)
+<Caption> Custom triggers to open a dropdown </Caption>
+
 <br/>
 <br/>
 
@@ -200,6 +278,7 @@ Dropdowns can also be triggered by other components, primarily by buttons and ic
 It is recommended to use dropdowns if the number of single-select options exceeds 5 or if the space is limited, to better utilize the space. Radios should be used if the options are fewer than 5 and there are no space restrictions.
 
 ![Dropdown vs. radio](./images/dropdowns-8.png)
+
 <br/>
 <br/>
 
