@@ -28,7 +28,7 @@ export const moreThan4Levels = () => {
   ];
 
   return (
-    <div style={{ background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest">
       <Breadcrumbs list={list} onClick={(link) => action(`on-click: ${link}`)()} />
     </div>
   );
@@ -59,7 +59,7 @@ const customCode = `() => {
   ];
 
   return (
-    <div style={{ background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest">
       <Breadcrumbs
         list={list}
         onClick={link => console.log(\`on-click: \${link}\`)}

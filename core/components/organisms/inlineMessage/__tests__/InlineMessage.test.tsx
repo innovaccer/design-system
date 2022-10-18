@@ -74,3 +74,33 @@ describe('InlineMessage component ', () => {
     expect(descriptionID.textContent).toMatch('');
   });
 });
+
+describe('InlineMessage component with prop:size', () => {
+  it('check for text size with prop size=small', () => {
+    const { getByTestId } = render(<InlineMessage size="small" description={description} />);
+    const descriptionID = getByTestId('DesignSystem-InlineMessage--Description');
+    expect(descriptionID).toHaveClass('Text--small');
+  });
+
+  it('check for text size with prop size=regular', () => {
+    const { getByTestId } = render(<InlineMessage size="regular" description={description} />);
+    const descriptionID = getByTestId('DesignSystem-InlineMessage--Description');
+    expect(descriptionID).toHaveClass('Text--regular');
+  });
+
+  it('check for text weight with prop size=small', () => {
+    const { getByTestId } = render(<InlineMessage size="small" description={description} />);
+    const descriptionID = getByTestId('DesignSystem-InlineMessage--Description');
+    expect(descriptionID).toHaveClass('Text--medium');
+  });
+
+  it('check for icon size with prop size=small', () => {
+    const { getByTestId } = render(<InlineMessage appearance="info" size="small" description={description} />);
+    expect(getByTestId('DesignSystem-InlineMessage--Icon')).toHaveStyle('font-size: 14px ');
+  });
+
+  it('check for icon size with prop size=regular', () => {
+    const { getByTestId } = render(<InlineMessage appearance="info" size="regular" description={description} />);
+    expect(getByTestId('DesignSystem-InlineMessage--Icon')).toHaveStyle('font-size: 16px ');
+  });
+});

@@ -194,7 +194,7 @@ describe('renders disabled option', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[1]).toHaveClass('Option--disabled');
-    expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('Text--disabled');
+    expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('color-inverse-lightest');
   });
 
   it('WITH_CHECKBOX option', () => {
@@ -208,15 +208,15 @@ describe('renders disabled option', () => {
     const { getAllByTestId, getByTestId } = render(<Dropdown options={disabledStoryOptions} optionType="WITH_ICON" />);
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
-    expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('Text--disabled');
-    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[1]).toHaveClass('Icon--disabled');
+    expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('color-inverse-lightest');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[1]).toHaveClass('material-icons-round');
   });
 
   it('WITH_META options', () => {
     const { getAllByTestId, getByTestId } = render(<Dropdown options={disabledStoryOptions} optionType="WITH_META" />);
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
-    expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('Text--disabled');
-    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META--Meta')[1]).toHaveClass('Text--disabled');
+    expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('color-inverse-lightest');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META--Meta')[1]).toHaveClass('color-inverse-lightest');
   });
 });

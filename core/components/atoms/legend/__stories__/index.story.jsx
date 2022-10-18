@@ -16,7 +16,7 @@ export const all = () => {
     iconSize,
   };
   return (
-    <div style={{ background: labelAppearance === 'white' ? 'black' : 'transparent' }}>
+    <div className={labelAppearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
       <Legend {...options}>{children}</Legend>
     </div>
   );

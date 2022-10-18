@@ -4,7 +4,6 @@
   "description": "<p align=\"center\">   <a href=\"#\">     <img alt=\"\" src=\"https://innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg\" width=\"20%\" />   </a> </p> <h1 align=\"center\">   Masala Design System </h1> <h3 align=\"center\">   Gatsby site for Masala Design system documentation. </h3>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "./tools/develop.sh",
     "build": "./tools/build.sh",
     "serve": "gatsby serve",
@@ -17,13 +16,14 @@
     "lint:check": "eslint ./src --ext .tsx,.ts,.js",
     "lint": "npm run lint:check -- --fix",
     "prettier:check": "prettier --config ./.prettierrc --check",
-    "prettier": "prettier --config ./.prettierrc --write 'src/**/*.css'"
+    "prettier": "prettier --config ./.prettierrc --write 'src/**/*.css'",
+    "test": "CYPRESS_HOST_URL='http://localhost:9000' start-server-and-test serve http://localhost:9000 cypress"
   },
   "dependencies": {
     "@fontsource/nunito": "^4.5.0",
     "@fontsource/nunito-sans": "^4.5.0",
     "@fontsource/roboto-mono": "^4.5.0",
-    "@innovaccer/design-system": "2.13.4-0",
+    "@innovaccer/design-system": "2.13.4-7",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
     "@storybook/theming": "^6.3.6",
@@ -65,9 +65,11 @@
   "license": "MIT",
   "devDependencies": {
     "cypress": "^10.3.1",
-    "prettier": "^2.3.2",
     "eslint": "^7.31.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^4.0.0"
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.3.2",
+    "start-server-and-test": "^1.14.0",
+    "typescript": "3.9.10"
   }
 }

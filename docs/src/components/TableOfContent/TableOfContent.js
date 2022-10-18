@@ -112,6 +112,7 @@ const TableOfContent = (props) => {
               <li key={key}>
                 <div className={`${active == item.url?.slice(1) ? 'active-link' : ''}`}>
                   <Link
+                    data-test="Docs-Toc--Link"
                     to={item.url}
                     onClick={(e) => onClickHandler(e, item.url.slice(1))}
                     className={`toc-link ${depth == 0 ? 'toc-font--regular' : 'toc-font--small'}`}

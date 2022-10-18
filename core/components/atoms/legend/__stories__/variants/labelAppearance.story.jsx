@@ -8,7 +8,7 @@ export const labelAppearance = () => {
     <div>
       {appearances.map((appearance, i) => {
         return (
-          <div key={i} style={{ background: appearance === 'white' ? 'black' : 'transparent' }} className="mb-4 w-25">
+          <div key={i} className={`${appearance === 'white' ? 'bg-dark' : 'bg-transparent'} mb-4 w-25 `}>
             <Legend labelAppearance={appearance} iconAppearance={appearance === 'white' ? 'secondary' : 'inverse'}>
               {appearance}
             </Legend>

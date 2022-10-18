@@ -24,10 +24,6 @@ export const miscellaneous = () => {
       className: 'cursor-pointer',
       properties: 'cursor: pointer;',
     },
-    {
-      className: 'text-decoration--none',
-      properties: 'text-decoration: none;',
-    },
   ];
   return (
     <div className="mt-8 mb-8">

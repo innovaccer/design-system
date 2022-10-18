@@ -11,14 +11,14 @@ menus:
     link: /components/avatar/usage/
     hideInMobile: true
 
-  - label: Badges
+  - label: Badge
     link: /components/badges/usage/
 
   - label: Bottom navigation
     link: /components/bottomNavigation/usage
     hideInWeb: true
 
-  - label: Breadcrumbs
+  - label: Breadcrumb
     link: /components/breadcrumbs/usage/
     hideInMobile: true
 
@@ -42,7 +42,7 @@ menus:
   - label: Chips
     link: /components/chips/usage/
 
-  - label: Date picker
+  - label: Date pickers
     link: /components/datePicker/usage/
     hideInMobile: true
 
@@ -57,12 +57,11 @@ menus:
   - label: Dropdowns
     link: /components/dropdowns/usage/
     
-
   - label: Help text
     link: /components/helpText/usage/
     hideInMobile: true
 
-  - label: Icons
+  - label: Icon
     link: /components/icons/usage/
     hideInMobile: true
 
@@ -73,7 +72,7 @@ menus:
   - label: Inputs
     link: /components/inputs/usage/
 
-  - label: Links
+  - label: Link
     link: /components/links/usage/
     hideInMobile: true
 
@@ -99,14 +98,14 @@ menus:
     link: /components/navigationVertical/usage/
     hideInMobile: true
 
+  - label: Page headers
+    link: /components/pageHeaders/usage/
+
   - label: Pagination
     link: /components/pagination/usage/
     hideInMobile: true
 
-  - label: Page headers
-    link: /components/pageHeaders/usage/
-
-  - label: Pills
+  - label: Pill
     link: /components/pills/usage/
     hideInMobile: true
 
@@ -125,23 +124,23 @@ menus:
     link: /components/richTextEditor/usage/
     hideInMobile: true
 
-  - label: Side sheet
+  - label: Sidesheet
     link: /components/sidesheet/usage/
     hideInMobile: true
 
-  - label: Slider
+  - label: Sliders
     link: /components/slider/usage/
 
   - label: Status hint
     link: /components/statusHint/usage/
 
-  - label: Steppers
+  - label: Stepper
     link: /components/steppers/usage/
 
   - label: Switch
     link: /components/switch/usage/
 
-  - label: Table
+  - label: Tables
     link: /components/table/usage/
     hideInMobile: true
 
@@ -158,4 +157,3 @@ menus:
   - label: Tooltip
     link: /components/tooltip/usage
     hideInMobile: true
-    

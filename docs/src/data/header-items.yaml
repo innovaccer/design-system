@@ -1,18 +1,24 @@
 - label: Introduction
   link: /introduction/get-started/designers/
+  mobileTab: false
 
 - label: Foundations
   link: /foundations/principles/
+  mobileTab: true
 
 - label: Content
   link: /content/voice-and-tone-guidelines/tabs/voice-and-tone/
+  mobileTab: false
 
 - label: Components
   link: /components/overview/all-components/
+  mobileTab: true
 
 - label: Patterns
   link: /patterns/overview/all-patterns/
+  mobileTab: false
 
 - label: Storybook
   link: https://innovaccer.github.io/design-system
   img: Storybook
+  mobileTab: false

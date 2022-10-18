@@ -93,7 +93,7 @@ describe('FileUploaderList component Event Handler', () => {
 
   it('check for Error Caption', () => {
     const { getByTestId } = render(<FileUploaderList fileList={[fileList[2]]} onRetry={FunctionValue} />);
-    expect(getByTestId('DesignSystem-Caption')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-Caption').textContent).toMatch('Network failure');
+    expect(getByTestId('DesignSystem-InlineMessage--Description')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-InlineMessage--Description').textContent).toMatch('Network failure');
   });
 });

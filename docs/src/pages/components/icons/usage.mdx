@@ -1,18 +1,11 @@
 ---
-title: Icons
-description: Icons convey meaning to actions and other interface elements.
+title: Icon
+description: Icon convey meaning to actions and other interface elements.
 tabs: ['Usage', 'Code']
 showMobile: true
 ---
 
-Icons are used to add additional visual cues on a page, hence helping to communicate a clearer meaning.
-
-### Structure
-Icons are based on Google’s Material Design and rendered using icon fonts. As of now, only rounded theme is supported. An icon component in the UI follows a simple structure. It has a font size of 16px which renders the icon in a 16 x 16px bounding box.
-
-![A 16x16 icon](./images/icons-1.png)
-<br/>
-<br/>
+Icon is used to add additional visual cues on a page, hence helping to communicate a clearer meaning.
 
 ### Appearances
 Based on the color palette that we follow, icons are offered in the following appearances. Barring the night and light variants, each appearance has **3 shades** - Default, Dark and Lighter.
@@ -27,7 +20,7 @@ Based on the color palette that we follow, icons are offered in the following ap
 **Note:** Added a dark background here just to show the color of the icon.
 <br/>
 
-#### Primary
+#### Jal
 ![All shades of icons in jal color](./images/icons-4.png)
 <br/>
 
@@ -60,7 +53,28 @@ Based on the color palette that we follow, icons are offered in the following ap
 <br/>
 <br/>
 
-### Properties
+### Structure
+Icons are based on Google’s Material Design and rendered using icon fonts. As of now, only rounded theme is supported. An icon component in the UI follows a simple structure. 
+
+![A 16x16 icon](./images/icons-1.png)
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Property</th>
+      <th style="width:50%; text-align: left;">Value(s)</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Icon theme</td>
+      <td>Rounded</td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+
+### Configurations
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -69,16 +83,17 @@ Based on the color palette that we follow, icons are offered in the following ap
       <th style="width:33%; text-align: left;">Default value</th>
     </tr>
     <tr style="vertical-align: top">
-      <td>Icon theme</td>
-      <td>Rounded</td>
-      <td>-</td>
+      <td>Size</td>
+      <td>&#60;size&#62;</td>
+      <td>16 px</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Appearance</td>
       <td>
           <ul>
+              <li>Night</li>
+              <li>Light</li>
               <li>Jal</li>
-              <li>Stone</li>
               <li>Neem</li>
               <li>Haldi</li>
               <li>Mirch</li>
@@ -88,7 +103,7 @@ Based on the color palette that we follow, icons are offered in the following ap
               <li>Jamun</li>
           </ul>
       </td>
-      <td>-</td>
+      <td>Night</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Shade</td>
@@ -131,13 +146,15 @@ Smaller than `16px`
 #### With label
 Icons can come really handy when showing key-value pairs.
 
-![Icons appearing with labe](./images/icons-14.png)
+![Icons appearing with label](./images/icons-14.png)
+<Caption> Icons appearing with label </Caption>
 <br/>
 <br/>
 
 #### With background
 
 ![Icons with background containers](./images/icons-15.png)
+<Caption> Icons with background containers </Caption>
 <br/>
 <br/>
 
@@ -145,5 +162,6 @@ Icons can come really handy when showing key-value pairs.
 Icons, though being non-interactive, can also have tooltips/popovers to provide additional information on hover.
 
 ![Hover on an icon](./images/icons-16.png)
+<Caption> Hover on an icon </Caption>
 <br/>
 <br/>

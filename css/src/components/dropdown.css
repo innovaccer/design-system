@@ -12,6 +12,10 @@
   border-bottom: var(--spacing-xs) solid var(--secondary-dark);
 }
 
+.Dropdown-inputWrapper:focus-within {
+  border-bottom: var(--spacing-xs) solid var(--primary);
+}
+
 .Dropdown-input {
   min-width: unset !important;
 }
@@ -94,6 +98,17 @@
   cursor: pointer;
 }
 
+.Option--active:hover,
+.Option-checkbox--active:hover {
+  background-color: var(--secondary-lighter);
+}
+
+.Option--active:active,
+.Option-checkbox--active:active {
+  background-color: var(--secondary-light);
+  cursor: pointer;
+}
+
 .Option--active {
   transition: var(--standard-productive-curve);
 }
@@ -103,8 +118,15 @@
 }
 
 .Option--selected {
-  background-color: var(--primary);
-  pointer-events: none;
+  background-color: var(--primary-lightest);
+}
+
+.Option--selected:hover {
+  background-color: var(--primary-lighter);
+}
+
+.Option--selected:active {
+  background-color: var(--primary-light);
 }
 
 .Option--disabled,

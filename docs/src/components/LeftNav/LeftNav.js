@@ -83,7 +83,7 @@ const LeftNav = (props) => {
   };
 
   return (
-    <div id="navbar-container" className="h-100 bg-secondary-lightest border-right page-scroll">
+    <div data-test="Docs-Leftnav" id="navbar-container" className="h-100 bg-secondary-lightest border-right page-scroll">
       {showMenuButtons && (
         <div className="d-flex pt-6 pl-6">
           <Tile

@@ -89,7 +89,7 @@ export const section = () => {
   };
 
   return (
-    <div style={{ height: 'calc(90vh)', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />
     </div>
   );
@@ -183,7 +183,7 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <VerticalNav
         menus={data}
         expanded={true}

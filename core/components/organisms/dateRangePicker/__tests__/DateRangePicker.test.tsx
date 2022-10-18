@@ -491,7 +491,7 @@ describe('DateRangePicker component with prop:endInputOptions', () => {
     );
     const InputTestId = getAllByTestId('DesignSystem-Input--closeIcon');
     fireEvent.click(InputTestId[1]);
-    expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch('Invalid value');
+    expect(getAllByTestId('DesignSystem-InlineMessage--Description')[0].textContent).toMatch('Invalid value');
   });
 
   it('check for placeholderChar property onBlur Event', () => {
@@ -580,7 +580,7 @@ describe('DateRangePicker component with prop:endInputOptions', () => {
       />
     );
     expect(getAllByTestId('DesignSystem-InputWrapper')[1]).toHaveClass('Input--error');
-    expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch(caption);
+    expect(getAllByTestId('DesignSystem-InlineMessage--Description')[0].textContent).toMatch(caption);
   });
 });
 
@@ -612,7 +612,7 @@ describe('DateRangePicker component with prop:startInputOptions', () => {
     );
     const InputTestId = getAllByTestId('DesignSystem-Input--closeIcon');
     fireEvent.click(InputTestId[0]);
-    expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Invalid value');
+    expect(getAllByTestId('DesignSystem-InlineMessage--Description')[0].textContent).toMatch('Invalid value');
   });
 
   it('check for error property', () => {
@@ -626,7 +626,7 @@ describe('DateRangePicker component with prop:startInputOptions', () => {
       />
     );
     expect(getAllByTestId('DesignSystem-InputWrapper')[0]).toHaveClass('Input--error');
-    expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch(caption);
+    expect(getAllByTestId('DesignSystem-InlineMessage--Description')[0].textContent).toMatch(caption);
   });
 });
 
@@ -644,7 +644,7 @@ describe('DateRangePicker component with prop:inputOptions', () => {
     );
     const InputTestId = getAllByTestId('DesignSystem-Input--closeIcon');
     fireEvent.click(InputTestId[0]);
-    expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Invalid value');
+    expect(getAllByTestId('DesignSystem-InlineMessage--Description')[0].textContent).toMatch('Invalid value');
   });
 
   it('check for default caption property onClear Event', () => {
@@ -661,7 +661,7 @@ describe('DateRangePicker component with prop:inputOptions', () => {
     const InputTestId = getAllByTestId('DesignSystem-Input--closeIcon');
     fireEvent.click(InputTestId[0]);
     expect(getAllByTestId('DesignSystem-InputWrapper')[0]).toHaveClass('Input--error');
-    expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch(caption);
+    expect(getAllByTestId('DesignSystem-InlineMessage--Description')[0].textContent).toMatch(caption);
   });
 
   it('check for placeholderChar property default value onChange Event', () => {

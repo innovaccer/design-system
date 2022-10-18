@@ -571,6 +571,8 @@ import {
   description="Adding a subheading clearly indicates the hierarchy of the information."
   primaryButtonLabel="Primary"
   secondaryButtonLabel="Basic"
+  primaryButtonCallback={() => {}}
+  secondaryButtonCallback={() => {}}
 />;
 
 // $ExpectType Element

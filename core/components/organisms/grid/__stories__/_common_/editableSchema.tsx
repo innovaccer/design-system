@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { PlaceholderParagraph, EditableInput } from '@/index';
+import { ColumnSchema } from '../../Grid';
 
-const schema = [
+const schema: ColumnSchema[] = [
   {
     name: 'name',
     displayName: 'Name',
@@ -105,7 +106,7 @@ const schema = [
 
       const [weight, setWeight] = React.useState('');
 
-      const onChangeWeight = (value) => {
+      const onChangeWeight = (value: string) => {
         setWeight(value);
       };
 

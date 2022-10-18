@@ -3,16 +3,8 @@ import { Text } from '@/index';
 import { OptionTypeProps } from './index';
 
 const MetaOption = (props: OptionTypeProps) => {
-  const {
-    className,
-    textClassName,
-    onClickHandler,
-    optionData,
-    onUpdateActiveOption,
-    renderSubInfo,
-    appearance,
-    dataTest,
-  } = props;
+  const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, renderSubInfo, color, dataTest } =
+    props;
 
   const { subInfo, label, disabled } = optionData;
 
@@ -28,7 +20,7 @@ const MetaOption = (props: OptionTypeProps) => {
     >
       {/* eslint-enable */}
       <div className={'Option-label'}>
-        <Text className={textClassName} appearance={appearance}>
+        <Text className={textClassName} color={color}>
           {label}
         </Text>
         {subInfo && renderSubInfo(subInfo)}

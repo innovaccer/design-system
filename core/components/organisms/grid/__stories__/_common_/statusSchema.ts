@@ -1,4 +1,6 @@
-const schema = [
+import { ColumnSchema } from '../../Grid';
+
+const schema: ColumnSchema[] = [
   {
     name: 'name',
     displayName: 'Name',

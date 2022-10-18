@@ -198,7 +198,7 @@ describe('TimePicker with disabled option list ', () => {
     await waitFor(() => {
       const optionList = getAllByTestId(optionID);
       expect(optionList[1]).toHaveClass('Option--disabled');
-      expect(getAllByTestId('DesignSystem-Text')[2]).toHaveClass('Text--disabled');
+      expect(getAllByTestId('DesignSystem-Text')[2]).toHaveClass('color-inverse-lightest');
     });
   });
 });

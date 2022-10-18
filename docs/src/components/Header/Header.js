@@ -25,14 +25,28 @@ const Header = ({ relativePagePath }) => {
     localStorage.removeItem('leftNavScrollPosition');
   };
 
+  const isMobile = () => {
+    const currURL = typeof window !== 'undefined' && window.location.pathname;
+    return (currURL && currURL.includes('mobile'));
+  };
+
+  const handleNavigate = (link, mobileTab) => {
+    const path = '/mobile' + link;
+    if (isMobile() && mobileTab) {
+      return path;
+    } else {
+      return link;
+    }
+  };
+
   return (
     <div id="mainHeader" ref={ref} className="header bg-light d-flex w-100 position-sticky px-5">
       <div className="d-flex justify-content-start align-items-center">
         <Link to="/" className="HeaderLink ml-0">
-          <img src="/images/headerLogo.png" width="290px" height="28px" />
+          <img src="/images/headerLogo.png" alt="logo" width="290px" height="28px" />
         </Link>
         <div>
-          {items.map(({ link, label, img }, index) => {
+          {items.map(({ link, label, img, mobileTab }, index) => {
             const isExternal = link.startsWith('http://') || link.startsWith('https://');
 
             if (isExternal) {
@@ -45,26 +59,27 @@ const Header = ({ relativePagePath }) => {
                   className="HeaderLink HeaderLink--default"
                 >
                   {label}
-                  {img &&
+                  {img && (
                     <Icon className="HeaderIcon position-relative pl-4">
                       <MenuIcons name={img} />
                     </Icon>
-                  }
+                  )}
                 </MDSLink>
               );
             }
             return (
               <Link
-                to={link}
+                to={handleNavigate(link, mobileTab)}
                 key={index}
                 onClick={onClickHandler}
                 className={`HeaderLink  ${checkActive(label) ? 'HeaderLink--active' : 'HeaderLink--default'}`}
               >
                 {label}
-                {img && <Icon className="HeaderIcon position-relative pl-8">
+                {img && (
+                  <Icon className="HeaderIcon position-relative pl-8">
                     <MenuIcons name={img} />
                   </Icon>
-                }
+                )}
               </Link>
             );
           })}

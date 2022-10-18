@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Text, Caption } from '@/index';
+import { Text, InlineMessage } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import FileIcon from './FileIcon';
 import { FileStatus } from '@/common.type';
@@ -101,9 +101,7 @@ export const FileListItem = (props: FileListItemProps) => {
         </div>
       </div>
       {status === 'error' && (
-        <Caption className={'FileItem-error'} error={true}>
-          {errorMessage}
-        </Caption>
+        <InlineMessage size="small" appearance="alert" description={errorMessage} className={'FileItem-error'} />
       )}
     </div>
   );

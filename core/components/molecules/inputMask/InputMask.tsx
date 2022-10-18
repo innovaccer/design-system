@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, Validators, Mask } from '@/utils/types';
-import { Input, Caption, Utils } from '@/index';
+import { Input, Utils, HelpText } from '@/index';
 import { InputProps } from '@/index.type';
 import { getDefaultValue } from './utilites';
 
@@ -44,6 +44,10 @@ export interface MaskProps extends BaseProps {
    * @default true
    */
   clearOnEmptyBlur?: boolean;
+  /**
+   * Add text below `input`
+   */
+  helpText?: string;
 }
 export type InputMaskProps = InputProps & MaskProps;
 type SelectionPos = {
@@ -80,6 +84,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     onClear,
     className,
     id,
+    helpText,
     ...rest
   } = props;
 
@@ -350,9 +355,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         autoComplete={'off'}
         ref={ref}
       />
-      <Caption error={error} withInput={true} hide={!caption}>
-        {caption}
-      </Caption>
+      <HelpText message={error ? caption : helpText} error={error} />
     </div>
   );
 });

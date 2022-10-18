@@ -50,7 +50,8 @@ export interface OptionTypeProps {
   dataTest?: string;
   optionData: OptionSchema;
   selected: boolean;
-  appearance: IconProps['appearance'] & TextProps['appearance'];
+  appearance?: IconProps['appearance'];
+  color?: TextProps['color'];
   index: number;
   onUpdateActiveOption: () => void;
   onClickHandler?: (event: ClickEvent) => void;
@@ -164,16 +165,12 @@ const Option = (props: OptionProps) => {
 
   const renderSubInfo = (subInfo: string | MetaListProps) => {
     const labelAppearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'subtle';
+    const color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
     const iconAppearance = selected ? 'white' : 'disabled';
 
     if (typeof subInfo === 'string') {
       return (
-        <Text
-          data-test="DesignSystem-DropdownOption--WITH_META--Meta"
-          appearance={labelAppearance}
-          size="small"
-          weight="medium"
-        >
+        <Text data-test="DesignSystem-DropdownOption--WITH_META--Meta" color={color} size="small" weight="medium">
           {subInfo}
         </Text>
       );
@@ -192,7 +189,8 @@ const Option = (props: OptionProps) => {
     );
   };
 
-  const appearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'default';
+  const color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
+  const appearance = disabled ? 'disabled' : selected && !menu ? 'primary_dark' : 'default';
   const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
   const component = OptionTypeMapping[type];
 
@@ -203,6 +201,7 @@ const Option = (props: OptionProps) => {
     optionData,
     textClassName,
     appearance,
+    color,
     onClickHandler,
     onChangeHandler,
     onUpdateActiveOption,

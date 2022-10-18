@@ -69,6 +69,81 @@ describe('Radio component', () => {
     expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
   });
 
+  it('renders radio input with error state as alert', () => {
+    const { getByTestId } = render(<Radio error={true} label={label} name={StringValue} value={StringValue} />);
+    expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveClass('Radio-errorWrapper');
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveStyle(`border-color: var(--alert)`);
+  });
+
+  it('renders radio input with error state as alert-dark on hover', () => {
+    const { getByTestId } = render(<Radio error={true} label={label} name={StringValue} value={StringValue} />);
+    const radioElement = getByTestId('DesignSystem-Radio-OuterWrapper');
+    fireEvent.mouseEnter(radioElement);
+    expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveClass('Radio-errorWrapper');
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveStyle(`border-color: var(--alert-dark)`);
+  });
+
+  it('renders radio input with error state as alert-darker on active', () => {
+    const { getByTestId } = render(<Radio error={true} label={label} name={StringValue} value={StringValue} />);
+    const radioElement = getByTestId('DesignSystem-Radio-OuterWrapper');
+    fireEvent.pointerDown(radioElement);
+    expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveClass('Radio-errorWrapper');
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveStyle(`border-color: var(--alert-darker)`);
+  });
+
+  it('renders radio input with error state as alert when checked', () => {
+    const { getByTestId } = render(<Radio error={true} label={label} name={StringValue} value={StringValue} />);
+    const radioInputElement = getByTestId('DesignSystem-Radio-Input');
+    fireEvent.change(radioInputElement, { target: { checked: true } });
+    expect(radioInputElement).toBeChecked();
+    expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveClass('Radio-errorWrapper');
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveStyle(`border-color: var(--alert)`);
+  });
+
+  it('renders radio input with error state as alert-dark on hover when checked', () => {
+    const { getByTestId } = render(<Radio error={true} label={label} name={StringValue} value={StringValue} />);
+
+    const radioInputElement = getByTestId('DesignSystem-Radio-Input');
+    fireEvent.change(radioInputElement, { target: { checked: true } });
+    expect(radioInputElement).toBeChecked();
+
+    const radioElement = getByTestId('DesignSystem-Radio-OuterWrapper');
+    fireEvent.mouseEnter(radioElement);
+    expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveClass('Radio-errorWrapper');
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveStyle(`border-color: var(--alert-dark)`);
+  });
+
+  it('renders radio input with error state as alert-darker on active when checked', () => {
+    const { getByTestId } = render(<Radio error={true} label={label} name={StringValue} value={StringValue} />);
+
+    const radioInputElement = getByTestId('DesignSystem-Radio-Input');
+    fireEvent.change(radioInputElement, { target: { checked: true } });
+    expect(radioInputElement).toBeChecked();
+
+    const radioElement = getByTestId('DesignSystem-Radio-OuterWrapper');
+    fireEvent.pointerDown(radioElement);
+    expect(getByTestId('DesignSystem-Radio')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-OuterWrapper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveClass('Radio-errorWrapper');
+    expect(getByTestId('DesignSystem-Radio-wrapper')).toHaveStyle(`border-color: var(--alert-darker)`);
+  });
+
   it('renders children with label prop', () => {
     const { getByTestId } = render(<Radio label={label} name={StringValue} value={StringValue} />);
     expect(getByTestId('DesignSystem-Radio-Input')).toBeInTheDocument();

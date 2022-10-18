@@ -9,12 +9,12 @@ exports[`Horizontal Navigation component
       class="HorizontalNav"
     >
       <div
-        class="HorizontalNav-menu HorizontalNav-menu--active"
+        class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate"
         data-test="DesignSystem-HorizontalNav"
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--primaryDark mr-3"
+          class="material-icons material-icons-round Icon Icon--primaryDark mr-3 HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -22,37 +22,37 @@ exports[`Horizontal Navigation component
           events_round
         </i>
         <span
-          class="Text Text--regular color-primary-dark HorizontalNav-menuText"
+          class="Text Text--regular color-primary-dark HorizontalNav-menuText HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #1
         </span>
       </div>
       <div
-        class="HorizontalNav-menu HorizontalNav-menu--default"
+        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
         data-test="DesignSystem-HorizontalNav"
         tabindex="0"
       >
         <span
-          class="Pills Badge--secondary HorizontalNav-pills"
+          class="Pills Badge--secondary HorizontalNav-pills HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Pills"
         >
           10
         </span>
         <span
-          class="Text Text--regular color-inverse HorizontalNav-menuText"
+          class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #2
         </span>
       </div>
       <div
-        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-menu--disabled"
+        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-menu--disabled HorizontalNav-animate"
         data-test="DesignSystem-HorizontalNav"
         tabindex="0"
       >
         <span
-          class="Text Text--regular color-inverse-lightest HorizontalNav-menuText"
+          class="Text Text--regular color-inverse-lightest HorizontalNav-menuText HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #3

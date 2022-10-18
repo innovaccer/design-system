@@ -80,3 +80,4 @@ export { VerificationCodeInputProps } from './components/molecules/verificationC
 export { InlineMessageProps } from './components/organisms/inlineMessage';
 export { ChoiceListProps } from './components/organisms/choiceList';
 export { DividerProps } from './components/atoms/divider';
+export { HelpTextProps } from './components/atoms/helpText';

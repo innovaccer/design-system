@@ -38647,15 +38647,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -38716,15 +38707,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -38806,15 +38788,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -38875,15 +38848,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -38965,15 +38929,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -39034,15 +38989,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -40203,15 +40149,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -40272,15 +40209,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -40362,15 +40290,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -40431,15 +40350,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -40521,15 +40431,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -40590,15 +40491,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -41759,15 +41651,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -41828,15 +41711,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -42903,15 +42777,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -42972,15 +42837,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -44047,15 +43903,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -44116,15 +43963,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -46270,15 +46108,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -46339,15 +46168,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -47414,15 +47234,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -47483,15 +47294,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>
@@ -48558,15 +48360,6 @@ exports[`DateRangePicker component
                 </i>
               </div>
             </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
-            </div>
           </div>
         </div>
         <div
@@ -48627,15 +48420,6 @@ exports[`DateRangePicker component
                   close_round
                 </i>
               </div>
-            </div>
-            <div
-              class="Caption Caption--hidden Caption--withInput"
-              data-test="DesignSystem-Caption"
-            >
-              <span
-                class="Text Text--subtle Text--medium Text--small"
-                data-test="DesignSystem-Text"
-              />
             </div>
           </div>
         </div>

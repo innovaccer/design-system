@@ -6,7 +6,7 @@ export const all = () => {
   const appearance = 'white';
 
   return (
-    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>
+    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
       <Subheading appearance={appearance}>
         Subheading component have different varients, look for options in knobs tab.
       </Subheading>

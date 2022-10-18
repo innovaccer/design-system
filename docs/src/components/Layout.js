@@ -68,7 +68,7 @@ const MarkdownContainer = (props) => {
   const { relativePagePath, is404, pageTitle, location } = props;
 
   return (
-    <Row className="justify-content-center">
+    <Row data-test="Docs-inner--container" className="justify-content-center">
       <Column className="px-11 py-8 min-vh-100 inner-left-container" size={9}>
         {!relativePagePath.includes('components') ? <MDXPage {...props} /> : <ComponentsPage {...props} />}
       </Column>
@@ -208,7 +208,7 @@ const Layout = ({
         relativePagePath={relativePagePath}
       />
       <Header leftMenuList={leftMenuList} relativePagePath={relativePagePath} />
-      <Row style={{ height: 'calc(100vh - 48px)' }} ref={refCode}>
+      <Row data-test="Docs-Main--Row" style={{ height: 'calc(100vh - 48px)' }} ref={refCode}>
         <LeftNav
           is404Page={is404}
           relativePagePath={relativePagePath}

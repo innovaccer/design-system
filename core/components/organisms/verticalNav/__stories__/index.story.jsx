@@ -11,11 +11,13 @@ export const all = () => {
       label: 'Patient 360',
       icon: 'assignment_ind',
       link: '/patient360',
+      count: 10,
     },
     {
       name: 'care_management',
       label: 'Care Management and Resources',
       icon: 'forum',
+      count: 2,
       subMenu: [
         {
           name: 'care_management.timeline',
@@ -32,6 +34,7 @@ export const all = () => {
       label: 'Episodes',
       disabled: true,
       icon: 'airline_seat_flat_angled',
+      count: 5,
     },
     {
       name: 'risk',
@@ -59,7 +62,7 @@ export const all = () => {
       icon: 'account_circle',
     },
     {
-      name: 'manula_entry',
+      name: 'manual_entry',
       label: 'Manual Entry',
       icon: 'border_color',
     },
@@ -81,7 +84,7 @@ export const all = () => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />
     </div>
   );
@@ -94,11 +97,13 @@ const customCode = `() => {
       label: 'Patient 360',
       icon: 'assignment_ind',
       link: '/patient360',
+      count: 10,
     },
     {
       name: 'care_management',
       label: 'Care Management and Resources',
       icon: 'forum',
+      count: 2,
       subMenu: [
         {
           name: 'care_management.timeline',
@@ -116,7 +121,8 @@ const customCode = `() => {
       name: 'episodes',
       label: 'Episodes',
       disabled: true,
-      icon: 'airline_seat_flat_angled'
+      icon: 'airline_seat_flat_angled',
+      count: 5,
     },
     {
       name: 'risk',
@@ -146,7 +152,7 @@ const customCode = `() => {
       icon: 'account_circle'
     },
     {
-      name: 'manula_entry',
+      name: 'manual_entry',
       label: 'Manual Entry',
       icon: 'border_color'
     },
@@ -167,7 +173,7 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-100">
       <VerticalNav
         menus={data}
         expanded={true}

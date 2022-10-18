@@ -1,4 +1,4 @@
-const hostURL = process.env.HOST_URL || "http://localhost:8000"
+const hostURL = Cypress.env('HOST_URL') || 'http://localhost:8000';
 
 describe('Tests for search bar functionality', () => {
     it('visit docs main page', () => {

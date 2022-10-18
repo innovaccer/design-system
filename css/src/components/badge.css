@@ -28,6 +28,7 @@
 
 .Badge--secondary {
   background: var(--secondary-light);
+  color: var(--inverse);
 }
 
 .Badge--success {

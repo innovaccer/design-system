@@ -3,13 +3,7 @@ import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { VerticalNavProps } from '@/index.type';
 import { extractBaseProps, BaseProps } from '@/utils/types';
-import {
-  getTextColor,
-  getHorizontalIconAppearance,
-  getPillsAppearance,
-  isMenuActive,
-  Menu,
-} from '@/utils/navigationHelper';
+import { getTextColor, getIconAppearance, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
 
 export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
 export type Align = 'left' | 'center';
@@ -34,6 +28,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     classNames({
       ['HorizontalNav-pills']: true,
       ['HorizontalNav-pills--disabled']: disabled,
+      ['HorizontalNav-animate']: true,
     });
 
   const renderIcon = (menu: Menu, isActive: boolean) => {
@@ -54,9 +49,9 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     if (menu.icon) {
       return (
         <Icon
-          className="mr-3"
+          className="mr-3 HorizontalNav-animate"
           name={menu.icon}
-          appearance={getHorizontalIconAppearance(isActive, menu.disabled)}
+          appearance={getIconAppearance(isActive, menu.disabled)}
           data-test="DesignSystem-HorizontalNav--Icon"
         />
       );
@@ -73,6 +68,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
       'HorizontalNav-menu--default': !isActive,
       ['HorizontalNav-menu--active']: isActive,
       ['HorizontalNav-menu--disabled']: menu.disabled,
+      [`HorizontalNav-animate`]: true,
     });
 
     return (
@@ -83,7 +79,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
         <Text
           color={getTextColor(isActive, menu.disabled)}
           data-test="DesignSystem-HorizontalNav--Text"
-          className="HorizontalNav-menuText"
+          className="HorizontalNav-menuText HorizontalNav-animate"
         >
           {menu.label}
         </Text>
