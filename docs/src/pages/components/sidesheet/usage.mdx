@@ -7,17 +7,20 @@ showMobile: true
 
 Side sheets are significantly larger than the Modals and hence they can accommodate complex informations and interactions. This way a side sheet works as a sub page in itself while maintaining the context.
 
-### Structure
 
-<Preview name='components-sidesheet-all--all'/>
 
+### Sizes
+
+Basis on the sizes and the amount of content they can accommodate, side sheets are of 2 types -
+
+<br/>
 <Card shadow='none'>
   <Table
     showMenu={false}
     separator={true}
     data={[
       {
-        Property: 'Default',
+        Property: 'Regular',
         Value: '12 columns',
         Configurable: '6 columns',
       },
@@ -58,13 +61,7 @@ Side sheets are significantly larger than the Modals and hence they can accommod
 <br/>
 <br/>
 
-### Sizes
-
-Basis on the sizes and the amount of content they can accommodate, side sheets are of 2 types -
-
-<br/>
-
-#### Default
+#### Regular
 
 The default side sheet takes **6 columns** in the grid and starts at just about halfway of the width of the screen.
 
@@ -76,7 +73,45 @@ The large side sheet takes **10 columns** in the grid and starts from left side 
 
 <Preview name='components-sidesheet-large--large'/>
 
-### Properties
+### Structure
+
+<Preview name='components-sidesheet-all--all'/>
+
+
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>100%</td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Margin<br/><em>(top, right, bottom)</em></td>
+      <td>0px, 0px, 0px</td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Corner radius</td>
+      <td>0px</td>
+   </tr><tr style="vertical-align: top">
+      <td>Background color</td>
+      <td>Namak</td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Shadow</td>
+      <td>Shadow 30</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+<br/>
+<br/>
+
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -93,31 +128,6 @@ The large side sheet takes **10 columns** in the grid and starts from left side 
         </ul>
       </td>
       <td>Regular</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Height</td>
-      <td>100%</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Margin<br/><em>(top, right, bottom)</em></td>
-      <td>0px, 0px, 0px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Corner radius</td>
-      <td>0px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Background color</td>
-      <td>Namak</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Shadow</td>
-      <td>Shadow 30</td>
-      <td>-</td>
     </tr>
   </tbody>
 </table>
@@ -137,6 +147,7 @@ The large side sheet takes **10 columns** in the grid and starts from left side 
 The default side sheet covers most of the use cases but for the cases when the content is **quite complex and needs a wider area, use the large variant**.
 
 ![Default vs Large side sheet](./images/sidesheet-1.png)
+<Caption> Default vs Large side sheet </Caption>
 
 <br/>
 
@@ -147,12 +158,14 @@ The action buttons appear in the **left side of the sheet** and follows the **re
 -   If the content covers **>= 75%** of the side sheet measured vertically, then the actions appear in the bottom, i.e, margin-bottom for the footer is 0px.
 
 ![Actions appear in the bottom](./images/sidesheet-2.png)
+<Caption> Actions appear in the bottom </Caption>
 
 <br/>
 
 -   If the content covers **< 75%** of the side sheet measured vertically, then the actions appear just beneath the content.
 
 ![Actions appear just beneath the content](./images/sidesheet-3.png)
+<Caption>  </Caption>
 
 <br/>
 
@@ -163,12 +176,14 @@ Just like the modals, the dividers in the header and the footer should **ONLY** 
 -   **When content is not scrollable**
 
 ![Dividers are hidden](./images/sidesheet-4.png)
+<Caption> Dividers are hidden </Caption>
 
 <br/>
 
 -   **When content is scrollable**
 
 ![Dividers are visible](./images/sidesheet-5.png)
+<Caption> Dividers are visible </Caption>
 
 <br/>
 
