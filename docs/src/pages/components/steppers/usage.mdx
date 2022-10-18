@@ -7,41 +7,52 @@ showMobile: true
 
 Steppers are used to help users keep track of their progress in a multi-step workflow. It is recommended to break down a long process into multiple steps using steppers to help users keep track of their progress while completing a task.
 
+<Preview name='components-stepper-all--all' />
+
 <br/>
 
 ### Structure
 
 The stepper can be used at different places to serve different purposes. The stepper component is a subset of the Horizontal Navigation component with its icons fixed.
 
-<Preview name='components-stepper-all--all' />
+![Structure of stepper](./images/stepper-structure.png)
 
-### Properties
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Height (of a stepper item)</td>
+      <td>32 px</td>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Corner radius (of the active stepper item)</td>
+     <td>16 px</td>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Margin (of a stepper item)<br/><em>(top, right, bottom, left)</em></td>
+     <td>0 px, 1 px, 0 px, 1 px</td>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Spacing between stepper items</td>
+     <td>0 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+
+### Configurations
 <table style="width: 100%">
   <tbody>
     <tr>
       <th style="width:33%; text-align: left;">Property</th>
       <th style="width:33%; text-align: left;">Value(s)</th>
       <th style="width:33%; text-align: left;">Default value</th>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Height (of a stepper item)</td>
-      <td>32px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Corner radius (of the active stepper item)</td>
-      <td>16px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Margin (of a stepper item)<br/><em>(top, right, bottom, left)</em></td>
-      <td>0px, 1px, 0px, 1px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Spacing between stepper items</td>
-      <td>0px</td>
-      <td>-</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Leading icon</td>
@@ -51,7 +62,7 @@ The stepper can be used at different places to serve different purposes. The ste
             <li>radio_button_unchecked</li>
         </ul>
       </td>
-      <td>-</td>
+      <td>radio_button_unchecked</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Label</td>
@@ -85,6 +96,7 @@ Users cannot visit any upcoming steps however they can visit any previous steps 
 Steppers are commonly used in page headers. Any action which is used collectively for the whole process e.g. Finish Later etc. should be accommodated in the header while the step related actions such as Next, Skip, etc. should be accommodated in the body.
 
 ![Steppers in level 1 page header](./images/stepper-2.png)
+<Caption> Steppers in level 1 page header </Caption>
 
 <br/>
 <br/>
@@ -94,6 +106,7 @@ Steppers are commonly used in page headers. Any action which is used collectivel
 Steppers can also be used separately without the page header. The actions will be at the bottom of the layout. This variant is commonly used for onboarding.
 
 ![Standalone steppers](./images/stepper-3.png)
+<Caption> Standalone steppers </Caption>
 
 <br/>
 <br/>
@@ -149,6 +162,8 @@ The actions specific to any step will be located at the bottom of the content of
 <br/>
 
 ![Actions placement](./images/stepper-4.png)
+<Caption> Actions placement </Caption>
+
 
 <br/>
 <br/>
@@ -160,6 +175,7 @@ A stepper can also have a skippable/optional step. Users can skip the step for t
 In case of an optional step, an additional step-specific action "Skip" gets added on the left of the primary action. 
 
 ![Skipping a step](./images/stepper-5.png)
+<Caption> Skipping a step </Caption>
 
 <br/>
 <br/>
@@ -169,6 +185,7 @@ In case of an optional step, an additional step-specific action "Skip" gets adde
 In case the last step is supposed to be optional, relabel the Skip button to **Skip** and **Finish**.
 
 ![When the last step of the row is skippable](./images/stepper-6.png)
+<Caption> When the last step of the row is skippable </Caption>
 
 <br/>
 <br/>
