@@ -16,7 +16,7 @@ export const format = () => {
       className="mb-3"
       sampleFileLink={
         <Link
-          href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
+          href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
           download="Test.pdf"
           target="_blank"
         >
@@ -41,7 +41,7 @@ const customCode = `() => {
       className="mb-3"
       sampleFileLink={(
         <Link
-          href="http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf"
+          href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
           download="Test.pdf"
           target="_blank"
         >
