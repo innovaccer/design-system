@@ -37,6 +37,10 @@ export const Dropzone = (props: DropzoneProps) => {
 
   const baseProps = extractBaseProps(props);
 
+  const [delayDefault, setDelayDefault] = React.useState(false);
+  const [delayActive, setDelayActive] = React.useState(false);
+  const initialRender = React.useRef(true);
+
   const DropzoneClass = classNames(
     {
       ['Dropzone']: true,
@@ -44,6 +48,10 @@ export const Dropzone = (props: DropzoneProps) => {
       ['Dropzone--disabled']: disabled,
       ['Dropzone--active']: isDragActive,
       ['Dropzone--error']: isDragReject,
+      ['AnimationEnter--default']: !delayDefault && !isDragActive,
+      ['AnimationEnter--active']: !delayActive && isDragActive,
+      ['AnimationExit--default']: delayDefault,
+      ['AnimationExit--active']: delayActive,
     },
     className
   );
@@ -53,9 +61,40 @@ export const Dropzone = (props: DropzoneProps) => {
     [`DropzoneWrapper--${type}`]: true,
   });
 
+  React.useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false;
+    } else {
+      if (isDragActive) {
+        if (isDragReject) {
+          setDelayDefault(false);
+          setDelayActive(false);
+        } else {
+          setDelayDefault(true);
+        }
+      } else {
+        if (!initialRender.current) {
+          setDelayActive(true);
+        }
+      }
+    }
+  }, [isDragActive]);
+
+  const handleAnimationEnd = () => {
+    if (delayDefault) {
+      setDelayDefault(false);
+    }
+    if (delayActive) {
+      setDelayActive(false);
+    }
+  };
+
   const renderDropzone = () => {
     if (isDragReject) return <DropzoneError type={type} error={fileErrorMessages[fileError]} />;
-    if (isDragActive) return <DropzoneActive type={type} />;
+
+    if (!delayDefault) {
+      if (isDragActive || delayActive) return <DropzoneActive type={type} />;
+    }
 
     const buttonAccessibilityProps = useAccessibilityProps({
       onClick: open,
@@ -91,7 +130,13 @@ export const Dropzone = (props: DropzoneProps) => {
   };
 
   return (
-    <div {...getRootProps()} {...baseProps} className={DropzoneClass} data-test="DesignSystem-Dropzone">
+    <div
+      onAnimationEnd={handleAnimationEnd}
+      {...getRootProps()}
+      {...baseProps}
+      className={DropzoneClass}
+      data-test="DesignSystem-Dropzone"
+    >
       {renderDropzone()}
     </div>
   );

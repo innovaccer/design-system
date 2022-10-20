@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--white);
+  background-color: var(--white);
   border-radius: var(--spacing-m);
   width: 100%;
   background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
@@ -12,10 +12,13 @@
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
   background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
+  box-sizing: border-box;
+  pointer-events: auto;
 }
 
 .Dropzone--active {
-  background: var(--primary-lightest);
+  background-color: var(--primary-lightest);
   background-image: linear-gradient(to right, var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(to right, var(--primary) 50%, rgba(255, 255, 255, 0) 0%),
@@ -23,6 +26,79 @@
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
   background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.AnimationEnter--default {
+  pointer-events: none;
+  animation-delay: var(--duration--fast-02);
+  animation: Dropzone-enter--default var(--duration--moderate-01) var(--entrance-productive-curve);
+}
+
+.AnimationEnter--active {
+  pointer-events: none;
+  animation-delay: var(--duration--fast-02);
+  animation: Dropzone-enter--active var(--duration--moderate-01) var(--entrance-productive-curve);
+}
+
+.AnimationExit--default {
+  pointer-events: none;
+  animation: Dropzone-exit--default var(--duration--moderate-01) var(--exit-productive-curve);
+}
+
+.AnimationExit--active {
+  pointer-events: none;
+  animation: Dropzone-exit--active var(--duration--moderate-01) var(--exit-productive-curve);
+}
+
+@keyframes Dropzone-enter--default {
+  from {
+    opacity: 0;
+    padding-top: 8px;
+  }
+
+  to {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
+
+@keyframes Dropzone-enter--active {
+  from {
+    opacity: 0;
+    padding-top: 8px;
+  }
+
+  to {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
+
+@keyframes Dropzone-exit--default {
+  from {
+    opacity: 1;
+    padding-top: 0;
+  }
+
+  to {
+    opacity: 0;
+    padding-top: 8px;
+  }
+}
+
+@keyframes Dropzone-exit--active {
+  from {
+    opacity: 1;
+    padding-top: 0;
+  }
+
+  to {
+    opacity: 0;
+    padding-top: 8px;
+  }
 }
 
 .Dropzone--error {
