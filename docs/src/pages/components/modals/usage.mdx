@@ -67,7 +67,7 @@ Standard modal comes in **3 sizes** basis on the breakpoints -
             <td>4 columns</td>
         </tr>
         <tr>
-            <td>Medium</td>
+            <td>Large</td>
             <td>10 columns</td>
             <td>8 columns</td>
             <td>6 columns</td>
@@ -143,7 +143,72 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
 <br/>
 <br/>
 
-### Properties
+### Structure
+<br/>
+<br/>
+
+##### Standard modal
+
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Minimum height</td>
+      <td>200px</td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Minimum margin<br/><em>(top,bottom)</em></td>
+      <td>64px, 64px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Corner radius</td>
+      <td>8px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Padding<br/><em>(top,right,bottom,left)</em></td>
+      <td>16px, 24px, 24px, 24px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Background color</td>
+      <td>Namak</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Shadow</td>
+      <td>Shadow 30</td>
+    </tr>
+ </tbody>
+</table>
+<br/>
+
+
+##### Full-screen modal
+
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Padding-top</td>
+      <td>64px</td>
+   </tr>
+   <tr>
+      <td>Background color</td>
+      <td>Namak</td>
+    </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
 #### Standard modal
 <table style="width: 100%">
   <tbody>
@@ -156,42 +221,12 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
       <td>Size</td>
       <td>
           <ul>
+              <li>Small</li>
               <li>Regular</li>
-              <li>Tiny</li>
               <li>Large</li>
           </ul>
       </td>
       <td>Regular</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Minimum height</td>
-      <td>200px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Minimum margin<br/><em>(top,bottom)</em></td>
-      <td>64px, 64px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Corner radius</td>
-      <td>8px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Padding<br/><em>(top,right,bottom,left)</em></td>
-      <td>16px, 24px, 24px, 24px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Background color</td>
-      <td>Namak</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Shadow</td>
-      <td>Shadow 30</td>
-      <td>-</td>
     </tr>
   </tbody>
 </table>
@@ -215,16 +250,6 @@ The content of a full screen modal comes in **2 sizes** basis on the breakpoints
       </td>
       <td>Regular</td>
     </tr>
-    <tr style="vertical-align: top">
-      <td>Padding-top</td>
-      <td>64px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Background color</td>
-      <td>Namak</td>
-      <td>-</td>
-    </tr>
   </tbody>
 </table>
 <br/>
@@ -240,6 +265,7 @@ Modals are vertically center-aligned. They scale vertically in case the content 
 <br/>
 
 ![Positioning and scaling of modals](./images/modals-6.png)
+<Caption> Positioning and scaling of modals </Caption>
 <br/>
 <br/>
 
@@ -247,6 +273,8 @@ Modals are vertically center-aligned. They scale vertically in case the content 
 By default, the **secondary** action should be in its focused state when the modal appears. This helps to avoid the trigger of primary action (especially the delete action) by accidental pressing of Enter key.
 
 ![Default focus on secondary action](./images/modals-7.png)
+<Caption> Default focus on secondary action </Caption>
+
 <br/>
 <br/>
 
@@ -254,6 +282,7 @@ By default, the **secondary** action should be in its focused state when the mod
 The primary and secondary actions appear at the bottom right in a modal. However, the order in which they appear has to be the same regardless of the nature of the primary action (create, delete, etc.). Listing primary actions last improves the flow, because the modal then [“ends” with its conclusion](https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/). Also, keeping the order the same makes the position of actions predictable.
 
 ![Order of the action buttons](./images/modals-8.png)
+
 <br/>
 <br/>
 
@@ -265,6 +294,8 @@ For example, this can be helpful when you want -
 2. To show a critical error, etc.
 
 ![Message component in modals](./images/modals-2.png)
+<Caption> Message component in modals </Caption>
+
 <br/>
 <br/>
 
@@ -272,9 +303,12 @@ For example, this can be helpful when you want -
 The dividers in the header and the footer should **only** be shown when the content is scrollable.
 
 ![Without dividers](./images/modals-9.png)
+
 <br/>
 
 ![With dividers](./images/modals-10.png)
+<Caption> With dividers </Caption>
+
 <br/>
 <br/>
 
@@ -298,6 +332,8 @@ Forms with simple inputs can be used inside a modal. For more complex forms and 
 Steppers can also be used in a modal as long as the content is concise and short. The rule of thumb is to use side sheets when the content is large and complex.
 
 ![Steppers in a modal](./images/modals-11.png)
+<Caption> Steppers in a modal </Caption>
+
 <br/>
 <br/>
 
@@ -316,6 +352,8 @@ To maintain simplicity, full screen modals are only supposed to have 1 step. But
 Just like the default modals, the action buttons appear at the bottom right and follows the same order rules.
 
 ![Action buttons in a full screen modal](./images/modals-12.jpg)
+<Caption> Action buttons in a full screen modal </Caption>
+
 <br/>
 <br/>
 
