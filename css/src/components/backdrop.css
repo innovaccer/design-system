@@ -39,9 +39,9 @@
 }
 
 .Backdrop-animation--open {
-  animation: backdrop-open 120ms cubic-bezier(0, 0, 0.3, 1);
+  animation: backdrop-open var(--duration--fast-02) var(--entrance-expressive-curve);
 }
 
 .Backdrop-animation--close {
-  animation: backdrop-close 120ms cubic-bezier(0.4, 0.14, 1, 1);
+  animation: backdrop-close var(--duration--fast-02) var(--exit-expressive-curve);
 }
