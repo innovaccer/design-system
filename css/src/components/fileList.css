@@ -65,7 +65,7 @@
   color: var(--warning);
 }
 .FileIcon--animate {
-  animation: fadeIn 160ms cubic-bezier(0, 0, 0.38, 0.9);
+  animation: fadeIn var(--duration--moderate-01) var(--entrance-productive-curve);
 }
 
 @keyframes fadeIn {
