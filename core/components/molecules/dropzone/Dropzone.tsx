@@ -44,6 +44,8 @@ export const Dropzone = (props: DropzoneProps) => {
       ['Dropzone--disabled']: disabled,
       ['Dropzone--active']: isDragActive,
       ['Dropzone--error']: isDragReject,
+      ['DropzoneAnimation--default']: !isDragActive,
+      ['DropzoneAnimation--active']: isDragActive && !isDragReject,
     },
     className
   );
@@ -55,6 +57,7 @@ export const Dropzone = (props: DropzoneProps) => {
 
   const renderDropzone = () => {
     if (isDragReject) return <DropzoneError type={type} error={fileErrorMessages[fileError]} />;
+
     if (isDragActive) return <DropzoneActive type={type} />;
 
     const buttonAccessibilityProps = useAccessibilityProps({
