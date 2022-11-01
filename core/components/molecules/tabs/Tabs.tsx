@@ -129,12 +129,6 @@ export const Tabs = (props: TabsProps) => {
       ['Tab-pills--disabled']: disabled,
     });
 
-  const iconClass = (disabled?: boolean) =>
-    classNames({
-      [`DismissibleTab-icon--right`]: true,
-      ['cursor-pointer']: !disabled,
-    });
-
   let activeTab;
   let activeTabClass;
   if ('props' in tabs[activeIndex]) {
@@ -186,9 +180,20 @@ export const Tabs = (props: TabsProps) => {
       );
     }
 
+    const iconClass = classNames({
+      ['Tab-selected']: !disabled && activeIndex === index,
+    });
+
     if (icon) {
       const iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
-      return <Icon data-test="DesignSystem-Tabs--Icon" className="mr-4" name={icon} appearance={iconAppearance} />;
+      return (
+        <Icon
+          data-test="DesignSystem-Tabs--Icon"
+          className={`mr-4 ${iconClass}`}
+          name={icon}
+          appearance={iconAppearance}
+        />
+      );
     }
     return null;
   };
@@ -196,6 +201,14 @@ export const Tabs = (props: TabsProps) => {
   const renderDismissIcon = (tab: Tab, index: number, onDismiss: noop) => {
     const { disabled, label } = tab as TabConfig;
     const iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
+
+    const dismissIconClass = (disabled?: boolean) =>
+      classNames({
+        [`DismissibleTab-icon--right`]: true,
+        ['cursor-pointer']: !disabled,
+        ['Tab-selected']: !disabled && activeIndex === index,
+      });
+
     const tabInfo = { label: label, activeIndex: activeIndex, currentTabIndex: index };
     const onCloseHandler = (e: React.MouseEvent) => {
       e.stopPropagation();
@@ -206,7 +219,7 @@ export const Tabs = (props: TabsProps) => {
         data-test="DesignSystem-DismissibleTabs--Icon"
         name="clear"
         appearance={iconAppearance}
-        className={iconClass(disabled)}
+        className={dismissIconClass(disabled)}
         onClick={!disabled ? onCloseHandler : () => {}}
       />
     );
@@ -218,10 +231,13 @@ export const Tabs = (props: TabsProps) => {
       return label;
     }
     const textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+    const tabTextClass = classNames({
+      ['Tab-selected']: !disabled && activeIndex === index,
+    });
     return (
       <>
         {renderInfo(tab, index)}
-        <Text data-test="DesignSystem-Tabs--Text" appearance={textAppearance}>
+        <Text data-test="DesignSystem-Tabs--Text" appearance={textAppearance} className={tabTextClass}>
           {label}
         </Text>
         {isDismissible && renderDismissIcon(tab, index, onDismiss)}
@@ -237,6 +253,7 @@ export const Tabs = (props: TabsProps) => {
       ['Tab']: true,
       ['Tab--disabled']: disabled,
       ['Tab--active']: !disabled && activeIndex === index,
+      ['Tab-selected']: !disabled && activeIndex === index,
     });
 
     return (
