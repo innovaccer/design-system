@@ -116,6 +116,7 @@ const PreviewWithPropTable = ({ name, embed }) => {
   if (error) {
     return (
       <MDSComponents.Message
+        data-test="Docs-propTable-error"
         className="my-7"
         appearance="alert"
         title={error}
