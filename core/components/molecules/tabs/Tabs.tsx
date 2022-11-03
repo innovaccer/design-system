@@ -172,7 +172,7 @@ export const Tabs = (props: TabsProps) => {
       return (
         <Pills
           data-test="DesignSystem-Tabs--Pills"
-          className={getPillsClass(disabled)}
+          className={`${getPillsClass(disabled)} ${showTab === index ? 'TabsAnimate--active' : 'TabsAnimate'}`}
           appearance={activeIndex === index ? 'primary' : 'secondary'}
         >
           {count}
@@ -254,6 +254,7 @@ export const Tabs = (props: TabsProps) => {
       ['Tab--disabled']: disabled,
       ['Tab--active']: !disabled && activeIndex === index,
       ['Tab-selected']: !disabled && activeIndex === index,
+      ['TabAnimate']: true,
     });
 
     return (
@@ -272,6 +273,24 @@ export const Tabs = (props: TabsProps) => {
       </div>
     );
   });
+
+  const [showTab, setShowTab] = React.useState(activeIndex);
+  const [contentAnimation, setContentAnimation] = React.useState('slideIn-left');
+  // const [tabAnimation, setTabAnimation] = React.useState('TabsAnimate--active');
+
+  const handleAnimationEnd = () => {
+    if (activeIndex !== showTab) {
+      setContentAnimation('slideIn-left');
+      setShowTab(activeIndex);
+    }
+  };
+
+  React.useEffect(() => {
+    if (activeIndex !== showTab) {
+      setContentAnimation('slideOut-left');
+    }
+  }, [activeIndex]);
+
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
       <div className={headerClass}>
@@ -288,7 +307,9 @@ export const Tabs = (props: TabsProps) => {
         </div>
       ) : children && !(tabs[activeIndex] as any).props?.disabled ? (
         <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
-          {tabs[activeIndex]}
+          <div onAnimationEnd={handleAnimationEnd} className={`w-100 position-relative ${contentAnimation}`}>
+            {tabs[showTab]}
+          </div>
         </div>
       ) : null}
     </div>

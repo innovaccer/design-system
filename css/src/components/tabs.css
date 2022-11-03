@@ -28,6 +28,7 @@
   margin-right: var(--spacing-l);
   margin-bottom: calc(-1 * var(--spacing-xs));
   text-align: center;
+  transition: all var(--duration--fast-02) var(--standard-productive-curve);
 }
 
 .Tab:last-child {
@@ -57,6 +58,7 @@
 
 .Tab--active::after {
   background-color: var(--primary);
+  transition: all var(--duration--slow-01) var(--standard-expressive-curve) var(--duration--fast-01);
 }
 
 .Tab:focus {
@@ -66,7 +68,12 @@
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
-.Tab--active:hover .Tab-selected {
+.Tab-selected {
+  color: var(--primary-dark);
+  transition: all var(--duration--fast-02) var(--standard-productive-curve) var(--duration--fast-02);
+}
+
+.Tab--active:hover {
   color: var(--primary-dark);
 }
 
@@ -129,4 +136,16 @@
 .DismissibleTab-icon--right {
   padding-left: var(--spacing-m);
   padding-top: var(--spacing-s);
+}
+
+.TabsAnimate {
+  transition-duration: var(--duration--fast-01);
+  transition-delay: var(--duration--slow-01);
+  transition-timing-function: var(--standard-productive-curve);
+}
+
+.TabsAnimate--active {
+  transition-duration: var(--duration--fast-02);
+  transition-delay: var(--duration--fast-02);
+  transition-timing-function: var(--standard-productive-curve);
 }
