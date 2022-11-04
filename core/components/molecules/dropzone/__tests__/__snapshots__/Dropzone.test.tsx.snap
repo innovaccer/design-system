@@ -5,7 +5,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--compressed"
+    class="Dropzone Dropzone--compressed DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
@@ -67,7 +67,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard"
+    class="Dropzone Dropzone--standard DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
@@ -129,7 +129,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--tight"
+    class="Dropzone Dropzone--tight DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <div
@@ -182,7 +182,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--compressed Dropzone--disabled"
+    class="Dropzone Dropzone--compressed Dropzone--disabled DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
@@ -244,7 +244,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard Dropzone--disabled"
+    class="Dropzone Dropzone--standard Dropzone--disabled DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
@@ -306,7 +306,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--tight Dropzone--disabled"
+    class="Dropzone Dropzone--tight Dropzone--disabled DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <div
@@ -359,7 +359,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard"
+    class="Dropzone Dropzone--standard DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
@@ -408,7 +408,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard"
+    class="Dropzone Dropzone--standard DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
@@ -458,7 +458,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard"
+    class="Dropzone Dropzone--standard DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
@@ -507,7 +507,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard"
+    class="Dropzone Dropzone--standard DropzoneAnimation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
