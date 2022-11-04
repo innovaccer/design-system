@@ -102,6 +102,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     <div className={RadioClass} data-test="DesignSystem-Radio">
       <div className={RadioOuterWrapper} data-test="DesignSystem-Radio-OuterWrapper">
         <input
+          tabIndex={-1}
           {...rest}
           type="radio"
           disabled={disabled}

@@ -8,6 +8,7 @@
   user-select: none;
   padding-top: var(--spacing-s);
   padding-bottom: var(--spacing-s);
+  width: fit-content;
 }
 
 .Radio-outerWrapper {
@@ -76,7 +77,7 @@
 }
 
 .Radio:hover .Radio-wrapper {
-  border: var(--spacing-xs) solid var(--inverse-lightest);
+  border: var(--spacing-xs) solid var(--secondary-dark);
   background-color: var(--secondary-lighter);
 }
 
@@ -158,12 +159,16 @@
   border: var(--spacing-xs) solid var(--primary);
 }
 
-.Radio-outerWrapper:hover .Radio-input:checked ~ .Radio-wrapper {
+.Radio:hover .Radio-input:checked ~ .Radio-wrapper {
   border: var(--spacing-xs) solid var(--primary-dark);
 }
 
 .Radio:hover .Radio-input:checked ~ .Radio-wrapper:after {
   background: var(--primary-dark);
+}
+
+.Radio:hover .Radio-input:checked ~ .Radio-wrapper--tiny:after {
+  border: var(--spacing-xs) solid var(--primary-dark);
 }
 
 .Radio:active .Radio-input:checked ~ .Radio-wrapper {
@@ -181,8 +186,12 @@
   border: var(--spacing-xs) solid var(--alert-darker);
 }
 
-.Radio-outerWrapper:active .Radio-input:checked ~ .Radio-wrapper:after {
+.Radio:active .Radio-input:checked ~ .Radio-wrapper:after {
   background: var(--primary-darker);
+}
+
+.Radio:active .Radio-input:checked ~ .Radio-wrapper--tiny:after {
+  border: var(--spacing-xs) solid var(--primary-darker);
 }
 
 .Radio--disabled .Radio-input:checked ~ .Radio-wrapper {

@@ -18,6 +18,7 @@ exports[`Radio component
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
+          tabindex="-1"
           type="radio"
           value="Options"
         />
@@ -73,6 +74,7 @@ exports[`Radio component
           disabled=""
           id="Options-Radio-Test-uid"
           name="Options"
+          tabindex="-1"
           type="radio"
           value="Options"
         />
@@ -127,6 +129,7 @@ exports[`Radio component
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
+          tabindex="-1"
           type="radio"
           value="Options"
         />
@@ -181,6 +184,7 @@ exports[`Radio component
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
+          tabindex="-1"
           type="radio"
           value="Options"
         />
