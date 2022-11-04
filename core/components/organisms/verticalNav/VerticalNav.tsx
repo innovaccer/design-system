@@ -74,23 +74,38 @@ export const VerticalNav = (props: VerticalNavProps) => {
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
   const baseProps = extractBaseProps(props);
 
+  const [showClosingAnimation, setShowClosingAnimation] = React.useState(false);
+
   React.useEffect(() => {
     if (props.active) {
       const currMenu = getMenu(menus, props.active);
+      console.log('------currMenu function-->', currMenu);
       if (currMenu) updateMenuState(currMenu, true);
     }
   }, [props.active]);
 
   const updateMenuState = (menu: ActiveMenu, val?: boolean) => {
     const currMenu = getMenu(menus, menu);
+    console.log('currMenu', currMenu);
+    console.log('menu,val', menu, val);
     if (currMenu) {
       const nameSplit = currMenu.name.split('.');
+      console.log('nameSplit', nameSplit);
       if (nameSplit.length > 1 || currMenu.subMenu) {
         const name = nameSplit[0];
+        console.log('name', [name]);
+        console.log('val', val);
         if (autoCollapse) {
           setMenuState({ [name]: val || !menuState[name] });
+          console.log('menuState', menuState);
+          // if (!showClosingAnimation) {
+          //   setTimeout(() => {
+          //     setMenuState({ [name]: val || !menuState[name] });
+          //   }, 240);
+          // }
         } else {
           const menuData = { ...menuState };
+          console.log('menuData', menuData);
           menuData[name] = val !== undefined ? val : !menuData[name];
           setMenuState(menuData);
         }
@@ -102,16 +117,53 @@ export const VerticalNav = (props: VerticalNavProps) => {
     }
   };
 
+  const onClickAnimation = (menu: ActiveMenu) => {
+    // if (expanded && showClosingAnimation) {
+    //   const currMenu = getMenu(menus, menu);
+    //   if (currMenu) {
+    //     const nameSplit = currMenu.name.split('.');
+    //     if (nameSplit.length > 1 || currMenu.subMenu) {
+    //       const name = nameSplit[0];
+    //       if (autoCollapse) {
+    //         setMenuState({ [name]: val || !menuState[name] });
+    //       }
+    //     }
+    //   }
+    // }
+    if (!expanded && !showClosingAnimation && onClick) {
+      updateMenuState && updateMenuState(menu);
+    }
+  };
+
+  const onClose = (menu: Menu) => {
+    console.log('onclick', onClick);
+    if (expanded && showClosingAnimation) {
+      updateMenuState && updateMenuState(menu);
+    }
+    // else if (!expanded && !showClosingAnimation) {
+    //   updateMenuState && updateMenuState(menu);
+    // }
+  };
+
   const onClickHandler = (menu: Menu) => {
     if (menu.subMenu) {
       if (!expanded) {
         if (onClick) onClick(menu.subMenu[0]);
       } else {
-        updateMenuState(menu);
+        if (customItemRenderer) updateMenuState(menu);
+        else setShowClosingAnimation(!showClosingAnimation);
       }
     } else {
       if (onClick) onClick(menu);
     }
+  };
+
+  const getAnimationClass = () => {
+    if (!customItemRenderer && expanded && showClosingAnimation)
+      return `menuItem-close var(--duration--moderate-02) var(--standard-productive-curve)`;
+    else if (!customItemRenderer && expanded && !showClosingAnimation)
+      return `menuItem-open var(--duration--moderate-02) var(--standard-productive-curve)`;
+    return '';
   };
 
   const renderList = () => {
@@ -125,6 +177,39 @@ export const VerticalNav = (props: VerticalNavProps) => {
         ['VerticalNav-section']: true,
         ['VerticalNav-section--border']: index !== 0,
       });
+
+      const getSubMenuHeight = () => {
+        const length = menu.subMenu && menu.subMenu.length;
+        const menuElement = document.getElementById('vertical-nav-menu');
+        // const menuElement = document.querySelector('[data-id="vertical-nav-menu"]');
+        const itemHeight = menuElement?.getBoundingClientRect().height;
+        const subMenuHeight = length && itemHeight && length * itemHeight;
+        // console.log('-------------', subMenuHeight);
+        return subMenuHeight;
+      };
+
+      const menuItemAnimation = `
+        @keyframes menuItem-open {
+          from { 
+            max-height: 0;
+          }
+          to {
+            max-height: ${getSubMenuHeight()}px;
+          }
+        }
+        @keyframes menuItem-close {
+          from {
+            max-height: ${getSubMenuHeight()}px;
+          }
+          to {
+            max-height: 0;
+          }
+        }
+        `;
+
+      const styles: React.CSSProperties = {
+        animation: getAnimationClass(),
+      };
 
       return (
         <React.Fragment key={index}>
@@ -148,6 +233,9 @@ export const VerticalNav = (props: VerticalNavProps) => {
                 isChildrenVisible={isChildrenVisible}
                 onClick={onClickHandler}
                 customItemRenderer={customItemRenderer}
+                onClose={onClose}
+                showClosingAnimation={showClosingAnimation}
+                onClickAnimation={onClickAnimation}
               />
             </Tooltip>
           ) : (
@@ -162,13 +250,33 @@ export const VerticalNav = (props: VerticalNavProps) => {
               isChildrenVisible={isChildrenVisible}
               onClick={onClickHandler}
               customItemRenderer={customItemRenderer}
+              onClose={onClose}
+              showClosingAnimation={showClosingAnimation}
+              onClickAnimation={onClickAnimation}
             />
           )}
-          {menuState[menu.name] &&
-            menu.subMenu &&
-            menu.subMenu.map((subMenu, id) => {
-              return showTooltip ? (
-                <Tooltip tooltip={subMenu.label} position="right">
+          {menuState[menu.name] && menu.subMenu && (
+            <div style={styles}>
+              <style>{menuItemAnimation}</style>
+              {menu.subMenu.map((subMenu, id) => {
+                return showTooltip ? (
+                  <Tooltip tooltip={subMenu.label} position="right">
+                    <MenuItem
+                      key={id}
+                      menu={subMenu}
+                      expanded={expanded}
+                      hasSubmenu={false}
+                      isChildren={true}
+                      rounded={rounded}
+                      onClick={onClickHandler}
+                      isActive={isMenuActive(menus, subMenu, active)}
+                      customItemRenderer={customItemRenderer}
+                      onClose={onClose}
+                      showClosingAnimation={showClosingAnimation}
+                      onClickAnimation={onClickAnimation}
+                    />
+                  </Tooltip>
+                ) : (
                   <MenuItem
                     key={id}
                     menu={subMenu}
@@ -179,22 +287,14 @@ export const VerticalNav = (props: VerticalNavProps) => {
                     onClick={onClickHandler}
                     isActive={isMenuActive(menus, subMenu, active)}
                     customItemRenderer={customItemRenderer}
+                    onClose={onClose}
+                    showClosingAnimation={showClosingAnimation}
+                    onClickAnimation={onClickAnimation}
                   />
-                </Tooltip>
-              ) : (
-                <MenuItem
-                  key={id}
-                  menu={subMenu}
-                  expanded={expanded}
-                  hasSubmenu={false}
-                  isChildren={true}
-                  rounded={rounded}
-                  onClick={onClickHandler}
-                  isActive={isMenuActive(menus, subMenu, active)}
-                  customItemRenderer={customItemRenderer}
-                />
-              );
-            })}
+                );
+              })}
+            </div>
+          )}
         </React.Fragment>
       );
     });

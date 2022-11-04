@@ -14,6 +14,10 @@ export interface MenuItemProps extends BaseProps {
   isChildrenVisible?: boolean;
   onClick?: (menu: Menu) => void;
   customItemRenderer?: (props: MenuItemProps) => JSX.Element;
+  showClosingAnimation?: boolean;
+  onClose?: (menu: Menu) => void;
+  onClickAnimation?: (menu: Menu, val?: boolean) => void;
+  // menuState?: (menu: Menu);
 }
 interface MenuPillsProps {
   isActive: boolean;
@@ -25,29 +29,44 @@ interface MenuLabelProps {
   label: string;
   disabled?: boolean;
   isActive: boolean;
+  expanded?: boolean;
 }
 
 interface MenuIconProps {
   isChildrenVisible?: boolean;
   isActive?: boolean;
   disabled?: boolean;
+  showClosingAnimation?: boolean;
 }
 
 const MenuLabel = (props: MenuLabelProps) => {
-  const { label, disabled, isActive } = props;
+  const { label, expanded, disabled, isActive } = props;
+
+  const LabelClass = classNames({
+    ['MenuItem-animate']: true,
+    ['MenuItem-label--collapsed']: expanded,
+    ['MenuItem-label--expanded']: !expanded,
+  });
+
   return (
-    <Text data-test="DesignSystem-VerticalNav--Text" color={getTextColor(isActive, disabled)}>
+    <Text data-test="DesignSystem-VerticalNav--Text" color={getTextColor(isActive, disabled)} className={LabelClass}>
       {label}
     </Text>
   );
 };
 
 const MenuIcon = (props: MenuIconProps) => {
-  const { isChildrenVisible, isActive, disabled } = props;
+  const { isChildrenVisible, isActive, disabled, showClosingAnimation } = props;
+
+  const ArrowIconClass = classNames({
+    ['Arrow-Icon--up']: isChildrenVisible && !showClosingAnimation,
+    ['Arrow-Icon--down']: isChildrenVisible && showClosingAnimation,
+  });
+
   return (
     <Icon
-      className="mx-4"
-      name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
+      className={`mx-4 ${ArrowIconClass}`}
+      name={'keyboard_arrow_down'}
       appearance={isActive ? 'primary_dark' : disabled ? 'disabled' : 'subtle'}
     />
   );
@@ -59,6 +78,7 @@ const MenuPills = (props: MenuPillsProps) => {
   const PillsClass = classNames({
     ['MenuItem-count']: true,
     ['MenuItem-count--disabled']: disabled,
+    ['MenuItem-animate']: true,
   });
 
   return (
@@ -74,12 +94,36 @@ const MenuPills = (props: MenuPillsProps) => {
 };
 
 export const MenuItem = (props: MenuItemProps) => {
-  const { menu, isActive, expanded, rounded, hasSubmenu, isChildren, isChildrenVisible, onClick, customItemRenderer } =
-    props;
+  const {
+    menu,
+    isActive,
+    expanded,
+    rounded,
+    hasSubmenu,
+    isChildren,
+    isChildrenVisible,
+    onClick,
+    customItemRenderer,
+    showClosingAnimation,
+    onClose,
+    onClickAnimation,
+  } = props;
 
+  // const [oldMenu, setOldMenu] = React.useState<Record<string, boolean>>({});
+  // const [newMenu, setNewMenu] = React.useState<Record<string, boolean>>({});
   const onClickHandler = (ev: { preventDefault: () => void }) => {
     ev.preventDefault();
     if (onClick) onClick(menu);
+    console.log('-----------> menu', menu);
+    onClose && onClose(menu);
+    // newMenu = menu;
+    // onClickAnimation && onClickAnimation(menu);
+  };
+
+  const handleAnimationEnd = (menu: Menu) => {
+    console.log('=========> menu', menu);
+    // onClose && onClose(menu);
+    onClickAnimation && onClickAnimation(menu);
   };
 
   const baseProps = {
@@ -87,6 +131,7 @@ export const MenuItem = (props: MenuItemProps) => {
     href: menu.link,
     tabIndex: 0,
     ...extractBaseProps(props),
+    onAnimationEnd: () => handleAnimationEnd(menu),
   };
 
   const ItemClass = classNames({
@@ -98,11 +143,21 @@ export const MenuItem = (props: MenuItemProps) => {
     ['MenuItem--disabled']: menu.disabled,
     ['MenuItem--subMenu']: isChildren && expanded,
     ['MenuItem--rounded']: rounded && expanded,
+    ['MenuItem-animate']: true,
+    ['Item--expand']: expanded && isChildren && !showClosingAnimation,
+    ['Item--collapse']: expanded && isChildren && showClosingAnimation,
   });
 
   const renderSubMenu = () => {
     if (hasSubmenu) {
-      return <MenuIcon isChildrenVisible={isChildrenVisible} isActive={isActive} disabled={menu.disabled} />;
+      return (
+        <MenuIcon
+          isChildrenVisible={isChildrenVisible}
+          isActive={isActive}
+          disabled={menu.disabled}
+          showClosingAnimation={showClosingAnimation}
+        />
+      );
     }
 
     if (menu.count !== undefined) {
@@ -116,7 +171,7 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const customItemProps = {
     ...props,
-    MenuIcon: () => MenuIcon({ isChildrenVisible, isActive, disabled: menu.disabled }),
+    MenuIcon: () => MenuIcon({ isChildrenVisible, isActive, disabled: menu.disabled, showClosingAnimation }),
     MenuLabel: () => MenuLabel({ label: menu.label, disabled: menu.disabled, isActive: isActive }),
     MenuPills: () =>
       menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
@@ -127,20 +182,22 @@ export const MenuItem = (props: MenuItemProps) => {
   ) : (
     // TODO(a11y)
     // eslint-disable-next-line
-    <Link componentType="a" className={ItemClass} {...baseProps}>
-      <div className="d-flex align-items-center overflow-hidden">
-        {menu.icon && (
-          <Icon
-            data-test="DesignSystem-VerticalNav--Icon"
-            className={expanded ? 'mr-4' : ''}
-            name={menu.icon}
-            appearance={getIconAppearance(isActive, menu.disabled)}
-          />
-        )}
-        {expanded && <MenuLabel label={menu.label} disabled={menu.disabled} isActive={isActive} />}
-      </div>
-      {expanded && renderSubMenu()}
-    </Link>
+    <div id="vertical-nav-menu">
+      <Link componentType="a" className={ItemClass} {...baseProps}>
+        <div className="d-flex align-items-center overflow-hidden">
+          {menu.icon && (
+            <Icon
+              data-test="DesignSystem-VerticalNav--Icon"
+              className={`MenuItem-animate ${expanded ? 'mr-4 ' : ''}`}
+              name={menu.icon}
+              appearance={getIconAppearance(isActive, menu.disabled)}
+            />
+          )}
+          {expanded && <MenuLabel label={menu.label} disabled={menu.disabled} isActive={isActive} />}
+        </div>
+        {expanded && renderSubMenu()}
+      </Link>
+    </div>
   );
 };
 

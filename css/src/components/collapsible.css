@@ -13,8 +13,7 @@
   background-color: var(--secondary-lightest);
   width: 40px;
   height: 100%;
-  transition: width 240ms;
-  transition-timing-function: cubic-bezier(0.4, 0.14, 0.3, 1);
+  transition: width var(--duration--moderate-02) var(--standard-expressive-curve);
 }
 
 .Collapsible--overlay {

@@ -147,7 +147,7 @@ describe('Collapsible component with prop: onToggle', () => {
     const footerIcon = getByTestId('DesignSystem-Collapsible--FooterIcon');
     fireEvent.click(footerIcon);
     expect(onToggle).toHaveBeenCalled();
-    expect(onToggle).toHaveBeenCalledWith(!expanded);
+    expect(onToggle).toHaveBeenCalledWith(!expanded, 'click');
   });
 
   it('collapsible component with hover effects', () => {
@@ -169,10 +169,11 @@ describe('Collapsible component with prop: onToggle', () => {
     const component = getByTestId('DesignSystem-CollapsibleBody');
     fireEvent.mouseEnter(component);
     expect(onToggle).toHaveBeenCalled();
-    expect(onToggle).toHaveBeenCalledWith(true);
+    expect(onToggle).toHaveBeenCalledWith(true, 'click');
+    expect(onToggle).toHaveBeenCalledWith(true, 'mouseenter');
 
     fireEvent.mouseLeave(component);
     expect(onToggle).toHaveBeenCalled();
-    expect(onToggle).toHaveBeenCalledWith(false);
+    expect(onToggle).toHaveBeenCalledWith(false, 'mouseleave');
   });
 });

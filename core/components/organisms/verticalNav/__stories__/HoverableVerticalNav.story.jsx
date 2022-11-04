@@ -103,13 +103,21 @@ export const hoverableVerticalNavigation = () => {
   const [active, setActive] = React.useState({
     name: 'care_management.timeline',
   });
+  const [footerClick, setFooterClick] = React.useState(false);
+
+  const onToggleHandler = (expanded, type) => {
+    setExpanded(expanded);
+    if (type === 'click') {
+      setFooterClick(!footerClick);
+    }
+  };
 
   return (
     <div className="d-flex bg-secondary-lightest vh-100">
-      <Collapsible expanded={expanded} onToggle={setExpanded}>
+      <Collapsible expanded={expanded} onToggle={onToggleHandler}>
         <VerticalNav menus={data} active={active} expanded={expanded} onClick={setActive} />
       </Collapsible>
-      <div className="ml-6 d-flex flex-column">
+      <div className="mx-6 d-flex flex-column" style={{ width: footerClick ? '70%' : '92%' }}>
         <Heading className="my-5">Assessments</Heading>
         <Card className="h-100 overflow-hidden">
           <Table
@@ -306,18 +314,26 @@ const customCode = `() => {
   const [active, setActive] = React.useState({
     name: 'care_management.timeline'
   });
+  const [footerClick, setFooterClick] = React.useState(false);
+
+  const onToggleHandler = (expanded, type) => {
+    setExpanded(expanded);
+    if (type === 'click') {
+      setFooterClick(!footerClick);
+    }
+  };
 
   return (
     <div className="d-flex bg-secondary-lightest vh-100">
-      <Collapsible expanded={expanded} onToggle={setExpanded}>
-        <VerticalNav
-          menus={data}
-          active={active}
-          expanded={expanded}
-          onClick={setActive}
-        />
-      </Collapsible>
-      <div className="ml-6 d-flex flex-column">
+        <Collapsible expanded={expanded} onToggle={onToggleHandler}>
+          <VerticalNav
+            menus={data}
+            active={active}
+            expanded={expanded}
+            onClick={setActive}
+          />
+        </Collapsible>
+      <div className="mx-6 d-flex flex-column" style={{ width: footerClick ? '70%' : '92%' }}>
         <Heading className="my-5">Assessments</Heading>
         <Card className="h-100 overflow-hidden">
           <Table

@@ -23,7 +23,7 @@ export interface CollapsibleProps extends BaseProps {
   /**
    * Callback to be called on footer click
    */
-  onToggle?: (expanded: boolean) => void;
+  onToggle?: (expanded: boolean, type: string) => void;
   /**
    * Components to render inside `Collapsible`
    */
@@ -82,7 +82,7 @@ export const Collapsible = (props: CollapsibleProps) => {
         setIsClicked(true);
       }
 
-      onToggle(newExpanded);
+      onToggle(newExpanded, type);
     }
   };
 

@@ -169,8 +169,8 @@ describe('Vertical Navigation component with prop: menus', () => {
     fireEvent.click(activeMenu);
 
     const childItems = getAllByTestId('DesignSystem-VerticalNav--Text');
-    expect(childItems[2].textContent).toMatch('Timeline');
-    expect(childItems[3].textContent).toMatch('Care Plans');
+    expect(childItems[2].textContent).toMatch('Episodes');
+    expect(childItems[3].textContent).toMatch('Risk');
   });
 });
 

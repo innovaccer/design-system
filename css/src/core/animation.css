@@ -97,3 +97,35 @@
   animation: fadeIn var(--duration--moderate-01) var(--entrance-expressive-curve),
     entryRightCurve var(--duration--moderate-02) var(--entrance-expressive-curve);
 }
+
+@keyframes exitCurve {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+
+  to {
+    top: calc(-1 * var(--spacing));
+    opacity: 0;
+  }
+}
+
+@keyframes entryCurve {
+  from {
+    top: var(--spacing);
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+.slideOut-up {
+  animation: exitCurve var(--duration--moderate-02) var(--exit-expressive-curve);
+}
+
+.slideIn-up {
+  animation-delay: var(--duration--moderate-02);
+  animation: fadeIn var(--duration--moderate-01) var(--entrance-expressive-curve),
+    entryCurve var(--duration--moderate-02) var(--entrance-expressive-curve);
+}

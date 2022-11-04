@@ -67,6 +67,14 @@ export const animation = () => {
       className: 'slideIn-right',
       properties: 'The object is moving 16px from left to right while fading in, using an entrance-expressive-curve',
     },
+    {
+      className: 'slideOut-up',
+      properties: 'The object is moving 8px from bottom to top while fading out, using an exit-expressive-curve',
+    },
+    {
+      className: 'slideIn-up',
+      properties: 'The object is moving 8px from top to bottom while fading in, using an entrance-expressive-curve',
+    },
   ];
 
   return (

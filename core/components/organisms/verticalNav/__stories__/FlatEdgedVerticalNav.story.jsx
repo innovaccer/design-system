@@ -72,7 +72,7 @@ export const flatEdgedVerticalNavigation = () => {
         },
         {
           name: 'medical_records.smoking_history',
-          label: 'medical_records.Smoking History',
+          label: 'Smoking History',
         },
         {
           name: 'devices',
@@ -211,7 +211,7 @@ const customCode = `() => {
         },
         {
           name: 'medical_records.smoking_history',
-          label: 'medical_records.Smoking History'
+          label: 'Smoking History'
         },
         {
           name: 'devices',

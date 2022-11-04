@@ -8,113 +8,159 @@ exports[`Vertical Navigation component
     <div
       class="VerticalNav"
     >
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
-        data-test="DesignSystem-VerticalNav--Item"
-        href="/patient360"
-        tabindex="0"
+      <div
+        id="vertical-nav-menu"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          href="/patient360"
+          tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon Icon--default"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            assignment_ind_round
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+            <i
+              class="material-icons material-icons-round Icon Icon--default MenuItem-animate "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              assignment_ind_round
+            </i>
+          </div>
+        </a>
+      </div>
+      <div
+        id="vertical-nav-menu"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon Icon--default"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            forum_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon Icon--default MenuItem-animate "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              forum_round
+            </i>
+          </div>
+        </a>
+      </div>
+      <div>
+        <style>
+          
+        @keyframes menuItem-open {
+          from { 
+            max-height: 0;
+          }
+          to {
+            max-height: 0px;
+          }
+        }
+        @keyframes menuItem-close {
+          from {
+            max-height: 0px;
+          }
+          to {
+            max-height: 0;
+          }
+        }
+        
+        </style>
+        <div
+          id="vertical-nav-menu"
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active MenuItem-animate"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--primaryDark MenuItem-animate "
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind_round
+              </i>
+            </div>
+          </a>
         </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active"
-        tabindex="0"
+        <div
+          id="vertical-nav-menu"
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem-animate"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--default MenuItem-animate "
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                events_round
+              </i>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        id="vertical-nav-menu"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon Icon--primaryDark"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            assignment_ind_round
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
-        tabindex="0"
+            <i
+              class="material-icons material-icons-round Icon Icon--disabled MenuItem-animate "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              airline_seat_flat_angled_round
+            </i>
+          </div>
+        </a>
+      </div>
+      <div
+        id="vertical-nav-menu"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon Icon--default"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            events_round
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
-      >
-        <div
-          class="d-flex align-items-center overflow-hidden"
-        >
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            airline_seat_flat_angled_round
-          </i>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
-      >
-        <div
-          class="d-flex align-items-center overflow-hidden"
-        >
-          <i
-            class="material-icons material-icons-round Icon Icon--default"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            favorite_round
-          </i>
-        </div>
-      </a>
+            <i
+              class="material-icons material-icons-round Icon Icon--default MenuItem-animate "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              favorite_round
+            </i>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </body>
@@ -138,37 +184,41 @@ exports[`Vertical Navigation component
           Section 1
         </span>
       </div>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
-        data-test="DesignSystem-VerticalNav--Item"
-        href="/patient360"
-        tabindex="0"
+      <div
+        id="vertical-nav-menu"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          href="/patient360"
+          tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <div
+            class="d-flex align-items-center overflow-hidden"
           >
-            assignment_ind_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon Icon--default MenuItem-animate mr-4 "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              assignment_ind_round
+            </i>
+            <span
+              class="Text Text--regular color-inverse MenuItem-animate MenuItem-label--expanded"
+              data-test="DesignSystem-VerticalNav--Text"
+            >
+              Patient 360
+            </span>
+          </div>
           <span
-            class="Text Text--regular color-inverse"
-            data-test="DesignSystem-VerticalNav--Text"
+            class="Pills Badge--secondary MenuItem-count MenuItem-animate"
+            data-test="DesignSystem-VerticalNav--Pills"
           >
-            Patient 360
+            10
           </span>
-        </div>
-        <span
-          class="Pills Badge--secondary MenuItem-count"
-          data-test="DesignSystem-VerticalNav--Pills"
-        >
-          10
-        </span>
-      </a>
+        </a>
+      </div>
       <div
         class="VerticalNav-section VerticalNav-section--border"
       >
@@ -179,144 +229,188 @@ exports[`Vertical Navigation component
           Section 2
         </span>
       </div>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+      <div
+        id="vertical-nav-menu"
       >
-        <div
-          class="d-flex align-items-center overflow-hidden"
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
         >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              class="material-icons material-icons-round Icon Icon--default MenuItem-animate mr-4 "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              forum_round
+            </i>
+            <span
+              class="Text Text--regular color-inverse MenuItem-animate MenuItem-label--expanded"
+              data-test="DesignSystem-VerticalNav--Text"
+            >
+              Care Management and Resources
+            </span>
+          </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
-            data-test="DesignSystem-VerticalNav--Icon"
+            class="material-icons material-icons-round Icon Icon--subtle mx-4 Arrow-Icon--up"
             role="button"
             style="font-size: 16px; width: 16px;"
           >
-            forum_round
+            keyboard_arrow_down_round
           </i>
-          <span
-            class="Text Text--regular color-inverse"
-            data-test="DesignSystem-VerticalNav--Text"
-          >
-            Care Management and Resources
-          </span>
-        </div>
-        <i
-          class="material-icons material-icons-round Icon Icon--subtle mx-4"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-        >
-          keyboard_arrow_up_round
-        </i>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded"
-        tabindex="0"
+        </a>
+      </div>
+      <div
+        style="animation: menuItem-open var(--duration--moderate-02) var(--standard-productive-curve);"
       >
+        <style>
+          
+        @keyframes menuItem-open {
+          from { 
+            max-height: 0;
+          }
+          to {
+            max-height: 0px;
+          }
+        }
+        @keyframes menuItem-close {
+          from {
+            max-height: 0px;
+          }
+          to {
+            max-height: 0;
+          }
+        }
+        
+        </style>
         <div
-          class="d-flex align-items-center overflow-hidden"
+          id="vertical-nav-menu"
         >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded MenuItem-animate Item--expand"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--primaryDark MenuItem-animate mr-4 "
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                assignment_ind_round
+              </i>
+              <span
+                class="Text Text--regular color-primary-dark MenuItem-animate MenuItem-label--expanded"
+                data-test="DesignSystem-VerticalNav--Text"
+              >
+                Timeline
+              </span>
+            </div>
+          </a>
+        </div>
+        <div
+          id="vertical-nav-menu"
+        >
+          <a
+            class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded MenuItem-animate Item--expand"
+            tabindex="0"
+          >
+            <div
+              class="d-flex align-items-center overflow-hidden"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--default MenuItem-animate mr-4 "
+                data-test="DesignSystem-VerticalNav--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                events_round
+              </i>
+              <span
+                class="Text Text--regular color-inverse MenuItem-animate MenuItem-label--expanded"
+                data-test="DesignSystem-VerticalNav--Text"
+              >
+                Care Plans
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div
+        id="vertical-nav-menu"
+      >
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
+        >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              class="material-icons material-icons-round Icon Icon--disabled MenuItem-animate mr-4 "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              airline_seat_flat_angled_round
+            </i>
+            <span
+              class="Text Text--regular color-inverse-lightest MenuItem-animate MenuItem-label--expanded"
+              data-test="DesignSystem-VerticalNav--Text"
+            >
+              Episodes
+            </span>
+          </div>
+          <span
+            class="Pills Badge--subtle-secondary MenuItem-count MenuItem-count--disabled MenuItem-animate"
+            data-test="DesignSystem-VerticalNav--Pills"
+          >
+            99+
+          </span>
+        </a>
+      </div>
+      <div
+        id="vertical-nav-menu"
+      >
+        <a
+          class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded MenuItem-animate"
+          data-test="DesignSystem-VerticalNav--Item"
+          tabindex="0"
+        >
+          <div
+            class="d-flex align-items-center overflow-hidden"
+          >
+            <i
+              class="material-icons material-icons-round Icon Icon--default MenuItem-animate mr-4 "
+              data-test="DesignSystem-VerticalNav--Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              favorite_round
+            </i>
+            <span
+              class="Text Text--regular color-inverse MenuItem-animate MenuItem-label--expanded"
+              data-test="DesignSystem-VerticalNav--Text"
+            >
+              Risk
+            </span>
+          </div>
           <i
-            class="material-icons material-icons-round Icon Icon--primaryDark mr-4"
-            data-test="DesignSystem-VerticalNav--Icon"
+            class="material-icons material-icons-round Icon Icon--subtle mx-4 "
             role="button"
             style="font-size: 16px; width: 16px;"
           >
-            assignment_ind_round
+            keyboard_arrow_down_round
           </i>
-          <span
-            class="Text Text--regular color-primary-dark"
-            data-test="DesignSystem-VerticalNav--Text"
-          >
-            Timeline
-          </span>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded"
-        tabindex="0"
-      >
-        <div
-          class="d-flex align-items-center overflow-hidden"
-        >
-          <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            events_round
-          </i>
-          <span
-            class="Text Text--regular color-inverse"
-            data-test="DesignSystem-VerticalNav--Text"
-          >
-            Care Plans
-          </span>
-        </div>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
-      >
-        <div
-          class="d-flex align-items-center overflow-hidden"
-        >
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled mr-4"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            airline_seat_flat_angled_round
-          </i>
-          <span
-            class="Text Text--regular color-inverse-lightest"
-            data-test="DesignSystem-VerticalNav--Text"
-          >
-            Episodes
-          </span>
-        </div>
-        <span
-          class="Pills Badge--subtle-secondary MenuItem-count MenuItem-count--disabled"
-          data-test="DesignSystem-VerticalNav--Pills"
-        >
-          99+
-        </span>
-      </a>
-      <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
-        data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
-      >
-        <div
-          class="d-flex align-items-center overflow-hidden"
-        >
-          <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
-            data-test="DesignSystem-VerticalNav--Icon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
-          >
-            favorite_round
-          </i>
-          <span
-            class="Text Text--regular color-inverse"
-            data-test="DesignSystem-VerticalNav--Text"
-          >
-            Risk
-          </span>
-        </div>
-        <i
-          class="material-icons material-icons-round Icon Icon--subtle mx-4"
-          role="button"
-          style="font-size: 16px; width: 16px;"
-        >
-          keyboard_arrow_down_round
-        </i>
-      </a>
+        </a>
+      </div>
     </div>
   </div>
 </body>
