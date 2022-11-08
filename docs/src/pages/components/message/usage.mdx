@@ -52,7 +52,55 @@ The success variant is used when the inline message needs to notify the successf
 <Preview name="components-message-success-message--success-message" />
 <Preview name="components-inlinemessage-variants-success-message--success-message" />
 
-### Properties
+### Structure
+<br/>
+<br/>
+
+#### Standard message
+
+![Structure of standard message](./images/message-structure.png)
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+      <td>12 px, 24 px, 12 px, 16 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+#### Inline message
+
+![Structure of inline message](./images/inline-structure.png)
+
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Size</td>
+     <td>
+         <ul>
+             <li>16 px <em>(Small)</em></li>
+             <li>20 px <em>(Regular)</em></li>
+         </ul>
+     </td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
 #### Standard message
 <table style="width: 100%">
   <tbody>
@@ -122,7 +170,7 @@ The success variant is used when the inline message needs to notify the successf
       <td>
           <ul>
               <li>Regular</li>
-              <li>Tiny</li>
+              <li>Small</li>
           </ul>
       </td>
       <td>Regular</td>
@@ -142,10 +190,12 @@ The success variant is used when the inline message needs to notify the successf
 #### Non-dismissive
 Messages are non-dismissive in nature. They appear with the rest of the components and cannot be dismissed directly.
 
-#### Standard vs. Inline message
+#### Inline vs. Standard message
 Inline message variant should be used when feedback relative to some specific content has to be provided to the users. Whereas, the standard message variant should be used when collective feedback for a section or an entire page has to be provided to the users.
 
-![Standard vs. inline message](./images/messages-1.png)
+![[Left] Inline message, [Right] Standard message](./images/messages-1.png)
+<Caption> [Left] Inline message, [Right] Standard message </Caption>
+
 <br/>
 <br/>
 
@@ -154,10 +204,13 @@ Inline message variant should be used when feedback relative to some specific co
 Message component always appears at the top of a section but just below the header. The width of the message component always spans the width of its container or as per the content appearing below it.
 
 ![Position & width of the standard message component](./images/messages-2.png)
+<Caption> Position & width of the standard message component </Caption>
+
 <br/>
 
 ##### Inline message
 Inline message component appears below the component it is related to, with a 4px margin at top and spans the width of the component.
 
 ![Position & width of the inline message component](./images/messages-3.png)
+<Caption> Position & width of the inline message component </Caption>
 <br/>

@@ -5,23 +5,61 @@ tabs: ['Usage', 'Code']
 showMobile: true
 ---
 
-Pill is used to highlight the count of an item.
+Pill is used to highlight number of items. For status and text, use a Badge. 
 
 ### Appearances
 
-A pill comes in **9 appearances** and **2 styles**.
-
-#### Solid style
-Solid style is used to highlight the number of items in reference to a particular component so that the count gets highlighted easily e.g. count over the notification icon.
-<Preview name='components-pills-variants-appearance--appearance'/>
 <br/>
+
+#### Solid
+
+Solid Pill is used to highlight number of items in reference to a particular component so that the component gets recognized easily. eg Pill over the notification icon.
+
+<Preview name='components-pills-alert--alert'/>
+
+#### Subtle
+
+Subtle Pill is used when many pills are used in reference to a group of components. In that case, solid pills become a bit overwhelming. eg Pills in vertical navigation items.
 
 #### Subtle style
 Subtle style is favorable when a lot of pills have to be used to show count against entities. In that case, solid style becomes a bit overwhelming e.g. count in vertical navigation items.
 <Preview name='components-pills-subtle-alert--subtle-alert'/>
 <br/>
 
-### Properties
+### Structure
+<br/>
+<br/>
+
+![Structure of pill](./images/pill-structure.png)
+<br/>
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>20 px</td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Max width</td>
+      <td>160 px</td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Corner radius</td>
+      <td>10 px</td>
+   </tr><tr style="vertical-align: top">
+      <td>Padding<br/><em>(top, right, bottom, left)</em></td>
+      <td>2px, 6px, 2px, 6px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+
 <br/>
 
 <table style="width: 100%">
@@ -49,29 +87,14 @@ Subtle style is favorable when a lot of pills have to be used to show count agai
       <td>Stone</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Subtle<br/><em>(optional)</em></td>
+      <td>Subtle</td>
       <td>
           <ul>
               <li>True</li>
               <li>False</li>
           </ul>
       </td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Max width</td>
-      <td>160px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Corner radius</td>
-      <td>20px</td>
-      <td>-</td>
-    </tr>
-    <tr style="vertical-align: top">
-      <td>Padding<br/><em>(top, right, bottom, left)</em></td>
-      <td>2px, 6px, 2px, 6px</td>
-      <td>-</td>
+      <td>False</td>
     </tr>
   </tbody>
 </table>

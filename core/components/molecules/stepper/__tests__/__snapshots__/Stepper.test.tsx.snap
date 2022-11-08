@@ -9,7 +9,7 @@ exports[`Stepper component
     data-test="DesignSystem-Stepper"
   >
     <div
-      class="Step"
+      class="Step Stepper-animate"
       data-test="DesignSystem-Step"
     >
       <i
@@ -28,7 +28,7 @@ exports[`Stepper component
       </span>
     </div>
     <div
-      class="Step Step--active"
+      class="Step Step--active Stepper-animate"
       data-test="DesignSystem-Step"
     >
       <i
@@ -47,7 +47,7 @@ exports[`Stepper component
       </span>
     </div>
     <div
-      class="Step Step--disabled"
+      class="Step Step--disabled Stepper-animate"
       data-test="DesignSystem-Step"
     >
       <i
@@ -66,7 +66,7 @@ exports[`Stepper component
       </span>
     </div>
     <div
-      class="Step Step--disabled"
+      class="Step Step--disabled Stepper-animate"
       data-test="DesignSystem-Step"
     >
       <i

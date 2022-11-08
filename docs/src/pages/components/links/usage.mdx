@@ -1,32 +1,52 @@
 ---
-title: Links
-description: Links are used to navigate to a destination.
+title: Link
+description: Link is used to navigate to a destination.
 tabs: ['Usage', 'Code']
 showMobile: true
 ---
 
-Links are used to navigate to a destination which can be on the same page or a different one.
+Link is used to navigate to a destination which can be on the same page or a different one.
 
-### Structure
-A link consist of just a text. It does not contain any padding.
 <Preview name="components-link-all--all" />
 
 ### Sizes
-Links come in **2 sizes** - regular and tiny.
+Link comes in **2 sizes** - regular and small.
 <Preview name="components-link-variants-size--size" />
 
-### Appearances
-Links come in **2 appearances** - primary and subtle.
-<Preview name="components-link-variants-appearance--appearance" />
 
 ### States
-Links come in **5 states** - default, hover, active, focus and disabled.
+Link comes in **5 states** - default, hover, active, focus and disabled.
 
-![States of a link](./images/links-1.png)
+![States of a link](./images/links-states.png)
 <br/>
 <br/>
 
-### Properties
+
+### Structure
+A link consist of just a text. It does not contain any padding.
+
+![Structure of link](./images/links-structure.png)
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+     <td>Height</td>
+     <td>
+         <ul>
+            <li>16 px <em>(Small)</em></li>
+            <li>20 px <em>(Regular)</em></li>
+         </ul>
+     </td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -35,21 +55,21 @@ Links come in **5 states** - default, hover, active, focus and disabled.
       <th style="width:33%; text-align: left;">Default value</th>
     </tr>
     <tr style="vertical-align: top">
-      <td>Appearance</td>
+      <td>Subtle</td>
       <td>
           <ul>
-              <li>Default</li>
-              <li>Subtle</li>
+              <li>True</li>
+              <li>False</li>
           </ul>
       </td>
-      <td>Default</td>
+      <td>False</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Size</td>
       <td>
           <ul>
+              <li>Small</li>
               <li>Regular</li>
-              <li>Tiny</li>
           </ul>
       </td>
       <td>Regular</td>
@@ -64,10 +84,13 @@ Links come in **5 states** - default, hover, active, focus and disabled.
 It is the default link component and comes in the primary color. It is used to draw attention and hence it is not recommended to have many links on a single page.
 
 ![‘Forgot password?’ as primary link, being used for navigating to a new screen](./images/links-2.png)
+<Caption> ‘Forgot password?’ as primary link, being used for navigating to a new screen </Caption>
 <br/>
 
 ##### Subtle Link
 This is the subtle variant of link and hence uses a lighter color. It is primarily used in the breadcrumb component. Use it sparingly such as times when the default link can be too overwhelming to use (too much primary color on the screen).
 
 ![Breadcrumbs as subtle link being used for navigating to previous screens](./images/links-3.png)
+<Caption> Breadcrumbs as subtle link being used for navigating to previous screens </Caption>
+
 <br/>

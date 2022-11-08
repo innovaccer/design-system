@@ -40,7 +40,82 @@ Skeleton loaders are used if there is a defined template for the data that is go
 <Preview name='components-loaders-placeholder-skeleton-loaders--skeleton-loaders'/>
 <br/>
 
-### Properties
+### Structure
+<br/>
+<br/>
+
+#### Progress bar
+![Structure of progress bar](./images/progressbar-structure.png)
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>2 px <em>(Small)</em><br/>
+          8 px <em>(Regular)</em></td>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Corner radius</td>
+      <td>4 px</td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+#### Progress ring
+![Structure of progress ring](./images/progressring-structure.png)
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Size</td>
+      <td>16x16 px <em>(Small)</em><br/>
+          32x32 px <em>(Regular)</em></td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+#### Spinner
+![Structure of Spinner](./images/spinner-structure.png)
+<br/>
+<br/>
+
+
+<table style="width: 100%">
+ <tbody>
+   <tr>
+     <th style="width:50%; text-align: left;">Property</th>
+     <th style="width:50%; text-align: left;">Value(s)</th>
+   </tr>
+   <tr style="vertical-align: top">
+      <td>Size</td>
+      <td>16x16 px <em>(Small)</em><br/>
+          32x32 px <em>(Regular)</em><br/>
+          48x48 px <em>(Large)</em></td>
+   </tr>
+ </tbody>
+</table>
+<br/>
+
+### Configurations
+<br/>
+<br/>
+
 <table style="width: 100%">
   <tbody>
     <tr>
@@ -52,16 +127,22 @@ Skeleton loaders are used if there is a defined template for the data that is go
       <td>Size</td>
       <td>
           <ul>
+              <li>Small</li>
               <li>Regular</li>
-              <li>Tiny</li>
-              <li>Large*</li>
+              <li>Large</li>
           </ul>
       </td>
+      <td>Regular</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Value</td>
+      <td>&#60;value&#62;</td>
       <td>-</td>
     </tr>
   </tbody>
 </table>
 <br/>
+
 
 **Note**: Large size is only available for 'Spinners'.
 
@@ -80,12 +161,16 @@ When the time taken to load a process is determinable.
 -   Use **Progress Bar** for general determinable processes.
 
 ![Showing progress using progress bar](./images/progressindicators-1.png)
+<Caption> Showing progress using progress bar </Caption>
+
 
 <br/>
 
 -   Use **Progress Ring** if the process is contextual to a component
 
 ![Showing progress using progress ring](./images/progressindicators-2.png)
+<Caption> Showing progress using progress ring </Caption>
+
 
 <br/>
 
@@ -96,18 +181,24 @@ When the time taken to load a process cannot be determined.
 -   Use **Skeleton loaders** if there is a defined template for the data that is going to be displayed.
 
 ![Showing loading state using skeleton loaders](./images/progressindicators-3.png)
+<Caption> Showing loading state using skeleton loaders </Caption>
+
 
 <br/>
 
 -   Use **Spinners** if there is no defined template for the data that is going to be displayed
 
 ![Showing loading state using spinner](./images/progressindicators-4.png)
+<Caption> Showing loading state using spinner </Caption>
+
 
 <br/>
 
 -   Use **Spinners** if the process is contextual to a component, e.g. button.
 
 ![Showing loading state using spinner in button](./images/progressindicators-5.png)
+<Caption> Showing loading state using spinner in button </Caption>
+
 
 <br/>
 <br/>
@@ -121,12 +212,15 @@ When the time taken to load a process cannot be determined.
 Skeleton loaders imitate each component of a cell separately at the time of loading, to create a perception of decreased loading time. 
 
 ![Visual structure of skeleton loaders](./images/progressindicators-6.png)
+<Caption> Visual structure of skeleton loaders </Caption>
+
 
 <br/>
 
 ##### Page with Static vs Dynamic Content
 
 ![Static vs Dynamic content](./images/progressindicators-7.png)
+<Caption> Static vs Dynamic content </Caption>
 
 <br/>
 

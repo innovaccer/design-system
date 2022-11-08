@@ -48,11 +48,11 @@
 }
 
 .Tab:hover::after {
-  background-color: var(--primary-dark);
+  background-color: var(--inverse-lighter);
 }
 
 .Tab:active::after {
-  background-color: var(--primary-darker);
+  background-color: var(--inverse-light);
 }
 
 .Tab--active::after {
@@ -63,7 +63,15 @@
   outline: none;
   border-radius: 4px;
   /* Using box shadow instead of border as border shifts the div down which cuts the Icon & Text of label. */
-  box-shadow: color-mod(var(--primary) a(0.16)) 0px 0px 0px calc(var(--spacing-xs) + var(--spacing-s)) inset;
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Tab--active:hover .Tab-selected {
+  color: var(--primary-dark);
+}
+
+.Tab-selected:hover::after {
+  background-color: var(--primary-dark);
 }
 
 .Tab:active:focus {
@@ -72,6 +80,10 @@
 
 .Tab--disabled {
   cursor: not-allowed;
+}
+
+.Tab--disabled:focus {
+  box-shadow: none;
 }
 
 .Tab--disabled:hover::after {
@@ -111,6 +123,7 @@
 
 .Tab-pills--disabled {
   opacity: 60%;
+  cursor: not-allowed;
 }
 
 .DismissibleTab-icon--right {
