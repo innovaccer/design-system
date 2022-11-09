@@ -39,11 +39,11 @@ export default function MdsChangelog() {
 
     let updateList = latestUpdate.split('###');
 
-    const listSeparator = '*';
+    const listSeparator = /[*-]+\s/;
 
     updateList.shift();
     updateList
-      .filter((item) => item.includes(listSeparator))
+      .filter((item) => listSeparator.test(item))
       .map((item) => record.updatesList.push(item.split(listSeparator)));
   }
   return record;
