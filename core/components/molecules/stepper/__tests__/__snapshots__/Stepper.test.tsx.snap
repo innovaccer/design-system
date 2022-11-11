@@ -13,7 +13,7 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--info mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -21,7 +21,7 @@ exports[`Stepper component
         check_circle_round
       </i>
       <span
-        class="Text Text--default Text--medium Text--regular"
+        class="Text Text--default Text--medium Text--regular Stepper-animate"
         data-test="DesignSystem-Text"
       >
         Step A
@@ -32,7 +32,7 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--info mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -40,7 +40,7 @@ exports[`Stepper component
         radio_button_unchecked_round
       </i>
       <span
-        class="Text Text--link Text--medium Text--regular"
+        class="Text Text--link Text--medium Text--regular Stepper-animate"
         data-test="DesignSystem-Text"
       >
         Step B
@@ -51,7 +51,7 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -59,7 +59,7 @@ exports[`Stepper component
         radio_button_unchecked_round
       </i>
       <span
-        class="Text Text--disabled Text--medium Text--regular"
+        class="Text Text--disabled Text--medium Text--regular Stepper-animate"
         data-test="DesignSystem-Text"
       >
         Step C
@@ -70,7 +70,7 @@ exports[`Stepper component
       data-test="DesignSystem-Step"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4"
+        class="material-icons material-icons-round Icon Icon--disabled mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -78,7 +78,7 @@ exports[`Stepper component
         radio_button_unchecked_round
       </i>
       <span
-        class="Text Text--disabled Text--medium Text--regular"
+        class="Text Text--disabled Text--medium Text--regular Stepper-animate"
         data-test="DesignSystem-Text"
       >
         Step D
