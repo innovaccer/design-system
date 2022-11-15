@@ -40,7 +40,8 @@ Cypress.Commands.add('tableOfContent', () => {
   cy.get('[data-test=Docs-Toc--Link]').each((page) => {
     if (page.text().length) {
       cy.request(page.prop('href'));
-      cy.get('[data-test=DesignSystem-Heading]').contains(`${page.text()}`);
+      const tocText = page.text().replace(/ +/g, ' ');
+      cy.get('[data-test=DesignSystem-Heading]').contains(tocText);
     }
   });
 });
@@ -65,7 +66,7 @@ Cypress.Commands.add('linkVisit', () => {
   cy.wait(1000);
   cy.get('[data-test=Docs-content-wrapper]').then((container) => {
     if (container.find('a').length) {
-      cy.get('a').each((page) => {
+      cy.get('a').not(':contains("email")').each((page) => {
         if (page.prop('href').length) {
           cy.request(page.prop('href'));
         }
@@ -81,9 +82,12 @@ Cypress.Commands.add('leftnavTraverse', (arr) => {
     .each((page) => {
       cy.request(page.prop('href'));
     });
-  cy.get('[data-test=DesignSystem-VerticalNav--Item]').each((navLink) => {
-    arr.push(navLink.prop('href'));
-  });
+  cy.get('[data-test=Docs-VerticalNav--Items]')
+    .find('a')
+    .not(':contains("started")')
+    .each((navLink) => {
+      arr.push(navLink.prop('href'));
+    });
 });
 
 Cypress.Commands.add('livePreview', () => {

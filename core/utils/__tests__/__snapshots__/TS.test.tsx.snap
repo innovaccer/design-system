@@ -989,6 +989,7 @@ exports[`TS renders children 1`] = `
         data-test="DesignSystem-Radio-Input"
         id="Hello World!-undefined-Test-uid"
         name="Hello World!"
+        tabindex="-1"
         type="radio"
         value="Hello World!"
       />

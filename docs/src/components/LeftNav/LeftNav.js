@@ -107,7 +107,7 @@ const LeftNav = (props) => {
       <Subheading className="pl-6 pt-6 pb-3" appearance="subtle">
         {getHeading()}
       </Subheading>
-      <VerticalNav menus={navItems} active={active} onClick={onClickHandler} expanded={true} autoCollapse={false} />
+      <VerticalNav data-test="Docs-VerticalNav--Items" menus={navItems} active={active} onClick={onClickHandler} expanded={true} autoCollapse={false} />
     </div>
   );
 };

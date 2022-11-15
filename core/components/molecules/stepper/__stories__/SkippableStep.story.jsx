@@ -54,7 +54,7 @@ export const skippableStep = () => {
       className="d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest"
       style={{ height: '200px' }}
     >
-      <div className="d-flex justify-content-center py-5 bg-light w-100">
+      <div className="d-flex justify-content-center py-5 w-100">
         <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndexes} />
       </div>
       <br />
@@ -120,7 +120,7 @@ const customCode = `() => {
       className="d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest"
       style={{ height: '200px' }}
     >
-      <div className="d-flex justify-content-center py-5 bg-light w-100">
+      <div className="d-flex justify-content-center py-5 w-100">
         <Stepper
           steps={steps}
           active={active}

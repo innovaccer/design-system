@@ -442,7 +442,11 @@ export class Table extends React.Component<TableProps, TableState> {
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
     if (!this.state.async) {
-      if (prevProps.loading !== this.props.loading || prevProps.error !== this.props.error) {
+      if (
+        prevProps.loading !== this.props.loading ||
+        prevProps.error !== this.props.error ||
+        this.props.schema !== prevProps.schema
+      ) {
         const { data = [], schema = [] } = this.props;
         this.setState(
           {

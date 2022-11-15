@@ -74,7 +74,7 @@ export const stepperWithAnimation = () => {
         }`}
         onAnimationEnd={handleAnimationEnd}
       >
-        <Card className="px-7 py-6">
+        <Card className="px-6 py-6">
           <Heading className="mb-6" size="s">
             Configure Initiative
           </Heading>
@@ -89,7 +89,7 @@ export const stepperWithAnimation = () => {
               <Dropdown options={options} />
             </div>
           </div>
-          <div className="my-6 pt-6" style={{ borderTop: 'var(--spacing-xs) solid var(--secondary-light)' }}>
+          <div className="pt-6">
             <Text weight="strong">Time Period</Text>
             <div className="mt-5">
               <DateRangePicker withInput />
@@ -367,24 +367,23 @@ export const stepperWithAnimation = () => {
   };
 
   return (
-    <div className="d-flex flex-column py-4 px-4 bg-secondary-lightest">
-      <div className="d-flex justify-content-center py-5 bg-light w-100">
+    <div className="d-flex flex-column py-4 px-6 bg-secondary-lightest">
+      <div className="d-flex justify-content-center py-5 w-100">
         <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndices} />
       </div>
       {renderStep()}
-      <br />
       <div className="w-100 d-flex justify-content-between Stepper-button">
         {active === maxSteps ? (
           <div className="w-100 d-flex justify-content-center">
             <Button onClick={resetStepper}>Reset</Button>
           </div>
         ) : (
-          <div className="px-4 w-100 d-flex justify-content-between">
+          <div className="my-4 w-100 d-flex justify-content-between">
             <Button onClick={onPreviousHandler} disabled={active === 0}>
               Previous
             </Button>
             <div className="d-flex flex-row">
-              <Button className="mr-6" onClick={onSkipHandler}>
+              <Button className="mr-4" onClick={onSkipHandler}>
                 {active < maxSteps - 1 ? 'Skip' : 'Skip and Finish'}
               </Button>
               <Button onClick={onNextHandler} appearance="primary">
@@ -460,7 +459,7 @@ const customCode = `() => {
         className={\`py-4 w-100 position-relative \${getClasses()}\`}
         onAnimationEnd={handleAnimationEnd}
       >
-        <Card className="px-7 py-6">
+        <Card className="px-6 py-6">
           <Heading className="mb-6" size="s">
             Configure Initiative
           </Heading>
@@ -475,7 +474,7 @@ const customCode = `() => {
               <Dropdown options={options} />
             </div>
           </div>
-          <div className="my-6 pt-6" style={{ borderTop: 'var(--spacing-xs) solid var(--secondary-light)' }}>
+          <div className="pt-6">
             <Text weight="strong">Time Period</Text>
             <div className="mt-5">
               <DateRangePicker withInput />
@@ -745,24 +744,23 @@ const customCode = `() => {
   };
 
   return (
-    <div className="d-flex flex-column py-4 px-4 bg-secondary-lightest">
-      <div className="d-flex justify-content-center py-5 bg-light w-100">
+    <div className="d-flex flex-column py-4 px-6 bg-secondary-lightest">
+      <div className="d-flex justify-content-center py-5 w-100">
         <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndices} />
       </div>
       {renderStep()}
-      <br />
       <div className="w-100 d-flex justify-content-between Stepper-button">
         {active === maxSteps ? (
           <div className="w-100 d-flex justify-content-center">
             <Button onClick={resetStepper}>Reset</Button>
           </div>
         ) : (
-          <div className="px-4 w-100 d-flex justify-content-between">
+          <div className="my-4 w-100 d-flex justify-content-between">
             <Button onClick={onPreviousHandler} disabled={active === 0}>
               Previous
             </Button>
             <div className="d-flex flex-row">
-              <Button className="mr-6" onClick={onSkipHandler}>
+              <Button className="mr-4" onClick={onSkipHandler}>
                 {active < maxSteps - 1 ? 'Skip' : 'Skip and Finish'}
               </Button>
               <Button onClick={onNextHandler} appearance="primary">
