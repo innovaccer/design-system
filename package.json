@@ -150,5 +150,15 @@
     "css/src/**/*.css": [
       "npm run prettier:check"
     ]
-  }
+  },
+  "files": [
+    "dist",
+    "css",
+    "types",
+    "LICENSE",
+    "README.md",
+    "CONTRIBUTING.md",
+    "CODE_OF_CONDUCT.md",
+    "CHANGELOG.md"
+  ]
 }
