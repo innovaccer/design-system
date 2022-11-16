@@ -1,3 +1,43 @@
+
+## 2.13.1 (2022-11-16)
+
+### Highlights
+
+NA
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(dropdown): prevention of callback for already selected option item (a06279ba)
+- fix(Table): nested row alignment on column drag (daa8a88a)
+- fix(stepper): update styles and animation (ff2fe73c)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): add states in foundation tab (589f95fd)
+- fix(docs): fix release notes section on homepage (cda32ab7)
+
+---
+
 ## 2.13.4 (2022-11-08)
 
 ### Highlights
