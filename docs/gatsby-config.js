@@ -1,10 +1,8 @@
+const path = require('path');
+const remarkSlug = require(`remark-slug`);
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-
-const path = require('path');
-
-const remarkSlug = require(`remark-slug`);
 
 
 const repositoryDefault = {
@@ -186,7 +184,16 @@ module.exports = {
         protocol: "https",
         hostname: "design-dev.innovaccer.com",
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_ADMIN_KEY,
+        queries: require('./src/util/Algolia'),
+        concurrentQueries: false, // default: true
+      },
+    },
   ]
 }
 

@@ -3,8 +3,10 @@ import { Link } from 'gatsby';
 import { useHeaderItems } from '../../util/HeaderItems';
 import './Header.css';
 import { Link as MDSLink, Icon } from '@innovaccer/design-system';
-import Search from '../GlobalSearch';
+import Search from '../AlgoliaSearch';
 import * as HomeIcons from '../../util/HomeIcons';
+
+const searchIndices = [{ name: process.env.GATSBY_ALGOLIA_INDEX_NAME, title: process.env.GATSBY_ALGOLIA_INDEX_NAME }]
 
 const MenuIcons = ({ name }) => {
   const SvgIcons = HomeIcons[name] || (() => <div></div>);
@@ -85,7 +87,7 @@ const Header = ({ relativePagePath }) => {
           })}
         </div>
       </div>
-      <Search parentRef={ref} />
+      <Search indices={searchIndices} />
     </div>
   );
 };
