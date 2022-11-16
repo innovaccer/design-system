@@ -38,11 +38,11 @@ export const Step = (props: StepProps) => {
         data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
         appearance={iconAppearance}
-        className="mr-3 my-4"
+        className="mr-3 my-4 Stepper-animate"
       />
 
       {label && (
-        <Text weight="medium" appearance={appearance}>
+        <Text weight="medium" appearance={appearance} className="Stepper-animate">
           {label}
         </Text>
       )}

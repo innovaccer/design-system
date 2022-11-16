@@ -9,12 +9,12 @@
   padding-right: var(--spacing-l);
   margin-left: var(--spacing-xs);
   margin-right: var(--spacing-xs);
+  border-radius: var(--spacing-2);
   cursor: pointer;
 }
 
 .Step--active {
   background-color: var(--primary-lightest);
-  border-radius: var(--spacing-2);
   pointer-events: none;
 }
 

@@ -22,6 +22,10 @@ menus:
     link: /foundations/interactions/
     hideInMobile: true
 
+  - label: States
+    link: /foundations/states/
+    hideInMobile: true
+
   - label: Response Time
     link: /foundations/response-time/
     hideInMobile: true
@@ -29,6 +33,7 @@ menus:
   - label: Spacing
     link: /foundations/spacing/
     hideInWeb: true
+
 
   - label: Page types
     link: /foundations/page-types/
