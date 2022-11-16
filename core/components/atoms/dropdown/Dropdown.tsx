@@ -479,9 +479,16 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
           : this.state.tempSelected;
 
       const values = arr.map((option) => option.value);
-      onClose(values, name);
+      this.debounceOnClose(values, name);
     }
   };
+
+  debounceOnClose = debounce(300, (values, name) => {
+    const { onClose } = this.props;
+    if (onClose) {
+      onClose(values, name);
+    }
+  });
 
   updateTriggerLabel = (selectedArray: Selected[] = [], totalOptions?: number) => {
     const selectedLength = selectedArray.length;
@@ -541,15 +548,33 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     }
   };
 
+  isValidOption = (option: OptionSchema) => {
+    const { closeOnSelect, withCheckbox, open, onPopperToggle } = this.props;
+    const temp = this.state.tempSelected;
+    if (temp.length > 0 && !withCheckbox && temp[0].value === option['value']) {
+      this.setState({
+        ...this.state,
+        open: _isOpenControlled(open) || !closeOnSelect,
+      });
+      if (!withCheckbox && closeOnSelect && onPopperToggle && _isOpenControlled(open)) {
+        onPopperToggle(false, 'optionClick');
+      }
+      return false;
+    }
+    return true;
+  };
+
   onOptionSelect = (option: OptionSchema) => {
     const { onUpdate, selected } = this.props;
-
     if (_isControlled(selected)) {
-      if (onUpdate) onUpdate('select-option', option);
+      if (onUpdate && this.isValidOption(option)) {
+        onUpdate('select-option', option);
+      }
       return;
     }
-
-    this.updateSelectedOptions([option], true);
+    if (this.isValidOption(option)) {
+      this.updateSelectedOptions([option], true);
+    }
   };
 
   onSelect = (option: OptionSchema, checked: boolean) => {
