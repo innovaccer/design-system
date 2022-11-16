@@ -87,18 +87,21 @@
 
 .Dropzone--standard {
   flex-direction: column;
-  height: 196px;
-  min-width: 480px;
+  min-height: 196px;
+  min-width: 320px;
 }
 
 .Dropzone--compressed {
   flex-direction: row;
-  height: 124px;
+  min-height: 124px;
+  max-height: 192px;
   min-width: 400px;
 }
 
 .Dropzone--tight {
   height: 124px;
+  min-height: 124px;
+  max-height: 192px;
   min-width: 320px;
 }
 
