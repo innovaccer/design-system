@@ -157,6 +157,7 @@ export const Header = (props: HeaderProps) => {
               value={searchTerm}
               onClear={() => updateSearchTerm && updateSearchTerm('')}
               disabled={loading && !hasSchema(schema)}
+              autoComplete="off"
             />
           </div>
         )}
