@@ -37,6 +37,7 @@
   "author": "Innovaccer",
   "license": "MIT",
   "devDependencies": {
+    "cypress": "^10.3.1",
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
