@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/calendar/__stories__/variants/size.story.jsx",
     "storySource": {
-      "source": "() => {\n\n  return (\n    <>\n      <div className=\"mt-8\">\n        <Heading>size: small</Heading>\n        <div className=\"d-flex\">\n          <div className=\"mr-8\">\n            <Card className=\"d-inline-flex\" shadow=\"light\">\n              <Calendar date={new Date(2020, 2, 15)} size={'small'} view='date' />\n            </Card>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"mt-8\">\n        <Heading>size: large</Heading>\n        <div className=\"d-flex\">\n          <div className=\"mr-8\">\n            <Card className=\"d-inline-flex\" shadow=\"light\">\n              <Calendar date={new Date(2020, 2, 15)} size={'large'} view='date' />\n            </Card>\n          </div>\n        </div>\n      </div>\n    </>\n  );\n}"
+      "source": "() => {\n  return (\n    <>\n      <div className=\"mt-8\">\n        <Heading>size: small</Heading>\n        <div className=\"d-flex\">\n          <div className=\"mr-8\">\n            <Card className=\"d-inline-flex\" shadow=\"light\">\n              <Calendar date={new Date(2020, 2, 15)} size={'small'} view=\"date\" />\n            </Card>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"mt-8\">\n        <Heading>size: large</Heading>\n        <div className=\"d-flex\">\n          <div className=\"mr-8\">\n            <Card className=\"d-inline-flex\" shadow=\"light\">\n              <Calendar date={new Date(2020, 2, 15)} size={'large'} view=\"date\" />\n            </Card>\n          </div>\n        </div>\n      </div>\n    </>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-calendar-variants-size--size",
@@ -395,7 +395,7 @@
       },
       "events": {
         "name": "events",
-        "description": "Adds event highlighter to given date\n`events: {\n   'mm/dd/yyyy': true\n}`",
+        "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
         "type": {
           "required": false,
           "name": "other",
@@ -753,7 +753,7 @@
     },
     "events": {
       "name": "events",
-      "description": "Adds event highlighter to given date\n`events: {\n   'mm/dd/yyyy': true\n}`",
+      "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
       "type": {
         "required": false,
         "name": "other",

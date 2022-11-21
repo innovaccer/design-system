@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/chip/__stories__/variants/Type.story.jsx",
     "storySource": {
-      "source": "() => {\n  const types = ['action', 'selection', 'input'];\n  const icon = 'assessment';\n  const label = 'ChipLabel';\n  const clearButton = true;\n  const disabled = false;\n  const selected = false;\n  return (\n    <div className=\"d-flex\">\n      {types.map((type, ind) => {\n        return (\n          <div key={ind} className=\"mr-9\">\n            <Chip\n              icon={icon}\n              label={label}\n              clearButton={clearButton}\n              disabled={disabled}\n              type={type}\n              onClose={action(`onClose: ${name}`)}\n              onClick={action(`onClick: ${name}`)}\n              selected={selected}\n              name={'chip'}\n            />\n            <br />\n            <Text weight=\"strong\">{type.charAt(0).toUpperCase() + type.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const types = ['action', 'selection', 'input'];\n  const icon = 'assessment';\n  const label = 'ChipLabel';\n  const clearButton = true;\n  const disabled = false;\n  const selected = false;\n  return (\n    <div className=\"d-flex\">\n      {types.map((type, ind) => {\n        return (\n          <div key={ind} className=\"mr-9\">\n            <Chip\n              icon={icon}\n              label={label}\n              clearButton={clearButton}\n              disabled={disabled}\n              type={type}\n              onClose={action(`onClose: ${label}`)}\n              onClick={action(`onClick: ${label}`)}\n              selected={selected}\n              name={'chip'}\n            />\n            <br />\n            <Text weight=\"strong\">{type.charAt(0).toUpperCase() + type.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-chip-variants-types--types",
@@ -344,11 +344,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: Name) => void) | undefined"
+          "value": "((name: ReactText) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: Name) => void) | undefined"
+            "summary": "((name: ReactText) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -359,11 +359,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: Name) => void) | undefined"
+          "value": "((name: ReactText) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: Name) => void) | undefined"
+            "summary": "((name: ReactText) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -374,11 +374,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "Name"
+          "value": "ReactText"
         },
         "table": {
           "type": {
-            "summary": "Name"
+            "summary": "ReactText"
           },
           "defaultValue": null
         }
@@ -518,11 +518,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: Name) => void) | undefined"
+        "value": "((name: ReactText) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: Name) => void) | undefined"
+          "summary": "((name: ReactText) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -533,11 +533,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: Name) => void) | undefined"
+        "value": "((name: ReactText) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: Name) => void) | undefined"
+          "summary": "((name: ReactText) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -548,11 +548,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "Name"
+        "value": "ReactText"
       },
       "table": {
         "type": {
-          "summary": "Name"
+          "summary": "ReactText"
         },
         "defaultValue": null
       }

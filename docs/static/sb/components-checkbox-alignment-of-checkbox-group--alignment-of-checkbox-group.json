@@ -122,6 +122,15 @@
             "name": "((event: ChangeEvent) => void) | undefined"
           }
         },
+        "id": {
+          "defaultValue": null,
+          "description": "htmlFor label id for checkbox",
+          "name": "id",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
+          }
+        },
         "className": {
           "defaultValue": null,
           "description": "Adds custom class",
@@ -167,7 +176,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.4-1",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -549,6 +558,21 @@
           "defaultValue": null
         }
       },
+      "id": {
+        "name": "id",
+        "description": "htmlFor label id for checkbox",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -748,6 +772,21 @@
       "table": {
         "type": {
           "summary": "((event: ChangeEvent) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "id": {
+      "name": "id",
+      "description": "htmlFor label id for checkbox",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
         },
         "defaultValue": null
       }

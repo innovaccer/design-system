@@ -31,7 +31,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -302,11 +302,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
+          "value": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
+            "summary": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
           },
           "defaultValue": null
         }
@@ -403,11 +403,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
+        "value": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<any>> | ReactElement<PlaceholderParagraphProps, string | JSXElementConstructor<...>>[] | undefined"
+          "summary": "ReactElement<PlaceholderParagraphProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<...>[] | undefined"
         },
         "defaultValue": null
       }

@@ -31,7 +31,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": null
@@ -232,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/css-utilities/Animation/Animation.story.tsx",
     "storySource": {
-      "source": "() => {\n  const data = [\n    {\n      className: 'fade-in',\n      properties: 'animation: fadeIn 120ms cubic-bezier(0.2, 0, 0.38, 0.9);',\n    },\n    {\n      className: 'fade-out',\n      properties: 'animation: fadeOut 120ms cubic-bezier(0.4, 0.14, 0.3, 1);',\n    },\n  ];\n\n  return (\n    <div>\n      <Heading size=\"xxl\">Animation</Heading>\n      <br />\n      <Text weight=\"strong\">Easily set the animation using below classes</Text>\n      <div className=\"mt-5 mb-8\">\n        <Card className=\"h-100\">\n          <Table\n            data={data}\n            schema={utilitiesSchema}\n            headerOptions={{\n              withSearch: true,\n            }}\n            size={'standard'}\n            showMenu={false}\n          />\n        </Card>\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const data = [\n    {\n      className: 'opacity-0',\n      properties: 'opacity: 0',\n    },\n    {\n      className: 'opacity-1',\n      properties: 'opacity: 1',\n    },\n    {\n      className: 'fade-in',\n      properties: '0 to 100 opacity',\n    },\n    {\n      className: 'fade-out',\n      properties: '100 to 0 opacity',\n    },\n    {\n      className: 'slideOut-left',\n      properties: 'The object is moving 16px left while fading out, using an exit-expressive-curve',\n    },\n    {\n      className: 'slideIn-left',\n      properties: 'The object is moving 16px left while fading in, using an entrance-expressive-curve',\n    },\n    {\n      className: 'slideOut-right',\n      properties: 'The object is moving 16px from left to right while fading out, using an exit-expressive-curve',\n    },\n    {\n      className: 'slideIn-right',\n      properties: 'The object is moving 16px from left to right while fading in, using an entrance-expressive-curve',\n    },\n  ];\n\n  return (\n    <div>\n      <Heading size=\"xxl\">Animation</Heading>\n      <br />\n      <Text weight=\"strong\">Easily set the animation using below classes</Text>\n      <Row className=\"mt-5 mb-8\">\n        {data.map((item, key) => {\n          const { className, properties } = item;\n          return <Container key={key} className={className} property={properties} />;\n        })}\n      </Row>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "others-styles-animation--animation",

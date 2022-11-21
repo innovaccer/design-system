@@ -9,13 +9,11 @@
   "component": {
     "displayName": "Checkbox",
     "__docgenInfo": {
-      "description": "######Checkbox has two types:\n - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "######Checkbox has two types:\n  - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "Checkbox",
       "props": {
         "size": {
-          "defaultValue": {
-            "value": "\"regular\""
-          },
+          "defaultValue": null,
           "description": "Size of the `Checkbox`",
           "name": "size",
           "required": false,
@@ -107,9 +105,7 @@
           }
         },
         "tabIndex": {
-          "defaultValue": {
-            "value": "0"
-          },
+          "defaultValue": null,
           "description": "Specifies tab index of `Checkbox`",
           "name": "tabIndex",
           "required": false,
@@ -124,6 +120,15 @@
           "required": false,
           "type": {
             "name": "((event: ChangeEvent) => void) | undefined"
+          }
+        },
+        "id": {
+          "defaultValue": null,
+          "description": "htmlFor label id for checkbox",
+          "name": "id",
+          "required": false,
+          "type": {
+            "name": "string | undefined"
           }
         },
         "className": {
@@ -171,7 +176,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -400,9 +405,7 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\""
           },
-          "defaultValue": {
-            "summary": "\"regular\""
-          }
+          "defaultValue": null
         }
       },
       "defaultChecked": {
@@ -537,9 +540,7 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": {
-            "summary": "0"
-          }
+          "defaultValue": null
         }
       },
       "onChange": {
@@ -553,6 +554,21 @@
         "table": {
           "type": {
             "summary": "((event: ChangeEvent) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "id": {
+        "name": "id",
+        "description": "htmlFor label id for checkbox",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
           },
           "defaultValue": null
         }
@@ -607,9 +623,7 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\""
         },
-        "defaultValue": {
-          "summary": "\"regular\""
-        }
+        "defaultValue": null
       }
     },
     "defaultChecked": {
@@ -744,9 +758,7 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": {
-          "summary": "0"
-        }
+        "defaultValue": null
       }
     },
     "onChange": {
@@ -760,6 +772,21 @@
       "table": {
         "type": {
           "summary": "((event: ChangeEvent) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "id": {
+      "name": "id",
+      "description": "htmlFor label id for checkbox",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
         },
         "defaultValue": null
       }

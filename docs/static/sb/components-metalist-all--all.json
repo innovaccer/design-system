@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/metaList/_stories_/index.story.jsx",
     "storySource": {
-      "source": "() => {\n\n  const list = [\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n  ];\n\n  return (\n    <div>\n      <MetaList list={list} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const list = [\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n    {\n      label: 'Meta data',\n      icon: 'assessment',\n    },\n  ];\n\n  return (\n    <div>\n      <MetaList list={list} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-metalist-all--all",
@@ -242,7 +242,7 @@
     "argTypes": {
       "list": {
         "name": "list",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n  label: string;\n  icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n   label: string;\n   icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -278,9 +278,6 @@
           "name": "enum",
           "value": [
             "undefined",
-            "info",
-            "default",
-            "disabled",
             "primary",
             "alert",
             "warning",
@@ -289,6 +286,9 @@
             "accent2",
             "accent3",
             "accent4",
+            "default",
+            "disabled",
+            "info",
             "subtle",
             "white",
             "destructive",
@@ -313,7 +313,7 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+            "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
           },
           "defaultValue": {
             "summary": "disabled"
@@ -328,9 +328,6 @@
           "name": "enum",
           "value": [
             "undefined",
-            "info",
-            "default",
-            "disabled",
             "primary",
             "alert",
             "warning",
@@ -339,6 +336,9 @@
             "accent2",
             "accent3",
             "accent4",
+            "default",
+            "disabled",
+            "info",
             "subtle",
             "white",
             "destructive",
@@ -363,7 +363,7 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+            "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
           },
           "defaultValue": {
             "summary": "disabled"
@@ -377,9 +377,9 @@
           "required": false,
           "name": "enum",
           "value": [
+            "success",
             "default",
             "disabled",
-            "success",
             "link",
             "subtle",
             "white",
@@ -388,7 +388,7 @@
         },
         "table": {
           "type": {
-            "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+            "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
           },
           "defaultValue": {
             "summary": "\"subtle\""
@@ -431,7 +431,7 @@
   "argTypes": {
     "list": {
       "name": "list",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n  label: string;\n  icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nMetaProps:\n{\n   label: string;\n   icon?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Meta component |  |\n| icon | Icon of Meta component | |\n</pre>",
       "type": {
         "required": true,
         "name": "other",
@@ -467,9 +467,6 @@
         "name": "enum",
         "value": [
           "undefined",
-          "info",
-          "default",
-          "disabled",
           "primary",
           "alert",
           "warning",
@@ -478,6 +475,9 @@
           "accent2",
           "accent3",
           "accent4",
+          "default",
+          "disabled",
+          "info",
           "subtle",
           "white",
           "destructive",
@@ -502,7 +502,7 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+          "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
         },
         "defaultValue": {
           "summary": "disabled"
@@ -517,9 +517,6 @@
         "name": "enum",
         "value": [
           "undefined",
-          "info",
-          "default",
-          "disabled",
           "primary",
           "alert",
           "warning",
@@ -528,6 +525,9 @@
           "accent2",
           "accent3",
           "accent4",
+          "default",
+          "disabled",
+          "info",
           "subtle",
           "white",
           "destructive",
@@ -552,7 +552,7 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+          "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
         },
         "defaultValue": {
           "summary": "disabled"
@@ -566,9 +566,9 @@
         "required": false,
         "name": "enum",
         "value": [
+          "success",
           "default",
           "disabled",
-          "success",
           "link",
           "subtle",
           "white",
@@ -577,7 +577,7 @@
       },
       "table": {
         "type": {
-          "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+          "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
         },
         "defaultValue": {
           "summary": "\"subtle\""

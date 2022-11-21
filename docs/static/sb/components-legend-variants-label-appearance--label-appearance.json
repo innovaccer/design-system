@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/legend/__stories__/variants/labelAppearance.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled'];\n  return (\n    <div>\n      {appearances.map((appearance, i) => {\n        return (\n          <div key={i} style={{ background: appearance === 'white' ? 'black' : 'transparent' }} className=\"mb-4 w-25\">\n            <Legend labelAppearance={appearance} iconAppearance={appearance === 'white' ? 'secondary' : 'inverse'}>\n              {appearance}\n            </Legend>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled'];\n  return (\n    <div>\n      {appearances.map((appearance, i) => {\n        return (\n          <div key={i} className={`${appearance === 'white' ? 'bg-dark' : 'bg-transparent'} mb-4 w-25 `}>\n            <Legend labelAppearance={appearance} iconAppearance={appearance === 'white' ? 'secondary' : 'inverse'}>\n              {appearance}\n            </Legend>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-legend-variants-label-appearance--label-appearance",
@@ -282,9 +282,9 @@
           "name": "enum",
           "value": [
             "undefined",
+            "success",
             "default",
             "disabled",
-            "success",
             "link",
             "subtle",
             "white",
@@ -293,7 +293,7 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+            "summary": "undefined | \"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
           },
           "defaultValue": null
         }
@@ -451,9 +451,9 @@
         "name": "enum",
         "value": [
           "undefined",
+          "success",
           "default",
           "disabled",
-          "success",
           "link",
           "subtle",
           "white",
@@ -462,7 +462,7 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+          "summary": "undefined | \"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
         },
         "defaultValue": null
       }

@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const data = [\n    {\n      name: 'customer_information',\n      label: 'Customer Information',\n      group: 'General'\n    },\n    {\n      name: 'organizational_structure',\n      label: 'Organizational Structure',\n      group: 'General'\n    },\n    {\n      name: 'contacts',\n      label: 'Contacts',\n      group: 'General',\n    },\n    {\n      name: 'empi',\n      label: 'EMPI',\n      group: 'Platform',\n    },\n    {\n      name: 'data_exchange',\n      label: 'Data Exchange',\n      group: 'Platform',\n      subMenu: [\n        {\n          name: 'data_exchange.reports',\n          label: 'Reports'\n        },\n        {\n          name: 'data_exchange.destinations',\n          label: 'Destinations'\n        },\n        {\n          name: 'data_exchange.validation',\n          label: 'Validation'\n        },\n      ]\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n      group: 'Platform',\n    },\n    {\n      name: 'pipelines',\n      label: 'Pipelines',\n      group: 'Apps',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'data_exchange.reports'\n  });\n\n  return (\n    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={setActive}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'customer_information',\n      label: 'Customer Information',\n      group: 'General'\n    },\n    {\n      name: 'organizational_structure',\n      label: 'Organizational Structure',\n      group: 'General'\n    },\n    {\n      name: 'contacts',\n      label: 'Contacts',\n      group: 'General',\n    },\n    {\n      name: 'empi',\n      label: 'EMPI',\n      group: 'Platform',\n    },\n    {\n      name: 'data_exchange',\n      label: 'Data Exchange',\n      group: 'Platform',\n      subMenu: [\n        {\n          name: 'data_exchange.reports',\n          label: 'Reports'\n        },\n        {\n          name: 'data_exchange.destinations',\n          label: 'Destinations'\n        },\n        {\n          name: 'data_exchange.validation',\n          label: 'Validation'\n        },\n      ]\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n      group: 'Platform',\n    },\n    {\n      name: 'pipelines',\n      label: 'Pipelines',\n      group: 'Apps',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'data_exchange.reports'\n  });\n\n  return (\n    <div className=\"bg-secondary-lightest vh-100\">\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={setActive}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/verticalNav/__stories__/Grouping.story.jsx",
     "storySource": {
-      "source": "() => {\n  const data = [\n    {\n      name: 'customer_information',\n      label: 'Customer Information',\n      group: 'General',\n    },\n    {\n      name: 'organizational_structure',\n      label: 'Organizational Structure',\n      group: 'General',\n    },\n    {\n      name: 'contacts',\n      label: 'Contacts',\n      group: 'General',\n    },\n    {\n      name: 'empi',\n      label: 'EMPI',\n      group: 'Platform',\n    },\n    {\n      name: 'data_exchange',\n      label: 'Data Exchange',\n      group: 'Platform',\n      subMenu: [\n        {\n          name: 'data_exchange.reports',\n          label: 'Reports',\n        },\n        {\n          name: 'data_exchange.destinations',\n          label: 'Destinations',\n        },\n        {\n          name: 'data_exchange.validation',\n          label: 'Validation',\n        },\n      ],\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n      group: 'Platform',\n    },\n    {\n      name: 'pipelines',\n      label: 'Pipelines',\n      group: 'Apps',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'data_exchange.reports',\n  });\n\n  return (\n    <div style={{ height: '90vh', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const data = [\n    {\n      name: 'customer_information',\n      label: 'Customer Information',\n      group: 'General',\n    },\n    {\n      name: 'organizational_structure',\n      label: 'Organizational Structure',\n      group: 'General',\n    },\n    {\n      name: 'contacts',\n      label: 'Contacts',\n      group: 'General',\n    },\n    {\n      name: 'empi',\n      label: 'EMPI',\n      group: 'Platform',\n    },\n    {\n      name: 'data_exchange',\n      label: 'Data Exchange',\n      group: 'Platform',\n      subMenu: [\n        {\n          name: 'data_exchange.reports',\n          label: 'Reports',\n        },\n        {\n          name: 'data_exchange.destinations',\n          label: 'Destinations',\n        },\n        {\n          name: 'data_exchange.validation',\n          label: 'Validation',\n        },\n      ],\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n      group: 'Platform',\n    },\n    {\n      name: 'pipelines',\n      label: 'Pipelines',\n      group: 'Apps',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'data_exchange.reports',\n  });\n\n  return (\n    <div className=\"bg-secondary-lightest vh-100\">\n      <VerticalNav menus={data} expanded={true} active={active} onClick={setActive} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-verticalnav-grouping--grouping",
@@ -245,7 +245,7 @@
     "argTypes": {
       "menus": {
         "name": "menus",
-        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n    name: string;\n    label: string;\n    link?: string;\n    group?: string;\n    disabled?: boolean;\n    count?: number;\n    subMenu?: Menu[];\n    icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
         "type": {
           "required": true,
           "name": "other",
@@ -264,11 +264,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ActiveMenu | undefined"
+          "value": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
         },
         "table": {
           "type": {
-            "summary": "ActiveMenu | undefined"
+            "summary": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
           },
           "defaultValue": null
         }
@@ -403,7 +403,7 @@
   "argTypes": {
     "menus": {
       "name": "menus",
-      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n    name: string;\n    label: string;\n    link?: string;\n    group?: string;\n    disabled?: boolean;\n    count?: number;\n    subMenu?: Menu[];\n    icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
       "type": {
         "required": true,
         "name": "other",
@@ -422,11 +422,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ActiveMenu | undefined"
+        "value": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
       },
       "table": {
         "type": {
-          "summary": "ActiveMenu | undefined"
+          "summary": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
         },
         "defaultValue": null
       }

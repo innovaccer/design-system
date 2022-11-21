@@ -13,9 +13,7 @@
       "displayName": "Card",
       "props": {
         "shadow": {
-          "defaultValue": {
-            "value": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
-          },
+          "defaultValue": null,
           "description": "Shadow of the `Card`",
           "name": "shadow",
           "required": false,
@@ -26,10 +24,10 @@
                 "value": "undefined"
               },
               {
-                "value": "\"default\""
+                "value": "\"dark\""
               },
               {
-                "value": "\"dark\""
+                "value": "\"default\""
               },
               {
                 "value": "\"none\""
@@ -88,7 +86,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -101,9 +99,7 @@
                 "displayName": "Card",
                 "props": {
                   "shadow": {
-                    "defaultValue": {
-                      "value": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
-                    },
+                    "defaultValue": null,
                     "description": "Shadow of the `Card`",
                     "name": "shadow",
                     "required": false,
@@ -114,10 +110,10 @@
                           "value": "undefined"
                         },
                         {
-                          "value": "\"default\""
+                          "value": "\"dark\""
                         },
                         {
-                          "value": "\"dark\""
+                          "value": "\"default\""
                         },
                         {
                           "value": "\"none\""
@@ -423,8 +419,8 @@
           "name": "enum",
           "value": [
             "undefined",
-            "default",
             "dark",
+            "default",
             "none",
             "light",
             "medium"
@@ -432,11 +428,9 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\""
+            "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
           },
-          "defaultValue": {
-            "summary": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
-          }
+          "defaultValue": null
         }
       },
       "className": {
@@ -481,8 +475,8 @@
         "name": "enum",
         "value": [
           "undefined",
-          "default",
           "dark",
+          "default",
           "none",
           "light",
           "medium"
@@ -490,11 +484,9 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\""
+          "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
         },
-        "defaultValue": {
-          "summary": "'medium'\n\n**Shadow `light`, `medium` and `dark` will be soon deprecated.**"
-        }
+        "defaultValue": null
       }
     },
     "className": {

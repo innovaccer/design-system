@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -445,19 +445,6 @@
           "type": {
             "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "date",
-                "description": "Date object"
-              },
-              {
-                "name": "dateVal",
-                "description": "Date string value as per `outputFormat`"
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": null
         }
       },
@@ -467,11 +454,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "DateType | undefined"
+          "value": "string | number | Date | undefined"
         },
         "table": {
           "type": {
-            "summary": "DateType | undefined"
+            "summary": "string | number | Date | undefined"
           },
           "defaultValue": null
         }
@@ -503,9 +490,7 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": {
-            "summary": "false"
-          }
+          "defaultValue": null
         }
       },
       "position": {
@@ -588,11 +573,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
+          "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 362 more ... | \"clearOnEmptyBlur\">"
         },
         "table": {
           "type": {
-            "summary": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
+            "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 362 more ... | \"clearOnEmptyBlur\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -605,11 +590,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Validators"
+          "value": "SingleOrArray<ValidatorFn<any[]>>"
         },
         "table": {
           "type": {
-            "summary": "Validators"
+            "summary": "SingleOrArray<ValidatorFn<any[]>>"
           },
           "defaultValue": {
             "summary": "[Utils.validators.date]"
@@ -867,19 +852,6 @@
         "type": {
           "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "date",
-              "description": "Date object"
-            },
-            {
-              "name": "dateVal",
-              "description": "Date string value as per `outputFormat`"
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": null
       }
     },
@@ -889,11 +861,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "DateType | undefined"
+        "value": "string | number | Date | undefined"
       },
       "table": {
         "type": {
-          "summary": "DateType | undefined"
+          "summary": "string | number | Date | undefined"
         },
         "defaultValue": null
       }
@@ -925,9 +897,7 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": {
-          "summary": "false"
-        }
+        "defaultValue": null
       }
     },
     "position": {
@@ -1010,11 +980,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
+        "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 362 more ... | \"clearOnEmptyBlur\">"
       },
       "table": {
         "type": {
-          "summary": "Omit<InputMaskProps, \"onChange\" | \"onClear\" | \"value\" | \"onBlur\" | \"mask\">"
+          "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 362 more ... | \"clearOnEmptyBlur\">"
         },
         "defaultValue": {
           "summary": "{ }"
@@ -1027,11 +997,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Validators"
+        "value": "SingleOrArray<ValidatorFn<any[]>>"
       },
       "table": {
         "type": {
-          "summary": "Validators"
+          "summary": "SingleOrArray<ValidatorFn<any[]>>"
         },
         "defaultValue": {
           "summary": "[Utils.validators.date]"
