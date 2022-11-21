@@ -40,7 +40,7 @@ Cypress.Commands.add('tableOfContent', () => {
   cy.get('[data-test=Docs-Toc--Link]').each((page) => {
     if (page.text().length) {
       cy.request(page.prop('href'));
-      const tocText = page.text().replace(/ +/g, ' ');
+      const tocText = page.text().replace(/ +/g, ' ').replace("'", "’");
       cy.get('[data-test=DesignSystem-Heading]').contains(tocText);
     }
   });
@@ -141,4 +141,11 @@ Cypress.Commands.add('searchBar', (falseQuery, searchQuery) => {
 
   cy.get('[data-test=Docs-content-wrapper]').find('input[name="input"]').clear().type(`${searchQuery}{enter}`);
   cy.get('[data-test=Docs-Card-Heading]').contains(searchQuery);
+});
+
+Cypress.Commands.add('splitArray', (navLink, subNavLink) => {
+  for (let i = 1; i < navLink.length; i += 10) {
+    const subArr = navLink.slice(i, i + 10);
+    subNavLink.push(subArr);
+  }
 });
