@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -247,16 +247,16 @@
           "required": false,
           "name": "enum",
           "value": [
-            "info",
-            "default",
             "alert",
             "warning",
-            "success"
+            "success",
+            "default",
+            "info"
           ]
         },
         "table": {
           "type": {
-            "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+            "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
           },
           "defaultValue": {
             "summary": "\"info\""
@@ -284,11 +284,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "{React.ReactNode}"
+          "value": "ReactNode"
         },
         "table": {
           "type": {
-            "summary": "{React.ReactNode}"
+            "summary": "ReactNode"
           },
           "defaultValue": null
         }
@@ -365,16 +365,16 @@
         "required": false,
         "name": "enum",
         "value": [
-          "info",
-          "default",
           "alert",
           "warning",
-          "success"
+          "success",
+          "default",
+          "info"
         ]
       },
       "table": {
         "type": {
-          "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+          "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
         },
         "defaultValue": {
           "summary": "\"info\""
@@ -402,11 +402,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "{React.ReactNode}"
+        "value": "ReactNode"
       },
       "table": {
         "type": {
-          "summary": "{React.ReactNode}"
+          "summary": "ReactNode"
         },
         "defaultValue": null
       }

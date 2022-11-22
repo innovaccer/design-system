@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/icon/__stories__/variants/Image.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <Icon size={50}>\n      <img\n        alt=\"Innovaccer logo\"\n        src=\"https://innovaccer.com/static/image/site-logo/innovaccer-logo-black.svg\"\n        width=\"150\"\n        height=\"150\"\n      />\n    </Icon>\n  );\n}"
+      "source": "() => {\n  return (\n    <Icon size={50}>\n      <img alt=\"Innovaccer logo\" src=\"https://design.innovaccer.com/images/withoutType.png\" width=\"50\" height=\"50\" />\n    </Icon>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-icon-variants-image--image",
@@ -308,9 +308,6 @@
           "name": "enum",
           "value": [
             "undefined",
-            "info",
-            "default",
-            "disabled",
             "primary",
             "alert",
             "warning",
@@ -319,6 +316,9 @@
             "accent2",
             "accent3",
             "accent4",
+            "default",
+            "disabled",
+            "info",
             "subtle",
             "white",
             "destructive",
@@ -343,7 +343,7 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+            "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
           },
           "defaultValue": null
         }
@@ -507,9 +507,6 @@
         "name": "enum",
         "value": [
           "undefined",
-          "info",
-          "default",
-          "disabled",
           "primary",
           "alert",
           "warning",
@@ -518,6 +515,9 @@
           "accent2",
           "accent3",
           "accent4",
+          "default",
+          "disabled",
+          "info",
           "subtle",
           "white",
           "destructive",
@@ -542,7 +542,7 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"info\" | \"default\" | \"disabled\" | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
+          "summary": "undefined | \"primary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"default\" | \"disabled\" | \"info\" | \"subtle\" | \"white\" | \"destructive\" | \"primary_lighter\" | \"primary_dark\" | \"alert_lighter\" | \"alert_dark\" | \"warning_lighter\" | \"warning_dark\" | \"success_lighter\" | \"success_dark\" | \"accent1_lighter\" | \"accent1_dark\" | \"accent2_lighter\" | \"accent2_dark\" | \"accent3_lighter\" | \"accent3_dark\" | \"accent4_lighter\" | \"accent4_dark\" | \"inverse\""
         },
         "defaultValue": null
       }

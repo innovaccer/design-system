@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1'\n  });\n\n  const onClickHandler = (menu) => {\n    console.log('menu-clicked: ', menu);\n    setActive(menu);\n  };\n\n  return (\n    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>\n      <div\n        style={{\n            background: 'white',\n            padding: 'var(--spacing-m)',\n            borderTop: 'var(--border)',\n            borderBottom: 'var(--border)'\n        }}\n      >\n        <HorizontalNav\n          className=\"w-100 justify-content-center\"\n          menus={data}\n          active={active}\n          onClick={onClickHandler}\n        />\n      </div>\n  </div>\n  );\n}"
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1'\n  });\n\n  const onClickHandler = (menu) => {\n    console.log('menu-clicked: ', menu);\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest\" style={{ height: '200px' }}>\n      <div className=\"bg-light border-top border-bottom p-3\">\n        <HorizontalNav\n          className=\"w-100 justify-content-center\"\n          menus={data}\n          active={active}\n          onClick={onClickHandler}\n        />\n      </div>\n  </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/horizontalNav/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10,\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true,\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1',\n  });\n\n  const onClickHandler = (menu) => {\n    action(`menu-clicked: ${JSON.stringify(menu)}`)();\n\n    setActive(menu);\n  };\n\n  return (\n    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>\n      <div\n        style={{\n          background: 'white',\n          padding: 'var(--spacing-m)',\n          borderTop: 'var(--border)',\n          borderBottom: 'var(--border)',\n        }}\n      >\n        <HorizontalNav className=\"w-100 justify-content-center\" menus={data} active={active} onClick={onClickHandler} />\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10,\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true,\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1',\n  });\n\n  const onClickHandler = (menu) => {\n    action(`menu-clicked: ${JSON.stringify(menu)}`)();\n\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest\" style={{ height: '200px' }}>\n      <div className=\"bg-light border-top border-bottom p-3\">\n        <HorizontalNav className=\"w-100 justify-content-center\" menus={data} active={active} onClick={onClickHandler} />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-horizontalnav-all--all",
@@ -290,7 +290,7 @@
       },
       "menus": {
         "name": "menus",
-        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n    name: string;\n    label: string;\n    link?: string;\n    group?: string;\n    disabled?: boolean;\n    count?: number;\n    subMenu?: Menu[];\n    icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
         "type": {
           "required": true,
           "name": "other",
@@ -309,11 +309,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ActiveMenu | undefined"
+          "value": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
         },
         "table": {
           "type": {
-            "summary": "ActiveMenu | undefined"
+            "summary": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
           },
           "defaultValue": null
         }
@@ -369,7 +369,7 @@
     },
     "menus": {
       "name": "menus",
-      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n    name: string;\n    label: string;\n    link?: string;\n    group?: string;\n    disabled?: boolean;\n    count?: number;\n    subMenu?: Menu[];\n    icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
       "type": {
         "required": true,
         "name": "other",
@@ -388,11 +388,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ActiveMenu | undefined"
+        "value": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
       },
       "table": {
         "type": {
-          "summary": "ActiveMenu | undefined"
+          "summary": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
         },
         "defaultValue": null
       }

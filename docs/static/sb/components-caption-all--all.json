@@ -30,11 +30,12 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "title": "Caption"
+        "title": "Caption",
+        "description": "Caption Component has been Deprecated, please use Inline Message and Text Component instead."
       }
     },
     "framework": "react",
@@ -233,7 +234,7 @@
     "options": {},
     "fileName": "./core/components/atoms/caption/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const error = false;\n  const hide = false;\n  const withInput = false;\n  const children = 'Caption';\n  const options = {\n    error,\n    hide,\n    withInput,\n  };\n\n  return <Caption {...options}>{children}</Caption>;\n}"
+      "source": "() => <></>"
     },
     "__isArgsStory": false,
     "__id": "components-caption-all--all",

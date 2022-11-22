@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const dropdownOptions = [];\n  for (let i = 1; i <= 100; i++) {\n    dropdownOptions.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',\n      selected: i === 2\n    });\n  };\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise(resolve => {\n      window.setTimeout(() => {\n        resolve({\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const onChange = (selectedValues) => {\n    console.log(selectedValues);\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">Editable Dropdown</Label>\n      <EditableDropdown\n        placeholder=\"Select Option\"\n        dropdownOptions={{\n          fetchOptions,\n          onChange\n        }}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const dropdownOptions = [];\n  for (let i = 1; i <= 100; i++) {\n    dropdownOptions.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',\n      selected: i === 2\n    });\n  };\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise(resolve => {\n      this.window.setTimeout(() => {\n        resolve({\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const onChange = (selectedValues) => {\n    console.log(selectedValues);\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">Editable Dropdown</Label>\n      <EditableDropdown\n        placeholder=\"Select Option\"\n        dropdownOptions={{\n          fetchOptions,\n          onChange\n        }}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/editableDropdown/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const placeholder = 'Select Option';\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise((resolve) => {\n      window.setTimeout(() => {\n        resolve({\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const onChange = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">\n        Editable Dropdown\n      </Label>\n      <EditableDropdown\n        placeholder={placeholder}\n        dropdownOptions={{\n          fetchOptions,\n          onChange,\n        }}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const placeholder = 'Select Option';\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise((resolve) => {\n      this.window.setTimeout(() => {\n        resolve({\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const onChange = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">\n        Editable Dropdown\n      </Label>\n      <EditableDropdown\n        placeholder={placeholder}\n        dropdownOptions={{\n          fetchOptions,\n          onChange,\n        }}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-editabledropdown-all--all",
@@ -265,11 +265,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
+          "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
         },
         "table": {
           "type": {
-            "summary": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
+            "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -347,11 +347,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
+        "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
       },
       "table": {
         "type": {
-          "summary": "Omit<DropdownOptions, \"placeholder\" | \"getLabel\">"
+          "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
         },
         "defaultValue": {
           "summary": "{ }"

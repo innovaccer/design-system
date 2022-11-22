@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/organisms/calendar/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const monthsInView = 1;\n\n  const dateValue = new Date('Jan 11 2021');\n\n  const startDate = new Date('Jan 15 2021');\n\n  const endDate = new Date('Jan 20 2021');\n\n  const view = 'year';\n\n  const rangePicker = false;\n\n  const rangeLimit = 0;\n\n  const firstDayOfWeek = 'saturday';\n\n  const disabledBefore = new Date('Jan 20 2015');\n\n  const disabledAfter = new Date('Jan 20 2028');\n\n  const jumpView = true;\n\n  const yearNav = -1;\n\n  const monthNav = -1;\n\n  const attr = {};\n  if (disabledBefore) attr.disabledBefore = disabledBefore;\n  if (disabledAfter) attr.disabledAfter = disabledAfter;\n  if (rangeLimit) attr.rangeLimit = rangeLimit;\n  if (yearNav !== -1) attr.yearNav = yearNav;\n  if (monthNav !== -1) attr.monthNav = monthNav;\n  \n  // we redefine this function here because in storybook.json we donot get imported functions.\n  const convertToDate = (\n    d, format, validators\n  ) => {\n    let dateVal;\n  \n    if (d) {\n      if (typeof d === 'number') {\n        dateVal = new Date(d);\n      } else if (typeof d === 'string') {\n        return format ? translateToDate(format, d, validators) : undefined;\n      } else if (!(d instanceof Date)) {\n        const { year, month, date } = d;\n        dateVal = new Date(year, month, date, 0, 0, 0);\n      } else {\n        dateVal = d;\n      }\n    }\n    return dateVal;\n  };\n\n  return (\n    <Card className=\"d-inline-flex\" shadow=\"light\">\n      <Calendar\n        monthsInView={monthsInView}\n        rangePicker={rangePicker}\n        jumpView={jumpView}\n        date={convertToDate(dateValue)}\n        startDate={convertToDate(startDate)}\n        endDate={convertToDate(endDate)}\n        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}\n        onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}\n        view={view}\n        firstDayOfWeek={firstDayOfWeek}\n        {...attr}\n      />\n    </Card>\n  );\n}"
+      "source": "() => {\n  const monthsInView = 1;\n\n  const dateValue = new Date('Jan 11 2021');\n\n  const startDate = new Date('Jan 15 2021');\n\n  const endDate = new Date('Jan 20 2021');\n\n  const view = 'date';\n\n  const rangePicker = false;\n\n  const rangeLimit = 0;\n\n  const firstDayOfWeek = 'saturday';\n\n  const disabledBefore = new Date('Jan 20 2015');\n\n  const disabledAfter = new Date('Jan 20 2028');\n\n  const jumpView = true;\n\n  const yearNav = -1;\n\n  const monthNav = -1;\n\n  const attr = {};\n  if (disabledBefore) attr.disabledBefore = disabledBefore;\n  if (disabledAfter) attr.disabledAfter = disabledAfter;\n  if (rangeLimit) attr.rangeLimit = rangeLimit;\n  if (yearNav !== -1) attr.yearNav = yearNav;\n  if (monthNav !== -1) attr.monthNav = monthNav;\n\n  // we redefine this function here because in storybook.json we do not get imported functions.\n\n  const isValid = (validators, ...value) => {\n    const iterator = Array.isArray(validators) ? validators : [validators];\n\n    return iterator.every((validator) => validator(...value));\n  };\n\n  const translateToDate = (format, val, validators) => {\n    if (isValid(validators, val, format)) {\n      const separator = format.includes('/') ? '/' : '-';\n\n      let year = -1,\n        month = -1,\n        date = -1;\n      const v = val.split(separator);\n      format.split(separator).forEach((f, i) => {\n        switch (f) {\n          case 'mm':\n            month = +v[i] - 1;\n            break;\n          case 'yyyy':\n            year = +v[i];\n            break;\n          case 'dd':\n            date = +v[i];\n            break;\n        }\n      });\n      const d = convertToDate({ year, month, date });\n      return d;\n    } else {\n      return undefined;\n    }\n  };\n\n  const convertToDate = (d, format, validators) => {\n    let dateVal;\n\n    if (d) {\n      if (typeof d === 'number') {\n        dateVal = new Date(d);\n      } else if (typeof d === 'string') {\n        return format ? translateToDate(format, d, validators) : undefined;\n      } else if (!(d instanceof Date)) {\n        const { year, month, date } = d;\n        dateVal = new Date(year, month, date, 0, 0, 0);\n      } else {\n        dateVal = d;\n      }\n    }\n    return dateVal;\n  };\n\n  return (\n    <Card className=\"d-inline-flex\" shadow=\"light\">\n      <Calendar\n        monthsInView={monthsInView}\n        rangePicker={rangePicker}\n        jumpView={jumpView}\n        date={convertToDate(dateValue)}\n        startDate={convertToDate(startDate)}\n        endDate={convertToDate(endDate)}\n        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}\n        onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}\n        view={view}\n        firstDayOfWeek={firstDayOfWeek}\n        {...attr}\n      />\n    </Card>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-calendar-all--all",
@@ -392,7 +392,7 @@
       },
       "events": {
         "name": "events",
-        "description": "Adds event highlighter to given date\n`events: {\n   'mm/dd/yyyy': true\n}`",
+        "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
         "type": {
           "required": false,
           "name": "other",
@@ -750,7 +750,7 @@
     },
     "events": {
       "name": "events",
-      "description": "Adds event highlighter to given date\n`events: {\n   'mm/dd/yyyy': true\n}`",
+      "description": "Adds event highlighter to given date\n`events: {\n    'mm/dd/yyyy': true\n}`",
       "type": {
         "required": false,
         "name": "other",

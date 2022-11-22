@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/organisms/inlineMessage/__stories__/variants/Info.story.jsx",
     "storySource": {
-      "source": "() => (\n  <InlineMessage appearance=\"info\" description=\"There are two new referral requests.\" />\n)"
+      "source": "() => <InlineMessage appearance=\"info\" description=\"There are two new referral requests.\" />"
     },
     "__isArgsStory": false,
     "__id": "components-inlinemessage-variants-info-message--info-message",
@@ -247,16 +247,16 @@
           "required": false,
           "name": "enum",
           "value": [
-            "info",
-            "default",
             "alert",
             "warning",
-            "success"
+            "success",
+            "default",
+            "info"
           ]
         },
         "table": {
           "type": {
-            "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+            "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
           },
           "defaultValue": {
             "summary": "\"default\""
@@ -276,6 +276,26 @@
           },
           "defaultValue": {
             "summary": "\"\""
+          }
+        }
+      },
+      "size": {
+        "name": "size",
+        "description": "Size of `Inline Message`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "regular",
+            "small"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "\"regular\" | \"small\""
+          },
+          "defaultValue": {
+            "summary": "\"regular\""
           }
         }
       },
@@ -320,16 +340,16 @@
         "required": false,
         "name": "enum",
         "value": [
-          "info",
-          "default",
           "alert",
           "warning",
-          "success"
+          "success",
+          "default",
+          "info"
         ]
       },
       "table": {
         "type": {
-          "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+          "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
         },
         "defaultValue": {
           "summary": "\"default\""
@@ -349,6 +369,26 @@
         },
         "defaultValue": {
           "summary": "\"\""
+        }
+      }
+    },
+    "size": {
+      "name": "size",
+      "description": "Size of `Inline Message`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "regular",
+          "small"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "\"regular\" | \"small\""
+        },
+        "defaultValue": {
+          "summary": "\"regular\""
         }
       }
     },

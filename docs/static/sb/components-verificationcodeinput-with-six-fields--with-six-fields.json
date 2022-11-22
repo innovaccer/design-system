@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -278,7 +278,7 @@
             "summary": "undefined | \"number\" | \"text\" | \"password\""
           },
           "defaultValue": {
-            "summary": "\"number\""
+            "summary": "number"
           }
         }
       },
@@ -504,9 +504,7 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": {
-            "summary": "256"
-          }
+          "defaultValue": null
         }
       }
     }
@@ -548,7 +546,7 @@
           "summary": "undefined | \"number\" | \"text\" | \"password\""
         },
         "defaultValue": {
-          "summary": "\"number\""
+          "summary": "number"
         }
       }
     },
@@ -774,9 +772,7 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": {
-          "summary": "256"
-        }
+        "defaultValue": null
       }
     }
   }

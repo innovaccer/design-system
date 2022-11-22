@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -260,41 +260,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+          "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
-          },
-          "defaultValue": null
-        }
-      },
-      "className": {
-        "name": "className",
-        "description": "Adds custom class",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "string | undefined"
-          },
-          "defaultValue": null
-        }
-      },
-      "data-test": {
-        "name": "data-test",
-        "description": "Stores custom testing data private to the component.",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "string | undefined"
+            "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
           },
           "defaultValue": null
         }
@@ -319,15 +289,6 @@
         "table": {
           "type": {
             "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
-          },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "Position",
-                "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
-              }
-            ],
-            "returns": false
           },
           "defaultValue": {
             "summary": "\"bottom\""
@@ -410,6 +371,36 @@
           },
           "defaultValue": null
         }
+      },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
       }
     }
   },
@@ -435,41 +426,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+        "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
-        },
-        "defaultValue": null
-      }
-    },
-    "className": {
-      "name": "className",
-      "description": "Adds custom class",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "string | undefined"
-        },
-        "defaultValue": null
-      }
-    },
-    "data-test": {
-      "name": "data-test",
-      "description": "Stores custom testing data private to the component.",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "string | undefined"
+          "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "defaultValue": null
       }
@@ -494,15 +455,6 @@
       "table": {
         "type": {
           "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
-        },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "Position",
-              "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
-            }
-          ],
-          "returns": false
         },
         "defaultValue": {
           "summary": "\"bottom\""
@@ -582,6 +534,36 @@
       "table": {
         "type": {
           "summary": "{ open: string; close: string; } | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
         },
         "defaultValue": null
       }

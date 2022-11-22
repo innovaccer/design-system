@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/paragraph/__stories__/variants/Appearance.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled'];\n  return (\n    <div className=\"d-flex\">\n      {appearances.map((appear, ind) => {\n        return (\n          <div key={ind} className=\"mr-6\">\n            <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>\n              <Paragraph appearance={appear}>Paragraph</Paragraph>\n            </div>\n            <br />\n            <Text weight=\"strong\">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled'];\n  return (\n    <div className=\"d-flex\">\n      {appearances.map((appear, ind) => {\n        return (\n          <div key={ind} className=\"mr-6\">\n            <div className={appear === 'white' ? 'bg-dark' : 'bg-transparent'}>\n              <Paragraph appearance={appear}>Paragraph</Paragraph>\n            </div>\n            <br />\n            <Text weight=\"strong\">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-paragraph-variants-appearance--appearance",
@@ -249,11 +249,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "{React.ReactNode}"
+          "value": "ReactNode"
         },
         "table": {
           "type": {
-            "summary": "{React.ReactNode}"
+            "summary": "ReactNode"
           },
           "defaultValue": null
         }
@@ -321,11 +321,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "{React.ReactNode}"
+        "value": "ReactNode"
       },
       "table": {
         "type": {
-          "summary": "{React.ReactNode}"
+          "summary": "ReactNode"
         },
         "defaultValue": null
       }

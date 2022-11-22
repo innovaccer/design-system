@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/Light.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"mb-9\">\n    <Popover \n      position=\"bottom\" \n      on=\"click\" \n      trigger={<Button appearance=\"basic\">Open Popover</Button>} \n      open={false}\n    >\n      <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />\n    </Popover>\n  </div>\n)"
+      "source": "() => (\n  <div className=\"mb-9\">\n    <Popover position=\"bottom\" on=\"click\" trigger={<Button appearance=\"basic\">Open Popover</Button>} open={false}>\n      <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />\n    </Popover>\n  </div>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-popover-light-popover--light-popover",
@@ -279,15 +279,6 @@
           "type": {
             "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "Position",
-                "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": {
             "summary": "\"bottom\""
           }
@@ -304,15 +295,6 @@
         "table": {
           "type": {
             "summary": "((open: boolean, type?: string | undefined) => void) | undefined"
-          },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "type",
-                "description": "'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'"
-              }
-            ],
-            "returns": false
           },
           "defaultValue": null
         }
@@ -334,7 +316,7 @@
       },
       "customStyle": {
         "name": "customStyle",
-        "description": "Adds custom CSS to `Popover` element\n\n<pre className=\"DocPage-codeBlock\">\nCustomStyle {\n height?: number | string;\n width?: number | string;\n minWidth?: number | string;\n minHeight?: number | string;\n maxHeight?: number | string;\n maxWidth?: number | string;\n}\n</pre>",
+        "description": "Adds custom CSS to `Popover` element\n\n<pre className=\"DocPage-codeBlock\">\nCustomStyle {\n  height?: number | string;\n  width?: number | string;\n  minWidth?: number | string;\n  minHeight?: number | string;\n  maxHeight?: number | string;\n  maxWidth?: number | string;\n}\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -411,32 +393,17 @@
           "defaultValue": null
         }
       },
-      "open": {
-        "name": "open",
-        "description": "Handles open/close",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "boolean | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean | undefined"
-          },
-          "defaultValue": null
-        }
-      },
       "trigger": {
         "name": "trigger",
         "description": "Element triggering the `Popover`",
         "type": {
           "required": true,
           "name": "other",
-          "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+          "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
+            "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
           },
           "defaultValue": null
         }
@@ -461,9 +428,24 @@
           }
         }
       },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "offset": {
         "name": "offset",
-        "description": "Vertical offset from trigger\n\n<pre className=\"DocPage-codeBlock\">\n{\n   small: '2px',\n   medium: '4px',\n   large: '8px'\n}\n</pre>",
+        "description": "Vertical offset from trigger\n\n<pre className=\"DocPage-codeBlock\">\n{\n    small: '2px',\n    medium: '4px',\n    large: '8px'\n}\n</pre>",
         "type": {
           "required": true,
           "name": "enum",
@@ -615,15 +597,6 @@
         "type": {
           "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "Position",
-              "description": "'top' | 'top-start' | 'top-end' | 'bottom'\n| 'bottom-start' | 'bottom-end' | 'left' | 'right'"
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": {
           "summary": "\"bottom\""
         }
@@ -640,15 +613,6 @@
       "table": {
         "type": {
           "summary": "((open: boolean, type?: string | undefined) => void) | undefined"
-        },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "type",
-              "description": "'onMouseLeave' | 'onMouseEnter' | 'outsideClick' | 'onClick'"
-            }
-          ],
-          "returns": false
         },
         "defaultValue": null
       }
@@ -670,7 +634,7 @@
     },
     "customStyle": {
       "name": "customStyle",
-      "description": "Adds custom CSS to `Popover` element\n\n<pre className=\"DocPage-codeBlock\">\nCustomStyle {\n height?: number | string;\n width?: number | string;\n minWidth?: number | string;\n minHeight?: number | string;\n maxHeight?: number | string;\n maxWidth?: number | string;\n}\n</pre>",
+      "description": "Adds custom CSS to `Popover` element\n\n<pre className=\"DocPage-codeBlock\">\nCustomStyle {\n  height?: number | string;\n  width?: number | string;\n  minWidth?: number | string;\n  minHeight?: number | string;\n  maxHeight?: number | string;\n  maxWidth?: number | string;\n}\n</pre>",
       "type": {
         "required": true,
         "name": "other",
@@ -747,32 +711,17 @@
         "defaultValue": null
       }
     },
-    "open": {
-      "name": "open",
-      "description": "Handles open/close",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "boolean | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean | undefined"
-        },
-        "defaultValue": null
-      }
-    },
     "trigger": {
       "name": "trigger",
       "description": "Element triggering the `Popover`",
       "type": {
         "required": true,
         "name": "other",
-        "value": "ReactElement<any, string | JSXElementConstructor<any>>"
+        "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<any, string | JSXElementConstructor<any>>"
+          "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "defaultValue": null
       }
@@ -797,9 +746,24 @@
         }
       }
     },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "offset": {
       "name": "offset",
-      "description": "Vertical offset from trigger\n\n<pre className=\"DocPage-codeBlock\">\n{\n   small: '2px',\n   medium: '4px',\n   large: '8px'\n}\n</pre>",
+      "description": "Vertical offset from trigger\n\n<pre className=\"DocPage-codeBlock\">\n{\n    small: '2px',\n    medium: '4px',\n    large: '8px'\n}\n</pre>",
       "type": {
         "required": true,
         "name": "enum",

@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const list = [\n    {\n      label: 'Level 0',\n      link: '/level0'\n    },\n    {\n      label: 'Level 1',\n      link: '/level1'\n    },\n    {\n      label: 'Level 2',\n      link: '/level2'\n    },\n    {\n      label: 'Level 3',\n      link: '/level3'\n    },\n    {\n      label: 'Level 4',\n      link: '/level4'\n    },\n  ];\n\n  return (\n    <div style={{ background: 'var(--secondary-lightest)' }}>\n      <Breadcrumbs\n        list={list}\n        onClick={link => console.log(`on-click: ${link}`)}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const list = [\n    {\n      label: 'Level 0',\n      link: '/level0'\n    },\n    {\n      label: 'Level 1',\n      link: '/level1'\n    },\n    {\n      label: 'Level 2',\n      link: '/level2'\n    },\n    {\n      label: 'Level 3',\n      link: '/level3'\n    },\n    {\n      label: 'Level 4',\n      link: '/level4'\n    },\n  ];\n\n  return (\n    <div className=\"bg-secondary-lightest\">\n      <Breadcrumbs\n        list={list}\n        onClick={link => console.log(`on-click: ${link}`)}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/breadcrumbs/__stories__/variants/moreThan4Levels.story.jsx",
     "storySource": {
-      "source": "() => {\n  const list = [\n    {\n      label: 'Level 0',\n      link: '/level0',\n    },\n    {\n      label: 'Level 1',\n      link: '/level1',\n    },\n    {\n      label: 'Level 2',\n      link: '/level2',\n    },\n    {\n      label: 'Level 3',\n      link: '/level3',\n    },\n    {\n      label: 'Level 4',\n      link: '/level4',\n    },\n  ];\n\n  return (\n    <div style={{ background: 'var(--secondary-lightest)' }}>\n      <Breadcrumbs list={list} onClick={(link) => action(`on-click: ${link}`)()} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const list = [\n    {\n      label: 'Level 0',\n      link: '/level0',\n    },\n    {\n      label: 'Level 1',\n      link: '/level1',\n    },\n    {\n      label: 'Level 2',\n      link: '/level2',\n    },\n    {\n      label: 'Level 3',\n      link: '/level3',\n    },\n    {\n      label: 'Level 4',\n      link: '/level4',\n    },\n  ];\n\n  return (\n    <div className=\"bg-secondary-lightest\">\n      <Breadcrumbs list={list} onClick={(link) => action(`on-click: ${link}`)()} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-breadcrumbs-variants-more-than-4-levels--more-than-4-levels",
@@ -245,7 +245,7 @@
     "argTypes": {
       "list": {
         "name": "list",
-        "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n   label: string;\n   link: string;\n}\n</pre>",
+        "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n    label: string;\n    link: string;\n}\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -309,7 +309,7 @@
   "argTypes": {
     "list": {
       "name": "list",
-      "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n   label: string;\n   link: string;\n}\n</pre>",
+      "description": "List of `Breadcrumb` props\n\n<pre className=\"DocPage-codeBlock\">\nBreadcrumb: {\n    label: string;\n    link: string;\n}\n</pre>",
       "type": {
         "required": true,
         "name": "other",

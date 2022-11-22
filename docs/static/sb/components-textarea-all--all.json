@@ -49,9 +49,7 @@
           }
         },
         "rows": {
-          "defaultValue": {
-            "value": "3"
-          },
+          "defaultValue": null,
           "description": "Number of rows in `Textarea`",
           "name": "rows",
           "required": false,
@@ -176,7 +174,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -458,9 +456,7 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": {
-            "summary": "3"
-          }
+          "defaultValue": null
         }
       },
       "disabled": {
@@ -689,9 +685,7 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": {
-          "summary": "3"
-        }
+        "defaultValue": null
       }
     },
     "disabled": {

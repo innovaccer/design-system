@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const data = [\n    {\n      name: 'patient_360',\n      label: 'Patient 360',\n      icon: 'assignment_ind',\n      link: '/patient360',\n      group: 'Section 1'\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management and Resources',\n      icon: 'forum',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'events'\n        },\n        {\n          name: 'care_management.care_plans',\n          label: 'Care Plans',\n          icon: 'events'\n        }\n      ]\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      disabled: true,\n      group: 'Section 2',\n      icon: 'airline_seat_flat_angled'\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'risk.timeline',\n          label: 'Timeline',\n          icon: 'events'\n        },\n        {\n          name: 'risk.care_plans',\n          label: 'Care Plans',\n          icon: 'events'\n        }\n      ]\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'receipt',\n      group: 'Section 3'\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'account_circle',\n      group: 'Section 3'\n    },\n    {\n      name: 'manula_entry',\n      label: 'Manual Entry',\n      icon: 'border_color',\n      group: 'Section 3'\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment',\n      group: 'Section 3'\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline'\n  });\n\n  const onClickHandler = (menu) => {\n    console.log('menu-clicked: ', menu);\n    setActive(menu);\n  };\n\n  return (\n    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={onClickHandler}\n        hoverable={false}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'patient_360',\n      label: 'Patient 360',\n      icon: 'assignment_ind',\n      link: '/patient360',\n      group: 'Section 1'\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management and Resources',\n      icon: 'forum',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n          icon: 'events'\n        },\n        {\n          name: 'care_management.care_plans',\n          label: 'Care Plans',\n          icon: 'events'\n        }\n      ]\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      disabled: true,\n      group: 'Section 2',\n      icon: 'airline_seat_flat_angled'\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'risk.timeline',\n          label: 'Timeline',\n          icon: 'events'\n        },\n        {\n          name: 'risk.care_plans',\n          label: 'Care Plans',\n          icon: 'events'\n        }\n      ]\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'receipt',\n      group: 'Section 3'\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'account_circle',\n      group: 'Section 3'\n    },\n    {\n      name: 'manula_entry',\n      label: 'Manual Entry',\n      icon: 'border_color',\n      group: 'Section 3'\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment',\n      group: 'Section 3'\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline'\n  });\n\n  const onClickHandler = (menu) => {\n    console.log('menu-clicked: ', menu);\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest vh-100\">\n      <VerticalNav\n        menus={data}\n        expanded={true}\n        active={active}\n        onClick={onClickHandler}\n        hoverable={false}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/verticalNav/__stories__/variants/Sections.story.jsx",
     "storySource": {
-      "source": "() => {\n  const autoCollapse = true;\n\n  const data = [\n    {\n      name: 'patient_360',\n      label: 'Patient 360',\n      icon: 'assignment_ind',\n      link: '/patient360',\n      group: 'Section 1',\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management and Resources',\n      icon: 'forum',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n        },\n        {\n          name: 'care_management.care_plans',\n          label: 'Care Plans',\n        },\n      ],\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      disabled: true,\n      group: 'Section 2',\n      icon: 'airline_seat_flat_angled',\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'risk.timeline',\n          label: 'Timeline',\n        },\n        {\n          name: 'risk.care_plans',\n          label: 'Care Plans',\n        },\n      ],\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'receipt',\n      group: 'Section 3',\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'account_circle',\n      group: 'Section 3',\n    },\n    {\n      name: 'manula_entry',\n      label: 'Manual Entry',\n      icon: 'border_color',\n      group: 'Section 3',\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment',\n      group: 'Section 3',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline',\n  });\n\n  const onClickHandler = (menu) => {\n    action(`menu-clicked: ${JSON.stringify(menu)}`)();\n\n    setActive(menu);\n  };\n\n  return (\n    <div style={{ height: 'calc(90vh)', background: 'var(--secondary-lightest)' }}>\n      <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const autoCollapse = true;\n\n  const data = [\n    {\n      name: 'patient_360',\n      label: 'Patient 360',\n      icon: 'assignment_ind',\n      link: '/patient360',\n      group: 'Section 1',\n    },\n    {\n      name: 'care_management',\n      label: 'Care Management and Resources',\n      icon: 'forum',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'care_management.timeline',\n          label: 'Timeline',\n        },\n        {\n          name: 'care_management.care_plans',\n          label: 'Care Plans',\n        },\n      ],\n    },\n    {\n      name: 'episodes',\n      label: 'Episodes',\n      disabled: true,\n      group: 'Section 2',\n      icon: 'airline_seat_flat_angled',\n    },\n    {\n      name: 'risk',\n      label: 'Risk',\n      icon: 'favorite',\n      group: 'Section 2',\n      subMenu: [\n        {\n          name: 'risk.timeline',\n          label: 'Timeline',\n        },\n        {\n          name: 'risk.care_plans',\n          label: 'Care Plans',\n        },\n      ],\n    },\n    {\n      name: 'claims',\n      label: 'Claims',\n      icon: 'receipt',\n      group: 'Section 3',\n    },\n    {\n      name: 'profile',\n      label: 'Profile',\n      icon: 'account_circle',\n      group: 'Section 3',\n    },\n    {\n      name: 'manula_entry',\n      label: 'Manual Entry',\n      icon: 'border_color',\n      group: 'Section 3',\n    },\n    {\n      name: 'documents',\n      label: 'Documents',\n      icon: 'assignment',\n      group: 'Section 3',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'care_management.timeline',\n  });\n\n  const onClickHandler = (menu) => {\n    action(`menu-clicked: ${JSON.stringify(menu)}`)();\n\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest vh-100\">\n      <VerticalNav menus={data} expanded={true} autoCollapse={autoCollapse} active={active} onClick={onClickHandler} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-verticalnav-variants-section--section",
@@ -245,7 +245,7 @@
     "argTypes": {
       "menus": {
         "name": "menus",
-        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+        "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n    name: string;\n    label: string;\n    link?: string;\n    group?: string;\n    disabled?: boolean;\n    count?: number;\n    subMenu?: Menu[];\n    icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
         "type": {
           "required": true,
           "name": "other",
@@ -264,11 +264,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ActiveMenu | undefined"
+          "value": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
         },
         "table": {
           "type": {
-            "summary": "ActiveMenu | undefined"
+            "summary": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
           },
           "defaultValue": null
         }
@@ -403,7 +403,7 @@
   "argTypes": {
     "menus": {
       "name": "menus",
-      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n   name: string;\n   label: string;\n   link?: string;\n   group?: string;\n   disabled?: boolean;\n   count?: number;\n   subMenu?: Menu[];\n   icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
+      "description": "List of menus to be rendered\n\n<pre className=\"DocPage-codeBlock\">\nMenu: {\n    name: string;\n    label: string;\n    link?: string;\n    group?: string;\n    disabled?: boolean;\n    count?: number;\n    subMenu?: Menu[];\n    icon?: string;\n};\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| name | Menu name | |\n| label | Menu display name | |\n| link | Menu link | |\n| disabled | Set menu as disabled | false |\n| count | Value of Count (Max value 99) | |\n| group | Section of menu | |\n| subMenu | Menu submenus of type `Menu[]` | |\n| icon | Menu icon | |",
       "type": {
         "required": true,
         "name": "other",
@@ -422,11 +422,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ActiveMenu | undefined"
+        "value": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
       },
       "table": {
         "type": {
-          "summary": "ActiveMenu | undefined"
+          "summary": "({ name: string; } & Partial<Menu>) | ({ link: string; } & Partial<Menu>) | undefined"
         },
         "defaultValue": null
       }

@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/paragraph/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearance = 'white';\n  const options = {\n    appearance,\n  };\n\n  return (\n    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>\n      <Paragraph {...options}>\n        Paragraph <b>component</b> have different varients, look for options in knobs tab.\n      </Paragraph>\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearance = 'white';\n  const options = {\n    appearance,\n  };\n\n  return (\n    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>\n      <Paragraph {...options}>\n        Paragraph <b>component</b> have different varients, look for options in knobs tab.\n      </Paragraph>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-paragraph-all--all",
@@ -249,11 +249,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "{React.ReactNode}"
+          "value": "ReactNode"
         },
         "table": {
           "type": {
-            "summary": "{React.ReactNode}"
+            "summary": "ReactNode"
           },
           "defaultValue": null
         }
@@ -321,11 +321,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "{React.ReactNode}"
+        "value": "ReactNode"
       },
       "table": {
         "type": {
-          "summary": "{React.ReactNode}"
+          "summary": "ReactNode"
         },
         "defaultValue": null
       }

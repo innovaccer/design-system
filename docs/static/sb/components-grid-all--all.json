@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -604,11 +604,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactNode | FunctionComponent<{}>"
+          "value": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactNode | FunctionComponent<{}>"
+            "summary": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
           },
           "defaultValue": null
         }
@@ -1133,11 +1133,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactNode | FunctionComponent<{}>"
+        "value": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactNode | FunctionComponent<{}>"
+          "summary": "string | number | boolean | {} | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ... 4 more ... | undefined"
         },
         "defaultValue": null
       }

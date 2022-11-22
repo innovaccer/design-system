@@ -9,13 +9,11 @@
   "component": {
     "displayName": "Switch",
     "__docgenInfo": {
-      "description": "######Switch has two types:\n - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Switch](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "######Switch has two types:\n  - [Controlled Switch](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled Switch](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "Switch",
       "props": {
         "size": {
-          "defaultValue": {
-            "value": "\"regular\""
-          },
+          "defaultValue": null,
           "description": "Size of `Switch`",
           "name": "size",
           "required": false,
@@ -162,7 +160,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -393,9 +391,7 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": {
-            "summary": "\"regular\""
-          }
+          "defaultValue": null
         }
       },
       "appearance": {
@@ -560,9 +556,7 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": {
-          "summary": "\"regular\""
-        }
+        "defaultValue": null
       }
     },
     "appearance": {

@@ -36,9 +36,7 @@
           }
         },
         "size": {
-          "defaultValue": {
-            "value": "\"regular\""
-          },
+          "defaultValue": null,
           "description": "The size of `Button`",
           "name": "size",
           "required": false,
@@ -61,9 +59,7 @@
           }
         },
         "appearance": {
-          "defaultValue": {
-            "value": "\"basic\""
-          },
+          "defaultValue": null,
           "description": "Color of the `Button`\n\n**'success' has been deprecated and all success button types will now be changed to primary button automatically**",
           "name": "appearance",
           "required": false,
@@ -146,9 +142,7 @@
           }
         },
         "iconAlign": {
-          "defaultValue": {
-            "value": "\"left\""
-          },
+          "defaultValue": null,
           "description": "Align icon left or right",
           "name": "iconAlign",
           "required": false,
@@ -182,13 +176,11 @@
           "name": "children",
           "required": false,
           "type": {
-            "name": "ReactText | undefined"
+            "name": "string | number | undefined"
           }
         },
         "tabIndex": {
-          "defaultValue": {
-            "value": "0"
-          },
+          "defaultValue": null,
           "description": "Specifies tab index of `Button`",
           "name": "tabIndex",
           "required": false,
@@ -277,7 +269,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -481,7 +473,7 @@
     "options": {},
     "fileName": "./core/components/atoms/button/__stories__/variants/state/Basic.story.jsx",
     "storySource": {
-      "source": "() => {\n  const disabled = false;\n  const expanded = false;\n  const loading = false;\n  const children = 'Open';\n  const style = {\n    justifyContent: 'space-between',\n  };\n\n  return (\n    <div className=\"d-flex w-25\" style={style}>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={disabled}\n          loading={loading}\n          aria-label=\"Open\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Default</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={true}\n          loading={loading}\n          aria-label=\"Open\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Disabled</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={disabled}\n          loading={true}\n          aria-label=\"Loading\"\n        >\n          {''}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Loading</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          selected={true}\n          aria-label=\"Selected\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Selected</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          selected={true}\n          icon=\"events\"\n          aria-label=\"Selected\"\n        />\n        <br />\n        <Text weight=\"strong\">Selected Icon</Text>\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const disabled = false;\n  const expanded = false;\n  const loading = false;\n  const children = 'Open';\n\n  return (\n    <div className=\"d-flex w-25 justify-content-between\">\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={disabled}\n          loading={loading}\n          aria-label=\"Open\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Default</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={true}\n          loading={loading}\n          aria-label=\"Open\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Disabled</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          expanded={expanded}\n          disabled={disabled}\n          loading={true}\n          aria-label=\"Loading\"\n        >\n          {''}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Loading</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          selected={true}\n          aria-label=\"Selected\"\n        >\n          {children}\n        </Button>\n        <br />\n        <Text weight=\"strong\">Selected</Text>\n      </div>\n      <div className=\"mr-9\">\n        <Button\n          onClick={action('button-clicked')}\n          onMouseEnter={action('mouse-enter')}\n          onMouseLeave={action('mouse-leave')}\n          appearance={'basic'}\n          size={'regular'}\n          selected={true}\n          icon=\"events\"\n          aria-label=\"Selected\"\n        />\n        <br />\n        <Text weight=\"strong\">Selected Icon</Text>\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-button-variants-state-basic--basic",
@@ -528,9 +520,7 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": {
-            "summary": "\"regular\""
-          }
+          "defaultValue": null
         }
       },
       "appearance": {
@@ -552,9 +542,7 @@
           "type": {
             "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
           },
-          "defaultValue": {
-            "summary": "\"basic\""
-          }
+          "defaultValue": null
         }
       },
       "disabled": {
@@ -663,9 +651,7 @@
           "type": {
             "summary": "undefined | \"left\" | \"right\""
           },
-          "defaultValue": {
-            "summary": "\"left\""
-          }
+          "defaultValue": null
         }
       },
       "largeIcon": {
@@ -689,11 +675,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactText | undefined"
+          "value": "string | number | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactText | undefined"
+            "summary": "string | number | undefined"
           },
           "defaultValue": null
         }
@@ -710,9 +696,7 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": {
-            "summary": "0"
-          }
+          "defaultValue": null
         }
       },
       "autoFocus": {
@@ -846,9 +830,7 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": {
-          "summary": "\"regular\""
-        }
+        "defaultValue": null
       }
     },
     "appearance": {
@@ -870,9 +852,7 @@
         "type": {
           "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
         },
-        "defaultValue": {
-          "summary": "\"basic\""
-        }
+        "defaultValue": null
       }
     },
     "disabled": {
@@ -981,9 +961,7 @@
         "type": {
           "summary": "undefined | \"left\" | \"right\""
         },
-        "defaultValue": {
-          "summary": "\"left\""
-        }
+        "defaultValue": null
       }
     },
     "largeIcon": {
@@ -1007,11 +985,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactText | undefined"
+        "value": "string | number | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactText | undefined"
+          "summary": "string | number | undefined"
         },
         "defaultValue": null
       }
@@ -1028,9 +1006,7 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": {
-          "summary": "0"
-        }
+        "defaultValue": null
       }
     },
     "autoFocus": {

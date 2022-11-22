@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/chipGroup/_stories_/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const type = ['action', 'input', 'selection'];\n  const list = [\n    {\n      label: 'Action',\n      icon: 'assessment',\n      disabled: false,\n      type: type[0],\n      name: '1',\n    },\n    {\n      label: 'Input',\n      icon: 'assessment',\n      clearButton: true,\n      disabled: false,\n      type: type[1],\n      name: '2',\n    },\n    {\n      label: 'Selection',\n      icon: 'assessment',\n      clearButton: true,\n      disabled: false,\n      type: type[2],\n      selected: true,\n      name: '3',\n    },\n    {\n      label: 'Selection',\n      icon: 'assessment',\n      clearButton: true,\n      disabled: false,\n      type: type[2],\n      name: '4',\n    },\n  ];\n\n  return <ChipGroup onClose={action(`onClose: ${name}`)} onClick={action(`onClick: ${name}`)} list={list} />;\n}"
+      "source": "() => {\n  const type = ['action', 'input', 'selection'];\n  const list = [\n    {\n      label: 'Action',\n      icon: 'assessment',\n      disabled: false,\n      type: type[0],\n      name: '1',\n    },\n    {\n      label: 'Input',\n      icon: 'assessment',\n      clearButton: true,\n      disabled: false,\n      type: type[1],\n      name: '2',\n    },\n    {\n      label: 'Selection',\n      icon: 'assessment',\n      clearButton: true,\n      disabled: false,\n      type: type[2],\n      selected: true,\n      name: '3',\n    },\n    {\n      label: 'Selection',\n      icon: 'assessment',\n      clearButton: true,\n      disabled: false,\n      type: type[2],\n      name: '4',\n    },\n  ];\n\n  return <ChipGroup onClose={action(`onClose event`)} onClick={action(`onClick event`)} list={list} />;\n}"
     },
     "__isArgsStory": false,
     "__id": "components-chipgroup-all--all",

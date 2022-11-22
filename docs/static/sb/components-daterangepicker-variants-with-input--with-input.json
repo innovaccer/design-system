@@ -24,9 +24,7 @@
             }
           },
           "type": {
-            "defaultValue": {
-              "value": "\"text\""
-            },
+            "defaultValue": null,
             "description": "Type of text inside `Input`",
             "name": "type",
             "required": false,
@@ -85,9 +83,7 @@
             }
           },
           "size": {
-            "defaultValue": {
-              "value": "\"regular\""
-            },
+            "defaultValue": null,
             "description": "Size of the `Input`",
             "name": "size",
             "required": false,
@@ -247,9 +243,7 @@
             }
           },
           "minWidth": {
-            "defaultValue": {
-              "value": "256"
-            },
+            "defaultValue": null,
             "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
             "name": "minWidth",
             "required": false,
@@ -308,7 +302,7 @@
             "name": "actionIcon",
             "required": false,
             "type": {
-              "name": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+              "name": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
             }
           },
           "className": {
@@ -339,9 +333,7 @@
             }
           },
           "placeholderChar": {
-            "defaultValue": {
-              "value": "'_'"
-            },
+            "defaultValue": null,
             "description": "Character to be used for empty value at particular index in `Mask`",
             "name": "placeholderChar",
             "required": false,
@@ -359,25 +351,30 @@
             }
           },
           "validators": {
-            "defaultValue": {
-              "value": "[]"
-            },
+            "defaultValue": null,
             "description": "custom Validator for `InputMask`\n\n`ValidatorFn: (val: string) => boolean`",
             "name": "validators",
             "required": false,
             "type": {
-              "name": "Validators | undefined"
+              "name": "ValidatorFn<any[]> | ValidatorFn<any[]>[] | undefined"
             }
           },
           "clearOnEmptyBlur": {
-            "defaultValue": {
-              "value": "true"
-            },
+            "defaultValue": null,
             "description": "Clear the `Input` on blur if value === defaultPlaceholderValue",
             "name": "clearOnEmptyBlur",
             "required": false,
             "type": {
               "name": "boolean | undefined"
+            }
+          },
+          "helpText": {
+            "defaultValue": null,
+            "description": "Add text below `input`",
+            "name": "helpText",
+            "required": false,
+            "type": {
+              "name": "string | undefined"
             }
           }
         }
@@ -408,7 +405,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -608,7 +605,7 @@
     "options": {},
     "fileName": "./core/components/organisms/dateRangePicker/__stories__/variants/withInput.story.jsx",
     "storySource": {
-      "source": "() => {\n  const monthsInView = 2;\n\n  const startDate = new Date('Jan 12 2017');\n\n  const endDate = new Date('Jan 20 2017');\n\n  const inputFormat = 'mm-dd-yyyy';\n\n  const outputFormat = 'yyyy-mm-dd';\n\n  const view = 'year';\n\n  const firstDayOfWeek = 'monday';\n\n  const disabledBefore = new Date('Jan 20 2015');\n\n  const disabledAfter = new Date('Jan 20 2028');\n\n  const jumpView = true;\n\n  const yearNav = -1;\n\n  const monthNav = -1;\n\n  const attr = {};\n  if (disabledBefore) attr.disabledBefore = disabledBefore;\n  if (disabledAfter) attr.disabledAfter = disabledAfter;\n  if (yearNav !== -1) attr.yearNav = yearNav;\n  if (monthNav !== -1) attr.monthNav = monthNav;\n\n  return (\n    <div className=\"w-50\">\n      <DateRangePicker\n        withInput={true}\n        startDate={startDate}\n        endDate={endDate}\n        inputFormat={inputFormat}\n        outputFormat={outputFormat}\n        jumpView={jumpView}\n        onRangeChange={(sDate, eDate, sValue, eValue) =>\n          action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()\n        }\n        view={view}\n        firstDayOfWeek={firstDayOfWeek}\n        monthsInView={monthsInView}\n        startInputOptions={{\n          required: true,\n        }}\n        endInputOptions={{\n          required: true,\n        }}\n        {...attr}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const monthsInView = 2;\n\n  const startDate = new Date('Jan 12 2017');\n\n  const endDate = new Date('Jan 20 2017');\n\n  const inputFormat = 'mm-dd-yyyy';\n\n  const outputFormat = 'yyyy-mm-dd';\n\n  const view = 'year';\n\n  const firstDayOfWeek = 'monday';\n\n  const disabledBefore = new Date('Jan 20 2015');\n\n  const disabledAfter = new Date('Jan 20 2028');\n\n  const jumpView = true;\n\n  const yearNav = -1;\n\n  const monthNav = -1;\n\n  const attr = {};\n  if (disabledBefore) attr.disabledBefore = disabledBefore;\n  if (disabledAfter) attr.disabledAfter = disabledAfter;\n  if (yearNav !== -1) attr.yearNav = yearNav;\n  if (monthNav !== -1) attr.monthNav = monthNav;\n\n  return (\n    <div className=\"w-75\">\n      <DateRangePicker\n        withInput={true}\n        startDate={startDate}\n        endDate={endDate}\n        inputFormat={inputFormat}\n        outputFormat={outputFormat}\n        jumpView={jumpView}\n        onRangeChange={(sDate, eDate, sValue, eValue) =>\n          action(`on range change: ${sDate} - ${eDate} ---- ${sValue} - ${eValue}`)()\n        }\n        view={view}\n        firstDayOfWeek={firstDayOfWeek}\n        monthsInView={monthsInView}\n        startInputOptions={{\n          required: true,\n        }}\n        endInputOptions={{\n          required: true,\n        }}\n        {...attr}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-daterangepicker-variants-with-input--with-input",
@@ -817,27 +814,6 @@
           "type": {
             "summary": "((startDate?: Date | undefined, endDate?: Date | undefined, startValue?: string | undefined, endValue?: string | undefined) => void) | undefined"
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "startDate",
-                "description": "Start Date object"
-              },
-              {
-                "name": "endDate",
-                "description": "End Date object"
-              },
-              {
-                "name": "startDateVal",
-                "description": "Start Date string value as per `outputFormat`"
-              },
-              {
-                "name": "endDateVal",
-                "description": "End Date string value as per `outputFormat`"
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": null
         }
       },
@@ -885,11 +861,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "DateType | undefined"
+          "value": "string | number | Date | undefined"
         },
         "table": {
           "type": {
-            "summary": "DateType | undefined"
+            "summary": "string | number | Date | undefined"
           },
           "defaultValue": null
         }
@@ -900,11 +876,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "DateType | undefined"
+          "value": "string | number | Date | undefined"
         },
         "table": {
           "type": {
-            "summary": "DateType | undefined"
+            "summary": "string | number | Date | undefined"
           },
           "defaultValue": null
         }
@@ -966,9 +942,7 @@
           "type": {
             "summary": "boolean | undefined"
           },
-          "defaultValue": {
-            "summary": "false"
-          }
+          "defaultValue": null
         }
       },
       "position": {
@@ -1102,11 +1076,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Validators"
+          "value": "SingleOrArray<ValidatorFn<any[]>>"
         },
         "table": {
           "type": {
-            "summary": "Validators"
+            "summary": "SingleOrArray<ValidatorFn<any[]>>"
           },
           "defaultValue": {
             "summary": "[Utils.validators.date]"
@@ -1316,27 +1290,6 @@
         "type": {
           "summary": "((startDate?: Date | undefined, endDate?: Date | undefined, startValue?: string | undefined, endValue?: string | undefined) => void) | undefined"
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "startDate",
-              "description": "Start Date object"
-            },
-            {
-              "name": "endDate",
-              "description": "End Date object"
-            },
-            {
-              "name": "startDateVal",
-              "description": "Start Date string value as per `outputFormat`"
-            },
-            {
-              "name": "endDateVal",
-              "description": "End Date string value as per `outputFormat`"
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": null
       }
     },
@@ -1384,11 +1337,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "DateType | undefined"
+        "value": "string | number | Date | undefined"
       },
       "table": {
         "type": {
-          "summary": "DateType | undefined"
+          "summary": "string | number | Date | undefined"
         },
         "defaultValue": null
       }
@@ -1399,11 +1352,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "DateType | undefined"
+        "value": "string | number | Date | undefined"
       },
       "table": {
         "type": {
-          "summary": "DateType | undefined"
+          "summary": "string | number | Date | undefined"
         },
         "defaultValue": null
       }
@@ -1465,9 +1418,7 @@
         "type": {
           "summary": "boolean | undefined"
         },
-        "defaultValue": {
-          "summary": "false"
-        }
+        "defaultValue": null
       }
     },
     "position": {
@@ -1601,11 +1552,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Validators"
+        "value": "SingleOrArray<ValidatorFn<any[]>>"
       },
       "table": {
         "type": {
-          "summary": "Validators"
+          "summary": "SingleOrArray<ValidatorFn<any[]>>"
         },
         "defaultValue": {
           "summary": "[Utils.validators.date]"

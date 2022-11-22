@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/chip/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const type = 'selection';\n\n  const label = 'Chip Label';\n\n  const icon = 'assessment';\n\n  const disabled = false;\n\n  let clearButton;\n  if (type !== 'action') {\n    clearButton = true;\n  }\n\n  let selected;\n  if (type === 'selection') {\n    selected = false;\n  }\n  return (\n    <Chip\n      icon={icon}\n      label={label}\n      clearButton={clearButton}\n      disabled={disabled}\n      type={type}\n      onClose={action(`onClose: ${name}`)}\n      onClick={action(`onClick: ${name}`)}\n      selected={selected}\n      name={'chip'}\n    />\n  );\n}"
+      "source": "() => {\n  const type = 'selection';\n\n  const label = 'Chip Label';\n\n  const icon = 'assessment';\n\n  const disabled = false;\n\n  let clearButton;\n  if (type !== 'action') {\n    clearButton = true;\n  }\n\n  let selected;\n  if (type === 'selection') {\n    selected = false;\n  }\n  return (\n    <Chip\n      icon={icon}\n      label={label}\n      clearButton={clearButton}\n      disabled={disabled}\n      type={type}\n      onClose={action(`onClose: ${label}`)}\n      onClick={action(`onClick: ${label}`)}\n      selected={selected}\n      name={'chip'}\n    />\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-chip-all--all",
@@ -341,11 +341,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: Name) => void) | undefined"
+          "value": "((name: ReactText) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: Name) => void) | undefined"
+            "summary": "((name: ReactText) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -356,11 +356,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: Name) => void) | undefined"
+          "value": "((name: ReactText) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: Name) => void) | undefined"
+            "summary": "((name: ReactText) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -371,11 +371,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "Name"
+          "value": "ReactText"
         },
         "table": {
           "type": {
-            "summary": "Name"
+            "summary": "ReactText"
           },
           "defaultValue": null
         }
@@ -515,11 +515,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: Name) => void) | undefined"
+        "value": "((name: ReactText) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: Name) => void) | undefined"
+          "summary": "((name: ReactText) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -530,11 +530,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: Name) => void) | undefined"
+        "value": "((name: ReactText) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: Name) => void) | undefined"
+          "summary": "((name: ReactText) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -545,11 +545,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "Name"
+        "value": "ReactText"
       },
       "table": {
         "type": {
-          "summary": "Name"
+          "summary": "ReactText"
         },
         "defaultValue": null
       }
