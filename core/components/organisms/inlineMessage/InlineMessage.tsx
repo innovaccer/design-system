@@ -43,6 +43,8 @@ export const InlineMessage = (props: InlineMessageProps) => {
   const IconClass = classNames({
     ['InlineMessage-icon']: true,
     ['InlineMessage-icon--warning']: appearance === 'warning',
+    ['mr-3']: size === 'small',
+    ['mr-4']: size === 'regular',
   });
 
   const DescriptionClass = classNames({
