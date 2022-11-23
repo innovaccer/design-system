@@ -225,3 +225,19 @@ describe('MetricInput component with props min and max', () => {
     expect(metricInput).toHaveValue(max);
   });
 });
+
+describe('MetricInput component with props showActionButton', () => {
+  it('with showActionButton', () => {
+    const { getByTestId } = render(<MetricInput defaultValue={min} onChange={FunctionValue} min={min} />);
+    expect(getByTestId('DesignSystem-MetricInput--upIcon')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-MetricInput--downIcon')).toBeInTheDocument();
+  });
+
+  it('with showActionButton false', () => {
+    const { queryByTestId } = render(
+      <MetricInput showActionButton={false} defaultValue={min} onChange={FunctionValue} min={min} />
+    );
+    expect(queryByTestId('DesignSystem-MetricInput--upIcon')).not.toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-MetricInput--downIcon')).not.toBeInTheDocument();
+  });
+});

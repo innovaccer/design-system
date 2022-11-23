@@ -70,6 +70,10 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
    */
   error?: boolean;
   /**
+   * Disables the action button which is up and down arrow button.
+   */
+  showActionButton?: boolean;
+  /**
    * Callback function when `MetricInput` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -124,6 +128,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     disabled,
     readOnly,
     value: valueProp,
+    showActionButton = true,
     ...rest
   } = props;
 
@@ -161,6 +166,8 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const inputClass = classNames({
     ['MetricInput-input']: true,
     [`MetricInput-input--${size}`]: size,
+    [`mr-4`]: !suffix && !showActionButton && size === 'regular',
+    [`mr-6`]: !suffix && !showActionButton && size === 'large',
   });
 
   const iconClass = classNames({
@@ -226,6 +233,12 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (showActionButton) {
+      onKeyDown(e);
+    } else e.preventDefault();
+  };
+
   const actionButtonSize = size === 'large' ? 'regular' : 'tiny';
 
   return (
@@ -266,7 +279,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         onBlur={onBlur}
         onClick={onClick}
         onFocus={onFocus}
-        onKeyDown={onKeyDown}
+        onKeyDown={handleKeyDown}
       />
       {suffix && (
         <Text
@@ -278,23 +291,24 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
           {suffix}
         </Text>
       )}
-
-      <div className="MetricInput-arrowIcons">
-        <Button
-          icon="keyboard_arrow_up"
-          size={actionButtonSize}
-          className={`${actionButton} mb-2`}
-          onClick={(e) => onArrowClick(e, 'up')}
-          data-test="DesignSystem-MetricInput--upIcon"
-        />
-        <Button
-          icon="keyboard_arrow_down"
-          size={actionButtonSize}
-          className={actionButton}
-          onClick={(e) => onArrowClick(e, 'down')}
-          data-test="DesignSystem-MetricInput--downIcon"
-        />
-      </div>
+      {showActionButton && (
+        <div className="MetricInput-arrowIcons">
+          <Button
+            icon="keyboard_arrow_up"
+            size={actionButtonSize}
+            className={`${actionButton} mb-2`}
+            onClick={(e) => onArrowClick(e, 'up')}
+            data-test="DesignSystem-MetricInput--upIcon"
+          />
+          <Button
+            icon="keyboard_arrow_down"
+            size={actionButtonSize}
+            className={actionButton}
+            onClick={(e) => onArrowClick(e, 'down')}
+            data-test="DesignSystem-MetricInput--downIcon"
+          />
+        </div>
+      )}
     </div>
   );
 });
