@@ -308,3 +308,58 @@ describe('render Table with drag', () => {
   fireEvent.dragStart(column, { dataTransfer: { setData: jest.fn() } });
   expect(column).toHaveClass('Grid-cell--dragged');
 });
+
+describe('render Table with disabled row', () => {
+  const schema = [
+    { name: 'name', displayName: 'Name', width: '50%' },
+    { name: 'gender', displayName: 'Gender', width: '50%' },
+  ];
+
+  const data = [
+    { name: 'Zara', gender: 'f', selected: true },
+    { name: 'Sara', gender: 'f', disabled: true },
+    { name: 'Sam', gender: 'm' },
+  ];
+
+  it('check css for disabled row ', () => {
+    const { getAllByTestId } = render(<Table schema={schema} withCheckbox={true} onSelect={onSelect} data={data} />);
+    const tableRow = getAllByTestId('DesignSystem-Grid-row')[1];
+    expect(tableRow).toHaveClass('Grid-row--disabled');
+  });
+
+  it('check onSelect callback arguments when selectDisabledRow is false', () => {
+    const onSelectFn = jest.fn();
+
+    const { getAllByTestId } = render(<Table schema={schema} withCheckbox={true} onSelect={onSelectFn} data={data} />);
+
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(checkbox);
+    expect(onSelectFn).toHaveBeenCalled();
+    expect(onSelectFn.mock.calls.length).toBe(2);
+
+    // To check the first arg of the second call to the mock function
+    expect(onSelectFn.mock.calls[1][0]).toStrictEqual([0, 2]);
+
+    // To check the second arg of the second call to the mock function
+    expect(onSelectFn.mock.calls[1][1]).toBe(true);
+  });
+
+  it('check onSelect callback arguments when selectDisabledRow is true', () => {
+    const onSelectMockFn = jest.fn();
+
+    const { getAllByTestId } = render(
+      <Table schema={schema} withCheckbox={true} selectDisabledRow={true} onSelect={onSelectMockFn} data={data} />
+    );
+
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(checkbox);
+    expect(onSelectMockFn).toHaveBeenCalled();
+    expect(onSelectMockFn.mock.calls.length).toBe(2);
+
+    // To check the first arg of the second call to the mock function
+    expect(onSelectMockFn.mock.calls[1][0]).toStrictEqual([0, 1, 2]);
+
+    // To check the second arg of the second call to the mock function
+    expect(onSelectMockFn.mock.calls[1][1]).toBe(true);
+  });
+});

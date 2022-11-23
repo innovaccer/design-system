@@ -1,12 +1,19 @@
 import { RowData, Data, ColumnSchema, Schema, FetchDataOptions, Comparator } from './Grid';
 
-export const updateBatchData = (data: Data, rowIndexes: number[], dataUpdate: Partial<RowData>): Data => {
+export const updateBatchData = (
+  data: Data,
+  rowIndexes: number[],
+  dataUpdate: Partial<RowData>,
+  selectDisabledRow?: boolean
+): Data => {
   const updatedData = [...data];
   for (const rowIndex of rowIndexes) {
-    updatedData[rowIndex] = {
-      ...updatedData[rowIndex],
-      ...dataUpdate,
-    };
+    if ((data[rowIndex].disabled && selectDisabledRow) || !data[rowIndex].disabled) {
+      updatedData[rowIndex] = {
+        ...updatedData[rowIndex],
+        ...dataUpdate,
+      };
+    }
   }
 
   return updatedData;
