@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Input, Icon, Label, Caption } from '@/index';
+import { Input, Icon, Label, HelpText } from '@/index';
 
-export const inputWithCaption = () => {
+export const inputWithHelpText = () => {
   const [visibility, setVisibility] = React.useState(false);
   const [visibility2, setVisibility2] = React.useState(false);
   return (
@@ -23,7 +23,7 @@ export const inputWithCaption = () => {
             />
           }
         />
-        <Caption withInput={true}>Create a string, unique password</Caption>
+        <HelpText message={'Create a string, unique password'} />
       </div>
       <div className="ml-6">
         <Label htmlFor="password-2" withInput={true}>
@@ -42,9 +42,7 @@ export const inputWithCaption = () => {
             />
           }
         />
-        <Caption withInput={true} error={true}>
-          Create a password with at least 8 characters
-        </Caption>
+        <HelpText error={true} message={'Create a password with at least 8 characters'} />
       </div>
     </div>
   );
@@ -79,7 +77,7 @@ const customCode = `() => {
             />
           }
         />
-        <Caption withInput={true}>Create a string, unique password</Caption>
+        <HelpText message={'Create a string, unique password'} />
       </div>
       <div className="ml-6">
         <Label htmlFor="password-2" withInput={true}>
@@ -103,16 +101,14 @@ const customCode = `() => {
             />
           }
         />
-        <Caption withInput={true} error={true}>
-          Create a password with at least 8 characters
-        </Caption>
+        <HelpText error={true} message={'Create a password with at least 8 characters'} />
       </div>
     </div>
   );
 };`;
 
 export default {
-  title: 'Components/Input/Input With Caption',
+  title: 'Components/Input/Input With Help Text',
   component: Input,
   parameters: {
     docs: {

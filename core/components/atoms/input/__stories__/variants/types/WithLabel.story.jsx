@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input, Text, Label, Caption } from '@/index';
+import { Input, Text, Label, HelpText } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
@@ -14,7 +14,7 @@ export const withLabel = () => {
           <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} required={true} />
         </div>
         <br />
-        <Text weight="strong">No Caption</Text>
+        <Text weight="strong">No Help Text</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
         <Label withInput={true} required={true}>
@@ -27,9 +27,10 @@ export const withLabel = () => {
           onClear={action('on-clear')}
           required={true}
         />
-        <Caption withInput={true}>Pick a strong, unique password</Caption>
+        <HelpText message={'Pick a strong, unique password'} />
         <br />
-        <Text weight="strong">Caption Default</Text>
+        <br />
+        <Text weight="strong">Help Text Default</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
         <Label withInput={true} required={true}>
@@ -43,11 +44,9 @@ export const withLabel = () => {
           required={true}
           error={true}
         />
-        <Caption error={true} withInput={true}>
-          Pick a strong, unique password
-        </Caption>
+        <HelpText error={true} message={'Pick a strong, unique password'} />
         <br />
-        <Text weight="strong">Caption Error</Text>
+        <Text weight="strong">Help Text Error</Text>
       </div>
     </div>
   );
