@@ -119,7 +119,7 @@ jobs:
 
       - name: deploy
         if: steps.is_release_commit.outputs.result == 1
-        run: npm run deploy
+        run: npm run deploy && aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
