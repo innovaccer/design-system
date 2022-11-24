@@ -8,7 +8,6 @@
 }
 
 .InlineMessage-icon {
-  margin-right: var(--spacing);
   padding-top: var(--spacing-s);
   padding-bottom: var(--spacing-s);
 }

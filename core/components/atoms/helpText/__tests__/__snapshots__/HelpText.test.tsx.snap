@@ -25,7 +25,7 @@ exports[`HelpText component snapshot
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon"
+        class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon mr-3"
         data-test="DesignSystem-InlineMessage--Icon"
         role="button"
         style="font-size: 14px; width: 14px;"

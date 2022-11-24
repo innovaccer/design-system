@@ -10,7 +10,7 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon"
+        class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon mr-4"
         data-test="DesignSystem-InlineMessage--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -58,7 +58,7 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info InlineMessage-icon"
+        class="material-icons material-icons-round Icon Icon--info InlineMessage-icon mr-4"
         data-test="DesignSystem-InlineMessage--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -86,7 +86,7 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--success InlineMessage-icon"
+        class="material-icons material-icons-round Icon Icon--success InlineMessage-icon mr-4"
         data-test="DesignSystem-InlineMessage--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -114,7 +114,7 @@ exports[`InlineMessage component
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--warning InlineMessage-icon InlineMessage-icon--warning"
+        class="material-icons material-icons-round Icon Icon--warning InlineMessage-icon InlineMessage-icon--warning mr-4"
         data-test="DesignSystem-InlineMessage--Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
