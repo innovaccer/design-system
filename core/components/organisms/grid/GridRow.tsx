@@ -27,6 +27,7 @@ export const GridRow = (props: GridRowProps) => {
 
   const rowClasses = classNames('Grid-row', 'Grid-row--body', {
     'Grid-row--selected': data._selected,
+    'Grid-row--disabled': data.disabled,
   });
 
   const onClickHandler = React.useCallback(() => {
@@ -106,7 +107,7 @@ export const GridRow = (props: GridRowProps) => {
     <div className={wrapperClasses}>
       {/* TODO(a11y)  */}
       {/* eslint-disable-next-line */}
-      <div className={rowClasses} onClick={onClickHandler} ref={rowRef}>
+      <div data-test="DesignSystem-Grid-row" className={rowClasses} onClick={onClickHandler} ref={rowRef}>
         {renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left')}
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}

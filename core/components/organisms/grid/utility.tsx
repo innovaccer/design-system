@@ -18,7 +18,9 @@ export const moveToIndex = (arr: any[], from: number, to: number) => {
 
 export const getTotalPages = (totalRecords: number, pageSize: number) => Math.ceil(totalRecords / pageSize);
 
-export const getSelectAll = (data: Data) => {
+export const getSelectAll = (tableData: Data, selectDisabledRow?: boolean) => {
+  const data = tableData.filter((d) => (d.disabled && selectDisabledRow) || !d.disabled);
+
   if (data.length) {
     const anyUnSelected = data.some((d) => !d._selected);
     const allUnSelected = data.every((d) => !d._selected);

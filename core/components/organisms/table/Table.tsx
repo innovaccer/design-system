@@ -30,10 +30,12 @@ interface TableSyncProps {
    *    Data: RowData[]
    *
    *    RowData: Record<string, any> & {
-   *      _selected?: boolean
+   *      _selected?: boolean,
+   *      disabled?: boolean,
    *    }
    *
    *    `_selected`  Denotes row selection
+   *    `disabled` Denotes disabled row
    * </pre>
    */
   data: GridProps['data'];
@@ -324,6 +326,10 @@ interface SharedTableProps extends BaseProps {
    * @default 'GRID'
    */
   filterPosition: FilterPosition;
+  /**
+   * Set `true` to allow selection of disabled row
+   */
+  selectDisabledRow?: boolean;
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -537,7 +543,7 @@ export class Table extends React.Component<TableProps, TableState> {
               this.setState({
                 data,
                 schema,
-                selectAll: getSelectAll(data),
+                selectAll: getSelectAll(data, this.props.selectDisabledRow),
                 totalRecords: res.count,
                 loading: false,
                 error: !data.length,
@@ -572,7 +578,7 @@ export class Table extends React.Component<TableProps, TableState> {
         totalRecords,
         error: !renderedData.length,
         errorType: 'NO_RECORDS_FOUND',
-        selectAll: getSelectAll(renderedData),
+        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
         schema: renderedSchema,
         data: renderedData,
       });
@@ -587,13 +593,18 @@ export class Table extends React.Component<TableProps, TableState> {
     const indexes = [rowIndexes];
     let newData: Data = data;
     if (rowIndexes >= 0) {
-      newData = updateBatchData(data, indexes, {
-        _selected: selected,
-      });
+      newData = updateBatchData(
+        data,
+        indexes,
+        {
+          _selected: selected,
+        },
+        this.props.selectDisabledRow
+      );
 
       this.setState({
         data: newData,
-        selectAll: getSelectAll(newData),
+        selectAll: getSelectAll(newData, this.props.selectDisabledRow),
       });
     }
 
@@ -609,13 +620,26 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const indexes = Array.from({ length: data.length }, (_, i) => i);
 
-    const newData = updateBatchData(data, indexes, {
-      _selected: selected,
+    const newData = updateBatchData(
+      data,
+      indexes,
+      {
+        _selected: selected,
+      },
+      this.props.selectDisabledRow
+    );
+
+    const selectedIndex: number[] = [];
+
+    newData.forEach((item, key) => {
+      if (item._selected) {
+        selectedIndex.push(key);
+      }
     });
 
     if (onSelect) {
       onSelect(
-        indexes,
+        selectedIndex,
         selected,
         newData.filter((d) => d._selected),
         selectAll
@@ -624,7 +648,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     this.setState({
       data: newData,
-      selectAll: getSelectAll(newData),
+      selectAll: getSelectAll(newData, this.props.selectDisabledRow),
     });
   };
 

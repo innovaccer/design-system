@@ -1,11 +1,43 @@
 import * as rowUtility from '../rowUtility';
 
+const rowData = [
+  { name: 'zara', gender: 'f', disabled: true },
+  { name: 'sara', gender: 'f' },
+  { name: 'sam', gender: 'm' },
+];
+
 describe('test updateBatchData', () => {
   it('updates data at provided rowIndexes ', () => {
     const data = [{ name: 'name', gender: 'f' }];
     const rowIndexes = [0];
     const dataUpdate = { age: 25 };
     expect(rowUtility.updateBatchData(data, rowIndexes, dataUpdate)).toEqual([{ age: 25, gender: 'f', name: 'name' }]);
+  });
+
+  it('check if it updates disabled rows data when selectDisabledRow set as true', () => {
+    const updatedData = [
+      { name: 'zara', gender: 'f', disabled: true, _selected: true },
+      { name: 'sara', gender: 'f', _selected: true },
+      { name: 'sam', gender: 'm', _selected: true },
+    ];
+
+    const selectDisabledRow = true;
+    const rowIndexes = [0, 1, 2];
+    const dataUpdate = { _selected: true };
+    expect(rowUtility.updateBatchData(rowData, rowIndexes, dataUpdate, selectDisabledRow)).toEqual(updatedData);
+  });
+
+  it('check if disabled rows data remains same when selectDisabledRow set as false', () => {
+    const updatedData = [
+      { name: 'zara', gender: 'f', disabled: true },
+      { name: 'sara', gender: 'f', _selected: true },
+      { name: 'sam', gender: 'm', _selected: true },
+    ];
+
+    const selectDisabledRow = false;
+    const rowIndexes = [0, 1, 2];
+    const dataUpdate = { _selected: true };
+    expect(rowUtility.updateBatchData(rowData, rowIndexes, dataUpdate, selectDisabledRow)).toEqual(updatedData);
   });
 });
 describe('test translateData', () => {

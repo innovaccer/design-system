@@ -222,6 +222,11 @@
     border-right: var(--border);
 } */
 
+.Grid-row--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 .Grid-cell--head.Grid-cell--selected {
   background: var(--primary-light);
 }
