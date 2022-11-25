@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Tabs, Tab } from '@/index';
+import { Tabs, Tab, EmptyState } from '@/index';
 
 // CSF format story
 export const disabledWithActive = () => {
@@ -11,13 +11,24 @@ export const disabledWithActive = () => {
     return action(`tab-change: ${tabIndex}`)();
   };
 
+  const isDisabled = true;
   return (
     <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
-      <Tab label="Tab(Recommended)" count={10} disabled>
-        <div>Tab(Recommended)</div>
+      <Tab label="All" icon="call_received" count={10} disabled={isDisabled}>
+        {isDisabled ? (
+          <div className="h-100 pb-5 bg-secondary-lightest">
+            <EmptyState
+              title="There's a problem loading this page."
+              description="Tab is disabled and you are not authorized to see the content of this tab"
+              size="large"
+            ></EmptyState>
+          </div>
+        ) : (
+          <div>All</div>
+        )}
       </Tab>
-      <Tab label="All" icon="call_received">
-        <div>All</div>
+      <Tab label="Tab(Recommended)">
+        <div>Tab(Recommended)</div>
       </Tab>
       <Tab label="Extras" disabled={true}>
         <div>Extras</div>
@@ -33,17 +44,24 @@ const customCode = `() => {
     setActiveIndex(tabIndex);
   };
 
-  return(
-    <Tabs
-      activeIndex={activeIndex}
-      onTabChange={onTabChangeHandler}
-      className="mb-6"
-    >
-      <Tab label="Tab(Recommended)" count={10} disabled>
-        <div>Tab(Recommended)</div>
+  const isDisabled = true;
+  return (
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+      <Tab label="All" icon="call_received" count={10} disabled={isDisabled}>
+        {isDisabled ? (
+          <div className="h-100 pb-5 bg-secondary-lightest">
+            <EmptyState
+              title="There's a problem loading this page."
+              description="Tab is disabled and you are not authorized to see the content of this tab"
+              size="large"
+            ></EmptyState>
+          </div>
+        ) : (
+          <div>All</div>
+        )}
       </Tab>
-      <Tab label="All" icon="call_received">
-        <div>All</div>
+      <Tab label="Tab(Recommended)">
+        <div>Tab(Recommended)</div>
       </Tab>
       <Tab label="Extras" disabled={true}>
         <div>Extras</div>
