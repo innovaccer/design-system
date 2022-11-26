@@ -7,9 +7,16 @@
   align-items: center;
 }
 
-.InlineMessage-icon {
+.InlineMessage-icon--regular {
   padding-top: var(--spacing-s);
   padding-bottom: var(--spacing-s);
+  margin-right: var(--spacing);
+}
+
+.InlineMessage-icon--small {
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+  margin-right: var(--spacing-m);
 }
 
 .InlineMessage-text--warning,
