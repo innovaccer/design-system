@@ -44,10 +44,6 @@
   border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
-.Dropdown-errorWrapper {
-  min-height: var(--spacing-7);
-}
-
 .Dropdown-buttonWrapper {
   display: flex;
   justify-content: flex-end;

@@ -230,6 +230,11 @@ const DropdownList = (props: OptionsProps) => {
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [cursor, setCursor] = React.useState(firstEnabledOption);
+  const [minHeight, setMinHeight] = React.useState<number | undefined>();
+  const [popoverOpen, setPopoverOpen] = React.useState(false);
+  if (!popoverOpen && dropdownOpen) {
+    setPopoverOpen(dropdownOpen);
+  }
 
   React.useEffect(() => {
     let timer: any;
@@ -263,6 +268,14 @@ const DropdownList = (props: OptionsProps) => {
     if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
   }, [firstEnabledOption]);
 
+  React.useEffect(() => {
+    const getMinHeight = () => {
+      const minHeight = document.querySelector<HTMLElement>('.Dropdown-wrapper')?.offsetHeight;
+      minHeight && setMinHeight(minHeight);
+    };
+    requestAnimationFrame(getMinHeight);
+  }, [popoverOpen]);
+
   const { triggerSize = 'regular', placeholder = 'Select', icon, error, disabled, inlineLabel, triggerLabel } = props;
 
   const CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
@@ -290,6 +303,14 @@ const DropdownList = (props: OptionsProps) => {
     maxHeight,
     overflowY: 'auto',
     overflowX: 'hidden',
+    minHeight: minHeight,
+  };
+
+  const dropdownLoadersStyle: React.CSSProperties = {
+    maxHeight: minHeight ? minHeight : maxHeight,
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    minHeight: minHeight,
   };
 
   const getDropdownClass = (index: number, isGroup: boolean) => {
@@ -524,7 +545,7 @@ const DropdownList = (props: OptionsProps) => {
     if (loadersCount && loadingOptions) {
       return (
         <div className={'Dropdown-loading'}>
-          <div className="Dropdown-wrapper" style={dropdownStyle}>
+          <div className="Dropdown-wrapper" style={dropdownLoadersStyle}>
             {renderLoading(loadersCount)}
           </div>
         </div>
@@ -534,7 +555,7 @@ const DropdownList = (props: OptionsProps) => {
     if (listOptions.length === 0 && !loadingOptions) {
       const { noResultMessage = 'No result found' } = props;
       return (
-        <div className={'Dropdown-errorWrapper'} data-test="DesignSystem-Dropdown--errorWrapper">
+        <div style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
           <div className={'Option'}>
             <div className={'Option-subinfo'}>{noResultMessage}</div>
           </div>
