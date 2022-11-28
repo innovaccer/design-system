@@ -129,15 +129,23 @@ export const Tabs = (props: TabsProps) => {
       ['Tab-pills--disabled']: disabled,
     });
 
-  let activeTab;
-  let activeTabClass;
-  if ('props' in tabs[activeIndex]) {
-    activeTab = tabs[activeIndex] as React.ReactElement;
-    activeTabClass = activeTab.props?.className;
-  } else {
-    activeTab = tabs[activeIndex] as TabConfig;
-    activeTabClass = activeTab.className;
-  }
+  const getActiveTabClass = () => {
+    let activeTab;
+    let activeTabClass;
+
+    if (tabs && tabs.length && tabs[activeIndex] && 'props' in tabs[activeIndex]) {
+      activeTab = tabs[activeIndex] as React.ReactElement;
+      activeTabClass = activeTab.props?.className;
+    } else {
+      activeTab = tabs[activeIndex] as TabConfig;
+      activeTabClass = activeTab && activeTab.className;
+    }
+
+    return activeTabClass;
+  };
+
+  const activeTabClass = getActiveTabClass();
+
   const tabContentClass = classNames({
     ['TabsWrapper-content']: true,
     [`${activeTabClass}`]: activeTabClass,

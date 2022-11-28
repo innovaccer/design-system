@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Tabs } from '@/index';
+import { Tabs, Tab } from '@/index';
 import { TabsProps as Props, TabConfig } from '@/index.type';
 
 const activeIndex = 0;
@@ -227,5 +227,40 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     const tab = getAllByTestId('DesignSystem-DismissibleTabs--Icon')[0];
     fireEvent.click(tab);
     expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('render tab component with custom class', () => {
+    const { getAllByTestId } = render(
+      <Tabs activeIndex={0}>
+        <Tab label="Tab(Recommended)" isDismissible={true} className="custom-class" onDismiss={FunctionValue}></Tab>
+      </Tabs>
+    );
+    expect(getAllByTestId('DesignSystem-Tabs--Content')[0]).toHaveClass('custom-class');
+  });
+
+  it('renders tab component with remaining tab after onDismiss call ', () => {
+    const tabList = [
+      {
+        count: 10,
+        label: 'Tab 1',
+        icon: 'call_received',
+      },
+      {
+        count: 10,
+        label: 'Tab 2',
+        isDismissible: true,
+        onDismiss: FunctionValue,
+      },
+    ];
+
+    const { getAllByTestId } = render(<Tabs tabs={tabList} />);
+    const activeTab = getAllByTestId('DesignSystem-Tabs--Tab')[1];
+    fireEvent.click(activeTab);
+
+    const clearIcon = getAllByTestId('DesignSystem-DismissibleTabs--Icon')[0];
+    fireEvent.click(clearIcon);
+
+    expect(FunctionValue).toHaveBeenCalled();
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[0]).toBeInTheDocument();
   });
 });
