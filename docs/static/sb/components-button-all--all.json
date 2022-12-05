@@ -36,9 +36,7 @@
           }
         },
         "size": {
-          "defaultValue": {
-            "value": "\"regular\""
-          },
+          "defaultValue": null,
           "description": "The size of `Button`",
           "name": "size",
           "required": false,
@@ -61,9 +59,7 @@
           }
         },
         "appearance": {
-          "defaultValue": {
-            "value": "\"basic\""
-          },
+          "defaultValue": null,
           "description": "Color of the `Button`\n\n**'success' has been deprecated and all success button types will now be changed to primary button automatically**",
           "name": "appearance",
           "required": false,
@@ -146,9 +142,7 @@
           }
         },
         "iconAlign": {
-          "defaultValue": {
-            "value": "\"left\""
-          },
+          "defaultValue": null,
           "description": "Align icon left or right",
           "name": "iconAlign",
           "required": false,
@@ -182,13 +176,11 @@
           "name": "children",
           "required": false,
           "type": {
-            "name": "ReactText | undefined"
+            "name": "string | number | undefined"
           }
         },
         "tabIndex": {
-          "defaultValue": {
-            "value": "0"
-          },
+          "defaultValue": null,
           "description": "Specifies tab index of `Button`",
           "name": "tabIndex",
           "required": false,
@@ -277,7 +269,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -527,9 +519,7 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": {
-            "summary": "\"regular\""
-          }
+          "defaultValue": null
         }
       },
       "appearance": {
@@ -551,9 +541,7 @@
           "type": {
             "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
           },
-          "defaultValue": {
-            "summary": "\"basic\""
-          }
+          "defaultValue": null
         }
       },
       "disabled": {
@@ -662,9 +650,7 @@
           "type": {
             "summary": "undefined | \"left\" | \"right\""
           },
-          "defaultValue": {
-            "summary": "\"left\""
-          }
+          "defaultValue": null
         }
       },
       "largeIcon": {
@@ -688,11 +674,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactText | undefined"
+          "value": "string | number | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactText | undefined"
+            "summary": "string | number | undefined"
           },
           "defaultValue": null
         }
@@ -709,9 +695,7 @@
           "type": {
             "summary": "number | undefined"
           },
-          "defaultValue": {
-            "summary": "0"
-          }
+          "defaultValue": null
         }
       },
       "autoFocus": {
@@ -845,9 +829,7 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": {
-          "summary": "\"regular\""
-        }
+        "defaultValue": null
       }
     },
     "appearance": {
@@ -869,9 +851,7 @@
         "type": {
           "summary": "undefined | \"primary\" | \"alert\" | \"success\" | \"basic\" | \"transparent\""
         },
-        "defaultValue": {
-          "summary": "\"basic\""
-        }
+        "defaultValue": null
       }
     },
     "disabled": {
@@ -980,9 +960,7 @@
         "type": {
           "summary": "undefined | \"left\" | \"right\""
         },
-        "defaultValue": {
-          "summary": "\"left\""
-        }
+        "defaultValue": null
       }
     },
     "largeIcon": {
@@ -1006,11 +984,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactText | undefined"
+        "value": "string | number | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactText | undefined"
+          "summary": "string | number | undefined"
         },
         "defaultValue": null
       }
@@ -1027,9 +1005,7 @@
         "type": {
           "summary": "number | undefined"
         },
-        "defaultValue": {
-          "summary": "0"
-        }
+        "defaultValue": null
       }
     },
     "autoFocus": {

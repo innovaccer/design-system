@@ -9,7 +9,7 @@
   "component": {
     "displayName": "Input",
     "__docgenInfo": {
-      "description": "###### Input has two types:\n - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)\n - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)",
+      "description": "###### Input has two types:\n  - [Controlled Input](https://reactjs.org/docs/forms.html#controlled-components)\n  - [Uncontrolled Input](https://reactjs.org/docs/uncontrolled-components.html)",
       "displayName": "Input",
       "props": {
         "name": {
@@ -22,9 +22,7 @@
           }
         },
         "type": {
-          "defaultValue": {
-            "value": "\"text\""
-          },
+          "defaultValue": null,
           "description": "Type of text inside `Input`",
           "name": "type",
           "required": false,
@@ -83,9 +81,7 @@
           }
         },
         "size": {
-          "defaultValue": {
-            "value": "\"regular\""
-          },
+          "defaultValue": null,
           "description": "Size of the `Input`",
           "name": "size",
           "required": false,
@@ -245,9 +241,7 @@
           }
         },
         "minWidth": {
-          "defaultValue": {
-            "value": "256"
-          },
+          "defaultValue": null,
           "description": "minimum width of `Input` component\n\n**No default value for `type='number'`**",
           "name": "minWidth",
           "required": false,
@@ -306,7 +300,7 @@
           "name": "actionIcon",
           "required": false,
           "type": {
-            "name": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+            "name": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
           }
         },
         "className": {
@@ -354,7 +348,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -563,7 +557,7 @@
     "options": {},
     "fileName": "./core/components/atoms/input/__stories__/variants/controlledInput.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [value, setValue] = React.useState('Value');\n  const handleParentChange = (event) => {\n    const updatedValue = event.target.value;\n    window.setTimeout(() => {\n      setValue(updatedValue);\n    }, 1000);\n  };\n  const [value1, setValue1] = React.useState('Value');\n  const onChangeHandler = (event) => {\n    const updatedValue = event.target.value;\n    window.setTimeout(() => {\n      setValue1(updatedValue);\n    }, 1000);\n  };\n  const onClearHandler = () => {\n    const updatedValue = '';\n    window.setTimeout(() => {\n      setValue1(updatedValue);\n    }, 1000);\n  };\n  return (\n    <div className=\"d-flex\">\n      <Input\n        name=\"input\"\n        value={value}\n        type=\"text\"\n        placeholder=\"Placeholder\"\n        actionIcon={<Icon name=\"visibility_off\" />}\n        onChange={handleParentChange}\n      />\n      <Input\n        name=\"input\"\n        value={value1}\n        type=\"text\"\n        placeholder=\"PlaceHolder\"\n        onChange={onChangeHandler}\n        onClear={onClearHandler}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const [value, setValue] = React.useState('Value');\n  const handleParentChange = (event) => {\n    const updatedValue = event.target.value;\n    this.window.setTimeout(() => {\n      setValue(updatedValue);\n    }, 1000);\n  };\n  const [value1, setValue1] = React.useState('Value');\n  const onChangeHandler = (event) => {\n    const updatedValue = event.target.value;\n    this.window.setTimeout(() => {\n      setValue1(updatedValue);\n    }, 1000);\n  };\n  const onClearHandler = () => {\n    const updatedValue = '';\n    this.window.setTimeout(() => {\n      setValue1(updatedValue);\n    }, 1000);\n  };\n  return (\n    <div className=\"d-flex\">\n      <Input\n        name=\"input\"\n        value={value}\n        type=\"text\"\n        placeholder=\"Placeholder\"\n        actionIcon={<Icon name=\"visibility_off\" />}\n        onChange={handleParentChange}\n      />\n      <Input\n        name=\"input\"\n        value={value1}\n        type=\"text\"\n        placeholder=\"PlaceHolder\"\n        onChange={onChangeHandler}\n        onClear={onClearHandler}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-input-variants-controlled-input--controlled-input",
@@ -608,9 +602,7 @@
           "type": {
             "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
           },
-          "defaultValue": {
-            "summary": "\"text\""
-          }
+          "defaultValue": null
         }
       },
       "value": {
@@ -675,9 +667,7 @@
           "type": {
             "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
           },
-          "defaultValue": {
-            "summary": "\"regular\""
-          }
+          "defaultValue": null
         }
       },
       "icon": {
@@ -906,9 +896,7 @@
           "type": {
             "summary": "string | undefined"
           },
-          "defaultValue": {
-            "summary": "256"
-          }
+          "defaultValue": null
         }
       },
       "onClear": {
@@ -992,11 +980,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+          "value": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
         },
         "table": {
           "type": {
-            "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+            "summary": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
           },
           "defaultValue": null
         }
@@ -1070,9 +1058,7 @@
         "type": {
           "summary": "undefined | \"number\" | \"text\" | \"tel\" | \"url\" | \"email\" | \"password\""
         },
-        "defaultValue": {
-          "summary": "\"text\""
-        }
+        "defaultValue": null
       }
     },
     "value": {
@@ -1137,9 +1123,7 @@
         "type": {
           "summary": "undefined | \"regular\" | \"tiny\" | \"large\""
         },
-        "defaultValue": {
-          "summary": "\"regular\""
-        }
+        "defaultValue": null
       }
     },
     "icon": {
@@ -1368,9 +1352,7 @@
         "type": {
           "summary": "string | undefined"
         },
-        "defaultValue": {
-          "summary": "256"
-        }
+        "defaultValue": null
       }
     },
     "onClear": {
@@ -1454,11 +1436,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+        "value": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
       },
       "table": {
         "type": {
-          "summary": "ReactElement<IconProps, string | JSXElementConstructor<any>> | undefined"
+          "summary": "ReactElement<IconProps, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | undefined"
         },
         "defaultValue": null
       }

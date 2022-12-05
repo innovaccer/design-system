@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -296,7 +296,7 @@
       },
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
         "type": {
           "required": false,
           "name": "other",
@@ -326,7 +326,7 @@
       },
       "footerOptions": {
         "name": "footerOptions",
-        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -469,7 +469,7 @@
     },
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
       "type": {
         "required": false,
         "name": "other",
@@ -499,7 +499,7 @@
     },
     "footerOptions": {
       "name": "footerOptions",
-      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
       "type": {
         "required": false,
         "name": "other",

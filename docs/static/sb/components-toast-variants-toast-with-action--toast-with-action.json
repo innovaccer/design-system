@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -264,16 +264,16 @@
           "required": false,
           "name": "enum",
           "value": [
-            "info",
-            "default",
             "alert",
             "warning",
-            "success"
+            "success",
+            "default",
+            "info"
           ]
         },
         "table": {
           "type": {
-            "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+            "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
           },
           "defaultValue": {
             "summary": "\"info\""
@@ -297,7 +297,7 @@
       },
       "actions": {
         "name": "actions",
-        "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n   label: string,\n   onClick: (e: React.MouseEvent) => void\n}\n</pre>",
+        "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n    label: string,\n    onClick: (e: React.MouseEvent) => void\n}\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -380,16 +380,16 @@
         "required": false,
         "name": "enum",
         "value": [
-          "info",
-          "default",
           "alert",
           "warning",
-          "success"
+          "success",
+          "default",
+          "info"
         ]
       },
       "table": {
         "type": {
-          "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
+          "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
         },
         "defaultValue": {
           "summary": "\"info\""
@@ -413,7 +413,7 @@
     },
     "actions": {
       "name": "actions",
-      "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n   label: string,\n   onClick: (e: React.MouseEvent) => void\n}\n</pre>",
+      "description": "Array for `ActionButton`**(maxLen: 2)**\n\n<pre className=\"DocPage-codeBlock\">\nAction: {\n    label: string,\n    onClick: (e: React.MouseEvent) => void\n}\n</pre>",
       "type": {
         "required": false,
         "name": "other",

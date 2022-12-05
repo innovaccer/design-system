@@ -9,5 +9,6 @@ declare namespace Cypress {
         livePreview(): Chainable<Element>
         statusTable(): Chainable<Element>
         searchBar(falseQuery: string, searchQuery: string): Chainable<Element>
+        splitArray(navLink: Array<string>, subNavLink: Array<string>): Chainable<Element>
     }
 }

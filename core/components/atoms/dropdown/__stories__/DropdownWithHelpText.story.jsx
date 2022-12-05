@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Dropdown } from '@/index';
+import { Dropdown, HelpText } from '@/index';
 import { Uncontrolled, Controlled } from './_common_/types';
 import Label from '../../label';
-import Caption from '../../caption';
 
 // CSF format story
-export const dropdownWithCaption = () => {
+export const dropdownWithHelpText = () => {
   const options = [
     {
       label: 'Alabama (205)',
@@ -51,14 +50,16 @@ export const dropdownWithCaption = () => {
   return (
     <>
       <Label withInput={true}>Area code</Label>
-      <Dropdown options={options} withSearch={true} className="w-25" placeholder="Select an area code" />
-      <Caption withInput={true}>If the number with this code is not available, we will use the next best match</Caption>
+      <div className="w-25">
+        <Dropdown options={options} withSearch={true} placeholder="Select an area code" />
+        <HelpText message={'If the number with this code is not available, we will use the next best match'} />
+      </div>
     </>
   );
 };
 
 export default {
-  title: 'Components/Dropdown/Dropdown With Caption',
+  title: 'Components/Dropdown/Dropdown With Help Text',
   component: Dropdown,
   parameters: {
     docs: {

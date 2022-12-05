@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const title = 'Page title';\n\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2'\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true\n    }\n  ];\n\n  const options = {\n    title,\n    navigation: <Navigation menus={navigationData} onClick={(menu) => console.log(menu)} active={{ name: 'menu_1' }} />,\n    actions: (\n      <div className=\"d-flex justify-content-end align-items-center\">\n        <span className=\"mr-4\"><Text appearance=\"subtle\">Meta data</Text></span>\n        <Button appearance=\"primary\">Primary</Button>\n      </div>\n    )\n  };\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader {...options} />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const title = 'Page title';\n\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2'\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true\n    }\n  ];\n\n  const options = {\n    title,\n    navigation: <Navigation menus={navigationData} onClick={(menu) => console.log(menu)} active={{ name: 'menu_1' }} />,\n    actions: (\n      <div className=\"d-flex justify-content-end align-items-center\">\n        <span className=\"mr-4\"><Text appearance=\"subtle\">Meta data</Text></span>\n        <Button appearance=\"primary\">Primary</Button>\n      </div>\n    )\n  };\n\n  return (\n    <div className=\"w-100 py-6 bg-secondary-lightest\">\n      <PageHeader {...options} />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/organisms/pageHeader/__stories__/variants/withNavigation.story.jsx",
     "storySource": {
-      "source": "() => {\n  const title = 'Page title';\n\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true,\n    },\n  ];\n  const separator = true;\n\n  const options = {\n    title,\n    separator,\n    navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,\n    actions: (\n      <div className=\"d-flex justify-content-end align-items-center\">\n        <span className=\"mr-4\">\n          <Text appearance=\"subtle\">Meta data</Text>\n        </span>\n        <Button appearance=\"primary\">Primary</Button>\n      </div>\n    ),\n  };\n\n  return (\n    <div className=\"w-100 p-6 bg-secondary-lightest\">\n      <PageHeader {...options} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const title = 'Page title';\n\n  const navigationData = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true,\n    },\n  ];\n  const separator = true;\n\n  const options = {\n    title,\n    separator,\n    navigation: <Navigation menus={navigationData} onClick={action('menu-clicked')} active={{ name: 'menu_1' }} />,\n    actions: (\n      <div className=\"d-flex justify-content-end align-items-center\">\n        <span className=\"mr-4\">\n          <Text appearance=\"subtle\">Meta data</Text>\n        </span>\n        <Button appearance=\"primary\">Primary</Button>\n      </div>\n    ),\n  };\n\n  return (\n    <div className=\"w-100 py-6 bg-secondary-lightest\">\n      <PageHeader {...options} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-pageheader-level-0-variants-with-navigation--with-navigation",

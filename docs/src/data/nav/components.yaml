@@ -4,7 +4,7 @@ menus:
     link: /components/overview/all-components/
     
   - label: Action sheet
-    link: /components/actionSheet/usage
+    link: /components/actionSheet/usage/
     hideInWeb: true
 
   - label: Avatar
@@ -15,7 +15,7 @@ menus:
     link: /components/badges/usage/
 
   - label: Bottom navigation
-    link: /components/bottomNavigation/usage
+    link: /components/bottomNavigation/usage/
     hideInWeb: true
 
   - label: Breadcrumb

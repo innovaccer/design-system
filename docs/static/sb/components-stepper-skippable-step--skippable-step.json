@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const steps = [\n    {\n      label: 'Application details',\n      value: 'application_details'\n    },\n    {\n      label: 'Approval questions',\n      value: 'approval_questions'\n    },\n    {\n      label: 'Payer information',\n      value: 'payer_information'\n    },\n  ];\n\n  const [active, setActive] = React.useState(0);\n  const [completed, setCompleted] = React.useState(active - 1);\n  const [skipIndexes, setSkip] = React.useState([]);\n  const requiredSteps = [0];\n\n  const onChange = (activeStep) => {\n    setActive(activeStep);\n  };\n\n  const onClickHandler = () => {\n    if (skipIndexes.includes(active)) {\n      const updatedSkip = [...skipIndexes];\n      const index = updatedSkip.findIndex(skippedIndex => skippedIndex === active);\n      updatedSkip.splice(index, 1);\n      setSkip(updatedSkip);\n    }\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    if (active > completed) setCompleted(active);\n    setActive(updatedActive);\n  };\n\n  const onSkipHandler = () => {\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    setActive(updatedActive);\n    if (!skipIndexes.includes(active)) {\n      setSkip([...skipIndexes, active, updatedActive]);\n    }\n  };\n\n  return (\n    <div\n      className=\"d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest\"\n      style={{ height: '200px' }}\n    >\n      <div className=\"d-flex justify-content-center py-5 bg-light w-100\">\n        <Stepper\n          steps={steps}\n          active={active}\n          completed={completed}\n          onChange={onChange}\n          skipIndexes={skipIndexes}\n        />\n      </div>\n      <br />\n      <div className=\"w-25 d-flex justify-content-end\">\n        <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className=\"mr-4\">Skip</Button>\n        <Button onClick={onClickHandler} appearance=\"primary\">Next</Button>\n      </div>\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const steps = [\n    {\n      label: 'Application details',\n      value: 'application_details'\n    },\n    {\n      label: 'Approval questions',\n      value: 'approval_questions'\n    },\n    {\n      label: 'Payer information',\n      value: 'payer_information'\n    },\n  ];\n\n  const [active, setActive] = React.useState(0);\n  const [completed, setCompleted] = React.useState(active - 1);\n  const [skipIndexes, setSkip] = React.useState([]);\n  const requiredSteps = [0];\n\n  const onChange = (activeStep) => {\n    setActive(activeStep);\n  };\n\n  const onClickHandler = () => {\n    if (skipIndexes.includes(active)) {\n      const updatedSkip = [...skipIndexes];\n      const index = updatedSkip.findIndex(skippedIndex => skippedIndex === active);\n      updatedSkip.splice(index, 1);\n      setSkip(updatedSkip);\n    }\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    if (active > completed) setCompleted(active);\n    setActive(updatedActive);\n  };\n\n  const onSkipHandler = () => {\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    setActive(updatedActive);\n    if (!skipIndexes.includes(active)) {\n      setSkip([...skipIndexes, active, updatedActive]);\n    }\n  };\n\n  return (\n    <div\n      className=\"d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest\"\n      style={{ height: '200px' }}\n    >\n      <div className=\"d-flex justify-content-center py-5 w-100\">\n        <Stepper\n          steps={steps}\n          active={active}\n          completed={completed}\n          onChange={onChange}\n          skipIndexes={skipIndexes}\n        />\n      </div>\n      <br />\n      <div className=\"w-25 d-flex justify-content-end\">\n        <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className=\"mr-4\">Skip</Button>\n        <Button onClick={onClickHandler} appearance=\"primary\">Next</Button>\n      </div>\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/stepper/__stories__/SkippableStep.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [active, setActive] = React.useState(0);\n  const [completed, setCompleted] = React.useState(active - 1);\n  const [skipIndexes, setSkip] = React.useState([]);\n\n  const onChange = (activeStep) => {\n    setActive(activeStep);\n    return action(`Active Index: ${activeStep}`)();\n  };\n\n  const onClickHandler = () => {\n    if (skipIndexes.includes(active)) {\n      const updatedSkip = [...skipIndexes];\n      const index = updatedSkip.findIndex((skippedIndex) => skippedIndex === active);\n      updatedSkip.splice(index, 1);\n      setSkip(updatedSkip);\n    }\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    if (active > completed) setCompleted(active);\n    setActive(updatedActive);\n    return action(`Active Index: ${updatedActive}`)();\n  };\n\n  const onSkipHandler = () => {\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    setActive(updatedActive);\n    if (!skipIndexes.includes(active)) {\n      setSkip([...skipIndexes, active, updatedActive]);\n    }\n    return action(`Active Index: ${updatedActive}`)();\n  };\n\n  return (\n    <div\n      className=\"d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest\"\n      style={{ height: '200px' }}\n    >\n      <div className=\"d-flex justify-content-center py-5 bg-light w-100\">\n        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndexes} />\n      </div>\n      <br />\n      <div className=\"w-25 d-flex justify-content-end\">\n        <Button onClick={onSkipHandler} className=\"mr-4\">\n          Skip\n        </Button>\n        <Button onClick={onClickHandler} appearance=\"primary\">\n          Next\n        </Button>\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const [active, setActive] = React.useState(0);\n  const [completed, setCompleted] = React.useState(active - 1);\n  const [skipIndexes, setSkip] = React.useState([]);\n\n  const onChange = (activeStep) => {\n    setActive(activeStep);\n    return action(`Active Index: ${activeStep}`)();\n  };\n\n  const onClickHandler = () => {\n    if (skipIndexes.includes(active)) {\n      const updatedSkip = [...skipIndexes];\n      const index = updatedSkip.findIndex((skippedIndex) => skippedIndex === active);\n      updatedSkip.splice(index, 1);\n      setSkip(updatedSkip);\n    }\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    if (active > completed) setCompleted(active);\n    setActive(updatedActive);\n    return action(`Active Index: ${updatedActive}`)();\n  };\n\n  const onSkipHandler = () => {\n    const updatedActive = active > completed ? active + 1 : completed + 1;\n    setActive(updatedActive);\n    if (!skipIndexes.includes(active)) {\n      setSkip([...skipIndexes, active, updatedActive]);\n    }\n    return action(`Active Index: ${updatedActive}`)();\n  };\n\n  return (\n    <div\n      className=\"d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest\"\n      style={{ height: '200px' }}\n    >\n      <div className=\"d-flex justify-content-center py-5 w-100\">\n        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndexes} />\n      </div>\n      <br />\n      <div className=\"w-25 d-flex justify-content-end\">\n        <Button onClick={onSkipHandler} className=\"mr-4\">\n          Skip\n        </Button>\n        <Button onClick={onClickHandler} appearance=\"primary\">\n          Next\n        </Button>\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-stepper-skippable-step--skippable-step",
@@ -277,7 +277,7 @@
       },
       "steps": {
         "name": "steps",
-        "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n label: string;\n value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
+        "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -296,11 +296,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
+          "value": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
+            "summary": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -390,7 +390,7 @@
     },
     "steps": {
       "name": "steps",
-      "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n label: string;\n value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
+      "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
       "type": {
         "required": true,
         "name": "other",
@@ -409,11 +409,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
+        "value": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((active: number, completed: number, label?: string | undefined, value?: ReactText | undefined) => void) | undefined"
+          "summary": "((active: number, completed: number, label?: string | undefined, value?: string | number | undefined) => void) | undefined"
         },
         "defaultValue": null
       }

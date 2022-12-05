@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/heading/__stories__/variants/Appearance.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearances = ['default', 'subtle', 'disabled', 'white'];\n  return (\n    <div className=\"Row\">\n      {appearances.map((appear, ind) => {\n        return (\n          <div key={ind} className=\"mr-7\">\n            <div style={{ background: appear === 'white' ? 'black' : 'transparent' }}>\n              <Heading appearance={appear}>Heading</Heading>\n            </div>\n            <br />\n            <Text weight=\"strong\">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearances = ['default', 'subtle', 'disabled', 'white'];\n  return (\n    <div className=\"Row\">\n      {appearances.map((appear, ind) => {\n        return (\n          <div key={ind} className=\"mr-7\">\n            <div className={appear === 'white' ? 'bg-dark' : 'bg-transparent'}>\n              <Heading appearance={appear}>Heading</Heading>\n            </div>\n            <br />\n            <Text weight=\"strong\">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-heading-variants-appearance--appearance",

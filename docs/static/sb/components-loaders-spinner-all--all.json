@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/atoms/spinner/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearance = 'white';\n\n  const size = 'small';\n\n  const options = {\n    appearance,\n    size,\n  };\n\n  return (\n    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>\n      <Spinner {...options} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearance = 'white';\n\n  const size = 'small';\n\n  const options = {\n    appearance,\n    size,\n  };\n\n  return (\n    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>\n      <Spinner {...options} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-loaders-spinner-all--all",

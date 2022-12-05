@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -235,7 +235,7 @@
     "options": {},
     "fileName": "./core/components/molecules/fullscreenModal/__stories__/variants/dimension/Medium.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [open, setOpen] = React.useState(false);\n\n  const onClose = () => {\n    setOpen(!open);\n  };\n\n  const openModal = () => {\n    setOpen(true);\n  };\n\n  return (\n    <div>\n      \n      <Button appearance=\"primary\" onClick={openModal}>\n        Open Modal\n      </Button>\n\n      <FullscreenModal\n        open={open}\n        dimension=\"medium\"\n        onClose={onClose}\n        headerOptions={{\n          heading: 'This is modal Heading',\n          subHeading: 'This is modal subheading',\n        }}\n        footerOptions={{\n          actions: [\n            {\n              children: 'Basic',\n              appearance: 'basic',\n              onClick: action('Basic button click'),\n            },\n            {\n              children: 'Primary',\n              appearance: 'primary',\n              className: 'ml-4',\n              onClick: action('Primary button click'),\n            },\n          ],\n        }}\n      >\n        <Text>Fullscreen Modal Body</Text>\n        <Heading size=\"s\">Description Title</Heading>\n        <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>\n        <Paragraph>\n          Card Sections include supporting text like an article summary or a restaurant description.\n        </Paragraph>\n      </FullscreenModal>\n    </div>\n  );\n}"
+      "source": "() => {\n  const [open, setOpen] = React.useState(false);\n\n  const onClose = () => {\n    setOpen(!open);\n  };\n\n  const openModal = () => {\n    setOpen(true);\n  };\n\n  return (\n    <div>\n      <Button appearance=\"primary\" onClick={openModal}>\n        Open Modal\n      </Button>\n\n      <FullscreenModal\n        open={open}\n        dimension=\"medium\"\n        onClose={onClose}\n        headerOptions={{\n          heading: 'This is modal Heading',\n          subHeading: 'This is modal subheading',\n        }}\n        footerOptions={{\n          actions: [\n            {\n              children: 'Basic',\n              appearance: 'basic',\n              onClick: action('Basic button click'),\n            },\n            {\n              children: 'Primary',\n              appearance: 'primary',\n              className: 'ml-4',\n              onClick: action('Primary button click'),\n            },\n          ],\n        }}\n      >\n        <Text>Fullscreen Modal Body</Text>\n        <Heading size=\"s\">Description Title</Heading>\n        <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>\n        <Paragraph>\n          Card Sections include supporting text like an article summary or a restaurant description.\n        </Paragraph>\n      </FullscreenModal>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-fullscreenmodal-variants-dimesion-medium--medium",
@@ -296,7 +296,7 @@
       },
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+        "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
         "type": {
           "required": false,
           "name": "other",
@@ -326,7 +326,7 @@
       },
       "footerOptions": {
         "name": "footerOptions",
-        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+        "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -469,7 +469,7 @@
     },
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n   heading: string;\n   subHeading?: string;\n   backIcon?: boolean;\n   backIconCallback?: (e) => void;\n   backButton?: boolean;\n   backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
+      "description": "Header options (doesn't work if `header` prop is used)\n\nUse `header` prop if custom header is needed.\n\n<pre className=\"DocPage-codeBlock\">\nHeader:\n{\n    heading: string;\n    subHeading?: string;\n    backIcon?: boolean;\n    backIconCallback?: (e) => void;\n    backButton?: boolean;\n    backButtonCallback?: (e) => void;\n}\n</pre>\n\n**`backIcon` and `backIconCallback` will soon be deprecated**\n\n| Name | Description |\n| --- | --- |\n| heading | Heading of `Sidesheet` |\n| subHeading | Subheading of `Sidesheet` |\n| backButton | Determines if back button is visible |\n| backButtonCallback | Callback called when back button is clicked |\n| backIcon | Determines if back button is visible |\n| backIconCallback | Callback called when back button is clicked |",
       "type": {
         "required": false,
         "name": "other",
@@ -499,7 +499,7 @@
     },
     "footerOptions": {
       "name": "footerOptions",
-      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n OverlayFooterOptions {\n   actions: ButtonProps[];\n }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
+      "description": "Footer options (doesn't work if `footer` prop is used).\n\nUse `footer` prop if custom footer is needed.\n\n<pre className=\"DocPage-codeBlock\">\n  OverlayFooterOptions {\n    actions: ButtonProps[];\n  }\n([ButtonProps](https://innovaccer.github.io/design-system/?path=/docs/components-button-all--all))\n</pre>",
       "type": {
         "required": false,
         "name": "other",

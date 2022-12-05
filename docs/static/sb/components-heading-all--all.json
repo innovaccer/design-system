@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/heading/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearance = 'white';\n  const size = 'xxl';\n\n  return (\n    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>\n      <Heading appearance={appearance} size={size}>\n        Heading component have different varients, look for options in knobs tab.\n      </Heading>\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearance = 'white';\n  const size = 'xxl';\n\n  return (\n    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>\n      <Heading appearance={appearance} size={size}>\n        Heading component have different varients, look for options in knobs tab.\n      </Heading>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-heading-all--all",

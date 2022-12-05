@@ -167,7 +167,7 @@ exports[`FileUploaderList component
         data-test="DesignSystem-InlineMessage"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon"
+          class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon--small"
           data-test="DesignSystem-InlineMessage--Icon"
           role="button"
           style="font-size: 14px; width: 14px;"

@@ -31,7 +31,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -278,7 +278,7 @@
       },
       "tabs": {
         "name": "tabs",
-        "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n Tab {\n   label: React.ReactText;\n   count?: number;\n   icon?: string;\n   disabled?: boolean;\n   className?: string;\n   isDismissible?: boolean;\n   onDismiss?: (tabInfo: object) => void;\n }\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n| isDismissible | Determines if tab is dismissible | |\n| onDismiss | Called with tab info when a tab is being removed | |",
+        "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n  Tab {\n    label: React.ReactText;\n    count?: number;\n    icon?: string;\n    disabled?: boolean;\n    className?: string;\n    isDismissible?: boolean;\n    onDismiss?: (tabInfo: object) => void;\n  }\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n| isDismissible | Determines if tab is dismissible | |\n| onDismiss | Called with tab info when a tab is being removed | |",
         "type": {
           "required": false,
           "name": "other",
@@ -299,11 +299,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "SingleOrArray<ReactElement<any, string | JSXElementConstructor<any>>> | undefined"
+          "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<any, string | ... 1 more ... | (new (props: any) => Component<...>)>[] | undefined"
         },
         "table": {
           "type": {
-            "summary": "SingleOrArray<ReactElement<any, string | JSXElementConstructor<any>>> | undefined"
+            "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<any, string | ... 1 more ... | (new (props: any) => Component<...>)>[] | undefined"
           },
           "defaultValue": null
         }
@@ -391,7 +391,7 @@
     },
     "tabs": {
       "name": "tabs",
-      "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n Tab {\n   label: React.ReactText;\n   count?: number;\n   icon?: string;\n   disabled?: boolean;\n   className?: string;\n   isDismissible?: boolean;\n   onDismiss?: (tabInfo: object) => void;\n }\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n| isDismissible | Determines if tab is dismissible | |\n| onDismiss | Called with tab info when a tab is being removed | |",
+      "description": "List of tabs\n<pre className=\"DocPage-codeBlock\">\n  Tab {\n    label: React.ReactText;\n    count?: number;\n    icon?: string;\n    disabled?: boolean;\n    className?: string;\n    isDismissible?: boolean;\n    onDismiss?: (tabInfo: object) => void;\n  }\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| label | Label of Tab |  |\n| count | Count of Tab | |\n| icon | Icon to be rendered inside Tab | |\n| disabled | Determines if tab is disabled | |\n| className | Class on tab content | |\n| isDismissible | Determines if tab is dismissible | |\n| onDismiss | Called with tab info when a tab is being removed | |",
       "type": {
         "required": false,
         "name": "other",
@@ -412,11 +412,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "SingleOrArray<ReactElement<any, string | JSXElementConstructor<any>>> | undefined"
+        "value": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<any, string | ... 1 more ... | (new (props: any) => Component<...>)>[] | undefined"
       },
       "table": {
         "type": {
-          "summary": "SingleOrArray<ReactElement<any, string | JSXElementConstructor<any>>> | undefined"
+          "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)> | ReactElement<any, string | ... 1 more ... | (new (props: any) => Component<...>)>[] | undefined"
         },
         "defaultValue": null
       }

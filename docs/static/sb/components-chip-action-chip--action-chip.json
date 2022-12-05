@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -344,11 +344,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: Name) => void) | undefined"
+          "value": "((name: ReactText) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: Name) => void) | undefined"
+            "summary": "((name: ReactText) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -359,11 +359,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: Name) => void) | undefined"
+          "value": "((name: ReactText) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: Name) => void) | undefined"
+            "summary": "((name: ReactText) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -374,11 +374,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "Name"
+          "value": "ReactText"
         },
         "table": {
           "type": {
-            "summary": "Name"
+            "summary": "ReactText"
           },
           "defaultValue": null
         }
@@ -518,11 +518,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: Name) => void) | undefined"
+        "value": "((name: ReactText) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: Name) => void) | undefined"
+          "summary": "((name: ReactText) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -533,11 +533,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: Name) => void) | undefined"
+        "value": "((name: ReactText) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: Name) => void) | undefined"
+          "summary": "((name: ReactText) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -548,11 +548,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "Name"
+        "value": "ReactText"
       },
       "table": {
         "type": {
-          "summary": "Name"
+          "summary": "ReactText"
         },
         "defaultValue": null
       }

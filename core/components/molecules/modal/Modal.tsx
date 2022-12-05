@@ -309,7 +309,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
               </Column>
             </div>
           )}
-          {children && (
+          {open && children && (
             <>
               {headerOptions || footerOptions || footer || header ? (
                 <OverlayBody className={bodyClass}>{this.props.children}</OverlayBody>

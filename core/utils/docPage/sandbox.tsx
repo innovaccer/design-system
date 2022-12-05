@@ -42,7 +42,7 @@ export default (jsxStoryCode: string) => {
   const code = `
 import ReactDOM from "react-dom";
 import React from "react";
-import "@innovaccer/design-system/css";
+import "@innovaccer/design-system/css/dist/index.css";
 ${structuredCode}
 
 ReactDOM.render(<App />, document.getElementById("root"));

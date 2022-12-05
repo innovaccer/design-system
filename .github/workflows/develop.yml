@@ -1,8 +1,9 @@
-name: "Dev deployments"
+name: 'Dev deployments'
 on:
   push:
     branches:
       - develop
+      
 jobs:
   storybook_deploy:
     name: Deploy storybook
@@ -11,17 +12,17 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: develop
-            
+
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      
+
       - name: npm install
         run: npm ci
-      
+
       - name: build css
         run: npm run build-css
-      
+
       - name: deploy storybook
         run: npm run deploy-storybook -- --bucket-path=webui-mds-sb-dev --aws-profile=NONE --ci
         env:
@@ -40,26 +41,26 @@ jobs:
       DOCS_BUCKET: webui-mds-docs-dev
     steps:
       - uses: actions/checkout@v2
-            
+
       - uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      
+
       - name: npm install
         run: npm i
-            
+
       - name: extract stories
         run: npm run extract
         env:
-          STORYBOOK_HOST: "https://mds-dev.innovaccer.com/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story"
-            
+          STORYBOOK_HOST: 'https://mds-dev.innovaccer.com/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story'
+
       - name: build
         run: npm run build
         env:
           DOCS_BUCKET: webui-mds-docs-dev
-      
+
       - name: deploy
-        run: npm run deploy
+        run: npm run deploy && aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
         env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}

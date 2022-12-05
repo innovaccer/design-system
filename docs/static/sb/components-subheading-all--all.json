@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/subheading/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearance = 'white';\n\n  return (\n    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>\n      <Subheading appearance={appearance}>\n        Subheading component have different varients, look for options in knobs tab.\n      </Subheading>\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearance = 'white';\n\n  return (\n    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>\n      <Subheading appearance={appearance}>\n        Subheading component have different varients, look for options in knobs tab.\n      </Subheading>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-subheading-all--all",
@@ -249,11 +249,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "{string}"
+          "value": "ReactText"
         },
         "table": {
           "type": {
-            "summary": "{string}"
+            "summary": "ReactText"
           },
           "defaultValue": null
         }
@@ -320,11 +320,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "{string}"
+        "value": "ReactText"
       },
       "table": {
         "type": {
-          "summary": "{string}"
+          "summary": "ReactText"
         },
         "defaultValue": null
       }

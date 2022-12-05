@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Pills, Icon, Text, Tab, EmptyState } from '@/index';
+import { Pills, Icon, Text, Tab } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
 
 type Tab = React.ReactElement | TabConfig;
@@ -129,15 +129,23 @@ export const Tabs = (props: TabsProps) => {
       ['Tab-pills--disabled']: disabled,
     });
 
-  let activeTab;
-  let activeTabClass;
-  if ('props' in tabs[activeIndex]) {
-    activeTab = tabs[activeIndex] as React.ReactElement;
-    activeTabClass = activeTab.props?.className;
-  } else {
-    activeTab = tabs[activeIndex] as TabConfig;
-    activeTabClass = activeTab.className;
-  }
+  const getActiveTabClass = () => {
+    let activeTab;
+    let activeTabClass;
+
+    if (tabs && tabs.length && tabs[activeIndex] && 'props' in tabs[activeIndex]) {
+      activeTab = tabs[activeIndex] as React.ReactElement;
+      activeTabClass = activeTab.props?.className;
+    } else {
+      activeTab = tabs[activeIndex] as TabConfig;
+      activeTabClass = activeTab && activeTab.className;
+    }
+
+    return activeTabClass;
+  };
+
+  const activeTabClass = getActiveTabClass();
+
   const tabContentClass = classNames({
     ['TabsWrapper-content']: true,
     [`${activeTabClass}`]: activeTabClass,
@@ -278,19 +286,11 @@ export const Tabs = (props: TabsProps) => {
         {renderTabs}
         {inlineComponent}
       </div>
-      {children && (tabs[activeIndex] as any).props?.disabled ? (
-        <div className="h-100 pb-5" style={{ backgroundColor: 'var(--secondary-lightest)' }}>
-          <EmptyState
-            title="There's a problem loading this page."
-            description="Tab is disabled and you are not authorized to see the content of this tab"
-            size="large"
-          ></EmptyState>
-        </div>
-      ) : children && !(tabs[activeIndex] as any).props?.disabled ? (
+      {children && (
         <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
           {tabs[activeIndex]}
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

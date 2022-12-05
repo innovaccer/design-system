@@ -30,11 +30,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [files, setFiles] = React.useState([]);\n\n  const getSize = (size) => (\n    `${(size / (1024 * 1024)).toFixed(2)} MB`\n  );\n\n  const onDelete = (fileItem) => {\n    const updatedFiles = files.filter((file) => file.id !== fileItem.id);\n    setFiles(updatedFiles);\n  };\n\n  const onDropHandler = (event, acceptedFiles, rejectedFiles) => {\n    const acceptedFileDetailList = acceptedFiles.map((file, id) => (\n      {\n        file,\n        id: files.length + id,\n        fileSize: getSize(file.size),\n        networkError: false,\n      }\n    ));\n\n    const rejectedFilesDetailList = rejectedFiles.map((rejectedFile, id) => {\n      const { file, errors } = rejectedFile;\n      const errorMessageArray = errors.map((error) => error.message);\n      return {\n        file,\n        id: files.length + id,\n        fileSize: getSize(file.size),\n        status: 'error',\n        errorMessage: errorMessageArray.join(' and '),\n        networkError: false,\n      };\n    });\n    const updatedFiles = [...files, ...acceptedFileDetailList, ...rejectedFilesDetailList];\n    setFiles(updatedFiles);\n  };\n\n  const actionRenderer = (fileItem) => {\n    return (\n      <React.Fragment>\n        {fileItem.networkError && (\n          <Button\n            aria-label={`Remove ${fileItem.file.name}`}\n            appearance=\"transparent\"\n            icon=\"refresh\"\n            size=\"regular\"\n            onClick={() => onDelete(fileItem.id)}\n            className={'cursor-pointer'}\n          />\n        )}\n        <Button\n          aria-label={`Remove ${fileItem.file.name}`}\n          appearance=\"transparent\"\n          icon=\"close\"\n          size=\"regular\"\n          onClick={() => onDelete(fileItem)}\n          className={'cursor-pointer'}\n        />\n      </React.Fragment>\n    );\n  }\n\n  return (\n    <React.Fragment>\n      <Dropzone\n        accept=\"image/jpeg, image/png\"\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        multiple={true}\n        onDrop={onDropHandler}\n        className=\"mb-5\"\n        sampleFileLink={(\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        )}\n      />\n      <FileList\n        fileList={files}\n        actionRenderer={actionRenderer}\n      />\n    </React.Fragment>\n  );\n}",
+        "customCode": "() => {\n  const [files, setFiles] = React.useState([]);\n\n  const getSize = (size) => (\n    `${(size / (1024 * 1024)).toFixed(2)} MB`\n  );\n\n  const onDelete = (fileItem) => {\n    const updatedFiles = files.filter((file) => file.id !== fileItem.id);\n    setFiles(updatedFiles);\n  };\n\n  const onDropHandler = (event, acceptedFiles, rejectedFiles) => {\n    const acceptedFileDetailList = acceptedFiles.map((file, id) => (\n      {\n        file,\n        id: files.length + id,\n        fileSize: getSize(file.size),\n        networkError: false,\n      }\n    ));\n\n    const rejectedFilesDetailList = rejectedFiles.map((rejectedFile, id) => {\n      const { file, errors } = rejectedFile;\n      const errorMessageArray = errors.map((error) => error.message);\n      return {\n        file,\n        id: files.length + id,\n        fileSize: getSize(file.size),\n        status: 'error',\n        errorMessage: errorMessageArray.join(' and '),\n        networkError: false,\n      };\n    });\n    const updatedFiles = [...files, ...acceptedFileDetailList, ...rejectedFilesDetailList];\n    setFiles(updatedFiles);\n  };\n\n  const actionRenderer = (fileItem) => {\n    return (\n      <React.Fragment>\n        {fileItem.networkError && (\n          <Button\n            aria-label={`Remove ${fileItem.file.name}`}\n            appearance=\"transparent\"\n            icon=\"refresh\"\n            size=\"regular\"\n            onClick={() => onDelete(fileItem.id)}\n            className={'cursor-pointer'}\n          />\n        )}\n        <Button\n          aria-label={`Remove ${fileItem.file.name}`}\n          appearance=\"transparent\"\n          icon=\"close\"\n          size=\"regular\"\n          onClick={() => onDelete(fileItem)}\n          className={'cursor-pointer'}\n        />\n      </React.Fragment>\n    );\n  }\n\n  return (\n    <React.Fragment>\n      <Dropzone\n        accept=\"image/jpeg, image/png\"\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        multiple={true}\n        onDrop={onDropHandler}\n        className=\"mb-5\"\n        sampleFileLink={(\n          <Link\n            href=\"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        )}\n      />\n      <FileList\n        fileList={files}\n        actionRenderer={actionRenderer}\n      />\n    </React.Fragment>\n  );\n}",
         "a11yProps": " \n        If you are using File list like shown above, don't forget to add ``aria-label`` to the button.\n         "
       }
     },
@@ -234,7 +234,7 @@
     "options": {},
     "fileName": "./core/components/molecules/dropzone/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [files, setFiles] = React.useState([]);\n  const getSize = (size) => `${(size / (1024 * 1024)).toFixed(2)} MB`;\n\n  const onDelete = (id) => {\n    const updatedFiles = files.filter((file) => file.id !== id);\n    setFiles(updatedFiles);\n  };\n\n  const onDropHandler = (_event, acceptedFiles, rejectedFiles) => {\n    const acceptedFileDetailList = acceptedFiles.map((file, id) => ({\n      file,\n      id: files.length + id,\n      fileSize: getSize(file.size),\n      networkError: false,\n      status: 'completed',\n    }));\n\n    const rejectedFilesDetailList = rejectedFiles.map((rejectedFile, id) => {\n      const { file, errors } = rejectedFile;\n      const errorMessageArray = errors.map((error) => error.message);\n      return {\n        file,\n        id: files.length + id,\n        fileSize: getSize(file.size),\n        status: 'error',\n        errorMessage: errorMessageArray.join(' and '),\n        networkError: false,\n      };\n    });\n\n    const updatedFiles = [...files, ...acceptedFileDetailList, ...rejectedFilesDetailList];\n    setFiles(updatedFiles);\n  };\n\n  const actionRenderer = (fileItem) => {\n    return (\n      <React.Fragment>\n        {fileItem.networkError && (\n          <Button\n            aria-label={`Remove ${fileItem.file.name}`}\n            appearance=\"transparent\"\n            icon=\"refresh\"\n            size=\"regular\"\n            onClick={() => onDelete(fileItem.id)}\n            className={'cursor-pointer'}\n          />\n        )}\n        <Button\n          aria-label={`Remove ${fileItem.file.name}`}\n          appearance=\"transparent\"\n          icon=\"close\"\n          size=\"regular\"\n          onClick={() => onDelete(fileItem.id)}\n          className={'cursor-pointer'}\n        />\n      </React.Fragment>\n    );\n  };\n\n  return (\n    <React.Fragment>\n      <Dropzone\n        accept=\"image/jpeg, image/png\"\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        multiple={true}\n        onDrop={onDropHandler}\n        className=\"mb-5\"\n        sampleFileLink={\n          <Link\n            href=\"http://www.adobe.com/content/dam/Adobe/en/accessibility/pdfs/accessing-pdf-sr.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        }\n      />\n      <FileList fileList={files.map(({ file, metadata }) => ({ file, ...metadata }))} actionRenderer={actionRenderer} />\n    </React.Fragment>\n  );\n}"
+      "source": "() => {\n  const [files, setFiles] = React.useState([]);\n  const getSize = (size) => `${(size / (1024 * 1024)).toFixed(2)} MB`;\n\n  const onDelete = (id) => {\n    const updatedFiles = files.filter((file) => file.id !== id);\n    setFiles(updatedFiles);\n  };\n\n  const onDropHandler = (_event, acceptedFiles, rejectedFiles) => {\n    const acceptedFileDetailList = acceptedFiles.map((file, id) => ({\n      file,\n      id: files.length + id,\n      fileSize: getSize(file.size),\n      networkError: false,\n      status: 'completed',\n    }));\n\n    const rejectedFilesDetailList = rejectedFiles.map((rejectedFile, id) => {\n      const { file, errors } = rejectedFile;\n      const errorMessageArray = errors.map((error) => error.message);\n      return {\n        file,\n        id: files.length + id,\n        fileSize: getSize(file.size),\n        status: 'error',\n        errorMessage: errorMessageArray.join(' and '),\n        networkError: false,\n      };\n    });\n\n    const updatedFiles = [...files, ...acceptedFileDetailList, ...rejectedFilesDetailList];\n    setFiles(updatedFiles);\n  };\n\n  const actionRenderer = (fileItem) => {\n    return (\n      <React.Fragment>\n        {fileItem.networkError && (\n          <Button\n            aria-label={`Remove ${fileItem.file.name}`}\n            appearance=\"transparent\"\n            icon=\"refresh\"\n            size=\"regular\"\n            onClick={() => onDelete(fileItem.id)}\n            className={'cursor-pointer'}\n          />\n        )}\n        <Button\n          aria-label={`Remove ${fileItem.file.name}`}\n          appearance=\"transparent\"\n          icon=\"close\"\n          size=\"regular\"\n          onClick={() => onDelete(fileItem.id)}\n          className={'cursor-pointer'}\n        />\n      </React.Fragment>\n    );\n  };\n\n  return (\n    <React.Fragment>\n      <Dropzone\n        accept=\"image/jpeg, image/png\"\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        multiple={true}\n        onDrop={onDropHandler}\n        className=\"mb-5\"\n        sampleFileLink={\n          <Link\n            href=\"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf\"\n            download=\"Test.pdf\"\n            target=\"_blank\"\n          >\n            Download sample file\n          </Link>\n        }\n      />\n      <FileList fileList={files.map(({ file, metadata }) => ({ file, ...metadata }))} actionRenderer={actionRenderer} />\n    </React.Fragment>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-dropzone-all--all",
@@ -449,15 +449,6 @@
           "type": {
             "summary": "(event: Event | DragEvent) => any"
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "event",
-                "description": "A drag event or input change event (if files were selected via the file dialog)"
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": {
             "summary": "fromEvent( ... )"
           }
@@ -490,15 +481,6 @@
           "type": {
             "summary": "((event: DragEvent) => void) | undefined"
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "event",
-                "description": null
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": null
         }
       },
@@ -513,15 +495,6 @@
         "table": {
           "type": {
             "summary": "((event: DragEvent) => void) | undefined"
-          },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "event",
-                "description": null
-              }
-            ],
-            "returns": false
           },
           "defaultValue": null
         }
@@ -538,21 +511,12 @@
           "type": {
             "summary": "((event: DragEvent) => void) | undefined"
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "event",
-                "description": null
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": null
         }
       },
       "onDrop": {
         "name": "onDrop",
-        "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n  type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n  message: string;\n}\n\nFileRejection {\n file: File;\n errors: FileError[];\n}\n</pre>",
+        "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n   type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n   message: string;\n}\n\nFileRejection {\n  file: File;\n  errors: FileError[];\n}\n</pre>",
         "type": {
           "required": false,
           "name": "function",
@@ -561,23 +525,6 @@
         "table": {
           "type": {
             "summary": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
-          },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "acceptedFiles",
-                "description": null
-              },
-              {
-                "name": "fileRejections",
-                "description": null
-              },
-              {
-                "name": "event",
-                "description": "A drag event or input change event (if files were selected via the file dialog)"
-              }
-            ],
-            "returns": false
           },
           "defaultValue": null
         }
@@ -594,19 +541,6 @@
           "type": {
             "summary": "((event: Event | DragEvent, files: File[]) => void) | undefined"
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "files",
-                "description": null
-              },
-              {
-                "name": "event",
-                "description": null
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": null
         }
       },
@@ -622,19 +556,6 @@
           "type": {
             "summary": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
           },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "fileRejections",
-                "description": null
-              },
-              {
-                "name": "event",
-                "description": null
-              }
-            ],
-            "returns": false
-          },
           "defaultValue": null
         }
       },
@@ -649,15 +570,6 @@
         "table": {
           "type": {
             "summary": "((file: File) => FileError | FileError[]) | undefined"
-          },
-          "jsDocTags": {
-            "params": [
-              {
-                "name": "file",
-                "description": null
-              }
-            ],
-            "returns": false
           },
           "defaultValue": {
             "summary": "func"
@@ -873,15 +785,6 @@
         "type": {
           "summary": "(event: Event | DragEvent) => any"
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "event",
-              "description": "A drag event or input change event (if files were selected via the file dialog)"
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": {
           "summary": "fromEvent( ... )"
         }
@@ -914,15 +817,6 @@
         "type": {
           "summary": "((event: DragEvent) => void) | undefined"
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "event",
-              "description": null
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": null
       }
     },
@@ -937,15 +831,6 @@
       "table": {
         "type": {
           "summary": "((event: DragEvent) => void) | undefined"
-        },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "event",
-              "description": null
-            }
-          ],
-          "returns": false
         },
         "defaultValue": null
       }
@@ -962,21 +847,12 @@
         "type": {
           "summary": "((event: DragEvent) => void) | undefined"
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "event",
-              "description": null
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": null
       }
     },
     "onDrop": {
       "name": "onDrop",
-      "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n  type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n  message: string;\n}\n\nFileRejection {\n file: File;\n errors: FileError[];\n}\n</pre>",
+      "description": "Callback for when the `drop` event occurs.\nNote that the `onDrop` callback will always be invoked regardless if the dropped files were accepted or rejected.\n\n<pre className=\"DocPage-codeBlock\">\nFileError: {\n   type: 'FILE_INVALID_TYPE' | 'FILE_TOO_LARGE' | 'FILE_TOO_SMALL' | 'TOO_MANY_FILES';\n   message: string;\n}\n\nFileRejection {\n  file: File;\n  errors: FileError[];\n}\n</pre>",
       "type": {
         "required": false,
         "name": "function",
@@ -985,23 +861,6 @@
       "table": {
         "type": {
           "summary": "((event: Event | DragEvent, acceptedFiles: File[], rejectedFiles: FileRejection[]) => void) | undefined"
-        },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "acceptedFiles",
-              "description": null
-            },
-            {
-              "name": "fileRejections",
-              "description": null
-            },
-            {
-              "name": "event",
-              "description": "A drag event or input change event (if files were selected via the file dialog)"
-            }
-          ],
-          "returns": false
         },
         "defaultValue": null
       }
@@ -1018,19 +877,6 @@
         "type": {
           "summary": "((event: Event | DragEvent, files: File[]) => void) | undefined"
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "files",
-              "description": null
-            },
-            {
-              "name": "event",
-              "description": null
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": null
       }
     },
@@ -1046,19 +892,6 @@
         "type": {
           "summary": "((event: Event | DragEvent, rejectedFiles: FileRejection[]) => void) | undefined"
         },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "fileRejections",
-              "description": null
-            },
-            {
-              "name": "event",
-              "description": null
-            }
-          ],
-          "returns": false
-        },
         "defaultValue": null
       }
     },
@@ -1073,15 +906,6 @@
       "table": {
         "type": {
           "summary": "((file: File) => FileError | FileError[]) | undefined"
-        },
-        "jsDocTags": {
-          "params": [
-            {
-              "name": "file",
-              "description": null
-            }
-          ],
-          "returns": false
         },
         "defaultValue": {
           "summary": "func"

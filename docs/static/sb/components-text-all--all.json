@@ -30,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.11.0-4",
+        "brandTitle": "Masala Design System v2.13.5",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/text/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const weight = 'medium';\n  const size = 'regular';\n  const small = false;\n  const appearance = 'white';\n  const options = {\n    size,\n    weight,\n    appearance,\n    small,\n  };\n\n  return (\n    <div style={{ background: appearance === 'white' ? 'black' : 'transparent' }}>\n      <Text {...options}>Text component have different varients, look for options in knobs tab.</Text>\n    </div>\n  );\n}"
+      "source": "() => {\n  const weight = 'medium';\n  const size = 'regular';\n  const small = false;\n  const appearance = 'white';\n  const options = {\n    size,\n    weight,\n    appearance,\n    small,\n  };\n\n  return (\n    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>\n      <Text {...options}>Text component have different varients, look for options in knobs tab.</Text>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-text-all--all",
@@ -294,14 +294,14 @@
       },
       "appearance": {
         "name": "appearance",
-        "description": "Color of `Text`",
+        "description": "State of `Text`",
         "type": {
           "required": false,
           "name": "enum",
           "value": [
+            "success",
             "default",
             "disabled",
-            "success",
             "link",
             "subtle",
             "white",
@@ -310,7 +310,7 @@
         },
         "table": {
           "type": {
-            "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+            "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
           },
           "defaultValue": {
             "summary": "\"default\""
@@ -336,6 +336,91 @@
           "defaultValue": {
             "summary": "\"regular\""
           }
+        }
+      },
+      "color": {
+        "name": "color",
+        "description": "Color of `Text`",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "primary",
+            "secondary",
+            "alert",
+            "warning",
+            "success",
+            "accent1",
+            "accent2",
+            "accent3",
+            "accent4",
+            "white",
+            "inverse",
+            "primary-dark",
+            "secondary-dark",
+            "success-dark",
+            "alert-dark",
+            "warning-dark",
+            "accent1-dark",
+            "accent2-dark",
+            "accent3-dark",
+            "accent4-dark",
+            "primary-darker",
+            "success-darker",
+            "alert-darker",
+            "warning-darker",
+            "accent1-darker",
+            "accent2-darker",
+            "accent3-darker",
+            "accent4-darker",
+            "primary-light",
+            "secondary-light",
+            "success-light",
+            "alert-light",
+            "warning-light",
+            "accent1-light",
+            "accent2-light",
+            "accent3-light",
+            "accent4-light",
+            "inverse-light",
+            "primary-lighter",
+            "secondary-lighter",
+            "success-lighter",
+            "alert-lighter",
+            "warning-lighter",
+            "accent1-lighter",
+            "accent2-lighter",
+            "accent3-lighter",
+            "accent4-lighter",
+            "inverse-lighter",
+            "primary-lightest",
+            "secondary-lightest",
+            "success-lightest",
+            "alert-lightest",
+            "warning-lightest",
+            "accent1-lightest",
+            "accent2-lightest",
+            "accent3-lightest",
+            "accent4-lightest",
+            "inverse-lightest",
+            "primary-shadow",
+            "secondary-shadow",
+            "success-shadow",
+            "alert-shadow",
+            "warning-shadow",
+            "accent1-shadow",
+            "accent2-shadow",
+            "accent3-shadow",
+            "accent4-shadow",
+            "inverse-shadow"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"primary\" | \"secondary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"white\" | \"inverse\" | \"primary-dark\" | \"secondary-dark\" | \"success-dark\" | \"alert-dark\" | \"warning-dark\" | \"accent1-dark\" | \"accent2-dark\" | \"accent3-dark\" | \"accent4-dark\" | \"primary-darker\" | \"success-darker\" | \"alert-darker\" | \"warning-darker\" | \"accent1-darker\" | \"accent2-darker\" | \"accent3-darker\" | \"accent4-darker\" | \"primary-light\" | \"secondary-light\" | \"success-light\" | \"alert-light\" | \"warning-light\" | \"accent1-light\" | \"accent2-light\" | \"accent3-light\" | \"accent4-light\" | \"inverse-light\" | \"primary-lighter\" | \"secondary-lighter\" | \"success-lighter\" | \"alert-lighter\" | \"warning-lighter\" | \"accent1-lighter\" | \"accent2-lighter\" | \"accent3-lighter\" | \"accent4-lighter\" | \"inverse-lighter\" | \"primary-lightest\" | \"secondary-lightest\" | \"success-lightest\" | \"alert-lightest\" | \"warning-lightest\" | \"accent1-lightest\" | \"accent2-lightest\" | \"accent3-lightest\" | \"accent4-lightest\" | \"inverse-lightest\" | \"primary-shadow\" | \"secondary-shadow\" | \"success-shadow\" | \"alert-shadow\" | \"warning-shadow\" | \"accent1-shadow\" | \"accent2-shadow\" | \"accent3-shadow\" | \"accent4-shadow\" | \"inverse-shadow\""
+          },
+          "defaultValue": null
         }
       },
       "className": {
@@ -423,14 +508,14 @@
     },
     "appearance": {
       "name": "appearance",
-      "description": "Color of `Text`",
+      "description": "State of `Text`",
       "type": {
         "required": false,
         "name": "enum",
         "value": [
+          "success",
           "default",
           "disabled",
-          "success",
           "link",
           "subtle",
           "white",
@@ -439,7 +524,7 @@
       },
       "table": {
         "type": {
-          "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+          "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
         },
         "defaultValue": {
           "summary": "\"default\""
@@ -465,6 +550,91 @@
         "defaultValue": {
           "summary": "\"regular\""
         }
+      }
+    },
+    "color": {
+      "name": "color",
+      "description": "Color of `Text`",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "primary",
+          "secondary",
+          "alert",
+          "warning",
+          "success",
+          "accent1",
+          "accent2",
+          "accent3",
+          "accent4",
+          "white",
+          "inverse",
+          "primary-dark",
+          "secondary-dark",
+          "success-dark",
+          "alert-dark",
+          "warning-dark",
+          "accent1-dark",
+          "accent2-dark",
+          "accent3-dark",
+          "accent4-dark",
+          "primary-darker",
+          "success-darker",
+          "alert-darker",
+          "warning-darker",
+          "accent1-darker",
+          "accent2-darker",
+          "accent3-darker",
+          "accent4-darker",
+          "primary-light",
+          "secondary-light",
+          "success-light",
+          "alert-light",
+          "warning-light",
+          "accent1-light",
+          "accent2-light",
+          "accent3-light",
+          "accent4-light",
+          "inverse-light",
+          "primary-lighter",
+          "secondary-lighter",
+          "success-lighter",
+          "alert-lighter",
+          "warning-lighter",
+          "accent1-lighter",
+          "accent2-lighter",
+          "accent3-lighter",
+          "accent4-lighter",
+          "inverse-lighter",
+          "primary-lightest",
+          "secondary-lightest",
+          "success-lightest",
+          "alert-lightest",
+          "warning-lightest",
+          "accent1-lightest",
+          "accent2-lightest",
+          "accent3-lightest",
+          "accent4-lightest",
+          "inverse-lightest",
+          "primary-shadow",
+          "secondary-shadow",
+          "success-shadow",
+          "alert-shadow",
+          "warning-shadow",
+          "accent1-shadow",
+          "accent2-shadow",
+          "accent3-shadow",
+          "accent4-shadow",
+          "inverse-shadow"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"primary\" | \"secondary\" | \"alert\" | \"warning\" | \"success\" | \"accent1\" | \"accent2\" | \"accent3\" | \"accent4\" | \"white\" | \"inverse\" | \"primary-dark\" | \"secondary-dark\" | \"success-dark\" | \"alert-dark\" | \"warning-dark\" | \"accent1-dark\" | \"accent2-dark\" | \"accent3-dark\" | \"accent4-dark\" | \"primary-darker\" | \"success-darker\" | \"alert-darker\" | \"warning-darker\" | \"accent1-darker\" | \"accent2-darker\" | \"accent3-darker\" | \"accent4-darker\" | \"primary-light\" | \"secondary-light\" | \"success-light\" | \"alert-light\" | \"warning-light\" | \"accent1-light\" | \"accent2-light\" | \"accent3-light\" | \"accent4-light\" | \"inverse-light\" | \"primary-lighter\" | \"secondary-lighter\" | \"success-lighter\" | \"alert-lighter\" | \"warning-lighter\" | \"accent1-lighter\" | \"accent2-lighter\" | \"accent3-lighter\" | \"accent4-lighter\" | \"inverse-lighter\" | \"primary-lightest\" | \"secondary-lightest\" | \"success-lightest\" | \"alert-lightest\" | \"warning-lightest\" | \"accent1-lightest\" | \"accent2-lightest\" | \"accent3-lightest\" | \"accent4-lightest\" | \"inverse-lightest\" | \"primary-shadow\" | \"secondary-shadow\" | \"success-shadow\" | \"alert-shadow\" | \"warning-shadow\" | \"accent1-shadow\" | \"accent2-shadow\" | \"accent3-shadow\" | \"accent4-shadow\" | \"inverse-shadow\""
+        },
+        "defaultValue": null
       }
     },
     "className": {
