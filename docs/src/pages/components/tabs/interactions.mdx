@@ -2,7 +2,7 @@
 
 <br/>
 
-<img src='./images/tabs-8.gif' width='100%' height='auto'/>
+<img src='./images/tabs-interactions.gif' width='100%' height='auto'/>
 <br/>
 <br/>
 
@@ -95,103 +95,6 @@
 <br/>
 <br/>
 
-#### Active indicator
-
-<br/>
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Property: 'X movement',
-        Initial: 'Source tab',
-        Final: 'Destination tab',
-      },
-    ]}
-    schema={[
-      {
-        name: 'Property',
-        displayName: 'Property',
-        width: '34%',
-        sorting: false,
-        separator: true,
-        cellType: 'DEFAULT'
-      },
-      {
-        name: 'Initial',
-        displayName: 'Initial state',
-        width: '33%',
-        sorting: false,
-        separator: true,
-        cellRenderer: ({ data }) => {
-          return <Rectangle name={data.Initial} />;
-        },
-        
-      },
-      {
-        name: 'Final',
-        displayName: 'Final state',
-        width: '33%',
-        sorting: false,
-        separator: true,
-        cellRenderer: ({ data }) => {
-          return <Rectangle name={data.Final} />;
-        },
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
-
-**Curve**
-
-<Card shadow='none'>
-  <Table
-    showMenu={false}
-    separator={true}
-    data={[
-      {
-        Curve: 'cubic-bezier(0.4, 0.14, 0.3, 1)',
-        Duration: '400ms',
-        Delay: '80ms'
-      }
-    ]}
-    schema={[
-      {
-        name: 'Curve',
-        displayName: 'Curve',
-        width: '33%',
-        sorting: false,
-        separator: true,
-        cellRenderer: ({ data }) => {
-          return <Rectangle name={data.Curve} />;
-        },
-      },
-      {
-        name: 'Duration',
-        displayName: 'Duration',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Delay',
-        displayName: 'Delay',
-        width: '33%',
-        sorting: false,
-        separator: true
-        
-      },
-    ]}
-    withHeader={false}
-  />
-</Card>
-<br/>
-<br/>
 
 #### Destination tab
 
