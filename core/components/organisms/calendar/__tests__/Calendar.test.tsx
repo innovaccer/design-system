@@ -9,6 +9,18 @@ const size = ['small', 'large'];
 const view = ['year', 'month', 'date'];
 const FunctionValue = jest.fn();
 
+let dateNowSpy: any;
+
+beforeAll(() => {
+  // Lock Time
+  dateNowSpy = jest.spyOn(Date, 'now').mockImplementation(() => 1632314975530);
+});
+
+afterAll(() => {
+  // Unlock Time
+  dateNowSpy.mockRestore();
+});
+
 describe('Calendar component', () => {
   const mapper: Record<string, any> = {
     disabledBefore: valueHelper([Date.UTC(2020, 2, 10)], { iterate: true }),
@@ -80,7 +92,7 @@ describe('Calendar component', () => {
   testHelper(mapper, testFunc);
 });
 
-describe('Calendar compoennt', () => {
+describe('Calendar component', () => {
   it("with size: 'small', view: 'date'", () => {
     const { getByTestId, getAllByTestId } = render(<Calendar date={new Date(2020, 2, 15)} size="small" view="date" />);
 
@@ -240,5 +252,38 @@ describe('Calendar compoennt', () => {
     const year = getAllByTestId('DesignSystem-Calendar--yearValue')[0];
     fireEvent.mouseOver(year);
     expect(FunctionValue).toHaveBeenCalled();
+  });
+});
+
+describe('text color for different states', () => {
+  it('should have the text color as inverse when the state is default', () => {
+    const { getAllByTestId } = render(<Calendar date={new Date('2021-01-10T18:30:00.000Z')} />);
+    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[7]).toHaveClass('color-inverse');
+  });
+
+  it('should have text color as white when a date is selected', () => {
+    const { getAllByTestId } = render(<Calendar date={new Date('2021-01-10T18:30:00.000Z')} />);
+    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[14]).toHaveClass('color-white');
+  });
+
+  it('should have the text color as inverse-lightest when the state is disabled', () => {
+    const { getAllByTestId } = render(
+      <Calendar
+        date={new Date('2020-03-14T18:30:00.000Z')}
+        disabledBefore={new Date('2020-03-09T18:30:00.000Z')}
+        view="year"
+      />
+    );
+    expect(getAllByTestId('DesignSystem-Text')[3]).toHaveClass('color-inverse-lightest');
+  });
+
+  it('should have the text color as primary for current year, month or date ', () => {
+    const { getAllByTestId } = render(<Calendar />);
+    expect(getAllByTestId('DesignSystem-Calendar--dateValue')[24]).toHaveClass('color-primary');
+  });
+
+  it('should have the text color as primary-lighter when the state is disabled but with current year, month or date', () => {
+    const { getAllByTestId } = render(<Calendar disabledBefore={new Date('2022-01-20T18:30:00.000Z')} view="year" />);
+    expect(getAllByTestId('DesignSystem-Text')[5]).toHaveClass('color-primary-lighter');
   });
 });
