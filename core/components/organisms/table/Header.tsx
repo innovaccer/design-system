@@ -19,6 +19,7 @@ export interface ExternalHeaderProps {
   searchPlaceholder?: string;
   dynamicColumn?: boolean;
   allowSelectAll?: boolean;
+  customSelectionLabel?: string;
 }
 
 export type updateSearchTermFunction = (newSearchTerm: string) => void;
@@ -71,6 +72,7 @@ export const Header = (props: HeaderProps) => {
     dynamicColumn,
     allowSelectAll,
     showFilters,
+    customSelectionLabel,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -130,18 +132,19 @@ export const Header = (props: HeaderProps) => {
     if (updateSchema) updateSchema(newSchema);
   };
 
+  const customLabel = customSelectionLabel ? customSelectionLabel : 'item';
   const selectedCount = data.filter((d) => d._selected).length;
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
   const label = error
-    ? 'Showing 0 items'
+    ? `Showing 0 ${customLabel}s`
     : withCheckbox && selectedCount
     ? selectAllRecords
-      ? `Selected all ${totalRecords} item${getPluralSuffix(totalRecords)}`
-      : `Selected ${selectedCount} item${getPluralSuffix(totalRecords)} on this page`
+      ? `Selected all ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
+      : `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)} on this page`
     : withPagination
-    ? `Showing ${startIndex}-${endIndex} of ${totalRecords} item${getPluralSuffix(totalRecords)}`
-    : `Showing ${totalRecords} item${getPluralSuffix(totalRecords)}`;
+    ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
+    : `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
 
   return (
     <div className="Header">
@@ -216,7 +219,7 @@ export const Header = (props: HeaderProps) => {
                       size="tiny"
                       onClick={() => setSelectAllRecords(true)}
                     >
-                      {`Select all ${totalRecords} items`}
+                      {`Select all ${totalRecords} ${customLabel}s`}
                     </Button>
                   ) : (
                     <Button

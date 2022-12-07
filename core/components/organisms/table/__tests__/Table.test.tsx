@@ -363,3 +363,67 @@ describe('render Table with disabled row', () => {
     expect(onSelectMockFn.mock.calls[1][1]).toBe(true);
   });
 });
+
+describe('render Table with selectAll Row option', () => {
+  it('check custom label in header on row selection', () => {
+    const headerOptions = { withSearch: true, allowSelectAll: true, customSelectionLabel: 'user' };
+    const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+    const { getAllByTestId, getByTestId } = render(
+      <Table
+        withHeader={true}
+        withCheckbox={true}
+        withPagination={true}
+        data={tableData}
+        schema={schema}
+        headerOptions={headerOptions}
+      />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(checkbox);
+    const selectAllButton = getByTestId('DesignSystem-Table-Header--selectAllItemsButton');
+    const selectionLabel = getByTestId('DesignSystem-Label--Text');
+
+    expect(selectAllButton).toBeInTheDocument();
+    expect(selectionLabel).toHaveTextContent('Selected 2 users on this page');
+    expect(selectAllButton).toHaveTextContent('Select all 2 users');
+
+    fireEvent.click(selectAllButton);
+    expect(selectionLabel).toHaveTextContent('Selected all 2 users');
+
+    const clearSelectionButton = getByTestId('DesignSystem-Table-Header--clearSelectionItemsButton');
+    expect(clearSelectionButton).toBeInTheDocument();
+    fireEvent.click(clearSelectionButton);
+    expect(selectionLabel).toHaveTextContent('Selected 2 users on this page');
+  });
+
+  it('check default label of button on row selection', () => {
+    const headerOptions = { withSearch: true, allowSelectAll: true };
+    const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+    const { getAllByTestId, getByTestId } = render(
+      <Table
+        withHeader={true}
+        withCheckbox={true}
+        withPagination={true}
+        data={tableData}
+        schema={schema}
+        headerOptions={headerOptions}
+      />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(checkbox);
+    const selectAllButton = getByTestId('DesignSystem-Table-Header--selectAllItemsButton');
+    const selectionLabel = getByTestId('DesignSystem-Label--Text');
+
+    expect(selectAllButton).toBeInTheDocument();
+    expect(selectionLabel).toHaveTextContent('Selected 2 items on this page');
+    expect(selectAllButton).toHaveTextContent('Select all 2 items');
+
+    fireEvent.click(selectAllButton);
+    expect(selectionLabel).toHaveTextContent('Selected all 2 items');
+
+    const clearSelectionButton = getByTestId('DesignSystem-Table-Header--clearSelectionItemsButton');
+    expect(clearSelectionButton).toBeInTheDocument();
+    fireEvent.click(clearSelectionButton);
+    expect(selectionLabel).toHaveTextContent('Selected 2 items on this page');
+  });
+});
