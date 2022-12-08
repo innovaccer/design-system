@@ -1,4 +1,43 @@
 
+## 2.13.6 (2022-12-07)
+
+### Highlights
+
+NA
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(Table): nested row alignment on column drag (1f44df89)
+- fix(dropdown): update height of dropdown on search event (75ef2b3b)
+- feat(table): add option for custom label on row selection (fa1d31a5)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): update documentation in breadcrumb component (cca763a9)
+- docs(docs): update documentation in tabs component (3259d2d3)
+
+---
+
 ## 2.13.5 (2022-11-16)
 
 ### Highlights
