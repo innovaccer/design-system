@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Dropdown from '../dropdown';
-import { Button, Link } from '@/index';
+import { Button, Link, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 interface Breadcrumb {
@@ -25,23 +25,55 @@ export interface BreadcrumbsProps extends BaseProps {
    * onClick handler for `Breadcrumb`
    */
   onClick?: (link: string) => void;
+  /**
+   * Determines whether to show tooltip for label
+   */
+  showTooltip?: boolean;
 }
 
-const renderLink = (item: Breadcrumb, onClick: BreadcrumbsProps['onClick']) => (
-  <Link
-    href={item.link}
-    onClick={(ev) => {
-      if (onClick) {
-        ev.preventDefault();
-        onClick(item.link);
-      }
-    }}
-    appearance="subtle"
-    size="tiny"
-  >
-    {item.label}
-  </Link>
-);
+interface renderLinkProps {
+  item: Breadcrumb;
+  onClick?: (link: string) => void;
+}
+
+interface renderItemProps {
+  item: Breadcrumb;
+  onClick?: (link: string) => void;
+  index?: number;
+  showTooltip?: boolean;
+}
+
+const RenderLink = ({ item, onClick }: renderLinkProps) => {
+  const onClickHandler = (ev: React.MouseEvent) => {
+    if (onClick) {
+      ev.preventDefault();
+      onClick(item.link);
+    }
+  };
+
+  return (
+    <span className="Breadcrumbs-link ellipsis--noWrap" data-test="DesignSystem-Breadcrumbs-link">
+      <Link href={item.link} onClick={onClickHandler} appearance="subtle" size="tiny">
+        {item.label}
+      </Link>
+    </span>
+  );
+};
+
+const RenderItem = ({ item, onClick, index, showTooltip }: renderItemProps) => {
+  return (
+    <div key={index} className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
+      {showTooltip ? (
+        <Tooltip tooltip={item.label} position="bottom">
+          <RenderLink item={item} onClick={onClick} />
+        </Tooltip>
+      ) : (
+        <RenderLink item={item} onClick={onClick} />
+      )}
+      <span className="Breadcrumbs-itemSeparator">/</span>
+    </div>
+  );
+};
 
 const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProps['onClick']) => {
   const options = list.map((item) => ({
@@ -79,7 +111,7 @@ const renderDropdown = (list: BreadcrumbsProps['list'], onClick: BreadcrumbsProp
 };
 
 export const Breadcrumbs = (props: BreadcrumbsProps) => {
-  const { list, onClick, className } = props;
+  const { list, onClick, className, showTooltip } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -94,27 +126,16 @@ export const Breadcrumbs = (props: BreadcrumbsProps) => {
     <div data-test="DesignSystem-Breadcrumbs" {...baseProps} className={BreadcrumbClass}>
       {list.length <= 4 ? (
         list.map((item, index) => {
-          return (
-            <div key={index} className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-              <span className="Breadcrumbs-link">{renderLink(item, onClick)}</span>
-              <span className="Breadcrumbs-itemSeparator">/</span>
-            </div>
-          );
+          return <RenderItem key={index} item={item} onClick={onClick} showTooltip={showTooltip} />;
         })
       ) : (
         <>
-          <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-            <span className="Breadcrumbs-link">{renderLink(list[0], onClick)}</span>
-            <span className="Breadcrumbs-itemSeparator">/</span>
-          </div>
+          <RenderItem item={list[0]} onClick={onClick} showTooltip={showTooltip} />
           <div className="Breadcrumbs-dropdown">
             {renderDropdown(list.slice(1, list.length - 1), onClick)}
             <span className="Breadcrumbs-itemSeparator">/</span>
           </div>
-          <div className="Breadcrumbs-item" data-test="DesignSystem-Breadcrumbs-item">
-            <span className="Breadcrumbs-link">{renderLink(list[list.length - 1], onClick)}</span>
-            <span className="Breadcrumbs-itemSeparator">/</span>
-          </div>
+          <RenderItem item={list[list.length - 1]} onClick={onClick} showTooltip={showTooltip} />
         </>
       )}
     </div>
