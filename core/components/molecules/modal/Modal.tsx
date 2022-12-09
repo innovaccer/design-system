@@ -10,6 +10,7 @@ import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
+import { isElementOnTop } from '@/utils/backdropHelper';
 export type ModalDimension = 'small' | 'medium' | 'large';
 
 export interface ModalProps extends BaseProps {
@@ -152,6 +153,15 @@ class Modal extends React.Component<ModalProps, ModalState> {
       }
       document.addEventListener('keydown', this.onCloseHandler);
     }
+
+    const zIndex = getUpdatedZIndex({
+      element: this.element,
+      containerClassName: '.Overlay-container',
+      elementRef: this.modalRef,
+    });
+    this.setState({
+      zIndex,
+    });
   }
 
   componentWillUnmount() {
@@ -198,8 +208,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   onOutsideClickHandler(event: Event) {
     const { backdropClose, onClose } = this.props;
     const { open } = this.state;
-
-    if (open) {
+    if (open && isElementOnTop(this.modalRef.current?.firstChild as HTMLElement, this.element)) {
       if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
 
       if (onClose) onClose(event, 'OutsideClick');
@@ -280,7 +289,13 @@ class Modal extends React.Component<ModalProps, ModalState> {
     };
 
     const ModalContainer = (
-      <Row data-test="DesignSystem-ModalContainer" className={ContainerClass} data-layer={true} style={{ zIndex }}>
+      <Row
+        data-test="DesignSystem-ModalContainer"
+        className={ContainerClass}
+        data-layer={true}
+        data-opened={open}
+        style={{ zIndex: zIndex ? zIndex : 1001 }}
+      >
         <Column
           data-test="DesignSystem-Modal"
           {...baseProps}
@@ -333,7 +348,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
     );
 
     const ModalWrapper = backdropClose ? (
-      <OutsideClick data-test="DesignSystem-Modal--OutsideClick" onOutsideClick={this.onOutsideClickHandler}>
+      <OutsideClick
+        ref={this.modalRef}
+        data-test="DesignSystem-Modal--OutsideClick"
+        onOutsideClick={this.onOutsideClickHandler}
+      >
         {ModalContainer}
       </OutsideClick>
     ) : (

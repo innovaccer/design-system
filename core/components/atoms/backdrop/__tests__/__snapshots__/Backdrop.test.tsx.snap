@@ -10,6 +10,7 @@ exports[`Backdrop component
   <div
     class="Backdrop Backdrop-animation--close"
     data-layer="true"
+    data-opened="false"
     data-test="DesignSystem-Backdrop"
   />
 </body>
@@ -25,6 +26,7 @@ exports[`Backdrop component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
   />
 </body>
