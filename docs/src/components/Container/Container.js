@@ -1,7 +1,9 @@
 import React from 'react';
 import { Paragraph, Heading, Tabs, Tab, Button } from '@innovaccer/design-system';
 import { navigate } from 'gatsby';
+import './Container.css';
 import { useLogoItems } from '../../util/Logos';
+import { onScrollHandler } from './Helper';
 
 const Container = ({ children, pageTitle, tabs, relativePagePath, pageDescription, logos, frontmatter }) => {
   const nodes = useLogoItems();
@@ -11,6 +13,13 @@ const Container = ({ children, pageTitle, tabs, relativePagePath, pageDescriptio
   const isSiblingTab = relativePagePath.split('.')[0] === '/' + pageTitle.replace(/\s/g, '');
   const tabsList = isSiblingTab ? frontmatter?.tabs : tabs;
   const logoList = isSiblingTab ? frontmatter?.logos : logos;
+
+  React.useEffect(() => {
+    let element = document.getElementById('main-container');
+    const isPinnedToTop = onScrollHandler();
+    element.addEventListener('scroll', () => setIsTabPinned(isPinnedToTop), true);
+    return () => element.removeEventListener('scroll', () => setIsTabPinned(isPinnedToTop),true);
+  }, []);
 
   const getTabSlug = (tabIndex) => {
     const tabName = tabsList[tabIndex];
@@ -25,6 +34,7 @@ const Container = ({ children, pageTitle, tabs, relativePagePath, pageDescriptio
     tabsList && tabsList.length ? tabsList.findIndex((tab, index) => getTabSlug(index) === pageName.toLowerCase()) : '';
 
   const [activeIndex, setActiveIndex] = React.useState(activeTab || 0);
+  const [isTabPinned, setIsTabPinned] = React.useState(false);
 
   const onTabChangeHandler = (tabIndex) => {
     const nextTabSlug = getTabSlug(tabIndex);
@@ -57,25 +67,36 @@ const Container = ({ children, pageTitle, tabs, relativePagePath, pageDescriptio
 
   return (
     <>
-      <Heading size="xl" className="my-5">
-        {isSiblingTab ? frontmatter?.title : pageTitle}
-      </Heading>
-      {logoList && logoList.length && (
-        <Button className="download-logos" icon="download" onClick={downloadAllLogos}>
-          Download all
-        </Button>
-      )}
-      <Paragraph className="mb-6">{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
+      <div className="mx-11 mb-6">
+        <Heading size="xl" className="my-5">
+          {isSiblingTab ? frontmatter?.title : pageTitle}
+        </Heading>
+        {logoList && logoList.length && (
+          <Button className="download-logos" icon="download" onClick={downloadAllLogos}>
+            Download all
+          </Button>
+        )}
+        <Paragraph>{isSiblingTab ? frontmatter?.description : pageDescription}</Paragraph>
+      </div>
       {tabsList && tabsList.length && (
         <>
-          <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6 ">
-            {tabsList.map((tab, index) => (
-              <Tab label={tab} key={index}></Tab>
-            ))}
-          </Tabs>
+          <div className="TabHeader mb-8 position-sticky bg-light" id="tab-container">
+            <div className="px-11">
+              <Tabs
+                activeIndex={activeIndex}
+                className={`${isTabPinned ? 'border-bottom-0' : 'TabBorder'}`}
+                onTabChange={onTabChangeHandler}
+              >
+                {tabsList.map((tab, index) => (
+                  <Tab label={tab} key={index}></Tab>
+                ))}
+              </Tabs>
+            </div>
+            <div className={`${isTabPinned ? 'TabBorder--sticky' : ''}`}></div>
+          </div>
         </>
       )}
-      {children}
+      <div className="px-11">{children}</div>
     </>
   );
 };
