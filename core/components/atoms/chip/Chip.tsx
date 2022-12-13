@@ -4,13 +4,13 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export type ChipType = 'action' | 'selection' | 'input';
-export type Name = number | string;
+export type Name = number | string | object;
 
 export interface ChipProps extends BaseProps {
   /**
    * Label of chip
    */
-  label: string;
+  label: string | React.ReactElement;
   /**
    * Type of material `Icon`
    */
