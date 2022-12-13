@@ -19,8 +19,9 @@ exports[`Popover component
   <div
     class="Popover"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
@@ -46,8 +47,9 @@ exports[`Popover component
   <div
     class="Popover Popover--dark"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
@@ -73,8 +75,9 @@ exports[`Popover component
   <div
     class="Popover"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
@@ -100,8 +103,9 @@ exports[`Popover component
   <div
     class="Popover"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
@@ -127,8 +131,9 @@ exports[`Popover component
   <div
     class="Popover"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
@@ -154,8 +159,9 @@ exports[`Popover component
   <div
     class="Popover"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
@@ -181,8 +187,9 @@ exports[`Popover component
   <div
     class="Popover"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
@@ -208,8 +215,9 @@ exports[`Popover component
   <div
     class="Popover"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Popover"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden;"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; animation: popper-open- 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms; overflow: hidden; z-index: 501;"
   >
     Popover
   </div>
