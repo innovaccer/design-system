@@ -23,14 +23,15 @@ exports[`Breadcrumbs component renders four links 1`] = `
         data-test="DesignSystem-Breadcrumbs-item"
       >
         <span
-          class="Breadcrumbs-link"
+          class="Breadcrumbs-link ellipsis--noWrap"
+          data-test="DesignSystem-Breadcrumbs-link"
         >
           <a
             class="Link Link--tiny Link--subtle"
             data-test="DesignSystem-Link"
             href="/level0"
           >
-            Level 0
+            Level 0 check for truncate after 160px
           </a>
         </span>
         <span
@@ -44,7 +45,8 @@ exports[`Breadcrumbs component renders four links 1`] = `
         data-test="DesignSystem-Breadcrumbs-item"
       >
         <span
-          class="Breadcrumbs-link"
+          class="Breadcrumbs-link ellipsis--noWrap"
+          data-test="DesignSystem-Breadcrumbs-link"
         >
           <a
             class="Link Link--tiny Link--subtle"
@@ -65,7 +67,8 @@ exports[`Breadcrumbs component renders four links 1`] = `
         data-test="DesignSystem-Breadcrumbs-item"
       >
         <span
-          class="Breadcrumbs-link"
+          class="Breadcrumbs-link ellipsis--noWrap"
+          data-test="DesignSystem-Breadcrumbs-link"
         >
           <a
             class="Link Link--tiny Link--subtle"
@@ -86,7 +89,8 @@ exports[`Breadcrumbs component renders four links 1`] = `
         data-test="DesignSystem-Breadcrumbs-item"
       >
         <span
-          class="Breadcrumbs-link"
+          class="Breadcrumbs-link ellipsis--noWrap"
+          data-test="DesignSystem-Breadcrumbs-link"
         >
           <a
             class="Link Link--tiny Link--subtle"
