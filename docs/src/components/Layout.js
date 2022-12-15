@@ -57,7 +57,7 @@ const MDXPage = (props) => {
 const OverviewContainer = (props) => {
   return (
     <Row className="justify-content-center">
-      <Column data-test="Docs-content-wrapper" className="px-11 py-8 min-vh-100 overview-container" size={12}>
+      <Column data-test="Docs-content-wrapper" className="py-8 min-vh-100 overview-container" size={12}>
         <ComponentsPage {...props} />
       </Column>
     </Row>
@@ -69,7 +69,7 @@ const MarkdownContainer = (props) => {
 
   return (
     <Row className="justify-content-center">
-      <Column data-test="Docs-content-wrapper" className="px-11 py-8 min-vh-100 inner-left-container" size={9}>
+      <Column data-test="Docs-content-wrapper" className="py-8 min-vh-100 inner-left-container" size={9}>
         {!relativePagePath.includes('components') ? <MDXPage {...props} /> : <ComponentsPage {...props} />}
       </Column>
 
