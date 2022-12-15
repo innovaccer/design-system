@@ -16,8 +16,10 @@ const Container = ({ children, pageTitle, tabs, relativePagePath, pageDescriptio
 
   React.useEffect(() => {
     let element = document.getElementById('main-container');
-    const isPinnedToTop = onScrollHandler();
-    element.addEventListener('scroll', () => setIsTabPinned(isPinnedToTop), true);
+    element.addEventListener('scroll', () =>{ 
+      const isPinnedToTop = onScrollHandler();
+      setIsTabPinned(isPinnedToTop)
+    }, true);
     return () => element.removeEventListener('scroll', () => setIsTabPinned(isPinnedToTop),true);
   }, []);
 
