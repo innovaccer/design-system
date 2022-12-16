@@ -151,6 +151,11 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
   componentDidMount() {
     this.addBoundaryScrollHandler();
+    const triggerElement = this.triggerRef.current;
+    const zIndex = this.getZIndexForLayer(triggerElement);
+    this.setState({
+      zIndex: zIndex === undefined ? zIndex : zIndex + 1,
+    });
   }
 
   componentDidUpdate(prevProps: PopperWrapperProps) {
@@ -268,7 +273,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
     const layerNode = node.closest('[data-layer]') || document.body;
     const zIndex =
       layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
-    return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
+    return zIndex === 'auto' || isNaN(zIndex) ? 500 : zIndex;
   }
 
   getUpdatedStyle = (oldStyle: React.CSSProperties, placement: PositionType, offset: Offset) => {
@@ -314,9 +319,34 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
 
     const classes = classNames('PopperWrapper-trigger', triggerClass);
 
+    const shouldPopoverClose = (clicked: HTMLElement): boolean => {
+      const popover = this.popupRef.current as HTMLElement;
+      const container = document.body;
+      const popoverIndex = parseInt(window.getComputedStyle(popover).zIndex);
+      let clickInsideLayer = false;
+      let shouldClose = false;
+
+      const openedLayers = container.querySelectorAll('[data-opened="true"]');
+      openedLayers.forEach((layer) => {
+        if (layer.contains(clicked)) {
+          clickInsideLayer = true;
+          const clickedIndex = parseInt(window.getComputedStyle(layer).zIndex);
+          if (popoverIndex > clickedIndex) {
+            shouldClose = true;
+            return;
+          }
+        }
+      });
+
+      if (container.isEqualNode(clicked) || shouldClose || !container.contains(clicked) || !clickInsideLayer) {
+        return true;
+      }
+      return false;
+    };
+
     const onOutsideClickHandler = (event: Event) => {
       const { open, closeOnBackdropClick } = this.props;
-      if (open && closeOnBackdropClick) {
+      if (open && shouldPopoverClose(event.target as HTMLElement) && closeOnBackdropClick) {
         if (!this.doesEventContainsElement(event, this.popupRef)) {
           this.togglePopper('outsideClick');
         }
