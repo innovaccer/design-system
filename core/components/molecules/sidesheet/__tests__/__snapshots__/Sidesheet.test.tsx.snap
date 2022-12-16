@@ -87,6 +87,7 @@ exports[`Sidesheet component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"
   />
@@ -180,6 +181,7 @@ exports[`Sidesheet component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"
   />

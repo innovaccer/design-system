@@ -68,6 +68,7 @@ export const Backdrop: React.FC<BackdropProps> = (props) => {
     <div
       data-test="DesignSystem-Backdrop"
       data-layer={true}
+      data-opened={open}
       {...baseProps}
       className={classes}
       style={{ zIndex: props.zIndex }}

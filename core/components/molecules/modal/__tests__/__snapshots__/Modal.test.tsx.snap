@@ -12,7 +12,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
@@ -78,8 +80,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -100,7 +103,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
@@ -167,8 +172,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -185,7 +191,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
@@ -318,8 +326,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -340,7 +349,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
@@ -474,8 +485,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -492,7 +504,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
@@ -625,8 +639,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -647,7 +662,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--6 Col--xs-10 Col--m-8 Col--l-8 Modal Modal--open Modal-animation--open"
@@ -781,8 +798,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -799,7 +817,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
@@ -865,8 +885,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -887,7 +908,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
@@ -954,8 +977,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -972,7 +996,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
@@ -1105,8 +1131,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -1127,7 +1154,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
@@ -1261,8 +1290,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -1279,7 +1309,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
@@ -1412,8 +1444,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -1434,7 +1467,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--4 Col--xs-10 Col--m-6 Col--l-6 Modal Modal--open Modal-animation--open"
@@ -1568,8 +1603,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -1587,7 +1623,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
@@ -1652,8 +1690,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -1674,7 +1713,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
@@ -1741,8 +1782,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -1759,7 +1801,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
@@ -1892,8 +1936,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -1914,7 +1959,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
@@ -2048,8 +2095,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -2066,7 +2114,9 @@ exports[`Modal component
     <div
       class="Row Row Overlay-container Overlay-container--open"
       data-layer="true"
+      data-opened="true"
       data-test="DesignSystem-ModalContainer"
+      style="z-index: 1011;"
     >
       <div
         class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
@@ -2199,8 +2249,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
@@ -2221,7 +2272,9 @@ exports[`Modal component
       <div
         class="Row Row Overlay-container Overlay-container--open"
         data-layer="true"
+        data-opened="true"
         data-test="DesignSystem-ModalContainer"
+        style="z-index: 1011;"
       >
         <div
           class="Col Col--3 Col--xs-10 Col--m-4 Col--l-4 Modal Modal--open Modal-animation--open"
@@ -2355,8 +2408,9 @@ exports[`Modal component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
-    style="z-index: 1000;"
+    style="z-index: 1010;"
   />
 </body>
 `;
