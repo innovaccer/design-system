@@ -10,6 +10,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
+import { isElementOnTop } from '@/utils/backdropHelper';
 
 export type SidesheetDimension = 'regular' | 'large';
 
@@ -146,6 +147,14 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       }
       document.addEventListener('keydown', this.onCloseHandler);
     }
+    const zIndex = getUpdatedZIndex({
+      element: this.element,
+      containerClassName: '.Overlay-container',
+      elementRef: this.sidesheetRef,
+    });
+    this.setState({
+      zIndex,
+    });
   }
 
   componentWillUnmount() {
@@ -184,7 +193,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const { onClose } = this.props;
     const { open } = this.state;
 
-    if (open) {
+    if (open && isElementOnTop(this.sidesheetRef.current?.firstChild as HTMLElement, this.element)) {
       if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       if (onClose) onClose(event, 'OutsideClick');
     }
@@ -258,9 +267,10 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const SidesheetContainer = (
       <Row
         data-test="DesignSystem-SidesheetContainer"
+        data-open={this.state.open}
         className={ContainerClass}
         data-layer={true}
-        style={{ zIndex }}
+        style={{ zIndex: zIndex ? zIndex : 1001 }}
         ref={this.sidesheetRef}
         onAnimationEnd={() => this.handleAnimationEnd}
       >
@@ -302,7 +312,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     );
 
     const SidesheetWrapper = backdropClose ? (
-      <OutsideClick data-test="DesignSystem-Sidesheet--OutsideClick" onOutsideClick={this.onOutsideClickHandler}>
+      <OutsideClick
+        ref={this.sidesheetRef}
+        data-test="DesignSystem-Sidesheet--OutsideClick"
+        onOutsideClick={this.onOutsideClickHandler}
+      >
         {SidesheetContainer}
       </OutsideClick>
     ) : (
