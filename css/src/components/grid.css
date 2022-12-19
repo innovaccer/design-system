@@ -34,7 +34,7 @@
 .Grid--pinned {
   position: absolute;
   height: 100%;
-  z-index: 1002;
+  z-index: 5;
   overflow-x: hidden;
   -ms-overflow-style: none;
   border-right: 3px solid var(--secondary);
@@ -307,7 +307,7 @@
 
 .Grid-cellGroup--pinned {
   position: sticky;
-  z-index: 1001;
+  z-index: 4;
 }
 
 .Grid-cellGroup--pinned-left {
