@@ -16,6 +16,13 @@ export interface BackdropProps extends BaseProps {
   zIndex?: number;
 }
 
+/**
+ * ### Note:
+ * **   The backdrop component is used to provide emphasis on a particular element or parts of it. <br/>**
+ * The backdrop signals to the user of a state change within the application and can be used for creating loaders, dialogs, and more. <br/>
+ * In its simplest form, the backdrop component will add a dimmed layer over your application.
+ */
+
 export const Backdrop: React.FC<BackdropProps> = (props) => {
   const { className } = props;
 
