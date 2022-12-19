@@ -311,7 +311,7 @@ describe('renders async dropdown', () => {
 
 describe('Dropdown component', () => {
   it('check prop:showApplyButton', () => {
-    const { getByTestId, getAllByTestId } = render(
+    const { getByTestId } = render(
       <Dropdown
         options={dropdownOptions}
         showApplyButton={true}
@@ -322,9 +322,8 @@ describe('Dropdown component', () => {
     );
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
-    expect(getAllByTestId('DesignSystem-Button')).toHaveLength(2);
-    expect(getAllByTestId('DesignSystem-Button')[0]).toHaveTextContent('Cancel');
-    expect(getAllByTestId('DesignSystem-Button')[1]).toHaveTextContent('Apply');
+    expect(getByTestId('DesignSystem-Dropdown-CancelButton')).toHaveTextContent('Cancel');
+    expect(getByTestId('DesignSystem-Dropdown-ApplyButton')).toHaveTextContent('Apply');
   });
 
   it('check checkbox classes with onClick event', () => {
@@ -452,9 +451,9 @@ describe('Dropdown component action buttons', () => {
     await waitFor(() => {
       expect(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]).toBeInTheDocument();
     });
-    expect(getAllByTestId('DesignSystem-Button')[1]).toHaveTextContent('Cancel');
+    expect(getByTestId('DesignSystem-Dropdown-CancelButton')).toHaveTextContent('Cancel');
     fireEvent.click(getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX')[1]);
-    fireEvent.click(getAllByTestId('DesignSystem-Button')[1]);
+    fireEvent.click(getByTestId('DesignSystem-Dropdown-CancelButton'));
     expect(screen.queryByText('DesignSystem-Popover')).not.toBeInTheDocument();
   });
 });
@@ -467,5 +466,45 @@ describe('Dropdown component with search', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     expect(screen.getByPlaceholderText('Custom search text')).toBeInTheDocument();
+  });
+});
+
+describe('Dropdown component with actions buttons', () => {
+  it('check for apply button state when options are loading', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown fetchOptions={fetchOptions} withCheckbox={true} showApplyButton={true} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    expect(getByTestId('DesignSystem-Dropdown-ApplyButton')).toHaveAttribute('disabled');
+    let optionList: HTMLElement[] = [];
+
+    // wait for options to load
+    await waitFor(() => {
+      optionList = getAllByTestId('DesignSystem-Checkbox-Label');
+    });
+    fireEvent.click(optionList[1]);
+    const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+    expect(applyButton).not.toHaveAttribute('disabled');
+    fireEvent.click(applyButton);
+
+    // reopen the dropdown
+    fireEvent.click(dropdownTrigger);
+    await waitFor(() => {
+      optionList = getAllByTestId('DesignSystem-Checkbox-Label');
+    });
+
+    // check for previously selected option is in selected state
+    const selectedOption = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    expect(selectedOption).toHaveAttribute('checked');
+
+    // unselect the previously selected option
+    fireEvent.click(selectedOption);
+    const loader = getAllByTestId('DesignSystem-Dropdown--Placeholder')[0];
+
+    // check if applyButton is disabled while options are loading
+    expect(loader).toBeInTheDocument();
+    expect(applyButton).toHaveAttribute('disabled');
   });
 });
