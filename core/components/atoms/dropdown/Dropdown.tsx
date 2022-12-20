@@ -99,7 +99,7 @@ interface AsyncProps {
    * fetchOptionsFunction: (searchTerm: string) => Promise<{
    *      searchTerm?: string;
    *      count: number,
-   *      option: Option[],
+   *      options: Option[],
    * }>;
    * </pre>
    *
