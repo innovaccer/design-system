@@ -10,8 +10,6 @@ export const size = () => {
   return (
     <div className="w-50 d-flex flex-column align-items-center">
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel="Maximum size: 25 MB"
         onDrop={onDrop}
         className="mb-3"
         sampleFileLink={
@@ -28,8 +26,6 @@ export const size = () => {
         Standard
       </Text>
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel="Maximum size: 25 MB"
         onDrop={onDrop}
         type="compressed"
         className="mt-6 mb-3"
@@ -47,8 +43,6 @@ export const size = () => {
         Compressed
       </Text>
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel="Maximum size: 25 MB"
         onDrop={onDrop}
         type="tight"
         className="mt-6 mb-3"
@@ -77,8 +71,6 @@ const customCode = `() => {
   return (
     <div className="w-50 d-flex flex-column align-items-center">
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel='Maximum size: 25 MB'
         onDrop={onDrop}
         className="mb-3"
         sampleFileLink={(
@@ -93,8 +85,6 @@ const customCode = `() => {
       />
       <Text size="large" weight="strong">Standard</Text>
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel='Maximum size: 25 MB'
         onDrop={onDrop}
         type="compressed"
         className="mt-6 mb-3"
@@ -110,8 +100,6 @@ const customCode = `() => {
       />
       <Text size="large" weight="strong">Compressed</Text>
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel='Maximum size: 25 MB'
         onDrop={onDrop}
         type="tight"
         className="mt-6 mb-3"

@@ -65,10 +65,11 @@ export const all = () => {
     <React.Fragment>
       <Dropzone
         accept="image/jpeg, image/png"
-        formatLabel="Accepted formats: PDF, jpg"
+        formatLabel="Accepted formats: jpeg, png"
         sizeLabel="Maximum size: 25 MB"
         multiple={true}
         onDrop={onDropHandler}
+        maxSize={26214400}
         className="mb-5"
         sampleFileLink={
           <Link
@@ -152,10 +153,11 @@ const customCode = `() => {
     <React.Fragment>
       <Dropzone
         accept="image/jpeg, image/png"
-        formatLabel="Accepted formats: PDF, jpg"
+        formatLabel="Accepted formats: jpeg, png"
         sizeLabel="Maximum size: 25 MB"
         multiple={true}
         onDrop={onDropHandler}
+        maxSize={26214400}
         className="mb-5"
         sampleFileLink={(
           <Link
