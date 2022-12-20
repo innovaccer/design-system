@@ -417,7 +417,8 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderApplyButton = () => {
-    const disable = _isEqual(previousSelected, tempSelected);
+    const disable = _isEqual(previousSelected, tempSelected) || props.loadingOptions;
+
     return (
       <div className="Dropdown-buttonWrapper">
         <Button
@@ -425,8 +426,10 @@ const DropdownList = (props: OptionsProps) => {
           className="mr-4"
           appearance={'basic'}
           onClick={onCancelOptions}
+          disabled={props.loadingOptions}
           size={'tiny'}
           tabIndex={-1}
+          data-test="DesignSystem-Dropdown-CancelButton"
           type="button"
         >
           {cancelButtonLabel}
@@ -437,6 +440,7 @@ const DropdownList = (props: OptionsProps) => {
           disabled={disable}
           size={'tiny'}
           onClick={onApplyOptions}
+          data-test="DesignSystem-Dropdown-ApplyButton"
           type="button"
         >
           {applyButtonLabel}

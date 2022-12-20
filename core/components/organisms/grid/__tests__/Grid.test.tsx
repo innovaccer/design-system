@@ -207,14 +207,14 @@ describe('renders children with pagination and page', () => {
   ];
   const data = [{ name: 'Zara' }];
   it('renders children with pagination', () => {
-    const { getAllByTestId } = render(
+    const { getAllByTestId, getByTestId } = render(
       <Grid withPagination={true} schema={schema} data={data} showFilters={true} updateFilterList={updateFilterList} />
     );
     const popoverButton = getAllByTestId('DesignSystem-Button')[0];
     fireEvent.click(popoverButton);
     const dropdownOption = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
     fireEvent.click(dropdownOption);
-    const applyButton = getAllByTestId('DesignSystem-Button')[2];
+    const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
     fireEvent.click(applyButton);
     expect(updateFilterList).toHaveBeenCalledTimes(1);
   });
