@@ -2,6 +2,8 @@ base: patterns
 menus:
   - label: Overview
     link: /patterns/overview/all-patterns/
+  - label: Email
+    link: /patterns/email/usage/
   - label: File uploader
     link: /patterns/fileUploader/usage/
   - label: Forms
