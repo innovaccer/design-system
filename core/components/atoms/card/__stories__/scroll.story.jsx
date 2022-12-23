@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Card, Text, List, CardHeader, Heading, Paragraph } from '@/index';
 import { data } from './data';
+import './style.css';
 
 export const ScrollableContent = () => {
   const schema = [
@@ -28,7 +29,7 @@ export const ScrollableContent = () => {
         <CardHeader>
           <Heading size="s">Use a template</Heading>
         </CardHeader>
-        <div style={{ height: '350px' }}>
+        <div className="Diagnosis-list">
           <List
             data={data}
             schema={schema}
@@ -46,7 +47,13 @@ export const ScrollableContent = () => {
   );
 };
 
-const customCode = `
+const customCode = `/*
+// style.css
+.Diagnosis-list {
+    height: 70vh;
+}
+*/
+
 () => {
 
   const data = ${JSON.stringify(data, null, 2)};
@@ -81,7 +88,7 @@ const customCode = `
         <CardHeader>
           <Heading size="s">Use a template</Heading>
         </CardHeader>
-        <div style={{ height: '350px' }}>
+        <div className="Diagnosis-list">
           <List
             data={data}
             schema={schema}
