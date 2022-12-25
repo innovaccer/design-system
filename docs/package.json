@@ -31,7 +31,7 @@
     "fs-extra": "10.0.0",
     "gatsby": "^3.6.1",
     "gatsby-plugin-image": "^1.12.0",
-    "gatsby-plugin-mdx": "^2.12.0",
+    "gatsby-plugin-mdx": "^4.0.0",
     "gatsby-plugin-nprogress": "^4.12.1",
     "gatsby-plugin-s3": "^0.3.8",
     "gatsby-plugin-sharp": "^3.12.0",
