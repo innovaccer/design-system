@@ -674,10 +674,12 @@ import './style.css';
         loading
       } = this.state;
       const totalPages = getTotalPages(totalRecords, pageSize);
-  
+
+      const classNames = showVerticalFilters ? 'Table-verticalFilter' : 'w-100';
+
       return (
         <div className="Table-container">
-          <div style={{ width: showVerticalFilters ? 'calc(100% - var(--spacing-9))' : '100%' }}>
+          <div className={classNames}>
             <Card className="Table overflow-hidden">
               <div className="Table-header">
                 <Header
@@ -976,12 +978,7 @@ import './style.css';
   });
 
   return (
-    <div
-      style={{
-        height: '450px',
-        background: 'var(--secondary-lightest)'
-      }}
-    >
+    <div className="bg-secondary-lightest Table-wrapper">
       <Table
         loaderSchema={loaderSchema}
         fetchData={fetchData}
