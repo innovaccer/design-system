@@ -5,9 +5,21 @@ export const getSearchedOptions = (options: any, searchTerm: string) => {
   return result;
 };
 
-export const _isEqual = (arr1: Option[], arr2: Option[]) =>
-  arr1.length === arr2.length &&
-  arr1.every((option, index) => option.value === arr2[index].value || option.label === arr2[index].label);
+const sortList = (arr: Option[]) => {
+  return arr.sort((a, b) => (a.value > b.value ? 1 : b.value > a.value ? -1 : 0));
+};
+
+export const _isEqual = (firstList: Option[], secondList: Option[]) => {
+  const firstSortedList = sortList(firstList);
+  const secondSortedList = sortList(secondList);
+  return (
+    firstSortedList.length === secondSortedList.length &&
+    firstSortedList.every(
+      (option, index) =>
+        option.value === secondSortedList[index].value || option.label === secondSortedList[index].label
+    )
+  );
+};
 
 export const _isControlled = (selected?: Option[]) => selected !== undefined;
 
