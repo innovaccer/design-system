@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
 import { Modal, Button, Text, Message, List } from '@/index';
+import './style.css';
 
 export const dialogs = () => {
   const [open, setOpen] = React.useState(false);
@@ -63,7 +64,7 @@ export const dialogs = () => {
             description="Following 11 outreaches are currently scheduled using this sender's details."
           />
         </div>
-        <div style={{ border: 'var(--border)', height: '185px' }} className="my-5 overflow-auto">
+        <div className="my-5 overflow-auto border Modal-list">
           <List data={data} schema={schema} size="compressed" />
         </div>
         <Text weight="strong" className="mt-2">
@@ -76,7 +77,14 @@ export const dialogs = () => {
   );
 };
 
-const customCode = `() => {
+const customCode = `/*
+// styles.css
+.Modal-list {
+    height: var(--spacing-8);
+}
+*/
+
+() => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = true;
   const dimension = 'medium';
@@ -122,7 +130,7 @@ const customCode = `() => {
             description="Following 11 outreaches are currently scheduled using this sender's details."
           />
         </div>
-        <div style={{ border: 'var(--border)', height:'185px' }} className="my-5 overflow-auto">
+        <div className="my-5 overflow-auto border Modal-list">
           <List
             data={data}
             schema={schema}
