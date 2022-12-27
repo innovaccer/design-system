@@ -56,7 +56,7 @@ export const Grid_In_Modal = () => {
               width: '50%',
               cellRenderer: ({ data }) => {
                 return (
-                  <div className="w-100" style={{ textAlign: 'left' }}>
+                  <div className="w-100">
                     <Text className="d-block">{data.fullname}</Text>
                     <Text className="d-block" size="small" appearance="subtle">
                       {data.fullname}
@@ -71,7 +71,7 @@ export const Grid_In_Modal = () => {
               width: '50%',
               cellRenderer: ({ data }) => {
                 return (
-                  <div className="w-100" style={{ textAlign: 'left' }}>
+                  <div className="w-100">
                     <Text className="d-block">{data.gender}</Text>
                     <Text className="d-block" size="small" appearance="subtle">
                       {data.gender}
@@ -94,11 +94,9 @@ export const Grid_In_Modal = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
-
   const onClose = () => {
     setOpen(!open);
   };
-
   const gridData = [
     {
       fullname: 'Wadsworth Seden',
@@ -113,7 +111,6 @@ const customCode = `() => {
       gender: 'Female',
     },
   ];
-
   return (
     <div>
       <Button appearance="primary" onClick={() => setOpen(true)}>
@@ -146,7 +143,7 @@ const customCode = `() => {
               width: '50%',
               cellRenderer: ({ data }) => {
                 return (
-                  <div className="w-100" style={{ textAlign: 'left' }}>
+                  <div className="w-100">
                     <Text className="d-block">{data.fullname}</Text>
                     <Text className="d-block" size="small" appearance="subtle">
                       {data.fullname}
@@ -161,7 +158,7 @@ const customCode = `() => {
               width: '50%',
               cellRenderer: ({ data }) => {
                 return (
-                  <div className="w-100" style={{ textAlign: 'left' }}>
+                  <div className="w-100">
                     <Text className="d-block">{data.gender}</Text>
                     <Text className="d-block" size="small" appearance="subtle">
                       {data.gender}

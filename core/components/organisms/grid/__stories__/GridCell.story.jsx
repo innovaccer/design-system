@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { GridCell } from '@/index';
+import './style.css';
 
 export const Grid_Cell = () => {
   const schema = {
@@ -20,7 +21,7 @@ export const Grid_Cell = () => {
   const loading = false;
 
   return (
-    <div className="Grid-cell Grid-cell--body" style={{ width, border: 'var(--border)' }}>
+    <div className="Grid-cell Grid-cell--body border w-25">
       <div className="Grid-cellContent">
         <GridCell
           size={size}
