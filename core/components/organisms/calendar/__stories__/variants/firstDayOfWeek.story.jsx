@@ -6,13 +6,10 @@ import Card from '@/components/atoms/card';
 export const firstDayOfWeek = () => {
   const values = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
-  const style = {
-    flexWrap: 'wrap',
-  };
   // to freeze the object for typescript
 
   return (
-    <div className="d-flex" style={style}>
+    <div className="d-flex flex-wrap">
       {values.map((v, index) => (
         <div className="mr-9 mt-5" key={index}>
           <Card className="d-inline-flex" shadow="light">
