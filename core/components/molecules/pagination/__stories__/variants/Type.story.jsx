@@ -11,17 +11,11 @@ export const type = () => {
 
   const totalPages = 50;
 
-  const innerStyle = {
-    display: 'flex',
-    'flex-direction': 'column',
-    'align-items': 'center',
-  };
-
   return (
     <div className="d-flex">
       {paginationTypes.map((displayType, ind) => {
         return (
-          <div key={ind} style={innerStyle}>
+          <div key={ind} className="d-flex flex-column align-items-center">
             <Text weight="strong">{displayType}</Text>
             <br />
             <Pagination
