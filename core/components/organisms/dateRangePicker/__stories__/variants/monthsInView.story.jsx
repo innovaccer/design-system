@@ -4,15 +4,12 @@ import Card from '@/components/atoms/card';
 
 // CSF format story
 export const monthsInView = () => {
-  const style = {
-    flexDirection: 'column',
-  };
   // to freeze the object for typescript
 
   return (
-    <div className="d-flex" style={style}>
+    <div className="d-flex flex-column">
       {Array.from([1, 2, 3], (x, key) => (
-        <div key={key} className="mt-5" style={{ alignSelf: 'flex-start' }}>
+        <div key={key} className="mt-5 align-self-start">
           <Card className="d-inline-flex" shadow="light">
             <DateRangePicker
               monthsInView={x}
