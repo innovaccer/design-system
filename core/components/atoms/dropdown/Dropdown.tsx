@@ -144,13 +144,14 @@ interface SharedDropdownProps extends DropdownListProps, BaseProps {
    *    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;
    *    customTrigger?: (label: string) => React.ReactElement;
    * }
+   * </pre>
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |
    * | customLabel | Callback function to change <br/>the label of trigger when options are selected | |
    * | customTrigger | Adds custom trigger | |
-   * </pre>
+   *
    */
   triggerOptions: TriggerProps;
   /**

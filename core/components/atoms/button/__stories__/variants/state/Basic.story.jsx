@@ -103,9 +103,7 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Open'\` to describe the action of button 
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='Open'\` to describe the action of button `,
       },
     },
   },

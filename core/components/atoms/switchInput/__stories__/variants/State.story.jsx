@@ -27,13 +27,11 @@ export default {
     docs: {
       docPage: {
         title: 'Switch',
-        a11yProps: ` 
-        **aria-label:**
+        a11yProps: ` **aria-label:**
         <br/> 
         - Add \`aria-label='Switch enabled'\` on switch with *Enabled* text to describe the action of switch.
         <br/>
-        - Add \`aria-label='Switch disabled'\` on switch with *Disabled* text to describe the action of switch.
-        `,
+        - Add \`aria-label='Switch disabled'\` on switch with *Disabled* text to describe the action of switch.`,
       },
     },
   },

@@ -11,9 +11,7 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Primary button in loading state.',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='loading'\` to describe the action of button. 
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='loading'\` to describe the action of button. `,
       },
     },
   },

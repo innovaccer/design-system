@@ -98,15 +98,13 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        a11yProps: ` 
-        **aria-label:** 
-        <br/> 
+        a11yProps: ` **aria-label:**  <br/> 
         - Add \`aria-label='Add document'\` on button with *add* icon to indicate its purpose.
         <br/> 
         - Add \`aria-label='Print'\` on button with *print* icon to indicate its purpose.
         <br/> 
         - Add \`aria-label='Menu'\` on button with *menu* icon to indicate its purpose.
-         `,
+        `,
       },
     },
   },

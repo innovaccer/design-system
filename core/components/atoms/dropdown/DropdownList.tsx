@@ -132,13 +132,14 @@ export interface DropdownListProps extends TriggerAndOptionProps {
    *    hideOnReferenceEscape?: boolean;
    *    boundaryElement?: Element;
    * }
+   * </pre>
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | appendToBody | Appends `Dropdown` inside body element | true |
    * | hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |
    * | boundaryElement | Boundary of Popover | |
-   * </pre>
+   *
    */
   popoverOptions?: PopoverOptions;
   /**

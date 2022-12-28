@@ -30,15 +30,12 @@ export default {
     docs: {
       docPage: {
         title: 'Switch',
-        a11yProps: ` 
-        **aria-label:**
-        <br/> 
+        a11yProps: ` **aria-label:** <br/> 
         - Add \`aria-label='Switch tiny'\` on switch with *Tiny* text to describe the action of switch.
         <br/>
         - Add \`aria-label='Switch regular'\` on switch with *regular* text to describe the action of switch.
         <br/>
-        - Add \`aria-label='Switch large'\` on switch with *Large* text to describe the action of switch.
-        `,
+        - Add \`aria-label='Switch large'\` on switch with *Large* text to describe the action of switch.`,
       },
     },
   },

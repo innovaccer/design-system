@@ -58,6 +58,7 @@ export interface AvatarGroupProps extends BaseProps {
    *   maxHeight?: number;
    *   popperClassName?: string;
    * }
+   * </pre>
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
@@ -68,7 +69,6 @@ export interface AvatarGroupProps extends BaseProps {
    * | on | Event triggering the `Popover` | hover |
    * | maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |
    * | popperClassName | Custom classname added to `Popover` | |
-   * </pre>
    *
    */
   popoverOptions: AvatarPopoverProps;

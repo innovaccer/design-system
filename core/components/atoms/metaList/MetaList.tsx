@@ -13,12 +13,13 @@ export interface MetaListProps extends BaseProps {
    *   label: string;
    *   icon?: string;
    * }
+   * </pre>
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
    * | label | Label of Meta component |  |
    * | icon | Icon of Meta component | |
-   * </pre>
+   *
    */
   list: MetaProps[];
   /**

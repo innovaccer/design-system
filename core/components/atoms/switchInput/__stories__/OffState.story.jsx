@@ -11,9 +11,7 @@ export default {
     docs: {
       docPage: {
         title: 'Switch',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Off State Switch'\` to describe the action of switch.
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='Off State Switch'\` to describe the action of switch.`,
       },
     },
   },
