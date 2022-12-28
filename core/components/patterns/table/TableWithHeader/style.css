@@ -53,3 +53,10 @@
 .Table-filter .Input {
   min-width: unset;
 }
+
+.Table-verticalFilter {
+  width: calc(100% - var(--spacing-9));
+}
+.Table-wrapper {
+  height: 450px;
+}
