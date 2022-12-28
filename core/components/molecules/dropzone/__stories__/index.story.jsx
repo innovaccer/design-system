@@ -184,9 +184,7 @@ export default {
     docs: {
       docPage: {
         customCode,
-        a11yProps: ` 
-        If you are using File list like shown above, don't forget to add \`\`aria-label\`\` to the button.
-         `,
+        a11yProps: ` If you are using File list like shown above, don't forget to add \`\`aria-label\`\` to the button.`,
       },
     },
   },

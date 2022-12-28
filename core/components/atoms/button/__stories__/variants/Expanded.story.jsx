@@ -45,9 +45,7 @@ export default {
     docs: {
       docPage: {
         title: 'Button',
-        a11yProps: ` 
-        **aria-label:** name accordingly which describe the action of button 
-         `,
+        a11yProps: ` **aria-label:** name accordingly which describe the action of button `,
       },
     },
   },

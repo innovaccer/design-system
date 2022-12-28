@@ -15,9 +15,7 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Basic Button',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Cancel'\` to describe the action of button 
-         `,
+        a11yProps: `**aria-label:** Add \`aria-label='Cancel'\` to describe the action of button `,
       },
     },
   },

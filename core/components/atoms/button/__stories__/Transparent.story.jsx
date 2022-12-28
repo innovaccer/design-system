@@ -15,9 +15,7 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Transparent button.',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Re-evaluate'\` to describe the action of button 
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='Re-evaluate'\` to describe the action of button `,
       },
     },
   },
