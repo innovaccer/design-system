@@ -7,8 +7,10 @@ export const appearance = () => {
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {
+        const backgroundClass = appear === 'white' ? 'bg-dark mr-6' : 'bg-transparent mr-6';
+
         return (
-          <div key={ind} style={{ background: appear === 'white' ? 'black' : 'transparent' }} className="mr-6">
+          <div key={ind} className={backgroundClass}>
             <Text appearance={appear}>{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
           </div>
         );
