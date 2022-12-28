@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { AvatarGroup, Avatar, Text } from '@/index';
 import { list } from '../AvatarList';
+import './style.css';
 
 export const customPopper = () => {
   const popperRenderer = (names) => {
@@ -21,17 +22,20 @@ export const customPopper = () => {
       );
     });
 
-    return (
-      <div className="overflow-auto py-4 px-6" style={{ maxHeight: '150px' }}>
-        {AvatarList}
-      </div>
-    );
+    return <div className="overflow-auto py-4 px-6 UserAvatars-popover">{AvatarList}</div>;
   };
 
   return <AvatarGroup list={list} popoverOptions={{ popperRenderer, dark: false, on: 'click' }} />;
 };
 
-const customCode = `() => {
+const customCode = `/*
+// style.css
+.UserAvatars-popover {
+    max-height: var(--spacing-7);
+}
+*/
+
+() => {
   const list = [
     {
       firstName: 'John',
@@ -82,7 +86,7 @@ const customCode = `() => {
     });
 
     return (
-      <div className="overflow-auto py-4 px-6" style={{ maxHeight: '150px' }}>
+      <div className="overflow-auto py-4 px-6 UserAvatars-popover">
         {AvatarList}
       </div>
     )
