@@ -6,6 +6,7 @@ import { action } from '@/utils/action';
 import { Card, Grid } from '@/index';
 import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
+import './style.css';
 
 export const all = () => {
   const applyLoaderSchema = true;
@@ -43,11 +44,7 @@ export const all = () => {
   const separator = false;
 
   return (
-    <div
-      style={{
-        height: '350px',
-      }}
-    >
+    <div className="Grid-outerWrapper">
       <Card className="h-100 overflow-hidden">
         <Grid
           schema={applySchema ? schema : undefined}
