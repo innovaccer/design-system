@@ -7,6 +7,7 @@ import loaderSchema from '../../grid/__stories__/_common_/loaderSchema';
 import { fetchData } from '../../grid/__stories__/_common_/fetchData';
 import { action } from '@/utils/action';
 import { SyncList, AsyncList } from './_common_/types';
+import './style.css';
 
 export const all = () => {
   const async = true;
@@ -46,12 +47,7 @@ export const all = () => {
   }
 
   return (
-    <div
-      style={{
-        height: '350px',
-        // overflow: 'hidden'
-      }}
-    >
+    <div className="List-wrapper">
       <Card className="h-100 overflow-hidden">
         <List
           {...dataAttr}
