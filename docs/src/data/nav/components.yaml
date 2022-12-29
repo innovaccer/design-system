@@ -155,5 +155,5 @@ menus:
     link: /components/toast/usage/
 
   - label: Tooltip
-    link: /components/tooltip/usage
+    link: /components/tooltip/usage/
     hideInMobile: true
