@@ -60,8 +60,7 @@ export const largeWidth = () => {
               <Card
                 key={index}
                 shadow="none"
-                style={{ height: '85px', width: '110px' }}
-                className="mr-4 d-flex flex-column align-items-center justify-content-center"
+                className="mr-4 d-flex flex-column align-items-center justify-content-center w-25 py-4"
               >
                 <Icon name={obj.iconName} size={25} />
                 <Text className="pt-5" size="small" weight="strong">
@@ -120,7 +119,7 @@ const customCode = `() => {
           {
             data.map((obj, index) => {
               return(
-                <Card key={index} shadow="none" style={{ height:'85px', width:'110px' }} className="mr-4 d-flex flex-column align-items-center justify-content-center">
+                <Card key={index} shadow="none" className="mr-4 d-flex flex-column align-items-center justify-content-center w-25 py-4">
                   <Icon name={obj.iconName} size={25}/>
                   <Text className="pt-5" size="small" weight="strong">
                     {obj.textMessage}
