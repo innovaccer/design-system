@@ -20,12 +20,9 @@ export const customRender = () => {
 
   const customTrigger = (label) => {
     return (
-      <div
-        className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100"
-        style={{ height: 'var(--spacing-3)' }}
-      >
+      <div className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100">
         <StatusHint appearance="warning">{label}</StatusHint>
-        <Icon name="keyboard_arrow_down" />
+        <Icon name="keyboard_arrow_down" className="m-4" />
       </div>
     );
   };
@@ -91,12 +88,9 @@ const customCode = `() => {
 
   const customTrigger = (label) => {
     return (
-      <div
-        className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100"
-        style={{ height: 'var(--spacing-3)' }}
-      >
+      <div className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100">
         <StatusHint appearance="warning">{label}</StatusHint>
-        <Icon name="keyboard_arrow_down" />
+        <Icon name="keyboard_arrow_down" className="m-4"/>
       </div>
     );
   };
