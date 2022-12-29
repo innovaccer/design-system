@@ -6,11 +6,7 @@ import { action } from '@/utils/action';
 export const all = () => {
   return (
     <OutsideClick className="d-inline-block" onOutsideClick={action('outside click')}>
-      <Card
-        className="d-flex align-items-center justify-content-center"
-        style={{ height: 200, width: 200 }}
-        onClick={action('inside click')}
-      >
+      <Card className="d-flex align-items-center justify-content-center p-10" onClick={action('inside click')}>
         <Heading>Card</Heading>
       </Card>
     </OutsideClick>
@@ -24,8 +20,7 @@ const customCode = `() => {
   return(
     <OutsideClick className="d-inline-block" onOutsideClick={outsideClickHandler}>
       <Card
-        className="d-flex align-items-center justify-content-center"
-        style={{ height: 200, width: 200 }}
+        className="d-flex align-items-center justify-content-center p-10"
         onClick={insideClickHandler}
       >
         <Heading>Card</Heading>
