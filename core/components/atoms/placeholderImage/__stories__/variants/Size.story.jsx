@@ -14,11 +14,8 @@ export const size = () => {
       {sizes.map((PlaceholderSize, ind) => {
         return (
           <div key={ind} className="mr-7">
-            <div style={{ height: '50px' }}>
-              <PlaceholderImage size={PlaceholderSize} {...options} />
-            </div>
-            <br />
             <Text weight="strong">{PlaceholderSize.charAt(0).toUpperCase() + PlaceholderSize.slice(1)}</Text>
+            <PlaceholderImage size={PlaceholderSize} {...options} className="mt-5" />
           </div>
         );
       })}
