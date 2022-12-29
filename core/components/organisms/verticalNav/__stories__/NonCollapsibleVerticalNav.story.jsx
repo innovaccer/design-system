@@ -30,7 +30,7 @@ export const nonCollapsibleVerticalNavigation = () => {
   });
 
   return (
-    <div className="bg-secondary-lightest" style={{ height: '50vh' }}>
+    <div className="bg-secondary-lightest pb-12">
       <VerticalNav menus={data} active={active} expanded={true} onClick={setActive} />
     </div>
   );
@@ -65,7 +65,7 @@ const customCode = `() => {
   });
 
   return (
-    <div className="bg-secondary-lightest" style={{ height: '50vh'}}>
+    <div className="bg-secondary-lightest pb-12">
       <VerticalNav
         menus={data}
         active={active}
