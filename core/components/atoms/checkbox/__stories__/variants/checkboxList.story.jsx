@@ -3,11 +3,6 @@ import Checkbox from '../../index';
 
 // CSF format story
 export const checkboxList = () => {
-  const style = {
-    display: 'flex',
-    'flex-direction': 'column',
-    paddingLeft: '25px',
-  };
   const parentObj = { checked: false, indeterminate: false };
   const labels = ['InConnect', 'InGraph', 'InReport'];
   const childArray = Array(labels.length).fill(false);
@@ -41,7 +36,7 @@ export const checkboxList = () => {
         onChange={handleParentChange}
         value={'Innovaccer'}
       />
-      <div style={style}>
+      <div className="d-flex flex-column pl-7">
         {labels.map((label, ind) => {
           return (
             <Checkbox
@@ -91,9 +86,7 @@ const customCode = `() => {
         onChange={handleParentChange}
         value={'Innovaccer'}
       />
-      <div style={{
-          'flex-direction': 'column',
-        }} className="d-flex pl-7">
+      <div className="d-flex flex-column pl-7">
         {
           labels.map((label, ind) => {
             return (

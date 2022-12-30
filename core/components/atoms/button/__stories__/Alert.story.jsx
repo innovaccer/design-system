@@ -15,9 +15,7 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Delete button',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Delete'\` to describe the action of button 
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='Delete'\` to describe the action of button `,
       },
     },
   },

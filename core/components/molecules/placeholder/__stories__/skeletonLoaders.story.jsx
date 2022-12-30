@@ -10,19 +10,19 @@ export const skeletonLoaders = () => {
           <PlaceholderParagraph size="m" />
         </Placeholder>
       </div>
-      <div style={{ borderTop: 'var(--border)' }} className="px-6 py-5">
+      <div className="px-6 py-5 border-top">
         <Placeholder round={true} imageSize="large">
           <PlaceholderParagraph length="large" size="m" />
           <PlaceholderParagraph size="m" />
         </Placeholder>
       </div>
-      <div style={{ borderTop: 'var(--border)' }} className="px-6 py-5">
+      <div className="px-6 py-5 border-top">
         <Placeholder round={true} imageSize="large">
           <PlaceholderParagraph length="large" size="m" />
           <PlaceholderParagraph size="m" />
         </Placeholder>
       </div>
-      <div style={{ borderTop: 'var(--border)' }} className="px-6 py-5">
+      <div className="px-6 py-5 border-top">
         <Placeholder round={true} imageSize="large">
           <PlaceholderParagraph length="large" size="m" />
           <PlaceholderParagraph size="m" />

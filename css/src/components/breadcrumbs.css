@@ -12,6 +12,18 @@
 
 .Breadcrumbs-link {
   margin: var(--spacing-m);
+  /* 160px */
+  max-width: calc(var(--spacing-2) * 10);
+  line-height: var(--font-height);
+  color: var(--inverse-lighter);
+}
+
+.Breadcrumbs-link:hover {
+  color: var(--inverse-light);
+}
+
+.Breadcrumbs-link:active {
+  color: var(--inverse);
 }
 
 .Breadcrumbs-item:first-child .Breadcrumbs-link {

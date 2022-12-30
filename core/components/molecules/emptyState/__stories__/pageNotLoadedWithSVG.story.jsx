@@ -3,7 +3,7 @@ import { EmptyState, Button } from '@/index';
 
 export const pageNotLoadedWithSVG = () => {
   return (
-    <div className="h-100 pb-5" style={{ backgroundColor: 'var(--secondary-lightest)' }}>
+    <div className="h-100 pb-5 bg-secondary-lightest">
       <EmptyState
         title="There's a problem loading this page."
         description="A technical problem is preventing the page from loading. Try reloading this page."

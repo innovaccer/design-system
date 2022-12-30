@@ -4,15 +4,9 @@ import Pagination from '../Pagination';
 
 // CSF format story
 export const PaginationWithJump = () => {
-  const innerStyle = {
-    display: 'flex',
-    'flex-direction': 'column',
-    'align-items': 'center',
-  };
-
   return (
     <div className="d-flex">
-      <div style={innerStyle}>
+      <div className="d-flex flex-column align-items-center">
         <Pagination
           type="jump"
           page={1}
@@ -25,15 +19,9 @@ export const PaginationWithJump = () => {
 };
 
 const customCode = `() => {
-  const innerStyle = {
-    display: 'flex',
-    'flex-direction': 'column',
-    'align-items': 'center',
-  };
-
   return (
     <div className="d-flex">
-      <div  style={innerStyle}>
+      <div className="d-flex flex-column align-items-center">
         <Pagination
           type="jump"
           page={1}

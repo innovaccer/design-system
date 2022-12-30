@@ -15,9 +15,7 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Secondary button with right aligned icon.',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Next in rank'\` to describe the action of button. 
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='Next in rank'\` to describe the action of button. `,
       },
     },
   },

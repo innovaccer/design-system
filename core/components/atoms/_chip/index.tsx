@@ -7,7 +7,7 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
 
 export interface GenericChipProps extends BaseProps {
-  label: string;
+  label: string | React.ReactElement;
   icon?: string;
   clearButton?: boolean;
   disabled?: boolean;
@@ -55,6 +55,17 @@ export const GenericChip = (props: GenericChipProps) => {
     ['inverse']: !disabled && !selected,
   }) as TextProps['color'];
 
+  const renderLabel = () => {
+    if (typeof label === 'string') {
+      return (
+        <Text data-test="DesignSystem-GenericChip--Text" color={textColor}>
+          {label}
+        </Text>
+      );
+    }
+    return label;
+  };
+
   return (
     // TODO(a11y)
     // eslint-disable-next-line
@@ -74,9 +85,7 @@ export const GenericChip = (props: GenericChipProps) => {
           className={iconClass('left')}
         />
       )}
-      <Text data-test="DesignSystem-GenericChip--Text" color={textColor}>
-        {label}
-      </Text>
+      {renderLabel()}
       {clearButton && (
         <Icon
           data-test="DesignSystem-GenericChip--clearButton"

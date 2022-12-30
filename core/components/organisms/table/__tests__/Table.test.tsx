@@ -119,7 +119,7 @@ describe('render Table component with header', () => {
     const dropdownCheckbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[1];
     expect(dropdownCheckbox).not.toBeChecked();
     fireEvent.click(dropdownCheckbox);
-    const applyButton = getAllByTestId('DesignSystem-Button')[3];
+    const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
     fireEvent.click(applyButton);
     expect(dropdownCheckbox).toBeChecked();
   });

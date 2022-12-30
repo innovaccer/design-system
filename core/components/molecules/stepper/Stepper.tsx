@@ -27,13 +27,13 @@ export interface StepperProps extends BaseProps {
    *  label: string;
    *  value?: React.ReactText;
    * }
+   * </pre>
    *
    * | Name | Description |
    * | --- | --- |
    * | label | Describes Label of the step |
    * | value | Value of option |
    *
-   * </pre>
    */
   steps: StepProp[];
   /**

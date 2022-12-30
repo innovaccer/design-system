@@ -9,12 +9,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Action"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -28,12 +23,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Action"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -47,12 +37,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip-Action--disabled"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse-lightest"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -66,12 +51,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Input"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -85,12 +65,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Input"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -104,12 +79,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip-Input--disabled"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse-lightest"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -123,12 +93,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Selection"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -142,12 +107,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Selection"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -161,12 +121,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip-Selection--disabled"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse-lightest"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -180,12 +135,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Selection"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;
@@ -199,12 +149,7 @@ exports[`Chip component
       class="Chip-wrapper Chip Chip--Selection Chip-Selection--selected"
       data-test="DesignSystem-Chip--GenericChip"
       tabindex="0"
-    >
-      <span
-        class="Text Text--regular color-inverse"
-        data-test="DesignSystem-GenericChip--Text"
-      />
-    </div>
+    />
   </div>
 </body>
 `;

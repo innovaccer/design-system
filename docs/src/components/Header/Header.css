@@ -2,6 +2,7 @@
   z-index: 1000;
   top: 0;
   border-bottom: var(--border);
+  border-color: var(--secondary-dark);
   padding-top: var(--spacing-s);
   padding-bottom: 1px;
   justify-content: space-between;

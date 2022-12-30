@@ -10,8 +10,7 @@ export const format = () => {
   return (
     <Dropzone
       accept="image/jpeg, image/png"
-      formatLabel="Accepted formats: PDF, jpg"
-      sizeLabel="Maximum size: 25 MB"
+      formatLabel="Accepted formats: jpeg, png"
       onDrop={onDrop}
       className="mb-3"
       sampleFileLink={
@@ -35,8 +34,7 @@ const customCode = `() => {
   return (
     <Dropzone
       accept="image/jpeg, image/png"
-      formatLabel="Accepted formats: PDF, jpg"
-      sizeLabel='Maximum size: 25 MB'
+      formatLabel="Accepted formats: jpeg, png"
       onDrop={onDrop}
       className="mb-3"
       sampleFileLink={(

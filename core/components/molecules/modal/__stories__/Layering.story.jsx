@@ -5,7 +5,7 @@ import { Modal, ModalDescription, ModalHeader, ModalBody, ModalFooter, Button, T
 export const layering = () => {
   const [open, setOpen] = React.useState(false);
   const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
-  const backdropClose = false;
+  const backdropClose = true;
   const dimension = 'medium';
 
   const onClose = () => {
@@ -81,7 +81,7 @@ const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const [openSecondOverlay, setOpenSecondOverlay] = React.useState(false);
   const dimension = 'medium';
-  const backdropClose = false;
+  const backdropClose = true;
 
   const onClose = () => {
     setOpen(!open);

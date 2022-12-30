@@ -3,11 +3,6 @@ import Checkbox from '../index';
 
 // CSF format story
 export const NestedCheckboxes = () => {
-  const style = {
-    display: 'flex',
-    'flex-direction': 'column',
-    paddingLeft: '25px',
-  };
   const parentObj = { checked: false, indeterminate: true };
   const labels = ['Diabetes Eye Exam', 'HbA1c Test in last 12 months', 'Falls Risk Assessment'];
   const childArray = [true, true, false];
@@ -41,7 +36,7 @@ export const NestedCheckboxes = () => {
         onChange={handleParentChange}
         value={'Measures'}
       />
-      <div style={style}>
+      <div className="d-flex flex-column pl-7">
         {labels.map((label, ind) => {
           return (
             <Checkbox
@@ -94,9 +89,7 @@ const customCode = `() => {
         onChange={handleParentChange}
         value={'Measures'}
       />
-      <div style={{
-          'flex-direction': 'column',
-        }} className="d-flex pl-7">
+      <div className="d-flex flex-column pl-7">
         {
           labels.map((label, ind) => {
             return (

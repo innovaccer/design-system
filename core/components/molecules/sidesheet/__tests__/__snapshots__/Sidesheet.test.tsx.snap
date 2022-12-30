@@ -12,7 +12,9 @@ exports[`Sidesheet component
     <div
       class="Row Overlay-container fade-in Overlay-container--open"
       data-layer="true"
+      data-open="true"
       data-test="DesignSystem-SidesheetContainer"
+      style="z-index: 1001;"
     >
       <div
         class="Col Col--10 Sidesheet Sidesheet--open Sidesheet-animation--open"
@@ -87,6 +89,7 @@ exports[`Sidesheet component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"
   />
@@ -106,7 +109,9 @@ exports[`Sidesheet component
     <div
       class="Row Overlay-container fade-in Overlay-container--open"
       data-layer="true"
+      data-open="true"
       data-test="DesignSystem-SidesheetContainer"
+      style="z-index: 1001;"
     >
       <div
         class="Col Col--6 Sidesheet Sidesheet--open Sidesheet-animation--open"
@@ -180,6 +185,7 @@ exports[`Sidesheet component
   <div
     class="Backdrop Backdrop--open Backdrop-animation--open"
     data-layer="true"
+    data-opened="true"
     data-test="DesignSystem-Backdrop"
     style="z-index: 1000;"
   />

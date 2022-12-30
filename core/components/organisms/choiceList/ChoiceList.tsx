@@ -127,7 +127,7 @@ const getCheckboxClassName = (alignment: ChoiceListAlignment, index: number) => 
   const ChoiceListCheckboxClass = classNames({
     [`ChoiceList-checkbox--${alignment}`]: true,
     ['ml-0']: index === 0 && alignment === 'horizontal',
-    ['mt-0']: index === 0 && alignment === 'vertical',
+    ['mt-4']: alignment === 'horizontal',
   });
   return ChoiceListCheckboxClass;
 };
@@ -136,7 +136,7 @@ const getRadioClassName = (alignment: ChoiceListAlignment, index: number) => {
   const ChoiceListRadioClass = classNames({
     [`ChoiceList-radio--${alignment}`]: true,
     ['ml-0']: index === 0 && alignment === 'horizontal',
-    ['mt-0']: index === 0 && alignment === 'vertical',
+    ['mt-4']: alignment === 'horizontal',
   });
   return ChoiceListRadioClass;
 };

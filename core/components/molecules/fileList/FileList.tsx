@@ -14,6 +14,7 @@ export interface FileListProps extends BaseProps {
    *    icon: IconOptions
    *    errorMessage: string;
    * }
+   * </pre>
    *
    * | Name | Description | Default |
    * | --- | --- | --- |
@@ -22,7 +23,7 @@ export interface FileListProps extends BaseProps {
    * | progress | Progress percent of `Progress Ring` | 0 |
    * | icon | Name of the icon to be rendered |
    * | errorMessage | Error Message to be shown when status is `error` | 'Network Error' |
-   * </pre>
+   *
    */
   fileList: Omit<FileListItemProps[], 'onClick'>;
   /**

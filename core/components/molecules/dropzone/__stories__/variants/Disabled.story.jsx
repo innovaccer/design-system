@@ -9,35 +9,15 @@ export const disabled = () => {
 
   return (
     <div className="w-50 d-flex flex-column align-items-center">
-      <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel="Maximum size: 25 MB"
-        onDrop={onDrop}
-        disabled={true}
-        className="mb-3"
-      />
+      <Dropzone onDrop={onDrop} disabled={true} className="mb-3" />
       <Text size="large" weight="strong">
         Standard
       </Text>
-      <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel="Maximum size: 25 MB"
-        onDrop={onDrop}
-        disabled={true}
-        type="compressed"
-        className="mt-6 mb-3"
-      />
+      <Dropzone onDrop={onDrop} disabled={true} type="compressed" className="mt-6 mb-3" />
       <Text size="large" weight="strong">
         Compressed
       </Text>
-      <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel="Maximum size: 25 MB"
-        onDrop={onDrop}
-        disabled={true}
-        type="tight"
-        className="mt-6 mb-3"
-      />
+      <Dropzone onDrop={onDrop} disabled={true} type="tight" className="mt-6 mb-3" />
       <Text size="large" weight="strong">
         Tight
       </Text>
@@ -53,16 +33,12 @@ const customCode = `() => {
   return (
     <div className="w-50 d-flex flex-column align-items-center">
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel='Maximum size: 25 MB'
         onDrop={onDrop}
         disabled={true}
         className="mb-3"
       />
       <Text size="large" weight="strong">Standard</Text>
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel='Maximum size: 25 MB'
         onDrop={onDrop}
         disabled={true}
         type="compressed"
@@ -70,8 +46,6 @@ const customCode = `() => {
       />
       <Text size="large" weight="strong">Compressed</Text>
       <Dropzone
-        formatLabel="Accepted formats: PDF, jpg"
-        sizeLabel='Maximum size: 25 MB'
         onDrop={onDrop}
         disabled={true}
         type="tight"

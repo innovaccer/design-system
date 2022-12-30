@@ -19,8 +19,8 @@ export const splitButton = () => {
       <Button className="mr-2" aria-label="Request review">
         Request review
       </Button>
-      <div className="mb-10" style={{ width: '150px' }}>
-        <Dropdown menu={true} icon="expand_more" options={options} />
+      <div className="mb-10">
+        <Dropdown menu={true} icon="expand_more" options={options} width={150} />
       </div>
     </div>
   );
@@ -34,9 +34,7 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Split button.',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Request review'\` to describe the action of button 
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='Request review'\` to describe the action of button `,
       },
     },
   },

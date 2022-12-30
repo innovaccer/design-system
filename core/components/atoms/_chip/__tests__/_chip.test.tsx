@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { GenericChip, GenericChipProps as Props } from '../../_chip';
+import { GenericChip, GenericChipProps as Props } from '@/components/atoms/_chip';
 
 const BooleanValue = [true, false];
 const FunctionValue = jest.fn();

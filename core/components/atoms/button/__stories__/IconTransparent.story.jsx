@@ -11,9 +11,7 @@ export default {
       docPage: {
         title: 'Button',
         description: 'Transparent button with icon.',
-        a11yProps: ` 
-        **aria-label:** Add \`aria-label='Menu'\` to describe the action of button. 
-         `,
+        a11yProps: ` **aria-label:** Add \`aria-label='Menu'\` to describe the action of button. `,
       },
     },
   },
