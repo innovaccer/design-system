@@ -25,7 +25,7 @@ export const all = () => {
   };
 
   return (
-    <div style={{ width: 'var(--spacing-9)' }}>
+    <div className="vw-25">
       <EditableInput {...options} />
     </div>
   );
@@ -45,7 +45,7 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ width: 'var(--spacing-9)', height: 'var(--spacing-3)' }}>
+    <div className="vw-25">
       <EditableInput
         {...options}
       />
