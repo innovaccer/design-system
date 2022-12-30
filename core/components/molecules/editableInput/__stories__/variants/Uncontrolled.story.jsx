@@ -4,7 +4,7 @@ import { EditableInput } from '@/index';
 // CSF format story
 export const uncontrolled = () => {
   return (
-    <div style={{ width: 'var(--spacing-9)' }}>
+    <div className="vw-25">
       <EditableInput placeholder="First Name" />
     </div>
   );
