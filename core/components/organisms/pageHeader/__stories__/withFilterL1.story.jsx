@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Tabs, PageHeader, Breadcrumbs } from '@/index';
+import { Tabs, PageHeader, Breadcrumbs, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
 export const level1WithFilter = () => {
@@ -35,9 +35,13 @@ export const level1WithFilter = () => {
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest" style={{ width: '900px' }}>
-      <PageHeader title="Sender creation report" separator={true} tabs={tab} breadcrumbs={breadcrumbs} />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-6 bg-secondary-lightest">
+          <PageHeader title="Sender creation report" separator={true} tabs={tab} breadcrumbs={breadcrumbs} />
+        </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -78,14 +82,18 @@ const customCode = `() => {
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest" style={{width:'900px'}}>
-      <PageHeader
-        title="Sender creation report"
-        separator={true}
-        tabs={tab}
-        breadcrumbs={breadcrumbs}
-      />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-6 bg-secondary-lightest">
+          <PageHeader
+            title="Sender creation report"
+            separator={true}
+            tabs={tab}
+            breadcrumbs={breadcrumbs}
+          />
+        </div>
+      </Column>
+    </Row>
   );
 }`;
 
