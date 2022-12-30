@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Tabs, Heading, Dropdown, Button, Input, Tab } from '@/index';
+import { Tabs, Heading, Dropdown, Button, Input, Tab, Row, Column } from '@/index';
 
 // CSF format story
 export const tabsWithCount = () => {
@@ -25,7 +25,7 @@ export const tabsWithCount = () => {
         <Heading size="m">Strategy</Heading>
         <Button appearance="primary">New Strategy</Button>
       </div>
-      <div className="d-flex align-items-center mt-3">
+      <Row className="align-items-center mt-3">
         <Tabs onTabChange={onTabChangeHandler} className="mb-6">
           <Tab label="All" count={12}>
             <div>All</div>
@@ -37,15 +37,17 @@ export const tabsWithCount = () => {
             <div>Inactive</div>
           </Tab>
           <div className="d-flex align-items-center">
-            <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
+            <div className="ml-8">
               <Input placeholder="Search by name" icon="search" />
             </div>
-            <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-              <Dropdown options={options} placeholder="Sort by" />
-            </div>
+            <Column size={6}>
+              <div className="ml-4">
+                <Dropdown options={options} placeholder="Sort by" />
+              </div>
+            </Column>
           </div>
         </Tabs>
-      </div>
+      </Row>
     </div>
   );
 };
@@ -68,7 +70,7 @@ const customCode = `() => {
         <Heading size="m">Strategy</Heading>
         <Button appearance="primary">New Strategy</Button>
       </div>
-      <div className="d-flex align-items-center mt-3" >
+      <Row className="align-items-center mt-3" >
         <Tabs
           onTabChange={console.log}
           className="mb-6"
@@ -83,15 +85,17 @@ const customCode = `() => {
             <div>Inactive</div>
           </Tab>
           <div className="d-flex align-items-center">
-            <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
+            <div className="ml-8">
               <Input placeholder="Search by name" icon="search" />
             </div>
-            <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-              <Dropdown options={options} placeholder="Sort by" />
-            </div>
+            <Column size={6}>
+              <div className="ml-4">
+                <Dropdown options={options} placeholder="Sort by" />
+              </div>
+            </Column>
           </div>
         </Tabs>
-      </div>
+      </Row>
     </div>
   );
 }`;

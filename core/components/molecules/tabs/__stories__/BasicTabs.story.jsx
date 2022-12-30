@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Tabs, Heading, Dropdown, Tab } from '@/index';
+import { Tabs, Heading, Dropdown, Tab, Row, Column } from '@/index';
 
 // CSF format story
 export const basicTabs = () => {
@@ -34,12 +34,14 @@ export const basicTabs = () => {
 
   return (
     <div>
-      <div className="d-flex justify-content-between">
-        <Heading size="m">Data Gaps</Heading>
-        <div style={{ width: 'var(--spacing-8)' }}>
+      <Row className="justify-content-between">
+        <Column>
+          <Heading size="m">Data Gaps</Heading>
+        </Column>
+        <Column size={3}>
           <Dropdown options={options} />
-        </div>
-      </div>
+        </Column>
+      </Row>
       <Tabs onTabChange={onTabChangeHandler} className="mb-6">
         <Tab label="Clinical Gaps">
           <div>Clinical Gaps</div>
@@ -82,12 +84,14 @@ const customCode = `() => {
 
   return(
     <div>
-      <div className="d-flex justify-content-between">
+    <Row className="justify-content-between">
+      <Column>
         <Heading size="m">Data Gaps</Heading>
-        <div style={{width: 'var(--spacing-8)'}}>
-          <Dropdown options={options} />
-        </div>
-      </div>
+      </Column>
+      <Column size={3}>
+        <Dropdown options={options} />
+      </Column>
+    </Row>
       <Tabs className="mb-6">
         <Tab
           label="Clinical Gaps"

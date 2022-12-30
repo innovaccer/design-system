@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Tabs, Dropdown, Input, Tab } from '@/index';
+import { Tabs, Dropdown, Input, Tab, Row, Column } from '@/index';
 
 // CSF format story
 export const inlineContent = () => {
@@ -20,25 +20,29 @@ export const inlineContent = () => {
   };
 
   return (
-    <Tabs onTabChange={onTabChangeHandler} className="mb-6">
-      <Tab label="All" count={12}>
-        <div>All</div>
-      </Tab>
-      <Tab label="Active" count={3}>
-        <div>Active</div>
-      </Tab>
-      <Tab label="Inactive" count={9}>
-        <div>Inactive</div>
-      </Tab>
-      <div className="d-flex justify-content-end flex-grow-1">
-        <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
-          <Input placeholder="Search by name" icon="search" />
+    <Row>
+      <Tabs onTabChange={onTabChangeHandler} className="mb-6">
+        <Tab label="All" count={12}>
+          <div>All</div>
+        </Tab>
+        <Tab label="Active" count={3}>
+          <div>Active</div>
+        </Tab>
+        <Tab label="Inactive" count={9}>
+          <div>Inactive</div>
+        </Tab>
+        <div className="d-flex justify-content-end flex-grow-1 align-items-center">
+          <div>
+            <Input placeholder="Search by name" icon="search" />
+          </div>
+          <Column size={3}>
+            <div className="ml-4">
+              <Dropdown options={options} placeholder="Sort by" />
+            </div>
+          </Column>
         </div>
-        <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-          <Dropdown options={options} placeholder="Sort by" />
-        </div>
-      </div>
-    </Tabs>
+      </Tabs>
+    </Row>
   );
 };
 
@@ -55,28 +59,32 @@ const customCode = `() => {
   ];
 
   return(
-    <Tabs
-      onTabChange={console.log}
-      className="mb-6"
-    >
-      <Tab label="All" count={12}>
-        <div>All</div>
-      </Tab>
-      <Tab label="Active" count={3}>
-        <div>Active</div>
-      </Tab>
-      <Tab label="Inactive" count={9}>
-        <div>Inactive</div>
-      </Tab>
-      <div className="d-flex justify-content-end flex-grow-1">
-        <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
-          <Input placeholder="Search by name" icon="search" />
+    <Row>
+      <Tabs
+        onTabChange={console.log}
+        className="mb-6"
+      >
+        <Tab label="All" count={12}>
+          <div>All</div>
+        </Tab>
+        <Tab label="Active" count={3}>
+          <div>Active</div>
+        </Tab>
+        <Tab label="Inactive" count={9}>
+          <div>Inactive</div>
+        </Tab>
+        <div className="d-flex justify-content-end flex-grow-1 align-items-center">
+          <div>
+            <Input placeholder="Search by name" icon="search" />
+          </div>
+          <Column size={3}>
+              <div className="ml-4">
+                <Dropdown options={options} placeholder="Sort by" />
+              </div>
+            </Column>
         </div>
-        <div style={{ width: 'var(--spacing-8)' }} className="ml-4">
-          <Dropdown options={options} placeholder="Sort by" />
-        </div>
-      </div>
-    </Tabs>
+      </Tabs>
+    </Row>
   );
 }`;
 
