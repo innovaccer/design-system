@@ -34,15 +34,8 @@ export const horizontal = () => {
   const align = 'center';
 
   return (
-    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
-      <div
-        style={{
-          background: 'white',
-          padding: 'var(--spacing-m)',
-          borderTop: 'var(--border)',
-          borderBottom: 'var(--border)',
-        }}
-      >
+    <div className="pb-13 bg-secondary-lightest">
+      <div className="bg-light border-top border-bottom p-3">
         <Navigation align={align} menus={data} active={active} onClick={onClickHandler} />
       </div>
     </div>
@@ -80,15 +73,8 @@ const customCode = `() => {
   const align = 'center';
 
   return (
-    <div style={{ height: '200px', background: 'var(--secondary-lightest)' }}>
-      <div
-        style={{
-            background: 'white',
-            padding: 'var(--spacing-m)',
-            borderTop: 'var(--border)',
-            borderBottom: 'var(--border)'
-        }}
-      >
+    <div className="pb-13 bg-secondary-lightest">
+      <div className="bg-light border-top border-bottom p-3">
         <Navigation
           align={align}
           menus={data}

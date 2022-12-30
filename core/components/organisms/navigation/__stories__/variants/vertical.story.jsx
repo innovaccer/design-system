@@ -85,7 +85,7 @@ export const vertical = () => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-75">
       <Navigation
         type="vertical"
         menus={data}
@@ -177,7 +177,7 @@ const customCode = `() => {
   };
 
   return (
-    <div style={{ height: 'calc(80vh)', background: 'var(--secondary-lightest)' }}>
+    <div className="bg-secondary-lightest vh-75">
       <Navigation
         type="vertical"
         menus={data}
