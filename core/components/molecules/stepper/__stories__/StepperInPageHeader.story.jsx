@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, Avatar, PageHeader, Dropdown } from '@/index';
 import { action } from '@/utils/action';
+import './style.css';
 
 export const stepperInPageHeader = () => {
   const stepperData = [
@@ -93,7 +94,14 @@ export const stepperInPageHeader = () => {
   );
 };
 
-const customCode = `() => {
+const customCode = `/*
+// style.css
+.longWrapper {
+    width: 1200px;
+}
+*/
+
+() => {
   const stepperData = [
     {
       value: 'step_1',
@@ -176,7 +184,7 @@ const customCode = `() => {
   );
 
   return (
-    <div className="p-6 bg-secondary-lightest" style={{width:'1200px'}}>
+    <div className="p-6 bg-secondary-lightest longWrapper">
       <PageHeader
         title="Annual Wellness Visit"
         separator={true}

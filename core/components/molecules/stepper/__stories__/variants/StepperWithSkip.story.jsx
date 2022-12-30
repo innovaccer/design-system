@@ -38,15 +38,12 @@ export const stepperWithSkip = () => {
   };
 
   return (
-    <div
-      className="d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest"
-      style={{ height: '200px' }}
-    >
+    <div className="d-flex flex-column justify-content-between align-items-end p-4 bg-secondary-lightest">
       <div className="d-flex justify-content-center py-5 bg-light w-100">
         <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndexes} />
       </div>
       <br />
-      <div className="w-25 d-flex justify-content-end">
+      <div className="w-25 d-flex justify-content-end pt-11">
         <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className="mr-4">
           Skip
         </Button>
@@ -109,8 +106,7 @@ const customCode = `() => {
 
   return (
     <div
-      className="d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest"
-      style={{ height: '200px' }}
+      className="d-flex flex-column justify-content-between align-items-end p-4 bg-secondary-lightest"
     >
       <div className="d-flex justify-content-center py-5 bg-light w-100">
         <Stepper
@@ -122,7 +118,7 @@ const customCode = `() => {
         />
       </div>
       <br />
-      <div className="w-25 d-flex justify-content-end">
+      <div className="w-25 d-flex justify-content-end pt-11">
         <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className="mr-4">Skip</Button>
         <Button onClick={onClickHandler} appearance="primary">Next</Button>
       </div>

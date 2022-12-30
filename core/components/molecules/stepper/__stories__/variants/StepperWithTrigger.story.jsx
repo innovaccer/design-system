@@ -20,15 +20,12 @@ export const stepperWithTrigger = () => {
   };
 
   return (
-    <div
-      className="d-flex flex-column justify-content-between align-items-end py-4 px-4"
-      style={{ height: '200px', background: 'var(--secondary-lightest)' }}
-    >
+    <div className="d-flex flex-column justify-content-between align-items-end p-4 bg-secondary-lightest">
       <div className="d-flex justify-content-center py-5 bg-light w-100">
         <Stepper steps={steps} active={active} completed={completed} onChange={onChange} />
       </div>
       <br />
-      <div className="w-25 d-flex justify-content-end">
+      <div className="w-25 d-flex justify-content-end pt-11">
         <Button onClick={onClickHandler} appearance="primary">
           Next
         </Button>
@@ -67,8 +64,7 @@ const customCode = `() => {
   };
   return (
     <div
-      className="d-flex flex-column justify-content-between align-items-end py-4 px-4"
-      style={{ height: '200px', background: 'var(--secondary-lightest)' }}
+      className="d-flex flex-column justify-content-between align-items-end p-4 bg-secondary-lightest"
     >
       <div className="d-flex justify-content-center py-5 bg-light w-100">
         <Stepper
@@ -79,7 +75,7 @@ const customCode = `() => {
         />
       </div>
       <br />
-      <div className="w-25 d-flex justify-content-end">
+      <div className="w-25 d-flex justify-content-end pt-11">
         <Button onClick={onClickHandler} appearance="primary">Next</Button>
       </div>
     </div>

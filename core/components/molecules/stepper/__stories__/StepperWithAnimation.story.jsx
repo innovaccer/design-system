@@ -74,25 +74,33 @@ export const stepperWithAnimation = () => {
         }`}
         onAnimationEnd={handleAnimationEnd}
       >
-        <Card className="px-6 py-6">
+        <Card className="p-6">
           <Heading className="mb-6" size="s">
             Configure Initiative
           </Heading>
           <Text weight="strong">Population Filter</Text>
-          <div className="d-flex mt-5 mb-4">
-            <div className="mr-6" style={{ width: 'var(--spacing-8)' }}>
-              <Label withInput={true}>Region</Label>
-              <Dropdown options={options} />
-            </div>
-            <div style={{ width: 'var(--spacing-9)' }}>
-              <Label withInput={true}>Organization</Label>
-              <Dropdown options={options} />
-            </div>
-          </div>
+          <Row className="mt-5 mb-4">
+            <Column sizeXS={3} sizeS={2} sizeM={2} sizeL={2}>
+              <div className="mr-6">
+                <Label withInput={true}>Region</Label>
+                <Dropdown options={options} />
+              </div>
+            </Column>
+            <Column sizeXS={3} sizeS={2} sizeM={2} sizeL={2}>
+              <div className="mr-6">
+                <Label withInput={true}>Organization</Label>
+                <Dropdown options={options} />
+              </div>
+            </Column>
+          </Row>
           <div className="pt-6">
             <Text weight="strong">Time Period</Text>
             <div className="mt-5">
-              <DateRangePicker withInput />
+              <Row className="mt-5 mb-4">
+                <Column sizeXS={3} sizeS={2} sizeM={2} sizeL={6}>
+                  <DateRangePicker withInput />
+                </Column>
+              </Row>
             </div>
           </div>
         </Card>
@@ -162,7 +170,7 @@ export const stepperWithAnimation = () => {
                 <Icon className="mr-4" name="record_voice_over" />
                 <Text>Preferred Method of Contact</Text>
               </Column>
-              <Column size={8} className="d-flex align-items-center">
+              <Column size={2} className="d-flex align-items-center">
                 <Dropdown options={method} />
               </Column>
             </Row>
@@ -171,7 +179,7 @@ export const stepperWithAnimation = () => {
                 <Icon className="mr-4" name="call" />
                 <Text>Phone Numbers</Text>
               </Column>
-              <Column size={8} className="d-flex align-items-center">
+              <Column size={5} className="d-flex align-items-center">
                 <InputMask
                   mask={['(', /[1-9]/, /\\d/, /\\d/, ')', ' ', /\\d/, /\\d/, /\\d/, '-', /\\d/, /\\d/, /\\d/, /\\d/]}
                   placeholder="(___) ___-____"
@@ -183,7 +191,7 @@ export const stepperWithAnimation = () => {
             </Row>
             <Row className="my-5">
               <Column size={3} className="d-flex align-items-center" />
-              <Column size={8} className="d-flex">
+              <Column size={5} className="d-flex">
                 <InputMask
                   mask={['(', /[1-9]/, /\\d/, /\\d/, ')', ' ', /\\d/, /\\d/, /\\d/, '-', /\\d/, /\\d/, /\\d/, /\\d/]}
                   placeholder="(___) ___-____"
@@ -459,25 +467,33 @@ const customCode = `() => {
         className={\`py-4 w-100 position-relative \${getClasses()}\`}
         onAnimationEnd={handleAnimationEnd}
       >
-        <Card className="px-6 py-6">
+        <Card className="p-6">
           <Heading className="mb-6" size="s">
             Configure Initiative
           </Heading>
           <Text weight="strong">Population Filter</Text>
-          <div className="d-flex mt-5 mb-4">
-            <div className="mr-6" style={{ width: 'var(--spacing-8)' }}>
-              <Label withInput={true}>Region</Label>
-              <Dropdown options={options} />
-            </div>
-            <div style={{ width: 'var(--spacing-9)' }}>
-              <Label withInput={true}>Organization</Label>
-              <Dropdown options={options} />
-            </div>
-          </div>
+          <Row className="mt-5 mb-4">
+            <Column sizeXS={3} sizeS={2} sizeM={2} sizeL={3}>
+              <div className="mr-6">
+                <Label withInput={true}>Region</Label>
+                <Dropdown options={options} />
+              </div>
+            </Column>
+            <Column sizeXS={3} sizeS={2} sizeM={2} sizeL={3}>
+              <div className="mr-6">
+                <Label withInput={true}>Organization</Label>
+                <Dropdown options={options} />
+              </div>
+            </Column>
+          </Row>
           <div className="pt-6">
             <Text weight="strong">Time Period</Text>
             <div className="mt-5">
-              <DateRangePicker withInput />
+              <Row className="mt-5 mb-4">
+                <Column sizeXS={3} sizeS={2} sizeM={2} sizeL={7}>
+                  <DateRangePicker withInput />
+                </Column>
+              </Row>
             </div>
           </div>
         </Card>
@@ -545,7 +561,7 @@ const customCode = `() => {
                 <Icon className="mr-4" name="record_voice_over" />
                 <Text>Preferred Method of Contact</Text>
               </Column>
-              <Column size={8} className="d-flex align-items-center">
+              <Column size={2} className="d-flex align-items-center">
                 <Dropdown options={method} />
               </Column>
             </Row>
@@ -554,7 +570,7 @@ const customCode = `() => {
                 <Icon className="mr-4" name="call" />
                 <Text>Phone Numbers</Text>
               </Column>
-              <Column size={8} className="d-flex align-items-center">
+              <Column size={6} className="d-flex align-items-center">
                 <InputMask
                   mask={['(', /[1-9]/, /\\d/, /\\d/, ')', ' ', /\\d/, /\\d/, /\\d/, '-', /\\d/, /\\d/, /\\d/, /\\d/]}
                   placeholder="(___) ___-____"
@@ -566,7 +582,7 @@ const customCode = `() => {
             </Row>
             <Row className="my-5">
               <Column size={3} className="d-flex align-items-center" />
-              <Column size={8} className="d-flex">
+              <Column size={6} className="d-flex">
                 <InputMask
                   mask={['(', /[1-9]/, /\\d/, /\\d/, ')', ' ', /\\d/, /\\d/, /\\d/, '-', /\\d/, /\\d/, /\\d/, /\\d/]}
                   placeholder="(___) ___-____"
