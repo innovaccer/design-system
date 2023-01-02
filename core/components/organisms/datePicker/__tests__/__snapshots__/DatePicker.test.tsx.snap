@@ -4385,22 +4385,22 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 class="Calendar-valueRow"
               >
                 <div
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--link Text--regular"
+                    class="Text Text--default Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2022
                   </span>
                 </div>
                 <div
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--default Text--regular"
+                    class="Text Text--link Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2023
