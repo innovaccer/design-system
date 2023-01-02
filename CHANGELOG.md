@@ -1,3 +1,54 @@
+## 2.14.0-0 (2023-01-02)
+
+### Highlights
+
+- docs(site): tabs on page stick under top navigation bar while scrolling the page, which provides ability to switch tabs quickly. (f00e7669) (0a7bdafc)
+- docs(stories): 50% of the stories containig a style tag in example code are refactored to use utility css or custom css.
+- fix(security): fixes done to achieve better secure packages.
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(breadcrumb): add capability to truncate long labels (dfabc05f)
+- feat(chip): add capability to customize chip labels (d9a55db1)
+
+### Fixes
+- fix(workflow): remove redundent storybook build stage to reduce pipeline build time on Pull requests. (ba03e645)
+- fix(storybook): fix style of prop table for storybook docs page. (e411d5ec)
+- fix(security): upgrade version of dependencies for security (2e84cfe5)
+- fix(security): actions/check-release-commit/package.json & actions/check-release-commit/package-lock.json to reduce vulnerabilities (b117bbb7)
+- fix(dropdown): disable action buttons on option loading state (5e5b4858)
+- fix(link): update link style to avoid flickering issue (12f60c5f)
+- fix(popover, sidesheet, modal): fix layering of nested components (45a702a9) (6b1a1138) (aa59e294)
+- fix(choiceList): update spacing between label and choices (500d6567)
+
+### Improvements
+
+- test(docs): add E2E testing for components page on documentation site. (2d5a43cf)
+
+### Documentation
+- fix(stories): remove all the style tags used in stories and use utility classnames or custom styling through css file. (card, grid, list, message, avatarGroup, emptyState, button, text, collapsible, table, checkbox, modal, pagination, placeholder, calendar, dateRangePicker, popover) (c7c69b9d) (e3bcd647) (3f0e6a5e) (148635dd) (16afbfaf) (059ca284) (ff3eb78c) (a5159319) (517314c8) (3b96d9a0) (53bb1ed8) (cd76e0e4) (311c5db0) (9b84365f) (bff9b690) (c37982c5) (69d910c0)
+- docs(docs): remove irrelevant images from email in patterns (b1f7e98f)
+- docs(docs): add email in patterns tab (af0b5279)
+- docs(backdrop): add trigger button to show backdrop in story (2b5a8cc8)
+- docs(dropdown): update description of fetchOptions prop in proptable (b75d502f)
+- docs(docs): update layout documnetation in foundations (43958e11)
+- docs(dropzone): update format label as per the accept prop in stories (fb6d4f43)
+- docs(docs): update image in states page of doc site (f56dba13)
+- docs(docs): update images in inline editable fields component (1b0f206f)
+- docs(site): pinning tabs on the top while scrolling (f00e7669) (0a7bdafc)
+
+---
 
 ## 2.13.6 (2022-12-07)
 
