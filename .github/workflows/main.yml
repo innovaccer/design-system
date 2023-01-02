@@ -25,6 +25,14 @@ jobs:
         if: steps.is_release_commit.outputs.result == 1
         run: npm ci
 
+      - name: test
+        if: steps.is_release_commit.outputs.result == 1
+        run: npm run test
+
+      - name: Upload coverage to Codecov
+        if: steps.is_release_commit.outputs.result == 1
+        uses: codecov/codecov-action@v1
+
       - name: setup git
         if: steps.is_release_commit.outputs.result == 1
         run: git checkout -b preparing-module-for-npm-publish && git config --global user.email "release-bot@innovaccer.com" && git config --global user.name "release-bot"
