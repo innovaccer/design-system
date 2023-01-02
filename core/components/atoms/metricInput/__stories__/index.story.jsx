@@ -21,7 +21,7 @@ export const all = () => {
   const error = false;
 
   return (
-    <div style={{ width: 'var(--spacing-8)' }}>
+    <div className="w-25">
       <MetricInput
         name="input"
         disabled={disabled}
