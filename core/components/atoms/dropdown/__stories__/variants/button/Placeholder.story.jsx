@@ -9,10 +9,10 @@ export const placeholder = () => {
   const booleanValues = [true, false];
 
   return (
-    <div style={{ display: 'flex', minHeight: '270px' }}>
+    <div className="d-flex pb-14">
       {booleanValues.map((menu, ind) => {
         return (
-          <div style={{ marginRight: '5%' }} key={ind}>
+          <div className="mr-9" key={ind}>
             <Text weight="strong">{!menu ? 'With Placeholder' : 'Without Placeholder'}</Text> <br />
             <br />
             <Dropdown menu={menu} options={storyOptions} />

@@ -27,12 +27,12 @@ export const preSelection = () => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '280px' }}>
+    <div className="d-flex pb-14">
       {BooleanValue.map((value, ind) => {
         const options = value ? preSelectedOptions : preSelectedOptions.slice(0, 50);
 
         return (
-          <div key={ind} style={{ marginRight: '10%', width: '170px' }}>
+          <div key={ind} className="mr-10 w-25">
             <Text weight="strong">{value ? 'Options > 50 ' : 'Options <= 50'}</Text>
             <br />
             <br />

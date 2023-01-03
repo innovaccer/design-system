@@ -8,20 +8,10 @@ import { storyOptions } from '../Options';
 
 // CSF format story
 export const customOption = () => {
-  const optionStyle = {
-    paddingRight: 12,
-    paddingLeft: 12,
-    paddingTop: 6,
-    paddingBottom: 6,
-    display: 'flex',
-    cursor: 'pointer',
-    justifyContent: 'space-between',
-  };
-
   const customOptionRenderer = (props) => {
     const { label, icon } = props.optionData;
     return (
-      <div style={optionStyle}>
+      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between">
         <Text>{label}</Text>
         <Icon name={props.selected ? 'done' : icon} />
       </div>
@@ -32,7 +22,7 @@ export const customOption = () => {
     const { label } = props.optionData;
 
     return (
-      <div style={optionStyle}>
+      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between">
         <Checkbox checked={props.selected} onChange={props.onChange} label={label} />
         {props.selected && <Icon name="done" />}
       </div>
@@ -40,13 +30,13 @@ export const customOption = () => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '280px' }}>
-      <div style={{ marginRight: '20%', width: '200px' }}>
+    <div className="d-flex pb-14">
+      <div className="mr-10 w-25">
         <Text weight="strong">Without Checkbox</Text> <br />
         <br />
         <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} />
       </div>
-      <div style={{ marginRight: '20%', width: '200px' }}>
+      <div className="w-25">
         <Text weight="strong">With Checkbox</Text> <br />
         <br />
         <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
@@ -65,20 +55,11 @@ const customCode = `() => {
       subInfo: 'subInfo'
     });
   }
-  const optionStyle = {
-    paddingRight: 12,
-    paddingLeft: 12,
-    paddingTop: 6,
-    paddingBottom: 6,
-    display: 'flex',
-    cursor: 'pointer',
-    justifyContent: 'space-between',
-  };
 
   const customOptionRenderer = (props) => {
     const { label, icon } = props.optionData;
     return (
-      <div style={optionStyle} onClick={props.onClick}>
+      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between" onClick={props.onClick}>
         <Text>{label}</Text>
         <Icon name={props.selected ? 'done' : icon} />
       </div>
@@ -88,7 +69,7 @@ const customCode = `() => {
   const customCheckboxRenderer = (props) => {
     const { label } = props.optionData;
     return (
-      <div style={optionStyle} onClick={props.onClick}>
+      <div className="px-5 py-4 d-flex cursor-pointer justify-content-between" onClick={props.onClick}>
         <Checkbox checked={props.selected} onChange={props.onChange} label={label} />
         {props.selected && <Icon name="done" />}
       </div>
@@ -101,7 +82,7 @@ const customCode = `() => {
         <Text weight="strong">Without Checkbox</Text> <br /><br />
         <Dropdown options={storyOptions} optionRenderer={customOptionRenderer} />
       </div>
-      <div className='mr-10 w-25'>
+      <div className='w-25'>
         <Text weight="strong">With Checkbox</Text> <br /><br />
         <Dropdown options={storyOptions} optionRenderer={customCheckboxRenderer} withCheckbox={true} />
       </div>
