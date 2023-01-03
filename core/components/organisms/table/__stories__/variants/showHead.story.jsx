@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Heading, Table } from '@/index';
+import { Card, Heading, Table, Column, Row } from '@/index';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
@@ -8,41 +8,28 @@ import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/
 export const showHead = () => {
   const values = [true, false];
 
-  const style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-  };
   // to freeze the object for typescript
   // console.log(schema, 'hi');
 
   return (
-    <div style={style}>
-      {values.map((v, index) => (
-        <div
-          key={index}
-          style={{
-            margin: '20px',
-            width: '45%',
-          }}
-        >
-          <Heading>{`showHead: ${v}`}</Heading>
-          <div
-            style={{
-              height: '350px',
-            }}
-          >
-            <Card shadow="light" className="h-100">
-              <Table showHead={v} data={data} schema={schema} />
-            </Card>
-          </div>
-        </div>
-      ))}
+    <div className="d-flex flex-wrap">
+      <Row>
+        {values.map((v, index) => (
+          <Column key={index} size={5} className="ml-10">
+            <Heading>{`showHead: ${v}`}</Heading>
+            <div className="vh-75">
+              <Card shadow="light" className="h-100">
+                <Table showHead={v} data={data} schema={schema} />
+              </Card>
+            </div>
+          </Column>
+        ))}
+      </Row>
     </div>
   );
 };
 
-const customCode = `
-() => {
+const customCode = `() => {
   const data = ${JSON.stringify(data, null, 4)};
 
   const schema = [
@@ -126,33 +113,20 @@ const customCode = `
 
   const values = [true, false];
 
-  const style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-  };
-
   return (
-    <div style={style}>
-      {values.map((v, index) => (
-        <div
-          key={index}
-          style={{
-            margin: '20px',
-            width: '45%',
-          }}
-        >
-          <Heading>{\`showHead: \${v}\`}</Heading>
-          <div
-            style={{
-              height: '350px',
-            }}
-          >
-            <Card shadow="light" className="h-100">
-              <Table showHead={v} data={data} schema={schema} />
-            </Card>
-          </div>
+    <div className="d-flex flex-wrap">
+    <Row>
+    {values.map((v, index) => (
+      <Column key={index} size={5} className="ml-10">
+        <Heading>{\`showHead: \${v}\`}</Heading>
+        <div className="vh-75">
+          <Card shadow="light" className="h-100">
+            <Table showHead={v} data={data} schema={schema} />
+          </Card>
         </div>
-      ))}
+      </Column>
+    ))}
+  </Row>
     </div>
   );
 };

@@ -7,11 +7,7 @@ import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/
 // CSF format story
 export const withErrorTemplate = () => {
   return (
-    <div
-      style={{
-        height: '350px',
-      }}
-    >
+    <div className="vh-75">
       <Card shadow="light" className="h-100">
         <Table schema={schema} data={[]} error={true} errorTemplate={errorTemplate} />
       </Card>
@@ -126,9 +122,7 @@ const customCode = `
 
   return (
     <div
-      style={{
-        height: '350px',
-      }}
+      className="vh-75"
     >
       <Card className="h-100 overflow-hidden">
         <Table

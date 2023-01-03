@@ -65,6 +65,10 @@ import './style.css';
 .Table-filter .Input {
   min-width: unset;
 }
+
+.Table-filter-panel {
+  width: calc(100% - var(--spacing-9));
+}
 */
 
 () => {
@@ -515,7 +519,7 @@ import './style.css';
 
       return (
         <div className="Table-container">
-          <div style={{ width: 'calc(100% - var(--spacing-9))' }}>
+          <div className="Table-filter-panel">
             <Card className="Table overflow-hidden">
               <div className="Table-header">
                 <Header
@@ -817,11 +821,7 @@ import './style.css';
   });
 
   return (
-    <div
-      style={{
-        background: 'var(--secondary-lightest)'
-      }}
-    >
+    <div className="bg-secondary-lightest">
       <Table
         loaderSchema={loaderSchema}
         fetchData={fetchData}

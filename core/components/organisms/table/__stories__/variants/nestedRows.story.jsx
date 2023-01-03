@@ -11,11 +11,7 @@ export const nestedRows = () => {
   schema[0].width = 400;
 
   return (
-    <div
-      style={{
-        height: '450px',
-      }}
-    >
+    <div className="vh-75">
       <Card shadow="light" className="h-100">
         <Table
           schema={schema}
@@ -157,11 +153,7 @@ const customCode = `
   }
 
   return (
-    <div
-      style={{
-        height: '450px',
-      }}
-    >
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           data={data}

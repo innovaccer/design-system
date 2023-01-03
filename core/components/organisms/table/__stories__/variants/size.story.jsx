@@ -1,41 +1,29 @@
 import * as React from 'react';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/simpleSchema';
-import { Card, Heading, Table } from '@/index';
+import { Card, Heading, Table, Row, Column } from '@/index';
 import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/_common_/types';
 
 // CSF format story
 export const size = () => {
   const values = ['comfortable', 'standard', 'compressed', 'tight'];
 
-  const style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-  };
   // to freeze the object for typescript
 
   return (
-    <div style={style}>
-      {values.map((v, index) => (
-        <div
-          key={index}
-          style={{
-            margin: '20px',
-            width: '45%',
-          }}
-        >
-          <Heading>{v}</Heading>
-          <div
-            style={{
-              height: '350px',
-            }}
-          >
-            <Card shadow="light" className="h-100">
-              <Table size={v} data={data} schema={schema} />
-            </Card>
-          </div>
-        </div>
-      ))}
+    <div className="d-flex flex-wrap">
+      <Row>
+        {values.map((v, index) => (
+          <Column key={index} className="ml-10 mt-7" size={5}>
+            <Heading>{v}</Heading>
+            <div className="vh-50">
+              <Card shadow="light" className="h-100">
+                <Table size={v} data={data} schema={schema} />
+              </Card>
+            </div>
+          </Column>
+        ))}
+      </Row>
     </div>
   );
 };
@@ -69,33 +57,20 @@ const customCode = `
 
   const values = ['comfortable', 'standard', 'compressed', 'tight'];
 
-  const style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-  };
-
   return (
-    <div style={style}>
-      {values.map((v, index) => (
-        <div
-          key={index}
-          style={{
-            margin: '20px',
-            width: '45%',
-          }}
-        >
-          <Heading>{v}</Heading>
-          <div
-            style={{
-              height: '350px',
-            }}
-          >
-            <Card shadow="light" className="h-100">
-              <Table size={v} data={data} schema={schema} />
-            </Card>
-          </div>
-        </div>
-      ))}
+    <div className="d-flex flex-wrap">
+      <Row>
+        {values.map((v, index) => (
+          <Column key={index} className="ml-10 mt-7" size={5}>
+            <Heading>{v}</Heading>
+            <div className="vh-50">
+              <Card shadow="light" className="h-100">
+                <Table size={v} data={data} schema={schema} />
+              </Card>
+            </div>
+          </Column>
+        ))}
+      </Row>
     </div>
   );
 };
