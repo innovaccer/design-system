@@ -9,12 +9,12 @@ export const state = () => {
   const disabled = [true, false];
 
   return (
-    <div className="d-flex" style={{ minHeight: '270px' }}>
-      <div className="d-flex mr-8" style={{ flexDirection: 'column', alignItems: 'center' }}>
+    <div className="d-flex pb-14">
+      <div className="d-flex mr-8 flex-column align-items-center">
         <div className="d-flex">
           {disabled.map((buttonState, ind) => {
             return (
-              <div style={{ marginRight: '5%' }} key={ind}>
+              <div className="mr-8" key={ind}>
                 <Text weight="strong">{buttonState ? 'Disabled' : 'Enabled'}</Text> <br />
                 <br />
                 <Dropdown icon={'events'} disabled={buttonState} options={storyOptions} placeholder={'Select'} />
@@ -25,7 +25,7 @@ export const state = () => {
         <br />
         <Text weight="strong">{'Icon'}</Text>
       </div>
-      <div className="d-flex" style={{ flexDirection: 'column', alignItems: 'center' }}>
+      <div className="d-flex flex-column align-items-center">
         <div className="d-flex">
           {disabled.map((buttonState, ind) => {
             return (

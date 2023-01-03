@@ -25,12 +25,12 @@ export const sections = () => {
             <Text weight="strong">{value ? ' Multi Select' : 'Single Select'}</Text>
             <br />
             <div className="d-flex">
-              <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
+              <div className="d-flex flex-column align-items-center mr-7">
                 <Text weight="strong">{'With Sections'}</Text>
                 <br />
                 <Dropdown options={options} withCheckbox={value} />
               </div>
-              <div className="d-flex flex-column align-items-center mr-7" style={{ width: '128px' }}>
+              <div className="d-flex flex-column align-items-center mr-7">
                 <Text weight="strong">{'Without Sections'}</Text> <br />
                 <Dropdown options={storyOptions} withCheckbox={value} />
               </div>

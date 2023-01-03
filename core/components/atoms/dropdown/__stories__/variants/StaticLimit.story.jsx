@@ -27,11 +27,11 @@ export const staticLimit = () => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '280px' }}>
+    <div className="d-flex pb-14">
       {BooleanValue.map((value, ind) => {
         const options = value ? dropdownOptions : dropdownOptions.slice(0, 50);
         return (
-          <div key={ind} style={{ marginRight: '10%', width: '200px' }}>
+          <div key={ind} className="mr-10 w-25">
             <Text weight="strong">{value ? 'Options length > staticLimit' : 'Options length <= staticLimit'}</Text>
             <br />
             <br />
