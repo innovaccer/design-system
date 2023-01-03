@@ -9,10 +9,10 @@ export const disabled = () => {
   const disabledStates = [true, false];
 
   return (
-    <div style={{ display: 'flex', minHeight: '280px' }}>
+    <div className="d-flex pb-14">
       {disabledStates.map((state, ind) => {
         return (
-          <div className="w-25" key={ind} style={{ marginRight: '5%' }}>
+          <div className="w-25 ml-10" key={ind}>
             <Text weight="strong">{state ? 'Disabled' : 'Enabled'}</Text> <br />
             <br />
             <Dropdown disabled={state} options={storyOptions} placeholder={'Select'} />
