@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
 import { Text, Button, Popover } from '@/index';
+import '../style.css';
 
 // CSF format story
 export const boundaryElement = () => {
@@ -38,25 +39,34 @@ export const boundaryElement = () => {
   const ref = React.useRef < React.HTMLDivElement > null;
 
   return (
-    <div ref={ref.current} style={{ height: 150, border: '1px dashed', padding: 20, overflow: 'auto' }}>
+    <div ref={ref.current} className="overflow-auto p-7 custom-boundaryWrapper">
       <Popover {...options} boundaryElement={ref.current}>
-        <div style={{ width: 100 }} className="mx-6 my-6">
+        <div className="m-6 pr-9">
           <Text>Popup</Text>
           <Button className="mt-4" appearance="primary" onClick={action('button clicked inside popover')}>
             Click
           </Button>
         </div>
       </Popover>
-      <div style={{ height: 300 }} />
+      <div className="pb-14" />
     </div>
   );
 };
 
-const customCode = `() => {
+const customCode = `/*
+// style.css
+.custom-boundaryWrapper {
+    height: var(--spacing-8);
+    border: 1px dashed;
+}
+
+*/
+
+() => {
   const ref = React.useRef(null);
 
   return(
-    <div ref={ref} style={{ height: 150, padding: 20, border: '1px dashed', overflow: 'auto'}}>
+    <div ref={ref} className="overflow-auto p-7 custom-boundaryWrapper">
       <Popover
         position="bottom-start"
         on="click"
@@ -65,12 +75,12 @@ const customCode = `() => {
         boundaryElement={ref}
         closeOnScroll={true}
       >
-        <div style={{ width: 100 }} className='mx-6 my-6'>
+        <div className='m-6 pr-9'>
           <Text>Popup</Text>
           <Button appearance="primary" className="mt-4">Click</Button>
         </div>
       </Popover>
-      <div style={{height: 300}} />
+      <div className="pb-14" />
     </div>
   );
 }`;

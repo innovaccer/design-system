@@ -12,9 +12,9 @@ export const theme = () => {
 
   return (
     <div className="d-flex">
-      <div className="mb-11" style={{ marginRight: '40%' }}>
+      <div className="mb-11 mr-14">
         <Popover trigger={triggerDark} dark={true} {...options}>
-          <div style={{ width: 100 }} className="mx-6 my-6">
+          <div className="m-6 pr-9">
             <Text appearance={'white'}>Popup</Text>
             <Button appearance="primary" className="mt-4">
               Click
@@ -24,7 +24,7 @@ export const theme = () => {
       </div>
       <div>
         <Popover trigger={trigger} dark={false} {...options}>
-          <div style={{ width: 100 }} className="mx-6 my-6">
+          <div className="m-6 pr-9">
             <Text>Popup</Text>
             <Button appearance="primary" className="mt-4">
               Click
