@@ -5,7 +5,7 @@ import { Button, Popover } from '@/index';
 export const lightPopover = () => (
   <div className="mb-9">
     <Popover position="bottom" on="click" trigger={<Button appearance="basic">Open Popover</Button>} open={false}>
-      <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />
+      <div className="p-10" />
     </Popover>
   </div>
 );
