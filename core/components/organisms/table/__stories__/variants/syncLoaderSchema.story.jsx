@@ -21,12 +21,7 @@ export const syncLoaderSchema = () => {
   const applyData = false;
 
   return (
-    <div
-      style={{
-        height: '350px',
-        // overflow: 'hidden'
-      }}
-    >
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loading={loading}

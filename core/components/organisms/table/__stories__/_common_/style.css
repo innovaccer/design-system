@@ -34,3 +34,7 @@
 .Table-filter .Input {
   min-width: unset;
 }
+
+.Table-filter-panel {
+  width: calc(100% - var(--spacing-9));
+}

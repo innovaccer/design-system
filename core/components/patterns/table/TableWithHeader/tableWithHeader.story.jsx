@@ -978,7 +978,7 @@ import './style.css';
   });
 
   return (
-    <div className="bg-secondary-lightest Table-wrapper">
+    <div className="bg-secondary-lightest">
       <Table
         loaderSchema={loaderSchema}
         fetchData={fetchData}

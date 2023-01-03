@@ -8,11 +8,7 @@ import { action } from '@/utils/action';
 
 export const withEditableCell = () => {
   return (
-    <div
-      style={{
-        height: '450px',
-      }}
-    >
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
@@ -164,9 +160,7 @@ const customCode = `
 
   return (
     <div
-      style={{
-        height: '450px',
-      }}
+      className="vh-75"
     >
       <Card className="h-100 overflow-hidden">
         <Table
