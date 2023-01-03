@@ -11,7 +11,7 @@ export const darkPopover = () => (
       dark={true}
       open={false}
     >
-      <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />
+      <div className="p-10" />
     </Popover>
   </div>
 );
