@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Table, CardSubdued, Text } from '@/index';
+import { Card, Table, CardSubdued, Text, Column, Row } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 
 export const nestedTableWithNestedCards = () => {
@@ -110,35 +110,21 @@ export const nestedTableWithNestedCards = () => {
   ];
 
   const nestedRowRenderer = (props) => (
-    <CardSubdued className="mb-4 mt-3 mr-4" style={{ marginLeft: '40px' }}>
-      <div className="d-flex flex-row">
-        <div style={{ width: '17%' }}>
-          <Text weight="medium">Type</Text>
-        </div>
-        <Text>{props.data.type}</Text>
-      </div>
-      {props.data.errorCode && (
-        <div className="d-flex flex-row">
-          <div style={{ width: '17%' }}>
-            <Text weight="medium">Error code</Text>
-          </div>
-          <Text>{props.data.errorCode}</Text>
-        </div>
-      )}
-      <div className="d-flex flex-row">
-        <div style={{ width: '17%' }}>
-          <Text weight="medium">Class name</Text>
-        </div>
-        <Text>{props.data.className}</Text>
-      </div>
-      {props.data.errorMessage && (
-        <div className="d-flex flex-row">
-          <div style={{ width: '17%' }}>
-            <Text weight="medium">Error message</Text>
-          </div>
+    <CardSubdued className="mb-4 mt-3 mr-4 ml-9">
+      <Row>
+        <Column size={2}>
+          <Text weight="medium">Type</Text> <br />
+          <Text weight="medium">Error code</Text> <br />
+          <Text weight="medium">Class name</Text> <br />
+          <Text weight="medium">Error message</Text>
+        </Column>
+        <Column>
+          <Text>{props.data.type}</Text> <br />
+          <Text>{props.data.errorCode}</Text> <br />
+          <Text>{props.data.className}</Text> <br />
           <Text>{props.data.errorMessage}</Text>
-        </div>
-      )}
+        </Column>
+      </Row>
     </CardSubdued>
   );
 
@@ -282,35 +268,21 @@ const customCode = `() => {
       return false;
     }
     return (
-      <CardSubdued className="mb-4 mt-3 mr-4" style={{ marginLeft: '40px' }}>
-        <div className="d-flex flex-row">
-          <div style={{ width: '17%' }}>
-            <Text weight="medium">Type</Text>
-          </div>
-          <Text>{data.type}</Text>
-        </div>
-        {data.errorCode && (
-          <div className="d-flex flex-row">
-            <div style={{ width: '17%' }}>
-              <Text weight="medium">Error code</Text>
-            </div>
-            <Text>{data.errorCode}</Text>
-          </div>
-        )}
-        <div className="d-flex flex-row">
-          <div style={{ width: '17%' }}>
-            <Text weight="medium">Class name</Text>
-          </div>
-          <Text>{data.className}</Text>
-        </div>
-        {data.errorMessage && (
-          <div className="d-flex flex-row">
-            <div style={{ width: '17%' }}>
-              <Text weight="medium">Error message</Text>
-            </div>
-            <Text>{data.errorMessage}</Text>
-          </div>
-        )}
+      <CardSubdued className="mb-4 mt-3 mr-4 ml-9">
+        <Row>
+          <Column size={2}>
+            <Text weight="medium">Type</Text> <br />
+            <Text weight="medium">Error code</Text> <br />
+            <Text weight="medium">Class name</Text> <br />
+            <Text weight="medium">Error message</Text>
+          </Column>
+          <Column>
+            <Text>{props.data.type}</Text> <br />
+            <Text>{props.data.errorCode}</Text> <br />
+            <Text>{props.data.className}</Text> <br />
+            <Text>{props.data.errorMessage}</Text>
+          </Column>
+        </Row>
       </CardSubdued>
     );
   }

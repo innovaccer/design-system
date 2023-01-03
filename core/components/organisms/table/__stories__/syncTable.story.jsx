@@ -8,11 +8,7 @@ import { action } from '@/utils/action';
 
 export const syncTable = () => {
   return (
-    <div
-      style={{
-        height: '550px',
-      }}
-    >
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
@@ -48,8 +44,7 @@ export const syncTable = () => {
   );
 };
 
-const customCode = `
-() => {
+const customCode = `() => {
   const data = ${JSON.stringify(
     [...Array(100)].map((_, index) => {
       return data[index % 10];
@@ -162,11 +157,7 @@ const customCode = `
 
 
   return (
-    <div
-      style={{
-        height: '550px',
-      }}
-    >
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
 

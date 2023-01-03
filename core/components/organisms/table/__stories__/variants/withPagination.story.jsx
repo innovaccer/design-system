@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, Heading, Table } from '@/index';
+import { Card, Heading, Table, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
@@ -9,40 +9,28 @@ import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/
 export const withPagination = () => {
   const values = ['basic', 'jump'];
 
-  const style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-  };
   // to freeze the object for typescript
 
   return (
-    <div style={style}>
-      {values.map((v, index) => (
-        <div
-          key={index}
-          style={{
-            margin: '20px',
-            width: '45%',
-          }}
-        >
-          <Heading>{`paginationType: ${v}`}</Heading>
-          <div
-            style={{
-              height: '350px',
-            }}
-          >
-            <Card shadow="light" className="h-100">
-              <Table
-                data={data}
-                schema={schema}
-                withPagination={true}
-                paginationType={v}
-                onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
-              />
-            </Card>
-          </div>
-        </div>
-      ))}
+    <div className="d-flex flex-wrap">
+      <Row>
+        {values.map((v, index) => (
+          <Column key={index} className="ml-10" size={5}>
+            <Heading>{`paginationType: ${v}`}</Heading>
+            <div className="vh-75">
+              <Card shadow="light" className="h-100">
+                <Table
+                  data={data}
+                  schema={schema}
+                  withPagination={true}
+                  paginationType={v}
+                  onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
+                />
+              </Card>
+            </div>
+          </Column>
+        ))}
+      </Row>
     </div>
   );
 };
@@ -97,40 +85,26 @@ const customCode = `
 
   const values = ['basic', 'jump'];
 
-  const style = {
-    display: 'flex',
-    flexWrap: 'wrap',
-  };
-
   return (
-    <div style={style}>
-      {values.map((v, index) => (
-        <div
-          key={index}
-          style={{
-            margin: '20px',
-            width: '45%',
-          }}
-        >
-          <Heading>{\`paginationType: \${v}\`}</Heading>
-          <div
-            style={{
-              height: '350px',
-            }}
-          >
-            <Card shadow="light" className="h-100">
-              <Table
-                data={data}
-                schema={schema}
-                withPagination={true}
-                paginationType={v}
-                pageSize={15}
-                onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
-              />
-            </Card>
-          </div>
+    <div className="d-flex flex-wrap">
+    <Row>
+    {values.map((v, index) => (
+      <Column key={index} className="ml-10" size={5}>
+        <Heading>{\`paginationType: \${v}\`}</Heading>
+        <div className="vh-75">
+          <Card shadow="light" className="h-100">
+            <Table
+              data={data}
+              schema={schema}
+              withPagination={true}
+              paginationType={v}
+              onPageChange={newPage => console.log(\`on-page-change:- \${newPage}\`)}
+            />
+          </Card>
         </div>
-      ))}
+      </Column>
+    ))}
+  </Row>
     </div>
   );
 };
