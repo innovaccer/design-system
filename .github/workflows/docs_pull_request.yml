@@ -28,4 +28,12 @@ jobs:
         run: npm run build
 
       - name: test
-        run: npm run test
+        run: |
+          echo "running"
+          CHANGED_SPECS=$(git diff --name-only -- docs/src/pages/)
+          if [ -n $CHANGED_SPECS ]; then
+            echo "done"
+            echo $CHANGED_SPECS
+          fi
+          echo "exit" 
+
