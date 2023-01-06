@@ -148,7 +148,7 @@ export const secondaryVerticalNavigation = () => {
       <VerticalNav menus={primaryNavdata} active={primaryActive} onClick={setPrimaryActive} />
       <div className="w-100 ml-6">
         <Heading className="my-5">Assessments</Heading>
-        <Card shadow="none" style={{ height: 'calc(80vh)' }}>
+        <Card shadow="none pb-12">
           <VerticalNav menus={secondaryNavdata} active={secondaryActive} onClick={setSecondaryActive} />
         </Card>
       </div>
@@ -308,7 +308,7 @@ const customCode = `() => {
       />
       <div className="w-100 ml-6">
         <Heading className="my-5">Assessments</Heading>
-        <Card shadow="none" style={{ height: 'calc(80vh)' }}>
+        <Card shadow="none pb-12">
           <VerticalNav
             menus={secondaryNavdata}
             active={secondaryActive}
