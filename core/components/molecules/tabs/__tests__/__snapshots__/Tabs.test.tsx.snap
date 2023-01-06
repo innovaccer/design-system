@@ -12,7 +12,7 @@ exports[`Tabs component
       class="TabsWrapper-header"
     >
       <div
-        class="Tab Tab--active Tab-selected"
+        class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
@@ -39,7 +39,7 @@ exports[`Tabs component
         </i>
       </div>
       <div
-        class="Tab"
+        class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
@@ -59,7 +59,7 @@ exports[`Tabs component
         </span>
       </div>
       <div
-        class="Tab Tab--disabled"
+        class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
@@ -93,7 +93,7 @@ exports[`Tabs component
       class="TabsWrapper-header TabsWrapper-header--withSeparator"
     >
       <div
-        class="Tab Tab--active Tab-selected"
+        class="Tab Tab--active Tab-selected align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="0"
       >
@@ -120,7 +120,7 @@ exports[`Tabs component
         </i>
       </div>
       <div
-        class="Tab"
+        class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
@@ -140,7 +140,7 @@ exports[`Tabs component
         </span>
       </div>
       <div
-        class="Tab Tab--disabled"
+        class="Tab Tab--disabled align-items-center"
         data-test="DesignSystem-Tabs--Tab"
         tabindex="-1"
       >
