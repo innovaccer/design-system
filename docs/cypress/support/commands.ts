@@ -109,7 +109,7 @@ const fetchPath = (tabName: string, url: string) => {
 };
 
 Cypress.Commands.add('tabsVisit', () => {
-  cy.get('[data-test=Docs-Main--Row]').then((container) => {
+  cy.get('#tab-container').then((container) => {
     if (container.find('[data-test=DesignSystem-Tabs--Tab]').length > 1) {
       cy.get('[data-test=DesignSystem-Tabs--Tab]')
         .next()

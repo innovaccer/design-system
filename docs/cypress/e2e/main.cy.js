@@ -1,8 +1,11 @@
-const hostURL = Cypress.env('HOST_URL') || 'http://localhost:8000';
+// const hostURL = Cypress.env('HOST_URL') || 'http://localhost:8000';
+let hostURL;
+if (process.env.NODE_ENV === 'development') hostURL = 'https://design-dev.innovaccer.com';
+else hostURL = 'https://design.innovaccer.com';
 
 describe('Tests for search bar functionality', () => {
     it('visit docs main page', () => {
-        cy.visit(hostURL)
+        cy.visit(hostURL);
     })
 
     it('focus on search bar',() => {

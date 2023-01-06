@@ -5,8 +5,8 @@ on:
     paths: 'docs/**'
 
 jobs:
-  lint_test_build:
-    name: lint, test and build
+  lint_build:
+    name: lint and build
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -27,3 +27,5 @@ jobs:
       - name: build
         run: npm run build
 
+      - name: test
+        run: npm run test
