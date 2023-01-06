@@ -65,3 +65,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_KEY_ID }}
           AWS_REGION: ${{ secrets.DOCS_REGION }}
+
+      - name: test
+        run: npm run test
