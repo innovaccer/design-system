@@ -17,7 +17,7 @@ export const all = () => {
   const rows = 3;
 
   return (
-    <div style={{ maxWidth: '300px' }}>
+    <div className="w-25">
       <Textarea
         name="Textarea"
         value={value}
