@@ -239,7 +239,8 @@
 }
 
 .Button--selected:active {
-  background: var(--primary-light);
+  background: var(--primary-lighter);
+  color: var(--primary-darker);
 }
 
 .Button--selected:focus {
@@ -248,7 +249,7 @@
 }
 
 .Button--selected:focus:active {
-  background: var(--primary-light);
+  background: var(--primary-lighter);
 }
 
 .Button--selected:disabled {

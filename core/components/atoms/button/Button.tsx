@@ -160,15 +160,6 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
               <Icon
                 data-test="DesignSystem-Button--Icon"
                 name={icon}
-                appearance={
-                  disabled
-                    ? 'disabled'
-                    : appearance === 'basic' || appearance === 'transparent'
-                    ? selected
-                      ? 'primary_dark'
-                      : 'default'
-                    : 'white'
-                }
                 size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
               />
             </div>
