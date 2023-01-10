@@ -119,6 +119,12 @@ describe('Horizontal Navigation component with prop: menus', () => {
     expect(getAllByTestId('DesignSystem-HorizontalNav--Pills')[0]).toBeInTheDocument();
   });
 
+  it('renders disabled menu', () => {
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
+    const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav')[disabledIndex];
+    expect(disabledMenu).toHaveClass('color-inverse-lightest');
+  });
+
   it('renders menus with disabled menu', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={menus} />);
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[disabledIndex];
@@ -128,7 +134,7 @@ describe('Horizontal Navigation component with prop: menus', () => {
   it('renders iconMenus with disabled menu', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={iconMenus} />);
     const disabledMenu = getAllByTestId('DesignSystem-HorizontalNav--Icon')[disabledIndex];
-    expect(disabledMenu).toHaveClass('Icon--disabled');
+    expect(disabledMenu).toHaveStyle('color: var(--inverse-lightest)');
   });
 
   it('renders countMenus with disabled menu', () => {
@@ -141,6 +147,12 @@ describe('Horizontal Navigation component with prop: menus', () => {
 describe('Horizontal Navigation component active menu', () => {
   const activeIndex = 0;
 
+  it('renders active menu', () => {
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} />);
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav')[activeIndex];
+    expect(activeMenu).toHaveClass('color-primary-dark');
+  });
+
   it('renders menus with active menu', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} />);
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Text')[activeIndex];
@@ -150,7 +162,7 @@ describe('Horizontal Navigation component active menu', () => {
   it('renders iconMenus with active menu', () => {
     const { getAllByTestId } = render(<HorizontalNav menus={iconMenus} active={active} />);
     const activeMenu = getAllByTestId('DesignSystem-HorizontalNav--Icon')[activeIndex];
-    expect(activeMenu).toHaveClass('Icon--primaryDark');
+    expect(activeMenu).toHaveStyle('color: var(--primary-dark)');
   });
 
   it('renders countMenus with active menu', () => {

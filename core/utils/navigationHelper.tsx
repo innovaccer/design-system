@@ -55,3 +55,7 @@ export const isMenuActive = (menus: Menu[], menu: Menu, active?: ActiveMenu): bo
   }
   return false;
 };
+
+export const getNavItemColor = (isActive: boolean, disabled?: boolean) => {
+  return disabled ? 'inverse-lightest' : isActive ? 'primary-dark' : 'inverse';
+};

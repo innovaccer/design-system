@@ -9,12 +9,12 @@ exports[`Horizontal Navigation component
       class="HorizontalNav"
     >
       <div
-        class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate"
+        class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate color-primary-dark"
         data-test="DesignSystem-HorizontalNav"
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--primaryDark mr-3 HorizontalNav-animate"
+          class="material-icons material-icons-round Icon mr-3 HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -29,7 +29,7 @@ exports[`Horizontal Navigation component
         </span>
       </div>
       <div
-        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate"
+        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
         data-test="DesignSystem-HorizontalNav"
         tabindex="0"
       >
@@ -47,7 +47,7 @@ exports[`Horizontal Navigation component
         </span>
       </div>
       <div
-        class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-menu--disabled HorizontalNav-animate"
+        class="HorizontalNav-menu HorizontalNav-menu--disabled HorizontalNav-animate color-inverse-lightest"
         data-test="DesignSystem-HorizontalNav"
         tabindex="0"
       >
