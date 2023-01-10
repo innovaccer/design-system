@@ -28,7 +28,7 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -59,7 +59,7 @@ exports[`Collapsible component
         data-test="DesignSystem-Collapsible"
       >
         <div
-          class="Collapsible-body"
+          class="Collapsible-body Collapsible-body--hoverable"
           data-test="DesignSystem-CollapsibleBody"
         >
           <div>
@@ -71,7 +71,7 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -100,6 +100,7 @@ exports[`Collapsible component
         class="Collapsible"
         data-layer="true"
         data-test="DesignSystem-Collapsible"
+        style="width: 240px;"
       >
         <div
           class="Collapsible-body"
@@ -114,7 +115,7 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -158,7 +159,7 @@ exports[`Collapsible component
           data-test="DesignSystem-Collapsible--Footer"
         >
           <i
-            class="material-icons material-icons-round Icon px-5 py-4 my-2 cursor-pointer"
+            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
