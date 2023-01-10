@@ -15,9 +15,9 @@ export const data = [
     image: () => <StaticImage src="./images/patterns/fileUploader.png" alt="File uploader" imgStyle={imgStyle} />,
   },
   {
-    link: 'forms/usage',
+    link: 'form/usage',
     design: 'Available',
-    name: 'Forms',
+    name: 'Form',
     code: 'Available',
     image: () => <StaticImage src="./images/patterns/Forms.png" alt="Forms" imgStyle={imgStyle} />,
   },
