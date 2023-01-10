@@ -26,6 +26,7 @@ export const GenericChip = (props: GenericChipProps) => {
     classNames({
       ['Chip-icon']: true,
       [`Chip-icon--${align}`]: align,
+      [`Chip-icon-disabled--right`]: align === 'right' && disabled,
       ['cursor-pointer']: align === 'right' && !disabled,
       ['Chip-icon--selected']: align === 'right' && selected,
     });
