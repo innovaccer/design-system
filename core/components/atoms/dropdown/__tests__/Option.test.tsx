@@ -20,6 +20,7 @@ describe('renders different options', () => {
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')).toHaveLength(storyOptions.length);
     expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0].textContent).toMatch(storyOptions[0].label);
+    expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0]).toHaveClass('color-inverse');
   });
 
   it('renders WITH_ICON options', () => {
@@ -29,6 +30,7 @@ describe('renders different options', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')).toHaveLength(iconOptions.length);
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[0].textContent).toMatch(iconOptions[0].label);
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[0].textContent).toMatch(iconOptions[0].icon);
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[0]).toHaveClass('color-inverse');
   });
 
   it('renders WITH_META options', () => {
@@ -40,6 +42,7 @@ describe('renders different options', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META--Meta')[0].textContent).toMatch(
       subInfoOptions[0].subInfo
     );
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META')[0]).toHaveClass('color-inverse');
   });
 
   it('renders WITH_CHECKBOX options', () => {
@@ -66,6 +69,7 @@ describe('renders different options', () => {
     expect(getAllByTestId('DesignSystem-DropdownOption--ICON_WITH_META')[0].textContent).toMatch(
       iconWithSubinfoOptions[0].subInfo
     );
+    expect(getAllByTestId('DesignSystem-DropdownOption--ICON_WITH_META')[0]).toHaveClass('color-inverse');
   });
 });
 
@@ -134,6 +138,7 @@ describe('renders active option', () => {
     const option = getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0];
     fireEvent.mouseEnter(option);
     expect(option).toHaveClass('Option--active');
+    expect(option).toHaveClass('color-inverse');
   });
 
   it('with checkbox', () => {
@@ -165,6 +170,7 @@ describe('renders selected option', () => {
     const selectedOption = getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[0];
     fireEvent.click(selectedOption);
     expect(selectedOption).toHaveClass('Option--selected');
+    expect(selectedOption).toHaveClass('color-primary-dark');
   });
 
   it('WITH_ICON options', () => {
@@ -175,6 +181,7 @@ describe('renders selected option', () => {
     const selectedOption = getAllByTestId('DesignSystem-DropdownOption--WITH_ICON')[0];
     fireEvent.click(selectedOption);
     expect(selectedOption).toHaveClass('Option--selected');
+    expect(selectedOption).toHaveClass('color-primary-dark');
   });
 
   it('WITH_META options', () => {
@@ -185,6 +192,7 @@ describe('renders selected option', () => {
     const selectedOption = getAllByTestId('DesignSystem-DropdownOption--WITH_META')[0];
     fireEvent.click(selectedOption);
     expect(selectedOption).toHaveClass('Option--selected');
+    expect(selectedOption).toHaveClass('color-primary-dark');
   });
 });
 
@@ -194,6 +202,7 @@ describe('renders disabled option', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[1]).toHaveClass('Option--disabled');
+    expect(getAllByTestId('DesignSystem-DropdownOption--DEFAULT')[1]).toHaveClass('color-inverse-lightest');
     expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('color-inverse-lightest');
   });
 
@@ -210,6 +219,9 @@ describe('renders disabled option', () => {
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('color-inverse-lightest');
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[1]).toHaveClass('material-icons-round');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[1]).toHaveStyle(
+      'color: var(--inverse-lightest);'
+    );
   });
 
   it('WITH_META options', () => {

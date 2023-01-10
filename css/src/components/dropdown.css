@@ -122,7 +122,13 @@
 }
 
 .Option--selected:active {
-  background-color: var(--primary-light);
+  background-color: var(--primary-lighter);
+  color: var(--primary-darker);
+}
+
+.Option--selected:active .Option-text,
+.Option--selected:active .Option-subInfo {
+  color: var(--primary-darker);
 }
 
 .Option--disabled,
