@@ -127,6 +127,32 @@
 }
 
 .DismissibleTab-icon--right {
-  padding-left: var(--spacing-m);
-  padding-top: var(--spacing-s);
+  padding: var(--spacing-s);
+  margin-left: var(--spacing-s);
+  outline: none;
+  border-radius: 10px;
+}
+
+.DismissibleTab-icon--default:focus-visible {
+  outline: var(--spacing-s) solid var(--secondary-shadow);
+}
+
+.DismissibleTab-icon--default:hover {
+  background-color: var(--secondary);
+}
+
+.DismissibleTab-icon--default:active {
+  background-color: var(--secondary-dark);
+}
+
+.DismissibleTab-icon--selected:focus-visible {
+  outline: var(--spacing-s) solid var(--primary-shadow);
+}
+
+.DismissibleTab-icon--selected:hover {
+  background-color: var(--primary-lighter);
+}
+
+.DismissibleTab-icon--selected:active {
+  background-color: var(--primary-light);
 }

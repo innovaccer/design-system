@@ -118,6 +118,18 @@ describe('Tabs component', () => {
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[disabledTab]).toHaveClass('Tab--disabled');
     expect(getAllByTestId('DesignSystem-Tabs--Pills')[1]).toHaveClass('Tab-pills--disabled');
   });
+
+  it('renders dismissible tab component in active state', () => {
+    const activeTab = 0;
+    const { getByTestId } = render(<Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={tabs} />);
+    expect(getByTestId('DesignSystem-DismissibleTabs--Icon')).toHaveClass('DismissibleTab-icon--selected');
+  });
+
+  it('renders dismissible tab component', () => {
+    const activeTab = 1;
+    const { getByTestId } = render(<Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={tabs} />);
+    expect(getByTestId('DesignSystem-DismissibleTabs--Icon')).toHaveClass('DismissibleTab-icon--default');
+  });
 });
 
 describe('TabsWrapper component with prop: onTabChange', () => {
