@@ -99,7 +99,7 @@ exports[`ChipInput component
             1020
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+            class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right Chip-icon-disabled--right"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -120,7 +120,7 @@ exports[`ChipInput component
             80
           </span>
           <i
-            class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+            class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right Chip-icon-disabled--right"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
             style="font-size: 16px; width: 16px;"

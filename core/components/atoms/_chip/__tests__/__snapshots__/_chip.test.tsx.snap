@@ -217,7 +217,7 @@ exports[`Chip component
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right"
+        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right Chip-icon-disabled--right"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
@@ -255,7 +255,7 @@ exports[`Chip component
         ChipLabel
       </span>
       <i
-        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--right Chip-icon--selected"
+        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
         style="font-size: 16px; width: 16px;"
