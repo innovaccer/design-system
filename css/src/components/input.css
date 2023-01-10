@@ -122,12 +122,33 @@
   color: var(--inverse-lighter);
 }
 
-.Input-icon--right .Icon {
+.Input-icon--right {
   cursor: pointer;
-  margin-left: var(--spacing);
   color: var(--inverse-lighter);
+  border-radius: 10px;
+}
+
+.Input-iconWrapper--right:focus-visible .Input-icon--right {
+  outline: var(--spacing-s) solid var(--secondary-shadow);
+}
+
+.Input-icon--right:focus-visible {
+  outline: var(--spacing-s) solid var(--secondary-shadow);
+  border-radius: 10px;
+}
+
+.Input-iconWrapper--right:hover .Input-icon--right {
+  background-color: var(--secondary);
+}
+
+.Input-iconWrapper--right:active .Input-icon--right {
+  background-color: var(--secondary-dark);
 }
 
 .Input-inlineLabel {
   margin-right: var(--spacing);
+}
+
+.Input-iconWrapper--right:focus-visible {
+  outline: none;
 }

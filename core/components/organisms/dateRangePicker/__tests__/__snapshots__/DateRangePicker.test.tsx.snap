@@ -38634,10 +38634,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -38695,10 +38695,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -38775,10 +38775,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -38836,10 +38836,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -38916,10 +38916,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -38977,10 +38977,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40136,10 +40136,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40197,10 +40197,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40277,10 +40277,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40338,10 +40338,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40418,10 +40418,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -40479,10 +40479,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41638,10 +41638,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -41699,10 +41699,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -42765,10 +42765,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -42826,10 +42826,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -43892,10 +43892,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -43953,10 +43953,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -46098,10 +46098,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -46159,10 +46159,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -47225,10 +47225,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -47286,10 +47286,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -48352,10 +48352,10 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -48413,10 +48413,10 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-icon--right"
+                class="Input-icon Input-iconWrapper--right"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-round Icon Input-icon--right"
                   data-test="DesignSystem-Input--closeIcon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
