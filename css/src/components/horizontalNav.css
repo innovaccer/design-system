@@ -46,7 +46,12 @@
 }
 
 .HorizontalNav-menu--active:active {
-  background-color: var(--primary-light);
+  background-color: var(--primary-lighter);
+  color: var(--primary-darker);
+}
+
+.HorizontalNav-menu--active:active .HorizontalNav-menuText {
+  color: var(--primary-darker);
 }
 
 .HorizontalNav-menuText {

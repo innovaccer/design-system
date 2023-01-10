@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { VerticalNavProps } from '@/index.type';
 import { extractBaseProps, BaseProps } from '@/utils/types';
-import { getTextColor, getIconAppearance, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
+import { getNavItemColor, getPillsAppearance, isMenuActive, Menu } from '@/utils/navigationHelper';
 
 export type HorizontalNavProps = BaseProps & Pick<VerticalNavProps, 'menus' | 'active' | 'onClick'>;
 export type Align = 'left' | 'center';
@@ -48,12 +48,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
     if (menu.icon) {
       return (
-        <Icon
-          className="mr-3 HorizontalNav-animate"
-          name={menu.icon}
-          appearance={getIconAppearance(isActive, menu.disabled)}
-          data-test="DesignSystem-HorizontalNav--Icon"
-        />
+        <Icon className="mr-3 HorizontalNav-animate" name={menu.icon} data-test="DesignSystem-HorizontalNav--Icon" />
       );
     }
 
@@ -62,13 +57,15 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
 
   const list = menus.map((menu, index) => {
     const isActive = isMenuActive(menus, menu, active);
+    const itemColor = getNavItemColor(isActive, menu.disabled);
 
     const menuClasses = classNames({
       'HorizontalNav-menu': true,
-      'HorizontalNav-menu--default': !isActive,
+      'HorizontalNav-menu--default': !isActive && !menu.disabled,
       ['HorizontalNav-menu--active']: isActive,
       ['HorizontalNav-menu--disabled']: menu.disabled,
       [`HorizontalNav-animate`]: true,
+      [`color-${itemColor}`]: true,
     });
 
     return (
@@ -77,7 +74,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
       <div tabIndex={0} data-test="DesignSystem-HorizontalNav" key={index} className={menuClasses} onClick={onClickHandler(menu)}>
         {renderIcon(menu, isActive)}
         <Text
-          color={getTextColor(isActive, menu.disabled)}
+          color={itemColor}
           data-test="DesignSystem-HorizontalNav--Text"
           className="HorizontalNav-menuText HorizontalNav-animate"
         >
