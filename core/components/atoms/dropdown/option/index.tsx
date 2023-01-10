@@ -98,6 +98,10 @@ const Option = (props: OptionProps) => {
 
   const { optionType = 'DEFAULT' } = optionData.optionType ? optionData : props;
   const { disabled } = optionData;
+  const color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
+  const appearance = disabled ? 'disabled' : selected && !menu ? 'primary_dark' : 'default';
+  const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
+  const component = OptionTypeMapping[type];
 
   const OptionClassName = classNames({
     ['Option']: true,
@@ -105,6 +109,7 @@ const Option = (props: OptionProps) => {
     ['Option--selected']: selected && !menu,
     ['Option--disabled']: disabled,
     ['OptionWrapper']: true,
+    [`color-${color}`]: true,
   });
 
   const CheckboxClassName = classNames({
@@ -165,12 +170,18 @@ const Option = (props: OptionProps) => {
 
   const renderSubInfo = (subInfo: string | MetaListProps) => {
     const labelAppearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'subtle';
-    const color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
+    const subInfoColor = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse-lighter';
     const iconAppearance = selected ? 'white' : 'disabled';
 
     if (typeof subInfo === 'string') {
       return (
-        <Text data-test="DesignSystem-DropdownOption--WITH_META--Meta" color={color} size="small" weight="medium">
+        <Text
+          data-test="DesignSystem-DropdownOption--WITH_META--Meta"
+          color={subInfoColor}
+          size="small"
+          weight="medium"
+          className="Option-subInfo"
+        >
           {subInfo}
         </Text>
       );
@@ -188,11 +199,6 @@ const Option = (props: OptionProps) => {
       />
     );
   };
-
-  const color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
-  const appearance = disabled ? 'disabled' : selected && !menu ? 'primary_dark' : 'default';
-  const type = checkboxes ? 'WITH_CHECKBOX' : optionType;
-  const component = OptionTypeMapping[type];
 
   return component({
     selected,
