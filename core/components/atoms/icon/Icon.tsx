@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { useAccessibilityProps } from '@/accessibility/utils';
+import { Color as IconColor } from '@/common.type';
 
 export type IconAppearance =
   | 'default'
@@ -53,9 +54,13 @@ export interface IconProps extends BaseProps {
    */
   type?: IconType;
   /**
-   * Color of `Icon`    // 'info' appearance will be deprecated soon.
+   * State of `Icon`    // 'info' appearance will be deprecated soon.
    */
   appearance?: IconAppearance;
+  /**
+   * Color of `Icon`
+   */
+  color?: IconColor;
   /**
    * Handler to be called when icon is clicked
    */
@@ -76,7 +81,7 @@ export interface IconProps extends BaseProps {
 }
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children } = props;
+  const { appearance, className, name, size, children, color } = props;
   const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
@@ -94,13 +99,14 @@ export const Icon = (props: IconProps) => {
     return iconColor.slice(0, x) + iconColor.charAt(x + 1).toUpperCase() + iconColor.slice(x + 2);
   };
 
-  const color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
+  const iconAppearance = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
 
   const iconClass = classNames({
     ['material-icons']: true, // change to !type || type === 'filled' after migration
     [`material-icons-${mapper(type)}`]: type && type !== 'filled',
     ['Icon']: true,
-    [`Icon--${color}`]: appearance,
+    [`Icon--${iconAppearance}`]: !color && appearance,
+    [`color-${color}`]: color,
     [`${className}`]: className,
   });
 
@@ -118,7 +124,7 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
+    <i data-test="DesignSystem-Icon" {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
       {type ? `${name}_${type}` : name}
     </i>
   );

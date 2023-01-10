@@ -53,6 +53,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -70,6 +71,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -716,6 +718,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -733,6 +736,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -1379,6 +1383,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -1396,6 +1401,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -2041,6 +2047,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -2058,6 +2065,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -2703,6 +2711,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -2720,6 +2729,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -3365,6 +3375,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -3382,6 +3393,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -4027,6 +4039,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -4534,6 +4547,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -4551,6 +4565,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   </h5>
                   <i
                     class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
                   >
@@ -5167,6 +5182,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
           >
             <i
               class="material-icons material-icons-round Icon"
+              data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
             >

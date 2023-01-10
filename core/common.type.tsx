@@ -21,7 +21,7 @@ export type AutoComplete = 'on' | 'off';
 export type NumberRange = [number, number];
 export type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
-export type TextColor =
+export type Color =
   | 'white'
   | 'primary'
   | 'secondary'

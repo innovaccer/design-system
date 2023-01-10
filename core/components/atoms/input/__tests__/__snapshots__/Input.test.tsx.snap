@@ -40,6 +40,7 @@ exports[`Input component
       >
         <i
           class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
         >
@@ -99,6 +100,7 @@ exports[`Input component
       >
         <i
           class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
         >
@@ -392,6 +394,7 @@ exports[`Input component
       >
         <i
           class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
         >
@@ -453,6 +456,7 @@ exports[`Input component
       >
         <i
           class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
         >
@@ -512,6 +516,7 @@ exports[`Input component
       >
         <i
           class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
         >

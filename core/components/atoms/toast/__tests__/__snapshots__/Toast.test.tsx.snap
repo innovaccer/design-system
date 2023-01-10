@@ -10,6 +10,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -29,6 +30,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -52,6 +54,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -71,6 +74,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -94,6 +98,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -113,6 +118,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -136,6 +142,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -155,6 +162,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -178,6 +186,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -197,6 +206,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -226,6 +236,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -245,6 +256,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -288,6 +300,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -307,6 +320,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -336,6 +350,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -355,6 +370,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -398,6 +414,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -417,6 +434,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -446,6 +464,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -465,6 +484,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -508,6 +528,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -527,6 +548,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"
@@ -556,6 +578,7 @@ exports[`Toast component
     >
       <i
         class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        data-test="DesignSystem-Icon"
         role="button"
         style="font-size: 16px; width: 16px;"
       >
@@ -575,6 +598,7 @@ exports[`Toast component
           </h5>
           <i
             class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning"
+            data-test="DesignSystem-Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
             tabindex="0"

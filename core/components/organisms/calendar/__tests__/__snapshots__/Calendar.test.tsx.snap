@@ -49,6 +49,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -66,6 +67,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -688,6 +690,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -705,6 +708,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -1329,6 +1333,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -1346,6 +1351,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -1969,6 +1975,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -1986,6 +1993,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -2609,6 +2617,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -2626,6 +2635,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -3248,6 +3258,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -3265,6 +3276,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -3887,6 +3899,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -3904,6 +3917,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -4526,6 +4540,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -4543,6 +4558,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -5165,6 +5181,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -5182,6 +5199,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -5804,6 +5822,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -5821,6 +5840,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -6443,6 +6463,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -6460,6 +6481,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -7082,6 +7104,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -7099,6 +7122,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -7721,6 +7745,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -7738,6 +7763,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -8199,6 +8225,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -8216,6 +8243,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -8736,6 +8764,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -8753,6 +8782,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -9214,6 +9244,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -9231,6 +9262,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -9685,6 +9717,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -9702,6 +9735,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -10289,6 +10323,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -10306,6 +10341,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -10928,6 +10964,7 @@ exports[`Calendar component
               </h5>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -11389,6 +11426,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -11406,6 +11444,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -12028,6 +12067,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -12045,6 +12085,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -12506,6 +12547,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -12523,6 +12565,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -13043,6 +13086,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -13060,6 +13104,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -13521,6 +13566,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -13538,6 +13584,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -13992,6 +14039,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -14009,6 +14057,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -14596,6 +14645,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -14613,6 +14663,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
@@ -15235,6 +15286,7 @@ exports[`Calendar component
               </span>
               <i
                 class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >

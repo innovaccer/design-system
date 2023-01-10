@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
-import { TextColor } from '@/common.type';
+import { Color as TextColor } from '@/common.type';
 
 export type TextSize = 'small' | 'regular' | 'large';
 export type TextAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled' | 'success' | 'link';

@@ -35,6 +35,7 @@ exports[`EditableDropdown component
               />
               <i
                 class="material-icons material-icons-round Icon Icon--default"
+                data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
               >
