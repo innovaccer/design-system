@@ -206,4 +206,25 @@ describe('Chip component', () => {
     fireEvent.click(onClose);
     expect(handleOnClose.mock.calls[0][0]).toBe(nameObject);
   });
+
+  it('renders chip component with label of type string', () => {
+    const { getByTestId } = render(<Chip label="ChipLabel" name="Chip" />);
+    const stringLabel = getByTestId('DesignSystem-GenericChip--Text');
+    expect(stringLabel).toHaveClass('Chip-text');
+  });
+
+  it('renders chip component with label of type ReactElement', () => {
+    const labelText = 'Chip';
+    const { getByTestId } = render(
+      <Chip
+        label={<Text>{labelText}</Text>}
+        name={{
+          Custom: 'Label',
+        }}
+        type="selection"
+      />
+    );
+    const customLabel = getByTestId('DesignSystem-Text');
+    expect(customLabel).not.toHaveClass('Chip-text');
+  });
 });

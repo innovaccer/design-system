@@ -58,7 +58,7 @@ export const GenericChip = (props: GenericChipProps) => {
   const renderLabel = () => {
     if (typeof label === 'string') {
       return (
-        <Text data-test="DesignSystem-GenericChip--Text" color={textColor}>
+        <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className="Chip-text">
           {label}
         </Text>
       );
