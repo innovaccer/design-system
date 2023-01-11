@@ -12,7 +12,7 @@ export const position = () => {
         return (
           <div key={ind} className={`mr-13 ml-12 ${ind < 3 ? 'mt-11' : 'mt-5 mb-11'}`}>
             <Popover trigger={getTrigger(pos)} position={pos} open={true}>
-              <div style={{ width: 100 }} className="mx-6 my-6">
+              <div className="m-6 pr-9">
                 <Text>Popup</Text>
                 <Button appearance="primary" className="mt-4">
                   Click

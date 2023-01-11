@@ -7,13 +7,13 @@ import { Uncontrolled, Controlled } from '../_common_/types';
 // CSF format story
 export const optionsWrap = () => {
   return (
-    <div style={{ display: 'flex', minHeight: '240px' }}>
-      <div style={{ marginRight: '5%', width: '128px' }}>
+    <div className="d-flex pb-14">
+      <div className="mr-9">
         <Text weight="strong">{'Options Trimmed'}</Text> <br />
         <br />
         <Dropdown options={storyWrapOptions} placeholder={'Select'} />
       </div>
-      <div style={{ marginRight: '5%', width: '128px' }}>
+      <div className="mr-9">
         <Text weight="strong">{'Options Wrapped'}</Text> <br />
         <br />
         <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} />
@@ -39,11 +39,11 @@ const customCode = `() => {
   ];
   return (
     <div className='d-flex'>
-      <div className='mr-9' style={{ width: '128px' }}>
+      <div className='mr-9'>
         <Text weight="strong">{'Options Trimmed'}</Text> <br /><br />
         <Dropdown options={storyWrapOptions} placeholder={'Select'} />
       </div>
-      <div className='mr-9' style={{ width: '128px' }}>
+      <div className='mr-9'>
         <Text weight="strong">{'Options Wrapped'}</Text> <br /><br />
         <Dropdown options={storyWrapOptions} placeholder={'Select'} truncateOption={false} />
       </div>

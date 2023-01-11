@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { EditableInput } from '@/index';
+import './style.css';
 
 // CSF format story
 export const error = () => {
@@ -10,7 +11,7 @@ export const error = () => {
   };
 
   return (
-    <div style={{ width: 'var(--spacing-9)' }}>
+    <div className="EditableInput-wrapper--error">
       <EditableInput
         placeholder="First Name"
         value={value}
@@ -22,7 +23,14 @@ export const error = () => {
   );
 };
 
-const customCode = `() => {
+const customCode = `/*
+// style.css
+.EditableInput-wrapper--error {
+  width: var(--spacing-9);
+}
+
+*/
+() => {
   const [value, setValue] = React.useState('');
 
   const onChange = (value) => {
@@ -30,7 +38,7 @@ const customCode = `() => {
   }
 
   return (
-    <div style={{ width: 'var(--spacing-9)' }}>
+    <div className='EditableInput-wrapper--error'>
       <EditableInput
         placeholder="First Name"
         value={value}

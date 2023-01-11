@@ -9,10 +9,10 @@ export const align = () => {
   const dropdownAlignments = ['right', 'left'];
 
   return (
-    <div style={{ display: 'flex', minHeight: '280px' }}>
+    <div className="d-flex pb-14">
       {dropdownAlignments.map((alignment, ind) => {
         return (
-          <div key={ind} style={{ marginRight: '20%' }}>
+          <div key={ind} className="ml-12">
             <Text weight="strong">{`Towards ${alignment.charAt(0).toUpperCase() + alignment.slice(1)}`}</Text>
             <br />
             <br />

@@ -8,11 +8,7 @@ import { action } from '@/utils/action';
 
 export const asyncTable = () => {
   return (
-    <div
-      style={{
-        height: '450px',
-      }}
-    >
+    <div>
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
@@ -261,11 +257,7 @@ const customCode = `
   const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
 
   return (
-    <div
-      style={{
-        height: '450px',
-      }}
-    >
+    <div>
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}

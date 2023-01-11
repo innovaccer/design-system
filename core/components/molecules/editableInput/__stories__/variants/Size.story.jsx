@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { EditableInput, Label } from '@/index';
+import { EditableInput, Label, Row, Column } from '@/index';
 
 // CSF format story
 export const size = () => {
@@ -15,20 +15,22 @@ export const size = () => {
   };
 
   return (
-    <div className="d-flex">
-      <div className="d-flex flex-column" style={{ width: 'var(--spacing-9)' }}>
+    <Row>
+      <div className="d-flex flex-column vw-25">
         <Label withInput={true} className="ml-5">
           Regular
         </Label>
         <EditableInput placeholder="First Name" value={name} onChange={onChangeName} className="mr-5" />
       </div>
-      <div className="d-flex ml-8 flex-column" style={{ width: 'var(--spacing-7)' }}>
-        <Label withInput={true} className="ml-5">
-          Tiny
-        </Label>
-        <EditableInput placeholder="Add Weight" value={weight} onChange={onChangeWeight} size="tiny" />
-      </div>
-    </div>
+      <Column size={2}>
+        <div className="d-flex ml-8 flex-column">
+          <Label withInput={true} className="ml-5">
+            Tiny
+          </Label>
+          <EditableInput placeholder="Add Weight" value={weight} onChange={onChangeWeight} size="tiny" />
+        </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -45,8 +47,8 @@ const customCode = `() => {
   }
 
   return (
-    <div className="d-flex">
-      <div className="d-flex flex-column" style={{ width: 'var(--spacing-9)' }}>
+    <Row>
+      <div className="d-flex flex-column vw-25">
         <Label withInput={true} className="ml-5">Regular</Label>
         <EditableInput
           placeholder="First Name"
@@ -55,16 +57,18 @@ const customCode = `() => {
           className="mr-5"
         />
       </div>
-      <div className="d-flex ml-8 flex-column" style={{ width: 'var(--spacing-7)' }}>
-        <Label withInput={true} className="ml-5">Tiny</Label>
-        <EditableInput
-          placeholder="Add Weight"
-          value={weight}
-          onChange={onChangeWeight}
-          size="tiny"
-        />
-      </div>
-    </div>
+      <Column size={2}>
+        <div className="d-flex ml-8 flex-column">
+          <Label withInput={true} className="ml-5">Tiny</Label>
+          <EditableInput
+            placeholder="Add Weight"
+            value={weight}
+            onChange={onChangeWeight}
+            size="tiny"
+          />
+        </div>
+      </Column>
+    </Row>
   );
 }`;
 

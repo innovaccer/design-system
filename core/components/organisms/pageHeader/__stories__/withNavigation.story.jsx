@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Navigation, Button, PageHeader } from '@/index';
+import { Navigation, Button, PageHeader, Row, Column } from '@/index';
+
 export const level0WithNavigation = () => {
   const navigationData = [
     {
@@ -29,9 +30,13 @@ export const level0WithNavigation = () => {
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest" style={{ width: '900px' }}>
-      <PageHeader title="Dashboard" separator={true} navigation={navigation} actions={actions} />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-6 bg-secondary-lightest">
+          <PageHeader title="Dashboard" separator={true} navigation={navigation} actions={actions} />
+        </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -64,14 +69,18 @@ const customCode = `() => {
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest" style={{width:'900px'}}>
-      <PageHeader
-        title="Dashboard"
-        separator={true}
-        navigation={navigation}
-        actions={actions}
-      />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-6 bg-secondary-lightest">
+          <PageHeader
+            title="Dashboard"
+            separator={true}
+            navigation={navigation}
+            actions={actions}
+          />
+        </div>
+      </Column>
+    </Row>
   );
 }`;
 

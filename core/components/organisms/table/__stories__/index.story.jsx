@@ -73,11 +73,7 @@ export const all = () => {
   }
 
   return (
-    <div
-      style={{
-        height: '350px',
-      }}
-    >
+    <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
           key={`${async}`}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Tabs, PageHeader } from '@/index';
+import { Button, Tabs, PageHeader, Row, Column } from '@/index';
 
 export const level0WithFilter = () => {
   const tabs = [
@@ -31,9 +31,13 @@ export const level0WithFilter = () => {
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest" style={{ width: '900px' }}>
-      <PageHeader title="Users" separator={true} tabs={tab} actions={actions} />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-6 bg-secondary-lightest">
+          <PageHeader title="Users" separator={true} tabs={tab} actions={actions} />
+        </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -71,14 +75,18 @@ const customCode = `() => {
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest" style={{width:'900px'}}>
-      <PageHeader
-        title="Users"
-        separator={true}
-        tabs={tab}
-        actions={actions}
-      />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-6 bg-secondary-lightest">
+          <PageHeader
+            title="Users"
+            separator={true}
+            tabs={tab}
+            actions={actions}
+          />
+        </div>
+      </Column>
+    </Row>
   );
 }`;
 

@@ -96,7 +96,7 @@ export const multiSelect = () => {
 
   return (
     <div className="d-flex">
-      <div style={{ width: '170px' }}>
+      <div className="w-25">
         <Text weight="strong">{'Options > 50'}</Text>
         <br />
         <br />
@@ -108,7 +108,7 @@ export const multiSelect = () => {
           withCheckbox={true}
         />
       </div>
-      <div style={{ width: '170px', marginLeft: '128px' }}>
+      <div className="ml-8 w-25">
         <Text weight="strong">{'Options <= 50'}</Text>
         <br />
         <br />

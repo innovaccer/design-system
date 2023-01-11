@@ -131,7 +131,7 @@ export const resourceTable = () => {
       cellRenderer: (props) => (
         <div className="d-flex align-items-center justify-content-end flex-grow-1">
           <Avatar firstName={props.data.firstName} lastName={props.data.lastName} />
-          <div style={{ width: 'var(--spacing-3)' }} className="ml-6">
+          <div className="ml-6">
             <Dropdown
               triggerOptions={{
                 customTrigger: () => <Button icon="more_horiz" appearance="transparent" />,
@@ -254,7 +254,7 @@ const customCode = `
         return (
           <div className="d-flex align-items-center justify-content-end flex-grow-1">
             <Avatar firstName={data.firstName} lastName={data.lastName} />
-            <div style={{ width: 'var(--spacing-3)' }} className="ml-6">
+            <div className="ml-6">
               <Dropdown
                 triggerOptions={{
                   customTrigger: () => (
