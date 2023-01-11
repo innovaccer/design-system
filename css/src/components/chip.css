@@ -35,14 +35,13 @@
 }
 
 .Chip--action {
-  background: var(--white);
-  border: var(--border);
+  background: var(--secondary-light);
+  border: 0px;
   cursor: pointer;
 }
 
 .Chip--action:hover {
-  background: var(--secondary-light);
-  border-color: var(--secondary-dark);
+  background: var(--secondary);
 }
 
 .Chip--action:focus-visible {
@@ -52,12 +51,12 @@
 
 .Chip--action:active {
   background: var(--secondary-dark);
-  border-color: var(--inverse-lightest);
 }
 
 .Chip-action--disabled {
-  background: var(--secondary-lightest);
-  border: var(--border);
+  background: var(--secondary-lighter);
+  border: 0px;
+  outline: none;
   cursor: default;
 }
 
@@ -105,6 +104,11 @@
 .Chip-selection--selected:active {
   background: var(--primary-lighter);
   border-color: var(--primary-dark);
+}
+
+.Chip-selection--selected:active .Chip-icon,
+.Chip-selection--selected:active .Chip-text {
+  color: var(--primary-darker);
 }
 
 .Chip-selection--selectedDisabled {

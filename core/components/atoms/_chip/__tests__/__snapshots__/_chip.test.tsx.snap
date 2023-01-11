@@ -19,7 +19,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-inverse"
+        class="Text Text--regular color-inverse Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -48,7 +48,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-primary-dark"
+        class="Text Text--regular color-primary-dark Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -77,7 +77,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-inverse-lightest"
+        class="Text Text--regular color-inverse-lightest Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -106,7 +106,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-primary-lighter primary-dark"
+        class="Text Text--regular color-primary-lighter primary-dark Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -135,7 +135,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-inverse"
+        class="Text Text--regular color-inverse Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -173,7 +173,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-primary-dark"
+        class="Text Text--regular color-primary-dark Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -211,7 +211,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-inverse-lightest"
+        class="Text Text--regular color-inverse-lightest Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
@@ -249,7 +249,7 @@ exports[`Chip component
         events_round
       </i>
       <span
-        class="Text Text--regular color-primary-lighter primary-dark"
+        class="Text Text--regular color-primary-lighter primary-dark Chip-text"
         data-test="DesignSystem-GenericChip--Text"
       >
         ChipLabel
