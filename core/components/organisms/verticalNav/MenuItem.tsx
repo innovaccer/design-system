@@ -2,8 +2,9 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Text, Icon, Pills } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { getTextColor, getIconAppearance, getPillsAppearance, Menu } from '@/utils/navigationHelper';
+import { getNavItemColor, getPillsAppearance, Menu } from '@/utils/navigationHelper';
 import Link from '@/components/atoms/_text';
+import { TextColor } from '@/common.type';
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
   isActive: boolean;
@@ -23,34 +24,25 @@ interface MenuPillsProps {
 
 interface MenuLabelProps {
   label: string;
-  disabled?: boolean;
-  isActive: boolean;
+  labelColor: TextColor;
 }
 
 interface MenuIconProps {
   isChildrenVisible?: boolean;
-  isActive?: boolean;
-  disabled?: boolean;
 }
 
 const MenuLabel = (props: MenuLabelProps) => {
-  const { label, disabled, isActive } = props;
+  const { label, labelColor } = props;
   return (
-    <Text data-test="DesignSystem-VerticalNav--Text" color={getTextColor(isActive, disabled)}>
+    <Text data-test="DesignSystem-VerticalNav--Text" color={labelColor} className="MenuItem-Text">
       {label}
     </Text>
   );
 };
 
 const MenuIcon = (props: MenuIconProps) => {
-  const { isChildrenVisible, isActive, disabled } = props;
-  return (
-    <Icon
-      className="mx-4"
-      name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
-      appearance={isActive ? 'primary_dark' : disabled ? 'disabled' : 'subtle'}
-    />
-  );
+  const { isChildrenVisible } = props;
+  return <Icon className="mx-4" name={isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'} />;
 };
 
 const MenuPills = (props: MenuPillsProps) => {
@@ -89,6 +81,8 @@ export const MenuItem = (props: MenuItemProps) => {
     ...extractBaseProps(props),
   };
 
+  const itemColor = getNavItemColor(isActive, menu.disabled);
+
   const ItemClass = classNames({
     ['MenuItem']: true,
     ['MenuItem--vertical']: true,
@@ -98,11 +92,12 @@ export const MenuItem = (props: MenuItemProps) => {
     ['MenuItem--disabled']: menu.disabled,
     ['MenuItem--subMenu']: isChildren && expanded,
     ['MenuItem--rounded']: rounded && expanded,
+    [`color-${itemColor}`]: true,
   });
 
   const renderSubMenu = () => {
     if (hasSubmenu) {
-      return <MenuIcon isChildrenVisible={isChildrenVisible} isActive={isActive} disabled={menu.disabled} />;
+      return <MenuIcon isChildrenVisible={isChildrenVisible} />;
     }
 
     if (menu.count !== undefined) {
@@ -116,8 +111,8 @@ export const MenuItem = (props: MenuItemProps) => {
 
   const customItemProps = {
     ...props,
-    MenuIcon: () => MenuIcon({ isChildrenVisible, isActive, disabled: menu.disabled }),
-    MenuLabel: () => MenuLabel({ label: menu.label, disabled: menu.disabled, isActive: isActive }),
+    MenuIcon: () => MenuIcon({ isChildrenVisible }),
+    MenuLabel: () => MenuLabel({ label: menu.label, labelColor: itemColor }),
     MenuPills: () =>
       menu.count !== undefined ? MenuPills({ disabled: menu.disabled, isActive: isActive, count: menu.count }) : <></>,
   };
@@ -130,14 +125,9 @@ export const MenuItem = (props: MenuItemProps) => {
     <Link componentType="a" className={ItemClass} {...baseProps}>
       <div className="d-flex align-items-center overflow-hidden">
         {menu.icon && (
-          <Icon
-            data-test="DesignSystem-VerticalNav--Icon"
-            className={expanded ? 'mr-4' : ''}
-            name={menu.icon}
-            appearance={getIconAppearance(isActive, menu.disabled)}
-          />
+          <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
         )}
-        {expanded && <MenuLabel label={menu.label} disabled={menu.disabled} isActive={isActive} />}
+        {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}
       </div>
       {expanded && renderSubMenu()}
     </Link>

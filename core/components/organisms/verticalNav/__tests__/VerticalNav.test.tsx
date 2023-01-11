@@ -149,11 +149,15 @@ describe('Vertical Navigation component with prop: menus', () => {
 
   it('renders menus with disabled menu', () => {
     const { getAllByTestId } = render(<VerticalNav menus={menus} expanded={true} active={{ name: 'patient_360' }} />);
+
+    const disabledMenuItem = getAllByTestId('DesignSystem-VerticalNav--Item')[disabledIndex];
+    expect(disabledMenuItem).toHaveClass('color-inverse-lightest');
+
     const disabledText = getAllByTestId('DesignSystem-VerticalNav--Text')[disabledIndex];
     expect(disabledText).toHaveClass('color-inverse-lightest');
 
     const disabledIcon = getAllByTestId('DesignSystem-VerticalNav--Icon')[disabledIndex];
-    expect(disabledIcon).toHaveClass('Icon--disabled');
+    expect(disabledIcon).toHaveStyle('color: var(--inverse-lightest)');
 
     const disabledPill = getAllByTestId('DesignSystem-VerticalNav--Pills')[1];
     expect(disabledPill).toHaveClass('Badge--subtle-secondary');
@@ -180,11 +184,15 @@ describe('Vertical Navigation component active menu', () => {
   it('renders menus with active menu', () => {
     const currActive = { name: 'patient_360' };
     const { getAllByTestId } = render(<VerticalNav expanded={true} menus={menus} active={currActive} />);
+
+    const activeMenuItem = getAllByTestId('DesignSystem-VerticalNav--Item')[activeIndex];
+    expect(activeMenuItem).toHaveClass('color-primary-dark');
+
     const activeText = getAllByTestId('DesignSystem-VerticalNav--Text')[activeIndex];
     expect(activeText).toHaveClass('color-primary-dark');
 
     const activeIcon = getAllByTestId('DesignSystem-VerticalNav--Icon')[activeIndex];
-    expect(activeIcon).toHaveClass('Icon--primaryDark');
+    expect(activeIcon).toHaveStyle('color: var(--primary-dark)');
 
     const activePill = getAllByTestId('DesignSystem-VerticalNav--Pills')[activeIndex];
     expect(activePill).toHaveClass('Badge--primary');
