@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-/**
- *
- * @param user
- */
-const useSatisMeter = (user) => {
-  const { id, email, date_joined, full_name } = user;
+const useSatisMeter = () => {
 
   const [satismeter, setSatismeter] = useState({
     installed: false,
@@ -13,29 +8,6 @@ const useSatisMeter = (user) => {
   });
 
   useEffect(() => {
-    // (() => {
-    //   // define satis meter
-    //   window.satismeter =
-    //     window.satismeter ||
-    //     function () {
-    //       (window.satismeter.q = window.satismeter.q || []).push(arguments);
-    //     };
-
-    //   window.satismeter.l = 1 * new Date();
-
-    //   const script = document.createElement('script');
-
-    //   const headElement = document.getElementsByTagName('head')[0];
-
-    //   script.async = 1;
-
-    //   script.src = 'https://app.satismeter.com/satismeter.js';
-
-    //   // Append satis meter script
-    //   headElement.appendChild(script);
-    // })();
-
-    // <script>
     (function () {
       window.satismeter =
         window.satismeter ||
@@ -51,9 +23,8 @@ const useSatisMeter = (user) => {
     })();
 
     window.satismeter({
-      writeKey: 'QfCL4sgRc7xP72x1',
+      writeKey: 'DFlIliFEvDAYfaOh',
     });
-    // </script>
     
     setSatismeter({
       installed: true,
