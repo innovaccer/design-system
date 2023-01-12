@@ -6,8 +6,8 @@ menus:
     link: /patterns/email/usage/
   - label: File uploader
     link: /patterns/fileUploader/usage/
-  - label: Forms
-    link: /patterns/forms/usage/
+  - label: Form
+    link: /patterns/form/usage/
   - label: Layouts
     link: /patterns/layouts/usage/
   - label: UI states
