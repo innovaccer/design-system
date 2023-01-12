@@ -321,6 +321,11 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
         }
       };
 
+      const SliderTicksClass = classNames({
+        ['Slider-ticks']: true,
+        ['bg-dark']: active,
+      });
+
       // TODO(a11y): fix accessibility
       /* eslint-disable */
       labels.push(
@@ -334,7 +339,7 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
           data-test="DesignSystem-MultiSlider-Label"
         >
           {/* eslint-enable  */}
-          <span className={'Slider-ticks'} />
+          <span className={SliderTicksClass} />
           {labelRenderer !== false && (
             <Text size="small" appearance={active ? 'default' : 'disabled'}>
               {this.formatLabel(i)}
