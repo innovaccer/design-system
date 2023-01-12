@@ -14,6 +14,7 @@ import TableOfContent from './TableOfContent/TableOfContent';
 import ComponentsContainer from './Container/ComponentsContainer';
 import { copyMessage, copyMessageSuccess } from '../util/constants.js';
 import { Row, Column, Button, Toast, Tooltip } from '@innovaccer/design-system';
+import FeedbackForm from './FeedbackForm';
 
 const leftMenuList = [
   {
@@ -33,6 +34,7 @@ const ComponentsPage = (props) => {
       frontmatter={frontmatter}
     >
       <MDXProvider components={DSComponents}>{children}</MDXProvider>
+      <FeedbackForm />
     </ComponentsContainer>
   );
 };
@@ -50,6 +52,7 @@ const MDXPage = (props) => {
       frontmatter={frontmatter}
     >
       <MDXProvider components={DSComponents}>{children}</MDXProvider>
+      <FeedbackForm />
     </Container>
   );
 };
