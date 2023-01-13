@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import useSatisMeter from './useSatismeter';
+import './style.css';
 
 const SatisMeter = (user) => {
   const satismeter = useSatisMeter(user);
@@ -9,7 +10,7 @@ const SatisMeter = (user) => {
 
   useEffect(() => {
     if (satismeter.installed && satismeter.instance) {
-      console.log('sssinside if condition');
+      console.log('ssssinside if condition-->', satismeter);
       instance('track', { event: 'site-feedback' });
     }
   }, [installed]);
