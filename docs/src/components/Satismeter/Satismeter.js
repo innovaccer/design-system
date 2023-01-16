@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import useSatisMeter from './useSatismeter';
 import './style.css';
+import { Button } from '@innovaccer/design-system';
 
 const SatisMeter = (user) => {
   const satismeter = useSatisMeter(user);
@@ -15,7 +16,9 @@ const SatisMeter = (user) => {
     }
   }, [installed]);
 
-  return null; // Just return empty renderer
+  // return null; // Just return empty renderer
+  return <Button>satismeter</Button>
+
 };
 
 export default React.memo(SatisMeter);

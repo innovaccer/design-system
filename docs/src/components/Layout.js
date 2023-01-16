@@ -14,7 +14,7 @@ import TableOfContent from './TableOfContent/TableOfContent';
 import ComponentsContainer from './Container/ComponentsContainer';
 import { copyMessage, copyMessageSuccess } from '../util/constants.js';
 import { Row, Column, Button, Toast, Tooltip } from '@innovaccer/design-system';
-import Satismeter from './Satismeter/Satismeter';
+import Satismeter from './Satismeter';
 
 const leftMenuList = [
   {
@@ -208,7 +208,6 @@ const Layout = ({
         frontmatter={frontmatter}
         relativePagePath={relativePagePath}
       />
-      <Satismeter />
       <Header leftMenuList={leftMenuList} relativePagePath={relativePagePath} />
       <Row data-test="Docs-Main--Row" style={{ height: 'calc(100vh - 48px)' }} ref={refCode}>
         <LeftNav
@@ -243,6 +242,7 @@ const Layout = ({
               pageDescription={pageDescription}
             />
           )}
+          <Satismeter />
           {isToastActive && (
             <Toast
               appearance="success"
