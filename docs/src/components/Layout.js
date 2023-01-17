@@ -34,6 +34,7 @@ const ComponentsPage = (props) => {
       frontmatter={frontmatter}
     >
       <MDXProvider components={DSComponents}>{children}</MDXProvider>
+      <Satismeter />
     </ComponentsContainer>
   );
 };
@@ -51,6 +52,7 @@ const MDXPage = (props) => {
       frontmatter={frontmatter}
     >
       <MDXProvider components={DSComponents}>{children}</MDXProvider>
+      <Satismeter />
     </Container>
   );
 };
@@ -242,7 +244,6 @@ const Layout = ({
               pageDescription={pageDescription}
             />
           )}
-          <Satismeter />
           {isToastActive && (
             <Toast
               appearance="success"
