@@ -16,6 +16,7 @@ const caption = 'testing caption';
 const currentDate = new Date(2021, 8, 12);
 const startDate = new Date(2020, 2, 3);
 const endDate = new Date(2021, 5, 8);
+const sameEndDate = new Date(2020, 2, 3);
 const dateFormat = [currentDate, 1629790081880];
 const inputFormat = ['mm/dd/yyyy', 'dd/mm/yyyy', 'yyyy/mm/dd', 'mm-dd-yyyy', 'dd-mm-yyyy', 'yyyy-mm-dd'];
 const FunctionValue = jest.fn();
@@ -180,6 +181,30 @@ describe('DateRangePicker component prop:withInput', () => {
     const inputTriggerComponent = screen.queryByText('DesignSystem-DateRangePicker-InputTrigger');
     expect(inputTriggerComponent).not.toBeInTheDocument();
   });
+
+  it('same start and end date selection if prop:withInput is passed as true', () => {
+    const { getAllByTestId } = render(<DateRangePicker startDate={startDate} endDate={sameEndDate} withInput={true} />);
+    const dateSelection = '03/03/2020';
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    expect(InputTestId[0]).toHaveAttribute('value', dateSelection);
+    expect(InputTestId[1]).toHaveAttribute('value', dateSelection);
+  });
+
+  it('same start and end date selection with fire events if prop:withInput is passed as true', () => {
+    const { getAllByTestId } = render(<DateRangePicker startDate={startDate} endDate={endDate} withInput={true} />);
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const triggerStartDate = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(triggerStartDate);
+    const triggerEndDate = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(triggerEndDate);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '06/09/2021');
+  });
 });
 
 describe('DateRangePicker component prop:singleInput', () => {
@@ -201,6 +226,22 @@ describe('DateRangePicker component prop:singleInput', () => {
     const { getByTestId } = render(<DateRangePicker singleInput={true} withInput={true} />);
     expect(getByTestId('DesignSystem-DateRangePicker-SingleInputTrigger')).toBeInTheDocument();
     expect(screen.getAllByPlaceholderText('mm/dd/yyyy - mm/dd/yyyy')[0]).toBeInTheDocument();
+  });
+
+  it('same start and end date selection with fire events if prop:singleInput is passed as true', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} withInput={true} singleInput={true} />
+    );
+    const InputWrapper = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(InputWrapper[0]);
+    const triggerStartDate = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(triggerStartDate);
+    const triggerEndDate = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(triggerEndDate);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021 - 06/09/2021');
   });
 });
 
@@ -235,6 +276,20 @@ describe('DateRangePicker component prop:onRangeChange', () => {
     fireEvent.blur(InputTestId[0]);
 
     expect(FunctionValue).toHaveBeenCalled();
+  });
+
+  it('same start and end date selection with fire events if prop:onRangeChange is passed', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} withInput={true} onRangeChange={FunctionValue} />
+    );
+
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    fireEvent.click(Inputs[0]);
+    const triggerDate = getAllByTestId('DesignSystem-Calendar--dateValue')[3];
+    fireEvent.click(triggerDate);
+    expect(FunctionValue).toHaveBeenCalled();
+    expect(FunctionValue.mock.calls[0][0]).toEqual(startDate);
+    expect(FunctionValue.mock.calls[1][0]).toEqual(sameEndDate);
   });
 });
 
