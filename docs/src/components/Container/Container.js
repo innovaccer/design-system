@@ -82,7 +82,7 @@ const Container = ({ children, pageTitle, tabs, relativePagePath, pageDescriptio
       </div>
       {tabsList && tabsList.length && (
         <>
-          <div className="TabHeader mb-8 position-sticky bg-light" id="tab-container">
+          <div data-test = 'Docs-TabHeader' className="TabHeader mb-8 position-sticky bg-light" id="tab-container">
             <div className="px-11">
               <Tabs
                 activeIndex={activeIndex}
