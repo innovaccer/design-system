@@ -438,7 +438,7 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 20px; width: 20px;"
@@ -466,7 +466,7 @@ exports[`Button component
         class="Button-icon Button-icon--right"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 20px; width: 20px;"
@@ -494,7 +494,7 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 20px; width: 20px;"
@@ -538,7 +538,7 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -566,7 +566,7 @@ exports[`Button component
         class="Button-icon Button-icon--right"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -594,7 +594,7 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -638,7 +638,7 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -666,7 +666,7 @@ exports[`Button component
         class="Button-icon Button-icon--right"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -694,7 +694,7 @@ exports[`Button component
         class="Button-icon Button-icon--left"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-round Icon"
           data-test="DesignSystem-Button--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"

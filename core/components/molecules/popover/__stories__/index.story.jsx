@@ -35,7 +35,7 @@ export const all = () => {
 
   return (
     <Popover {...options}>
-      <div style={{ width: 100 }} className="mx-6 my-6">
+      <div className="m-6 pr-9">
         <Text>Popup</Text>
         <Button className="mt-4" appearance="primary" onClick={action('button clicked inside popover')}>
           Click
@@ -53,7 +53,7 @@ const customCode = `() => {
         on="click"
         trigger={<Button appearance="basic">Open Popover</Button>}
       >
-        <div style={{ width: 100 }} className='mx-6 my-6'>
+        <div className='m-6 pr-9'>
           <Text>Popup</Text>
           <Button appearance="primary" className="mt-4">Click</Button>
         </div>

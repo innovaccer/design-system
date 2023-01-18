@@ -20,7 +20,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -38,7 +38,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -60,7 +60,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -78,7 +78,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -112,7 +112,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -130,7 +130,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -167,7 +167,7 @@ exports[`Pagination component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon Icon--default"
+                class="material-icons material-icons-round Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
                 style="font-size: 12px; width: 12px;"
@@ -185,7 +185,7 @@ exports[`Pagination component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon Icon--default"
+                class="material-icons material-icons-round Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
                 style="font-size: 12px; width: 12px;"
@@ -215,7 +215,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -233,7 +233,7 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"

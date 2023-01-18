@@ -6,9 +6,9 @@ export const layering = () => {
   return (
     <div className="mb-9">
       <Popover position="bottom" on="click" trigger={<Button appearance="basic">Open Popover</Button>} open={false}>
-        <div className="" style={{ width: 'var(--spacing-8)', height: 'var(--spacing-8)' }}>
+        <div className="pb-11 pr-10">
           <Dropdown
-            className="p-6 w-50"
+            className="p-6 w-100"
             options={[
               { label: 'Draft', value: 'draft' },
               { label: 'In Progress', value: 'in_progress' },

@@ -32,7 +32,7 @@ export const all = () => {
   };
 
   return (
-    <div className="bg-secondary-lightest" style={{ height: '200px' }}>
+    <div className="bg-secondary-lightest pb-13">
       <div className="bg-light border-top border-bottom p-3">
         <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
       </div>
@@ -69,7 +69,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className="bg-secondary-lightest" style={{ height: '200px' }}>
+    <div className="bg-secondary-lightest pb-13">
       <div className="bg-light border-top border-bottom p-3">
         <HorizontalNav
           className="w-100 justify-content-center"

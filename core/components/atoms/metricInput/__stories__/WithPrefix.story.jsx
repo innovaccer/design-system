@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { MetricInput, Label } from '@/index';
+import { MetricInput, Label, Row, Column } from '@/index';
 
 // CSF format story
 export const withPrefix = () => {
   const [value, setValue] = React.useState(625);
 
   return (
-    <div className="d-flex align-items-center">
+    <Row className="align-items-center">
       <Label htmlFor="metric-input" className="mr-5">
         Cost
       </Label>
-      <div style={{ width: 'var(--spacing-7)' }}>
+      <Column size={2}>
         <MetricInput
           id="metric-input"
           prefix="USD"
@@ -19,8 +19,8 @@ export const withPrefix = () => {
             setValue(e.target.value);
           }}
         />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -28,17 +28,17 @@ const customCode = `() => {
   const [value, setValue] = React.useState(625);
 
   return (
-    <div className="d-flex align-items-center">
+    <Row className="align-items-center">
       <Label htmlFor="metric-input" className="mr-5">Cost</Label>
-      <div style={{ width: 'var(--spacing-7)' }}>
+      <Column size={2}>
         <MetricInput
           id="metric-input"
           prefix="USD"
           value={value}
           onChange={e => { setValue(e.target.value); }}
         />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 }`;
 

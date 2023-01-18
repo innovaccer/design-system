@@ -262,6 +262,7 @@ export const Tabs = (props: TabsProps) => {
       ['Tab--disabled']: disabled,
       ['Tab--active']: !disabled && activeIndex === index,
       ['Tab-selected']: !disabled && activeIndex === index,
+      ['align-items-center']: true,
     });
 
     return (

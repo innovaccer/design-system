@@ -469,6 +469,81 @@ describe('Dropdown component with search', () => {
   });
 });
 
+describe('Dropdown component', () => {
+  const onUpdateCallback = jest.fn();
+  const options = [
+    {
+      label: `Option 1`,
+      value: `Option 1`,
+      group: 'Group 1',
+      icon: 'events',
+      subInfo: 'subInfo',
+    },
+  ];
+
+  it('check for selecting already selected value in menu dropdown', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={dropdownOptions} menu={true} onChange={FunctionValue} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    let optionList: HTMLElement[] = [];
+
+    await waitFor(() => {
+      optionList = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+    });
+    fireEvent.click(optionList[1]);
+    fireEvent.click(optionList[1]);
+    expect(FunctionValue).toHaveBeenCalledTimes(2);
+  });
+
+  it('check for selecting already selected value in dropdown', async () => {
+    jest.resetAllMocks();
+    const { getByTestId, getAllByTestId } = render(<Dropdown options={dropdownOptions} onChange={FunctionValue} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    let optionList: HTMLElement[] = [];
+
+    await waitFor(() => {
+      optionList = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+    });
+    fireEvent.click(optionList[0]);
+    fireEvent.click(optionList[0]);
+    expect(FunctionValue).toHaveBeenCalledTimes(1);
+  });
+
+  it('check for selecting already selected value in controlled menu dropdown', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={dropdownOptions} menu={true} selected={options} onUpdate={onUpdateCallback} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    let optionList: HTMLElement[] = [];
+
+    await waitFor(() => {
+      optionList = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+    });
+    fireEvent.click(optionList[0]);
+    expect(onUpdateCallback).toHaveBeenCalledTimes(1);
+  });
+
+  it('check for selecting already selected value in controlled dropdown', async () => {
+    jest.resetAllMocks();
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={dropdownOptions} selected={options} onUpdate={onUpdateCallback} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    let optionList: HTMLElement[] = [];
+
+    await waitFor(() => {
+      optionList = getAllByTestId('DesignSystem-DropdownOption--DEFAULT');
+    });
+    fireEvent.click(optionList[0]);
+    expect(onUpdateCallback).not.toHaveBeenCalled();
+  });
+});
+
 describe('Dropdown component with actions buttons', () => {
   it('check for apply button state when options are loading', async () => {
     const { getByTestId, getAllByTestId } = render(

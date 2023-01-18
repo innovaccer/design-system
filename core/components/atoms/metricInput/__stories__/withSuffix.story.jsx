@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { MetricInput, Label } from '@/index';
+import { MetricInput, Label, Row, Column } from '@/index';
 
 // CSF format story
 export const withSuffix = () => {
   const [value, setValue] = React.useState(65);
 
   return (
-    <div className="d-flex align-items-center">
+    <Row className="align-items-center">
       <Label htmlFor="metric-input" className="mr-5">
         Body Height
       </Label>
-      <div style={{ width: 'var(--spacing-6)' }}>
+      <Column size={1}>
         <MetricInput
           id="metric-input"
           suffix="in"
@@ -19,8 +19,8 @@ export const withSuffix = () => {
             setValue(e.target.value);
           }}
         />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -28,17 +28,17 @@ const customCode = `() => {
   const [value, setValue] = React.useState(65);
 
   return (
-    <div className="d-flex align-items-center">
+    <Row className="align-items-center">
       <Label htmlFor="metric-input" className="mr-5">Body Height</Label>
-      <div style={{ width: 'var(--spacing-6)' }}>
+      <Column size={1}>
         <MetricInput
           id="metric-input"
           suffix="in"
           value={value}
           onChange={e => { setValue(e.target.value); }}
         />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 }`;
 

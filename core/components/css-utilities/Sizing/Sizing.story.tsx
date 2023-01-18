@@ -29,8 +29,24 @@ export const sizing = () => {
       properties: 'max-width: 100% ;',
     },
     {
+      className: 'vw-25',
+      properties: 'width: 25vw ;',
+    },
+    {
+      className: 'vw-50',
+      properties: 'width: 50vw ;',
+    },
+    {
+      className: 'vw-75',
+      properties: 'width: 75vw ;',
+    },
+    {
       className: 'vw-100',
       properties: 'width: 100vw ;',
+    },
+    {
+      className: 'min-vw-100',
+      properties: 'min-width: 100vw ;',
     },
   ];
   const Data = [
@@ -57,6 +73,18 @@ export const sizing = () => {
     {
       className: 'mh-100',
       properties: 'max-height: 100% ;',
+    },
+    {
+      className: 'vh-25',
+      properties: 'height: 25vh ;',
+    },
+    {
+      className: 'vh-50',
+      properties: 'height: 50vh ;',
+    },
+    {
+      className: 'vh-75',
+      properties: 'height: 75vh ;',
     },
     {
       className: 'vh-100',

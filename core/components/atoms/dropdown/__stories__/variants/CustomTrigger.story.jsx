@@ -15,8 +15,8 @@ export const customTrigger = () => {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '280px' }}>
-      <div style={{ marginRight: '20%', width: '256px' }}>
+    <div className="d-flex pb-14">
+      <div>
         <Dropdown options={storyOptions} triggerOptions={{ customTrigger: customTriggerFunc }} />
       </div>
     </div>
@@ -39,7 +39,7 @@ const customCode = `() => {
 
   const customTriggerFunc = (label) => {
     return (
-      <div style={{ width: '100%' }}>
+      <div className="w-100">
         <Input
           type="text"
           name="input"
@@ -52,7 +52,7 @@ const customCode = `() => {
 
   return (
     <div className='d-flex'>
-      <div className='mr-10'style={{ width: '256px' }}>
+      <div>
         <Dropdown options={storyOptions} customTrigger={customTriggerFunc} />
       </div>
     </div>

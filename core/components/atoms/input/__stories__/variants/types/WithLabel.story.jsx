@@ -7,16 +7,20 @@ export const withLabel = () => {
   return (
     <div className="Row">
       <div className="mr-9 mb-8 w-25">
-        <div style={{ height: '72px' }}>
+        <div>
+          <Text weight="strong">No Help Text</Text>
+          <br />
+          <br />
           <Label withInput={true} required={true}>
             Full Name
           </Label>
           <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} required={true} />
         </div>
-        <br />
-        <Text weight="strong">No Help Text</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
+        <Text weight="strong">Help Text Default</Text>
+        <br />
+        <br />
         <Label withInput={true} required={true}>
           Password
         </Label>
@@ -28,11 +32,11 @@ export const withLabel = () => {
           required={true}
         />
         <HelpText message={'Pick a strong, unique password'} />
-        <br />
-        <br />
-        <Text weight="strong">Help Text Default</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
+        <Text weight="strong">Help Text Error</Text>
+        <br />
+        <br />
         <Label withInput={true} required={true}>
           Password
         </Label>
@@ -45,8 +49,6 @@ export const withLabel = () => {
           error={true}
         />
         <HelpText error={true} message={'Pick a strong, unique password'} />
-        <br />
-        <Text weight="strong">Help Text Error</Text>
       </div>
     </div>
   );

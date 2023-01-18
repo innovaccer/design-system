@@ -30,7 +30,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -87,7 +87,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -693,7 +693,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--disabled"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -750,7 +750,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -1356,7 +1356,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--disabled"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -1413,7 +1413,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -2018,7 +2018,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -2075,7 +2075,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -2680,7 +2680,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -2737,7 +2737,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -3342,7 +3342,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -3399,7 +3399,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -4004,7 +4004,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -4044,7 +4044,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -4261,7 +4261,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -4294,7 +4294,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -4385,22 +4385,22 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                 class="Calendar-valueRow"
               >
                 <div
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--link Text--regular"
+                    class="Text Text--default Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2022
                   </span>
                 </div>
                 <div
-                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+                  class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--default Text--regular"
+                    class="Text Text--link Text--regular"
                     data-test="DesignSystem-Text"
                   >
                     2023
@@ -4511,7 +4511,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"
@@ -4568,7 +4568,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon Icon--default"
+                    class="material-icons material-icons-round Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
                     style="font-size: 16px; width: 16px;"

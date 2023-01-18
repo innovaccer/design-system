@@ -15,26 +15,18 @@ const labelMapping = {
 export const loadingType = () => {
   const optionTypes = ['DEFAULT', 'WITH_ICON', 'WITH_META', 'ICON_WITH_META'];
 
-  const style = {
-    display: 'flex',
-    'flex-direction': 'column',
-    alignItems: 'center',
-    marginRight: '5%',
-    width: '150px',
-  };
-
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', minHeight: '270px' }}>
+    <div className="d-flex">
       {optionTypes.map((type, ind) => {
         return (
-          <div style={style} key={ind}>
+          <div className="d-flex flex-column align-items-center mr-8 w-25" key={ind}>
             <Text weight="strong">{labelMapping[type]}</Text>
             <br />
             <Dropdown options={storyOptions.slice(0, 5)} optionType={type} loading={true} />
           </div>
         );
       })}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '150px' }}>
+      <div className="d-flex flex-column align-items-center w-25">
         <Text weight="strong">{'Checkboxes'}</Text>
         <br />
         <Dropdown options={storyOptions.slice(0, 5)} withCheckbox={true} loading={true} />

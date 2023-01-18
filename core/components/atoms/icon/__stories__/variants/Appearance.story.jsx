@@ -47,8 +47,8 @@ export const Appearance = () => {
           </>
         );
       })}
-      <div className="bg-dark" style={{ width: '50px' }}>
-        <Icon appearance="white" size={50} name={name} />
+      <div>
+        <Icon appearance="white" size={50} name={name} className="bg-dark" />
       </div>
       <br />
       <Text weight="strong">white</Text>

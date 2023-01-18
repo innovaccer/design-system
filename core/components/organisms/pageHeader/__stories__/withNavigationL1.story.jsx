@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navigation, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint } from '@/index';
+import { Navigation, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
 export const level1WithNavigation = () => {
@@ -45,19 +45,23 @@ export const level1WithNavigation = () => {
   const status = <StatusHint appearance="info">Ongoing</StatusHint>;
 
   return (
-    <div className="py-5 bg-secondary-lightest" style={{ width: '900px' }}>
-      <PageHeader
-        title="Covid-19"
-        separator={true}
-        navigationPosition="center"
-        navigation={navigation}
-        actions={actions}
-        breadcrumbs={breadcrumbs}
-        badge={badge}
-        status={status}
-        meta={meta}
-      />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-5 bg-secondary-lightest">
+          <PageHeader
+            title="Covid-19"
+            separator={true}
+            navigationPosition="center"
+            navigation={navigation}
+            actions={actions}
+            breadcrumbs={breadcrumbs}
+            badge={badge}
+            status={status}
+            meta={meta}
+          />
+        </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -113,19 +117,23 @@ const customCode = `() => {
   const status = <StatusHint appearance="info">Ongoing</StatusHint>;
 
   return (
-    <div className="py-5 bg-secondary-lightest" style={{width:'900px'}}>
-      <PageHeader
-        title="Covid-19"
-        separator={true}
-        navigationPosition="center"
-        navigation={navigation}
-        actions={actions}
-        breadcrumbs={breadcrumbs}
-        badge={badge}
-        status={status}
-        meta={meta}
-      />
-    </div>
+    <Row>
+      <Column size={11}>
+        <div className="py-5 bg-secondary-lightest">
+          <PageHeader
+            title="Covid-19"
+            separator={true}
+            navigationPosition="center"
+            navigation={navigation}
+            actions={actions}
+            breadcrumbs={breadcrumbs}
+            badge={badge}
+            status={status}
+            meta={meta}
+          />
+        </div>
+      </Column>
+    </Row>
   );
 }`;
 

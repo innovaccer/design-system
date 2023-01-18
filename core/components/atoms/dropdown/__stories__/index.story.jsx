@@ -98,7 +98,7 @@ export const all = () => {
   const key = `checkbox${withCheckbox} applyButton:${showApplyButton} search:${withSearch}`;
 
   return (
-    <div style={{ width: '170px', marginLeft: '128px' }} key={key}>
+    <div key={key} className="w-25">
       <Dropdown {...props} />
     </div>
   );
@@ -135,7 +135,7 @@ const customCode = `() => {
   };
 
   return (
-    <div className='w-25' style={{ minHeight: '280px' }}>
+    <div className='w-25 pb-14'>
       <Dropdown
         fetchOptions={fetchOptions}
       />

@@ -7,11 +7,7 @@ import { AsyncTable, SyncTable } from '@/components/organisms/table/__stories__/
 
 export const withHeader = () => {
   return (
-    <div
-      style={{
-        height: '450px',
-      }}
-    >
+    <div className="vh-75">
       <Card shadow="light" className="h-100">
         <Table
           data={data}
@@ -144,9 +140,7 @@ const customCode = `
 
   return (
     <div
-      style={{
-        height: '450px',
-      }}
+      className="vh-75"
     >
       <Card shadow="light" className="h-100">
         <Table

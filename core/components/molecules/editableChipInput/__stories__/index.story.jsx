@@ -28,7 +28,7 @@ export const all = () => {
     chipInputOptions,
   };
   return (
-    <div style={{ width: 'var(--spacing-9)' }}>
+    <div className="w-25">
       <EditableChipInput {...options} />
     </div>
   );
@@ -58,7 +58,7 @@ const customCode = `() => {
     chipInputOptions
   };
   return (
-      <div style={{ width: 'var(--spacing-9)'}}>
+      <div className="w-25">
         <EditableChipInput
           {...options}
         />

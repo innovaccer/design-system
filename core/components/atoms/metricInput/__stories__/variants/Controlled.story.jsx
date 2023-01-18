@@ -1,20 +1,22 @@
 import * as React from 'react';
-import { MetricInput } from '@/index';
+import { MetricInput, Row, Column } from '@/index';
 
 // CSF format story
 export const controlledMetricInput = () => {
   const [value, setValue] = React.useState(10);
 
   return (
-    <div style={{ width: 'var(--spacing-6)' }}>
-      <MetricInput
-        aria-label="Metric Input Label"
-        value={value}
-        onChange={(e) => {
-          setValue(e.target.value);
-        }}
-      />
-    </div>
+    <Row>
+      <Column size={1}>
+        <MetricInput
+          aria-label="Metric Input Label"
+          value={value}
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+        />
+      </Column>
+    </Row>
   );
 };
 
@@ -22,13 +24,15 @@ const customCode = `() => {
   const [value, setValue] = React.useState(10);
 
   return (
-    <div style={{ width: 'var(--spacing-6)' }}>
-      <MetricInput
-        aria-label="Metric Input Label"
-        value={value}
-        onChange={(e) => { setValue(e.target.value) }}
-      />
-    </div>
+    <Row>
+      <Column size={1}>
+        <MetricInput
+          aria-label="Metric Input Label"
+          value={value}
+          onChange={(e) => { setValue(e.target.value) }}
+        />
+      </Column>
+    </Row>
   );
 }`;
 
