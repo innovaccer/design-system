@@ -1,9 +1,56 @@
+## 2.14.1-0 (2023-01-18)
+
+### Highlights
+
+- feat(sizing): add classes of height and width (c6f8a266)
+- docs(stories): 50% of the stories containing a style tag in example code are refactored to use utility css or custom css.
+- fix(security): fixes done to achieve better secure packages in docs site. (ac4f6ccf)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+-  chore(navigation): deprecate navigation component (b3d39694)
+
+### Features
+
+-  feat(sizing): add classes of height and width (c6f8a266)
+
+### Fixes
+
+-  fix(dropdown): update callback function call on selected value in menu variant (56e94168)
+-  fix(tabs): center alignment of icons in tabs (46cc2be5)
+-  fix(grid): update zIndex of pinned column (53a026cc)
+-  fix(datepicker): update snapshots for current date (ef159f3f)
+
+### Improvements
+
+-  fix(horizontalNav): update active state of selected nav item (3e3dbc6e)
+-  fix(dropdown): update state of dropdown option (4ea89199)
+-  fix(button): update active state of selected button (a663621c)
+-  fix(security): fix vulnerability in docs site (ac4f6ccf)
+-  fix(actions): add test job for docs site after deployment (8d6bbe31)
+-  fix(actions): move test job to release workflow (cb5e102f)
+
+### Documentation
+
+-  docs(docs): update documentation for forms (6d18cf63)
+-  fix(stories): remove all the style tags used in stories and use utility classnames or custom styling through css file. (table, popover, dropdown, metricInput, editableInput, pageHeader, editableDropdown, chipInput, textarea, icon, verticalNav, horizontalNav, fullScreenModal, editableChipInput, placeholderImage, outsideClick, input)  (92c90326), (31c4193b), (5093578c), (31321607), (70cdce77), (a560bf1c), (aa29e6b4), (2ae42136), (0534ba66), (82171633), (e9ab9446), (314bf858), (2741559e), (4c946538), (aa6b63da), (fc9b4892), (bee675c7)
+
+---
+
 ## 2.14.0-0 (2023-01-02)
 
 ### Highlights
 
 - docs(site): tabs on page stick under top navigation bar while scrolling the page, which provides ability to switch tabs quickly. (f00e7669) (0a7bdafc)
-- docs(stories): 50% of the stories containig a style tag in example code are refactored to use utility css or custom css.
+- docs(stories): 50% of the stories containing a style tag in example code are refactored to use utility css or custom css.
 - fix(security): fixes done to achieve better secure packages.
 ### Breaking changes
 
@@ -23,7 +70,7 @@ NA
 - feat(chip): add capability to customize chip labels (d9a55db1)
 
 ### Fixes
-- fix(workflow): remove redundent storybook build stage to reduce pipeline build time on Pull requests. (ba03e645)
+- fix(workflow): remove redundant storybook build stage to reduce pipeline build time on Pull requests. (ba03e645)
 - fix(storybook): fix style of prop table for storybook docs page. (e411d5ec)
 - fix(security): upgrade version of dependencies for security (2e84cfe5)
 - fix(security): actions/check-release-commit/package.json & actions/check-release-commit/package-lock.json to reduce vulnerabilities (b117bbb7)
