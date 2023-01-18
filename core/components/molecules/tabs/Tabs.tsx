@@ -213,6 +213,8 @@ export const Tabs = (props: TabsProps) => {
     const dismissIconClass = (disabled?: boolean) =>
       classNames({
         [`DismissibleTab-icon--right`]: true,
+        ['DismissibleTab-icon--default']: !disabled && activeIndex !== index,
+        [`DismissibleTab-icon--selected`]: !disabled && activeIndex === index,
         ['cursor-pointer']: !disabled,
         ['Tab-selected']: !disabled && activeIndex === index,
       });
