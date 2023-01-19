@@ -79,6 +79,7 @@
   top: 0;
   border-radius: 50%;
   background-color: var(--white);
+  border: var(--spacing-s) solid var(--primary);
   box-shadow: var(--shadow-s);
   cursor: pointer;
   box-sizing: border-box;
@@ -89,17 +90,24 @@
 }
 
 .Slider-handle:hover {
-  background-color: var(--secondary-lightest);
-  border: var(--border);
+  background-color: var(--primary-lightest);
 }
 
-.Slider-handle:focus,
 .Slider-handle:active {
-  border: var(--spacing-s) solid var(--primary);
+  background-color: var(--primary);
+}
+
+.Slider-handle:focus {
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: none;
 }
 
 .Slider-handle--disabled {
   pointer-events: none;
-  background-color: var(--secondary-light);
+  background-color: var(--secondary-lighter);
+  box-shadow: none;
+}
+
+.Slider-handle--disabled:focus {
   box-shadow: none;
 }
