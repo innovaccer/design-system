@@ -16,7 +16,7 @@ export const CustomTrigger = () => {
       </div>
       <Collapsible withTrigger={false} expanded={expanded} height="100vh">
         <div className="d-flex pt-4">
-          <Icon name="events" className="d-flex align-items-center px-5 Text--regular" />
+          <Icon name="events" className="d-flex align-items-center px-6 Text--regular" />
           {expanded && <Text className="mr-6">Collapsible</Text>}
         </div>
       </Collapsible>
@@ -35,7 +35,7 @@ const customCode = `() => {
       </div>
       <Collapsible withTrigger={false} expanded={expanded} height="100vh">
         <div className="d-flex pt-4">
-          <Icon name="events" className="d-flex align-items-center px-5 Text--regular" />
+          <Icon name="events" className="d-flex align-items-center px-6 Text--regular" />
           {expanded && <Text className="mr-6">Collapsible</Text>}
         </div>
         </Collapsible>

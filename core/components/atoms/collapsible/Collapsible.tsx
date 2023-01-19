@@ -56,6 +56,7 @@ export const Collapsible = (props: CollapsibleProps) => {
 
   const BodyClass = classNames({
     ['Collapsible-body']: true,
+    ['overflow-hidden']: !expanded && hoverable,
   });
 
   const classes = classNames(
@@ -105,7 +106,7 @@ export const Collapsible = (props: CollapsibleProps) => {
             <Icon
               name={expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}
               data-test="DesignSystem-Collapsible--FooterIcon"
-              className="px-5 py-4 my-2 cursor-pointer"
+              className="px-6 py-4 my-2 cursor-pointer"
               onClick={onToggleHandler(!expanded, 'click')}
               size={16}
             />
@@ -122,7 +123,7 @@ Collapsible.defaultProps = {
   expanded: false,
   hoverable: true,
   height: '100%',
-  expandedWidth: 'var(--spacing-9)',
+  expandedWidth: '240px',
   withTrigger: true,
 };
 
