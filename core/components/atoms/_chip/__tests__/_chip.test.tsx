@@ -72,4 +72,18 @@ describe('Chip component', () => {
     expect(FunctionValue).toHaveBeenCalled();
     expect(onClose).toHaveBeenCalled();
   });
+
+  it('renders selected chip component with prop clearButton', () => {
+    const { getByTestId } = render(
+      <GenericChip label="ChipLabel" selected={true} name="Chip" icon="events" clearButton={true} />
+    );
+    expect(getByTestId('DesignSystem-GenericChip--clearButton')).toHaveClass('Chip-icon--selected');
+  });
+
+  it('renders disabled chip component with prop clearButton', () => {
+    const { getByTestId } = render(
+      <GenericChip label="ChipLabel" name="Chip" icon="events" clearButton={true} disabled={true} />
+    );
+    expect(getByTestId('DesignSystem-GenericChip--clearButton')).toHaveClass('Chip-icon-disabled--right');
+  });
 });

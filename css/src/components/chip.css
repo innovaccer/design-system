@@ -32,6 +32,7 @@
   margin-left: var(--spacing-m);
   display: flex;
   align-items: center;
+  border-radius: 10px;
 }
 
 .Chip--action {
@@ -138,15 +139,38 @@
 
 .Chip-icon--right:focus-visible {
   outline: var(--spacing-s) solid var(--secondary-shadow);
+}
+
+.Chip-icon--right:hover {
+  background-color: var(--secondary);
+}
+
+.Chip-icon--right:active {
+  background-color: var(--secondary-dark);
+}
+
+.Chip-icon-disabled--right {
+  pointer-events: none;
+}
+
+.Chip-icon--selected {
   border-radius: 10px;
 }
 
 .Chip-icon--selected:focus-visible {
   outline: var(--spacing-s) solid var(--primary-shadow);
-  border-radius: 10px;
+}
+
+.Chip-icon--selected:hover {
+  background-color: var(--primary-lighter);
+}
+
+.Chip-icon--selected:active {
+  background-color: var(--primary-light);
 }
 
 .Chip-selection--disabled:focus-visible,
+.Chip-icon-disabled--right:focus-visible,
 .Chip-selection--selectedDisabled:focus-visible,
 .Chip-input--disabled:focus-visible {
   outline: none;
