@@ -15,10 +15,6 @@ export const getTextAppearance = (isActive: boolean, disabled?: boolean) => {
   return disabled ? 'disabled' : isActive ? 'link' : 'default';
 };
 
-export const getTextColor = (isActive: boolean, disabled?: boolean) => {
-  return disabled ? 'inverse-lightest' : isActive ? 'primary-dark' : 'inverse';
-};
-
 export const getIconAppearance = (isActive: boolean, disabled?: boolean) => {
   return disabled ? 'disabled' : isActive ? 'primary_dark' : 'default';
 };

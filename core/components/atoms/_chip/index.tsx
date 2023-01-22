@@ -26,6 +26,7 @@ export const GenericChip = (props: GenericChipProps) => {
     classNames({
       ['Chip-icon']: true,
       [`Chip-icon--${align}`]: align,
+      [`Chip-icon-disabled--right`]: align === 'right' && disabled,
       ['cursor-pointer']: align === 'right' && !disabled,
       ['Chip-icon--selected']: align === 'right' && selected,
     });
@@ -58,7 +59,7 @@ export const GenericChip = (props: GenericChipProps) => {
   const renderLabel = () => {
     if (typeof label === 'string') {
       return (
-        <Text data-test="DesignSystem-GenericChip--Text" color={textColor}>
+        <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className="Chip-text">
           {label}
         </Text>
       );

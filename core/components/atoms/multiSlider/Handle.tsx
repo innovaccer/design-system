@@ -174,6 +174,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
       ['Slider-handle']: true,
       ['Slider-handle--disabled']: disabled,
       ['Slider-handle--active']: isHandleMoving,
+      ['border-0']: disabled,
     });
 
     const TooltipClass = classNames({
@@ -195,7 +196,7 @@ export class Handle extends React.Component<InternalHandleProps, HandleState> {
           onKeyUp={this.handleKeyUp}
           ref={this.refHandlers.handle}
           style={style}
-          tabIndex={1}
+          tabIndex={0}
           data-test="DesignSystem-MultiSlider-Handle"
         />
         {/* eslint-enable  */}

@@ -50,7 +50,7 @@ exports[`TS renders children 1`] = `
     tabindex="0"
   >
     <span
-      class="Text Text--regular color-inverse"
+      class="Text Text--regular color-inverse Chip-text"
       data-test="DesignSystem-GenericChip--Text"
     >
       Hello World!
@@ -734,7 +734,7 @@ exports[`TS renders children 1`] = `
         tabindex="0"
       >
         <span
-          class="Text Text--regular color-inverse"
+          class="Text Text--regular color-inverse Chip-text"
           data-test="DesignSystem-GenericChip--Text"
         >
           Today, Jun 14
@@ -1071,7 +1071,7 @@ exports[`TS renders children 1`] = `
           style="left: 0.00%;"
         >
           <span
-            class="Slider-ticks"
+            class="Slider-ticks bg-dark"
           />
           <span
             class="Text Text--default Text--small"
@@ -1235,7 +1235,7 @@ exports[`TS renders children 1`] = `
         class="Slider-handle"
         data-test="DesignSystem-MultiSlider-Handle"
         style="left: calc(0.00% - 0px);"
-        tabindex="1"
+        tabindex="0"
       />
       <div
         class="Slider-tooltip Tooltip d-none"
@@ -1278,7 +1278,7 @@ exports[`TS renders children 1`] = `
           style="left: 0.00%;"
         >
           <span
-            class="Slider-ticks"
+            class="Slider-ticks bg-dark"
           />
           <span
             class="Text Text--default Text--small"
@@ -1428,7 +1428,7 @@ exports[`TS renders children 1`] = `
           style="left: 100.00%;"
         >
           <span
-            class="Slider-ticks"
+            class="Slider-ticks bg-dark"
           />
           <span
             class="Text Text--default Text--small"
@@ -1442,7 +1442,7 @@ exports[`TS renders children 1`] = `
         class="Slider-handle"
         data-test="DesignSystem-MultiSlider-Handle"
         style="left: calc(0.00% - 0px);"
-        tabindex="1"
+        tabindex="0"
       />
       <div
         class="Slider-tooltip Tooltip d-none"
@@ -1454,7 +1454,7 @@ exports[`TS renders children 1`] = `
         class="Slider-handle"
         data-test="DesignSystem-MultiSlider-Handle"
         style="left: calc(100.00% - 0px);"
-        tabindex="1"
+        tabindex="0"
       />
       <div
         class="Slider-tooltip Tooltip d-none"

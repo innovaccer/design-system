@@ -9,7 +9,7 @@ exports[`Vertical Navigation component
       class="VerticalNav"
     >
       <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
         href="/patient360"
         tabindex="0"
@@ -18,7 +18,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -28,7 +28,7 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
         tabindex="0"
       >
@@ -36,7 +36,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -46,14 +46,14 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active"
+        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
         tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--primaryDark"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -63,14 +63,14 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
         tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -80,7 +80,7 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled"
+        class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
         data-test="DesignSystem-VerticalNav--Item"
         tabindex="0"
       >
@@ -88,7 +88,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--disabled"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -98,7 +98,7 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--collapsed"
+        class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
         tabindex="0"
       >
@@ -106,7 +106,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-round Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -139,7 +139,7 @@ exports[`Vertical Navigation component
         </span>
       </div>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
         href="/patient360"
         tabindex="0"
@@ -148,7 +148,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -156,7 +156,7 @@ exports[`Vertical Navigation component
             assignment_ind_round
           </i>
           <span
-            class="Text Text--regular color-inverse"
+            class="Text Text--regular color-inverse MenuItem-Text"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Patient 360
@@ -180,7 +180,7 @@ exports[`Vertical Navigation component
         </span>
       </div>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
         tabindex="0"
       >
@@ -188,7 +188,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -196,14 +196,14 @@ exports[`Vertical Navigation component
             forum_round
           </i>
           <span
-            class="Text Text--regular color-inverse"
+            class="Text Text--regular color-inverse MenuItem-Text"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Management and Resources
           </span>
         </div>
         <i
-          class="material-icons material-icons-round Icon Icon--subtle mx-4"
+          class="material-icons material-icons-round Icon mx-4"
           role="button"
           style="font-size: 16px; width: 16px;"
         >
@@ -211,14 +211,14 @@ exports[`Vertical Navigation component
         </i>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded color-primary-dark"
         tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--primaryDark mr-4"
+            class="material-icons material-icons-round Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -226,7 +226,7 @@ exports[`Vertical Navigation component
             assignment_ind_round
           </i>
           <span
-            class="Text Text--regular color-primary-dark"
+            class="Text Text--regular color-primary-dark MenuItem-Text"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Timeline
@@ -234,14 +234,14 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded color-inverse"
         tabindex="0"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -249,7 +249,7 @@ exports[`Vertical Navigation component
             events_round
           </i>
           <span
-            class="Text Text--regular color-inverse"
+            class="Text Text--regular color-inverse MenuItem-Text"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Care Plans
@@ -257,7 +257,7 @@ exports[`Vertical Navigation component
         </div>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded color-inverse-lightest"
         data-test="DesignSystem-VerticalNav--Item"
         tabindex="0"
       >
@@ -265,7 +265,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--disabled mr-4"
+            class="material-icons material-icons-round Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -273,7 +273,7 @@ exports[`Vertical Navigation component
             airline_seat_flat_angled_round
           </i>
           <span
-            class="Text Text--regular color-inverse-lightest"
+            class="Text Text--regular color-inverse-lightest MenuItem-Text"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Episodes
@@ -287,7 +287,7 @@ exports[`Vertical Navigation component
         </span>
       </a>
       <a
-        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded"
+        class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
         tabindex="0"
       >
@@ -295,7 +295,7 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--default mr-4"
+            class="material-icons material-icons-round Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -303,14 +303,14 @@ exports[`Vertical Navigation component
             favorite_round
           </i>
           <span
-            class="Text Text--regular color-inverse"
+            class="Text Text--regular color-inverse MenuItem-Text"
             data-test="DesignSystem-VerticalNav--Text"
           >
             Risk
           </span>
         </div>
         <i
-          class="material-icons material-icons-round Icon Icon--subtle mx-4"
+          class="material-icons material-icons-round Icon mx-4"
           role="button"
           style="font-size: 16px; width: 16px;"
         >

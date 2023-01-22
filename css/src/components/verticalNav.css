@@ -4,7 +4,7 @@
 }
 
 .VerticalNav--expanded {
-  width: var(--spacing-9);
+  width: 240px;
 }
 
 .VerticalNav-section {
@@ -26,7 +26,7 @@
   align-items: center;
   cursor: pointer;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
-  width: var(--spacing-9);
+  width: 232px;
 }
 
 .MenuItem--horizontal {
@@ -45,8 +45,8 @@
 .MenuItem--collapsed {
   height: 28px;
   width: 28px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
@@ -74,17 +74,33 @@
   background: var(--secondary-dark);
 }
 
-.MenuItem:focus-visible {
+.MenuItem:focus {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
   outline: none;
 }
 
-.MenuItem--active,
-.MenuItem--active:hover {
+.MenuItem--disabled:focus {
+  box-shadow: none;
+}
+
+.MenuItem--active {
   background: var(--primary-lightest);
 }
 
-.MenuItem--active:focus-visible {
+.MenuItem--active:hover {
+  background: var(--primary-lighter);
+}
+
+.MenuItem--active:active {
+  background: var(--primary-lighter);
+  color: var(--primary-darker);
+}
+
+.MenuItem--active:active .MenuItem-Text {
+  color: var(--primary-darker);
+}
+
+.MenuItem--active:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
   outline: none;
 }
@@ -109,4 +125,5 @@
 
 .MenuItem-count--disabled {
   opacity: 0.6;
+  color: var(--text);
 }

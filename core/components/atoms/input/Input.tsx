@@ -202,12 +202,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 
   const rightIconClass = classNames({
     ['Input-icon']: true,
-    ['Input-icon--right']: true,
+    ['Input-iconWrapper--right']: true,
   });
 
   const trigger = (
-    <div className={rightIconClass}>
-      <Icon name={'info'} size={sizeMapping[size]} />
+    <div
+      className={rightIconClass} // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
+    >
+      <Icon name={'info'} size={sizeMapping[size]} className="Input-icon--right" />
     </div>
   );
 
@@ -268,6 +271,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
               }}
               name={'close'}
               size={sizeMapping[size]}
+              className="Input-icon--right"
             />
           </div>
         )
