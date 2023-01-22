@@ -1,3 +1,45 @@
+## 2.14.1-1 (2023-01-22)
+
+### Highlights
+
+NA
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(input): add states of custom icon button in input (4a495e69)
+- feat(chip): add states of custom icon button in chip (91618a30)
+- feat(tabs): add states of custom icon button in tabs (d9c9f1d7)
+
+### Fixes
+
+- fix(dateRangePicker): add support for same start date and end date selection (9b4c3d3b)
+- fix(verticalNav): fix overlap of scrollbar on verticalNav (0e7a64f2)
+- fix(collapsible): update width for collapsible component (1c34ba4d)
+
+### Improvements
+
+- fix(verticalNav): update state of selected nav item (8096a27e)
+- fix(chip): update states for chip component (ed42215b)
+- fix(slider): update slider states (19ba41c1)
+
+### Documentation
+
+- docs(slider): update images for slider (d03f8980)
+
+---
+
 ## 2.14.1-0 (2023-01-18)
 
 ### Highlights
