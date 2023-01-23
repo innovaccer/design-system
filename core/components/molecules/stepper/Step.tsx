@@ -19,6 +19,8 @@ export const Step = (props: StepProps) => {
     ['Step--active']: active,
     ['Step--disabled']: disabled,
     ['Stepper-animate']: true,
+    ['color-primary-dark']: active || completed,
+    ['color-inverse-lightest']: disabled,
   });
 
   const onClickHandle = () => {
@@ -26,9 +28,7 @@ export const Step = (props: StepProps) => {
     if (onChange) onChange(label, value);
   };
 
-  const iconAppearance = completed ? 'info' : disabled ? 'disabled' : active ? 'info' : 'default';
-
-  const appearance = active ? 'link' : disabled ? 'disabled' : 'default';
+  const textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
 
   return (
     // TODO(a11y)
@@ -37,12 +37,11 @@ export const Step = (props: StepProps) => {
       <Icon
         data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
-        appearance={iconAppearance}
         className="mr-3 my-4 Stepper-animate"
       />
 
       {label && (
-        <Text weight="medium" appearance={appearance} className="Stepper-animate">
+        <Text weight="medium" color={textColor} className="Stepper-animate">
           {label}
         </Text>
       )}
