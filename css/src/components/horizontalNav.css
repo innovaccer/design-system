@@ -18,6 +18,10 @@
   pointer-events: none;
 }
 
+.HorizontalNav-menu--disabled:focus-visible {
+  outline: none;
+}
+
 .HorizontalNav-menu--default:focus-visible {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
   outline: none;
