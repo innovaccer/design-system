@@ -61,8 +61,8 @@
   color: var(--accent3);
 }
 .FileIcon--others {
-  background: var(--warning-lightest);
-  color: var(--warning);
+  background: var(--success-lightest);
+  color: var(--success);
 }
 .FileIcon--animate {
   animation: fadeIn var(--duration--moderate-01) var(--entrance-productive-curve);
