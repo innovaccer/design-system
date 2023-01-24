@@ -14,10 +14,7 @@ export const _isEqual = (firstList: Option[], secondList: Option[]) => {
   const secondSortedList = sortList(secondList);
   return (
     firstSortedList.length === secondSortedList.length &&
-    firstSortedList.every(
-      (option, index) =>
-        option.value === secondSortedList[index].value || option.label === secondSortedList[index].label
-    )
+    firstSortedList.every((option, index) => option.value === secondSortedList[index].value)
   );
 };
 

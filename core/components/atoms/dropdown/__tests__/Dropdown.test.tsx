@@ -412,10 +412,10 @@ describe('renders dropdown component onKeyDown Handler', () => {
 
 describe('Dropdown component utility function', () => {
   it('checks isEqual utility function', () => {
-    expect(_isEqual(storyOptions, iconOptions));
+    expect(_isEqual(storyOptions, iconOptions)).toBe(true);
   });
 
-  it('checks isEqual utility function with same label', () => {
+  it('checks isEqual utility function with same label & different values', () => {
     const Options = [
       {
         label: 'Design System Dropdown',
@@ -430,7 +430,25 @@ describe('Dropdown component utility function', () => {
         value: 'Options 3',
       },
     ];
-    expect(_isEqual(storyWrapOptions, Options));
+    expect(_isEqual(storyWrapOptions, Options)).toBe(false);
+  });
+
+  it('checks isEqual utility function with same value & different label', () => {
+    const Options = [
+      {
+        label: 'Options 1',
+        value: 'Design System Dropdown',
+      },
+      {
+        label: 'Options 2',
+        value: 'UI Kit Dropdown',
+      },
+      {
+        label: 'Options 3',
+        value: 'Innovaccer Analytics',
+      },
+    ];
+    expect(_isEqual(storyWrapOptions, Options)).toBe(true);
   });
 });
 
@@ -626,6 +644,45 @@ describe('Dropdown component with actions buttons', () => {
 
     // enable apply button when different options are selected
     fireEvent.click(selectedOption[4]);
+    expect(applyButton).not.toHaveAttribute('disabled');
+  });
+
+  it('check for apply button state when options with same label are selected', () => {
+    const optionList = [
+      {
+        label: 'Design System',
+        value: 'v1',
+      },
+      {
+        label: 'Design System',
+        value: 'v2',
+      },
+    ];
+
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown options={optionList} withCheckbox={true} showApplyButton={true} />
+    );
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
+    const dropdownOptions = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
+    expect(applyButton).toHaveTextContent('Apply');
+    expect(applyButton).toHaveAttribute('disabled');
+
+    // select first option
+    fireEvent.click(dropdownOptions[0]);
+    expect(applyButton).not.toHaveAttribute('disabled');
+    fireEvent.click(applyButton);
+
+    // re-open the dropdown
+    fireEvent.click(dropdownTrigger);
+
+    expect(applyButton).toHaveAttribute('disabled');
+
+    // select another option with same label
+    fireEvent.click(dropdownOptions[0]);
     expect(applyButton).not.toHaveAttribute('disabled');
   });
 });
