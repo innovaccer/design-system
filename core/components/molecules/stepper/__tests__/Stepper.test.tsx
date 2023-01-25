@@ -77,20 +77,27 @@ describe('Stepper Component with overwrite class', () => {
 describe('Stepper component with prop: active', () => {
   const active = 1;
 
-  it('adds Step--active class', () => {
+  it('adds Step--active and color-primary-dark class', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={0} />);
     expect(getAllByTestId('DesignSystem-Step')[active]).toHaveClass('Step--active');
+    expect(getAllByTestId('DesignSystem-Step')[active]).toHaveClass('color-primary-dark');
+  });
+
+  it('renders Text inside active step', () => {
+    const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={0} />);
+    expect(getAllByTestId('DesignSystem-Text')[active]).toHaveClass('color-primary-dark');
   });
 
   it('renders Icon inside active step', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={0} />);
     expect(getAllByTestId('DesignSystem-Step--Icon')[active].textContent).toMatch('radio_button_unchecked');
-    expect(getAllByTestId('DesignSystem-Step--Icon')[active]).toHaveClass('Icon--info');
+    expect(getAllByTestId('DesignSystem-Step--Icon')[active]).toHaveStyle('color: var(--primary-dark)');
   });
 
   it('renders stepper with equal active and completed prop', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={active} />);
     expect(getAllByTestId('DesignSystem-Step')[active]).toHaveClass('Step--active');
+    expect(getAllByTestId('DesignSystem-Text')[active]).toHaveClass('color-primary-dark');
     expect(getAllByTestId('DesignSystem-Step--Icon')[active].textContent).toMatch('check_circle');
   });
 });
@@ -98,14 +105,25 @@ describe('Stepper component with prop: active', () => {
 describe('Stepper component with prop: completed', () => {
   const completed = 1;
 
-  it('renders Icon inside active step', () => {
+  it('renders Icon inside completed step', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} completed={completed} active={2} />);
     const completedSteps = getAllByTestId('DesignSystem-Step--Icon');
 
     completedSteps.forEach((step, index) => {
       if (index <= completed) {
         expect(step.textContent).toMatch('check_circle');
-        expect(step).toHaveClass('Icon--info');
+        expect(step).toHaveStyle('color: var(--primary-dark)');
+      }
+    });
+  });
+
+  it('renders Text inside completed step', () => {
+    const { getAllByTestId } = render(<Stepper steps={steps} completed={completed} active={2} />);
+    const completedSteps = getAllByTestId('DesignSystem-Text');
+
+    completedSteps.forEach((step, index) => {
+      if (index <= completed) {
+        expect(step).toHaveClass('color-inverse');
       }
     });
   });
@@ -122,6 +140,7 @@ describe('Stepper component with disabled steps', () => {
     disabledSteps.forEach((step, index) => {
       if (Math.max(completed, active) < index) {
         expect(step).toHaveClass('Step--disabled');
+        expect(step).toHaveClass('color-inverse-lightest');
       }
     });
   });
@@ -133,7 +152,18 @@ describe('Stepper component with disabled steps', () => {
     disabledSteps.forEach((step, index) => {
       if (Math.max(completed, active) < index) {
         expect(step.textContent).toMatch('radio_button_unchecked');
-        expect(step).toHaveClass('Icon--disabled');
+        expect(step).toHaveStyle('color: var(--inverse-lightest)');
+      }
+    });
+  });
+
+  it('renders Text inside disabled step', () => {
+    const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={completed} />);
+    const disabledSteps = getAllByTestId('DesignSystem-Text');
+
+    disabledSteps.forEach((step, index) => {
+      if (Math.max(completed, active) < index) {
+        expect(step).toHaveClass('color-inverse-lightest');
       }
     });
   });
