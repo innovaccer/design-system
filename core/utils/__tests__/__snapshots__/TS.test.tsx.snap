@@ -77,7 +77,7 @@ exports[`TS renders children 1`] = `
         value=""
       />
       <span
-        class="Checkbox-wrapper"
+        class="Checkbox-wrapper Checkbox-wrapper--default"
         data-test="DesignSystem-Checkbox-Icon"
       />
     </div>
