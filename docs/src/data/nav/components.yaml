@@ -80,6 +80,10 @@ menus:
     link: /components/linkButton/usage/
     hideInMobile: true
 
+  - label: Listbox
+    link: /components/listbox/usage/
+    hideInMobile: true
+
   - label: List
     link: /components/list/usage/
     hideInWeb: true

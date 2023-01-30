@@ -82,3 +82,4 @@ export { ChoiceListProps } from './components/organisms/choiceList';
 export { DividerProps } from './components/atoms/divider';
 export { HelpTextProps } from './components/atoms/helpText';
 export { LinkButtonProps } from './components/atoms/linkButton';
+export { ListboxProps, ListboxItemProps } from './components/organisms/listbox';
