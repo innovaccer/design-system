@@ -1,0 +1,24 @@
+.Stack {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.Stack-item:hover {
+  background-color: var(--secondary-lightest);
+}
+
+.Stack-item:focus {
+  /* outline: var(--shadow-spread) solid var(--secondary-shadow); */
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Stack-item:active {
+  background: rgba(255, 245, 199, 0.6);
+  /* opacity: 0.6; */
+}
+
+.Stack-item--disabled {
+  opacity: 0.4;
+}
