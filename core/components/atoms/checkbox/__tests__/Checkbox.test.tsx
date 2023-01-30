@@ -51,7 +51,8 @@ describe('Checkbox component', () => {
 
 describe('Checkbox component', () => {
   const mapper: Record<string, any> = {
-    indeterminate: valueHelper(true, { required: true }),
+    indeterminate: valueHelper(BooleanValue, { required: true, iterate: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
     label: valueHelper(StringValue, { required: true }),
     helpText: valueHelper(StringValue, { required: true }),

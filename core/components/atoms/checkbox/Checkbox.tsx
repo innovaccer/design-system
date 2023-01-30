@@ -1,10 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Text from '@/components/atoms/text';
-import Icon from '@/components/atoms/icon';
 import { BaseProps, OmitNativeProps } from '@/utils/types';
 import uidGenerator from '@/utils/uidGenerator';
 import { ChangeEvent } from '@/common.type';
+import CheckboxIcon from './CheckboxIcon';
 export type CheckBoxSize = 'regular' | 'tiny';
 
 export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
@@ -139,8 +139,13 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     }
     if (onChange) onChange(e);
   };
-  const IconName = indeterminate ? 'remove' : checked ? 'check' : '';
-  const IconSize = size === 'tiny' ? 12 : 16;
+
+  const IconMapper = classNames({
+    ['checked--regular']: checked && size === 'regular',
+    ['checked--tiny']: checked && size === 'tiny',
+    ['indeterminate--regular']: indeterminate && size === 'regular',
+    ['indeterminate--tiny']: indeterminate && size === 'tiny',
+  });
 
   return (
     <>
@@ -162,7 +167,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
             data-test="DesignSystem-Checkbox-InputBox"
           />
           <span className={CheckboxWrapper} data-test="DesignSystem-Checkbox-Icon">
-            {IconName && <Icon name={IconName} size={IconSize} appearance={'white'} />}
+            {IconMapper && <CheckboxIcon name={IconMapper} />}
           </span>
         </div>
         <div className="Checkbox-labelWrapper">
