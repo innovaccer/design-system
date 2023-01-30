@@ -78,6 +78,9 @@ menus:
 
   - label: Link button
     link: /components/linkButton/usage/
+
+  - label: Listbox
+    link: /components/listbox/usage/
     hideInMobile: true
 
   - label: List
