@@ -122,6 +122,13 @@ export const data = [
     image: () => <StaticImage src="./images/Link.png" alt="Link" imgStyle={imgStyle} />,
   },
   {
+    link: 'listbox/usage',
+    name: 'Listbox',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/Listbox.png" alt="Listbox" imgStyle={imgStyle} />,
+  },
+  {
     link: 'message/usage',
     name: 'Messages',
     design: 'Available',

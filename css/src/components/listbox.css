@@ -1,0 +1,60 @@
+.Listbox {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+}
+
+.Listbox-item {
+  cursor: pointer;
+}
+
+.Listbox-item--description:focus,
+.Listbox-item--description:focus-visible {
+  outline: none;
+}
+
+.Listbox-item:hover {
+  background-color: var(--secondary-lightest);
+}
+
+.Listbox-item:focus,
+.Listbox-item:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Listbox-item:active {
+  background: rgba(255, 245, 199, 0.6);
+}
+
+.Listbox-item--draggable:focus {
+  outline: none;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Listbox-item--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.Listbox-item--selected {
+  background: rgba(255, 245, 199, 0.6);
+}
+
+.Listbox-item--activated {
+  background: rgba(255, 245, 199, 0.6);
+}
+
+.Listbox-item--drag-icon {
+  cursor: grab;
+}
+
+.Listbox-item--drag-icon:hover {
+  color: var(--inverse);
+}
+
+.Listbox-item--drag-icon:active {
+  color: var(--primary);
+}

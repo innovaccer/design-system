@@ -76,6 +76,10 @@ menus:
     link: /components/links/usage/
     hideInMobile: true
 
+  - label: Listbox
+    link: /components/listbox/usage/
+    hideInMobile: true
+
   - label: List
     link: /components/list/usage/
     hideInWeb: true

@@ -1,0 +1,258 @@
+### Reordering list items
+
+To reorder, pick the item to be reordered via the drag handle placed at the beginning. Items other than the picked item will reorder as soon as the picked item reaches the boundary of the adjacent item.
+
+**Note:** To make the reordering of list items accessible, there is a set of keyboard shortcuts:
+- tab and shift+tab to focus a item
+- space to lift or drop the item
+- arrow down to move the lifted item down
+- arrow up to move the lifted item up
+- escape to cancel the lift and return the item to its initial position
+
+<br />
+
+<img width='100%' height='auto' src='./images/Reordering-items.gif' alt='Reordering a list item using the drag indicator' />
+
+<Caption>Reordering a list item using the drag indicator</Caption>
+
+#### Picked item
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Initial</th>
+      <th style="width:33%; text-align: left;">Final</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Fill</td>
+      <td>Nil</td>
+      <td>#FFFFFF</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Shadow</td>
+      <td>Nil</td>
+      <td>Shadow-30</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+#### Other items
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Initial</th>
+      <th style="width:33%; text-align: left;">Final</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Y position</td>
+      <td>Current position</td>
+      <td>Reordered position</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+**Curve**
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Curve</th>
+      <th style="width:50%; text-align: left;">Duration</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>cubic-bezier(0.2, 0, 0.38, 0.9)</td>
+      <td>240ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+### Nested list
+
+#### Expanding an item
+
+<br/>
+<br/>
+
+<img width='100%' height='auto' src='./images/Expanding-item.gif' alt='Expanding an item in a nested list' />
+
+<Caption>Expanding an item in a nested list</Caption>
+
+##### Expand icon
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Initial</th>
+      <th style="width:33%; text-align: left;">Final</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Rotation</td>
+      <td>0°</td>
+      <td>180° (clockwise)</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+**Curve**
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Curve</th>
+      <th style="width:50%; text-align: left;">Duration</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>cubic-bezier(0.2, 0, 0.38, 0.9)</td>
+      <td>240ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+##### Nested content
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Initial</th>
+      <th style="width:33%; text-align: left;">Final</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>0px</td>
+      <td>height</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+**Curve**
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Curve</th>
+      <th style="width:50%; text-align: left;">Duration</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>cubic-bezier(0, 0, 0.38, 0.9)</td>
+      <td>240ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+#### Collapsing an item
+
+<br/>
+<br/>
+
+<img width='100%' height='auto' src='./images/Collapsing-item.gif' alt='Collapsing an item in a nested list' />
+
+<Caption>Collapsing an item in a nested list</Caption>
+
+##### Collapse icon
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Initial</th>
+      <th style="width:33%; text-align: left;">Final</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Rotation</td>
+      <td>180°</td>
+      <td>0° (anti-clockwise)</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+**Curve**
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Curve</th>
+      <th style="width:50%; text-align: left;">Duration</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>cubic-bezier(0.2, 0, 0.38, 0.9)</td>
+      <td>240ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+##### Nested content
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Initial</th>
+      <th style="width:33%; text-align: left;">Final</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Height</td>
+      <td>height</td>
+      <td>0px</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+**Curve**
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Curve</th>
+      <th style="width:50%; text-align: left;">Duration</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>cubic-bezier(0.2, 0, 1, 0.9)</td>
+      <td>160ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
