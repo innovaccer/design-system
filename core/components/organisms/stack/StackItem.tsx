@@ -6,7 +6,7 @@ import { Divider } from '@/index.type';
 export interface StackItemProps extends BaseProps {
   gap?: number;
   disabled?: boolean;
-  showDivider?: boolean;
+  showDivider: boolean;
   children: React.ReactNode;
   size: 'standard' | 'compressed' | 'tight';
 }

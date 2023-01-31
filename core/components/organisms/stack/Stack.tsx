@@ -4,17 +4,15 @@ import classNames from 'classnames';
 
 export interface StackProps extends BaseProps {
   children: React.ReactNode;
-  alignment: 'horizontal' | 'vertical';
 }
 
 export const Stack = (props: StackProps) => {
-  const { children, className, alignment } = props;
+  const { children, className } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
     {
       Stack: true,
-      ['flex-column']: alignment === 'vertical',
     },
     className
   );
@@ -28,8 +26,6 @@ export const Stack = (props: StackProps) => {
 
 Stack.displayName = 'Stack';
 
-Stack.defaultProps = {
-  alignment: 'vertical',
-};
+Stack.defaultProps = {};
 
 export default Stack;

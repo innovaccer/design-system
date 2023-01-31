@@ -9,5 +9,4 @@ export * from './StackItem';
 4. Stories/ prop table
 5. Documentation
 6. Animation
-7. Horizontal alignment
 */

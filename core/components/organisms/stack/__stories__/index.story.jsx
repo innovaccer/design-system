@@ -22,4 +22,5 @@ export const all = () => {
 export default {
   title: 'Components/Stack/All',
   component: Stack,
+  subcomponents: { StackItem },
 };

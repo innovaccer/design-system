@@ -3,6 +3,7 @@
   padding: 0;
   display: flex;
   list-style-type: none;
+  flex-direction: column;
 }
 
 .Stack-item:hover {
