@@ -47,6 +47,7 @@ StackItem.displayName = 'StackItem';
 
 StackItem.defaultProps = {
   size: 'standard',
+  showDivider: true,
 };
 
 export default StackItem;

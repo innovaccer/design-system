@@ -9,7 +9,7 @@ export const all = () => {
       <Stack>
         {[1, 2, 3].map((item, key) => {
           return (
-            <StackItem key={key} showDivider={true}>
+            <StackItem key={key} showDivider={key === 2 ? false : true}>
               list {item}
             </StackItem>
           );
