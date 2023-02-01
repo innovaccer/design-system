@@ -4,15 +4,17 @@ import classNames from 'classnames';
 import { Divider } from '@/index.type';
 
 export interface StackItemProps extends BaseProps {
+  size: 'standard' | 'compressed' | 'tight';
   gap?: number;
-  disabled?: boolean;
   showDivider: boolean;
   children: React.ReactNode;
-  size: 'standard' | 'compressed' | 'tight';
+  disabled?: boolean;
+  selected?: boolean;
+  activated?: boolean;
 }
 
 export const StackItem = (props: StackItemProps) => {
-  const { children, className, size, showDivider, disabled } = props;
+  const { children, className, size, showDivider, disabled, selected, activated } = props;
   const baseProps = extractBaseProps(props);
 
   const listClass = classNames(
@@ -28,6 +30,7 @@ export const StackItem = (props: StackItemProps) => {
     ['py-5']: size === 'standard',
     ['py-4']: size === 'compressed',
     'Stack-item--disabled': disabled,
+    'Stack-item--selected': selected || activated,
   });
 
   return (
@@ -35,7 +38,8 @@ export const StackItem = (props: StackItemProps) => {
       data-test="DesignSystem-Stack-Item"
       {...baseProps}
       className={listClass}
-      // tabIndex={0}
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
     >
       <div className={itemClass}>{children}</div>
       {showDivider && <Divider />}
