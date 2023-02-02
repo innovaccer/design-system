@@ -481,7 +481,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -520,7 +520,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -588,7 +588,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -627,7 +627,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -696,7 +696,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -736,7 +736,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -805,7 +805,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -845,7 +845,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1353,7 +1353,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1392,7 +1392,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1460,7 +1460,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1499,7 +1499,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1568,7 +1568,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1608,7 +1608,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1677,7 +1677,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -1717,7 +1717,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2225,7 +2225,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2264,7 +2264,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2332,7 +2332,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2371,7 +2371,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2440,7 +2440,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2480,7 +2480,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2549,7 +2549,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -2589,7 +2589,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3097,7 +3097,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3136,7 +3136,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3204,7 +3204,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3243,7 +3243,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3312,7 +3312,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3352,7 +3352,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3421,7 +3421,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>
@@ -3461,7 +3461,7 @@ exports[`ChoiceList component
               value="radio"
             />
             <span
-              class="Checkbox-wrapper"
+              class="Checkbox-wrapper Checkbox-wrapper--default"
               data-test="DesignSystem-Checkbox-Icon"
             />
           </div>

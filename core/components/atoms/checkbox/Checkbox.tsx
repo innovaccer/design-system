@@ -55,6 +55,10 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
    */
   onChange?: (event: ChangeEvent) => void;
   /**
+   * Shows error state in case of failed validation
+   */
+  error?: boolean;
+  /**
    * htmlFor label id for checkbox
    */
   id?: string;
@@ -72,6 +76,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
     defaultChecked,
     indeterminate,
     label,
+    error,
     disabled,
     onChange,
     name,
@@ -122,6 +127,8 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
 
   const CheckboxWrapper = classNames({
     ['Checkbox-wrapper']: true,
+    ['Checkbox-wrapper--default']: !error,
+    ['Checkbox-wrapper--error']: error,
   });
 
   const CheckboxLabelClass = classNames({
