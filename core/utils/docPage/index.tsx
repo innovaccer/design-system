@@ -1,5 +1,13 @@
-import * as React from 'react';
-import { Title, Description, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import React, { useContext } from 'react';
+import {
+  Title,
+  Description,
+  Canvas,
+  ArgsTable,
+  DocsContext,
+  SourceContext,
+  getSourceProps,
+} from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import { html as beautifyHTML } from 'js-beautify';
@@ -303,7 +311,6 @@ export const docPage = () => {
     title,
     description,
     props: propsAttr,
-    customCode,
     noHtml,
     noStory,
     noProps = isEmbed,
@@ -311,12 +318,25 @@ export const docPage = () => {
     imports,
     a11yProps,
   } = sp.docs.docPage || {};
+
+  let { customCode } = sp.docs.docPage;
+
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
     DocPage: true,
     'pt-8 pb-8': !(isEmbed || isEmbedWithProp),
   });
   const docPageTitle: string = title || displayName;
+
+  if (!customCode) {
+    // get raw source of the story
+    const docsContext = useContext(DocsContext);
+    const sourceContext = useContext(SourceContext);
+    const raw = getSourceProps({ ids: [storyId] }, docsContext, sourceContext);
+    const code = `${raw.code}`;
+    customCode = code;
+    // END: get raw source of the story
+  }
 
   return (
     <div className={pageClassnames}>

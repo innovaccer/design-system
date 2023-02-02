@@ -1,126 +1,109 @@
 import * as React from 'react';
-import schema from '@/components/organisms/grid/__stories__/_common_/schema';
-import data from '@/components/organisms/grid/__stories__/_common_/data';
-import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
-import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
-import { action } from '@/utils/action';
-import { Card, Table } from '@/index';
+import { Card, Table, Heading, List, Icon, GridCell } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
-import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
-import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 
 export const all = () => {
-  const async = false;
-
-  let loading;
-  let error;
-  let applyData;
-  let applySchema;
-  const applyLoaderSchema = true;
-
-  if (!async) {
-    loading = false;
-
-    error = false;
-
-    applySchema = true;
-
-    applyData = true;
-  }
-
-  const type = 'resource';
-
-  const size = 'comfortable';
-
-  const draggable = true;
-
-  const nestedRows = false;
-
-  const withHeader = true;
-
-  const withCheckbox = false;
-
-  const showMenu = true;
-
-  const withPagination = false;
-
-  const page = 1;
-
-  const paginationType = 'jump';
-
-  const pageSize = 12;
-
-  const multipleSorting = false;
-
-  const headCellTooltip = false;
-
-  const separator = false;
-
-  const filterPosition = 'HEADER';
-
-  let dataAttr = {};
-  if (async) {
-    dataAttr = {
-      fetchData,
+  const customSchema = (schema) => {
+    const columnMap = {
+      name: {
+        translate: (a) => ({
+          title: `${a.firstName} ${a.lastName}`,
+          firstName: a.firstName,
+          lastName: a.lastName,
+        }),
+      },
+      gender: {
+        comparator: (a, b) => a.gender.localeCompare(b.gender),
+        translate: (a) => ({
+          title: a.gender,
+          statusAppearance: a.gender === 'Female' ? 'alert' : 'success',
+        }),
+      },
+      icon: {
+        translate: () => ({
+          icon: 'events',
+        }),
+      },
+      customCell: {
+        cellRenderer: (props) => {
+          return (
+            <>
+              <Icon className="mr-5" name="events" />
+              <GridCell
+                {...props}
+                schema={{
+                  ...props.schema,
+                  name: 'email',
+                }}
+              />
+            </>
+          );
+        },
+      },
     };
-  } else {
-    dataAttr = {
-      loading,
-      error,
-      schema: applySchema ? schema : [],
-      data: applyData ? data : [],
-    };
-  }
+
+    return schema.map((columnDefinition) => {
+      if (columnDefinition.name in columnMap) {
+        return {
+          ...columnDefinition,
+          ...columnMap[columnDefinition.name],
+        };
+      }
+      return columnDefinition;
+    });
+  };
+  const errorTemplate = () => {
+    return <Heading appearance={'disabled'}>We failed as a team</Heading>;
+  };
+
+  const nestedRowRenderer = (props) => {
+    const { schema, data, loading } = props;
+
+    return <List loading={loading} schema={schema} data={[data]} nestedRows={true} />;
+  };
+
+  const fetchData = ({ searchTerm = '', page, pageSize }) => {
+    // eslint-disable-next-line no-undef
+    const uri = `/patients?${new URLSearchParams({ searchTerm, page, pageSize })}`;
+    // eslint-disable-next-line no-undef
+    return fetch(uri)
+      .then((res) => res.json())
+      .then((data) => {
+        return {
+          ...data,
+          schema: customSchema(data.schema),
+        };
+      });
+  };
+
+  const options = {
+    type: 'resource',
+    size: 'comfortable',
+    draggable: true,
+    nestedRows: false,
+    withHeader: true,
+    headerOptions: {
+      withSearch: true,
+    },
+    withCheckbox: false,
+    showMenu: true,
+    loading: false,
+    error: false,
+    paginationType: 'jump',
+    page: 1,
+    pageSize: 5,
+    headCellTooltip: true,
+    separator: false,
+    filterPosition: 'HEADER',
+    nestedRowRenderer,
+    fetchData,
+    errorTemplate,
+  };
 
   return (
-    <div className="vh-75">
+    <div className="vh-50">
       <Card className="h-100 overflow-hidden">
-        <Table
-          key={`${async}`}
-          {...dataAttr}
-          loading={loading}
-          error={error}
-          errorTemplate={errorTemplate}
-          withHeader={withHeader}
-          headerOptions={{
-            withSearch: true,
-          }}
-          withCheckbox={withCheckbox}
-          showMenu={showMenu}
-          type={type}
-          size={size}
-          headCellTooltip={headCellTooltip}
-          separator={separator}
-          draggable={draggable}
-          nestedRows={nestedRows}
-          nestedRowRenderer={nestedRowRenderer}
-          withPagination={withPagination}
-          page={page}
-          paginationType={paginationType}
-          pageSize={pageSize}
-          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}
-          onRowClick={(rowData, rowIndex) =>
-            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()
-          }
-          onSelect={(rowIndex, selected, selectedList, selectAll) =>
-            action(
-              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
-                selectedList
-              )} selectAll: ${selectAll}`
-            )()
-          }
-          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}
-          onSearch={(currData, searchTerm) => {
-            action(`on-search:- currData: ${JSON.stringify(currData)}, searchTerm: ${searchTerm}`)();
-            return currData;
-          }}
-          multipleSorting={multipleSorting}
-          sortingList={[{ name: 'name', type: 'desc' }]}
-          filterList={{
-            name: ['h-r', 's-z'],
-          }}
-          filterPosition={filterPosition}
-        />
+        <Table {...options} />
       </Card>
     </div>
   );
@@ -136,7 +119,6 @@ export default {
           components: { AsyncTable, SyncTable },
           exclude: ['showHead'],
         },
-        noStory: true,
       },
     },
   },

@@ -5,6 +5,9 @@ import { DocsContainer } from '@storybook/addon-docs/blocks';
 import { docPage } from '@/utils/docPage';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { primary } from './themes';
+import { worker } from '../mocks/browser';
+
+worker.start();
 
 export const decorators = [
   (Story) => (
