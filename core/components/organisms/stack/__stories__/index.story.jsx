@@ -63,7 +63,7 @@ export const all = () => {
       <CardBody>
         <Tabs activeIndex={0}>
           <Tab label="Suggested" count={10}>
-            <Stack className="vh-50 overflow-auto">
+            <Stack className="vh-50 overflow-auto pb-10">
               {dataList.map((data, key) => {
                 return (
                   <StackItem key={key}>
