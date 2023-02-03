@@ -42,10 +42,14 @@ export const StackItem = (props: StackItemProps) => {
     <li
       data-test="DesignSystem-Stack-Item"
       // {...baseProps}
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={0}
     >
-      <div className={itemClass}>{children}</div>
+      <div
+        className={itemClass}
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        tabIndex={0}
+      >
+        {children}
+      </div>
       {nestedRow && expanded && <div>{nestedRow}</div>}
       {showDivider && <Divider />}
     </li>
