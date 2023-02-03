@@ -26,3 +26,7 @@
 .Stack-item--selected {
   background: rgba(255, 245, 199, 0.6);
 }
+
+.Stack-item--activated {
+  background: rgba(255, 245, 199, 0.6);
+}

@@ -6,8 +6,11 @@ import {
 import classNames from 'classnames';
 import { Divider } from '@/index.type';
 
+type StackType = 'option' | 'description' | 'resource';
+type StackSize = 'standard' | 'compressed' | 'tight';
+
 export interface StackItemProps extends BaseProps {
-  size: 'standard' | 'compressed' | 'tight';
+  size: StackSize;
   gap?: number;
   showDivider: boolean;
   children: React.ReactNode;
@@ -17,23 +20,36 @@ export interface StackItemProps extends BaseProps {
   nestedRow?: React.ReactNode;
   disablePadding?: boolean;
   expanded?: boolean;
+  listType: StackType;
 }
 
 export const StackItem = (props: StackItemProps) => {
-  const { children, className, size, showDivider, disabled, selected, activated, nestedRow, disablePadding, expanded } =
-    props;
+  const {
+    children,
+    className,
+    size,
+    showDivider,
+    disabled,
+    selected,
+    activated,
+    nestedRow,
+    disablePadding,
+    expanded,
+    listType,
+  } = props;
 
   // const baseProps = extractBaseProps(props);
 
   const itemClass = classNames(
     {
-      'Stack-item': true,
-      'Stack-item--disabled': disabled,
-      'Stack-item--selected': selected || activated,
+      'Stack-item': listType !== 'description',
       ['px-6']: !disablePadding,
+      'Stack-item--disabled': disabled,
       ['py-3']: size === 'tight' && !disablePadding,
       ['py-5']: size === 'standard' && !disablePadding,
       ['py-4']: size === 'compressed' && !disablePadding,
+      'Stack-item--selected': selected && listType === 'option',
+      'Stack-item--activated': activated && listType === 'resource',
     },
     className
   );
@@ -61,6 +77,7 @@ StackItem.displayName = 'StackItem';
 StackItem.defaultProps = {
   size: 'standard',
   showDivider: true,
+  type: 'option',
 };
 
 export default StackItem;

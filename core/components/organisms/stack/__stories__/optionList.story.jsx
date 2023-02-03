@@ -15,7 +15,7 @@ import {
   CardFooter,
 } from '@/index';
 
-export const all = () => {
+export const optionList = () => {
   const dataList = [
     {
       name: 'ED Discharge care Protocol',
@@ -43,7 +43,7 @@ export const all = () => {
     },
   ];
   return (
-    <Card className="w-75">
+    <Card className="w-50">
       <CardHeader>
         <Heading size="s">Select starting template</Heading>
         <div className="d-flex pt-5 w-75">
@@ -88,7 +88,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Stack/All',
+  title: 'Components/Stack/Option List',
   component: Stack,
   subcomponents: { StackItem },
 };
