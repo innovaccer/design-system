@@ -43,10 +43,10 @@ export const optionList = () => {
     },
   ];
   return (
-    <Card className="w-50">
+    <Card>
       <CardHeader>
         <Heading size="s">Select starting template</Heading>
-        <div className="d-flex pt-5 w-75">
+        <div className="d-flex pt-5 w-50">
           <Input className=" mr-4" icon="search" name="input" placeholder="Search" />
           <Dropdown
             options={[
