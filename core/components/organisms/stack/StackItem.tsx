@@ -10,17 +10,48 @@ type StackType = 'option' | 'description' | 'resource';
 type StackSize = 'standard' | 'compressed' | 'tight';
 
 export interface StackItemProps extends BaseProps {
+  /**
+   * List size
+   */
   size: StackSize;
-  gap?: number;
-  showDivider: boolean;
+  /**
+   * Type of List
+   */
+  type: StackType;
+  /**
+   * React Element to be added inside `list`
+   */
   children: React.ReactNode;
-  disabled?: boolean;
-  selected?: boolean;
-  activated?: boolean;
+  /**
+   * Element to be shown inside a nested list
+   */
   nestedRow?: React.ReactNode;
-  disablePadding?: boolean;
+  /**
+   * Set `true` to show nested row
+   */
   expanded?: boolean;
-  listType: StackType;
+  /**
+   * Add divider below all list item
+   */
+  showDivider: boolean;
+  /**
+   * Disables the list item
+   */
+  disabled?: boolean;
+  /**
+   * Shows list item in selected state <br />
+   * (works in case of **option** list only)
+   */
+  selected?: boolean;
+  /**
+   * Shows list item in activated state <br />
+   * (works in case of **resource** list only)
+   */
+  activated?: boolean;
+  /**
+   * Set `true` to remove default padding of list item
+   */
+  disablePadding?: boolean;
 }
 
 export const StackItem = (props: StackItemProps) => {
@@ -35,21 +66,21 @@ export const StackItem = (props: StackItemProps) => {
     nestedRow,
     disablePadding,
     expanded,
-    listType,
+    type,
   } = props;
 
   // const baseProps = extractBaseProps(props);
 
   const itemClass = classNames(
     {
-      'Stack-item': listType !== 'description',
       ['px-6']: !disablePadding,
       'Stack-item--disabled': disabled,
+      'Stack-item': type !== 'description',
+      'Stack-item--selected': selected && type === 'option',
+      'Stack-item--activated': activated && type === 'resource',
       ['py-3']: size === 'tight' && !disablePadding,
       ['py-5']: size === 'standard' && !disablePadding,
       ['py-4']: size === 'compressed' && !disablePadding,
-      'Stack-item--selected': selected && listType === 'option',
-      'Stack-item--activated': activated && listType === 'resource',
     },
     className
   );

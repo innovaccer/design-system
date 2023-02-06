@@ -31,7 +31,12 @@ export const resourceList = () => {
       <Stack>
         {dataList.map((record, key) => {
           return (
-            <StackItem key={key} className="d-flex align-items-center justify-content-between">
+            <StackItem
+              type="resource"
+              activated={key === 0}
+              key={key}
+              className="d-flex align-items-center justify-content-between"
+            >
               <div className="d-flex align-items-center">
                 <Icon name="assignment" size={20} appearance="primary" className="mr-4" />
                 <div>
