@@ -13,7 +13,7 @@ const SuccessTemplate = ({ open, onCloseHandler }) => {
       }}
     >
       <div className="d-flex align-items-center flex-column mb-4">
-        <img src={successImage} width="152" height="auto" alt="success" />
+        <img data-image-id="Satismeter-img--success" src={successImage} width="152" height="auto" alt="success" />
         <Heading className="mt-6">Thanks for your feedback!</Heading>
         <Text className="mt-3" appearance="subtle">
           We always try to cook better things as per your taste.
