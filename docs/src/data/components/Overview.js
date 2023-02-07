@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardBody, Row, Column, Heading, Input, EmptyState, Badge } from '@innovaccer/design-system';
+import { Card, CardBody, Heading, Input, EmptyState, Badge } from '@innovaccer/design-system';
 import { Link } from 'gatsby';
 import './overview.css';
 import { debounce } from '../../util/Helpers';
@@ -70,7 +70,7 @@ function Overview({ data, mode, path = 'components' }) {
             );
           })
         ) : (
-          <div className="d-flex justify-content-center" style={{ transform: 'translate(50%,64px)' }}>
+          <div className="d-flex justify-content-center w-100 mt-10">
             <EmptyState
               size="small"
               description="Sorry! We could not find any match. Please try again"
@@ -80,6 +80,7 @@ function Overview({ data, mode, path = 'components' }) {
           </div>
         )}
       </div>
+
     </div>
   );
 }

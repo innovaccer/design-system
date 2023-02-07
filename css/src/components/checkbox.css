@@ -1,5 +1,3 @@
-/* badge */
-
 .Checkbox {
   display: flex;
   -webkit-user-select: none;
@@ -54,13 +52,13 @@
 .Checkbox-wrapper {
   top: 0;
   left: 0;
-  border: var(--border);
   border-radius: var(--spacing-s);
   display: flex;
   align-items: center;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+  justify-content: center;
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
@@ -68,25 +66,30 @@
   outline: 0;
 }
 
-.Checkbox-input:focus ~ .Checkbox-wrapper {
+.Checkbox-input ~ .Checkbox-wrapper--default {
+  border: var(--spacing-xs) solid var(--secondary-dark);
+  background-color: var(--shadow-0);
+}
+
+.Checkbox-input:focus ~ .Checkbox-wrapper--default {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
-.Checkbox-input:hover ~ .Checkbox-wrapper {
+.Checkbox-input:hover ~ .Checkbox-wrapper--default {
   border: var(--spacing-xs) solid var(--inverse-lightest);
   background-color: var(--shadow-0);
 }
 
-.Checkbox-input:active ~ .Checkbox-wrapper {
+.Checkbox-input:active ~ .Checkbox-wrapper--default {
   border: var(--spacing-xs) solid var(--inverse-lightest);
-  background-color: var(--shadow-0);
+  background-color: var(--secondary-light);
 }
 
 .Checkbox--disabled {
   pointer-events: none;
 }
 
-.Checkbox--disabled .Checkbox-wrapper {
+.Checkbox--disabled .Checkbox-wrapper--default {
   border: var(--spacing-xs) solid var(--secondary-light);
   background-color: var(--secondary-lightest);
 }
@@ -122,4 +125,57 @@
 .Checkbox--disabled .Checkbox-input--indeterminate ~ .Checkbox-wrapper {
   background-color: var(--primary-lighter);
   border: 0;
+}
+
+/* Error State -> Default */
+
+.Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert);
+}
+
+.Checkbox-input:focus ~ .Checkbox-wrapper--error {
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
+}
+
+.Checkbox-input:hover ~ .Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert-dark);
+}
+
+.Checkbox-input:active ~ .Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert-darker);
+  background-color: var(--secondary-light);
+}
+
+.Checkbox--disabled .Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert-lighter);
+  background-color: var(--secondary-lightest);
+}
+
+/* Error State -> Checked & Indeterminate */
+
+.Checkbox-input--checked ~ .Checkbox-wrapper--error,
+.Checkbox-input--indeterminate ~ .Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert);
+}
+
+.Checkbox-input--checked:focus ~ .Checkbox-wrapper--error,
+.Checkbox-input--indeterminate:focus ~ .Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.Checkbox-input--checked:hover ~ .Checkbox-wrapper--error,
+.Checkbox-input--indeterminate:hover ~ .Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert-dark);
+}
+
+.Checkbox-input--checked:active ~ .Checkbox-wrapper--error,
+.Checkbox-input--indeterminate:active ~ .Checkbox-wrapper--error {
+  background-color: var(--primary-darker);
+  border: var(--spacing-xs) solid var(--alert-darker);
+}
+
+.Checkbox--disabled .Checkbox-input--checked ~ .Checkbox-wrapper--error,
+.Checkbox--disabled .Checkbox-input--indeterminate ~ .Checkbox-wrapper--error {
+  border: var(--spacing-xs) solid var(--alert-lighter);
 }

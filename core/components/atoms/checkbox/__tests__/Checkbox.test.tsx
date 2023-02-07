@@ -38,6 +38,7 @@ describe('Checkbox component', () => {
     name: valueHelper(StringValue, { required: true }),
     value: valueHelper(StringValue, { required: true }),
     onChange: valueHelper(FunctionValue, { required: true }),
+    error: valueHelper(BooleanValue, { required: true, iterate: true }),
   };
   const testFunc = (props: Record<string, any>): void => {
     const attr = filterUndefined(props) as Props;
@@ -51,7 +52,8 @@ describe('Checkbox component', () => {
 
 describe('Checkbox component', () => {
   const mapper: Record<string, any> = {
-    indeterminate: valueHelper(true, { required: true }),
+    indeterminate: valueHelper(BooleanValue, { required: true, iterate: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
     label: valueHelper(StringValue, { required: true }),
     helpText: valueHelper(StringValue, { required: true }),
@@ -110,5 +112,17 @@ describe('Checkbox component', () => {
     expect(input).not.toBeChecked();
     fireEvent.change(input, { target: { checked: true } });
     expect(input).toBeChecked();
+  });
+
+  it('renders checkbox with error state', () => {
+    const { getByTestId } = render(<Checkbox label={StringValue} error={true} />);
+    const checkboxIcon = getByTestId('DesignSystem-Checkbox-Icon');
+    expect(checkboxIcon).toHaveClass('Checkbox-wrapper--error');
+  });
+
+  it('renders checkbox with default state', () => {
+    const { getByTestId } = render(<Checkbox label={StringValue} error={false} />);
+    const checkboxIcon = getByTestId('DesignSystem-Checkbox-Icon');
+    expect(checkboxIcon).toHaveClass('Checkbox-wrapper--default');
   });
 });

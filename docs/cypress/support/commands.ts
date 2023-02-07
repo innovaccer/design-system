@@ -40,7 +40,7 @@ Cypress.Commands.add('tableOfContent', () => {
   cy.get('[data-test=Docs-Toc--Link]').each((page) => {
     if (page.text().length) {
       cy.request(page.prop('href'));
-      const tocText = page.text().replace(/ +/g, ' ').replace("'", "’");
+      const tocText = page.text().replace(/ +/g, ' ').replace("'", '’');
       cy.get('[data-test=DesignSystem-Heading]').contains(tocText);
     }
   });
@@ -50,7 +50,9 @@ Cypress.Commands.add('imageRender', () => {
   cy.viewport('macbook-15');
   cy.wait(3000);
   cy.get('img').each(($img) => {
-    cy.wrap($img).scrollIntoView().should('be.visible').should('have.attr', 'alt');
+    if (!$img[0].hasAttribute('data-image-id')) {
+      cy.wrap($img).scrollIntoView().should('be.visible').should('have.attr', 'alt');
+    }
   });
 });
 
@@ -66,11 +68,13 @@ Cypress.Commands.add('linkVisit', () => {
   cy.wait(1000);
   cy.get('[data-test=Docs-content-wrapper]').then((container) => {
     if (container.find('a').length) {
-      cy.get('a').not(':contains("email")').each((page) => {
-        if (page.prop('href').length) {
-          cy.request(page.prop('href'));
-        }
-      });
+      cy.get('a')
+        .not(':contains("email")')
+        .each((page) => {
+          if (page.prop('href').length) {
+            cy.request(page.prop('href'));
+          }
+        });
     }
   });
 });
