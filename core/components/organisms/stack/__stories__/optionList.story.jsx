@@ -66,7 +66,7 @@ export const optionList = () => {
             <Stack className="vh-50 overflow-auto pb-10">
               {dataList.map((data, key) => {
                 return (
-                  <StackItem type="option" key={key} selected={key === 0}>
+                  <StackItem type="option" key={key} selected={key === 0} id={key}>
                     <Text>{data.name}</Text> <br />
                     <Text appearance="subtle">{data.subInfo}</Text>
                   </StackItem>

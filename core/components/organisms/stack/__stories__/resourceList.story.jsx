@@ -34,6 +34,7 @@ export const resourceList = () => {
             <StackItem
               type="resource"
               activated={key === 0}
+              id={key}
               key={key}
               className="d-flex align-items-center justify-content-between"
             >

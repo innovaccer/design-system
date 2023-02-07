@@ -76,6 +76,7 @@ export const nestedList = () => {
           return (
             <StackItem
               key={key}
+              id={key}
               expanded={expanded && key === listKey}
               nestedRow={<SubList />}
               className="d-flex align-items-center justify-content-between"

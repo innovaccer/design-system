@@ -52,6 +52,14 @@ export interface StackItemProps extends BaseProps {
    * Set `true` to remove default padding of list item
    */
   disablePadding?: boolean;
+  /**
+   * Allows list item re-ordering
+   */
+  draggable?: boolean;
+  /**
+   * Unique ID to list item
+   */
+  id: string;
 }
 
 export const StackItem = (props: StackItemProps) => {
@@ -67,6 +75,8 @@ export const StackItem = (props: StackItemProps) => {
     disablePadding,
     expanded,
     type,
+    id,
+    draggable,
   } = props;
 
   // const baseProps = extractBaseProps(props);
@@ -85,10 +95,25 @@ export const StackItem = (props: StackItemProps) => {
     className
   );
 
+  const onDropHandler = (e: React.DragEvent<HTMLLIElement>, currIndex: string) => {
+    const sourceIndex = e.dataTransfer?.getData('index');
+    const sourceItem = sourceIndex && document.getElementById(sourceIndex);
+    const currItem = document.getElementById(currIndex);
+    currItem && sourceItem && currItem.before(sourceItem);
+  };
+
   return (
     <li
       data-test="DesignSystem-Stack-Item"
-      // {...baseProps}
+      draggable={draggable}
+      key={id}
+      id={id}
+      onDragStart={(e) => {
+        e.dataTransfer.setData('index', id);
+        e.dataTransfer.effectAllowed = 'move';
+      }}
+      onDragOver={(e) => e.preventDefault()}
+      onDrop={(e) => onDropHandler(e, id)}
     >
       <div
         className={itemClass}
@@ -109,6 +134,7 @@ StackItem.defaultProps = {
   size: 'standard',
   showDivider: true,
   type: 'option',
+  draggable: false,
 };
 
 export default StackItem;
