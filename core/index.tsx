@@ -86,5 +86,6 @@ export { Divider } from './components/atoms/divider';
 export { HelpText } from './components/atoms/helpText';
 export { LinkButton } from './components/atoms/linkButton';
 export { Listbox, ListboxItem } from './components/organisms/listbox';
+export { Combobox } from './components/organisms/combobox';
 
 export { version } from '../package.json';
