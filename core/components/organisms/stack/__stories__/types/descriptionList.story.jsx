@@ -79,7 +79,6 @@ export const descriptionList = () => {
           {dataList.map((data, key) => {
             return (
               <StackItem
-                draggable={true}
                 type="description"
                 key={key}
                 id={key}
@@ -114,7 +113,7 @@ export const descriptionList = () => {
 };
 
 export default {
-  title: 'Components/Stack/Description List',
+  title: 'Components/Stack/Type/Description List',
   component: Stack,
   subcomponents: { StackItem },
 };

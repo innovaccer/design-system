@@ -4,7 +4,7 @@ import {
   // , extractBaseProps
 } from '@/utils/types';
 import classNames from 'classnames';
-import { Divider } from '@/index.type';
+import { Divider, Icon } from '@/index.type';
 
 type StackType = 'option' | 'description' | 'resource';
 type StackSize = 'standard' | 'compressed' | 'tight';
@@ -105,9 +105,9 @@ export const StackItem = (props: StackItemProps) => {
   return (
     <li
       data-test="DesignSystem-Stack-Item"
-      draggable={draggable}
       key={id}
       id={id}
+      draggable={draggable}
       onDragStart={(e) => {
         e.dataTransfer.setData('index', id);
         e.dataTransfer.effectAllowed = 'move';
@@ -120,6 +120,11 @@ export const StackItem = (props: StackItemProps) => {
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={0}
       >
+        {draggable && (
+          <div>
+            <Icon name="drag_indicator" size={16} />
+          </div>
+        )}
         {children}
       </div>
       {nestedRow && expanded && <div>{nestedRow}</div>}

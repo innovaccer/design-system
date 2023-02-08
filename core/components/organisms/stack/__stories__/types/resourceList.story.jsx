@@ -64,7 +64,7 @@ export const resourceList = () => {
 };
 
 export default {
-  title: 'Components/Stack/Resource List',
+  title: 'Components/Stack/Type/Resource List',
   component: Stack,
   subcomponents: { StackItem },
 };

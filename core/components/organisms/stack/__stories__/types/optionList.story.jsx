@@ -88,7 +88,7 @@ export const optionList = () => {
 };
 
 export default {
-  title: 'Components/Stack/Option List',
+  title: 'Components/Stack/Type/Option List',
   component: Stack,
   subcomponents: { StackItem },
 };
