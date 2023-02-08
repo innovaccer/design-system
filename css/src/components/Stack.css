@@ -21,6 +21,7 @@
 
 .Stack-item--disabled {
   opacity: 0.4;
+  pointer-events: none;
 }
 
 .Stack-item--selected {

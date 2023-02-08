@@ -81,3 +81,4 @@ export { InlineMessageProps } from './components/organisms/inlineMessage';
 export { ChoiceListProps } from './components/organisms/choiceList';
 export { DividerProps } from './components/atoms/divider';
 export { HelpTextProps } from './components/atoms/helpText';
+export { StackProps, StackItemProps } from './components/organisms/stack';

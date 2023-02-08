@@ -1,4 +1,5 @@
 export { default, default as Stack } from './Stack';
+export * from './Stack';
 export * from './StackItem';
 
 /*

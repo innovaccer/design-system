@@ -1,0 +1,1029 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: false, disablePadding: false, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: false, disablePadding: false, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="px-6 Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: false, disablePadding: true, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: false, disablePadding: true, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: true, disablePadding: false, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: true, disablePadding: false, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="px-6 Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: true, disablePadding: true, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: false, disabled: true, disablePadding: true, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: false, disablePadding: false, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: false, disablePadding: false, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="px-6 Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: false, disablePadding: true, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: false, disablePadding: true, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: true, disablePadding: false, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: true, disablePadding: false, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="px-6 Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: true, disablePadding: true, draggable: false, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot 
+  showDivider: true, disabled: true, disablePadding: true, draggable: true, size: ["standard","compressed","tight"], type: ["option","description","resource"]
+ 1`] = `
+<body>
+  <div>
+    <li
+      data-test="DesignSystem-Stack-Item"
+      draggable="false"
+      id="stack-item-id"
+    >
+      <div
+        class="px-6 Stack-item--disabled Stack-item py-5"
+        data-test="DesignSystem-Stack-ItemWrapper"
+        tabindex="0"
+      >
+        <div>
+          stack item element
+        </div>
+      </div>
+      <hr
+        class="Divider Divider--horizontal Divider--basic"
+        data-test="DesignSystem-Divider"
+      />
+    </li>
+  </div>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="true"
+      >
+        <div
+          class="Stack-item--disabled Stack-item"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            <i
+              class="material-icons material-icons-round Icon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator_round
+            </i>
+          </div>
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for nested row 
+  expanded: false, nestedRow: "[ReactNode]"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for nested row 
+  expanded: true, nestedRow: "[ReactNode]"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <div
+          data-test="DesignSystem-Stack--Nested-Item"
+        >
+          <div>
+            nested row
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: false, activated: false, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: false, activated: false, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: false, activated: false, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: false, activated: true, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: false, activated: true, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: false, activated: true, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item Stack-item--activated py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: true, activated: false, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: true, activated: false, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item Stack-item--selected py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: true, activated: false, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: true, activated: true, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: true, activated: true, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item Stack-item--selected py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Stack component snapshot for states 
+  selected: true, activated: true, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Stack"
+      data-test="DesignSystem-Stack"
+    >
+      <li
+        data-test="DesignSystem-Stack-Item"
+        draggable="false"
+      >
+        <div
+          class="px-6 Stack-item Stack-item--activated py-5"
+          data-test="DesignSystem-Stack-ItemWrapper"
+          tabindex="0"
+        >
+          <div>
+            stack item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;

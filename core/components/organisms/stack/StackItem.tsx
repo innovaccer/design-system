@@ -4,7 +4,7 @@ import {
   // , extractBaseProps
 } from '@/utils/types';
 import classNames from 'classnames';
-import { Divider, Icon } from '@/index.type';
+import { Divider, Icon } from '@/index';
 
 type StackType = 'option' | 'description' | 'resource';
 type StackSize = 'standard' | 'compressed' | 'tight';
@@ -116,6 +116,7 @@ export const StackItem = (props: StackItemProps) => {
       onDrop={(e) => onDropHandler(e, id)}
     >
       <div
+        data-test="DesignSystem-Stack-ItemWrapper"
         className={itemClass}
         // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
         tabIndex={0}
@@ -127,7 +128,7 @@ export const StackItem = (props: StackItemProps) => {
         )}
         {children}
       </div>
-      {nestedRow && expanded && <div>{nestedRow}</div>}
+      {nestedRow && expanded && <div data-test="DesignSystem-Stack--Nested-Item">{nestedRow}</div>}
       {showDivider && <Divider />}
     </li>
   );
