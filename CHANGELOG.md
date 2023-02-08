@@ -1,3 +1,45 @@
+## 2.14.2-0 (2023-02-07)
+
+### Highlights
+
+- feat(docs): add satismeter feedback form support (f880e6a8)
+- feat(checkbox): add error state in checkbox (f9677fd5)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(docs): add satismeter feedback form support (f880e6a8)
+- feat(checkbox): add error state in checkbox (f9677fd5)
+
+### Fixes
+
+- fix(docs): update cypress test for images (3108592d)
+- fix(dropdown): add support to enable apply button on same option label selection(0e743737)
+
+### Improvements
+
+- fix(fileList): update color of other file type (72704373)
+- fix(checkbox): replace checkbox icons with svg (6e179d5f)
+- fix(stepper): update state of stepper item (e224df82)
+- fix(horizontalNav): update focus ring on disabled state (9be66388)
+
+### Documentation
+
+NA
+
+---
+
 ## 2.14.1-1 (2023-01-22)
 
 ### Highlights
