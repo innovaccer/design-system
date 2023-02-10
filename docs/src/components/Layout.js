@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/style.css';
 import Meta from './Meta';
 import Header from './Header';
@@ -15,6 +15,7 @@ import ComponentsContainer from './Container/ComponentsContainer';
 import { copyMessage, copyMessageSuccess } from '../util/constants.js';
 import { Row, Column, Button, Toast, Tooltip } from '@innovaccer/design-system';
 import FeedbackForm from './FeedbackForm';
+import LightBox from './LightBox';
 
 const leftMenuList = [
   {
@@ -107,9 +108,41 @@ const Layout = ({
   const [toastTitle, setToastTitle] = useState('');
   const [isTooltipActiveCode, setTooltipActiveCode] = useState(false);
   const [tooltipName, setTooltipName] = useState(copyMessage);
+  const [lightboxDetail, setLightboxDetail] = useState({
+    open: false,
+    imgSrc: '',
+  });
   const frontmatter = useFrontmatter(relativePagePath);
   const refCode = React.createRef();
   const isOverviewPage = relativePagePath.includes('overview');
+
+  useEffect(() => {
+    const imageNodeList = document.getElementsByClassName('gatsby-resp-image-image');
+    const imageList = [...imageNodeList];
+    imageList.map((image, key) => {
+      // image.addEventListener('click', (e) => {
+      //   e.target.classList.add('lightbox');
+      // });
+      image.addEventListener('click', (e) => imageClickHandler(e));
+    });
+  }, []);
+
+  const imageClickHandler = (e) => {
+    console.log('inside image handler');
+    const data = { ...lightboxDetail };
+    data.open = true;
+    data.imgSrc = e.target;
+    console.log('inside data-> ', data);
+    setLightboxDetail(data);
+  };
+
+  const onLightBoxClose = () => {
+    const data = { ...lightboxDetail };
+    data.open = false;
+    //  data.imgSrc = e.target;
+    console.log('inside data-> ', data);
+    setLightboxDetail(data);
+  };
 
   const copyToClipboard = (str) => {
     if (typeof str === 'string') {
@@ -254,6 +287,7 @@ const Layout = ({
           )}
           <Footer relativePagePath={relativePagePath} />
         </Column>
+        <LightBox imgData={lightboxDetail} onClose={onLightBoxClose} />
       </Row>
     </>
   );
