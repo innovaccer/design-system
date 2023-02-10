@@ -147,3 +147,16 @@ blockquote p {
 .text-align--center {
   text-align: center;
 }
+
+.Lightbox-image {
+  display: flex;
+  align-items: center;
+  object-fit: contain;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.Lightbox-wrapper {
+  box-shadow: none;
+}
