@@ -148,7 +148,7 @@ blockquote p {
   text-align: center;
 }
 
-.lightbox {
+.Lightbox-image {
   /* transform: scale(1.5); */
   justify-content: center;
   display: flex;
@@ -157,21 +157,6 @@ blockquote p {
   object-fit: contain;
 }
 
-.Lightbox-wrapper{
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-    /* transform: scale(1.5); */
-
-  /* position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0; */
-  /* z-index: 2000; */
-}
-
-.Lightbox-wrappers {
+.Lightbox-wrapper {
   box-shadow: none;
 }
