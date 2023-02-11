@@ -116,15 +116,6 @@ const Layout = ({
   const refCode = React.createRef();
   const isOverviewPage = relativePagePath.includes('overview');
 
-  // To add lightBox feature for markdown images
-  useEffect(() => {
-    const imageNodeList = document.getElementsByClassName('gatsby-resp-image-image');
-    const imageList = [...imageNodeList];
-    imageList.map((image) => {
-      image.addEventListener('click', (e) => imageClickHandler(e));
-      image.classList.add('cursor-pointer');
-    });
-  }, []);
 
   const imageClickHandler = (e) => {
     const data = { ...lightboxDetail };
@@ -221,6 +212,9 @@ const Layout = ({
     pre: Code,
     Logos: (props) => <Logos {...props} />,
     Colors: (props) => <Colors {...props} />,
+    img: (props) => (
+      <img {...props} className={`${props.className} cursor-pointer`} onClick={(e) => imageClickHandler(e)} />
+    ),
   };
 
   const showAnimation = () => {
