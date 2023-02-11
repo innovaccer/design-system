@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './css/style.css';
 import Meta from './Meta';
 import Header from './Header';
@@ -13,9 +13,10 @@ import { useFrontmatter } from '../util/Frontmatter';
 import TableOfContent from './TableOfContent/TableOfContent';
 import ComponentsContainer from './Container/ComponentsContainer';
 import { copyMessage, copyMessageSuccess } from '../util/constants.js';
-import { Row, Column, Button, Toast, Tooltip } from '@innovaccer/design-system';
+import { Row, Column, Button, Toast, Tooltip, Backdrop, Icon } from '@innovaccer/design-system';
 import FeedbackForm from './FeedbackForm';
-import LightBox from './LightBox';
+// import LightBox from './LightBox';
+import Lightbox from 'react-spring-lightbox';
 
 const leftMenuList = [
   {
@@ -108,20 +109,23 @@ const Layout = ({
   const [toastTitle, setToastTitle] = useState('');
   const [isTooltipActiveCode, setTooltipActiveCode] = useState(false);
   const [tooltipName, setTooltipName] = useState(copyMessage);
-  const [lightboxDetail, setLightboxDetail] = useState({
-    open: false,
-    imgSrc: '',
-  });
   const frontmatter = useFrontmatter(relativePagePath);
   const refCode = React.createRef();
   const isOverviewPage = relativePagePath.includes('overview');
+  const [lightboxDetail, setLightboxDetail] = useState({
+    open: false,
+    imgSrc: '',
+    alt: 'image',
+  });
 
-
-  const imageClickHandler = (e) => {
-    const data = { ...lightboxDetail };
-    data.open = true;
-    data.imgSrc = e.target;
-    setLightboxDetail(data);
+  const imageClickHandler = (props) => {
+    const {src, title} = props;
+    const imgData = { ...lightboxDetail };
+    // console.log('e--> ', e);
+    imgData.open = true;
+    imgData.imgSrc = src;
+    imgData.alt= title;
+    setLightboxDetail(imgData);
   };
 
   const onLightBoxClose = () => {
@@ -212,15 +216,25 @@ const Layout = ({
     pre: Code,
     Logos: (props) => <Logos {...props} />,
     Colors: (props) => <Colors {...props} />,
-    img: (props) => (
-      <img {...props} className={`${props.className} cursor-pointer`} onClick={(e) => imageClickHandler(e)} />
-    ),
+    img: (props) => {
+      console.log('props-> ', props);
+      return(
+      <img {...props} className={`${props.className} cursor-pointer`} onClick={() => imageClickHandler(props)} />
+    )},
   };
 
   const showAnimation = () => {
     if (location.state?.animation === false) return false;
     return true;
   };
+
+  const LightboxHeader = () => {
+    return(
+      <div className='d-flex justify-content-end'>
+        <Icon name="cancel" onClick={onLightBoxClose} size={30} appearance="white" className="cursor-pointer m-4" />
+      </div>
+    )
+  }
 
   return (
     <>
@@ -276,7 +290,23 @@ const Layout = ({
           )}
           <Footer relativePagePath={relativePagePath} />
         </Column>
-        <LightBox imgData={lightboxDetail} onClose={onLightBoxClose} />
+        {/* <LightBox imgData={lightboxDetail} onClose={onLightBoxClose} /> */}
+        <div onClick={onLightBoxClose}>
+          <Lightbox
+            singleClickToZoom
+            onClose={onLightBoxClose}
+            isOpen={lightboxDetail.open}
+            renderHeader={() => <LightboxHeader />}
+            images={[{ src: lightboxDetail.imgSrc, alt: lightboxDetail.alt }]}
+            style={{ zIndex: 3000, backgroundColor: 'rgba(47, 47, 47, 0.8)' }}
+            pageTransitionConfig={{
+              from: { transform: 'scale(0.75)', opacity: 0 },
+              enter: { transform: 'scale(1)', opacity: 1 },
+              leave: { transform: 'scale(0.75)', opacity: 0 },
+              config: { mass: 1, tension: 320, friction: 32 },
+            }}
+          />
+        </div>
       </Row>
     </>
   );
