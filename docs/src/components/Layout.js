@@ -122,6 +122,7 @@ const Layout = ({
     const imageList = [...imageNodeList];
     imageList.map((image) => {
       image.addEventListener('click', (e) => imageClickHandler(e));
+      image.classList.add('cursor-pointer');
     });
   }, []);
 

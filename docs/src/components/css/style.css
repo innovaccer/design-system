@@ -150,11 +150,12 @@ blockquote p {
 
 .Lightbox-image {
   /* transform: scale(1.5); */
-  justify-content: center;
   display: flex;
-  flex-direction: column;
   align-items: center;
   object-fit: contain;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .Lightbox-wrapper {
