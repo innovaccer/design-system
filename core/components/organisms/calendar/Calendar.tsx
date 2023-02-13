@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button, Heading, Text, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { TextColor } from '@/common.type';
 
 import config from './config';
 import { Size, Day, View, Events } from './types';
@@ -177,7 +178,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const yearNav = props.yearNav !== undefined ? props.yearNav : getDateInfo(currDate || Date.now()).year;
     const monthNav = props.monthNav !== undefined ? props.monthNav : getDateInfo(currDate || Date.now()).month;
     const { year, month, date } = getDateInfo(currDate);
-    const todayCompleteDate = getDateInfo(new Date());
+    const todayCompleteDate = getDateInfo(new Date(Date.now()));
     this.state = {
       currDate,
       startDate,
@@ -679,6 +680,14 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'Calendar-value--currDateMonthYear': isCurrentYear(),
           });
 
+          const getTextColor = classNames({
+            inverse: !active && !isCurrentYear() && !disabled,
+            white: active,
+            'primary-lighter': isCurrentYear() && disabled,
+            primary: isCurrentYear(),
+            'inverse-lightest': disabled,
+          }) as TextColor;
+
           return (
             //  TODO(a11y)
             //  eslint-disable-next-line
@@ -689,10 +698,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onClick={this.selectYear(year)}
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
             >
-              <Text
-                size={size === 'small' ? 'small' : 'regular'}
-                appearance={active ? 'white' : disabled ? 'disabled' : isCurrentYear() ? 'link' : 'default'}
-              >
+              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className="Calendar-text">
                 {year}
               </Text>
             </div>
@@ -724,11 +730,19 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
           const valueClass = classNames({
             'Calendar-value': true,
             'Calendar-value--active': active,
-            'Calendar-value--dummy': disabled,
+            'Calendar-value--disabled': disabled,
             'Calendar-monthValue': true,
             [`Calendar-monthValue--${size}`]: size,
             'Calendar-value--currDateMonthYear': isCurrentMonth(),
           });
+
+          const getTextColor = classNames({
+            inverse: !active && !isCurrentMonth() && !disabled,
+            white: active,
+            'primary-lighter': isCurrentMonth() && disabled,
+            primary: isCurrentMonth(),
+            'inverse-lightest': disabled,
+          }) as TextColor;
 
           return (
             //TODO(a11y)
@@ -740,10 +754,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onClick={this.selectMonth(month)}
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
             >
-              <Text
-                size={size === 'small' ? 'small' : 'regular'}
-                appearance={active ? 'white' : disabled ? 'disabled' : isCurrentMonth() ? 'link' : 'default'}
-              >
+              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className="Calendar-text">
                 {months[month]}
               </Text>
             </div>
@@ -979,6 +990,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
             const valueClass = classNames({
               'Calendar-value': true,
+              'Calendar-inRangeValue': !isStart && !isEnd,
               'Calendar-value--start': isStart && !isEnd,
               'Calendar-value--end': isEnd && !isStart,
               'Calendar-value--startError': isStart && isRangeError,
@@ -990,12 +1002,20 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'Calendar-value--currDateMonthYear': today(),
             });
 
+            const getTextColor = classNames({
+              inverse: !active && !today() && !disabled,
+              white: active,
+              'primary-lighter': today() && disabled,
+              primary: today(),
+              'inverse-lightest': disabled,
+            }) as TextColor;
+
             return (
               <div key={`${row}-${col}`} className={wrapperClass} data-test="designSystem-Calendar-WrapperClass">
                 {!dummy && (
                   <>
                     <Text
-                      appearance={active ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default'}
+                      color={getTextColor}
                       size={size === 'small' ? 'small' : 'regular'}
                       data-test="DesignSystem-Calendar--dateValue"
                       className={valueClass}
@@ -1039,7 +1059,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
 
     const containerClass = classNames({
       ['Calendar']: true,
-      [`Calendar--${view}--${size}`]: view,
+      [`Calendar-${view}--${size}`]: view,
       [`Calendar--${size}`]: size,
     });
 

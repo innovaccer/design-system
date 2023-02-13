@@ -17,15 +17,15 @@
   width: 212px;
 }
 
-.Calendar--date--small {
+.Calendar-date--small {
   height: 248px;
 }
 
-.Calendar--month--small {
+.Calendar-month--small {
   height: 192px;
 }
 
-.Calendar--year--small {
+.Calendar-year--small {
   height: 192px;
 }
 
@@ -37,15 +37,15 @@
   width: 316px;
 }
 
-.Calendar--date--large {
+.Calendar-date--large {
   height: 324px;
 }
 
-.Calendar--month--large {
+.Calendar-month--large {
   height: 272px;
 }
 
-.Calendar--year--large {
+.Calendar-year--large {
   height: 272px;
 }
 
@@ -116,6 +116,14 @@
   background: var(--primary-lightest);
 }
 
+.Calendar-valueWrapper--inRange .Calendar-inRangeValue:hover {
+  background: var(--primary-lighter);
+}
+
+.Calendar-valueWrapper--inRange .Calendar-inRangeValue:active {
+  background: var(--primary-light);
+}
+
 .Calendar-valueWrapper--inRangeError {
   background: var(--alert-lightest);
 }
@@ -154,6 +162,10 @@
 }
 
 .Calendar-value:hover {
+  background: var(--secondary-light);
+}
+
+.Calendar-value:active {
   background: var(--secondary);
 }
 
@@ -177,19 +189,30 @@
   background: var(--alert-lightest);
 }
 
-.Calendar-value--currDateMonthYear,
-.Calendar-value--currDateMonthYear:hover {
-  background: var(--primary-lightest) !important;
+.Calendar-value--currDateMonthYear {
+  background: var(--primary-lightest);
 }
 
-.Calendar-value--active,
-.Calendar-value--active:hover {
-  background: var(--primary) !important;
+.Calendar-value--currDateMonthYear:hover {
+  background: var(--primary-lighter);
+}
+
+.Calendar-value--currDateMonthYear:active {
+  background: var(--primary-lighter);
+  color: var(--primary-dark);
+}
+
+.Calendar-value--currDateMonthYear:active .Calendar-text {
+  color: var(--primary-dark);
+}
+
+.Calendar-value--active {
+  background: var(--primary);
   font-weight: var(--font-weight-bold);
 }
 
-.Calendar-yearValue,
-.Calendar-monthValue {
+.Calendar-value--active:hover {
+  background: var(--primary-dark);
 }
 
 .Calendar-yearValue--small,
@@ -202,9 +225,6 @@
 .Calendar-monthValue--large {
   height: var(--spacing-3);
   width: var(--spacing-5);
-}
-
-.Calendar-dateValue {
 }
 
 .Calendar-dateValue--small {
