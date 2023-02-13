@@ -75,15 +75,10 @@ export const descriptionList = () => {
 
       <CardBody className="p-0">
         <Divider />
-        <Stack className="vh-50 overflow-auto">
+        <Stack type="description" className="vh-50 overflow-auto">
           {dataList.map((data, key) => {
             return (
-              <StackItem
-                type="description"
-                key={key}
-                id={key}
-                className="d-flex align-items-center justify-content-between"
-              >
+              <StackItem key={key} id={key} className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
                   <Avatar>{data.name}</Avatar>
                   <div className="ml-5">
@@ -116,4 +111,14 @@ export default {
   title: 'Components/Stack/Type/Description List',
   component: Stack,
   subcomponents: { StackItem },
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Stack',
+        props: {
+          exclude: ['parentValue'],
+        },
+      },
+    },
+  },
 };

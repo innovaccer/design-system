@@ -5,19 +5,10 @@ import {
 } from '@/utils/types';
 import classNames from 'classnames';
 import { Divider, Icon } from '@/index';
-
-type StackType = 'option' | 'description' | 'resource';
-type StackSize = 'standard' | 'compressed' | 'tight';
+import { SharedProp } from './Stack';
+// import { StackProps } from './Stack';
 
 export interface StackItemProps extends BaseProps {
-  /**
-   * List size
-   */
-  size: StackSize;
-  /**
-   * Type of List
-   */
-  type: StackType;
   /**
    * React Element to be added inside `list`
    */
@@ -30,10 +21,6 @@ export interface StackItemProps extends BaseProps {
    * Set `true` to show nested row
    */
   expanded?: boolean;
-  /**
-   * Add divider below all list item
-   */
-  showDivider: boolean;
   /**
    * Disables the list item
    */
@@ -53,32 +40,35 @@ export interface StackItemProps extends BaseProps {
    */
   disablePadding?: boolean;
   /**
-   * Allows list item re-ordering
-   */
-  draggable?: boolean;
-  /**
    * Unique ID to list item
    */
   id: string;
+  parentValue?: SharedProp;
 }
 
 export const StackItem = (props: StackItemProps) => {
+  const defaultProps = {
+    size: 'standard',
+    showDivider: true,
+    type: 'option',
+    draggable: false,
+  };
+
   const {
     children,
     className,
-    size,
-    showDivider,
     disabled,
     selected,
     activated,
     nestedRow,
     disablePadding,
     expanded,
-    type,
     id,
-    draggable,
+    parentValue = defaultProps,
   } = props;
 
+  console.log('stack item prop', props);
+  const { size, type, showDivider, draggable } = parentValue;
   // const baseProps = extractBaseProps(props);
 
   const itemClass = classNames(
@@ -135,12 +125,5 @@ export const StackItem = (props: StackItemProps) => {
 };
 
 StackItem.displayName = 'StackItem';
-
-StackItem.defaultProps = {
-  size: 'standard',
-  showDivider: true,
-  type: 'option',
-  draggable: false,
-};
 
 export default StackItem;

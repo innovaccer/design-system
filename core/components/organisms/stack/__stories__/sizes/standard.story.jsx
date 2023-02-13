@@ -61,4 +61,14 @@ export default {
   title: 'Components/Stack/Size/Standard List',
   component: Stack,
   subcomponents: { StackItem },
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Stack',
+        props: {
+          exclude: ['parentValue'],
+        },
+      },
+    },
+  },
 };

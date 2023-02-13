@@ -63,10 +63,10 @@ export const optionList = () => {
       <CardBody>
         <Tabs activeIndex={0}>
           <Tab label="Suggested" count={10}>
-            <Stack className="vh-50 overflow-auto pb-10">
+            <Stack type="option" className="vh-50 overflow-auto pb-10">
               {dataList.map((data, key) => {
                 return (
-                  <StackItem type="option" key={key} selected={key === 0} id={key}>
+                  <StackItem key={key} selected={key === 0} id={key}>
                     <Text>{data.name}</Text> <br />
                     <Text appearance="subtle">{data.subInfo}</Text>
                   </StackItem>
@@ -91,4 +91,14 @@ export default {
   title: 'Components/Stack/Type/Option List',
   component: Stack,
   subcomponents: { StackItem },
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Stack',
+        props: {
+          exclude: ['parentValue'],
+        },
+      },
+    },
+  },
 };

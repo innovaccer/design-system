@@ -110,4 +110,14 @@ export default {
   title: 'Components/Stack/Nested List',
   component: Stack,
   subcomponents: { StackItem },
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Stack',
+        props: {
+          exclude: ['parentValue'],
+        },
+      },
+    },
+  },
 };

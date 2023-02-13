@@ -110,9 +110,9 @@ describe('Stack component snapshot for states', () => {
 describe('Stack Item component test for list size: standard', () => {
   it('check for padding classes for size:standard when disablePadding:false', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} size="standard">
-        {children}
-      </StackItem>
+      <Stack size="standard">
+        <StackItem id={stackItemId}>{children}</StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).toHaveClass('px-6 py-5');
@@ -120,9 +120,11 @@ describe('Stack Item component test for list size: standard', () => {
 
   it('check for padding classes for size:standard when disablePadding:true', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} size="standard" disablePadding={true}>
-        {children}
-      </StackItem>
+      <Stack size="standard">
+        <StackItem id={stackItemId} disablePadding={true}>
+          {children}
+        </StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).not.toHaveClass('px-6 py-5');
@@ -132,9 +134,9 @@ describe('Stack Item component test for list size: standard', () => {
 describe('Stack Item component test for list size: tight', () => {
   it('check for padding classes for size:tight when disablePadding:false', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} size="tight">
-        {children}
-      </StackItem>
+      <Stack size="tight">
+        <StackItem id={stackItemId}>{children}</StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).toHaveClass('px-6 py-3');
@@ -142,9 +144,11 @@ describe('Stack Item component test for list size: tight', () => {
 
   it('check for padding classes for size:tight when disablePadding:true', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} size="tight" disablePadding={true}>
-        {children}
-      </StackItem>
+      <Stack size="tight">
+        <StackItem id={stackItemId} disablePadding={true}>
+          {children}
+        </StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).not.toHaveClass('px-6 py-3');
@@ -154,9 +158,9 @@ describe('Stack Item component test for list size: tight', () => {
 describe('Stack Item component test for list size: compressed', () => {
   it('check for padding classes for size:compressed when disablePadding:false', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} size="compressed">
-        {children}
-      </StackItem>
+      <Stack size="compressed">
+        <StackItem id={stackItemId}>{children}</StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).toHaveClass('px-6 py-4');
@@ -164,9 +168,11 @@ describe('Stack Item component test for list size: compressed', () => {
 
   it('check for padding classes for size:compressed when disablePadding:true', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} size="compressed" disablePadding={true}>
-        {children}
-      </StackItem>
+      <Stack size="compressed">
+        <StackItem id={stackItemId} disablePadding={true}>
+          {children}
+        </StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).not.toHaveClass('px-6 py-4');
@@ -176,9 +182,11 @@ describe('Stack Item component test for list size: compressed', () => {
 describe('Stack Item component test for list type: option', () => {
   it('check for classes for type:option', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} type="option" selected={true}>
-        {children}
-      </StackItem>
+      <Stack type="option">
+        <StackItem id={stackItemId} selected={true}>
+          {children}
+        </StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).toHaveClass('Stack-item--selected');
@@ -189,9 +197,11 @@ describe('Stack Item component test for list type: option', () => {
 describe('Stack Item component test for list type: resource', () => {
   it('check for classes for type:resource', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} type="resource" activated={true}>
-        {children}
-      </StackItem>
+      <Stack type="resource">
+        <StackItem id={stackItemId} activated={true}>
+          {children}
+        </StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).toHaveClass('Stack-item--activated');
@@ -202,9 +212,9 @@ describe('Stack Item component test for list type: resource', () => {
 describe('Stack Item component test for list type: description', () => {
   it('check for classes for type:description', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} type="description">
-        {children}
-      </StackItem>
+      <Stack type="description">
+        <StackItem id={stackItemId}>{children}</StackItem>
+      </Stack>
     );
     const stackItem = getByTestId('DesignSystem-Stack-ItemWrapper');
     expect(stackItem).not.toHaveClass('Stack-item');
@@ -246,9 +256,9 @@ describe('Stack Item component test for custom classes', () => {
 describe('Stack Item component test for divider', () => {
   it('check for divider present below list item', () => {
     const { getByTestId } = render(
-      <StackItem id={stackItemId} showDivider={true}>
-        {children}
-      </StackItem>
+      <Stack showDivider={true}>
+        <StackItem id={stackItemId}>{children}</StackItem>
+      </Stack>
     );
     const divider = getByTestId('DesignSystem-Divider');
     expect(divider).toBeInTheDocument();
@@ -256,9 +266,9 @@ describe('Stack Item component test for divider', () => {
 
   it('check for divider not present below list item', () => {
     render(
-      <StackItem id={stackItemId} showDivider={false}>
-        {children}
-      </StackItem>
+      <Stack showDivider={false}>
+        <StackItem id={stackItemId}>{children}</StackItem>
+      </Stack>
     );
     const divider = screen.queryByText('DesignSystem-Divider');
     expect(divider).not.toBeInTheDocument();

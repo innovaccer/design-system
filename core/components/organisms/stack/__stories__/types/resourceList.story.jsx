@@ -28,11 +28,10 @@ export const resourceList = () => {
 
   return (
     <Card>
-      <Stack>
+      <Stack type="resource">
         {dataList.map((record, key) => {
           return (
             <StackItem
-              type="resource"
               activated={key === 0}
               id={key}
               key={key}
@@ -67,4 +66,14 @@ export default {
   title: 'Components/Stack/Type/Resource List',
   component: Stack,
   subcomponents: { StackItem },
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Stack',
+        props: {
+          exclude: ['parentValue'],
+        },
+      },
+    },
+  },
 };

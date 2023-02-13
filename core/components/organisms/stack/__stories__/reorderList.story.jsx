@@ -43,20 +43,15 @@ export const reorderList = () => {
 
   return (
     <Card className="w-50">
-      <Stack>
-        <div className="mt-6 ml-6 mb-5">
-          <Heading>Todo’s table columns</Heading>
-          <Text appearance="subtle">Select the columns that you want to see in work list</Text>
-        </div>
-        <Divider />
+      <div className="mt-6 ml-6 mb-5">
+        <Heading>Todo’s table columns</Heading>
+        <Text appearance="subtle">Select the columns that you want to see in work list</Text>
+      </div>
+      <Divider />
+      <Stack draggable={true}>
         {dataList.map((record, key) => {
           return (
-            <StackItem
-              draggable={true}
-              key={key}
-              id={key}
-              className="d-flex align-items-center justify-content-between"
-            >
+            <StackItem key={key} id={key} className="d-flex align-items-center justify-content-between">
               <div className="d-flex align-items-center">
                 <Text>{record.name}</Text>
               </div>
@@ -75,4 +70,14 @@ export default {
   title: 'Components/Stack/Reorder List',
   component: Stack,
   subcomponents: { StackItem },
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Stack',
+        props: {
+          exclude: ['parentValue'],
+        },
+      },
+    },
+  },
 };

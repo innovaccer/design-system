@@ -28,10 +28,10 @@ export const tightList = () => {
 
   return (
     <Card>
-      <Stack>
+      <Stack size="tight">
         {dataList.map((record, key) => {
           return (
-            <StackItem size="tight" key={key} className="d-flex align-items-center justify-content-between">
+            <StackItem key={key} className="d-flex align-items-center justify-content-between">
               <div className="d-flex align-items-center">
                 <Icon name="assignment" size={20} appearance="primary" className="mr-4" />
                 <div>
@@ -61,4 +61,14 @@ export default {
   title: 'Components/Stack/Size/Tight List',
   component: Stack,
   subcomponents: { StackItem },
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Stack',
+        props: {
+          exclude: ['parentValue'],
+        },
+      },
+    },
+  },
 };
