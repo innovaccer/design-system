@@ -47,6 +47,7 @@ export interface StackItemProps extends BaseProps {
 }
 
 export const StackItem = (props: StackItemProps) => {
+  const [startDrag, setStartDrag] = React.useState(false);
   const defaultProps = {
     size: 'standard',
     showDivider: true,
@@ -90,6 +91,14 @@ export const StackItem = (props: StackItemProps) => {
     const sourceItem = sourceIndex && document.getElementById(sourceIndex);
     const currItem = document.getElementById(currIndex);
     currItem && sourceItem && currItem.before(sourceItem);
+    // setStartDrag(!startDrag);
+  };
+
+  const onDragIconClick = () => {
+    console.log('on drag icon click');
+    // e.stopPropagation();
+    // e.preventDefault();
+    setStartDrag(!startDrag);
   };
 
   return (
@@ -97,8 +106,10 @@ export const StackItem = (props: StackItemProps) => {
       data-test="DesignSystem-Stack-Item"
       key={id}
       id={id}
+      // draggable={draggable && startDrag}
       draggable={draggable}
       onDragStart={(e) => {
+        console.log('on drag start');
         e.dataTransfer.setData('index', id);
         e.dataTransfer.effectAllowed = 'move';
       }}
@@ -113,7 +124,13 @@ export const StackItem = (props: StackItemProps) => {
       >
         {draggable && (
           <div>
-            <Icon name="drag_indicator" size={16} />
+            <Icon
+              name="drag_indicator"
+              appearance="subtle"
+              className="Stack-item--drag-icon cursor-pointer"
+              size={16}
+              onClick={onDragIconClick}
+            />
           </div>
         )}
         {children}
