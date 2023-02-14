@@ -91,24 +91,23 @@ export const StackItem = (props: StackItemProps) => {
     const sourceItem = sourceIndex && document.getElementById(sourceIndex);
     const currItem = document.getElementById(currIndex);
     currItem && sourceItem && currItem.before(sourceItem);
-    setStartDrag(false);
+    // setStartDrag(!startDrag);
   };
 
-  // const onDragIconClick = () => {
-  //   console.log('on drag icon click');
-  //   // e.stopPropagation();
-  //   // e.preventDefault();
-  //   setStartDrag(!startDrag);
-  // };
+  const onDragIconClick = () => {
+    console.log('on drag icon click');
+    // e.stopPropagation();
+    // e.preventDefault();
+    setStartDrag(!startDrag);
+  };
 
   return (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <li
       data-test="DesignSystem-Stack-Item"
       key={id}
       id={id}
-      draggable={draggable && startDrag}
-      // draggable={draggable}
+      // draggable={draggable && startDrag}
+      draggable={draggable}
       onDragStart={(e) => {
         console.log('on drag start');
         e.dataTransfer.setData('index', id);
@@ -116,8 +115,6 @@ export const StackItem = (props: StackItemProps) => {
       }}
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => onDropHandler(e, id)}
-      // onMouseDown={(e) => setStartDrag(false)}
-      // onMouseUp={(e) => setStartDrag(true)}
     >
       <div
         data-test="DesignSystem-Stack-ItemWrapper"
@@ -126,14 +123,13 @@ export const StackItem = (props: StackItemProps) => {
         tabIndex={0}
       >
         {draggable && (
-          // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-          <div onMouseDown={() => setStartDrag(true)} onMouseUp={() => setStartDrag(false)}>
+          <div>
             <Icon
               name="drag_indicator"
               appearance="subtle"
               className="Stack-item--drag-icon cursor-pointer"
               size={16}
-              // onClick={onDragIconClick}
+              onClick={onDragIconClick}
             />
           </div>
         )}
