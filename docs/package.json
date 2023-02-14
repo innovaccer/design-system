@@ -57,9 +57,9 @@
     "react-helmet": "^6.1.0",
     "react-live": "^2.3.0",
     "react-popper": "1.3.7",
+    "react-spring-lightbox": "^1.7.1",
     "react-syntax-highlighter": "^15.4.4",
-    "remark-slug": "^6.1.0",
-    "styled-components": "^5.3.6"
+    "remark-slug": "^6.1.0"
   },
   "keywords": [],
   "author": "",
