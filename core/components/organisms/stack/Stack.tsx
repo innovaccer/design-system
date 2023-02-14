@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 type StackType = 'option' | 'description' | 'resource';
 type StackSize = 'standard' | 'compressed' | 'tight';
+type TagType = 'ul' | 'ol' | 'div';
 
 export interface SharedProp {
   /**
@@ -45,10 +46,14 @@ export interface StackProps extends BaseProps {
    * Allows list item re-ordering
    */
   draggable?: boolean;
+  /**
+   * Set a custom element for Stack
+   */
+  tag: TagType;
 }
 
 export const Stack = (props: StackProps) => {
-  const { children, className } = props;
+  const { children, className, tag: Tag } = props;
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -83,9 +88,9 @@ export const Stack = (props: StackProps) => {
   });
 
   return (
-    <ul data-test="DesignSystem-Stack" {...baseProps} className={classes}>
+    <Tag data-test="DesignSystem-Stack" {...baseProps} className={classes}>
       {renderedChildren}
-    </ul>
+    </Tag>
   );
 };
 
@@ -96,6 +101,7 @@ Stack.defaultProps = {
   showDivider: true,
   type: 'option',
   draggable: false,
+  tag: 'ul',
 };
 
 export default Stack;

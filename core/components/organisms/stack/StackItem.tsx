@@ -8,6 +8,8 @@ import { Divider, Icon } from '@/index';
 import { SharedProp } from './Stack';
 // import { StackProps } from './Stack';
 
+type TagType = 'li' | 'div';
+
 export interface StackItemProps extends BaseProps {
   /**
    * React Element to be added inside `list`
@@ -43,6 +45,10 @@ export interface StackItemProps extends BaseProps {
    * Unique ID to list item
    */
   id: string;
+  /**
+   * Set a custom element for Stack
+   */
+  tag: TagType;
   parentValue?: SharedProp;
 }
 
@@ -65,6 +71,7 @@ export const StackItem = (props: StackItemProps) => {
     disablePadding,
     expanded,
     id,
+    tag: Tag,
     parentValue = defaultProps,
   } = props;
 
@@ -103,7 +110,7 @@ export const StackItem = (props: StackItemProps) => {
 
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-    <li
+    <Tag
       data-test="DesignSystem-Stack-Item"
       key={id}
       id={id}
@@ -141,10 +148,13 @@ export const StackItem = (props: StackItemProps) => {
       </div>
       {nestedRow && expanded && <div data-test="DesignSystem-Stack--Nested-Item">{nestedRow}</div>}
       {showDivider && <Divider />}
-    </li>
+    </Tag>
   );
 };
 
 StackItem.displayName = 'StackItem';
+StackItem.defaultProps = {
+  tag: 'li',
+};
 
 export default StackItem;
