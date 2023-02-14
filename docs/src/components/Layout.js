@@ -278,7 +278,7 @@ const Layout = ({
           )}
           <Footer relativePagePath={relativePagePath} />
         </Column>
-        <ImageLightBox onLightBoxClose={onLightBoxClose} lightboxDetail={lightboxDetail} />
+        {/* <ImageLightBox onLightBoxClose={onLightBoxClose} lightboxDetail={lightboxDetail} /> */}
       </Row>
     </>
   );
