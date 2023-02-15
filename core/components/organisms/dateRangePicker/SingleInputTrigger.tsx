@@ -33,6 +33,26 @@ export const SingleInputTrigger = (props: TriggerProps) => {
     );
   };
 
+  const onPasteHandler = (_e: React.ClipboardEvent<HTMLInputElement>, val: string) => {
+    const { onPaste } = inputOptions;
+
+    const date = val.split(' - ');
+    const startVal = date[0];
+    const endVal = date[1];
+
+    const endD = translateToDate(inputFormat, endVal, validators);
+    const startD = translateToDate(inputFormat, startVal, validators);
+
+    setState({
+      startDate: startD,
+      endDate: endD,
+      startValue: startVal,
+      endValue: endVal,
+    });
+
+    if (onPaste) onPaste(_e, val);
+  };
+
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string) => {
     const date = val.split(' - ');
     const startVal = date[0];
@@ -139,6 +159,9 @@ export const SingleInputTrigger = (props: TriggerProps) => {
           }}
           onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onBlurHandler(e, val || '');
+          }}
+          onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
+            onPasteHandler(e, val || '');
           }}
           onClear={onClearHandler}
           error={showError}

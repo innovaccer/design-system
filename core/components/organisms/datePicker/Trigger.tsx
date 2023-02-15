@@ -18,6 +18,20 @@ export const Trigger = (props: TriggerProps) => {
 
   const { placeholderChar = '_' } = inputOptions;
 
+  const onPasteHandler = (_e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
+    const { onPaste } = inputOptions;
+    setState({
+      open: true,
+    });
+
+    if (val && !val.includes(placeholderChar)) {
+      const d = translateToDate(inputFormat, val, validators);
+      setState({ date: d });
+    }
+
+    if (onPaste) onPaste(_e, val);
+  };
+
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
     const { onChange } = inputOptions;
     setState({
@@ -77,6 +91,7 @@ export const Trigger = (props: TriggerProps) => {
         date ? translateToString(inputFormat, date) : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : ''
       }
       onChange={onChangeHandler}
+      onPaste={onPasteHandler}
       onBlur={onBlurHandler}
       onClear={onClearHandler}
       caption={showError ? errorMessage : ''}
