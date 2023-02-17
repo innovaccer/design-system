@@ -116,7 +116,7 @@ export default {
       docPage: {
         title: 'Stack',
         props: {
-          exclude: ['parentValue'],
+          exclude: ['parentProps'],
         },
       },
     },

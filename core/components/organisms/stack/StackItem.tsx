@@ -9,6 +9,7 @@ import { SharedProp } from './Stack';
 // import { StackProps } from './Stack';
 
 type TagType = 'li' | 'div';
+type DragEventType = React.DragEvent<HTMLLIElement> | React.DragEvent<HTMLDivElement>;
 
 export interface StackItemProps extends BaseProps {
   /**
@@ -49,7 +50,7 @@ export interface StackItemProps extends BaseProps {
    * Set a custom element for Stack
    */
   tag: TagType;
-  parentValue?: SharedProp;
+  parentProps?: SharedProp;
 }
 
 export const StackItem = (props: StackItemProps) => {
@@ -72,11 +73,10 @@ export const StackItem = (props: StackItemProps) => {
     expanded,
     id,
     tag: Tag,
-    parentValue = defaultProps,
+    parentProps = defaultProps,
   } = props;
 
-  console.log('stack item prop', props);
-  const { size, type, showDivider, draggable } = parentValue;
+  const { size, type, showDivider, draggable } = parentProps;
   // const baseProps = extractBaseProps(props);
 
   const itemClass = classNames(
@@ -93,7 +93,7 @@ export const StackItem = (props: StackItemProps) => {
     className
   );
 
-  const onDropHandler = (e: React.DragEvent<HTMLLIElement>, currIndex: string) => {
+  const onDropHandler = (e: DragEventType, currIndex: string) => {
     const sourceIndex = e.dataTransfer?.getData('index');
     const sourceItem = sourceIndex && document.getElementById(sourceIndex);
     const currItem = document.getElementById(currIndex);
@@ -116,13 +116,13 @@ export const StackItem = (props: StackItemProps) => {
       id={id}
       draggable={draggable && startDrag}
       // draggable={draggable}
-      onDragStart={(e) => {
+      onDragStart={(e: DragEventType) => {
         console.log('on drag start');
         e.dataTransfer.setData('index', id);
         e.dataTransfer.effectAllowed = 'move';
       }}
-      onDragOver={(e) => e.preventDefault()}
-      onDrop={(e) => onDropHandler(e, id)}
+      onDragOver={(e: DragEventType) => e.preventDefault()}
+      onDrop={(e: DragEventType) => onDropHandler(e, id)}
       // onMouseDown={(e) => setStartDrag(false)}
       // onMouseUp={(e) => setStartDrag(true)}
     >

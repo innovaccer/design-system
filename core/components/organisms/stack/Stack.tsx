@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 type StackType = 'option' | 'description' | 'resource';
 type StackSize = 'standard' | 'compressed' | 'tight';
-type TagType = 'ul' | 'ol' | 'div';
+type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface SharedProp {
   /**
@@ -63,27 +63,8 @@ export const Stack = (props: StackProps) => {
     className
   );
 
-  // let elements = React.Children.toArray(children);
-
-  // if (elements.length === 1) {
-  //   elements = React.cloneElement(elements[0], { className: 'top bottom' });
-  // } else if (elements.length > 0) {
-  //   let lastElement = elements[elements.length - 1];
-  //   elements = [React.cloneElement(elements[0], { className: 'top' })]
-  //     .concat(elements.slice(1, -1))
-  //     .concat(React.cloneElement(lastElement, { className: 'bottom' }));
-  // }
-
-  // const renderedChildren = React.Children.map(
-  //   children,
-  //   function (child: React.ReactElement<any, string | JSXElementConstructor<any>>) {
-  //     return React.cloneElement(child, { parentValue: props.parentValue });
-  //   }
-  // );
-
   const renderedChildren = React.Children.toArray(children).map((child: any) => {
-    const element = React.cloneElement(child, { parentValue: props });
-    // const element = React.cloneElement(child, { ...props });
+    const element = React.cloneElement(child, { parentProps: props });
     return element;
   });
 
