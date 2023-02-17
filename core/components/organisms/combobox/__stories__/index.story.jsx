@@ -9,8 +9,8 @@ export const all = () => {
   ];
 
   return (
-    <div className="d-flex align-items-center">
-      <Combobox options={optionList} placeholder="Enter Value" />
+    <div className="d-flex align-items-center w-50">
+      <Combobox optionList={optionList} placeholder="Enter Value" multiSelect={true} />
     </div>
   );
 };

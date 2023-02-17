@@ -1,87 +1,74 @@
-import * as React from 'react';
+import React from 'react';
 import { BaseProps } from '@/utils/types';
-import { ChipInput, Dropdown, Input } from '@/index';
-import { EventType, OptionSchema } from 'types';
+import { Popover, ChipInput, Input } from '@/index';
+import { InputProps, ChipInputProps } from '@/index.type';
 
 export type InputSize = 'tiny' | 'regular' | 'large';
-
-export interface ComboboxProps extends BaseProps {
-  size?: InputSize;
-  multiSelect?: boolean;
-  options: OptionSchema[];
-  placeholder?: string;
-}
-
 type OptionType = {
   label: string;
   value: string;
-  selected: boolean;
+  // selected: boolean;
 };
 
-const InputBox = (props: any) => {
-  const { placeholder, selectedOption, onChange } = props;
+export interface ComboboxProps extends BaseProps {
+  multiSelect?: boolean;
+  optionList: OptionType[];
+  inputOptions?: InputProps;
+  chipInputOptions?: ChipInputProps;
+}
 
-  return <Input placeholder={placeholder} value={selectedOption[0]?.label} onChange={onChange} />;
+const InputBox = (props: InputProps) => {
+  const { placeholder, value, onChange } = props;
+
+  return <Input placeholder={placeholder} value={value} onChange={onChange} />;
+};
+
+const ChipInputBox = (props: any) => {
+  const { value } = props;
+  return <ChipInput value={value} />;
 };
 
 export const Combobox = (props: ComboboxProps) => {
-  const { options, multiSelect } = props;
-  const [selectedOption, setSelectedOption] = React.useState<OptionSchema[]>([]);
-  const [optionList, setOptionList] = React.useState(options);
-  const [count, setCount] = React.useState(0);
-  // const [open, setOpen] = React.useState(false);
+  const { optionList, multiSelect } = props;
+  const [selectedOption, setSelectedOption] = React.useState<OptionType[]>([]);
 
-  React.useEffect(() => {
-    setCount(count + 1);
-  }, [optionList]);
-
-  // const customTriggerFunc = (label: string) => {
-  const customTriggerFunc = () => {
+  const onClickHandler = (options: OptionType) => {
     if (multiSelect) {
-      return <ChipInput />;
-    }
-    return <InputBox {...props} selectedOption={selectedOption} onChange={onInputChange} />;
-  };
-
-  const onUpdateHandler = (eventType: EventType, option: OptionType) => {
-    // const onUpdateHandler = (eventType, option) => {
-    console.log('update prop', eventType, 'b', option);
-    if (multiSelect) {
-      setSelectedOption([...selectedOption, option]);
+      setSelectedOption([...selectedOption, options]);
     } else {
-      setSelectedOption([option]);
+      setSelectedOption([options]);
     }
   };
 
-  const onInputChange = (e) => {
-    const value = e.target.value;
-    const filterList = options.filter((item) => {
-      return item.value.toString().toLowerCase() == value.toLowerCase();
-    });
-    console.log('filterList', filterList);
-    setOptionList(filterList);
-    // setCount(count + 1);
-    // setOpen(true);
+  const ComboboxTrigger = () => {
+    if (multiSelect) {
+      const optionList = selectedOption.map((option) => option.label);
+      return <ChipInputBox value={optionList} />;
+    }
+    return <InputBox {...props} value={selectedOption[0]?.label} />;
   };
 
   return (
-    <div>
-      <Dropdown
-        key={count}
-        // open={open}
-        options={optionList}
-        selected={selectedOption}
-        onUpdate={onUpdateHandler}
-        triggerOptions={{
-          customTrigger: customTriggerFunc,
-        }}
-      />
-    </div>
+    <>
+      <Popover
+        className="p-6"
+        position="bottom-start"
+        // on="click"
+        trigger={<ComboboxTrigger />}
+        // trigger={<Button appearance="basic">Open Popover</Button>}
+      >
+        <ul className="px-5">
+          {optionList.map((options, key) => {
+            return (
+              <li className="py-4 cursor-pointer" key={key} onClick={() => onClickHandler(options)}>
+                {options.label}
+              </li>
+            );
+          })}
+        </ul>
+      </Popover>
+    </>
   );
-};
-
-Combobox.defaultProps = {
-  size: 'regular',
 };
 
 Combobox.displayName = 'Combobox';
