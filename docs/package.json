@@ -20,6 +20,8 @@
     "test": "CYPRESS_HOST_URL='http://localhost:9000' start-server-and-test serve http://localhost:9000 cypress"
   },
   "dependencies": {
+    "@docsearch/css": "^3.3.3",
+    "@docsearch/react": "^3.3.3",
     "@fontsource/nunito": "^4.5.0",
     "@fontsource/nunito-sans": "^4.5.0",
     "@fontsource/roboto-mono": "^4.5.0",
