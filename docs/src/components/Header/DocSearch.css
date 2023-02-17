@@ -1,0 +1,53 @@
+:root * {
+  --docsearch-primary-color: var(--primary);
+  --docsearch-text-color: var(--inverse);
+  --docsearch-spacing: var(--spacing-l);
+  --docsearch-icon-stroke-width: 1.4;
+  --docsearch-highlight-color: var(--docsearch-primary-color);
+  --docsearch-muted-color: var(--inverse-lighter);
+  --docsearch-logo-color: var(--primary);
+  --docsearch-searchbox-shadow: var(--shadow-spread) var(--primary-shadow);
+  --docsearch-key-gradient: none;
+}
+
+.header .DocSearch-Button {
+  min-width: var(--spacing-9);
+  border-radius: var(--spacing-m);
+  color: var(--inverse);
+  background: var(--white);
+  border: var(--border);
+  height: var(--spacing-3);
+}
+
+.header .DocSearch-Button:active,
+.header .DocSearch-Button:focus-within,
+.header .DocSearch-Button:focus,
+.header .DocSearch-Button:hover {
+  border-color: var(--primary);
+}
+
+.header .DocSearch-Button .DocSearch-Search-Icon {
+  height: var(--spacing-2);
+  width: var(--spacing-2);
+  color: var(--inverse-lighter);
+}
+
+.header .DocSearch-Button-Placeholder {
+  color: var(--inverse-lighter);
+  font-size: var(--font-size);
+  font-family: Nunito Sans;
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--font-height);
+}
+
+.DocSearch-Button-Key,
+.DocSearch-Commands-Key {
+  box-shadow: none;
+  background: var(--secondary-light);
+  color: var(--inverse);
+}
+
+.DocSearch-SearchBar {
+  padding: var(--spacing-l);
+}
