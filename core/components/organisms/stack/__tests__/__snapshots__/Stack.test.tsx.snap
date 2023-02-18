@@ -14,7 +14,7 @@ exports[`Stack component snapshot
         draggable="false"
       >
         <div
-          class="px-6 Stack-item"
+          class="px-6 Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -22,6 +22,10 @@ exports[`Stack component snapshot
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -39,26 +43,21 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
-          class="px-6 Stack-item"
+          class="px-6 Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
           <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
-          <div>
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -87,6 +86,10 @@ exports[`Stack component snapshot
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -104,7 +107,7 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
           class="Stack-item"
@@ -112,18 +115,13 @@ exports[`Stack component snapshot
           tabindex="0"
         >
           <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
-          <div>
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -144,7 +142,7 @@ exports[`Stack component snapshot
         draggable="false"
       >
         <div
-          class="px-6 Stack-item--disabled Stack-item"
+          class="px-6 Stack-item--disabled Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -152,6 +150,10 @@ exports[`Stack component snapshot
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -169,26 +171,21 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
-          class="px-6 Stack-item--disabled Stack-item"
+          class="px-6 Stack-item--disabled Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
           <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
-          <div>
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -217,6 +214,10 @@ exports[`Stack component snapshot
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -234,7 +235,7 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
           class="Stack-item--disabled Stack-item"
@@ -242,18 +243,13 @@ exports[`Stack component snapshot
           tabindex="0"
         >
           <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
-          <div>
             stack item element
           </div>
         </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic"
+          data-test="DesignSystem-Divider"
+        />
       </li>
     </ul>
   </div>
@@ -274,7 +270,7 @@ exports[`Stack component snapshot
         draggable="false"
       >
         <div
-          class="px-6 Stack-item"
+          class="px-6 Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -303,22 +299,13 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
-          class="px-6 Stack-item"
+          class="px-6 Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
-          <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
           <div>
             stack item element
           </div>
@@ -376,22 +363,13 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
           class="Stack-item"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
-          <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
           <div>
             stack item element
           </div>
@@ -420,7 +398,7 @@ exports[`Stack component snapshot
         draggable="false"
       >
         <div
-          class="px-6 Stack-item--disabled Stack-item"
+          class="px-6 Stack-item--disabled Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -449,22 +427,13 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
-          class="px-6 Stack-item--disabled Stack-item"
+          class="px-6 Stack-item--disabled Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
-          <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
           <div>
             stack item element
           </div>
@@ -543,22 +512,13 @@ exports[`Stack component snapshot
     >
       <li
         data-test="DesignSystem-Stack-Item"
-        draggable="true"
+        draggable="false"
       >
         <div
           class="Stack-item--disabled Stack-item"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
-          <div>
-            <i
-              class="material-icons material-icons-round Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
-            >
-              drag_indicator_round
-            </i>
-          </div>
           <div>
             stack item element
           </div>
@@ -658,7 +618,7 @@ exports[`Stack component snapshot for states
         draggable="false"
       >
         <div
-          class="px-6 py-5"
+          class="px-6 Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -754,7 +714,7 @@ exports[`Stack component snapshot for states
         draggable="false"
       >
         <div
-          class="px-6 py-5"
+          class="px-6 Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -818,7 +778,7 @@ exports[`Stack component snapshot for states
         draggable="false"
       >
         <div
-          class="px-6 Stack-item Stack-item--activated py-5"
+          class="px-6 Stack-item py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -850,7 +810,7 @@ exports[`Stack component snapshot for states
         draggable="false"
       >
         <div
-          class="px-6 py-5"
+          class="px-6 Stack-item Stack-item--selected py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -914,7 +874,7 @@ exports[`Stack component snapshot for states
         draggable="false"
       >
         <div
-          class="px-6 Stack-item py-5"
+          class="px-6 Stack-item Stack-item--selected py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -946,7 +906,7 @@ exports[`Stack component snapshot for states
         draggable="false"
       >
         <div
-          class="px-6 py-5"
+          class="px-6 Stack-item Stack-item--selected py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >
@@ -1010,7 +970,7 @@ exports[`Stack component snapshot for states
         draggable="false"
       >
         <div
-          class="px-6 Stack-item Stack-item--activated py-5"
+          class="px-6 Stack-item Stack-item--selected py-5"
           data-test="DesignSystem-Stack-ItemWrapper"
           tabindex="0"
         >

@@ -134,7 +134,7 @@ export const StackItem = (props: StackItemProps) => {
       >
         {draggable && (
           // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-          <div onMouseDown={() => setStartDrag(true)} onMouseUp={() => setStartDrag(false)}>
+          <div onMouseDown={() => setStartDrag(true)} onMouseUp={() => setStartDrag(false)} className="d-flex">
             <Icon
               name="drag_indicator"
               appearance="subtle"

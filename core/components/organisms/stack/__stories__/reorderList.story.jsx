@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stack, Card, StackItem, Text, Checkbox, Heading, Divider } from '@/index';
+import { Stack, Card, CardFooter, Button, StackItem, Text, Checkbox, Heading, Divider } from '@/index';
 
 export const reorderList = () => {
   const dataList = [
@@ -48,20 +48,31 @@ export const reorderList = () => {
         <Text appearance="subtle">Select the columns that you want to see in work list</Text>
       </div>
       <Divider />
-      <Stack draggable={true}>
+      <Stack draggable={true} className="vh-50 overflow-auto pb-10">
         {dataList.map((record, key) => {
           return (
-            <StackItem key={key} id={key} className="d-flex align-items-center justify-content-between">
-              <div className="d-flex align-items-center">
-                <Text>{record.name}</Text>
-              </div>
-              <div className="d-flex align-items-center">
-                <Checkbox defaultChecked={record.checked} />
+            <StackItem key={key} id={key} className="d-flex align-items-center">
+              <div className="d-flex align-items-center w-100 justify-content-between ml-4">
+                <div className="d-flex justify-content-start">
+                  <Text>{record.name}</Text>
+                </div>
+                <div className="d-flex justify-content-end">
+                  <Checkbox defaultChecked={record.checked} />
+                </div>
               </div>
             </StackItem>
           );
         })}
       </Stack>
+
+      <CardFooter className="bg-light justify-content-end">
+        <>
+          <Button appearance="basic">Cancel</Button>
+          <Button appearance="primary" className="ml-4">
+            Submit
+          </Button>
+        </>
+      </CardFooter>
     </Card>
   );
 };
