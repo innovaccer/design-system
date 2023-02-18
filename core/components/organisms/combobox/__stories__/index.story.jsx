@@ -1,16 +1,25 @@
 import * as React from 'react';
-import { Combobox } from '@/index';
+import { Combobox, Label } from '@/index';
 
 // CSF format story
 export const all = () => {
   const optionList = [
-    { label: 'Male', selected: true, value: 'Male' },
-    { label: 'Female', value: 'Female' },
+    { label: 'Acetaminophen', value: 'Acetaminophen' },
+    { label: 'Ibuprofen', value: 'Ibuprofen' },
+    { label: 'Penicillin G', value: 'Penicillin G' },
+    { label: 'Penbutolol', value: 'Penbutolol' },
+    { label: 'Aminophenol', value: 'Aminophenol' },
+    { label: 'Vancomycin', value: 'Vancomycin' },
+    { label: '-', value: '-' },
+    { label: '-', value: '-' },
+    { label: '-', value: '-' },
+    { label: '-', value: '-' },
   ];
 
   return (
-    <div className="d-flex align-items-center w-50">
-      <Combobox optionList={optionList} placeholder="Enter Value" multiSelect={true} />
+    <div className="w-25">
+      <Label>Medicine name</Label>
+      <Combobox optionList={optionList} inputOptions={{ placeholder: 'Enter Name' }} />
     </div>
   );
 };

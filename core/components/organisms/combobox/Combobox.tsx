@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BaseProps } from '@/utils/types';
 import { Popover, ChipInput, Input } from '@/index';
-import { InputProps, ChipInputProps } from '@/index.type';
+import { InputProps, ChipInputProps, PopoverProps } from '@/index.type';
 
 export type InputSize = 'tiny' | 'regular' | 'large';
 type OptionType = {
@@ -18,9 +18,10 @@ export interface ComboboxProps extends BaseProps {
 }
 
 const InputBox = (props: InputProps) => {
-  const { placeholder, value, onChange } = props;
+  const { value, onChange } = props;
+  console.log('input props', props);
 
-  return <Input placeholder={placeholder} value={value} onChange={onChange} />;
+  return <Input value={value} onChange={onChange} {...props} />;
 };
 
 const ChipInputBox = (props: any) => {
@@ -31,6 +32,19 @@ const ChipInputBox = (props: any) => {
 export const Combobox = (props: ComboboxProps) => {
   const { optionList, multiSelect } = props;
   const [selectedOption, setSelectedOption] = React.useState<OptionType[]>([]);
+  const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
+  const [count, setCount] = React.useState(0);
+  const triggerRef = React.createRef<HTMLDivElement>();
+
+  useEffect(() => {
+    const popperWidth = triggerRef.current?.clientWidth;
+
+    const popperWrapperStyle = {
+      width: popperWidth,
+      maxWidth: '100%',
+    };
+    setPopoverStyle(popperWrapperStyle);
+  }, []);
 
   const onClickHandler = (options: OptionType) => {
     if (multiSelect) {
@@ -38,6 +52,7 @@ export const Combobox = (props: ComboboxProps) => {
     } else {
       setSelectedOption([options]);
     }
+    setCount(count + 1);
   };
 
   const ComboboxTrigger = () => {
@@ -45,19 +60,19 @@ export const Combobox = (props: ComboboxProps) => {
       const optionList = selectedOption.map((option) => option.label);
       return <ChipInputBox value={optionList} />;
     }
-    return <InputBox {...props} value={selectedOption[0]?.label} />;
+    return <InputBox {...props.inputOptions} value={selectedOption[0]?.label} />;
   };
 
   return (
-    <>
+    <div ref={triggerRef} className="w-100 position-relative">
       <Popover
-        className="p-6"
-        position="bottom-start"
-        // on="click"
+        triggerClass={'w-100'}
+        customStyle={popoverStyle}
+        className="Combobox-wrapper"
         trigger={<ComboboxTrigger />}
-        // trigger={<Button appearance="basic">Open Popover</Button>}
+        key={count}
       >
-        <ul className="px-5">
+        <ul className="p-5 Combobox-list">
           {optionList.map((options, key) => {
             return (
               <li className="py-4 cursor-pointer" key={key} onClick={() => onClickHandler(options)}>
@@ -67,7 +82,7 @@ export const Combobox = (props: ComboboxProps) => {
           })}
         </ul>
       </Popover>
-    </>
+    </div>
   );
 };
 
