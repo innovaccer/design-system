@@ -19,14 +19,34 @@ export interface ComboboxProps extends BaseProps {
 
 const InputBox = (props: InputProps) => {
   const { value, onChange } = props;
-  console.log('input props', props);
 
   return <Input value={value} onChange={onChange} {...props} />;
 };
 
 const ChipInputBox = (props: any) => {
   const { value } = props;
-  return <ChipInput value={value} />;
+  return <ChipInput {...props} value={value} />;
+};
+
+const Listbox = (props: any) => {
+  const { optionList, onClickHandler } = props;
+  return (
+    <ul className="m-0 p-5 Combobox-list">
+      {optionList.map((options: OptionType, key: number) => {
+        return (
+          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+          <li
+            className="py-4 cursor-pointer"
+            key={key}
+            onClick={() => onClickHandler(options)}
+            onKeyDown={() => onClickHandler(options)}
+          >
+            {options.label}
+          </li>
+        );
+      })}
+    </ul>
+  );
 };
 
 export const Combobox = (props: ComboboxProps) => {
@@ -58,7 +78,7 @@ export const Combobox = (props: ComboboxProps) => {
   const ComboboxTrigger = () => {
     if (multiSelect) {
       const optionList = selectedOption.map((option) => option.label);
-      return <ChipInputBox value={optionList} />;
+      return <ChipInputBox value={optionList} {...props.chipInputOptions} />;
     }
     return <InputBox {...props.inputOptions} value={selectedOption[0]?.label} />;
   };
@@ -66,21 +86,13 @@ export const Combobox = (props: ComboboxProps) => {
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
-        triggerClass={'w-100'}
+        triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
         trigger={<ComboboxTrigger />}
         key={count}
       >
-        <ul className="p-5 Combobox-list">
-          {optionList.map((options, key) => {
-            return (
-              <li className="py-4 cursor-pointer" key={key} onClick={() => onClickHandler(options)}>
-                {options.label}
-              </li>
-            );
-          })}
-        </ul>
+        <Listbox optionList={optionList} onClickHandler={onClickHandler} />
       </Popover>
     </div>
   );
