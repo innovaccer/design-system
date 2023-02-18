@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Combobox, Label } from '@/index';
+import { Combobox, Label, Text } from '@/index';
 
 // CSF format story
 export const size = () => {
@@ -29,6 +29,8 @@ export const size = () => {
               inputOptions={{ placeholder: 'Enter Name', size: size }}
               multiSelect={false}
             />
+            <br />
+            <Text weight="strong">{size}</Text>
           </div>
         );
       })}
