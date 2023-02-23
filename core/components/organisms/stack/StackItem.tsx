@@ -53,8 +53,7 @@ export interface StackItemProps extends BaseProps {
   parentProps?: SharedProp;
 }
 
-export const StackItem = (props: StackItemProps) => {
-  const [startDrag, setStartDrag] = React.useState(false);
+const ListBoxItem = (props: StackItemProps) => {
   const defaultProps = {
     size: 'standard',
     showDivider: true,
@@ -68,16 +67,15 @@ export const StackItem = (props: StackItemProps) => {
     disabled,
     selected,
     activated,
-    nestedRow,
     disablePadding,
-    expanded,
-    id,
-    tag: Tag,
     parentProps = defaultProps,
+    // nestedRow,
+    // expanded,
+    // id,
+    // tag: Tag,
   } = props;
 
-  const { size, type, showDivider, draggable } = parentProps;
-  // const baseProps = extractBaseProps(props);
+  const { size, type, draggable } = parentProps;
 
   const itemClass = classNames(
     {
@@ -92,6 +90,45 @@ export const StackItem = (props: StackItemProps) => {
     },
     className
   );
+
+  return (
+    <div role="link" data-test="DesignSystem-Stack-ItemWrapper" className={itemClass} tabIndex={0}>
+      {draggable && (
+        <div
+          tabIndex={0}
+          role="button"
+          className="d-flex"
+          // onMouseUp={() => setStartDrag(false)}
+          // onMouseDown={() => setStartDrag(true)}
+        >
+          <Icon
+            size={16}
+            appearance="subtle"
+            name="drag_indicator"
+            className="Stack-item--drag-icon cursor-pointer"
+            // onClick={onDragIconClick}
+          />
+        </div>
+      )}
+      {children}
+    </div>
+  );
+};
+
+export const StackItem = (props: StackItemProps) => {
+  const [startDrag, setStartDrag] = React.useState(false);
+
+  const defaultProps = {
+    size: 'standard',
+    showDivider: true,
+    type: 'option',
+    draggable: false,
+  };
+
+  const { nestedRow, expanded, id, tag: Tag, parentProps = defaultProps } = props;
+
+  const { showDivider, draggable } = parentProps;
+  // const baseProps = extractBaseProps(props);
 
   const onDropHandler = (e: DragEventType, currIndex: string) => {
     const sourceIndex = e.dataTransfer?.getData('index');
@@ -108,44 +145,27 @@ export const StackItem = (props: StackItemProps) => {
   //   setStartDrag(!startDrag);
   // };
 
+  const onDragStartHandler = (e: DragEventType) => {
+    console.log('on drag start');
+    e.dataTransfer.setData('index', id);
+    e.dataTransfer.effectAllowed = 'move';
+  };
+
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <Tag
-      data-test="DesignSystem-Stack-Item"
       key={id}
       id={id}
+      data-test="DesignSystem-Stack-Item"
       draggable={draggable && startDrag}
       // draggable={draggable}
-      onDragStart={(e: DragEventType) => {
-        console.log('on drag start');
-        e.dataTransfer.setData('index', id);
-        e.dataTransfer.effectAllowed = 'move';
-      }}
+      onDragStart={onDragStartHandler}
       onDragOver={(e: DragEventType) => e.preventDefault()}
       onDrop={(e: DragEventType) => onDropHandler(e, id)}
       // onMouseDown={(e) => setStartDrag(false)}
       // onMouseUp={(e) => setStartDrag(true)}
     >
-      <div
-        data-test="DesignSystem-Stack-ItemWrapper"
-        className={itemClass}
-        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-        tabIndex={0}
-      >
-        {draggable && (
-          // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-          <div onMouseDown={() => setStartDrag(true)} onMouseUp={() => setStartDrag(false)} className="d-flex">
-            <Icon
-              name="drag_indicator"
-              appearance="subtle"
-              className="Stack-item--drag-icon cursor-pointer"
-              size={16}
-              // onClick={onDragIconClick}
-            />
-          </div>
-        )}
-        {children}
-      </div>
+      <ListBoxItem {...props} />
       {nestedRow && expanded && <div data-test="DesignSystem-Stack--Nested-Item">{nestedRow}</div>}
       {showDivider && <Divider />}
     </Tag>
