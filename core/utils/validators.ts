@@ -18,55 +18,58 @@ export const date = (val: string, format: string): boolean => {
     return month <= 12 && date <= monthLength[month - 1];
   };
 
-  switch (format) {
-    case 'dd/mm/yyyy': {
-      const p = val.split('/');
-      const date = +p[0] || 1;
-      const month = +p[1] || 1;
-      const year = +p[2] || 1900;
-      return validate(date, month, year);
-    }
-    case 'mm/dd/yyyy': {
-      const p = val.split('/');
-      const date = +p[1] || 1;
-      const month = +p[0] || 1;
-      const year = +p[2] || 1900;
-      return validate(date, month, year);
-    }
+  if (val) {
+    switch (format) {
+      case 'dd/mm/yyyy': {
+        const p = val.split('/');
+        const date = +p[0] || 1;
+        const month = +p[1] || 1;
+        const year = +p[2] || 1900;
+        return validate(date, month, year);
+      }
+      case 'mm/dd/yyyy': {
+        const p = val.split('/');
+        const date = +p[1] || 1;
+        const month = +p[0] || 1;
+        const year = +p[2] || 1900;
+        return validate(date, month, year);
+      }
 
-    case 'yyyy/mm/dd': {
-      const p = val.split('/');
-      const date = +p[2] || 1;
-      const month = +p[1] || 1;
-      const year = +p[0] || 1900;
-      return validate(date, month, year);
-    }
-    case 'dd-mm-yyyy': {
-      const p = val.split('-');
-      const date = +p[0] || 1;
-      const month = +p[1] || 1;
-      const year = +p[2] || 1900;
-      return validate(date, month, year);
-    }
+      case 'yyyy/mm/dd': {
+        const p = val.split('/');
+        const date = +p[2] || 1;
+        const month = +p[1] || 1;
+        const year = +p[0] || 1900;
+        return validate(date, month, year);
+      }
+      case 'dd-mm-yyyy': {
+        const p = val.split('-');
+        const date = +p[0] || 1;
+        const month = +p[1] || 1;
+        const year = +p[2] || 1900;
+        return validate(date, month, year);
+      }
 
-    case 'mm-dd-yyyy': {
-      const p = val.split('-');
-      const date = +p[1] || 1;
-      const month = +p[0] || 1;
-      const year = +p[2] || 1900;
-      return validate(date, month, year);
-    }
+      case 'mm-dd-yyyy': {
+        const p = val.split('-');
+        const date = +p[1] || 1;
+        const month = +p[0] || 1;
+        const year = +p[2] || 1900;
+        return validate(date, month, year);
+      }
 
-    case 'yyyy-mm-dd': {
-      const p = val.split('-');
-      const date = +p[2] || 1;
-      const month = +p[1] || 1;
-      const year = +p[0] || 1900;
-      return validate(date, month, year);
+      case 'yyyy-mm-dd': {
+        const p = val.split('-');
+        const date = +p[2] || 1;
+        const month = +p[1] || 1;
+        const year = +p[0] || 1900;
+        return validate(date, month, year);
+      }
+      default:
+        return false;
     }
-    default:
-      return false;
   }
+  return false;
 };
 
 export const time = (val: string, format: string): boolean => {
