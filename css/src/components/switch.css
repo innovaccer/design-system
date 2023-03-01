@@ -43,20 +43,20 @@
 
 .Switch-input:focus ~ .Switch-wrapper {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  background-color: var(--secondary-light);
 }
 
 .Switch-input:focus ~ .Switch-wrapper--checked {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
+  background-color: var(--primary);
 }
 
 .Switch-input:hover ~ .Switch-wrapper {
-  background-color: var(--secondary-light);
-  box-shadow: var(--shadow-s);
+  background-color: var(--secondary);
 }
 
 .Switch-input:hover ~ .Switch-wrapper--checked {
   background-color: var(--primary-dark);
-  box-shadow: var(--shadow-s);
 }
 
 .Switch-input:active ~ .Switch-wrapper {
@@ -84,7 +84,7 @@
   height: 100%;
   width: 50%;
   background-color: var(--shadow-0);
-  box-shadow: 0 0 var(--spacing-xs) 0 var(--shadow-20);
+  box-shadow: var(--shadow-m);
   border-radius: 50%;
   box-sizing: border-box;
   transition-duration: 80ms;
@@ -108,8 +108,8 @@
   pointer-events: none;
 }
 
-.Switch-wrapper--disabled:before {
-  background-color: var(--secondary-lightest);
+.Switch-wrapper--disabled {
+  background-color: var(--secondary-lighter);
 }
 
 .Switch-wrapper--checkedDisabled {
