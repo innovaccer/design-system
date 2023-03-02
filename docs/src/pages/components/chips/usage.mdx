@@ -6,56 +6,62 @@ showMobile: true
 keywords: ['Toggle']
 ---
 
-Chips are compact components that appear in a group. Since they appear in a group, they are compact in size and come to the rescue when regular components are either too overwhelming (e.g. buttons for selection) or too underwhelming (e.g. dropdowns for applied filters).
+Chips are compact interactive elements that allow users to make selections, filter content, or trigger actions. Since they mostly appear in a group, they are compact in size and come to the rescue when regular components are either too overwhelming (e.g. buttons for selection) or too underwhelming (e.g. dropdowns for applied filters).
 <br/>
 
 ### Types
 <br/>
 
-#### Selection chips
-Selection chips are used to let the users select one or many options from a group and the effect is immediate. For example - applying filters on a page. In that case, as soon as a filter chip is clicked, the filtered results are shown.
-<Preview name="components-chip-selection--selection" />
+#### Selection chip
+
+Selection chips are used to let the users select one or many options from a group and the effect is immediate. Do not provide a single option for selection.
+
+For example - applying filters on a page. In that case, as soon as a selection chip is clicked, the filtered results are shown.
+
+![Example of selection chips](./images/01-Selection-chip.png)
+<Caption>Example of selection chips</Caption>
+
+#### Action chip
+
+Action chips are used when there is a group of related actions to perform. These actions are dynamic and contextual to the content. Buttons can’t be used in this case as they should be used for persistent and consistent actions only.
+
+![Example of action chips](./images/02-Action-chip.png)
+<Caption>Example of action chips</Caption>
+
+#### Input chip
+
+Input chips are used inside the inputs to behave as removable entries or tags.
+
+![Example of input chips](./images/03-Input-chip.png)
+<Caption>Example of input chips</Caption>
+
 <br/>
 
-#### Action chips
-Action chips are used when there is a group of related actions to perform. These actions are contextual and dynamic. Buttons can't be used in this case as they should be used for persistent and consistent actions only.
-<Preview name="components-chip-action-chip--action-chip" />
-<br/>
+### Variants
 
-#### Input chips
-Input chips are used inside inputs to behave as removable entries or tags.
-<Preview name="components-chip-input--input" />
+#### With icon
+
+Chips can have an optional icon on the left preceding the label.
+
+![with icon on left](./images/04-With-icon.png)
+<Caption>with icon on left</Caption>
+
+#### With remove button
+
+Selection and input chips can have a remove button on the right of the label to remove them from a view.
+
+![Chips with remove button](./images/05-With-remove-button.png)
+<Caption>Chips with remove button</Caption>
+
 <br/>
 
 ### States
-<br/>
+Chips come in **5 states**: default, hover, focus, disabled, and active states. In addition to the aforementioned states, the selection chip also has the selected-default, selected-hover, selected-focus, selected-disabled, selected-active state.
 
-#### Selection chip
-Selection chips has **five states** - default, hover, active, focus and disabled.
-
-![Interactive states of selection chip](./images/selectionchips-states.png)
-<br/>
-
-#### Action chip
-Action chips has seven states - default, hover, active, focus and disabled.
-
-![Interactive states of action chip](./images/actionchip-state.png)
-<br/>
-
-#### Input chip
-Input chips has seven states - default, hover, focus and disabled.
-
-![Interactive states of input chip](./images/inputchip-state.png)
-<br/>
-<br/>
+![Various states of chips](./images/06-States.png)
+<Caption>Various states of chips</Caption>
 
 ### Structure
-<br/>
-<br/>
-
-![Structure of chip](./images/chip-structure.png)
-<br/>
-
 
 <table style="width: 100%">
   <tbody>
@@ -68,6 +74,23 @@ Input chips has seven states - default, hover, focus and disabled.
       <td>24 px</td>
     </tr>
     <tr style="vertical-align: top">
+      <td>Padding (left)</td>
+      <td>8px</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Padding (right)</td>
+      <td>
+        <ul>
+          <li>With remove button - 2px</li>
+          <li>Without remove button - 8px</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Border</td>
+      <td>1px</td>
+    </tr>
+    <tr style="vertical-align: top">
       <td>Corner radius</td>
       <td>12 px</td>
     </tr>
@@ -76,7 +99,9 @@ Input chips has seven states - default, hover, focus and disabled.
 <br/>
 
 ### Configurations
-<br/>
+
+#### Selection chip
+
 <br/>
 
 <table style="width: 100%">
@@ -92,32 +117,144 @@ Input chips has seven states - default, hover, focus and disabled.
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Icon<br/><em>(optional)</em></td>
+      <td>Left icon<br/><em>(optional)</em></td>
       <td>&#60;icon name&#62;</td>
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Clear button</td>
-      <td>
-          <ul>
-              <li>True</li>
-              <li>False</li>
-          </ul>
-      </td>
-      <td>False</td>
+      <td>Remove button <br/><em>(optional)</em></td>
+      <td>&#60;close&#62;</td>
+      <td>-</td>
     </tr>
   </tbody>
 </table>
+
+<br/>
+
+#### Action chip
+
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Label<br/></td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Left icon<br/><em>(optional)</em></td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+#### Input chip
+
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Property</th>
+      <th style="width:33%; text-align: left;">Value(s)</th>
+      <th style="width:33%; text-align: left;">Default value</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Label<br/></td>
+      <td>&#60;label&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Left icon<br/><em>(optional)</em></td>
+      <td>&#60;icon name&#62;</td>
+      <td>-</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Remove button <br/><em>(optional)</em></td>
+      <td>&#60;close&#62;</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
 <br/>
 
 ### Usage
+
+#### Selection vs input vs action chips
+
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Type</th>
+      <th style="width:33%; text-align: left;">Usage</th>
+      <th style="width:33%; text-align: left;">Behaviour</th>
+    </tr>
+    <tr>
+      <td style="width:33%; text-align: left;">Selection chip</td>
+      <td style="width:33%; text-align: left;">Used to select from many options</td>
+      <td style="width:33%; text-align: left;">Removable</td>
+    </tr>
+    <tr>
+      <td style="width:33%; text-align: left;">Action chip</td>
+      <td style="width:33%; text-align: left;">To perform actions related to the primary content</td>
+      <td style="width:33%; text-align: left;">Non-removable</td>
+    </tr>
+    <tr>
+      <td style="width:33%; text-align: left;">Input chip</td>
+      <td style="width:33%; text-align: left;">To behave as removable tags in inputs</td>
+      <td style="width:33%; text-align: left;">Removable</td>
+    </tr>
+  </tbody>
+</table>
+
+<br/>
+
+#### Chip vs badge
+
+Chips are used for selection/actions, quick filtering, and offering removable options whereas badges are just used for labeling entities and are not actionable.
+
+![[Left] Chip vs [Right] Badge](./images/07-Chips-vs-Badge.png)
+<Caption>[Left] Chip vs [Right] Badge</Caption>
+
 <br/>
 
 #### Selection chip vs radio/checkbox
-Selection chips should be used when an immediate change/result is expected on selection. Radio/checkbox should be used when an explicit action is needed to submit the selection, e.g. in a form.
 
+Selection chips generally provide an immediate response but if there is a space crunch  in forms, they can replace radio and checkboxes in order to display all the available options in a compact area.
 
-![Selection chip vs radio/checkbox](./images/chips-1.png)
+**Note:** In the example below using selection chips instead of radio and checkboxes saves a lot of space.
+
+![Using [Left] Selection chip vs [Right] Radio/Checkbox in forms](./images/checkbox.png)
+<Caption>Using [Left] Selection chip vs [Right] Radio/Checkbox in forms</Caption>
 
 <br/>
+
+#### Action chips vs buttons
+
+The number and label of action chips are contextual to the content and appear dynamically as a group of interactive elements, while buttons are expected to appear consistently and are persistent.
+
+![[Left] Action chip vs [Right] Buttons](./images/09-Action-chip.png)
+<Caption>[Left] Action chip vs [Right] Buttons</Caption>
+
 <br/>
+
+#### Text styling
+
+Text inside the chips can be styled to highlight some information. 
+
+For example - In table, the column name and the separator in the filter chip label are highlighted using a heavier text than the text showing the value of the filter. 
+
+![Configured text style in chips’ label](./images/10-Text-styling.png)
+<Caption>Configured text style in chips’ label</Caption>
