@@ -15,6 +15,7 @@ import ComponentsContainer from './Container/ComponentsContainer';
 import { copyMessage, copyMessageSuccess } from '../util/constants.js';
 import { Row, Column, Button, Toast, Tooltip } from '@innovaccer/design-system';
 import FeedbackForm from './FeedbackForm';
+import LightBox from './LightBox';
 
 const leftMenuList = [
   {
@@ -110,6 +111,26 @@ const Layout = ({
   const frontmatter = useFrontmatter(relativePagePath);
   const refCode = React.createRef();
   const isOverviewPage = relativePagePath.includes('overview');
+  const [lightboxDetail, setLightboxDetail] = useState({
+    open: false,
+    imgSrc: '',
+    alt: 'image',
+  });
+
+  const imageClickHandler = (props) => {
+    const { src, title } = props;
+    const imgData = { ...lightboxDetail };
+    imgData.open = true;
+    imgData.imgSrc = src;
+    imgData.alt = title;
+    setLightboxDetail(imgData);
+  };
+
+  const onLightBoxClose = () => {
+    const data = { ...lightboxDetail };
+    data.open = false;
+    setLightboxDetail(data);
+  };
 
   const copyToClipboard = (str) => {
     if (typeof str === 'string') {
@@ -193,6 +214,9 @@ const Layout = ({
     pre: Code,
     Logos: (props) => <Logos {...props} />,
     Colors: (props) => <Colors {...props} />,
+    img: (props) => (
+      <img {...props} className={`${props.className} cursor-pointer`} onClick={() => imageClickHandler(props)} />
+    ),
   };
 
   const showAnimation = () => {
@@ -254,6 +278,7 @@ const Layout = ({
           )}
           <Footer relativePagePath={relativePagePath} />
         </Column>
+        <LightBox imgData={lightboxDetail} onClose={onLightBoxClose} />
       </Row>
     </>
   );

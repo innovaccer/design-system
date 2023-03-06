@@ -23,7 +23,7 @@
 }
 
 .Chip-icon--left {
-  padding-right: var(--spacing-m);
+  margin-right: var(--spacing-m);
   display: flex;
   align-items: center;
 }
@@ -127,13 +127,18 @@
   background: var(--secondary);
 }
 
-.Chip--input:focus-visible {
+.Chip--input:focus-visible,
+.Chip--input:focus {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
   outline: none;
 }
 
+.Chip--input:active {
+  background: var(--secondary-dark);
+}
+
 .Chip-input--disabled {
-  background: var(--secondary-light);
+  background: var(--secondary-lighter);
   border: 0px;
 }
 

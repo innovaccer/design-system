@@ -477,7 +477,7 @@ const DropdownList = (props: OptionsProps) => {
     return arr.map((option, ind) => {
       return (
         <div className="Option-loading" key={`${option}-${ind}`}>
-          <Loading loadingType={type} />
+          <Loading loadingType={type} optionIndex={ind} />
         </div>
       );
     });

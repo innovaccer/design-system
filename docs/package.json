@@ -23,7 +23,7 @@
     "@fontsource/nunito": "^4.5.0",
     "@fontsource/nunito-sans": "^4.5.0",
     "@fontsource/roboto-mono": "^4.5.0",
-    "@innovaccer/design-system": "2.13.4-7",
+    "@innovaccer/design-system": "2.14.1",
     "@mdx-js/mdx": "^1.5.5",
     "@mdx-js/react": "^1.5.5",
     "@storybook/theming": "^6.3.6",

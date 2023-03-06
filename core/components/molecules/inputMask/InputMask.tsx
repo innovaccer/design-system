@@ -39,6 +39,7 @@ export interface MaskProps extends BaseProps {
    */
   onBlur?: (e: React.ChangeEvent<HTMLInputElement>, maskedVal: string) => void;
   onClear?: (e: React.MouseEvent<HTMLElement>) => void;
+  onPaste?: (e: React.ClipboardEvent<HTMLInputElement>, val?: string) => void;
   /**
    * Clear the `Input` on blur if value === defaultPlaceholderValue
    * @default true
@@ -79,6 +80,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     caption,
     required,
     onChange,
+    onPaste,
     onBlur,
     onFocus,
     onClear,
@@ -206,9 +208,39 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
     deferId.current = window.requestAnimationFrame(updateSelection);
   }, [selectionPos.current, getCurrSelection]);
 
+  const matchSeparatorValue = (currValue: string) => {
+    const separator = props.placeholder || 'dd/mm/yyyy';
+    if (separator.substring(0, 4) === 'yyyy') {
+      return currValue && currValue[4] === separator[4] && currValue[7] === separator[7];
+    }
+    return currValue && currValue[2] === separator[2] && currValue[5] === separator[5];
+  };
+
+  const isSameFormat = (currValue: string, inputLength: number) => {
+    const value = currValue.substring(0, inputLength);
+    if (inputLength === 23) {
+      const date = value.split(' - ');
+      const startVal = date[0];
+      const endVal = date[1];
+      return matchSeparatorValue(startVal) && matchSeparatorValue(endVal);
+    }
+    return matchSeparatorValue(value);
+  };
+
+  const onPasteHandler = (e: React.ClipboardEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    const pastedValue = e.clipboardData?.getData('Text');
+    const sameFormat = isSameFormat(pastedValue, pastedValue.length);
+    const isValidDate = Utils.validators.isValid(validators, pastedValue);
+    if (sameFormat && onPaste && isValidDate) {
+      onPaste(e, pastedValue);
+      setValue(pastedValue);
+    }
+  };
+
   const onChangeHandler = React.useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const inputVal = e.currentTarget.value;
+      const inputVal = e.currentTarget?.value;
 
       const currSelection = getCurrSelection();
       const start = Math.min(selectionPos.current.start, currSelection.start);
@@ -352,6 +384,7 @@ const InputMask = React.forwardRef<HTMLInputElement, InputMaskProps>((props, for
         onChange={onChangeHandler}
         onClear={onClearHandler}
         onBlur={onBlurHandler}
+        onPaste={onPasteHandler}
         autoComplete={'off'}
         ref={ref}
       />

@@ -87,6 +87,7 @@ export const Toast = (props: ToastProps) => {
       ['Toast-icon']: true,
       [`Toast-icon--${align}`]: align,
       [`Toast-icon--${appearance}`]: appearance,
+      [`Toast-close-icon--${appearance}`]: appearance && align === 'right',
     });
 
   const textClass = classNames({

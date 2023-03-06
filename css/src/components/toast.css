@@ -48,6 +48,11 @@
 .Toast-icon--right {
   cursor: pointer;
   margin-left: var(--spacing-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  padding-right: var(--spacing-m);
+  padding-left: var(--spacing-m);
 }
 
 .Toast-icon--info,
@@ -59,6 +64,50 @@
 
 .Toast-icon--warning {
   color: var(--warning-darker);
+}
+
+.Toast-close-icon--warning:focus,
+.Toast-close-icon--warning:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) color-mod(var(--warning-dark) a(0.16));
+}
+
+.Toast-close-icon--warning:hover,
+.Toast-close-icon--warning:active {
+  background: var(--warning-dark);
+}
+
+.Toast-close-icon--success:focus,
+.Toast-close-icon--success:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) color-mod(var(--success-dark) a(0.16));
+}
+
+.Toast-close-icon--success:hover,
+.Toast-close-icon--success:active {
+  background: var(--success-dark);
+}
+
+.Toast-close-icon--info:focus,
+.Toast-close-icon--info:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) color-mod(var(--primary-dark) a(0.16));
+}
+
+.Toast-close-icon--info:hover,
+.Toast-close-icon--info:active {
+  background: var(--primary-dark);
+}
+
+.Toast-close-icon--alert:focus,
+.Toast-close-icon--alert:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) color-mod(var(--alert-dark) a(0.16));
+}
+
+.Toast-close-icon--alert:hover,
+.Toast-close-icon--alert:active {
+  background: var(--alert-dark);
 }
 
 .Toast-body {

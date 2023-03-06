@@ -124,6 +124,10 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
   /**
+   * Handler to be called when paste event occur inside `Input`
+   */
+  onPaste?: React.ClipboardEventHandler<HTMLInputElement>;
+  /**
    * Custom Icon Component to be passed to Input to replace Clear Icon in the right
    */
   actionIcon?: React.ReactElement<IconProps>;
@@ -159,6 +163,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     onClear,
     onBlur,
     onFocus,
+    onPaste,
     actionIcon,
     className,
     autoFocus,
@@ -250,6 +255,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onBlur={onBlur}
         onClick={onClick}
         onFocus={onFocus}
+        onPaste={onPaste}
       />
       {disabled ? (
         ''

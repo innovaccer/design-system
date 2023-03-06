@@ -35,6 +35,37 @@ export const Trigger = (props: TriggerProps) => {
     }
   };
 
+  const onPasteHandler = (_e: React.ClipboardEvent<HTMLInputElement>, val: string, type: string) => {
+    setState({ open: true });
+
+    if (type === 'start') {
+      const placeholderChar = startInputOptions.placeholderChar || '_';
+      if (val && !val.includes(placeholderChar)) {
+        const d = translateToDate(inputFormat, val, validators);
+        if (d) {
+          setState({ startDate: d });
+          if (endDate) {
+            const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
+            if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+              setState({ endDate: undefined });
+            }
+          }
+          if (startInputOptions.onPaste) startInputOptions.onPaste(_e, val);
+        }
+      }
+    }
+    if (type === 'end') {
+      const placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
+      if (val && !val.includes(placeholderChar)) {
+        const d = translateToDate(inputFormat, val, validators);
+        if (d) {
+          setState({ endDate: d });
+          if (endInputOptions.onPaste) endInputOptions.onPaste(_e, val);
+        }
+      }
+    }
+  };
+
   const onChangeHandler = (_e: React.ChangeEvent<HTMLInputElement>, val: string, type: string) => {
     setState({ open: true });
 
@@ -154,6 +185,9 @@ export const Trigger = (props: TriggerProps) => {
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'start');
           }}
+          onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
+            onPasteHandler(e, val || '', 'start');
+          }}
           onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onBlurHandler(e, val || '', 'start');
           }}
@@ -185,6 +219,9 @@ export const Trigger = (props: TriggerProps) => {
           }
           onChange={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onChangeHandler(e, val || '', 'end');
+          }}
+          onPaste={(e: React.ClipboardEvent<HTMLInputElement>, val?: string) => {
+            onPasteHandler(e, val || '', 'end');
           }}
           onBlur={(e: React.ChangeEvent<HTMLInputElement>, val?: string) => {
             onBlurHandler(e, val || '', 'end');
