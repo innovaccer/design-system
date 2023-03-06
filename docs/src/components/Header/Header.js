@@ -3,9 +3,8 @@ import { Link } from 'gatsby';
 import { useHeaderItems } from '../../util/HeaderItems';
 import './Header.css';
 import { Link as MDSLink, Icon } from '@innovaccer/design-system';
+import Search from '../GlobalSearch';
 import * as HomeIcons from '../../util/HomeIcons';
-import { DocSearch } from '@docsearch/react';
-import '@docsearch/css';
 
 const MenuIcons = ({ name }) => {
   const SvgIcons = HomeIcons[name] || (() => <div></div>);
@@ -28,7 +27,7 @@ const Header = ({ relativePagePath }) => {
 
   const isMobile = () => {
     const currURL = typeof window !== 'undefined' && window.location.pathname;
-    return currURL && currURL.includes('mobile');
+    return (currURL && currURL.includes('mobile'));
   };
 
   const handleNavigate = (link, mobileTab) => {
@@ -86,13 +85,7 @@ const Header = ({ relativePagePath }) => {
           })}
         </div>
       </div>
-      <div className="d-flex justify-content-end align-items-center">
-        <DocSearch
-          appId={process.env.ALGOLIA_APP_ID}
-          indexName={process.env.ALGOLIA_INDEX_NAME}
-          apiKey={process.env.ALGOLIA_API_KEY}
-        />
-      </div>
+      <Search parentRef={ref} />
     </div>
   );
 };
