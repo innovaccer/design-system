@@ -1,3 +1,44 @@
+## 2.15.0 (2023-03-06)
+
+### Highlights
+
+- feat(docs): add functionality to preview images using Light box on documentation site (970fe8bc)
+- fix(input): update copy-paste behavior of dates in Input for DatePicker and DateRangePicker component (925af578)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+-  feat(docs): add functionality to preview images using Light box on documentation site (970fe8bc)
+
+### Fixes
+
+- fix(input): update copy-paste behavior of dates in Input for DatePicker and DateRangePicker component (925af578)
+- fix(chip): fix disabled and active state for all types of Chip component and update focus state for input Chip component (46d09832)
+
+### Improvements
+
+- fix(calendar): update hover and active states for Calendar and DateRangePicker component (e7007a91)
+- fix(toast): update states for close action icon in Toast component (9dcb30e6)
+- fix(switch): update states and shadow for knob in Switch component (6325915e)
+- feat(dropdown): add different placeholder sizes in loading state of Dropdown component (5944d391)
+
+### Documentation
+
+- docs(docs): update documentation and usage guidelines for Chips component (46d09832)
+
+---
+
 ## 2.14.2-0 (2023-02-07)
 
 ### Highlights
