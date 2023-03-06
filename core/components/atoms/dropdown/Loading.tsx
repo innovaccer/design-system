@@ -1,13 +1,16 @@
 import * as React from 'react';
 import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
 import Placeholder from '@/components/molecules/placeholder';
+import { PlaceholderParagraphProps } from '@/index.type';
 
 const Loading = (props: any) => {
-  const { loadingType } = props;
+  const { loadingType, optionIndex } = props;
+  const placeholderSizes: PlaceholderParagraphProps['length'][] = ['medium', 'large'];
+  const size = placeholderSizes[(optionIndex + 2) % 2];
 
   switch (loadingType) {
     case 'DEFAULT':
-      return <PlaceholderParagraph length={'large'} data-test="DesignSystem-Dropdown--PlaceholderParagraph" />;
+      return <PlaceholderParagraph length={size} data-test="DesignSystem-Dropdown--PlaceholderParagraph" />;
     case 'WITH_ICON':
       return (
         <Placeholder withImage={true} round={true} data-test="DesignSystem-Dropdown--Placeholder">
