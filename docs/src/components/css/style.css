@@ -144,6 +144,10 @@ blockquote p {
   text-align: center;
 }
 
+.Heading {
+  scroll-margin: var(--spacing-4);
+}
+
 .text-align--center {
   text-align: center;
 }
