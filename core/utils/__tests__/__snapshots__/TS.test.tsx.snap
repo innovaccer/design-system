@@ -35,7 +35,8 @@ exports[`TS renders children 1`] = `
     tabindex="0"
   />
   <div
-    class="Card Card--shadow-default"
+    class="Card Card--shadow10"
+    data-test="DesignSystem-Card"
   >
     <span
       class="Text Text--default Text--regular"

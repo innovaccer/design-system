@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card component 
-  shadow: "default", style: {"width":"150px","height":"150px"}
+  shadow: "shadow10", style: {"width":"150px","height":"150px"}
  1`] = `
 <body>
   <div>
     <div
-      class="Card Card--shadow-default"
+      class="Card Card--shadow10"
+      data-test="DesignSystem-Card"
       style="width: 150px; height: 150px;"
     >
       <span>
@@ -18,12 +19,31 @@ exports[`Card component
 `;
 
 exports[`Card component 
-  shadow: "none", style: {"width":"150px","height":"150px"}
+  shadow: "shadow20", style: {"width":"150px","height":"150px"}
  1`] = `
 <body>
   <div>
     <div
-      class="Card Card--shadow-none"
+      class="Card Card--shadow20"
+      data-test="DesignSystem-Card"
+      style="width: 150px; height: 150px;"
+    >
+      <span>
+        Hello
+      </span>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Card component 
+  shadow: "shadow30", style: {"width":"150px","height":"150px"}
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Card Card--shadow30"
+      data-test="DesignSystem-Card"
       style="width: 150px; height: 150px;"
     >
       <span>
