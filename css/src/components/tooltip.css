@@ -7,7 +7,6 @@
   overflow: hidden;
   box-sizing: border-box;
   transition: opacity 120ms;
-  transition-delay: 800ms;
   transition-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
 }
 
@@ -19,7 +18,7 @@
 @keyframes tooltip-open-top {
   from {
     top: 0px;
-    opacity: 0.5;
+    opacity: 0;
   }
   to {
     top: -4px;
@@ -29,7 +28,7 @@
 @keyframes tooltip-close-top {
   from {
     top: -4px;
-    opacity: 0.5;
+    opacity: 1;
   }
   to {
     top: 0px;
@@ -42,12 +41,12 @@
   animation-fill-mode: forwards;
 }
 .Tooltip-animation-close-top {
-  animation: tooltip-close-top 120ms cubic-bezier(0.4, 0.14, 1, 1);
+  animation: tooltip-close-top 80ms cubic-bezier(0.4, 0.14, 1, 1);
 }
 @keyframes tooltip-open-bottom {
   from {
     top: 0px;
-    opacity: 0.5;
+    opacity: 0;
   }
   to {
     top: 4px;
@@ -57,7 +56,7 @@
 @keyframes tooltip-close-bottom {
   from {
     top: 4px;
-    opacity: 0.5;
+    opacity: 1;
   }
   to {
     top: 0px;
@@ -70,13 +69,13 @@
   animation-fill-mode: forwards;
 }
 .Tooltip-animation-close-bottom {
-  animation: tooltip-close-bottom 120ms cubic-bezier(0.4, 0.14, 1, 1);
+  animation: tooltip-close-bottom 80ms cubic-bezier(0.4, 0.14, 1, 1);
 }
 
 @keyframes tooltip-open-left {
   from {
     left: 0px;
-    opacity: 0.5;
+    opacity: 0;
   }
   to {
     left: -4px;
@@ -86,7 +85,7 @@
 @keyframes tooltip-close-left {
   from {
     left: -4px;
-    opacity: 0.5;
+    opacity: 1;
   }
   to {
     left: 0px;
@@ -99,13 +98,13 @@
   animation-fill-mode: forwards;
 }
 .Tooltip-animation-close-left {
-  animation: tooltip-close-left 120ms cubic-bezier(0.4, 0.14, 1, 1);
+  animation: tooltip-close-left 80ms cubic-bezier(0.4, 0.14, 1, 1);
 }
 
 @keyframes tooltip-open-right {
   from {
     left: 0px;
-    opacity: 0.5;
+    opacity: 0;
   }
   to {
     left: 4px;
@@ -115,7 +114,7 @@
 @keyframes tooltip-close-right {
   from {
     left: 4px;
-    opacity: 0.5;
+    opacity: 1;
   }
   to {
     left: 0px;
@@ -128,5 +127,10 @@
   animation-fill-mode: forwards;
 }
 .Tooltip-animation-close-right {
-  animation: tooltip-close-right 120ms cubic-bezier(0.4, 0.14, 1, 1);
+  animation: tooltip-close-right 80ms cubic-bezier(0.4, 0.14, 1, 1);
+}
+
+.Tooltip-container {
+  transition-delay: 400ms;
+  animation-delay: 400ms;
 }
