@@ -51,7 +51,7 @@ export const reorderList = () => {
       <Listbox showDivider={true} type="description" draggable={true} className="vh-50 overflow-auto">
         {dataList.map((record, key) => {
           return (
-            <ListboxItem key={key + 1} id={key + 1} disabled={key === 2} className="d-flex align-items-center">
+            <ListboxItem key={key + 1} id={key + 1} className="d-flex align-items-center">
               <div className="d-flex align-items-center w-100 justify-content-between ml-4">
                 <div className="d-flex justify-content-start">
                   <Text>{record.name}</Text>
