@@ -21,8 +21,7 @@
 
 .Listbox-item:focus,
 .Listbox-item:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: 3px auto var(--secondary-shadow);
 }
 
 .Listbox-item:active {
@@ -30,8 +29,7 @@
 }
 
 .Listbox-item--draggable:focus {
-  outline: none;
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: 3px auto var(--secondary-shadow);
 }
 
 .Listbox-item--disabled {
