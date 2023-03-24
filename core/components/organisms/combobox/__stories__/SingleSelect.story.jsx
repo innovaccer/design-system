@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Combobox, Label } from '@/index';
+import { Combobox, Label, Listbox, ListboxItem, Text } from '@/index';
 
 // CSF format story
 export const singleSelect = () => {
@@ -32,26 +32,23 @@ export const singleSelect = () => {
       <Label>Medicine name</Label>
       <Combobox
         inputValue={inputValue}
-        inputOptions={{ placeholder: 'Enter Name', disabled: true }}
+        inputOptions={{ placeholder: 'Enter Name' }}
         onInputChange={setInputValue}
         multiSelect={false}
       >
-        <ul className="m-0 p-5 Combobox-list">
-          {optionList.map((options, key) => {
-            return (
-              // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-              <li
-                key={key}
-                inputValue={inputValue}
-                className="py-4 cursor-pointer"
-                onClick={() => setInputValue(options.label)}
-                onKeyDown={() => setInputValue(options.label)}
-              >
-                {options.label}
-              </li>
-            );
-          })}
-        </ul>
+        {optionList.length > 0 ? (
+          <Listbox showDivider={false} size="compressed" className="Combobox-list">
+            {optionList.map((options, key) => {
+              return (
+                <ListboxItem key={key} id={key} onClick={() => setInputValue(options.label)}>
+                  {options.label}
+                </ListboxItem>
+              );
+            })}
+          </Listbox>
+        ) : (
+          <Text>No Result Found</Text>
+        )}
       </Combobox>
     </div>
   );

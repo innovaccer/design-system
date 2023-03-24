@@ -1,7 +1,6 @@
 .Combobox-list {
-  max-height: 200px;
-  list-style-type: none;
-  overflow: scroll;
+  max-height: var(--spacing-9);
+  overflow: auto;
 }
 
 .Combobox-wrapper {
