@@ -73,7 +73,9 @@ export const Listbox = (props: ListboxProps) => {
     return element;
   });
 
-  renderChildren[renderChildren.length - 1].props.parentProps.isLastItem = true;
+  if (renderChildren.length > 0) {
+    renderChildren[renderChildren.length - 1].props.parentProps.isLastItem = true;
+  }
 
   return (
     <>
