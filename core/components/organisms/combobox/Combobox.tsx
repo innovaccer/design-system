@@ -1,59 +1,38 @@
 import React, { useEffect } from 'react';
+import { Popover } from '@/index';
 import { BaseProps } from '@/utils/types';
-import { Popover, ChipInput, Input } from '@/index';
-import { InputProps, ChipInputProps, PopoverProps } from '@/index.type';
-
-export type InputSize = 'tiny' | 'regular' | 'large';
-type OptionType = {
-  label: string;
-  value: string;
-  // selected: boolean;
-};
+import { PopoverProps, InputProps, ChipInputProps } from '@/index.type';
+import { InputBox } from './InputBox';
+// import { ChipInputBox } from './ChipInputBox';
 
 export interface ComboboxProps extends BaseProps {
   multiSelect?: boolean;
-  optionList: OptionType[];
   inputOptions?: InputProps;
+  inputValue?: string;
+  onInputChange?: () => void;
   chipInputOptions?: ChipInputProps;
+  chipInputValue?: string[];
+  children: React.ReactNode;
 }
 
-const InputBox = (props: InputProps) => {
-  const { value, onChange } = props;
-
-  return <Input value={value} onChange={onChange} {...props} />;
-};
-
-const ChipInputBox = (props: any) => {
-  const { value } = props;
-  return <ChipInput {...props} value={value} />;
-};
-
-const Listbox = (props: any) => {
-  const { optionList, onClickHandler } = props;
-  return (
-    <ul className="m-0 p-5 Combobox-list">
-      {optionList.map((options: OptionType, key: number) => {
-        return (
-          // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-          <li
-            className="py-4 cursor-pointer"
-            key={key}
-            onClick={() => onClickHandler(options)}
-            onKeyDown={() => onClickHandler(options)}
-          >
-            {options.label}
-          </li>
-        );
-      })}
-    </ul>
-  );
+const ComboboxTrigger = (props: ComboboxProps) => {
+  const {
+    multiSelect,
+    inputOptions,
+    inputValue,
+    onInputChange,
+    // chipInputValue, chipInputOptions
+  } = props;
+  if (multiSelect) {
+    // return <ChipInputBox value={chipInputValue} {...chipInputOptions} allowDuplicates={true} />;
+  }
+  return <InputBox {...inputOptions} value={inputValue} onChange={onInputChange} />;
 };
 
 export const Combobox = (props: ComboboxProps) => {
-  const { optionList, multiSelect } = props;
-  const [selectedOption, setSelectedOption] = React.useState<OptionType[]>([]);
+  const { children } = props;
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
-  const [count, setCount] = React.useState(0);
+
   const triggerRef = React.createRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -66,38 +45,16 @@ export const Combobox = (props: ComboboxProps) => {
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
-  const onClickHandler = (options: OptionType) => {
-    if (multiSelect) {
-      setSelectedOption([...selectedOption, options]);
-    } else {
-      setSelectedOption([options]);
-    }
-    setCount(count + 1);
-  };
-
-  const ComboboxTrigger = () => {
-    if (multiSelect) {
-      const optionList = selectedOption.map((option) => option.label);
-      return <ChipInputBox value={optionList} {...props.chipInputOptions} />;
-    }
-    return <InputBox {...props.inputOptions} value={selectedOption[0]?.label} />;
-  };
-
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
-        trigger={<ComboboxTrigger />}
-        key={count}
+        trigger={<ComboboxTrigger {...props} />}
       >
-        <Listbox optionList={optionList} onClickHandler={onClickHandler} />
+        {children}
       </Popover>
     </div>
   );
 };
-
-Combobox.displayName = 'Combobox';
-
-export default Combobox;
