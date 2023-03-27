@@ -8,12 +8,27 @@
   background-color: var(--white);
 }
 
-.Card--shadow-default,
-.Card--shadow-light,
-.Card--shadow-medium,
-.Card--shadow-dark {
+.Card--default,
+.Card--light,
+.Card--medium,
+.Card--dark {
   border: none;
   box-shadow: var(--shadow-s);
+}
+
+.Card--shadow10 {
+  border: none;
+  box-shadow: var(--shadow-s);
+}
+
+.Card--shadow20 {
+  border: none;
+  box-shadow: var(--shadow-m);
+}
+
+.Card--shadow30 {
+  border: none;
+  box-shadow: var(--shadow-l);
 }
 
 .Card-header {

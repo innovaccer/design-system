@@ -58,6 +58,7 @@ export const Tooltip = (props: TooltipProps) => {
         open: `Tooltip-animation-open-${positionValue[props.position]}`,
         close: `Tooltip-animation-close-${positionValue[props.position]}`,
       }}
+      className="Tooltip-container"
     >
       {tooltipWrapper}
     </Popover>

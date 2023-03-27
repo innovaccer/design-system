@@ -423,7 +423,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       classes = classNames(
         {
           [`${animationClass.open}`]: this.state.isOpen,
-          [`${animationClass.close}`]: this.state.showClosingAnimation,
+          [`${animationClass.close}`]: !this.state.isOpen,
         },
         children.props.className
       );
