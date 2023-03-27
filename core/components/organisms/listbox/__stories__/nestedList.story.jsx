@@ -75,7 +75,7 @@ export const nestedList = () => {
 
   return (
     <Card className="w-75">
-      <Listbox type="description" className="vh-50 overflow-auto">
+      <Listbox type="description" className="Listbox-wrapper overflow-auto">
         {dataList.map((record, key) => {
           const expanded = expandList.includes(key);
           return (
@@ -121,6 +121,10 @@ const customCode = `
         .SubList-wrapper {
           margin-left: 40px;
           background-color: #fcfafa;
+        }
+
+        .Listbox-wrapper {
+          height: var(--spacing-9);
         }
     */
 
@@ -185,7 +189,7 @@ const customCode = `
 
   return (
     <Card className="w-75">
-      <Listbox type="description" className="vh-50 overflow-auto">
+      <Listbox type="description" className="Listbox-wrapper overflow-auto">
         {dataList.map((record, key) => {
           const expanded = expandList.includes(key);
 

@@ -44,6 +44,11 @@ export const optionList = () => {
     },
   ];
   return (
+    // style.css
+    // .Listbox-wrapper {
+    //   height: var(--spacing-9);
+    // }
+
     <Card>
       <CardHeader>
         <Heading size="s">Select starting template</Heading>
@@ -63,7 +68,7 @@ export const optionList = () => {
           />
         </div>
         <Tabs activeIndex={0}>
-          <Tab label="Suggested" count={6} className="vh-50 overflow-auto">
+          <Tab label="Suggested" count={6} className="Listbox-wrapper overflow-auto">
             <Listbox type="option">
               {dataList.map((data, key) => {
                 return (

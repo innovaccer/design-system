@@ -12,6 +12,7 @@ import {
   Avatar,
   Button,
 } from '@/index';
+import '../style.css';
 
 export const descriptionList = () => {
   const dataList = [
@@ -90,6 +91,10 @@ export const descriptionList = () => {
   ];
 
   return (
+    // style.css
+    // .Listbox-wrapper {
+    //   height: var(--spacing-9);
+    // }
     <Card>
       <CardHeader className="pb-4">
         <Heading size="s">Sharing test manual</Heading>
@@ -99,7 +104,7 @@ export const descriptionList = () => {
 
       <Divider className="mt-3" appearance="header" />
       <CardBody className="p-0">
-        <Listbox type="description" className="vh-50 overflow-auto">
+        <Listbox type="description" className="Listbox-wrapper overflow-auto">
           {dataList.map((data, key) => {
             return (
               <ListboxItem
