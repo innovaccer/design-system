@@ -3,28 +3,22 @@ import { Popover } from '@/index';
 import { BaseProps } from '@/utils/types';
 import { PopoverProps, InputProps, ChipInputProps } from '@/index.type';
 import { InputBox } from './InputBox';
-// import { ChipInputBox } from './ChipInputBox';
+import { ChipInputBox } from './ChipInputBox';
 
 export interface ComboboxProps extends BaseProps {
   multiSelect?: boolean;
   inputOptions?: InputProps;
   inputValue?: string;
   onInputChange?: () => void;
-  chipInputOptions?: ChipInputProps;
+  chipInputOptions: ChipInputProps;
   chipInputValue?: string[];
   children: React.ReactNode;
 }
 
 const ComboboxTrigger = (props: ComboboxProps) => {
-  const {
-    multiSelect,
-    inputOptions,
-    inputValue,
-    onInputChange,
-    // chipInputValue, chipInputOptions
-  } = props;
+  const { multiSelect, inputOptions, inputValue, onInputChange, chipInputValue, chipInputOptions } = props;
   if (multiSelect) {
-    // return <ChipInputBox value={chipInputValue} {...chipInputOptions} allowDuplicates={true} />;
+    return <ChipInputBox value={chipInputValue} {...chipInputOptions} allowDuplicates={true} />;
   }
   return <InputBox {...inputOptions} value={inputValue} onChange={onInputChange} />;
 };
@@ -37,6 +31,7 @@ export const Combobox = (props: ComboboxProps) => {
 
   useEffect(() => {
     const popperWidth = triggerRef.current?.clientWidth;
+    console.log('popperWidth', popperWidth);
 
     const popperWrapperStyle = {
       width: popperWidth,
@@ -48,6 +43,7 @@ export const Combobox = (props: ComboboxProps) => {
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
+        // on="click"
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
