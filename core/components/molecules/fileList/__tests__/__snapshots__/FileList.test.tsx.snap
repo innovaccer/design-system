@@ -5,7 +5,8 @@ exports[`FileList component
  1`] = `
 <DocumentFragment>
   <div
-    class="Card Card--shadow-none"
+    class="Card Card--none"
+    data-test="DesignSystem-Card"
   >
     <div
       class="FileItem"

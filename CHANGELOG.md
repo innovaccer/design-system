@@ -1,3 +1,41 @@
+## 2.15.1 (2023-03-27)
+
+### Highlights
+
+- fix(card): add new shadows in card component (165740cd)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(docs): fix scroll issue with sticky tabs (b26110d7)
+- fix(card): add new shadows in card component (165740cd)
+- fix(tooltip): update animation delay property in tooltip component (b391f26c)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.15.0 (2023-03-06)
 
 ### Highlights
