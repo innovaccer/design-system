@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Card, { CardProps as Props } from '../Card';
+import Card, { CardProps as Props, Shadow } from '../Card';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
-const Shadow = ['none', 'default'];
+const shadowList: Shadow[] = ['shadow10', 'shadow20', 'shadow30'];
 const Style = [
   {
     width: valueHelper('150px', { required: true }),
@@ -12,7 +12,7 @@ const Style = [
 ];
 
 const Mapper = {
-  shadow: valueHelper(Shadow, { required: true, iterate: true }),
+  shadow: valueHelper(shadowList, { required: true, iterate: true }),
   style: valueHelper(Style, { required: true, iterate: true }),
 };
 
@@ -31,4 +31,13 @@ describe('Card component', () => {
   };
 
   testHelper(Mapper, testFunc);
+});
+
+describe('Card component shadow', () => {
+  shadowList.forEach((shadow) => {
+    it(`should have the Card--${shadow} class when shadow=${shadow} `, () => {
+      const { getByTestId } = render(<Card shadow={shadow}>Card</Card>);
+      expect(getByTestId('DesignSystem-Card')).toHaveClass(`Card--${shadow}`);
+    });
+  });
 });
