@@ -17,7 +17,7 @@
 }
 
 .Backdrop {
-  background-color: color-mod(var(--inverse) a(0.8));
+  background-color: color-mod(var(--inverse) a(0.6));
   height: 100vh;
   width: 100vw;
   position: fixed;
