@@ -67,21 +67,22 @@
 }
 
 .Badge--subtle-primary {
-  color: var(--primary-dark);
+  color: var(--primary-darker);
   background: var(--primary-lightest);
 }
 
 .Badge--subtle-secondary {
+  color: var(--text);
   background: var(--secondary-light);
 }
 
 .Badge--subtle-success {
-  color: var(--success-dark);
+  color: var(--success-darker);
   background: var(--success-lightest);
 }
 
 .Badge--subtle-alert {
-  color: var(--alert-dark);
+  color: var(--alert-darker);
   background: var(--alert-lightest);
 }
 
@@ -96,12 +97,12 @@
 }
 
 .Badge--subtle-accent2 {
-  color: var(--accent2-dark);
+  color: var(--accent2-darker);
   background: var(--accent2-lightest);
 }
 
 .Badge--subtle-accent3 {
-  color: var(--accent3-dark);
+  color: var(--accent3-darker);
   background: var(--accent3-lightest);
 }
 
