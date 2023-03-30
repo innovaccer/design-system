@@ -74,9 +74,6 @@ export default {
     docs: {
       docPage: {
         title: 'Listbox',
-        props: {
-          exclude: ['parentProps'],
-        },
       },
     },
   },
