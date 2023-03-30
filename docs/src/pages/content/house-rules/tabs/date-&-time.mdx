@@ -203,6 +203,97 @@ Always use 12-hour clock for writing time. Make use of AM and PM preceded by a s
 </Rules>
 <br />
 
+#### Relative date and time
+
+Mention relative timestamps when the exact dates are not important.
+
+**Note:** Always provide a way to see the exact timestamp such as using a tooltip.
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        description: 'Within last few seconds',
+        display: 'just now',
+        display_when_limited_space: 'now',
+      },
+      {
+        description: 'Within the last minute',
+        display: '1 minute ago or 1 min ago',
+        display_when_limited_space: '1 m',
+      },
+      {
+        description: 'Within 59 minutes',
+        display: 'x minutes ago or x mins ago',
+        display_when_limited_space: 'x m',
+      },
+      {
+        description: '60 minutes ago',
+        display: '1 hour ago or 1 hr ago',
+        display_when_limited_space: '1 h',
+      },
+      {
+        description: 'x hours ago',
+        display: 'x hours ago or x hrs ago',
+        display_when_limited_space: 'x hrs',
+      },
+      {
+        description: '1 day ago',
+        display: 'yesterday',
+        display_when_limited_space: '1 d',
+      },
+      {
+        description: '1 day ago (with time)',
+        display: 'yesterday at 5:05 PM',
+        display_when_limited_space: 'Default value',
+      },
+      {
+        description: '7 days ago',
+        display: '1 week ago',
+        display_when_limited_space: '1 w',
+      },
+      {
+        description: '2 days ago < 7 days',
+        display: 'x days ago',
+        display_when_limited_space: 'x d',
+      },
+      {
+        description: '> 7 days ago',
+        display: 'Timestamp "January 10,2023"',
+        display_when_limited_space: 'Jan 10',
+      },
+    ]}
+    schema={[
+      {
+        name: 'description',
+        displayName: 'Description',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'display',
+        displayName: 'Display',
+        width: '33%',
+        sorting: false,
+        separator: true,
+      },
+      {
+        name: 'display_when_limited_space',
+        displayName: 'Display when limited space',
+        width: '34%',
+        sorting: false,
+        separator: true,
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+<br/>
+<br/>
+
 #### Time zone
 
 Common time zones referred in U.S. Pacific standard time (PST), Mountain standard time (MST), Central daylight time (CDT), Eastern daylight time (EDT) etc.
@@ -324,163 +415,4 @@ Abbreviation chart for units of time
     withHeader={false}
   />
 </Card>
-<br />
-
-#### Numbers
-
-You can use numbers in various ways and see examples which are shared below. Remember three numbers get a comma.
-
-<Rules>
-  <DOs>
-    <InlineMessage>
-      <IconWrapper>887</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper>3,456</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper>14,785</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper>You have 3 unread messages</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper>12 Requests pending</IconWrapper>
-    </InlineMessage>
-  </DOs>
-  <DONTs>
-    <InlineMessage>
-      <IconWrapper iconType='error'>0,887</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'>3;456</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'>1,4,785</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'>
-        You have three unread messages
-      </IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'>
-        Twelve Requests Pending
-      </IconWrapper>
-    </InlineMessage>
-  </DONTs>
-</Rules>
-<br />
-
-#### Phone numbers
-
-Use dashes without space between numbers. Use a country code if referring to people outside your country.
-
-<Rules>
-  <DOs>
-    <InlineMessage>
-      <IconWrapper>(555) 670-1769</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper>(348) 563-6620 </IconWrapper>
-    </InlineMessage>
-  </DOs>
-  <DONTs>
-    <InlineMessage>
-      <IconWrapper iconType='error'>
-        555 - 670 - 1769
-      </IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'>
-        (348)-563-6620
-      </IconWrapper>
-    </InlineMessage>
-  </DONTs>
-</Rules>
-<br />
-
-#### Currency
-
-Put a dollar sign '$' before the amount when talking about US currency. Use decimal and number of cents if more than 0. Follow the same with other currencies.
-
-<Rules>
-  <DOs>
-    <InlineMessage>
-      <IconWrapper>$500</IconWrapper>
-    </InlineMessage>
-    <br/>
-    <br/>
-    <InlineMessage>
-      <IconWrapper>$0.50 </IconWrapper>
-    </InlineMessage>
-
-  </DOs>
-  <DONTs>
-    <InlineMessage>
-      <IconWrapper iconType='error'>
-        $ 500
-        <br />
-        500$
-        <br />
-        $500 dollars
-      </IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'>
-        $ 0.50
-        <br />
-        0.50$
-      </IconWrapper>
-    </InlineMessage>
-  </DONTs>
-</Rules>
-<br />
-
-#### Percentage (%)
-
-Per cent is generally used in UK and 'percent' is used is US. When you have space constraints just use the symbol of percent %.
-
-<Rules>
-  <DOs>
-    <InlineMessage>
-      <IconWrapper>Increases time by 80%</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper>Fifty-five percent of your customers are unaware.</IconWrapper>
-    </InlineMessage>
-  </DOs>
-  <DONTs>
-    <InlineMessage>
-      <IconWrapper iconType='error'>Increases time by 80 %</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'>Fifty-five per cent of your customers are unaware.</IconWrapper>
-    </InlineMessage>
-  </DONTs>
-</Rules>
-<br />
-
-#### Hash (#)
-
-A hash has many uses but it is majorly used as 'hashtag' on various social media platforms. We use it only for showing serial numbers.
-
-<Rules>
-  <DOs>
-    <InlineMessage>
-      <IconWrapper>#2</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper>#204</IconWrapper>
-    </InlineMessage>
-  </DOs>
-  <DONTs>
-    <InlineMessage>
-      <IconWrapper iconType='error'># 2</IconWrapper>
-    </InlineMessage>
-    <InlineMessage>
-      <IconWrapper iconType='error'># 204</IconWrapper>
-    </InlineMessage>
-  </DONTs>
-</Rules>
 <br />
