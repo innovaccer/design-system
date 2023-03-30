@@ -236,9 +236,6 @@ export default {
       docPage: {
         customCode,
         title: 'Listbox',
-        props: {
-          exclude: ['parentProps'],
-        },
       },
     },
   },

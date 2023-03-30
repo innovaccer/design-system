@@ -50,6 +50,10 @@ export interface ListboxItemProps extends BaseProps {
    * Handler to be called when `ListboxItem` is clicked
    */
   onClick?: (e: React.MouseEvent, id: string) => void;
+  /**
+   * Specify props inherited from parent listbox element
+   * @ignore
+   */
   parentProps?: SharedProp;
 }
 
