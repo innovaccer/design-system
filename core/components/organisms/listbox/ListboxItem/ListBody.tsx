@@ -9,11 +9,12 @@ export const ListBody = (props: ListboxItemProps) => {
     showDivider: true,
     type: 'resource',
     draggable: false,
+    uniqueID: '',
   };
 
   const { children, className, disabled, selected, activated, disablePadding, parentProps = defaultProps } = props;
 
-  const { size, type, draggable } = parentProps;
+  const { size, type, draggable, uniqueID } = parentProps;
 
   const itemClass = classNames(
     {
@@ -31,7 +32,13 @@ export const ListBody = (props: ListboxItemProps) => {
   );
 
   return (
-    <div data-test="DesignSystem-Listbox-ItemWrapper" className={itemClass} tabIndex={draggable ? -1 : 0}>
+    <div
+      data-list-item-index={uniqueID}
+      data-disabled={disabled}
+      data-test="DesignSystem-Listbox-ItemWrapper"
+      className={itemClass}
+      tabIndex={draggable ? -1 : 0}
+    >
       {draggable && (
         <Icon
           size={16}

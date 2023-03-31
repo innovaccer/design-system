@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import classNames from 'classnames';
 import { DraggableList } from './ReorderList';
+import { onKeyDown } from './utils';
 
 type ListboxType = 'option' | 'description' | 'resource';
 type ListboxSize = 'standard' | 'compressed' | 'tight';
@@ -28,6 +29,10 @@ export interface SharedProp {
    * Set as `true` if list item is last element
    */
   isLastItem?: boolean;
+  /**
+   * Set unique id to the list item element
+   */
+  uniqueID?: number;
 }
 
 export interface ListboxProps extends BaseProps {
@@ -68,8 +73,10 @@ export const Listbox = (props: ListboxProps) => {
     className
   );
 
-  const renderChildren = React.Children.toArray(children).map((child: any) => {
-    const element = React.cloneElement(child, { parentProps: { ...props, isLastItem: false } });
+  const renderChildren = React.Children.toArray(children).map((child: any, key: number) => {
+    const element = React.cloneElement(child, {
+      parentProps: { ...props, isLastItem: false, uniqueID: key },
+    });
     return element;
   });
 
@@ -82,7 +89,12 @@ export const Listbox = (props: ListboxProps) => {
       {draggable ? (
         <DraggableList {...props} />
       ) : (
-        <Tag data-test="DesignSystem-Listbox" {...baseProps} className={classes}>
+        <Tag
+          data-test="DesignSystem-Listbox"
+          {...baseProps}
+          className={classes}
+          onKeyDown={(e: React.KeyboardEvent) => onKeyDown(e, renderChildren.length)}
+        >
           {renderChildren}
         </Tag>
       )}
