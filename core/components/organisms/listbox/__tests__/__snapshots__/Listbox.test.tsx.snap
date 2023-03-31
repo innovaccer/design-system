@@ -15,6 +15,7 @@ exports[`Listbox Item component snapshot for nested row
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -44,6 +45,7 @@ exports[`Listbox Item component snapshot for nested row
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -82,6 +84,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -110,6 +113,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -138,6 +142,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -166,6 +171,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -194,6 +200,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -222,6 +229,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -250,6 +258,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -278,6 +287,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -306,6 +316,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -334,6 +345,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -362,6 +374,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -390,6 +403,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -418,6 +432,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -446,6 +461,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -474,6 +490,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -502,6 +519,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -530,6 +548,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -558,6 +577,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -586,6 +606,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -614,6 +635,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -642,6 +664,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -670,6 +693,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -698,6 +722,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -726,6 +751,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-4"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -754,6 +780,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -782,6 +809,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -810,6 +838,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -838,6 +867,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -866,6 +896,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -894,6 +925,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -922,6 +954,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -950,6 +983,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -978,6 +1012,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1006,6 +1041,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1034,6 +1070,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1062,6 +1099,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1090,6 +1128,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1118,6 +1157,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1146,6 +1186,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1174,6 +1215,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1202,6 +1244,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1230,6 +1273,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1258,6 +1302,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1286,6 +1331,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1314,6 +1360,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1342,6 +1389,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1370,6 +1418,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1398,6 +1447,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1426,6 +1476,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1454,6 +1505,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1482,6 +1534,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1510,6 +1563,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1538,6 +1592,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1566,6 +1621,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1594,6 +1650,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1622,6 +1679,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item--description py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1650,6 +1708,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1678,6 +1737,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1706,6 +1766,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1734,6 +1795,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1762,6 +1824,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1790,6 +1853,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1818,6 +1882,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1846,6 +1911,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1874,6 +1940,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1902,6 +1969,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1930,6 +1998,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1958,6 +2027,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -1986,6 +2056,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -2014,6 +2085,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -2042,6 +2114,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -2070,6 +2143,7 @@ exports[`Listbox component snapshot
       >
         <div
           class="px-6 Listbox-item py-3"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -3648,6 +3722,8 @@ exports[`Listbox component snapshot
     >
       <div
         class="px-6 Listbox-item--disabled Listbox-item py-5"
+        data-disabled="true"
+        data-list-item-index=""
         data-test="DesignSystem-Listbox-ItemWrapper"
         tabindex="0"
       >
@@ -5177,6 +5253,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5205,6 +5282,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5233,6 +5311,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5261,6 +5340,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item Listbox-item--activated py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5289,6 +5369,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item Listbox-item--activated py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5317,6 +5398,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item Listbox-item--activated py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5345,6 +5427,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5373,6 +5456,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5401,6 +5485,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5429,6 +5514,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item Listbox-item--activated py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5457,6 +5543,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item Listbox-item--activated py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5485,6 +5572,7 @@ exports[`Listbox component snapshot for states
       >
         <div
           class="px-6 Listbox-item Listbox-item--activated py-5"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5512,6 +5600,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-disabled="false"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5539,6 +5629,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="px-6 Listbox-item py-5"
+          data-disabled="false"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5566,6 +5658,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="Listbox-item"
+          data-disabled="false"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5593,6 +5687,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="Listbox-item"
+          data-disabled="false"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5620,6 +5716,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="px-6 Listbox-item--disabled Listbox-item py-5"
+          data-disabled="true"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5647,6 +5745,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="px-6 Listbox-item--disabled Listbox-item py-5"
+          data-disabled="true"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5674,6 +5774,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="Listbox-item--disabled Listbox-item"
+          data-disabled="true"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
@@ -5701,6 +5803,8 @@ exports[`Listbox item component snapshot
       >
         <div
           class="Listbox-item--disabled Listbox-item"
+          data-disabled="true"
+          data-list-item-index="0"
           data-test="DesignSystem-Listbox-ItemWrapper"
           tabindex="0"
         >
