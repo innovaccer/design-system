@@ -1,3 +1,44 @@
+## 2.15.2 (2023-04-03)
+
+### Highlights
+
+- fix(backdrop): update 80% opacity with 60% opacity in backdrop component (bc46072c)
+- fix(badge): update subtle text appearances of badge component (3c1c2b47)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(backdrop): update 80% opacity with 60% opacity (bc46072c)
+- fix(badge): update subtle text appearances of badge component (3c1c2b47)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(badge): update documentation with hover and statusHint vs badge comparison (e7b69672)
+- docs(statusHint): update documentation with statusHint vs badge comparison (d928e95d)
+- docs(table): update documentation with data alignment guideline (7270caea)
+- docs(content): update house rules documentation (203dd85f)
+
+---
+
 ## 2.15.1 (2023-03-27)
 
 ### Highlights
