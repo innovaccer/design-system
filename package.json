@@ -100,7 +100,7 @@
     "lint-staged": "^10.5.4",
     "lz-string": "^1.4.4",
     "node-notifier": ">=8.0.1",
-    "npm": "^6.14.7",
+    "npm": "^9.6.3",
     "postcss-color-mod-function": "^3.0.3",
     "prettier": "^2.3.2",
     "react": "^16.12.0",
