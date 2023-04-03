@@ -1,8 +1,8 @@
 
   /**
-   * Generated on: 1627478630381 
+   * Generated on: 1680529580122 
    *      Package: @innovaccer/design-system
-   *      Version: v2.2.1
+   *      Version: v2.15.2
    *      License: MIT
    *         Docs: https://innovaccer.github.io/design-system
    */
@@ -12,7 +12,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('react-popper')) :
     typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'react-popper'], factory) :
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.inno = {}, global.React, global.classNames, global.ReactDOM, global.ReactPopper));
-}(this, (function (exports, React, classNames, ReactDOM, reactPopper) { 'use strict';
+})(this, (function (exports, React, classNames, ReactDOM, reactPopper) { 'use strict';
 
     function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -25,14 +25,12 @@
                     var d = Object.getOwnPropertyDescriptor(e, k);
                     Object.defineProperty(n, k, d.get ? d : {
                         enumerable: true,
-                        get: function () {
-                            return e[k];
-                        }
+                        get: function () { return e[k]; }
                     });
                 }
             });
         }
-        n['default'] = e;
+        n["default"] = e;
         return Object.freeze(n);
     }
 
@@ -202,52 +200,68 @@
         return month <= 12 && date <= monthLength[month - 1];
       };
 
-      switch (format) {
-        case 'dd/mm/yyyy':
-          var p = val.split('/');
-          var date = +p[0] || 1;
-          var month = +p[1] || 1;
-          var year = +p[2] || 1900;
-          return validate(date, month, year);
+      if (val) {
+        switch (format) {
+          case 'dd/mm/yyyy':
+            {
+              var p = val.split('/');
+              var date_1 = +p[0] || 1;
+              var month = +p[1] || 1;
+              var year = +p[2] || 1900;
+              return validate(date_1, month, year);
+            }
 
-        case 'mm/dd/yyyy':
-          var p = val.split('/');
-          var date = +p[1] || 1;
-          var month = +p[0] || 1;
-          var year = +p[2] || 1900;
-          return validate(date, month, year);
+          case 'mm/dd/yyyy':
+            {
+              var p = val.split('/');
+              var date_2 = +p[1] || 1;
+              var month = +p[0] || 1;
+              var year = +p[2] || 1900;
+              return validate(date_2, month, year);
+            }
 
-        case 'yyyy/mm/dd':
-          var p = val.split('/');
-          var date = +p[2] || 1;
-          var month = +p[1] || 1;
-          var year = +p[0] || 1900;
-          return validate(date, month, year);
+          case 'yyyy/mm/dd':
+            {
+              var p = val.split('/');
+              var date_3 = +p[2] || 1;
+              var month = +p[1] || 1;
+              var year = +p[0] || 1900;
+              return validate(date_3, month, year);
+            }
 
-        case 'dd-mm-yyyy':
-          var p = val.split('-');
-          var date = +p[0] || 1;
-          var month = +p[1] || 1;
-          var year = +p[2] || 1900;
-          return validate(date, month, year);
+          case 'dd-mm-yyyy':
+            {
+              var p = val.split('-');
+              var date_4 = +p[0] || 1;
+              var month = +p[1] || 1;
+              var year = +p[2] || 1900;
+              return validate(date_4, month, year);
+            }
 
-        case 'mm-dd-yyyy':
-          var p = val.split('-');
-          var date = +p[1] || 1;
-          var month = +p[0] || 1;
-          var year = +p[2] || 1900;
-          return validate(date, month, year);
+          case 'mm-dd-yyyy':
+            {
+              var p = val.split('-');
+              var date_5 = +p[1] || 1;
+              var month = +p[0] || 1;
+              var year = +p[2] || 1900;
+              return validate(date_5, month, year);
+            }
 
-        case 'yyyy-mm-dd':
-          var p = val.split('-');
-          var date = +p[2] || 1;
-          var month = +p[1] || 1;
-          var year = +p[0] || 1900;
-          return validate(date, month, year);
+          case 'yyyy-mm-dd':
+            {
+              var p = val.split('-');
+              var date_6 = +p[2] || 1;
+              var month = +p[1] || 1;
+              var year = +p[0] || 1900;
+              return validate(date_6, month, year);
+            }
 
-        default:
-          return false;
+          default:
+            return false;
+        }
       }
+
+      return false;
     };
     var time$1 = function time(val, format) {
       var _a = getTimeObjFromStr(format, val),
@@ -268,7 +282,7 @@
     var _a$1;
 
     var date = {
-      'dd/mm/yyyy': [/[0123]/, /\d/, '/', /\[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+      'dd/mm/yyyy': [/[0123]/, /\d/, '/', /[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
       'mm/dd/yyyy': [/[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
       'yyyy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /[01]/, /\d/, '/', /[0123]/, /\d/],
       'dd-mm-yyyy': [/[0123]/, /\d/, '-', /[01]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
@@ -276,7 +290,7 @@
       'yyyy-mm-dd': [/\d/, /\d/, /\d/, /\d/, '-', /[01]/, /\d/, '-', /[0123]/, /\d/]
     };
     var rangeDate = {
-      'dd/mm/yyyy': [/[0123]/, /\d/, '/', /\[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[0123]/, /\d/, '/', /\[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
+      'dd/mm/yyyy': [/[0123]/, /\d/, '/', /[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[0123]/, /\d/, '/', /[01]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
       'mm/dd/yyyy': [/[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[01]/, /\d/, '/', /[0123]/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
       'yyyy/mm/dd': [/\d/, /\d/, /\d/, /\d/, '/', /[01]/, /\d/, '/', /[0123]/, /\d/, ' ', '-', ' ', /\d/, /\d/, /\d/, /\d/, '/', /[01]/, /\d/, '/', /[0123]/, /\d/],
       'dd-mm-yyyy': [/[0123]/, /\d/, '-', /[01]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/, ' ', '-', ' ', /[0123]/, /\d/, '-', /[01]/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
@@ -292,14 +306,14 @@
         time: time
     });
 
-    var index$1 = /*#__PURE__*/Object.freeze({
+    var index = /*#__PURE__*/Object.freeze({
         __proto__: null,
         css: css,
         validators: validators,
         masks: masks
     });
 
-    /*! *****************************************************************************
+    /******************************************************************************
     Copyright (c) Microsoft Corporation.
 
     Permission to use, copy, modify, and/or distribute this software for any
@@ -369,7 +383,7 @@
         function verb(n) { return function (v) { return step([n, v]); }; }
         function step(op) {
             if (f) throw new TypeError("Generator is already executing.");
-            while (_) try {
+            while (g && (g = 0, op[0] && (_ = 0)), _) try {
                 if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
                 if (y = 0, t) op = [op[0] & 2, t.value];
                 switch (op[0]) {
@@ -436,11 +450,11 @@
       var DefaultAppearance = 'secondary';
       var colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
       var AvatarAppearance = appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Avatar: true
       }, _a["Avatar--" + size] = size, _a["Avatar--" + AvatarAppearance] = AvatarAppearance, _a['Avatar--disabled'] = !initials || !withTooltip, _a), className);
-      var ContentClass = classNames__default['default']((_b = {}, _b["Avatar-content--" + size] = size, _b["Avatar-content--" + AvatarAppearance] = AvatarAppearance, _b));
-      var IconClass = classNames__default['default']((_c = {}, _c["Avatar-content--" + AvatarAppearance] = AvatarAppearance, _c));
+      var ContentClass = classNames__default["default"]((_b = {}, _b["Avatar-content--" + size] = size, _b["Avatar-content--" + AvatarAppearance] = AvatarAppearance, _b));
+      var IconClass = classNames__default["default"]((_c = {}, _c["Avatar-content--" + AvatarAppearance] = AvatarAppearance, _c));
 
       var renderAvatar = function renderAvatar() {
         return /*#__PURE__*/React__namespace.createElement("span", __assign({
@@ -481,6 +495,85 @@
       size: 'regular'
     };
 
+    var AvatarCount = function AvatarCount(props) {
+      var _a, _b;
+
+      var hiddenAvatarCount = props.hiddenAvatarCount,
+          avatarStyle = props.avatarStyle;
+      var ContentClass = classNames__default["default"]((_a = {}, _a["Avatar-content--secondary"] = true, _a));
+      var AvatarVariantsClass = classNames__default["default"]((_b = {
+        Avatar: true
+      }, _b["Avatar--regular"] = true, _b["Avatar--secondary"] = true, _b['Avatar--disabled'] = true, _b));
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
+        style: avatarStyle
+      }, /*#__PURE__*/React__namespace.createElement("span", {
+        className: AvatarVariantsClass
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
+        appearance: 'white',
+        className: ContentClass
+      }, "+" + hiddenAvatarCount)));
+    };
+
+    var Avatars = function Avatars(props) {
+      var avatarList = props.avatarList,
+          avatarStyle = props.avatarStyle,
+          tooltipPosition = props.tooltipPosition;
+      var avatars = avatarList.map(function (item, index) {
+        var appearance = item.appearance,
+            firstName = item.firstName,
+            lastName = item.lastName;
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          "data-test": "DesignSystem-AvatarGroup--Avatar",
+          className: "AvatarGroup-item",
+          style: avatarStyle,
+          key: index
+        }, /*#__PURE__*/React__namespace.createElement(Avatar, {
+          appearance: appearance,
+          firstName: firstName,
+          lastName: lastName,
+          withTooltip: true,
+          tooltipPosition: tooltipPosition
+        }));
+      });
+      return avatars;
+    };
+
+    var AvatarPopperBody = function AvatarPopperBody(props) {
+      var hiddenAvatarList = props.hiddenAvatarList,
+          popperRenderer = props.popperRenderer,
+          maxHeight = props.maxHeight,
+          dark = props.dark;
+
+      if (popperRenderer) {
+        return popperRenderer(hiddenAvatarList);
+      }
+
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        className: "py-6 pr-4 pl-6"
+      }, /*#__PURE__*/React__namespace.createElement("div", {
+        className: "AvatarGroup-TextWrapper",
+        style: {
+          maxHeight: maxHeight
+        }
+      }, hiddenAvatarList.map(function (item, ind) {
+        var _a;
+
+        var _b = item.firstName,
+            firstName = _b === void 0 ? '' : _b,
+            _c = item.lastName,
+            lastName = _c === void 0 ? '' : _c;
+        var name = firstName + " " + lastName;
+        var AvatarTextClass = classNames__default["default"]((_a = {}, _a["mb-5"] = ind < hiddenAvatarList.length - 1, _a));
+        return /*#__PURE__*/React__namespace.createElement(Text, {
+          key: ind,
+          appearance: dark ? 'white' : 'default',
+          className: AvatarTextClass,
+          "data-test": "DesignSystem-AvatarGroup--Text"
+        }, name);
+      })));
+    };
+
     var AvatarGroup = function AvatarGroup(props) {
       var _a, _b;
 
@@ -504,87 +597,40 @@
           _h = popoverOptions.popperClassName,
           popperClassName = _h === void 0 ? '' : _h;
       var baseProps = extractBaseProps(props);
-      var extraAvatars = list.length > max ? list.length - max > 9 ? 9 : list.length - max : 0;
+      var hiddenAvatarCount = list.length > max ? Math.min(list.length - max, 99) : 0;
       var style = {
         borderRadius: '50%',
         backgroundColor: "" + borderColor,
         border: "var(--spacing-xs) solid " + borderColor,
         boxShadow: "0 0 0 var(--spacing-xs) " + borderColor
       };
-      var AvatarGroupClass = classNames__default['default']((_a = {}, _a['AvatarGroup'] = true, _a), className);
-      var popperClass = classNames__default['default']((_b = {}, _b['AvatarGroup-Popper'] = true, _b), popperClassName);
-      var trigger = /*#__PURE__*/React__namespace.createElement("div", {
-        "data-test": "DesignSystem-AvatarGroup--TriggerAvatar",
-        style: style
-      }, /*#__PURE__*/React__namespace.createElement(Avatar, {
-        appearance: "secondary",
-        firstName: "+",
-        lastName: "" + extraAvatars,
-        withTooltip: false
-      }));
-
-      var renderPopper = function renderPopper() {
-        var extraAvatarsList = list.slice(max, list.length);
-
-        if (popperRenderer && typeof renderPopper === 'function') {
-          return popperRenderer(extraAvatarsList);
-        }
-
-        return /*#__PURE__*/React__namespace.createElement("div", {
-          className: "py-6 pr-4 pl-6"
-        }, /*#__PURE__*/React__namespace.createElement("div", {
-          className: "AvatarGroup-TextWrapper",
-          style: {
-            maxHeight: maxHeight
-          }
-        }, extraAvatarsList.map(function (item, ind) {
-          var _a = item.firstName,
-              firstName = _a === void 0 ? '' : _a,
-              _b = item.lastName,
-              lastName = _b === void 0 ? '' : _b;
-          var name = firstName + " " + lastName;
-          return /*#__PURE__*/React__namespace.createElement(Text, {
-            key: ind,
-            appearance: dark ? 'white' : 'default',
-            className: ind < extraAvatars - 1 ? 'mb-5' : '',
-            "data-test": "DesignSystem-AvatarGroup--Text"
-          }, name);
-        })));
-      };
-
-      var renderAvatars = function renderAvatars() {
-        var avatars = list.slice(0, max).map(function (item, index) {
-          var appearance = item.appearance,
-              firstName = item.firstName,
-              lastName = item.lastName;
-          return /*#__PURE__*/React__namespace.createElement("div", {
-            "data-test": "DesignSystem-AvatarGroup--Avatar",
-            className: "AvatarGroup-item",
-            style: style,
-            key: index
-          }, /*#__PURE__*/React__namespace.createElement(Avatar, {
-            appearance: appearance,
-            firstName: firstName,
-            lastName: lastName,
-            withTooltip: true,
-            tooltipPosition: tooltipPosition
-          }));
-        });
-        return avatars;
-      };
-
+      var AvatarGroupClass = classNames__default["default"]((_a = {}, _a['AvatarGroup'] = true, _a), className);
+      var popperClass = classNames__default["default"]((_b = {}, _b['AvatarGroup-Popper'] = true, _b), popperClassName);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-AvatarGroup"
       }, baseProps, {
         className: AvatarGroupClass + " d-inline-flex"
-      }), renderAvatars(), list.length - max > 0 && /*#__PURE__*/React__namespace.createElement(Popover, {
+      }), /*#__PURE__*/React__namespace.createElement(Avatars, {
+        avatarList: list.slice(0, max),
+        avatarStyle: style,
+        tooltipPosition: tooltipPosition
+      }), list.length - max > 0 && /*#__PURE__*/React__namespace.createElement(Popover, {
         on: on,
         dark: dark,
-        trigger: trigger,
+        trigger: /*#__PURE__*/React__namespace.createElement(AvatarCount, {
+          hiddenAvatarCount: hiddenAvatarCount,
+          avatarStyle: style
+        }),
         position: position,
         appendToBody: appendToBody,
-        className: popperClass
-      }, renderPopper()));
+        className: popperClass,
+        offset: "medium"
+      }, /*#__PURE__*/React__namespace.createElement(AvatarPopperBody, {
+        hiddenAvatarList: list.slice(max, list.length),
+        popperRenderer: popperRenderer,
+        maxHeight: maxHeight,
+        dark: dark
+      })));
     };
     AvatarGroup.displayName = 'AvatarGroup';
     AvatarGroup.defaultProps = {
@@ -612,7 +658,7 @@
           animate = _c[0],
           setAnimate = _c[1];
 
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         Backdrop: true,
         'Backdrop--open': open,
         'Backdrop-animation--open': animate,
@@ -650,9 +696,13 @@
       }, [props.open]);
       var BackdropElement = /*#__PURE__*/ReactDOM__namespace.createPortal( /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Backdrop",
-        "data-layer": true
+        "data-layer": true,
+        "data-opened": open
       }, baseProps, {
-        className: classes
+        className: classes,
+        style: {
+          zIndex: props.zIndex
+        }
       })), document.body);
       return BackdropElement;
     };
@@ -666,7 +716,7 @@
           subtle = props.subtle,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Badge: true
       }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
       return /*#__PURE__*/React__namespace.createElement("span", __assign({
@@ -824,9 +874,18 @@
       });
       return result;
     };
-    var _isEqual = function _isEqual(arr1, arr2) {
-      return arr1.length === arr2.length && arr1.every(function (option, index) {
-        return option.value === arr2[index].value || option.label === arr2[index].label;
+
+    var sortList = function sortList(arr) {
+      return arr.sort(function (a, b) {
+        return a.value > b.value ? 1 : b.value > a.value ? -1 : 0;
+      });
+    };
+
+    var _isEqual = function _isEqual(firstList, secondList) {
+      var firstSortedList = sortList(firstList);
+      var secondSortedList = sortList(secondList);
+      return firstSortedList.length === secondSortedList.length && firstSortedList.every(function (option, index) {
+        return option.value === secondSortedList[index].value;
       });
     };
     var _isControlled = function _isControlled(selected) {
@@ -878,6 +937,15 @@
         checked: false
       };
     };
+    var scrollToOptionIndex = function scrollToOptionIndex(scrollIndex, listOptions) {
+      var _a;
+
+      var optionID = listOptions && ((_a = listOptions[scrollIndex]) === null || _a === void 0 ? void 0 : _a.optionID);
+      var targetOption = document.getElementById(optionID);
+      targetOption && targetOption.scrollIntoView && targetOption.scrollIntoView({
+        block: 'center'
+      });
+    };
 
     var DropdownButton = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b;
@@ -900,8 +968,8 @@
       var trimmedPlaceholder = placeholder.trim();
       var value = children ? children : trimmedPlaceholder;
       var iconName = !menu ? 'keyboard_arrow_down' : icon ? icon : 'more_horiz';
-      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['DropdownButton'] = true, _a["DropdownButton--" + triggerSize] = triggerSize, _a["DropdownButton--" + triggerSize + "Square"] = menu, _a['DropdownButton--placeholder'] = !children && !menu, _a['DropdownButton--icon'] = icon, _a['DropdownButton--open'] = open, _a['DropdownButton--error'] = error, _a));
-      var textClass = classNames__default['default']((_b = {}, _b['Text'] = true, _b['Text--regular'] = true, _b['DropdownButton-text'] = true, _b));
+      var buttonClass = classNames__default["default"]((_a = {}, _a['Button'] = true, _a['DropdownButton'] = true, _a["DropdownButton--" + triggerSize] = triggerSize, _a["DropdownButton--" + triggerSize + "Square"] = menu, _a['DropdownButton--placeholder'] = !children && !menu, _a['DropdownButton--icon'] = icon, _a['DropdownButton--open'] = open, _a['DropdownButton--error'] = error, _a));
+      var textClass = classNames__default["default"]((_b = {}, _b['Text'] = true, _b['Text--regular'] = true, _b['DropdownButton-text'] = true, _b));
       return /*#__PURE__*/React__namespace.createElement("button", __assign({
         ref: ref,
         type: "button",
@@ -914,7 +982,7 @@
         className: "DropdownButton-wrapper"
       }, inlineLabel && /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "subtle",
-        className: "mr-4"
+        className: "mr-4 white-space-nowrap"
       }, "" + inlineLabel.trim().charAt(0).toUpperCase() + inlineLabel.trim().slice(1)), icon && !inlineLabel && /*#__PURE__*/React__namespace.createElement(Icon, {
         appearance: buttonDisabled,
         className: "d-flex align-items-center mr-4",
@@ -949,11 +1017,12 @@
           weight = props.weight,
           small = props.small,
           className = props.className,
-          rest = __rest(props, ["appearance", "size", "children", "weight", "small", "className"]);
+          color = props.color,
+          rest = __rest(props, ["appearance", "size", "children", "weight", "small", "className", "color"]);
 
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Text: true
-      }, _a["Text--" + appearance] = appearance, _a["Text--" + weight] = weight, _a["Text--" + size] = size, _a['Text--small'] = size === 'small' || small, _a), className);
+      }, _a["Text--" + appearance] = !color && appearance, _a["Text--" + weight] = weight, _a["Text--" + size] = size, _a["color-" + color] = color, _a['Text--small'] = size === 'small' || small, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Text"
       }, rest, {
@@ -967,55 +1036,6 @@
       size: 'regular'
     };
 
-    var Icon = function Icon(props) {
-      var _a;
-
-      var appearance = props.appearance,
-          className = props.className,
-          name = props.name,
-          size = props.size,
-          onClick = props.onClick,
-          children = props.children;
-      var baseProps = extractBaseProps(props);
-
-      var mapper = function mapper(val) {
-        if (val === 'outline') return 'outlined';
-        if (val === 'rounded') return 'round';
-        return val;
-      };
-
-      var type = mapper(props.type);
-
-      var getIconAppearance = function getIconAppearance(iconColor) {
-        var x = iconColor.indexOf('_');
-        return iconColor.slice(0, x) + iconColor.charAt(x + 1).toUpperCase() + iconColor.slice(x + 2);
-      };
-
-      var color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
-      var iconClass = classNames__default['default']((_a = {}, _a['material-icons'] = true, _a["material-icons-" + mapper(type)] = type && type !== 'filled', _a['Icon'] = true, _a["Icon--" + color] = appearance, _a["" + className] = className, _a));
-      var styles = {
-        fontSize: size + "px",
-        width: size + "px"
-      };
-
-      if (children && /*#__PURE__*/React__namespace.isValidElement(children)) {
-        return /*#__PURE__*/React__namespace.createElement("span", __assign({}, baseProps, {
-          className: className
-        }), children);
-      }
-
-      return /*#__PURE__*/React__namespace.createElement("i", __assign({}, baseProps, {
-        className: iconClass,
-        style: styles,
-        onClick: onClick
-      }), type ? name + "_" + type : name);
-    };
-    Icon.displayName = 'Icon';
-    Icon.defaultProps = {
-      size: 16,
-      type: 'round'
-    };
-
     var uidGenerator = function uidGenerator() {
       var dt = new Date().getTime();
       var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
@@ -1027,53 +1047,116 @@
       return uuid;
     };
 
-    var Checkbox = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
-      var _a, _b, _c, _d, _e;
+    var CheckboxIcon = function CheckboxIcon(props) {
+      switch (props.name) {
+        case 'checked--regular':
+          return /*#__PURE__*/React__default["default"].createElement("svg", {
+            width: "10",
+            height: "8",
+            viewBox: "0 0 10 8",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg"
+          }, /*#__PURE__*/React__default["default"].createElement("path", {
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+            d: "M3.66667 5.56L8.72667 0.5L9.66667 1.44667L3.66667 7.44667L0.333333 4.11333L1.27333 3.17333L3.66667 5.56Z",
+            fill: "white"
+          }));
 
-      var _f = props.size,
-          size = _f === void 0 ? 'regular' : _f,
-          _g = props.tabIndex,
-          tabIndex = _g === void 0 ? 0 : _g,
+        case 'checked--tiny':
+          return /*#__PURE__*/React__default["default"].createElement("svg", {
+            width: "10",
+            height: "8",
+            viewBox: "0 0 10 8",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg"
+          }, /*#__PURE__*/React__default["default"].createElement("path", {
+            d: "M0.333344 4L1.27334 3.06L3.66668 5.44667L8.72668 0.386665L9.66668 1.33333L3.66668 7.33333L0.333344 4Z",
+            fill: "white"
+          }));
+
+        case 'indeterminate--regular':
+          return /*#__PURE__*/React__default["default"].createElement("svg", {
+            width: "10",
+            height: "2",
+            viewBox: "0 0 10 2",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg"
+          }, /*#__PURE__*/React__default["default"].createElement("path", {
+            d: "M0 0H10V2H0V0Z",
+            fill: "white"
+          }));
+
+        case 'indeterminate--tiny':
+          return /*#__PURE__*/React__default["default"].createElement("svg", {
+            width: "8",
+            height: "2",
+            viewBox: "0 0 8 2",
+            fill: "none",
+            xmlns: "http://www.w3.org/2000/svg"
+          }, /*#__PURE__*/React__default["default"].createElement("path", {
+            fillRule: "evenodd",
+            clipRule: "evenodd",
+            d: "M8 0H0V2H8V0Z",
+            fill: "white"
+          }));
+
+        default:
+          return null;
+      }
+    };
+
+    var Checkbox = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
+      var _a, _b, _c, _d, _e, _f;
+
+      var _g = props.size,
+          size = _g === void 0 ? 'regular' : _g,
+          _h = props.tabIndex,
+          tabIndex = _h === void 0 ? 0 : _h,
           defaultChecked = props.defaultChecked,
           indeterminate = props.indeterminate,
           label = props.label,
+          error = props.error,
           disabled = props.disabled,
           onChange = props.onChange,
           name = props.name,
           value = props.value,
-          className = props.className;
-          props.checked;
-          var rest = __rest(props, ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "disabled", "onChange", "name", "value", "className", "checked"]);
+          className = props.className,
+          checkedProp = props.checked,
+          helpText = props.helpText,
+          _j = props.id,
+          id = _j === void 0 ? name + "-" + label + "-" + uidGenerator() : _j,
+          rest = __rest(props, ["size", "tabIndex", "defaultChecked", "indeterminate", "label", "error", "disabled", "onChange", "name", "value", "className", "checked", "helpText", "id"]);
 
       var ref = React__namespace.useRef(null);
       React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
       });
 
-      var _h = React__namespace.useState(props.checked === undefined ? defaultChecked : props.checked),
-          checked = _h[0],
-          setChecked = _h[1];
+      var _k = React__namespace.useState(checkedProp === undefined ? defaultChecked : checkedProp),
+          checked = _k[0],
+          setChecked = _k[1];
 
       React__namespace.useEffect(function () {
         setIndeterminate(indeterminate);
       }, [indeterminate]);
       React__namespace.useEffect(function () {
-        if (props.checked !== undefined) {
-          setChecked(props.checked);
+        if (checkedProp !== undefined) {
+          setChecked(checkedProp);
         }
-      }, [props.checked]);
-      var CheckboxClass = classNames__default['default']((_a = {}, _a['Checkbox'] = true, _a['Checkbox--disabled'] = disabled, _a), className);
-      var CheckboxOuterWrapper = classNames__default['default']((_b = {}, _b['Checkbox-outerWrapper'] = true, _b["Checkbox-outerWrapper--" + size] = size, _b));
-      var CheckboxTextClass = classNames__default['default']((_c = {}, _c['Checkbox-label'] = true, _c));
-      var CheckboxInputWrapper = classNames__default['default']((_d = {}, _d['Checkbox-input'] = true, _d['Checkbox-input--checked'] = checked, _d['Checkbox-input--indeterminate'] = props.indeterminate, _d));
-      var CheckboxWrapper = classNames__default['default']((_e = {}, _e['Checkbox-wrapper'] = true, _e));
+      }, [checkedProp]);
+      var CheckboxClass = classNames__default["default"]((_a = {}, _a['Checkbox'] = true, _a['Checkbox--disabled'] = disabled, _a), className);
+      var CheckboxOuterWrapper = classNames__default["default"]((_b = {}, _b['Checkbox-outerWrapper'] = true, _b["Checkbox-outerWrapper--" + size] = size, _b));
+      var CheckboxInputWrapper = classNames__default["default"]((_c = {}, _c['Checkbox-input'] = true, _c['Checkbox-input--checked'] = checked, _c['Checkbox-input--indeterminate'] = props.indeterminate, _c));
+      var CheckboxWrapper = classNames__default["default"]((_d = {}, _d['Checkbox-wrapper'] = true, _d['Checkbox-wrapper--default'] = !error, _d['Checkbox-wrapper--error'] = error, _d));
+      var CheckboxLabelClass = classNames__default["default"]((_e = {}, _e['Checkbox-label'] = true, _e));
 
       var setIndeterminate = function setIndeterminate(indeterminateValue) {
         ref.current.indeterminate = indeterminateValue;
       };
 
       var onChangeHandler = function onChangeHandler(e) {
-        if (props.checked === undefined) {
+        if (checkedProp === undefined) {
           setChecked(e.target.checked);
           setIndeterminate(e.target.indeterminate);
         }
@@ -1081,12 +1164,12 @@
         if (onChange) onChange(e);
       };
 
-      var id = name + "-" + label + "-" + uidGenerator();
-      var IconName = indeterminate ? 'remove' : checked ? 'check' : '';
-      var IconSize = size === 'tiny' ? 12 : 16;
-      return /*#__PURE__*/React__namespace.createElement("div", {
+      var IconMapper = classNames__default["default"]((_f = {}, _f['checked--regular'] = checked && size === 'regular', _f['checked--tiny'] = checked && size === 'tiny', _f['indeterminate--regular'] = indeterminate && size === 'regular', _f['indeterminate--tiny'] = indeterminate && size === 'tiny', _f));
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-Checkbox",
         className: CheckboxClass
       }, /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-Checkbox-OuterWrapper",
         className: CheckboxOuterWrapper
       }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, rest, {
         type: "checkbox",
@@ -1099,20 +1182,27 @@
         value: value,
         className: CheckboxInputWrapper,
         tabIndex: tabIndex,
-        id: id
+        id: id,
+        "data-test": "DesignSystem-Checkbox-InputBox"
       })), /*#__PURE__*/React__namespace.createElement("span", {
-        className: CheckboxWrapper
-      }, IconName && /*#__PURE__*/React__namespace.createElement(Icon, {
-        name: IconName,
-        size: IconSize,
-        appearance: 'white'
-      }))), label && label.trim() && /*#__PURE__*/React__namespace.createElement("label", {
+        className: CheckboxWrapper,
+        "data-test": "DesignSystem-Checkbox-Icon"
+      }, IconMapper && /*#__PURE__*/React__namespace.createElement(CheckboxIcon, {
+        name: IconMapper
+      }))), /*#__PURE__*/React__namespace.createElement("div", {
+        className: "Checkbox-labelWrapper"
+      }, label && label.trim() && /*#__PURE__*/React__namespace.createElement("label", {
         htmlFor: id,
-        className: CheckboxTextClass
+        className: CheckboxLabelClass,
+        "data-test": "DesignSystem-Checkbox-Label"
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         size: size === 'tiny' ? 'small' : 'regular',
         appearance: disabled ? 'disabled' : 'default'
-      }, label.trim())));
+      }, label.trim())), helpText && /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-Checkbox-HelpText",
+        size: "small",
+        appearance: disabled ? 'disabled' : 'subtle'
+      }, helpText.trim()))));
     });
     Checkbox.displayName = 'Checkbox';
 
@@ -1122,9 +1212,39 @@
           optionData = props.optionData,
           onChangeHandler = props.onChangeHandler,
           onUpdateActiveOption = props.onUpdateActiveOption,
-          dataTest = props.dataTest;
-      var label = optionData.label,
+          dataTest = props.dataTest,
+          _a = props.id,
+          id = _a === void 0 ? '' : _a;
+      var subInfo = optionData.subInfo,
+          label = optionData.label,
           disabled = optionData.disabled;
+
+      var renderSubInfo = function renderSubInfo(subInfo) {
+        var labelAppearance = disabled ? 'disabled' : 'subtle';
+        var iconAppearance = selected ? 'white' : 'disabled';
+
+        if (typeof subInfo === 'string') {
+          return /*#__PURE__*/React__namespace.createElement(Text, {
+            "data-test": "DesignSystem-DropdownOption--WITH_META--Meta",
+            appearance: labelAppearance,
+            size: "small",
+            weight: "medium"
+          }, subInfo);
+        }
+
+        var _a = subInfo.list,
+            list = _a === void 0 ? [] : _a,
+            seperator = subInfo.seperator;
+        return /*#__PURE__*/React__namespace.createElement(MetaList, {
+          list: list,
+          seperator: seperator,
+          iconAppearance: iconAppearance,
+          labelAppearance: labelAppearance,
+          seperatorAppearance: iconAppearance,
+          "data-test": "DesignSystem-DropdownOption--WITH_META--MetaList"
+        });
+      };
+
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: className,
         onMouseEnter: onUpdateActiveOption,
@@ -1136,8 +1256,12 @@
         checked: selected,
         onChange: onChangeHandler,
         tabIndex: -1,
-        className: "OptionCheckbox"
-      }));
+        className: "OptionCheckbox " + (subInfo ? 'pb-0' : ''),
+        "data-test": dataTest + "--Checkbox",
+        id: id
+      }), subInfo && /*#__PURE__*/React__namespace.createElement("div", {
+        className: "pl-8 ml-3"
+      }, renderSubInfo(subInfo)));
     };
 
     var DefaultOption = function DefaultOption(props) {
@@ -1145,7 +1269,7 @@
           textClassName = props.textClassName,
           onClickHandler = props.onClickHandler,
           optionData = props.optionData,
-          appearance = props.appearance,
+          color = props.color,
           onUpdateActiveOption = props.onUpdateActiveOption,
           dataTest = props.dataTest;
       var label = optionData.label,
@@ -1160,7 +1284,8 @@
         className: 'Option-label'
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
-        appearance: appearance
+        color: color,
+        id: optionData.optionID
       }, label)));
     };
 
@@ -1171,7 +1296,7 @@
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
           renderSubInfo = props.renderSubInfo,
-          appearance = props.appearance,
+          color = props.color,
           dataTest = props.dataTest;
       var subInfo = optionData.subInfo,
           label = optionData.label,
@@ -1186,7 +1311,7 @@
         className: 'Option-label'
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
-        appearance: appearance
+        color: color
       }, label), subInfo && renderSubInfo(subInfo)));
     };
 
@@ -1198,12 +1323,12 @@
           onClickHandler = props.onClickHandler,
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
-          appearance = props.appearance,
+          color = props.color,
           dataTest = props.dataTest;
       var label = optionData.label,
           icon = optionData.icon,
           disabled = optionData.disabled;
-      var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
+      var OptionClass = classNames__default["default"]((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
@@ -1212,13 +1337,13 @@
         "data-disabled": disabled
       }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         className: "Option-icon mr-4",
-        name: icon,
-        appearance: appearance
+        "data-test": dataTest + "--Icon",
+        name: icon
       }), /*#__PURE__*/React__namespace.createElement("div", {
         className: 'Option-label'
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
-        appearance: appearance
+        color: color
       }, label)));
     };
 
@@ -1232,12 +1357,13 @@
           optionData = props.optionData,
           onUpdateActiveOption = props.onUpdateActiveOption,
           appearance = props.appearance,
+          color = props.color,
           dataTest = props.dataTest;
       var subInfo = optionData.subInfo,
           label = optionData.label,
           icon = optionData.icon,
           disabled = optionData.disabled;
-      var OptionClass = classNames__default['default']((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
+      var OptionClass = classNames__default["default"]((_a = {}, _a["" + className] = true, _a['Option--icon'] = icon, _a));
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: OptionClass,
         onClick: onClickHandler,
@@ -1245,6 +1371,7 @@
         "data-test": dataTest,
         "data-disabled": disabled
       }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": dataTest + "--Icon",
         className: "Option-icon mr-4",
         name: icon,
         appearance: appearance
@@ -1252,7 +1379,7 @@
         className: 'Option-label'
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: textClassName,
-        appearance: appearance
+        color: color
       }, label), subInfo && renderSubInfo(subInfo)));
     };
 
@@ -1270,14 +1397,20 @@
           active = props.active,
           index = props.index,
           checkboxes = props.checkboxes,
-          menu = props.menu;
-      var _e = (optionData.optionType ? optionData : props).optionType,
-          optionType = _e === void 0 ? 'DEFAULT' : _e;
+          menu = props.menu,
+          _e = props.id,
+          id = _e === void 0 ? '' : _e;
+      var _f = (optionData.optionType ? optionData : props).optionType,
+          optionType = _f === void 0 ? 'DEFAULT' : _f;
       var disabled = optionData.disabled;
-      var OptionClassName = classNames__default['default']((_a = {}, _a['Option'] = true, _a['Option--active'] = active, _a['Option--selected'] = selected && !menu, _a['Option--disabled'] = disabled, _a['OptionWrapper'] = true, _a));
-      var CheckboxClassName = classNames__default['default']((_b = {}, _b['Option-checkbox'] = true, _b['Option-checkbox--active'] = active, _b['OptionWrapper'] = true, _b));
-      var textClassName = classNames__default['default']((_c = {}, _c['Option-text'] = true, _c['Option-text--wrap'] = !props.truncateOption, _c));
-      var customOptionClass = classNames__default['default']((_d = {}, _d['OptionWrapper'] = true, _d['OptionWrapper--disabled'] = disabled, _d));
+      var color = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse';
+      var appearance = disabled ? 'disabled' : selected && !menu ? 'primary_dark' : 'default';
+      var type = checkboxes ? 'WITH_CHECKBOX' : optionType;
+      var component = OptionTypeMapping[type];
+      var OptionClassName = classNames__default["default"]((_a = {}, _a['Option'] = true, _a['Option--active'] = active, _a['Option--selected'] = selected && !menu, _a['Option--disabled'] = disabled, _a['OptionWrapper'] = true, _a["color-" + color] = true, _a));
+      var CheckboxClassName = classNames__default["default"]((_b = {}, _b['Option-checkbox'] = true, _b['Option-checkbox--active'] = active, _b['OptionWrapper'] = true, _b));
+      var textClassName = classNames__default["default"]((_c = {}, _c['Option-text'] = true, _c['Option-text--wrap'] = !props.truncateOption, _c));
+      var customOptionClass = classNames__default["default"]((_d = {}, _d['OptionWrapper'] = true, _d['OptionWrapper--disabled'] = disabled, _d));
 
       var onUpdateActiveOption = function onUpdateActiveOption() {
         if (disabled) return;
@@ -1298,6 +1431,7 @@
 
       if (props.optionRenderer) {
         return /*#__PURE__*/React__namespace.createElement("div", __assign({
+          "data-test": "DesignSystem-DropdownOption--Custom",
           className: customOptionClass,
           "data-disabled": disabled,
           onMouseEnter: onUpdateActiveOption
@@ -1313,12 +1447,17 @@
       }
 
       var renderSubInfo = function renderSubInfo(subInfo) {
-        var labelAppearance = disabled ? 'disabled' : selected ? 'white' : 'subtle';
+        var labelAppearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'subtle';
+        var subInfoColor = disabled ? 'inverse-lightest' : selected && !menu ? 'primary-dark' : 'inverse-lighter';
         var iconAppearance = selected ? 'white' : 'disabled';
 
         if (typeof subInfo === 'string') {
           return /*#__PURE__*/React__namespace.createElement(Text, {
-            appearance: labelAppearance
+            "data-test": "DesignSystem-DropdownOption--WITH_META--Meta",
+            color: subInfoColor,
+            size: "small",
+            weight: "medium",
+            className: "Option-subInfo"
           }, subInfo);
         }
 
@@ -1330,13 +1469,11 @@
           seperator: seperator,
           iconAppearance: iconAppearance,
           labelAppearance: labelAppearance,
-          seperatorAppearance: iconAppearance
+          seperatorAppearance: iconAppearance,
+          "data-test": "DesignSystem-DropdownOption--WITH_META--MetaList"
         });
       };
 
-      var appearance = disabled ? 'disabled' : selected && !menu ? 'white' : 'default';
-      var type = checkboxes ? 'WITH_CHECKBOX' : optionType;
-      var component = OptionTypeMapping[type];
       return component({
         selected: selected,
         index: index,
@@ -1344,11 +1481,13 @@
         optionData: optionData,
         textClassName: textClassName,
         appearance: appearance,
+        color: color,
         onClickHandler: onClickHandler,
         onChangeHandler: onChangeHandler,
         onUpdateActiveOption: onUpdateActiveOption,
         dataTest: "DesignSystem-DropdownOption--" + type,
-        className: checkboxes ? CheckboxClassName : OptionClassName
+        className: checkboxes ? CheckboxClassName : OptionClassName,
+        id: id
       });
     };
 
@@ -1359,11 +1498,11 @@
           size = props.size,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         'Placeholder--animation': true,
         PlaceholderParagraph: true
       }, _a["PlaceholderParagraph--" + size] = size, _a));
-      var wrapperClass = classNames__default['default']((_b = {
+      var wrapperClass = classNames__default["default"]((_b = {
         'PlaceholderParagraph-wrapper': true
       }, _b["PlaceholderParagraph-wrapper--length-" + length] = length, _b["PlaceholderParagraph-wrapper--size-" + size] = size, _b), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
@@ -1385,7 +1524,7 @@
           round = props.round,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         PlaceholderImage: true,
         'Placeholder--animation': true
       }, _a['PlaceholderImage--round'] = round, _a["PlaceholderImage--" + size] = size, _a), className);
@@ -1407,10 +1546,10 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var paragraphClasses = classNames__default['default']((_a = {
+      var paragraphClasses = classNames__default["default"]((_a = {
         'Placeholder-paragraph': true
       }, _a['Placeholder-paragraph--withImage'] = withImage, _a));
-      var classes = classNames__default['default']((_b = {}, _b['Placeholder'] = true, _b), className);
+      var classes = classNames__default["default"]((_b = {}, _b['Placeholder'] = true, _b), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Placeholder"
       }, baseProps, {
@@ -1431,49 +1570,61 @@
     };
 
     var Loading = function Loading(props) {
-      var loadingType = props.loadingType;
+      var loadingType = props.loadingType,
+          optionIndex = props.optionIndex;
+      var placeholderSizes = ['medium', 'large'];
+      var size = placeholderSizes[(optionIndex + 2) % 2];
 
       switch (loadingType) {
         case 'DEFAULT':
-          return /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
-            length: 'large'
+          return /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
+            length: size,
+            "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
           });
 
         case 'WITH_ICON':
-          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
+          return /*#__PURE__*/React__namespace.createElement(Placeholder, {
             withImage: true,
-            round: true
-          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
+            round: true,
+            "data-test": "DesignSystem-Dropdown--Placeholder"
+          }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "large"
           }));
 
         case 'WITH_META':
-          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
-            withImage: false
-          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
-            length: "large"
-          }), /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
+          return /*#__PURE__*/React__namespace.createElement(Placeholder, {
+            withImage: false,
+            "data-test": "DesignSystem-Dropdown--Placeholder"
+          }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
+            length: "large",
+            "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
+          }), /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "medium",
-            size: "xxs"
+            size: "xxs",
+            "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
           }));
 
         case 'WITH_CHECKBOX':
-          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
-            withImage: true
-          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
+          return /*#__PURE__*/React__namespace.createElement(Placeholder, {
+            withImage: true,
+            "data-test": "DesignSystem-Dropdown--Placeholder"
+          }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "large"
           }));
 
         case 'ICON_WITH_META':
-          return /*#__PURE__*/React__default['default'].createElement(Placeholder, {
+          return /*#__PURE__*/React__namespace.createElement(Placeholder, {
             withImage: true,
             round: true,
-            imageSize: 'medium'
-          }, /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
-            length: "large"
-          }), /*#__PURE__*/React__default['default'].createElement(PlaceholderParagraph, {
+            imageSize: 'medium',
+            "data-test": "DesignSystem-Dropdown--Placeholder"
+          }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
+            length: "large",
+            "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
+          }), /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "medium",
-            size: "xxs"
+            size: "xxs",
+            "data-test": "DesignSystem-Dropdown--PlaceholderParagraph"
           }));
       }
 
@@ -1491,20 +1642,20 @@
       var _d = props.listOptions,
           listOptions = _d === void 0 ? [] : _d,
           inputRef = props.inputRef,
-          _f = props.align,
-          align = _f === void 0 ? 'right' : _f,
-          _g = props.optionType,
-          optionType = _g === void 0 ? 'DEFAULT' : _g,
-          _h = props.applyButtonLabel,
-          applyButtonLabel = _h === void 0 ? 'Apply' : _h,
-          _j = props.cancelButtonLabel,
-          cancelButtonLabel = _j === void 0 ? 'Cancel' : _j,
-          _k = props.truncateOption,
-          truncateOption = _k === void 0 ? true : _k,
-          _l = props.withSelectAll,
-          withSelectAll = _l === void 0 ? true : _l,
-          _m = props.maxHeight,
-          maxHeight = _m === void 0 ? 200 : _m,
+          _e = props.align,
+          align = _e === void 0 ? 'right' : _e,
+          _f = props.optionType,
+          optionType = _f === void 0 ? 'DEFAULT' : _f,
+          _g = props.applyButtonLabel,
+          applyButtonLabel = _g === void 0 ? 'Apply' : _g,
+          _h = props.cancelButtonLabel,
+          cancelButtonLabel = _h === void 0 ? 'Cancel' : _h,
+          _j = props.truncateOption,
+          truncateOption = _j === void 0 ? true : _j,
+          _k = props.withSelectAll,
+          withSelectAll = _k === void 0 ? true : _k,
+          _l = props.maxHeight,
+          maxHeight = _l === void 0 ? 200 : _l,
           customTrigger = props.customTrigger,
           selected = props.selected,
           tempSelected = props.tempSelected,
@@ -1523,7 +1674,10 @@
           applyOptions = props.applyOptions,
           cancelOptions = props.cancelOptions,
           toggleDropdown = props.toggleDropdown,
-          className = props.className;
+          className = props.className,
+          _m = props.searchPlaceholder,
+          searchPlaceholder = _m === void 0 ? 'Search..' : _m,
+          scrollIndex = props.scrollIndex;
       var baseProps = extractBaseProps(props);
       var dropdownRef = /*#__PURE__*/React__namespace.createRef();
       var triggerRef = /*#__PURE__*/React__namespace.createRef();
@@ -1539,8 +1693,20 @@
           cursor = _p[0],
           setCursor = _p[1];
 
+      var _q = React__namespace.useState(),
+          minHeight = _q[0],
+          setMinHeight = _q[1];
+
+      var getMinHeight = function getMinHeight() {
+        var dropdownWrapper = document.querySelector('.Dropdown-wrapper');
+        var minHeight = dropdownWrapper === null || dropdownWrapper === void 0 ? void 0 : dropdownWrapper.offsetHeight;
+        minHeight && setMinHeight(minHeight);
+      };
+
       React__namespace.useEffect(function () {
         var _a;
+
+        var timer;
 
         if (dropdownOpen) {
           var width = props.width,
@@ -1553,16 +1719,27 @@
             minWidth: minWidth ? minWidth : popperMinWidth,
             maxWidth: maxWidth ? maxWidth : '100%'
           };
+          requestAnimationFrame(getMinHeight);
           setPopoverStyle(popperWrapperStyle);
+
+          if (scrollIndex && tempSelected.length === 0) {
+            timer = setTimeout(function () {
+              scrollToOptionIndex(scrollIndex, listOptions);
+            }, 100);
+          }
         }
+
+        return function () {
+          clearTimeout(timer);
+        };
       }, [dropdownOpen]);
       React__namespace.useEffect(function () {
         if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
       }, [firstEnabledOption]);
-      var _q = props.triggerSize,
-          triggerSize = _q === void 0 ? 'regular' : _q,
-          _r = props.placeholder,
-          placeholder = _r === void 0 ? 'Select' : _r,
+      var _r = props.triggerSize,
+          triggerSize = _r === void 0 ? 'regular' : _r,
+          _s = props.placeholder,
+          placeholder = _s === void 0 ? 'Select' : _s,
           icon = props.icon,
           error = props.error,
           disabled = props.disabled,
@@ -1587,25 +1764,32 @@
       var dropdownStyle = {
         maxHeight: maxHeight,
         overflowY: 'auto',
-        overflowX: 'hidden'
+        overflowX: 'hidden',
+        minHeight: minHeight
+      };
+      var loaderStyle = {
+        maxHeight: minHeight ? minHeight : maxHeight,
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        minHeight: minHeight
       };
 
       var getDropdownClass = function getDropdownClass(index, isGroup) {
         var _a;
 
-        var Dropdown = classNames__default['default']((_a = {}, _a['Dropdown--border'] = isGroup && index !== 0, _a));
+        var Dropdown = classNames__default["default"]((_a = {}, _a['Dropdown--border'] = isGroup && index !== 0, _a['Option-checkboxWrapper'] = true, _a));
         return Dropdown;
       };
 
       var getDropdownSectionClass = function getDropdownSectionClass(showClearButton) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Dropdown-section'] = true, _a['Dropdown-section--withClear'] = showClearButton, _a));
+        return classNames__default["default"]((_a = {}, _a['Dropdown-section'] = true, _a['Dropdown-section--withClear'] = showClearButton, _a));
       };
 
-      var dropdownClass = classNames__default['default']((_a = {}, _a['Dropdown'] = true, _a), className);
-      var dropdownWrapperClass = classNames__default['default']((_b = {}, _b['Dropdown-wrapper'] = true, _b['Dropdown-wrapper--wrap'] = !truncateOption, _b));
-      var SelectAllClass = classNames__default['default']((_c = {}, _c['Option-checkbox'] = true, _c['Option-checkbox--active'] = cursor === 0, _c['OptionWrapper'] = true, _c));
+      var dropdownClass = classNames__default["default"]((_a = {}, _a['Dropdown'] = true, _a), className);
+      var dropdownWrapperClass = classNames__default["default"]((_b = {}, _b['Dropdown-wrapper'] = true, _b['Dropdown-wrapper--wrap'] = !truncateOption, _b));
+      var SelectAllClass = classNames__default["default"]((_c = {}, _c['Option-checkbox--active'] = cursor === 0, _c['Option-checkboxWrapper'] = true, _c['Option-checkbox'] = true, _c['OptionWrapper'] = true, _c));
 
       var onToggleDropdown = function onToggleDropdown(open, type) {
         var _a;
@@ -1655,7 +1839,7 @@
         var _a = props.footerLabel,
             footerLabel = _a === void 0 ? 'Search for more options' : _a;
         return /*#__PURE__*/React__namespace.createElement("div", {
-          className: 'Dropdown-footer'
+          className: "Dropdown-footer"
         }, /*#__PURE__*/React__namespace.createElement(Text, {
           size: "small",
           appearance: 'subtle'
@@ -1682,17 +1866,18 @@
       };
 
       var renderApplyButton = function renderApplyButton() {
-        var disable = _isEqual(previousSelected, tempSelected);
-
+        var disable = _isEqual(previousSelected, tempSelected) || props.loadingOptions;
         return /*#__PURE__*/React__namespace.createElement("div", {
-          className: 'Dropdown-buttonWrapper'
+          className: "Dropdown-buttonWrapper"
         }, /*#__PURE__*/React__namespace.createElement(Button, {
           ref: dropdownCancelButtonRef,
           className: "mr-4",
           appearance: 'basic',
           onClick: onCancelOptions,
+          disabled: props.loadingOptions,
           size: 'tiny',
           tabIndex: -1,
+          "data-test": "DesignSystem-Dropdown-CancelButton",
           type: "button"
         }, cancelButtonLabel), /*#__PURE__*/React__namespace.createElement(Button, {
           ref: dropdownApplyButtonRef,
@@ -1700,18 +1885,19 @@
           disabled: disable,
           size: 'tiny',
           onClick: onApplyOptions,
+          "data-test": "DesignSystem-Dropdown-ApplyButton",
           type: "button"
         }, applyButtonLabel));
       };
 
       var renderSearch = function renderSearch() {
         return /*#__PURE__*/React__namespace.createElement("div", {
-          className: 'Dropdown-inputWrapper'
+          className: "Dropdown-inputWrapper"
         }, /*#__PURE__*/React__namespace.createElement(Input, {
           name: "Dropdown-search",
           icon: 'search',
           value: searchTerm,
-          placeholder: 'Search..',
+          placeholder: searchPlaceholder,
           autoFocus: true,
           onChange: searchHandler,
           onClear: searchClearHandler,
@@ -1729,7 +1915,8 @@
             className: "Option-loading",
             key: option + "-" + ind
           }, /*#__PURE__*/React__namespace.createElement(Loading, {
-            loadingType: type
+            loadingType: type,
+            optionIndex: ind
           }));
         });
       };
@@ -1740,19 +1927,24 @@
             selectAll = props.selectAll,
             onSelectAll = props.onSelectAll;
         var label = selectAllLabel.trim() ? selectAllLabel.trim() : 'Select All';
+        var id = "Checkbox-option-" + label.toLowerCase().replace(/\s+/g, '') + "-" + new Date().getTime();
         return /*#__PURE__*/React__namespace.createElement("div", {
           className: SelectAllClass,
-          onMouseEnter: function onMouseEnter(_e) {
+          onMouseEnter: function onMouseEnter() {
             return updateActiveOption(0, true);
           }
+        }, /*#__PURE__*/React__namespace.createElement("label", {
+          htmlFor: id,
+          className: "Checkbox-label"
         }, /*#__PURE__*/React__namespace.createElement(Checkbox, {
           label: label,
           onChange: onSelectAll,
           checked: selectAll.checked,
           indeterminate: selectAll.indeterminate,
           tabIndex: -1,
-          className: "OptionCheckbox"
-        }));
+          className: "OptionCheckbox",
+          id: id
+        })));
       };
 
       var renderOptions = function renderOptions(item, index) {
@@ -1762,7 +1954,10 @@
         var optionIsSelected = tempSelected.findIndex(function (option) {
           return option.value === item.value;
         }) !== -1;
-        return /*#__PURE__*/React__namespace.createElement(Option, {
+        var id = "Checkbox-option-" + index + "-" + item.value + "-" + new Date().getTime();
+        return /*#__PURE__*/React__namespace.createElement("label", {
+          htmlFor: id
+        }, /*#__PURE__*/React__namespace.createElement(Option, {
           optionData: item,
           truncateOption: truncateOption,
           selected: optionIsSelected,
@@ -1778,8 +1973,9 @@
           onChange: function onChange(e) {
             return props.onSelect(item, e.target.checked);
           },
-          optionType: props.optionType
-        });
+          optionType: props.optionType,
+          id: id
+        }));
       };
 
       var renderDropdownSection = function renderDropdownSection() {
@@ -1796,7 +1992,7 @@
             className: 'Dropdown-loading'
           }, /*#__PURE__*/React__namespace.createElement("div", {
             className: "Dropdown-wrapper",
-            style: dropdownStyle
+            style: loaderStyle
           }, renderLoading(loadersCount)));
         }
 
@@ -1804,7 +2000,9 @@
           var _c = props.noResultMessage,
               noResultMessage = _c === void 0 ? 'No result found' : _c;
           return /*#__PURE__*/React__namespace.createElement("div", {
-            className: 'Dropdown-errorWrapper'
+            className: "Dropdown-wrapper",
+            style: dropdownStyle,
+            "data-test": "DesignSystem-Dropdown--errorWrapper"
           }, /*#__PURE__*/React__namespace.createElement("div", {
             className: 'Option'
           }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -1871,46 +2069,50 @@
             break;
 
           case 'Enter':
-            var activeElement = document.activeElement;
+            {
+              var activeElement = document.activeElement;
 
-            if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
-              event.preventDefault();
-              var classes = withCheckbox ? optionClass + " .Checkbox-input" : optionClass;
-              var elements = document.querySelectorAll(classes);
-              var element = elements[cursor];
-              if (element) element.click();
+              if (dropdownOpen && (inputRef.current === activeElement || dropdownTriggerRef.current === activeElement)) {
+                event.preventDefault();
+                var classes = withCheckbox ? optionClass + " .Checkbox-input" : optionClass;
+                var elements = document.querySelectorAll(classes);
+                var element = elements[cursor];
+                if (element) element.click();
+              }
+
+              if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
+              break;
             }
-
-            if (!dropdownOpen) onToggleDropdown(!dropdownOpen);
-            break;
 
           case 'Tab':
-            if (!showApplyButton && dropdownOpen) {
-              event.preventDefault();
-              onToggleDropdown(false, 'onClick');
-              return;
-            }
-
-            var currentElement = document.activeElement;
-            var disabledApplyButton = (_a = dropdownApplyButtonRef.current) === null || _a === void 0 ? void 0 : _a.disabled;
-
-            if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
-              event.preventDefault();
-              onToggleDropdown(false, 'onClick');
-              return;
-            }
-
-            if (showApplyButton && dropdownOpen) {
-              event.preventDefault();
-
-              if (currentElement === dropdownCancelButtonRef.current) {
-                (_b = dropdownApplyButtonRef.current) === null || _b === void 0 ? void 0 : _b.focus();
-              } else {
-                (_c = dropdownCancelButtonRef.current) === null || _c === void 0 ? void 0 : _c.focus();
+            {
+              if (!showApplyButton && dropdownOpen) {
+                event.preventDefault();
+                onToggleDropdown(false, 'onClick');
+                return;
               }
-            }
 
-            break;
+              var currentElement = document.activeElement;
+              var disabledApplyButton = (_a = dropdownApplyButtonRef.current) === null || _a === void 0 ? void 0 : _a.disabled;
+
+              if ((currentElement === dropdownCancelButtonRef.current && disabledApplyButton || currentElement === dropdownApplyButtonRef.current) && dropdownOpen) {
+                event.preventDefault();
+                onToggleDropdown(false, 'onClick');
+                return;
+              }
+
+              if (showApplyButton && dropdownOpen) {
+                event.preventDefault();
+
+                if (currentElement === dropdownCancelButtonRef.current) {
+                  (_b = dropdownApplyButtonRef.current) === null || _b === void 0 ? void 0 : _b.focus();
+                } else {
+                  (_c = dropdownCancelButtonRef.current) === null || _c === void 0 ? void 0 : _c.focus();
+                }
+              }
+
+              break;
+            }
         }
       };
 
@@ -1925,7 +2127,9 @@
         open: dropdownOpen,
         customStyle: popoverStyle,
         position: alignmentMapping[align]
-      }, popoverOptions), (withSearch || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()));
+      }, popoverOptions, {
+        "data-test": "DesignSystem-Dropdown--Popover"
+      }), (withSearch || props.async) && renderSearch(), renderDropdownSection(), showApplyButton && withCheckbox && renderApplyButton()));
     };
 
     DropdownList.displayName = 'DropdownList';
@@ -2016,6 +2220,12 @@
             var options = res.options,
                 count = res.count;
 
+            if (res.scrollToIndex) {
+              setTimeout(function () {
+                scrollToOptionIndex(res.scrollToIndex, options);
+              }, 0);
+            }
+
             if (!res.searchTerm || res.searchTerm && res.searchTerm === _this.state.searchTerm) {
               updatedAsync = searchTerm === '' ? count > _this.staticLimit : updatedAsync;
               var unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? _this.getUnSelectedOptions(options, init) : options;
@@ -2025,6 +2235,7 @@
               var disabledOptions = _this.getDisabledOptions(unSelectedGroup.slice(0, _this.staticLimit));
 
               _this.setState(__assign(__assign({}, _this.state), {
+                scrollIndex: res.scrollToIndex || 0,
                 optionsLength: optionsLength,
                 loading: false,
                 async: updatedAsync,
@@ -2103,9 +2314,18 @@
             var values = arr.map(function (option) {
               return option.value;
             });
-            onClose(values, name);
+
+            _this.debounceOnClose(values, name);
           }
         };
+
+        _this.debounceOnClose = debounce(300, function (values, name) {
+          var onClose = _this.props.onClose;
+
+          if (onClose) {
+            onClose(values, name);
+          }
+        });
 
         _this.updateTriggerLabel = function (selectedArray, totalOptions) {
           if (selectedArray === void 0) {
@@ -2185,17 +2405,46 @@
           }
         };
 
+        _this.isValidOption = function (option) {
+          var _a = _this.props,
+              closeOnSelect = _a.closeOnSelect,
+              withCheckbox = _a.withCheckbox,
+              open = _a.open,
+              onPopperToggle = _a.onPopperToggle;
+          var temp = _this.state.tempSelected;
+
+          if (temp.length > 0 && !withCheckbox && temp[0].value === option['value']) {
+            _this.setState(__assign(__assign({}, _this.state), {
+              open: _isOpenControlled(open) || !closeOnSelect
+            }));
+
+            if (!withCheckbox && closeOnSelect && onPopperToggle && _isOpenControlled(open)) {
+              onPopperToggle(false, 'optionClick');
+            }
+
+            return false;
+          }
+
+          return true;
+        };
+
         _this.onOptionSelect = function (option) {
           var _a = _this.props,
               onUpdate = _a.onUpdate,
-              selected = _a.selected;
+              selected = _a.selected,
+              menu = _a.menu;
 
           if (_isControlled(selected)) {
-            if (onUpdate) onUpdate('select-option', option);
+            if (onUpdate && (_this.isValidOption(option) || menu)) {
+              onUpdate('select-option', option);
+            }
+
             return;
           }
 
-          _this.updateSelectedOptions([option], true);
+          if (_this.isValidOption(option) || menu) {
+            _this.updateSelectedOptions([option], true);
+          }
         };
 
         _this.onSelect = function (option, checked) {
@@ -2492,7 +2741,8 @@
             tempSelected = _a.tempSelected,
             selectAll = _a.selectAll,
             triggerLabel = _a.triggerLabel,
-            previousSelected = _a.previousSelected;
+            previousSelected = _a.previousSelected,
+            scrollIndex = _a.scrollIndex;
         var _b = this.props,
             _c = _b.withSelectAll,
             withSelectAll = _c === void 0 ? true : _c,
@@ -2502,10 +2752,11 @@
             _e = _d.triggerOptions,
             triggerOptions = _e === void 0 ? {} : _e;
             _d.selected;
-            var rest = __rest(_d, ["triggerOptions", "selected"]);
+            var tabIndex = _d.tabIndex,
+            rest = __rest(_d, ["triggerOptions", "selected", "tabIndex"]);
 
         var remainingOptionsLen = searchedOptionsLength - options.length;
-        var firstEnabledOption = _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
+        var firstEnabledOption = tabIndex ? tabIndex : _isSelectAllPresent(searchTerm, remainingOptionsLen, withSelectAll, withCheckbox) ? 0 : options.findIndex(function (option) {
           return !option.disabled;
         });
         return /*#__PURE__*/React__namespace.createElement(DropdownList, __assign({
@@ -2531,7 +2782,8 @@
           onSearchChange: this.updateSearchTerm,
           onOptionSelect: this.onOptionSelect,
           onSelectAll: this.onSelectAll,
-          customTrigger: triggerOptions.customTrigger
+          customTrigger: triggerOptions.customTrigger,
+          scrollIndex: scrollIndex
         }, rest));
       };
 
@@ -2545,19 +2797,49 @@
       return Dropdown;
     }(React__namespace.Component);
 
-    var renderLink = function renderLink(item, _onClick) {
-      return /*#__PURE__*/React__namespace.createElement(Link, {
-        href: item.link,
-        onClick: function onClick(ev) {
-          if (_onClick) {
-            ev.preventDefault();
+    var RenderLink = function RenderLink(_a) {
+      var item = _a.item,
+          onClick = _a.onClick;
 
-            _onClick(item.link);
-          }
-        },
+      var onClickHandler = function onClickHandler(ev) {
+        if (onClick) {
+          ev.preventDefault();
+          onClick(item.link);
+        }
+      };
+
+      return /*#__PURE__*/React__namespace.createElement("span", {
+        className: "Breadcrumbs-link ellipsis--noWrap",
+        "data-test": "DesignSystem-Breadcrumbs-link"
+      }, /*#__PURE__*/React__namespace.createElement(Link, {
+        href: item.link,
+        onClick: onClickHandler,
         appearance: "subtle",
         size: "tiny"
-      }, item.label);
+      }, item.label));
+    };
+
+    var RenderItem = function RenderItem(_a) {
+      var item = _a.item,
+          onClick = _a.onClick,
+          index = _a.index,
+          showTooltip = _a.showTooltip;
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        key: index,
+        className: "Breadcrumbs-item",
+        "data-test": "DesignSystem-Breadcrumbs-item"
+      }, showTooltip ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
+        tooltip: item.label,
+        position: "bottom"
+      }, /*#__PURE__*/React__namespace.createElement(RenderLink, {
+        item: item,
+        onClick: onClick
+      })) : /*#__PURE__*/React__namespace.createElement(RenderLink, {
+        item: item,
+        onClick: onClick
+      }), /*#__PURE__*/React__namespace.createElement("span", {
+        className: "Breadcrumbs-itemSeparator"
+      }, "/"));
     };
 
     var renderDropdown = function renderDropdown(list, onClick) {
@@ -2570,9 +2852,12 @@
 
       var customTrigger = function customTrigger() {
         return /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           size: "tiny",
           appearance: "transparent",
           icon: "more_horiz_filled",
+          largeIcon: true,
+          className: "Breadcrumbs-Button",
           "data-test": "DesignSystem-Breadcrumbs--Button"
         });
       };
@@ -2597,42 +2882,34 @@
 
       var list = props.list,
           onClick = props.onClick,
-          className = props.className;
+          className = props.className,
+          showTooltip = props.showTooltip;
       var baseProps = extractBaseProps(props);
-      var BreadcrumbClass = classNames__default['default']((_a = {}, _a['Breadcrumbs'] = true, _a), className);
+      var BreadcrumbClass = classNames__default["default"]((_a = {}, _a['Breadcrumbs'] = true, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Breadcrumbs"
       }, baseProps, {
         className: BreadcrumbClass
       }), list.length <= 4 ? list.map(function (item, index) {
-        return /*#__PURE__*/React__namespace.createElement("div", {
+        return /*#__PURE__*/React__namespace.createElement(RenderItem, {
           key: index,
-          className: "Breadcrumbs-item",
-          "data-test": "DesignSystem-Breadcrumbs-item"
-        }, /*#__PURE__*/React__namespace.createElement("span", {
-          className: "Breadcrumbs-link"
-        }, renderLink(item, onClick)), /*#__PURE__*/React__namespace.createElement("span", {
-          className: "Breadcrumbs-itemSeparator"
-        }, "/"));
-      }) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Breadcrumbs-item",
-        "data-test": "DesignSystem-Breadcrumbs-item"
-      }, /*#__PURE__*/React__namespace.createElement("span", {
-        className: "Breadcrumbs-link"
-      }, renderLink(list[0], onClick)), /*#__PURE__*/React__namespace.createElement("span", {
-        className: "Breadcrumbs-itemSeparator"
-      }, "/")), /*#__PURE__*/React__namespace.createElement("div", {
+          item: item,
+          onClick: onClick,
+          showTooltip: showTooltip
+        });
+      }) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(RenderItem, {
+        item: list[0],
+        onClick: onClick,
+        showTooltip: showTooltip
+      }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Breadcrumbs-dropdown"
       }, renderDropdown(list.slice(1, list.length - 1), onClick), /*#__PURE__*/React__namespace.createElement("span", {
         className: "Breadcrumbs-itemSeparator"
-      }, "/")), /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Breadcrumbs-item",
-        "data-test": "DesignSystem-Breadcrumbs-item"
-      }, /*#__PURE__*/React__namespace.createElement("span", {
-        className: "Breadcrumbs-link"
-      }, renderLink(list[list.length - 1], onClick)), /*#__PURE__*/React__namespace.createElement("span", {
-        className: "Breadcrumbs-itemSeparator"
-      }, "/"))));
+      }, "/")), /*#__PURE__*/React__namespace.createElement(RenderItem, {
+        item: list[list.length - 1],
+        onClick: onClick,
+        showTooltip: showTooltip
+      })));
     };
 
     var sizeMapping$2 = {
@@ -2640,7 +2917,7 @@
       regular: 16,
       large: 20
     };
-    var Button = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+    var ButtonElement = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a, _b;
 
       var _c = props.size,
@@ -2659,11 +2936,12 @@
           selected = props.selected,
           loading = props.loading,
           disabled = props.disabled,
-          className = props.className,
-          rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className"]);
+          className = props.className;
+          props.tooltip;
+          var rest = __rest(props, ["size", "appearance", "iconAlign", "tabIndex", "largeIcon", "type", "children", "icon", "expanded", "selected", "loading", "disabled", "className", "tooltip"]);
 
-      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
-      var iconClass = classNames__default['default']((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
+      var buttonClass = classNames__default["default"]((_a = {}, _a['Button'] = true, _a['Button--expanded'] = expanded, _a["Button--" + size] = size, _a["Button--" + size + "Square"] = !children, _a["Button--" + appearance] = appearance, _a['Button--selected'] = selected && (appearance === 'basic' || appearance === 'transparent'), _a["Button--iconAlign-" + iconAlign] = children && iconAlign, _a["" + className] = className, _a));
+      var iconClass = classNames__default["default"]((_b = {}, _b['Button-icon'] = true, _b["Button-icon--" + iconAlign] = children && iconAlign, _b));
       return /*#__PURE__*/React__namespace.createElement("button", __assign({
         "data-test": "DesignSystem-Button",
         ref: ref,
@@ -2683,11 +2961,38 @@
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-Button--Icon",
         name: icon,
-        appearance: disabled ? 'disabled' : appearance === 'basic' || appearance === 'transparent' ? selected ? 'info' : 'default' : 'white',
         size: largeIcon && !children ? sizeMapping$2[size] + 4 : sizeMapping$2[size]
       })), children));
     });
+    var Button = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      var icon = props.icon,
+          tooltip = props.tooltip,
+          children = props.children;
+      return icon && tooltip && !children ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
+        tooltip: tooltip
+      }, /*#__PURE__*/React__namespace.createElement(ButtonElement, __assign({}, props, {
+        ref: ref
+      }))) : /*#__PURE__*/React__namespace.createElement(ButtonElement, __assign({}, props, {
+        ref: ref
+      }));
+    });
     Button.displayName = 'Button';
+
+    function _typeof(obj) {
+      "@babel/helpers - typeof";
+
+      if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+        _typeof = function (obj) {
+          return typeof obj;
+        };
+      } else {
+        _typeof = function (obj) {
+          return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+        };
+      }
+
+      return _typeof(obj);
+    }
 
     var config = {
       yearBlockRange: 12,
@@ -2697,8 +3002,8 @@
       daysInRow: 7,
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       days: {
-        small: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-        large: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        small: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+        large: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
       }
     };
 
@@ -2920,8 +3225,15 @@
               monthNav = _a.monthNav;
           var monthBlock = config.monthBlock;
           var yearBlock = yearBlockNav;
-          var month = (monthNav + index) % monthBlock;
-          var year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+          var month = (monthNav + index) % monthBlock === -1 ? 11 : (monthNav + index) % monthBlock;
+          var year;
+
+          if (index >= 0) {
+            year = yearNav + (index !== 0 && month < monthNav ? 1 : 0);
+          } else {
+            year = yearNav - (index !== 0 && month > monthNav ? 1 : 0);
+          }
+
           return {
             yearBlock: yearBlock,
             year: year,
@@ -2982,6 +3294,17 @@
           };
         };
 
+        _this.yearMouseOverHandler = function (year, isCurrentYear, isDisabled, ev) {
+          var onYearHover = _this.props.onYearHover;
+          var yearData = {
+            value: year,
+            year: year,
+            isCurrentYear: isCurrentYear,
+            isDisabled: isDisabled
+          };
+          if (onYearHover) onYearHover(yearData, ev);
+        };
+
         _this.selectMonth = function (month) {
           return function () {
             _this.updateState(_this.state.yearNav, month);
@@ -2992,18 +3315,58 @@
           };
         };
 
-        _this.selectDate = function (index, date) {
-          var _a = _this.getNavDateInfo(index),
-              year = _a.year,
-              month = _a.month;
+        _this.monthMouseOverHandler = function (month, isCurrentMonth, isDisabled, ev) {
+          var months = config.months;
+          var onMonthHover = _this.props.onMonthHover;
+          var monthData = {
+            value: months[month],
+            month: months[month],
+            year: _this.state.year,
+            isCurrentMonth: isCurrentMonth,
+            isDisabled: isDisabled
+          };
+          if (onMonthHover) onMonthHover(monthData, ev);
+        };
 
-          _this.updateState(year, month, date);
-
-          var d = _this.getDateValue(year, month, date);
+        _this.selectDate = function (index, date, prevMonthDayRange, dayRange) {
+          var d = _this.calculateDate(index, date, prevMonthDayRange, dayRange, false);
 
           _this.setState({
             currDate: d
           });
+        };
+
+        _this.calculateDate = function (index, date, prevMonthDayRange, dayRange, isDateHovered) {
+          var neighbouringMonthIndex;
+          var neighbouringMonthDate;
+          var type = '';
+
+          if (date <= 0) {
+            neighbouringMonthIndex = index - 1;
+            neighbouringMonthDate = prevMonthDayRange + date;
+            type = 'prev';
+          } else if (date > dayRange) {
+            neighbouringMonthIndex = index + 1;
+            neighbouringMonthDate = date - dayRange;
+            type = 'next';
+          } else {
+            neighbouringMonthIndex = index;
+            neighbouringMonthDate = date;
+          }
+
+          var _a = _this.getNavDateInfo(neighbouringMonthIndex),
+              year = _a.year,
+              month = _a.month;
+
+          if (isDateHovered === false) {
+            _this.updateState(year, month, neighbouringMonthDate);
+
+            _this.onNavIconClickHandler(type)();
+          }
+
+          var d = _this.getDateValue(year, month, neighbouringMonthDate);
+
+          return d;
         };
 
         _this.onNavIconClickHandler = function (type) {
@@ -3066,7 +3429,8 @@
 
           var _b = _this.props,
               disabledBefore = _b.disabledBefore,
-              disabledAfter = _b.disabledAfter;
+              disabledAfter = _b.disabledAfter,
+              size = _b.size;
           var _c = _this.state,
               view = _c.view,
               yearBlockNav = _c.yearBlockNav,
@@ -3109,15 +3473,16 @@
               break;
           }
 
-          var headerIconClass = classNames__default['default']((_a = {
+          var headerIconClass = classNames__default["default"]((_a = {
             'Calendar-headerIcon': true
           }, _a["Calendar-headerIcon--" + type] = type, _a));
           return /*#__PURE__*/React__namespace.createElement(Button, {
             type: "button",
             className: headerIconClass,
-            appearance: "transparent",
+            appearance: "basic",
             icon: "arrow_" + (type === 'next' ? 'forward' : 'back'),
             disabled: disabled,
+            size: size === 'small' ? 'tiny' : 'regular',
             onClick: _this.onNavIconClickHandler(type)
           });
         };
@@ -3148,7 +3513,8 @@
         _this.renderHeaderContent = function (index) {
           var _a = _this.props,
               size = _a.size,
-              monthsInView = _a.monthsInView;
+              monthsInView = _a.monthsInView,
+              rangePicker = _a.rangePicker;
           var _b = _this.state,
               view = _b.view,
               yearBlockNav = _b.yearBlockNav;
@@ -3159,7 +3525,7 @@
               yearNavVal = _c.year,
               monthNavVal = _c.month;
 
-          var headerContentClass = classNames__default['default']({
+          var headerContentClass = classNames__default["default"]({
             'Calendar-headerContent': true,
             'Calendar-headerContent--noIcon-left': index === monthsInView - 1,
             'Calendar-headerContent--noIcon-right': index === 0
@@ -3170,24 +3536,34 @@
 
           var renderHeading = function renderHeading(content) {
             if (size === 'small') {
-              return /*#__PURE__*/React__namespace.createElement(Text, {
+              return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Text, {
                 weight: "strong"
-              }, content);
+              }, content), view !== 'year' && !rangePicker && /*#__PURE__*/React__namespace.createElement(Icon, {
+                appearance: "inverse",
+                className: "pl-3",
+                name: "keyboard_arrow_down"
+              }));
             }
 
-            return /*#__PURE__*/React__namespace.createElement(Heading, {
+            return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Heading, {
               size: "s"
-            }, content);
+            }, content), view !== 'year' && !rangePicker && /*#__PURE__*/React__namespace.createElement(Icon, {
+              appearance: "inverse",
+              className: "pl-3",
+              name: "keyboard_arrow_down"
+            }));
           };
 
           return /*#__PURE__*/React__namespace.createElement("div", {
             className: headerContentClass
-          }, view !== 'date' && /*#__PURE__*/React__namespace.createElement("span", {
+          }, view !== 'date' && /*#__PURE__*/React__namespace.createElement("div", {
+            className: "d-flex justify-content-center align-items-center",
             onClick: _this.onNavHeadingClickHandler(view)
-          }, renderHeading(headerContent)), view === 'date' && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("span", {
-            onClick: _this.onNavHeadingClickHandler(view)
-          }, renderHeading(months[monthNavVal])), /*#__PURE__*/React__namespace.createElement("span", {
-            className: "ml-4",
+          }, renderHeading(headerContent)), view === 'date' && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
+            onClick: _this.onNavHeadingClickHandler(view),
+            className: "d-flex justify-content-center align-items-center"
+          }, renderHeading(months[monthNavVal])), /*#__PURE__*/React__namespace.createElement("div", {
+            className: "ml-4 d-flex justify-content-center align-items-center",
             onClick: _this.onNavHeadingClickHandler('month')
           }, renderHeading(yearNavVal))));
         };
@@ -3200,7 +3576,9 @@
               rangePicker = _a.rangePicker,
               disabledBefore = _a.disabledBefore,
               disabledAfter = _a.disabledAfter;
-          var yearBlockNav = _this.state.yearBlockNav;
+          var _b = _this.state,
+              yearBlockNav = _b.yearBlockNav,
+              currYear = _b.currYear;
           var noOfRows = Math.ceil(yearBlockRange / yearsInRow);
           return Array.from({
             length: noOfRows
@@ -3218,20 +3596,34 @@
               var year = yearBlockNav + offset;
               var disabled = compareDate(disabledBefore, 'more', year) || compareDate(disabledAfter, 'less', year);
               var active = !disabled && !rangePicker && year === _this.state.year;
-              var valueClass = classNames__default['default']((_a = {
+
+              var isCurrentYear = function isCurrentYear() {
+                return year === currYear;
+              };
+
+              var valueClass = classNames__default["default"]((_a = {
                 'Calendar-value': true,
                 'Calendar-value--active': active,
                 'Calendar-value--disabled': disabled,
                 'Calendar-yearValue': true
-              }, _a["Calendar-yearValue--" + size] = size, _a));
+              }, _a["Calendar-yearValue--" + size] = size, _a['Calendar-value--currDateMonthYear'] = isCurrentYear(), _a));
+              var getTextColor = classNames__default["default"]({
+                inverse: !active && !isCurrentYear() && !disabled,
+                white: active,
+                'primary-lighter': isCurrentYear() && disabled,
+                primary: isCurrentYear(),
+                'inverse-lightest': disabled
+              });
               return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row + "-" + col,
                 "data-test": "DesignSystem-Calendar--yearValue",
                 className: valueClass,
-                onClick: _this.selectYear(year)
+                onClick: _this.selectYear(year),
+                onMouseOver: _this.yearMouseOverHandler.bind(_this, year, isCurrentYear(), disabled)
               }, /*#__PURE__*/React__namespace.createElement(Text, {
                 size: size === 'small' ? 'small' : 'regular',
-                appearance: active ? 'white' : disabled ? 'disabled' : 'default'
+                color: getTextColor,
+                className: "Calendar-text"
               }, year));
             }));
           });
@@ -3247,7 +3639,9 @@
               disabledAfter = _a.disabledAfter;
           var _b = _this.state,
               yearNav = _b.yearNav,
-              year = _b.year;
+              year = _b.year,
+              currYear = _b.currYear,
+              currMonth = _b.currMonth;
           var noOfRows = Math.ceil(monthBlock / monthsInRow);
           return Array.from({
             length: noOfRows
@@ -3263,20 +3657,34 @@
               var month = monthsInRow * row + col;
               var disabled = compareDate(disabledBefore, 'more', yearNav, month) || compareDate(disabledAfter, 'less', yearNav, month);
               var active = !disabled && year === yearNav && month === _this.state.month;
-              var valueClass = classNames__default['default']((_a = {
+
+              var isCurrentMonth = function isCurrentMonth() {
+                return currYear === yearNav && currMonth === month;
+              };
+
+              var valueClass = classNames__default["default"]((_a = {
                 'Calendar-value': true,
                 'Calendar-value--active': active,
-                'Calendar-value--dummy': disabled,
+                'Calendar-value--disabled': disabled,
                 'Calendar-monthValue': true
-              }, _a["Calendar-monthValue--" + size] = size, _a));
+              }, _a["Calendar-monthValue--" + size] = size, _a['Calendar-value--currDateMonthYear'] = isCurrentMonth(), _a));
+              var getTextColor = classNames__default["default"]({
+                inverse: !active && !isCurrentMonth() && !disabled,
+                white: active,
+                'primary-lighter': isCurrentMonth() && disabled,
+                primary: isCurrentMonth(),
+                'inverse-lightest': disabled
+              });
               return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row + "-" + col,
                 "data-test": "DesignSystem-Calendar--monthValue",
                 className: valueClass,
-                onClick: _this.selectMonth(month)
+                onClick: _this.selectMonth(month),
+                onMouseOver: _this.monthMouseOverHandler.bind(_this, month, isCurrentMonth(), disabled)
               }, /*#__PURE__*/React__namespace.createElement(Text, {
                 size: size === 'small' ? 'small' : 'regular',
-                appearance: active ? 'white' : disabled ? 'disabled' : 'default'
+                color: getTextColor,
+                className: "Calendar-text"
               }, months[month]));
             }));
           });
@@ -3298,19 +3706,22 @@
           var _a = _this.props,
               size = _a.size,
               firstDayOfWeek = _a.firstDayOfWeek;
+          var textSize = size === 'large' ? 'regular' : 'small';
           return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
             className: "Calendar-dayValues"
           }, Array.from({
             length: 7
           }, function (_x, day) {
-            var valueClass = classNames__default['default']({
+            var valueClass = classNames__default["default"]({
               'Calendar-valueWrapper': true
             });
             var dayValue = (day + daysInRow + getIndexOfDay(firstDayOfWeek)) % daysInRow;
-            return /*#__PURE__*/React__namespace.createElement(Subheading, {
+            return /*#__PURE__*/React__namespace.createElement(Text, {
               key: day,
               className: valueClass,
-              appearance: "disabled"
+              appearance: "default",
+              weight: "strong",
+              size: textSize
             }, days[size][dayValue]);
           })), /*#__PURE__*/React__namespace.createElement("div", {
             className: "Calendar-dateValues",
@@ -3319,42 +3730,57 @@
         };
 
         _this.renderDateValues = function (index) {
-          var daysInRow = config.daysInRow;
+          var daysInRow = config.daysInRow,
+              monthBlock = config.monthBlock;
           var _a = _this.props,
               size = _a.size,
               rangePicker = _a.rangePicker,
               firstDayOfWeek = _a.firstDayOfWeek,
               disabledBefore = _a.disabledBefore,
-              disabledAfter = _a.disabledAfter;
+              disabledAfter = _a.disabledAfter,
+              monthsInView = _a.monthsInView,
+              onDateHover = _a.onDateHover;
           var _b = _this.state,
               startDate = _b.startDate,
               endDate = _b.endDate,
               hoverDate = _b.hoverDate,
               yearState = _b.year,
               monthState = _b.month,
-              dateState = _b.date;
+              dateState = _b.date,
+              currMonth = _b.currMonth,
+              currYear = _b.currYear,
+              todayDate = _b.todayDate;
 
           var _c = _this.getNavDateInfo(index),
               yearNavVal = _c.year,
               monthNavVal = _c.month;
 
+          var prevMonth = monthNavVal - 1;
+          var prevYear = yearNavVal;
+          var prevMonthDayRange = getDaysInMonth(prevYear, prevMonth);
           var dayRange = getDaysInMonth(yearNavVal, monthNavVal);
           var dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
           var dummyDays = Math.abs(dayDiff);
           var noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
 
+          if (noOfRows === 6) ; else if (monthsInView > 1) ; else {
+            noOfRows = noOfRows + 1;
+          }
+
           var inRangeError = _this.getInRangeError();
+
+          var events = _this.props.events;
 
           var onClickHandler = function onClickHandler(date) {
             return function () {
               if (rangePicker) {
                 if (startDate && endDate) {
-                  _this.selectDate(index, date);
+                  _this.selectDate(index, date, prevMonthDayRange, dayRange);
                 } else {
-                  if (!inRangeError) _this.selectDate(index, date);
+                  if (!inRangeError) _this.selectDate(index, date, prevMonthDayRange, dayRange);
                 }
               } else {
-                _this.selectDate(index, date);
+                _this.selectDate(index, date, prevMonthDayRange, dayRange);
               }
             };
           };
@@ -3373,6 +3799,25 @@
             };
           };
 
+          var onMouseEnterHandler = function onMouseEnterHandler(date, isToday, isDisabled, ev) {
+            var d = _this.calculateDate(index, date, prevMonthDayRange, dayRange, true) || new Date();
+            var months = config.months,
+                days = config.days;
+            var dayName = days.large[d.getDay()];
+            var dateData = {
+              value: d.getDate(),
+              isToday: isToday,
+              isDisabled: isDisabled,
+              todayDate: _this.state.currDate,
+              fullDate: d,
+              date: d.getDate(),
+              month: months[d.getMonth()],
+              year: d.getFullYear(),
+              dayName: dayName
+            };
+            if (onDateHover) onDateHover(dateData, ev);
+          };
+
           return Array.from({
             length: noOfRows
           }, function (_y, row) {
@@ -3386,8 +3831,23 @@
 
               var date = daysInRow * row + col - dummyDays + 1;
               var dummy = date <= 0 || date > dayRange;
-              var disabled = !dummy && (compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date));
+              var disabled = compareDate(disabledBefore, 'more', yearNavVal, monthNavVal, date) || compareDate(disabledAfter, 'less', yearNavVal, monthNavVal, date);
               var active = !disabled && yearState === yearNavVal && monthState === monthNavVal && dateState === date;
+
+              var today = function today() {
+                var boolVal;
+
+                if (date <= 0) {
+                  boolVal = currYear === yearNavVal && currMonth === monthNavVal - 1 && todayDate === prevMonthDayRange + date;
+                } else if (date > dayRange) {
+                  boolVal = currYear === yearNavVal && currMonth === monthNavVal + 1 && todayDate === date - dayRange;
+                } else {
+                  boolVal = currYear === yearNavVal && currMonth === monthNavVal && todayDate === date;
+                }
+
+                return boolVal;
+              };
+
               var startActive = false;
               var endActive = false;
               var inRange = false;
@@ -3421,7 +3881,12 @@
               var isStart = startActive || endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate);
               var isEnd = endActive || startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate);
               var isRangeError = inRange && inRangeError;
-              var wrapperClass = classNames__default['default']({
+              var dateInString = "" + (date <= 0 ? prevMonthDayRange + date : date > dayRange ? date - dayRange : date);
+              var monthInString = "" + (date <= 0 ? monthNavVal === 0 ? monthNavVal + monthBlock : (monthNavVal - 1) % monthBlock + 1 : date > dayRange ? (monthNavVal + 1) % monthBlock + 1 : monthNavVal + 1);
+              var yearInString = "" + (date <= 0 && monthNavVal + 1 === 1 ? yearNavVal - 1 : date > dayRange && monthNavVal + 1 === 12 ? yearNavVal + 1 : yearNavVal);
+              var completeDateString = (monthInString.length === 2 ? monthInString : "0" + monthInString) + "/" + (dateInString.length === 2 ? dateInString : "0" + dateInString) + "/" + yearInString;
+              var isEventExist = events && _typeof(events) === 'object' && events.hasOwnProperty(completeDateString);
+              var wrapperClass = classNames__default["default"]({
                 'Calendar-valueWrapper': true,
                 'Calendar-valueWrapper--inRange': inRange || rangePicker && active,
                 'Calendar-valueWrapper--inRangeError': isRangeError,
@@ -3429,46 +3894,62 @@
                 'Calendar-valueWrapper--end': isEnd && !isStart,
                 'Calendar-valueWrapper--startEnd': isStart && isEnd,
                 'Calendar-valueWrapper--startError': isStart && isRangeError,
-                'Calendar-valueWrapper--endError': isEnd && isRangeError
+                'Calendar-valueWrapper--endError': isEnd && isRangeError,
+                'Calendar-valueWrapper--dummy': dummy
               });
-              var valueClass = classNames__default['default']((_a = {
+              var valueClass = classNames__default["default"]((_a = {
                 'Calendar-value': true,
+                'Calendar-inRangeValue': !isStart && !isEnd,
                 'Calendar-value--start': isStart && !isEnd,
                 'Calendar-value--end': isEnd && !isStart,
                 'Calendar-value--startError': isStart && isRangeError,
                 'Calendar-value--endError': isEnd && isRangeError,
                 'Calendar-value--active': active,
-                'Calendar-value--dummy': dummy || disabled,
                 'Calendar-value--disabled': disabled,
                 'Calendar-dateValue': true
-              }, _a["Calendar-dateValue--" + size] = size, _a));
+              }, _a["Calendar-dateValue--" + size] = size, _a['Calendar-value--currDateMonthYear'] = today(), _a));
+              var getTextColor = classNames__default["default"]({
+                inverse: !active && !today() && !disabled,
+                white: active,
+                'primary-lighter': today() && disabled,
+                primary: today(),
+                'inverse-lightest': disabled
+              });
               return /*#__PURE__*/React__namespace.createElement("div", {
                 key: row + "-" + col,
-                className: wrapperClass
-              }, !dummy && /*#__PURE__*/React__namespace.createElement(Text, {
-                appearance: active ? 'white' : disabled ? 'disabled' : 'default',
+                className: wrapperClass,
+                "data-test": "designSystem-Calendar-WrapperClass"
+              }, !dummy && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Text, {
+                color: getTextColor,
                 size: size === 'small' ? 'small' : 'regular',
                 "data-test": "DesignSystem-Calendar--dateValue",
                 className: valueClass,
                 onClick: onClickHandler(date),
-                onMouseOver: onMouseOverHandler(date)
-              }, date));
+                onMouseOver: onMouseOverHandler(date),
+                onMouseEnter: onMouseEnterHandler.bind(_this, date, today(), disabled)
+              }, date), isEventExist && _this.renderEventsIndicator(size, active)), (dummy && date > 0 && index === monthsInView - 1 || dummy && date <= 0 && index === 0) && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Text, {
+                appearance: active ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default',
+                size: size === 'small' ? 'small' : 'regular',
+                "data-test": "DesignSystem-Calendar--dateValue",
+                className: valueClass,
+                onClick: onClickHandler(date),
+                onMouseOver: onMouseOverHandler(date),
+                onMouseEnter: onMouseEnterHandler.bind(_this, date, today(), disabled)
+              }, date <= 0 ? prevMonthDayRange + date : date - dayRange), isEventExist && _this.renderEventsIndicator(size, active)));
             }));
           });
         };
 
         _this.renderCalendar = function (index) {
-          var _a;
+          var _a, _b;
 
-          var _b = _this.props,
-              size = _b.size,
-              monthsInView = _b.monthsInView;
+          var _c = _this.props,
+              size = _c.size,
+              monthsInView = _c.monthsInView;
           var view = _this.state.view;
-          var containerClass = classNames__default['default']((_a = {}, _a['Calendar'] = true, _a["Calendar--" + view] = view, _a["Calendar--" + size] = size, _a));
-          var headerClass = classNames__default['default']({
-            'Calendar-header': true
-          });
-          var bodyClass = classNames__default['default']({
+          var containerClass = classNames__default["default"]((_a = {}, _a['Calendar'] = true, _a["Calendar-" + view + "--" + size] = view, _a["Calendar--" + size] = size, _a));
+          var headerClass = classNames__default["default"]((_b = {}, _b["Calendar-header--" + size] = size, _b));
+          var bodyClass = classNames__default["default"]({
             'Calendar-body': true
           });
           return /*#__PURE__*/React__namespace.createElement("div", {
@@ -3497,6 +3978,7 @@
             month = _b.month,
             date = _b.date;
 
+        var todayCompleteDate = getDateInfo(new Date(Date.now()));
         _this.state = {
           currDate: currDate,
           startDate: startDate,
@@ -3506,6 +3988,9 @@
           year: year,
           month: month,
           date: date,
+          todayDate: todayCompleteDate.date,
+          currMonth: todayCompleteDate.month,
+          currYear: todayCompleteDate.year,
           view: monthsInView > 1 ? 'date' : view,
           yearBlockNav: getYearBlock(yearNav)
         };
@@ -3513,13 +3998,15 @@
       }
 
       Calendar.prototype.componentDidUpdate = function (prevProps, prevState) {
+        var _a, _b, _c, _d;
+
         var monthsInView = this.props.monthsInView;
 
         if (prevProps.date !== this.props.date) {
-          var _a = getDateInfo(this.props.date),
-              year = _a.year,
-              month = _a.month,
-              date = _a.date;
+          var _e = getDateInfo(this.props.date),
+              year = _e.year,
+              month = _e.month,
+              date = _e.date;
 
           this.updateState(year, month, date);
           var d = convertToDate(this.props.date);
@@ -3572,13 +4059,13 @@
         }
 
         if (prevState.currDate !== this.state.currDate) {
-          var _b = this.props,
-              rangePicker = _b.rangePicker,
-              onDateChange = _b.onDateChange;
-          var _c = this.state,
-              currDate = _c.currDate,
-              startDate = _c.startDate,
-              endDate = _c.endDate;
+          var _f = this.props,
+              rangePicker = _f.rangePicker,
+              onDateChange = _f.onDateChange;
+          var _g = this.state,
+              currDate = _g.currDate,
+              startDate = _g.startDate,
+              endDate = _g.endDate;
 
           if (currDate) {
             if (onDateChange) onDateChange(currDate);
@@ -3594,10 +4081,10 @@
                   endDate: undefined
                 });
               } else {
-                var _d = getDateInfo(currDate),
-                    year = _d.year,
-                    month = _d.month,
-                    date = _d.date;
+                var _h = getDateInfo(currDate),
+                    year = _h.year,
+                    month = _h.month,
+                    date = _h.date;
 
                 if (startDate) {
                   if (compareDate(startDate, 'more', year, month, date)) {
@@ -3633,11 +4120,11 @@
           }
         }
 
-        if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
+        if (((_a = prevState.startDate) === null || _a === void 0 ? void 0 : _a.getTime()) !== ((_b = this.state.startDate) === null || _b === void 0 ? void 0 : _b.getTime()) || ((_c = prevState.endDate) === null || _c === void 0 ? void 0 : _c.getTime()) !== ((_d = this.state.endDate) === null || _d === void 0 ? void 0 : _d.getTime())) {
           var onRangeChange = this.props.onRangeChange;
-          var _e = this.state,
-              startDate = _e.startDate,
-              endDate = _e.endDate;
+          var _j = this.state,
+              startDate = _j.startDate,
+              endDate = _j.endDate;
           if (onRangeChange) onRangeChange(startDate, endDate);
         }
 
@@ -3664,6 +4151,18 @@
         }
       };
 
+      Calendar.prototype.renderEventsIndicator = function (size, active) {
+        var _a;
+
+        var eventsIndicatorClass = classNames__default["default"]((_a = {
+          'Calendar-eventsIndicator': true
+        }, _a["Calendar-eventsIndicator--" + size] = true, _a['Calendar-eventsIndicator--active'] = active, _a));
+        return /*#__PURE__*/React__namespace.createElement("span", {
+          "data-test": "DesignSystem-Calendar-Event-Indicator",
+          className: eventsIndicatorClass
+        });
+      };
+
       Calendar.prototype.render = function () {
         var _this = this;
 
@@ -3671,11 +4170,12 @@
             monthsInView = _a.monthsInView,
             className = _a.className;
         var baseProps = extractBaseProps(this.props);
-        var classes = classNames__default['default']({
+        var classes = classNames__default["default"]({
           'Calendar-wrapper': true
         }, className);
         return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-          className: classes
+          className: classes,
+          "data-test": "DesignSystem-Calendar-Wrapper"
         }), Array.from({
           length: monthsInView
         }, function (_x, index) {
@@ -3697,21 +4197,25 @@
       var _a;
 
       var _b = props.shadow,
-          shadow = _b === void 0 ? 'default' : _b,
+          shadow = _b === void 0 ? 'shadow10' : _b,
           children = props.children,
           className = props.className,
           rest = __rest(props, ["shadow", "children", "className"]);
 
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Card: true
-      }, _a["Card--shadow-" + shadow] = shadow, _a["" + className] = className, _a));
+      }, _a["Card--" + shadow] = shadow, _a["" + className] = className, _a));
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-Card",
         ref: ref
       }, rest, {
         className: classes
       }), children);
     });
     Card.displayName = 'Card';
+    Card.defaultProps = {
+      shadow: 'shadow10'
+    };
 
     var CardSubdued = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
       var _a;
@@ -3721,7 +4225,7 @@
           className = props.className,
           rest = __rest(props, ["border", "children", "className"]);
 
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         CardSubdued: true
       }, _a["CardSubdued--" + border] = border, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
@@ -3737,7 +4241,7 @@
       var className = props.className,
           children = props.children;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         'Card-header': true
       }, className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
@@ -3752,7 +4256,7 @@
       var className = props.className,
           children = props.children;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         'Card-body': true
       }, className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
@@ -3770,7 +4274,7 @@
           children = props.children,
           withSeperator = props.withSeperator;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         'Card-footer': true
       }, _a['Card-footer--withSeperator'] = withSeperator, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
@@ -3784,7 +4288,111 @@
       withSeperator: true
     };
 
+    var isSpaceKey = function isSpaceKey(e) {
+      return e.key === 'Space';
+    };
+
+    var allowed = {
+      button: new Set(['Enter', 'Space', 'Spacebar', ' ']),
+      link: new Set(['Enter']),
+      checkbox: new Set([]),
+      radio: new Set([])
+    };
+
+    var isKeyboardInteractionAllowed = function isKeyboardInteractionAllowed(role, key) {
+      if (!allowed[role]) {
+        return false;
+      }
+
+      var allowedKeys = allowed[role];
+      return allowedKeys.has(key);
+    };
+
+    var useAccessibilityProps = function useAccessibilityProps(_a) {
+      var onClick = _a.onClick,
+          _onKeyDown = _a.onKeyDown,
+          _b = _a.role,
+          role = _b === void 0 ? 'button' : _b,
+          rest = __rest(_a, ["onClick", "onKeyDown", "role"]);
+
+      return __assign({}, onClick ? {
+        onClick: onClick,
+        role: role,
+        tabIndex: 0,
+        'aria-label': rest['aria-label'],
+        onKeyDown: function onKeyDown(e) {
+          if (_onKeyDown) {
+            _onKeyDown(e);
+
+            return;
+          }
+
+          var key = e.key;
+
+          if (isKeyboardInteractionAllowed(role, key)) {
+            if (onClick) {
+              e.preventDefault();
+              onClick(e);
+            }
+          }
+        }
+      } : {
+        role: role,
+        'aria-label': rest['aria-label']
+      });
+    };
+
+    var Icon = function Icon(props) {
+      var _a;
+
+      var appearance = props.appearance,
+          className = props.className,
+          name = props.name,
+          size = props.size,
+          children = props.children;
+      var accessibilityProps = useAccessibilityProps(props);
+      var baseProps = extractBaseProps(props);
+
+      var mapper = function mapper(val) {
+        if (val === 'outline') return 'outlined';
+        if (val === 'rounded') return 'round';
+        return val;
+      };
+
+      var type = mapper(props.type);
+
+      var getIconAppearance = function getIconAppearance(iconColor) {
+        var x = iconColor.indexOf('_');
+        return iconColor.slice(0, x) + iconColor.charAt(x + 1).toUpperCase() + iconColor.slice(x + 2);
+      };
+
+      var color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
+      var iconClass = classNames__default["default"]((_a = {}, _a['material-icons'] = true, _a["material-icons-" + mapper(type)] = type && type !== 'filled', _a['Icon'] = true, _a["Icon--" + color] = appearance, _a["" + className] = className, _a));
+      var styles = {
+        fontSize: size + "px",
+        width: size + "px"
+      };
+
+      if (children && /*#__PURE__*/React__namespace.isValidElement(children)) {
+        return /*#__PURE__*/React__namespace.createElement("span", __assign({}, baseProps, {
+          className: className
+        }), children);
+      }
+
+      return /*#__PURE__*/React__namespace.createElement("i", __assign({}, baseProps, {
+        className: iconClass,
+        style: styles
+      }, accessibilityProps), type ? name + "_" + type : name);
+    };
+    Icon.displayName = 'Icon';
+    Icon.defaultProps = {
+      size: 16,
+      type: 'round'
+    };
+
     var GenericChip = function GenericChip(props) {
+      var _a;
+
       var label = props.label,
           icon = props.icon,
           clearButton = props.clearButton,
@@ -3798,7 +4406,7 @@
       var iconClass = function iconClass(align) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a['cursor-pointer'] = align === 'right' && !disabled, _a));
+        return classNames__default["default"]((_a = {}, _a['Chip-icon'] = true, _a["Chip-icon--" + align] = align, _a["Chip-icon-disabled--right"] = align === 'right' && disabled, _a['cursor-pointer'] = align === 'right' && !disabled, _a['Chip-icon--selected'] = align === 'right' && selected, _a));
       };
 
       var onCloseHandler = function onCloseHandler(e) {
@@ -3810,7 +4418,28 @@
         if (onClick) onClick();
       };
 
+      var iconAppearance = function iconAppearance(align) {
+        var _a;
+
+        return classNames__default["default"]((_a = {}, _a['disabled'] = disabled && !selected, _a['primary_dark'] = !disabled && selected, _a['primary_lighter'] = disabled && selected, _a['subtle'] = !disabled && !selected && align === 'right', _a['inverse'] = !disabled && !selected && align === 'left', _a));
+      };
+
+      var textColor = classNames__default["default"]((_a = {}, _a['primary-lighter'] = disabled && selected, _a['inverse-lightest'] = disabled && !selected, _a['primary-dark'] = selected, _a['inverse'] = !disabled && !selected, _a));
+
+      var renderLabel = function renderLabel() {
+        if (typeof label === 'string') {
+          return /*#__PURE__*/React__namespace.createElement(Text, {
+            "data-test": "DesignSystem-GenericChip--Text",
+            color: textColor,
+            className: "Chip-text"
+          }, label);
+        }
+
+        return label;
+      };
+
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        tabIndex: 0,
         "data-test": "DesignSystem-GenericChip--GenericChipWrapper"
       }, baseProps, {
         className: "Chip-wrapper " + className,
@@ -3818,15 +4447,12 @@
       }), icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-GenericChip--Icon",
         name: icon,
-        appearance: disabled ? 'disabled' : selected ? 'info' : 'default',
+        appearance: iconAppearance('left'),
         className: iconClass('left')
-      }), /*#__PURE__*/React__namespace.createElement(Text, {
-        "data-test": "DesignSystem-GenericChip--Text",
-        appearance: disabled ? 'disabled' : 'default'
-      }, label), clearButton && /*#__PURE__*/React__namespace.createElement(Icon, {
+      }), renderLabel(), clearButton && /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-GenericChip--clearButton",
         name: "clear",
-        appearance: disabled ? 'disabled' : selected ? 'info' : 'subtle',
+        appearance: iconAppearance('right'),
         className: iconClass('right'),
         onClick: onCloseHandler
       }));
@@ -3856,9 +4482,9 @@
         if (!disabled && onClick) onClick(name);
       };
 
-      var chipClass = classNames__default['default']((_a = {
+      var chipClass = classNames__default["default"]((_a = {
         Chip: true
-      }, _a["Chip-" + type + "--disabled"] = disabled, _a["Chip--" + type] = type && !disabled, _a["Chip-" + type + "--selected"] = selected && !disabled, _a), className);
+      }, _a["Chip-" + type + "--disabled"] = disabled, _a["Chip--" + type] = type && !disabled, _a["Chip-" + type + "--selected"] = selected && !disabled, _a["Chip-selection--selectedDisabled"] = type === 'selection' && selected && disabled, _a), className);
       var clearbutton = type === 'action' ? false : clearButton;
       var select = type === 'selection' && selected ? true : false;
       return /*#__PURE__*/React__namespace.createElement(GenericChip, __assign({
@@ -3897,7 +4523,7 @@
         if (onClose) onClose(item);
       };
 
-      var ChipGroupClass = classNames__default['default']((_a = {}, _a['ChipGroup'] = true, _a), className);
+      var ChipGroupClass = classNames__default["default"]((_a = {}, _a['ChipGroup'] = true, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-ChipGroup"
       }, baseProps, {
@@ -3947,7 +4573,7 @@
           children = props.children,
           rest = __rest(props, ["size", "sizeXS", "sizeS", "sizeM", "sizeL", "sizeXL", "className", "children"]);
 
-      var classes = classNames__default['default']((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
+      var classes = classNames__default["default"]((_a = {}, _a['Col'] = true, _a["Col--" + size] = size, _a["Col--xs-" + sizeXS] = sizeXS, _a["Col--s-" + sizeS] = sizeS, _a["Col--m-" + sizeM] = sizeM, _a["Col--l-" + sizeL] = sizeL, _a["Col--xl-" + sizeXL] = sizeXL, _a["" + className] = className, _a));
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         ref: ref,
         "data-test": "DesignSystem-Column"
@@ -3969,7 +4595,8 @@
       var _a = inputOptions.placeholderChar,
           placeholderChar = _a === void 0 ? '_' : _a;
 
-      var onChangeHandler = function onChangeHandler(_e, val) {
+      var onPasteHandler = function onPasteHandler(_e, val) {
+        var onPaste = inputOptions.onPaste;
         setState({
           open: true
         });
@@ -3980,25 +4607,53 @@
             date: d
           });
         }
+
+        if (onPaste) onPaste(_e, val);
+      };
+
+      var onChangeHandler = function onChangeHandler(_e, val) {
+        var onChange = inputOptions.onChange;
+        setState({
+          open: true
+        });
+
+        if (val && !val.includes(placeholderChar)) {
+          var d = translateToDate(inputFormat, val, validators);
+          setState({
+            date: d
+          });
+        }
+
+        if (onChange) onChange(_e);
       };
 
       var onBlurHandler = function onBlurHandler(_e, val) {
+        var onBlur = inputOptions.onBlur;
         setState({
           init: true
         });
+        var hasNumber = /\d/;
 
-        if (!val || val.includes(placeholderChar)) {
+        if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
           setState({
-            date: undefined
+            error: true
+          });
+        } else if (val && !hasNumber.test(val) || !val) {
+          setState({
+            error: false
           });
         }
+
+        if (onBlur) onBlur(_e, val || '');
       };
 
-      var onClearHandler = function onClearHandler() {
+      var onClearHandler = function onClearHandler(e) {
+        var onClear = inputOptions.onClear;
         setState({
           init: true,
           date: undefined
         });
+        if (onClear) onClear(e);
       };
 
       var showError = inputOptions.error || inputOptions.required && error && init;
@@ -4009,19 +4664,21 @@
       };
 
       var mask = date[inputFormat];
-      return /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
+      return /*#__PURE__*/React__namespace.createElement(X, __assign({
         icon: "events",
         placeholder: inputFormat
       }, inputOptions, {
         error: showError,
         mask: mask,
-        value: date$1 ? translateToString(inputFormat, date$1) : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+        value: date$1 ? translateToString(inputFormat, date$1) : init ? X.utils.getDefaultValue(mask, placeholderChar) : '',
         onChange: onChangeHandler,
+        onPaste: onPasteHandler,
         onBlur: onBlurHandler,
         onClear: onClearHandler,
         caption: showError ? errorMessage : '',
         validators: [inputValidator],
-        clearOnEmptyBlur: false
+        clearOnEmptyBlur: true,
+        id: "parent-DatePicker"
       }));
     };
 
@@ -4046,7 +4703,7 @@
               daMonth = _c.month,
               daDate = _c.date;
 
-          return !date ? true : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
+          return !date ? false : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
         };
 
         _this.onDateChangeHandler = function (d) {
@@ -4062,6 +4719,9 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var disabled = _this.props.inputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -4133,6 +4793,8 @@
       };
 
       DatePicker.prototype.renderCalendar = function () {
+        var _this = this;
+
         var _a = this.props;
             _a.date;
             _a.open;
@@ -4146,15 +4808,55 @@
             disabledAfter = _a.disabledAfter;
             _a.onDateChange;
             _a.closeOnSelect;
-            var rest = __rest(_a, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect"]);
+            var size = _a.size,
+            _b = _a.showTodayDate,
+            showTodayDate = _b === void 0 ? true : _b,
+            _c = _a.children,
+            children = _c === void 0 ? /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null) : _c,
+            rest = __rest(_a, ["date", "open", "position", "inputFormat", "outputFormat", "inputOptions", "validators", "withInput", "disabledBefore", "disabledAfter", "onDateChange", "closeOnSelect", "size", "showTodayDate", "children"]);
 
         var date = this.state.date;
-        return /*#__PURE__*/React__namespace.createElement(Calendar, __assign({}, rest, {
-          date: convertToDate(date, inputFormat, validators),
-          disabledBefore: convertToDate(disabledBefore, inputFormat, validators),
-          disabledAfter: convertToDate(disabledAfter, inputFormat, validators),
+        var months = config.months;
+        var todayDate = new Date(Date.now());
+        var todayMonthAndDate = months[todayDate.getMonth()] + " " + todayDate.getDate();
+        var currDate = convertToDate(date, inputFormat, validators);
+        var dateDisabledBefore = convertToDate(disabledBefore, inputFormat, validators);
+        var dateDisabledAfter = convertToDate(disabledAfter, inputFormat, validators);
+
+        var isTodayDisabled = function isTodayDisabled() {
+          var isTodayDateDisabled = true;
+
+          if (currDate && dateDisabledBefore && dateDisabledAfter) {
+            isTodayDateDisabled = currDate > dateDisabledBefore && currDate < dateDisabledAfter;
+          } else if (currDate && dateDisabledBefore) {
+            isTodayDateDisabled = currDate < dateDisabledBefore;
+          } else if (currDate && dateDisabledAfter) {
+            isTodayDateDisabled = currDate > dateDisabledAfter;
+          }
+
+          return !isTodayDateDisabled;
+        };
+
+        return /*#__PURE__*/React__namespace.createElement("div", null, /*#__PURE__*/React__namespace.createElement("div", {
+          className: "d-flex"
+        }, children, /*#__PURE__*/React__namespace.createElement(Calendar, __assign({}, rest, {
+          size: size,
+          date: currDate,
+          disabledBefore: dateDisabledBefore,
+          disabledAfter: dateDisabledAfter,
           onDateChange: this.onDateChangeHandler
-        }));
+        }))), showTodayDate && /*#__PURE__*/React__namespace.createElement("div", {
+          className: "d-flex justify-content-center pb-6",
+          "data-test": "DesignSystem-Select--TodaysDate-wrapper"
+        }, /*#__PURE__*/React__namespace.createElement(Chip, {
+          label: "Today, " + todayMonthAndDate,
+          name: "chip",
+          type: "action",
+          disabled: isTodayDisabled(),
+          onClick: function onClick() {
+            return _this.onDateChangeHandler(new Date());
+          }
+        })));
       };
 
       DatePicker.prototype.render = function () {
@@ -4197,7 +4899,555 @@
       return DatePicker;
     }(React__namespace.Component);
 
-    var TimePicker = function TimePicker(props) {
+    var parseDate = function parseDate(date_time) {
+      var d = new Date();
+      d.setHours(date_time.substring(0, 2));
+      d.setMinutes(date_time.substring(3, 5));
+      return d;
+    };
+
+    var isFormat12Hour = function isFormat12Hour(format) {
+      return format === '12-Hour';
+    };
+
+    var isTimeIn12HourFormat = function isTimeIn12HourFormat(time) {
+      return _isTimeInAM(time) || _isTimeInPM(time);
+    };
+
+    var _isTimeInAM = function _isTimeInAM(time) {
+      return time.includes('a') || time.includes('A');
+    };
+    var _isTimeInPM = function _isTimeInPM(time) {
+      return time.includes('p') || time.includes('P');
+    };
+    var convert12To24HourFormat$1 = function convert12To24HourFormat(timeStr) {
+      var _a = timeStr.split(' '),
+          time = _a[0],
+          modifier = _a[1];
+
+      var timeArr = time.split(':');
+      var hours = timeArr[0];
+      var minutes = timeArr[1];
+
+      if (hours === '12' && _isTimeInAM(modifier)) {
+        hours = '00';
+      }
+
+      if (_isTimeInPM(modifier) && hours !== '12') {
+        hours = (parseInt(hours, 10) + 12).toString();
+      }
+
+      return hours + ":" + minutes;
+    };
+    var convertToTwoDigit = function convertToTwoDigit(val) {
+      return ('0' + val).slice(-2);
+    };
+    var convert24To12HourFormat = function convert24To12HourFormat(timeStr) {
+      var timeArr = timeStr.split(':');
+      var hours = parseInt(timeArr[0], 10);
+      var modifier = hours >= 12 ? 'PM' : 'AM';
+      var convertedHours = hours % 12 || 12;
+      var hoursInString = convertedHours.toString();
+      hoursInString = convertToTwoDigit(hoursInString);
+      var minutes = timeArr[1];
+      var result = hoursInString.toString() + ":" + minutes + " " + modifier;
+      return result;
+    };
+
+    var getTimeIn24HrFormat = function getTimeIn24HrFormat(timeStr) {
+      if (isTimeIn12HourFormat(timeStr)) {
+        return convert12To24HourFormat$1(timeStr);
+      }
+
+      return timeStr;
+    };
+
+    var checkTimeDifference = function checkTimeDifference(startTime, endTime) {
+      var parseStartTime = parseDate(startTime);
+      var parseEndTime = parseDate(endTime);
+      return parseStartTime > parseEndTime;
+    };
+
+    var get24HourTimeList = function get24HourTimeList(startTime, endTime, interval) {
+      var timeList = [];
+      var parseStartTime = parseDate(startTime);
+      var parseEndTime = parseDate(endTime);
+
+      while (parseStartTime <= parseEndTime) {
+        timeList.push(parseStartTime.toTimeString().substring(0, 5));
+        parseStartTime.setMinutes(parseStartTime.getMinutes() + interval);
+      }
+
+      return timeList;
+    };
+
+    var getReverseTimeList = function getReverseTimeList(startTime, endTime, interval) {
+      var timeList = get24HourTimeList('00:00', '23:59', interval);
+      var startTimeIndex = timeList.indexOf(startTime);
+      var endTimeIndex = timeList.indexOf(endTime);
+      var nextDayTimeIndex = endTime === '' ? startTimeIndex : endTimeIndex + 1;
+      var presentDayList = timeList.slice(startTimeIndex);
+      var nextDayList = timeList.slice(0, nextDayTimeIndex);
+      var result = presentDayList.concat(nextDayList);
+      return result;
+    };
+
+    var getTimeListIn24HourFormat = function getTimeListIn24HourFormat(startTime, endTime, interval) {
+      if (endTime === '' || checkTimeDifference(startTime, endTime)) {
+        return getReverseTimeList(startTime, endTime, interval);
+      }
+
+      return get24HourTimeList(startTime, endTime, interval);
+    };
+
+    var getTimeDifference = function getTimeDifference(startTime, endTime) {
+      var timeStart = new Date('07/07/2022 ' + startTime);
+      var timeEnd = new Date('07/07/2022 ' + endTime);
+      var diff = timeEnd.getTime() - timeStart.getTime();
+      var diff_as_date = new Date(diff);
+      var hour = diff_as_date.getUTCHours();
+      var minute = diff_as_date.getUTCMinutes();
+      return {
+        hour: hour,
+        minute: minute
+      };
+    };
+
+    var getCustomLabel = function getCustomLabel(time, timeFormat, showDuration, referenceTime) {
+      var label = time;
+
+      if (isFormat12Hour(timeFormat)) {
+        label = convert24To12HourFormat(time);
+      }
+
+      if (showDuration && referenceTime) {
+        var _a = getTimeDifference(referenceTime, time),
+            hour = _a.hour,
+            minute = _a.minute;
+
+        var timeDiffLabel = " (" + hour + " hr " + minute + " min)";
+        label += timeDiffLabel;
+      }
+
+      return label;
+    };
+
+    var isOptionDisabled = function isOptionDisabled(time, timeFormat, disabledSlotList) {
+      var timeValue = time;
+
+      if (isFormat12Hour(timeFormat)) {
+        timeValue = convert24To12HourFormat(time);
+      }
+
+      if (disabledSlotList.includes(timeValue)) {
+        return true;
+      }
+
+      return false;
+    };
+
+    var convertTimeToOptionList = function convertTimeToOptionList(timeList, timeFormat, id, showDuration, referenceTime, disabledSlotList) {
+      if (id === void 0) {
+        id = 'TimePicker-Option-key';
+      }
+
+      var optionList = timeList.map(function (time, index) {
+        return {
+          label: getCustomLabel(time, timeFormat, showDuration, referenceTime),
+          value: time,
+          disabled: disabledSlotList && isOptionDisabled(time, timeFormat, disabledSlotList),
+          selected: false,
+          optionID: id + index
+        };
+      });
+      return optionList;
+    };
+
+    var computeEndTime = function computeEndTime(startTime) {
+      return startTime ? '' : '23:59';
+    };
+
+    var getDropdownOptionList = function getDropdownOptionList(props) {
+      var startTime = props.startTime,
+          endTime = props.endTime,
+          interval = props.interval,
+          timeFormat = props.timeFormat,
+          showDuration = props.showDuration,
+          disabledSlotList = props.disabledSlotList,
+          id = props.id;
+      var startTimeIn24Hr = startTime ? getTimeIn24HrFormat(startTime) : '00:00';
+      var endTimeIn24Hr = endTime ? getTimeIn24HrFormat(endTime) : computeEndTime(startTime);
+      var timeList = getTimeListIn24HourFormat(startTimeIn24Hr, endTimeIn24Hr, interval);
+      var dropdownOptionList = convertTimeToOptionList(timeList, timeFormat, id, showDuration, startTime, disabledSlotList);
+      return dropdownOptionList;
+    };
+
+    var convertMinTo60 = function convertMinTo60(time) {
+      var parseNum = parseInt(time, 10);
+      if (parseNum < 10) return time;
+      var timeInNum = parseNum > 60 ? parseNum % 60 : parseNum;
+      var min = (timeInNum.toString() + '0').slice(0, 2);
+      return min;
+    };
+
+    var get24HourCurrentTime = function get24HourCurrentTime() {
+      var today = new Date();
+      return convertToTwoDigit(today.getHours()) + ':' + convertToTwoDigit(today.getMinutes());
+    };
+
+    var convertHourTo24 = function convertHourTo24(time) {
+      var timeInNum = parseInt(time, 10) % 24;
+      return timeInNum.toString();
+    };
+
+    var convertHourTo12 = function convertHourTo12(time) {
+      var timeInNum = parseInt(time, 10) % 12;
+      return timeInNum.toString();
+    };
+
+    var _checkNumber = function _checkNumber(str) {
+      var numberRegex = /^[0-9]+$/;
+      return numberRegex.test(str);
+    };
+
+    var _checkNumberWithAMPM = function _checkNumberWithAMPM(str) {
+      var numberWithAMPMRegex = /^[0-9]+[ AaMmPp]+$/;
+      return numberWithAMPMRegex.test(str);
+    };
+
+    var _checkNumberWithSpecialChar = function _checkNumberWithSpecialChar(str) {
+      var numberWithSpecialCharRegex = /^[0-9]+[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~][0-9]*$/;
+      return numberWithSpecialCharRegex.test(str);
+    };
+
+    var _checkNumberWithSpecialCharAMPM = function _checkNumberWithSpecialCharAMPM(str) {
+      var numberWithSpecialCharAMPM = /^[0-9]+[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~][0-9]+[ AaMmPp]+$/;
+      return numberWithSpecialCharAMPM.test(str);
+    };
+
+    var specialCharRegex = /[`\s!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
+
+    var getTimeFromNumberWithSpecialChar = function getTimeFromNumberWithSpecialChar(searchTime) {
+      var time = searchTime.split(specialCharRegex);
+      var hour = convertHourTo24(time[0]);
+      var hh = convertToTwoDigit(hour);
+      var min = time[1] !== '' ? convertMinTo60(time[1]) : '00';
+      var mm = (min + '0').slice(0, 2);
+      return {
+        hour: hh,
+        min: mm
+      };
+    };
+
+    var getSearchTimeFromNumber = function getSearchTimeFromNumber(searchTerm, show12HourFormat) {
+      var searchLen = searchTerm.length;
+      var searchTimeInNum = parseInt(searchTerm, 10);
+      var firstTwoTerm = searchTerm.slice(0, 2);
+      var hh = '00';
+      var mm = '00';
+
+      switch (searchLen) {
+        case 1:
+          hh = '0' + searchTerm;
+          break;
+
+        case 2:
+          if (searchTimeInNum <= 24 || show12HourFormat && searchTimeInNum <= 12) {
+            hh = convertToTwoDigit(searchTerm);
+          } else {
+            hh = '0' + searchTerm[0];
+            mm = convertMinTo60(searchTerm[1] + '0');
+          }
+
+          break;
+
+        case 3:
+          hh = '0' + searchTerm[0];
+          mm = convertMinTo60(searchTerm.slice(1));
+          break;
+
+        case 4:
+          hh = show12HourFormat ? convertHourTo12(firstTwoTerm) : convertHourTo24(firstTwoTerm);
+          mm = convertMinTo60(searchTerm.slice(2));
+          break;
+
+        default:
+          hh = '-1';
+          mm = '-1';
+      }
+
+      return {
+        hour: hh,
+        min: mm
+      };
+    };
+
+    var getTimeFromNumberWithAMPM = function getTimeFromNumberWithAMPM(searchTime) {
+      var timeArr = searchTime.split(/[\saAmMpP]/);
+
+      var _a = getSearchTimeFromNumber(timeArr[0], true),
+          hour = _a.hour,
+          min = _a.min;
+
+      return {
+        hour: hour,
+        min: min
+      };
+    };
+
+    var formatSearchTerm = function formatSearchTerm(optionList, searchTerm) {
+      var searchTime = {
+        hour: '00',
+        min: '00'
+      };
+
+      if (_checkNumber(searchTerm)) {
+        var searchTimeInHHMM = getSearchTimeFromNumber(searchTerm);
+
+        if (parseInt(searchTimeInHHMM.hour) <= 12 && parseInt(searchTimeInHHMM.hour) > 0) {
+          searchTime = getCurrentRelativeTime(optionList, searchTimeInHHMM);
+        } else {
+          searchTime = searchTimeInHHMM;
+        }
+      } else if (_checkNumberWithAMPM(searchTerm)) {
+        searchTime = getTimeFromNumberWithAMPM(searchTerm);
+        searchTime.hour = convert12To24HourFormat(searchTime.hour, searchTerm);
+      } else if (_checkNumberWithSpecialChar(searchTerm)) {
+        var searchTimeInHHMM = getTimeFromNumberWithSpecialChar(searchTerm);
+
+        if (parseInt(searchTimeInHHMM.hour) <= 12) {
+          searchTime = getCurrentRelativeTime(optionList, searchTimeInHHMM);
+        } else {
+          searchTime = searchTimeInHHMM;
+        }
+      } else if (_checkNumberWithSpecialCharAMPM(searchTerm)) {
+        var timeWithoutAMPM = searchTerm.replace(/[\saApPmM]/g, '');
+
+        if (_checkNumber(timeWithoutAMPM)) {
+          searchTime = getSearchTimeFromNumber(timeWithoutAMPM, true);
+        } else if (_checkNumberWithSpecialChar(timeWithoutAMPM)) {
+          searchTime = getTimeFromNumberWithSpecialChar(timeWithoutAMPM);
+        }
+
+        searchTime.hour = convert12To24HourFormat(searchTime.hour, searchTerm);
+      }
+
+      return searchTime;
+    };
+
+    var convert12To24HourFormat = function convert12To24HourFormat(hours, searchTerm) {
+      if (hours === '12' && _isTimeInAM(searchTerm)) {
+        hours = '00';
+      } else if (_isTimeInPM(searchTerm) && hours !== '12') {
+        hours = (parseInt(hours, 10) + 12).toString();
+      }
+
+      return hours;
+    };
+
+    var getCurrentRelativeTime = function getCurrentRelativeTime(optionList, searchTime) {
+      var searchTimeStr = searchTime.hour + ":" + searchTime.min;
+      var currentTime = get24HourCurrentTime();
+      var greaterTime = checkTimeDifference(currentTime, searchTimeStr);
+      var currentTimeIndex = findClosestTimeIndex(optionList, currentTime);
+      var searchTimeIndex = findClosestTimeIndex(optionList, searchTimeStr);
+
+      if (greaterTime && currentTimeIndex > searchTimeIndex) {
+        var hourIn24Format = parseInt(searchTime.hour, 10) + 12;
+        searchTime.hour = hourIn24Format.toString();
+      }
+
+      return searchTime;
+    };
+
+    var findClosestTimeIndex = function findClosestTimeIndex(optionList, searchItem) {
+      var closestItemIndex = 0;
+      var minTime = {
+        hour: 100,
+        mins: 100
+      };
+
+      for (var index = 0; index < optionList.length; index++) {
+        var _a = getTimeDifference(searchItem, optionList[index]),
+            hour = _a.hour,
+            minute = _a.minute;
+
+        if (hour < minTime.hour || hour === minTime.hour && minute < minTime.mins) {
+          minTime.hour = hour;
+          minTime.mins = minute;
+          closestItemIndex = index;
+        }
+      }
+
+      return closestItemIndex;
+    };
+
+    var getSearchIndex = function getSearchIndex(optionList, searchTerm) {
+      var _a = formatSearchTerm(optionList, searchTerm),
+          hour = _a.hour,
+          min = _a.min;
+
+      if (min === '60') {
+        min = '00';
+        hour = (parseInt(hour, 10) + 1).toString();
+      }
+
+      var searchItem = hour + ":" + min;
+      var searchIndex = findClosestTimeIndex(optionList, searchItem);
+      return searchIndex;
+    };
+
+    var countNumberInStr = function countNumberInStr(searchTerm) {
+      var _a;
+
+      return ((_a = searchTerm.match(/\d/g)) === null || _a === void 0 ? void 0 : _a.length) || 0;
+    };
+
+    var isValidSearchTerm = function isValidSearchTerm(searchTerm) {
+      var totalDigit = countNumberInStr(searchTerm);
+      return totalDigit > 0 && totalDigit < 5;
+    };
+
+    var getValueFromOptionList = function getValueFromOptionList(optionList) {
+      var list = optionList.map(function (option) {
+        return option.value;
+      });
+      return list;
+    };
+
+    var getSearchValueIndex = function getSearchValueIndex(options, searchTerm) {
+      if (!isValidSearchTerm(searchTerm)) {
+        return -1;
+      }
+
+      var searchIndex = getSearchIndex(options, searchTerm);
+      return searchIndex;
+    };
+
+    var getScrollIndex = function getScrollIndex(dropdownOptionList, searchTerm) {
+      var optionList = getValueFromOptionList(dropdownOptionList);
+
+      if (searchTerm === '') {
+        var currTime = get24HourCurrentTime();
+        var currTimeIndex = findClosestTimeIndex(optionList, currTime);
+        return currTimeIndex;
+      }
+
+      return getSearchValueIndex(optionList, searchTerm);
+    };
+
+    var TimePickerWithSearch = function TimePickerWithSearch(props) {
+      var open = props.open,
+          endTime = props.endTime,
+          interval = props.interval,
+          onChange = props.onChange,
+          startTime = props.startTime,
+          timeFormat = props.timeFormat,
+          showDuration = props.showDuration,
+          noResultMessage = props.noResultMessage,
+          disabledSlotList = props.disabledSlotList,
+          fetchTimeOptions = props.fetchTimeOptions;
+
+      var _a = React__namespace.useState(0),
+          tabIndex = _a[0],
+          setTabIndex = _a[1];
+
+      var _b = React__namespace.useState(false),
+          openPopover = _b[0],
+          setOpenPopover = _b[1];
+
+      var _c = React__namespace.useState(-1),
+          selectedIndex = _c[0],
+          setSelectedIndex = _c[1];
+
+      var _d = React__namespace.useState(0),
+          counter = _d[0],
+          setCounter = _d[1];
+
+      var dropdownOptionList = getDropdownOptionList(props);
+      React__namespace.useEffect(function () {
+        open !== undefined && setOpenPopover(open);
+      }, [open]);
+      React__namespace.useEffect(function () {
+        var timer;
+
+        if (openPopover && selectedIndex != -1) {
+          setTabIndex(selectedIndex);
+          timer = setTimeout(function () {
+            scrollToOptionIndex(selectedIndex, dropdownOptionList);
+          }, 100);
+        }
+
+        return function () {
+          clearTimeout(timer);
+        };
+      }, [openPopover]);
+      React__namespace.useEffect(function () {
+        setCounter(counter + 1);
+      }, [startTime, endTime, interval, showDuration, disabledSlotList]);
+
+      var onChangeHandler = function onChangeHandler(props) {
+        var time = props;
+
+        if (isFormat12Hour(timeFormat)) {
+          time = convert24To12HourFormat(time);
+        }
+
+        var selectIndex = dropdownOptionList.findIndex(function (option) {
+          return option.value === props;
+        });
+        setSelectedIndex(selectIndex);
+        onChange && onChange(time);
+      };
+
+      var getOptionList = function getOptionList(searchTerm) {
+        var scrollIndex;
+        var indexValue = getScrollIndex(dropdownOptionList, searchTerm);
+
+        if (searchTerm === '' && selectedIndex != -1) {
+          scrollIndex = selectedIndex;
+          setTabIndex(selectedIndex);
+        } else {
+          scrollIndex = indexValue;
+          setTabIndex(indexValue);
+        }
+
+        return Promise.resolve({
+          options: indexValue === -1 ? [] : dropdownOptionList,
+          count: dropdownOptionList.length,
+          scrollToIndex: scrollIndex === 0 ? scrollIndex + 1 : scrollIndex,
+          searchTerm: searchTerm
+        });
+      };
+
+      var fetchOptionList = function fetchOptionList() {
+        return fetchTimeOptions ? fetchTimeOptions : getOptionList;
+      };
+
+      return /*#__PURE__*/React__namespace.createElement(Dropdown, {
+        key: counter,
+        maxHeight: 160,
+        loadersCount: 0,
+        withSearch: true,
+        open: openPopover,
+        tabIndex: tabIndex,
+        searchPlaceholder: "Search",
+        onChange: onChangeHandler,
+        fetchOptions: fetchOptionList(),
+        noResultMessage: noResultMessage,
+        staticLimit: dropdownOptionList.length,
+        onPopperToggle: function onPopperToggle() {
+          setOpenPopover(!openPopover);
+        }
+      });
+    };
+    TimePickerWithSearch.defaultProps = {
+      timeFormat: '12-Hour',
+      interval: 15
+    };
+    TimePickerWithSearch.displayName = 'TimePickerWithSearch';
+
+    var TimePickerWithInput = function TimePickerWithInput(props) {
       var validators = props.validators,
           inputOptions = props.inputOptions,
           inputFormat = props.inputFormat,
@@ -4262,24 +5512,31 @@
       };
 
       var mask = time[inputFormat];
-      return /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
+      return /*#__PURE__*/React__namespace.createElement(X, __assign({
         placeholder: placeholders[inputFormat],
         placeholderChar: placeholderChar
       }, inputOptions, {
         mask: mask,
-        value: time$1 ? translateToTime(inputFormat, time$1) : init ? InputMask.utils.getDefaultValue(mask, placeholderChar) : '',
+        value: time$1 ? translateToTime(inputFormat, time$1) : init ? X.utils.getDefaultValue(mask, placeholderChar) : '',
         validators: inputValidator,
         onChange: onChangeHandler,
         onClear: onClearHandler,
-        onBlur: onBlurHandler
+        onBlur: onBlurHandler,
+        id: "parent-TimePicker"
       }));
     };
-    TimePicker.defaultProps = {
+    TimePickerWithInput.defaultProps = {
       inputFormat: 'hh:mm AM',
       outputFormat: 'hh:mm AM',
       inputOptions: {},
       validators: [time$1]
     };
+    TimePickerWithInput.displayName = 'TimePickerWithInput';
+
+    var TimePicker = function TimePicker(props) {
+      return props.withSearch ? /*#__PURE__*/React__namespace.createElement(TimePickerWithSearch, __assign({}, props)) : /*#__PURE__*/React__namespace.createElement(TimePickerWithInput, __assign({}, props));
+    };
+    TimePicker.defaultProps = __assign(__assign({}, TimePickerWithInput.defaultProps), TimePickerWithSearch.defaultProps);
     TimePicker.displayName = 'TimePicker';
 
     var sizeMap = {
@@ -4298,7 +5555,7 @@
           className = props.className,
           rest = __rest(props, ["appearance", "size", "children", "className"]);
 
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Heading: true
       }, _a["Heading--" + size] = size, _a["Heading--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
@@ -4342,12 +5599,13 @@
           onClear = props.onClear,
           onBlur = props.onBlur,
           onFocus = props.onFocus,
+          onPaste = props.onPaste,
           actionIcon = props.actionIcon,
           className = props.className,
           autoFocus = props.autoFocus,
           disabled = props.disabled,
           readOnly = props.readOnly,
-          rest = __rest(props, ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "actionIcon", "className", "autoFocus", "disabled", "readOnly"]);
+          rest = __rest(props, ["size", "type", "minWidth", "defaultValue", "name", "placeholder", "value", "icon", "inlineLabel", "required", "error", "info", "onChange", "onClick", "onClear", "onBlur", "onFocus", "onPaste", "actionIcon", "className", "autoFocus", "disabled", "readOnly"]);
 
       var ref = React__namespace.useRef(null);
       React__namespace.useImperativeHandle(forwardedRef, function () {
@@ -4361,15 +5619,17 @@
         });
       }, []);
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled || readOnly, _a['Input--error'] = error, _a), className);
-      var inputClass = classNames__default['default']((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
-      var leftIconClass = classNames__default['default']((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
-      var rightIconClass = classNames__default['default']((_d = {}, _d['Input-icon'] = true, _d['Input-icon--right'] = true, _d));
+      var classes = classNames__default["default"]((_a = {}, _a['Input'] = true, _a["Input--" + size] = size, _a['Input--disabled'] = disabled || readOnly, _a['Input--error'] = error, _a), className);
+      var inputClass = classNames__default["default"]((_b = {}, _b['Input-input'] = true, _b["Input-input--" + size] = size, _b));
+      var leftIconClass = classNames__default["default"]((_c = {}, _c['Input-icon'] = true, _c['Input-icon--left'] = true, _c['Input-icon--disabled'] = !value, _c));
+      var rightIconClass = classNames__default["default"]((_d = {}, _d['Input-icon'] = true, _d['Input-iconWrapper--right'] = true, _d));
       var trigger = /*#__PURE__*/React__namespace.createElement("div", {
-        className: rightIconClass
+        className: rightIconClass,
+        tabIndex: 0
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: 'info',
-        size: sizeMapping$1[size]
+        size: sizeMapping$1[size],
+        className: "Input-icon--right"
       }));
       return /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-InputWrapper",
@@ -4381,7 +5641,8 @@
           var _a;
 
           return (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus();
-        }
+        },
+        role: "presentation"
       }, inlineLabel && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Input-inlineLabel"
       }, /*#__PURE__*/React__namespace.createElement(Text, {
@@ -4407,18 +5668,26 @@
         onChange: onChange,
         onBlur: onBlur,
         onClick: onClick,
-        onFocus: onFocus
-      })), !value && !disabled || value && disabled || defaultValue && disabled ? info && /*#__PURE__*/React__namespace.createElement(Tooltip, {
+        onFocus: onFocus,
+        onPaste: onPaste
+      })), disabled ? '' : info ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
         position: "top",
         tooltip: info
-      }, trigger) : actionIcon ? actionIcon : onClear && value && !disabled && /*#__PURE__*/React__namespace.createElement("div", {
-        className: rightIconClass,
-        onClick: function onClick(e) {
-          return onClear(e);
-        }
+      }, trigger) : actionIcon && (value || defaultValue) ? actionIcon : onClear && (value || defaultValue) && /*#__PURE__*/React__namespace.createElement("div", {
+        className: rightIconClass
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-Input--closeIcon",
+        onClick: function onClick(e) {
+          var _a;
+
+          (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus({
+            preventScroll: true
+          });
+          onClear(e);
+        },
         name: 'close',
-        size: sizeMapping$1[size]
+        size: sizeMapping$1[size],
+        className: "Input-icon--right"
       })));
     });
     Input.displayName = 'Input';
@@ -4445,10 +5714,10 @@
     };
 
     var MetricInput = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
-      var _a, _b, _c;
+      var _a, _b, _c, _d;
 
-      var _d = props.size,
-          size = _d === void 0 ? 'regular' : _d,
+      var _e = props.size,
+          size = _e === void 0 ? 'regular' : _e,
           defaultValue = props.defaultValue,
           name = props.name,
           placeholder = props.placeholder,
@@ -4467,14 +5736,16 @@
           disabled = props.disabled,
           readOnly = props.readOnly,
           valueProp = props.value,
-          rest = __rest(props, ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value"]);
+          _f = props.showActionButton,
+          showActionButton = _f === void 0 ? true : _f,
+          rest = __rest(props, ["size", "defaultValue", "name", "placeholder", "icon", "prefix", "suffix", "error", "min", "max", "onChange", "onClick", "onBlur", "onFocus", "className", "autoFocus", "disabled", "readOnly", "value", "showActionButton"]);
 
       var ref = React__namespace.useRef(null);
       var isUncontrolled = valueProp === undefined;
 
-      var _e = React__namespace.useState(valueProp || defaultValue),
-          value = _e[0],
-          setValue = _e[1];
+      var _g = React__namespace.useState(valueProp || defaultValue),
+          value = _g[0],
+          setValue = _g[1];
 
       React__namespace.useImperativeHandle(forwardedRef, function () {
         return ref.current;
@@ -4492,15 +5763,10 @@
         }
       }, [valueProp]);
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['MetricInput'] = true, _a["MetricInput--" + size] = size, _a['MetricInput--disabled'] = disabled || readOnly, _a['MetricInput--error'] = error, _a), className);
-      var inputClass = classNames__default['default']((_b = {}, _b['MetricInput-input'] = true, _b["MetricInput-input--" + size] = size, _b));
-      var iconClass = classNames__default['default']((_c = {}, _c['MetricInput-icon'] = true, _c["MetricInput-icon--" + size] = size, _c));
-
-      var getArrowClass = function getArrowClass(direction) {
-        var _a;
-
-        return classNames__default['default']((_a = {}, _a['MetricInput-arrowIcon'] = true, _a["MetricInput-arrowIcon--" + size] = size, _a["MetricInput-arrowIcon--" + direction] = direction, _a));
-      };
+      var classes = classNames__default["default"]((_a = {}, _a['MetricInput'] = true, _a["MetricInput--" + size] = size, _a['MetricInput--disabled'] = disabled || readOnly, _a['MetricInput--error'] = error, _a), className);
+      var inputClass = classNames__default["default"]((_b = {}, _b['MetricInput-input'] = true, _b["MetricInput-input--" + size] = size, _b["mr-4"] = !suffix && !showActionButton && size === 'regular', _b["mr-6"] = !suffix && !showActionButton && size === 'large', _b));
+      var iconClass = classNames__default["default"]((_c = {}, _c['MetricInput-icon'] = true, _c["MetricInput-icon--" + size] = size, _c));
+      var actionButton = classNames__default["default"]((_d = {}, _d['p-0'] = true, _d["MetricInput-arrowIcon--" + size] = size, _d['ml-4'] = size === 'regular', _d['ml-6'] = size === 'large', _d));
 
       var onChangeHandler = function onChangeHandler(e) {
         if (isUncontrolled) {
@@ -4521,7 +5787,9 @@
         if (onChange) {
           var syntheticEvent = Object.create(e, {
             target: {
-              value: newValue
+              value: {
+                value: newValue
+              }
             }
           });
           onChange(syntheticEvent);
@@ -4547,15 +5815,18 @@
         }
       };
 
-      var iconSize = size === 'regular' ? 12 : 16;
+      var handleKeyDown = function handleKeyDown(e) {
+        if (showActionButton) {
+          onKeyDown(e);
+        } else e.preventDefault();
+      };
+
+      var actionButtonSize = size === 'large' ? 'regular' : 'tiny';
       return /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-MetricInputWrapper",
         className: classes,
-        onClick: function onClick() {
-          var _a;
-
-          return (_a = ref.current) === null || _a === void 0 ? void 0 : _a.focus();
-        }
+        onKeyDown: function onKeyDown() {},
+        role: "presentation"
       }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-MetricInput--icon",
         name: icon,
@@ -4583,27 +5854,26 @@
         onBlur: onBlur,
         onClick: onClick,
         onFocus: onFocus,
-        onKeyDown: onKeyDown
+        onKeyDown: handleKeyDown
       })), suffix && /*#__PURE__*/React__namespace.createElement(Text, {
         "data-test": "DesignSystem-MetricInput--suffix",
         className: size === 'regular' ? 'ml-4' : 'ml-5',
         size: size,
         appearance: "subtle"
-      }, suffix), /*#__PURE__*/React__namespace.createElement("div", {
-        className: "MetricInput-arrowIcons",
-        tabIndex: 0
-      }, /*#__PURE__*/React__namespace.createElement(Icon, {
-        className: getArrowClass('up'),
-        size: iconSize,
-        name: "keyboard_arrow_up",
+      }, suffix), showActionButton && /*#__PURE__*/React__namespace.createElement("div", {
+        className: "MetricInput-arrowIcons"
+      }, /*#__PURE__*/React__namespace.createElement(Button, {
+        icon: "keyboard_arrow_up",
+        size: actionButtonSize,
+        className: actionButton + " mb-2",
         onClick: function onClick(e) {
           return onArrowClick(e, 'up');
         },
         "data-test": "DesignSystem-MetricInput--upIcon"
-      }), /*#__PURE__*/React__namespace.createElement(Icon, {
-        className: getArrowClass('down'),
-        size: iconSize,
-        name: "keyboard_arrow_down",
+      }), /*#__PURE__*/React__namespace.createElement(Button, {
+        icon: "keyboard_arrow_down",
+        size: actionButtonSize,
+        className: actionButton,
         onClick: function onClick(e) {
           return onArrowClick(e, 'down');
         },
@@ -4611,22 +5881,6 @@
       })));
     });
     MetricInput.displayName = 'MetricInput';
-
-    function _typeof(obj) {
-      "@babel/helpers - typeof";
-
-      if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-        _typeof = function (obj) {
-          return typeof obj;
-        };
-      } else {
-        _typeof = function (obj) {
-          return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-        };
-      }
-
-      return _typeof(obj);
-    }
 
     var isEditable = function isEditable(mask, pos) {
       return _typeof(mask[pos]) === 'object';
@@ -4656,13 +5910,19 @@
           caption = props.caption,
           required = props.required,
           onChange = props.onChange,
+          onPaste = props.onPaste,
           onBlur = props.onBlur,
           onFocus = props.onFocus,
           onClear = props.onClear,
           className = props.className,
-          rest = __rest(props, ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onBlur", "onFocus", "onClear", "className"]);
+          id = props.id,
+          helpText = props.helpText,
+          rest = __rest(props, ["mask", "value", "placeholderChar", "validators", "clearOnEmptyBlur", "defaultValue", "mask", "error", "caption", "required", "onChange", "onPaste", "onBlur", "onFocus", "onClear", "className", "id", "helpText"]);
 
-      var getNewCursorPosition = function getNewCursorPosition(type, position) {
+      var isEditable = React__namespace.useCallback(function (pos) {
+        return _typeof(mask[pos]) === 'object';
+      }, [mask]);
+      var getNewCursorPosition = React__namespace.useCallback(function (type, position) {
         if (type === 'right') {
           for (var i = position; i < mask.length; i++) {
             if (isEditable(i)) return i;
@@ -4680,17 +5940,15 @@
         }
 
         return position;
-      };
-
-      var getDefaultSelection = function getDefaultSelection() {
+      }, [mask, isEditable]);
+      var getDefaultSelection = React__namespace.useCallback(function () {
         var pos = getNewCursorPosition('right', 0);
         return {
           start: pos,
           end: pos
         };
-      };
-
-      var getPlaceholderValue = function getPlaceholderValue(start, end) {
+      }, [getNewCursorPosition]);
+      var getPlaceholderValue = React__namespace.useCallback(function (start, end) {
         if (start === void 0) {
           start = 0;
         }
@@ -4700,64 +5958,57 @@
         }
 
         return getDefaultValue(mask, placeholderChar).slice(start, end + 1);
-      };
-
-      var getSelectionLength = function getSelectionLength(val) {
-        return Math.abs(val.end - val.start);
-      };
-
-      var isEditable = function isEditable(pos) {
-        return _typeof(mask[pos]) === 'object';
-      };
-
+      }, [mask, placeholderChar]);
+      var defaultPlaceholderValue = React__namespace.useMemo(function () {
+        return getPlaceholderValue();
+      }, [getPlaceholderValue]);
+      var defaultSelection = React__namespace.useMemo(function () {
+        return getDefaultSelection();
+      }, [getDefaultSelection]);
+      var ref = React__namespace.useRef(null);
       var deferId = React__namespace.useRef();
-      var selectionRef = React__namespace.useRef(0);
+      var selectionPos = React__namespace.useRef(defaultSelection);
+      var newSelectionPos = React__namespace.useRef(0);
 
       var _d = React__namespace.useState(defaultValue || valueProp || ''),
           value = _d[0],
           setValue = _d[1];
 
-      var _e = React__namespace.useState(getDefaultSelection()),
-          selection = _e[0],
-          setSelection = _e[1];
-
-      var ref = React__namespace.useRef(null);
       React__namespace.useImperativeHandle(forwardRef, function () {
         return ref.current;
       });
       React__namespace.useEffect(function () {
         setValue(valueProp || '');
       }, [valueProp]);
+      React__namespace.useEffect(function () {
+        setCursorPosition(newSelectionPos.current);
+      }, [value]);
+      var getSelectionLength = React__namespace.useCallback(function (val) {
+        return Math.abs(val.end - val.start);
+      }, []);
+      var getCurrSelection = React__namespace.useCallback(function () {
+        var _a, _b;
 
-      var setCursorPosition = function setCursorPosition(val) {
-        return setSelectionPos({
-          start: val,
-          end: val
-        });
-      };
-
-      var getCurrSelection = function getCurrSelection() {
         return {
-          start: ref.current.selectionStart || 0,
-          end: ref.current.selectionEnd || 0
+          start: ((_a = ref.current) === null || _a === void 0 ? void 0 : _a.selectionStart) || 0,
+          end: ((_b = ref.current) === null || _b === void 0 ? void 0 : _b.selectionEnd) || 0
         };
-      };
-
-      var setSelectionPos = function setSelectionPos(pos) {
+      }, [ref.current]);
+      var setSelectionPos = React__namespace.useCallback(function (pos) {
         if (ref.current) {
           var el = ref.current;
           var start = Math.min(pos.start, pos.end);
           var end = Math.max(pos.start, pos.end);
           el.setSelectionRange(start, end);
         }
-      };
-
-      var updateSelection = function updateSelection() {
-        setSelection(getCurrSelection());
-        deferId.current = window.requestAnimationFrame(updateSelection);
-      };
-
-      var insertAtIndex = function insertAtIndex(currValue, index, iterator) {
+      }, [ref.current]);
+      var setCursorPosition = React__namespace.useCallback(function (val) {
+        return setSelectionPos({
+          start: val,
+          end: val
+        });
+      }, [setSelectionPos]);
+      var insertAtIndex = React__namespace.useCallback(function (currValue, index, iterator) {
         if (iterator === void 0) {
           iterator = 0;
         }
@@ -4771,7 +6022,10 @@
         }
 
         if (iterator >= currValue.length) {
-          selectionRef.current = index;
+          selectionPos.current = {
+            start: index,
+            end: index
+          };
           return newValue;
         }
 
@@ -4791,12 +6045,55 @@
 
         newValue += insertAtIndex(currValue, newIndex, newIterator);
         return newValue;
+      }, [mask, placeholderChar, isEditable]);
+      var updateSelection = React__namespace.useCallback(function () {
+        selectionPos.current = getCurrSelection();
+        deferId.current = window.requestAnimationFrame(updateSelection);
+      }, [selectionPos.current, getCurrSelection]);
+
+      var matchSeparatorValue = function matchSeparatorValue(currValue) {
+        var separator = props.placeholder || 'dd/mm/yyyy';
+
+        if (separator.substring(0, 4) === 'yyyy') {
+          return currValue && currValue[4] === separator[4] && currValue[7] === separator[7];
+        }
+
+        return currValue && currValue[2] === separator[2] && currValue[5] === separator[5];
       };
 
-      var onChangeHandler = function onChangeHandler(e) {
-        var inputVal = e.currentTarget.value;
+      var isSameFormat = function isSameFormat(currValue, inputLength) {
+        var value = currValue.substring(0, inputLength);
+
+        if (inputLength === 23) {
+          var date = value.split(' - ');
+          var startVal = date[0];
+          var endVal = date[1];
+          return matchSeparatorValue(startVal) && matchSeparatorValue(endVal);
+        }
+
+        return matchSeparatorValue(value);
+      };
+
+      var onPasteHandler = function onPasteHandler(e) {
+        var _a;
+
+        e.preventDefault();
+        var pastedValue = (_a = e.clipboardData) === null || _a === void 0 ? void 0 : _a.getData('Text');
+        var sameFormat = isSameFormat(pastedValue, pastedValue.length);
+        var isValidDate = isValid(validators, pastedValue);
+
+        if (sameFormat && onPaste && isValidDate) {
+          onPaste(e, pastedValue);
+          setValue(pastedValue);
+        }
+      };
+
+      var onChangeHandler = React__namespace.useCallback(function (e) {
+        var _a;
+
+        var inputVal = (_a = e.currentTarget) === null || _a === void 0 ? void 0 : _a.value;
         var currSelection = getCurrSelection();
-        var start = Math.min(selection.start, currSelection.start);
+        var start = Math.min(selectionPos.current.start, currSelection.start);
         var end = currSelection.end;
         var cursorPosition = start;
         var enteredVal = '';
@@ -4805,24 +6102,35 @@
         var insertedStringLength = 0;
         enteredVal = inputVal.slice(start, end);
         updatedVal = insertAtIndex(enteredVal, start);
-        insertedStringLength = updatedVal.length;
+        var oldValue = value;
 
-        if (currSelection.end > selection.end) {
-          removedLength = insertedStringLength ? getSelectionLength(selection) : 0;
-        } else if (inputVal.length < value.length) {
-          removedLength = value.length - inputVal.length;
+        if (oldValue.length === 0 && (id === 'parent-TimePicker' || id === 'parent-DatePicker')) {
+          oldValue = defaultPlaceholderValue;
         }
 
-        cursorPosition += insertedStringLength;
-        var maskedVal = value.split('');
+        insertedStringLength = updatedVal.length;
+
+        if (currSelection.end > selectionPos.current.end) {
+          removedLength = insertedStringLength ? getSelectionLength(selectionPos.current) : 0;
+        } else if (inputVal.length < oldValue.length) {
+          removedLength = oldValue.length - inputVal.length;
+        }
+
+        var maskedVal = oldValue.split('');
 
         for (var i = 0; i < insertedStringLength; i++) {
           maskedVal[start + i] = updatedVal[i];
         }
 
         for (var i = 0; i < removedLength; i++) {
-          var index = start + insertedStringLength + i;
-          maskedVal[index] = getPlaceholderValue(index, index);
+          var index$1 = start + insertedStringLength + i;
+          maskedVal[index$1] = getPlaceholderValue(index$1, index$1);
+        }
+
+        var enteredValue = maskedVal.slice(0, mask.length).join('');
+
+        if (updatedVal !== placeholderChar && updatedVal !== '' && !updatedVal.includes(placeholderChar) && isValid(validators, enteredValue)) {
+          cursorPosition += insertedStringLength;
         }
 
         var newCursorPosition = getNewCursorPosition(removedLength ? 'left' : 'right', cursorPosition);
@@ -4836,56 +6144,58 @@
         }
 
         var newValue = maskedVal.slice(0, mask.length).join('');
-        window.requestAnimationFrame(function () {
-          return setCursorPosition(cursorPosition);
-        });
+        newSelectionPos.current = cursorPosition;
 
-        if (isValid(validators, newValue)) {
-          setValue(newValue);
-          if (onChange) onChange(e, newValue);
+        if (newValue !== oldValue && isValid(validators, newValue)) {
+          if (defaultPlaceholderValue === '__:__ _M') {
+            setValue(newValue.toUpperCase());
+            onChange === null || onChange === void 0 ? void 0 : onChange(e, newValue.toUpperCase());
+          } else {
+            setValue(newValue);
+            onChange === null || onChange === void 0 ? void 0 : onChange(e, newValue);
+          }
+        } else {
+          window.requestAnimationFrame(function () {
+            return setCursorPosition(newSelectionPos.current);
+          });
         }
-      };
-
-      var onBlurHandler = function onBlurHandler(e) {
+      }, [selectionPos.current, validators, getCurrSelection, insertAtIndex, getSelectionLength, getPlaceholderValue, getNewCursorPosition, isEditable, setCursorPosition, setValue, onChange]);
+      var onBlurHandler = React__namespace.useCallback(function (e) {
         var inputVal = e.currentTarget.value;
 
         if (clearOnEmptyBlur) {
-          if (inputVal === getPlaceholderValue()) {
+          if (inputVal === defaultPlaceholderValue) {
             setValue('');
             inputVal = '';
           }
         }
 
-        if (onBlur) onBlur(e, inputVal);
+        onBlur === null || onBlur === void 0 ? void 0 : onBlur(e, inputVal);
         if (deferId.current) window.cancelAnimationFrame(deferId.current);
-      };
-
-      var onClearHandler = function onClearHandler(e) {
-        setValue(getPlaceholderValue());
-        window.requestAnimationFrame(function () {
-          return setCursorPosition(getDefaultSelection().start);
-        });
-        if (onClear) onClear(e);
-      };
-
-      var onFocusHandler = function onFocusHandler(e) {
+      }, [clearOnEmptyBlur, deferId.current, getPlaceholderValue, setValue, onBlur]);
+      var onClearHandler = React__namespace.useCallback(function (e) {
+        newSelectionPos.current = defaultSelection.start;
+        setValue(defaultPlaceholderValue);
+        onClear === null || onClear === void 0 ? void 0 : onClear(e);
+      }, [setValue, getPlaceholderValue, setCursorPosition, getDefaultSelection, onClear]);
+      var onFocusHandler = React__namespace.useCallback(function (e) {
         deferId.current = window.requestAnimationFrame(updateSelection);
 
         if (!value) {
+          newSelectionPos.current = defaultSelection.start;
           setValue(getPlaceholderValue());
-          window.requestAnimationFrame(function () {
-            return setSelectionPos(getDefaultSelection());
-          });
         }
 
-        if (onFocus) onFocus(e);
-      };
-
-      var classes = classNames__default['default']({
-        'd-flex flex-column flex-grow-1': true
-      }, className);
+        onFocus === null || onFocus === void 0 ? void 0 : onFocus(e);
+      }, [deferId.current, value, updateSelection, setValue, setSelectionPos, onFocus]);
+      var classes = React__namespace.useMemo(function () {
+        return classNames__default["default"]({
+          'd-flex flex-column flex-grow-1': true
+        }, className);
+      }, [className]);
       return /*#__PURE__*/React__namespace.createElement("div", {
-        className: classes
+        className: classes,
+        "data-test": "DesignSystem-InputMask--Wrapper"
       }, /*#__PURE__*/React__namespace.createElement(Input, __assign({}, rest, {
         value: value,
         error: error,
@@ -4894,18 +6204,19 @@
         onChange: onChangeHandler,
         onClear: onClearHandler,
         onBlur: onBlurHandler,
+        onPaste: onPasteHandler,
         autoComplete: 'off',
         ref: ref
-      })), /*#__PURE__*/React__namespace.createElement(Caption, {
-        error: error,
-        withInput: true,
-        hide: !caption
-      }, caption));
+      })), /*#__PURE__*/React__namespace.createElement(HelpText, {
+        message: error ? caption : helpText,
+        error: error
+      }));
     });
     InputMask.displayName = 'InputMask';
     InputMask.utils = {
       getDefaultValue: getDefaultValue
     };
+    var X = InputMask;
 
     var Label = function Label(props) {
       var _a;
@@ -4919,10 +6230,10 @@
           rest = __rest(props, ["required", "optional", "withInput", "disabled", "children", "className"]);
 
       var baseProps = extractBaseProps(props);
-      var LabelClass = classNames__default['default']((_a = {
+      var LabelClass = classNames__default["default"]((_a = {
         Label: true
       }, _a['Label--withInput'] = withInput, _a['Label--optional'] = optional, _a), className);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         'Label-text': true,
         'Label--disabled': disabled
       });
@@ -4971,12 +6282,13 @@
           children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Caption: true
       }, _a['Caption--hidden'] = hide, _a['Caption--withInput'] = withInput, _a), className);
-      var errorIconClass = classNames__default['default']((_b = {}, _b['Caption-icon'] = true, _b));
+      var errorIconClass = classNames__default["default"]((_b = {}, _b['Caption-icon'] = true, _b));
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-        className: classes
+        className: classes,
+        "data-test": "DesignSystem-Caption"
       }), error && /*#__PURE__*/React__namespace.createElement("div", {
         className: errorIconClass
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
@@ -5004,7 +6316,7 @@
           _onClick = props.onClick,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var legendClass = classNames__default['default']((_a = {}, _a['Legend'] = true, _a), className);
+      var legendClass = classNames__default["default"]((_a = {}, _a['Legend'] = true, _a), className);
       var styles = {
         background: "var(--" + iconAppearance + ")",
         height: iconSize + "px",
@@ -5043,7 +6355,7 @@
           editing = props.editing,
           children = props.children;
       var baseProps = extractBaseProps(props);
-      var EditableClass = classNames__default['default']((_a = {}, _a['Editable'] = true, _a), className);
+      var EditableClass = classNames__default["default"]((_a = {}, _a['Editable'] = true, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Editable"
       }, baseProps, {
@@ -5087,9 +6399,9 @@
           showComponent = _f[0],
           setShowComponent = _f[1];
 
-      var CompClass = classNames__default['default']((_a = {}, _a['EditableDropdown'] = true, _a), className);
-      var DefaultCompClass = classNames__default['default']((_b = {}, _b['EditableDropdown-default'] = true, _b['d-none'] = showComponent, _b));
-      var EditableDropdownClass = classNames__default['default']((_c = {}, _c['d-none'] = !showComponent, _c));
+      var CompClass = classNames__default["default"]((_a = {}, _a['EditableDropdown'] = true, _a), className);
+      var DefaultCompClass = classNames__default["default"]((_b = {}, _b['EditableDropdown-default'] = true, _b['d-none'] = showComponent, _b));
+      var EditableDropdownClass = classNames__default["default"]((_c = {}, _c['d-none'] = !showComponent, _c));
       var baseProps = extractBaseProps(props);
 
       var getLabel = function getLabel(updatedLabel) {
@@ -5100,14 +6412,14 @@
         switch (eventType) {
           case 'edit':
             setEditing(true);
+            break;
 
           case 'hover':
             setShowComponent(true);
-            return;
+            break;
 
           case 'default':
             setShowComponent(false);
-            return;
         }
       };
 
@@ -5162,9 +6474,9 @@
           disabled = props.disabled,
           rest = __rest(props, ["children", "className", "appearance", "size", "disabled"]);
 
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Link: true
-      }, _a['Link--disabled'] = disabled, _a["Link--" + size] = size, _a["Link--" + appearance] = appearance, _a), className);
+      }, _a["Link--" + size] = size, _a["Link--" + appearance] = appearance, _a["Link--" + appearance + "-disabled"] = disabled, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
         "data-test": "DesignSystem-Link",
         className: classes,
@@ -5178,7 +6490,7 @@
       disabled: false
     };
 
-    var IconMapping$1 = {
+    var IconMapping$2 = {
       success: 'check_circle',
       info: 'info',
       warning: 'warning',
@@ -5187,15 +6499,16 @@
     var Message = function Message(props) {
       var _a, _b, _c, _d;
 
-      var appearance = props.appearance,
-          actions = props.actions,
+      var actions = props.actions,
           title = props.title,
           className = props.className;
+      var appearance = props.appearance;
+      appearance = appearance === 'default' ? 'info' : appearance;
       var baseProps = extractBaseProps(props);
-      var MessageClass = classNames__default['default']((_a = {}, _a['Message'] = true, _a["Message--" + appearance] = appearance, _a), className);
-      var IconClass = classNames__default['default']((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
-      var TitleClass = classNames__default['default']((_c = {}, _c['Message-heading'] = true, _c["Message-heading--" + appearance] = appearance, _c));
-      var DescriptionClass = classNames__default['default']((_d = {}, _d['Message-text'] = true, _d["Message-text--" + appearance] = appearance, _d));
+      var MessageClass = classNames__default["default"]((_a = {}, _a['Message'] = true, _a["Message--" + appearance] = appearance, _a), className);
+      var IconClass = classNames__default["default"]((_b = {}, _b['Message-icon'] = true, _b["Message-icon--" + appearance] = appearance, _b['Message-icon--withTitle'] = title, _b));
+      var TitleClass = classNames__default["default"]((_c = {}, _c['Message-heading'] = true, _c["Message-heading--" + appearance] = appearance, _c));
+      var DescriptionClass = classNames__default["default"]((_d = {}, _d['Message-text'] = true, _d["Message-text--" + appearance] = appearance, _d));
 
       var renderDescription = function renderDescription(description, children) {
         if (description || typeof children === 'string') {
@@ -5219,9 +6532,9 @@
         "data-test": "DesignSystem-Message"
       }, baseProps, {
         className: MessageClass
-      }), appearance !== 'default' && /*#__PURE__*/React__namespace.createElement(Icon, {
+      }), /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-Message--Icon",
-        name: IconMapping$1[appearance],
+        name: IconMapping$2[appearance],
         appearance: appearance,
         className: IconClass
       }), /*#__PURE__*/React__namespace.createElement("div", null, title && /*#__PURE__*/React__namespace.createElement(Heading, {
@@ -5235,7 +6548,7 @@
     };
     Message.displayName = 'Message';
     Message.defaultProps = {
-      appearance: 'default',
+      appearance: 'info',
       description: ''
     };
 
@@ -5245,12 +6558,15 @@
           iconAppearance = props.iconAppearance,
           labelAppearance = props.labelAppearance;
       return /*#__PURE__*/React__namespace.createElement("span", {
+        "data-test": "DesignSystem-MetaList--Meta",
         className: 'Meta'
       }, icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-MetaList--MetaIcon",
         name: icon,
         appearance: iconAppearance,
         className: 'Meta-icon'
       }), /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-MetaList--MetaLabel",
         appearance: labelAppearance
       }, label));
     };
@@ -5266,12 +6582,15 @@
           labelAppearance = props.labelAppearance,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var MetaClass = classNames__default['default']((_a = {}, _a['MetaList'] = true, _a), className);
-      var SeperatorClass = classNames__default['default']((_b = {}, _b['MetaList-seperator'] = true, _b));
-      var LeftSeperatorClass = classNames__default['default']((_c = {}, _c['MetaList-seperator'] = true, _c['MetaList-seperator--left'] = true, _c));
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+      var MetaClass = classNames__default["default"]((_a = {}, _a['MetaList'] = true, _a), className);
+      var SeperatorClass = classNames__default["default"]((_b = {}, _b['MetaList-seperator'] = true, _b));
+      var LeftSeperatorClass = classNames__default["default"]((_c = {}, _c['MetaList-seperator'] = true, _c['MetaList-seperator--left'] = true, _c));
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-MetaList"
+      }, baseProps, {
         className: MetaClass
       }), seperator && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-MetaList--Seperator",
         name: "fiber_manual_record",
         size: 8,
         className: LeftSeperatorClass,
@@ -5290,6 +6609,7 @@
           iconAppearance: iconAppearance,
           labelAppearance: labelAppearance
         }), rightSeperator && /*#__PURE__*/React__namespace.createElement(Icon, {
+          "data-test": "DesignSystem-MetaList--rightSeperator",
           name: "fiber_manual_record",
           size: 8,
           className: SeperatorClass,
@@ -5302,257 +6622,6 @@
       seperatorAppearance: 'disabled',
       iconAppearance: 'disabled',
       labelAppearance: 'subtle'
-    };
-
-    var OutsideClick = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-      var _a;
-
-      var children = props.children,
-          className = props.className,
-          onOutsideClick = props.onOutsideClick,
-          rest = __rest(props, ["children", "className", "onOutsideClick"]);
-
-      var innerRef = React__namespace.useRef(null);
-      React__namespace.useImperativeHandle(ref, function () {
-        return innerRef.current;
-      }, [innerRef]);
-      React__namespace.useEffect(function () {
-        document.addEventListener('click', handleOutsideClick, true);
-        return function () {
-          document.removeEventListener('click', handleOutsideClick);
-        };
-      }, []);
-      var handleOutsideClick = React__namespace.useCallback(function (event) {
-        var element = innerRef;
-
-        if (!event.target || !element.current) {
-          return;
-        }
-
-        if (!ReactDOM__namespace.findDOMNode(element.current).contains(event.target)) {
-          onOutsideClick(event);
-        }
-      }, []);
-      var classes = classNames__default['default']((_a = {}, _a['OutsideClick'] = true, _a), className);
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({
-        ref: innerRef
-      }, rest, {
-        className: classes
-      }), children);
-    });
-    OutsideClick.displayName = 'OutsideClick';
-
-    var Paragraph = function Paragraph(props) {
-      var _a;
-
-      var appearance = props.appearance,
-          children = props.children,
-          className = props.className,
-          rest = __rest(props, ["appearance", "children", "className"]);
-
-      var classes = classNames__default['default']((_a = {
-        Text: true
-      }, _a["Text--" + appearance] = appearance, _a), className);
-      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
-        "data-test": "DesignSystem-Paragraph"
-      }, rest, {
-        className: classes,
-        componentType: "p"
-      }), children);
-    };
-    Paragraph.displayName = 'Paragraph';
-    Paragraph.defaultProps = {
-      appearance: 'default'
-    };
-
-    var ProgressBar = function ProgressBar(props) {
-      var max = props.max,
-          value = props.value,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var style = {
-        width: value > 0 ? Math.min(value, max) * 100 / max + "%" : '0'
-      };
-      var ProgressBarClass = classNames__default['default']({
-        ProgressBar: true
-      }, className);
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({
-        "data-test": "DesignSystem-ProgressBar"
-      }, baseProps, {
-        className: ProgressBarClass
-      }), /*#__PURE__*/React__namespace.createElement("div", {
-        className: 'ProgressBar-indicator',
-        style: style
-      }));
-    };
-    ProgressBar.displayName = 'ProgressBar';
-    ProgressBar.defaultProps = {
-      max: 100
-    };
-
-    var Radio = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
-      var _a, _b, _c;
-
-      var _d = props.size,
-          size = _d === void 0 ? 'regular' : _d,
-          label = props.label,
-          disabled = props.disabled,
-          onChange = props.onChange,
-          name = props.name,
-          value = props.value,
-          checked = props.checked,
-          defaultChecked = props.defaultChecked,
-          className = props.className,
-          rest = __rest(props, ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className"]);
-
-      var ref = React__namespace.useRef(null);
-      React__namespace.useImperativeHandle(forwardedRef, function () {
-        return ref.current;
-      });
-      var RadioClass = classNames__default['default']((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a), className);
-      var RadioWrapper = classNames__default['default']((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-wrapper--" + size] = size, _b));
-      var RadioOuterWrapper = classNames__default['default']((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
-      var id = name + "-" + label + "-" + uidGenerator();
-      return /*#__PURE__*/React__namespace.createElement("div", {
-        className: RadioClass
-      }, /*#__PURE__*/React__namespace.createElement("div", {
-        className: RadioOuterWrapper
-      }, /*#__PURE__*/React__namespace.createElement("input", __assign({}, rest, {
-        type: "radio",
-        disabled: disabled,
-        checked: checked,
-        defaultChecked: defaultChecked,
-        ref: ref,
-        name: name,
-        value: value,
-        onChange: onChange,
-        className: "Radio-input",
-        id: id
-      })), /*#__PURE__*/React__namespace.createElement("span", {
-        className: RadioWrapper
-      })), label && /*#__PURE__*/React__namespace.createElement("label", {
-        className: "Radio-label",
-        htmlFor: id
-      }, /*#__PURE__*/React__namespace.createElement(Text, {
-        size: size === 'tiny' ? 'small' : 'regular',
-        appearance: disabled ? 'disabled' : 'default'
-      }, label)));
-    });
-    Radio.displayName = 'Radio';
-
-    var Row = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-      var _a;
-
-      var className = props.className,
-          children = props.children,
-          rest = __rest(props, ["className", "children"]);
-
-      var classes = classNames__default['default']((_a = {
-        Row: true
-      }, _a["" + className] = className, _a));
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({
-        "data-test": "DesignSystem-Row",
-        ref: ref
-      }, rest, {
-        className: classes
-      }), children);
-    });
-    Row.displayName = 'Row';
-
-    var StatusHint = function StatusHint(props) {
-      var _a, _b;
-
-      var appearance = props.appearance,
-          children = props.children,
-          _onMouseEnter = props.onMouseEnter,
-          _onMouseLeave = props.onMouseLeave,
-          _onClick = props.onClick,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var StatusHintClass = classNames__default['default']((_a = {}, _a['StatusHint'] = true, _a), className);
-      var StatusHintIconClass = classNames__default['default']((_b = {}, _b['StatusHint-icon'] = true, _b["StatusHint--" + appearance] = appearance, _b));
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({
-        "data-test": "DesignSystem-StatusHint"
-      }, baseProps, {
-        className: StatusHintClass,
-        onClick: function onClick(e) {
-          return _onClick && _onClick(e);
-        },
-        onMouseEnter: function onMouseEnter(e) {
-          return _onMouseEnter && _onMouseEnter(e);
-        },
-        onMouseLeave: function onMouseLeave(e) {
-          return _onMouseLeave && _onMouseLeave(e);
-        }
-      }), /*#__PURE__*/React__namespace.createElement("span", {
-        "data-test": "DesignSystem-StatusHint--Icon",
-        className: StatusHintIconClass
-      }), /*#__PURE__*/React__namespace.createElement(Text, {
-        "data-test": "DesignSystem-StatusHint--Text",
-        weight: 'medium'
-      }, children));
-    };
-    StatusHint.displayName = 'StatusHint';
-    StatusHint.defaultProps = {
-      appearance: 'default'
-    };
-
-    var Pills = function Pills(props) {
-      var _a;
-
-      var appearance = props.appearance,
-          children = props.children,
-          subtle = props.subtle,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
-        Pills: true
-      }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
-      return /*#__PURE__*/React__namespace.createElement("span", __assign({
-        "data-test": "DesignSystem-Pills"
-      }, baseProps, {
-        className: classes
-      }), children);
-    };
-    Pills.displayName = 'Pills';
-    Pills.defaultProps = {
-      appearance: 'secondary'
-    };
-
-    var Spinner = function Spinner(props) {
-      var _a, _b;
-
-      var appearance = props.appearance,
-          size = props.size,
-          className = props.className;
-      var baseProps = extractBaseProps(props);
-      var wrapperClasses = classNames__default['default']((_a = {
-        Spinner: true
-      }, _a["Spinner--" + size] = size, _a), className);
-      var circleClasses = classNames__default['default']((_b = {
-        Circle: true
-      }, _b["Circle--" + appearance] = appearance, _b));
-      var svgProps = {
-        viewBox: '0 0 50 50'
-      };
-      var circleProps = {
-        cx: 25,
-        cy: 25,
-        r: 20,
-        fill: 'none',
-        strokeMiterlimit: '10',
-        strokeWidth: '4'
-      };
-      return /*#__PURE__*/React__namespace.createElement("svg", __assign({}, baseProps, {
-        className: wrapperClasses
-      }, svgProps), /*#__PURE__*/React__namespace.createElement("circle", __assign({
-        className: circleClasses
-      }, circleProps)));
-    };
-    Spinner.displayName = 'Spinner';
-    Spinner.defaultProps = {
-      appearance: 'primary',
-      size: 'medium'
     };
 
     var ARROW_LEFT = 37;
@@ -5615,7 +6684,7 @@
         values[index] = fillValue;
       }
     }
-    function isElementOfType(element, _ComponentType) {
+    function isElementOfType(element) {
       return element != null && element.type != null;
     }
 
@@ -5725,13 +6794,13 @@
           var _a = _this.props,
               stepSize = _a.stepSize,
               value = _a.value;
-          var which = event.which;
+          var keyCode = event.keyCode;
 
-          if (which === ARROW_LEFT) {
+          if (keyCode === ARROW_LEFT) {
             _this.changeValue(value - stepSize);
 
             event.preventDefault();
-          } else if (which === ARROW_RIGHT) {
+          } else if (keyCode === ARROW_RIGHT) {
             _this.changeValue(value + stepSize);
 
             event.preventDefault();
@@ -5741,7 +6810,7 @@
         _this.handleKeyUp = function (event) {
           if (_this.props.disabled) return;
 
-          if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.which) >= 0) {
+          if ([ARROW_LEFT, ARROW_RIGHT].indexOf(event.keyCode) >= 0) {
             var onRelease = _this.props.onRelease;
             if (onRelease) onRelease(_this.props.value);
           }
@@ -5818,8 +6887,8 @@
         var style = {
           left: offsetCalc
         };
-        var className = classNames__default['default']((_a = {}, _a['Slider-handle'] = true, _a['Slider-handle--disabled'] = disabled, _a['Slider-handle--active'] = isHandleMoving, _a));
-        var TooltipClass = classNames__default['default']((_b = {}, _b['Slider-tooltip'] = true, _b['Tooltip'] = true, _b['d-none'] = !showTootlip, _b));
+        var className = classNames__default["default"]((_a = {}, _a['Slider-handle'] = true, _a['Slider-handle--disabled'] = disabled, _a['Slider-handle--active'] = isHandleMoving, _a['border-0'] = disabled, _a));
+        var TooltipClass = classNames__default["default"]((_b = {}, _b['Slider-tooltip'] = true, _b['Tooltip'] = true, _b['d-none'] = !showTootlip, _b));
         return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
           className: className,
           onMouseOver: this.handleMouseOver,
@@ -5829,7 +6898,8 @@
           onKeyUp: this.handleKeyUp,
           ref: this.refHandlers.handle,
           style: style,
-          tabIndex: 1
+          tabIndex: 0,
+          "data-test": "DesignSystem-MultiSlider-Handle"
         }), /*#__PURE__*/React__namespace.createElement("div", {
           className: TooltipClass,
           style: style
@@ -6063,6 +7133,8 @@
           });
 
           var _loop_1 = function _loop_1(i, offsetRatio) {
+            var _a;
+
             var offsetPercentage = formatPercentage(offsetRatio);
             var style = {
               left: offsetPercentage
@@ -6081,6 +7153,7 @@
               }
             };
 
+            var SliderTicksClass = classNames__default["default"]((_a = {}, _a['Slider-ticks'] = true, _a['bg-dark'] = active, _a));
             labels.push( /*#__PURE__*/React__namespace.createElement("div", {
               onClick: onClickHandler,
               className: 'Slider-label',
@@ -6089,9 +7162,10 @@
               onMouseOver: function onMouseOver() {
                 return _this.handleLabelMouseOver(i);
               },
-              onMouseLeave: _this.handleLabelMouseLeave
+              onMouseLeave: _this.handleLabelMouseLeave,
+              "data-test": "DesignSystem-MultiSlider-Label"
             }, /*#__PURE__*/React__namespace.createElement("span", {
-              className: 'Slider-ticks'
+              className: SliderTicksClass
             }), labelRenderer !== false && /*#__PURE__*/React__namespace.createElement(Text, {
               size: "small",
               appearance: active ? 'default' : 'disabled'
@@ -6125,7 +7199,7 @@
 
           var fillTrack = _this.getTrackFill(start, end);
 
-          var classes = classNames__default['default']((_a = {}, _a['Slider-progress'] = true, _a['Slider-progress--disabled'] = _this.props.disabled, _a['Slider-progress--inRange'] = fillTrack, _a['Slider-progress--inRangeDisabled'] = fillTrack && _this.props.disabled, _a));
+          var classes = classNames__default["default"]((_a = {}, _a['Slider-progress'] = true, _a['Slider-progress--disabled'] = _this.props.disabled, _a['Slider-progress--inRange'] = fillTrack, _a['Slider-progress--inRangeDisabled'] = fillTrack && _this.props.disabled, _a));
           return /*#__PURE__*/React__namespace.createElement("div", {
             key: "track-" + index,
             className: classes,
@@ -6210,10 +7284,11 @@
             label = _c.label,
             className = _c.className;
         var baseProps = extractBaseProps(this.props);
-        var SliderClass = classNames__default['default']((_a = {}, _a['Slider'] = true, _a), className);
-        var WrapperClass = classNames__default['default']((_b = {}, _b['Slider-wrapper'] = true, _b['Slider-wrapper--disabled'] = this.props.disabled, _b));
+        var SliderClass = classNames__default["default"]((_a = {}, _a['Slider'] = true, _a), className);
+        var WrapperClass = classNames__default["default"]((_b = {}, _b['Slider-wrapper'] = true, _b['Slider-wrapper--disabled'] = this.props.disabled, _b));
         return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-          className: SliderClass
+          className: SliderClass,
+          "data-test": "DesignSystem-MultiSlider"
         }), label && /*#__PURE__*/React__namespace.createElement(Label, {
           withInput: true
         }, label), /*#__PURE__*/React__namespace.createElement("div", {
@@ -6223,7 +7298,8 @@
           ref: function ref(_ref) {
             return _this.trackElement = _ref;
           },
-          onMouseDown: this.maybeHandleTrackClick
+          onMouseDown: this.maybeHandleTrackClick,
+          "data-test": "DesignSystem-MultiSlider-Slider-Track"
         }, this.renderTracks()), /*#__PURE__*/React__namespace.createElement("div", {
           className: "Slider-axis"
         }, this.renderLabels()), this.renderHandles()));
@@ -6239,6 +7315,274 @@
       MultiSlider.Handle = MultiSliderHandle;
       return MultiSlider;
     }(React__namespace.Component);
+
+    var OutsideClick = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      var _a;
+
+      var children = props.children,
+          className = props.className,
+          onOutsideClick = props.onOutsideClick,
+          rest = __rest(props, ["children", "className", "onOutsideClick"]);
+
+      var innerRef = React__namespace.useRef(null);
+      React__namespace.useImperativeHandle(ref, function () {
+        return innerRef.current;
+      }, [innerRef]);
+      React__namespace.useEffect(function () {
+        document.addEventListener('click', handleOutsideClick, true);
+        return function () {
+          document.removeEventListener('click', handleOutsideClick);
+        };
+      }, []);
+      var handleOutsideClick = React__namespace.useCallback(function (event) {
+        var element = innerRef;
+
+        if (!event.target || !element.current) {
+          return;
+        }
+
+        if (!element.current.contains(event.target)) {
+          onOutsideClick(event);
+        }
+      }, []);
+      var classes = classNames__default["default"]((_a = {}, _a['OutsideClick'] = true, _a), className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        ref: innerRef
+      }, rest, {
+        className: classes
+      }), children);
+    });
+    OutsideClick.displayName = 'OutsideClick';
+
+    var Paragraph = function Paragraph(props) {
+      var _a;
+
+      var appearance = props.appearance,
+          children = props.children,
+          className = props.className,
+          rest = __rest(props, ["appearance", "children", "className"]);
+
+      var classes = classNames__default["default"]((_a = {
+        Text: true
+      }, _a["Text--" + appearance] = appearance, _a), className);
+      return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
+        "data-test": "DesignSystem-Paragraph"
+      }, rest, {
+        className: classes,
+        componentType: "p"
+      }), children);
+    };
+    Paragraph.displayName = 'Paragraph';
+    Paragraph.defaultProps = {
+      appearance: 'default'
+    };
+
+    var ProgressBar = function ProgressBar(props) {
+      var max = props.max,
+          value = props.value,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var style = {
+        width: value > 0 ? Math.min(value, max) * 100 / max + "%" : '0'
+      };
+      var ProgressBarClass = classNames__default["default"]({
+        ProgressBar: true
+      }, className);
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-ProgressBar"
+      }, baseProps, {
+        className: ProgressBarClass
+      }), /*#__PURE__*/React__namespace.createElement("div", {
+        className: 'ProgressBar-indicator',
+        style: style
+      }));
+    };
+    ProgressBar.displayName = 'ProgressBar';
+    ProgressBar.defaultProps = {
+      max: 100
+    };
+
+    var Radio = /*#__PURE__*/React__namespace.forwardRef(function (props, forwardedRef) {
+      var _a, _b, _c, _d;
+
+      var _e = props.size,
+          size = _e === void 0 ? 'regular' : _e,
+          label = props.label,
+          disabled = props.disabled,
+          onChange = props.onChange,
+          name = props.name,
+          value = props.value,
+          checked = props.checked,
+          defaultChecked = props.defaultChecked,
+          className = props.className,
+          helpText = props.helpText,
+          error = props.error,
+          rest = __rest(props, ["size", "label", "disabled", "onChange", "name", "value", "checked", "defaultChecked", "className", "helpText", "error"]);
+
+      var ref = React__namespace.useRef(null);
+      React__namespace.useImperativeHandle(forwardedRef, function () {
+        return ref.current;
+      });
+      var RadioClass = classNames__default["default"]((_a = {}, _a['Radio'] = true, _a['Radio--disabled'] = disabled, _a), className);
+      var RadioWrapper = classNames__default["default"]((_b = {}, _b['Radio-wrapper'] = true, _b["Radio-defaultWrapper"] = !error, _b["Radio-errorWrapper"] = error, _b["Radio-wrapper--" + size] = size, _b));
+      var RadioOuterWrapper = classNames__default["default"]((_c = {}, _c['Radio-outerWrapper'] = true, _c["Radio-outerWrapper--" + size] = size, _c));
+      var RadioLabelClass = classNames__default["default"]((_d = {}, _d['Radio-Label'] = true, _d));
+      var id = name + "-" + label + "-" + uidGenerator();
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        className: RadioClass,
+        "data-test": "DesignSystem-Radio"
+      }, /*#__PURE__*/React__namespace.createElement("div", {
+        className: RadioOuterWrapper,
+        "data-test": "DesignSystem-Radio-OuterWrapper"
+      }, /*#__PURE__*/React__namespace.createElement("input", __assign({
+        tabIndex: -1
+      }, rest, {
+        type: "radio",
+        disabled: disabled,
+        checked: checked,
+        defaultChecked: defaultChecked,
+        ref: ref,
+        name: name,
+        value: value,
+        onChange: onChange,
+        className: "Radio-input",
+        id: id,
+        "data-test": "DesignSystem-Radio-Input"
+      })), /*#__PURE__*/React__namespace.createElement("span", {
+        tabIndex: 0,
+        "data-test": "DesignSystem-Radio-wrapper",
+        className: RadioWrapper
+      })), /*#__PURE__*/React__namespace.createElement("div", {
+        className: "Radio-labelWrapper"
+      }, label && /*#__PURE__*/React__namespace.createElement("label", {
+        className: RadioLabelClass,
+        htmlFor: id,
+        "data-test": "DesignSystem-Radio-Label"
+      }, /*#__PURE__*/React__namespace.createElement(Text, {
+        size: size === 'tiny' ? 'small' : 'regular',
+        appearance: disabled ? 'disabled' : 'default'
+      }, label)), helpText && /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-Radio-HelpText",
+        size: "small",
+        appearance: disabled ? 'disabled' : 'subtle'
+      }, helpText.trim())));
+    });
+    Radio.displayName = 'Radio';
+
+    var Row = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
+      var _a;
+
+      var className = props.className,
+          children = props.children,
+          rest = __rest(props, ["className", "children"]);
+
+      var classes = classNames__default["default"]((_a = {
+        Row: true
+      }, _a["" + className] = className, _a));
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-Row",
+        ref: ref
+      }, rest, {
+        className: classes
+      }), children);
+    });
+    Row.displayName = 'Row';
+
+    var StatusHint = function StatusHint(props) {
+      var _a, _b;
+
+      var appearance = props.appearance,
+          children = props.children,
+          _onMouseEnter = props.onMouseEnter,
+          _onMouseLeave = props.onMouseLeave,
+          _onClick = props.onClick,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var StatusHintClass = classNames__default["default"]((_a = {}, _a['StatusHint'] = true, _a), className);
+      var StatusHintIconClass = classNames__default["default"]((_b = {}, _b['StatusHint-icon'] = true, _b["StatusHint--" + appearance] = appearance, _b));
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-StatusHint"
+      }, baseProps, {
+        className: StatusHintClass,
+        onClick: function onClick(e) {
+          return _onClick && _onClick(e);
+        },
+        onMouseEnter: function onMouseEnter(e) {
+          return _onMouseEnter && _onMouseEnter(e);
+        },
+        onMouseLeave: function onMouseLeave(e) {
+          return _onMouseLeave && _onMouseLeave(e);
+        }
+      }), /*#__PURE__*/React__namespace.createElement("span", {
+        "data-test": "DesignSystem-StatusHint--Icon",
+        className: StatusHintIconClass
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-StatusHint--Text",
+        weight: 'medium'
+      }, children));
+    };
+    StatusHint.displayName = 'StatusHint';
+    StatusHint.defaultProps = {
+      appearance: 'default'
+    };
+
+    var Pills = function Pills(props) {
+      var _a;
+
+      var appearance = props.appearance,
+          children = props.children,
+          subtle = props.subtle,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var classes = classNames__default["default"]((_a = {
+        Pills: true
+      }, _a["Badge--" + appearance] = appearance && !subtle, _a["Badge--subtle-" + appearance] = subtle, _a), className);
+      return /*#__PURE__*/React__namespace.createElement("span", __assign({
+        "data-test": "DesignSystem-Pills"
+      }, baseProps, {
+        className: classes
+      }), children);
+    };
+    Pills.displayName = 'Pills';
+    Pills.defaultProps = {
+      appearance: 'secondary'
+    };
+
+    var Spinner = function Spinner(props) {
+      var _a, _b;
+
+      var appearance = props.appearance,
+          size = props.size,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var wrapperClasses = classNames__default["default"]((_a = {
+        Spinner: true
+      }, _a["Spinner--" + size] = size, _a), className);
+      var circleClasses = classNames__default["default"]((_b = {
+        Circle: true
+      }, _b["Circle--" + appearance] = appearance, _b));
+      var svgProps = {
+        viewBox: '0 0 50 50'
+      };
+      var circleProps = {
+        cx: 25,
+        cy: 25,
+        r: 20,
+        fill: 'none',
+        strokeMiterlimit: '10',
+        strokeWidth: '4'
+      };
+      return /*#__PURE__*/React__namespace.createElement("svg", __assign({}, baseProps, {
+        className: wrapperClasses
+      }, svgProps), /*#__PURE__*/React__namespace.createElement("circle", __assign({
+        className: circleClasses
+      }, circleProps)));
+    };
+    Spinner.displayName = 'Spinner';
+    Spinner.defaultProps = {
+      appearance: 'primary',
+      size: 'medium'
+    };
 
     var Slider = function Slider(props) {
       var valueProp = props.value,
@@ -6332,7 +7676,7 @@
           className = props.className,
           rest = __rest(props, ["appearance", "children", "className"]);
 
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Subheading: true
       }, _a["Subheading--" + appearance] = appearance, _a), className);
       return /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
@@ -6369,12 +7713,14 @@
       React__namespace.useEffect(function () {
         if (checkedProp !== undefined) setChecked(checkedProp);
       }, [checkedProp]);
-      var SwitchClass = classNames__default['default']((_a = {}, _a['Switch'] = true, _a['Switch--disabled'] = disabled, _a["Switch--" + size] = size, _a), className);
-      var SwitchWrapper = classNames__default['default']((_b = {}, _b['Switch-wrapper'] = true, _b['Switch-wrapper--disabled'] = disabled, _b["Switch-wrapper--" + size] = size, _b['Switch-wrapper--checked'] = checked, _b['Switch-wrapper--checkedDisabled'] = checked && disabled, _b));
+      var SwitchClass = classNames__default["default"]((_a = {}, _a['Switch'] = true, _a['Switch--disabled'] = disabled, _a["Switch--" + size] = size, _a), className);
+      var SwitchWrapper = classNames__default["default"]((_b = {}, _b['Switch-wrapper'] = true, _b['Switch-wrapper--disabled'] = disabled, _b["Switch-wrapper--" + size] = size, _b['Switch-wrapper--checked'] = checked, _b['Switch-wrapper--checkedDisabled'] = checked && disabled, _b));
 
       var onChangeHandler = function onChangeHandler(event) {
-        if (checkedProp === undefined) setChecked(!checked);
-        if (onChange) onChange(event, !checked);
+        if (event.type == 'change' || isSpaceKey(event)) {
+          if (checkedProp === undefined) setChecked(!checked);
+          if (onChange) onChange(event, !checked);
+        }
       };
 
       return /*#__PURE__*/React__namespace.createElement("div", {
@@ -6388,7 +7734,8 @@
         ref: ref,
         name: name,
         value: value,
-        className: "Switch-input"
+        className: "Switch-input",
+        onKeyUp: onChangeHandler
       })), /*#__PURE__*/React__namespace.createElement("span", {
         className: SwitchWrapper
       }));
@@ -6416,7 +7763,7 @@
           className = props.className,
           rest = __rest(props, ["rows", "resize", "disabled", "name", "placeholder", "value", "defaultValue", "required", "error", "onChange", "onClick", "onBlur", "onFocus", "className"]);
 
-      var classes = classNames__default['default']((_a = {}, _a['Textarea'] = true, _a['Textarea--resize'] = resize, _a['Textarea--error'] = error, _a), className);
+      var classes = classNames__default["default"]((_a = {}, _a['Textarea'] = true, _a['Textarea--resize'] = resize, _a['Textarea--error'] = error, _a), className);
       return /*#__PURE__*/React__namespace.createElement("textarea", __assign({
         "data-test": "DesignSystem-Textarea"
       }, rest, {
@@ -6443,7 +7790,7 @@
       var appearance = props.appearance,
           label = props.label,
           onClick = props.onClick;
-      var buttonClass = classNames__default['default']((_a = {}, _a['Button'] = true, _a['Button--tiny'] = true, _a['Toast-actionButton'] = true, _a["Toast-actionButton--" + appearance] = appearance, _a));
+      var buttonClass = classNames__default["default"]((_a = {}, _a['Button'] = true, _a['Button--tiny'] = true, _a['Toast-actionButton'] = true, _a["Toast-actionButton--" + appearance] = appearance, _a));
 
       var onClickHandler = function onClickHandler(e) {
         e.preventDefault();
@@ -6466,31 +7813,32 @@
     var Toast = function Toast(props) {
       var _a, _b, _c, _d;
 
-      var appearance = props.appearance,
-          title = props.title,
+      var title = props.title,
           message = props.message,
           actions = props.actions,
           onClose = props.onClose,
           className = props.className;
+      var appearance = props.appearance;
+      appearance = appearance === 'default' ? 'info' : appearance;
       var baseProps = extractBaseProps(props);
-      var wrapperClass = classNames__default['default']((_a = {}, _a['Toast'] = true, _a['Toast--withMessage'] = message, _a["Toast--" + appearance] = appearance, _a), className);
+      var wrapperClass = classNames__default["default"]((_a = {}, _a['Toast'] = true, _a['Toast--withMessage'] = message, _a["Toast--" + appearance] = appearance, _a), className);
       var IconMapping = {
         info: 'info',
         success: 'check_circle',
         alert: 'error',
-        warning: 'error'
+        warning: 'warning'
       };
       var icon = IconMapping[appearance];
-      var titleClass = classNames__default['default']((_b = {}, _b['Toast-title'] = true, _b['Toast-title--withMessage'] = message, _b));
+      var titleClass = classNames__default["default"]((_b = {}, _b['Toast-title'] = true, _b['Toast-title--withMessage'] = message, _b));
 
       var iconClass = function iconClass(align) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Toast-icon'] = true, _a["Toast-icon--" + align] = align, _a["Toast-icon--" + appearance] = appearance, _a));
+        return classNames__default["default"]((_a = {}, _a['Toast-icon'] = true, _a["Toast-icon--" + align] = align, _a["Toast-icon--" + appearance] = appearance, _a["Toast-close-icon--" + appearance] = appearance && align === 'right', _a));
       };
 
-      var textClass = classNames__default['default']((_c = {}, _c['Toast-text'] = true, _c["Toast-text--" + appearance] = appearance, _c));
-      var headingClass = classNames__default['default']((_d = {}, _d['Toast-heading'] = true, _d["Toast-heading--" + appearance] = appearance, _d));
+      var textClass = classNames__default["default"]((_c = {}, _c['Toast-text'] = true, _c["Toast-text--" + appearance] = appearance, _c));
+      var headingClass = classNames__default["default"]((_d = {}, _d['Toast-heading'] = true, _d["Toast-heading--" + appearance] = appearance, _d));
 
       var onCloseHandler = function onCloseHandler() {
         if (onClose) onClose();
@@ -6530,7 +7878,7 @@
     };
     Toast.displayName = 'Toast';
     Toast.defaultProps = {
-      appearance: 'default'
+      appearance: 'info'
     };
 
     var PopperWrapper = function (_super) {
@@ -6546,13 +7894,8 @@
           onToggle(newValue === undefined ? !open : newValue, type);
         };
 
-        _this.findDOMNode = function (ref) {
-          return ReactDOM__namespace.findDOMNode(ref.current);
-        };
-
         _this.doesEventContainsElement = function (event, ref) {
-          var el = _this.findDOMNode(ref);
-
+          var el = ref.current;
           return el && el.contains(event.target);
         };
 
@@ -6584,7 +7927,12 @@
           return newStyle;
         };
 
-        _this.state = {};
+        _this.state = {
+          animationKeyframe: '',
+          isOpen: _this.props.open || false,
+          uniqueKey: '',
+          showClosingAnimation: false
+        };
         _this.hoverableDelay = 100;
         _this.offsetMapping = {
           small: '2px',
@@ -6603,6 +7951,11 @@
 
       PopperWrapper.prototype.componentDidMount = function () {
         this.addBoundaryScrollHandler();
+        var triggerElement = this.triggerRef.current;
+        var zIndex = this.getZIndexForLayer(triggerElement);
+        this.setState({
+          zIndex: zIndex === undefined ? zIndex : zIndex + 1
+        });
       };
 
       PopperWrapper.prototype.componentDidUpdate = function (prevProps) {
@@ -6613,12 +7966,16 @@
 
         if (prevProps.open !== this.props.open) {
           this._throttleWait = false;
+          this.setState({
+            animationKeyframe: ''
+          });
 
           if (this.props.open) {
-            var triggerElement = this.findDOMNode(this.triggerRef);
+            var triggerElement = this.triggerRef.current;
             var zIndex = this.getZIndexForLayer(triggerElement);
             this.setState({
-              zIndex: zIndex === undefined ? zIndex : zIndex + 1
+              zIndex: zIndex === undefined ? zIndex : zIndex + 1,
+              isOpen: true
             });
           }
         }
@@ -6673,10 +8030,17 @@
           if (this._timer) clearTimeout(this._timer);
           var onToggle = this.props.onToggle;
           onToggle(true, 'mouseEnter');
+          this.setState(function () {
+            return {
+              isOpen: true
+            };
+          });
         }
       };
 
       PopperWrapper.prototype.handleMouseLeave = function () {
+        var _this = this;
+
         var on = this.props.on;
 
         if (on === 'hover') {
@@ -6688,6 +8052,16 @@
             this.mouseMoveHandler();
           } else {
             onToggle(false, 'mouseLeave');
+            this.setState({
+              showClosingAnimation: true
+            }, function () {
+              window.setTimeout(function () {
+                _this.setState({
+                  showClosingAnimation: false,
+                  isOpen: false
+                });
+              }, 120);
+            });
           }
         }
       };
@@ -6699,7 +8073,7 @@
 
         var layerNode = node.closest('[data-layer]') || document.body;
         var zIndex = layerNode === document.body ? 'auto' : parseInt(window.getComputedStyle(layerNode).zIndex || '0', 10);
-        return zIndex === 'auto' || isNaN(zIndex) ? undefined : zIndex;
+        return zIndex === 'auto' || isNaN(zIndex) ? 500 : zIndex;
       };
 
       PopperWrapper.prototype.getTriggerElement = function (ref) {
@@ -6721,14 +8095,40 @@
             _this.togglePopper('onClick');
           }
         };
-        var classes = classNames__default['default']('PopperWrapper-trigger', triggerClass);
+        var classes = classNames__default["default"]('PopperWrapper-trigger', triggerClass);
+
+        var shouldPopoverClose = function shouldPopoverClose(clicked) {
+          var popover = _this.popupRef.current;
+          var container = document.body;
+          var popoverIndex = parseInt(window.getComputedStyle(popover).zIndex);
+          var clickInsideLayer = false;
+          var shouldClose = false;
+          var openedLayers = container.querySelectorAll('[data-opened="true"]');
+          openedLayers.forEach(function (layer) {
+            if (layer.contains(clicked)) {
+              clickInsideLayer = true;
+              var clickedIndex = parseInt(window.getComputedStyle(layer).zIndex);
+
+              if (popoverIndex > clickedIndex) {
+                shouldClose = true;
+                return;
+              }
+            }
+          });
+
+          if (container.isEqualNode(clicked) || shouldClose || !container.contains(clicked) || !clickInsideLayer) {
+            return true;
+          }
+
+          return false;
+        };
 
         var onOutsideClickHandler = function onOutsideClickHandler(event) {
           var _a = _this.props,
               open = _a.open,
               closeOnBackdropClick = _a.closeOnBackdropClick;
 
-          if (open && closeOnBackdropClick) {
+          if (open && shouldPopoverClose(event.target) && closeOnBackdropClick) {
             if (!_this.doesEventContainsElement(event, _this.popupRef)) {
               _this.togglePopper('outsideClick');
             }
@@ -6742,25 +8142,75 @@
       };
 
       PopperWrapper.prototype.getPopperChildren = function (_a) {
+        var _b;
+
+        var _this = this;
+
+        var _c, _d;
+
         var ref = _a.ref,
             style = _a.style,
             placement = _a.placement,
             outOfBoundaries = _a.outOfBoundaries;
-        var _b = this.props,
-            offset = _b.offset,
-            children = _b.children;
-        var zIndex = this.state.zIndex;
+        var _e = this.props,
+            offset = _e.offset,
+            children = _e.children,
+            open = _e.open,
+            animationClass = _e.animationClass;
+        var _f = this.state,
+            zIndex = _f.zIndex,
+            animationKeyframe = _f.animationKeyframe,
+            uniqueKey = _f.uniqueKey;
         var newStyle = offset ? this.getUpdatedStyle(style, placement, offset) : style;
-        var element = /*#__PURE__*/React__namespace.cloneElement(children, {
+
+        var childrenStyles = __assign(__assign({}, newStyle), {
+          zIndex: zIndex
+        });
+
+        var classes = '';
+
+        if (!animationClass) {
+          var maxHeight = (_c = this.popupRef.current) === null || _c === void 0 ? void 0 : _c.offsetHeight;
+          var transformStyles = (_d = this.popupRef.current) === null || _d === void 0 ? void 0 : _d.style.getPropertyValue('transform');
+
+          if (transformStyles && maxHeight && placement && !animationKeyframe) {
+            var uniqueKey_1 = Math.random().toString(36).substring(2, 6);
+            var isTop = placement.includes('top');
+            var popperAnimation = "\n        @keyframes popper-open-" + uniqueKey_1 + " {\n          from { \n            max-height: 0;\n            " + (isTop ? "margin-top: " + maxHeight + "px" : '') + ";\n          }\n          to {\n            max-height: " + maxHeight + "px;\n            " + (isTop ? "margin-top: 0px" : '') + ";\n          }\n        }\n        @keyframes popper-close-" + uniqueKey_1 + " {\n          from {\n            max-height: " + maxHeight + "px;\n            " + (isTop ? "margin-top: 0px" : '') + ";\n          }\n          to {\n            max-height: 0;\n            " + (isTop ? "margin-top: " + maxHeight + "px" : '') + ";\n          }\n        }\n        ";
+            this.setState({
+              animationKeyframe: popperAnimation,
+              uniqueKey: uniqueKey_1
+            });
+          }
+
+          var popperAnimationStyles = {
+            animation: open ? "popper-open-" + uniqueKey + " 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms" : "popper-close-" + uniqueKey + " 120ms cubic-bezier(0.2, 0, 1, 0.9) 120ms, fadeOut 120ms 120ms"
+          };
+          childrenStyles = __assign(__assign(__assign({}, childrenStyles), popperAnimationStyles), {
+            overflow: 'hidden'
+          });
+        } else {
+          classes = classNames__default["default"]((_b = {}, _b["" + animationClass.open] = this.state.isOpen, _b["" + animationClass.close] = !this.state.isOpen, _b), children.props.className);
+        }
+
+        var childProps = {
           ref: ref,
-          style: __assign(__assign({}, newStyle), {
-            zIndex: zIndex
-          }),
+          style: childrenStyles,
           'data-placement': placement,
           'data-hide': outOfBoundaries,
           onMouseEnter: this.handleMouseEnter,
-          onMouseLeave: this.handleMouseLeave
-        });
+          onMouseLeave: this.handleMouseLeave,
+          onAnimationEnd: function onAnimationEnd() {
+            if (!open) {
+              _this.setState({
+                isOpen: false
+              });
+            }
+          }
+        };
+        var element = /*#__PURE__*/React__namespace.cloneElement(children, animationClass ? __assign(__assign({}, childProps), {
+          className: classes
+        }) : __assign({}, childProps));
         return element;
       };
 
@@ -6770,15 +8220,17 @@
         var _a = this.props,
             placement = _a.placement,
             appendToBody = _a.appendToBody,
-            open = _a.open,
             hide = _a.hide,
             boundaryElement = _a.boundaryElement;
-        return /*#__PURE__*/React__namespace.createElement(reactPopper.Manager, null, /*#__PURE__*/React__namespace.createElement(reactPopper.Reference, {
+        var _b = this.state,
+            animationKeyframe = _b.animationKeyframe,
+            isOpen = _b.isOpen;
+        return /*#__PURE__*/React__namespace.createElement(reactPopper.Manager, null, /*#__PURE__*/React__namespace.createElement("style", null, animationKeyframe), /*#__PURE__*/React__namespace.createElement(reactPopper.Reference, {
           innerRef: this.triggerRef
         }, function (_a) {
           var ref = _a.ref;
           return _this.getTriggerElement(ref);
-        }), open && appendToBody && /*#__PURE__*/ReactDOM__namespace.createPortal( /*#__PURE__*/React__namespace.createElement(reactPopper.Popper, {
+        }), isOpen && appendToBody && /*#__PURE__*/ReactDOM__namespace.createPortal( /*#__PURE__*/React__namespace.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef,
           modifiers: {
@@ -6789,7 +8241,7 @@
               enabled: hide
             }
           }
-        }, this.getPopperChildren), document.body), open && !appendToBody && /*#__PURE__*/React__namespace.createElement(reactPopper.Popper, {
+        }, this.getPopperChildren), document.body), isOpen && !appendToBody && /*#__PURE__*/React__namespace.createElement(reactPopper.Popper, {
           placement: placement,
           innerRef: this.popupRef
         }, this.getPopperChildren));
@@ -6806,7 +8258,7 @@
       return PopperWrapper;
     }(React__namespace.Component);
 
-    var propsList$1 = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
+    var propsList = ['appendToBody', 'trigger', 'hoverable', 'on', 'open', 'closeOnBackdropClick', 'offset', 'closeOnScroll'];
     var Popover = function Popover(props) {
       var _a;
 
@@ -6817,16 +8269,17 @@
           onToggle = props.onToggle,
           className = props.className,
           hideOnReferenceEscape = props.hideOnReferenceEscape,
-          boundaryElement = props.boundaryElement,
+          _b = props.boundaryElement,
+          boundaryElement = _b === void 0 ? document.body : _b,
           rest = __rest(props, ["position", "customStyle", "dark", "children", "onToggle", "className", "hideOnReferenceEscape", "boundaryElement"]);
 
-      var _b = React__namespace.useState(!!props.open),
-          open = _b[0],
-          setOpen = _b[1];
+      var _c = React__namespace.useState(!!props.open),
+          open = _c[0],
+          setOpen = _c[1];
 
-      var _c = React__namespace.useState(false),
-          init = _c[0],
-          setInit = _c[1];
+      var _d = React__namespace.useState(false),
+          init = _d[0],
+          setInit = _d[1];
 
       React__namespace.useEffect(function () {
         if (props.open !== undefined) setOpen(props.open);
@@ -6841,13 +8294,14 @@
           }
         }
       }, [boundaryElement]);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         Popover: true
       }, _a['Popover--dark'] = dark, _a), className);
       var PopoverWrapper = /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Popover",
         className: classes,
-        "data-layer": true
+        "data-layer": true,
+        "data-opened": open
       }, children);
       return /*#__PURE__*/React__namespace.createElement(PopperWrapper, __assign({}, rest, {
         init: init,
@@ -6860,12 +8314,11 @@
       }), PopoverWrapper);
     };
     Popover.displayName = 'Popover';
-    Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList$1, true), {
+    Popover.defaultProps = Object.assign({}, filterProps(PopperWrapper.defaultProps, propsList, true), {
       offset: 'large',
       position: 'bottom',
       hideOnReferenceEscape: true,
-      customStyle: {},
-      boundaryElement: document.body
+      customStyle: {}
     });
 
     var keyCodes = {
@@ -6903,7 +8356,7 @@
           setChips(value);
         }
       }, [value]);
-      var ChipInputClass = classNames__default['default']((_a = {
+      var ChipInputClass = classNames__default["default"]((_a = {
         ChipInput: true
       }, _a['ChipInput--disabled'] = disabled, _a['ChipInput--withChips'] = chips.length > 0, _a), className);
 
@@ -7039,7 +8492,7 @@
       return disabled ? 'disabled' : isActive ? 'link' : 'default';
     };
     var getIconAppearance = function getIconAppearance(isActive, disabled) {
-      return disabled ? 'disabled' : isActive ? 'info' : 'default';
+      return disabled ? 'disabled' : isActive ? 'primary_dark' : 'default';
     };
     var getPillsAppearance = function getPillsAppearance(isActive) {
       return isActive ? 'primary' : 'secondary';
@@ -7070,6 +8523,42 @@
 
       return false;
     };
+    var getNavItemColor = function getNavItemColor(isActive, disabled) {
+      return disabled ? 'inverse-lightest' : isActive ? 'primary-dark' : 'inverse';
+    };
+
+    var _MenuLabel = function MenuLabel(props) {
+      var label = props.label,
+          labelColor = props.labelColor;
+      return /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-VerticalNav--Text",
+        color: labelColor,
+        className: "MenuItem-Text"
+      }, label);
+    };
+
+    var _MenuIcon = function MenuIcon(props) {
+      var isChildrenVisible = props.isChildrenVisible;
+      return /*#__PURE__*/React__namespace.createElement(Icon, {
+        className: "mx-4",
+        name: isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down'
+      });
+    };
+
+    var _MenuPills = function MenuPills(props) {
+      var _a;
+
+      var disabled = props.disabled,
+          isActive = props.isActive,
+          count = props.count;
+      var PillsClass = classNames__default["default"]((_a = {}, _a['MenuItem-count'] = true, _a['MenuItem-count--disabled'] = disabled, _a));
+      return /*#__PURE__*/React__namespace.createElement(Pills, {
+        subtle: disabled,
+        className: PillsClass,
+        appearance: getPillsAppearance(isActive),
+        "data-test": "DesignSystem-VerticalNav--Pills"
+      }, count);
+    };
 
     var MenuItem = function MenuItem(props) {
       var _a;
@@ -7081,56 +8570,78 @@
           hasSubmenu = props.hasSubmenu,
           isChildren = props.isChildren,
           isChildrenVisible = props.isChildrenVisible,
-          onClick = props.onClick;
-      var baseProps = extractBaseProps(props);
+          onClick = props.onClick,
+          customItemRenderer = props.customItemRenderer;
 
-      var onClickHandler = function onClickHandler() {
+      var onClickHandler = function onClickHandler(ev) {
+        ev.preventDefault();
         if (onClick) onClick(menu);
       };
 
-      var ItemClass = classNames__default['default']((_a = {}, _a['MenuItem'] = true, _a['MenuItem--vertical'] = true, _a['MenuItem--collapsed'] = !expanded, _a['MenuItem--expanded'] = expanded, _a['MenuItem--active'] = isActive, _a['MenuItem--disabled'] = menu.disabled, _a['MenuItem--subMenu'] = isChildren && expanded, _a['MenuItem--rounded'] = rounded && expanded, _a));
+      var baseProps = __assign({
+        onClick: onClickHandler,
+        href: menu.link,
+        tabIndex: 0
+      }, extractBaseProps(props));
+
+      var itemColor = getNavItemColor(isActive, menu.disabled);
+      var ItemClass = classNames__default["default"]((_a = {}, _a['MenuItem'] = true, _a['MenuItem--vertical'] = true, _a['MenuItem--collapsed'] = !expanded, _a['MenuItem--expanded'] = expanded, _a['MenuItem--active'] = isActive, _a['MenuItem--disabled'] = menu.disabled, _a['MenuItem--subMenu'] = isChildren && expanded, _a['MenuItem--rounded'] = rounded && expanded, _a["color-" + itemColor] = true, _a));
 
       var renderSubMenu = function renderSubMenu() {
-        var _a;
-
         if (hasSubmenu) {
-          return /*#__PURE__*/React__namespace.createElement(Icon, {
-            className: "mx-4",
-            name: isChildrenVisible ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
-            appearance: "subtle"
+          return /*#__PURE__*/React__namespace.createElement(_MenuIcon, {
+            isChildrenVisible: isChildrenVisible
           });
         }
 
         if (menu.count !== undefined) {
           var count = menu.count > 99 ? '99+' : menu.count;
-          var PillsClass = classNames__default['default']((_a = {}, _a['MenuItem-count'] = true, _a['MenuItem-count--disabled'] = menu.disabled, _a));
-          return /*#__PURE__*/React__namespace.createElement(Pills, {
-            subtle: menu.disabled,
-            className: PillsClass,
-            appearance: getPillsAppearance(isActive),
-            "data-test": "DesignSystem-VerticalNav--Pills"
-          }, count);
+          return /*#__PURE__*/React__namespace.createElement(_MenuPills, {
+            disabled: menu.disabled,
+            isActive: isActive,
+            count: count
+          });
         }
 
         return null;
       };
 
       if (!expanded && !menu.icon) return null;
-      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+
+      var customItemProps = __assign(__assign({}, props), {
+        MenuIcon: function MenuIcon() {
+          return _MenuIcon({
+            isChildrenVisible: isChildrenVisible
+          });
+        },
+        MenuLabel: function MenuLabel() {
+          return _MenuLabel({
+            label: menu.label,
+            labelColor: itemColor
+          });
+        },
+        MenuPills: function MenuPills() {
+          return menu.count !== undefined ? _MenuPills({
+            disabled: menu.disabled,
+            isActive: isActive,
+            count: menu.count
+          }) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null);
+        }
+      });
+
+      return customItemRenderer ? customItemRenderer(customItemProps) : /*#__PURE__*/React__namespace.createElement(GenericText, __assign({
+        componentType: "a",
         className: ItemClass
-      }, baseProps, {
-        onClick: onClickHandler
-      }), /*#__PURE__*/React__namespace.createElement("div", {
+      }, baseProps), /*#__PURE__*/React__namespace.createElement("div", {
         className: "d-flex align-items-center overflow-hidden"
       }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-VerticalNav--Icon",
         className: expanded ? 'mr-4' : '',
-        name: menu.icon,
-        appearance: getIconAppearance(isActive, menu.disabled)
-      }), expanded && /*#__PURE__*/React__namespace.createElement(Text, {
-        "data-test": "DesignSystem-VerticalNav--Text",
-        appearance: getTextAppearance(isActive, menu.disabled)
-      }, menu.label)), expanded && renderSubMenu());
+        name: menu.icon
+      }), expanded && /*#__PURE__*/React__namespace.createElement(_MenuLabel, {
+        label: menu.label,
+        labelColor: itemColor
+      })), expanded && renderSubMenu());
     };
     MenuItem.defaultProps = {
       isActive: false
@@ -7145,7 +8656,9 @@
           expanded = props.expanded,
           rounded = props.rounded,
           autoCollapse = props.autoCollapse,
-          className = props.className;
+          className = props.className,
+          customItemRenderer = props.customItemRenderer,
+          showTooltip = props.showTooltip;
 
       var _b = React__namespace.useState({}),
           menuState = _b[0],
@@ -7206,15 +8719,20 @@
           var hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
           var isChildrenVisible = hasSubmenu && menuState[menu.name];
           var hasGroup = index === 0 || menus[index - 1].group !== menu.group;
-          var sectionClass = classNames__default['default']((_a = {}, _a['VerticalNav-section'] = true, _a['VerticalNav-section--border'] = index !== 0, _a));
-          return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, hasGroup && menu.group && expanded && /*#__PURE__*/React__namespace.createElement("div", {
+          var sectionClass = classNames__default["default"]((_a = {}, _a['VerticalNav-section'] = true, _a['VerticalNav-section--border'] = index !== 0, _a));
+          return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, {
+            key: index
+          }, hasGroup && menu.group && expanded && /*#__PURE__*/React__namespace.createElement("div", {
             className: sectionClass
           }, /*#__PURE__*/React__namespace.createElement(Text, {
             "data-test": "DesignSystem-VerticalNav--Section",
             size: "small",
             weight: "strong",
             appearance: "subtle"
-          }, menu.group)), /*#__PURE__*/React__namespace.createElement(MenuItem, {
+          }, menu.group)), showTooltip ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
+            tooltip: menu.label,
+            position: "right"
+          }, /*#__PURE__*/React__namespace.createElement(MenuItem, {
             "data-test": "DesignSystem-VerticalNav--Item",
             menu: menu,
             expanded: expanded,
@@ -7223,9 +8741,24 @@
             isChildren: false,
             rounded: rounded,
             isChildrenVisible: isChildrenVisible,
-            onClick: onClickHandler
+            onClick: onClickHandler,
+            customItemRenderer: customItemRenderer
+          })) : /*#__PURE__*/React__namespace.createElement(MenuItem, {
+            "data-test": "DesignSystem-VerticalNav--Item",
+            menu: menu,
+            expanded: expanded,
+            isActive: isActive,
+            hasSubmenu: hasSubmenu,
+            isChildren: false,
+            rounded: rounded,
+            isChildrenVisible: isChildrenVisible,
+            onClick: onClickHandler,
+            customItemRenderer: customItemRenderer
           }), menuState[menu.name] && menu.subMenu && menu.subMenu.map(function (subMenu, id) {
-            return /*#__PURE__*/React__namespace.createElement(MenuItem, {
+            return showTooltip ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
+              tooltip: subMenu.label,
+              position: "right"
+            }, /*#__PURE__*/React__namespace.createElement(MenuItem, {
               key: id,
               menu: subMenu,
               expanded: expanded,
@@ -7233,14 +8766,25 @@
               isChildren: true,
               rounded: rounded,
               onClick: onClickHandler,
-              isActive: isMenuActive(menus, subMenu, active)
+              isActive: isMenuActive(menus, subMenu, active),
+              customItemRenderer: customItemRenderer
+            })) : /*#__PURE__*/React__namespace.createElement(MenuItem, {
+              key: id,
+              menu: subMenu,
+              expanded: expanded,
+              hasSubmenu: false,
+              isChildren: true,
+              rounded: rounded,
+              onClick: onClickHandler,
+              isActive: isMenuActive(menus, subMenu, active),
+              customItemRenderer: customItemRenderer
             });
           }));
         });
-        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, list);
+        return list;
       };
 
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         VerticalNav: true
       }, _a['VerticalNav--expanded'] = expanded, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
@@ -7250,7 +8794,8 @@
     VerticalNav.defaultProps = {
       expanded: true,
       autoCollapse: true,
-      rounded: false
+      rounded: false,
+      showTooltip: false
     };
 
     var HorizontalNav = function HorizontalNav(props) {
@@ -7261,7 +8806,7 @@
           onClick = props.onClick,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['HorizontalNav'] = true, _a), className);
+      var classes = classNames__default["default"]((_a = {}, _a['HorizontalNav'] = true, _a), className);
 
       var onClickHandler = function onClickHandler(menu) {
         return function () {
@@ -7272,7 +8817,7 @@
       var getPillsClass = function getPillsClass(disabled) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['HorizontalNav-pills'] = true, _a['HorizontalNav-pills--disabled'] = disabled, _a));
+        return classNames__default["default"]((_a = {}, _a['HorizontalNav-pills'] = true, _a['HorizontalNav-pills--disabled'] = disabled, _a['HorizontalNav-animate'] = true, _a));
       };
 
       var renderIcon = function renderIcon(menu, isActive) {
@@ -7288,9 +8833,8 @@
 
         if (menu.icon) {
           return /*#__PURE__*/React__namespace.createElement(Icon, {
-            className: "mr-3",
+            className: "mr-3 HorizontalNav-animate",
             name: menu.icon,
-            appearance: getIconAppearance(isActive, menu.disabled),
             "data-test": "DesignSystem-HorizontalNav--Icon"
           });
         }
@@ -7302,18 +8846,21 @@
         var _a;
 
         var isActive = isMenuActive(menus, menu, active);
-        var menuClasses = classNames__default['default']((_a = {
-          'HorizontalNav-menu': true
-        }, _a['HorizontalNav-menu--active'] = isActive, _a['HorizontalNav-menu--disabled'] = menu.disabled, _a));
+        var itemColor = getNavItemColor(isActive, menu.disabled);
+        var menuClasses = classNames__default["default"]((_a = {
+          'HorizontalNav-menu': true,
+          'HorizontalNav-menu--default': !isActive && !menu.disabled
+        }, _a['HorizontalNav-menu--active'] = isActive, _a['HorizontalNav-menu--disabled'] = menu.disabled, _a["HorizontalNav-animate"] = true, _a["color-" + itemColor] = true, _a));
         return /*#__PURE__*/React__namespace.createElement("div", {
+          tabIndex: 0,
           "data-test": "DesignSystem-HorizontalNav",
           key: index,
           className: menuClasses,
           onClick: onClickHandler(menu)
         }, renderIcon(menu, isActive), /*#__PURE__*/React__namespace.createElement(Text, {
-          appearance: getTextAppearance(isActive, menu.disabled),
+          color: itemColor,
           "data-test": "DesignSystem-HorizontalNav--Text",
-          className: "HorizontalNav-menuText"
+          className: "HorizontalNav-menuText HorizontalNav-animate"
         }, menu.label));
       });
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
@@ -7321,7 +8868,17 @@
       }), list);
     };
 
-    var propsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
+    var tooltipPropsList = ['trigger', 'on', 'open', 'offset', 'onToggle', 'dark', 'customStyle', 'closeOnBackdropClick', 'hideOnReferenceEscape', 'closeOnScroll'];
+    var positionValue = {
+      bottom: 'bottom',
+      top: 'top',
+      'top-start': 'top',
+      'top-end': 'top',
+      'bottom-start': 'bottom',
+      'bottom-end': 'bottom',
+      left: 'left',
+      right: 'right'
+    };
     var Tooltip = function Tooltip(props) {
       var children = props.children,
           tooltip = props.tooltip,
@@ -7337,9 +8894,15 @@
         trigger: children,
         on: 'hover',
         offset: 'medium'
-      }, rest), tooltipWrapper);
+      }, rest, {
+        animationClass: {
+          open: "Tooltip-animation-open-" + positionValue[props.position],
+          close: "Tooltip-animation-close-" + positionValue[props.position]
+        },
+        className: "Tooltip-container"
+      }), tooltipWrapper);
     };
-    Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, propsList), {
+    Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
       hoverable: false
     });
 
@@ -7367,10 +8930,12 @@
           heading: heading
         },
         footer: /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           "data-test": "DesignSystem-Dialog--SecondaryButton",
           appearance: secondaryButtonAppearance,
           onClick: secondaryButtonCallback
         }, secondaryButtonLabel), /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           className: "ml-4",
           "data-test": "DesignSystem-Dialog--PrimaryButton",
           appearance: primaryButtonAppearance,
@@ -7395,7 +8960,7 @@
           children = props.children,
           actions = props.actions;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         OverlayFooter: true
       }, className);
       var wrapperRef = /*#__PURE__*/React__namespace.createRef();
@@ -7427,7 +8992,9 @@
           _a.label;
               var options = __rest(_a, ["label"]);
 
-          return /*#__PURE__*/React__namespace.createElement(Button, __assign({}, options, {
+          return /*#__PURE__*/React__namespace.createElement(Button, __assign({
+            type: "button"
+          }, options, {
             key: index
           }));
         }));
@@ -7451,12 +9018,13 @@
           backButton = props.backButton,
           backIcon = props.backIcon,
           backIconCallback = props.backIconCallback,
-          backButtonCallback = props.backButtonCallback;
+          backButtonCallback = props.backButtonCallback,
+          headingClass = props.headingClass;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         OverlayHeader: true
       }, _a['OverlayHeader--withBackButton'] = backButton || backIcon, _a), className);
-      var subheadingClass = classNames__default['default']((_b = {}, _b['OverlayHeader-subheading'] = true, _b['OverlayHeader-subheading--withBackButton'] = backButton || backIcon, _b));
+      var subheadingClass = classNames__default["default"]((_b = {}, _b['OverlayHeader-subheading'] = true, _b['OverlayHeader-subheading--withBackButton'] = backButton || backIcon, _b));
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-OverlayHeader"
       }, baseProps, {
@@ -7470,6 +9038,7 @@
         icon: "keyboard_backspace",
         onClick: backButtonCallback || backIconCallback
       }), heading && /*#__PURE__*/React__namespace.createElement(Heading, {
+        className: headingClass,
         "data-test": "DesignSystem-OverlayHeader--heading"
       }, heading)), subHeading && /*#__PURE__*/React__namespace.createElement(Text, {
         "data-test": "DesignSystem-OverlayHeader--Subheading",
@@ -7483,7 +9052,7 @@
       var children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         OverlayBody: true
       }, className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
@@ -7526,6 +9095,72 @@
       });
       return zIndex > 0 ? zIndex : undefined;
     };
+    var closeOnEscapeKeypress = function closeOnEscapeKeypress(event, isTopOverlay, onClose) {
+      if (event.key === 'Escape' && isTopOverlay) {
+        onClose(event);
+        event.preventDefault();
+      }
+    };
+
+    var OverlayManager = function () {
+      function OverlayManager() {
+        this.overlays = [];
+      }
+
+      OverlayManager.prototype.add = function (overlay) {
+        if (overlay === null) return;
+        var overlayIdx = this.overlays.indexOf(overlay);
+
+        if (overlayIdx !== -1) {
+          return overlayIdx;
+        }
+
+        overlayIdx = this.overlays.length;
+        this.overlays.push(overlay);
+        return overlayIdx;
+      };
+
+      OverlayManager.prototype.remove = function (overlay) {
+        if (overlay === null) return;
+        var overlayIdx = this.overlays.indexOf(overlay);
+
+        if (overlayIdx === -1) {
+          return;
+        }
+
+        this.overlays.splice(overlayIdx, 1);
+      };
+
+      OverlayManager.prototype.isTopOverlay = function (overlay) {
+        if (overlay === null) return;
+        return !!this.overlays.length && this.overlays[this.overlays.length - 1] === overlay;
+      };
+
+      return OverlayManager;
+    }();
+
+    var instance = new OverlayManager();
+    Object.freeze(instance);
+
+    var isElementOnTop = function isElementOnTop(container, elementRef) {
+      var parent = elementRef.parentNode;
+      var childNodes = parent === null || parent === void 0 ? void 0 : parent.childNodes;
+      var containerIndex = parseInt(window.getComputedStyle(container).zIndex);
+      var z = getHighestZIndex(childNodes);
+      return containerIndex === z + 1;
+    };
+    var getHighestZIndex = function getHighestZIndex(childNodes) {
+      var maxIndex = -1;
+      childNodes === null || childNodes === void 0 ? void 0 : childNodes.forEach(function (node) {
+        var child = node;
+
+        if (child.getAttribute('data-layer') === 'true' && child.getAttribute('data-opened') === 'true') {
+          var z = parseInt(window.getComputedStyle(child).zIndex);
+          maxIndex = Math.max(maxIndex, z);
+        }
+      });
+      return maxIndex;
+    };
 
     var Modal = function (_super) {
       __extends(Modal, _super);
@@ -7534,6 +9169,12 @@
         var _this = _super.call(this, props) || this;
 
         _this.modalRef = /*#__PURE__*/React__namespace.createRef();
+
+        _this.onCloseHandler = function (event) {
+          var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+          closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+        };
+
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -7542,6 +9183,31 @@
         _this.onOutsideClickHandler = _this.onOutsideClickHandler.bind(_this);
         return _this;
       }
+
+      Modal.prototype.componentDidMount = function () {
+        if (this.props.closeOnEscape) {
+          if (this.state.open) {
+            instance.add(this.modalRef.current);
+          }
+
+          document.addEventListener('keydown', this.onCloseHandler);
+        }
+
+        var zIndex = getUpdatedZIndex({
+          element: this.element,
+          containerClassName: '.Overlay-container',
+          elementRef: this.modalRef
+        });
+        this.setState({
+          zIndex: zIndex
+        });
+      };
+
+      Modal.prototype.componentWillUnmount = function () {
+        if (this.props.closeOnEscape) {
+          document.removeEventListener('keydown', this.onCloseHandler);
+        }
+      };
 
       Modal.prototype.componentDidUpdate = function (prevProps) {
         var _this = this;
@@ -7558,6 +9224,7 @@
               open: true,
               animate: true
             });
+            if (this.props.closeOnEscape) instance.add(this.modalRef.current);
           } else {
             this.setState({
               animate: false
@@ -7568,48 +9235,55 @@
                 });
               }, 120);
             });
+            if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
           }
         }
       };
 
       Modal.prototype.onOutsideClickHandler = function (event) {
-        var _a = this.props,
-            backdropClose = _a.backdropClose,
-            onClose = _a.onClose;
+        var _a;
+
+        var _b = this.props,
+            backdropClose = _b.backdropClose,
+            onClose = _b.onClose;
         var open = this.state.open;
 
-        if (open) {
+        if (open && isElementOnTop((_a = this.modalRef.current) === null || _a === void 0 ? void 0 : _a.firstChild, this.element)) {
+          if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
           if (onClose) onClose(event, 'OutsideClick');else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');
         }
       };
 
       Modal.prototype.render = function () {
-        var _a, _b, _c;
+        var _a, _b, _c, _d;
 
-        var _d = this.state,
-            animate = _d.animate,
-            open = _d.open,
-            zIndex = _d.zIndex;
-        var _e = this.props,
-            className = _e.className,
-            backdropClose = _e.backdropClose,
-            dimension = _e.dimension,
-            children = _e.children,
-            headerOptions = _e.headerOptions,
-            header = _e.header,
-            footerOptions = _e.footerOptions,
-            seperator = _e.seperator,
-            footer = _e.footer,
-            onClose = _e.onClose;
-        var classes = classNames__default['default']({
+        var _e = this.state,
+            animate = _e.animate,
+            open = _e.open,
+            zIndex = _e.zIndex;
+        var _f = this.props,
+            className = _f.className,
+            backdropClose = _f.backdropClose,
+            dimension = _f.dimension,
+            children = _f.children,
+            headerOptions = _f.headerOptions,
+            header = _f.header,
+            footerOptions = _f.footerOptions,
+            seperator = _f.seperator,
+            footer = _f.footer,
+            onClose = _f.onClose;
+        var BackdropZIndex = zIndex ? zIndex - 1 : 1000;
+        var classes = classNames__default["default"]({
           Modal: true,
           'Modal--open': open,
           'Modal-animation--open': animate,
           'Modal-animation--close': !animate
         }, className);
-        var headerClass = classNames__default['default']((_a = {}, _a['Modal-header'] = true, _a['Modal-header--withSeperator'] = seperator, _a));
-        var footerClass = classNames__default['default']((_b = {}, _b['Modal-footer'] = true, _b['Modal-footer--withSeperator'] = seperator, _b));
-        var ContainerClass = classNames__default['default']((_c = {}, _c['Row'] = true, _c['Overlay-container'] = true, _c['Overlay-container--open'] = open, _c));
+        var headerClass = classNames__default["default"]((_a = {}, _a['Modal-header'] = true, _a['Modal-header--withSeperator'] = seperator, _a));
+        var footerClass = classNames__default["default"]((_b = {}, _b['Modal-footer'] = true, _b['Modal-footer--withSeperator'] = seperator, _b));
+        var ContainerClass = classNames__default["default"]((_c = {}, _c['Row'] = true, _c['Overlay-container'] = true, _c['Overlay-container--open'] = open, _c));
+        var isAPINew = headerOptions || footerOptions || footer || header;
+        var bodyClass = classNames__default["default"]((_d = {}, _d['Modal-body'] = true, _d['Modal-body--withMargin'] = isAPINew ? !!footer : true, _d['Modal-body--withPadding'] = isAPINew ? !footer : true, _d));
         var baseProps = extractBaseProps(this.props);
         var sizeMap = {
           small: {
@@ -7635,8 +9309,9 @@
           "data-test": "DesignSystem-ModalContainer",
           className: ContainerClass,
           "data-layer": true,
+          "data-opened": open,
           style: {
-            zIndex: zIndex
+            zIndex: zIndex ? zIndex : 1001
           }
         }, /*#__PURE__*/React__namespace.createElement(Column, __assign({
           "data-test": "DesignSystem-Modal"
@@ -7650,6 +9325,9 @@
           "data-test": "DesignSystem-Modal--header"
         }, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
           className: "flex-grow-0"
+        }, /*#__PURE__*/React__namespace.createElement(Tooltip, {
+          tooltip: "Close",
+          position: "top"
         }, /*#__PURE__*/React__namespace.createElement(Button, {
           icon: "close",
           appearance: "transparent",
@@ -7657,8 +9335,8 @@
           onClick: function onClick(event) {
             if (onClose) onClose(event, 'IconClick');
           }
-        }))), children && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headerOptions || footerOptions || footer || header ? /*#__PURE__*/React__namespace.createElement(OverlayBody, {
-          className: "Modal-body"
+        })))), open && children && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headerOptions || footerOptions || footer || header ? /*#__PURE__*/React__namespace.createElement(OverlayBody, {
+          className: bodyClass
         }, this.props.children) : children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement(OverlayFooter, __assign({
           "data-test": "DesignSystem-Modal--footer"
         }, footerOptions, {
@@ -7666,12 +9344,14 @@
           className: footerClass
         }), footer)));
         var ModalWrapper = backdropClose ? /*#__PURE__*/React__namespace.createElement(OutsideClick, {
+          ref: this.modalRef,
           "data-test": "DesignSystem-Modal--OutsideClick",
           onOutsideClick: this.onOutsideClickHandler
         }, ModalContainer) : ModalContainer;
         var WrapperElement = /*#__PURE__*/ReactDOM__namespace.createPortal(ModalWrapper, this.element);
         return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, WrapperElement, /*#__PURE__*/React__namespace.createElement(Backdrop, {
-          open: this.state.animate
+          open: this.state.animate,
+          zIndex: BackdropZIndex
         }));
       };
 
@@ -7692,7 +9372,7 @@
           backIcon = props.backIcon,
           backIconCallback = props.backIconCallback;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {
+      var classes = classNames__default["default"]((_a = {
         'Modal-header': true
       }, _a['Modal-header--withSeperator'] = seperator, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
@@ -7719,8 +9399,9 @@
       var children = props.children,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
-        'Modal-body': true
+      var classes = classNames__default["default"]({
+        'Modal-body': true,
+        'Modal-body--withMargin': true
       }, className);
       return /*#__PURE__*/React__namespace.createElement(OverlayBody, __assign({}, baseProps, {
         stickFooter: true,
@@ -7741,7 +9422,7 @@
           className = props.className,
           seperator = props.seperator;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['Modal-footer'] = true, _a['Modal-footer--withSeperator'] = seperator, _a), className);
+      var classes = classNames__default["default"]((_a = {}, _a['Modal-footer'] = true, _a['Modal-footer--withSeperator'] = seperator, _a), className);
       return /*#__PURE__*/React__namespace.createElement(OverlayFooter, __assign({}, baseProps, {
         open: open,
         className: classes
@@ -7756,6 +9437,30 @@
         var _this = _super.call(this, props) || this;
 
         _this.modalRef = /*#__PURE__*/React__namespace.createRef();
+
+        _this.onOutsideClickHandler = function (event) {
+          instance.remove(_this.modalRef.current);
+
+          if (_this.props.onClose) {
+            _this.props.onClose(event, 'EscapePress');
+          } else {
+            _this.setState({
+              animate: false
+            }, function () {
+              window.setTimeout(function () {
+                _this.setState({
+                  open: false
+                });
+              }, 120);
+            });
+          }
+        };
+
+        _this.onCloseHandler = function (event) {
+          var isTopOverlay = instance.isTopOverlay(_this.modalRef.current);
+          closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+        };
+
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -7763,6 +9468,20 @@
         };
         return _this;
       }
+
+      FullscreenModal.prototype.componentDidMount = function () {
+        if (this.props.closeOnEscape) {
+          if (this.state.open) {
+            instance.add(this.modalRef.current);
+          }
+
+          document.addEventListener('keydown', this.onCloseHandler);
+        }
+      };
+
+      FullscreenModal.prototype.componentWillUnmount = function () {
+        if (this.props.closeOnEscape) document.removeEventListener('keydown', this.onCloseHandler);
+      };
 
       FullscreenModal.prototype.componentDidUpdate = function (prevProps) {
         var _this = this;
@@ -7779,6 +9498,7 @@
               open: true,
               animate: true
             });
+            if (this.props.closeOnEscape) instance.add(this.modalRef.current);
           } else {
             this.setState({
               animate: false
@@ -7789,6 +9509,7 @@
                 });
               }, 120);
             });
+            if (this.props.closeOnEscape) instance.remove(this.modalRef.current);
           }
         }
       };
@@ -7809,13 +9530,12 @@
             footer = _c.footer,
             footerOptions = _c.footerOptions,
             onClose = _c.onClose;
-        var classes = classNames__default['default']({
+        var classes = classNames__default["default"]({
           FullscreenModal: true,
-          'FullscreenModal--open': open,
           'FullscreenModal-animation--open': animate,
           'FullscreenModal-animation--close': !animate
         }, className);
-        var ContainerClass = classNames__default['default']((_a = {}, _a['Overlay-container'] = true, _a['Overlay-container--open'] = open, _a));
+        var ContainerClass = classNames__default["default"]((_a = {}, _a['Overlay-container'] = true, _a['Overlay-container--open'] = open, _a));
         var baseProps = extractBaseProps(this.props);
         var sizeMap = {
           medium: {
@@ -7831,7 +9551,7 @@
             sizeXS: '12'
           }
         };
-        var ModalContainer = /*#__PURE__*/React__namespace.createElement("div", {
+        var ModalContainer = open ? /*#__PURE__*/React__namespace.createElement("div", {
           "data-test": "DesignSystem-FullscreenModalContainer",
           className: ContainerClass,
           "data-layer": true,
@@ -7851,6 +9571,8 @@
           "data-test": "DesignSystem-FullscreenModal--header"
         }, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
           className: "flex-grow-0"
+        }, /*#__PURE__*/React__namespace.createElement(Tooltip, {
+          tooltip: "Close"
         }, /*#__PURE__*/React__namespace.createElement(Button, {
           icon: "close",
           appearance: "transparent",
@@ -7858,7 +9580,7 @@
           onClick: function onClick(event) {
             if (onClose) onClose(event, 'IconClick');
           }
-        }))), /*#__PURE__*/React__namespace.createElement(OverlayBody, {
+        })))), /*#__PURE__*/React__namespace.createElement(OverlayBody, {
           "data-test": "DesignSystem-FullscreenModal--Body",
           className: "FullscreenModal-body"
         }, children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement(OverlayFooter, __assign({
@@ -7866,7 +9588,7 @@
         }, footerOptions, {
           open: open,
           className: "FullscreenModal-footer"
-        }), footer)))));
+        }), footer))))) : null;
         var WrapperElement = /*#__PURE__*/ReactDOM__namespace.createPortal(ModalContainer, this.element);
         return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, WrapperElement);
       };
@@ -7889,6 +9611,12 @@
         var _this = _super.call(this, props) || this;
 
         _this.sidesheetRef = /*#__PURE__*/React__namespace.createRef();
+
+        _this.onCloseHandler = function (event) {
+          var isTopOverlay = instance.isTopOverlay(_this.sidesheetRef.current);
+          closeOnEscapeKeypress(event, isTopOverlay, _this.onOutsideClickHandler);
+        };
+
         _this.element = getWrapperElement();
         _this.state = {
           open: props.open,
@@ -7898,9 +9626,32 @@
         return _this;
       }
 
-      Sidesheet.prototype.componentDidUpdate = function (prevProps) {
-        var _this = this;
+      Sidesheet.prototype.componentDidMount = function () {
+        if (this.props.closeOnEscape) {
+          if (this.state.open) {
+            instance.add(this.sidesheetRef.current);
+          }
 
+          document.addEventListener('keydown', this.onCloseHandler);
+        }
+
+        var zIndex = getUpdatedZIndex({
+          element: this.element,
+          containerClassName: '.Overlay-container',
+          elementRef: this.sidesheetRef
+        });
+        this.setState({
+          zIndex: zIndex
+        });
+      };
+
+      Sidesheet.prototype.componentWillUnmount = function () {
+        if (this.props.closeOnEscape) {
+          document.removeEventListener('keydown', this.onCloseHandler);
+        }
+      };
+
+      Sidesheet.prototype.componentDidUpdate = function (prevProps) {
         if (prevProps.open !== this.props.open) {
           if (this.props.open) {
             var zIndex = getUpdatedZIndex({
@@ -7913,66 +9664,81 @@
               open: true,
               animate: true
             });
+            if (this.props.closeOnEscape) instance.add(this.sidesheetRef.current);
           } else {
             this.setState({
               animate: false
-            }, function () {
-              window.setTimeout(function () {
-                _this.setState({
-                  open: false
-                });
-              }, 120);
             });
+            if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
           }
         }
       };
 
       Sidesheet.prototype.onOutsideClickHandler = function (event) {
+        var _a;
+
         var onClose = this.props.onClose;
         var open = this.state.open;
 
-        if (open) {
+        if (open && isElementOnTop((_a = this.sidesheetRef.current) === null || _a === void 0 ? void 0 : _a.firstChild, this.element)) {
+          if (this.props.closeOnEscape) instance.remove(this.sidesheetRef.current);
           if (onClose) onClose(event, 'OutsideClick');
         }
       };
 
-      Sidesheet.prototype.render = function () {
-        var _a, _b, _c, _d;
+      Sidesheet.prototype.handleAnimationEnd = function () {
+        if (!this.state.animate) {
+          this.setState({
+            open: false
+          });
+        }
+      };
 
-        var _e = this.state,
-            animate = _e.animate,
-            open = _e.open,
-            zIndex = _e.zIndex;
-        var _f = this.props,
-            className = _f.className,
-            backdropClose = _f.backdropClose,
-            dimension = _f.dimension,
-            footer = _f.footer,
-            seperator = _f.seperator,
-            stickFooter = _f.stickFooter,
-            headerOptions = _f.headerOptions,
-            footerOptions = _f.footerOptions,
-            header = _f.header,
-            onClose = _f.onClose;
-        var classes = classNames__default['default']({
+      Sidesheet.prototype.render = function () {
+        var _a, _b, _c, _d, _e;
+
+        var _this = this;
+
+        var _f = this.state,
+            animate = _f.animate,
+            open = _f.open,
+            zIndex = _f.zIndex;
+        var _g = this.props,
+            className = _g.className,
+            backdropClose = _g.backdropClose,
+            dimension = _g.dimension,
+            footer = _g.footer,
+            seperator = _g.seperator,
+            stickFooter = _g.stickFooter,
+            headerOptions = _g.headerOptions,
+            footerOptions = _g.footerOptions,
+            header = _g.header,
+            onClose = _g.onClose;
+        var BackdropZIndex = zIndex ? zIndex - 1 : 1000;
+        var classes = classNames__default["default"]({
           Sidesheet: true,
           'Sidesheet--open': open,
           'Sidesheet-animation--open': animate,
           'Sidesheet-animation--close': !animate
         }, className);
-        var ContainerClass = classNames__default['default']((_a = {}, _a['Overlay-container'] = true, _a['Overlay-container--open'] = open, _a));
-        var headerClass = classNames__default['default']((_b = {}, _b['Sidesheet-header'] = true, _b['Sidesheet-header--withSeperator'] = seperator, _b));
-        var footerClass = classNames__default['default']((_c = {}, _c['Sidesheet-footer'] = true, _c['Sidesheet-footer--withSeperator'] = seperator, _c['Sidesheet-footer--stickToBottom'] = stickFooter, _c));
-        var bodyClass = classNames__default['default']((_d = {}, _d['Sidesheet-body'] = true, _d['Sidesheet-body--withMargin'] = !!footer && stickFooter, _d));
+        var ContainerClass = classNames__default["default"]((_a = {}, _a['Overlay-container'] = true, _a['fade-in'] = animate, _a['Overlay-container--open'] = animate, _a['Overlay-container--close'] = !animate, _a));
+        var headerClass = classNames__default["default"]((_b = {}, _b['Sidesheet-header'] = true, _b['Sidesheet-header--withSeperator'] = seperator, _b));
+        var footerClass = classNames__default["default"]((_c = {}, _c['Sidesheet-footer'] = true, _c['Sidesheet-footer--withSeperator'] = seperator, _c['Sidesheet-footer--stickToBottom'] = stickFooter, _c));
+        var bodyClass = classNames__default["default"]((_d = {}, _d['Sidesheet-body'] = true, _d['Sidesheet-body--withMargin'] = !!footer && stickFooter, _d));
+        var headingClass = classNames__default["default"]((_e = {}, _e['Sidesheet-header--shiftRight'] = (headerOptions === null || headerOptions === void 0 ? void 0 : headerOptions.backButton) || (headerOptions === null || headerOptions === void 0 ? void 0 : headerOptions.backIcon), _e['Sidesheet-header--shiftLeft'] = !(headerOptions === null || headerOptions === void 0 ? void 0 : headerOptions.backButton) && !(headerOptions === null || headerOptions === void 0 ? void 0 : headerOptions.backIcon), _e));
         var baseProps = extractBaseProps(this.props);
         var SidesheetContainer = /*#__PURE__*/React__namespace.createElement(Row, {
           "data-test": "DesignSystem-SidesheetContainer",
+          "data-open": this.state.open,
           className: ContainerClass,
           "data-layer": true,
           style: {
-            zIndex: zIndex
+            zIndex: zIndex ? zIndex : 1001
           },
-          ref: this.sidesheetRef
+          ref: this.sidesheetRef,
+          onAnimationEnd: function onAnimationEnd() {
+            return _this.handleAnimationEnd;
+          }
         }, /*#__PURE__*/React__namespace.createElement(Column, __assign({
           "data-test": "DesignSystem-Sidesheet"
         }, baseProps, {
@@ -7982,8 +9748,12 @@
           className: headerClass
         }, /*#__PURE__*/React__namespace.createElement(Column, {
           "data-test": "DesignSystem-Sidesheet--Header"
-        }, !header && /*#__PURE__*/React__namespace.createElement(OverlayHeader, __assign({}, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
+        }, !header && /*#__PURE__*/React__namespace.createElement(OverlayHeader, __assign({
+          headingClass: headingClass
+        }, headerOptions)), !!header && header), /*#__PURE__*/React__namespace.createElement(Column, {
           className: "flex-grow-0"
+        }, /*#__PURE__*/React__namespace.createElement(Tooltip, {
+          tooltip: "Close"
         }, /*#__PURE__*/React__namespace.createElement(Button, {
           icon: "close",
           appearance: "transparent",
@@ -7991,7 +9761,7 @@
           onClick: function onClick(event) {
             if (onClose) onClose(event, 'IconClick');
           }
-        }))), /*#__PURE__*/React__namespace.createElement(OverlayBody, {
+        })))), /*#__PURE__*/React__namespace.createElement(OverlayBody, {
           "data-test": "DesignSystem-Sidesheet--OverlayBody",
           className: bodyClass
         }, this.props.children), (!!footer || !!footerOptions) && /*#__PURE__*/React__namespace.createElement(OverlayFooter, __assign({
@@ -8001,12 +9771,14 @@
           className: footerClass
         }), footer)));
         var SidesheetWrapper = backdropClose ? /*#__PURE__*/React__namespace.createElement(OutsideClick, {
+          ref: this.sidesheetRef,
           "data-test": "DesignSystem-Sidesheet--OutsideClick",
           onOutsideClick: this.onOutsideClickHandler
         }, SidesheetContainer) : SidesheetContainer;
         var WrapperElement = /*#__PURE__*/ReactDOM__namespace.createPortal(SidesheetWrapper, this.element);
         return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, WrapperElement, /*#__PURE__*/React__namespace.createElement(Backdrop, {
-          open: this.state.animate
+          open: this.state.animate,
+          zIndex: BackdropZIndex
         }));
       };
 
@@ -8027,7 +9799,8 @@
           height = props.height,
           children = props.children,
           className = props.className,
-          onToggle = props.onToggle;
+          onToggle = props.onToggle,
+          withTrigger = props.withTrigger;
 
       var _e = React__namespace.useState(true),
           isClicked = _e[0],
@@ -8044,12 +9817,12 @@
           setSeperator(ref.current.scrollHeight > ref.current.clientHeight);
         }
       });
-      var WrapperClass = classNames__default['default']((_a = {}, _a['Collapsible-wrapper'] = true, _a['Collapsible-wrapper--overlay'] = !isClicked, _a));
-      var BodyClass = classNames__default['default']((_b = {}, _b['Collapsible-body'] = true, _b));
-      var classes = classNames__default['default']((_c = {
+      var WrapperClass = classNames__default["default"]((_a = {}, _a['Collapsible-wrapper'] = true, _a['Collapsible-wrapper--overlay'] = !isClicked, _a));
+      var BodyClass = classNames__default["default"]((_b = {}, _b['Collapsible-body'] = true, _b['overflow-hidden'] = !expanded && hoverable, _b));
+      var classes = classNames__default["default"]((_c = {
         Collapsible: true
       }, _c['Collapsible--overlay'] = !isClicked, _c), className);
-      var FooterClass = classNames__default['default']((_d = {}, _d['Collapsible-footer'] = true, _d['Collapsible-footer--seperator'] = seperator, _d));
+      var FooterClass = classNames__default["default"]((_d = {}, _d['Collapsible-footer'] = true, _d['Collapsible-footer--seperator'] = seperator, _d));
 
       var onToggleHandler = function onToggleHandler(newExpanded, type) {
         return function () {
@@ -8089,13 +9862,13 @@
         onMouseEnter: onToggleHandler(true, 'mouseenter'),
         onMouseLeave: onToggleHandler(false, 'mouseleave'),
         ref: ref
-      }, children), /*#__PURE__*/React__namespace.createElement("div", {
+      }, children), withTrigger && /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Collapsible--Footer",
         className: FooterClass
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
         name: expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right',
         "data-test": "DesignSystem-Collapsible--FooterIcon",
-        className: "px-5 py-4 my-2 cursor-pointer",
+        className: "px-6 py-4 my-2 cursor-pointer",
         onClick: onToggleHandler(!expanded, 'click'),
         size: 16
       }))));
@@ -8105,7 +9878,8 @@
       expanded: false,
       hoverable: true,
       height: '100%',
-      expandedWidth: 'var(--spacing-9)'
+      expandedWidth: '240px',
+      withTrigger: true
     };
 
     var Status = function Status(props) {
@@ -8121,8 +9895,8 @@
           _e = props.sendingText,
           sendingText = _e === void 0 ? 'Sending..' : _e;
       var baseProps = extractBaseProps(props);
-      var StatusClass = classNames__default['default']((_a = {}, _a['d-flex align-items-center mt-3'] = true, _a), className);
-      var TextClass = classNames__default['default']((_b = {}, _b['ChatMessage-status'] = true, _b), className);
+      var StatusClass = classNames__default["default"]((_a = {}, _a['d-flex align-items-center mt-3'] = true, _a), className);
+      var TextClass = classNames__default["default"]((_b = {}, _b['ChatMessage-status'] = true, _b), className);
 
       var getTime = function getTime(t) {
         if (typeof t === 'number') {
@@ -8218,10 +9992,11 @@
           onClick = props.onClick,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var MessageClass = classNames__default['default']((_a = {}, _a['Box'] = true, _a["Box--" + type] = type, _a['Box--typing'] = isTyping, _a['Box--urgent'] = statusType === 'urgent', _a["Box-" + type + "--withStatus"] = withStatus || isTyping, _a), className);
+      var MessageClass = classNames__default["default"]((_a = {}, _a['Box'] = true, _a["Box--" + type] = type, _a['Box--typing'] = isTyping, _a['Box--urgent'] = statusType === 'urgent', _a["Box-" + type + "--withStatus"] = withStatus || isTyping, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: MessageClass,
-        onClick: onClick
+        onClick: onClick,
+        "data-test": "DesignSystem-ChatMessage--Box"
       }), children);
     };
     Box.displayName = 'Box';
@@ -8301,16 +10076,21 @@
           description = props.description,
           size = props.size,
           children = props.children,
-          className = props.className;
+          className = props.className,
+          image = props.image;
       var baseProps = extractBaseProps(props);
-      var WrapperClass = classNames__default['default']((_a = {}, _a['EmptyState'] = true, _a), className);
-      var HeadingClass = classNames__default['default']((_b = {}, _b['EmptyState-title'] = true, _b["EmptyState-title--" + size] = true, _b));
-      var TextClass = classNames__default['default']((_c = {}, _c['EmptyState-description'] = true, _c["EmptyState-description--" + size] = children !== undefined, _c));
+      var WrapperClass = classNames__default["default"]((_a = {}, _a['EmptyState'] = true, _a), className);
+      var HeadingClass = classNames__default["default"]((_b = {}, _b['EmptyState-title'] = true, _b["EmptyState-title--" + size] = true, _b));
+      var TextClass = classNames__default["default"]((_c = {}, _c['EmptyState-description'] = true, _c["EmptyState-description--" + size] = children !== undefined, _c));
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-EmptyState"
       }, baseProps, {
         className: WrapperClass
-      }), /*#__PURE__*/React__namespace.createElement("img", {
+      }), image && /*#__PURE__*/React__namespace.createElement("div", {
+        style: {
+          height: imageHeight[size]
+        }
+      }, image), imageSrc && !image && /*#__PURE__*/React__namespace.createElement("img", {
         src: imageSrc,
         height: imageHeight[size],
         "data-test": "DesignSystem-EmptyState--Img"
@@ -8332,7 +10112,7 @@
           description = props.description,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         'Modal-description': true
       }, className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
@@ -8368,9 +10148,9 @@
       React__namespace.useEffect(function () {
         setPage(props.page);
       }, [props.page]);
-      var wrapperClass = classNames__default['default']((_a = {}, _a['Pagination'] = true, _a["Pagination--" + type] = type, _a), className);
-      var nextButtonWrapperClass = classNames__default['default']((_b = {}, _b['Pagination-buttonWrapper'] = true, _b['Pagination-buttonWrapper--next'] = true, _b));
-      var prevButtonWrapperClass = classNames__default['default']((_c = {}, _c['Pagination-buttonWrapper'] = true, _c['Pagination-buttonWrapper--previous'] = true, _c));
+      var wrapperClass = classNames__default["default"]((_a = {}, _a['Pagination'] = true, _a["Pagination--" + type] = type, _a), className);
+      var nextButtonWrapperClass = classNames__default["default"]((_b = {}, _b['Pagination-buttonWrapper'] = true, _b['Pagination-buttonWrapper--next'] = true, _b));
+      var prevButtonWrapperClass = classNames__default["default"]((_c = {}, _c['Pagination-buttonWrapper'] = true, _c['Pagination-buttonWrapper--previous'] = true, _c));
       React__namespace.useEffect(function () {
         if (init) {
           if (page >= 1 && page <= totalPages) onPageChange(page);
@@ -8469,8 +10249,7 @@
     var EditableInput = function EditableInput(props) {
       var _a, _b, _c, _d;
 
-      var value = props.value,
-          error = props.error,
+      var error = props.error,
           size = props.size,
           errorMessage = props.errorMessage,
           placeholder = props.placeholder,
@@ -8482,36 +10261,43 @@
       var onInputChange = inputOptions.onChange,
           rest = __rest(inputOptions, ["onChange"]);
 
-      var _e = React__namespace.useState(value),
+      var _e = React__namespace.useState(props.value),
           inputValue = _e[0],
           setInputValue = _e[1];
 
-      var _f = React__namespace.useState(false),
-          editing = _f[0],
-          setEditing = _f[1];
+      var _f = React__namespace.useState(props.value),
+          value = _f[0],
+          setValue = _f[1];
 
       var _g = React__namespace.useState(false),
-          showComponent = _g[0],
-          setShowComponent = _g[1];
+          editing = _g[0],
+          setEditing = _g[1];
+
+      var _h = React__namespace.useState(false),
+          showComponent = _h[0],
+          setShowComponent = _h[1];
 
       var inputRef = /*#__PURE__*/React__namespace.createRef();
       var baseProps = extractBaseProps(props);
-      var EditableInputClass = classNames__default['default']((_a = {}, _a['EditableInput'] = true, _a), className);
-      var EditableDefaultClass = classNames__default['default']((_b = {}, _b['EditableInput-default'] = true, _b["EditableInput-default--" + size] = size, _b));
-      var InputClass = classNames__default['default']((_c = {}, _c['EditableInput-Input--tiny'] = size === 'tiny', _c));
-      var ActionClass = classNames__default['default']((_d = {}, _d['EditableInput-actions'] = true, _d["EditableInput-actions--" + size] = size, _d));
+      var isControlled = props.value !== undefined;
       React__namespace.useEffect(function () {
-        setDefaultComponent();
-      }, [value]);
+        if (isControlled) setValue(props.value);
+      }, [props.value]);
+      var EditableInputClass = classNames__default["default"]((_a = {}, _a['EditableInput'] = true, _a), className);
+      var EditableDefaultClass = classNames__default["default"]((_b = {}, _b['EditableInput-default'] = true, _b["EditableInput-default--" + size] = size, _b));
+      var InputClass = classNames__default["default"]((_c = {}, _c['EditableInput-Input--tiny'] = size === 'tiny', _c));
+      var ActionClass = classNames__default["default"]((_d = {}, _d['EditableInput-actions'] = true, _d["EditableInput-actions--" + size] = size, _d));
 
-      var setDefaultComponent = function setDefaultComponent() {
-        setInputValue(value);
+      var setDefaultComponent = function setDefaultComponent(updatedValue) {
+        setInputValue(updatedValue);
         setEditing(false);
         setShowComponent(false);
       };
 
       var onSaveChanges = function onSaveChanges() {
-        if (onChange) onChange(inputValue);
+        if (!isControlled) setValue(inputValue);
+        if (onChange) onChange(inputValue || '');
+        setDefaultComponent(inputValue);
       };
 
       var onInputChangeHandler = function onInputChangeHandler(e) {
@@ -8524,15 +10310,23 @@
 
         switch (eventType) {
           case 'edit':
-            (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
-            setEditing(true);
+            {
+              (_a = inputRef.current) === null || _a === void 0 ? void 0 : _a.focus();
+              setEditing(true);
+              setShowComponent(true);
+              break;
+            }
 
           case 'hover':
-            setShowComponent(true);
-            return;
+            {
+              setShowComponent(true);
+              break;
+            }
 
           case 'default':
-            setShowComponent(false);
+            {
+              setShowComponent(false);
+            }
         }
       };
 
@@ -8556,7 +10350,7 @@
               break;
 
             case 'Escape':
-              setDefaultComponent();
+              setDefaultComponent(value);
               break;
           }
         }
@@ -8601,7 +10395,9 @@
         icon: "clear",
         className: "mr-3",
         size: "tiny",
-        onClick: setDefaultComponent,
+        onClick: function onClick() {
+          setDefaultComponent(value);
+        },
         "data-test": "DesignSystem-EditableInput--Discard"
       }), /*#__PURE__*/React__namespace.createElement(Button, {
         icon: "check",
@@ -8615,7 +10411,6 @@
     EditableInput.defaultProps = {
       size: 'regular',
       placeholder: '',
-      value: '',
       inputOptions: {}
     };
 
@@ -8623,7 +10418,6 @@
       var _a, _b, _c, _d;
 
       var placeholder = props.placeholder,
-          value = props.value,
           onChange = props.onChange,
           className = props.className,
           disableSaveAction = props.disableSaveAction,
@@ -8637,49 +10431,81 @@
       var _onClick = chipOptions.onClick,
           chipObject = __rest(chipOptions, ["onClick"]);
 
-      var _f = React__namespace.useState(value),
+      var _f = React__namespace.useState(props.value),
           inputValue = _f[0],
           setInputValue = _f[1];
 
-      var _g = React__namespace.useState(false),
-          showComponent = _g[0],
-          setShowComponent = _g[1];
+      var _g = React__namespace.useState(props.value),
+          value = _g[0],
+          setValue = _g[1];
+
+      var _h = React__namespace.useState(false),
+          showComponent = _h[0],
+          setShowComponent = _h[1];
 
       var baseProps = extractBaseProps(props);
       var isWithChips = inputValue && inputValue.length;
-      var classes = classNames__default['default']((_a = {}, _a['EditableChipInput'] = true, _a), className);
-      var actionClass = classNames__default['default']((_b = {}, _b['EditableChipInput-actions'] = true, _b));
-      var defaultClasses = classNames__default['default']((_c = {}, _c['EditableChipInput-default'] = !isWithChips, _c['EditableChipInput-defaultWithChips'] = isWithChips, _c));
-      var inputClass = classNames__default['default']((_d = {}, _d['EditableChipInput-chipInput'] = true, _d));
+      var isControlled = props.value !== undefined;
       React__namespace.useEffect(function () {
-        setDefaultComponent();
-      }, [value]);
+        if (isControlled) {
+          setInputValue(props.value);
+          setValue(props.value);
+        }
+      }, [props.value]);
+      var classes = classNames__default["default"]((_a = {}, _a['EditableChipInput'] = true, _a), className);
+      var actionClass = classNames__default["default"]((_b = {}, _b['EditableChipInput-actions'] = true, _b));
+      var defaultClasses = classNames__default["default"]((_c = {}, _c['EditableChipInput-default'] = !isWithChips, _c['EditableChipInput-defaultWithChips'] = isWithChips, _c));
+      var inputClass = classNames__default["default"]((_d = {}, _d['EditableChipInput-chipInput'] = true, _d));
 
       var onChipInputChangeHandler = function onChipInputChangeHandler(val) {
         setInputValue(val);
         if (onChipInputChange) onChipInputChange(val);
       };
 
-      var setDefaultComponent = function setDefaultComponent() {
-        setInputValue(value);
+      var setDefaultComponent = function setDefaultComponent(updatedValue) {
+        setInputValue(updatedValue);
         setShowComponent(false);
       };
 
       var onSaveChanges = function onSaveChanges() {
+        if (!isControlled) setValue(inputValue);
         if (onChange && inputValue) onChange(inputValue);
+        setDefaultComponent(inputValue);
       };
 
       var onChangeHandler = function onChangeHandler(eventType) {
         switch (eventType) {
           case 'edit':
-            setShowComponent(true);
+            {
+              setShowComponent(true);
+              break;
+            }
 
           case 'hover':
-            return;
+            {
+              break;
+            }
 
           case 'default':
-            setShowComponent(false);
-            return;
+            {
+              setShowComponent(false);
+              break;
+            }
+        }
+      };
+
+      var onChipDelete = function onChipDelete(index) {
+        if (value) {
+          var updatedValue = __spreadArrays(value);
+
+          updatedValue.splice(index, 1);
+
+          if (!isControlled) {
+            setInputValue(updatedValue);
+            setValue(updatedValue);
+          }
+
+          if (onChange) onChange(updatedValue);
         }
       };
 
@@ -8693,6 +10519,9 @@
               label: val,
               className: "my-2 mx-2"
             }, chipObject, {
+              onClose: function onClose() {
+                return onChipDelete(index);
+              },
               onClick: function onClick() {
                 return _onClick && _onClick(val, index);
               }
@@ -8701,7 +10530,7 @@
         }
 
         return /*#__PURE__*/React__namespace.createElement(Text, {
-          className: "EditableChipInput--Text"
+          className: "pt-1"
         }, placeholder);
       };
 
@@ -8740,7 +10569,9 @@
         icon: "clear",
         className: "mr-3",
         size: "tiny",
-        onClick: setDefaultComponent
+        onClick: function onClick() {
+          setDefaultComponent(value);
+        }
       }), /*#__PURE__*/React__namespace.createElement(Button, {
         "data-test": "DesignSystem-EditableChipInput--SaveButton",
         icon: "check",
@@ -8765,7 +10596,7 @@
       var baseProps = extractBaseProps(props);
       var radius = 20;
       var circumference = 2 * Math.PI * radius;
-      var ProgressRingClass = classNames__default['default']((_a = {
+      var ProgressRingClass = classNames__default["default"]((_a = {
         Ring: true
       }, _a["Ring--" + size] = size, _a), className);
       var svgProps = {
@@ -8808,15 +10639,14 @@
           active = props.active,
           completed = props.completed,
           onChange = props.onChange;
-      var StepClass = classNames__default['default']((_a = {}, _a['Step'] = true, _a['Step--active'] = active, _a['Step--disabled'] = disabled, _a));
+      var StepClass = classNames__default["default"]((_a = {}, _a['Step'] = true, _a['Step--active'] = active, _a['Step--disabled'] = disabled, _a['Stepper-animate'] = true, _a['color-primary-dark'] = active || completed, _a['color-inverse-lightest'] = disabled, _a));
 
       var onClickHandle = function onClickHandle() {
         if (disabled) return;
         if (onChange) onChange(label, value);
       };
 
-      var iconAppearance = completed ? 'info' : disabled ? 'disabled' : active ? 'info' : 'default';
-      var appearance = active ? 'link' : disabled ? 'disabled' : 'default';
+      var textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
       return /*#__PURE__*/React__namespace.createElement("div", {
         "data-test": "DesignSystem-Step",
         className: StepClass,
@@ -8824,11 +10654,11 @@
       }, /*#__PURE__*/React__namespace.createElement(Icon, {
         "data-test": "DesignSystem-Step--Icon",
         name: completed ? 'check_circle' : 'radio_button_unchecked',
-        appearance: iconAppearance,
-        className: "mr-3 my-4"
+        className: "mr-3 my-4 Stepper-animate"
       }), label && /*#__PURE__*/React__namespace.createElement(Text, {
         weight: "medium",
-        appearance: appearance
+        color: textColor,
+        className: "Stepper-animate"
       }, label));
     };
     Step.displayName = 'Step';
@@ -8848,7 +10678,7 @@
         if (onChange) onChange(index, completed, stepLabel, stepValue);
       };
 
-      var StepperClass = classNames__default['default']((_a = {}, _a['Stepper'] = true, _a), className);
+      var StepperClass = classNames__default["default"]((_a = {}, _a['Stepper'] = true, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Stepper"
       }, baseProps, {
@@ -8917,6 +10747,56 @@
         }
       };
 
+      var onPasteHandler = function onPasteHandler(_e, val, type) {
+        setState({
+          open: true
+        });
+
+        if (type === 'start') {
+          var placeholderChar = startInputOptions.placeholderChar || '_';
+
+          if (val && !val.includes(placeholderChar)) {
+            var d = translateToDate(inputFormat, val, validators);
+
+            if (d) {
+              setState({
+                startDate: d
+              });
+
+              if (endDate) {
+                var _a = getDateInfo(endDate),
+                    eYear = _a.year,
+                    eMonth = _a.month,
+                    eDate = _a.date;
+
+                if (compareDate(startDate, 'more', eYear, eMonth, eDate)) {
+                  setState({
+                    endDate: undefined
+                  });
+                }
+              }
+
+              if (startInputOptions.onPaste) startInputOptions.onPaste(_e, val);
+            }
+          }
+        }
+
+        if (type === 'end') {
+          var placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
+
+          if (val && !val.includes(placeholderChar)) {
+            var d = translateToDate(inputFormat, val, validators);
+
+            if (d) {
+              setState({
+                endDate: d
+              });
+              if (endInputOptions.onPaste) endInputOptions.onPaste(_e, val);
+            }
+          }
+        }
+      };
+
       var onChangeHandler = function onChangeHandler(_e, val, type) {
         setState({
           open: true
@@ -8965,10 +10845,22 @@
         setState({
           init: true
         });
+        var hasNumber = /\d/;
 
         if (type === 'start') {
           var _a = startInputOptions.placeholderChar,
               placeholderChar = _a === void 0 ? '_' : _a;
+
+          if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
+            setState({
+              startError: true
+            });
+          } else if (val && !hasNumber.test(val) || !val) {
+            setState({
+              startError: false
+            });
+          }
+
           if (!val || val.includes(placeholderChar)) setState({
             startDate: undefined
           });
@@ -8977,6 +10869,17 @@
         if (type === 'end') {
           var _b = endInputOptions.placeholderChar,
               placeholderChar = _b === void 0 ? '_' : _b;
+
+          if (val && hasNumber.test(val) && val.includes(placeholderChar)) {
+            setState({
+              endError: true
+            });
+          } else if (val && !hasNumber.test(val) || !val) {
+            setState({
+              endError: false
+            });
+          }
+
           if (!val || val.includes(placeholderChar)) setState({
             endDate: undefined
           });
@@ -9025,21 +10928,26 @@
         return isValid(validators, val, inputFormat);
       };
 
-      return /*#__PURE__*/React__namespace.createElement(Row, null, /*#__PURE__*/React__namespace.createElement(Column, {
+      return /*#__PURE__*/React__namespace.createElement(Row, {
+        "data-test": "DesignSystem-DateRangePicker-InputTrigger"
+      }, /*#__PURE__*/React__namespace.createElement(Column, {
         size: '6',
         sizeXS: '12',
         className: "DateRangePicker-input DateRangePicker-input--startDate"
       }, startLabel && /*#__PURE__*/React__namespace.createElement(Label, {
         required: startInputOptions.required,
         withInput: true
-      }, startLabel), /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
+      }, startLabel), /*#__PURE__*/React__namespace.createElement(X, __assign({
         icon: "events",
         placeholder: inputFormat
       }, startInputOptions, {
         mask: mask,
-        value: startDate ? translateToString(inputFormat, startDate) : init ? InputMask.utils.getDefaultValue(mask, startPlaceholderChar) : '',
+        value: startDate ? translateToString(inputFormat, startDate) : init ? X.utils.getDefaultValue(mask, startPlaceholderChar) : '',
         onChange: function onChange(e, val) {
           onChangeHandler(e, val || '', 'start');
+        },
+        onPaste: function onPaste(e, val) {
+          onPasteHandler(e, val || '', 'start');
         },
         onBlur: function onBlur(e, val) {
           onBlurHandler(e, val || '', 'start');
@@ -9053,7 +10961,7 @@
         error: showStartError,
         caption: showStartError ? startErrorMessage : '',
         validators: [inputValidator],
-        clearOnEmptyBlur: false
+        clearOnEmptyBlur: true
       }))), /*#__PURE__*/React__namespace.createElement(Column, {
         size: '6',
         sizeXS: '12',
@@ -9061,14 +10969,17 @@
       }, endLabel && /*#__PURE__*/React__namespace.createElement(Label, {
         required: endInputOptions.required,
         withInput: true
-      }, endLabel), /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
+      }, endLabel), /*#__PURE__*/React__namespace.createElement(X, __assign({
         icon: "events",
         placeholder: inputFormat
       }, endInputOptions, {
         mask: mask,
-        value: endDate ? translateToString(inputFormat, endDate) : init ? InputMask.utils.getDefaultValue(mask, endPlaceholderChar) : '',
+        value: endDate ? translateToString(inputFormat, endDate) : init ? X.utils.getDefaultValue(mask, endPlaceholderChar) : '',
         onChange: function onChange(e, val) {
           onChangeHandler(e, val || '', 'end');
+        },
+        onPaste: function onPaste(e, val) {
+          onPasteHandler(e, val || '', 'end');
         },
         onBlur: function onBlur(e, val) {
           onBlurHandler(e, val || '', 'end');
@@ -9082,7 +10993,7 @@
         error: showEndError,
         caption: showEndError ? endErrorMessage : '',
         validators: [inputValidator],
-        clearOnEmptyBlur: false
+        clearOnEmptyBlur: true
       }))));
     };
 
@@ -9105,7 +11016,7 @@
       var label = inputOptions.label;
       var _a = inputOptions.placeholderChar,
           placeholderChar = _a === void 0 ? '_' : _a;
-      var defaultValue = InputMask.utils.getDefaultValue(mask, placeholderChar).split(' - ');
+      var defaultValue = X.utils.getDefaultValue(mask, placeholderChar).split(' - ');
       var sValue = startValue || defaultValue[0];
       var eValue = endValue || defaultValue[1];
 
@@ -9115,6 +11026,22 @@
             endVal = _a[1];
 
         return isValid(validators, startVal, inputFormat) && isValid(validators, endVal, inputFormat);
+      };
+
+      var onPasteHandler = function onPasteHandler(_e, val) {
+        var onPaste = inputOptions.onPaste;
+        var date = val.split(' - ');
+        var startVal = date[0];
+        var endVal = date[1];
+        var endD = translateToDate(inputFormat, endVal, validators);
+        var startD = translateToDate(inputFormat, startVal, validators);
+        setState({
+          startDate: startD,
+          endDate: endD,
+          startValue: startVal,
+          endValue: endVal
+        });
+        if (onPaste) onPaste(_e, val);
       };
 
       var onChangeHandler = function onChangeHandler(_e, val) {
@@ -9165,6 +11092,20 @@
         });
       };
 
+      var getErrorState = function getErrorState(currentVal, siblingVal) {
+        var hasNumber = /\d/;
+
+        if (currentVal && siblingVal && !currentVal.includes(placeholderChar) && siblingVal.includes(placeholderChar)) {
+          return true;
+        } else if (currentVal && hasNumber.test(currentVal) && currentVal.includes(placeholderChar)) {
+          return true;
+        } else if (currentVal && !hasNumber.test(currentVal) || !currentVal) {
+          return false;
+        }
+
+        return null;
+      };
+
       var onBlurHandler = function onBlurHandler(_e, val) {
         setState({
           init: true
@@ -9172,6 +11113,16 @@
         var date = val.split(' - ');
         var startVal = date[0];
         var endVal = date[1];
+        var startErr = getErrorState(startVal, endVal);
+        var endErr = getErrorState(endVal, startVal);
+
+        if (startErr !== null && endErr !== null) {
+          setState({
+            startError: startErr,
+            endError: endErr
+          });
+        }
+
         if (!startVal || startVal.includes(placeholderChar)) setState({
           startDate: undefined
         });
@@ -9190,10 +11141,12 @@
         });
       };
 
-      return /*#__PURE__*/React__namespace.createElement(Row, null, /*#__PURE__*/React__namespace.createElement(Column, null, label && /*#__PURE__*/React__namespace.createElement(Label, {
+      return /*#__PURE__*/React__namespace.createElement(Row, {
+        "data-test": "DesignSystem-DateRangePicker-SingleInputTrigger"
+      }, /*#__PURE__*/React__namespace.createElement(Column, null, label && /*#__PURE__*/React__namespace.createElement(Label, {
         required: inputOptions.required,
         withInput: true
-      }, label), /*#__PURE__*/React__namespace.createElement(InputMask, __assign({
+      }, label), /*#__PURE__*/React__namespace.createElement(X, __assign({
         icon: "events",
         placeholder: inputFormat + " - " + inputFormat
       }, inputOptions, {
@@ -9205,11 +11158,14 @@
         onBlur: function onBlur(e, val) {
           onBlurHandler(e, val || '');
         },
+        onPaste: function onPaste(e, val) {
+          onPasteHandler(e, val || '');
+        },
         onClear: onClearHandler,
         error: showError,
         caption: showError ? errorMessage : '',
         validators: [inputValidator],
-        clearOnEmptyBlur: false
+        clearOnEmptyBlur: true
       }))));
     };
 
@@ -9264,11 +11220,9 @@
       };
     };
     var getCustomDates = function getCustomDates() {
-      var current = new Date();
-      var currentDate = current.getDate();
       return {
-        startDate: setDate(currentDate),
-        endDate: setDate(currentDate)
+        startDate: '',
+        endDate: ''
       };
     };
 
@@ -9373,6 +11327,14 @@
         };
 
         _this.onToggleHandler = function (o, type) {
+          var _a = _this.props,
+              singleInput = _a.singleInput,
+              inputOptions = _a.inputOptions,
+              startInputOptions = _a.startInputOptions,
+              endInputOptions = _a.endInputOptions;
+          var disabled = singleInput ? inputOptions.disabled : startInputOptions.disabled || endInputOptions.disabled;
+          if (disabled) return;
+
           switch (type) {
             case 'outsideClick':
               _this.setState({
@@ -9490,6 +11452,12 @@
               if (!startError) onRangeChange(startDate, undefined, sValue, eValue);else if (!endError) onRangeChange(undefined, endDate, sValue, eValue);else onRangeChange(undefined, undefined, sValue, eValue);
             }
           }
+
+          if (this.state.startDate && this.state.endDate) {
+            this.setState({
+              open: false
+            });
+          }
         }
       };
 
@@ -9547,7 +11515,7 @@
             contentAlign = _b.contentAlign,
             children = _b.children;
         var open = this.state.open;
-        var RangePickerClass = classNames__default['default']((_a = {}, _a['DateRangePicker'] = true, _a["DateRangePicker--" + contentAlign] = contentAlign, _a));
+        var RangePickerClass = classNames__default["default"]((_a = {}, _a['DateRangePicker'] = true, _a["DateRangePicker--" + contentAlign] = contentAlign, _a));
 
         if (withInput) {
           var trigger = singleInput ? /*#__PURE__*/React__namespace.createElement(SingleInputTrigger, {
@@ -9578,6 +11546,15 @@
         return this.renderCalendar();
       };
 
+      DateRangePicker.utils = {
+        getCurrentWeek: getCurrentWeek,
+        getPreviousWeek: getPreviousWeek,
+        getPreviousMonth: getPreviousMonth,
+        getPrevious90Days: getPrevious90Days,
+        getCustomDates: getCustomDates,
+        getCurrentYear: getCurrentYear,
+        getCurrentMonth: getCurrentMonth
+      };
       DateRangePicker.defaultProps = __assign(__assign({}, Calendar.defaultProps), {
         children: /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null),
         contentAlign: 'left',
@@ -9598,15 +11575,6 @@
       });
       return DateRangePicker;
     }(React__namespace.Component);
-    DateRangePicker.utils = {
-      getCurrentWeek: getCurrentWeek,
-      getPreviousWeek: getPreviousWeek,
-      getPreviousMonth: getPreviousMonth,
-      getPrevious90Days: getPrevious90Days,
-      getCustomDates: getCustomDates,
-      getCurrentYear: getCurrentYear,
-      getCurrentMonth: getCurrentMonth
-    };
 
     var TabsWrapper = function TabsWrapper(props) {
       var _a;
@@ -9625,7 +11593,7 @@
       React__namespace.useEffect(function () {
         setActiveTab(props.active && props.active < totalTabs ? props.active : 0);
       }, [props.active]);
-      var wrapperClass = classNames__default['default']((_a = {}, _a['TabsWrapper'] = true, _a), className);
+      var wrapperClass = classNames__default["default"]((_a = {}, _a['TabsWrapper'] = true, _a), className);
 
       var tabClickHandler = function tabClickHandler(tabIndex) {
         setActiveTab(tabIndex);
@@ -9638,7 +11606,7 @@
         var _b = child.props,
             label = _b.label,
             disabled = _b.disabled;
-        var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && active === index, _a));
+        var tabHeaderClass = classNames__default["default"]((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && active === index, _a));
         return /*#__PURE__*/React__namespace.createElement("div", {
           "data-test": "DesignSystem-Tabs--Header",
           key: index,
@@ -9667,32 +11635,76 @@
     };
     Tab.displayName = 'Tab';
 
-    var Tabs = function Tabs(props) {
-      var _a;
+    var getChildrenArray = function getChildrenArray(children) {
+      return Array.isArray(children) ? children : [children];
+    };
 
-      var tabs = props.tabs,
+    var filterTabs = function filterTabs(children) {
+      var childrenArray = getChildrenArray(children);
+      var tabs = childrenArray.filter(function (element) {
+        return typeof element.type === 'function' && element.type.name === Tab.name;
+      });
+      return tabs;
+    };
+
+    var filterInlineComponent = function filterInlineComponent(children) {
+      var childrenArray = getChildrenArray(children);
+      var inlineComponent = childrenArray.filter(function (element) {
+        return !(typeof element.type === 'function' && element.type.name === Tab.name);
+      });
+      return inlineComponent;
+    };
+
+    var Tabs = function Tabs(props) {
+      var _a, _b, _c;
+
+      var children = props.children,
           withSeparator = props.withSeparator,
           onTabChange = props.onTabChange,
           className = props.className;
       var baseProps = extractBaseProps(props);
+      var tabRefs = [];
+      var tabs = children ? filterTabs(children) : props.tabs;
+      var inlineComponent = children ? filterInlineComponent(children) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null);
       var totalTabs = tabs.length;
 
-      var _b = React__namespace.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
-          activeIndex = _b[0],
-          setActiveTab = _b[1];
+      var _d = React__namespace.useState(props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0),
+          activeIndex = _d[0],
+          setActiveTab = _d[1];
 
       React__namespace.useEffect(function () {
         if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
           setActiveTab(props.activeIndex);
         }
       }, [props.activeIndex]);
-      var tabsClass = classNames__default['default']((_a = {}, _a['Tabs'] = true, _a['Tabs--withSeparator'] = withSeparator, _a), className);
+      var wrapperClass = classNames__default["default"]((_a = {}, _a['TabsWrapper'] = true, _a), className);
+      var headerClass = classNames__default["default"]((_b = {}, _b['TabsWrapper-header'] = true, _b['TabsWrapper-header--withSeparator'] = withSeparator, _b), className);
 
       var getPillsClass = function getPillsClass(disabled) {
         var _a;
 
-        return classNames__default['default']((_a = {}, _a['Tabs-pills'] = true, _a['Tabs-pills--disabled'] = disabled, _a));
+        return classNames__default["default"]((_a = {}, _a['Tab-pills'] = true, _a['Tab-pills--disabled'] = disabled, _a));
       };
+
+      var getActiveTabClass = function getActiveTabClass() {
+        var _a;
+
+        var activeTab;
+        var activeTabClass;
+
+        if (tabs && tabs.length && tabs[activeIndex] && 'props' in tabs[activeIndex]) {
+          activeTab = tabs[activeIndex];
+          activeTabClass = (_a = activeTab.props) === null || _a === void 0 ? void 0 : _a.className;
+        } else {
+          activeTab = tabs[activeIndex];
+          activeTabClass = activeTab && activeTab.className;
+        }
+
+        return activeTabClass;
+      };
+
+      var activeTabClass = getActiveTabClass();
+      var tabContentClass = classNames__default["default"]((_c = {}, _c['TabsWrapper-content'] = true, _c["" + activeTabClass] = activeTabClass, _c));
 
       var tabClickHandler = function tabClickHandler(tabIndex, isKeyboard) {
         var _a;
@@ -9704,8 +11716,6 @@
 
         if (onTabChange) onTabChange(tabIndex);
       };
-
-      var tabRefs = [];
 
       var tabKeyDownHandler = function tabKeyDownHandler(event, tabIndex) {
         if (event.key === 'Enter') {
@@ -9724,9 +11734,12 @@
       };
 
       var renderInfo = function renderInfo(tab, index) {
-        var count = tab.count,
-            icon = tab.icon,
-            disabled = tab.disabled;
+        var _a;
+
+        var _b = tab,
+            count = _b.count,
+            icon = _b.icon,
+            disabled = _b.disabled;
 
         if (count !== undefined) {
           return /*#__PURE__*/React__namespace.createElement(Pills, {
@@ -9736,11 +11749,13 @@
           }, count);
         }
 
+        var iconClass = classNames__default["default"]((_a = {}, _a['Tab-selected'] = !disabled && activeIndex === index, _a));
+
         if (icon) {
           var iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
           return /*#__PURE__*/React__namespace.createElement(Icon, {
             "data-test": "DesignSystem-Tabs--Icon",
-            className: "mr-4",
+            className: "mr-4 " + iconClass,
             name: icon,
             appearance: iconAppearance
           });
@@ -9749,44 +11764,99 @@
         return null;
       };
 
-      var renderTabs = function renderTabs() {
-        return tabs.map(function (tab, index) {
+      var renderDismissIcon = function renderDismissIcon(tab, index, onDismiss) {
+        var _a = tab,
+            disabled = _a.disabled,
+            label = _a.label;
+        var iconAppearance = activeIndex === index ? 'info' : disabled ? 'disabled' : 'subtle';
+
+        var dismissIconClass = function dismissIconClass(disabled) {
           var _a;
 
-          var label = tab.label,
-              disabled = tab.disabled;
-          var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
-          var tabHeaderClass = classNames__default['default']((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && activeIndex === index, _a));
-          return /*#__PURE__*/React__namespace.createElement("div", {
-            ref: function ref(element) {
-              return element && !disabled && tabRefs.push(element);
-            },
-            "data-test": "DesignSystem-Tabs--Tab",
-            key: index,
-            className: tabHeaderClass,
-            onClick: function onClick() {
-              return !disabled && tabClickHandler(index);
-            },
-            onKeyDown: function onKeyDown(event) {
-              return tabKeyDownHandler(event, index);
-            },
-            tabIndex: activeIndex === index ? 0 : -1
-          }, renderInfo(tab, index), /*#__PURE__*/React__namespace.createElement(Text, {
-            "data-test": "DesignSystem-Tabs--Text",
-            appearance: textAppearance
-          }, label));
+          return classNames__default["default"]((_a = {}, _a["DismissibleTab-icon--right"] = true, _a['DismissibleTab-icon--default'] = !disabled && activeIndex !== index, _a["DismissibleTab-icon--selected"] = !disabled && activeIndex === index, _a['cursor-pointer'] = !disabled, _a['Tab-selected'] = !disabled && activeIndex === index, _a));
+        };
+
+        var tabInfo = {
+          label: label,
+          activeIndex: activeIndex,
+          currentTabIndex: index
+        };
+
+        var onCloseHandler = function onCloseHandler(e) {
+          e.stopPropagation();
+          if (onDismiss) onDismiss(tabInfo);
+        };
+
+        return /*#__PURE__*/React__namespace.createElement(Icon, {
+          "data-test": "DesignSystem-DismissibleTabs--Icon",
+          name: "clear",
+          appearance: iconAppearance,
+          className: dismissIconClass(disabled),
+          onClick: !disabled ? onCloseHandler : function () {}
         });
       };
 
+      var renderTab = function renderTab(tab, index) {
+        var _a;
+
+        var _b = tab,
+            _c = _b.label,
+            label = _c === void 0 ? '' : _c,
+            disabled = _b.disabled,
+            isDismissible = _b.isDismissible,
+            _d = _b.onDismiss,
+            onDismiss = _d === void 0 ? function () {} : _d;
+
+        if (typeof label !== 'string') {
+          return label;
+        }
+
+        var textAppearance = activeIndex === index ? 'link' : disabled ? 'disabled' : 'subtle';
+        var tabTextClass = classNames__default["default"]((_a = {}, _a['Tab-selected'] = !disabled && activeIndex === index, _a));
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, renderInfo(tab, index), /*#__PURE__*/React__namespace.createElement(Text, {
+          "data-test": "DesignSystem-Tabs--Text",
+          appearance: textAppearance,
+          className: tabTextClass
+        }, label), isDismissible && renderDismissIcon(tab, index, onDismiss));
+      };
+
+      var renderTabs = tabs.map(function (tab, index) {
+        var _a;
+
+        var currentTabProp = children && 'props' in tab ? tab.props : tab;
+        var disabled = currentTabProp.disabled;
+        var tabHeaderClass = classNames__default["default"]((_a = {}, _a['Tab'] = true, _a['Tab--disabled'] = disabled, _a['Tab--active'] = !disabled && activeIndex === index, _a['Tab-selected'] = !disabled && activeIndex === index, _a['align-items-center'] = true, _a));
+        return /*#__PURE__*/React__namespace.createElement("div", {
+          ref: function ref(element) {
+            return element && !disabled && tabRefs.push(element);
+          },
+          "data-test": "DesignSystem-Tabs--Tab",
+          key: index,
+          className: tabHeaderClass,
+          onClick: function onClick() {
+            return !disabled && tabClickHandler(index);
+          },
+          onKeyDown: function onKeyDown(event) {
+            return tabKeyDownHandler(event, index);
+          },
+          tabIndex: activeIndex === index ? 0 : -1
+        }, renderTab(currentTabProp, index));
+      });
       return /*#__PURE__*/React__namespace.createElement("div", __assign({
         "data-test": "DesignSystem-Tabs"
       }, baseProps, {
-        className: tabsClass
-      }), renderTabs());
+        className: wrapperClass
+      }), /*#__PURE__*/React__namespace.createElement("div", {
+        className: headerClass
+      }, renderTabs, inlineComponent), children && /*#__PURE__*/React__namespace.createElement("div", {
+        className: tabContentClass,
+        "data-test": "DesignSystem-Tabs--Content"
+      }, tabs[activeIndex]));
     };
     Tabs.displayName = 'Tabs';
     Tabs.defaultProps = {
-      withSeparator: true
+      withSeparator: true,
+      tabs: []
     };
 
     var accepts = function accepts(file, acceptedFiles) {
@@ -9996,7 +12066,7 @@
       });
     };
 
-    var COMMON_MIME_TYPES = new Map([['avi', 'video/avi'], ['gif', 'image/gif'], ['ico', 'image/x-icon'], ['jpeg', 'image/jpeg'], ['jpg', 'image/jpeg'], ['mkv', 'video/x-matroska'], ['mov', 'video/quicktime'], ['mp4', 'video/mp4'], ['pdf', 'application/pdf'], ['png', 'image/png'], ['zip', 'application/zip'], ['doc', 'application/msword'], ['docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']]);
+    var COMMON_MIME_TYPES = new Map([['gif', 'image/gif'], ['ico', 'image/x-icon'], ['jpeg', 'image/jpeg'], ['jpg', 'image/jpeg'], ['png', 'image/png'], ['bmp', 'image/bmp'], ['tif', 'image/tiff'], ['tiff', 'image/tiff'], ['apng', 'image/apng'], ['avif', 'image/avif'], ['jfif', 'image/jpeg'], ['pjpeg', 'image/pjpeg'], ['pjp', 'image/jpeg'], ['svg', 'image/svg+xml'], ['webp', 'image/webp'], ['cur', 'image/x-win-bitmap'], ['MTS', 'model/vnd.mts'], ['roq', 'video'], ['f4a', 'video'], ['f4b', 'video'], ['drc', 'video'], ['nsv', 'video'], ['avi', 'video/x-msvideo'], ['mkv', 'video/x-matroska'], ['mov', 'video/quicktime'], ['mp4', 'video/mp4'], ['webm', 'video/webm'], ['flv', 'video/x-flv'], ['vob', 'video/x-ms-vob'], ['ogv', 'video/ogg'], ['ogg', 'application/ogg'], ['gifv', 'image/gif'], ['mng', 'video/x-mng'], ['M2TS', 'video/MP2T'], ['TS', 'video/mp2t'], ['qt', 'video/quicktime'], ['wmv', 'video/x-ms-wmv'], ['yuv', 'application/octet-stream'], ['rm', 'application/vnd.rn-realmedia'], ['rmvb', 'application/vnd.rn-realmedia-vbr'], ['viv', 'video/vnd.vivo'], ['asf', 'video/x-ms-asf'], ['amv', 'video/x-amv'], ['m4v', 'video/x-m4v'], ['mpg', 'video/mpeg'], ['mpeg', 'video/mpeg'], ['mpe', 'video/mpeg'], ['mpv', 'video/mpv'], ['m2v', 'video/mpeg'], ['svi', 'video/x-msvideo'], ['3gp', 'video/3gpp'], ['3g2', 'video/3gpp2'], ['mxf', 'application/mxf'], ['flv', 'video/x-flv'], ['f4v', 'video/x-f4v'], ['f4p', 'video/mp4'], ['aa', 'audio'], ['aax', 'audio'], ['act', 'audio'], ['alac', 'audio'], ['ape', 'audio'], ['awb', 'audio'], ['dss', 'audio'], ['dvf', 'audio'], ['iklax', 'audio'], ['ivs', 'audio'], ['msv', 'audio'], ['nmf', 'audio'], ['mogg', 'audio'], ['raw', 'audio'], ['rf64', 'audio'], ['sln', 'audio'], ['wv', 'audio'], ['8svx', 'audio'], ['3gp', 'audio/3gpp'], ['mp2', 'audio/mpeg'], ['aac', 'audio/x-aac'], ['aiff', 'audio/x-aiff'], ['amr', 'audio/amr'], ['au', 'audio/basic'], ['flac', 'audio/x-flac'], ['gsm', 'audio/gsm'], ['m4a', 'audio/mp4a-latm'], ['m4b', 'audio/mp4a-latm'], ['m4p', 'audio/mp4a-latm'], ['mmf', 'application/vnd.smaf'], ['mp3', 'audio/mpeg'], ['ogg', 'audio/ogg'], ['oga', 'audio/ogg'], ['opus', 'audio/opus'], ['tta', 'audio/x-tta'], ['voc', 'audio/x-voice'], ['wav', 'audio/x-wav'], ['wma', 'audio/x-ms-wma'], ['webm', 'audio/webm'], ['cda ', 'application/x-cdf'], ['ra', 'audio/x-pn-realaudio'], ['vox', 'application/x-authorware-bin'], ['rm', 'application/vnd.rn-realmedia'], ['mpc', 'application/vnd.mophun.certificate'], ['pdf', 'application/pdf'], ['zip', 'application/zip'], ['doc', 'application/msword'], ['docx', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'], ['xlss', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'], ['xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'], ['xls', 'application/vnd.ms-excel'], ['odt', 'application/vnd.oasis.opendocument.text'], ['tex', 'application/x-tex'], ['wpd', 'application/wordperfect'], ['ods', 'application/vnd.oasis.opendocument.spreadsheet'], ['csv', 'text/csv'], ['rtf', 'text/rtf'], ['txt', 'text/plain'], ['tsv', 'text/tab-separated-values']]);
     var FILES_TO_IGNORE = ['.DS_Store', 'Thumbs.db'];
     function fromEvent(evt) {
       return __awaiter(this, void 0, void 0, function () {
@@ -10255,7 +12325,7 @@
           dispatch({
             type: 'openDialog'
           });
-          inputRef.current.value = null;
+          inputRef.current.value = '';
           inputRef.current.click();
         }
       }, [dispatch]);
@@ -10266,7 +12336,7 @@
             if (inputRef.current) {
               var files = inputRef.current.files;
 
-              if (!files.length) {
+              if (!files || !files.length) {
                 dispatch({
                   type: 'closeDialog'
                 });
@@ -10309,7 +12379,7 @@
       var dragTargetsRef = React.useRef([]);
 
       var onDocumentDrop = function onDocumentDrop(event) {
-        if (rootRef.current && rootRef.current.contains(event.target)) {
+        if (event.target instanceof HTMLDivElement && rootRef.current && rootRef.current.contains(event.target)) {
           return;
         }
 
@@ -10430,11 +12500,12 @@
                   errors = errors.concat(customErrors);
                 }
 
+                var filteredErrors = errors.filter(function (e) {
+                  return e;
+                });
                 fileRejections.push({
                   file: file,
-                  errors: errors.filter(function (e) {
-                    return e;
-                  })
+                  errors: filteredErrors
                 });
               }
             });
@@ -10463,16 +12534,8 @@
         });
       }, [multiple, accept, minSize, maxSize, getFilesFromEvent, onDrop, onDropAccepted, onDropRejected]);
 
-      var composeHandler = function composeHandler(fn) {
-        return disabled ? null : fn;
-      };
-
-      var composeKeyboardHandler = function composeKeyboardHandler(_fn) {
-        return null;
-      };
-
       var composeDragHandler = function composeDragHandler(fn) {
-        return composeHandler(fn);
+        return disabled ? null : fn;
       };
 
       var getRootProps = React.useMemo(function () {
@@ -10484,10 +12547,10 @@
           }
 
           var _c = _a.refKey,
-              refKey = _c === void 0 ? 'ref' : _c,
-              onKeyDown = _a.onKeyDown,
-              onFocus = _a.onFocus,
-              onBlur = _a.onBlur;
+              refKey = _c === void 0 ? 'ref' : _c;
+              _a.onKeyDown;
+              _a.onFocus;
+              _a.onBlur;
               _a.onClick;
               var onDragEnterCallback = _a.onDragEnterCallback,
               onDragOverCallback = _a.onDragOverCallback,
@@ -10496,9 +12559,6 @@
               rest = __rest(_a, ["refKey", "onKeyDown", "onFocus", "onBlur", "onClick", "onDragEnterCallback", "onDragOverCallback", "onDragLeaveCallback", "onDropCallback"]);
 
           return __assign((_b = {
-            onKeyDown: composeKeyboardHandler(composeEventHandlers(onKeyDown, onKeyDownCb)),
-            onFocus: composeKeyboardHandler(composeEventHandlers(onFocus, onFocusCb)),
-            onBlur: composeKeyboardHandler(composeEventHandlers(onBlur, onBlurCb)),
             onDragEnter: composeDragHandler(composeEventHandlers(onDragEnterCallback, onDragEnterCb)),
             onDragOver: composeDragHandler(composeEventHandlers(onDragOverCallback, onDragOverCb)),
             onDragLeave: composeDragHandler(composeEventHandlers(onDragLeaveCallback, onDragLeaveCb)),
@@ -10530,8 +12590,8 @@
             style: {
               display: 'none'
             },
-            onChange: composeHandler(composeEventHandlers(onChange, onDropCb)),
-            onClick: composeHandler(composeEventHandlers(onClick, onInputElementClick)),
+            onChange: composeDragHandler(composeEventHandlers(onChange, onDropCb)),
+            onClick: composeDragHandler(composeEventHandlers(onClick, onInputElementClick)),
             autoComplete: 'off',
             tabIndex: -1
           }, _b[refKey] = inputRef, _b);
@@ -10564,7 +12624,7 @@
         draggedFiles: draggedFiles,
         fileError: fileError,
         isFocused: isFocused && !disabled,
-        open: composeHandler(openFileDialog)
+        open: composeDragHandler(openFileDialog)
       });
     };
     DropzoneBase.displayName = 'DropzoneBase';
@@ -10580,16 +12640,32 @@
       }
     };
 
-    var DropzoneActive = function DropzoneActive(props) {
-      var _a;
+    var svgCode = {
+      active: 'M49 41v8H17v-8h-5.375v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8H49zM19.625 25l3.75 3.75 7-6.875v21.75h5.25v-21.75l7 6.875 3.75-3.75L33 11.625 19.625 25z',
+      "default": 'M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z',
+      error: 'M31.625 5C16.875 5 5 16.875 5 31.625C5 46.375 16.875 58.25 31.625 58.25C46.375 58.25 58.25 46.375 58.25 31.625C58.25 16.875 46.375 5 31.625 5ZM34.25 45H29V39.625H34.25V45ZM34.25 34.25H29V18.25H34.25V34.25Z'
+    };
 
+    var DropzoneIcon = function DropzoneIcon(props) {
+      var IconStyle = {
+        height: 'calc(var(--spacing-5))',
+        width: 'calc(var(--spacing-5))'
+      };
+      return /*#__PURE__*/React__default["default"].createElement("svg", {
+        style: IconStyle,
+        className: "Dropzone-icon--" + props.type,
+        fill: "none"
+      }, /*#__PURE__*/React__default["default"].createElement("path", {
+        d: svgCode[props.name],
+        className: props.disabled ? 'Dropzone-icon--disabled' : "Dropzone-icon--" + props.name
+      }));
+    };
+
+    var DropzoneActive = function DropzoneActive(props) {
       var type = props.type;
-      var IconClass = classNames__default['default']((_a = {}, _a['Dropzone-stateIcon'] = true, _a["Dropzone-stateIcon--" + type] = type, _a));
-      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, type !== 'tight' && /*#__PURE__*/React__namespace.createElement(Icon, {
-        name: "archive",
-        size: 64,
-        appearance: "info",
-        className: IconClass
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, type !== 'tight' && /*#__PURE__*/React__namespace.createElement(DropzoneIcon, {
+        name: "active",
+        type: type
       }), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "link",
         size: "large",
@@ -10599,16 +12675,11 @@
     DropzoneActive.displayName = 'DropzoneActive';
 
     var DropzoneError = function DropzoneError(props) {
-      var _a;
-
       var type = props.type,
           error = props.error;
-      var IconClass = classNames__default['default']((_a = {}, _a['Dropzone-stateIcon'] = true, _a["Dropzone-stateIcon--" + type] = type, _a));
-      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, type !== 'tight' && /*#__PURE__*/React__namespace.createElement(Icon, {
-        name: "error",
-        size: 64,
-        appearance: "alert",
-        className: IconClass
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, type !== 'tight' && /*#__PURE__*/React__namespace.createElement(DropzoneIcon, {
+        type: type,
+        name: "error"
       }), /*#__PURE__*/React__namespace.createElement(Text, {
         appearance: "destructive",
         size: "large",
@@ -10618,7 +12689,7 @@
     DropzoneError.displayName = 'DropzoneError';
 
     var Dropzone = function Dropzone(props) {
-      var _a, _b, _c;
+      var _a, _b;
 
       var type = props.type,
           sizeLabel = props.sizeLabel,
@@ -10627,73 +12698,60 @@
           sampleFileLink = props.sampleFileLink,
           disabled = props.disabled;
 
-      var _d = DropzoneBase(props),
-          open = _d.open,
-          getRootProps = _d.getRootProps,
-          getInputProps = _d.getInputProps,
-          isDragActive = _d.isDragActive,
-          isDragReject = _d.isDragReject,
-          fileError = _d.fileError;
+      var _c = DropzoneBase(props),
+          open = _c.open,
+          getRootProps = _c.getRootProps,
+          getInputProps = _c.getInputProps,
+          isDragActive = _c.isDragActive,
+          isDragReject = _c.isDragReject,
+          fileError = _c.fileError;
 
       var baseProps = extractBaseProps(props);
-      var DropzoneClass = classNames__default['default']((_a = {}, _a['Dropzone'] = true, _a["Dropzone--" + type] = type, _a['Dropzone--disabled'] = disabled, _a['Dropzone--active'] = isDragActive, _a['Dropzone--error'] = isDragReject, _a), className);
-      var IconClass = classNames__default['default']((_b = {}, _b['Dropzone-icon'] = true, _b["Dropzone-icon--" + type] = true, _b['Dropzone-icon--disabled'] = disabled, _b));
-      var WrapperClass = classNames__default['default']((_c = {}, _c['DropzoneWrapper'] = true, _c["DropzoneWrapper--" + type] = true, _c));
-
-      if (isDragReject) {
-        return /*#__PURE__*/React__default['default'].createElement("div", __assign({}, getRootProps(), baseProps, {
-          className: DropzoneClass
-        }), /*#__PURE__*/React__default['default'].createElement(DropzoneError, {
-          type: type,
-          error: fileErrorMessages[fileError]
-        }));
-      }
-
-      if (isDragActive) {
-        return /*#__PURE__*/React__default['default'].createElement("div", __assign({}, getRootProps(), baseProps, {
-          className: DropzoneClass
-        }), /*#__PURE__*/React__default['default'].createElement(DropzoneActive, {
-          type: type
-        }));
-      }
+      var DropzoneClass = classNames__default["default"]((_a = {}, _a['Dropzone'] = true, _a["Dropzone--" + type] = type, _a['Dropzone--disabled'] = disabled, _a['Dropzone--active'] = isDragActive, _a['Dropzone--error'] = isDragReject, _a['DropzoneAnimation--default'] = !isDragActive, _a['DropzoneAnimation--active'] = isDragActive && !isDragReject, _a), className);
+      var WrapperClass = classNames__default["default"]((_b = {}, _b['DropzoneWrapper'] = true, _b["DropzoneWrapper--" + type] = true, _b));
 
       var renderDropzone = function renderDropzone() {
-        if (isDragReject) return /*#__PURE__*/React__default['default'].createElement(DropzoneError, {
+        if (isDragReject) return /*#__PURE__*/React__namespace.createElement(DropzoneError, {
           type: type,
           error: fileErrorMessages[fileError]
         });
-        if (isDragActive) return /*#__PURE__*/React__default['default'].createElement(DropzoneActive, {
+        if (isDragActive) return /*#__PURE__*/React__namespace.createElement(DropzoneActive, {
           type: type
         });
-        return /*#__PURE__*/React__default['default'].createElement(React__default['default'].Fragment, null, type !== 'tight' && /*#__PURE__*/React__default['default'].createElement(Icon, {
-          name: "backup",
-          size: 64,
-          className: IconClass
-        }), /*#__PURE__*/React__default['default'].createElement("div", {
-          className: WrapperClass
-        }, /*#__PURE__*/React__default['default'].createElement("span", null, /*#__PURE__*/React__default['default'].createElement(Text, {
+        var buttonAccessibilityProps = useAccessibilityProps({
+          onClick: open,
+          'aria-label': 'Drag your files here or click to select files'
+        });
+        return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, type !== 'tight' && /*#__PURE__*/React__namespace.createElement(DropzoneIcon, {
+          disabled: disabled,
+          name: "default",
+          type: type
+        }), /*#__PURE__*/React__namespace.createElement("div", {
+          className: WrapperClass,
+          "data-test": "DesignSystem-Dropzone-Wrapper"
+        }, /*#__PURE__*/React__namespace.createElement("span", null, /*#__PURE__*/React__namespace.createElement(Text, {
           size: "large",
           weight: "strong",
           className: "mr-2",
           appearance: disabled ? 'disabled' : 'default'
-        }, "Drag your files here or"), /*#__PURE__*/React__default['default'].createElement("span", {
-          className: "cursor-pointer",
-          onClick: open
-        }, /*#__PURE__*/React__default['default'].createElement(Text, {
+        }, "Drag your files here or"), /*#__PURE__*/React__namespace.createElement(Text, __assign({
+          tabIndex: disabled ? -1 : 0,
+          className: "ml-2 cursor-pointer",
           size: "large",
           weight: "strong",
           appearance: disabled ? 'disabled' : 'link'
-        }, " browse files")), /*#__PURE__*/React__default['default'].createElement("input", __assign({}, getInputProps()))), formatLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
+        }, buttonAccessibilityProps), "browse files"), /*#__PURE__*/React__namespace.createElement("input", __assign({}, getInputProps()))), formatLabel && /*#__PURE__*/React__namespace.createElement(Text, {
           appearance: disabled ? 'disabled' : 'subtle'
-        }, formatLabel), sizeLabel && /*#__PURE__*/React__default['default'].createElement(Text, {
+        }, formatLabel), sizeLabel && /*#__PURE__*/React__namespace.createElement(Text, {
           appearance: disabled ? 'disabled' : 'subtle'
-        }, sizeLabel), sampleFileLink && /*#__PURE__*/React__default['default'].createElement("div", {
+        }, sizeLabel), sampleFileLink && /*#__PURE__*/React__namespace.createElement("div", {
           className: "mt-5"
         }, sampleFileLink)));
       };
 
-      return /*#__PURE__*/React__default['default'].createElement("div", __assign({}, getRootProps(), baseProps, {
-        className: DropzoneClass
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({}, getRootProps(), baseProps, {
+        className: DropzoneClass,
+        "data-test": "DesignSystem-Dropzone"
       }), renderDropzone());
     };
     Dropzone.displayName = 'Dropzone';
@@ -10728,15 +12786,17 @@
           id = props.id,
           _onChange = props.onChange;
       var baseProps = extractBaseProps(props);
-      var FileUploaderButtonClass = classNames__default['default']((_a = {}, _a['FileUploaderButton'] = true, _a), className);
+      var FileUploaderButtonClass = classNames__default["default"]((_a = {}, _a['FileUploaderButton'] = true, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileUploaderButtonClass
       }), /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         disabled: disabled,
         icon: "backup"
       }, uploadButtonLabel), /*#__PURE__*/React__namespace.createElement("input", {
         name: name,
         id: id,
+        "data-test": "DesignSystem-FileUploaderButton--Input",
         accept: accept && accept.join(', '),
         multiple: multiple,
         disabled: disabled,
@@ -10772,9 +12832,10 @@
           name = props.name,
           onChange = props.onChange;
       var baseProps = extractBaseProps(props);
-      var FileUploaderClass = classNames__default['default']((_a = {}, _a['FileUploader'] = true, _a), className);
+      var FileUploaderClass = classNames__default["default"]((_a = {}, _a['FileUploader'] = true, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-        className: FileUploaderClass
+        className: FileUploaderClass,
+        "data-test": "DesignSystem-FileUploader"
       }), /*#__PURE__*/React__namespace.createElement(Text, {
         weight: "medium"
       }, title), /*#__PURE__*/React__namespace.createElement(FileUploaderFormat, {
@@ -10848,8 +12909,9 @@
           className = props.className;
       var name = file.name;
       var baseProps = extractBaseProps(props);
-      var FileItemClass = classNames__default['default']((_a = {}, _a['FileUploaderItem'] = true, _a), className);
+      var FileItemClass = classNames__default["default"]((_a = {}, _a['FileUploaderItem'] = true, _a), className);
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
+        "data-test": "DesignSystem-FileUploader--Item",
         className: FileItemClass,
         onClick: function onClick() {
           return _onClick && _onClick(file, id);
@@ -10870,15 +12932,18 @@
           return _onRetry && _onRetry(file, id);
         }
       }), /*#__PURE__*/React__namespace.createElement(Button, {
+        "data-test": "DesignSystem-FileUploader--CancelButton",
         appearance: "transparent",
         size: "regular",
         onClick: function onClick() {
           return onDelete && onDelete(file, id);
         },
         icon: "close"
-      }))), status === 'error' && /*#__PURE__*/React__namespace.createElement(Caption, {
-        error: true
-      }, errorMessage));
+      }))), status === 'error' && /*#__PURE__*/React__namespace.createElement(InlineMessage, {
+        size: "small",
+        appearance: "alert",
+        description: errorMessage
+      }));
     };
     FileUploaderItem.defaultProps = {
       status: 'completed',
@@ -10896,10 +12961,11 @@
           onRetry = props.onRetry,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var FileListClass = classNames__default['default']((_a = {}, _a['FileUploaderList'] = true, _a), className);
+      var FileListClass = classNames__default["default"]((_a = {}, _a['FileUploaderList'] = true, _a), className);
       if (fileList.length === 0) return null;
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-        className: FileListClass
+        className: FileListClass,
+        "data-test": "DesignSystem-FileUploader--List"
       }), fileList.map(function (fileName, i) {
         return /*#__PURE__*/React__namespace.createElement(FileUploaderItem, __assign({
           key: i,
@@ -11008,12 +13074,15 @@
       return sizes[cellType];
     }
 
-    var updateBatchData = function updateBatchData(data, rowIndexes, dataUpdate) {
+    var updateBatchData = function updateBatchData(data, rowIndexes, dataUpdate, selectDisabledRow) {
       var updatedData = __spreadArrays(data);
 
       for (var _i = 0, rowIndexes_1 = rowIndexes; _i < rowIndexes_1.length; _i++) {
         var rowIndex = rowIndexes_1[_i];
-        updatedData[rowIndex] = __assign(__assign({}, updatedData[rowIndex]), dataUpdate);
+
+        if (data[rowIndex].disabled && selectDisabledRow || !data[rowIndex].disabled) {
+          updatedData[rowIndex] = __assign(__assign({}, updatedData[rowIndex]), dataUpdate);
+        }
       }
 
       return updatedData;
@@ -11120,7 +13189,11 @@
     var getTotalPages = function getTotalPages(totalRecords, pageSize) {
       return Math.ceil(totalRecords / pageSize);
     };
-    var getSelectAll = function getSelectAll(data) {
+    var getSelectAll = function getSelectAll(tableData, selectDisabledRow) {
+      var data = tableData.filter(function (d) {
+        return d.disabled && selectDisabledRow || !d.disabled;
+      });
+
       if (data.length) {
         var anyUnSelected = data.some(function (d) {
           return !d._selected;
@@ -11174,7 +13247,7 @@
       showFilters: true
     };
 
-    var context = /*#__PURE__*/React__default['default'].createContext(__assign(__assign({}, defaultProps$1), {
+    var context = /*#__PURE__*/React__namespace.createContext(__assign(__assign({}, defaultProps$1), {
       ref: null
     }));
     var GridProvider = context.Provider;
@@ -11198,9 +13271,23 @@
     var HeaderCell = function HeaderCell(props) {
       var context$1 = React__namespace.useContext(context);
       var schema = props.schema,
+          setIsDragged = props.setIsDragged,
+          colIndex = props.colIndex,
+          onSelectAll = props.onSelectAll,
           onMenuChange = props.onMenuChange,
           onFilterChange = props.onFilterChange,
-          updateColumnSchema = props.updateColumnSchema;
+          updateColumnSchema = props.updateColumnSchema,
+          reorderColumn = props.reorderColumn;
+      var headProps = {
+        schema: schema,
+        colIndex: colIndex,
+        onSelectAll: onSelectAll,
+        onMenuChange: onMenuChange,
+        onFilterChange: onFilterChange,
+        updateColumnSchema: updateColumnSchema,
+        reorderColumn: reorderColumn,
+        setIsDragged: setIsDragged
+      };
       var loading = context$1.loading,
           draggable = context$1.draggable,
           showMenu = context$1.showMenu,
@@ -11223,11 +13310,11 @@
       var sortOptions = [{
         label: 'Sort Ascending',
         value: 'sortAsc',
-        icon: 'arrow_downward'
+        icon: 'arrow_upward'
       }, {
         label: 'Sort Descending',
         value: 'sortDesc',
-        icon: 'arrow_upward'
+        icon: 'arrow_downward'
       }];
       var pinOptions = [{
         label: 'Pin Left',
@@ -11261,7 +13348,7 @@
       var options = __spreadArrays(pinOptions, hideOptions);
 
       if (sorting) options = __spreadArrays(sortOptions, options);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         'Grid-headCell': true,
         'Grid-headCell--draggable': draggable
       });
@@ -11280,9 +13367,9 @@
         }, schema.displayName), sorting && /*#__PURE__*/React__namespace.createElement("div", {
           className: "Grid-sortingIcons"
         }, sorted ? sorted === 'asc' ? /*#__PURE__*/React__namespace.createElement(Icon, {
-          name: "arrow_downward"
-        }) : /*#__PURE__*/React__namespace.createElement(Icon, {
           name: "arrow_upward"
+        }) : /*#__PURE__*/React__namespace.createElement(Icon, {
+          name: "arrow_downward"
         }) : /*#__PURE__*/React__namespace.createElement(Icon, {
           name: "unfold_more"
         })));
@@ -11294,6 +13381,7 @@
         ref: el
       }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-cellContent",
+        "data-test": "DesignSystem-Grid-cellContent",
         onClick: function onClick() {
           if (!loading && sorting) {
             if (sorted === 'asc') onMenuChange(name, 'sortDesc');
@@ -11305,11 +13393,11 @@
         withImage: false
       }, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
         length: "medium"
-      })) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, headCellTooltip ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
+      })) : !schema.headerCellRenderer && headCellTooltip ? /*#__PURE__*/React__namespace.createElement(Tooltip, {
         position: "top-start",
         triggerClass: "w-100 overflow-hidden",
         tooltip: schema.displayName
-      }, renderLabel()) : renderLabel())), showFilters && filters && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, loading && !isValidSchema ? /*#__PURE__*/React__namespace.createElement("span", null, /*#__PURE__*/React__namespace.createElement(Placeholder, null)) : /*#__PURE__*/React__namespace.createElement("div", null, /*#__PURE__*/React__namespace.createElement(Dropdown, {
+      }, renderLabel()) : schema.headerCellRenderer && !headCellTooltip ? schema.headerCellRenderer(headProps) : renderLabel()), showFilters && filters && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, loading && !isValidSchema ? /*#__PURE__*/React__namespace.createElement("span", null, /*#__PURE__*/React__namespace.createElement(Placeholder, null)) : /*#__PURE__*/React__namespace.createElement("div", null, /*#__PURE__*/React__namespace.createElement(Dropdown, {
         menu: true,
         showApplyButton: true,
         withCheckbox: true,
@@ -11353,6 +13441,7 @@
           resizeCol({
             updateColumnSchema: updateColumnSchema
           }, name, el.current);
+          setIsDragged(false);
         }
       }));
     };
@@ -11405,18 +13494,19 @@
 
     var Cell = function Cell(props) {
       var context$1 = React__namespace.useContext(context);
-      var isHead = props.isHead,
-          firstCell = props.firstCell,
-          schema = props.schema,
-          data = props.data,
-          rowIndex = props.rowIndex,
-          colIndex = props.colIndex,
-          expandedState = props.expandedState,
-          onSelectAll = props.onSelectAll,
-          onMenuChange = props.onMenuChange,
-          onFilterChange = props.onFilterChange,
-          updateColumnSchema = props.updateColumnSchema,
-          reorderColumn = props.reorderColumn;
+      var _a = props,
+          isHead = _a.isHead,
+          firstCell = _a.firstCell,
+          schema = _a.schema,
+          data = _a.data,
+          rowIndex = _a.rowIndex,
+          colIndex = _a.colIndex,
+          expandedState = _a.expandedState,
+          onSelectAll = _a.onSelectAll,
+          onMenuChange = _a.onMenuChange,
+          onFilterChange = _a.onFilterChange,
+          updateColumnSchema = _a.updateColumnSchema,
+          reorderColumn = _a.reorderColumn;
       var draggable = context$1.draggable,
           separator = context$1.separator,
           nestedRows = context$1.nestedRows,
@@ -11425,19 +13515,24 @@
       var name = schema.name,
           hidden = schema.hidden,
           pinned = schema.pinned,
-          _a = schema.cellType,
-          cellType = _a === void 0 ? 'DEFAULT' : _a;
+          _b = schema.cellType,
+          cellType = _b === void 0 ? 'DEFAULT' : _b;
 
-      var _b = getCellSize(cellType),
-          width = _b.width,
-          _c = _b.minWidth,
-          minWidth = _c === void 0 ? 96 : _c,
-          _d = _b.maxWidth,
-          maxWidth = _d === void 0 ? 800 : _d;
+      var _c = getCellSize(cellType),
+          width = _c.width,
+          _d = _c.minWidth,
+          minWidth = _d === void 0 ? 96 : _d,
+          _e = _c.maxWidth,
+          maxWidth = _e === void 0 ? 800 : _e;
 
-      var cellClass = classNames__default['default']({
+      var _f = React__namespace.useState(false),
+          isDragged = _f[0],
+          setIsDragged = _f[1];
+
+      var cellClass = classNames__default["default"]({
         'Grid-cell': true,
         'Grid-cell--head': isHead,
+        'Grid-cell--dragged': isDragged && draggable,
         'Grid-cell--body': !isHead,
         'Grid-cell--separator': !firstCell && (schema.separator !== undefined ? schema.separator : separator),
         'Grid-cell--nestedRow': !isHead && colIndex === 0 && nestedRows
@@ -11449,15 +13544,27 @@
         draggable: isHead && draggable,
         onDragStart: function onDragStart(e) {
           if (draggable) {
+            setIsDragged(true);
             e.dataTransfer.setData('name', name);
             if (pinned) e.dataTransfer.setData('type', pinned);
           }
         },
+        onDrag: function onDrag() {
+          setIsDragged(false);
+        },
         onDragOver: function onDragOver(e) {
           return e.preventDefault();
         },
+        onMouseUpCapture: function onMouseUpCapture() {
+          setIsDragged(false);
+        },
+        onDragEnd: function onDragEnd(e) {
+          e.preventDefault();
+          setIsDragged(false);
+        },
         onDrop: function onDrop(e) {
           if (draggable) {
+            setIsDragged(false);
             var from = {
               name: e.dataTransfer.getData('name'),
               type: e.dataTransfer.getData('type')
@@ -11466,7 +13573,7 @@
               name: name,
               type: pinned || ''
             };
-            if (from.type === to.type) reorderColumn(from.name, to.name);
+            if (from.type === to.type && reorderColumn) reorderColumn(from.name, to.name);
           }
         },
         style: {
@@ -11490,7 +13597,8 @@
         onMenuChange: onMenuChange,
         onFilterChange: onFilterChange,
         updateColumnSchema: updateColumnSchema,
-        reorderColumn: reorderColumn
+        reorderColumn: reorderColumn,
+        setIsDragged: setIsDragged
       }) : /*#__PURE__*/React__namespace.createElement(BodyCell, {
         rowIndex: rowIndex,
         colIndex: colIndex,
@@ -11537,7 +13645,7 @@
         var _a;
 
         if (currSchema.length) {
-          var classes = classNames__default['default']((_a = {
+          var classes = classNames__default["default"]((_a = {
             'Grid-cellGroup': true,
             'Grid-cellGroup--pinned': pinned
           }, _a["Grid-cellGroup--pinned-" + pinned] = pinned, _a['Grid-cellGroup--main'] = !pinned, _a));
@@ -11565,409 +13673,12 @@
       };
 
       return /*#__PURE__*/React__namespace.createElement("div", {
-        className: "Grid-head"
+        className: "Grid-head",
+        "data-test": "DesignSystem-GridHead-wrapper"
       }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "Grid-row Grid-row--head"
       }, renderSchema(leftPinnedSchema, !!leftPinnedSchema.length, 'left'), renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length), renderSchema(rightPinnedSchema, false, 'right')));
     };
-
-    function _classCallCheck(instance, Constructor) {
-      if (!(instance instanceof Constructor)) {
-        throw new TypeError("Cannot call a class as a function");
-      }
-    }
-
-    function _defineProperties(target, props) {
-      for (var i = 0; i < props.length; i++) {
-        var descriptor = props[i];
-        descriptor.enumerable = descriptor.enumerable || false;
-        descriptor.configurable = true;
-        if ("value" in descriptor) descriptor.writable = true;
-        Object.defineProperty(target, descriptor.key, descriptor);
-      }
-    }
-
-    function _createClass(Constructor, protoProps, staticProps) {
-      if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-      if (staticProps) _defineProperties(Constructor, staticProps);
-      return Constructor;
-    }
-
-    function _defineProperty(obj, key, value) {
-      if (key in obj) {
-        Object.defineProperty(obj, key, {
-          value: value,
-          enumerable: true,
-          configurable: true,
-          writable: true
-        });
-      } else {
-        obj[key] = value;
-      }
-
-      return obj;
-    }
-
-    function _extends() {
-      _extends = Object.assign || function (target) {
-        for (var i = 1; i < arguments.length; i++) {
-          var source = arguments[i];
-
-          for (var key in source) {
-            if (Object.prototype.hasOwnProperty.call(source, key)) {
-              target[key] = source[key];
-            }
-          }
-        }
-
-        return target;
-      };
-
-      return _extends.apply(this, arguments);
-    }
-
-    function _inherits(subClass, superClass) {
-      if (typeof superClass !== "function" && superClass !== null) {
-        throw new TypeError("Super expression must either be null or a function");
-      }
-
-      subClass.prototype = Object.create(superClass && superClass.prototype, {
-        constructor: {
-          value: subClass,
-          writable: true,
-          configurable: true
-        }
-      });
-      if (superClass) _setPrototypeOf(subClass, superClass);
-    }
-
-    function _getPrototypeOf(o) {
-      _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-        return o.__proto__ || Object.getPrototypeOf(o);
-      };
-      return _getPrototypeOf(o);
-    }
-
-    function _setPrototypeOf(o, p) {
-      _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-        o.__proto__ = p;
-        return o;
-      };
-
-      return _setPrototypeOf(o, p);
-    }
-
-    function _isNativeReflectConstruct() {
-      if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-      if (Reflect.construct.sham) return false;
-      if (typeof Proxy === "function") return true;
-
-      try {
-        Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));
-        return true;
-      } catch (e) {
-        return false;
-      }
-    }
-
-    function _objectWithoutPropertiesLoose(source, excluded) {
-      if (source == null) return {};
-      var target = {};
-      var sourceKeys = Object.keys(source);
-      var key, i;
-
-      for (i = 0; i < sourceKeys.length; i++) {
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-      }
-
-      return target;
-    }
-
-    function _objectWithoutProperties(source, excluded) {
-      if (source == null) return {};
-
-      var target = _objectWithoutPropertiesLoose(source, excluded);
-
-      var key, i;
-
-      if (Object.getOwnPropertySymbols) {
-        var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-        for (i = 0; i < sourceSymbolKeys.length; i++) {
-          key = sourceSymbolKeys[i];
-          if (excluded.indexOf(key) >= 0) continue;
-          if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-          target[key] = source[key];
-        }
-      }
-
-      return target;
-    }
-
-    function _assertThisInitialized(self) {
-      if (self === void 0) {
-        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-      }
-
-      return self;
-    }
-
-    function _possibleConstructorReturn(self, call) {
-      if (call && (typeof call === "object" || typeof call === "function")) {
-        return call;
-      }
-
-      return _assertThisInitialized(self);
-    }
-
-    function _createSuper(Derived) {
-      var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
-      return function _createSuperInternal() {
-        var Super = _getPrototypeOf(Derived),
-            result;
-
-        if (hasNativeReflectConstruct) {
-          var NewTarget = _getPrototypeOf(this).constructor;
-
-          result = Reflect.construct(Super, arguments, NewTarget);
-        } else {
-          result = Super.apply(this, arguments);
-        }
-
-        return _possibleConstructorReturn(this, result);
-      };
-    }
-
-    var isInView = function isInView(container, element) {
-      var containerTop = container.offsetTop;
-      var elementRect = element.getBoundingClientRect();
-      var elementTop = elementRect.top;
-      var elementHeight = elementRect.height;
-      return elementHeight - (containerTop - elementTop) > 0;
-    };
-
-    var VirtualScroll = /*#__PURE__*/function (_React$Component) {
-      _inherits(VirtualScroll, _React$Component);
-
-      var _super = _createSuper(VirtualScroll);
-
-      function VirtualScroll(props) {
-        var _this;
-
-        _classCallCheck(this, VirtualScroll);
-
-        _this = _super.call(this, props);
-        _this.state = {
-          offset: props.offset
-        };
-        _this.lastScrollTop = 0;
-        _this.avgRowHeight = props.minItemHeight;
-        return _this;
-      }
-
-      _createClass(VirtualScroll, [{
-        key: "componentDidMount",
-        value: function componentDidMount() {
-          var _this2 = this;
-
-          window.requestAnimationFrame(function () {
-            if (_this2.listRef) {
-              _this2.listRef.scrollTop = _this2.state.offset * _this2.avgRowHeight;
-            }
-          });
-        }
-      }, {
-        key: "componentDidUpdate",
-        value: function componentDidUpdate(_prevProps, prevState) {
-          if (prevState.offset > this.state.offset) {
-            this.updateOffset(prevState);
-          }
-        }
-      }, {
-        key: "updateOffset",
-        value: function updateOffset(prevState) {
-          var offsetDiff = prevState.offset - this.state.offset;
-
-          if (this.listRef) {
-            var el = this.listRef;
-            var items = el.querySelectorAll(".VS-item");
-            var heightAdded = 0;
-            var currOffset = prevState.offset;
-            var start = Math.min(this.state.offset, this.props.buffer);
-            var end = start + offsetDiff;
-
-            for (var i = Math.min(items.length, end) - 1; i >= start; i--) {
-              var inView = isInView(el, items[i]);
-
-              if (inView) {
-                currOffset--;
-                var rowHeight = items[i].clientHeight;
-                heightAdded += rowHeight;
-              } else {
-                break;
-              }
-            }
-
-            if (items.length < end) {
-              var diff = end - items.length;
-              heightAdded += diff * this.props.minItemHeight;
-              currOffset -= diff;
-            }
-
-            var newAvgRowHeight = currOffset === 0 ? this.props.minItemHeight : (this.avgRowHeight * prevState.offset - heightAdded) / currOffset;
-            this.setState({
-              offset: currOffset
-            });
-            this.avgRowHeight = Math.max(this.props.minItemHeight, newAvgRowHeight);
-          }
-        }
-      }, {
-        key: "onScrollHandler",
-        value: function onScrollHandler(event) {
-          if (this.listRef) {
-            var _this$props = this.props,
-                totalLength = _this$props.totalLength,
-                length = _this$props.length,
-                buffer = _this$props.buffer;
-            var offset = this.state.offset;
-            var avgRowHeight = this.avgRowHeight;
-            var el = this.listRef;
-            var scrollTop = el.scrollTop;
-            var direction = Math.floor(scrollTop - this.lastScrollTop);
-            if (direction === 0) return;
-            var items = el.querySelectorAll(".VS-item");
-            var newOffset = offset;
-            var newAvgRowHeight = avgRowHeight;
-            var start = Math.min(offset, buffer);
-
-            if (direction > 0) {
-              if (offset < totalLength - length) {
-                var heightAdded = 0;
-
-                for (var i = start; i < items.length; i++) {
-                  var inView = isInView(el, items[i]);
-                  var rowHeight = items[i].clientHeight;
-
-                  if (!inView) {
-                    heightAdded += rowHeight;
-                    newOffset++;
-                  } else {
-                    break;
-                  }
-                }
-
-                if (heightAdded < direction) {
-                  var heightLeft = direction - heightAdded;
-                  var offsetToBeAdded = Math.floor(heightLeft / this.props.minItemHeight);
-                  newOffset += offsetToBeAdded;
-                  heightAdded += offsetToBeAdded * this.props.minItemHeight;
-                }
-
-                newAvgRowHeight = newOffset > 0 ? (offset * avgRowHeight + heightAdded) / newOffset : this.props.minItemHeight;
-                this.setState({
-                  offset: Math.min(newOffset, totalLength - length)
-                });
-                this.avgRowHeight = Math.max(this.props.minItemHeight, newAvgRowHeight);
-              }
-            } else {
-              var scrollDiff = items[start].getBoundingClientRect().y - el.getBoundingClientRect().y;
-
-              if (scrollDiff > 0) {
-                var offsetDiff = Math.floor(scrollDiff / this.props.minItemHeight) || 1;
-
-                var _newOffset = offset - offsetDiff;
-
-                if (_newOffset < totalLength - (length + buffer)) {
-                  this.setState({
-                    offset: Math.max(0, _newOffset)
-                  });
-                }
-              }
-            }
-
-            this.lastScrollTop = scrollTop;
-          }
-
-          if (this.props.onScroll) this.props.onScroll(event);
-        }
-      }, {
-        key: "renderItems",
-        value: function renderItems(start, end) {
-          var renderItem = this.props.renderItem;
-          return Array.from({
-            length: end - start + 1
-          }, function (_, index) {
-            var rowIndex = start + index;
-            var component = renderItem(rowIndex);
-            return /*#__PURE__*/React__namespace.cloneElement(component, {
-              key: rowIndex,
-              className: ["VS-item", component.props.className].join(' ').trim()
-            });
-          });
-        }
-      }, {
-        key: "render",
-        value: function render() {
-          var _this3 = this;
-
-          var _this$props2 = this.props,
-              totalLength = _this$props2.totalLength,
-              length = _this$props2.length,
-              buffer = _this$props2.buffer;
-              _this$props2.offset;
-              _this$props2.renderItem;
-              _this$props2.minItemHeight;
-              var forwardRef = _this$props2.forwardRef,
-              rest = _objectWithoutProperties(_this$props2, ["totalLength", "length", "buffer", "offset", "renderItem", "minItemHeight", "forwardRef"]);
-
-          var _this$state = this.state,
-              init = _this$state.init,
-              offset = _this$state.offset;
-          var avgRowHeight = this.avgRowHeight;
-          var start = Math.max(0, offset - buffer);
-          var end = Math.min(offset + (length + buffer) - 1, totalLength - 1);
-          var topPadding = Math.max(0, start * avgRowHeight);
-          var bottomPadding = Math.max(0, (totalLength - end - 1) * avgRowHeight);
-          return /*#__PURE__*/React__namespace.createElement("div", _extends({}, rest, {
-            ref: function ref(el) {
-              _this3.listRef = el;
-              if (forwardRef) forwardRef.current = el;
-              if (!init) _this3.setState({
-                init: true
-              });
-            },
-            onScroll: this.onScrollHandler.bind(this)
-          }), init && /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
-            style: {
-              flexShrink: 0,
-              height: topPadding
-            }
-          }), this.renderItems(start, end), /*#__PURE__*/React__namespace.createElement("div", {
-            style: {
-              flexShrink: 0,
-              height: bottomPadding
-            }
-          })));
-        }
-      }]);
-
-      return VirtualScroll;
-    }(React__namespace.Component);
-
-    _defineProperty(VirtualScroll, "defaultProps", {
-      buffer: 10,
-      length: 30,
-      offset: 0
-    });
-
-    var index = /*#__PURE__*/React__namespace.forwardRef(function (props, ref) {
-      return /*#__PURE__*/React__namespace.createElement(VirtualScroll, _extends({
-        forwardRef: ref
-      }, props));
-    });
 
     var GridRow = function GridRow(props) {
       var context$1 = React__namespace.useContext(context);
@@ -11987,8 +13698,9 @@
           expanded = _a[0],
           setExpanded = _a[1];
 
-      var rowClasses = classNames__default['default']('Grid-row', 'Grid-row--body', {
-        'Grid-row--selected': data._selected
+      var rowClasses = classNames__default["default"]('Grid-row', 'Grid-row--body', {
+        'Grid-row--selected': data._selected,
+        'Grid-row--disabled': data.disabled
       });
       var onClickHandler = React__namespace.useCallback(function () {
         if (type === 'resource' && !loading) {
@@ -12029,12 +13741,13 @@
         var _a;
 
         if (currSchema.length) {
-          var classes = classNames__default['default']((_a = {
+          var classes = classNames__default["default"]((_a = {
             'Grid-cellGroup': true,
             'Grid-cellGroup--pinned': pinned
           }, _a["Grid-cellGroup--pinned-" + pinned] = pinned, _a['Grid-cellGroup--main'] = !pinned, _a));
           return /*#__PURE__*/React__namespace.createElement("div", {
-            className: classes
+            className: classes,
+            "data-test": "DesignSystem-Grid-cellGroup"
           }, renderCheckbox(shouldRenderCheckbox), currSchema.map(function (s, index) {
             var cI = pinned === 'left' ? index : leftPinnedSchema.length + index;
             if (pinned === 'right') cI += unpinnedSchema.length;
@@ -12053,12 +13766,13 @@
         return null;
       };
 
-      var wrapperClasses = classNames__default['default'](className, {
+      var wrapperClasses = classNames__default["default"](className, {
         'Grid-rowWrapper': true
       });
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: wrapperClasses
       }, /*#__PURE__*/React__namespace.createElement("div", {
+        "data-test": "DesignSystem-Grid-row",
         className: rowClasses,
         onClick: onClickHandler,
         ref: rowRef
@@ -12077,7 +13791,6 @@
       var context$1 = React__namespace.useContext(context);
       var data = context$1.data,
           ref = context$1.ref,
-          size = context$1.size,
           loading = context$1.loading,
           error = context$1.error,
           withPagination = context$1.withPagination,
@@ -12114,33 +13827,35 @@
           }
         };
       }, []);
-      var minRowHeight = {
-        comfortable: 40,
-        standard: 40,
-        compressed: 32,
-        tight: 24
-      };
       var totalPages = Math.ceil(totalRecords / pageSize);
       var isLastPage = withPagination && page === totalPages;
       var dataLength = isLastPage ? totalRecords - (page - 1) * pageSize : loading ? pageSize : withPagination ? Math.min(totalRecords, pageSize) : totalRecords;
 
-      var renderItem = function renderItem(rowIndex) {
+      var renderRow = function renderRow(rowIndex, item) {
         return /*#__PURE__*/React__namespace.createElement(GridRow, {
+          key: rowIndex,
           rowIndex: rowIndex,
-          data: data[rowIndex],
+          data: !item ? data[rowIndex] : item,
           schema: schema,
           onSelect: onSelect
         });
       };
 
-      return /*#__PURE__*/React__namespace.createElement(index, {
-        className: "Grid-body",
-        minItemHeight: minRowHeight[size],
-        totalLength: dataLength,
-        length: 20,
-        buffer: 7,
-        renderItem: renderItem
-      });
+      var getArrayList = function getArrayList() {
+        if (loading && !data.length) {
+          return __spreadArrays(Array(dataLength).map(function (x) {
+            return x;
+          }));
+        }
+
+        return data;
+      };
+
+      return /*#__PURE__*/React__namespace.createElement("div", {
+        className: "Grid-body"
+      }, getArrayList().map(function (item, i) {
+        return renderRow(i, item);
+      }));
     };
 
     var Grid = function (_super) {
@@ -12344,7 +14059,7 @@
           this.addScrollListeners();
         }
 
-        if (prevProps.page !== this.props.page) {
+        if (prevProps.page !== this.props.page || prevProps.error !== this.props.error) {
           this.removeScrollListeners();
           this.addScrollListeners();
         }
@@ -12390,7 +14105,7 @@
             loading = _d.loading,
             loaderSchema = _d.loaderSchema;
         var schema = getSchema(this.props.schema, loading, loaderSchema);
-        var classes = classNames__default['default']((_a = {
+        var classes = classNames__default["default"]((_a = {
           Grid: 'true'
         }, _a["Grid--" + type] = type, _a["Grid--" + size] = size, _a), className);
         return /*#__PURE__*/React__namespace.createElement("div", __assign({
@@ -12453,7 +14168,8 @@
 
       if (metaList) {
         return /*#__PURE__*/React__namespace.createElement("div", {
-          className: "GridCell-metaList"
+          className: "GridCell-metaList",
+          "data-test": "DesignSystem-GridCell-metaList"
         }, metaList.map(function (list, index) {
           return /*#__PURE__*/React__namespace.createElement(Text, {
             key: index,
@@ -12533,14 +14249,15 @@
           align = _c === void 0 ? 'left' : _c,
           tooltip = schema.tooltip;
       var cellData = data[name];
-      var cellClass = classNames__default['default']((_a = {}, _a['GridCell'] = true, _a));
+      var cellClass = classNames__default["default"]((_a = {}, _a['GridCell'] = true, _a));
 
       switch (cellType) {
         case 'DEFAULT':
           return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--align-" + align + " GridCell--default"
           }, loading ? /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
-            length: "medium"
+            length: "medium",
+            "data-test": "DesignSystem-GridCell-placeHolder"
           }) : renderTitle({
             tooltip: tooltip,
             cellData: cellData
@@ -12550,7 +14267,8 @@
           return /*#__PURE__*/React__namespace.createElement("div", {
             className: cellClass + " GridCell--metaList"
           }, loading ? /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
-            length: "medium"
+            length: "medium",
+            "data-test": "DesignSystem-GridCell-withMetaList"
           }), /*#__PURE__*/React__namespace.createElement(PlaceholderParagraph, {
             length: "large",
             size: "xxs"
@@ -12571,7 +14289,8 @@
           }
 
           return /*#__PURE__*/React__namespace.createElement("div", {
-            className: cellClass + " GridCell--align-" + align + " GridCell--avatar"
+            className: cellClass + " GridCell--align-" + align + " GridCell--avatar",
+            "data-test": "DesignSystem-GridCell-avatar"
           }, size !== 'tight' && renderAvatar({
             cellData: cellData
           }));
@@ -12588,7 +14307,8 @@
           }
 
           return /*#__PURE__*/React__namespace.createElement("div", {
-            className: cellClass + " GridCell--avatarWithText"
+            className: cellClass + "   ",
+            "data-test": "DesignSystem-GridCell-avatarWithText"
           }, size !== 'tight' && renderAvatar({
             cellData: cellData
           }), renderTitle({
@@ -12611,7 +14331,8 @@
           }
 
           return /*#__PURE__*/React__namespace.createElement("div", {
-            className: cellClass + " GridCell--avatarWithText"
+            className: cellClass + " GridCell--avatarWithText",
+            "data-test": "DesignSystem-GridCell-avatarWithMetaList"
           }, size !== 'tight' && renderAvatar({
             cellData: cellData
           }), /*#__PURE__*/React__namespace.createElement("div", {
@@ -12633,7 +14354,8 @@
           }
 
           return /*#__PURE__*/React__namespace.createElement("div", {
-            className: cellClass + " GridCell--align-" + align + " GridCell--icon"
+            className: cellClass + " GridCell--align-" + align + " GridCell--icon",
+            "data-test": "DesignSystem-GridCell-icon"
           }, renderIcon({
             cellData: cellData
           }));
@@ -12712,6 +14434,7 @@
         open: open,
         onToggle: onToggleHandler,
         trigger: /*#__PURE__*/React__namespace.createElement(Button, {
+          type: "button",
           ref: function ref(el) {
             setTriggerWidth((el === null || el === void 0 ? void 0 : el.clientWidth) + "px");
           },
@@ -12745,6 +14468,7 @@
         onChange: handleParentChange
       })), tempOptions.map(function (option, index) {
         return /*#__PURE__*/React__namespace.createElement("div", {
+          "data-test": "DesignSystem-Table-Header--draggableDropdownOption",
           key: option.value,
           className: "OptionWrapper d-flex flex-space-between align-items-center cursor-pointer",
           draggable: true,
@@ -12774,10 +14498,12 @@
       })), /*#__PURE__*/React__namespace.createElement("div", {
         className: "Dropdown-buttonWrapper"
       }, /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         className: "mr-4",
         size: "tiny",
         onClick: onCancelHandler
       }, "Cancel"), /*#__PURE__*/React__namespace.createElement(Button, {
+        type: "button",
         appearance: "primary",
         size: "tiny",
         onClick: onApplyHandler
@@ -12809,7 +14535,8 @@
           updateSearchTerm = props.updateSearchTerm,
           dynamicColumn = props.dynamicColumn,
           allowSelectAll = props.allowSelectAll,
-          showFilters = props.showFilters;
+          showFilters = props.showFilters,
+          customSelectionLabel = props.customSelectionLabel;
 
       var _c = React__namespace.useState(false),
           selectAllRecords = _c[0],
@@ -12871,12 +14598,13 @@
         if (updateSchema) updateSchema(newSchema);
       };
 
+      var customLabel = customSelectionLabel ? customSelectionLabel : 'item';
       var selectedCount = data.filter(function (d) {
         return d._selected;
       }).length;
       var startIndex = (page - 1) * pageSize + 1;
       var endIndex = Math.min(page * pageSize, totalRecords);
-      var label = error ? 'Showing 0 items' : withCheckbox && selectedCount ? selectAllRecords ? "Selected all " + totalRecords + " item" + getPluralSuffix(totalRecords) : "Selected " + selectedCount + " item" + getPluralSuffix(totalRecords) + " on this page" : withPagination ? "Showing " + startIndex + "-" + endIndex + " of " + totalRecords + " item" + getPluralSuffix(totalRecords) : "Showing " + totalRecords + " item" + getPluralSuffix(totalRecords);
+      var label = error ? "Showing 0 " + customLabel + "s" : withCheckbox && selectedCount ? selectAllRecords ? "Selected all " + totalRecords + " " + customLabel + getPluralSuffix(totalRecords) : "Selected " + selectedCount + " " + customLabel + getPluralSuffix(totalRecords) + " on this page" : withPagination ? "Showing " + startIndex + "-" + endIndex + " of " + totalRecords + " " + customLabel + getPluralSuffix(totalRecords) : "Showing " + totalRecords + " " + customLabel + getPluralSuffix(totalRecords);
       return /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header"
       }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -12884,6 +14612,7 @@
       }, withSearch && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-search"
       }, /*#__PURE__*/React__namespace.createElement(Input, {
+        "data-test": "DesignSystem-Table-Header--withSearch",
         name: "GridHeader-search",
         icon: "search",
         placeholder: searchPlaceholder,
@@ -12892,7 +14621,8 @@
         onClear: function onClear() {
           return updateSearchTerm && updateSearchTerm('');
         },
-        disabled: loading && !hasSchema(schema)
+        disabled: loading && !hasSchema(schema),
+        autoComplete: "off"
       })), showFilters && filterSchema.length > 0 && /*#__PURE__*/React__namespace.createElement("div", {
         className: "Header-dropdown"
       }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -12937,11 +14667,13 @@
       })) : /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement(Label, null, label), withPagination && (selectAll === null || selectAll === void 0 ? void 0 : selectAll.checked) && allowSelectAll && /*#__PURE__*/React__namespace.createElement("div", {
         className: "ml-4"
       }, !selectAllRecords ? /*#__PURE__*/React__namespace.createElement(Button, {
+        "data-test": "DesignSystem-Table-Header--selectAllItemsButton",
         size: "tiny",
         onClick: function onClick() {
           return setSelectAllRecords(true);
         }
-      }, "Select all " + totalRecords + " items") : /*#__PURE__*/React__namespace.createElement(Button, {
+      }, "Select all " + totalRecords + " " + customLabel + "s") : /*#__PURE__*/React__namespace.createElement(Button, {
+        "data-test": "DesignSystem-Table-Header--clearSelectionItemsButton",
         size: "tiny",
         onClick: function onClick() {
           return setSelectAllRecords(false);
@@ -13055,7 +14787,7 @@
                   _this.setState({
                     data: data,
                     schema: schema,
-                    selectAll: getSelectAll(data),
+                    selectAll: getSelectAll(data, _this.props.selectDisabledRow),
                     totalRecords: res.count,
                     loading: false,
                     error: !data.length,
@@ -13088,7 +14820,7 @@
               totalRecords: totalRecords,
               error: !renderedData.length,
               errorType: 'NO_RECORDS_FOUND',
-              selectAll: getSelectAll(renderedData),
+              selectAll: getSelectAll(renderedData, _this.props.selectDisabledRow),
               schema: renderedSchema,
               data: renderedData
             });
@@ -13104,11 +14836,11 @@
           if (rowIndexes >= 0) {
             newData = updateBatchData(data, indexes, {
               _selected: selected
-            });
+            }, _this.props.selectDisabledRow);
 
             _this.setState({
               data: newData,
-              selectAll: getSelectAll(newData)
+              selectAll: getSelectAll(newData, _this.props.selectDisabledRow)
             });
           }
 
@@ -13129,17 +14861,23 @@
           });
           var newData = updateBatchData(data, indexes, {
             _selected: selected
+          }, _this.props.selectDisabledRow);
+          var selectedIndex = [];
+          newData.forEach(function (item, key) {
+            if (item._selected) {
+              selectedIndex.push(key);
+            }
           });
 
           if (onSelect) {
-            onSelect(indexes, selected, newData.filter(function (d) {
+            onSelect(selectedIndex, selected, newData.filter(function (d) {
               return d._selected;
             }), selectAll);
           }
 
           _this.setState({
             data: newData,
-            selectAll: getSelectAll(newData)
+            selectAll: getSelectAll(newData, _this.props.selectDisabledRow)
           });
         };
 
@@ -13273,9 +15011,11 @@
         var totalRecords = this.state.totalRecords;
         var totalPages = getTotalPages(totalRecords, pageSize);
         return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
-          className: "Table" + classes
+          className: "Table" + classes,
+          "data-test": "DesignSystem-Table-wrapper"
         }), withHeader && /*#__PURE__*/React__namespace.createElement("div", {
-          className: "Table-header"
+          className: "Table-header",
+          "data-test": "DesignSystem-Table-header"
         }, /*#__PURE__*/React__namespace.createElement(Header, __assign({}, this.state, {
           updateSchema: this.updateSchema,
           updateFilterList: this.updateFilterList,
@@ -13289,6 +15029,7 @@
         }, headerAttr), headerChildren)), /*#__PURE__*/React__namespace.createElement("div", {
           className: "Table-grid"
         }, /*#__PURE__*/React__namespace.createElement(Grid, __assign({}, this.state, {
+          key: this.state.searchTerm,
           updateData: this.updateData,
           updateSchema: this.updateSchema,
           updateSortingList: this.updateSortingList,
@@ -13405,21 +15146,24 @@
 
         var activeMenu = expanded && !menuState[menu.name] && isMenuActive(menus, menu, active);
         var activeMenuIcon = !expanded && isMenuActive(menus, menu, active) || activeMenu;
-        var menuClasses = classNames__default['default']((_a = {
+        var menuClasses = classNames__default["default"]((_a = {
           'Navigation-menu': true
         }, _a['Navigation-menu--vertical'] = true, _a['Navigation-menu--active'] = activeMenu, _a['Navigation-menu--rounded'] = expanded && rounded, _a));
-        var menuIconClasses = classNames__default['default']({
+        var menuIconClasses = classNames__default["default"]({
           'Navigation-menuIcon': true,
           'Navigation-menuIcon--active': activeMenuIcon
         });
         return /*#__PURE__*/React__namespace.createElement("div", {
-          key: index
+          key: index,
+          "data-test": "DesignSystem-Navigation-VerticalNavigation--menuWrapper"
         }, /*#__PURE__*/React__namespace.createElement("div", {
+          "data-test": "DesignSystem-Navigation-VerticalNavigation--menuItem",
           className: menuClasses,
           onClick: function onClick() {
             return onClickHandler(menu);
           }
         }, menu.icon && /*#__PURE__*/React__namespace.createElement(Icon, {
+          "data-test": "DesignSystem-Navigation-VerticalNavigation--menuIcon",
           className: menuIconClasses,
           name: menu.icon,
           appearance: getIconAppearance(activeMenuIcon, menu.disabled)
@@ -13428,6 +15172,7 @@
         }, /*#__PURE__*/React__namespace.createElement(Text, {
           appearance: getTextAppearance(activeMenu, menu.disabled)
         }, menu.label)), menu.subMenu && menu.subMenu.length > 0 && /*#__PURE__*/React__namespace.createElement(Icon, {
+          "data-test": "DesignSystem-Navigation-VerticalNavigation--expandedSubMenuIcon",
           className: "mx-4",
           name: menuState[menu.name] ? 'keyboard_arrow_up' : 'keyboard_arrow_down',
           appearance: "subtle"
@@ -13437,8 +15182,9 @@
           var _a;
 
           var isActive = isMenuActive(menus, subMenu, active);
-          var subMenuClasses = classNames__default['default'](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = true, _a['Navigation-menu--active'] = isActive, _a));
+          var subMenuClasses = classNames__default["default"](menuClasses, (_a = {}, _a['Navigation-menu--subMenu'] = true, _a['Navigation-menu--active'] = isActive, _a));
           return /*#__PURE__*/React__namespace.createElement("div", {
+            "data-test": "DesignSystem-Navigation-VerticalNavigation--subMenu",
             key: ind,
             className: subMenuClasses,
             onClick: function onClick() {
@@ -13449,7 +15195,7 @@
           }, subMenu.label));
         })));
       });
-      var footerClasses = classNames__default['default']((_a = {
+      var footerClasses = classNames__default["default"]((_a = {
         'Navigation-footer': true
       }, _a['Navigation-footer--border'] = true, _a));
       return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("div", {
@@ -13486,7 +15232,7 @@
           autoCollapse = props.autoCollapse,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var classes = classNames__default['default']((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['justify-content-start'] = type === 'horizontal' && align === 'left', _a['Navigation--collapsed'] = !expanded, _a), className);
+      var classes = classNames__default["default"]((_a = {}, _a['Navigation'] = true, _a["Navigation--" + type] = type, _a['justify-content-center'] = type === 'horizontal' && align === 'center', _a['justify-content-start'] = type === 'horizontal' && align === 'left', _a['Navigation--collapsed'] = !expanded, _a), className);
 
       var renderNavigation = function renderNavigation() {
         return type === 'horizontal' ? /*#__PURE__*/React__namespace.createElement(HorizontalNav, {
@@ -13533,14 +15279,14 @@
           navigationPosition = props.navigationPosition,
           className = props.className;
       var baseProps = extractBaseProps(props);
-      var wrapperClasses = classNames__default['default']((_a = {
+      var wrapperClasses = classNames__default["default"]((_a = {
         'PageHeader-wrapper': true
       }, _a['PageHeader-wrapper--separator'] = separator, _a['PageHeader-wrapper--withTabs'] = tabs, _a), className);
-      var classes = classNames__default['default']({
+      var classes = classNames__default["default"]({
         PageHeader: true
       });
 
-      var renderCenter = function renderCenter() {
+      var renderNav = function renderNav() {
         if (!navigation && !stepper) {
           return null;
         }
@@ -13550,29 +15296,38 @@
         }, navigation || stepper);
       };
 
+      var colSize = (navigation || stepper) && navigationPosition === 'center' ? '4' : actions ? '8' : '12';
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: wrapperClasses
       }), breadcrumbs, /*#__PURE__*/React__namespace.createElement("div", {
         className: classes
       }, /*#__PURE__*/React__namespace.createElement(Row, null, /*#__PURE__*/React__namespace.createElement(Column, {
-        size: "4",
-        sizeXL: "4",
-        sizeM: "4"
+        size: colSize,
+        sizeXL: colSize,
+        sizeM: colSize
       }, /*#__PURE__*/React__namespace.createElement("div", {
         className: "PageHeader-titleWrapper"
       }, /*#__PURE__*/React__namespace.createElement(Heading, {
         className: "PageHeader-title"
-      }, title), badge)), /*#__PURE__*/React__namespace.createElement(Column, {
+      }, title), badge)), (!breadcrumbs || navigationPosition === 'center') && colSize === '4' && /*#__PURE__*/React__namespace.createElement(Column, {
         size: "4",
         sizeXL: "4",
         sizeM: "4"
-      }, (!breadcrumbs || navigationPosition === 'center') && renderCenter()), /*#__PURE__*/React__namespace.createElement(Column, {
+      }, renderNav()), actions ? /*#__PURE__*/React__namespace.createElement(Column, {
         size: "4",
         sizeXL: "4",
         sizeM: "4"
-      }, actions))), (status || meta) && /*#__PURE__*/React__namespace.createElement("div", {
+      }, /*#__PURE__*/React__namespace.createElement("div", {
+        className: "PageHeader-actionsWrapper"
+      }, actions)) : (navigation || stepper) && /*#__PURE__*/React__namespace.createElement(Column, {
+        size: "4",
+        sizeXL: "4",
+        sizeM: "4"
+      }, /*#__PURE__*/React__namespace.createElement("div", {
+        className: "PageHeader-actionsWrapper"
+      })))), (status || meta) && /*#__PURE__*/React__namespace.createElement("div", {
         className: "PageHeader-statusWrapper"
-      }, status, meta), breadcrumbs && navigationPosition === 'bottom' && renderCenter(), tabs && /*#__PURE__*/React__namespace.createElement("div", null, tabs));
+      }, status, meta), breadcrumbs && navigationPosition === 'bottom' && renderNav(), tabs && /*#__PURE__*/React__namespace.createElement("div", null, tabs));
     };
     PageHeader.defaultProps = {
       navigationPosition: 'center',
@@ -13581,7 +15336,7 @@
 
     var useEffect = React__namespace.useEffect,
         useState = React__namespace.useState;
-    var IconMapping = {
+    var IconMapping$1 = {
       audio: 'audiotrack',
       image: 'image',
       video: 'movie',
@@ -13600,9 +15355,9 @@
           setAnimate = _c[1];
 
       var type = file.type.split('/')[0] || 'others';
-      var fileType = IconMapping[type] ? type : 'others';
-      var iconClass = classNames__default['default']((_a = {}, _a['FileIcon'] = true, _a['FileIcon--animate'] = animate, _a["FileIcon--" + fileType] = true, _a));
-      var uploadingIconClass = classNames__default['default']((_b = {}, _b['FileIcon'] = true, _b['FileIcon--uploading'] = true, _b));
+      var fileType = IconMapping$1[type] ? type : 'others';
+      var iconClass = classNames__default["default"]((_a = {}, _a['FileIcon'] = true, _a['FileIcon--animate'] = animate, _a["FileIcon--" + fileType] = true, _a));
+      var uploadingIconClass = classNames__default["default"]((_b = {}, _b['FileIcon'] = true, _b['FileIcon--uploading'] = true, _b));
       useEffect(function () {
         if (status === 'completed') {
           setAnimate(true);
@@ -13615,13 +15370,15 @@
         return /*#__PURE__*/React__namespace.createElement(ProgressRing, {
           size: "small",
           value: progress || 0,
-          className: uploadingIconClass
+          className: uploadingIconClass,
+          "data-test": "DesignSystem-FileListItem--ProgressRing"
         });
       }
 
       return /*#__PURE__*/React__namespace.createElement(Icon, {
-        name: IconMapping[fileType],
-        className: iconClass
+        name: IconMapping$1[fileType],
+        className: iconClass,
+        "data-test": "DesignSystem-FileListItem--Icon"
       });
     };
     FileIcon.displayName = 'FileIcon';
@@ -13644,7 +15401,7 @@
           fileSize = props.fileSize;
       var name = file.name;
       var baseProps = extractBaseProps(props);
-      var FileItemClass = classNames__default['default']((_a = {}, _a['FileItem'] = true, _a), className);
+      var FileItemClass = classNames__default["default"]((_a = {}, _a['FileItem'] = true, _a), className);
 
       var onClickHandler = function onClickHandler() {
         if (onClick) {
@@ -13654,7 +15411,8 @@
 
       return /*#__PURE__*/React__namespace.createElement("div", __assign({}, baseProps, {
         className: FileItemClass,
-        onClick: onClickHandler
+        onClick: onClickHandler,
+        "data-test": "DesignSystem-FileListItem"
       }), /*#__PURE__*/React__namespace.createElement("div", {
         className: "FileItem-file"
       }, /*#__PURE__*/React__namespace.createElement("div", {
@@ -13664,17 +15422,21 @@
         status: status,
         progress: progress
       }), /*#__PURE__*/React__namespace.createElement(Text, {
+        "data-test": "DesignSystem-FileListItem--Name",
         className: "FileItem-text",
         appearance: status === 'completed' ? 'default' : 'subtle'
       }, name)), /*#__PURE__*/React__namespace.createElement("div", {
         className: "FileItem-actions"
       }, /*#__PURE__*/React__namespace.createElement(Text, {
         className: "FileItem-size",
-        appearance: 'subtle'
-      }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React__namespace.createElement(Caption, {
-        className: 'FileItem-error',
-        error: true
-      }, errorMessage));
+        appearance: 'subtle',
+        "data-test": "DesignSystem-FileListItem--Size"
+      }, fileSize || file.size), !!actions && actions)), status === 'error' && /*#__PURE__*/React__namespace.createElement(InlineMessage, {
+        size: "small",
+        appearance: "alert",
+        description: errorMessage,
+        className: 'FileItem-error'
+      }));
     };
     FileListItem.defaultProps = {
       progress: 0,
@@ -13741,7 +15503,7 @@
       }, []);
       var initialRefs = React.useMemo(function () {
         return __spreadArrays(Array(fields)).map(function () {
-          return /*#__PURE__*/React__default['default'].createRef();
+          return /*#__PURE__*/React__default["default"].createRef();
         });
       }, []);
 
@@ -13833,69 +15595,77 @@
 
         switch (e.key) {
           case KEY_CODE.backspace:
-            e.preventDefault();
+            {
+              e.preventDefault();
 
-            var vals = __spreadArrays(values);
+              var vals = __spreadArrays(values);
 
-            if (values[index]) {
-              vals[index] = '';
-              setValues(vals);
-            } else if (prev && prev.current) {
-              vals[prevIndex] = '';
-              prev.current.focus({
-                preventScroll: true
-              });
-              setValues(vals);
+              if (values[index]) {
+                vals[index] = '';
+                setValues(vals);
+              } else if (prev && prev.current) {
+                vals[prevIndex] = '';
+                prev.current.focus({
+                  preventScroll: true
+                });
+                setValues(vals);
+              }
+
+              break;
             }
-
-            break;
 
           case KEY_CODE.left:
-            e.preventDefault();
+            {
+              e.preventDefault();
 
-            if (prev && prev.current) {
-              prev.current.focus({
-                preventScroll: true
-              });
+              if (prev && prev.current) {
+                prev.current.focus({
+                  preventScroll: true
+                });
+              }
+
+              break;
             }
-
-            break;
 
           case KEY_CODE.right:
-            e.preventDefault();
+            {
+              e.preventDefault();
 
-            if (nextRef && nextRef.current) {
-              nextRef.current.focus({
-                preventScroll: true
-              });
+              if (nextRef && nextRef.current) {
+                nextRef.current.focus({
+                  preventScroll: true
+                });
+              }
+
+              break;
             }
-
-            break;
 
           case KEY_CODE.up:
           case KEY_CODE.down:
           case KEY_CODE.e:
           case KEY_CODE.E:
-            if (type === 'number') {
-              e.preventDefault();
-            }
+            {
+              if (type === 'number') {
+                e.preventDefault();
+              }
 
-            break;
+              break;
+            }
         }
       };
 
       var wrapperClassNames = function wrapperClassNames(i) {
-        return classNames__default['default']({
+        return classNames__default["default"]({
           'VerificationCodeInput-Input': true,
           'ml-4': i > 0
         }, className);
       };
 
-      return /*#__PURE__*/React__default['default'].createElement("div", {
+      return /*#__PURE__*/React__default["default"].createElement("div", {
         "data-test": "DesignSystem-VerificationCodeInput",
         className: "VerificationCodeInput"
       }, values.map(function (val, index) {
-        return /*#__PURE__*/React__default['default'].createElement(Input, __assign({
+        return /*#__PURE__*/React__default["default"].createElement(Input, __assign({
           key: index,
           className: wrapperClassNames(index),
           size: "large",
@@ -13907,14 +15677,222 @@
           onFocus: onFocusHandler,
           onBlur: onBlurHandler,
           "data-id": index,
-          ref: refs[index]
+          ref: refs[index],
+          type: type
         }, rest));
       }));
     };
 
     VerificationCodeInput.displayName = 'VerificationCodeInput';
+    VerificationCodeInput.defaultProps = {
+      type: 'number',
+      fields: 4
+    };
 
-    var version = "2.2.1";
+    var IconMapping = {
+      success: 'check_circle',
+      info: 'info',
+      warning: 'warning',
+      alert: 'error'
+    };
+    var InlineMessage = function InlineMessage(props) {
+      var _a, _b, _c;
+
+      var appearance = props.appearance,
+          className = props.className,
+          description = props.description,
+          size = props.size;
+      var baseProps = extractBaseProps(props);
+      var InlineMessageClass = classNames__default["default"]((_a = {}, _a['InlineMessage'] = true, _a), className);
+      var IconClass = classNames__default["default"]((_b = {}, _b['InlineMessage-icon--warning'] = appearance === 'warning', _b['InlineMessage-icon--small'] = size === 'small', _b['InlineMessage-icon--regular'] = size === 'regular', _b));
+      var DescriptionClass = classNames__default["default"]((_c = {}, _c["InlineMessage-text--" + appearance] = appearance, _c));
+      var IconSize = size === 'small' ? 14 : 16;
+      var TextWeight = size === 'small' ? 'medium' : undefined;
+      return /*#__PURE__*/React__namespace.createElement("div", __assign({
+        "data-test": "DesignSystem-InlineMessage"
+      }, baseProps, {
+        className: InlineMessageClass
+      }), appearance !== 'default' && /*#__PURE__*/React__namespace.createElement(Icon, {
+        "data-test": "DesignSystem-InlineMessage--Icon",
+        name: IconMapping[appearance],
+        appearance: appearance,
+        className: IconClass,
+        size: IconSize
+      }), /*#__PURE__*/React__namespace.createElement(Text, {
+        size: size,
+        weight: TextWeight,
+        className: DescriptionClass,
+        "data-test": "DesignSystem-InlineMessage--Description"
+      }, description));
+    };
+    InlineMessage.displayName = 'InlineMessage';
+    InlineMessage.defaultProps = {
+      appearance: 'default',
+      description: '',
+      size: 'regular'
+    };
+
+    var renderCheckbox = function renderCheckbox(list, handleOnChange, ChoiceListDisabled, size, alignment, selected) {
+      return list.map(function (item, checkboxIndex) {
+        var name = item.name,
+            value = item.value,
+            helpText = item.helpText,
+            disabled = item.disabled,
+            label = item.label;
+        return /*#__PURE__*/React__namespace.createElement(Checkbox, {
+          key: checkboxIndex,
+          label: label,
+          onChange: handleOnChange,
+          disabled: disabled || ChoiceListDisabled,
+          helpText: helpText,
+          size: size,
+          name: name,
+          value: value,
+          defaultChecked: selected.length !== 0 && selected.includes(value),
+          className: getCheckboxClassName(alignment, checkboxIndex)
+        });
+      });
+    };
+
+    var renderRadio = function renderRadio(list, handleOnChange, ChoiceListDisabled, size, alignment, selected) {
+      return list.map(function (item, radioIndex) {
+        var name = item.name,
+            value = item.value,
+            helpText = item.helpText,
+            disabled = item.disabled,
+            label = item.label;
+        return /*#__PURE__*/React__namespace.createElement(Radio, {
+          key: radioIndex,
+          label: label,
+          onChange: handleOnChange,
+          disabled: disabled || ChoiceListDisabled,
+          helpText: helpText,
+          size: size,
+          name: name,
+          value: value,
+          defaultChecked: selected.length !== 0 && selected.includes(value),
+          className: getRadioClassName(alignment, radioIndex)
+        });
+      });
+    };
+
+    var getCheckboxClassName = function getCheckboxClassName(alignment, index) {
+      var _a;
+
+      var ChoiceListCheckboxClass = classNames__default["default"]((_a = {}, _a["ChoiceList-checkbox--" + alignment] = true, _a['ml-0'] = index === 0 && alignment === 'horizontal', _a['mt-4'] = alignment === 'horizontal', _a));
+      return ChoiceListCheckboxClass;
+    };
+
+    var getRadioClassName = function getRadioClassName(alignment, index) {
+      var _a;
+
+      var ChoiceListRadioClass = classNames__default["default"]((_a = {}, _a["ChoiceList-radio--" + alignment] = true, _a['ml-0'] = index === 0 && alignment === 'horizontal', _a['mt-4'] = alignment === 'horizontal', _a));
+      return ChoiceListRadioClass;
+    };
+
+    var ChoiceList = function ChoiceList(props) {
+      var _a, _b, _c;
+
+      var title = props.title,
+          choices = props.choices,
+          _d = props.alignment,
+          alignment = _d === void 0 ? 'vertical' : _d,
+          _e = props.allowMultiple,
+          allowMultiple = _e === void 0 ? false : _e,
+          onChange = props.onChange,
+          _f = props.disabled,
+          disabled = _f === void 0 ? false : _f,
+          _g = props.size,
+          size = _g === void 0 ? 'regular' : _g;
+      var _h = props.selected,
+          selected = _h === void 0 ? [] : _h;
+      var selectedChoiceValue = selected && selected || [];
+      var ChoiceListClass = classNames__default["default"]((_a = {}, _a['ChoiceList'] = true, _a));
+      var ChoiceListVerticalClass = classNames__default["default"]((_b = {}, _b['ChoiceList--alignVertical'] = true, _b));
+      var ChoiceHorizontalClass = classNames__default["default"]((_c = {}, _c['ChoiceList--alignHorizontal'] = true, _c));
+
+      var handleOnChange = function handleOnChange(e) {
+        if (e.target.checked && allowMultiple) {
+          if (!selectedChoiceValue.includes(e.target.value)) {
+            selectedChoiceValue = __spreadArrays(selectedChoiceValue, [e.target.value]);
+          }
+        } else if (!e.target.checked && allowMultiple) {
+          selectedChoiceValue = selectedChoiceValue.filter(function (el) {
+            return el !== e.target.value;
+          });
+        }
+
+        if (!allowMultiple) {
+          if (!selectedChoiceValue.includes(e.target.value)) {
+            selectedChoiceValue = [];
+            selectedChoiceValue = __spreadArrays(selectedChoiceValue, [e.target.value]);
+          }
+        }
+
+        if (onChange) onChange(e, selectedChoiceValue);
+      };
+
+      return /*#__PURE__*/React__namespace.createElement(React__namespace.Fragment, null, /*#__PURE__*/React__namespace.createElement("fieldset", {
+        className: ChoiceListClass,
+        "data-test": "DesignSystem-ChoiceList-Wrapper"
+      }, title && title.trim() && /*#__PURE__*/React__namespace.createElement(Label, null, title.trim()), allowMultiple ? /*#__PURE__*/React__namespace.createElement("div", {
+        className: "" + (alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass)
+      }, renderCheckbox(choices, handleOnChange, disabled, size, alignment, selected)) : /*#__PURE__*/React__namespace.createElement("div", {
+        className: "" + (alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass)
+      }, renderRadio(choices, handleOnChange, disabled, size, alignment, selected))));
+    };
+    ChoiceList.displayName = 'ChoiceList';
+    ChoiceList.defaultProps = {
+      alignment: 'vertical',
+      size: 'regular',
+      allowMultiple: false,
+      disabled: false
+    };
+
+    var Divider = function Divider(props) {
+      var _a;
+
+      var vertical = props.vertical,
+          appearance = props.appearance,
+          className = props.className;
+      var baseProps = extractBaseProps(props);
+      var DividerClass = classNames__default["default"]((_a = {}, _a['Divider'] = true, _a['Divider--horizontal'] = !vertical, _a['Divider--vertical'] = vertical, _a['Divider--basic'] = appearance !== 'header', _a['Divider--header'] = !vertical && appearance === 'header', _a), className);
+      return /*#__PURE__*/React__namespace.createElement("hr", __assign({
+        "data-test": "DesignSystem-Divider"
+      }, baseProps, {
+        className: DividerClass
+      }));
+    };
+    Divider.displayName = 'Divider';
+    Divider.defaultProps = {
+      appearance: 'basic',
+      vertical: false
+    };
+
+    var HelpText = function HelpText(props) {
+      var error = props.error,
+          message = props.message;
+      if (!message) return null;
+
+      if (error) {
+        return /*#__PURE__*/React__namespace.createElement(InlineMessage, {
+          size: "small",
+          className: "mt-3",
+          appearance: "alert",
+          description: message
+        });
+      }
+
+      return /*#__PURE__*/React__namespace.createElement(Text, {
+        className: "mt-3",
+        appearance: "subtle",
+        size: "small",
+        weight: "medium"
+      }, message);
+    };
+    HelpText.displayName = 'HelpText';
+
+    var version = "2.15.2";
 
     exports.Avatar = Avatar;
     exports.AvatarGroup = AvatarGroup;
@@ -13934,11 +15912,13 @@
     exports.Chip = Chip;
     exports.ChipGroup = ChipGroup;
     exports.ChipInput = ChipInput;
+    exports.ChoiceList = ChoiceList;
     exports.Collapsible = Collapsible;
     exports.Column = Column;
     exports.DatePicker = DatePicker;
     exports.DateRangePicker = DateRangePicker;
     exports.Dialog = Dialog;
+    exports.Divider = Divider;
     exports.Dropdown = Dropdown;
     exports.Dropzone = Dropzone;
     exports.EditableChipInput = EditableChipInput;
@@ -13952,10 +15932,12 @@
     exports.Grid = Grid;
     exports.GridCell = GridCell;
     exports.Heading = Heading;
+    exports.HelpText = HelpText;
     exports.HorizontalNav = HorizontalNav;
     exports.Icon = Icon;
+    exports.InlineMessage = InlineMessage;
     exports.Input = Input;
-    exports.InputMask = InputMask;
+    exports.InputMask = X;
     exports.Label = Label;
     exports.Legend = Legend;
     exports.Link = Link;
@@ -13968,6 +15950,7 @@
     exports.ModalDescription = ModalDescription;
     exports.ModalFooter = ModalFooter;
     exports.ModalHeader = ModalHeader;
+    exports.MultiSlider = MultiSlider;
     exports.Navigation = Navigation;
     exports.OutsideClick = OutsideClick;
     exports.PageHeader = PageHeader;
@@ -13975,6 +15958,7 @@
     exports.Paragraph = Paragraph;
     exports.Pills = Pills;
     exports.Placeholder = Placeholder;
+    exports.PlaceholderImage = PlaceholderImage;
     exports.PlaceholderParagraph = PlaceholderParagraph;
     exports.Popover = Popover;
     exports.ProgressBar = ProgressBar;
@@ -13998,12 +15982,12 @@
     exports.TimePicker = TimePicker;
     exports.Toast = Toast;
     exports.Tooltip = Tooltip;
-    exports.Utils = index$1;
+    exports.Utils = index;
     exports.VerificationCodeInput = VerificationCodeInput;
     exports.VerticalNav = VerticalNav;
     exports.version = version;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
 //# sourceMappingURL=index.js.map
