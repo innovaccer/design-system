@@ -65,7 +65,7 @@ export const Pagination = (props: PaginationProps) => {
     e.preventDefault();
 
     const val = +e.target.value.trim();
-    if (val >= 0 && val <= totalPages) {
+    if (val >= 0 && val <= totalPages && ((val - Math.floor(val)) === 0)) {
       if (!init) setInit(true);
       setPage(val);
     }
