@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Input, Popover, Combobox, Listbox, ListboxItem, Text } from '@/index';
 
-export const ComboboxTrigger = ({ inputValue, onChange }) => {
+const ComboboxTrigger = ({ inputValue, onChange }) => {
   return <Input placeholder="Select Medicine Name" value={inputValue} onChange={(e) => onChange(e.target.value)} />;
 };
 
-export const select = () => {
+export const Select = () => {
   const medicineList = [
     { label: 'Acetaminophen', value: 'Acetaminophen' },
     { label: 'Ibuprofen', value: 'Ibuprofen' },
@@ -67,6 +67,6 @@ export const select = () => {
 };
 
 export default {
-  title: 'Components/Combobox/Select',
+  title: 'Components/Combobox/Custom/Select',
   component: Combobox,
 };
