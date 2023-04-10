@@ -10,8 +10,8 @@ const sortList = (arr: Option[]) => {
 };
 
 export const _isEqual = (firstList: Option[], secondList: Option[]) => {
-  const firstSortedList = sortList(firstList);
-  const secondSortedList = sortList(secondList);
+  const firstSortedList = sortList([...firstList]);
+  const secondSortedList = sortList([...secondList]);
   return (
     firstSortedList.length === secondSortedList.length &&
     firstSortedList.every((option, index) => option.value === secondSortedList[index].value)

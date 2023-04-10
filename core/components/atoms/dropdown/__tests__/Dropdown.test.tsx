@@ -13,6 +13,7 @@ import {
   dropdownOptions,
   fetchOptions,
   preSelectedOptions,
+  allSelectedOptions,
 } from '../__stories__/Options';
 
 const size = ['tiny', 'regular'];
@@ -684,5 +685,47 @@ describe('Dropdown component with actions buttons', () => {
     // select another option with same label
     fireEvent.click(dropdownOptions[0]);
     expect(applyButton).not.toHaveAttribute('disabled');
+  });
+});
+
+describe('Dropdown component with all options selected', () => {
+  it('check for rendering of all options selected in fetch function', async () => {
+    jest.resetAllMocks();
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown fetchOptions={() => fetchOptions('', allSelectedOptions)} withCheckbox={true} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    await waitFor(() => {
+      const optionList = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
+      expect(optionList[0]).toBeInTheDocument();
+      expect(optionList[0]).toHaveTextContent('Option 1');
+    });
+  });
+
+  it('check for rendering of all options selected', async () => {
+    jest.resetAllMocks();
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown
+        withCheckbox={true}
+        withSearch={true}
+        searchPlaceholder="Search Program"
+        placeholder="Select Program"
+        showApplyButton={true}
+        selected={allSelectedOptions}
+        options={allSelectedOptions}
+        staticLimit={allSelectedOptions.length - 1}
+        selectedSectionLabel={'Selected items'}
+      />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    await waitFor(() => {
+      const optionList = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
+      expect(optionList[0]).toBeInTheDocument();
+      expect(optionList[0]).toHaveTextContent('Option 1');
+    });
   });
 });
