@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Listbox, Card, ListboxItem, Text, Icon, MetaList, StatusHint, Switch } from '@/index';
+import { Listbox, Card, ListboxItem, Text, Icon, MetaList, StatusHint, Switch, Dropdown, Button } from '@/index';
 import './style.css';
 
 const SubList = () => {
@@ -92,7 +92,7 @@ export const nestedList = () => {
                   size={16}
                   onClick={() => onClickHandler(key)}
                   appearance="subtle"
-                  className={`mr-4 ${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}`}
+                  className={`mr-4 cursor-pointer ${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}`}
                 />
                 <div>
                   <Text>{record.title}</Text> <br />
@@ -101,7 +101,17 @@ export const nestedList = () => {
               </div>
               <div className="d-flex align-items-center">
                 <StatusHint appearance="info">{record.status}</StatusHint>
-                <Icon name="more_horiz" size={12} className="ml-5" />
+                <Dropdown
+                  align="right"
+                  className="ml-5"
+                  menu={true}
+                  customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
+                  options={[
+                    { label: 'Edit', value: 'edit' },
+                    { label: 'Export', value: 'export' },
+                    { label: 'Delete', value: 'delete' },
+                  ]}
+                />
               </div>
             </ListboxItem>
           );
@@ -207,7 +217,7 @@ const customCode = `
                   size={16}
                   onClick={() => onClickHandler(key)}
                   appearance="subtle"
-                  className={\`mr-4 \${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}\`}
+                  className={\`mr-4 cursor-pointer \${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}\`}
                 />
                 <div>
                   <Text>{record.title}</Text> <br />
@@ -216,7 +226,17 @@ const customCode = `
               </div>
               <div className="d-flex align-items-center">
                 <StatusHint appearance="info">{record.status}</StatusHint>
-                <Icon name="more_horiz" size={12} className="ml-5" />
+                <Dropdown
+                  align="right"
+                  className="ml-5"
+                  menu={true}
+                  customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
+                  options={[
+                    { label: 'Edit', value: 'edit' },
+                    { label: 'Export', value: 'export' },
+                    { label: 'Delete', value: 'delete' },
+                  ]}
+                />
               </div>
             </ListboxItem>
           );
