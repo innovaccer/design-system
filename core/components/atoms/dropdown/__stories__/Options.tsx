@@ -19,6 +19,14 @@ interface SelectedOptionSchema extends Record<string, any> {
   selected?: boolean;
 }
 
+interface AllSelectedOptionSchema extends Record<string, any> {
+  label: string;
+  value: React.ReactText;
+  selected?: boolean;
+  icon: string;
+  subInfo: string;
+}
+
 interface fetchOptionSchema {
   searchTerm?: string | undefined;
   count: number;
@@ -32,6 +40,7 @@ export const disabledStoryOptions: OptionSchema[] = [];
 export const iconOptions: OptionSchema[] = [];
 export const subInfoOptions: OptionSchema[] = [];
 export const iconWithSubinfoOptions: OptionSchema[] = [];
+export const allSelectedOptions: AllSelectedOptionSchema[] = [];
 
 for (let i = 1; i <= 10; i++) {
   storyOptions.push({
@@ -87,6 +96,16 @@ for (let i = 1; i <= 100; i++) {
     label: `Option ${i}`,
     value: `Option ${i}`,
     selected: i === 2 || i === 3,
+  });
+}
+
+for (let i = 1; i <= 100; i++) {
+  allSelectedOptions.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+    selected: true,
+    icon: 'events',
+    subInfo: 'subInfo',
   });
 }
 
@@ -180,8 +199,8 @@ export const iconItems = [
   },
 ];
 
-export const fetchOptions = (searchTerm: string) => {
-  const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
+export const fetchOptions = (searchTerm: string, options = dropdownOptions) => {
+  const searchedOptions = searchTerm ? getSearchedOptions(options, searchTerm) : options;
   return new Promise<fetchOptionSchema>((resolve) => {
     window.setTimeout(() => {
       resolve({
