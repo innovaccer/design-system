@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { debounce } from 'throttle-debounce';
 import { Text, MetricInput, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { isNaturalNumber } from '@/utils/validators';
@@ -21,18 +22,27 @@ export interface PaginationProps extends BaseProps {
    */
   page: number;
   /**
+   * Debounce duration to call in case of page jump
+   */
+  pageJumpDebounceDuration: number;
+  /**
    *  Callback when page is changed
    */
   onPageChange: (page: number) => void;
 }
 
 export const Pagination = (props: PaginationProps) => {
-  const { type, totalPages, onPageChange, className } = props;
+  const { type, totalPages, onPageChange, className, pageJumpDebounceDuration } = props;
 
   const baseProps = extractBaseProps(props);
 
   const [page, setPage] = React.useState<number>(props.page);
   const [init, setInit] = React.useState<boolean>(false);
+  const [debounceCancelCounter, setDebounceCancelCounter] = React.useState<number>(0);
+
+  const debouncePageChange = React.useCallback(debounce(pageJumpDebounceDuration, onPageChange), [
+    debounceCancelCounter,
+  ]);
 
   React.useEffect(() => {
     setPage(props.page);
@@ -58,7 +68,21 @@ export const Pagination = (props: PaginationProps) => {
 
   React.useEffect(() => {
     if (init) {
-      if (page >= 1 && page <= totalPages) onPageChange(page);
+      if (page >= 1 && page <= totalPages) {
+        debouncePageChange(page);
+      } else {
+        /**
+         * On removing a page number on UI via backspace, debounce malfunctions if page is not within desired range.
+         * Hence, we remove the debounce function via cancel method.
+         */
+        debouncePageChange.cancel();
+        /**
+         * Since debouncePageChange is cached via React.useCallback,
+         * cancel method above removes the single debounce function instance available.
+         * To make a new instance available, we have to update the dependency object.
+         */
+        setDebounceCancelCounter((prev) => prev + 1);
+      }
     }
   }, [page]);
 
@@ -152,6 +176,7 @@ Pagination.defaultProps = {
   type: 'basic',
   page: 1,
   totalPages: 1,
+  pageJumpDebounceDuration: 750,
 };
 
 export default Pagination;
