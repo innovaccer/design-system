@@ -7,37 +7,68 @@
 }
 
 .Listbox-item {
+  display: flex;
+  align-items: center;
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-2);
+}
+
+/* Sizes */
+
+.Listbox-item--tight {
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+}
+
+.Listbox-item--compressed {
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+}
+
+.Listbox-item--standard {
+  padding-top: var(--spacing-l);
+  padding-bottom: var(--spacing-l);
+}
+
+/* Listbox type - option  */
+
+.Listbox-item--option {
   cursor: pointer;
 }
 
-.Listbox-item--description:focus,
-.Listbox-item--description:focus-visible {
-  outline: none;
-}
-
-.Listbox-item:hover {
+.Listbox-item--option:hover {
   background-color: var(--secondary-lightest);
 }
 
-.Listbox-item:focus,
-.Listbox-item:focus-visible {
+.Listbox-item--option:focus,
+.Listbox-item--option:focus-visible {
   outline: 3px auto var(--secondary-shadow);
 }
 
-.Listbox-item:active {
+.Listbox-item--option:active {
   background: rgba(255, 245, 199, 0.6);
 }
 
-.Listbox-item--draggable:focus {
+.Listbox-item--selected {
+  background: rgba(255, 245, 199, 0.6);
+}
+
+/* Listbox type - resource  */
+
+.Listbox-item--resource {
+  cursor: pointer;
+}
+
+.Listbox-item--resource:hover {
+  background-color: var(--secondary-lightest);
+}
+
+.Listbox-item--resource:focus,
+.Listbox-item--resource:focus-visible {
   outline: 3px auto var(--secondary-shadow);
 }
 
-.Listbox-item--disabled {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.Listbox-item--selected {
+.Listbox-item--resource:active {
   background: rgba(255, 245, 199, 0.6);
 }
 
@@ -45,8 +76,29 @@
   background: rgba(255, 245, 199, 0.6);
 }
 
+/* Listbox type - description  */
+
+.Listbox-item--description:focus,
+.Listbox-item--description:focus-visible {
+  outline: none;
+}
+
+/* Listbox type - disabled  */
+
+.Listbox-item--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Listbox type - draggable  */
+
+.Listbox-item--draggable:focus {
+  outline: 3px auto var(--secondary-shadow);
+}
+
 .Listbox-item--drag-icon {
   cursor: grab;
+  margin-right: var(--spacing);
 }
 
 .Listbox-item--drag-icon:hover {

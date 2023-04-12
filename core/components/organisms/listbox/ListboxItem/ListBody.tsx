@@ -12,21 +12,18 @@ export const ListBody = (props: ListboxItemProps) => {
     uniqueID: '',
   };
 
-  const { children, className, disabled, selected, activated, disablePadding, parentProps = defaultProps } = props;
+  const { children, className, disabled, selected, activated, parentProps = defaultProps } = props;
 
   const { size, type, draggable, uniqueID } = parentProps;
 
   const itemClass = classNames(
     {
-      ['px-6']: !disablePadding,
+      'Listbox-item': true,
+      [`Listbox-item--${size}`]: size,
+      [`Listbox-item--${type}`]: type,
       'Listbox-item--disabled': disabled,
-      'Listbox-item': type !== 'description',
-      'Listbox-item--description': type === 'description',
       'Listbox-item--selected': selected && type === 'option',
       'Listbox-item--activated': activated && type === 'resource',
-      ['py-3']: size === 'tight' && !disablePadding,
-      ['py-5']: size === 'standard' && !disablePadding,
-      ['py-4']: size === 'compressed' && !disablePadding,
     },
     className
   );

@@ -49,7 +49,7 @@ export const reorderList = () => {
     // }
 
     <Card className="w-50">
-      <div className="mt-6 ml-6 mb-5">
+      <div className="pt-6 ml-6 mb-5">
         <Heading>Todo’s table columns</Heading>
         <Text appearance="subtle">Select the columns that you want to see in work list</Text>
       </div>
@@ -57,14 +57,10 @@ export const reorderList = () => {
       <Listbox showDivider={true} type="description" draggable={true} className="Listbox-wrapper overflow-auto">
         {dataList.map((record, key) => {
           return (
-            <ListboxItem key={key + 1} id={key + 1} className="d-flex align-items-center">
-              <div className="d-flex align-items-center w-100 justify-content-between ml-4">
-                <div className="d-flex justify-content-start">
-                  <Text>{record.name}</Text>
-                </div>
-                <div className="d-flex justify-content-end">
-                  <Checkbox defaultChecked={record.checked} />
-                </div>
+            <ListboxItem key={key + 1} id={key + 1}>
+              <div className="d-flex align-items-center w-100 justify-content-between">
+                <Text>{record.name}</Text>
+                <Checkbox defaultChecked={record.checked} />
               </div>
             </ListboxItem>
           );

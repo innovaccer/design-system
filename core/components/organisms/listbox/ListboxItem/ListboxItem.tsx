@@ -35,10 +35,6 @@ export interface ListboxItemProps extends BaseProps {
    */
   activated?: boolean;
   /**
-   * Set `true` to remove default padding of list item
-   */
-  disablePadding?: boolean;
-  /**
    * Unique ID to list item
    */
   id: string;

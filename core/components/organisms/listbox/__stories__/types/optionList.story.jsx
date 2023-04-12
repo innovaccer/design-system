@@ -73,9 +73,11 @@ export const optionList = () => {
               {dataList.map((data, key) => {
                 return (
                   <ListboxItem key={key} id={key} disabled={key === 2}>
-                    <Text>{data.name}</Text>
-                    <br />
-                    <Text appearance="subtle">{data.subInfo}</Text>
+                    <div>
+                      <Text>{data.name}</Text>
+                      <br />
+                      <Text appearance="subtle">{data.subInfo}</Text>
+                    </div>
                   </ListboxItem>
                 );
               })}

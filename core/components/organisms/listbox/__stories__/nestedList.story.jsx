@@ -17,7 +17,7 @@ const SubList = () => {
     <Listbox type="description" className="SubList-wrapper mr-6 mb-5 mt-3">
       {noteList.map((note, key) => {
         return (
-          <ListboxItem key={key} className="d-flex align-items-center justify-content-between">
+          <ListboxItem key={key} className="justify-content-between">
             <Text>{note}</Text>
             <Switch defaultChecked={true} size="tiny" />
           </ListboxItem>
@@ -79,39 +79,35 @@ export const nestedList = () => {
         {dataList.map((record, key) => {
           const expanded = expandList.includes(key);
           return (
-            <ListboxItem
-              key={key}
-              id={key}
-              expanded={expanded}
-              nestedRow={<SubList />}
-              className="d-flex align-items-center justify-content-between"
-            >
-              <div className="d-flex align-items-center">
-                <Icon
-                  name={'keyboard_arrow_up'}
-                  size={16}
-                  onClick={() => onClickHandler(key)}
-                  appearance="subtle"
-                  className={`mr-4 cursor-pointer ${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}`}
-                />
+            <ListboxItem key={key} id={key} expanded={expanded} nestedRow={<SubList />}>
+              <Icon
+                name={'keyboard_arrow_up'}
+                size={16}
+                onClick={() => onClickHandler(key)}
+                appearance="subtle"
+                className={`mr-4 cursor-pointer ${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}`}
+              />
+
+              <div className="d-flex w-100 justify-content-between">
                 <div>
                   <Text>{record.title}</Text> <br />
                   <MetaList list={[{ label: `Updated on ${record.date}` }, { label: `Updated by ${record.user}` }]} />
                 </div>
-              </div>
-              <div className="d-flex align-items-center">
-                <StatusHint appearance="info">{record.status}</StatusHint>
-                <Dropdown
-                  align="right"
-                  className="ml-5"
-                  menu={true}
-                  customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
-                  options={[
-                    { label: 'Edit', value: 'edit' },
-                    { label: 'Export', value: 'export' },
-                    { label: 'Delete', value: 'delete' },
-                  ]}
-                />
+
+                <div className="d-flex align-items-center">
+                  <StatusHint appearance="info">{record.status}</StatusHint>
+                  <Dropdown
+                    align="right"
+                    className="ml-5"
+                    menu={true}
+                    customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
+                    options={[
+                      { label: 'Edit', value: 'edit' },
+                      { label: 'Export', value: 'export' },
+                      { label: 'Delete', value: 'delete' },
+                    ]}
+                  />
+                </div>
               </div>
             </ListboxItem>
           );
@@ -142,7 +138,7 @@ const customCode = `
       <Listbox type="description" className="SubList-wrapper mr-6 mb-5 mt-3">
         {noteList.map((note, key) => {
           return (
-            <ListboxItem key={key} className="d-flex align-items-center justify-content-between">
+            <ListboxItem key={key} className="justify-content-between">
               <Text>{note}</Text>
               <Switch defaultChecked={true} size="tiny" />
             </ListboxItem>
@@ -204,39 +200,35 @@ const customCode = `
           const expanded = expandList.includes(key);
 
           return (
-            <ListboxItem
-              key={key}
-              id={key}
-              expanded={expanded}
-              nestedRow={<SubList />}
-              className="d-flex align-items-center justify-content-between"
-            >
-              <div className="d-flex align-items-center">
-                <Icon
-                  name={'keyboard_arrow_up'}
-                  size={16}
-                  onClick={() => onClickHandler(key)}
-                  appearance="subtle"
-                  className={\`mr-4 cursor-pointer \${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}\`}
-                />
+            <ListboxItem key={key} id={key} expanded={expanded} nestedRow={<SubList />}>
+              <Icon
+                name={'keyboard_arrow_up'}
+                size={16}
+                onClick={() => onClickHandler(key)}
+                appearance="subtle"
+                className={\`mr-4 cursor-pointer \${expanded ? 'rotate-clockwise' : 'rotate-anticlockwise'}\`}
+              />
+
+              <div className="d-flex w-100 justify-content-between">
                 <div>
                   <Text>{record.title}</Text> <br />
                   <MetaList list={[{ label: \`Updated on \${record.date}\` }, { label: \`Updated by \${record.user}\` }]} />
                 </div>
-              </div>
-              <div className="d-flex align-items-center">
-                <StatusHint appearance="info">{record.status}</StatusHint>
-                <Dropdown
-                  align="right"
-                  className="ml-5"
-                  menu={true}
-                  customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
-                  options={[
-                    { label: 'Edit', value: 'edit' },
-                    { label: 'Export', value: 'export' },
-                    { label: 'Delete', value: 'delete' },
-                  ]}
-                />
+
+                <div className="d-flex align-items-center">
+                  <StatusHint appearance="info">{record.status}</StatusHint>
+                  <Dropdown
+                    align="right"
+                    className="ml-5"
+                    menu={true}
+                    customTrigger={() => <Button appearance="transparent" aria-label="Menu" icon="more_horiz" />}
+                    options={[
+                      { label: 'Edit', value: 'edit' },
+                      { label: 'Export', value: 'export' },
+                      { label: 'Delete', value: 'delete' },
+                    ]}
+                  />
+                </div>
               </div>
             </ListboxItem>
           );

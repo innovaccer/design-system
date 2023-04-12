@@ -44,7 +44,6 @@ describe('Listbox component snapshot', () => {
 describe('Listbox item component snapshot', () => {
   const mapper: Record<string, any> = {
     disabled: valueHelper(BooleanValue, { required: true, iterate: true }),
-    disablePadding: valueHelper(BooleanValue, { required: true, iterate: true }),
     tag: valueHelper(listItemTagList, { required: true, iterate: true }),
     onClick: valueHelper(onClickHandler, { required: true, iterate: false }),
   };
@@ -115,74 +114,38 @@ describe('Listbox component snapshot for states', () => {
 });
 
 describe('Listbox Item component test for list size: standard', () => {
-  it('check for padding classes for size:standard when disablePadding:false', () => {
+  it('check for padding classes for size:standard', () => {
     const { getByTestId } = render(
       <Listbox size="standard">
         <ListboxItem id={listItemId}>{children}</ListboxItem>
       </Listbox>
     );
     const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-    expect(listItem).toHaveClass('px-6 py-5');
-  });
-
-  it('check for padding classes for size:standard when disablePadding:true', () => {
-    const { getByTestId } = render(
-      <Listbox size="standard">
-        <ListboxItem id={listItemId} disablePadding={true}>
-          {children}
-        </ListboxItem>
-      </Listbox>
-    );
-    const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-    expect(listItem).not.toHaveClass('px-6 py-5');
+    expect(listItem).toHaveClass('Listbox-item--standard');
   });
 });
 
 describe('Listbox Item component test for list size: tight', () => {
-  it('check for padding classes for size:tight when disablePadding:false', () => {
+  it('check for padding classes for size:tight', () => {
     const { getByTestId } = render(
       <Listbox size="tight">
         <ListboxItem id={listItemId}>{children}</ListboxItem>
       </Listbox>
     );
     const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-    expect(listItem).toHaveClass('px-6 py-3');
-  });
-
-  it('check for padding classes for size:tight when disablePadding:true', () => {
-    const { getByTestId } = render(
-      <Listbox size="tight">
-        <ListboxItem id={listItemId} disablePadding={true}>
-          {children}
-        </ListboxItem>
-      </Listbox>
-    );
-    const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-    expect(listItem).not.toHaveClass('px-6 py-3');
+    expect(listItem).toHaveClass('Listbox-item--tight');
   });
 });
 
 describe('Listbox Item component test for list size: compressed', () => {
-  it('check for padding classes for size:compressed when disablePadding:false', () => {
+  it('check for padding classes for size:compressed', () => {
     const { getByTestId } = render(
       <Listbox size="compressed">
         <ListboxItem id={listItemId}>{children}</ListboxItem>
       </Listbox>
     );
     const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-    expect(listItem).toHaveClass('px-6 py-4');
-  });
-
-  it('check for padding classes for size:compressed when disablePadding:true', () => {
-    const { getByTestId } = render(
-      <Listbox size="compressed">
-        <ListboxItem id={listItemId} disablePadding={true}>
-          {children}
-        </ListboxItem>
-      </Listbox>
-    );
-    const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-    expect(listItem).not.toHaveClass('px-6 py-4');
+    expect(listItem).toHaveClass('Listbox-item--compressed');
   });
 });
 
@@ -224,7 +187,7 @@ describe('Listbox Item component test for list type: description', () => {
       </Listbox>
     );
     const listItem = getByTestId('DesignSystem-Listbox-ItemWrapper');
-    expect(listItem).not.toHaveClass('Listbox-item');
+    expect(listItem).toHaveClass('Listbox-item--description');
   });
 });
 
@@ -251,7 +214,7 @@ describe('Listbox Item component test for custom classes', () => {
 
   it('check to override default padding classes', () => {
     const { getByTestId } = render(
-      <ListboxItem id={listItemId} className="p-0" disablePadding={true}>
+      <ListboxItem id={listItemId} className="p-0">
         {children}
       </ListboxItem>
     );
