@@ -1,3 +1,39 @@
+## 2.15.3 (2023-04-12)
+
+### Highlights
+
+- fix(dropdown): fix option list for all selected options in fetch function (8399f2c5)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(dropdown): fix option list for all selected options in fetch function (8399f2c5)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.15.2 (2023-04-03)
 
 ### Highlights
