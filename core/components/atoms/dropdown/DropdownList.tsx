@@ -553,7 +553,7 @@ const DropdownList = (props: OptionsProps) => {
       );
     }
 
-    if (listOptions.length === 0 && !loadingOptions) {
+    if (listOptions.length === 0 && !loadingOptions && selected.length <= 0) {
       const { noResultMessage = 'No result found' } = props;
       return (
         <div className="Dropdown-wrapper" style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
