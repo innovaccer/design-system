@@ -1,0 +1,61 @@
+@media print {
+
+    /* @page {
+        size: A4;
+        padding: 36px;
+    }
+
+    body {} */
+
+
+    h1 {
+        font-family: 'Roboto Slab';
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-bold);
+        line-height: 21px;
+    }
+
+
+
+    .Subheading {
+        margin: 0;
+        font-weight: var(--font-weight-bolder);
+        font-size: var(--spacing-l);
+        line-height: var(--font-height-m);
+        letter-spacing: var(--letter-spacing);
+        text-transform: uppercase;
+    }
+
+
+
+    .Heading--l {
+        font-weight: var(--font-weight-normal);
+        font-size: var(--font-size-xl);
+        line-height: var(--font-height-xl);
+
+        font-family: 'Roboto Slab';
+        font-size: var(--font-size);
+        font-weight: var(--font-weight-bold);
+        line-height: 21px;
+      }
+      
+      .Heading--xl {
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-xxl);
+        line-height: var(--font-height-xxl);
+    }
+
+    :root {
+        --text: #000000;
+        --text-subtle: #595959
+    }
+
+
+    .bg-dark {
+        background-color: var(--secondary) !important;
+    }
+
+    .bg-light {
+        background-color: var(--secondary-lighter) !important;
+    }
+}
