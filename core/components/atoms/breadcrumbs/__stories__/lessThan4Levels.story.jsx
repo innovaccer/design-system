@@ -3,7 +3,7 @@ import { Breadcrumbs } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
-export const moreThan4Levels = () => {
+export const lessThan4Levels = () => {
   const list = [
     {
       label: 'Level 0',
@@ -20,10 +20,6 @@ export const moreThan4Levels = () => {
     {
       label: 'Level 3',
       link: '/level3',
-    },
-    {
-      label: 'Level 4',
-      link: '/level4',
     },
   ];
 
@@ -51,11 +47,7 @@ const customCode = `() => {
     {
       label: 'Level 3',
       link: '/level3'
-    },
-    {
-      label: 'Level 4',
-      link: '/level4'
-    },
+    }
   ];
 
   return (
@@ -69,7 +61,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Breadcrumbs/Variants/More Than 4 Levels',
+  title: 'Components/Breadcrumbs/Less Than 4 Levels',
   component: Breadcrumbs,
   parameters: {
     docs: {
