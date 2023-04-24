@@ -14,12 +14,14 @@
   margin: var(--spacing-m);
   /* 160px */
   max-width: calc(var(--spacing-2) * 10);
-  line-height: var(--font-height);
+  height: var(--font-height-s);
   color: var(--inverse-lighter);
 }
 
 .Breadcrumbs-link:hover {
   color: var(--inverse-light);
+  border-bottom: var(--spacing-xs) solid var(--inverse-light);
+  box-sizing: border-box;
 }
 
 .Breadcrumbs-link:active {
@@ -32,6 +34,9 @@
 
 .Breadcrumbs-itemSeparator {
   color: var(--secondary);
+  font-size: var(--font-size-s);
+  height: var(--font-height-s);
+  width: var(--spacing-m);
 }
 
 .Breadcrumbs-dropdown {
