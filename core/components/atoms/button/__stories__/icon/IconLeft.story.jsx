@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
-export const iconLeftButton = () => (
+export const iconLeft = () => (
   <Button icon="get_app" iconAlign="left" aria-label="Download">
     Download
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Icon Left Button',
+  title: 'Components/Button/Icon/Icon Left',
   component: Button,
   parameters: {
     docs: {

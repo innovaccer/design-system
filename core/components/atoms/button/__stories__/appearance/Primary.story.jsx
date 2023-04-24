@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
-export const PrimaryButton = () => (
+export const Primary = () => (
   <Button appearance="primary" size="regular" aria-label="Submit your response">
     Submit your response
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Primary Button',
+  title: 'Components/Button/Appearance/Primary',
   component: Button,
   parameters: {
     docs: {
