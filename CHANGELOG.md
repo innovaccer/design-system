@@ -1,3 +1,42 @@
+## 2.15.4 (2023-04-24)
+
+### Highlights
+
+- fix(divider): update header divider background (4ccc7de5)
+- fix(pagination): update pagination to prevent decimal values for page (ad7cee98)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(divider): update header divider color (4ccc7de5)
+- fix(pagination): update pagination to prevent decimal values for page (ad7cee98)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(tooltip): update usage guidelines for tooltip in documentation (b90ca8e2)
+- docs(popover): update guidelines for tooltip vs popover in documentation (851b1717)
+
+---
+
 ## 2.15.3 (2023-04-12)
 
 ### Highlights
