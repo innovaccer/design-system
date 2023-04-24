@@ -11,12 +11,13 @@
 
 .Link--regular {
   font-size: var(--font-size);
-  height: var(--font-size-l);
+  height: var(--font-height);
 }
 
 .Link--tiny {
   font-size: var(--font-size-s);
-  height: var(--font-size-m);
+  height: var(--font-height-s);
+  line-height: var(--font-height-s);
 }
 
 .Link--default {
