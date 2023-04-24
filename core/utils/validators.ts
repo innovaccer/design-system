@@ -78,3 +78,14 @@ export const time = (val: string, format: string): boolean => {
 
   return hoursCond && minutes <= 60;
 };
+
+export const isNaturalNumber = (val: number | string): boolean => {
+  if (
+    (typeof val === 'string' && /[^0-9]/.test(val)) ||
+    (typeof val === 'number' && (val <= 0 || val - Math.floor(val) !== 0))
+  ) {
+    return false;
+  }
+
+  return true;
+};

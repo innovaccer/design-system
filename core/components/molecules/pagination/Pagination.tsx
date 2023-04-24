@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, MetricInput, Button } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { isNaturalNumber } from '@/utils/validators';
 
 import classNames from 'classnames';
 
@@ -71,6 +72,12 @@ export const Pagination = (props: PaginationProps) => {
     }
   };
 
+  const onKeyPressHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!isNaturalNumber(e.key)) {
+      e.preventDefault();
+    }
+  };
+
   const onClickHandler = (buttonType: 'prev' | 'next' | 'first' | 'last') => {
     setInit(true);
     switch (buttonType) {
@@ -113,8 +120,9 @@ export const Pagination = (props: PaginationProps) => {
             name="page"
             className="Pagination-MetricInput"
             onChange={inputChangeHandler}
-            value={`${page === 0 ? '' : page}`}
+            value={`${isNaturalNumber(page) ? page : ''}`}
             data-test="DesignSystem-Pagination--Input"
+            onKeyPress={onKeyPressHandler}
           />
           <Text>{` of ${totalPages} pages`}</Text>
         </div>

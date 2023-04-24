@@ -62,6 +62,9 @@ describe('Pagination component with props: page and onPageChange', () => {
     fireEvent.change(input, { target: { value: 0 } });
     expect(getByTestId(inputTestId)).not.toHaveValue(0);
 
+    fireEvent.change(input, { target: { value: 0.1 } });
+    expect(getByTestId(inputTestId)).toHaveValue(null);
+
     fireEvent.change(input, { target: { value: totalPages + 1 } });
     expect(getByTestId(inputTestId)).not.toHaveValue(totalPages + 1);
   });
