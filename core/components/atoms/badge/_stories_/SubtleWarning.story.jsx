@@ -1,20 +1,16 @@
 import * as React from 'react';
-import Badge from '../Badge';
+import { Badge } from '@/index';
 
-export const subtleWarning = () => (
-  <Badge appearance="warning" subtle={true}>
-    {'Pending'}
-  </Badge>
-);
+// CSF format story
+export const subtleWarning = () => {
+  return (
+    <Badge appearance="warning" subtle={true}>
+      Pending
+    </Badge>
+  );
+};
 
 export default {
   title: 'Components/Badge/Subtle Warning',
   component: Badge,
-  parameters: {
-    docs: {
-      docPage: {
-        title: 'Badge',
-      },
-    },
-  },
 };
