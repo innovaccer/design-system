@@ -6,10 +6,10 @@ export const appearance = () => {
   return (
     <div className="d-flex">
       <Link appearance="default" href="http://innovaccer.com">
-        Default Link.
+        Default Link
       </Link>
       <Link appearance="subtle" href="http://innovaccer.com" className="ml-7">
-        Subtle Link.
+        Subtle Link
       </Link>
     </div>
   );

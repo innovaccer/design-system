@@ -5,11 +5,11 @@ import { Link } from '@/index';
 export const disabled = () => {
   return (
     <div className="d-flex">
-      <Link href="http://innovaccer.com" disabled={false}>
-        Link Enabled.
+      <Link href="http://innovaccer.com" disabled={true}>
+        Link Enabled
       </Link>
-      <Link href="http://innovaccer.com" disabled={true} className="ml-7">
-        Link Disabled.
+      <Link href="http://innovaccer.com" appearance="subtle" disabled={true} className="ml-7">
+        Link Disabled
       </Link>
     </div>
   );
