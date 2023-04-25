@@ -14,7 +14,7 @@ Object {
         <div
           class="AvatarGroup-item"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+          style="border-radius: 50%; background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
         >
           <style />
           <div
@@ -36,7 +36,7 @@ Object {
         <div
           class="AvatarGroup-item"
           data-test="DesignSystem-AvatarGroup--Avatar"
-          style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+          style="border-radius: 50%; background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
         >
           <style />
           <div
@@ -61,7 +61,7 @@ Object {
         >
           <div
             data-test="DesignSystem-AvatarGroup--TriggerAvatar"
-            style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+            style="border-radius: 50%; background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
           >
             <span
               class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
@@ -86,7 +86,7 @@ Object {
       <div
         class="AvatarGroup-item"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+        style="border-radius: 50%; background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
       >
         <style />
         <div
@@ -108,7 +108,7 @@ Object {
       <div
         class="AvatarGroup-item"
         data-test="DesignSystem-AvatarGroup--Avatar"
-        style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+        style="border-radius: 50%; background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
       >
         <style />
         <div
@@ -133,7 +133,7 @@ Object {
       >
         <div
           data-test="DesignSystem-AvatarGroup--TriggerAvatar"
-          style="border-radius: 50%; box-shadow: 0 0 0 var(--spacing-xs) var(--white);"
+          style="border-radius: 50%; background-color: white; box-shadow: 0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) white;"
         >
           <span
             class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"

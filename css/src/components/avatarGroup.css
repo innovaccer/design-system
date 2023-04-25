@@ -1,5 +1,9 @@
 .AvatarGroup-item {
-  margin-right: calc((var(--spacing-s) + var(--spacing-m)) * -1);
+  margin-right: calc(var(--spacing-m) * -1);
+}
+
+.AvatarGroup-item--tiny {
+  margin-right: calc(var(--spacing-s) * -1);
 }
 
 .AvatarGroup-Popper {

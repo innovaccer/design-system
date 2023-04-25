@@ -6,6 +6,7 @@ import { AvatarProps, PopoverProps } from '@/index.type';
 import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
+import { AvatarSize } from 'types';
 
 interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -43,8 +44,14 @@ export interface AvatarGroupProps extends BaseProps {
   max: number;
   /**
    * Border color of `Avatars`.
+   * For Avatar group to inherit border color from parents background please add color property to parent same as background
+   * You also have to set borderColor as ''
    */
   borderColor: string;
+  /**
+   * Size regular | tiny
+   */
+  size: AvatarSize;
   /**
    * **Popover for +x avatar**
    *
@@ -79,7 +86,7 @@ export interface AvatarGroupProps extends BaseProps {
 }
 
 export const AvatarGroup = (props: AvatarGroupProps) => {
-  const { max, borderColor, popoverOptions, tooltipPosition, list, className } = props;
+  const { max, borderColor, popoverOptions, tooltipPosition, list, className, size } = props;
 
   const {
     popperRenderer,
@@ -98,9 +105,16 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   const style = {
     borderRadius: '50%',
     backgroundColor: `${borderColor}`,
-    border: `var(--spacing-xs) solid ${borderColor}`,
-    boxShadow: `0 0 0 var(--spacing-xs) ${borderColor}`,
+    boxShadow: `0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) ${borderColor ? borderColor : ''}`,
   };
+
+  const tinySize = {
+    height: 'var(--spacing-xl)',
+    width: 'var(--spacing-xl)',
+    boxShadow: `0 0 0  var(--spacing-s) ${borderColor ? borderColor : ''}`,
+  };
+
+  const avatarStyle = size === 'tiny' ? { ...style, ...tinySize } : style;
 
   const AvatarGroupClass = classNames(
     {
@@ -117,13 +131,23 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   );
 
   return (
-    <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
-      <Avatars avatarList={list.slice(0, max)} avatarStyle={style} tooltipPosition={tooltipPosition} />
+    <div
+      data-test="DesignSystem-AvatarGroup"
+      style={{ color: 'inherit' }}
+      {...baseProps}
+      className={`${AvatarGroupClass} d-inline-flex`}
+    >
+      <Avatars
+        size={size}
+        avatarList={list.slice(0, max)}
+        avatarStyle={avatarStyle}
+        tooltipPosition={tooltipPosition}
+      />
       {list.length - max > 0 && (
         <Popover
           on={on}
           dark={dark}
-          trigger={<AvatarCount hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
+          trigger={<AvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
           position={position}
           appendToBody={appendToBody}
           className={popperClass}
@@ -144,9 +168,10 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 AvatarGroup.displayName = 'AvatarGroup';
 AvatarGroup.defaultProps = {
   max: 2,
-  borderColor: 'var(--white)',
   tooltipPosition: 'bottom',
+  borderColor: 'white',
   popoverOptions: {},
+  size: 'regular',
 };
 
 export default AvatarGroup;
