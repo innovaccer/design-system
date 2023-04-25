@@ -5,12 +5,12 @@ import Heading from '@/components/atoms/heading';
 
 // CSF format story
 export const disabled = () => {
-  const view = ['year', 'month', 'date'];
+  const view = ['date', 'month', 'year'];
 
   return (
     <>
-      <Heading>disabledBefore</Heading>
-      <div className="d-flex">
+      <Heading>Disabled before</Heading>
+      <div className="d-flex mb-8">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
             <Card className="d-inline-flex" shadow="light">
@@ -20,8 +20,8 @@ export const disabled = () => {
         ))}
       </div>
 
-      <Heading>disabledAfter</Heading>
-      <div className="d-flex">
+      <Heading>Disabled after</Heading>
+      <div className="d-flex mb-8">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
             <Card className="d-inline-flex" shadow="light">
@@ -31,7 +31,7 @@ export const disabled = () => {
         ))}
       </div>
 
-      <Heading>disabledBefore and disabledAfter</Heading>
+      <Heading>Disabled before and Disabled after</Heading>
       <div className="d-flex">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
