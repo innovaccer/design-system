@@ -10,13 +10,13 @@ const AvatarPopperBody = (props: any) => {
   }
 
   return (
-    <div className="py-6 pr-4 pl-6">
+    <div className="px-4 py-3">
       <div className="AvatarGroup-TextWrapper" style={{ maxHeight }}>
         {hiddenAvatarList.map((item: any, ind: any) => {
           const { firstName = '', lastName = '' } = item;
           const name = `${firstName} ${lastName}`;
           const AvatarTextClass = classNames({
-            [`mb-5`]: ind < hiddenAvatarList.length - 1,
+            [`mb-4`]: ind < hiddenAvatarList.length - 1,
           });
           return (
             <Text
