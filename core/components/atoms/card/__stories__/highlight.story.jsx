@@ -43,11 +43,11 @@ export const HighlightingASection = () => {
             </Row>
           </CardBody>
 
-          <CardSubdued border="top">
+          <CardSubdued>
             <Text weight="strong" small={true}>
               SELECTED RECIPIENTS
             </Text>
-            <div className="pt-6">
+            <div className="pt-5">
               <StatusHint appearance="success">437 wil receive the message.</StatusHint>
               <StatusHint appearance="alert">42 have opted out or never agreed to receive messages.</StatusHint>
             </div>

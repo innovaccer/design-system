@@ -29,7 +29,7 @@ export const ScrollableContent = () => {
         <CardHeader>
           <Heading size="s">Use a template</Heading>
         </CardHeader>
-        <div className="Diagnosis-list">
+        <div className="vh-50">
           <List
             data={data}
             schema={schema}
@@ -47,12 +47,7 @@ export const ScrollableContent = () => {
   );
 };
 
-const customCode = `/*
-// style.css
-.Diagnosis-list {
-    height: 70vh;
-}
-*/
+const customCode = `
 
 () => {
 
@@ -88,7 +83,7 @@ const customCode = `/*
         <CardHeader>
           <Heading size="s">Use a template</Heading>
         </CardHeader>
-        <div className="Diagnosis-list">
+        <div className="vh-50">
           <List
             data={data}
             schema={schema}
