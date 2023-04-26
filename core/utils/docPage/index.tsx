@@ -107,7 +107,7 @@ const ShowMoreLessButton = ({ onClick, text = 'More' }: { onClick: OnClickType; 
 
 const getHeight = (shouldShowMore: boolean, showMoreHTML: boolean) => {
   if (shouldShowMore) {
-    return showMoreHTML ? '100%' : '250px';
+    return showMoreHTML ? '100%' : '450px';
   }
   return '100%';
 };
@@ -174,9 +174,21 @@ const StoryComp = (props: {
   const [isExpanded, setIsExpanded] = React.useState(isEmbed);
   const [showMore, setShowMore] = React.useState<boolean>(false);
   const [shouldShowMore, setShouldShowMore] = React.useState<boolean>(false);
-  const codePanel = React.useRef<HTMLDivElement>(null);
-
+  const [previewDimensions, setDimensions] = React.useState<{ height: string | number }>({ height: '100%' });
   const importScope = props.imports;
+
+  const codePanel = React.useRef<HTMLDivElement>(null);
+  const previewRef = React.useRef<HTMLDivElement>(null);
+
+  React.useLayoutEffect(() => {
+    if (previewRef.current) {
+      setTimeout(() => {
+        setDimensions({
+          height: previewRef.current?.offsetHeight || '100%',
+        });
+      }, 0);
+    }
+  }, []);
 
   const renderHTMLTab = () => {
     if (!noHtml) {
@@ -200,7 +212,7 @@ const StoryComp = (props: {
     }, [activeTab]);
 
     React.useEffect(() => {
-      if (codePanel.current?.clientHeight && codePanel.current?.clientHeight > 250) {
+      if (codePanel.current?.clientHeight && codePanel.current?.clientHeight > 450) {
         setShouldShowMore(true);
       }
     }, [codePanel]);
@@ -244,16 +256,18 @@ const StoryComp = (props: {
     <Card shadow={isEmbed ? 'none' : 'light'} className="overflow-hidden">
       <LiveProvider code={jsxCode} scope={imports}>
         <Canvas
-          className="my-0"
+          key={isExpanded as any}
+          className="my-0 overflow-auto"
           withToolbar={true}
           isExpanded={isExpanded}
           withSource={'none' as any}
           additionalActions={actions}
         >
-          <LivePreview />
+          <div ref={previewRef} style={{ height: previewDimensions.height }}>
+            <LivePreview />
+            <LiveError />
+          </div>
         </Canvas>
-
-        <LiveError className="px-7" />
 
         {isExpanded && (
           <>
@@ -264,6 +278,7 @@ const StoryComp = (props: {
                 position: 'relative',
                 marginBottom: shouldShowMore ? '24px' : '',
                 height: getHeight(shouldShowMore, showMore),
+                overflow: 'auto',
               }}
               className="DocPage-editorTabs"
             >

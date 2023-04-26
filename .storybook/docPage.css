@@ -51,6 +51,14 @@ html, body {
   border-bottom: var(--border);
 }
 
+.sbdocs-preview .docs-story pre {
+  margin: 0;
+}
+
+.sbdocs-preview .docs-story {
+  padding-bottom: 40px;
+}
+
 .sbdocs-title {
   font-weight: var(--font-weight-medium) !important;
   font-size: var(--font-size-xl) !important;
