@@ -75,7 +75,6 @@
 }
 
 .Dropzone--disabled {
-  background: var(--secondary-lightest);
   background-image: linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
     linear-gradient(to right, var(--secondary) 50%, rgba(255, 255, 255, 0) 0%),
