@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { Dropdown } from '@/index';
 
 import {
@@ -9,6 +9,7 @@ import {
   disabledStoryOptions,
   iconWithSubinfoOptions,
   groupedStoryOptions,
+  preSelectedOptions,
 } from '../__stories__/Options';
 
 const FunctionValue = jest.fn();
@@ -195,6 +196,32 @@ describe('renders selected option', () => {
     expect(selectedOption).toHaveClass('Option--selected');
     expect(selectedOption).toHaveClass('color-primary-dark');
   });
+
+  it('with All Items label', async () => {
+    const { getAllByTestId, getByTestId } = render(<Dropdown options={preSelectedOptions} withCheckbox={true} />);
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    await waitFor(() => {
+      const labels = getAllByTestId('DesignSystem-Text');
+      const count = labels.filter((label) => label.textContent === 'All Items').length;
+      expect(count).toBe(1);
+    });
+  });
+
+  it('without All Items label when options are grouped', async () => {
+    const { getAllByTestId, getByTestId } = render(<Dropdown options={groupedStoryOptions} withCheckbox={true} />);
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    await waitFor(() => {
+      const labels = getAllByTestId('DesignSystem-Text');
+      const count = labels.filter((label) => label.textContent === 'All Items').length;
+      expect(count).toBe(0);
+    });
+  });
 });
 
 describe('renders disabled option', () => {
@@ -235,13 +262,15 @@ describe('renders disabled option', () => {
 });
 
 describe('renders grouped option', () => {
-  it('with same groups together', () => {
+  it('with same groups together', async () => {
     const { getAllByTestId, getByTestId } = render(<Dropdown options={groupedStoryOptions} withCheckbox={true} />);
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
 
-    const labels = getAllByTestId('DesignSystem-Text');
-    const count = labels.filter((label) => label.textContent === 'Group 2').length;
-    expect(count).toBe(1);
+    await waitFor(() => {
+      const labels = getAllByTestId('DesignSystem-Text');
+      const count = labels.filter((label) => label.textContent === 'Group 2').length;
+      expect(count).toBe(1);
+    });
   });
 });

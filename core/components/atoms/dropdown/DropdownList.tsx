@@ -62,6 +62,11 @@ export interface DropdownListProps extends TriggerAndOptionProps {
    */
   selectedSectionLabel?: string;
   /**
+   * Label for the rest all items options section
+   * @default "All Items"
+   */
+  allItemsSectionLabel?: string;
+  /**
    * Label of Apply button
    *
    * (visible in case of `withCheckbox` and `showApplyButton`)
@@ -310,15 +315,6 @@ const DropdownList = (props: OptionsProps) => {
     minHeight: minHeight,
   };
 
-  const getDropdownClass = (index: number, isGroup: boolean) => {
-    const Dropdown = classNames({
-      ['Dropdown--border']: isGroup && index !== 0,
-      ['Option-checkboxWrapper']: true,
-    });
-
-    return Dropdown;
-  };
-
   const getDropdownSectionClass = (showClearButton?: boolean) => {
     return classNames({
       ['Dropdown-section']: true,
@@ -540,7 +536,12 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderDropdownSection = () => {
-    const { selectedSectionLabel = 'Selected Items', loadersCount = 10, loadingOptions } = props;
+    const {
+      selectedSectionLabel = 'Selected Items',
+      allItemsSectionLabel = 'All Items',
+      loadersCount = 10,
+      loadingOptions,
+    } = props;
     const selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
 
     const groupedListOptions = groupListOptions(listOptions);
@@ -571,16 +572,20 @@ const DropdownList = (props: OptionsProps) => {
         {selectAllPresent && renderSelectAll()}
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         {selected.map((option, index) => renderOptions(option, index))}
+        {selected.length > 0 &&
+          listOptions.length - selected.length > 0 &&
+          !listOptions[0].group?.trim() && // allItemsSectionLabel is displayed only when there are no groups
+          renderGroups(allItemsSectionLabel)}
         {groupedListOptions.map((option, index) => {
           const prevGroup =
             index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
           const currentGroup = option.group;
-          const isGroup = prevGroup !== currentGroup;
+          const isGroupDifferent = prevGroup !== currentGroup;
           const updatedIndex = index + selected.length;
 
           return (
-            <div className={getDropdownClass(updatedIndex, isGroup)} key={index}>
-              {isGroup && currentGroup && renderGroups(currentGroup)}
+            <div className="Option-checkboxWrapper" key={index}>
+              {isGroupDifferent && currentGroup && renderGroups(currentGroup)}
               {renderOptions(option, updatedIndex)}
             </div>
           );
