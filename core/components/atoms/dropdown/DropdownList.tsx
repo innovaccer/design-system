@@ -62,6 +62,11 @@ export interface DropdownListProps extends TriggerAndOptionProps {
    */
   selectedSectionLabel?: string;
   /**
+   * Label for the rest all items options section
+   * @default "All Items"
+   */
+  allItemsSectionLabel?: string;
+  /**
    * Label of Apply button
    *
    * (visible in case of `withCheckbox` and `showApplyButton`)
@@ -310,9 +315,9 @@ const DropdownList = (props: OptionsProps) => {
     minHeight: minHeight,
   };
 
-  const getDropdownClass = (index: number, isGroup: boolean) => {
+  const getDropdownClass = (index: number, isGroupDifferent: boolean) => {
     const Dropdown = classNames({
-      ['Dropdown--border']: isGroup && index !== 0,
+      ['Dropdown--border']: isGroupDifferent && index !== 0,
       ['Option-checkboxWrapper']: true,
     });
 
@@ -540,7 +545,12 @@ const DropdownList = (props: OptionsProps) => {
   };
 
   const renderDropdownSection = () => {
-    const { selectedSectionLabel = 'Selected Items', loadersCount = 10, loadingOptions } = props;
+    const {
+      selectedSectionLabel = 'Selected Items',
+      allItemsSectionLabel = 'All Items',
+      loadersCount = 10,
+      loadingOptions,
+    } = props;
     const selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
 
     if (loadersCount && loadingOptions) {
@@ -569,16 +579,19 @@ const DropdownList = (props: OptionsProps) => {
         {selectAllPresent && renderSelectAll()}
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         {selected.map((option, index) => renderOptions(option, index))}
+        {selected.length > 0 && listOptions.length - selected.length > 0 && renderGroups(allItemsSectionLabel)}
         {listOptions.map((option, index) => {
           const prevGroup =
             index > 0 ? listOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
           const currentGroup = option.group;
-          const isGroup = prevGroup !== currentGroup;
+          const isGroupDifferent = prevGroup !== currentGroup;
           const updatedIndex = index + selected.length;
+          const isGroupDifferentOnSelect = selected.length > 0 && index === 0 ? false : isGroupDifferent;
+          //to remove border on top of All Items when option(s) are selected.
 
           return (
-            <div className={getDropdownClass(updatedIndex, isGroup)} key={index}>
-              {isGroup && currentGroup && renderGroups(currentGroup)}
+            <div className={getDropdownClass(updatedIndex, isGroupDifferentOnSelect)} key={index}>
+              {isGroupDifferent && currentGroup && renderGroups(currentGroup)}
               {renderOptions(option, updatedIndex)}
             </div>
           );
