@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Divider, Row, Column, Card, CardBody, Radio, Heading } from '@/index';
+import { Divider, Row, Column, Card, CardBody, Radio, Heading, Text } from '@/index';
 
 export const HeaderDividerInCard = () => {
   return (
@@ -13,10 +13,10 @@ export const HeaderDividerInCard = () => {
 
             <Divider appearance="header" />
 
-            <div className="px-4 pt-4">
-              <Heading size="s">1. Little interest or pleasure in doing things.</Heading>
+            <div className="px-4 pt-5">
+              <Text weight="strong">1. Little interest or pleasure in doing things.</Text>
               <br />
-              <Column className="px-4">
+              <Column className="px-4 mt-5">
                 <Radio defaultChecked={true} label="Not at all" name="section" size="regular" value="Not at all" />
                 <Radio label="Several Days" name="section" size="regular" value="Several Days" />
                 <Radio label="More than half the days" name="section" size="regular" value="More than half days" />
@@ -30,6 +30,6 @@ export const HeaderDividerInCard = () => {
 };
 
 export default {
-  title: 'Components/Divider/Header Divider In Card',
+  title: 'Components/Divider/Horizontal/Header Divider In Card',
   component: Divider,
 };

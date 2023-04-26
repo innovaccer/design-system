@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Divider, Row, Column, Text } from '@/index';
 
-export const HorizontalDivider = () => {
+export const all = () => {
   return (
     <div>
       <Row>
         <Column className="p-6">
           <Divider />
           <br />
-          <Text weight="strong">Default Divider</Text>
+          <Text weight="strong">Basic Divider</Text>
         </Column>
 
         <Column className="p-6">
@@ -22,6 +22,6 @@ export const HorizontalDivider = () => {
 };
 
 export default {
-  title: 'Components/Divider/variants/Horizontal Divider',
+  title: 'Components/Divider/Horizontal/All',
   component: Divider,
 };
