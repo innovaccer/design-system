@@ -7,7 +7,7 @@ export const toastWithDescription = () => {
 
   const message = 'Outreach was sent';
   return (
-    <div className="d-flex">
+    <div className="d-flex flex-column">
       {appearances.map((appearance, ind) => {
         return (
           <div key={ind} className="mr-5 mb-8">
