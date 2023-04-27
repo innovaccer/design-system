@@ -1,10 +1,9 @@
 import * as React from 'react';
-import Pills from '../../Pills';
-import Text from '@/components/atoms/text';
+import { Pills, Text } from '@/index';
 
 // CSF format story
-export const appearance = () => {
-  const subtle = false;
+export const subtle = () => {
+  const ButtonSubtle = true;
   const weight = 'strong';
   const children = 10;
   const appearances = [
@@ -18,13 +17,12 @@ export const appearance = () => {
     'accent3',
     'accent4',
   ];
-
   return (
     <div className="d-flex">
       {appearances.map((appear, ind) => {
         return (
           <div key={ind} className="mr-9">
-            <Pills appearance={appear} subtle={subtle}>
+            <Pills appearance={appear} subtle={ButtonSubtle}>
               {children}
             </Pills>
             <br />
@@ -37,7 +35,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Pills/Variants/Appearance',
+  title: 'Components/Pills/Subtle',
   component: Pills,
   parameters: {
     docs: {

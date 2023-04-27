@@ -1,11 +1,7 @@
 import * as React from 'react';
-import Pills from '..';
+import { Pills } from '@/index';
 
-export const alert = () => (
-  <Pills appearance="alert" subtle={false}>
-    10
-  </Pills>
-);
+export const alert = () => <Pills appearance="alert">10</Pills>;
 
 export default {
   title: 'Components/Pills/Alert',
