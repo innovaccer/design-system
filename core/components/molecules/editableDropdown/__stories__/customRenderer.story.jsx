@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
 import { EditableDropdown, Label, StatusHint, Icon } from '@/index';
+import './style.css';
 
 // CSF format story
 const options = [];
@@ -20,7 +21,7 @@ export const customRender = () => {
 
   const customTrigger = (label) => {
     return (
-      <div className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100">
+      <div className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100 EditableDropdown-customTrigger">
         <StatusHint appearance="warning">{label}</StatusHint>
         <Icon name="keyboard_arrow_down" className="m-4" />
       </div>
@@ -58,7 +59,14 @@ export const customRender = () => {
   );
 };
 
-const customCode = `() => {
+const customCode = `/*
+// style.css
+.EditableDropdown-customTrigger {
+  border-radius: var(--spacing-m);
+}
+*/
+
+() => {
   const options = [];
   for (let i = 1; i <= 10; i++) {
     options.push({
@@ -88,7 +96,7 @@ const customCode = `() => {
 
   const customTrigger = (label) => {
     return (
-      <div className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100">
+      <div className="d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100 EditableDropdown-customTrigger">
         <StatusHint appearance="warning">{label}</StatusHint>
         <Icon name="keyboard_arrow_down" className="m-4"/>
       </div>
@@ -113,7 +121,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EditableDropdown/Variants/Custom Render',
+  title: 'Components/EditableDropdown/Custom Render',
   component: EditableDropdown,
   parameters: {
     docs: {
