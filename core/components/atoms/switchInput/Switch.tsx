@@ -12,7 +12,8 @@ type KeyboardEvent = React.KeyboardEvent<HTMLInputElement>;
 export interface SwitchProps extends BaseProps, OmitNativeProps<HTMLInputElement, 'onChange'> {
   /**
    * Size of `Switch`
-   * @default "regular"
+   *
+   * **'large' size has been deprecated and all large switch will now be changed to regular switch automatically**
    */
   size?: SwitchSize;
   /**

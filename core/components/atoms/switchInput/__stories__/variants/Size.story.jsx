@@ -1,10 +1,9 @@
 import * as React from 'react';
-import Switch from '../../index';
-import Text from '@/components/atoms/text';
+import { Switch, Text } from '@/index';
 
 // CSF format story
 export const size = () => {
-  const sizes = ['tiny', 'regular', 'large'];
+  const sizes = ['tiny', 'regular'];
 
   return (
     <div className="d-flex">
