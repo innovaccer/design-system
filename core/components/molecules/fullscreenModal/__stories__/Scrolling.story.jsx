@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Button, Text, FullscreenModal } from '@/index';
+import { Button, Chip, Text, FullscreenModal } from '@/index';
 
 export const scrolling = () => {
   const [open, setOpen] = React.useState(false);
@@ -53,7 +53,7 @@ export const scrolling = () => {
   return (
     <div>
       <Button appearance="primary" onClick={() => setOpen(true)}>
-        Open Modal
+        Open Full screen modal
       </Button>
       <FullscreenModal
         open={open}
@@ -65,8 +65,8 @@ export const scrolling = () => {
         footer={
           <>
             <Button onClick={action('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-4" onClick={action('Next button click')}>
-              Next
+            <Button appearance="primary" className="ml-4" onClick={action('Submit button click')}>
+              Submit
             </Button>
           </>
         }
@@ -78,19 +78,15 @@ export const scrolling = () => {
             return (
               <div key={index} className="mt-5 d-flex">
                 <div>
-                  <Text size="small" className="mr-4">
+                  <Text size="regular" className="mr-4">
                     {`${index + 1}.`}
                   </Text>
                 </div>
                 <div className="d-inline-block ml-2">
-                  <Text size="small">{object.question}</Text>
+                  <Text size="regular">{object.question}</Text>
                   <div className="mb-5 mt-3">
                     {object.options.map((option, ind) => {
-                      return (
-                        <Button key={ind} className="mr-4 mt-4 d-inline" size="tiny">
-                          {option}
-                        </Button>
-                      );
+                      return <Chip key={ind} type="selection" label={option} className="mr-4 mt-4" />;
                     })}
                   </div>
                 </div>
@@ -122,7 +118,7 @@ const customCode = `() => {
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Modal</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>Open Full screen modal</Button>
       <FullscreenModal
         open={open}
         dimension="large"
@@ -133,7 +129,7 @@ const customCode = `() => {
         footer={(
           <>
             <Button  onClick={console.log('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-4" onClick={console.log('Next button click')}>Next</Button>
+            <Button appearance="primary" className="ml-4" onClick={console.log('Submit button click')}>Submit</Button>
           </>
         )}
       >
@@ -144,22 +140,18 @@ const customCode = `() => {
             return(
               <div key={index} className="mt-5 d-flex">
                 <div >
-                  <Text size="small" className="mr-4">
+                  <Text size="regular" className="mr-4">
                   {\`\${index + 1}.\`}
                   </Text>
                 </div>
                 <div className="d-inline-block ml-2">
-                  <Text size="small">
+                  <Text size="regular">
                     {object.question}
                   </Text>
                   <div className="mb-5 mt-3">
                     {
                       object.options.map((option, ind) => {
-                        return(
-                          <Button key={ind} className="mr-4 mt-4 d-inline" size="tiny">
-                            {option}
-                          </Button>
-                        );
+                        return <Chip key={ind} type="selection" label={option} className="mr-4 mt-4" />;
                       })
                     }
                   </div>

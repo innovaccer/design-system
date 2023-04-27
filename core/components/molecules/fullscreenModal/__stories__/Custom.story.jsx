@@ -17,7 +17,7 @@ export const customized = () => {
   return (
     <div>
       <Button appearance="primary" onClick={openModal}>
-        Open Modal
+        Open Full screen modal
       </Button>
 
       <FullscreenModal
@@ -25,28 +25,33 @@ export const customized = () => {
         dimension="medium"
         onClose={onClose}
         header={
-          <>
+          <div className="ml-7">
             <Heading>Custom Heading component</Heading>
             <Text appearance="subtle">This is subheading</Text>
-          </>
+          </div>
         }
         footer={
           <>
             <Button appearance="basic" onClick={action('Basic button click')}>
-              Basic
+              Cancel
             </Button>
             <Button appearance="primary" className="ml-4" onClick={action('Primary button click')}>
-              Primary
+              Done
             </Button>
           </>
         }
       >
-        <Text>Fullscreen Modal Body</Text>
-        <Heading size="s">Description Title</Heading>
-        <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
-        <Paragraph>
-          Card Sections include supporting text like an article summary or a restaurant description.
-        </Paragraph>
+        <div className="pb-6">
+          <Heading className="pb-3" size="s">
+            Description Title
+          </Heading>
+          <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
+        </div>
+        <div className="pt-6">
+          <Paragraph>
+            Card Sections include supporting text like an article summary or a healthcare service description.
+          </Paragraph>
+        </div>
       </FullscreenModal>
     </div>
   );
@@ -68,7 +73,7 @@ const customCode = `
   return (
     <div>
       <Button className="m-8" appearance="primary" onClick={openModal}>
-        Open Modal
+        Open Full screen modal
       </Button>
 
       <FullscreenModal
@@ -76,30 +81,33 @@ const customCode = `
         dimension="medium"
         onClose={onClose}
         header={(
-          <>
+          <div className="ml-7">
             <Heading>Custom Heading component</Heading>
             <Text appearance="subtle">This is subheading</Text>
-          </>
+          </div>
         )}
         footer={(
           <>
             <Button appearance="basic" onClick={ev => console.log('Basic button click', ev)}>
-              Basic
+              Cancel
             </Button>
             <Button appearance="primary" className="ml-4" onClick={ev => console.log('Primary button click', ev)}>
-              Primary
+              Done
             </Button>
           </>
         )}
       >
-        <Text>Fullscreen Modal Body</Text>
-        <Heading size="s">Description Title</Heading>
-        <Paragraph>
-          Adding a subheading clearly indicates the hierarchy of the information.
-        </Paragraph>
-        <Paragraph>
-          Card Sections include supporting text like an article summary or a restaurant description.
-        </Paragraph>
+        <div className="pb-6">
+          <Heading className="pb-3" size="s">
+            Description Title
+          </Heading>
+          <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
+        </div>
+        <div className="pt-6">
+          <Paragraph>
+            Card Sections include supporting text like an article summary or a healthcare service description.
+          </Paragraph>
+        </div>
       </FullscreenModal>
     </div>
   );
