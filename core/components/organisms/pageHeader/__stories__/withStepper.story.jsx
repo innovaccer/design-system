@@ -1,8 +1,7 @@
 import * as React from 'react';
-import PageHeader from '../..//PageHeader';
-import { Stepper, Button, Text } from '@/index';
+import { PageHeader, Stepper, Button, Text } from '@/index';
 
-export const withStepper = () => {
+export const level0WithStepper = () => {
   const title = 'Page title';
 
   const stepperData = [
@@ -107,7 +106,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 0/Variants/With Stepper',
+  title: 'Components/PageHeader/Level 0 With Stepper',
   component: PageHeader,
   parameters: {
     docs: {
