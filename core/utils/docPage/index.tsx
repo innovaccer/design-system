@@ -254,7 +254,7 @@ const StoryComp = (props: {
               </div>
             </CardHeader>
 
-            <div className="px-7 pb-8" style={{ overflow: 'auto', zoom: zoom, width: '100%' }}>
+            <div className="px-7 pb-8" style={{ overflow: 'auto', zoom: zoom }}>
               <LivePreview />
               <LiveError className="m-0" />
             </div>
