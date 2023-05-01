@@ -193,8 +193,8 @@ const StoryComp = ({ componentData, dataProvider }) => {
                 </div>
               </CardHeader>
               <CardBody className="d-flex flex-column align-items-center">
-                <div className="w-100" ref={testRef}>
-                  <LivePreview data-test="Docs-liveProvider" className="p-8 mw-100 mh-100 d-block live-provider mb-3" style={{ zoom: zoom }} />
+                <div className="w-100 overflow-scroll" ref={testRef}>
+                  <LivePreview data-test="Docs-liveProvider" className="p-8 mh-100 d-block live-provider mb-3" style={{ zoom: zoom }} />
                   <LiveError />
                 </div>
                 <div className="d-flex justify-content-end w-100 mb-6">

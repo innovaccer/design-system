@@ -7,5 +7,9 @@
 }
 
 .live-provider {
-  overflow-x: scroll;
+  width: 1440px;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
