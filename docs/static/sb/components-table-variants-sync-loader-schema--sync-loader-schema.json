@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -238,7 +237,7 @@
     "options": {},
     "fileName": "./core/components/organisms/table/__stories__/variants/syncLoaderSchema.story.jsx",
     "storySource": {
-      "source": "() => {\n  const loading = true;\n\n  const error = false;\n\n  const pageSize = 5;\n\n  const withCheckbox = true;\n\n  const applyLoaderSchema = true;\n\n  const applySchema = false;\n\n  const applyData = false;\n\n  return (\n    <div\n      style={{\n        height: '350px',\n        // overflow: 'hidden'\n      }}\n    >\n      <Card className=\"h-100 overflow-hidden\">\n        <Table\n          loading={loading}\n          error={error}\n          pageSize={pageSize}\n          withCheckbox={withCheckbox}\n          loaderSchema={applyLoaderSchema ? loaderSchema : []}\n          data={applyData ? data : []}\n          schema={applySchema ? schema : []}\n          showMenu={true}\n          withHeader={true}\n          headerOptions={{\n            withSearch: true,\n          }}\n        />\n      </Card>\n    </div>\n  );\n}"
+      "source": "() => {\n  const loading = true;\n\n  const error = false;\n\n  const pageSize = 5;\n\n  const withCheckbox = true;\n\n  const applyLoaderSchema = true;\n\n  const applySchema = false;\n\n  const applyData = false;\n\n  return (\n    <div className=\"vh-75\">\n      <Card className=\"h-100 overflow-hidden\">\n        <Table\n          loading={loading}\n          error={error}\n          pageSize={pageSize}\n          withCheckbox={withCheckbox}\n          loaderSchema={applyLoaderSchema ? loaderSchema : []}\n          data={applyData ? data : []}\n          schema={applySchema ? schema : []}\n          showMenu={true}\n          withHeader={true}\n          headerOptions={{\n            withSearch: true,\n          }}\n        />\n      </Card>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-table-variants-sync-loader-schema--sync-loader-schema",
@@ -371,7 +370,7 @@
       },
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
         "type": {
           "required": false,
           "name": "other",
@@ -682,6 +681,21 @@
           }
         }
       },
+      "selectDisabledRow": {
+        "name": "selectDisabledRow",
+        "description": "Set `true` to allow selection of disabled row",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -729,7 +743,7 @@
       },
       "data": {
         "name": "data",
-        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -950,7 +964,7 @@
     },
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
       "type": {
         "required": false,
         "name": "other",
@@ -1261,6 +1275,21 @@
         }
       }
     },
+    "selectDisabledRow": {
+      "name": "selectDisabledRow",
+      "description": "Set `true` to allow selection of disabled row",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "className": {
       "name": "className",
       "description": "Adds custom class",
@@ -1308,7 +1337,7 @@
     },
     "data": {
       "name": "data",
-      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
       "type": {
         "required": false,
         "name": "other",

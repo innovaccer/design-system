@@ -139,7 +139,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -160,11 +159,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "a11yProps": " \n        **htmlFor:** \n        <br/> \n        -Add `htmlFor='vaccination-status'` to label to programmatically associated it with switch \n        which has `id='vaccination-status'`. \n        <br/> \n        -This means that,a screen reader will read out the label when the user is focused on the switch, \n        making it easier for an assistive technology user to understand \n        what data should be entered.\n        <br/> \n        -When a user clicks or touches/taps a label, the browser passes the focus to its associated switch. That increased hit \n        area for focusing the input provides an advantage to anyone trying to activate it.\n         "
+        "a11yProps": " **htmlFor:**  <br/> \n        -Add `htmlFor='vaccination-status'` to label to programmatically associated it with switch \n        which has `id='vaccination-status'`. \n        <br/> \n        -This means that,a screen reader will read out the label when the user is focused on the switch, \n        making it easier for an assistive technology user to understand \n        what data should be entered.\n        <br/> \n        -When a user clicks or touches/taps a label, the browser passes the focus to its associated switch. That increased hit \n        area for focusing the input provides an advantage to anyone trying to activate it.\n      "
       }
     },
     "framework": "react",

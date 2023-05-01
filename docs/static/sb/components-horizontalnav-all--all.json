@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1'\n  });\n\n  const onClickHandler = (menu) => {\n    console.log('menu-clicked: ', menu);\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest\" style={{ height: '200px' }}>\n      <div className=\"bg-light border-top border-bottom p-3\">\n        <HorizontalNav\n          className=\"w-100 justify-content-center\"\n          menus={data}\n          active={active}\n          onClick={onClickHandler}\n        />\n      </div>\n  </div>\n  );\n}"
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true\n    }\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1'\n  });\n\n  const onClickHandler = (menu) => {\n    console.log('menu-clicked: ', menu);\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest pb-13\">\n      <div className=\"bg-light border-top border-bottom p-3\">\n        <HorizontalNav\n          className=\"w-100 justify-content-center\"\n          menus={data}\n          active={active}\n          onClick={onClickHandler}\n        />\n      </div>\n  </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/organisms/horizontalNav/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10,\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true,\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1',\n  });\n\n  const onClickHandler = (menu) => {\n    action(`menu-clicked: ${JSON.stringify(menu)}`)();\n\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest\" style={{ height: '200px' }}>\n      <div className=\"bg-light border-top border-bottom p-3\">\n        <HorizontalNav className=\"w-100 justify-content-center\" menus={data} active={active} onClick={onClickHandler} />\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const data = [\n    {\n      name: 'menu_1',\n      label: 'Menu 1',\n      icon: 'event',\n    },\n    {\n      name: 'menu_2',\n      label: 'Menu 2',\n      count: 10,\n    },\n    {\n      name: 'menu_3',\n      label: 'Menu 3',\n      disabled: true,\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'menu_1',\n  });\n\n  const onClickHandler = (menu) => {\n    action(`menu-clicked: ${JSON.stringify(menu)}`)();\n\n    setActive(menu);\n  };\n\n  return (\n    <div className=\"bg-secondary-lightest pb-13\">\n      <div className=\"bg-light border-top border-bottom p-3\">\n        <HorizontalNav className=\"w-100 justify-content-center\" menus={data} active={active} onClick={onClickHandler} />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-horizontalnav-all--all",

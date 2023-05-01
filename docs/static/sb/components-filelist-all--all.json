@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -245,7 +244,7 @@
     "argTypes": {
       "fileList": {
         "name": "fileList",
-        "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |",
         "type": {
           "required": false,
           "name": "other",
@@ -326,7 +325,7 @@
   "argTypes": {
     "fileList": {
       "name": "fileList",
-      "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\nArray containing the list of file objects\nFileItem:\n{\n    file: File;\n    status: FileStatus;\n    progress: number;\n    icon: IconOptions\n    errorMessage: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| file | Attached file | |\n| status | Status of file | 'completed' |\n| progress | Progress percent of `Progress Ring` | 0 |\n| icon | Name of the icon to be rendered |\n| errorMessage | Error Message to be shown when status is `error` | 'Network Error' |",
       "type": {
         "required": false,
         "name": "other",

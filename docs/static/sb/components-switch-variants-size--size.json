@@ -139,7 +139,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -160,12 +159,12 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
         "title": "Switch",
-        "a11yProps": " \n        **aria-label:**\n        <br/> \n        - Add `aria-label='Switch tiny'` on switch with *Tiny* text to describe the action of switch.\n        <br/>\n        - Add `aria-label='Switch regular'` on switch with *regular* text to describe the action of switch.\n        <br/>\n        - Add `aria-label='Switch large'` on switch with *Large* text to describe the action of switch.\n        "
+        "a11yProps": " **aria-label:** <br/> \n        - Add `aria-label='Switch tiny'` on switch with *Tiny* text to describe the action of switch.\n        <br/>\n        - Add `aria-label='Switch regular'` on switch with *regular* text to describe the action of switch.\n        <br/>\n        - Add `aria-label='Switch large'` on switch with *Large* text to describe the action of switch."
       }
     },
     "framework": "react",

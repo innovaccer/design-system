@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/pagination/__stories__/variants/Type.story.jsx",
     "storySource": {
-      "source": "() => {\n  const paginationTypes = ['basic', 'jump'];\n\n  const page = 1;\n\n  const totalPages = 50;\n\n  const innerStyle = {\n    display: 'flex',\n    'flex-direction': 'column',\n    'align-items': 'center',\n  };\n\n  return (\n    <div className=\"d-flex\">\n      {paginationTypes.map((displayType, ind) => {\n        return (\n          <div key={ind} style={innerStyle}>\n            <Text weight=\"strong\">{displayType}</Text>\n            <br />\n            <Pagination\n              type={displayType}\n              page={page}\n              totalPages={totalPages}\n              onPageChange={(pageNo) => action(`No-change-action: ${pageNo}`)()}\n            />\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const paginationTypes = ['basic', 'jump'];\n\n  const page = 1;\n\n  const totalPages = 50;\n\n  return (\n    <div className=\"d-flex\">\n      {paginationTypes.map((displayType, ind) => {\n        return (\n          <div key={ind} className=\"d-flex flex-column align-items-center\">\n            <Text weight=\"strong\">{displayType}</Text>\n            <br />\n            <Pagination\n              type={displayType}\n              page={page}\n              totalPages={totalPages}\n              onPageChange={(pageNo) => action(`No-change-action: ${pageNo}`)()}\n            />\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-pagination-variants-type--type",

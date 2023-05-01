@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "\n() => {\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: 300,\n      resizable: true,\n      separator: true,\n      tooltip: true,\n      translate: a => ({\n        title: `${a.firstName} ${a.lastName}`,\n        firstName: a.firstName,\n        lastName: a.lastName\n      }),\n      filters: [\n        { label: 'A-G', value: 'a-g' },\n        { label: 'H-R', value: 'h-r' },\n        { label: 'S-Z', value: 's-z' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          switch (filter) {\n            case 'a-g':\n              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;\n              break;\n            case 'h-r':\n              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;\n              break;\n            case 's-z':\n              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;\n              break;\n          }\n        }\n        return false;\n      },\n      cellType: 'AVATAR_WITH_TEXT',\n    },\n    {\n      name: 'email',\n      displayName: 'Email',\n      width: 350,\n      resizable: true,\n      sorting: false,\n      cellType: 'WITH_META_LIST'\n    },\n    {\n      name: 'gender',\n      displayName: 'Gender',\n      width: 200,\n      resizable: true,\n      comparator: (a, b) => a.gender.localeCompare(b.gender),\n      cellType: 'STATUS_HINT',\n      translate: a => ({\n        title: a.gender,\n        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'\n      }),\n      filters: [\n        { label: 'Male', value: 'male' },\n        { label: 'Female', value: 'female' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          if (a.gender.toLowerCase() === filter) return true;\n        }\n        return false;\n      },\n    },\n    {\n      name: 'icon',\n      displayName: 'Icon',\n      width: 100,\n      resizable: true,\n      align: 'center',\n      cellType: 'ICON',\n      translate: _ => ({\n        icon: 'events'\n      })\n    },\n    {\n      name: 'customCell',\n      displayName: 'Custom Cell',\n      width: 200,\n      resizable: true,\n      separator: true,\n      cellRenderer: (props) => {\n        const {\n          loading\n        } = props;\n\n        if (loading) return <></>;\n\n        return (\n          <Button appearance={'primary'}>Button</Button>\n        );\n      }\n    },\n  ];\n\n  const errorTemplate = () => {\n    return (\n      <Heading appearance={'disabled'}>We failed as a team</Heading>\n    );\n  };\n\n  return (\n    <div\n      style={{\n        height: '350px',\n      }}\n    >\n      <Card className=\"h-100 overflow-hidden\">\n        <Table\n          schema={schema}\n          error={true}\n          errorTemplate={errorTemplate}\n        />\n      </Card>\n    </div>\n  );\n};\n",
+        "customCode": "\n() => {\n  const schema = [\n    {\n      name: 'name',\n      displayName: 'Name',\n      width: 300,\n      resizable: true,\n      separator: true,\n      tooltip: true,\n      translate: a => ({\n        title: `${a.firstName} ${a.lastName}`,\n        firstName: a.firstName,\n        lastName: a.lastName\n      }),\n      filters: [\n        { label: 'A-G', value: 'a-g' },\n        { label: 'H-R', value: 'h-r' },\n        { label: 'S-Z', value: 's-z' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          switch (filter) {\n            case 'a-g':\n              if (a.firstName[0].toLowerCase() >= 'a' && a.firstName[0].toLowerCase() <= 'g') return true;\n              break;\n            case 'h-r':\n              if (a.firstName[0].toLowerCase() >= 'h' && a.firstName[0].toLowerCase() <= 'r') return true;\n              break;\n            case 's-z':\n              if (a.firstName[0].toLowerCase() >= 's' && a.firstName[0].toLowerCase() <= 'z') return true;\n              break;\n          }\n        }\n        return false;\n      },\n      cellType: 'AVATAR_WITH_TEXT',\n    },\n    {\n      name: 'email',\n      displayName: 'Email',\n      width: 350,\n      resizable: true,\n      sorting: false,\n      cellType: 'WITH_META_LIST'\n    },\n    {\n      name: 'gender',\n      displayName: 'Gender',\n      width: 200,\n      resizable: true,\n      comparator: (a, b) => a.gender.localeCompare(b.gender),\n      cellType: 'STATUS_HINT',\n      translate: a => ({\n        title: a.gender,\n        statusAppearance: (a.gender === 'Female') ? 'alert' : 'success'\n      }),\n      filters: [\n        { label: 'Male', value: 'male' },\n        { label: 'Female', value: 'female' },\n      ],\n      onFilterChange: (a, filters) => {\n        for (const filter of filters) {\n          if (a.gender.toLowerCase() === filter) return true;\n        }\n        return false;\n      },\n    },\n    {\n      name: 'icon',\n      displayName: 'Icon',\n      width: 100,\n      resizable: true,\n      align: 'center',\n      cellType: 'ICON',\n      translate: _ => ({\n        icon: 'events'\n      })\n    },\n    {\n      name: 'customCell',\n      displayName: 'Custom Cell',\n      width: 200,\n      resizable: true,\n      separator: true,\n      cellRenderer: (props) => {\n        const {\n          loading\n        } = props;\n\n        if (loading) return <></>;\n\n        return (\n          <Button appearance={'primary'}>Button</Button>\n        );\n      }\n    },\n  ];\n\n  const errorTemplate = () => {\n    return (\n      <Heading appearance={'disabled'}>We failed as a team</Heading>\n    );\n  };\n\n  return (\n    <div\n      className=\"vh-75\"\n    >\n      <Card className=\"h-100 overflow-hidden\">\n        <Table\n          schema={schema}\n          error={true}\n          errorTemplate={errorTemplate}\n        />\n      </Card>\n    </div>\n  );\n};\n",
         "props": {
           "components": {},
           "exclude": [
@@ -239,7 +238,7 @@
     "options": {},
     "fileName": "./core/components/organisms/table/__stories__/variants/withErrorTemplate.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <div\n      style={{\n        height: '350px',\n      }}\n    >\n      <Card shadow=\"light\" className=\"h-100\">\n        <Table schema={schema} data={[]} error={true} errorTemplate={errorTemplate} />\n      </Card>\n    </div>\n  );\n}"
+      "source": "() => {\n  return (\n    <div className=\"vh-75\">\n      <Card shadow=\"light\" className=\"h-100\">\n        <Table schema={schema} data={[]} error={true} errorTemplate={errorTemplate} />\n      </Card>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-table-variants-with-error-template--with-error-template",
@@ -372,7 +371,7 @@
       },
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
         "type": {
           "required": false,
           "name": "other",
@@ -683,6 +682,21 @@
           }
         }
       },
+      "selectDisabledRow": {
+        "name": "selectDisabledRow",
+        "description": "Set `true` to allow selection of disabled row",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -730,7 +744,7 @@
       },
       "data": {
         "name": "data",
-        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -951,7 +965,7 @@
     },
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
       "type": {
         "required": false,
         "name": "other",
@@ -1262,6 +1276,21 @@
         }
       }
     },
+    "selectDisabledRow": {
+      "name": "selectDisabledRow",
+      "description": "Set `true` to allow selection of disabled row",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "className": {
       "name": "className",
       "description": "Adds custom class",
@@ -1309,7 +1338,7 @@
     },
     "data": {
       "name": "data",
-      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
       "type": {
         "required": false,
         "name": "other",

@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -269,6 +268,36 @@
           "defaultValue": null
         }
       },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "position": {
         "name": "position",
         "description": "Position to place the `trigger`",
@@ -371,36 +400,6 @@
           },
           "defaultValue": null
         }
-      },
-      "className": {
-        "name": "className",
-        "description": "Adds custom class",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "string | undefined"
-          },
-          "defaultValue": null
-        }
-      },
-      "data-test": {
-        "name": "data-test",
-        "description": "Stores custom testing data private to the component.",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "string | undefined"
-          },
-          "defaultValue": null
-        }
       }
     }
   },
@@ -431,6 +430,36 @@
       "table": {
         "type": {
           "summary": "ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
+        },
+        "defaultValue": null
+      }
+    },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
         },
         "defaultValue": null
       }
@@ -534,36 +563,6 @@
       "table": {
         "type": {
           "summary": "{ open: string; close: string; } | undefined"
-        },
-        "defaultValue": null
-      }
-    },
-    "className": {
-      "name": "className",
-      "description": "Adds custom class",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "string | undefined"
-        },
-        "defaultValue": null
-      }
-    },
-    "data-test": {
-      "name": "data-test",
-      "description": "Stores custom testing data private to the component.",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "string | undefined"
         },
         "defaultValue": null
       }

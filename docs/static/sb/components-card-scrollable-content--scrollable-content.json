@@ -8,13 +8,18 @@
   "story": "Scrollable Content",
   "component": {
     "displayName": "Card",
+    "defaultProps": {
+      "shadow": "shadow10"
+    },
     "__docgenInfo": {
       "description": "",
       "displayName": "Card",
       "props": {
         "shadow": {
-          "defaultValue": null,
-          "description": "Shadow of the `Card`",
+          "defaultValue": {
+            "value": "shadow10"
+          },
+          "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
           "name": "shadow",
           "required": false,
           "type": {
@@ -24,10 +29,10 @@
                 "value": "undefined"
               },
               {
-                "value": "\"dark\""
+                "value": "\"default\""
               },
               {
-                "value": "\"default\""
+                "value": "\"dark\""
               },
               {
                 "value": "\"none\""
@@ -37,6 +42,15 @@
               },
               {
                 "value": "\"medium\""
+              },
+              {
+                "value": "\"shadow10\""
+              },
+              {
+                "value": "\"shadow20\""
+              },
+              {
+                "value": "\"shadow30\""
               }
             ]
           }
@@ -65,7 +79,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -86,11 +99,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "\n() => {\n\n  const data = [\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for upcoming lab test\",\n      \"subTitle\": \"ENG. «1 Hi [recipient.name]! Your [test] is scheduled for [test.date]. Please get in...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG -1 Hi [recipient.name] Your [test] is overdue. Please get in touch with [recipiert.PCP}...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name] Your (test] is overdue. Please get in touch with (recipient. PCP}...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for upcoming lab test\",\n      \"subTitle\": \"ENG. «1 Hi [recipient.name]! Your [test] is scheduled for [test.date]. Please get in...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG -1 Hi [recipient.name] Your [test] is overdue. Please get in touch with [recipiert.PCP}...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name] Your (test] is overdue. Please get in touch with (recipient. PCP}...\"\n    }\n  }\n];\n\n  const schema = [\n    {\n      width: '100%',\n      name: 'data',\n      displayName: '',\n      cellRenderer: (props) => {\n        return (\n          <>\n          <Paragraph>\n            <Text weight=\"strong\">\n              {props.data.data.title}\n            </Text>\n            <br />\n            <Text>\n              {props.data.data.subTitle}\n            </Text>\n\n          </Paragraph>\n          </>\n        );\n      }\n    }\n  ];\n\n  return (\n    <div>\n      <Card className=\"\">\n        <CardHeader>\n          <Heading size=\"s\">Use a template</Heading>\n        </CardHeader>\n        <div style={{ height: '350px' }}>\n          <List\n            data={data}\n            schema={schema}\n            withHeader={true}\n            headerOptions={{\n              withSearch: true,\n              dynamicColumn: false\n            }}\n            withPagination={true}\n            pageSize={5}\n          />\n        </div>\n      </Card>\n    </div>\n  );\n};\n"
+        "customCode": "/*\n// style.css\n.Diagnosis-list {\n    height: 70vh;\n}\n*/\n\n() => {\n\n  const data = [\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for upcoming lab test\",\n      \"subTitle\": \"ENG. «1 Hi [recipient.name]! Your [test] is scheduled for [test.date]. Please get in...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG -1 Hi [recipient.name] Your [test] is overdue. Please get in touch with [recipiert.PCP}...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name] Your (test] is overdue. Please get in touch with (recipient. PCP}...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name]! Your (test) is overdue. Please get in touch with [recipient.PCPI...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for upcoming lab test\",\n      \"subTitle\": \"ENG. «1 Hi [recipient.name]! Your [test] is scheduled for [test.date]. Please get in...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG -1 Hi [recipient.name] Your [test] is overdue. Please get in touch with [recipiert.PCP}...\"\n    }\n  },\n  {\n    \"data\": {\n      \"title\": \"Reminder for due lab tests\",\n      \"subTitle\": \"ENG. +1 Hi [recipient.name] Your (test] is overdue. Please get in touch with (recipient. PCP}...\"\n    }\n  }\n];\n\n  const schema = [\n    {\n      width: '100%',\n      name: 'data',\n      displayName: '',\n      cellRenderer: (props) => {\n        return (\n          <>\n          <Paragraph>\n            <Text weight=\"strong\">\n              {props.data.data.title}\n            </Text>\n            <br />\n            <Text>\n              {props.data.data.subTitle}\n            </Text>\n\n          </Paragraph>\n          </>\n        );\n      }\n    }\n  ];\n\n  return (\n    <div>\n      <Card className=\"\">\n        <CardHeader>\n          <Heading size=\"s\">Use a template</Heading>\n        </CardHeader>\n        <div className=\"Diagnosis-list\">\n          <List\n            data={data}\n            schema={schema}\n            withHeader={true}\n            headerOptions={{\n              withSearch: true,\n              dynamicColumn: false\n            }}\n            withPagination={true}\n            pageSize={5}\n          />\n        </div>\n      </Card>\n    </div>\n  );\n};\n"
       }
     },
     "framework": "react",
@@ -289,7 +302,7 @@
     "options": {},
     "fileName": "./core/components/atoms/card/__stories__/scroll.story.jsx",
     "storySource": {
-      "source": "() => {\n  const schema = [\n    {\n      width: '100%',\n      name: 'data',\n      displayName: '',\n      cellRenderer: (props) => {\n        return (\n          <>\n            <Paragraph>\n              <Text weight=\"strong\">{props.data.data.title}</Text>\n              <br />\n              <Text>{props.data.data.subTitle}</Text>\n            </Paragraph>\n          </>\n        );\n      },\n    },\n  ];\n\n  return (\n    <div>\n      <Card className=\"\">\n        <CardHeader>\n          <Heading size=\"s\">Use a template</Heading>\n        </CardHeader>\n        <div style={{ height: '350px' }}>\n          <List\n            data={data}\n            schema={schema}\n            withHeader={true}\n            headerOptions={{\n              withSearch: true,\n              dynamicColumn: false,\n            }}\n            withPagination={true}\n            pageSize={5}\n          />\n        </div>\n      </Card>\n    </div>\n  );\n}"
+      "source": "() => {\n  const schema = [\n    {\n      width: '100%',\n      name: 'data',\n      displayName: '',\n      cellRenderer: (props) => {\n        return (\n          <>\n            <Paragraph>\n              <Text weight=\"strong\">{props.data.data.title}</Text>\n              <br />\n              <Text>{props.data.data.subTitle}</Text>\n            </Paragraph>\n          </>\n        );\n      },\n    },\n  ];\n\n  return (\n    <div>\n      <Card className=\"\">\n        <CardHeader>\n          <Heading size=\"s\">Use a template</Heading>\n        </CardHeader>\n        <div className=\"Diagnosis-list\">\n          <List\n            data={data}\n            schema={schema}\n            withHeader={true}\n            headerOptions={{\n              withSearch: true,\n              dynamicColumn: false,\n            }}\n            withPagination={true}\n            pageSize={5}\n          />\n        </div>\n      </Card>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-card-scrollable-content--scrollable-content",
@@ -301,24 +314,29 @@
     "argTypes": {
       "shadow": {
         "name": "shadow",
-        "description": "Shadow of the `Card`",
+        "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
         "type": {
           "required": false,
           "name": "enum",
           "value": [
             "undefined",
-            "dark",
             "default",
+            "dark",
             "none",
             "light",
-            "medium"
+            "medium",
+            "shadow10",
+            "shadow20",
+            "shadow30"
           ]
         },
         "table": {
           "type": {
-            "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
+            "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\" | \"shadow10\" | \"shadow20\" | \"shadow30\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "shadow10"
+          }
         }
       },
       "className": {
@@ -357,24 +375,29 @@
   "argTypes": {
     "shadow": {
       "name": "shadow",
-      "description": "Shadow of the `Card`",
+      "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
       "type": {
         "required": false,
         "name": "enum",
         "value": [
           "undefined",
-          "dark",
           "default",
+          "dark",
           "none",
           "light",
-          "medium"
+          "medium",
+          "shadow10",
+          "shadow20",
+          "shadow30"
         ]
       },
       "table": {
         "type": {
-          "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
+          "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\" | \"shadow10\" | \"shadow20\" | \"shadow30\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "shadow10"
+        }
       }
     },
     "className": {

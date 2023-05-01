@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [value, setValue] = React.useState(\n    ['Anyone', 'Person with disability', 'Retired person from the armed forces']\n  );\n\n  return (\n    <div style={{ width: '320px' }}>\n      <Label withInput={true}>Population Focus</Label>\n      <ChipInput\n        value={value}\n        chipOptions={{ clearButton: true }}\n        onChange={setValue}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const [value, setValue] = React.useState(\n    ['Anyone', 'Person with disability', 'Retired person from the armed forces']\n  );\n\n  return (\n    <Row>\n      <Column size={4}>\n        <Label withInput={true}>Population Focus</Label>\n        <ChipInput\n          value={value}\n          chipOptions={{ clearButton: true }}\n          onChange={setValue}\n        />\n      </Column>\n    </Row>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/chipInput/__stories__/ChipsWrapped.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [value, setValue] = React.useState([\n    'Anyone',\n    'Person with disability',\n    'Retired person from the armed forces',\n  ]);\n\n  return (\n    <div style={{ width: '320px' }}>\n      <Label withInput={true}>Population Focus</Label>\n      <ChipInput value={value} chipOptions={{ clearButton: true }} onChange={setValue} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const [value, setValue] = React.useState([\n    'Anyone',\n    'Person with disability',\n    'Retired person from the armed forces',\n  ]);\n\n  return (\n    <Row>\n      <Column size={4}>\n        <Label withInput={true}>Population Focus</Label>\n        <ChipInput value={value} chipOptions={{ clearButton: true }} onChange={setValue} />\n      </Column>\n    </Row>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-chipinput-chips-wrapped-to-next-line--chips-wrapped-to-next-line",

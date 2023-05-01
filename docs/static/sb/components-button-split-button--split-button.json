@@ -248,7 +248,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -269,13 +268,13 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
         "title": "Button",
         "description": "Split button.",
-        "a11yProps": " \n        **aria-label:** Add `aria-label='Request review'` to describe the action of button \n         "
+        "a11yProps": " **aria-label:** Add `aria-label='Request review'` to describe the action of button "
       }
     },
     "framework": "react",
@@ -474,7 +473,7 @@
     "options": {},
     "fileName": "./core/components/atoms/button/__stories__/SplitButton.story.jsx",
     "storySource": {
-      "source": "() => {\n  const options = [\n    {\n      label: 'Download All',\n      value: 'Download All',\n    },\n    {\n      label: 'Download Selected',\n      value: 'Download Selected',\n    },\n  ];\n\n  return (\n    <div className=\"d-flex\">\n      <Button className=\"mr-2\" aria-label=\"Request review\">\n        Request review\n      </Button>\n      <div className=\"mb-10\" style={{ width: '150px' }}>\n        <Dropdown menu={true} icon=\"expand_more\" options={options} />\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const options = [\n    {\n      label: 'Download All',\n      value: 'Download All',\n    },\n    {\n      label: 'Download Selected',\n      value: 'Download Selected',\n    },\n  ];\n\n  return (\n    <div className=\"d-flex\">\n      <Button className=\"mr-2\" aria-label=\"Request review\">\n        Request review\n      </Button>\n      <div className=\"mb-10\">\n        <Dropdown menu={true} icon=\"expand_more\" options={options} width={150} />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-button-split-button--split-button",

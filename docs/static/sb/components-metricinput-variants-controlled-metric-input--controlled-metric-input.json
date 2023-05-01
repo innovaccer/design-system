@@ -169,6 +169,15 @@
             "name": "boolean | undefined"
           }
         },
+        "showActionButton": {
+          "defaultValue": null,
+          "description": "Disables the action button which is up and down arrow button.",
+          "name": "showActionButton",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
         "onChange": {
           "defaultValue": null,
           "description": "Callback function when `MetricInput` text changes",
@@ -229,7 +238,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -250,11 +258,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [value, setValue] = React.useState(10);\n\n  return (\n    <div style={{ width: 'var(--spacing-6)' }}>\n      <MetricInput\n        aria-label=\"Metric Input Label\"\n        value={value}\n        onChange={(e) => { setValue(e.target.value) }}\n      />\n    </div>\n  );\n}",
+        "customCode": "() => {\n  const [value, setValue] = React.useState(10);\n\n  return (\n    <Row>\n      <Column size={1}>\n        <MetricInput\n          aria-label=\"Metric Input Label\"\n          value={value}\n          onChange={(e) => { setValue(e.target.value) }}\n        />\n      </Column>\n    </Row>\n  );\n}",
         "title": "Input",
         "props": {
           "exclude": [
@@ -459,7 +467,7 @@
     "options": {},
     "fileName": "./core/components/atoms/metricInput/__stories__/variants/Controlled.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [value, setValue] = React.useState(10);\n\n  return (\n    <div style={{ width: 'var(--spacing-6)' }}>\n      <MetricInput\n        aria-label=\"Metric Input Label\"\n        value={value}\n        onChange={(e) => {\n          setValue(e.target.value);\n        }}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const [value, setValue] = React.useState(10);\n\n  return (\n    <Row>\n      <Column size={1}>\n        <MetricInput\n          aria-label=\"Metric Input Label\"\n          value={value}\n          onChange={(e) => {\n            setValue(e.target.value);\n          }}\n        />\n      </Column>\n    </Row>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-metricinput-variants-controlled-metric-input--controlled-metric-input",
@@ -690,6 +698,21 @@
       "error": {
         "name": "error",
         "description": "Shows error state in case of failed validation",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showActionButton": {
+        "name": "showActionButton",
+        "description": "Disables the action button which is up and down arrow button.",
         "type": {
           "required": false,
           "name": "other",
@@ -1017,6 +1040,21 @@
     "error": {
       "name": "error",
       "description": "Shows error state in case of failed validation",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showActionButton": {
+      "name": "showActionButton",
+      "description": "Disables the action button which is up and down arrow button.",
       "type": {
         "required": false,
         "name": "other",

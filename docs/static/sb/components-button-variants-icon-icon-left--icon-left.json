@@ -248,7 +248,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -269,12 +268,12 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
         "title": "Button",
-        "a11yProps": " \n        **aria-label:** Add `aria-label='Refresh'` to describe the action of button \n         "
+        "a11yProps": " **aria-label:** Add `aria-label='Refresh'` to describe the action of button "
       }
     },
     "framework": "react",

@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -277,7 +276,7 @@
       },
       "steps": {
         "name": "steps",
-        "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
+        "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n</pre>\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |",
         "type": {
           "required": true,
           "name": "other",
@@ -390,7 +389,7 @@
     },
     "steps": {
       "name": "steps",
-      "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |\n\n</pre>",
+      "description": "<pre className=\"docPage-codeBlock\">\nStepProp {\n  label: string;\n  value?: React.ReactText;\n}\n</pre>\n\n| Name | Description |\n| --- | --- |\n| label | Describes Label of the step |\n| value | Value of option |",
       "type": {
         "required": true,
         "name": "other",

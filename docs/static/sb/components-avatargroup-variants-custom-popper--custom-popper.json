@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const list = [\n    {\n      firstName: 'John',\n      lastName: 'Doe',\n    },\n    {\n      firstName: 'Steven',\n      lastName: 'Packton',\n    },\n    {\n      firstName: 'Nancy',\n      lastName: 'Wheeler'\n    },\n    {\n      firstName: 'Monica',\n      lastName: 'Geller'\n    },\n    {\n      firstName: 'Arya',\n      lastName: 'Stark',\n    },\n    {\n      firstName: 'Rachel',\n      lastName: 'Green',\n    },\n    {\n      firstName: 'Walter',\n      lastName: 'Wheeler'\n    },\n  ];\n\n  const popperRenderer = (list) => {\n    const AvatarList = list.map((avatar, index) => {\n      const { firstName, lastName, appearance } = avatar;\n\n      return (\n        <div className=\"d-flex align-items-center mr-4 mb-4\" key={index}>\n          <Avatar\n            firstName={firstName}\n            lastName={lastName}\n            appearance={appearance}\n            className=\"mr-4\"\n            withTooltip={false}\n          />\n          <Text>{`${firstName} ${lastName}`}</Text>\n        </div>\n      )\n    });\n\n    return (\n      <div className=\"overflow-auto py-4 px-6\" style={{ maxHeight: '150px' }}>\n        {AvatarList}\n      </div>\n    )\n  };\n\n  return (\n    <AvatarGroup\n      list={list}\n      popoverOptions={{ dark: false, on: 'click', popperRenderer }}\n    />\n  );\n}"
+        "customCode": "/*\n// style.css\n.UserAvatars-popover {\n    max-height: var(--spacing-7);\n}\n*/\n\n() => {\n  const list = [\n    {\n      firstName: 'John',\n      lastName: 'Doe',\n    },\n    {\n      firstName: 'Steven',\n      lastName: 'Packton',\n    },\n    {\n      firstName: 'Nancy',\n      lastName: 'Wheeler'\n    },\n    {\n      firstName: 'Monica',\n      lastName: 'Geller'\n    },\n    {\n      firstName: 'Arya',\n      lastName: 'Stark',\n    },\n    {\n      firstName: 'Rachel',\n      lastName: 'Green',\n    },\n    {\n      firstName: 'Walter',\n      lastName: 'Wheeler'\n    },\n  ];\n\n  const popperRenderer = (list) => {\n    const AvatarList = list.map((avatar, index) => {\n      const { firstName, lastName, appearance } = avatar;\n\n      return (\n        <div className=\"d-flex align-items-center mr-4 mb-4\" key={index}>\n          <Avatar\n            firstName={firstName}\n            lastName={lastName}\n            appearance={appearance}\n            className=\"mr-4\"\n            withTooltip={false}\n          />\n          <Text>{`${firstName} ${lastName}`}</Text>\n        </div>\n      )\n    });\n\n    return (\n      <div className=\"overflow-auto py-4 px-6 UserAvatars-popover\">\n        {AvatarList}\n      </div>\n    )\n  };\n\n  return (\n    <AvatarGroup\n      list={list}\n      popoverOptions={{ dark: false, on: 'click', popperRenderer }}\n    />\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/atoms/avatarGroup/__stories__/variants/CustomPopper.story.jsx",
     "storySource": {
-      "source": "() => {\n  const popperRenderer = (names) => {\n    const AvatarList = names.map((avatar, index) => {\n      const { firstName, lastName, appearance } = avatar;\n\n      return (\n        <div className=\"d-flex align-items-center mr-4 mb-4\" key={index}>\n          <Avatar\n            firstName={firstName}\n            lastName={lastName}\n            appearance={appearance}\n            className=\"mr-4\"\n            withTooltip={false}\n          />\n          <Text>{`${firstName} ${lastName}`}</Text>\n        </div>\n      );\n    });\n\n    return (\n      <div className=\"overflow-auto py-4 px-6\" style={{ maxHeight: '150px' }}>\n        {AvatarList}\n      </div>\n    );\n  };\n\n  return <AvatarGroup list={list} popoverOptions={{ popperRenderer, dark: false, on: 'click' }} />;\n}"
+      "source": "() => {\n  const popperRenderer = (names) => {\n    const AvatarList = names.map((avatar, index) => {\n      const { firstName, lastName, appearance } = avatar;\n\n      return (\n        <div className=\"d-flex align-items-center mr-4 mb-4\" key={index}>\n          <Avatar\n            firstName={firstName}\n            lastName={lastName}\n            appearance={appearance}\n            className=\"mr-4\"\n            withTooltip={false}\n          />\n          <Text>{`${firstName} ${lastName}`}</Text>\n        </div>\n      );\n    });\n\n    return <div className=\"overflow-auto py-4 px-6 UserAvatars-popover\">{AvatarList}</div>;\n  };\n\n  return <AvatarGroup list={list} popoverOptions={{ popperRenderer, dark: false, on: 'click' }} />;\n}"
     },
     "__isArgsStory": false,
     "__id": "components-avatargroup-variants-custom-popper--custom-popper",
@@ -292,7 +291,7 @@
       },
       "popoverOptions": {
         "name": "popoverOptions",
-        "description": "**Popover for +x avatar**\n\n<pre className=\"DocPage-codeBlock\">\nAvatarPopoverProps: {\n   popperRenderer?: (names: AvatarData[]) => JSX.Element;\n   appendToBody?: boolean;\n   dark?: boolean;\n   position?: Position;\n   on?: ActionType;\n   maxHeight?: number;\n   popperClassName?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| popperRenderer | Callback function to create custom popover content  | |\n| appendToBody | Appends `Popover` wrapper inside body | true |\n| dark | Changes background of `Popover` | true |\n| position | Position to place `Popover` | bottom |\n| on | Event triggering the `Popover` | hover |\n| maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |\n| popperClassName | Custom classname added to `Popover` | |\n</pre>",
+        "description": "**Popover for +x avatar**\n\n<pre className=\"DocPage-codeBlock\">\nAvatarPopoverProps: {\n   popperRenderer?: (names: AvatarData[]) => JSX.Element;\n   appendToBody?: boolean;\n   dark?: boolean;\n   position?: Position;\n   on?: ActionType;\n   maxHeight?: number;\n   popperClassName?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| popperRenderer | Callback function to create custom popover content  | |\n| appendToBody | Appends `Popover` wrapper inside body | true |\n| dark | Changes background of `Popover` | true |\n| position | Position to place `Popover` | bottom |\n| on | Event triggering the `Popover` | hover |\n| maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |\n| popperClassName | Custom classname added to `Popover` | |",
         "type": {
           "required": false,
           "name": "other",
@@ -416,7 +415,7 @@
     },
     "popoverOptions": {
       "name": "popoverOptions",
-      "description": "**Popover for +x avatar**\n\n<pre className=\"DocPage-codeBlock\">\nAvatarPopoverProps: {\n   popperRenderer?: (names: AvatarData[]) => JSX.Element;\n   appendToBody?: boolean;\n   dark?: boolean;\n   position?: Position;\n   on?: ActionType;\n   maxHeight?: number;\n   popperClassName?: string;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| popperRenderer | Callback function to create custom popover content  | |\n| appendToBody | Appends `Popover` wrapper inside body | true |\n| dark | Changes background of `Popover` | true |\n| position | Position to place `Popover` | bottom |\n| on | Event triggering the `Popover` | hover |\n| maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |\n| popperClassName | Custom classname added to `Popover` | |\n</pre>",
+      "description": "**Popover for +x avatar**\n\n<pre className=\"DocPage-codeBlock\">\nAvatarPopoverProps: {\n   popperRenderer?: (names: AvatarData[]) => JSX.Element;\n   appendToBody?: boolean;\n   dark?: boolean;\n   position?: Position;\n   on?: ActionType;\n   maxHeight?: number;\n   popperClassName?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| popperRenderer | Callback function to create custom popover content  | |\n| appendToBody | Appends `Popover` wrapper inside body | true |\n| dark | Changes background of `Popover` | true |\n| position | Position to place `Popover` | bottom |\n| on | Event triggering the `Popover` | hover |\n| maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |\n| popperClassName | Custom classname added to `Popover` | |",
       "type": {
         "required": false,
         "name": "other",

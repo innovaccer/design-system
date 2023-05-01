@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const innerStyle = {\n    display: 'flex',\n    'flex-direction': 'column',\n    'align-items': 'center',\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div  style={innerStyle}>\n        <Pagination\n          type=\"jump\"\n          page={1}\n          totalPages={50}\n          onPageChange={(pageNo) => console.log(pageNo) }\n        />\n      </div>\n     </div>\n  );\n}",
+        "customCode": "() => {\n  return (\n    <div className=\"d-flex\">\n      <div className=\"d-flex flex-column align-items-center\">\n        <Pagination\n          type=\"jump\"\n          page={1}\n          totalPages={50}\n          onPageChange={(pageNo) => console.log(pageNo) }\n        />\n      </div>\n     </div>\n  );\n}",
         "title": "Pagination",
         "description": "Pagination with jump"
       }
@@ -235,7 +234,7 @@
     "options": {},
     "fileName": "./core/components/molecules/pagination/__stories__/Jump.story.jsx",
     "storySource": {
-      "source": "() => {\n  const innerStyle = {\n    display: 'flex',\n    'flex-direction': 'column',\n    'align-items': 'center',\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div style={innerStyle}>\n        <Pagination\n          type=\"jump\"\n          page={1}\n          totalPages={50}\n          onPageChange={(pageNo) => action(`Page changed: ${pageNo}`)()}\n        />\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  return (\n    <div className=\"d-flex\">\n      <div className=\"d-flex flex-column align-items-center\">\n        <Pagination\n          type=\"jump\"\n          page={1}\n          totalPages={50}\n          onPageChange={(pageNo) => action(`Page changed: ${pageNo}`)()}\n        />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-pagination-pagination-with-jump--pagination-with-jump",

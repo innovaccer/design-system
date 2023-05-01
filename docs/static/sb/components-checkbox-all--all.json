@@ -122,6 +122,15 @@
             "name": "((event: ChangeEvent) => void) | undefined"
           }
         },
+        "error": {
+          "defaultValue": null,
+          "description": "Shows error state in case of failed validation",
+          "name": "error",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
         "id": {
           "defaultValue": null,
           "description": "htmlFor label id for checkbox",
@@ -155,7 +164,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -176,7 +184,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -555,6 +563,21 @@
           "defaultValue": null
         }
       },
+      "error": {
+        "name": "error",
+        "description": "Shows error state in case of failed validation",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "id": {
         "name": "id",
         "description": "htmlFor label id for checkbox",
@@ -769,6 +792,21 @@
       "table": {
         "type": {
           "summary": "((event: ChangeEvent) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Shows error state in case of failed validation",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
         },
         "defaultValue": null
       }

@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const onDrop = (event, acceptedFiles, rejectedFiles) => {\n    console.log(acceptedFiles, rejectedFiles);\n  };\n\n  return (\n    <div className=\"w-50 d-flex flex-column align-items-center\">\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel='Maximum size: 25 MB'\n        onDrop={onDrop}\n        disabled={true}\n        className=\"mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">Standard</Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel='Maximum size: 25 MB'\n        onDrop={onDrop}\n        disabled={true}\n        type=\"compressed\"\n        className=\"mt-6 mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">Compressed</Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel='Maximum size: 25 MB'\n        onDrop={onDrop}\n        disabled={true}\n        type=\"tight\"\n        className=\"mt-6 mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">Tight</Text>\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const onDrop = (event, acceptedFiles, rejectedFiles) => {\n    console.log(acceptedFiles, rejectedFiles);\n  };\n\n  return (\n    <div className=\"w-50 d-flex flex-column align-items-center\">\n      <Dropzone\n        onDrop={onDrop}\n        disabled={true}\n        className=\"mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">Standard</Text>\n      <Dropzone\n        onDrop={onDrop}\n        disabled={true}\n        type=\"compressed\"\n        className=\"mt-6 mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">Compressed</Text>\n      <Dropzone\n        onDrop={onDrop}\n        disabled={true}\n        type=\"tight\"\n        className=\"mt-6 mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">Tight</Text>\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/dropzone/__stories__/variants/Disabled.story.jsx",
     "storySource": {
-      "source": "() => {\n  const onDrop = (_event, acceptedFiles) => {\n    return action(`Accepted Files: ${acceptedFiles}`)();\n  };\n\n  return (\n    <div className=\"w-50 d-flex flex-column align-items-center\">\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        onDrop={onDrop}\n        disabled={true}\n        className=\"mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">\n        Standard\n      </Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        onDrop={onDrop}\n        disabled={true}\n        type=\"compressed\"\n        className=\"mt-6 mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">\n        Compressed\n      </Text>\n      <Dropzone\n        formatLabel=\"Accepted formats: PDF, jpg\"\n        sizeLabel=\"Maximum size: 25 MB\"\n        onDrop={onDrop}\n        disabled={true}\n        type=\"tight\"\n        className=\"mt-6 mb-3\"\n      />\n      <Text size=\"large\" weight=\"strong\">\n        Tight\n      </Text>\n    </div>\n  );\n}"
+      "source": "() => {\n  const onDrop = (_event, acceptedFiles) => {\n    return action(`Accepted Files: ${acceptedFiles}`)();\n  };\n\n  return (\n    <div className=\"w-50 d-flex flex-column align-items-center\">\n      <Dropzone onDrop={onDrop} disabled={true} className=\"mb-3\" />\n      <Text size=\"large\" weight=\"strong\">\n        Standard\n      </Text>\n      <Dropzone onDrop={onDrop} disabled={true} type=\"compressed\" className=\"mt-6 mb-3\" />\n      <Text size=\"large\" weight=\"strong\">\n        Compressed\n      </Text>\n      <Dropzone onDrop={onDrop} disabled={true} type=\"tight\" className=\"mt-6 mb-3\" />\n      <Text size=\"large\" weight=\"strong\">\n        Tight\n      </Text>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-dropzone-variants-disabled--disabled",

@@ -169,6 +169,15 @@
             "name": "boolean | undefined"
           }
         },
+        "showActionButton": {
+          "defaultValue": null,
+          "description": "Disables the action button which is up and down arrow button.",
+          "name": "showActionButton",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
         "onChange": {
           "defaultValue": null,
           "description": "Callback function when `MetricInput` text changes",
@@ -229,7 +238,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -250,7 +258,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -458,7 +466,7 @@
     "options": {},
     "fileName": "./core/components/atoms/metricInput/__stories__/variants/Size.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"d-flex\" style={{ width: 'var(--spacing-8)' }}>\n    <div className=\"d-flex flex-column align-items-center mr-8\">\n      <MetricInput aria-label=\"Metric input regular size\" size=\"regular\" className=\"mb-3\" />\n      <Text>Regular</Text>\n    </div>\n    <div className=\"d-flex flex-column align-items-center\">\n      <MetricInput aria-label=\"Metric input large size\" size=\"large\" className=\"mb-3\" />\n      <Text>Large</Text>\n    </div>\n  </div>\n)"
+      "source": "() => (\n  <Row>\n    <Column size={2} className=\"d-flex\">\n      <div className=\"flex-column align-items-center mr-8\">\n        <MetricInput aria-label=\"Metric input regular size\" size=\"regular\" className=\"mb-3\" />\n        <Text>Regular</Text>\n      </div>\n      <div className=\"flex-column align-items-center\">\n        <MetricInput aria-label=\"Metric input large size\" size=\"large\" className=\"mb-3\" />\n        <Text>Large</Text>\n      </div>\n    </Column>\n  </Row>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-metricinput-variants-size--size",
@@ -689,6 +697,21 @@
       "error": {
         "name": "error",
         "description": "Shows error state in case of failed validation",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showActionButton": {
+        "name": "showActionButton",
+        "description": "Disables the action button which is up and down arrow button.",
         "type": {
           "required": false,
           "name": "other",
@@ -1016,6 +1039,21 @@
     "error": {
       "name": "error",
       "description": "Shows error state in case of failed validation",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showActionButton": {
+      "name": "showActionButton",
+      "description": "Disables the action button which is up and down arrow button.",
       "type": {
         "required": false,
         "name": "other",

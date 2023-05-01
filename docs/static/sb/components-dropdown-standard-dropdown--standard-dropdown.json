@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -356,7 +355,7 @@
       },
       "triggerOptions": {
         "name": "triggerOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |",
         "type": {
           "required": false,
           "name": "other",
@@ -754,7 +753,7 @@
       },
       "popoverOptions": {
         "name": "popoverOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
         "type": {
           "required": false,
           "name": "other",
@@ -959,7 +958,7 @@
       },
       "fetchOptions": {
         "name": "fetchOptions",
-        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      options: Option[],\n}>;\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -1086,7 +1085,7 @@
     },
     "triggerOptions": {
       "name": "triggerOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |",
       "type": {
         "required": false,
         "name": "other",
@@ -1484,7 +1483,7 @@
     },
     "popoverOptions": {
       "name": "popoverOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
       "type": {
         "required": false,
         "name": "other",
@@ -1689,7 +1688,7 @@
     },
     "fetchOptions": {
       "name": "fetchOptions",
-      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      options: Option[],\n}>;\n</pre>",
       "type": {
         "required": false,
         "name": "other",

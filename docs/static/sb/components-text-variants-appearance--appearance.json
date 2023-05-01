@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/atoms/text/__stories__/variants/Appearance.story.jsx",
     "storySource": {
-      "source": "() => {\n  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled', 'success', 'link'];\n  return (\n    <div className=\"d-flex\">\n      {appearances.map((appear, ind) => {\n        return (\n          <div key={ind} style={{ background: appear === 'white' ? 'black' : 'transparent' }} className=\"mr-6\">\n            <Text appearance={appear}>{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
+      "source": "() => {\n  const appearances = ['default', 'white', 'destructive', 'subtle', 'disabled', 'success', 'link'];\n  return (\n    <div className=\"d-flex\">\n      {appearances.map((appear, ind) => {\n        const backgroundClass = appear === 'white' ? 'bg-dark mr-6' : 'bg-transparent mr-6';\n\n        return (\n          <div key={ind} className={backgroundClass}>\n            <Text appearance={appear}>{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>\n          </div>\n        );\n      })}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-text-variants-appearance--appearance",
@@ -299,9 +298,9 @@
           "required": false,
           "name": "enum",
           "value": [
-            "success",
             "default",
             "disabled",
+            "success",
             "link",
             "subtle",
             "white",
@@ -310,7 +309,7 @@
         },
         "table": {
           "type": {
-            "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+            "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
           },
           "defaultValue": {
             "summary": "\"default\""
@@ -513,9 +512,9 @@
         "required": false,
         "name": "enum",
         "value": [
-          "success",
           "default",
           "disabled",
+          "success",
           "link",
           "subtle",
           "white",
@@ -524,7 +523,7 @@
       },
       "table": {
         "type": {
-          "summary": "\"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+          "summary": "\"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
         },
         "defaultValue": {
           "summary": "\"default\""

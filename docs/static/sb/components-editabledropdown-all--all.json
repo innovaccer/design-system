@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -265,11 +264,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+          "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+            "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -347,11 +346,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+        "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+          "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
         },
         "defaultValue": {
           "summary": "{ }"

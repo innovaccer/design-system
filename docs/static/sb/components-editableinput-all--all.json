@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [value, setValue] = React.useState('');\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n\n  const options = {\n    placeholder: 'First Name',\n    onChange,\n    value,\n  };\n\n  return (\n    <div style={{ width: 'var(--spacing-9)', height: 'var(--spacing-3)' }}>\n      <EditableInput\n        {...options}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const [value, setValue] = React.useState('');\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n\n  const options = {\n    placeholder: 'First Name',\n    onChange,\n    value,\n  };\n\n  return (\n    <div className=\"vw-25\">\n      <EditableInput\n        {...options}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/editableInput/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const placeholder = 'First Name';\n  const error = false;\n  const errorMessage = 'Error Message Description';\n\n  const [value, setValue] = React.useState('');\n\n  const size = 'regular';\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n\n  const options = {\n    placeholder,\n    errorMessage,\n    onChange,\n    error,\n    size,\n    value,\n  };\n\n  return (\n    <div style={{ width: 'var(--spacing-9)' }}>\n      <EditableInput {...options} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const placeholder = 'First Name';\n  const error = false;\n  const errorMessage = 'Error Message Description';\n\n  const [value, setValue] = React.useState('');\n\n  const size = 'regular';\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n\n  const options = {\n    placeholder,\n    errorMessage,\n    onChange,\n    error,\n    size,\n    value,\n  };\n\n  return (\n    <div className=\"vw-25\">\n      <EditableInput {...options} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-editableinput-all--all",
@@ -346,11 +345,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+          "value": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+            "summary": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -509,11 +508,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+        "value": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+          "summary": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
         },
         "defaultValue": {
           "summary": "{ }"

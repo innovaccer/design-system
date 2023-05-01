@@ -54,7 +54,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -75,11 +74,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const outsideClickHandler = () => console.log('outside click');\n  const insideClickHandler = () => console.log('inside click');\n\n  return(\n    <OutsideClick className=\"d-inline-block\" onOutsideClick={outsideClickHandler}>\n      <Card\n        className=\"d-flex align-items-center justify-content-center\"\n        style={{ height: 200, width: 200 }}\n        onClick={insideClickHandler}\n      >\n        <Heading>Card</Heading>\n      </Card>\n    </OutsideClick>\n  );\n}"
+        "customCode": "() => {\n  const outsideClickHandler = () => console.log('outside click');\n  const insideClickHandler = () => console.log('inside click');\n\n  return(\n    <OutsideClick className=\"d-inline-block\" onOutsideClick={outsideClickHandler}>\n      <Card\n        className=\"d-flex align-items-center justify-content-center p-10\"\n        onClick={insideClickHandler}\n      >\n        <Heading>Card</Heading>\n      </Card>\n    </OutsideClick>\n  );\n}"
       }
     },
     "framework": "react",
@@ -278,7 +277,7 @@
     "options": {},
     "fileName": "./core/components/atoms/outsideClick/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <OutsideClick className=\"d-inline-block\" onOutsideClick={action('outside click')}>\n      <Card\n        className=\"d-flex align-items-center justify-content-center\"\n        style={{ height: 200, width: 200 }}\n        onClick={action('inside click')}\n      >\n        <Heading>Card</Heading>\n      </Card>\n    </OutsideClick>\n  );\n}"
+      "source": "() => {\n  return (\n    <OutsideClick className=\"d-inline-block\" onOutsideClick={action('outside click')}>\n      <Card className=\"d-flex align-items-center justify-content-center p-10\" onClick={action('inside click')}>\n        <Heading>Card</Heading>\n      </Card>\n    </OutsideClick>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "others-utilities-outsideclick-all--all",

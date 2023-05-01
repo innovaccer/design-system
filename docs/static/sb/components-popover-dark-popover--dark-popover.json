@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/Dark.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"mb-9\">\n    <Popover\n      position=\"bottom\"\n      on=\"click\"\n      trigger={<Button appearance=\"basic\">Open Popover</Button>}\n      dark={true}\n      open={false}\n    >\n      <div style={{ width: 'var(--spacing-7)', height: 'var(--spacing-7)' }} />\n    </Popover>\n  </div>\n)"
+      "source": "() => (\n  <div className=\"mb-9\">\n    <Popover\n      position=\"bottom\"\n      on=\"click\"\n      trigger={<Button appearance=\"basic\">Open Popover</Button>}\n      dark={true}\n      open={false}\n    >\n      <div className=\"p-10\" />\n    </Popover>\n  </div>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-popover-dark-popover--dark-popover",
@@ -393,6 +392,21 @@
           "defaultValue": null
         }
       },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "trigger": {
         "name": "trigger",
         "description": "Element triggering the `Popover`",
@@ -426,21 +440,6 @@
           "defaultValue": {
             "summary": "\"click\""
           }
-        }
-      },
-      "open": {
-        "name": "open",
-        "description": "Handles open/close",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "boolean | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean | undefined"
-          },
-          "defaultValue": null
         }
       },
       "offset": {
@@ -711,6 +710,21 @@
         "defaultValue": null
       }
     },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "trigger": {
       "name": "trigger",
       "description": "Element triggering the `Popover`",
@@ -744,21 +758,6 @@
         "defaultValue": {
           "summary": "\"click\""
         }
-      }
-    },
-    "open": {
-      "name": "open",
-      "description": "Handles open/close",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "boolean | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean | undefined"
-        },
-        "defaultValue": null
       }
     },
     "offset": {

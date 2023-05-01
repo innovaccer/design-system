@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -273,6 +272,21 @@
           "defaultValue": null
         }
       },
+      "showTooltip": {
+        "name": "showTooltip",
+        "description": "Determines whether to show tooltip for label",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -333,6 +347,21 @@
       "table": {
         "type": {
           "summary": "((link: string) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showTooltip": {
+      "name": "showTooltip",
+      "description": "Determines whether to show tooltip for label",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
         },
         "defaultValue": null
       }

@@ -248,7 +248,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -269,13 +268,13 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
         "title": "Button",
         "description": "A pattern using buttons in a group.",
-        "a11yProps": " \n        **aria-label:**\n        <br/> \n        - Add `aria-label='Copy'` on button with *copy* icon to describe the action of button.\n        <br/>\n        - Add `aria-label='Paste'` on button with *paste* icon to describe the action of button.\n        <br/>\n        - Add `aria-label='Delete'` on button with *delete* icon to describe the action of button.\n        "
+        "a11yProps": " **aria-label:** <br/> \n        - Add `aria-label='Copy'` on button with *copy* icon to describe the action of button.\n        <br/>\n        - Add `aria-label='Paste'` on button with *paste* icon to describe the action of button.\n        <br/>\n        - Add `aria-label='Delete'` on button with *delete* icon to describe the action of button.\n        "
       }
     },
     "framework": "react",

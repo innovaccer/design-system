@@ -62,7 +62,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -83,7 +82,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -92,13 +91,18 @@
           "components": {
             "Card": {
               "displayName": "Card",
+              "defaultProps": {
+                "shadow": "shadow10"
+              },
               "__docgenInfo": {
                 "description": "",
                 "displayName": "Card",
                 "props": {
                   "shadow": {
-                    "defaultValue": null,
-                    "description": "Shadow of the `Card`",
+                    "defaultValue": {
+                      "value": "shadow10"
+                    },
+                    "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
                     "name": "shadow",
                     "required": false,
                     "type": {
@@ -108,10 +112,10 @@
                           "value": "undefined"
                         },
                         {
-                          "value": "\"dark\""
+                          "value": "\"default\""
                         },
                         {
-                          "value": "\"default\""
+                          "value": "\"dark\""
                         },
                         {
                           "value": "\"none\""
@@ -121,6 +125,15 @@
                         },
                         {
                           "value": "\"medium\""
+                        },
+                        {
+                          "value": "\"shadow10\""
+                        },
+                        {
+                          "value": "\"shadow20\""
+                        },
+                        {
+                          "value": "\"shadow30\""
                         }
                       ]
                     }

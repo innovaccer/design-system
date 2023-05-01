@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -310,11 +309,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+          "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+            "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -422,11 +421,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+        "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+          "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
         },
         "defaultValue": {
           "summary": "{ }"

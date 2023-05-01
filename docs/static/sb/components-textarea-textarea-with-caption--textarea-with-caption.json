@@ -153,7 +153,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -174,7 +173,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "customCode": "() => {\n  const [value, setValue] = React.useState('Patient moved out of country last week.');\n\n  return (\n    <>\n      <Label withInput={true} htmlFor=\"notes\">Confirmation Notes</Label>\n      <Textarea\n        name=\"Textarea\"\n        className=\"w-50\"\n        value={value}\n        onChange={e => { setValue(e.target.value); }}\n        placeholder=\"Enter your comments here\"\n        aria-labelledby=\"Confirmation Notes\"\n        id=\"notes\"\n      />\n      <Caption withInput={true}>This note will be automatically pinned for export.</Caption>\n    </>\n  );\n}",

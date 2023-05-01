@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/Menu.story.jsx",
     "storySource": {
-      "source": "() => {\n  const trigger = (\n    <div className=\"d-flex\">\n      <Avatar firstName=\"John\" lastName=\"Doe\" />\n      <Text className=\"ml-4 mt-4\" size=\"large\">\n        Open Popover\n      </Text>\n      <Button appearance=\"transparent\" icon=\"arrow_drop_down\" />\n    </div>\n  );\n\n  return (\n    <div className=\"mb-12\">\n      <Popover position=\"bottom-start\" on=\"click\" trigger={trigger} open={false}>\n        <div style={{ width: 'var(--spacing-9)' }} className=\" mx-6 my-6\">\n          <div className=\"d-flex\">\n            <Avatar firstName=\"John\" lastName=\"Doe\" />\n            <div className=\"Option-label\">\n              <Text className=\"ml-4\">James Donovan</Text>\n              <Text className=\"ml-4\" appearance=\"subtle\">\n                jdonovan @two.health\n              </Text>\n            </div>\n          </div>\n          <div className=\"Dropdown-wrapper\">\n            <div className=\"Option OptionWrapper\">Account Overview</div>\n            <div className=\"Option OptionWrapper\">Sign Out</div>\n          </div>\n        </div>\n      </Popover>\n    </div>\n  );\n}"
+      "source": "() => {\n  const trigger = (\n    <div className=\"d-flex\">\n      <Avatar firstName=\"John\" lastName=\"Doe\" />\n      <Text className=\"ml-4 mt-4\" size=\"large\">\n        Open Popover\n      </Text>\n      <Button appearance=\"transparent\" icon=\"arrow_drop_down\" />\n    </div>\n  );\n\n  return (\n    <div className=\"mb-12\">\n      <Popover position=\"bottom-start\" on=\"click\" trigger={trigger} open={false} className=\"w-25\">\n        <div className=\"m-6\">\n          <div className=\"d-flex\">\n            <Avatar firstName=\"John\" lastName=\"Doe\" />\n            <div className=\"Option-label\">\n              <Text className=\"ml-4\">James Donovan</Text>\n              <Text className=\"ml-4\" appearance=\"subtle\">\n                jdonovan @two.health\n              </Text>\n            </div>\n          </div>\n          <div className=\"Dropdown-wrapper\">\n            <div className=\"Option OptionWrapper\">Account Overview</div>\n            <div className=\"Option OptionWrapper\">Sign Out</div>\n          </div>\n        </div>\n      </Popover>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-popover-popover-with-menu--popover-with-menu",
@@ -393,6 +392,21 @@
           "defaultValue": null
         }
       },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "trigger": {
         "name": "trigger",
         "description": "Element triggering the `Popover`",
@@ -426,21 +440,6 @@
           "defaultValue": {
             "summary": "\"click\""
           }
-        }
-      },
-      "open": {
-        "name": "open",
-        "description": "Handles open/close",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "boolean | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean | undefined"
-          },
-          "defaultValue": null
         }
       },
       "offset": {
@@ -711,6 +710,21 @@
         "defaultValue": null
       }
     },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "trigger": {
       "name": "trigger",
       "description": "Element triggering the `Popover`",
@@ -744,21 +758,6 @@
         "defaultValue": {
           "summary": "\"click\""
         }
-      }
-    },
-    "open": {
-      "name": "open",
-      "description": "Handles open/close",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "boolean | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean | undefined"
-        },
-        "defaultValue": null
       }
     },
     "offset": {

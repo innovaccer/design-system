@@ -10,7 +10,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -31,7 +30,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -231,7 +230,7 @@
     "options": {},
     "fileName": "./core/components/molecules/placeholder/__stories__/skeletonLoaders.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <Card>\n      <div className=\"px-6 py-5\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n      <div style={{ borderTop: 'var(--border)' }} className=\"px-6 py-5\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n      <div style={{ borderTop: 'var(--border)' }} className=\"px-6 py-5\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n      <div style={{ borderTop: 'var(--border)' }} className=\"px-6 py-5\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n    </Card>\n  );\n}"
+      "source": "() => {\n  return (\n    <Card>\n      <div className=\"px-6 py-5\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n      <div className=\"px-6 py-5 border-top\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n      <div className=\"px-6 py-5 border-top\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n      <div className=\"px-6 py-5 border-top\">\n        <Placeholder round={true} imageSize=\"large\">\n          <PlaceholderParagraph length=\"large\" size=\"m\" />\n          <PlaceholderParagraph size=\"m\" />\n        </Placeholder>\n      </div>\n    </Card>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-loaders-placeholder-skeleton-loaders--skeleton-loaders",

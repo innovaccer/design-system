@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +229,7 @@
     "options": {},
     "fileName": "./core/components/molecules/emptyState/__stories__/pageNotLoaded.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"h-100 pb-5\" style={{ backgroundColor: 'var(--secondary-lightest)' }}>\n    <EmptyState\n      title=\"There's a problem loading this page.\"\n      description=\"A technical problem is preventing the page from loading. Try reloading this page.\"\n      imageSrc={noContent}\n      size=\"large\"\n    >\n      <Button size=\"large\" appearance=\"primary\">\n        Reload page\n      </Button>\n    </EmptyState>\n  </div>\n)"
+      "source": "() => (\n  <div className=\"h-100 pb-5 bg-secondary-lightest\">\n    <EmptyState\n      title=\"There's a problem loading this page.\"\n      description=\"A technical problem is preventing the page from loading. Try reloading this page.\"\n      imageSrc={noContent}\n      size=\"large\"\n    >\n      <Button size=\"large\" appearance=\"primary\">\n        Reload page\n      </Button>\n    </EmptyState>\n  </div>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-emptystate-page-not-loaded--page-not-loaded",

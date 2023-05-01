@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/organisms/grid/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const applyLoaderSchema = true;\n\n  const loading = false;\n\n  const error = false;\n\n  const applySchema = true;\n\n  const applyData = true;\n\n  const totalRecords = data.length;\n\n  const type = 'resource';\n\n  const size = 'comfortable';\n\n  const draggable = true;\n\n  const nestedRows = false;\n\n  const withCheckbox = false;\n\n  const showMenu = true;\n\n  const withPagination = false;\n\n  const page = 1;\n\n  const pageSize = 12;\n\n  const headCellTooltip = false;\n\n  const separator = false;\n\n  return (\n    <div\n      style={{\n        height: '350px',\n      }}\n    >\n      <Card className=\"h-100 overflow-hidden\">\n        <Grid\n          schema={applySchema ? schema : undefined}\n          data={applyData ? data : undefined}\n          loading={loading}\n          error={error}\n          errorTemplate={errorTemplate}\n          totalRecords={totalRecords}\n          withCheckbox={withCheckbox}\n          showMenu={showMenu}\n          type={type}\n          size={size}\n          headCellTooltip={headCellTooltip}\n          separator={separator}\n          draggable={draggable}\n          nestedRows={nestedRows}\n          nestedRowRenderer={nestedRowRenderer}\n          withPagination={withPagination}\n          page={page}\n          pageSize={pageSize}\n          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}\n          onRowClick={(rowData, rowIndex) =>\n            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n          }\n          onSelect={(rowIndex, selected) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected}`)()}\n          onSelectAll={(selected, selectedAll) => {\n            action(`on-select:- selected: ${selected} selectedAll: ${selectedAll}`)();\n          }}\n          sortingList={[{ name: 'name', type: 'desc' }]}\n          filterList={{\n            name: ['h-r', 's-z'],\n          }}\n        />\n      </Card>\n    </div>\n  );\n}"
+      "source": "() => {\n  const applyLoaderSchema = true;\n\n  const loading = false;\n\n  const error = false;\n\n  const applySchema = true;\n\n  const applyData = true;\n\n  const totalRecords = data.length;\n\n  const type = 'resource';\n\n  const size = 'comfortable';\n\n  const draggable = true;\n\n  const nestedRows = false;\n\n  const withCheckbox = false;\n\n  const showMenu = true;\n\n  const withPagination = false;\n\n  const page = 1;\n\n  const pageSize = 12;\n\n  const headCellTooltip = false;\n\n  const separator = false;\n\n  return (\n    <div className=\"Grid-outerWrapper\">\n      <Card className=\"h-100 overflow-hidden\">\n        <Grid\n          schema={applySchema ? schema : undefined}\n          data={applyData ? data : undefined}\n          loading={loading}\n          error={error}\n          errorTemplate={errorTemplate}\n          totalRecords={totalRecords}\n          withCheckbox={withCheckbox}\n          showMenu={showMenu}\n          type={type}\n          size={size}\n          headCellTooltip={headCellTooltip}\n          separator={separator}\n          draggable={draggable}\n          nestedRows={nestedRows}\n          nestedRowRenderer={nestedRowRenderer}\n          withPagination={withPagination}\n          page={page}\n          pageSize={pageSize}\n          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}\n          onRowClick={(rowData, rowIndex) =>\n            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n          }\n          onSelect={(rowIndex, selected) => action(`on-select:- rowIndex: ${rowIndex} selected: ${selected}`)()}\n          onSelectAll={(selected, selectedAll) => {\n            action(`on-select:- selected: ${selected} selectedAll: ${selectedAll}`)();\n          }}\n          sortingList={[{ name: 'name', type: 'desc' }]}\n          filterList={{\n            name: ['h-r', 's-z'],\n          }}\n        />\n      </Card>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-grid-all--all",

@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -239,7 +238,7 @@
     "options": {},
     "fileName": "./core/components/organisms/list/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const async = true;\n\n  const applyLoaderSchema = true;\n\n  const type = 'resource';\n\n  const size = 'comfortable';\n\n  const withHeader = false;\n\n  const withCheckbox = false;\n\n  const withPagination = true;\n\n  const page = 1;\n\n  const paginationType = 'jump';\n\n  const pageSize = 12;\n\n  const multipleSorting = false;\n\n  const separator = false;\n\n  let dataAttr = {};\n  if (async) {\n    dataAttr = {\n      fetchData,\n    };\n  } else {\n    dataAttr = {\n      schema,\n      data,\n    };\n  }\n\n  return (\n    <div\n      style={{\n        height: '350px',\n        // overflow: 'hidden'\n      }}\n    >\n      <Card className=\"h-100 overflow-hidden\">\n        <List\n          {...dataAttr}\n          withHeader={withHeader}\n          headerOptions={{\n            withSearch: true,\n          }}\n          withCheckbox={withCheckbox}\n          type={type}\n          size={size}\n          separator={separator}\n          withPagination={withPagination}\n          paginationType={paginationType}\n          page={page}\n          pageSize={pageSize}\n          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}\n          onRowClick={(rowData, rowIndex) =>\n            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n          }\n          onSelect={(rowIndex, selected, selectedList) =>\n            action(\n              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`\n            )()\n          }\n          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}\n          multipleSorting={multipleSorting}\n          sortingList={[{ name: 'name', type: 'desc' }]}\n          filterList={{\n            name: ['h-r', 's-z'],\n          }}\n        />\n      </Card>\n    </div>\n  );\n}"
+      "source": "() => {\n  const async = true;\n\n  const applyLoaderSchema = true;\n\n  const type = 'resource';\n\n  const size = 'comfortable';\n\n  const withHeader = false;\n\n  const withCheckbox = false;\n\n  const withPagination = true;\n\n  const page = 1;\n\n  const paginationType = 'jump';\n\n  const pageSize = 12;\n\n  const multipleSorting = false;\n\n  const separator = false;\n\n  let dataAttr = {};\n  if (async) {\n    dataAttr = {\n      fetchData,\n    };\n  } else {\n    dataAttr = {\n      schema,\n      data,\n    };\n  }\n\n  return (\n    <div className=\"List-wrapper\">\n      <Card className=\"h-100 overflow-hidden\">\n        <List\n          {...dataAttr}\n          withHeader={withHeader}\n          headerOptions={{\n            withSearch: true,\n          }}\n          withCheckbox={withCheckbox}\n          type={type}\n          size={size}\n          separator={separator}\n          withPagination={withPagination}\n          paginationType={paginationType}\n          page={page}\n          pageSize={pageSize}\n          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}\n          onRowClick={(rowData, rowIndex) =>\n            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n          }\n          onSelect={(rowIndex, selected, selectedList) =>\n            action(\n              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(selectedList)}`\n            )()\n          }\n          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}\n          multipleSorting={multipleSorting}\n          sortingList={[{ name: 'name', type: 'desc' }]}\n          filterList={{\n            name: ['h-r', 's-z'],\n          }}\n        />\n      </Card>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-list-all--all",
@@ -249,34 +248,24 @@
     },
     "args": {},
     "argTypes": {
-      "className": {
-        "name": "className",
-        "description": "Adds custom class",
+      "type": {
+        "name": "type",
+        "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
         "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
+          "required": true,
+          "name": "enum",
+          "value": [
+            "data",
+            "resource"
+          ]
         },
         "table": {
           "type": {
-            "summary": "string | undefined"
+            "summary": "\"data\" | \"resource\""
           },
-          "defaultValue": null
-        }
-      },
-      "data-test": {
-        "name": "data-test",
-        "description": "Stores custom testing data private to the component.",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "string | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "string | undefined"
-          },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "\"data\""
+          }
         }
       },
       "size": {
@@ -301,9 +290,24 @@
           }
         }
       },
+      "className": {
+        "name": "className",
+        "description": "Adds custom class",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "data": {
         "name": "data",
-        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
         "type": {
           "required": true,
           "name": "other",
@@ -318,26 +322,6 @@
           }
         }
       },
-      "type": {
-        "name": "type",
-        "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
-        "type": {
-          "required": true,
-          "name": "enum",
-          "value": [
-            "data",
-            "resource"
-          ]
-        },
-        "table": {
-          "type": {
-            "summary": "\"data\" | \"resource\""
-          },
-          "defaultValue": {
-            "summary": "\"data\""
-          }
-        }
-      },
       "onSelect": {
         "name": "onSelect",
         "description": "Callback to be called when a row is selected",
@@ -349,6 +333,37 @@
         "table": {
           "type": {
             "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "error": {
+        "name": "error",
+        "description": "Set for error state of Table(in case of sync)",
+        "type": {
+          "required": true,
+          "name": "boolean"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean"
+          },
+          "defaultValue": {
+            "summary": "false"
+          }
+        }
+      },
+      "data-test": {
+        "name": "data-test",
+        "description": "Stores custom testing data private to the component.",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "string | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "string | undefined"
           },
           "defaultValue": null
         }
@@ -400,22 +415,6 @@
           }
         }
       },
-      "error": {
-        "name": "error",
-        "description": "Set for error state of Table(in case of sync)",
-        "type": {
-          "required": true,
-          "name": "boolean"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean"
-          },
-          "defaultValue": {
-            "summary": "false"
-          }
-        }
-      },
       "searchDebounceDuration": {
         "name": "searchDebounceDuration",
         "description": "Debounce duration to call updateData in case of search term update",
@@ -449,7 +448,7 @@
       },
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
         "type": {
           "required": false,
           "name": "other",
@@ -693,6 +692,21 @@
           "defaultValue": null
         }
       },
+      "selectDisabledRow": {
+        "name": "selectDisabledRow",
+        "description": "Set `true` to allow selection of disabled row",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "fetchData": {
         "name": "fetchData",
         "description": "Callback to be called in case of async `Table`\n\n<pre className=\"DocPage-codeBlock\">\nfetchDataFunction: (options: FetchDataOptions) => Promise<{\n      searchTerm?: string,\n      count: number,\n      data: Data,\n      schema: Schema\n}>;\n\nFetchDataOptions: {\n      page?: number;\n      pageSize?: number;\n      filterList?: TableProps['sortingList'];\n      sortingList?: TableProps['filterList'];\n      searchTerm?: string;\n  }\n</pre>",
@@ -742,34 +756,24 @@
   },
   "initialArgs": {},
   "argTypes": {
-    "className": {
-      "name": "className",
-      "description": "Adds custom class",
+    "type": {
+      "name": "type",
+      "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
       "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
+        "required": true,
+        "name": "enum",
+        "value": [
+          "data",
+          "resource"
+        ]
       },
       "table": {
         "type": {
-          "summary": "string | undefined"
+          "summary": "\"data\" | \"resource\""
         },
-        "defaultValue": null
-      }
-    },
-    "data-test": {
-      "name": "data-test",
-      "description": "Stores custom testing data private to the component.",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "string | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "string | undefined"
-        },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "\"data\""
+        }
       }
     },
     "size": {
@@ -794,9 +798,24 @@
         }
       }
     },
+    "className": {
+      "name": "className",
+      "description": "Adds custom class",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "data": {
       "name": "data",
-      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
       "type": {
         "required": true,
         "name": "other",
@@ -811,26 +830,6 @@
         }
       }
     },
-    "type": {
-      "name": "type",
-      "description": "Type of Table\n\n**Requires `onRowClick` for 'resource' Table**",
-      "type": {
-        "required": true,
-        "name": "enum",
-        "value": [
-          "data",
-          "resource"
-        ]
-      },
-      "table": {
-        "type": {
-          "summary": "\"data\" | \"resource\""
-        },
-        "defaultValue": {
-          "summary": "\"data\""
-        }
-      }
-    },
     "onSelect": {
       "name": "onSelect",
       "description": "Callback to be called when a row is selected",
@@ -842,6 +841,37 @@
       "table": {
         "type": {
           "summary": "((rowIndexes: number[], selected: boolean, allSelected: RowData[], selectAll?: boolean | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "error": {
+      "name": "error",
+      "description": "Set for error state of Table(in case of sync)",
+      "type": {
+        "required": true,
+        "name": "boolean"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean"
+        },
+        "defaultValue": {
+          "summary": "false"
+        }
+      }
+    },
+    "data-test": {
+      "name": "data-test",
+      "description": "Stores custom testing data private to the component.",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "string | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "string | undefined"
         },
         "defaultValue": null
       }
@@ -893,22 +923,6 @@
         }
       }
     },
-    "error": {
-      "name": "error",
-      "description": "Set for error state of Table(in case of sync)",
-      "type": {
-        "required": true,
-        "name": "boolean"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean"
-        },
-        "defaultValue": {
-          "summary": "false"
-        }
-      }
-    },
     "searchDebounceDuration": {
       "name": "searchDebounceDuration",
       "description": "Debounce duration to call updateData in case of search term update",
@@ -942,7 +956,7 @@
     },
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
       "type": {
         "required": false,
         "name": "other",
@@ -1182,6 +1196,21 @@
       "table": {
         "type": {
           "summary": "((page: number) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "selectDisabledRow": {
+      "name": "selectDisabledRow",
+      "description": "Set `true` to allow selection of disabled row",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
         },
         "defaultValue": null
       }

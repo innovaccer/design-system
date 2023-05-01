@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -282,9 +281,9 @@
           "name": "enum",
           "value": [
             "undefined",
-            "success",
             "default",
             "disabled",
+            "success",
             "link",
             "subtle",
             "white",
@@ -293,7 +292,7 @@
         },
         "table": {
           "type": {
-            "summary": "undefined | \"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+            "summary": "undefined | \"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
           },
           "defaultValue": null
         }
@@ -451,9 +450,9 @@
         "name": "enum",
         "value": [
           "undefined",
-          "success",
           "default",
           "disabled",
+          "success",
           "link",
           "subtle",
           "white",
@@ -462,7 +461,7 @@
       },
       "table": {
         "type": {
-          "summary": "undefined | \"success\" | \"default\" | \"disabled\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
+          "summary": "undefined | \"default\" | \"disabled\" | \"success\" | \"link\" | \"subtle\" | \"white\" | \"destructive\""
         },
         "defaultValue": null
       }

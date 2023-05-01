@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -433,6 +432,21 @@
           "defaultValue": null
         }
       },
+      "onPaste": {
+        "name": "onPaste",
+        "description": "Handler to be called when paste event occur inside `Input`",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "onFocus": {
         "name": "onFocus",
         "description": "Handler to be called when `Input` gets focus",
@@ -697,6 +711,21 @@
       "table": {
         "type": {
           "summary": "string | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onPaste": {
+      "name": "onPaste",
+      "description": "Handler to be called when paste event occur inside `Input`",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
         },
         "defaultValue": null
       }

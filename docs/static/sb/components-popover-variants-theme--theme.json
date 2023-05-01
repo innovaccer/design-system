@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -234,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/variants/Theme.story.jsx",
     "storySource": {
-      "source": "() => {\n  const trigger = <Button appearance=\"basic\">Light Theme</Button>;\n  const triggerDark = <Button appearance=\"basic\">Dark Theme</Button>;\n\n  const options = {\n    open: true,\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"mb-11\" style={{ marginRight: '40%' }}>\n        <Popover trigger={triggerDark} dark={true} {...options}>\n          <div style={{ width: 100 }} className=\"mx-6 my-6\">\n            <Text appearance={'white'}>Popup</Text>\n            <Button appearance=\"primary\" className=\"mt-4\">\n              Click\n            </Button>\n          </div>\n        </Popover>\n      </div>\n      <div>\n        <Popover trigger={trigger} dark={false} {...options}>\n          <div style={{ width: 100 }} className=\"mx-6 my-6\">\n            <Text>Popup</Text>\n            <Button appearance=\"primary\" className=\"mt-4\">\n              Click\n            </Button>\n          </div>\n        </Popover>\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const trigger = <Button appearance=\"basic\">Light Theme</Button>;\n  const triggerDark = <Button appearance=\"basic\">Dark Theme</Button>;\n\n  const options = {\n    open: true,\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"mb-11 mr-14\">\n        <Popover trigger={triggerDark} dark={true} {...options}>\n          <div className=\"m-6 pr-9\">\n            <Text appearance={'white'}>Popup</Text>\n            <Button appearance=\"primary\" className=\"mt-4\">\n              Click\n            </Button>\n          </div>\n        </Popover>\n      </div>\n      <div>\n        <Popover trigger={trigger} dark={false} {...options}>\n          <div className=\"m-6 pr-9\">\n            <Text>Popup</Text>\n            <Button appearance=\"primary\" className=\"mt-4\">\n              Click\n            </Button>\n          </div>\n        </Popover>\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-popover-variants-theme--theme",
@@ -394,6 +393,21 @@
           "defaultValue": null
         }
       },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "trigger": {
         "name": "trigger",
         "description": "Element triggering the `Popover`",
@@ -427,21 +441,6 @@
           "defaultValue": {
             "summary": "\"click\""
           }
-        }
-      },
-      "open": {
-        "name": "open",
-        "description": "Handles open/close",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "boolean | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean | undefined"
-          },
-          "defaultValue": null
         }
       },
       "offset": {
@@ -712,6 +711,21 @@
         "defaultValue": null
       }
     },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "trigger": {
       "name": "trigger",
       "description": "Element triggering the `Popover`",
@@ -745,21 +759,6 @@
         "defaultValue": {
           "summary": "\"click\""
         }
-      }
-    },
-    "open": {
-      "name": "open",
-      "description": "Handles open/close",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "boolean | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean | undefined"
-        },
-        "defaultValue": null
       }
     },
     "offset": {

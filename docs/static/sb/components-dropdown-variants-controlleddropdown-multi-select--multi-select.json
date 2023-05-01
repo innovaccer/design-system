@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -239,7 +238,7 @@
     "options": {},
     "fileName": "./core/components/atoms/dropdown/__stories__/variants/controlledDropdown/MultiSelect.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [selectedMoreThan50, setSelectedMoreThan50] = React.useState([dropdownOptions[3]]);\n  const [selectedLessThan50, setSelectedLessThan50] = React.useState([dropdownOptions[3]]);\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise((resolve) => {\n      this.window.setTimeout(() => {\n        resolve({\n          searchTerm,\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const onChangeHandler = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  const onSelectLessThan50 = (type, option) => {\n    switch (type) {\n      case 'select-all': {\n        const selectedDisabledArray = selectedLessThan50.filter((item) => item.disabled);\n        const selectedOptions = [\n          ...dropdownOptions.slice(0, 50).filter((item) => !item.disabled),\n          ...selectedDisabledArray,\n        ];\n\n        setSelectedLessThan50(selectedOptions);\n        break;\n      }\n      case 'deselect-all': {\n        const selectedArr = selectedLessThan50.filter((item) => item.disabled);\n        setSelectedLessThan50(selectedArr);\n        break;\n      }\n      case 'select-option': {\n        setSelectedLessThan50(selectedLessThan50.concat(option));\n        break;\n      }\n      case 'deselect-option': {\n        const selectedArray = selectedLessThan50.slice();\n        const index = selectedArray.findIndex((item) => item.value === option.value);\n        selectedArray.splice(index, 1);\n        setSelectedLessThan50(selectedArray);\n        break;\n      }\n      default: {\n        break;\n      }\n    }\n  };\n\n  const onSelectMoreThan50 = (type, option) => {\n    switch (type) {\n      case 'select-option': {\n        setSelectedMoreThan50(selectedMoreThan50.concat(option));\n        break;\n      }\n      case 'deselect-option': {\n        const selectedArray = selectedMoreThan50.slice();\n        const index = selectedArray.findIndex((item) => item.value === option.value);\n        selectedArray.splice(index, 1);\n        setSelectedMoreThan50(selectedArray);\n        break;\n      }\n      case 'clear-all': {\n        const selectedArr = selectedMoreThan50.filter((item) => item.disabled);\n        setSelectedMoreThan50(selectedArr);\n        break;\n      }\n      default: {\n        break;\n      }\n    }\n  };\n\n  const onClose = (options) => {\n    return action(`dropdown closed with selected values: ${options}`)();\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div style={{ width: '170px' }}>\n        <Text weight=\"strong\">{'Options > 50'}</Text>\n        <br />\n        <br />\n        <Dropdown\n          fetchOptions={fetchOptions}\n          onUpdate={onSelectMoreThan50}\n          selected={selectedMoreThan50}\n          onChange={onChangeHandler}\n          withCheckbox={true}\n        />\n      </div>\n      <div style={{ width: '170px', marginLeft: '128px' }}>\n        <Text weight=\"strong\">{'Options <= 50'}</Text>\n        <br />\n        <br />\n        <Dropdown\n          options={dropdownOptions.slice(0, 50)}\n          onUpdate={onSelectLessThan50}\n          selected={selectedLessThan50}\n          onChange={onChangeHandler}\n          onClose={onClose}\n          withCheckbox={true}\n          withSearch={true}\n        />\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const [selectedMoreThan50, setSelectedMoreThan50] = React.useState([dropdownOptions[3]]);\n  const [selectedLessThan50, setSelectedLessThan50] = React.useState([dropdownOptions[3]]);\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise((resolve) => {\n      this.window.setTimeout(() => {\n        resolve({\n          searchTerm,\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const onChangeHandler = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  const onSelectLessThan50 = (type, option) => {\n    switch (type) {\n      case 'select-all': {\n        const selectedDisabledArray = selectedLessThan50.filter((item) => item.disabled);\n        const selectedOptions = [\n          ...dropdownOptions.slice(0, 50).filter((item) => !item.disabled),\n          ...selectedDisabledArray,\n        ];\n\n        setSelectedLessThan50(selectedOptions);\n        break;\n      }\n      case 'deselect-all': {\n        const selectedArr = selectedLessThan50.filter((item) => item.disabled);\n        setSelectedLessThan50(selectedArr);\n        break;\n      }\n      case 'select-option': {\n        setSelectedLessThan50(selectedLessThan50.concat(option));\n        break;\n      }\n      case 'deselect-option': {\n        const selectedArray = selectedLessThan50.slice();\n        const index = selectedArray.findIndex((item) => item.value === option.value);\n        selectedArray.splice(index, 1);\n        setSelectedLessThan50(selectedArray);\n        break;\n      }\n      default: {\n        break;\n      }\n    }\n  };\n\n  const onSelectMoreThan50 = (type, option) => {\n    switch (type) {\n      case 'select-option': {\n        setSelectedMoreThan50(selectedMoreThan50.concat(option));\n        break;\n      }\n      case 'deselect-option': {\n        const selectedArray = selectedMoreThan50.slice();\n        const index = selectedArray.findIndex((item) => item.value === option.value);\n        selectedArray.splice(index, 1);\n        setSelectedMoreThan50(selectedArray);\n        break;\n      }\n      case 'clear-all': {\n        const selectedArr = selectedMoreThan50.filter((item) => item.disabled);\n        setSelectedMoreThan50(selectedArr);\n        break;\n      }\n      default: {\n        break;\n      }\n    }\n  };\n\n  const onClose = (options) => {\n    return action(`dropdown closed with selected values: ${options}`)();\n  };\n\n  return (\n    <div className=\"d-flex\">\n      <div className=\"w-25\">\n        <Text weight=\"strong\">{'Options > 50'}</Text>\n        <br />\n        <br />\n        <Dropdown\n          fetchOptions={fetchOptions}\n          onUpdate={onSelectMoreThan50}\n          selected={selectedMoreThan50}\n          onChange={onChangeHandler}\n          withCheckbox={true}\n        />\n      </div>\n      <div className=\"ml-8 w-25\">\n        <Text weight=\"strong\">{'Options <= 50'}</Text>\n        <br />\n        <br />\n        <Dropdown\n          options={dropdownOptions.slice(0, 50)}\n          onUpdate={onSelectLessThan50}\n          selected={selectedLessThan50}\n          onChange={onChangeHandler}\n          onClose={onClose}\n          withCheckbox={true}\n          withSearch={true}\n        />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-dropdown-variants-controlleddropdown-multi-select--multi-select",
@@ -359,7 +358,7 @@
       },
       "triggerOptions": {
         "name": "triggerOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |",
         "type": {
           "required": false,
           "name": "other",
@@ -757,7 +756,7 @@
       },
       "popoverOptions": {
         "name": "popoverOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
         "type": {
           "required": false,
           "name": "other",
@@ -962,7 +961,7 @@
       },
       "fetchOptions": {
         "name": "fetchOptions",
-        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      options: Option[],\n}>;\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -1089,7 +1088,7 @@
     },
     "triggerOptions": {
       "name": "triggerOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |",
       "type": {
         "required": false,
         "name": "other",
@@ -1487,7 +1486,7 @@
     },
     "popoverOptions": {
       "name": "popoverOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
       "type": {
         "required": false,
         "name": "other",
@@ -1692,7 +1691,7 @@
     },
     "fetchOptions": {
       "name": "fetchOptions",
-      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      options: Option[],\n}>;\n</pre>",
       "type": {
         "required": false,
         "name": "other",

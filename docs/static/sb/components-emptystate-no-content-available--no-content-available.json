@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +229,7 @@
     "options": {},
     "fileName": "./core/components/molecules/emptyState/__stories__/noContentAvailable.story.jsx",
     "storySource": {
-      "source": "() => {\n  const title = 'Manage your outreach campaigns';\n  const description = 'Campaigns let you reach out to patients with text messages, emails and voice calls';\n  return (\n    <div className=\"h-100 pb-5\" style={{ backgroundColor: 'var(--secondary-lightest)' }}>\n      <EmptyState title={title} description={description} imageSrc={noContent} size=\"large\">\n        <Button size=\"large\" appearance=\"primary\">\n          Reload page\n        </Button>\n      </EmptyState>\n    </div>\n  );\n}"
+      "source": "() => {\n  const title = 'Manage your outreach campaigns';\n  const description = 'Campaigns let you reach out to patients with text messages, emails and voice calls';\n  return (\n    <div className=\"h-100 pb-5 bg-secondary-lightest\">\n      <EmptyState title={title} description={description} imageSrc={noContent} size=\"large\">\n        <Button size=\"large\" appearance=\"primary\">\n          Reload page\n        </Button>\n      </EmptyState>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-emptystate-no-content-available--no-content-available",

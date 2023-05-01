@@ -296,6 +296,15 @@
               "name": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
             }
           },
+          "onPaste": {
+            "defaultValue": null,
+            "description": "Handler to be called when paste event occur inside `Input`",
+            "name": "onPaste",
+            "required": false,
+            "type": {
+              "name": "(((event: ClipboardEvent<HTMLInputElement>) => void) & ((e: ClipboardEvent<HTMLInputElement>, val?: string | undefined) => void)) | undefined"
+            }
+          },
           "actionIcon": {
             "defaultValue": null,
             "description": "Custom Icon Component to be passed to Input to replace Clear Icon in the right",
@@ -384,7 +393,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -405,7 +413,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },

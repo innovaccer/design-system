@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/popover/__stories__/Actions.story.jsx",
     "storySource": {
-      "source": "() => (\n  <div className=\"mb-10\">\n    <Popover position=\"bottom-start\" on=\"click\" trigger={<Button appearance=\"basic\">Open Popover</Button>} open={false}>\n      <div style={{ width: 'var(--spacing-9)' }} className=\"mx-6 my-6\">\n        <Text>You have some edits saved in draft state.You can resume editing or discard those changes.</Text>\n        <div className=\"d-flex\">\n          <Button className=\"mt-4\" appearance=\"primary\">\n            Edit Registry\n          </Button>\n          <Button className=\"mt-4 ml-5\" appearance=\"basic\">\n            Discard Changes\n          </Button>\n        </div>\n      </div>\n    </Popover>\n  </div>\n)"
+      "source": "() => (\n  <div className=\"mb-10\">\n    <Popover\n      position=\"bottom-start\"\n      on=\"click\"\n      trigger={<Button appearance=\"basic\">Open Popover</Button>}\n      open={false}\n      className=\"w-25\"\n    >\n      <div className=\"m-6\">\n        <Text>You have some edits saved in draft state.You can resume editing or discard those changes.</Text>\n        <div className=\"d-flex\">\n          <Button className=\"mt-4\" appearance=\"primary\">\n            Edit Registry\n          </Button>\n          <Button className=\"mt-4 ml-5\" appearance=\"basic\">\n            Discard Changes\n          </Button>\n        </div>\n      </div>\n    </Popover>\n  </div>\n)"
     },
     "__isArgsStory": false,
     "__id": "components-popover-popover-with-action--popover-with-action",
@@ -393,6 +392,21 @@
           "defaultValue": null
         }
       },
+      "open": {
+        "name": "open",
+        "description": "Handles open/close",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "trigger": {
         "name": "trigger",
         "description": "Element triggering the `Popover`",
@@ -426,21 +440,6 @@
           "defaultValue": {
             "summary": "\"click\""
           }
-        }
-      },
-      "open": {
-        "name": "open",
-        "description": "Handles open/close",
-        "type": {
-          "required": false,
-          "name": "other",
-          "value": "boolean | undefined"
-        },
-        "table": {
-          "type": {
-            "summary": "boolean | undefined"
-          },
-          "defaultValue": null
         }
       },
       "offset": {
@@ -711,6 +710,21 @@
         "defaultValue": null
       }
     },
+    "open": {
+      "name": "open",
+      "description": "Handles open/close",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "trigger": {
       "name": "trigger",
       "description": "Element triggering the `Popover`",
@@ -744,21 +758,6 @@
         "defaultValue": {
           "summary": "\"click\""
         }
-      }
-    },
-    "open": {
-      "name": "open",
-      "description": "Handles open/close",
-      "type": {
-        "required": false,
-        "name": "other",
-        "value": "boolean | undefined"
-      },
-      "table": {
-        "type": {
-          "summary": "boolean | undefined"
-        },
-        "defaultValue": null
       }
     },
     "offset": {

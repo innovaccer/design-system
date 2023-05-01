@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [expanded, setExpanded] = React.useState(false);\n  return (\n    <div style={{height: \"100vh\"}}>\n      <Collapsible\n        expanded={expanded}\n        height=\"100vh\"\n        onToggle={setExpanded}\n      >\n        <div className=\"d-flex pt-4\">\n          <Icon name=\"events\" className=\"d-flex align-items-center px-5 Text--regular\" />\n          {expanded && (\n            <Text className=\"mr-6\">Collapsible</Text>\n          )}\n        </div>\n      </Collapsible>\n    </div>\n  );\n}",
+        "customCode": "() => {\n  const [expanded, setExpanded] = React.useState(false);\n  return (\n      <Collapsible\n        expanded={expanded}\n        height=\"100vh\"\n        onToggle={setExpanded}\n      >\n        <div className=\"d-flex pt-4\">\n          <Icon name=\"events\" className=\"d-flex align-items-center px-6 Text--regular\" />\n          {expanded && (\n            <Text className=\"mr-6\">Collapsible</Text>\n          )}\n        </div>\n      </Collapsible>\n  );\n}",
         "imports": {}
       }
     },
@@ -234,7 +233,7 @@
     "options": {},
     "fileName": "./core/components/atoms/collapsible/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const hoverable = true;\n  const [expanded, setExpanded] = React.useState(false);\n\n  return (\n    <div className=\"d-flex\">\n      <Collapsible expanded={expanded} hoverable={hoverable} height=\"100vh\" onToggle={setExpanded}>\n        <div className=\"d-flex pt-4\">\n          <Icon name=\"events\" className=\"d-flex align-items-center px-5 Text--regular\" />\n          {expanded && <Text className=\"mr-6\">Collapsible</Text>}\n        </div>\n      </Collapsible>\n      <div>Testing</div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const hoverable = true;\n  const [expanded, setExpanded] = React.useState(false);\n\n  return (\n    <Collapsible expanded={expanded} hoverable={hoverable} height=\"100vh\" onToggle={setExpanded}>\n      <div className=\"d-flex pt-4\">\n        <Icon name=\"events\" className=\"d-flex align-items-center px-6 Text--regular\" />\n        {expanded && <Text className=\"mr-6\">Collapsible</Text>}\n      </div>\n    </Collapsible>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-collapsible-all--all",
@@ -305,7 +304,7 @@
             "summary": "number"
           },
           "defaultValue": {
-            "summary": "var(--spacing-9)"
+            "summary": "240px"
           }
         }
       },
@@ -450,7 +449,7 @@
           "summary": "number"
         },
         "defaultValue": {
-          "summary": "var(--spacing-9)"
+          "summary": "240px"
         }
       }
     },

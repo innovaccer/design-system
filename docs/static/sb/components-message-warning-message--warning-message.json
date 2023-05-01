@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -247,16 +246,16 @@
           "required": false,
           "name": "enum",
           "value": [
+            "info",
+            "default",
             "alert",
             "warning",
-            "success",
-            "default",
-            "info"
+            "success"
           ]
         },
         "table": {
           "type": {
-            "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
+            "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
           },
           "defaultValue": {
             "summary": "\"info\""
@@ -365,16 +364,16 @@
         "required": false,
         "name": "enum",
         "value": [
+          "info",
+          "default",
           "alert",
           "warning",
-          "success",
-          "default",
-          "info"
+          "success"
         ]
       },
       "table": {
         "type": {
-          "summary": "\"alert\" | \"warning\" | \"success\" | \"default\" | \"info\""
+          "summary": "\"info\" | \"default\" | \"alert\" | \"warning\" | \"success\""
         },
         "defaultValue": {
           "summary": "\"info\""

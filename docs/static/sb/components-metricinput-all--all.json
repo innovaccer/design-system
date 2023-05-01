@@ -169,6 +169,15 @@
             "name": "boolean | undefined"
           }
         },
+        "showActionButton": {
+          "defaultValue": null,
+          "description": "Disables the action button which is up and down arrow button.",
+          "name": "showActionButton",
+          "required": false,
+          "type": {
+            "name": "boolean | undefined"
+          }
+        },
         "onChange": {
           "defaultValue": null,
           "description": "Callback function when `MetricInput` text changes",
@@ -229,7 +238,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -250,7 +258,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -458,7 +466,7 @@
     "options": {},
     "fileName": "./core/components/atoms/metricInput/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const size = 'large';\n\n  const placeholder = 'Placeholder';\n\n  const disabled = false;\n\n  const readOnly = false;\n\n  const icon = '';\n\n  const prefix = '';\n\n  const suffix = '';\n\n  const error = false;\n\n  return (\n    <div style={{ width: 'var(--spacing-8)' }}>\n      <MetricInput\n        name=\"input\"\n        disabled={disabled}\n        readOnly={readOnly}\n        onChange={action('on-change')}\n        onClick={action('on-click')}\n        placeholder={placeholder}\n        aria-label=\"Metric input example\"\n        prefix={prefix}\n        suffix={suffix}\n        size={size}\n        icon={icon}\n        error={error}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const size = 'large';\n\n  const placeholder = 'Placeholder';\n\n  const disabled = false;\n\n  const readOnly = false;\n\n  const icon = '';\n\n  const prefix = '';\n\n  const suffix = '';\n\n  const error = false;\n\n  return (\n    <div className=\"w-25\">\n      <MetricInput\n        name=\"input\"\n        disabled={disabled}\n        readOnly={readOnly}\n        onChange={action('on-change')}\n        onClick={action('on-click')}\n        placeholder={placeholder}\n        aria-label=\"Metric input example\"\n        prefix={prefix}\n        suffix={suffix}\n        size={size}\n        icon={icon}\n        error={error}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-metricinput-all--all",
@@ -689,6 +697,21 @@
       "error": {
         "name": "error",
         "description": "Shows error state in case of failed validation",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "showActionButton": {
+        "name": "showActionButton",
+        "description": "Disables the action button which is up and down arrow button.",
         "type": {
           "required": false,
           "name": "other",
@@ -1016,6 +1039,21 @@
     "error": {
       "name": "error",
       "description": "Shows error state in case of failed validation",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "showActionButton": {
+      "name": "showActionButton",
+      "description": "Disables the action button which is up and down arrow button.",
       "type": {
         "required": false,
         "name": "other",

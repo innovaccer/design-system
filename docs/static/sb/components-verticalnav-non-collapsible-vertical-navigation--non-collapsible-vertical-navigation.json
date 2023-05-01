@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const data = [\n    {\n      name: 'practice',\n      label: 'Practice',\n    },\n    {\n      name: 'users',\n      label: 'Users',\n    },\n    {\n      name: 'copayment',\n      label: 'Copayment',\n    },\n    {\n      name: 'subscription',\n      label: 'Subscription',\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'users'\n  });\n\n  return (\n    <div className=\"bg-secondary-lightest\" style={{ height: '50vh'}}>\n      <VerticalNav\n        menus={data}\n        active={active}\n        expanded={true}\n        onClick={setActive}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const data = [\n    {\n      name: 'practice',\n      label: 'Practice',\n    },\n    {\n      name: 'users',\n      label: 'Users',\n    },\n    {\n      name: 'copayment',\n      label: 'Copayment',\n    },\n    {\n      name: 'subscription',\n      label: 'Subscription',\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'users'\n  });\n\n  return (\n    <div className=\"bg-secondary-lightest pb-12\">\n      <VerticalNav\n        menus={data}\n        active={active}\n        expanded={true}\n        onClick={setActive}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/organisms/verticalNav/__stories__/NonCollapsibleVerticalNav.story.jsx",
     "storySource": {
-      "source": "() => {\n  const data = [\n    {\n      name: 'practice',\n      label: 'Practice',\n    },\n    {\n      name: 'users',\n      label: 'Users',\n    },\n    {\n      name: 'copayment',\n      label: 'Copayment',\n    },\n    {\n      name: 'subscription',\n      label: 'Subscription',\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'users',\n  });\n\n  return (\n    <div className=\"bg-secondary-lightest\" style={{ height: '50vh' }}>\n      <VerticalNav menus={data} active={active} expanded={true} onClick={setActive} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const data = [\n    {\n      name: 'practice',\n      label: 'Practice',\n    },\n    {\n      name: 'users',\n      label: 'Users',\n    },\n    {\n      name: 'copayment',\n      label: 'Copayment',\n    },\n    {\n      name: 'subscription',\n      label: 'Subscription',\n    },\n    {\n      name: 'import_export_settings',\n      label: 'Import/Export Settings',\n    },\n  ];\n\n  const [active, setActive] = React.useState({\n    name: 'users',\n  });\n\n  return (\n    <div className=\"bg-secondary-lightest pb-12\">\n      <VerticalNav menus={data} active={active} expanded={true} onClick={setActive} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-verticalnav-non-collapsible-vertical-navigation--non-collapsible-vertical-navigation",

@@ -294,6 +294,15 @@
             "name": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
           }
         },
+        "onPaste": {
+          "defaultValue": null,
+          "description": "Handler to be called when paste event occur inside `Input`",
+          "name": "onPaste",
+          "required": false,
+          "type": {
+            "name": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
+          }
+        },
         "actionIcon": {
           "defaultValue": null,
           "description": "Custom Icon Component to be passed to Input to replace Clear Icon in the right",
@@ -327,7 +336,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -348,7 +356,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -556,7 +564,7 @@
     "options": {},
     "fileName": "./core/components/atoms/input/__stories__/variants/types/WithLabel.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <div className=\"Row\">\n      <div className=\"mr-9 mb-8 w-25\">\n        <div style={{ height: '72px' }}>\n          <Label withInput={true} required={true}>\n            Full Name\n          </Label>\n          <Input name=\"input\" onChange={action('on-change')} onClear={action('on-clear')} required={true} />\n        </div>\n        <br />\n        <Text weight=\"strong\">No Caption</Text>\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Label withInput={true} required={true}>\n          Password\n        </Label>\n        <Input\n          name=\"input\"\n          type=\"password\"\n          onChange={action('on-change')}\n          onClear={action('on-clear')}\n          required={true}\n        />\n        <Caption withInput={true}>Pick a strong, unique password</Caption>\n        <br />\n        <Text weight=\"strong\">Caption Default</Text>\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Label withInput={true} required={true}>\n          Password\n        </Label>\n        <Input\n          name=\"input\"\n          type=\"password\"\n          onChange={action('on-change')}\n          onClear={action('on-clear')}\n          required={true}\n          error={true}\n        />\n        <Caption error={true} withInput={true}>\n          Pick a strong, unique password\n        </Caption>\n        <br />\n        <Text weight=\"strong\">Caption Error</Text>\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  return (\n    <div className=\"Row\">\n      <div className=\"mr-9 mb-8 w-25\">\n        <div>\n          <Text weight=\"strong\">No Help Text</Text>\n          <br />\n          <br />\n          <Label withInput={true} required={true}>\n            Full Name\n          </Label>\n          <Input name=\"input\" onChange={action('on-change')} onClear={action('on-clear')} required={true} />\n        </div>\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Text weight=\"strong\">Help Text Default</Text>\n        <br />\n        <br />\n        <Label withInput={true} required={true}>\n          Password\n        </Label>\n        <Input\n          name=\"input\"\n          type=\"password\"\n          onChange={action('on-change')}\n          onClear={action('on-clear')}\n          required={true}\n        />\n        <HelpText message={'Pick a strong, unique password'} />\n      </div>\n      <div className=\"mr-9 mb-8 w-25\">\n        <Text weight=\"strong\">Help Text Error</Text>\n        <br />\n        <br />\n        <Label withInput={true} required={true}>\n          Password\n        </Label>\n        <Input\n          name=\"input\"\n          type=\"password\"\n          onChange={action('on-change')}\n          onClear={action('on-clear')}\n          required={true}\n          error={true}\n        />\n        <HelpText error={true} message={'Pick a strong, unique password'} />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-input-variants-types-with-label--with-label",
@@ -969,6 +977,21 @@
         "table": {
           "type": {
             "summary": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "onPaste": {
+        "name": "onPaste",
+        "description": "Handler to be called when paste event occur inside `Input`",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -1425,6 +1448,21 @@
       "table": {
         "type": {
           "summary": "((e: FocusEvent<HTMLInputElement, Element>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "onPaste": {
+      "name": "onPaste",
+      "description": "Handler to be called when paste event occur inside `Input`",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((event: ClipboardEvent<HTMLInputElement>) => void) | undefined"
         },
         "defaultValue": null
       }

@@ -8,13 +8,18 @@
   "story": "All",
   "component": {
     "displayName": "Card",
+    "defaultProps": {
+      "shadow": "shadow10"
+    },
     "__docgenInfo": {
       "description": "",
       "displayName": "Card",
       "props": {
         "shadow": {
-          "defaultValue": null,
-          "description": "Shadow of the `Card`",
+          "defaultValue": {
+            "value": "shadow10"
+          },
+          "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
           "name": "shadow",
           "required": false,
           "type": {
@@ -24,10 +29,10 @@
                 "value": "undefined"
               },
               {
-                "value": "\"dark\""
+                "value": "\"default\""
               },
               {
-                "value": "\"default\""
+                "value": "\"dark\""
               },
               {
                 "value": "\"none\""
@@ -37,6 +42,15 @@
               },
               {
                 "value": "\"medium\""
+              },
+              {
+                "value": "\"shadow10\""
+              },
+              {
+                "value": "\"shadow20\""
+              },
+              {
+                "value": "\"shadow30\""
               }
             ]
           }
@@ -65,7 +79,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -86,21 +99,27 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
+        "customCode": "/*\n// style.css\n.Card-wrapper {\n    height: 250px;\n}\n*/\n\n() => {\n  const shadow = 'default';\n\n  return (\n    <>\n      <Card shadow={shadow} className=\"w-50 Card-wrapper\">\n        <CardHeader>\n          <Text weight=\"strong\" size=\"large\">\n            Card Heading\n          </Text>\n        </CardHeader>\n        <CardBody>\n          <div>Card Body</div>\n        </CardBody>\n        <CardFooter className=\"justify-content-end\">\n          <>\n            <Button appearance=\"basic\">Cancel</Button>\n            <Button appearance=\"primary\" className=\"ml-4\">\n              Submit\n            </Button>\n          </>\n        </CardFooter>\n      </Card>\n      <Card className=\"mt-5 w-50\">\n        <CardHeader>\n          <Text weight=\"strong\" size=\"large\">\n            Card Heading\n          </Text>\n        </CardHeader>\n        <CardBody>\n          <div>Card Body</div>\n        </CardBody>\n        <CardSubdued border=\"top\">Subdued section.</CardSubdued>\n      </Card>\n    </>\n  );\n}",
         "props": {
           "components": {
             "Card": {
               "displayName": "Card",
+              "defaultProps": {
+                "shadow": "shadow10"
+              },
               "__docgenInfo": {
                 "description": "",
                 "displayName": "Card",
                 "props": {
                   "shadow": {
-                    "defaultValue": null,
-                    "description": "Shadow of the `Card`",
+                    "defaultValue": {
+                      "value": "shadow10"
+                    },
+                    "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
                     "name": "shadow",
                     "required": false,
                     "type": {
@@ -110,10 +129,10 @@
                           "value": "undefined"
                         },
                         {
-                          "value": "\"dark\""
+                          "value": "\"default\""
                         },
                         {
-                          "value": "\"default\""
+                          "value": "\"dark\""
                         },
                         {
                           "value": "\"none\""
@@ -123,6 +142,15 @@
                         },
                         {
                           "value": "\"medium\""
+                        },
+                        {
+                          "value": "\"shadow10\""
+                        },
+                        {
+                          "value": "\"shadow20\""
+                        },
+                        {
+                          "value": "\"shadow30\""
                         }
                       ]
                     }
@@ -401,7 +429,7 @@
     "options": {},
     "fileName": "./core/components/atoms/card/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const shadow = 'default';\n\n  return (\n    <>\n      <Card shadow={shadow} className=\"w-50\" style={{ height: '250px' }}>\n        <CardHeader>\n          <Text weight=\"strong\" size=\"large\">\n            Card Heading\n          </Text>\n        </CardHeader>\n        <CardBody>\n          <div>Card Body</div>\n        </CardBody>\n        <CardFooter className=\"justify-content-end\">\n          <>\n            <Button appearance=\"basic\">Cancel</Button>\n            <Button appearance=\"primary\" className=\"ml-4\">\n              Submit\n            </Button>\n          </>\n        </CardFooter>\n      </Card>\n      <Card className=\"mt-5 w-50\">\n        <CardHeader>\n          <Text weight=\"strong\" size=\"large\">\n            Card Heading\n          </Text>\n        </CardHeader>\n        <CardBody>\n          <div>Card Body</div>\n        </CardBody>\n        <CardSubdued border=\"top\">Subdued section.</CardSubdued>\n      </Card>\n    </>\n  );\n}"
+      "source": "() => {\n  const shadow = 'default';\n\n  return (\n    <>\n      <Card shadow={shadow} className=\"w-50 Card-wrapper\">\n        <CardHeader>\n          <Text weight=\"strong\" size=\"large\">\n            Card Heading\n          </Text>\n        </CardHeader>\n        <CardBody>\n          <div>Card Body</div>\n        </CardBody>\n        <CardFooter className=\"justify-content-end\">\n          <>\n            <Button appearance=\"basic\">Cancel</Button>\n            <Button appearance=\"primary\" className=\"ml-4\">\n              Submit\n            </Button>\n          </>\n        </CardFooter>\n      </Card>\n      <Card className=\"mt-5 w-50\">\n        <CardHeader>\n          <Text weight=\"strong\" size=\"large\">\n            Card Heading\n          </Text>\n        </CardHeader>\n        <CardBody>\n          <div>Card Body</div>\n        </CardBody>\n        <CardSubdued border=\"top\">Subdued section.</CardSubdued>\n      </Card>\n    </>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-card-all--all",
@@ -413,24 +441,29 @@
     "argTypes": {
       "shadow": {
         "name": "shadow",
-        "description": "Shadow of the `Card`",
+        "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
         "type": {
           "required": false,
           "name": "enum",
           "value": [
             "undefined",
-            "dark",
             "default",
+            "dark",
             "none",
             "light",
-            "medium"
+            "medium",
+            "shadow10",
+            "shadow20",
+            "shadow30"
           ]
         },
         "table": {
           "type": {
-            "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
+            "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\" | \"shadow10\" | \"shadow20\" | \"shadow30\""
           },
-          "defaultValue": null
+          "defaultValue": {
+            "summary": "shadow10"
+          }
         }
       },
       "className": {
@@ -469,24 +502,29 @@
   "argTypes": {
     "shadow": {
       "name": "shadow",
-      "description": "Shadow of the `Card`",
+      "description": "Shadow of the `Card`\n\n**Shadow `default`, `light`, `medium` and `dark` will be soon deprecated and it will map to `shadow10` automatically.**",
       "type": {
         "required": false,
         "name": "enum",
         "value": [
           "undefined",
-          "dark",
           "default",
+          "dark",
           "none",
           "light",
-          "medium"
+          "medium",
+          "shadow10",
+          "shadow20",
+          "shadow30"
         ]
       },
       "table": {
         "type": {
-          "summary": "undefined | \"dark\" | \"default\" | \"none\" | \"light\" | \"medium\""
+          "summary": "undefined | \"default\" | \"dark\" | \"none\" | \"light\" | \"medium\" | \"shadow10\" | \"shadow20\" | \"shadow30\""
         },
-        "defaultValue": null
+        "defaultValue": {
+          "summary": "shadow10"
+        }
       }
     },
     "className": {

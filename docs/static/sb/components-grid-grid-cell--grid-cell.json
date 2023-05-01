@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +229,7 @@
     "options": {},
     "fileName": "./core/components/organisms/grid/__stories__/GridCell.story.jsx",
     "storySource": {
-      "source": "() => {\n  const schema = {\n    name: 'name',\n    displayName: 'Name',\n  };\n\n  const size = 'comfortable';\n\n  const width = 250;\n\n  const cellType = 'STATUS_HINT';\n\n  const align = 'left';\n\n  const tooltip = true;\n\n  const loading = false;\n\n  return (\n    <div className=\"Grid-cell Grid-cell--body\" style={{ width, border: 'var(--border)' }}>\n      <div className=\"Grid-cellContent\">\n        <GridCell\n          size={size}\n          rowIndex={1}\n          colIndex={1}\n          loading={loading}\n          data={{\n            name: {\n              title: 'Schreiber Brynn',\n              metaList: ['Meta Item 1', 'Meta Item 2'],\n              icon: 'events',\n            },\n          }}\n          schema={{\n            ...schema,\n            width,\n            cellType,\n            align,\n            tooltip,\n          }}\n        />\n      </div>\n    </div>\n  );\n}"
+      "source": "() => {\n  const schema = {\n    name: 'name',\n    displayName: 'Name',\n  };\n\n  const size = 'comfortable';\n\n  const width = 250;\n\n  const cellType = 'STATUS_HINT';\n\n  const align = 'left';\n\n  const tooltip = true;\n\n  const loading = false;\n\n  return (\n    <div className=\"Grid-cell Grid-cell--body border w-25\">\n      <div className=\"Grid-cellContent\">\n        <GridCell\n          size={size}\n          rowIndex={1}\n          colIndex={1}\n          loading={loading}\n          data={{\n            name: {\n              title: 'Schreiber Brynn',\n              metaList: ['Meta Item 1', 'Meta Item 2'],\n              icon: 'events',\n            },\n          }}\n          schema={{\n            ...schema,\n            width,\n            cellType,\n            align,\n            tooltip,\n          }}\n        />\n      </div>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-grid-grid-cell--grid-cell",

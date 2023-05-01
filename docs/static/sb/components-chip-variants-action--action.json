@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -248,11 +247,12 @@
         "description": "Label of chip",
         "type": {
           "required": true,
-          "name": "string"
+          "name": "other",
+          "value": "string | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "table": {
           "type": {
-            "summary": "string"
+            "summary": "string | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
           },
           "defaultValue": null
         }
@@ -344,11 +344,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: ReactText) => void) | undefined"
+          "value": "((name: Name) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: ReactText) => void) | undefined"
+            "summary": "((name: Name) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -359,11 +359,11 @@
         "type": {
           "required": false,
           "name": "function",
-          "value": "((name: ReactText) => void) | undefined"
+          "value": "((name: Name) => void) | undefined"
         },
         "table": {
           "type": {
-            "summary": "((name: ReactText) => void) | undefined"
+            "summary": "((name: Name) => void) | undefined"
           },
           "defaultValue": null
         }
@@ -374,11 +374,11 @@
         "type": {
           "required": true,
           "name": "other",
-          "value": "ReactText"
+          "value": "Name"
         },
         "table": {
           "type": {
-            "summary": "ReactText"
+            "summary": "Name"
           },
           "defaultValue": null
         }
@@ -422,11 +422,12 @@
       "description": "Label of chip",
       "type": {
         "required": true,
-        "name": "string"
+        "name": "other",
+        "value": "string | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
       },
       "table": {
         "type": {
-          "summary": "string"
+          "summary": "string | ReactElement<any, string | ((props: any) => ReactElement<any, any> | null) | (new (props: any) => Component<any, any, any>)>"
         },
         "defaultValue": null
       }
@@ -518,11 +519,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: ReactText) => void) | undefined"
+        "value": "((name: Name) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: ReactText) => void) | undefined"
+          "summary": "((name: Name) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -533,11 +534,11 @@
       "type": {
         "required": false,
         "name": "function",
-        "value": "((name: ReactText) => void) | undefined"
+        "value": "((name: Name) => void) | undefined"
       },
       "table": {
         "type": {
-          "summary": "((name: ReactText) => void) | undefined"
+          "summary": "((name: Name) => void) | undefined"
         },
         "defaultValue": null
       }
@@ -548,11 +549,11 @@
       "type": {
         "required": true,
         "name": "other",
-        "value": "ReactText"
+        "value": "Name"
       },
       "table": {
         "type": {
-          "summary": "ReactText"
+          "summary": "Name"
         },
         "defaultValue": null
       }

@@ -153,7 +153,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -174,7 +173,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -374,7 +373,7 @@
     "options": {},
     "fileName": "./core/components/atoms/textarea/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const value = '';\n\n  const placeholder = 'Placeholder';\n\n  const disabled = false;\n\n  const error = false;\n\n  const resize = true;\n\n  const rows = 3;\n\n  return (\n    <div style={{ maxWidth: '300px' }}>\n      <Textarea\n        name=\"Textarea\"\n        value={value}\n        disabled={disabled}\n        onChange={action('on-change')}\n        onClick={action('on-click')}\n        placeholder={placeholder}\n        error={error}\n        resize={resize}\n        rows={rows}\n        aria-labelledby=\"Textarea\"\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const value = '';\n\n  const placeholder = 'Placeholder';\n\n  const disabled = false;\n\n  const error = false;\n\n  const resize = true;\n\n  const rows = 3;\n\n  return (\n    <div className=\"w-25\">\n      <Textarea\n        name=\"Textarea\"\n        value={value}\n        disabled={disabled}\n        onChange={action('on-change')}\n        onClick={action('on-click')}\n        placeholder={placeholder}\n        error={error}\n        resize={resize}\n        rows={rows}\n        aria-labelledby=\"Textarea\"\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-textarea-all--all",

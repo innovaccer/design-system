@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const [value, setValue] = React.useState();\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n  const onClick = (item) =>  console.log(item);\n\n  const placeholder ='Add Value';\n  const chipOptions = { onClick, clearButton:true };\n  const chipInputOptions = {\n    chipOptions,\n    allowDuplicates:false,\n    defaultValue:[],\n    autoFocus:true\n  };\n\n  const options = {\n    placeholder,\n    value,\n    onChange,\n    chipInputOptions\n  };\n  return (\n      <div style={{ width: 'var(--spacing-9)'}}>\n        <EditableChipInput\n          {...options}\n        />\n      </div>\n  );\n}"
+        "customCode": "() => {\n  const [value, setValue] = React.useState();\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n  const onClick = (item) =>  console.log(item);\n\n  const placeholder ='Add Value';\n  const chipOptions = { onClick, clearButton:true };\n  const chipInputOptions = {\n    chipOptions,\n    allowDuplicates:false,\n    defaultValue:[],\n    autoFocus:true\n  };\n\n  const options = {\n    placeholder,\n    value,\n    onChange,\n    chipInputOptions\n  };\n  return (\n      <div className=\"w-25\">\n        <EditableChipInput\n          {...options}\n        />\n      </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/editableChipInput/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const [value, setValue] = React.useState();\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n  const onClick = (item) => action(`onClick: ${item}`);\n\n  const placeholder = 'Add Value';\n  const chipOptions = { onClick, clearButton: true };\n  const chipInputOptions = {\n    chipOptions,\n    allowDuplicates: false,\n    defaultValue: [],\n    autoFocus: true,\n  };\n\n  const options = {\n    placeholder,\n    value,\n    onChange,\n    chipInputOptions,\n  };\n  return (\n    <div style={{ width: 'var(--spacing-9)' }}>\n      <EditableChipInput {...options} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const [value, setValue] = React.useState();\n\n  const onChange = (updatedValue) => {\n    setValue(updatedValue);\n  };\n  const onClick = (item) => action(`onClick: ${item}`);\n\n  const placeholder = 'Add Value';\n  const chipOptions = { onClick, clearButton: true };\n  const chipInputOptions = {\n    chipOptions,\n    allowDuplicates: false,\n    defaultValue: [],\n    autoFocus: true,\n  };\n\n  const options = {\n    placeholder,\n    value,\n    onChange,\n    chipInputOptions,\n  };\n  return (\n    <div className=\"w-25\">\n      <EditableChipInput {...options} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-editablechipinput-all--all",
@@ -310,11 +309,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+          "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+            "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -422,11 +421,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+        "value": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<ChipInputProps, \"className\" | \"data-test\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"onChange\" | \"allowDuplicates\" | \"chipOptions\">"
+          "summary": "Pick<ChipInputProps, \"onChange\" | \"className\" | \"autoFocus\" | \"disabled\" | \"onFocus\" | \"onBlur\" | \"data-test\" | \"allowDuplicates\" | \"chipOptions\">"
         },
         "defaultValue": {
           "summary": "{ }"

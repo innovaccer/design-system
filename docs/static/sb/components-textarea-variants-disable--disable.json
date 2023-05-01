@@ -153,7 +153,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -174,7 +173,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -377,7 +376,7 @@
     "options": {},
     "fileName": "./core/components/atoms/textarea/__stories__/variants/Disable.story.jsx",
     "storySource": {
-      "source": "() => {\n  const innerStyle = {\n    display: 'flex',\n    'flex-direction': 'column',\n    alignItems: 'center',\n    maxWidth: '300px',\n  };\n\n  const BooleanValue = [true, false];\n\n  return (\n    <div className=\"Row\">\n      {BooleanValue.map((value, ind) => (\n        <div style={innerStyle} className=\"mr-9 mb-5\" key={ind}>\n          <div style={innerStyle} className=\"mr-9 mb-5\">\n            <div className=\"w-100 mb-6\">\n              <Textarea\n                name=\"Textarea\"\n                onChange={action('on-change')}\n                placeholder=\"Placeholder\"\n                disabled={value}\n                rows={3}\n                aria-labelledby=\"Textarea\"\n              />\n            </div>\n            <Text weight=\"strong\">{value ? 'Disabled' : 'Enabled'}</Text>\n          </div>\n        </div>\n      ))}\n    </div>\n  );\n}"
+      "source": "() => {\n  const BooleanValue = [true, false];\n\n  return (\n    <Row>\n      {BooleanValue.map((value, ind) => (\n        <Column key={ind} className=\"p-4\">\n          <Label withInput={true}>{value ? 'Disabled' : 'Enabled'}</Label>\n          <Textarea\n            name=\"Textarea\"\n            onChange={action('on-change')}\n            placeholder=\"Placeholder\"\n            disabled={value}\n            rows={3}\n            aria-labelledby=\"Textarea\"\n          />\n        </Column>\n      ))}\n    </Row>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-textarea-variants-disable--disable",

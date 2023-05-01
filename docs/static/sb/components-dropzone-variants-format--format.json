@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const onDrop = (event, acceptedFiles, rejectedFiles) => {\n    console.log(acceptedFiles, rejectedFiles);\n  };\n\n  return (\n    <Dropzone\n      accept=\"image/jpeg, image/png\"\n      formatLabel=\"Accepted formats: PDF, jpg\"\n      sizeLabel='Maximum size: 25 MB'\n      onDrop={onDrop}\n      className=\"mb-3\"\n      sampleFileLink={(\n        <Link\n          href=\"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf\"\n          download=\"Test.pdf\"\n          target=\"_blank\"\n        >\n          Download sample file\n        </Link>\n      )}\n    />\n  );\n}"
+        "customCode": "() => {\n  const onDrop = (event, acceptedFiles, rejectedFiles) => {\n    console.log(acceptedFiles, rejectedFiles);\n  };\n\n  return (\n    <Dropzone\n      accept=\"image/jpeg, image/png\"\n      formatLabel=\"Accepted formats: jpeg, png\"\n      onDrop={onDrop}\n      className=\"mb-3\"\n      sampleFileLink={(\n        <Link\n          href=\"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf\"\n          download=\"Test.pdf\"\n          target=\"_blank\"\n        >\n          Download sample file\n        </Link>\n      )}\n    />\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/dropzone/__stories__/variants/Format.story.jsx",
     "storySource": {
-      "source": "() => {\n  const onDrop = (_event, acceptedFiles, rejectedFiles) => {\n    return action(`Accepted Files: ${acceptedFiles}, rejectedFiles: ${rejectedFiles}`)();\n  };\n\n  return (\n    <Dropzone\n      accept=\"image/jpeg, image/png\"\n      formatLabel=\"Accepted formats: PDF, jpg\"\n      sizeLabel=\"Maximum size: 25 MB\"\n      onDrop={onDrop}\n      className=\"mb-3\"\n      sampleFileLink={\n        <Link\n          href=\"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf\"\n          download=\"Test.pdf\"\n          target=\"_blank\"\n        >\n          Download sample file\n        </Link>\n      }\n    />\n  );\n}"
+      "source": "() => {\n  const onDrop = (_event, acceptedFiles, rejectedFiles) => {\n    return action(`Accepted Files: ${acceptedFiles}, rejectedFiles: ${rejectedFiles}`)();\n  };\n\n  return (\n    <Dropzone\n      accept=\"image/jpeg, image/png\"\n      formatLabel=\"Accepted formats: jpeg, png\"\n      onDrop={onDrop}\n      className=\"mb-3\"\n      sampleFileLink={\n        <Link\n          href=\"https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf\"\n          download=\"Test.pdf\"\n          target=\"_blank\"\n        >\n          Download sample file\n        </Link>\n      }\n    />\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-dropzone-variants-format--format",

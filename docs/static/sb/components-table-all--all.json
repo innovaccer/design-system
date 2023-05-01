@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -239,7 +238,7 @@
     "options": {},
     "fileName": "./core/components/organisms/table/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const async = false;\n\n  let loading;\n  let error;\n  let applyData;\n  let applySchema;\n  const applyLoaderSchema = true;\n\n  if (!async) {\n    loading = false;\n\n    error = false;\n\n    applySchema = true;\n\n    applyData = true;\n  }\n\n  const type = 'resource';\n\n  const size = 'comfortable';\n\n  const draggable = true;\n\n  const nestedRows = false;\n\n  const withHeader = true;\n\n  const withCheckbox = false;\n\n  const showMenu = true;\n\n  const withPagination = false;\n\n  const page = 1;\n\n  const paginationType = 'jump';\n\n  const pageSize = 12;\n\n  const multipleSorting = false;\n\n  const headCellTooltip = false;\n\n  const separator = false;\n\n  const filterPosition = 'HEADER';\n\n  let dataAttr = {};\n  if (async) {\n    dataAttr = {\n      fetchData,\n    };\n  } else {\n    dataAttr = {\n      loading,\n      error,\n      schema: applySchema ? schema : [],\n      data: applyData ? data : [],\n    };\n  }\n\n  return (\n    <div\n      style={{\n        height: '350px',\n      }}\n    >\n      <Card className=\"h-100 overflow-hidden\">\n        <Table\n          key={`${async}`}\n          {...dataAttr}\n          loading={loading}\n          error={error}\n          errorTemplate={errorTemplate}\n          withHeader={withHeader}\n          headerOptions={{\n            withSearch: true,\n          }}\n          withCheckbox={withCheckbox}\n          showMenu={showMenu}\n          type={type}\n          size={size}\n          headCellTooltip={headCellTooltip}\n          separator={separator}\n          draggable={draggable}\n          nestedRows={nestedRows}\n          nestedRowRenderer={nestedRowRenderer}\n          withPagination={withPagination}\n          page={page}\n          paginationType={paginationType}\n          pageSize={pageSize}\n          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}\n          onRowClick={(rowData, rowIndex) =>\n            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n          }\n          onSelect={(rowIndex, selected, selectedList, selectAll) =>\n            action(\n              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(\n                selectedList\n              )} selectAll: ${selectAll}`\n            )()\n          }\n          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}\n          onSearch={(currData, searchTerm) => {\n            action(`on-search:- currData: ${JSON.stringify(currData)}, searchTerm: ${searchTerm}`)();\n            return currData;\n          }}\n          multipleSorting={multipleSorting}\n          sortingList={[{ name: 'name', type: 'desc' }]}\n          filterList={{\n            name: ['h-r', 's-z'],\n          }}\n          filterPosition={filterPosition}\n        />\n      </Card>\n    </div>\n  );\n}"
+      "source": "() => {\n  const async = false;\n\n  let loading;\n  let error;\n  let applyData;\n  let applySchema;\n  const applyLoaderSchema = true;\n\n  if (!async) {\n    loading = false;\n\n    error = false;\n\n    applySchema = true;\n\n    applyData = true;\n  }\n\n  const type = 'resource';\n\n  const size = 'comfortable';\n\n  const draggable = true;\n\n  const nestedRows = false;\n\n  const withHeader = true;\n\n  const withCheckbox = false;\n\n  const showMenu = true;\n\n  const withPagination = false;\n\n  const page = 1;\n\n  const paginationType = 'jump';\n\n  const pageSize = 12;\n\n  const multipleSorting = false;\n\n  const headCellTooltip = false;\n\n  const separator = false;\n\n  const filterPosition = 'HEADER';\n\n  let dataAttr = {};\n  if (async) {\n    dataAttr = {\n      fetchData,\n    };\n  } else {\n    dataAttr = {\n      loading,\n      error,\n      schema: applySchema ? schema : [],\n      data: applyData ? data : [],\n    };\n  }\n\n  return (\n    <div className=\"vh-75\">\n      <Card className=\"h-100 overflow-hidden\">\n        <Table\n          key={`${async}`}\n          {...dataAttr}\n          loading={loading}\n          error={error}\n          errorTemplate={errorTemplate}\n          withHeader={withHeader}\n          headerOptions={{\n            withSearch: true,\n          }}\n          withCheckbox={withCheckbox}\n          showMenu={showMenu}\n          type={type}\n          size={size}\n          headCellTooltip={headCellTooltip}\n          separator={separator}\n          draggable={draggable}\n          nestedRows={nestedRows}\n          nestedRowRenderer={nestedRowRenderer}\n          withPagination={withPagination}\n          page={page}\n          paginationType={paginationType}\n          pageSize={pageSize}\n          loaderSchema={applyLoaderSchema ? loaderSchema : undefined}\n          onRowClick={(rowData, rowIndex) =>\n            action(`on-row-click:- rowIndex: ${rowIndex} data: ${JSON.stringify(rowData)}`)()\n          }\n          onSelect={(rowIndex, selected, selectedList, selectAll) =>\n            action(\n              `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(\n                selectedList\n              )} selectAll: ${selectAll}`\n            )()\n          }\n          onPageChange={(newPage) => action(`on-page-change:- ${newPage}`)()}\n          onSearch={(currData, searchTerm) => {\n            action(`on-search:- currData: ${JSON.stringify(currData)}, searchTerm: ${searchTerm}`)();\n            return currData;\n          }}\n          multipleSorting={multipleSorting}\n          sortingList={[{ name: 'name', type: 'desc' }]}\n          filterList={{\n            name: ['h-r', 's-z'],\n          }}\n          filterPosition={filterPosition}\n        />\n      </Card>\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-table-all--all",
@@ -372,7 +371,7 @@
       },
       "headerOptions": {
         "name": "headerOptions",
-        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+        "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
         "type": {
           "required": false,
           "name": "other",
@@ -683,6 +682,21 @@
           }
         }
       },
+      "selectDisabledRow": {
+        "name": "selectDisabledRow",
+        "description": "Set `true` to allow selection of disabled row",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -730,7 +744,7 @@
       },
       "data": {
         "name": "data",
-        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+        "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -951,7 +965,7 @@
     },
     "headerOptions": {
       "name": "headerOptions",
-      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |",
+      "description": "Options to be passed if using `withHeader: true`\n\n<pre className=\"DocPage-codeBlock\">\nExternalHeaderProps: {\n    children?: React.ReactNode;\n    withSearch?: boolean;\n    searchPlaceholder?: string;\n    dynamicColumn?: boolean;\n    allowSelectAll?: boolean;\n    customSelectionLabel?: string;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| children | Header actions to be rendered | |\n| withSearch | Set to use Search Input | |\n| searchPlaceholder | Placeholder of Search Input | \"Search\" |\n| dynamicColumn | Set to use Column controlling dropdown | true |\n| allowSelectAll | Set to show Select All button | |\n| customSelectionLabel | Set to show custom label on row selection | 'items' |",
       "type": {
         "required": false,
         "name": "other",
@@ -1262,6 +1276,21 @@
         }
       }
     },
+    "selectDisabledRow": {
+      "name": "selectDisabledRow",
+      "description": "Set `true` to allow selection of disabled row",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "className": {
       "name": "className",
       "description": "Adds custom class",
@@ -1309,7 +1338,7 @@
     },
     "data": {
       "name": "data",
-      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean\n    }\n\n    `_selected`  Denotes row selection\n</pre>",
+      "description": "<pre className=\"DocPage-codeBlock\">\n    Data: RowData[]\n\n    RowData: Record<string, any> & {\n      _selected?: boolean,\n      disabled?: boolean,\n    }\n\n    `_selected`  Denotes row selection\n    `disabled` Denotes disabled row\n</pre>",
       "type": {
         "required": false,
         "name": "other",

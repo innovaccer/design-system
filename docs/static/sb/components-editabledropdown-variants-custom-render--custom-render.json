@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const options = [];\n  for (let i = 1; i <= 10; i++) {\n    options.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',\n      selected: i === 2\n    });\n  };\n\n  const onChange = (selectedValues) => {\n    console.log(selectedValues);\n  };\n\n  const customRenderer = (label) => {\n    return (\n      <StatusHint appearance=\"warning\">{label}</StatusHint>\n    );\n  };\n\n  const optionRenderer = (props) => {\n    const { label } = props.optionData;\n    return (\n      <StatusHint className=\"px-5 py-4 cursor-pointer\" appearance=\"warning\">{label}</StatusHint>\n    );\n  };\n\n  const customTrigger = (label) => {\n    return (\n      <div\n        className=\"d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100\"\n        style={{ height: 'var(--spacing-3)' }}\n      >\n        <StatusHint appearance=\"warning\">{label}</StatusHint>\n        <Icon name=\"keyboard_arrow_down\" />\n      </div>\n    );\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">Editable Dropdown</Label>\n      <EditableDropdown\n        customTriggerRenderer={customRenderer}\n        placeholder=\"Select Option\"\n        dropdownOptions={{\n          options,\n          onChange,\n          optionRenderer,\n          triggerOptions: { customTrigger },\n        }}\n      />\n    </div>\n  );\n}"
+        "customCode": "() => {\n  const options = [];\n  for (let i = 1; i <= 10; i++) {\n    options.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',\n      selected: i === 2\n    });\n  };\n\n  const onChange = (selectedValues) => {\n    console.log(selectedValues);\n  };\n\n  const customRenderer = (label) => {\n    return (\n      <StatusHint appearance=\"warning\">{label}</StatusHint>\n    );\n  };\n\n  const optionRenderer = (props) => {\n    const { label } = props.optionData;\n    return (\n      <StatusHint className=\"px-5 py-4 cursor-pointer\" appearance=\"warning\">{label}</StatusHint>\n    );\n  };\n\n  const customTrigger = (label) => {\n    return (\n      <div className=\"d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100\">\n        <StatusHint appearance=\"warning\">{label}</StatusHint>\n        <Icon name=\"keyboard_arrow_down\" className=\"m-4\"/>\n      </div>\n    );\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">Editable Dropdown</Label>\n      <EditableDropdown\n        customTriggerRenderer={customRenderer}\n        placeholder=\"Select Option\"\n        dropdownOptions={{\n          options,\n          onChange,\n          optionRenderer,\n          triggerOptions: { customTrigger },\n        }}\n      />\n    </div>\n  );\n}"
       }
     },
     "framework": "react",
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/molecules/editableDropdown/__stories__/variants/customRenderer.story.jsx",
     "storySource": {
-      "source": "() => {\n  const onChange = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  const customTrigger = (label) => {\n    return (\n      <div\n        className=\"d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100\"\n        style={{ height: 'var(--spacing-3)' }}\n      >\n        <StatusHint appearance=\"warning\">{label}</StatusHint>\n        <Icon name=\"keyboard_arrow_down\" />\n      </div>\n    );\n  };\n\n  const customRenderer = (label) => {\n    return <StatusHint appearance=\"warning\">{label}</StatusHint>;\n  };\n\n  const optionRenderer = (props) => {\n    const { label } = props.optionData;\n    return (\n      <StatusHint className=\"px-5 py-4 cursor-pointer\" appearance=\"warning\">\n        {label}\n      </StatusHint>\n    );\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">\n        Editable Dropdown\n      </Label>\n      <EditableDropdown\n        customTriggerRenderer={customRenderer}\n        dropdownOptions={{\n          options,\n          onChange,\n          optionRenderer,\n          triggerOptions: { customTrigger },\n        }}\n      />\n    </div>\n  );\n}"
+      "source": "() => {\n  const onChange = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  const customTrigger = (label) => {\n    return (\n      <div className=\"d-flex align-items-center justify-content-between pl-5 pr-4 bg-secondary cursor-pointer w-100\">\n        <StatusHint appearance=\"warning\">{label}</StatusHint>\n        <Icon name=\"keyboard_arrow_down\" className=\"m-4\" />\n      </div>\n    );\n  };\n\n  const customRenderer = (label) => {\n    return <StatusHint appearance=\"warning\">{label}</StatusHint>;\n  };\n\n  const optionRenderer = (props) => {\n    const { label } = props.optionData;\n    return (\n      <StatusHint className=\"px-5 py-4 cursor-pointer\" appearance=\"warning\">\n        {label}\n      </StatusHint>\n    );\n  };\n\n  return (\n    <div className=\"w-25\">\n      <Label withInput={true} className=\"ml-5\">\n        Editable Dropdown\n      </Label>\n      <EditableDropdown\n        customTriggerRenderer={customRenderer}\n        dropdownOptions={{\n          options,\n          onChange,\n          optionRenderer,\n          triggerOptions: { customTrigger },\n        }}\n      />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-editabledropdown-variants-custom-render--custom-render",
@@ -265,11 +264,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+          "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+            "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -347,11 +346,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+        "value": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"open\" | ... 44 more ... | \"fetchOptions\">"
+          "summary": "Pick<MakeOptional<ControlledDropdownProps, \"closeOnSelect\" | \"options\" | \"triggerOptions\" | \"staticLimit\" | \"searchDebounceDuration\">, \"name\" | ... 44 more ... | \"fetchOptions\">"
         },
         "defaultValue": {
           "summary": "{ }"

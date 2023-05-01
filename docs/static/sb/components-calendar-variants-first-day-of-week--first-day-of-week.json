@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -233,7 +232,7 @@
     "options": {},
     "fileName": "./core/components/organisms/calendar/__stories__/variants/firstDayOfWeek.story.jsx",
     "storySource": {
-      "source": "() => {\n  const values = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];\n\n  const style = {\n    flexWrap: 'wrap',\n  };\n  // to freeze the object for typescript\n\n  return (\n    <div className=\"d-flex\" style={style}>\n      {values.map((v, index) => (\n        <div className=\"mr-9 mt-5\" key={index}>\n          <Card className=\"d-inline-flex\" shadow=\"light\">\n            <Calendar date={new Date(2020, 2, 1)} firstDayOfWeek={v} />\n          </Card>\n        </div>\n      ))}\n    </div>\n  );\n}"
+      "source": "() => {\n  const values = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];\n\n  // to freeze the object for typescript\n\n  return (\n    <div className=\"d-flex flex-wrap\">\n      {values.map((v, index) => (\n        <div className=\"mr-9 mt-5\" key={index}>\n          <Card className=\"d-inline-flex\" shadow=\"light\">\n            <Calendar date={new Date(2020, 2, 1)} firstDayOfWeek={v} />\n          </Card>\n        </div>\n      ))}\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-calendar-variants-first-day-of-week--first-day-of-week",

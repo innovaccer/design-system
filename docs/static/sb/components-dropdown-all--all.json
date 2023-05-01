@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,11 +29,11 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
-        "customCode": "() => {\n  const dropdownOptions =  [];\n  for (let i = 1; i <= 100; i++) {\n    dropdownOptions.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',\n      icon: 'events',\n      subInfo: 'subInfo',\n    });\n  }\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise(resolve => {\n      this.window.setTimeout(() => {\n        resolve({\n          searchTerm,\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  return (\n    <div className='w-25' style={{ minHeight: '280px' }}>\n      <Dropdown\n        fetchOptions={fetchOptions}\n      />\n    </div>\n  );\n}",
+        "customCode": "() => {\n  const dropdownOptions =  [];\n  for (let i = 1; i <= 100; i++) {\n    dropdownOptions.push({\n      label: `Option ${i}`,\n      value: `Option ${i}`,\n      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',\n      icon: 'events',\n      subInfo: 'subInfo',\n    });\n  }\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise(resolve => {\n      this.window.setTimeout(() => {\n        resolve({\n          searchTerm,\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  return (\n    <div className='w-25 pb-14'>\n      <Dropdown\n        fetchOptions={fetchOptions}\n      />\n    </div>\n  );\n}",
         "props": {
           "components": {},
           "exclude": [
@@ -239,7 +238,7 @@
     "options": {},
     "fileName": "./core/components/atoms/dropdown/__stories__/index.story.jsx",
     "storySource": {
-      "source": "() => {\n  const triggerSize = 'tiny';\n\n  const align = 'left';\n\n  const optionType = 'ICON_WITH_META';\n\n  const error = false;\n\n  const disabled = false;\n\n  const menu = false;\n\n  const withSearch = false;\n\n  const withCheckbox = false;\n\n  const showApplyButton = false;\n\n  const closeOnSelect = true;\n\n  const icon = '';\n\n  const placeholder = 'Select';\n\n  const selectAllLabel = 'Select All';\n\n  const inlineLabel = '';\n\n  const labelLimit = 2;\n\n  const maxHeight = 200;\n\n  const loadersCount = 10;\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise((resolve) => {\n      this.window.setTimeout(() => {\n        resolve({\n          searchTerm,\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const customLabel = (selectedLength, totalOptions) => {\n    const optionsLength = totalOptions ? totalOptions : dropdownOptions.length;\n    return `${selectedLength} of ${optionsLength} are selected`;\n  };\n\n  const onChangeHandler = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  const onClose = (selectedValues) => {\n    return action(`dropdown closed with selected values: ${selectedValues}`)();\n  };\n\n  const props = {\n    triggerSize,\n    align,\n    icon,\n    error,\n    placeholder,\n    inlineLabel,\n    disabled,\n    menu,\n    closeOnSelect,\n    withSearch,\n    withCheckbox,\n    showApplyButton,\n    maxHeight,\n    loadersCount,\n    onClose,\n    fetchOptions,\n    optionType,\n    selectAllLabel,\n    triggerOptions: { customLabel, labelLimit },\n    options: dropdownOptions,\n    onChange: onChangeHandler,\n  };\n\n  const key = `checkbox${withCheckbox} applyButton:${showApplyButton} search:${withSearch}`;\n\n  return (\n    <div style={{ width: '170px', marginLeft: '128px' }} key={key}>\n      <Dropdown {...props} />\n    </div>\n  );\n}"
+      "source": "() => {\n  const triggerSize = 'tiny';\n\n  const align = 'left';\n\n  const optionType = 'ICON_WITH_META';\n\n  const error = false;\n\n  const disabled = false;\n\n  const menu = false;\n\n  const withSearch = false;\n\n  const withCheckbox = false;\n\n  const showApplyButton = false;\n\n  const closeOnSelect = true;\n\n  const icon = '';\n\n  const placeholder = 'Select';\n\n  const selectAllLabel = 'Select All';\n\n  const inlineLabel = '';\n\n  const labelLimit = 2;\n\n  const maxHeight = 200;\n\n  const loadersCount = 10;\n\n  const getSearchedOptions = (options, searchTerm) => {\n    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));\n    return result;\n  };\n\n  const fetchOptions = (searchTerm) => {\n    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;\n    return new Promise((resolve) => {\n      this.window.setTimeout(() => {\n        resolve({\n          searchTerm,\n          options: searchedOptions,\n          count: searchedOptions.length,\n        });\n      }, 1000);\n    });\n  };\n\n  const customLabel = (selectedLength, totalOptions) => {\n    const optionsLength = totalOptions ? totalOptions : dropdownOptions.length;\n    return `${selectedLength} of ${optionsLength} are selected`;\n  };\n\n  const onChangeHandler = (selectedValues) => {\n    return action(`selected values length: ${selectedValues}`)();\n  };\n\n  const onClose = (selectedValues) => {\n    return action(`dropdown closed with selected values: ${selectedValues}`)();\n  };\n\n  const props = {\n    triggerSize,\n    align,\n    icon,\n    error,\n    placeholder,\n    inlineLabel,\n    disabled,\n    menu,\n    closeOnSelect,\n    withSearch,\n    withCheckbox,\n    showApplyButton,\n    maxHeight,\n    loadersCount,\n    onClose,\n    fetchOptions,\n    optionType,\n    selectAllLabel,\n    triggerOptions: { customLabel, labelLimit },\n    options: dropdownOptions,\n    onChange: onChangeHandler,\n  };\n\n  const key = `checkbox${withCheckbox} applyButton:${showApplyButton} search:${withSearch}`;\n\n  return (\n    <div key={key} className=\"w-25\">\n      <Dropdown {...props} />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-dropdown-all--all",
@@ -359,7 +358,7 @@
       },
       "triggerOptions": {
         "name": "triggerOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |",
         "type": {
           "required": false,
           "name": "other",
@@ -757,7 +756,7 @@
       },
       "popoverOptions": {
         "name": "popoverOptions",
-        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
         "type": {
           "required": false,
           "name": "other",
@@ -962,7 +961,7 @@
       },
       "fetchOptions": {
         "name": "fetchOptions",
-        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+        "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      options: Option[],\n}>;\n</pre>",
         "type": {
           "required": false,
           "name": "other",
@@ -1089,7 +1088,7 @@
     },
     "triggerOptions": {
       "name": "triggerOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nTriggerProps:\n{\n    labelLimit?: number;\n    customLabel?: (selected: number, totalOptions?: number, selectedOptions?: Option[]) => string;\n    customTrigger?: (label: string) => React.ReactElement;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| labelLimit | Number of selected options <br />to be shown on `Dropdown trigger` | 2 |\n| customLabel | Callback function to change <br/>the label of trigger when options are selected | |\n| customTrigger | Adds custom trigger | |",
       "type": {
         "required": false,
         "name": "other",
@@ -1487,7 +1486,7 @@
     },
     "popoverOptions": {
       "name": "popoverOptions",
-      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |\n</pre>",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Dropdown` inside body element | true |\n| hideOnReferenceEscape | Hides the `Dropdown` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
       "type": {
         "required": false,
         "name": "other",
@@ -1692,7 +1691,7 @@
     },
     "fetchOptions": {
       "name": "fetchOptions",
-      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      option: Option[],\n}>;\n</pre>",
+      "description": "Callback function to fetch options from API\n\n<pre className=\"DocPage-codeBlock\">\nfetchOptionsFunction: (searchTerm: string) => Promise<{\n      searchTerm?: string;\n      count: number,\n      options: Option[],\n}>;\n</pre>",
       "type": {
         "required": false,
         "name": "other",

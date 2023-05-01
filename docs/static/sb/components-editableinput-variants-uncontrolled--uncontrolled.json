@@ -9,7 +9,6 @@
   "parameters": {
     "docs": {
       "inlineStories": true,
-      "iframeHeight": 100,
       "theme": {
         "base": "light",
         "colorPrimary": "#0000001a",
@@ -30,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.13.5",
+        "brandTitle": "Masala Design System v2.15.4",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       }
     },
@@ -230,7 +229,7 @@
     "options": {},
     "fileName": "./core/components/molecules/editableInput/__stories__/variants/Uncontrolled.story.jsx",
     "storySource": {
-      "source": "() => {\n  return (\n    <div style={{ width: 'var(--spacing-9)' }}>\n      <EditableInput placeholder=\"First Name\" />\n    </div>\n  );\n}"
+      "source": "() => {\n  return (\n    <div className=\"vw-25\">\n      <EditableInput placeholder=\"First Name\" />\n    </div>\n  );\n}"
     },
     "__isArgsStory": false,
     "__id": "components-editableinput-variants-uncontrolled--uncontrolled",
@@ -343,11 +342,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+          "value": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+            "summary": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -506,11 +505,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+        "value": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputProps, \"open\" | \"children\" | \"className\" | \"data-test\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | \"alt\" | \"as\" | ... 352 more ... | \"actionIcon\">"
+          "summary": "Pick<InputProps, \"name\" | \"type\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | \"maxLength\" | \"actionIcon\" | ... 349 more ... | \"data-test\">"
         },
         "defaultValue": {
           "summary": "{ }"
