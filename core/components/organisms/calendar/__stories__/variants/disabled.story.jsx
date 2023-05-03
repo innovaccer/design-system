@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Calendar from '../../Calendar';
-import Card from '@/components/atoms/card';
-import Heading from '@/components/atoms/heading';
+import { Calendar, Heading } from '@/index';
 
 // CSF format story
 export const disabled = () => {
@@ -13,9 +11,7 @@ export const disabled = () => {
       <div className="d-flex mb-8">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
-            <Card className="d-inline-flex" shadow="light">
-              <Calendar date={new Date(2020, 2, 15)} disabledBefore={new Date(2020, 2, 10)} view={v} />
-            </Card>
+            <Calendar date={new Date(2020, 2, 15)} disabledBefore={new Date(2020, 2, 10)} view={v} />
           </div>
         ))}
       </div>
@@ -24,9 +20,7 @@ export const disabled = () => {
       <div className="d-flex mb-8">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
-            <Card className="d-inline-flex" shadow="light">
-              <Calendar date={new Date(2020, 2, 15)} disabledAfter={new Date(2020, 2, 20)} view={v} />
-            </Card>
+            <Calendar date={new Date(2020, 2, 15)} disabledAfter={new Date(2020, 2, 20)} view={v} />
           </div>
         ))}
       </div>
@@ -35,14 +29,12 @@ export const disabled = () => {
       <div className="d-flex">
         {view.map((v, index) => (
           <div className="mr-8" key={index}>
-            <Card className="d-inline-flex" shadow="light">
-              <Calendar
-                date={new Date(2020, 2, 15)}
-                disabledBefore={new Date(2020, 2, 10)}
-                disabledAfter={new Date(2020, 2, 20)}
-                view={v}
-              />
-            </Card>
+            <Calendar
+              date={new Date(2020, 2, 15)}
+              disabledBefore={new Date(2020, 2, 10)}
+              disabledAfter={new Date(2020, 2, 20)}
+              view={v}
+            />
           </div>
         ))}
       </div>

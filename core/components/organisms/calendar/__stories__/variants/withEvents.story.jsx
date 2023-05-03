@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Calendar from '../../Calendar';
-import Card from '@/components/atoms/card';
-import Heading from '@/components/atoms/heading';
+import { Calendar, Heading } from '@/index';
 
 // CSF format story
 export const dateWithEvents = () => {
@@ -9,16 +7,12 @@ export const dateWithEvents = () => {
     <div className="d-flex mt-8">
       <div className="mr-8">
         <Heading>size: small</Heading>
-        <Card className="d-inline-flex" shadow="light">
-          <Calendar events={{ '12/21/2021': true }} date={new Date('12/21/2021')} size={'small'} />
-        </Card>
+        <Calendar events={{ '12/21/2021': true }} date={new Date('12/21/2021')} size={'small'} />
       </div>
 
       <div>
         <Heading>size: large</Heading>
-        <Card className="d-inline-flex" shadow="light">
-          <Calendar events={{ '12/20/2021': true }} date={new Date('12/21/2021')} size={'large'} />
-        </Card>
+        <Calendar events={{ '12/20/2021': true }} date={new Date('12/21/2021')} size={'large'} />
       </div>
     </div>
   );

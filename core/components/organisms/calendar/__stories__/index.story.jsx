@@ -1,7 +1,6 @@
 import * as React from 'react';
-import Calendar from '../Calendar';
-import Card from '@/components/atoms/card';
 import { action } from '@/utils/action';
+import { Calendar } from '@/index';
 
 // CSF format story
 export const all = () => {
@@ -93,21 +92,19 @@ export const all = () => {
   };
 
   return (
-    <Card className="d-inline-flex" shadow="light">
-      <Calendar
-        monthsInView={monthsInView}
-        rangePicker={rangePicker}
-        jumpView={jumpView}
-        date={convertToDate(dateValue)}
-        startDate={convertToDate(startDate)}
-        endDate={convertToDate(endDate)}
-        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
-        onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
-        view={view}
-        firstDayOfWeek={firstDayOfWeek}
-        {...attr}
-      />
-    </Card>
+    <Calendar
+      monthsInView={monthsInView}
+      rangePicker={rangePicker}
+      jumpView={jumpView}
+      date={convertToDate(dateValue)}
+      startDate={convertToDate(startDate)}
+      endDate={convertToDate(endDate)}
+      onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
+      onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
+      view={view}
+      firstDayOfWeek={firstDayOfWeek}
+      {...attr}
+    />
   );
 };
 

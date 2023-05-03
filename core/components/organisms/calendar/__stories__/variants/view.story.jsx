@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Calendar from '../../Calendar';
-import Card from '@/components/atoms/card';
-import Heading from '@/components/atoms/heading';
+import { Calendar, Heading } from '@/index';
 
 // CSF format story
 export const view = () => {
@@ -14,9 +12,7 @@ export const view = () => {
         <div className="d-flex">
           {view.map((v, index) => (
             <div className="mr-8" key={index}>
-              <Card className="d-inline-flex" shadow="light">
-                <Calendar date={new Date(2020, 2, 15)} size={'small'} view={v} />
-              </Card>
+              <Calendar date={new Date(2020, 2, 15)} size={'small'} view={v} />
             </div>
           ))}
         </div>
@@ -27,9 +23,7 @@ export const view = () => {
         <div className="d-flex">
           {view.map((v, index) => (
             <div className="mr-8" key={index}>
-              <Card className="d-inline-flex" shadow="light">
-                <Calendar date={new Date(2020, 2, 15)} size={'large'} view={v} />
-              </Card>
+              <Calendar date={new Date(2020, 2, 15)} size={'large'} view={v} />
             </div>
           ))}
         </div>
