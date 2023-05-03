@@ -173,6 +173,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
+  const [isInputBlank, setIsInputBlank] = React.useState<boolean>(!value);
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -202,7 +203,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   const leftIconClass = classNames({
     ['Input-icon']: true,
     ['Input-icon--left']: true,
-    ['Input-icon--disabled']: !value,
+    ['Input-icon--inputBlank']: isInputBlank,
+    ['Input-icon--error']: error,
   });
 
   const rightIconClass = classNames({
@@ -226,6 +228,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       style={{ minWidth }}
       onClick={() => ref.current?.focus()}
       role="presentation"
+      onBlur={() => setIsInputBlank(!ref.current?.value)}
     >
       {inlineLabel && (
         <div className="Input-inlineLabel">

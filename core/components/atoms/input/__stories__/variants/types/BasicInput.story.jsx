@@ -7,7 +7,7 @@ export const basic = () => {
   return (
     <div className="Row">
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} />
+        <Input name="input" onChange={action('on-change')} />
         <br />
         <Text weight="strong">Default</Text>
       </div>
@@ -17,24 +17,23 @@ export const basic = () => {
           value=""
           placeholder="Placeholder"
           onChange={action('on-change')}
-          onClear={action('on-clear')}
-          info="sample info popover"
+          info="sample info tooltip"
         />
         <br />
         <Text weight="strong">Placeholder</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} error={true} />
+        <Input name="input" onChange={action('on-change')} error={true} />
         <br />
         <Text weight="strong">Error</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" onChange={action('on-change')} disabled={true} />
+        <Input name="input" value="Value" disabled={true} />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" />
+        <Input name="input" value="Value" readOnly={true} />
         <br />
         <Text weight="strong">Read Only</Text>
       </div>

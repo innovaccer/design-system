@@ -19,26 +19,21 @@
 }
 
 .Input--tiny {
-  height: var(--spacing-xl);
+  height: var(--font-height-m);
   padding-top: var(--spacing-m);
   padding-bottom: var(--spacing-m);
 }
 
 .Input--regular {
-  height: var(--spacing-3);
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  height: var(--font-height-l);
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 .Input--large {
   height: 40px;
   padding-top: var(--spacing);
   padding-bottom: var(--spacing);
-}
-
-.Input--large .Input-input {
-  line-height: var(--font-height-m);
-  font-size: var(--font-size-m);
 }
 
 .Input:hover {
@@ -53,7 +48,7 @@
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
-.Input:focus-within .Input-icon--left .Icon {
+.Input:focus-within .Input-icon--left {
   color: var(--primary);
 }
 
@@ -62,7 +57,7 @@
   box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
-.Input--error:focus-within .Input-icon--left .Icon {
+.Input--error:focus-within .Input-icon--left {
   color: var(--alert);
 }
 
@@ -72,7 +67,7 @@
   pointer-events: none;
 }
 
-.Input--disabled .Input-icon--left .Icon {
+.Input--disabled .Input-icon--left {
   color: var(--inverse-lightest);
 }
 
@@ -107,19 +102,32 @@
   color: var(--inverse-lighter);
 }
 
+.Input-input--regular {
+  line-height: var(--font-height);
+}
+
+.Input-input--large {
+  line-height: var(--font-height-m);
+  font-size: var(--font-size-m);
+}
+
 .Input-icon {
   display: flex;
   align-content: center;
   font-size: var(--font-size-m);
 }
 
-.Input-icon--left .Icon {
+.Input-icon--left {
   margin-right: var(--spacing);
+  color: var(--inverse);
+}
+
+.Input-icon--inputBlank {
   color: var(--inverse-lighter);
 }
 
-.Input-icon--disabled .Icon {
-  color: var(--inverse-lighter);
+.Input-icon--error {
+  color: var(--alert);
 }
 
 .Input-icon--right {

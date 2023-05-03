@@ -40,6 +40,7 @@ export const controlledInput = () => {
         placeholder="PlaceHolder"
         onChange={onChangeHandler}
         onClear={onClearHandler}
+        className="ml-6"
       />
     </div>
   );
@@ -85,6 +86,7 @@ const customCode = `() => {
         placeholder="PlaceHolder"
         onChange={onChangeHandler}
         onClear={onClearHandler}
+        className="ml-6"
       />
     </div>
   );
