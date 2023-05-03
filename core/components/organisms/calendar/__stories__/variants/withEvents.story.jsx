@@ -33,7 +33,7 @@ export const withEvents = () => {
 };
 
 export default {
-  title: 'Components/Calendar/Variants/With Events',
+  title: 'Date & Time/Calendar/Variants/With Events',
   component: Calendar,
   parameters: {
     docs: {

@@ -8,7 +8,7 @@ export const ExpandedButton = () => (
 );
 
 export default {
-  title: 'Components/Button/Expanded Button',
+  title: 'Actions/Button/Expanded Button',
   component: Button,
   parameters: {
     docs: {

@@ -51,7 +51,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants/Size',
+  title: 'Inputs/Dropdown/Variants/Size',
   component: Dropdown,
   parameters: {
     docs: {

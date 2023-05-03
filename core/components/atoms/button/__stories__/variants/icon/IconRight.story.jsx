@@ -46,7 +46,7 @@ export const iconRight = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants/Icon/Icon Right',
+  title: 'Actions/Button/Variants/Icon/Icon Right',
   component: Button,
   parameters: {
     docs: {

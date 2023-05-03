@@ -97,7 +97,7 @@ export const basic = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants/State/Basic',
+  title: 'Actions/Button/Variants/State/Basic',
   component: Button,
   parameters: {
     docs: {

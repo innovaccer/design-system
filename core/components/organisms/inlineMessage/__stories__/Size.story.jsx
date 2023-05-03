@@ -23,6 +23,6 @@ export const Size = () => {
 };
 
 export default {
-  title: 'Components/InlineMessage/Size',
+  title: 'Indicators/InlineMessage/Size',
   component: InlineMessage,
 };

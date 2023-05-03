@@ -68,7 +68,7 @@ export const primary = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants/State/Primary',
+  title: 'Actions/Button/Variants/State/Primary',
   component: Button,
   parameters: {
     docs: {

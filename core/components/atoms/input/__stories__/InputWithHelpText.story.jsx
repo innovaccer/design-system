@@ -108,7 +108,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Text Input/Input/Input With Help Text',
+  title: 'Inputs/Input/Input With Help Text',
   component: Input,
   parameters: {
     docs: {

@@ -59,7 +59,7 @@ export const dropdownWithHelpText = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Dropdown With Help Text',
+  title: 'Inputs/Dropdown/Dropdown With Help Text',
   component: Dropdown,
   parameters: {
     docs: {

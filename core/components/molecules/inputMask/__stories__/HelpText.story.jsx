@@ -34,6 +34,6 @@ export const helpText = () => {
 };
 
 export default {
-  title: 'Text Input/InputMask/Help Text',
+  title: 'Inputs/InputMask/Help Text',
   component: InputMask,
 };

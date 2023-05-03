@@ -43,7 +43,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Text Input/MetricInput/With Suffix',
+  title: 'Inputs/MetricInput/With Suffix',
   component: MetricInput,
   parameters: {
     docs: {

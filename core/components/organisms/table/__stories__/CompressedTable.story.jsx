@@ -203,7 +203,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Compressed Table',
+  title: 'Layout/Table/Compressed Table',
   parameters: {
     docs: {
       docPage: {

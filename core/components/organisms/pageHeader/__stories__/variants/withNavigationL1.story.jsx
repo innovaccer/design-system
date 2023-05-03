@@ -141,7 +141,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 1/Variants/With Navigation',
+  title: 'Layout/PageHeader/Level 1/Variants/With Navigation',
   component: PageHeader,
   parameters: {
     docs: {

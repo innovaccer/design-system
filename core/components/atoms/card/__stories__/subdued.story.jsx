@@ -11,7 +11,7 @@ export const Subdued = () => {
 };
 
 export default {
-  title: 'Components/Card/Subdued',
+  title: 'Layout/Card/Subdued',
   component: CardSubdued,
   parameters: {
     docs: {

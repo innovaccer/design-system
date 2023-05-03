@@ -59,7 +59,7 @@ export const dropdownWithActionButtons = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Dropdown With Action Buttons',
+  title: 'Inputs/Dropdown/Dropdown With Action Buttons',
   component: Dropdown,
   parameters: {
     docs: {

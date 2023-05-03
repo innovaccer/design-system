@@ -90,7 +90,7 @@ const customCode = `() => {
   );
 };`;
 export default {
-  title: 'Text Input/Input/Variants/Controlled Input',
+  title: 'Inputs/Input/Variants/Controlled Input',
   component: Input,
   parameters: {
     docs: {

@@ -312,7 +312,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Resource Table',
+  title: 'Layout/Table/Resource Table',
   component: Table,
   parameters: {
     docs: {

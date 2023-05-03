@@ -22,6 +22,6 @@ export const HorizontalDivider = () => {
 };
 
 export default {
-  title: 'Components/Divider/variants/Horizontal Divider',
+  title: 'Layout/Divider/variants/Horizontal Divider',
   component: Divider,
 };

@@ -44,7 +44,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Collapsible/Custom Trigger',
+  title: 'Navigation/Collapsible/Custom Trigger',
   component: Collapsible,
   parameters: {
     docs: {

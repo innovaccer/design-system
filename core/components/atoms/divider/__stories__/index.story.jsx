@@ -86,6 +86,6 @@ export const All = () => {
 };
 
 export default {
-  title: 'Components/Divider/All',
+  title: 'Layout/Divider/All',
   component: Divider,
 };

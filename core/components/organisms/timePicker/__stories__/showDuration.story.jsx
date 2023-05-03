@@ -38,7 +38,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/TimePicker/Time Duration',
+  title: 'Date & Time/TimePicker/Time Duration',
   component: TimePickerWithInput,
   subcomponents: { TimePickerWithSearch },
   parameters: {

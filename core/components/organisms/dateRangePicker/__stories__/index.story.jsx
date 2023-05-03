@@ -81,7 +81,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/DateRangePicker/All',
+  title: 'Date & Time/DateRangePicker/All',
   component: DateRangePicker,
   subcomponents: { InputMask },
 };

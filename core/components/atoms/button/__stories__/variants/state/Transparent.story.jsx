@@ -97,7 +97,7 @@ export const transparent = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants/State/Transparent',
+  title: 'Actions/Button/Variants/State/Transparent',
   component: Button,
   parameters: {
     docs: {

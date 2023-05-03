@@ -116,7 +116,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Table As Option List',
+  title: 'Layout/Table/Table As Option List',
   parameters: {
     docs: {
       docPage: {

@@ -12,7 +12,7 @@ export const error = () => {
 };
 
 export default {
-  title: 'Text Input/VerificationCodeInput/Variants/Error',
+  title: 'Inputs/VerificationCodeInput/Variants/Error',
   component: VerificationCodeInput,
   parameters: {
     docs: {

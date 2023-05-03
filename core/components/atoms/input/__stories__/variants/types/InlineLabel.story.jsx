@@ -23,7 +23,7 @@ export const inlineLabel = () => {
 };
 
 export default {
-  title: 'Text Input/Input/Variants/Types/Inline Label',
+  title: 'Inputs/Input/Variants/Types/Inline Label',
   component: Input,
   parameters: {
     docs: {

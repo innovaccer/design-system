@@ -30,7 +30,7 @@ export const searchInDropdown = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Search In Dropdown',
+  title: 'Inputs/Dropdown/Search In Dropdown',
   component: Dropdown,
   parameters: {
     docs: {

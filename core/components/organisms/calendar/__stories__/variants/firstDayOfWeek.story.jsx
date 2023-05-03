@@ -22,7 +22,7 @@ export const firstDayOfWeek = () => {
 };
 
 export default {
-  title: 'Components/Calendar/Variants/First Day Of Week',
+  title: 'Date & Time/Calendar/Variants/First Day Of Week',
   component: Calendar,
   parameters: {
     docs: {

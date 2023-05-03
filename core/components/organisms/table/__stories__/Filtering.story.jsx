@@ -831,7 +831,7 @@ import './style.css';
 }`;
 
 export default {
-  title: 'Components/Table/Filtering',
+  title: 'Layout/Table/Filtering',
   parameters: {
     docs: {
       docPage: {

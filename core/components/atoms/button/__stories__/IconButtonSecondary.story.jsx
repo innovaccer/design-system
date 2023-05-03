@@ -6,7 +6,7 @@ export const iconButton = () => (
 );
 
 export default {
-  title: 'Components/Button/Icon Button',
+  title: 'Actions/Button/Icon Button',
   component: Button,
   parameters: {
     docs: {

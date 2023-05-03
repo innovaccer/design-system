@@ -4,7 +4,7 @@ import Button from '../Button';
 export const transparentIconButton = () => <Button appearance="transparent" icon="more_horiz" aria-label="Menu" />;
 
 export default {
-  title: 'Components/Button/Transparent Icon Button',
+  title: 'Actions/Button/Transparent Icon Button',
   component: Button,
   parameters: {
     docs: {

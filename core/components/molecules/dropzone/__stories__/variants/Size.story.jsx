@@ -119,7 +119,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropzone/Variants/Size',
+  title: 'File Inputs/Dropzone/Variants/Size',
   component: Dropzone,
   parameters: {
     docs: {

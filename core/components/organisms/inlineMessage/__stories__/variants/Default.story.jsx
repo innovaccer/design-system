@@ -5,6 +5,6 @@ import { InlineMessage } from '@/index';
 export const defaultMessage = () => <InlineMessage description="Create a strong, unique password." />;
 
 export default {
-  title: 'Components/InlineMessage/Variants/Default Message',
+  title: 'Indicators/InlineMessage/Variants/Default Message',
   component: InlineMessage,
 };

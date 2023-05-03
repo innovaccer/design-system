@@ -5,6 +5,6 @@ import { InlineMessage } from '@/index';
 export const successMessage = () => <InlineMessage appearance="success" description="Inline message goes here." />;
 
 export default {
-  title: 'Components/InlineMessage/Variants/Success Message',
+  title: 'Indicators/InlineMessage/Variants/Success Message',
   component: InlineMessage,
 };

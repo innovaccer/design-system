@@ -38,7 +38,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/TimePicker/Disabled Option',
+  title: 'Date & Time/TimePicker/Disabled Option',
   component: TimePickerWithInput,
   subcomponents: { TimePickerWithSearch },
   parameters: {

@@ -12,7 +12,7 @@ export const WithSixFields = () => {
 };
 
 export default {
-  title: 'Text Input/VerificationCodeInput/With Six Fields',
+  title: 'Inputs/VerificationCodeInput/With Six Fields',
   component: VerificationCodeInput,
   parameters: {
     docs: {

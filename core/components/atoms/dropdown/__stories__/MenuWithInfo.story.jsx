@@ -19,7 +19,7 @@ export const dropdownAsMenuWithSubinfo = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Dropdown As Menu With Subinfo',
+  title: 'Inputs/Dropdown/Dropdown As Menu With Subinfo',
   component: Dropdown,
   parameters: {
     docs: {

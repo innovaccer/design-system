@@ -37,7 +37,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Text Input/MetricInput/Variants/Controlled Metric Input',
+  title: 'Inputs/MetricInput/Variants/Controlled Metric Input',
   component: MetricInput,
   parameters: {
     docs: {

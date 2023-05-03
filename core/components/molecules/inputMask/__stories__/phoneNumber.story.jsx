@@ -17,6 +17,6 @@ export const phoneNumber = () => {
 };
 
 export default {
-  title: 'Text Input/InputMask/Phone Number',
+  title: 'Inputs/InputMask/Phone Number',
   component: InputMask,
 };

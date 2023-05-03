@@ -68,7 +68,7 @@ export const alert = () => {
 };
 
 export default {
-  title: 'Components/Button/Variants/State/Alert',
+  title: 'Actions/Button/Variants/State/Alert',
   component: Button,
   parameters: {
     docs: {

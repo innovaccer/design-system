@@ -18,6 +18,6 @@ export const noSearchResults = () => {
 };
 
 export default {
-  title: 'Components/EmptyState/No Search Results',
+  title: 'Layout/EmptyState/No Search Results',
   component: EmptyState,
 };

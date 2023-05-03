@@ -11,6 +11,6 @@ export const alertMessage = () => (
 );
 
 export default {
-  title: 'Components/Message/Alert Message',
+  title: 'Indicators/Message/Alert Message',
   component: Message,
 };

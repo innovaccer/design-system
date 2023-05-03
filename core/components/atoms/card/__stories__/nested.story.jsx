@@ -99,6 +99,6 @@ export const CardWithinACard = () => {
 };
 
 export default {
-  title: 'Components/Card/Card Within A Card',
+  title: 'Layout/Card/Card Within A Card',
   component: Card,
 };

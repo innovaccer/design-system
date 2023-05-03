@@ -17,6 +17,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Text Input/ChipInput/All',
+  title: 'Inputs/ChipInput/All',
   component: ChipInput,
 };

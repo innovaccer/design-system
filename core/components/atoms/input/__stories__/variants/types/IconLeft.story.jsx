@@ -44,7 +44,7 @@ export const iconLeft = () => {
 };
 
 export default {
-  title: 'Text Input/Input/Variants/Types/Icon Left',
+  title: 'Inputs/Input/Variants/Types/Icon Left',
   component: Input,
   parameters: {
     docs: {

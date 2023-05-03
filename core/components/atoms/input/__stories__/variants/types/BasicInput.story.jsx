@@ -43,7 +43,7 @@ export const basic = () => {
 };
 
 export default {
-  title: 'Text Input/Input/Variants/Types/Basic',
+  title: 'Inputs/Input/Variants/Types/Basic',
   component: Input,
   parameters: {
     docs: {

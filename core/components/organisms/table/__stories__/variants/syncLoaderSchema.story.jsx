@@ -43,7 +43,7 @@ export const syncLoaderSchema = () => {
 };
 
 export default {
-  title: 'Components/Table/Variants/Sync Loader Schema',
+  title: 'Layout/Table/Variants/Sync Loader Schema',
   component: Table,
   parameters: {
     docs: {

@@ -8,7 +8,7 @@ export const AlertButton = () => (
 );
 
 export default {
-  title: 'Components/Button/Alert Button',
+  title: 'Actions/Button/Alert Button',
   component: Button,
   parameters: {
     docs: {

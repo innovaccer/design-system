@@ -69,6 +69,6 @@ export const BasicDividerInCard = () => {
 };
 
 export default {
-  title: 'Components/Divider/Basic Divider In Card',
+  title: 'Layout/Divider/Basic Divider In Card',
   component: Divider,
 };

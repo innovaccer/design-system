@@ -146,7 +146,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/FileList/All',
+  title: 'File Inputs/FileList/All',
   component: FileList,
   parameters: {
     docs: {

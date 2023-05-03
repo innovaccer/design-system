@@ -11,6 +11,6 @@ export const successMessage = () => (
 );
 
 export default {
-  title: 'Components/Message/Success Message',
+  title: 'Indicators/Message/Success Message',
   component: Message,
 };

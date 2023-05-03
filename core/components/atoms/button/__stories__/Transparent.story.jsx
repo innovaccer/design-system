@@ -8,7 +8,7 @@ export const transparentButton = () => (
 );
 
 export default {
-  title: 'Components/Button/Transparent Button',
+  title: 'Actions/Button/Transparent Button',
   component: Button,
   parameters: {
     docs: {

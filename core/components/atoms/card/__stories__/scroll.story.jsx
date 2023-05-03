@@ -108,7 +108,7 @@ const customCode = `/*
 `;
 
 export default {
-  title: 'Components/Card/Scrollable Content',
+  title: 'Layout/Card/Scrollable Content',
   component: Card,
   parameters: {
     docs: {

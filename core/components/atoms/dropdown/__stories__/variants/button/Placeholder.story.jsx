@@ -49,7 +49,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants/Trigger/Placeholder',
+  title: 'Inputs/Dropdown/Variants/Trigger/Placeholder',
   component: Dropdown,
   parameters: {
     docs: {
