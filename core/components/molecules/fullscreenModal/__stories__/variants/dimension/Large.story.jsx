@@ -112,7 +112,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Components/FullscreenModal/Variants/Dimesion/Large',
+  title: 'Components/Modals/FullscreenModal/Variants/Dimesion/Large',
   component: FullscreenModal,
   parameters: {
     docs: {

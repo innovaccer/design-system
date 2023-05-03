@@ -184,7 +184,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Components/FullscreenModal/Layering',
+  title: 'Components/Modals/FullscreenModal/Layering',
   component: FullscreenModal,
   parameters: {
     docs: {

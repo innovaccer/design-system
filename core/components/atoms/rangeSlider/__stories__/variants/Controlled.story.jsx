@@ -48,7 +48,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/RangeSlider/Variants/Controlled Slider',
+  title: 'Components/Sliders/RangeSlider/Variants/Controlled Slider',
   component: RangeSlider,
   parameters: {
     docs: {

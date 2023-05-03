@@ -9,7 +9,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Paragraph/All',
+  title: 'Components/ProgressIndicators/Loaders/Placeholder/Paragraph/All',
   component: PlaceholderParagraph,
   parameters: {
     docs: {

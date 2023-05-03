@@ -20,7 +20,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Paragraph/Variants/Size',
+  title: 'Components/ProgressIndicators/Loaders/Placeholder/Paragraph/Variants/Size',
   component: PlaceholderParagraph,
   parameters: {
     docs: {

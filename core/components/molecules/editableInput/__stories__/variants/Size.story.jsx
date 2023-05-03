@@ -73,7 +73,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EditableInput/Variants/Size',
+  title: 'Components/InlineEditableFields/EditableInput/Variants/Size',
   component: EditableInput,
   parameters: {
     docs: {

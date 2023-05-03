@@ -100,7 +100,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/EditableDropdown/All',
+  title: 'Components/InlineEditableFields/EditableDropdown/All',
   component: EditableDropdown,
   parameters: {
     docs: {

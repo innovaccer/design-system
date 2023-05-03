@@ -45,7 +45,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Input/Input With Label',
+  title: 'Components/Inputs/Input/Input With Label',
   component: Input,
   parameters: {
     docs: {

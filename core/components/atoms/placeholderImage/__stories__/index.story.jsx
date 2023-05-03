@@ -14,7 +14,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Image/All',
+  title: 'Components/ProgressIndicators/Loaders/Placeholder/Image/All',
   component: PlaceholderImage,
   parameters: {
     docs: {

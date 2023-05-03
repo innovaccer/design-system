@@ -89,7 +89,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Modal/Variants/Dimesion/Medium',
+  title: 'Components/Modals/Modal/Variants/Dimesion/Medium',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

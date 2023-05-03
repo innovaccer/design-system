@@ -62,7 +62,7 @@ export const withInput = () => {
 };
 
 export default {
-  title: 'Components/DateRangePicker/Variants/With Input',
+  title: 'Components/DatePicker/DateRangePicker/Variants/With Input',
   component: DateRangePicker,
   subcomponents: { InputMask },
 };

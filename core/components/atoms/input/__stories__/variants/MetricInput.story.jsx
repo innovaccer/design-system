@@ -22,7 +22,7 @@ export const metricInput = () => {
 };
 
 export default {
-  title: 'Components/Input/Variants/Metric Input',
+  title: 'Components/Inputs/Input/Variants/Metric Input',
   component: Input,
   parameters: {
     docs: {

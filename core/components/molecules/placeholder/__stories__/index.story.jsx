@@ -23,7 +23,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/All',
+  title: 'Components/ProgressIndicators/Loaders/Placeholder/All',
   component: Placeholder,
   subcomponents: { PlaceholderImage, PlaceholderParagraph },
 };

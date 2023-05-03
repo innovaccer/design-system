@@ -41,6 +41,6 @@ export const all = () => {
   return <ChipGroup onClose={action(`onClose event`)} onClick={action(`onClick event`)} list={list} />;
 };
 export default {
-  title: 'Components/ChipGroup/All',
+  title: 'Components/Chip/ChipGroup/All',
   component: ChipGroup,
 };

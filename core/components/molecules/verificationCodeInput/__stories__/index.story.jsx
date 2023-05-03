@@ -46,7 +46,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/VerificationCodeInput/All',
+  title: 'Components/Inputs/VerificationCodeInput/All',
   component: VerificationCodeInput,
   parameters: {
     docs: {

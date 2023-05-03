@@ -5,6 +5,6 @@ import Spinner from '../Spinner';
 export const modalLoader = () => <Spinner appearance="primary" size="medium" />;
 
 export default {
-  title: 'Components/Loaders/Spinner/Modal Loader',
+  title: 'Components/ProgressIndicators/Loaders/Spinner/Modal Loader',
   component: Spinner,
 };

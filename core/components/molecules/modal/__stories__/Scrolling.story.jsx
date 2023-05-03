@@ -208,7 +208,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Modal/Scrolling',
+  title: 'Components/Modals/Modal/Scrolling',
   component: Modal,
   parameters: {
     docs: {

@@ -24,7 +24,7 @@ export const imageSize = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Variants/Image Size',
+  title: 'Components/ProgressIndicators/Loaders/Placeholder/Variants/Image Size',
   component: Placeholder,
   subcomponents: { PlaceholderImage, PlaceholderParagraph },
 };

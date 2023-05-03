@@ -43,7 +43,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/MetricInput/With Prefix',
+  title: 'Components/Inputs/MetricInput/With Prefix',
   component: MetricInput,
   parameters: {
     docs: {

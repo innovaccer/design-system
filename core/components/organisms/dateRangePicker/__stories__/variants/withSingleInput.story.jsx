@@ -64,7 +64,7 @@ export const withSingleInput = () => {
 };
 
 export default {
-  title: 'Components/DateRangePicker/Variants/With Single Input',
+  title: 'Components/DatePicker/DateRangePicker/Variants/With Single Input',
   component: DateRangePicker,
   subcomponents: { InputMask },
 };

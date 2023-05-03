@@ -35,7 +35,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Avatar/Variants/Appearance',
+  title: 'Components/Avatar/Avatar/Variants/Appearance',
   component: Avatar,
   parameters: {
     docs: {

@@ -225,7 +225,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Components/FullscreenModal/Two Steps Workflow',
+  title: 'Components/Modals/FullscreenModal/Two Steps Workflow',
   component: FullscreenModal,
   parameters: {
     docs: {

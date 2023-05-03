@@ -14,7 +14,7 @@ export const actionChip = () => (
 );
 
 export default {
-  title: 'Components/Chip/Action Chip',
+  title: 'Components/Chip/Chip/Action Chip',
   component: Chip,
   parameters: {
     docs: {

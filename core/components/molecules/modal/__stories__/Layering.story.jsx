@@ -147,7 +147,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Modal/Layering',
+  title: 'Components/Modals/Modal/Layering',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

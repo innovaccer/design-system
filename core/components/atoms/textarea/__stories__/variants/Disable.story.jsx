@@ -25,7 +25,7 @@ export const Disable = () => {
 };
 
 export default {
-  title: 'Components/Textarea/Variants/Disable',
+  title: 'Components/Inputs/Textarea/Variants/Disable',
   component: Textarea,
   parameters: {
     docs: {

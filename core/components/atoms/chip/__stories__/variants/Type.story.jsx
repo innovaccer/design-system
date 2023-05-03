@@ -34,7 +34,7 @@ export const Types = () => {
   );
 };
 export default {
-  title: 'Components/Chip/Variants/Types',
+  title: 'Components/Chip/Chip/Variants/Types',
   component: Chip,
   parameters: {
     docs: {

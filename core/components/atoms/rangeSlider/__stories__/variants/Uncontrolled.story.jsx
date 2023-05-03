@@ -17,6 +17,6 @@ export const uncontrolledSlider = () => {
 };
 
 export default {
-  title: 'Components/RangeSlider/Variants/Uncontrolled Slider',
+  title: 'Components/Sliders/RangeSlider/Variants/Uncontrolled Slider',
   component: RangeSlider,
 };
