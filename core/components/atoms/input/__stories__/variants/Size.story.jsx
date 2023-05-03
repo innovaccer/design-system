@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input, Text } from '@/index';
+import { Input, Label } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
@@ -15,7 +15,9 @@ export const size = () => {
       {sizes.map((InputSize, ind) => {
         return (
           <div key={ind} className="mr-9 mb-8 w-25">
-            <Text weight="strong">{InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}</Text>
+            <Label htmlFor={InputSize} withInput={true}>
+              {InputSize.charAt(0).toUpperCase() + InputSize.slice(1)}
+            </Label>
             <Input
               name="input"
               value={value}

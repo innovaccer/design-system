@@ -508,7 +508,7 @@ exports[`Input component
       style="min-width: 256px;"
     >
       <div
-        class="Input-icon Input-icon--left"
+        class="Input-icon Input-icon--left Input-icon--error"
       >
         <i
           class="material-icons material-icons-round Icon"

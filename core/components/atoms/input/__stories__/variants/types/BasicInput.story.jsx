@@ -18,7 +18,7 @@ export const basic = () => {
           placeholder="Placeholder"
           onChange={action('on-change')}
           onClear={action('on-clear')}
-          info="sample info popover"
+          info="sample info tooltip"
         />
         <br />
         <Text weight="strong">Placeholder</Text>
@@ -34,7 +34,7 @@ export const basic = () => {
         <Text weight="strong">Disabled</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" />
+        <Input name="input" value="Value" readOnly={true} />
         <br />
         <Text weight="strong">Read Only</Text>
       </div>

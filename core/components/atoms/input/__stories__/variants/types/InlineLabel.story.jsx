@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input, Text } from '@/index';
+import { Input, Label } from '@/index';
 import { action } from '@/utils/action';
 
 // CSF format story
@@ -8,15 +8,17 @@ export const inlineLabel = () => {
   return (
     <div>
       <div className="w-25">
-        <Input name="input" type="number" size="regular" inlineLabel={label} onChange={action('on-change')} />
-        <br />
-        <Text weight="strong">Regular</Text>
+        <Label htmlFor="regular" withInput={true}>
+          Regular
+        </Label>
+        <Input name="input" size="regular" inlineLabel={label} onChange={action('on-change')} />
       </div>
       <br />
       <div className="w-25">
-        <Input name="input" type="number" size="large" inlineLabel={label} onChange={action('on-change')} />
-        <br />
-        <Text weight="strong">Large</Text>
+        <Label htmlFor="large" withInput={true}>
+          Large
+        </Label>
+        <Input name="input" size="large" inlineLabel={label} onChange={action('on-change')} />
       </div>
     </div>
   );

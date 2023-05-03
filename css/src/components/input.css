@@ -12,22 +12,27 @@
   box-sizing: border-box;
   border-radius: var(--spacing-m);
   border: var(--border);
-  padding-right: var(--spacing-l);
-  padding-left: var(--spacing-l);
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
   background: var(--white);
   transition: var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Input--tiny {
-  height: var(--spacing-xl);
+  height: var(--font-height-m);
   padding-top: var(--spacing-m);
   padding-bottom: var(--spacing-m);
+  padding-left: var(--spacing-m);
 }
 
 .Input--regular {
-  height: var(--spacing-3);
-  padding-top: var(--spacing);
-  padding-bottom: var(--spacing);
+  height: var(--font-height-l);
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.Input--regular .Input-input {
+  line-height: var(--font-height);
 }
 
 .Input--large {
@@ -115,11 +120,15 @@
 
 .Input-icon--left .Icon {
   margin-right: var(--spacing);
-  color: var(--inverse-lighter);
+  color: var(--inverse);
 }
 
 .Input-icon--disabled .Icon {
   color: var(--inverse-lighter);
+}
+
+.Input-icon--error .Icon {
+  color: var(--alert);
 }
 
 .Input-icon--right {

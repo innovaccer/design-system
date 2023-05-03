@@ -18,7 +18,7 @@ export const iconLeft = () => {
           placeholder="Placeholder"
           onChange={action('on-change')}
           onClear={action('on-clear')}
-          info="sample info popover"
+          info="sample info tooltip"
           icon={icon}
         />
         <br />
@@ -35,7 +35,7 @@ export const iconLeft = () => {
         <Text weight="strong">Disabled</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" icon={icon} />
+        <Input name="input" value="Value" icon={icon} readOnly={true} />
         <br />
         <Text weight="strong">Read Only</Text>
       </div>

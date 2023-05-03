@@ -8,7 +8,7 @@ export const all = () => {
 
   const value = '';
 
-  const size = 'large';
+  const size = 'regular';
 
   const placeholder = 'Placeholder';
 
@@ -24,7 +24,7 @@ export const all = () => {
 
   const error = false;
 
-  const info = 'sample info popover';
+  const info = 'sample info tooltip';
 
   const pattern = '';
 
