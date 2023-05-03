@@ -8,7 +8,7 @@ export const subtleAlert = () => (
 );
 
 export default {
-  title: 'Components/Badge/Subtle Alert',
+  title: 'Indicators/Badge/Subtle Alert',
   component: Badge,
   parameters: {
     docs: {

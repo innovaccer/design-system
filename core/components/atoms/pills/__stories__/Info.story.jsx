@@ -8,7 +8,7 @@ export const info = () => (
 );
 
 export default {
-  title: 'Components/Pills/Info',
+  title: 'Indicators/Pills/Info',
   component: Pills,
   parameters: {
     docs: {

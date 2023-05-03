@@ -16,7 +16,7 @@ const customCode = `() => {
 export const withAnimation = () => <></>;
 
 export default {
-  title: 'Components/ProgressBar/With Animation',
+  title: 'Indicators/ProgressBar/With Animation',
   component: ProgressBar,
   parameters: {
     docs: {

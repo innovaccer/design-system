@@ -8,7 +8,7 @@ export const alert = () => (
 );
 
 export default {
-  title: 'Components/Pills/Alert',
+  title: 'Indicators/Pills/Alert',
   component: Pills,
   parameters: {
     docs: {

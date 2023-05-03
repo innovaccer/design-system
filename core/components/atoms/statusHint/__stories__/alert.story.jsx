@@ -4,7 +4,7 @@ import StatusHint from '../StatusHint';
 export const alert = () => <StatusHint appearance="alert">{'Alert'}</StatusHint>;
 
 export default {
-  title: 'Components/StatusHint/Alert',
+  title: 'Indicators/StatusHint/Alert',
   component: StatusHint,
   parameters: {
     docs: {

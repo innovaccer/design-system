@@ -16,7 +16,7 @@ export const uncontrolledCheckbox = () => {
 };
 
 export default {
-  title: 'Components/Checkbox/Variants/Uncontrolled Checkbox',
+  title: 'Selection/Checkbox/Variants/Uncontrolled Checkbox',
   component: Checkbox,
   parameters: {
     docs: {

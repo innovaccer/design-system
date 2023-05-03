@@ -147,7 +147,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Components/Modal/Dialogs',
+  title: 'Overlays/Modal/Dialogs',
   component: Modal,
   parameters: {
     docs: {

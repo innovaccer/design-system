@@ -775,7 +775,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Stepper/Stepper With Animation',
+  title: 'Navigation/Stepper/Stepper With Animation',
   component: Stepper,
   parameters: {
     docs: {

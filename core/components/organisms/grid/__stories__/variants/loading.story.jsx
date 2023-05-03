@@ -44,7 +44,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Components/Grid/Variants/Grid Loading State',
+  title: 'Layout/Grid/Variants/Grid Loading State',
   parameters: {
     docs: {
       docPage: {

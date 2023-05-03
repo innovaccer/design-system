@@ -27,7 +27,7 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Components/Checkbox/Variants/Disabled',
+  title: 'Selection/Checkbox/Variants/Disabled',
   component: Checkbox,
   parameters: {
     docs: {

@@ -4,7 +4,7 @@ import StatusHint from '../StatusHint';
 export const completed = () => <StatusHint appearance="success">{'Completed'}</StatusHint>;
 
 export default {
-  title: 'Components/StatusHint/Completed',
+  title: 'Indicators/StatusHint/Completed',
   component: StatusHint,
   parameters: {
     docs: {

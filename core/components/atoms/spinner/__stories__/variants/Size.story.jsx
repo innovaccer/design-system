@@ -22,7 +22,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Spinner/Variants/Size',
+  title: 'Indicators/Loaders/Spinner/Variants/Size',
   component: Spinner,
   parameters: {
     docs: {

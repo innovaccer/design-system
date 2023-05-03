@@ -8,7 +8,7 @@ export const subtleSecondary = () => (
 );
 
 export default {
-  title: 'Components/Badge/Subtle Secondary',
+  title: 'Indicators/Badge/Subtle Secondary',
   component: Badge,
   parameters: {
     docs: {

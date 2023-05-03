@@ -52,7 +52,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Slider/Variants/Cutsom Labels',
+  title: 'Selection/Slider/Variants/Cutsom Labels',
   component: Slider,
   parameters: {
     docs: {

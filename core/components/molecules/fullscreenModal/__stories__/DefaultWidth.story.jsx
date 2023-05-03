@@ -76,7 +76,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/FullscreenModal/Default Width',
+  title: 'Overlays/FullscreenModal/Default Width',
   component: FullscreenModal,
   parameters: {
     docs: {

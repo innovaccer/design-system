@@ -74,7 +74,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dialog/Variants/SecondaryButton/Alert',
+  title: 'Deprecated/Dialog/Variants/SecondaryButton/Alert',
   component: Dialog,
   parameters: {
     docs: {

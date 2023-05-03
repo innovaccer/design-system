@@ -518,7 +518,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Horizontal Navigation With Animation',
+  title: 'Navigation/HorizontalNav/Horizontal Navigation With Animation',
   component: HorizontalNav,
   parameters: {
     docs: {

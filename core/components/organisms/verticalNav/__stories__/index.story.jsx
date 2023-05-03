@@ -186,7 +186,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/All',
+  title: 'Navigation/VerticalNav/All',
   component: VerticalNav,
   parameters: {
     docs: {

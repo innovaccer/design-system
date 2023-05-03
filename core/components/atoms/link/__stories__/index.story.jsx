@@ -26,7 +26,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Link/All',
+  title: 'Navigation/Link/All',
   component: Link,
   parameters: {
     docs: {

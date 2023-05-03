@@ -84,7 +84,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Grid/All',
+  title: 'Layout/Grid/All',
   component: Grid,
   parameters: {
     docs: {

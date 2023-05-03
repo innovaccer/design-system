@@ -5,7 +5,7 @@ import Switch from '../index';
 export const offState = () => <Switch aria-label="Off State Switch" defaultChecked={false} size="regular" />;
 
 export default {
-  title: 'Components/Switch/Off State',
+  title: 'Selection/Switch/Off State',
   component: Switch,
   parameters: {
     docs: {

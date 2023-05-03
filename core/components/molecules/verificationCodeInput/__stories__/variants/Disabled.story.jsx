@@ -12,7 +12,7 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Components/VerificationCodeInput/Variants/Disabled',
+  title: 'Text Input/VerificationCodeInput/Variants/Disabled',
   component: VerificationCodeInput,
   parameters: {
     docs: {

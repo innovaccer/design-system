@@ -81,7 +81,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs/Inline Content',
+  title: 'Navigation/Tabs/Inline Content',
   component: Tabs,
   parameters: {
     docs: {

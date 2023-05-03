@@ -20,7 +20,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Pagination/Basic Pagination',
+  title: 'Navigation/Pagination/Basic Pagination',
   component: Pagination,
   parameters: {
     docs: {

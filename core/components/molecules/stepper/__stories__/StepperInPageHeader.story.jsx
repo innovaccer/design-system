@@ -192,7 +192,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Stepper/Stepper In Page Header',
+  title: 'Navigation/Stepper/Stepper In Page Header',
   component: PageHeader,
   parameters: {
     docs: {

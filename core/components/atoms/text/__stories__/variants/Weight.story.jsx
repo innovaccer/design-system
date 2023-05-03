@@ -16,7 +16,7 @@ export const weight = () => {
 };
 
 export default {
-  title: 'Components/Text/Variants/Weight',
+  title: 'Typography/Text/Variants/Weight',
   component: Text,
   parameters: {
     docs: {

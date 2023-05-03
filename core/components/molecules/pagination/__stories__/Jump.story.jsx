@@ -34,7 +34,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Pagination/Pagination With Jump',
+  title: 'Navigation/Pagination/Pagination With Jump',
   component: Pagination,
   parameters: {
     docs: {

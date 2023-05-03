@@ -19,6 +19,6 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Components/RangeSlider/Variants/Disabled',
+  title: 'Selection/RangeSlider/Variants/Disabled',
   component: RangeSlider,
 };

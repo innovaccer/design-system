@@ -55,7 +55,7 @@ export const withLabel = () => {
 };
 
 export default {
-  title: 'Components/Input/Variants/Types/With Label',
+  title: 'Text Input/Input/Variants/Types/With Label',
   component: Input,
   parameters: {
     docs: {

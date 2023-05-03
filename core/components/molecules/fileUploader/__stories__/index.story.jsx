@@ -3,7 +3,7 @@ import * as React from 'react';
 export const all = () => <></>;
 
 export default {
-  title: 'Components/FileUploader/All',
+  title: 'Deprecated/FileUploader/All',
   parameters: {
     docs: {
       docPage: {

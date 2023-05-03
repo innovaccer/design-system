@@ -41,7 +41,7 @@ const customCode = `() => (
 )`;
 
 export default {
-  title: 'Components/Loaders/Placeholder/Variants/Image',
+  title: 'Indicators/Loaders/Placeholder/Variants/Image',
   component: Placeholder,
   subcomponents: { PlaceholderImage, PlaceholderParagraph },
   parameters: {

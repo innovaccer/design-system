@@ -37,7 +37,7 @@ export const popoverWithMenu = () => {
 };
 
 export default {
-  title: 'Components/Popover/Popover With Menu',
+  title: 'Overlays/Popover/Popover With Menu',
   component: Popover,
   parameters: {
     docs: {

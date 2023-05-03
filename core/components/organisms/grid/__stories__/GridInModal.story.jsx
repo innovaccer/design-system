@@ -179,7 +179,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Grid/Grid In Modal',
+  title: 'Layout/Grid/Grid In Modal',
   component: Grid,
   parameters: {
     docs: {

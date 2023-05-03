@@ -23,7 +23,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Heading/Variants/Appearance',
+  title: 'Typography/Heading/Variants/Appearance',
   component: Heading,
   parameters: {
     docs: {

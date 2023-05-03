@@ -8,7 +8,7 @@ export const solidAlert = () => (
 );
 
 export default {
-  title: 'Components/Badge/Solid Alert',
+  title: 'Indicators/Badge/Solid Alert',
   component: Badge,
   parameters: {
     docs: {

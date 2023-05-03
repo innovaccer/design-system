@@ -37,7 +37,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Radio/All',
+  title: 'Selection/Radio/All',
   component: Radio,
   parameters: {
     docs: {

@@ -27,7 +27,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Switch/All',
+  title: 'Selection/Switch/All',
   component: Switch,
   parameters: {
     docs: {

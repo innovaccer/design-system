@@ -5,7 +5,7 @@ import Switch from '../index';
 export const defaultSwitch = () => <Switch aria-label="Default Checked Switch" defaultChecked={true} size="regular" />;
 
 export default {
-  title: 'Components/Switch/Default Switch',
+  title: 'Selection/Switch/Default Switch',
   component: Switch,
   parameters: {
     docs: {

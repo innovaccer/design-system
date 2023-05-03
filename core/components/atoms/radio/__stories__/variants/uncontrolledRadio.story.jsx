@@ -18,7 +18,7 @@ export const UncontrolledRadioGroup = () => {
 };
 
 export default {
-  title: 'Components/Radio/Variants/Uncontrolled Radio Group',
+  title: 'Selection/Radio/Variants/Uncontrolled Radio Group',
   component: Radio,
   parameters: {
     docs: {

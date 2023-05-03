@@ -7,7 +7,7 @@ export const iconLeftInput = () => (
 );
 
 export default {
-  title: 'Components/Input/Icon Left Input',
+  title: 'Text Input/Input/Icon Left Input',
   component: Input,
   parameters: {
     docs: {

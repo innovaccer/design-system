@@ -4,7 +4,7 @@ import * as React from 'react';
 export const all = () => <></>;
 
 export default {
-  title: 'Components/Navigation/All',
+  title: 'Deprecated/Navigation/All',
   parameters: {
     docs: {
       docPage: {

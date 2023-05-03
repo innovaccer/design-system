@@ -25,6 +25,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Tooltip/All',
+  title: 'Overlays/Tooltip/All',
   component: Tooltip,
 };

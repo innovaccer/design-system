@@ -49,6 +49,6 @@ export const Grid_Cell = () => {
 };
 
 export default {
-  title: 'Components/Grid/Grid Cell',
+  title: 'Layout/Grid/Grid Cell',
   component: GridCell,
 };

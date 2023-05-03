@@ -22,7 +22,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Text/All',
+  title: 'Typography/Text/All',
   component: Text,
   parameters: {
     docs: {

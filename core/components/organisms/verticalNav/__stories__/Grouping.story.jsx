@@ -135,7 +135,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/Grouping',
+  title: 'Navigation/VerticalNav/Grouping',
   component: VerticalNav,
   parameters: {
     docs: {

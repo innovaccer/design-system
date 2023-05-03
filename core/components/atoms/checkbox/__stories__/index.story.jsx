@@ -33,6 +33,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Checkbox/All',
+  title: 'Selection/Checkbox/All',
   component: Checkbox,
 };

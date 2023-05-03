@@ -11,6 +11,6 @@ export const uncontrolled = () => {
 };
 
 export default {
-  title: 'Components/EditableInput/Variants/Uncontrolled',
+  title: 'Text Input/EditableInput/Variants/Uncontrolled',
   component: EditableInput,
 };

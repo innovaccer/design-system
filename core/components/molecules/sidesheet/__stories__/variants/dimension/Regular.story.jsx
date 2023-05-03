@@ -115,7 +115,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Sidesheet/Regular',
+  title: 'Overlays/Sidesheet/Regular',
   component: Sidesheet,
   parameters: {
     docs: {

@@ -74,7 +74,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dialog/Variants/PrimaryButton/Transparent',
+  title: 'Deprecated/Dialog/Variants/PrimaryButton/Transparent',
   component: Dialog,
   parameters: {
     docs: {

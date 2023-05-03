@@ -149,7 +149,7 @@ const customCode = `
 }`;
 
 export default {
-  title: 'Components/FullscreenModal/Two Steps',
+  title: 'Overlays/FullscreenModal/Two Steps',
   component: FullscreenModal,
   parameters: {
     docs: {

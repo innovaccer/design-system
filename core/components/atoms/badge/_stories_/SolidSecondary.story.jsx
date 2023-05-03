@@ -8,7 +8,7 @@ export const solidSecondary = () => (
 );
 
 export default {
-  title: 'Components/Badge',
+  title: 'Indicators/Badge',
   component: Badge,
   parameters: {
     docs: {

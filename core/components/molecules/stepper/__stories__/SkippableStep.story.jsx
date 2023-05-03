@@ -139,7 +139,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Stepper/Skippable Step',
+  title: 'Navigation/Stepper/Skippable Step',
   component: Stepper,
   parameters: {
     docs: {

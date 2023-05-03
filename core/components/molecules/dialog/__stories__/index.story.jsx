@@ -80,7 +80,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dialog/All',
+  title: 'Deprecated/Dialog/All',
   component: Dialog,
   parameters: {
     docs: {

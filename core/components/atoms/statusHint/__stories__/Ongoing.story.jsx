@@ -4,7 +4,7 @@ import StatusHint from '../StatusHint';
 export const ongoing = () => <StatusHint appearance="warning">{'Ongoing'}</StatusHint>;
 
 export default {
-  title: 'Components/StatusHint/Ongoing',
+  title: 'Indicators/StatusHint/Ongoing',
   component: StatusHint,
   parameters: {
     docs: {

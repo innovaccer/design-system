@@ -25,7 +25,7 @@ export const popoverWithInput = () => (
 );
 
 export default {
-  title: 'Components/Popover/Popover With Input',
+  title: 'Overlays/Popover/Popover With Input',
   component: Popover,
   parameters: {
     docs: {

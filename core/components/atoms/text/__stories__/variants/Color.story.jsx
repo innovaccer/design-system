@@ -96,7 +96,7 @@ export const color = () => {
 };
 
 export default {
-  title: 'Components/Text/Variants/Color',
+  title: 'Typography/Text/Variants/Color',
   component: Text,
   parameters: {
     docs: {

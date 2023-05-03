@@ -14,6 +14,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/ProgressBar/All',
+  title: 'Indicators/ProgressBar/All',
   component: ProgressBar,
 };

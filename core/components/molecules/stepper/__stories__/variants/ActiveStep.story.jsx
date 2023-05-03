@@ -50,7 +50,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Stepper/Variants/Active Step',
+  title: 'Navigation/Stepper/Variants/Active Step',
   component: Stepper,
   parameters: {
     docs: {

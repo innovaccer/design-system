@@ -12,7 +12,7 @@ export const CheckboxGroup = () => (
 );
 
 export default {
-  title: 'Components/Checkbox/Checkbox Group',
+  title: 'Selection/Checkbox/Checkbox Group',
   component: Checkbox,
   parameters: {
     docs: {

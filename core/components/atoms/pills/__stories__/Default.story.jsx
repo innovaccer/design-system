@@ -8,7 +8,7 @@ export const defaultPill = () => (
 );
 
 export default {
-  title: 'Components/Pills/Default Pill',
+  title: 'Indicators/Pills/Default Pill',
   component: Pills,
   parameters: {
     docs: {

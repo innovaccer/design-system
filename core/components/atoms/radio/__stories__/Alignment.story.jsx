@@ -36,7 +36,7 @@ export const AlignmentOfRadioGroup = () => (
 );
 
 export default {
-  title: 'Components/Radio/Alignment Of Radio Group',
+  title: 'Selection/Radio/Alignment Of Radio Group',
   component: Radio,
   parameters: {
     docs: {

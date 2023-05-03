@@ -61,7 +61,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs/Tabs With Icon',
+  title: 'Navigation/Tabs/Tabs With Icon',
   component: Tabs,
   parameters: {
     docs: {

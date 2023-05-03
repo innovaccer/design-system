@@ -8,7 +8,7 @@ export const subtleWarning = () => (
 );
 
 export default {
-  title: 'Components/Badge/Subtle Warning',
+  title: 'Indicators/Badge/Subtle Warning',
   component: Badge,
   parameters: {
     docs: {

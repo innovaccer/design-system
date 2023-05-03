@@ -159,7 +159,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Others/Layout/All',
+  title: 'Layout/All',
   component: Column,
   subcomponents: { Row },
 };

@@ -4,7 +4,7 @@ import StatusHint from '../StatusHint';
 export const inactive = () => <StatusHint appearance="alert">{'Inactive'}</StatusHint>;
 
 export default {
-  title: 'Components/StatusHint/Inactive',
+  title: 'Indicators/StatusHint/Inactive',
   component: StatusHint,
   parameters: {
     docs: {

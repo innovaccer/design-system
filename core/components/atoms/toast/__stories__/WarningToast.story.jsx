@@ -11,6 +11,6 @@ export const warningToast = () => (
 );
 
 export default {
-  title: 'Components/Toast/Warning Toast',
+  title: 'Indicators/Toast/Warning Toast',
   component: Toast,
 };

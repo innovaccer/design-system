@@ -19,7 +19,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Text/Variants/Size',
+  title: 'Typography/Text/Variants/Size',
   component: Text,
   parameters: {
     docs: {

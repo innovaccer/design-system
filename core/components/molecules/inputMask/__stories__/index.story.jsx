@@ -30,7 +30,7 @@ const customCode = `// import { Utils } from '@innovaccer/design-system';
 `;
 
 export default {
-  title: 'Components/InputMask/All',
+  title: 'Text Input/InputMask/All',
   component: InputMask,
   parameters: {
     docs: {

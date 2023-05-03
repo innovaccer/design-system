@@ -5,7 +5,7 @@ import Radio from '../Radio';
 export const defaultRadio = () => <Radio label={'Survey Outreach'} name={'Radio'} value={'Radio'} />;
 
 export default {
-  title: 'Components/Radio/Default Radio',
+  title: 'Selection/Radio/Default Radio',
   component: Radio,
   parameters: {
     docs: {

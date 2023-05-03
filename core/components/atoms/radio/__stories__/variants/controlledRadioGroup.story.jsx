@@ -73,7 +73,7 @@ const customCode = `() => {
 };
 `;
 export default {
-  title: 'Components/Radio/Variants/Controlled Radio Group',
+  title: 'Selection/Radio/Variants/Controlled Radio Group',
   component: Radio,
   parameters: {
     docs: {

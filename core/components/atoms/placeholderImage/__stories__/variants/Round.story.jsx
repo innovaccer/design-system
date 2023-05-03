@@ -22,7 +22,7 @@ export const round = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Image/Variants/Round',
+  title: 'Indicators/Loaders/Placeholder/Image/Variants/Round',
   component: PlaceholderImage,
   parameters: {
     docs: {

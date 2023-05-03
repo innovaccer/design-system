@@ -4,7 +4,7 @@ import StatusHint from '../StatusHint';
 export const success = () => <StatusHint appearance="success">{'Success'}</StatusHint>;
 
 export default {
-  title: 'Components/StatusHint/Success',
+  title: 'Indicators/StatusHint/Success',
   component: StatusHint,
   parameters: {
     docs: {

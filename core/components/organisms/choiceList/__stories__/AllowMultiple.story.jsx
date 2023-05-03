@@ -18,6 +18,6 @@ export const allowMultiple = () => {
 };
 
 export default {
-  title: 'Components/ChoiceList/Allow Multiple',
+  title: 'Selection/ChoiceList/Allow Multiple',
   component: ChoiceList,
 };

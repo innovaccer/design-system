@@ -35,7 +35,7 @@ export const AlignmentOfCheckboxGroup = () => {
 };
 
 export default {
-  title: 'Components/Checkbox/Alignment Of Checkbox Group',
+  title: 'Selection/Checkbox/Alignment Of Checkbox Group',
   component: Checkbox,
   parameters: {
     docs: {

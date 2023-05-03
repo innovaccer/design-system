@@ -9,6 +9,6 @@ export const disctereSlider = () => {
 };
 
 export default {
-  title: 'Components/Slider/Variants/Disctere Slider',
+  title: 'Selection/Slider/Variants/Disctere Slider',
   component: Slider,
 };

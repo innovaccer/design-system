@@ -77,7 +77,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/Non Collapsible Vertical Navigation',
+  title: 'Navigation/VerticalNav/Non Collapsible Vertical Navigation',
   component: VerticalNav,
   parameters: {
     docs: {

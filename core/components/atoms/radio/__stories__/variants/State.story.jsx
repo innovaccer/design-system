@@ -18,7 +18,7 @@ export const state = () => {
 };
 
 export default {
-  title: 'Components/Radio/Variants/State',
+  title: 'Selection/Radio/Variants/State',
   component: Radio,
   parameters: {
     docs: {

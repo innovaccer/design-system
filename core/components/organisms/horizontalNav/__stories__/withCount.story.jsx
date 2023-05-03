@@ -78,7 +78,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Horizontal Navigation With Count',
+  title: 'Navigation/HorizontalNav/Horizontal Navigation With Count',
   component: HorizontalNav,
   parameters: {
     docs: {

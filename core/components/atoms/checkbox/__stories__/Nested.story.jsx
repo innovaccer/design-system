@@ -110,7 +110,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Checkbox/Nested Checkboxes',
+  title: 'Selection/Checkbox/Nested Checkboxes',
   component: Checkbox,
   parameters: {
     docs: {

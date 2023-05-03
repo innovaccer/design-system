@@ -112,7 +112,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/VerticalNav/Label Overflow Behaviour',
+  title: 'Navigation/VerticalNav/Label Overflow Behaviour',
   component: VerticalNav,
   parameters: {
     docs: {

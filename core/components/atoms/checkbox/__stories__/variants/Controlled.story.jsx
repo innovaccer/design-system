@@ -36,7 +36,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Checkbox/Variants/Controlled Checkbox',
+  title: 'Selection/Checkbox/Variants/Controlled Checkbox',
   component: Checkbox,
   parameters: {
     docs: {

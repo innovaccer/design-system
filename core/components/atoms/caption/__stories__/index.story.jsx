@@ -5,7 +5,7 @@ import Caption from '../index';
 export const all = () => <></>;
 
 export default {
-  title: 'Components/Caption/All',
+  title: 'Deprecated/Caption/All',
   component: Caption,
   parameters: {
     docs: {

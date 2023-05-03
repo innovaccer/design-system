@@ -64,7 +64,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Default Horizontal Navigation',
+  title: 'Navigation/HorizontalNav/Default Horizontal Navigation',
   component: HorizontalNav,
   parameters: {
     docs: {

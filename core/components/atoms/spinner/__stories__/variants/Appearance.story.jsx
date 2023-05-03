@@ -22,7 +22,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Spinner/Variants/Appearance',
+  title: 'Indicators/Loaders/Spinner/Variants/Appearance',
   component: Spinner,
   parameters: {
     docs: {

@@ -21,7 +21,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/ChipInput/Variants/Disabled',
+  title: 'Text Input/ChipInput/Variants/Disabled',
   component: ChipInput,
   parameters: {
     docs: {

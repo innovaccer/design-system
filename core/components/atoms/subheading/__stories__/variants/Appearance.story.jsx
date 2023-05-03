@@ -24,7 +24,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Subheading/Variants/Appearance',
+  title: 'Typography/Subheading/Variants/Appearance',
   component: Subheading,
   parameters: {
     docs: {

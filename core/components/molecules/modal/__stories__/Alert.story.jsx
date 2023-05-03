@@ -84,7 +84,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Modal/Alerts',
+  title: 'Overlays/Modal/Alerts',
   component: Modal,
   parameters: {
     docs: {

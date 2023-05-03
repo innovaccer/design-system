@@ -74,7 +74,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dialog/Variants/Dimension/Medium',
+  title: 'Deprecated/Dialog/Variants/Dimension/Medium',
   component: Dialog,
   parameters: {
     docs: {

@@ -28,7 +28,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/ChipInput/Chips In Single Line',
+  title: 'Text Input/ChipInput/Chips In Single Line',
   component: ChipInput,
   parameters: {
     docs: {

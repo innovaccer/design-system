@@ -19,6 +19,6 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Components/Slider/Variants/Disabled',
+  title: 'Selection/Slider/Variants/Disabled',
   component: Slider,
 };
