@@ -6,11 +6,11 @@ import { Calendar } from '@/index';
 export const all = () => {
   const monthsInView = 1;
 
-  const dateValue = new Date('Jan 11 2021');
+  const dateValue = new Date('Jan 11 2023');
 
-  const startDate = new Date('Jan 15 2021');
+  const startDate = new Date('Jan 15 2023');
 
-  const endDate = new Date('Jan 20 2021');
+  const endDate = new Date('Jan 20 2023');
 
   const view = 'date';
 

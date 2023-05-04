@@ -7,19 +7,19 @@ export const dateWithEvents = () => {
     <div className="d-flex mt-8">
       <div className="mr-8">
         <Heading>size: small</Heading>
-        <Calendar events={{ '12/21/2021': true }} date={new Date('12/21/2021')} size={'small'} />
+        <Calendar events={{ '12/21/2023': true }} date={new Date('12/21/2023')} size={'small'} />
       </div>
 
       <div>
         <Heading>size: large</Heading>
-        <Calendar events={{ '12/20/2021': true }} date={new Date('12/21/2021')} size={'large'} />
+        <Calendar events={{ '12/20/2023': true }} date={new Date('12/21/2023')} size={'large'} />
       </div>
     </div>
   );
 };
 
 export default {
-  title: 'Components/Calendar/Variants/Date With Events',
+  title: 'Components/Calendar/Date With Events',
   component: Calendar,
   parameters: {
     docs: {
