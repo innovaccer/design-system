@@ -11,9 +11,10 @@
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
+  padding: var(--spacing) var(--spacing-xl) var(--spacing-2);
 }
 
 .Dropzone--active {
@@ -24,7 +25,7 @@
     linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
 }
@@ -32,11 +33,13 @@
 .DropzoneAnimation--default {
   animation-delay: var(--duration--fast-02);
   animation: dropzoneDefault var(--duration--moderate-01) var(--entrance-productive-curve);
+  animation-fill-mode: forwards;
 }
 
 .DropzoneAnimation--active {
   animation-delay: var(--duration--fast-02);
   animation: dropzoneActive var(--duration--moderate-01) var(--entrance-productive-curve);
+  animation-fill-mode: forwards;
 }
 
 @keyframes dropzoneDefault {
@@ -71,7 +74,7 @@
     linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
 }
 
 .Dropzone--disabled {
@@ -81,7 +84,7 @@
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
 }
 
 .Dropzone--standard {
