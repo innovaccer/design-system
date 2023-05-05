@@ -7,7 +7,7 @@ export const all = () => {
 
   return (
     <div className="w-25">
-      <InputMask mask={dateMask} validators={dateValidator} />
+      <InputMask icon="calendar_month" mask={dateMask} validators={dateValidator} placeholder="mm/dd/yyyy" />
     </div>
   );
 };
@@ -21,8 +21,10 @@ const customCode = `// import { Utils } from '@innovaccer/design-system';
   return (
     <div className="w-25">
       <InputMask
+        icon="calendar_month"
         mask={dateMask}
         validators={dateValidator}
+        placeholder="mm/dd/yyyy"
       />
     </div>
   );
