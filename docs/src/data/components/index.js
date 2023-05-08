@@ -122,6 +122,13 @@ export const data = [
     image: () => <StaticImage src="./images/Link.png" alt="Link" imgStyle={imgStyle} />,
   },
   {
+    link: 'linkButton/usage',
+    name: 'LinkButton',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/LinkButton.png" alt="Link Button" imgStyle={imgStyle} />,
+  },
+  {
     link: 'message/usage',
     name: 'Messages',
     design: 'Available',
