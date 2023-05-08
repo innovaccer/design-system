@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { Message, Text, Row, Column } from '@/index';
+import { Message, Text } from '@/index';
 
 // CSF format story
 export const appearanceWithoutTitle = () => {
   const appearances = ['alert', 'info', 'success', 'warning'];
   return (
-    <Row>
+    <div>
       {appearances.map((appear, ind) => {
         return (
-          <Column sizeM="4" className="p-4" key={ind}>
+          <div key={ind} className="mb-7">
+            <Text weight="strong">{appear.charAt(0).toUpperCase() + appear.slice(1)}</Text>
             <Message
               actions={
                 <>
@@ -20,17 +21,14 @@ export const appearanceWithoutTitle = () => {
                   </Text>
                 </>
               }
+              className="mt-4"
               appearance={appear}
               description="Patient record has been updated with new records."
             />
-            <br />
-            <Text weight="strong" className="d-flex flex-column align-items-center">
-              {appear.charAt(0).toUpperCase() + appear.slice(1)}
-            </Text>
-          </Column>
+          </div>
         );
       })}
-    </Row>
+    </div>
   );
 };
 
