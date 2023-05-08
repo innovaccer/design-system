@@ -68,7 +68,7 @@
 }
 
 .Sidesheet-header--withSeperator {
-  border-bottom: var(--border);
+  border-bottom: var(--spacing-xs) solid var(--secondary-light);
 }
 
 .Sidesheet-body {
@@ -80,11 +80,12 @@
 }
 
 .Sidesheet-footer {
-  height: 80px;
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
 }
 
 .Sidesheet-footer--withSeperator {
-  border-top: var(--border);
+  border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
 .Sidesheet-footer--stickToBottom {
@@ -93,9 +94,17 @@
 }
 
 .Sidesheet-header--shiftRight {
-  animation: shift-right-spacing-3 80ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  animation: shift-right-spacing-3 var(--duration--fast-01) var(--standard-productive-curve);
 }
 
 .Sidesheet-header--shiftLeft {
-  animation: shift-left-spacing-3 80ms cubic-bezier(0.2, 0, 0.38, 0.9);
+  animation: shift-left-spacing-3 var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.Sidesheet-body--nextPage {
+  animation: fadeIn var(--duration--fast-02) var(--standard-productive-curve);
+}
+
+.Sidesheet-body--firstPage {
+  animation: fadeIn var(--duration--fast-02) var(--standard-expressive-curve);
 }

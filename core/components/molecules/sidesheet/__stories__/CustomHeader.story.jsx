@@ -1,30 +1,26 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Sidesheet, Button, Label, Text } from '@/index';
+import { Sidesheet, Button, Badge, Heading, Divider, Label, Text } from '@/index';
 
-export const Large = () => {
+export const customHeader = () => {
   const [open, setOpen] = React.useState(false);
+  const backdropClose = true;
 
   const onClose = () => {
     setOpen(false);
     action('on close triggered')();
   };
 
-  const headerOptions = {
-    heading: 'Heading',
-    subHeading: 'Subheading',
-  };
-
   const options = {
     onClose,
     open,
-    headerOptions,
+    backdropClose,
     footer: (
       <>
         <Button appearance="primary" className="mr-4">
           Primary
         </Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="basic">Cancel</Button>
       </>
     ),
   };
@@ -54,7 +50,26 @@ export const Large = () => {
       <Button appearance="primary" onClick={() => setOpen(true)}>
         Open Sidesheet
       </Button>
-      <Sidesheet {...options} dimension="large">
+      <Sidesheet
+        {...options}
+        header={
+          <div className="pl-7">
+            <Heading size="m">Untitled document</Heading>
+            <div className="d-flex mt-2">
+              <div className="mr-3">
+                <Badge>User Interface</Badge>
+              </div>
+              <div className="mr-3">
+                <Badge>Design</Badge>
+              </div>
+              <div className="mr-3">
+                <Badge>Development</Badge>
+              </div>
+            </div>
+            <Divider />
+          </div>
+        }
+      >
         <SidesheetDescription {...sidesheetDescriptionOptions} />
         <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
@@ -64,26 +79,22 @@ export const Large = () => {
 
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
+  const backdropClose = true;
 
   const onClose = () => {
     setOpen(false);
   };
 
-  const headerOptions = {
-    heading: 'Heading',
-    subHeading: 'Subheading',
-  };
-
   const options = {
     onClose,
     open,
-    headerOptions,
+    backdropClose,
     footer: (
       <>
         <Button appearance="primary" className="mr-4">
           Primary
         </Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="basic">Cancel</Button>
       </>
     ),
   };
@@ -113,7 +124,26 @@ const customCode = `() => {
       <Button appearance="primary" onClick={() => setOpen(true)}>
         Open Sidesheet
       </Button>
-      <Sidesheet {...options} dimension="large">
+      <Sidesheet
+        {...options}
+        header={
+          <div className="pl-7">
+          <Heading size="m">Untitled document</Heading>
+          <div className="d-flex mt-2">
+            <div className="mr-3">
+              <Badge>User Interface</Badge>
+            </div>
+            <div className="mr-3">
+              <Badge>Design</Badge>
+            </div>
+            <div className="mr-3">
+              <Badge>Development</Badge>
+            </div>
+          </div>
+          <Divider />
+        </div>
+        }
+      >
         <SidesheetDescription {...sidesheetDescriptionOptions} />
         <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
@@ -122,7 +152,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Components/Sidesheet/Variants/Dimension/Large',
+  title: 'Components/Sidesheet/Custom Header',
   component: Sidesheet,
   parameters: {
     docs: {

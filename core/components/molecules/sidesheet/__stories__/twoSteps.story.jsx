@@ -1,15 +1,11 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Heading, Text, Sidesheet, ModalDescription, Button } from '@/index';
+import { Heading, Sidesheet, Button, Label, Text } from '@/index';
 
 export const twoSteps = () => {
   const [page, setPage] = React.useState(1);
   const [animate, setAnimate] = React.useState(true);
   const [open, setOpen] = React.useState(false);
-  const seperator = false;
-  const stickFooter = false;
-  const backdropClose = false;
-  const dimension = 'regular';
 
   React.useEffect(() => {
     setAnimate(true);
@@ -38,17 +34,18 @@ export const twoSteps = () => {
   const options = {
     onClose,
     open,
-    dimension,
-    seperator,
     headerOptions,
-    stickFooter,
-    backdropClose,
+    stickFooter: true,
+    backdropClose: true,
     footer: (
       <>
         {page === 1 && (
-          <Button appearance="primary" className="mr-4" onClick={() => setPage(2)}>
-            Next
-          </Button>
+          <>
+            <Button appearance="primary" className="mr-4" onClick={() => setPage(2)}>
+              Next
+            </Button>
+            <Button appearance="basic">Cancel</Button>
+          </>
         )}
         {page === 2 && (
           <>
@@ -64,15 +61,24 @@ export const twoSteps = () => {
     ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
-    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true,
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true,
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
+  };
+
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
   };
 
   return (
@@ -83,9 +89,8 @@ export const twoSteps = () => {
       <Sidesheet {...options}>
         <div className={animate ? 'fade-in' : ''} onAnimationEnd={() => setAnimate(false)}>
           <Heading size="s">{`Page ${page}`}</Heading>
-          <Text>Modal Body</Text>
-          <ModalDescription {...modalDescriptionOptions} />
-          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+          <SidesheetDescription {...sidesheetDescriptionOptions} />
+          <SidesheetDescription {...optionsWithoutLabel} />
         </div>
       </Sidesheet>
     </div>
@@ -93,23 +98,24 @@ export const twoSteps = () => {
 };
 
 const customCode = `() => {
-  const [open, setOpen] = React.useState(false);
   const [page, setPage] = React.useState(1);
   const [animate, setAnimate] = React.useState(true);
-
-  const onClose = () => {
-    setOpen(false);
-  };
+  const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
     setAnimate(true);
     return () => {
       setAnimate(false);
-    }
-  }, [page])
+    };
+  }, [page]);
 
-  const backIconCallback = (e) => {
-    console.log('back icon clicked');
+  const onClose = () => {
+    setOpen(false);
+    action('on close triggered')();
+  };
+
+  const backIconCallback = () => {
+    action('back icon clicked')();
     setPage(1);
   };
 
@@ -129,63 +135,62 @@ const customCode = `() => {
     footer: (
       <>
         {page === 1 && (
-          <Button
-            appearance="primary"
-            className="mr-4"
-            onClick={() => setPage(2)}
-          >
-            Next
-          </Button>
+          <>
+            <Button appearance="primary" className="mr-4" onClick={() => setPage(2)}>
+              Next
+            </Button>
+            <Button appearance="basic">Cancel</Button>
+          </>
         )}
         {page === 2 && (
           <>
-            <Button
-              appearance="primary"
-              onClick={() => console.log('Submit button click')}
-              className="mr-4"
-            >
+            <Button appearance="primary" className="mr-4">
               Submit
             </Button>
-            <Button
-              appearance="basic"
-              onClick={() => setPage(1)}
-            >
+            <Button appearance="basic" onClick={() => setPage(1)}>
               Back
             </Button>
           </>
         )}
       </>
-    )
+    ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
+  };
+
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
     description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
   };
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
-      <Sidesheet {...options} >
-        <div 
-          className={ animate ? 'fade-in' : ''} 
-          onAnimationEnd={() => setAnimate(false)}
-        >
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
+      <Sidesheet {...options}>
+        <div className={animate ? 'fade-in' : ''} onAnimationEnd={() => setAnimate(false)}>
           <Heading size="s">{\`Page \${page}\`}</Heading>
-          <Text>Modal Body</Text>
-          <ModalDescription {...modalDescriptionOptions} />
-          <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+          <SidesheetDescription {...sidesheetDescriptionOptions} />
+          <SidesheetDescription {...optionsWithoutLabel} />
         </div>
       </Sidesheet>
     </div>
   );
-}`;
+};`;
 
 export default {
   title: 'Components/Sidesheet/Two Steps',

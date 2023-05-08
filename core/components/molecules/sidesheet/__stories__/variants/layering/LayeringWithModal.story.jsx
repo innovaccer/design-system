@@ -1,16 +1,12 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Text, Sidesheet, Button, ModalDescription } from '@/index';
+import { Sidesheet, Button, ModalDescription, Label, Text } from '@/index';
 import Modal from '@/components/molecules/modal';
 
 export const layeringWithModal = () => {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
-  const seperator = false;
-  const backIcon = false;
-  const stickFooter = false;
-  const backdropClose = false;
-  const dimension = 'regular';
+  const backdropClose = true;
 
   const onClose = () => {
     setOpen(false);
@@ -22,13 +18,7 @@ export const layeringWithModal = () => {
     action('on close triggered')();
   };
 
-  const backIconCallback = () => {
-    action('back icon clicked')();
-  };
-
   const headerOptions = {
-    backIcon,
-    backIconCallback: backIcon ? backIconCallback : undefined,
     heading: 'Heading',
     subHeading: 'Subheading',
   };
@@ -36,30 +26,36 @@ export const layeringWithModal = () => {
   const options = {
     onClose,
     open,
-    dimension,
-    seperator,
     headerOptions,
-    stickFooter,
     backdropClose,
     footer: (
       <>
         <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
           Open
         </Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="basic">Cancel</Button>
       </>
     ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
-    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true,
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true,
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
+  };
+
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
   };
 
   return (
@@ -68,15 +64,13 @@ export const layeringWithModal = () => {
         Open Sidesheet
       </Button>
       <Sidesheet {...options} closeOnEscape={true}>
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions} />
+        <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
 
       <Modal
         closeOnEscape={true}
         open={openSecond}
-        dimension="medium"
         backdropClose={false}
         onClose={onCloseSecond}
         headerOptions={{
@@ -91,88 +85,100 @@ export const layeringWithModal = () => {
           </>
         }
       >
-        <Text>Modal Part Two Body</Text>
-        <ModalDescription description="Card Sections include supporting text like an article summary or a restaurant description." />
+        <ModalDescription description="Card Sections include supporting text like an article summary or a healthcare service description." />
       </Modal>
     </div>
   );
 };
 
-const customCode = `() => {
+const customCode = `() =>  {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
+  const backdropClose = true;
 
   const onClose = () => {
-    setOpen(!open);
+    setOpen(false);
   };
 
-  const onSecondOverlayClose = () => {
-    setOpenSecond(!openSecond);
-  }
+  const onCloseSecond = () => {
+    setOpenSecond(false);
+  };
 
   const headerOptions = {
     heading: 'Heading',
-    subHeading: 'Subheading'
+    subHeading: 'Subheading',
   };
 
   const options = {
     onClose,
     open,
     headerOptions,
+    backdropClose,
     footer: (
       <>
-        <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>Open</Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
+          Open
+        </Button>
+        <Button appearance="basic">Cancel</Button>
       </>
-    )
+    ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
+  };
+
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
     description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
   };
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
       <Sidesheet {...options} closeOnEscape={true}>
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions} />
+        <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
+
       <Modal
         closeOnEscape={true}
         open={openSecond}
-        dimension='medium'
         backdropClose={false}
-        onClose={onSecondOverlayClose}
+        onClose={onCloseSecond}
         headerOptions={{
           heading: 'Heading Part Two',
           subHeading: 'Subheading Part Two',
         }}
         footer={
           <>
-            <Button appearance="primary" className="ml-4" onClick={() => console.log('Primary button click')}>
+            <Button appearance="primary" className="ml-4">
               Primary
             </Button>
           </>
         }
       >
-        <Text>Modal Part Two Body</Text>
-        <ModalDescription description="Card Sections include supporting text like an article summary or a restaurant description." />
+        <ModalDescription description="Card Sections include supporting text like an article summary or a healthcare service description." />
       </Modal>
     </div>
   );
-}`;
+};`;
 
 export default {
-  title: 'Components/Sidesheet/Layering With Modal',
+  title: 'Components/Sidesheet/Variants/Layering/Layering With Modal',
   component: Sidesheet,
   parameters: {
     docs: {
