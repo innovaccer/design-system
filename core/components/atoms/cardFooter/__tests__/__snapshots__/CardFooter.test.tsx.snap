@@ -17,14 +17,22 @@ exports[`CardFooter component
           data-test="DesignSystem-Button"
           tabindex="0"
         >
-          Cancel
+          <span
+            class="Button-text"
+          >
+            Cancel
+          </span>
         </button>
         <button
           class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
           data-test="DesignSystem-Button"
           tabindex="0"
         >
-          Submit
+          <span
+            class="Button-text"
+          >
+            Submit
+          </span>
         </button>
       </div>
     </div>
@@ -49,14 +57,22 @@ exports[`CardFooter component
           data-test="DesignSystem-Button"
           tabindex="0"
         >
-          Cancel
+          <span
+            class="Button-text"
+          >
+            Cancel
+          </span>
         </button>
         <button
           class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
           data-test="DesignSystem-Button"
           tabindex="0"
         >
-          Submit
+          <span
+            class="Button-text"
+          >
+            Submit
+          </span>
         </button>
       </div>
     </div>

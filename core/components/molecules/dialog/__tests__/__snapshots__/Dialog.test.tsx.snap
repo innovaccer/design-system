@@ -105,7 +105,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--alert Button--iconAlign-left ml-4"
@@ -113,7 +117,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -236,7 +244,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left ml-4"
@@ -244,7 +256,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -365,7 +381,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -373,7 +393,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -495,7 +519,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--success Button--iconAlign-left ml-4"
@@ -503,7 +531,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -625,7 +657,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--transparent Button--iconAlign-left ml-4"
@@ -633,7 +669,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -755,7 +795,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -763,7 +807,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -885,7 +933,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -893,7 +945,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -1015,7 +1071,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -1023,7 +1083,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -1145,7 +1209,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -1153,7 +1221,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -1275,7 +1347,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -1283,7 +1359,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -1405,7 +1485,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -1413,7 +1497,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -1535,7 +1623,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -1543,7 +1635,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>
@@ -1665,7 +1761,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
           <button
             class="Button Button--regular Button--primary Button--iconAlign-left ml-4"
@@ -1673,7 +1773,11 @@ exports[`Dialog component
             tabindex="0"
             type="button"
           >
-            Sample String
+            <span
+              class="Button-text"
+            >
+              Sample String
+            </span>
           </button>
         </div>
       </div>

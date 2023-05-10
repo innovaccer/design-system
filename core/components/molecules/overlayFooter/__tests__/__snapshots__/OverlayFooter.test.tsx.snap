@@ -13,14 +13,22 @@ exports[`OverlayFooter component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Basic
+      <span
+        class="Button-text"
+      >
+        Basic
+      </span>
     </button>
     <button
       class="Button Button--regular Button--primary Button--iconAlign-left"
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Primary
+      <span
+        class="Button-text"
+      >
+        Primary
+      </span>
     </button>
   </div>
 </DocumentFragment>
