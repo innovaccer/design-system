@@ -2,15 +2,15 @@ import * as React from 'react';
 import { Card } from '@/index';
 
 // CSF format story
-export const Flat = () => {
+export const defaultCard = () => {
   return (
-    <Card shadow="none">
+    <Card>
       <div className="p-8" />
     </Card>
   );
 };
 
 export default {
-  title: 'Components/Card/Flat',
+  title: 'Components/Card/Type/Default Card',
   component: Card,
 };
