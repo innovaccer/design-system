@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
-export const transparentButton = () => (
+export const transparent = () => (
   <Button appearance="transparent" aria-label="Re-evaluate">
     Re-evaluate
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Transparent Button',
+  title: 'Components/Button/Appearance/Transparent',
   component: Button,
   parameters: {
     docs: {

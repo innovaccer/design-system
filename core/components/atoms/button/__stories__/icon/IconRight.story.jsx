@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
-export const iconRightButton = () => (
+export const iconRight = () => (
   <Button icon="arrow_forward" iconAlign="right" aria-label="Next in rank">
     Next in rank
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Icon Right Button',
+  title: 'Components/Button/Icon/Icon Right',
   component: Button,
   parameters: {
     docs: {

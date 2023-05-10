@@ -1,12 +1,12 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
 export const iconButton = () => (
   <Button appearance="basic" icon="keyboard_arrow_right" aria-label="Next in rank" tooltip="Next in rank" />
 );
 
 export default {
-  title: 'Components/Button/Icon Button',
+  title: 'Components/Button/Icon/Icon Button',
   component: Button,
   parameters: {
     docs: {

@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
-export const AlertButton = () => (
+export const Alert = () => (
   <Button appearance="alert" aria-label="Delete">
     Delete
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Alert Button',
+  title: 'Components/Button/Appearance/Alert',
   component: Button,
   parameters: {
     docs: {

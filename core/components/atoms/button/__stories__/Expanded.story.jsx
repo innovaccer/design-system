@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
 export const ExpandedButton = () => (
-  <Button appearance="primary" size="large" expanded={true} aria-label="Login">
+  <Button appearance="primary" size="regular" expanded={true} aria-label="Login">
     Login
   </Button>
 );

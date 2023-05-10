@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Button from '../Button';
+import { Button } from '@/index';
 
-export const BasicButton = () => (
+export const Basic = () => (
   <Button appearance="basic" size="regular" aria-label="Cancel">
     Cancel
   </Button>
 );
 
 export default {
-  title: 'Components/Button/Basic Button',
+  title: 'Components/Button/Appearance/Basic',
   component: Button,
   parameters: {
     docs: {
