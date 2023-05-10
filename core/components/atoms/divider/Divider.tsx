@@ -26,7 +26,7 @@ export const Divider = (props: DividerProps) => {
       ['Divider']: true,
       ['Divider--horizontal']: !vertical,
       ['Divider--vertical']: vertical,
-      ['Divider--basic']: appearance !== 'header',
+      ['Divider--basic']: !vertical && appearance !== 'header',
       ['Divider--header']: !vertical && appearance === 'header',
     },
     className

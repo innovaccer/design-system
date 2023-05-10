@@ -7,16 +7,12 @@ export const BasicDividerInCard = () => {
       <Column size="9">
         <Card className="pt-6" shadow="none">
           <CardBody>
-            <Row>
-              <Column size={10}>
-                <Text appearance="disabled">MSSP - Track 3</Text>
-              </Column>
-              <Column size={2}>
-                <Badge appearance="success" subtle={true}>
-                  ACTIVE
-                </Badge>
-              </Column>
-            </Row>
+            <div className="d-flex justify-content-between">
+              <Text appearance="disabled">MSSP - Track 3</Text>
+              <Badge appearance="success" subtle={true}>
+                ACTIVE
+              </Badge>
+            </div>
             <br />
             <Text small={true}>Medicare</Text>
             <br />
@@ -69,6 +65,6 @@ export const BasicDividerInCard = () => {
 };
 
 export default {
-  title: 'Components/Divider/Basic Divider In Card',
+  title: 'Components/Divider/Horizontal/Basic Divider In Card',
   component: Divider,
 };
