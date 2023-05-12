@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Text from '../../index';
-import { Row, Column } from '@/index';
+import { Row, Column, Text } from '@/index';
 
 // CSF format story
 export const color = () => {
@@ -96,7 +95,7 @@ export const color = () => {
 };
 
 export default {
-  title: 'Components/Text/Variants/Color',
+  title: 'Components/Text/Color',
   component: Text,
   parameters: {
     docs: {
