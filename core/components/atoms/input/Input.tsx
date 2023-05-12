@@ -182,6 +182,27 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     if (autoFocus) ref.current?.focus({ preventScroll: true });
   }, []);
 
+  /* If onClick of custom action icon changes input "type" state (e.g from text to password), 
+the input wrapper div was receiving focus with cursor at start. Below useEffect forces the cursor to appear at content end.*/
+
+  React.useEffect(() => {
+    const setSelectionRange_compatible_types = ['text', 'password', 'tel', 'url'];
+
+    return () => {
+      if (ref.current) {
+        const inputLength = ref.current.value.length;
+        if (setSelectionRange_compatible_types.includes(type)) {
+          ref.current.setSelectionRange(inputLength, inputLength);
+        } else {
+          ref.current.type = 'text';
+          ref.current.setSelectionRange(inputLength, inputLength);
+          ref.current.type = type;
+        }
+        ref.current.focus();
+      }
+    };
+  }, [type]);
+
   const baseProps = extractBaseProps(props);
 
   const classes = classNames(
@@ -256,11 +277,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
+        /**
+         *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
+         *For rest, "undefined" lets user agent(browser) use the default tabIndex.
+         */
+        tabIndex={readOnly ? -1 : undefined}
       />
       {disabled ? (
         ''
       ) : info ? (
-        <Tooltip position="top" tooltip={info}>
+        <Tooltip position="bottom" tooltip={info}>
           {trigger}
         </Tooltip>
       ) : actionIcon && (value || defaultValue) ? (

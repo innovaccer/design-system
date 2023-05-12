@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input } from '@/index';
+import { Column, Input, Row } from '@/index';
 import Icon from '@/components/atoms/icon';
 
 export const controlledInput = () => {
@@ -24,24 +24,28 @@ export const controlledInput = () => {
     }, 1000);
   };
   return (
-    <div className="d-flex">
-      <Input
-        name="input"
-        value={value}
-        type="text"
-        placeholder="Placeholder"
-        actionIcon={<Icon name="visibility_off" />}
-        onChange={handleParentChange}
-      />
-      <Input
-        name="input"
-        value={value1}
-        type="text"
-        placeholder="PlaceHolder"
-        onChange={onChangeHandler}
-        onClear={onClearHandler}
-      />
-    </div>
+    <Row>
+      <Column size={4}>
+        <Input
+          name="input"
+          value={value}
+          type="text"
+          placeholder="Placeholder"
+          actionIcon={<Icon name="visibility_off" onClick={(e) => e.stopPropagation()} />}
+          onChange={handleParentChange}
+        />
+      </Column>
+      <Column size={4} className="ml-7">
+        <Input
+          name="input"
+          value={value1}
+          type="text"
+          placeholder="PlaceHolder"
+          onChange={onChangeHandler}
+          onClear={onClearHandler}
+        />
+      </Column>
+    </Row>
   );
 };
 
@@ -62,31 +66,38 @@ const customCode = `() => {
       setValue1(updatedValue);
   };
   return (
-    <div className="d-flex">
-      <Input
-        name="input"
-        value={value}
-        type={visibility ? 'text' : 'password'}
-        placeholder="Placeholder"
-        actionIcon={
-          <Icon
-            onClick={() => setVisibility((x) => !x)}
-            name={visibility ? 'visibility_on' : 'visibility_off'}
-            aria-label={visibility ? 'Show Password' : 'Hide Password'}
-            className="cursor-pointer"
-          />
-        }
-        onChange={handleParentChange}
-      />
-      <Input
-        name="input"
-        value={value1}
-        type="text"
-        placeholder="PlaceHolder"
-        onChange={onChangeHandler}
-        onClear={onClearHandler}
-      />
-    </div>
+    <Row>
+      <Column size={4}>
+       <Input
+          name="input"
+          value={value}
+          type={visibility ? 'text' : 'password'}
+          placeholder="Placeholder"
+          actionIcon={
+            <Icon
+             onClick={(e) =>{
+              e.stopPropagation(); 
+              setVisibility((x) => !x);
+            }}
+              name={visibility ? 'visibility_on' : 'visibility_off'}
+              aria-label={visibility ? 'Show Password' : 'Hide Password'}
+              className="cursor-pointer"
+            />
+          }
+          onChange={handleParentChange}
+        />
+      </Column>
+      <Column size={4} className='ml-7'>
+        <Input
+          name="input"
+          value={value1}
+          type="text"
+          placeholder="PlaceHolder"
+          onChange={onChangeHandler}
+          onClear={onClearHandler}
+        />
+      </Column>
+    </Row>
   );
 };`;
 export default {

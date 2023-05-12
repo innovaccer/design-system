@@ -17,7 +17,10 @@ export const inputWithHelpText = () => {
           type={visibility ? 'text' : 'password'}
           actionIcon={
             <Icon
-              onClick={() => setVisibility((x) => !x)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setVisibility((x) => !x);
+              }}
               name={visibility ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer"
             />
@@ -36,7 +39,10 @@ export const inputWithHelpText = () => {
           type={visibility2 ? 'text' : 'password'}
           actionIcon={
             <Icon
-              onClick={() => setVisibility2((x) => !x)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setVisibility2((x) => !x);
+              }}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer"
             />
@@ -71,7 +77,10 @@ const customCode = `() => {
           actionIcon={
             <Icon
               aria-label={visibility ? 'Show Password' : 'Hide Password'}
-              onClick={() => setVisibility((x) => !x)}
+              onClick={(e) =>{
+                e.stopPropagation(); 
+                setVisibility((x) => !x);
+              }}
               name={visibility ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer"
             />
@@ -95,7 +104,10 @@ const customCode = `() => {
           actionIcon={
             <Icon
               aria-label={visibility ? 'Show Password' : 'Hide Password'}
-              onClick={() => setVisibility2((x) => !x)}
+              onClick={(e) =>{
+                e.stopPropagation(); 
+                setVisibility2((x) => !x);
+              }}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer"
             />

@@ -8,14 +8,20 @@ export const iconLeft = () => {
   return (
     <div className="Row">
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} icon={icon} />
+        <Input
+          name="input"
+          onChange={action('on-change')}
+          onClear={action('on-clear')}
+          icon={icon}
+          placeholder="Search"
+        />
         <br />
         <Text weight="strong">Default</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
         <Input
           name="input"
-          placeholder="Placeholder"
+          placeholder="Search"
           onChange={action('on-change')}
           onClear={action('on-clear')}
           info="sample info popover"
@@ -25,17 +31,24 @@ export const iconLeft = () => {
         <Text weight="strong">Placeholder</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" onChange={action('on-change')} onClear={action('on-clear')} error={true} icon={icon} />
+        <Input
+          name="input"
+          onChange={action('on-change')}
+          onClear={action('on-clear')}
+          error={true}
+          icon={icon}
+          placeholder="Search"
+        />
         <br />
         <Text weight="strong">Error</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" onChange={action('on-change')} disabled={true} icon={icon} />
+        <Input name="input" onChange={action('on-change')} disabled={true} icon={icon} placeholder="Search" />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" value="Value" icon={icon} />
+        <Input name="input" value="Value" icon={icon} readOnly={true} />
         <br />
         <Text weight="strong">Read Only</Text>
       </div>

@@ -3,19 +3,20 @@ import { Input, Icon } from '@/index';
 import { action } from '@/utils/action';
 
 export const actionIcon = () => {
-  const customIcon = <Icon name="events" onClick={action('custom action icon')} />;
+  const customIcon = <Icon name="events" onClick={action('Custom action icon')} />;
 
-  return <Input name="input" actionIcon={customIcon} />;
+  return <Input name="input" defaultValue="Custom action icon" actionIcon={customIcon} />;
 };
 
 const customCode = `() => {
   const actionIcon = (
-    <Icon name="events" onClick={() => console.log("custom action icon")} />
+    <Icon name="events" onClick={() => console.log("Custom action icon")} />
   );
 
   return (
     <Input
       name="input"
+      defaultValue="Custom action icon"
       actionIcon={actionIcon}
     />
   );
