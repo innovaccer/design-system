@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Paragraph from '../../index';
-import Text from '@/components/atoms/text';
+import { Text, Paragraph } from '@/index';
 
 // CSF format story
 export const appearance = () => {
@@ -23,7 +22,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Paragraph/Variants/Appearance',
+  title: 'Components/Paragraph/Appearance',
   component: Paragraph,
   parameters: {
     docs: {
