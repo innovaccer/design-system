@@ -1,13 +1,12 @@
 import * as React from 'react';
-import ProgressRing from '../ProgressRing';
+import { ProgressRing } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const size = 'small';
-  const value = 30;
+  const value = 50;
   const max = 100;
 
-  return <ProgressRing value={value} size={size} max={max} />;
+  return <ProgressRing value={value} max={max} />;
 };
 
 export default {
