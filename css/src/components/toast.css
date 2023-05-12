@@ -8,7 +8,7 @@
   width: 360px;
   border-radius: var(--spacing-m);
   padding-left: var(--spacing-2);
-  padding-right: var(--spacing-2);
+  padding-right: var(--spacing-l);
   padding-top: var(--spacing-l);
   padding-bottom: var(--spacing-l);
 }
@@ -47,7 +47,7 @@
 
 .Toast-icon--right {
   cursor: pointer;
-  margin-left: var(--spacing-2);
+  margin-left: var(--spacing-l);
   border-radius: 50%;
   display: flex;
   align-items: center;
