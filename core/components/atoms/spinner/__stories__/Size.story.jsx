@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Spinner from '../../Spinner';
-import Text from '@/components/atoms/text';
+import { Spinner, Text } from '@/index';
 
 // CSF format story
 export const size = () => {
@@ -22,7 +21,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Spinner/Variants/Size',
+  title: 'Components/Loaders/Spinner/Size',
   component: Spinner,
   parameters: {
     docs: {
