@@ -8,6 +8,8 @@ export type SpinnerSize = 'small' | 'medium' | 'large';
 export interface SpinnerProps extends BaseProps {
   /**
    * Color of `Spinner`
+   *
+   * **`secondary` & `white` appearances has been deprecated and all `secondary` & `white` appearances will now be changed to `primary` appearance automatically**
    */
   appearance: SpinnerAppearance;
   /**
