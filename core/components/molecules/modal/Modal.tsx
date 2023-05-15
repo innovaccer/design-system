@@ -311,7 +311,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
                 {!!header && header}
               </Column>
               <Column className="flex-grow-0">
-                <Tooltip tooltip="Close" position="top">
+                <Tooltip tooltip="Close" position="bottom">
                   <Button
                     icon="close"
                     appearance="transparent"
