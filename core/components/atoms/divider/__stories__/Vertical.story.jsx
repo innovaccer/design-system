@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Divider, Row, Column, Card, CardBody, Text, Heading, Radio } from '@/index';
+import { Divider, Row, Column, Card, CardBody, Text, Radio } from '@/index';
 
-export const VerticalDivider = () => {
+export const Vertical = () => {
   return (
     <Row>
       <Column size="10">
@@ -28,9 +28,9 @@ export const VerticalDivider = () => {
 
               <Column className="p-6">
                 <div>
-                  <Heading size="s">1. Little interest or pleasure in doing things.</Heading>
+                  <Text weight="strong">1. Little interest or pleasure in doing things.</Text>
                   <br />
-                  <Column className="px-4">
+                  <Column className="px-4 mt-5">
                     <Radio defaultChecked={true} label="Not at all" name="section" size="regular" value="Not at all" />
                     <Radio label="Several Days" name="section" size="regular" value="Several Days" />
                     <Radio label="More than half the days" name="section" size="regular" value="More than half days" />
@@ -46,6 +46,6 @@ export const VerticalDivider = () => {
 };
 
 export default {
-  title: 'Components/Divider/Vertical Divider',
+  title: 'Components/Divider/Vertical',
   component: Divider,
 };

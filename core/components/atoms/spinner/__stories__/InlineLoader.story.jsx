@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Spinner from '../Spinner';
-import Text from '@/components/atoms/text';
+import { Spinner, Text } from '@/index';
 
 // CSF format story
 export const inlineLoader = () => (

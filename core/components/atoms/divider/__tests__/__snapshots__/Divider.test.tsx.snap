@@ -32,7 +32,7 @@ exports[`Divider component snapshots
 <body>
   <div>
     <hr
-      class="Divider Divider--vertical Divider--basic"
+      class="Divider Divider--vertical"
       data-test="DesignSystem-Divider"
     />
   </div>

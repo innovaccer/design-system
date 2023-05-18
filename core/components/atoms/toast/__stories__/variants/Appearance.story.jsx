@@ -5,7 +5,7 @@ import Toast from '../../Toast';
 export const appearance = () => {
   const appearances = ['info', 'success', 'alert', 'warning'];
   return (
-    <div className="d-flex">
+    <div className="d-flex flex-column">
       {appearances.map((appear, ind) => {
         return (
           <div key={ind} className="mr-5 mb-8">

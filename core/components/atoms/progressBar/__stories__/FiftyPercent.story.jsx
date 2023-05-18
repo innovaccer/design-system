@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ProgressBar from '../ProgressBar';
+import { ProgressBar } from '@/index';
 
 // CSF format story
 export const fiftyPercent = () => <ProgressBar value={50} max={100} />;

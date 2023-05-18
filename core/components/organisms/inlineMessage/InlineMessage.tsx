@@ -16,6 +16,8 @@ export type MessageSize = 'regular' | 'small';
 export interface InlineMessageProps extends BaseProps {
   /**
    * Color of `Inline Message`
+   *
+   * `default` appearance is soon to be deprecated
    */
   appearance: MessageAppearance;
   /**
