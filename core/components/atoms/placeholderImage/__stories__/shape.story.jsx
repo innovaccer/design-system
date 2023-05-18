@@ -1,8 +1,7 @@
 import * as React from 'react';
-import PlaceholderImage from '../../PlaceholderImage';
-import Text from '@/components/atoms/text';
+import { Text, PlaceholderImage } from '@/index';
 
-export const round = () => {
+export const shape = () => {
   const size = 'medium';
 
   return (
@@ -22,7 +21,7 @@ export const round = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Image/Variants/Round',
+  title: 'Components/Loaders/Placeholder/Image/Shape',
   component: PlaceholderImage,
   parameters: {
     docs: {

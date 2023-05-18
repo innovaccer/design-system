@@ -14,8 +14,8 @@
 }
 
 .Switch--large {
-  height: var(--spacing-3);
-  width: var(--spacing-5);
+  height: var(--spacing-xl);
+  width: var(--spacing-4);
 }
 
 .Switch-input {
@@ -76,7 +76,7 @@
 }
 
 .Switch-wrapper--large {
-  border-radius: 38px;
+  border-radius: 34px;
 }
 
 .Switch-wrapper:before {

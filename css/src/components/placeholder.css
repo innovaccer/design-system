@@ -8,7 +8,7 @@
 }
 
 .Placeholder--animation {
-  border-radius: var(--spacing-m);
+  border-radius: var(--spacing-s);
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
