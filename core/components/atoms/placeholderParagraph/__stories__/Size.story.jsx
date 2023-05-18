@@ -1,6 +1,5 @@
 import * as React from 'react';
-import PlaceholderParagraph from '../../PlaceholderParagraph';
-import Text from '@/components/atoms/text';
+import { Text, PlaceholderParagraph } from '@/index';
 
 export const size = () => {
   const sizes = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'];
@@ -20,7 +19,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Paragraph/Variants/Size',
+  title: 'Components/Loaders/Placeholder/Paragraph/Size',
   component: PlaceholderParagraph,
   parameters: {
     docs: {

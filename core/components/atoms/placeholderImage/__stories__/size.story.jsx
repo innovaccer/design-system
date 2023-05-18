@@ -1,6 +1,5 @@
 import * as React from 'react';
-import PlaceholderImage from '../../PlaceholderImage';
-import Text from '@/components/atoms/text';
+import { Text, PlaceholderImage } from '@/index';
 
 export const size = () => {
   const round = false;
@@ -24,7 +23,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Image/Variants/Size',
+  title: 'Components/Loaders/Placeholder/Image/Size',
   component: PlaceholderImage,
   parameters: {
     docs: {
