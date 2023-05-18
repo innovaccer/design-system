@@ -1,0 +1,2053 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: false, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: false, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: false, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: false, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: false, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: false, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: true, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: true, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: true, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: true, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: true, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "regular", disabled: true, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: false, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: false, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: false, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: false, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: false, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: false, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: true, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: true, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: true, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: true, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: true, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "button", size: "tiny", disabled: true, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: false, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: false, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: false, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: false, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: false, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: false, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: true, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: true, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: true, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: true, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: true, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "regular", disabled: true, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: false, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: false, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: false, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: false, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: false, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: false, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: true, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: true, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: true, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: true, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: true, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "reset", size: "tiny", disabled: true, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="reset"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: false, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: false, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: false, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: false, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: false, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: false, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: true, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: true, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: true, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: true, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: true, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "regular", disabled: true, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--regular LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: false, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: false, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: false, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: false, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: false, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: false, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: true, iconAlign: "left", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: true, iconAlign: "left", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: true, iconAlign: "left", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-left"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--left"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: true, iconAlign: "right", icon: "events"
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: true, iconAlign: "right", icon: "events", subtle: false
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--default LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
+
+exports[`Link Button component snapshots 
+  type: "submit", size: "tiny", disabled: true, iconAlign: "right", icon: "events", subtle: true
+ 1`] = `
+<body>
+  <div>
+    <button
+      class="LinkButton LinkButton--tiny LinkButton--subtle LinkButton--iconAlign-right"
+      data-test="DesignSystem-LinkButton"
+      disabled=""
+      type="submit"
+    >
+      <div
+        class="LinkButton-icon LinkButton-icon--right"
+      >
+        <i
+          class="material-icons material-icons-round Icon"
+          data-test="DesignSystem-LinkButton--Icon"
+          role="button"
+          style="font-size: 12px; width: 12px;"
+        >
+          events_round
+        </i>
+      </div>
+      Link Button
+    </button>
+  </div>
+</body>
+`;
