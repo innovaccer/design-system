@@ -135,7 +135,7 @@ body {
 
 .Label-optionalText {
   line-height: var(--font-height-s);
-  margin-left: var(--spacing-s);
+  margin-left: var(--spacing-m);
 }
 
 .Label--disabled {
@@ -143,8 +143,8 @@ body {
 }
 
 .Label-requiredIndicator {
-  height: var(--spacing-m);
-  width: var(--spacing-m);
+  height: 6px;
+  width: 6px;
   border-radius: 50%;
   background: var(--alert);
   margin-left: var(--spacing-m);
