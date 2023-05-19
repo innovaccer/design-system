@@ -161,7 +161,6 @@ Default popover animation is used.
       {
         Curve: 'cubic-bezier(0, 0, 0.38, 0.9)',
         Durationa: '80ms',
-        Durationb: '20ms',
         Delay: '120ms',
       }
     ]}
@@ -169,7 +168,7 @@ Default popover animation is used.
       {
         name: 'Curve',
         displayName: 'Curve',
-        width: '40%',
+        width: '30%',
         sorting: false,
         separator: true,
         cellRenderer: ({ data }) => {
@@ -179,15 +178,7 @@ Default popover animation is used.
       {
         name: 'Durationa',
         displayName: 'Initial delay',
-        width: '20%',
-        sorting: false,
-        separator: true
-        
-      },
-      {
-        name: 'Durationb',
-        displayName: 'Delay - Individual Items',
-        width: '20%',
+        width: '30%',
         sorting: false,
         separator: true
         
@@ -195,7 +186,7 @@ Default popover animation is used.
       {
         name: 'Delay',
         displayName: 'Duration - Individual Items',
-        width: '20%',
+        width: '30%',
         sorting: false,
         separator: true
         
@@ -207,12 +198,7 @@ Default popover animation is used.
 <br/>
 <br/>
 
-Dropdown items appearing sequence -
 
-![Dropdown items appearing sequence](./images/dropdowns-11.png)
-
-<br/>
-<br/>
 
 ### Dropdown - Closing
 
@@ -376,7 +362,6 @@ Default popover animation is used.
     data={[
       {
         Curve: 'cubic-bezier(0, 0, 0.38, 0.9)',
-        Durationb: '80ms',
         Delay: '120ms',
       }
     ]}
@@ -390,14 +375,6 @@ Default popover animation is used.
         cellRenderer: ({ data }) => {
           return <Rectangle name={data.Curve} />;
         },
-      },
-      {
-        name: 'Durationb',
-        displayName: 'Delay - Individual Items',
-        width: '30%',
-        sorting: false,
-        separator: true
-        
       },
       {
         name: 'Delay',
