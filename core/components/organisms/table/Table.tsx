@@ -239,6 +239,11 @@ interface SharedTableProps extends BaseProps {
    */
   page: GridProps['page'];
   /**
+   * Debounce duration to call in case of page jump
+   * @default 750
+   */
+  pageJumpDebounceDuration: PaginationProps['pageJumpDebounceDuration'];
+  /**
    * `Pagination` component type
    * @default "jump"
    */
@@ -385,6 +390,7 @@ export const defaultProps = {
   filterList: {},
   filterPosition: 'GRID',
   searchDebounceDuration: 750,
+  pageJumpDebounceDuration: 750,
   errorTemplate: defaultErrorTemplate,
 };
 
@@ -702,6 +708,7 @@ export class Table extends React.Component<TableProps, TableState> {
       withPagination,
       paginationType,
       pageSize,
+      pageJumpDebounceDuration,
       onRowClick,
       loaderSchema,
       errorTemplate,
@@ -776,6 +783,7 @@ export class Table extends React.Component<TableProps, TableState> {
               totalPages={getTotalPages(totalRecords, pageSize)}
               type={paginationType}
               onPageChange={this.onPageChange}
+              pageJumpDebounceDuration={pageJumpDebounceDuration}
             />
           </div>
         )}
