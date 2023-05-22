@@ -2,18 +2,19 @@ import * as React from 'react';
 import { MetricInput, Label, Row, Column } from '@/index';
 
 // CSF format story
-export const withPrefix = () => {
-  const [value, setValue] = React.useState(625);
+export const defaultMetric = () => {
+  const [value, setValue] = React.useState(15);
 
   return (
     <Row className="align-items-center">
       <Label htmlFor="metric-input" className="mr-5">
-        Cost
+        No. of Days
       </Label>
-      <Column size={2}>
+      <Column size={1}>
         <MetricInput
           id="metric-input"
-          prefix="USD"
+          name="metric-input"
+          size="regular"
           value={value}
           onChange={(e) => {
             setValue(e.target.value);
@@ -25,25 +26,26 @@ export const withPrefix = () => {
 };
 
 const customCode = `() => {
-  const [value, setValue] = React.useState(625);
+  const [value, setValue] = React.useState(15);
 
   return (
     <Row className="align-items-center">
-      <Label htmlFor="metric-input" className="mr-5">Cost</Label>
-      <Column size={2}>
+      <Label htmlFor="metric-input" className="mr-5">  No. of Days </Label>
+      <Column size={1}>
         <MetricInput
           id="metric-input"
-          prefix="USD"
+          name="metric-input"
+          size="regular"
           value={value}
           onChange={e => { setValue(e.target.value); }}
         />
-      </Column>
+        </Column>
     </Row>
   );
 }`;
 
 export default {
-  title: 'Components/MetricInput/With Prefix',
+  title: 'Components/MetricInput/Variants/Default Metric',
   component: MetricInput,
   parameters: {
     docs: {

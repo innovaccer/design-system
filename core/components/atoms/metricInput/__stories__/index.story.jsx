@@ -4,7 +4,7 @@ import { action } from '@/utils/action';
 
 // CSF format story
 export const all = () => {
-  const size = 'large';
+  const size = 'regular';
 
   const placeholder = 'Placeholder';
 
