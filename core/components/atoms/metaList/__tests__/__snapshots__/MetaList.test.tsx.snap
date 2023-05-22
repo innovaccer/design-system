@@ -5033,7 +5033,7 @@ Object {
 `;
 
 exports[`MetaList component prop:seperator options 
-  seperator: false
+  seperator: false, size: "regular"
  1`] = `
 Object {
   "asFragment": [Function],
@@ -5154,7 +5154,128 @@ Object {
 `;
 
 exports[`MetaList component prop:seperator options 
-  seperator: true
+  seperator: false, size: "small"
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MetaList"
+        data-test="DesignSystem-MetaList"
+      >
+        <span
+          class="MetaList-item"
+        >
+          <span
+            class="Meta"
+            data-test="DesignSystem-MetaList--Meta"
+          >
+            <i
+              class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
+              data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
+              style="font-size: 12px; width: 12px;"
+            >
+              assessment_round
+            </i>
+            <span
+              class="Text Text--subtle Text--small"
+              data-test="DesignSystem-MetaList--MetaLabel"
+            >
+              Meta data
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MetaList"
+      data-test="DesignSystem-MetaList"
+    >
+      <span
+        class="MetaList-item"
+      >
+        <span
+          class="Meta"
+          data-test="DesignSystem-MetaList--Meta"
+        >
+          <i
+            class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
+            data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
+            style="font-size: 12px; width: 12px;"
+          >
+            assessment_round
+          </i>
+          <span
+            class="Text Text--subtle Text--small"
+            data-test="DesignSystem-MetaList--MetaLabel"
+          >
+            Meta data
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`MetaList component prop:seperator options 
+  seperator: true, size: "regular"
  1`] = `
 Object {
   "asFragment": [Function],
@@ -5228,6 +5349,143 @@ Object {
           </i>
           <span
             class="Text Text--subtle Text--regular"
+            data-test="DesignSystem-MetaList--MetaLabel"
+          >
+            Meta data
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`MetaList component prop:seperator options 
+  seperator: true, size: "small"
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MetaList"
+        data-test="DesignSystem-MetaList"
+      >
+        <i
+          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+          data-test="DesignSystem-MetaList--Seperator"
+          role="button"
+          style="font-size: 8px; width: 8px;"
+        >
+          fiber_manual_record_round
+        </i>
+        <span
+          class="MetaList-item"
+        >
+          <span
+            class="Meta"
+            data-test="DesignSystem-MetaList--Meta"
+          >
+            <i
+              class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
+              data-test="DesignSystem-MetaList--MetaIcon"
+              role="button"
+              style="font-size: 12px; width: 12px;"
+            >
+              assessment_round
+            </i>
+            <span
+              class="Text Text--subtle Text--small"
+              data-test="DesignSystem-MetaList--MetaLabel"
+            >
+              Meta data
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MetaList"
+      data-test="DesignSystem-MetaList"
+    >
+      <i
+        class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+        data-test="DesignSystem-MetaList--Seperator"
+        role="button"
+        style="font-size: 8px; width: 8px;"
+      >
+        fiber_manual_record_round
+      </i>
+      <span
+        class="MetaList-item"
+      >
+        <span
+          class="Meta"
+          data-test="DesignSystem-MetaList--Meta"
+        >
+          <i
+            class="material-icons material-icons-round Icon Icon--disabled Meta-icon"
+            data-test="DesignSystem-MetaList--MetaIcon"
+            role="button"
+            style="font-size: 12px; width: 12px;"
+          >
+            assessment_round
+          </i>
+          <span
+            class="Text Text--subtle Text--small"
             data-test="DesignSystem-MetaList--MetaLabel"
           >
             Meta data
