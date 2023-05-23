@@ -10,11 +10,9 @@ export const Size = () => {
       {sizes.map((size, key) => {
         return (
           <div className="mr-9" key={key}>
-            <div className="h-50">
-              <InlineMessage size={size} appearance="info" description="There are two new referral requests." />
-            </div>
+            <InlineMessage size={size} appearance="info" description="There are two new referral requests." />
             <br />
-            <Text weight="strong">{size}</Text>
+            <Text weight="strong">{size.charAt(0).toUpperCase() + size.slice(1)}</Text>
           </div>
         );
       })}

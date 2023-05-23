@@ -164,7 +164,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
               />
             </div>
           )}
-          {children}
+          {children && <span className="Button-text">{children}</span>}
         </>
       )}
     </button>

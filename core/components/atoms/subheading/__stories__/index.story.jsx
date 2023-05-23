@@ -1,17 +1,9 @@
 import * as React from 'react';
-import Subheading from '../index';
+import { Subheading } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const appearance = 'white';
-
-  return (
-    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
-      <Subheading appearance={appearance}>
-        Subheading component have different varients, look for options in knobs tab.
-      </Subheading>
-    </div>
-  );
+  return <Subheading>Subheading component have different variants, look for options in knobs tab.</Subheading>;
 };
 
 export default {

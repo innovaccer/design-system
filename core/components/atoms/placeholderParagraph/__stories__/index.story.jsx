@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PlaceholderParagraph from '../PlaceholderParagraph';
+import { PlaceholderParagraph } from '@/index';
 
 export const all = () => {
   const length = 'medium';

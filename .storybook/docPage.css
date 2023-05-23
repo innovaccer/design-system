@@ -14,7 +14,9 @@ html, body {
   background: #f8f8f8 !important;
   margin-top: var(--spacing) !important;
   margin-bottom: var(--spacing) !important;
+  padding: var(--spacing) !important;
   white-space: break-spaces !important;
+  border-radius: var(--spacing-m)
 }
 
 .Utilities-example {
@@ -45,19 +47,18 @@ html, body {
   border: var(--spacing-xs) dotted black;
 }
 
-.sbdocs-preview {
-  border-radius: 0 !important;
-  border: 0 !important;
-  border-bottom: var(--border);
-}
-
-.sbdocs-title {
-  font-weight: var(--font-weight-medium) !important;
-  font-size: var(--font-size-xl) !important;
-  line-height: var(--font-height-xl) !important;
-  color: var(--text) !important;
-}
-
 .sbdocs.sbdocs-wrapper {
   padding: 0 !important;
+}
+
+table.docblock-argstable {
+  border-collapse: collapse;
+  border-radius: 4px;
+  border-style: hidden; 
+  box-shadow: 0 0 0 1px var(--secondary-light);
+}
+
+table.docblock-argstable tbody {
+  box-shadow: none !important;
+  border-top: var(--spacing-xs) solid var(--secondary-light);
 }

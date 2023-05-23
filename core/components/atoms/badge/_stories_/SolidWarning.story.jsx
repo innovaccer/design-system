@@ -1,20 +1,12 @@
 import * as React from 'react';
-import Badge from '../Badge';
+import { Badge } from '@/index';
 
-export const solidWarning = () => (
-  <Badge appearance="warning" subtle={false}>
-    {'Disapproved'}
-  </Badge>
-);
+// CSF format story
+export const solidWarning = () => {
+  return <Badge appearance="warning">Pending</Badge>;
+};
 
 export default {
   title: 'Components/Badge/Solid Warning',
   component: Badge,
-  parameters: {
-    docs: {
-      docPage: {
-        title: 'Badge',
-      },
-    },
-  },
 };

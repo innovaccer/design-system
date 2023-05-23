@@ -1,17 +1,9 @@
 import * as React from 'react';
-import Badge from '../Badge';
+import { Badge } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const appearance = 'primary';
-  const subtle = false;
-  const children = 'Badge';
-
-  return (
-    <Badge appearance={appearance} subtle={subtle}>
-      {children}
-    </Badge>
-  );
+  return <Badge>Approved</Badge>;
 };
 
 export default {

@@ -47,7 +47,11 @@ exports[`FileUploader component
             backup_round
           </i>
         </div>
-        Upload documents
+        <span
+          class="Button-text"
+        >
+          Upload documents
+        </span>
       </button>
       <input
         class="FileUploaderButton-input"
@@ -101,7 +105,11 @@ exports[`FileUploader component prop:accept snapshot
             backup_round
           </i>
         </div>
-        Upload files
+        <span
+          class="Button-text"
+        >
+          Upload files
+        </span>
       </button>
       <input
         accept="jpg, pdf, png"
@@ -156,7 +164,11 @@ exports[`FileUploader component prop:disabled snapshot
             backup_round
           </i>
         </div>
-        Upload files
+        <span
+          class="Button-text"
+        >
+          Upload files
+        </span>
       </button>
       <input
         class="FileUploaderButton-input"
@@ -211,7 +223,11 @@ exports[`FileUploader component prop:disabled snapshot
             backup_round
           </i>
         </div>
-        Upload files
+        <span
+          class="Button-text"
+        >
+          Upload files
+        </span>
       </button>
       <input
         class="FileUploaderButton-input"
@@ -266,7 +282,11 @@ exports[`FileUploader component prop:multiple snapshot
             backup_round
           </i>
         </div>
-        Upload files
+        <span
+          class="Button-text"
+        >
+          Upload files
+        </span>
       </button>
       <input
         class="FileUploaderButton-input"
@@ -320,7 +340,11 @@ exports[`FileUploader component prop:multiple snapshot
             backup_round
           </i>
         </div>
-        Upload files
+        <span
+          class="Button-text"
+        >
+          Upload files
+        </span>
       </button>
       <input
         class="FileUploaderButton-input"

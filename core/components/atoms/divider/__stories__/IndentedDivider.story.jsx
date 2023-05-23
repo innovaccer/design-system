@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Divider, Row, Column, Card, CardBody, Heading, Input, Text } from '@/index';
 
-export const IndentedDivider = () => {
+export const Indented = () => {
   return (
     <Row>
       <Column size="8">
@@ -44,6 +44,6 @@ export const IndentedDivider = () => {
 };
 
 export default {
-  title: 'Components/Divider/Indented Divider',
+  title: 'Components/Divider/Indented',
   component: Divider,
 };
