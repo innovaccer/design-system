@@ -3784,14 +3784,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -3846,14 +3854,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -3967,14 +3983,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -4029,14 +4053,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -4150,14 +4182,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -4212,14 +4252,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -4333,14 +4381,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -4395,14 +4451,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -4516,14 +4580,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -4578,14 +4650,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -4699,14 +4779,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -4761,14 +4849,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -4882,14 +4978,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -4944,14 +5048,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -5323,14 +5435,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent1 MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -5385,14 +5505,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent1 MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -5506,14 +5634,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent1Dark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -5568,14 +5704,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent1Dark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -5689,14 +5833,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent1Lighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -5751,14 +5903,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent1Lighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -5872,14 +6032,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent2 MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -5934,14 +6102,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent2 MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -6055,14 +6231,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent2Dark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -6117,14 +6301,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent2Dark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -6238,14 +6430,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent2Lighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -6300,14 +6500,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent2Lighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -6421,14 +6629,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent3 MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -6483,14 +6699,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent3 MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -6604,14 +6828,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent3Dark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -6666,14 +6898,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent3Dark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -6787,14 +7027,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent3Lighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -6849,14 +7097,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent3Lighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -6970,14 +7226,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent4 MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -7032,14 +7296,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent4 MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -7153,14 +7425,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent4Dark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -7215,14 +7495,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent4Dark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -7336,14 +7624,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--accent4Lighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -7398,14 +7694,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--accent4Lighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -7519,14 +7823,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--alert MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -7581,14 +7893,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--alert MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -7702,14 +8022,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--alertDark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -7764,14 +8092,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--alertDark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -7885,14 +8221,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--alertLighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -7947,14 +8291,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--alertLighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -8068,14 +8420,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--default MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -8130,14 +8490,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--default MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -8251,14 +8619,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--destructive MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -8313,14 +8689,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--destructive MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -8434,14 +8818,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -8496,14 +8888,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -8617,14 +9017,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--info MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -8679,14 +9087,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--info MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -8800,14 +9216,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--inverse MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -8862,14 +9286,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--inverse MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -8983,14 +9415,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--primary MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -9045,14 +9485,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--primary MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -9166,14 +9614,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--primaryDark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -9228,14 +9684,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--primaryDark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -9349,14 +9813,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--primaryLighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -9411,14 +9883,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--primaryLighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -9532,14 +10012,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--subtle MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -9594,14 +10082,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--subtle MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -9715,14 +10211,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--success MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -9777,14 +10281,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--success MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -9898,14 +10410,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--successDark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -9960,14 +10480,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--successDark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -10081,14 +10609,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--successLighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -10143,14 +10679,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--successLighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -10264,14 +10808,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--warning MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -10326,14 +10878,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--warning MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -10447,14 +11007,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--warningDark MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -10509,14 +11077,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--warningDark MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -10630,14 +11206,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--warningLighter MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -10692,14 +11276,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--warningLighter MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"
@@ -10813,14 +11405,22 @@ Object {
               Meta data
             </span>
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--white MetaList-seperator"
+          <svg
+            class="MetaList-seperator"
             data-test="DesignSystem-MetaList--rightSeperator"
-            role="button"
-            style="font-size: 8px; width: 8px;"
+            fill="none"
+            height="4"
+            viewBox="0 0 4 4"
+            width="4"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            fiber_manual_record_round
-          </i>
+            <circle
+              cx="2"
+              cy="2"
+              fill="#A6A6A6"
+              r="2"
+            />
+          </svg>
         </span>
         <span
           class="MetaList-item"
@@ -10875,14 +11475,22 @@ Object {
             Meta data
           </span>
         </span>
-        <i
-          class="material-icons material-icons-round Icon Icon--white MetaList-seperator"
+        <svg
+          class="MetaList-seperator"
           data-test="DesignSystem-MetaList--rightSeperator"
-          role="button"
-          style="font-size: 8px; width: 8px;"
+          fill="none"
+          height="4"
+          viewBox="0 0 4 4"
+          width="4"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          fiber_manual_record_round
-        </i>
+          <circle
+            cx="2"
+            cy="2"
+            fill="#A6A6A6"
+            r="2"
+          />
+        </svg>
       </span>
       <span
         class="MetaList-item"

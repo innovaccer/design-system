@@ -52,26 +52,20 @@ export const MetaList = (props: MetaListProps) => {
     className
   );
 
-  const SeperatorClass = classNames({
+  const RightSeperatorClass = classNames({
     ['MetaList-seperator']: true,
+    [`MetaList--${seperatorAppearance}`]: seperatorAppearance,
   });
 
   const LeftSeperatorClass = classNames({
     ['MetaList-seperator']: true,
     ['MetaList-seperator--left']: true,
+    [`MetaList--${seperatorAppearance}`]: seperatorAppearance,
   });
 
   return (
     <div data-test="DesignSystem-MetaList" {...baseProps} className={MetaClass}>
-      {seperator && (
-        <Icon
-          data-test="DesignSystem-MetaList--Seperator"
-          name="fiber_manual_record"
-          size={4}
-          className={LeftSeperatorClass}
-          appearance={seperatorAppearance}
-        />
-      )}
+      {seperator && <span className={LeftSeperatorClass} data-test="DesignSystem-MetaList--Seperator"></span>}
 
       {list.map((item, ind) => {
         const { label = '', icon } = item;
@@ -81,17 +75,7 @@ export const MetaList = (props: MetaListProps) => {
           <span key={ind} className="MetaList-item">
             <Meta label={label} icon={icon} iconAppearance={iconAppearance} labelAppearance={labelAppearance} />
             {rightSeperator && (
-              <>
-                <Icon
-                  data-test="DesignSystem-MetaList--rightSeperator"
-                  name="fiber_manual_record"
-                  size={8}
-                  // className={SeperatorClass}
-                  appearance={seperatorAppearance}
-                />
-
-                <span className={SeperatorClass} data-test="DesignSystem-MetaList--rightSeperator"></span>
-              </>
+              <span className={RightSeperatorClass} data-test="DesignSystem-MetaList--rightSeperator"></span>
             )}
           </span>
         );
