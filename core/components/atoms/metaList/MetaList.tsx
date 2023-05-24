@@ -111,7 +111,7 @@ MetaList.displayName = 'MetaList';
 
 MetaList.defaultProps = {
   seperatorAppearance: 'disabled',
-  iconAppearance: 'disabled',
+  iconAppearance: 'subtle',
   labelAppearance: 'subtle',
   size: 'regular',
 };
