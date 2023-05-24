@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import RangeSlider from '../RangeSlider';
+import { RangeSlider } from '@/index';
 
 // CSF format story
 export const all = () => {
@@ -26,7 +26,7 @@ export const all = () => {
     defaultValue: [2, 4],
   };
 
-  return <RangeSlider className="mt-2" {...options} />;
+  return <RangeSlider className="my-8" {...options} />;
 };
 
 export default {
