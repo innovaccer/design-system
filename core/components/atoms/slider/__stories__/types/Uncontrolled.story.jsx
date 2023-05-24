@@ -11,12 +11,12 @@ export const uncontrolledSlider = () => {
       stepSize={0.1}
       labelStepSize={1}
       defaultValue={4}
-      className="mt-2"
+      className="my-8"
     />
   );
 };
 
 export default {
-  title: 'Components/Slider/Variants/Uncontrolled Slider',
+  title: 'Components/Slider/Types/Uncontrolled Slider',
   component: Slider,
 };

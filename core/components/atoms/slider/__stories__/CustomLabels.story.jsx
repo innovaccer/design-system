@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Slider } from '@/index';
 
 // CSF format story
-export const cutsomLabels = () => {
+export const customLabels = () => {
   const [value, setValue] = React.useState(4);
 
   const onChange = (newValue) => {
@@ -10,7 +10,7 @@ export const cutsomLabels = () => {
   };
 
   const labelRenderer = (newValue) => {
-    return `${newValue}%`;
+    return <div>{newValue}%</div>;
   };
 
   return (
@@ -22,7 +22,7 @@ export const cutsomLabels = () => {
       value={value}
       onChange={onChange}
       labelRenderer={labelRenderer}
-      className="mt-7"
+      className="my-8"
     />
   );
 };
@@ -47,12 +47,13 @@ const customCode = `() => {
       value={value}
       onChange={onChange}
       labelRenderer={labelRenderer}
+      className='my-8'
     />
   );
 }`;
 
 export default {
-  title: 'Components/Slider/Variants/Cutsom Labels',
+  title: 'Components/Slider/Custom Labels',
   component: Slider,
   parameters: {
     docs: {

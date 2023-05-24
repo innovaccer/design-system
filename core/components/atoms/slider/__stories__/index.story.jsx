@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import Slider from '../Slider';
+import { Slider } from '@/index';
 
 // CSF format story
 export const all = () => {
@@ -27,7 +27,7 @@ export const all = () => {
     onChange,
   };
 
-  return <Slider key={defaultValue} className="mt-2" {...options} />;
+  return <Slider key={defaultValue} className="my-8" {...options} />;
 };
 
 export default {
