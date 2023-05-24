@@ -2,27 +2,27 @@ import * as React from 'react';
 import { HorizontalNav } from '@/index';
 import { action } from '@/utils/action';
 
-export const horizontalNavigationWithIcon = () => {
+export const withCount = () => {
   const data = [
     {
-      name: 'text',
-      label: 'Text',
-      icon: 'message',
+      name: 'to-dos',
+      label: 'To-dos',
+      count: 15,
     },
     {
-      name: 'voice',
-      label: 'Voice',
-      icon: 'mic',
+      name: 'activity_received',
+      label: 'Activity received',
+      count: 7,
     },
     {
-      name: 'mail',
-      label: 'Mail',
-      icon: 'email',
+      name: 'activity_sent',
+      label: 'Activity sent',
+      count: 9,
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'text',
+    name: 'to-dos',
   });
 
   const onClickHandler = (menu) => {
@@ -40,24 +40,24 @@ export const horizontalNavigationWithIcon = () => {
 const customCode = `() => {
   const data = [
     {
-      name: 'text',
-      label: 'Text',
-      icon: 'message'
+      name: 'to-dos',
+      label: 'To-dos',
+      count: 15
     },
     {
-      name: 'voice',
-      label: 'Voice',
-      icon: 'mic'
+      name: 'activity_received',
+      label: 'Activity received',
+      count: 7
     },
     {
-      name: 'mail',
-      label: 'Mail',
-      icon: 'email'
+      name: 'activity_sent',
+      label: 'Activity sent',
+      count: 9
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'text'
+    name: 'to-dos'
   });
 
   const onClickHandler = (menu) => {
@@ -78,7 +78,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Horizontal Navigation With Icon',
+  title: 'Components/HorizontalNav/Variants/With Count',
   component: HorizontalNav,
   parameters: {
     docs: {
