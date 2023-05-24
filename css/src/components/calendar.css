@@ -199,11 +199,6 @@
 
 .Calendar-value--currDateMonthYear:active {
   background: var(--primary-lighter);
-  color: var(--primary-dark);
-}
-
-.Calendar-value--currDateMonthYear:active .Calendar-text {
-  color: var(--primary-dark);
 }
 
 .Calendar-value--active {
@@ -213,6 +208,10 @@
 
 .Calendar-value--active:hover {
   background: var(--primary-dark);
+}
+
+.Calendar-value--active:active {
+  background: var(--primary-darker);
 }
 
 .Calendar-yearValue--small,
