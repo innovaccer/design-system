@@ -1,7 +1,7 @@
 import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
-import { Text } from '@/index';
+import { Text, Icon, Tooltip } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
@@ -26,13 +26,17 @@ export interface LabelProps extends BaseProps, BaseHtmlProps<HTMLLabelElement> {
    * Adds default bottom margin of 4px
    */
   withInput?: boolean;
+  /**
+   * Text to show inside tooltip when hover on **info** icon
+   */
+  info?: string;
 }
 
 /**
  * *NOTE: Extends props with HTMLProps<HTMLLabelElement>*
  */
 export const Label = (props: LabelProps) => {
-  const { required, optional, withInput, disabled, children, className, ...rest } = props;
+  const { required, optional, withInput, disabled, children, className, info, ...rest } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -65,12 +69,27 @@ export const Label = (props: LabelProps) => {
     return null;
   };
 
+  const renderIndicator = (info: string) => {
+    return (
+      <Tooltip tooltip={info}>
+        <Icon
+          data-test="DesignSystem-Label--Info"
+          name="info"
+          size={12}
+          appearance="subtle"
+          className="ml-3 cursor-pointer d-flex align-items-center"
+        />
+      </Tooltip>
+    );
+  };
+
   return (
     <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
       <GenericText data-test="DesignSystem-Label--Text" className={classes} componentType="label" {...rest}>
         {children}
       </GenericText>
       {renderInfo(required, optional)}
+      {info && renderIndicator(info)}
     </div>
   );
 };
