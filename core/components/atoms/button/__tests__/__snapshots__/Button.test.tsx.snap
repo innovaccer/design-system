@@ -11,7 +11,11 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -27,7 +31,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -43,7 +51,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -96,7 +108,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -113,7 +129,11 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -129,7 +149,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -145,7 +169,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -198,7 +226,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -215,7 +247,11 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -231,7 +267,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -247,7 +287,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -300,7 +344,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -317,7 +365,11 @@ exports[`Button component
       disabled=""
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -333,7 +385,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -349,7 +405,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -402,7 +462,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -418,7 +482,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -446,7 +514,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -474,7 +546,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -502,7 +578,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -518,7 +598,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -546,7 +630,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -574,7 +662,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -602,7 +694,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -618,7 +714,11 @@ exports[`Button component
       data-test="DesignSystem-Button"
       tabindex="0"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -646,7 +746,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -674,7 +778,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -702,7 +810,11 @@ exports[`Button component
           events_round
         </i>
       </div>
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -719,7 +831,11 @@ exports[`Button component
       tabindex="0"
       type="button"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -736,7 +852,11 @@ exports[`Button component
       tabindex="0"
       type="reset"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>
@@ -753,7 +873,11 @@ exports[`Button component
       tabindex="0"
       type="submit"
     >
-      Button
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
     </button>
   </div>
 </body>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Modal, Button, Text } from '@/index';
+import { Modal, Chip, Button, Text } from '@/index';
 
 export const scrolling = () => {
   const [open, setOpen] = React.useState(false);
@@ -105,19 +105,15 @@ export const scrolling = () => {
             return (
               <div key={index} className="mt-5 d-flex">
                 <div>
-                  <Text size="small" className="mr-4">
+                  <Text size="regular" className="mr-4">
                     {`${index + 1}.`}
                   </Text>
                 </div>
                 <div className="d-inline-block ml-2">
-                  <Text size="small">{object.question}</Text>
+                  <Text size="regular">{object.question}</Text>
                   <div className="mb-5 mt-3">
                     {object.options.map((option, ind) => {
-                      return (
-                        <Button key={ind} className="mr-4 mt-4 d-inline" size="tiny">
-                          {option}
-                        </Button>
-                      );
+                      return <Chip key={ind} type="selection" label={option} className="mr-4 mt-4" />;
                     })}
                   </div>
                 </div>
@@ -177,22 +173,18 @@ const customCode = `() => {
               return(
                 <div key={index} className="mt-5 d-flex">
                   <div >
-                    <Text size="small" className="mr-4">
+                    <Text size="regular" className="mr-4">
                     {\`\${index + 1}.\`}
                     </Text>
                   </div>
                   <div className="d-inline-block ml-2">
-                    <Text size="small">
+                    <Text size="regular">
                       {object.question}
                     </Text>
                     <div className="mb-5 mt-3">
                       {
                         object.options.map((option , ind) => {
-                          return(
-                            <Button key={ind} className="mr-4 mt-4 d-inline" size="tiny">
-                              {option}
-                            </Button>
-                          );
+                          return <Chip key={ind} type="selection" label={option} className="mr-4 mt-4"/>;
                         })
                       }
                     </div>

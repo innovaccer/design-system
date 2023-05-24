@@ -9,56 +9,75 @@ keywords: ['Textbox', 'Text field', 'Form field', 'Free text area']
 Inputs allow users to type in a value. They can be used anywhere, though they mostly appear in conjunction with other input components to create a form.
 
 ### Types
-<br/>
+
+<br />
 
 #### Basic input
+
 Basic input contains the input box, value or placeholder text, and an optional icon on the right.
+
 <Preview name="components-input-basic-input--basic-input" />
 
 #### Metric input
-Metric input takes numerical data as input. It can either have a **prefix** e.g. currency symbols such as $, €, ₹, etc., or **suffix** e.g.units such as kg, mm, in, etc. to provide additional information about the data being input. 
+
+Metric input takes numerical data as input. It can either have a **prefix** e.g. currency symbols such as $, €, ₹, etc., or **suffix** e.g.units such as kg, mm, in, etc. to provide additional information about the data being input.
+
 <Preview name="components-metricinput-all--all" />
 
 #### Verification code input
+
 Verification code input allows users to enter the code sent to their systems to verify themselves. These codes can be either 4 or 6 digits long.
+
 <Preview name="components-verificationcodeinput-all--all" />
 
 #### Free text area
+
 Free text area lets users enter data much longer than a basic input. It can have a scrollbar and a resize action at the bottom right. Just like the basic input, it can also have help text beneath it.
+
 <Preview name="components-textarea-default-textarea--default-textarea" />
 
 ### Variants
-<br/>
+
+<br />
 
 #### With icon
+
 Basic inputs can have an icon on the left of text in the input box along with an optional icon on the right. This variant comes in 2 sizes i.e. regular and large as accomodating such icons is not possible in the tiny size.
+
 <Preview name="components-input-icon-left-input--icon-left-input" />
 
 #### Prefix/Suffix
+
 Metric inputs can have prefix or suffix to provide additional information about the data being input.
 
 ![Metric input with prefix and suffix](./images/inputs-1.png)
-<br/>
+
+<br />
 
 ### Sizes
+
 Inputs come in **3 sizes** - small, regular and large with a few exceptions. Basic input with icon in the left, metric input and verification code input do not support the tiny size. Free text area comes in a single default size as it is resizeable.
+
 <Preview name="components-input-variants-size--size" />
 
 ### States
+
 Inputs come in **5 states** - default, hover, focus, error and disabled.
 
 ![Input states](./images/input-states.png)
-<br/>
-<br/>
+
+<br />
+<br />
 
 ### Structure
-<br/>
-<br/>
+
+<br />
+<br />
 
 ![Structure of inputs](./images/input-structure.png)
-<br/>
-<br/>
 
+<br />
+<br />
 
 <table style="width: 100%">
   <tbody>
@@ -69,11 +88,17 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
     <tr style="vertical-align: top">
       <td>Height</td>
       <td>
-            <ul>
-              <li>24 px <em>(Small)</em></li>
-              <li>32 px <em>(Regular)</em></li>
-              <li>40 px <em>(Large)</em></li>
-            </ul>
+        <ul>
+          <li>
+            24 px <em>(Small)</em>
+          </li>
+          <li>
+            32 px <em>(Regular)</em>
+          </li>
+          <li>
+            40 px <em>(Large)</em>
+          </li>
+        </ul>
       </td>
     </tr>
     <tr style="vertical-align: top">
@@ -83,14 +108,14 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
   </tbody>
 </table>
 
-<br/>
-
+<br />
 
 ### Configurations
 
 #### Input
-<br/>
-<br/>
+
+<br />
+<br />
 
 <table style="width: 100%">
   <tbody>
@@ -102,11 +127,11 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
     <tr style="vertical-align: top">
       <td>Size</td>
       <td>
-          <ul>
-              <li>Small</li>
-              <li>Regular</li>
-              <li>Large</li>
-          </ul>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+          <li>Large</li>
+        </ul>
       </td>
       <td>Regular</td>
     </tr>
@@ -116,27 +141,40 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Icon left<br/><em>(optional)</em></td>
+      <td>
+        Icon left
+        <br />
+        <em>(optional)</em>
+      </td>
       <td>&#60;icon name&#62;</td>
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Action icon<br/><em>(optional)</em></td>
+      <td>
+        Action icon
+        <br />
+        <em>(optional)</em>
+      </td>
       <td>&#60;icon name&#62;</td>
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Help text<br/><em>(optional)</em></td>
+      <td>
+        Help text
+        <br />
+        <em>(optional)</em>
+      </td>
       <td>&#60;help text&#62;</td>
       <td>-</td>
     </tr>
   </tbody>
 </table>
-<br/>
+<br />
 
 #### Label
-<br/>
-<br/>
+
+<br />
+<br />
 
 <table style="width: 100%">
   <tbody>
@@ -148,54 +186,65 @@ Inputs come in **5 states** - default, hover, focus, error and disabled.
     <tr style="vertical-align: top">
       <td>Required</td>
       <td>
-          <ul>
-              <li>True</li>
-              <li>False</li>
-          </ul>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
       </td>
       <td>False</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Optional</td>
       <td>
-          <ul>
-              <li>True</li>
-              <li>False</li>
-          </ul>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
       </td>
       <td>False</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Info<br/></td>
       <td>
-          <ul>
-              <li>True</li>
-              <li>False</li>
-          </ul>
+        Info
+        <br />
+      </td>
+      <td>
+        <ul>
+          <li>True</li>
+          <li>False</li>
+        </ul>
       </td>
       <td>False</td>
     </tr>
   </tbody>
 </table>
-<br/>
+<br />
 
 ### Usage
-<br/>
+
+<br />
 
 #### Label
+
 Labels help users understand what sort of information is required. Labels should be short and to the point. Effective labeling improves usability.
-The label comes with an optional required indicator (*).
+The label comes with an optional required indicator (\*).
+
 <Preview name="components-input-input-with-label--input-with-label" />
 
 #### Label position
+
 Label can be placed either on the top of the input field or at the left of it. It is not advised to place label on the left until there are some height constraints, as this type of placement causes a lot of eye movement. Top labels are responsive and also maintain the vertical rhythm in case of long forms.
+
 <Preview name="components-input-label-position--label-position" />
 
 #### Help text
+
 Help text can be added beneath the input box to provide additional information. In case of an error that needs to be explained, inline message is used at the same place.
+
 <Preview name="components-input-input-with-caption--input-with-caption" />
 
 #### Required vs. Optional
+
 Inputs can be marked as optional or required depending upon the context. To avoid unnecessary clutter, mark only the minority fields as optional or required.
 
 **When no. of required fields < no. of optional fields**
@@ -204,36 +253,46 @@ Inputs can be marked as optional or required depending upon the context. To avoi
 
 <Caption> Number of required fields is less than number of optional fields </Caption>
 
-<br/>
+<br />
 
 **When no. of required fields > no. of optional fields**
 
 ![Number of required fields > no. of optional fields](./images/inputs-4.png)
+
 <Caption> Number of required fields is more than no. of optional fields </Caption>
-<br/>
+<br />
 
 It is recommended to keep the notations of required and optional fields consistent throughout the app as different notations can confuse users.
 
 #### Input masking
+
 Input masks are helpful for the data fields that have a specific input format, as they provide the formatting cues to help users know the format in which the data is expected for the field.
-<Preview name="components-inputmask-phone-number--phone-number" />
+
+<Preview name="components-inputmask-help-text--help-text" />
 
 #### Input with chips
+
 Inputs can also be used to create filters in the field values by using input chips. To embed a chip, press **enter** after typing. To remove all the chips at once, click on the clear icon of the input box.
 
 ![Input with chips](./images/inputs-5.png)
-<br/>
+
+<br />
 
 ![Multi line behavior in input with chips](./images/inputs-6.png)
+
 <Caption> Multi line behavior in input with chips </Caption>
 
-<br/>
-<br/>
+<br />
+<br />
 
 #### Verification code input behaviour
-<br/>
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYOxwh18LLa34NQIahcozOz%2FVerification-Code-Input-Expected-Flow%3Fkind%3D%26node-id%3D122%253A0%26page-id%3D0%253A1%26scaling%3Dscale-down-width%26viewport%3D163%252C286%252C0.05311004817485809&hide-ui=1" allowfullscreen></iframe>
- 
+<br />
 
-
+<iframe
+  style="border: 1px solid rgba(0, 0, 0, 0.1);"
+  width="800"
+  height="450"
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FYOxwh18LLa34NQIahcozOz%2FVerification-Code-Input-Expected-Flow%3Fkind%3D%26node-id%3D122%253A0%26page-id%3D0%253A1%26scaling%3Dscale-down-width%26viewport%3D163%252C286%252C0.05311004817485809&hide-ui=1"
+  allowfullscreen
+></iframe>

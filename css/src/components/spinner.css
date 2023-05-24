@@ -53,9 +53,9 @@
 }
 
 .Circle--secondary {
-  stroke: var(--secondary-dark);
+  stroke: var(--primary);
 }
 
 .Circle--white {
-  stroke: var(--white);
+  stroke: var(--primary);
 }

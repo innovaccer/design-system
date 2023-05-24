@@ -5,7 +5,7 @@ import { Modal, Button, Paragraph, Text } from '@/index';
 export const confirmations = () => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
-  const dimension = 'small';
+  const dimension = 'medium';
 
   const onClose = () => {
     setOpen(!open);
@@ -30,7 +30,7 @@ export const confirmations = () => {
             <Button appearance="basic" onClick={action('Cancel button click')}>
               Cancel
             </Button>
-            <Button appearance="primary" className="ml-3" onClick={action('Discard button click')}>
+            <Button appearance="primary" className="ml-4" onClick={action('Discard button click')}>
               Create version
             </Button>
           </>
@@ -51,7 +51,7 @@ export const confirmations = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const backdropClose = false;
-  const dimension = 'small';
+  const dimension = 'medium';
 
   const onClose = () => {
     setOpen(!open);
@@ -72,7 +72,7 @@ const customCode = `() => {
         footer={(
           <>
             <Button appearance="basic" onClick={console.log('Cancel button click')}>Cancel</Button>
-            <Button appearance="primary" className="ml-3" onClick={console.log('Discard button click')}>
+            <Button appearance="primary" className="ml-4" onClick={console.log('Discard button click')}>
                 Create version
             </Button>
           </>

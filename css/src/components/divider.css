@@ -5,6 +5,7 @@
 
 .Divider--vertical {
   width: 1px;
+  background: var(--secondary-light);
 }
 
 .Divider--horizontal {

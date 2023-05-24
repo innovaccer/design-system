@@ -41,7 +41,7 @@ export const medium = () => {
           title="Description Title"
           description="Adding a subheading clearly indicates the hierarchy of the information."
         />
-        <ModalDescription description="Card Sections include supporting text like an article summary or a restaurant description." />
+        <ModalDescription description="Card Sections include supporting text like an article summary or a healthcare service description." />
       </Modal>
     </div>
   );
@@ -81,7 +81,7 @@ const customCode = `() => {
           description="Adding a subheading clearly indicates the hierarchy of the information."
         />
         <ModalDescription
-          description="Card Sections include supporting text like an article summary or a restaurant description."
+          description="Card Sections include supporting text like an article summary or a healthcare service description."
         />
       </Modal>
     </div>

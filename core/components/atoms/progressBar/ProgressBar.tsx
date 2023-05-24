@@ -2,6 +2,8 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
+export type ProgressBarSize = 'small' | 'regular';
+
 export interface ProgressBarProps extends BaseProps {
   /**
    * Specifies how much of the task that has been completed. Value should lie between 0 to max,
@@ -11,10 +13,14 @@ export interface ProgressBarProps extends BaseProps {
    * Describes how much work the task indicated by the `Progress Bar` requires
    */
   max: number;
+  /**
+   * Size of `Progress Bar`
+   */
+  size: ProgressBarSize;
 }
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { max, value, className } = props;
+  const { max, value, className, size } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -29,9 +35,15 @@ export const ProgressBar = (props: ProgressBarProps) => {
     className
   );
 
+  const ProgressIndicatorClass = classNames({
+    ['ProgressBar-indicator']: true,
+    ['ProgressBar-indicator--small']: size === 'small',
+    ['ProgressBar-indicator--regular']: size === 'regular',
+  });
+
   return (
     <div data-test="DesignSystem-ProgressBar" {...baseProps} className={ProgressBarClass}>
-      <div className={'ProgressBar-indicator'} style={style} />
+      <div data-test="DesignSystem-ProgressBar-Indicator" className={ProgressIndicatorClass} style={style} />
     </div>
   );
 };
@@ -39,6 +51,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
 ProgressBar.displayName = 'ProgressBar';
 ProgressBar.defaultProps = {
   max: 100,
+  size: 'regular',
 };
 
 export default ProgressBar;
