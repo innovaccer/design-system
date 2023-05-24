@@ -1,17 +1,16 @@
 import * as React from 'react';
-import Calendar from '../Calendar';
-import Card from '@/components/atoms/card';
 import { action } from '@/utils/action';
+import { Calendar } from '@/index';
 
 // CSF format story
 export const all = () => {
   const monthsInView = 1;
 
-  const dateValue = new Date('Jan 11 2021');
+  const dateValue = new Date('Jan 11 2023');
 
-  const startDate = new Date('Jan 15 2021');
+  const startDate = new Date('Jan 15 2023');
 
-  const endDate = new Date('Jan 20 2021');
+  const endDate = new Date('Jan 20 2023');
 
   const view = 'date';
 
@@ -93,21 +92,19 @@ export const all = () => {
   };
 
   return (
-    <Card className="d-inline-flex" shadow="light">
-      <Calendar
-        monthsInView={monthsInView}
-        rangePicker={rangePicker}
-        jumpView={jumpView}
-        date={convertToDate(dateValue)}
-        startDate={convertToDate(startDate)}
-        endDate={convertToDate(endDate)}
-        onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
-        onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
-        view={view}
-        firstDayOfWeek={firstDayOfWeek}
-        {...attr}
-      />
-    </Card>
+    <Calendar
+      monthsInView={monthsInView}
+      rangePicker={rangePicker}
+      jumpView={jumpView}
+      date={convertToDate(dateValue)}
+      startDate={convertToDate(startDate)}
+      endDate={convertToDate(endDate)}
+      onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
+      onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
+      view={view}
+      firstDayOfWeek={firstDayOfWeek}
+      {...attr}
+    />
   );
 };
 

@@ -209,3 +209,17 @@ describe('Horizontal Navigation component css classes', () => {
     expect(activeMenu).toHaveClass('color-primary-dark');
   });
 });
+
+describe('Horizontal Navigation component keydown event handler', () => {
+  it('calls onClick callback on keydown event', () => {
+    jest.resetAllMocks();
+    const stepFocused = 1;
+    const { getAllByTestId } = render(<HorizontalNav menus={menus} active={active} onClick={onClick} />);
+
+    const activeMenu = getAllByTestId('DesignSystem-HorizontalNav')[stepFocused];
+    fireEvent.focus(activeMenu);
+    fireEvent.keyDown(activeMenu, { key: 'Enter' });
+    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalledWith(menus[stepFocused]);
+  });
+});

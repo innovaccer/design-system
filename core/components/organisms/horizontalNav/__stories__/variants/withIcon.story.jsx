@@ -2,20 +2,27 @@ import * as React from 'react';
 import { HorizontalNav } from '@/index';
 import { action } from '@/utils/action';
 
-export const defaultHorizontalNavigation = () => {
+export const withIcon = () => {
   const data = [
     {
-      name: 'engagements',
-      label: 'Engagements',
+      name: 'text',
+      label: 'Text',
+      icon: 'message',
     },
     {
-      name: 'no_linked_activities',
-      label: 'No Linked Activities',
+      name: 'voice',
+      label: 'Voice',
+      icon: 'mic',
+    },
+    {
+      name: 'mail',
+      label: 'Mail',
+      icon: 'email',
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'engagements',
+    name: 'text',
   });
 
   const onClickHandler = (menu) => {
@@ -33,17 +40,24 @@ export const defaultHorizontalNavigation = () => {
 const customCode = `() => {
   const data = [
     {
-      name: 'engagements',
-      label: 'Engagements',
+      name: 'text',
+      label: 'Text',
+      icon: 'message'
     },
     {
-      name: 'no_linked_activities',
-      label: 'No Linked Activities',
+      name: 'voice',
+      label: 'Voice',
+      icon: 'mic'
+    },
+    {
+      name: 'mail',
+      label: 'Mail',
+      icon: 'email'
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'engagements'
+    name: 'text'
   });
 
   const onClickHandler = (menu) => {
@@ -64,7 +78,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Default Horizontal Navigation',
+  title: 'Components/HorizontalNav/Variants/With Icon',
   component: HorizontalNav,
   parameters: {
     docs: {
