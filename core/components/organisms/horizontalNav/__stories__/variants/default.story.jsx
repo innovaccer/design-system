@@ -2,27 +2,20 @@ import * as React from 'react';
 import { HorizontalNav } from '@/index';
 import { action } from '@/utils/action';
 
-export const horizontalNavigationWithCount = () => {
+export const defaultHorizontalNav = () => {
   const data = [
     {
-      name: 'to-dos',
-      label: 'To-dos',
-      count: 15,
+      name: 'engagements',
+      label: 'Engagements',
     },
     {
-      name: 'activity_received',
-      label: 'Activity received',
-      count: 7,
-    },
-    {
-      name: 'activity_sent',
-      label: 'Activity sent',
-      count: 9,
+      name: 'no_linked_activities',
+      label: 'No Linked Activities',
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'to-dos',
+    name: 'engagements',
   });
 
   const onClickHandler = (menu) => {
@@ -40,24 +33,17 @@ export const horizontalNavigationWithCount = () => {
 const customCode = `() => {
   const data = [
     {
-      name: 'to-dos',
-      label: 'To-dos',
-      count: 15
+      name: 'engagements',
+      label: 'Engagements',
     },
     {
-      name: 'activity_received',
-      label: 'Activity received',
-      count: 7
-    },
-    {
-      name: 'activity_sent',
-      label: 'Activity sent',
-      count: 9
+      name: 'no_linked_activities',
+      label: 'No Linked Activities',
     },
   ];
 
   const [active, setActive] = React.useState({
-    name: 'to-dos'
+    name: 'engagements'
   });
 
   const onClickHandler = (menu) => {
@@ -78,7 +64,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Horizontal Navigation With Count',
+  title: 'Components/HorizontalNav/Variants/Default Horizontal Nav',
   component: HorizontalNav,
   parameters: {
     docs: {

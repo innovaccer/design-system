@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Modal, Button, Paragraph, HorizontalNav, Dropdown, Label, Heading } from '@/index';
+import { Modal, Button, HorizontalNav, Dropdown, Label, Heading } from '@/index';
 
-export const leftAlignedNavigationTabs = () => {
+export const leftAligned = () => {
   const options = [];
   for (let i = 1; i <= 10; i++) {
     options.push({
@@ -57,16 +57,6 @@ export const leftAlignedNavigationTabs = () => {
 
   return (
     <div>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua.
-        <br />
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        <br />
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <br />
-      </Paragraph>
       <Button
         appearance="primary"
         className="mt-3"
@@ -74,7 +64,7 @@ export const leftAlignedNavigationTabs = () => {
           setOpen(true);
         }}
       >
-        Open
+        Open Modal
       </Button>
       <Modal
         open={open}
@@ -89,7 +79,6 @@ export const leftAlignedNavigationTabs = () => {
             </Button>
           </>
         }
-        seperator={true}
       >
         <div className="py-5 w-50">
           <Label withInput={true} required={true}>
@@ -170,16 +159,7 @@ const customCode = `() => {
 
   return (
     <div>
-      <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br />
-        Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br />
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br />
-        Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.<br />
-      </Paragraph>
-      <Button appearance="primary" className="mt-3" onClick={() => { setOpen(true) }}>Open</Button>
+      <Button appearance="primary" className="mt-3" onClick={() => { setOpen(true) }}>Open Modal</Button>
       <Modal
         open={open}
         dimension="large"
@@ -191,7 +171,7 @@ const customCode = `() => {
             <Button appearance="primary" className="ml-4">Create</Button>
           </>
         )}
-        seperator={true}
+        
       >
         <div className="py-5 w-50">
           <Label withInput={true} required={true}>Type</Label>
@@ -213,12 +193,13 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Left Aligned Navigation Tabs',
+  title: 'Components/HorizontalNav/Left Aligned',
   component: HorizontalNav,
   parameters: {
     docs: {
       docPage: {
         customCode,
+        title: 'Horizontal Nav inside a Standard Modal',
         noHtml: true,
       },
     },
