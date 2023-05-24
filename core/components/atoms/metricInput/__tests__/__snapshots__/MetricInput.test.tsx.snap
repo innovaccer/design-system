@@ -28,7 +28,7 @@ exports[`MetricInput component
         class="MetricInput-arrowIcons"
       >
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4 mb-2"
+          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
         >
@@ -46,7 +46,7 @@ exports[`MetricInput component
           </div>
         </button>
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4"
+          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
         >
@@ -97,7 +97,7 @@ exports[`MetricInput component
         class="MetricInput-arrowIcons"
       >
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4 mb-2"
+          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
         >
@@ -115,7 +115,7 @@ exports[`MetricInput component
           </div>
         </button>
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4"
+          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
         >
@@ -162,7 +162,7 @@ exports[`MetricInput component
         value="10"
       />
       <span
-        class="Text Text--subtle Text--large ml-5"
+        class="Text Text--subtle Text--large mx-5"
         data-test="DesignSystem-MetricInput--suffix"
       >
         kg
@@ -171,7 +171,7 @@ exports[`MetricInput component
         class="MetricInput-arrowIcons"
       >
         <button
-          class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-6 mb-2"
+          class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
         >
@@ -189,7 +189,7 @@ exports[`MetricInput component
           </div>
         </button>
         <button
-          class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-6"
+          class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
         >
@@ -236,7 +236,7 @@ exports[`MetricInput component
         value="10"
       />
       <span
-        class="Text Text--subtle Text--regular ml-4"
+        class="Text Text--subtle Text--regular ml-4 mr-3"
         data-test="DesignSystem-MetricInput--suffix"
       >
         kg
@@ -245,7 +245,7 @@ exports[`MetricInput component
         class="MetricInput-arrowIcons"
       >
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4 mb-2"
+          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
         >
@@ -263,7 +263,7 @@ exports[`MetricInput component
           </div>
         </button>
         <button
-          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-4"
+          class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
         >

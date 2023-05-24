@@ -10,7 +10,7 @@ export const withSuffix = () => {
       <Label htmlFor="metric-input" className="mr-5">
         Body Height
       </Label>
-      <Column size={1}>
+      <Column size={2}>
         <MetricInput
           id="metric-input"
           suffix="in"
@@ -30,7 +30,7 @@ const customCode = `() => {
   return (
     <Row className="align-items-center">
       <Label htmlFor="metric-input" className="mr-5">Body Height</Label>
-      <Column size={1}>
+      <Column size={2}>
         <MetricInput
           id="metric-input"
           suffix="in"
@@ -43,7 +43,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/MetricInput/With Suffix',
+  title: 'Components/MetricInput/Variants/With Suffix',
   component: MetricInput,
   parameters: {
     docs: {

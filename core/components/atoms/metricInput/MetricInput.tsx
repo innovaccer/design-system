@@ -175,11 +175,20 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     [`MetricInput-icon--${size}`]: size,
   });
 
+  const prefixClass = classNames({
+    ['mr-4']: size === 'regular',
+    ['mr-5']: size !== 'regular',
+  });
+
+  const suffixClass = classNames({
+    ['ml-4 mr-3']: size === 'regular',
+    ['mx-5']: size !== 'regular',
+  });
+
   const actionButton = classNames({
     ['p-0']: true,
     [`MetricInput-arrowIcon--${size}`]: size,
-    ['ml-4']: size === 'regular',
-    ['ml-6']: size === 'large',
+    ['ml-3']: true,
   });
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -253,12 +262,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         />
       )}
       {prefix && (
-        <Text
-          data-test="DesignSystem-MetricInput--prefix"
-          className={size === 'regular' ? 'mr-4' : 'mr-5'}
-          size={size}
-          appearance="subtle"
-        >
+        <Text data-test="DesignSystem-MetricInput--prefix" className={prefixClass} size={size} appearance="subtle">
           {prefix}
         </Text>
       )}
@@ -282,12 +286,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         onKeyDown={handleKeyDown}
       />
       {suffix && (
-        <Text
-          data-test="DesignSystem-MetricInput--suffix"
-          className={size === 'regular' ? 'ml-4' : 'ml-5'}
-          size={size}
-          appearance="subtle"
-        >
+        <Text data-test="DesignSystem-MetricInput--suffix" className={suffixClass} size={size} appearance="subtle">
           {suffix}
         </Text>
       )}

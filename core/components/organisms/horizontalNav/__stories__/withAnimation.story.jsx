@@ -84,7 +84,7 @@ const getMenu1List = (active, menu, handleAnimationEnd) => {
   return (
     <Card
       onAnimationEnd={handleAnimationEnd}
-      className={`${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} py-4`}
+      className={`${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} pt-4`}
     >
       <Table
         loaderSchema={loaderSchema}
@@ -178,7 +178,7 @@ const getMenu2List = (active, menu, handleAnimationEnd) => {
   return (
     <Card
       onAnimationEnd={handleAnimationEnd}
-      className={`${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} py-4`}
+      className={`${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} pt-4`}
     >
       <Text size="large" weight="strong" className="ml-5">
         Sharing Test Manual
@@ -210,12 +210,12 @@ const getMenu2List = (active, menu, handleAnimationEnd) => {
   );
 };
 
-export const horizontalNavigationWithAnimation = () => {
+export const withAnimation = () => {
   const data = [
     {
       name: 'menu_1',
       label: 'Menu 1',
-      icon: 'event',
+      count: 20,
     },
     {
       name: 'menu_2',
@@ -226,6 +226,7 @@ export const horizontalNavigationWithAnimation = () => {
       name: 'menu_3',
       label: 'Menu 3',
       disabled: true,
+      count: 5,
     },
   ];
 
@@ -266,7 +267,7 @@ const customCode = `() => {
     {
       name: 'menu_1',
       label: 'Menu 1',
-      icon: 'event',
+      count: 20,
     },
     {
       name: 'menu_2',
@@ -276,7 +277,8 @@ const customCode = `() => {
     {
       name: 'menu_3',
       label: 'Menu 3',
-      disabled: true
+      disabled: true,
+      count: 5,
     }
   ];
 
@@ -377,7 +379,7 @@ const customCode = `() => {
     return (
       <Card
         onAnimationEnd={handleAnimationEnd}
-        className={\`\${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} py-4\`}
+        className={\`\${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} pt-4\`}
       >
         <Table
           size="compressed"
@@ -470,7 +472,7 @@ const customCode = `() => {
     return (
         <Card 
           onAnimationEnd={handleAnimationEnd}
-          className={\`\${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} py-4\`}
+          className={\`\${menu.name != active.name ? 'slideOut-left' : 'slideIn-left'} pt-4\`}
         >
           <Text size="large" weight="strong" className="ml-5">Sharing Test Manual</Text>
           <List
@@ -518,7 +520,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/HorizontalNav/Horizontal Navigation With Animation',
+  title: 'Components/HorizontalNav/With Animation',
   component: HorizontalNav,
   parameters: {
     docs: {

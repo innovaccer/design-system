@@ -18,11 +18,13 @@
   pointer-events: none;
 }
 
-.HorizontalNav-menu--disabled:focus-visible {
+.HorizontalNav-menu--disabled:focus-visible,
+.HorizontalNav-menu--disabled:focus {
   outline: none;
 }
 
-.HorizontalNav-menu--default:focus-visible {
+.HorizontalNav-menu--default:focus-visible,
+.HorizontalNav-menu--default:focus {
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
   outline: none;
 }
@@ -39,7 +41,8 @@
   background-color: var(--primary-lightest);
 }
 
-.HorizontalNav-menu--active:focus-visible {
+.HorizontalNav-menu--active:focus-visible,
+.HorizontalNav-menu--active:focus {
   background-color: var(--primary-lightest);
   box-shadow: var(--shadow-spread) var(--primary-shadow);
   outline: none;

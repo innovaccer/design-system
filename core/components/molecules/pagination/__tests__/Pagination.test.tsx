@@ -5,10 +5,12 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 
 const pageNumber = 10;
 const totalPages = 50;
+const pageJumpDebounceDuration = 750;
 const paginationType = ['basic', 'jump'];
 const FunctionValue = jest.fn();
 
 const inputTestId = 'DesignSystem-Pagination--Input';
+jest.useFakeTimers();
 
 describe('Pagination component', () => {
   const mapper: Record<string, any> = {
@@ -50,22 +52,31 @@ describe('Pagination component with props: page and onPageChange', () => {
   it('render page due to Input change', () => {
     const updatedPage = 15;
     const { getByTestId } = render(
-      <Pagination page={pageNumber} totalPages={totalPages} type="jump" onPageChange={FunctionValue} />
+      <Pagination
+        page={pageNumber}
+        totalPages={totalPages}
+        type="jump"
+        pageJumpDebounceDuration={pageJumpDebounceDuration}
+        onPageChange={FunctionValue}
+      />
     );
 
     const input = getByTestId(inputTestId);
 
     fireEvent.change(input, { target: { value: updatedPage } });
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).toHaveValue(updatedPage);
     expect(FunctionValue).toHaveBeenCalledWith(updatedPage);
 
     fireEvent.change(input, { target: { value: 0 } });
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).not.toHaveValue(0);
 
     fireEvent.change(input, { target: { value: 0.1 } });
     expect(getByTestId(inputTestId)).toHaveValue(null);
 
     fireEvent.change(input, { target: { value: totalPages + 1 } });
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).not.toHaveValue(totalPages + 1);
   });
 
@@ -76,7 +87,7 @@ describe('Pagination component with props: page and onPageChange', () => {
 
     const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
     fireEvent.click(nextButton);
-
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).toHaveValue(pageNumber + 1);
     expect(FunctionValue).toHaveBeenCalledWith(pageNumber + 1);
   });
@@ -88,7 +99,7 @@ describe('Pagination component with props: page and onPageChange', () => {
 
     const prevButton = getByTestId('DesignSystem-Pagination--PrevButton');
     fireEvent.click(prevButton);
-
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).toHaveValue(pageNumber - 1);
     expect(FunctionValue).toHaveBeenCalledWith(pageNumber - 1);
   });
@@ -100,7 +111,7 @@ describe('Pagination component with props: page and onPageChange', () => {
 
     const lastButton = getByTestId('DesignSystem-Pagination--LastButton');
     fireEvent.click(lastButton);
-
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).toHaveValue(totalPages);
     expect(FunctionValue).toHaveBeenCalledWith(totalPages);
   });
@@ -112,7 +123,7 @@ describe('Pagination component with props: page and onPageChange', () => {
 
     const firstButton = getByTestId('DesignSystem-Pagination--FirstButton');
     fireEvent.click(firstButton);
-
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).toHaveValue(1);
     expect(FunctionValue).toHaveBeenCalledWith(1);
   });
@@ -126,7 +137,7 @@ describe('Pagination component with props: page and onPageChange', () => {
 
     const prevButton = getByTestId('DesignSystem-Pagination--PrevButton');
     fireEvent.click(prevButton);
-
+    jest.advanceTimersByTime(pageJumpDebounceDuration);
     expect(getByTestId(inputTestId)).toHaveValue(pageValue);
     expect(getByTestId('DesignSystem-Pagination--FirstButton')).toHaveAttribute('disabled');
     expect(getByTestId('DesignSystem-Pagination--PrevButton')).toHaveAttribute('disabled');
