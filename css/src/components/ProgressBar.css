@@ -5,8 +5,15 @@
 }
 
 .ProgressBar-indicator {
-  height: var(--spacing);
   background-color: var(--primary);
   border-radius: var(--spacing-m);
   transition: var(--duration--slow-01) var(--standard-expressive-curve);
+}
+
+.ProgressBar-indicator--small {
+  height: var(--spacing-s);
+}
+
+.ProgressBar-indicator--regular {
+  height: var(--spacing);
 }

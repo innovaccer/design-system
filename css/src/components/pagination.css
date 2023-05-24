@@ -28,8 +28,8 @@
 .Pagination-MetricInput {
   width: var(--spacing-4);
   margin-right: var(--spacing);
-  padding-left: var(--spacing-m);
-  padding-right: var(--spacing-m);
+  padding-left: var(--spacing);
+  padding-right: var(--spacing);
 }
 
 .Pagination-MetricInput .MetricInput-input {

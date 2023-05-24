@@ -1,0 +1,97 @@
+.LinkButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 0;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family);
+  border-radius: var(--spacing-m);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.LinkButton--iconAlign-right {
+  flex-direction: row-reverse;
+}
+
+.LinkButton-icon {
+  line-height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.LinkButton-icon--left {
+  margin-right: var(--spacing-m);
+}
+
+.LinkButton-icon--right {
+  margin-left: var(--spacing-m);
+}
+
+.LinkButton--regular {
+  line-height: var(--font-height);
+  font-size: var(--font-size);
+}
+
+.LinkButton--tiny {
+  line-height: var(--font-height-s);
+  font-size: var(--font-size-s);
+}
+
+.LinkButton--default {
+  color: var(--primary);
+}
+
+.LinkButton--default:hover {
+  color: var(--primary-dark);
+}
+
+.LinkButton--default:active {
+  color: var(--primary-darker);
+}
+
+.LinkButton--default:focus,
+.LinkButton--default:focus-visible {
+  outline: 0;
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.LinkButton--default:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--primary-lighter);
+}
+
+/* Subtle Appearance */
+
+.LinkButton--subtle {
+  color: var(--inverse-lighter);
+}
+
+.LinkButton--subtle:hover {
+  color: var(--inverse-light);
+}
+
+.LinkButton--subtle:active {
+  color: var(--inverse);
+}
+
+.LinkButton--subtle:focus,
+.LinkButton--subtle:focus-visible {
+  outline: 0;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.LinkButton--subtle:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--inverse-lightest);
+}

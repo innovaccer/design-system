@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import ProgressBar, { ProgressBarProps as Props } from '../ProgressBar';
+import ProgressBar, { ProgressBarProps as Props, ProgressBarSize } from '../ProgressBar';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+
+const sizeList: ProgressBarSize[] = ['regular', 'small'];
 
 describe('ProgressBar component', () => {
   const mapper = {
     value: valueHelper(10, { required: true }),
+    size: valueHelper(sizeList, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -40,6 +43,15 @@ describe('ProgressBar component', () => {
     it('overwrite ProgressBar class', () => {
       const { getByTestId } = render(<ProgressBar className="ProgressBarClass" value={50} />);
       expect(getByTestId('DesignSystem-ProgressBar')).toHaveClass('ProgressBarClass');
+    });
+  });
+});
+
+describe('ProgressBar component size variant', () => {
+  sizeList.forEach((size) => {
+    it(`check for ${size} size of progress bar`, () => {
+      const { getByTestId } = render(<ProgressBar size={size} value={50} />);
+      expect(getByTestId('DesignSystem-ProgressBar-Indicator')).toHaveClass(`ProgressBar-indicator--${size}`);
     });
   });
 });

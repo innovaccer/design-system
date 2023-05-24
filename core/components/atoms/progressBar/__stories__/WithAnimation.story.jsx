@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ProgressBar from '../ProgressBar';
+import { ProgressBar } from '@/index';
 
 const customCode = `() => {
   const [progress, setProgress] = React.useState(0);

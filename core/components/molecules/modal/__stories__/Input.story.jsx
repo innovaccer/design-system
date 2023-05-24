@@ -80,7 +80,6 @@ export const inputModals = () => {
             </Button>
           </>
         }
-        seperator={true}
       >
         <div className="my-5">
           <Label withInput={true} required={true}>
@@ -192,7 +191,6 @@ const customCode = `() => {
             </Button>
           </>
         )}
-        seperator={true}
       >
         <div className="my-5">
           <Label withInput={true} required={true}>Type</Label>
