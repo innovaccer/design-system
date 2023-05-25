@@ -255,11 +255,13 @@ export class MultiSlider extends React.Component<InternalMultiSliderProps, Multi
   formatLabel = (value: number) => {
     const { labelRenderer } = this.props;
 
+    const labelValue = value.toFixed(this.state.labelPrecision);
+
     if (typeof labelRenderer === 'function') {
-      return labelRenderer(value);
+      return labelRenderer(Number(labelValue));
     }
 
-    return value.toFixed(this.state.labelPrecision);
+    return labelValue;
   };
 
   renderHandles = () => {
