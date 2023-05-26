@@ -20,31 +20,25 @@ export const Appearance = () => {
     <div>
       {appearances.map((appearance, ind) => {
         return (
-          <>
-            <div key={ind} className="d-flex mb-5">
-              <div>
-                <div className="mr-12">
-                  <Icon appearance={appearance[0]} size={50} name={name} />
-                </div>
-                <br />
-                <Text weight="strong">{appearance[0]}</Text>
-              </div>
-              <div>
-                <div className="mr-12">
-                  <Icon appearance={appearance[1]} size={50} name={name} />
-                </div>
-                <br />
-                <Text weight="strong">{appearance[1]}</Text>
-              </div>
-              <div>
-                <div className="mr-12">
-                  <Icon appearance={appearance[2]} size={50} name={name} />
-                </div>
-                <br />
-                <Text weight="strong">{appearance[2]}</Text>
-              </div>
+          <div key={ind} className="d-flex mb-8">
+            <div>
+              <Icon className="mr-12 mb-4" appearance={appearance[0]} size={50} name={name} />
+              <br />
+              <Text weight="strong">{appearance[0]}</Text>
             </div>
-          </>
+
+            <div>
+              <Icon className="mr-12 mb-4" appearance={appearance[1]} size={50} name={name} />
+              <br />
+              <Text weight="strong">{appearance[1]}</Text>
+            </div>
+
+            <div>
+              <Icon className="mr-12 mb-4" appearance={appearance[2]} size={50} name={name} />
+              <br />
+              <Text weight="strong">{appearance[2]}</Text>
+            </div>
+          </div>
         );
       })}
       <div>

@@ -1,6 +1,5 @@
 import * as React from 'react';
-import Icon from '../../index';
-import Text from '@/components/atoms/text';
+import { Icon, Text } from '@/index';
 
 // CSF format story
 export const type = () => {
@@ -8,13 +7,11 @@ export const type = () => {
 
   const name = 'assignment';
   return (
-    <div className="d-flex">
+    <div className="d-flex justify-content-between">
       {types.map((IconShape, ind) => {
         return (
-          <div key={ind} className="mr-9">
-            <div>
-              <Icon type={IconShape} size={50} name={name} />
-            </div>
+          <div key={ind}>
+            <Icon type={IconShape} size={50} name={name} />
             <br />
             <Text weight="strong">{IconShape.charAt(0).toUpperCase() + IconShape.slice(1)}</Text>
           </div>
