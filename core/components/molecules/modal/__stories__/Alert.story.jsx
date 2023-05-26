@@ -30,7 +30,7 @@ export const alerts = () => {
             <Button appearance="basic" onClick={action('Cancel button click')}>
               Cancel
             </Button>
-            <Button appearance="alert" className="ml-3" onClick={action('Discard button click')}>
+            <Button appearance="alert" className="ml-4" onClick={action('Discard button click')}>
               Discard
             </Button>
           </>
@@ -69,7 +69,7 @@ const customCode = `() => {
         footer={(
           <>
             <Button appearance="basic" onClick={console.log('Cancel button click')}>Cancel</Button>
-            <Button appearance="alert" className="ml-3" onClick={console.log('Discard button click')}>Discard</Button>
+            <Button appearance="alert" className="ml-4" onClick={console.log('Discard button click')}>Discard</Button>
           </>
         )}
       >

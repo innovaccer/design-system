@@ -1,25 +1,35 @@
 import * as React from 'react';
-import Switch from '../../index';
-import Text from '@/components/atoms/text';
+import { Switch, Text } from '@/index';
 
 // CSF format story
 export const size = () => {
-  const sizes = ['tiny', 'regular', 'large'];
+  const sizes = ['tiny', 'regular'];
 
   return (
-    <div className="d-flex">
-      {sizes.map((SwitchSize, ind) => {
-        return (
-          <div key={ind} className="mr-9">
-            <div className="h-50">
-              <Switch aria-label={`Switch ${SwitchSize}`} defaultChecked={true} size={SwitchSize} />
-            </div>
-            <br />
-            <Text weight="strong">{SwitchSize.charAt(0).toUpperCase() + SwitchSize.slice(1)}</Text>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div className="d-flex mb-7">
+        {sizes.map((switchSize, ind) => {
+          return (
+            <Switch
+              key={ind}
+              aria-label={`Switch ${switchSize}`}
+              defaultChecked={true}
+              size={switchSize}
+              className="mr-9"
+            />
+          );
+        })}
+      </div>
+      <div className="d-flex">
+        {sizes.map((switchSize, ind) => {
+          return (
+            <Text key={ind} weight="strong" className="mr-9">
+              {switchSize.charAt(0).toUpperCase() + switchSize.slice(1)}
+            </Text>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
@@ -30,12 +40,7 @@ export default {
     docs: {
       docPage: {
         title: 'Switch',
-        a11yProps: ` **aria-label:** <br/> 
-        - Add \`aria-label='Switch tiny'\` on switch with *Tiny* text to describe the action of switch.
-        <br/>
-        - Add \`aria-label='Switch regular'\` on switch with *regular* text to describe the action of switch.
-        <br/>
-        - Add \`aria-label='Switch large'\` on switch with *Large* text to describe the action of switch.`,
+        a11yProps: ` **aria-label:** <br/> - Add \`aria-label='Switch tiny'\` on switch with *Tiny* text to describe the action of switch. <br/> - Add \`aria-label='Switch regular'\` on switch with *regular* text to describe the action of switch.`,
       },
     },
   },

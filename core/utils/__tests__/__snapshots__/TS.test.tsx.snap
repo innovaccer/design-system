@@ -973,7 +973,8 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-ProgressBar"
   >
     <div
-      class="ProgressBar-indicator"
+      class="ProgressBar-indicator ProgressBar-indicator--regular"
+      data-test="DesignSystem-ProgressBar-Indicator"
       style="width: 0px;"
     />
   </div>

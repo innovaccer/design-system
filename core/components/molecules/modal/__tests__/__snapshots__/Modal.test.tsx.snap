@@ -309,14 +309,22 @@ exports[`Modal component
             data-test="DesignSystem-Modal--FooterButton"
             tabindex="0"
           >
-            Primary
+            <span
+              class="Button-text"
+            >
+              Primary
+            </span>
           </button>
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
             data-test="DesignSystem-Button"
             tabindex="0"
           >
-            Basic
+            <span
+              class="Button-text"
+            >
+              Basic
+            </span>
           </button>
         </div>
       </div>
@@ -467,14 +475,22 @@ exports[`Modal component
               data-test="DesignSystem-Modal--FooterButton"
               tabindex="0"
             >
-              Primary
+              <span
+                class="Button-text"
+              >
+                Primary
+              </span>
             </button>
             <button
               class="Button Button--regular Button--basic Button--iconAlign-left"
               data-test="DesignSystem-Button"
               tabindex="0"
             >
-              Basic
+              <span
+                class="Button-text"
+              >
+                Basic
+              </span>
             </button>
           </div>
         </div>
@@ -1114,14 +1130,22 @@ exports[`Modal component
             data-test="DesignSystem-Modal--FooterButton"
             tabindex="0"
           >
-            Primary
+            <span
+              class="Button-text"
+            >
+              Primary
+            </span>
           </button>
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
             data-test="DesignSystem-Button"
             tabindex="0"
           >
-            Basic
+            <span
+              class="Button-text"
+            >
+              Basic
+            </span>
           </button>
         </div>
       </div>
@@ -1272,14 +1296,22 @@ exports[`Modal component
               data-test="DesignSystem-Modal--FooterButton"
               tabindex="0"
             >
-              Primary
+              <span
+                class="Button-text"
+              >
+                Primary
+              </span>
             </button>
             <button
               class="Button Button--regular Button--basic Button--iconAlign-left"
               data-test="DesignSystem-Button"
               tabindex="0"
             >
-              Basic
+              <span
+                class="Button-text"
+              >
+                Basic
+              </span>
             </button>
           </div>
         </div>
@@ -1919,14 +1951,22 @@ exports[`Modal component
             data-test="DesignSystem-Modal--FooterButton"
             tabindex="0"
           >
-            Primary
+            <span
+              class="Button-text"
+            >
+              Primary
+            </span>
           </button>
           <button
             class="Button Button--regular Button--basic Button--iconAlign-left"
             data-test="DesignSystem-Button"
             tabindex="0"
           >
-            Basic
+            <span
+              class="Button-text"
+            >
+              Basic
+            </span>
           </button>
         </div>
       </div>
@@ -2077,14 +2117,22 @@ exports[`Modal component
               data-test="DesignSystem-Modal--FooterButton"
               tabindex="0"
             >
-              Primary
+              <span
+                class="Button-text"
+              >
+                Primary
+              </span>
             </button>
             <button
               class="Button Button--regular Button--basic Button--iconAlign-left"
               data-test="DesignSystem-Button"
               tabindex="0"
             >
-              Basic
+              <span
+                class="Button-text"
+              >
+                Basic
+              </span>
             </button>
           </div>
         </div>

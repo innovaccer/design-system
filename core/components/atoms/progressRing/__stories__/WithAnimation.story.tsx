@@ -1,5 +1,18 @@
 import * as React from 'react';
-import ProgressBar from '../ProgressRing';
+import { ProgressRing } from '@/index';
+
+export const withAnimation = () => {
+  const [progress, setProgress] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress(progress + 25);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  });
+  return <ProgressRing value={progress} max={100} />;
+};
 
 const customCode = `() => {
   const [progress, setProgress] = React.useState(0);
@@ -8,16 +21,16 @@ const customCode = `() => {
     const interval = setInterval(() => {
       setProgress(progress + 25);
     }, 1000);
+
+    return () => clearInterval(interval)
   });
 
   return <ProgressRing value={progress} max={100} />;
 }`;
 
-export const withAnimation = () => <></>;
-
 export default {
   title: 'Components/ProgressRing/With Animation',
-  component: ProgressBar,
+  component: ProgressRing,
   parameters: {
     docs: {
       docPage: {

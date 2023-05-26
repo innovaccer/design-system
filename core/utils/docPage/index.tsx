@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Title, Description, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { Description, ArgsTable } from '@storybook/addon-docs/blocks';
 import { renderToStaticMarkup } from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@';
-import { Button, Card, TabsWrapper, Tab, Heading } from '@/index';
+import { Button, Card, Heading, CardHeader, Row, Column, Tooltip } from '@/index';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import openSandbox from './sandbox';
@@ -65,18 +65,16 @@ const CopyComp = (props: { onClick: OnClickType }) => {
     <div
       style={{
         position: 'absolute',
-        right: '0',
+        right: '16px',
+        top: '10px',
         zIndex: 10,
       }}
     >
-      <Button
-        size="tiny"
-        style={{ borderRadius: '0', borderBottomLeftRadius: '4px' }}
-        appearance="basic"
-        onClick={onClick}
-      >
-        Copy
-      </Button>
+      <Tooltip tooltip="Copy code">
+        <Button size="tiny" appearance="basic" onClick={onClick}>
+          Copy
+        </Button>
+      </Tooltip>
     </div>
   );
 };
@@ -84,8 +82,6 @@ const CopyComp = (props: { onClick: OnClickType }) => {
 const buttonStyles = {
   borderRadius: '0',
   borderBottomLeftRadius: '4px',
-  width: '100%',
-  background: 'white',
 };
 
 const ShowMoreLessButton = ({ onClick, text = 'More' }: { onClick: OnClickType; text: string }) => (
@@ -93,13 +89,13 @@ const ShowMoreLessButton = ({ onClick, text = 'More' }: { onClick: OnClickType; 
     style={{
       display: 'grid',
       placeItems: 'center',
-      position: 'absolute',
+      position: 'relative',
       width: '100%',
       bottom: '0',
       zIndex: 10,
     }}
   >
-    <Button size="tiny" style={buttonStyles} appearance="basic" onClick={onClick}>
+    <Button size="tiny" expanded={true} onClick={onClick} style={buttonStyles}>
       {`Show ${text}`}
     </Button>
   </div>
@@ -107,20 +103,22 @@ const ShowMoreLessButton = ({ onClick, text = 'More' }: { onClick: OnClickType; 
 
 const getHeight = (shouldShowMore: boolean, showMoreHTML: boolean) => {
   if (shouldShowMore) {
-    return showMoreHTML ? '100%' : '250px';
+    return showMoreHTML ? '100%' : '450px';
   }
   return '100%';
 };
 
-const renderCodeBlock = (val: string) => (
+const renderCodeBlock = (val: string, shouldShowMore: boolean, showMoreHTML: boolean) => (
   <>
     <style>
       {`pre {
           margin: 0;
+          overflow: auto;
+          height: ${getHeight(shouldShowMore, showMoreHTML)};
         }`}
     </style>
     <CopyComp onClick={() => copyCode(val)} />
-    <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={true}>
+    <SyntaxHighlighter language="javascript" style={vs2015} showLineNumbers={false}>
       {val}
     </SyntaxHighlighter>
   </>
@@ -162,7 +160,7 @@ const StoryComp = (props: {
   isEmbed: boolean;
   imports: string[];
 }) => {
-  const { customCode, noHtml, noSandbox, isEmbed } = props;
+  const { customCode, noHtml, noSandbox } = props;
   const { story } = getStory();
   // const comp = sp.storySource.source;
   const comp = story.originalStoryFn();
@@ -171,19 +169,31 @@ const StoryComp = (props: {
   const [activeTab, setActiveTab] = React.useState<number>(0);
   const [jsxCode, setJsxCode] = React.useState<string>(getRawPreviewCode(customCode, comp));
   const [htmlCode, setHtmlCode] = React.useState<string>(`${html}`);
-  const [isExpanded, setIsExpanded] = React.useState(isEmbed);
+  const [isExpanded, setIsExpanded] = React.useState(true);
   const [showMore, setShowMore] = React.useState<boolean>(false);
   const [shouldShowMore, setShouldShowMore] = React.useState<boolean>(false);
-  const codePanel = React.useRef<HTMLDivElement>(null);
+  const [zoom, setZoom] = React.useState(1);
+  const [editorClassNames, setEditorClassNames] = React.useState<string>('fade-out');
 
   const importScope = props.imports;
 
-  const renderHTMLTab = () => {
-    if (!noHtml) {
-      return <Tab label={'HTML'}>{renderCodeBlock(htmlCode)}</Tab>;
-    }
-    return <></>;
+  const codePanel = React.useRef<HTMLDivElement>(null);
+
+  const handleZoomIn = () => {
+    setZoom(zoom * 1.25);
   };
+
+  const handleZoomOut = () => {
+    setZoom(zoom * 0.8);
+  };
+
+  React.useEffect(() => {
+    if (isExpanded) {
+      setEditorClassNames('fade-in');
+    } else {
+      setEditorClassNames('');
+    }
+  }, [isExpanded]);
 
   const TabsWrap = withLive<{ live?: any; activeTab: number }>(({ live, activeTab }) => {
     const { error, element: Element } = live;
@@ -200,7 +210,7 @@ const StoryComp = (props: {
     }, [activeTab]);
 
     React.useEffect(() => {
-      if (codePanel.current?.clientHeight && codePanel.current?.clientHeight > 250) {
+      if (codePanel.current?.clientHeight && codePanel.current?.clientHeight > 450) {
         setShouldShowMore(true);
       }
     }, [codePanel]);
@@ -212,27 +222,6 @@ const StoryComp = (props: {
     setJsxCode(updatedCode);
   }, []);
 
-  const actions = [
-    {
-      title: 'Edit in sandbox',
-      onClick: (ev: React.MouseEvent) => {
-        ev.preventDefault();
-        openSandbox(jsxCode);
-      },
-      disabled: noSandbox,
-    },
-  ];
-
-  if (!isEmbed) {
-    actions.push({
-      title: `${!isExpanded ? 'Show' : 'Hide'} code`,
-      onClick: () => {
-        setIsExpanded(!isExpanded);
-      },
-      disabled: false,
-    });
-  }
-
   const imports = React.useMemo(() => ({ ...DS, ...importScope }), []);
 
   const tabChangeHandler = (tab: number) => {
@@ -241,54 +230,108 @@ const StoryComp = (props: {
   };
 
   return (
-    <Card shadow={isEmbed ? 'none' : 'light'} className="overflow-hidden">
-      <LiveProvider code={jsxCode} scope={imports}>
-        <Canvas
-          className="my-0"
-          withToolbar={true}
-          isExpanded={isExpanded}
-          withSource={'none' as any}
-          additionalActions={actions}
-        >
-          <LivePreview />
-        </Canvas>
+    <LiveProvider code={jsxCode} scope={imports}>
+      <Row>
+        <Column size={12}>
+          <Card shadow="none" className="overflow-hidden">
+            <CardHeader>
+              <div className="d-flex justify-content-end">
+                <Button appearance="transparent" aria-label="Zoom In" onClick={handleZoomIn} icon="zoom_in" largeIcon />
+                <Button
+                  onClick={handleZoomOut}
+                  icon="zoom_out"
+                  appearance="transparent"
+                  aria-label="Zoom Out"
+                  largeIcon
+                ></Button>
+                <Button
+                  onClick={() => setZoom(1)}
+                  icon="restart_alt"
+                  appearance="transparent"
+                  aria-label="Reset Zoom"
+                  largeIcon
+                ></Button>
+              </div>
+            </CardHeader>
 
-        <LiveError className="px-7" />
-
-        {isExpanded && (
-          <>
-            <TabsWrap activeTab={activeTab} />
-            <div
-              ref={codePanel}
-              style={{
-                position: 'relative',
-                marginBottom: shouldShowMore ? '24px' : '',
-                height: getHeight(shouldShowMore, showMore),
-              }}
-              className="DocPage-editorTabs"
-            >
-              <TabsWrapper active={activeTab} onTabChange={tabChangeHandler}>
-                <Tab label={'React'}>
-                  <CopyComp
-                    onClick={() => {
-                      const editor = document.querySelector(
-                        '.npm__react-simple-code-editor__textarea'
-                      ) as HTMLTextAreaElement;
-                      if (editor) copyCode(editor.value);
-                    }}
-                  />
-                  <LiveEditor theme={vsDark} onChange={onChangeCode} />
-                </Tab>
-                {renderHTMLTab()}
-              </TabsWrapper>
+            <div className="px-7 pb-8 pt-6" style={{ overflow: 'auto', zoom: zoom }}>
+              <LivePreview />
+              <LiveError className="m-0" />
             </div>
-            {shouldShowMore && (
-              <ShowMoreLessButton onClick={() => setShowMore(!showMore)} text={showMore ? 'Less' : 'More'} />
+          </Card>
+        </Column>
+        <Column size={12} className="d-flex justify-content-end py-6">
+          <Row>
+            {isExpanded && (
+              <Column size={6} className={`d-flex ${editorClassNames}`}>
+                <Button selected={activeTab === 0} onClick={() => tabChangeHandler(0)} size="tiny">
+                  React
+                </Button>
+                <Button selected={activeTab === 1} onClick={() => tabChangeHandler(1)} size="tiny" className="ml-4">
+                  HTML
+                </Button>
+              </Column>
             )}
-          </>
+            <Column size={isExpanded ? 6 : 12} className="d-flex justify-content-end">
+              <Button
+                onClick={(ev: React.MouseEvent) => {
+                  ev.preventDefault();
+                  openSandbox(jsxCode);
+                }}
+                className="ml-4"
+                size="tiny"
+                aria-label="Open code sandbox"
+                disabled={noSandbox}
+              >
+                Edit in sandbox
+              </Button>
+              <Button style={{ width: '86px' }} className="ml-4" size="tiny" onClick={() => setIsExpanded(!isExpanded)}>
+                {isExpanded ? 'Hide code' : 'Show code'}
+              </Button>
+            </Column>
+          </Row>
+        </Column>
+        {isExpanded && (
+          <Column size={12} className={editorClassNames}>
+            <Card shadow="none">
+              <TabsWrap activeTab={activeTab} />
+              <div
+                ref={codePanel}
+                style={{
+                  position: 'relative',
+                  // marginBottom: shouldShowMore ? '24px' : '',
+                  overflow: 'none',
+                }}
+                className="DocPage-editorTabs"
+              >
+                <div>
+                  {activeTab == 0 && (
+                    <div
+                      className="overflow-auto"
+                      style={{ height: getHeight(shouldShowMore, showMore), background: 'rgb(30, 30, 30)' }}
+                    >
+                      <CopyComp
+                        onClick={() => {
+                          const editor = document.querySelector(
+                            '.npm__react-simple-code-editor__textarea'
+                          ) as HTMLTextAreaElement;
+                          if (editor) copyCode(editor.value);
+                        }}
+                      />
+                      <LiveEditor theme={vsDark} onChange={onChangeCode} />
+                    </div>
+                  )}
+                  {activeTab == 1 && !noHtml && renderCodeBlock(htmlCode, shouldShowMore, showMore)}
+                </div>
+              </div>
+              {shouldShowMore && (
+                <ShowMoreLessButton onClick={() => setShowMore(!showMore)} text={showMore ? 'Less' : 'More'} />
+              )}
+            </Card>
+          </Column>
         )}
-      </LiveProvider>
-    </Card>
+      </Row>
+    </LiveProvider>
   );
 };
 
@@ -322,7 +365,9 @@ export const docPage = () => {
     <div className={pageClassnames}>
       {!isEmbed && !isEmbedWithProp && (
         <>
-          <Title>{docPageTitle}</Title>
+          <Heading size="xl" className="mb-5">
+            {docPageTitle}
+          </Heading>
           <Description>{description}</Description>
         </>
       )}

@@ -1,18 +1,9 @@
 import * as React from 'react';
-import Label from '../../index';
+import { Label } from '@/index';
 
 // CSF format story
 export const required = () => {
-  return (
-    <div>
-      <div className="mr-5 mb-8">
-        <Label optional={true}>Not required</Label>
-      </div>
-      <div>
-        <Label required={true}>Required</Label>
-      </div>
-    </div>
-  );
+  return <Label required={true}>Required Label</Label>;
 };
 
 export default {

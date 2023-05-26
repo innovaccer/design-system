@@ -1,18 +1,9 @@
 import * as React from 'react';
-import Heading from '../index';
+import { Heading } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const appearance = 'white';
-  const size = 'xxl';
-
-  return (
-    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
-      <Heading appearance={appearance} size={size}>
-        Heading component have different varients, look for options in knobs tab.
-      </Heading>
-    </div>
-  );
+  return <Heading>Heading component have different variants, look for options in knobs tab.</Heading>;
 };
 
 export default {

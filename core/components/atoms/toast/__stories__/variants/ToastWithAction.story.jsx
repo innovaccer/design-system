@@ -29,7 +29,7 @@ export const toastWithAction = () => {
   }
 
   return (
-    <div className="d-flex">
+    <div className="d-flex flex-column">
       {appearances.map((appearance, ind) => {
         return (
           <div key={ind} className="mr-5 mb-8">

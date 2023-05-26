@@ -17,7 +17,7 @@ export const all = () => {
         <CardBody>
           <div>Card Body</div>
         </CardBody>
-        <CardFooter className="justify-content-end">
+        <CardFooter className="justify-content-end" withSeperator={false}>
           <>
             <Button appearance="basic">Cancel</Button>
             <Button appearance="primary" className="ml-4">
@@ -35,7 +35,7 @@ export const all = () => {
         <CardBody>
           <div>Card Body</div>
         </CardBody>
-        <CardSubdued border="top">Subdued section.</CardSubdued>
+        <CardSubdued className="mt-5">Subdued section.</CardSubdued>
       </Card>
     </>
   );
@@ -62,7 +62,7 @@ const customCode = `/*
         <CardBody>
           <div>Card Body</div>
         </CardBody>
-        <CardFooter className="justify-content-end">
+        <CardFooter className="justify-content-end" withSeperator={false}>
           <>
             <Button appearance="basic">Cancel</Button>
             <Button appearance="primary" className="ml-4">
@@ -80,7 +80,7 @@ const customCode = `/*
         <CardBody>
           <div>Card Body</div>
         </CardBody>
-        <CardSubdued border="top">Subdued section.</CardSubdued>
+        <CardSubdued className='mt-5'>Subdued section.</CardSubdued>
       </Card>
     </>
   );

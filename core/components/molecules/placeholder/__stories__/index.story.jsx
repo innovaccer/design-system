@@ -1,7 +1,5 @@
 import * as React from 'react';
-import Placeholder from '../Placeholder';
-import PlaceholderParagraph from '@/components/atoms/placeholderParagraph';
-import PlaceholderImage from '@/components/atoms/placeholderImage';
+import { Placeholder, PlaceholderParagraph, PlaceholderImage } from '@/index';
 
 export const all = () => {
   const withImage = false;

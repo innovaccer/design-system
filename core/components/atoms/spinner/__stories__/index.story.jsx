@@ -1,22 +1,9 @@
 import * as React from 'react';
-import Spinner from '../Spinner';
+import { Spinner } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const appearance = 'white';
-
-  const size = 'small';
-
-  const options = {
-    appearance,
-    size,
-  };
-
-  return (
-    <div className={appearance === 'white' ? 'bg-dark' : 'bg-transparent'}>
-      <Spinner {...options} />
-    </div>
-  );
+  return <Spinner />;
 };
 
 export default {
