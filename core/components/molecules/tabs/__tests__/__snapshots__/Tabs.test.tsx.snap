@@ -10,6 +10,7 @@ exports[`Tabs component
   >
     <div
       class="TabsWrapper-header"
+      data-test="DesignSystem-Tabs--Header"
     >
       <div
         class="Tab Tab--active Tab-selected align-items-center"
@@ -91,6 +92,7 @@ exports[`Tabs component
   >
     <div
       class="TabsWrapper-header TabsWrapper-header--withSeparator"
+      data-test="DesignSystem-Tabs--Header"
     >
       <div
         class="Tab Tab--active Tab-selected align-items-center"

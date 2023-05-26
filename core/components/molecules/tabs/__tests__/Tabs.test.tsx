@@ -276,3 +276,14 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     expect(getAllByTestId('DesignSystem-Tabs--Tab')[0]).toBeInTheDocument();
   });
 });
+
+describe('Tabs Wrapper component header class', () => {
+  it('render tab component header with custom class', () => {
+    const { getByTestId } = render(
+      <Tabs activeIndex={0} headerClassName="header-class">
+        <Tab label="Tab(Recommended)" isDismissible={true} onDismiss={FunctionValue}></Tab>
+      </Tabs>
+    );
+    expect(getByTestId('DesignSystem-Tabs--Header')).toHaveClass('header-class');
+  });
+});

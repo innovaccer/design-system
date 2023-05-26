@@ -62,6 +62,10 @@ export interface TabsProps extends BaseProps {
    * Called with a new index when a new tab is selected by user
    */
   onTabChange?: (tabIndex: number) => void;
+  /**
+   * Adds custom class to Tab header
+   */
+  headerClassName?: string;
 }
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
@@ -89,7 +93,7 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
 };
 
 export const Tabs = (props: TabsProps) => {
-  const { children, withSeparator, onTabChange, className } = props;
+  const { children, withSeparator, onTabChange, className, headerClassName } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
@@ -120,7 +124,8 @@ export const Tabs = (props: TabsProps) => {
       ['TabsWrapper-header']: true,
       ['TabsWrapper-header--withSeparator']: withSeparator,
     },
-    className
+    className,
+    headerClassName
   );
 
   const getPillsClass = (disabled?: boolean) =>
@@ -285,7 +290,7 @@ export const Tabs = (props: TabsProps) => {
   });
   return (
     <div data-test="DesignSystem-Tabs" {...baseProps} className={wrapperClass}>
-      <div className={headerClass}>
+      <div className={headerClass} data-test="DesignSystem-Tabs--Header">
         {renderTabs}
         {inlineComponent}
       </div>
