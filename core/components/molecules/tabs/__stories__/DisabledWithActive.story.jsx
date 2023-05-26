@@ -14,7 +14,7 @@ export const disabledWithActive = () => {
   const isDisabled = true;
   return (
     <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
-      <Tab label="All" icon="call_received" count={10} disabled={isDisabled}>
+      <Tab label="All" icon="call_received" disabled={isDisabled}>
         {isDisabled ? (
           <div className="h-100 pb-5 bg-secondary-lightest">
             <EmptyState
@@ -27,10 +27,10 @@ export const disabledWithActive = () => {
           <div>All</div>
         )}
       </Tab>
-      <Tab label="Tab(Recommended)">
+      <Tab label="Tab(Recommended)" icon="warning">
         <div>Tab(Recommended)</div>
       </Tab>
-      <Tab label="Extras" disabled={true}>
+      <Tab label="Extras" disabled={true} icon="check_circle">
         <div>Extras</div>
       </Tab>
     </Tabs>
@@ -47,7 +47,7 @@ const customCode = `() => {
   const isDisabled = true;
   return (
     <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
-      <Tab label="All" icon="call_received" count={10} disabled={isDisabled}>
+      <Tab label="All" icon="call_received" disabled={isDisabled}>
         {isDisabled ? (
           <div className="h-100 pb-5 bg-secondary-lightest">
             <EmptyState
@@ -60,10 +60,10 @@ const customCode = `() => {
           <div>All</div>
         )}
       </Tab>
-      <Tab label="Tab(Recommended)">
+      <Tab label="Tab(Recommended)" icon="warning">
         <div>Tab(Recommended)</div>
       </Tab>
-      <Tab label="Extras" disabled={true}>
+      <Tab label="Extras" disabled={true} icon="check_circle">
         <div>Extras</div>
       </Tab>
     </Tabs>

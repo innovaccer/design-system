@@ -35,16 +35,18 @@ export const basicTabs = () => {
   return (
     <div>
       <div className="d-flex justify-content-between">
-        <Heading size="m">Data Gaps</Heading>
+        <Heading size="m" className="pl-5">
+          Data Gaps
+        </Heading>
         <div style={{ width: 'var(--spacing-8)' }}>
           <Dropdown options={options} />
         </div>
       </div>
       <Tabs onTabChange={onTabChangeHandler} className="mb-6">
-        <Tab label="Clinical Gaps">
+        <Tab label="Clinical Gaps" className="pl-5">
           <div>Clinical Gaps</div>
         </Tab>
-        <Tab label="Billing Gaps">
+        <Tab label="Billing Gaps" className="pl-5">
           <div>Billing Gaps</div>
         </Tab>
         <Tab label="Claim Gaps" disabled={true}>
@@ -83,7 +85,7 @@ const customCode = `() => {
   return(
     <div>
       <div className="d-flex justify-content-between">
-        <Heading size="m">Data Gaps</Heading>
+        <Heading size="m" className="pl-5">Data Gaps</Heading>
         <div style={{width: 'var(--spacing-8)'}}>
           <Dropdown options={options} />
         </div>
@@ -91,6 +93,7 @@ const customCode = `() => {
       <Tabs className="mb-6">
         <Tab
           label="Clinical Gaps"
+          className="pl-5"
         >
           <div>
             Clinical Gaps
@@ -98,6 +101,7 @@ const customCode = `() => {
         </Tab>
         <Tab
           label="Billing Gaps"
+          className="pl-5"
         >
           <div>
             Billing Gaps
