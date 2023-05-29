@@ -10,7 +10,6 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
-import { isElementOnTop } from '@/utils/backdropHelper';
 
 export type SidesheetDimension = 'regular' | 'large';
 
@@ -147,6 +146,11 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
       }
       document.addEventListener('keydown', this.onCloseHandler);
     }
+    if (this.props.backdropClose) {
+      if (this.state.open) {
+        OverlayManager.add(this.sidesheetRef.current);
+      }
+    }
     const zIndex = getUpdatedZIndex({
       element: this.element,
       containerClassName: '.Overlay-container',
@@ -178,23 +182,23 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
           animate: true,
         });
 
-        if (this.props.closeOnEscape) OverlayManager.add(this.sidesheetRef.current);
+        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.add(this.sidesheetRef.current);
       } else {
         this.setState({
           animate: false,
         });
 
-        if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
+        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.remove(this.sidesheetRef.current);
       }
     }
   }
 
   onOutsideClickHandler(event: Event) {
-    const { onClose } = this.props;
+    const { backdropClose, closeOnEscape, onClose } = this.props;
     const { open } = this.state;
 
-    if (open && isElementOnTop(this.sidesheetRef.current?.firstChild as HTMLElement, this.element)) {
-      if (this.props.closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
+    if (open && OverlayManager.isTopOverlay(this.sidesheetRef.current)) {
+      if (backdropClose || closeOnEscape) OverlayManager.remove(this.sidesheetRef.current);
       if (onClose) onClose(event, 'OutsideClick');
     }
   }
