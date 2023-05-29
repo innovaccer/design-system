@@ -1,10 +1,13 @@
 import * as React from 'react';
-import Radio from '../index';
+import { Radio } from '@/index';
 
 export const OverflowContent = () => (
-  <div className="w-25">
-    <Radio label="Share both your healthcare data and some personal information." name="options" value="Option 1" />
-  </div>
+  <Radio
+    className="w-25"
+    label="Share both your healthcare data and some personal information."
+    name="options"
+    value="Option 1"
+  />
 );
 
 export default {
