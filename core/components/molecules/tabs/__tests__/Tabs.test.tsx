@@ -207,7 +207,7 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     expect(document.activeElement).toContainElement(firstLabel);
   });
 
-  it('TabsWrapper component has only tabindex 0 for active tab and -1 for rest', () => {
+  it('TabsWrapper component has only tabindex 0 for all tabs', () => {
     const activeTab = 0;
     const keyedTab = 1;
 
@@ -217,14 +217,14 @@ describe('TabsWrapper component with prop: onTabChange', () => {
     const secondLabel = tab[keyedTab];
 
     expect(firstLabel.tabIndex).toBe(0);
-    expect(secondLabel.tabIndex).toBe(-1);
+    expect(secondLabel.tabIndex).toBe(0);
 
     fireEvent.focus(secondLabel);
     fireEvent.keyDown(secondLabel, { key: 'ArrowLeft', keyCode: 37 });
 
     rerender(getTestTab(keyedTab, tabs));
 
-    expect(firstLabel.tabIndex).toBe(-1);
+    expect(firstLabel.tabIndex).toBe(0);
     expect(secondLabel.tabIndex).toBe(0);
     expect(document.activeElement).toContainElement(firstLabel);
   });
