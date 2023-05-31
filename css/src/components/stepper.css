@@ -13,17 +13,74 @@
   cursor: pointer;
 }
 
+.Step:hover {
+  background-color: var(--secondary);
+}
+
+.Step:active {
+  background-color: var(--secondary-dark);
+}
+
+.Step:focus,
+.Step:focus-visible {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: none;
+}
+
+/* Completed State */
+
+.Step--completed {
+  color: var(--primary-dark);
+}
+
+.Step--completed:hover {
+  background-color: var(--secondary);
+}
+
+.Step--completed:active {
+  background-color: var(--secondary-dark);
+}
+
+.Step--completed:focus,
+.Step--completed:focus-visible {
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  outline: none;
+}
+
+/* Active State */
+
 .Step--active {
   background-color: var(--primary-lightest);
-  pointer-events: none;
+  color: var(--primary-dark);
+  transition-delay: var(--duration--fast-02);
 }
+
+.Step--active:hover {
+  background-color: var(--primary-lighter);
+}
+
+.Step--active:focus,
+.Step--active:focus-visible {
+  background-color: var(--primary-lightest);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
+  outline: none;
+}
+
+.Step--active:active {
+  background-color: var(--primary-lighter);
+  color: var(--primary-darker);
+}
+
+.Step--active:active .Stepper-text {
+  color: var(--primary-darker);
+}
+
+/* Disabled State */
 
 .Step--disabled {
   cursor: not-allowed;
-}
-
-.Step--active {
-  transition-delay: var(--duration--fast-02);
+  color: var(--inverse-lightest);
+  pointer-events: none;
 }
 
 .Stepper-animate {
