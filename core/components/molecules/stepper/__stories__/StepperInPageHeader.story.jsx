@@ -75,7 +75,7 @@ export const stepperInPageHeader = () => {
 
   const badge = <Badge appearance="secondary">Message</Badge>;
 
-  const meta = <MetaList list={[{ label: 'Alert' }, { label: 'Draft' }]} seperator={true} />;
+  const meta = <MetaList list={[{ label: 'Alert' }, { label: 'Draft' }]} />;
 
   return (
     <div className="w-100 p-6 bg-secondary-lightest">
@@ -171,7 +171,6 @@ const customCode = `() => {
   const meta = (
     <MetaList
       list={[{ label: 'Alert'}, { label: 'Draft' }]}
-      seperator={true}
     />
   );
 
