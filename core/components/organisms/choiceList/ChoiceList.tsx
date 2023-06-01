@@ -199,7 +199,7 @@ export const ChoiceList = (props: ChoiceListProps) => {
   return (
     <>
       <fieldset className={ChoiceListClass} data-test="DesignSystem-ChoiceList-Wrapper">
-        {title && title.trim() && <Label>{title.trim()}</Label>}
+        {title && title.trim() && <Label withInput={true}>{title.trim()}</Label>}
         {allowMultiple ? (
           <div className={`${alignment === 'horizontal' ? ChoiceHorizontalClass : ChoiceListVerticalClass}`}>
             {renderCheckbox(choices, handleOnChange, disabled, size, alignment, selected)}
