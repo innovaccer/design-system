@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Checkbox from '../index';
+import { Checkbox } from '@/index';
 
 // CSF format story
-export const NestedCheckboxes = () => {
+export const Nested = () => {
   const parentObj = { checked: false, indeterminate: true };
   const labels = ['Diabetes Eye Exam', 'HbA1c Test in last 12 months', 'Falls Risk Assessment'];
   const childArray = [true, true, false];
@@ -46,7 +46,7 @@ export const NestedCheckboxes = () => {
               value={label}
               onChange={(c) => handleChildChange(c, ind)}
               defaultChecked={ind < 2}
-              className="mt-4"
+              className="mt-3"
             />
           );
         })}
@@ -99,7 +99,7 @@ const customCode = `() => {
                 checked={checked[ind]}
                 value={label}
                 onChange={c => handleChildChange(c, ind)}
-                className="mt-4"
+                className='mt-3'
               />
             );
           })
@@ -110,7 +110,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Checkbox/Nested Checkboxes',
+  title: 'Components/Checkbox/Checkbox Group/Nested',
   component: Checkbox,
   parameters: {
     docs: {

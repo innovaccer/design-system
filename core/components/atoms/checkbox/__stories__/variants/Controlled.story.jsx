@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Checkbox from '../../index';
+import { Checkbox } from '@/index';
 
 // CSF format story
 export const controlledCheckbox = () => {
@@ -7,9 +7,7 @@ export const controlledCheckbox = () => {
 
   const handleParentChange = (event) => {
     const updatedChecked = event.target.checked;
-    this.window.setTimeout(() => {
-      setChecked(updatedChecked);
-    }, 2000);
+    setChecked(updatedChecked);
   };
 
   return <Checkbox checked={checked} label={'Innovaccer'} onChange={handleParentChange} value={'Innovaccer'} />;
@@ -20,9 +18,7 @@ const customCode = `() => {
 
   const handleParentChange = (event) => {
     const updatedChecked = event.target.checked;
-    this.window.setTimeout(() => {
-      setChecked(updatedChecked);
-    }, 2000);
+    setChecked(updatedChecked);
   };
 
   return (
@@ -42,6 +38,8 @@ export default {
     docs: {
       docPage: {
         customCode,
+        description:
+          '######Checkbox has two types:\n- [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)\n- [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)',
       },
     },
   },
