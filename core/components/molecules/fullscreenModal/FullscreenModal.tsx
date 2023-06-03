@@ -112,6 +112,12 @@ class FullscreenModal extends React.Component<FullscreenModalProps, ModalState> 
     super(props);
 
     this.element = getWrapperElement();
+    /**
+     * createPortal needs the children and the node where the children will be mounted.
+     * Via above getWrapperElement, we create that node outside the normal DOM.
+     * Then the modalcontainer below will be mounted on this node.
+     * states of this fullscreenmodal will be controlled by its parent , but this is mounted outside the parent.
+     */
 
     this.state = {
       open: props.open,
