@@ -164,6 +164,11 @@ class Modal extends React.Component<ModalProps, ModalState> {
       containerClassName: '.Overlay-container',
       elementRef: this.modalRef,
     });
+    /**
+     * what is the point of updating the zIndex on Mount ?
+     * This leads to mounting of all modals though invisible.
+     */
+
     this.setState({
       zIndex,
     });
@@ -189,6 +194,10 @@ class Modal extends React.Component<ModalProps, ModalState> {
           open: true,
           animate: true,
         });
+        /**
+         * here first layer of modal gets zIndex 1001, as zIndex returned by above is undefined.
+         * Then next layer of modal receives zIndex 1011.
+         */
 
         if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.add(this.modalRef.current);
       } else {
@@ -294,12 +303,20 @@ class Modal extends React.Component<ModalProps, ModalState> {
     };
 
     const ModalContainer = (
+      /**
+       * why do we need to render this modal container, even when open is false?
+       * Fullscreenmodal has mounts with open flag ternary operator.
+       */
       <Row
         data-test="DesignSystem-ModalContainer"
         className={ContainerClass}
         data-layer={true}
         data-opened={open}
         style={{ zIndex: zIndex ? zIndex : 1001 }}
+        /**
+         * While initial render, ".Overlay-container" gets zIndex 1001.
+         * Then componentDidMount updates the zIndex to 1011.
+         */
       >
         <Column
           data-test="DesignSystem-Modal"

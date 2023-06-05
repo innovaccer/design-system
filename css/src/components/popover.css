@@ -1,7 +1,7 @@
 .Popover {
   border-radius: var(--spacing-m);
   position: absolute;
-  z-index: 500;
+  z-index: 500; /*this is why Dropdown is not opening above Sidesheet*/
   background: var(--white);
   box-shadow: var(--shadow-l);
 }

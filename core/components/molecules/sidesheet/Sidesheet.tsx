@@ -202,6 +202,9 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
   }
 
   handleAnimationEnd() {
+    /**
+     * This is not working. open state is not going back to false.
+     */
     if (!this.state.animate) {
       this.setState({
         open: false,
@@ -211,6 +214,9 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
 
   render() {
     const { animate, open, zIndex } = this.state;
+    console.log('this.state.open-->', this.state.open);
+    console.log('this.state.animate-->', this.state.animate);
+    console.log('this.state.zIndex-->', this.state.zIndex);
     const {
       className,
       backdropClose,

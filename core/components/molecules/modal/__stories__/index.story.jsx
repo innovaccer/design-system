@@ -51,7 +51,7 @@ export const all = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const dimension = 'medium';
-  const backdropClose = true;
+  const backdropClose = false;
 
   const onClose = () => {
     setOpen(!open);
