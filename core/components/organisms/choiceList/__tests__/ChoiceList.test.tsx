@@ -152,4 +152,19 @@ describe('ChoiceList component', () => {
     fireEvent.click(radio);
     expect(FunctionValue).toHaveBeenCalled();
   });
+  it('Overwrite choiceList class', () => {
+    const { getByTestId } = render(
+      <ChoiceList
+        allowMultiple={true}
+        className="customClass"
+        alignment={'vertical'}
+        choices={[
+          { label: 'radio', name: 'choiceList', value: 'radio' },
+          { label: 'radio', name: 'choiceList', value: 'radio' },
+        ]}
+        onChange={FunctionValue}
+      />
+    );
+    expect(getByTestId('DesignSystem-ChoiceList-Wrapper')).toHaveClass('customClass');
+  });
 });

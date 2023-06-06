@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Checkbox } from '@/index';
 
 // CSF format story
-export const all = () => {
+export const error = () => {
   const size = 'regular';
 
   const label = 'Checkbox';
@@ -22,6 +22,7 @@ export const all = () => {
 
   return (
     <Checkbox
+      error={true}
       checked={checked}
       indeterminate={indeterminate}
       disabled={disabled}
@@ -33,6 +34,13 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Checkbox/All',
+  title: 'Components/Checkbox/Variants/Error',
   component: Checkbox,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'Checkbox',
+      },
+    },
+  },
 };

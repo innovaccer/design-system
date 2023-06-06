@@ -1,10 +1,10 @@
 import * as React from 'react';
-import StatusHint from '../StatusHint';
+import { StatusHint } from '@/index';
 
-export const inactive = () => <StatusHint appearance="alert">{'Inactive'}</StatusHint>;
+export const info = () => <StatusHint appearance="info">{'Info'}</StatusHint>;
 
 export default {
-  title: 'Components/StatusHint/Inactive',
+  title: 'Components/StatusHint/Variants/Info',
   component: StatusHint,
   parameters: {
     docs: {

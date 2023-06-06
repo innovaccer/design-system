@@ -47,15 +47,15 @@
   justify-content: flex-start;
   padding-top: var(--spacing-l);
   padding-bottom: var(--spacing-l);
-  padding-right: var(--spacing-2);
+  padding-right: var(--spacing-l);
 }
 
 .FullscreenModal-footer {
   justify-content: flex-end;
-  padding-top: var(--spacing-xl);
-  padding-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-2);
+  padding-bottom: var(--spacing-2);
 }
 
 .FullscreenModal-body {
-  padding: var(--spacing) var(--spacing-xl);
+  padding: var(--spacing-2) var(--spacing-xl);
 }

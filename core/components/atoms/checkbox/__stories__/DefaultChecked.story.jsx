@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { Checkbox } from '@/index';
 
-export const OverflowBehavior = () => (
-  <Checkbox className="w-25" label="Patient with impaired physical mobility and care deficits." />
-);
+export const defaultChecked = () => <Checkbox label="Emergency contact" defaultChecked={true} />;
 
 export default {
-  title: 'Components/Checkbox/Overflow Behavior',
+  title: 'Components/Checkbox/Default Checked',
   component: Checkbox,
   parameters: {
     docs: {

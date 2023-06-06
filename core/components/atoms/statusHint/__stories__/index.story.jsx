@@ -1,5 +1,5 @@
 import * as React from 'react';
-import StatusHint from '../StatusHint';
+import { StatusHint } from '@/index';
 
 // CSF format story
 export const all = () => {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Button, Paragraph, Text, FullscreenModal } from '@/index';
+import { Button, Paragraph, FullscreenModal } from '@/index';
 import Heading from '@/components/atoms/heading';
 
 export const layering = () => {
@@ -29,7 +29,7 @@ export const layering = () => {
   return (
     <div>
       <Button appearance="primary" onClick={openModal}>
-        Open Modal
+        Open Full screen modal
       </Button>
 
       <FullscreenModal
@@ -38,13 +38,13 @@ export const layering = () => {
         dimension={dimension}
         onClose={onClose}
         headerOptions={{
-          heading: 'This is modal Heading',
-          subHeading: 'This is modal subheading',
+          heading: 'Heading',
+          subHeading: 'Subheading',
         }}
         footerOptions={{
           actions: [
             {
-              children: 'Basic',
+              children: 'Cancel',
               appearance: 'basic',
               onClick: action('basic action'),
             },
@@ -57,12 +57,17 @@ export const layering = () => {
           ],
         }}
       >
-        <Text>Fullscreen Modal Body</Text>
-        <Heading size="s">Description Title</Heading>
-        <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
-        <Paragraph>
-          Card Sections include supporting text like an article summary or a restaurant description.
-        </Paragraph>
+        <div className="pb-6">
+          <Heading className="pb-3" size="s">
+            Description Title
+          </Heading>
+          <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
+        </div>
+        <div className="pt-6">
+          <Paragraph>
+            Card sections include supporting text like an article summary or a healthcare service description.
+          </Paragraph>
+        </div>
       </FullscreenModal>
 
       <FullscreenModal
@@ -71,23 +76,22 @@ export const layering = () => {
         dimension={dimension}
         onClose={onCloseSecondOverlay}
         headerOptions={{
-          heading: 'This is second modal Heading',
-          subHeading: 'This is second modal subheading',
+          heading: 'Second modal heading',
+          subHeading: 'Second modal subheading',
         }}
         footerOptions={{
           actions: [
             {
-              children: 'Basic',
+              children: 'Cancel',
               appearance: 'basic',
               onClick: action('basic action'),
             },
           ],
         }}
       >
-        <Text>Fullscreen Modal Body Type Two</Text>
-        <Heading size="s">Description Title Second</Heading>
+        <Heading size="s">Description title second</Heading>
         <Paragraph>
-          Card Sections include supporting text like an article summary or a restaurant description.
+          Card sections include supporting text like an article summary or a healthcare service description.
         </Paragraph>
       </FullscreenModal>
     </div>
@@ -121,7 +125,7 @@ const customCode = `
     <div>
 
       <Button className="m-8" appearance="primary" onClick={openModal}>
-        Open Modal
+        Open Full screen modal
       </Button>
 
       <FullscreenModal
@@ -129,13 +133,13 @@ const customCode = `
         closeOnEscape={true}
         onClose={onClose}
         headerOptions={{
-          heading: 'This is modal Heading',
-          subHeading: 'This is modal subheading'
+          heading: 'Heading',
+          subHeading: 'Subheading'
         }}
         footerOptions={{
           actions: [
             {
-              children: 'Basic',
+              children: 'Cancel',
               appearance: 'basic',
               onClick: ev => console.log('Basic button click', ev)
             },
@@ -148,14 +152,17 @@ const customCode = `
           ]
         }}
       >
-        <Text>Fullscreen Modal Body</Text>
-        <Heading size="s">Description Title</Heading>
-        <Paragraph>
-          Adding a subheading clearly indicates the hierarchy of the information.
-        </Paragraph>
-        <Paragraph>
-          Card Sections include supporting text like an article summary or a restaurant description.
-        </Paragraph>
+        <div className="pb-6">
+          <Heading className="pb-3" size="s">
+            Description Title
+          </Heading>
+          <Paragraph>Adding a subheading clearly indicates the hierarchy of the information.</Paragraph>
+        </div>
+        <div className="pt-6">
+          <Paragraph>
+            Card sections include supporting text like an article summary or a healthcare service description.
+          </Paragraph>
+        </div>
       </FullscreenModal>
 
       <FullscreenModal
@@ -163,21 +170,21 @@ const customCode = `
         open={openSecondOverlay}
         onClose={onCloseSecondOverlay}
         headerOptions={{
-          heading: 'This is Second modal Heading',
-          subHeading: 'This is Second modal subheading'
+          heading: 'Second modal heading',
+          subHeading: 'Second modal subheading'
         }}
         footerOptions={{
           actions: [
             {
-              children: 'Basic',
+              children: 'Cancel',
               appearance: 'basic',
               onClick: ev => console.log('Basic button click', ev)
             }
           ]
         }}
       >
-        <Text>Second Fullscreen Modal Body</Text>
-        <Heading size="s">Second Description Title</Heading>
+        <Heading size="s">Second description title</Heading>
+        <Text>Second fullscreen modal body</Text>
       </FullscreenModal>
     </div>
   );
