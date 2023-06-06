@@ -24,8 +24,6 @@
   cursor: pointer;
   min-width: 40px;
   padding: var(--spacing-l);
-  margin-left: calc(-1 * var(--spacing-l));
-  margin-right: var(--spacing-l);
   margin-bottom: calc(-1 * var(--spacing-xs));
   text-align: center;
 }
