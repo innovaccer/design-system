@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MetaList from '../MetaList';
+import { MetaList } from '@/index';
 
 // CSF format story
 export const all = () => {
@@ -14,11 +14,7 @@ export const all = () => {
     },
   ];
 
-  return (
-    <div>
-      <MetaList list={list} />
-    </div>
-  );
+  return <MetaList list={list} />;
 };
 
 export default {
