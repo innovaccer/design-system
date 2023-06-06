@@ -43,6 +43,10 @@ export interface TextareaProps extends BaseProps, BaseHtmlProps<HTMLTextAreaElem
    */
   resize?: boolean;
   /**
+   * defines maximum character limit
+   */
+  maxCharLimit?: number;
+  /**
    * Callback function when `Textarea` text changes
    */
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -76,17 +80,31 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
     onBlur,
     onFocus,
     className,
+    maxCharLimit,
     ...rest
   } = props;
+
+  const [charLimitExceed, setCharLimitExceed] = React.useState(false);
 
   const classes = classNames(
     {
       ['Textarea']: true,
       ['Textarea--resize']: resize,
-      ['Textarea--error']: error,
+      ['Textarea--error']: error || charLimitExceed,
     },
     className
   );
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const inputVal = e.target.value;
+    if (maxCharLimit && inputVal.length > maxCharLimit) {
+      setCharLimitExceed(true);
+    } else {
+      setCharLimitExceed(false);
+    }
+
+    if (onChange) onChange(e);
+  };
 
   return (
     <textarea
@@ -101,7 +119,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>((pr
       defaultValue={defaultValue}
       required={required}
       disabled={disabled}
-      onChange={onChange}
+      onChange={(e) => onChangeHandler(e)}
       onBlur={onBlur}
       onClick={onClick}
       onFocus={onFocus}
