@@ -5,6 +5,7 @@ import { Icon } from '@/index';
 import { IconProps, TextProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
+export type MetaSize = 'small' | 'regular';
 export interface MetaListProps extends BaseProps {
   /**
    * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
@@ -38,10 +39,14 @@ export interface MetaListProps extends BaseProps {
    * Appearance of label in `Meta` component
    */
   labelAppearance: TextProps['appearance'];
+  /**
+   * Size of Meta List
+   */
+  size?: MetaSize;
 }
 
 export const MetaList = (props: MetaListProps) => {
-  const { list, seperator, seperatorAppearance, iconAppearance, labelAppearance, className } = props;
+  const { list, seperator, seperatorAppearance, iconAppearance, labelAppearance, className, size } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -79,7 +84,13 @@ export const MetaList = (props: MetaListProps) => {
 
         return (
           <span key={ind} className="MetaList-item">
-            <Meta label={label} icon={icon} iconAppearance={iconAppearance} labelAppearance={labelAppearance} />
+            <Meta
+              size={size}
+              label={label}
+              icon={icon}
+              iconAppearance={iconAppearance}
+              labelAppearance={labelAppearance}
+            />
             {rightSeperator && (
               <Icon
                 data-test="DesignSystem-MetaList--rightSeperator"
@@ -100,8 +111,9 @@ MetaList.displayName = 'MetaList';
 
 MetaList.defaultProps = {
   seperatorAppearance: 'disabled',
-  iconAppearance: 'disabled',
+  iconAppearance: 'subtle',
   labelAppearance: 'subtle',
+  size: 'regular',
 };
 
 export default MetaList;
