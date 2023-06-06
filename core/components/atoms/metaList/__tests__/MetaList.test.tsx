@@ -5,6 +5,7 @@ import { MetaList } from '@/index';
 import { MetaListProps as Props } from '@/index.type';
 import { IconAppearance } from '../../icon';
 import { TextAppearance } from '../../text';
+import { MetaSize } from '../MetaList';
 
 const appearance: IconAppearance[] = [
   'primary',
@@ -48,6 +49,8 @@ const listWithTwoElements = [
   { icon: 'assessment', label: 'Meta data' },
   { icon: 'assessment', label: 'Meta data two' },
 ];
+
+const sizeList: MetaSize[] = ['regular', 'small'];
 
 const getIconAppearance = (iconColor: string) => {
   const x = iconColor.indexOf('_');
@@ -124,6 +127,7 @@ describe('MetaList component prop:labelAppearance options', () => {
 describe('MetaList component prop:seperator options', () => {
   const mapper = {
     seperator: valueHelper(booleanValues, { iterate: true, required: true }),
+    size: valueHelper(sizeList, { iterate: true, required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -275,6 +279,15 @@ describe('MetaList component with different prop:labelAppearance', () => {
         <MetaList list={[{ icon: 'assessment', label: 'Meta data' }]} labelAppearance={color} />
       );
       expect(getByTestId('DesignSystem-MetaList--MetaLabel')).toHaveClass(`Text--${color}`);
+    });
+  });
+});
+
+describe('MetaList component with different prop:size', () => {
+  sizeList.forEach((size) => {
+    it(`should have the Text--${size} class `, () => {
+      const { getByTestId } = render(<MetaList size={size} list={[{ icon: 'assessment', label: 'Meta data' }]} />);
+      expect(getByTestId('DesignSystem-MetaList--MetaLabel')).toHaveClass(`Text--${size}`);
     });
   });
 });
