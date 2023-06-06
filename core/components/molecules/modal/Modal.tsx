@@ -10,7 +10,6 @@ import { ColumnProps } from '@/index.type';
 import { getWrapperElement, getUpdatedZIndex, closeOnEscapeKeypress } from '@/utils/overlayHelper';
 import OverlayManager from '@/utils/OverlayManager';
 import { FooterOptions } from '@/common.type';
-import { isElementOnTop } from '@/utils/backdropHelper';
 export type ModalDimension = 'small' | 'medium' | 'large';
 
 export interface ModalProps extends BaseProps {
@@ -154,6 +153,12 @@ class Modal extends React.Component<ModalProps, ModalState> {
       document.addEventListener('keydown', this.onCloseHandler);
     }
 
+    if (this.props.backdropClose) {
+      if (this.state.open) {
+        OverlayManager.add(this.modalRef.current);
+      }
+    }
+
     const zIndex = getUpdatedZIndex({
       element: this.element,
       containerClassName: '.Overlay-container',
@@ -185,7 +190,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
           animate: true,
         });
 
-        if (this.props.closeOnEscape) OverlayManager.add(this.modalRef.current);
+        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.add(this.modalRef.current);
       } else {
         this.setState(
           {
@@ -200,16 +205,16 @@ class Modal extends React.Component<ModalProps, ModalState> {
           }
         );
 
-        if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
+        if (this.props.closeOnEscape || this.props.backdropClose) OverlayManager.remove(this.modalRef.current);
       }
     }
   }
 
   onOutsideClickHandler(event: Event) {
-    const { backdropClose, onClose } = this.props;
+    const { closeOnEscape, backdropClose, onClose } = this.props;
     const { open } = this.state;
-    if (open && isElementOnTop(this.modalRef.current?.firstChild as HTMLElement, this.element)) {
-      if (this.props.closeOnEscape) OverlayManager.remove(this.modalRef.current);
+    if (open && OverlayManager.isTopOverlay(this.modalRef.current)) {
+      if (closeOnEscape || backdropClose) OverlayManager.remove(this.modalRef.current);
 
       if (onClose) onClose(event, 'OutsideClick');
       else if (typeof backdropClose === 'function') backdropClose(event, 'OutsideClick');

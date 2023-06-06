@@ -64,11 +64,6 @@ export interface CheckboxProps extends BaseProps, OmitNativeProps<HTMLInputEleme
   id?: string;
 }
 
-/**
- * ######Checkbox has two types:
- *  - [Controlled Checkbox](https://reactjs.org/docs/forms.html#controlled-components)
- *  - [Uncontrolled Checkbox](https://reactjs.org/docs/uncontrolled-components.html)
- */
 export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props, forwardedRef) => {
   const {
     size = 'regular',

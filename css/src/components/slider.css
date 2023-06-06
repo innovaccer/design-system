@@ -24,6 +24,7 @@
   background: var(--secondary-lighter);
   height: var(--spacing-s);
   box-sizing: border-box;
+  border-radius: var(--spacing-s);
 }
 
 .Slider-progress--inRange {
@@ -31,7 +32,6 @@
 }
 
 .Slider-progress--inRangeDisabled {
-  background: var(--secondary-light);
   border: var(--border);
 }
 

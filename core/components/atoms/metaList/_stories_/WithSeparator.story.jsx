@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MetaList from '../MetaList';
+import { MetaList } from '@/index';
 
 // CSF format story
 export const WithSeparator = () => {
@@ -16,11 +16,7 @@ export const WithSeparator = () => {
     },
   ];
 
-  return (
-    <div>
-      <MetaList list={list} seperator={seperator} />
-    </div>
-  );
+  return <MetaList list={list} seperator={seperator} />;
 };
 
 export default {

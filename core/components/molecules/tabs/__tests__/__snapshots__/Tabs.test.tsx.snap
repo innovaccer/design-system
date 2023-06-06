@@ -42,7 +42,7 @@ exports[`Tabs component
       <div
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        tabindex="-1"
+        tabindex="0"
       >
         <i
           class="material-icons material-icons-round Icon Icon--subtle mr-4 "
@@ -124,7 +124,7 @@ exports[`Tabs component
       <div
         class="Tab align-items-center"
         data-test="DesignSystem-Tabs--Tab"
-        tabindex="-1"
+        tabindex="0"
       >
         <i
           class="material-icons material-icons-round Icon Icon--subtle mr-4 "

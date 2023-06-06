@@ -235,7 +235,8 @@ export const Tabs = (props: TabsProps) => {
         name="clear"
         appearance={iconAppearance}
         className={dismissIconClass(disabled)}
-        onClick={!disabled ? onCloseHandler : () => {}}
+        onClick={!disabled ? onCloseHandler : undefined}
+        tabIndex={disabled ? -1 : 0}
       />
     );
   };
@@ -282,7 +283,7 @@ export const Tabs = (props: TabsProps) => {
         className={tabHeaderClass}
         onClick={() => !disabled && tabClickHandler(index)}
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
-        tabIndex={activeIndex === index ? 0 : -1}
+        tabIndex={disabled ? -1 : 0}
       >
         {renderTab(currentTabProp, index)}
       </div>
