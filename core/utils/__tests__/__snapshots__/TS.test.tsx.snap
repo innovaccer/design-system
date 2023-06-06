@@ -415,7 +415,7 @@ exports[`TS renders children 1`] = `
                   data-test="designSystem-Calendar-WrapperClass"
                 >
                   <span
-                    class="Text Text--regular color-primary Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear"
+                    class="Text Text--regular color-primary Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                     data-test="DesignSystem-Calendar--dateValue"
                   >
                     14
@@ -2065,7 +2065,7 @@ exports[`TS renders children 1`] = `
               data-test="designSystem-Calendar-WrapperClass"
             >
               <span
-                class="Text Text--regular color-primary Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear"
+                class="Text Text--regular color-primary Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large Calendar-value--currDateMonthYear Calendar-value--currDate"
                 data-test="DesignSystem-Calendar--dateValue"
               >
                 14

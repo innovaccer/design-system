@@ -142,6 +142,11 @@
   border-radius: 0 var(--spacing-m) var(--spacing-m) 0;
 }
 
+.Calendar-valueWrapper--hoverDate {
+  background: linear-gradient(90deg, var(--primary-lightest) 10%, white 50%);
+  border-radius: 0 var(--spacing-m) var(--spacing-m) 0;
+}
+
 .Calendar-valueWrapper--endError {
   background: linear-gradient(90deg, var(--alert-lightest) 50%, white 50%);
 }
@@ -167,6 +172,10 @@
 
 .Calendar-value:active {
   background: var(--secondary);
+}
+
+.Calendar-value:active .Calendar-value--currDate {
+  color: var(--primary-dark);
 }
 
 .Calendar-value--start:hover,
@@ -199,6 +208,10 @@
 
 .Calendar-value--currDateMonthYear:active {
   background: var(--primary-lighter);
+}
+
+.Calendar-value--currDate:active {
+  color: var(--primary-dark);
 }
 
 .Calendar-value--active {
@@ -276,4 +289,24 @@
 }
 .Calendar-eventsIndicator--active {
   background-color: var(--white);
+}
+
+.Calendar-valueWrapper--inStartRange {
+  background: linear-gradient(90deg, white 50%, var(--primary-lightest) 50%);
+}
+
+.Calendar-valueWrapper--inEndRange {
+  background: linear-gradient(90deg, var(--primary-lightest) 50%, white 50%);
+}
+
+.Calendar-valueWrapper--inEdgeRange .Calendar-inRangeValue {
+  background: var(--primary-lightest);
+}
+
+.Calendar-valueWrapper--inEdgeRange .Calendar-inRangeValue:hover {
+  background: var(--primary-lighter);
+}
+
+.Calendar-valueWrapper--inEdgeRange .Calendar-inRangeValue:active {
+  background: var(--primary-light);
 }

@@ -15,6 +15,7 @@ import {
   getIndexOfDay,
   getYearBlock,
   convertToDate,
+  dateComparison,
 } from './utility';
 
 type OnHover = React.MouseEvent<HTMLSpanElement> | React.MouseEvent<HTMLDivElement>;
@@ -455,9 +456,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       neighbouringMonthDate = prevMonthDayRange + date;
       type = 'prev';
     } else if (date > dayRange) {
-      neighbouringMonthIndex = index + 1;
-      neighbouringMonthDate = date - dayRange;
-      type = 'next';
+      neighbouringMonthIndex = index;
+      neighbouringMonthDate = date;
     } else {
       neighbouringMonthIndex = index;
       neighbouringMonthDate = date;
@@ -680,6 +680,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'Calendar-value--currDateMonthYear': isCurrentYear(),
           });
 
+          const textClass = classNames({
+            'Calendar-value--currDate': isCurrentYear() && !active,
+            'Calendar-text': true,
+          });
+
           const getTextColor = classNames({
             inverse: !active && !isCurrentYear() && !disabled,
             white: active,
@@ -698,7 +703,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onClick={this.selectYear(year)}
               onMouseOver={this.yearMouseOverHandler.bind(this, year, isCurrentYear(), disabled)}
             >
-              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className="Calendar-text">
+              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
                 {year}
               </Text>
             </div>
@@ -744,6 +749,11 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             'inverse-lightest': disabled,
           }) as TextColor;
 
+          const textClass = classNames({
+            'Calendar-value--currDate': isCurrentMonth() && !active,
+            'Calendar-text': true,
+          });
+
           return (
             //TODO(a11y)
             //eslint-disable-next-line
@@ -754,7 +764,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               onClick={this.selectMonth(month)}
               onMouseOver={this.monthMouseOverHandler.bind(this, month, isCurrentMonth(), disabled)}
             >
-              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className="Calendar-text">
+              <Text size={size === 'small' ? 'small' : 'regular'} color={getTextColor} className={textClass}>
                 {months[month]}
               </Text>
             </div>
@@ -840,7 +850,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
     const dummyDays = Math.abs(dayDiff);
     let noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
-    // TODO: @veekays
+
     // if(noOfRows !== 6 && monthsInView <= 1) ?
     if (noOfRows === 6) {
     } else if (monthsInView > 1) {
@@ -923,28 +933,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             let endActive = false;
             let inRange = false;
             let inRangeLast = false;
-            if (rangePicker) {
-              startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
-              endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
-              inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
-              active = !disabled && (startActive || endActive);
-              if (startDate && endDate) {
-                inRange =
-                  !disabled &&
-                  (compareDate(startDate, 'less', yearNavVal, monthNavVal, date) || startActive) &&
-                  (compareDate(endDate, 'more', yearNavVal, monthNavVal, date) || endActive);
-              } else if (startDate) {
-                inRange =
-                  !disabled &&
-                  (compareDate(hoverDate, 'more', yearNavVal, monthNavVal, date) || inRangeLast) &&
-                  compareDate(startDate, 'less', yearNavVal, monthNavVal, date);
-              } else if (endDate) {
-                inRange =
-                  !disabled &&
-                  (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) &&
-                  compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
-              }
-            }
 
             const { year: sYear, month: sMonth, date: sDate } = getDateInfo(startDate);
             const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
@@ -952,7 +940,6 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               startActive || (endDate && inRangeLast && compareDate(hoverDate, 'less', eYear, eMonth, eDate));
             const isEnd =
               endActive || (startDate && inRangeLast && compareDate(hoverDate, 'more', sYear, sMonth, sDate));
-            const isRangeError = inRange && inRangeError;
 
             const dateInString = `${date <= 0 ? prevMonthDayRange + date : date > dayRange ? date - dayRange : date}`;
             const monthInString = `${
@@ -974,37 +961,89 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const completeDateString = `${monthInString.length === 2 ? monthInString : `0${monthInString}`}/${
               dateInString.length === 2 ? dateInString : `0${dateInString}`
             }/${yearInString}`;
+
             const isEventExist = events && typeof events === 'object' && events.hasOwnProperty(completeDateString);
+
+            if (rangePicker) {
+              startActive = compareDate(startDate, 'equal', yearNavVal, monthNavVal, date);
+              endActive = compareDate(endDate, 'equal', yearNavVal, monthNavVal, date);
+              inRangeLast = compareDate(hoverDate, 'equal', yearNavVal, monthNavVal, date);
+              active = !disabled && (startActive || endActive);
+              if (startDate && endDate) {
+                inRange =
+                  !disabled &&
+                  ((dateComparison(startDate, 'less', dateInString, monthInString, yearInString) &&
+                    dateComparison(endDate, 'more', dateInString, monthInString, yearInString)) ||
+                    startActive ||
+                    endActive);
+              } else if (startDate) {
+                inRange =
+                  !disabled &&
+                  (dateComparison(hoverDate, 'more', dateInString, monthInString, yearInString) || inRangeLast) &&
+                  dateComparison(startDate, 'less', dateInString, monthInString, yearInString);
+              } else if (endDate) {
+                inRange =
+                  !disabled &&
+                  (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) &&
+                  compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
+              }
+            }
+
+            const isRangeError = inRange && inRangeError;
+
+            const isStartActive =
+              startDate && dateComparison(startDate, 'equal', dateInString, monthInString, yearInString);
+
+            const isEndActive = endDate && dateComparison(endDate, 'equal', dateInString, monthInString, yearInString);
+
+            const activeDate = startDate && endDate && (isStartActive || isEndActive);
+            const isHoverLast =
+              dateComparison(hoverDate, 'equal', dateInString, monthInString, yearInString) &&
+              hoverDate &&
+              startDate &&
+              hoverDate >= startDate;
+
+            const isEdgeElement = col === 0 || col === 6;
+            const isValueRange = inRange || (rangePicker && (active || activeDate));
 
             const wrapperClass = classNames({
               'Calendar-valueWrapper': true,
-              'Calendar-valueWrapper--inRange': inRange || (rangePicker && active),
+              'Calendar-valueWrapper--inRange': !isEdgeElement && isValueRange,
+              'Calendar-valueWrapper--inEdgeRange': isValueRange && isEdgeElement,
               'Calendar-valueWrapper--inRangeError': isRangeError,
-              'Calendar-valueWrapper--start': isStart && !isEnd,
-              'Calendar-valueWrapper--end': isEnd && !isStart,
+              'Calendar-valueWrapper--start':
+                (isStart && !isEnd && col !== 6) || (rangePicker && isStartActive && col !== 6),
+              'Calendar-valueWrapper--end':
+                (isEnd && !isStart && col !== 0) || (rangePicker && isEndActive && col !== 0),
               'Calendar-valueWrapper--startEnd': isStart && isEnd,
-              'Calendar-valueWrapper--startError': isStart && isRangeError,
-              'Calendar-valueWrapper--endError': isEnd && isRangeError,
+              'Calendar-valueWrapper--startError':
+                (isStart && isRangeError) || (rangePicker && isRangeError && isStartActive),
+              'Calendar-valueWrapper--endError':
+                (isEnd && isRangeError) || (rangePicker && isRangeError && isEndActive),
               'Calendar-valueWrapper--dummy': dummy,
+              'Calendar-valueWrapper--hoverDate': rangePicker && isHoverLast,
+              'Calendar-valueWrapper--inStartRange': isValueRange && col === 0 && !active && !activeDate,
+              'Calendar-valueWrapper--inEndRange': isValueRange && col === 6 && !active && !activeDate,
             });
 
             const valueClass = classNames({
               'Calendar-value': true,
-              'Calendar-inRangeValue': !isStart && !isEnd,
+              'Calendar-inRangeValue': !isStart && !isEnd && !active && !activeDate,
               'Calendar-value--start': isStart && !isEnd,
               'Calendar-value--end': isEnd && !isStart,
               'Calendar-value--startError': isStart && isRangeError,
               'Calendar-value--endError': isEnd && isRangeError,
-              'Calendar-value--active': active,
+              'Calendar-value--active': active || activeDate,
               'Calendar-value--disabled': disabled,
               'Calendar-dateValue': true,
               [`Calendar-dateValue--${size}`]: size,
               'Calendar-value--currDateMonthYear': today(),
+              'Calendar-value--currDate': today() && !active && !activeDate,
             });
 
             const getTextColor = classNames({
-              inverse: !active && !today() && !disabled,
-              white: active,
+              inverse: !active && !today() && !disabled && !activeDate,
+              white: active || activeDate,
               'primary-lighter': today() && disabled,
               primary: today(),
               'inverse-lightest': disabled,
@@ -1031,7 +1070,7 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
                 {((dummy && date > 0 && index === monthsInView - 1) || (dummy && date <= 0 && index === 0)) && (
                   <>
                     <Text
-                      appearance={active ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default'}
+                      appearance={active || activeDate ? 'white' : disabled ? 'disabled' : today() ? 'link' : 'default'}
                       size={size === 'small' ? 'small' : 'regular'}
                       data-test="DesignSystem-Calendar--dateValue"
                       className={valueClass}

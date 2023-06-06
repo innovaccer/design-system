@@ -315,7 +315,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -955,7 +955,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -1595,7 +1595,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -2236,7 +2236,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -2930,7 +2930,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -3525,7 +3525,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -4219,7 +4219,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -4792,7 +4792,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -5475,7 +5475,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -6092,7 +6092,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -6742,7 +6742,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -7348,7 +7348,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -7968,7 +7968,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -8983,7 +8983,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -10555,7 +10555,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -11252,7 +11252,7 @@ exports[`Calendar component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-primary Calendar-text"
+                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -11655,7 +11655,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -12275,7 +12275,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -13290,7 +13290,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -14862,7 +14862,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -15559,7 +15559,7 @@ exports[`Calendar component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-primary Calendar-text"
+                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2021
