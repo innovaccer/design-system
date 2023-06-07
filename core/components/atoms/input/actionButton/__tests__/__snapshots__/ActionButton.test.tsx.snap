@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionButton component 
+  name: "events", size: 16, onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round ActionButton"
+      data-test="DesignSystem-Input-ActionButton"
+      role="button"
+      style="font-size: 16px; width: 16px;"
+      tabindex="0"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`ActionButton component 
+  name: "events", size: 16, type: "filled", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons ActionButton"
+      data-test="DesignSystem-Input-ActionButton"
+      role="button"
+      style="font-size: 16px; width: 16px;"
+      tabindex="0"
+    >
+      events_filled
+    </i>
+  </div>
+</body>
+`;
+
+exports[`ActionButton component 
+  name: "events", size: 16, type: "outlined", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-outlined ActionButton"
+      data-test="DesignSystem-Input-ActionButton"
+      role="button"
+      style="font-size: 16px; width: 16px;"
+      tabindex="0"
+    >
+      events_outlined
+    </i>
+  </div>
+</body>
+`;
+
+exports[`ActionButton component 
+  name: "events", size: 16, type: "round", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-round ActionButton"
+      data-test="DesignSystem-Input-ActionButton"
+      role="button"
+      style="font-size: 16px; width: 16px;"
+      tabindex="0"
+    >
+      events_round
+    </i>
+  </div>
+</body>
+`;
+
+exports[`ActionButton component 
+  name: "events", size: 16, type: "sharp", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-sharp ActionButton"
+      data-test="DesignSystem-Input-ActionButton"
+      role="button"
+      style="font-size: 16px; width: 16px;"
+      tabindex="0"
+    >
+      events_sharp
+    </i>
+  </div>
+</body>
+`;
+
+exports[`ActionButton component 
+  name: "events", size: 16, type: "two-tone", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-icons material-icons-two-tone ActionButton"
+      data-test="DesignSystem-Input-ActionButton"
+      role="button"
+      style="font-size: 16px; width: 16px;"
+      tabindex="0"
+    >
+      events_two-tone
+    </i>
+  </div>
+</body>
+`;
