@@ -155,12 +155,13 @@ const customCode = `() => {
     },
   ];
 
+  const [error, setError] = React.useState(false);
 
   return (
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
         <Table
-
+          error={error}
           data={data}
           schema={schema}
           withHeader={true}
@@ -168,6 +169,8 @@ const customCode = `() => {
             withSearch: true
           }}
           onSearch={(currData, searchTerm) => {
+            console.log('onsearch called', searchTerm);
+            setError(!error);
             return currData.filter(d =>
               d.firstName.toLowerCase().match(searchTerm.toLowerCase())
               || d.lastName.toLowerCase().match(searchTerm.toLowerCase())
