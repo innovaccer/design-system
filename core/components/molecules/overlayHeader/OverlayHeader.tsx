@@ -68,6 +68,7 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
             appearance="transparent"
             className="mr-4"
             icon="arrow_back"
+            largeIcon={true}
             onClick={backButtonCallback || backIconCallback}
           />
         )}
