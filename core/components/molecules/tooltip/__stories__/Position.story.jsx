@@ -28,7 +28,7 @@ export const position = () => {
 };
 
 export default {
-  title: 'Components/Tooltip/Variants/Position',
+  title: 'Components/Tooltip/Position',
   component: Tooltip,
   parameters: {
     docs: {
