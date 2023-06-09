@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Message, Text } from '@/index';
+import { Message, LinkButton } from '@/index';
 
 // CSF format story
 export const MessageWithActions = () => (
@@ -7,11 +7,7 @@ export const MessageWithActions = () => (
     className="w-75"
     appearance="alert"
     description="Sorry we couldn't subscribe you. Please try again."
-    actions={
-      <Text className="cursor-pointer" appearance="link">
-        Try again
-      </Text>
-    }
+    actions={<LinkButton>Try again</LinkButton>}
   />
 );
 
