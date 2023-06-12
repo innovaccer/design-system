@@ -24,7 +24,7 @@ const propsList = [
   'offset',
   'closeOnScroll',
 ] as const;
-type PopperProps = typeof propsList[number];
+type PopperProps = (typeof propsList)[number];
 
 export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, BaseProps {
   /**
@@ -107,6 +107,10 @@ export const Popover = (props: PopoverProps) => {
   }, [props.open]);
 
   const defaultOnToggle = React.useCallback((newOpen) => {
+    /**
+     * even if user has not provided onToggle,
+     * this default onToggle is passed as prop to PopperWrapper
+     */
     setOpen(newOpen);
   }, []);
 
