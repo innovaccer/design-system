@@ -155,3 +155,19 @@ describe('Uncontrolled ChipInput component', () => {
     expect(queryAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(newValue.length);
   });
 });
+
+describe('ChipInput component text transform', () => {
+  it('check for chip input text transform case', () => {
+    const chipValue = ['CHIP', 'xyz', 'Abc'];
+
+    chipValue.forEach((value, key) => {
+      const { getAllByTestId } = render(<ChipInput />);
+
+      const inputComponent = getAllByTestId('DesignSystem-ChipInput--Input')[0];
+      fireEvent.change(inputComponent, { target: { value: value } });
+      fireEvent.keyDown(inputComponent, { key: 'Enter' });
+
+      expect(getAllByTestId('DesignSystem-ChipInput--Chip')[key].textContent).toMatch(value);
+    });
+  });
+});

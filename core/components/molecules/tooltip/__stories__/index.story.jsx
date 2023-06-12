@@ -16,7 +16,7 @@ export const all = () => {
   };
 
   return (
-    <div className="mt-8 ml-12">
+    <div className="mb-8 ml-14">
       <Tooltip {...options}>
         <Button>Hover over me</Button>
       </Tooltip>

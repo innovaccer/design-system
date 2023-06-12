@@ -11,6 +11,7 @@ exports[`Horizontal Navigation component
       <div
         class="HorizontalNav-menu HorizontalNav-menu--active HorizontalNav-animate color-primary-dark"
         data-test="DesignSystem-HorizontalNav"
+        role="button"
         tabindex="0"
       >
         <i
@@ -22,7 +23,7 @@ exports[`Horizontal Navigation component
           events_round
         </i>
         <span
-          class="Text Text--regular color-primary-dark HorizontalNav-menuText HorizontalNav-animate"
+          class="Text Text--medium Text--regular color-primary-dark HorizontalNav-menuText HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #1
@@ -31,6 +32,7 @@ exports[`Horizontal Navigation component
       <div
         class="HorizontalNav-menu HorizontalNav-menu--default HorizontalNav-animate color-inverse"
         data-test="DesignSystem-HorizontalNav"
+        role="button"
         tabindex="0"
       >
         <span
@@ -40,7 +42,7 @@ exports[`Horizontal Navigation component
           10
         </span>
         <span
-          class="Text Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
+          class="Text Text--medium Text--regular color-inverse HorizontalNav-menuText HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #2
@@ -49,10 +51,11 @@ exports[`Horizontal Navigation component
       <div
         class="HorizontalNav-menu HorizontalNav-menu--disabled HorizontalNav-animate color-inverse-lightest"
         data-test="DesignSystem-HorizontalNav"
+        role="button"
         tabindex="0"
       >
         <span
-          class="Text Text--regular color-inverse-lightest HorizontalNav-menuText HorizontalNav-animate"
+          class="Text Text--medium Text--regular color-inverse-lightest HorizontalNav-menuText HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Text"
         >
           Tab #3

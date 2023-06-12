@@ -55,6 +55,12 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     return null;
   };
 
+  const onKeyDownHandler = (event: React.KeyboardEvent, menu: Menu) => {
+    if (event.key === 'Enter' && onClick) {
+      onClick(menu);
+    }
+  };
+
   const list = menus.map((menu, index) => {
     const isActive = isMenuActive(menus, menu, active);
     const itemColor = getNavItemColor(isActive, menu.disabled);
@@ -71,10 +77,19 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
     return (
       // TODO(a11y)
       // eslint-disable-next-line
-      <div tabIndex={0} data-test="DesignSystem-HorizontalNav" key={index} className={menuClasses} onClick={onClickHandler(menu)}>
+      <div
+        tabIndex={0}
+        data-test="DesignSystem-HorizontalNav"
+        key={index}
+        className={menuClasses}
+        onClick={onClickHandler(menu)}
+        onKeyDown={(e) => onKeyDownHandler(e, menu)}
+        role="button"
+      >
         {renderIcon(menu, isActive)}
         <Text
           color={itemColor}
+          weight="medium"
           data-test="DesignSystem-HorizontalNav--Text"
           className="HorizontalNav-menuText HorizontalNav-animate"
         >

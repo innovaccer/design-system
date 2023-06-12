@@ -7,7 +7,7 @@ export const all = () => {
     {
       name: 'menu_1',
       label: 'Menu 1',
-      icon: 'event',
+      count: 20,
     },
     {
       name: 'menu_2',
@@ -18,6 +18,7 @@ export const all = () => {
       name: 'menu_3',
       label: 'Menu 3',
       disabled: true,
+      count: 5,
     },
   ];
 
@@ -32,10 +33,8 @@ export const all = () => {
   };
 
   return (
-    <div className="bg-secondary-lightest pb-13">
-      <div className="bg-light border-top border-bottom p-3">
-        <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
-      </div>
+    <div className="bg-secondary-lightest py-6">
+      <HorizontalNav className="w-100 justify-content-center" menus={data} active={active} onClick={onClickHandler} />
     </div>
   );
 };
@@ -45,7 +44,7 @@ const customCode = `() => {
     {
       name: 'menu_1',
       label: 'Menu 1',
-      icon: 'event',
+      count: 20
     },
     {
       name: 'menu_2',
@@ -55,7 +54,8 @@ const customCode = `() => {
     {
       name: 'menu_3',
       label: 'Menu 3',
-      disabled: true
+      disabled: true,
+      count: 5,
     }
   ];
 
@@ -69,15 +69,13 @@ const customCode = `() => {
   };
 
   return (
-    <div className="bg-secondary-lightest pb-13">
-      <div className="bg-light border-top border-bottom p-3">
-        <HorizontalNav
-          className="w-100 justify-content-center"
-          menus={data}
-          active={active}
-          onClick={onClickHandler}
-        />
-      </div>
+    <div className="bg-secondary-lightest py-6">
+      <HorizontalNav
+        className="w-100 justify-content-center"
+        menus={data}
+        active={active}
+        onClick={onClickHandler}
+      />
   </div>
   );
 }`;

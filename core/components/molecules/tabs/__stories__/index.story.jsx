@@ -12,7 +12,7 @@ export const all = () => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3">
       <Tab label="Tab(Recommended)" count={10}>
         <div>Tab(Recommended)</div>
       </Tab>
@@ -38,6 +38,7 @@ const customCode = `() => {
       activeIndex={activeIndex}
       onTabChange={onTabChangeHandler}
       className="mb-6"
+      headerClassName='pl-3'
     >
       <Tab label="Tab(Recommended)" count={10}>
         <div>Tab(Recommended)</div>

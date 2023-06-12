@@ -66,8 +66,9 @@ export const OverlayHeader = (props: OverlayHeaderProps) => {
           <Button
             data-test="DesignSystem-OverlayHeader--Button"
             appearance="transparent"
-            className="mr-5"
-            icon="keyboard_backspace"
+            className="mr-4"
+            icon="arrow_back"
+            largeIcon={true}
             onClick={backButtonCallback || backIconCallback}
           />
         )}

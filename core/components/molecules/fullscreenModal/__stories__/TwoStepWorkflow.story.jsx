@@ -21,15 +21,15 @@ export const twoStepsWorkflow = () => {
       };
     }
     return {
-      heading: 'Name the care Plan',
+      heading: 'Name the care plan',
       backButton: true,
       backButtonCallback: () => setPage(0),
     };
   };
 
   const data = [
-    { name: 'Cultural and language barriers', icon: 'cancel' },
-    { name: 'Patient does not show Emotion', icon: 'cancel' },
+    { name: 'Cultural and language barriers', icon: 'close' },
+    { name: 'Patient does not show emotion', icon: 'close' },
   ];
 
   const schema = [
@@ -51,7 +51,7 @@ export const twoStepsWorkflow = () => {
   return (
     <div>
       <Button appearance="primary" onClick={openModal}>
-        Open Modal
+        Open Full screen modal
       </Button>
 
       <FullscreenModal
@@ -73,7 +73,7 @@ export const twoStepsWorkflow = () => {
               <>
                 <Button>Cancel</Button>
                 <Button appearance="primary" className="ml-4">
-                  Continue
+                  Submit
                 </Button>
               </>
             )}
@@ -81,31 +81,29 @@ export const twoStepsWorkflow = () => {
         }
       >
         {page === 0 && (
-          <>
+          <div>
             <Text weight="strong" size="regular">
               Identify patient needs
             </Text>
             <br />
             <Text size="small">Identify the patient needs to create a care plan for the patient</Text>
-            <Input placeholder="Add patient needs" size="tiny" className="my-5" />
-            <Text weight="strong" size="regular">
-              2 Selected
-            </Text>
+            <Input placeholder="Add patient needs" size="regular" className="my-5" />
+            <Label withInput={true}>2 selected</Label>
             <br />
-            <Card className="w-100" shadow="none">
+            <Card className="w-100 " shadow="none">
               <List data={data} schema={schema} size="tight" />
             </Card>
-          </>
+          </div>
         )}
         {page === 1 && (
-          <>
-            <Text size="small">Give a meaningful and easy to understand name to the care plan.</Text>
+          <div>
+            <Text size="regular">Give a meaningful and easy to understand name to the care plan.</Text>
             <br />
             <Label required={true} className="mt-5">
               Name
             </Label>
-            <Input placeholder="Name" size="tiny" className="mt-2" />
-          </>
+            <Input placeholder="Name" size="regular" className="mt-2" />
+          </div>
         )}
       </FullscreenModal>
     </div>
@@ -135,14 +133,14 @@ const customCode = `
     }
     return(
     {
-      heading: 'Name the care Plan',
+      heading: 'Name the care plan',
       backButton: true,
       backButtonCallback: () => setPage(0)
     }
     );
   };
 
-  const data = [{ name:'Cultural and language barriers', icon: 'cancel' }, { name:'Patient does not show Emotion', icon: 'cancel' }];
+  const data = [{ name:'Cultural and language barriers', icon: 'close' }, { name:'Patient does not show emotion', icon: 'close' }];
 
   const schema = [
     {
@@ -163,7 +161,7 @@ const customCode = `
   return (
     <div>
       <Button appearance="primary" onClick={openModal}>
-        Open Modal
+        Open Full screen modal
       </Button>
 
       <FullscreenModal
@@ -189,7 +187,7 @@ const customCode = `
                   Cancel
                 </Button>
                 <Button appearance="primary" className="ml-4">
-                  Continue
+                  Submit
                 </Button>
               </>
             )}
@@ -198,26 +196,26 @@ const customCode = `
 
       >
         {page === 0 && (
-          <>
+          <div>
             <Text weight="strong" size="regular">Identify patient needs</Text><br/>
             <Text  size="small">Identify the patient needs to create a care plan for the patient</Text>
-            <Input placeholder="Add patient needs" size="tiny" className="my-5"/>
-            <Text weight="strong" size="regular">2 Selected</Text><br/>
+            <Input placeholder="Add patient needs" size="regular" className="my-5"/>
+            <Label withInput={true}>2 selected</Label>
             <Card className="w-100" shadow="none">
               <List
                 data={data}
                 schema={schema}
                 size="tight"
               />
-            </Card>
-          </>
+            </Card>          
+          </div>
         )}
         {page === 1 && (
-          <>
-            <Text size="small">Give a meaningful and easy to understand name to the care plan.</Text><br/>
+          <div>
+            <Text size="regular">Give a meaningful and easy to understand name to the care plan.</Text><br/>
             <Label required={true} className="mt-5">Name</Label>
-            <Input placeholder="Name" size="tiny" className="mt-2"/>
-          </>
+            <Input placeholder="Name" size="regular" className="mt-2"/>
+          </div>
         )}
       </FullscreenModal>
     </div>

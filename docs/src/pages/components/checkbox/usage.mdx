@@ -1,50 +1,63 @@
 ---
 title: Checkbox
 description: Checkbox lets users select one or more values.
-tabs: ["Usage", "Code"]
+tabs: ['Usage', 'Code']
 showMobile: true
 ---
 
 Checkboxes lets users select one or more values from a list of options. Options are not mutually exclusive here so the selection of any option won’t affect the other.
 
 ### Variants
-<br/>
+
+<br />
 
 #### Default
+
 The default variant comes with a checkbox control and a label, to cater most of the use cases. This entire combination of checkbox control and label is clickable to change the checkbox selection.
-<Preview name="components-checkbox-default-checkbox--default-checkbox" />
+
+<Preview name="components-checkbox-default-checked--default-checked" />
 
 #### With help text
+
 A checkbox can have a help text below the label to provide additional information about that particular option. The help text will always be aligned to the label. Clicking over the help text will not change the state of checkbox.
+
 <Preview name="components-checkbox-with-help-text--with-help-text" />
 
 ### Sizes
+
 Checkbox comes in **two sizes** - small and regular.
-<Preview name="components-checkbox-variants-size--size"/>
+
+<Preview name="components-checkbox-variants-size--size" />
 
 ### States
-<br/>
+
+<br />
 
 #### Selection States
+
 Checkbox has three selection states - checked, unchecked and indeterminate.
 
 ![Selection states of a checkbox](./images/checkbox-1.png)
-<br/>
+
+<br />
 
 #### Interactive States
+
 Checkbox has five interactive states - default, hover, active, focus and disabled.
 
 ![Interactive states of a checkbox](./images/checkbox-2.png)
-<br/>
-<br/>
+
+<br />
+<br />
 
 ### Structure
-<br/>
-<br/>
+
+<br />
+<br />
 
 ![Structure of checkbox](./images/checkbox-structure.png)
-<br/>
 
+<br />
 
 <table style="width: 100%">
   <tbody>
@@ -60,18 +73,23 @@ Checkbox has five interactive states - default, hover, active, focus and disable
       <td>Size</td>
       <td>
         <ul>
-              <li>12x12 px <em>(Small)</em></li>
-              <li>16x16 px <em>(Regular)</em></li>
-          </ul>
+          <li>
+            12x12 px <em>(Small)</em>
+          </li>
+          <li>
+            16x16 px <em>(Regular)</em>
+          </li>
+        </ul>
       </td>
     </tr>
   </tbody>
 </table>
-<br/>
+<br />
 
 ### Configurations
-<br/>
-<br/>
+
+<br />
+<br />
 
 <table style="width: 100%">
   <tbody>
@@ -83,63 +101,87 @@ Checkbox has five interactive states - default, hover, active, focus and disable
     <tr style="vertical-align: top">
       <td>Size</td>
       <td>
-          <ul>
-              <li>Small</li>
-              <li>Regular</li>
-          </ul>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
       </td>
       <td>Regular</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Label<br/><em>(optional)</em></td>
+      <td>
+        Label
+        <br />
+        <em>(optional)</em>
+      </td>
       <td>&#60;label&#62;</td>
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
-      <td>Help text<br/><em>(optional)</em></td>
+      <td>
+        Help text
+        <br />
+        <em>(optional)</em>
+      </td>
       <td>&#60;help text&#62;</td>
       <td>-</td>
     </tr>
   </tbody>
 </table>
-<br/>
+<br />
 
 ### Usage
-<br/>
+
+<br />
 
 #### Checkbox Group
+
 Checkbox group is a list of multiple standalone checkboxes with a group label on the top.
 
-**Note**: Multiple checkboxes should have a minimum of 8px spacing in between.
-<Preview name="components-checkbox-checkbox-group--checkbox-group"/>
+**Note**: Multiple checkboxes should have a minimum of 4px spacing in between.
+
+<Preview name="components-checkbox-checkbox-group-vertical--vertical" />
 
 #### Alignment
+
 A group of checkboxes can be aligned either **vertically** or **horizontally**. However, it is advisable to stack the checkboxes vertically with one option in a line for easier reading and scanning. If you need to use them horizontally, make sure to space the options appropriately so that it is clear which control goes with which label.
-<Preview name="components-checkbox-alignment-of-checkbox-group--alignment-of-checkbox-group"/>
+
+<Preview name="components-checkbox-checkbox-group-vertical--vertical" />
+<br />
+<Preview name="components-checkbox-checkbox-group-horizontal--horizontal" />
 
 #### Nesting
-Checkboxes can be nested in case of a list having sub-sections. The parent remains unchecked if no child is checked. 
+
+Checkboxes can be nested in case of a list having sub-sections. The parent remains unchecked if no child is checked.
 
 Indeterminate state of the parent shows a partially checked state when there is a nested relationship. The parent checkbox will remain indeterminate until some of its children checkboxes are checked.
-<Preview name="components-checkbox-nested-checkboxes--nested-checkboxes" />
+
+<Preview name="components-checkbox-checkbox-group-nested--nested" />
 
 #### Overflow Behavior
+
 If the label or the help text with the checkbox overflows, wrap it to the next line but make sure that the control and the label are top aligned.
+
 <Preview name="components-checkbox-overflow-behavior--overflow-behavior" />
 
 #### Checkbox vs. Radio
+
 Radio buttons allow only one selection from a list of mutually exclusive options whereas checkboxes allow users to select multiple options.
 
 #### Checkbox vs. Switch
+
 Checkbox should be considered instead of a switch when a confirmation action is required to apply the changes. For example in forms etc.
 
 ![Checkbox vs. switch](./images/checkbox-3.png)
-<br/>
+
+<br />
 
 #### Checkbox vs. Dropdown
+
 Checkboxes should be used when there are fewer than 5 options as they are easy to scan and save an additional click of opening a dropdown.
 
 However, if the number of options exceeds 5 or if the space is limited then it is recommended to use dropdowns.
 
 ![Checkbox vs. dropdown](./images/checkbox-4.png)
-<br/>
+
+<br />

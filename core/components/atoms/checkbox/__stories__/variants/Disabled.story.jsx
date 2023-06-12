@@ -1,26 +1,22 @@
 import * as React from 'react';
-import Checkbox from '../../index';
-import Text from '@/components/atoms/text';
+import { Checkbox, Label } from '@/index';
 
 // CSF format story
 export const disabled = () => {
   const label = 'Checkbox';
   return (
     <div className="d-flex">
-      <div className="mr-5">
+      <div className="mr-7">
+        <Label withInput={true}>Checked</Label>
         <Checkbox checked={true} disabled={true} label={label} />
-        <br />
-        <Text weight="strong">Checked</Text>
       </div>
-      <div className="mr-5">
+      <div className="mr-7">
+        <Label withInput={true}>Unchecked</Label>
         <Checkbox checked={false} disabled={true} label={label} />
-        <br />
-        <Text weight="strong">Unchecked</Text>
       </div>
-      <div className="mr-5">
+      <div>
+        <Label withInput={true}>Indeterminate</Label>
         <Checkbox indeterminate={true} disabled={true} label={label} />
-        <br />
-        <Text weight="strong">Indeterminate</Text>
       </div>
     </div>
   );

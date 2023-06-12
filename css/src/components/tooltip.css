@@ -1,9 +1,9 @@
 .Tooltip {
   max-width: var(--spacing-9);
-  padding: var(--spacing) var(--spacing-2);
+  padding: var(--spacing-m) var(--spacing);
   border-radius: var(--spacing-m);
   z-index: 500;
-  background: var(--inverse);
+  background: color-mod(var(--inverse) a(0.88));
   overflow: hidden;
   box-sizing: border-box;
   transition: opacity 120ms;
@@ -45,21 +45,21 @@
 }
 @keyframes tooltip-open-bottom {
   from {
-    top: 0px;
+    top: -4px;
     opacity: 0;
   }
   to {
-    top: 4px;
+    top: 0px;
     opacity: 1;
   }
 }
 @keyframes tooltip-close-bottom {
   from {
-    top: 4px;
+    top: 0px;
     opacity: 1;
   }
   to {
-    top: 0px;
+    top: -4px;
     opacity: 0;
   }
 }
@@ -74,21 +74,21 @@
 
 @keyframes tooltip-open-left {
   from {
-    left: 0px;
+    left: 1px;
     opacity: 0;
   }
   to {
-    left: -4px;
+    left: -3px;
     opacity: 1;
   }
 }
 @keyframes tooltip-close-left {
   from {
-    left: -4px;
+    left: -3px;
     opacity: 1;
   }
   to {
-    left: 0px;
+    left: 1px;
     opacity: 0;
   }
 }
@@ -103,21 +103,21 @@
 
 @keyframes tooltip-open-right {
   from {
-    left: 0px;
+    left: -3px;
     opacity: 0;
   }
   to {
-    left: 4px;
+    left: 1px;
     opacity: 1;
   }
 }
 @keyframes tooltip-close-right {
   from {
-    left: 4px;
+    left: 1px;
     opacity: 1;
   }
   to {
-    left: 0px;
+    left: -3px;
     opacity: 0;
   }
 }

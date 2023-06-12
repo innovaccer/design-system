@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import Checkbox from '../Checkbox';
+import { Checkbox } from '@/index';
 
 // CSF format story
 export const all = () => {
-  const size = 'tiny';
+  const size = 'regular';
 
   const label = 'Checkbox';
 
