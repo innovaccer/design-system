@@ -120,7 +120,7 @@ export const ChipInput = (props: ChipInputProps) => {
   const onChipAddHandler = () => {
     if (!inputValue) return;
 
-    const chip = inputValue.trim().toLowerCase();
+    const chip = inputValue.trim();
     if ((allowDuplicates || chips.indexOf(chip) === -1) && chip) {
       const updatedChips = [...chips, chip];
 
