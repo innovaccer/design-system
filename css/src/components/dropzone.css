@@ -14,7 +14,7 @@
   background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
-  padding: var(--spacing) var(--spacing-xl) var(--spacing-2);
+  /* padding: var(--spacing) var(--spacing-xl) var(--spacing-2); */
 }
 
 .Dropzone--active {

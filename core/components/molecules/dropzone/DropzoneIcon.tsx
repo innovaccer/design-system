@@ -28,7 +28,7 @@ const DropzoneIcon = (props: SVGIconProps) => {
   const IconStyle = {
     height: 'var(--spacing-5)',
     width: 'var(--spacing-5)',
-    paddingTop: 'var(--spacing)',
+    // paddingTop: 'var(--spacing)',
   };
 
   return (
