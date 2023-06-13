@@ -11,11 +11,7 @@ export const all = () => {
     appearance,
   };
 
-  return (
-    <div>
-      <StatusHint {...options}>{children}</StatusHint>
-    </div>
-  );
+  return <StatusHint {...options}>{children}</StatusHint>;
 };
 
 export default {

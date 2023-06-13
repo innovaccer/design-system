@@ -14,6 +14,10 @@ export interface StatusHintProps extends BaseProps {
    */
   appearance: MessageAppearance;
   /**
+   * Trims label if it is too long
+   */
+  truncateLabel?: boolean;
+  /**
    * Handler to be called when `Status Hint` is clicked
    */
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -28,7 +32,7 @@ export interface StatusHintProps extends BaseProps {
 }
 
 export const StatusHint = (props: StatusHintProps) => {
-  const { appearance, children, onMouseEnter, onMouseLeave, onClick, className } = props;
+  const { appearance, children, onMouseEnter, onMouseLeave, onClick, truncateLabel, className } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -44,6 +48,10 @@ export const StatusHint = (props: StatusHintProps) => {
     [`StatusHint--${appearance}`]: appearance,
   });
 
+  const StatusHintTextClass = classNames({
+    ['ellipsis--noWrap']: truncateLabel,
+  });
+
   return (
     // TODO(a11y): fix accessibility
     /* eslint-disable */
@@ -57,7 +65,7 @@ export const StatusHint = (props: StatusHintProps) => {
     >
       {/* eslint-enable */}
       <span data-test="DesignSystem-StatusHint--Icon" className={StatusHintIconClass} />
-      <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'}>
+      <Text data-test="DesignSystem-StatusHint--Text" weight={'medium'} className={StatusHintTextClass}>
         {children}
       </Text>
     </div>
