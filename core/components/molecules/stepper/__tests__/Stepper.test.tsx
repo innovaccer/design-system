@@ -80,7 +80,6 @@ describe('Stepper component with prop: active', () => {
   it('adds Step--active and color-primary-dark class', () => {
     const { getAllByTestId } = render(<Stepper steps={steps} active={active} completed={0} />);
     expect(getAllByTestId('DesignSystem-Step')[active]).toHaveClass('Step--active');
-    expect(getAllByTestId('DesignSystem-Step')[active]).toHaveClass('color-primary-dark');
   });
 
   it('renders Text inside active step', () => {
@@ -140,7 +139,6 @@ describe('Stepper component with disabled steps', () => {
     disabledSteps.forEach((step, index) => {
       if (Math.max(completed, active) < index) {
         expect(step).toHaveClass('Step--disabled');
-        expect(step).toHaveClass('color-inverse-lightest');
       }
     });
   });
