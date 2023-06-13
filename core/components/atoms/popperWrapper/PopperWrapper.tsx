@@ -411,7 +411,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       const popperAnimationStyles = {
         animation: open
           ? `popper-open-${uniqueKey} 120ms cubic-bezier(0, 0, 0.38, 0.9), popper-fade-in 120ms`
-          : `popper-close-${uniqueKey} 120ms cubic-bezier(0.2, 0, 1, 0.9) 120ms, fadeOut 120ms 120ms`,
+          : `popper-close-${uniqueKey} 120ms cubic-bezier(0.2, 0, 1, 0.9) 120ms, fadeOut 100ms 120ms`,
       };
 
       childrenStyles = {
@@ -437,6 +437,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       onMouseEnter: this.handleMouseEnter,
       onMouseLeave: this.handleMouseLeave,
       onAnimationEnd: () => {
+        console.log('animation ended');
         if (!open) {
           this.setState({
             isOpen: false,
@@ -480,6 +481,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             {this.getPopperChildren}
           </Popper>
         )}
+        {console.log('rerender isOpen', isOpen)}
       </Manager>
     );
   }
