@@ -14,7 +14,7 @@ export const all = () => {
     },
   ];
 
-  return <MetaList list={list} />;
+  return <MetaList list={list} className="w-25" />;
 };
 
 export default {

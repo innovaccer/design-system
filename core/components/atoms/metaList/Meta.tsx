@@ -25,7 +25,7 @@ export const Meta = (props: MetaProps) => {
           size={size === 'regular' ? 16 : 12}
         />
       )}
-      <Text size={size} data-test="DesignSystem-MetaList--MetaLabel" appearance={labelAppearance}>
+      <Text className="Meta-text" size={size} data-test="DesignSystem-MetaList--MetaLabel" appearance={labelAppearance}>
         {label}
       </Text>
     </span>

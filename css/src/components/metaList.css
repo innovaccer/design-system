@@ -23,6 +23,11 @@
   align-items: center;
   width: fit-content;
   font-size: var(--font-size);
+  flex-wrap: wrap;
+}
+
+.Meta-text {
+  white-space: nowrap;
 }
 .MetaList-item {
   margin: 0 var(--spacing-m);
