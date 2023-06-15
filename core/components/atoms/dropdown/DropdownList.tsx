@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { scrollIntoView, _isEqual, _isSelectAllPresent, scrollToOptionIndex } from './utility';
+import { scrollIntoView, _isEqual, _isSelectAllPresent, scrollToOptionIndex, groupListOptions } from './utility';
 import { Popover, Checkbox, Button, Text, Input } from '@/index';
 import { PopoverProps } from '@/index.type';
 import DropdownButton, { TriggerProps } from './DropdownButton';
@@ -543,6 +543,8 @@ const DropdownList = (props: OptionsProps) => {
     const { selectedSectionLabel = 'Selected Items', loadersCount = 10, loadingOptions } = props;
     const selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
 
+    const groupedListOptions = groupListOptions(listOptions);
+
     if (loadersCount && loadingOptions) {
       return (
         <div className={'Dropdown-loading'}>
@@ -569,9 +571,9 @@ const DropdownList = (props: OptionsProps) => {
         {selectAllPresent && renderSelectAll()}
         {selected.length > 0 && renderGroups(selectedSectionLabel, true)}
         {selected.map((option, index) => renderOptions(option, index))}
-        {listOptions.map((option, index) => {
+        {groupedListOptions.map((option, index) => {
           const prevGroup =
-            index > 0 ? listOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
+            index > 0 ? groupedListOptions[index - 1].group : selected.length ? selectedSectionLabel : undefined;
           const currentGroup = option.group;
           const isGroup = prevGroup !== currentGroup;
           const updatedIndex = index + selected.length;

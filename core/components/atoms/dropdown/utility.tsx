@@ -66,3 +66,21 @@ export const scrollToOptionIndex = (scrollIndex: number, listOptions: any) => {
   const targetOption = document.getElementById(optionID);
   targetOption && targetOption.scrollIntoView && targetOption.scrollIntoView({ block: 'center' });
 };
+
+export const groupListOptions = (listOptions: Option[]): Option[] => {
+  const groupList = listOptions.reduce((acc, option) => {
+    const group = option.group || '';
+
+    if (!acc[group]) {
+      acc[group] = [];
+    }
+
+    acc[group].push(option);
+
+    return acc;
+  }, {} as { [key: string]: Option[] });
+
+  const flattenedGroupList = Object.values(groupList).flatMap((item) => [...item]);
+
+  return flattenedGroupList;
+};

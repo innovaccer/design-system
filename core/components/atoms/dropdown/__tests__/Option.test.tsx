@@ -8,6 +8,7 @@ import {
   subInfoOptions,
   disabledStoryOptions,
   iconWithSubinfoOptions,
+  groupedStoryOptions,
 } from '../__stories__/Options';
 
 const FunctionValue = jest.fn();
@@ -230,5 +231,17 @@ describe('renders disabled option', () => {
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('color-inverse-lightest');
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_META--Meta')[1]).toHaveClass('color-inverse-lightest');
+  });
+});
+
+describe('renders grouped option', () => {
+  it('with same groups together', () => {
+    const { getAllByTestId, getByTestId } = render(<Dropdown options={groupedStoryOptions} withCheckbox={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const labels = getAllByTestId('DesignSystem-Text');
+    const count = labels.filter((label) => label.textContent === 'Group 2').length;
+    expect(count).toBe(1);
   });
 });
