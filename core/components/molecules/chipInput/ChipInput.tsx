@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import editableContext from '@/utils/EditableContext';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
@@ -85,6 +86,7 @@ export const ChipInput = (props: ChipInputProps) => {
   const inputRef = React.createRef<HTMLInputElement>();
   const [chips, setChips] = React.useState(value || defaultValue);
   const [inputValue, setInputValue] = React.useState('');
+  const { editable } = React.useContext(editableContext);
 
   const baseProps = extractBaseProps(props);
 
@@ -200,7 +202,7 @@ export const ChipInput = (props: ChipInputProps) => {
           ref={inputRef}
           className="ChipInput-input"
           autoFocus={autoFocus}
-          placeholder={placeholder}
+          placeholder={chips && chips.length > 0 ? '' : placeholder}
           disabled={disabled}
           value={inputValue}
           onBlur={onBlur}
@@ -210,7 +212,7 @@ export const ChipInput = (props: ChipInputProps) => {
         />
         {/* eslint-enable */}
       </div>
-      {chips.length > 0 && (
+      {chips.length > 0 && !editable && (
         <Icon
           data-test="DesignSystem-ChipInput--Icon"
           name="close"

@@ -137,4 +137,12 @@ describe('EditableChipInput component with action buttons and props: value and c
     expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[0].textContent).toMatch('Chip3clear_round');
     expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[1].textContent).toMatch('Chip4clear_round');
   });
+
+  it('does not render close icon', () => {
+    const { queryByTestId } = render(
+      <EditableChipInput value={value} onChange={onChange} chipInputOptions={chipInputOptions} />
+    );
+
+    expect(queryByTestId('DesignSystem-ChipInput--Icon')).not.toBeInTheDocument();
+  });
 });

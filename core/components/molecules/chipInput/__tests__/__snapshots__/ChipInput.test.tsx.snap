@@ -67,7 +67,7 @@ exports[`ChipInput component
         <input
           class="ChipInput-input"
           data-test="DesignSystem-ChipInput--Input"
-          placeholder="Add value"
+          placeholder=""
           value=""
         />
       </div>
@@ -153,7 +153,7 @@ exports[`ChipInput component
           class="ChipInput-input"
           data-test="DesignSystem-ChipInput--Input"
           disabled=""
-          placeholder="Add value"
+          placeholder=""
           value=""
         />
       </div>

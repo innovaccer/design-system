@@ -1,6 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { EditableProvider } from '@/utils/EditableContext';
 
 export interface EditableProps extends BaseProps {
   editing?: boolean;
@@ -31,7 +32,7 @@ export const Editable = (props: EditableProps) => {
         onMouseLeave={() => !editing && onChange('default')}
       >
         {/* eslint-enable  */}
-        {children}
+        <EditableProvider value={{ editable: true }}>{children}</EditableProvider>
       </div>
     </div>
   );

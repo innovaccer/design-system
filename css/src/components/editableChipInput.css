@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
 }
+
 .EditableChipInput-default {
   display: flex;
   align-items: center;
@@ -9,6 +10,7 @@
   border-left: var(--spacing-xs) solid transparent;
   min-height: var(--spacing-3);
   flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .EditableChipInput-defaultWithChips {
@@ -25,6 +27,8 @@
 .EditableChipInput-defaultWithChips:hover,
 .EditableChipInput-default:hover {
   background-color: var(--secondary-lightest);
+  border-radius: var(--spacing-m);
+  border: var(--spacing-xs) solid var(--secondary-dark);
 }
 
 .EditableChipInput-chipInput {

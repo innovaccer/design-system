@@ -169,6 +169,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             icon="clear"
             className="mr-3"
             size="tiny"
+            largeIcon={true}
             onClick={() => {
               setDefaultComponent(value);
             }}
@@ -177,6 +178,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             data-test="DesignSystem-EditableChipInput--SaveButton"
             icon="check"
             appearance="primary"
+            largeIcon={true}
             size="tiny"
             disabled={disableSaveAction}
             onClick={onSaveChanges}
