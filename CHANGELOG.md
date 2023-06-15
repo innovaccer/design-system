@@ -1,3 +1,106 @@
+## 2.16.0 (2023-06-15)
+
+### Highlights
+
+- feat(linkButton): add new link button component (3de23b6e)
+- feat(progressBar): add small size variant in progress bar (9f9e77d4)
+- fix(switch): deprecate large size variant (8a85def2)
+- fix(spinner): deprecate appearances for spinner (0139c2e0)
+- fix(inlineMessage): fix story & deprecate default appearance (e3ad0741)
+- feat(metalist): add size prop for metalist component (4888de49)
+- feat(tabs): add prop for tab header custom classname (fe54da87)
+- feat(label): add info icon in label component (8b39db3)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+- fix(switch): deprecate large size variant (8a85def2)
+- fix(spinner): deprecate appearances for spinner (0139c2e0)
+- fix(inlineMessage): fix story & deprecate default appearance (e3ad0741)
+
+### Features
+
+- feat(linkButton): add new link button component (3de23b6e)
+- feat(progressBar): add small size variant in progress bar (9f9e77d4)
+- feat(metalist): add size prop for metalist component (4888de49)
+- feat(tabs): add prop for tab header custom classname (fe54da87)
+- feat(label): add info icon in label component (8b39db3)
+
+### Fixes
+
+- fix(button): fix text overflow behaviour in button (cf3c5185)
+- fix(toast): fix spacing and stories of toast component (c549647e)
+- fix(inputmask): update placeholder and helptext (35e92647)
+- fix(placeholder): fix border radius and stories (433967e1)
+- fix(pagination): add debounce for entering page (cc2a60e3)
+- fix(modal): update modal footer top and bottom padding (7bdb008a)
+- fix(metalist): update default color to subtle of meta icon (1b6ef7c0)
+- fix(multislider): update design for slider & rangeslider (276342b2)
+- fix(multislider): update border-radius of progress bar (276342b2)
+- fix(multislider): add precision to label in tooltip (276342b2)
+- fix(multislider): update color for disabled progress bar (276342b2)
+- fix(fullscreenModal): update padding for header,body and footer (5f436576)
+- fix(fullscreenModal): fix spacing between overlayHeader buttons (5f436576)
+- fix(fullscreenModal): replace keyboard_backspace icon with arrow_back icon inside overlayHeader back button (5f436576)
+- fix(tab): update focus state for inactive tabs (3250124c)
+- fix(modal): update backdropClose and closeOnEscape functionality (493cc3bf)
+- fix(EditableInput): fix icon size for action button (b54020ca)
+- fix(choiceList): fix proptable and add className (b4572e98)
+- fix(choiceList): update spacing between label and options in choicelist (c7cd2118)
+- fix(sidesheet): update backdropClose and closeOnEscape functionality (6d6bc53c)
+- fix(table): fix onSearch event trigger for error prop (c9e4c15b)
+- fix(overlayHeader): update icon size in back button (79155c18)
+- fix(tooltip): update tooltip padding, animation and opacity (cf6667f3)
+- fix(chipInput): prevent chip input text from transform to lowercase (73888d2e)
+- fix(dropzone): fix background for disabled state (1df198d)
+- fix(calendar): update active state of selected date (4cd082a)
+- fix(horizontalNav): update text weight and focus state and stories (2174da0)
+- fix(label): update icon size and stories (6a7425e)
+
+### Improvements
+
+- fix(docpage): update docpage code preview component for height and showhide issues (791c86b7)
+- fix(storybook): fix spacing for storybook live preview (24ab023a)
+- fix(badge): update stories for badge component (eb1b2d23)
+- fix(button): fix stories for button component (d21a82f8)
+- fix(card): update stories for card component (adc90007)
+- fix(divider): update stories for divider component (b35defed)
+- fix(heading): fix stories for heading component (7f9bc254)
+- fix(text): fix stories for text component (42b284a8)
+- fix(paragraph): update stories for paragraph component (cd421f8a)
+- fix(subheading): update stories for subheading component (a301e3c7)
+- fix(pill): update stories for pill component (54efe651)
+- fix(spinner): update stories for spinner (e22026f9)
+- fix(progressRing): update stories for progress ring component (9ad18cba)
+- fix(pageheader): update pageheader stories (be1ce558)
+- fix(editableDropdown): update border-radius inside customRenderer story (387d9cae)
+- fix(message): update stories for message component (49a78dd3)
+- fix(modal): update modal stories (46ac7d8b)
+- fix(pagination): update pagination stories (d96582b4)
+- fix(metricInput): update metricInput stories (b8390eda)
+- fix(icon): update icon stories (74cf97dd)
+- fix(statusHint): update stories for status hint component (810cf87b)
+- fix(checkbox): update story contents and their groups (029c0f56)
+- fix(fullscreenModal): update stories (5f436576)
+- fix(calendar): fix calendar stories (bdb2a76)
+- fix(switch): fix stories for switch component (13fcc71)
+
+### Documentation
+
+- docs(docs): update hyperlink in mobile foundations tab (b213481b)
+- docs(docs): update interactions in dropdown component (610a263c)
+- docs(linkButton): add documentation of link button (33a2b7e7)
+- docs(docs): update image in link button component (58d16d6d)
+
+---
+
 ## 2.15.4 (2023-04-24)
 
 ### Highlights
