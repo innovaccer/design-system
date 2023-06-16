@@ -1,0 +1,23 @@
+.ActionButton {
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  color: var(--inverse-lighter);
+  border-radius: 50%;
+  padding: var(--spacing-s);
+}
+
+.ActionButton:focus-visible,
+.ActionButton:focus {
+  outline: var(--spacing-s) solid var(--secondary-shadow);
+}
+
+.ActionButton:hover {
+  background-color: var(--secondary);
+}
+
+.ActionButton:active {
+  background-color: var(--secondary-dark);
+}

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Input } from '@/index';
-import Icon from '@/components/atoms/icon';
+import ActionButton from '../../actionButton';
 
 export const controlledInput = () => {
   const [value, setValue] = React.useState('Value');
@@ -30,7 +30,7 @@ export const controlledInput = () => {
         value={value}
         type="text"
         placeholder="Placeholder"
-        actionIcon={<Icon name="visibility_off" />}
+        actionIcon={<Input.ActionButton name="visibility_off" />}
         onChange={handleParentChange}
       />
       <Input
@@ -69,7 +69,7 @@ const customCode = `() => {
         type={visibility ? 'text' : 'password'}
         placeholder="Placeholder"
         actionIcon={
-          <Icon
+          <Input.ActionButton
             onClick={() => setVisibility((x) => !x)}
             name={visibility ? 'visibility_on' : 'visibility_off'}
             aria-label={visibility ? 'Show Password' : 'Hide Password'}
@@ -89,9 +89,11 @@ const customCode = `() => {
     </div>
   );
 };`;
+
 export default {
   title: 'Components/Input/Variants/Controlled Input',
   component: Input,
+  subcomponents: { ActionButton },
   parameters: {
     docs: {
       docPage: {

@@ -4,6 +4,7 @@ import { Tooltip, Icon, Text } from '@/index';
 import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
 import { AutoComplete } from '@/common.type';
+import ActionButton from './actionButton';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
 export type InputSize = 'tiny' | 'regular' | 'large';
@@ -287,5 +288,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
 });
 
 Input.displayName = 'Input';
+const ActionInput = Object.assign(Input, { ActionButton: ActionButton });
 
-export default Input;
+export default ActionInput;
