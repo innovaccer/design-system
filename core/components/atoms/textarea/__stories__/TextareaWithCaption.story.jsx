@@ -5,13 +5,12 @@ export const textareaWithCaption = () => {
   const [value, setValue] = React.useState('Patient moved out of country last week.');
 
   return (
-    <>
+    <div className="w-50">
       <Label withInput={true} htmlFor="notes">
         Confirmation Notes
       </Label>
       <Textarea
         name="notes"
-        className="w-50"
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
@@ -21,7 +20,7 @@ export const textareaWithCaption = () => {
         id="notes"
       />
       <Caption withInput={true}>This note will be automatically pinned for export.</Caption>
-    </>
+    </div>
   );
 };
 
@@ -29,29 +28,32 @@ const customCode = `() => {
   const [value, setValue] = React.useState('Patient moved out of country last week.');
 
   return (
-    <>
-      <Label withInput={true} htmlFor="notes">Confirmation Notes</Label>
+    <div className="w-50">
+      <Label withInput={true} htmlFor="notes">
+        Confirmation Notes
+      </Label>
       <Textarea
-        name="Textarea"
-        className="w-50"
+        name="notes"
         value={value}
-        onChange={e => { setValue(e.target.value); }}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
         placeholder="Enter your comments here"
         aria-labelledby="Confirmation Notes"
         id="notes"
       />
       <Caption withInput={true}>This note will be automatically pinned for export.</Caption>
-    </>
+    </div>
   );
-}`;
+};`;
 
 export default {
   title: 'Components/Textarea/Textarea With Caption',
   component: Textarea,
   parameters: {
     docs: {
-      customCode,
       docPage: {
+        customCode,
         title: 'Textarea',
       },
     },

@@ -14,6 +14,7 @@
   color: var(--inverse);
   padding: var(--spacing) var(--spacing-l);
   resize: none;
+  cursor: auto; /* this ensures text cursor over text, and pointer cursor over scroll*/
 }
 
 .Textarea::placeholder {
@@ -27,6 +28,7 @@
 .Textarea:focus-within {
   outline: none;
   border: var(--spacing-xs) solid var(--primary);
+  box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
 .Textarea:disabled {
