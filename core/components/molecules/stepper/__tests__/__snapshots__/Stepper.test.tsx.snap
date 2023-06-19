@@ -9,8 +9,9 @@ exports[`Stepper component
     data-test="DesignSystem-Stepper"
   >
     <div
-      class="Step Stepper-animate color-primary-dark"
+      class="Step Stepper-animate Step--completed"
       data-test="DesignSystem-Step"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
@@ -21,15 +22,16 @@ exports[`Stepper component
         check_circle_round
       </i>
       <span
-        class="Text Text--medium Text--regular color-inverse Stepper-animate"
+        class="Text Text--medium Text--regular color-inverse Stepper-animate Stepper-text"
         data-test="DesignSystem-Text"
       >
         Step A
       </span>
     </div>
     <div
-      class="Step Step--active Stepper-animate color-primary-dark"
+      class="Step Stepper-animate Step--active"
       data-test="DesignSystem-Step"
+      tabindex="0"
     >
       <i
         class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
@@ -40,15 +42,16 @@ exports[`Stepper component
         radio_button_unchecked_round
       </i>
       <span
-        class="Text Text--medium Text--regular color-primary-dark Stepper-animate"
+        class="Text Text--medium Text--regular color-primary-dark Stepper-animate Stepper-text"
         data-test="DesignSystem-Text"
       >
         Step B
       </span>
     </div>
     <div
-      class="Step Step--disabled Stepper-animate color-inverse-lightest"
+      class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
@@ -59,15 +62,16 @@ exports[`Stepper component
         radio_button_unchecked_round
       </i>
       <span
-        class="Text Text--medium Text--regular color-inverse-lightest Stepper-animate"
+        class="Text Text--medium Text--regular color-inverse-lightest Stepper-animate Stepper-text"
         data-test="DesignSystem-Text"
       >
         Step C
       </span>
     </div>
     <div
-      class="Step Step--disabled Stepper-animate color-inverse-lightest"
+      class="Step Stepper-animate Step--disabled"
       data-test="DesignSystem-Step"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
@@ -78,7 +82,7 @@ exports[`Stepper component
         radio_button_unchecked_round
       </i>
       <span
-        class="Text Text--medium Text--regular color-inverse-lightest Stepper-animate"
+        class="Text Text--medium Text--regular color-inverse-lightest Stepper-animate Stepper-text"
         data-test="DesignSystem-Text"
       >
         Step D

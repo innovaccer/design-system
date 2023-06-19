@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Input, Icon, Label, HelpText } from '@/index';
+import { Input, Label, HelpText } from '@/index';
+import ActionButton from '../actionButton';
 
 export const inputWithHelpText = () => {
   const [visibility, setVisibility] = React.useState(false);
@@ -16,7 +17,7 @@ export const inputWithHelpText = () => {
           value="Value"
           type={visibility ? 'text' : 'password'}
           actionIcon={
-            <Icon
+            <Input.ActionButton
               onClick={() => setVisibility((x) => !x)}
               name={visibility ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer"
@@ -35,7 +36,7 @@ export const inputWithHelpText = () => {
           value="Value"
           type={visibility2 ? 'text' : 'password'}
           actionIcon={
-            <Icon
+            <Input.ActionButton
               onClick={() => setVisibility2((x) => !x)}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
               className="cursor-pointer"
@@ -69,7 +70,7 @@ const customCode = `() => {
             setInputValue(ev.target.value);
           }}
           actionIcon={
-            <Icon
+            <Input.ActionButton
               aria-label={visibility ? 'Show Password' : 'Hide Password'}
               onClick={() => setVisibility((x) => !x)}
               name={visibility ? 'visibility_on' : 'visibility_off'}
@@ -93,7 +94,7 @@ const customCode = `() => {
             setSecondInputValue(ev.target.value);
           }}
           actionIcon={
-            <Icon
+            <Input.ActionButton
               aria-label={visibility ? 'Show Password' : 'Hide Password'}
               onClick={() => setVisibility2((x) => !x)}
               name={visibility2 ? 'visibility_on' : 'visibility_off'}
@@ -110,6 +111,7 @@ const customCode = `() => {
 export default {
   title: 'Components/Input/Input With Help Text',
   component: Input,
+  subcomponents: { ActionButton },
   parameters: {
     docs: {
       docPage: {

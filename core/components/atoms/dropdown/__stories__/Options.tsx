@@ -148,6 +148,18 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
+export const groupedStoryOptions: OptionSchema[] = [];
+
+for (let i = 1; i <= 10; i++) {
+  groupedStoryOptions.push({
+    label: `Option ${i}`,
+    value: `Option ${i}`,
+    group: i >= 3 && i <= 6 ? 'Group 1' : 'Group 2',
+    icon: 'events',
+    subInfo: 'subInfo',
+  });
+}
+
 export const storyWrapOptions = [
   {
     label: 'Design System Dropdown',

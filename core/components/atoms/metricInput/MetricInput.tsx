@@ -89,6 +89,10 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
    * Handler to be called when `MetricInput` gets focus
    */
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  /**
+   * Handler to be called when 'onKeyDown' event is triggered
+   */
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const sizeMapping = {
@@ -129,6 +133,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     readOnly,
     value: valueProp,
     showActionButton = true,
+    onKeyDown,
     ...rest
   } = props;
 
@@ -201,6 +206,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const onArrowClick = (e: React.MouseEvent<HTMLElement, MouseEvent>, direction: string) => {
     let newValue = Number(value || 0);
+    const decimalDigits = newValue.toString().split('.')[1]?.length || 0;
     const isValid =
       direction === 'down'
         ? (min !== undefined && newValue > min) || min === undefined
@@ -209,7 +215,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     if (disabled || readOnly || !isValid) return;
 
     newValue = direction === 'down' ? newValue - 1 : newValue + 1;
-    newValue = capMax(max, capMin(min, newValue));
+    newValue = capMax(max, capMin(min, +newValue.toFixed(decimalDigits)));
 
     if (isUncontrolled) setValue(newValue);
 
@@ -223,7 +229,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     }
   };
 
-  const onKeyDown = (e: any) => {
+  const onKeyDownHandler = (e: any) => {
     switch (e.key) {
       case 'e':
       case 'E':
@@ -244,14 +250,14 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (showActionButton) {
-      onKeyDown(e);
+      onKeyDownHandler(e);
     } else e.preventDefault();
   };
 
   const actionButtonSize = size === 'large' ? 'regular' : 'tiny';
 
   return (
-    <div data-test="DesignSystem-MetricInputWrapper" className={classes} onKeyDown={() => {}} role="presentation">
+    <div data-test="DesignSystem-MetricInputWrapper" className={classes} onKeyDown={onKeyDown} role="presentation">
       {icon && (
         <Icon
           data-test="DesignSystem-MetricInput--icon"

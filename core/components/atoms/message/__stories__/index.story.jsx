@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Message, Text } from '@/index';
+import { Message, LinkButton } from '@/index';
 
 // CSF format story
 export const all = () => {
@@ -14,12 +14,8 @@ export const all = () => {
       description={description}
       actions={
         <>
-          <Text className="cursor-pointer" appearance="link">
-            Action 1
-          </Text>
-          <Text className="ml-5 cursor-pointer" appearance="link">
-            Action 2
-          </Text>
+          <LinkButton>Action 1</LinkButton>
+          <LinkButton className="ml-5">Action 2</LinkButton>
         </>
       }
     />

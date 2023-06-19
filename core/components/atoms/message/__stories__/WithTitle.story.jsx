@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Message, Text } from '@/index';
+import { Message, LinkButton } from '@/index';
 
 // CSF format story
 export const MessageWithTitle = () => (
@@ -8,11 +8,7 @@ export const MessageWithTitle = () => (
     appearance="warning"
     title="Sender 'Alta Wells' already exists "
     description="Based on the details you've entered, we found that this sender might already be on our platform."
-    actions={
-      <Text className="cursor-pointer" appearance="link">
-        Edit details
-      </Text>
-    }
+    actions={<LinkButton>Edit details</LinkButton>}
   />
 );
 

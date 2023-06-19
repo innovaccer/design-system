@@ -16,11 +16,10 @@ export const Step = (props: StepProps) => {
 
   const StepClass = classNames({
     ['Step']: true,
+    ['Stepper-animate']: true,
     ['Step--active']: active,
     ['Step--disabled']: disabled,
-    ['Stepper-animate']: true,
-    ['color-primary-dark']: active || completed,
-    ['color-inverse-lightest']: disabled,
+    ['Step--completed']: completed,
   });
 
   const onClickHandle = () => {
@@ -28,12 +27,24 @@ export const Step = (props: StepProps) => {
     if (onChange) onChange(label, value);
   };
 
+  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      onClickHandle();
+    }
+  };
+
   const textColor = active ? 'primary-dark' : disabled ? 'inverse-lightest' : 'inverse';
 
   return (
     // TODO(a11y)
     // eslint-disable-next-line
-    <div data-test="DesignSystem-Step" className={StepClass} onClick={onClickHandle}>
+    <div
+      data-test="DesignSystem-Step"
+      className={StepClass}
+      onKeyDown={(e) => onKeyDownHandler(e)}
+      onClick={onClickHandle}
+      tabIndex={disabled ? -1 : 0}
+    >
       <Icon
         data-test="DesignSystem-Step--Icon"
         name={completed ? 'check_circle' : 'radio_button_unchecked'}
@@ -41,7 +52,7 @@ export const Step = (props: StepProps) => {
       />
 
       {label && (
-        <Text weight="medium" color={textColor} className="Stepper-animate">
+        <Text weight="medium" color={textColor} className="Stepper-animate Stepper-text">
           {label}
         </Text>
       )}
