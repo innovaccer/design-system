@@ -50,3 +50,19 @@ describe('Paragraph component', () => {
     });
   });
 });
+
+describe('Paragraph Component with Prop:color', () => {
+  it('should have the paragraph color as accent1 when prop color="accent1"', () => {
+    const { getByTestId } = render(<Paragraph color="accent1">{'Design System'}</Paragraph>);
+    expect(getByTestId('DesignSystem-Paragraph')).toHaveClass('color-accent1');
+  });
+
+  it('should given preference to color over appearance prop', () => {
+    const { getByTestId } = render(
+      <Paragraph color="accent1-lightest" appearance="destructive">
+        {'Design System'}
+      </Paragraph>
+    );
+    expect(getByTestId('DesignSystem-Paragraph')).toHaveClass('color-accent1-lightest');
+  });
+});
