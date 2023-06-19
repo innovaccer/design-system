@@ -88,3 +88,19 @@ describe('Heading component', () => {
     });
   });
 });
+
+describe('Heading Component with Prop:color', () => {
+  it('should have the heading color as accent1 when prop color="accent1"', () => {
+    const { getByTestId } = render(<Heading color="accent1">{'Design System'}</Heading>);
+    expect(getByTestId('DesignSystem-Heading')).toHaveClass('color-accent1');
+  });
+
+  it('should given preference to color over appearance prop', () => {
+    const { getByTestId } = render(
+      <Heading color="accent1-lightest" appearance="white">
+        {'Design System'}
+      </Heading>
+    );
+    expect(getByTestId('DesignSystem-Heading')).toHaveClass('color-accent1-lightest');
+  });
+});
