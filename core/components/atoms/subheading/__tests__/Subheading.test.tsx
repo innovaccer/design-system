@@ -52,3 +52,19 @@ describe('Subheading component', () => {
     });
   });
 });
+
+describe('Subheading Component with Prop:color', () => {
+  it('should have the subheading color as accent1 when prop color="accent1"', () => {
+    const { getByTestId } = render(<Subheading color="accent1">{'Design System'}</Subheading>);
+    expect(getByTestId('DesignSystem-Subheading')).toHaveClass('color-accent1');
+  });
+
+  it('should given preference to color over appearance prop', () => {
+    const { getByTestId } = render(
+      <Subheading color="accent1-lightest" appearance="white">
+        {'Design System'}
+      </Subheading>
+    );
+    expect(getByTestId('DesignSystem-Subheading')).toHaveClass('color-accent1-lightest');
+  });
+});
