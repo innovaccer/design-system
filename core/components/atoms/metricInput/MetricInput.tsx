@@ -206,6 +206,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
 
   const onArrowClick = (e: React.MouseEvent<HTMLElement, MouseEvent>, direction: string) => {
     let newValue = Number(value || 0);
+    const decimalDigits = newValue.toString().split('.')[1]?.length || 0;
     const isValid =
       direction === 'down'
         ? (min !== undefined && newValue > min) || min === undefined
@@ -214,7 +215,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     if (disabled || readOnly || !isValid) return;
 
     newValue = direction === 'down' ? newValue - 1 : newValue + 1;
-    newValue = capMax(max, capMin(min, newValue));
+    newValue = capMax(max, capMin(min, +newValue.toFixed(decimalDigits)));
 
     if (isUncontrolled) setValue(newValue);
 
