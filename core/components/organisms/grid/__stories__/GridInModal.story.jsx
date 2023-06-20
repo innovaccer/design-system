@@ -83,8 +83,6 @@ export const Grid_In_Modal = () => {
           ]}
           data={gridData}
           showHead={true}
-          showMenu={false}
-          loading={false}
         />
       </Modal>
     </div>
@@ -170,8 +168,6 @@ const customCode = `() => {
           ]}
           data={gridData}
           showHead={true}
-          showMenu={false}
-          loading={false}
         />
       </Modal>
     </div>
