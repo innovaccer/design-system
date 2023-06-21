@@ -14,9 +14,9 @@ export const all = () => {
 
   const outputFormat = 'mm/dd/yyyy';
 
-  const startDate = new Date('Jan 20 2015');
+  const startDate = new Date('Jun 20 2023');
 
-  const endDate = new Date('Jan 27 2015');
+  const endDate = new Date('Jun 27 2023');
 
   const view = 'month';
 
