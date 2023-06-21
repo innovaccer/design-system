@@ -1,7 +1,9 @@
 import * as React from 'react';
+import classNames from 'classnames';
 import { Button, Checkbox, Popover, Icon } from '@/index';
 import { DropdownProps } from '@/index.type';
 import { moveToIndex, getPluralSuffix } from '../grid/utility';
+import { _isEqual } from './utility';
 
 interface DraggableDropdownProps {
   options: DropdownProps['options'];
@@ -12,12 +14,22 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
   const { options, onChange } = props;
 
   const [open, setOpen] = React.useState<boolean>(false);
+  const [prevOptions, setPrevOptions] = React.useState(options);
   const [tempOptions, setTempOptions] = React.useState(options);
   const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-8)');
 
   React.useEffect(() => {
     setTempOptions(options);
+    setPrevOptions(options);
   }, [open]);
+
+  const draggableDropdownButtonClasses = classNames({
+    ['DraggableDropdown--open']: open,
+  });
+
+  const reorderIconClasses = classNames({
+    ['reorderIcon mr-4']: true,
+  });
 
   const handleParentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTempOptions(tempOptions.map((option) => ({ ...option, selected: e.target.checked })));
@@ -47,6 +59,8 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
     if (onChange) onChange(tempOptions);
   };
 
+  const disable = _isEqual(prevOptions, tempOptions);
+
   return (
     <div className="Dropdown">
       <Popover
@@ -62,6 +76,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
             appearance="transparent"
             icon="keyboard_arrow_down_filled"
             iconAlign="right"
+            className={draggableDropdownButtonClasses}
           >
             {`Showing ${options.filter((option) => option.selected).length} of ${
               options.length
@@ -95,23 +110,28 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
                 draggable={true}
                 onDragStart={(e) => {
                   e.dataTransfer.setData('index', `${index}`);
+                  e.dataTransfer.setData('isSelected', `${option.selected}`);
                 }}
                 onDragOver={(e) => e.preventDefault()}
                 onDrop={(e) => {
                   const from = +e.dataTransfer.getData('index');
                   const to = index;
+                  const isSelected = e.dataTransfer.getData('isSelected');
 
-                  if (from !== to) setTempOptions(moveToIndex(tempOptions, from, to));
+                  if (from !== to) {
+                    setTempOptions(moveToIndex(tempOptions, from, to));
+                    if (isSelected === 'false') setPrevOptions(moveToIndex(prevOptions, from, to));
+                  }
                 }}
               >
                 <Checkbox
-                  className="OptionCheckbox"
+                  className="OptionCheckbox overflow-hidden"
                   name={option.value as string}
                   label={option.label}
                   checked={tempOptions[index].selected}
                   onChange={(e) => handleChildChange(e, index)}
                 />
-                <Icon name="drag_handle" className="mr-4" />
+                <Icon name="drag_handle" className={reorderIconClasses} />
               </div>
             );
           })}
@@ -120,7 +140,7 @@ export const DraggableDropdown = (props: DraggableDropdownProps) => {
           <Button type="button" className="mr-4" size="tiny" onClick={onCancelHandler}>
             Cancel
           </Button>
-          <Button type="button" appearance="primary" size="tiny" onClick={onApplyHandler}>
+          <Button disabled={disable} type="button" appearance="primary" size="tiny" onClick={onApplyHandler}>
             Apply
           </Button>
         </div>
