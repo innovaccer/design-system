@@ -46,6 +46,13 @@ import './style.css';
   padding: 0 var(--spacing-l);
 }
 
+.Table-filters--horizontal {
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  padding: 0 var(--spacing-l);
+}
+
 .Table-filtersHeading {
   display: flex;
   align-items: center;
@@ -69,7 +76,7 @@ import './style.css';
 }
 
 .Table-filters--horizontal .Table-filter {
-  padding: 0 var(--spacing-m);
+  padding: 0 var(--spacing);
 }
 
 .Table-filters--horizontal .Table-filter:first-of-type {
@@ -82,6 +89,14 @@ import './style.css';
 
 .Table-filter .Input {
   min-width: unset;
+}
+
+.DraggableDropdown--open {
+  background-color: var(--secondary-dark) !important;
+}
+
+.reorderIcon {
+  color: var(--inverse-lighter);
 }
 */
 
@@ -147,11 +162,13 @@ import './style.css';
     } = props;
   
     const [open, setOpen] = React.useState(false);
+    const [prevOptions, setPrevOptions] = React.useState(options);
     const [tempOptions, setTempOptions] = React.useState(options);
     const [triggerWidth, setTriggerWidth] = React.useState('var(--spacing-8)');
   
     React.useEffect(() => {
       setTempOptions(options);
+      setPrevOptions(options);
     }, [open]);
   
     const handleParentChange = (e) => {
@@ -181,6 +198,15 @@ import './style.css';
   
       if (onChange) onChange(tempOptions);
     };
+
+    const _isEqual = (firstList, secondList) => {
+      return (
+        firstList.every((option, index) => option.selected === secondList[index].selected) &&
+        firstList.every((option, index) => option.value === secondList[index].value)
+      );
+    };
+
+    const disable = _isEqual(prevOptions, tempOptions);
   
     return (
       <div className="Dropdown">
@@ -189,13 +215,14 @@ import './style.css';
           onToggle={onToggleHandler}
           trigger={(
             <Button
-              ref={el => {
-                // setTriggerWidth(\`\${el.clientWidth}px\`);
-              }}
+            ref={(el) => {
+              el ? setTriggerWidth(\`\${el.clientWidth}px\`) : null
+            }}
               size="tiny"
               appearance="transparent"
               icon="keyboard_arrow_down_filled"
               iconAlign="right"
+              className={ open ? 'DraggableDropdown--open' : ''}
             >
               {\`Showing \${options.filter(option => option.selected).length} of \${options.length} column\${getPluralSuffix(options.length)}\`}
             </Button>
@@ -225,30 +252,35 @@ import './style.css';
                   draggable={true}
                   onDragStart={e => {
                     e.dataTransfer.setData('index', \`\${index}\`);
+                    e.dataTransfer.setData('isSelected', \`\${option.selected}\`);
                   }}
                   onDragOver={e => e.preventDefault()}
                   onDrop={e => {
                     const from = +e.dataTransfer.getData('index');
                     const to = index;
+                    const isSelected = e.dataTransfer.getData('isSelected');
   
-                    if (from !== to) setTempOptions(moveToIndex(tempOptions, from, to));
+                    if (from !== to) {
+                      setTempOptions(moveToIndex(tempOptions, from, to));
+                      if (isSelected === 'false') setPrevOptions(moveToIndex(prevOptions, from, to));
+                    }
                   }}
                 >
                   <Checkbox
-                    className="OptionCheckbox"
+                    className="OptionCheckbox overflow-hidden"
                     name={option.value}
                     label={option.label}
                     checked={tempOptions[index].selected}
                     onChange={e => handleChildChange(e, index)}
                   />
-                  <Icon name="drag_handle" className="mr-4" />
+                  <Icon name="drag_handle" className="reorderIcon mr-4" />
                 </div>
               );
             })}
           </div>
           <div className="Dropdown-buttonWrapper">
             <Button className="mr-4" size="tiny" onClick={onCancelHandler}>Cancel</Button>
-            <Button appearance="primary" size="tiny" onClick={onApplyHandler}>Apply</Button>
+            <Button disabled={disable} appearance="primary" size="tiny" onClick={onApplyHandler}>Apply</Button>
           </div>
         </Popover>
       </div>
@@ -384,8 +416,6 @@ import './style.css';
                 </Button>
               </div>
             </div>
-          </div>
-          <div className="Header-actions">
           </div>
         </div>
         <div className="Header-content Header-content--bottom">
