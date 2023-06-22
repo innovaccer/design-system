@@ -3,45 +3,7 @@ import { render } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { MetaList } from '@/index';
 import { MetaListProps as Props } from '@/index.type';
-import { IconAppearance } from '../../icon';
-import { TextAppearance } from '../../text';
 import { MetaSize } from '../MetaList';
-
-const appearance: IconAppearance[] = [
-  'primary',
-  'alert',
-  'warning',
-  'success',
-  'accent1',
-  'accent2',
-  'accent3',
-  'accent4',
-  'default',
-  'disabled',
-  'info',
-  'subtle',
-  'white',
-  'destructive',
-  'primary_lighter',
-  'primary_dark',
-  'alert_lighter',
-  'alert_dark',
-  'warning_lighter',
-  'warning_dark',
-  'success_lighter',
-  'success_dark',
-  'accent1_lighter',
-  'accent1_dark',
-  'accent2_lighter',
-  'accent2_dark',
-  'accent3_lighter',
-  'accent3_dark',
-  'accent4_lighter',
-  'accent4_dark',
-  'inverse',
-];
-
-const labelAppearance: TextAppearance[] = ['success', 'default', 'disabled', 'link', 'subtle', 'white', 'destructive'];
 
 const booleanValues = [true, false];
 
@@ -51,78 +13,6 @@ const listWithTwoElements = [
 ];
 
 const sizeList: MetaSize[] = ['regular', 'small'];
-
-const getIconAppearance = (iconColor: string) => {
-  const x = iconColor.indexOf('_');
-  return iconColor.slice(0, x) + iconColor.charAt(x + 1).toUpperCase() + iconColor.slice(x + 2);
-};
-
-describe('MetaList component prop:seperatorAppearance options', () => {
-  const mapper = {
-    seperatorAppearance: valueHelper(appearance, { iterate: true, required: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const tree = render(
-        <MetaList
-          {...attr}
-          list={[
-            { icon: 'assessment', label: 'Meta data' },
-            { icon: 'assessment', label: 'Meta data' },
-          ]}
-        />
-      );
-      expect(tree).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('MetaList component prop:IconAppearance options', () => {
-  const mapper = {
-    IconAppearance: valueHelper(appearance, { iterate: true, required: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const tree = render(<MetaList {...attr} list={[{ icon: 'assessment', label: 'Meta data' }]} />);
-      expect(tree).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('MetaList component prop:labelAppearance options', () => {
-  const mapper = {
-    labelAppearance: valueHelper(labelAppearance, { iterate: true, required: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const tree = render(
-        <MetaList
-          {...attr}
-          list={[
-            { icon: 'assessment', label: 'Meta data' },
-            { icon: 'assessment', label: 'Meta data' },
-          ]}
-        />
-      );
-      expect(tree).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
 
 describe('MetaList component prop:seperator options', () => {
   const mapper = {
@@ -243,43 +133,6 @@ describe('MetaList Component with overwrite class', () => {
       <MetaList list={[{ icon: 'assessment', label: 'Meta data' }]} className="MetaListClass" />
     );
     expect(getByTestId('DesignSystem-MetaList')).toHaveClass('MetaListClass');
-  });
-});
-
-describe('MetaList component with different prop:seperatorAppearance', () => {
-  appearance.forEach((color) => {
-    const colorOption = color && color.includes('_') ? getIconAppearance(color) : color;
-
-    it(`should have the Icon--${color} class when seperatorAppearance=${color} `, () => {
-      const { getByTestId } = render(
-        <MetaList list={[{ icon: 'assessment', label: 'Meta data' }]} seperator={true} seperatorAppearance={color} />
-      );
-      expect(getByTestId('DesignSystem-MetaList--Seperator')).toHaveClass(`Icon--${colorOption}`);
-    });
-  });
-});
-
-describe('MetaList component with different prop:IconAppearance', () => {
-  appearance.forEach((color) => {
-    const colorOption = color && color.includes('_') ? getIconAppearance(color) : color;
-
-    it(`should have the Icon--${color} class when IconAppearance=${color} `, () => {
-      const { getByTestId } = render(
-        <MetaList list={[{ icon: 'assessment', label: 'Meta data' }]} iconAppearance={color} />
-      );
-      expect(getByTestId('DesignSystem-MetaList--MetaIcon')).toHaveClass(`Icon--${colorOption}`);
-    });
-  });
-});
-
-describe('MetaList component with different prop:labelAppearance', () => {
-  labelAppearance.forEach((color) => {
-    it(`should have the Text--${color} class when labelAppearance=${color} `, () => {
-      const { getByTestId } = render(
-        <MetaList list={[{ icon: 'assessment', label: 'Meta data' }]} labelAppearance={color} />
-      );
-      expect(getByTestId('DesignSystem-MetaList--MetaLabel')).toHaveClass(`Text--${color}`);
-    });
   });
 });
 

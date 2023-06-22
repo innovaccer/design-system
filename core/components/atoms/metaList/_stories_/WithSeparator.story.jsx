@@ -22,4 +22,14 @@ export const WithSeparator = () => {
 export default {
   title: 'Components/MetaList/With Separator',
   component: MetaList,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'MetaList',
+        props: {
+          exclude: ['seperatorAppearance', 'labelAppearance', 'iconAppearance'],
+        },
+      },
+    },
+  },
 };

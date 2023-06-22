@@ -20,4 +20,14 @@ export const all = () => {
 export default {
   title: 'Components/MetaList/All',
   component: MetaList,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'MetaList',
+        props: {
+          exclude: ['seperatorAppearance', 'labelAppearance', 'iconAppearance'],
+        },
+      },
+    },
+  },
 };
