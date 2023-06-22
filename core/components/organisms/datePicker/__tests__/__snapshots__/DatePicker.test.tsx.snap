@@ -647,7 +647,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         <div
           class="Chip-wrapper Chip Chip-action--disabled"
           data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="Text Text--regular color-inverse-lightest Chip-text"
@@ -1973,7 +1973,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         <div
           class="Chip-wrapper Chip Chip-action--disabled"
           data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="Text Text--regular color-inverse-lightest Chip-text"

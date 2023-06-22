@@ -1,26 +1,18 @@
 import * as React from 'react';
-import { Text } from '@/index';
-import Chip from '../../Chip';
-import { action } from '@/utils/action';
+import { Chip, Text } from '@/index';
 
-const BooleanValue = [true, false];
+const BooleanValue = [false, true];
+
 export const Action = () => {
   const icon = 'assessment';
   const label = 'Action';
   return (
-    <div className="d-flex">
+    <div className="d-flex justify-content-between w-50">
       {BooleanValue.map((booleanvalue, ind) => {
         return (
-          <div key={ind} className="mr-9">
-            <Chip
-              icon={icon}
-              label={label}
-              disabled={booleanvalue}
-              onClose={action(`onClose: ${label}`)}
-              onClick={action(`onClick: ${label}`)}
-              type="action"
-              name={'chip'}
-            />
+          <div key={ind}>
+            <Chip icon={icon} label={label} disabled={booleanvalue} type="action" name={'chip'} />
+            <br />
             <br />
             <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>
           </div>
@@ -29,6 +21,7 @@ export const Action = () => {
     </div>
   );
 };
+
 export default {
   title: 'Components/Chip/Variants/Action',
   component: Chip,

@@ -66,7 +66,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
-      tabindex="0"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
@@ -95,7 +95,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
-      tabindex="0"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
@@ -140,15 +140,20 @@ exports[`Chip component
       >
         ChipLabel
       </span>
-      <i
-        class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+      <div
+        class="Chip-icon Chip-icon--right cursor-pointer"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
-        style="font-size: 16px; width: 16px;"
         tabindex="0"
       >
-        clear_round
-      </i>
+        <i
+          class="material-icons material-icons-round Icon Icon--subtle p-2"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          clear_round
+        </i>
+      </div>
     </div>
   </div>
 </body>
@@ -178,15 +183,20 @@ exports[`Chip component
       >
         ChipLabel
       </span>
-      <i
-        class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
+      <div
+        class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
-        style="font-size: 16px; width: 16px;"
         tabindex="0"
       >
-        clear_round
-      </i>
+        <i
+          class="material-icons material-icons-round Icon Icon--primaryDark p-2"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          clear_round
+        </i>
+      </div>
     </div>
   </div>
 </body>
@@ -200,7 +210,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
-      tabindex="0"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
@@ -216,15 +226,20 @@ exports[`Chip component
       >
         ChipLabel
       </span>
-      <i
-        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--right Chip-icon-disabled--right"
+      <div
+        class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
-        style="font-size: 16px; width: 16px;"
-        tabindex="0"
+        tabindex="-1"
       >
-        clear_round
-      </i>
+        <i
+          class="material-icons material-icons-round Icon Icon--disabled p-2"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          clear_round
+        </i>
+      </div>
     </div>
   </div>
 </body>
@@ -238,7 +253,7 @@ exports[`Chip component
     <div
       class="Chip-wrapper undefined"
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
-      tabindex="0"
+      tabindex="-1"
     >
       <i
         class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
@@ -254,15 +269,20 @@ exports[`Chip component
       >
         ChipLabel
       </span>
-      <i
-        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected"
+      <div
+        class="Chip-icon Chip-icon--right Chip-icon-disabled--right Chip-icon--selected"
         data-test="DesignSystem-GenericChip--clearButton"
         role="button"
-        style="font-size: 16px; width: 16px;"
-        tabindex="0"
+        tabindex="-1"
       >
-        clear_round
-      </i>
+        <i
+          class="material-icons material-icons-round Icon Icon--primaryLighter p-2"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+        >
+          clear_round
+        </i>
+      </div>
     </div>
   </div>
 </body>

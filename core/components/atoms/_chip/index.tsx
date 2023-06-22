@@ -31,13 +31,19 @@ export const GenericChip = (props: GenericChipProps) => {
       ['Chip-icon--selected']: align === 'right' && selected,
     });
 
-  const onCloseHandler = (e: React.MouseEvent) => {
+  const onCloseHandler = (e: React.MouseEvent | React.KeyboardEvent) => {
     e.stopPropagation();
     if (onClose) onClose();
   };
 
   const onClickHandler = () => {
     if (onClick) onClick();
+  };
+
+  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      onCloseHandler(event);
+    }
   };
 
   const iconAppearance = (align: string) =>
@@ -72,7 +78,7 @@ export const GenericChip = (props: GenericChipProps) => {
     // eslint-disable-next-line
     <div
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={0}
+      tabIndex={disabled ? -1 : 0}
       data-test="DesignSystem-GenericChip--GenericChipWrapper"
       {...baseProps}
       className={`Chip-wrapper ${className}`}
@@ -88,13 +94,16 @@ export const GenericChip = (props: GenericChipProps) => {
       )}
       {renderLabel()}
       {clearButton && (
-        <Icon
-          data-test="DesignSystem-GenericChip--clearButton"
-          name="clear"
-          appearance={iconAppearance('right')}
-          className={iconClass('right')}
+        <div
+          role="button"
           onClick={onCloseHandler}
-        />
+          tabIndex={disabled ? -1 : 0}
+          onKeyDown={onKeyDownHandler}
+          className={iconClass('right')}
+          data-test="DesignSystem-GenericChip--clearButton"
+        >
+          <Icon name="clear" appearance={iconAppearance('right')} className="p-2" />
+        </div>
       )}
     </div>
   );
