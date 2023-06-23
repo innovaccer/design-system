@@ -6,10 +6,10 @@ export const size = () => {
   return (
     <div className="d-flex">
       <Link href="http://innovaccer.com" size="regular">
-        Regular Link.
+        Regular Link
       </Link>
-      <Link href="http://innovaccer.com" size="tiny" className="ml-7">
-        Tiny Link.
+      <Link href="http://innovaccer.com" size="tiny" className="ml-7 mt-2">
+        Tiny Link
       </Link>
     </div>
   );
