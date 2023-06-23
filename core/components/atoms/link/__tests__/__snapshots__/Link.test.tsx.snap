@@ -11,6 +11,7 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      tabindex="0"
       target="_blank"
     >
       Link
@@ -30,6 +31,7 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      tabindex="0"
       target="_parent"
     >
       Link
@@ -49,6 +51,7 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      tabindex="0"
       target="_self"
     >
       Link
@@ -68,6 +71,7 @@ exports[`Link component
       href="Sample string"
       id="Sample string"
       rel="Sample string"
+      tabindex="0"
       target="_top"
     >
       Link
