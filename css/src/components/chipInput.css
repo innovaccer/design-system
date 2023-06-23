@@ -51,4 +51,19 @@
   padding-top: var(--spacing-s);
   margin-right: var(--spacing-l);
   cursor: pointer;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.ChipInput-icon:hover {
+  background-color: var(--secondary);
+}
+
+.ChipInput-icon:active {
+  background-color: var(--secondary-dark);
+}
+
+.ChipInput-icon:focus,
+.ChipInput-icon:focus-visible {
+  outline: var(--spacing-s) solid var(--secondary-shadow);
 }

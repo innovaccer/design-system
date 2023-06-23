@@ -192,7 +192,13 @@ export const ChipInput = (props: ChipInputProps) => {
   return (
     /* TODO(a11y): fix accessibility  */
     /* eslint-disable  */
-    <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass} onClick={onClickHandler}>
+    <div
+      data-test="DesignSystem-ChipInput"
+      {...baseProps}
+      className={ChipInputClass}
+      onClick={onClickHandler}
+      tabIndex={disabled ? -1 : 0}
+    >
       <div className="ChipInput-wrapper">
         {chips && chips.length > 0 && chipComponents}
         <input
@@ -212,11 +218,12 @@ export const ChipInput = (props: ChipInputProps) => {
       </div>
       {chips.length > 0 && (
         <Icon
-          data-test="DesignSystem-ChipInput--Icon"
           name="close"
-          appearance="subtle"
           className="ChipInput-icon"
           onClick={onDeleteAllHandler}
+          data-test="DesignSystem-ChipInput--Icon"
+          appearance={disabled ? 'disabled' : 'subtle'}
+          tabIndex={disabled ? -1 : 0}
         />
       )}
     </div>
