@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { Collapsible, CollapsibleProps as Props } from '@/components/atoms/collapsible';
 import { Icon, Text } from '@/index';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import context from '@/utils/CollapsibleContext';
 
 const BooleanValue = [true, false];
 const onToggle = jest.fn();
@@ -174,5 +175,22 @@ describe('Collapsible component with prop: onToggle', () => {
     fireEvent.mouseLeave(component);
     expect(onToggle).toHaveBeenCalled();
     expect(onToggle).toHaveBeenCalledWith(false);
+  });
+});
+
+describe('Collapsible component with hoverable context', () => {
+  it('provides default true hoverable value to children', () => {
+    const Child = () => {
+      const { hoverable } = React.useContext(context);
+      return <div>{hoverable ? 'hoverable is true' : 'hoverable is false'}</div>;
+    };
+
+    render(
+      <Collapsible>
+        <Child />
+      </Collapsible>
+    );
+
+    expect(screen.getByText('hoverable is true')).toBeInTheDocument();
   });
 });

@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { CollapsibleProvider } from '@/utils/CollapsibleContext';
 
 export interface CollapsibleProps extends BaseProps {
   /**
@@ -99,7 +100,7 @@ export const Collapsible = (props: CollapsibleProps) => {
           onMouseLeave={onToggleHandler(false, 'mouseleave')}
           ref={ref}
         >
-          {children}
+          <CollapsibleProvider value={{ hoverable }}>{children}</CollapsibleProvider>
         </div>
         {withTrigger && (
           <div data-test="DesignSystem-Collapsible--Footer" className={FooterClass}>
