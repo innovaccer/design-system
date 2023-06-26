@@ -1,18 +1,14 @@
 import * as React from 'react';
-import Radio from '../../index';
+import { Radio } from '@/index';
 
 // CSF format story
 export const state = () => {
   const name = 'state';
 
   return (
-    <div className="d-flex">
-      <div className="mr-9">
-        <Radio label={'Disabled'} name={name} value={'Disabled'} disabled={true} />
-      </div>
-      <div>
-        <Radio label={'Enabled'} name={name} value={'Enabled'} disabled={false} />
-      </div>
+    <div className="d-flex w-25 justify-content-between">
+      <Radio label={'Disabled'} name={name} value={'Disabled'} disabled={true} />
+      <Radio label={'Enabled'} name={name} value={'Enabled'} disabled={false} />
     </div>
   );
 };

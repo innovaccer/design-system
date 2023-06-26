@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Radio from '../../index';
+import { Radio } from '@/index';
 
 // CSF format story
 export const size = () => {
@@ -7,17 +7,16 @@ export const size = () => {
 
   const name = 'gender';
   return (
-    <div className="d-flex">
+    <div className="d-flex w-25 justify-content-between">
       {sizes.map((RadioSize, ind) => {
         return (
-          <div key={ind} className="mr-9">
-            <Radio
-              size={RadioSize}
-              label={RadioSize.charAt(0).toUpperCase() + RadioSize.slice(1)}
-              name={name}
-              value={RadioSize}
-            />
-          </div>
+          <Radio
+            key={ind}
+            size={RadioSize}
+            label={RadioSize.charAt(0).toUpperCase() + RadioSize.slice(1)}
+            name={name}
+            value={RadioSize}
+          />
         );
       })}
     </div>
