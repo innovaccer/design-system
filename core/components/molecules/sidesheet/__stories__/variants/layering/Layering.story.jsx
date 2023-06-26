@@ -1,15 +1,11 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Text, Sidesheet, Button, ModalDescription } from '@/index';
+import { Sidesheet, Button, Label, Text } from '@/index';
 
-export const layering = () => {
+export const layeringWithSidesheet = () => {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
-  const seperator = false;
-  const backIcon = false;
-  const stickFooter = false;
   const backdropClose = true;
-  const dimension = 'regular';
 
   const onClose = () => {
     setOpen(false);
@@ -21,13 +17,7 @@ export const layering = () => {
     action('on close triggered')();
   };
 
-  const backIconCallback = () => {
-    action('back icon clicked')();
-  };
-
   const headerOptions = {
-    backIcon,
-    backIconCallback: backIcon ? backIconCallback : undefined,
     heading: 'Heading',
     subHeading: 'Subheading',
   };
@@ -35,26 +25,20 @@ export const layering = () => {
   const options = {
     onClose,
     open,
-    dimension,
-    seperator,
-    headerOptions,
-    stickFooter,
     backdropClose,
+    headerOptions,
     footer: (
       <>
         <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
           Open
         </Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="basic">Cancel</Button>
       </>
     ),
   };
 
   const SecondOverlayOptions = {
-    dimension,
-    seperator,
     headerOptions,
-    stickFooter,
     backdropClose,
     onClose: onCloseSecond,
     open: openSecond,
@@ -67,15 +51,34 @@ export const layering = () => {
     ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
-    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true,
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true,
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
+  };
+
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
+  };
+
+  const sidesheetDescriptionOptions2 = {
+    label: 'Description Title - 2',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information. - 2',
+  };
+
+  const optionsWithoutLabel2 = {
+    description:
+      'Card Sections include supporting text like an article summary or a healthcare service description. - 2',
   };
 
   return (
@@ -84,15 +87,13 @@ export const layering = () => {
         Open Sidesheet
       </Button>
       <Sidesheet {...options} dimension="large" closeOnEscape={true}>
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions} />
+        <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
 
       <Sidesheet {...SecondOverlayOptions} closeOnEscape={true}>
-        <Text>Modal Body Part Two</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions2} />
+        <SidesheetDescription {...optionsWithoutLabel2} />
       </Sidesheet>
     </div>
   );
@@ -101,29 +102,17 @@ export const layering = () => {
 const customCode = `() => {
   const [open, setOpen] = React.useState(false);
   const [openSecond, setOpenSecond] = React.useState(false);
-  const seperator = false;
-  const backIcon = false;
-  const stickFooter = false;
   const backdropClose = true;
-  const dimension = 'regular';
 
   const onClose = () => {
     setOpen(false);
-    action('on close triggered')();
   };
 
   const onCloseSecond = () => {
     setOpenSecond(false);
-    action('on close triggered')();
-  };
-
-  const backIconCallback = () => {
-    action('back icon clicked')();
   };
 
   const headerOptions = {
-    backIcon,
-    backIconCallback: backIcon ? backIconCallback : undefined,
     heading: 'Heading',
     subHeading: 'Subheading',
   };
@@ -131,26 +120,20 @@ const customCode = `() => {
   const options = {
     onClose,
     open,
-    dimension,
-    seperator,
-    headerOptions,
-    stickFooter,
     backdropClose,
+    headerOptions,
     footer: (
       <>
         <Button appearance="primary" className="mr-4" onClick={() => setOpenSecond(true)}>
           Open
         </Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="basic">Cancel</Button>
       </>
     ),
   };
 
   const SecondOverlayOptions = {
-    dimension,
-    seperator,
     headerOptions,
-    stickFooter,
     backdropClose,
     onClose: onCloseSecond,
     open: openSecond,
@@ -163,15 +146,34 @@ const customCode = `() => {
     ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
-    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true,
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true,
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
+  };
+
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
+  };
+
+  const sidesheetDescriptionOptions2 = {
+    label: 'Description Title - 2',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information. - 2',
+  };
+
+  const optionsWithoutLabel2 = {
+    description:
+      'Card Sections include supporting text like an article summary or a healthcare service description. - 2',
   };
 
   return (
@@ -180,22 +182,20 @@ const customCode = `() => {
         Open Sidesheet
       </Button>
       <Sidesheet {...options} dimension="large" closeOnEscape={true}>
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions} />
+        <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
 
       <Sidesheet {...SecondOverlayOptions} closeOnEscape={true}>
-        <Text>Modal Body Part Two</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions2} />
+        <SidesheetDescription {...optionsWithoutLabel2} />
       </Sidesheet>
     </div>
   );
-}`;
+};`;
 
 export default {
-  title: 'Components/Sidesheet/Layering',
+  title: 'Components/Sidesheet/Variants/Layering/Layering With Sidesheet',
   component: Sidesheet,
   parameters: {
     docs: {

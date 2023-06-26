@@ -257,6 +257,8 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
     const bodyClass = classNames({
       ['Sidesheet-body']: true,
       ['Sidesheet-body--withMargin']: !!footer && stickFooter,
+      ['Sidesheet-body--nextPage']: headerOptions?.backButton || headerOptions?.backIcon,
+      ['Sidesheet-body--firstPage']: !headerOptions?.backButton && !headerOptions?.backIcon,
     });
 
     const headingClass = classNames({
@@ -289,6 +291,7 @@ class Sidesheet extends React.Component<SidesheetProps, SidesheetState> {
                   icon="close"
                   appearance="transparent"
                   data-test="DesignSystem-Sidesheet--CloseButton"
+                  largeIcon={true}
                   onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
                     if (onClose) onClose(event, 'IconClick');
                   }}

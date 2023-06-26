@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Sidesheet, Button, Label, Text } from '@/index';
+import { Sidesheet, Button, Paragraph, Label, Text } from '@/index';
 
-export const Large = () => {
+export const stickyFooter = () => {
   const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
@@ -10,7 +10,13 @@ export const Large = () => {
     action('on close triggered')();
   };
 
+  const backIconCallback = () => {
+    action('back icon clicked')();
+  };
+
   const headerOptions = {
+    backIconCallback,
+    backIcon: true,
     heading: 'Heading',
     subHeading: 'Subheading',
   };
@@ -19,12 +25,13 @@ export const Large = () => {
     onClose,
     open,
     headerOptions,
+    stickFooter: true,
     footer: (
       <>
         <Button appearance="primary" className="mr-4">
           Primary
         </Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="basic">Cancel</Button>
       </>
     ),
   };
@@ -54,9 +61,14 @@ export const Large = () => {
       <Button appearance="primary" onClick={() => setOpen(true)}>
         Open Sidesheet
       </Button>
-      <Sidesheet {...options} dimension="large">
+      <Sidesheet {...options}>
         <SidesheetDescription {...sidesheetDescriptionOptions} />
         <SidesheetDescription {...optionsWithoutLabel} />
+        <Paragraph>
+          The action buttons appear in the left side of the sheet and follows the reverse order as the modals to keep
+          the position of primary action predictable. Also, if the content covers &gt;= 75% of the side sheet measured
+          vertically, then the actions appear in the bottom, i.e, margin-bottom for the footer is 0px.
+        </Paragraph>
       </Sidesheet>
     </div>
   );
@@ -69,7 +81,13 @@ const customCode = `() => {
     setOpen(false);
   };
 
+  const backIconCallback = () => {
+    console.log('back icon clicked');
+  };
+
   const headerOptions = {
+    backIconCallback,
+    backIcon: true,
     heading: 'Heading',
     subHeading: 'Subheading',
   };
@@ -78,12 +96,13 @@ const customCode = `() => {
     onClose,
     open,
     headerOptions,
+    stickFooter: true,
     footer: (
       <>
         <Button appearance="primary" className="mr-4">
           Primary
         </Button>
-        <Button appearance="basic">Basic</Button>
+        <Button appearance="basic">Cancel</Button>
       </>
     ),
   };
@@ -113,16 +132,21 @@ const customCode = `() => {
       <Button appearance="primary" onClick={() => setOpen(true)}>
         Open Sidesheet
       </Button>
-      <Sidesheet {...options} dimension="large">
+      <Sidesheet {...options}>
         <SidesheetDescription {...sidesheetDescriptionOptions} />
         <SidesheetDescription {...optionsWithoutLabel} />
+        <Paragraph>
+          The action buttons appear in the left side of the sheet and follows the reverse order as the modals to keep
+          the position of primary action predictable. Also, if the content covers &gt;= 75% of the side sheet measured
+          vertically, then the actions appear in the bottom, i.e, margin-bottom for the footer is 0px.
+        </Paragraph>
       </Sidesheet>
     </div>
   );
 };`;
 
 export default {
-  title: 'Components/Sidesheet/Variants/Dimension/Large',
+  title: 'Components/Sidesheet/Sticky Footer',
   component: Sidesheet,
   parameters: {
     docs: {

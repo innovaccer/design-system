@@ -8,14 +8,12 @@ keywords: ['Sheet']
 
 Side sheets are significantly larger than the Modals and hence they can accommodate complex informations and interactions. This way a side sheet works as a sub page in itself while maintaining the context.
 
-
-
 ### Sizes
 
 Basis on the sizes and the amount of content they can accommodate, side sheets are of 2 types -
 
-<br/>
-<Card shadow='none'>
+<br />
+<Card shadow="none">
   <Table
     showMenu={false}
     separator={true}
@@ -38,80 +36,83 @@ Basis on the sizes and the amount of content they can accommodate, side sheets a
         width: '34%',
         sorting: false,
         separator: true,
-        cellType: 'DEFAULT'
+        cellType: 'DEFAULT',
       },
       {
         name: 'Value',
         displayName: 'Breakpoint <= Small',
         width: '33%',
         sorting: false,
-        separator: true
-        
+        separator: true,
       },
       {
         name: 'Configurable',
         displayName: 'Breakpoint => Medium',
         width: '33%',
         sorting: false,
-        separator: true
+        separator: true,
       },
     ]}
     withHeader={false}
   />
 </Card>
-<br/>
-<br/>
+<br />
+<br />
 
 #### Regular
 
 The default side sheet takes **6 columns** in the grid and starts at just about halfway of the width of the screen.
 
-<Preview name='components-sidesheet-regular--regular'/>
+<Preview name="components-sidesheet-variants-dimension-regular--regular" />
 
 #### Large
 
 The large side sheet takes **10 columns** in the grid and starts from left side of the screen.
 
-<Preview name='components-sidesheet-large--large'/>
+<Preview name="components-sidesheet-variants-dimension-large--large" />
 
 ### Structure
 
-<Preview name='components-sidesheet-all--all'/>
-
-
+<Preview name="components-sidesheet-all--all" />
 
 <table style="width: 100%">
- <tbody>
-   <tr>
-     <th style="width:50%; text-align: left;">Property</th>
-     <th style="width:50%; text-align: left;">Value(s)</th>
-   </tr>
-   <tr style="vertical-align: top">
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Property</th>
+      <th style="width:50%; text-align: left;">Value(s)</th>
+    </tr>
+    <tr style="vertical-align: top">
       <td>Height</td>
       <td>100%</td>
-   </tr>
-   <tr style="vertical-align: top">
-      <td>Margin<br/><em>(top, right, bottom)</em></td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>
+        Margin
+        <br />
+        <em>(top, right, bottom)</em>
+      </td>
       <td>0px, 0px, 0px</td>
-   </tr>
-   <tr style="vertical-align: top">
+    </tr>
+    <tr style="vertical-align: top">
       <td>Corner radius</td>
       <td>0px</td>
-   </tr><tr style="vertical-align: top">
+    </tr>
+    <tr style="vertical-align: top">
       <td>Background color</td>
       <td>Namak</td>
-   </tr>
-   <tr style="vertical-align: top">
+    </tr>
+    <tr style="vertical-align: top">
       <td>Shadow</td>
       <td>Shadow 30</td>
-   </tr>
- </tbody>
+    </tr>
+  </tbody>
 </table>
-<br/>
+<br />
 
 ### Configurations
-<br/>
-<br/>
+
+<br />
+<br />
 
 <table style="width: 100%">
   <tbody>
@@ -124,80 +125,81 @@ The large side sheet takes **10 columns** in the grid and starts from left side 
       <td>Size</td>
       <td>
         <ul>
-            <li>Regular</li>
-            <li>Large</li>
+          <li>Regular</li>
+          <li>Large</li>
         </ul>
       </td>
       <td>Regular</td>
     </tr>
   </tbody>
 </table>
-<br/>
+<br />
 
 ### Usage
 
-<br/>
+<br />
 
 #### Side sheet vs Page
 
--   Side sheets are used to present a great amount of information as a part of users' primary task while **maintaining the context** with the background content. So if no context is required, go for a new page instead of a side sheet.
--   Side sheet should **NOT** be used as a replacement of a new page when the page needs to be accessible by a URL. Avoid showing a side sheet based on a URL.
+- Side sheets are used to present a great amount of information as a part of users' primary task while **maintaining the context** with the background content. So if no context is required, go for a new page instead of a side sheet.
+- Side sheet should **NOT** be used as a replacement of a new page when the page needs to be accessible by a URL. Avoid showing a side sheet based on a URL.
 
 #### Default vs Large side sheet
 
 The default side sheet covers most of the use cases but for the cases when the content is **quite complex and needs a wider area, use the large variant**.
 
 ![Default vs Large side sheet](./images/sidesheet-1.png)
+
 <Caption> Default vs Large side sheet </Caption>
 
-<br/>
+<br />
 
 #### Position of action buttons
 
 The action buttons appear in the **left side of the sheet** and follows the **reverse order** as the modals to keep the position of primary action predictable. Also,
 
--   If the content covers **>= 75%** of the side sheet measured vertically, then the actions appear in the bottom, i.e, margin-bottom for the footer is 0px.
+- If the content covers **>= 75%** of the side sheet measured vertically, then the actions appear in the bottom, i.e, margin-bottom for the footer is 0px.
 
 ![Actions appear in the bottom](./images/sidesheet-2.png)
+
 <Caption> Actions appear in the bottom </Caption>
 
-<br/>
+<br />
 
--   If the content covers **< 75%** of the side sheet measured vertically, then the actions appear just beneath the content.
+- If the content covers **< 75%** of the side sheet measured vertically, then the actions appear just beneath the content.
 
 ![Actions appear just beneath the content](./images/sidesheet-3.png)
+
 <Caption> Actions appear just beneath the content </Caption>
 
-<br/>
+<br />
 
 #### Dividers
 
 Just like the modals, the dividers in the header and the footer should **ONLY** be shown when the content is **scrollable**.
 
--   **When content is not scrollable**
+- **When content is not scrollable**
 
 ![Dividers are hidden](./images/sidesheet-4.png)
+
 <Caption> Dividers are hidden </Caption>
 
-<br/>
+<br />
 
--   **When content is scrollable**
+- **When content is scrollable**
 
 ![Dividers are visible](./images/sidesheet-5.png)
+
 <Caption> Dividers are visible </Caption>
 
-<br/>
+<br />
 
 #### Closing the side sheet
 
-Clicking outside the sheet should **NOT** cancel the current process and close it by default. 
+Clicking outside the sheet should **NOT** cancel the current process and close it by default.
 
 #### Multi step workflow
 
 Unlike modals, side sheets can have multi steps workflow. Instead of showing multiple sheets, the entire workflow happens within the scope of a single side sheet. A user can navigate through the back stack using the **Back button** at the top left.
 
-<Preview name='components-sidesheet-two-steps--two-steps'/>
-
-
-
-
+<Preview name="components-sidesheet-two-steps--two-steps" />
