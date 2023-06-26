@@ -2,7 +2,7 @@ import * as React from 'react';
 import { RangeSlider } from '@/index';
 
 // CSF format story
-export const disctereSlider = () => {
+export const discreteSlider = () => {
   return (
     <RangeSlider
       min={1}
@@ -11,12 +11,12 @@ export const disctereSlider = () => {
       stepSize={1}
       labelStepSize={1}
       defaultValue={[2, 4]}
-      className="mt-2"
+      className="my-8"
     />
   );
 };
 
 export default {
-  title: 'Components/RangeSlider/Variants/Disctere Slider',
+  title: 'Components/RangeSlider/Variants/Discrete Slider',
   component: RangeSlider,
 };

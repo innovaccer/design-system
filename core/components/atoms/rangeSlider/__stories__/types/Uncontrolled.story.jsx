@@ -2,12 +2,12 @@ import * as React from 'react';
 import { RangeSlider } from '@/index';
 
 // CSF format story
-export const freeSlider = () => {
+export const uncontrolledSlider = () => {
   return (
     <RangeSlider
       min={1}
       max={10}
-      label="Free Slider"
+      label="Uncontrolled Slider"
       stepSize={0.1}
       labelStepSize={1}
       defaultValue={[2, 4]}
@@ -17,6 +17,6 @@ export const freeSlider = () => {
 };
 
 export default {
-  title: 'Components/RangeSlider/Variants/Free Slider',
+  title: 'Components/RangeSlider/Types/Uncontrolled Slider',
   component: RangeSlider,
 };
