@@ -30,6 +30,7 @@ exports[`Breadcrumbs component renders four links 1`] = `
             class="Link Link--tiny Link--subtle"
             data-test="DesignSystem-Link"
             href="/level0"
+            tabindex="0"
           >
             Level 0 check for truncate after 160px
           </a>
@@ -52,6 +53,7 @@ exports[`Breadcrumbs component renders four links 1`] = `
             class="Link Link--tiny Link--subtle"
             data-test="DesignSystem-Link"
             href="/level1"
+            tabindex="0"
           >
             Level 1
           </a>
@@ -74,6 +76,7 @@ exports[`Breadcrumbs component renders four links 1`] = `
             class="Link Link--tiny Link--subtle"
             data-test="DesignSystem-Link"
             href="/level2"
+            tabindex="0"
           >
             Level 2
           </a>
@@ -96,6 +99,7 @@ exports[`Breadcrumbs component renders four links 1`] = `
             class="Link Link--tiny Link--subtle"
             data-test="DesignSystem-Link"
             href="/level3"
+            tabindex="0"
           >
             Level 3
           </a>

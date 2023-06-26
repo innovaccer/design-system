@@ -68,7 +68,13 @@ export const Link = (props: LinkProps) => {
   );
 
   return (
-    <GenericText data-test="DesignSystem-Link" className={classes} componentType="a" {...rest}>
+    <GenericText
+      data-test="DesignSystem-Link"
+      className={classes}
+      componentType="a"
+      tabIndex={disabled ? -1 : 0}
+      {...rest}
+    >
       {children}
     </GenericText>
   );
