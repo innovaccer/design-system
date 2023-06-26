@@ -6,9 +6,7 @@ export const controlledSlider = () => {
   const [value, setValue] = React.useState(4);
 
   const onChange = (newValue) => {
-    this.window.setTimeout(() => {
-      setValue(newValue);
-    }, 1000);
+    setValue(newValue);
   };
 
   return (
@@ -20,7 +18,7 @@ export const controlledSlider = () => {
       labelStepSize={1}
       value={value}
       onChange={onChange}
-      className="mt-2"
+      className="my-8"
     />
   );
 };
@@ -29,9 +27,7 @@ const customCode = `() => {
   const [value, setValue] = React.useState(4);
 
   const onChange = (value) => {
-    this.window.setTimeout(() => {
-      setValue(value);
-    }, 1000);
+    setValue(value);
   };
 
   return (
@@ -43,13 +39,13 @@ const customCode = `() => {
       labelStepSize={1}
       value={value}
       onChange={onChange}
-      className="mt-2"
+      className="my-8"
     />
   );
 }`;
 
 export default {
-  title: 'Components/Slider/Variants/Controlled Slider',
+  title: 'Components/Slider/Types/Controlled Slider',
   component: Slider,
   parameters: {
     docs: {

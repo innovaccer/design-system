@@ -9,7 +9,7 @@
 }
 
 .Slider-wrapper--disabled {
-  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .Slider-track {
