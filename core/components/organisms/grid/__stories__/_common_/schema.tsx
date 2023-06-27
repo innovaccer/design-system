@@ -84,7 +84,7 @@ const schema: ColumnSchema[] = [
     displayName: 'Icon',
     width: 100,
     resizable: true,
-    align: 'center',
+    align: 'left',
     cellType: 'ICON',
     translate: () => ({
       icon: 'events',

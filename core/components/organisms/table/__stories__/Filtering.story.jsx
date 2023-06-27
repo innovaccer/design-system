@@ -32,6 +32,7 @@ import './style.css';
 .Table-container {
   display: flex;
   height: 100%;
+  padding: var(--spacing-2);
 }
 
 .Table-filters {

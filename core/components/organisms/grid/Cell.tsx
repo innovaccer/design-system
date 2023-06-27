@@ -107,6 +107,10 @@ const HeaderCell = (props: HeaderCellProps) => {
     'Grid-headCell--draggable': draggable,
   });
 
+  const filterClass = classNames({
+    'mr-3': showMenu,
+  });
+
   const filterOptions = filters
     ? filters.map((f) => ({
         ...f,
@@ -183,6 +187,7 @@ const HeaderCell = (props: HeaderCellProps) => {
                 align={'left'}
                 onChange={(selected: any) => onFilterChange(name, selected)}
                 minWidth={176}
+                className={filterClass}
               />
             </div>
           )}

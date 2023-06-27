@@ -31,6 +31,7 @@ import './style.css';
 .Table-container {
   display: flex;
   height: 100%;
+  padding: var(--spacing-2);
 }
 
 .Table-filters {
@@ -894,7 +895,7 @@ import './style.css';
       displayName: 'Icon',
       width: 100,
       resizable: true,
-      align: 'center',
+      align: 'left',
       cellType: 'ICON',
       translate: _ => ({
         icon: 'events'

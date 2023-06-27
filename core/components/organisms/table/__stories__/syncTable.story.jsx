@@ -124,7 +124,7 @@ const customCode = `() => {
       displayName: 'Icon',
       width: 100,
       resizable: true,
-      align: 'center',
+      align: 'left',
       cellType: 'ICON',
       sorting: false,
       translate: _ => ({
