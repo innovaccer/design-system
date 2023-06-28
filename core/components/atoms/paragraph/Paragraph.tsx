@@ -2,6 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
+import { TextColor } from '@/common.type';
 
 export type ParagraphAppearance = 'default' | 'white' | 'destructive' | 'subtle' | 'disabled';
 
@@ -12,18 +13,23 @@ export interface ParagraphProps extends BaseProps, BaseHtmlProps<HTMLParagraphEl
    */
   children: React.ReactNode;
   /**
-   * Color of `Paragraph`
+   * State of `Paragraph`
    */
   appearance: ParagraphAppearance;
+  /**
+   * Color of `Paragraph`
+   */
+  color?: TextColor;
 }
 
 export const Paragraph = (props: ParagraphProps) => {
-  const { appearance, children, className, ...rest } = props;
+  const { appearance, children, className, color, ...rest } = props;
 
   const classes = classNames(
     {
       Text: true,
-      [`Text--${appearance}`]: appearance,
+      [`Text--${appearance}`]: !color && appearance,
+      [`color-${color}`]: color,
     },
     className
   );
