@@ -31,17 +31,13 @@
   justify-content: space-between;
   align-items: center;
   margin-left: var(--spacing-l);
-  margin-top: var(--spacing);
+  margin-top: var(--spacing-l);
   margin-bottom: 6px;
 }
 
 .Dropdown-section--withClear {
-  margin-top: var(--spacing-m);
+  margin-top: var(--spacing);
   margin-bottom: var(--spacing-s);
-}
-
-.Dropdown--border {
-  border-top: var(--spacing-xs) solid var(--secondary-light);
 }
 
 .Dropdown-buttonWrapper {
@@ -70,7 +66,7 @@
   padding-top: 6px;
   padding-bottom: 6px;
   padding-left: var(--spacing-l);
-  padding-right: var(--spacing-l);
+  padding-right: var(--spacing);
 }
 
 .Option-checkbox .Checkbox-outerWrapper {
