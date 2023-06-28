@@ -102,12 +102,18 @@ export const Collapsible = (props: CollapsibleProps) => {
           {children}
         </div>
         {withTrigger && (
-          <div data-test="DesignSystem-Collapsible--Footer" className={FooterClass}>
+          <div
+            role="button"
+            tabIndex={0}
+            className={FooterClass}
+            data-test="DesignSystem-Collapsible--Footer"
+            onClick={onToggleHandler(!expanded, 'click')}
+            onKeyDown={onToggleHandler(!expanded, 'click')}
+          >
             <Icon
               name={expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}
               data-test="DesignSystem-Collapsible--FooterIcon"
               className="px-6 py-4 my-2 cursor-pointer"
-              onClick={onToggleHandler(!expanded, 'click')}
               size={16}
             />
           </div>

@@ -31,7 +31,22 @@
   padding-top: var(--spacing-m);
   padding-bottom: var(--spacing-m);
   box-sizing: border-box;
+  cursor: pointer;
   display: flex;
+}
+
+.Collapsible-footer:hover {
+  background-color: var(--secondary-lighter);
+}
+
+.Collapsible-footer:focus,
+.Collapsible-footer:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Collapsible-footer:active {
+  background-color: var(--secondary-light);
 }
 
 .Collapsible-footer--seperator {
