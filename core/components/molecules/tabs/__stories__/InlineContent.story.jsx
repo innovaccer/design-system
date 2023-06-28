@@ -21,14 +21,14 @@ export const inlineContent = () => {
 
   return (
     <Tabs onTabChange={onTabChangeHandler} className="mb-6">
-      <Tab label="All" count={12}>
+      <Tab label="All" count={12} className="pl-5">
         <div>All</div>
       </Tab>
-      <Tab label="Active" count={3}>
-        <div>Active</div>
+      <Tab label="Active User" count={3} className="pl-5">
+        <div>Active User</div>
       </Tab>
-      <Tab label="Inactive" count={9}>
-        <div>Inactive</div>
+      <Tab label="Inactive User" count={9} className="pl-5">
+        <div>Inactive User</div>
       </Tab>
       <div className="d-flex justify-content-end flex-grow-1">
         <div style={{ width: 'var(--spacing-9)' }} className="ml-8">
@@ -59,14 +59,14 @@ const customCode = `() => {
       onTabChange={console.log}
       className="mb-6"
     >
-      <Tab label="All" count={12}>
+      <Tab label="All" count={12} className="pl-5">
         <div>All</div>
       </Tab>
-      <Tab label="Active" count={3}>
-        <div>Active</div>
+      <Tab label="Active User" count={3} className="pl-5">
+        <div>Active User</div>
       </Tab>
-      <Tab label="Inactive" count={9}>
-        <div>Inactive</div>
+      <Tab label="Inactive User" count={9} className="pl-5">
+        <div>Inactive User</div>
       </Tab>
       <div className="d-flex justify-content-end flex-grow-1">
         <div style={{ width: 'var(--spacing-9)' }} className="ml-8">

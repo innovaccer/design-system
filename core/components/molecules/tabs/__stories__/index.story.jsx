@@ -13,13 +13,13 @@ export const all = () => {
 
   return (
     <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6" headerClassName="pl-3">
-      <Tab label="Tab(Recommended)" count={10}>
-        <div>Tab(Recommended)</div>
-      </Tab>
-      <Tab label="All" icon="call_received">
+      <Tab label="All" count={15} className="pl-6">
         <div>All</div>
       </Tab>
-      <Tab label="Extras" disabled={true}>
+      <Tab label="Tab(Recommended)" count={10} className="pl-6">
+        <div>Tab(Recommended)</div>
+      </Tab>
+      <Tab label="Extras" disabled={true} count={5}>
         <div>Extras</div>
       </Tab>
     </Tabs>
@@ -40,13 +40,13 @@ const customCode = `() => {
       className="mb-6"
       headerClassName='pl-3'
     >
-      <Tab label="Tab(Recommended)" count={10}>
-        <div>Tab(Recommended)</div>
-      </Tab>
-      <Tab label="All" icon="call_received">
+      <Tab label="All" count={15} className="pl-6">
         <div>All</div>
       </Tab>
-      <Tab label="Extras" disabled={true}>
+      <Tab label="Tab(Recommended)" count={10} className="pl-6">
+        <div>Tab(Recommended)</div>
+      </Tab>
+      <Tab label="Extras" disabled={true} count={5}>
         <div>Extras</div>
       </Tab>
     </Tabs>
