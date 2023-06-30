@@ -63,6 +63,7 @@ export const Collapsible = (props: CollapsibleProps) => {
     {
       Collapsible: true,
       ['Collapsible--overlay']: !isClicked,
+      ['Collapsible--shadow']: !isClicked && expanded,
     },
     className
   );
