@@ -17,7 +17,7 @@ export const popoverWithAction = () => (
           <Button className="mt-4" appearance="primary">
             Edit Registry
           </Button>
-          <Button className="mt-4 ml-5" appearance="basic">
+          <Button className="mt-4 ml-4" appearance="basic">
             Discard Changes
           </Button>
         </div>

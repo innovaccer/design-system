@@ -6,29 +6,28 @@ export const popoverWithMenu = () => {
   const trigger = (
     <div className="d-flex">
       <Avatar firstName="John" lastName="Doe" />
-      <Text className="ml-4 mt-4" size="large">
+      <Button className="ml-3" appearance="transparent" icon="arrow_drop_down" iconAlign="right">
         Open Popover
-      </Text>
-      <Button appearance="transparent" icon="arrow_drop_down" />
+      </Button>
     </div>
   );
 
   return (
     <div className="mb-12">
       <Popover position="bottom-start" on="click" trigger={trigger} open={false} className="w-25">
-        <div className="m-6">
-          <div className="d-flex">
+        <div className="pt-7 pb-4 pl-7">
+          <div className="d-flex pr-7 pb-6">
             <Avatar firstName="John" lastName="Doe" />
             <div className="Option-label">
-              <Text className="ml-4">James Donovan</Text>
-              <Text className="ml-4" appearance="subtle">
+              <Text className="ml-5">James Donovan</Text>
+              <Text className="ml-5" appearance="subtle">
                 jdonovan @two.health
               </Text>
             </div>
           </div>
-          <div className="Dropdown-wrapper">
-            <div className="Option OptionWrapper">Account Overview</div>
-            <div className="Option OptionWrapper">Sign Out</div>
+          <div>
+            <div className="Option pl-0 pr-4">Account Overview</div>
+            <div className="Option pl-0 pr-4">Sign Out</div>
           </div>
         </div>
       </Popover>

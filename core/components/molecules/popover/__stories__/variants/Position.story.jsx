@@ -11,7 +11,7 @@ export const position = () => {
       {positions.map((pos, ind) => {
         return (
           <div key={ind} className={`mr-13 ml-12 ${ind < 3 ? 'mt-11' : 'mt-5 mb-11'}`}>
-            <Popover trigger={getTrigger(pos)} position={pos} open={true}>
+            <Popover trigger={getTrigger(pos)} position={pos}>
               <div className="m-6 pr-9">
                 <Text>Popup</Text>
                 <Button appearance="primary" className="mt-4">
