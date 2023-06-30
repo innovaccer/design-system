@@ -5,12 +5,16 @@ exports[`HelpText component snapshot
  1`] = `
 <body>
   <div>
-    <span
-      class="Text Text--subtle Text--medium Text--small mt-3"
-      data-test="DesignSystem-Text"
+    <div
+      class="mt-3"
     >
-      Help Text Component
-    </span>
+      <span
+        class="Text Text--subtle Text--medium Text--small"
+        data-test="DesignSystem-Text"
+      >
+        Help Text Component
+      </span>
+    </div>
   </div>
 </body>
 `;
