@@ -4,7 +4,7 @@
   overflow: hidden;
   border-radius: var(--spacing-m);
   background-color: var(--white);
-  align-items: center;
+  align-items: flex-start;
 }
 
 .InlineMessage-icon--regular {
