@@ -28,4 +28,14 @@ export const size = () => {
 export default {
   title: 'Components/MetaList/Size',
   component: MetaList,
+  parameters: {
+    docs: {
+      docPage: {
+        title: 'MetaList',
+        props: {
+          exclude: ['seperatorAppearance', 'labelAppearance', 'iconAppearance'],
+        },
+      },
+    },
+  },
 };
