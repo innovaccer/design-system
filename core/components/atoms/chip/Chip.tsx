@@ -39,6 +39,9 @@ export interface ChipProps extends BaseProps {
    * Handler to be called when Chip is clicked
    */
   onClick?: (name: Name) => void;
+  /**
+   * Name of chip
+   */
   name: Name;
 }
 
