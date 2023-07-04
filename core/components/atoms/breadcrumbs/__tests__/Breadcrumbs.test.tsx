@@ -64,7 +64,7 @@ describe('Breadcrumbs component', () => {
 describe('Breadcrumbs component', () => {
   it('on click is fired with current link', () => {
     const { getAllByTestId } = render(<Breadcrumbs list={list} onClick={onClick} />);
-    const links = getAllByTestId('DesignSystem-Link');
+    const links = getAllByTestId('DesignSystem-Breadcrumbs-link');
 
     links.forEach((link, index) => {
       fireEvent.click(link);

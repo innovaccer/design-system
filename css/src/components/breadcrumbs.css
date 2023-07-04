@@ -11,15 +11,9 @@
 }
 
 .Breadcrumbs-link {
-  margin: var(--spacing-m);
   /* 160px */
   max-width: calc(var(--spacing-2) * 10);
-  line-height: var(--font-height);
-  color: var(--inverse-lighter);
-}
-
-.Breadcrumbs-link:hover {
-  color: var(--inverse-light);
+  margin: var(--spacing-m) 0;
 }
 
 .Breadcrumbs-link:active {
@@ -32,15 +26,14 @@
 
 .Breadcrumbs-itemSeparator {
   color: var(--secondary);
+  font-size: var(--font-size-s);
+  line-height: var(--font-height-s);
+  width: var(--spacing-m);
+  margin: 0 var(--spacing-m);
 }
 
 .Breadcrumbs-dropdown {
-  display: flex;
-  align-items: center;
-}
-
-.Breadcrumbs-Button {
-  margin: 0 var(--spacing-m);
+  height: var(--font-height-m);
 }
 
 .Breadcrumbs-Button:focus {
