@@ -87,5 +87,6 @@ export { HelpText } from './components/atoms/helpText';
 export { LinkButton } from './components/atoms/linkButton';
 export { ActionCard } from './components/atoms/actionCard';
 export { SelectionCard } from './components/atoms/selectionCard';
+export { Listbox } from './components/organisms/listbox';
 
 export { version } from '../package.json';
