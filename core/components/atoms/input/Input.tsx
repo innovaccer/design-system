@@ -174,6 +174,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   } = props;
 
   const ref = React.useRef<HTMLInputElement>(null);
+  const [isInputBlank, setIsInputBlank] = React.useState<boolean>(!value);
 
   React.useImperativeHandle(forwardedRef, (): HTMLInputElement => {
     return ref.current as HTMLInputElement;
@@ -203,7 +204,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   const leftIconClass = classNames({
     ['Input-icon']: true,
     ['Input-icon--left']: true,
-    ['Input-icon--disabled']: !value,
+    ['Input-icon--inputBlank']: isInputBlank,
+    ['Input-icon--error']: error,
   });
 
   const rightIconClass = classNames({
@@ -227,6 +229,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       style={{ minWidth }}
       onClick={() => ref.current?.focus()}
       role="presentation"
+      onBlur={() => setIsInputBlank(!ref.current?.value)}
     >
       {inlineLabel && (
         <div className="Input-inlineLabel">
@@ -257,11 +260,16 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
         onClick={onClick}
         onFocus={onFocus}
         onPaste={onPaste}
+        /**
+         *for readOnly: true, tab focus from input element is removed. Hence, its tabIndex is set to -1.
+         *For rest, "undefined" lets user agent(browser) use the default tabIndex.
+         */
+        tabIndex={readOnly ? -1 : undefined}
       />
       {disabled ? (
         ''
       ) : info ? (
-        <Tooltip position="top" tooltip={info}>
+        <Tooltip position="bottom" tooltip={info}>
           {trigger}
         </Tooltip>
       ) : actionIcon && (value || defaultValue) ? (

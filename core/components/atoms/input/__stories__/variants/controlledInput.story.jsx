@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Input } from '@/index';
+import { Column, Input, Row } from '@/index';
 import ActionButton from '../../actionButton';
 
 export const controlledInput = () => {
@@ -24,24 +24,28 @@ export const controlledInput = () => {
     }, 1000);
   };
   return (
-    <div className="d-flex">
-      <Input
-        name="input"
-        value={value}
-        type="text"
-        placeholder="Placeholder"
-        actionIcon={<Input.ActionButton name="visibility_off" />}
-        onChange={handleParentChange}
-      />
-      <Input
-        name="input"
-        value={value1}
-        type="text"
-        placeholder="PlaceHolder"
-        onChange={onChangeHandler}
-        onClear={onClearHandler}
-      />
-    </div>
+    <Row>
+      <Column size={4}>
+        <Input
+          name="input"
+          value={value}
+          type="text"
+          placeholder="Placeholder"
+          actionIcon={<Input.ActionButton name="visibility_off" />}
+          onChange={handleParentChange}
+        />
+      </Column>
+      <Column size={4} className="ml-7">
+        <Input
+          name="input"
+          value={value1}
+          type="text"
+          placeholder="PlaceHolder"
+          onChange={onChangeHandler}
+          onClear={onClearHandler}
+        />
+      </Column>
+    </Row>
   );
 };
 
@@ -62,7 +66,8 @@ const customCode = `() => {
       setValue1(updatedValue);
   };
   return (
-    <div className="d-flex">
+    <Row>
+    <Column size={4}>
       <Input
         name="input"
         value={value}
@@ -70,7 +75,9 @@ const customCode = `() => {
         placeholder="Placeholder"
         actionIcon={
           <Input.ActionButton
-            onClick={() => setVisibility((x) => !x)}
+            onClick={() => {
+              setVisibility((x) => !x);
+            }}
             name={visibility ? 'visibility_on' : 'visibility_off'}
             aria-label={visibility ? 'Show Password' : 'Hide Password'}
             className="cursor-pointer"
@@ -78,6 +85,8 @@ const customCode = `() => {
         }
         onChange={handleParentChange}
       />
+    </Column>
+    <Column size={4} className="ml-7">
       <Input
         name="input"
         value={value1}
@@ -86,7 +95,8 @@ const customCode = `() => {
         onChange={onChangeHandler}
         onClear={onClearHandler}
       />
-    </div>
+    </Column>
+  </Row>
   );
 };`;
 
