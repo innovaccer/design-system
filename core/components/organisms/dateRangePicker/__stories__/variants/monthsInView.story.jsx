@@ -13,9 +13,9 @@ export const monthsInView = () => {
           <Card className="d-inline-flex" shadow="light">
             <DateRangePicker
               monthsInView={x}
-              startDate={new Date(2019, 11, 3)}
-              endDate={new Date(2020, x - 2, 11)}
-              yearNav={2019}
+              startDate={new Date(2023, 11, 3)}
+              endDate={new Date(2023, x - 2, 11)}
+              yearNav={2023}
               monthNav={11}
             />
           </Card>

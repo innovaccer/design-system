@@ -8,10 +8,10 @@ export const rangeLimit = () => {
     <div className="d-flex mr-9">
       <Card className="d-inline-flex" shadow="light">
         <DateRangePicker
-          startDate={new Date(2020, 2, 3)}
-          endDate={new Date(2020, 2, 11)}
+          startDate={new Date(2023, 2, 3)}
+          endDate={new Date(2023, 2, 11)}
           rangeLimit={7}
-          yearNav={2020}
+          yearNav={2023}
           monthNav={2}
         />
       </Card>

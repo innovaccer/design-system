@@ -6,9 +6,9 @@ import { action } from '@/utils/action';
 export const withSingleInput = () => {
   const monthsInView = 2;
 
-  const startDate = new Date('Jan 20 2016');
+  const startDate = new Date('Jan 20 2023');
 
-  const endDate = new Date('Jan 28 2016');
+  const endDate = new Date('Jan 28 2023');
 
   const inputFormat = 'dd/mm/yyyy';
 

@@ -10,7 +10,7 @@ export const view = () => {
       {values.map((v, index) => (
         <div key={index} className="mr-5">
           <Card className="d-inline-flex" shadow="light">
-            <DatePicker date={new Date(2020, 2, 1)} view={v} />
+            <DatePicker date={new Date(2023, 5, 1)} view={v} />
           </Card>
         </div>
       ))}

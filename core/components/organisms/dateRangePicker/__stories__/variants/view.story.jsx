@@ -11,10 +11,10 @@ export const view = () => {
         <div className="mr-9" key={index}>
           <Card className="d-inline-flex" shadow="light">
             <DateRangePicker
-              startDate={new Date(2020, 2, 3)}
-              endDate={new Date(2020, 2, 11)}
+              startDate={new Date(2023, 2, 3)}
+              endDate={new Date(2023, 2, 11)}
               view={v}
-              yearNav={2020}
+              yearNav={2023}
               monthNav={2}
             />
           </Card>
