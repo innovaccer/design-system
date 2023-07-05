@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, PlaceholderParagraph } from '@/index';
+import { Text, PlaceholderParagraph, Placeholder } from '@/index';
 
 export const size = () => {
   const sizes = ['xxs', 'xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'];
@@ -19,8 +19,9 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Paragraph/Size',
-  component: PlaceholderParagraph,
+  title: 'Components/Placeholder/Paragraph/Size',
+  component: Placeholder,
+  subcomponents: { PlaceholderParagraph },
   parameters: {
     docs: {
       docPage: {

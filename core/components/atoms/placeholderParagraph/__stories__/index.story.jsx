@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PlaceholderParagraph } from '@/index';
+import { PlaceholderParagraph, Placeholder } from '@/index';
 
 export const all = () => {
   const length = 'medium';
@@ -9,8 +9,9 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Paragraph/All',
-  component: PlaceholderParagraph,
+  title: 'Components/Placeholder/Paragraph/All',
+  component: Placeholder,
+  subcomponents: { PlaceholderParagraph },
   parameters: {
     docs: {
       docPage: {

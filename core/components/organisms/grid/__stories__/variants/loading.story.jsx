@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid } from '@/index';
+import { Grid, GridCell } from '@/index';
 
 export const GridLoadingState = () => {
   const schema = [
@@ -45,6 +45,8 @@ const customCode = `() => {
 
 export default {
   title: 'Components/Grid/Variants/Grid Loading State',
+  component: Grid,
+  subcomponents: { GridCell },
   parameters: {
     docs: {
       docPage: {

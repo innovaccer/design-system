@@ -282,6 +282,7 @@ const customCode = `() => {
 
 export default {
   title: 'Components/Table/Disabled Row',
+  component: Table,
   parameters: {
     docs: {
       docPage: {

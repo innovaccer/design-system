@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { Navigation } from '@/index';
 
 // CSF format story
 export const all = () => <></>;
 
 export default {
   title: 'Components/Navigation/All',
+  component: Navigation,
   parameters: {
     docs: {
       docPage: {

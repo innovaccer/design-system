@@ -232,6 +232,7 @@ const customCode = `() => {
 
 export default {
   title: 'Components/Table/Pinned Columns',
+  component: Table,
   parameters: {
     docs: {
       docPage: {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Modal, Grid, Text } from '@/index';
+import { Button, Modal, Grid, Text, GridCell } from '@/index';
 
 export const Grid_In_Modal = () => {
   const [open, setOpen] = React.useState(false);
@@ -181,6 +181,7 @@ const customCode = `() => {
 export default {
   title: 'Components/Grid/Grid In Modal',
   component: Grid,
+  subcomponents: { GridCell },
   parameters: {
     docs: {
       docPage: {

@@ -60,7 +60,7 @@ export const HighlightingASection = () => {
 
 export default {
   title: 'Components/Card/Highlighting A Section',
-  component: CardSubdued,
+  component: Card,
   parameters: {
     docs: {
       docPage: {

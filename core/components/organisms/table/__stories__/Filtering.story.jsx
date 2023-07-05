@@ -3,6 +3,7 @@ import { debounce } from 'throttle-debounce';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import './_common_/style.css';
 import { AsyncTable, SyncTable } from './_common_/types';
+import { Table } from '@/index';
 
 export const filtering = () => {
   return <></>;
@@ -832,6 +833,7 @@ import './style.css';
 
 export default {
   title: 'Components/Table/Filtering',
+  component: Table,
   parameters: {
     docs: {
       docPage: {

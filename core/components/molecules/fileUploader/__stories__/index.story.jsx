@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { FileUploader } from '@/index';
 
 export const all = () => <></>;
 
 export default {
   title: 'Components/FileUploader/All',
+  component: FileUploader,
   parameters: {
     docs: {
       docPage: {

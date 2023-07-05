@@ -202,6 +202,7 @@ const customCode = `() => {
 
 export default {
   title: 'Components/Table/Standard Table',
+  component: Table,
   parameters: {
     docs: {
       docPage: {

@@ -3,7 +3,7 @@ import schema from '@/components/organisms/grid/__stories__/_common_/schema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import { action } from '@/utils/action';
-import { Card, Grid } from '@/index';
+import { Card, Grid, GridCell } from '@/index';
 import { nestedRowRenderer } from '../../grid/__stories__/_common_/nestedRowRenderer';
 import { errorTemplate } from '../../grid/__stories__/_common_/errorTemplate';
 import './style.css';
@@ -86,6 +86,7 @@ export const all = () => {
 export default {
   title: 'Components/Grid/All',
   component: Grid,
+  subcomponents: { GridCell },
   parameters: {
     docs: {
       docPage: {

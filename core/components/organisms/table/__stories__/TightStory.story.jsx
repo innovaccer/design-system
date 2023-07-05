@@ -204,6 +204,7 @@ const customCode = `() => {
 
 export default {
   title: 'Components/Table/Tight Table',
+  component: Table,
   parameters: {
     docs: {
       docPage: {

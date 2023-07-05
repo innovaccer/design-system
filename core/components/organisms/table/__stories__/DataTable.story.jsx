@@ -411,6 +411,7 @@ const customCode = `() => {
 
 export default {
   title: 'Components/Table/Data Table',
+  component: Table,
   parameters: {
     docs: {
       docPage: {
