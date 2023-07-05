@@ -5,16 +5,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--compressed DropzoneAnimation--default"
+    class="Dropzone Dropzone--compressed Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--compressed"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--default"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
@@ -67,16 +69,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard DropzoneAnimation--default"
+    class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--standard"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--default"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
@@ -129,7 +133,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--tight DropzoneAnimation--default"
+    class="Dropzone Dropzone--tight Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
   >
     <div
@@ -182,16 +186,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--compressed Dropzone--disabled DropzoneAnimation--default"
+    class="Dropzone Dropzone--compressed Dropzone--disabled Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--compressed"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--disabled"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
@@ -244,16 +250,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard Dropzone--disabled DropzoneAnimation--default"
+    class="Dropzone Dropzone--standard Dropzone--disabled Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--standard"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--disabled"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
@@ -306,7 +314,7 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--tight Dropzone--disabled DropzoneAnimation--default"
+    class="Dropzone Dropzone--tight Dropzone--disabled Dropzone-animation Dropzone-animation--default"
     data-test="DesignSystem-Dropzone"
   >
     <div
@@ -359,16 +367,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard DropzoneAnimation--default"
+    class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--standard"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--default"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
@@ -408,16 +418,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard DropzoneAnimation--default"
+    class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--standard"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--default"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
@@ -458,16 +470,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard DropzoneAnimation--default"
+    class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--standard"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--default"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
@@ -507,16 +521,18 @@ exports[`Dropzone component snapshot
  1`] = `
 <DocumentFragment>
   <div
-    class="Dropzone Dropzone--standard DropzoneAnimation--default"
+    class="Dropzone Dropzone--standard Dropzone-animation Dropzone-standard--default"
     data-test="DesignSystem-Dropzone"
   >
     <svg
       class="Dropzone-icon--standard"
       fill="none"
+      viewBox="0 0 64 64"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <path
         class="Dropzone-icon--default"
-        d="M48.875 40.375v8h-32v-8H11.5v8c0 2.875 2.5 5.375 5.375 5.375h32c2.875 0 5.375-2.5 5.375-5.375v-8h-5.375zM46.25 29.75L42.5 26l-7 6.875V11h-5.25v21.875l-7-6.875-3.75 3.75L32.875 43 46.25 29.75z"
+        d="M14.6667 53.3334C13.6 53.3334 12.6667 52.9334 11.8667 52.1334C11.0667 51.3334 10.6667 50.4 10.6667 49.3334V39.8H14.6667V49.3334H49.3333V39.8H53.3333V49.3334C53.3333 50.4 52.9333 51.3334 52.1333 52.1334C51.3333 52.9334 50.4 53.3334 49.3333 53.3334H14.6667ZM32 43.1334L19.1333 30.2667L22 27.4L30 35.4V10.6667H34V35.4L42 27.4L44.8667 30.2667L32 43.1334Z"
       />
     </svg>
     <div
