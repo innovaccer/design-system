@@ -12,7 +12,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Icon/All',
+  title: 'Icon/Icon/All',
   component: Icon,
   parameters: {
     docs: {

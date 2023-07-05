@@ -74,7 +74,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Modal/No Footer',
+  title: 'Overlays/Modal/No Footer',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

@@ -8,7 +8,7 @@ export const Primary = () => (
 );
 
 export default {
-  title: 'Components/Button/Appearance/Primary',
+  title: 'Actions/Button/Appearance/Primary',
   component: Button,
   parameters: {
     docs: {

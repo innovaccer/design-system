@@ -195,7 +195,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Components/Sidesheet/Variants/Layering/Layering With Sidesheet',
+  title: 'Overlays/Sidesheet/Variants/Layering/Layering With Sidesheet',
   component: Sidesheet,
   parameters: {
     docs: {

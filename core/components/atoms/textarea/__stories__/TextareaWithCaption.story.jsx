@@ -48,7 +48,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Components/Textarea/Textarea With Caption',
+  title: 'Inputs/Textarea/Textarea With Caption',
   component: Textarea,
   parameters: {
     docs: {

@@ -44,6 +44,6 @@ export const Indented = () => {
 };
 
 export default {
-  title: 'Components/Divider/Indented',
+  title: 'Layout/Divider/Indented',
   component: Divider,
 };

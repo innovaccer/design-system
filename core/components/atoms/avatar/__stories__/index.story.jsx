@@ -22,6 +22,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Avatar/All',
+  title: 'Indicators/Avatar/All',
   component: Avatar,
 };

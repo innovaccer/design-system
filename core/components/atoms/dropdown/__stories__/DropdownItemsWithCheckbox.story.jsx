@@ -26,7 +26,7 @@ export const dropdownItemsWithCheckbox = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Dropdown Items With Checkbox',
+  title: 'Inputs/Dropdown/Dropdown Items With Checkbox',
   component: Dropdown,
   parameters: {
     docs: {

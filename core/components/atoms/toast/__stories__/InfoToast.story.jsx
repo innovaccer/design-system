@@ -11,6 +11,6 @@ export const infoToast = () => (
 );
 
 export default {
-  title: 'Components/Toast/Info Toast',
+  title: 'Indicators/Toast/Info Toast',
   component: Toast,
 };

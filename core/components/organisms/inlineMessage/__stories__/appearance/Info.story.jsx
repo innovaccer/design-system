@@ -5,6 +5,6 @@ import { InlineMessage } from '@/index';
 export const info = () => <InlineMessage appearance="info" description="There are two new referral requests." />;
 
 export default {
-  title: 'Components/InlineMessage/Appearance/Info',
+  title: 'Indicators/InlineMessage/Appearance/Info',
   component: InlineMessage,
 };

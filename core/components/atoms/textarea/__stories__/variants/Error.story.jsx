@@ -11,7 +11,7 @@ export const Error = () => (
 );
 
 export default {
-  title: 'Components/Textarea/Variants/Error',
+  title: 'Inputs/Textarea/Variants/Error',
   component: Textarea,
   parameters: {
     docs: {

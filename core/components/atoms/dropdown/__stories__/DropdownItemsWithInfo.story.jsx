@@ -26,7 +26,7 @@ export const dropdownItemsWithSubInfo = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Dropdown Items With Sub Info',
+  title: 'Inputs/Dropdown/Dropdown Items With Sub Info',
   component: Dropdown,
   parameters: {
     docs: {

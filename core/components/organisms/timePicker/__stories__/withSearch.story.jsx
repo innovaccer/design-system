@@ -2,7 +2,6 @@ import * as React from 'react';
 import { TimePicker, Label, Row } from '@/index';
 import { action } from '@/utils/action';
 import { TimePickerWithSearch } from '../TimePickerWithSearch';
-import { TimePickerWithInput } from '../TimePickerWithInput';
 
 // CSF format story
 export const withSearch = () => {
@@ -75,9 +74,8 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/TimePicker/With Search',
-  component: TimePickerWithInput,
-  subcomponents: { TimePickerWithSearch },
+  title: 'Date and Time/TimePicker/TimePickerWithSearch/With Search',
+  component: TimePickerWithSearch,
   parameters: {
     docs: {
       docPage: {

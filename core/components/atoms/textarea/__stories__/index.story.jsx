@@ -26,6 +26,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Textarea/All',
+  title: 'Inputs/Textarea/All',
   component: Textarea,
 };

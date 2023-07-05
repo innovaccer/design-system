@@ -9,6 +9,6 @@ export const freeSlider = () => {
 };
 
 export default {
-  title: 'Components/Slider/Variants/Free Slider',
+  title: 'Selection/Slider/Variants/Free Slider',
   component: Slider,
 };

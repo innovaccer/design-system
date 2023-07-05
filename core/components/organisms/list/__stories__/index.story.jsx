@@ -85,7 +85,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/List/All',
+  title: 'Layout/List/All',
   component: List,
   parameters: {
     docs: {

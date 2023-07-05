@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChoiceList } from '@/index';
+import { ChoiceList, Radio } from '@/index';
 
 // CSF format story
 export const vertical = () => {
@@ -16,8 +16,9 @@ export const vertical = () => {
 };
 
 export default {
-  title: 'Components/Radio/RadioGroup/Vertical',
-  component: ChoiceList,
+  title: 'Selection/Radio/RadioGroup/Vertical',
+  component: Radio,
+  subcomponents: { ChoiceList },
   parameters: {
     docs: {
       docPage: {

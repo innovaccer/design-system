@@ -58,6 +58,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/HelpText/All',
+  title: 'Typography/HelpText/All',
   component: HelpText,
 };

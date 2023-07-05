@@ -201,7 +201,8 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Standard Table',
+  title: 'Layout/Table/Standard Table',
+  component: Table,
   parameters: {
     docs: {
       docPage: {

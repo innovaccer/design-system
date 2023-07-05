@@ -16,7 +16,7 @@ export const appearance = () => {
 };
 
 export default {
-  title: 'Components/Link/Variants/Appearance',
+  title: 'Navigation/Link/Variants/Appearance',
   component: Link,
   parameters: {
     docs: {

@@ -31,7 +31,7 @@ export const search = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Variants/Search',
+  title: 'Inputs/Dropdown/Variants/Search',
   component: Dropdown,
   parameters: {
     docs: {

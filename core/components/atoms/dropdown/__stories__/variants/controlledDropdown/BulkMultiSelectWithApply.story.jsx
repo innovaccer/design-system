@@ -144,7 +144,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants/ControlledDropdown/Bulk Multi Select With Apply Button',
+  title: 'Inputs/Dropdown/Variants/ControlledDropdown/Bulk Multi Select With Apply Button',
   component: Dropdown,
   parameters: {
     docs: {

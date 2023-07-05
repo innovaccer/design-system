@@ -83,7 +83,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Components/InputMask/Help Text',
+  title: 'Inputs/InputMask/Help Text',
   component: InputMask,
   parameters: {
     docs: {

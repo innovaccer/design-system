@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PlaceholderParagraph, Placeholder, Card } from '@/index';
+import { PlaceholderParagraph, Placeholder, PlaceholderImage, Card } from '@/index';
 
 export const skeletonLoaders = () => {
   return (
@@ -33,7 +33,7 @@ export const skeletonLoaders = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Skeleton Loaders',
+  title: 'Loaders/Placeholder/Skeleton Loaders',
   component: Placeholder,
-  subcomponents: { PlaceholderParagraph },
+  subcomponents: { PlaceholderImage, PlaceholderParagraph },
 };

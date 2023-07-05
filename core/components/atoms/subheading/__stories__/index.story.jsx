@@ -7,7 +7,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Subheading/All',
+  title: 'Typography/Subheading/All',
   component: Subheading,
   parameters: {
     docs: {

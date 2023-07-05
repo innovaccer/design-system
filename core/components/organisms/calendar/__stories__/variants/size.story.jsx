@@ -19,7 +19,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Calendar/Variants/Size',
+  title: 'Date and Time/Calendar/Variants/Size',
   component: Calendar,
   parameters: {
     docs: {

@@ -24,7 +24,7 @@ export const toastWithDescription = () => {
 };
 
 export default {
-  title: 'Components/Toast/Variants/Toast With Description',
+  title: 'Indicators/Toast/Variants/Toast With Description',
   component: Toast,
   parameters: {
     docs: {

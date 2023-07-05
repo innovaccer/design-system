@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChoiceList } from '@/index';
+import { ChoiceList, Radio } from '@/index';
 
 export const Controlled = () => {
   const label = 'Days';
@@ -28,8 +28,9 @@ export const Controlled = () => {
 };
 
 export default {
-  title: 'Components/Radio/RadioGroup/Controlled',
-  component: ChoiceList,
+  title: 'Selection/Radio/RadioGroup/Controlled',
+  component: Radio,
+  subcomponents: { ChoiceList },
   parameters: {
     docs: {
       docPage: {

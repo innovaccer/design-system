@@ -109,6 +109,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Calendar/All',
+  title: 'Date and Time/Calendar/All',
   component: Calendar,
 };

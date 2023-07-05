@@ -41,7 +41,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/MetricInput/All',
+  title: 'Inputs/MetricInput/All',
   component: MetricInput,
   parameters: {
     docs: {

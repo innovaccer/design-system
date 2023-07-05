@@ -26,7 +26,7 @@ export const monthsInView = () => {
 };
 
 export default {
-  title: 'Components/DateRangePicker/Variants/Months In View',
+  title: 'Date and Time/DateRangePicker/Variants/Months In View',
   component: DateRangePicker,
   parameters: {
     docs: {

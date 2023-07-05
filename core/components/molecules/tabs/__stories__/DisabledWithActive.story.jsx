@@ -71,7 +71,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs/Disabled With Active',
+  title: 'Navigation/Tabs/Disabled With Active',
   component: Tabs,
   parameters: {
     docs: {

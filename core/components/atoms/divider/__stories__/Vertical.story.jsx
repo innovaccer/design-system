@@ -46,6 +46,6 @@ export const Vertical = () => {
 };
 
 export default {
-  title: 'Components/Divider/Vertical',
+  title: 'Layout/Divider/Vertical',
   component: Divider,
 };

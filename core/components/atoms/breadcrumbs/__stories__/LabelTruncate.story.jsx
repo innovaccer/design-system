@@ -54,7 +54,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Breadcrumbs/Label Truncate',
+  title: 'Navigation/Breadcrumbs/Label Truncate',
   component: Breadcrumbs,
   parameters: {
     docs: {

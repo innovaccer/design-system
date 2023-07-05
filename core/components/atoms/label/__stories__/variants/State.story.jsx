@@ -12,7 +12,7 @@ export const state = () => {
 };
 
 export default {
-  title: 'Components/Label/Variants/State',
+  title: 'Typography/Label/Variants/State',
   component: Label,
   parameters: {
     docs: {

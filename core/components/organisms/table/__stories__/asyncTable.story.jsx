@@ -279,7 +279,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Async Table',
+  title: 'Layout/Table/Async Table',
   component: Table,
   parameters: {
     docs: {
