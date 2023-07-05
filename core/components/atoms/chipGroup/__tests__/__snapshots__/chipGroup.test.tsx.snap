@@ -37,7 +37,7 @@ exports[`ChipGroup component
         class="ChipGroup-item"
       >
         <div
-          class="Chip-wrapper Chip Chip--input"
+          class="Chip-wrapper Chip Chip--input Chip-icon--clear"
           data-test="DesignSystem-ChipGroup--Chip"
           tabindex="0"
         >
@@ -55,22 +55,27 @@ exports[`ChipGroup component
           >
             Input
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+          <div
+            class="Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
-            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
-            clear_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon Icon--subtle p-2"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              clear_round
+            </i>
+          </div>
         </div>
       </span>
       <span
         class="ChipGroup-item"
       >
         <div
-          class="Chip-wrapper Chip Chip--selection Chip-selection--selected"
+          class="Chip-wrapper Chip Chip--selection Chip-selection--selected Chip-icon--clear"
           data-test="DesignSystem-ChipGroup--Chip"
           tabindex="0"
         >
@@ -88,22 +93,27 @@ exports[`ChipGroup component
           >
             Selection
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
+          <div
+            class="Chip-icon Chip-icon--right cursor-pointer Chip-icon--selected"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
-            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
-            clear_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon Icon--primaryDark p-2"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              clear_round
+            </i>
+          </div>
         </div>
       </span>
       <span
         class="ChipGroup-item"
       >
         <div
-          class="Chip-wrapper Chip Chip--selection"
+          class="Chip-wrapper Chip Chip--selection Chip-icon--clear"
           data-test="DesignSystem-ChipGroup--Chip"
           tabindex="0"
         >
@@ -121,15 +131,20 @@ exports[`ChipGroup component
           >
             Selection
           </span>
-          <i
-            class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+          <div
+            class="Chip-icon Chip-icon--right cursor-pointer"
             data-test="DesignSystem-GenericChip--clearButton"
             role="button"
-            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
-            clear_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon Icon--subtle p-2"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              clear_round
+            </i>
+          </div>
         </div>
       </span>
     </div>

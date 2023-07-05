@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Chip from '../Chip';
+import { Chip } from '@/index';
 import { action } from '@/utils/action';
 
 export const all = () => {

@@ -1,33 +1,34 @@
 import * as React from 'react';
-import { Text } from '@/index';
-import Chip from '../../Chip';
+import { Chip, Text } from '@/index';
 import { action } from '@/utils/action';
-const BooleanValue = [true, false];
+
+const BooleanValue = [false, true];
+
 export const Selection = () => {
   const icon = 'assessment';
   const label = 'Selection';
+
   return (
-    <div className="d-flex">
+    <div className="d-flex justify-content-between">
       {BooleanValue.map((booleanvalue, ind) => {
         return (
-          <div key={ind} className="mr-9">
+          <div key={ind}>
             <Chip
               icon={icon}
               label={label}
               clearButton={true}
               disabled={booleanvalue}
               type="selection"
-              onClose={action(`onClose: ${label}`)}
-              onClick={action(`onClick: ${label}`)}
               selected={false}
               name={'chip'}
             />
+            <br />
             <br />
             <Text weight="strong">{`Disabled: ${booleanvalue}`}</Text>
           </div>
         );
       })}
-      <div className="mr-9">
+      <div>
         <Chip
           icon={icon}
           label={label}
@@ -39,9 +40,10 @@ export const Selection = () => {
           name={'chip'}
         />
         <br />
+        <br />
         <Text weight="strong">Selected: true</Text>
       </div>
-      <div className="mr-9">
+      <div>
         <Chip
           icon={icon}
           label={label}
@@ -53,6 +55,7 @@ export const Selection = () => {
           disabled={true}
           name={'chip'}
         />
+        <br />
         <br />
         <Text weight="strong">Selected: true</Text>
         <br></br>
