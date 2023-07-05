@@ -29,7 +29,7 @@ export const solid = () => {
 };
 
 export default {
-  title: 'Components/Badge/Solid',
+  title: 'Indicators/Badge/Solid',
   component: Badge,
   parameters: {
     docs: {

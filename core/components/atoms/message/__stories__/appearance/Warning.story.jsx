@@ -10,6 +10,6 @@ export const warning = () => (
 );
 
 export default {
-  title: 'Components/Message/Appearance/Warning',
+  title: 'Indicators/Message/Appearance/Warning',
   component: Message,
 };

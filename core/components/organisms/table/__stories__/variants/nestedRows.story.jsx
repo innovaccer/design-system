@@ -168,7 +168,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants/Nested Rows',
+  title: 'Layout/Table/Variants/Nested Rows',
   component: Table,
   parameters: {
     docs: {

@@ -27,6 +27,6 @@ export const inputChips = () => {
   return <ChipGroup list={list} onClose={action(`onClose event`)} onClick={action(`onClick event`)} />;
 };
 export default {
-  title: 'Components/ChipGroup/Input Chips',
+  title: 'Selection/ChipGroup/Input Chips',
   component: ChipGroup,
 };

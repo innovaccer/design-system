@@ -7,7 +7,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Label/All',
+  title: 'Typography/Label/All',
   component: Label,
   parameters: {
     docs: {

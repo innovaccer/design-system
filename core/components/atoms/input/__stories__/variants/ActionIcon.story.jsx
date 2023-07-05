@@ -24,7 +24,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Input/Variants/Action Icon',
+  title: 'Inputs/Input/Variants/Action Icon',
   component: Input,
   subcomponents: { ActionButton },
   parameters: {

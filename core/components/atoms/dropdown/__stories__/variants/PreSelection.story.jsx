@@ -87,7 +87,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants/Pre Selection',
+  title: 'Inputs/Dropdown/Variants/Pre Selection',
   component: Dropdown,
   parameters: {
     docs: {

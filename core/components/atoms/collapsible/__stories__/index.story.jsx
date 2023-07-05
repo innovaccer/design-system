@@ -36,7 +36,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Collapsible/All',
+  title: 'Navigation/Collapsible/All',
   component: Collapsible,
   parameters: {
     docs: {

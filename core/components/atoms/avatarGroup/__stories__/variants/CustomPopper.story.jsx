@@ -101,7 +101,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Components/AvatarGroup/Variants/Custom Popper',
+  title: 'Indicators/AvatarGroup/Variants/Custom Popper',
   component: AvatarGroup,
   parameters: {
     docs: {

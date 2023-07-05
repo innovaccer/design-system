@@ -300,7 +300,7 @@ const description = `
 `;
 
 export default {
-  title: 'Components/Table/Select All Rows',
+  title: 'Layout/Table/Select All Rows',
   component: Table,
   parameters: {
     docs: {

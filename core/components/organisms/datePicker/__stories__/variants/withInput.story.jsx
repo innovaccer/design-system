@@ -56,7 +56,7 @@ export const withInput = () => {
 };
 
 export default {
-  title: 'Components/DatePicker/Variants/With Input',
+  title: 'Date and Time/DatePicker/Variants/With Input',
   component: DatePicker,
   subcomponents: { InputMask },
 };

@@ -11,6 +11,6 @@ export const successToast = () => (
 );
 
 export default {
-  title: 'Components/Toast/Success Toast',
+  title: 'Indicators/Toast/Success Toast',
   component: Toast,
 };

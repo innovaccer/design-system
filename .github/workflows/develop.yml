@@ -52,7 +52,7 @@ jobs:
       - name: extract stories
         run: npm run extract
         env:
-          STORYBOOK_HOST: 'https://mds-dev.innovaccer.com/iframe.html?id=components-avatargroup-all--all&args=&viewMode=story'
+          STORYBOOK_HOST: 'https://mds-dev.innovaccer.com/iframe.html?id=indicators-avatargroup-all--all&args=&viewMode=story'
 
       - name: build
         run: npm run build

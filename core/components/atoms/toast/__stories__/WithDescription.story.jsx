@@ -7,6 +7,6 @@ export const toastWithDescription = () => (
 );
 
 export default {
-  title: 'Components/Toast/Toast With Description',
+  title: 'Indicators/Toast/Toast With Description',
   component: Toast,
 };

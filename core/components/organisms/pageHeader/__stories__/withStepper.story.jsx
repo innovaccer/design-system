@@ -106,7 +106,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 0 With Stepper',
+  title: 'Layout/PageHeader/Level 0 With Stepper',
   component: PageHeader,
   parameters: {
     docs: {

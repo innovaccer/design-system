@@ -35,7 +35,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Input/All',
+  title: 'Inputs/Input/All',
   component: Input,
   parameters: {
     docs: {

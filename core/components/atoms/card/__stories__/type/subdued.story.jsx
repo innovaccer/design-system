@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CardSubdued } from '@/index';
+import { Card, CardSubdued } from '@/index';
 
 // CSF format story
 export const Subdued = () => {
@@ -11,8 +11,9 @@ export const Subdued = () => {
 };
 
 export default {
-  title: 'Components/Card/Type/Subdued',
-  component: CardSubdued,
+  title: 'Layout/Card/Type/Subdued',
+  component: Card,
+  subcomponents: { CardSubdued },
   parameters: {
     docs: {
       docPage: {

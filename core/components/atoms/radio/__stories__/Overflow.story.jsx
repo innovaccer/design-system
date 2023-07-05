@@ -11,7 +11,7 @@ export const OverflowContent = () => (
 );
 
 export default {
-  title: 'Components/Radio/Overflow Content',
+  title: 'Selection/Radio/Overflow Content',
   component: Radio,
   parameters: {
     docs: {

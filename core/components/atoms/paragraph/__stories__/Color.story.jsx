@@ -93,7 +93,7 @@ export const color = () => {
 };
 
 export default {
-  title: 'Components/Paragraph/Color',
+  title: 'Typography/Paragraph/Color',
   component: Paragraph,
   parameters: {
     docs: {

@@ -11,7 +11,7 @@ export const defaultTextarea = () => (
 );
 
 export default {
-  title: 'Components/Textarea/Default Textarea',
+  title: 'Inputs/Textarea/Default Textarea',
   component: Textarea,
   parameters: {
     docs: {

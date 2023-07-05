@@ -7,6 +7,6 @@ export const info = () => (
 );
 
 export default {
-  title: 'Components/Message/Appearance/Info',
+  title: 'Indicators/Message/Appearance/Info',
   component: Message,
 };

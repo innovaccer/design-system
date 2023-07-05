@@ -4,7 +4,7 @@ import { Pills } from '@/index';
 export const alert = () => <Pills appearance="alert">10</Pills>;
 
 export default {
-  title: 'Components/Pills/Alert',
+  title: 'Indicators/Pills/Alert',
   component: Pills,
   parameters: {
     docs: {

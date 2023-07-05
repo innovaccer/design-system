@@ -7,6 +7,6 @@ export const All = () => {
 };
 
 export default {
-  title: 'Components/InlineMessage/All',
+  title: 'Indicators/InlineMessage/All',
   component: InlineMessage,
 };

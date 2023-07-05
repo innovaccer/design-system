@@ -10,7 +10,7 @@ export const image = () => {
 };
 
 export default {
-  title: 'Components/Icon/Variants/Image',
+  title: 'Icon/Icon/Variants/Image',
   component: Icon,
   parameters: {
     docs: {

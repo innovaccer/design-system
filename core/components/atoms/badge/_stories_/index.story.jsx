@@ -7,6 +7,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Badge/All',
+  title: 'Indicators/Badge/All',
   component: Badge,
 };

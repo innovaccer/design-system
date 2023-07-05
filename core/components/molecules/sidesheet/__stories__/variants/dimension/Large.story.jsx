@@ -122,7 +122,7 @@ const customCode = `() => {
 };`;
 
 export default {
-  title: 'Components/Sidesheet/Variants/Dimension/Large',
+  title: 'Overlays/Sidesheet/Variants/Dimension/Large',
   component: Sidesheet,
   parameters: {
     docs: {

@@ -22,7 +22,7 @@ export const type = () => {
 };
 
 export default {
-  title: 'Components/Icon/Variants/Type',
+  title: 'Icon/Icon/Variants/Type',
   component: Icon,
   parameters: {
     docs: {

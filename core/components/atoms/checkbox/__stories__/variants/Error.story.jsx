@@ -34,7 +34,7 @@ export const error = () => {
 };
 
 export default {
-  title: 'Components/Checkbox/Variants/Error',
+  title: 'Selection/Checkbox/Variants/Error',
   component: Checkbox,
   parameters: {
     docs: {

@@ -111,7 +111,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants/With Pagination',
+  title: 'Layout/Table/Variants/With Pagination',
   component: Table,
   parameters: {
     docs: {

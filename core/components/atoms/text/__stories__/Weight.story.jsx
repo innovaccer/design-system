@@ -13,7 +13,7 @@ export const weight = () => {
 };
 
 export default {
-  title: 'Components/Text/Weight',
+  title: 'Typography/Text/Weight',
   component: Text,
   parameters: {
     docs: {

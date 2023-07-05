@@ -11,6 +11,6 @@ export const defaultCard = () => {
 };
 
 export default {
-  title: 'Components/Card/Type/Default Card',
+  title: 'Layout/Card/Type/Default Card',
   component: Card,
 };

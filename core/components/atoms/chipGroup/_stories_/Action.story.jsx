@@ -30,6 +30,6 @@ export const actionChips = () => {
   return <ChipGroup list={list} onClick={action(`onClick event`)} />;
 };
 export default {
-  title: 'Components/ChipGroup/Action Chips',
+  title: 'Selection/ChipGroup/Action Chips',
   component: ChipGroup,
 };

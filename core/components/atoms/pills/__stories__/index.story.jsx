@@ -7,6 +7,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Pills/All',
+  title: 'Indicators/Pills/All',
   component: Pills,
 };

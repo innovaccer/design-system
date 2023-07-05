@@ -107,7 +107,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs/Dismissible Tab ',
+  title: 'Navigation/Tabs/Dismissible Tab ',
   component: Tabs,
   parameters: {
     docs: {

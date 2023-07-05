@@ -28,7 +28,7 @@ export const position = () => {
 };
 
 export default {
-  title: 'Components/Tooltip/Position',
+  title: 'Overlays/Tooltip/Position',
   component: Tooltip,
   parameters: {
     docs: {

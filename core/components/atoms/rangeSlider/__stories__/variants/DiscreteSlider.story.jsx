@@ -17,6 +17,6 @@ export const discreteSlider = () => {
 };
 
 export default {
-  title: 'Components/RangeSlider/Variants/Discrete Slider',
+  title: 'Selection/RangeSlider/Variants/Discrete Slider',
   component: RangeSlider,
 };

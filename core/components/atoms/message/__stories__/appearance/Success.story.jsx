@@ -7,6 +7,6 @@ export const success = () => (
 );
 
 export default {
-  title: 'Components/Message/Appearance/Success',
+  title: 'Indicators/Message/Appearance/Success',
   component: Message,
 };
