@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { Input, Label, HelpText } from '@/index';
+import { Input, Label, HelpText, Row, Column } from '@/index';
 import ActionButton from '../actionButton';
 
 export const inputWithHelpText = () => {
   const [visibility, setVisibility] = React.useState(false);
   const [visibility2, setVisibility2] = React.useState(false);
   return (
-    <div className="d-flex">
-      <div>
+    <Row>
+      <Column size={4}>
         <Label htmlFor="password-1" withInput={true}>
           Password
         </Label>
@@ -25,8 +25,8 @@ export const inputWithHelpText = () => {
           }
         />
         <HelpText message={'Create a string, unique password'} />
-      </div>
-      <div className="ml-6">
+      </Column>
+      <Column size={4} className="ml-7">
         <Label htmlFor="password-2" withInput={true}>
           Password
         </Label>
@@ -44,8 +44,8 @@ export const inputWithHelpText = () => {
           }
         />
         <HelpText error={true} message={'Create a password with at least 8 characters'} />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 };
 
@@ -55,8 +55,8 @@ const customCode = `() => {
   const [inputValue, setInputValue] = React.useState('Value');
   const [secondInputValue, setSecondInputValue] = React.useState('Value');
   return (
-    <div className="d-flex">
-      <div>
+    <Row>
+      <Column size={4}>
         <Label htmlFor="password-1" withInput={true}>
           Password
         </Label>
@@ -79,8 +79,8 @@ const customCode = `() => {
           }
         />
         <HelpText message={'Create a string, unique password'} />
-      </div>
-      <div className="ml-6">
+      </Column>
+      <Column size={4} className="ml-7">
         <Label htmlFor="password-2" withInput={true}>
           Password
         </Label>
@@ -103,8 +103,8 @@ const customCode = `() => {
           }
         />
         <HelpText error={true} message={'Create a password with at least 8 characters'} />
-      </div>
-    </div>
+      </Column>
+    </Row>
   );
 };`;
 

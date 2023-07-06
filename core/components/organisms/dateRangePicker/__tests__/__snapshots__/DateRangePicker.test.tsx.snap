@@ -38608,7 +38608,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38669,7 +38669,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38749,7 +38749,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38810,7 +38810,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38890,7 +38890,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38951,7 +38951,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40110,7 +40110,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40171,7 +40171,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40251,7 +40251,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40312,7 +40312,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40392,7 +40392,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40453,7 +40453,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -41612,7 +41612,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -41673,7 +41673,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -42739,7 +42739,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -42800,7 +42800,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -43866,7 +43866,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -43927,7 +43927,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -46072,7 +46072,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -46133,7 +46133,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -47199,7 +47199,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -47260,7 +47260,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -48326,7 +48326,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -48387,7 +48387,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--leftIcon Input--rightIcon"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"

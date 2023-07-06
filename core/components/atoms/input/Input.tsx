@@ -192,6 +192,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       [`Input--${size}`]: size,
       ['Input--disabled']: disabled || readOnly,
       ['Input--error']: error,
+      ['Input--leftIcon']: size !== 'tiny' && icon,
+      ['Input--rightIcon']: !disabled && (info || ((actionIcon || onClear) && (value || defaultValue))),
     },
     className
   );
