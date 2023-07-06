@@ -48,6 +48,7 @@ export const ActionButton = (props: ActionButtonProps) => {
     [`material-icons-${type}`]: type && type !== 'filled',
     ['ActionButton']: true,
     [`${className}`]: className,
+    ['ml-4']: true,
   });
 
   const styles = {

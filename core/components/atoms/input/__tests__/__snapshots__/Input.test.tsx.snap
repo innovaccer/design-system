@@ -30,7 +30,7 @@ exports[`Input component
 <body>
   <div>
     <div
-      class="Input Input--regular"
+      class="Input Input--regular Input--withIcon--left"
       data-test="DesignSystem-InputWrapper"
       role="presentation"
       style="min-width: 256px;"
@@ -90,7 +90,7 @@ exports[`Input component
 <body>
   <div>
     <div
-      class="Input Input--regular"
+      class="Input Input--regular Input--withIcon--left"
       data-test="DesignSystem-InputWrapper"
       role="presentation"
       style="min-width: 256px;"
@@ -384,7 +384,7 @@ exports[`Input component
 <body>
   <div>
     <div
-      class="Input Input--regular Input--disabled"
+      class="Input Input--regular Input--disabled Input--withIcon--left"
       data-test="DesignSystem-InputWrapper"
       role="presentation"
       style="min-width: 256px;"
@@ -446,7 +446,7 @@ exports[`Input component
 <body>
   <div>
     <div
-      class="Input Input--regular Input--disabled"
+      class="Input Input--regular Input--disabled Input--withIcon--left"
       data-test="DesignSystem-InputWrapper"
       role="presentation"
       style="min-width: 256px;"
@@ -506,7 +506,7 @@ exports[`Input component
 <body>
   <div>
     <div
-      class="Input Input--regular Input--error"
+      class="Input Input--regular Input--error Input--withIcon--left"
       data-test="DesignSystem-InputWrapper"
       role="presentation"
       style="min-width: 256px;"
@@ -566,7 +566,7 @@ exports[`Input component
 <body>
   <div>
     <div
-      class="Input Input--regular Input--disabled"
+      class="Input Input--regular Input--disabled Input--withIcon--left"
       data-test="DesignSystem-InputWrapper"
       role="presentation"
       style="min-width: 256px;"
