@@ -640,7 +640,7 @@ exports[`Checkbox component
         class="Checkbox-labelWrapper"
       >
         <label
-          class="Checkbox-label"
+          class="Checkbox-label Checkbox-label--tiny"
           data-test="DesignSystem-Checkbox-Label"
           for="Checkbox-Checkbox-Test-uid"
         >
@@ -695,7 +695,7 @@ exports[`Checkbox component
         class="Checkbox-labelWrapper"
       >
         <label
-          class="Checkbox-label"
+          class="Checkbox-label Checkbox-label--tiny"
           data-test="DesignSystem-Checkbox-Label"
           for="Checkbox-Checkbox-Test-uid"
         >
@@ -899,7 +899,7 @@ exports[`Checkbox component
         class="Checkbox-labelWrapper"
       >
         <label
-          class="Checkbox-label"
+          class="Checkbox-label Checkbox-label--tiny"
           data-test="DesignSystem-Checkbox-Label"
           for="Checkbox-Checkbox-Test-uid"
         >
@@ -969,7 +969,7 @@ exports[`Checkbox component
         class="Checkbox-labelWrapper"
       >
         <label
-          class="Checkbox-label"
+          class="Checkbox-label Checkbox-label--tiny"
           data-test="DesignSystem-Checkbox-Label"
           for="Checkbox-Checkbox-Test-uid"
         >
@@ -1107,7 +1107,7 @@ exports[`Checkbox component
         class="Checkbox-labelWrapper"
       >
         <label
-          class="Checkbox-label"
+          class="Checkbox-label Checkbox-label--tiny"
           data-test="DesignSystem-Checkbox-Label"
           for="Checkbox-Checkbox-Test-uid"
         >
