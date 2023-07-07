@@ -79,16 +79,18 @@ export const stepperWithAnimation = () => {
             Configure Initiative
           </Heading>
           <Text weight="strong">Population Filter</Text>
-          <div className="d-flex mt-5 mb-4">
-            <div className="mr-6" style={{ width: 'var(--spacing-8)' }}>
-              <Label withInput={true}>Region</Label>
-              <Dropdown options={options} />
-            </div>
-            <div style={{ width: 'var(--spacing-9)' }}>
-              <Label withInput={true}>Organization</Label>
-              <Dropdown options={options} />
-            </div>
-          </div>
+          <Row className="mt-5 mb-4">
+            <Column size={6} className="d-flex">
+              <div className="mr-6 w-100">
+                <Label withInput={true}>Region</Label>
+                <Dropdown options={options} />
+              </div>
+              <div className="w-100">
+                <Label withInput={true}>Organization</Label>
+                <Dropdown options={options} />
+              </div>
+            </Column>
+          </Row>
           <div className="pt-6">
             <Text weight="strong">Time Period</Text>
             <div className="mt-5">
@@ -277,7 +279,7 @@ export const stepperWithAnimation = () => {
         } `}
         onAnimationEnd={handleAnimationEnd}
       >
-        <Card className={`py-4`}>
+        <Card className="pt-4">
           <Text size="large" weight="strong" className="ml-5">
             Sharing Test Manual
           </Text>
@@ -310,8 +312,13 @@ export const stepperWithAnimation = () => {
   };
 
   const onChange = (activeStep) => {
-    setActiveCard(activeStep);
-    return action(`Active Index: ${activeStep}`)();
+    if (activeStep < active) {
+      setTab(0);
+    } else {
+      setTab(1);
+    }
+    setActive(activeStep);
+    return action(`Active Index: ${activeStep}, currentStep: ${active}`)();
   };
 
   const onNextHandler = () => {
@@ -372,7 +379,7 @@ export const stepperWithAnimation = () => {
         <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndices} />
       </div>
       {renderStep()}
-      <div className="w-100 d-flex justify-content-between Stepper-button">
+      <div className="w-100 d-flex justify-content-between">
         {active === maxSteps ? (
           <div className="w-100 d-flex justify-content-center">
             <Button onClick={resetStepper}>Reset</Button>
@@ -464,16 +471,18 @@ const customCode = `() => {
             Configure Initiative
           </Heading>
           <Text weight="strong">Population Filter</Text>
-          <div className="d-flex mt-5 mb-4">
-            <div className="mr-6" style={{ width: 'var(--spacing-8)' }}>
-              <Label withInput={true}>Region</Label>
-              <Dropdown options={options} />
-            </div>
-            <div style={{ width: 'var(--spacing-9)' }}>
-              <Label withInput={true}>Organization</Label>
-              <Dropdown options={options} />
-            </div>
-          </div>
+          <Row className="mt-5 mb-4">
+            <Column size={6} className="d-flex">
+              <div className="mr-6 w-100">
+                <Label withInput={true}>Region</Label>
+                <Dropdown options={options} />
+              </div>
+              <div className="w-100">
+                <Label withInput={true}>Organization</Label>
+                <Dropdown options={options} />
+              </div>
+            </Column>
+          </Row>
           <div className="pt-6">
             <Text weight="strong">Time Period</Text>
             <div className="mt-5">
@@ -658,7 +667,7 @@ const customCode = `() => {
         className={\`py-4 w-100 position-relative \${getClasses()}\`}
         onAnimationEnd={handleAnimationEnd}
       >
-        <Card className={\`py-4\`}>
+        <Card className="pt-4">
           <Text size="large" weight="strong" className="ml-5">
             Sharing Test Manual
           </Text>
@@ -688,7 +697,12 @@ const customCode = `() => {
   };
 
   const onChange = (activeStep) => {
-    setActiveCard(activeStep);
+    if (activeStep < active) {
+      setTab(0);
+    } else {
+      setTab(1);
+    }
+    setActive(activeStep);
   };
 
   const onNextHandler = () => {
@@ -749,7 +763,7 @@ const customCode = `() => {
         <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndices} />
       </div>
       {renderStep()}
-      <div className="w-100 d-flex justify-content-between Stepper-button">
+      <div className="w-100 d-flex justify-content-between">
         {active === maxSteps ? (
           <div className="w-100 d-flex justify-content-center">
             <Button onClick={resetStepper}>Reset</Button>

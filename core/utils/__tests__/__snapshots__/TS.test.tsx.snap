@@ -924,6 +924,7 @@ exports[`TS renders children 1`] = `
   <a
     class="Link Link--regular Link--default"
     data-test="DesignSystem-Link"
+    tabindex="0"
   >
     Hello World!
   </a>

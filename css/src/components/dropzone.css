@@ -11,7 +11,7 @@
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
 }
@@ -24,42 +24,77 @@
     linear-gradient(var(--primary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
   transition: background-color var(--duration--moderate-01) var(--standard-productive-curve);
   box-sizing: border-box;
 }
 
-.DropzoneAnimation--default {
+.Dropzone-animation {
   animation-delay: var(--duration--fast-02);
+  animation-fill-mode: forwards;
+}
+
+.Dropzone-animation--default {
   animation: dropzoneDefault var(--duration--moderate-01) var(--entrance-productive-curve);
 }
 
-.DropzoneAnimation--active {
-  animation-delay: var(--duration--fast-02);
+.Dropzone-animation--active {
   animation: dropzoneActive var(--duration--moderate-01) var(--entrance-productive-curve);
 }
 
 @keyframes dropzoneDefault {
   from {
     opacity: 0;
-    padding-top: var(--spacing);
+    padding-top: 20px;
   }
 
   to {
     opacity: 1;
-    padding-top: 0;
+    padding-top: var(--spacing-l);
   }
 }
 
 @keyframes dropzoneActive {
   from {
     opacity: 0;
-    padding-top: var(--spacing);
+    padding-top: 20px;
   }
 
   to {
     opacity: 1;
-    padding-top: 0;
+    padding-top: var(--spacing-l);
+  }
+}
+
+.Dropzone-standard--default {
+  animation: dropzoneStandardDefault var(--duration--moderate-01) var(--entrance-productive-curve);
+}
+
+.Dropzone-standard--active {
+  animation: dropzoneStandardActive var(--duration--moderate-01) var(--entrance-productive-curve);
+}
+
+@keyframes dropzoneStandardDefault {
+  from {
+    opacity: 0;
+    padding-top: var(--spacing-2);
+  }
+
+  to {
+    opacity: 1;
+    padding-top: var(--spacing);
+  }
+}
+
+@keyframes dropzoneStandardActive {
+  from {
+    opacity: 0;
+    padding-top: var(--spacing-2);
+  }
+
+  to {
+    opacity: 1;
+    padding-top: var(--spacing);
   }
 }
 
@@ -71,7 +106,7 @@
     linear-gradient(var(--alert) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
 }
 
 .Dropzone--disabled {
@@ -81,24 +116,27 @@
     linear-gradient(var(--secondary) 50%, rgba(255, 255, 255, 0) 0%);
   background-position: top, right, bottom, left;
   background-repeat: repeat-x, repeat-y;
-  background-size: 7px var(--spacing-xs), var(--spacing-xs) 7px;
+  background-size: var(--spacing-2) var(--spacing-xs), var(--spacing-xs) var(--spacing-2);
 }
 
 .Dropzone--standard {
   flex-direction: column;
   height: 196px;
   min-width: 480px;
+  padding: var(--spacing) var(--spacing-xl) var(--spacing-2) var(--spacing-xl);
 }
 
 .Dropzone--compressed {
   flex-direction: row;
   height: 124px;
   min-width: 400px;
+  padding: var(--spacing-l) var(--spacing-xl) var(--spacing-2) var(--spacing-xl);
 }
 
 .Dropzone--tight {
   height: 124px;
   min-width: 320px;
+  padding: var(--spacing-l) var(--spacing-xl) var(--spacing-2) var(--spacing-xl);
 }
 
 .DropzoneWrapper {

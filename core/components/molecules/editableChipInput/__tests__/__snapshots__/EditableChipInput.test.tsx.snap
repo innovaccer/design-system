@@ -20,7 +20,7 @@ exports[`EditableChipInput component
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             tabindex="0"
           >
@@ -30,18 +30,23 @@ exports[`EditableChipInput component
             >
               Chip1
             </span>
-            <i
-              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
-              style="font-size: 16px; width: 16px;"
               tabindex="0"
             >
-              clear_round
-            </i>
+              <i
+                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             tabindex="0"
           >
@@ -51,15 +56,20 @@ exports[`EditableChipInput component
             >
               Chip2
             </span>
-            <i
-              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
-              style="font-size: 16px; width: 16px;"
               tabindex="0"
             >
-              clear_round
-            </i>
+              <i
+                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
         </div>
       </div>
@@ -88,7 +98,7 @@ exports[`EditableChipInput component
           data-test="DesignSystem-EditableChipInput--Default"
         >
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             tabindex="0"
           >
@@ -98,18 +108,23 @@ exports[`EditableChipInput component
             >
               Chip1
             </span>
-            <i
-              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
-              style="font-size: 16px; width: 16px;"
               tabindex="0"
             >
-              clear_round
-            </i>
+              <i
+                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
           <div
-            class="Chip-wrapper Chip Chip--input my-2 mx-2"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
             data-test="DesignSystem-EditableChipInput--Chip"
             tabindex="0"
           >
@@ -119,15 +134,20 @@ exports[`EditableChipInput component
             >
               Chip2
             </span>
-            <i
-              class="material-icons material-icons-round Icon Icon--subtle Chip-icon Chip-icon--right cursor-pointer"
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
               data-test="DesignSystem-GenericChip--clearButton"
               role="button"
-              style="font-size: 16px; width: 16px;"
               tabindex="0"
             >
-              clear_round
-            </i>
+              <i
+                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
         </div>
       </div>

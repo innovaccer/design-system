@@ -39,6 +39,9 @@ export interface ChipProps extends BaseProps {
    * Handler to be called when Chip is clicked
    */
   onClick?: (name: Name) => void;
+  /**
+   * Name of chip
+   */
   name: Name;
 }
 
@@ -54,6 +57,9 @@ export const Chip = (props: ChipProps) => {
     if (!disabled && onClick) onClick(name);
   };
 
+  const clearbutton = type === 'action' ? false : clearButton;
+  const select = type === 'selection' && selected ? true : false;
+
   const chipClass = classNames(
     {
       Chip: true,
@@ -61,12 +67,10 @@ export const Chip = (props: ChipProps) => {
       [`Chip--${type}`]: type && !disabled,
       [`Chip-${type}--selected`]: selected && !disabled,
       [`Chip-selection--selectedDisabled`]: type === 'selection' && selected && disabled,
+      ['Chip-icon--clear']: clearbutton,
     },
     className
   );
-
-  const clearbutton = type === 'action' ? false : clearButton;
-  const select = type === 'selection' && selected ? true : false;
 
   return (
     <GenericChip

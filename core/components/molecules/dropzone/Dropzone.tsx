@@ -44,8 +44,11 @@ export const Dropzone = (props: DropzoneProps) => {
       ['Dropzone--disabled']: disabled,
       ['Dropzone--active']: isDragActive,
       ['Dropzone--error']: isDragReject,
-      ['DropzoneAnimation--default']: !isDragActive,
-      ['DropzoneAnimation--active']: isDragActive && !isDragReject,
+      ['Dropzone-animation']: true,
+      ['Dropzone-animation--default']: !isDragActive && type !== 'standard',
+      ['Dropzone-animation--active']: isDragActive && !isDragReject && type !== 'standard',
+      ['Dropzone-standard--default']: !isDragActive && type === 'standard',
+      ['Dropzone-standard--active']: isDragActive && !isDragReject && type === 'standard',
     },
     className
   );

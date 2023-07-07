@@ -28,14 +28,17 @@ export interface MetaListProps extends BaseProps {
    */
   seperator?: boolean;
   /**
+   * **SOON TO BE DEPRECATED**
    * Color of seperator
    */
   seperatorAppearance: IconProps['appearance'];
   /**
+   * **SOON TO BE DEPRECATED**
    * Appearance of icon in `Meta` component
    */
   iconAppearance: IconProps['appearance'];
   /**
+   * **SOON TO BE DEPRECATED**
    * Appearance of label in `Meta` component
    */
   labelAppearance: TextProps['appearance'];
@@ -46,7 +49,7 @@ export interface MetaListProps extends BaseProps {
 }
 
 export const MetaList = (props: MetaListProps) => {
-  const { list, seperator, seperatorAppearance, iconAppearance, labelAppearance, className, size } = props;
+  const { list, seperator, className, size } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -74,7 +77,7 @@ export const MetaList = (props: MetaListProps) => {
           name="fiber_manual_record"
           size={8}
           className={LeftSeperatorClass}
-          appearance={seperatorAppearance}
+          appearance="disabled"
         />
       )}
 
@@ -84,20 +87,14 @@ export const MetaList = (props: MetaListProps) => {
 
         return (
           <span key={ind} className="MetaList-item">
-            <Meta
-              size={size}
-              label={label}
-              icon={icon}
-              iconAppearance={iconAppearance}
-              labelAppearance={labelAppearance}
-            />
+            <Meta size={size} label={label} icon={icon} />
             {rightSeperator && (
               <Icon
                 data-test="DesignSystem-MetaList--rightSeperator"
                 name="fiber_manual_record"
                 size={8}
                 className={SeperatorClass}
-                appearance={seperatorAppearance}
+                appearance="disabled"
               />
             )}
           </span>

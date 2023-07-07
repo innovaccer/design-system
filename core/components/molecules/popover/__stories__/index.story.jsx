@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { action } from '@/utils/action';
 import { Text, Button, Popover } from '@/index';
 
 // CSF format story
@@ -11,7 +10,6 @@ export const all = () => {
   const hoverable = true;
   const closeOnBackdropClick = true;
   const hideOnReferenceEscape = true;
-  const dark = false;
 
   const onToggle = () => {
     setOpen(!open);
@@ -23,7 +21,6 @@ export const all = () => {
     trigger,
     position,
     appendToBody,
-    dark,
     closeOnBackdropClick,
     hideOnReferenceEscape,
     on,
@@ -35,11 +32,11 @@ export const all = () => {
 
   return (
     <Popover {...options}>
-      <div className="m-6 pr-9">
-        <Text>Popup</Text>
-        <Button className="mt-4" appearance="primary" onClick={action('button clicked inside popover')}>
-          Click
-        </Button>
+      <div className="p-5">
+        <Text>
+          I am a popover, you can use me to display links,
+          <br /> interactive elements, avatars, text formatting, meta data etc.
+        </Text>
       </div>
     </Popover>
   );
@@ -53,9 +50,12 @@ const customCode = `() => {
         on="click"
         trigger={<Button appearance="basic">Open Popover</Button>}
       >
-        <div className='m-6 pr-9'>
-          <Text>Popup</Text>
-          <Button appearance="primary" className="mt-4">Click</Button>
+        <div className='p-5'>
+        <Text>
+          I am a popover, you can use me to display links,<br/> 
+          interactive elements, avatars, text formatting, meta data
+          etc.
+        </Text>
         </div>
       </Popover>
     </div>

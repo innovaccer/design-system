@@ -14,6 +14,20 @@ export interface ChipGroupProps extends BaseProps {
   onClick?: (item: ChipProps) => void;
   /**
    * List of chips
+   *
+   * <pre className="DocPage-codeBlock">
+   *  ChipProps: {
+   *    label: string | React.ReactElement;
+   *    icon?: string;
+   *    clearButton?: boolean;
+   *    disabled?: boolean;
+   *    selected?: boolean;
+   *    type: 'action' | 'selection' | 'input';
+   *    onClose?: (name: number | string | object) => void;
+   *    onClick?: (name: number | string | object) => void;
+   *    name: number | string | object;
+   * }
+   * </pre>
    */
   list: ChipProps[];
 }

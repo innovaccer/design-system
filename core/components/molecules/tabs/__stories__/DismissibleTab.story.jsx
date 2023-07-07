@@ -5,7 +5,7 @@ import { Tabs, Tab } from '@/index';
 // CSF format story
 export const dismissibleTab = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const [hideTab, setHideTab] = React.useState(false);
+  const [dismissList, setDismissList] = React.useState([]);
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);
@@ -14,25 +14,41 @@ export const dismissibleTab = () => {
 
   const onDismissHandler = (tabInfo) => {
     action(`tab-change: ${tabInfo}`)();
-    setHideTab(true);
+    let newList = [...dismissList];
+    newList.push(tabInfo.label);
+    setDismissList(newList);
   };
 
   return (
     <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
-      {!hideTab && (
+      {!dismissList.includes('All') && (
+        <Tab label="All" count={15} className="pl-5">
+          <div>All</div>
+        </Tab>
+      )}
+      {!dismissList.includes('Pending') && (
         <Tab
-          label="Tab(Recommended)"
+          label="Pending"
+          className="pl-5"
           count={10}
           isDismissible={true}
           onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
         >
-          <div>Tab(Recommended)</div>
+          <div>Pending</div>
         </Tab>
       )}
-      <Tab label="All" icon="call_received">
-        <div>All</div>
-      </Tab>
-      <Tab label="Extras" disabled={true}>
+      {!dismissList.includes('Declined') && (
+        <Tab
+          label="Declined"
+          className="pl-5"
+          count={4}
+          isDismissible={true}
+          onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+        >
+          <div>Declined</div>
+        </Tab>
+      )}
+      <Tab label="Extras" disabled={true} count={1}>
         <div>Extras</div>
       </Tab>
     </Tabs>
@@ -40,37 +56,50 @@ export const dismissibleTab = () => {
 };
 
 const customCode = `() => {
+  
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const [hideTab, setHideTab] = React.useState(false);
+  const [dismissList, setDismissList] = React.useState([]);
 
   const onTabChangeHandler = (tabIndex) => {
     setActiveIndex(tabIndex);
   };
 
   const onDismissHandler = (tabInfo) => {
-    setHideTab(true);
+    let newList = [...dismissList];
+    newList.push(tabInfo.label);
+    setDismissList(newList);
   };
 
-  return(
-    <Tabs
-      activeIndex={activeIndex}
-      onTabChange={onTabChangeHandler}
-      className="mb-6"
-    >
-      {!hideTab && (
+  return (
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+      {!dismissList.includes('All') && (
+        <Tab label="All" count={15} className="pl-5">
+          <div>All</div>
+        </Tab>
+      )}
+      {!dismissList.includes('Pending') && (
         <Tab
-          label="Tab(Recommended)"
+          label="Pending"
+          className="pl-5"
           count={10}
           isDismissible={true}
           onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
         >
-          <div>Tab(Recommended)</div>
+          <div>Pending</div>
         </Tab>
       )}
-      <Tab label="All" icon="call_received" isDismissible={true} onDismiss={(tabInfo)=>{console.log(tabInfo)}}>
-        <div>All</div>
-      </Tab>
-      <Tab label="Extras" disabled={true} isDismissible={true} onDismiss={(tabInfo)=>{console.log(tabInfo)}}>
+      {!dismissList.includes('Declined') && (
+        <Tab
+          label="Declined"
+          className="pl-5"
+          count={4}
+          isDismissible={true}
+          onDismiss={(tabInfo) => onDismissHandler(tabInfo)}
+        >
+          <div>Declined</div>
+        </Tab>
+      )}
+      <Tab label="Extras" disabled={true} count={1}>
         <div>Extras</div>
       </Tab>
     </Tabs>

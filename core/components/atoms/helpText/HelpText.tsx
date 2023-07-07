@@ -22,9 +22,11 @@ export const HelpText = (props: HelpTextProps) => {
   }
 
   return (
-    <Text className="mt-3" appearance="subtle" size="small" weight="medium">
-      {message}
-    </Text>
+    <div className="mt-3">
+      <Text appearance="subtle" size="small" weight="medium">
+        {message}
+      </Text>
+    </div>
   );
 };
 

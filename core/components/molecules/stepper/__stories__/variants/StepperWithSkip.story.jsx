@@ -1,58 +1,91 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { steps } from '../Steps';
 import { Stepper, Button } from '@/index';
 
 export const stepperWithSkip = () => {
+  const steps = [
+    {
+      label: 'Step 1',
+      value: 'Step1',
+    },
+    {
+      label: 'Step 2',
+      value: 'Step2',
+    },
+    {
+      label: 'Step 3',
+      value: 'Step3',
+    },
+  ];
   const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(active - 1);
-  const [skipIndexes, setSkipIndexes] = React.useState([]);
-  const requiredSteps = [0];
+  const [completed, setCompleted] = React.useState(-1);
+  const maxSteps = steps.length;
+  const [skipIndices, setSkipIndices] = React.useState([]);
 
   const onChange = (activeStep) => {
-    setActive(activeStep);
     return action(`Active Index: ${activeStep}`)();
   };
 
-  const onClickHandler = () => {
-    if (skipIndexes.includes(active)) {
-      const updatedSkip = [...skipIndexes];
-      const index = updatedSkip.findIndex((skippedIndex) => skippedIndex === active);
+  const onNextHandler = () => {
+    if (skipIndices.includes(active)) {
+      const updatedSkip = [...skipIndices];
+      const index = skipIndices.findIndex((skippedIndex) => skippedIndex === active);
       updatedSkip.splice(index, 1);
-      setSkipIndexes(updatedSkip);
-      // console.log(skipIndexes);
+      setSkipIndices([...updatedSkip]);
     }
-    const updatedActive = active > completed ? active + 1 : completed + 1;
-    if (active > completed) setCompleted(active);
-    setActive(updatedActive);
-    return action(`Active Index: ${updatedActive}`)();
+    setCompleted(active);
+    setActive(active + 1);
   };
 
   const onSkipHandler = () => {
-    const updatedActive = active > completed ? active + 1 : completed + 1;
-    setActive(updatedActive);
-    if (!skipIndexes.includes(active)) {
-      setSkipIndexes([...skipIndexes, active]);
+    if (!skipIndices.includes(active)) {
+      setSkipIndices([...skipIndices, active]);
     }
-    return action(`Active Index: ${updatedActive}`)();
+    setActive(active + 1);
+  };
+
+  const onPreviousHandler = () => {
+    if (skipIndices.includes(active)) {
+      const updatedSkip = [...skipIndices];
+      const index = skipIndices.findIndex((skippedIndex) => skippedIndex === active);
+      updatedSkip.splice(index, 1);
+      setSkipIndices([...updatedSkip]);
+    }
+    setCompleted(active - 1);
+    setActive(active - 1);
+  };
+
+  const resetStepper = () => {
+    setActive(0);
+    setCompleted(-1);
+    setSkipIndices([]);
   };
 
   return (
-    <div
-      className="d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest"
-      style={{ height: '200px' }}
-    >
-      <div className="d-flex justify-content-center py-5 bg-light w-100">
-        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndexes} />
+    <div className="d-flex flex-column py-4 px-6 bg-secondary-lightest">
+      <div className="d-flex justify-content-center py-5 w-100">
+        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndices} />
       </div>
-      <br />
-      <div className="w-25 d-flex justify-content-end">
-        <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className="mr-4">
-          Skip
-        </Button>
-        <Button onClick={onClickHandler} appearance="primary">
-          Next
-        </Button>
+      <div className="w-100 d-flex mt-12 justify-content-between">
+        {active === maxSteps ? (
+          <div className="w-100 d-flex justify-content-center">
+            <Button onClick={resetStepper}>Reset</Button>
+          </div>
+        ) : (
+          <div className="my-4 w-100 d-flex justify-content-between">
+            <Button onClick={onPreviousHandler} disabled={active === 0}>
+              Previous
+            </Button>
+            <div className="d-flex flex-row">
+              <Button className="mr-4" onClick={onSkipHandler}>
+                {active < maxSteps - 1 ? 'Skip' : 'Skip and Finish'}
+              </Button>
+              <Button onClick={onNextHandler} appearance="primary">
+                {active < maxSteps - 1 ? 'Next' : 'Finish'}
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -61,73 +94,90 @@ export const stepperWithSkip = () => {
 const customCode = `() => {
   const steps = [
     {
-      label: 'Step',
-      value: 'Step1'
+      label: 'Step 1',
+      value: 'Step1',
     },
     {
-      label: 'Step',
-      value: 'Step2'
+      label: 'Step 2',
+      value: 'Step2',
     },
     {
-      label: 'Step',
-      value: 'Step3'
+      label: 'Step 3',
+      value: 'Step3',
     },
-    {
-      label: 'Step',
-      value: 'Step4'
-    }
   ];
-
   const [active, setActive] = React.useState(0);
-  const [completed, setCompleted] = React.useState(active - 1);
-  const [skipIndexes, setSkipIndexes] = React.useState([]);
-  const requiredSteps = [0];
+  const [completed, setCompleted] = React.useState(-1);
+  const maxSteps = steps.length;
+  const [skipIndices, setSkipIndices] = React.useState([]);
 
   const onChange = (activeStep) => {
-    setActive(activeStep);
+    return action(\`Active Index: \${activeStep}\`)();
   };
 
-  const onClickHandler = () => {
-    if (skipIndexes.includes(active)) {
-      const updatedSkip = [...skipIndexes];
-      const index = updatedSkip.findIndex(skippedIndex => skippedIndex === active);
+  const onNextHandler = () => {
+    if (skipIndices.includes(active)) {
+      const updatedSkip = [...skipIndices];
+      const index = skipIndices.findIndex((skippedIndex) => skippedIndex === active);
       updatedSkip.splice(index, 1);
-      setSkipIndexes(updatedSkip);
+      setSkipIndices([...updatedSkip]);
     }
-    const updatedActive = active > completed ? active + 1 : completed + 1;
-    if (active > completed) setCompleted(active);
-    setActive(updatedActive);
+    setCompleted(active);
+    setActive(active + 1);
   };
 
   const onSkipHandler = () => {
-    const updatedActive = active > completed ? active + 1 : completed + 1;
-    setActive(updatedActive);
-    if (!skipIndexes.includes(active)) {
-      setSkipIndexes([...skipIndexes, active]);
+    if (!skipIndices.includes(active)) {
+      setSkipIndices([...skipIndices, active]);
     }
+    setActive(active + 1);
+  };
+
+  const onPreviousHandler = () => {
+    if (skipIndices.includes(active)) {
+      const updatedSkip = [...skipIndices];
+      const index = skipIndices.findIndex((skippedIndex) => skippedIndex === active);
+      updatedSkip.splice(index, 1);
+      setSkipIndices([...updatedSkip]);
+    }
+    setCompleted(active - 1);
+    setActive(active - 1);
+  };
+
+  const resetStepper = () => {
+    setActive(0);
+    setCompleted(-1);
+    setSkipIndices([]);
   };
 
   return (
-    <div
-      className="d-flex flex-column justify-content-between align-items-end py-4 px-4 bg-secondary-lightest"
-      style={{ height: '200px' }}
-    >
-      <div className="d-flex justify-content-center py-5 bg-light w-100">
-        <Stepper
-          steps={steps}
-          active={active}
-          completed={completed}
-          onChange={onChange}
-          skipIndexes={skipIndexes}
-        />
+    <div className="d-flex flex-column py-4 px-6 bg-secondary-lightest">
+      <div className="d-flex justify-content-center py-5 w-100">
+        <Stepper steps={steps} active={active} completed={completed} onChange={onChange} skipIndexes={skipIndices} />
       </div>
-      <br />
-      <div className="w-25 d-flex justify-content-end">
-        <Button onClick={onSkipHandler} disabled={requiredSteps.includes(active)} className="mr-4">Skip</Button>
-        <Button onClick={onClickHandler} appearance="primary">Next</Button>
+      <div className="w-100 d-flex mt-12 justify-content-between">
+        {active === maxSteps ? (
+          <div className="w-100 d-flex justify-content-center">
+            <Button onClick={resetStepper}>Reset</Button>
+          </div>
+        ) : (
+          <div className="my-4 w-100 d-flex justify-content-between">
+            <Button onClick={onPreviousHandler} disabled={active === 0}>
+              Previous
+            </Button>
+            <div className="d-flex flex-row">
+              <Button className="mr-4" onClick={onSkipHandler}>
+                {active < maxSteps - 1 ? 'Skip' : 'Skip and Finish'}
+              </Button>
+              <Button onClick={onNextHandler} appearance="primary">
+                {active < maxSteps - 1 ? 'Next' : 'Finish'}
+              </Button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
-  );
+  )
 }`;
 
 export default {

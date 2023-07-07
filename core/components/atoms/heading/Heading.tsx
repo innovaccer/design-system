@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericText from '../_text';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
-import { HeadingAppearance } from '@/common.type';
+import { HeadingAppearance, TextColor } from '@/common.type';
 
 export type HeadingSize = 's' | 'm' | 'l' | 'xl' | 'xxl';
 
@@ -12,13 +12,17 @@ export interface HeadingProps extends BaseProps, BaseHtmlProps<HTMLHeadingElemen
    */
   children: React.ReactText;
   /**
-   * Color of `Heading`
+   * State of `Heading`
    */
   appearance: HeadingAppearance;
   /**
-   * size of `Heading`
+   * Size of `Heading`
    */
   size: HeadingSize;
+  /**
+   * Color of `Text`
+   */
+  color?: TextColor;
 }
 
 const sizeMap = {
@@ -30,13 +34,14 @@ const sizeMap = {
 };
 
 export const Heading = (props: HeadingProps) => {
-  const { appearance, size, children, className, ...rest } = props;
+  const { appearance, size, children, className, color, ...rest } = props;
 
   const classes = classNames(
     {
       Heading: true,
       [`Heading--${size}`]: size,
-      [`Heading--${appearance}`]: appearance,
+      [`Heading--${appearance}`]: !color && appearance,
+      [`color-${color}`]: color,
     },
     className
   );

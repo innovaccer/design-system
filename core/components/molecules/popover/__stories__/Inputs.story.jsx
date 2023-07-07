@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Button, Popover, Label, Textarea, Link, Input } from '@/index';
+import { Button, Popover, Label, Textarea, LinkButton, Input } from '@/index';
 
 // CSF format story
 export const popoverWithInput = () => (
   <div className="mb-13">
-    <Popover position="bottom-start" on="click" trigger={<Link>Open Popover</Link>} open={false}>
+    <Popover position="bottom-start" on="click" trigger={<LinkButton>Open Popover</LinkButton>} open={false}>
       <div className="m-6">
         <Label required={true} withInput={true}>
           Name

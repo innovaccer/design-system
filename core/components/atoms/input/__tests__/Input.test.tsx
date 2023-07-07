@@ -136,6 +136,26 @@ describe('Input component', () => {
   const mapper: Record<string, any> = {
     name: valueHelper(nameValue, { required: true }),
     value: valueHelper(StringValue, { required: true }),
+    readOnly: valueHelper(true, { required: true }),
+    icon: valueHelper(iconValue, { iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(<Input {...attr} />);
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Input component', () => {
+  const mapper: Record<string, any> = {
+    name: valueHelper(nameValue, { required: true }),
+    value: valueHelper(StringValue, { required: true }),
     error: valueHelper(true, { required: true }),
     icon: valueHelper(iconValue, { iterate: true }),
     onChangeHandler: valueHelper(FunctionValue, { required: true }),

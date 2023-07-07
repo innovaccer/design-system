@@ -29,10 +29,10 @@
 }
 
 .Chip-icon--right {
-  margin-left: var(--spacing-m);
   display: flex;
   align-items: center;
   border-radius: 10px;
+  margin-left: var(--spacing-s);
 }
 
 .Chip--action {
@@ -179,4 +179,8 @@
 .Chip-selection--selectedDisabled:focus-visible,
 .Chip-input--disabled:focus-visible {
   outline: none;
+}
+
+.Chip-icon--clear {
+  padding-right: var(--spacing-s);
 }

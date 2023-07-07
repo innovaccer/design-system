@@ -21,6 +21,11 @@
   position: absolute;
 }
 
+.Collapsible--shadow {
+  box-shadow: var(--shadow-l);
+  clip-path: inset(0px -16px 0px 0px);
+}
+
 .Collapsible-body {
   flex-grow: 1;
   overflow-y: auto;
@@ -31,7 +36,22 @@
   padding-top: var(--spacing-m);
   padding-bottom: var(--spacing-m);
   box-sizing: border-box;
+  cursor: pointer;
   display: flex;
+}
+
+.Collapsible-footer:hover {
+  background-color: var(--secondary-lighter);
+}
+
+.Collapsible-footer:focus,
+.Collapsible-footer:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Collapsible-footer:active {
+  background-color: var(--secondary-light);
 }
 
 .Collapsible-footer--seperator {

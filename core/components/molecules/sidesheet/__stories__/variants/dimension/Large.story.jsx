@@ -1,26 +1,16 @@
 import * as React from 'react';
 import { action } from '@/utils/action';
-import { Text, Sidesheet, ModalDescription, Button } from '@/index';
+import { Sidesheet, Button, Label, Text } from '@/index';
 
 export const Large = () => {
   const [open, setOpen] = React.useState(false);
-  const seperator = false;
-  const backIcon = false;
-  const stickFooter = false;
-  const backdropClose = false;
 
   const onClose = () => {
     setOpen(false);
     action('on close triggered')();
   };
 
-  const backIconCallback = () => {
-    action('back icon clicked')();
-  };
-
   const headerOptions = {
-    backIcon,
-    backIconCallback: backIcon ? backIconCallback : undefined,
     heading: 'Heading',
     subHeading: 'Subheading',
   };
@@ -28,10 +18,7 @@ export const Large = () => {
   const options = {
     onClose,
     open,
-    seperator,
     headerOptions,
-    stickFooter,
-    backdropClose,
     footer: (
       <>
         <Button appearance="primary" className="mr-4">
@@ -42,15 +29,24 @@ export const Large = () => {
     ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
-    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true,
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true,
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
+    description: 'Adding a subheading clearly indicates the hierarchy of the information.',
+  };
+
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
   };
 
   return (
@@ -59,9 +55,8 @@ export const Large = () => {
         Open Sidesheet
       </Button>
       <Sidesheet {...options} dimension="large">
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions} />
+        <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
     </div>
   );
@@ -71,12 +66,12 @@ const customCode = `() => {
   const [open, setOpen] = React.useState(false);
 
   const onClose = () => {
-    setOpen(!open);
+    setOpen(false);
   };
 
   const headerOptions = {
     heading: 'Heading',
-    subHeading: 'Subheading'
+    subHeading: 'Subheading',
   };
 
   const options = {
@@ -85,37 +80,49 @@ const customCode = `() => {
     headerOptions,
     footer: (
       <>
-        <Button appearance="primary" className="mr-4">Primary</Button>
+        <Button appearance="primary" className="mr-4">
+          Primary
+        </Button>
         <Button appearance="basic">Basic</Button>
       </>
-    )
+    ),
   };
 
-  const modalDescriptionOptions = {
-    title: 'Description Title',
+  const SidesheetDescription = (params) => {
+    const { label, description } = params;
+    return (
+      <div className="py-4">
+        {label && <Label withInput={!!description}>{label}</Label>}
+        {label && description && <br />}
+        {description && <Text>{description}</Text>}
+      </div>
+    );
+  };
+
+  const sidesheetDescriptionOptions = {
+    label: 'Description Title',
     description: 'Adding a subheading clearly indicates the hierarchy of the information.',
-    removePadding: true
   };
 
-  const modalDescriptionOptionsWithoutTitle = {
-    description: 'Card Sections include supporting text like an article summary or a restaurant description.',
-    removePadding: true
+  const optionsWithoutLabel = {
+    description: 'Card Sections include supporting text like an article summary or a healthcare service description.',
   };
 
   return (
     <div>
-      <Button appearance="primary" onClick={() => setOpen(true)}>Open Sidesheet</Button>
+      <Button appearance="primary" onClick={() => setOpen(true)}>
+        Open Sidesheet
+      </Button>
       <Sidesheet {...options} dimension="large">
-        <Text>Modal Body</Text>
-        <ModalDescription {...modalDescriptionOptions} />
-        <ModalDescription {...modalDescriptionOptionsWithoutTitle} />
+        <SidesheetDescription {...sidesheetDescriptionOptions} />
+        <SidesheetDescription {...optionsWithoutLabel} />
       </Sidesheet>
     </div>
   );
-}`;
+};`;
 
 export default {
-  title: 'Components/Sidesheet/Large',
+  title: 'Components/Sidesheet/Variants/Dimension/Large',
   component: Sidesheet,
   parameters: {
     docs: {

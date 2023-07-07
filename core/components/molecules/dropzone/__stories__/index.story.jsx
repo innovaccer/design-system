@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dropzone, Link, FileList, Button } from '@/index';
+import { Dropzone, FileList, Button, LinkButton } from '@/index';
 
 export const all = () => {
   const [files, setFiles] = React.useState([]);
@@ -61,6 +61,16 @@ export const all = () => {
     );
   };
 
+  const handleDownloadClick = () => {
+    const link = document.createElement('a'); // eslint-disable-line
+    link.href = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    link.download = 'Test.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link); // eslint-disable-line
+    link.click();
+    document.body.removeChild(link); // eslint-disable-line
+  };
+
   return (
     <React.Fragment>
       <Dropzone
@@ -71,15 +81,7 @@ export const all = () => {
         onDrop={onDropHandler}
         maxSize={26214400}
         className="mb-5"
-        sampleFileLink={
-          <Link
-            href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-            download="Test.pdf"
-            target="_blank"
-          >
-            Download sample file
-          </Link>
-        }
+        sampleFileLink={<LinkButton onClick={handleDownloadClick}>Download sample file</LinkButton>}
       />
       <FileList fileList={files.map(({ file, metadata }) => ({ file, ...metadata }))} actionRenderer={actionRenderer} />
     </React.Fragment>
@@ -149,6 +151,16 @@ const customCode = `() => {
     );
   }
 
+  const handleDownloadClick = () => {
+    const link = document.createElement('a');
+    link.href = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+    link.download = 'Test.pdf';
+    link.target = "_blank";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
     <React.Fragment>
       <Dropzone
@@ -159,15 +171,7 @@ const customCode = `() => {
         onDrop={onDropHandler}
         maxSize={26214400}
         className="mb-5"
-        sampleFileLink={(
-          <Link
-            href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-            download="Test.pdf"
-            target="_blank"
-          >
-            Download sample file
-          </Link>
-        )}
+        sampleFileLink={<LinkButton onClick={handleDownloadClick}>Download sample file</LinkButton>}
       />
       <FileList
         fileList={files}
