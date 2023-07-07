@@ -54,3 +54,5 @@ export const Combobox = (props: ComboboxProps) => {
     </div>
   );
 };
+
+export default Combobox;
