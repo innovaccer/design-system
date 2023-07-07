@@ -98,7 +98,7 @@ export const ChipInput = (props: ChipInputProps) => {
     {
       ChipInput: true,
       ['ChipInput--disabled']: disabled,
-      ['ChipInput--withChips']: chips.length > 0,
+      ['ChipInput--withChips']: chips && chips.length > 0,
     },
     className
   );
@@ -181,7 +181,7 @@ export const ChipInput = (props: ChipInputProps) => {
         type={type}
         disabled={disabled}
         key={index}
-        className="my-2 mx-2"
+        className="my-3 mx-2"
         onClick={() => onClick && onClick(chip, index)}
         onClose={() => onChipDeleteHandler(index)}
         {...rest}
@@ -192,33 +192,42 @@ export const ChipInput = (props: ChipInputProps) => {
   return (
     /* TODO(a11y): fix accessibility  */
     /* eslint-disable  */
-    <div data-test="DesignSystem-ChipInput" {...baseProps} className={ChipInputClass} onClick={onClickHandler}>
-      <div className="ChipInput-wrapper">
-        {chips && chips.length > 0 && chipComponents}
-        <input
-          data-test="DesignSystem-ChipInput--Input"
-          ref={inputRef}
-          className="ChipInput-input"
-          autoFocus={autoFocus}
-          placeholder={placeholder}
-          disabled={disabled}
-          value={inputValue}
-          onBlur={onBlur}
-          onFocus={onFocus}
-          onChange={onInputChangeHandler}
-          onKeyDown={onKeyDownHandler}
-        />
-        {/* eslint-enable */}
+    <div data-test="DesignSystem-ChipInput--Border" className="ChipInput-border">
+      <div
+        data-test="DesignSystem-ChipInput"
+        {...baseProps}
+        className={ChipInputClass}
+        onClick={onClickHandler}
+        tabIndex={disabled ? -1 : 0}
+      >
+        <div className="ChipInput-wrapper">
+          {chips && chips.length > 0 && chipComponents}
+          <input
+            data-test="DesignSystem-ChipInput--Input"
+            ref={inputRef}
+            className="ChipInput-input"
+            autoFocus={autoFocus}
+            placeholder={chips && chips.length > 0 ? '' : placeholder}
+            disabled={disabled}
+            value={inputValue}
+            onBlur={onBlur}
+            onFocus={onFocus}
+            onChange={onInputChangeHandler}
+            onKeyDown={onKeyDownHandler}
+          />
+          {/* eslint-enable */}
+        </div>
+        {chips.length > 0 && (
+          <Icon
+            data-test="DesignSystem-ChipInput--Icon"
+            name="close"
+            appearance={disabled ? 'disabled' : 'subtle'}
+            className="ChipInput-icon"
+            onClick={onDeleteAllHandler}
+            tabIndex={disabled ? -1 : 0}
+          />
+        )}
       </div>
-      {chips.length > 0 && (
-        <Icon
-          data-test="DesignSystem-ChipInput--Icon"
-          name="close"
-          appearance="subtle"
-          className="ChipInput-icon"
-          onClick={onDeleteAllHandler}
-        />
-      )}
     </div>
   );
 };
