@@ -98,22 +98,24 @@
   border-color: var(--alert-darker);
 }
 
-.Radio-input ~ .Radio-wrapper:focus {
+.Radio:focus-within .Radio-wrapper {
   outline: 0;
   box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  border-radius: 50%;
 }
 
-.Radio-input ~ .Radio-errorWrapper:focus {
+.Radio:focus-within .Radio-errorWrapper {
   outline: 0;
   box-shadow: var(--shadow-spread) var(--alert-shadow);
+  border-radius: 50%;
 }
 
-.Radio-input:checked ~ .Radio-wrapper:focus {
+.Radio:focus-within .Radio-input:checked ~ .Radio-wrapper {
   outline: 0;
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
 
-.Radio-input:checked ~ .Radio-errorWrapper:focus {
+.Radio:focus-within .Radio-input:checked ~ .Radio-errorWrapper {
   outline: 0;
   box-shadow: var(--shadow-spread) var(--primary-shadow);
 }
