@@ -1,3 +1,78 @@
+## 2.16.1 (2023-07-12)
+
+### Highlights
+
+- feat(collapsible): update state for collapsible footer (f8de839b)
+- feat(paragraph): add color support in paragraph component (a58fb784)
+- feat(heading): add color support in heading component (192582ad)
+- feat(subheading): add color support in subheading component (6a6d0ba9)
+- feat(helptext): add stories for helptext component (73250c26)
+- feat(statusHint): add overflow behaviour of label (2f2ce04b)
+- feat(stepper): add state for stepper component (e7f22270)
+- feat(input): add subcomponent action button for right icon (7e42ddd5)
+- feat(metricinput): add onKeyDown prop (494fa050)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(collapsible): update state for collapsible footer (f8de839b)
+- feat(paragraph): add color support in paragraph component (a58fb784)
+- feat(heading): add color support in heading component (192582ad)
+- feat(subheading): add color support in subheading component (6a6d0ba9)
+- feat(helptext): add stories for helptext component (73250c26)
+- feat(statusHint): add overflow behaviour of label (2f2ce04b)
+- feat(stepper): add state for stepper component (e7f22270)
+- feat(input): add subcomponent action button for right icon (7e42ddd5)
+- feat(metricinput): add onKeyDown prop (494fa050)
+
+### Fixes
+
+- fix(link): update tiny link alignment and stories (8c9c1aab)
+- fix(dropzone): update link with linkButton inside sampleFileLink (3a85f6c0)
+- fix(slider): update cursor for disabled state and fix stories (c092423a)
+- fix(rangeSlider): update cursor for disabled state and fix stories (8f1b02a3)
+- fix(radio): update spacing in radio group and fix stories (0f3af373)
+- fix(link): update disabled focus state (74c48596)
+- fix(sidesheet): update footer,body animation,seperator color and stories (54573a2a)
+- fix(dropdown): update selection label and padding (d5ba8673)
+- fix(tab): fix height, spacing & stories in tab component (ce9b3f59)
+- fix(collapsible): add shadow to open panel on hover event (e7d8c5ed)
+- fix(metalist): remove icon, label & separator appearance (412ceb5e)
+- fix(inlineMessage): align the icon alignment to top for long messages (c099eda7)
+- fix(input): update paddings,labels,lefticon color and readonly tabindex (66d656e1)
+- fix(breadcrumbs): update breadcrumb height and stories (bd3456c6)
+- fix(dropzone): update icon size, animation and border spacing in background image (b047ea9b)
+- fix(chip): fix chip custom icon spacing and disabled state (292cbff9)
+- fix(message): update action link to linkButton (d96e9a85)
+- fix(textarea): update cursor over scroll and shadow on active state (6db7fbac)
+- fix(dropdown): update option grouping logic (8d296c16)
+- fix(metricinput): update decimal operation logic (c9218f72)
+
+### Improvements
+
+- fix(stepper): update stories in stepper component (c2f3ea22)
+- fix(popover): update popover stories (492c60c7)
+- fix(chipGroup): update chip group stories and prop table (6de5cad5)
+- fix(datepicker): update stories for datepicker component (529733b3)
+- fix(docs): fix width of live preview component (4df27509)
+
+### Documentation
+
+- docs(docs): add typography color guidelines (8779a191)
+
+---
+
 ## 2.16.0 (2023-06-15)
 
 ### Highlights
