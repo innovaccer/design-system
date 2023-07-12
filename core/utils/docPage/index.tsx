@@ -159,8 +159,9 @@ const StoryComp = (props: {
   noSandbox: boolean;
   isEmbed: boolean;
   imports: string[];
+  codesandbox: JSX.Element;
 }) => {
-  const { customCode, noHtml, noSandbox } = props;
+  const { customCode, noHtml, noSandbox, codesandbox } = props;
   const { story } = getStory();
   // const comp = sp.storySource.source;
   const comp = story.originalStoryFn();
@@ -330,6 +331,7 @@ const StoryComp = (props: {
             </Card>
           </Column>
         )}
+        {!isExpanded && codesandbox}
       </Row>
     </LiveProvider>
   );
@@ -338,6 +340,7 @@ const StoryComp = (props: {
 export const docPage = () => {
   const { story, storyId } = getStory();
   const sp = story.parameters;
+  console.log('story parameters --------->', sp);
   const isEmbed = window.location.search.includes('embed=min');
   const isEmbedWithProp = window.location.search.includes('embed=prop');
   const isEmbedOnlyProp = window.location.search.includes('embed=prop-table');
@@ -353,6 +356,7 @@ export const docPage = () => {
     noSandbox,
     imports,
     a11yProps,
+    codesandbox,
   } = sp.docs.docPage || {};
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
@@ -380,6 +384,7 @@ export const docPage = () => {
           noSandbox={noSandbox}
           imports={imports}
           isEmbed={isEmbed || isEmbedWithProp}
+          codesandbox={codesandbox}
         />
       )}
 
