@@ -7,6 +7,7 @@ interface IProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLElement>) => void;
   role?: AriaRoleType;
+  tabIndex?: number;
   'aria-label'?: React.AriaAttributes['aria-label'];
 }
 
@@ -28,13 +29,13 @@ const isKeyboardInteractionAllowed = (role: AriaRoleType, key: KeyboardEventKeyT
   return allowedKeys.has(key);
 };
 
-const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', ...rest }: IProps) => {
+const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', tabIndex, ...rest }: IProps) => {
   return {
     ...(onClick
       ? {
           onClick: onClick,
           role: role,
-          tabIndex: 0,
+          tabIndex: tabIndex || 0,
           'aria-label': rest['aria-label'],
           onKeyDown: (e: React.SyntheticEvent<HTMLElement>) => {
             if (onKeyDown) {
@@ -50,7 +51,7 @@ const useAccessibilityProps = ({ onClick, onKeyDown, role = 'button', ...rest }:
             }
           },
         }
-      : { role, 'aria-label': rest['aria-label'] }),
+      : { role, tabIndex, 'aria-label': rest['aria-label'] }),
   };
 };
 
