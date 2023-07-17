@@ -353,6 +353,7 @@ export const docPage = () => {
     noSandbox,
     imports,
     a11yProps,
+    embedSandbox,
   } = sp.docs.docPage || {};
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
@@ -399,6 +400,12 @@ export const docPage = () => {
           <Heading appearance="subtle">Prop table</Heading>
           <ArgsTable {...propsAttr} />
         </>
+      )}
+
+      {!!embedSandbox && (
+        <div className="border-right" style={{ borderRadius: '4px', height: '500px' }}>
+          {embedSandbox}
+        </div>
       )}
     </div>
   );
