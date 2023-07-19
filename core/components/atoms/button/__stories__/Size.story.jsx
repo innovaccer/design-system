@@ -26,7 +26,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/Button/Size',
+  title: 'Actions/Button/Size',
   component: Button,
   parameters: {
     docs: {

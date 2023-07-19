@@ -13,6 +13,6 @@ export const MessageWithTitle = () => (
 );
 
 export default {
-  title: 'Components/Message/Message With Title',
+  title: 'Indicators/Message/Message With Title',
   component: Message,
 };

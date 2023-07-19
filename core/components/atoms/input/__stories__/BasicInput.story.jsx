@@ -39,7 +39,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Input/Basic Input',
+  title: 'Inputs/Input/Basic Input',
   component: Input,
   parameters: {
     docs: {

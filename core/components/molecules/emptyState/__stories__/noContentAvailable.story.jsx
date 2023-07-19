@@ -17,6 +17,6 @@ export const noContentAvailable = () => {
 };
 
 export default {
-  title: 'Components/EmptyState/No Content Available',
+  title: 'Layout/EmptyState/No Content Available',
   component: EmptyState,
 };

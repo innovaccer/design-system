@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GridCell } from '@/index';
+import { GridCell, Grid } from '@/index';
 import './style.css';
 
 export const Grid_Cell = () => {
@@ -49,6 +49,7 @@ export const Grid_Cell = () => {
 };
 
 export default {
-  title: 'Components/Grid/Grid Cell',
-  component: GridCell,
+  title: 'Layout/Grid/Grid Cell',
+  component: Grid,
+  subcomponents: { GridCell },
 };

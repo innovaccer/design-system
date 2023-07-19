@@ -189,7 +189,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Responsiveness',
+  title: 'Layout/PageHeader/Responsiveness',
   component: PageHeader,
   parameters: {
     docs: {

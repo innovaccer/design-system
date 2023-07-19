@@ -26,7 +26,7 @@ export const statusWithoutLabel = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Status Without Label',
+  title: 'Inputs/Dropdown/Status Without Label',
   component: Dropdown,
   parameters: {
     docs: {

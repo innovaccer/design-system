@@ -47,7 +47,7 @@ export const LabelOnTop = () => {
 };
 
 export default {
-  title: 'Components/Dropdown/Label On Top',
+  title: 'Inputs/Dropdown/Label On Top',
   component: Dropdown,
   parameters: {
     docs: {

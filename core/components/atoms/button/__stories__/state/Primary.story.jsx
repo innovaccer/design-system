@@ -34,7 +34,7 @@ export const primary = () => {
 };
 
 export default {
-  title: 'Components/Button/State/Primary',
+  title: 'Actions/Button/State/Primary',
   component: Button,
   parameters: {
     docs: {

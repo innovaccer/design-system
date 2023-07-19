@@ -20,7 +20,7 @@ export const state = () => {
 };
 
 export default {
-  title: 'Components/Switch/Variants/State',
+  title: 'Selection/Switch/Variants/State',
   component: Switch,
   parameters: {
     docs: {

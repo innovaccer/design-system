@@ -54,7 +54,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Tabs/All',
+  title: 'Navigation/Tabs/All',
   component: Tabs,
   parameters: {
     docs: {

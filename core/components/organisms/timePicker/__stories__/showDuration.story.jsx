@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { TimePicker, Label, Row } from '@/index';
 import { TimePickerWithSearch } from '../TimePickerWithSearch';
-import { TimePickerWithInput } from '../TimePickerWithInput';
 
 // CSF format story
 export const timeDuration = () => {
@@ -38,9 +37,8 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/TimePicker/Time Duration',
-  component: TimePickerWithInput,
-  subcomponents: { TimePickerWithSearch },
+  title: 'Date and Time/TimePicker/TimePickerWithSearch/Time Duration',
+  component: TimePickerWithSearch,
   parameters: {
     docs: {
       docPage: {

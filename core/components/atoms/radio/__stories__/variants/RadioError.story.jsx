@@ -5,7 +5,7 @@ import { Radio } from '@/index';
 export const error = () => <Radio label={'Error label'} name={'Radio'} value={'Radio'} error={true} />;
 
 export default {
-  title: 'Components/Radio/Variants/Error',
+  title: 'Selection/Radio/Variants/Error',
   component: Radio,
   parameters: {
     docs: {

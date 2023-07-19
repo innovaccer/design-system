@@ -190,7 +190,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Table/Variants/With Editable Cell',
+  title: 'Layout/Table/Variants/With Editable Cell',
   component: Table,
   parameters: {
     docs: {

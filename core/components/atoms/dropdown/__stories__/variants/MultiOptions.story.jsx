@@ -119,7 +119,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Dropdown/Variants/Multi Options',
+  title: 'Inputs/Dropdown/Variants/Multi Options',
   component: Dropdown,
   parameters: {
     docs: {

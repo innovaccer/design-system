@@ -30,6 +30,6 @@ export const selectionChips = () => {
   return <ChipGroup list={list} onClose={action(`onClose event`)} onClick={action(`onClick event`)} />;
 };
 export default {
-  title: 'Components/ChipGroup/Selection Chips',
+  title: 'Selection/ChipGroup/Selection Chips',
   component: ChipGroup,
 };

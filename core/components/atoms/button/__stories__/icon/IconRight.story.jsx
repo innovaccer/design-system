@@ -8,7 +8,7 @@ export const iconRight = () => (
 );
 
 export default {
-  title: 'Components/Button/Icon/Icon Right',
+  title: 'Actions/Button/Icon/Icon Right',
   component: Button,
   parameters: {
     docs: {

@@ -32,6 +32,6 @@ export const all = () => {
 };
 
 export default {
-  title: 'Components/Toast/All',
+  title: 'Indicators/Toast/All',
   component: Toast,
 };

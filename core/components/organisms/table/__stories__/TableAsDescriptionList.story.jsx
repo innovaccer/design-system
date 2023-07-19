@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Card, List, Text, Button } from '@/index';
+import { Card, List, Text, Button, Table } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { action } from '@/utils/action';
 
@@ -231,7 +231,8 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Table/Table As Description List',
+  title: 'Layout/Table/Table As Description List',
+  component: Table,
   parameters: {
     docs: {
       docPage: {

@@ -7,7 +7,7 @@ export const withInfo = () => {
 };
 
 export default {
-  title: 'Components/Label/Variants/With Info',
+  title: 'Typography/Label/Variants/With Info',
   component: Label,
   parameters: {
     docs: {

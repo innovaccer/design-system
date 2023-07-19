@@ -18,7 +18,7 @@ export const size = () => (
 );
 
 export default {
-  title: 'Components/MetricInput/Variants/Size',
+  title: 'Inputs/MetricInput/Variants/Size',
   component: MetricInput,
   parameters: {
     docs: {

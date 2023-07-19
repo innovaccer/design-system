@@ -76,7 +76,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/FullscreenModal/Variants/Dimension/Medium',
+  title: 'Overlays/FullscreenModal/Variants/Dimension/Medium',
   component: FullscreenModal,
   parameters: {
     docs: {

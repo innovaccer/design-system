@@ -128,6 +128,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>((props
 
   const CheckboxLabelClass = classNames({
     ['Checkbox-label']: true,
+    ['Checkbox-label--tiny']: size === 'tiny',
   });
 
   const setIndeterminate = (indeterminateValue: any) => {

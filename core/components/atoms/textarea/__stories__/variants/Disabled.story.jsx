@@ -51,7 +51,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Textarea/Variants/Disabled',
+  title: 'Inputs/Textarea/Variants/Disabled',
   component: Textarea,
   parameters: {
     docs: {

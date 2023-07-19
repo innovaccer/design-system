@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, PlaceholderImage } from '@/index';
+import { Text, PlaceholderImage, Placeholder } from '@/index';
 
 export const shape = () => {
   const size = 'medium';
@@ -21,8 +21,9 @@ export const shape = () => {
 };
 
 export default {
-  title: 'Components/Loaders/Placeholder/Image/Shape',
-  component: PlaceholderImage,
+  title: 'Loaders/Placeholder/Image/Shape',
+  component: Placeholder,
+  subcomponents: { PlaceholderImage },
   parameters: {
     docs: {
       docPage: {

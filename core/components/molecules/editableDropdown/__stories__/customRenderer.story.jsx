@@ -121,7 +121,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Components/EditableDropdown/Custom Render',
+  title: 'Inputs/EditableDropdown/Custom Render',
   component: EditableDropdown,
   parameters: {
     docs: {

@@ -89,7 +89,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Modal/Variants/Dimesion/Small',
+  title: 'Overlays/Modal/Variants/Dimension/Small',
   component: Modal,
   subcomponents: { ModalHeader, ModalBody, ModalDescription, ModalFooter },
   parameters: {

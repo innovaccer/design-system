@@ -7,7 +7,7 @@ export const optional = () => {
 };
 
 export default {
-  title: 'Components/Label/Variants/Optional',
+  title: 'Typography/Label/Variants/Optional',
   component: Label,
   parameters: {
     docs: {

@@ -35,7 +35,7 @@ export const subtle = () => {
 };
 
 export default {
-  title: 'Components/Pills/Subtle',
+  title: 'Indicators/Pills/Subtle',
   component: Pills,
   parameters: {
     docs: {

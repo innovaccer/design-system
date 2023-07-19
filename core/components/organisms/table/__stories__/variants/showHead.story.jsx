@@ -133,7 +133,7 @@ const customCode = `() => {
 `;
 
 export default {
-  title: 'Components/Table/Variants/Show Head',
+  title: 'Layout/Table/Variants/Show Head',
   component: Table,
   parameters: {
     docs: {

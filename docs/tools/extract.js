@@ -6,7 +6,7 @@ require("dotenv").config({
 const { writeFile } = require('fs-extra');
 const puppeteerCore = require('puppeteer-core');
 
-const STORYBOOK_HOST = process.env.STORYBOOK_HOST || "https://innovaccer.github.io/design-system/iframe.html?id=components-avatar-all--all&args=&viewMode=story"
+const STORYBOOK_HOST = process.env.STORYBOOK_HOST || "https://innovaccer.github.io/design-system/iframe.html?id=indicators-avatar-all--all&args=&viewMode=story"
 
 const read = async (url) => {
     const browser = await usePuppeteerBrowser();

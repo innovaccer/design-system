@@ -32,6 +32,10 @@
   cursor: pointer;
 }
 
+.Checkbox-label--tiny {
+  font-weight: var(--font-weight-bold);
+}
+
 .Checkbox-outerWrapper {
   position: relative;
   margin-top: var(--spacing-s);

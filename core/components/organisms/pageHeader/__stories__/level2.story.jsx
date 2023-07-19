@@ -163,7 +163,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/PageHeader/Level 2 And Beyond',
+  title: 'Layout/PageHeader/Level 2 And Beyond',
   component: PageHeader,
   parameters: {
     docs: {

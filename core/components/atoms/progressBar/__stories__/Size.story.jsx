@@ -20,7 +20,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/ProgressBar/Size',
+  title: 'Loaders/ProgressBar/Size',
   component: ProgressBar,
   parameters: {
     docs: {

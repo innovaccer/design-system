@@ -53,7 +53,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/RangeSlider/Custom Labels',
+  title: 'Selection/RangeSlider/Custom Labels',
   component: RangeSlider,
   parameters: {
     docs: {

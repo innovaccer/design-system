@@ -24,7 +24,7 @@ export const size = () => {
 };
 
 export default {
-  title: 'Components/LinkButton/Size',
+  title: 'Actions/LinkButton/Size',
   component: LinkButton,
   parameters: {
     docs: {

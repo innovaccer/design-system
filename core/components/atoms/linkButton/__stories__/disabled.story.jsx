@@ -15,7 +15,7 @@ export const disabled = () => {
 };
 
 export default {
-  title: 'Components/LinkButton/Disabled',
+  title: 'Actions/LinkButton/Disabled',
   component: LinkButton,
   parameters: {
     docs: {
