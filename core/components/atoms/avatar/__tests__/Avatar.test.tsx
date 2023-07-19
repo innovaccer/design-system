@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Avatar, { AvatarProps as Props, AvatarSize } from '../Avatar';
-import { AccentAppearance } from '@/common.type';
+import Avatar, { AvatarProps as Props } from '../Avatar';
+import { AccentAppearance, AvatarSize } from '@/common.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const appearances: AccentAppearance[] = [

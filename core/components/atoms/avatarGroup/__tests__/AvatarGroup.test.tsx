@@ -30,9 +30,12 @@ export const list = [
   },
 ];
 
+const size = ['tiny', 'regular'];
+
 describe('AvatarGroup component', () => {
   const mapper = {
     list: valueHelper(list, { required: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
