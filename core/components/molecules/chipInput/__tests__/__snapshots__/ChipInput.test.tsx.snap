@@ -186,3 +186,96 @@ exports[`ChipInput component
   </div>
 </body>
 `;
+
+exports[`ChipInput component 
+  error: true, allowDuplicates: true, value: ["1020","80"], chipOptions: {"clearButton":true,"onClick":"[Function]"}, placeholder: "Add value", onChange: "[Function]", onBlur: "[Function]", onFocus: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ChipInput-border ChipInput-border--error"
+      data-test="DesignSystem-ChipInput--Border"
+    >
+      <div
+        class="ChipInput ChipInput--withChips ChipInput--error"
+        data-test="DesignSystem-ChipInput"
+        tabindex="0"
+      >
+        <div
+          class="ChipInput-wrapper"
+        >
+          <div
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            data-test="DesignSystem-ChipInput--Chip"
+            tabindex="0"
+          >
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
+            >
+              1020
+            </span>
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+              >
+                clear
+              </i>
+            </div>
+          </div>
+          <div
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            data-test="DesignSystem-ChipInput--Chip"
+            tabindex="0"
+          >
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
+            >
+              80
+            </span>
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+              >
+                clear
+              </i>
+            </div>
+          </div>
+          <input
+            class="ChipInput-input"
+            data-test="DesignSystem-ChipInput--Input"
+            placeholder=""
+            value=""
+          />
+        </div>
+        <i
+          class="material-icons material-icons-rounded Icon Icon--subtle ChipInput-icon"
+          data-test="DesignSystem-ChipInput--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          tabindex="0"
+        >
+          close
+        </i>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -34,6 +34,11 @@
   padding-right: var(--spacing);
 }
 
+.ChipInput--error,
+.ChipInput--error:focus-within {
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--alert);
+}
+
 .ChipInput-wrapper {
   display: flex;
   flex: 100%;
@@ -44,6 +49,10 @@
 .ChipInput-border:focus-within {
   border-radius: var(--spacing-m);
   box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.ChipInput-border--error:focus-within {
+  box-shadow: var(--shadow-spread) var(--alert-shadow);
 }
 
 .ChipInput-input {

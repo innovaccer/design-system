@@ -38,6 +38,10 @@ export interface ChipInputProps extends BaseProps {
    */
   disabled?: boolean;
   /**
+   * Shows error state in case of failed validation
+   */
+  error?: boolean;
+  /**
    * A placeholder that is displayed if the input has no values.
    */
   placeholder?: string;
@@ -72,6 +76,7 @@ export const ChipInput = (props: ChipInputProps) => {
     chipOptions,
     allowDuplicates,
     disabled,
+    error,
     placeholder,
     defaultValue,
     value,
@@ -94,11 +99,17 @@ export const ChipInput = (props: ChipInputProps) => {
     }
   }, [value]);
 
+  const ChipInputBorderClass = classNames({
+    ['ChipInput-border']: true,
+    ['ChipInput-border--error']: error,
+  });
+
   const ChipInputClass = classNames(
     {
       ChipInput: true,
       ['ChipInput--disabled']: disabled,
       ['ChipInput--withChips']: chips && chips.length > 0,
+      ['ChipInput--error']: error,
     },
     className
   );
@@ -192,7 +203,7 @@ export const ChipInput = (props: ChipInputProps) => {
   return (
     /* TODO(a11y): fix accessibility  */
     /* eslint-disable  */
-    <div data-test="DesignSystem-ChipInput--Border" className="ChipInput-border">
+    <div data-test="DesignSystem-ChipInput--Border" className={ChipInputBorderClass}>
       <div
         data-test="DesignSystem-ChipInput"
         {...baseProps}
