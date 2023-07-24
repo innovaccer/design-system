@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Popover } from '@/index';
 import { AvatarProps, PopoverProps } from '@/index.type';
+import { AvatarSize } from '@/common.type';
 import AvatarCount from './AvatarCount';
 import Avatars from './Avatars';
 import AvatarPopperBody from './AvatarPopperBody';
@@ -46,6 +47,10 @@ export interface AvatarGroupProps extends BaseProps {
    */
   borderColor: string;
   /**
+   * Determines size of `Avatar`
+   */
+  size: AvatarSize;
+  /**
    * **Popover for +x avatar**
    *
    * <pre className="DocPage-codeBlock">
@@ -79,7 +84,7 @@ export interface AvatarGroupProps extends BaseProps {
 }
 
 export const AvatarGroup = (props: AvatarGroupProps) => {
-  const { max, borderColor, popoverOptions, tooltipPosition, list, className } = props;
+  const { max, borderColor, popoverOptions, tooltipPosition, list, className, size } = props;
 
   const {
     popperRenderer,
@@ -96,11 +101,15 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
   const hiddenAvatarCount = list.length > max ? Math.min(list.length - max, 99) : 0;
 
   const style = {
-    borderRadius: '50%',
     backgroundColor: `${borderColor}`,
-    border: `var(--spacing-xs) solid ${borderColor}`,
-    boxShadow: `0 0 0 var(--spacing-xs) ${borderColor}`,
+    boxShadow: `0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) ${borderColor}`,
   };
+
+  const tinyAvatarStyle = {
+    boxShadow: `0 0 0  var(--spacing-s) ${borderColor}`,
+  };
+
+  const avatarStyle = size === 'tiny' ? { ...style, ...tinyAvatarStyle } : style;
 
   const AvatarGroupClass = classNames(
     {
@@ -118,12 +127,17 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   return (
     <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
-      <Avatars avatarList={list.slice(0, max)} avatarStyle={style} tooltipPosition={tooltipPosition} />
+      <Avatars
+        size={size}
+        avatarList={list.slice(0, max)}
+        avatarStyle={avatarStyle}
+        tooltipPosition={tooltipPosition}
+      />
       {list.length - max > 0 && (
         <Popover
           on={on}
           dark={dark}
-          trigger={<AvatarCount hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
+          trigger={<AvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
           position={position}
           appendToBody={appendToBody}
           className={popperClass}
@@ -144,9 +158,10 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 AvatarGroup.displayName = 'AvatarGroup';
 AvatarGroup.defaultProps = {
   max: 2,
-  borderColor: 'var(--white)',
   tooltipPosition: 'bottom',
+  borderColor: 'white',
   popoverOptions: {},
+  size: 'regular',
 };
 
 export default AvatarGroup;

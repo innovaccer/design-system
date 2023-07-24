@@ -1,5 +1,13 @@
 .AvatarGroup-item {
-  margin-right: calc((var(--spacing-s) + var(--spacing-m)) * -1);
+  border-radius: 50%;
+}
+
+.AvatarGroup-item--regular {
+  margin-right: calc(var(--spacing-m) * -1);
+}
+
+.AvatarGroup-item--tiny {
+  margin-right: calc(var(--spacing-s) * -1);
 }
 
 .AvatarGroup-Popper {
@@ -16,4 +24,8 @@
   flex-direction: column;
   align-items: flex-end;
   overflow-y: auto;
+}
+
+.AvatarCount-wrapper {
+  border-radius: 50%;
 }
