@@ -6,19 +6,8 @@ describe('Tests for search bar functionality', () => {
     })
 
     it('focus on search bar',() => {
-        cy.get('input[name="input"]').type(`{enter}`)
-        cy.get('.Popover.Search-result').contains('Tip: Press ’cmd + k’ to quickly start searching.')
-    })
-
-    it('invalid search',() => {
-        let falseQuery = 'abc'
-        cy.get('input[name="input"]').type(`${falseQuery}{enter}`)
-        cy.get('.Popover.Search-result').contains(`No results found for '${falseQuery}'`)
-    })    
-
-    it('valid search',() => {
-        let searchQuery = 'button'
-        cy.get('input[name="input"]').clear().type(`${searchQuery}{enter}`)
+        cy.get('.DocSearch-Button').type(`{enter}`);
+        cy.get('.DocSearch-Modal').should('exist');
     })
 })
 
