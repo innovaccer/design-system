@@ -1,3 +1,46 @@
+## 2.17.0 (2023-07-24)
+
+### Highlights
+
+- feat(radio): add keyboard accessibility for radio component (f78b2e12) 
+- feat(docs): add Algolia doc search support on documentation site (e5d8fb76)
+- feat(stories): stories are grouped in storybook and mdx file (01477a4d)
+- feat(avatargroup): add tiny size in avatar group (459739fc)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(radio): add keyboard accessibility for radio component (f78b2e12) 
+- feat(docs): add Algolia doc search support on documentation site (e5d8fb76)
+- feat(stories): stories are grouped in storybook and mdx file (01477a4d)
+- feat(avatargroup): add tiny size in avatar group (459739fc)
+
+### Fixes
+
+- fix(checkbox): update font weight in tiny checkbox component (4e85e984)
+- fix(docs): fix live preview width in documentation site (092d2cc8)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(badge): update documentation for hover on badge component (59b1cad2)
+
+---
+
 ## 2.16.1 (2023-07-12)
 
 ### Highlights
