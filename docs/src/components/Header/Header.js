@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { useHeaderItems } from '../../util/HeaderItems';
-import './Header.css';
 import { Link as MDSLink, Icon } from '@innovaccer/design-system';
-import Search from '../GlobalSearch';
 import * as HomeIcons from '../../util/HomeIcons';
+import { DocSearch } from '@docsearch/react';
+import './Header.css';
+import '@docsearch/css';
+import './DocSearch.css';
 
 const MenuIcons = ({ name }) => {
   const SvgIcons = HomeIcons[name] || (() => <div></div>);
@@ -27,7 +29,7 @@ const Header = ({ relativePagePath }) => {
 
   const isMobile = () => {
     const currURL = typeof window !== 'undefined' && window.location.pathname;
-    return (currURL && currURL.includes('mobile'));
+    return currURL && currURL.includes('mobile');
   };
 
   const handleNavigate = (link, mobileTab) => {
@@ -38,6 +40,21 @@ const Header = ({ relativePagePath }) => {
       return link;
     }
   };
+
+  function transformItems(items) {
+      return items.map(item => {
+        const liveUrl = 'https://design.innovaccer.com/';
+
+        item.url = window.location.origin.startsWith(liveUrl) ?
+          // On production, return the result as is
+          item.url :
+          // On development, replace `item.url` with a trailing slash,
+          // so that the result link is relative to the server root
+          item.url.replace(liveUrl, '/')
+
+        return item
+      })
+    } 
 
   return (
     <div id="mainHeader" ref={ref} className="header bg-light d-flex w-100 position-sticky px-5">
@@ -85,7 +102,14 @@ const Header = ({ relativePagePath }) => {
           })}
         </div>
       </div>
-      <Search parentRef={ref} />
+      <div className="d-flex justify-content-end align-items-center">
+        <DocSearch
+          appId={process.env.ALGOLIA_APP_ID}
+          indexName={process.env.ALGOLIA_INDEX_NAME}
+          apiKey={process.env.ALGOLIA_API_KEY}
+          transformItems={transformItems}
+        />
+      </div>
     </div>
   );
 };

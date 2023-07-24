@@ -102,7 +102,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
     <div className={RadioClass} data-test="DesignSystem-Radio">
       <div className={RadioOuterWrapper} data-test="DesignSystem-Radio-OuterWrapper">
         <input
-          tabIndex={-1}
+          tabIndex={0}
           {...rest}
           type="radio"
           disabled={disabled}
@@ -116,10 +116,7 @@ export const Radio = React.forwardRef<HTMLInputElement, RadioProps>((props, forw
           id={id}
           data-test="DesignSystem-Radio-Input"
         />
-        {
-          // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-          <span tabIndex={0} data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
-        }
+        <span data-test="DesignSystem-Radio-wrapper" className={RadioWrapper} />
       </div>
       <div className="Radio-labelWrapper">
         {label && (

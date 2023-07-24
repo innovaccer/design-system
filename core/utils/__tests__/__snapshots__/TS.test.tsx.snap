@@ -992,14 +992,13 @@ exports[`TS renders children 1`] = `
         data-test="DesignSystem-Radio-Input"
         id="Hello World!-undefined-Test-uid"
         name="Hello World!"
-        tabindex="-1"
+        tabindex="0"
         type="radio"
         value="Hello World!"
       />
       <span
         class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
         data-test="DesignSystem-Radio-wrapper"
-        tabindex="0"
       />
     </div>
     <div

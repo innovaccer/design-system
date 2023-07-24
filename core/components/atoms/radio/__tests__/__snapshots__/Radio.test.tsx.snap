@@ -18,14 +18,13 @@ exports[`Radio component
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="Options"
         />
         <span
           class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
           data-test="DesignSystem-Radio-wrapper"
-          tabindex="0"
         />
       </div>
       <div
@@ -74,14 +73,13 @@ exports[`Radio component
           disabled=""
           id="Options-Radio-Test-uid"
           name="Options"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="Options"
         />
         <span
           class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
           data-test="DesignSystem-Radio-wrapper"
-          tabindex="0"
         />
       </div>
       <div
@@ -129,14 +127,13 @@ exports[`Radio component
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="Options"
         />
         <span
           class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--regular"
           data-test="DesignSystem-Radio-wrapper"
-          tabindex="0"
         />
       </div>
       <div
@@ -184,14 +181,13 @@ exports[`Radio component
           data-test="DesignSystem-Radio-Input"
           id="Options-Radio-Test-uid"
           name="Options"
-          tabindex="-1"
+          tabindex="0"
           type="radio"
           value="Options"
         />
         <span
           class="Radio-wrapper Radio-defaultWrapper Radio-wrapper--tiny"
           data-test="DesignSystem-Radio-wrapper"
-          tabindex="0"
         />
       </div>
       <div
