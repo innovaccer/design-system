@@ -7,7 +7,7 @@
 }
 
 .live-provider {
-  width: calc(var(--spacing-9) * 3);
+  width: 1440px;
 }
 
 .overflow-scroll {
