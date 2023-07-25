@@ -12,8 +12,9 @@ exports[`TimePicker component prop:error snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -41,8 +42,9 @@ exports[`TimePicker component prop:error snapshot
       <div
         class="Input Input--regular Input--error"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -70,8 +72,9 @@ exports[`TimePicker component prop:inputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -99,8 +102,9 @@ exports[`TimePicker component prop:inputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -128,8 +132,9 @@ exports[`TimePicker component prop:outputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -157,8 +162,9 @@ exports[`TimePicker component prop:outputFormat snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -186,8 +192,9 @@ exports[`TimePicker component prop:time snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -228,8 +235,9 @@ exports[`TimePicker component prop:time snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -270,8 +278,9 @@ exports[`TimePicker component prop:validators snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"
@@ -299,8 +308,9 @@ exports[`TimePicker component prop:validators snapshot
       <div
         class="Input Input--regular"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 256px;"
+        tabindex="0"
       >
         <input
           autocomplete="off"

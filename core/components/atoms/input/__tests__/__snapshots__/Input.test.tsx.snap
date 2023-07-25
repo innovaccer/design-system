@@ -8,8 +8,9 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -32,8 +33,9 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <div
         class="Input-icon Input-icon--left Input-icon--inputBlank"
@@ -68,8 +70,9 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -92,8 +95,9 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <div
         class="Input-icon Input-icon--left"
@@ -128,8 +132,9 @@ exports[`Input component
     <div
       class="Input Input--large"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--large"
@@ -151,7 +156,8 @@ exports[`Input component
     <div
       class="Input Input--large"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <div
         class="Input-inlineLabel"
@@ -183,8 +189,9 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -206,7 +213,8 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <div
         class="Input-inlineLabel"
@@ -238,8 +246,9 @@ exports[`Input component
     <div
       class="Input Input--tiny"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--tiny"
@@ -261,7 +270,8 @@ exports[`Input component
     <div
       class="Input Input--tiny"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <div
         class="Input-inlineLabel"
@@ -293,7 +303,8 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -315,8 +326,9 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -338,8 +350,9 @@ exports[`Input component
     <div
       class="Input Input--regular"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -361,8 +374,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--disabled"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -386,8 +400,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--disabled"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <div
         class="Input-icon Input-icon--left"
@@ -423,8 +438,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--disabled"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -448,8 +464,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--disabled"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <div
         class="Input-icon Input-icon--left"
@@ -485,8 +502,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--error"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -508,8 +526,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--error"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <div
         class="Input-icon Input-icon--left Input-icon--error"
@@ -543,8 +562,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--disabled"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <input
         class="Input-input Input-input--regular"
@@ -568,8 +588,9 @@ exports[`Input component
     <div
       class="Input Input--regular Input--disabled"
       data-test="DesignSystem-InputWrapper"
-      role="presentation"
+      role="textbox"
       style="min-width: 256px;"
+      tabindex="0"
     >
       <div
         class="Input-icon Input-icon--left"

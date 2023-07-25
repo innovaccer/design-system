@@ -262,7 +262,14 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
   const actionButtonSize = size === 'large' ? 'regular' : 'tiny';
 
   return (
-    <div data-test="DesignSystem-MetricInputWrapper" className={classes} onKeyDown={onKeyDown} role="presentation">
+    <div
+      data-test="DesignSystem-MetricInputWrapper"
+      className={classes}
+      onKeyDown={onKeyDown}
+      role="textbox"
+      onClick={() => ref.current?.focus()}
+      tabIndex={0}
+    >
       {icon && (
         <Icon
           data-test="DesignSystem-MetricInput--icon"

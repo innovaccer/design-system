@@ -12,8 +12,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -27,8 +28,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -42,8 +44,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -57,8 +60,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -86,8 +90,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -101,8 +106,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -116,8 +122,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -131,8 +138,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -160,8 +168,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -175,8 +184,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -190,8 +200,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -205,8 +216,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -234,8 +246,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -249,8 +262,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -264,8 +278,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -279,8 +294,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -308,8 +324,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -323,8 +340,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -338,8 +356,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -353,8 +372,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -382,8 +402,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -397,8 +418,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -412,8 +434,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -427,8 +450,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -456,8 +480,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -471,8 +496,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -486,8 +512,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -501,8 +528,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -516,8 +544,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -531,8 +560,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -560,8 +590,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -575,8 +606,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -590,8 +622,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -605,8 +638,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -620,8 +654,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -635,8 +670,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -664,8 +700,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -679,8 +716,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -694,8 +732,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -709,8 +748,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -724,8 +764,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -739,8 +780,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -768,8 +810,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -783,8 +826,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -798,8 +842,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -813,8 +858,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -828,8 +874,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -843,8 +890,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -872,8 +920,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -887,8 +936,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -902,8 +952,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -917,8 +968,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -946,8 +998,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -961,8 +1014,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -976,8 +1030,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -991,8 +1046,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1020,8 +1076,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1035,8 +1092,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1050,8 +1108,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1065,8 +1124,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1094,8 +1154,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1109,8 +1170,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1124,8 +1186,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1139,8 +1202,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1168,8 +1232,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1183,8 +1248,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1198,8 +1264,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1213,8 +1280,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1242,8 +1310,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1257,8 +1326,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1272,8 +1342,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1287,8 +1358,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1316,8 +1388,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1331,8 +1404,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1346,8 +1420,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1361,8 +1436,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1390,8 +1466,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1405,8 +1482,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1420,8 +1498,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1435,8 +1514,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1464,8 +1544,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1479,8 +1560,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1494,8 +1576,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1509,8 +1592,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1524,8 +1608,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1539,8 +1624,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1568,8 +1654,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1583,8 +1670,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1598,8 +1686,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1613,8 +1702,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1628,8 +1718,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1643,8 +1734,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1672,8 +1764,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1687,8 +1780,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1702,8 +1796,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1717,8 +1812,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1732,8 +1828,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1747,8 +1844,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1776,8 +1874,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1791,8 +1890,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1806,8 +1906,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1821,8 +1922,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1836,8 +1938,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1851,8 +1954,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1880,8 +1984,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1895,8 +2000,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1910,8 +2016,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1925,8 +2032,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1954,8 +2062,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1969,8 +2078,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1984,8 +2094,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -1999,8 +2110,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2028,8 +2140,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2043,8 +2156,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2058,8 +2172,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2073,8 +2188,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2102,8 +2218,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2117,8 +2234,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2132,8 +2250,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2147,8 +2266,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2176,8 +2296,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2191,8 +2312,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2206,8 +2328,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2221,8 +2344,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2250,8 +2374,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2265,8 +2390,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2280,8 +2406,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2295,8 +2422,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2324,8 +2452,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2339,8 +2468,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2354,8 +2484,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2369,8 +2500,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2398,8 +2530,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2413,8 +2546,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2428,8 +2562,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2443,8 +2578,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2458,8 +2594,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2473,8 +2610,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2502,8 +2640,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2517,8 +2656,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2532,8 +2672,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2547,8 +2688,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2562,8 +2704,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2577,8 +2720,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2606,8 +2750,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2621,8 +2766,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2636,8 +2782,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2651,8 +2798,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2666,8 +2814,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2681,8 +2830,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2710,8 +2860,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2725,8 +2876,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2740,8 +2892,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2755,8 +2908,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2770,8 +2924,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2785,8 +2940,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2814,8 +2970,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2829,8 +2986,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2844,8 +3002,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2859,8 +3018,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2888,8 +3048,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2903,8 +3064,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2918,8 +3080,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2933,8 +3096,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2962,8 +3126,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2977,8 +3142,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -2992,8 +3158,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
@@ -3007,8 +3174,9 @@ exports[`VerificationCodeInput component
       <div
         class="Input Input--large VerificationCodeInput-Input ml-4"
         data-test="DesignSystem-InputWrapper"
-        role="presentation"
+        role="textbox"
         style="min-width: 40px;"
+        tabindex="0"
       >
         <input
           class="Input-input Input-input--large"
