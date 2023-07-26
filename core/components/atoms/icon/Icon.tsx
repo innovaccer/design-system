@@ -69,6 +69,10 @@ export interface IconProps extends BaseProps {
    */
   children?: React.ReactNode;
   /**
+   * Switch between symbols and icon
+   */
+  switchIcon?: boolean;
+  /**
    * The tabindex global attribute indicates that its element can be focused, and
    * where it participates in sequential keyboard navigation.
    */
@@ -76,7 +80,7 @@ export interface IconProps extends BaseProps {
 }
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children } = props;
+  const { appearance, className, name, size, children, switchIcon } = props;
   const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
@@ -97,8 +101,11 @@ export const Icon = (props: IconProps) => {
   const color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
 
   const iconClass = classNames({
-    ['material-icons']: true, // change to !type || type === 'filled' after migration
-    [`material-icons-${mapper(type)}`]: type && type !== 'filled',
+    ['material-icons']: switchIcon, // change to !type || type === 'filled' after migration
+    [`material-icons-${mapper(type)}`]: switchIcon && type && type !== 'filled',
+    ['material-symbols']: !switchIcon,
+    ['material-symbols-rounded']: !switchIcon && type === 'round',
+    ['material-symbols-outlined']: !switchIcon && type === 'outlined',
     ['Icon']: true,
     [`Icon--${color}`]: appearance,
     [`${className}`]: className,
@@ -118,9 +125,17 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
-      {type ? `${name}_${type}` : name}
-    </i>
+    <>
+      {switchIcon ? (
+        <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
+          {type ? `${name}_${type}` : name}
+        </i>
+      ) : (
+        <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
+          {name}
+        </i>
+      )}
+    </>
   );
 };
 
