@@ -228,6 +228,15 @@ const HeaderCell = (props: HeaderCellProps) => {
 };
 
 const BodyCell = (props: BodyCellProps) => {
+  // const [isNestedRowDisabled, setIsNestedRowDisabled] = React.useState(false);
+
+  // React.useEffect(() => {
+  //   const isDisabled = !GridNestedRow(nestedProps);
+  //   setIsNestedRowDisabled(isDisabled);
+  // }, []);
+
+  console.log('testttt');
+
   const context = React.useContext(GridContext);
   const { data, schema, expandedState, rowIndex, colIndex } = props;
 
@@ -248,9 +257,11 @@ const BodyCell = (props: BodyCellProps) => {
   const nestedProps = {
     data,
     rowIndex,
+    expanded,
   };
 
   const isNestedRowDisabled = !GridNestedRow(nestedProps);
+  // const isNestedRowDisabled = true;
 
   return (
     <div className="Grid-cellContent">
@@ -307,6 +318,19 @@ export const Cell = (props: CellProps) => {
   const { width, minWidth = 96, maxWidth = 800 } = getCellSize(cellType);
 
   const [isDragged, setIsDragged] = React.useState<boolean>(false);
+
+  const [isNestedRowDisabled, setIsNestedRowDisabled] = React.useState(false);
+
+  const nestedProps = {
+    data,
+    rowIndex,
+    // expanded,
+  };
+
+  React.useEffect(() => {
+    const isDisabled = false;
+    setIsNestedRowDisabled(isDisabled);
+  }, []);
 
   const cellClass = classNames({
     'Grid-cell': true,

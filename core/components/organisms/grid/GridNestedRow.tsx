@@ -17,6 +17,8 @@ export interface NestedRowProps {
 
 export const GridNestedRow = (props: GridNestedRowProps) => {
   const context = React.useContext(GridContext);
+  console.log('context', context, 'props', props);
+  console.log('testttt');
 
   const { schema, loading, nestedRowRenderer } = context;
 
