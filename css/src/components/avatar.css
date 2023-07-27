@@ -9,7 +9,7 @@
   overflow: hidden;
   text-transform: uppercase;
   border-radius: 50%;
-  cursor: pointer;
+  cursor: default;
 }
 
 .Avatar--regular {
