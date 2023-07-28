@@ -1,11 +1,9 @@
 .ChipInput {
-  box-sizing: border-box;
   display: flex;
   border-radius: var(--spacing-m);
-  border: var(--border);
-  padding-left: var(--spacing-s);
-  padding-top: var(--spacing-xs);
-  padding-bottom: var(--spacing-xs);
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--secondary);
+  padding-left: 10px;
+  padding-right: 10px;
   background: var(--white);
   cursor: text;
   flex: 100%;
@@ -18,15 +16,23 @@
   flex-wrap: wrap;
 }
 
-.ChipInput:focus-within {
-  border-color: var(--primary);
+.ChipInput-border:focus-within {
+  border-radius: var(--spacing-m);
   box-shadow: var(--shadow-spread) var(--primary-shadow);
+}
+
+.ChipInput:focus-within {
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--primary);
 }
 
 .ChipInput--disabled {
   background: var(--secondary-lightest);
   border-color: var(--secondary-light);
   pointer-events: none;
+}
+
+.ChipInput--withChips {
+  padding-right: var(--spacing);
 }
 
 .ChipInput-input {
@@ -38,17 +44,21 @@
   flex: 0px;
   box-sizing: border-box;
   height: var(--spacing-xl);
-  margin-top: var(--spacing-s);
-  margin-bottom: var(--spacing-s);
-  padding-left: var(--spacing-m);
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
   font-family: var(--font-family);
   font-size: var(--font-size);
 }
 
 .ChipInput-icon {
   height: var(--spacing-2);
+  padding: var(--spacing-s);
+  margin-left: var(--spacing);
   margin-top: var(--spacing-m);
-  padding-top: var(--spacing-s);
-  margin-right: var(--spacing-l);
   cursor: pointer;
+  border-radius: 50%;
+}
+
+.ChipInput-icon:hover {
+  background-color: var(--secondary);
 }

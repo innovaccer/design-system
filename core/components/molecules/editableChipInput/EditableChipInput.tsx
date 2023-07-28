@@ -123,7 +123,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             key={index}
             name={val}
             label={val}
-            className="my-2 mx-2"
+            className="my-3 mx-2"
             {...chipObject}
             onClose={() => onChipDelete(index)}
             onClick={() => onClick && onClick(val, index)}
@@ -151,7 +151,12 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
       );
     }
     return (
-      <div className={defaultClasses} data-test="DesignSystem-EditableChipInput--Default">
+      <div
+        className={defaultClasses}
+        data-test="DesignSystem-EditableChipInput--Default"
+        onFocus={() => setShowComponent(true)}
+        tabIndex={0} //eslint-disable-line jsx-a11y/no-noninteractive-tabindex
+      >
         {renderDefaultState()}
       </div>
     );
@@ -169,6 +174,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             icon="clear"
             className="mr-3"
             size="tiny"
+            largeIcon={true}
             onClick={() => {
               setDefaultComponent(value);
             }}
@@ -177,6 +183,7 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
             data-test="DesignSystem-EditableChipInput--SaveButton"
             icon="check"
             appearance="primary"
+            largeIcon={true}
             size="tiny"
             disabled={disableSaveAction}
             onClick={onSaveChanges}

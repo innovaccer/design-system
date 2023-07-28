@@ -2,11 +2,12 @@
   position: relative;
   width: 100%;
 }
+
 .EditableChipInput-default {
   display: flex;
   align-items: center;
   padding-left: var(--spacing-l);
-  border-left: var(--spacing-xs) solid transparent;
+  padding-right: var(--spacing-l);
   min-height: var(--spacing-3);
   flex-wrap: wrap;
 }
@@ -14,21 +15,20 @@
 .EditableChipInput-defaultWithChips {
   display: flex;
   align-items: center;
-  padding-left: var(--spacing);
-  border: var(--spacing-xs) solid transparent;
-  padding-top: var(--spacing-xs);
-  padding-bottom: var(--spacing-xs);
-  max-width: calc(100% - 28px);
+  padding-left: 10px;
+  padding-right: 10px;
   flex-wrap: wrap;
 }
 
 .EditableChipInput-defaultWithChips:hover,
 .EditableChipInput-default:hover {
-  background-color: var(--secondary-lightest);
+  background-color: var(--secondary-lighter);
+  border-radius: var(--spacing-m);
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--secondary-dark);
 }
 
 .EditableChipInput-chipInput {
-  padding-left: var(--spacing);
+  padding-right: 10px;
 }
 
 .EditableChipInput-actions {

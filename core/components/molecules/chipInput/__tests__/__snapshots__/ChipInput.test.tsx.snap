@@ -6,80 +6,85 @@ exports[`ChipInput component
 <body>
   <div>
     <div
-      class="ChipInput ChipInput--withChips"
-      data-test="DesignSystem-ChipInput"
+      class="ChipInput-border"
+      data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput-wrapper"
+        class="ChipInput ChipInput--withChips"
+        data-test="DesignSystem-ChipInput"
       >
         <div
-          class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
-          data-test="DesignSystem-ChipInput--Chip"
-          tabindex="0"
+          class="ChipInput-wrapper"
         >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
-          >
-            1020
-          </span>
           <div
-            class="Chip-icon Chip-icon--right cursor-pointer"
-            data-test="DesignSystem-GenericChip--clearButton"
-            role="button"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            data-test="DesignSystem-ChipInput--Chip"
             tabindex="0"
           >
-            <i
-              class="material-icons material-icons-round Icon Icon--subtle p-2"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
             >
-              clear_round
-            </i>
+              1020
+            </span>
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
-        </div>
-        <div
-          class="Chip-wrapper Chip Chip--input Chip-icon--clear my-2 mx-2"
-          data-test="DesignSystem-ChipInput--Chip"
-          tabindex="0"
-        >
-          <span
-            class="Text Text--regular color-inverse Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
-          >
-            80
-          </span>
           <div
-            class="Chip-icon Chip-icon--right cursor-pointer"
-            data-test="DesignSystem-GenericChip--clearButton"
-            role="button"
+            class="Chip-wrapper Chip Chip--input Chip-icon--clear my-3 mx-2"
+            data-test="DesignSystem-ChipInput--Chip"
             tabindex="0"
           >
-            <i
-              class="material-icons material-icons-round Icon Icon--subtle p-2"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <span
+              class="Text Text--regular color-inverse Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
             >
-              clear_round
-            </i>
+              80
+            </span>
+            <div
+              class="Chip-icon Chip-icon--right cursor-pointer"
+              data-test="DesignSystem-GenericChip--clearButton"
+              role="button"
+              tabindex="0"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
+          <input
+            class="ChipInput-input"
+            data-test="DesignSystem-ChipInput--Input"
+            placeholder=""
+            value=""
+          />
         </div>
-        <input
-          class="ChipInput-input"
-          data-test="DesignSystem-ChipInput--Input"
-          placeholder="Add value"
-          value=""
-        />
+        <i
+          class="material-icons material-icons-round Icon Icon--subtle ChipInput-icon"
+          data-test="DesignSystem-ChipInput--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+          tabindex="0"
+        >
+          close_round
+        </i>
       </div>
-      <i
-        class="material-icons material-icons-round Icon Icon--subtle ChipInput-icon"
-        data-test="DesignSystem-ChipInput--Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-        tabindex="0"
-      >
-        close_round
-      </i>
     </div>
   </div>
 </body>
@@ -91,81 +96,86 @@ exports[`ChipInput component
 <body>
   <div>
     <div
-      class="ChipInput ChipInput--disabled ChipInput--withChips"
-      data-test="DesignSystem-ChipInput"
+      class="ChipInput-border"
+      data-test="DesignSystem-ChipInput--Border"
     >
       <div
-        class="ChipInput-wrapper"
+        class="ChipInput ChipInput--disabled ChipInput--withChips"
+        data-test="DesignSystem-ChipInput"
       >
         <div
-          class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-2 mx-2"
-          data-test="DesignSystem-ChipInput--Chip"
-          tabindex="-1"
+          class="ChipInput-wrapper"
         >
-          <span
-            class="Text Text--regular color-inverse-lightest Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
-          >
-            1020
-          </span>
           <div
-            class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
-            data-test="DesignSystem-GenericChip--clearButton"
-            role="button"
+            class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-3 mx-2"
+            data-test="DesignSystem-ChipInput--Chip"
             tabindex="-1"
           >
-            <i
-              class="material-icons material-icons-round Icon Icon--disabled p-2"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <span
+              class="Text Text--regular color-inverse-lightest Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
             >
-              clear_round
-            </i>
+              1020
+            </span>
+            <div
+              class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
+              data-test="DesignSystem-GenericChip--clearButton"
+              role="button"
+              tabindex="-1"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--disabled p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
-        </div>
-        <div
-          class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-2 mx-2"
-          data-test="DesignSystem-ChipInput--Chip"
-          tabindex="-1"
-        >
-          <span
-            class="Text Text--regular color-inverse-lightest Chip-text"
-            data-test="DesignSystem-GenericChip--Text"
-          >
-            80
-          </span>
           <div
-            class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
-            data-test="DesignSystem-GenericChip--clearButton"
-            role="button"
+            class="Chip-wrapper Chip Chip-input--disabled Chip-icon--clear my-3 mx-2"
+            data-test="DesignSystem-ChipInput--Chip"
             tabindex="-1"
           >
-            <i
-              class="material-icons material-icons-round Icon Icon--disabled p-2"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <span
+              class="Text Text--regular color-inverse-lightest Chip-text"
+              data-test="DesignSystem-GenericChip--Text"
             >
-              clear_round
-            </i>
+              80
+            </span>
+            <div
+              class="Chip-icon Chip-icon--right Chip-icon-disabled--right"
+              data-test="DesignSystem-GenericChip--clearButton"
+              role="button"
+              tabindex="-1"
+            >
+              <i
+                class="material-icons material-icons-round Icon Icon--disabled p-2"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                clear_round
+              </i>
+            </div>
           </div>
+          <input
+            class="ChipInput-input"
+            data-test="DesignSystem-ChipInput--Input"
+            disabled=""
+            placeholder=""
+            value=""
+          />
         </div>
-        <input
-          class="ChipInput-input"
-          data-test="DesignSystem-ChipInput--Input"
-          disabled=""
-          placeholder="Add value"
-          value=""
-        />
+        <i
+          class="material-icons material-icons-round Icon Icon--subtle ChipInput-icon"
+          data-test="DesignSystem-ChipInput--Icon"
+          role="button"
+          style="font-size: 16px; width: 16px;"
+          tabindex="0"
+        >
+          close_round
+        </i>
       </div>
-      <i
-        class="material-icons material-icons-round Icon Icon--subtle ChipInput-icon"
-        data-test="DesignSystem-ChipInput--Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-        tabindex="0"
-      >
-        close_round
-      </i>
     </div>
   </div>
 </body>

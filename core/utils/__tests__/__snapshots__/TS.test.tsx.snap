@@ -2508,6 +2508,7 @@ exports[`TS renders children 1`] = `
         <div
           class="EditableChipInput-default"
           data-test="DesignSystem-EditableChipInput--Default"
+          tabindex="0"
         >
           <span
             class="Text Text--default Text--regular pt-1"
