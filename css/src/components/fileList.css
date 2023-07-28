@@ -15,13 +15,12 @@
 }
 .FileItem-fileContent {
   display: flex;
-  justify-content: center;
   align-items: center;
   min-width: 0;
 }
 .FileItem-actions {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 .FileItem-file {
@@ -31,13 +30,13 @@
 }
 .FileItem-size {
   margin-right: var(--spacing);
-  margin-left: var(--spacing);
   flex-shrink: 0;
 }
 .FileItem-text {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: var(--spacing);
   margin-left: var(--spacing-l);
 }
 .FileItem-error {
