@@ -135,8 +135,10 @@ const customCode = `
       schema,
       data,
       loading,
-      rowIndex
+      rowIndex,
+      expanded
     } = props;
+
     if (rowIndex % 2) {
       return false;
     }

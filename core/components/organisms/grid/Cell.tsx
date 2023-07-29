@@ -5,13 +5,13 @@ import { Dropdown, Placeholder, PlaceholderParagraph, Text, Icon, Button, Toolti
 import { DropdownProps, GridCellProps } from '@/index.type';
 import { resizeCol, hasSchema } from './utility';
 import { getCellSize, getWidth } from './columnUtility';
-import { GridNestedRow } from './GridNestedRow';
 import { GridHeadProps } from './GridHead';
 import GridContext from './GridContext';
 
 interface SharedCellProps {
   schema: ColumnSchema;
   colIndex: number;
+  nestedRowData?: React.ReactNode;
 }
 
 type HeaderCellProps = SharedCellProps & {
@@ -229,7 +229,7 @@ const HeaderCell = (props: HeaderCellProps) => {
 
 const BodyCell = (props: BodyCellProps) => {
   const context = React.useContext(GridContext);
-  const { data, schema, expandedState, rowIndex, colIndex } = props;
+  const { data, schema, expandedState, rowIndex, colIndex, nestedRowData } = props;
 
   const { size, loading, nestedRows } = context;
 
@@ -245,25 +245,18 @@ const BodyCell = (props: BodyCellProps) => {
     expanded,
   };
 
-  const nestedProps = {
-    data,
-    rowIndex,
-  };
-
-  const isNestedRowDisabled = !GridNestedRow(nestedProps);
-
   return (
     <div className="Grid-cellContent">
       {colIndex === 0 && nestedRows && (
         <>
-          {!isNestedRowDisabled ? (
+          {nestedRowData ? (
             <Icon
               className={'Grid-nestedRowTrigger'}
               name={expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}
               size={20}
               appearance={'default'}
               onClick={(e) => {
-                if (!isNestedRowDisabled) {
+                if (nestedRowData) {
                   e.stopPropagation();
                   setExpanded(!expanded);
                 }
@@ -298,6 +291,7 @@ export const Cell = (props: CellProps) => {
     onFilterChange,
     updateColumnSchema,
     reorderColumn,
+    nestedRowData,
   } = props as CellProps;
 
   const { draggable, separator, nestedRows, ref, withCheckbox } = context;
@@ -381,6 +375,7 @@ export const Cell = (props: CellProps) => {
           data={data!}
           schema={schema}
           expandedState={expandedState!}
+          nestedRowData={nestedRowData}
         />
       )}
     </div>
