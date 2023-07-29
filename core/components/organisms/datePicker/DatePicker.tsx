@@ -7,6 +7,7 @@ import { Validators } from '@/utils/types';
 import { convertToDate, translateToString, compareDate, getDateInfo } from '../calendar/utility';
 import { Trigger } from './Trigger';
 import config from '../calendar/config';
+import classNames from 'classnames';
 
 export type DatePickerProps = SharedProps & {
   /**
@@ -192,6 +193,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       size,
       showTodayDate = true,
       children = <></>,
+      view,
       ...rest
     } = this.props;
 
@@ -213,6 +215,14 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
       }
       return !isTodayDateDisabled;
     };
+
+    const todayChipClass = classNames({
+      'd-flex justify-content-center': true,
+      'pb-5': size === 'small',
+      'pb-6': size === 'large',
+      'pt-3': size === 'large' && view === 'year',
+    });
+
     return (
       <div>
         <div className="d-flex">
@@ -221,13 +231,14 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
             {...rest}
             size={size}
             date={currDate}
+            view={view}
             disabledBefore={dateDisabledBefore}
             disabledAfter={dateDisabledAfter}
             onDateChange={this.onDateChangeHandler}
           />
         </div>
         {showTodayDate && (
-          <div className="d-flex justify-content-center pb-6" data-test="DesignSystem-Select--TodaysDate-wrapper">
+          <div className={todayChipClass} data-test="DesignSystem-Select--TodaysDate-wrapper">
             <Chip
               label={`Today, ${todayMonthAndDate}`}
               name="chip"
