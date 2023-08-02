@@ -143,7 +143,7 @@ const customCode = `() => {
     {
       name: 'name',
       displayName: 'Name',
-      width: '40%',
+      width: '35%',
       resizable: true,
       separator: true,
       tooltip: true,
@@ -178,7 +178,7 @@ const customCode = `() => {
     {
       name: 'email',
       displayName: 'Email',
-      width: 350,
+      width: '35%',
       resizable: true,
       sorting: false,
       cellType: 'WITH_META_LIST'
@@ -186,7 +186,7 @@ const customCode = `() => {
     {
       name: 'gender',
       displayName: 'Gender',
-      width: 200,
+      width: '30%',
       resizable: true,
       comparator: (a, b) => a.gender.localeCompare(b.gender),
       cellType: 'STATUS_HINT',
@@ -317,7 +317,7 @@ const customCode = `() => {
           onClick={setActive}
         />
       </Collapsible>
-      <div className="ml-6 d-flex flex-column">
+      <Column size={8} className="ml-6 d-flex flex-column">
         <Heading className="my-5">Assessments</Heading>
         <Card className="h-100 overflow-hidden">
           <Table
@@ -338,7 +338,7 @@ const customCode = `() => {
             pageSize={5}
           />
         </Card>
-      </div>
+      </Column>
     </div>
   );
 }`;
