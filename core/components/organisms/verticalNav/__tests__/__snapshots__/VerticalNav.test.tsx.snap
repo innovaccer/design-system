@@ -16,6 +16,7 @@ exports[`Vertical Navigation component
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-test="DesignSystem-VerticalNav--Item"
           href="/patient360"
+          role="button"
           tabindex="0"
         >
           <div
@@ -39,6 +40,7 @@ exports[`Vertical Navigation component
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-test="DesignSystem-VerticalNav--Item"
+          role="button"
           tabindex="0"
         >
           <div
@@ -61,6 +63,7 @@ exports[`Vertical Navigation component
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--active color-primary-dark"
+          role="button"
           tabindex="0"
         >
           <div
@@ -83,6 +86,7 @@ exports[`Vertical Navigation component
       >
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
+          role="button"
           tabindex="0"
         >
           <div
@@ -106,7 +110,8 @@ exports[`Vertical Navigation component
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed MenuItem--disabled color-inverse-lightest"
           data-test="DesignSystem-VerticalNav--Item"
-          tabindex="0"
+          role="button"
+          tabindex="-1"
         >
           <div
             class="d-flex align-items-center overflow-hidden"
@@ -129,6 +134,7 @@ exports[`Vertical Navigation component
         <a
           class="MenuItem MenuItem--vertical MenuItem--collapsed color-inverse"
           data-test="DesignSystem-VerticalNav--Item"
+          role="button"
           tabindex="0"
         >
           <div
@@ -172,6 +178,7 @@ exports[`Vertical Navigation component
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
         href="/patient360"
+        role="button"
         tabindex="0"
       >
         <div
@@ -212,6 +219,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
+        role="button"
         tabindex="0"
       >
         <div
@@ -243,6 +251,7 @@ exports[`Vertical Navigation component
       </a>
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--active MenuItem--subMenu MenuItem--rounded color-primary-dark"
+        role="button"
         tabindex="0"
       >
         <div
@@ -266,6 +275,7 @@ exports[`Vertical Navigation component
       </a>
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--subMenu MenuItem--rounded color-inverse"
+        role="button"
         tabindex="0"
       >
         <div
@@ -290,7 +300,8 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--disabled MenuItem--rounded color-inverse-lightest"
         data-test="DesignSystem-VerticalNav--Item"
-        tabindex="0"
+        role="button"
+        tabindex="-1"
       >
         <div
           class="d-flex align-items-center overflow-hidden"
@@ -320,6 +331,7 @@ exports[`Vertical Navigation component
       <a
         class="MenuItem MenuItem--vertical MenuItem--expanded MenuItem--rounded color-inverse"
         data-test="DesignSystem-VerticalNav--Item"
+        role="button"
         tabindex="0"
       >
         <div

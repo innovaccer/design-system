@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: var(--duration--fast-01) var(--standard-productive-curve);
+  transition: var(--duration--moderate-02) var(--standard-productive-curve);
   width: 232px;
 }
 

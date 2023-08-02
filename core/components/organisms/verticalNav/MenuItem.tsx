@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { Text, Icon, Pills, Tooltip } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { getNavItemColor, getPillsAppearance, Menu } from '@/utils/navigationHelper';
-import Link from '@/components/atoms/_text';
 import { TextColor } from '@/common.type';
 export interface MenuItemProps extends BaseProps {
   menu: Menu;
@@ -88,6 +87,12 @@ export const MenuItem = (props: MenuItemProps) => {
     if (onClick) onClick(menu);
   };
 
+  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      onClickHandler(event);
+    }
+  };
+
   const baseProps = {
     onClick: onClickHandler,
     href: menu.link,
@@ -138,7 +143,13 @@ export const MenuItem = (props: MenuItemProps) => {
     // TODO(a11y)
     // eslint-disable-next-line
     <Tooltip showTooltip={expanded ? isTextTruncated : true} tooltip={menu.label} position="right">
-      <Link componentType="a" className={ItemClass} {...baseProps}>
+      <a
+        className={ItemClass}
+        {...baseProps}
+        onKeyDown={onKeyDownHandler}
+        role="button"
+        tabIndex={menu.disabled ? -1 : 0}
+      >
         <div className="d-flex align-items-center overflow-hidden">
           {menu.icon && (
             <Icon
@@ -151,7 +162,7 @@ export const MenuItem = (props: MenuItemProps) => {
           {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}
         </div>
         {expanded && renderSubMenu()}
-      </Link>
+      </a>
     </Tooltip>
   );
 };

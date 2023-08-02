@@ -209,6 +209,20 @@ describe('Vertical Navigation component with prop: menus', () => {
     expect(childItems[2].textContent).toMatch('Timeline');
     expect(childItems[3].textContent).toMatch('Care Plans');
   });
+
+  it('renders child items when parent item has focus, enter key is pressed and panel is expanded', () => {
+    const menuFocus = 1;
+    const { getAllByTestId } = render(
+      <VerticalNav expanded={true} menus={menus} active={{ name: 'patient_360' }} onClick={onClick} />
+    );
+
+    const activeMenu = getAllByTestId('DesignSystem-VerticalNav--Item')[menuFocus];
+    fireEvent.keyDown(activeMenu, { key: 'Enter', code: 'Enter', charCode: 13 });
+
+    const childItems = getAllByTestId('DesignSystem-VerticalNav--Text');
+    expect(childItems[2].textContent).toMatch('Timeline');
+    expect(childItems[3].textContent).toMatch('Care Plans');
+  });
 });
 
 describe('Vertical Navigation component active menu', () => {
