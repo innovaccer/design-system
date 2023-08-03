@@ -8,6 +8,7 @@ import { IconProps, TextProps } from '@/index.type';
 
 export interface GenericChipProps extends BaseProps {
   label: string | React.ReactElement;
+  labelPrefix?: string;
   icon?: string;
   clearButton?: boolean;
   disabled?: boolean;
@@ -18,7 +19,7 @@ export interface GenericChipProps extends BaseProps {
 }
 
 export const GenericChip = (props: GenericChipProps) => {
-  const { label, icon, clearButton, disabled, className, selected, onClose, onClick } = props;
+  const { label, icon, clearButton, disabled, className, selected, onClose, onClick, labelPrefix } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -65,9 +66,21 @@ export const GenericChip = (props: GenericChipProps) => {
   const renderLabel = () => {
     if (typeof label === 'string') {
       return (
-        <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className="Chip-text">
-          {label}
-        </Text>
+        <>
+          {labelPrefix && (
+            <Text
+              data-test="DesignSystem-GenericChip--LabelPrefix"
+              weight="medium"
+              color={textColor}
+              className="Chip-text mr-3"
+            >
+              {labelPrefix}
+            </Text>
+          )}
+          <Text data-test="DesignSystem-GenericChip--Text" color={textColor} className="Chip-text">
+            {label}
+          </Text>
+        </>
       );
     }
     return label;
