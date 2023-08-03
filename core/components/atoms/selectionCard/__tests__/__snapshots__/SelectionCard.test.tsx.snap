@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: false, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Selection-card"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: false, selected: false, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-checked="false"
+      class="Selection-card"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: false, selected: true, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-checked="true"
+      class="Selection-card Selection-card--selected"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: true, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Selection-card Selection-card--disabled"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: true, selected: false, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-checked="false"
+      class="Selection-card Selection-card--disabled"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: true, selected: true, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-checked="true"
+      class="Selection-card Selection-card--selected Selection-card--selected-disabled"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Selection-card"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", selected: false, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-checked="false"
+      class="Selection-card"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", selected: true, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      aria-checked="true"
+      class="Selection-card Selection-card--selected"
+      data-test="DesignSystem-SelectionCard"
+      role="checkbox"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;

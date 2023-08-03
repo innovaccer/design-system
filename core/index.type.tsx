@@ -83,3 +83,4 @@ export { DividerProps } from './components/atoms/divider';
 export { HelpTextProps } from './components/atoms/helpText';
 export { LinkButtonProps } from './components/atoms/linkButton';
 export { ActionCardProps } from './components/atoms/actionCard';
+export { SelectionCardProps } from './components/atoms/selectionCard';
