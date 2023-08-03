@@ -184,7 +184,8 @@ describe('EditableInput component with prop: error and errorMessage', () => {
 
     const inputWrapper = getByTestId(inputTestId);
     fireEvent.mouseEnter(inputWrapper);
-    expect(getByTestId('DesignSystem-EditableInput--ErrorPopper')).toBeInTheDocument();
+    expect(getByTestId('DesignSystem-InlineMessage')).toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-InlineMessage--Description')).toHaveClass('InlineMessage-text--alert');
   });
 });
 
