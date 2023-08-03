@@ -6,6 +6,7 @@ import GridContext from './GridContext';
 export interface GridNestedRowProps {
   data: RowData;
   rowIndex: number;
+  expanded?: boolean;
 }
 
 export interface NestedRowProps {
@@ -13,6 +14,7 @@ export interface NestedRowProps {
   data: RowData;
   schema: GridProps['schema'];
   loading: GridProps['loading'];
+  expanded?: boolean;
 }
 
 export const GridNestedRow = (props: GridNestedRowProps) => {
@@ -20,9 +22,9 @@ export const GridNestedRow = (props: GridNestedRowProps) => {
 
   const { schema, loading, nestedRowRenderer } = context;
 
-  const { data, rowIndex } = props;
+  const { data, rowIndex, expanded } = props;
 
-  if (nestedRowRenderer) return nestedRowRenderer({ data, schema, loading, rowIndex });
+  if (nestedRowRenderer) return nestedRowRenderer({ data, schema, loading, rowIndex, expanded });
   // return (
   //   <Text>{JSON.stringify(data)}</Text>
   // )
