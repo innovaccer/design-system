@@ -87,9 +87,9 @@ export const Label = (props: LabelProps) => {
     <div data-test="DesignSystem-Label" {...baseProps} className={LabelClass}>
       <GenericText data-test="DesignSystem-Label--Text" className={classes} componentType="label" {...rest}>
         {children}
+        {renderInfo(required, optional)}
+        {info && renderIndicator(info)}
       </GenericText>
-      {renderInfo(required, optional)}
-      {info && renderIndicator(info)}
     </div>
   );
 };
