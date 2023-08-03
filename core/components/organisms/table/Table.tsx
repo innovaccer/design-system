@@ -187,6 +187,7 @@ interface SharedTableProps extends BaseProps {
    *    data: RowData;
    *    schema: GridProps['schema'];
    *    loading: boolean;
+   *    expanded?: boolean;
    * }
    * </pre>
    */

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import Editable from '@/components/atoms/editable';
-import { Input, Button, Popover, Icon, Text } from '@/index';
+import { Input, Button, Popover, InlineMessage } from '@/index';
 import { InputProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
@@ -148,10 +148,7 @@ export const EditableInput = (props: EditableInputProps) => {
     if (showComponent) {
       return error && errorMessage && editing ? (
         <Popover trigger={inputComponent} position="right" className="px-6 py-6 d-flex align-items-center" on="hover">
-          <Icon name="error" appearance={'alert'} className="mr-4" />
-          <Text data-test="DesignSystem-EditableInput--ErrorPopper" appearance="destructive" weight="medium">
-            {errorMessage}
-          </Text>
+          <InlineMessage appearance="alert" description={errorMessage} />
         </Popover>
       ) : (
         inputComponent
