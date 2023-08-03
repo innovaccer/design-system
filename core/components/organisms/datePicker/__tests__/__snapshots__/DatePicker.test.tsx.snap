@@ -4460,7 +4460,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
         </div>
       </div>
       <div
-        class="d-flex justify-content-center pb-6"
+        class="d-flex justify-content-center pb-6 pt-3"
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
