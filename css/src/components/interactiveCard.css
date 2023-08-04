@@ -1,27 +1,11 @@
-.selected-content{
-	text-align: center;
-	border-radius: 3px;
-  box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0);
-  border: solid 2px black;
-	background: #fff;
-	max-width: 280px;
-	padding: 15px;
-	display: grid;
-	grid-gap: 15px;
-	place-content: center;
-	transition: .3s ease-in-out all;
-  cursor: pointer;
+.interactive-card {
+	border: solid 2px black;
+	cursor: pointer;
+	padding: 16px;
+	margin: 16px;
 }
 
-.selected-label{
-	position: relative;
-  margin: 4px;
-}
-.selected-label input{
-	display: none;
-}
-
-.selected-label input:checked ~ .selected-content{
-  box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.5);
-  border: solid 2px red;
+.interactive-card--selected {
+	box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.5);
+  border: solid 2px var(--primary);
 }

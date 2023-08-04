@@ -1,16 +1,31 @@
 import * as React from 'react';
+import { CardContext } from './cardContext';
+import CardItem from './CardItem';
+import { BaseHtmlProps, BaseProps } from '@/utils/types';
 
-export const InteractiveCard = (props: any) => {
-  const { children, type, id, name, checked } = props;
+export interface InteractiveCardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
+  multiSelect?: boolean;
+  selectedList?: string[];
+}
+
+export const InteractiveCard = (props: InteractiveCardProps) => {
+  const { children, multiSelect, selectedList = [] } = props;
+  const [selectedOptions, setSelectedOptions] = React.useState(selectedList);
+
+  const providerValue = {
+    selectedOptions,
+    setSelectedOptions,
+    multiSelect,
+  };
 
   return (
-    <label htmlFor={id} className="selected-label">
-      <input type={type} name={name} id={id} checked={checked} />
-      <div className="selected-content">{children}</div>
-    </label>
+    <CardContext.Provider value={providerValue}>
+      <div>{children}</div>
+    </CardContext.Provider>
   );
 };
 
 InteractiveCard.displayName = 'InteractiveCard';
+InteractiveCard.Item = CardItem;
 
 export default InteractiveCard;
