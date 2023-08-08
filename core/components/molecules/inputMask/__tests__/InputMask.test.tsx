@@ -125,4 +125,15 @@ describe('Input Mask component prop: onClearHandler', () => {
     fireEvent.click(input);
     expect(onClearHandler).toHaveBeenCalledTimes(1);
   });
+
+  it('with onClearHandler available only when user inputs value', () => {
+    const value = '1111 2222 3333 4444';
+    const { getByTestId } = render(
+      <InputMask mask={mask} onClear={onClearHandler} value={value} placeholder="____ ____ ____ ____" />
+    );
+    const closeIcon = getByTestId('DesignSystem-Input--closeIcon');
+    expect(closeIcon).toBeInTheDocument();
+    fireEvent.click(closeIcon);
+    expect(closeIcon).not.toBeInTheDocument();
+  });
 });

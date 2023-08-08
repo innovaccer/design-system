@@ -43,6 +43,14 @@ export const GridRow = (props: GridRowProps) => {
   const rightPinnedSchema = pinnedSchema.filter((s) => !s.hidden && s.pinned === 'right');
   const unpinnedSchema = schema.filter((s) => !s.hidden && !s.pinned);
 
+  const nestedProps = {
+    data,
+    rowIndex: rI,
+    expanded,
+  };
+
+  const nestedRowData = GridNestedRow(nestedProps);
+
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
 
@@ -89,6 +97,7 @@ export const GridRow = (props: GridRowProps) => {
                 schema={s}
                 data={data}
                 expandedState={[expanded, setExpanded]}
+                nestedRowData={nestedRowData}
               />
             );
           })}
@@ -112,11 +121,7 @@ export const GridRow = (props: GridRowProps) => {
         {renderSchema(unpinnedSchema, !leftPinnedSchema.length && !!unpinnedSchema.length)}
         {renderSchema(rightPinnedSchema, false, 'right')}
       </div>
-      {nestedRows && expanded && (
-        <div className="Grid-nestedRow">
-          <GridNestedRow data={data} rowIndex={rI} />
-        </div>
-      )}
+      {nestedRows && expanded && <div className="Grid-nestedRow">{nestedRowData}</div>}
     </div>
   );
 };

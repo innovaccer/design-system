@@ -216,7 +216,6 @@ exports[`Dropzone component snapshot
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
-          tabindex="-1"
         >
           browse files
         </span>
@@ -280,7 +279,6 @@ exports[`Dropzone component snapshot
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
-          tabindex="-1"
         >
           browse files
         </span>
@@ -333,7 +331,6 @@ exports[`Dropzone component snapshot
           class="Text Text--disabled Text--strong Text--large ml-2 cursor-pointer"
           data-test="DesignSystem-Text"
           role="button"
-          tabindex="-1"
         >
           browse files
         </span>

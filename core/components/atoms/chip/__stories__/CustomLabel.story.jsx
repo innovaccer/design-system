@@ -1,63 +1,39 @@
 import * as React from 'react';
-import { Chip, Text } from '@/index';
+import { Chip } from '@/index';
 
 export const customLabel = () => {
   const customLabelData1 = [
-    ['Age=', '60yrs', { selected: true, type: 'selection', label1: 'primary-dark', label2: 'primary-dark' }],
-    ['Age:', '18yrs to 60yrs', { selected: false, type: 'action', label1: '', label2: '' }],
-    ['Age>=', '18yrs', { selected: false, type: 'input', label1: '', label2: '' }],
+    ['Age=', '60yrs', { selected: true }],
+    ['Age:', '18yrs to 60yrs', { selected: false }],
+    ['Age>=', '18yrs', { selected: false, disabled: true }],
   ];
 
   const customLabelData2 = [
-    [
-      'Provider City:',
-      'San Diego',
-      { selected: true, type: 'selection', label1: 'primary-dark', label2: 'primary-dark' },
-    ],
-    ['Provider City:', 'San Diego, Chicago', { selected: false, type: 'action', label1: '', label2: '' }],
-    ['Provider City:', '3 selected', { selected: false, type: 'input', label1: '', label2: '' }],
+    ['Provider City:', 'San Diego', { selected: true }],
+    ['Provider City:', 'San Diego, Chicago', { selected: false }],
+    ['Provider City:', '3 selected', { selected: false, disabled: true }],
   ];
 
   const customLabelData3 = [
-    [
-      'Creation Date>=',
-      '01/01/2020',
-      { selected: true, type: 'selection', label1: 'primary-dark', label2: 'primary-dark' },
-    ],
-    ['Creation Date=', '01/01/2020', { icon: 'assessment', selected: false, type: 'action', label1: '', label2: '' }],
-    ['Creation Date:', 'last 6 months', { icon: 'assessment', selected: false, type: 'input', label1: '', label2: '' }],
+    ['Creation Date>=', '01/01/2020', { selected: true }],
+    ['Creation Date=', '01/01/2020', { icon: 'assessment', selected: false }],
+    ['Creation Date:', 'last 6 months', { icon: 'assessment', selected: false, disabled: true }],
   ];
 
   const renderChips = (
     <>
-      <div className="d-flex justify-content-around flex-wrap mb-8">
-        <Text weight="strong" size="large">
-          Selection Chip
-        </Text>
-        <Text weight="strong" size="large">
-          Action Chip
-        </Text>
-        <Text weight="strong" size="large">
-          Input Chip
-        </Text>
-      </div>
       <div className="d-flex justify-content-around flex-wrap">
         {customLabelData1.map((customLabel, index) => (
           <Chip
             className="mb-6"
             key={index}
-            label={
-              <span className="mr-3">
-                <Text color={customLabel[2].label1} weight="medium" className="mr-3">
-                  {customLabel[0]}
-                </Text>
-                <Text color={customLabel[2].label2}>{customLabel[1]}</Text>
-              </span>
-            }
+            label={customLabel[1]}
+            labelPrefix={customLabel[0]}
             clearButton={true}
-            name={{ Custom: 'Label' }}
-            type={customLabel[2].type}
+            name={customLabel[0]}
+            type="selection"
             selected={customLabel[2].selected}
+            disabled={customLabel[2].disabled}
           />
         ))}
       </div>
@@ -67,18 +43,13 @@ export const customLabel = () => {
             icon={customLabel[2].icon}
             className="mb-6"
             key={index}
-            label={
-              <span className="mr-3">
-                <Text color={customLabel[2].label1} weight="medium" className="mr-3">
-                  {customLabel[0]}
-                </Text>
-                <Text color={customLabel[2].label2}>{customLabel[1]}</Text>
-              </span>
-            }
+            label={customLabel[1]}
+            labelPrefix={customLabel[0]}
             clearButton={true}
-            name={{ Custom: 'Label' }}
-            type={customLabel[2].type}
+            name={customLabel[0]}
+            type="selection"
             selected={customLabel[2].selected}
+            disabled={customLabel[2].disabled}
           />
         ))}
       </div>
@@ -87,18 +58,14 @@ export const customLabel = () => {
           <Chip
             className="mb-6"
             key={index}
-            label={
-              <span className="mr-3">
-                <Text color={customLabel[2].label1} weight="medium" className="mr-3">
-                  {customLabel[0]}
-                </Text>
-                <Text color={customLabel[2].label2}>{customLabel[1]}</Text>
-              </span>
-            }
+            label={customLabel[1]}
+            labelPrefix={customLabel[0]}
+            icon={customLabel[2].icon}
             clearButton={true}
-            name={{ Custom: 'Label' }}
-            type={customLabel[2].type}
+            name={customLabel[0]}
+            type="selection"
             selected={customLabel[2].selected}
+            disabled={customLabel[2].disabled}
           />
         ))}
       </div>

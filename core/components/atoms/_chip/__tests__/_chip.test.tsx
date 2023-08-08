@@ -87,3 +87,13 @@ describe('Chip component', () => {
     expect(getByTestId('DesignSystem-GenericChip--clearButton')).toHaveClass('Chip-icon-disabled--right');
   });
 });
+
+describe('Chip component label prefix test', () => {
+  it('renders label prefix text with prop:labelPrefix', () => {
+    const { getByTestId } = render(<GenericChip label="ChipLabel" labelPrefix="ChipLabelPrefix" name="Chip" />);
+    const labelPrefixElement = getByTestId('DesignSystem-GenericChip--LabelPrefix');
+    expect(labelPrefixElement).toBeInTheDocument();
+    expect(labelPrefixElement).toHaveTextContent('ChipLabelPrefix');
+    expect(labelPrefixElement).toHaveClass('Text--medium');
+  });
+});

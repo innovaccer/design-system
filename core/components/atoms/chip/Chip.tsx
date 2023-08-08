@@ -12,6 +12,10 @@ export interface ChipProps extends BaseProps {
    */
   label: string | React.ReactElement;
   /**
+   * Adds Prefix for label
+   */
+  labelPrefix?: string;
+  /**
    * Type of material `Icon`
    */
   icon?: string;
@@ -46,7 +50,7 @@ export interface ChipProps extends BaseProps {
 }
 
 export const Chip = (props: ChipProps) => {
-  const { label, icon, clearButton, type, disabled, selected, onClose, onClick, name, className } = props;
+  const { label, icon, clearButton, type, disabled, selected, onClose, onClick, name, className, labelPrefix } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -85,6 +89,7 @@ export const Chip = (props: ChipProps) => {
       onClose={onCloseHandler}
       onClick={onClickHandler}
       name={name}
+      labelPrefix={labelPrefix}
     />
   );
 };
