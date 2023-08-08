@@ -6,7 +6,7 @@ import { html as beautifyHTML } from 'js-beautify';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import * as DS from '@';
-import { Button, Card, Heading, CardHeader, Row, Column, Tooltip } from '@/index';
+import { Button, Card, Heading, CardHeader, Row, Column, Tooltip, Text } from '@/index';
 import vsDark from 'prism-react-renderer/themes/vsDark';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import openSandbox from './sandbox';
@@ -353,6 +353,7 @@ export const docPage = () => {
     noSandbox,
     imports,
     a11yProps,
+    propDescription,
   } = sp.docs.docPage || {};
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
@@ -398,6 +399,7 @@ export const docPage = () => {
           <br />
           <Heading appearance="subtle">Prop table</Heading>
           <ArgsTable {...propsAttr} />
+          {propDescription && <Text weight="strong">{propDescription}</Text>}
         </>
       )}
     </div>

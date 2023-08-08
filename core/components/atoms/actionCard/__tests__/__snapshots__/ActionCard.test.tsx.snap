@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Action Card component snapshots 
+  
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ActionCard"
+      data-test="DesignSystem-ActionCard"
+      role="link"
+      tabindex="0"
+    >
+      <p>
+        action card content
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Action Card component snapshots 
+  disabled: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ActionCard"
+      data-test="DesignSystem-ActionCard"
+      role="link"
+      tabindex="0"
+    >
+      <p>
+        action card content
+      </p>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Action Card component snapshots 
+  disabled: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="ActionCard ActionCard--disabled"
+      data-test="DesignSystem-ActionCard"
+      role="link"
+      tabindex="-1"
+    >
+      <div
+        class="ActionCard-overlay--disabled"
+        data-test="DesignSystem-ActionCard-Overlay"
+      />
+      <p>
+        action card content
+      </p>
+    </div>
+  </div>
+</body>
+`;
