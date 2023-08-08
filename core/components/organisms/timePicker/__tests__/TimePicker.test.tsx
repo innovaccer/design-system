@@ -63,6 +63,23 @@ describe('TimePicker component prop:validators snapshot', () => {
   testHelper(mapper, testFunc);
 });
 
+describe('TimePicker component prop:error snapshot', () => {
+  const mapper: Record<string, any> = {
+    error: valueHelper(BooleanValue, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(<TimePicker {...attr} />);
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
 describe('TimePicker component prop:time snapshot', () => {
   const mapper: Record<string, any> = {
     time: valueHelper(timeValues, { required: true, iterate: true }),
@@ -185,5 +202,12 @@ describe('TimePicker component with different placeholder', () => {
     const input = getByTestId('DesignSystem-Input');
     fireEvent.focus(input);
     expect(input).toHaveValue('__:__');
+  });
+});
+
+describe('TimePicker component with error state true', () => {
+  it('renders with input--error class', () => {
+    const { getByTestId } = render(<TimePicker time={timeValues[1]} onTimeChange={FunctionValue} error={true} />);
+    expect(getByTestId('DesignSystem-InputWrapper')).toHaveClass('Input--error');
   });
 });
