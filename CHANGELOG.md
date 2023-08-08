@@ -1,3 +1,46 @@
+## 2.18.0 (2023-08-08)
+
+### Highlights
+
+- feat(chip): add label prefix prop for custom label (3bce8c32)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(chip): add label prefix prop for custom label (3bce8c32)
+
+### Fixes
+
+- fix(avatar): update mouse pointer cursor to default on hover on avatar (a58add0a)
+- fix(table): add limit to call nested row renderer function (7f3e0aba) 
+- fix(label): fix overflow behaviour of label with required indicator (f4ad093f)
+- fix(toast): update description overflow behaviour (aee04fa3)
+- fix(calendar): fix height of calendar and datepicker (78dcd91a)
+- fix(inputmask): update action icon states (c1b23ff1)
+- fix(chipinput): update horizontal-vertical spacing and action icon state (8d1d37e4)
+- fix(editableinput): replace text with inline message inside error popover (3ba15748)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): update size of calendar and datepicker in docs (84c18281)
+
+---
+
 ## 2.17.0 (2023-07-24)
 
 ### Highlights
