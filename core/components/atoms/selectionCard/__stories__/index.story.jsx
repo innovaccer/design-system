@@ -19,7 +19,7 @@ export const all = () => {
 };
 
 export default {
-  title: 'Layout/Selection Card/All',
+  title: 'Card/Selection Card/All',
   component: SelectionCard,
   subcomponents: { CardItem },
   parameters: {
