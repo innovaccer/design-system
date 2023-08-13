@@ -69,6 +69,10 @@ menus:
     link: /components/inlineEditableFields/usage/
     hideInMobile: true
 
+  - label: Interactive Cards
+    link: /components/interactiveCard/usage/
+    hideInMobile: true
+
   - label: Inputs
     link: /components/inputs/usage/
 
