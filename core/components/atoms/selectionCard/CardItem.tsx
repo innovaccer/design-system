@@ -8,7 +8,7 @@ type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
 
 export interface CardItemProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
-   * Element to be rendered inside card
+   * Element to be rendered inside card item
    */
   children: React.ReactNode;
   /**
@@ -70,12 +70,18 @@ export const CardItem = (props: CardItemProps) => {
       onKeyDown={onKeyDownHandler}
       onClick={(e) => onClickHandler(e)}
       className={classes}
+      data-test="DesignSystem-SelectionCard-Item"
       {...rest}
     >
       <div className="Selection-card-overlay" style={{ zIndex }} data-test="DesignSystem-SelectionCard-Overlay" />
       {children}
     </div>
   );
+};
+
+CardItem.defaultProps = {
+  disabled: false,
+  zIndex: 2,
 };
 
 export default CardItem;

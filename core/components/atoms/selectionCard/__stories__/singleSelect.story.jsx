@@ -3,9 +3,9 @@ import { SelectionCard, Row, Column, Icon, Text } from '@/index';
 import { CardItem } from '../CardItem';
 
 // CSF format story
-export const cardGroup = () => {
+export const singleSelect = () => {
   return (
-    <SelectionCard multiSelect={true} selectedList={['item1']}>
+    <SelectionCard multiSelect={false} selectedList={['item1']}>
       <Row>
         <Column>
           <SelectionCard.Item id="item1" className="pl-5 py-6 pr-6 d-flex m-5">
@@ -55,7 +55,7 @@ export const cardGroup = () => {
 };
 
 export default {
-  title: 'Card/Selection Card/Card Group',
+  title: 'Card/Selection Card/Single Select',
   component: SelectionCard,
   subcomponents: { CardItem },
   parameters: {

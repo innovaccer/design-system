@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selection card component snapshot 
+  
+ 1`] = `
+<body>
+  <div>
+    <div
+      data-test="DesignSystem-SelectionCard-OuterWrapper"
+    />
+  </div>
+</body>
+`;
+
+exports[`selection card component snapshot 
+  multiSelect: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      data-test="DesignSystem-SelectionCard-OuterWrapper"
+    />
+  </div>
+</body>
+`;
+
+exports[`selection card component snapshot 
+  multiSelect: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      data-test="DesignSystem-SelectionCard-OuterWrapper"
+    />
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: false, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Selection-card"
+      data-test="DesignSystem-SelectionCard-Item"
+      role="button"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", disabled: true, onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Selection-card Selection-card--disabled"
+      data-test="DesignSystem-SelectionCard-Item"
+      role="button"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;
+
+exports[`selection card item component snapshot 
+  children: "Selection Card", onClick: [null]
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Selection-card"
+      data-test="DesignSystem-SelectionCard-Item"
+      role="button"
+      tabindex="0"
+    >
+      <div
+        class="Selection-card-overlay"
+        data-test="DesignSystem-SelectionCard-Overlay"
+        style="z-index: 2;"
+      />
+      Selection Card
+    </div>
+  </div>
+</body>
+`;

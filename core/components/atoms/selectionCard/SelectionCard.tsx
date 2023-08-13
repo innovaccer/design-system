@@ -12,10 +12,14 @@ export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElem
    * List of IDs of selected card
    */
   selectedList?: string[];
+  /**
+   * Element to be rendered inside card
+   */
+  children: React.ReactNode;
 }
 
 export const SelectionCard = (props: SelectionCardProps) => {
-  const { children, multiSelect, selectedList = [] } = props;
+  const { children, multiSelect, selectedList = [], ...rest } = props;
   const [selectedOptions, setSelectedOptions] = React.useState(selectedList);
 
   const providerValue = {
@@ -26,12 +30,19 @@ export const SelectionCard = (props: SelectionCardProps) => {
 
   return (
     <CardContext.Provider value={providerValue}>
-      <div data-test="DesignSystem-SelectionCard-OuterWrapper">{children}</div>
+      <div data-test="DesignSystem-SelectionCard-OuterWrapper" {...rest}>
+        {children}
+      </div>
     </CardContext.Provider>
   );
 };
 
 SelectionCard.displayName = 'SelectionCard';
+
 SelectionCard.Item = CardItem;
+
+SelectionCard.defaultProps = {
+  multiSelect: false,
+};
 
 export default SelectionCard;
