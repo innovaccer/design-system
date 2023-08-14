@@ -1,0 +1,5 @@
+.Textfield--helptext {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+}

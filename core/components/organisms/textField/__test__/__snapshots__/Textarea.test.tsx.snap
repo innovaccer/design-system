@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField matches snapshot for handling events and callbacks 1`] = `
+<div>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        placeholder="Test Placeholder"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="Textfield--helptext"
+      style="min-width: 256px;"
+    >
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+           
+        </span>
+      </div>
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          9
+        </span>
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          /200
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextField matches snapshot when input exceeds maximum character count 1`] = `
+<div>
+  <div>
+    <div
+      class="Label Label--withInput"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Test Label
+      </label>
+    </div>
+    <div
+      class="Input Input--regular Input--error"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        name="test-name"
+        placeholder="Test Placeholder"
+        type="text"
+        value="Test Value"
+      />
+    </div>
+    <div
+      class="Textfield--helptext"
+      style="min-width: 256px;"
+    >
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+           
+        </span>
+      </div>
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--medium Text--small color-alert"
+          data-test="DesignSystem-Text"
+        >
+          300
+        </span>
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          /298
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextField matches snapshot with basic props 1`] = `
+<div>
+  <div>
+    <div
+      class="Label Label--withInput"
+      data-test="DesignSystem-Label"
+    >
+      <label
+        class="Label-text"
+        data-test="DesignSystem-Label--Text"
+      >
+        Test Label
+        <span
+          class="Label-requiredIndicator"
+          data-test="DesignSystem-Label--RequiredIndicator"
+        />
+      </label>
+    </div>
+    <textarea
+      class="Textarea Textarea--resize Textarea--error"
+      data-test="DesignSystem-Textarea"
+      name="test-name"
+      placeholder="Test Placeholder"
+      required=""
+      rows="3"
+    >
+      Test Value
+    </textarea>
+    <div
+      class="Textfield--helptext"
+      style="width: 0px;"
+    >
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+           
+        </span>
+      </div>
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          0
+        </span>
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          /200
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextField matches snapshot with help text and character count 1`] = `
+<div>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="Textfield--helptext"
+      style="min-width: 256px;"
+    >
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          Helpful text
+        </span>
+      </div>
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          0
+        </span>
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          /200
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextField matches snapshot without label and with minimum props 1`] = `
+<div>
+  <div>
+    <div
+      class="Input Input--regular"
+      data-test="DesignSystem-InputWrapper"
+      role="presentation"
+      style="min-width: 256px;"
+    >
+      <input
+        class="Input-input Input-input--regular"
+        data-test="DesignSystem-Input"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="Textfield--helptext"
+      style="min-width: 256px;"
+    >
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+           
+        </span>
+      </div>
+      <div
+        class="mt-3"
+      >
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          0
+        </span>
+        <span
+          class="Text Text--subtle Text--medium Text--small"
+          data-test="DesignSystem-Text"
+        >
+          /200
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -37,6 +37,7 @@
     "semicolon": "off",
     "ter-indent": "off",
     "jsx-wrap-multiline": "off",
+    "jsx-a11y/no-autofocus": "off",
     "no-prototype-builtins": "off",
     "react/prop-types": "off",
     "react/no-unknown-property": "error",
