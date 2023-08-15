@@ -6,9 +6,9 @@ import { CardItem } from '../CardItem';
 export const cardGroup = () => {
   return (
     <SelectionCard multiSelect={true} selectedList={['item1']}>
-      <Row>
+      <Row className="mb-5">
         <Column>
-          <SelectionCard.Item id="item1" className="pl-5 py-6 pr-6 d-flex m-5">
+          <SelectionCard.Item id="item1" className="pl-5 py-6 pr-6 d-flex mr-5">
             <Icon size={20} name="transfer_within_a_station" />
             <div className="ml-5">
               <Text weight="strong">ADT - Admit, Discharge, Transfer</Text>
@@ -18,7 +18,7 @@ export const cardGroup = () => {
           </SelectionCard.Item>
         </Column>
         <Column>
-          <SelectionCard.Item id="item2" className="pl-5 py-6 pr-6 d-flex m-5">
+          <SelectionCard.Item id="item2" className="pl-5 py-6 pr-6 d-flex">
             <Icon size={20} name="calendar_month" />
             <div className="ml-5">
               <Text weight="strong">Appointments</Text>
@@ -30,7 +30,7 @@ export const cardGroup = () => {
       </Row>
       <Row>
         <Column>
-          <SelectionCard.Item id="item3" className="pl-5 py-6 pr-6 d-flex m-5">
+          <SelectionCard.Item id="item3" className="pl-5 py-6 pr-6 d-flex mr-5">
             <Icon size={20} name="receipt_long" />
             <div className="ml-5">
               <Text weight="strong">Billing</Text>
@@ -40,7 +40,7 @@ export const cardGroup = () => {
           </SelectionCard.Item>
         </Column>
         <Column>
-          <SelectionCard.Item id="item4" className="pl-5 py-6 pr-6 d-flex m-5">
+          <SelectionCard.Item id="item4" className="pl-5 py-6 pr-6 d-flex">
             <Icon size={20} name="account_balance" />
             <div className="ml-5">
               <Text weight="strong">Claims</Text>
