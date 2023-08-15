@@ -46,14 +46,15 @@ export const CardItem = (props: CardItemProps) => {
   );
 
   const onClickHandler = (e: ClickEventType) => {
+    if (e.target === e.currentTarget && onClick) {
+      onClick(e, id);
+      return;
+    }
+
     if (multiSelect) {
       handleMultiSelect(selectedOptions, isItemSelected, setSelectedOptions, id);
     } else if (!multiSelect || multiSelect === undefined) {
       handleSingleSelect(selectedOptions, isItemSelected, setSelectedOptions, id);
-    }
-
-    if (e.target === e.currentTarget) {
-      onClick && onClick(e, id);
     }
   };
 
