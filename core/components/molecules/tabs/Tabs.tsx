@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Pills, Icon, Text, Tab } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
+import { moveToIndex } from '@/utils/commonUtility';
 
 type Tab = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
@@ -66,6 +67,11 @@ export interface TabsProps extends BaseProps {
    * Adds custom class to Tab header
    */
   headerClassName?: string;
+  /**
+   * To make the tabs reorderable.
+   * Applicable only for dismissible tabs.
+   */
+  isReorderable?: boolean;
 }
 
 const getChildrenArray = (children: SingleOrArray<React.ReactElement>) => {
@@ -93,7 +99,7 @@ const filterInlineComponent = (children: SingleOrArray<React.ReactElement>) => {
 };
 
 export const Tabs = (props: TabsProps) => {
-  const { children, withSeparator, onTabChange, className, headerClassName } = props;
+  const { children, withSeparator, onTabChange, className, headerClassName, isReorderable } = props;
 
   const baseProps = extractBaseProps(props);
   const tabRefs: HTMLDivElement[] = [];
@@ -102,9 +108,16 @@ export const Tabs = (props: TabsProps) => {
   const inlineComponent = children ? filterInlineComponent(children) : <></>;
   const totalTabs = tabs.length;
 
+  const [tabOptions, setTabOptions] = React.useState(tabs);
   const [activeIndex, setActiveTab] = React.useState(
     props.activeIndex && props.activeIndex < totalTabs ? props.activeIndex : 0
   );
+  const [dragActiveIndex, setDragActiveIndex] = React.useState(-1);
+
+  React.useEffect(() => {
+    const tabLabel = tabs.map((item) => ('props' in item ? item.props.label : item.label));
+    setTabOptions((prev) => prev.filter((item) => tabLabel.includes('props' in item ? item.props.label : item.label)));
+  }, [children, props.tabs]);
 
   React.useEffect(() => {
     if (props.activeIndex !== undefined && props.activeIndex < totalTabs) {
@@ -261,9 +274,11 @@ export const Tabs = (props: TabsProps) => {
     );
   };
 
-  const renderTabs = tabs.map((tab: Tab, index) => {
+  const renderTabs = tabOptions.map((tab: Tab, index) => {
     const currentTabProp = children && 'props' in tab ? tab.props : tab;
-    const { disabled } = currentTabProp;
+    const { disabled, isDismissible } = currentTabProp;
+    const draggable = isDismissible && isReorderable;
+    const isDragActive = dragActiveIndex === index;
 
     const tabHeaderClass = classNames({
       ['Tab']: true,
@@ -271,6 +286,8 @@ export const Tabs = (props: TabsProps) => {
       ['Tab--active']: !disabled && activeIndex === index,
       ['Tab-selected']: !disabled && activeIndex === index,
       ['align-items-center']: true,
+      ['Tab--draggable pl-0 pr-4']: draggable,
+      ['Tab--dragged']: isDragActive,
     });
 
     return (
@@ -284,7 +301,40 @@ export const Tabs = (props: TabsProps) => {
         onClick={() => !disabled && tabClickHandler(index)}
         onKeyDown={(event: React.KeyboardEvent) => tabKeyDownHandler(event, index)}
         tabIndex={disabled ? -1 : 0}
+        draggable={draggable}
+        onDragStart={(e) => {
+          e.dataTransfer.setData('index', `${index}`);
+          setDragActiveIndex(index);
+        }}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setDragActiveIndex(-1);
+        }}
+        onDrop={(e) => {
+          const from = +e.dataTransfer.getData('index');
+          const to = index;
+
+          if (from !== to) {
+            setTabOptions(moveToIndex(tabOptions, from, to));
+            if (activeIndex === from) {
+              setActiveTab(to);
+            } else if (activeIndex === to) {
+              from < to ? setActiveTab(to - 1) : setActiveTab(to + 1);
+            } else {
+              from < activeIndex && activeIndex < to
+                ? setActiveTab((prev) => prev - 1)
+                : to < activeIndex && activeIndex < from
+                ? setActiveTab((prev) => prev + 1)
+                : null;
+            }
+          }
+
+          e.currentTarget.focus();
+        }}
       >
+        {draggable && (
+          <Icon className="DraggableTab-icon" name="drag_indicator" appearance={isDragActive ? 'primary' : 'subtle'} />
+        )}
         {renderTab(currentTabProp, index)}
       </div>
     );
@@ -297,7 +347,7 @@ export const Tabs = (props: TabsProps) => {
       </div>
       {children && (
         <div className={tabContentClass} data-test="DesignSystem-Tabs--Content">
-          {tabs[activeIndex]}
+          {tabOptions[activeIndex]}
         </div>
       )}
     </div>

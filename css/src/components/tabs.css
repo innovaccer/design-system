@@ -154,3 +154,19 @@
 .DismissibleTab-icon--selected:active {
   background-color: var(--primary-light);
 }
+
+.DraggableTab-icon {
+  visibility: hidden;
+}
+
+.Tab--draggable::after {
+  margin-left: var(--spacing-2);
+}
+
+.Tab--draggable:hover .DraggableTab-icon {
+  visibility: visible;
+}
+
+.Tab--dragged:active::after {
+  background-color: transparent;
+}

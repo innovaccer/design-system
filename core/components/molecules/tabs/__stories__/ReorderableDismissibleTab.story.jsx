@@ -3,7 +3,7 @@ import { action } from '@/utils/action';
 import { Tabs, Tab } from '@/index';
 
 // CSF format story
-export const dismissibleTab = () => {
+export const reorderableDismissibleTab = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [dismissList, setDismissList] = React.useState([]);
 
@@ -23,7 +23,7 @@ export const dismissibleTab = () => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} isReorderable={true} className="mb-6">
       {!dismissList.includes('All') && (
         <Tab label="All" count={15} className="pl-5">
           <div>All</div>
@@ -77,7 +77,7 @@ const customCode = `() => {
   };
 
   return (
-    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} className="mb-6">
+    <Tabs activeIndex={activeIndex} onTabChange={onTabChangeHandler} isReorderable={true} className="mb-6">
       {!dismissList.includes('All') && (
         <Tab label="All" count={15} className="pl-5">
           <div>All</div>
@@ -113,7 +113,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Navigation/Tabs/Dismissible Tab ',
+  title: 'Navigation/Tabs/Reorderable Dismissible Tab ',
   component: Tabs,
   parameters: {
     docs: {

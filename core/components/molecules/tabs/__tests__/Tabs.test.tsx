@@ -277,6 +277,119 @@ describe('TabsWrapper component with prop: onTabChange', () => {
   });
 });
 
+describe('Tab component : drag drop is performed', () => {
+  const newTabs = [
+    {
+      count: 10,
+      label: 'Tab 1',
+      isDismissible: true,
+      onDismiss: FunctionValue,
+    },
+    {
+      icon: 'call_received',
+      label: 'Tab 2',
+      isDismissible: true,
+      onDismiss: FunctionValue,
+    },
+    {
+      label: 'Tab 3',
+      icon: 'call_received',
+      count: 10,
+      disabled: true,
+    },
+    {
+      count: 15,
+      label: 'Tab 4',
+      isDismissible: true,
+      onDismiss: FunctionValue,
+    },
+  ];
+
+  it('when isDismissible prop:true', () => {
+    const { getAllByTestId } = render(<Tabs tabs={newTabs} isReorderable={true} />);
+    const draggableSrc = getAllByTestId('DesignSystem-Tabs--Tab')[1];
+    const draggableDest = getAllByTestId('DesignSystem-Tabs--Tab')[3];
+    const tabOptionsBeforeDrag = getAllByTestId('DesignSystem-Tabs--Text');
+    expect(tabOptionsBeforeDrag[1]).toHaveTextContent('Tab 2');
+    fireEvent.dragStart(draggableSrc, { dataTransfer: { setData: jest.fn() } });
+    fireEvent.dragOver(draggableSrc);
+    fireEvent.drop(draggableDest, { dataTransfer: { getData: jest.fn().mockReturnValueOnce(1) } });
+    const tabOptionsAfterDrag = getAllByTestId('DesignSystem-Tabs--Text');
+    expect(tabOptionsAfterDrag[1]).toHaveTextContent('Tab 3');
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[0]).toHaveClass('Tab--active');
+  });
+
+  it('when isDismissible prop:true and source tab is active', () => {
+    const activeTab = 0;
+    const { getAllByTestId } = render(
+      <Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={newTabs} isReorderable={true} />
+    );
+    const draggableSrc = getAllByTestId('DesignSystem-Tabs--Tab')[0];
+    const draggableDest = getAllByTestId('DesignSystem-Tabs--Tab')[3];
+    expect(draggableSrc).toHaveClass('Tab--active');
+    fireEvent.dragStart(draggableSrc, { dataTransfer: { setData: jest.fn() } });
+    fireEvent.dragOver(draggableSrc);
+    fireEvent.drop(draggableDest, { dataTransfer: { getData: jest.fn().mockReturnValueOnce(0) } });
+    expect(draggableDest).toHaveClass('Tab--active');
+  });
+
+  it('when isDismissible prop:true , destination tab is active and is right to source', () => {
+    const activeTab = 3;
+    const { getAllByTestId } = render(
+      <Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={newTabs} isReorderable={true} />
+    );
+    const draggableSrc = getAllByTestId('DesignSystem-Tabs--Tab')[0];
+    const draggableDest = getAllByTestId('DesignSystem-Tabs--Tab')[activeTab];
+    expect(draggableDest).toHaveClass('Tab--active');
+    fireEvent.dragStart(draggableSrc, { dataTransfer: { setData: jest.fn() } });
+    fireEvent.dragOver(draggableSrc);
+    fireEvent.drop(draggableDest, { dataTransfer: { getData: jest.fn().mockReturnValueOnce(0) } });
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab - 1]).toHaveClass('Tab--active');
+  });
+
+  it('when isDismissible prop:true , destination tab is active and is left to source', () => {
+    const activeTab = 0;
+    const { getAllByTestId } = render(
+      <Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={newTabs} isReorderable={true} />
+    );
+    const draggableSrc = getAllByTestId('DesignSystem-Tabs--Tab')[3];
+    const draggableDest = getAllByTestId('DesignSystem-Tabs--Tab')[activeTab];
+    expect(draggableDest).toHaveClass('Tab--active');
+    fireEvent.dragStart(draggableSrc, { dataTransfer: { setData: jest.fn() } });
+    fireEvent.dragOver(draggableSrc);
+    fireEvent.drop(draggableDest, { dataTransfer: { getData: jest.fn().mockReturnValueOnce(3) } });
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab + 1]).toHaveClass('Tab--active');
+  });
+
+  it('when isDismissible prop:true and active tab is right to source but left to destination', () => {
+    const activeTab = 1;
+    const { getAllByTestId } = render(
+      <Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={newTabs} isReorderable={true} />
+    );
+    const draggableSrc = getAllByTestId('DesignSystem-Tabs--Tab')[0];
+    const draggableDest = getAllByTestId('DesignSystem-Tabs--Tab')[3];
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab]).toHaveClass('Tab--active');
+    fireEvent.dragStart(draggableSrc, { dataTransfer: { setData: jest.fn() } });
+    fireEvent.dragOver(draggableSrc);
+    fireEvent.drop(draggableDest, { dataTransfer: { getData: jest.fn().mockReturnValueOnce(0) } });
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab - 1]).toHaveClass('Tab--active');
+  });
+
+  it('when isDismissible prop:true and active tab is left to source but right to destination', () => {
+    const activeTab = 1;
+    const { getAllByTestId } = render(
+      <Tabs activeIndex={activeTab} onTabChange={FunctionValue} tabs={newTabs} isReorderable={true} />
+    );
+    const draggableSrc = getAllByTestId('DesignSystem-Tabs--Tab')[3];
+    const draggableDest = getAllByTestId('DesignSystem-Tabs--Tab')[0];
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab]).toHaveClass('Tab--active');
+    fireEvent.dragStart(draggableSrc, { dataTransfer: { setData: jest.fn() } });
+    fireEvent.dragOver(draggableSrc);
+    fireEvent.drop(draggableDest, { dataTransfer: { getData: jest.fn().mockReturnValueOnce(3) } });
+    expect(getAllByTestId('DesignSystem-Tabs--Tab')[activeTab + 1]).toHaveClass('Tab--active');
+  });
+});
+
 describe('Tabs Wrapper component header class', () => {
   it('render tab component header with custom class', () => {
     const { getByTestId } = render(

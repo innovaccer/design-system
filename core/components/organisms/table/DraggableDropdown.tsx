@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Button, Checkbox, Popover, Icon } from '@/index';
 import { DropdownProps } from '@/index.type';
-import { moveToIndex, getPluralSuffix } from '../grid/utility';
+import { getPluralSuffix } from '../grid/utility';
+import { moveToIndex } from '@/utils/commonUtility';
 
 interface DraggableDropdownProps {
   options: DropdownProps['options'];
