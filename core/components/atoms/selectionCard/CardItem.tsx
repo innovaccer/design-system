@@ -46,7 +46,12 @@ export const CardItem = (props: CardItemProps) => {
   );
 
   const onClickHandler = (e: ClickEventType) => {
-    if (e.target === e.currentTarget && onClick) {
+    // if (e.target === e.currentTarget && onClick) {
+    //   onClick(e, id);
+    //   return;
+    // }
+
+    if (onClick) {
       onClick(e, id);
       return;
     }

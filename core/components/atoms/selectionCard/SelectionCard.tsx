@@ -22,6 +22,17 @@ export const SelectionCard = (props: SelectionCardProps) => {
   const { children, multiSelect, selectedList = [], ...rest } = props;
   const [selectedOptions, setSelectedOptions] = React.useState(selectedList);
 
+  console.log('selectedList', selectedList, 'selectedOptions', selectedOptions);
+  if (selectedList !== selectedOptions) {
+    setSelectedOptions(selectedList);
+  }
+  // React.useEffect(() => {
+  //   console.log('inside useEffect', selectedList, 'selectedOptions', selectedOptions);
+  //   if (selectedList !== selectedOptions) {
+  //     setSelectedOptions(selectedList);
+  //   }
+  // }, [selectedList]);
+
   const providerValue = {
     selectedOptions,
     setSelectedOptions,
