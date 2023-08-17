@@ -5,11 +5,12 @@ import alias from '@rollup/plugin-alias';
 import json from '@rollup/plugin-json';
 import path from 'path';
 import packageJSON from './package.json';
-import typescript from '@rollup/plugin-typescript';
+import ts from '@rollup/plugin-typescript';
 import replace from '@rollup/plugin-replace';
 import { uglify } from "rollup-plugin-uglify";
 import gzipPlugin from 'rollup-plugin-gzip'
 import { compress } from 'brotli';
+import typescript from 'typescript';
 
 const banner = () => {
 
@@ -123,8 +124,13 @@ const tsConfig = {
     // Allows node_modules resolution
     resolve({ extensions }),
     
-    typescript({
-      typescript: require('ttypescript'),
+    // typescript({
+    //   typescript: require('ttypescript'),
+    //   tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
+    // }),
+
+    ts({
+      typescript,
       tsconfig: path.resolve(__dirname, './tsconfig.type.json'),
     }),
 
