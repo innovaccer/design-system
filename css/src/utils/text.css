@@ -1,0 +1,23 @@
+.text-align-start {
+  text-align: start !important;
+}
+
+.text-align-end {
+  text-align: end !important;
+}
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.text-align-justify {
+  text-align: justify !important;
+}
+
+.text-align-left {
+  text-align: left !important;
+}
+
+.text-align-right {
+  text-align: right !important;
+}
