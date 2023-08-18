@@ -15,8 +15,8 @@
     "start": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 5000",
     "dev": "concurrently --kill-others --raw \"npm run watch-css\" \"npm run start\"",
     "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook",
-    "build-storybook": "build-storybook -c .storybook -o .dist --loglevel error",
-    "deploy-storybook": "storybook-to-aws-s3",
+    "build-storybook": " NODE_OPTIONS=--openssl-legacy-provider build-storybook -c .storybook -o .dist --loglevel error",
+    "deploy-storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook-to-aws-s3",
     "setup-css-dev": "./scripts/setup-local-css.sh",
     "pre-commit": "lint-staged",
     "lint:types": "tsc -p '.' --noEmit",
@@ -107,15 +107,15 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-is": "^16.12.0",
     "react-live": "^2.2.2",
-    "rollup": "2.79.1",
+    "rollup": "^2.0.6",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-gzip": "^2.5.0",
     "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-uglify": "6.0.4",
+    "rollup-plugin-uglify": "^6.0.4",
     "trim": ">=0.0.3",
     "ts-jest": "^24.3.0",
     "ts-loader": "^6.2.1",
-    "tslint": "^5.11.0",
+    "tslint": "^6.0.0-beta0",
     "tslint-config-airbnb": "^5.11.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.1.0",
@@ -135,7 +135,15 @@
     "utility-types": "^3.10.0"
   },
   "overrides": {
-    "rollup": "2.79.1"
+    "rollup-plugin-uglify": {
+      "rollup": "$rollup"
+    },
+    "tslint-config-airbnb": {
+      "tslint": "$tslint"
+    },
+    "tslint-react": {
+      "tslint": "$tslint"
+    }
   },
   "bugs": "https://github.com/innovaccer/design-system/issues",
   "homepage": "https://innovaccer.github.io/design-system",
