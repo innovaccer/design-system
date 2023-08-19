@@ -1,48 +1,83 @@
 import * as React from 'react';
-import { CardContext } from './cardContext';
-import CardItem from './CardItem';
+import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
+import { useMultiSelect } from './hooks/useMultiSelect';
+
+type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
 
 export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElement> {
   /**
-   *  Defines if multiple cards can be selected together
-   */
-  multiSelect?: boolean;
-  /**
-   * List of IDs of selected card
-   */
-  selectedList?: string[];
-  /**
-   * Element to be rendered inside card
+   * Element to be rendered inside card item
    */
   children: React.ReactNode;
+  /**
+   * Provide unique id to each card when used in group
+   */
+  id: string;
+  /**
+   * Disables the Action Card
+   */
+  disabled?: boolean;
+  /**
+   * Handler to be called when Selection card is clicked
+   */
+  onClick?: (e: ClickEventType, id?: string) => void;
+  /**
+   * Describe z-index for overlay
+   */
+  zIndex?: number;
+  /**
+   * Defines if card is selected
+   */
+  selected?: boolean;
 }
 
 export const SelectionCard = (props: SelectionCardProps) => {
-  const { children, multiSelect, selectedList = [], ...rest } = props;
-  const [selectedOptions, setSelectedOptions] = React.useState(selectedList);
+  const { children, onClick, disabled, id, zIndex, selected, className, ...rest } = props;
 
-  const providerValue = {
-    selectedOptions,
-    setSelectedOptions,
-    multiSelect,
+  const classes = classNames(
+    {
+      ['Selection-card']: true,
+      ['Selection-card--selected']: selected,
+      ['Selection-card--disabled']: disabled && !selected,
+      ['Selection-card--selected-disabled']: disabled && selected,
+    },
+    className
+  );
+
+  const onClickHandler = (e: ClickEventType) => {
+    if (e.target === e.currentTarget && onClick) {
+      onClick && onClick(e, id);
+    }
+  };
+
+  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      onClickHandler(event);
+    }
   };
 
   return (
-    <CardContext.Provider value={providerValue}>
-      <div data-test="DesignSystem-SelectionCard-OuterWrapper" {...rest}>
-        {children}
-      </div>
-    </CardContext.Provider>
+    <div
+      role="button"
+      tabIndex={0}
+      onKeyDown={onKeyDownHandler}
+      onClick={(e) => onClickHandler(e)}
+      className={classes}
+      data-test="DesignSystem-SelectionCard-Item"
+      {...rest}
+    >
+      <div className="Selection-card-overlay" style={{ zIndex }} data-test="DesignSystem-SelectionCard-Overlay" />
+      {children}
+    </div>
   );
 };
 
-SelectionCard.displayName = 'SelectionCard';
-
-SelectionCard.Item = CardItem;
-
 SelectionCard.defaultProps = {
-  multiSelect: false,
+  disabled: false,
+  zIndex: 2,
 };
+
+SelectionCard.useMultiSelect = useMultiSelect;
 
 export default SelectionCard;

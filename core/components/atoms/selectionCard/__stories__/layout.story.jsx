@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { SelectionCard, Icon, Text } from '@/index';
-import { CardItem } from '../CardItem';
 
 // CSF format story
 export const layout = () => {
@@ -35,7 +34,7 @@ export const layout = () => {
 export default {
   title: 'Card/Selection Card/Layout',
   component: SelectionCard,
-  subcomponents: { CardItem },
+  
   parameters: {
     docs: {
       docPage: {

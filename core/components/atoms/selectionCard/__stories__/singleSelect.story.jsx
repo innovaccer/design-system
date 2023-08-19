@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { SelectionCard, Row, Column, Icon, Text } from '@/index';
-import { CardItem } from '../CardItem';
 
 // CSF format story
 export const singleSelect = () => {
@@ -57,7 +56,7 @@ export const singleSelect = () => {
 export default {
   title: 'Card/Selection Card/Single Select',
   component: SelectionCard,
-  subcomponents: { CardItem },
+  
   parameters: {
     docs: {
       docPage: {

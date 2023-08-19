@@ -2,28 +2,18 @@ import * as React from 'react';
 import { SelectionCard, Row, Column, Icon, Text } from '@/index';
 
 // CSF format story
-export const cardGroup = () => {
-  const [selectedItemList, setSelectedItemList] = React.useState([]);
-
-  const onClickHandler = (e, item) => {
-    let resultList = [...selectedItemList];
-    if (selectedItemList.includes(item)) {
-      resultList = selectedItemList.filter((cardItem) => item !== cardItem);
-    } else {
-      resultList.push(item);
-    }
-    setSelectedItemList(resultList);
-  };
+export const cardGroupHook = () => {
+  const { selectedItemList = [], onClickHandler } = SelectionCard.useMultiSelect();
 
   return (
     <div>
       <Row className="mb-5">
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item1"
             className="pl-5 py-6 pr-6 d-flex mr-5"
             onClick={onClickHandler}
-            selected={selectedItemList.includes('item1')}
+            selected={selectedItemList?.includes('item1')}
           >
             <Icon size={20} name="transfer_within_a_station" />
             <div className="ml-5">
@@ -31,14 +21,14 @@ export const cardGroup = () => {
               <br />
               <Text appearance="subtle">ENS (Encounter notification system) data</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item2"
             className="pl-5 py-6 pr-6 d-flex"
             onClick={onClickHandler}
-            selected={selectedItemList.includes('item2')}
+            selected={selectedItemList?.includes('item2')}
           >
             <Icon size={20} name="calendar_month" />
             <div className="ml-5">
@@ -46,12 +36,12 @@ export const cardGroup = () => {
               <br />
               <Text appearance="subtle">PMS (Practise management system)</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
       </Row>
       <Row>
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item3"
             className="pl-5 py-6 pr-6 d-flex mr-5"
             onClick={onClickHandler}
@@ -63,10 +53,10 @@ export const cardGroup = () => {
               <br />
               <Text appearance="subtle">Billing and charges</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item4"
             className="pl-5 py-6 pr-6 d-flex"
             onClick={onClickHandler}
@@ -78,7 +68,7 @@ export const cardGroup = () => {
               <br />
               <Text appearance="subtle">Medical, pharmacy, attribution</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
       </Row>
     </div>
@@ -86,23 +76,13 @@ export const cardGroup = () => {
 };
 
 const customCode = `() => {
-  const [selectedItemList, setSelectedItemList] = React.useState([]);
-
-  const onClickHandler = (e, item) => {
-    let resultList = [...selectedItemList];
-    if (selectedItemList.includes(item)) {
-      resultList = selectedItemList.filter((cardItem) => item !== cardItem);
-    } else {
-      resultList.push(item);
-    }
-    setSelectedItemList(resultList);
-  };
+  const { selectedItemList = [], onClickHandler } = SelectionCard.useMultiSelect();
 
   return (
     <div>
       <Row className="mb-5">
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item1"
             className="pl-5 py-6 pr-6 d-flex mr-5"
             onClick={onClickHandler}
@@ -114,10 +94,10 @@ const customCode = `() => {
               <br />
               <Text appearance="subtle">ENS (Encounter notification system) data</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item2"
             className="pl-5 py-6 pr-6 d-flex"
             onClick={onClickHandler}
@@ -129,12 +109,12 @@ const customCode = `() => {
               <br />
               <Text appearance="subtle">PMS (Practise management system)</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
       </Row>
       <Row>
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item3"
             className="pl-5 py-6 pr-6 d-flex mr-5"
             onClick={onClickHandler}
@@ -146,10 +126,10 @@ const customCode = `() => {
               <br />
               <Text appearance="subtle">Billing and charges</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
         <Column>
-          <SelectionCard.Item
+          <SelectionCard
             id="item4"
             className="pl-5 py-6 pr-6 d-flex"
             onClick={onClickHandler}
@@ -161,7 +141,7 @@ const customCode = `() => {
               <br />
               <Text appearance="subtle">Medical, pharmacy, attribution</Text>
             </div>
-          </SelectionCard.Item>
+          </SelectionCard>
         </Column>
       </Row>
     </div>
@@ -169,9 +149,8 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Card/Selection Card/Card Group',
+  title: 'Card/Selection Card/Card Group Hook',
   component: SelectionCard,
-
   parameters: {
     docs: {
       docPage: {
