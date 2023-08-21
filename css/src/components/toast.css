@@ -53,6 +53,7 @@
   align-items: center;
   padding-right: var(--spacing-m);
   padding-left: var(--spacing-m);
+  height: var(--spacing-xl);
 }
 
 .Toast-icon--info,
