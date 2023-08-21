@@ -1,15 +1,15 @@
 import * as React from 'react';
 
-export function useMultiSelect() {
+export function useSingleSelect() {
   const [selectedItemList, setSelectedItemList] = React.useState<string[]>([]);
 
   const updateSelection = (item: string) => {
-    console.log('hook onclickhandler called');
+    console.log('inside single select');
     let resultList = [...selectedItemList];
     if (selectedItemList.includes(item)) {
-      resultList = selectedItemList.filter((cardItem: string) => item !== cardItem);
+      resultList = [];
     } else {
-      resultList.push(item);
+      resultList = [item];
     }
     setSelectedItemList(resultList);
   };

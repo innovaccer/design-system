@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseHtmlProps, BaseProps } from '@/utils/types';
-import { useMultiSelect } from './hooks/useMultiSelect';
+import { useMultiSelect, useSingleSelect } from './hooks';
 
 type ClickEventType = React.MouseEvent<HTMLDivElement> | React.KeyboardEvent;
 
@@ -15,7 +15,7 @@ export interface SelectionCardProps extends BaseProps, BaseHtmlProps<HTMLDivElem
    */
   id: string;
   /**
-   * Disables the Action Card
+   * Disables the Selection Card
    */
   disabled?: boolean;
   /**
@@ -46,9 +46,7 @@ export const SelectionCard = (props: SelectionCardProps) => {
   );
 
   const onClickHandler = (e: ClickEventType) => {
-    if (e.target === e.currentTarget && onClick) {
-      onClick && onClick(e, id);
-    }
+    onClick && onClick(e, id);
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
@@ -79,5 +77,7 @@ SelectionCard.defaultProps = {
 };
 
 SelectionCard.useMultiSelect = useMultiSelect;
+
+SelectionCard.useSingleSelect = useSingleSelect;
 
 export default SelectionCard;
