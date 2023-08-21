@@ -42,6 +42,7 @@ describe('TimePicker component snapshots', () => {
       endTime: valueHelper(endTime, { required: true, iterate: false }),
       showDuration: valueHelper(booleanValue, { required: true, iterate: true }),
       timeFormat: valueHelper(timeFormat, { required: true, iterate: true }),
+      error: valueHelper(booleanValue, { required: true, iterate: true }),
     };
     testHelper(mapper, testFunc);
   });
@@ -461,4 +462,11 @@ describe('TimePicker Search when current time is in AM', () => {
   });
 
   dateNowSpy.mockRestore();
+});
+
+describe('TimePicker Search with error state true', () => {
+  it('renders with DropdownButton--error class', () => {
+    const { getByTestId } = render(<TimePicker withSearch={true} error={true} />);
+    expect(getByTestId('DesignSystem-DropdownTrigger')).toHaveClass('DropdownButton--error');
+  });
 });

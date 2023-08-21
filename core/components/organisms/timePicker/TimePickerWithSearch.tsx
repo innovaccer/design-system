@@ -86,6 +86,10 @@ export interface TimePickerDropdownProps extends BaseProps {
    * Provide unique ID in case of using multiple timePicker together
    */
   id?: string;
+  /**
+   * Shows error state in case of failed validation
+   */
+  error?: boolean;
 }
 
 export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
@@ -100,6 +104,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
     noResultMessage,
     disabledSlotList,
     fetchTimeOptions,
+    error,
   } = props;
 
   const [tabIndex, setTabIndex] = React.useState(0);
@@ -185,6 +190,7 @@ export const TimePickerWithSearch = (props: TimePickerDropdownProps) => {
       onPopperToggle={() => {
         setOpenPopover(!openPopover);
       }}
+      error={error}
     />
   );
 };

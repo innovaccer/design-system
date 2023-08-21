@@ -41,10 +41,14 @@ export interface TimePickerInputProps {
    * Callback function called when input field is blurred
    */
   onTimeChange?: (timeVal?: string) => void;
+  /**
+   * Shows error state in case of failed validation
+   */
+  error?: boolean;
 }
 
 export const TimePickerWithInput = (props: TimePickerInputProps) => {
-  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, time: timeProp } = props;
+  const { validators, inputOptions, inputFormat, outputFormat, onTimeChange, time: timeProp, error } = props;
 
   const [time, setTime] = React.useState(timeProp);
   const [init, setInit] = React.useState(false);
@@ -108,6 +112,7 @@ export const TimePickerWithInput = (props: TimePickerInputProps) => {
       onChange={onChangeHandler}
       onClear={onClearHandler}
       onBlur={onBlurHandler}
+      error={error}
       id="parent-TimePicker"
     />
   );
