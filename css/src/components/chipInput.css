@@ -14,8 +14,14 @@
   outline: var(--spacing-xs) var(--primary);
 }
 
+.ChipInput:hover {
+  background: var(--secondary-lighter);
+  border-color: var(--secondary-dark);
+}
+
 .ChipInput:focus-within {
   box-shadow: inset 0 0 0 var(--spacing-xs) var(--primary);
+  background: var(--white);
 }
 
 .ChipInput--disabled {
@@ -53,6 +59,14 @@
   margin-bottom: var(--spacing-m);
   font-family: var(--font-family);
   font-size: var(--font-size);
+}
+
+.ChipInput:hover .ChipInput-input {
+  background: var(--secondary-lighter);
+}
+
+.ChipInput:focus-within .ChipInput-input {
+  background: var(--white);
 }
 
 .ChipInput-icon {
