@@ -50,6 +50,10 @@ export interface PageHeaderProps extends BaseProps {
    * provides a border at bottom
    */
   separator: boolean;
+  /**
+   * `Button` component
+   */
+  backButton?: React.ReactNode;
 }
 
 export const PageHeader = (props: PageHeaderProps) => {
@@ -66,6 +70,7 @@ export const PageHeader = (props: PageHeaderProps) => {
     meta,
     navigationPosition,
     className,
+    backButton,
   } = props;
   const baseProps = extractBaseProps(props);
 
@@ -77,6 +82,11 @@ export const PageHeader = (props: PageHeaderProps) => {
     },
     className
   );
+
+  const statusWrapperClasses = classNames({
+    ['PageHeader-statusWrapper']: true,
+    ['PageHeader-statusWrapper--leftMargin']: backButton,
+  });
 
   const classes = classNames({
     PageHeader: true,
@@ -98,6 +108,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         <Row>
           <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
             <div className="PageHeader-titleWrapper">
+              {backButton}
               <Heading className="PageHeader-title">{title}</Heading>
               {badge}
             </div>
@@ -121,7 +132,7 @@ export const PageHeader = (props: PageHeaderProps) => {
         </Row>
       </div>
       {(status || meta) && (
-        <div className="PageHeader-statusWrapper">
+        <div className={statusWrapperClasses}>
           {status}
           {meta}
         </div>

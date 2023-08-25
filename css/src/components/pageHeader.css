@@ -30,10 +30,19 @@
   flex-shrink: 0;
 }
 
+.PageHeader-titleWrapper .Button {
+  margin-right: var(--spacing-l);
+  flex-shrink: 0;
+}
+
 .PageHeader-statusWrapper {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.PageHeader-statusWrapper--leftMargin {
+  margin-left: calc(var(--spacing-xl) + var(--spacing-l));
 }
 
 .PageHeader-statusWrapper .StatusHints {
