@@ -54,6 +54,7 @@
   padding-right: var(--spacing-m);
   padding-left: var(--spacing-m);
   height: var(--spacing-xl);
+  box-sizing: initial;
 }
 
 .Toast-icon--info,
