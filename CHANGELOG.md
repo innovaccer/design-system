@@ -1,3 +1,43 @@
+## 2.19.0 (2023-08-25)
+
+### Highlights
+
+- style(text): add text alignment css classes (f64a919)
+- feat(timepicker): add error state support for timepicker (9b1078a5)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- style(text): add text alignment css classes (f64a919)
+- feat(timepicker): add error state support for timepicker (9b1078a5)
+
+### Fixes
+
+- fix(chipInput): update chipInput background of hover state (e330274)
+- fix(toast): fix height of toast action icon (e73b5ef4)
+- fix(toast): fix toast right icon spacing (bd9cfdb5)
+
+### Improvements
+
+- fix(packages): update package-lock file (2b05ef23)
+
+### Documentation
+
+- docs(toast): add usage guidelines for overuse and actions of toast (645be26)
+
+---
+
 ## 2.18.0 (2023-08-08)
 
 ### Highlights
