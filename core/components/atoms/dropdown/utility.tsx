@@ -84,3 +84,5 @@ export const groupListOptions = (listOptions: Option[]): Option[] => {
 
   return flattenedGroupList;
 };
+
+export type ErrorType = 'DEFAULT' | 'NO_RECORDS_FOUND' | 'FAILED_TO_FETCH';

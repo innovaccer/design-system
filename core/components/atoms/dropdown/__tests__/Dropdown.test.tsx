@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
-import { Dropdown } from '@/index';
+import { Dropdown, Text } from '@/index';
 import { DropdownProps as Props } from '@/index.type';
 import { _isEqual } from '../utility';
 import {
@@ -14,6 +14,7 @@ import {
   fetchOptions,
   preSelectedOptions,
   allSelectedOptions,
+  fetchEmptyOptions,
 } from '../__stories__/Options';
 
 const size = ['tiny', 'regular'];
@@ -486,6 +487,29 @@ describe('Dropdown component with search', () => {
     fireEvent.click(dropdownTrigger);
     expect(screen.getByPlaceholderText('Custom search text')).toBeInTheDocument();
   });
+
+  it('is not rendered when no record is available', () => {
+    const { getByTestId, queryByTestId } = render(<Dropdown withSearch={true} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    expect(queryByTestId('DesignSystem-Input')).not.toBeInTheDocument();
+  });
+
+  it('is rendered when search returns no result', async () => {
+    const { getByTestId, getAllByTestId } = render(<Dropdown options={storyOptions} withSearch={true} />);
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.change(searchInput, { target: { value: 'Option 101' } });
+
+    await waitFor(() => {
+      expect(getAllByTestId('DesignSystem-Dropdown--errorWrapper')).toHaveLength(1);
+      expect(searchInput).toBeInTheDocument();
+    });
+  });
 });
 
 describe('Dropdown component', () => {
@@ -726,6 +750,65 @@ describe('Dropdown component with all options selected', () => {
       const optionList = getAllByTestId('DesignSystem-DropdownOption--WITH_CHECKBOX');
       expect(optionList[0]).toBeInTheDocument();
       expect(optionList[0]).toHaveTextContent('Option 1');
+    });
+  });
+});
+
+describe('Dropdown errorTemplate', () => {
+  it('renders default template when no record is available', () => {
+    const { getByTestId, getAllByTestId } = render(<Dropdown />);
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('No record available');
+    expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch('We have nothing to show you at the moment.');
+  });
+
+  it('renders default template when promise fetches no result', async () => {
+    const { getByTestId, getAllByTestId } = render(<Dropdown fetchOptions={fetchEmptyOptions} />);
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    await waitFor(() => {
+      expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Failed to fetch data');
+      expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch("We couldn't load the data, try reloading.");
+    });
+  });
+
+  it('renders default template when search returns no result', async () => {
+    const { getByTestId, getAllByTestId } = render(<Dropdown options={storyOptions} withSearch={true} />);
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const searchInput = getByTestId('DesignSystem-Input');
+    expect(searchInput).toBeInTheDocument();
+    fireEvent.change(searchInput, { target: { value: 'Option 101' } });
+
+    await waitFor(() => {
+      expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('No results found');
+      expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch(
+        'Try modifying your search to find what you are looking for.'
+      );
+    });
+  });
+
+  it('check: prop errorTemplate', async () => {
+    const { getByTestId } = render(
+      <Dropdown options={storyOptions} withSearch={true} errorTemplate={<Text>Test Error Message.</Text>} />
+    );
+
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+
+    const searchInput = getByTestId('DesignSystem-Input');
+    expect(searchInput).toBeInTheDocument();
+    fireEvent.change(searchInput, { target: { value: 'Option 101' } });
+
+    await waitFor(() => {
+      expect(screen.getByText('Test Error Message.')).toBeInTheDocument();
     });
   });
 });
