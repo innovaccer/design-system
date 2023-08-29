@@ -21,7 +21,7 @@ const customCode = `() => {
     
     const classNames = size === 'small' ? 'd-block mb-4' : 'd-block mb-5';
     return (
-      <DatePicker date={date} showTodayChip={false} size={size} withInput={withInput}>
+      <DatePicker date={date} showTodayDate={false} size={size} withInput={withInput}>
         <div className="pt-6 px-5">
           <div className="d-flex align-items-center justify-content-between">
             <Subheading size="s" appearance="subtle">
@@ -32,7 +32,7 @@ const customCode = `() => {
             <Chip
               label="Today"
               clearButton={false}
-              type="selection"
+              type="action"
               className={classNames}
               selected={selectedChip === 'today'}
               name="rangePicker"
@@ -44,9 +44,8 @@ const customCode = `() => {
             <Chip
               label="Tomorrow"
               clearButton={false}
-              type="selection"
+              type="action"
               className={classNames}
-              selected={selectedChip === 'tomorrow'}
               name={'chip'}
               onClick={() => {
                 setDate(getTomorrowDate())
@@ -56,9 +55,8 @@ const customCode = `() => {
             <Chip
               label="3 Days later"
               clearButton={false}
-              type="selection"
+              type="action"
               className={classNames}
-              selected={selectedChip === 'threeDaysLater'}
               name="rangePicker"
               onClick={() => {
                 setDate(getThreeDaysLaterDate())
@@ -68,9 +66,8 @@ const customCode = `() => {
             <Chip
               label="1 Week later"
               clearButton={false}
-              type="selection"
+              type="action"
               className={classNames}
-              selected={selectedChip === 'oneWeekLater'}
               name="rangePicker"
               onClick={() => {
                 setDate(getOneWeekLaterDate())
@@ -80,9 +77,8 @@ const customCode = `() => {
             <Chip
               label="30 Days later"
               clearButton={false}
-              type="selection"
+              type="action"
               className={classNames}
-              selected={selectedChip === 'thirtyDaysLater'}
               name="rangePicker"
               onClick={() => {
                 setDate(getThirtyDaysLaterDate())
