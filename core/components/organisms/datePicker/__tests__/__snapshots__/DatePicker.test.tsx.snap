@@ -157,7 +157,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -2145,7 +2145,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -2807,7 +2807,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -3469,7 +3469,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -4374,7 +4374,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--regular color-primary Calendar-text"
+                    class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
                     data-test="DesignSystem-Text"
                   >
                     2021
@@ -4638,7 +4638,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
