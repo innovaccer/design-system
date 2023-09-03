@@ -38,7 +38,7 @@ export interface ActionButtonProps extends BaseProps {
 }
 
 export const ActionButton = (props: ActionButtonProps) => {
-  const { className, name, size, children, type } = props;
+  const { className, name, size, children, type, onClick } = props;
   const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
@@ -55,21 +55,29 @@ export const ActionButton = (props: ActionButtonProps) => {
     width: `${size}px`,
   };
 
+  const onClickHandler = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    onClick && onClick(event);
+  };
+
   // change `children` to {name} after migration
   if (children && React.isValidElement(children)) {
     return (
-      <span {...baseProps} className={iconClass} data-test="DesignSystem-Input-ActionButton">
+      /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions*/
+      <span {...baseProps} onClick={onClickHandler} className={iconClass} data-test="DesignSystem-Input-ActionButton">
         {children}
       </span>
     );
   }
   return (
+    /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions*/
     <i
       {...baseProps}
       className={iconClass}
       style={styles}
       {...accessibilityProps}
       data-test="DesignSystem-Input-ActionButton"
+      onClick={onClickHandler}
     >
       {`${name}_${type}`}
     </i>
