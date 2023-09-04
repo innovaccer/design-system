@@ -29,14 +29,19 @@ exports[`Collapsible component
           role="button"
           tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
-            data-test="DesignSystem-Collapsible--FooterIcon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <style />
+          <div
+            class="OutsideClick PopperWrapper-trigger"
           >
-            keyboard_arrow_right_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
+              data-test="DesignSystem-Collapsible--FooterIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_right_round
+            </i>
+          </div>
         </div>
       </div>
     </div>
@@ -73,14 +78,19 @@ exports[`Collapsible component
           role="button"
           tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
-            data-test="DesignSystem-Collapsible--FooterIcon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <style />
+          <div
+            class="OutsideClick PopperWrapper-trigger"
           >
-            keyboard_arrow_right_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
+              data-test="DesignSystem-Collapsible--FooterIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_right_round
+            </i>
+          </div>
         </div>
       </div>
     </div>
@@ -118,14 +128,19 @@ exports[`Collapsible component
           role="button"
           tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
-            data-test="DesignSystem-Collapsible--FooterIcon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <style />
+          <div
+            class="OutsideClick PopperWrapper-trigger"
           >
-            keyboard_arrow_left_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
+              data-test="DesignSystem-Collapsible--FooterIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_left_round
+            </i>
+          </div>
         </div>
       </div>
     </div>
@@ -163,14 +178,19 @@ exports[`Collapsible component
           role="button"
           tabindex="0"
         >
-          <i
-            class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
-            data-test="DesignSystem-Collapsible--FooterIcon"
-            role="button"
-            style="font-size: 16px; width: 16px;"
+          <style />
+          <div
+            class="OutsideClick PopperWrapper-trigger"
           >
-            keyboard_arrow_left_round
-          </i>
+            <i
+              class="material-icons material-icons-round Icon px-6 py-4 my-2 cursor-pointer"
+              data-test="DesignSystem-Collapsible--FooterIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              keyboard_arrow_left_round
+            </i>
+          </div>
         </div>
       </div>
     </div>

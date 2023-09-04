@@ -35,7 +35,6 @@
 .Collapsible-footer {
   padding-top: var(--spacing-m);
   padding-bottom: var(--spacing-m);
-  box-sizing: border-box;
   cursor: pointer;
   display: flex;
 }
@@ -52,8 +51,4 @@
 
 .Collapsible-footer:active {
   background-color: var(--secondary-light);
-}
-
-.Collapsible-footer--seperator {
-  border-top: var(--spacing-xs) solid var(--secondary-light);
 }

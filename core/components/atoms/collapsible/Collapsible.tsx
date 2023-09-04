@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Icon } from '@/index';
+import { Icon, Tooltip, Divider } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 
 export interface CollapsibleProps extends BaseProps {
@@ -44,9 +44,9 @@ export const Collapsible = (props: CollapsibleProps) => {
   const baseProps = extractBaseProps(props);
 
   React.useEffect(() => {
-    if (ref.current) {
-      setSeperator(ref.current.scrollHeight > ref.current.clientHeight);
-    }
+    window.requestAnimationFrame(() => {
+      ref.current && setSeperator(ref.current.scrollHeight > ref.current.clientHeight);
+    });
   });
 
   const WrapperClass = classNames({
@@ -70,7 +70,6 @@ export const Collapsible = (props: CollapsibleProps) => {
 
   const FooterClass = classNames({
     ['Collapsible-footer']: true,
-    ['Collapsible-footer--seperator']: seperator,
   });
 
   const onToggleHandler = (newExpanded: boolean, type: string) => () => {
@@ -102,6 +101,7 @@ export const Collapsible = (props: CollapsibleProps) => {
         >
           {children}
         </div>
+        {withTrigger && seperator && <Divider appearance="header" />}
         {withTrigger && (
           <div
             role="button"
@@ -111,12 +111,26 @@ export const Collapsible = (props: CollapsibleProps) => {
             onClick={onToggleHandler(!expanded, 'click')}
             onKeyDown={onToggleHandler(!expanded, 'click')}
           >
-            <Icon
-              name={expanded ? 'keyboard_arrow_left' : 'keyboard_arrow_right'}
-              data-test="DesignSystem-Collapsible--FooterIcon"
-              className="px-6 py-4 my-2 cursor-pointer"
-              size={16}
-            />
+            {expanded && (
+              <Tooltip tooltip="Collapse the panel" position="right">
+                <Icon
+                  name="keyboard_arrow_left"
+                  data-test="DesignSystem-Collapsible--FooterIcon"
+                  className="px-6 py-4 my-2 cursor-pointer"
+                  size={16}
+                />
+              </Tooltip>
+            )}
+            {!expanded && (
+              <Tooltip tooltip="Expand the panel" position="right">
+                <Icon
+                  name="keyboard_arrow_right"
+                  data-test="DesignSystem-Collapsible--FooterIcon"
+                  className="px-6 py-4 my-2 cursor-pointer"
+                  size={16}
+                />
+              </Tooltip>
+            )}
           </div>
         )}
       </div>
