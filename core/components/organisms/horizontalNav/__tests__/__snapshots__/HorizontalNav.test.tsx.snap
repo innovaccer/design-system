@@ -15,12 +15,12 @@ exports[`Horizontal Navigation component
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon mr-3 HorizontalNav-animate"
+          class="material-icons material-icons-rounded Icon mr-3 HorizontalNav-animate"
           data-test="DesignSystem-HorizontalNav--Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          events_round
+          events
         </i>
         <span
           class="Text Text--medium Text--regular color-primary-dark HorizontalNav-menuText HorizontalNav-animate"

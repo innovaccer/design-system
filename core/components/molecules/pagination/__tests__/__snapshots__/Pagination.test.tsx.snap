@@ -20,12 +20,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            first_page_round
+            first_page
           </i>
         </div>
       </button>
@@ -38,12 +38,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            navigate_before_round
+            navigate_before
           </i>
         </div>
       </button>
@@ -60,12 +60,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            navigate_next_round
+            navigate_next
           </i>
         </div>
       </button>
@@ -78,12 +78,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            last_page_round
+            last_page
           </i>
         </div>
       </button>
@@ -112,12 +112,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            first_page_round
+            first_page
           </i>
         </div>
       </button>
@@ -130,12 +130,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            navigate_before_round
+            navigate_before
           </i>
         </div>
       </button>
@@ -167,12 +167,12 @@ exports[`Pagination component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_up_round
+                keyboard_arrow_up
               </i>
             </div>
           </button>
@@ -185,12 +185,12 @@ exports[`Pagination component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </button>
@@ -215,12 +215,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            navigate_next_round
+            navigate_next
           </i>
         </div>
       </button>
@@ -233,12 +233,12 @@ exports[`Pagination component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            last_page_round
+            last_page
           </i>
         </div>
       </button>

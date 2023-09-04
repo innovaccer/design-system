@@ -29,12 +29,12 @@ exports[`HelpText component snapshot
       data-test="DesignSystem-InlineMessage"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon--small"
+        class="material-icons material-icons-rounded Icon Icon--alert InlineMessage-icon--small"
         data-test="DesignSystem-InlineMessage--Icon"
         role="button"
-        style="font-size: 14px; width: 14px;"
+        style="font-size: 14px; width: 14px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        error_round
+        error
       </i>
       <span
         class="Text Text--default Text--medium Text--small InlineMessage-text--alert"

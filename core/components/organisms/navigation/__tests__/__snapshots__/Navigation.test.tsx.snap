@@ -411,12 +411,12 @@ Object {
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
             >
               <i
-                class="material-icons material-icons-round Icon Icon--default Navigation-menuIcon"
+                class="material-icons material-icons-rounded Icon Icon--default Navigation-menuIcon"
                 data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                event_round
+                event
               </i>
             </div>
             <div
@@ -464,12 +464,12 @@ Object {
             data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
           >
             <i
-              class="material-icons material-icons-round Icon Icon--default Navigation-menuIcon"
+              class="material-icons material-icons-rounded Icon Icon--default Navigation-menuIcon"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              event_round
+              event
             </i>
           </div>
           <div

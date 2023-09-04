@@ -201,13 +201,13 @@ exports[`TimePicker component prop:time snapshot
           class="Input-icon Input-iconWrapper--right"
         >
           <i
-            class="material-icons material-icons-round Icon Input-icon--right"
+            class="material-icons material-icons-rounded Icon Input-icon--right"
             data-test="DesignSystem-Input--closeIcon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
       </div>
@@ -243,13 +243,13 @@ exports[`TimePicker component prop:time snapshot
           class="Input-icon Input-iconWrapper--right"
         >
           <i
-            class="material-icons material-icons-round Icon Input-icon--right"
+            class="material-icons material-icons-rounded Icon Input-icon--right"
             data-test="DesignSystem-Input--closeIcon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
       </div>

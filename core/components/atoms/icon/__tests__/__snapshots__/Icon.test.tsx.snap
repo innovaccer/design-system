@@ -1,629 +1,666 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent1", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent1"
+      class="material-icons material-icons-rounded Icon Icon--accent1"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent1_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent1Dark"
+      class="material-icons material-icons-rounded Icon Icon--accent1Dark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent1_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent1Lighter"
+      class="material-icons material-icons-rounded Icon Icon--accent1Lighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent2", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent2"
+      class="material-icons material-icons-rounded Icon Icon--accent2"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent2_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent2Dark"
+      class="material-icons material-icons-rounded Icon Icon--accent2Dark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent2_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent2Lighter"
+      class="material-icons material-icons-rounded Icon Icon--accent2Lighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent3", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent3"
+      class="material-icons material-icons-rounded Icon Icon--accent3"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent3_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent3Dark"
+      class="material-icons material-icons-rounded Icon Icon--accent3Dark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent3_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent3Lighter"
+      class="material-icons material-icons-rounded Icon Icon--accent3Lighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent4", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent4"
+      class="material-icons material-icons-rounded Icon Icon--accent4"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent4_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent4Dark"
+      class="material-icons material-icons-rounded Icon Icon--accent4Dark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent4_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--accent4Lighter"
+      class="material-icons material-icons-rounded Icon Icon--accent4Lighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "alert", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--alert"
+      class="material-icons material-icons-rounded Icon Icon--alert"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "alert_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--alertDark"
+      class="material-icons material-icons-rounded Icon Icon--alertDark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "alert_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--alertLighter"
+      class="material-icons material-icons-rounded Icon Icon--alertLighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "destructive", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--destructive"
+      class="material-icons material-icons-rounded Icon Icon--destructive"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "disabled", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--disabled"
+      class="material-icons material-icons-rounded Icon Icon--disabled"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "info", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--info"
+      class="material-icons material-icons-rounded Icon Icon--info"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "inverse", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--inverse"
+      class="material-icons material-icons-rounded Icon Icon--inverse"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "primary", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--primary"
+      class="material-icons material-icons-rounded Icon Icon--primary"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "primary_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--primaryDark"
+      class="material-icons material-icons-rounded Icon Icon--primaryDark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "primary_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--primaryLighter"
+      class="material-icons material-icons-rounded Icon Icon--primaryLighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "subtle", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--subtle"
+      class="material-icons material-icons-rounded Icon Icon--subtle"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "success", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--success"
+      class="material-icons material-icons-rounded Icon Icon--success"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "success_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--successDark"
+      class="material-icons material-icons-rounded Icon Icon--successDark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "success_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--successLighter"
+      class="material-icons material-icons-rounded Icon Icon--successLighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "warning", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--warning"
+      class="material-icons material-icons-rounded Icon Icon--warning"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "warning_dark", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--warningDark"
+      class="material-icons material-icons-rounded Icon Icon--warningDark"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "warning_lighter", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--warningLighter"
+      class="material-icons material-icons-rounded Icon Icon--warningLighter"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "white", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon Icon--white"
+      class="material-icons material-icons-rounded Icon Icon--white"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, type: "filled", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons Icon"
+      class="material-icons material-icons-rounded Icon"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_filled
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, type: "outline", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
       class="material-icons material-icons-outlined Icon"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 0, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_outlined
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, type: "outlined", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
       class="material-icons material-icons-outlined Icon"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 0, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_outlined
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, type: "round", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon"
+      class="material-icons material-icons-rounded Icon"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, type: "rounded", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-round Icon"
+      class="material-icons material-icons-rounded Icon"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_round
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, type: "sharp", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-sharp Icon"
+      class="material-icons material-icons-outlined Icon"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 0, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_sharp
+      events
     </i>
   </div>
 </body>
 `;
 
-exports[`Icon component 
+exports[`Icon component snapshot 
   name: "events", size: 50, type: "two-tone", onClick: "[Function]"
  1`] = `
 <body>
   <div>
     <i
-      class="material-icons material-icons-two-tone Icon"
+      class="material-icons material-icons-rounded Icon"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 50px; width: 50px;"
+      style="font-size: 50px; width: 50px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 48;"
       tabindex="0"
     >
-      events_two-tone
+      events
     </i>
   </div>
 </body>

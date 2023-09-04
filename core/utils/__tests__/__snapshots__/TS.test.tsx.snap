@@ -7,12 +7,12 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Avatar"
   >
     <i
-      class="material-icons material-icons-round Icon Icon--white Avatar-content--secondary"
+      class="material-icons material-icons-rounded Icon Icon--white Avatar-content--secondary"
       data-test="DesignSystem-Avatar--Icon"
       role="button"
-      style="font-size: 16px; width: 16px;"
+      style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
     >
-      person_round
+      person
     </i>
   </span>
   <div
@@ -115,12 +115,12 @@ exports[`TS renders children 1`] = `
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
-                  style="font-size: 16px; width: 16px;"
+                  style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                 >
-                  arrow_back_round
+                  arrow_back
                 </i>
               </div>
             </button>
@@ -137,11 +137,12 @@ exports[`TS renders children 1`] = `
                   Jun
                 </h5>
                 <i
-                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                  data-test="DesignSystem-Icon"
                   role="button"
-                  style="font-size: 16px; width: 16px;"
+                  style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                 >
-                  keyboard_arrow_down_round
+                  keyboard_arrow_down
                 </i>
               </div>
               <div
@@ -154,11 +155,12 @@ exports[`TS renders children 1`] = `
                   2021
                 </h5>
                 <i
-                  class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                  class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                  data-test="DesignSystem-Icon"
                   role="button"
-                  style="font-size: 16px; width: 16px;"
+                  style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                 >
-                  keyboard_arrow_down_round
+                  keyboard_arrow_down
                 </i>
               </div>
             </div>
@@ -172,12 +174,12 @@ exports[`TS renders children 1`] = `
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-round Icon"
+                  class="material-icons material-icons-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
-                  style="font-size: 16px; width: 16px;"
+                  style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                 >
-                  arrow_forward_round
+                  arrow_forward
                 </i>
               </div>
             </button>
@@ -767,11 +769,12 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <i
-          class="material-icons material-icons-round Icon Icon--default"
+          class="material-icons material-icons-rounded Icon Icon--default"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          keyboard_arrow_down_round
+          keyboard_arrow_down
         </i>
       </button>
     </div>
@@ -806,11 +809,12 @@ exports[`TS renders children 1`] = `
                 class="DropdownButton-wrapper"
               />
               <i
-                class="material-icons material-icons-round Icon Icon--default"
+                class="material-icons material-icons-rounded Icon Icon--default"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </button>
           </div>
@@ -847,11 +851,12 @@ exports[`TS renders children 1`] = `
     Hello World!
   </h4>
   <i
-    class="material-icons material-icons-round Icon"
+    class="material-icons material-icons-rounded Icon"
+    data-test="DesignSystem-Icon"
     role="button"
-    style="font-size: 16px; width: 16px;"
+    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
   >
-    Hello World!_round
+    Hello World!
   </i>
   <div
     class="Input Input--regular"
@@ -933,12 +938,12 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Message"
   >
     <i
-      class="material-icons material-icons-round Icon Icon--info Message-icon Message-icon--info"
+      class="material-icons material-icons-rounded Icon Icon--info Message-icon Message-icon--info"
       data-test="DesignSystem-Message--Icon"
       role="button"
-      style="font-size: 16px; width: 16px;"
+      style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
     >
-      info_round
+      info
     </i>
     <div>
       <span
@@ -1499,11 +1504,12 @@ exports[`TS renders children 1`] = `
     class="Toast Toast--info"
   >
     <i
-      class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+      class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
+      data-test="DesignSystem-Icon"
       role="button"
-      style="font-size: 16px; width: 16px;"
+      style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
     >
-      info_round
+      info
     </i>
     <div
       class="Toast-body"
@@ -1518,12 +1524,13 @@ exports[`TS renders children 1`] = `
           Hello World!
         </h5>
         <i
-          class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+          class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           tabindex="0"
         >
-          close_round
+          close
         </i>
       </div>
     </div>
@@ -1575,12 +1582,12 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            close_round
+            close
           </i>
         </div>
       </button>
@@ -1629,12 +1636,12 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            first_page_round
+            first_page
           </i>
         </div>
       </button>
@@ -1648,12 +1655,12 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            navigate_before_round
+            navigate_before
           </i>
         </div>
       </button>
@@ -1671,12 +1678,12 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            navigate_next_round
+            navigate_next
           </i>
         </div>
       </button>
@@ -1690,12 +1697,12 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            last_page_round
+            last_page
           </i>
         </div>
       </button>
@@ -1779,12 +1786,12 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              arrow_back_round
+              arrow_back
             </i>
           </div>
         </button>
@@ -1822,12 +1829,12 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              arrow_forward_round
+              arrow_forward
             </i>
           </div>
         </button>

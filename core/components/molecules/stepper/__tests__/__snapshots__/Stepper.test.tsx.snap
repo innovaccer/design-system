@@ -14,12 +14,12 @@ exports[`Stepper component
       tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
+        class="material-icons material-icons-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        check_circle_round
+        check_circle
       </i>
       <span
         class="Text Text--medium Text--regular color-inverse Stepper-animate Stepper-text"
@@ -34,12 +34,12 @@ exports[`Stepper component
       tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
+        class="material-icons material-icons-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 0, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        radio_button_unchecked_round
+        radio_button_unchecked
       </i>
       <span
         class="Text Text--medium Text--regular color-primary-dark Stepper-animate Stepper-text"
@@ -54,12 +54,12 @@ exports[`Stepper component
       tabindex="-1"
     >
       <i
-        class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
+        class="material-icons material-icons-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 0, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        radio_button_unchecked_round
+        radio_button_unchecked
       </i>
       <span
         class="Text Text--medium Text--regular color-inverse-lightest Stepper-animate Stepper-text"
@@ -74,12 +74,12 @@ exports[`Stepper component
       tabindex="-1"
     >
       <i
-        class="material-icons material-icons-round Icon mr-3 my-4 Stepper-animate"
+        class="material-icons material-icons-rounded Icon mr-3 my-4 Stepper-animate"
         data-test="DesignSystem-Step--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 0, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        radio_button_unchecked_round
+        radio_button_unchecked
       </i>
       <span
         class="Text Text--medium Text--regular color-inverse-lightest Stepper-animate Stepper-text"
