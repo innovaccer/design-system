@@ -19,12 +19,12 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              assessment_round
+              assessment
             </i>
             <span
               class="Text Text--subtle Text--regular"
@@ -50,12 +50,12 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assessment_round
+            assessment
           </i>
           <span
             class="Text Text--subtle Text--regular"
@@ -140,12 +140,12 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              assessment_round
+              assessment
             </i>
             <span
               class="Text Text--subtle Text--small"
@@ -171,12 +171,12 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
-            style="font-size: 12px; width: 12px;"
+            style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assessment_round
+            assessment
           </i>
           <span
             class="Text Text--subtle Text--small"
@@ -254,12 +254,12 @@ Object {
         data-test="DesignSystem-MetaList"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+          class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
           data-test="DesignSystem-MetaList--Seperator"
           role="button"
-          style="font-size: 8px; width: 8px;"
+          style="font-size: 8px; width: 8px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          fiber_manual_record_round
+          fiber_manual_record
         </i>
         <span
           class="MetaList-item"
@@ -269,12 +269,12 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              assessment_round
+              assessment
             </i>
             <span
               class="Text Text--subtle Text--regular"
@@ -293,12 +293,12 @@ Object {
       data-test="DesignSystem-MetaList"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+        class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
         data-test="DesignSystem-MetaList--Seperator"
         role="button"
-        style="font-size: 8px; width: 8px;"
+        style="font-size: 8px; width: 8px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        fiber_manual_record_round
+        fiber_manual_record
       </i>
       <span
         class="MetaList-item"
@@ -308,12 +308,12 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assessment_round
+            assessment
           </i>
           <span
             class="Text Text--subtle Text--regular"
@@ -391,12 +391,12 @@ Object {
         data-test="DesignSystem-MetaList"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+          class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
           data-test="DesignSystem-MetaList--Seperator"
           role="button"
-          style="font-size: 8px; width: 8px;"
+          style="font-size: 8px; width: 8px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          fiber_manual_record_round
+          fiber_manual_record
         </i>
         <span
           class="MetaList-item"
@@ -406,12 +406,12 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              assessment_round
+              assessment
             </i>
             <span
               class="Text Text--subtle Text--small"
@@ -430,12 +430,12 @@ Object {
       data-test="DesignSystem-MetaList"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+        class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
         data-test="DesignSystem-MetaList--Seperator"
         role="button"
-        style="font-size: 8px; width: 8px;"
+        style="font-size: 8px; width: 8px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        fiber_manual_record_round
+        fiber_manual_record
       </i>
       <span
         class="MetaList-item"
@@ -445,12 +445,12 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-round Icon Icon--subtle Meta-icon"
+            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
-            style="font-size: 12px; width: 12px;"
+            style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assessment_round
+            assessment
           </i>
           <span
             class="Text Text--subtle Text--small"

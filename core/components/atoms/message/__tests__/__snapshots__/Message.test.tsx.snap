@@ -10,12 +10,12 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--alert Message-icon Message-icon--alert Message-icon--withTitle"
+        class="material-icons material-icons-rounded Icon Icon--alert Message-icon Message-icon--alert Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        error_round
+        error
       </i>
       <div>
         <h5
@@ -63,12 +63,12 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--info Message-icon Message-icon--info Message-icon--withTitle"
+        class="material-icons material-icons-rounded Icon Icon--info Message-icon Message-icon--info Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        info_round
+        info
       </i>
       <div>
         <h5
@@ -116,12 +116,12 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--success Message-icon Message-icon--success Message-icon--withTitle"
+        class="material-icons material-icons-rounded Icon Icon--success Message-icon Message-icon--success Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        check_circle_round
+        check_circle
       </i>
       <div>
         <h5
@@ -169,12 +169,12 @@ exports[`Message component
       data-test="DesignSystem-Message"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--warning Message-icon Message-icon--warning Message-icon--withTitle"
+        class="material-icons material-icons-rounded Icon Icon--warning Message-icon Message-icon--warning Message-icon--withTitle"
         data-test="DesignSystem-Message--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        warning_round
+        warning
       </i>
       <div>
         <h5

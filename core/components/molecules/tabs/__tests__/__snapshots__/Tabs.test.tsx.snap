@@ -30,13 +30,13 @@ exports[`Tabs component
           Tab 1
         </span>
         <i
-          class="material-icons material-icons-round Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+          class="material-icons material-icons-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
           data-test="DesignSystem-DismissibleTabs--Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           tabindex="0"
         >
-          clear_round
+          clear
         </i>
       </div>
       <div
@@ -45,12 +45,12 @@ exports[`Tabs component
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--subtle mr-4 "
+          class="material-icons material-icons-rounded Icon Icon--subtle mr-4 "
           data-test="DesignSystem-Tabs--Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          call_received_round
+          call_received
         </i>
         <span
           class="Text Text--subtle Text--regular"
@@ -112,13 +112,13 @@ exports[`Tabs component
           Tab 1
         </span>
         <i
-          class="material-icons material-icons-round Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+          class="material-icons material-icons-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
           data-test="DesignSystem-DismissibleTabs--Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           tabindex="0"
         >
-          clear_round
+          clear
         </i>
       </div>
       <div
@@ -127,12 +127,12 @@ exports[`Tabs component
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--subtle mr-4 "
+          class="material-icons material-icons-rounded Icon Icon--subtle mr-4 "
           data-test="DesignSystem-Tabs--Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          call_received_round
+          call_received
         </i>
         <span
           class="Text Text--subtle Text--regular"

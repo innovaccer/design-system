@@ -74,12 +74,12 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--video"
+            class="material-icons material-icons-rounded Icon FileIcon FileIcon--animate FileIcon--video"
             data-test="DesignSystem-FileListItem--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            movie_round
+            movie
           </i>
           <span
             class="Text Text--default Text--regular FileItem-text"
@@ -111,12 +111,12 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--image"
+            class="material-icons material-icons-rounded Icon FileIcon FileIcon--image"
             data-test="DesignSystem-FileListItem--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            image_round
+            image
           </i>
           <span
             class="Text Text--subtle Text--regular FileItem-text"
@@ -141,12 +141,12 @@ exports[`FileList component
         data-test="DesignSystem-InlineMessage"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--alert InlineMessage-icon--small"
+          class="material-icons material-icons-rounded Icon Icon--alert InlineMessage-icon--small"
           data-test="DesignSystem-InlineMessage--Icon"
           role="button"
-          style="font-size: 14px; width: 14px;"
+          style="font-size: 14px; width: 14px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          error_round
+          error
         </i>
         <span
           class="Text Text--default Text--medium Text--small InlineMessage-text--alert"
@@ -167,12 +167,12 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--application"
+            class="material-icons material-icons-rounded Icon FileIcon FileIcon--animate FileIcon--application"
             data-test="DesignSystem-FileListItem--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            insert_drive_file_round
+            insert_drive_file
           </i>
           <span
             class="Text Text--default Text--regular FileItem-text"
@@ -204,12 +204,12 @@ exports[`FileList component
           class="FileItem-fileContent"
         >
           <i
-            class="material-icons material-icons-round Icon FileIcon FileIcon--animate FileIcon--others"
+            class="material-icons material-icons-rounded Icon FileIcon FileIcon--animate FileIcon--others"
             data-test="DesignSystem-FileListItem--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            text_snippet_round
+            text_snippet
           </i>
           <span
             class="Text Text--default Text--regular FileItem-text"

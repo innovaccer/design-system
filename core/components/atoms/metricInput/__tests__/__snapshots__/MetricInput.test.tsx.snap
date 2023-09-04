@@ -11,12 +11,12 @@ exports[`MetricInput component
       role="presentation"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
+        class="material-icons material-icons-rounded Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
         data-test="DesignSystem-MetricInput--icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <input
         class="MetricInput-input MetricInput-input--regular"
@@ -36,12 +36,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_up_round
+              keyboard_arrow_up
             </i>
           </div>
         </button>
@@ -54,12 +54,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_down_round
+              keyboard_arrow_down
             </i>
           </div>
         </button>
@@ -80,12 +80,12 @@ exports[`MetricInput component
       role="presentation"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
+        class="material-icons material-icons-rounded Icon Icon--subtle MetricInput-icon MetricInput-icon--regular"
         data-test="DesignSystem-MetricInput--icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <input
         class="MetricInput-input MetricInput-input--regular"
@@ -105,12 +105,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_up_round
+              keyboard_arrow_up
             </i>
           </div>
         </button>
@@ -123,12 +123,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_down_round
+              keyboard_arrow_down
             </i>
           </div>
         </button>
@@ -179,12 +179,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_up_round
+              keyboard_arrow_up
             </i>
           </div>
         </button>
@@ -197,12 +197,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_down_round
+              keyboard_arrow_down
             </i>
           </div>
         </button>
@@ -253,12 +253,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_up_round
+              keyboard_arrow_up
             </i>
           </div>
         </button>
@@ -271,12 +271,12 @@ exports[`MetricInput component
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
-              style="font-size: 12px; width: 12px;"
+              style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              keyboard_arrow_down_round
+              keyboard_arrow_down
             </i>
           </div>
         </button>

@@ -35,11 +35,12 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
-                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                clear_round
+                clear
               </i>
             </div>
           </div>
@@ -61,11 +62,12 @@ exports[`ChipInput component
               tabindex="0"
             >
               <i
-                class="material-icons material-icons-round Icon Icon--subtle p-2"
+                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                clear_round
+                clear
               </i>
             </div>
           </div>
@@ -77,13 +79,13 @@ exports[`ChipInput component
           />
         </div>
         <i
-          class="material-icons material-icons-round Icon Icon--subtle ChipInput-icon"
+          class="material-icons material-icons-rounded Icon Icon--subtle ChipInput-icon"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           tabindex="0"
         >
-          close_round
+          close
         </i>
       </div>
     </div>
@@ -126,11 +128,12 @@ exports[`ChipInput component
               tabindex="-1"
             >
               <i
-                class="material-icons material-icons-round Icon Icon--disabled p-2"
+                class="material-icons material-icons-rounded Icon Icon--disabled p-2"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                clear_round
+                clear
               </i>
             </div>
           </div>
@@ -152,11 +155,12 @@ exports[`ChipInput component
               tabindex="-1"
             >
               <i
-                class="material-icons material-icons-round Icon Icon--disabled p-2"
+                class="material-icons material-icons-rounded Icon Icon--disabled p-2"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                clear_round
+                clear
               </i>
             </div>
           </div>
@@ -169,13 +173,13 @@ exports[`ChipInput component
           />
         </div>
         <i
-          class="material-icons material-icons-round Icon Icon--disabled ChipInput-icon"
+          class="material-icons material-icons-rounded Icon Icon--disabled ChipInput-icon"
           data-test="DesignSystem-ChipInput--Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           tabindex="-1"
         >
-          close_round
+          close
         </i>
       </div>
     </div>

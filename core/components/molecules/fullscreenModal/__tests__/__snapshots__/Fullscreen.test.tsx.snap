@@ -58,12 +58,12 @@ exports[`FullscreenModal component
                       class="Button-icon"
                     >
                       <i
-                        class="material-icons material-icons-round Icon"
+                        class="material-icons material-icons-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
                         role="button"
-                        style="font-size: 16px; width: 16px;"
+                        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                       >
-                        close_round
+                        close
                       </i>
                     </div>
                   </button>
@@ -141,12 +141,12 @@ exports[`FullscreenModal component
                       class="Button-icon"
                     >
                       <i
-                        class="material-icons material-icons-round Icon"
+                        class="material-icons material-icons-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
                         role="button"
-                        style="font-size: 16px; width: 16px;"
+                        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                       >
-                        close_round
+                        close
                       </i>
                     </div>
                   </button>
@@ -266,12 +266,12 @@ exports[`FullscreenModal component
                       class="Button-icon"
                     >
                       <i
-                        class="material-icons material-icons-round Icon"
+                        class="material-icons material-icons-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
                         role="button"
-                        style="font-size: 16px; width: 16px;"
+                        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                       >
-                        close_round
+                        close
                       </i>
                     </div>
                   </button>
@@ -356,12 +356,12 @@ exports[`FullscreenModal component
                       class="Button-icon"
                     >
                       <i
-                        class="material-icons material-icons-round Icon"
+                        class="material-icons material-icons-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
                         role="button"
-                        style="font-size: 16px; width: 16px;"
+                        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                       >
-                        close_round
+                        close
                       </i>
                     </div>
                   </button>
@@ -438,12 +438,12 @@ exports[`FullscreenModal component
                       class="Button-icon"
                     >
                       <i
-                        class="material-icons material-icons-round Icon"
+                        class="material-icons material-icons-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
                         role="button"
-                        style="font-size: 16px; width: 16px;"
+                        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                       >
-                        close_round
+                        close
                       </i>
                     </div>
                   </button>
@@ -563,12 +563,12 @@ exports[`FullscreenModal component
                       class="Button-icon"
                     >
                       <i
-                        class="material-icons material-icons-round Icon"
+                        class="material-icons material-icons-rounded Icon"
                         data-test="DesignSystem-Button--Icon"
                         role="button"
-                        style="font-size: 16px; width: 16px;"
+                        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                       >
-                        close_round
+                        close
                       </i>
                     </div>
                   </button>

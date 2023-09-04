@@ -29,11 +29,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>
@@ -71,11 +72,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>
@@ -113,11 +115,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>
@@ -155,11 +158,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>
@@ -197,11 +201,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>
@@ -239,11 +244,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>
@@ -281,11 +287,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>
@@ -323,11 +330,12 @@ exports[`TimePicker component snapshots renders snapshot for all props
             </span>
           </div>
           <i
-            class="material-icons material-icons-round Icon Icon--default"
+            class="material-icons material-icons-rounded Icon Icon--default"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            keyboard_arrow_down_round
+            keyboard_arrow_down
           </i>
         </button>
       </div>

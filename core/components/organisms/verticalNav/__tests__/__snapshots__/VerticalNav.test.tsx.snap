@@ -18,12 +18,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assignment_ind_round
+            assignment_ind
           </i>
         </div>
       </a>
@@ -36,12 +36,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            forum_round
+            forum
           </i>
         </div>
       </a>
@@ -53,12 +53,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assignment_ind_round
+            assignment_ind
           </i>
         </div>
       </a>
@@ -70,12 +70,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            events_round
+            events
           </i>
         </div>
       </a>
@@ -88,12 +88,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            airline_seat_flat_angled_round
+            airline_seat_flat_angled
           </i>
         </div>
       </a>
@@ -106,12 +106,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon"
+            class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            favorite_round
+            favorite
           </i>
         </div>
       </a>
@@ -148,12 +148,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon mr-4"
+            class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assignment_ind_round
+            assignment_ind
           </i>
           <span
             class="Text Text--regular color-inverse MenuItem-Text"
@@ -188,12 +188,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon mr-4"
+            class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            forum_round
+            forum
           </i>
           <span
             class="Text Text--regular color-inverse MenuItem-Text"
@@ -203,11 +203,12 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
-          class="material-icons material-icons-round Icon mx-4"
+          class="material-icons material-icons-rounded Icon mx-4"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          keyboard_arrow_up_round
+          keyboard_arrow_up
         </i>
       </a>
       <a
@@ -218,12 +219,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon mr-4"
+            class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            assignment_ind_round
+            assignment_ind
           </i>
           <span
             class="Text Text--regular color-primary-dark MenuItem-Text"
@@ -241,12 +242,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon mr-4"
+            class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            events_round
+            events
           </i>
           <span
             class="Text Text--regular color-inverse MenuItem-Text"
@@ -265,12 +266,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon mr-4"
+            class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            airline_seat_flat_angled_round
+            airline_seat_flat_angled
           </i>
           <span
             class="Text Text--regular color-inverse-lightest MenuItem-Text"
@@ -295,12 +296,12 @@ exports[`Vertical Navigation component
           class="d-flex align-items-center overflow-hidden"
         >
           <i
-            class="material-icons material-icons-round Icon mr-4"
+            class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
           >
-            favorite_round
+            favorite
           </i>
           <span
             class="Text Text--regular color-inverse MenuItem-Text"
@@ -310,11 +311,12 @@ exports[`Vertical Navigation component
           </span>
         </div>
         <i
-          class="material-icons material-icons-round Icon mx-4"
+          class="material-icons material-icons-rounded Icon mx-4"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          keyboard_arrow_down_round
+          keyboard_arrow_down
         </i>
       </a>
     </div>
