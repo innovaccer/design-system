@@ -1,0 +1,40 @@
+.ActionCard {
+  cursor: pointer;
+  border-radius: var(--spacing-m);
+  width: 100%;
+  border: var(--spacing-xs) solid var(--secondary-dark);
+}
+
+.ActionCard:hover {
+  box-shadow: var(--shadow-m);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.ActionCard:focus,
+.ActionCard:focus-visible {
+  outline: none;
+  border: var(--spacing-xs) solid var(--secondary-light);
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.ActionCard:active {
+  box-shadow: var(--shadow-l);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.ActionCard--disabled {
+  pointer-events: none;
+  position: relative;
+  border: var(--spacing-xs) solid var(--secondary-lighter);
+}
+
+.ActionCard-overlay--disabled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 50%;
+  background: var(--secondary-light);
+}
