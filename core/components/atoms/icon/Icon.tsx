@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { useAccessibilityProps } from '@/accessibility/utils';
+import { getFontVariation } from './utils';
 
 export type IconAppearance =
   | 'default'
@@ -35,7 +36,15 @@ export type IconAppearance =
   | 'accent4_lighter'
   | 'accent4_dark'
   | 'inverse';
+
 export type IconType = 'filled' | 'outlined' | 'outline' | 'rounded' | 'round' | 'two-tone' | 'sharp'; // 'outline', 'rounded' to be deprecated soon.
+
+export type FontVariationType = {
+  fill?: number;
+  weight?: number;
+  grade?: number;
+  opticalSize?: number;
+};
 
 export interface IconProps extends BaseProps {
   /**
@@ -49,13 +58,28 @@ export interface IconProps extends BaseProps {
   /**
    * Type of material `Icon`
    *
-   * ** `'outline' | 'rounded'` will be deprecated**
+   * ** ` 'filled' | 'outline' | 'round' | 'two-tone' | 'sharp'` is deprecated**
    */
   type?: IconType;
   /**
-   * Color of `Icon`    // 'info' appearance will be deprecated soon.
+   * Color of `Icon`
+   *
+   * ** 'info' appearance is deprecated. **
    */
   appearance?: IconAppearance;
+  /**
+   * Set font-variation-settings CSS Property
+   *
+   * <pre className="DocPage-codeBlock">
+   *  FontVariationType: {
+   *    fill?: number;
+   *    weight?: number; Range: [100, 700]
+   *    grade?: number; Range: [-25, 200]
+   *    opticalSize?: number; Range: [20px, 48px]
+   *  }
+   * </pre>
+   */
+  variations?: FontVariationType;
   /**
    * Handler to be called when icon is clicked
    */
@@ -76,18 +100,20 @@ export interface IconProps extends BaseProps {
 }
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children } = props;
+  const { appearance, className, name, size, children, variations } = props;
   const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
 
-  const mapper = (val: IconProps['type']) => {
-    if (val === 'outline') return 'outlined';
-    if (val === 'rounded') return 'round';
-    return val;
+  const mapper: Record<string, string> = {
+    outline: 'outlined',
+    sharp: 'outlined',
+    round: 'rounded',
+    filled: 'rounded',
+    'two-tone': 'rounded',
   };
 
-  const type = mapper(props.type);
+  const type = (props.type && mapper[props.type]) || props.type;
 
   const getIconAppearance = (iconColor: string) => {
     const x = iconColor.indexOf('_');
@@ -97,16 +123,20 @@ export const Icon = (props: IconProps) => {
   const color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
 
   const iconClass = classNames({
-    ['material-icons']: true, // change to !type || type === 'filled' after migration
-    [`material-icons-${mapper(type)}`]: type && type !== 'filled',
+    ['material-icons']: true,
+    ['material-icons-rounded']: type === 'rounded',
+    ['material-icons-outlined']: type === 'outlined',
     ['Icon']: true,
     [`Icon--${color}`]: appearance,
     [`${className}`]: className,
   });
 
+  const { fill, grade, opticalSize, weight } = getFontVariation(name!, variations, type, size);
+
   const styles = {
     fontSize: `${size}px`,
     width: `${size}px`,
+    'font-variation-settings': `"FILL" ${fill}, "wght" ${weight}, "GRAD" ${grade}, "opsz" ${opticalSize}`,
   };
 
   // change `children` to {name} after migration
@@ -118,8 +148,8 @@ export const Icon = (props: IconProps) => {
     );
   }
   return (
-    <i {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
-      {type ? `${name}_${type}` : name}
+    <i data-test="DesignSystem-Icon" {...baseProps} className={iconClass} style={styles} {...accessibilityProps}>
+      {name}
     </i>
   );
 };
@@ -127,7 +157,7 @@ export const Icon = (props: IconProps) => {
 Icon.displayName = 'Icon';
 Icon.defaultProps = {
   size: 16,
-  type: 'round',
+  type: 'rounded',
 };
 
 export default Icon;

@@ -38,7 +38,7 @@ describe('Chip component', () => {
     expect(getByTestId('DesignSystem-GenericChip--Icon')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-GenericChip--Text')).toBeInTheDocument();
     expect(getByTestId('DesignSystem-GenericChip--clearButton')).toBeInTheDocument();
-    expect(getByTestId('DesignSystem-GenericChip--Icon').textContent).toMatch('events_round');
+    expect(getByTestId('DesignSystem-GenericChip--Icon').textContent).toMatch('events');
     expect(getByTestId('DesignSystem-GenericChip--Text').textContent).toMatch('ChipLabel');
   });
 
