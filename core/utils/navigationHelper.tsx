@@ -1,3 +1,5 @@
+import { FontVariationType } from '@/common.type';
+
 export type Menu = {
   name: string;
   label: string;
@@ -7,6 +9,7 @@ export type Menu = {
   count?: number;
   disabled?: boolean;
   subMenu?: Menu[];
+  iconVariations?: FontVariationType;
 };
 
 export type ActiveMenu = ({ name: string } | { link: string }) & Partial<Menu>;
