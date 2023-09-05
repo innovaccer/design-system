@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { Icon } from '@/index';
+import { FontVariationType } from '@/common.type';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type LinkButtonSize = 'tiny' | 'regular';
@@ -31,6 +32,19 @@ export interface LinkButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElem
    * @default "left"
    */
   iconAlign?: IconAlignment;
+  /**
+   * Set font-variation-settings CSS property for Icons
+   *
+   * <pre className="DocPage-codeBlock">
+   *  FontVariationType: {
+   *    fill?: number;
+   *    weight?: number; Range: [100, 700]
+   *    grade?: number; Range: [-25, 200]
+   *    opticalSize?: number; Range: [20px, 48px]
+   *  }
+   * </pre>
+   */
+  iconVariations?: FontVariationType;
   /**
    * Text to be added inside `Button`
    */
@@ -68,7 +82,8 @@ const sizeMapping: Record<LinkButtonSize, number> = {
 };
 
 export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((props, ref) => {
-  const { children, type, className, disabled, tabIndex, icon, subtle, size, iconAlign, ...rest } = props;
+  const { children, type, className, disabled, tabIndex, icon, subtle, size, iconAlign, iconVariations, ...rest } =
+    props;
 
   const buttonClass = classNames({
     ['LinkButton']: true,
@@ -97,7 +112,12 @@ export const LinkButton = React.forwardRef<HTMLButtonElement, LinkButtonProps>((
       <>
         {icon && (
           <div className={iconClass}>
-            <Icon data-test="DesignSystem-LinkButton--Icon" name={icon} size={size && sizeMapping[size]} />
+            <Icon
+              data-test="DesignSystem-LinkButton--Icon"
+              name={icon}
+              variations={iconVariations}
+              size={size && sizeMapping[size]}
+            />
           </div>
         )}
         {children}
