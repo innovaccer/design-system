@@ -5,6 +5,7 @@ import Text from '@/components/atoms/text';
 import { Name } from '../chip/Chip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
+import { FontVariationType } from '@/common.type';
 
 export interface GenericChipProps extends BaseProps {
   label: string | React.ReactElement;
@@ -15,11 +16,13 @@ export interface GenericChipProps extends BaseProps {
   selected?: boolean;
   onClose?: () => void;
   onClick?: () => void;
+  iconVariations?: FontVariationType;
   name: Name;
 }
 
 export const GenericChip = (props: GenericChipProps) => {
-  const { label, icon, clearButton, disabled, className, selected, onClose, onClick, labelPrefix } = props;
+  const { label, icon, clearButton, disabled, className, selected, onClose, onClick, labelPrefix, iconVariations } =
+    props;
 
   const baseProps = extractBaseProps(props);
 
@@ -101,6 +104,7 @@ export const GenericChip = (props: GenericChipProps) => {
         <Icon
           data-test="DesignSystem-GenericChip--Icon"
           name={icon}
+          variations={iconVariations}
           appearance={iconAppearance('left')}
           className={iconClass('left')}
         />
