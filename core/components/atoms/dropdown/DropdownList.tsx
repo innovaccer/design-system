@@ -278,7 +278,16 @@ const DropdownList = (props: OptionsProps) => {
     if (firstEnabledOption !== cursor) setCursor(firstEnabledOption);
   }, [firstEnabledOption]);
 
-  const { triggerSize = 'regular', placeholder = 'Select', icon, error, disabled, inlineLabel, triggerLabel } = props;
+  const {
+    triggerSize = 'regular',
+    placeholder = 'Select',
+    icon,
+    error,
+    disabled,
+    inlineLabel,
+    triggerLabel,
+    iconVariations,
+  } = props;
 
   const CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
   const NewCustomTrigger = React.cloneElement(CustomTrigger, { tabIndex: 0, ref: dropdownTriggerRef });
@@ -296,6 +305,7 @@ const DropdownList = (props: OptionsProps) => {
       menu={menu}
       error={error}
       ref={dropdownTriggerRef}
+      iconVariations={iconVariations}
     >
       {triggerLabel}
     </DropdownButton>
