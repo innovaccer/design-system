@@ -38,6 +38,30 @@ describe('ChipInput component', () => {
 });
 
 describe('ChipInput component', () => {
+  const mapper = {
+    error: valueHelper(true, { required: true }),
+    allowDuplicates: valueHelper(true, { required: true }),
+    value: valueHelper(value, { required: true }),
+    chipOptions: valueHelper(chipOptions, { required: true }),
+    placeholder: valueHelper(placeholder, { required: true }),
+    onChange: valueHelper(FunctionValue, { required: true }),
+    onBlur: valueHelper(FunctionValue, { required: true }),
+    onFocus: valueHelper(FunctionValue, { required: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(<ChipInput {...attr} />);
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('ChipInput component', () => {
   it('renders input and chips', () => {
     const { getByTestId, getAllByTestId } = render(<ChipInput value={value} />);
 
@@ -93,6 +117,13 @@ describe('ChipInput component', () => {
     fireEvent.change(inputComponent, { target: { value: value[0] } });
     fireEvent.keyDown(inputComponent, { key: 'Enter' });
     expect(getAllByTestId('DesignSystem-ChipInput--Chip')).toHaveLength(value.length + 1);
+  });
+
+  it('ChipInput with prop error: true', () => {
+    const { getByTestId } = render(<ChipInput defaultValue={value} onChange={FunctionValue} error={true} />);
+
+    expect(getByTestId('DesignSystem-ChipInput')).toHaveClass('ChipInput--error');
+    expect(getByTestId('DesignSystem-ChipInput--Border')).toHaveClass('ChipInput-border--error');
   });
 });
 
