@@ -137,7 +137,7 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
 const sizeMapping = {
   tiny: 12,
   regular: 16,
-  large: 20,
+  large: 16,
 };
 
 /**
@@ -192,6 +192,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       [`Input--${size}`]: size,
       ['Input--disabled']: disabled || readOnly,
       ['Input--error']: error,
+      ['Input--withIcon--left']: size !== 'tiny' && icon,
+      ['Input--withIcon--right']: !disabled && (info || ((actionIcon || onClear) && (value || defaultValue))),
     },
     className
   );
@@ -211,6 +213,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   const rightIconClass = classNames({
     ['Input-icon']: true,
     ['Input-iconWrapper--right']: true,
+    ['ml-4']: true,
   });
 
   const trigger = (

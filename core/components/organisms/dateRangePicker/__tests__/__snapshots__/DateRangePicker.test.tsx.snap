@@ -38608,7 +38608,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38635,7 +38635,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -38670,7 +38670,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38697,7 +38697,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -38751,7 +38751,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38778,7 +38778,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -38813,7 +38813,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38840,7 +38840,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -38894,7 +38894,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38921,7 +38921,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -38956,7 +38956,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -38983,7 +38983,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -40116,7 +40116,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40143,7 +40143,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -40178,7 +40178,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40205,7 +40205,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -40259,7 +40259,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40286,7 +40286,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -40321,7 +40321,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40348,7 +40348,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -40402,7 +40402,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40429,7 +40429,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -40464,7 +40464,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -40491,7 +40491,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -41624,7 +41624,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -41651,7 +41651,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -41686,7 +41686,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -41713,7 +41713,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -42753,7 +42753,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -42780,7 +42780,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -42815,7 +42815,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -42842,7 +42842,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -43882,7 +43882,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -43909,7 +43909,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -43944,7 +43944,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -43971,7 +43971,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -46090,7 +46090,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -46117,7 +46117,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -46152,7 +46152,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -46179,7 +46179,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -47219,7 +47219,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -47246,7 +47246,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -47281,7 +47281,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -47308,7 +47308,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -48348,7 +48348,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -48375,7 +48375,7 @@ exports[`DateRangePicker component
                 value="03/03/2020"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
@@ -48410,7 +48410,7 @@ exports[`DateRangePicker component
             data-test="DesignSystem-InputMask--Wrapper"
           >
             <div
-              class="Input Input--regular"
+              class="Input Input--regular Input--withIcon--left Input--withIcon--right"
               data-test="DesignSystem-InputWrapper"
               role="presentation"
               style="min-width: 256px;"
@@ -48437,7 +48437,7 @@ exports[`DateRangePicker component
                 value="06/08/2021"
               />
               <div
-                class="Input-icon Input-iconWrapper--right"
+                class="Input-icon Input-iconWrapper--right ml-4"
               >
                 <i
                   class="material-icons material-icons-rounded Icon Input-icon--right"
