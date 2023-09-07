@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { BaseProps, extractBaseProps } from '@/utils/types';
-import { useAccessibilityProps } from '@/accessibility/utils';
+import { BaseProps } from '@/utils/types';
+import { FontVariationType } from '@/common.type';
+import { Icon } from '@/index';
 
-export type ActionButtonType = 'filled' | 'outlined' | 'round' | 'two-tone' | 'sharp';
+export type ActionButtonType = 'outlined' | 'rounded';
 
 export interface ActionButtonProps extends BaseProps {
   /**
@@ -18,6 +19,19 @@ export interface ActionButtonProps extends BaseProps {
    * Type of material `ActionButton`
    */
   type?: ActionButtonType;
+  /**
+   * Set font-variation-settings CSS Property
+   *
+   * <pre className="DocPage-codeBlock">
+   *  FontVariationType: {
+   *    fill?: number;
+   *    weight?: number; Range: [100, 700]
+   *    grade?: number; Range: [-25, 200]
+   *    opticalSize?: number; Range: [20px, 48px]
+   *  }
+   * </pre>
+   */
+  iconVariations?: FontVariationType;
   /**
    * Handler to be called when icon is clicked
    */
@@ -38,48 +52,22 @@ export interface ActionButtonProps extends BaseProps {
 }
 
 export const ActionButton = (props: ActionButtonProps) => {
-  const { className, name, size, children, type } = props;
-  const accessibilityProps = useAccessibilityProps(props);
-
-  const baseProps = extractBaseProps(props);
+  const { className, iconVariations, ...rest } = props;
 
   const iconClass = classNames({
-    ['material-icons']: true,
-    [`material-icons-${type}`]: type && type !== 'filled',
     ['ActionButton']: true,
     [`${className}`]: className,
   });
 
-  const styles = {
-    fontSize: `${size}px`,
-    width: `${size}px`,
-  };
-
-  // change `children` to {name} after migration
-  if (children && React.isValidElement(children)) {
-    return (
-      <span {...baseProps} className={iconClass} data-test="DesignSystem-Input-ActionButton">
-        {children}
-      </span>
-    );
-  }
   return (
-    <i
-      {...baseProps}
-      className={iconClass}
-      style={styles}
-      {...accessibilityProps}
-      data-test="DesignSystem-Input-ActionButton"
-    >
-      {`${name}_${type}`}
-    </i>
+    <Icon className={iconClass} variations={iconVariations} data-test="DesignSystem-Input-ActionButton" {...rest} />
   );
 };
 
 ActionButton.displayName = 'ActionButton';
 ActionButton.defaultProps = {
   size: 16,
-  type: 'round',
+  type: 'rounded',
 };
 
 export default ActionButton;
