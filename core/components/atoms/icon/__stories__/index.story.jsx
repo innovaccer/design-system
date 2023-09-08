@@ -3,11 +3,11 @@ import { Icon } from '@/index';
 
 // CSF format story
 export const all = () => {
-  return <Icon size={50} name="place" />;
+  return <Icon size={48} name="place" />;
 };
 const customCode = `() => {
   return(
-    <Icon size={50} name='place'/>
+    <Icon size={48} name='place'/>
     );
 }`;
 

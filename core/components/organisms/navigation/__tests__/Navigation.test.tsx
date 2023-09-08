@@ -114,10 +114,10 @@ describe('VerticalNavigation component', () => {
   it('render vertical nav when subMenu  is passed and menu tab is active', () => {
     const { getAllByTestId } = render(<Navigation menus={menus} type="vertical" active={{ name: 'tab2' }} />);
     expect(getAllByTestId('DesignSystem-Navigation-VerticalNavigation--expandedSubMenuIcon')[0]).toHaveTextContent(
-      'keyboard_arrow_up_round'
+      'keyboard_arrow_up'
     );
     expect(getAllByTestId('DesignSystem-Navigation-VerticalNavigation--expandedSubMenuIcon')[1]).toHaveTextContent(
-      'keyboard_arrow_down_round'
+      'keyboard_arrow_down'
     );
   });
 

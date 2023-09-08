@@ -5,7 +5,7 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 
 const size = 16;
 
-const type: ActionButtonType[] = ['filled', 'outlined', 'round', 'two-tone', 'sharp'];
+const type: ActionButtonType[] = ['outlined', 'rounded'];
 const FunctionValue = jest.fn();
 const StringValue = 'events';
 

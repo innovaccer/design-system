@@ -11,12 +11,12 @@ exports[`Chip component
       tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-inverse Chip-text"
@@ -40,12 +40,12 @@ exports[`Chip component
       tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-primary-dark Chip-text"
@@ -69,12 +69,12 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--disabled Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-inverse-lightest Chip-text"
@@ -98,12 +98,12 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-primary-lighter primary-dark Chip-text"
@@ -127,12 +127,12 @@ exports[`Chip component
       tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--inverse Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-inverse Chip-text"
@@ -147,11 +147,12 @@ exports[`Chip component
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--subtle p-2"
+          class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          clear_round
+          clear
         </i>
       </div>
     </div>
@@ -170,12 +171,12 @@ exports[`Chip component
       tabindex="0"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--primaryDark Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-primary-dark Chip-text"
@@ -190,11 +191,12 @@ exports[`Chip component
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--primaryDark p-2"
+          class="material-icons material-icons-rounded Icon Icon--primaryDark p-2"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          clear_round
+          clear
         </i>
       </div>
     </div>
@@ -213,12 +215,12 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--disabled Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--disabled Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-inverse-lightest Chip-text"
@@ -233,11 +235,12 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--disabled p-2"
+          class="material-icons material-icons-rounded Icon Icon--disabled p-2"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          clear_round
+          clear
         </i>
       </div>
     </div>
@@ -256,12 +259,12 @@ exports[`Chip component
       tabindex="-1"
     >
       <i
-        class="material-icons material-icons-round Icon Icon--primaryLighter Chip-icon Chip-icon--left"
+        class="material-icons material-icons-rounded Icon Icon--primaryLighter Chip-icon Chip-icon--left"
         data-test="DesignSystem-GenericChip--Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        events_round
+        events
       </i>
       <span
         class="Text Text--regular color-primary-lighter primary-dark Chip-text"
@@ -276,11 +279,12 @@ exports[`Chip component
         tabindex="-1"
       >
         <i
-          class="material-icons material-icons-round Icon Icon--primaryLighter p-2"
+          class="material-icons material-icons-rounded Icon Icon--primaryLighter p-2"
+          data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px;"
+          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
         >
-          clear_round
+          clear
         </i>
       </div>
     </div>

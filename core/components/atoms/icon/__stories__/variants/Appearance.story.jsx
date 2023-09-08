@@ -22,19 +22,19 @@ export const Appearance = () => {
         return (
           <div key={ind} className="d-flex mb-8">
             <div>
-              <Icon className="mr-12 mb-4" appearance={appearance[0]} size={50} name={name} />
+              <Icon className="mr-12 mb-4" appearance={appearance[0]} size={48} name={name} />
               <br />
               <Text weight="strong">{appearance[0]}</Text>
             </div>
 
             <div>
-              <Icon className="mr-12 mb-4" appearance={appearance[1]} size={50} name={name} />
+              <Icon className="mr-12 mb-4" appearance={appearance[1]} size={48} name={name} />
               <br />
               <Text weight="strong">{appearance[1]}</Text>
             </div>
 
             <div>
-              <Icon className="mr-12 mb-4" appearance={appearance[2]} size={50} name={name} />
+              <Icon className="mr-12 mb-4" appearance={appearance[2]} size={48} name={name} />
               <br />
               <Text weight="strong">{appearance[2]}</Text>
             </div>
@@ -42,12 +42,12 @@ export const Appearance = () => {
         );
       })}
       <div>
-        <Icon appearance="white" size={50} name={name} className="bg-dark" />
+        <Icon appearance="white" size={48} name={name} className="bg-dark" />
       </div>
       <br />
       <Text weight="strong">white</Text>
       <div className="mt-5">
-        <Icon appearance="destructive" size={50} name={name} />
+        <Icon appearance="destructive" size={48} name={name} />
       </div>
       <br />
       <Text weight="strong">destructive</Text>

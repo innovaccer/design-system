@@ -26,12 +26,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -48,11 +48,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -65,11 +66,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -83,12 +85,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -315,7 +317,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -665,12 +667,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -687,11 +689,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -704,11 +707,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -723,12 +727,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -955,7 +959,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -1306,12 +1310,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -1328,11 +1332,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -1345,11 +1350,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -1363,12 +1369,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -1595,7 +1601,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -1946,12 +1952,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -1968,11 +1974,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -1985,11 +1992,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -2004,12 +2012,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -2236,7 +2244,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -2586,12 +2594,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -2608,11 +2616,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -2625,11 +2634,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -2643,12 +2653,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -2930,7 +2940,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -3225,12 +3235,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -3247,11 +3257,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -3264,11 +3275,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -3282,12 +3294,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -3525,7 +3537,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -3864,12 +3876,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -3886,11 +3898,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -3903,11 +3916,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -3921,12 +3935,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -4219,7 +4233,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -4503,12 +4517,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -4525,11 +4539,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -4542,11 +4557,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -4560,12 +4576,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -4792,7 +4808,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -5142,12 +5158,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -5164,11 +5180,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -5181,11 +5198,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -5199,12 +5217,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -5475,7 +5493,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -5781,12 +5799,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -5803,11 +5821,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -5820,11 +5839,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -5838,12 +5858,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -6092,7 +6112,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -6420,12 +6440,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -6442,11 +6462,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -6459,11 +6480,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -6477,12 +6499,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -6742,7 +6764,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -7059,12 +7081,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -7081,11 +7103,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -7098,11 +7121,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -7116,12 +7140,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -7348,7 +7372,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -7698,12 +7722,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -7720,11 +7744,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -7737,11 +7762,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -7968,7 +7994,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -8198,11 +8224,12 @@ exports[`Calendar component
                 Apr
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -8215,11 +8242,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -8233,12 +8261,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -8713,12 +8741,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -8735,11 +8763,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -8752,11 +8781,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -8983,7 +9013,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -9213,11 +9243,12 @@ exports[`Calendar component
                 Apr
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -9230,11 +9261,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -9684,11 +9716,12 @@ exports[`Calendar component
                 May
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -9701,11 +9734,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -9719,12 +9753,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -10266,12 +10300,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -10288,11 +10322,12 @@ exports[`Calendar component
                 Mar
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -10305,11 +10340,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -10323,12 +10359,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -10555,7 +10591,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -10905,12 +10941,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -10927,11 +10963,12 @@ exports[`Calendar component
                 2020
               </h5>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -10945,12 +10982,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -11139,12 +11176,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -11172,12 +11209,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -11252,7 +11289,7 @@ exports[`Calendar component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-primary Calendar-text"
+                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2021
@@ -11366,12 +11403,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -11388,11 +11425,12 @@ exports[`Calendar component
                 Mar
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -11405,11 +11443,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -11423,12 +11462,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -11655,7 +11694,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -12005,12 +12044,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -12027,11 +12066,12 @@ exports[`Calendar component
                 Mar
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -12044,11 +12084,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -12275,7 +12316,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -12505,11 +12546,12 @@ exports[`Calendar component
                 Apr
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -12522,11 +12564,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -12540,12 +12583,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -13020,12 +13063,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -13042,11 +13085,12 @@ exports[`Calendar component
                 Mar
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -13059,11 +13103,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -13290,7 +13335,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -13520,11 +13565,12 @@ exports[`Calendar component
                 Apr
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -13537,11 +13583,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -13991,11 +14038,12 @@ exports[`Calendar component
                 May
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -14008,11 +14056,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -14026,12 +14075,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -14573,12 +14622,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -14595,11 +14644,12 @@ exports[`Calendar component
                 Mar
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
             <div
@@ -14612,11 +14662,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -14630,12 +14681,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -14862,7 +14913,7 @@ exports[`Calendar component
                 data-test="designSystem-Calendar-WrapperClass"
               >
                 <span
-                  class="Text Text--small color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
+                  class="Text Text--small color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--small"
                   data-test="DesignSystem-Calendar--dateValue"
                 >
                   15
@@ -15212,12 +15263,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -15234,11 +15285,12 @@ exports[`Calendar component
                 2020
               </span>
               <i
-                class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px;"
+                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                keyboard_arrow_down_round
+                keyboard_arrow_down
               </i>
             </div>
           </div>
@@ -15252,12 +15304,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -15446,12 +15498,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_back_round
+                arrow_back
               </i>
             </div>
           </button>
@@ -15479,12 +15531,12 @@ exports[`Calendar component
               class="Button-icon"
             >
               <i
-                class="material-icons material-icons-round Icon"
+                class="material-icons material-icons-rounded Icon"
                 data-test="DesignSystem-Button--Icon"
                 role="button"
-                style="font-size: 12px; width: 12px;"
+                style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               >
-                arrow_forward_round
+                arrow_forward
               </i>
             </div>
           </button>
@@ -15559,7 +15611,7 @@ exports[`Calendar component
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-primary Calendar-text"
+                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2021

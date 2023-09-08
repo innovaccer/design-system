@@ -30,12 +30,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -52,11 +52,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     Mar
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
                 <div
@@ -69,11 +70,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -87,12 +89,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -157,7 +159,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -693,12 +695,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -715,11 +717,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     Mar
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
                 <div
@@ -732,11 +735,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -750,12 +754,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -1356,12 +1360,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -1378,11 +1382,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     Mar
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
                 <div
@@ -1395,11 +1400,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -1413,12 +1419,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -2018,12 +2024,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -2040,11 +2046,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     Mar
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
                 <div
@@ -2057,11 +2064,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -2075,12 +2083,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -2145,7 +2153,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -2680,12 +2688,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -2702,11 +2710,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     Mar
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
                 <div
@@ -2719,11 +2728,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -2737,12 +2747,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -2807,7 +2817,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -3342,12 +3352,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -3364,11 +3374,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     Mar
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
                 <div
@@ -3381,11 +3392,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -3399,12 +3411,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -3469,7 +3481,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -4004,12 +4016,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -4026,11 +4038,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -4044,12 +4057,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -4261,12 +4274,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -4294,12 +4307,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -4374,7 +4387,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                   data-test="DesignSystem-Calendar--yearValue"
                 >
                   <span
-                    class="Text Text--regular color-primary Calendar-text"
+                    class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
                     data-test="DesignSystem-Text"
                   >
                     2021
@@ -4511,12 +4524,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_back_round
+                    arrow_back
                   </i>
                 </div>
               </button>
@@ -4533,11 +4546,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     Mar
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
                 <div
@@ -4550,11 +4564,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     2020
                   </h5>
                   <i
-                    class="material-icons material-icons-round Icon Icon--inverse pl-3"
+                    class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                    data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    keyboard_arrow_down_round
+                    keyboard_arrow_down
                   </i>
                 </div>
               </div>
@@ -4568,12 +4583,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                   class="Button-icon"
                 >
                   <i
-                    class="material-icons material-icons-round Icon"
+                    class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px;"
+                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
                   >
-                    arrow_forward_round
+                    arrow_forward
                   </i>
                 </div>
               </button>
@@ -4638,7 +4653,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     data-test="designSystem-Calendar-WrapperClass"
                   >
                     <span
-                      class="Text Text--regular color-white Calendar-value Calendar-inRangeValue Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                      class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
                       data-test="DesignSystem-Calendar--dateValue"
                     >
                       1
@@ -5166,11 +5181,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             class="Input-icon Input-icon--left"
           >
             <i
-              class="material-icons material-icons-round Icon"
+              class="material-icons material-icons-rounded Icon"
+              data-test="DesignSystem-Icon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             >
-              events_round
+              events
             </i>
           </div>
           <input
@@ -5185,13 +5201,13 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
             class="Input-icon Input-iconWrapper--right"
           >
             <i
-              class="material-icons material-icons-round Icon Input-icon--right"
+              class="material-icons material-icons-rounded Icon Input-icon--right"
               data-test="DesignSystem-Input--closeIcon"
               role="button"
-              style="font-size: 16px; width: 16px;"
+              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
               tabindex="0"
             >
-              close_round
+              close
             </i>
           </div>
         </div>

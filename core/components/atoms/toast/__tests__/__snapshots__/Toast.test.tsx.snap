@@ -9,11 +9,12 @@ exports[`Toast component
       class="Toast Toast--alert"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        error_round
+        error
       </i>
       <div
         class="Toast-body"
@@ -28,12 +29,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
       </div>
@@ -51,11 +53,12 @@ exports[`Toast component
       class="Toast Toast--info"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        info_round
+        info
       </i>
       <div
         class="Toast-body"
@@ -70,12 +73,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
       </div>
@@ -93,11 +97,12 @@ exports[`Toast component
       class="Toast Toast--success"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        check_circle_round
+        check_circle
       </i>
       <div
         class="Toast-body"
@@ -112,12 +117,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
       </div>
@@ -135,11 +141,12 @@ exports[`Toast component
       class="Toast Toast--warning"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        warning_round
+        warning
       </i>
       <div
         class="Toast-body"
@@ -154,12 +161,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="material-icons material-icons-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
       </div>
@@ -177,11 +185,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--alert"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        error_round
+        error
       </i>
       <div
         class="Toast-body"
@@ -196,12 +205,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span
@@ -225,11 +235,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--alert"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        error_round
+        error
       </i>
       <div
         class="Toast-body"
@@ -244,12 +255,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span
@@ -287,11 +299,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--info"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        info_round
+        info
       </i>
       <div
         class="Toast-body"
@@ -306,12 +319,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span
@@ -335,11 +349,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--info"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--info"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        info_round
+        info
       </i>
       <div
         class="Toast-body"
@@ -354,12 +369,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span
@@ -397,11 +413,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--success"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        check_circle_round
+        check_circle
       </i>
       <div
         class="Toast-body"
@@ -416,12 +433,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span
@@ -445,11 +463,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--success"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--success"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        check_circle_round
+        check_circle
       </i>
       <div
         class="Toast-body"
@@ -464,12 +483,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span
@@ -507,11 +527,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--warning"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        warning_round
+        warning
       </i>
       <div
         class="Toast-body"
@@ -526,12 +547,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="material-icons material-icons-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span
@@ -555,11 +577,12 @@ exports[`Toast component
       class="Toast Toast--withMessage Toast--warning"
     >
       <i
-        class="material-icons material-icons-round Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
+        data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px;"
+        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
       >
-        warning_round
+        warning
       </i>
       <div
         class="Toast-body"
@@ -574,12 +597,13 @@ exports[`Toast component
             Sample Toast
           </h5>
           <i
-            class="material-icons material-icons-round Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            class="material-icons material-icons-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
+            data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px;"
+            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
             tabindex="0"
           >
-            close_round
+            close
           </i>
         </div>
         <span

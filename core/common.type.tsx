@@ -92,3 +92,10 @@ export type TextColor =
   | 'inverse-shadow';
 
 export type AvatarSize = 'regular' | 'tiny';
+
+export type FontVariationType = {
+  fill?: number;
+  weight?: number;
+  grade?: number;
+  opticalSize?: number;
+};

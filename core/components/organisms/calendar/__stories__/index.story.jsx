@@ -8,10 +8,6 @@ export const all = () => {
 
   const dateValue = new Date('Jan 11 2023');
 
-  const startDate = new Date('Jan 15 2023');
-
-  const endDate = new Date('Jan 20 2023');
-
   const view = 'date';
 
   const rangePicker = false;
@@ -97,8 +93,6 @@ export const all = () => {
       rangePicker={rangePicker}
       jumpView={jumpView}
       date={convertToDate(dateValue)}
-      startDate={convertToDate(startDate)}
-      endDate={convertToDate(endDate)}
       onDateChange={(currDate) => action(`on date change : ${currDate}`)()}
       onRangeChange={(sDate, eDate) => action(`on range change: ${sDate} - ${eDate}`)()}
       view={view}

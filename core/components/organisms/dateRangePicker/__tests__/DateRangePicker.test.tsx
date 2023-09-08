@@ -763,8 +763,6 @@ describe('DateRangePicker component with prop:rangeLimit', () => {
         onRangeChange={FunctionValue}
       />
     );
-    // expect(getAllByTestId('designSystem-Calendar-WrapperClass')[5])
-    // .toHaveClass('Calendar-valueWrapper--inRangeError');
     expect(FunctionValue).toHaveBeenCalled();
   });
 });

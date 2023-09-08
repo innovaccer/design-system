@@ -174,3 +174,30 @@ export const translateToDate = (format: string, val: string, validators: Validat
     return undefined;
   }
 };
+
+export const dateComparison = (
+  date: Date | undefined,
+  operator: Operator,
+  currDate: string,
+  currMonth: string,
+  currYear: string
+): boolean => {
+  const currentDate = new Date(`${currYear}-${currMonth}-${currDate}`);
+
+  if (date) {
+    switch (operator) {
+      case 'less':
+        return date <= currentDate;
+
+      case 'equal':
+        return date.toDateString() === currentDate.toDateString();
+
+      case 'more':
+        return date >= currentDate;
+
+      default:
+        return false;
+    }
+  }
+  return false;
+};
