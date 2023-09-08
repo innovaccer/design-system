@@ -1,3 +1,46 @@
+## 2.20.0 (2023-09-08)
+
+### Highlights
+
+- feat(icon): migration to material symbols from material icons
+- feat(card): add action card component
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+- feat(icon): material icons are migrated to material symbols. Need to update the test snapshots to update icon name (if used anywhere). 
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(icon): migration to material symbols from material icons
+- feat(card): add action card component
+- feat(button): add icon variations property in button component
+- feat(input): add icon variations property in action button in input component
+
+### Fixes
+
+- fix(datepicker): update selection chip to action chip in preset story in patterns
+- fix(dateRangePicker): fix range selection behaviour
+- fix(chipinput): update chipinput error state
+- fix(input): update icon to icon component in action button
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.19.0 (2023-08-25)
 
 ### Highlights
