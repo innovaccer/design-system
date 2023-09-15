@@ -125,7 +125,12 @@ export const MenuItem = (props: MenuItemProps) => {
     <Link componentType="a" className={ItemClass} {...baseProps}>
       <div className="d-flex align-items-center overflow-hidden">
         {menu.icon && (
-          <Icon data-test="DesignSystem-VerticalNav--Icon" className={expanded ? 'mr-4' : ''} name={menu.icon} />
+          <Icon
+            data-test="DesignSystem-VerticalNav--Icon"
+            className={expanded ? 'mr-4' : ''}
+            name={menu.icon}
+            variations={menu.iconVariations}
+          />
         )}
         {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}
       </div>
