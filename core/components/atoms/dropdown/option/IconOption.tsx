@@ -6,7 +6,7 @@ import classNames from 'classnames';
 const IconOption = (props: OptionTypeProps) => {
   const { className, textClassName, onClickHandler, optionData, onUpdateActiveOption, color, dataTest } = props;
 
-  const { label, icon, disabled } = optionData;
+  const { label, icon, disabled, iconVariations } = optionData;
 
   const OptionClass = classNames({
     [`${className}`]: true,
@@ -24,7 +24,9 @@ const IconOption = (props: OptionTypeProps) => {
       data-disabled={disabled}
     >
       {/* eslint-enable  */}
-      {icon && <Icon className="Option-icon mr-4" data-test={`${dataTest}--Icon`} name={icon} />}
+      {icon && (
+        <Icon className="Option-icon mr-4" data-test={`${dataTest}--Icon`} name={icon} variations={iconVariations} />
+      )}
       <div className={'Option-label'}>
         <Text className={textClassName} color={color}>
           {label}
