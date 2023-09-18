@@ -2,6 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Pills, Icon, Text, Tab } from '@/index';
 import { BaseProps, extractBaseProps, SingleOrArray } from '@/utils/types';
+import { FontVariationType } from '@/common.type';
 
 type Tab = React.ReactElement | TabConfig;
 type noop = (tabInfo: TabInfo) => void;
@@ -19,6 +20,7 @@ export interface TabConfig {
   className?: string;
   isDismissible?: boolean;
   onDismiss?: (tabInfo: TabInfo) => void;
+  iconVariations?: FontVariationType;
 }
 export interface TabsProps extends BaseProps {
   /**
@@ -40,6 +42,12 @@ export interface TabsProps extends BaseProps {
    *    className?: string;
    *    isDismissible?: boolean;
    *    onDismiss?: (tabInfo: object) => void;
+   *    iconVariations?: {
+   *      fill?: number;
+   *      weight?: number; Range: [100, 700]
+   *      grade?: number; Range: [-25, 200]
+   *      opticalSize?: number; Range: [20px, 48px]
+   *    }
    *  }
    * </pre>
    *
@@ -52,6 +60,7 @@ export interface TabsProps extends BaseProps {
    * | className | Class on tab content | |
    * | isDismissible | Determines if tab is dismissible | |
    * | onDismiss | Called with tab info when a tab is being removed | |
+   * | iconVariations | Set font-variation-settings CSS property for Icons | |
    */
   tabs: TabConfig[];
   /**
@@ -179,7 +188,7 @@ export const Tabs = (props: TabsProps) => {
   };
 
   const renderInfo = (tab: Tab, index: number) => {
-    const { count, icon, disabled } = tab as TabConfig;
+    const { count, icon, disabled, iconVariations } = tab as TabConfig;
 
     if (count !== undefined) {
       return (
@@ -204,6 +213,7 @@ export const Tabs = (props: TabsProps) => {
           data-test="DesignSystem-Tabs--Icon"
           className={`mr-4 ${iconClass}`}
           name={icon}
+          variations={iconVariations}
           appearance={iconAppearance}
         />
       );

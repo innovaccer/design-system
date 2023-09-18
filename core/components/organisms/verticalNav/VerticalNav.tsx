@@ -19,6 +19,12 @@ export interface VerticalNavProps extends BaseProps {
    *    count?: number;
    *    subMenu?: Menu[];
    *    icon?: string;
+   *    iconVariations?: {
+   *      fill?: number;
+   *      weight?: number; Range: [100, 700]
+   *      grade?: number; Range: [-25, 200]
+   *      opticalSize?: number; Range: [20px, 48px]
+   *    };
    * };
    * </pre>
    *
@@ -32,6 +38,7 @@ export interface VerticalNavProps extends BaseProps {
    * | group | Section of menu | |
    * | subMenu | Menu submenus of type `Menu[]` | |
    * | icon | Menu icon | |
+   * | iconVariations | Set font-variation-settings CSS property for Icons ||
    */
   menus: Menu[];
   /**

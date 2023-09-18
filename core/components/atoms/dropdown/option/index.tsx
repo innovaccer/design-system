@@ -8,7 +8,7 @@ import IconWithMetaOption from './IconWithMetaOption';
 import { MetaList, Text } from '@/index';
 import { MetaListProps, IconProps, TextProps } from '@/index.type';
 import { OptionType } from '../DropdownList';
-import { ChangeEvent } from '@/common.type';
+import { ChangeEvent, FontVariationType } from '@/common.type';
 
 export type ClickEvent = React.MouseEvent<HTMLDivElement>;
 
@@ -42,6 +42,7 @@ export interface OptionSchema extends Record<string, any> {
   selected?: boolean;
   disabled?: boolean;
   group?: string;
+  iconVariations?: FontVariationType;
 }
 
 export interface OptionTypeProps {
