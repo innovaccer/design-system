@@ -1,9 +1,18 @@
-## 2.20.0 (2023-09-08)
+## 2.21.0 (2023-09-18)
 
 ### Highlights
 
-- feat(icon): migration to material symbols from material icons
-- feat(card): add action card component
+- feat(metricInput): add icon variations property in metric input component (3469d1b7)
+- feat(linkButton): add icon variations property in link button component (1c51679b)
+- feat(chip): add icon variations property in chip component (9770c92a)
+- feat(chipGroup): add icon variations property in chip group component (53682f18)
+- feat(chip): add icon variations property in chip input component (cf29c673)
+- feat(input): add icon variations property in input component (59902576)
+- feat(verticalNav): add icon variations property in vertical nav component (828a7066)
+- feat(horizontalNav): add icon variations property in horizontal nav component (d058d919)
+- feat(tab): add icon variations property in tab component (b3a6615a)
+- feat(dropdown): add icon variations property in dropdown component (bfcae4bd)
+- feat(metalist): add icon variations property in metalist component (ce7daba2)
 
 ### Breaking changes
 
@@ -11,7 +20,7 @@ NA
 
 ### Migration guide
 
-- feat(icon): material icons are migrated to material symbols. Need to update the test snapshots to update icon name (if used anywhere). 
+NA
 
 ### Deprecations
 
@@ -19,21 +28,68 @@ NA
 
 ### Features
 
-- feat(icon): migration to material symbols from material icons
-- feat(card): add action card component
-- feat(button): add icon variations property in button component
-- feat(input): add icon variations property in action button in input component
+- feat(metricInput): add icon variations property in metric input component (3469d1b7)
+- feat(linkButton): add icon variations property in link button component (1c51679b)
+- feat(chip): add icon variations property in chip component (9770c92a)
+- feat(chipGroup): add icon variations property in chip group component (53682f18)
+- feat(chip): add icon variations property in chip input component (cf29c673)
+- feat(input): add icon variations property in input component (59902576)
+- feat(verticalNav): add icon variations property in vertical nav component (828a7066)
+- feat(horizontalNav): add icon variations property in horizontal nav component (d058d919)
+- feat(tab): add icon variations property in tab component (b3a6615a)
+- feat(dropdown): add icon variations property in dropdown component (bfcae4bd)
+- feat(metalist): add icon variations property in metalist component (ce7daba2)
 
 ### Fixes
 
-- fix(datepicker): update selection chip to action chip in preset story in patterns
-- fix(dateRangePicker): fix range selection behaviour
-- fix(chipinput): update chipinput error state
-- fix(input): update icon to icon component in action button
+NA
 
 ### Improvements
 
 NA
+
+### Documentation
+
+NA
+
+---
+
+## 2.20.0 (2023-09-08)
+
+### Highlights
+
+- feat(icon): migration to material symbols from material icons (b4677f51)
+- feat(card): add action card component (1f6f2a86)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+- feat(icon): material icons are migrated to material symbols. Need to update the test snapshots to update icon name (if used anywhere). (b4677f51) 
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(icon): migration to material symbols from material icons (b4677f51)
+- feat(card): add action card component (1f6f2a86)
+- feat(button): add icon variations property in button component (615bde8f)
+- feat(input): add icon variations property in action button in input component (336dc41e)
+
+### Fixes
+
+- fix(datepicker): update selection chip to action chip in preset story in patterns (db5d8275)
+- fix(dateRangePicker): fix range selection behaviour (2181bf0c)
+- fix(chipinput): update chipinput error state (f5aa019d)
+- fix(input): update icon to icon component in action button (336dc41e)
+
+### Improvements
+
+- chore(deps-dev): bump word-wrap from 1.2.3 to 1.2.5 (a0f9cd0e)
 
 ### Documentation
 
