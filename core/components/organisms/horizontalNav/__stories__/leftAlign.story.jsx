@@ -44,9 +44,7 @@ export const leftAligned = () => {
     setActive(menu);
   };
 
-  const subHeading = (
-    <HorizontalNav align="left" menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />
-  );
+  const subHeading = <HorizontalNav menus={data} active={active} onClick={onClickHandler} className="ml-5 mt-4" />;
 
   const header = (
     <div>
@@ -142,7 +140,6 @@ const customCode = `() => {
 
   const subHeading = (
     <HorizontalNav
-      align="left"
       menus={data}
       active={active}
       onClick={onClickHandler}

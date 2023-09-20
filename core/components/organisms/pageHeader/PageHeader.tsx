@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { Heading, Row, Column } from '@/index';
+import { Row, Column, Divider } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { BackButton, Title, CenterNav, Nav, Action, Status } from './utils';
 
 export type navigationPositionType = 'center' | 'bottom';
 
@@ -43,6 +44,12 @@ export interface PageHeaderProps extends BaseProps {
    */
   meta?: React.ReactNode;
   /**
+   * `Button` component
+   *  <br/>
+   *  To be used on left side of title as a back button
+   */
+  button?: React.ReactNode;
+  /**
    * Page header layout type
    */
   navigationPosition: navigationPositionType;
@@ -66,13 +73,13 @@ export const PageHeader = (props: PageHeaderProps) => {
     meta,
     navigationPosition,
     className,
+    button,
   } = props;
   const baseProps = extractBaseProps(props);
 
   const wrapperClasses = classNames(
     {
       'PageHeader-wrapper': true,
-      ['PageHeader-wrapper--separator']: separator,
       ['PageHeader-wrapper--withTabs']: tabs,
     },
     className
@@ -82,52 +89,52 @@ export const PageHeader = (props: PageHeaderProps) => {
     PageHeader: true,
   });
 
-  const renderNav = () => {
-    if (!navigation && !stepper) {
-      return null;
-    }
-    return <div className="PageHeader-navigationWrapper">{navigation || stepper}</div>;
-  };
-
   const colSize = (navigation || stepper) && navigationPosition === 'center' ? '4' : actions ? '8' : '12';
 
+  const centerNavProps = {
+    colSize,
+    breadcrumbs,
+    navigationPosition,
+    navigation,
+    stepper,
+  };
+
+  const statusProps = {
+    status,
+    meta,
+    navigationPosition,
+    navigation,
+    tabs,
+  };
+
   return (
-    <div {...baseProps} className={wrapperClasses}>
-      {breadcrumbs}
-      <div className={classes}>
-        <Row>
-          <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
-            <div className="PageHeader-titleWrapper">
-              <Heading className="PageHeader-title">{title}</Heading>
-              {badge}
-            </div>
-          </Column>
-          {(!breadcrumbs || navigationPosition === 'center') && colSize === '4' && (
-            <Column size="4" sizeXL="4" sizeM="4">
-              {renderNav()}
-            </Column>
-          )}
-          {actions ? (
-            <Column size="4" sizeXL="4" sizeM="4">
-              <div className="PageHeader-actionsWrapper">{actions}</div>
-            </Column>
-          ) : (
-            (navigation || stepper) && (
-              <Column size="4" sizeXL="4" sizeM="4">
-                <div className="PageHeader-actionsWrapper"></div>
+    <div data-test="DesignSystem-PageHeader">
+      <div {...baseProps} className={wrapperClasses}>
+        {breadcrumbs && (
+          <div className="pl-6" data-test="DesignSystem-PageHeader--Breadcrumbs">
+            {breadcrumbs}
+          </div>
+        )}
+        <div className="d-flex pl-6">
+          <BackButton button={button} />
+          <div className={classes}>
+            <Row>
+              <Column size={colSize} sizeXL={colSize} sizeM={colSize}>
+                <Title badge={badge} title={title} />
               </Column>
-            )
-          )}
-        </Row>
-      </div>
-      {(status || meta) && (
-        <div className="PageHeader-statusWrapper">
-          {status}
-          {meta}
+              <CenterNav {...centerNavProps} />
+              <Action actions={actions} navigation={navigation} stepper={stepper} />
+            </Row>
+            <Status {...statusProps} />
+          </div>
         </div>
-      )}
-      {breadcrumbs && navigationPosition === 'bottom' && renderNav()}
-      {tabs && <div>{tabs}</div>}
+
+        <div className="pl-3">
+          {navigationPosition === 'bottom' && <Nav navigation={navigation} stepper={stepper} />}
+          {tabs && <div data-test="DesignSystem-PageHeader--Tabs">{tabs}</div>}
+        </div>
+      </div>
+      {separator && <Divider appearance="header" />}
     </div>
   );
 };

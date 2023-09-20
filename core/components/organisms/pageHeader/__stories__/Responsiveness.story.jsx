@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Breadcrumbs, Text, StatusHint, Navigation, AvatarGroup, PageHeader, Dropdown } from '@/index';
+import { Breadcrumbs, Text, StatusHint, HorizontalNav, AvatarGroup, PageHeader, Dropdown } from '@/index';
 import { action } from '@/utils/action';
 
 export const Responsiveness = () => {
@@ -52,7 +52,7 @@ export const Responsiveness = () => {
     <div className="d-flex justify-content-end align-items-center">
       <Text className="mr-4">Updated 1 day ago</Text>
       <AvatarGroup className="mr-5" list={list} />
-      <div className="mr-4">
+      <div>
         <Dropdown menu={true} optionType="WITH_ICON" icon="more_horiz" options={options} align="left" />
       </div>
     </div>
@@ -72,14 +72,14 @@ export const Responsiveness = () => {
 
   const status = <StatusHint appearance="info">Ongoing</StatusHint>;
 
-  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
 
   return (
-    <div className="w-100 py-6 bg-secondary-lightest">
+    <div className="w-100 bg-secondary-lightest">
       <PageHeader
         navigationPosition="bottom"
         title="Pac Follow-Up Protocol"
-        separator={true}
+        separator={false}
         navigation={navigation}
         actions={actions}
         breadcrumbs={breadcrumbs}
@@ -139,7 +139,7 @@ const customCode = `() => {
     <div className="d-flex justify-content-end align-items-center">
     <Text className="mr-4">Updated 1 day ago</Text>
     <AvatarGroup className="mr-5" list={list}/>
-    <div className="mr-4">
+    <div>
       <Dropdown
         menu={true}
         optionType="WITH_ICON"
@@ -166,7 +166,7 @@ const customCode = `() => {
   );
 
   const navigation = (
-    <Navigation
+    <HorizontalNav 
       menus={navigationData}
       onClick={onClickHandler}
       active={active}
@@ -174,11 +174,11 @@ const customCode = `() => {
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest">
+    <div className="bg-secondary-lightest">
       <PageHeader
         navigationPosition="bottom"
         title="Pac Follow-Up Protocol"
-        separator={true}
+        separator={false}
         navigation={navigation}
         actions={actions}
         breadcrumbs={breadcrumbs}

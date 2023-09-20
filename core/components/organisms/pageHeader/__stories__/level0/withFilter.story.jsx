@@ -33,7 +33,7 @@ export const level0WithFilter = () => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-6 bg-secondary-lightest">
+        <div className="bg-secondary-lightest">
           <PageHeader title="Users" separator={true} tabs={tab} actions={actions} />
         </div>
       </Column>
@@ -77,7 +77,7 @@ const customCode = `() => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-6 bg-secondary-lightest">
+        <div className="bg-secondary-lightest">
           <PageHeader
             title="Users"
             separator={true}
@@ -91,7 +91,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 0 With Filter',
+  title: 'Layout/PageHeader/Level 0/Level 0 With Filter',
   component: PageHeader,
   parameters: {
     docs: {

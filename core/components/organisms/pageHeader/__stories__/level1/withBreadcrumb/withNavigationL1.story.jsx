@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navigation, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint, Row, Column } from '@/index';
+import { HorizontalNav, Breadcrumbs, Badge, MetaList, PageHeader, StatusHint, Row, Column } from '@/index';
 import { action } from '@/utils/action';
 
 export const level1WithNavigation = () => {
@@ -22,7 +22,7 @@ export const level1WithNavigation = () => {
     setActive(menu);
   };
 
-  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
   const actions = <div className="d-flex justify-content-end align-items-center" />;
   const breadcrumbs = (
     <Breadcrumbs
@@ -47,10 +47,10 @@ export const level1WithNavigation = () => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-5 bg-secondary-lightest">
+        <div className="bg-secondary-lightest">
           <PageHeader
             title="Covid-19"
-            separator={true}
+            separator={false}
             navigationPosition="center"
             navigation={navigation}
             actions={actions}
@@ -86,11 +86,10 @@ const customCode = `() => {
   };
 
   const navigation = (
-    <Navigation
+    <HorizontalNav
       menus={navigationData}
       onClick={onClickHandler}
       active={active}
-      align="center"
     />
   );
   const actions = (
@@ -119,10 +118,10 @@ const customCode = `() => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-5 bg-secondary-lightest">
+        <div className="bg-secondary-lightest">
           <PageHeader
             title="Covid-19"
-            separator={true}
+            separator={false}
             navigationPosition="center"
             navigation={navigation}
             actions={actions}
@@ -138,7 +137,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 1 With Navigation',
+  title: 'Layout/PageHeader/Level 1/With breadcrumb/Level 1 With Navigation',
   component: PageHeader,
   parameters: {
     docs: {

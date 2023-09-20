@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Navigation, Button, PageHeader, Row, Column } from '@/index';
+import { HorizontalNav, Button, PageHeader, Row, Column } from '@/index';
 
 export const level0WithNavigation = () => {
   const navigationData = [
@@ -21,7 +21,7 @@ export const level0WithNavigation = () => {
     setActive(menu);
   };
 
-  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active} />;
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active} />;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
       <Button className="mr-4">Reorganize</Button>
@@ -32,8 +32,8 @@ export const level0WithNavigation = () => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-6 bg-secondary-lightest">
-          <PageHeader title="Dashboard" separator={true} navigation={navigation} actions={actions} />
+        <div className="bg-secondary-lightest">
+          <PageHeader title="Dashboard" separator={false} navigation={navigation} actions={actions} />
         </div>
       </Column>
     </Row>
@@ -60,7 +60,7 @@ const customCode = `() => {
     setActive(menu);
   };
 
-  const navigation = <Navigation menus={navigationData} onClick={onClickHandler} active={active}/>;
+  const navigation = <HorizontalNav menus={navigationData} onClick={onClickHandler} active={active}/>;
   const actions = (
     <div className="d-flex justify-content-end align-items-center">
       <Button className="mr-4">Reorganize</Button>
@@ -71,10 +71,10 @@ const customCode = `() => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-6 bg-secondary-lightest">
+        <div className="bg-secondary-lightest">
           <PageHeader
             title="Dashboard"
-            separator={true}
+            separator={false}
             navigation={navigation}
             actions={actions}
           />
@@ -85,7 +85,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 0 With Navigation',
+  title: 'Layout/PageHeader/Level 0/Level 0 With Navigation',
   component: PageHeader,
   parameters: {
     docs: {

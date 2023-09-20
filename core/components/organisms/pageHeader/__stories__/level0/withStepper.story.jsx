@@ -2,24 +2,24 @@ import * as React from 'react';
 import { PageHeader, Stepper, Button, Text } from '@/index';
 
 export const level0WithStepper = () => {
-  const title = 'Page title';
+  const title = 'Annual Wellness Visit';
 
   const stepperData = [
     {
       value: 'step_1',
-      label: 'Step 1',
+      label: 'Recipients',
     },
     {
       value: 'step_2',
-      label: 'Step 2',
+      label: 'Message',
     },
     {
       value: 'step_3',
-      label: 'Step 3',
+      label: 'Schedule',
     },
   ];
 
-  const separator = true;
+  const separator = false;
 
   const [active, setActive] = React.useState(0);
   const [completed, setCompleted] = React.useState(-1);
@@ -50,27 +50,27 @@ export const level0WithStepper = () => {
   };
 
   return (
-    <div className="w-100 py-6 bg-secondary-lightest">
+    <div className="w-100 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
 };
 
 const customCode = `() => {
-  const title = 'Page title';
+  const title = 'Annual Wellness Visit';
 
-   const stepperData = [
+  const stepperData = [
     {
       value: 'step_1',
-      label: 'Step 1',
+      label: 'Recipients',
     },
     {
       value: 'step_2',
-      label: 'Step 2'
+      label: 'Message'
     },
     {
       value: 'step_3',
-      label: 'Step 3',
+      label: 'Schedule',
     }
   ];
 
@@ -88,25 +88,25 @@ const customCode = `() => {
 
   const options = {
     title,
-    seperator: true,
+    separator: false,
     stepper: <Stepper steps={stepperData} onChange={onChangeHandler} active={active} completed={completed} />,
     actions: (
       <div className="d-flex justify-content-end align-items-center">
         <span className="mr-4"><Text appearance="subtle">Meta data</Text></span>
-        <Button appearance="primary" onClick={onClickHandler}>Primary</Button>
+        <Button appearance="primary" onClick={onClickHandler}>Next</Button>
       </div>
     )
   };
 
   return (
-    <div className="w-100 py-6 bg-secondary-lightest">
+    <div className="w-100 bg-secondary-lightest">
       <PageHeader {...options} />
     </div>
   );
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 0 With Stepper',
+  title: 'Layout/PageHeader/Level 0/Level 0 With Stepper',
   component: PageHeader,
   parameters: {
     docs: {
