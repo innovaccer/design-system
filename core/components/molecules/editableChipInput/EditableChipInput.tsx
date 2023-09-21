@@ -4,6 +4,7 @@ import Editable from '@/components/atoms/editable';
 import { ChipInput, Button, Chip, Text } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChipInputProps } from '@/index.type';
+import { OptionType } from '@/common.type';
 
 export interface EditableChipInputProps extends BaseProps {
   /**
@@ -13,11 +14,11 @@ export interface EditableChipInputProps extends BaseProps {
   /**
    * The chip labels to display.
    */
-  value?: string[];
+  value?: (string | OptionType)[];
   /**
    * Callback function that is called when the chips change.  Callback function called on save action click
    */
-  onChange?: (chips: string[]) => void;
+  onChange?: (chips: (string | OptionType)[]) => void;
   /**
    * Determines if save action button is disabled
    */
@@ -69,12 +70,12 @@ export const EditableChipInput = (props: EditableChipInputProps) => {
     ['EditableChipInput-chipInput']: true,
   });
 
-  const onChipInputChangeHandler = (val: string[]) => {
+  const onChipInputChangeHandler = (val: (string | OptionType)[]) => {
     setInputValue(val);
     if (onChipInputChange) onChipInputChange(val);
   };
 
-  const setDefaultComponent = (updatedValue?: string[]) => {
+  const setDefaultComponent = (updatedValue?: (string | OptionType)[]) => {
     setInputValue(updatedValue);
     setShowComponent(false);
   };

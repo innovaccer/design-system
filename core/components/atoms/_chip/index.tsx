@@ -5,10 +5,10 @@ import Text from '@/components/atoms/text';
 import { Name } from '../chip/Chip';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { IconProps, TextProps } from '@/index.type';
-import { IconType } from '@/common.type';
+import { IconType, OptionType } from '@/common.type';
 
 export interface GenericChipProps extends BaseProps {
-  label: string | React.ReactElement;
+  label: string | React.ReactElement | OptionType;
   labelPrefix?: string;
   icon?: string;
   clearButton?: boolean;
@@ -84,6 +84,10 @@ export const GenericChip = (props: GenericChipProps) => {
           </Text>
         </>
       );
+    }
+
+    if (typeof label === 'object') {
+      return (label as OptionType)?.label;
     }
     return label;
   };

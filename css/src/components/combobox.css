@@ -1,0 +1,5 @@
+.Combobox-Option--focus {
+  /* outline: 3px auto var(--secondary-shadow); */
+  /* background-color: var(--secondary-lightest); */
+  background-color: red;
+}

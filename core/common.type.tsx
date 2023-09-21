@@ -94,3 +94,8 @@ export type TextColor =
 export type AvatarSize = 'regular' | 'tiny';
 
 export type IconType = 'rounded' | 'outlined';
+
+export type OptionType = {
+  label: string;
+  value: any;
+};

@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Chip, Icon } from '@/index';
 import { ChipProps } from '@/index.type';
 import { BaseProps, extractBaseProps } from '@/utils/types';
+import { OptionType } from '@/common.type';
 
 const keyCodes = {
   BACKSPACE: 'Backspace',
@@ -15,14 +16,14 @@ type ChipOptions = {
   type?: ChipProps['type'];
   iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
-  onClick?: (value: string, index: number) => void;
+  onClick?: (value: string | OptionType, index: number) => void;
 };
 
 export interface ChipInputProps extends BaseProps {
   /**
    * Allows duplicate chips if set to true.
    */
-  allowDuplicates: boolean;
+  allowDuplicates?: boolean;
   /**
    * <pre className="DocPage-codeBlock">
    *  ChipOptions: {
@@ -50,7 +51,7 @@ export interface ChipInputProps extends BaseProps {
   /**
    * The chip labels to display (enables controlled mode if set).
    */
-  value?: string[];
+  value?: (string | OptionType)[];
   /**
    * The chips to display by default (for uncontrolled mode).
    */
@@ -58,11 +59,15 @@ export interface ChipInputProps extends BaseProps {
   /**
    * Adds autoFocus to input
    */
-  autoFocus: boolean;
+  autoFocus?: boolean;
   /**
    * Callback function that is called when the chips change.
    */
-  onChange?: (chips: string[]) => void;
+  onChange?: (chips: (string | OptionType)[]) => void;
+  /**
+   * Callback function that is called when the chips change.
+   */
+  onKeyDown?: (e: React.KeyboardEvent) => void;
   /**
    * Handler to be called when `Input` loses focus
    */
@@ -71,6 +76,10 @@ export interface ChipInputProps extends BaseProps {
    * Handler to be called when `Input` gets focus
    */
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  /**
+   * Handler to be called when `ChipInput` value changes
+   */
+  onInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const ChipInput = (props: ChipInputProps) => {
@@ -87,6 +96,8 @@ export const ChipInput = (props: ChipInputProps) => {
     onChange,
     onBlur,
     onFocus,
+    onKeyDown,
+    onInputChange,
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
@@ -116,7 +127,7 @@ export const ChipInput = (props: ChipInputProps) => {
     className
   );
 
-  const onUpdateChips = (updatedChips: string[]) => {
+  const onUpdateChips = (updatedChips: (string | OptionType)[]) => {
     if (onChange) onChange(updatedChips);
   };
 
@@ -173,10 +184,13 @@ export const ChipInput = (props: ChipInputProps) => {
       default:
         break;
     }
+
+    onKeyDown && onKeyDown(event);
   };
 
-  const onInputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
+  const onInputChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+    onInputChange && onInputChange(event);
   };
 
   const onClickHandler = () => {

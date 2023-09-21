@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericChip from '../_chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { IconType } from '@/common.type';
+import { IconType, OptionType } from '@/common.type';
 
 export type ChipType = 'action' | 'selection' | 'input';
 export type Name = number | string | object;
@@ -11,7 +11,7 @@ export interface ChipProps extends BaseProps {
   /**
    * Label of chip
    */
-  label: string | React.ReactElement;
+  label: string | React.ReactElement | OptionType;
   /**
    * Adds Prefix for label
    */
