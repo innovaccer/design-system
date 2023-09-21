@@ -89,4 +89,5 @@ export { ActionCard } from './components/atoms/actionCard';
 export { SelectionCard } from './components/atoms/selectionCard';
 export { Listbox } from './components/organisms/listbox';
 
+export { Combobox } from './components/organisms/combobox';
 export { version } from '../package.json';
