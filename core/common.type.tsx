@@ -114,4 +114,10 @@ export type PositionType =
   | 'left'
   | 'left-start';
 
+export type OptionType = {
+  label: string;
+  value: any;
+  isSelectedOption?: boolean;
+};
+
 export type TListboxSize = 'standard' | 'compressed' | 'tight';
