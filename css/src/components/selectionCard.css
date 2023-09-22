@@ -1,0 +1,91 @@
+.Selection-card {
+  cursor: pointer;
+  border-radius: var(--spacing-m);
+  position: relative;
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--secondary-dark);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.Selection-card:hover {
+  box-shadow: inset 0 0 0 var(--spacing-s) var(--inverse-lightest);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.Selection-card:focus,
+.Selection-card:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow), inset 0 0 0 var(--spacing-xs) var(--secondary-light);
+}
+
+.Selection-card:active {
+  box-shadow: inset 0 0 0 var(--spacing-s) var(--primary);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.Selection-card--disabled {
+  pointer-events: none;
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--secondary-lighter);
+}
+
+/* selected states */
+
+.Selection-card--selected {
+  box-shadow: inset 0 0 0 var(--spacing-s) var(--primary);
+}
+
+.Selection-card--selected:hover {
+  box-shadow: inset 0 0 0 var(--spacing-s) var(--primary-dark);
+}
+
+.Selection-card--selected:focus,
+.Selection-card--selected:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-spread) var(--primary-shadow), inset 0 0 0 var(--spacing-s) var(--primary);
+}
+
+.Selection-card--selected:active {
+  box-shadow: inset 0 0 0 var(--spacing-s) var(--primary-darker);
+}
+
+.Selection-card--selected-disabled {
+  pointer-events: none;
+  box-shadow: inset 0 0 0 var(--spacing-xs) var(--primary-lighter);
+}
+
+/* overlay classes */
+
+.Selection-card-overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  position: absolute;
+  pointer-events: none;
+  border-radius: var(--spacing-m);
+}
+
+.Selection-card:active .Selection-card-overlay {
+  background-color: var(--primary);
+  opacity: 10%;
+}
+
+.Selection-card--disabled .Selection-card-overlay {
+  background-color: var(--secondary-lightest);
+  opacity: 50%;
+}
+
+.Selection-card--selected .Selection-card-overlay {
+  background-color: var(--primary);
+  opacity: 4%;
+}
+
+.Selection-card--selected:active .Selection-card-overlay {
+  background-color: var(--primary);
+  opacity: 4%;
+}
+
+.Selection-card--selected-disabled .Selection-card-overlay {
+  background-color: var(--primary-lightest);
+  opacity: 50%;
+}
