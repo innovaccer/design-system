@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps } from '@/utils/types';
-import { FontVariationType } from '@/common.type';
+import { IconType } from '@/common.type';
 import { Icon } from '@/index';
 
 export type ActionButtonType = 'outlined' | 'rounded';
@@ -20,18 +20,9 @@ export interface ActionButtonProps extends BaseProps {
    */
   type?: ActionButtonType;
   /**
-   * Set font-variation-settings CSS Property
-   *
-   * <pre className="DocPage-codeBlock">
-   *  FontVariationType: {
-   *    fill?: number;
-   *    weight?: number; Range: [100, 700]
-   *    grade?: number; Range: [-25, 200]
-   *    opticalSize?: number; Range: [20px, 48px]
-   *  }
-   * </pre>
+   * Set type of Icon
    */
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
   /**
    * Handler to be called when icon is clicked
    */
@@ -52,16 +43,14 @@ export interface ActionButtonProps extends BaseProps {
 }
 
 export const ActionButton = (props: ActionButtonProps) => {
-  const { className, iconVariations, ...rest } = props;
+  const { className, iconType, ...rest } = props;
 
   const iconClass = classNames({
     ['ActionButton']: true,
     [`${className}`]: className,
   });
 
-  return (
-    <Icon className={iconClass} variations={iconVariations} data-test="DesignSystem-Input-ActionButton" {...rest} />
-  );
+  return <Icon className={iconClass} type={iconType} data-test="DesignSystem-Input-ActionButton" {...rest} />;
 };
 
 ActionButton.displayName = 'ActionButton';

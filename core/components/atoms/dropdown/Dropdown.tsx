@@ -67,12 +67,7 @@ interface SyncProps {
    *   selected?: boolean;
    *   disabled?: boolean;
    *   group?: string;
-   *   iconVariations?: {
-   *      fill?: number;
-   *      weight?: number; Range: [100, 700]
-   *      grade?: number; Range: [-25, 200]
-   *      opticalSize?: number; Range: [20px, 48px]
-   *   }
+   *   iconType?: 'rounded' | 'outlined'
    * }
    * </pre>
    *
@@ -86,7 +81,7 @@ interface SyncProps {
    * | selected | Denotes default selection of option <br/>(works in case of uncontrolled component) | |
    * | disabled | Disables the option, making it unable to be pressed | |
    * | group | Defines group to which the option belongs | |
-   * | iconVariations | Set font-variation-settings CSS property for Icons | |
+   * | iconType | Set type of Icons | |
    */
   options: OptionSchema[];
   /**

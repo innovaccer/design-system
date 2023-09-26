@@ -1,4 +1,4 @@
-import { FontVariationType } from '@/common.type';
+import { IconType } from '@/common.type';
 
 export type Menu = {
   name: string;
@@ -9,7 +9,7 @@ export type Menu = {
   count?: number;
   disabled?: boolean;
   subMenu?: Menu[];
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
 };
 
 export type ActiveMenu = ({ name: string } | { link: string }) & Partial<Menu>;

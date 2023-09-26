@@ -26,12 +26,7 @@ export interface ChipGroupProps extends BaseProps {
    *    onClose?: (name: number | string | object) => void;
    *    onClick?: (name: number | string | object) => void;
    *    name: number | string | object;
-   *    iconVariations?: {
-   *      fill?: number;
-   *      weight?: number; Range: [100, 700]
-   *      grade?: number; Range: [-25, 200]
-   *      opticalSize?: number; Range: [20px, 48px]
-   *    };
+   *    iconType?: 'rounded' | 'outlined'
    *  }
    * </pre>
    */
@@ -59,7 +54,7 @@ export const ChipGroup = (props: ChipGroupProps) => {
   return (
     <div data-test="DesignSystem-ChipGroup" {...baseProps} className={ChipGroupClass}>
       {list.map((item, ind) => {
-        const { label = '', icon, type, disabled, selected, clearButton, name, iconVariations } = item;
+        const { label = '', icon, type, disabled, selected, clearButton, name, iconType } = item;
         return (
           <span key={ind} className="ChipGroup-item">
             <Chip
@@ -70,7 +65,7 @@ export const ChipGroup = (props: ChipGroupProps) => {
               icon={icon}
               disabled={disabled}
               clearButton={clearButton}
-              iconVariations={iconVariations}
+              iconType={iconType}
               type={type}
               onClick={() => onClickHandler(item)}
               onClose={() => onCloseHandler(item)}

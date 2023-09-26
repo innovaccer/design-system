@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { Icon, Text } from '@/index';
-import { FontVariationType } from '@/common.type';
+import { IconType } from '@/common.type';
 
 export type DropDownButtonSize = 'tiny' | 'regular';
 
@@ -16,18 +16,9 @@ export interface TriggerProps {
    */
   icon?: string;
   /**
-   * Set font-variation-settings CSS property for Icons
-   *
-   * <pre className="DocPage-codeBlock">
-   *  FontVariationType: {
-   *    fill?: number;
-   *    weight?: number; Range: [100, 700]
-   *    grade?: number; Range: [-25, 200]
-   *    opticalSize?: number; Range: [20px, 48px]
-   *  }
-   * </pre>
+   * Set type of Icon
    */
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
   /**
    * String to show inside `Dropdown trigger` when no options are selected
    * @default "Select"
@@ -68,7 +59,7 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
     open,
     inlineLabel,
     error,
-    iconVariations,
+    iconType,
     ...rest
   } = props;
 
@@ -113,17 +104,12 @@ const DropdownButton = React.forwardRef<HTMLButtonElement, DropdownButtonProps>(
             </Text>
           )}
           {icon && !inlineLabel && (
-            <Icon
-              appearance={buttonDisabled}
-              className="d-flex align-items-center mr-4"
-              name={icon}
-              variations={iconVariations}
-            />
+            <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} type={iconType} />
           )}
           {value && <span className={textClass}>{value}</span>}
         </div>
       )}
-      <Icon appearance={buttonDisabled} name={iconName} variations={iconVariations} />
+      <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
     </button>
   );
 });

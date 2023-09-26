@@ -2,7 +2,7 @@ import * as React from 'react';
 import GenericChip from '../_chip';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { FontVariationType } from '@/common.type';
+import { IconType } from '@/common.type';
 
 export type ChipType = 'action' | 'selection' | 'input';
 export type Name = number | string | object;
@@ -21,18 +21,9 @@ export interface ChipProps extends BaseProps {
    */
   icon?: string;
   /**
-   * Set font-variation-settings CSS property for Icons
-   *
-   * <pre className="DocPage-codeBlock">
-   *  FontVariationType: {
-   *    fill?: number;
-   *    weight?: number; Range: [100, 700]
-   *    grade?: number; Range: [-25, 200]
-   *    opticalSize?: number; Range: [20px, 48px]
-   *  }
-   * </pre>
+   * Set type of Icon
    */
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
   /**
    * Shows the 'clear' icon if value is not empty
    */
@@ -76,7 +67,7 @@ export const Chip = (props: ChipProps) => {
     name,
     className,
     labelPrefix,
-    iconVariations,
+    iconType,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -110,7 +101,7 @@ export const Chip = (props: ChipProps) => {
       label={label}
       selected={select}
       icon={icon}
-      iconVariations={iconVariations}
+      iconType={iconType}
       clearButton={clearbutton}
       disabled={disabled}
       className={chipClass}
