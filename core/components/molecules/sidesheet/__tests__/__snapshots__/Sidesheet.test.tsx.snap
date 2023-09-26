@@ -69,7 +69,7 @@ exports[`Sidesheet component
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 20px; width: 20px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 20px; width: 20px;"
                   >
                     close
                   </i>
@@ -166,7 +166,7 @@ exports[`Sidesheet component
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 20px; width: 20px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 20px; width: 20px;"
                   >
                     close
                   </i>

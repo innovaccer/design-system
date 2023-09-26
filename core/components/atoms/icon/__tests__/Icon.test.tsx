@@ -77,28 +77,3 @@ describe('Icon component snapshot', () => {
   };
   testHelper(mapper, testFunc);
 });
-
-describe('Icon component symbols', () => {
-  it('check for material symbols font variation settings', () => {
-    const { getByTestId } = render(
-      <Icon name="places" variations={{ fill: 0, grade: 150, opticalSize: 30, weight: 200 }} />
-    );
-    expect(getByTestId('DesignSystem-Icon')).toHaveStyle(
-      `font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 150, "opsz" 30;`
-    );
-  });
-
-  it('check for material symbols default font variation settings', () => {
-    const { getByTestId } = render(<Icon name="more_horiz" />);
-    expect(getByTestId('DesignSystem-Icon')).toHaveStyle(
-      `font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 24;`
-    );
-  });
-
-  it('check for material symbols custom font variation settings', () => {
-    const { getByTestId } = render(<Icon name="speed" />);
-    expect(getByTestId('DesignSystem-Icon')).toHaveStyle(
-      `font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;`
-    );
-  });
-});

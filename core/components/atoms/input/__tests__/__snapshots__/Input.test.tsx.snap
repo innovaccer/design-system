@@ -42,7 +42,7 @@ exports[`Input component
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -102,7 +102,7 @@ exports[`Input component
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -396,7 +396,7 @@ exports[`Input component
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -458,7 +458,7 @@ exports[`Input component
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -518,7 +518,7 @@ exports[`Input component
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -578,7 +578,7 @@ exports[`Input component
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
