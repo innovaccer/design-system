@@ -38,6 +38,13 @@ export type IconAppearance =
 
 export type IconType = 'filled' | 'outlined' | 'outline' | 'rounded' | 'round' | 'two-tone' | 'sharp'; // 'outline', 'rounded' to be deprecated soon.
 
+export type FontVariationType = {
+  fill?: number;
+  weight?: number;
+  grade?: number;
+  opticalSize?: number;
+};
+
 export interface IconProps extends BaseProps {
   /**
    * Material icon name
@@ -59,6 +66,19 @@ export interface IconProps extends BaseProps {
    * ** 'info' appearance is deprecated. **
    */
   appearance?: IconAppearance;
+  /**
+   * Set font-variation-settings CSS Property
+   *
+   * <pre className="DocPage-codeBlock">
+   *  FontVariationType: {
+   *    fill?: number;
+   *    weight?: number; Range: [100, 700]
+   *    grade?: number; Range: [-25, 200]
+   *    opticalSize?: number; Range: [20px, 48px]
+   *  }
+   * </pre>
+   */
+  variations?: FontVariationType;
   /**
    * Handler to be called when icon is clicked
    */
