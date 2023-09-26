@@ -93,9 +93,4 @@ export type TextColor =
 
 export type AvatarSize = 'regular' | 'tiny';
 
-export type FontVariationType = {
-  fill?: number;
-  weight?: number;
-  grade?: number;
-  opticalSize?: number;
-};
+export type IconType = 'rounded' | 'outlined';

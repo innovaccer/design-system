@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Tooltip, Icon, Text } from '@/index';
 import { IconProps } from '@/index.type';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
-import { AutoComplete, FontVariationType } from '@/common.type';
+import { AutoComplete, IconType } from '@/common.type';
 import ActionButton from './actionButton';
 
 export type InputType = 'text' | 'password' | 'number' | 'email' | 'tel' | 'url';
@@ -42,18 +42,9 @@ export interface InputProps extends BaseProps, BaseHtmlProps<HTMLInputElement> {
    */
   icon?: string;
   /**
-   * Set font-variation-settings CSS property for Icons
-   *
-   * <pre className="DocPage-codeBlock">
-   *  FontVariationType: {
-   *    fill?: number;
-   *    weight?: number; Range: [100, 700]
-   *    grade?: number; Range: [-25, 200]
-   *    opticalSize?: number; Range: [20px, 48px]
-   *  }
-   * </pre>
+   * Set type of Icon
    */
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
   /**
    * Label to be displayed inside `Input`
    */
@@ -183,7 +174,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
     autoFocus,
     disabled,
     readOnly,
-    iconVariations,
+    iconType,
     ...rest
   } = props;
 
@@ -252,7 +243,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
       )}
       {size !== 'tiny' && icon && (
         <div className={leftIconClass}>
-          <Icon name={icon} size={sizeMapping[size]} variations={iconVariations} />
+          <Icon name={icon} size={sizeMapping[size]} type={iconType} />
         </div>
       )}
       <input

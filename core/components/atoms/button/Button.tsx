@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Text, Icon, Spinner, Tooltip } from '@/index';
 import classNames from 'classnames';
 import { BaseProps, BaseHtmlProps } from '@/utils/types';
-import { FontVariationType } from '@/common.type';
+import { IconType } from '@/common.type';
 
 export type ButtonType = 'button' | 'submit' | 'reset';
 export type ButtonAppearance = 'basic' | 'primary' | 'success' | 'alert' | 'transparent';
@@ -66,18 +66,9 @@ export interface ButtonProps extends BaseProps, BaseHtmlProps<HTMLButtonElement>
    */
   largeIcon?: boolean;
   /**
-   * Set font-variation-settings CSS property for Icons
-   *
-   * <pre className="DocPage-codeBlock">
-   *  FontVariationType: {
-   *    fill?: number;
-   *    weight?: number; Range: [100, 700]
-   *    grade?: number; Range: [-25, 200]
-   *    opticalSize?: number; Range: [20px, 48px]
-   *  }
-   * </pre>
+   * Set type of Icon
    */
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
   /**
    * Text to be added inside `Button`
    */
@@ -128,7 +119,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
     disabled,
     className,
     tooltip,
-    iconVariations,
+    iconType,
     ...rest
   } = props;
 
@@ -175,7 +166,7 @@ const ButtonElement = React.forwardRef<HTMLButtonElement, ButtonProps>((props, r
               <Icon
                 data-test="DesignSystem-Button--Icon"
                 name={icon}
-                variations={iconVariations}
+                type={iconType}
                 size={largeIcon && !children ? sizeMapping[size] + 4 : sizeMapping[size]}
               />
             </div>

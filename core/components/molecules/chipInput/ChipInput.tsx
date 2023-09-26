@@ -13,7 +13,7 @@ const keyCodes = {
 type ChipOptions = {
   icon?: ChipProps['icon'];
   type?: ChipProps['type'];
-  iconVariations?: ChipProps['iconVariations'];
+  iconType?: ChipProps['iconType'];
   clearButton?: ChipProps['clearButton'];
   onClick?: (value: string, index: number) => void;
 };
@@ -30,12 +30,7 @@ export interface ChipInputProps extends BaseProps {
    *   type?: action | input | selection
    *   clearButton?: boolean;
    *   onClick?: (value: string, index: number) => void;
-   *   iconVariations?: {
-   *      fill?: number;
-   *      weight?: number; Range: [100, 700]
-   *      grade?: number; Range: [-25, 200]
-   *      opticalSize?: number; Range: [20px, 48px]
-   *    }
+   *   iconType?: 'rounded' | 'outlined'
    *  }
    * </pre>
    */

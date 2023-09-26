@@ -51,7 +51,7 @@ export const HorizontalNav = (props: HorizontalNavProps) => {
         <Icon
           className="mr-3 HorizontalNav-animate"
           name={menu.icon}
-          variations={menu.iconVariations}
+          type={menu.iconType}
           data-test="DesignSystem-HorizontalNav--Icon"
         />
       );
