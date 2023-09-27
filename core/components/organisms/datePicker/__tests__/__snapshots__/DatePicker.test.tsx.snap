@@ -33,7 +33,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -55,7 +55,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -73,7 +73,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -92,7 +92,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -698,7 +698,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -720,7 +720,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -738,7 +738,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -757,7 +757,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -1363,7 +1363,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -1385,7 +1385,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -1403,7 +1403,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -1422,7 +1422,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -2027,7 +2027,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -2049,7 +2049,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -2067,7 +2067,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -2086,7 +2086,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -2691,7 +2691,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -2713,7 +2713,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -2731,7 +2731,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -2750,7 +2750,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:open
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -3355,7 +3355,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -3377,7 +3377,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -3395,7 +3395,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -3414,7 +3414,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -4019,7 +4019,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -4041,7 +4041,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -4060,7 +4060,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -4277,7 +4277,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -4310,7 +4310,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:view
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -4527,7 +4527,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_back
                   </i>
@@ -4549,7 +4549,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -4567,7 +4567,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
                     data-test="DesignSystem-Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     keyboard_arrow_down
                   </i>
@@ -4586,7 +4586,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
                     class="material-icons material-icons-rounded Icon"
                     data-test="DesignSystem-Button--Icon"
                     role="button"
-                    style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                    style="font-size: 16px; width: 16px;"
                   >
                     arrow_forward
                   </i>
@@ -5184,7 +5184,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               class="material-icons material-icons-rounded Icon"
               data-test="DesignSystem-Icon"
               role="button"
-              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+              style="font-size: 16px; width: 16px;"
             >
               events
             </i>
@@ -5204,7 +5204,7 @@ exports[`DatePicker component snapshots renders snapshot for prop:withInput
               class="material-icons material-icons-rounded Icon Input-icon--right"
               data-test="DesignSystem-Input--closeIcon"
               role="button"
-              style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+              style="font-size: 16px; width: 16px;"
               tabindex="0"
             >
               close

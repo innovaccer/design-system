@@ -17,7 +17,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -45,7 +45,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -73,7 +73,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -101,7 +101,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -129,7 +129,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -157,7 +157,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -186,7 +186,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -215,7 +215,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -244,7 +244,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -273,7 +273,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -302,7 +302,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -331,7 +331,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -359,7 +359,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -387,7 +387,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -415,7 +415,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -443,7 +443,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -471,7 +471,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -499,7 +499,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -528,7 +528,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -557,7 +557,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -586,7 +586,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -615,7 +615,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -644,7 +644,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -673,7 +673,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -701,7 +701,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -729,7 +729,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -757,7 +757,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -785,7 +785,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -813,7 +813,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -841,7 +841,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -870,7 +870,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -899,7 +899,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -928,7 +928,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -957,7 +957,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -986,7 +986,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1015,7 +1015,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1043,7 +1043,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1071,7 +1071,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1099,7 +1099,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1127,7 +1127,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1155,7 +1155,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1183,7 +1183,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1212,7 +1212,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1241,7 +1241,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1270,7 +1270,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1299,7 +1299,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1328,7 +1328,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1357,7 +1357,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1385,7 +1385,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1413,7 +1413,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1441,7 +1441,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1469,7 +1469,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1497,7 +1497,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1525,7 +1525,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1554,7 +1554,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1583,7 +1583,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1612,7 +1612,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1641,7 +1641,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1670,7 +1670,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1699,7 +1699,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           events
         </i>
@@ -1727,7 +1727,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1755,7 +1755,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1783,7 +1783,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1811,7 +1811,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1839,7 +1839,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1867,7 +1867,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1896,7 +1896,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1925,7 +1925,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1954,7 +1954,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -1983,7 +1983,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -2012,7 +2012,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>
@@ -2041,7 +2041,7 @@ exports[`Link Button component snapshots
           class="material-icons material-icons-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
-          style="font-size: 12px; width: 12px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 12px; width: 12px;"
         >
           events
         </i>

@@ -2,7 +2,6 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { useAccessibilityProps } from '@/accessibility/utils';
-import { getFontVariation } from './utils';
 
 export type IconAppearance =
   | 'default'
@@ -100,7 +99,7 @@ export interface IconProps extends BaseProps {
 }
 
 export const Icon = (props: IconProps) => {
-  const { appearance, className, name, size, children, variations } = props;
+  const { appearance, className, name, size, children } = props;
   const accessibilityProps = useAccessibilityProps(props);
 
   const baseProps = extractBaseProps(props);
@@ -131,12 +130,9 @@ export const Icon = (props: IconProps) => {
     [`${className}`]: className,
   });
 
-  const { fill, grade, opticalSize, weight } = getFontVariation(name!, variations, type, size);
-
   const styles = {
     fontSize: `${size}px`,
     width: `${size}px`,
-    'font-variation-settings': `"FILL" ${fill}, "wght" ${weight}, "GRAD" ${grade}, "opsz" ${opticalSize}`,
   };
 
   // change `children` to {name} after migration

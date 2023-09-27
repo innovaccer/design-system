@@ -12,7 +12,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         error
       </i>
@@ -32,7 +32,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -56,7 +56,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         info
       </i>
@@ -76,7 +76,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -100,7 +100,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         check_circle
       </i>
@@ -120,7 +120,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -144,7 +144,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         warning
       </i>
@@ -164,7 +164,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -188,7 +188,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         error
       </i>
@@ -208,7 +208,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -238,7 +238,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--alert"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         error
       </i>
@@ -258,7 +258,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--alert Toast-close-icon--alert"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -302,7 +302,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         info
       </i>
@@ -322,7 +322,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -352,7 +352,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         info
       </i>
@@ -372,7 +372,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -416,7 +416,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         check_circle
       </i>
@@ -436,7 +436,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -466,7 +466,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--success"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         check_circle
       </i>
@@ -486,7 +486,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--success Toast-close-icon--success"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -530,7 +530,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         warning
       </i>
@@ -550,7 +550,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close
@@ -580,7 +580,7 @@ exports[`Toast component
         class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--warning"
         data-test="DesignSystem-Icon"
         role="button"
-        style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 16px; width: 16px;"
       >
         warning
       </i>
@@ -600,7 +600,7 @@ exports[`Toast component
             class="material-icons material-icons-rounded Icon Icon--default Toast-icon Toast-icon--right Toast-icon--warning Toast-close-icon--warning"
             data-test="DesignSystem-Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
             tabindex="0"
           >
             close

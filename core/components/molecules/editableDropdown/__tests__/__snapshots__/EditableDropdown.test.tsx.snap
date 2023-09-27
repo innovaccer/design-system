@@ -37,7 +37,7 @@ exports[`EditableDropdown component
                 class="material-icons material-icons-rounded Icon Icon--default"
                 data-test="DesignSystem-Icon"
                 role="button"
-                style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+                style="font-size: 16px; width: 16px;"
               >
                 keyboard_arrow_down
               </i>

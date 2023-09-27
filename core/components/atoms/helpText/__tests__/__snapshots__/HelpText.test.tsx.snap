@@ -32,7 +32,7 @@ exports[`HelpText component snapshot
         class="material-icons material-icons-rounded Icon Icon--alert InlineMessage-icon--small"
         data-test="DesignSystem-InlineMessage--Icon"
         role="button"
-        style="font-size: 14px; width: 14px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+        style="font-size: 14px; width: 14px;"
       >
         error
       </i>

@@ -21,7 +21,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             assignment_ind
           </i>
@@ -39,7 +39,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             forum
           </i>
@@ -56,7 +56,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             assignment_ind
           </i>
@@ -73,7 +73,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             events
           </i>
@@ -91,7 +91,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             airline_seat_flat_angled
           </i>
@@ -109,7 +109,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             favorite
           </i>
@@ -151,7 +151,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             assignment_ind
           </i>
@@ -191,7 +191,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             forum
           </i>
@@ -206,7 +206,7 @@ exports[`Vertical Navigation component
           class="material-icons material-icons-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           keyboard_arrow_up
         </i>
@@ -222,7 +222,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             assignment_ind
           </i>
@@ -245,7 +245,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             events
           </i>
@@ -269,7 +269,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             airline_seat_flat_angled
           </i>
@@ -299,7 +299,7 @@ exports[`Vertical Navigation component
             class="material-icons material-icons-rounded Icon mr-4"
             data-test="DesignSystem-VerticalNav--Icon"
             role="button"
-            style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+            style="font-size: 16px; width: 16px;"
           >
             favorite
           </i>
@@ -314,7 +314,7 @@ exports[`Vertical Navigation component
           class="material-icons material-icons-rounded Icon mx-4"
           data-test="DesignSystem-Icon"
           role="button"
-          style="font-size: 16px; width: 16px; font-variation-settings: \\"FILL\\" 1, \\"wght\\" 400, \\"GRAD\\" 0, \\"opsz\\" 20;"
+          style="font-size: 16px; width: 16px;"
         >
           keyboard_arrow_down
         </i>
