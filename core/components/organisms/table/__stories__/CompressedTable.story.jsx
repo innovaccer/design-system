@@ -8,35 +8,35 @@ export const compressedTable = () => {
     {
       name: 'MSSP Track 1 Urban',
       status: 'Active',
-      measures: '9',
+      measures: 9,
       current_period: 'March 2017 - Feb 2018',
       added_in: 'March 2014',
     },
     {
       name: 'MSSP Track 1 Rural',
       status: 'Active',
-      measures: '9',
+      measures: 9,
       current_period: 'March 2017 - Feb 201',
       added_in: 'March 2015',
     },
     {
       name: 'MSSP Track 2',
       status: 'Inactive',
-      measures: '14',
+      measures: 14,
       current_period: 'March 2017 - Feb 201',
       added_in: 'March 2016',
     },
     {
       name: 'Aetna',
       status: 'Active',
-      measures: '20',
+      measures: 20,
       current_period: 'March 2017 - Feb 201',
       added_in: 'March 2019',
     },
     {
       name: 'BCBS',
       status: 'Active',
-      measures: '16',
+      measures: 16,
       current_period: 'March 2017 - Feb 201',
       added_in: 'March 2017',
     },
@@ -64,7 +64,16 @@ export const compressedTable = () => {
       name: 'measures',
       displayName: 'No. of Measures',
       width: '20%',
-      sorting: false,
+      comparator: (a, b) => {
+        if (a.measures < b.measures) {
+          return -1;
+        } else if (a.measures === b.measures) {
+          return 0;
+        } else {
+          return 1;
+        }
+      },
+      sorting: true,
     },
     {
       name: 'current_period',
@@ -107,35 +116,35 @@ const customCode = `() => {
     {
       name: 'MSSP Track 1 Urban',
       status: "Active",
-      measures: "9",
+      measures: 9,
       current_period: "March 2017 - Feb 2018",
       added_in: "March 2014",
     },
     {
       name: 'MSSP Track 1 Rural',
       status: "Active",
-      measures: "9",
+      measures: 9,
       current_period: "March 2017 - Feb 201",
       added_in: "March 2015",
     },
     {
       name: 'MSSP Track 2',
       status: "Inactive",
-      measures: "14",
+      measures: 14,
       current_period: "March 2017 - Feb 201",
       added_in: "March 2016",
     },
     {
       name: 'Aetna',
       status: "Active",
-      measures: "20",
+      measures: 20,
       current_period: "March 2017 - Feb 201",
       added_in: "March 2019",
     },
     {
       name: 'BCBS',
       status: "Active",
-      measures: "16",
+      measures: 16,
       current_period: "March 2017 - Feb 201",
       added_in: "March 2017",
     },
@@ -163,7 +172,16 @@ const customCode = `() => {
       name: 'measures',
       displayName: 'No. of Measures',
       width: '20%',
-      sorting: false
+      comparator: (a, b) => {
+        if (a.measures < b.measures) {
+          return -1;
+        } else if (a.measures === b.measures) {
+          return 0;
+        } else {
+          return 1;
+        }
+      },
+      sorting: true
     },
     {
       name: 'current_period',
