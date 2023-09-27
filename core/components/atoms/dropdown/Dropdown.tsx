@@ -21,6 +21,8 @@ type fetchOptionsFunction = (searchTerm: string) => Promise<{
   options: OptionSchema[];
 }>;
 
+export type ErrorType = 'DEFAULT' | 'NO_RECORDS_FOUND' | 'FAILED_TO_FETCH';
+
 export type EventType =
   | 'select-option'
   | 'deselect-option'
@@ -228,6 +230,7 @@ interface DropdownState {
   tempSelected: OptionSchema[];
   previousSelected: OptionSchema[];
   scrollIndex?: number;
+  errorType: ErrorType;
 }
 
 /**
@@ -243,6 +246,21 @@ interface DropdownState {
  *    * onChange: Called when selected options are updated.
  *  - Uncontrolled Dropdown:
  *    * onChange: Called when user `clicks on option` / `clicks on Clear, or Apply button`.
+ * 4. Default errorTemplate:
+ *
+ *  <pre class="DocPage-codeBlock mx-6 mb-7">
+ * (props) => {
+ *      const { errorType = 'DEFAULT' } = props;
+ *      const errorMessages = {
+ *        'FAILED\_TO\_FETCH': 'Failed to fetch data',
+ *        'NO\_RECORDS\_FOUND': 'No results found',
+ *        'DEFAULT': 'No results found'
+ *      }
+ *      return(
+ *        \<Heading>{errorMessages[errorType]}\</Heading>
+ *      );
+ * }
+ * </pre>
  */
 export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   staticLimit: number;
@@ -282,6 +300,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       selected: _showSelectedItems(async, '', withCheckbox) ? selected : [],
       triggerLabel: this.updateTriggerLabel(selectedGroup, optionsLength),
       selectAll: getSelectAll(selectedGroup, optionsLength, disabledOptions.length),
+      errorType: 'DEFAULT',
     };
   }
 
@@ -384,7 +403,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
   };
 
   updateOptions = (init: boolean, async?: boolean) => {
-    const { searchTerm, selectAll, tempSelected, previousSelected } = this.state;
+    const { searchTerm, selectAll, tempSelected, previousSelected, errorType } = this.state;
 
     let updatedAsync = async === undefined ? this.state.async : async;
     const { fetchOptions, withCheckbox, withSearch } = this.props;
@@ -409,6 +428,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
         this.setState({
           ...this.state,
+          errorType: fetchOptions && errorType !== 'NO_RECORDS_FOUND' ? 'FAILED_TO_FETCH' : errorType,
           scrollIndex: res.scrollToIndex || 0,
           optionsLength,
           loading: false,
@@ -433,6 +453,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       loading: true,
       searchInit: true,
       searchTerm: search,
+      errorType: 'NO_RECORDS_FOUND',
     });
   };
 
@@ -633,6 +654,17 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     );
   });
 
+  reload = () => {
+    this.setState(
+      {
+        loading: true,
+      },
+      () => {
+        this.updateOptions(false);
+      }
+    );
+  };
+
   debounceClear = debounce(250, () => this.updateOptions(false));
 
   onClearOptions = () => {
@@ -757,6 +789,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
       triggerLabel,
       previousSelected,
       scrollIndex,
+      errorType,
     } = this.state;
 
     const { withSelectAll = true, withCheckbox } = this.props;
@@ -796,6 +829,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         onSelectAll={this.onSelectAll}
         customTrigger={triggerOptions.customTrigger}
         scrollIndex={scrollIndex}
+        updateOptions={this.reload}
+        errorType={errorType}
         {...rest}
       />
     );
