@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { Icon, Text } from '@/index';
 import { MetaSize } from './MetaList';
-import { FontVariationType } from '@/common.type';
+import { IconType } from '@/common.type';
 
 export interface MetaProps {
   label: string;
   icon?: string;
   size?: MetaSize;
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
 }
 
 export const Meta = (props: MetaProps) => {
-  const { label, icon, size, iconVariations } = props;
+  const { label, icon, size, iconType } = props;
 
   return (
     <span data-test="DesignSystem-MetaList--Meta" className={'Meta'}>
@@ -21,7 +21,7 @@ export const Meta = (props: MetaProps) => {
           name={icon}
           appearance="subtle"
           className={'Meta-icon'}
-          variations={iconVariations}
+          type={iconType}
           size={size === 'regular' ? 16 : 12}
         />
       )}

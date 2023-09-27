@@ -286,7 +286,7 @@ const DropdownList = (props: OptionsProps) => {
     disabled,
     inlineLabel,
     triggerLabel,
-    iconVariations,
+    iconType,
   } = props;
 
   const CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
@@ -305,7 +305,7 @@ const DropdownList = (props: OptionsProps) => {
       menu={menu}
       error={error}
       ref={dropdownTriggerRef}
-      iconVariations={iconVariations}
+      iconType={iconType}
     >
       {triggerLabel}
     </DropdownButton>

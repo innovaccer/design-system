@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Button, Icon, Text } from '@/index';
 import { BaseHtmlProps, BaseProps, extractBaseProps } from '@/utils/types';
-import { AutoComplete, FontVariationType } from '@/common.type';
+import { AutoComplete, IconType } from '@/common.type';
 
 export type MetricInputSize = 'regular' | 'large';
 
@@ -33,18 +33,9 @@ export interface MetricInputProps extends BaseProps, BaseHtmlProps<HTMLInputElem
    */
   icon?: string;
   /**
-   * Set font-variation-settings CSS property for Icons
-   *
-   * <pre className="DocPage-codeBlock">
-   *  FontVariationType: {
-   *    fill?: number;
-   *    weight?: number; Range: [100, 700]
-   *    grade?: number; Range: [-25, 200]
-   *    opticalSize?: number; Range: [20px, 48px]
-   *  }
-   * </pre>
+   * Set type of Icon
    */
-  iconVariations?: FontVariationType;
+  iconType?: IconType;
   /**
    * Label to be displayed inside `MetricInput` before value
    */
@@ -147,7 +138,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
     value: valueProp,
     showActionButton = true,
     onKeyDown,
-    iconVariations,
+    iconType,
     ...rest
   } = props;
 
@@ -276,7 +267,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
         <Icon
           data-test="DesignSystem-MetricInput--icon"
           name={icon}
-          variations={iconVariations}
+          type={iconType}
           size={sizeMapping[size]}
           appearance={!value ? 'disabled' : 'subtle'}
           className={iconClass}
