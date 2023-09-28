@@ -37,7 +37,7 @@ export const level1WithFilter = () => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-6 bg-secondary-lightest">
+        <div className="bg-secondary-lightest">
           <PageHeader title="Sender creation report" separator={true} tabs={tab} breadcrumbs={breadcrumbs} />
         </div>
       </Column>
@@ -84,7 +84,7 @@ const customCode = `() => {
   return (
     <Row>
       <Column size={11}>
-        <div className="py-6 bg-secondary-lightest">
+        <div className="bg-secondary-lightest">
           <PageHeader
             title="Sender creation report"
             separator={true}
@@ -98,7 +98,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 1 With Filter',
+  title: 'Layout/PageHeader/Level 1/With breadcrumb/Level 1 With Filter',
   component: PageHeader,
   parameters: {
     docs: {

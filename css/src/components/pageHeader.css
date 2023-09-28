@@ -1,9 +1,9 @@
-.PageHeader-wrapper {
-  padding: var(--spacing) var(--spacing-2);
+.PageHeader {
+  width: 100%;
 }
 
-.PageHeader-wrapper--separator {
-  border-bottom: var(--border);
+.PageHeader-wrapper {
+  padding: var(--spacing) var(--spacing-2) var(--spacing) 0;
 }
 
 .PageHeader-wrapper--withTabs {
@@ -36,12 +36,12 @@
   align-items: center;
 }
 
-.PageHeader-statusWrapper .StatusHints {
+.PageHeader-statusWrapper .StatusHint {
   margin-right: var(--spacing);
 }
 
 .PageHeader-navigationWrapper {
-  margin-top: var(--spacing-l);
+  margin-top: var(--spacing-m);
 }
 
 .PageHeader .PageHeader-navigationWrapper {
@@ -50,6 +50,7 @@
   margin-top: 0 !important;
   padding-right: var(--spacing);
   padding-left: var(--spacing);
+  display: flex;
 }
 
 .PageHeader-title {

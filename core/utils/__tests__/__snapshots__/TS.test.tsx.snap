@@ -2474,32 +2474,48 @@ exports[`TS renders children 1`] = `
     />
   </div>
   <div
-    class="PageHeader-wrapper PageHeader-wrapper--separator"
+    data-test="DesignSystem-PageHeader"
   >
     <div
-      class="PageHeader"
+      class="PageHeader-wrapper"
     >
       <div
-        class="Row"
-        data-test="DesignSystem-Row"
+        class="d-flex pl-6"
       >
         <div
-          class="Col Col--12 Col--m-12 Col--xl-12"
-          data-test="DesignSystem-Column"
+          class="PageHeader"
         >
           <div
-            class="PageHeader-titleWrapper"
+            class="Row"
+            data-test="DesignSystem-Row"
           >
-            <h4
-              class="Heading Heading--m Heading--default PageHeader-title"
-              data-test="DesignSystem-Heading"
+            <div
+              class="Col Col--12 Col--m-12 Col--xl-12"
+              data-test="DesignSystem-Column"
             >
-              Hello World!
-            </h4>
+              <div
+                class="PageHeader-titleWrapper"
+                data-test="DesignSystem-PageHeader--Title"
+              >
+                <h4
+                  class="Heading Heading--m Heading--default PageHeader-title"
+                  data-test="DesignSystem-Heading"
+                >
+                  Hello World!
+                </h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <div
+        class="pl-3"
+      />
     </div>
+    <hr
+      class="Divider Divider--horizontal Divider--header"
+      data-test="DesignSystem-Divider"
+    />
   </div>
   <div
     class="EditableChipInput"
