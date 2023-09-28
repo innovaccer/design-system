@@ -1,3 +1,45 @@
+## 2.22.0 (2023-09-28)
+
+### Highlights
+
+- feat(card): add selection card component (c88947a8)
+- feat(Icon): migration to material symbols from material icons (55ea8882)
+- feat: add iconType prop in components to switch between icon types (16c567a1)
+- feat(dropdown): add error and empty state template in dropdown component (3f84aa6b)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(card): add selection card component (c88947a8)
+- feat(Icon): migration to material symbols from material icons (55ea8882)
+- feat: add iconType prop in components to switch between icon types (16c567a1)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- feat(table): add story for column sorting for number type values (3dc74351)
+- feat(dropdown): add error and empty state template in dropdown component (3f84aa6b)
+
+### Documentation
+
+NA
+
+---
+
 ## 2.21.0 (2023-09-18)
 
 ### Highlights
