@@ -129,7 +129,7 @@ export const MenuItem = (props: MenuItemProps) => {
             data-test="DesignSystem-VerticalNav--Icon"
             className={expanded ? 'mr-4' : ''}
             name={menu.icon}
-            variations={menu.iconVariations}
+            type={menu.iconType}
           />
         )}
         {expanded && <MenuLabel label={menu.label} labelColor={itemColor} />}

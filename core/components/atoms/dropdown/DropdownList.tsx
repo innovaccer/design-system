@@ -8,6 +8,8 @@ import classNames from 'classnames';
 import Loading from './Loading';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { ChangeEvent } from '@/common.type';
+import { ErrorTemplate } from './ErrorTemplate';
+import { ErrorType } from './Dropdown';
 
 export type DropdownAlign = 'left' | 'right';
 export type OptionType = 'DEFAULT' | 'WITH_ICON' | 'WITH_META' | 'ICON_WITH_META';
@@ -35,6 +37,10 @@ interface PopoverOptions {
 
 type TriggerAndOptionProps = TriggerProps & OptionRendererProps;
 
+export interface ErrorTemplateProps {
+  errorType?: ErrorType;
+}
+
 export interface DropdownListProps extends TriggerAndOptionProps {
   /**
    * Aligns the `Dropdown` left/right
@@ -43,9 +49,12 @@ export interface DropdownListProps extends TriggerAndOptionProps {
   align?: DropdownAlign;
   /**
    * Display message when there is no result
-   * @default "No result found"
    */
   noResultMessage?: string;
+  /**
+   * Template to be rendered when **error: true**
+   */
+  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
   /**
    * Label of Select All checkbox
    * @default "Select All"
@@ -182,6 +191,9 @@ interface OptionsProps extends DropdownListProps, BaseProps {
   onSearchChange?: (searchText: string) => void;
   onOptionSelect: (selected: any[] | any) => void;
   onSelect: (option: OptionSchema, checked: boolean) => void;
+  updateOptions: () => void;
+  errorType: ErrorType;
+  errorTemplate?: React.FunctionComponent<ErrorTemplateProps>;
 }
 
 export const usePrevious = (value: any) => {
@@ -224,6 +236,10 @@ const DropdownList = (props: OptionsProps) => {
     className,
     searchPlaceholder = 'Search..',
     scrollIndex,
+    updateOptions,
+    noResultMessage,
+    errorType,
+    loadingOptions,
   } = props;
 
   const baseProps = extractBaseProps(props);
@@ -244,6 +260,8 @@ const DropdownList = (props: OptionsProps) => {
     minHeight && setMinHeight(minHeight);
   };
 
+  const isDropdownListBlank = listOptions.length === 0 && !loadingOptions && selected.length <= 0;
+
   React.useEffect(() => {
     let timer: any;
     if (dropdownOpen) {
@@ -256,7 +274,6 @@ const DropdownList = (props: OptionsProps) => {
         minWidth: minWidth ? minWidth : popperMinWidth,
         maxWidth: maxWidth ? maxWidth : '100%',
       };
-
       requestAnimationFrame(getMinHeight);
 
       setPopoverStyle(popperWrapperStyle);
@@ -286,7 +303,7 @@ const DropdownList = (props: OptionsProps) => {
     disabled,
     inlineLabel,
     triggerLabel,
-    iconVariations,
+    iconType,
   } = props;
 
   const CustomTrigger = customTrigger ? customTrigger(triggerLabel ? triggerLabel : placeholder) : <></>;
@@ -305,7 +322,7 @@ const DropdownList = (props: OptionsProps) => {
       menu={menu}
       error={error}
       ref={dropdownTriggerRef}
-      iconVariations={iconVariations}
+      iconType={iconType}
     >
       {triggerLabel}
     </DropdownButton>
@@ -323,6 +340,16 @@ const DropdownList = (props: OptionsProps) => {
     overflowY: 'auto',
     overflowX: 'hidden',
     minHeight: minHeight,
+  };
+
+  const defaultErrorTemplate = () => {
+    return (
+      <ErrorTemplate
+        dropdownStyle={{ ...dropdownStyle, minHeight: maxHeight }}
+        updateOptions={updateOptions}
+        errorType={errorType}
+      />
+    );
   };
 
   const getDropdownSectionClass = (showClearButton?: boolean) => {
@@ -550,7 +577,7 @@ const DropdownList = (props: OptionsProps) => {
       selectedSectionLabel = 'Selected Items',
       allItemsSectionLabel = 'All Items',
       loadersCount = 10,
-      loadingOptions,
+      errorTemplate = defaultErrorTemplate,
     } = props;
     const selectAllPresent = _isSelectAllPresent(searchTerm, remainingOptions, withSelectAll, withCheckbox);
 
@@ -566,15 +593,18 @@ const DropdownList = (props: OptionsProps) => {
       );
     }
 
-    if (listOptions.length === 0 && !loadingOptions && selected.length <= 0) {
-      const { noResultMessage = 'No result found' } = props;
-      return (
-        <div className="Dropdown-wrapper" style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
-          <div className={'Option'}>
-            <div className={'Option-subinfo'}>{noResultMessage}</div>
+    if (isDropdownListBlank) {
+      if (noResultMessage) {
+        return (
+          <div className="Dropdown-wrapper" style={dropdownStyle} data-test="DesignSystem-Dropdown--errorWrapper">
+            <div className={'Option'}>
+              <div className={'Option-subinfo'}>{noResultMessage}</div>
+            </div>
           </div>
-        </div>
-      );
+        );
+      } else {
+        return errorTemplate && errorTemplate({ errorType });
+      }
     }
 
     return (
@@ -689,6 +719,8 @@ const DropdownList = (props: OptionsProps) => {
     }
   };
 
+  const enableSearch = (withSearch || props.async) && (!isDropdownListBlank || errorType === 'NO_RECORDS_FOUND');
+
   return (
     //TODO(a11y)
     //eslint-disable-next-line
@@ -703,7 +735,7 @@ const DropdownList = (props: OptionsProps) => {
         {...popoverOptions}
         data-test="DesignSystem-Dropdown--Popover"
       >
-        {(withSearch || props.async) && renderSearch()}
+        {enableSearch && renderSearch()}
         {renderDropdownSection()}
         {showApplyButton && withCheckbox && renderApplyButton()}
       </Popover>

@@ -224,3 +224,14 @@ export const fetchOptions = (searchTerm: string, options = dropdownOptions) => {
     }, 1000);
   });
 };
+
+export const fetchEmptyOptions = () => {
+  return new Promise<fetchOptionSchema>((resolve) => {
+    window.setTimeout(() => {
+      resolve({
+        options: [],
+        count: 0,
+      });
+    }, 1000);
+  });
+};

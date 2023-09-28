@@ -13,12 +13,7 @@ export interface MetaListProps extends BaseProps {
    * {
    *   label: string;
    *   icon?: string;
-   *   iconVariations?: {
-   *      fill?: number;
-   *      weight?: number; Range: [100, 700]
-   *      grade?: number; Range: [-25, 200]
-   *      opticalSize?: number; Range: [20px, 48px]
-   *    }
+   *   iconType?: 'rounded' | 'outlined'
    * }
    * </pre>
    *
@@ -26,7 +21,7 @@ export interface MetaListProps extends BaseProps {
    * | --- | --- | --- |
    * | label | Label of Meta component |  |
    * | icon | Icon of Meta component | |
-   * | iconVariations | Set font-variation-settings CSS property for Icons | |
+   * | iconType | Set type of Icon | |
    *
    */
   list: MetaProps[];
@@ -89,12 +84,12 @@ export const MetaList = (props: MetaListProps) => {
       )}
 
       {list.map((item, ind) => {
-        const { label = '', icon, iconVariations } = item;
+        const { label = '', icon, iconType } = item;
         const rightSeperator = ind !== list.length - 1;
 
         return (
           <span key={ind} className="MetaList-item">
-            <Meta size={size} label={label} icon={icon} iconVariations={iconVariations} />
+            <Meta size={size} label={label} icon={icon} iconType={iconType} />
             {rightSeperator && (
               <Icon
                 data-test="DesignSystem-MetaList--rightSeperator"

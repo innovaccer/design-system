@@ -293,7 +293,7 @@ describe('TimePicker Event Handlers', () => {
 
 describe('TimePicker Search Error Handlers', () => {
   it('check for five digit search query in 12 hour format', async () => {
-    const { getByTestId } = render(<TimePicker withSearch={true} />);
+    const { getByTestId } = render(<TimePicker withSearch={true} noResultMessage="No result found" />);
     const dropdownTrigger = getByTestId(trigger);
 
     fireEvent.click(dropdownTrigger);
@@ -308,7 +308,9 @@ describe('TimePicker Search Error Handlers', () => {
   });
 
   it('check for invalid search', async () => {
-    const { getByTestId } = render(<TimePicker startTime={startTime} endTime={endTime} withSearch={true} />);
+    const { getByTestId } = render(
+      <TimePicker startTime={startTime} endTime={endTime} withSearch={true} noResultMessage="No result found" />
+    );
     const dropdownTrigger = getByTestId(trigger);
 
     fireEvent.click(dropdownTrigger);
