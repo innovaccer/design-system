@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EditableChipInput component 
-  placeholer: "Add Value", disableSaveAction: false, value: ["Chip1","Chip2"], chipInputOptions: {"chipOptions":{"onClick":"[Function]","clearButton":true},"allowDuplicates":false,"defaultValue":[],"autoFocus":true}
+  placeholer: "Add Value", disableSaveAction: false, value: ["Chip1","Chip2"], chipInputOptions: {"chipOptions":{"onClick":"[Function]","clearButton":true},"allowDuplicates":false,"defaultValue":[],"autoFocus":true}, error: true, errorMessage: "String Value"
  1`] = `
 <DocumentFragment>
   <div
@@ -81,7 +81,7 @@ exports[`EditableChipInput component
 `;
 
 exports[`EditableChipInput component 
-  placeholer: "Add Value", disableSaveAction: true, value: ["Chip1","Chip2"], chipInputOptions: {"chipOptions":{"onClick":"[Function]","clearButton":true},"allowDuplicates":false,"defaultValue":[],"autoFocus":true}
+  placeholer: "Add Value", disableSaveAction: true, value: ["Chip1","Chip2"], chipInputOptions: {"chipOptions":{"onClick":"[Function]","clearButton":true},"allowDuplicates":false,"defaultValue":[],"autoFocus":true}, error: true, errorMessage: "String Value"
  1`] = `
 <DocumentFragment>
   <div

@@ -20,6 +20,7 @@ const chipInputOptions = {
   defaultValue: [],
   autoFocus: true,
 };
+const StringValue = 'String Value';
 
 describe('EditableChipInput component', () => {
   const mapper = {
@@ -28,6 +29,8 @@ describe('EditableChipInput component', () => {
     disableSaveAction: valueHelper(disableSaveAction, { required: true, iterate: true }),
     value: valueHelper(value, { required: true }),
     chipInputOptions: valueHelper(chipInputOptions, { required: true }),
+    error: valueHelper(true, { required: true }),
+    errorMessage: valueHelper(StringValue, { required: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -136,5 +139,22 @@ describe('EditableChipInput component with action buttons and props: value and c
     expect(queryByTestId(chipInputTestId)).not.toBeInTheDocument();
     expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[0].textContent).toMatch('Chip3clear');
     expect(getAllByTestId('DesignSystem-EditableChipInput--Chip')[1].textContent).toMatch('Chip4clear');
+  });
+});
+
+describe('EditableChipInput component with prop: error and errorMessage', () => {
+  it('renders error popover on click', () => {
+    const { getByTestId, queryByTestId } = render(
+      <EditableChipInput placeholder={StringValue} onChange={onChange} error={true} errorMessage={StringValue} />
+    );
+
+    const editableWrapper = getByTestId(editableWrapperTestId);
+    fireEvent.click(editableWrapper);
+    expect(queryByTestId('DesignSystem-EditableChipInput--ChipInput')).toHaveClass('ChipInput--error');
+
+    const chipInput = getByTestId(chipInputTestId);
+    fireEvent.mouseEnter(chipInput);
+    expect(getByTestId('DesignSystem-InlineMessage')).toBeInTheDocument();
+    expect(queryByTestId('DesignSystem-InlineMessage--Description')).toHaveClass('InlineMessage-text--alert');
   });
 });
