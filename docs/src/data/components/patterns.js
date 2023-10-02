@@ -40,7 +40,7 @@ export const data = [
     design: 'Available',
     name: 'Table filters',
     code: 'Available',
-    image: () => <StaticImage src="./images/patterns/Layout.png" alt="Table filters" imgStyle={imgStyle} />,
+    image: () => <StaticImage src="./images/patterns/tableFilters.png" alt="Table filters" imgStyle={imgStyle} />,
   },
   {
     link: 'uiStates/usage',
