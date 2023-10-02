@@ -106,16 +106,21 @@
 }
 
 .Button--basic {
-  background: var(--secondary-light);
+  background: var(--white);
   color: var(--inverse);
+  border: 1px solid var(--stone);
+  box-shadow: var(--shadow-button);
 }
 
 .Button--basic:hover {
-  background: var(--secondary);
+  background: var(--stone-lighter);
+  border: 1px solid var(--stone-dark);
+  box-shadow: var(--shadow-button);
 }
 
 .Button--basic:active {
-  background: var(--secondary-dark);
+  background: var(--stone-light);
+  border: 1px solid var(--stone-dark);
 }
 
 .Button--basic:focus {
@@ -123,8 +128,9 @@
 }
 
 .Button--basic:disabled {
-  background: var(--secondary-lighter);
+  background: var(--white);
   color: var(--inverse-lightest);
+  border: 1px solid var(--stone-light);
 }
 
 .Button--primary {
@@ -232,15 +238,18 @@
 .Button--selected {
   background: var(--primary-lightest);
   color: var(--primary-dark);
+  border: 1px solid var(--primary);
 }
 
 .Button--selected:hover {
   background: var(--primary-lighter);
+  border: 1px solid var(--primary-dark);
 }
 
 .Button--selected:active {
   background: var(--primary-lighter);
   color: var(--primary-darker);
+  border: 1px solid var(--primary-darker);
 }
 
 .Button--selected:focus {
@@ -255,6 +264,7 @@
 .Button--selected:disabled {
   background: var(--primary-lightest);
   color: var(--primary-lighter);
+  border: 1px solid var(--primary-lighter);
 }
 
 .Button-text--hidden {
