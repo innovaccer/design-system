@@ -10,5 +10,7 @@ menus:
     link: /patterns/form/usage/
   - label: Layouts
     link: /patterns/layouts/usage/
+  - label: Table Filters
+    link: /patterns/tableFilters/usage/
   - label: UI states
     link: /patterns/uiStates/usage/
