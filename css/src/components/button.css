@@ -199,7 +199,7 @@
 }
 
 .Button--transparent:hover {
-  background: var(--secondary);
+  background: var(--stone-lighter);
 }
 
 .Button--transparent:focus {
@@ -207,7 +207,7 @@
 }
 
 .Button--transparent:active {
-  background: var(--secondary-dark);
+  background: var(--stone-light);
 }
 
 .Button--transparent:focus:active {
