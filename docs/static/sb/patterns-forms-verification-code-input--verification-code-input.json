@@ -29,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.16.1-1",
+        "brandTitle": "Masala Design System v2.22.0",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -492,6 +492,25 @@
           "defaultValue": null
         }
       },
+      "iconType": {
+        "name": "iconType",
+        "description": "Set type of Icon",
+        "type": {
+          "required": false,
+          "name": "enum",
+          "value": [
+            "undefined",
+            "rounded",
+            "outlined"
+          ]
+        },
+        "table": {
+          "type": {
+            "summary": "undefined | \"rounded\" | \"outlined\""
+          },
+          "defaultValue": null
+        }
+      },
       "error": {
         "name": "error",
         "description": "Shows error state in case of failed validation",
@@ -771,6 +790,25 @@
       "table": {
         "type": {
           "summary": "((e: MouseEvent<HTMLInputElement, MouseEvent>) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "iconType": {
+      "name": "iconType",
+      "description": "Set type of Icon",
+      "type": {
+        "required": false,
+        "name": "enum",
+        "value": [
+          "undefined",
+          "rounded",
+          "outlined"
+        ]
+      },
+      "table": {
+        "type": {
+          "summary": "undefined | \"rounded\" | \"outlined\""
         },
         "defaultValue": null
       }
