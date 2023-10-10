@@ -78,6 +78,46 @@ export interface IconProps extends BaseProps {
   tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
 }
 
+const iconTypeMapper: Record<string, string> = {
+  timelapse: 'outlined',
+  content_copy: 'outlined',
+  speed: 'outlined',
+  add_circle_outline: 'outlined',
+  turned_in_not: 'outlined',
+  important_devices: 'outlined',
+  thumb_down_off_alt: 'outlined',
+  alarm_on: 'outlined',
+  calendar_view_month: 'outlined',
+  aspect_ratio: 'outlined',
+  change_history: 'outlined',
+  arrow_circle_down: 'outlined',
+  card_membership: 'outlined',
+  query_builder: 'outlined',
+  copyright: 'outlined',
+  arrow_circle_up: 'outlined',
+  alarm: 'outlined',
+  work_outline: 'outlined',
+  bookmark_border: 'outlined',
+  delete_outline: 'outlined',
+  credit_card: 'outlined',
+  highlight_of: 'outlined',
+  check_circle_outline: 'outlined',
+  help_outline: 'outlined',
+  schedule: 'outlined',
+  radio_button_unchecked: 'outlined',
+  radio_button_checked: 'outlined',
+  delete: 'outlined',
+};
+
+/**
+ *
+ * <pre class="DocPage-codeBlock mx-6 mb-7">
+ *  Following Icons are mapped to **outlined** type by default:
+ *  <br />
+ *  timelapse,  content_copy,  speed,  add_circle_outline,  turned_in_not,  important_devices,  thumb_down_off_alt,  alarm_on,  calendar_view_month,  aspect_ratio,  change_history,  arrow_circle_down,  card_membership,  query_builder,  copyright,  arrow_circle_up,  alarm,  work_outline,  bookmark_border,  delete_outline,  credit_card,  highlight_of,  check_circle_outline, help_outline,  schedule,  radio_button_unchecked,  radio_button_checked,  delete
+ * </pre>
+ */
+
 export const Icon = (props: IconProps) => {
   const { appearance, className, name, size, children } = props;
   const accessibilityProps = useAccessibilityProps(props);
@@ -92,7 +132,7 @@ export const Icon = (props: IconProps) => {
     'two-tone': 'rounded',
   };
 
-  const type = (props.type && mapper[props.type]) || props.type;
+  const type = (props.type && mapper[props.type]) || props.type || (name && iconTypeMapper[name]) || 'rounded';
 
   const getIconAppearance = (iconColor: string) => {
     const x = iconColor.indexOf('_');
@@ -133,7 +173,6 @@ export const Icon = (props: IconProps) => {
 Icon.displayName = 'Icon';
 Icon.defaultProps = {
   size: 16,
-  type: 'rounded',
 };
 
 export default Icon;
