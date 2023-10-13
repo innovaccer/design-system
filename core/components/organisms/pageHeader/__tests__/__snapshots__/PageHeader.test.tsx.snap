@@ -1058,7 +1058,7 @@ exports[`Navigation component
                       tabindex="0"
                     >
                       <i
-                        class="material-icons material-icons-rounded Icon mr-3 my-4 Stepper-animate"
+                        class="material-icons material-icons-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         role="button"
                         style="font-size: 16px; width: 16px;"
@@ -1078,7 +1078,7 @@ exports[`Navigation component
                       tabindex="-1"
                     >
                       <i
-                        class="material-icons material-icons-rounded Icon mr-3 my-4 Stepper-animate"
+                        class="material-icons material-icons-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         role="button"
                         style="font-size: 16px; width: 16px;"
@@ -1098,7 +1098,7 @@ exports[`Navigation component
                       tabindex="-1"
                     >
                       <i
-                        class="material-icons material-icons-rounded Icon mr-3 my-4 Stepper-animate"
+                        class="material-icons material-icons-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         role="button"
                         style="font-size: 16px; width: 16px;"
