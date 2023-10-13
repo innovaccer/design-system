@@ -115,6 +115,13 @@ export const data = [
     image: () => <StaticImage src="./images/Inputs.png" alt="Inputs" imgStyle={imgStyle} />,
   },
   {
+    link: 'interactiveCard/usage/',
+    name: 'Interactive Cards',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/InteractiveCard.png" alt="Inputs" imgStyle={imgStyle} />,
+  },
+  {
     link: 'links/usage',
     name: 'Link',
     design: 'Available',

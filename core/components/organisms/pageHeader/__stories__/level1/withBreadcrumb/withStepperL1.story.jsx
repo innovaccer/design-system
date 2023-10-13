@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Stepper, Button, Breadcrumbs, Badge, Text, MetaList, Avatar, PageHeader, Dropdown } from '@/index';
 import { action } from '@/utils/action';
-import './style.css';
+import '../../style.css';
 
 export const level1WithStepper = () => {
   const stepperData = [
@@ -55,7 +55,7 @@ export const level1WithStepper = () => {
         <Dropdown menu={true} icon="more_horiz" options={options} />
       </div>
       <Button className="mr-4">Finish Later</Button>
-      <Button className="mr-4" appearance="primary" onClick={onClickHandler}>
+      <Button appearance="primary" onClick={onClickHandler}>
         Next
       </Button>
     </div>
@@ -75,10 +75,10 @@ export const level1WithStepper = () => {
   const meta = <MetaList list={[{ label: 'Draft' }]} seperator={false} />;
 
   return (
-    <div className="w-100 py-6 bg-secondary-lightest">
+    <div className="w-100 bg-secondary-lightest">
       <PageHeader
         title="Annual Wellness Visit"
-        separator={true}
+        separator={false}
         navigationPosition="center"
         stepper={stepper}
         actions={actions}
@@ -154,7 +154,7 @@ const customCode = `/*
         />
       </div>
       <Button className="mr-4">Finish Later</Button>
-      <Button className="mr-4" appearance="primary" onClick={onClickHandler}>Next</Button>
+      <Button appearance="primary" onClick={onClickHandler}>Next</Button>
     </div>
   );
   const breadcrumbs = (
@@ -177,10 +177,10 @@ const customCode = `/*
   );
 
   return (
-    <div className="py-6 bg-secondary-lightest Pageheader-longWrapper">
+    <div className="bg-secondary-lightest Pageheader-longWrapper">
       <PageHeader
         title="Annual Wellness Visit"
-        separator={true}
+        separator={false}
         navigationPosition="center"
         stepper={stepper}
         actions={actions}
@@ -193,7 +193,7 @@ const customCode = `/*
 }`;
 
 export default {
-  title: 'Layout/PageHeader/Level 1 With Stepper',
+  title: 'Layout/PageHeader/Level 1/With breadcrumb/Level 1 With Stepper',
   component: PageHeader,
   parameters: {
     docs: {

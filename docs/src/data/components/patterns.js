@@ -8,6 +8,13 @@ const imgStyle = {
 
 export const data = [
   {
+    link: 'email/usage',
+    design: 'Available',
+    name: 'Email',
+    code: 'Available',
+    image: () => <StaticImage src="./images/patterns/email.png" alt="Email" imgStyle={imgStyle} />,
+  },
+  {
     link: 'fileUploader/usage',
     design: 'Available',
     name: 'File uploader',
