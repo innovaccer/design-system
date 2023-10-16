@@ -254,7 +254,7 @@ interface DropdownState {
  *      const errorMessages = {
  *        'FAILED\_TO\_FETCH': 'Failed to fetch data',
  *        'NO\_RECORDS\_FOUND': 'No results found',
- *        'DEFAULT': 'No results found'
+ *        'DEFAULT': 'No record available'
  *      }
  *      return(
  *        \<Heading>{errorMessages[errorType]}\</Heading>
@@ -409,42 +409,59 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     const { fetchOptions, withCheckbox, withSearch } = this.props;
     const fetchFunction = fetchOptions ? fetchOptions : this.fetchOptionsFunction;
 
-    fetchFunction(searchTerm).then((res: any) => {
-      const { options, count } = res;
-      if (res.scrollToIndex) {
-        setTimeout(() => {
-          scrollToOptionIndex(res.scrollToIndex, options);
-        }, 0);
-      }
-      if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
-        updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
+    fetchFunction(searchTerm)
+      .then((res: any) => {
+        const { options, count } = res;
+        if (res.scrollToIndex) {
+          setTimeout(() => {
+            scrollToOptionIndex(res.scrollToIndex, options);
+          }, 0);
+        }
+        if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
+          updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
 
-        const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox)
-          ? this.getUnSelectedOptions(options, init)
-          : options;
-        const selectedGroup = searchTerm === '' ? this.getSelectedOptions(options, init) : [];
-        const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
-        const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
+          const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox)
+            ? this.getUnSelectedOptions(options, init)
+            : options;
+          const selectedGroup = searchTerm === '' ? this.getSelectedOptions(options, init) : [];
+          const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
+          const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
 
+          let errorResult = errorType;
+
+          if (optionsLength === 0 && searchTerm === '') {
+            errorResult = 'DEFAULT';
+          } else if (searchTerm !== '') {
+            errorResult = 'NO_RECORDS_FOUND';
+          } else {
+            errorResult = 'FAILED_TO_FETCH';
+          }
+
+          this.setState({
+            ...this.state,
+            errorType: fetchOptions ? errorResult : errorType,
+            scrollIndex: res.scrollToIndex || 0,
+            optionsLength,
+            loading: false,
+            async: updatedAsync,
+            searchedOptionsLength: count,
+            options: unSelectedGroup.slice(0, this.staticLimit),
+            tempSelected: init ? selectedGroup : tempSelected,
+            previousSelected: init ? selectedGroup : previousSelected,
+            selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
+            triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
+            selectAll:
+              !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length) : selectAll,
+          });
+          if (updatedAsync || withSearch) inputRef.current?.focus();
+        }
+      })
+      .catch(() => {
         this.setState({
-          ...this.state,
-          errorType: fetchOptions && errorType !== 'NO_RECORDS_FOUND' ? 'FAILED_TO_FETCH' : errorType,
-          scrollIndex: res.scrollToIndex || 0,
-          optionsLength,
+          errorType: fetchOptions ? 'FAILED_TO_FETCH' : errorType,
           loading: false,
-          async: updatedAsync,
-          searchedOptionsLength: count,
-          options: unSelectedGroup.slice(0, this.staticLimit),
-          tempSelected: init ? selectedGroup : tempSelected,
-          previousSelected: init ? selectedGroup : previousSelected,
-          selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
-          triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
-          selectAll:
-            !updatedAsync && init ? getSelectAll(selectedGroup, optionsLength, disabledOptions.length) : selectAll,
         });
-        if (updatedAsync || withSearch) inputRef.current?.focus();
-      }
-    });
+      });
   };
 
   updateSearchTerm = (search: string) => {
