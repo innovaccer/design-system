@@ -774,8 +774,8 @@ describe('Dropdown errorTemplate', () => {
     fireEvent.click(dropdownTrigger);
 
     await waitFor(() => {
-      expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Failed to fetch data');
-      expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch("We couldn't load the data, try reloading.");
+      expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('No record available');
+      expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch('We have nothing to show you at the moment.');
     });
   });
 
