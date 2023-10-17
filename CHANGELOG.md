@@ -1,3 +1,44 @@
+## 2.23.0 (2023-10-17)
+
+### Highlights
+
+- feat(pageheader): add back button option and optimize spacing (cddc4250)
+- fix(icon): update mapping for outlined icon (f979c415)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(pageheader): add back button option and optimize spacing (cddc4250)
+
+### Fixes
+
+- fix(icon): update mapping for outlined icon (f979c415)
+- fix(dropdown): update error state for async dropdown (ebee4c37)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): update interactions in foundations tab (b5d68681)
+- docs(docs): add email preview image in overview page (e6aa3903)
+- docs(dropdown): add error and empty states guidelines (23921525)
+- docs(docs): add documentation for interactive cards (807e63d9)
+
+---
+
 ## 2.22.0 (2023-09-28)
 
 ### Highlights
@@ -24,6 +65,7 @@ NA
 - feat(card): add selection card component (c88947a8)
 - feat(Icon): migration to material symbols from material icons (55ea8882)
 - feat: add iconType prop in components to switch between icon types (16c567a1)
+- feat(dropdown): add error and empty state template in dropdown component (3f84aa6b)
 
 ### Fixes
 
@@ -32,7 +74,6 @@ NA
 ### Improvements
 
 - feat(table): add story for column sorting for number type values (3dc74351)
-- feat(dropdown): add error and empty state template in dropdown component (3f84aa6b)
 
 ### Documentation
 
