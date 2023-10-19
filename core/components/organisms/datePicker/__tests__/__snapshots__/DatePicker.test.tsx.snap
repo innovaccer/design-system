@@ -647,12 +647,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledAfter
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip-action--disabled"
+          class="Chip-wrapper Chip Chip--action"
           data-test="DesignSystem-Chip--GenericChip"
-          tabindex="-1"
+          tabindex="0"
         >
           <span
-            class="Text Text--regular color-inverse-lightest Chip-text"
+            class="Text Text--regular color-inverse Chip-text"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
@@ -1312,12 +1312,12 @@ exports[`DatePicker component snapshots renders snapshot for prop:disabledBefore
         data-test="DesignSystem-Select--TodaysDate-wrapper"
       >
         <div
-          class="Chip-wrapper Chip Chip--action"
+          class="Chip-wrapper Chip Chip-action--disabled"
           data-test="DesignSystem-Chip--GenericChip"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
-            class="Text Text--regular color-inverse Chip-text"
+            class="Text Text--regular color-inverse-lightest Chip-text"
             data-test="DesignSystem-GenericChip--Text"
           >
             Today, Sep 22
