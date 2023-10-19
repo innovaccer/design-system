@@ -18,7 +18,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
+            class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -42,7 +42,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
+            class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -62,7 +62,7 @@ exports[`ChipGroup component
             tabindex="0"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
               data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
@@ -81,7 +81,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
+            class="material-symbols material-symbols-rounded Icon Icon--primaryDark Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -101,7 +101,7 @@ exports[`ChipGroup component
             tabindex="0"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--primaryDark p-2"
+              class="material-symbols material-symbols-rounded Icon Icon--primaryDark p-2"
               data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
@@ -120,7 +120,7 @@ exports[`ChipGroup component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
+            class="material-symbols material-symbols-rounded Icon Icon--inverse Chip-icon Chip-icon--left"
             data-test="DesignSystem-GenericChip--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -140,7 +140,7 @@ exports[`ChipGroup component
             tabindex="0"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
               data-test="DesignSystem-Icon"
               role="button"
               style="font-size: 16px; width: 16px;"

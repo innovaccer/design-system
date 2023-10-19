@@ -55,7 +55,7 @@ exports[`Navigation component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-rounded Icon"
+                  class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
                   style="font-size: 12px; width: 12px;"
@@ -153,7 +153,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator"
+                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     role="button"
                     style="font-size: 8px; width: 8px;"
@@ -348,7 +348,7 @@ exports[`Navigation component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-rounded Icon"
+                  class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
                   style="font-size: 12px; width: 12px;"
@@ -486,7 +486,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator"
+                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     role="button"
                     style="font-size: 8px; width: 8px;"
@@ -646,7 +646,7 @@ exports[`Navigation component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-rounded Icon"
+                  class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
                   style="font-size: 12px; width: 12px;"
@@ -744,7 +744,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator"
+                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     role="button"
                     style="font-size: 8px; width: 8px;"
@@ -1058,7 +1058,7 @@ exports[`Navigation component
                       tabindex="0"
                     >
                       <i
-                        class="material-icons material-icons-outlined Icon mr-3 my-4 Stepper-animate"
+                        class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         role="button"
                         style="font-size: 16px; width: 16px;"
@@ -1078,7 +1078,7 @@ exports[`Navigation component
                       tabindex="-1"
                     >
                       <i
-                        class="material-icons material-icons-outlined Icon mr-3 my-4 Stepper-animate"
+                        class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         role="button"
                         style="font-size: 16px; width: 16px;"
@@ -1098,7 +1098,7 @@ exports[`Navigation component
                       tabindex="-1"
                     >
                       <i
-                        class="material-icons material-icons-outlined Icon mr-3 my-4 Stepper-animate"
+                        class="material-symbols material-symbols-outlined Icon mr-3 my-4 Stepper-animate"
                         data-test="DesignSystem-Step--Icon"
                         role="button"
                         style="font-size: 16px; width: 16px;"
@@ -1397,7 +1397,7 @@ exports[`Navigation component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-rounded Icon"
+                  class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
                   style="font-size: 12px; width: 12px;"
@@ -1494,7 +1494,7 @@ exports[`Navigation component
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-rounded Icon"
+                  class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
                   style="font-size: 12px; width: 12px;"
@@ -1632,7 +1632,7 @@ exports[`Navigation component
                     </span>
                   </span>
                   <i
-                    class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator"
+                    class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator"
                     data-test="DesignSystem-MetaList--rightSeperator"
                     role="button"
                     style="font-size: 8px; width: 8px;"

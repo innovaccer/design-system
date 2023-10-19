@@ -246,7 +246,7 @@ describe('renders disabled option', () => {
     const dropdownTrigger = getByTestId(trigger);
     fireEvent.click(dropdownTrigger);
     expect(getAllByTestId('DesignSystem-Text')[1]).toHaveClass('color-inverse-lightest');
-    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[1]).toHaveClass('material-icons-rounded');
+    expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[1]).toHaveClass('material-symbols-rounded');
     expect(getAllByTestId('DesignSystem-DropdownOption--WITH_ICON--Icon')[1]).toHaveStyle(
       'color: var(--inverse-lightest);'
     );

@@ -6,7 +6,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent1"
+      class="material-symbols material-symbols-rounded Icon Icon--accent1"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -24,7 +24,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent1Dark"
+      class="material-symbols material-symbols-rounded Icon Icon--accent1Dark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -42,7 +42,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent1Lighter"
+      class="material-symbols material-symbols-rounded Icon Icon--accent1Lighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -60,7 +60,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent2"
+      class="material-symbols material-symbols-rounded Icon Icon--accent2"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -78,7 +78,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent2Dark"
+      class="material-symbols material-symbols-rounded Icon Icon--accent2Dark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -96,7 +96,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent2Lighter"
+      class="material-symbols material-symbols-rounded Icon Icon--accent2Lighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -114,7 +114,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent3"
+      class="material-symbols material-symbols-rounded Icon Icon--accent3"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -132,7 +132,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent3Dark"
+      class="material-symbols material-symbols-rounded Icon Icon--accent3Dark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -150,7 +150,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent3Lighter"
+      class="material-symbols material-symbols-rounded Icon Icon--accent3Lighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -168,7 +168,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent4"
+      class="material-symbols material-symbols-rounded Icon Icon--accent4"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -186,7 +186,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent4Dark"
+      class="material-symbols material-symbols-rounded Icon Icon--accent4Dark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -204,7 +204,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--accent4Lighter"
+      class="material-symbols material-symbols-rounded Icon Icon--accent4Lighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -222,7 +222,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--alert"
+      class="material-symbols material-symbols-rounded Icon Icon--alert"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -240,7 +240,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--alertDark"
+      class="material-symbols material-symbols-rounded Icon Icon--alertDark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -258,7 +258,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--alertLighter"
+      class="material-symbols material-symbols-rounded Icon Icon--alertLighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -276,7 +276,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--destructive"
+      class="material-symbols material-symbols-rounded Icon Icon--destructive"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -294,7 +294,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--disabled"
+      class="material-symbols material-symbols-rounded Icon Icon--disabled"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -312,7 +312,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--info"
+      class="material-symbols material-symbols-rounded Icon Icon--info"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -330,7 +330,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--inverse"
+      class="material-symbols material-symbols-rounded Icon Icon--inverse"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -348,7 +348,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--primary"
+      class="material-symbols material-symbols-rounded Icon Icon--primary"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -366,7 +366,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--primaryDark"
+      class="material-symbols material-symbols-rounded Icon Icon--primaryDark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -384,7 +384,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--primaryLighter"
+      class="material-symbols material-symbols-rounded Icon Icon--primaryLighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -402,7 +402,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--subtle"
+      class="material-symbols material-symbols-rounded Icon Icon--subtle"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -420,7 +420,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--success"
+      class="material-symbols material-symbols-rounded Icon Icon--success"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -438,7 +438,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--successDark"
+      class="material-symbols material-symbols-rounded Icon Icon--successDark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -456,7 +456,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--successLighter"
+      class="material-symbols material-symbols-rounded Icon Icon--successLighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -474,7 +474,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--warning"
+      class="material-symbols material-symbols-rounded Icon Icon--warning"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -492,7 +492,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--warningDark"
+      class="material-symbols material-symbols-rounded Icon Icon--warningDark"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -510,7 +510,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--warningLighter"
+      class="material-symbols material-symbols-rounded Icon Icon--warningLighter"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -528,7 +528,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon Icon--white"
+      class="material-symbols material-symbols-rounded Icon Icon--white"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -546,7 +546,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon"
+      class="material-symbols material-symbols-rounded Icon"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -564,7 +564,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-outlined Icon"
+      class="material-symbols material-symbols-outlined Icon"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -582,7 +582,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-outlined Icon"
+      class="material-symbols material-symbols-outlined Icon"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -600,7 +600,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon"
+      class="material-symbols material-symbols-rounded Icon"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -618,7 +618,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon"
+      class="material-symbols material-symbols-rounded Icon"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -636,7 +636,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-outlined Icon"
+      class="material-symbols material-symbols-outlined Icon"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -654,7 +654,7 @@ exports[`Icon component snapshot
 <body>
   <div>
     <i
-      class="material-icons material-icons-rounded Icon"
+      class="material-symbols material-symbols-rounded Icon"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"

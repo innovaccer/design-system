@@ -39,7 +39,7 @@ exports[`Input component
         class="Input-icon Input-icon--left Input-icon--inputBlank"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -99,7 +99,7 @@ exports[`Input component
         class="Input-icon Input-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -393,7 +393,7 @@ exports[`Input component
         class="Input-icon Input-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -455,7 +455,7 @@ exports[`Input component
         class="Input-icon Input-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -515,7 +515,7 @@ exports[`Input component
         class="Input-icon Input-icon--left Input-icon--error"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -575,7 +575,7 @@ exports[`Input component
         class="Input-icon Input-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"

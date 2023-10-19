@@ -30,7 +30,7 @@ exports[`Collapsible component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon px-6 py-4 my-2 cursor-pointer"
+            class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -74,7 +74,7 @@ exports[`Collapsible component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon px-6 py-4 my-2 cursor-pointer"
+            class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -119,7 +119,7 @@ exports[`Collapsible component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon px-6 py-4 my-2 cursor-pointer"
+            class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -164,7 +164,7 @@ exports[`Collapsible component
           tabindex="0"
         >
           <i
-            class="material-icons material-icons-rounded Icon px-6 py-4 my-2 cursor-pointer"
+            class="material-symbols material-symbols-rounded Icon px-6 py-4 my-2 cursor-pointer"
             data-test="DesignSystem-Collapsible--FooterIcon"
             role="button"
             style="font-size: 16px; width: 16px;"

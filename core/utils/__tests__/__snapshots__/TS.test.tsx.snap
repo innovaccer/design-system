@@ -7,7 +7,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Avatar"
   >
     <i
-      class="material-icons material-icons-rounded Icon Icon--white Avatar-content--secondary"
+      class="material-symbols material-symbols-rounded Icon Icon--white Avatar-content--secondary"
       data-test="DesignSystem-Avatar--Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -115,7 +115,7 @@ exports[`TS renders children 1`] = `
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-rounded Icon"
+                  class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -137,7 +137,7 @@ exports[`TS renders children 1`] = `
                   Jun
                 </h5>
                 <i
-                  class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                  class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -155,7 +155,7 @@ exports[`TS renders children 1`] = `
                   2021
                 </h5>
                 <i
-                  class="material-icons material-icons-rounded Icon Icon--inverse pl-3"
+                  class="material-symbols material-symbols-rounded Icon Icon--inverse pl-3"
                   data-test="DesignSystem-Icon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -174,7 +174,7 @@ exports[`TS renders children 1`] = `
                 class="Button-icon"
               >
                 <i
-                  class="material-icons material-icons-rounded Icon"
+                  class="material-symbols material-symbols-rounded Icon"
                   data-test="DesignSystem-Button--Icon"
                   role="button"
                   style="font-size: 16px; width: 16px;"
@@ -769,7 +769,7 @@ exports[`TS renders children 1`] = `
           </span>
         </div>
         <i
-          class="material-icons material-icons-rounded Icon Icon--default"
+          class="material-symbols material-symbols-rounded Icon Icon--default"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -809,7 +809,7 @@ exports[`TS renders children 1`] = `
                 class="DropdownButton-wrapper"
               />
               <i
-                class="material-icons material-icons-rounded Icon Icon--default"
+                class="material-symbols material-symbols-rounded Icon Icon--default"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -851,7 +851,7 @@ exports[`TS renders children 1`] = `
     Hello World!
   </h4>
   <i
-    class="material-icons material-icons-rounded Icon"
+    class="material-symbols material-symbols-rounded Icon"
     data-test="DesignSystem-Icon"
     role="button"
     style="font-size: 16px; width: 16px;"
@@ -938,7 +938,7 @@ exports[`TS renders children 1`] = `
     data-test="DesignSystem-Message"
   >
     <i
-      class="material-icons material-icons-rounded Icon Icon--info Message-icon Message-icon--info"
+      class="material-symbols material-symbols-rounded Icon Icon--info Message-icon Message-icon--info"
       data-test="DesignSystem-Message--Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -1504,7 +1504,7 @@ exports[`TS renders children 1`] = `
     class="Toast Toast--info"
   >
     <i
-      class="material-icons material-icons-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
+      class="material-symbols material-symbols-rounded Icon Toast-icon Toast-icon--left Toast-icon--info"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 16px; width: 16px;"
@@ -1524,7 +1524,7 @@ exports[`TS renders children 1`] = `
           Hello World!
         </h5>
         <i
-          class="material-icons material-icons-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
+          class="material-symbols material-symbols-rounded Icon Icon--white Toast-icon Toast-icon--right Toast-icon--info Toast-close-icon--info"
           data-test="DesignSystem-Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1582,7 +1582,7 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-rounded Icon"
+            class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -1636,7 +1636,7 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-rounded Icon"
+            class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -1655,7 +1655,7 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-rounded Icon"
+            class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -1678,7 +1678,7 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-rounded Icon"
+            class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -1697,7 +1697,7 @@ exports[`TS renders children 1`] = `
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-rounded Icon"
+            class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -1786,7 +1786,7 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-rounded Icon"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
@@ -1829,7 +1829,7 @@ exports[`TS renders children 1`] = `
             class="Button-icon"
           >
             <i
-              class="material-icons material-icons-rounded Icon"
+              class="material-symbols material-symbols-rounded Icon"
               data-test="DesignSystem-Button--Icon"
               role="button"
               style="font-size: 16px; width: 16px;"
