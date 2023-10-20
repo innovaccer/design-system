@@ -30,7 +30,7 @@ exports[`Tabs component
           Tab 1
         </span>
         <i
-          class="material-icons material-icons-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
           data-test="DesignSystem-DismissibleTabs--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -45,7 +45,7 @@ exports[`Tabs component
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-rounded Icon Icon--subtle mr-4 "
+          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
           data-test="DesignSystem-Tabs--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -112,7 +112,7 @@ exports[`Tabs component
           Tab 1
         </span>
         <i
-          class="material-icons material-icons-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
+          class="material-symbols material-symbols-rounded Icon Icon--info DismissibleTab-icon--right DismissibleTab-icon--selected cursor-pointer Tab-selected"
           data-test="DesignSystem-DismissibleTabs--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -127,7 +127,7 @@ exports[`Tabs component
         tabindex="0"
       >
         <i
-          class="material-icons material-icons-rounded Icon Icon--subtle mr-4 "
+          class="material-symbols material-symbols-rounded Icon Icon--subtle mr-4 "
           data-test="DesignSystem-Tabs--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"

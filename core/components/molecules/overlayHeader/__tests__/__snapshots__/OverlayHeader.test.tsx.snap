@@ -20,7 +20,7 @@ exports[`OverlayHeader component
           class="Button-icon"
         >
           <i
-            class="material-icons material-icons-rounded Icon"
+            class="material-symbols material-symbols-rounded Icon"
             data-test="DesignSystem-Button--Icon"
             role="button"
             style="font-size: 20px; width: 20px;"

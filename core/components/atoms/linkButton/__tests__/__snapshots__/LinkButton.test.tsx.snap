@@ -14,7 +14,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -42,7 +42,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -70,7 +70,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -98,7 +98,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -126,7 +126,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -154,7 +154,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -183,7 +183,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -212,7 +212,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -241,7 +241,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -270,7 +270,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -299,7 +299,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -328,7 +328,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -356,7 +356,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -384,7 +384,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -412,7 +412,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -440,7 +440,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -468,7 +468,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -496,7 +496,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -525,7 +525,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -554,7 +554,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -583,7 +583,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -612,7 +612,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -641,7 +641,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -670,7 +670,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -698,7 +698,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -726,7 +726,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -754,7 +754,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -782,7 +782,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -810,7 +810,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -838,7 +838,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -867,7 +867,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -896,7 +896,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -925,7 +925,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -954,7 +954,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -983,7 +983,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1012,7 +1012,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1040,7 +1040,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1068,7 +1068,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1096,7 +1096,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1124,7 +1124,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1152,7 +1152,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1180,7 +1180,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1209,7 +1209,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1238,7 +1238,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1267,7 +1267,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1296,7 +1296,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1325,7 +1325,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1354,7 +1354,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1382,7 +1382,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1410,7 +1410,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1438,7 +1438,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1466,7 +1466,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1494,7 +1494,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1522,7 +1522,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1551,7 +1551,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1580,7 +1580,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1609,7 +1609,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1638,7 +1638,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1667,7 +1667,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1696,7 +1696,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 16px; width: 16px;"
@@ -1724,7 +1724,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1752,7 +1752,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1780,7 +1780,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1808,7 +1808,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1836,7 +1836,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1864,7 +1864,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1893,7 +1893,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1922,7 +1922,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1951,7 +1951,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--left"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -1980,7 +1980,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -2009,7 +2009,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
@@ -2038,7 +2038,7 @@ exports[`Link Button component snapshots
         class="LinkButton-icon LinkButton-icon--right"
       >
         <i
-          class="material-icons material-icons-rounded Icon"
+          class="material-symbols material-symbols-rounded Icon"
           data-test="DesignSystem-LinkButton--Icon"
           role="button"
           style="font-size: 12px; width: 12px;"
