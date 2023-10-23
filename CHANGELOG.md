@@ -1,3 +1,41 @@
+## 2.23.1 (2023-10-23)
+
+### Highlights
+
+- fix(datepicker): update today date chip's disabled state in datepicker component (6c3e7dc6)
+- fix(Icon): update material symbols classes and codesandbox link for migration from material icons to material symbols (99c20250)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(datepicker): update today date chip's disabled state in datepicker component (6c3e7dc6)
+- fix(Icon): update material symbols classes and codesandbox link for migration from material icons to material symbols (99c20250)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): update pageheader with back button and spacing guidelines (3d1b8e9f)
+
+---
+
 ## 2.23.0 (2023-10-17)
 
 ### Highlights
