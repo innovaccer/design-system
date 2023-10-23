@@ -37,7 +37,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -64,7 +64,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -117,7 +117,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -144,7 +144,7 @@ exports[`EditableChipInput component
               tabindex="0"
             >
               <i
-                class="material-icons material-icons-rounded Icon Icon--subtle p-2"
+                class="material-symbols material-symbols-rounded Icon Icon--subtle p-2"
                 data-test="DesignSystem-Icon"
                 role="button"
                 style="font-size: 16px; width: 16px;"

@@ -411,7 +411,7 @@ Object {
               data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
             >
               <i
-                class="material-icons material-icons-rounded Icon Icon--default Navigation-menuIcon"
+                class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
                 data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
                 role="button"
                 style="font-size: 16px; width: 16px;"
@@ -464,7 +464,7 @@ Object {
             data-test="DesignSystem-Navigation-VerticalNavigation--menuItem"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--default Navigation-menuIcon"
+              class="material-symbols material-symbols-rounded Icon Icon--default Navigation-menuIcon"
               data-test="DesignSystem-Navigation-VerticalNavigation--menuIcon"
               role="button"
               style="font-size: 16px; width: 16px;"

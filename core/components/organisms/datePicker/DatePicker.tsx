@@ -204,15 +204,17 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
     const currDate = convertToDate(date, inputFormat, validators);
     const dateDisabledBefore = convertToDate(disabledBefore, inputFormat, validators);
     const dateDisabledAfter = convertToDate(disabledAfter, inputFormat, validators);
+
     const isTodayDisabled = () => {
       let isTodayDateDisabled = true;
       if (currDate && dateDisabledBefore && dateDisabledAfter) {
         isTodayDateDisabled = currDate > dateDisabledBefore && currDate < dateDisabledAfter;
       } else if (currDate && dateDisabledBefore) {
-        isTodayDateDisabled = currDate < dateDisabledBefore;
+        isTodayDateDisabled = currDate > dateDisabledBefore;
       } else if (currDate && dateDisabledAfter) {
-        isTodayDateDisabled = currDate > dateDisabledAfter;
+        isTodayDateDisabled = currDate < dateDisabledAfter;
       }
+
       return !isTodayDateDisabled;
     };
 

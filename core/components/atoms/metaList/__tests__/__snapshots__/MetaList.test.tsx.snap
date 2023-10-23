@@ -19,7 +19,7 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
               style="font-size: 16px; width: 16px;"
@@ -50,7 +50,7 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -140,7 +140,7 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
               style="font-size: 12px; width: 12px;"
@@ -171,7 +171,7 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
             style="font-size: 12px; width: 12px;"
@@ -254,7 +254,7 @@ Object {
         data-test="DesignSystem-MetaList"
       >
         <i
-          class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+          class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
           data-test="DesignSystem-MetaList--Seperator"
           role="button"
           style="font-size: 8px; width: 8px;"
@@ -269,7 +269,7 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
               style="font-size: 16px; width: 16px;"
@@ -293,7 +293,7 @@ Object {
       data-test="DesignSystem-MetaList"
     >
       <i
-        class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+        class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
         data-test="DesignSystem-MetaList--Seperator"
         role="button"
         style="font-size: 8px; width: 8px;"
@@ -308,7 +308,7 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
             style="font-size: 16px; width: 16px;"
@@ -391,7 +391,7 @@ Object {
         data-test="DesignSystem-MetaList"
       >
         <i
-          class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+          class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
           data-test="DesignSystem-MetaList--Seperator"
           role="button"
           style="font-size: 8px; width: 8px;"
@@ -406,7 +406,7 @@ Object {
             data-test="DesignSystem-MetaList--Meta"
           >
             <i
-              class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
               data-test="DesignSystem-MetaList--MetaIcon"
               role="button"
               style="font-size: 12px; width: 12px;"
@@ -430,7 +430,7 @@ Object {
       data-test="DesignSystem-MetaList"
     >
       <i
-        class="material-icons material-icons-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
+        class="material-symbols material-symbols-rounded Icon Icon--disabled MetaList-seperator MetaList-seperator--left"
         data-test="DesignSystem-MetaList--Seperator"
         role="button"
         style="font-size: 8px; width: 8px;"
@@ -445,7 +445,7 @@ Object {
           data-test="DesignSystem-MetaList--Meta"
         >
           <i
-            class="material-icons material-icons-rounded Icon Icon--subtle Meta-icon"
+            class="material-symbols material-symbols-rounded Icon Icon--subtle Meta-icon"
             data-test="DesignSystem-MetaList--MetaIcon"
             role="button"
             style="font-size: 12px; width: 12px;"

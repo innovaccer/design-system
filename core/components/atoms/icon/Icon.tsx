@@ -142,9 +142,9 @@ export const Icon = (props: IconProps) => {
   const color = appearance && appearance.includes('_') ? getIconAppearance(appearance) : appearance;
 
   const iconClass = classNames({
-    ['material-icons']: true,
-    ['material-icons-rounded']: type === 'rounded',
-    ['material-icons-outlined']: type === 'outlined',
+    ['material-symbols']: true,
+    ['material-symbols-rounded']: type === 'rounded',
+    ['material-symbols-outlined']: type === 'outlined',
     ['Icon']: true,
     [`Icon--${color}`]: appearance,
     [`${className}`]: className,
