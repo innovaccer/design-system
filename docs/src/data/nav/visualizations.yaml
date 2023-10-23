@@ -1,0 +1,9 @@
+base: visualizations
+menus:
+  - label: Overview
+    link: /visualizations/overview/all-visualizations/
+  - label: Bar charts
+    link: /visualizations/barChart/usage/
+  - label: Line chart
+    link: /visualizations/lineChart/usage/
+

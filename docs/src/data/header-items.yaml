@@ -18,6 +18,10 @@
   link: /patterns/overview/all-patterns/
   mobileTab: false
 
+- label: Visualizations
+  link: /visualizations/overview/all-visualizations/
+  mobileTab: false
+
 - label: Storybook
   link: https://innovaccer.github.io/design-system
   img: Storybook
