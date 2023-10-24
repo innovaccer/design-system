@@ -15,6 +15,8 @@ import {
   preSelectedOptions,
   allSelectedOptions,
   fetchEmptyOptions,
+  fetchOptionsWithSearchTermFailed,
+  fetchOptionsWithError,
 } from '../__stories__/Options';
 
 const size = ['tiny', 'regular'];
@@ -809,6 +811,30 @@ describe('Dropdown errorTemplate', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Test Error Message.')).toBeInTheDocument();
+    });
+  });
+
+  it('renders default template when promise fetches fails', async () => {
+    const { getByTestId, getAllByTestId } = render(<Dropdown fetchOptions={fetchOptionsWithError} />);
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    await waitFor(() => {
+      expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Failed to fetch data');
+      expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch("We couldn't load the data, try reloading.");
+    });
+  });
+
+  it('renders default template when promise fetches fails with searchTerm', async () => {
+    const { getByTestId, getAllByTestId } = render(
+      <Dropdown fetchOptions={fetchOptionsWithSearchTermFailed} withSearch={true} />
+    );
+    const dropdownTrigger = getByTestId(trigger);
+    fireEvent.click(dropdownTrigger);
+    const searchInput = getByTestId('DesignSystem-Input');
+    fireEvent.change(searchInput, { target: { value: '123' } });
+    await waitFor(() => {
+      expect(getAllByTestId('DesignSystem-Text')[0].textContent).toMatch('Failed to fetch data');
+      expect(getAllByTestId('DesignSystem-Text')[1].textContent).toMatch("We couldn't load the data, try reloading.");
     });
   });
 });

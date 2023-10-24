@@ -235,3 +235,47 @@ export const fetchEmptyOptions = () => {
     }, 1000);
   });
 };
+
+export const fetchOptionsWithSearchTermFailed = (searchTerm: string) => {
+  return new Promise<fetchOptionSchema>((resolve, reject) => {
+    if (searchTerm === '123') {
+      reject();
+    } else {
+      window.setTimeout(() => {
+        resolve({
+          options: [
+            {
+              label: 'demo Label',
+              value: 'demo Value',
+              icon: 'demo Icon',
+              subInfo: 'demo subInfo',
+            },
+          ],
+          count: 1,
+        });
+      }, 1000);
+    }
+  });
+};
+
+export const fetchOptionsWithError = (searchTerm: string) => {
+  return new Promise<fetchOptionSchema>((resolve, reject) => {
+    if (!searchTerm) {
+      reject();
+    } else {
+      window.setTimeout(() => {
+        resolve({
+          options: [
+            {
+              label: 'demo Label',
+              value: 'demo Value',
+              icon: 'demo Icon',
+              subInfo: 'demo subInfo',
+            },
+          ],
+          count: 1,
+        });
+      }, 1000);
+    }
+  });
+};
