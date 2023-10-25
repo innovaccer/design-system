@@ -1,12 +1,14 @@
 base: data-visualizations
 menus:
   - label: Overview
-    link: /visualizations/overview/all-visualizations/
+    link: /data-visualizations/overview/all-visualizations/
+  - label: Colors
+    link: /data-visualizations/color/usage/
   - label: Bar charts
-    link: /visualizations/barChart/usage/
+    link: /data-visualizations/barChart/usage/
   - label: Donut chart
-    link: /visualizations/donutChart/usage/
+    link: /data-visualizations/donutChart/usage/
   - label: Line charts
-    link: /visualizations/lineChart/usage/
+    link: /data-visualizations/lineChart/usage/
 
 
