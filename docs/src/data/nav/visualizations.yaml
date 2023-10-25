@@ -1,9 +1,12 @@
-base: visualizations
+base: data-visualizations
 menus:
   - label: Overview
     link: /visualizations/overview/all-visualizations/
   - label: Bar charts
     link: /visualizations/barChart/usage/
-  - label: Line chart
+  - label: Donut chart
+    link: /visualizations/donutChart/usage/
+  - label: Line charts
     link: /visualizations/lineChart/usage/
+
 

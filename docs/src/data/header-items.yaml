@@ -18,8 +18,8 @@
   link: /patterns/overview/all-patterns/
   mobileTab: false
 
-- label: Visualizations
-  link: /visualizations/overview/all-visualizations/
+- label: Data Visualizations
+  link: /data-visualizations/overview/all-visualizations/
   mobileTab: false
 
 - label: Storybook
