@@ -1,3 +1,41 @@
+## 2.23.2 (2023-10-28)
+
+### Highlights
+
+NA
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(dropdown): update error state template for async dropdown (558f788b)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): add line charts documentation (a33bf4e6)
+- docs(docs): add donut chart in visualizations, change tab name (76ba6e93)
+- docs(docs): add color documentation
+
+---
+
 ## 2.23.1 (2023-10-23)
 
 ### Highlights
