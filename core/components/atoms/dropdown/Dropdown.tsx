@@ -429,12 +429,12 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
 
           let errorResult = errorType;
 
-          if (optionsLength === 0) {
-            if (searchTerm === '') {
-              errorResult = 'DEFAULT';
-            } else {
-              errorResult = 'NO_RECORDS_FOUND';
-            }
+          if (optionsLength === 0 && searchTerm === '') {
+            errorResult = 'DEFAULT';
+          } else if (searchTerm !== '') {
+            errorResult = 'NO_RECORDS_FOUND';
+          } else {
+            errorResult = 'FAILED_TO_FETCH';
           }
 
           this.setState({
