@@ -27,7 +27,7 @@ export const ErrorTemplate: React.FC<ErrorTemplateProps> = ({ dropdownStyle, err
         className="d-flex flex-column justify-content-center align-items-center"
         data-test="DesignSystem-Dropdown--errorWrapper"
       >
-        <Text className="mb-3" weight="strong">
+        <Text className="text-align-center mb-3" weight="strong">
           {errorTitle[errorType]}
         </Text>
         <Text className="text-align-center mb-6" weight="medium" size="small" appearance="subtle">
