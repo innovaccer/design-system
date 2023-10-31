@@ -1,3 +1,39 @@
+## 2.23.3 (2023-10-31)
+
+### Highlights
+
+NA
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(dropdown): update error state template for async dropdown (6f59e682)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.23.2 (2023-10-28)
 
 ### Highlights
