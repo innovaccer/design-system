@@ -8,6 +8,13 @@ const imgStyle = {
 
 export const data = [
   {
+    link: 'color/usage',
+    design: 'Available',
+    name: 'Colors',
+    code: 'Available',
+    image: () => <StaticImage src="./images/visualizations/color.png" alt="Bar chart" imgStyle={imgStyle} />,
+  },
+  {
     link: 'barChart/usage',
     design: 'Available',
     name: 'Bar charts',
