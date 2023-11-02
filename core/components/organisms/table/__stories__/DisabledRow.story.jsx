@@ -274,7 +274,8 @@ const customCode = `() => {
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             console.log(\`on-select:- rowIndex: \${rowIndex} selected: \${selected} selectedList: \${JSON.stringify(selectedList)} selectAll: \${selectAll}\`)
           }
-          withPagination={false}
+          withPagination={true}
+          pageSize={2}
         />
       </Card>
   );

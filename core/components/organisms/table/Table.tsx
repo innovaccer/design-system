@@ -467,7 +467,7 @@ export class Table extends React.Component<TableProps, TableState> {
           errorType: this.props.errorType,
           page: 1,
           totalRecords: data.length || 0,
-          selectAll: getSelectAll([]),
+          // selectAll: getSelectAll([]),
         });
       }
       if (prevProps.loading !== this.props.loading) {
@@ -481,7 +481,7 @@ export class Table extends React.Component<TableProps, TableState> {
             errorType: this.props.errorType,
             page: 1,
             totalRecords: data.length || 0,
-            selectAll: getSelectAll([]),
+            // selectAll: getSelectAll([]),
           },
           () => {
             this.updateData();
@@ -552,6 +552,13 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (async) {
+      console.log(
+        'inside updateDataFn dataProp',
+        dataProp,
+        'renderedData'
+        // renderedData
+      );
+
       if (fetchData) {
         fetchData(opts)
           .then((res: any) => {
@@ -592,11 +599,13 @@ export class Table extends React.Component<TableProps, TableState> {
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
 
+      console.log('inside updateDataFn dataProp', dataProp, 'renderedData', renderedData);
+
       this.setState({
         totalRecords,
         error: !renderedData.length,
         errorType: 'NO_RECORDS_FOUND',
-        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
+        // selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
         schema: renderedSchema,
         data: renderedData,
       });
@@ -633,6 +642,8 @@ export class Table extends React.Component<TableProps, TableState> {
 
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
     const { onSelect } = this.props;
+    console.log('onselect all function', selected);
+    // debugger;
 
     const { data } = this.state;
 
