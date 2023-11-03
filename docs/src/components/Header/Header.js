@@ -19,7 +19,14 @@ const Header = ({ relativePagePath }) => {
 
   const checkActive = (label) => {
     const pagePath = relativePagePath.split('/');
-    if (pagePath[1] === label.toLowerCase() || pagePath[2] === label.toLowerCase()) return true;
+    const pageSeparator = pagePath[1].split('-');
+    const labelSeparator = label.split(' ');
+    if (pagePath[1] === label.toLowerCase() || pagePath[2] === label.toLowerCase()) {
+      return true;
+    } else if (pageSeparator[0] === labelSeparator[0].toLowerCase() && pageSeparator[1] === labelSeparator[1].toLowerCase()) {
+      return true;
+    }
+
     return false;
   };
 
@@ -42,19 +49,19 @@ const Header = ({ relativePagePath }) => {
   };
 
   function transformItems(items) {
-      return items.map(item => {
-        const liveUrl = 'https://design.innovaccer.com/';
+    return items.map((item) => {
+      const liveUrl = 'https://design.innovaccer.com/';
 
-        item.url = window.location.origin.startsWith(liveUrl) ?
-          // On production, return the result as is
-          item.url :
-          // On development, replace `item.url` with a trailing slash,
+      item.url = window.location.origin.startsWith(liveUrl)
+        ? // On production, return the result as is
+          item.url
+        : // On development, replace `item.url` with a trailing slash,
           // so that the result link is relative to the server root
-          item.url.replace(liveUrl, '/')
+          item.url.replace(liveUrl, '/');
 
-        return item
-      })
-    } 
+      return item;
+    });
+  }
 
   return (
     <div id="mainHeader" ref={ref} className="header bg-light d-flex w-100 position-sticky px-5">
