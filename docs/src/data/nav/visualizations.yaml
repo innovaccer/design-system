@@ -1,7 +1,7 @@
 base: data-visualizations
 menus:
   - label: Overview
-    link: /data-visualizations/overview/all-visualizations/
+    link: /data-visualizations/overview/all/
   - label: Colors
     link: /data-visualizations/color/usage/
   - label: Bar charts

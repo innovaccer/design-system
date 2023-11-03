@@ -19,7 +19,7 @@
   mobileTab: false
 
 - label: Data Visualizations
-  link: /data-visualizations/overview/all-visualizations/
+  link: /data-visualizations/overview/all/
   mobileTab: false
 
 - label: Storybook
