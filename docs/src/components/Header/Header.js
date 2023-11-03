@@ -21,9 +21,10 @@ const Header = ({ relativePagePath }) => {
     const pagePath = relativePagePath.split('/');
     const pageSeparator = pagePath[1].split('-');
     const labelSeparator = label.split(' ');
+
     if (pagePath[1] === label.toLowerCase() || pagePath[2] === label.toLowerCase()) {
       return true;
-    } else if (pageSeparator[0] === labelSeparator[0].toLowerCase() && pageSeparator[1] === labelSeparator[1].toLowerCase()) {
+    } else if (pageSeparator[0] === labelSeparator[0]?.toLowerCase() && pageSeparator[1] === labelSeparator[1]?.toLowerCase()) {
       return true;
     }
 
