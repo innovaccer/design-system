@@ -3,9 +3,9 @@ export const submitFormToSatismeter = async (answersList, hostUrl) => {
   myHeaders.append('Content-Type', 'application/json');
 
   let raw = JSON.stringify({
-    writeKey: 'DFlIliFEvDAYfaOh',
-    anonymousId: '01d3b381-d077-462a-a67e-1fc61ab5055d',
-    campaign: '63ca335d3e692eea35f03c40',
+    writeKey: 'OhGeSHvGwegxkoqhZBM2JQ7qkCDRHII8',
+    anonymousId: 'ffaca7d1-6620-44f8-8089-93e6812190d0',
+    campaign: '6542399d10a6312d44fe8a69',
     method: 'In-App',
     answers: answersList,
     referrer: hostUrl,
