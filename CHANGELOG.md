@@ -1,3 +1,40 @@
+## 2.24.0 (2023-11-07)
+
+### Highlights
+
+- feat(docs): update SatisMeter configs (0706d874)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(docs): update SatisMeter configs (0706d874)
+
+### Fixes
+
+- fix(docs): fix data visualization link and navigation (f949c535)
+- fix(docs): fix tab navigation for data visualization page (d9ddda6e)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): add color in overview page in data visualization tab (c006cba2)
+
+---
+
 ## 2.23.3 (2023-10-31)
 
 ### Highlights
