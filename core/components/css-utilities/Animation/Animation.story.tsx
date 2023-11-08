@@ -67,6 +67,14 @@ export const animation = () => {
       className: 'slideIn-right',
       properties: 'The object is moving 16px from left to right while fading in, using an entrance-expressive-curve',
     },
+    {
+      className: 'rotate-clockwise',
+      properties: 'The object is rotating in a clockwise direction, using a standard-productive-curve',
+    },
+    {
+      className: 'rotate-anticlockwise',
+      properties: 'The object is rotating in an anti-clockwise direction, using a standard-productive-curve',
+    },
   ];
 
   return (

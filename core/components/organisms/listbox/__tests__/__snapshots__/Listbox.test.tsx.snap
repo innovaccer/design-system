@@ -1,0 +1,6313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "description", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "option", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "compressed", type: "resource", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "description", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "option", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "standard", type: "resource", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "description", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--description"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "option", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--option"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: false, size: "tight", type: "resource", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+      >
+        <div
+          class="Listbox-item Listbox-item--tight Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "description", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "option", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "compressed", type: "resource", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--compressed Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "description", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <li
+      class="Listbox-item-wrapper"
+      data-test="DesignSystem-Listbox-Item"
+      disabled=""
+      id="list-item-id"
+    >
+      <div
+        class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
+        data-disabled="true"
+        data-test="DesignSystem-Listbox-ItemWrapper"
+        role="tablist"
+        tabindex="0"
+      >
+        <div>
+          list item element
+        </div>
+      </div>
+      <hr
+        class="Divider Divider--horizontal Divider--basic Listbox-divider"
+        data-test="DesignSystem-Divider"
+      />
+    </li>
+  </div>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "option", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "standard", type: "resource", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--standard Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "description", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--description"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "option", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--option"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "div", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "div", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "nav", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "nav", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <nav
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "ol", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "ol", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ol
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ol>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "ul", showDivider: false
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot 
+  draggable: true, size: "tight", type: "resource", tagName: "ul", showDivider: true
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item--draggable"
+        style="user-select: none; box-sizing: border-box; position: relative; z-index: 0;"
+        tabindex="0"
+      >
+        <li
+          class=""
+          data-test="DesignSystem-Listbox-Item"
+          id="list-item-id"
+          parentprops="[object Object]"
+        >
+          <div
+            class="Listbox-item Listbox-item--tight Listbox-item--resource"
+            data-test="DesignSystem-Listbox-ItemWrapper"
+            role="tablist"
+            tabindex="-1"
+          >
+            <i
+              class="material-symbols material-symbols-rounded Icon Icon--subtle Listbox-item--drag-icon"
+              data-test="DesignSystem-Listbox-DragIcon"
+              role="button"
+              style="font-size: 16px; width: 16px;"
+            >
+              drag_indicator
+            </i>
+            <div>
+              list item element
+            </div>
+          </div>
+          <hr
+            class="Divider Divider--horizontal Divider--basic Listbox-divider"
+            data-test="DesignSystem-Divider"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: false, activated: false, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="description"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: false, activated: false, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="option"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: false, activated: false, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="resource"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: false, activated: true, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="description"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: false, activated: true, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="option"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: false, activated: true, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="resource"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: true, activated: false, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="description"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: true, activated: false, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="option"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: true, activated: false, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="resource"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: true, activated: true, type: "description"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="description"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: true, activated: true, type: "option"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="option"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox component snapshot for states 
+  selected: true, activated: true, type: "resource"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        id="list-item-id"
+        type="resource"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--activated"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox item component snapshot 
+  disabled: false, tagName: "div", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-disabled="false"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox item component snapshot 
+  disabled: false, tagName: "li", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource"
+          data-disabled="false"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox item component snapshot 
+  disabled: true, tagName: "div", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <div
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        disabled=""
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
+          data-disabled="true"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </div>
+    </ul>
+  </div>
+</body>
+`;
+
+exports[`Listbox item component snapshot 
+  disabled: true, tagName: "li", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <ul
+      class="Listbox"
+      data-test="DesignSystem-Listbox"
+    >
+      <li
+        class="Listbox-item-wrapper"
+        data-test="DesignSystem-Listbox-Item"
+        disabled=""
+      >
+        <div
+          class="Listbox-item Listbox-item--standard Listbox-item--resource Listbox-item--disabled"
+          data-disabled="true"
+          data-test="DesignSystem-Listbox-ItemWrapper"
+          role="tablist"
+          tabindex="0"
+        >
+          <div>
+            list item element
+          </div>
+        </div>
+        <hr
+          class="Divider Divider--horizontal Divider--basic Listbox-divider"
+          data-test="DesignSystem-Divider"
+        />
+      </li>
+    </ul>
+  </div>
+</body>
+`;
