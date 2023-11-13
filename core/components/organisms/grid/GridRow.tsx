@@ -27,7 +27,7 @@ export const GridRow = (props: GridRowProps) => {
 
   const rowClasses = classNames('Grid-row', 'Grid-row--body', {
     'Grid-row--selected': data._selected,
-    'Grid-row--disabled': data.disabled,
+    'Grid-row--disabled': data?.disabled,
   });
 
   const onClickHandler = React.useCallback(() => {

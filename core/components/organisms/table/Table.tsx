@@ -536,7 +536,8 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
-    this.onSelect(-1, false);
+    // this.onSelect(-1, false);
+    this.onSelect(3, true);
 
     const opts: FetchDataOptions = {
       page,
@@ -587,6 +588,8 @@ export class Table extends React.Component<TableProps, TableState> {
     } else {
       const { schema } = this.state;
 
+      console.log('inside else');
+
       const filteredData = filterData(schema, dataProp, filterList);
       const searchedData =
         onSearch && opts.searchTerm !== undefined ? onSearch(filteredData, opts.searchTerm) : filteredData;
@@ -635,6 +638,8 @@ export class Table extends React.Component<TableProps, TableState> {
       });
     }
 
+    console.log('insidde on select', rowIndexes, 'selected', selected, 'data', data, 'newData', newData);
+
     if (onSelect) {
       onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
     }
@@ -642,7 +647,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
     const { onSelect } = this.props;
-    console.log('onselect all function', selected);
+    console.log('insidde onselect all function', selected);
     // debugger;
 
     const { data } = this.state;
