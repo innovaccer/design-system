@@ -425,6 +425,14 @@ export const defaultProps = {
 export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
   debounceUpdate: () => void;
+  // selectedRowsRef = React.createRef<(() => void) | null>();
+  // selectedRowsRef: React.MutableRefObject<number[] | null> = React.createRef<number[] | null>();
+  // selectedRowsRef: React.MutableRefObject<(number | number[] | null)[]> =
+  //   React.createRef<(number | number[] | null)[]>();
+
+  // myRef = React.RefObject;
+
+  selectedRowsRef: React.MutableRefObject<any> = React.createRef<number[] | null>();
 
   constructor(props: TableProps) {
     super(props);
@@ -536,8 +544,8 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
-    // this.onSelect(-1, false);
-    this.onSelect(3, true);
+    this.onSelect(-1, false);
+    // this.onSelect(3, true);
 
     const opts: FetchDataOptions = {
       page,
@@ -632,10 +640,39 @@ export class Table extends React.Component<TableProps, TableState> {
         this.props.selectDisabledRow
       );
 
+      console.log('newDataaaa', newData);
       this.setState({
         data: newData,
         selectAll: getSelectAll(newData, this.props.selectDisabledRow),
       });
+
+      let newRowData = [rowIndexes];
+      if (this.selectedRowsRef.current) {
+        newRowData = [rowIndexes, ...this.selectedRowsRef.current];
+      }
+      this.selectedRowsRef.current = newRowData;
+
+      /**
+       * 0,1,2,3,4
+       * 5,6,7,8,9
+       *
+       * 5*2 -> [5,6,7,8,10-1]
+       * (3,8)
+       */
+
+      console.log(
+        'data',
+        data,
+        'befforr rowIndexes',
+        rowIndexes,
+        'selected',
+        selected,
+        'this.selectedRowsRef.current',
+        this.selectedRowsRef.current,
+        'page',
+        this.state.page
+        // ...this.selectedRowsRef.current
+      );
     }
 
     console.log('insidde on select', rowIndexes, 'selected', selected, 'data', data, 'newData', newData);
