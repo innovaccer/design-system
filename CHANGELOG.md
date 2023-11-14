@@ -1,3 +1,39 @@
+## 2.25.0 (2023-11-14)
+
+### Highlights
+
+- feat(listbox): add new listbox component (6aca3733)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(listbox): add new listbox component (6aca3733)
+
+### Fixes
+
+NA
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.24.0 (2023-11-07)
 
 ### Highlights
