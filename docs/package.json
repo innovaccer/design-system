@@ -35,7 +35,7 @@
     "gatsby-plugin-image": "^1.12.0",
     "gatsby-plugin-mdx": "^2.12.0",
     "gatsby-plugin-nprogress": "^4.12.1",
-    "gatsby-plugin-s3": "^0.3.8",
+    "gatsby-plugin-s3": "^0.4.0",
     "gatsby-plugin-sharp": "^4.8.0",
     "gatsby-remark-copy-linked-files": "^2.2.1",
     "gatsby-remark-heading-slug": "^0.2.0",
