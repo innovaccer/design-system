@@ -357,6 +357,7 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+  selectedRowsList?: any;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -441,6 +442,8 @@ export class Table extends React.Component<TableProps, TableState> {
     const data = props.data || [];
     const schema = props.schema || [];
 
+    const storedTableState = localStorage.getItem('tableSelectedRows');
+
     this.state = {
       async,
       data: !async ? data : [],
@@ -454,6 +457,8 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+      selectedRowsList: storedTableState ? JSON.parse(storedTableState) : [],
+      // selectedRowsList: storedTableState ? storedTableState : [],
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -561,13 +566,6 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (async) {
-      console.log(
-        'inside updateDataFn dataProp',
-        dataProp,
-        'renderedData'
-        // renderedData
-      );
-
       if (fetchData) {
         fetchData(opts)
           .then((res: any) => {
@@ -595,8 +593,6 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     } else {
       const { schema } = this.state;
-
-      console.log('inside else');
 
       const filteredData = filterData(schema, dataProp, filterList);
       const searchedData =
@@ -640,17 +636,19 @@ export class Table extends React.Component<TableProps, TableState> {
         this.props.selectDisabledRow
       );
 
-      console.log('newDataaaa', newData);
+      console.log('newDataaaa rowIndexes', newData, 'rowIndexes', rowIndexes);
       this.setState({
         data: newData,
         selectAll: getSelectAll(newData, this.props.selectDisabledRow),
       });
 
-      let newRowData = [rowIndexes];
+      let newRowData = [data[rowIndexes]?.id];
       if (this.selectedRowsRef.current) {
-        newRowData = [rowIndexes, ...this.selectedRowsRef.current];
+        newRowData = [data[rowIndexes]?.id, ...this.selectedRowsRef.current];
       }
       this.selectedRowsRef.current = newRowData;
+
+      localStorage.setItem('tableSelectedRows', JSON.stringify(newRowData));
 
       /**
        * 0,1,2,3,4
@@ -674,8 +672,6 @@ export class Table extends React.Component<TableProps, TableState> {
         // ...this.selectedRowsRef.current
       );
     }
-
-    console.log('insidde on select', rowIndexes, 'selected', selected, 'data', data, 'newData', newData);
 
     if (onSelect) {
       onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
