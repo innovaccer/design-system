@@ -719,7 +719,7 @@ const DropdownList = (props: OptionsProps) => {
     }
   };
 
-  const enableSearch = (withSearch || props.async) && (!isDropdownListBlank || errorType === 'NO_RECORDS_FOUND');
+  const enableSearch = withSearch || props.async;
 
   return (
     //TODO(a11y)

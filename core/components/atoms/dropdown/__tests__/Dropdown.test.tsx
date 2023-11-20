@@ -492,14 +492,6 @@ describe('Dropdown component with search', () => {
     expect(screen.getByPlaceholderText('Custom search text')).toBeInTheDocument();
   });
 
-  it('is not rendered when no record is available', () => {
-    const { getByTestId, queryByTestId } = render(<Dropdown withSearch={true} />);
-    const dropdownTrigger = getByTestId(trigger);
-    fireEvent.click(dropdownTrigger);
-
-    expect(queryByTestId('DesignSystem-Input')).not.toBeInTheDocument();
-  });
-
   it('is rendered when search returns no result', async () => {
     const { getByTestId, getAllByTestId } = render(<Dropdown options={storyOptions} withSearch={true} />);
 
