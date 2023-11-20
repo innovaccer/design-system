@@ -1,3 +1,39 @@
+## 2.25.1 (2023-11-20)
+
+### Highlights
+
+- fix(dropdown): update search input in empty option list (2cc73fe2)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(dropdown): update search input in empty option list (2cc73fe2)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.25.0 (2023-11-14)
 
 ### Highlights
