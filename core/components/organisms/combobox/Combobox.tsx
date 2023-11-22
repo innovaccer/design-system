@@ -9,6 +9,7 @@ export const Combobox = (props: any) => {
   const { renderListOptions } = props;
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [inputValue, setInputValue] = React.useState('');
+  const [openPopover, setOpenPopover] = React.useState(false);
 
   const triggerRef = React.createRef<HTMLDivElement>();
 
@@ -23,12 +24,19 @@ export const Combobox = (props: any) => {
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
+  useEffect(() => {
+    console.log('inside useeffect');
+    setOpenPopover(true);
+  }, [inputValue]);
+
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
+        on="click"
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
+        open={openPopover}
         trigger={<Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />}
       >
         {renderListOptions(inputValue, setInputValue)}
