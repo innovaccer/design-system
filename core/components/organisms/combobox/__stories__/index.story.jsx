@@ -12,11 +12,6 @@ export const all = () => {
     { label: 'Penbutolol', value: 'Penbutolol' },
     { label: 'Aminophenol', value: 'Aminophenol' },
     { label: 'Vancomycin', value: 'Vancomycin' },
-    { label: 'Acetaminophen', value: 'Acetaminophen' },
-    { label: 'Ibuprofen', value: 'Ibuprofen' },
-    { label: 'Penicillin G', value: 'Penicillin G' },
-    { label: 'Penbutolol', value: 'Penbutolol' },
-    { label: 'Aminophenol', value: 'Aminophenol' },
   ];
 
   // const [inputValue, setInputValue] = React.useState('');
@@ -31,9 +26,13 @@ export const all = () => {
 
   const renderListOptions = (inputValue, setInputValue) => {
     action('inputValue in renderListOptions-> ', inputValue)();
+    const filterList = medicineList.filter((medicine) =>
+      medicine.label.toLowerCase().includes(inputValue.toLowerCase())
+    );
+
     return (
       <ul className="m-0 p-5 Combobox-list">
-        {optionList.map((options, key) => {
+        {filterList.map((options, key) => {
           return (
             // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <li
