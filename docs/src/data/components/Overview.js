@@ -38,36 +38,38 @@ function Overview({ data, mode, path = 'components' }) {
 
       <div className="d-flex flex-wrap">
         {previewList.length > 0 ? (
-          previewList.map(({ image = () => <img alt="" />, name, status, link = '' }) => {
-            return (
-              <div key={name} className="overview-container-card pb-6 mr-6">
-                <Link
-                  className="card-link"
-                  disabled={!link.length}
-                  to={mode === 'mobile' ? `/mobile/${path}/${link}` : `/${path}/${link}`}
-                >
-                  <Card shadow="none" className="w-100 overflow-hidden overview-card pb-5 h-100">
-                    <CardBody className="px-0">
-                      <div className="py-5 card-opacity d-flex flex-column">
-                        <div className="d-flex justify-content-end mr-5">
-                          {status && <StatusTag category={status} />}
-                        </div>
+          previewList.map(({ image = () => <img alt="" />, name, status, showOverview = true, link = '' }) => {
+            if (showOverview) {
+              return (
+                <div key={name} className="overview-container-card pb-6 mr-6">
+                  <Link
+                    className="card-link"
+                    disabled={!link.length}
+                    to={mode === 'mobile' ? `/mobile/${path}/${link}` : `/${path}/${link}`}
+                  >
+                    <Card shadow="none" className="w-100 overflow-hidden overview-card pb-5 h-100">
+                      <CardBody className="px-0">
+                        <div className="py-5 card-opacity d-flex flex-column">
+                          <div className="d-flex justify-content-end mr-5">
+                            {status && <StatusTag category={status} />}
+                          </div>
 
-                        <div
-                          className="d-flex justify-content-center align-items-center"
-                          style={{ overflow: 'hidden', height: '168px' }}
-                        >
-                          {React.createElement(image)}
+                          <div
+                            className="d-flex justify-content-center align-items-center"
+                            style={{ overflow: 'hidden', height: '168px' }}
+                          >
+                            {React.createElement(image)}
+                          </div>
                         </div>
-                      </div>
-                      <Heading data-test="Docs-Card-Heading" size="s" className="ml-6 position-absolute card-heading">
-                        {name}
-                      </Heading>
-                    </CardBody>
-                  </Card>
-                </Link>
-              </div>
-            );
+                        <Heading data-test="Docs-Card-Heading" size="s" className="ml-6 position-absolute card-heading">
+                          {name}
+                        </Heading>
+                      </CardBody>
+                    </Card>
+                  </Link>
+                </div>
+              );
+            }
           })
         ) : (
           <div className="d-flex justify-content-center w-100 mt-10">
