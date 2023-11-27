@@ -1,19 +1,38 @@
-import React, { useEffect } from 'react';
-import { Popover, Input } from '@/index';
-import { PopoverProps } from '@/index.type';
-// import { BaseProps } from '@/utils/types';
-// import { InputBox } from './InputBox';
-// import { ChipInputBox } from './ChipInputBox';
+import * as React from 'react';
+import { Popover } from '@/index';
+import { BaseProps } from '@/utils/types';
+import { PopoverProps, InputProps, ChipInputProps } from '@/index.type';
+import { InputBox } from './InputBox';
+import { ChipInputBox } from './ChipInputBox';
 
-export const Combobox = (props: any) => {
+export interface ComboboxProps extends BaseProps {
+  multiSelect?: boolean;
+  inputOptions?: InputProps;
+  inputValue?: string;
+  onInputChange?: () => void;
+  chipInputOptions: ChipInputProps;
+  chipInputValue?: string[];
+  children: React.ReactNode;
+  renderListOptions: any;
+}
+
+const ComboboxTrigger = (props: ComboboxProps) => {
+  const { multiSelect, inputOptions, inputValue, onInputChange, chipInputValue, chipInputOptions, renderListOptions } =
+    props;
+  if (multiSelect) {
+    return <ChipInputBox value={chipInputValue} {...chipInputOptions} allowDuplicates={true} />;
+  }
+  return <InputBox {...inputOptions} value={inputValue} onChange={onInputChange} />;
+};
+
+export const Combobox = (props: ComboboxProps) => {
   const { renderListOptions } = props;
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [inputValue, setInputValue] = React.useState('');
-  const [openPopover, setOpenPopover] = React.useState(false);
 
   const triggerRef = React.createRef<HTMLDivElement>();
 
-  useEffect(() => {
+  React.useEffect(() => {
     const popperWidth = triggerRef.current?.clientWidth;
     console.log('popperWidth', popperWidth);
 
@@ -24,21 +43,16 @@ export const Combobox = (props: any) => {
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
-  useEffect(() => {
-    console.log('inside useeffect');
-    setOpenPopover(true);
-  }, [inputValue]);
-
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
-        on="click"
+        // on="click"
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
-        open={openPopover}
-        trigger={<Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} />}
+        trigger={<ComboboxTrigger {...props} />}
       >
+        {/* {children} */}
         {renderListOptions(inputValue, setInputValue)}
       </Popover>
     </div>
