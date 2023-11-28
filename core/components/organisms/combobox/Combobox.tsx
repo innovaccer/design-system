@@ -60,7 +60,6 @@ export const Combobox = (props: ComboboxProps) => {
         className="Combobox-wrapper"
         trigger={<ComboboxTrigger {...props} inputValue={inputValue} onInputChange={setInputValue} />}
       >
-        {/* {children} */}
         {renderListOptions(inputValue, setInputValue)}
       </Popover>
     </div>
