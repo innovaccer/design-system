@@ -13,7 +13,7 @@ export interface ComboboxProps extends BaseProps {
   onInputChange?: any;
   chipInputOptions: ChipInputProps;
   chipInputValue?: string[];
-  children: React.ReactNode;
+  // children: React.ReactNode;
   renderListOptions: any;
 }
 
@@ -30,7 +30,7 @@ const ComboboxTrigger = (props: ComboboxProps) => {
   if (multiSelect) {
     return <ChipInputBox value={chipInputValue} {...chipInputOptions} allowDuplicates={true} />;
   }
-  return <InputBox {...inputOptions} value={inputValue} onChange={onInputChange} />;
+  return <InputBox value={inputValue} {...inputOptions} onChange={onInputChange} />;
 };
 
 export const Combobox = (props: ComboboxProps) => {
@@ -51,6 +51,14 @@ export const Combobox = (props: ComboboxProps) => {
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
+  const inputChangeHandler = (e: any) => {
+    const onChangeFn = props?.inputOptions?.onChange;
+    if (onChangeFn) {
+      return onChangeFn(e);
+    }
+    return setInputValue;
+  };
+
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
@@ -58,7 +66,9 @@ export const Combobox = (props: ComboboxProps) => {
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
-        trigger={<ComboboxTrigger {...props} inputValue={inputValue} onInputChange={setInputValue} />}
+        trigger={
+          <ComboboxTrigger inputValue={inputValue} onInputChange={(e: any) => inputChangeHandler(e)} {...props} />
+        }
       >
         {renderListOptions(inputValue, setInputValue)}
       </Popover>
