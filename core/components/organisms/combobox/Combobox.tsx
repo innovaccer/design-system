@@ -9,7 +9,8 @@ export interface ComboboxProps extends BaseProps {
   multiSelect?: boolean;
   inputOptions?: InputProps;
   inputValue?: string;
-  onInputChange?: () => void;
+  // onInputChange?: React.Dispatch<React.SetStateAction<string>>;
+  onInputChange?: any;
   chipInputOptions: ChipInputProps;
   chipInputValue?: string[];
   children: React.ReactNode;
@@ -17,8 +18,15 @@ export interface ComboboxProps extends BaseProps {
 }
 
 const ComboboxTrigger = (props: ComboboxProps) => {
-  const { multiSelect, inputOptions, inputValue, onInputChange, chipInputValue, chipInputOptions, renderListOptions } =
-    props;
+  const {
+    multiSelect,
+    inputOptions,
+    inputValue,
+    onInputChange,
+    chipInputValue,
+    chipInputOptions,
+    // renderListOptions
+  } = props;
   if (multiSelect) {
     return <ChipInputBox value={chipInputValue} {...chipInputOptions} allowDuplicates={true} />;
   }
@@ -50,7 +58,7 @@ export const Combobox = (props: ComboboxProps) => {
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
-        trigger={<ComboboxTrigger {...props} />}
+        trigger={<ComboboxTrigger {...props} inputValue={inputValue} onInputChange={setInputValue} />}
       >
         {/* {children} */}
         {renderListOptions(inputValue, setInputValue)}
