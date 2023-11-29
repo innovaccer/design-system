@@ -7,17 +7,23 @@ import { ChipInputBox } from './ChipInputBox';
 
 export interface ComboboxProps extends BaseProps {
   multiSelect?: boolean;
-  inputOptions?: InputProps;
-  inputValue?: string;
-  // onInputChange?: React.Dispatch<React.SetStateAction<string>>;
-  onInputChange?: any;
-  chipInputOptions: ChipInputProps;
-  chipInputValue?: string[];
-  // children: React.ReactNode;
   renderListOptions: any;
+  inputOptions?: InputProps;
+  chipInputOptions: ChipInputProps;
+  // chipInputValue?: string[];
+  // inputValue?: string;
+  // onInputChange?: React.Dispatch<React.SetStateAction<string>>;
+  // onInputChange?: any;
+  // children: React.ReactNode;
 }
 
-const ComboboxTrigger = (props: ComboboxProps) => {
+interface ComboboxTriggerProps {
+  inputValue?: string;
+  onInputChange?: any;
+  chipInputValue?: string[];
+}
+
+const ComboboxTrigger = (props: ComboboxTriggerProps & ComboboxProps) => {
   const {
     multiSelect,
     inputOptions,
@@ -51,23 +57,20 @@ export const Combobox = (props: ComboboxProps) => {
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
-  const inputChangeHandler = (e: any) => {
-    const onChangeFn = props?.inputOptions?.onChange;
-    if (onChangeFn) {
-      return onChangeFn(e);
-    }
-    return setInputValue;
-  };
-
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
-        // on="click"
+        on="click"
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
         trigger={
-          <ComboboxTrigger inputValue={inputValue} onInputChange={(e: any) => inputChangeHandler(e)} {...props} />
+          <ComboboxTrigger
+            inputValue={inputValue}
+            onInputChange={props?.inputOptions?.onChange || setInputValue}
+            //  onInputChange={(e: any) => inputChangeHandler(e)}
+            {...props}
+          />
         }
       >
         {renderListOptions(inputValue, setInputValue)}
