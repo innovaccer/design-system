@@ -36,6 +36,13 @@ export const data = [
     image: () => <StaticImage src="./images/patterns/Layout.png" alt="Layout" imgStyle={imgStyle} />,
   },
   {
+    link: 'tableFilters/usage',
+    design: 'Available',
+    name: 'Table filters',
+    code: 'Available',
+    image: () => <StaticImage src="./images/patterns/tableFilters.png" alt="Table filters" imgStyle={imgStyle} />,
+  },
+  {
     link: 'uiStates/usage',
     design: 'Available',
     name: 'UI states',
