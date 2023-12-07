@@ -43,6 +43,8 @@ export const Combobox = (props: ComboboxProps) => {
   const { renderListOptions } = props;
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [inputValue, setInputValue] = React.useState('');
+  // const [showPopover, setShowPopover] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
 
   const triggerRef = React.createRef<HTMLDivElement>();
 
@@ -57,10 +59,25 @@ export const Combobox = (props: ComboboxProps) => {
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
+  // React.useEffect(() => {
+  //   console.log('inputValue inside useEffect', inputValue);
+  //   if (inputValue === '') {
+  //     setOpen(true);
+  //   } else {
+  //     setOpen(false);
+  //   }
+  // }, [inputValue]);
+
+  // React.useEffect(() => {
+  //   setShowPopover(true);
+  // }, [inputValue]);
+
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
         on="click"
+        // open={open}
+        // open={showPopover}
         triggerClass="w-100"
         customStyle={popoverStyle}
         className="Combobox-wrapper"
