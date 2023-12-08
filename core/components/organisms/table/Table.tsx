@@ -442,7 +442,7 @@ export class Table extends React.Component<TableProps, TableState> {
     const data = props.data || [];
     const schema = props.schema || [];
 
-    const storedTableState = localStorage.getItem('tableSelectedRows');
+    // const storedTableState = localStorage.getItem('tableSelectedRows');
 
     this.state = {
       async,
@@ -457,7 +457,7 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
-      selectedRowsList: storedTableState ? JSON.parse(storedTableState) : [],
+      // selectedRowsList: storedTableState ? JSON.parse(storedTableState) : [],
       // selectedRowsList: storedTableState ? storedTableState : [],
     };
 
@@ -480,7 +480,7 @@ export class Table extends React.Component<TableProps, TableState> {
           errorType: this.props.errorType,
           page: 1,
           totalRecords: data.length || 0,
-          // selectAll: getSelectAll([]),
+          selectAll: getSelectAll([]),
         });
       }
       if (prevProps.loading !== this.props.loading) {
@@ -494,7 +494,7 @@ export class Table extends React.Component<TableProps, TableState> {
             errorType: this.props.errorType,
             page: 1,
             totalRecords: data.length || 0,
-            // selectAll: getSelectAll([]),
+            selectAll: getSelectAll([]),
           },
           () => {
             this.updateData();
@@ -572,8 +572,26 @@ export class Table extends React.Component<TableProps, TableState> {
             if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
               const data = res.data;
               const schema = this.state.schema.length ? this.state.schema : res.schema;
-              this.setState({
+
+              const selectedData = data.map((item: RowData) => {
+                if (this.selectedRowsRef?.current?.includes(item.id)) {
+                  console.log('i am selceted', item);
+                  item._selected = true;
+                }
+                return item;
+              });
+
+              console.log(
+                'assyynnccthis.selectedRowsRef.current',
+                this.selectedRowsRef.current,
+                'data',
                 data,
+                'selectedData'
+                // selectedData
+              );
+
+              this.setState({
+                data: selectedData,
                 schema,
                 selectAll: getSelectAll(data, this.props.selectDisabledRow),
                 totalRecords: res.count,
@@ -606,15 +624,31 @@ export class Table extends React.Component<TableProps, TableState> {
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
 
-      console.log('inside updateDataFn dataProp', dataProp, 'renderedData', renderedData);
+      console.log(
+        'inside updateDataFn dataProp',
+        dataProp,
+        'renderedData',
+        renderedData,
+        'this.selectedRowsRef.current',
+        this.selectedRowsRef.current
+      );
+      console.log('cccccadd _selected in the data while comparing it with current ref');
+
+      const selectedData = renderedData.map((item: RowData) => {
+        if (this.selectedRowsRef?.current?.includes(item.id)) {
+          console.log('i am selceted', item);
+          item._selected = true;
+        }
+        return item;
+      });
 
       this.setState({
         totalRecords,
         error: !renderedData.length,
         errorType: 'NO_RECORDS_FOUND',
-        // selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
+        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
         schema: renderedSchema,
-        data: renderedData,
+        data: selectedData,
       });
     }
   };
