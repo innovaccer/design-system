@@ -566,7 +566,7 @@ export class Table extends React.Component<TableProps, TableState> {
               const schema = this.state.schema.length ? this.state.schema : res.schema;
 
               const selectedData = data.map((item: RowData) => {
-                if (this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) {
+                if (item[uniqueColumnName] && this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) {
                   item._selected = true;
                 }
                 return item;
@@ -607,7 +607,7 @@ export class Table extends React.Component<TableProps, TableState> {
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
 
       const selectedData = renderedData.map((item: RowData) => {
-        if (this.selectedRowsRef?.current?.includes(item.uniqueColumnName)) {
+        if (item[uniqueColumnName] && this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) {
           item._selected = true;
         }
         return item;

@@ -263,7 +263,7 @@ const customCode = `
         <Table
           loaderSchema={loaderSchema}
           fetchData={fetchData}
-          uniqueColumnName="id"
+          uniqueColumnName="email"
           withHeader={true}
           headerOptions={{
             withSearch: true
