@@ -338,6 +338,10 @@ interface SharedTableProps extends BaseProps {
    * Set `true` to allow selection of disabled row
    */
   selectDisabledRow?: boolean;
+  /**
+   * Provide name of unique column
+   */
+  uniqueColumnName?: string;
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -545,7 +549,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
-    const { fetchData, pageSize, withPagination, data: dataProp, onSearch } = this.props;
+    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName = 'id' } = this.props;
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
@@ -574,21 +578,11 @@ export class Table extends React.Component<TableProps, TableState> {
               const schema = this.state.schema.length ? this.state.schema : res.schema;
 
               const selectedData = data.map((item: RowData) => {
-                if (this.selectedRowsRef?.current?.includes(item.id)) {
-                  console.log('i am selceted', item);
+                if (this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) {
                   item._selected = true;
                 }
                 return item;
               });
-
-              console.log(
-                'assyynnccthis.selectedRowsRef.current',
-                this.selectedRowsRef.current,
-                'data',
-                data,
-                'selectedData'
-                // selectedData
-              );
 
               this.setState({
                 data: selectedData,
@@ -624,19 +618,8 @@ export class Table extends React.Component<TableProps, TableState> {
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
 
-      console.log(
-        'inside updateDataFn dataProp',
-        dataProp,
-        'renderedData',
-        renderedData,
-        'this.selectedRowsRef.current',
-        this.selectedRowsRef.current
-      );
-      console.log('cccccadd _selected in the data while comparing it with current ref');
-
       const selectedData = renderedData.map((item: RowData) => {
-        if (this.selectedRowsRef?.current?.includes(item.id)) {
-          console.log('i am selceted', item);
+        if (this.selectedRowsRef?.current?.includes(item.uniqueColumnName)) {
           item._selected = true;
         }
         return item;
@@ -656,7 +639,7 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelect: onSelectFn = (rowIndexes, selected) => {
     const { data } = this.state;
 
-    const { onSelect } = this.props;
+    const { onSelect, uniqueColumnName = 'id' } = this.props;
 
     const indexes = [rowIndexes];
     let newData: Data = data;
@@ -670,41 +653,18 @@ export class Table extends React.Component<TableProps, TableState> {
         this.props.selectDisabledRow
       );
 
-      console.log('newDataaaa rowIndexes', newData, 'rowIndexes', rowIndexes);
       this.setState({
         data: newData,
         selectAll: getSelectAll(newData, this.props.selectDisabledRow),
       });
 
-      let newRowData = [data[rowIndexes]?.id];
+      const rowData = data[rowIndexes];
+
+      let newRowData = [rowData[uniqueColumnName]];
       if (this.selectedRowsRef.current) {
-        newRowData = [data[rowIndexes]?.id, ...this.selectedRowsRef.current];
+        newRowData = [rowData[uniqueColumnName], ...this.selectedRowsRef.current];
       }
       this.selectedRowsRef.current = newRowData;
-
-      localStorage.setItem('tableSelectedRows', JSON.stringify(newRowData));
-
-      /**
-       * 0,1,2,3,4
-       * 5,6,7,8,9
-       *
-       * 5*2 -> [5,6,7,8,10-1]
-       * (3,8)
-       */
-
-      console.log(
-        'data',
-        data,
-        'befforr rowIndexes',
-        rowIndexes,
-        'selected',
-        selected,
-        'this.selectedRowsRef.current',
-        this.selectedRowsRef.current,
-        'page',
-        this.state.page
-        // ...this.selectedRowsRef.current
-      );
     }
 
     if (onSelect) {
@@ -714,8 +674,6 @@ export class Table extends React.Component<TableProps, TableState> {
 
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
     const { onSelect } = this.props;
-    console.log('insidde onselect all function', selected);
-    // debugger;
 
     const { data } = this.state;
 
