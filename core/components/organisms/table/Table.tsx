@@ -543,7 +543,6 @@ export class Table extends React.Component<TableProps, TableState> {
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
     this.onSelect(-1, false);
-    // this.onSelect(3, true);
 
     const opts: FetchDataOptions = {
       page,
