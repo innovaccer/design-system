@@ -361,7 +361,6 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
-  selectedRowsList?: any;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -430,12 +429,6 @@ export const defaultProps = {
 export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
   debounceUpdate: () => void;
-  // selectedRowsRef = React.createRef<(() => void) | null>();
-  // selectedRowsRef: React.MutableRefObject<number[] | null> = React.createRef<number[] | null>();
-  // selectedRowsRef: React.MutableRefObject<(number | number[] | null)[]> =
-  //   React.createRef<(number | number[] | null)[]>();
-
-  // myRef = React.RefObject;
 
   selectedRowsRef: React.MutableRefObject<any> = React.createRef<number[] | null>();
 
@@ -445,8 +438,6 @@ export class Table extends React.Component<TableProps, TableState> {
     const async = 'fetchData' in this.props;
     const data = props.data || [];
     const schema = props.schema || [];
-
-    // const storedTableState = localStorage.getItem('tableSelectedRows');
 
     this.state = {
       async,
@@ -461,8 +452,6 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
-      // selectedRowsList: storedTableState ? JSON.parse(storedTableState) : [],
-      // selectedRowsList: storedTableState ? storedTableState : [],
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);

@@ -8,7 +8,7 @@ export const updateBatchData = (
 ): Data => {
   const updatedData = [...data];
   for (const rowIndex of rowIndexes) {
-    if ((data[rowIndex]?.disabled && selectDisabledRow) || !data[rowIndex]?.disabled) {
+    if ((data[rowIndex].disabled && selectDisabledRow) || !data[rowIndex].disabled) {
       updatedData[rowIndex] = {
         ...updatedData[rowIndex],
         ...dataUpdate,
