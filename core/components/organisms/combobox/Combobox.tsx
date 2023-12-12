@@ -45,6 +45,7 @@ export const Combobox = (props: ComboboxProps) => {
   const [inputValue, setInputValue] = React.useState('');
   // const [showPopover, setShowPopover] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [isOptionSelected, setIsOptionSelected] = React.useState(false);
 
   const triggerRef = React.createRef<HTMLDivElement>();
 
@@ -56,17 +57,19 @@ export const Combobox = (props: ComboboxProps) => {
       width: popperWidth,
       maxWidth: '100%',
     };
+
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
-  // React.useEffect(() => {
-  //   console.log('inputValue inside useEffect', inputValue);
-  //   if (inputValue === '') {
-  //     setOpen(true);
-  //   } else {
-  //     setOpen(false);
-  //   }
-  // }, [inputValue]);
+  React.useEffect(() => {
+    console.log('inputValue inside useEffect', inputValue);
+    if (inputValue === '') {
+      setOpen(true);
+    } else if (isOptionSelected) {
+      setOpen(false);
+      setIsOptionSelected(false);
+    }
+  }, [inputValue]);
 
   // React.useEffect(() => {
   //   setShowPopover(true);
@@ -76,7 +79,7 @@ export const Combobox = (props: ComboboxProps) => {
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
         on="click"
-        // open={open}
+        open={open}
         // open={showPopover}
         triggerClass="w-100"
         customStyle={popoverStyle}
@@ -90,7 +93,7 @@ export const Combobox = (props: ComboboxProps) => {
           />
         }
       >
-        {renderListOptions(inputValue, setInputValue)}
+        {renderListOptions(inputValue, setInputValue, setIsOptionSelected)}
       </Popover>
     </div>
   );

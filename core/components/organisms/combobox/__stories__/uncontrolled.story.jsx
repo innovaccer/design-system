@@ -13,12 +13,17 @@ export const uncontrolled = () => {
     { label: 'Vancomycin', value: 'Vancomycin' },
   ];
 
-  const renderListOptions = (inputValue, setInputValue) => {
+  const renderListOptions = (inputValue, setInputValue, setIsOptionSelected) => {
     const filterList = medicineList.filter((medicine) =>
       medicine.label.toLowerCase().includes(inputValue.toLowerCase())
     );
 
     action('inputValue in renderListOptions-> ', inputValue, 'filterList', filterList)();
+
+    const onClickHandler = (item) => {
+      setInputValue(item.label);
+      setIsOptionSelected(true);
+    };
 
     return (
       <Listbox showDivider={false} type="option">
@@ -28,7 +33,7 @@ export const uncontrolled = () => {
               key={key}
               inputValue={inputValue}
               onKeyDown={() => setInputValue(item.label)}
-              onClick={() => setInputValue(item.label)}
+              onClick={() => onClickHandler(item)}
             >
               {item.label}
             </Listbox.Item>
