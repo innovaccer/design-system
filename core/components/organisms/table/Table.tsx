@@ -565,6 +565,7 @@ export class Table extends React.Component<TableProps, TableState> {
               const data = res.data;
               const schema = this.state.schema.length ? this.state.schema : res.schema;
 
+              console.log('this.selectedRowsRef?.current?', this.selectedRowsRef.current);
               const selectedData = data.map((item: RowData) => {
                 if (item[uniqueColumnName] && this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) {
                   item._selected = true;
@@ -646,13 +647,18 @@ export class Table extends React.Component<TableProps, TableState> {
         selectAll: getSelectAll(newData, this.props.selectDisabledRow),
       });
 
+      // debugger;
       const rowData = data[rowIndexes];
 
-      let newRowData = [rowData[uniqueColumnName]];
+      let selectedItemList = [rowData[uniqueColumnName]];
       if (this.selectedRowsRef.current) {
-        newRowData = [rowData[uniqueColumnName], ...this.selectedRowsRef.current];
+        selectedItemList = [rowData[uniqueColumnName], ...this.selectedRowsRef.current];
       }
-      this.selectedRowsRef.current = newRowData;
+
+      if (!selected) {
+        selectedItemList = selectedItemList.filter((item) => item !== rowData[uniqueColumnName]);
+      }
+      this.selectedRowsRef.current = selectedItemList;
     }
 
     if (onSelect) {
