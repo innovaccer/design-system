@@ -19,6 +19,7 @@ export interface ComboboxProps extends BaseProps {
 
 interface ComboboxTriggerProps {
   inputValue?: string;
+  // onInputChange?: React.Dispatch<React.SetStateAction<string>> | ((e: React.ChangeEvent<HTMLInputElement>) => void);
   onInputChange?: any;
   chipInputValue?: string[];
 }
@@ -42,10 +43,10 @@ const ComboboxTrigger = (props: ComboboxTriggerProps & ComboboxProps) => {
 export const Combobox = (props: ComboboxProps) => {
   const { renderListOptions } = props;
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
-  const [inputValue, setInputValue] = React.useState('');
-  // const [showPopover, setShowPopover] = React.useState(false);
+  const [inputValue, setInputValue] = React.useState();
   const [open, setOpen] = React.useState(false);
   const [isOptionSelected, setIsOptionSelected] = React.useState(false);
+  // const [showPopover, setShowPopover] = React.useState(false);
 
   const triggerRef = React.createRef<HTMLDivElement>();
 
@@ -83,7 +84,7 @@ export const Combobox = (props: ComboboxProps) => {
         // open={showPopover}
         triggerClass="w-100"
         customStyle={popoverStyle}
-        className="Combobox-wrapper"
+        // className="Combobox-wrapper"
         trigger={
           <ComboboxTrigger
             inputValue={inputValue}

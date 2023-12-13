@@ -15,7 +15,7 @@ export const uncontrolled = () => {
 
   const renderListOptions = (inputValue, setInputValue, setIsOptionSelected) => {
     const filterList = medicineList.filter((medicine) =>
-      medicine.label.toLowerCase().includes(inputValue.toLowerCase())
+      medicine.label.toLowerCase().includes(inputValue?.toLowerCase())
     );
 
     action('inputValue in renderListOptions-> ', inputValue, 'filterList', filterList)();
@@ -65,7 +65,7 @@ const customCode = `() => {
 
   const renderListOptions = (inputValue, setInputValue) => {
     const filterList = medicineList.filter((medicine) =>
-      medicine.label.toLowerCase().includes(inputValue.toLowerCase())
+      medicine.label.toLowerCase().includes(inputValue?.toLowerCase())
     );
 
     return (

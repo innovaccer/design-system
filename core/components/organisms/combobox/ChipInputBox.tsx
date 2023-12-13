@@ -13,5 +13,10 @@ export const ChipInputBox = (props: ChipInputProps) => {
   // };
 
   // return <Input value={value} {...props} onChange={onChangeHandler} />;
-  return <ChipInput {...props} value={value} />;
+  return (
+    <ChipInput
+      {...props}
+      // value={value}
+    />
+  );
 };
