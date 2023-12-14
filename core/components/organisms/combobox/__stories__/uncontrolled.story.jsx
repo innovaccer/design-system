@@ -4,6 +4,8 @@ import { action } from '@/utils/action';
 
 // CSF format story
 export const uncontrolled = () => {
+  const { inputValue, setInputValue, setIsOptionSelected, openPopover } = Combobox.useSingleSelect();
+
   const medicineList = [
     { label: 'Acetaminophen', value: 'Acetaminophen' },
     { label: 'Ibuprofen', value: 'Ibuprofen' },
@@ -13,7 +15,7 @@ export const uncontrolled = () => {
     { label: 'Vancomycin', value: 'Vancomycin' },
   ];
 
-  const renderListOptions = (inputValue, setInputValue, setIsOptionSelected) => {
+  const renderListOptions = () => {
     const filterList = medicineList.filter((medicine) =>
       medicine.label.toLowerCase().includes(inputValue?.toLowerCase())
     );
@@ -26,26 +28,35 @@ export const uncontrolled = () => {
     };
 
     return (
-      <Listbox showDivider={false} type="option">
-        {filterList.map((item, key) => {
-          return (
-            <Listbox.Item
-              key={key}
-              inputValue={inputValue}
-              onKeyDown={() => setInputValue(item.label)}
-              onClick={() => onClickHandler(item)}
-            >
-              {item.label}
-            </Listbox.Item>
-          );
-        })}
-      </Listbox>
+      <>
+        {filterList.length > 0 ? (
+          <Listbox showDivider={false} type="option">
+            {filterList.map((item, key) => {
+              return (
+                <Listbox.Item
+                  key={key}
+                  inputValue={inputValue}
+                  onKeyDown={() => setInputValue(item.label)}
+                  onClick={() => onClickHandler(item)}
+                >
+                  {item.label}
+                </Listbox.Item>
+              );
+            })}
+          </Listbox>
+        ) : (
+          'no option found'
+        )}
+      </>
     );
   };
 
   return (
     <Combobox
       renderListOptions={renderListOptions}
+      openPopover={openPopover}
+      inputValue={inputValue}
+      setInputValue={setInputValue}
       inputOptions={{
         icon: 'places',
       }}

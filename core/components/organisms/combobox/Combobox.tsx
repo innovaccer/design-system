@@ -4,6 +4,7 @@ import { BaseProps } from '@/utils/types';
 import { PopoverProps, InputProps, ChipInputProps } from '@/index.type';
 import { InputBox } from './InputBox';
 import { ChipInputBox } from './ChipInputBox';
+import { useSingleSelect } from './hooks/useSingleSelect';
 
 export interface ComboboxProps extends BaseProps {
   multiSelect?: boolean;
@@ -11,7 +12,9 @@ export interface ComboboxProps extends BaseProps {
   inputOptions?: InputProps;
   chipInputOptions: ChipInputProps;
   // chipInputValue?: string[];
-  // inputValue?: string;
+  inputValue?: string;
+  openPopover?: boolean;
+  setInputValue?: any;
   // onInputChange?: React.Dispatch<React.SetStateAction<string>>;
   // onInputChange?: any;
   // children: React.ReactNode;
@@ -40,14 +43,18 @@ const ComboboxTrigger = (props: ComboboxTriggerProps & ComboboxProps) => {
   return <InputBox value={inputValue} {...inputOptions} onChange={onInputChange} />;
 };
 
-export const Combobox = (props: ComboboxProps) => {
-  const { renderListOptions } = props;
-  const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
-  const [inputValue, setInputValue] = React.useState();
-  const [open, setOpen] = React.useState(false);
-  const [isOptionSelected, setIsOptionSelected] = React.useState(false);
-  // const [showPopover, setShowPopover] = React.useState(false);
+// const { inputValue, setInputValue, openPopover, setOpenPopover, isOptionSelected, setIsOptionSelected } =
+//   useSingleSelect();
 
+export const Combobox = (props: ComboboxProps) => {
+  const { renderListOptions, openPopover, inputValue, setInputValue } = props;
+  const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
+  // const [inputValue, setInputValue] = React.useState();
+  // const [open, setOpen] = React.useState(false);
+  // const [isOptionSelected, setIsOptionSelected] = React.useState(false);
+  // const [showPopover, setShowPopover] = React.useState(false);
+  // const { inputValue, setInputValue, openPopover, setOpenPopover, isOptionSelected, setIsOptionSelected } =
+  //   useSingleSelect();
   const triggerRef = React.createRef<HTMLDivElement>();
 
   React.useEffect(() => {
@@ -62,25 +69,27 @@ export const Combobox = (props: ComboboxProps) => {
     setPopoverStyle(popperWrapperStyle);
   }, []);
 
-  React.useEffect(() => {
-    console.log('inputValue inside useEffect', inputValue);
-    if (inputValue === '') {
-      setOpen(true);
-    } else if (isOptionSelected) {
-      setOpen(false);
-      setIsOptionSelected(false);
-    }
-  }, [inputValue]);
+  // React.useEffect(() => {
+  //   console.log('inputValue inside useEffect', inputValue);
+  //   if (inputValue === '') {
+  //     setOpen(true);
+  //   } else if (isOptionSelected) {
+  //     setOpen(false);
+  //     setIsOptionSelected(false);
+  //   }
+  // }, [inputValue]);
 
   // React.useEffect(() => {
   //   setShowPopover(true);
   // }, [inputValue]);
 
+  console.log('dddinputValue in combo', inputValue);
+
   return (
     <div ref={triggerRef} className="w-100 position-relative">
       <Popover
         on="click"
-        open={open}
+        open={openPopover}
         // open={showPopover}
         triggerClass="w-100"
         customStyle={popoverStyle}
@@ -94,10 +103,21 @@ export const Combobox = (props: ComboboxProps) => {
           />
         }
       >
-        {renderListOptions(inputValue, setInputValue, setIsOptionSelected)}
+        {/* {renderListOptions(inputValue, setInputValue, setIsOptionSelected)} */}
+        {renderListOptions()}
       </Popover>
     </div>
   );
 };
+
+Combobox.useSingleSelect = useSingleSelect;
+// Combobox.useSingleSelect = {
+//   inputValue,
+//   setInputValue,
+//   openPopover,
+//   setOpenPopover,
+//   isOptionSelected,
+//   setIsOptionSelected,
+// };
 
 export default Combobox;
