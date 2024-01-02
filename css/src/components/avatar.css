@@ -86,3 +86,7 @@
 .Avatar-content--accent4 {
   color: var(--accent4-darker) !important;
 }
+
+.Avatar-image {
+  border-radius: var(--spacing-m);
+}

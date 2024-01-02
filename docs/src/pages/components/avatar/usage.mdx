@@ -9,43 +9,67 @@ keywords: ['Profile', 'Avatarpair', 'Groupavatar', 'Avatargroup']
 An avatar consists of a display picture of the entity that it represents i.e. a user. In case a display picture is not available, it consists of a colored background and the initials of the name that it represents. And if somehow the initials can't be fetched, a fallback glyph is used.
 
 ### Appearances
+
 Avatar comes in 9 appearances -
-<Preview name='indicators-avatar-variants-appearance--appearance' />
+
+<Preview name="indicators-avatar-variants-appearance--appearance" />
 
 ### Sizes
+
 Avatar comes in **2 sizes** - small and regular.
-<Preview name='indicators-avatar-variants-size--size' />
+
+<Preview name="indicators-avatar-variants-size--size" />
+
+### Variants
+
+#### With Image
+
+![With Image](./images/with-image.png)
+
+#### With Icon
+
+![With Icon](./images/with-icon.png)
+
+#### With Initials
+
+![With Initials](./images/with-initials.png)
 
 ### Structure
-<br/>
-<br/>
+
+<br />
+<br />
 
 ![Structure of avatar](./images/avatar-structure.png)
-<br/>
+
+<br />
 
 <table style="width: 100%">
- <tbody>
-   <tr>
-     <th style="width:50%; text-align: left;">Property</th>
-     <th style="width:50%; text-align: left;">Value(s)</th>
-   </tr>
-   <tr style="vertical-align: top">
-     <td>Size</td>
-     <td>
-         <ul>
-             <li>24x24 px <em>(Small)</em></li>
-             <li>32x32 px <em>(Regular)</em></li>
-         </ul>
-     </td>
-   </tr>
- </tbody>
+  <tbody>
+    <tr>
+      <th style="width:50%; text-align: left;">Property</th>
+      <th style="width:50%; text-align: left;">Value(s)</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Size</td>
+      <td>
+        <ul>
+          <li>
+            24x24 px <em>(Small)</em>
+          </li>
+          <li>
+            32x32 px <em>(Regular)</em>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
 </table>
-<br/>
+<br />
 
 ### Configurations
 
-<br/>
-<br/>
+<br />
+<br />
 
 <table style="width: 100%">
   <tbody>
@@ -57,29 +81,39 @@ Avatar comes in **2 sizes** - small and regular.
     <tr style="vertical-align: top">
       <td>Appearance</td>
       <td>
-          <ul>
-              <li>Jal</li>
-              <li>Stone</li>
-              <li>Neem</li>
-              <li>Haldi</li>
-              <li>Mirch</li>
-              <li>Tawak</li>
-              <li>Nimbu</li>
-              <li>Neel</li>
-              <li>Jamun</li>
-          </ul>
+        <ul>
+          <li>Jal</li>
+          <li>Stone</li>
+          <li>Neem</li>
+          <li>Haldi</li>
+          <li>Mirch</li>
+          <li>Tawak</li>
+          <li>Nimbu</li>
+          <li>Neel</li>
+          <li>Jamun</li>
+        </ul>
       </td>
       <td>-</td>
     </tr>
     <tr style="vertical-align: top">
       <td>Size</td>
       <td>
-          <ul>
-              <li>Small</li>
-              <li>Regular</li>
-          </ul>
+        <ul>
+          <li>Small</li>
+          <li>Regular</li>
+        </ul>
       </td>
       <td>Regular</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Image</td>
+      <td>Image sub-component</td>
+      <td>-</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Icon</td>
+      <td>Icon sub-component</td>
+      <td>-</td>
     </tr>
     <tr style="vertical-align: top">
       <td>First name</td>
@@ -103,47 +137,66 @@ Avatar comes in **2 sizes** - small and regular.
     </tr>
   </tbody>
 </table>
-<br/>
-
+<br />
 
 ### Usage
-<br/>
+
+<br />
 
 #### Color assignment
+
 The background color of an avatar should be generated dynamically in such a way that at the time of its creation a random color (from the available options) is assigned. Once assigned, the color should stay the same as long as that particular avatar is in use.
 
 For example, an avatar generated for a user - Franklin Clinton, can look like following and it should look the same wherever it is used.
 
 ![Color assignment](./images/avatar-1.png)
+
 <Caption>Color assignment</Caption>
-<br/>
+<br />
 
 #### Displaying Name
+
 Since an avatar can only show an image or the initials, there should be an option to show the full name of the entity. This is achieved by **hovering** over on the avatar to display a tooltip containing the full name.
 
 ![Hovering on an avatar](./images/avatar-2.png)
+
 <Caption>Hovering on an avatar</Caption>
-<br/>
+<br />
+
+#### Fallback hierarchy
+
+This is the fallback order defined for avatars:
+
+![With Image](./images/fallback-hierarchy.png)
+<Caption>Fallback hierarchy</Caption>
 
 #### Number of avatars
+
 Avatars can be used individually or as a group if required. For example - if an activity is being performed by 4 users, an avatar group should be used to represent them.
 
 To be specific, an avatar can be used in 3 ways as -
+
 ##### Single entity
 
 ![Single entity](./images/avatar-1.png)
+
 <Caption>Single avatar</Caption>
 
 ##### Two entities
+
 ![Two avatars](./images/avatar-3.png)
+
 <Caption>Two avatars</Caption>
 
 ##### More than 2 entities
+
 ![More than 2 entities](./images/avatar-4.png)
+
 <Caption>More than 2 avatars</Caption>
 
 In order to show the additional entities that are not visible upfront, a popover having the list of full names of those additional entities is shown on hover.
 
 ![Showing list of names in an avatar group](./images/avatar-5.png)
+
 <Caption>Showing list of names in an avatar group</Caption>
-<br/>
+<br />
