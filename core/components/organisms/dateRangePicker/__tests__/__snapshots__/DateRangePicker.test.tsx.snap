@@ -38509,22 +38509,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--regular color-inverse Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2023
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
+                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
@@ -40017,22 +40017,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--small color-inverse Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2023
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
+                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
@@ -41525,22 +41525,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--regular color-inverse Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2023
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--large"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--large Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--regular color-inverse Calendar-text"
+                class="Text Text--regular color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
@@ -45991,22 +45991,22 @@ exports[`DateRangePicker component
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
+                class="Text Text--small color-inverse Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2023
               </span>
             </div>
             <div
-              class="Calendar-value Calendar-yearValue Calendar-yearValue--small"
+              class="Calendar-value Calendar-yearValue Calendar-yearValue--small Calendar-value--currDateMonthYear"
               data-test="DesignSystem-Calendar--yearValue"
             >
               <span
-                class="Text Text--small color-inverse Calendar-text"
+                class="Text Text--small color-primary Calendar-value--currDate Calendar-text"
                 data-test="DesignSystem-Text"
               >
                 2024
