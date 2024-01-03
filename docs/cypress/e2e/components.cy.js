@@ -44,7 +44,7 @@ describe('Cypress Test of component page', () => {
     });
   });
 
-  it('check if tabs exsits and they are loading', () => {
+  it('check if tabs exists and they are loading', () => {
     navLink.slice(1, 10).forEach((page) => {
       cy.visit(page);
       cy.tabsVisit();
@@ -82,7 +82,7 @@ describe('Cypress Test of component page', () => {
     });
   });
 
-  it('check if tabs exsits and they are loading', () => {
+  it('check if tabs exists and they are loading', () => {
     navLink.slice(10, 20).forEach((page) => {
       cy.visit(page);
       cy.tabsVisit();
@@ -120,7 +120,7 @@ describe('Cypress Test of component page', () => {
     });
   });
 
-  it('check if tabs exsits and they are loading', () => {
+  it('check if tabs exists and they are loading', () => {
     navLink.slice(20, 30).forEach((page) => {
       cy.visit(page);
       cy.tabsVisit();
@@ -156,7 +156,7 @@ describe('Cypress Test of component page', () => {
     });
   });
 
-  it('check if tabs exsits and they are loading', () => {
+  it('check if tabs exists and they are loading', () => {
     navLink.slice(30).forEach((page) => {
       cy.visit(page);
       cy.tabsVisit();
