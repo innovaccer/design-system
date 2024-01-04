@@ -354,6 +354,7 @@ export const docPage = () => {
     imports,
     a11yProps,
     propDescription,
+    sandboxTitle,
   } = sp.docs.docPage || {};
   const { component: { displayName = '' } = {} } = story;
   const pageClassnames = classNames({
@@ -401,6 +402,19 @@ export const docPage = () => {
           <ArgsTable {...propsAttr} />
           {propDescription && <Text weight="strong">{propDescription}</Text>}
         </>
+      )}
+
+      {!!sandboxTitle && (
+        <div className="border-right" style={{ borderRadius: '4px' }}>
+          <iframe
+            src={`https://codesandbox.io/embed/${sandboxTitle}?autoresize=1&fontsize=14&hidenavigation=1&theme=dark&view=preview`}
+            className="w-100 vh-100 overflow-hidden"
+            style={{ border: '4px', borderRadius: '4px' }}
+            title={sandboxTitle}
+            allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+            sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+          />
+        </div>
       )}
     </div>
   );

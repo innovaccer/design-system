@@ -32,13 +32,23 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    */
   tooltip: string;
   /**
+   * Render tooltip conditionally
+   * @default true
+   */
+  showTooltip?: boolean;
+  /**
    * Trigger for `Tooltip`
    */
   children: PopoverProps['trigger'];
 }
 
 export const Tooltip = (props: TooltipProps) => {
-  const { children, tooltip, ...rest } = props;
+  const { children, tooltip, showTooltip, ...rest } = props;
+
+  if (!showTooltip) {
+    // If showTooltip is false skip the Popover and return the children directly
+    return children;
+  }
 
   const tooltipWrapper = (
     <div className="Tooltip">
@@ -71,6 +81,7 @@ export const Tooltip = (props: TooltipProps) => {
 // }, propsList);
 Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
   hoverable: false,
+  showTooltip: true,
 });
 
 export default Tooltip;

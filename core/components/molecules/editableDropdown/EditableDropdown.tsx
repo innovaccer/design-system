@@ -74,7 +74,6 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
   const onClose = (selected: any) => {
     setEditing(false);
-    setShowComponent(false);
     if (onDropdownClose) onDropdownClose(selected);
   };
 

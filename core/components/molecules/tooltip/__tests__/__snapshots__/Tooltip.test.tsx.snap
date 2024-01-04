@@ -199,3 +199,21 @@ exports[`Tooltip component
   </div>
 </body>
 `;
+
+exports[`Tooltip component should not render tooltip when showTooltip is false 1`] = `
+<body>
+  <div>
+    <button
+      class="Button Button--regular Button--basic Button--iconAlign-left"
+      data-test="DesignSystem-Button"
+      tabindex="0"
+    >
+      <span
+        class="Button-text"
+      >
+        Button
+      </span>
+    </button>
+  </div>
+</body>
+`;

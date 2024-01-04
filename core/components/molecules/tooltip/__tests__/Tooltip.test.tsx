@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Tooltip, Button } from '@/index';
 import { TooltipProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -28,4 +28,17 @@ describe('Tooltip component', () => {
   };
 
   testHelper(mapper, testFunc);
+
+  it('should not render tooltip when showTooltip is false', () => {
+    const { baseElement, getByRole, queryByText } = render(
+      <Tooltip showTooltip={false} tooltip="A tooltip">
+        <Button>Button</Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipText = queryByText('A tooltip');
+    expect(tooltipText).not.toBeInTheDocument();
+    expect(baseElement).toMatchSnapshot();
+  });
 });
