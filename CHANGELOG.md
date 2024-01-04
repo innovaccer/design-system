@@ -1,3 +1,44 @@
+## 2.26.0 (2024-01-04)
+
+### Highlights
+
+- feat(tooltip): add support for conditional rendering to show tooltip (3737d2ac)
+- feat(table): embed codesandbox for table filter pattern in storybook (210bb99b)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(tooltip): add support for conditional rendering to show tooltip (3737d2ac)
+- feat(table): embed codesandbox for table filter pattern in storybook (210bb99b)
+
+### Fixes
+
+- fix(popperwrapper): update popper close animation (90d668b6)
+- fix(editableDropdown): fix rendering issue on close without selection (0a9e7cde)
+- fix(docs): update cypress test cases (1b9b5dcc)
+
+### Improvements
+
+- test(dateRangePicker): update the snapshots for dateRangePicker (84aa4a2e)
+
+### Documentation
+
+- docs(docs): add status for data visualizations page (47df871d)
+- docs(docs): add table filter documentation in patterns (bd17c539)
+
+---
+
 ## 2.25.1 (2023-11-20)
 
 ### Highlights
