@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Avatar from '../Avatar';
+import { Avatar } from '@/index';
 
 // CSF format story
 export const all = () => {
