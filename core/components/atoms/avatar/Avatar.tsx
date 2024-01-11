@@ -4,6 +4,9 @@ import { Text, Tooltip, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { TooltipProps } from '@/index.type';
 import { AccentAppearance, AvatarSize } from '@/common.type';
+import AvatarIcon from './avatarIcon';
+import AvatarImage from './avatarImage';
+import AvatarProvider from './AvatarProvider';
 
 export interface AvatarProps extends BaseProps {
   /**
@@ -13,7 +16,7 @@ export interface AvatarProps extends BaseProps {
   /**
    * **Only first 2 characters are rendered (SOON TO BE DEPRECATED)**
    */
-  children?: string;
+  children?: string | React.ReactNode;
   /**
    * First Name
    */
@@ -37,25 +40,25 @@ export interface AvatarProps extends BaseProps {
 }
 
 const initialsLength = 2;
+const DefaultAppearance = 'secondary';
+const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
 
 export const Avatar = (props: AvatarProps) => {
   const { withTooltip, tooltipPosition, size, children, firstName, lastName, className, appearance } = props;
 
   const baseProps = extractBaseProps(props);
 
-  const initials = children
-    ? children.trim().slice(0, initialsLength)
-    : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
+  const initials =
+    children && typeof children === 'string'
+      ? children.trim().slice(0, initialsLength)
+      : `${firstName ? firstName.trim()[0] : ''}${lastName ? lastName.trim()[0] : ''}`;
 
-  const tooltip = children || `${firstName || ''} ${lastName || ''}` || '';
-  const DefaultAppearance = 'secondary';
-
-  const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
+  const tooltip = children && typeof children === 'string' ? children : `${firstName || ''} ${lastName || ''}` || '';
 
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 
-  const classes = classNames(
+  const AvatarClassNames = classNames(
     {
       Avatar: true,
       [`Avatar--${size}`]: size,
@@ -65,20 +68,37 @@ export const Avatar = (props: AvatarProps) => {
     className
   );
 
-  const ContentClass = classNames({
+  const TextClassNames = classNames({
     [`Avatar-content--${size}`]: size,
     [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
   });
 
-  const IconClass = classNames({
+  const IconClassNames = classNames({
     [`Avatar-content--${AvatarAppearance}`]: AvatarAppearance,
   });
 
+  const sharedProp = {
+    size,
+    firstName,
+    lastName,
+    appearance: AvatarAppearance,
+  };
+
   const renderAvatar = () => {
+    if (children && typeof children !== 'string') {
+      return (
+        <AvatarProvider value={sharedProp}>
+          <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
+            {children}
+          </span>
+        </AvatarProvider>
+      );
+    }
+
     return (
-      <span data-test="DesignSystem-Avatar" {...baseProps} className={classes}>
+      <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
         {initials && (
-          <Text weight="medium" appearance={'white'} className={ContentClass}>
+          <Text weight="medium" appearance={'white'} className={TextClassNames}>
             {initials}
           </Text>
         )}
@@ -86,9 +106,9 @@ export const Avatar = (props: AvatarProps) => {
           <Icon
             data-test="DesignSystem-Avatar--Icon"
             name="person"
-            size={size === 'regular' ? 16 : 12}
+            size={size === 'regular' ? 20 : 16}
             appearance={'white'}
-            className={IconClass}
+            className={IconClassNames}
           />
         )}
       </span>
@@ -111,6 +131,10 @@ export const Avatar = (props: AvatarProps) => {
 };
 
 Avatar.displayName = 'Avatar';
+
+Avatar.Icon = AvatarIcon;
+Avatar.Image = AvatarImage;
+
 Avatar.defaultProps = {
   tooltipPosition: 'bottom',
   withTooltip: true,
