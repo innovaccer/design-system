@@ -433,7 +433,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.23.0",
+        "brandTitle": "Masala Design System v2.29.0",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -875,13 +875,13 @@
           "name": "enum",
           "value": [
             "undefined",
-            "left",
-            "right"
+            "right",
+            "left"
           ]
         },
         "table": {
           "type": {
-            "summary": "undefined | \"left\" | \"right\""
+            "summary": "undefined | \"right\" | \"left\""
           },
           "defaultValue": {
             "summary": "left"
@@ -986,18 +986,25 @@
           "name": "enum",
           "value": [
             "bottom",
-            "top",
             "top-start",
+            "top",
             "top-end",
-            "bottom-start",
+            "right",
             "bottom-end",
+            "bottom-start",
             "left",
-            "right"
+            "auto-start",
+            "auto",
+            "auto-end",
+            "right-start",
+            "right-end",
+            "left-end",
+            "left-start"
           ]
         },
         "table": {
           "type": {
-            "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+            "summary": "\"bottom\" | \"top-start\" | \"top\" | \"top-end\" | \"right\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"auto-start\" | \"auto\" | \"auto-end\" | \"right-start\" | \"right-end\" | \"left-end\" | \"left-start\""
           },
           "defaultValue": {
             "summary": "\"bottom-start\""
@@ -1351,13 +1358,13 @@
         "name": "enum",
         "value": [
           "undefined",
-          "left",
-          "right"
+          "right",
+          "left"
         ]
       },
       "table": {
         "type": {
-          "summary": "undefined | \"left\" | \"right\""
+          "summary": "undefined | \"right\" | \"left\""
         },
         "defaultValue": {
           "summary": "left"
@@ -1462,18 +1469,25 @@
         "name": "enum",
         "value": [
           "bottom",
-          "top",
           "top-start",
+          "top",
           "top-end",
-          "bottom-start",
+          "right",
           "bottom-end",
+          "bottom-start",
           "left",
-          "right"
+          "auto-start",
+          "auto",
+          "auto-end",
+          "right-start",
+          "right-end",
+          "left-end",
+          "left-start"
         ]
       },
       "table": {
         "type": {
-          "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+          "summary": "\"bottom\" | \"top-start\" | \"top\" | \"top-end\" | \"right\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"auto-start\" | \"auto\" | \"auto-end\" | \"right-start\" | \"right-end\" | \"left-end\" | \"left-start\""
         },
         "defaultValue": {
           "summary": "\"bottom-start\""
