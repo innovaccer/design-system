@@ -1,0 +1,127 @@
+.Select-input {
+  min-width: unset !important;
+  background: transparent;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0;
+  height: 36px;
+}
+
+.Select-input,
+.Select-input:focus-within {
+  border: unset !important;
+  box-shadow: none !important;
+}
+
+.Select-input:hover {
+  background-color: #f4f4f4;
+}
+
+.Select-trigger {
+  width: 100%;
+  justify-content: space-between;
+  padding-top: unset;
+  padding-bottom: unset;
+  background: var(--secondary-light);
+  color: var(--text);
+  transition: var(--duration--fast-01) var(--standard-productive-curve);
+}
+
+.Select-trigger:disabled {
+  background: var(--secondary-lighter);
+  color: var(--text-disabled);
+  pointer-events: none;
+}
+
+.Select-trigger:active,
+.Select-trigger--open {
+  background-color: var(--secondary-dark) !important;
+  color: var(--text) !important;
+  animation-timing-function: cubic-bezier(0, 0, 0.38, 0.9);
+  animation-duration: 120ms;
+}
+
+.Select-trigger:hover {
+  background: var(--secondary);
+  color: var(--text);
+}
+
+.Select-trigger:focus {
+  background-color: var(--secondary-light);
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+}
+
+.Select-inputWrapper {
+  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+}
+
+.Select-inputWrapper:focus-within {
+  border-bottom: var(--spacing-xs) solid var(--primary);
+}
+
+.Select-trigger-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Select-trigger--small {
+  height: var(--spacing-xl);
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
+}
+
+.Select-trigger-text {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Select-trigger--regular {
+  height: var(--spacing-3);
+  padding-right: var(--spacing);
+  padding-left: var(--spacing-l);
+}
+
+.Select-trigger--placeholder {
+  color: var(--text-subtle);
+}
+
+.Select-trigger--icon {
+  padding-left: var(--spacing);
+}
+
+.Select-buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--spacing);
+  padding-right: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-top: var(--spacing-xs) solid var(--secondary-light);
+}
+
+.Select-crossButton {
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  color: var(--inverse);
+  border-radius: 50%;
+  padding: var(--spacing-s);
+}
+
+.Select-crossButton:focus-visible,
+.Select-crossButton:focus {
+  outline: var(--spacing-s) solid var(--secondary-shadow);
+}
+
+.Select-crossButton:hover {
+  background-color: var(--secondary);
+}
+
+.Select-crossButton:active {
+  background-color: var(--secondary-dark);
+}

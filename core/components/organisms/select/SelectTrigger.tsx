@@ -1,0 +1,167 @@
+import * as React from 'react';
+import classNames from 'classnames';
+import { Icon, Text } from '@/index';
+import { IconType } from '@/common.type';
+import { SelectContext } from './SelectContext';
+import { handleKeyDownTrigger, computeValue } from './utils';
+import { BaseProps } from '@/utils/types';
+
+export type SelectTriggerSize = 'small' | 'regular';
+
+export interface SelectTriggerProps extends BaseProps {
+  /**
+   * Specifies the size of the Select trigger button.
+   * @default "regular"
+   */
+  triggerSize?: SelectTriggerSize;
+  /**
+   * Specifies the name of the icon to be displayed in the trigger button
+   */
+  icon?: string;
+  /**
+   * Specifies the type of icon to be displayed in the trigger button
+   */
+  iconType?: IconType;
+  /**
+   * Placeholder text to display in the Select trigger when no options are selected
+   * @default "Select"
+   */
+  placeholder?: string;
+  /**
+   * Optional label displayed inline inside the Select trigger button
+   */
+  inlineLabel?: string;
+  /**
+   * Indicates whether the Select trigger is disabled
+   */
+  disabled?: boolean;
+  /**
+   * Determines whether the clear icon should be displayed in the trigger
+   * @default true
+   */
+  withClearButton?: boolean;
+  /**
+   * Handler called when the clear button within the Select trigger is clicked
+   */
+  onClear?: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+  /**
+   * A function used to customize the label displayed when multiple options are selected.
+   *
+   * The function receives the count of selected options as its argument and should return a string
+   * representing the label to be displayed.
+   * */
+  setLabel?: (count: number) => string | undefined;
+}
+
+const SelectTrigger = (props: SelectTriggerProps) => {
+  const {
+    triggerSize,
+    placeholder,
+    withClearButton,
+    icon,
+    disabled,
+    inlineLabel,
+    iconType,
+    onClear,
+    setLabel,
+    ...rest
+  } = props;
+
+  const contextProp = React.useContext(SelectContext);
+
+  const {
+    openPopover,
+    selectValue,
+    setSelectValue,
+    isOptionSelected,
+    setIsOptionSelected,
+    multiSelect,
+    setOpenPopover,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+    triggerRef,
+  } = contextProp;
+
+  const buttonDisabled = disabled ? 'disabled' : 'default';
+  const trimmedPlaceholder = placeholder?.trim();
+  const displayValue = computeValue(multiSelect, selectValue, setLabel);
+  const value = isOptionSelected && displayValue.length > 0 ? displayValue : trimmedPlaceholder;
+  const iconName = openPopover ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+
+  const onClearHandler = (event: React.MouseEvent<HTMLElement>) => {
+    event.stopPropagation();
+    const emptyValue = multiSelect ? [] : { label: '', value: '' };
+    setSelectValue?.(emptyValue);
+    setIsOptionSelected?.(false);
+    if (onClear) {
+      onClear(event);
+    }
+  };
+
+  const buttonClass = classNames({
+    ['Button']: true,
+    ['Select-trigger']: true,
+    [`Select-trigger--${triggerSize}`]: triggerSize,
+    ['Select-trigger--placeholder']: !isOptionSelected,
+    ['Select-trigger--icon']: icon,
+    ['Select-trigger--open']: openPopover,
+  });
+
+  const textClass = classNames({
+    ['Text']: true,
+    ['Text--regular']: true,
+    ['Select-trigger-text']: true,
+  });
+
+  return (
+    <button
+      ref={triggerRef}
+      onKeyDown={(event) => handleKeyDownTrigger(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
+      type="button"
+      className={buttonClass}
+      disabled={disabled}
+      tabIndex={0}
+      aria-haspopup="listbox"
+      aria-expanded={openPopover}
+      aria-label="trigger"
+      data-test="DesignSystem-Select-trigger"
+      {...rest}
+    >
+      {
+        <div className="Select-trigger-wrapper">
+          {inlineLabel && (
+            <Text appearance="subtle" className="mr-4 white-space-nowrap">
+              {`${inlineLabel.trim().charAt(0).toUpperCase()}${inlineLabel.trim().slice(1)}`}
+            </Text>
+          )}
+          {icon && !inlineLabel && (
+            <Icon appearance={buttonDisabled} className="d-flex align-items-center mr-4" name={icon} type={iconType} />
+          )}
+          {value && <span className={textClass}>{value}</span>}
+        </div>
+      }
+      {isOptionSelected && withClearButton && (
+        <Icon
+          appearance={buttonDisabled}
+          onClick={onClearHandler}
+          className="align-items-center mr-2 ml-3 Select-crossButton"
+          size={12}
+          name="close"
+          aria-label="clear selected"
+          type={iconType}
+          data-test="DesignSystem-Select--closeIcon"
+        />
+      )}
+
+      <Icon appearance={buttonDisabled} name={iconName} type={iconType} />
+    </button>
+  );
+};
+
+SelectTrigger.defaultProps = {
+  triggerSize: 'regular',
+  placeholder: 'Select',
+  withClearButton: true,
+};
+
+export default SelectTrigger;
