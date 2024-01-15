@@ -74,12 +74,20 @@
   color: var(--primary-dark);
 }
 
+.Icon--primaryDarker {
+  color: var(--primary-darker);
+}
+
 .Icon--alertLighter {
   color: var(--alert-lighter);
 }
 
 .Icon--alertDark {
   color: var(--alert-dark);
+}
+
+.Icon--alertDarker {
+  color: var(--alert-darker);
 }
 
 .Icon--successLighter {
@@ -90,12 +98,20 @@
   color: var(--success-dark);
 }
 
+.Icon--successDarker {
+  color: var(--success-darker);
+}
+
 .Icon--warningLighter {
   color: var(--warning-lighter);
 }
 
 .Icon--warningDark {
   color: var(--warning-dark);
+}
+
+.Icon--warningDarker {
+  color: var(--warning-darker);
 }
 
 .Icon--accent1 {
@@ -110,6 +126,10 @@
   color: var(--accent1-dark);
 }
 
+.Icon--accent1Darker {
+  color: var(--accent1-darker);
+}
+
 .Icon--accent2 {
   color: var(--accent2);
 }
@@ -120,6 +140,10 @@
 
 .Icon--accent2Dark {
   color: var(--accent2-dark);
+}
+
+.Icon--accent2Darker {
+  color: var(--accent2-darker);
 }
 
 .Icon--accent3 {
@@ -134,6 +158,10 @@
   color: var(--accent3-dark);
 }
 
+.Icon--accent3Darker {
+  color: var(--accent3-darker);
+}
+
 .Icon--accent4 {
   color: var(--accent4);
 }
@@ -144,6 +172,10 @@
 
 .Icon--accent4Dark {
   color: var(--accent4-dark);
+}
+
+.Icon--accent4Darker {
+  color: var(--accent4-darker);
 }
 
 .Icon--inverse {

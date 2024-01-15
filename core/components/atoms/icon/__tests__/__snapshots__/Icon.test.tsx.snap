@@ -37,6 +37,24 @@ exports[`Icon component snapshot
 `;
 
 exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "accent1_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent1_lighter", onClick: "[Function]"
  1`] = `
 <body>
@@ -79,6 +97,24 @@ exports[`Icon component snapshot
   <div>
     <i
       class="material-symbols material-symbols-rounded Icon Icon--accent2Dark"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "accent2_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--accent2Darker"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -145,6 +181,24 @@ exports[`Icon component snapshot
 `;
 
 exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "accent3_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--accent3Darker"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent3_lighter", onClick: "[Function]"
  1`] = `
 <body>
@@ -199,6 +253,24 @@ exports[`Icon component snapshot
 `;
 
 exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "accent4_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--accent4Darker"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "accent4_lighter", onClick: "[Function]"
  1`] = `
 <body>
@@ -241,6 +313,24 @@ exports[`Icon component snapshot
   <div>
     <i
       class="material-symbols material-symbols-rounded Icon Icon--alertDark"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "alert_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--alertDarker"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
@@ -379,6 +469,24 @@ exports[`Icon component snapshot
 `;
 
 exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "primary_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--primaryDarker"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "primary_lighter", onClick: "[Function]"
  1`] = `
 <body>
@@ -451,6 +559,24 @@ exports[`Icon component snapshot
 `;
 
 exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "success_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--successDarker"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
   name: "events", size: 50, appearance: "success_lighter", onClick: "[Function]"
  1`] = `
 <body>
@@ -493,6 +619,24 @@ exports[`Icon component snapshot
   <div>
     <i
       class="material-symbols material-symbols-rounded Icon Icon--warningDark"
+      data-test="DesignSystem-Icon"
+      role="button"
+      style="font-size: 50px; width: 50px;"
+      tabindex="0"
+    >
+      events
+    </i>
+  </div>
+</body>
+`;
+
+exports[`Icon component snapshot 
+  name: "events", size: 50, appearance: "warning_darker", onClick: "[Function]"
+ 1`] = `
+<body>
+  <div>
+    <i
+      class="material-symbols material-symbols-rounded Icon Icon--warningDarker"
       data-test="DesignSystem-Icon"
       role="button"
       style="font-size: 50px; width: 50px;"
