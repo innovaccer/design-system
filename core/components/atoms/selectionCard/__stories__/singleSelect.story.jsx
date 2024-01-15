@@ -47,11 +47,11 @@ export const singleSelect = () => {
       {list.map((cardItem, key) => {
         const { id, iconName, title, description } = cardItem;
         return (
-          <Column key={key} size={6} className="mb-5">
+          <Column key={key} size={6} className="mb-6">
             <SelectionCard
               id={id}
               cardValue={cardItem}
-              className="pl-5 py-6 pr-6 d-flex mr-5"
+              className="pl-5 py-6 pr-6 d-flex mr-6"
               onClick={onClickHandler}
               selected={isCardSelected(id)}
             >
@@ -113,11 +113,11 @@ const customCode = `() => {
       {list.map((cardItem, key) => {
         const { id, iconName, title, description } = cardItem;
         return (
-          <Column key={key} size={6} className="mb-5">
+          <Column key={key} size={6} className="mb-6">
             <SelectionCard
               id={id}
               cardValue={cardItem}
-              className="pl-5 py-6 pr-6 d-flex mr-5"
+              className="pl-5 py-6 pr-6 d-flex mr-6"
               onClick={onClickHandler}
               selected={isCardSelected(id)}
             >

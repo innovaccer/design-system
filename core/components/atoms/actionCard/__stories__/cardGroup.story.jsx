@@ -30,7 +30,7 @@ export const cardGroup = () => {
       {cardList.map((cardItem, key) => {
         const { icon, title, description } = cardItem;
         return (
-          <ActionCard key={key} className="mr-5">
+          <ActionCard key={key} className="mr-6">
             <div className="d-flex flex-column align-items-center justify-content-center p-6 text-align-center">
               <Icon name={icon} size={24} className="mb-4" />
               {title && (
@@ -76,7 +76,7 @@ const customCode = `() => {
       {cardList.map((cardItem, key) => {
         const { icon, title, description } = cardItem;
         return (
-          <ActionCard key={key} className="mr-5">
+          <ActionCard key={key} className="mr-6">
             <div className="d-flex flex-column align-items-center justify-content-center p-6 text-align-center">
               <Icon name={icon} size={24} className="mb-4" />
               {title && <Text weight="strong" className="mb-2">{title}</Text>}
