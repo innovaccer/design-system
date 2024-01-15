@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AvatarGroup } from '../AvatarGroup';
+import { AvatarGroup } from '@/index';
 import { list } from './AvatarList';
 
 export const all = () => {

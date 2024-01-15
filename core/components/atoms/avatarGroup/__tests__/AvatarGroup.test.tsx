@@ -2,6 +2,7 @@ import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import AvatarGroup, { AvatarGroupProps as Props } from '../AvatarGroup';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+import { Avatar } from '@/index';
 
 export const list = [
   {
@@ -30,11 +31,73 @@ export const list = [
   },
 ];
 
+const imgList = [
+  {
+    firstName: 'John',
+    lastName: 'Doe',
+    image: <Avatar.Image src="https://design.innovaccer.com/images/withoutType.png" />,
+  },
+  {
+    firstName: 'Steven',
+    lastName: 'Packton',
+    image: <Avatar.Image src="https://design.innovaccer.com/images/withoutType.png" />,
+  },
+];
+
+const iconList = [
+  {
+    firstName: 'John',
+    lastName: 'Doe',
+    icon: <Avatar.Icon name="places" />,
+  },
+  {
+    firstName: 'Steven',
+    lastName: 'Packton',
+    icon: <Avatar.Icon name="smart_toy" />,
+  },
+];
+
 const size = ['tiny', 'regular'];
 
 describe('AvatarGroup component', () => {
   const mapper = {
     list: valueHelper(list, { required: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = render(<AvatarGroup {...attr} />);
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('AvatarGroup component snapshot', () => {
+  const mapper = {
+    list: valueHelper(imgList, { required: true }),
+    size: valueHelper(size, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = render(<AvatarGroup {...attr} />);
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('AvatarGroup component snapshot', () => {
+  const mapper = {
+    list: valueHelper(iconList, { required: true }),
     size: valueHelper(size, { required: true, iterate: true }),
   };
 
@@ -148,5 +211,23 @@ describe('AvatarGroup Component with prop: popoverOptions', () => {
     fireEvent.click(extraAvatar);
     expect(popperRenderer).toHaveBeenCalledTimes(1);
     expect(popperRenderer).toHaveBeenCalledWith(popperList);
+  });
+});
+
+describe('AvatarGroup Component with prop: image', () => {
+  it('renders avatars with image', () => {
+    const defaultMax = 2;
+
+    const { getAllByTestId } = render(<AvatarGroup list={imgList} />);
+    expect(getAllByTestId('DesignSystem-Image')).toHaveLength(defaultMax);
+  });
+});
+
+describe('AvatarGroup Component with prop: icon', () => {
+  it('renders avatars with icon', () => {
+    const defaultMax = 2;
+
+    const { getAllByTestId } = render(<AvatarGroup list={iconList} />);
+    expect(getAllByTestId('DesignSystem-Icon')).toHaveLength(defaultMax);
   });
 });
