@@ -1,3 +1,44 @@
+## 2.27.0 (2024-01-15)
+
+### Highlights
+
+- feat(textfield): add new textfield component (8d21fe15)
+- feat(avatar): add icon and image support (44c8b5ef)
+- feat(icon): add darker appearance support (b96e06c8
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(textfield): add new textfield component (8d21fe15)
+- feat(avatar): add icon and image support (44c8b5ef)
+- feat(icon): add darker appearance support (b96e06c8)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- test(docs): update cypress test for patterns (54c04204)
+
+### Documentation
+
+- docs(docs): update icon appearances documentation (176fedf6)
+- docs(docs): add input with word count in input documentation (a714d804)
+
+---
+
 ## 2.26.0 (2024-01-04)
 
 ### Highlights
