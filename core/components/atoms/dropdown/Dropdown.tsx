@@ -391,15 +391,29 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
     return options;
   };
 
+  // getSelectedOptions = (options: OptionSchema[], init: boolean) => {
+  //   const { selected = [] } = this.props;
+  //   if (options.length) {
+  //     if (!init) return this.state.tempSelected;
+
+  //     const selectedGroup = _isControlled(this.props.selected) ? selected : options.filter((option) => option.selected);
+  //     return selectedGroup;
+  //   }
+  //   return [];
+  // };
+
   getSelectedOptions = (options: OptionSchema[], init: boolean) => {
     const { selected = [] } = this.props;
+    // debugger;
     if (options.length) {
-      if (!init) return this.state.tempSelected;
+      // if (!init) return this.state.tempSelected;
 
       const selectedGroup = _isControlled(this.props.selected) ? selected : options.filter((option) => option.selected);
+      // const selectedGroup = options.filter((option) => option.selected);
+      // return options;
       return selectedGroup;
     }
-    return [];
+    // return [];
   };
 
   updateOptions = (init: boolean, async?: boolean) => {
@@ -417,13 +431,16 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
             scrollToOptionIndex(res.scrollToIndex, options);
           }, 0);
         }
+        console.log('ddd fetchFunction called searchTerm', searchTerm, 'init', init);
         if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
           updatedAsync = searchTerm === '' ? count > this.staticLimit : updatedAsync;
-
+          // debugger;
           const unSelectedGroup = _showSelectedItems(updatedAsync, searchTerm, withCheckbox)
             ? this.getUnSelectedOptions(options, init)
             : options;
-          const selectedGroup = searchTerm === '' ? this.getSelectedOptions(options, init) : [];
+          // const selectedGroup = searchTerm === '' ? this.getSelectedOptions(options, init) : [];
+          // const selectedGroup = options;
+          const selectedGroup = this.getSelectedOptions(options, init);
           const optionsLength = searchTerm === '' ? count : this.state.optionsLength;
           const disabledOptions = this.getDisabledOptions(unSelectedGroup.slice(0, this.staticLimit));
 
@@ -447,6 +464,7 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
             searchedOptionsLength: count,
             options: unSelectedGroup.slice(0, this.staticLimit),
             tempSelected: init ? selectedGroup : tempSelected,
+            // tempSelected: selectedGroup,
             previousSelected: init ? selectedGroup : previousSelected,
             selected: _showSelectedItems(updatedAsync, searchTerm, withCheckbox) ? selectedGroup : [],
             triggerLabel: this.updateTriggerLabel(init ? selectedGroup : tempSelected),
@@ -667,7 +685,8 @@ export class Dropdown extends React.Component<DropdownProps, DropdownState> {
         searchInit: false,
       },
       () => {
-        this.updateOptions(false);
+        // this.updateOptions(false);
+        this.updateOptions(true);
       }
     );
   });

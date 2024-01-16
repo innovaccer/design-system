@@ -105,42 +105,86 @@ export const all = () => {
 };
 
 const customCode = `() => {
-  const dropdownOptions =  [];
-  for (let i = 1; i <= 100; i++) {
-    dropdownOptions.push({
+  const storyOptions = [];
+  for (let i = 1; i <= 10; i++) {
+    storyOptions.push({
       label: \`Option \${i}\`,
       value: \`Option \${i}\`,
-      group: i >= 1 && i <= 40 ? 'Group 1' : 'Group 2',
-      icon: 'events',
-      subInfo: 'subInfo',
+      icon: "events",
+      subInfo: "subInfo",
     });
   }
 
+  const onChangeHandler = (selectedValues) => {
+    console.log(selectedValues);
+  };
+
+  const options = [];
+  for (let i = 1; i <= 100; i++) {
+    options.push({
+      label: \`Option \${i}\`,
+      value: \`Option\${i}\`,
+    });
+  }
+
+  console.log("<<<<<options", options);
+
   const getSearchedOptions = (options, searchTerm) => {
-    const result = options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()));
+    const items = [];
+    for (let i = 100; i <= 199; i++) {
+      items.push({
+        label:\`Option \${i}\`,
+        value: \`Option\${i}\`,
+      });
+    }
+
+    const result = items.filter((option) =>
+      option.label.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     return result;
   };
 
+  const updateDropdownData = (options) => {
+    console.log("<<<<<< options from api", options);
+    return options.map((item) => {
+      item.selected = true;
+      return item;
+    });
+  };
+
   const fetchOptions = (searchTerm) => {
-    const searchedOptions = searchTerm ? getSearchedOptions(dropdownOptions, searchTerm) : dropdownOptions;
-    return new Promise(resolve => {
-      this.window.setTimeout(() => {
-        resolve({
-          searchTerm,
-          options: searchedOptions,
-          count: searchedOptions.length,
-        });
-      }, 1000);
+    console.log("<<<<<fetching data");
+    const searchedOptions = searchTerm
+      ? getSearchedOptions(options, searchTerm)
+      : options;
+    const data = updateDropdownData(searchedOptions);
+    console.log("<<<<<data", data);
+    return new Promise((resolve) => {
+      resolve({
+        searchTerm,
+        options: data,
+        count: searchedOptions.length,
+      });
     });
   };
 
   return (
-    <div className='w-25 pb-14'>
-      <Dropdown
-        fetchOptions={fetchOptions}
-      />
+    <div className="d-flex">
+      <div className="mr-9 w-25">
+        <Text weight="strong">{"Without Select All (Options <= 50)"}</Text>
+        <br />
+        <br />
+        <Dropdown
+          fetchOptions={fetchOptions}
+          withCheckbox={true}
+          withSearch={true}
+          placeholder={"Select"}
+          onChange={onChangeHandler}
+          searchPlaceholder={"search"}
+        />
+      </div>
     </div>
-  );
+    )
 }`;
 
 export default {
