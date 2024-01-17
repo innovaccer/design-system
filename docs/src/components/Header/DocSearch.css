@@ -51,3 +51,7 @@
 .DocSearch-SearchBar {
   padding: var(--spacing-l);
 }
+
+.DocSearch-Container {
+  z-index: 500;
+}
