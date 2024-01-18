@@ -23,20 +23,13 @@ export const ListBody = (props: ListboxItemProps) => {
     className
   );
 
-  const onKeyDownHandler = (event: React.KeyboardEvent<HTMLLIElement | HTMLDivElement>) => {
-    if (props.onKeyDown) {
-      return props.onKeyDown(event);
-    }
-    return onKeyDown(event);
-  };
-
   return (
     <div
       data-disabled={disabled}
       data-test="DesignSystem-Listbox-ItemWrapper"
       tabIndex={draggable ? -1 : tabIndex || 0}
       className={itemClass}
-      onKeyDown={onKeyDownHandler}
+      onKeyDown={onKeyDown}
       role="tablist"
     >
       {draggable && (

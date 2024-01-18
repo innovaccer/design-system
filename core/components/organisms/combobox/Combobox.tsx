@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { BaseProps } from '@/utils/types';
+import { OptionType } from '@/common.type';
 import { ComboboxList } from './ComboboxList';
 import { Popover, OutsideClick } from '@/index';
 import { ComboboxOption } from './ComboboxOption';
 import { ComboboxTrigger } from './comboboxTrigger';
-import { PopoverProps, InputProps, ChipInputProps } from '@/index.type';
-import { OptionType } from '@/common.type';
 import ComboboxProvider, { ContextProps } from './ComboboxProvider';
+import { PopoverProps, InputProps, ChipInputProps } from '@/index.type';
 
 export interface ComboboxProps extends BaseProps {
   /**
