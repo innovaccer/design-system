@@ -54,6 +54,10 @@ export const Combobox = (props: ComboboxProps) => {
   const [chipInputValue, setChipInputValue] = React.useState<(string | OptionType)[]>([]);
   const [inputText, setInputText] = React.useState('');
 
+  const inputTriggerRef = React.useRef<React.Ref<HTMLInputElement | null>>();
+  // const inputTriggerRef = React.createRef<React.RefObject<HTMLInputElement | null>>();
+  // const inputTriggerRef = React.createRef<React.Ref<HTMLInputElement | null>>();
+
   React.useEffect(() => {
     const popperWidth = triggerRef.current?.clientWidth;
 
@@ -116,6 +120,7 @@ export const Combobox = (props: ComboboxProps) => {
     setFocusedOption,
     inputText,
     setInputText,
+    inputTriggerRef,
   };
 
   return (

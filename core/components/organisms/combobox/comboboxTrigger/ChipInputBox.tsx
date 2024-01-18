@@ -7,9 +7,10 @@ import { ComboboxContext } from '../ComboboxProvider';
 
 export const ChipInputBox = (props: ChipInputProps) => {
   const contextProp = React.useContext(ComboboxContext);
-  const ref = React.useRef<HTMLInputElement>(null);
+  // const ref = React.useRef<HTMLInputElement>(null);
 
-  const { chipInputValue, setChipInputValue, setOpenPopover, setFocusedOption, setInputText } = contextProp;
+  const { chipInputValue, setChipInputValue, setOpenPopover, setFocusedOption, setInputText, inputTriggerRef } =
+    contextProp;
 
   const onChangeHandler = (chips: (string | OptionType)[]) => {
     setFocusedOption && setFocusedOption(undefined);
@@ -25,15 +26,15 @@ export const ChipInputBox = (props: ChipInputProps) => {
   };
 
   return (
-    <div ref={ref}>
-      <ChipInput
-        value={chipInputValue}
-        onChange={onChangeHandler}
-        onInputChange={onUpdateHandler}
-        onKeyDown={onKeyDownHandler}
-        {...props}
-      />
-    </div>
+    // <div ref={inputTriggerRef} className="myclass">
+    <ChipInput
+      value={chipInputValue}
+      onChange={onChangeHandler}
+      onInputChange={onUpdateHandler}
+      onKeyDown={onKeyDownHandler}
+      {...props}
+    />
+    // </div>
   );
 };
 

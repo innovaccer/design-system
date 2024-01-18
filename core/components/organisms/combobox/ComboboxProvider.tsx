@@ -13,6 +13,9 @@ export type ContextProps = {
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>;
   setChipInputValue?: React.Dispatch<React.SetStateAction<(string | OptionType)[]>>;
   setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>;
+  inputTriggerRef?: React.MutableRefObject<React.Ref<HTMLInputElement>>;
+  // inputTriggerRef?: React.RefObject<HTMLInputElement | null>;
+  // inputTriggerRef?: React.Ref<HTMLInputElement>;
 };
 
 export const ComboboxContext = React.createContext<ContextProps>({});

@@ -3,3 +3,9 @@
   /* background-color: var(--secondary-lightest); */
   background-color: red;
 }
+
+.myclass:focus,
+.myclass:focus-visible {
+  background-color: red;
+  outline: 3px solid green;
+}

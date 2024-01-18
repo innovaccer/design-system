@@ -16,7 +16,7 @@ export const ComboboxOption = (props: ComboboxOptionProps & ListboxItemProps) =>
 
   const contextProp = React.useContext(ComboboxContext);
 
-  const { onOptionClick, inputValue, focusedOption, setFocusedOption } = contextProp;
+  const { onOptionClick, inputValue, focusedOption, setFocusedOption, setOpenPopover, inputTriggerRef } = contextProp;
 
   const onClickHandler = () => {
     if (onClick) {
@@ -27,7 +27,7 @@ export const ComboboxOption = (props: ComboboxOptionProps & ListboxItemProps) =>
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, focusedOption, setFocusedOption);
+    handleKeyDown(event, focusedOption, setFocusedOption, setOpenPopover, inputTriggerRef);
   };
 
   return (
@@ -35,6 +35,7 @@ export const ComboboxOption = (props: ComboboxOptionProps & ListboxItemProps) =>
       onClick={onClickHandler}
       selected={option.label === inputValue}
       onKeyDown={onKeyDownHandler}
+      tabIndex={-1}
       {...rest}
     >
       {children}

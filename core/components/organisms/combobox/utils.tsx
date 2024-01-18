@@ -3,7 +3,9 @@ import React from 'react';
 export const handleKeyDown = (
   event: React.KeyboardEvent,
   focusedOption: Element | undefined,
-  setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>
+  setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>,
+  setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
+  inputTriggerRef?: any
 ) => {
   switch (event.key) {
     case 'ArrowUp':
@@ -16,6 +18,11 @@ export const handleKeyDown = (
       break;
     case 'Enter':
       handleEnterKey(focusedOption);
+      break;
+    case 'Escape':
+      setOpenPopover?.(false);
+      console.log('inputTriggerRef.current', inputTriggerRef.current);
+      inputTriggerRef.current.focus();
       break;
     default:
       break;
