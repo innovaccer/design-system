@@ -30,6 +30,10 @@ export interface ComboboxProps extends BaseProps {
    */
   maxHeight?: number;
   /**
+   * Specifies width of Popover
+   */
+  width?: number;
+  /**
    * Callback function to be called when the input text changes
    */
   onInputChange?: (option?: OptionType | string | (string | OptionType)[]) => void;
@@ -40,7 +44,7 @@ export interface ComboboxProps extends BaseProps {
 }
 
 export const Combobox = (props: ComboboxProps) => {
-  const { children, onInputChange, onSelect, multiSelect, className, maxHeight } = props;
+  const { children, onInputChange, onSelect, multiSelect, className, maxHeight, width } = props;
 
   const [popoverStyle, setPopoverStyle] = React.useState<PopoverProps['customStyle']>();
   const [wrapperStyle, setWrapperStyle] = React.useState({});
@@ -62,14 +66,16 @@ export const Combobox = (props: ComboboxProps) => {
     const popperWidth = triggerRef.current?.clientWidth;
 
     const popperWrapperStyle = {
-      width: popperWidth,
-      maxWidth: popperWidth,
+      width: width || popperWidth,
+      // maxWidth: popperWidth,
     };
 
     const wrapperStyle = {
       maxHeight: maxHeight || 'var(--spacing-9)',
       overflowY: 'auto',
     };
+
+    console.log('popperWrapperStyle', popperWrapperStyle, 'popperWidth', popperWidth, 'width', width);
 
     setWrapperStyle(wrapperStyle);
     setPopoverStyle(popperWrapperStyle);

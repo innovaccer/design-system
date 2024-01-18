@@ -67,7 +67,7 @@ export const async = () => {
       {() => {
         if (loading) {
           return (
-            <div className="d-flex align-items-center justify-content-center">
+            <div className="d-flex align-items-center justify-content-center py-6">
               <Spinner />
             </div>
           );
