@@ -80,8 +80,45 @@ export const all = () => {
   );
 };
 
+const customCode = `() => {
+  const [dateRange, setDateRange] = React.useState([]);
+  return (
+    <div className="w-50">
+      <DateRangePicker
+        disabledAfter={new Date("2028-01-19T18:30:00.000Z")}
+        disabledBefore={new Date("2015-01-19T18:30:00.000Z")}
+        startDate={dateRange.length > 0 ? new Date(dateRange[0]) : ""}
+        endDate={dateRange.length > 0 ? new Date(dateRange[1]) : ""}
+        firstDayOfWeek="monday"
+        inputFormat="dd/mm/yyyy"
+        inputOptions={{
+          label: "Date",
+          required: true,
+        }}
+        monthsInView={1}
+        onRangeChange={function (sDate, eDate, sVal, eVal) {
+          console.log('bb', sVal, eVal);
+          sVal && eVal && setDateRange([sVal, eVal]);
+        }}
+        outputFormat="mm-dd-yyyy"
+        singleInput={true}
+        withInput={true}
+      >
+        <React.Fragment key=".0" />
+      </DateRangePicker>
+    </div>
+  );
+}`;
+
 export default {
   title: 'Date and Time/DateRangePicker/All',
   component: DateRangePicker,
   subcomponents: { InputMask },
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+      },
+    },
+  },
 };

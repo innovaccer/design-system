@@ -66,3 +66,13 @@ export const getCustomDates = () => {
     endDate: '',
   };
 };
+
+export const isEqualDates = (date1?: Date, date2?: Date) => {
+  if (date1 && date2) {
+    const time1 = date1.getTime();
+    const time2 = date2.getTime();
+
+    return time1 == time2;
+  }
+  return date1 == date2;
+};

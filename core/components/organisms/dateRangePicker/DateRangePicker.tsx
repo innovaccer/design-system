@@ -16,6 +16,7 @@ import {
   getCustomDates,
   getCurrentYear,
   getCurrentMonth,
+  isEqualDates,
 } from './utilities';
 
 export type InputOptions = Omit<InputMaskProps, 'mask' | 'value' | 'onChange' | 'onBlur' | 'onClick' | 'onClear'> & {
@@ -217,7 +218,10 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       });
     }
 
-    if (prevState.startDate !== this.state.startDate || prevState.endDate !== this.state.endDate) {
+    if (
+      !isEqualDates(prevState.startDate, this.state.startDate) ||
+      !isEqualDates(prevState.endDate, this.state.endDate)
+    ) {
       const { onRangeChange, outputFormat } = this.props;
 
       const { startDate, endDate } = this.state;
@@ -230,6 +234,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       });
       if (onRangeChange) {
         const inRangeError = this.getInRangeError();
+        console.log('bb onRange Change called');
 
         const sValue = translateToString(outputFormat, startDate);
         const eValue = translateToString(outputFormat, endDate);
