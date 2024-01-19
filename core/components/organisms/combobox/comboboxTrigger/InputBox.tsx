@@ -10,8 +10,13 @@ export const InputBox = (props: InputProps) => {
   const { inputValue, setInputValue, setFocusedOption, setOpenPopover, inputTriggerRef } = contextProp;
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
     setFocusedOption && setFocusedOption(undefined);
-    setInputValue && setInputValue(event.target.value);
+    setInputValue && setInputValue(value);
+
+    if (value !== '') {
+      setOpenPopover?.(true);
+    }
   };
 
   const onClearHandler = () => {
@@ -22,6 +27,13 @@ export const InputBox = (props: InputProps) => {
     handleKeyDown(event, setOpenPopover, setFocusedOption);
   };
 
+  // const onFocusHandler = () => {
+  //   console.log('wwwinput focus', inputValue);
+  //   if (inputValue != '') {
+  //     setOpenPopover?.(true);
+  //   }
+  // };
+
   return (
     <Input
       ref={inputTriggerRef}
@@ -29,6 +41,7 @@ export const InputBox = (props: InputProps) => {
       onChange={onChangeHandler}
       onKeyDown={onKeyDownHandler}
       onClear={onClearHandler}
+      // onFocus={onFocusHandler}
       {...props}
     />
   );
