@@ -19,7 +19,7 @@ export const InputBox = (props: InputProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, setOpenPopover);
+    handleKeyDown(event, setOpenPopover, setFocusedOption);
   };
 
   return (

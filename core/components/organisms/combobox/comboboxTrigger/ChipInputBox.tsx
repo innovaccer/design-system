@@ -22,7 +22,7 @@ export const ChipInputBox = (props: ChipInputProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, setOpenPopover);
+    handleKeyDown(event, setOpenPopover, setFocusedOption);
   };
 
   return (

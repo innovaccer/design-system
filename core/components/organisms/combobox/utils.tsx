@@ -30,6 +30,7 @@ export const handleKeyDown = (
 };
 
 const handleEnterKey = (focusedOption: Element | undefined) => {
+  console.log('enter press focusedoption', focusedOption);
   (focusedOption as HTMLElement)?.click();
 };
 
@@ -44,13 +45,14 @@ const navigateOptions = (
   });
 
   if (index === -1) {
-    index = direction === 'up' ? listItems.length - 2 : 1;
+    index = direction === 'up' ? listItems.length - 1 : 0;
   } else {
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
   }
 
   const targetOption = listItems[index];
   console.log('bbb targetOptiontargetOption', targetOption);
+
   (targetOption as HTMLElement).focus();
   setFocusedOption && setFocusedOption(targetOption);
   targetOption.scrollIntoView({ block: 'center' });
