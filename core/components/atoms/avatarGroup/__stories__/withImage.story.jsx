@@ -6,12 +6,12 @@ export const withImage = () => {
     {
       firstName: 'Satyam',
       lastName: 'Yadav',
-      image: <Avatar.Image src="https://avatars.githubusercontent.com/u/3583587?v=4" />,
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
     },
     {
       firstName: 'Anuradha',
       lastName: 'Aggarwal',
-      image: <Avatar.Image src="https://avatars.githubusercontent.com/u/46045493?v=4" />,
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
     },
     {
       firstName: 'Shivaansh',
@@ -27,12 +27,12 @@ const customCode = `() => {
     {
       firstName: 'Satyam',
       lastName: 'Yadav',
-      image: <Avatar.Image src="https://avatars.githubusercontent.com/u/3583587?v=4" />,
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar1.png" />,
     },
     {
       firstName: 'Anuradha',
       lastName: 'Aggarwal',
-      image: <Avatar.Image src="https://avatars.githubusercontent.com/u/46045493?v=4" />,
+      image: <Avatar.Image src="https://design.innovaccer.com/images/avatar2.jpeg" />,
     },
     {
       firstName: 'Shivaansh',
