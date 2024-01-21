@@ -25,7 +25,12 @@ export const ChipInputBox = (props: ChipInputProps) => {
   };
 
   const onUpdateHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
     setInputText && setInputText(event.target.value);
+
+    if (value !== '') {
+      setOpenPopover?.(true);
+    }
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
@@ -39,6 +44,7 @@ export const ChipInputBox = (props: ChipInputProps) => {
       onChange={onChangeHandler}
       onInputChange={onUpdateHandler}
       onKeyDown={onKeyDownHandler}
+      tabIndex={-1}
       {...props}
     />
     // </div>

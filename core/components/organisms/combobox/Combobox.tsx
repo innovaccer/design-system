@@ -107,6 +107,11 @@ export const Combobox = (props: ComboboxProps) => {
     }
   }, [highlightLastItem]);
 
+  React.useEffect(() => {
+    setHighlightFirstItem(false);
+    setHighlightLastItem(false);
+  }, [openPopover]);
+
   const onOptionClick = (option: OptionType) => {
     setIsOptionSelected(true);
     if (!multiSelect) {

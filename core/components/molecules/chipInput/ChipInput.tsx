@@ -80,6 +80,10 @@ export interface ChipInputProps extends BaseProps {
    * Handler to be called when `ChipInput` value changes
    */
   onInputChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  /**
+   * Specifies tab index of `ChipInput`
+   */
+  tabIndex?: number;
 }
 
 export const ChipInput = (props: ChipInputProps) => {
@@ -98,6 +102,7 @@ export const ChipInput = (props: ChipInputProps) => {
     onFocus,
     onKeyDown,
     onInputChange,
+    tabIndex,
   } = props;
 
   const inputRef = React.createRef<HTMLInputElement>();
@@ -225,7 +230,7 @@ export const ChipInput = (props: ChipInputProps) => {
         {...baseProps}
         className={ChipInputClass}
         onClick={onClickHandler}
-        tabIndex={disabled ? -1 : 0}
+        tabIndex={disabled ? -1 : tabIndex || 0}
       >
         <div className="ChipInput-wrapper">
           {chips && chips.length > 0 && chipComponents}
