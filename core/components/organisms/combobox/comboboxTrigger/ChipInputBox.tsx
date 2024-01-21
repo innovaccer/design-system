@@ -17,6 +17,7 @@ export const ChipInputBox = (props: ChipInputProps) => {
     setInputText,
     setHighlightFirstItem,
     setHighlightLastItem,
+    inputTriggerRef,
   } = contextProp;
 
   const onChangeHandler = (chips: (string | OptionType)[]) => {
@@ -38,16 +39,15 @@ export const ChipInputBox = (props: ChipInputProps) => {
   };
 
   return (
-    // <div ref={inputTriggerRef} className="myclass">
     <ChipInput
       value={chipInputValue}
       onChange={onChangeHandler}
       onInputChange={onUpdateHandler}
       onKeyDown={onKeyDownHandler}
       tabIndex={-1}
+      forwardedRef={inputTriggerRef}
       {...props}
     />
-    // </div>
   );
 };
 

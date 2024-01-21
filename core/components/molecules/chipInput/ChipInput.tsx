@@ -84,6 +84,10 @@ export interface ChipInputProps extends BaseProps {
    * Specifies tab index of `ChipInput`
    */
   tabIndex?: number;
+  /**
+   * Pass ref to chip input
+   */
+  forwardedRef?: any;
 }
 
 export const ChipInput = (props: ChipInputProps) => {
@@ -236,7 +240,7 @@ export const ChipInput = (props: ChipInputProps) => {
           {chips && chips.length > 0 && chipComponents}
           <input
             data-test="DesignSystem-ChipInput--Input"
-            ref={inputRef}
+            ref={props.forwardedRef || inputRef}
             className="ChipInput-input"
             autoFocus={autoFocus}
             placeholder={chips && chips.length > 0 ? '' : placeholder}

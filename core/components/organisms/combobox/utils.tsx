@@ -26,11 +26,9 @@ export const handleKeyDown = (
       break;
     case 'Escape':
       setOpenPopover?.(false);
-      console.log('inputTriggerRef.current', inputTriggerRef.current);
+      console.log('gggg inputTriggerRef.current', inputTriggerRef.current);
       inputTriggerRef.current.focus();
       setFocusedOption?.(undefined);
-      setHighlightLastItem(false);
-      setHighlightFirstItem(false);
       break;
     default:
       break;
