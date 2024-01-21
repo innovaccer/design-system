@@ -87,7 +87,7 @@ export interface ChipInputProps extends BaseProps {
   /**
    * Pass ref to chip input
    */
-  forwardedRef?: any;
+  forwardedRef?: React.Ref<HTMLInputElement>;
 }
 
 export const ChipInput = (props: ChipInputProps) => {

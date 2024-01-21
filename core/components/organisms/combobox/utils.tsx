@@ -6,8 +6,8 @@ export const handleKeyDown = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   inputTriggerRef?: any,
-  setHighlightFirstItem?: any,
-  setHighlightLastItem?: any,
+  setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
+  setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>,
   multiSelect?: boolean
 ) => {
   switch (event.key) {
@@ -21,12 +21,11 @@ export const handleKeyDown = (
       break;
     case 'Enter':
       handleEnterKey(focusedOption, multiSelect, inputTriggerRef);
-      setHighlightLastItem(false);
-      setHighlightFirstItem(false);
+      setHighlightLastItem?.(false);
+      setHighlightFirstItem?.(false);
       break;
     case 'Escape':
       setOpenPopover?.(false);
-      console.log('gggg inputTriggerRef.current', inputTriggerRef.current);
       inputTriggerRef.current.focus();
       setFocusedOption?.(undefined);
       break;
@@ -36,7 +35,6 @@ export const handleKeyDown = (
 };
 
 const handleEnterKey = (focusedOption: Element | undefined, multiSelect?: boolean, inputTriggerRef?: any) => {
-  console.log('enter press focusedoption', focusedOption);
   (focusedOption as HTMLElement)?.click();
   if (!multiSelect) {
     inputTriggerRef.current.focus();
@@ -60,7 +58,6 @@ const navigateOptions = (
   }
 
   const targetOption = listItems[index];
-  console.log('bbb targetOptiontargetOption', targetOption);
 
   (targetOption as HTMLElement).focus();
   setFocusedOption && setFocusedOption(targetOption);

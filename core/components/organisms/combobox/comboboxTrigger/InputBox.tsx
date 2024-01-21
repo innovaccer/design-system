@@ -35,13 +35,6 @@ export const InputBox = (props: InputProps) => {
     handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
   };
 
-  // const onFocusHandler = () => {
-  //   console.log('wwwinput focus', inputValue);
-  //   if (inputValue != '') {
-  //     setOpenPopover?.(true);
-  //   }
-  // };
-
   return (
     <Input
       ref={inputTriggerRef}
@@ -49,7 +42,6 @@ export const InputBox = (props: InputProps) => {
       onChange={onChangeHandler}
       onKeyDown={onKeyDownHandler}
       onClear={onClearHandler}
-      // onFocus={onFocusHandler}
       {...props}
     />
   );

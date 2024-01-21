@@ -3,24 +3,17 @@ import React from 'react';
 export const handleKeyDown = (
   event: React.KeyboardEvent,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
-  // setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>,
-  setHighlightFirstItem?: any,
-  setHighlightLastItem?: any
+  setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
+  setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
-  console.log('handle key down e.key', event.key);
-
   switch (event.key) {
     case 'ArrowUp':
       setOpenPopover?.(true);
-      setHighlightLastItem(true);
-      // focusListItem('up', setFocusedOption);
-      // requestAnimationFrame(() => focusListItem('up', setFocusedOption));
+      setHighlightLastItem?.(true);
       break;
     case 'ArrowDown':
       setOpenPopover?.(true);
-      setHighlightFirstItem(true);
-
-      // requestAnimationFrame(() => focusListItem('down', setFocusedOption));
+      setHighlightFirstItem?.(true);
       break;
     case 'Escape':
       setOpenPopover?.(false);
@@ -36,20 +29,12 @@ export const focusListItem = (
 ) => {
   const listItems = document.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   let targetOption;
-  // if (position === 'down') {
-  //   targetOption = listItems[0];
-  //   (listItems[0] as HTMLElement)?.focus();
-  // } else {
-  //   (listItems[listItems.length - 1] as HTMLElement)?.focus();
-  // }
 
   if (position === 'down') {
-    console.log('rrr down', listItems);
     targetOption = listItems[0];
   } else {
     targetOption = listItems[listItems.length - 1];
   }
-  console.log('rrrtargetOption', targetOption);
   (targetOption as HTMLElement)?.focus();
   targetOption?.scrollIntoView({ block: 'center' });
   setFocusedOption && setFocusedOption(targetOption);

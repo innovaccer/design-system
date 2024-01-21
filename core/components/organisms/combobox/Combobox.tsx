@@ -58,12 +58,10 @@ export const Combobox = (props: ComboboxProps) => {
   const [inputValue, setInputValue] = React.useState<string>('');
   const [chipInputValue, setChipInputValue] = React.useState<(string | OptionType)[]>([]);
   const [inputText, setInputText] = React.useState('');
-  const [highlightFirstItem, setHighlightFirstItem] = React.useState(false);
-  const [highlightLastItem, setHighlightLastItem] = React.useState(false);
+  const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
+  const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
 
-  const inputTriggerRef = React.useRef<React.Ref<HTMLInputElement | null>>();
-  // const inputTriggerRef = React.createRef<React.RefObject<HTMLInputElement | null>>();
-  // const inputTriggerRef = React.createRef<React.Ref<HTMLInputElement | null>>();
+  const inputTriggerRef = React.useRef<any>();
 
   React.useEffect(() => {
     const popperWidth = triggerRef.current?.clientWidth;
@@ -77,8 +75,6 @@ export const Combobox = (props: ComboboxProps) => {
       maxHeight: maxHeight || 'var(--spacing-9)',
       overflowY: 'auto',
     };
-
-    console.log('popperWrapperStyle', popperWrapperStyle, 'popperWidth', popperWidth, 'width', width);
 
     setWrapperStyle(wrapperStyle);
     setPopoverStyle(popperWrapperStyle);
@@ -95,14 +91,12 @@ export const Combobox = (props: ComboboxProps) => {
 
   React.useEffect(() => {
     if (highlightFirstItem && openPopover) {
-      console.log('rrr');
       requestAnimationFrame(() => focusListItem('down', setFocusedOption));
     }
   }, [highlightFirstItem]);
 
   React.useEffect(() => {
     if (highlightLastItem && openPopover) {
-      console.log('rrrrr up');
       requestAnimationFrame(() => focusListItem('up', setFocusedOption));
     }
   }, [highlightLastItem]);
@@ -158,15 +152,10 @@ export const Combobox = (props: ComboboxProps) => {
 
   return (
     <ComboboxProvider value={contextProp}>
-      <div
-        ref={triggerRef}
-        // className="w-100 position-relative"
-        className={className}
-      >
+      <div ref={triggerRef} className={className}>
         <OutsideClick onOutsideClick={outsideClickHandler}>
           <Popover
             open={openPopover}
-            // triggerClass="w-100"
             triggerClass="d-block"
             customStyle={popoverStyle}
             onToggle={onToggleHandler}

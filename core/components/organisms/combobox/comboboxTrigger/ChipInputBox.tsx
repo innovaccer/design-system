@@ -7,7 +7,6 @@ import { ComboboxContext } from '../ComboboxProvider';
 
 export const ChipInputBox = (props: ChipInputProps) => {
   const contextProp = React.useContext(ComboboxContext);
-  // const ref = React.useRef<HTMLInputElement>(null);
 
   const {
     chipInputValue,
