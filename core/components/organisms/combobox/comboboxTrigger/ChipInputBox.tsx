@@ -9,8 +9,15 @@ export const ChipInputBox = (props: ChipInputProps) => {
   const contextProp = React.useContext(ComboboxContext);
   // const ref = React.useRef<HTMLInputElement>(null);
 
-  const { chipInputValue, setChipInputValue, setOpenPopover, setFocusedOption, setInputText, inputTriggerRef } =
-    contextProp;
+  const {
+    chipInputValue,
+    setChipInputValue,
+    setOpenPopover,
+    setFocusedOption,
+    setInputText,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+  } = contextProp;
 
   const onChangeHandler = (chips: (string | OptionType)[]) => {
     setFocusedOption && setFocusedOption(undefined);
@@ -22,7 +29,7 @@ export const ChipInputBox = (props: ChipInputProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, setOpenPopover, setFocusedOption);
+    handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
   };
 
   return (

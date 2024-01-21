@@ -21,6 +21,8 @@ export const handleKeyDown = (
       break;
     case 'Enter':
       handleEnterKey(focusedOption, multiSelect, inputTriggerRef);
+      setHighlightLastItem(false);
+      setHighlightFirstItem(false);
       break;
     case 'Escape':
       setOpenPopover?.(false);

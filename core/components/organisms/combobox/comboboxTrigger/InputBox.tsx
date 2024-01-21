@@ -32,7 +32,7 @@ export const InputBox = (props: InputProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, setOpenPopover, setFocusedOption, setHighlightFirstItem, setHighlightLastItem);
+    handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem);
   };
 
   // const onFocusHandler = () => {

@@ -3,7 +3,7 @@ import React from 'react';
 export const handleKeyDown = (
   event: React.KeyboardEvent,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
-  setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>,
+  // setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>,
   setHighlightFirstItem?: any,
   setHighlightLastItem?: any
 ) => {
