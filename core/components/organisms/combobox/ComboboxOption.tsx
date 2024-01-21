@@ -16,7 +16,17 @@ export const ComboboxOption = (props: ComboboxOptionProps & ListboxItemProps) =>
 
   const contextProp = React.useContext(ComboboxContext);
 
-  const { onOptionClick, inputValue, focusedOption, setFocusedOption, setOpenPopover, inputTriggerRef } = contextProp;
+  const {
+    onOptionClick,
+    inputValue,
+    focusedOption,
+    setFocusedOption,
+    setOpenPopover,
+    inputTriggerRef,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+    multiSelect,
+  } = contextProp;
 
   const onClickHandler = () => {
     if (onClick) {
@@ -27,7 +37,16 @@ export const ComboboxOption = (props: ComboboxOptionProps & ListboxItemProps) =>
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, focusedOption, setFocusedOption, setOpenPopover, inputTriggerRef);
+    handleKeyDown(
+      event,
+      focusedOption,
+      setFocusedOption,
+      setOpenPopover,
+      inputTriggerRef,
+      setHighlightFirstItem,
+      setHighlightLastItem,
+      multiSelect
+    );
   };
 
   return (

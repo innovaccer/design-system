@@ -13,7 +13,10 @@ export type ContextProps = {
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>;
   setChipInputValue?: React.Dispatch<React.SetStateAction<(string | OptionType)[]>>;
   setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>;
+  setHighlightFirstItem?: any;
+  setHighlightLastItem?: any;
   inputTriggerRef?: React.MutableRefObject<React.Ref<HTMLInputElement>>;
+  multiSelect?: boolean;
   // inputTriggerRef?: React.RefObject<HTMLInputElement | null>;
   // inputTriggerRef?: React.Ref<HTMLInputElement>;
 };

@@ -7,7 +7,15 @@ import { ComboboxContext } from '../ComboboxProvider';
 export const InputBox = (props: InputProps) => {
   const contextProp = React.useContext(ComboboxContext);
 
-  const { inputValue, setInputValue, setFocusedOption, setOpenPopover, inputTriggerRef } = contextProp;
+  const {
+    inputValue,
+    setInputValue,
+    setFocusedOption,
+    setOpenPopover,
+    inputTriggerRef,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+  } = contextProp;
 
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -24,7 +32,7 @@ export const InputBox = (props: InputProps) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, setOpenPopover, setFocusedOption);
+    handleKeyDown(event, setOpenPopover, setFocusedOption, setHighlightFirstItem, setHighlightLastItem);
   };
 
   // const onFocusHandler = () => {

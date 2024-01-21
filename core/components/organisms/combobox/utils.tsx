@@ -5,7 +5,10 @@ export const handleKeyDown = (
   focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
-  inputTriggerRef?: any
+  inputTriggerRef?: any,
+  setHighlightFirstItem?: any,
+  setHighlightLastItem?: any,
+  multiSelect?: boolean
 ) => {
   switch (event.key) {
     case 'ArrowUp':
@@ -17,21 +20,27 @@ export const handleKeyDown = (
       navigateOptions('down', focusedOption, setFocusedOption);
       break;
     case 'Enter':
-      handleEnterKey(focusedOption);
+      handleEnterKey(focusedOption, multiSelect, inputTriggerRef);
       break;
     case 'Escape':
       setOpenPopover?.(false);
       console.log('inputTriggerRef.current', inputTriggerRef.current);
       inputTriggerRef.current.focus();
+      setFocusedOption?.(undefined);
+      setHighlightLastItem(false);
+      setHighlightFirstItem(false);
       break;
     default:
       break;
   }
 };
 
-const handleEnterKey = (focusedOption: Element | undefined) => {
+const handleEnterKey = (focusedOption: Element | undefined, multiSelect?: boolean, inputTriggerRef?: any) => {
   console.log('enter press focusedoption', focusedOption);
   (focusedOption as HTMLElement)?.click();
+  if (!multiSelect) {
+    inputTriggerRef.current.focus();
+  }
 };
 
 const navigateOptions = (

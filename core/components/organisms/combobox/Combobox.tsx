@@ -7,6 +7,7 @@ import { ComboboxOption } from './ComboboxOption';
 import { ComboboxTrigger } from './comboboxTrigger';
 import ComboboxProvider, { ContextProps } from './ComboboxProvider';
 import { PopoverProps, InputProps, ChipInputProps } from '@/index.type';
+import { focusListItem } from './comboboxTrigger/utils';
 
 export interface ComboboxProps extends BaseProps {
   /**
@@ -57,6 +58,8 @@ export const Combobox = (props: ComboboxProps) => {
   const [inputValue, setInputValue] = React.useState<string>('');
   const [chipInputValue, setChipInputValue] = React.useState<(string | OptionType)[]>([]);
   const [inputText, setInputText] = React.useState('');
+  const [highlightFirstItem, setHighlightFirstItem] = React.useState(false);
+  const [highlightLastItem, setHighlightLastItem] = React.useState(false);
 
   const inputTriggerRef = React.useRef<React.Ref<HTMLInputElement | null>>();
   // const inputTriggerRef = React.createRef<React.RefObject<HTMLInputElement | null>>();
@@ -89,6 +92,20 @@ export const Combobox = (props: ComboboxProps) => {
     const value = multiSelect ? chipInputValue : inputValue;
     onInputChange && !isOptionSelected && onInputChange(value);
   }, [inputValue, chipInputValue]);
+
+  React.useEffect(() => {
+    if (highlightFirstItem && openPopover) {
+      console.log('rrr');
+      requestAnimationFrame(() => focusListItem('down', setFocusedOption));
+    }
+  }, [highlightFirstItem]);
+
+  React.useEffect(() => {
+    if (highlightLastItem && openPopover) {
+      console.log('rrrrr up');
+      requestAnimationFrame(() => focusListItem('up', setFocusedOption));
+    }
+  }, [highlightLastItem]);
 
   const onOptionClick = (option: OptionType) => {
     setIsOptionSelected(true);
@@ -127,6 +144,9 @@ export const Combobox = (props: ComboboxProps) => {
     inputText,
     setInputText,
     inputTriggerRef,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+    multiSelect,
   };
 
   return (
