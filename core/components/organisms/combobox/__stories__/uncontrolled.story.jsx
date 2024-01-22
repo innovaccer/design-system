@@ -21,32 +21,18 @@ export const uncontrolled = () => {
     action('input value', value)();
   };
 
-  const isElementPresent = (list, value) => {
-    let result = false;
-    list.forEach((listItem) => {
-      if (listItem?.label === value) {
-        result = true;
-      }
-    });
-    return result;
-  };
-
   return (
     <Combobox
-      chipInputOptions={{
-        chipOptions: {
-          clearButton: true,
-        },
+      inputOptions={{
+        icon: 'search',
       }}
       onSelect={onSelectHandler}
       onInputChange={onChangeHandler}
-      multiSelect={true}
+      className="w-25"
     >
       {(contextProp) => {
-        const filterList = medicineList.filter(
-          (medicine) =>
-            medicine.label.toLowerCase().includes(contextProp.inputText.toLowerCase()) &&
-            !isElementPresent(contextProp.chipInputValue, medicine.label)
+        const filterList = medicineList.filter((medicine) =>
+          medicine.label.toLowerCase().includes(contextProp?.inputValue?.toLowerCase())
         );
 
         return (
@@ -83,32 +69,18 @@ const customCode = `() => {
     console.log('input value', value);
   };
 
-  const isElementPresent = (list, value) => {
-    let result = false;
-    list.forEach((listItem) => {
-      if (listItem.label === value) {
-        result = true;
-      }
-    });
-    return result;
-  };
-
   return (
     <Combobox
-      chipInputOptions={{
-        chipOptions: {
-          clearButton: true,
-        },
+      inputOptions={{
+        icon: 'search',
       }}
       onSelect={onSelectHandler}
       onInputChange={onChangeHandler}
-      multiSelect={true}
+      className="w-25"
     >
       {(contextProp) => {
-        const filterList = medicineList.filter(
-          (medicine) =>
-            medicine.label.toLowerCase().includes(contextProp.inputText.toLowerCase()) &&
-            !isElementPresent(contextProp.chipInputValue, medicine.label)
+        const filterList = medicineList.filter((medicine) =>
+          medicine.label.toLowerCase().includes(contextProp.inputValue.toLowerCase())
         );
 
         return (
@@ -128,7 +100,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/MultiSelect/Uncontrolled',
+  title: 'Components/Combobox/Uncontrolled',
   component: Combobox,
   parameters: {
     docs: {

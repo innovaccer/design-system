@@ -116,7 +116,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/Single Select/Sizes',
+  title: 'Components/Combobox/Sizes',
   component: Combobox,
   parameters: {
     docs: {

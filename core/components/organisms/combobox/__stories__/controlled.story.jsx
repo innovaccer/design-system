@@ -106,7 +106,7 @@ const customCode = `() => {
 }`;
 
 export default {
-  title: 'Components/Combobox/Single Select/Controlled',
+  title: 'Components/Combobox/Controlled',
   component: Combobox,
   parameters: {
     docs: {
