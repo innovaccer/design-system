@@ -16,7 +16,7 @@ export const withIcon = () => {
   };
 
   return (
-    <Avatar {...options}>
+    <Avatar {...options} shape="square">
       <Avatar.Icon name="smart_toy" />
     </Avatar>
   );

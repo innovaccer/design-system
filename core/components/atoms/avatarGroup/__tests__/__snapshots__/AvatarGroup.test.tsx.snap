@@ -21,14 +21,19 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--regular Avatar--accent1"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
               <span
-                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--regular Avatar--accent1"
+                data-test="DesignSystem-Avatar"
               >
-                JD
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
               </span>
             </span>
           </div>
@@ -43,14 +48,19 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--regular Avatar--alert"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
               <span
-                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--regular Avatar--alert"
+                data-test="DesignSystem-Avatar"
               >
-                SP
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+                  data-test="DesignSystem-Text"
+                >
+                  SP
+                </span>
               </span>
             </span>
           </div>
@@ -94,14 +104,19 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent1"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-              data-test="DesignSystem-Text"
+              class="Avatar Avatar--regular Avatar--accent1"
+              data-test="DesignSystem-Avatar"
             >
-              JD
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
             </span>
           </span>
         </div>
@@ -116,14 +131,19 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--regular Avatar--alert"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
-              data-test="DesignSystem-Text"
+              class="Avatar Avatar--regular Avatar--alert"
+              data-test="DesignSystem-Avatar"
             >
-              SP
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+                data-test="DesignSystem-Text"
+              >
+                SP
+              </span>
             </span>
           </span>
         </div>
@@ -226,14 +246,19 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--accent1"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
               <span
-                class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--tiny Avatar--accent1"
+                data-test="DesignSystem-Avatar"
               >
-                JD
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+                  data-test="DesignSystem-Text"
+                >
+                  JD
+                </span>
               </span>
             </span>
           </div>
@@ -248,14 +273,19 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--alert"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
               <span
-                class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
-                data-test="DesignSystem-Text"
+                class="Avatar Avatar--tiny Avatar--alert"
+                data-test="DesignSystem-Avatar"
               >
-                SP
+                <span
+                  class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
+                  data-test="DesignSystem-Text"
+                >
+                  SP
+                </span>
               </span>
             </span>
           </div>
@@ -299,14 +329,19 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--tiny Avatar--accent1"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
-              data-test="DesignSystem-Text"
+              class="Avatar Avatar--tiny Avatar--accent1"
+              data-test="DesignSystem-Avatar"
             >
-              JD
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+                data-test="DesignSystem-Text"
+              >
+                JD
+              </span>
             </span>
           </span>
         </div>
@@ -321,14 +356,19 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--tiny Avatar--alert"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
             <span
-              class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
-              data-test="DesignSystem-Text"
+              class="Avatar Avatar--tiny Avatar--alert"
+              data-test="DesignSystem-Avatar"
             >
-              SP
+              <span
+                class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--alert"
+                data-test="DesignSystem-Text"
+              >
+                SP
+              </span>
             </span>
           </span>
         </div>
@@ -431,17 +471,22 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--regular Avatar--accent1"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 20px; width: 20px;"
+              <span
+                class="Avatar Avatar--regular Avatar--accent1"
+                data-test="DesignSystem-Avatar"
               >
-                places
-              </i>
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  places
+                </i>
+              </span>
             </span>
           </div>
         </div>
@@ -455,17 +500,22 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--regular Avatar--alert"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--white"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 20px; width: 20px;"
+              <span
+                class="Avatar Avatar--regular Avatar--alert"
+                data-test="DesignSystem-Avatar"
               >
-                smart_toy
-              </i>
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 20px; width: 20px;"
+                >
+                  smart_toy
+                </i>
+              </span>
             </span>
           </div>
         </div>
@@ -487,17 +537,22 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent1"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
-              data-test="DesignSystem-Icon"
-              role="button"
-              style="font-size: 20px; width: 20px;"
+            <span
+              class="Avatar Avatar--regular Avatar--accent1"
+              data-test="DesignSystem-Avatar"
             >
-              places
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 20px; width: 20px;"
+              >
+                places
+              </i>
+            </span>
           </span>
         </div>
       </div>
@@ -511,17 +566,22 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--regular Avatar--alert"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              role="button"
-              style="font-size: 20px; width: 20px;"
+            <span
+              class="Avatar Avatar--regular Avatar--alert"
+              data-test="DesignSystem-Avatar"
             >
-              smart_toy
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--white"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 20px; width: 20px;"
+              >
+                smart_toy
+              </i>
+            </span>
           </span>
         </div>
       </div>
@@ -602,17 +662,22 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--accent1"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
+              <span
+                class="Avatar Avatar--tiny Avatar--accent1"
+                data-test="DesignSystem-Avatar"
               >
-                places
-              </i>
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  places
+                </i>
+              </span>
             </span>
           </div>
         </div>
@@ -626,17 +691,22 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--alert"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <i
-                class="material-symbols material-symbols-rounded Icon Icon--white"
-                data-test="DesignSystem-Icon"
-                role="button"
-                style="font-size: 16px; width: 16px;"
+              <span
+                class="Avatar Avatar--tiny Avatar--alert"
+                data-test="DesignSystem-Avatar"
               >
-                smart_toy
-              </i>
+                <i
+                  class="material-symbols material-symbols-rounded Icon Icon--white"
+                  data-test="DesignSystem-Icon"
+                  role="button"
+                  style="font-size: 16px; width: 16px;"
+                >
+                  smart_toy
+                </i>
+              </span>
             </span>
           </div>
         </div>
@@ -658,17 +728,22 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--tiny Avatar--accent1"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
-              data-test="DesignSystem-Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <span
+              class="Avatar Avatar--tiny Avatar--accent1"
+              data-test="DesignSystem-Avatar"
             >
-              places
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                places
+              </i>
+            </span>
           </span>
         </div>
       </div>
@@ -682,17 +757,22 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--tiny Avatar--alert"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <i
-              class="material-symbols material-symbols-rounded Icon Icon--white"
-              data-test="DesignSystem-Icon"
-              role="button"
-              style="font-size: 16px; width: 16px;"
+            <span
+              class="Avatar Avatar--tiny Avatar--alert"
+              data-test="DesignSystem-Avatar"
             >
-              smart_toy
-            </i>
+              <i
+                class="material-symbols material-symbols-rounded Icon Icon--white"
+                data-test="DesignSystem-Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                smart_toy
+              </i>
+            </span>
           </span>
         </div>
       </div>
@@ -773,16 +853,21 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--regular Avatar--accent1"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <img
-                alt="John"
-                data-test="DesignSystem-Image"
-                height="32"
-                src="https://design.innovaccer.com/images/withoutType.png"
-                width="32"
-              />
+              <span
+                class="Avatar Avatar--regular Avatar--accent1"
+                data-test="DesignSystem-Avatar"
+              >
+                <img
+                  alt="John"
+                  data-test="DesignSystem-Image"
+                  height="32"
+                  src="https://design.innovaccer.com/images/withoutType.png"
+                  width="32"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -796,16 +881,21 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--regular Avatar--alert"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <img
-                alt="Steven"
-                data-test="DesignSystem-Image"
-                height="32"
-                src="https://design.innovaccer.com/images/withoutType.png"
-                width="32"
-              />
+              <span
+                class="Avatar Avatar--regular Avatar--alert"
+                data-test="DesignSystem-Avatar"
+              >
+                <img
+                  alt="Steven"
+                  data-test="DesignSystem-Image"
+                  height="32"
+                  src="https://design.innovaccer.com/images/withoutType.png"
+                  width="32"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -827,16 +917,21 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--regular Avatar--accent1"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <img
-              alt="John"
-              data-test="DesignSystem-Image"
-              height="32"
-              src="https://design.innovaccer.com/images/withoutType.png"
-              width="32"
-            />
+            <span
+              class="Avatar Avatar--regular Avatar--accent1"
+              data-test="DesignSystem-Avatar"
+            >
+              <img
+                alt="John"
+                data-test="DesignSystem-Image"
+                height="32"
+                src="https://design.innovaccer.com/images/withoutType.png"
+                width="32"
+              />
+            </span>
           </span>
         </div>
       </div>
@@ -850,16 +945,21 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--regular Avatar--alert"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <img
-              alt="Steven"
-              data-test="DesignSystem-Image"
-              height="32"
-              src="https://design.innovaccer.com/images/withoutType.png"
-              width="32"
-            />
+            <span
+              class="Avatar Avatar--regular Avatar--alert"
+              data-test="DesignSystem-Avatar"
+            >
+              <img
+                alt="Steven"
+                data-test="DesignSystem-Image"
+                height="32"
+                src="https://design.innovaccer.com/images/withoutType.png"
+                width="32"
+              />
+            </span>
           </span>
         </div>
       </div>
@@ -940,16 +1040,21 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--accent1"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <img
-                alt="John"
-                data-test="DesignSystem-Image"
-                height="24"
-                src="https://design.innovaccer.com/images/withoutType.png"
-                width="24"
-              />
+              <span
+                class="Avatar Avatar--tiny Avatar--accent1"
+                data-test="DesignSystem-Avatar"
+              >
+                <img
+                  alt="John"
+                  data-test="DesignSystem-Image"
+                  height="24"
+                  src="https://design.innovaccer.com/images/withoutType.png"
+                  width="24"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -963,16 +1068,21 @@ Object {
             class="OutsideClick PopperWrapper-trigger flex-grow-0"
           >
             <span
-              class="Avatar Avatar--tiny Avatar--alert"
-              data-test="DesignSystem-Avatar"
+              class=""
+              data-test="DesignSystem-AvatarWrapper"
             >
-              <img
-                alt="Steven"
-                data-test="DesignSystem-Image"
-                height="24"
-                src="https://design.innovaccer.com/images/withoutType.png"
-                width="24"
-              />
+              <span
+                class="Avatar Avatar--tiny Avatar--alert"
+                data-test="DesignSystem-Avatar"
+              >
+                <img
+                  alt="Steven"
+                  data-test="DesignSystem-Image"
+                  height="24"
+                  src="https://design.innovaccer.com/images/withoutType.png"
+                  width="24"
+                />
+              </span>
             </span>
           </div>
         </div>
@@ -994,16 +1104,21 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--tiny Avatar--accent1"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <img
-              alt="John"
-              data-test="DesignSystem-Image"
-              height="24"
-              src="https://design.innovaccer.com/images/withoutType.png"
-              width="24"
-            />
+            <span
+              class="Avatar Avatar--tiny Avatar--accent1"
+              data-test="DesignSystem-Avatar"
+            >
+              <img
+                alt="John"
+                data-test="DesignSystem-Image"
+                height="24"
+                src="https://design.innovaccer.com/images/withoutType.png"
+                width="24"
+              />
+            </span>
           </span>
         </div>
       </div>
@@ -1017,16 +1132,21 @@ Object {
           class="OutsideClick PopperWrapper-trigger flex-grow-0"
         >
           <span
-            class="Avatar Avatar--tiny Avatar--alert"
-            data-test="DesignSystem-Avatar"
+            class=""
+            data-test="DesignSystem-AvatarWrapper"
           >
-            <img
-              alt="Steven"
-              data-test="DesignSystem-Image"
-              height="24"
-              src="https://design.innovaccer.com/images/withoutType.png"
-              width="24"
-            />
+            <span
+              class="Avatar Avatar--tiny Avatar--alert"
+              data-test="DesignSystem-Avatar"
+            >
+              <img
+                alt="Steven"
+                data-test="DesignSystem-Image"
+                height="24"
+                src="https://design.innovaccer.com/images/withoutType.png"
+                width="24"
+              />
+            </span>
           </span>
         </div>
       </div>

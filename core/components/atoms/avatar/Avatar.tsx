@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text, Tooltip, Icon } from '@/index';
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { TooltipProps } from '@/index.type';
-import { AccentAppearance, AvatarSize } from '@/common.type';
+import { AccentAppearance, AvatarSize, AvatarShape } from '@/common.type';
 import AvatarIcon from './avatarIcon';
 import AvatarImage from './avatarImage';
 import AvatarProvider from './AvatarProvider';
@@ -37,6 +37,10 @@ export interface AvatarProps extends BaseProps {
    * Determines size of `Avatar`
    */
   size: AvatarSize;
+  /**
+   * Determines the shape of `Avatar`
+   */
+  shape: AvatarShape;
 }
 
 const initialsLength = 2;
@@ -44,7 +48,7 @@ const DefaultAppearance = 'secondary';
 const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
 
 export const Avatar = (props: AvatarProps) => {
-  const { withTooltip, tooltipPosition, size, children, firstName, lastName, className, appearance } = props;
+  const { withTooltip, tooltipPosition, size, children, firstName, lastName, className, appearance, shape } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -61,9 +65,18 @@ export const Avatar = (props: AvatarProps) => {
   const AvatarClassNames = classNames(
     {
       Avatar: true,
-      [`Avatar--${size}`]: size,
+      ['Avatar--square']: shape === 'square',
+      [`Avatar--${size}`]: shape !== 'square',
       [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
       ['Avatar--disabled']: !initials || !withTooltip,
+    },
+    className
+  );
+
+  const AvatarWrapperClassNames = classNames(
+    {
+      ['Avatar--wrapper']: shape === 'square',
+      [`Avatar--${size}`]: shape === 'square',
     },
     className
   );
@@ -87,30 +100,34 @@ export const Avatar = (props: AvatarProps) => {
   const renderAvatar = () => {
     if (children && typeof children !== 'string') {
       return (
-        <AvatarProvider value={sharedProp}>
-          <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
-            {children}
-          </span>
-        </AvatarProvider>
+        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
+          <AvatarProvider value={sharedProp}>
+            <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
+              {children}
+            </span>
+          </AvatarProvider>
+        </span>
       );
     }
 
     return (
-      <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
-        {initials && (
-          <Text weight="medium" appearance={'white'} className={TextClassNames}>
-            {initials}
-          </Text>
-        )}
-        {!initials && (
-          <Icon
-            data-test="DesignSystem-Avatar--Icon"
-            name="person"
-            size={size === 'regular' ? 20 : 16}
-            appearance={'white'}
-            className={IconClassNames}
-          />
-        )}
+      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
+        <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
+          {initials && (
+            <Text weight="medium" appearance={'white'} className={TextClassNames}>
+              {initials}
+            </Text>
+          )}
+          {!initials && (
+            <Icon
+              data-test="DesignSystem-Avatar--Icon"
+              name="person"
+              size={size === 'regular' ? 20 : 16}
+              appearance={'white'}
+              className={IconClassNames}
+            />
+          )}
+        </span>
       </span>
     );
   };
@@ -139,6 +156,7 @@ Avatar.defaultProps = {
   tooltipPosition: 'bottom',
   withTooltip: true,
   size: 'regular',
+  shape: 'round',
 };
 
 export default Avatar;

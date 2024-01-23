@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
 import Avatar, { AvatarProps as Props } from '../Avatar';
-import { AccentAppearance, AvatarSize } from '@/common.type';
+import { AccentAppearance, AvatarShape, AvatarSize } from '@/common.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 
 const appearances: AccentAppearance[] = [
@@ -16,6 +16,8 @@ const appearances: AccentAppearance[] = [
 ];
 
 const sizes: AvatarSize[] = ['regular', 'tiny'];
+
+const shapes: AvatarShape[] = ['round', 'square'];
 
 describe('Avatar component', () => {
   const mapper = {
@@ -37,6 +39,23 @@ describe('Avatar component', () => {
 describe('Avatar component', () => {
   const mapper = {
     size: valueHelper(sizes, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const tree = render(<Avatar {...attr}>JD</Avatar>);
+      expect(tree).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
+describe('Avatar component', () => {
+  const mapper = {
+    shape: valueHelper(shapes, { required: true, iterate: true }),
   };
 
   const testFunc = (props: Record<string, any>): void => {
@@ -118,6 +137,36 @@ describe('Avatar component with prop:size', () => {
 
   it('should have the Avatar--tiny class when size is tiny', () => {
     const { getByTestId } = render(<Avatar size={'tiny'}>Design</Avatar>);
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--tiny');
+  });
+});
+
+describe('Avatar component with prop:shape', () => {
+  it('should have the Avatar-square class when shape is square', () => {
+    const { getByTestId } = render(<Avatar shape="square">Design</Avatar>);
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--square');
+  });
+
+  it('should have the Avatar class when shape is round', () => {
+    const { getByTestId } = render(<Avatar shape="round">Design</Avatar>);
+    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar');
+  });
+
+  it('should have the Avatar--tiny class when shape is square', () => {
+    const { getByTestId } = render(
+      <Avatar shape="square" size={'tiny'}>
+        Design
+      </Avatar>
+    );
+    expect(getByTestId('DesignSystem-AvatarWrapper')).toHaveClass('Avatar--tiny');
+  });
+
+  it('should have the Avatar--tiny class when shape is round', () => {
+    const { getByTestId } = render(
+      <Avatar shape="round" size={'tiny'}>
+        Design
+      </Avatar>
+    );
     expect(getByTestId('DesignSystem-Avatar')).toHaveClass('Avatar--tiny');
   });
 });
