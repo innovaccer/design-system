@@ -431,6 +431,8 @@ export class Table extends React.Component<TableProps, TableState> {
   debounceUpdate: () => void;
 
   selectedRowsRef: React.MutableRefObject<any> = React.createRef<number[] | null>();
+  selectedAllRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
+  cancelSelectionRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
 
   constructor(props: TableProps) {
     super(props);
@@ -521,6 +523,29 @@ export class Table extends React.Component<TableProps, TableState> {
         this.updateData(searchUpdate);
       }
     }
+
+    console.log(
+      'before gggg update data this.state.selectAll',
+      'prevState.selectAll',
+      prevState.selectAll,
+      'this.state.selectAll',
+      this.state.selectAll
+    );
+
+    if (
+      JSON.stringify(prevState.selectAll) !== JSON.stringify(this.state.selectAll) &&
+      this.cancelSelectionRef.current === true &&
+      !this.props.loading
+    ) {
+      console.log(
+        'gggg update data this.state.selectAll',
+        'prevState.selectAll',
+        prevState.selectAll,
+        'this.state.selectAll',
+        this.state.selectAll
+      );
+      this.updateDataFn();
+    }
   }
 
   updateData = (searchUpdate?: boolean) => {
@@ -565,10 +590,31 @@ export class Table extends React.Component<TableProps, TableState> {
               const data = res.data;
               const schema = this.state.schema.length ? this.state.schema : res.schema;
 
-              console.log('this.selectedRowsRef?.current?', this.selectedRowsRef.current);
+              console.log(
+                'this.selectedRowsRef?.current???',
+                this.selectedRowsRef.current,
+                'selectAll state',
+                this.state.selectAll
+              );
               const selectedData = data.map((item: RowData) => {
-                if (item[uniqueColumnName] && this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) {
+                // if (
+                //   (item[uniqueColumnName] && this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) ||
+                //   this.selectedAllRef.current
+                // ) {
+                //   item._selected = true;
+                // } else if (this.cancelSelectionRef.current) {
+                //   item._selected = false;
+                // }
+                if (this.selectedAllRef.current) {
                   item._selected = true;
+                } else if (
+                  item[uniqueColumnName] &&
+                  this.selectedRowsRef?.current?.includes(item[uniqueColumnName]) &&
+                  !this.cancelSelectionRef.current
+                ) {
+                  item._selected = true;
+                } else if (this.cancelSelectionRef.current) {
+                  item._selected = false;
                 }
                 return item;
               });
@@ -608,8 +654,16 @@ export class Table extends React.Component<TableProps, TableState> {
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
 
       const selectedData = renderedData.map((item: RowData) => {
-        if (item[uniqueColumnName] && this.selectedRowsRef?.current?.includes(item[uniqueColumnName])) {
+        if (this.selectedAllRef.current) {
           item._selected = true;
+        } else if (
+          item[uniqueColumnName] &&
+          this.selectedRowsRef?.current?.includes(item[uniqueColumnName]) &&
+          !this.cancelSelectionRef.current
+        ) {
+          item._selected = true;
+        } else if (this.cancelSelectionRef.current) {
+          item._selected = false;
         }
         return item;
       });
@@ -670,6 +724,7 @@ export class Table extends React.Component<TableProps, TableState> {
     const { onSelect } = this.props;
 
     const { data } = this.state;
+    console.log('here 22', 'selected', selected, 'fffselectAll', selectAll, 'data', data);
 
     const indexes = Array.from({ length: data.length }, (_, i) => i);
 
@@ -699,9 +754,29 @@ export class Table extends React.Component<TableProps, TableState> {
       );
     }
 
+    // this.selectedAllRef.current = selectAll;
+    // this.cancelSelectionRef.current = !selectAll;
+
+    // if (this.cancelSelectionRef.current === selectAll && this.state.async) {
+    //   this.setState({
+    //     loading: true,
+    //   });
+    // }
+
+    if (selectAll === false) {
+      this.cancelSelectionRef.current = true;
+      this.selectedAllRef.current = false;
+    } else if (selectAll === true) {
+      this.selectedAllRef.current = true;
+      this.cancelSelectionRef.current = false;
+    } else {
+      this.selectedAllRef.current = false;
+      this.cancelSelectionRef.current = false;
+    }
+
     this.setState({
       data: newData,
-      selectAll: getSelectAll(newData, this.props.selectDisabledRow),
+      selectAll: getSelectAll(newData, this.props.selectDisabledRow, this.cancelSelectionRef.current),
     });
   };
 

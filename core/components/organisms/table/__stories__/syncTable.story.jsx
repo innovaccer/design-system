@@ -18,6 +18,7 @@ export const syncTable = () => {
           schema={schema}
           withHeader={true}
           withCheckbox={true}
+          uniqueColumnName="email"
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             action(
               `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
@@ -27,6 +28,7 @@ export const syncTable = () => {
           }
           headerOptions={{
             withSearch: true,
+            allowSelectAll: true,
           }}
           onSearch={(currData, searchTerm) => {
             return currData.filter(
@@ -165,8 +167,10 @@ const customCode = `() => {
           data={data}
           schema={schema}
           withHeader={true}
+          uniqueColumnName="email"
           headerOptions={{
-            withSearch: true
+            withSearch: true,
+            allowSelectAll: true,
           }}
           onSearch={(currData, searchTerm) => {
             console.log('onsearch called', searchTerm);

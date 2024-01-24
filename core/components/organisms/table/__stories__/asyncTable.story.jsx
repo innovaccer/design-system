@@ -25,6 +25,7 @@ export const asyncTable = () => {
           }
           headerOptions={{
             withSearch: true,
+            allowSelectAll: true,
           }}
           withPagination={true}
           pageSize={5}
@@ -266,7 +267,8 @@ const customCode = `
           uniqueColumnName="email"
           withHeader={true}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
+            allowSelectAll: true,
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
