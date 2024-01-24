@@ -21,7 +21,7 @@
   position: relative;
   display: flex;
   flex-direction: row;
-  cursor: pointer;
+  cursor: grab;
   min-width: 40px;
   padding: var(--spacing-l) var(--spacing-l) var(--spacing-2);
   margin-bottom: calc(-1 * var(--spacing-xs));
@@ -45,6 +45,11 @@
   border-top-right-radius: var(--spacing-xs);
 }
 
+.Tab-draggable::after{
+  width: calc(100% - 3.5 * var(--spacing-l));
+  margin-left: var(--spacing-3);
+}
+
 .Tab:hover::after {
   background-color: var(--inverse-lighter);
 }
@@ -54,7 +59,7 @@
 }
 
 .Tab--active::after {
-  background-color: var(--primary);
+  background-color: var(--primary) !important;
 }
 
 .Tab:focus {
@@ -69,7 +74,7 @@
 }
 
 .Tab-selected:hover::after {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-dark) !important;
 }
 
 .Tab:active:focus {
@@ -154,3 +159,17 @@
 .DismissibleTab-icon--selected:active {
   background-color: var(--primary-light);
 }
+.Tab-dragging{
+  pointer-events: none;
+}
+
+.Tab-drag:active:after{
+  background-color: transparent;
+}
+ .draggable-icon{
+  padding: 2px;
+  visibility: hidden
+ }
+ .draggable-active{
+  visibility: visible;
+ }
