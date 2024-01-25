@@ -12,7 +12,7 @@ export const asyncTable = () => {
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
-          uniqueColumnName="email"
+          uniqueColumnName="firstName"
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
@@ -264,7 +264,7 @@ const customCode = `
         <Table
           loaderSchema={loaderSchema}
           fetchData={fetchData}
-          uniqueColumnName="email"
+          uniqueColumnName="firstName"
           withHeader={true}
           headerOptions={{
             withSearch: true,
