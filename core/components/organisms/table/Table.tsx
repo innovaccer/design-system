@@ -721,7 +721,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
-    const { onSelect } = this.props;
+    const { onSelect, uniqueColumnName } = this.props;
 
     const { data } = this.state;
     console.log('here 22', 'selected', selected, 'fffselectAll', selectAll, 'data', data);
@@ -754,14 +754,19 @@ export class Table extends React.Component<TableProps, TableState> {
       );
     }
 
-    // this.selectedAllRef.current = selectAll;
-    // this.cancelSelectionRef.current = !selectAll;
-
-    // if (this.cancelSelectionRef.current === selectAll && this.state.async) {
-    //   this.setState({
-    //     loading: true,
-    //   });
-    // }
+    // const selectedItemList = [...this.selectedRowsRef.current];
+    const selectedItemList = [];
+    if (selected && !selectAll && data.length > 0 && uniqueColumnName) {
+      newData.forEach((rowData) => {
+        console.log('rowData', rowData);
+        if (rowData[uniqueColumnName]) {
+          selectedItemList.push(rowData[uniqueColumnName]);
+          // selectedItemList = [rowData[uniqueColumnName], ...this.selectedRowsRef.current, ...selectedItemList];
+          // , ...this.selectedRowsRef.current, ...selectedItemList];
+        }
+      });
+      this.selectedRowsRef.current = selectedItemList;
+    }
 
     if (selectAll === false) {
       this.cancelSelectionRef.current = true;
