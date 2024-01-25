@@ -755,7 +755,8 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     // const selectedItemList = [...this.selectedRowsRef.current];
-    let selectedItemList;
+    // const selectedItemList = [];
+    const selectedItemList = [];
     if (selected && !selectAll && data.length > 0 && uniqueColumnName) {
       newData.forEach((rowData) => {
         console.log('rowData', rowData);
@@ -871,6 +872,7 @@ export class Table extends React.Component<TableProps, TableState> {
               withPagination={withPagination}
               pageSize={pageSize}
               showFilters={filterPosition === 'HEADER'}
+              // selectedRowsRef={this.selectedRowsRef}
               {...headerAttr}
             >
               {headerChildren}
