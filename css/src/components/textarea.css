@@ -47,5 +47,5 @@
 }
 
 .Textarea--resize {
-  resize: auto;
+  resize: both;
 }
