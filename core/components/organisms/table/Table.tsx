@@ -872,7 +872,8 @@ export class Table extends React.Component<TableProps, TableState> {
               withPagination={withPagination}
               pageSize={pageSize}
               showFilters={filterPosition === 'HEADER'}
-              // selectedRowsRef={this.selectedRowsRef}
+              selectedRowsRef={this.selectedRowsRef}
+              selectedAllRef={this.selectedAllRef}
               {...headerAttr}
             >
               {headerChildren}
