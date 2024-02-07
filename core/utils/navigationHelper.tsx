@@ -10,6 +10,7 @@ export type Menu = {
   disabled?: boolean;
   subMenu?: Menu[];
   iconType?: IconType;
+  expanded?: boolean;
 };
 
 export type ActiveMenu = ({ name: string } | { link: string }) & Partial<Menu>;
@@ -39,6 +40,16 @@ export const getMenu = (menus: Menu[], active: ActiveMenu): Menu | null => {
     }
   }
   return null;
+};
+
+export const getExpandedMenus = (menus: Menu[]): Record<string, boolean> => {
+  const expandedMenus: Record<string, boolean> = {};
+  for (const menu of menus) {
+    if (menu.subMenu) {
+      expandedMenus[menu.name] = !!menu.expanded;
+    }
+  }
+  return expandedMenus;
 };
 
 export const isMenuActive = (menus: Menu[], menu: Menu, active?: ActiveMenu): boolean => {

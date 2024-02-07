@@ -64,6 +64,39 @@ const menus = [
   },
 ];
 
+const menusWithExpandedSubMenu = [
+  {
+    name: 'patient_360',
+    label: 'Patient 360',
+    icon: 'assignment_ind',
+    link: '/patient360',
+    count: 10,
+    group: 'Section 1',
+  },
+  {
+    name: 'care_management',
+    label: 'Care Management and Resources',
+    icon: 'forum',
+    group: 'Section 2',
+    expanded: true,
+    subMenu: [
+      {
+        name: 'care_management.timeline',
+        label: 'Timeline',
+        icon: 'assignment_ind',
+      },
+    ],
+  },
+  {
+    name: 'episodes',
+    label: 'Episodes',
+    disabled: true,
+    icon: 'airline_seat_flat_angled',
+    group: 'Section 2',
+    count: 100,
+  },
+];
+
 describe('Vertical Navigation component', () => {
   const mapper = {
     expanded: valueHelper(true, { required: true }),
@@ -249,5 +282,48 @@ describe('Vertical Navigation component prop: onClick', () => {
     fireEvent.click(activeMenu);
     expect(onClick).toHaveBeenCalled();
     expect(onClick).toHaveBeenCalledWith(menus[menuClicked].subMenu![0]);
+  });
+});
+
+describe('Vertical Navigation component prop: menus with expanded subMenu', () => {
+  it("Menu item having expanded state subMenu should be expanded even if it's subMenu is not active", () => {
+    const { getAllByTestId } = render(
+      <VerticalNav menus={menusWithExpandedSubMenu} active={{ name: 'patient_360' }} onClick={onClick} />
+    );
+
+    const timelineSubMenu = getAllByTestId('DesignSystem-VerticalNav--Text')[2];
+    expect(timelineSubMenu.textContent).toMatch('Timeline');
+
+    fireEvent.click(timelineSubMenu);
+
+    const careManagement = getAllByTestId('DesignSystem-VerticalNav--Item')[1];
+    fireEvent.click(careManagement);
+
+    expect(getAllByTestId('DesignSystem-VerticalNav--Text')[2].textContent).toMatch('Episodes');
+  });
+
+  it("Menu item not having expanded state subMenu should be expanded when it's subMenu is active", () => {
+    const { getAllByTestId } = render(
+      <VerticalNav menus={menus} active={{ name: 'care_management.timeline' }} onClick={onClick} />
+    );
+    const childItems = getAllByTestId('DesignSystem-VerticalNav--Text');
+    expect(childItems[2].textContent).toMatch('Timeline');
+
+    const careManagement = getAllByTestId('DesignSystem-VerticalNav--Item')[1];
+    fireEvent.click(careManagement);
+
+    expect(getAllByTestId('DesignSystem-VerticalNav--Text')[2].textContent).toMatch('Episodes');
+  });
+
+  it('When subMenu is not active and not in expanded state then it should not be expanded', () => {
+    const { getAllByTestId } = render(<VerticalNav menus={menus} active={{ name: 'patient_360' }} onClick={onClick} />);
+
+    const childItems = getAllByTestId('DesignSystem-VerticalNav--Text');
+    expect(childItems[2].textContent).toMatch('Episodes');
+
+    const careManagement = getAllByTestId('DesignSystem-VerticalNav--Item')[1];
+    fireEvent.click(careManagement);
+
+    expect(getAllByTestId('DesignSystem-VerticalNav--Text')[2].textContent).toMatch('Timeline');
   });
 });
