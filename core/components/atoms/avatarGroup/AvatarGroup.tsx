@@ -77,7 +77,7 @@ export interface AvatarGroupProps extends BaseProps {
    * | position | Position to place `Popover` | bottom |
    * | on | Event triggering the `Popover` | hover |
    * | maxHeight | Max height of `Popover Text Wrapper` (does not work in case of custom popperRenderer) | 150 |
-   * | popperClassName | Custom classname added to `Popover` | |
+   * | popperClassName | Custom className added to `Popover` | |
    *
    */
   popoverOptions: AvatarPopoverProps;
@@ -85,10 +85,14 @@ export interface AvatarGroupProps extends BaseProps {
    * Position to place the tooltip on `Avatars` shown before +x
    */
   tooltipPosition: PopoverProps['position'];
+  /**
+   * Switch to selection avatar group
+   */
+  selection?: boolean;
 }
 
 export const AvatarGroup = (props: AvatarGroupProps) => {
-  const { max, borderColor, popoverOptions, tooltipPosition, list, className, size } = props;
+  const { max, borderColor, popoverOptions, tooltipPosition, list, className, size, selection } = props;
 
   const {
     popperRenderer,
@@ -102,7 +106,8 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const baseProps = extractBaseProps(props);
 
-  const hiddenAvatarCount = list.length > max ? Math.min(list.length - max, 99) : 0;
+  const maxCount = max ? max : selection ? 5 : 2;
+  const hiddenAvatarCount = list.length > maxCount ? Math.min(list.length - maxCount, 99) : 0;
 
   const style = {
     backgroundColor: `${borderColor}`,
@@ -133,11 +138,11 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
     <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
       <Avatars
         size={size}
-        avatarList={list.slice(0, max)}
+        avatarList={list.slice(0, maxCount)}
         avatarStyle={avatarStyle}
         tooltipPosition={tooltipPosition}
       />
-      {list.length - max > 0 && (
+      {list.length - maxCount > 0 && (
         <Popover
           on={on}
           dark={dark}
@@ -148,7 +153,7 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
           offset="medium"
         >
           <AvatarPopperBody
-            hiddenAvatarList={list.slice(max, list.length)}
+            hiddenAvatarList={list.slice(maxCount, list.length)}
             popperRenderer={popperRenderer}
             maxHeight={maxHeight}
             dark={dark}
@@ -161,7 +166,6 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
 AvatarGroup.displayName = 'AvatarGroup';
 AvatarGroup.defaultProps = {
-  max: 2,
   tooltipPosition: 'bottom',
   borderColor: 'white',
   popoverOptions: {},
