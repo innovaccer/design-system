@@ -1,3 +1,46 @@
+## 2.28.0 (2024-02-09)
+
+### Highlights
+
+- feat(avatargroup): add image and icon support in avatar group component (1c6c63c0)
+- feat(avatar): add square shape avatar support (09118a08)
+- feat(avatargroup): add images in avatar group stories (645bed48)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(avatargroup): add image and icon support in avatar group component (1c6c63c0)
+- feat(avatargroup): add images in avatar group stories (645bed48)
+- feat(avatar): add square shape avatar support (09118a08)
+
+### Fixes
+
+- fix(docs): fix z-index for algolia search modal (5bcb01d1)
+- fix(metric-input): arrow button causes form to submit (71aa9257)
+- fix: add compatibility for resize in textarea for firefox browser (aed1a437)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs):  update message, toast, and modal documentation (501d4bdc)
+- docs(docs): add shapes documentation in avatar (0c0ad3ab)
+
+---
+
 ## 2.27.0 (2024-01-15)
 
 ### Highlights
