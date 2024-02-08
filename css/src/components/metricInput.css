@@ -76,6 +76,7 @@
   padding: 0;
   border: none;
   background: transparent;
+  -webkit-appearance: textfield;
 }
 
 .MetricInput-input--large {
