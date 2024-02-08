@@ -16,6 +16,14 @@ export const size = () => {
         <Text weight={weight}>Tiny</Text> <br />
         <Avatar firstName="John" lastName="Doe" size="tiny" />
       </div>
+      <div className="mr-9 d-flex flex-column">
+        <Text weight={weight}>Regular</Text> <br />
+        <Avatar appearance="accent4" firstName="John" lastName="Doe" shape="square" />
+      </div>
+      <div className="mr-9  d-flex flex-column">
+        <Text weight={weight}>Tiny</Text> <br />
+        <Avatar appearance="accent4" firstName="John" lastName="Doe" size="tiny" shape="square" />
+      </div>
     </div>
   );
 };

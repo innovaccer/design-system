@@ -4,10 +4,12 @@
 
 .AvatarGroup-item--regular {
   margin-right: calc(var(--spacing-m) * -1);
+  height: var(--spacing-3);
 }
 
 .AvatarGroup-item--tiny {
   margin-right: calc(var(--spacing-s) * -1);
+  height: var(--spacing-xl);
 }
 
 .AvatarGroup-Popper {

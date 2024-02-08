@@ -93,4 +93,6 @@ export type TextColor =
 
 export type AvatarSize = 'regular' | 'tiny';
 
+export type AvatarShape = 'round' | 'square';
+
 export type IconType = 'rounded' | 'outlined';

@@ -12,6 +12,8 @@ interface AvatarData extends Record<string, any> {
   firstName?: string;
   lastName?: string;
   appearance?: AvatarProps['appearance'];
+  icon?: React.ReactNode;
+  image?: React.ReactNode;
 }
 
 interface AvatarPopoverProps {
@@ -33,6 +35,8 @@ export interface AvatarGroupProps extends BaseProps {
    *  firstName?: string;
    *  lastName?: string;
    *  appearance?: Appearance;
+   *  icon?: React.ReactNode;
+   *  image?: React.ReactNode;
    * }
    * </pre>
    *

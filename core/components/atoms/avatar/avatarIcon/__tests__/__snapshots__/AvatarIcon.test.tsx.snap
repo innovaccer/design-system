@@ -8,6 +8,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -20,21 +45,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -99,6 +109,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -111,21 +146,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -190,6 +210,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -202,21 +247,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -281,6 +311,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--accent4Darker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -293,21 +348,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--accent4Darker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -372,6 +412,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -384,21 +449,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -463,6 +513,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -475,21 +550,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -554,6 +614,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--inverse"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -566,21 +651,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--inverse"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -645,6 +715,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--success Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--successDarker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--success Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -657,21 +752,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--success Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--successDarker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -736,6 +816,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--warningDarker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 20px; width: 20px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -748,21 +853,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--warningDarker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 20px; width: 20px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -827,6 +917,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--accent1 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--accent1 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -839,21 +954,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--accent1 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--accent1Darker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -918,6 +1018,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--accent2 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--accent2 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -930,21 +1055,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--accent2 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -1009,6 +1119,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--accent3 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--accent3 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -1021,21 +1156,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--accent3 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -1100,6 +1220,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--accent4 Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--accent4Darker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--accent4 Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -1112,21 +1257,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--accent4 Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--accent4Darker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -1191,6 +1321,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--alert Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--alert Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -1203,21 +1358,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--alert Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -1282,6 +1422,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--primary Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--white"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--primary Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -1294,21 +1459,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--primary Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--white"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -1373,6 +1523,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--inverse"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -1385,21 +1560,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--inverse"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -1464,6 +1624,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--success Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--successDarker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--success Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -1476,21 +1661,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--success Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--successDarker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],
@@ -1555,6 +1725,31 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--tiny Avatar--warning Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <i
+            class="material-symbols material-symbols-rounded Icon Icon--warningDarker"
+            data-test="DesignSystem-Icon"
+            role="button"
+            style="font-size: 16px; width: 16px;"
+          >
+            events
+          </i>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--tiny Avatar--warning Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -1567,21 +1762,6 @@ Object {
           events
         </i>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--tiny Avatar--warning Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <i
-        class="material-symbols material-symbols-rounded Icon Icon--warningDarker"
-        data-test="DesignSystem-Icon"
-        role="button"
-        style="font-size: 16px; width: 16px;"
-      >
-        events
-      </i>
     </span>
   </div>,
   "debug": [Function],

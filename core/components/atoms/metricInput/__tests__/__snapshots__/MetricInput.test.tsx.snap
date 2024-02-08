@@ -31,6 +31,7 @@ exports[`MetricInput component
           class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"
@@ -49,6 +50,7 @@ exports[`MetricInput component
           class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"
@@ -100,6 +102,7 @@ exports[`MetricInput component
           class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"
@@ -118,6 +121,7 @@ exports[`MetricInput component
           class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"
@@ -174,6 +178,7 @@ exports[`MetricInput component
           class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"
@@ -192,6 +197,7 @@ exports[`MetricInput component
           class="Button Button--regular Button--regularSquare Button--basic p-0 MetricInput-arrowIcon--large ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"
@@ -248,6 +254,7 @@ exports[`MetricInput component
           class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3 mb-2"
           data-test="DesignSystem-MetricInput--upIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"
@@ -266,6 +273,7 @@ exports[`MetricInput component
           class="Button Button--tiny Button--tinySquare Button--basic p-0 MetricInput-arrowIcon--regular ml-3"
           data-test="DesignSystem-MetricInput--downIcon"
           tabindex="0"
+          type="button"
         >
           <div
             class="Button-icon"

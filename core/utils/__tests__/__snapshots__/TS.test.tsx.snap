@@ -3,17 +3,22 @@
 exports[`TS renders children 1`] = `
 <DocumentFragment>
   <span
-    class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
-    data-test="DesignSystem-Avatar"
+    class=""
+    data-test="DesignSystem-AvatarWrapper"
   >
-    <i
-      class="material-symbols material-symbols-rounded Icon Icon--white Avatar-content--secondary"
-      data-test="DesignSystem-Avatar--Icon"
-      role="button"
-      style="font-size: 20px; width: 20px;"
+    <span
+      class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+      data-test="DesignSystem-Avatar"
     >
-      person
-    </i>
+      <i
+        class="material-symbols material-symbols-rounded Icon Icon--white Avatar-content--secondary"
+        data-test="DesignSystem-Avatar--Icon"
+        role="button"
+        style="font-size: 20px; width: 20px;"
+      >
+        person
+      </i>
+    </span>
   </span>
   <div
     class="AvatarGroup d-inline-flex"

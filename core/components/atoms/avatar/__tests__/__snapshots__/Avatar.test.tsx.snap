@@ -12,14 +12,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent1"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--accent1"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -31,14 +36,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--accent1"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--accent1"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -109,14 +119,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent2"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--accent2"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -128,14 +143,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--accent2"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--accent2"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent2"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -206,14 +226,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent3"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--accent3"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -225,14 +250,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--accent3"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--accent3"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent3"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -303,14 +333,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent4"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--accent4"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -322,14 +357,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--accent4"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--accent4"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent4"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -400,14 +440,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--alert"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--alert"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -419,14 +464,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--alert"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--alert"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--alert"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -497,14 +547,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--primary"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--primary"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -516,14 +571,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--primary"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--primary"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--primary"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -594,14 +654,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--success"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--success"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -613,14 +678,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--success"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--success"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--success"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -691,14 +761,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--warning"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--warning"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -710,14 +785,233 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--warning"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--warning"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--warning"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  shape: "round"
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--accent1"
+            data-test="DesignSystem-Avatar"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--accent1"
+          data-test="DesignSystem-Avatar"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
+        </span>
+      </span>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Avatar component 
+  shape: "square"
+ 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <style />
+      <div
+        class="OutsideClick PopperWrapper-trigger flex-grow-0"
+      >
+        <span
+          class="Avatar--wrapper Avatar--regular"
+          data-test="DesignSystem-AvatarWrapper"
+        >
+          <span
+            class="Avatar Avatar--square Avatar--accent1"
+            data-test="DesignSystem-Avatar"
+          >
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <style />
+    <div
+      class="OutsideClick PopperWrapper-trigger flex-grow-0"
+    >
+      <span
+        class="Avatar--wrapper Avatar--regular"
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--square Avatar--accent1"
+          data-test="DesignSystem-Avatar"
+        >
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -788,14 +1082,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent1"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--regular Avatar--accent1"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -807,14 +1106,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--regular Avatar--accent1"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--regular Avatar--accent1"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--regular Avatar-content--accent1"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>
@@ -885,14 +1189,19 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--tiny Avatar--accent1"
-          data-test="DesignSystem-Avatar"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
         >
           <span
-            class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
-            data-test="DesignSystem-Text"
+            class="Avatar Avatar--tiny Avatar--accent1"
+            data-test="DesignSystem-Avatar"
           >
-            JD
+            <span
+              class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+              data-test="DesignSystem-Text"
+            >
+              JD
+            </span>
           </span>
         </span>
       </div>
@@ -904,14 +1213,19 @@ Object {
       class="OutsideClick PopperWrapper-trigger flex-grow-0"
     >
       <span
-        class="Avatar Avatar--tiny Avatar--accent1"
-        data-test="DesignSystem-Avatar"
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
       >
         <span
-          class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
-          data-test="DesignSystem-Text"
+          class="Avatar Avatar--tiny Avatar--accent1"
+          data-test="DesignSystem-Avatar"
         >
-          JD
+          <span
+            class="Text Text--white Text--medium Text--regular Avatar-content--tiny Avatar-content--accent1"
+            data-test="DesignSystem-Text"
+          >
+            JD
+          </span>
         </span>
       </span>
     </div>

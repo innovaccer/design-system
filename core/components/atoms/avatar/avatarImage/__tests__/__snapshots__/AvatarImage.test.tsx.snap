@@ -12,20 +12,48 @@ Object {
         class="OutsideClick PopperWrapper-trigger flex-grow-0"
       >
         <span
-          class="Avatar Avatar--regular Avatar--accent1"
+          class=""
+          data-test="DesignSystem-AvatarWrapper"
+        >
+          <span
+            class="Avatar Avatar--regular Avatar--accent1"
+            data-test="DesignSystem-Avatar"
+          >
+            <img
+              alt="John"
+              data-test="DesignSystem-Image"
+              height="32"
+              src="https://design.innovaccer.com/images/withoutType.png"
+              width="32"
+            />
+          </span>
+        </span>
+      </div>
+    </div>
+    <div>
+      <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
           data-test="DesignSystem-Avatar"
         >
           <img
-            alt="John"
             data-test="DesignSystem-Image"
             height="32"
             src="https://design.innovaccer.com/images/withoutType.png"
             width="32"
           />
         </span>
-      </div>
+      </span>
     </div>
-    <div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
       <span
         class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
         data-test="DesignSystem-Avatar"
@@ -37,19 +65,6 @@ Object {
           width="32"
         />
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <img
-        data-test="DesignSystem-Image"
-        height="32"
-        src="https://design.innovaccer.com/images/withoutType.png"
-        width="32"
-      />
     </span>
   </div>,
   "debug": [Function],
@@ -114,6 +129,38 @@ Object {
   "baseElement": <body>
     <div>
       <span
+        class=""
+        data-test="DesignSystem-AvatarWrapper"
+      >
+        <span
+          class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+          data-test="DesignSystem-Avatar"
+        >
+          <svg
+            fill="black"
+            height="18px"
+            viewBox="0 0 24 24"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </body>,
+  "container": <div>
+    <span
+      class=""
+      data-test="DesignSystem-AvatarWrapper"
+    >
+      <span
         class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
         data-test="DesignSystem-Avatar"
       >
@@ -133,28 +180,6 @@ Object {
           />
         </svg>
       </span>
-    </div>
-  </body>,
-  "container": <div>
-    <span
-      class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
-      data-test="DesignSystem-Avatar"
-    >
-      <svg
-        fill="black"
-        height="18px"
-        viewBox="0 0 24 24"
-        width="18px"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"
-        />
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-      </svg>
     </span>
   </div>,
   "debug": [Function],

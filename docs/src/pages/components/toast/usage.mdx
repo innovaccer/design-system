@@ -1,6 +1,6 @@
 ---
 title: Toast
-description: Toasts are used to show alerts and give feedback to the users on the outcome of their action without disrupting the user workflow.
+description: Toasts are used to notify users about the outcome of their actions without disrupting the ongoing user workflow.
 tabs: ['Usage', 'Code', 'Interactions']
 showMobile: true
 keywords: ['Toaster', 'Notification', 'Snackbar', 'Banner']
@@ -145,6 +145,16 @@ The warning may be generic like - ‘1 file could not be downloaded out of 50’
       </td>
       <td>-</td>
     </tr>
+        <tr style="vertical-align: top">
+      <td>Timeout</td>
+      <td>
+        <ul>
+          <li>5 seconds</li>
+          <li>Customizable</li>
+        </ul>
+      </td>
+      <td>5 seconds</td>
+    </tr>
   </tbody>
 </table>
 <br />
@@ -165,7 +175,7 @@ They appear at the bottom left of the screen and overlay any content.
 
 #### Timeout
 
-Toasts will close when the close button is clicked, or after a timeout – the default is 5 seconds.
+Toasts will close when the close button is clicked, or after a timeout – the default is 5 seconds. It can be Customized through in case of critical notification to ensure the user has enough time to read and acknowledge the message. 
 
 <br />
 
@@ -202,3 +212,69 @@ It is recommended to not use toasts when the user interface is enough to provide
 ![Overuse of toasts](./images/overuse_of_toasts.png)
 
 <Caption>Toast is not needed here because users can already see the updated note in the right section.</Caption>
+
+<br />
+<br />
+
+#### Toasts vs Messages
+
+Toasts are temporary notifications that appear on the screen to provide brief, unobtrusive feedback to the user whereas messages are used for important information and are integrated directly into the content of the interface. 
+
+![Toasts vs Messages](./images/toasts-7.png)
+
+<Caption>Toasts vs Messages</Caption>
+
+<br />
+<br />
+
+#### Toast vs Message vs Modal
+
+<br />
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:25%; text-align: left;">Factors</th>
+      <th style="width:25%; text-align: left;">Toast</th>
+      <th style="width:25%; text-align: left;">Message</th>
+      <th style="width:25%; text-align: left;">Modal</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Severity</td>
+      <td><Badge appearance="warning" subtle={true}>LOW</Badge></td>
+      <td><Badge appearance="accent1" subtle={true}>MEDIUM</Badge></td>
+      <td><Badge appearance="alert" subtle={true}>CRITICAL</Badge></td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Feedback</td>
+      <td>Feedback or update after an action has taken place</td>
+      <td>Information or feedback that aids users in completing their action or flow</td>
+      <td>Critical information that requires user input or interaction</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>When to use</td>
+      <td>After an action has taken place</td>
+      <td>Before or after an action has taken place</td>
+      <td>Before an action has taken place</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Information detail</td>
+      <td>Concise</td>
+      <td>Concise</td>
+      <td>In-depth</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Intrusiveness</td>
+      <td>Unobtrusive</td>
+      <td>Attention demanding</td>
+      <td>Disruptive</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Duration</td>
+      <td>Persists for 5 seconds (Default), can be customized in case of a critical notification</td>
+      <td>Persists but can be removed from the view upon resolution of the error.</td>
+      <td>Persists until user interaction or input is received.</td>
+    </tr>
+  </tbody>
+</table>
+<br />

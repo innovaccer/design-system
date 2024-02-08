@@ -305,6 +305,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
       {showActionButton && (
         <div className="MetricInput-arrowIcons">
           <Button
+            type="button"
             icon="keyboard_arrow_up"
             size={actionButtonSize}
             className={`${actionButton} mb-2`}
@@ -312,6 +313,7 @@ export const MetricInput = React.forwardRef<HTMLInputElement, MetricInputProps>(
             data-test="DesignSystem-MetricInput--upIcon"
           />
           <Button
+            type="button"
             icon="keyboard_arrow_down"
             size={actionButtonSize}
             className={actionButton}

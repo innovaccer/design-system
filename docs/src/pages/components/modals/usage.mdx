@@ -1,6 +1,6 @@
 ---
 title: Modals
-description: Modals are used to present information, critical alerts, and confirmations to the users.
+description: Modals are used to present information, critical alerts, and confirmations requiring user input or interaction.
 tabs: ['Usage', 'Code', 'Interactions']
 showMobile: true
 keywords: ['Dialog', 'Alert', 'Prompt']
@@ -429,3 +429,59 @@ Just like the default modals, the action buttons appear at the bottom right and 
 Unlike default modals, the header and footer are **not fixed** in the full screen modals. So the content goes beneath the fold like this -
 
 <Preview name="overlays-fullscreenmodal-scrolling--scrolling" />
+
+
+<br />
+<br />
+
+#### Modal vs Message vs Toast
+
+<br />
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:25%; text-align: left;">Factors</th>
+      <th style="width:25%; text-align: left;">Toast</th>
+      <th style="width:25%; text-align: left;">Message</th>
+      <th style="width:25%; text-align: left;">Modal</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Severity</td>
+      <td><Badge appearance="warning" subtle={true}>LOW</Badge></td>
+      <td><Badge appearance="accent1" subtle={true}>MEDIUM</Badge></td>
+      <td><Badge appearance="alert" subtle={true}>CRITICAL</Badge></td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Feedback</td>
+      <td>Feedback or update after an action has taken place</td>
+      <td>Information or feedback that aids users in completing their action or flow</td>
+      <td>Critical information that requires user input or interaction</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>When to use</td>
+      <td>After an action has taken place</td>
+      <td>Before or after an action has taken place</td>
+      <td>Before an action has taken place</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Information detail</td>
+      <td>Concise</td>
+      <td>Concise</td>
+      <td>In-depth</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Intrusiveness</td>
+      <td>Unobtrusive</td>
+      <td>Attention demanding</td>
+      <td>Disruptive</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Duration</td>
+      <td>Persists for 5 seconds (Default), can be customized in case of a critical notification</td>
+      <td>Persists but can be removed from the view upon resolution of the error.</td>
+      <td>Persists until user interaction or input is received.</td>
+    </tr>
+  </tbody>
+</table>
+<br />
