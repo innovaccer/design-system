@@ -1,15 +1,17 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-// import { Popover } from '@/index';
+import { Popover } from '@/index';
 import { AvatarProps, PopoverProps, AvatarIconProps, AvatarImageProps } from '@/index.type';
 import { AvatarSize } from '@/common.type';
 // import AvatarCount from './AvatarCount';
 // import Avatars from './Avatars';
 // import AvatarPopperBody from './AvatarPopperBody';
-import { SelectionAvatars } from './SelectionAvatars';
+import SelectionAvatars from './SelectionAvatars';
+import SelectionAvatarCount from './SelectionAvatarCount';
+import SelectionAvatarPopover from './SelectionAvatarPopover';
 
-interface AvatarData extends Record<string, any> {
+export interface AvatarData extends Record<string, any> {
   firstName?: string;
   lastName?: string;
   appearance?: AvatarProps['appearance'];
@@ -73,11 +75,11 @@ export interface SelectionAvatarGroupProps extends BaseProps {
 }
 
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
-  const { max, borderColor, tooltipPosition, list, className, size } = props;
+  const { max, borderColor, tooltipPosition, list, className, size, popperRenderer } = props;
 
   const baseProps = extractBaseProps(props);
 
-  // const hiddenAvatarCount = list.length - max;
+  const hiddenAvatarCount = list.length - max;
 
   const style = {
     backgroundColor: `${borderColor}`,
@@ -107,21 +109,22 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
         avatarStyle={style}
         tooltipPosition={tooltipPosition}
       />
-      {/* {hiddenAvatarCount > 0 && (
+      {hiddenAvatarCount > 0 && (
         <Popover
           on="click"
-          trigger={<AvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
-          className={popperClass}
+          trigger={<SelectionAvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
+          // className={popperClass}
+          position="bottom-end"
           offset="medium"
         >
-          <AvatarPopperBody
+          <SelectionAvatarPopover
             hiddenAvatarList={list.slice(max, list.length)}
-            // popperRenderer={popperRenderer}
+            popperRenderer={popperRenderer}
             // maxHeight={maxHeight}
             // dark={dark}
           />
         </Popover>
-      )} */}
+      )}
     </div>
   );
 };

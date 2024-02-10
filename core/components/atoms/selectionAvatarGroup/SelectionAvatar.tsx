@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { Avatar } from '@/index';
 
-export const SelectionAvatar = (props: any) => {
+const SelectionAvatar = (props: any) => {
   console.log('props', props);
 
   const avatarClassName = classNames({

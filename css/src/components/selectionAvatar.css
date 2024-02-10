@@ -23,6 +23,7 @@
   /* padding-top: 8px;
   padding-bottom: 8px;
   margin-right: calc(var(--spacing-m) * -1); */
+  /* transition: transform 0.3s ease; */
 }
 
 .Selection-Avatar:active {
@@ -35,4 +36,10 @@
   padding: 3px;
   /* box-shadow: var(--shadow-spread) var(--primary-shadow); */
   outline: 3px solid var(--primary-shadow);
+}
+
+.SelectionAvatarGroup-item:hover {
+  transform: translateY(-4px);
+  overflow: hidden;
+  margin-right: calc(var(--spacing-m) * -1);
 }

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { SelectionAvatar } from './SelectionAvatar';
+import SelectionAvatar from './SelectionAvatar';
 
-export const SelectionAvatars = (props: any) => {
+const SelectionAvatars = (props: any) => {
   const { avatarList, avatarStyle, tooltipPosition, size } = props;
 
   const GroupClass = classNames({
