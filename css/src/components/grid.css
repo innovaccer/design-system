@@ -503,3 +503,11 @@
 .Header-actions {
   margin-bottom: var(--spacing-2);
 }
+
+.DraggableDropdown--open {
+  background-color: var(--secondary-dark) !important;
+}
+
+.reorderIcon {
+  color: var(--inverse-lighter);
+}
