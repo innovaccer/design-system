@@ -86,3 +86,5 @@ export { ActionCardProps } from './components/atoms/actionCard';
 export { SelectionCardProps } from './components/atoms/selectionCard';
 export { ListboxProps, ListboxItemProps } from './components/organisms/listbox';
 export { TextFieldProps } from './components/organisms/textField';
+export { AvatarImageProps } from './components/atoms/avatar/avatarImage';
+export { AvatarIconProps } from './components/atoms/avatar/avatarIcon';
