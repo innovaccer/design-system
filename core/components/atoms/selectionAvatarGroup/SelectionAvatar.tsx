@@ -9,7 +9,7 @@ const SelectionAvatar = (props: any) => {
     ['Selection-Avatar']: true,
   });
 
-  return <Avatar className={avatarClassName} firstName="anu" lastName="aggarwal" />;
+  return <Avatar className={avatarClassName} firstName="anu" lastName="aggarwal" role="checkbox" />;
 };
 
 export default SelectionAvatar;

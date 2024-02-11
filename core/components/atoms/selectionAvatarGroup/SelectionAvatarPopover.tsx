@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Listbox } from '@/index';
+import { Listbox, Checkbox } from '@/index';
 // import classNames from 'classnames';
 import { AvatarData } from './SelectionAvatarGroup';
 
@@ -38,8 +38,14 @@ const SelectionAvatarPopover = (props: any) => {
     <div className="py-3">
       {withSearch && <div></div>}
       <Listbox showDivider={false} type="option" size="compressed">
-        {hiddenAvatarList.map((avatar: AvatarData, index: any) => {
-          return <Listbox.Item key={index}>anuradha</Listbox.Item>;
+        {hiddenAvatarList.map((avatarData: AvatarData, index: any) => {
+          const { firstName = '', lastName = '' } = avatarData;
+          const name = `${firstName} ${lastName}`;
+          return (
+            <Listbox.Item key={index}>
+              <Checkbox label={name} onChange={function () {}} size="regular" />
+            </Listbox.Item>
+          );
         })}
       </Listbox>
     </div>
