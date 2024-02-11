@@ -40,10 +40,20 @@ export const all = () => {
     },
   ];
 
+  // const customRenderer = (item) => {
+  //   console.log('my itemmm', item);
+  //   return (
+  //     <div>
+  //       <button>{item.firstName}</button>
+  //     </div>
+  //   );
+  // };
+
   return (
     <SelectionAvatarGroup
       list={list}
-      // borderColor="red"
+      // popperRenderer={customRenderer}
+      borderColor="red"
     />
   );
 };

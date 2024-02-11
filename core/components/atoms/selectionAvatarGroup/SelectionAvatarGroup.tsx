@@ -72,7 +72,7 @@ export interface SelectionAvatarGroupProps extends BaseProps {
 }
 
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
-  const { max, borderColor, tooltipPosition, list, className, size, popperRenderer } = props;
+  const { max, borderColor, tooltipPosition, list, className, size, popperRenderer, avatarRenderer } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -98,8 +98,9 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     >
       <SelectionAvatars
         size={size}
-        avatarList={list.slice(0, max)}
         avatarStyle={style}
+        avatarList={list.slice(0, max)}
+        avatarRenderer={avatarRenderer}
         tooltipPosition={tooltipPosition}
       />
       {hiddenAvatarCount > 0 && (

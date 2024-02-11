@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import SelectionAvatar from './SelectionAvatar';
 
 const SelectionAvatars = (props: any) => {
-  const { avatarList, avatarStyle, tooltipPosition, size } = props;
+  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer } = props;
 
   const GroupClass = classNames({
     [`SelectionAvatarGroup-item`]: true,
@@ -13,6 +13,10 @@ const SelectionAvatars = (props: any) => {
 
   const avatars = avatarList.map((item: any, index: any) => {
     const { appearance, firstName, lastName, iconOptions, imgOptions } = item;
+
+    if (avatarRenderer) {
+      return avatarRenderer(item);
+    }
 
     return (
       <div
@@ -36,6 +40,7 @@ const SelectionAvatars = (props: any) => {
       </div>
     );
   });
+
   return avatars;
 };
 
