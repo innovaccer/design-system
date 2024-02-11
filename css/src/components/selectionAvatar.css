@@ -14,6 +14,7 @@
   border-radius: 50%;
   margin-top: 8px;
   margin-bottom: 8px;
+  display: flex;
 }
 
 /* Selection Avatar */

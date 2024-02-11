@@ -25,8 +25,8 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    *  firstName?: string;
    *  lastName?: string;
    *  appearance?: Appearance;
-   *  icon?: AvatarIconProps;
-   *  image?: AvatarImageProps;
+   *  iconOptions?: AvatarIconProps;
+   *  imgOptions?: AvatarImageProps;
    * }
    *
    * AvatarIconProps: {
@@ -90,10 +90,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     className
   );
 
-  // const popperClass = classNames({
-  //   ['SelectionAvatarGroup-Popper']: true,
-  // });
-
   return (
     <div
       data-test="DesignSystem-SelectionAvatarGroup"
@@ -114,12 +110,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
           position="bottom-end"
           offset="medium"
         >
-          <SelectionAvatarPopover
-            hiddenAvatarList={list.slice(max, list.length)}
-            popperRenderer={popperRenderer}
-            // maxHeight={maxHeight}
-            // dark={dark}
-          />
+          <SelectionAvatarPopover hiddenAvatarList={list.slice(max, list.length)} popperRenderer={popperRenderer} />
         </Popover>
       )}
     </div>

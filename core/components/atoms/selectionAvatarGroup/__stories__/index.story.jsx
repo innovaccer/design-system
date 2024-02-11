@@ -6,10 +6,17 @@ export const all = () => {
     {
       firstName: 'John',
       lastName: 'Doe',
+      iconOptions: {
+        name: 'places',
+        type: 'outlined',
+      },
     },
     {
       firstName: 'Steven',
       lastName: 'Packton',
+      imgOptions: {
+        src: 'https://design.innovaccer.com/images/avatar2.jpeg',
+      },
     },
     {
       firstName: 'Nancy',

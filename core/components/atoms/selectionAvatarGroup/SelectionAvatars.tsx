@@ -12,7 +12,8 @@ const SelectionAvatars = (props: any) => {
   });
 
   const avatars = avatarList.map((item: any, index: any) => {
-    const { appearance, firstName, lastName } = item;
+    const { appearance, firstName, lastName, iconOptions, imgOptions } = item;
+
     return (
       <div
         data-test="DesignSystem-AvatarGroup--Avatar"
@@ -29,6 +30,8 @@ const SelectionAvatars = (props: any) => {
           lastName={lastName}
           withTooltip={true}
           tooltipPosition={tooltipPosition}
+          iconOptions={iconOptions}
+          imgOptions={imgOptions}
         />
       </div>
     );
