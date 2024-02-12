@@ -53,7 +53,7 @@ export const all = () => {
     <SelectionAvatarGroup
       list={list}
       // popperRenderer={customRenderer}
-      borderColor="red"
+      // borderColor="red"
     />
   );
 };

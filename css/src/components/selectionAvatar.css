@@ -1,6 +1,6 @@
 /* Selection avatar group */
 .SelectionAvatarGroup {
-  height: 48px;
+  /* height: 48px; */
   box-sizing: border-box;
   justify-content: center;
   display: flex;
@@ -12,8 +12,8 @@
 .SelectionAvatarGroup-item {
   margin-right: calc(var(--spacing-m) * -1);
   border-radius: 50%;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  /* margin-top: 8px;
+  margin-bottom: 8px; */
   display: flex;
 }
 
@@ -27,16 +27,18 @@
   /* transition: transform 0.3s ease; */
 }
 
-.Selection-Avatar:active {
-  padding: 1px;
-  border: 2px solid #00509f;
+.SelectionAvatarGroup-item:active {
+  /* padding: 1px; */
+  outline: 2px solid #00509f;
+  outline-offset: 1px;
 }
 
 .Selection-Avatar:focus,
 .Selection-Avatar:focus-visible {
-  padding: 3px;
+  /* padding: 3px; */
   /* box-shadow: var(--shadow-spread) var(--primary-shadow); */
   outline: 3px solid var(--primary-shadow);
+  outline-offset: 3px;
 }
 
 .SelectionAvatarGroup-item:hover {

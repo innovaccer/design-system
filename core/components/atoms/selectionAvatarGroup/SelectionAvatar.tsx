@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import { Avatar } from '@/index';
 
 const SelectionAvatar = (props: any) => {
-  console.log('ffffprops', props);
-  // const { size, appearance, firstName, lastName, withTooltip, tooltipPosition, } = props;
   const { iconOptions, imgOptions, ...rest } = props;
 
   const avatarClassName = classNames({
