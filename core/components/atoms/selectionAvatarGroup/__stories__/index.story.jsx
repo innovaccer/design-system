@@ -39,6 +39,7 @@ export const all = () => {
     {
       firstName: 'Walter',
       lastName: 'Wheeler',
+      selected: true,
     },
   ];
 

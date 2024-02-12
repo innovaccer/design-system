@@ -4,7 +4,8 @@ import SelectionAvatar from './SelectionAvatar';
 import { AvatarData } from './SelectionAvatarGroup';
 
 const SelectionAvatars = (props: any) => {
-  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer, setSelectedItems, selectedItems } = props;
+  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer, setSelectedItems, selectedItems, onSelect } =
+    props;
 
   const GroupClass = classNames({
     [`SelectionAvatarGroup-item`]: true,
@@ -13,7 +14,7 @@ const SelectionAvatars = (props: any) => {
   });
 
   const avatars = avatarList.map((avatarItem: AvatarData, index: any) => {
-    const { appearance, firstName, lastName, iconOptions, imgOptions, onSelect } = avatarItem;
+    const { appearance, firstName, lastName, iconOptions, imgOptions } = avatarItem;
 
     if (avatarRenderer) {
       return avatarRenderer(avatarItem);
@@ -28,9 +29,8 @@ const SelectionAvatars = (props: any) => {
         list.push(item);
       }
 
-      console.log('vvvvonclick item', item, 'list', list);
-
       setSelectedItems(list);
+      console.log('onSelect', onSelect);
       onSelect && onSelect(list);
     };
 

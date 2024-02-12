@@ -4,11 +4,25 @@ import { Listbox, Checkbox } from '@/index';
 import { AvatarData } from './SelectionAvatarGroup';
 
 const SelectionAvatarPopover = (props: any) => {
-  const { hiddenAvatarList, popperRenderer, withSearch } = props;
+  const { hiddenAvatarList, popperRenderer, withSearch, onSelect, setSelectedItems, selectedItems } = props;
 
   if (popperRenderer) {
     return popperRenderer(hiddenAvatarList);
   }
+
+  const onChangeHandler = (avatarData: AvatarData) => {
+    console.log('avatarData', avatarData);
+    let list = selectedItems;
+
+    if (selectedItems.includes(avatarData)) {
+      list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
+    } else {
+      list.push(avatarData);
+    }
+
+    setSelectedItems(list);
+    onSelect && onSelect(list);
+  };
 
   // return (
   //   <div className="py-6 pr-4 pl-6">
@@ -43,7 +57,12 @@ const SelectionAvatarPopover = (props: any) => {
           const name = `${firstName} ${lastName}`;
           return (
             <Listbox.Item key={index}>
-              <Checkbox label={name} onChange={function () {}} size="regular" />
+              <Checkbox
+                defaultChecked={selectedItems.includes(avatarData)}
+                label={name}
+                onChange={() => onChangeHandler(avatarData)}
+                size="regular"
+              />
             </Listbox.Item>
           );
         })}

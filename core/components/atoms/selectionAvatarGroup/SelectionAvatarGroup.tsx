@@ -131,7 +131,13 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
           position="bottom-end"
           offset="medium"
         >
-          <SelectionAvatarPopover hiddenAvatarList={list.slice(max, list.length)} popperRenderer={popperRenderer} />
+          <SelectionAvatarPopover
+            hiddenAvatarList={list.slice(max, list.length)}
+            popperRenderer={popperRenderer}
+            onSelect={onSelect}
+            setSelectedItems={setSelectedItems}
+            selectedItems={selectedItems}
+          />
         </Popover>
       )}
     </div>
