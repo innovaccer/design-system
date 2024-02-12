@@ -6,7 +6,7 @@ const SelectionAvatar = (props: any) => {
   const { iconOptions, imgOptions, ...rest } = props;
 
   const avatarClassName = classNames({
-    ['Selection-Avatar']: true,
+    // ['Selection-Avatar']: true,
   });
 
   if (imgOptions || iconOptions) {

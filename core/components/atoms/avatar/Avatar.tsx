@@ -41,10 +41,6 @@ export interface AvatarProps extends BaseProps {
    * Determines the shape of `Avatar`
    */
   shape: AvatarShape;
-  /**
-   * Describe aria-role for the `Avatar`
-   */
-  role?: string;
 }
 
 const initialsLength = 2;

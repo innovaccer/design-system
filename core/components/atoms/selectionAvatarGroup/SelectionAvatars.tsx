@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import SelectionAvatar from './SelectionAvatar';
+import { AvatarData } from './SelectionAvatarGroup';
 
 const SelectionAvatars = (props: any) => {
-  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer } = props;
+  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer, setSelectedItems, selectedItems } = props;
 
   const GroupClass = classNames({
     [`SelectionAvatarGroup-item`]: true,
@@ -11,25 +12,39 @@ const SelectionAvatars = (props: any) => {
     [`SelectionAvatarGroup-item--regular`]: size === 'regular',
   });
 
-  const avatars = avatarList.map((item: any, index: any) => {
-    const { appearance, firstName, lastName, iconOptions, imgOptions } = item;
+  const avatars = avatarList.map((avatarItem: AvatarData, index: any) => {
+    const { appearance, firstName, lastName, iconOptions, imgOptions, onSelect } = avatarItem;
 
     if (avatarRenderer) {
-      return avatarRenderer(item);
+      return avatarRenderer(avatarItem);
     }
+
+    const onClickHandler = (item: AvatarData) => {
+      let list = selectedItems;
+
+      if (selectedItems.includes(item)) {
+        list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== item);
+      } else {
+        list.push(item);
+      }
+
+      console.log('vvvvonclick item', item, 'list', list);
+
+      setSelectedItems(list);
+      onSelect && onSelect(list);
+    };
 
     return (
       <div
-        data-test="DesignSystem-AvatarGroup--Avatar"
+        key={index}
         tabIndex={0}
         role="checkbox"
-        aria-checked={true}
-        className={GroupClass}
         style={avatarStyle}
-        // aria-role="button"
-        // onClick={onClickHandler}
-        // onKeyDown={onClickHandler}
-        key={index}
+        className={GroupClass}
+        data-test="DesignSystem-AvatarGroup--Avatar"
+        aria-checked={selectedItems.includes(avatarItem)}
+        onClick={() => onClickHandler(avatarItem)}
+        onKeyDown={() => onClickHandler(avatarItem)}
       >
         <SelectionAvatar
           size={size}

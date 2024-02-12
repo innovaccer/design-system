@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { SelectionAvatarGroup } from '../SelectionAvatarGroup';
+import { action } from '@/utils/action';
 
 export const all = () => {
   const list = [
@@ -49,9 +50,14 @@ export const all = () => {
   //   );
   // };
 
+  const onSelectHandler = (props) => {
+    action('kkkkprops', props)();
+  };
+
   return (
     <SelectionAvatarGroup
       list={list}
+      onSelect={onSelectHandler}
       // popperRenderer={customRenderer}
       // borderColor="red"
     />

@@ -61,19 +61,25 @@ export interface SelectionAvatarGroupProps extends BaseProps {
   /**
    * Callback function to create custom popover content
    */
-  popperRenderer?: (names: AvatarData[]) => JSX.Element;
+  popperRenderer?: (list: AvatarData[]) => JSX.Element;
   /**
    * Position to place the tooltip on `Avatars` shown before +x
    */
   tooltipPosition: PopoverProps['position'];
   /**
-   *  Callback function to create custom avatar content
+   * Callback function to create custom avatar content
    */
-  avatarRenderer?: (name: AvatarData) => JSX.Element;
+  avatarRenderer?: (data: AvatarData) => JSX.Element;
+  /**
+   * Callback function for avatar selection
+   */
+  onSelect?: (data: AvatarData) => void;
 }
 
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
-  const { max, borderColor, tooltipPosition, list, className, size, popperRenderer, avatarRenderer } = props;
+  const { max, borderColor, tooltipPosition, list, className, size, popperRenderer, avatarRenderer, onSelect } = props;
+
+  const [selectedItems, setSelectedItems] = React.useState([]);
 
   const baseProps = extractBaseProps(props);
 
@@ -103,6 +109,9 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
         avatarList={list.slice(0, max)}
         avatarRenderer={avatarRenderer}
         tooltipPosition={tooltipPosition}
+        onSelect={onSelect}
+        setSelectedItems={setSelectedItems}
+        selectedItems={selectedItems}
       />
       {hiddenAvatarCount > 0 && (
         <Popover

@@ -20,17 +20,11 @@
 /* Selection Avatar */
 
 .Selection-Avatar {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   /* padding-top: 8px;
   padding-bottom: 8px;
   margin-right: calc(var(--spacing-m) * -1); */
   /* transition: transform 0.3s ease; */
-}
-
-.SelectionAvatarGroup-item:active {
-  /* padding: 1px; */
-  outline: 2px solid #00509f;
-  outline-offset: 1px;
 }
 
 .SelectionAvatarGroup-item:focus,
@@ -39,6 +33,12 @@
   /* box-shadow: var(--shadow-spread) var(--primary-shadow); */
   outline: 3px solid var(--primary-shadow);
   outline-offset: 3px;
+}
+
+.SelectionAvatarGroup-item:active {
+  /* padding: 1px; */
+  outline: 2px solid #00509f;
+  outline-offset: 1px;
 }
 
 .SelectionAvatarGroup-item:hover {
