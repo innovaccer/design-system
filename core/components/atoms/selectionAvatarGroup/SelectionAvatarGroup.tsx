@@ -14,6 +14,7 @@ export interface AvatarData extends Record<string, any> {
   appearance?: AvatarProps['appearance'];
   iconOptions?: AvatarIconProps;
   imgOptions?: AvatarImageProps;
+  selected?: boolean;
 }
 
 export interface SelectionAvatarGroupProps extends BaseProps {

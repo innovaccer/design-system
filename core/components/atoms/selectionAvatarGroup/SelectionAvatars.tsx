@@ -21,10 +21,14 @@ const SelectionAvatars = (props: any) => {
     return (
       <div
         data-test="DesignSystem-AvatarGroup--Avatar"
-        // tabIndex={0}
-        // role="button"
+        tabIndex={0}
+        role="checkbox"
+        aria-checked={true}
         className={GroupClass}
         style={avatarStyle}
+        // aria-role="button"
+        // onClick={onClickHandler}
+        // onKeyDown={onClickHandler}
         key={index}
       >
         <SelectionAvatar

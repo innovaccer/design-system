@@ -52,18 +52,7 @@ const DefaultAppearance = 'secondary';
 const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
 
 export const Avatar = (props: AvatarProps) => {
-  const {
-    withTooltip,
-    tooltipPosition,
-    size,
-    children,
-    firstName,
-    lastName,
-    className,
-    appearance,
-    shape,
-    role = 'presentation',
-  } = props;
+  const { withTooltip, tooltipPosition, size, children, firstName, lastName, className, appearance, shape } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -112,9 +101,9 @@ export const Avatar = (props: AvatarProps) => {
   const renderAvatar = () => {
     if (children && typeof children !== 'string') {
       return (
-        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} tabIndex={0} role={role}>
+        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
           <AvatarProvider value={sharedProp}>
-            <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames} tabIndex={-1}>
+            <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
               {children}
             </span>
           </AvatarProvider>
@@ -123,8 +112,8 @@ export const Avatar = (props: AvatarProps) => {
     }
 
     return (
-      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} tabIndex={0} role={role}>
-        <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames} tabIndex={-1}>
+      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
+        <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
           {initials && (
             <Text weight="medium" appearance={'white'} className={TextClassNames}>
               {initials}
