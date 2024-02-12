@@ -11,6 +11,7 @@ export const all = () => {
         name: 'places',
         type: 'outlined',
       },
+      selected: true,
     },
     {
       firstName: 'Steven',

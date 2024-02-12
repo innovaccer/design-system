@@ -79,7 +79,17 @@ export interface SelectionAvatarGroupProps extends BaseProps {
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
   const { max, borderColor, tooltipPosition, list, className, size, popperRenderer, avatarRenderer, onSelect } = props;
 
-  const [selectedItems, setSelectedItems] = React.useState([]);
+  const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
+
+  React.useEffect(() => {
+    const selectedList: AvatarData[] = [];
+    list.forEach((avatarItem: AvatarData) => {
+      if (avatarItem.selected) {
+        selectedList.push(avatarItem);
+      }
+    });
+    setSelectedItems(selectedList);
+  }, []);
 
   const baseProps = extractBaseProps(props);
 
