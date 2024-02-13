@@ -2,16 +2,27 @@ import * as React from 'react';
 import { Listbox, Checkbox } from '@/index';
 // import classNames from 'classnames';
 import { AvatarData } from './SelectionAvatarGroup';
+import SelectionAvatarInput from './SelectionAvatarInput';
 
 const SelectionAvatarPopover = (props: any) => {
-  const { hiddenAvatarList, popperRenderer, withSearch, onSelect, setSelectedItems, selectedItems, customStyle } =
-    props;
+  const {
+    hiddenAvatarList,
+    popperRenderer,
+    withSearch,
+    onSelect,
+    setSelectedItems,
+    selectedItems,
+    customStyle,
+    searchPlaceholder,
+  } = props;
+
+  const [searchList, setSearchList] = React.useState(hiddenAvatarList);
 
   if (popperRenderer) {
     return popperRenderer(hiddenAvatarList);
   }
 
-  const onChangeHandler = (avatarData: AvatarData) => {
+  const onSelectHandler = (avatarData: AvatarData) => {
     console.log('avatarData', avatarData);
     let list = selectedItems;
 
@@ -25,35 +36,22 @@ const SelectionAvatarPopover = (props: any) => {
     onSelect && onSelect(list);
   };
 
-  // return (
-  //   <div className="py-6 pr-4 pl-6">
-  //     <div className="AvatarGroup-TextWrapper" style={{ maxHeight }}>
-  //       {hiddenAvatarList.map((item: any, ind: any) => {
-  //         const { firstName = '', lastName = '' } = item;
-  //         const name = `${firstName} ${lastName}`;
-  //         const AvatarTextClass = classNames({
-  //           [`mb-5`]: ind < hiddenAvatarList.length - 1,
-  //         });
-  //         return (
-  //           <Text
-  //             key={ind}
-  //             appearance={dark ? 'white' : 'default'}
-  //             className={AvatarTextClass}
-  //             data-test="DesignSystem-AvatarGroup--Text"
-  //           >
-  //             {name}
-  //           </Text>
-  //         );
-  //       })}
-  //     </div>
-  //   </div>
-  // );
+  const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const searchValue = event.target.value.toLowerCase();
+
+    const list = hiddenAvatarList.filter((avatarData: AvatarData) => {
+      const { firstName, lastName } = avatarData;
+      return firstName?.toLowerCase()?.startsWith(searchValue) || lastName?.toLowerCase()?.startsWith(searchValue);
+    });
+
+    setSearchList(list);
+  };
 
   return (
     <div className="py-3 SelectionAvatarGroup-Popper" style={customStyle}>
-      {withSearch && <div></div>}
+      {withSearch && <SelectionAvatarInput placeholder={searchPlaceholder} onChange={onSearchHandler} />}
       <Listbox showDivider={false} type="option" size="compressed">
-        {hiddenAvatarList.map((avatarData: AvatarData, index: any) => {
+        {searchList.map((avatarData: AvatarData, index: any) => {
           const { firstName = '', lastName = '' } = avatarData;
           const name = `${firstName} ${lastName}`;
           return (
@@ -61,7 +59,7 @@ const SelectionAvatarPopover = (props: any) => {
               <Checkbox
                 defaultChecked={selectedItems.includes(avatarData)}
                 label={name}
-                onChange={() => onChangeHandler(avatarData)}
+                onChange={() => onSelectHandler(avatarData)}
                 size="regular"
               />
             </Listbox.Item>

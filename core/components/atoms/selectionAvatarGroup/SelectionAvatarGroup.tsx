@@ -86,6 +86,14 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    * Adds minimum height to Popper
    */
   minHeight?: number;
+  /**
+   * Set `true` to show search input inside popper
+   */
+  withSearch?: boolean;
+  /**
+   * Describes placeholder for search input inside popper
+   */
+  searchPlaceholder?: string;
 }
 
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
@@ -102,6 +110,8 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     width,
     maxHeight,
     minHeight,
+    searchPlaceholder,
+    withSearch,
   } = props;
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
@@ -153,7 +163,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
           on="click"
           trigger={<SelectionAvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
           position="bottom-end"
-          offset="medium"
         >
           <SelectionAvatarPopover
             hiddenAvatarList={list.slice(max, list.length)}
@@ -162,6 +171,8 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
             setSelectedItems={setSelectedItems}
             selectedItems={selectedItems}
             customStyle={{ width, maxHeight, minHeight }}
+            searchPlaceholder={searchPlaceholder}
+            withSearch={withSearch}
           />
         </Popover>
       )}
