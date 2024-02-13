@@ -174,8 +174,10 @@ SelectionAvatarGroup.defaultProps = {
   max: 5,
   tooltipPosition: 'bottom',
   borderColor: 'white',
-  popoverOptions: {},
   size: 'regular',
+  width: 176,
+  maxHeight: 256,
+  minHeight: 24,
 };
 
 export default SelectionAvatarGroup;
