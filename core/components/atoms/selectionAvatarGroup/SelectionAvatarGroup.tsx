@@ -74,10 +74,35 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    * Callback function for avatar selection
    */
   onSelect?: (data: AvatarData) => void;
+  /**
+   * Adds custom width to Popper
+   */
+  width?: number;
+  /**
+   * Adds maximum height to Popper
+   */
+  maxHeight?: number;
+  /**
+   * Adds minimum height to Popper
+   */
+  minHeight?: number;
 }
 
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
-  const { max, borderColor, tooltipPosition, list, className, size, popperRenderer, avatarRenderer, onSelect } = props;
+  const {
+    max,
+    borderColor,
+    tooltipPosition,
+    list,
+    className,
+    size,
+    popperRenderer,
+    avatarRenderer,
+    onSelect,
+    width,
+    maxHeight,
+    minHeight,
+  } = props;
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
 
@@ -127,7 +152,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
         <Popover
           on="click"
           trigger={<SelectionAvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
-          // className={popperClass}
           position="bottom-end"
           offset="medium"
         >
@@ -137,6 +161,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
             onSelect={onSelect}
             setSelectedItems={setSelectedItems}
             selectedItems={selectedItems}
+            customStyle={{ width, maxHeight, minHeight }}
           />
         </Popover>
       )}

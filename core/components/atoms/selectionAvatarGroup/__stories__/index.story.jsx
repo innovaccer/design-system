@@ -58,8 +58,10 @@ export const all = () => {
 
   return (
     <SelectionAvatarGroup
-      list={list}
+      list={[...list, ...list, ...list]}
       onSelect={onSelectHandler}
+      width={400}
+      maxHeight={200}
       // popperRenderer={customRenderer}
       // borderColor="red"
     />

@@ -46,3 +46,7 @@
   overflow: hidden;
   margin-right: calc(var(--spacing-m) * -1);
 }
+
+.SelectionAvatarGroup-Popper {
+  overflow-y: scroll;
+}

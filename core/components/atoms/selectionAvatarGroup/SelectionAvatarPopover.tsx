@@ -4,7 +4,8 @@ import { Listbox, Checkbox } from '@/index';
 import { AvatarData } from './SelectionAvatarGroup';
 
 const SelectionAvatarPopover = (props: any) => {
-  const { hiddenAvatarList, popperRenderer, withSearch, onSelect, setSelectedItems, selectedItems } = props;
+  const { hiddenAvatarList, popperRenderer, withSearch, onSelect, setSelectedItems, selectedItems, customStyle } =
+    props;
 
   if (popperRenderer) {
     return popperRenderer(hiddenAvatarList);
@@ -49,7 +50,7 @@ const SelectionAvatarPopover = (props: any) => {
   // );
 
   return (
-    <div className="py-3">
+    <div className="py-3 SelectionAvatarGroup-Popper" style={customStyle}>
       {withSearch && <div></div>}
       <Listbox showDivider={false} type="option" size="compressed">
         {hiddenAvatarList.map((avatarData: AvatarData, index: any) => {
