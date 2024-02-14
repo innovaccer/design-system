@@ -7,14 +7,13 @@ const SelectionAvatars = (props: any) => {
   const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer, setSelectedItems, selectedItems, onSelect } =
     props;
 
-  const GroupClass = classNames({
-    [`SelectionAvatarGroup-item`]: true,
-    [`SelectionAvatarGroup-item--tiny`]: size === 'tiny',
-    [`SelectionAvatarGroup-item--regular`]: size === 'regular',
-  });
-
   const avatars = avatarList.map((avatarItem: AvatarData, index: any) => {
     const { appearance, firstName, lastName, iconOptions, imgOptions } = avatarItem;
+
+    const GroupClass = classNames({
+      [`SelectionAvatarGroup-item`]: true,
+      [`SelectionAvatarGroup-item--selected`]: selectedItems.includes(avatarItem),
+    });
 
     if (avatarRenderer) {
       return avatarRenderer(avatarItem);
@@ -44,7 +43,7 @@ const SelectionAvatars = (props: any) => {
         data-test="DesignSystem-AvatarGroup--Avatar"
         aria-checked={selectedItems.includes(avatarItem)}
         onClick={() => onClickHandler(avatarItem)}
-        onKeyDown={() => onClickHandler(avatarItem)}
+        // onKeyDown={() => onClickHandler(avatarItem)}
       >
         <SelectionAvatar
           size={size}

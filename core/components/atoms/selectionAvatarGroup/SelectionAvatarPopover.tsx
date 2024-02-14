@@ -62,7 +62,7 @@ const SelectionAvatarPopover = (props: any) => {
   const popperClassName = classNames({
     ['py-3']: !withSearch,
     ['pb-3']: withSearch,
-    ['SelectionAvatarGroup-Popper']: true,
+    ['SelectionAvatarGroup-popper']: true,
   });
 
   return (

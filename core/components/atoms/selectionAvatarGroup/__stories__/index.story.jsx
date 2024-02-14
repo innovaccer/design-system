@@ -67,6 +67,7 @@ export const all = () => {
       list={list}
       onSelect={onSelectHandler}
       searchPlaceholder="Search User"
+      size="tiny"
       // width={400}
       // maxHeight={200}
       // onSearch={onSearchHandler}
