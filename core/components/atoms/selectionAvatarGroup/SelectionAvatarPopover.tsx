@@ -51,12 +51,17 @@ const SelectionAvatarPopover = (props: any) => {
   const popperClassName = classNames({
     ['py-3']: !withSearch,
     ['pb-3']: withSearch,
+    ['SelectionAvatarGroup-Popper']: true,
   });
 
   return (
-    <div className={popperClassName} style={{ width: customStyle.width }}>
+    <div
+      // className={popperClassName}
+      style={{ width: customStyle.width }}
+    >
       {withSearch && <SelectionAvatarInput placeholder={searchPlaceholder} onChange={onSearchHandler} />}
-      <div style={customStyle} className="SelectionAvatarGroup-Popper">
+
+      <div style={customStyle} className={popperClassName}>
         <Listbox showDivider={false} type="option" size="compressed">
           {searchList.map((avatarData: AvatarData, index: any) => {
             const { firstName = '', lastName = '' } = avatarData;

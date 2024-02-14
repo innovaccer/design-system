@@ -49,6 +49,7 @@
 
 .SelectionAvatarGroup-Popper {
   overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 .SelectionAvatar-inputWrapper {
@@ -61,10 +62,18 @@
 
 .SelectionAvatar-input {
   min-width: unset !important;
+  background: transparent;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0;
 }
 
 .SelectionAvatar-input,
 .SelectionAvatar-input:focus-within {
   border: unset !important;
   box-shadow: none !important;
+}
+
+/* .SelectionAvatar-inputWrapper:hover, */
+.SelectionAvatar-input:hover {
+  background-color: #f4f4f4;
 }

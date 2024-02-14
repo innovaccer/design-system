@@ -36,9 +36,9 @@ import { InputProps } from '@/index.type';
 export const SelectionAvatarInput = (props: InputProps) => {
   const { onChange, ...rest } = props;
 
-  const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange && onChange(event);
-  };
+  // const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   onChange && onChange(event);
+  // };
 
   return (
     <div className="SelectionAvatar-inputWrapper">
@@ -46,7 +46,7 @@ export const SelectionAvatarInput = (props: InputProps) => {
         icon="search"
         className="w-100 SelectionAvatar-input"
         minWidth="160px"
-        onChange={onChangeHandler}
+        onChange={onChange}
         data-test="DesignSystem-GenericInput"
         {...rest}
       />

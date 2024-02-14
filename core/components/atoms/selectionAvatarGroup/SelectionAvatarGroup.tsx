@@ -144,12 +144,11 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
 
   const searchInputHeight = 32;
   const searchBorder = 1;
-  const spacing = withSearch ? 4 : 8;
 
   const customStyle = {
     width,
-    minHeight: minHeight ? minHeight - searchInputHeight - searchBorder - spacing : '',
-    maxHeight: maxHeight ? maxHeight - searchInputHeight - searchBorder - spacing : '',
+    minHeight: withSearch ? minHeight! - searchInputHeight - searchBorder : minHeight,
+    maxHeight: withSearch ? maxHeight! - searchInputHeight - searchBorder : maxHeight,
   };
 
   return (
