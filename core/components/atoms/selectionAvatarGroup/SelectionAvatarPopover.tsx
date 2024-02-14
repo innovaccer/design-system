@@ -15,6 +15,7 @@ const SelectionAvatarPopover = (props: any) => {
     selectedItems,
     customStyle,
     searchPlaceholder,
+    onSearch,
   } = props;
 
   const [searchList, setSearchList] = React.useState(hiddenAvatarList);
@@ -40,12 +41,17 @@ const SelectionAvatarPopover = (props: any) => {
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value.toLowerCase();
 
-    const list = hiddenAvatarList.filter((avatarData: AvatarData) => {
-      const { firstName, lastName } = avatarData;
-      return firstName?.toLowerCase()?.startsWith(searchValue) || lastName?.toLowerCase()?.startsWith(searchValue);
-    });
+    if (onSearch) {
+      const list = onSearch(searchValue, hiddenAvatarList);
+      setSearchList(list);
+    } else {
+      const list = hiddenAvatarList.filter((avatarData: AvatarData) => {
+        const { firstName, lastName } = avatarData;
+        return firstName?.toLowerCase()?.startsWith(searchValue) || lastName?.toLowerCase()?.startsWith(searchValue);
+      });
 
-    setSearchList(list);
+      setSearchList(list);
+    }
   };
 
   const popperClassName = classNames({

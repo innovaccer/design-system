@@ -94,6 +94,10 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    * Describes placeholder for search input inside popper
    */
   searchPlaceholder?: string;
+  /**
+   * Callback function for search inside popper
+   */
+  onSearch?: (searchValue: string, list: AvatarData[]) => AvatarData[];
 }
 
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
@@ -112,6 +116,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     minHeight,
     searchPlaceholder,
     withSearch,
+    onSearch,
   } = props;
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
@@ -182,6 +187,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
             customStyle={customStyle}
             searchPlaceholder={searchPlaceholder}
             withSearch={withSearch}
+            onSearch={onSearch}
           />
         </Popover>
       )}

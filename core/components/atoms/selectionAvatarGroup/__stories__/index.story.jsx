@@ -56,6 +56,11 @@ export const all = () => {
     action('props', props)();
   };
 
+  // const onSearchHandler = (a, b) => {
+  //   action('search arguments', a, 'b', b)();
+  //   return [{ firstName: 'Arya', lastName: 'Stark' }];
+  // };
+
   return (
     <SelectionAvatarGroup
       withSearch={true}
@@ -64,6 +69,7 @@ export const all = () => {
       searchPlaceholder="Search User"
       width={400}
       maxHeight={200}
+      // onSearch={onSearchHandler}
       // popperRenderer={customRenderer}
       // borderColor="red"
     />
