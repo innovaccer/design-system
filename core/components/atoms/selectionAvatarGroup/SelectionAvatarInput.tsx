@@ -41,14 +41,16 @@ export const SelectionAvatarInput = (props: InputProps) => {
   };
 
   return (
-    <Input
-      icon="search"
-      className="w-100"
-      minWidth="160px"
-      onChange={onChangeHandler}
-      data-test="DesignSystem-GenericInput"
-      {...rest}
-    />
+    <div className="SelectionAvatar-inputWrapper">
+      <Input
+        icon="search"
+        className="w-100 SelectionAvatar-input"
+        minWidth="160px"
+        onChange={onChangeHandler}
+        data-test="DesignSystem-GenericInput"
+        {...rest}
+      />
+    </div>
   );
 };
 

@@ -142,6 +142,16 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     className
   );
 
+  const searchInputHeight = 32;
+  const searchBorder = 1;
+  const spacing = withSearch ? 4 : 8;
+
+  const customStyle = {
+    width,
+    minHeight: minHeight ? minHeight - searchInputHeight - searchBorder - spacing : '',
+    maxHeight: maxHeight ? maxHeight - searchInputHeight - searchBorder - spacing : '',
+  };
+
   return (
     <div
       data-test="DesignSystem-SelectionAvatarGroup"
@@ -170,7 +180,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
             onSelect={onSelect}
             setSelectedItems={setSelectedItems}
             selectedItems={selectedItems}
-            customStyle={{ width, maxHeight, minHeight }}
+            customStyle={customStyle}
             searchPlaceholder={searchPlaceholder}
             withSearch={withSearch}
           />

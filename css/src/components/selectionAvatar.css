@@ -50,3 +50,21 @@
 .SelectionAvatarGroup-Popper {
   overflow-y: scroll;
 }
+
+.SelectionAvatar-inputWrapper {
+  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+}
+
+.SelectionAvatar-inputWrapper:focus-within {
+  border-bottom: var(--spacing-xs) solid var(--primary);
+}
+
+.SelectionAvatar-input {
+  min-width: unset !important;
+}
+
+.SelectionAvatar-input,
+.SelectionAvatar-input:focus-within {
+  border: unset !important;
+  box-shadow: none !important;
+}

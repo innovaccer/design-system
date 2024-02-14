@@ -3,6 +3,7 @@ import { Listbox, Checkbox } from '@/index';
 // import classNames from 'classnames';
 import { AvatarData } from './SelectionAvatarGroup';
 import SelectionAvatarInput from './SelectionAvatarInput';
+import classNames from 'classnames';
 
 const SelectionAvatarPopover = (props: any) => {
   const {
@@ -47,25 +48,32 @@ const SelectionAvatarPopover = (props: any) => {
     setSearchList(list);
   };
 
+  const popperClassName = classNames({
+    ['py-3']: !withSearch,
+    ['pb-3']: withSearch,
+  });
+
   return (
-    <div className="py-3 SelectionAvatarGroup-Popper" style={customStyle}>
+    <div className={popperClassName} style={{ width: customStyle.width }}>
       {withSearch && <SelectionAvatarInput placeholder={searchPlaceholder} onChange={onSearchHandler} />}
-      <Listbox showDivider={false} type="option" size="compressed">
-        {searchList.map((avatarData: AvatarData, index: any) => {
-          const { firstName = '', lastName = '' } = avatarData;
-          const name = `${firstName} ${lastName}`;
-          return (
-            <Listbox.Item key={index}>
-              <Checkbox
-                defaultChecked={selectedItems.includes(avatarData)}
-                label={name}
-                onChange={() => onSelectHandler(avatarData)}
-                size="regular"
-              />
-            </Listbox.Item>
-          );
-        })}
-      </Listbox>
+      <div style={customStyle} className="SelectionAvatarGroup-Popper">
+        <Listbox showDivider={false} type="option" size="compressed">
+          {searchList.map((avatarData: AvatarData, index: any) => {
+            const { firstName = '', lastName = '' } = avatarData;
+            const name = `${firstName} ${lastName}`;
+            return (
+              <Listbox.Item key={index}>
+                <Checkbox
+                  defaultChecked={selectedItems.includes(avatarData)}
+                  label={name}
+                  onChange={() => onSelectHandler(avatarData)}
+                  size="regular"
+                />
+              </Listbox.Item>
+            );
+          })}
+        </Listbox>
+      </div>
     </div>
   );
 };
