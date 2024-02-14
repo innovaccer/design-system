@@ -64,11 +64,11 @@ export const all = () => {
   return (
     <SelectionAvatarGroup
       withSearch={true}
-      list={[...list, ...list, ...list]}
+      list={list}
       onSelect={onSelectHandler}
       searchPlaceholder="Search User"
-      width={400}
-      maxHeight={200}
+      // width={400}
+      // maxHeight={200}
       // onSearch={onSearchHandler}
       // popperRenderer={customRenderer}
       // borderColor="red"

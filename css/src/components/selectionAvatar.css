@@ -50,6 +50,7 @@
 .SelectionAvatarGroup-Popper {
   overflow-y: scroll;
   box-sizing: border-box;
+  /* overflow-x: hidden; */
 }
 
 .SelectionAvatar-inputWrapper {
@@ -76,4 +77,8 @@
 /* .SelectionAvatar-inputWrapper:hover, */
 .SelectionAvatar-input:hover {
   background-color: #f4f4f4;
+}
+
+.myclass {
+  /* overflow: scroll; */
 }

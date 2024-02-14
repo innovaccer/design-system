@@ -1,9 +1,14 @@
 import * as React from 'react';
-import { Listbox, Checkbox } from '@/index';
+import {
+  Listbox,
+  Checkbox,
+  // Text
+} from '@/index';
 // import classNames from 'classnames';
 import { AvatarData } from './SelectionAvatarGroup';
 import SelectionAvatarInput from './SelectionAvatarInput';
 import classNames from 'classnames';
+// import { withOverflowText } from './OverflowText';
 
 const SelectionAvatarPopover = (props: any) => {
   const {
@@ -72,6 +77,9 @@ const SelectionAvatarPopover = (props: any) => {
           {searchList.map((avatarData: AvatarData, index: any) => {
             const { firstName = '', lastName = '' } = avatarData;
             const name = `${firstName} ${lastName}`;
+
+            // const OverflowTextComponent = withOverflowText(<Text>{name}</Text>);
+
             return (
               <Listbox.Item key={index}>
                 <Checkbox
@@ -80,6 +88,7 @@ const SelectionAvatarPopover = (props: any) => {
                   onChange={() => onSelectHandler(avatarData)}
                   size="regular"
                 />
+                {/* <OverflowTextComponent>{name}</OverflowTextComponent> */}
               </Listbox.Item>
             );
           })}
