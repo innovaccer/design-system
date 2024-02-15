@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { Popover } from '@/index';
+import { Popover, OutsideClick } from '@/index';
 import { AvatarProps, PopoverProps, AvatarIconProps, AvatarImageProps } from '@/index.type';
 import { AvatarSize } from '@/common.type';
 import SelectionAvatars from './SelectionAvatars';
@@ -120,6 +120,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
   } = props;
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
+  const [openPopover, setOpenPopover] = React.useState(false);
 
   React.useEffect(() => {
     const selectedList: AvatarData[] = [];
@@ -135,7 +136,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
 
   const hiddenAvatarCount = list.length - max;
 
-  const style = {
+  const avatarStyle = {
     backgroundColor: `${borderColor}`,
     boxShadow: `0 0 0  calc(var(--spacing-xs) + var(--spacing-s)) ${borderColor}`,
   };
@@ -158,6 +159,31 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
 
   const hiddenAvatarList = list.slice(max, list.length);
 
+  const popoverProps = {
+    hiddenAvatarList,
+    popperRenderer,
+    onSelect,
+    setSelectedItems,
+    selectedItems,
+    customStyle,
+    searchPlaceholder,
+    withSearch,
+    onSearch,
+  };
+
+  const triggerProps = {
+    size,
+    avatarStyle,
+    selectedItems,
+    hiddenAvatarCount,
+    hiddenAvatarList,
+    setOpenPopover,
+  };
+
+  const outsideClickHandler = () => {
+    setOpenPopover(false);
+  };
+
   return (
     <div
       data-test="DesignSystem-SelectionAvatarGroup"
@@ -166,7 +192,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     >
       <SelectionAvatars
         size={size}
-        avatarStyle={style}
+        avatarStyle={avatarStyle}
         avatarList={list.slice(0, max)}
         avatarRenderer={avatarRenderer}
         tooltipPosition={tooltipPosition}
@@ -175,31 +201,16 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
         selectedItems={selectedItems}
       />
       {hiddenAvatarCount > 0 && (
-        <Popover
-          on="click"
-          position="bottom-end"
-          trigger={
-            <SelectionAvatarCount
-              size={size}
-              avatarStyle={style}
-              selectedItems={selectedItems}
-              hiddenAvatarCount={hiddenAvatarCount}
-              hiddenAvatarList={hiddenAvatarList}
-            />
-          }
-        >
-          <SelectionAvatarPopover
-            hiddenAvatarList={hiddenAvatarList}
-            popperRenderer={popperRenderer}
-            onSelect={onSelect}
-            setSelectedItems={setSelectedItems}
-            selectedItems={selectedItems}
-            customStyle={customStyle}
-            searchPlaceholder={searchPlaceholder}
-            withSearch={withSearch}
-            onSearch={onSearch}
-          />
-        </Popover>
+        <OutsideClick onOutsideClick={outsideClickHandler}>
+          <Popover
+            // on="click"
+            open={openPopover}
+            position="bottom-end"
+            trigger={<SelectionAvatarCount {...triggerProps} />}
+          >
+            <SelectionAvatarPopover {...popoverProps} />
+          </Popover>
+        </OutsideClick>
       )}
     </div>
   );
