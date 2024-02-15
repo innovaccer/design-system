@@ -78,6 +78,21 @@
   background-color: #f4f4f4;
 }
 
-.myclass {
-  /* overflow: scroll; */
+.SelectionAvatarCount-wrapper {
+  border-radius: 50%;
+}
+
+.SelectionAvatarCount .Avatar:hover {
+  /* background-color: red; */
+  background: var(--secondary);
+}
+
+.SelectionAvatarCount .Avatar:active {
+  background: var(--secondary-dark);
+}
+
+.SelectionAvatarCount-wrapper:focus,
+.SelectionAvatarCount-wrapper:focus-visible {
+  outline: 3px solid var(--primary-shadow);
+  outline-offset: 3px;
 }
