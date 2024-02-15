@@ -29,8 +29,17 @@ const SelectionAvatars = (props: any) => {
       }
 
       setSelectedItems(list);
-      console.log('onSelect', onSelect);
       onSelect && onSelect(list);
+    };
+
+    const handleKeyDown = (event: React.KeyboardEvent, item: AvatarData) => {
+      switch (event.key) {
+        case 'Enter':
+          onClickHandler(item);
+          break;
+        default:
+          break;
+      }
     };
 
     return (
@@ -43,7 +52,7 @@ const SelectionAvatars = (props: any) => {
         data-test="DesignSystem-AvatarGroup--Avatar"
         aria-checked={selectedItems.includes(avatarItem)}
         onClick={() => onClickHandler(avatarItem)}
-        // onKeyDown={() => onClickHandler(avatarItem)}
+        onKeyDown={(event: React.KeyboardEvent) => handleKeyDown(event, avatarItem)}
       >
         <SelectionAvatar
           size={size}
