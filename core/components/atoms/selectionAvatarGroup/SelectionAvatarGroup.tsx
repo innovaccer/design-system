@@ -156,6 +156,8 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     maxHeight: withSearch ? maxHeight! - searchInputHeight - searchBorder : maxHeight,
   };
 
+  const hiddenAvatarList = list.slice(max, list.length);
+
   return (
     <div
       data-test="DesignSystem-SelectionAvatarGroup"
@@ -179,14 +181,15 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
           trigger={
             <SelectionAvatarCount
               size={size}
-              hiddenAvatarCount={hiddenAvatarCount}
               avatarStyle={style}
               selectedItems={selectedItems}
+              hiddenAvatarCount={hiddenAvatarCount}
+              hiddenAvatarList={hiddenAvatarList}
             />
           }
         >
           <SelectionAvatarPopover
-            hiddenAvatarList={list.slice(max, list.length)}
+            hiddenAvatarList={hiddenAvatarList}
             popperRenderer={popperRenderer}
             onSelect={onSelect}
             setSelectedItems={setSelectedItems}

@@ -1,14 +1,24 @@
 import * as React from 'react';
 import { Text, Avatar } from '@/index';
 import classNames from 'classnames';
+import { AvatarData } from './SelectionAvatarGroup';
 
 const SelectionAvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size, selectedItems } = props;
+  const { hiddenAvatarCount, avatarStyle, size, selectedItems, hiddenAvatarList } = props;
+
+  const [selectedItemCount, setSelectedItemCount] = React.useState(0);
 
   const wrapperClassName = classNames({
     ['SelectionAvatarCount-wrapper']: true,
-    ['SelectionAvatarCount--selected']: selectedItems.length > 0,
+    ['SelectionAvatarCount--selected']: selectedItemCount > 0,
   });
+
+  React.useEffect(() => {
+    const results = hiddenAvatarList.filter((data1: AvatarData) =>
+      selectedItems.some((data2: AvatarData) => data2 === data1)
+    );
+    setSelectedItemCount(results.length);
+  }, [selectedItems]);
 
   return (
     <div
