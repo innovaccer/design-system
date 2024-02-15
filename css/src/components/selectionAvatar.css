@@ -78,12 +78,13 @@
   background-color: #f4f4f4;
 }
 
+/* Selection Avatar Count */
+
 .SelectionAvatarCount-wrapper {
   border-radius: 50%;
 }
 
 .SelectionAvatarCount .Avatar:hover {
-  /* background-color: red; */
   background: var(--secondary);
 }
 
@@ -95,4 +96,14 @@
 .SelectionAvatarCount-wrapper:focus-visible {
   outline: 3px solid var(--primary-shadow);
   outline-offset: 3px;
+}
+
+.SelectionAvatarCount--selected {
+  outline-offset: 1px;
+  outline: 2px solid var(--primary-dark);
+}
+
+.SelectionAvatarCount--selected:focus,
+.SelectionAvatarCount--selected:focus-visible {
+  box-shadow: 0 0 0 1px white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
 }

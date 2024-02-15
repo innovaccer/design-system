@@ -175,8 +175,15 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
       {hiddenAvatarCount > 0 && (
         <Popover
           on="click"
-          trigger={<SelectionAvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={style} />}
           position="bottom-end"
+          trigger={
+            <SelectionAvatarCount
+              size={size}
+              hiddenAvatarCount={hiddenAvatarCount}
+              avatarStyle={style}
+              selectedItems={selectedItems}
+            />
+          }
         >
           <SelectionAvatarPopover
             hiddenAvatarList={list.slice(max, list.length)}
