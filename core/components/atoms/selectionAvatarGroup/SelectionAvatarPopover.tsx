@@ -28,8 +28,7 @@ const SelectionAvatarPopover = (props: any) => {
   }
 
   const onSelectHandler = (avatarData: AvatarData) => {
-    console.log('avatarData', avatarData);
-    let list = selectedItems;
+    let list = [...selectedItems];
 
     if (selectedItems.includes(avatarData)) {
       list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
@@ -37,7 +36,7 @@ const SelectionAvatarPopover = (props: any) => {
       list.push(avatarData);
     }
 
-    setSelectedItems(list);
+    setSelectedItems([...list]);
     onSelect && onSelect(list);
   };
 
@@ -78,7 +77,12 @@ const SelectionAvatarPopover = (props: any) => {
 
             return (
               <SelectionAvatarOption key={index} onClick={() => onSelectHandler(avatarData)}>
-                <Checkbox defaultChecked={selectedItems.includes(avatarData)} label={name} size="regular" />
+                <Checkbox
+                  defaultChecked={selectedItems.includes(avatarData)}
+                  checked={selectedItems.includes(avatarData)}
+                  label={name}
+                  size="regular"
+                />
               </SelectionAvatarOption>
             );
           })}

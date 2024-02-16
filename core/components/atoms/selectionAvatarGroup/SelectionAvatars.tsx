@@ -14,7 +14,7 @@ const SelectionAvatars = (props: any) => {
     } else {
       list.push(item);
     }
-    setSelectedItems(list);
+    setSelectedItems([...list]);
 
     onSelect && onSelect(list);
   };
