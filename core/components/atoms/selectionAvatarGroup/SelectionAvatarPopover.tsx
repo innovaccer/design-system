@@ -1,13 +1,11 @@
 import * as React from 'react';
-import {
-  Listbox,
-  Checkbox,
-  // Text
-} from '@/index';
+import { Checkbox } from '@/index';
 // import classNames from 'classnames';
 import { AvatarData } from './SelectionAvatarGroup';
 import SelectionAvatarInput from './SelectionAvatarInput';
 import classNames from 'classnames';
+import SelectionAvatarList from './SelectionAvatarList';
+import SelectionAvatarOption from './SelectionAvatarOption';
 // import { withOverflowText } from './OverflowText';
 
 const SelectionAvatarPopover = (props: any) => {
@@ -73,26 +71,18 @@ const SelectionAvatarPopover = (props: any) => {
       {withSearch && <SelectionAvatarInput placeholder={searchPlaceholder} onChange={onSearchHandler} />}
 
       <div style={customStyle} className={popperClassName}>
-        <Listbox showDivider={false} type="option" size="compressed">
-          {searchList.map((avatarData: AvatarData, index: any) => {
+        <SelectionAvatarList>
+          {searchList.map((avatarData: AvatarData, index: number) => {
             const { firstName = '', lastName = '' } = avatarData;
             const name = `${firstName} ${lastName}`;
 
-            // const OverflowTextComponent = withOverflowText(<Text>{name}</Text>);
-
             return (
-              <Listbox.Item key={index}>
-                <Checkbox
-                  defaultChecked={selectedItems.includes(avatarData)}
-                  label={name}
-                  onChange={() => onSelectHandler(avatarData)}
-                  size="regular"
-                />
-                {/* <OverflowTextComponent>{name}</OverflowTextComponent> */}
-              </Listbox.Item>
+              <SelectionAvatarOption key={index} onClick={() => onSelectHandler(avatarData)}>
+                <Checkbox defaultChecked={selectedItems.includes(avatarData)} label={name} size="regular" />
+              </SelectionAvatarOption>
             );
           })}
-        </Listbox>
+        </SelectionAvatarList>
       </div>
     </div>
   );
