@@ -46,7 +46,7 @@ const SelectionAvatarCount = (props: any) => {
       role="button"
     >
       <Avatar size={size} appearance="secondary" className="SelectionAvatarCount">
-        <Text>{`+${hiddenAvatarCount}`}</Text>
+        <Text className="overflow-hidden">{`+${hiddenAvatarCount}`}</Text>
       </Avatar>
     </div>
   );

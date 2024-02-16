@@ -48,7 +48,8 @@
 /* Selection Avatar Popover */
 
 .SelectionAvatarGroup-popper {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  overflow-y: auto;
   box-sizing: border-box;
 }
 

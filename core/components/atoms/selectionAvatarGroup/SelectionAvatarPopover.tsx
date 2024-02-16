@@ -76,7 +76,11 @@ const SelectionAvatarPopover = (props: any) => {
             const name = `${firstName} ${lastName}`;
 
             return (
-              <SelectionAvatarOption key={index} onClick={() => onSelectHandler(avatarData)}>
+              <SelectionAvatarOption
+                key={index}
+                onClick={() => onSelectHandler(avatarData)}
+                selected={selectedItems.includes(avatarData)}
+              >
                 <Checkbox
                   defaultChecked={selectedItems.includes(avatarData)}
                   checked={selectedItems.includes(avatarData)}

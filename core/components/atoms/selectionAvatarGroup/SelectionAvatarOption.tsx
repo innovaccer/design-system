@@ -3,8 +3,8 @@ import { Listbox } from '@/index';
 import { ListboxItemProps } from '@/index.type';
 
 export const SelectionAvatarOption = (props: ListboxItemProps) => {
-  const { children, onClick } = props;
-  return <Listbox.Item onClick={onClick}>{children}</Listbox.Item>;
+  const { children, ...rest } = props;
+  return <Listbox.Item {...rest}>{children}</Listbox.Item>;
 };
 
 SelectionAvatarOption.defaultProps = {
