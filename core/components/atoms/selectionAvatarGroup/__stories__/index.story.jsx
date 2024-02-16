@@ -62,6 +62,10 @@ export const all = () => {
   //   return [{ firstName: 'Arya', lastName: 'Stark' }];
   // };
 
+  const searchComparator = (searchValue, data) => {
+    return data.firstName.toLowerCase().includes(searchValue.toLowerCase());
+  };
+
   return (
     <SelectionAvatarGroup
       withSearch={true}
@@ -69,6 +73,7 @@ export const all = () => {
       onSelect={onSelectHandler}
       searchPlaceholder="Search User"
       size="tiny"
+      searchComparator={searchComparator}
       // width={400}
       // maxHeight={200}
       // onSearch={onSearchHandler}
