@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, Avatar } from '@/index';
 import classNames from 'classnames';
-import { AvatarData } from './SelectionAvatarGroup';
+import { AvatarData } from '../SelectionAvatarGroup';
 
 const SelectionAvatarCount = (props: any) => {
   const { hiddenAvatarCount, avatarStyle, size, selectedItems, hiddenAvatarList, setOpenPopover } = props;

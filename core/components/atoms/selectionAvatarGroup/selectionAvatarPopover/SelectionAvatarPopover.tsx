@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { Checkbox } from '@/index';
 // import classNames from 'classnames';
-import { AvatarData } from './SelectionAvatarGroup';
+import { AvatarData } from '../SelectionAvatarGroup';
 import SelectionAvatarInput from './SelectionAvatarInput';
 import classNames from 'classnames';
 import SelectionAvatarList from './SelectionAvatarList';
 import SelectionAvatarOption from './SelectionAvatarOption';
 // import { withOverflowText } from './OverflowText';
 
-const SelectionAvatarPopover = (props: any) => {
+export const SelectionAvatarPopover = (props: any) => {
   const {
     hiddenAvatarList,
     popperRenderer,
@@ -74,19 +74,28 @@ const SelectionAvatarPopover = (props: any) => {
           {searchList.map((avatarData: AvatarData, index: number) => {
             const { firstName = '', lastName = '' } = avatarData;
             const name = `${firstName} ${lastName}`;
+            const isSelected = selectedItems.includes(avatarData);
+            console.log('isSelected isSelected', isSelected, 'name', name);
 
             return (
               <SelectionAvatarOption
                 key={index}
                 onClick={() => onSelectHandler(avatarData)}
-                selected={selectedItems.includes(avatarData)}
+                selected={isSelected}
+                className="d-flex align-items-center"
               >
                 <Checkbox
-                  defaultChecked={selectedItems.includes(avatarData)}
-                  checked={selectedItems.includes(avatarData)}
+                  defaultChecked={isSelected}
+                  checked={isSelected}
                   label={name}
                   size="regular"
+                  // onChange={(e) => {
+                  //   e.stopPropagation();
+                  //   e.preventDefault();
+                  //   onSelectHandler(avatarData);
+                  // }}
                 />
+                {/* <Text>{name}</Text> */}
               </SelectionAvatarOption>
             );
           })}

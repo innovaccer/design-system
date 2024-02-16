@@ -1,9 +1,9 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import SelectionAvatar from './SelectionAvatar';
-import { AvatarData } from './SelectionAvatarGroup';
+import { AvatarData } from '../SelectionAvatarGroup';
 
-const SelectionAvatars = (props: any) => {
+export const SelectionAvatars = (props: any) => {
   const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer, setSelectedItems, selectedItems, onSelect } =
     props;
 

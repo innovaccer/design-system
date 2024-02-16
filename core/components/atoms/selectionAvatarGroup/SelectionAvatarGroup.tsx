@@ -4,9 +4,9 @@ import { BaseProps, extractBaseProps } from '@/utils/types';
 import { Popover, OutsideClick } from '@/index';
 import { AvatarProps, PopoverProps, AvatarIconProps, AvatarImageProps } from '@/index.type';
 import { AvatarSize } from '@/common.type';
-import SelectionAvatars from './SelectionAvatars';
-import SelectionAvatarCount from './SelectionAvatarCount';
-import SelectionAvatarPopover from './SelectionAvatarPopover';
+import { SelectionAvatars } from './selectionAvatars';
+import SelectionAvatarCount from './selectionAvatars/SelectionAvatarCount';
+import { SelectionAvatarPopover } from './selectionAvatarPopover';
 
 export interface AvatarData extends Record<string, any> {
   firstName?: string;
