@@ -7,6 +7,7 @@ import SelectionAvatarInput from './SelectionAvatarInput';
 import classNames from 'classnames';
 import SelectionAvatarList from './SelectionAvatarList';
 import SelectionAvatarOption from './SelectionAvatarOption';
+import SelectionAvatarEmptyState from './SelectionAvatarEmptyState';
 // import { withOverflowText } from './OverflowText';
 
 export const SelectionAvatarPopover = (props: any) => {
@@ -70,6 +71,14 @@ export const SelectionAvatarPopover = (props: any) => {
       {withSearch && <SelectionAvatarInput placeholder={searchPlaceholder} onChange={onSearchHandler} />}
 
       <div style={customStyle} className={popperClassName}>
+        {searchList.length === 0 && (
+          <SelectionAvatarEmptyState
+            height={customStyle.maxHeight}
+            title="No users found"
+            description="Try modifying your search to find what you are looking for."
+          />
+        )}
+
         <SelectionAvatarList>
           {searchList.map((avatarData: AvatarData, index: number) => {
             const { firstName = '', lastName = '' } = avatarData;

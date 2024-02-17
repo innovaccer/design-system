@@ -153,7 +153,8 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
 
   const customStyle = {
     width,
-    minHeight: withSearch ? minHeight! - searchInputHeight - searchBorder : minHeight,
+    // minHeight: withSearch ? minHeight! - searchInputHeight - searchBorder : minHeight,
+    minHeight: minHeight,
     maxHeight: withSearch ? maxHeight! - searchInputHeight - searchBorder : maxHeight,
   };
 
