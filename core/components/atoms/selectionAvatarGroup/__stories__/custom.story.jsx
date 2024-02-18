@@ -44,8 +44,19 @@ export const custom = () => {
     },
   ];
 
+  const [patientList, setPatientList] = React.useState(list);
   const [searchList, setSearchList] = React.useState(list.slice(5, list.length));
-  const [selectedItems, setSelectedItems] = React.useState([]);
+  const [selectedItems, setSelectedItems2] = React.useState([]);
+
+  React.useEffect(() => {
+    const updatedList = patientList.map((patient) => {
+      if (selectedItems.includes(patient)) {
+        patient.selected = true;
+      }
+      return patient;
+    });
+    setPatientList(updatedList);
+  }, [selectedItems]);
 
   const onSearchHandler = (event) => {
     const searchValue = event.target.value.toLowerCase();
@@ -60,14 +71,14 @@ export const custom = () => {
 
   const mySelectHandler = (props) => {
     action('myprops', props)();
-    setSelectedItems(props);
+    setSelectedItems2(props);
   };
 
   return (
     <div>
       <SelectionAvatarGroup
         size="tiny"
-        list={list}
+        list={patientList}
         // onSelect={onAvatarSelect}
         onSelect={mySelectHandler}
       >
