@@ -44,23 +44,23 @@ export const custom = () => {
     },
   ];
 
-  const [patientList, setPatientList] = React.useState(list);
+  const [avatarList, setAvatarList] = React.useState(list);
   const [searchList, setSearchList] = React.useState(list.slice(5, list.length));
-  const [selectedItems, setSelectedItems2] = React.useState([]);
+  const [selectedItems, setSelectedItems] = React.useState([]);
 
   React.useEffect(() => {
-    const updatedList = patientList.map((patient) => {
+    const updatedList = avatarList.map((patient) => {
       if (selectedItems.includes(patient)) {
         patient.selected = true;
       }
       return patient;
     });
-    setPatientList(updatedList);
+    setAvatarList(updatedList);
   }, [selectedItems]);
 
   const onSearchHandler = (event) => {
     const searchValue = event.target.value.toLowerCase();
-    const popoverList = list.slice(5, list.length);
+    const popoverList = avatarList?.slice(5, avatarList.length);
 
     const list = popoverList.filter((avatarData) => {
       return avatarData.firstName.toLowerCase().includes(searchValue.toLowerCase());
@@ -69,76 +69,36 @@ export const custom = () => {
     setSearchList(list);
   };
 
-  const mySelectHandler = (props) => {
+  const onSelectHandler = (props) => {
     action('myprops', props)();
-    setSelectedItems2(props);
+    setSelectedItems(props);
   };
 
   return (
-    <div>
-      <SelectionAvatarGroup
-        size="tiny"
-        list={patientList}
-        // onSelect={onAvatarSelect}
-        onSelect={mySelectHandler}
-      >
-        <div
-        // style={{ width: customStyle.width }}
-        >
-          <SelectionAvatarGroup.Input placeholder="search user" onChange={onSearchHandler} />
+    <SelectionAvatarGroup size="tiny" list={avatarList} onSelect={onSelectHandler}>
+      <SelectionAvatarGroup.Input placeholder="search user" onChange={onSearchHandler} />
 
-          <div
-          // style={customStyle} className={popperClassName}
-          >
-            {searchList.length === 0 && (
-              <SelectionAvatarGroup.EmptyState
-                // height={customStyle.maxHeight}
-                title="No users found"
-                description="Try modifying your search to find what you are looking for."
-              />
-            )}
+      {searchList.length === 0 && (
+        <SelectionAvatarGroup.EmptyState
+          title="No users found"
+          description="Try modifying your search to find what you are looking for."
+        />
+      )}
 
-            <SelectionAvatarGroup.List>
-              {searchList.map((avatarData, index) => {
-                const { firstName = '', lastName = '' } = avatarData;
-                const name = `${firstName} ${lastName}`;
-                const isSelected = selectedItems.includes(avatarData);
-                // console.log('isSelected isSelected', isSelected, 'name', name);
+      <SelectionAvatarGroup.List>
+        {searchList.map((avatarData, index) => {
+          const { firstName = '', lastName = '' } = avatarData;
+          const name = `${firstName} ${lastName}`;
+          const isSelected = selectedItems.includes(avatarData);
 
-                return (
-                  <SelectionAvatarGroup.Option
-                    key={index}
-                    // onClick={() => onSelectHandler(avatarData)}
-                    // selected={isSelected}
-                    value={avatarData}
-                    className="d-flex align-items-center"
-                  >
-                    <Checkbox
-                      defaultChecked={isSelected}
-                      checked={isSelected}
-                      label={name}
-                      size="regular"
-                      // onChange={(e) => {
-                      //   e.stopPropagation();
-                      //   e.preventDefault();
-                      //   onSelectHandler(avatarData);
-                      // }}
-                    />
-                    {/* <Text>{name}</Text> */}
-                  </SelectionAvatarGroup.Option>
-                );
-              })}
-            </SelectionAvatarGroup.List>
-          </div>
-        </div>
-      </SelectionAvatarGroup>
-
-      <div>
-        {selectedItems.map((item, key) => (
-          <p key={key}>{item.toString()}</p>
-        ))}
-      </div>
-    </div>
+          return (
+            <SelectionAvatarGroup.Option key={index} value={avatarData} className="d-flex align-items-center">
+              <Checkbox defaultChecked={isSelected} checked={isSelected} label={name} size="regular" />
+            </SelectionAvatarGroup.Option>
+          );
+        })}
+      </SelectionAvatarGroup.List>
+    </SelectionAvatarGroup>
   );
 };
 

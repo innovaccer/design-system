@@ -20,19 +20,6 @@ export const SelectionAvatarPopover = (props: any) => {
     return children;
   }
 
-  // const onSelectHandler = (avatarData: AvatarData) => {
-  //   let list = [...selectedItems];
-
-  //   if (selectedItems.includes(avatarData)) {
-  //     list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
-  //   } else {
-  //     list.push(avatarData);
-  //   }
-
-  //   setSelectedItems([...list]);
-  //   onSelect && onSelect(list);
-  // };
-
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value.toLowerCase();
 
@@ -75,31 +62,10 @@ export const SelectionAvatarPopover = (props: any) => {
             const { firstName = '', lastName = '' } = avatarData;
             const name = `${firstName} ${lastName}`;
             const isSelected = selectedItems.includes(avatarData);
-            console.log('isSelected isSelected', isSelected, 'name', name);
 
             return (
-              <SelectionAvatarOption
-                key={index}
-                // onClick={() => onSelectHandler(avatarData)}
-                // selected={isSelected}
-                className="d-flex align-items-center"
-                value={avatarData}
-                // onSelect={onSelect}
-                // selectedItems={selectedItems}
-                // setSelectedItems={setSelectedItems}
-              >
-                <Checkbox
-                  defaultChecked={isSelected}
-                  checked={isSelected}
-                  label={name}
-                  size="regular"
-                  // onChange={(e) => {
-                  //   e.stopPropagation();
-                  //   e.preventDefault();
-                  //   onSelectHandler(avatarData);
-                  // }}
-                />
-                {/* <Text>{name}</Text> */}
+              <SelectionAvatarOption key={index} value={avatarData}>
+                <Checkbox defaultChecked={isSelected} checked={isSelected} label={name} size="regular" />
               </SelectionAvatarOption>
             );
           })}

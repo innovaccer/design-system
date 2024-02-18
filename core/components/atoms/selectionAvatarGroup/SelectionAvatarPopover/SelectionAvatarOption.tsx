@@ -11,8 +11,11 @@ export const SelectionAvatarOption = (props: any) => {
 
   const { setSelectedItems, selectedItems, onSelect } = contextProp;
 
-  const onSelectHandler = (avatarData: AvatarData) => {
+  const onSelectHandler = (e: any, avatarData: AvatarData) => {
+    e.preventDefault();
     let list = [...selectedItems];
+
+    console.log('sssttselect handler called');
 
     if (selectedItems.includes(avatarData)) {
       list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
@@ -25,7 +28,7 @@ export const SelectionAvatarOption = (props: any) => {
   };
 
   return (
-    <Listbox.Item onClick={() => onSelectHandler(value)} selected={selectedItems.includes(value)} {...rest}>
+    <Listbox.Item onClick={(e) => onSelectHandler(e, value)} selected={selectedItems.includes(value)} {...rest}>
       {children}
     </Listbox.Item>
   );

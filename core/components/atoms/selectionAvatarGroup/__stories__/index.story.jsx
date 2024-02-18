@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { SelectionAvatarGroup } from '../SelectionAvatarGroup';
 import { action } from '@/utils/action';
-// import { Button } from '@/index';
 
 export const all = () => {
   const list = [
@@ -44,23 +43,9 @@ export const all = () => {
     },
   ];
 
-  // const customRenderer = (item) => {
-  //   console.log('my itemmm', item);
-  //   return (
-  //     <div>
-  //       <button>{item.firstName}</button>
-  //     </div>
-  //   );
-  // };
-
   const onSelectHandler = (props) => {
     action('props', props)();
   };
-
-  // const onSearchHandler = (a, b) => {
-  //   action('search arguments', a, 'b', b)();
-  //   return [{ firstName: 'Arya', lastName: 'Stark' }];
-  // };
 
   const searchComparator = (searchValue, data) => {
     return data.firstName.toLowerCase().includes(searchValue.toLowerCase());
@@ -72,13 +57,7 @@ export const all = () => {
       list={list}
       onSelect={onSelectHandler}
       searchPlaceholder="Search User"
-      size="tiny"
       searchComparator={searchComparator}
-      // width={400}
-      // maxHeight={200}
-      // onSearch={onSearchHandler}
-      // popperRenderer={customRenderer}
-      // borderColor="red"
     />
   );
 };
