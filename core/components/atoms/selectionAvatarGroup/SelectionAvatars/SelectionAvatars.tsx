@@ -2,10 +2,14 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { SelectionAvatar } from './SelectionAvatar';
 import { AvatarData } from '../SelectionAvatarGroup';
+import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 
 export const SelectionAvatars = (props: any) => {
-  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer, setSelectedItems, selectedItems, onSelect } =
-    props;
+  const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer } = props;
+
+  const contextProp = React.useContext(SelectionAvatarContext);
+
+  const { setSelectedItems, selectedItems, onSelect } = contextProp;
 
   const onClickHandler = (item: AvatarData) => {
     let list = selectedItems;

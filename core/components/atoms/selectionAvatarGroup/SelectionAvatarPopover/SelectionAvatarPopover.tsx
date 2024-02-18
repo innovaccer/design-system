@@ -11,36 +11,27 @@ import SelectionAvatarEmptyState from './SelectionAvatarEmptyState';
 // import { withOverflowText } from './OverflowText';
 
 export const SelectionAvatarPopover = (props: any) => {
-  const {
-    hiddenAvatarList,
-    popperRenderer,
-    withSearch,
-    onSelect,
-    setSelectedItems,
-    selectedItems,
-    customStyle,
-    searchPlaceholder,
-    searchComparator,
-  } = props;
+  const { hiddenAvatarList, withSearch, selectedItems, customStyle, searchPlaceholder, searchComparator, children } =
+    props;
 
   const [searchList, setSearchList] = React.useState(hiddenAvatarList);
 
-  if (popperRenderer) {
-    return popperRenderer(hiddenAvatarList);
+  if (children) {
+    return children;
   }
 
-  const onSelectHandler = (avatarData: AvatarData) => {
-    let list = [...selectedItems];
+  // const onSelectHandler = (avatarData: AvatarData) => {
+  //   let list = [...selectedItems];
 
-    if (selectedItems.includes(avatarData)) {
-      list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
-    } else {
-      list.push(avatarData);
-    }
+  //   if (selectedItems.includes(avatarData)) {
+  //     list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
+  //   } else {
+  //     list.push(avatarData);
+  //   }
 
-    setSelectedItems([...list]);
-    onSelect && onSelect(list);
-  };
+  //   setSelectedItems([...list]);
+  //   onSelect && onSelect(list);
+  // };
 
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value.toLowerCase();
@@ -89,9 +80,13 @@ export const SelectionAvatarPopover = (props: any) => {
             return (
               <SelectionAvatarOption
                 key={index}
-                onClick={() => onSelectHandler(avatarData)}
-                selected={isSelected}
+                // onClick={() => onSelectHandler(avatarData)}
+                // selected={isSelected}
                 className="d-flex align-items-center"
+                value={avatarData}
+                // onSelect={onSelect}
+                // selectedItems={selectedItems}
+                // setSelectedItems={setSelectedItems}
               >
                 <Checkbox
                   defaultChecked={isSelected}

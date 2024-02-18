@@ -2,11 +2,15 @@ import * as React from 'react';
 import { Text, Avatar } from '@/index';
 import classNames from 'classnames';
 import { AvatarData } from '../SelectionAvatarGroup';
+import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 
 const SelectionAvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size, selectedItems, hiddenAvatarList, setOpenPopover } = props;
+  const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList, setOpenPopover, isPopoverItemSelected } = props;
 
-  const [selectedItemCount, setSelectedItemCount] = React.useState(0);
+  const contextProp = React.useContext(SelectionAvatarContext);
+  const { selectedItems } = contextProp;
+
+  const [selectedItemCount, setSelectedItemCount] = React.useState(isPopoverItemSelected);
 
   const wrapperClassName = classNames({
     ['SelectionAvatarCount-wrapper']: true,
@@ -14,10 +18,10 @@ const SelectionAvatarCount = (props: any) => {
   });
 
   React.useEffect(() => {
-    const results = hiddenAvatarList.filter((data1: AvatarData) =>
+    const selectedList = hiddenAvatarList.filter((data1: AvatarData) =>
       selectedItems.some((data2: AvatarData) => data2 === data1)
     );
-    setSelectedItemCount(results.length);
+    setSelectedItemCount(selectedList.length);
   }, [selectedItems]);
 
   const handleKeyDown = (event: React.KeyboardEvent) => {

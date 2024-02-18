@@ -7,6 +7,11 @@ import { AvatarSize } from '@/common.type';
 import { SelectionAvatars } from './SelectionAvatars';
 import SelectionAvatarCount from './SelectionAvatars/SelectionAvatarCount';
 import { SelectionAvatarPopover } from './SelectionAvatarPopover';
+import SelectionAvatarInput from './SelectionAvatarPopover/SelectionAvatarInput';
+import SelectionAvatarList from './SelectionAvatarPopover/SelectionAvatarList';
+import SelectionAvatarOption from './SelectionAvatarPopover/SelectionAvatarOption';
+import SelectionAvatarEmptyState from './SelectionAvatarPopover/SelectionAvatarEmptyState';
+import SelectionAvatarProvider from './SelectionAvatarProvider';
 
 export interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -59,10 +64,6 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    */
   size: AvatarSize;
   /**
-   * Callback function to create custom popover content
-   */
-  popperRenderer?: (list: AvatarData[]) => JSX.Element;
-  /**
    * Position to place the tooltip on `Avatars` shown before +x
    */
   tooltipPosition: PopoverProps['position'];
@@ -98,6 +99,14 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    * Comparator function to search inside popover
    */
   searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
+  /**
+   * Set as `true` if option is selected from popover
+   */
+  isPopoverItemSelected?: boolean;
+  /**
+   * Element to be render inside popover
+   */
+  children?: React.ReactNode;
 }
 
 export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
@@ -108,7 +117,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     list,
     className,
     size,
-    popperRenderer,
     avatarRenderer,
     onSelect,
     width,
@@ -117,6 +125,8 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     searchPlaceholder,
     withSearch,
     searchComparator,
+    isPopoverItemSelected,
+    children,
   } = props;
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
@@ -162,7 +172,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
 
   const popoverProps = {
     hiddenAvatarList,
-    popperRenderer,
     onSelect,
     setSelectedItems,
     selectedItems,
@@ -170,6 +179,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     searchPlaceholder,
     withSearch,
     searchComparator,
+    children,
   };
 
   const triggerProps = {
@@ -179,41 +189,50 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     hiddenAvatarCount,
     hiddenAvatarList,
     setOpenPopover,
+    isPopoverItemSelected,
   };
 
   const outsideClickHandler = () => {
     setOpenPopover(false);
   };
 
+  const contextProp = {
+    selectedItems,
+    setSelectedItems,
+    onSelect,
+  };
+
   return (
-    <div
-      data-test="DesignSystem-SelectionAvatarGroup"
-      {...baseProps}
-      className={`${SelectionAvatarGroupClass} d-inline-flex`}
-    >
-      <SelectionAvatars
-        size={size}
-        avatarStyle={avatarStyle}
-        avatarList={list.slice(0, max)}
-        avatarRenderer={avatarRenderer}
-        tooltipPosition={tooltipPosition}
-        onSelect={onSelect}
-        setSelectedItems={setSelectedItems}
-        selectedItems={selectedItems}
-      />
-      {hiddenAvatarCount > 0 && (
-        <OutsideClick onOutsideClick={outsideClickHandler}>
-          <Popover
-            // on="click"
-            open={openPopover}
-            position="bottom-end"
-            trigger={<SelectionAvatarCount {...triggerProps} />}
-          >
-            <SelectionAvatarPopover {...popoverProps} />
-          </Popover>
-        </OutsideClick>
-      )}
-    </div>
+    <SelectionAvatarProvider value={contextProp}>
+      <div
+        data-test="DesignSystem-SelectionAvatarGroup"
+        {...baseProps}
+        className={`${SelectionAvatarGroupClass} d-inline-flex`}
+      >
+        <SelectionAvatars
+          size={size}
+          avatarStyle={avatarStyle}
+          avatarList={list.slice(0, max)}
+          avatarRenderer={avatarRenderer}
+          tooltipPosition={tooltipPosition}
+          onSelect={onSelect}
+          setSelectedItems={setSelectedItems}
+          selectedItems={selectedItems}
+        />
+        {(hiddenAvatarCount > 0 || children) && (
+          <OutsideClick onOutsideClick={outsideClickHandler}>
+            <Popover
+              // on="click"
+              open={openPopover}
+              position="bottom-end"
+              trigger={<SelectionAvatarCount {...triggerProps} />}
+            >
+              <SelectionAvatarPopover {...popoverProps} />
+            </Popover>
+          </OutsideClick>
+        )}
+      </div>
+    </SelectionAvatarProvider>
   );
 };
 
@@ -227,5 +246,10 @@ SelectionAvatarGroup.defaultProps = {
   maxHeight: 256,
   minHeight: 24,
 };
+
+SelectionAvatarGroup.Input = SelectionAvatarInput;
+SelectionAvatarGroup.List = SelectionAvatarList;
+SelectionAvatarGroup.Option = SelectionAvatarOption;
+SelectionAvatarGroup.EmptyState = SelectionAvatarEmptyState;
 
 export default SelectionAvatarGroup;
