@@ -3,12 +3,13 @@ import { Text, Avatar } from '@/index';
 import classNames from 'classnames';
 import { AvatarData } from '../SelectionAvatarGroup';
 import { SelectionAvatarContext } from '../SelectionAvatarProvider';
+import { handleKeyDown } from './utils';
 
 const SelectionAvatarCount = (props: any) => {
   const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList, setOpenPopover, isPopoverItemSelected } = props;
 
   const contextProp = React.useContext(SelectionAvatarContext);
-  const { selectedItems } = contextProp;
+  const { selectedItems, setHighlightFirstItem, setHighlightLastItem } = contextProp;
 
   const [selectedItemCount, setSelectedItemCount] = React.useState(isPopoverItemSelected);
 
@@ -24,27 +25,11 @@ const SelectionAvatarCount = (props: any) => {
     setSelectedItemCount(selectedList.length);
   }, [selectedItems]);
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    switch (event.key) {
-      case 'Enter':
-        setOpenPopover(true);
-        break;
-      case 'ArrowDown':
-        setOpenPopover(true);
-        break;
-      case 'ArrowUp':
-        setOpenPopover(true);
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
     <div
       data-test="DesignSystem-AvatarGroup--TriggerAvatar"
       className={wrapperClassName}
-      onKeyDown={handleKeyDown}
+      onKeyDown={(event) => handleKeyDown(event, setOpenPopover, setHighlightFirstItem, setHighlightLastItem)}
       style={avatarStyle}
       tabIndex={0}
       role="button"

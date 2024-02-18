@@ -12,6 +12,7 @@ import SelectionAvatarList from './SelectionAvatarPopover/SelectionAvatarList';
 import SelectionAvatarOption from './SelectionAvatarPopover/SelectionAvatarOption';
 import SelectionAvatarEmptyState from './SelectionAvatarPopover/SelectionAvatarEmptyState';
 import SelectionAvatarProvider from './SelectionAvatarProvider';
+import { focusListItem } from './SelectionAvatars/utils';
 
 export interface AvatarData extends Record<string, any> {
   firstName?: string;
@@ -131,6 +132,11 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
 
   const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
   const [openPopover, setOpenPopover] = React.useState(false);
+  const [focusedOption, setFocusedOption] = React.useState<Element | undefined>();
+  const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
+  const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
+
+  const listRef = React.createRef<HTMLDivElement>();
 
   React.useEffect(() => {
     const selectedList: AvatarData[] = [];
@@ -141,6 +147,25 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     });
     setSelectedItems(selectedList);
   }, []);
+
+  React.useEffect(() => {
+    if (!openPopover) {
+      setHighlightFirstItem(false);
+      setHighlightLastItem(false);
+    }
+  }, [openPopover]);
+
+  React.useEffect(() => {
+    if (highlightFirstItem && openPopover) {
+      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef, withSearch));
+    }
+  }, [highlightFirstItem]);
+
+  React.useEffect(() => {
+    if (highlightLastItem && openPopover) {
+      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef, withSearch));
+    }
+  }, [highlightLastItem]);
 
   const baseProps = extractBaseProps(props);
 
@@ -172,9 +197,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
 
   const popoverProps = {
     hiddenAvatarList,
-    onSelect,
-    setSelectedItems,
-    selectedItems,
     customStyle,
     searchPlaceholder,
     withSearch,
@@ -185,7 +207,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
   const triggerProps = {
     size,
     avatarStyle,
-    selectedItems,
     hiddenAvatarCount,
     hiddenAvatarList,
     setOpenPopover,
@@ -197,9 +218,14 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
   };
 
   const contextProp = {
+    onSelect,
     selectedItems,
     setSelectedItems,
-    onSelect,
+    setFocusedOption,
+    listRef,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+    focusedOption,
   };
 
   return (

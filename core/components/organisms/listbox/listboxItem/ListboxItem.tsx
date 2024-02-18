@@ -51,6 +51,10 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
    * Handler to be called when `ListboxItem` is clicked
    */
   onClick?: (e: React.MouseEvent, id?: string, value?: string) => void;
+  /**
+   * Specify tabIndex to list item
+   */
+  tabIndex?: number;
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {

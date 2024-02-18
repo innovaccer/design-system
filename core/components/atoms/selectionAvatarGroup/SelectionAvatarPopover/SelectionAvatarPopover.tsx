@@ -8,13 +8,18 @@ import classNames from 'classnames';
 import SelectionAvatarList from './SelectionAvatarList';
 import SelectionAvatarOption from './SelectionAvatarOption';
 import SelectionAvatarEmptyState from './SelectionAvatarEmptyState';
+import { SelectionAvatarContext } from '../SelectionAvatarProvider';
+
 // import { withOverflowText } from './OverflowText';
 
 export const SelectionAvatarPopover = (props: any) => {
-  const { hiddenAvatarList, withSearch, selectedItems, customStyle, searchPlaceholder, searchComparator, children } =
-    props;
+  const { hiddenAvatarList, withSearch, customStyle, searchPlaceholder, searchComparator, children } = props;
 
   const [searchList, setSearchList] = React.useState(hiddenAvatarList);
+
+  const contextProp = React.useContext(SelectionAvatarContext);
+
+  const { selectedItems, listRef } = contextProp;
 
   if (children) {
     return children;
@@ -45,6 +50,7 @@ export const SelectionAvatarPopover = (props: any) => {
     <div
       // className={popperClassName}
       style={{ width: customStyle.width }}
+      ref={listRef}
     >
       {withSearch && <SelectionAvatarInput placeholder={searchPlaceholder} onChange={onSearchHandler} />}
 

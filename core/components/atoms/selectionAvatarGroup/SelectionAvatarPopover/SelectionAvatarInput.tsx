@@ -12,7 +12,7 @@ export const SelectionAvatarInput = (props: InputProps) => {
         // minWidth="176px"
         onChange={onChange}
         className="w-100 SelectionAvatar-input"
-        data-test="DesignSystem-SelectionAvatarInput"
+        data-test="DesignSystem-SelectionAvatar--Input"
         {...rest}
       />
     </div>

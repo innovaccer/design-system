@@ -53,8 +53,8 @@ export const all = () => {
 
   return (
     <SelectionAvatarGroup
-      withSearch={true}
       list={list}
+      withSearch={true}
       onSelect={onSelectHandler}
       searchPlaceholder="Search User"
       searchComparator={searchComparator}

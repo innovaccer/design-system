@@ -15,8 +15,6 @@ export const SelectionAvatarOption = (props: any) => {
     e.preventDefault();
     let list = [...selectedItems];
 
-    console.log('sssttselect handler called');
-
     if (selectedItems.includes(avatarData)) {
       list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
     } else {
@@ -28,7 +26,12 @@ export const SelectionAvatarOption = (props: any) => {
   };
 
   return (
-    <Listbox.Item onClick={(e) => onSelectHandler(e, value)} selected={selectedItems.includes(value)} {...rest}>
+    <Listbox.Item
+      onClick={(e) => onSelectHandler(e, value)}
+      selected={selectedItems.includes(value)}
+      tabIndex={-1}
+      {...rest}
+    >
       {children}
     </Listbox.Item>
   );
