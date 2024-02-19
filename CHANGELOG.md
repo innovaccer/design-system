@@ -1,3 +1,39 @@
+## 2.28.1 (2024-02-19)
+
+### Highlights
+
+- feat(verticalNav): add expanded state in menu items (84635a2e)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(verticalNav): add expanded state in menu items (84635a2e)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- fix(selection-card): update spacing between selection cards and action cards in story (f9580def)
+
+### Documentation
+
+- docs(docs): update images and spacing documentation between interactive cards (f45c8873)
+
+---
+
 ## 2.28.0 (2024-02-09)
 
 ### Highlights
