@@ -41,6 +41,23 @@ export const all = () => {
       lastName: 'Wheeler',
       selected: true,
     },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+      selected: true,
+    },
   ];
 
   const onSelectHandler = (props) => {

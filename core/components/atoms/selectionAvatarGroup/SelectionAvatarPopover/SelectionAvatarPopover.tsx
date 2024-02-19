@@ -13,13 +13,13 @@ import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 // import { withOverflowText } from './OverflowText';
 
 export const SelectionAvatarPopover = (props: any) => {
-  const { hiddenAvatarList, withSearch, customStyle, searchPlaceholder, searchComparator, children } = props;
+  const { hiddenAvatarList, customStyle, searchPlaceholder, searchComparator, children } = props;
 
   const [searchList, setSearchList] = React.useState(hiddenAvatarList);
 
   const contextProp = React.useContext(SelectionAvatarContext);
 
-  const { selectedItems, listRef } = contextProp;
+  const { selectedItems, listRef, withSearch } = contextProp;
 
   if (children) {
     return children;

@@ -199,7 +199,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     hiddenAvatarList,
     customStyle,
     searchPlaceholder,
-    withSearch,
     searchComparator,
     children,
   };
@@ -226,6 +225,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     focusedOption,
+    withSearch,
   };
 
   return (

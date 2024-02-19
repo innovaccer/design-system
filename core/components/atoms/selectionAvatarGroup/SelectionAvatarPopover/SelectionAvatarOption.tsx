@@ -19,6 +19,7 @@ export const SelectionAvatarOption = (props: any) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     listRef,
+    withSearch,
   } = contextProp;
 
   const onSelectHandler = (e: React.MouseEvent, avatarData: AvatarData) => {
@@ -36,7 +37,15 @@ export const SelectionAvatarOption = (props: any) => {
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
-    handleKeyDown(event, focusedOption, setFocusedOption, setHighlightFirstItem, setHighlightLastItem, listRef);
+    handleKeyDown(
+      event,
+      focusedOption,
+      setFocusedOption,
+      setHighlightFirstItem,
+      setHighlightLastItem,
+      listRef,
+      withSearch
+    );
   };
 
   return (
