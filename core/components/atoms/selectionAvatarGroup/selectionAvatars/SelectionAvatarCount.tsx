@@ -9,7 +9,7 @@ const SelectionAvatarCount = (props: any) => {
   const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList, setOpenPopover, isPopoverItemSelected } = props;
 
   const contextProp = React.useContext(SelectionAvatarContext);
-  const { selectedItems, setHighlightFirstItem, setHighlightLastItem } = contextProp;
+  const { selectedItems, setHighlightFirstItem, setHighlightLastItem, triggerRef } = contextProp;
 
   const [selectedItemCount, setSelectedItemCount] = React.useState(isPopoverItemSelected);
 
@@ -33,6 +33,7 @@ const SelectionAvatarCount = (props: any) => {
       style={avatarStyle}
       tabIndex={0}
       role="button"
+      ref={triggerRef}
     >
       <Avatar size={size} appearance="secondary" className="SelectionAvatarCount">
         <Text className="overflow-hidden">{`+${hiddenAvatarCount}`}</Text>

@@ -137,6 +137,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
 
   const listRef = React.createRef<HTMLDivElement>();
+  const triggerRef = React.createRef<HTMLDivElement>();
 
   React.useEffect(() => {
     const selectedList: AvatarData[] = [];
@@ -226,6 +227,8 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     setHighlightLastItem,
     focusedOption,
     withSearch,
+    setOpenPopover,
+    triggerRef,
   };
 
   return (

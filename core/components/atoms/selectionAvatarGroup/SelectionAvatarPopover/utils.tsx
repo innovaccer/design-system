@@ -7,7 +7,9 @@ export const handleKeyDown = (
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>,
   listRef?: any,
-  withSearch?: boolean
+  withSearch?: boolean,
+  setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
+  triggerRef?: any
 ) => {
   switch (event.key) {
     case 'ArrowUp':
@@ -23,6 +25,11 @@ export const handleKeyDown = (
       setHighlightLastItem?.(false);
       setHighlightFirstItem?.(false);
       break;
+    case 'Escape':
+      setOpenPopover?.(false);
+      triggerRef.current.focus();
+      setFocusedOption?.(undefined);
+      break;
     default:
       break;
   }
@@ -30,30 +37,6 @@ export const handleKeyDown = (
 
 const handleEnterKey = (focusedOption: Element | undefined) => {
   (focusedOption as HTMLElement)?.click();
-};
-
-const navigateSelectedOption = (
-  index: number,
-  withSearch?: boolean,
-  listItems?: any,
-  direction?: string,
-  listRef?: any,
-  setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>
-) => {
-  console.log('tttindexxx', index);
-  // if (withSearch) {
-  //   const searchInput = listRef.current.querySelector('[data-test="DesignSystem-SelectionAvatar--Input"]');
-  //   console.log('ttt inside iff');
-  //   if ((index === 0 && direction === 'up') || (index === listItems.length - 2 && direction === 'down')) {
-  //     console.log('tttfocus search');
-  //     searchInput.focus();
-  //     setFocusedOption && setFocusedOption(searchInput);
-  //     return;
-  //   }
-  // }
-  const searchInput = listRef.current.querySelector('[data-test="DesignSystem-SelectionAvatar--Input"]');
-  searchInput.focus();
-  setFocusedOption && setFocusedOption(searchInput);
 };
 
 const navigateOptions = (
@@ -68,22 +51,16 @@ const navigateOptions = (
     return item == focusedOption;
   });
 
-  console.log('tttwithSearchwithSearch', withSearch, 'index', index, 'listItems[index]', listItems[index]);
-
   if (index === -1) {
-    console.log('ttt11');
     index = direction === 'up' ? listItems.length - 1 : 0;
   } else if (
     (withSearch && index === 0 && direction === 'up') ||
     (withSearch && index === listItems.length - 1 && direction === 'down')
   ) {
-    console.log('ttt22');
-
-    navigateSelectedOption(index, withSearch, listItems, direction, listRef, setFocusedOption);
-    // return;
+    const searchInput = listRef.current.querySelector('[data-test="DesignSystem-SelectionAvatar--Input"]');
+    searchInput.focus();
+    setFocusedOption && setFocusedOption(searchInput);
   } else {
-    console.log('ttt333');
-
     index = direction === 'up' ? (index - 1 + listItems.length) % listItems.length : (index + 1) % listItems.length;
 
     const targetOption = listItems[index];
@@ -97,7 +74,9 @@ const navigateOptions = (
 export const handleInputKeyDown = (
   event: React.KeyboardEvent,
   listRef: any,
-  setFocusedOption: React.Dispatch<React.SetStateAction<Element | undefined>>
+  setFocusedOption: React.Dispatch<React.SetStateAction<Element | undefined>>,
+  setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
+  triggerRef?: any
 ) => {
   const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   let targetOption;
@@ -110,6 +89,11 @@ export const handleInputKeyDown = (
     case 'ArrowDown':
       event.preventDefault();
       targetOption = listItems[0];
+      break;
+    case 'Escape':
+      setOpenPopover?.(false);
+      triggerRef.current.focus();
+      setFocusedOption?.(undefined);
       break;
     default:
       break;

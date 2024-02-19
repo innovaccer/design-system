@@ -42,7 +42,7 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
   /**
    * Value for particular list item
    */
-  value?: string;
+  value?: any;
   /**
    * Set a custom element for Listbox
    */

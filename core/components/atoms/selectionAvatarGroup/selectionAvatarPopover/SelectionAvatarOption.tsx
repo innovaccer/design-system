@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Listbox } from '@/index';
-// import { ListboxItemProps } from '@/index.type';
+import { ListboxItemProps } from '@/index.type';
 import { AvatarData } from '../SelectionAvatarGroup';
 import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 import { handleKeyDown } from './utils';
 
-export const SelectionAvatarOption = (props: any) => {
+export const SelectionAvatarOption = (props: ListboxItemProps) => {
   const { children, value, ...rest } = props;
 
   const contextProp = React.useContext(SelectionAvatarContext);
@@ -20,10 +20,12 @@ export const SelectionAvatarOption = (props: any) => {
     setHighlightLastItem,
     listRef,
     withSearch,
+    setOpenPopover,
+    triggerRef,
   } = contextProp;
 
-  const onSelectHandler = (e: React.MouseEvent, avatarData: AvatarData) => {
-    e.preventDefault();
+  const onSelectHandler = (event: React.MouseEvent | React.KeyboardEvent, avatarData: AvatarData) => {
+    event.preventDefault();
     let list = [...selectedItems];
 
     if (selectedItems.includes(avatarData)) {
@@ -44,7 +46,9 @@ export const SelectionAvatarOption = (props: any) => {
       setHighlightFirstItem,
       setHighlightLastItem,
       listRef,
-      withSearch
+      withSearch,
+      setOpenPopover,
+      triggerRef
     );
   };
 

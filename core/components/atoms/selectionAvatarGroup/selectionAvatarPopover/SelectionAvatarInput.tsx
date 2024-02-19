@@ -9,7 +9,7 @@ export const SelectionAvatarInput = (props: InputProps) => {
 
   const contextProp = React.useContext(SelectionAvatarContext);
 
-  const { listRef, setFocusedOption } = contextProp;
+  const { listRef, setFocusedOption, setOpenPopover, triggerRef } = contextProp;
 
   return (
     <div className="SelectionAvatar-inputWrapper">
@@ -17,7 +17,7 @@ export const SelectionAvatarInput = (props: InputProps) => {
         icon="search"
         // minWidth="176px"
         onChange={onChange}
-        onKeyDown={(event) => handleInputKeyDown(event, listRef, setFocusedOption)}
+        onKeyDown={(event) => handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef)}
         className="w-100 SelectionAvatar-input"
         data-test="DesignSystem-SelectionAvatar--Input"
         {...rest}
