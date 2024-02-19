@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text, Tooltip } from '@/index';
 import { MenuItem, MenuItemProps } from './MenuItem';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { getMenu, isMenuActive, ActiveMenu, Menu } from '@/utils/navigationHelper';
+import { getMenu, isMenuActive, ActiveMenu, Menu, getExpandedMenus } from '@/utils/navigationHelper';
 
 export interface VerticalNavProps extends BaseProps {
   /**
@@ -19,7 +19,8 @@ export interface VerticalNavProps extends BaseProps {
    *    count?: number;
    *    subMenu?: Menu[];
    *    icon?: string;
-   *    iconType?: 'rounded' | 'outlined'
+   *    iconType?: 'rounded' | 'outlined';
+   *    expanded?: boolean;
    * };
    * </pre>
    *
@@ -34,6 +35,7 @@ export interface VerticalNavProps extends BaseProps {
    * | subMenu | Menu submenus of type `Menu[]` | |
    * | icon | Menu icon | |
    * | iconType | Set type of Icon ||
+   * | expanded | Set expanded state of menu | |
    */
   menus: Menu[];
   /**
@@ -73,6 +75,7 @@ export interface VerticalNavProps extends BaseProps {
 export const VerticalNav = (props: VerticalNavProps) => {
   const { menus, active, onClick, expanded, rounded, autoCollapse, className, customItemRenderer, showTooltip } = props;
 
+  const [subMenuExpandedState, setSubMenuExpandedState] = React.useState<Record<string, boolean>>({});
   const [menuState, setMenuState] = React.useState<Record<string, boolean>>({});
   const baseProps = extractBaseProps(props);
 
@@ -82,6 +85,11 @@ export const VerticalNav = (props: VerticalNavProps) => {
       if (currMenu) updateMenuState(currMenu, true);
     }
   }, [props.active]);
+
+  React.useEffect(() => {
+    const expandedMenus = getExpandedMenus(menus, active);
+    setSubMenuExpandedState(expandedMenus);
+  }, []);
 
   const updateMenuState = (menu: ActiveMenu, val?: boolean) => {
     const currMenu = getMenu(menus, menu);
@@ -109,7 +117,11 @@ export const VerticalNav = (props: VerticalNavProps) => {
       if (!expanded) {
         if (onClick) onClick(menu.subMenu[0]);
       } else {
-        updateMenuState(menu);
+        if (!subMenuExpandedState[menu.name]) {
+          updateMenuState(menu);
+        }
+        setMenuState({ ...menuState, [menu.name]: false });
+        setSubMenuExpandedState({ ...subMenuExpandedState, [menu.name]: !subMenuExpandedState[menu.name] });
       }
     } else {
       if (onClick) onClick(menu);
@@ -120,7 +132,7 @@ export const VerticalNav = (props: VerticalNavProps) => {
     const list = menus.map((menu, index) => {
       const isActive = !menuState[menu.name] && isMenuActive(menus, menu, active);
       const hasSubmenu = menu.subMenu && menu.subMenu.length > 0;
-      const isChildrenVisible = hasSubmenu && menuState[menu.name];
+      const isChildrenVisible = hasSubmenu && (menuState[menu.name] || subMenuExpandedState[menu.name]);
       const hasGroup = index === 0 || menus[index - 1].group !== menu.group;
 
       const sectionClass = classNames({
@@ -166,9 +178,8 @@ export const VerticalNav = (props: VerticalNavProps) => {
               customItemRenderer={customItemRenderer}
             />
           )}
-          {menuState[menu.name] &&
-            menu.subMenu &&
-            menu.subMenu.map((subMenu, id) => {
+          {isChildrenVisible &&
+            menu.subMenu!.map((subMenu, id) => {
               return showTooltip ? (
                 <Tooltip tooltip={subMenu.label} position="right">
                   <MenuItem

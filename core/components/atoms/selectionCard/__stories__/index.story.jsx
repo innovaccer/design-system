@@ -39,7 +39,7 @@ export const all = () => {
             <SelectionCard
               id={id}
               cardValue={cardItem}
-              className="pl-5 py-6 pr-6 d-flex mr-5"
+              className="pl-5 py-6 pr-6 d-flex mr-6"
               onClick={onClickHandler}
               selected={isCardSelected(id)}
             >
@@ -93,7 +93,7 @@ const customCode = `() => {
             <SelectionCard
               id={id}
               cardValue={cardItem}
-              className="pl-5 py-6 pr-6 d-flex mr-5"
+              className="pl-5 py-6 pr-6 d-flex mr-6"
               onClick={onClickHandler}
               selected={isCardSelected(id)}
             >
