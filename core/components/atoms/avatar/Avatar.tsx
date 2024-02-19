@@ -41,6 +41,10 @@ export interface AvatarProps extends BaseProps {
    * Determines the shape of `Avatar`
    */
   shape: AvatarShape;
+  /**
+   * Describe aria-role for the `Avatar`
+   */
+  role?: string;
 }
 
 const initialsLength = 2;
@@ -48,7 +52,18 @@ const DefaultAppearance = 'secondary';
 const colors = ['accent4', 'primary', 'accent3', 'alert', 'accent2', 'warning', 'accent1', 'success'];
 
 export const Avatar = (props: AvatarProps) => {
-  const { withTooltip, tooltipPosition, size, children, firstName, lastName, className, appearance, shape } = props;
+  const {
+    withTooltip,
+    tooltipPosition,
+    size,
+    children,
+    firstName,
+    lastName,
+    className,
+    appearance,
+    shape,
+    role = 'presentation',
+  } = props;
 
   const baseProps = extractBaseProps(props);
 
@@ -62,16 +77,13 @@ export const Avatar = (props: AvatarProps) => {
   const AvatarAppearance =
     appearance || colors[(initials.charCodeAt(0) + (initials.charCodeAt(1) || 0)) % 8] || DefaultAppearance;
 
-  const AvatarClassNames = classNames(
-    {
-      Avatar: true,
-      ['Avatar--square']: shape === 'square',
-      [`Avatar--${size}`]: shape !== 'square',
-      [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
-      ['Avatar--disabled']: !initials || !withTooltip,
-    },
-    className
-  );
+  const AvatarClassNames = classNames({
+    Avatar: true,
+    ['Avatar--square']: shape === 'square',
+    [`Avatar--${size}`]: shape !== 'square',
+    [`Avatar--${AvatarAppearance}`]: AvatarAppearance,
+    ['Avatar--disabled']: !initials || !withTooltip,
+  });
 
   const AvatarWrapperClassNames = classNames(
     {
@@ -100,7 +112,7 @@ export const Avatar = (props: AvatarProps) => {
   const renderAvatar = () => {
     if (children && typeof children !== 'string') {
       return (
-        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
+        <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
           <AvatarProvider value={sharedProp}>
             <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
               {children}
@@ -111,7 +123,7 @@ export const Avatar = (props: AvatarProps) => {
     }
 
     return (
-      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames}>
+      <span data-test="DesignSystem-AvatarWrapper" className={AvatarWrapperClassNames} role={role}>
         <span data-test="DesignSystem-Avatar" {...baseProps} className={AvatarClassNames}>
           {initials && (
             <Text weight="medium" appearance={'white'} className={TextClassNames}>

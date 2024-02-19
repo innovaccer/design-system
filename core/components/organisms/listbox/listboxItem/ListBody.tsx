@@ -6,7 +6,7 @@ import { ListboxContext } from '../Listbox';
 import { onKeyDown } from '../utils';
 
 export const ListBody = (props: ListboxItemProps) => {
-  const { children, className, disabled, selected, activated } = props;
+  const { children, className, disabled, selected, activated, tabIndex } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { size, type, draggable } = contextProp;
@@ -27,7 +27,7 @@ export const ListBody = (props: ListboxItemProps) => {
     <div
       data-disabled={disabled}
       data-test="DesignSystem-Listbox-ItemWrapper"
-      tabIndex={draggable ? -1 : 0}
+      tabIndex={draggable ? -1 : tabIndex || 0}
       className={itemClass}
       onKeyDown={onKeyDown}
       role="tablist"
