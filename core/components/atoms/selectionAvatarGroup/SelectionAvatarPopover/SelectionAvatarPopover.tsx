@@ -10,12 +10,11 @@ import SelectionAvatarOption from './SelectionAvatarOption';
 import SelectionAvatarEmptyState from './SelectionAvatarEmptyState';
 import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 
-// import { withOverflowText } from './OverflowText';
-
 export const SelectionAvatarPopover = (props: any) => {
   const { hiddenAvatarList, customStyle, searchPlaceholder, searchComparator, children } = props;
 
   const [searchList, setSearchList] = React.useState(hiddenAvatarList);
+  const [searchValue, setSearchValue] = React.useState('');
 
   const contextProp = React.useContext(SelectionAvatarContext);
 
@@ -26,7 +25,7 @@ export const SelectionAvatarPopover = (props: any) => {
   }
 
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const searchValue = event.target.value.toLowerCase();
+    const searchValue = event.target.value;
 
     const list = hiddenAvatarList.filter((avatarData: AvatarData) => {
       const { firstName, lastName } = avatarData;
@@ -34,10 +33,19 @@ export const SelectionAvatarPopover = (props: any) => {
       if (searchComparator) {
         return searchComparator(searchValue, avatarData);
       }
-      return firstName?.toLowerCase()?.startsWith(searchValue) || lastName?.toLowerCase()?.startsWith(searchValue);
+      return (
+        firstName?.toLowerCase()?.startsWith(searchValue.toLowerCase()) ||
+        lastName?.toLowerCase()?.startsWith(searchValue.toLowerCase())
+      );
     });
 
+    setSearchValue(searchValue);
     setSearchList(list);
+  };
+
+  const onClearHandler = () => {
+    setSearchValue('');
+    setSearchList(hiddenAvatarList);
   };
 
   const popperClassName = classNames({
@@ -52,7 +60,14 @@ export const SelectionAvatarPopover = (props: any) => {
       style={{ width: customStyle.width }}
       ref={listRef}
     >
-      {withSearch && <SelectionAvatarInput placeholder={searchPlaceholder} onChange={onSearchHandler} />}
+      {withSearch && (
+        <SelectionAvatarInput
+          placeholder={searchPlaceholder}
+          onChange={onSearchHandler}
+          value={searchValue}
+          onClear={onClearHandler}
+        />
+      )}
 
       <div style={customStyle} className={popperClassName}>
         {searchList.length === 0 && (

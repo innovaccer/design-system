@@ -65,6 +65,9 @@ export const all = () => {
   };
 
   const searchComparator = (searchValue, data) => {
+    if (searchValue === '') {
+      return true;
+    }
     return data.firstName.toLowerCase().includes(searchValue.toLowerCase());
   };
 
