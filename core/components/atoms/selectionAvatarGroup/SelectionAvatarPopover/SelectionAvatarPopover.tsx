@@ -71,7 +71,7 @@ export const SelectionAvatarPopover = (props: any) => {
 
             return (
               <SelectionAvatarOption key={index} value={avatarData}>
-                <Checkbox defaultChecked={isSelected} checked={isSelected} label={name} size="regular" />
+                <Checkbox defaultChecked={isSelected} checked={isSelected} label={name} size="regular" tabIndex={-1} />
               </SelectionAvatarOption>
             );
           })}
