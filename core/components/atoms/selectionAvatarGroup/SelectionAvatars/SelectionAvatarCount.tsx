@@ -5,7 +5,7 @@ import { AvatarData } from '../SelectionAvatarGroup';
 import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 import { handleKeyDown } from './utils';
 
-const SelectionAvatarCount = (props: any) => {
+export const SelectionAvatarCount = (props: any) => {
   const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList, setOpenPopover, isPopoverItemSelected } = props;
 
   const contextProp = React.useContext(SelectionAvatarContext);
