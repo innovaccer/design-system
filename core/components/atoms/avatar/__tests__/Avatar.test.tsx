@@ -116,7 +116,7 @@ describe('Avatar component tagName', () => {
 describe('Avatar Component with overwrite class', () => {
   it('overwrite Avatar class', () => {
     const { getByTestId } = render(<Avatar className="AvatarClass">{'Avatar'}</Avatar>);
-    expect(getByTestId('DesignSystem-Avatar')).toHaveClass('AvatarClass');
+    expect(getByTestId('DesignSystem-AvatarWrapper')).toHaveClass('AvatarClass');
   });
 });
 
