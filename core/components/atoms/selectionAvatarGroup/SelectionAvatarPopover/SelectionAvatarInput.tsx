@@ -15,7 +15,6 @@ export const SelectionAvatarInput = (props: InputProps) => {
     <div className="SelectionAvatar-inputWrapper">
       <Input
         icon="search"
-        // minWidth="176px"
         onChange={onChange}
         onKeyDown={(event) => handleInputKeyDown(event, listRef, setFocusedOption, setOpenPopover, triggerRef)}
         className="w-100 SelectionAvatar-input"
