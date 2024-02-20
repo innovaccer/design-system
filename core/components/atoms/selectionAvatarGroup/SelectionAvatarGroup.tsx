@@ -102,10 +102,6 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    */
   searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
   /**
-   * Set as `true` if option is selected from popover
-   */
-  isPopoverItemSelected?: boolean;
-  /**
    * Element to be render inside popover
    */
   children?: React.ReactNode;
@@ -127,7 +123,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     searchPlaceholder,
     withSearch,
     searchComparator,
-    isPopoverItemSelected,
     children,
   } = props;
 
@@ -210,8 +205,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     avatarStyle,
     hiddenAvatarCount,
     hiddenAvatarList,
-    setOpenPopover,
-    isPopoverItemSelected,
   };
 
   const outsideClickHandler = () => {
@@ -219,17 +212,17 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
   };
 
   const contextProp = {
+    listRef,
     onSelect,
+    withSearch,
+    triggerRef,
     selectedItems,
+    focusedOption,
     setSelectedItems,
     setFocusedOption,
-    listRef,
     setHighlightFirstItem,
     setHighlightLastItem,
-    focusedOption,
-    withSearch,
     setOpenPopover,
-    triggerRef,
   };
 
   return (
@@ -245,9 +238,6 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
           avatarList={list.slice(0, max)}
           avatarRenderer={avatarRenderer}
           tooltipPosition={tooltipPosition}
-          onSelect={onSelect}
-          setSelectedItems={setSelectedItems}
-          selectedItems={selectedItems}
         />
         {(hiddenAvatarCount > 0 || (children && hiddenAvatarCount > 0)) && (
           <OutsideClick onOutsideClick={outsideClickHandler}>

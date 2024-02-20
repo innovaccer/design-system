@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { SelectionAvatarGroup } from '../SelectionAvatarGroup';
-import { action } from '@/utils/action';
 import { Checkbox } from '@/index';
 
 export const custom = () => {
@@ -46,12 +45,29 @@ export const custom = () => {
 
   const [avatarList, setAvatarList] = React.useState(list);
   const [searchList, setSearchList] = React.useState(list.slice(5, list.length));
-  const [selectedItems, setSelectedItems] = React.useState([]);
+  const [selectedItems, setSelectedItems] = React.useState([
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+      iconOptions: {
+        name: 'places',
+        type: 'outlined',
+      },
+      selected: true,
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+      selected: true,
+    },
+  ]);
 
   React.useEffect(() => {
     const updatedList = avatarList.map((avatar) => {
       if (selectedItems.includes(avatar)) {
         avatar.selected = true;
+      } else {
+        avatar.selected = false;
       }
       return avatar;
     });
@@ -69,9 +85,8 @@ export const custom = () => {
     setSearchList(list);
   };
 
-  const onSelectHandler = (props) => {
-    action('myprops', props)();
-    setSelectedItems(props);
+  const onSelectHandler = (list) => {
+    setSelectedItems(list);
   };
 
   return (
@@ -89,11 +104,12 @@ export const custom = () => {
         {searchList.map((avatarData, index) => {
           const { firstName = '', lastName = '' } = avatarData;
           const name = `${firstName} ${lastName}`;
-          const isSelected = selectedItems.includes(avatarData);
+
+          const isSelected = selectedItems.find((item) => item.firstName === avatarData.firstName);
 
           return (
             <SelectionAvatarGroup.Option key={index} value={avatarData} className="d-flex align-items-center">
-              <Checkbox defaultChecked={isSelected} checked={isSelected} label={name} size="regular" />
+              <Checkbox key={isSelected} checked={isSelected} label={name} size="regular" />
             </SelectionAvatarGroup.Option>
           );
         })}

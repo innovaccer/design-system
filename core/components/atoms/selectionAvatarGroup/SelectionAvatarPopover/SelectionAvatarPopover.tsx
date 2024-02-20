@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { Checkbox } from '@/index';
-// import classNames from 'classnames';
 import { AvatarData } from '../SelectionAvatarGroup';
-// import { SelectionAvatarInput } from './SelectionAvatarInput';
 import SelectionAvatarInput from './SelectionAvatarInput';
 import classNames from 'classnames';
 import SelectionAvatarList from './SelectionAvatarList';

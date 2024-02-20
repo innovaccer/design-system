@@ -6,12 +6,12 @@ import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 import { handleKeyDown } from './utils';
 
 export const SelectionAvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList, setOpenPopover, isPopoverItemSelected } = props;
+  const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList } = props;
 
   const contextProp = React.useContext(SelectionAvatarContext);
-  const { selectedItems, setHighlightFirstItem, setHighlightLastItem, triggerRef } = contextProp;
+  const { selectedItems, setHighlightFirstItem, setHighlightLastItem, triggerRef, setOpenPopover } = contextProp;
 
-  const [selectedItemCount, setSelectedItemCount] = React.useState(isPopoverItemSelected);
+  const [selectedItemCount, setSelectedItemCount] = React.useState(0);
 
   const wrapperClassName = classNames({
     ['SelectionAvatarCount-wrapper']: true,
