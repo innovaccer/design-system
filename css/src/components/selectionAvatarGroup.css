@@ -66,6 +66,7 @@
   background: transparent;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0;
+  height: 36px;
 }
 
 .SelectionAvatar-input,
