@@ -3,8 +3,18 @@ import classNames from 'classnames';
 import { SelectionAvatar } from './SelectionAvatar';
 import { AvatarData } from '../SelectionAvatarGroup';
 import { SelectionAvatarContext } from '../SelectionAvatarProvider';
+import { AvatarSize } from '@/common.type';
+import { PopoverProps } from '@/index.type';
 
-export const SelectionAvatars = (props: any) => {
+interface SelectionAvatarsProps {
+  size?: AvatarSize;
+  avatarList: AvatarData[];
+  avatarRenderer?: (data: AvatarData) => JSX.Element;
+  tooltipPosition?: PopoverProps['position'];
+  avatarStyle?: { backgroundColor?: string; boxShadow?: string };
+}
+
+export const SelectionAvatars = (props: SelectionAvatarsProps) => {
   const { avatarList, avatarStyle, tooltipPosition, size, avatarRenderer } = props;
 
   const contextProp = React.useContext(SelectionAvatarContext);
@@ -13,12 +23,12 @@ export const SelectionAvatars = (props: any) => {
 
   const onClickHandler = (item: AvatarData) => {
     let list = selectedItems;
-    if (selectedItems.includes(item)) {
+    if (selectedItems?.includes(item)) {
       list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== item);
     } else {
-      list.push(item);
+      list?.push(item);
     }
-    setSelectedItems([...list]);
+    list && setSelectedItems?.([...list]);
 
     onSelect && onSelect(list);
   };
@@ -39,7 +49,7 @@ export const SelectionAvatars = (props: any) => {
         const { appearance, firstName, lastName, iconOptions, imgOptions } = avatarItem;
         const GroupClass = classNames({
           [`SelectionAvatarGroup-item`]: true,
-          [`SelectionAvatarGroup-item--selected`]: selectedItems.includes(avatarItem),
+          [`SelectionAvatarGroup-item--selected`]: selectedItems?.includes(avatarItem),
         });
 
         if (avatarRenderer) {
@@ -54,7 +64,7 @@ export const SelectionAvatars = (props: any) => {
             style={avatarStyle}
             className={GroupClass}
             data-test="DesignSystem-AvatarGroup--Avatar"
-            aria-checked={selectedItems.includes(avatarItem)}
+            aria-checked={selectedItems && selectedItems.includes(avatarItem)}
             onClick={() => onClickHandler(avatarItem)}
             onKeyDown={(event: React.KeyboardEvent) => handleKeyDown(event, avatarItem)}
           >

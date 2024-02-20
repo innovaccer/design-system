@@ -8,7 +8,15 @@ import SelectionAvatarOption from './SelectionAvatarOption';
 import SelectionAvatarEmptyState from './SelectionAvatarEmptyState';
 import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 
-export const SelectionAvatarPopover = (props: any) => {
+interface AvatarPopoverProps {
+  hiddenAvatarList: AvatarData[];
+  searchPlaceholder?: string;
+  searchComparator?: (searchValue: string, avatarData: AvatarData) => boolean;
+  children?: React.ReactNode;
+  customStyle: { width?: number; minHeight?: number; maxHeight?: number };
+}
+
+export const SelectionAvatarPopover = (props: AvatarPopoverProps) => {
   const { hiddenAvatarList, customStyle, searchPlaceholder, searchComparator, children } = props;
 
   const [searchList, setSearchList] = React.useState(hiddenAvatarList);
@@ -19,13 +27,13 @@ export const SelectionAvatarPopover = (props: any) => {
   const { selectedItems, listRef, withSearch } = contextProp;
 
   if (children) {
-    return children;
+    return <>{children}</>;
   }
 
   const onSearchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const searchValue = event.target.value;
 
-    const list = hiddenAvatarList.filter((avatarData: AvatarData) => {
+    const list = hiddenAvatarList?.filter((avatarData: AvatarData) => {
       const { firstName, lastName } = avatarData;
 
       if (searchComparator) {
@@ -80,7 +88,7 @@ export const SelectionAvatarPopover = (props: any) => {
           {searchList.map((avatarData: AvatarData, index: number) => {
             const { firstName = '', lastName = '' } = avatarData;
             const name = `${firstName} ${lastName}`;
-            const isSelected = selectedItems.includes(avatarData);
+            const isSelected = selectedItems?.includes(avatarData);
 
             return (
               <SelectionAvatarOption key={index} value={avatarData}>

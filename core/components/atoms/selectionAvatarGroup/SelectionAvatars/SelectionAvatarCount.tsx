@@ -4,8 +4,16 @@ import classNames from 'classnames';
 import { AvatarData } from '../SelectionAvatarGroup';
 import { SelectionAvatarContext } from '../SelectionAvatarProvider';
 import { handleKeyDown } from './utils';
+import { AvatarSize } from '@/common.type';
 
-export const SelectionAvatarCount = (props: any) => {
+interface CountAvatarProp {
+  size?: AvatarSize;
+  hiddenAvatarCount?: number;
+  hiddenAvatarList: AvatarData[];
+  avatarStyle?: { backgroundColor?: string; boxShadow?: string };
+}
+
+export const SelectionAvatarCount = (props: CountAvatarProp) => {
   const { hiddenAvatarCount, avatarStyle, size, hiddenAvatarList } = props;
 
   const contextProp = React.useContext(SelectionAvatarContext);
@@ -20,7 +28,7 @@ export const SelectionAvatarCount = (props: any) => {
 
   React.useEffect(() => {
     const selectedList = hiddenAvatarList.filter((data1: AvatarData) =>
-      selectedItems.some((data2: AvatarData) => data2 === data1)
+      selectedItems?.some((data2: AvatarData) => data2 === data1)
     );
     setSelectedItemCount(selectedList.length);
   }, [selectedItems]);

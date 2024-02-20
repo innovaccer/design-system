@@ -76,7 +76,7 @@ export interface SelectionAvatarGroupProps extends BaseProps {
   /**
    * Callback function for avatar selection
    */
-  onSelect?: (data: AvatarData) => void;
+  onSelect?: (data?: AvatarData) => void;
   /**
    * Adds custom width to Popper
    */

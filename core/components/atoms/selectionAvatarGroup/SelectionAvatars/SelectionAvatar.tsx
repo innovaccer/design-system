@@ -1,24 +1,32 @@
 import * as React from 'react';
-import classNames from 'classnames';
 import { Avatar } from '@/index';
+import { AvatarSize } from '@/common.type';
+import { AvatarProps, PopoverProps, AvatarIconProps, AvatarImageProps } from '@/index.type';
 
-export const SelectionAvatar = (props: any) => {
+interface SelectionAvatarProps {
+  size?: AvatarSize;
+  appearance?: AvatarProps['appearance'];
+  firstName?: string;
+  lastName?: string;
+  withTooltip?: boolean;
+  iconOptions?: AvatarIconProps;
+  imgOptions?: AvatarImageProps;
+  tooltipPosition?: PopoverProps['position'];
+}
+
+export const SelectionAvatar = (props: SelectionAvatarProps) => {
   const { iconOptions, imgOptions, ...rest } = props;
-
-  const avatarClassName = classNames({
-    // ['Selection-Avatar']: true,
-  });
 
   if (imgOptions || iconOptions) {
     return (
-      <Avatar className={avatarClassName} role="checkbox" {...rest}>
+      <Avatar role="checkbox" {...rest}>
         {imgOptions && <Avatar.Image {...imgOptions} />}
         {iconOptions && <Avatar.Icon {...iconOptions} />}
       </Avatar>
     );
   }
 
-  return <Avatar className={avatarClassName} role="checkbox" {...rest} />;
+  return <Avatar role="checkbox" {...rest} />;
 };
 
 export default SelectionAvatar;

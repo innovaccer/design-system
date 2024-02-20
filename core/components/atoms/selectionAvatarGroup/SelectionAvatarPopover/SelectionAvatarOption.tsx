@@ -28,13 +28,13 @@ export const SelectionAvatarOption = (props: ListboxItemProps) => {
     event.preventDefault();
     let list = [...selectedItems];
 
-    if (selectedItems.includes(avatarData)) {
+    if (selectedItems?.includes(avatarData)) {
       list = selectedItems.filter((selectedItem: AvatarData) => selectedItem !== avatarData);
     } else {
       list.push(avatarData);
     }
 
-    setSelectedItems([...list]);
+    setSelectedItems?.([...list]);
     onSelect && onSelect(list);
   };
 
@@ -56,7 +56,7 @@ export const SelectionAvatarOption = (props: ListboxItemProps) => {
     <Listbox.Item
       onClick={(event) => onSelectHandler(event, value)}
       onKeyDown={(event) => onKeyDownHandler(event)}
-      selected={selectedItems.includes(value)}
+      selected={selectedItems?.includes(value)}
       tabIndex={-1}
       {...rest}
     >

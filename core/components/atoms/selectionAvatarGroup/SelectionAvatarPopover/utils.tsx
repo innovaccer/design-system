@@ -74,7 +74,7 @@ const navigateOptions = (
 export const handleInputKeyDown = (
   event: React.KeyboardEvent,
   listRef: any,
-  setFocusedOption: React.Dispatch<React.SetStateAction<Element | undefined>>,
+  setFocusedOption?: React.Dispatch<React.SetStateAction<Element | undefined>>,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   triggerRef?: any
 ) => {
