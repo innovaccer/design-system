@@ -131,7 +131,7 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     children,
   } = props;
 
-  const [selectedItems, setSelectedItems] = React.useState<AvatarData>([]);
+  const [selectedItems, setSelectedItems] = React.useState<AvatarData[]>([]);
   const [openPopover, setOpenPopover] = React.useState(false);
   const [focusedOption, setFocusedOption] = React.useState<Element | undefined>();
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
@@ -249,14 +249,9 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
           setSelectedItems={setSelectedItems}
           selectedItems={selectedItems}
         />
-        {(hiddenAvatarCount > 0 || children) && (
+        {(hiddenAvatarCount > 0 || (children && hiddenAvatarCount > 0)) && (
           <OutsideClick onOutsideClick={outsideClickHandler}>
-            <Popover
-              // on="click"
-              open={openPopover}
-              position="bottom-end"
-              trigger={<SelectionAvatarCount {...triggerProps} />}
-            >
+            <Popover open={openPopover} position="bottom-end" trigger={<SelectionAvatarCount {...triggerProps} />}>
               <SelectionAvatarPopover {...popoverProps} />
             </Popover>
           </OutsideClick>
@@ -274,7 +269,7 @@ SelectionAvatarGroup.defaultProps = {
   size: 'regular',
   width: 176,
   maxHeight: 256,
-  minHeight: 24,
+  // minHeight: 24,
 };
 
 SelectionAvatarGroup.Input = SelectionAvatarInput;

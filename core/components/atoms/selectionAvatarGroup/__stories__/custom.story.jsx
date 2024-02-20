@@ -49,11 +49,11 @@ export const custom = () => {
   const [selectedItems, setSelectedItems] = React.useState([]);
 
   React.useEffect(() => {
-    const updatedList = avatarList.map((patient) => {
-      if (selectedItems.includes(patient)) {
-        patient.selected = true;
+    const updatedList = avatarList.map((avatar) => {
+      if (selectedItems.includes(avatar)) {
+        avatar.selected = true;
       }
-      return patient;
+      return avatar;
     });
     setAvatarList(updatedList);
   }, [selectedItems]);
