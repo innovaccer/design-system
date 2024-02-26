@@ -197,13 +197,13 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   }
 
   addBoundaryScrollHandler() {
-    if (this.props.boundaryElement) {
+    if (this.props.boundaryElement && this.props.boundaryElement.addEventListener) {
       this.props.boundaryElement.addEventListener('scroll', this.boundaryScrollHandler);
     }
   }
 
   removeBoundaryScrollHandler() {
-    if (this.props.boundaryElement) {
+    if (this.props.boundaryElement && this.props.boundaryElement.removeEventListener) {
       this.props.boundaryElement.removeEventListener('scroll', this.boundaryScrollHandler);
     }
   }
