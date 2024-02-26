@@ -76,6 +76,7 @@ Object {
           >
             <span
               class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+              data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants"
             >
               <span
                 class="Text Text--white Text--regular Avatar-content--secondary"
@@ -159,6 +160,7 @@ Object {
         >
           <span
             class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
+            data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants"
           >
             <span
               class="Text Text--white Text--regular Avatar-content--secondary"
@@ -301,6 +303,7 @@ Object {
           >
             <span
               class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled"
+              data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants"
             >
               <span
                 class="Text Text--white Text--regular Avatar-content--secondary Avatar-content--tiny"
@@ -384,6 +387,7 @@ Object {
         >
           <span
             class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled"
+            data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants"
           >
             <span
               class="Text Text--white Text--regular Avatar-content--secondary Avatar-content--tiny"

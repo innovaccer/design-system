@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Text } from '@/index';
 
 const AvatarCount = (props: any) => {
-  const { hiddenAvatarCount, avatarStyle, size } = props;
+  const { hiddenAvatarCount, avatarStyle, size, on } = props;
 
   const ContentClass = classNames({
     [`Avatar-content--secondary`]: true,
@@ -16,11 +16,12 @@ const AvatarCount = (props: any) => {
     [`Avatar--tiny`]: size === 'tiny',
     [`Avatar--secondary`]: true,
     ['Avatar--disabled']: true,
+    ['cursor-pointer']: on === 'click',
   });
 
   return (
     <div data-test="DesignSystem-AvatarGroup--TriggerAvatar" className="AvatarCount-wrapper" style={avatarStyle}>
-      <span className={AvatarVariantsClass}>
+      <span data-test="DesignSystem-AvatarGroup--TriggerAvatarVariants" className={AvatarVariantsClass}>
         <Text appearance={'white'} className={ContentClass}>
           {`+${hiddenAvatarCount}`}
         </Text>
