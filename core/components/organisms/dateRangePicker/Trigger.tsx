@@ -73,7 +73,7 @@ export const Trigger = (props: TriggerProps) => {
       const placeholderChar = startInputOptions.placeholderChar || '_';
       if (val && !val.includes(placeholderChar)) {
         const d = translateToDate(inputFormat, val, validators);
-        if (d) {
+        if (d && !isNaN(d.getTime())) {
           setState({ startDate: d });
           if (endDate) {
             const { year: eYear, month: eMonth, date: eDate } = getDateInfo(endDate);
@@ -88,7 +88,7 @@ export const Trigger = (props: TriggerProps) => {
       const placeholderChar = endInputOptions.placeholderChar ? endInputOptions.placeholderChar : '_';
       if (val && !val.includes(placeholderChar)) {
         const d = translateToDate(inputFormat, val, validators);
-        if (d) setState({ endDate: d });
+        if (d && !isNaN(d.getTime())) setState({ endDate: d });
       }
     }
   };

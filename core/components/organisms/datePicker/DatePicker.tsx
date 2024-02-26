@@ -67,6 +67,30 @@ export type DatePickerProps = SharedProps & {
    * Element to be rendered inside Popover
    */
   children?: React.ReactNode;
+  /**
+   * Callback function called when date is invalid
+   * @argument date Date object
+   * @argument dateVal Date string value as per `outputFormat`
+   */
+  onError?: (date: Date | undefined, dateVal?: string) => void;
+  /**
+   * <pre style="font-family: monospace; font-size: 13px; background: #f8f8f8">
+   * PopoverOptions:
+   * {
+   *    appendToBody?: boolean;
+   *    hideOnReferenceEscape?: boolean;
+   *    boundaryElement?: Element;
+   * }
+   * </pre>
+   *
+   * | Name | Description | Default |
+   * | --- | --- | --- |
+   * | appendToBody | Appends `Datepicker` inside body element | true |
+   * | hideOnReferenceEscape | Hides the `Datepicker` when its reference element is outside the boundaries | true |
+   * | boundaryElement | Boundary of Popover | |
+   *
+   */
+  popoverOptions?: PopoverOptions;
 };
 
 export interface DatePickerState {
@@ -74,6 +98,12 @@ export interface DatePickerState {
   date?: Date;
   error: boolean;
   open: boolean;
+}
+
+interface PopoverOptions {
+  appendToBody?: PopoverProps['appendToBody'];
+  hideOnReferenceEscape?: PopoverProps['hideOnReferenceEscape'];
+  boundaryElement?: PopoverProps['boundaryElement'];
 }
 
 export class DatePicker extends React.Component<DatePickerProps, DatePickerState> {
@@ -140,15 +170,21 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   }
 
   getError = (date?: Date) => {
-    const { disabledBefore, disabledAfter } = this.props;
+    const { disabledBefore, disabledAfter, outputFormat, onError } = this.props;
+
+    if (!date) return false;
 
     const { year: dbYear, month: dbMonth, date: dbDate } = getDateInfo(disabledBefore);
-
     const { year: daYear, month: daMonth, date: daDate } = getDateInfo(disabledAfter);
 
-    return !date
-      ? false
-      : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
+    if (compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate)) {
+      if (onError) {
+        const dVal = translateToString(outputFormat, date);
+        onError(date, dVal);
+      }
+      return true;
+    }
+    return false;
   };
 
   onDateChangeHandler = (d?: Date) => {
@@ -255,7 +291,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
   }
 
   render() {
-    const { position, withInput, inputFormat, inputOptions, validators } = this.props;
+    const { position, withInput, inputFormat, inputOptions, validators, popoverOptions } = this.props;
 
     const { open } = this.state;
 
@@ -271,6 +307,7 @@ export class DatePicker extends React.Component<DatePickerProps, DatePickerState
               setState={this.setState.bind(this)}
             />
           }
+          {...popoverOptions}
           triggerClass="w-100"
           position={position}
           appendToBody={true}

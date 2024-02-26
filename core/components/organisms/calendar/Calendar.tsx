@@ -209,14 +209,18 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       });
     }
 
-    if (prevProps.startDate !== this.props.startDate) {
+    if (
+      this.props.startDate &&
+      !isNaN(this.props.startDate.getTime()) &&
+      prevProps.startDate !== this.props.startDate
+    ) {
       const d = convertToDate(this.props.startDate);
       this.setState({
         startDate: d,
       });
     }
 
-    if (prevProps.endDate !== this.props.endDate) {
+    if (this.props.endDate && !isNaN(this.props.endDate.getTime()) && prevProps.endDate !== this.props.endDate) {
       const d = convertToDate(this.props.endDate);
       this.setState({
         endDate: d,
@@ -291,8 +295,12 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     }
 
     if (
-      prevState.startDate?.getTime() !== this.state.startDate?.getTime() ||
-      prevState.endDate?.getTime() !== this.state.endDate?.getTime()
+      (this.state.startDate &&
+        !isNaN(this.state.startDate.getTime()) &&
+        prevState.startDate?.getTime() !== this.state.startDate?.getTime()) ||
+      (this.state.endDate &&
+        !isNaN(this.state.endDate?.getTime()) &&
+        prevState.endDate?.getTime() !== this.state.endDate?.getTime())
     ) {
       const { onRangeChange } = this.props;
 

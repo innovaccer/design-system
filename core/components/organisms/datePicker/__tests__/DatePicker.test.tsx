@@ -149,4 +149,17 @@ describe('renders DatePicker component Event Handlers ', () => {
     fireEvent.focus(input);
     expect(input).toHaveValue('__/__/____');
   });
+  it('checks for input field onError event', () => {
+    const { getByTestId } = render(
+      <DatePicker
+        disabledAfter={new Date('2028-01-19T20:00:00.000Z')}
+        disabledBefore={new Date('2021-01-19T20:00:00.000Z')}
+        onError={FunctionValue}
+        withInput={true}
+      />
+    );
+    const input = getByTestId('DesignSystem-Input');
+    fireEvent.change(input, { target: { value: newDate } });
+    expect(FunctionValue).toHaveBeenCalled();
+  });
 });

@@ -115,6 +115,8 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   const avatarStyle = size === 'tiny' ? { ...style, ...tinyAvatarStyle } : style;
 
+  const avatarList = list.length === 3 ? list : list.slice(0, max);
+
   const AvatarGroupClass = classNames(
     {
       ['AvatarGroup']: true,
@@ -131,17 +133,12 @@ export const AvatarGroup = (props: AvatarGroupProps) => {
 
   return (
     <div data-test="DesignSystem-AvatarGroup" {...baseProps} className={`${AvatarGroupClass} d-inline-flex`}>
-      <Avatars
-        size={size}
-        avatarList={list.slice(0, max)}
-        avatarStyle={avatarStyle}
-        tooltipPosition={tooltipPosition}
-      />
-      {list.length - max > 0 && (
+      <Avatars size={size} avatarList={avatarList} avatarStyle={avatarStyle} tooltipPosition={tooltipPosition} />
+      {list.length - max > 0 && list.length !== 3 && (
         <Popover
           on={on}
           dark={dark}
-          trigger={<AvatarCount size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
+          trigger={<AvatarCount on={on} size={size} hiddenAvatarCount={hiddenAvatarCount} avatarStyle={avatarStyle} />}
           position={position}
           appendToBody={appendToBody}
           className={popperClass}

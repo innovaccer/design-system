@@ -122,6 +122,14 @@ describe('AvatarGroup component', () => {
     expect(queryByTestId('DesignSystem-AvatarGroup--TriggerAvatar')).not.toBeInTheDocument();
   });
 
+  it('renders three avatars without +x avatar on list length three', () => {
+    const newList = list.slice(0, 3);
+
+    const { getAllByTestId, queryByTestId } = render(<AvatarGroup list={newList} />);
+    expect(getAllByTestId('DesignSystem-AvatarGroup--Avatar')).toHaveLength(3);
+    expect(queryByTestId('DesignSystem-AvatarGroup--TriggerAvatar')).not.toBeInTheDocument();
+  });
+
   it('renders avatars initials', () => {
     const max = 3;
     const avatarsInitials = ['JD', 'SP', 'NW'];
@@ -144,6 +152,8 @@ describe('AvatarGroup component', () => {
     const { getByTestId, getAllByTestId } = render(
       <AvatarGroup list={list} max={max} popoverOptions={{ on: 'click' }} />
     );
+
+    expect(getByTestId('DesignSystem-AvatarGroup--TriggerAvatarVariants')).toHaveClass('cursor-pointer');
 
     const extraAvatar = getByTestId('DesignSystem-AvatarGroup--TriggerAvatar');
     fireEvent.click(extraAvatar);
