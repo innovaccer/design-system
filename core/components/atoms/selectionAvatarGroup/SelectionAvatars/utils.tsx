@@ -32,14 +32,12 @@ export const focusListItem = (
 ) => {
   if (withSearch && position === 'down') {
     const searchInput = listRef.current?.querySelectorAll('[data-test="DesignSystem-SelectionAvatar--Input"]');
-    console.log('aa22', searchInput);
     searchInput[0]?.focus();
     setFocusedOption && setFocusedOption(searchInput);
     return;
   }
 
   const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-  console.log('listReflistRef', listRef.current, 'listItems', listItems);
   let targetOption;
 
   if (position === 'down') {

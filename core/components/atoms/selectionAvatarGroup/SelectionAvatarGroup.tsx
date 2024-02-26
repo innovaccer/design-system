@@ -149,6 +149,8 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
+    } else {
+      setHighlightFirstItem(true);
     }
   }, [openPopover]);
 
@@ -210,6 +212,10 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     setOpenPopover(false);
   };
 
+  const onToggleHandler = (open?: boolean) => {
+    open ? setOpenPopover(true) : setOpenPopover(false);
+  };
+
   const contextProp = {
     listRef,
     onSelect,
@@ -240,7 +246,12 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
         />
         {(hiddenAvatarCount > 0 || (children && hiddenAvatarCount > 0)) && (
           <OutsideClick onOutsideClick={outsideClickHandler}>
-            <Popover open={openPopover} position="bottom-end" trigger={<SelectionAvatarCount {...triggerProps} />}>
+            <Popover
+              open={openPopover}
+              position="bottom-end"
+              trigger={<SelectionAvatarCount {...triggerProps} />}
+              onToggle={onToggleHandler}
+            >
               <SelectionAvatarPopover {...popoverProps} />
             </Popover>
           </OutsideClick>
