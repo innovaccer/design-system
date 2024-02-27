@@ -19,7 +19,10 @@ interface EmptyStateProps {
 export const SelectionAvatarEmptyState = (props: EmptyStateProps) => {
   const { height, title, description } = props;
   return (
-    <div className="d-flex flex-column justify-content-center align-items-center" style={{ height }}>
+    <div
+      className="d-flex flex-column justify-content-center align-items-center"
+      style={{ height: height ? height - 4 : '' }}
+    >
       {title && (
         <Text className="text-align-center mb-3" weight="strong">
           {title}
