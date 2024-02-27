@@ -96,3 +96,20 @@ export type AvatarSize = 'regular' | 'tiny';
 export type AvatarShape = 'round' | 'square';
 
 export type IconType = 'rounded' | 'outlined';
+
+export type PositionType =
+  | 'auto-start'
+  | 'auto'
+  | 'auto-end'
+  | 'top-start'
+  | 'top'
+  | 'top-end'
+  | 'right-start'
+  | 'right'
+  | 'right-end'
+  | 'bottom-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'left-end'
+  | 'left'
+  | 'left-start';
