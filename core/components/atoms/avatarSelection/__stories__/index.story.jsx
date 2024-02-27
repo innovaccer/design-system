@@ -1,0 +1,150 @@
+import * as React from 'react';
+import { SelectionAvatarGroup } from '../AvatarSelection';
+import { action } from '@/utils/action';
+
+export const all = () => {
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+      selected: true,
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+      imgOptions: {
+        src: 'https://design.innovaccer.com/images/avatar2.jpeg',
+      },
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+      selected: true,
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+      selected: true,
+    },
+  ];
+
+  const onSelectHandler = (props) => {
+    action('props', props)();
+  };
+
+  const searchComparator = (searchValue, data) => {
+    if (searchValue === '') {
+      return true;
+    }
+    return data.firstName.toLowerCase().includes(searchValue.toLowerCase());
+  };
+
+  return (
+    <SelectionAvatarGroup
+      list={list}
+      withSearch={true}
+      onSelect={onSelectHandler}
+      searchPlaceholder="Search User"
+      searchComparator={searchComparator}
+    />
+  );
+};
+
+const customCode = `() => {
+  const list = [
+    {
+      firstName: 'John',
+      lastName: 'Doe',
+      selected: true,
+    },
+    {
+      firstName: 'Steven',
+      lastName: 'Packton',
+      imgOptions: {
+        src: 'https://design.innovaccer.com/images/avatar2.jpeg',
+      },
+    },
+    {
+      firstName: 'Nancy',
+      lastName: 'Wheeler',
+    },
+    {
+      firstName: 'Monica',
+      lastName: 'Geller',
+    },
+    {
+      firstName: 'Arya',
+      lastName: 'Stark',
+    },
+    {
+      firstName: 'Rachel',
+      lastName: 'Green',
+    },
+    {
+      firstName: 'Walter',
+      lastName: 'Wheeler',
+      selected: true,
+    },
+  ];
+
+  const onSelectHandler = (props) => {
+    action('props', props)();
+  };
+
+  const searchComparator = (searchValue, data) => {
+    if (searchValue === '') {
+      return true;
+    }
+    return data.firstName.toLowerCase().includes(searchValue.toLowerCase());
+  };
+
+  return (
+    <SelectionAvatarGroup
+      list={list}
+      withSearch={true}
+      onSelect={onSelectHandler}
+      searchPlaceholder="Search User"
+      searchComparator={searchComparator}
+    />
+  );
+}`;
+
+export default {
+  title: 'Indicators/SelectionAvatarGroup/All',
+  component: SelectionAvatarGroup,
+  parameters: {
+    docs: {
+      docPage: {
+        customCode,
+      },
+    },
+  },
+};
