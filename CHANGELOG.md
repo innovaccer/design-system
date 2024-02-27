@@ -1,3 +1,44 @@
+## 2.28.2 (2024-02-27)
+
+### Highlights
+
+- feat(datepicker): add functionality to detect invalid manually entered dates in datepicker (bdf54a43)
+- fix(dateRangePicker): add validation for invalid date range (7e337673)
+- fix(avatargroup): update border color and popper body dimensions (51c648f0)
+- fix(datepicker): datePicker popover not opening in fullscreenModal (5238f1e8)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(datepicker): datePicker popover not opening in fullscreenModal (5238f1e8)
+
+### Improvements
+
+- feat(datepicker): add functionality to detect invalid manually entered dates in datepicker (bdf54a43)
+- fix(dateRangePicker): add validation for invalid date range (7e337673)
+- fix(avatargroup): update border color and popper body dimensions (51c648f0)
+
+### Documentation
+
+NA
+
+---
+
 ## 2.28.1 (2024-02-19)
 
 ### Highlights
