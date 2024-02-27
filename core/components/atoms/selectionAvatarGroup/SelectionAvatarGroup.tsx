@@ -78,23 +78,23 @@ export interface SelectionAvatarGroupProps extends BaseProps {
    */
   onSelect?: (data?: AvatarData) => void;
   /**
-   * Adds custom width to Popper
+   * Adds custom width to popover
    */
   width?: number;
   /**
-   * Adds maximum height to Popper
+   * Adds maximum height to popover
    */
   maxHeight?: number;
   /**
-   * Adds minimum height to Popper
+   * Adds minimum height to popover
    */
   minHeight?: number;
   /**
-   * Set `true` to show search input inside popper
+   * Set `true` to show search input inside popover
    */
   withSearch?: boolean;
   /**
-   * Describes placeholder for search input inside popper
+   * Describes placeholder for search input inside popover
    */
   searchPlaceholder?: string;
   /**
