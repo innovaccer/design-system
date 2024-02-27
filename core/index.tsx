@@ -89,6 +89,6 @@ export { ActionCard } from './components/atoms/actionCard';
 export { SelectionCard } from './components/atoms/selectionCard';
 export { Listbox } from './components/organisms/listbox';
 export { TextField } from './components/organisms/textField';
-export { SelectionAvatarGroup } from './components/atoms/selectionAvatarGroup';
+export { SelectionAvatarGroup } from './components/atoms/AvatarSelection';
 
 export { version } from '../package.json';

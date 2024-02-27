@@ -88,4 +88,4 @@ export { ListboxProps, ListboxItemProps } from './components/organisms/listbox';
 export { TextFieldProps } from './components/organisms/textField';
 export { AvatarImageProps } from './components/atoms/avatar/avatarImage';
 export { AvatarIconProps } from './components/atoms/avatar/avatarIcon';
-export { SelectionAvatarGroupProps } from './components/atoms/selectionAvatarGroup';
+export { SelectionAvatarGroupProps } from './components/atoms/AvatarSelection';
