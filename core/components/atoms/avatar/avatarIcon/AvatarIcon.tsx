@@ -13,19 +13,6 @@ export interface AvatarIconProps extends BaseProps {
    * Type of material `Icon`
    */
   type?: 'outlined' | 'rounded';
-  /**
-   * Handler to be called when icon is clicked
-   */
-  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-  /**
-   * Handler to be called when key is pressed on icon
-   */
-  onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void;
-  /**
-   * The tabindex global attribute indicates that its element can be focused, and
-   * where it participates in sequential keyboard navigation.
-   */
-  tabIndex?: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>['tabIndex'];
 }
 
 const appearanceMapper: Record<string, string> = {
