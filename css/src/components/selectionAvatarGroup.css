@@ -14,6 +14,11 @@
   display: flex;
 }
 
+.SelectionAvatarGroup-item .Avatar,
+.SelectionAvatarCount .Avatar {
+  cursor: pointer;
+}
+
 .SelectionAvatarGroup-item:focus,
 .SelectionAvatarGroup-item:focus-visible {
   outline: 3px solid var(--primary-shadow);
