@@ -35,6 +35,7 @@ export const SelectionAvatarOption = (props: ListboxItemProps) => {
     }
 
     setSelectedItems?.([...list]);
+    setOpenPopover?.(true);
     onSelect && onSelect(list);
   };
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
 import { BaseProps, extractBaseProps } from '@/utils/types';
-import { Popover, OutsideClick } from '@/index';
+import { Popover } from '@/index';
 import { AvatarProps, PopoverProps, AvatarIconProps, AvatarImageProps } from '@/index.type';
 import { AvatarSize } from '@/common.type';
 import { SelectionAvatars, SelectionAvatarCount } from './SelectionAvatars';
@@ -208,9 +208,9 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
     hiddenAvatarList,
   };
 
-  const outsideClickHandler = () => {
-    setOpenPopover(false);
-  };
+  // const outsideClickHandler = () => {
+  //   setOpenPopover(false);
+  // };
 
   const onToggleHandler = (open?: boolean) => {
     open ? setOpenPopover(true) : setOpenPopover(false);
@@ -245,16 +245,16 @@ export const SelectionAvatarGroup = (props: SelectionAvatarGroupProps) => {
           tooltipPosition={tooltipPosition}
         />
         {(hiddenAvatarCount > 0 || (children && hiddenAvatarCount > 0)) && (
-          <OutsideClick onOutsideClick={outsideClickHandler}>
-            <Popover
-              open={openPopover}
-              position="bottom-end"
-              trigger={<SelectionAvatarCount {...triggerProps} />}
-              onToggle={onToggleHandler}
-            >
-              <SelectionAvatarPopover {...popoverProps} />
-            </Popover>
-          </OutsideClick>
+          // <OutsideClick onOutsideClick={outsideClickHandler}>
+          <Popover
+            open={openPopover}
+            position="bottom-end"
+            trigger={<SelectionAvatarCount {...triggerProps} />}
+            onToggle={onToggleHandler}
+          >
+            <SelectionAvatarPopover {...popoverProps} />
+          </Popover>
+          // </OutsideClick>
         )}
       </div>
     </SelectionAvatarProvider>
