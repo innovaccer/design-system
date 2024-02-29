@@ -73,13 +73,10 @@ export const Avatar = (props: AvatarProps) => {
     className
   );
 
-  const AvatarWrapperClassNames = classNames(
-    {
-      ['Avatar--wrapper']: shape === 'square',
-      [`Avatar--${size}`]: shape === 'square',
-    },
-    className
-  );
+  const AvatarWrapperClassNames = classNames({
+    ['Avatar--wrapper']: shape === 'square',
+    [`Avatar--${size}`]: shape === 'square',
+  });
 
   const TextClassNames = classNames({
     [`Avatar-content--${size}`]: size,
