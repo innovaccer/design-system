@@ -2,8 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 import { PopperWrapper, PopperWrapperProps } from '@/components/atoms/popperWrapper';
 import { BaseProps, filterProps } from '@/utils/types';
-
-type Position = 'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'right';
+import { PositionType as Position } from '@/common.type';
 
 export interface CustomStyle {
   height?: number | string;
@@ -34,8 +33,9 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
   /**
    * Position to place the `trigger`
    *
-   * @param Position - 'top' | 'top-start' | 'top-end' | 'bottom'
-   * | 'bottom-start' | 'bottom-end' | 'left' | 'right'
+   * @param Position -  | 'top-start'  | 'top'  | 'top-end'  | 'right-start'
+   *  | 'right'  | 'right-end'  | 'bottom-end'  | 'bottom'  | 'bottom-start'
+   *  | 'left-end'  | 'left'  | 'left-start'  | 'auto-start'  | 'auto'  | 'auto-end';
    */
   position: Position;
   /**

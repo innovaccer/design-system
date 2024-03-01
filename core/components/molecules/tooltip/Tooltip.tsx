@@ -3,6 +3,8 @@ import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
 
+type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
+
 const tooltipPropsList = [
   'trigger',
   'on',
@@ -40,6 +42,13 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    * Trigger for `Tooltip`
    */
   children: PopoverProps['trigger'];
+  /**
+   * Position to place the `tooltip`
+   *
+   * @param Position -  | 'top-start'  | 'top'  | 'top-end'
+   *  | 'right'  | 'bottom-end'  | 'bottom'  | 'bottom-start'  | 'left';
+   */
+  position: Position;
 }
 
 export const Tooltip = (props: TooltipProps) => {

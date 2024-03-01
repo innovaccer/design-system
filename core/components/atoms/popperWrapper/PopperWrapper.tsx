@@ -3,23 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { Manager, Reference, Popper } from 'react-popper';
 import { OutsideClick } from '@/index';
 import classNames from 'classnames';
-
-type PositionType =
-  | 'auto-start'
-  | 'auto'
-  | 'auto-end'
-  | 'top-start'
-  | 'top'
-  | 'top-end'
-  | 'right-start'
-  | 'right'
-  | 'right-end'
-  | 'bottom-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'left-end'
-  | 'left'
-  | 'left-start';
+import { PositionType } from '@/common.type';
 
 type ActionType = 'click' | 'hover';
 type Offset = 'small' | 'medium' | 'large';
