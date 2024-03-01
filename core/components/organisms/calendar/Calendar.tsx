@@ -855,7 +855,9 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
     const prevMonthDayRange = getDaysInMonth(prevYear, prevMonth);
 
     const dayRange = getDaysInMonth(yearNavVal, monthNavVal);
-    const dayDiff = getFirstDayOfMonth(yearNavVal, monthNavVal) - getIndexOfDay(firstDayOfWeek);
+    const firstDayIndex = getFirstDayOfMonth(yearNavVal, monthNavVal);
+    const desiredFirstDayIndex = getIndexOfDay(firstDayOfWeek);
+    const dayDiff = (firstDayIndex - desiredFirstDayIndex + 7) % 7;
     const dummyDays = Math.abs(dayDiff);
     let noOfRows = Math.ceil((dayRange + dummyDays) / daysInRow);
 
