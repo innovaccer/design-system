@@ -1,3 +1,39 @@
+## 2.28.3 (2024-03-01)
+
+### Highlights
+
+- fix(avatar): remove redundant class implementation in avatar (4b63de6c)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+NA
+
+### Fixes
+
+- fix(avatar): remove redundant class implementation in avatar (4b63de6c)
+
+### Improvements
+
+NA
+
+### Documentation
+
+NA
+
+---
+
 ## 2.28.2 (2024-02-27)
 
 ### Highlights
