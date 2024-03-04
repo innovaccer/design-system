@@ -3,7 +3,23 @@ import { Text, Button, Popover } from '@/index';
 
 // CSF format story
 export const position = () => {
-  const positions = ['top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left', 'right'];
+  const positions = [
+    'top',
+    'top-start',
+    'top-end',
+    'bottom',
+    'bottom-start',
+    'bottom-end',
+    'left',
+    'left-start',
+    'left-end',
+    'right',
+    'right-start',
+    'right-end',
+    'auto-start',
+    'auto',
+    'auto-end',
+  ];
   const getTrigger = (pos) => <Button appearance="basic">{pos}</Button>;
 
   return (
