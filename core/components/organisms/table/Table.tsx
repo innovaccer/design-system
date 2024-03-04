@@ -361,6 +361,7 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+  clearAllSelection?: boolean;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -454,6 +455,7 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+      clearAllSelection: false,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -464,6 +466,7 @@ export class Table extends React.Component<TableProps, TableState> {
   }
 
   componentDidUpdate(prevProps: TableProps, prevState: TableState) {
+    console.log('iiinside updatee');
     if (!this.state.async) {
       if (prevProps.error !== this.props.error) {
         const { data = [], schema = [] } = this.props;
@@ -524,13 +527,13 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     }
 
-    console.log(
-      'before gggg update data this.state.selectAll',
-      'prevState.selectAll',
-      prevState.selectAll,
-      'this.state.selectAll',
-      this.state.selectAll
-    );
+    // console.log(
+    //   'before gggg update data this.state.selectAll',
+    //   'prevState.selectAll',
+    //   prevState.selectAll,
+    //   'this.state.selectAll',
+    //   this.state.selectAll
+    // );
 
     if (
       JSON.stringify(prevState.selectAll) !== JSON.stringify(this.state.selectAll) &&
@@ -544,6 +547,11 @@ export class Table extends React.Component<TableProps, TableState> {
         'this.state.selectAll',
         this.state.selectAll
       );
+      this.updateDataFn();
+    }
+
+    if (prevState.clearAllSelection !== this.state.clearAllSelection) {
+      console.log('cclleeaarr selection');
       this.updateDataFn();
     }
   }
@@ -615,6 +623,8 @@ export class Table extends React.Component<TableProps, TableState> {
                   item._selected = true;
                 } else if (this.cancelSelectionRef.current) {
                   item._selected = false;
+                } else {
+                  item._selected = false;
                 }
                 return item;
               });
@@ -639,6 +649,7 @@ export class Table extends React.Component<TableProps, TableState> {
           });
       }
     } else {
+      console.log('333333');
       const { schema } = this.state;
 
       const filteredData = filterData(schema, dataProp, filterList);
@@ -663,6 +674,8 @@ export class Table extends React.Component<TableProps, TableState> {
         ) {
           item._selected = true;
         } else if (this.cancelSelectionRef.current) {
+          item._selected = false;
+        } else {
           item._selected = false;
         }
         return item;
@@ -821,6 +834,22 @@ export class Table extends React.Component<TableProps, TableState> {
     });
   };
 
+  onClearHandler = () => {
+    this.setState({
+      clearAllSelection: true,
+    });
+
+    // if (this.cancelSelectionRef) {
+    //   console.log('55555=================================cancel update=======');
+    //   this.cancelSelectionRef.current = true;
+    // }
+    // if (this.selectedRowsRef) {
+    //   console.log('55555=================================selected rows ref update=======');
+
+    //   this.selectedRowsRef.current = [];
+    // }
+  };
+
   render() {
     const {
       showHead,
@@ -874,6 +903,8 @@ export class Table extends React.Component<TableProps, TableState> {
               showFilters={filterPosition === 'HEADER'}
               selectedRowsRef={this.selectedRowsRef}
               selectedAllRef={this.selectedAllRef}
+              cancelSelectionRef={this.cancelSelectionRef}
+              onClearHandler={this.onClearHandler}
               {...headerAttr}
             >
               {headerChildren}

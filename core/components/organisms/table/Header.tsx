@@ -46,6 +46,8 @@ export interface HeaderProps extends ExternalHeaderProps {
   updateSearchTerm?: updateSearchTermFunction;
   selectedRowsRef?: React.MutableRefObject<any>;
   selectedAllRef?: React.MutableRefObject<any>;
+  cancelSelectionRef?: React.MutableRefObject<any>;
+  onClearHandler?: () => void;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -77,6 +79,8 @@ export const Header = (props: HeaderProps) => {
     customSelectionLabel,
     selectedRowsRef,
     selectedAllRef,
+    cancelSelectionRef,
+    onClearHandler,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -196,6 +200,12 @@ export const Header = (props: HeaderProps) => {
     }
   };
 
+  const onClearSelection = () => {
+    setSelectAllRecords(false);
+
+    onClearHandler && onClearHandler();
+  };
+
   return (
     <div className="Header">
       <div className="Header-content Header-content--top">
@@ -296,7 +306,7 @@ export const Header = (props: HeaderProps) => {
                     data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
                     size="tiny"
                     className="ml-4"
-                    onClick={() => setSelectAllRecords(false)}
+                    onClick={onClearSelection}
                   >
                     Clear Selection
                   </Button>
