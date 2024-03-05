@@ -431,7 +431,7 @@ export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
   debounceUpdate: () => void;
 
-  selectedRowsRef: React.MutableRefObject<any> = React.createRef<number[] | null>();
+  selectedRowsRef: React.MutableRefObject<any> = React.createRef<string[] | null>();
   selectedAllRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
   cancelSelectionRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
 
@@ -729,6 +729,7 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (onSelect) {
+      console.log('777hereeee onSelect', newData, 'this.selectedRowsRef.current', this.selectedRowsRef.current);
       onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
     }
   };
@@ -759,6 +760,7 @@ export class Table extends React.Component<TableProps, TableState> {
     });
 
     if (onSelect) {
+      console.log('777 selectall');
       onSelect(
         selectedIndex,
         selected,
