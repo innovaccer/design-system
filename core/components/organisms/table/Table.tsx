@@ -602,7 +602,9 @@ export class Table extends React.Component<TableProps, TableState> {
                 'this.selectedRowsRef?.current???',
                 this.selectedRowsRef.current,
                 'selectAll state',
-                this.state.selectAll
+                this.state.selectAll,
+                'ddaaatt',
+                data
               );
               const selectedData = data.map((item: RowData) => {
                 // if (
@@ -613,6 +615,7 @@ export class Table extends React.Component<TableProps, TableState> {
                 // } else if (this.cancelSelectionRef.current) {
                 //   item._selected = false;
                 // }
+                console.log('inside dataa fnnn', this.selectedAllRef.current);
                 if (this.selectedAllRef.current) {
                   console.log('insiddeee all selection');
                   item._selected = true;
@@ -696,6 +699,7 @@ export class Table extends React.Component<TableProps, TableState> {
   selectAllHandler = () => {
     console.log('select all 333');
     this.selectedAllRef.current = true;
+    this.updateDataFn();
   };
 
   onSelect: onSelectFn = (rowIndexes, selected) => {
@@ -742,7 +746,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     if (selected === false) {
       console.log('falsify selectall');
-      this.selectedAllRef.current = false;
+      // this.selectedAllRef.current = false;
     }
   };
 
@@ -798,11 +802,14 @@ export class Table extends React.Component<TableProps, TableState> {
 
     if (selectAll === false) {
       this.cancelSelectionRef.current = true;
+      console.log('xxxxx11');
       this.selectedAllRef.current = false;
     } else if (selectAll === true) {
+      console.log('xxxxx22');
       this.selectedAllRef.current = true;
       this.cancelSelectionRef.current = false;
     } else {
+      console.log('xxxxx33');
       this.selectedAllRef.current = false;
       this.cancelSelectionRef.current = false;
     }
@@ -917,7 +924,7 @@ export class Table extends React.Component<TableProps, TableState> {
               showFilters={filterPosition === 'HEADER'}
               selectedRowsRef={this.selectedRowsRef}
               selectedAllRef={this.selectedAllRef}
-              cancelSelectionRef={this.cancelSelectionRef}
+              // cancelSelectionRef={this.cancelSelectionRef}
               onClearHandler={this.onClearHandler}
               selectAllHandler={this.selectAllHandler}
               {...headerAttr}

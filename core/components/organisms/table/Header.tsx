@@ -80,7 +80,7 @@ export const Header = (props: HeaderProps) => {
     customSelectionLabel,
     selectedRowsRef,
     selectedAllRef,
-    cancelSelectionRef,
+    // cancelSelectionRef,
     selectAllHandler,
     onClearHandler,
   } = props;
@@ -92,11 +92,12 @@ export const Header = (props: HeaderProps) => {
     setFlag(!flag);
   }, [schema]);
 
-  React.useEffect(() => {
-    if (selectAll && selectAll.checked) {
-      if (onSelectAll) onSelectAll(true, selectAllRecords);
-    }
-  }, [selectAllRecords]);
+  // React.useEffect(() => {
+  //   console.log('uuutttttttttest');
+  //   if (selectAll && selectAll.checked) {
+  //     if (onSelectAll) onSelectAll(true, selectAllRecords);
+  //   }
+  // }, [selectAllRecords]);
 
   React.useEffect(() => {
     if (selectAll && !selectAll.checked) setSelectAllRecords(false);
