@@ -771,7 +771,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     // const selectedItemList = [...this.selectedRowsRef.current];
     // const selectedItemList = [];
-    const selectedItemList = [];
+    const selectedItemList: string[] = [];
     if (selected && !selectAll && data.length > 0 && uniqueColumnName) {
       newData.forEach((rowData) => {
         console.log('rowData', rowData);
