@@ -48,6 +48,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   selectedAllRef?: React.MutableRefObject<any>;
   cancelSelectionRef?: React.MutableRefObject<any>;
   onClearHandler?: () => void;
+  selectAllHandler?: () => void;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -80,6 +81,7 @@ export const Header = (props: HeaderProps) => {
     selectedRowsRef,
     selectedAllRef,
     cancelSelectionRef,
+    selectAllHandler,
     onClearHandler,
   } = props;
 
@@ -144,7 +146,7 @@ export const Header = (props: HeaderProps) => {
   const selectedCount = data.filter((d) => d._selected).length;
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
-  const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length;
+  const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
   console.log('selectedRowsCountselectedRowsCount', selectedRowsCount);
   // const label = error
   //   // ? `Showing 0 ${customLabel}s`
@@ -187,15 +189,20 @@ export const Header = (props: HeaderProps) => {
    */
 
   const getLabel = () => {
+    console.log('eeettt000');
     if (error) {
+      console.log('eeettt111');
       return `Showing 0 ${customLabel}s`;
     } else if (withPagination && selectedRowsCount === 0) {
+      console.log('eeettt222');
       return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
     } else if (!withPagination && selectedRowsCount === 0) {
+      console.log('eeettt333');
       return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
     }
 
     if (withCheckbox && selectedRowsCount > 0) {
+      console.log('eeettt444');
       return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(totalRecords)}`;
     }
   };
@@ -204,6 +211,10 @@ export const Header = (props: HeaderProps) => {
     setSelectAllRecords(false);
 
     onClearHandler && onClearHandler();
+  };
+
+  const onSelectAllHandler = () => {
+    selectAllHandler && selectAllHandler();
   };
 
   return (
@@ -292,12 +303,14 @@ export const Header = (props: HeaderProps) => {
                   )}
                 </div>
               )} */}
-              {selectedRowsCount && (
+              {selectedRowsCount > 0 && allowSelectAll && (
                 <div className="ml-4 d-flex">
                   <Button
                     data-test="DesignSystem-Table-Header--selectAllItemsButton"
                     size="tiny"
-                    onClick={() => setSelectAllRecords(true)}
+                    disabled={selectedRowsCount === totalRecords}
+                    // onClick={() => setSelectAllRecords(true)}
+                    onClick={onSelectAllHandler}
                   >
                     {`Select ${totalRecords} ${customLabel}s`}
                   </Button>

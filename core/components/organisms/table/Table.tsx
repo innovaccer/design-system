@@ -614,6 +614,7 @@ export class Table extends React.Component<TableProps, TableState> {
                 //   item._selected = false;
                 // }
                 if (this.selectedAllRef.current) {
+                  console.log('insiddeee all selection');
                   item._selected = true;
                 } else if (
                   item[uniqueColumnName] &&
@@ -692,7 +693,13 @@ export class Table extends React.Component<TableProps, TableState> {
     }
   };
 
+  selectAllHandler = () => {
+    console.log('select all 333');
+    this.selectedAllRef.current = true;
+  };
+
   onSelect: onSelectFn = (rowIndexes, selected) => {
+    console.log('onSelect caleeddd', rowIndexes, selected);
     const { data } = this.state;
 
     const { onSelect, uniqueColumnName = 'id' } = this.props;
@@ -731,6 +738,11 @@ export class Table extends React.Component<TableProps, TableState> {
     if (onSelect) {
       console.log('777hereeee onSelect', newData, 'this.selectedRowsRef.current', this.selectedRowsRef.current);
       onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
+    }
+
+    if (selected === false) {
+      console.log('falsify selectall');
+      this.selectedAllRef.current = false;
     }
   };
 
@@ -907,6 +919,7 @@ export class Table extends React.Component<TableProps, TableState> {
               selectedAllRef={this.selectedAllRef}
               cancelSelectionRef={this.cancelSelectionRef}
               onClearHandler={this.onClearHandler}
+              selectAllHandler={this.selectAllHandler}
               {...headerAttr}
             >
               {headerChildren}
