@@ -15,6 +15,7 @@ export const asyncTable = () => {
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
+          uniqueColumnName="email"
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             action(
               `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
@@ -24,6 +25,7 @@ export const asyncTable = () => {
           }
           headerOptions={{
             withSearch: true,
+            allowSelectAll: true,
           }}
           withPagination={true}
           pageSize={5}
@@ -273,9 +275,11 @@ const customCode = `
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
+          uniqueColumnName="email"
           headerOptions={{
             withSearch: true,
             globalActionRenderer : globalActionTrigger
+            allowSelectAll: true,
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}

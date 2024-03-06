@@ -17,6 +17,7 @@ import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getT
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 import { PaginationProps } from '@/components/molecules/pagination';
+import { getUpdatedData } from './utils';
 
 export interface ErrorTemplateProps {
   errorType?: TableProps['errorType'];
@@ -340,6 +341,10 @@ interface SharedTableProps extends BaseProps {
    * Set `true` to allow selection of disabled row
    */
   selectDisabledRow?: boolean;
+  /**
+   * Provide name of unique column
+   */
+  uniqueColumnName?: string;
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -429,6 +434,7 @@ export const defaultProps = {
 export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
   debounceUpdate: () => void;
+  selectedRowsRef: React.MutableRefObject<any> = React.createRef<[] | null>();
 
   constructor(props: TableProps) {
     super(props);
@@ -539,7 +545,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
-    const { fetchData, pageSize, withPagination, data: dataProp, onSearch } = this.props;
+    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName = 'id' } = this.props;
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
@@ -565,8 +571,9 @@ export class Table extends React.Component<TableProps, TableState> {
             if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
               const data = res.data;
               const schema = this.state.schema.length ? this.state.schema : res.schema;
+              const selectedData = getUpdatedData(data, uniqueColumnName, this.selectedRowsRef.current);
               this.setState({
-                data,
+                data: selectedData,
                 displayData: data,
                 schema,
                 selectAll: getSelectAll(data, this.props.selectDisabledRow),
@@ -600,6 +607,8 @@ export class Table extends React.Component<TableProps, TableState> {
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
 
+      const selectedData = getUpdatedData(renderedData, uniqueColumnName, this.selectedRowsRef.current);
+
       this.setState({
         totalRecords,
         error: !renderedData.length,
@@ -607,7 +616,7 @@ export class Table extends React.Component<TableProps, TableState> {
         selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
         schema: renderedSchema,
         displayData: sortedData,
-        data: renderedData,
+        data: selectedData,
       });
     }
   };
@@ -615,9 +624,12 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelect: onSelectFn = (rowIndexes, selected) => {
     const { data } = this.state;
 
-    const { onSelect } = this.props;
+    const { onSelect, uniqueColumnName = 'id' } = this.props;
 
     const indexes = [rowIndexes];
+    const rowData = data[rowIndexes];
+    let selectedItemList = [rowData];
+
     let newData: Data = data;
     if (rowIndexes >= 0) {
       newData = updateBatchData(
@@ -633,10 +645,19 @@ export class Table extends React.Component<TableProps, TableState> {
         data: newData,
         selectAll: getSelectAll(newData, this.props.selectDisabledRow),
       });
+
+      if (this.selectedRowsRef.current) {
+        selectedItemList = [rowData, ...this.selectedRowsRef.current];
+      }
+
+      if (!selected) {
+        selectedItemList = selectedItemList.filter((item) => item[uniqueColumnName] !== rowData[uniqueColumnName]);
+      }
+      this.selectedRowsRef.current = selectedItemList;
     }
 
     if (onSelect) {
-      onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
+      onSelect(indexes, selected, rowIndexes === -1 ? [] : selectedItemList);
     }
   };
 
