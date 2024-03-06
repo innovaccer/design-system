@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Input, Dropdown, Placeholder, PlaceholderParagraph, Button } from '@/index';
+import { Checkbox, Label, Input, Dropdown, Placeholder, PlaceholderParagraph, Button, Divider } from '@/index';
 import {
   updateSchemaFunction,
   ColumnSchema,
@@ -8,10 +8,12 @@ import {
   onSelectAllFunction,
   GridProps,
   updateFilterListFunction,
+  RowData,
 } from '../grid/Grid';
 import { hasSchema, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
 import { DropdownProps } from '@/index.type';
+import classNames from 'classnames';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -21,6 +23,7 @@ export interface ExternalHeaderProps {
   allowSelectAll?: boolean;
   customSelectionLabel?: string;
   globalActionRenderer?: (data: Data) => React.ReactNode;
+  selectionActionRenderer?: (selectedRows: RowData[], selectAll?: boolean) => React.ReactNode;
 }
 
 export type updateSearchTermFunction = (newSearchTerm: string) => void;
@@ -46,6 +49,11 @@ export interface HeaderProps extends ExternalHeaderProps {
   onSelectAll?: onSelectAllFunction;
   searchTerm?: string;
   updateSearchTerm?: updateSearchTermFunction;
+  selectedRowsRef?: React.MutableRefObject<any>;
+  selectedAllRef?: React.MutableRefObject<any>;
+  onClearSelection?: () => void;
+  onSelectAllRows?: () => void;
+  uniqueColumnName?: string;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -77,10 +85,59 @@ export const Header = (props: HeaderProps) => {
     allowSelectAll,
     showFilters,
     customSelectionLabel,
+    selectedRowsRef,
+    selectedAllRef,
+    onClearSelection,
+    onSelectAllRows,
+    selectionActionRenderer,
+    uniqueColumnName,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
   const [flag, setFlag] = React.useState(true);
+  const customLabel = customSelectionLabel ? customSelectionLabel : 'item';
+  const selectedCount = data.filter((d) => d._selected).length;
+  const startIndex = (page - 1) * pageSize + 1;
+  const endIndex = Math.min(page * pageSize, totalRecords);
+  const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
+
+  const showSelectedRowLabel = withCheckbox && (selectedCount || selectedRowsCount > 0);
+
+  const [showSelectedLabel, setShowSelectedLabel] = React.useState(true);
+  const [animateSelectedLabel, setAnimateSelectedLabel] = React.useState(false);
+  const [animateUnSelectedLabel, setAnimateUnSelectedLabel] = React.useState(false);
+
+  React.useEffect(() => {
+    if (showSelectedRowLabel) {
+      setAnimateUnSelectedLabel(true);
+      setAnimateSelectedLabel(false);
+    } else {
+      setAnimateUnSelectedLabel(false);
+      setAnimateSelectedLabel(true);
+    }
+  }, [showSelectedRowLabel]);
+
+  const onUnSelectAnimationEnd = () => {
+    showSelectedRowLabel ? setShowSelectedLabel(true) : setShowSelectedLabel(false);
+    setAnimateSelectedLabel(true);
+    setAnimateUnSelectedLabel(false);
+  };
+
+  const onSelectAnimationEnd = () => {
+    showSelectedRowLabel ? setShowSelectedLabel(true) : setShowSelectedLabel(false);
+    setAnimateSelectedLabel(false);
+    setAnimateUnSelectedLabel(true);
+  };
+
+  const unselectedRowLabelClass = classNames({
+    'Table-Header-Label--hide': animateUnSelectedLabel && showSelectedRowLabel,
+    'Table-Header-Label--show': animateUnSelectedLabel && !showSelectedRowLabel,
+  });
+
+  const selectedRowLabelClass = classNames({
+    'Table-Header-Label--hide': animateSelectedLabel && !showSelectedRowLabel,
+    'Table-Header-Label--show': animateSelectedLabel && showSelectedRowLabel,
+  });
 
   React.useEffect(() => {
     setFlag(!flag);
@@ -136,19 +193,23 @@ export const Header = (props: HeaderProps) => {
     if (updateSchema) updateSchema(newSchema);
   };
 
-  const customLabel = customSelectionLabel ? customSelectionLabel : 'item';
-  const selectedCount = data.filter((d) => d._selected).length;
-  const startIndex = (page - 1) * pageSize + 1;
-  const endIndex = Math.min(page * pageSize, totalRecords);
-  const label = error
-    ? `Showing 0 ${customLabel}s`
-    : withCheckbox && selectedCount
-    ? selectAllRecords
-      ? `Selected all ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-      : `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)} on this page`
-    : withPagination
-    ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-    : `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+  const getUnSelectedRowLabel = () => {
+    if (error) {
+      return `Showing 0 ${customLabel}s`;
+    } else if (withPagination) {
+      return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+    }
+    return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+  };
+
+  const getSelectedRowLabel = () => {
+    if (selectedRowsCount > 0 && uniqueColumnName && withCheckbox) {
+      return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
+    } else if (selectedCount && !uniqueColumnName && withCheckbox) {
+      return `Selected ${selectedCount} ${customLabel}${getPluralSuffix(selectedCount)}`;
+    }
+    return;
+  };
 
   return (
     <div className="Header">
@@ -217,26 +278,44 @@ export const Header = (props: HeaderProps) => {
             </Placeholder>
           ) : (
             <>
-              <Label>{label}</Label>
-              {withPagination && selectAll?.checked && allowSelectAll && (
-                <div className="ml-4">
-                  {!selectAllRecords ? (
+              {showSelectedLabel ? (
+                <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
+                  <Label>{getSelectedRowLabel()}</Label>
+                </span>
+              ) : (
+                <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
+                  <Label>{getUnSelectedRowLabel()}</Label>
+                </span>
+              )}
+
+              {selectedRowsCount > 0 && allowSelectAll && showSelectedLabel && (
+                <div className={selectedRowLabelClass}>
+                  <div className="ml-4 d-flex">
                     <Button
                       data-test="DesignSystem-Table-Header--selectAllItemsButton"
                       size="tiny"
-                      onClick={() => setSelectAllRecords(true)}
+                      disabled={selectedRowsCount === totalRecords}
+                      onClick={onSelectAllRows}
                     >
-                      {`Select all ${totalRecords} ${customLabel}s`}
+                      {`Select ${totalRecords} ${customLabel}s`}
                     </Button>
-                  ) : (
+
                     <Button
                       data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
                       size="tiny"
-                      onClick={() => setSelectAllRecords(false)}
+                      className="ml-4"
+                      onClick={onClearSelection}
                     >
                       Clear Selection
                     </Button>
-                  )}
+                    {selectionActionRenderer && <Divider vertical={true} className="mx-4 Table-Header--Divider" />}
+                  </div>
+                </div>
+              )}
+
+              {selectionActionRenderer && selectedRowsCount > 0 && showSelectedLabel && (
+                <div data-test="DesignSystem-Table-Header--ActionRenderer" className={selectedRowLabelClass}>
+                  {selectionActionRenderer(selectedRowsRef?.current, selectedAllRef?.current)}
                 </div>
               )}
             </>

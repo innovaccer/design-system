@@ -17,6 +17,7 @@ import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getT
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 import { PaginationProps } from '@/components/molecules/pagination';
+import { getUpdatedData, removeDuplicate } from './utils';
 
 export interface ErrorTemplateProps {
   errorType?: TableProps['errorType'];
@@ -208,6 +209,7 @@ interface SharedTableProps extends BaseProps {
    *    allowSelectAll?: boolean;
    *    customSelectionLabel?: string;
    *    globalActionRenderer?: (data: Data) => React.ReactNode;
+   *    selectionActionRenderer?: (selectedRows: RowData[], selectAll?: boolean) => React.ReactNode;
    * }
    * </pre>
    *
@@ -220,6 +222,7 @@ interface SharedTableProps extends BaseProps {
    * | allowSelectAll | Set to show Select All button | |
    * | customSelectionLabel | Set to show custom label on row selection | 'items' |
    * | globalActionRenderer | global actions to be rendered | |
+   * | selectionActionRenderer | Set to show custom actions to be rendered on selection | |
    *
    */
   headerOptions?: ExternalHeaderProps;
@@ -340,6 +343,10 @@ interface SharedTableProps extends BaseProps {
    * Set `true` to allow selection of disabled row
    */
   selectDisabledRow?: boolean;
+  /**
+   * Provide name of unique column for persistent selection
+   */
+  uniqueColumnName?: string;
 }
 
 export type SyncTableProps = SharedTableProps & TableSyncProps;
@@ -429,6 +436,9 @@ export const defaultProps = {
 export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
   debounceUpdate: () => void;
+  selectedRowsRef: React.MutableRefObject<any> = React.createRef<[] | null>();
+  clearSelectionRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
+  selectAllRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
 
   constructor(props: TableProps) {
     super(props);
@@ -539,7 +549,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
-    const { fetchData, pageSize, withPagination, data: dataProp, onSearch } = this.props;
+    const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName = 'id' } = this.props;
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
 
@@ -564,12 +574,30 @@ export class Table extends React.Component<TableProps, TableState> {
           .then((res: any) => {
             if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
               const data = res.data;
+              const dataReplica = JSON.parse(JSON.stringify(data));
               const schema = this.state.schema.length ? this.state.schema : res.schema;
+              const preSelectedRows = data.filter((item: RowData) => item._selected);
+
+              if (this.clearSelectionRef.current) {
+                this.selectedRowsRef.current = [];
+              } else {
+                this.selectedRowsRef.current = this.selectedRowsRef.current
+                  ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+                  : removeDuplicate([...preSelectedRows], uniqueColumnName);
+              }
+
+              const selectedData = getUpdatedData(
+                dataReplica,
+                uniqueColumnName,
+                this.selectedRowsRef.current,
+                this.clearSelectionRef.current,
+                this.selectAllRef.current
+              );
               this.setState({
-                data,
+                data: selectedData,
                 displayData: data,
                 schema,
-                selectAll: getSelectAll(data, this.props.selectDisabledRow),
+                selectAll: getSelectAll(selectedData, this.props.selectDisabledRow, this.clearSelectionRef.current),
                 totalRecords: res.count,
                 loading: false,
                 error: !data.length,
@@ -599,15 +627,32 @@ export class Table extends React.Component<TableProps, TableState> {
       }
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
+      const preSelectedRows = renderedData.filter((item: RowData) => item._selected);
+
+      if (this.clearSelectionRef.current) {
+        this.selectedRowsRef.current = [];
+      } else {
+        this.selectedRowsRef.current = this.selectedRowsRef.current
+          ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+          : removeDuplicate([...preSelectedRows], uniqueColumnName);
+      }
+
+      const selectedData = getUpdatedData(
+        renderedData,
+        uniqueColumnName,
+        this.selectedRowsRef.current,
+        this.clearSelectionRef.current,
+        this.selectAllRef.current
+      );
 
       this.setState({
         totalRecords,
         error: !renderedData.length,
         errorType: 'NO_RECORDS_FOUND',
-        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
+        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow, this.clearSelectionRef.current),
         schema: renderedSchema,
         displayData: sortedData,
-        data: renderedData,
+        data: selectedData,
       });
     }
   };
@@ -615,9 +660,44 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelect: onSelectFn = (rowIndexes, selected) => {
     const { data } = this.state;
 
-    const { onSelect } = this.props;
+    const { onSelect, uniqueColumnName = 'id' } = this.props;
+
+    if (this.selectAllRef.current && rowIndexes !== -1 && !selected) {
+      this.selectAllRef.current = false;
+      this.selectedRowsRef.current = [];
+
+      const indexes = Array.from({ length: data.length }, (_, i) => i);
+
+      const newData = updateBatchData(
+        data,
+        indexes,
+        {
+          _selected: false,
+        },
+        this.props.selectDisabledRow
+      );
+
+      this.setState({
+        data: newData,
+        selectAll: { checked: false, indeterminate: false },
+      });
+
+      if (onSelect) {
+        if (this.props.uniqueColumnName) {
+          onSelect(indexes, selected, this.selectedRowsRef.current, this.selectAllRef.current);
+        } else {
+          // To avoid breaking the current selection flow
+          onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
+        }
+      }
+
+      return;
+    }
 
     const indexes = [rowIndexes];
+    const rowData = data[rowIndexes];
+    let selectedItemList = rowIndexes === -1 ? [] : [rowData];
+
     let newData: Data = data;
     if (rowIndexes >= 0) {
       newData = updateBatchData(
@@ -629,19 +709,44 @@ export class Table extends React.Component<TableProps, TableState> {
         this.props.selectDisabledRow
       );
 
+      this.resetClearSelection();
+
       this.setState({
         data: newData,
-        selectAll: getSelectAll(newData, this.props.selectDisabledRow),
+        selectAll: getSelectAll(newData, this.props.selectDisabledRow, this.clearSelectionRef.current),
       });
+
+      if (this.selectedRowsRef.current && selected) {
+        selectedItemList = [{ ...rowData, _selected: selected }, ...this.selectedRowsRef.current];
+      }
+
+      if (!selected) {
+        selectedItemList = this.selectedRowsRef.current.filter(
+          (item: RowData) => item[uniqueColumnName] !== rowData[uniqueColumnName]
+        );
+      }
+      this.selectedRowsRef.current = removeDuplicate(selectedItemList, uniqueColumnName);
+    } else if (rowIndexes === -1 && this.selectedRowsRef.current) {
+      selectedItemList = this.selectedRowsRef.current;
     }
 
     if (onSelect) {
-      onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
+      if (this.props.uniqueColumnName) {
+        onSelect(
+          indexes,
+          selected,
+          rowIndexes === -1 && selectedItemList?.length === 0 ? [] : this.selectedRowsRef.current,
+          this.selectAllRef.current
+        );
+      } else {
+        // To avoid breaking the current selection flow
+        onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
+      }
     }
   };
 
-  onSelectAll: onSelectAllFunction = (selected, selectAll) => {
-    const { onSelect } = this.props;
+  onSelectAll: onSelectAllFunction = (selected, selectAll, headerCheckbox) => {
+    const { onSelect, uniqueColumnName = 'id' } = this.props;
 
     const { data } = this.state;
 
@@ -664,13 +769,50 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     });
 
+    let selectedData = [];
+
+    if (selected) {
+      this.resetClearSelection();
+      selectedData =
+        selectAll === undefined
+          ? [...(this.selectedRowsRef.current || []), ...newData.filter((d) => d._selected)]
+          : this.selectedRowsRef.current;
+    } else if (!selected && headerCheckbox) {
+      this.selectAllRef.current = false;
+      this.selectedRowsRef.current = [...(this.selectedRowsRef.current || []), ...newData];
+
+      this.selectedRowsRef.current = this.selectedRowsRef.current.filter((item1: RowData) => {
+        return !newData.some((item2) => item1[uniqueColumnName] === item2[uniqueColumnName]);
+      });
+    } else {
+      this.selectedRowsRef.current = [];
+      this.selectAllRef.current = false;
+    }
+
+    if (!(headerCheckbox && !selected)) {
+      this.selectedRowsRef.current = removeDuplicate(selectedData, uniqueColumnName);
+    }
+
     if (onSelect) {
-      onSelect(
-        selectedIndex,
-        selected,
-        newData.filter((d) => d._selected),
-        selectAll
-      );
+      if (this.props.uniqueColumnName) {
+        if (headerCheckbox && !selected) {
+          onSelect(
+            selectedIndex,
+            selected,
+            removeDuplicate(this.selectedRowsRef.current, uniqueColumnName),
+            this.selectAllRef.current
+          );
+        } else {
+          onSelect(selectedIndex, selected, removeDuplicate(selectedData, uniqueColumnName), this.selectAllRef.current);
+        }
+      } else {
+        onSelect(
+          selectedIndex,
+          selected,
+          newData.filter((d) => d._selected),
+          selectAll
+        );
+      }
     }
 
     this.setState({
@@ -714,6 +856,27 @@ export class Table extends React.Component<TableProps, TableState> {
     });
   };
 
+  onClearSelection = () => {
+    this.selectedRowsRef.current = [];
+    this.clearSelectionRef.current = true;
+    this.selectAllRef.current = false;
+
+    this.onSelectAll(false);
+
+    this.setState({
+      selectAll: getSelectAll([], this.props.selectDisabledRow, this.clearSelectionRef.current),
+    });
+  };
+
+  resetClearSelection = () => {
+    this.clearSelectionRef.current = false;
+  };
+
+  onSelectAllRows = () => {
+    this.selectAllRef.current = this.props.uniqueColumnName ? true : false;
+    this.onSelectAll(true, true);
+  };
+
   render() {
     const {
       showHead,
@@ -737,6 +900,7 @@ export class Table extends React.Component<TableProps, TableState> {
       errorTemplate,
       className,
       filterPosition,
+      uniqueColumnName,
     } = this.props;
 
     const baseProps = extractBaseProps(this.props);
@@ -765,6 +929,11 @@ export class Table extends React.Component<TableProps, TableState> {
               withPagination={withPagination}
               pageSize={pageSize}
               showFilters={filterPosition === 'HEADER'}
+              selectedRowsRef={this.selectedRowsRef}
+              onClearSelection={this.onClearSelection}
+              onSelectAllRows={this.onSelectAllRows}
+              selectedAllRef={this.selectAllRef}
+              uniqueColumnName={uniqueColumnName}
               {...headerAttr}
             >
               {headerChildren}
