@@ -99,7 +99,10 @@
 
 .Slider-handle:focus {
   box-shadow: var(--shadow-spread) var(--primary-shadow);
-  outline: none;
+  /*outline: none; */
+
+  outline: 2px solid rgba(0, 112, 221, 0.88);
+  outline-offset: 2px;
 }
 
 .Slider-handle--disabled {

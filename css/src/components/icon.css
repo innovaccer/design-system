@@ -24,6 +24,27 @@
   overflow: hidden;
   flex-shrink: 0;
   user-select: none;
+  position: relative;
+  display: inline-block;
+}
+
+/* .icon:focus::after { */
+/* .Icon:focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid blue;
+  border-radius: 50%;
+  outline: none;
+} */
+
+.Icon:focus {
+  outline: 2px solid var(--primary--focus); 
+  border-radius: 50%;
+  /* box-shadow: var(--shadow-spread) var(--primary--focus); */
 }
 
 .Icon--subtle {

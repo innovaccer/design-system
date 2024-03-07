@@ -144,6 +144,7 @@
   color: var(--text-white);
   border-radius: var(--spacing-m);
   margin-right: var(--spacing);
+  position: relative;
 }
 
 .Toast-actionButton:last-child {
@@ -186,7 +187,10 @@
 }
 
 .Toast-actionButton--success:focus {
-  box-shadow: var(--shadow-spread) color-mod(var(--success-dark) a(0.16));
+  /* box-shadow: var(--shadow-spread) color-mod(var(--success-dark) a(0.16)); */
+  outline: 2px solid var(--primary--focus);
+  outline-offset: 2px;
+  mix-blend-mode: multiply;
 }
 
 .Toast-actionButton--alert {

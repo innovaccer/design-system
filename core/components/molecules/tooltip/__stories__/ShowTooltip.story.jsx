@@ -5,6 +5,13 @@ export const showTooltip = () => {};
 const customCode = `() => {
   const [showTooltip, setShowTooltip] = React.useState(false);
 
+  React.useEffect(() => {
+    document.getElementById('myButton').addEventListener('focus',() => {
+      console.log('focus called');
+      setShowTooltip(true);
+    })
+  }, []);
+
   return (
     <div>
       <div className="mb-6 d-flex">
@@ -18,7 +25,7 @@ const customCode = `() => {
       </div>
 
       <Tooltip showTooltip={showTooltip} tooltip="An awesome tooltip">
-        <Button>Conditional Tooltip</Button>
+        <Button id='myButton'>Conditional Tooltip</Button>
       </Tooltip>
     </div>
   );

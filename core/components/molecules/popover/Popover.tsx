@@ -103,6 +103,7 @@ export const Popover = (props: PopoverProps) => {
   const [init, setInit] = React.useState(false);
 
   React.useEffect(() => {
+    console.log('open in useeffect', props.open);
     if (props.open !== undefined) setOpen(props.open);
   }, [props.open]);
 

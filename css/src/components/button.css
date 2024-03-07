@@ -119,7 +119,13 @@
 }
 
 .Button--basic:focus {
-  box-shadow: var(--shadow-spread) var(--secondary-shadow);
+  /* box-shadow: var(--shadow-spread) var(--secondary-shadow); */
+  outline: 2px solid var(--primary--focus);
+  outline-offset: 2px;
+
+  /* Adjust spread radius and blur radius as needed */
+  /* box-shadow: 0 0 0 5px var(--primary--focus);  */
+  /* border-radius: 5px; */
 }
 
 .Button--basic:disabled {

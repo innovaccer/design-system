@@ -164,6 +164,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       this.addBoundaryScrollHandler();
     }
     if (prevProps.open !== this.props.open) {
+      console.log('updateeee open prevProps.open', prevProps.open, 'this.props.open', this.props.open);
       this._throttleWait = false;
       this.setState({
         animationKeyframe: '',
@@ -175,6 +176,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         this.setState({
           zIndex: zIndex === undefined ? zIndex : zIndex + 1,
           isOpen: true,
+        });
+      } else {
+        this.setState({
+          isOpen: false,
         });
       }
     }
@@ -253,6 +258,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         );
       }
     }
+  }
+
+  handleFocus() {
+    console.log('handleeeee focccuusssssss');
   }
 
   togglePopper = (type: string, newValue?: boolean) => {
@@ -436,6 +445,7 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
       'data-hide': outOfBoundaries,
       onMouseEnter: this.handleMouseEnter,
       onMouseLeave: this.handleMouseLeave,
+      onFocus: this.handleFocus,
       onAnimationEnd: () => {
         if (!open) {
           this.setState({
