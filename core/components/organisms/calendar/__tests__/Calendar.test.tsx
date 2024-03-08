@@ -3,8 +3,9 @@ import { render, fireEvent } from '@testing-library/react';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
 import { Calendar } from '@/index';
 import { CalendarProps as Props } from '@/index.type';
+import { Day } from '../types';
 
-const day = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+const day: Day[] = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 const size = ['small', 'large'];
 const view = ['year', 'month', 'date'];
 const FunctionValue = jest.fn();
@@ -285,5 +286,51 @@ describe('text color for different states', () => {
   it('should have the text color as primary-lighter when the state is disabled but with current year', () => {
     const { getAllByTestId } = render(<Calendar disabledBefore={new Date('2022-01-20T18:30:00.000Z')} view="year" />);
     expect(getAllByTestId('DesignSystem-Text')[5]).toHaveClass('color-primary-lighter');
+  });
+});
+
+describe('Calendar component', () => {
+  const testYear = 2021;
+  const testMonth = 0;
+
+  const rotateDaysClockwise = (days: any, index: number) => {
+    const daysCopy = [...days];
+    for (let i = 0; i < index; i++) {
+      const lastDay = daysCopy.shift();
+      daysCopy.push(lastDay);
+    }
+    return daysCopy;
+  };
+
+  const dayMappings = day.map((value, index) => ({
+    key: index,
+    val: value,
+  }));
+
+  day.forEach((testfirstDayOfWeek: Day) => {
+    describe(`when first day of week is ${testfirstDayOfWeek}`, () => {
+      it('should render dates in the correct format with respect to the day', () => {
+        const testDate = new Date(testYear, testMonth, 1);
+
+        const { container } = render(
+          <Calendar date={testDate} yearNav={testYear} monthNav={testMonth} firstDayOfWeek={testfirstDayOfWeek} />
+        );
+
+        const indexOfDay = day.indexOf(testfirstDayOfWeek);
+        const rotatedDays = rotateDaysClockwise(dayMappings, indexOfDay);
+
+        const firstDayElement = container.querySelector('.Calendar-value--active');
+        const weekRow = firstDayElement?.closest('.Calendar-valueRow');
+        expect(weekRow).toBeInTheDocument();
+
+        const dateElements = Array.from(weekRow!.children).map((child) => child.textContent?.trim());
+        const firstDayIndex = dateElements.indexOf('1');
+        expect(firstDayIndex).not.toBe(-1);
+
+        const actualDayIndex = new Date(testYear, testMonth, 1).getDay();
+        const actualDayName = day[actualDayIndex];
+        expect(actualDayName).toEqual(rotatedDays[firstDayIndex].val);
+      });
+    });
   });
 });
