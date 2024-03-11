@@ -427,3 +427,8 @@ describe('render Table with selectAll Row option', () => {
     expect(selectionLabel).toHaveTextContent('Selected 2 items on this page');
   });
 });
+
+/**
+ * 1. check first select and then unselect
+ * 2. check with search option
+ */

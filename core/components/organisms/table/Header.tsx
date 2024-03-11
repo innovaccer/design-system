@@ -44,6 +44,11 @@ export interface HeaderProps extends ExternalHeaderProps {
   onSelectAll?: onSelectAllFunction;
   searchTerm?: string;
   updateSearchTerm?: updateSearchTermFunction;
+  selectedRowsRef?: React.MutableRefObject<any>;
+  selectedAllRef?: React.MutableRefObject<any>;
+  cancelSelectionRef?: React.MutableRefObject<any>;
+  onClearHandler?: () => void;
+  selectAllHandler?: () => void;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -73,6 +78,11 @@ export const Header = (props: HeaderProps) => {
     allowSelectAll,
     showFilters,
     customSelectionLabel,
+    selectedRowsRef,
+    selectedAllRef,
+    // cancelSelectionRef,
+    selectAllHandler,
+    onClearHandler,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -82,11 +92,12 @@ export const Header = (props: HeaderProps) => {
     setFlag(!flag);
   }, [schema]);
 
-  React.useEffect(() => {
-    if (selectAll && selectAll.checked) {
-      if (onSelectAll) onSelectAll(true, selectAllRecords);
-    }
-  }, [selectAllRecords]);
+  // React.useEffect(() => {
+  //   console.log('uuutttttttttest');
+  //   if (selectAll && selectAll.checked) {
+  //     if (onSelectAll) onSelectAll(true, selectAllRecords);
+  //   }
+  // }, [selectAllRecords]);
 
   React.useEffect(() => {
     if (selectAll && !selectAll.checked) setSelectAllRecords(false);
@@ -136,15 +147,76 @@ export const Header = (props: HeaderProps) => {
   const selectedCount = data.filter((d) => d._selected).length;
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
-  const label = error
-    ? `Showing 0 ${customLabel}s`
-    : withCheckbox && selectedCount
-    ? selectAllRecords
-      ? `Selected all ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-      : `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)} on this page`
-    : withPagination
-    ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-    : `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+  const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
+  console.log('selectedRowsCountselectedRowsCount', selectedRowsCount);
+  // const label = error
+  //   // ? `Showing 0 ${customLabel}s`
+  //   : withCheckbox && selectedCount
+  //   ? selectAllRecords
+  //     ? `Selected all ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
+  //     : `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)}`
+  //   : withPagination;
+  // ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
+  // : `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+
+  // console.log('selectedCount', selectedCount, 'lengthh', selectedRowsRef?.current?.length);
+
+  // const label = error
+  //   ? `Showing 0 ${customLabel}s`
+  //   : withCheckbox && selectedRowsCount
+  //   ? `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)}`
+  //   : selectedRowsCount === 0 ?
+  //   withPagination ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}` :
+  //   `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+
+  /**
+   *
+   *  if(pagination & selectedRowsRef?.current?.length === 0) {
+   *      `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
+   *  }
+   *
+   *  if(!pagination & selectedRowsRef?.current?.length === 0) {
+   *   `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+   *  }
+   *
+   *  if(error) {
+   *    `Showing 0 ${customLabel}s`
+   *  }
+   *
+   *  if(withCheckbox && selectedRowsRef?.current?.length > 0) {
+   *    `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)}`
+   *  }
+   *
+   */
+
+  const getLabel = () => {
+    console.log('eeettt000');
+    if (error) {
+      console.log('eeettt111');
+      return `Showing 0 ${customLabel}s`;
+    } else if (withPagination && selectedRowsCount === 0) {
+      console.log('eeettt222');
+      return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+    } else if (!withPagination && selectedRowsCount === 0) {
+      console.log('eeettt333');
+      return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+    }
+
+    if (withCheckbox && selectedRowsCount > 0) {
+      console.log('eeettt444');
+      return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(totalRecords)}`;
+    }
+  };
+
+  const onClearSelection = () => {
+    setSelectAllRecords(false);
+
+    onClearHandler && onClearHandler();
+  };
+
+  const onSelectAllHandler = () => {
+    selectAllHandler && selectAllHandler();
+  };
 
   return (
     <div className="Header">
@@ -210,8 +282,8 @@ export const Header = (props: HeaderProps) => {
             </Placeholder>
           ) : (
             <>
-              <Label>{label}</Label>
-              {withPagination && selectAll?.checked && allowSelectAll && (
+              <Label>{getLabel()}</Label>
+              {/* {withPagination && selectAll?.checked && allowSelectAll && selectedRowsCount && (
                 <div className="ml-4">
                   {!selectAllRecords ? (
                     <Button
@@ -219,7 +291,7 @@ export const Header = (props: HeaderProps) => {
                       size="tiny"
                       onClick={() => setSelectAllRecords(true)}
                     >
-                      {`Select all ${totalRecords} ${customLabel}s`}
+                      {`Select ${totalRecords} ${customLabel}s`}
                     </Button>
                   ) : (
                     <Button
@@ -230,6 +302,28 @@ export const Header = (props: HeaderProps) => {
                       Clear Selection
                     </Button>
                   )}
+                </div>
+              )} */}
+              {selectedRowsCount > 0 && allowSelectAll && (
+                <div className="ml-4 d-flex">
+                  <Button
+                    data-test="DesignSystem-Table-Header--selectAllItemsButton"
+                    size="tiny"
+                    disabled={selectedRowsCount === totalRecords}
+                    // onClick={() => setSelectAllRecords(true)}
+                    onClick={onSelectAllHandler}
+                  >
+                    {`Select ${totalRecords} ${customLabel}s`}
+                  </Button>
+
+                  <Button
+                    data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
+                    size="tiny"
+                    className="ml-4"
+                    onClick={onClearSelection}
+                  >
+                    Clear Selection
+                  </Button>
                 </div>
               )}
             </>

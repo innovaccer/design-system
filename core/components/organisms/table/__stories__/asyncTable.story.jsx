@@ -12,6 +12,7 @@ export const asyncTable = () => {
       <Card className="h-100 overflow-hidden">
         <Table
           loaderSchema={loaderSchema}
+          uniqueColumnName="firstName"
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
@@ -24,6 +25,7 @@ export const asyncTable = () => {
           }
           headerOptions={{
             withSearch: true,
+            allowSelectAll: true,
           }}
           withPagination={true}
           pageSize={5}
@@ -262,9 +264,11 @@ const customCode = `
         <Table
           loaderSchema={loaderSchema}
           fetchData={fetchData}
+          uniqueColumnName="firstName"
           withHeader={true}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
+            allowSelectAll: true,
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
