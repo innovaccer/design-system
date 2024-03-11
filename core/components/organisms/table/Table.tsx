@@ -619,7 +619,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     const indexes = [rowIndexes];
     const rowData = data[rowIndexes];
-    let selectedItemList = [rowData];
+    let selectedItemList = rowIndexes === -1 ? [] : [rowData];
 
     let newData: Data = data;
     if (rowIndexes >= 0) {
@@ -645,10 +645,12 @@ export class Table extends React.Component<TableProps, TableState> {
         selectedItemList = selectedItemList.filter((item) => item[uniqueColumnName] !== rowData[uniqueColumnName]);
       }
       this.selectedRowsRef.current = selectedItemList;
+    } else if (rowIndexes === -1 && this.selectedRowsRef.current) {
+      selectedItemList = this.selectedRowsRef.current;
     }
 
     if (onSelect) {
-      onSelect(indexes, selected, rowIndexes === -1 ? [] : selectedItemList);
+      onSelect(indexes, selected, rowIndexes === -1 && selectedItemList.length === 0 ? [] : selectedItemList);
     }
   };
 
