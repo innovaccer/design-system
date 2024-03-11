@@ -692,14 +692,13 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     });
 
+    const selectedData = [...this.selectedRowsRef.current, ...newData.filter((d) => d._selected)];
+
     if (onSelect) {
-      onSelect(
-        selectedIndex,
-        selected,
-        newData.filter((d) => d._selected),
-        selectAll
-      );
+      onSelect(selectedIndex, selected, selectedData, selectAll);
     }
+
+    this.selectedRowsRef.current = selectedData;
 
     this.setState({
       data: newData,
