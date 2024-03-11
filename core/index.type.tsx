@@ -89,3 +89,4 @@ export { TextFieldProps } from './components/organisms/textField';
 export { AvatarImageProps } from './components/atoms/avatar/avatarImage';
 export { AvatarIconProps } from './components/atoms/avatar/avatarIcon';
 export { AvatarSelectionProps } from './components/atoms/avatarSelection';
+export { ComboboxProps } from './components/organisms/combobox';
