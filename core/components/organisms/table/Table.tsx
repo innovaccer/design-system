@@ -671,6 +671,7 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
     const { onSelect } = this.props;
 
+    console.log('allll selected', selected);
     const { data } = this.state;
 
     const indexes = Array.from({ length: data.length }, (_, i) => i);
@@ -692,8 +693,11 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     });
 
+    // need to revisit this
     const selectedData =
-      selectAll === undefined ? [...(this.selectedRowsRef.current || [])] : this.selectedRowsRef.current;
+      selectAll === undefined
+        ? [...(this.selectedRowsRef.current || []), ...newData.filter((d) => d._selected)]
+        : this.selectedRowsRef.current;
 
     if (onSelect) {
       onSelect(selectedIndex, selected, selectedData, selectAll);
