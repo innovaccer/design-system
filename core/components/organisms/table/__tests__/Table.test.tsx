@@ -496,3 +496,22 @@ describe('render Table with selectAll Row option', () => {
     expect(selectionLabel).toHaveTextContent('Selected 2 items on this page');
   });
 });
+
+describe('render Table with selection persistance', () => {
+  it('check for table selection persistance across pages', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%' },
+      { name: 'gender', displayName: 'Gender', width: '50%' },
+    ];
+    const data = [
+      { name: 'Zara', gender: 'f' },
+      { name: 'Sara', gender: 'm' },
+    ];
+    const { getAllByTestId } = render(
+      <Table schema={schema} pageSize={1} withCheckbox={true} onSelect={onSelect} data={data} />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(checkbox);
+    expect(onSelect).toHaveBeenCalled();
+  });
+});
