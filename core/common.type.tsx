@@ -113,3 +113,5 @@ export type PositionType =
   | 'left-end'
   | 'left'
   | 'left-start';
+
+export type TListboxSize = 'standard' | 'compressed' | 'tight';

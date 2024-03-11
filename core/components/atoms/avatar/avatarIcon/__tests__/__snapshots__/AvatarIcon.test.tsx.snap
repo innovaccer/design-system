@@ -10,6 +10,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
@@ -31,6 +32,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent1 Avatar--disabled"
@@ -111,6 +113,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
@@ -132,6 +135,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent2 Avatar--disabled"
@@ -212,6 +216,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
@@ -233,6 +238,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent3 Avatar--disabled"
@@ -313,6 +319,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
@@ -334,6 +341,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--accent4 Avatar--disabled"
@@ -414,6 +422,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
@@ -435,6 +444,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--alert Avatar--disabled"
@@ -515,6 +525,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
@@ -536,6 +547,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--primary Avatar--disabled"
@@ -616,6 +628,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
@@ -637,6 +650,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
@@ -717,6 +731,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--success Avatar--disabled"
@@ -738,6 +753,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--success Avatar--disabled"
@@ -818,6 +834,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
@@ -839,6 +856,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--warning Avatar--disabled"
@@ -919,6 +937,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--accent1 Avatar--disabled"
@@ -940,6 +959,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--accent1 Avatar--disabled"
@@ -1020,6 +1040,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--accent2 Avatar--disabled"
@@ -1041,6 +1062,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--accent2 Avatar--disabled"
@@ -1121,6 +1143,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--accent3 Avatar--disabled"
@@ -1142,6 +1165,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--accent3 Avatar--disabled"
@@ -1222,6 +1246,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--accent4 Avatar--disabled"
@@ -1243,6 +1268,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--accent4 Avatar--disabled"
@@ -1323,6 +1349,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--alert Avatar--disabled"
@@ -1344,6 +1371,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--alert Avatar--disabled"
@@ -1424,6 +1452,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--primary Avatar--disabled"
@@ -1445,6 +1474,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--primary Avatar--disabled"
@@ -1525,6 +1555,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled"
@@ -1546,6 +1577,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--secondary Avatar--disabled"
@@ -1626,6 +1658,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--success Avatar--disabled"
@@ -1647,6 +1680,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--success Avatar--disabled"
@@ -1727,6 +1761,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--tiny Avatar--warning Avatar--disabled"
@@ -1748,6 +1783,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--tiny Avatar--warning Avatar--disabled"

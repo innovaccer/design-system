@@ -14,6 +14,7 @@ Object {
         <span
           class=""
           data-test="DesignSystem-AvatarWrapper"
+          role="presentation"
         >
           <span
             class="Avatar Avatar--regular Avatar--accent1"
@@ -34,6 +35,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
@@ -53,6 +55,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
@@ -131,6 +134,7 @@ Object {
       <span
         class=""
         data-test="DesignSystem-AvatarWrapper"
+        role="presentation"
       >
         <span
           class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"
@@ -159,6 +163,7 @@ Object {
     <span
       class=""
       data-test="DesignSystem-AvatarWrapper"
+      role="presentation"
     >
       <span
         class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"

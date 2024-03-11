@@ -1,0 +1,111 @@
+/* Selection avatar group */
+.SelectionAvatarGroup {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+/* Selection Avatar List */
+
+.SelectionAvatarGroup-item {
+  margin-right: calc(var(--spacing-m) * -1);
+  border-radius: 50%;
+  display: flex;
+  transition: transform var(--duration--fast-01) var(--standard-productive-curve);
+  position: relative;
+}
+
+.SelectionAvatarGroup-item:focus,
+.SelectionAvatarGroup-item:focus-visible {
+  outline: 3px solid var(--primary-shadow);
+  outline-offset: 3px;
+}
+
+.SelectionAvatarGroup-item:active {
+  outline: var(--spacing-s) solid #00509f;
+  outline-offset: var(--spacing-xs);
+}
+
+.SelectionAvatarGroup-wrapper:hover .SelectionAvatarGroup-item {
+  transform: translateY(-8px);
+}
+
+/* Selected Avatar Group Item */
+
+.SelectionAvatarGroup-item--selected {
+  outline-offset: var(--spacing-xs);
+  outline: var(--spacing-s) solid var(--primary-dark);
+}
+
+.SelectionAvatarGroup-item--selected:active {
+  outline-offset: var(--spacing-xs);
+  outline: var(--spacing-s) solid var(--primary-darker);
+}
+
+.SelectionAvatarGroup-item--selected:focus,
+.SelectionAvatarGroup-item--selected:focus-visible {
+  box-shadow: 0 0 0 var(--spacing-xs) white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
+}
+
+/* Selection Avatar Popover */
+
+.SelectionAvatarGroup-popper {
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.SelectionAvatar-inputWrapper {
+  border-bottom: var(--spacing-xs) solid var(--secondary-dark);
+}
+
+.SelectionAvatar-inputWrapper:focus-within {
+  border-bottom: var(--spacing-xs) solid var(--primary);
+}
+
+.SelectionAvatar-input {
+  min-width: unset !important;
+  background: transparent;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0;
+  height: 36px;
+}
+
+.SelectionAvatar-input,
+.SelectionAvatar-input:focus-within {
+  border: unset !important;
+  box-shadow: none !important;
+}
+
+.SelectionAvatar-input:hover {
+  background-color: #f4f4f4;
+}
+
+/* Selection Avatar Count */
+
+.SelectionAvatarCount-wrapper {
+  border-radius: 50%;
+}
+
+.SelectionAvatarCount:hover {
+  background: var(--secondary);
+}
+
+.SelectionAvatarCount:active {
+  background: var(--secondary-dark);
+}
+
+.SelectionAvatarCount-wrapper:focus,
+.SelectionAvatarCount-wrapper:focus-visible {
+  outline: 3px solid var(--primary-shadow);
+  outline-offset: 3px;
+}
+
+.SelectionAvatarCount--selected {
+  outline-offset: var(--spacing-xs);
+  outline: var(--spacing-s) solid var(--primary-dark);
+}
+
+.SelectionAvatarCount--selected:focus,
+.SelectionAvatarCount--selected:focus-visible {
+  box-shadow: 0 0 0 var(--spacing-xs) white, 0 0 0 3px var(--primary-dark), 0 0 0 3px var(--primary-shadow) !important;
+}
