@@ -650,7 +650,12 @@ export class Table extends React.Component<TableProps, TableState> {
     }
 
     if (onSelect) {
-      onSelect(indexes, selected, rowIndexes === -1 && selectedItemList.length === 0 ? [] : selectedItemList);
+      if (this.props.uniqueColumnName) {
+        onSelect(indexes, selected, rowIndexes === -1 && selectedItemList.length === 0 ? [] : selectedItemList);
+      } else {
+        // To avoid breaking the current selection flow
+        onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
+      }
     }
   };
 
