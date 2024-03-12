@@ -91,5 +91,6 @@ export { Listbox } from './components/organisms/listbox';
 export { TextField } from './components/organisms/textField';
 export { AvatarSelection } from './components/atoms/avatarSelection';
 export { Combobox } from './components/organisms/combobox';
+export { Select } from './components/organisms/select';
 
 export { version } from '../package.json';
