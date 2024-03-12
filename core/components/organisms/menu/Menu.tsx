@@ -5,6 +5,7 @@ import { MenuGroup } from './MenuGroup';
 import { MenuItem } from './MenuItem';
 import { MenuList } from './MenuList';
 import { MenuTrigger } from './MenuTrigger';
+import SubMenu from './SubMenu';
 
 export interface MenuProps extends BaseProps {
   children: React.ReactNode;
@@ -14,17 +15,14 @@ export interface MenuProps extends BaseProps {
 }
 
 export const Menu = (props: MenuProps) => {
-  const { open, trigger, children } = props;
-  return (
-    <Popover open={open} trigger={trigger}>
-      {children}
-    </Popover>
-  );
+  const { children } = props;
+  return <Popover {...props}>{children}</Popover>;
 };
 
 Menu.Group = MenuGroup;
 Menu.Item = MenuItem;
 Menu.List = MenuList;
 Menu.Trigger = MenuTrigger;
+Menu.SubMenu = SubMenu;
 
 export default Menu;
