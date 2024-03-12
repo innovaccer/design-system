@@ -1,0 +1,27 @@
+.Menu {
+  overflow-y: auto !important;
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+}
+
+.Menu-Trigger--active {
+  background-color: var(--secondary-dark);
+}
+
+.Menu-Item {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Menu-Group-Label {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  padding-top: var(--spacing-l);
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-l);
+}
+
+.Menu-Group:first-child .Menu-Group-Label {
+  padding-top: var(--spacing);
+}

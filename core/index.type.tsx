@@ -91,3 +91,4 @@ export { AvatarIconProps } from './components/atoms/avatar/avatarIcon';
 export { AvatarSelectionProps } from './components/atoms/avatarSelection';
 export { ComboboxProps } from './components/organisms/combobox';
 export { SelectProps } from './components/organisms/select';
+export { MenuProps } from './components/organisms/menu';
