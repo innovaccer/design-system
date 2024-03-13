@@ -22,7 +22,9 @@ export const multiSelect = () => {
   };
 
   const setLableHandler = (count) => {
-    return `${count} Medicines`;
+    if (count > 2) {
+      return `${count} Medicines`;
+    }
   };
 
   return (
@@ -60,7 +62,9 @@ const customCode = `() => {
   };
 
   const setLableHandler = (count) => {
-    return \`\${count} Medicines\`;
+    if (count > 2) {
+      return \`\${count} Medicines\`;
+    }
   }
 
   return (
