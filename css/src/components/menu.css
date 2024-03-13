@@ -6,3 +6,12 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+.Menu-Group-Label {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  padding-top: var(--spacing-l);
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-l);
+}

@@ -8,21 +8,23 @@ export interface MenuGroupProps extends BaseProps {
 }
 
 export const MenuGroup = (props: MenuGroupProps) => {
-  const { label, children } = props;
+  const { label, children, ...rest } = props;
 
   if (label) {
     return (
-      <div>
-        <Text>{label}</Text>
+      <div data-test="DesignSystem-MenuGroup" {...rest}>
+        <Text size="small" weight="medium" appearance="subtle" className="Menu-Group-Label">
+          {label}
+        </Text>
         {children}
       </div>
     );
   }
 
   return (
-    <div>
+    <div data-test="DesignSystem-MenuGroup">
       {children}
-      <Divider />
+      <Divider className="my-3" />
     </div>
   );
 };
