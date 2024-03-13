@@ -1,0 +1,12 @@
+import React from 'react';
+import { OptionType } from "../../../common.type";
+export declare const mapInitialValue: (multiSelect: boolean, selectedValue: OptionType | OptionType[] | undefined) => OptionType | OptionType[];
+export declare const elementExist: (targetObject: OptionType, mainList: OptionType | OptionType[] | undefined) => number;
+export declare const removeOrAddToList: (targetObject: OptionType, prevList: OptionType[]) => OptionType[];
+export declare const computeValue: (multiSelect: boolean | undefined, selectValue: any, setLabel?: ((count: number) => string | undefined) | undefined) => any;
+export declare const handleKeyDownTrigger: (event: React.KeyboardEvent, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>> | undefined, setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>> | undefined, setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>> | undefined) => void;
+export declare const focusListItem: (position: string, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined, listRef?: any) => void;
+export declare const handleKeyDown: (event: React.KeyboardEvent, focusedOption: Element | undefined, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined, setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>> | undefined, setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>> | undefined, listRef?: any, withSearch?: boolean | undefined, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>> | undefined, triggerRef?: any) => void;
+export declare const handleEnterKey: (focusedOption: Element | undefined) => void;
+export declare const navigateOptions: (direction: string, focusedOption: Element | undefined, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined, listRef?: any, withSearch?: boolean | undefined) => void;
+export declare const handleInputKeyDown: (event: React.KeyboardEvent, listRef: any, setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>> | undefined, setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>> | undefined, triggerRef?: any) => void;
