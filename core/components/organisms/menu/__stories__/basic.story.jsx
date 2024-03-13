@@ -11,10 +11,23 @@ export const basic = () => {
     { label: 'Copy', value: 'Copy' },
   ];
 
+  const findItem = (arrList, item) => {
+    arrList.find((obj) => obj.label === item.label && obj.value === item.value);
+  };
+
   const onClickHandler = (item) => {
-    const list = [...selectedItem, item];
-    action('item', item, 'list', list)();
-    setSelectedItem(list);
+    if (findItem(selectedItem, item)) {
+      const list = selectedItem.filter(
+        (selectItem) => selectItem.label !== item.label && selectItem.value !== item.value
+      );
+      action('itemssss', item, 'list', list)();
+
+      setSelectedItem(list);
+    } else {
+      const list = [...selectedItem, item];
+      action('itemssss', item, 'list', list)();
+      setSelectedItem(list);
+    }
   };
 
   return (
@@ -28,6 +41,7 @@ export const basic = () => {
             return (
               <Menu.Item key={index} onClick={() => onClickHandler(action)}>
                 {action.label}
+                {/* {findItem(selectedItem, action) && <Icon name="places" />} */}
               </Menu.Item>
             );
           })}
@@ -36,7 +50,7 @@ export const basic = () => {
       <Menu.Group label="Group 1">
         <Menu.List>
           <Menu.Item>
-            <Menu.SubMenu>i am submenu</Menu.SubMenu>
+            <Menu.SubMenu>I am submenu</Menu.SubMenu>
             <div className="d-flex align-items-center justify-content-between w-100">
               <div>
                 <Text>Item 1</Text>
@@ -52,6 +66,29 @@ export const basic = () => {
   );
 };
 
+const customCode = `
+() => {
+
+  return (
+    <Menu trigger={<Menu.Trigger />}>
+      <Menu.Group label="Group 1">
+        <Menu.List>
+          <Menu.Item>
+            <Menu.SubMenu>I am submenu</Menu.SubMenu>
+            <div className="d-flex align-items-center justify-content-between w-100">
+              <Text>Item 1</Text>
+              <Icon name="chevron_right" />
+            </div>
+          </Menu.Item>
+          <Menu.Item>Item 2</Menu.Item>
+          <Menu.Item>Item 3</Menu.Item>
+        </Menu.List>
+      </Menu.Group>
+    </Menu>
+  );
+}
+`;
+
 export default {
   title: 'Components/Menu/Basic',
   component: Menu,
@@ -59,6 +96,7 @@ export default {
     docs: {
       docPage: {
         title: 'Menu',
+        customCode,
       },
     },
   },

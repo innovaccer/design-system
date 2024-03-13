@@ -14,23 +14,25 @@ export interface MenuItemProps extends BaseProps {
 export const MenuItem = (props: MenuItemProps) => {
   const { children, ...rest } = props;
 
-  const specificComponent = React.Children.toArray(children).find((child: any) => {
-    return child.type === SubMenu;
-  });
+  // const specificComponent = React.Children.toArray(children).find((child: any) => {
+  //   return child.type === SubMenu;
+  // });
 
-  const filteredChildren = React.Children.toArray(children).filter((child: any) => {
-    return child.type !== SubMenu;
-  });
+  // const filteredChildren = React.Children.toArray(children).filter((child: any) => {
+  //   return child.type !== SubMenu;
+  // });
 
-  if (specificComponent) {
+  const [submenuContent, submenuTrigger] = React.Children.toArray(children);
+
+  if ((submenuContent as React.ReactElement).type === SubMenu) {
     return (
       <Popover
         on="hover"
         position="right"
         className="p-4"
-        trigger={<Listbox.Item {...rest}>{filteredChildren}</Listbox.Item>}
+        trigger={<Listbox.Item {...rest}>{submenuTrigger}</Listbox.Item>}
       >
-        <>{specificComponent}</>
+        <>{submenuContent}</>
       </Popover>
     );
   }
