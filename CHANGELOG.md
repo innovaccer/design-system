@@ -1,3 +1,44 @@
+## 2.29.0 (2024-03-13)
+
+### Highlights
+
+- feat(combobox): add new combobox component (bd7993e1)
+- feat(avatarSelection): add new avatar selection component (8c408a0a)
+- feat(select): add new component select (90d37dd9)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(combobox): add new combobox component (bd7993e1)
+- feat(avatarSelection): add new avatar selection component (8c408a0a)
+- feat(select): add new component select (90d37dd9)
+
+### Fixes
+
+- fix(calendar): ordering of days in calendar when firstDayOfWeek is passed (7a16f20a)
+
+### Improvements
+
+- chore(select): show custom label when option selected is more than 2 in multiselect (85680e70)
+
+### Documentation
+
+- docs(popover): add guideline for padding in popover (41281e11)
+- docs(avatar): add avatar selection guidelines (0e27b6c5)
+
+---
+
 ## 2.28.3 (2024-03-01)
 
 ### Highlights
