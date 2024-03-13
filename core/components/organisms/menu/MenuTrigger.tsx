@@ -24,7 +24,7 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
     className
   );
 
-  return <Button data-test="DesignSystem-MenuTrigger" icon="more_horiz" {...props} className={triggerClassName} />;
+  return <Button data-test="DesignSystem-Menu-Trigger" icon="more_horiz" {...props} className={triggerClassName} />;
 };
 
 export default MenuTrigger;

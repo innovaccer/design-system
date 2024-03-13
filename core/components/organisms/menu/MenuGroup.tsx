@@ -3,7 +3,13 @@ import { BaseProps } from '@/utils/types';
 import { Text, Divider } from '@/index';
 
 export interface MenuGroupProps extends BaseProps {
+  /**
+   * Defines Group label
+   */
   label: string;
+  /**
+   * List to be rendered inside `MenuGroup`
+   */
   children: React.ReactElement;
 }
 
@@ -12,7 +18,7 @@ export const MenuGroup = (props: MenuGroupProps) => {
 
   if (label) {
     return (
-      <div data-test="DesignSystem-MenuGroup" {...rest}>
+      <div data-test="DesignSystem-Menu-Group" {...rest}>
         <Text size="small" weight="medium" appearance="subtle" className="Menu-Group-Label">
           {label}
         </Text>
@@ -22,7 +28,7 @@ export const MenuGroup = (props: MenuGroupProps) => {
   }
 
   return (
-    <div data-test="DesignSystem-MenuGroup">
+    <div data-test="DesignSystem-Menu-Group" {...rest}>
       {children}
       <Divider className="my-3" />
     </div>

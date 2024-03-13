@@ -36,10 +36,10 @@ export const MenuItem = (props: MenuItemProps) => {
     return (
       <Popover
         on="hover"
-        position="right"
-        className="p-4"
+        position="right" //check this
+        className="p-4" //check this
         trigger={
-          <Listbox.Item className={listboxClassName} {...rest}>
+          <Listbox.Item data-test="DesignSystem-Menu-ListItem" className={listboxClassName} {...rest}>
             {submenuTrigger}
           </Listbox.Item>
         }
@@ -50,7 +50,7 @@ export const MenuItem = (props: MenuItemProps) => {
   }
 
   return (
-    <Listbox.Item className={listboxClassName} {...rest}>
+    <Listbox.Item data-test="DesignSystem-Menu-ListItem" className={listboxClassName} {...rest}>
       {children}
     </Listbox.Item>
   );

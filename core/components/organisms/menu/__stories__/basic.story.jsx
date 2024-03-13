@@ -92,6 +92,13 @@ const customCode = `
 export default {
   title: 'Components/Menu/Basic',
   component: Menu,
+  subcomponents: {
+    'Menu.Trigger': Menu.Trigger,
+    'Menu.Group': Menu.Group,
+    'Menu.List': Menu.List,
+    'Menu.Item': Menu.Item,
+    'Menu.SubMenu': Menu.SubMenu,
+  },
   parameters: {
     docs: {
       docPage: {
