@@ -1,0 +1,287 @@
+### Elevation in selection avatar
+
+<br/>
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'State',
+        Initial: 'Default',
+        Final: 'Hover',
+      },
+      {
+        Property: 'Relative position Y',
+        Initial: '0',
+        Final: '+4 px',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+
+<br/>
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'Cubic-bezier (0.2, 0, 0.38, 0.9)',
+        Duration: '80ms'
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      }
+    ]}
+    withHeader={false}
+  />
+</Card>
+
+### Depression in selection avatar
+
+<br/>
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Property: 'State',
+        Initial: 'Hover',
+        Final: 'Default',
+      },
+      {
+        Property: 'Relative position Y',
+        Initial: '+4px',
+        Final: '0',
+      },
+    ]}
+    schema={[
+      {
+        name: 'Property',
+        displayName: 'Property',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Initial',
+        displayName: 'Initial state',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      },
+      {
+        name: 'Final',
+        displayName: 'Final state',
+        width: '33%',
+        sorting: false,
+        separator: true
+      },
+    ]}
+    withHeader={false}
+  />
+</Card>
+
+<br/>
+<br/>
+
+<Card shadow='none'>
+  <Table
+    showMenu={false}
+    separator={true}
+    data={[
+      {
+        Curve: 'Cubic-bezier (0.2, 0, 0.38, 0.9)',
+        Duration: '80ms'
+      }
+    ]}
+    schema={[
+      {
+        name: 'Curve',
+        displayName: 'Curve',
+        width: '34%',
+        sorting: false,
+        separator: true,
+        cellType: 'DEFAULT'
+      },
+      {
+        name: 'Duration',
+        displayName: 'Duration',
+        width: '33%',
+        sorting: false,
+        separator: true
+        
+      }
+    ]}
+    withHeader={false}
+  />
+</Card>
+
+### Keyboard Interactions
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Initial state</th>
+      <th style="width:33%; text-align: left;">Keyboard Interaction</th>
+      <th style="width:33%; text-align: left;">Final state</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Avatar in default state  </td>
+      <td>&#60;Tab&#62;</td>
+      <td>The avatar will be in focus</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Avatar in focus  </td>
+      <td>&#60;Tab&#62;</td>
+      <td>
+        In case of avatar group:
+        <ul>
+          <li>Shift focus to the next avatar </li>
+          <li>In case the focus is on the last avatar, shift focus to next item in Tab sequence on the page. </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+        <ul>
+          <li>Select/deselect avatar.</li>
+          <li>In case of a numeric avatar, open the popover, and transfer focus from the numeric avatar to either the first focusable item or the search option, depending on the context.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;down arrow&#62;</td>
+      <td>
+        <ul>
+          <li>In case of a numeric avatar, open the popover, and transfer focus from the numeric avatar to either the first focusable item or the search option, depending on the context.</li>
+          <li>In case of a default avatar, nothing will happen. </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+        <ul>
+          <li>In case of a numeric avatar, open the popover, and transfer focus from the numeric avatar to the last focusable item.</li>
+          <li>In case of a default avatar, nothing will happen.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>Nothing happens.</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Popover is open and an item is in focus<br/>(The trigger will not be in focus at this instance)</td>
+      <td>&#60;Tab&#62;</td>
+      <td>
+        Shift focus to the next item in Tab sequence on the page. <br/>The popover will be excluded from the tab sequence on the page. 
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+        Select the focused item. Popover will remain open. 
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;down arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the next focusable item.</li>
+          <li>If focus is on the last item, shift focus to the first focusable item.</li>
+          <li>
+            In case of search: 
+            <ul>
+              <li class="ml-5">If focus is on the last item, shift focus to search.</li>
+              <li class="ml-5">If focus is on search, shift focus to the first focusable item. </li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the previous focusable item.</li>
+          <li>If focus is on the first item, shift focus to the last focusable item.</li>
+          <li>In case of search: 
+            <ul>
+              <li class="ml-5">If focus is on the first item, shift focus to search.</li>
+              <li class="ml-5">If focus is on search, shift focus to the last focusable item.</li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>Close the popover. Focus is now on the numeric avatar.</td>
+    </tr>
+  </tbody>
+</table>

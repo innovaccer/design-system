@@ -59,42 +59,6 @@ const iconList = [
 
 const size = ['tiny', 'regular'];
 
-describe('AvatarGroup component', () => {
-  const mapper = {
-    list: valueHelper(list, { required: true }),
-    size: valueHelper(size, { required: true, iterate: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const tree = render(<AvatarGroup {...attr} />);
-      expect(tree).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
-describe('AvatarGroup component snapshot', () => {
-  const mapper = {
-    list: valueHelper(imgList, { required: true }),
-    size: valueHelper(size, { required: true, iterate: true }),
-  };
-
-  const testFunc = (props: Record<string, any>): void => {
-    const attr = filterUndefined(props) as Props;
-
-    it(testMessageHelper(attr), () => {
-      const tree = render(<AvatarGroup {...attr} />);
-      expect(tree).toMatchSnapshot();
-    });
-  };
-
-  testHelper(mapper, testFunc);
-});
-
 describe('AvatarGroup component snapshot', () => {
   const mapper = {
     list: valueHelper(iconList, { required: true }),

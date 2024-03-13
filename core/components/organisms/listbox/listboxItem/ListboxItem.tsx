@@ -42,7 +42,7 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
   /**
    * Value for particular list item
    */
-  value?: string;
+  value?: any;
   /**
    * Set a custom element for Listbox
    */
@@ -51,6 +51,10 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
    * Handler to be called when `ListboxItem` is clicked
    */
   onClick?: (e: React.MouseEvent, id?: string, value?: string) => void;
+  /**
+   * Specify tabIndex to list item
+   */
+  tabIndex?: number;
 }
 
 export const ListboxItem = (props: ListboxItemProps) => {
@@ -71,11 +75,12 @@ export const ListboxItem = (props: ListboxItemProps) => {
     <Tag
       id={id}
       key={id}
-      {...rest}
       data-test="DesignSystem-Listbox-Item"
+      {...rest}
       onClick={onClickHandler}
       data-value={value}
       className={tagClass}
+      {...rest}
     >
       <ListBody {...props} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}

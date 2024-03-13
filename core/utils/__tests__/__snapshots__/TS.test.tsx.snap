@@ -5,6 +5,7 @@ exports[`TS renders children 1`] = `
   <span
     class=""
     data-test="DesignSystem-AvatarWrapper"
+    role="presentation"
   >
     <span
       class="Avatar Avatar--regular Avatar--secondary Avatar--disabled"

@@ -3,9 +3,9 @@ import { BaseProps, extractBaseProps, BaseHtmlProps } from '@/utils/types';
 import classNames from 'classnames';
 import { DraggableList } from './reorderList';
 import { ListboxItem } from './listboxItem';
+import { TListboxSize } from '@/common.type';
 
 type ListboxType = 'option' | 'description' | 'resource';
-type ListboxSize = 'standard' | 'compressed' | 'tight';
 export type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement | HTMLDivElement> {
@@ -16,7 +16,7 @@ export interface ListboxProps extends BaseProps, BaseHtmlProps<HTMLUListElement 
   /**
    * List size
    */
-  size: ListboxSize;
+  size: TListboxSize;
   /**
    * Type of List
    */
