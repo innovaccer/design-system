@@ -42,7 +42,7 @@ export interface MenuProps extends BaseProps {
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open } = props;
+  const { children, width, minHeight, maxHeight, className, open, popoverPosition } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
 
   const popoverClassName = classNames(
@@ -64,8 +64,10 @@ export const Menu = (props: MenuProps) => {
     <MenuContext.Provider value={contextProp}>
       <Popover
         data-test="DesignSystem-Menu"
+        offset="medium"
         {...props}
         open={openPopover}
+        position={popoverPosition}
         customStyle={{ width, minHeight, maxHeight }}
         className={popoverClassName}
         onToggle={onToggleHandler}

@@ -3,7 +3,7 @@ import { BaseProps } from '@/utils/types';
 import { Listbox } from '@/index';
 import { TListboxSize } from '@/common.type';
 
-type TagType = 'ul' | 'ol' | 'div' | 'nav' | 'a';
+type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface MenuListProps extends BaseProps {
   /**
