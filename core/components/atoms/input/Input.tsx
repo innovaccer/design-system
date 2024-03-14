@@ -228,13 +228,15 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, forw
   );
 
   return (
+    // eslint-disable-next-line
     <div
       data-test="DesignSystem-InputWrapper"
       className={classes}
       style={{ minWidth }}
       onClick={() => ref.current?.focus()}
-      role="presentation"
+      role="textbox"
       onBlur={() => setIsInputBlank(!ref.current?.value)}
+      tabIndex={0}
     >
       {inlineLabel && (
         <div className="Input-inlineLabel">
