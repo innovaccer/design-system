@@ -4,18 +4,18 @@ import { action } from '@/utils/action';
 
 // CSF format story
 export const iconLeft = () => {
-  const icon = 'search';
+  const icon = 'event';
   return (
     <div className="Row">
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" placeholder="Search" onChange={action('on-change')} icon={icon} />
+        <Input name="input" placeholder="Placeholder" onChange={action('on-change')} icon={icon} />
         <br />
         <Text weight="strong">Default</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
         <Input
           name="input"
-          placeholder="Search"
+          placeholder="Placeholder"
           onChange={action('on-change')}
           info="sample info tooltip"
           icon={icon}
@@ -24,12 +24,12 @@ export const iconLeft = () => {
         <Text weight="strong">Placeholder</Text>
       </div>
       <div className="mr-9 mb-8 w-25">
-        <Input name="input" placeholder="Search" onChange={action('on-change')} error={true} icon={icon} />
+        <Input name="input" placeholder="Placeholder" onChange={action('on-change')} error={true} icon={icon} />
         <br />
         <Text weight="strong">Error</Text>
       </div>
       <div className="mr-9 w-25">
-        <Input name="input" placeholder="Search" disabled={true} icon={icon} />
+        <Input name="input" placeholder="Placeholder" disabled={true} icon={icon} />
         <br />
         <Text weight="strong">Disabled</Text>
       </div>

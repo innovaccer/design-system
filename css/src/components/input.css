@@ -36,6 +36,14 @@
   padding-bottom: var(--spacing);
 }
 
+.Input--leftIcon {
+  padding-left: var(--spacing);
+}
+
+.Input--rightIcon {
+  padding-right: var(--spacing);
+}
+
 .Input:hover {
   background: var(--secondary-lighter);
   border-color: var(--secondary-dark);
