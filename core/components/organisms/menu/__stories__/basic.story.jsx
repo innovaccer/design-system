@@ -96,10 +96,17 @@ const customCode = `
     <Menu trigger={<Menu.Trigger />}>
       <Menu.Group label="Group 1">
         <Menu.List>
+
           <Menu.SubMenu>
-            <Menu.Item>Item 1</Menu.Item>
+            <Menu.Item>
+              <div className="d-flex align-items-center justify-content-between w-100">
+                <Text>Item 1</Text>
+                <Icon name="chevron_right" />
+              </div>
+            </Menu.Item>
             <Menu popoverPosition="right">i am submenu content</Menu>
           </Menu.SubMenu>
+
           <Menu.Item>Item 2</Menu.Item>
           <Menu.Item>Item 3</Menu.Item>
         </Menu.List>

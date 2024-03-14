@@ -42,7 +42,8 @@
 }
 
 .Listbox-item--option:hover {
-  background-color: var(--secondary-lightest);
+  /* background-color: var(--secondary-lightest); */
+  background-color: red;
 }
 
 .Listbox-item--option:focus,

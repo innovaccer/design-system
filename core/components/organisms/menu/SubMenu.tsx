@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Icon } from '@/index';
 
 export interface SubMenuProps {
   /**
@@ -17,11 +18,18 @@ export const SubMenu = (props: SubMenuProps) => {
   const [submenuTrigger, submenuContent] = React.Children.toArray(children);
 
   let subMenuElement = <></>;
+  // const menuTrigger = (
+  //   <div className="d-flex align-items-center justify-content-between w-100">
+  //     {submenuTrigger}
+  //     <Icon name="chevron_right" />
+  //   </div>
+  // );
 
   if (React.isValidElement(submenuContent)) {
     subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
       ...submenuContent.props,
       trigger: <>{submenuTrigger}</>,
+      // trigger: menuTrigger,
       on: submenuContent?.props?.on || 'hover',
       offset: 'small',
     });
