@@ -22,7 +22,7 @@ export const MenuItem = (props: MenuItemProps) => {
   );
 
   return (
-    <Listbox.Item data-test="DesignSystem-Menu-ListItem" className={MenuItemClassName} {...rest}>
+    <Listbox.Item data-test="DesignSystem-Menu-ListItem" className={MenuItemClassName} tabIndex={-1} {...rest}>
       {children}
     </Listbox.Item>
   );

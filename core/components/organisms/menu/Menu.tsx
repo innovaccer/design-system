@@ -5,10 +5,11 @@ import { PopoverProps } from '@/index.type';
 import { MenuGroup } from './MenuGroup';
 import { MenuItem } from './MenuItem';
 import { MenuList } from './MenuList';
-import { MenuTrigger } from './MenuTrigger';
+import { MenuTrigger } from './trigger/MenuTrigger';
 import SubMenu from './SubMenu';
 import classNames from 'classnames';
 import MenuContext from './MenuContext';
+import { focusListItem } from './trigger/utils';
 
 export interface MenuProps extends BaseProps {
   /**
@@ -44,6 +45,10 @@ export interface MenuProps extends BaseProps {
 export const Menu = (props: MenuProps) => {
   const { children, width, minHeight, maxHeight, className, open } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
+  const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
+  const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
+  const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
+  const listRef = React.createRef<HTMLDivElement>();
 
   const popoverClassName = classNames(
     {
@@ -52,12 +57,35 @@ export const Menu = (props: MenuProps) => {
     className
   );
 
+  React.useEffect(() => {
+    if (highlightFirstItem && openPopover) {
+      requestAnimationFrame(() => focusListItem('down', setFocusedOption, listRef));
+    }
+  }, [highlightFirstItem]);
+
+  React.useEffect(() => {
+    if (highlightLastItem && openPopover) {
+      requestAnimationFrame(() => focusListItem('up', setFocusedOption, listRef));
+    }
+  }, [highlightLastItem]);
+
+  React.useEffect(() => {
+    if (!openPopover) {
+      setHighlightFirstItem(false);
+      setHighlightLastItem(false);
+    }
+  }, [openPopover]);
+
   const onToggleHandler = (open: boolean) => {
     setOpenPopover(open);
   };
 
   const contextProp = {
     openPopover,
+    setOpenPopover,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+    focusedOption,
   };
 
   return (
@@ -71,7 +99,7 @@ export const Menu = (props: MenuProps) => {
         className={popoverClassName}
         onToggle={onToggleHandler}
       >
-        {children}
+        <div ref={listRef}>{children}</div>
       </Popover>
     </MenuContext.Provider>
   );
