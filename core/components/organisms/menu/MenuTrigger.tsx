@@ -1,7 +1,6 @@
 import React from 'react';
 import { BaseProps } from '@/utils/types';
 import { Button } from '@/index';
-import { ButtonProps } from '@/index.type';
 import MenuContext from './MenuContext';
 import classNames from 'classnames';
 
@@ -9,7 +8,7 @@ export interface MenuTriggerProps extends BaseProps {
   /**
    * Defines size of the `Trigger`
    */
-  size?: ButtonProps['size'];
+  size?: 'tiny' | 'regular';
 }
 
 export const MenuTrigger = (props: MenuTriggerProps) => {

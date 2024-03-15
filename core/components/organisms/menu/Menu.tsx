@@ -22,7 +22,7 @@ export interface MenuProps extends BaseProps {
   /**
    * Defines position of `Menu`
    */
-  popoverPosition: PopoverProps['position'];
+  position: PopoverProps['position'];
   /**
    * Defines trigger for the `Menu`
    */
@@ -42,7 +42,7 @@ export interface MenuProps extends BaseProps {
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, popoverPosition } = props;
+  const { children, width, minHeight, maxHeight, className, open } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
 
   const popoverClassName = classNames(
@@ -67,7 +67,6 @@ export const Menu = (props: MenuProps) => {
         offset="medium"
         {...props}
         open={openPopover}
-        position={popoverPosition}
         customStyle={{ width, minHeight, maxHeight }}
         className={popoverClassName}
         onToggle={onToggleHandler}
@@ -87,6 +86,7 @@ Menu.SubMenu = SubMenu;
 Menu.defaultProps = {
   width: 176,
   maxHeight: 256,
+  position: 'bottom-start',
 };
 
 export default Menu;

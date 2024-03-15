@@ -6,15 +6,19 @@ export interface MenuGroupProps extends BaseProps {
   /**
    * Defines Group label
    */
-  label: string;
+  label?: string;
   /**
    * List to be rendered inside `MenuGroup`
    */
   children: React.ReactElement;
+  /**
+   * Set as `true` to show Divider
+   */
+  showDivider?: boolean;
 }
 
 export const MenuGroup = (props: MenuGroupProps) => {
-  const { label, children, ...rest } = props;
+  const { label, children, showDivider, ...rest } = props;
 
   if (label) {
     return (
@@ -30,9 +34,13 @@ export const MenuGroup = (props: MenuGroupProps) => {
   return (
     <div data-test="DesignSystem-Menu-Group" {...rest}>
       {children}
-      <Divider className="my-3" />
+      {showDivider && <Divider className="my-3" />}
     </div>
   );
+};
+
+MenuGroup.defaultProps = {
+  showDivider: true,
 };
 
 export default MenuGroup;

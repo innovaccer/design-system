@@ -104,7 +104,7 @@ const customCode = `
                 <Icon name="chevron_right" />
               </div>
             </Menu.Item>
-            <Menu popoverPosition="right">i am submenu content</Menu>
+            <Menu position="right">i am submenu content</Menu>
           </Menu.SubMenu>
 
           <Menu.Item>Item 2</Menu.Item>
