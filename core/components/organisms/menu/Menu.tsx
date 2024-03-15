@@ -49,6 +49,7 @@ export const Menu = (props: MenuProps) => {
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const listRef = React.createRef<HTMLDivElement>();
+  const menuTriggerRef = React.useRef<HTMLButtonElement>();
 
   const popoverClassName = classNames(
     {
@@ -86,6 +87,9 @@ export const Menu = (props: MenuProps) => {
     setHighlightFirstItem,
     setHighlightLastItem,
     focusedOption,
+    setFocusedOption,
+    menuTriggerRef,
+    listRef,
   };
 
   return (

@@ -15,7 +15,7 @@ export interface MenuTriggerProps extends BaseProps {
 export const MenuTrigger = (props: MenuTriggerProps) => {
   const { className } = props;
   const contextProp = React.useContext(MenuContext);
-  const { openPopover, setOpenPopover, setHighlightFirstItem, setHighlightLastItem } = contextProp;
+  const { openPopover, setOpenPopover, setHighlightFirstItem, setHighlightLastItem, menuTriggerRef } = contextProp;
 
   const triggerClassName = classNames(
     {
@@ -32,6 +32,7 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
     <Button
       data-test="DesignSystem-Menu-Trigger"
       icon="more_horiz"
+      ref={menuTriggerRef}
       {...props}
       className={triggerClassName}
       onKeyDown={onKeyDownHandler}
