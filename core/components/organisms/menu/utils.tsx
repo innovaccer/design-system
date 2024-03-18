@@ -10,6 +10,8 @@ export const handleKeyDown = (
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>,
   listRef?: any
 ) => {
+  // console.log('inside handlekeydownn', event.key, 'listReffff', listRef);
+
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
@@ -48,7 +50,8 @@ const navigateOptions = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any
 ) => {
-  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  console.log('nesting navigate optionbbbss', direction, 'listRef', listRef);
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
@@ -65,3 +68,5 @@ const navigateOptions = (
   setFocusedOption && setFocusedOption(targetOption);
   targetOption?.scrollIntoView?.({ block: 'center' });
 };
+
+// const navigateSubMenu = () => {};

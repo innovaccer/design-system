@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Icon } from '@/index';
 
-export const nesting = () => {
+export const nestingMenu = () => {
   return (
     <Menu trigger={<Menu.Trigger />}>
       <Menu.Group label="Group 1">
@@ -9,21 +9,26 @@ export const nesting = () => {
           <Menu.Item>App store</Menu.Item>
           <Menu.Item>Developer Portal</Menu.Item>
 
-          <Menu.SubMenu>
-            <Menu.Item>
-              <div className="d-flex align-items-center justify-content-between w-100">
-                User Admin
-                <Icon name="chevron_right" />
-              </div>
-            </Menu.Item>
-            <Menu position="right-start">
-              <Menu.List>
-                <Menu.Item>Users</Menu.Item>
-                <Menu.Item>Groups</Menu.Item>
-                <Menu.Item>Roles</Menu.Item>
-              </Menu.List>
-            </Menu>
-          </Menu.SubMenu>
+          {/* <Menu.SubMenu> */}
+
+          <Menu
+            position="right-start"
+            trigger={
+              <Menu.Item>
+                <div className="d-flex align-items-center justify-content-between w-100">
+                  User Admin
+                  <Icon name="chevron_right" />
+                </div>
+              </Menu.Item>
+            }
+          >
+            <Menu.List>
+              <Menu.Item>Users</Menu.Item>
+              <Menu.Item>Groups</Menu.Item>
+              <Menu.Item>Roles</Menu.Item>
+            </Menu.List>
+          </Menu>
+          {/* </Menu.SubMenu> */}
         </Menu.List>
       </Menu.Group>
     </Menu>
@@ -64,7 +69,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Nesting',
+  title: 'Components/Menu/Nesting Menu',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,
