@@ -29,7 +29,7 @@
         "inputBorder": "silver",
         "inputTextColor": "black",
         "inputBorderRadius": 4,
-        "brandTitle": "Masala Design System v2.23.0",
+        "brandTitle": "Masala Design System v2.29.0",
         "brandUrl": "https://github.com/innovaccer/design-system/"
       },
       "docPage": {
@@ -500,18 +500,25 @@
           "name": "enum",
           "value": [
             "bottom",
-            "top",
             "top-start",
+            "top",
             "top-end",
-            "bottom-start",
+            "right",
             "bottom-end",
+            "bottom-start",
             "left",
-            "right"
+            "auto-start",
+            "auto",
+            "auto-end",
+            "right-start",
+            "right-end",
+            "left-end",
+            "left-start"
           ]
         },
         "table": {
           "type": {
-            "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+            "summary": "\"bottom\" | \"top-start\" | \"top\" | \"top-end\" | \"right\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"auto-start\" | \"auto\" | \"auto-end\" | \"right-start\" | \"right-end\" | \"left-end\" | \"left-start\""
           },
           "defaultValue": {
             "summary": "\"bottom-start\""
@@ -642,6 +649,36 @@
         "table": {
           "type": {
             "summary": "ReactNode"
+          },
+          "defaultValue": null
+        }
+      },
+      "onError": {
+        "name": "onError",
+        "description": "Callback function called when date is invalid",
+        "type": {
+          "required": false,
+          "name": "function",
+          "value": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+          },
+          "defaultValue": null
+        }
+      },
+      "popoverOptions": {
+        "name": "popoverOptions",
+        "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Datepicker` inside body element | true |\n| hideOnReferenceEscape | Hides the `Datepicker` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "PopoverOptions | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "PopoverOptions | undefined"
           },
           "defaultValue": null
         }
@@ -907,18 +944,25 @@
         "name": "enum",
         "value": [
           "bottom",
-          "top",
           "top-start",
+          "top",
           "top-end",
-          "bottom-start",
+          "right",
           "bottom-end",
+          "bottom-start",
           "left",
-          "right"
+          "auto-start",
+          "auto",
+          "auto-end",
+          "right-start",
+          "right-end",
+          "left-end",
+          "left-start"
         ]
       },
       "table": {
         "type": {
-          "summary": "\"bottom\" | \"top\" | \"top-start\" | \"top-end\" | \"bottom-start\" | \"bottom-end\" | \"left\" | \"right\""
+          "summary": "\"bottom\" | \"top-start\" | \"top\" | \"top-end\" | \"right\" | \"bottom-end\" | \"bottom-start\" | \"left\" | \"auto-start\" | \"auto\" | \"auto-end\" | \"right-start\" | \"right-end\" | \"left-end\" | \"left-start\""
         },
         "defaultValue": {
           "summary": "\"bottom-start\""
@@ -1049,6 +1093,36 @@
       "table": {
         "type": {
           "summary": "ReactNode"
+        },
+        "defaultValue": null
+      }
+    },
+    "onError": {
+      "name": "onError",
+      "description": "Callback function called when date is invalid",
+      "type": {
+        "required": false,
+        "name": "function",
+        "value": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "((date: Date | undefined, dateVal?: string | undefined) => void) | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "popoverOptions": {
+      "name": "popoverOptions",
+      "description": "<pre style=\"font-family: monospace; font-size: 13px; background: #f8f8f8\">\nPopoverOptions:\n{\n    appendToBody?: boolean;\n    hideOnReferenceEscape?: boolean;\n    boundaryElement?: Element;\n}\n</pre>\n\n| Name | Description | Default |\n| --- | --- | --- |\n| appendToBody | Appends `Datepicker` inside body element | true |\n| hideOnReferenceEscape | Hides the `Datepicker` when its reference element is outside the boundaries | true |\n| boundaryElement | Boundary of Popover | |",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "PopoverOptions | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "PopoverOptions | undefined"
         },
         "defaultValue": null
       }
