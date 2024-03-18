@@ -42,6 +42,10 @@ menus:
   - label: Chips
     link: /components/chips/usage/
 
+  - label: Combobox
+    link: /components/combobox/usage/
+    hideInMobile: true
+
   - label: Date pickers
     link: /components/datePicker/usage/
     hideInMobile: true

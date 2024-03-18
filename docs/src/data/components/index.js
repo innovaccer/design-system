@@ -64,6 +64,13 @@ export const data = [
     image: () => <StaticImage src="./images/Chips.png" alt="Chips" imgStyle={imgStyle} />,
   },
   {
+    link: 'combobox/usage',
+    name: 'Combobox',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/Combobox.png" alt="Combobox" imgStyle={imgStyle} />,
+  },
+  {
     link: 'datePicker/usage',
     name: 'Date pickers',
     design: 'Available',
