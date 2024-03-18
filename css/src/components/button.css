@@ -119,7 +119,7 @@
 }
 
 .Button--basic:focus {
-  box-shadow: var(--shadow-spread) green;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .Button--basic:disabled {
@@ -197,7 +197,7 @@
 }
 
 .Button--transparent:focus {
-  box-shadow: var(--shadow-spread) brown;
+  box-shadow: var(--shadow-spread) var(--secondary-shadow);
 }
 
 .Button--transparent:active {

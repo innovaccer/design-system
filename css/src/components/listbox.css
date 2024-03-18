@@ -42,13 +42,12 @@
 }
 
 .Listbox-item--option:hover {
-  /* background-color: var(--secondary-lightest); */
-  background-color: red;
+  background-color: var(--secondary-lightest);
 }
 
 .Listbox-item--option:focus,
 .Listbox-item--option:focus-visible {
-  outline: 3px auto blue;
+  outline: 3px auto var(--secondary-shadow);
 }
 
 .Listbox-item--option:active {
