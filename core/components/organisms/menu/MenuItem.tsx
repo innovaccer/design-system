@@ -20,29 +20,12 @@ export interface MenuItemProps extends BaseProps {
    * React Element to be added inside `Menu List Item`
    */
   children: React.ReactNode;
-  // ref?: any;
-  /**
-   * Set as `true` if Item is used as subMenu trigger
-   */
-  isSubMenuTrigger?: boolean;
-  /**
-   * Specify `name` of the `SubMenu`
-   */
-  targetMenu?: string;
-  /**
-   * Specify `name` of the `Menu Item`
-   */
-  name?: string;
 }
 
-// export const MenuItem = (props: MenuItemProps) => {
-export const MenuItem = React.forwardRef<any, any>((props, ref) => {
-  const { children, className, name, isSubMenuTrigger, ...rest } = props;
+export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, ref) => {
+  const { children, className, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
-  // const isSubMenuTrigger = false;
-  // const subListRef = null;
-
-  // console.log('itemm prop', props);
+  const isSubMenuTrigger = false;
 
   const {
     setOpenPopover,
@@ -75,8 +58,6 @@ export const MenuItem = React.forwardRef<any, any>((props, ref) => {
       null,
       isSubMenuTrigger,
       triggerRef
-      // subListRef,
-      // triggerRef
     );
   };
 
@@ -85,9 +66,7 @@ export const MenuItem = React.forwardRef<any, any>((props, ref) => {
       data-test="DesignSystem-Menu-ListItem"
       className={MenuItemClassName}
       tabIndex={-1}
-      // tabIndex={0}
       onKeyDown={onKeyDownHandler}
-      data-name={name}
       ref={ref}
       {...rest}
     >

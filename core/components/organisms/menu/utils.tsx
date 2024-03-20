@@ -82,7 +82,7 @@ const navigateSubMenu = (
   subListRef?: any,
   triggerRef?: any
 ) => {
-  console.log('listRef', listRef``);
+  console.log('listRef', listRef);
   if (isSubMenuTrigger) {
     if (direction === 'right') {
       const listItems = subListRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');

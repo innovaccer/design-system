@@ -44,18 +44,10 @@ export interface MenuProps extends BaseProps {
    * Provide `ref` of the trigger element
    */
   triggerRef?: any;
-  /**
-   * Defines `name` of the trigger item. Used in case of `Nesting`
-   */
-  triggerName?: string;
-  /**
-   * Specify `name` of the `Menu`. Used in case of `Nesting`
-   */
-  name?: string;
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, name, triggerName, triggerRef } = props;
+  const { children, width, minHeight, maxHeight, className, open, triggerRef } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
@@ -69,8 +61,6 @@ export const Menu = (props: MenuProps) => {
     },
     className
   );
-
-  console.log('listrefffff', listRef.current);
 
   React.useEffect(() => {
     if (highlightFirstItem && openPopover) {
@@ -104,9 +94,7 @@ export const Menu = (props: MenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
-    triggerName,
     triggerRef,
-    // trigger,
   };
 
   return (
@@ -120,7 +108,7 @@ export const Menu = (props: MenuProps) => {
         className={popoverClassName}
         onToggle={onToggleHandler}
       >
-        <div ref={listRef} data-test="DesignSystem-Menu-Wrapper" data-name={name}>
+        <div ref={listRef} data-test="DesignSystem-Menu-Wrapper">
           {children}
         </div>
       </Popover>
