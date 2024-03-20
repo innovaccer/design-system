@@ -19,10 +19,9 @@ export const SubMenu = (props: SubMenuProps) => {
 
   const [submenuTrigger, submenuContent] = React.Children.toArray(children);
   const contextProp = React.useContext(MenuContext);
-  const subListRef = React.useRef<HTMLDivElement | null>();
+  const isSubMenuTrigger = true;
+  const subListRef = React.useRef();
   const triggerRef = React.useRef();
-
-  let subMenuElement = <></>;
 
   const {
     setOpenPopover,
@@ -34,7 +33,16 @@ export const SubMenu = (props: SubMenuProps) => {
     listRef,
   } = contextProp;
 
+  let subMenuElement = <></>;
+  // const menuTrigger = (
+  //   <div className="d-flex align-items-center justify-content-between w-100">
+  //     {submenuTrigger}
+  //     <Icon name="chevron_right" />
+  //   </div>
+  // );
+
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
+    console.log('ddddclonedTriggerElement', clonedTriggerElement);
     handleKeyDown(
       event,
       focusedOption,
@@ -44,31 +52,41 @@ export const SubMenu = (props: SubMenuProps) => {
       setHighlightFirstItem,
       setHighlightLastItem,
       listRef,
+      isSubMenuTrigger,
       subListRef,
-      true
+      null,
+      clonedTriggerElement
     );
   };
 
   const clonedTriggerElement = React.cloneElement(submenuTrigger as React.ReactElement, {
     ...submenuTrigger.props,
     onKeyDown: onKeyDownHandler,
-    ref: triggerRef,
     // children: (
     //   <div ref={triggerRef} tabIndex={0}>
-    //     {submenuTrigger?.props.children}
+    //     {submenuTrigger.props.children}
     //   </div>
     // ),
+    // 'data-subMenu': true,
   });
 
+  // console.log('itemm prop aa', submenuTrigger.props);
+
   if (React.isValidElement(submenuContent)) {
-    const { on, children } = submenuContent?.props;
     subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
       ...submenuContent.props,
-      on: on || 'hover',
+      // trigger: (
+      //   <div onKeyDown={onKeyDownHandler} role="tablist" id="my trigger" className="Menu-Item">
+      //     {submenuTrigger}
+      //   </div>
+      // ),
+      // trigger: clonedTriggerElement,
+      // trigger: menuTrigger,
+      trigger: submenuTrigger,
+      on: submenuContent?.props?.on || 'hover',
       offset: 'small',
-      children: <div ref={subListRef}>{children}</div>,
-      trigger: clonedTriggerElement,
       triggerRef,
+      children: <div ref={subListRef}>{submenuContent.props.children}</div>,
     });
   }
 
