@@ -5,8 +5,7 @@ import { ListboxItemProps } from './ListboxItem';
 import { ListboxContext } from '../Listbox';
 import { onKeyDown } from '../utils';
 
-// export const ListBody = (props: ListboxItemProps) => {
-export const ListBody = React.forwardRef<any, any>((props, ref) => {
+export const ListBody = React.forwardRef<HTMLDivElement, ListboxItemProps>((props, ref) => {
   const { children, className, disabled, selected, activated, tabIndex } = props;
 
   const contextProp = React.useContext(ListboxContext);

@@ -19,7 +19,7 @@ export const SubMenu = (props: SubMenuProps) => {
 
   const [submenuTrigger, submenuContent] = React.Children.toArray(children);
   const contextProp = React.useContext(MenuContext);
-  const subListRef = React.useRef<HTMLDivElement | null>();
+  const subListRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef();
 
   let subMenuElement = <></>;
@@ -49,15 +49,10 @@ export const SubMenu = (props: SubMenuProps) => {
     );
   };
 
-  const clonedTriggerElement = React.cloneElement(submenuTrigger as React.ReactElement, {
-    ...submenuTrigger.props,
+  const triggerElement = React.cloneElement(submenuTrigger as React.ReactElement, {
+    ...(submenuTrigger as React.ReactElement)?.props,
     onKeyDown: onKeyDownHandler,
     ref: triggerRef,
-    // children: (
-    //   <div ref={triggerRef} tabIndex={0}>
-    //     {submenuTrigger?.props.children}
-    //   </div>
-    // ),
   });
 
   if (React.isValidElement(submenuContent)) {
@@ -67,12 +62,12 @@ export const SubMenu = (props: SubMenuProps) => {
       on: on || 'hover',
       offset: 'small',
       children: <div ref={subListRef}>{children}</div>,
-      trigger: clonedTriggerElement,
+      trigger: triggerElement,
       triggerRef,
     });
   }
 
-  return <>{subMenuElement}</>;
+  return subMenuElement;
 };
 
 export default SubMenu;

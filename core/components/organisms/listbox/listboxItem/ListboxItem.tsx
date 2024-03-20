@@ -46,7 +46,7 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
   /**
    * Set a custom element for Listbox
    */
-  tagName: ItemTagType;
+  tagName?: ItemTagType;
   /**
    * Handler to be called when `ListboxItem` is clicked
    */
@@ -57,11 +57,8 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
   tabIndex?: number;
 }
 
-// export const ListboxItem = (props: ListboxItemProps) => {
-export const ListboxItem = React.forwardRef<any, any>((props, ref) => {
-  const { nestedBody, expanded, id, onClick, value, tagName: Tag, ...rest } = props;
-
-  console.log('reffffff', ref);
+export const ListboxItem = React.forwardRef<HTMLDivElement, ListboxItemProps>((props, ref) => {
+  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { showDivider, draggable } = contextProp;
@@ -72,7 +69,6 @@ export const ListboxItem = React.forwardRef<any, any>((props, ref) => {
 
   const tagClass = classNames({
     ['Listbox-item-wrapper']: !draggable,
-    ['w-100']: true,
   });
 
   return (
@@ -84,7 +80,6 @@ export const ListboxItem = React.forwardRef<any, any>((props, ref) => {
       onClick={onClickHandler}
       data-value={value}
       className={tagClass}
-      // ref={ref}
     >
       <ListBody {...props} ref={ref} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
@@ -93,7 +88,7 @@ export const ListboxItem = React.forwardRef<any, any>((props, ref) => {
   );
 });
 
-ListboxItem.displayName = 'ListboxItem';
+ListboxItem.displayName = 'Listbox.Item';
 ListboxItem.defaultProps = {
   tagName: 'li',
 };

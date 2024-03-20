@@ -7,6 +7,28 @@ export const nesting = () => {
       <Menu.Group label="Group 1">
         <Menu.List>
           <Menu.Item>App store</Menu.Item>
+
+          <Menu.SubMenu>
+            <Menu.Item
+              isSubMenuTrigger={true}
+              targetMenu="admin-menu"
+              name="user-admin"
+              className="d-flex align-items-center justify-content-between w-100"
+            >
+              {/* <div> */}
+              User Admin1
+              <Icon name="chevron_right" />
+              {/* </div> */}
+            </Menu.Item>
+            <Menu position="right-start" triggerName="user-admin" name="admin-menu" on="click">
+              <Menu.List>
+                <Menu.Item>Users1</Menu.Item>
+                <Menu.Item>Groups1</Menu.Item>
+                <Menu.Item>Roles1</Menu.Item>
+              </Menu.List>
+            </Menu>
+          </Menu.SubMenu>
+
           <Menu.Item>Developer Portal</Menu.Item>
 
           <Menu.SubMenu>

@@ -13,6 +13,10 @@
   padding-right: var(--spacing-2);
 }
 
+.Listbox-item-wrapper {
+  width: 100%;
+}
+
 .Listbox-item-wrapper:last-child > .Listbox-divider,
 .Listbox-item--draggable:last-child .Listbox-divider {
   background: transparent;

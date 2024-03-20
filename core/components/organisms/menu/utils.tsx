@@ -13,7 +13,6 @@ export const handleKeyDown = (
   isSubMenuTrigger?: boolean,
   triggerRef?: any
 ) => {
-  console.log('keyybboard called', event.key);
   switch (event.key) {
     case 'ArrowUp':
       event.preventDefault();
@@ -76,51 +75,6 @@ const navigateOptions = (
   targetOption?.scrollIntoView?.({ block: 'center' });
 };
 
-// export const handleSubMenuKeyDown = (
-//   event: React.KeyboardEvent,
-//   focusedOption: Element | undefined,
-//   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
-//   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
-//   menuTriggerRef?: any,
-//   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
-//   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>,
-//   listRef?: any,
-//   subListRef?: any,
-//   isSubMenuTrigger?: boolean
-// ) => {
-//   switch (event.key) {
-//     case 'ArrowUp':
-//       event.preventDefault();
-//       navigateOptions('up', focusedOption, setFocusedOption, listRef);
-//       break;
-//     case 'ArrowDown':
-//       event.preventDefault();
-//       navigateOptions('down', focusedOption, setFocusedOption, listRef);
-//       break;
-//     case 'Enter':
-//       handleEnterKey(focusedOption, menuTriggerRef);
-//       setHighlightLastItem?.(false);
-//       setHighlightFirstItem?.(false);
-//       break;
-//     case 'Escape':
-//       setOpenPopover?.(false);
-//       menuTriggerRef.current.focus();
-//       setFocusedOption?.(undefined);
-//       break;
-//     case 'Tab':
-//       setOpenPopover?.(false);
-//       break;
-//     case 'ArrowRight':
-//       navigateSubMenu(isSubMenuTrigger, 'right', listRef, subListRef);
-//       break;
-//     case 'ArrowLeft':
-//       navigateSubMenu(isSubMenuTrigger, 'left', listRef, subListRef);
-//       break;
-//     default:
-//       break;
-//   }
-// };
-
 const navigateSubMenu = (
   isSubMenuTrigger?: boolean,
   direction?: string,
@@ -128,28 +82,13 @@ const navigateSubMenu = (
   subListRef?: any,
   triggerRef?: any
 ) => {
-  console.log(
-    'ddddirection',
-    direction,
-    'listRef',
-    listRef,
-    'listRef.current',
-    listRef?.current,
-    'subListRef',
-    subListRef,
-    'subListRef.current',
-    subListRef?.current,
-    'triggerRef',
-    triggerRef
-  );
-
+  console.log('listRef', listRef``);
   if (isSubMenuTrigger) {
     if (direction === 'right') {
       const listItems = subListRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
       (listItems[0] as HTMLElement).focus();
     }
   } else if (direction === 'left') {
-    console.log('triggerRefff', triggerRef?.current);
     triggerRef?.current.focus();
   }
 };
