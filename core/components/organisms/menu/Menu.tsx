@@ -40,10 +40,18 @@ export interface MenuProps extends BaseProps {
    * Specifies width of `Menu`
    */
   width?: number;
+  /**
+   * Provide `ref` of the trigger element
+   */
+  triggerRef?: any;
+  /**
+   * Describe unique id to the `Menu`
+   */
+  menuID?: string;
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open } = props;
+  const { children, width, minHeight, maxHeight, className, open, triggerRef, menuID } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
@@ -90,12 +98,15 @@ export const Menu = (props: MenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
+    triggerRef,
+    menuID,
   };
 
   return (
     <MenuContext.Provider value={contextProp}>
       <Popover
         data-test="DesignSystem-Menu"
+        name={menuID}
         offset="medium"
         {...props}
         open={openPopover}
@@ -103,7 +114,9 @@ export const Menu = (props: MenuProps) => {
         className={popoverClassName}
         onToggle={onToggleHandler}
       >
-        <div ref={listRef}>{children}</div>
+        <div ref={listRef} data-test="DesignSystem-Menu-Wrapper">
+          {children}
+        </div>
       </Popover>
     </MenuContext.Provider>
   );

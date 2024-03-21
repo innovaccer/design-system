@@ -8,14 +8,25 @@ import { handleKeyDown } from './utils';
 type ItemTagType = 'li' | 'div' | 'a';
 
 export interface MenuItemProps extends BaseProps {
+  /**
+   * Set a custom element for `Menu List Item`
+   */
   tagType?: ItemTagType;
+  /**
+   * Handler to be called when `Menu List Item` is clicked
+   */
   onClick?: () => void;
+  /**
+   * React Element to be added inside `Menu List Item`
+   */
   children: React.ReactNode;
 }
 
-export const MenuItem = (props: MenuItemProps) => {
+export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, ref) => {
   const { children, className, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
+  const isSubMenuTrigger = false;
+
   const {
     setOpenPopover,
     setHighlightFirstItem,
@@ -24,6 +35,8 @@ export const MenuItem = (props: MenuItemProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
+    triggerRef,
+    menuID,
   } = contextProp;
 
   const MenuItemClassName = classNames(
@@ -32,6 +45,10 @@ export const MenuItem = (props: MenuItemProps) => {
     },
     className
   );
+
+  const onFocusHandler = (event: React.FocusEvent) => {
+    setFocusedOption?.(event.target as HTMLElement);
+  };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     handleKeyDown(
@@ -42,7 +59,11 @@ export const MenuItem = (props: MenuItemProps) => {
       menuTriggerRef,
       setHighlightFirstItem,
       setHighlightLastItem,
-      listRef
+      listRef,
+      null,
+      isSubMenuTrigger,
+      triggerRef,
+      menuID
     );
   };
 
@@ -52,11 +73,15 @@ export const MenuItem = (props: MenuItemProps) => {
       className={MenuItemClassName}
       tabIndex={-1}
       onKeyDown={onKeyDownHandler}
+      onFocus={onFocusHandler}
+      ref={ref}
       {...rest}
     >
       {children}
     </Listbox.Item>
   );
-};
+});
+
+MenuItem.displayName = 'MenuItem';
 
 export default MenuItem;

@@ -8,7 +8,11 @@ export const handleKeyDown = (
   menuTriggerRef?: any,
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>,
-  listRef?: any
+  listRef?: any,
+  subListRef?: any,
+  isSubMenuTrigger?: boolean,
+  triggerRef?: any,
+  menuID?: string
 ) => {
   switch (event.key) {
     case 'ArrowUp':
@@ -26,11 +30,21 @@ export const handleKeyDown = (
       break;
     case 'Escape':
       setOpenPopover?.(false);
-      menuTriggerRef.current.focus();
+      if (triggerRef && !isSubMenuTrigger) {
+        triggerRef?.current.focus();
+      } else {
+        menuTriggerRef.current.focus();
+      }
       setFocusedOption?.(undefined);
       break;
     case 'Tab':
       setOpenPopover?.(false);
+      break;
+    case 'ArrowRight':
+      navigateSubMenu(isSubMenuTrigger, 'right', subListRef, triggerRef, menuID);
+      break;
+    case 'ArrowLeft':
+      navigateSubMenu(isSubMenuTrigger, 'left', subListRef, triggerRef, menuID);
       break;
     default:
       break;
@@ -48,7 +62,7 @@ const navigateOptions = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   listRef?: any
 ) => {
-  const listItems = listRef.current.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+  const listItems = listRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
   let index = Array.from(listItems).findIndex((item) => {
     return item == focusedOption;
   });
@@ -60,8 +74,33 @@ const navigateOptions = (
   }
 
   const targetOption = listItems[index];
-
   (targetOption as HTMLElement).focus();
   setFocusedOption && setFocusedOption(targetOption);
   targetOption?.scrollIntoView?.({ block: 'center' });
+};
+
+const navigateSubMenu = (
+  isSubMenuTrigger?: boolean,
+  direction?: string,
+  subListRef?: any,
+  triggerRef?: any,
+  menuID?: string
+) => {
+  const element = document.querySelector(`[data-name="${menuID}"]`);
+  const menuPlacement = element?.getAttribute('data-placement');
+
+  if (isSubMenuTrigger) {
+    if (
+      (direction === 'right' && menuPlacement?.includes('right')) ||
+      (direction === 'left' && menuPlacement?.includes('left'))
+    ) {
+      const listItems = subListRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+      (listItems[0] as HTMLElement).focus();
+    }
+  } else if (
+    (direction === 'left' && menuPlacement?.includes('right')) ||
+    (direction === 'right' && menuPlacement?.includes('left'))
+  ) {
+    triggerRef?.current.focus();
+  }
 };

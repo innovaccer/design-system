@@ -9,6 +9,8 @@ export type ContextProps = {
   setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>;
   setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>;
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
+  triggerRef?: React.ReactElement;
+  menuID?: string;
 };
 
 export const MenuContext = React.createContext<ContextProps>({});

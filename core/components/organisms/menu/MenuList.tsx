@@ -7,15 +7,15 @@ type TagType = 'ul' | 'ol' | 'div' | 'nav';
 
 export interface MenuListProps extends BaseProps {
   /**
-   * Describe size of `List Item`
+   * Describe size of `Menu List`
    */
   size?: TListboxSize;
   /**
-   * Set a custom element for `List Item`
+   * Set a custom element for `Menu List`
    */
   tagType?: TagType;
   /**
-   * React Element to be added inside `List Item`
+   * React Element to be added inside `Menu List`
    */
   children: React.ReactNode;
 }

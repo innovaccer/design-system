@@ -84,6 +84,10 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
     open: string;
     close: string;
   };
+  /**
+   * Defines unique name to the popover
+   */
+  name?: string;
 }
 
 export const Popover = (props: PopoverProps) => {
@@ -96,6 +100,7 @@ export const Popover = (props: PopoverProps) => {
     className,
     hideOnReferenceEscape,
     boundaryElement = document.body,
+    name,
     ...rest
   } = props;
 
@@ -127,7 +132,7 @@ export const Popover = (props: PopoverProps) => {
   );
 
   const PopoverWrapper = (
-    <div data-test="DesignSystem-Popover" className={classes} data-layer={true} data-opened={open}>
+    <div data-test="DesignSystem-Popover" className={classes} data-layer={true} data-opened={open} data-name={name}>
       {children}
     </div>
   );

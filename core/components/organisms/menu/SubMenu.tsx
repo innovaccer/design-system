@@ -1,5 +1,7 @@
 import React from 'react';
-// import { Icon } from '@/index';
+import MenuContext from './MenuContext';
+import { handleKeyDown } from './utils';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface SubMenuProps {
   /**
@@ -14,28 +16,62 @@ export interface SubMenuProps {
 
 export const SubMenu = (props: SubMenuProps) => {
   const { children } = props;
+  const menuID = `DesignSystem-Menu--Popover-${uidGenerator()}`;
 
   const [submenuTrigger, submenuContent] = React.Children.toArray(children);
+  const contextProp = React.useContext(MenuContext);
+  const subListRef = React.useRef<HTMLDivElement>(null);
+  const triggerRef = React.useRef();
 
   let subMenuElement = <></>;
-  // const menuTrigger = (
-  //   <div className="d-flex align-items-center justify-content-between w-100">
-  //     {submenuTrigger}
-  //     <Icon name="chevron_right" />
-  //   </div>
-  // );
+
+  const {
+    setOpenPopover,
+    setHighlightFirstItem,
+    setHighlightLastItem,
+    focusedOption,
+    setFocusedOption,
+    menuTriggerRef,
+    listRef,
+  } = contextProp;
+
+  const onKeyDownHandler = (event: React.KeyboardEvent) => {
+    handleKeyDown(
+      event,
+      focusedOption,
+      setFocusedOption,
+      setOpenPopover,
+      menuTriggerRef,
+      setHighlightFirstItem,
+      setHighlightLastItem,
+      listRef,
+      subListRef,
+      true,
+      triggerRef,
+      menuID
+    );
+  };
+
+  const triggerElement = React.cloneElement(submenuTrigger as React.ReactElement, {
+    ...(submenuTrigger as React.ReactElement)?.props,
+    onKeyDown: onKeyDownHandler,
+    ref: triggerRef,
+  });
 
   if (React.isValidElement(submenuContent)) {
+    const { on, children } = submenuContent?.props;
     subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
       ...submenuContent.props,
-      trigger: <>{submenuTrigger}</>,
-      // trigger: menuTrigger,
-      on: submenuContent?.props?.on || 'hover',
+      on: on || 'hover',
       offset: 'small',
+      children: <div ref={subListRef}>{children}</div>,
+      trigger: triggerElement,
+      triggerRef,
+      menuID,
     });
   }
 
-  return <>{subMenuElement}</>;
+  return subMenuElement;
 };
 
 export default SubMenu;
