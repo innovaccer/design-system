@@ -51,8 +51,7 @@
 
 .Listbox-item--option:focus,
 .Listbox-item--option:focus-visible {
-  /* outline: 3px auto var(--secondary-shadow); */
-  outline: 3px auto red;
+  outline: 3px auto var(--secondary-shadow);
 }
 
 .Listbox-item--option:active {
