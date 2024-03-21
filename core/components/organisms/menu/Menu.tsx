@@ -56,7 +56,6 @@ export const Menu = (props: MenuProps) => {
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
-  // const [menuPlacement, setMenuPlacement] = React.useState<string | undefined | null>();
   const listRef = React.createRef<HTMLDivElement>();
   const menuTriggerRef = React.useRef<HTMLButtonElement>();
 
@@ -83,17 +82,6 @@ export const Menu = (props: MenuProps) => {
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
-    } else {
-      // determine the placement of the popover
-      // const element = document.querySelector(`[data-name="${menuID}"]`);
-      // const placement = element?.getAttribute('data-placement');
-      // console.log('placement', placement, 'menuID', menuID, 'element', element);
-      // requestAnimationFrame(() => {
-      //   const element = document.querySelector(`[data-name="${menuID}"]`);
-      //   const placement = element?.getAttribute('data-placement');
-      //   console.log('placement', placement, 'menuID', menuID, 'element', element);
-      //   setMenuPlacement(placement);
-      // });
     }
   }, [openPopover]);
 
@@ -111,7 +99,6 @@ export const Menu = (props: MenuProps) => {
     menuTriggerRef,
     listRef,
     triggerRef,
-    // menuPlacement,
     menuID,
   };
 

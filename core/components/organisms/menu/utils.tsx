@@ -37,10 +37,10 @@ export const handleKeyDown = (
       setOpenPopover?.(false);
       break;
     case 'ArrowRight':
-      navigateSubMenu(isSubMenuTrigger, 'right', listRef, subListRef, triggerRef, menuID);
+      navigateSubMenu(isSubMenuTrigger, 'right', subListRef, triggerRef, menuID);
       break;
     case 'ArrowLeft':
-      navigateSubMenu(isSubMenuTrigger, 'left', listRef, subListRef, triggerRef, menuID);
+      navigateSubMenu(isSubMenuTrigger, 'left', subListRef, triggerRef, menuID);
       break;
     default:
       break;
@@ -79,13 +79,10 @@ const navigateOptions = (
 const navigateSubMenu = (
   isSubMenuTrigger?: boolean,
   direction?: string,
-  listRef?: any,
   subListRef?: any,
   triggerRef?: any,
   menuID?: string
 ) => {
-  console.log('listRef', listRef, 'menuIDmenuIDmenuID', menuID, document.querySelector(`[data-name="${menuID}"]`));
-
   const element = document.querySelector(`[data-name="${menuID}"]`);
   const menuPlacement = element?.getAttribute('data-placement');
   console.log('dddddddplacement', menuPlacement, 'menuID', menuID, 'element', element);

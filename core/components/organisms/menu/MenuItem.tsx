@@ -36,11 +36,8 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
     menuTriggerRef,
     listRef,
     triggerRef,
-    // menuPlacement,
     menuID,
   } = contextProp;
-
-  // console.log('mmnnn menuPlacement', menuPlacement);
 
   const MenuItemClassName = classNames(
     {

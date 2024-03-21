@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Icon } from '@/index';
 import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
 import uidGenerator from '@/utils/uidGenerator';
@@ -34,10 +33,7 @@ export const SubMenu = (props: SubMenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
-    // menuPlacement,
   } = contextProp;
-
-  // console.log('menuPlacementmenuPlacement', menuPlacement);
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     handleKeyDown(
