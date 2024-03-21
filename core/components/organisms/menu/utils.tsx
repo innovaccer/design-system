@@ -11,7 +11,8 @@ export const handleKeyDown = (
   listRef?: any,
   subListRef?: any,
   isSubMenuTrigger?: boolean,
-  triggerRef?: any
+  triggerRef?: any,
+  menuID?: string
 ) => {
   switch (event.key) {
     case 'ArrowUp':
@@ -36,10 +37,10 @@ export const handleKeyDown = (
       setOpenPopover?.(false);
       break;
     case 'ArrowRight':
-      navigateSubMenu(isSubMenuTrigger, 'right', listRef, subListRef, triggerRef);
+      navigateSubMenu(isSubMenuTrigger, 'right', listRef, subListRef, triggerRef, menuID);
       break;
     case 'ArrowLeft':
-      navigateSubMenu(isSubMenuTrigger, 'left', listRef, subListRef, triggerRef);
+      navigateSubMenu(isSubMenuTrigger, 'left', listRef, subListRef, triggerRef, menuID);
       break;
     default:
       break;
@@ -80,15 +81,27 @@ const navigateSubMenu = (
   direction?: string,
   listRef?: any,
   subListRef?: any,
-  triggerRef?: any
+  triggerRef?: any,
+  menuID?: string
 ) => {
-  console.log('listRef', listRef);
+  console.log('listRef', listRef, 'menuIDmenuIDmenuID', menuID, document.querySelector(`[data-name="${menuID}"]`));
+
+  const element = document.querySelector(`[data-name="${menuID}"]`);
+  const menuPlacement = element?.getAttribute('data-placement');
+  console.log('dddddddplacement', menuPlacement, 'menuID', menuID, 'element', element);
+
   if (isSubMenuTrigger) {
-    if (direction === 'right') {
+    if (
+      (direction === 'right' && menuPlacement?.includes('right')) ||
+      (direction === 'left' && menuPlacement?.includes('left'))
+    ) {
       const listItems = subListRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
       (listItems[0] as HTMLElement).focus();
     }
-  } else if (direction === 'left') {
+  } else if (
+    (direction === 'left' && menuPlacement?.includes('right')) ||
+    (direction === 'right' && menuPlacement?.includes('left'))
+  ) {
     triggerRef?.current.focus();
   }
 };

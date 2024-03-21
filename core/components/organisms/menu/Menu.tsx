@@ -44,14 +44,19 @@ export interface MenuProps extends BaseProps {
    * Provide `ref` of the trigger element
    */
   triggerRef?: any;
+  /**
+   * Describe unique id to the `Menu`
+   */
+  menuID?: string;
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, triggerRef } = props;
+  const { children, width, minHeight, maxHeight, className, open, triggerRef, menuID } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
+  // const [menuPlacement, setMenuPlacement] = React.useState<string | undefined | null>();
   const listRef = React.createRef<HTMLDivElement>();
   const menuTriggerRef = React.useRef<HTMLButtonElement>();
 
@@ -78,6 +83,17 @@ export const Menu = (props: MenuProps) => {
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
+    } else {
+      // determine the placement of the popover
+      // const element = document.querySelector(`[data-name="${menuID}"]`);
+      // const placement = element?.getAttribute('data-placement');
+      // console.log('placement', placement, 'menuID', menuID, 'element', element);
+      // requestAnimationFrame(() => {
+      //   const element = document.querySelector(`[data-name="${menuID}"]`);
+      //   const placement = element?.getAttribute('data-placement');
+      //   console.log('placement', placement, 'menuID', menuID, 'element', element);
+      //   setMenuPlacement(placement);
+      // });
     }
   }, [openPopover]);
 
@@ -95,12 +111,15 @@ export const Menu = (props: MenuProps) => {
     menuTriggerRef,
     listRef,
     triggerRef,
+    // menuPlacement,
+    menuID,
   };
 
   return (
     <MenuContext.Provider value={contextProp}>
       <Popover
         data-test="DesignSystem-Menu"
+        name={menuID}
         offset="medium"
         {...props}
         open={openPopover}

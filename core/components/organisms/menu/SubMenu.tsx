@@ -2,6 +2,7 @@ import React from 'react';
 // import { Icon } from '@/index';
 import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
+import uidGenerator from '@/utils/uidGenerator';
 
 export interface SubMenuProps {
   /**
@@ -16,6 +17,7 @@ export interface SubMenuProps {
 
 export const SubMenu = (props: SubMenuProps) => {
   const { children } = props;
+  const menuID = `DesignSystem-Menu--Popover-${uidGenerator()}`;
 
   const [submenuTrigger, submenuContent] = React.Children.toArray(children);
   const contextProp = React.useContext(MenuContext);
@@ -32,7 +34,10 @@ export const SubMenu = (props: SubMenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
+    // menuPlacement,
   } = contextProp;
+
+  // console.log('menuPlacementmenuPlacement', menuPlacement);
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     handleKeyDown(
@@ -45,7 +50,9 @@ export const SubMenu = (props: SubMenuProps) => {
       setHighlightLastItem,
       listRef,
       subListRef,
-      true
+      true,
+      triggerRef,
+      menuID
     );
   };
 
@@ -64,6 +71,7 @@ export const SubMenu = (props: SubMenuProps) => {
       children: <div ref={subListRef}>{children}</div>,
       trigger: triggerElement,
       triggerRef,
+      menuID,
     });
   }
 
