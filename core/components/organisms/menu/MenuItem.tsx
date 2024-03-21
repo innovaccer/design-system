@@ -46,6 +46,10 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
     className
   );
 
+  const onFocusHandler = (event: React.FocusEvent) => {
+    setFocusedOption?.(event.target as HTMLElement);
+  };
+
   const onKeyDownHandler = (event: React.KeyboardEvent) => {
     handleKeyDown(
       event,
@@ -69,6 +73,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       className={MenuItemClassName}
       tabIndex={-1}
       onKeyDown={onKeyDownHandler}
+      onFocus={onFocusHandler}
       ref={ref}
       {...rest}
     >

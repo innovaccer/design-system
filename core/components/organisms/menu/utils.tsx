@@ -70,7 +70,6 @@ const navigateOptions = (
   }
 
   const targetOption = listItems[index];
-
   (targetOption as HTMLElement).focus();
   setFocusedOption && setFocusedOption(targetOption);
   targetOption?.scrollIntoView?.({ block: 'center' });
@@ -85,7 +84,6 @@ const navigateSubMenu = (
 ) => {
   const element = document.querySelector(`[data-name="${menuID}"]`);
   const menuPlacement = element?.getAttribute('data-placement');
-  console.log('dddddddplacement', menuPlacement, 'menuID', menuID, 'element', element);
 
   if (isSubMenuTrigger) {
     if (

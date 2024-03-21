@@ -3,25 +3,11 @@ import { Menu, Icon } from '@/index';
 
 export const nesting = () => {
   return (
-    <Menu trigger={<Menu.Trigger />} className="p-14">
+    <Menu trigger={<Menu.Trigger />}>
       <Menu.Group label="Group 1">
         <Menu.List>
           <Menu.Item>App store</Menu.Item>
           <Menu.Item>Developer Portal</Menu.Item>
-
-          <Menu.SubMenu>
-            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
-              User Admin1
-              <Icon name="chevron_right" />
-            </Menu.Item>
-            <Menu position="left-start" on="click">
-              <Menu.List>
-                <Menu.Item>Users1</Menu.Item>
-                <Menu.Item>Groups1</Menu.Item>
-                <Menu.Item>Roles1</Menu.Item>
-              </Menu.List>
-            </Menu>
-          </Menu.SubMenu>
 
           <Menu.SubMenu>
             <Menu.Item className="d-flex align-items-center justify-content-between w-100">
@@ -46,25 +32,11 @@ const customCode = `
 () => {
 
   return (
-    <Menu trigger={<Menu.Trigger />} className="p-14">
+    <Menu trigger={<Menu.Trigger />}>
       <Menu.Group label="Group 1">
         <Menu.List>
           <Menu.Item>App store</Menu.Item>
           <Menu.Item>Developer Portal</Menu.Item>
-
-          <Menu.SubMenu>
-            <Menu.Item className="d-flex align-items-center justify-content-between w-100">
-              User Admin1
-              <Icon name="chevron_right" />
-            </Menu.Item>
-            <Menu position="left-start" on="click">
-              <Menu.List>
-                <Menu.Item>Users1</Menu.Item>
-                <Menu.Item>Groups1</Menu.Item>
-                <Menu.Item>Roles1</Menu.Item>
-              </Menu.List>
-            </Menu>
-          </Menu.SubMenu>
 
           <Menu.SubMenu>
             <Menu.Item className="d-flex align-items-center justify-content-between w-100">
