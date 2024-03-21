@@ -114,7 +114,7 @@ export const Menu = (props: MenuProps) => {
         className={popoverClassName}
         onToggle={onToggleHandler}
       >
-        <div ref={listRef} data-test="DesignSystem-Menu-Wrapper">
+        <div ref={listRef} data-test="DesignSystem-Menu-Wrapper" className="py-3">
           {children}
         </div>
       </Popover>

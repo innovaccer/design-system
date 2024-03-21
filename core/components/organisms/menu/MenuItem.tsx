@@ -15,7 +15,7 @@ export interface MenuItemProps extends BaseProps {
   /**
    * Handler to be called when `Menu List Item` is clicked
    */
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
   /**
    * React Element to be added inside `Menu List Item`
    */
@@ -23,7 +23,7 @@ export interface MenuItemProps extends BaseProps {
 }
 
 export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, ref) => {
-  const { children, className, ...rest } = props;
+  const { children, className, onClick, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
   const isSubMenuTrigger = false;
 
@@ -67,6 +67,11 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
     );
   };
 
+  const onClickHandler = (event: React.MouseEvent | React.KeyboardEvent) => {
+    setOpenPopover?.(false);
+    onClick?.(event);
+  };
+
   return (
     <Listbox.Item
       data-test="DesignSystem-Menu-ListItem"
@@ -74,6 +79,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       tabIndex={-1}
       onKeyDown={onKeyDownHandler}
       onFocus={onFocusHandler}
+      onClick={onClickHandler}
       ref={ref}
       {...rest}
     >
