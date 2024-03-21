@@ -30,7 +30,11 @@ export const handleKeyDown = (
       break;
     case 'Escape':
       setOpenPopover?.(false);
-      menuTriggerRef.current.focus();
+      if (triggerRef && !isSubMenuTrigger) {
+        triggerRef?.current.focus();
+      } else {
+        menuTriggerRef.current.focus();
+      }
       setFocusedOption?.(undefined);
       break;
     case 'Tab':
