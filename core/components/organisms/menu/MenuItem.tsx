@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseProps } from '@/utils/types';
+import { BaseProps, BaseHtmlProps } from '@/utils/types';
 import { Listbox } from '@/index';
 import classNames from 'classnames';
 import MenuContext from './MenuContext';
@@ -7,7 +7,7 @@ import { handleKeyDown } from './utils';
 
 type ItemTagType = 'li' | 'div' | 'a';
 
-export interface MenuItemProps extends BaseProps {
+export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement> {
   /**
    * Set a custom element for `Menu List Item`
    */
@@ -27,17 +27,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
   const contextProp = React.useContext(MenuContext);
   const isSubMenuTrigger = false;
 
-  const {
-    setOpenPopover,
-    setHighlightFirstItem,
-    setHighlightLastItem,
-    focusedOption,
-    setFocusedOption,
-    menuTriggerRef,
-    listRef,
-    triggerRef,
-    menuID,
-  } = contextProp;
+  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef, triggerRef, menuID } = contextProp;
 
   const MenuItemClassName = classNames(
     {
@@ -57,8 +47,6 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       setFocusedOption,
       setOpenPopover,
       menuTriggerRef,
-      setHighlightFirstItem,
-      setHighlightLastItem,
       listRef,
       null,
       isSubMenuTrigger,

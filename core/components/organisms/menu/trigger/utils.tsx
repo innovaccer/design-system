@@ -15,10 +15,6 @@ export const handleKeyDown = (
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
       break;
-    // case 'Enter':
-    //   // setOpenPopover?.(true);
-    //   // setHighlightFirstItem?.(true);
-    //   break;
     case 'Escape':
     case 'Tab':
       setOpenPopover?.(false);
