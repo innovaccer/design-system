@@ -2,11 +2,19 @@ import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
 import schema from '@/components/organisms/grid/__stories__/_common_/schema';
-import { Card, Table } from '@/index';
+import { Card, Table, Button } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { action } from '@/utils/action';
 
 export const syncTable = () => {
+  const onDataExport = (data) => {
+    action('Exporting data', data)();
+  };
+
+  const globalActionTrigger = (data) => {
+    return <Button onClick={() => onDataExport(data)}>Export</Button>;
+  };
+
   return (
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
@@ -27,6 +35,7 @@ export const syncTable = () => {
           }
           headerOptions={{
             withSearch: true,
+            globalActionRenderer: globalActionTrigger,
           }}
           onSearch={(currData, searchTerm) => {
             return currData.filter(
@@ -157,6 +166,14 @@ const customCode = `() => {
 
   const [error, setError] = React.useState(false);
 
+  const onDataExport = (data) => {
+    console.log("Exporting data", data);
+  }
+
+  const globalActionTrigger = (data) => {
+    return (<Button onClick={() => onDataExport(data)}>Export</Button>);
+  } 
+
   return (
     <div className="vh-75">
       <Card className="h-100 overflow-hidden">
@@ -166,7 +183,8 @@ const customCode = `() => {
           schema={schema}
           withHeader={true}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
+            globalActionRenderer : globalActionTrigger 
           }}
           onSearch={(currData, searchTerm) => {
             console.log('onsearch called', searchTerm);

@@ -207,6 +207,7 @@ interface SharedTableProps extends BaseProps {
    *    dynamicColumn?: boolean;
    *    allowSelectAll?: boolean;
    *    customSelectionLabel?: string;
+   *    globalActionRenderer?: (data: Data) => React.ReactNode;
    * }
    * </pre>
    *
@@ -218,6 +219,7 @@ interface SharedTableProps extends BaseProps {
    * | dynamicColumn | Set to use Column controlling dropdown | true |
    * | allowSelectAll | Set to show Select All button | |
    * | customSelectionLabel | Set to show custom label on row selection | 'items' |
+   * | globalActionRenderer | global actions to be rendered | |
    *
    */
   headerOptions?: ExternalHeaderProps;
@@ -347,6 +349,7 @@ export type TableProps = AsyncTableProps & SyncTableProps;
 interface TableState {
   async: boolean;
   data: TableProps['data'];
+  displayData: TableProps['data'];
   schema: TableProps['schema'];
   sortingList: TableProps['sortingList'];
   filterList: TableProps['filterList'];
@@ -383,6 +386,7 @@ export const defaultProps = {
   pageSize: 15,
   draggable: true,
   data: [],
+  displayData: [],
   schema: [],
   loading: false,
   error: false,
@@ -436,6 +440,7 @@ export class Table extends React.Component<TableProps, TableState> {
     this.state = {
       async,
       data: !async ? data : [],
+      displayData: !async ? data : [],
       schema: !async ? schema : [],
       page: props.page,
       sortingList: props.sortingList,
@@ -462,6 +467,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
         this.setState({
           data,
+          displayData: data,
           schema,
           error: this.props.error || false,
           errorType: this.props.errorType,
@@ -475,6 +481,7 @@ export class Table extends React.Component<TableProps, TableState> {
         this.setState(
           {
             data,
+            displayData: data,
             schema,
             loading: this.props.loading || false,
             error: this.props.error || false,
@@ -560,6 +567,7 @@ export class Table extends React.Component<TableProps, TableState> {
               const schema = this.state.schema.length ? this.state.schema : res.schema;
               this.setState({
                 data,
+                displayData: data,
                 schema,
                 selectAll: getSelectAll(data, this.props.selectDisabledRow),
                 totalRecords: res.count,
@@ -598,6 +606,7 @@ export class Table extends React.Component<TableProps, TableState> {
         errorType: 'NO_RECORDS_FOUND',
         selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
         schema: renderedSchema,
+        displayData: sortedData,
         data: renderedData,
       });
     }
