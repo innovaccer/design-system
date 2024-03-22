@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Card, Table, CardSubdued, Text, Column, Row } from '@/index';
+import { Card, Table, CardSubdued, Text, Column, Row, Button } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
+import { action } from '@/utils/action';
 
 export const nestedTableWithNestedCards = () => {
   const data = [
@@ -128,6 +129,21 @@ export const nestedTableWithNestedCards = () => {
     </CardSubdued>
   );
 
+  const onDataExport = (data) => {
+    action('Exporting data', data)();
+  };
+
+  const globalActionTrigger = (data) => {
+    return (
+      <div className="d-flex">
+        <Button onClick={() => onDataExport(data)}>Export</Button>
+        <Button className="ml-4" appearance="primary" onClick={() => onDataExport(data)}>
+          Add to simulation
+        </Button>
+      </div>
+    );
+  };
+
   return (
     <Card>
       <Table
@@ -137,6 +153,7 @@ export const nestedTableWithNestedCards = () => {
         headerOptions={{
           withSearch: true,
           dynamicColumn: false,
+          globalActionRenderer: globalActionTrigger,
         }}
         separator={false}
         showMenu={false}
@@ -259,6 +276,21 @@ const customCode = `() => {
     },
   ];
 
+  const onDataExport = (data) => {
+    console.log('Exporting data', data);
+  };
+
+  const globalActionTrigger = (data) => {
+    return (
+      <div className="d-flex">
+        <Button onClick={() => onDataExport(data)}>Export</Button>
+        <Button className="ml-4" appearance="primary" onClick={() => onDataExport(data)}>
+          Add to simulation
+        </Button>
+      </div>
+    );
+  };
+
   const nestedRowRenderer = (props) => {
     const {
       data,
@@ -295,7 +327,8 @@ const customCode = `() => {
         withHeader={true}
         headerOptions={{
           withSearch: true,
-          dynamicColumn: false
+          dynamicColumn: false,
+          globalActionRenderer : globalActionTrigger
         }}
         separator={false}
         showMenu={false}

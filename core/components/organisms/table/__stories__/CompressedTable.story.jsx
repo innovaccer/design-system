@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Card, Table } from '@/index';
+import { Card, Table, Button } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
+import { action } from '@/utils/action';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 
 export const compressedTable = () => {
@@ -89,6 +90,14 @@ export const compressedTable = () => {
     },
   ];
 
+  const onDataExport = () => {
+    action('Exporting data', data)();
+  };
+
+  const globalActionTrigger = (data) => {
+    return <Button onClick={() => onDataExport(data)}>Export</Button>;
+  };
+
   return (
     <Card>
       <Table
@@ -101,6 +110,7 @@ export const compressedTable = () => {
         withHeader={true}
         headerOptions={{
           withSearch: true,
+          globalActionRenderer: globalActionTrigger,
         }}
         onSearch={(currData, searchTerm) => {
           return currData.filter((d) => d.name.toLowerCase().match(searchTerm.toLowerCase()));
@@ -197,6 +207,14 @@ const customCode = `() => {
     },
   ];
 
+  const onDataExport = (data) => {
+    console.log("Exporting data", data);
+  }
+  
+  const globalActionTrigger = (data) => {
+    return (<Button onClick={() => onDataExport(data)}>Export</Button>);
+  } 
+
   return (
       <Card>
         <Table
@@ -207,7 +225,8 @@ const customCode = `() => {
           schema={schema}
           withHeader={true}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
+            globalActionRenderer : globalActionTrigger
           }}
           onSearch={(currData, searchTerm) => {
             return currData.filter(d =>
