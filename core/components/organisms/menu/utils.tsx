@@ -6,8 +6,6 @@ export const handleKeyDown = (
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
   menuTriggerRef?: any,
-  setHighlightFirstItem?: React.Dispatch<React.SetStateAction<boolean>>,
-  setHighlightLastItem?: React.Dispatch<React.SetStateAction<boolean>>,
   listRef?: any,
   subListRef?: any,
   isSubMenuTrigger?: boolean,
@@ -24,9 +22,8 @@ export const handleKeyDown = (
       navigateOptions('down', focusedOption, setFocusedOption, listRef);
       break;
     case 'Enter':
-      handleEnterKey(focusedOption, menuTriggerRef);
-      setHighlightLastItem?.(false);
-      setHighlightFirstItem?.(false);
+      (focusedOption as HTMLElement)?.click();
+      setOpenPopover?.(false);
       break;
     case 'Escape':
       setOpenPopover?.(false);
@@ -49,11 +46,6 @@ export const handleKeyDown = (
     default:
       break;
   }
-};
-
-const handleEnterKey = (focusedOption: Element | undefined, menuTriggerRef?: any) => {
-  (focusedOption as HTMLElement)?.click();
-  menuTriggerRef.current.focus();
 };
 
 const navigateOptions = (
