@@ -88,6 +88,8 @@ export const Menu = (props: MenuProps) => {
     if (!openPopover) {
       setHighlightFirstItem(false);
       setHighlightLastItem(false);
+    } else {
+      setHighlightFirstItem(true);
     }
   }, [openPopover]);
 
