@@ -11,6 +11,8 @@ import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { focusListItem } from './trigger/utils';
 
+type ActionType = 'click' | 'hover';
+
 export interface MenuProps extends BaseProps {
   /**
    * Element to be rendered inside `Menu`
@@ -48,6 +50,10 @@ export interface MenuProps extends BaseProps {
    * Describe unique id to the `Menu`
    */
   menuID?: string;
+  /**
+   * Event triggering the `Menu`
+   */
+  on?: ActionType;
 }
 
 export const Menu = (props: MenuProps) => {

@@ -36,8 +36,27 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
     className
   );
 
+  React.useEffect(() => {
+    const handlePopoverOpen = () => {
+      setOpenPopover?.(true);
+    };
+
+    const handlePopoverClose = () => {
+      setOpenPopover?.(false);
+    };
+
+    (ref as any)?.current?.addEventListener('focus', handlePopoverOpen);
+    (ref as any)?.current?.addEventListener('blur', handlePopoverClose);
+
+    return () => {
+      (ref as any)?.current?.removeEventListener('focus', handlePopoverOpen);
+      (ref as any)?.current?.removeEventListener('blur', handlePopoverClose);
+    };
+  }, [ref]);
+
   const onFocusHandler = (event: React.FocusEvent) => {
     setFocusedOption?.(event.target as HTMLElement);
+    setOpenPopover?.(true);
   };
 
   const onKeyDownHandler = (event: React.KeyboardEvent) => {

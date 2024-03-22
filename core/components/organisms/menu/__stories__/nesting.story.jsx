@@ -14,7 +14,7 @@ export const nesting = () => {
               User Admin
               <Icon name="chevron_right" />
             </Menu.Item>
-            <Menu position="right-start" on="click">
+            <Menu position="right-start" on="hover">
               <Menu.List>
                 <Menu.Item>Users</Menu.Item>
                 <Menu.Item>Groups</Menu.Item>
@@ -43,7 +43,7 @@ const customCode = `
               User Admin
               <Icon name="chevron_right" />
             </Menu.Item>
-            <Menu position="right-start" on="click">
+            <Menu position="right-start" on="hover">
               <Menu.List>
                 <Menu.Item>Users</Menu.Item>
                 <Menu.Item>Groups</Menu.Item>
