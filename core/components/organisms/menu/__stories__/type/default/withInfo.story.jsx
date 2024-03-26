@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu, Text } from '@/index';
 
-export const withInfo = () => {
+export const withKeyboardShortcut = () => {
   return (
     <Menu trigger={<Menu.Trigger />}>
       <Menu.List>
@@ -47,7 +47,7 @@ const customCode = `
 `;
 
 export default {
-  title: 'Components/Menu/Type/Default/With Info',
+  title: 'Components/Menu/Type/Default/With Keyboard Shortcut',
   component: Menu,
   subcomponents: {
     'Menu.Trigger': Menu.Trigger,
