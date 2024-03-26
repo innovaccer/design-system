@@ -75047,6 +75047,1256 @@ exports[`DateRangePicker component
 `;
 
 exports[`DateRangePicker component 
+  allowReverseSelection: false
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Calendar-wrapper"
+      data-test="DesignSystem-Calendar-Wrapper"
+    >
+      <div
+        class="Calendar Calendar-date--large Calendar--large"
+        data-test="DesignSystem-Calendar"
+      >
+        <div
+          class="Calendar-header--large"
+        >
+          <button
+            class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+            data-test="DesignSystem-Button"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_back
+              </i>
+            </div>
+          </button>
+          <div
+            class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
+          >
+            <div
+              class="d-flex justify-content-center align-items-center"
+            >
+              <h5
+                class="Heading Heading--s Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Jun
+              </h5>
+            </div>
+            <div
+              class="ml-4 d-flex justify-content-center align-items-center"
+            >
+              <h5
+                class="Heading Heading--s Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                2021
+              </h5>
+            </div>
+          </div>
+          <button
+            class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+            data-test="DesignSystem-Button"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_forward
+              </i>
+            </div>
+          </button>
+        </div>
+        <div
+          class="Calendar-body"
+        >
+          <div
+            class="Calendar-dayValues"
+          >
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Su
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Mo
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Tu
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              We
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Th
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Fr
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Sa
+            </span>
+          </div>
+          <div
+            class="Calendar-dateValues"
+          >
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inEdgeRange Calendar-valueWrapper--dummy Calendar-valueWrapper--inStartRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inEdgeRange Calendar-valueWrapper--inEndRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inEdgeRange Calendar-valueWrapper--inStartRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  6
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  7
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--end"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  8
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  9
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  10
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  11
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  12
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  13
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  14
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  15
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  16
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  17
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  18
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  19
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  20
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  21
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  22
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  23
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  24
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  25
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  26
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  27
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  28
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  29
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  6
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  7
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  8
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  9
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  10
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`DateRangePicker component 
+  allowReverseSelection: true
+ 1`] = `
+<body>
+  <div>
+    <div
+      class="Calendar-wrapper"
+      data-test="DesignSystem-Calendar-Wrapper"
+    >
+      <div
+        class="Calendar Calendar-date--large Calendar--large"
+        data-test="DesignSystem-Calendar"
+      >
+        <div
+          class="Calendar-header--large"
+        >
+          <button
+            class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--prev"
+            data-test="DesignSystem-Button"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_back
+              </i>
+            </div>
+          </button>
+          <div
+            class="Calendar-headerContent Calendar-headerContent--noIcon-left Calendar-headerContent--noIcon-right"
+          >
+            <div
+              class="d-flex justify-content-center align-items-center"
+            >
+              <h5
+                class="Heading Heading--s Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                Jun
+              </h5>
+            </div>
+            <div
+              class="ml-4 d-flex justify-content-center align-items-center"
+            >
+              <h5
+                class="Heading Heading--s Heading--default"
+                data-test="DesignSystem-Heading"
+              >
+                2021
+              </h5>
+            </div>
+          </div>
+          <button
+            class="Button Button--regular Button--regularSquare Button--basic Calendar-headerIcon Calendar-headerIcon--next"
+            data-test="DesignSystem-Button"
+            tabindex="0"
+            type="button"
+          >
+            <div
+              class="Button-icon"
+            >
+              <i
+                class="material-symbols material-symbols-rounded Icon"
+                data-test="DesignSystem-Button--Icon"
+                role="button"
+                style="font-size: 16px; width: 16px;"
+              >
+                arrow_forward
+              </i>
+            </div>
+          </button>
+        </div>
+        <div
+          class="Calendar-body"
+        >
+          <div
+            class="Calendar-dayValues"
+          >
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Su
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Mo
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Tu
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              We
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Th
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Fr
+            </span>
+            <span
+              class="Text Text--default Text--strong Text--regular Calendar-valueWrapper"
+              data-test="DesignSystem-Text"
+            >
+              Sa
+            </span>
+          </div>
+          <div
+            class="Calendar-dateValues"
+          >
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inEdgeRange Calendar-valueWrapper--dummy Calendar-valueWrapper--inStartRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  31
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inEdgeRange Calendar-valueWrapper--inEndRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inEdgeRange Calendar-valueWrapper--inStartRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  6
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  7
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--inRange Calendar-valueWrapper--end"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-white Calendar-value Calendar-value--active Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  8
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  9
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  10
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  11
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  12
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  13
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  14
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  15
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  16
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  17
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  18
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  19
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  20
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  21
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  22
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  23
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  24
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  25
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  26
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  27
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  28
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  29
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--regular color-inverse Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  30
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  1
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  2
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  3
+                </span>
+              </div>
+            </div>
+            <div
+              class="Calendar-valueRow"
+            >
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  4
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  5
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  6
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  7
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  8
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  9
+                </span>
+              </div>
+              <div
+                class="Calendar-valueWrapper Calendar-valueWrapper--dummy"
+                data-test="designSystem-Calendar-WrapperClass"
+              >
+                <span
+                  class="Text Text--default Text--regular Calendar-value Calendar-inRangeValue Calendar-dateValue Calendar-dateValue--large"
+                  data-test="DesignSystem-Calendar--dateValue"
+                >
+                  10
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`DateRangePicker component 
   yearNav: 1, disabledAfter: 1629790081880
  1`] = `
 <body>
