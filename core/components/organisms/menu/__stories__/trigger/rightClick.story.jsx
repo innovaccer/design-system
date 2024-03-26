@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Menu } from '@/index';
+import { Menu, Text } from '@/index';
 
 // CSF format story
 export const rightClick = () => {
@@ -22,7 +22,8 @@ export const rightClick = () => {
 
   return (
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-    <div className="bg-secondary p-10" onContextMenu={handleContextMenu} onClick={handleDocumentClick}>
+    <div className="bg-secondary-lighter p-10" onContextMenu={handleContextMenu} onClick={handleDocumentClick}>
+      <Text>Right click to open popover</Text>
       <Menu triggerCoordinates={popoverPosition} open={popoverVisible}>
         <Menu.List>
           <Menu.Item>Edit</Menu.Item>
@@ -54,7 +55,8 @@ const customCode = `() => {
   };
 
   return ( 
-    <div className="bg-secondary p-10" onContextMenu={handleContextMenu} onClick={handleDocumentClick}>
+    <div className="bg-secondary-lighter p-10" onContextMenu={handleContextMenu} onClick={handleDocumentClick}>
+      <Text>Right click to open popover</Text>
       <Menu triggerCoordinates={popoverPosition} open={popoverVisible}>
         <Menu.List>
           <Menu.Item>Edit</Menu.Item>
@@ -70,6 +72,13 @@ const customCode = `() => {
 export default {
   title: 'Components/Menu/Trigger/Right Click',
   component: Menu,
+  subcomponents: {
+    'Menu.Trigger': Menu.Trigger,
+    'Menu.Group': Menu.Group,
+    'Menu.List': Menu.List,
+    'Menu.Item': Menu.Item,
+    'Menu.SubMenu': Menu.SubMenu,
+  },
   parameters: {
     docs: {
       docPage: {
