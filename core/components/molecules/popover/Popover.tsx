@@ -88,6 +88,13 @@ export interface PopoverProps extends Pick<PopperWrapperProps, PopperProps>, Bas
    * Defines unique name to the popover
    */
   name?: string;
+  /**
+   * Defines coordinates where you need to position a popover
+   */
+  triggerCoordinates?: {
+    x: number;
+    y: number;
+  };
 }
 
 export const Popover = (props: PopoverProps) => {

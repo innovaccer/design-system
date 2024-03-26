@@ -54,6 +54,13 @@ export interface MenuProps extends BaseProps {
    * Event triggering the `Menu`
    */
   on?: ActionType;
+  /**
+   * Defines coordinates where you need to position a popover
+   */
+  triggerCoordinates?: {
+    x: number;
+    y: number;
+  };
 }
 
 export const Menu = (props: MenuProps) => {
@@ -71,6 +78,10 @@ export const Menu = (props: MenuProps) => {
     },
     className
   );
+
+  React.useEffect(() => {
+    setOpenPopover(open);
+  }, [open]);
 
   React.useEffect(() => {
     if (highlightFirstItem && openPopover) {

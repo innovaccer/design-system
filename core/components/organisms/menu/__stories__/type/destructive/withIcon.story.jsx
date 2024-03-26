@@ -14,7 +14,7 @@ export const withIcon = () => {
           <Text>Copy</Text>
         </Menu.Item>
         <Menu.Item className="d-flex align-items-center">
-          <Icon name="delete" appearance="alert" className="mr-4 my-2" />
+          <Icon name="delete" appearance="alert" className="mr-4 my-2" type="rounded" />
           <Text appearance="destructive">Delete</Text>
         </Menu.Item>
       </Menu.List>
@@ -37,7 +37,7 @@ const customCode = `
           <Text>Copy</Text>
         </Menu.Item>
         <Menu.Item className="d-flex align-items-center">
-          <Icon name="delete" appearance="alert" className="mr-4 my-2" />
+          <Icon name="delete" appearance="alert" className="mr-4 my-2" type="rounded" />
           <Text appearance="destructive">Delete</Text>
         </Menu.Item>
       </Menu.List>
