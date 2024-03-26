@@ -20,10 +20,14 @@ export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | 
    * React Element to be added inside `Menu List Item`
    */
   children: React.ReactNode;
+  /**
+   * Disables the menu item
+   */
+  disabled?: boolean;
 }
 
 export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, ref) => {
-  const { children, className, onClick, ...rest } = props;
+  const { children, className, onClick, disabled, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
   const isSubMenuTrigger = false;
 
@@ -75,6 +79,9 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
   };
 
   const onClickHandler = (event: React.MouseEvent | React.KeyboardEvent) => {
+    if (disabled) {
+      return;
+    }
     setOpenPopover?.(false);
     onClick?.(event);
   };
@@ -87,6 +94,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       onKeyDown={onKeyDownHandler}
       onFocus={onFocusHandler}
       onClick={onClickHandler}
+      disabled={disabled}
       ref={ref}
       {...rest}
     >
