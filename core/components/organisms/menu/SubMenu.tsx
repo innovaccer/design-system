@@ -21,7 +21,7 @@ export const SubMenu = (props: SubMenuProps) => {
   const [submenuTrigger, submenuContent] = React.Children.toArray(children);
   const contextProp = React.useContext(MenuContext);
   const subListRef = React.useRef<HTMLDivElement>(null);
-  const triggerRef = React.useRef();
+  const triggerRef = React.useRef<HTMLDivElement>(null);
 
   let subMenuElement = <></>;
 

@@ -43,7 +43,7 @@ export interface MenuProps extends BaseProps {
   /**
    * Provide `ref` of the trigger element
    */
-  triggerRef?: any;
+  triggerRef?: React.RefObject<HTMLDivElement>;
   /**
    * Describe unique id to the `Menu`
    */
@@ -64,7 +64,7 @@ export const Menu = (props: MenuProps) => {
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const listRef = React.createRef<HTMLDivElement>();
-  const menuTriggerRef = React.useRef<HTMLButtonElement>();
+  const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
 
   const popoverClassName = classNames(
     {
