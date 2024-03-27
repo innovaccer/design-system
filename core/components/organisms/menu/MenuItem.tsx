@@ -49,12 +49,12 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       setOpenPopover?.(false);
     };
 
-    (ref as any)?.current?.addEventListener('focus', handlePopoverOpen);
-    (ref as any)?.current?.addEventListener('blur', handlePopoverClose);
+    (ref as React.RefObject<HTMLDivElement>)?.current?.addEventListener('focus', handlePopoverOpen);
+    (ref as React.RefObject<HTMLDivElement>)?.current?.addEventListener('blur', handlePopoverClose);
 
     return () => {
-      (ref as any)?.current?.removeEventListener('focus', handlePopoverOpen);
-      (ref as any)?.current?.removeEventListener('blur', handlePopoverClose);
+      (ref as React.RefObject<HTMLDivElement>)?.current?.removeEventListener('focus', handlePopoverOpen);
+      (ref as React.RefObject<HTMLDivElement>)?.current?.removeEventListener('blur', handlePopoverClose);
     };
   }, [ref]);
 

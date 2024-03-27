@@ -5,11 +5,11 @@ export const handleKeyDown = (
   focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
   setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
-  menuTriggerRef?: any,
-  listRef?: any,
-  subListRef?: any,
+  menuTriggerRef?: React.RefObject<HTMLButtonElement>,
+  listRef?: React.RefObject<HTMLDivElement>,
+  subListRef?: React.RefObject<HTMLDivElement> | null,
   isSubMenuTrigger?: boolean,
-  triggerRef?: any,
+  triggerRef?: React.RefObject<HTMLDivElement> | React.MutableRefObject<HTMLDivElement>,
   menuID?: string
 ) => {
   switch (event.key) {
@@ -28,9 +28,9 @@ export const handleKeyDown = (
     case 'Escape':
       setOpenPopover?.(false);
       if (triggerRef && !isSubMenuTrigger) {
-        triggerRef?.current.focus();
+        triggerRef?.current?.focus();
       } else {
-        menuTriggerRef.current.focus();
+        menuTriggerRef?.current?.focus();
       }
       setFocusedOption?.(undefined);
       break;
@@ -74,8 +74,8 @@ const navigateOptions = (
 const navigateSubMenu = (
   isSubMenuTrigger?: boolean,
   direction?: string,
-  subListRef?: any,
-  triggerRef?: any,
+  subListRef?: React.RefObject<HTMLDivElement> | null,
+  triggerRef?: React.RefObject<HTMLDivElement>,
   menuID?: string
 ) => {
   const element = document.querySelector(`[data-name="${menuID}"]`);
@@ -86,13 +86,13 @@ const navigateSubMenu = (
       (direction === 'right' && menuPlacement?.includes('right')) ||
       (direction === 'left' && menuPlacement?.includes('left'))
     ) {
-      const listItems = subListRef.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
-      (listItems[0] as HTMLElement).focus();
+      const listItems = subListRef?.current?.querySelectorAll('[data-test="DesignSystem-Listbox-ItemWrapper"]');
+      (listItems?.[0] as HTMLElement).focus();
     }
   } else if (
     (direction === 'left' && menuPlacement?.includes('right')) ||
     (direction === 'right' && menuPlacement?.includes('left'))
   ) {
-    triggerRef?.current.focus();
+    triggerRef?.current?.focus();
   }
 };
