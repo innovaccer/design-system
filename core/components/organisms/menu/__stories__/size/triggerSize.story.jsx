@@ -79,6 +79,9 @@ export default {
       docPage: {
         title: 'Menu',
         customCode,
+        props: {
+          exclude: ['triggerRef', 'menuID'],
+        },
       },
     },
   },
