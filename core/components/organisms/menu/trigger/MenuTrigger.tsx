@@ -33,6 +33,9 @@ export const MenuTrigger = (props: MenuTriggerProps) => {
       data-test="DesignSystem-Menu-Trigger"
       icon="more_horiz"
       ref={menuTriggerRef}
+      aria-label="Open menu"
+      aria-haspopup={true}
+      aria-expanded={openPopover}
       {...props}
       className={triggerClassName}
       onKeyDown={onKeyDownHandler}

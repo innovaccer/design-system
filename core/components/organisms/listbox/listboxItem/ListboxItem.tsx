@@ -6,9 +6,9 @@ import { ListBody } from './ListBody';
 import { NestedList } from '../nestedList';
 import classNames from 'classnames';
 
-export type ItemTagType = 'li' | 'div';
+export type ItemTagType = 'li' | 'div' | 'a';
 
-export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement> {
+export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement | HTMLAnchorElement> {
   /**
    * React Element to be added inside `list`
    */

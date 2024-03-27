@@ -13,7 +13,7 @@ export interface MenuListProps extends BaseProps {
   /**
    * Set a custom element for `Menu List`
    */
-  tagType?: TagType;
+  tagName?: TagType;
   /**
    * React Element to be added inside `Menu List`
    */
