@@ -5,7 +5,7 @@ export const optionSize = () => {
   return (
     <Row>
       <Column>
-        <Label withInput={true}>compressed</Label>
+        <Label withInput={true}>Compressed Options</Label>
         <br />
         <Menu trigger={<Menu.Trigger />}>
           <Menu.List size="compressed">
@@ -17,7 +17,7 @@ export const optionSize = () => {
       </Column>
 
       <Column>
-        <Label withInput={true}>standard</Label>
+        <Label withInput={true}>Standard Options</Label>
         <br />
         <Menu trigger={<Menu.Trigger />}>
           <Menu.List size="standard">
@@ -29,7 +29,7 @@ export const optionSize = () => {
       </Column>
 
       <Column>
-        <Label withInput={true}>tight</Label>
+        <Label withInput={true}>Tight Options</Label>
         <br />
         <Menu trigger={<Menu.Trigger />}>
           <Menu.List size="tight">
@@ -49,7 +49,7 @@ const customCode = `
   return (
     <Row>
       <Column>
-        <Label withInput={true}>compressed</Label>
+        <Label withInput={true}>Compressed Options</Label>
         <br />
         <Menu trigger={<Menu.Trigger />}>
           <Menu.List size="compressed">
@@ -61,7 +61,7 @@ const customCode = `
       </Column>
 
       <Column>
-        <Label withInput={true}>standard</Label>
+        <Label withInput={true}>Standard Options</Label>
         <br />
         <Menu trigger={<Menu.Trigger />}>
           <Menu.List size="standard">
@@ -73,7 +73,7 @@ const customCode = `
       </Column>
 
       <Column>
-        <Label withInput={true}>tight</Label>
+        <Label withInput={true}>Tight Options</Label>
         <br />
         <Menu trigger={<Menu.Trigger />}>
           <Menu.List size="tight">
