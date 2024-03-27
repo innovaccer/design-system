@@ -11,7 +11,7 @@ export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | 
   /**
    * Set a custom element for `Menu List Item`
    */
-  tagType?: ItemTagType;
+  tagName?: ItemTagType;
   /**
    * Handler to be called when `Menu List Item` is clicked
    */
@@ -96,6 +96,8 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       onClick={onClickHandler}
       disabled={disabled}
       ref={ref}
+      role="menuitem"
+      aria-disabled={disabled}
       {...rest}
     >
       {children}
@@ -104,5 +106,9 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
 });
 
 MenuItem.displayName = 'MenuItem';
+
+MenuItem.defaultProps = {
+  tagName: 'a',
+};
 
 export default MenuItem;

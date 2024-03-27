@@ -46,6 +46,9 @@ export const SubMenu = (props: SubMenuProps) => {
     ...(submenuTrigger as React.ReactElement)?.props,
     onKeyDown: onKeyDownHandler,
     ref: triggerRef,
+    'aria-haspopup': 'menu',
+    'aria-expanded': subListRef.current ? 'true' : 'false',
+    'aria-controls': menuID,
   });
 
   if (React.isValidElement(submenuContent)) {

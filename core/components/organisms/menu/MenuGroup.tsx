@@ -22,7 +22,7 @@ export const MenuGroup = (props: MenuGroupProps) => {
 
   if (label) {
     return (
-      <div data-test="DesignSystem-Menu-Group" {...rest}>
+      <div data-test="DesignSystem-Menu-Group" role="group" {...rest}>
         <Text size="small" weight="medium" appearance="subtle" className="Menu-Group-Label">
           {label}
         </Text>
@@ -32,7 +32,7 @@ export const MenuGroup = (props: MenuGroupProps) => {
   }
 
   return (
-    <div data-test="DesignSystem-Menu-Group" {...rest}>
+    <div data-test="DesignSystem-Menu-Group" role="group" {...rest}>
       {children}
       {showDivider && <Divider className="my-3" />}
     </div>
