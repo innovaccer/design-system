@@ -55,10 +55,14 @@ export interface MenuProps extends BaseProps {
     x: number;
     y: number;
   };
+  /**
+   * Callback function to be called when menu item is clicked
+   */
+  onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, triggerRef, menuID } = props;
+  const { children, width, minHeight, maxHeight, className, open, triggerRef, menuID, onClick: onItemClick } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
@@ -111,6 +115,7 @@ export const Menu = (props: MenuProps) => {
     listRef,
     triggerRef,
     menuID,
+    onItemClick,
   };
 
   return (

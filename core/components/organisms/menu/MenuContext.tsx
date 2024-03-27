@@ -11,6 +11,7 @@ export type ContextProps = {
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>;
   triggerRef?: React.RefObject<HTMLDivElement>;
   menuID?: string;
+  onItemClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
 };
 
 export const MenuContext = React.createContext<ContextProps>({});

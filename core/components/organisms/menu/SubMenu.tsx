@@ -52,7 +52,7 @@ export const SubMenu = (props: SubMenuProps) => {
   });
 
   if (React.isValidElement(submenuContent)) {
-    const { on, children } = submenuContent?.props;
+    const { on, children, onClick } = submenuContent?.props;
     subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
       ...submenuContent.props,
       on: on || 'hover',
@@ -61,6 +61,10 @@ export const SubMenu = (props: SubMenuProps) => {
       trigger: triggerElement,
       triggerRef,
       menuID,
+      onClick: (event: React.MouseEvent | React.KeyboardEvent) => {
+        setOpenPopover?.(false);
+        onClick?.(event);
+      },
     });
   }
 
