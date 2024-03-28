@@ -72,7 +72,7 @@ export const Menu = (props: MenuProps) => {
 
   const popoverClassName = classNames(
     {
-      'overflow-auto': true,
+      ['Menu']: true,
     },
     className
   );
@@ -126,11 +126,16 @@ export const Menu = (props: MenuProps) => {
         offset="medium"
         {...props}
         open={openPopover}
-        customStyle={{ width, minHeight, maxHeight }}
-        className={popoverClassName}
+        customStyle={{ width }}
         onToggle={onToggleHandler}
       >
-        <div ref={listRef} role="menu" data-test="DesignSystem-Menu-Wrapper" className="py-3">
+        <div
+          ref={listRef}
+          role="menu"
+          data-test="DesignSystem-Menu-Wrapper"
+          className={popoverClassName}
+          style={{ maxHeight, minHeight }}
+        >
           {children}
         </div>
       </Popover>
