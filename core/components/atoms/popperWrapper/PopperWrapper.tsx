@@ -79,6 +79,13 @@ export interface PopperWrapperProps {
     open: string;
     close: string;
   };
+  /**
+   * Defines coordinates where you need to position a popover
+   */
+  triggerCoordinates?: {
+    x: number;
+    y: number;
+  };
 }
 
 interface PopperWrapperState {
@@ -281,6 +288,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
         newStyle.marginLeft = this.offsetMapping[offset];
         break;
     }
+    if (this.props.triggerCoordinates) {
+      newStyle.position = 'absolute';
+      newStyle.transform = `translate(${this.props.triggerCoordinates.x}px, ${this.props.triggerCoordinates.y}px)`;
+    }
     return newStyle;
   };
 
@@ -437,15 +448,35 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
   }
 
   render() {
-    const { placement, appendToBody, hide, boundaryElement } = this.props;
+    const { placement, appendToBody, hide, boundaryElement, triggerCoordinates } = this.props;
     const { animationKeyframe, isOpen } = this.state;
+
+    const coordinatesPopper = (
+      <Popper
+        placement={placement}
+        innerRef={this.popupRef}
+        modifiers={{
+          preventOverflow: { boundariesElement: boundaryElement || document.body },
+          hide: { enabled: hide },
+          ...(triggerCoordinates && {
+            offset: {
+              offset: `${triggerCoordinates.x}px, ${triggerCoordinates.y}px`,
+            },
+          }),
+        }}
+      >
+        {this.getPopperChildren}
+      </Popper>
+    );
 
     return (
       <Manager>
         <style>{animationKeyframe}</style>
         <Reference innerRef={this.triggerRef}>{({ ref }) => this.getTriggerElement(ref)}</Reference>
+
         {isOpen &&
           appendToBody &&
+          !triggerCoordinates &&
           ReactDOM.createPortal(
             <Popper
               placement={placement}
@@ -459,7 +490,10 @@ export class PopperWrapper extends React.Component<PopperWrapperProps, PopperWra
             </Popper>,
             document.body
           )}
-        {isOpen && !appendToBody && (
+
+        {isOpen && appendToBody && triggerCoordinates && ReactDOM.createPortal(coordinatesPopper, document.body)}
+
+        {isOpen && !appendToBody && !triggerCoordinates && (
           <Popper placement={placement} innerRef={this.popupRef}>
             {this.getPopperChildren}
           </Popper>
