@@ -6,8 +6,11 @@ interface Props {
   className?: string;
 }
 
-const GenericText = ({ children, componentType = 'span', className, ...props }: Props) => {
-  return React.createElement(componentType, { ...props, className }, children);
+const GenericText: React.ForwardRefRenderFunction<HTMLElement, Props> = (
+  { children, componentType = 'span', className, ...rest },
+  ref
+) => {
+  return React.createElement(componentType, { ...rest, className, ref }, children);
 };
 
-export default GenericText;
+export default React.forwardRef(GenericText);

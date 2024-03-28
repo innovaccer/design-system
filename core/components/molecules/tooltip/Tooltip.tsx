@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Popover, Text } from '@/index';
 import { PopoverProps } from '@/index.type';
 import { BaseProps, filterProps } from '@/utils/types';
+import { AutoTooltip } from './AutoTooltip';
 
 type Position = 'top-start' | 'top' | 'top-end' | 'right' | 'bottom-end' | 'bottom' | 'bottom-start' | 'left';
 
@@ -92,5 +93,7 @@ Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, toolt
   hoverable: false,
   showTooltip: true,
 });
+
+Tooltip.AutoTooltip = AutoTooltip;
 
 export default Tooltip;
