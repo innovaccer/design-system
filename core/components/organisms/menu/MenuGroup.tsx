@@ -22,7 +22,7 @@ export const MenuGroup = (props: MenuGroupProps) => {
 
   if (label) {
     return (
-      <div data-test="DesignSystem-Menu-Group" role="group" {...rest}>
+      <div data-test="DesignSystem-Menu-Group" role="group" className="Menu-Group" {...rest}>
         <Text size="small" weight="medium" appearance="subtle" className="Menu-Group-Label">
           {label}
         </Text>

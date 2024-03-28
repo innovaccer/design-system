@@ -31,7 +31,8 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
   const contextProp = React.useContext(MenuContext);
   const isSubMenuTrigger = false;
 
-  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef, triggerRef, menuID } = contextProp;
+  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef, triggerRef, menuID, onItemClick } =
+    contextProp;
 
   const MenuItemClassName = classNames(
     {
@@ -84,6 +85,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
     }
     setOpenPopover?.(false);
     onClick?.(event);
+    onItemClick?.(event);
   };
 
   return (
