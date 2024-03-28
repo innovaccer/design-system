@@ -11,7 +11,7 @@ export interface SubMenuProps {
    * <br />
    * whereas second children content will be displayed inside `SubMenu`
    */
-  children: React.ReactElement;
+  children: React.ReactNode;
 }
 
 export const SubMenu = (props: SubMenuProps) => {

@@ -4,7 +4,7 @@ export const handleKeyDown = (
   event: React.KeyboardEvent,
   focusedOption: Element | undefined,
   setFocusedOption?: React.Dispatch<React.SetStateAction<HTMLElement | undefined>>,
-  setOpenPopover?: React.Dispatch<React.SetStateAction<boolean>>,
+  setOpenPopover?: React.Dispatch<React.SetStateAction<boolean | undefined>>,
   menuTriggerRef?: React.RefObject<HTMLButtonElement>,
   listRef?: React.RefObject<HTMLDivElement>,
   subListRef?: React.RefObject<HTMLDivElement> | null,

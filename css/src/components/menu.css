@@ -1,5 +1,5 @@
 .Menu {
-  overflow-y: scroll !important;
+  overflow-y: auto !important;
   padding-top: var(--spacing-m);
   padding-bottom: var(--spacing-m);
 }
