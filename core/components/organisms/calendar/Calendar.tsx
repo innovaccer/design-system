@@ -89,6 +89,10 @@ export interface SharedProps extends BaseProps {
    * **use only if date, startDate and endDate are all set or undefined**
    */
   monthNav?: number;
+  /**
+   * Should be use to allow reverse selection in the daterangepicker
+   */
+  allowReverseSelection?: boolean;
 }
 
 export type CalendarProps = {
@@ -307,6 +311,21 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
       const { startDate, endDate } = this.state;
 
       if (onRangeChange) onRangeChange(startDate, endDate);
+    }
+
+    if (this.props.allowReverseSelection && prevState.hoverDate !== this.state.hoverDate) {
+      const { hoverDate, startDate, endDate } = this.state;
+      if (startDate && !endDate) {
+        const { year, month, date } = getDateInfo(startDate);
+        if (compareDate(hoverDate, 'less', year, month, date)) {
+          this.setState({ startDate: undefined, endDate: startDate });
+        }
+      } else if (endDate && !startDate) {
+        const { year, month, date } = getDateInfo(endDate);
+        if (compareDate(hoverDate, 'more', year, month, date)) {
+          this.setState({ startDate: endDate, endDate: undefined });
+        }
+      }
     }
 
     if (prevState.year !== this.state.year) {
@@ -994,8 +1013,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               } else if (endDate) {
                 inRange =
                   !disabled &&
-                  (compareDate(hoverDate, 'less', yearNavVal, monthNavVal, date) || inRangeLast) &&
-                  compareDate(endDate, 'more', yearNavVal, monthNavVal, date);
+                  (dateComparison(hoverDate, 'less', dateInString, monthInString, yearInString) || inRangeLast) &&
+                  dateComparison(endDate, 'more', dateInString, monthInString, yearInString);
               }
             }
 
@@ -1007,7 +1026,13 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
             const isEndActive = endDate && dateComparison(endDate, 'equal', dateInString, monthInString, yearInString);
 
             const activeDate = startDate && endDate && (isStartActive || isEndActive);
-            const isHoverLast =
+            const isHoverBackwardLast =
+              this.props.allowReverseSelection &&
+              dateComparison(hoverDate, 'equal', dateInString, monthInString, yearInString) &&
+              hoverDate &&
+              ((startDate && hoverDate < startDate) || (endDate && hoverDate < endDate));
+
+            const isHoverForwardLast =
               dateComparison(hoverDate, 'equal', dateInString, monthInString, yearInString) &&
               hoverDate &&
               startDate &&
@@ -1031,7 +1056,8 @@ export class Calendar extends React.Component<CalendarProps, CalendarState> {
               'Calendar-valueWrapper--endError':
                 (isEnd && isRangeError) || (rangePicker && isRangeError && isEndActive),
               'Calendar-valueWrapper--dummy': dummy,
-              'Calendar-valueWrapper--hoverDate': rangePicker && isHoverLast,
+              'Calendar-valueWrapper--hoverDate': rangePicker && isHoverForwardLast,
+              'Calendar-valueWrapper--hoverEndDate': rangePicker && isHoverBackwardLast,
               'Calendar-valueWrapper--inStartRange': isValueRange && col === 0 && !active && !activeDate,
               'Calendar-valueWrapper--inEndRange': isValueRange && col === 6 && !active && !activeDate,
             });
