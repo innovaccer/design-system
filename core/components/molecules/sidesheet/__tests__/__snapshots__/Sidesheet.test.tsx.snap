@@ -55,7 +55,7 @@ exports[`Sidesheet component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="OutsideClick PopperWrapper-trigger d-flex"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"
@@ -152,7 +152,7 @@ exports[`Sidesheet component
           >
             <style />
             <div
-              class="OutsideClick PopperWrapper-trigger"
+              class="OutsideClick PopperWrapper-trigger d-flex"
             >
               <button
                 class="Button Button--regular Button--regularSquare Button--transparent"

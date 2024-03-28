@@ -23,19 +23,19 @@ export interface TextProps extends BaseProps, BaseHtmlProps<HTMLSpanElement> {
   /**
    * State of `Text`
    */
-  appearance: TextAppearance;
+  appearance?: TextAppearance;
   /**
    * Size of `Text`
    */
-  size: TextSize;
+  size?: TextSize;
   /**
    * Color of `Text`
    */
   color?: TextColor;
 }
 
-export const Text = (props: TextProps) => {
-  const { appearance, size, children, weight, small, className, color, ...rest } = props;
+export const Text = React.forwardRef<HTMLSpanElement, TextProps>((props, ref) => {
+  const { appearance = 'default', size = 'regular', children, weight, small, className, color, ...rest } = props;
 
   const classes = classNames(
     {
@@ -51,13 +51,14 @@ export const Text = (props: TextProps) => {
   );
 
   return (
-    <GenericText data-test="DesignSystem-Text" {...rest} className={classes} componentType="span">
+    <GenericText ref={ref} data-test="DesignSystem-Text" {...rest} className={classes} componentType="span">
       {children}
     </GenericText>
   );
-};
+});
 
 Text.displayName = 'Text';
+
 Text.defaultProps = {
   appearance: 'default',
   size: 'regular',

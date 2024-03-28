@@ -7,7 +7,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -32,7 +32,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -57,7 +57,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -82,7 +82,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -107,7 +107,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -132,7 +132,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -157,7 +157,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
@@ -182,7 +182,7 @@ exports[`Tooltip component
   <div>
     <style />
     <div
-      class="OutsideClick PopperWrapper-trigger"
+      class="OutsideClick PopperWrapper-trigger d-flex"
     >
       <button
         class="Button Button--regular Button--basic Button--iconAlign-left"
