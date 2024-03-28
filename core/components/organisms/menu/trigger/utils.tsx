@@ -8,10 +8,12 @@ export const handleKeyDown = (
 ) => {
   switch (event.key) {
     case 'ArrowUp':
+      event.preventDefault();
       setOpenPopover?.(true);
       setHighlightLastItem?.(true);
       break;
     case 'ArrowDown':
+      event.preventDefault();
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
       break;
