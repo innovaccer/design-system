@@ -1,3 +1,9 @@
+.Menu {
+  overflow-y: scroll !important;
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+}
+
 .Menu-Trigger--active {
   background-color: var(--secondary-dark);
 }

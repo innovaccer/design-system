@@ -8,10 +8,12 @@ export const handleKeyDown = (
 ) => {
   switch (event.key) {
     case 'ArrowUp':
+      event.preventDefault();
       setOpenPopover?.(true);
       setHighlightLastItem?.(true);
       break;
     case 'ArrowDown':
+      event.preventDefault();
       setOpenPopover?.(true);
       setHighlightFirstItem?.(true);
       break;
@@ -40,7 +42,7 @@ export const focusListItem = (
   (targetOption as HTMLElement)?.focus();
 
   if (targetOption && typeof targetOption.scrollIntoView === 'function') {
-    (targetOption as HTMLElement)?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    (targetOption as HTMLElement)?.scrollIntoView({ block: 'end' });
   }
   setFocusedOption && setFocusedOption(targetOption);
 };
