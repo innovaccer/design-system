@@ -19,7 +19,7 @@ export interface MenuProps extends BaseProps {
   /**
    * Controls open/close of `Menu`
    */
-  open: boolean;
+  open?: boolean;
   /**
    * Defines position of `Menu`
    */
@@ -62,7 +62,18 @@ export interface MenuProps extends BaseProps {
 }
 
 export const Menu = (props: MenuProps) => {
-  const { children, width, minHeight, maxHeight, className, open, triggerRef, menuID, onClick: onItemClick } = props;
+  const {
+    children,
+    width,
+    minHeight,
+    maxHeight,
+    className,
+    open,
+    triggerRef,
+    menuID,
+    onClick: onItemClick,
+    ...rest
+  } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
@@ -124,7 +135,7 @@ export const Menu = (props: MenuProps) => {
         data-test="DesignSystem-Menu"
         name={menuID}
         offset="medium"
-        {...props}
+        {...rest}
         open={openPopover}
         customStyle={{ width }}
         onToggle={onToggleHandler}
