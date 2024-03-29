@@ -85,7 +85,7 @@ export default {
         noHtml: true,
         customCode,
         props: {
-          exclude: ['triggerRef', 'menuID'],
+          exclude: ['triggerRef', 'menuID', 'onClick'],
         },
       },
     },

@@ -23,7 +23,13 @@ export const MenuGroup = (props: MenuGroupProps) => {
   if (label) {
     return (
       <div data-test="DesignSystem-Menu-Group" role="group" className="Menu-Group" {...rest}>
-        <Text size="small" weight="medium" appearance="subtle" className="Menu-Group-Label">
+        <Text
+          data-test="DesignSystem-Menu-Group-Label"
+          size="small"
+          weight="medium"
+          appearance="subtle"
+          className="Menu-Group-Label"
+        >
           {label}
         </Text>
         {children}

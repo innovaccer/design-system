@@ -37,7 +37,7 @@ export const focusListItem = (
   if (position === 'down') {
     targetOption = listItems?.[0];
   } else {
-    targetOption = listItems[listItems.length - 1];
+    targetOption = listItems?.[listItems.length - 1];
   }
   (targetOption as HTMLElement)?.focus();
 

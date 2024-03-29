@@ -44,7 +44,7 @@ export default {
         title: 'Menu',
         customCode,
         props: {
-          exclude: ['triggerRef', 'menuID'],
+          exclude: ['triggerRef', 'menuID', 'onClick'],
         },
       },
     },
