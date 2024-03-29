@@ -805,6 +805,21 @@
           "defaultValue": null
         }
       },
+      "allowReverseSelection": {
+        "name": "allowReverseSelection",
+        "description": "Should be use to allow reverse selection in the daterangepicker",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -1284,6 +1299,21 @@
       "table": {
         "type": {
           "summary": "number | undefined"
+        },
+        "defaultValue": null
+      }
+    },
+    "allowReverseSelection": {
+      "name": "allowReverseSelection",
+      "description": "Should be use to allow reverse selection in the daterangepicker",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
         },
         "defaultValue": null
       }

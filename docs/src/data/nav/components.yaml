@@ -96,6 +96,10 @@ menus:
     link: /components/list/usage/
     hideInWeb: true
 
+  - label: Menu
+    link: /components/menu/usage/
+    hideInMobile: true
+
   - label: Messages
     link: /components/message/usage/
 

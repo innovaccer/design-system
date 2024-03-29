@@ -1,0 +1,138 @@
+### Keyboard Interactions
+
+<br/>
+<br/>
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Initial state</th>
+      <th style="width:33%; text-align: left;">Keyboard Interaction</th>
+      <th style="width:33%; text-align: left;">Final state</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Menu trigger in default state </td>
+      <td>&#60;Tab&#62;</td>
+      <td>The trigger will be in focus but the popover will not be opened.</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Menu trigger in focus</td>
+      <td>&#60;Tab&#62;</td>
+      <td>
+        Focus shifts to next item in Tab sequence on the page. <br />
+        The popover will be excluded from the tab sequence on the page.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+        Open popover (The trigger will be in active state when the popover is open)
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;down arrow&#62;</td>
+      <td>
+        Open popover and shift focus from the trigger to first focusable item.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+        Open popover and shift focus from the trigger to the last focusable item.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>Nothing happens.</td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Popover is open and an item is in focus<br/>(The trigger will be in active state at this instance)</td>
+      <td>&#60;Tab&#62;</td>
+      <td>
+        Shift focus to the next item in Tab sequence on the page. <br/>The popover will be excluded from the tab sequence on the page. 
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+        Select the focused item and close the popover. 
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;down arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the next focusable item(even if it’s in a different group).</li>
+          <li>If focus is on the last item, shift focus to the first focusable item.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the previous focusable item(even if it’s in a different group).</li>
+          <li>If focus is on the first focusable item, shift focus to the last focusable item.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;right arrow&#62;</td>
+      <td>
+        <ul>
+          <li>
+            In case of nesting when the sub menu is on the right:
+            <ul>
+              <li class="ml-5">If the focus is on a parent item, shift focus from the parent item to the first child item of the sub-menu.</li>
+              <li class="ml-5">If the focus is on a child item of the sub-menu, nothing will happen.</li>
+            </ul>
+          </li>
+          <li>
+            In case the sub menu is on the left:
+            <ul>
+              <li class="ml-5">If the focus is on a child item of the sub-menu, shift focus from the child item to the parent item.</li>
+              <li class="ml-5">If the focus is on a parent item, nothing will happen.</li>
+            </ul>
+          </li>
+          <li>In case there is no nesting, nothing will happen.</li>
+        </ul>  
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;left arrow&#62;</td>
+      <td>
+        <ul>
+          <li>
+            In case of nesting when the sub menu is on the right:
+            <ul>
+              <li class="ml-5">If the focus is on a parent item of the main menu, nothing will happen.</li>
+              <li class="ml-5">If focus is on a child item, shift focus from the child item to the parent item.</li>
+            </ul>
+          </li>
+          <li>
+            In case the sub menu is on the left:
+            <ul>
+              <li class="ml-5">If the focus is on a parent item, shift focus from the parent item to the first child item of the sub-menu.</li>
+              <li class="ml-5">If the focus is on a child item, nothing will happen</li>
+            </ul>
+          </li>
+          <li>In case there is no nesting, nothing will happen.</li>
+        </ul>  
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>Close the popover. Focus is now on the trigger.</td>
+    </tr>
+  </tbody>
+</table>
