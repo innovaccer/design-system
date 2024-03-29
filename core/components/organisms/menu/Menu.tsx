@@ -143,7 +143,7 @@ export const Menu = (props: MenuProps) => {
         <div
           ref={listRef}
           role="menu"
-          data-test="DesignSystem-Menu-Wrapper"
+          data-test={props['data-test'] || 'DesignSystem-Menu-Wrapper'}
           className={popoverClassName}
           style={{ maxHeight, minHeight }}
         >

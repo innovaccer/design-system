@@ -4,11 +4,6 @@ import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/u
 import { MenuProps } from '@/index.type';
 import { Menu, Icon } from '@/index';
 
-/**
- *
- * check for data-test and className for all sub components
- *
- */
 const BooleanValue = [true, false];
 const FunctionValue = jest.fn();
 const MenuList = (
