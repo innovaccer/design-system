@@ -7,7 +7,6 @@ import { Menu, Icon } from '@/index';
 /**
  *
  * check for data-test and className for all sub components
- * callback for menu item click
  *
  */
 const BooleanValue = [true, false];
@@ -116,7 +115,7 @@ describe('Menu component with Grouping', () => {
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
 
     fireEvent.click(trigger);
-    const popover = getByTestId('DesignSystem-Menu');
+    const popover = getByTestId('DesignSystem-Popover');
     const groupLabel = getAllByTestId('DesignSystem-Menu-Group-Label')[0];
     const menuGroup = getAllByTestId('DesignSystem-Menu-Group');
 
@@ -137,7 +136,7 @@ describe('Menu component with Grouping', () => {
     const trigger = getByTestId('DesignSystem-Menu-Trigger');
 
     fireEvent.click(trigger);
-    const popover = getByTestId('DesignSystem-Menu');
+    const popover = getByTestId('DesignSystem-Popover');
     const divider = getByTestId('DesignSystem-Divider');
 
     expect(popover).toBeInTheDocument();
@@ -187,6 +186,36 @@ describe('Menu component with Nesting', () => {
 
     const triggerItem = getByTestId('Menu-Item');
     fireEvent.mouseOver(triggerItem);
-    expect(getAllByTestId('DesignSystem-Menu')).toHaveLength(2);
+    expect(getAllByTestId('DesignSystem-Popover')).toHaveLength(2);
+  });
+});
+
+describe('Menu component keyboard interactions', () => {
+  it('check for ArrowDown keyboard navigation with trigger', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const trigger = getByTestId('DesignSystem-Menu-Trigger');
+    fireEvent.keyDown(trigger, { key: 'ArrowDown' });
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
+  });
+
+  it('check for ArrowUp keyboard navigation with trigger', () => {
+    const { getByTestId } = render(
+      <Menu trigger={<Menu.Trigger />}>
+        <Menu.List>
+          <Menu.Item>Menu Item 1</Menu.Item>
+        </Menu.List>
+      </Menu>
+    );
+    const trigger = getByTestId('DesignSystem-Menu-Trigger');
+    fireEvent.keyDown(trigger, { key: 'ArrowUp' });
+    const popover = getByTestId('DesignSystem-Popover');
+    expect(popover).toBeInTheDocument();
   });
 });
