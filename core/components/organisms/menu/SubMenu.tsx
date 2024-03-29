@@ -22,6 +22,7 @@ export const SubMenu = (props: SubMenuProps) => {
   const contextProp = React.useContext(MenuContext);
   const subListRef = React.useRef<HTMLDivElement>(null);
   const triggerRef = React.useRef<HTMLDivElement>(null);
+  const isSubMenuTrigger = true;
 
   let subMenuElement = <></>;
 
@@ -36,7 +37,7 @@ export const SubMenu = (props: SubMenuProps) => {
       menuTriggerRef,
       listRef,
       subListRef,
-      true,
+      isSubMenuTrigger,
       triggerRef,
       menuID
     );

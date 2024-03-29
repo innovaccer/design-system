@@ -68,7 +68,7 @@ const navigateOptions = (
   const targetOption = listItems[index];
   (targetOption as HTMLElement).focus();
   setFocusedOption && setFocusedOption(targetOption);
-  targetOption?.scrollIntoView?.({ block: 'end' });
+  targetOption?.scrollIntoView?.({ block: 'center' });
 };
 
 const navigateSubMenu = (
