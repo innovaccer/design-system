@@ -4,6 +4,7 @@ import { Listbox } from '@/index';
 import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
+import SubMenuContext from './SubMenuContext';
 
 type ItemTagType = 'li' | 'div' | 'a';
 
@@ -29,11 +30,13 @@ export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | 
 export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, ref) => {
   const { children, className, onClick, disabled, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
+  const subMenuContextProp = React.useContext(SubMenuContext);
   const isSubMenuTrigger = false;
   const subListRef = null;
 
-  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef, triggerRef, menuID, onItemClick } =
-    contextProp;
+  const { triggerRef, menuID, setParentOpen } = subMenuContextProp;
+
+  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef } = contextProp;
 
   const MenuItemClassName = classNames(
     {
@@ -86,7 +89,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
     }
     setOpenPopover?.(false);
     onClick?.(event);
-    onItemClick?.(event);
+    setParentOpen?.(false);
   };
 
   return (

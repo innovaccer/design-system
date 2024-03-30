@@ -2,6 +2,7 @@ import React from 'react';
 import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
 import uidGenerator from '@/utils/uidGenerator';
+import SubMenuContext from './SubMenuContext';
 
 export interface SubMenuProps {
   /**
@@ -43,6 +44,12 @@ export const SubMenu = (props: SubMenuProps) => {
     );
   };
 
+  const subMenuContextProp = {
+    triggerRef,
+    menuID,
+    setParentOpen: setOpenPopover,
+  };
+
   const triggerElement = React.cloneElement(submenuTrigger as React.ReactElement, {
     ...(submenuTrigger as React.ReactElement)?.props,
     onKeyDown: onKeyDownHandler,
@@ -53,23 +60,17 @@ export const SubMenu = (props: SubMenuProps) => {
   });
 
   if (React.isValidElement(submenuContent)) {
-    const { on, children, onClick } = submenuContent?.props;
+    const { on, children } = submenuContent?.props;
     subMenuElement = React.cloneElement(submenuContent as React.ReactElement, {
       ...submenuContent.props,
       on: on || 'hover',
       offset: 'small',
       children: <div ref={subListRef}>{children}</div>,
       trigger: triggerElement,
-      triggerRef,
-      menuID,
-      onClick: (event: React.MouseEvent | React.KeyboardEvent) => {
-        setOpenPopover?.(false);
-        onClick?.(event);
-      },
     });
   }
 
-  return subMenuElement;
+  return <SubMenuContext.Provider value={subMenuContextProp}>{subMenuElement}</SubMenuContext.Provider>;
 };
 
 export default SubMenu;
