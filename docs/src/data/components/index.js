@@ -236,6 +236,13 @@ export const data = [
     image: () => <StaticImage src="./images/RichTextEditor.png" alt="Rich text editor" imgStyle={imgStyle} />,
   },
   {
+    link: 'select/usage',
+    name: 'Select',
+    design: 'Available',
+    code: 'Available',
+    image: () => <StaticImage src="./images/Select.png" alt="Select" imgStyle={imgStyle} />,
+  },
+  {
     link: 'sidesheet/usage',
     name: 'Sidesheet',
     design: 'Available',

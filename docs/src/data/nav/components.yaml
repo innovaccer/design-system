@@ -140,6 +140,10 @@ menus:
     link: /components/richTextEditor/usage/
     hideInMobile: true
 
+  - label: Select
+    link: /components/select/usage/
+    hideInMobile: true
+
   - label: Sidesheet
     link: /components/sidesheet/usage/
     hideInMobile: true
