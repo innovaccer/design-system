@@ -42,3 +42,47 @@ describe('Tooltip component', () => {
     expect(baseElement).toMatchSnapshot();
   });
 });
+
+describe('Tooltip component with text overflow', () => {
+  it('should render tooltip when showOnTruncation is false', () => {
+    const { getByRole, queryByText } = render(
+      <Tooltip showOnTruncation={false} tooltip="A tooltip">
+        <Button style={{ maxWidth: 150 }} className="ellipsis--noWrap d-inline-block w-100">
+          show me the tooltip on hover
+        </Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipText = queryByText('A tooltip');
+    expect(tooltipText).toBeInTheDocument();
+  });
+
+  it('should render tooltip when showOnTruncation is true with text overflow', () => {
+    const { getByRole, queryByText } = render(
+      <Tooltip showOnTruncation={true} tooltip="show me the tooltip on hover">
+        <Button style={{ maxWidth: 150 }} className="ellipsis--noWrap d-inline-block w-100">
+          show me the tooltip on hover
+        </Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipText = queryByText('show me the tooltip on hover');
+    expect(tooltipText).toBeInTheDocument();
+  });
+
+  it('should not render tooltip when showOnTruncation is true and no text overflow', () => {
+    const { getByRole, queryByText } = render(
+      <Tooltip showOnTruncation={true} tooltip="A tooltip">
+        <Button style={{ maxWidth: 300 }} className="ellipsis--noWrap d-inline-block w-100">
+          show me the tooltip on hover
+        </Button>
+      </Tooltip>
+    );
+    const button = getByRole('button');
+    fireEvent.mouseOver(button);
+    const tooltipText = queryByText('A tooltip');
+    expect(tooltipText).not.toBeInTheDocument();
+  });
+});
