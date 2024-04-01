@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, cleanup } from '@testing-library/react';
 import { Grid } from '@/index';
 import { GridProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -232,4 +232,29 @@ describe('renders children with nestedRows', () => {
     render(<Grid schema={schema} data={data} nestedRows={true} nestedRowRenderer={nestedRowRenderer} />);
     expect(nestedRowRenderer).toBeCalled();
   });
+});
+
+describe('Check for selected row classes', () => {
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+    },
+  ];
+  const data = [{ name: 'Zara', _selected: true }];
+  const { getByTestId } = render(<Grid schema={schema} data={data} />);
+  expect(getByTestId('DesignSystem-Grid-row')).toHaveClass('Grid-row--selected');
+});
+
+describe('Check for disabled row classes', () => {
+  const schema = [
+    {
+      name: 'name',
+      displayName: 'Name',
+    },
+  ];
+  const data = [{ name: 'Zara', disabled: true }];
+  cleanup();
+  const { getByTestId } = render(<Grid schema={schema} data={data} />);
+  expect(getByTestId('DesignSystem-Grid-row')).toHaveClass('Grid-row--disabled');
 });
