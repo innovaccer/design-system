@@ -147,6 +147,10 @@
   border-radius: 0 var(--spacing-m) var(--spacing-m) 0;
 }
 
+.Calendar-valueWrapper--hoverEndDate {
+  background: linear-gradient(90deg, white 50%, var(--primary-lightest) 10%);
+}
+
 .Calendar-valueWrapper--endError {
   background: linear-gradient(90deg, var(--alert-lightest) 50%, white 50%);
 }

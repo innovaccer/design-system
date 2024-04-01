@@ -234,8 +234,14 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
         const sValue = translateToString(outputFormat, startDate);
         const eValue = translateToString(outputFormat, endDate);
         if (!inRangeError && !startError && !endError) {
-          onRangeChange(startDate, endDate, sValue, eValue);
-        } else {
+          if (this.props.allowReverseSelection) {
+            if (startDate && endDate) {
+              onRangeChange(startDate, endDate, sValue, eValue);
+            }
+          } else {
+            onRangeChange(startDate, endDate, sValue, eValue);
+          }
+        } else if (!this.props.allowReverseSelection) {
           if (!startError) onRangeChange(startDate, undefined, sValue, eValue);
           else if (!endError) onRangeChange(undefined, endDate, sValue, eValue);
           else onRangeChange(undefined, undefined, sValue, eValue);
@@ -271,7 +277,7 @@ export class DateRangePicker extends React.Component<DateRangePickerProps, DateR
       const { year: daYear, month: daMonth, date: daDate } = getDateInfo(disabledAfter);
 
       return !date
-        ? true
+        ? false
         : compareDate(date, 'less', dbYear, dbMonth, dbDate) || compareDate(date, 'more', daYear, daMonth, daDate);
     };
 

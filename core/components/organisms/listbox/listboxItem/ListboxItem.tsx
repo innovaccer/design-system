@@ -6,9 +6,9 @@ import { ListBody } from './ListBody';
 import { NestedList } from '../nestedList';
 import classNames from 'classnames';
 
-export type ItemTagType = 'li' | 'div';
+export type ItemTagType = 'li' | 'div' | 'a';
 
-export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement> {
+export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | HTMLDivElement | HTMLAnchorElement> {
   /**
    * React Element to be added inside `list`
    */
@@ -46,7 +46,7 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
   /**
    * Set a custom element for Listbox
    */
-  tagName: ItemTagType;
+  tagName?: ItemTagType;
   /**
    * Handler to be called when `ListboxItem` is clicked
    */
@@ -57,8 +57,8 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
   tabIndex?: number;
 }
 
-export const ListboxItem = (props: ListboxItemProps) => {
-  const { nestedBody, expanded, id, onClick, value, tagName: Tag, ...rest } = props;
+export const ListboxItem = React.forwardRef<HTMLDivElement, ListboxItemProps>((props, ref) => {
+  const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
   const { showDivider, draggable } = contextProp;
@@ -80,16 +80,15 @@ export const ListboxItem = (props: ListboxItemProps) => {
       onClick={onClickHandler}
       data-value={value}
       className={tagClass}
-      {...rest}
     >
-      <ListBody {...props} />
+      <ListBody {...props} ref={ref} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
       {showDivider && <Divider className="Listbox-divider" />}
     </Tag>
   );
-};
+});
 
-ListboxItem.displayName = 'ListboxItem';
+ListboxItem.displayName = 'Listbox.Item';
 ListboxItem.defaultProps = {
   tagName: 'li',
 };
