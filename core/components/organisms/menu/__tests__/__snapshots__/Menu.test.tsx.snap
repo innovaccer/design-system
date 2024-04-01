@@ -156,6 +156,7 @@ exports[`Menu component with Nesting snapshot
             aria-haspopup="menu"
             class="Listbox-item-wrapper"
             data-test="DesignSystem-Menu-ListItem"
+            id="DesignSystem-Menu--Trigger-Test-uid"
             role="menuitem"
             tabindex="-1"
           >
