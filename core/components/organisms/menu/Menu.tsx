@@ -10,6 +10,7 @@ import SubMenu from './SubMenu';
 import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { focusListItem } from './trigger/utils';
+import SubMenuContext from './SubMenuContext';
 
 export interface MenuProps extends BaseProps {
   /**
@@ -41,45 +42,25 @@ export interface MenuProps extends BaseProps {
    */
   width?: number;
   /**
-   * Provide `ref` of the trigger element
-   */
-  triggerRef?: React.RefObject<HTMLDivElement>;
-  /**
-   * Describe unique id to the `Menu`
-   */
-  menuID?: string;
-  /**
    * Defines coordinates where you need to position a popover
    */
   triggerCoordinates?: {
     x: number;
     y: number;
   };
-  /**
-   * Callback function to be called when menu item is clicked
-   */
-  onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
 }
 
 export const Menu = (props: MenuProps) => {
-  const {
-    children,
-    width,
-    minHeight,
-    maxHeight,
-    className,
-    open,
-    triggerRef,
-    menuID,
-    onClick: onItemClick,
-    ...rest
-  } = props;
+  const { children, width, minHeight, maxHeight, className, open, ...rest } = props;
   const [openPopover, setOpenPopover] = React.useState(open);
   const [highlightFirstItem, setHighlightFirstItem] = React.useState<boolean>(false);
   const [highlightLastItem, setHighlightLastItem] = React.useState<boolean>(false);
   const [focusedOption, setFocusedOption] = React.useState<HTMLElement | undefined>();
   const listRef = React.createRef<HTMLDivElement>();
   const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
+  const subMenuContextProp = React.useContext(SubMenuContext);
+
+  const { menuID } = subMenuContextProp;
 
   const popoverClassName = classNames(
     {
@@ -124,9 +105,6 @@ export const Menu = (props: MenuProps) => {
     setFocusedOption,
     menuTriggerRef,
     listRef,
-    triggerRef,
-    menuID,
-    onItemClick,
   };
 
   return (

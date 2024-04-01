@@ -84,9 +84,6 @@ export default {
       docPage: {
         noHtml: true,
         customCode,
-        props: {
-          exclude: ['triggerRef', 'menuID', 'onClick'],
-        },
       },
     },
   },

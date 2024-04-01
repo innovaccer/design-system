@@ -1,8 +1,15 @@
 import * as React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { Table } from '@/index';
+import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
+
+export type RowData = Record<string, any> & {
+  _selected?: boolean;
+  disabled?: boolean;
+};
+
+export type Data = RowData[];
 
 const BooleanValue = [true, false];
 
@@ -122,6 +129,68 @@ describe('render Table component with header', () => {
     const applyButton = getByTestId('DesignSystem-Dropdown-ApplyButton');
     fireEvent.click(applyButton);
     expect(dropdownCheckbox).toBeChecked();
+  });
+
+  it('render table with globalActionRenderer', () => {
+    const onDataExport = jest.fn();
+    const globalActionRenderer = (data: Data) => {
+      return (
+        <Button data-test="DesignSystem-Table-GlobalActionTrigger" onClick={() => onDataExport(data)}>
+          Export
+        </Button>
+      );
+    };
+    const headerOptions = { withSearch: true, globalActionRenderer };
+    const { getByTestId } = render(
+      <Table
+        withHeader={true}
+        withCheckbox={true}
+        data={tableData}
+        schema={tableSchema}
+        headerOptions={headerOptions}
+      />
+    );
+    const globalActionTrigger = getByTestId('DesignSystem-Table-GlobalActionTrigger');
+    expect(globalActionTrigger).toBeInTheDocument();
+    fireEvent.click(globalActionTrigger);
+    expect(onDataExport).toHaveBeenCalledWith(tableData);
+  });
+
+  it('render table with globalActionRenderer and withPagination true, trigger selectAll Button', () => {
+    const onDataExport = jest.fn();
+    const globalActionRenderer = (data: Data) => {
+      return (
+        <Button data-test="DesignSystem-Table-GlobalActionTrigger" onClick={() => onDataExport(data)}>
+          Export
+        </Button>
+      );
+    };
+    const headerOptions = { withSearch: true, allowSelectAll: true, globalActionRenderer };
+    const schema = [{ name: 'name', displayName: 'Name', width: '50%' }];
+    const { getAllByTestId, getByTestId } = render(
+      <Table
+        withHeader={true}
+        withCheckbox={true}
+        withPagination={true}
+        data={tableData}
+        schema={schema}
+        headerOptions={headerOptions}
+      />
+    );
+    const globalActionTrigger = getByTestId('DesignSystem-Table-GlobalActionTrigger');
+    expect(globalActionTrigger).toBeInTheDocument();
+    fireEvent.click(globalActionTrigger);
+    expect(onDataExport).toHaveBeenCalledWith(tableData);
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox')[0];
+    fireEvent.click(checkbox);
+    const selectAllButton = getByTestId('DesignSystem-Table-Header--selectAllItemsButton');
+    expect(selectAllButton).toBeInTheDocument();
+    fireEvent.click(selectAllButton);
+    fireEvent.click(globalActionTrigger);
+    expect(onDataExport).toHaveBeenCalledWith(tableData);
+    const clearSelectionButton = getByTestId('DesignSystem-Table-Header--clearSelectionItemsButton');
+    expect(clearSelectionButton).toBeInTheDocument();
+    fireEvent.click(clearSelectionButton);
   });
 
   it('render table with withHeader and withCheckbox and showHead false,trigger onSelectAll', () => {

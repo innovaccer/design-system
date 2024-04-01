@@ -4,6 +4,7 @@ import { Listbox } from '@/index';
 import classNames from 'classnames';
 import MenuContext from './MenuContext';
 import { handleKeyDown } from './utils';
+import SubMenuContext from './SubMenuContext';
 
 type ItemTagType = 'li' | 'div' | 'a';
 
@@ -26,14 +27,16 @@ export interface MenuItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement | 
   disabled?: boolean;
 }
 
-export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, ref) => {
+export const MenuItem = (props: MenuItemProps) => {
   const { children, className, onClick, disabled, ...rest } = props;
   const contextProp = React.useContext(MenuContext);
+  const subMenuContextProp = React.useContext(SubMenuContext);
   const isSubMenuTrigger = false;
   const subListRef = null;
 
-  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef, triggerRef, menuID, onItemClick } =
-    contextProp;
+  const { triggerRef, menuID, setParentOpen, triggerID, parentListRef } = subMenuContextProp;
+
+  const { setOpenPopover, focusedOption, setFocusedOption, menuTriggerRef, listRef } = contextProp;
 
   const MenuItemClassName = classNames(
     {
@@ -51,14 +54,16 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       setOpenPopover?.(false);
     };
 
-    (ref as React.RefObject<HTMLDivElement>)?.current?.addEventListener('focus', handlePopoverOpen);
-    (ref as React.RefObject<HTMLDivElement>)?.current?.addEventListener('blur', handlePopoverClose);
+    const triggerElement = parentListRef?.current?.querySelector(`#${triggerID}`)?.firstChild;
+
+    triggerElement?.addEventListener('focus', handlePopoverOpen);
+    triggerElement?.addEventListener('blur', handlePopoverClose);
 
     return () => {
-      (ref as React.RefObject<HTMLDivElement>)?.current?.removeEventListener('focus', handlePopoverOpen);
-      (ref as React.RefObject<HTMLDivElement>)?.current?.removeEventListener('blur', handlePopoverClose);
+      triggerElement?.removeEventListener('focus', handlePopoverOpen);
+      triggerElement?.removeEventListener('blur', handlePopoverClose);
     };
-  }, [ref]);
+  }, [triggerID]);
 
   const onFocusHandler = (event: React.FocusEvent) => {
     setFocusedOption?.(event.target as HTMLElement);
@@ -76,7 +81,9 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       subListRef,
       isSubMenuTrigger,
       triggerRef,
-      menuID
+      menuID,
+      triggerID,
+      parentListRef
     );
   };
 
@@ -86,7 +93,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
     }
     setOpenPopover?.(false);
     onClick?.(event);
-    onItemClick?.(event);
+    setParentOpen?.(false);
   };
 
   return (
@@ -98,7 +105,6 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       onFocus={onFocusHandler}
       onClick={onClickHandler}
       disabled={disabled}
-      ref={ref}
       role="menuitem"
       aria-disabled={disabled}
       {...rest}
@@ -106,7 +112,7 @@ export const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>((props, 
       {children}
     </Listbox.Item>
   );
-});
+};
 
 MenuItem.displayName = 'MenuItem';
 

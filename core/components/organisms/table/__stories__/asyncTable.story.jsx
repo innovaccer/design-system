@@ -101,6 +101,7 @@ const customCode = `
   };
 
   const data = ${JSON.stringify(data.slice(0, 10), null, 4)};
+  const [formattedData, setFormattedData] = React.useState(data);
 
   const schema = [
     {
@@ -225,6 +226,7 @@ const customCode = `
     const filteredData = filterData(schema, data, filterList);
     const searchedData = filteredData.filter(d => onSearch(d, searchTerm));
     const sortedData = sortData(schema, searchedData, sortingList);
+    setFormattedData(sortedData);
 
     if (page && pageSize) {
       return new Promise(resolve => {
@@ -256,6 +258,14 @@ const customCode = `
 
   const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
 
+  const onDataExport = () => {
+    console.log("Exporting data", formattedData);
+  }
+
+  const globalActionTrigger = (data) => {
+    return (<Button onClick={() => onDataExport()}>Export</Button>);
+  } 
+
   return (
     <div>
       <Card className="h-100 overflow-hidden">
@@ -264,7 +274,8 @@ const customCode = `
           fetchData={fetchData}
           withHeader={true}
           headerOptions={{
-            withSearch: true
+            withSearch: true,
+            globalActionRenderer : globalActionTrigger
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
