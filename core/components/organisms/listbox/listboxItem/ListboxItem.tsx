@@ -57,7 +57,7 @@ export interface ListboxItemProps extends BaseProps, BaseHtmlProps<HTMLLIElement
   tabIndex?: number;
 }
 
-export const ListboxItem = React.forwardRef<HTMLDivElement, ListboxItemProps>((props, ref) => {
+export const ListboxItem = (props: ListboxItemProps) => {
   const { nestedBody, expanded, id, onClick, value, tagName: Tag = 'li', ...rest } = props;
 
   const contextProp = React.useContext(ListboxContext);
@@ -74,19 +74,18 @@ export const ListboxItem = React.forwardRef<HTMLDivElement, ListboxItemProps>((p
   return (
     <Tag
       id={id}
-      key={id}
       data-test="DesignSystem-Listbox-Item"
       {...rest}
       onClick={onClickHandler}
       data-value={value}
       className={tagClass}
     >
-      <ListBody {...props} ref={ref} />
+      <ListBody {...props} />
       {nestedBody && <NestedList expanded={expanded} nestedBody={nestedBody} />}
       {showDivider && <Divider className="Listbox-divider" />}
     </Tag>
   );
-});
+};
 
 ListboxItem.displayName = 'Listbox.Item';
 ListboxItem.defaultProps = {

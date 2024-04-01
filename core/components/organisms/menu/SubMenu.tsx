@@ -18,6 +18,7 @@ export interface SubMenuProps {
 export const SubMenu = (props: SubMenuProps) => {
   const { children } = props;
   const menuID = `DesignSystem-Menu--Popover-${uidGenerator()}`;
+  const triggerID = `DesignSystem-Menu--Trigger-${uidGenerator()}`;
 
   const [submenuTrigger, submenuContent] = React.Children.toArray(children);
   const contextProp = React.useContext(MenuContext);
@@ -48,6 +49,8 @@ export const SubMenu = (props: SubMenuProps) => {
     triggerRef,
     menuID,
     setParentOpen: setOpenPopover,
+    parentListRef: listRef,
+    triggerID,
   };
 
   const triggerElement = React.cloneElement(submenuTrigger as React.ReactElement, {
@@ -57,6 +60,7 @@ export const SubMenu = (props: SubMenuProps) => {
     'aria-haspopup': 'menu',
     'aria-expanded': subListRef.current ? 'true' : 'false',
     'aria-controls': menuID,
+    id: triggerID,
   });
 
   if (React.isValidElement(submenuContent)) {
