@@ -503,3 +503,9 @@
 .Header-actions {
   margin-bottom: var(--spacing-2);
 }
+
+.Header-global-actions {
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-bottom: var(--spacing-2);
+}

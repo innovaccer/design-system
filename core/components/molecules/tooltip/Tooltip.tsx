@@ -49,10 +49,43 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    *  | 'right'  | 'bottom-end'  | 'bottom'  | 'bottom-start'  | 'left';
    */
   position: Position;
+  /**
+   * Render tooltip conditionally when text element
+   * of `elementRef` is truncated
+   * @default false
+   */
+  showOnTruncation?: boolean;
+  /**
+   * text element for refernce to detect the overflow
+   * of text in case when `showOnTruncation` is true otherwise
+   * it will refer to the rendered children
+   */
+  elementRef?: React.RefObject<HTMLElement>;
 }
 
+export const detectTruncation = (boundaryRef: React.RefObject<HTMLElement>) => {
+  const element = boundaryRef?.current;
+  const isTruncated = element ? element.scrollWidth > element.clientWidth : false;
+
+  return isTruncated;
+};
+
 export const Tooltip = (props: TooltipProps) => {
-  const { children, tooltip, showTooltip, ...rest } = props;
+  const { children, tooltip, showTooltip, showOnTruncation, elementRef, ...rest } = props;
+  const childrenRef = React.useRef(null);
+  const [isTruncated, setIsTruncated] = React.useState(false);
+
+  React.useEffect(() => {
+    const element = elementRef ? elementRef : childrenRef;
+    setIsTruncated(detectTruncation(element));
+  }, [childrenRef, elementRef]);
+
+  const renderChildern =
+    elementRef || !React.isValidElement(children)
+      ? children
+      : React.cloneElement(children as React.ReactElement<any>, {
+          ref: childrenRef,
+        });
 
   if (!showTooltip) {
     // If showTooltip is false skip the Popover and return the children directly
@@ -66,6 +99,26 @@ export const Tooltip = (props: TooltipProps) => {
       </Text>
     </div>
   );
+
+  if (showOnTruncation) {
+    return isTruncated ? (
+      <Popover
+        trigger={renderChildern}
+        on={'hover'}
+        offset={'medium'}
+        {...rest}
+        animationClass={{
+          open: `Tooltip-animation-open-${positionValue[props.position]}`,
+          close: `Tooltip-animation-close-${positionValue[props.position]}`,
+        }}
+        className="Tooltip-container"
+      >
+        {tooltipWrapper}
+      </Popover>
+    ) : (
+      renderChildern
+    );
+  }
 
   return (
     <Popover
@@ -84,13 +137,16 @@ export const Tooltip = (props: TooltipProps) => {
   );
 };
 
-// Tooltip.defaultProps = filterProps({
-//   ...Popover.defaultProps,
-//   hoverable: false
-// }, propsList);
+Tooltip.useAutoTooltip = function () {
+  return {
+    detectTruncation,
+  };
+};
+
 Tooltip.defaultProps = Object.assign({}, filterProps(Popover.defaultProps, tooltipPropsList), {
   hoverable: false,
   showTooltip: true,
+  showOnTruncation: false,
 });
 
 export default Tooltip;

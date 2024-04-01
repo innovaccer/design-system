@@ -46,4 +46,6 @@ export const ListBody = (props: ListboxItemProps) => {
   );
 };
 
+ListBody.displayName = 'ListBody';
+
 export default ListBody;

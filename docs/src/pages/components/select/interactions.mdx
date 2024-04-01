@@ -1,0 +1,224 @@
+### Keyboard Interactions
+
+<br />
+
+#### Single select
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Initial state</th>
+      <th style="width:33%; text-align: left;">Keyboard Interaction</th>
+      <th style="width:33%; text-align: left;">Final state</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Select trigger in default state  </td>
+      <td>&#60;Tab&#62;</td>
+      <td>The trigger will be in focus but the popover will not be opened. </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Select trigger in focus </td>
+      <td>&#60;Tab&#62;</td>
+      <td>Focus shifts to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page. </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>down arrow</td>
+      <td>
+       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+       Open the popover, and transfer focus from the trigger to the last focusable item.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>
+        Nothing happens.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Popover is open (The trigger will not be in focus at this instance)</td>
+      <td>&#60;Tab&#62;</td>
+      <td>
+       Shift focus to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+        Select the focused item and close the popover.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;down arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the next focusable item(even if it’s in a different group).</li>
+          <li>If focus is on the last focusable item, shift focus to the first focusable item.</li>
+          <li>
+            In case of search:
+            <ul>
+                <li class="ml-5">If focus is on the last item, shift focus to search. </li>
+                <li class="ml-5">If focus is on search, shift focus to the first focusable item. </li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the previous focusable item.</li>
+          <li>If focus is on the first item, shift focus to the last focusable item.</li>
+          <li>
+            In case of search:
+            <ul>
+                <li class="ml-5">If focus is on the first item, shift focus to search. </li>
+                <li class="ml-5">If focus is on search, shift focus to the last focusable item. </li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>
+        Close the popover. Focus is now on the trigger.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+<br />
+
+#### Multi-select
+
+
+<table style="width: 100%">
+  <tbody>
+    <tr>
+      <th style="width:33%; text-align: left;">Initial state</th>
+      <th style="width:33%; text-align: left;">Keyboard Interaction</th>
+      <th style="width:33%; text-align: left;">Final state</th>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Select trigger in default state  </td>
+      <td>&#60;Tab&#62;</td>
+      <td>The trigger will be in focus but the popover will not be opened. </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Select trigger in focus </td>
+      <td>&#60;Tab&#62;</td>
+      <td>Focus shifts to next item in Tab sequence on the page. <br /> The popover will be excluded from the tab sequence on the page. </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>down arrow</td>
+      <td>
+       Open the popover, and transfer focus from the trigger to either the first focusable item or the search option, depending on the context.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+       Open the popover, and transfer focus from the trigger to the last focusable item.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>
+        Nothing happens.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td>Popover is open (The trigger will not be in focus at this instance)</td>
+      <td>&#60;Tab&#62;</td>
+      <td>
+        <ul>
+            <li>
+               Shift focus from the selected option item in popover to the buttons inside popover 
+            </li>
+            <li>
+               If the focus is on apply inside popover, shift focus to next item in Tab sequence on the page
+            </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Enter&#62;</td>
+      <td>
+        Select the focused item.
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;down arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the next focusable item.</li>
+          <li>If focus is on the last focusable item, shift focus to the first focusable item.</li>
+          <li>
+            In case of search:
+            <ul>
+                <li class="ml-5">If focus is on the last item, shift focus to search. </li>
+                <li class="ml-5">If focus is on search, shift focus to the first focusable item. </li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;up arrow&#62;</td>
+      <td>
+        <ul>
+          <li>Shift focus to the previous focusable item.</li>
+          <li>If focus is on the first item, shift focus to the last focusable item.</li>
+          <li>
+            In case of search:
+            <ul>
+                <li class="ml-5">If focus is on the first item, shift focus to search. </li>
+                <li class="ml-5">If focus is on search, shift focus to the last focusable item. </li>
+            </ul>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr style="vertical-align: top">
+      <td></td>
+      <td>&#60;Escape&#62;</td>
+      <td>
+        Close the popover. Focus is now on the trigger.
+      </td>
+    </tr>
+  </tbody>
+</table>

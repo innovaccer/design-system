@@ -20,6 +20,7 @@ export interface ExternalHeaderProps {
   dynamicColumn?: boolean;
   allowSelectAll?: boolean;
   customSelectionLabel?: string;
+  globalActionRenderer?: (data: Data) => React.ReactNode;
 }
 
 export type updateSearchTermFunction = (newSearchTerm: string) => void;
@@ -28,6 +29,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   loading?: boolean;
   error?: boolean;
   data: Data;
+  displayData: Data;
   schema: Schema;
   selectAll?: GridProps['selectAll'];
   totalRecords: number;
@@ -51,6 +53,7 @@ export const Header = (props: HeaderProps) => {
     loading,
     error,
     data,
+    displayData,
     schema,
     withSearch,
     showHead,
@@ -69,6 +72,7 @@ export const Header = (props: HeaderProps) => {
     selectAll,
     searchTerm,
     updateSearchTerm,
+    globalActionRenderer,
     dynamicColumn,
     allowSelectAll,
     showFilters,
@@ -149,50 +153,53 @@ export const Header = (props: HeaderProps) => {
   return (
     <div className="Header">
       <div className="Header-content Header-content--top">
-        {withSearch && (
-          <div className="Header-search">
-            <Input
-              data-test="DesignSystem-Table-Header--withSearch"
-              name="GridHeader-search"
-              icon="search"
-              placeholder={searchPlaceholder}
-              onChange={onSearchChange}
-              value={searchTerm}
-              onClear={() => updateSearchTerm && updateSearchTerm('')}
-              disabled={loading && !hasSchema(schema)}
-              autoComplete="off"
-            />
-          </div>
-        )}
-        {showFilters && filterSchema.length > 0 && (
-          <div className="Header-dropdown">
-            <div className="Header-filters">
-              {filterSchema.map((s) => {
-                const { name, displayName, filters } = s;
-
-                const filterOptions = filters
-                  ? filters.map((f) => ({
-                      ...f,
-                      selected: filterList[name] && filterList[name].findIndex((fl) => fl === f.value) !== -1,
-                    }))
-                  : [];
-
-                return (
-                  <Dropdown
-                    key={name}
-                    withCheckbox={true}
-                    showApplyButton={true}
-                    inlineLabel={displayName}
-                    icon={'filter_list'}
-                    options={filterOptions}
-                    onChange={(selected) => onFilterChange(name, selected)}
-                  />
-                );
-              })}
+        <div className="d-flex">
+          {withSearch && (
+            <div className="Header-search">
+              <Input
+                data-test="DesignSystem-Table-Header--withSearch"
+                name="GridHeader-search"
+                icon="search"
+                placeholder={searchPlaceholder}
+                onChange={onSearchChange}
+                value={searchTerm}
+                onClear={() => updateSearchTerm && updateSearchTerm('')}
+                disabled={loading && !hasSchema(schema)}
+                autoComplete="off"
+              />
             </div>
-          </div>
-        )}
-        {children && <div className="Header-actions">{children}</div>}
+          )}
+          {showFilters && filterSchema.length > 0 && (
+            <div className="Header-dropdown">
+              <div className="Header-filters">
+                {filterSchema.map((s) => {
+                  const { name, displayName, filters } = s;
+
+                  const filterOptions = filters
+                    ? filters.map((f) => ({
+                        ...f,
+                        selected: filterList[name] && filterList[name].findIndex((fl) => fl === f.value) !== -1,
+                      }))
+                    : [];
+
+                  return (
+                    <Dropdown
+                      key={name}
+                      withCheckbox={true}
+                      showApplyButton={true}
+                      inlineLabel={displayName}
+                      icon={'filter_list'}
+                      options={filterOptions}
+                      onChange={(selected) => onFilterChange(name, selected)}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          {children && <div className="Header-actions">{children}</div>}
+        </div>
+        {globalActionRenderer && <div className="Header-global-actions">{globalActionRenderer(displayData)}</div>}
       </div>
       <div className="Header-content Header-content--bottom">
         <div className="Header-label">

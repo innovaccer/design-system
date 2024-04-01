@@ -168,6 +168,23 @@ describe('DateRangePicker component', () => {
   testHelper(mapper, testFunc);
 });
 
+describe('DateRangePicker component', () => {
+  const mapper: Record<string, any> = {
+    allowReverseSelection: valueHelper(booleanValue, { required: true, iterate: true }),
+  };
+
+  const testFunc = (props: Record<string, any>): void => {
+    const attr = filterUndefined(props) as Props;
+
+    it(testMessageHelper(attr), () => {
+      const { baseElement } = render(<DateRangePicker startDate={startDate} endDate={endDate} {...attr} />);
+      expect(baseElement).toMatchSnapshot();
+    });
+  };
+
+  testHelper(mapper, testFunc);
+});
+
 describe('DateRangePicker component prop:withInput', () => {
   it('show InputTrigger if prop:withInput is passed as true', () => {
     const { getByTestId } = render(<DateRangePicker startDate={startDate} endDate={endDate} withInput={true} />);
@@ -540,7 +557,7 @@ describe('DateRangePicker component with prop:endInputOptions', () => {
         startDate={startDate}
         endDate={endDate}
         withInput={true}
-        endInputOptions={{ required: true }}
+        endInputOptions={{ required: true, error: true }}
         onRangeChange={(e, value) => FunctionValue(e, value, 'end')}
       />
     );
@@ -661,7 +678,7 @@ describe('DateRangePicker component with prop:startInputOptions', () => {
         startDate={startDate}
         endDate={endDate}
         withInput={true}
-        startInputOptions={{ required: true }}
+        startInputOptions={{ required: true, error: true }}
         onRangeChange={(e, value) => FunctionValue(e, value, 'start')}
       />
     );
@@ -692,7 +709,7 @@ describe('DateRangePicker component with prop:inputOptions', () => {
         startDate={startDate}
         endDate={endDate}
         withInput={true}
-        inputOptions={{ required: true }}
+        inputOptions={{ required: true, error: true }}
         singleInput={true}
         onRangeChange={FunctionValue}
       />
@@ -708,7 +725,7 @@ describe('DateRangePicker component with prop:inputOptions', () => {
         startDate={startDate}
         endDate={endDate}
         withInput={true}
-        inputOptions={{ caption, required: true }}
+        inputOptions={{ caption, error: true, required: true }}
         singleInput={true}
         onRangeChange={FunctionValue}
       />
@@ -764,5 +781,233 @@ describe('DateRangePicker component with prop:rangeLimit', () => {
       />
     );
     expect(FunctionValue).toHaveBeenCalled();
+  });
+});
+
+describe('DateRangePicker component prop:allowReverseSelection', () => {
+  it('selects dates in forward direction when allowReverseSelection is false', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} allowReverseSelection={false} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+    fireEvent.click(Inputs[0]);
+
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(startSelection);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.click(endSelection);
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '06/14/2021');
+  });
+
+  it('selects dates in forward direction when allowReverseSelection is true', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} allowReverseSelection={true} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+    fireEvent.click(Inputs[0]);
+
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(startSelection);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.click(endSelection);
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '06/14/2021');
+  });
+
+  it('selects dates in reverse direction when allowReverseSelection is true', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} allowReverseSelection={true} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[17];
+    fireEvent.click(endSelection);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.mouseOver(startSelection);
+    fireEvent.click(startSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/14/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '06/16/2021');
+  });
+
+  it('selects dates in reverse direction when allowReverseSelection is false', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} allowReverseSelection={false} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.click(endSelection);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(startSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '__/__/____');
+  });
+
+  it('swaps start date to end date on hover when hover date is less than start date', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} allowReverseSelection={true} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(startSelection);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[5];
+    fireEvent.mouseOver(endSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '__/__/____');
+    expect(InputTestId[1]).toHaveAttribute('value', '06/09/2021');
+  });
+
+  it('no swapping of dates on hover when allowReverseSelection is passed as false', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={startDate} endDate={endDate} allowReverseSelection={false} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(startSelection);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[5];
+    fireEvent.mouseOver(endSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '__/__/____');
+  });
+
+  it('swaps end date to start date on hover when hover date is greater than end date', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker endDate={endDate} allowReverseSelection={true} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.mouseOver(startSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/08/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '__/__/____');
+  });
+
+  it('swaps end date to start date on selection when start date is greater than end date', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker endDate={endDate} allowReverseSelection={true} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[5];
+    fireEvent.click(startSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/04/2021');
+    expect(InputTestId[1]).toHaveAttribute('value', '06/08/2021');
+  });
+
+  it('selects dates in forward direction when allowReverseSelection is true in single input', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker
+        startDate={startDate}
+        endDate={endDate}
+        allowReverseSelection={true}
+        singleInput={true}
+        withInput={true}
+      />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+    fireEvent.click(Inputs[0]);
+
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(startSelection);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.mouseOver(endSelection);
+    fireEvent.click(endSelection);
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021 - 06/14/2021');
+  });
+
+  it('selects dates in reverse direction when allowReverseSelection is true in single input', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker
+        startDate={startDate}
+        endDate={endDate}
+        singleInput={true}
+        allowReverseSelection={true}
+        withInput={true}
+      />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.click(endSelection);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.mouseOver(startSelection);
+    fireEvent.click(startSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021 - 06/14/2021');
+  });
+
+  it('selects dates in reverse direction when allowReverseSelection is false in single input', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker
+        startDate={startDate}
+        endDate={endDate}
+        singleInput={true}
+        allowReverseSelection={false}
+        withInput={true}
+      />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.click(endSelection);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.click(startSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/09/2021 - __/__/____');
+  });
+
+  it('swaps end date to start date on hover when hover date is greater than end date in single input', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker endDate={endDate} allowReverseSelection={true} singleInput={true} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const startSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[15];
+    fireEvent.mouseOver(startSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '06/08/2021 - __/__/____');
+  });
+
+  it('swaps start date to end date on hover when hover date is smaller than start date in single input', () => {
+    const { getAllByTestId } = render(
+      <DateRangePicker startDate={currentDate} allowReverseSelection={true} singleInput={true} withInput={true} />
+    );
+    const Inputs = getAllByTestId('DesignSystem-InputWrapper');
+    const InputTestId = getAllByTestId('DesignSystem-Input');
+
+    fireEvent.click(Inputs[0]);
+    const endSelection = getAllByTestId('DesignSystem-Calendar--dateValue')[10];
+    fireEvent.mouseOver(endSelection);
+
+    expect(InputTestId[0]).toHaveAttribute('value', '__/__/____ - 09/12/2021');
   });
 });
