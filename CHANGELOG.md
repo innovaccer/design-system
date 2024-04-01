@@ -1,3 +1,49 @@
+## 2.30.0 (2024-04-01)
+
+### Highlights
+
+- feat(menu): add new menu component (19010c36)
+- feat(table): add global action support in table (2d1b2eb1)
+- feat(daterangepicker): add reverse date range selection support (15a7febb)
+- feat(tooltip): show tooltip on text overflow (04ebe60e)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(menu): add new menu component (19010c36)
+- feat(table): add global action support in table (2d1b2eb1)
+- feat(daterangepicker): add reverse date range selection support (15a7febb)
+- feat(tooltip): show tooltip on text overflow (04ebe60e)
+
+### Fixes
+
+NA
+
+### Improvements
+
+- feat(select): add helptext and top label story (b0fa99f4)
+- feat(menu): add stories for default and destructive variant (0184d311)
+- feat(menu): update submenu context api (23473923)
+
+### Documentation
+
+- docs(docs): add combobox documentation (71584bf8)
+- docs(select): add documentation of select component (4ded82a8)
+- docs(daterangepicker): add reverse date selection documentation for daterangepicker (58836ea8)
+
+---
+
 ## 2.29.0 (2024-03-13)
 
 ### Highlights
