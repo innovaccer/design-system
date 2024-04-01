@@ -1543,7 +1543,7 @@ exports[`TS renders children 1`] = `
   </div>
   <style />
   <div
-    class="OutsideClick PopperWrapper-trigger"
+    class="OutsideClick PopperWrapper-trigger d-flex"
   >
     <span
       class="Text Text--default Text--regular"
