@@ -5,7 +5,7 @@ import { ListboxItemProps } from './ListboxItem';
 import { ListboxContext } from '../Listbox';
 import { onKeyDown } from '../utils';
 
-export const ListBody = React.forwardRef<HTMLDivElement, ListboxItemProps>((props, ref) => {
+export const ListBody = (props: ListboxItemProps) => {
   const { children, className, disabled, selected, activated, tabIndex } = props;
 
   const contextProp = React.useContext(ListboxContext);
@@ -30,7 +30,6 @@ export const ListBody = React.forwardRef<HTMLDivElement, ListboxItemProps>((prop
       tabIndex={draggable ? -1 : tabIndex || 0}
       className={itemClass}
       onKeyDown={onKeyDown}
-      ref={ref}
       role="tablist"
     >
       {draggable && (
@@ -45,7 +44,7 @@ export const ListBody = React.forwardRef<HTMLDivElement, ListboxItemProps>((prop
       {children}
     </div>
   );
-});
+};
 
 ListBody.displayName = 'ListBody';
 

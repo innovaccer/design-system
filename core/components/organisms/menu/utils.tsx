@@ -10,7 +10,9 @@ export const handleKeyDown = (
   subListRef?: React.RefObject<HTMLDivElement> | null,
   isSubMenuTrigger?: boolean,
   triggerRef?: React.RefObject<HTMLDivElement> | React.MutableRefObject<HTMLDivElement>,
-  menuID?: string
+  menuID?: string,
+  triggerID?: string,
+  parentListRef?: React.RefObject<HTMLDivElement> | null
 ) => {
   switch (event.key) {
     case 'ArrowUp':
@@ -38,10 +40,10 @@ export const handleKeyDown = (
       setOpenPopover?.(false);
       break;
     case 'ArrowRight':
-      navigateSubMenu(isSubMenuTrigger, 'right', subListRef, triggerRef, menuID);
+      navigateSubMenu(isSubMenuTrigger, 'right', subListRef, menuID, triggerID, parentListRef);
       break;
     case 'ArrowLeft':
-      navigateSubMenu(isSubMenuTrigger, 'left', subListRef, triggerRef, menuID);
+      navigateSubMenu(isSubMenuTrigger, 'left', subListRef, menuID, triggerID, parentListRef);
       break;
     default:
       break;
@@ -75,8 +77,9 @@ const navigateSubMenu = (
   isSubMenuTrigger?: boolean,
   direction?: string,
   subListRef?: React.RefObject<HTMLDivElement> | null,
-  triggerRef?: React.RefObject<HTMLDivElement>,
-  menuID?: string
+  menuID?: string,
+  triggerID?: string,
+  parentListRef?: React.RefObject<HTMLDivElement> | null
 ) => {
   const element = document.querySelector(`[data-name="${menuID}"]`);
   const menuPlacement = element?.getAttribute('data-placement');
@@ -93,6 +96,7 @@ const navigateSubMenu = (
     (direction === 'left' && menuPlacement?.includes('right')) ||
     (direction === 'right' && menuPlacement?.includes('left'))
   ) {
-    triggerRef?.current?.focus();
+    const triggerElement = parentListRef?.current?.querySelector(`#${triggerID}`)?.firstChild;
+    (triggerElement as HTMLElement)?.focus();
   }
 };
