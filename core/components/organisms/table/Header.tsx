@@ -153,7 +153,7 @@ export const Header = (props: HeaderProps) => {
   return (
     <div className="Header">
       <div className="Header-content Header-content--top">
-        <div className="d-flex">
+        <div className="d-flex w-100">
           {withSearch && (
             <div className="Header-search">
               <Input
