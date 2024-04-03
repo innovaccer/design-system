@@ -204,4 +204,18 @@
   --duration--moderate-02: 240ms;
   --duration--slow-01: 400ms;
   --duration--slow-02: 720ms;
+
+  /**** Opacity ****/
+  --opacity-0: 0;
+  --opacity-4: 0.04;
+  --opacity-8: 0.08;
+  --opacity-12: 0.12;
+  --opacity-16: 0.16;
+  --opacity-24: 0.24;
+  --opacity-32: 0.32;
+  --opacity-40: 0.4;
+  --opacity-48: 0.48;
+  --opacity-64: 0.64;
+  --opacity-80: 0.8;
+  --opacity-100: 1;
 }

@@ -179,3 +179,18 @@ export const transitionsDurationData = [
   { token: '--duration--slow-01', value: '400ms' },
   { token: '--duration--slow-02', value: '720ms' },
 ];
+
+export const opacityData = [
+  { token: '--opacity-0', value: '0' },
+  { token: '--opacity-4', value: '0.04' },
+  { token: '--opacity-8', value: '0.08' },
+  { token: '--opacity-12', value: '0.12' },
+  { token: '--opacity-16', value: '0.16' },
+  { token: '--opacity-24', value: '0.24' },
+  { token: '--opacity-32', value: '0.32' },
+  { token: '--opacity-40', value: '0.40' },
+  { token: '--opacity-48', value: '0.48' },
+  { token: '--opacity-64', value: '0.64' },
+  { token: '--opacity-80', value: '0.80' },
+  { token: '--opacity-100', value: '1' },
+];

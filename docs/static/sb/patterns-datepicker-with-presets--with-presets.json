@@ -402,6 +402,21 @@
           "defaultValue": null
         }
       },
+      "allowReverseSelection": {
+        "name": "allowReverseSelection",
+        "description": "Should be use to allow reverse selection in the daterangepicker",
+        "type": {
+          "required": false,
+          "name": "other",
+          "value": "boolean | undefined"
+        },
+        "table": {
+          "type": {
+            "summary": "boolean | undefined"
+          },
+          "defaultValue": null
+        }
+      },
       "className": {
         "name": "className",
         "description": "Adds custom class",
@@ -579,11 +594,11 @@
         "type": {
           "required": false,
           "name": "other",
-          "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
+          "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
         },
         "table": {
           "type": {
-            "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
+            "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
           },
           "defaultValue": {
             "summary": "{ }"
@@ -846,6 +861,21 @@
         "defaultValue": null
       }
     },
+    "allowReverseSelection": {
+      "name": "allowReverseSelection",
+      "description": "Should be use to allow reverse selection in the daterangepicker",
+      "type": {
+        "required": false,
+        "name": "other",
+        "value": "boolean | undefined"
+      },
+      "table": {
+        "type": {
+          "summary": "boolean | undefined"
+        },
+        "defaultValue": null
+      }
+    },
     "className": {
       "name": "className",
       "description": "Adds custom class",
@@ -1023,11 +1053,11 @@
       "type": {
         "required": false,
         "name": "other",
-        "value": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
+        "value": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
       },
       "table": {
         "type": {
-          "summary": "Pick<InputMaskProps, \"name\" | \"type\" | \"defaultValue\" | \"size\" | \"icon\" | \"inlineLabel\" | \"autoComplete\" | \"onChange\" | \"onClear\" | \"info\" | \"min\" | \"max\" | \"minLength\" | ... 359 more ... | \"clearOnEmptyBlur\">"
+          "summary": "Pick<InputMaskProps, \"open\" | \"children\" | \"name\" | \"className\" | \"data-test\" | \"size\" | \"accept\" | \"acceptCharset\" | \"action\" | \"allowFullScreen\" | \"allowTransparency\" | ... 361 more ... | \"clearOnEmptyBlur\">"
         },
         "defaultValue": {
           "summary": "{ }"
