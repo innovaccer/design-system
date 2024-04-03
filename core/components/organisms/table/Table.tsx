@@ -570,11 +570,16 @@ export class Table extends React.Component<TableProps, TableState> {
         fetchData(opts)
           .then((res: any) => {
             if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
-              console.log('inisde iffff');
               const data = res.data;
-              const copyData = JSON.parse(JSON.stringify(data));
+              const dataReplica = JSON.parse(JSON.stringify(data));
               const schema = this.state.schema.length ? this.state.schema : res.schema;
-              const selectedData = getUpdatedData(copyData, uniqueColumnName, this.selectedRowsRef.current);
+              const preSelectedRows = data.filter((item: RowData) => item._selected);
+
+              this.selectedRowsRef.current = this.selectedRowsRef.current
+                ? [...this.selectedRowsRef.current, ...preSelectedRows]
+                : [...preSelectedRows];
+
+              const selectedData = getUpdatedData(dataReplica, uniqueColumnName, this.selectedRowsRef.current);
               this.setState({
                 data: selectedData,
                 displayData: data,
@@ -609,6 +614,11 @@ export class Table extends React.Component<TableProps, TableState> {
       }
 
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
+      const preSelectedRows = renderedData.filter((item: RowData) => item._selected);
+
+      this.selectedRowsRef.current = this.selectedRowsRef.current
+        ? [...this.selectedRowsRef.current, ...preSelectedRows]
+        : [...preSelectedRows];
 
       const selectedData = getUpdatedData(renderedData, uniqueColumnName, this.selectedRowsRef.current);
 
