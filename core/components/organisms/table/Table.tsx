@@ -545,6 +545,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   updateDataFn = () => {
+    console.log('updateDataFnupdateDataFn');
     const { fetchData, pageSize, withPagination, data: dataProp, onSearch, uniqueColumnName = 'id' } = this.props;
 
     const { async, page, sortingList, filterList, searchTerm } = this.state;
@@ -569,9 +570,11 @@ export class Table extends React.Component<TableProps, TableState> {
         fetchData(opts)
           .then((res: any) => {
             if (!res.searchTerm || (res.searchTerm && res.searchTerm === this.state.searchTerm)) {
+              console.log('inisde iffff');
               const data = res.data;
+              const copyData = JSON.parse(JSON.stringify(data));
               const schema = this.state.schema.length ? this.state.schema : res.schema;
-              const selectedData = getUpdatedData(data, uniqueColumnName, this.selectedRowsRef.current);
+              const selectedData = getUpdatedData(copyData, uniqueColumnName, this.selectedRowsRef.current);
               this.setState({
                 data: selectedData,
                 displayData: data,
@@ -624,6 +627,7 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelect: onSelectFn = (rowIndexes, selected) => {
     const { data } = this.state;
 
+    console.log('inside onSelectttt', rowIndexes, 'selected', selected);
     const { onSelect, uniqueColumnName = 'id' } = this.props;
 
     const indexes = [rowIndexes];

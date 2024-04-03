@@ -15,6 +15,7 @@ export const getUpdatedData = (
   const updatedData = data.map((item: RowData) => {
     if (
       isSelectAll ||
+      item._selected ||
       (item[uniqueColumnName] &&
         selectedList &&
         isElementPresent(selectedList, uniqueColumnName, item[uniqueColumnName]) &&

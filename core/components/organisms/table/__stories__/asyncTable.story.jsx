@@ -278,7 +278,7 @@ const customCode = `
           uniqueColumnName="email"
           headerOptions={{
             withSearch: true,
-            globalActionRenderer : globalActionTrigger
+            globalActionRenderer : globalActionTrigger,
             allowSelectAll: true,
           }}
           withCheckbox={true}

@@ -3,10 +3,11 @@
 export default [
   {
     firstName: 'Brooke',
-    lastName: 'Heeran',
+    lastName: 'Heeranss',
     email: 'bheeran0@altervista.org',
     gender: 'Female',
     status: 'Failed',
+    _selected: true,
     // _expanded: {
     //     schema: [
     //         { name: 'firstName', displayName: 'First Name', width: 200 },
