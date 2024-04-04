@@ -55,11 +55,24 @@
 }
 
 .Listbox-item--option:active {
-  background: rgba(255, 245, 199, 0.6);
+  background: var(--secondary-lighter);
 }
 
 .Listbox-item--selected {
-  background: rgba(255, 245, 199, 0.6);
+  background: color-mod(var(--primary-lightest) a(var(--opacity-48)));
+}
+
+.Listbox-item--selected:hover {
+  background: color-mod(var(--primary-lighter) a(var(--opacity-48)));
+}
+
+.Listbox-item--selected:focus,
+.Listbox-item--selected:focus-visible {
+  outline: 3px auto color-mod(var(--primary-shadow));
+}
+
+.Listbox-item--selected:active {
+  background: var(--primary-lighter);
 }
 
 /* Listbox type - resource  */
@@ -78,11 +91,11 @@
 }
 
 .Listbox-item--resource:active {
-  background: rgba(255, 245, 199, 0.6);
+  background: var(--secondary-lighter);
 }
 
 .Listbox-item--activated {
-  background: rgba(255, 245, 199, 0.6);
+  background: var(--primary-lightest);
 }
 
 /* Listbox type - description  */
@@ -95,7 +108,7 @@
 /* Listbox type - disabled  */
 
 .Listbox-item--disabled {
-  opacity: 0.4;
+  opacity: var(--opacity-40);
   pointer-events: none;
 }
 
