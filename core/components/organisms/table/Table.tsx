@@ -661,7 +661,7 @@ export class Table extends React.Component<TableProps, TableState> {
       });
 
       if (this.selectedRowsRef.current) {
-        selectedItemList = [rowData, ...this.selectedRowsRef.current];
+        selectedItemList = [{ ...rowData, _selected: selected }, ...this.selectedRowsRef.current];
       }
 
       if (!selected) {
