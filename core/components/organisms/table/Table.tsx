@@ -17,7 +17,7 @@ import { updateBatchData, filterData, sortData, paginateData, getSelectAll, getT
 import { BaseProps, extractBaseProps } from '@/utils/types';
 import { debounce } from 'throttle-debounce';
 import { PaginationProps } from '@/components/molecules/pagination';
-import { getUpdatedData } from './utils';
+import { getUpdatedData, removeDuplicate } from './utils';
 
 export interface ErrorTemplateProps {
   errorType?: TableProps['errorType'];
@@ -575,9 +575,11 @@ export class Table extends React.Component<TableProps, TableState> {
               const schema = this.state.schema.length ? this.state.schema : res.schema;
               const preSelectedRows = data.filter((item: RowData) => item._selected);
 
+              console.log('removeDuplicateremoveDuplicate', this.selectedRowsRef.current);
+
               this.selectedRowsRef.current = this.selectedRowsRef.current
-                ? [...this.selectedRowsRef.current, ...preSelectedRows]
-                : [...preSelectedRows];
+                ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+                : removeDuplicate([...preSelectedRows], uniqueColumnName);
 
               const selectedData = getUpdatedData(dataReplica, uniqueColumnName, this.selectedRowsRef.current);
               this.setState({
@@ -616,9 +618,10 @@ export class Table extends React.Component<TableProps, TableState> {
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
       const preSelectedRows = renderedData.filter((item: RowData) => item._selected);
 
+      console.log('removeDuplicateremoveDuplicate', this.selectedRowsRef.current);
       this.selectedRowsRef.current = this.selectedRowsRef.current
-        ? [...this.selectedRowsRef.current, ...preSelectedRows]
-        : [...preSelectedRows];
+        ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+        : removeDuplicate([...preSelectedRows], uniqueColumnName);
 
       const selectedData = getUpdatedData(renderedData, uniqueColumnName, this.selectedRowsRef.current);
 
@@ -674,7 +677,11 @@ export class Table extends React.Component<TableProps, TableState> {
 
     if (onSelect) {
       if (this.props.uniqueColumnName) {
-        onSelect(indexes, selected, rowIndexes === -1 && selectedItemList?.length === 0 ? [] : selectedItemList);
+        onSelect(
+          indexes,
+          selected,
+          rowIndexes === -1 && selectedItemList?.length === 0 ? [] : this.selectedRowsRef.current
+        );
       } else {
         // To avoid breaking the current selection flow
         onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));

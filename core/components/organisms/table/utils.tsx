@@ -33,3 +33,21 @@ export const getUpdatedData = (
 
   return updatedData;
 };
+
+const uniqueByKey = (arr: any[], key: string) => {
+  const seen = new Set();
+  return arr.filter((obj) => {
+    const value = obj[key];
+    if (seen.has(value)) {
+      return false;
+    } else {
+      seen.add(value);
+      return true;
+    }
+  });
+};
+
+export const removeDuplicate = (arrayOfObjects: any[], uniqueColumnName: string) => {
+  console.log('arrayOfObjects arrayOfObjects', arrayOfObjects);
+  return uniqueByKey(arrayOfObjects, uniqueColumnName);
+};
