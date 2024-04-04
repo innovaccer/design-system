@@ -1,3 +1,39 @@
+## 2.30.1 (2024-04-03)
+
+### Highlights
+
+- feat(opacity): add new tokens for opacity (460fb565)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(opacity): add new tokens for opacity (460fb565)
+
+### Fixes
+
+- fix(table): global action button alignment (5a04afaa)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(docs): add menu component documentation (088a90e4)
+
+---
+
 ## 2.30.0 (2024-04-01)
 
 ### Highlights
