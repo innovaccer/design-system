@@ -46,13 +46,16 @@ export interface HeaderProps extends ExternalHeaderProps {
   onSelectAll?: onSelectAllFunction;
   searchTerm?: string;
   updateSearchTerm?: updateSearchTermFunction;
+  selectedRowsRef?: React.MutableRefObject<any>;
+  selectedAllRef?: React.MutableRefObject<any>;
+  onClearSelection?: () => void;
 }
 
 export const Header = (props: HeaderProps) => {
   const {
     loading,
-    error,
-    data,
+    // error,
+    // data,
     displayData,
     schema,
     withSearch,
@@ -74,9 +77,12 @@ export const Header = (props: HeaderProps) => {
     updateSearchTerm,
     globalActionRenderer,
     dynamicColumn,
-    allowSelectAll,
+    // allowSelectAll,
     showFilters,
     customSelectionLabel,
+    selectedRowsRef,
+    selectedAllRef,
+    onClearSelection,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -137,18 +143,29 @@ export const Header = (props: HeaderProps) => {
   };
 
   const customLabel = customSelectionLabel ? customSelectionLabel : 'item';
-  const selectedCount = data.filter((d) => d._selected).length;
+  // const selectedCount = data.filter((d) => d._selected).length;
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
-  const label = error
-    ? `Showing 0 ${customLabel}s`
-    : withCheckbox && selectedCount
-    ? selectAllRecords
-      ? `Selected all ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-      : `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)} on this page`
-    : withPagination
-    ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-    : `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+  const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
+
+  // const label = error
+  //   ? `Showing 0 ${customLabel}s`
+  //   : withCheckbox && selectedCount
+  //   ? selectAllRecords
+  //     ? `Selected all ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
+  //     : `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)} on this page`
+  //   : withPagination
+  //   ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
+  //   : `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+
+  const getLabel = () => {
+    if (selectedRowsCount > 0) {
+      return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
+    } else if (withPagination) {
+      return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+    }
+    return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
+  };
 
   return (
     <div className="Header">
@@ -217,8 +234,8 @@ export const Header = (props: HeaderProps) => {
             </Placeholder>
           ) : (
             <>
-              <Label>{label}</Label>
-              {withPagination && selectAll?.checked && allowSelectAll && (
+              <Label>{getLabel()}</Label>
+              {/* {withPagination && selectAll?.checked && allowSelectAll && (
                 <div className="ml-4">
                   {!selectAllRecords ? (
                     <Button
@@ -237,6 +254,29 @@ export const Header = (props: HeaderProps) => {
                       Clear Selection
                     </Button>
                   )}
+                </div>
+              )} */}
+
+              {selectedRowsCount > 0 && (
+                <div className="ml-4 d-flex">
+                  <Button
+                    data-test="DesignSystem-Table-Header--selectAllItemsButton"
+                    size="tiny"
+                    disabled={selectedRowsCount === totalRecords}
+                    // onClick={() => setSelectAllRecords(true)}
+                    // onClick={onSelectAllHandler}
+                  >
+                    {`Select ${totalRecords} ${customLabel}s`}
+                  </Button>
+
+                  <Button
+                    data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
+                    size="tiny"
+                    className="ml-4"
+                    onClick={onClearSelection}
+                  >
+                    Clear Selection
+                  </Button>
                 </div>
               )}
             </>

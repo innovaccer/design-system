@@ -9,13 +9,13 @@ export const getUpdatedData = (
   data: GridProps['data'],
   uniqueColumnName: string,
   selectedList: [],
-  isSelectAll?: boolean,
-  isCancelSelection?: boolean
+  isCancelSelection?: boolean,
+  isSelectAll?: boolean
 ) => {
   const updatedData = data.map((item: RowData) => {
     if (
       isSelectAll ||
-      item._selected ||
+      (item._selected && !isCancelSelection) ||
       (item[uniqueColumnName] &&
         selectedList &&
         isElementPresent(selectedList, uniqueColumnName, item[uniqueColumnName]) &&
@@ -48,6 +48,5 @@ const uniqueByKey = (arr: any[], key: string) => {
 };
 
 export const removeDuplicate = (arrayOfObjects: any[], uniqueColumnName: string) => {
-  console.log('arrayOfObjects arrayOfObjects', arrayOfObjects);
   return uniqueByKey(arrayOfObjects, uniqueColumnName);
 };

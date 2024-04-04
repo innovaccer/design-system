@@ -365,6 +365,7 @@ interface TableState {
   loading: TableProps['loading'];
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
+  clearAllSelection?: boolean;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -435,6 +436,7 @@ export class Table extends React.Component<TableProps, TableState> {
   static defaultProps = defaultProps;
   debounceUpdate: () => void;
   selectedRowsRef: React.MutableRefObject<any> = React.createRef<[] | null>();
+  clearSelectionRef: React.MutableRefObject<any> = React.createRef<boolean | null>();
 
   constructor(props: TableProps) {
     super(props);
@@ -457,6 +459,7 @@ export class Table extends React.Component<TableProps, TableState> {
       errorType: props.errorType,
       selectAll: getSelectAll([]),
       searchTerm: undefined,
+      clearAllSelection: false,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -528,6 +531,11 @@ export class Table extends React.Component<TableProps, TableState> {
         this.updateData(searchUpdate);
       }
     }
+
+    if (prevState.clearAllSelection !== this.state.clearAllSelection && this.state.clearAllSelection) {
+      console.log('cclleeaarr selection');
+      this.updateDataFn();
+    }
   }
 
   updateData = (searchUpdate?: boolean) => {
@@ -575,13 +583,20 @@ export class Table extends React.Component<TableProps, TableState> {
               const schema = this.state.schema.length ? this.state.schema : res.schema;
               const preSelectedRows = data.filter((item: RowData) => item._selected);
 
-              console.log('removeDuplicateremoveDuplicate', this.selectedRowsRef.current);
+              if (this.clearSelectionRef.current) {
+                this.selectedRowsRef.current = [];
+              } else {
+                this.selectedRowsRef.current = this.selectedRowsRef.current
+                  ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+                  : removeDuplicate([...preSelectedRows], uniqueColumnName);
+              }
 
-              this.selectedRowsRef.current = this.selectedRowsRef.current
-                ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
-                : removeDuplicate([...preSelectedRows], uniqueColumnName);
-
-              const selectedData = getUpdatedData(dataReplica, uniqueColumnName, this.selectedRowsRef.current);
+              const selectedData = getUpdatedData(
+                dataReplica,
+                uniqueColumnName,
+                this.selectedRowsRef.current,
+                this.clearSelectionRef.current
+              );
               this.setState({
                 data: selectedData,
                 displayData: data,
@@ -618,12 +633,20 @@ export class Table extends React.Component<TableProps, TableState> {
       const renderedSchema = this.state.schema.length ? this.state.schema : schema;
       const preSelectedRows = renderedData.filter((item: RowData) => item._selected);
 
-      console.log('removeDuplicateremoveDuplicate', this.selectedRowsRef.current);
-      this.selectedRowsRef.current = this.selectedRowsRef.current
-        ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
-        : removeDuplicate([...preSelectedRows], uniqueColumnName);
+      if (this.clearSelectionRef.current) {
+        this.selectedRowsRef.current = [];
+      } else {
+        this.selectedRowsRef.current = this.selectedRowsRef.current
+          ? removeDuplicate([...this.selectedRowsRef.current, ...preSelectedRows], uniqueColumnName)
+          : removeDuplicate([...preSelectedRows], uniqueColumnName);
+      }
 
-      const selectedData = getUpdatedData(renderedData, uniqueColumnName, this.selectedRowsRef.current);
+      const selectedData = getUpdatedData(
+        renderedData,
+        uniqueColumnName,
+        this.selectedRowsRef.current,
+        this.clearSelectionRef.current
+      );
 
       this.setState({
         totalRecords,
@@ -658,6 +681,8 @@ export class Table extends React.Component<TableProps, TableState> {
         this.props.selectDisabledRow
       );
 
+      this.resetClearSelection();
+
       this.setState({
         data: newData,
         selectAll: getSelectAll(newData, this.props.selectDisabledRow),
@@ -670,7 +695,7 @@ export class Table extends React.Component<TableProps, TableState> {
       if (!selected) {
         selectedItemList = selectedItemList.filter((item) => item[uniqueColumnName] !== rowData[uniqueColumnName]);
       }
-      this.selectedRowsRef.current = selectedItemList;
+      this.selectedRowsRef.current = removeDuplicate(selectedItemList, uniqueColumnName);
     } else if (rowIndexes === -1 && this.selectedRowsRef.current) {
       selectedItemList = this.selectedRowsRef.current;
     }
@@ -690,7 +715,7 @@ export class Table extends React.Component<TableProps, TableState> {
   };
 
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
-    const { onSelect } = this.props;
+    const { onSelect, uniqueColumnName = 'id' } = this.props;
 
     console.log('allll selected', selected);
     const { data } = this.state;
@@ -724,7 +749,7 @@ export class Table extends React.Component<TableProps, TableState> {
       onSelect(selectedIndex, selected, selectedData, selectAll);
     }
 
-    this.selectedRowsRef.current = selectedData;
+    this.selectedRowsRef.current = removeDuplicate(selectedData, uniqueColumnName);
 
     this.setState({
       data: newData,
@@ -764,6 +789,21 @@ export class Table extends React.Component<TableProps, TableState> {
     this.setState({
       searchTerm: newSearchTerm,
       page: 1,
+    });
+  };
+
+  onClearSelection = () => {
+    this.selectedRowsRef.current = [];
+    this.clearSelectionRef.current = true;
+    this.setState({
+      clearAllSelection: true,
+    });
+  };
+
+  resetClearSelection = () => {
+    this.clearSelectionRef.current = false;
+    this.setState({
+      clearAllSelection: false,
     });
   };
 
@@ -818,6 +858,8 @@ export class Table extends React.Component<TableProps, TableState> {
               withPagination={withPagination}
               pageSize={pageSize}
               showFilters={filterPosition === 'HEADER'}
+              selectedRowsRef={this.selectedRowsRef}
+              onClearSelection={this.onClearSelection}
               {...headerAttr}
             >
               {headerChildren}

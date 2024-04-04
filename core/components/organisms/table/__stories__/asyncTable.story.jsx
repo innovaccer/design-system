@@ -15,7 +15,7 @@ export const asyncTable = () => {
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
-          uniqueColumnName="email"
+          uniqueColumnName="firstName"
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             action(
               `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
@@ -275,7 +275,7 @@ const customCode = `
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
-          uniqueColumnName="email"
+          uniqueColumnName="firstName"
           headerOptions={{
             withSearch: true,
             globalActionRenderer : globalActionTrigger,
