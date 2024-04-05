@@ -8,6 +8,10 @@ menus:
     link: /foundations/colors/
     hideInMobile: true
 
+  - label: Opacity
+    link: /foundations/opacity/
+    hideInMobile: true
+
   - label: Logos
     link: /foundations/logos/
     hideInMobile: true
