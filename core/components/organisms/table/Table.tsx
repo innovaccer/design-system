@@ -687,13 +687,14 @@ export class Table extends React.Component<TableProps, TableState> {
     //   this.selectAllRef.current = false;
     // }
 
-    // if (this.selectAllRef.current && rowIndexes !== -1) {
-    //   this.selectAllRef.current = false;
+    if (this.selectAllRef.current && rowIndexes !== -1) {
+      this.selectAllRef.current = false;
+      this.selectedRowsRef.current = [];
 
-    //   // const remainingData = data.filter((item) => item !== data[rowIndexes]);
-    //   // console.log('remainingData', remainingData, 'displayData', this.state.displayData);
-    //   // this.selectedRowsRef.current = remainingData;
-    // }
+      // const remainingData = data.filter((item) => item !== data[rowIndexes]);
+      // console.log('remainingData', remainingData, 'displayData', this.state.displayData);
+      // this.selectedRowsRef.current = remainingData;
+    }
 
     const indexes = [rowIndexes];
     const rowData = data[rowIndexes];
