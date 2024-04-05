@@ -49,6 +49,7 @@ export interface HeaderProps extends ExternalHeaderProps {
   selectedRowsRef?: React.MutableRefObject<any>;
   selectedAllRef?: React.MutableRefObject<any>;
   onClearSelection?: () => void;
+  onSelectAllRows?: () => void;
 }
 
 export const Header = (props: HeaderProps) => {
@@ -83,6 +84,7 @@ export const Header = (props: HeaderProps) => {
     selectedRowsRef,
     selectedAllRef,
     onClearSelection,
+    onSelectAllRows,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -264,7 +266,7 @@ export const Header = (props: HeaderProps) => {
                     size="tiny"
                     disabled={selectedRowsCount === totalRecords}
                     // onClick={() => setSelectAllRecords(true)}
-                    // onClick={onSelectAllHandler}
+                    onClick={onSelectAllRows}
                   >
                     {`Select ${totalRecords} ${customLabel}s`}
                   </Button>
