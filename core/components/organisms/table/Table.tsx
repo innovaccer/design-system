@@ -673,27 +673,29 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelect: onSelectFn = (rowIndexes, selected) => {
     const { data } = this.state;
 
-    console.log('inside onSelectttt', rowIndexes, 'selected', selected);
     const { onSelect, uniqueColumnName = 'id' } = this.props;
 
-    // if (!selected && this.selectAllRef.current && rowIndexes >= 0) {
-    //   this.selectAllRef.current = false;
-    //   const remainingData = this.state.displayData.filter((item) => item !== data[rowIndexes]);
-    //   console.log('remainingData', remainingData, 'displayData', this.state.displayData);
-    //   this.selectedRowsRef.current = remainingData;
-    // }
-
-    // if (!selected && this.selectAllRef.current && rowIndexes === -1) {
-    //   this.selectAllRef.current = false;
-    // }
-
-    if (this.selectAllRef.current && rowIndexes !== -1) {
+    if (this.selectAllRef.current && rowIndexes !== -1 && !selected) {
       this.selectAllRef.current = false;
       this.selectedRowsRef.current = [];
 
-      // const remainingData = data.filter((item) => item !== data[rowIndexes]);
-      // console.log('remainingData', remainingData, 'displayData', this.state.displayData);
-      // this.selectedRowsRef.current = remainingData;
+      const indexes = Array.from({ length: data.length }, (_, i) => i);
+
+      const newData = updateBatchData(
+        data,
+        indexes,
+        {
+          _selected: false,
+        },
+        this.props.selectDisabledRow
+      );
+
+      this.setState({
+        data: newData,
+        selectAll: { checked: false, indeterminate: false },
+      });
+
+      return;
     }
 
     const indexes = [rowIndexes];
@@ -701,7 +703,7 @@ export class Table extends React.Component<TableProps, TableState> {
     let selectedItemList = rowIndexes === -1 ? [] : [rowData];
 
     let newData: Data = data;
-    if (rowIndexes >= 0) {
+    if (rowIndexes >= 0 && !this.selectAllRef.current) {
       newData = updateBatchData(
         data,
         indexes,
