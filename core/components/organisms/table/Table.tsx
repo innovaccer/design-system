@@ -610,7 +610,7 @@ export class Table extends React.Component<TableProps, TableState> {
                 data: selectedData,
                 displayData: data,
                 schema,
-                selectAll: getSelectAll(data, this.props.selectDisabledRow),
+                selectAll: getSelectAll(data, this.props.selectDisabledRow, this.clearSelectionRef.current),
                 totalRecords: res.count,
                 loading: false,
                 error: !data.length,
@@ -662,7 +662,7 @@ export class Table extends React.Component<TableProps, TableState> {
         totalRecords,
         error: !renderedData.length,
         errorType: 'NO_RECORDS_FOUND',
-        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow),
+        selectAll: getSelectAll(renderedData, this.props.selectDisabledRow, this.clearSelectionRef.current),
         schema: renderedSchema,
         displayData: sortedData,
         data: selectedData,
@@ -695,6 +695,15 @@ export class Table extends React.Component<TableProps, TableState> {
         selectAll: { checked: false, indeterminate: false },
       });
 
+      if (onSelect) {
+        if (this.props.uniqueColumnName) {
+          onSelect(indexes, selected, this.selectedRowsRef.current, this.selectAllRef.current);
+        } else {
+          // To avoid breaking the current selection flow
+          onSelect(indexes, selected, rowIndexes === -1 ? [] : newData.filter((d) => d._selected));
+        }
+      }
+
       return;
     }
 
@@ -717,7 +726,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
       this.setState({
         data: newData,
-        selectAll: getSelectAll(newData, this.props.selectDisabledRow),
+        selectAll: getSelectAll(newData, this.props.selectDisabledRow, this.clearSelectionRef.current),
       });
 
       if (this.selectedRowsRef.current && selected) {
@@ -752,7 +761,7 @@ export class Table extends React.Component<TableProps, TableState> {
   onSelectAll: onSelectAllFunction = (selected, selectAll) => {
     const { onSelect, uniqueColumnName = 'id' } = this.props;
 
-    console.log('allll selected', selected);
+    console.log('output allll selected', selected);
     const { data } = this.state;
 
     const indexes = Array.from({ length: data.length }, (_, i) => i);
@@ -792,7 +801,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     this.setState({
       data: newData,
-      selectAll: getSelectAll(newData, this.props.selectDisabledRow),
+      selectAll: getSelectAll(newData, this.props.selectDisabledRow, this.clearSelectionRef.current),
     });
   };
 
@@ -838,6 +847,7 @@ export class Table extends React.Component<TableProps, TableState> {
 
     this.setState({
       clearAllSelection: true,
+      selectAll: { checked: false, indeterminate: false },
     });
   };
 
