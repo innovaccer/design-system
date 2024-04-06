@@ -35,7 +35,6 @@ export const GridHead = (props: GridHeadProps) => {
 
   const renderCheckbox = (show: boolean) => {
     if (!show || !withCheckbox) return null;
-    console.log('here', selectAll);
     return (
       <div className="Grid-cell Grid-cell--head Grid-cell--checkbox">
         {loading ? <Placeholder /> : <Checkbox {...selectAll} onChange={onSelectAll} />}

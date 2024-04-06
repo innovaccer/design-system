@@ -52,13 +52,14 @@ export interface HeaderProps extends ExternalHeaderProps {
   selectedAllRef?: React.MutableRefObject<any>;
   onClearSelection?: () => void;
   onSelectAllRows?: () => void;
+  uniqueColumnName?: string;
 }
 
 export const Header = (props: HeaderProps) => {
   const {
     loading,
-    // error,
-    // data,
+    error,
+    data,
     displayData,
     schema,
     withSearch,
@@ -88,6 +89,7 @@ export const Header = (props: HeaderProps) => {
     onClearSelection,
     onSelectAllRows,
     selectionActionRenderer,
+    uniqueColumnName,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -148,24 +150,18 @@ export const Header = (props: HeaderProps) => {
   };
 
   const customLabel = customSelectionLabel ? customSelectionLabel : 'item';
-  // const selectedCount = data.filter((d) => d._selected).length;
+  const selectedCount = data.filter((d) => d._selected).length;
   const startIndex = (page - 1) * pageSize + 1;
   const endIndex = Math.min(page * pageSize, totalRecords);
   const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
 
-  // const label = error
-  //   ? `Showing 0 ${customLabel}s`
-  //   : withCheckbox && selectedCount
-  //   ? selectAllRecords
-  //     ? `Selected all ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-  //     : `Selected ${selectedCount} ${customLabel}${getPluralSuffix(totalRecords)} on this page`
-  //   : withPagination
-  //   ? `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`
-  //   : `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
-
   const getLabel = () => {
-    if (selectedRowsCount > 0) {
+    if (error) {
+      return `Showing 0 ${customLabel}s`;
+    } else if (selectedRowsCount > 0 && uniqueColumnName && withCheckbox) {
       return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
+    } else if (selectedCount && !uniqueColumnName && withCheckbox) {
+      return `Selected ${selectedCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
     } else if (withPagination) {
       return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
     }
