@@ -366,7 +366,7 @@ interface TableState {
   error: TableProps['error'];
   errorType?: TableProps['errorType'];
   clearAllSelection?: boolean;
-  selectAllRows?: boolean;
+  // selectAllRows?: boolean;
 }
 
 const defaultErrorTemplate = (props: ErrorTemplateProps) => {
@@ -462,7 +462,7 @@ export class Table extends React.Component<TableProps, TableState> {
       selectAll: getSelectAll([]),
       searchTerm: undefined,
       clearAllSelection: false,
-      selectAllRows: false,
+      // selectAllRows: false,
     };
 
     this.debounceUpdate = debounce(props.searchDebounceDuration, this.updateDataFn);
@@ -540,10 +540,10 @@ export class Table extends React.Component<TableProps, TableState> {
       this.updateDataFn();
     }
 
-    if (prevState.selectAllRows !== this.state.selectAllRows && this.state.selectAllRows) {
-      console.log('select all selection');
-      this.updateDataFn();
-    }
+    // if (prevState.selectAllRows !== this.state.selectAllRows && this.state.selectAllRows) {
+    //   console.log('select all selection');
+    //   this.updateDataFn();
+    // }
   }
 
   updateData = (searchUpdate?: boolean) => {
@@ -703,7 +703,7 @@ export class Table extends React.Component<TableProps, TableState> {
     let selectedItemList = rowIndexes === -1 ? [] : [rowData];
 
     let newData: Data = data;
-    if (rowIndexes >= 0 && !this.selectAllRef.current) {
+    if (rowIndexes >= 0) {
       newData = updateBatchData(
         data,
         indexes,
@@ -725,7 +725,9 @@ export class Table extends React.Component<TableProps, TableState> {
       }
 
       if (!selected) {
-        selectedItemList = selectedItemList.filter((item) => item[uniqueColumnName] !== rowData[uniqueColumnName]);
+        selectedItemList = this.selectedRowsRef.current.filter(
+          (item: RowData) => item[uniqueColumnName] !== rowData[uniqueColumnName]
+        );
       }
       this.selectedRowsRef.current = removeDuplicate(selectedItemList, uniqueColumnName);
     } else if (rowIndexes === -1 && this.selectedRowsRef.current) {

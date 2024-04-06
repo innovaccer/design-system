@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Checkbox, Label, Input, Dropdown, Placeholder, PlaceholderParagraph, Button } from '@/index';
+import { Checkbox, Label, Input, Dropdown, Placeholder, PlaceholderParagraph, Button, Divider } from '@/index';
 import {
   updateSchemaFunction,
   ColumnSchema,
@@ -8,6 +8,7 @@ import {
   onSelectAllFunction,
   GridProps,
   updateFilterListFunction,
+  RowData,
 } from '../grid/Grid';
 import { hasSchema, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
@@ -21,6 +22,7 @@ export interface ExternalHeaderProps {
   allowSelectAll?: boolean;
   customSelectionLabel?: string;
   globalActionRenderer?: (data: Data) => React.ReactNode;
+  selectionActionRenderer?: (selectedRows: RowData[], selectAll?: boolean) => React.ReactNode;
 }
 
 export type updateSearchTermFunction = (newSearchTerm: string) => void;
@@ -78,13 +80,14 @@ export const Header = (props: HeaderProps) => {
     updateSearchTerm,
     globalActionRenderer,
     dynamicColumn,
-    // allowSelectAll,
+    allowSelectAll,
     showFilters,
     customSelectionLabel,
     selectedRowsRef,
     selectedAllRef,
     onClearSelection,
     onSelectAllRows,
+    selectionActionRenderer,
   } = props;
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
@@ -259,7 +262,7 @@ export const Header = (props: HeaderProps) => {
                 </div>
               )} */}
 
-              {selectedRowsCount > 0 && (
+              {selectedRowsCount > 0 && allowSelectAll && (
                 <div className="ml-4 d-flex">
                   <Button
                     data-test="DesignSystem-Table-Header--selectAllItemsButton"
@@ -279,6 +282,13 @@ export const Header = (props: HeaderProps) => {
                   >
                     Clear Selection
                   </Button>
+                  {selectionActionRenderer && <Divider vertical={true} className="mx-4 Table-Header--Divider" />}
+                </div>
+              )}
+
+              {selectionActionRenderer && selectedRowsCount > 0 && (
+                <div data-test="DesignSystem-Table-Header--ActionRenderer">
+                  {selectionActionRenderer(selectedRowsRef?.current, selectedAllRef?.current)}
                 </div>
               )}
             </>
