@@ -344,7 +344,7 @@ interface SharedTableProps extends BaseProps {
    */
   selectDisabledRow?: boolean;
   /**
-   * Provide name of unique column
+   * Provide name of unique column for persistent selection
    */
   uniqueColumnName?: string;
 }
@@ -594,7 +594,6 @@ export class Table extends React.Component<TableProps, TableState> {
                 this.selectAllRef.current
               );
               this.setState({
-                // data: uniqueColumnName ? selectedData : data,
                 data: selectedData,
                 displayData: data,
                 schema,
@@ -770,10 +769,17 @@ export class Table extends React.Component<TableProps, TableState> {
       }
     });
 
-    const selectedData =
-      selectAll === undefined
-        ? [...(this.selectedRowsRef.current || []), ...newData.filter((d) => d._selected)]
-        : this.selectedRowsRef.current;
+    let selectedData = [];
+
+    if (selected) {
+      selectedData =
+        selectAll === undefined
+          ? [...(this.selectedRowsRef.current || []), ...newData.filter((d) => d._selected)]
+          : this.selectedRowsRef.current;
+    } else {
+      this.selectedRowsRef.current = [];
+      this.selectAllRef.current = false;
+    }
 
     if (onSelect) {
       if (this.props.uniqueColumnName) {
