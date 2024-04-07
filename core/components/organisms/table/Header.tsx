@@ -161,7 +161,7 @@ export const Header = (props: HeaderProps) => {
     } else if (selectedRowsCount > 0 && uniqueColumnName && withCheckbox) {
       return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
     } else if (selectedCount && !uniqueColumnName && withCheckbox) {
-      return `Selected ${selectedCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
+      return `Selected ${selectedCount} ${customLabel}${getPluralSuffix(selectedCount)}`;
     } else if (withPagination) {
       return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
     }
@@ -236,27 +236,6 @@ export const Header = (props: HeaderProps) => {
           ) : (
             <>
               <Label>{getLabel()}</Label>
-              {/* {withPagination && selectAll?.checked && allowSelectAll && (
-                <div className="ml-4">
-                  {!selectAllRecords ? (
-                    <Button
-                      data-test="DesignSystem-Table-Header--selectAllItemsButton"
-                      size="tiny"
-                      onClick={() => setSelectAllRecords(true)}
-                    >
-                      {`Select all ${totalRecords} ${customLabel}s`}
-                    </Button>
-                  ) : (
-                    <Button
-                      data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
-                      size="tiny"
-                      onClick={() => setSelectAllRecords(false)}
-                    >
-                      Clear Selection
-                    </Button>
-                  )}
-                </div>
-              )} */}
 
               {selectedRowsCount > 0 && allowSelectAll && (
                 <div className="ml-4 d-flex">
@@ -264,7 +243,6 @@ export const Header = (props: HeaderProps) => {
                     data-test="DesignSystem-Table-Header--selectAllItemsButton"
                     size="tiny"
                     disabled={selectedRowsCount === totalRecords}
-                    // onClick={() => setSelectAllRecords(true)}
                     onClick={onSelectAllRows}
                   >
                     {`Select ${totalRecords} ${customLabel}s`}
