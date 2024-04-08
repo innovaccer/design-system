@@ -24,3 +24,14 @@
 .Table-Header--Divider {
   height: var(--spacing-xl);
 }
+
+.Table-Header-Label--hide {
+  animation: fadeOut 120ms cubic-bezier(0.2, 0, 1, 0.9);
+  animation-fill-mode: forwards;
+}
+
+.Table-Header-Label--show {
+  animation: fadeIn 160ms cubic-bezier(0, 0, 0.38, 0.9);
+  animation-delay: 80ms;
+  animation-fill-mode: forwards;
+}

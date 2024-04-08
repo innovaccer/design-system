@@ -13,6 +13,7 @@ import {
 import { hasSchema, getPluralSuffix } from '../grid/utility';
 import { DraggableDropdown } from './DraggableDropdown';
 import { DropdownProps } from '@/index.type';
+import classNames from 'classnames';
 
 export interface ExternalHeaderProps {
   children?: React.ReactNode;
@@ -94,6 +95,42 @@ export const Header = (props: HeaderProps) => {
 
   const [selectAllRecords, setSelectAllRecords] = React.useState<boolean>(false);
   const [flag, setFlag] = React.useState(true);
+  const customLabel = customSelectionLabel ? customSelectionLabel : 'item';
+  const selectedCount = data.filter((d) => d._selected).length;
+  const startIndex = (page - 1) * pageSize + 1;
+  const endIndex = Math.min(page * pageSize, totalRecords);
+  const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
+
+  const showSelectedRowLabel = withCheckbox && (selectedCount || selectedRowsCount > 0);
+
+  const [showSelectedLabel, setShowSelectedLabel] = React.useState(false);
+  const [animateSelectedLabel, setAnimateSelectedLabel] = React.useState(false);
+  const [animateUnSelectedLabel, setAnimateUnSelectedLabel] = React.useState(false);
+
+  React.useEffect(() => {
+    setAnimateUnSelectedLabel(true);
+    setAnimateSelectedLabel(true);
+  }, [showSelectedRowLabel]);
+
+  const onUnSelectAnimationEnd = () => {
+    showSelectedRowLabel ? setShowSelectedLabel(true) : setShowSelectedLabel(false);
+    setAnimateSelectedLabel(true);
+    setAnimateUnSelectedLabel(false);
+  };
+
+  const onSelectAnimationEnd = () => {
+    showSelectedRowLabel ? setShowSelectedLabel(true) : setShowSelectedLabel(false);
+    setAnimateSelectedLabel(false);
+    setAnimateUnSelectedLabel(true);
+  };
+
+  const unselectedRowLabelClass = classNames({
+    'Table-Header-Label--hide': animateUnSelectedLabel && showSelectedRowLabel,
+  });
+
+  const selectedRowLabelClass = classNames({
+    'Table-Header-Label--hide': animateSelectedLabel && !showSelectedRowLabel,
+  });
 
   React.useEffect(() => {
     setFlag(!flag);
@@ -108,6 +145,19 @@ export const Header = (props: HeaderProps) => {
   React.useEffect(() => {
     if (selectAll && !selectAll.checked) setSelectAllRecords(false);
   }, [selectAll]);
+
+  // React.useEffect(() => {
+  //   if (showSelectedRowLabel !== showingSelected) {
+  //     // Begin the fade-out transition
+  //     setIsAnimating(true);
+
+  //     // After fade-out ends, change the label and start fade-in transition
+  //     setTimeout(() => {
+  //       setShowingSelected(showSelectedRowLabel);
+  //       setIsAnimating(false);
+  //     }, 500); // This timeout should match the CSS transition duration
+  //   }
+  // }, [showSelectedRowLabel]);
 
   const filterSchema = schema.filter((s) => s.filters);
 
@@ -149,24 +199,30 @@ export const Header = (props: HeaderProps) => {
     if (updateSchema) updateSchema(newSchema);
   };
 
-  const customLabel = customSelectionLabel ? customSelectionLabel : 'item';
-  const selectedCount = data.filter((d) => d._selected).length;
-  const startIndex = (page - 1) * pageSize + 1;
-  const endIndex = Math.min(page * pageSize, totalRecords);
-  const selectedRowsCount = selectedAllRef?.current === true ? totalRecords : selectedRowsRef?.current?.length || 0;
-
-  const getLabel = () => {
+  const getUnSelectedRowLabel = () => {
     if (error) {
       return `Showing 0 ${customLabel}s`;
-    } else if (selectedRowsCount > 0 && uniqueColumnName && withCheckbox) {
-      return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
-    } else if (selectedCount && !uniqueColumnName && withCheckbox) {
-      return `Selected ${selectedCount} ${customLabel}${getPluralSuffix(selectedCount)}`;
     } else if (withPagination) {
       return `Showing ${startIndex}-${endIndex} of ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
     }
     return `Showing ${totalRecords} ${customLabel}${getPluralSuffix(totalRecords)}`;
   };
+
+  const getSelectedRowLabel = () => {
+    if (selectedRowsCount > 0 && uniqueColumnName && withCheckbox) {
+      return `Selected ${selectedRowsCount} ${customLabel}${getPluralSuffix(selectedRowsCount)}`;
+    } else if (selectedCount && !uniqueColumnName && withCheckbox) {
+      return `Selected ${selectedCount} ${customLabel}${getPluralSuffix(selectedCount)}`;
+    }
+    return;
+  };
+
+  // const selectedRowLabelClass = classNames({
+  //   'fade-enter': isAnimating && showSelectedRowLabel,
+  //   'fade-enter-active': showingSelected && !isAnimating,
+  //   'fade-exit': isAnimating && !showSelectedRowLabel,
+  //   'fade-exit-active': !showingSelected && !isAnimating,
+  // });
 
   return (
     <div className="Header">
@@ -235,9 +291,22 @@ export const Header = (props: HeaderProps) => {
             </Placeholder>
           ) : (
             <>
-              <Label>{getLabel()}</Label>
+              {/* <Label className={unselectedRowLabelClass}>{getUnSelectedRowLabel()}</Label> */}
 
-              {selectedRowsCount > 0 && allowSelectAll && (
+              {showSelectedLabel ? (
+                <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
+                  <Label className={selectedRowLabelClass}>{getSelectedRowLabel()}</Label>
+                </span>
+              ) : (
+                <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
+                  <Label>{getUnSelectedRowLabel()}</Label>
+                </span>
+              )}
+
+              {/* {<Label className={selectedRowLabelClass}>{getSelectedRowLabel()}</Label>}
+              {<Label className={unselectedRowLabelClass}>{getUnSelectedRowLabel()}</Label>} */}
+
+              {selectedRowsCount > 0 && allowSelectAll && showSelectedLabel && (
                 <div className="ml-4 d-flex">
                   <Button
                     data-test="DesignSystem-Table-Header--selectAllItemsButton"
@@ -260,7 +329,7 @@ export const Header = (props: HeaderProps) => {
                 </div>
               )}
 
-              {selectionActionRenderer && selectedRowsCount > 0 && (
+              {selectionActionRenderer && selectedRowsCount > 0 && showSelectedLabel && (
                 <div data-test="DesignSystem-Table-Header--ActionRenderer">
                   {selectionActionRenderer(selectedRowsRef?.current, selectedAllRef?.current)}
                 </div>
