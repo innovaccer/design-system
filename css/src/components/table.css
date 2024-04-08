@@ -32,6 +32,6 @@
 
 .Table-Header-Label--show {
   animation: fadeIn 160ms cubic-bezier(0, 0, 0.38, 0.9);
-  animation-delay: 80ms;
+  /* animation-delay: 80ms; */
   animation-fill-mode: forwards;
 }

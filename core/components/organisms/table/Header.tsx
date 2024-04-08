@@ -108,8 +108,13 @@ export const Header = (props: HeaderProps) => {
   const [animateUnSelectedLabel, setAnimateUnSelectedLabel] = React.useState(false);
 
   React.useEffect(() => {
-    setAnimateUnSelectedLabel(true);
-    setAnimateSelectedLabel(true);
+    if (showSelectedRowLabel) {
+      setAnimateUnSelectedLabel(true);
+      setAnimateSelectedLabel(false);
+    } else {
+      setAnimateUnSelectedLabel(false);
+      setAnimateSelectedLabel(true);
+    }
   }, [showSelectedRowLabel]);
 
   const onUnSelectAnimationEnd = () => {
@@ -125,11 +130,15 @@ export const Header = (props: HeaderProps) => {
   };
 
   const unselectedRowLabelClass = classNames({
+    // 'opacity-0': true,
     'Table-Header-Label--hide': animateUnSelectedLabel && showSelectedRowLabel,
+    'Table-Header-Label--show': animateUnSelectedLabel && !showSelectedRowLabel,
   });
 
   const selectedRowLabelClass = classNames({
+    // 'opacity-0': true,
     'Table-Header-Label--hide': animateSelectedLabel && !showSelectedRowLabel,
+    'Table-Header-Label--show': animateSelectedLabel && showSelectedRowLabel,
   });
 
   React.useEffect(() => {
@@ -291,11 +300,9 @@ export const Header = (props: HeaderProps) => {
             </Placeholder>
           ) : (
             <>
-              {/* <Label className={unselectedRowLabelClass}>{getUnSelectedRowLabel()}</Label> */}
-
               {showSelectedLabel ? (
                 <span className={selectedRowLabelClass} onAnimationEnd={onSelectAnimationEnd}>
-                  <Label className={selectedRowLabelClass}>{getSelectedRowLabel()}</Label>
+                  <Label>{getSelectedRowLabel()}</Label>
                 </span>
               ) : (
                 <span className={unselectedRowLabelClass} onAnimationEnd={onUnSelectAnimationEnd}>
@@ -303,34 +310,33 @@ export const Header = (props: HeaderProps) => {
                 </span>
               )}
 
-              {/* {<Label className={selectedRowLabelClass}>{getSelectedRowLabel()}</Label>}
-              {<Label className={unselectedRowLabelClass}>{getUnSelectedRowLabel()}</Label>} */}
-
               {selectedRowsCount > 0 && allowSelectAll && showSelectedLabel && (
-                <div className="ml-4 d-flex">
-                  <Button
-                    data-test="DesignSystem-Table-Header--selectAllItemsButton"
-                    size="tiny"
-                    disabled={selectedRowsCount === totalRecords}
-                    onClick={onSelectAllRows}
-                  >
-                    {`Select ${totalRecords} ${customLabel}s`}
-                  </Button>
+                <div className={selectedRowLabelClass}>
+                  <div className="ml-4 d-flex">
+                    <Button
+                      data-test="DesignSystem-Table-Header--selectAllItemsButton"
+                      size="tiny"
+                      disabled={selectedRowsCount === totalRecords}
+                      onClick={onSelectAllRows}
+                    >
+                      {`Select ${totalRecords} ${customLabel}s`}
+                    </Button>
 
-                  <Button
-                    data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
-                    size="tiny"
-                    className="ml-4"
-                    onClick={onClearSelection}
-                  >
-                    Clear Selection
-                  </Button>
-                  {selectionActionRenderer && <Divider vertical={true} className="mx-4 Table-Header--Divider" />}
+                    <Button
+                      data-test="DesignSystem-Table-Header--clearSelectionItemsButton"
+                      size="tiny"
+                      className="ml-4"
+                      onClick={onClearSelection}
+                    >
+                      Clear Selection
+                    </Button>
+                    {selectionActionRenderer && <Divider vertical={true} className="mx-4 Table-Header--Divider" />}
+                  </div>
                 </div>
               )}
 
               {selectionActionRenderer && selectedRowsCount > 0 && showSelectedLabel && (
-                <div data-test="DesignSystem-Table-Header--ActionRenderer">
+                <div data-test="DesignSystem-Table-Header--ActionRenderer" className={selectedRowLabelClass}>
                   {selectionActionRenderer(selectedRowsRef?.current, selectedAllRef?.current)}
                 </div>
               )}
