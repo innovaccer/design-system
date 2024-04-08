@@ -137,6 +137,8 @@
   flex-shrink: 0;
   box-sizing: border-box;
   background: var(--white);
+  transition: var(--duration--fast-02) var(--standard-productive-curve);
+  transition-delay: 80ms;
 }
 
 .Grid-row--body {
@@ -146,6 +148,7 @@
 .Grid-row--selected,
 .Grid-row--selected .Grid-cellGroup {
   background: color-mod(var(--primary-lightest) a(var(--opacity-48)));
+  transition: var(--duration--fast-02) var(--standard-productive-curve);
 }
 
 .Grid-row--selected:hover,
