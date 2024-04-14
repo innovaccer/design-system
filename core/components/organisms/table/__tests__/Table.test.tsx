@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor, screen, cleanup } from '@testing-library/react';
 import { Table, Button } from '@/index';
 import { TableProps as Props } from '@/index.type';
 import { testHelper, filterUndefined, valueHelper, testMessageHelper } from '@/utils/testHelper';
@@ -27,6 +27,7 @@ const tableSchema = [
     ],
   },
 ];
+
 const fetchTableData = jest.fn(() =>
   Promise.resolve({
     schema: tableSchema,
@@ -35,6 +36,7 @@ const fetchTableData = jest.fn(() =>
     searchTerm: '',
   })
 );
+
 describe('Table component sync', () => {
   const mapper = {
     data: valueHelper(tableData, { required: true }),
@@ -453,16 +455,14 @@ describe('render Table with selectAll Row option', () => {
     const selectionLabel = getByTestId('DesignSystem-Label--Text');
 
     expect(selectAllButton).toBeInTheDocument();
-    expect(selectionLabel).toHaveTextContent('Selected 2 users on this page');
-    expect(selectAllButton).toHaveTextContent('Select all 2 users');
+    expect(selectionLabel).toHaveTextContent('Selected 2 users');
+    expect(selectAllButton).toHaveTextContent('Select 2 users');
 
     fireEvent.click(selectAllButton);
-    expect(selectionLabel).toHaveTextContent('Selected all 2 users');
+    expect(selectionLabel).toHaveTextContent('Selected 2 users');
 
     const clearSelectionButton = getByTestId('DesignSystem-Table-Header--clearSelectionItemsButton');
     expect(clearSelectionButton).toBeInTheDocument();
-    fireEvent.click(clearSelectionButton);
-    expect(selectionLabel).toHaveTextContent('Selected 2 users on this page');
   });
 
   it('check default label of button on row selection', () => {
@@ -484,15 +484,170 @@ describe('render Table with selectAll Row option', () => {
     const selectionLabel = getByTestId('DesignSystem-Label--Text');
 
     expect(selectAllButton).toBeInTheDocument();
-    expect(selectionLabel).toHaveTextContent('Selected 2 items on this page');
-    expect(selectAllButton).toHaveTextContent('Select all 2 items');
+    expect(selectionLabel).toHaveTextContent('Selected 2 items');
+    expect(selectAllButton).toHaveTextContent('Select 2 items');
 
     fireEvent.click(selectAllButton);
-    expect(selectionLabel).toHaveTextContent('Selected all 2 items');
+    expect(selectionLabel).toHaveTextContent('Selected 2 items');
+
+    const clearSelectionButton = getByTestId('DesignSystem-Table-Header--clearSelectionItemsButton');
+    expect(clearSelectionButton).toBeInTheDocument();
+  });
+});
+
+describe('render table with selection persistance', () => {
+  it('check for table selection persistance across pages when uniqueColumnName is provided', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%' },
+      { name: 'gender', displayName: 'Gender', width: '50%' },
+    ];
+    const data = [
+      { name: 'Zara', gender: 'f' },
+      { name: 'Sara', gender: 'm' },
+    ];
+    const { getAllByTestId, getByTestId } = render(
+      <Table schema={schema} pageSize={1} withCheckbox={true} onSelect={onSelect} data={data} uniqueColumnName="name" />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox');
+    fireEvent.click(checkbox[0]);
+    expect(onSelect).toHaveBeenCalled();
+
+    const tableRow = getAllByTestId('DesignSystem-Grid-row');
+    expect(tableRow[0]).toHaveClass('Grid-row--selected');
+
+    // Move to Next Page
+    const nextButton = getByTestId('DesignSystem-Pagination--NextButton');
+    const pageText = getByTestId('DesignSystem-Pagination--Input');
+    expect(pageText).toHaveDisplayValue('1');
+    fireEvent.click(nextButton);
+    expect(pageText).toHaveDisplayValue('2');
+
+    // Move back to previous page
+    const prevButton = getByTestId('DesignSystem-Pagination--PrevButton');
+    fireEvent.click(prevButton);
+    expect(pageText).toHaveDisplayValue('1');
+    expect(tableRow[0]).toHaveClass('Grid-row--selected');
+  });
+});
+
+describe('render table with clear selection button', () => {
+  it('check for clear selection button on selection', () => {
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%' },
+      { name: 'gender', displayName: 'Gender', width: '50%' },
+    ];
+    const data = [
+      { name: 'Zara', gender: 'f' },
+      { name: 'Sara', gender: 'm' },
+    ];
+
+    const headerOptions = { withSearch: true, allowSelectAll: true };
+
+    const { getAllByTestId, getByTestId } = render(
+      <Table
+        schema={schema}
+        pageSize={1}
+        withHeader={true}
+        withCheckbox={true}
+        headerOptions={headerOptions}
+        onSelect={onSelect}
+        data={data}
+        uniqueColumnName="name"
+      />
+    );
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox');
+    fireEvent.click(checkbox[0]);
+    expect(onSelect).toHaveBeenCalled();
+
+    const tableRow = getAllByTestId('DesignSystem-Grid-row');
+    expect(tableRow[0]).toHaveClass('Grid-row--selected');
+
+    const selectionLabel = getByTestId('DesignSystem-Label--Text');
+    expect(selectionLabel).toHaveTextContent('Selected 1 item');
 
     const clearSelectionButton = getByTestId('DesignSystem-Table-Header--clearSelectionItemsButton');
     expect(clearSelectionButton).toBeInTheDocument();
     fireEvent.click(clearSelectionButton);
-    expect(selectionLabel).toHaveTextContent('Selected 2 items on this page');
+
+    expect(checkbox[0]).not.toBeChecked();
+
+    expect(tableRow[0]).not.toHaveClass('Grid-row--selected');
+  });
+});
+
+describe('render table with persistent selection across search', () => {
+  it('check for selection persistence on searching', () => {
+    const headerOptions = { withSearch: true, allowSelectAll: true };
+
+    const schema = [
+      { name: 'name', displayName: 'Name', width: '50%' },
+      { name: 'gender', displayName: 'Gender', width: '50%' },
+    ];
+    const data = [
+      { name: 'Zara', gender: 'f' },
+      { name: 'Sara', gender: 'm' },
+      { name: 'Frazer', gender: 'm' },
+      { name: 'Lemmie', gender: 'm' },
+    ];
+
+    const { getAllByTestId, getByTestId } = render(
+      <Table
+        data={data}
+        pageSize={2}
+        schema={schema}
+        withCheckbox={true}
+        withHeader={true}
+        onSelect={onSelect}
+        uniqueColumnName="name"
+        headerOptions={headerOptions}
+      />
+    );
+
+    const input = getByTestId('DesignSystem-Table-Header--withSearch');
+    fireEvent.change(input, { target: { value: 'sara' } });
+    expect(input).toHaveDisplayValue('sara');
+    fireEvent.keyDown(input, { key: 'Enter' });
+
+    const tableRows = getAllByTestId('DesignSystem-Grid-row');
+
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox');
+    fireEvent.click(checkbox[0]);
+    expect(tableRows[0]).toHaveClass('Grid-row--selected');
+  });
+});
+
+describe('render table with selection action renderer', () => {
+  it('check for selection action trigger', async () => {
+    cleanup();
+
+    const data = [{ name: 'Zara' }, { name: 'Sara', _selected: true }, { name: 'Frazer' }, { name: 'Lemmie' }];
+
+    const selectionActionRenderer = () => {
+      return <Button data-test="DesignSystem-Table-SelectionActionTrigger">Export</Button>;
+    };
+
+    const headerOptions = { withSearch: true, selectionActionRenderer, allowSelectAll: true };
+    const { getAllByTestId } = render(
+      <Table
+        withHeader={true}
+        withCheckbox={true}
+        data={data}
+        uniqueColumnName="name"
+        schema={tableSchema}
+        headerOptions={headerOptions}
+      />
+    );
+
+    const tableRows = getAllByTestId('DesignSystem-Grid-row');
+
+    const checkbox = getAllByTestId('DesignSystem-Checkbox-InputBox');
+    fireEvent.click(checkbox[0]);
+
+    await waitFor(() => {
+      expect(tableRows[0]).toHaveClass('Grid-row--selected');
+    });
+
+    const selectionActionTrigger = screen.getByTestId('DesignSystem-Table-Header--ActionRenderer');
+    expect(selectionActionTrigger).toBeInTheDocument();
   });
 });

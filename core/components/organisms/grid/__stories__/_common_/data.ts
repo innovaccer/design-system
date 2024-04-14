@@ -1,5 +1,3 @@
-// import { Data } from '../Grid';
-
 export default [
   {
     firstName: 'Brooke',
@@ -7,12 +5,6 @@ export default [
     email: 'bheeran0@altervista.org',
     gender: 'Female',
     status: 'Failed',
-    // _expanded: {
-    //     schema: [
-    //         { name: 'firstName', displayName: 'First Name', width: 200 },
-    //         { name: 'lastName', displayName: 'Last Name', width: 200 },
-    //     ]
-    // },
   },
   {
     firstName: 'Frazer',
@@ -20,18 +12,6 @@ export default [
     email: 'fcathro1@ucla.edu',
     gender: 'Male',
     status: 'Failed',
-    // _expanded: {
-    //     schema: [
-    //         { name: 'year', displayName: 'Year', width: 100, comparator: (a: Data, b: Data): number => a.year.localeCompare(b.year) },
-    //         { name: 'income', displayName: 'Income', width: 200, comparator: (a: Data, b: Data): number => a.income.localeCompare(b.income) },
-    //     ],
-    //     data: [
-    //         { year: 2016, income: "50k" },
-    //         { year: 2018, income: "80k" },
-    //         { year: 2017, income: "60k" },
-    //         { year: 2020, income: "70k" }
-    //     ]
-    // }
   },
   {
     firstName: 'Lemmie',
@@ -49,20 +29,6 @@ export default [
     email: 'rboatwright3@arstechnica.com',
     status: 'Completed',
     gender: 'Male',
-    // _expanded: {
-    //     showHead: false,
-    //     data: [
-    //         {
-    //             gender: 'Male',
-    //         },
-    //         {
-    //             gender: 'Male',
-    //         },
-    //         {
-    //             gender: 'Male',
-    //         }
-    //     ]
-    // }
   },
   {
     firstName: 'Rolando',
