@@ -1,3 +1,46 @@
+## 2.31.0 (2024-04-15)
+
+### Highlights
+
+- feat(table): add persistent selection support in table (7c07d6ac)
+- feat(listbox): update list item states with updated opacity token (d426a36e)
+- feat(table): update states of table with new opacity tokens (4a23a7e5)
+
+### Breaking changes
+
+NA
+
+### Migration guide
+
+NA
+
+### Deprecations
+
+NA
+
+### Features
+
+- feat(table): add persistent selection support in table (7c07d6ac)
+- feat(listbox): update list item states with updated opacity token (d426a36e)
+- feat(table): update states of table with new opacity tokens (4a23a7e5)
+
+### Fixes
+
+- fix(editableDropdown): popover open issue with custom type on option selection (ba4fecff)
+- fix(tooltip): fix spelling mistakes in tooltip (777c9dd9)
+
+### Improvements
+
+NA
+
+### Documentation
+
+- docs(listbox): update the listbox state documentation (32ddf640)
+- docs(combobox): update option state documentation in combobox (81e55b64)
+- docs(opacity): add new opacity token guidelines (a533ce73)
+
+---
+
 ## 2.30.1 (2024-04-03)
 
 ### Highlights
