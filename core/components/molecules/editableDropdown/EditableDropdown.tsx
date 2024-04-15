@@ -57,6 +57,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
     switch (eventType) {
       case 'edit':
         setEditing(true);
+        setShowComponent(true);
         break;
       case 'hover':
         setShowComponent(true);
@@ -74,6 +75,7 @@ export const EditableDropdown = (props: EditableDropdownProps) => {
 
   const onClose = (selected: any) => {
     setEditing(false);
+    setShowComponent(false);
     if (onDropdownClose) onDropdownClose(selected);
   };
 

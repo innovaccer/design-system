@@ -43,7 +43,7 @@ export type sortDataFunction = (comparator: Comparator, type: SortType) => void;
 export type reorderColumnFunction = (from: string, to: string) => void;
 export type onSelectFn = (rowIndex: number, selected: boolean) => void;
 export type onFilterChangeFn = (name: ColumnSchema['name'], selected: any) => void;
-export type onSelectAllFunction = (selected: boolean, selectAll?: boolean) => void;
+export type onSelectAllFunction = (selected: boolean, selectAll?: boolean, headerCheckbox?: boolean) => void;
 export type onFilterChangeFunction = (data: RowData, filters: Filter) => boolean;
 export type onRowClickFunction = (data: RowData, rowIndex?: number) => void;
 export type onMenuChangeFn = (name: ColumnSchema['name'], selected: any) => void;
@@ -473,7 +473,7 @@ export class Grid extends React.Component<GridProps, GridState> {
     const { onSelectAll } = this.props;
 
     if (onSelectAll) {
-      onSelectAll(event.target.checked);
+      onSelectAll(event.target.checked, undefined, true);
     }
   };
 

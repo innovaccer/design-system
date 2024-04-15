@@ -20,3 +20,17 @@
   padding: var(--spacing) 0;
   border-top: var(--border);
 }
+
+.Table-Header--Divider {
+  height: var(--spacing-xl);
+}
+
+.Table-Header-Label--hide {
+  animation: fadeOut var(--duration--fast-02) var(--exit-productive-curve);
+  animation-fill-mode: forwards;
+}
+
+.Table-Header-Label--show {
+  animation: fadeIn var(--duration--moderate-01) var(--entrance-productive-curve);
+  animation-fill-mode: forwards;
+}

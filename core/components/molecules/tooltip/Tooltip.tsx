@@ -17,6 +17,7 @@ const tooltipPropsList = [
   'hideOnReferenceEscape',
   'closeOnScroll',
 ] as const;
+
 const positionValue = {
   bottom: 'bottom',
   top: 'top',
@@ -27,7 +28,9 @@ const positionValue = {
   left: 'left',
   right: 'right',
 };
+
 type TooltipPopperProps = typeof tooltipPropsList[number];
+
 export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, BaseProps {
   /**
    * Text to be rendered in `Tooltip`
@@ -56,7 +59,7 @@ export interface TooltipProps extends Omit<PopoverProps, TooltipPopperProps>, Ba
    */
   showOnTruncation?: boolean;
   /**
-   * text element for refernce to detect the overflow
+   * text element for reference to detect the overflow
    * of text in case when `showOnTruncation` is true otherwise
    * it will refer to the rendered children
    */
@@ -80,7 +83,7 @@ export const Tooltip = (props: TooltipProps) => {
     setIsTruncated(detectTruncation(element));
   }, [childrenRef, elementRef]);
 
-  const renderChildern =
+  const renderChildren =
     elementRef || !React.isValidElement(children)
       ? children
       : React.cloneElement(children as React.ReactElement<any>, {
@@ -103,7 +106,7 @@ export const Tooltip = (props: TooltipProps) => {
   if (showOnTruncation) {
     return isTruncated ? (
       <Popover
-        trigger={renderChildern}
+        trigger={renderChildren}
         on={'hover'}
         offset={'medium'}
         {...rest}
@@ -116,7 +119,7 @@ export const Tooltip = (props: TooltipProps) => {
         {tooltipWrapper}
       </Popover>
     ) : (
-      renderChildern
+      renderChildren
     );
   }
 

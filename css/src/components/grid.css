@@ -24,11 +24,12 @@
 
 .Grid--resource .Grid-row--body:active,
 .Grid--resource .Grid-row--body:active .Grid-cellGroup {
-  background: var(--warning-lightest) !important;
+  background: var(--secondary-lighter);
 }
 
 .Grid--resource .Grid-row--body:focus {
-  outline-color: var(--warning);
+  box-shadow: var(--shadow-spread) color-mod(var(--secondary) a(var(--opacity-16)));
+  outline: none;
 }
 
 .Grid--pinned {
@@ -136,6 +137,8 @@
   flex-shrink: 0;
   box-sizing: border-box;
   background: var(--white);
+  transition: var(--duration--fast-02) var(--standard-productive-curve);
+  transition-delay: var(--duration--fast-01);
 }
 
 .Grid-row--body {
@@ -144,7 +147,24 @@
 
 .Grid-row--selected,
 .Grid-row--selected .Grid-cellGroup {
-  background: var(--warning-lightest) !important;
+  background: color-mod(var(--primary-lightest) a(var(--opacity-48)));
+  transition: var(--duration--fast-02) var(--standard-productive-curve);
+}
+
+.Grid-row--selected:hover,
+.Grid-row--selected .Grid-cellGroup:hover {
+  background: color-mod(var(--primary-lighter) a(var(--opacity-48))) !important;
+}
+
+.Grid-row--selected:active,
+.Grid-row--selected .Grid-cellGroup:active {
+  background: var(--primary-lighter) !important;
+}
+
+.Grid-row--selected:focus,
+.Grid-row--selected .Grid-cellGroup:focus {
+  outline: none;
+  box-shadow: var(--shadow-spread) color-mod(var(--primary) a(var(--opacity-16)));
 }
 
 .Grid-rowWrapper:last-child .Grid-row--body {
@@ -223,7 +243,7 @@
 } */
 
 .Grid-row--disabled {
-  opacity: 0.4;
+  opacity: var(--opacity-40);
   pointer-events: none;
 }
 

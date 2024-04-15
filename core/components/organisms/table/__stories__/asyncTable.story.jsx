@@ -1,12 +1,24 @@
 import * as React from 'react';
 import loaderSchema from '@/components/organisms/grid/__stories__/_common_/loaderSchema';
 import data from '@/components/organisms/grid/__stories__/_common_/data';
-import { Card, Table } from '@/index';
+import { Card, Table, Button } from '@/index';
 import { AsyncTable, SyncTable } from './_common_/types';
 import { fetchData } from '@/components/organisms/grid/__stories__/_common_/fetchData';
 import { action } from '@/utils/action';
 
 export const asyncTable = () => {
+  const selectionActionRenderer = (selectedData, selectAll) => {
+    action('selectedData', selectedData, 'selectAll', selectAll)();
+    return (
+      <div className="d-flex align-items-center">
+        <Button size="tiny" className="mr-4">
+          Delete
+        </Button>
+        <Button size="tiny">Export</Button>
+      </div>
+    );
+  };
+
   return (
     <div>
       <Card className="h-100 overflow-hidden">
@@ -15,6 +27,7 @@ export const asyncTable = () => {
           fetchData={fetchData}
           withHeader={true}
           withCheckbox={true}
+          uniqueColumnName="firstName"
           onSelect={(rowIndex, selected, selectedList, selectAll) =>
             action(
               `on-select:- rowIndex: ${rowIndex} selected: ${selected} selectedList: ${JSON.stringify(
@@ -24,6 +37,8 @@ export const asyncTable = () => {
           }
           headerOptions={{
             withSearch: true,
+            allowSelectAll: true,
+            selectionActionRenderer,
           }}
           withPagination={true}
           pageSize={5}
@@ -258,13 +273,23 @@ const customCode = `
 
   const loaderSchema = ${JSON.stringify(loaderSchema, null, 4)};
 
-  const onDataExport = () => {
-    console.log("Exporting data", formattedData);
+  const onDataExport = (data) => {
+    console.log("Exporting data", data);
   }
 
   const globalActionTrigger = (data) => {
-    return (<Button onClick={() => onDataExport()}>Export</Button>);
+    return (<Button onClick={() => onDataExport(data)}>Export</Button>);
   } 
+
+  const selectionActionRenderer = (selectedData, selectAll) => {
+    console.log('selectedData in output', selectedData, 'selectAll', selectAll);
+    return (
+      <div className="d-flex align-items-center">
+        <Button size="tiny" className="mr-4">Delete</Button>
+        <Button size="tiny">Export</Button>
+      </div>
+    )
+  }
 
   return (
     <div>
@@ -273,9 +298,12 @@ const customCode = `
           loaderSchema={loaderSchema}
           fetchData={fetchData}
           withHeader={true}
+          uniqueColumnName="firstName"
           headerOptions={{
+            selectionActionRenderer,
             withSearch: true,
-            globalActionRenderer : globalActionTrigger
+            globalActionRenderer : globalActionTrigger,
+            allowSelectAll: true,
           }}
           withCheckbox={true}
           onSelect={(rowIndex, selected, selectedList, selectAll) => console.log(\`on-select: - rowIndex: \${ rowIndex } selected: \${ selected } selectedList: \${ JSON.stringify(selectedList) } selectAll: \${ selectAll } \`)}
