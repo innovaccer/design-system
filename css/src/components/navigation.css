@@ -102,7 +102,7 @@
 }
 
 .Navigation-horizontalPills--disabled {
-  opacity: 0.6;
+  opacity: var(--opacity-10);
 }
 
 .Navigation-footer {

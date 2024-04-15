@@ -4,14 +4,14 @@
     transform: translateY(20px);
   }
   to {
-    opacity: 100;
+    opacity: 1;
     transform: translateY(0px);
   }
 }
 
 @keyframes fullscreenModal-close {
   from {
-    opacity: 100;
+    opacity: 1;
     transform: translateY(0px);
   }
   to {

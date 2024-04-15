@@ -5,7 +5,7 @@
 
 @keyframes fadeInAnimation {
   0% {
-    opacity: 0.25;
+    opacity: var(--opacity-6);
     margin-top: 2px;
   }
   100% {

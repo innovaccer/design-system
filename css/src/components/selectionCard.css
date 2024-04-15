@@ -67,25 +67,25 @@
 
 .Selection-card:active .Selection-card-overlay {
   background-color: var(--primary);
-  opacity: 10%;
+  opacity: var(--opacity-3);
 }
 
 .Selection-card--disabled .Selection-card-overlay {
   background-color: var(--secondary-lightest);
-  opacity: 50%;
+  opacity: var(--opacity-10);
 }
 
 .Selection-card--selected .Selection-card-overlay {
   background-color: var(--primary);
-  opacity: 4%;
+  opacity: var(--opacity-1);
 }
 
 .Selection-card--selected:active .Selection-card-overlay {
   background-color: var(--primary);
-  opacity: 4%;
+  opacity: var(--opacity-1);
 }
 
 .Selection-card--selected-disabled .Selection-card-overlay {
   background-color: var(--primary-lightest);
-  opacity: 50%;
+  opacity: var(--opacity-10);
 }
